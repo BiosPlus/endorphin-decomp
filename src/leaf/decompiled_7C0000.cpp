@@ -1,29 +1,21 @@
 // Decompiled translation unit: src/leaf/decompiled_7C0000.cpp
 
-extern "C" int mem_009251D8;
+extern "C" float mem_0099D148;
 
-// [0x007C8E10] sub_007C8E10 (19 bytes)
-extern "C" __declspec(naked) void fn_007C8E10() {
+// [0x007CC3D0] sub_007CC3D0 (32 bytes)
+// Zeroes the float triple at arg2[0..2] (stores 0.0 to [+8], [+4], [0]), then stores
+// the global float mem_0099D148 to *arg3; returns 1. arg1 is unused.
+extern "C" __declspec(naked) int __cdecl fn_007CC3D0(int a0, float* a1, float* a2) {
     __asm {
-        mov eax, dword ptr [esp + 0x4]          // mov eax, dword ptr [esp + 0x4]
-        mov ecx, eax                            // mov ecx, eax
-        sub ecx, dword ptr [eax - 0x8]          // sub ecx, dword ptr [eax - 0x8]
-        mov dword ptr [esp + 0x4], ecx          // mov dword ptr [esp + 0x4], ecx
-        jmp dword ptr [mem_009251D8]            // jmp dword ptr [MSVCR80!free]
-    }
-}
-
-// [0x007CCA60] sub_007CCA60 (30 bytes)
-extern "C" __declspec(naked) void __cdecl fn_007CCA60(void* a1) {
-    __asm {
-        mov ecx, dword ptr [esp + 0x4]
-        mov eax, dword ptr [ecx]
-        mov edx, dword ptr [ecx + 0xc]
-        mov edx, dword ptr [edx + 0x20]
-        and eax, 0xff
-        lea eax, [eax + 4*eax]
-        mov eax, dword ptr [edx + 8*eax + 0x10]
-        mov dword ptr [esp + 0x4], ecx
-        jmp eax
+        fldz
+        mov eax, dword ptr [esp + 0x8]
+        fst dword ptr [eax + 0x8]
+        fst dword ptr [eax + 0x4]
+        fstp dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        fld dword ptr [mem_0099D148]
+        fstp dword ptr [eax]
+        mov eax, 0x1
+        ret
     }
 }
