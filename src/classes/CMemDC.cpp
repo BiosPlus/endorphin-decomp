@@ -15,3 +15,11 @@ extern "C" __declspec(dllimport) int __stdcall DrawTextA(void* hdc, const char* 
 extern "C" void __fastcall fn_0041B790(void* self, int edx_unused, const char* a1, int a2, void* a3, unsigned int a4) {
     DrawTextA(*(void**)((char*)self + 0x4), a1, a2, a3, a4);
 }
+
+extern "C" __declspec(dllimport) int __stdcall Escape(void* hdc, int nEscape, int cbInput, const char* lpszInData, void* lpvOutData);
+
+// [0x0041B830] CMemDC::vfunc_31 (33 bytes)
+// Forwards to GDI32 Escape(this->m_hDC, a1, a2, a3, a4).
+extern "C" int __fastcall fn_0041B830(void* self, int edx_unused, int a1, int a2, const char* a3, void* a4) {
+    return Escape(*(void**)((char*)self + 0x4), a1, a2, a3, a4);
+}
