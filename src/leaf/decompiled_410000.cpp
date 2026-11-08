@@ -16,3 +16,19 @@ extern "C" void __fastcall fn_0041D830(void* self, int edx_unused, int a1) {
     *(void**)&f = (void*)ext_006A7CA0;
     (next->*f)(a1);
 }
+
+// [0x004137F0] sub_004137F0 (23 bytes)
+extern "C" int mem_009242F4;
+extern "C" void ext_00454BA0();
+
+extern "C" __declspec(naked) void __fastcall fn_004137F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea ecx, [esi + 0x12c]
+        call dword ptr [mem_009242F4]
+        mov ecx, esi
+        pop esi
+        jmp ext_00454BA0
+    }
+}
