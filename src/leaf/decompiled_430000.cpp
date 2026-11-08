@@ -97,3 +97,12 @@ extern "C" __declspec(naked) void __fastcall fn_0043CD60(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0043C950] sub_0043C950 (33 bytes)
+// If arg0 is non-null, calls its vtbl[9] (thiscall) with arg1..arg3 and returns the result.
+extern "C" int __stdcall fn_0043C950(void* a0, int a1, int a2, int a3) {
+    if (a0) {
+        typedef int (__thiscall *VFn)(void*, int, int, int);
+        return ((VFn)(*(void***)a0)[9])(a0, a1, a2, a3);
+    }
+}
