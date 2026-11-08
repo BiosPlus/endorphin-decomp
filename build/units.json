@@ -192488,7 +192488,9 @@
       "0x00532C3A",
       "0x00532C40"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x00532C50",
