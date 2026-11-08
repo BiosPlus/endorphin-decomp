@@ -19,3 +19,12 @@ extern "C" __declspec(naked) void __cdecl fn_0058CFC0() {
         ret
     }
 }
+
+// [0x0058CFD0] sub_0058CFD0 (9 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0058CFD0() {
+    __asm {
+        call ext_0058B230
+        fld dword ptr [eax + 8]
+        ret
+    }
+}
