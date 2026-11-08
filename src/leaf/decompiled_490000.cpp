@@ -23,3 +23,15 @@ extern "C" int __fastcall fn_00494830(const int* self) {
     }
     return (self[4] - a) / 28;
 }
+
+// [0x004940D0] sub_004940D0 (8 bytes)
+// Calls sub_00494050 (ecx preserved across the call), then returns the original this in eax.
+extern "C" void ext_00494050();
+
+extern "C" __declspec(naked) void __fastcall fn_004940D0(void* self) {
+    __asm {
+        call ext_00494050
+        mov eax, ecx
+        ret
+    }
+}
