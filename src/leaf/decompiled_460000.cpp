@@ -128,3 +128,14 @@ extern "C" __declspec(naked) void __cdecl fn_00469C80() {
         ret
     }
 }
+
+extern "C" void ext_004658C0();
+
+// [0x00465B30] sub_00465B30 (9 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00465B30() {
+    __asm {
+        call ext_004658C0
+        mov eax, dword ptr [eax + 0x58]
+        ret
+    }
+}
