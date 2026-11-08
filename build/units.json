@@ -453427,7 +453427,9 @@
     "relocations": [
       "0x006B6285"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x006B6290",
