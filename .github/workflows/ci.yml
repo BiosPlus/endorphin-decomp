@@ -72,11 +72,10 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: actions/deploy-pages@v4
 
-  byte-match:
+  windows-byte-match:
     name: MSVC 2005 Byte-for-Byte Parity Check
     runs-on: windows-latest
     needs: verify-and-dashboard
-    if: vars.ENABLE_MSVC_CI == 'true'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -88,21 +87,48 @@ jobs:
         with:
           go-version: "1.22"
 
-      - name: Download and unpack MSVC8 compiler bundle
+      - name: Cache MSVC 2005 toolchain and local binaries
+        id: cache-msvc8
+        uses: actions/cache@v4
+        with:
+          path: |
+            .local/msvc8
+            .local/bin
+          key: msvc8-toolchain-v1
+
+      - name: Fetch MSVC 2005 toolchain from private vault (with Archive.org fallback)
+        if: steps.cache-msvc8.outputs.cache-hit != 'true'
         shell: pwsh
         env:
-          MSVC8_ZIP_URL: ${{ secrets.MSVC8_ZIP_URL }}
-          MSVC8_BUNDLE_URL: ${{ secrets.MSVC8_BUNDLE_URL }}
+          GH_TOKEN: ${{ secrets.VAULT_READ_TOKEN }}
+          VAULT_READ_TOKEN: ${{ secrets.VAULT_READ_TOKEN }}
         run: |
-          $url = if ($env:MSVC8_ZIP_URL) { $env:MSVC8_ZIP_URL } else { $env:MSVC8_BUNDLE_URL }
-          if (-not $url) {
-            Write-Error "Missing MSVC8_ZIP_URL secret."
-            exit 1
+          if ($env:VAULT_READ_TOKEN) {
+            go run ./tools/fetch_msvc8 -from-vault --repo BiosPlus/endorphin-ci-vault
+          } else {
+            go run ./tools/fetch_msvc8 -from-archive
           }
-          New-Item -ItemType Directory -Force -Path .local/msvc8 | Out-Null
-          Invoke-WebRequest -Uri $url -OutFile .local/msvc8.zip
-          Expand-Archive -Path .local/msvc8.zip -DestinationPath .local/msvc8 -Force
 
-      - name: Run build_and_match against modified units in src/
+      - name: Download objdiff-cli.exe if not cached
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          go run ./tools/build_and_match -require-compiler -modified
+          New-Item -ItemType Directory -Force -Path .local/bin | Out-Null
+          if (-not (Test-Path ".local/bin/objdiff-cli.exe")) {
+            Write-Host "Downloading objdiff-cli-windows-x86_64.exe from encounter/objdiff..."
+            gh release download --repo encounter/objdiff --pattern "objdiff-cli-windows-x86_64.exe" --output ".local/bin/objdiff-cli.exe" --clobber
+          }
+
+      - name: Run build_and_match across all translation units
+        shell: pwsh
+        run: |
+          $output = go run ./tools/build_and_match -all -require-compiler
+          Write-Host $output
+          @(
+            "## MSVC 2005 Byte-for-Byte Verification (`windows-latest`)"
+            ""
+            '```text'
+            $output
+            '```'
+          ) | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8

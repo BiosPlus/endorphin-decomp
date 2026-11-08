@@ -131,19 +131,30 @@ func compileAndExtractObjFunctions(cppPath string) (map[string]ObjFunc, error) {
 	objPath := filepath.Join(tmpDir, "unit.obj")
 	clExe := findMSVCClExe()
 	var cmd *exec.Cmd
-	if filepath.Separator == '\\' && clExe != "" {
-		absMSVC, _ := filepath.Abs(filepath.Dir(filepath.Dir(clExe)))
-		cmd = exec.Command(clExe,
+	if runtime.GOOS == "windows" && clExe != "" {
+		absCl, _ := filepath.Abs(clExe)
+		absBin := filepath.Dir(absCl)
+		absMSVC := filepath.Dir(absBin)
+		cmd = exec.Command(absCl,
 			"/nologo", "/c", "/O2", "/Ob2", "/Oy", "/Gy", "/EHsc", "/GR", "/Gd", "/W0",
 			"/Iinclude",
 			"/Fo"+objPath,
 			cppPath,
 		)
-		env := os.Environ()
+		var env []string
+		for _, kv := range os.Environ() {
+			k := strings.SplitN(kv, "=", 2)[0]
+			switch strings.ToUpper(k) {
+			case "PATH", "INCLUDE", "LIB":
+				continue
+			default:
+				env = append(env, kv)
+			}
+		}
 		env = append(env,
 			fmt.Sprintf("INCLUDE=%s\\include;%s\\atlmfc\\include;%s\\PlatformSDK\\Include", absMSVC, absMSVC, absMSVC),
 			fmt.Sprintf("LIB=%s\\lib;%s\\atlmfc\\lib;%s\\PlatformSDK\\Lib", absMSVC, absMSVC, absMSVC),
-			fmt.Sprintf("PATH=%s\\bin;%s", absMSVC, os.Getenv("PATH")),
+			fmt.Sprintf("PATH=%s;%s", absBin, os.Getenv("PATH")),
 		)
 		cmd.Env = env
 	} else {
@@ -353,9 +364,13 @@ func compareMaskedBytes(compiled ObjFunc, targetBytes []byte, unit UnitEntry, st
 }
 
 func main() {
+	allFlag := flag.Bool("all", false, "Compile and verify all .cpp translation units in src/")
 	modifiedOnly := flag.Bool("modified", false, "Only check .cpp files modified in the latest commit")
 	requireCompiler := flag.Bool("require-compiler", false, "Fail if .local/msvc8/bin/cl.exe is not installed")
 	flag.Parse()
+	if *allFlag {
+		*modifiedOnly = false
+	}
 
 	unitsBytes, err := os.ReadFile("build/units.json")
 	if err != nil {
@@ -391,6 +406,7 @@ func main() {
 	totalTUs := len(cppFiles)
 	totalChecked := 0
 	totalMatched := 0
+	var totalBytesMatched uint64
 	unitsUpdated := false
 	var failures []string
 
@@ -496,6 +512,7 @@ func main() {
 				unitsUpdated = true
 			}
 			totalMatched++
+			totalBytesMatched += uint64(u.Size)
 		}
 	}
 
@@ -506,8 +523,8 @@ func main() {
 		}
 	}
 
-	fmt.Printf("Verified %d / %d function units across %d translation units (MSVC8 compiler active: %v, target exe loaded: %v)\n",
-		totalMatched, totalChecked, totalTUs, hasCompiler, hasTargetExe)
+	fmt.Printf("Verified %d / %d function units (%d bytes) across %d translation units (MSVC8 compiler active: %v, target exe loaded: %v)\n",
+		totalMatched, totalChecked, totalBytesMatched, totalTUs, hasCompiler, hasTargetExe)
 
 	if len(failures) > 0 {
 		for idx, f := range failures {
