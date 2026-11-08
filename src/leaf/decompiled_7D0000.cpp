@@ -19,3 +19,11 @@ extern "C" __declspec(naked) void __cdecl fn_007D5C60(void) {
         jmp ext_007D59C0
     }
 }
+
+// [0x007D8570] sub_007D8570 (32 bytes)
+extern "C" void __cdecl fn_007D8570(char* base, int index, float* out) {
+    float* src = reinterpret_cast<float*>(base + index * 32);
+    out[0] = src[0];
+    out[1] = src[1];
+    out[2] = src[2];
+}
