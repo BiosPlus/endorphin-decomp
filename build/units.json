@@ -49398,7 +49398,9 @@
       "0x00455CE1",
       "0x00455CE6"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x00455CF0",
