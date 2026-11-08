@@ -19,63 +19,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  verify-and-dashboard:
-    name: Verify Repo Safety, Tooling & Publish Dashboard
-    runs-on: ubuntu-slim
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Legal safety gate (forbid .exe, .dll, .obj, or .local/ in Git)
-        run: |
-          FORBIDDEN=$(git ls-files | grep -E '(^\.local/|\.(exe|dll|obj|lib|pdb|idb)$)' || true)
-          if [ -n "$FORBIDDEN" ]; then
-            echo "::error::Forbidden proprietary binary or .local/ files tracked in Git:"
-            echo "$FORBIDDEN"
-            exit 1
-          fi
-          echo "Legal safety check passed: 0 forbidden files tracked."
-
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: "1.22"
-
-      - name: Compile all CLI tools under tools/
-        run: |
-          mkdir -p /tmp/endorphin-tools
-          go build -v -o /tmp/endorphin-tools/ ./tools/...
-          go build ./tools/...
-          git clean -fd
-
-      - name: Generate decompilation scoreboard & HTML dashboard
-        run: |
-          mkdir -p docs
-          {
-            echo "## Endorphin 2.7.1 Decompilation Scoreboard"
-            echo '```text'
-            go run ./tools/status -html docs/index.html
-            echo '```'
-          } | tee -a "$GITHUB_STEP_SUMMARY"
-
-      - name: Upload GitHub Pages artifact
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs/
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: actions/deploy-pages@v4
-
   windows-byte-match:
     name: MSVC 2005 Byte-for-Byte Parity Check
     runs-on: windows-latest
-    needs: verify-and-dashboard
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -132,3 +78,57 @@ jobs:
             $output
             '```'
           ) | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8
+
+  dashboard-and-pages:
+    name: Verify Repo Safety, Tooling & Publish Dashboard
+    runs-on: ubuntu-slim
+    needs: [windows-byte-match]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Legal safety gate (forbid .exe, .dll, .obj, or .local/ in Git)
+        run: |
+          FORBIDDEN=$(git ls-files | grep -E '(^\.local/|\.(exe|dll|obj|lib|pdb|idb)$)' || true)
+          if [ -n "$FORBIDDEN" ]; then
+            echo "::error::Forbidden proprietary binary or .local/ files tracked in Git:"
+            echo "$FORBIDDEN"
+            exit 1
+          fi
+          echo "Legal safety check passed: 0 forbidden files tracked."
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - name: Compile all CLI tools under tools/
+        run: |
+          mkdir -p /tmp/endorphin-tools
+          go build -v -o /tmp/endorphin-tools/ ./tools/...
+          go build ./tools/...
+          git clean -fd
+
+      - name: Generate decompilation scoreboard & HTML dashboard
+        run: |
+          mkdir -p docs
+          {
+            echo "## Endorphin 2.7.1 Decompilation Scoreboard"
+            echo '```text'
+            go run ./tools/status -html docs/index.html
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/deploy-pages@v4
