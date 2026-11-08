@@ -21,7 +21,7 @@ concurrency:
 jobs:
   verify-and-dashboard:
     name: Verify Repo Safety, Tooling & Publish Dashboard
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -74,7 +74,7 @@ jobs:
 
   byte-match:
     name: MSVC 2005 Byte-for-Byte Parity Check
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     needs: verify-and-dashboard
     if: vars.ENABLE_MSVC_CI == 'true'
     steps:
