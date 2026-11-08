@@ -193878,7 +193878,9 @@
       "0x00533E15",
       "0x00533E1D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x00533E30",

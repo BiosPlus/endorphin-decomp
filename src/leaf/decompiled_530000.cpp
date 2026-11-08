@@ -74,3 +74,25 @@ extern "C" __declspec(naked) void __fastcall fn_00533D50(void* self) {
         jmp ext_00532B40
     }
 }
+
+// [0x00533E00] sub_00533E00 (33 bytes)
+extern "C" int mem_00954864;
+extern "C" void ext_0054C5E0();
+
+extern "C" __declspec(naked) void __fastcall fn_00533E00(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x2c]
+        test eax, eax
+        mov dword ptr [esi], offset mem_00954864
+        je L_skip
+        push 1
+        push eax
+        call dword ptr [mem_009253E8]
+    L_skip:
+        mov ecx, esi
+        pop esi
+        jmp ext_0054C5E0
+    }
+}
