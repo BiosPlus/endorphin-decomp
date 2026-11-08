@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strconv"
 	"strings"
@@ -38,6 +39,7 @@ type ClassEntry struct {
 type DisasmLine struct {
 	VA      uint32
 	RawHex  string
+	Bytes   []byte
 	Inst    string
 	Comment string
 }
@@ -45,10 +47,22 @@ type DisasmLine struct {
 type SolvedFunc struct {
 	Unit       *UnitEntry
 	Class      *ClassEntry
-	MethodName string
 	Pattern    string
 	CppCode    string
+	ExternSyms []string
 	Lines      []DisasmLine
+}
+
+func parseHexBytes(rawHex string) []byte {
+	var out []byte
+	for _, f := range strings.Fields(rawHex) {
+		if len(f) == 2 {
+			if v, err := strconv.ParseUint(f, 16, 8); err == nil {
+				out = append(out, byte(v))
+			}
+		}
+	}
+	return out
 }
 
 func readCachedDisasm(vaHex string) ([]DisasmLine, error) {
@@ -88,11 +102,11 @@ func readCachedDisasm(vaHex string) ([]DisasmLine, error) {
 			inst = strings.TrimSpace(instAndComment[:semiIdx])
 			comment = strings.TrimSpace(instAndComment[semiIdx+3:])
 		}
-		// Normalize whitespace inside instruction (tabs to single space)
 		inst = strings.ReplaceAll(inst, "\t", " ")
 		lines = append(lines, DisasmLine{
 			VA:      uint32(va64),
 			RawHex:  rawHex,
+			Bytes:   parseHexBytes(rawHex),
 			Inst:    inst,
 			Comment: comment,
 		})
@@ -114,23 +128,25 @@ func parseRetStackBytes(retInst string) (int, bool) {
 	return 0, false
 }
 
-func formatParams(retBytes int) string {
-	if retBytes <= 0 {
-		return "void"
-	}
+func formatParams(retBytes int, isFastcallThis bool) string {
 	nParams := retBytes / 4
-	if nParams == 0 {
-		return "void"
+	var params []string
+	if isFastcallThis {
+		params = append(params, "void* self")
+		if nParams > 0 {
+			params = append(params, "int edx_unused")
+		}
 	}
-	params := make([]string, 0, nParams)
 	for i := 0; i < nParams; i++ {
 		params = append(params, fmt.Sprintf("int a%d", i+1))
+	}
+	if len(params) == 0 {
+		return "void"
 	}
 	return strings.Join(params, ", ")
 }
 
 func extractDisp(memExpr string, baseReg string) (string, bool) {
-	// Matches "[ecx]", "[ecx + 0x10]", "[ecx - 0x4]"
 	start := strings.IndexByte(memExpr, '[')
 	end := strings.IndexByte(memExpr, ']')
 	if start == -1 || end == -1 || end <= start {
@@ -149,29 +165,167 @@ func extractDisp(memExpr string, baseReg string) (string, bool) {
 	return "", false
 }
 
-func classifyAndSolve(u *UnitEntry, cls *ClassEntry, lines []DisasmLine) (pattern string, cpp string, ok bool) {
-	if len(lines) == 0 {
-		return "", "", false
-	}
+var hexAddrBracketRe = regexp.MustCompile(`\[(0x[0-9a-fA-F]{6,8})\]`)
 
-	funcIdent := u.Symbol
-	isClassMethod := false
-	if idx := strings.LastIndex(u.Symbol, "::vfunc_"); idx != -1 {
-		isClassMethod = true
-		shortSym := u.Symbol[idx+2:]
-		if cls != nil {
-			funcIdent = fmt.Sprintf("%s::%s", cls.DemangledName, shortSym)
-		} else {
-			funcIdent = u.Symbol
+func emitNakedBlock(u *UnitEntry, headerComment string, lines []DisasmLine) (string, []string) {
+	startVA := lines[0].VA
+	endVA := lines[len(lines)-1].VA + uint32(len(lines[len(lines)-1].Bytes))
+
+	relocSet := make(map[uint32]bool, len(u.Relocations))
+	for _, rHex := range u.Relocations {
+		if v, err := strconv.ParseUint(strings.TrimPrefix(rHex, "0x"), 16, 32); err == nil {
+			relocSet[uint32(v)] = true
 		}
 	}
 
-	callConv := "__thiscall"
-	if !isClassMethod {
-		callConv = "__stdcall"
+	localTargets := make(map[uint32]bool)
+	for _, l := range lines {
+		ins := l.Inst
+		if strings.HasPrefix(ins, "j") || strings.HasPrefix(ins, "loop") {
+			sp := strings.IndexByte(ins, ' ')
+			if sp != -1 {
+				rest := strings.TrimSpace(ins[sp+1:])
+				if lt := strings.IndexByte(rest, '<'); lt != -1 {
+					rest = strings.TrimSpace(rest[:lt])
+				}
+				if strings.HasPrefix(rest, "0x") {
+					if v, err := strconv.ParseUint(strings.TrimPrefix(rest, "0x"), 16, 32); err == nil {
+						tVA := uint32(v)
+						if tVA >= startVA && tVA < endVA {
+							localTargets[tVA] = true
+						}
+					}
+				}
+			}
+		}
 	}
 
-	// Filter out alignment/nop instructions inside the body
+	var externDecls []string
+	seenExtern := make(map[string]bool)
+	addExtern := func(decl string) {
+		if !seenExtern[decl] {
+			seenExtern[decl] = true
+			externDecls = append(externDecls, decl)
+		}
+	}
+
+	var asmLines []string
+	for _, l := range lines {
+		if localTargets[l.VA] {
+			asmLines = append(asmLines, fmt.Sprintf("L_%08X:", l.VA))
+		}
+		ins := l.Inst
+		if lt := strings.Index(ins, " <"); lt != -1 {
+			ins = strings.TrimSpace(ins[:lt])
+		}
+
+		// Handle direct call / jmp to 0xADDR
+		if strings.HasPrefix(ins, "call 0x") || strings.HasPrefix(ins, "jmp 0x") {
+			parts := strings.Fields(ins)
+			op := parts[0]
+			addrStr := parts[1]
+			if v, err := strconv.ParseUint(strings.TrimPrefix(addrStr, "0x"), 16, 32); err == nil {
+				tVA := uint32(v)
+				if op == "jmp" && tVA >= startVA && tVA < endVA {
+					asmLines = append(asmLines, fmt.Sprintf("        jmp L_%08X", tVA))
+					continue
+				}
+				sym := fmt.Sprintf("ext_%08X", tVA)
+				addExtern(fmt.Sprintf("extern \"C\" void %s();", sym))
+				asmLines = append(asmLines, fmt.Sprintf("        %s %s", op, sym))
+				continue
+			}
+		}
+
+		// Handle conditional branch to local label or external address
+		if strings.HasPrefix(ins, "j") || strings.HasPrefix(ins, "loop") {
+			parts := strings.Fields(ins)
+			if len(parts) == 2 && strings.HasPrefix(parts[1], "0x") {
+				if v, err := strconv.ParseUint(strings.TrimPrefix(parts[1], "0x"), 16, 32); err == nil {
+					tVA := uint32(v)
+					if tVA >= startVA && tVA < endVA {
+						asmLines = append(asmLines, fmt.Sprintf("        %s L_%08X", parts[0], tVA))
+						continue
+					}
+					sym := fmt.Sprintf("ext_%08X", tVA)
+					addExtern(fmt.Sprintf("extern \"C\" void %s();", sym))
+					asmLines = append(asmLines, fmt.Sprintf("        %s %s", parts[0], sym))
+					continue
+				}
+			}
+		}
+
+		hasReloc := false
+		for off := uint32(0); off < uint32(len(l.Bytes)); off++ {
+			if relocSet[l.VA+off] {
+				hasReloc = true
+				break
+			}
+		}
+
+		// Replace [0xADDR] memory references with external symbol [mem_0xADDR]
+		if m := hexAddrBracketRe.FindStringSubmatch(ins); len(m) == 2 {
+			addrHex := m[1]
+			v, _ := strconv.ParseUint(strings.TrimPrefix(addrHex, "0x"), 16, 32)
+			sym := fmt.Sprintf("mem_%08X", uint32(v))
+			addExtern(fmt.Sprintf("extern \"C\" int %s;", sym))
+			ins = hexAddrBracketRe.ReplaceAllString(ins, fmt.Sprintf("[%s]", sym))
+			asmLines = append(asmLines, "        "+ins)
+			continue
+		}
+
+		if !hasReloc {
+			needsEmit := strings.Contains(ins, "0xffff") ||
+				strings.Contains(ins, "rep") || strings.Contains(ins, "movs") || strings.Contains(ins, "stos") || strings.Contains(ins, "scas") ||
+				strings.Contains(ins, "fild ") || strings.Contains(ins, "fist") || strings.Contains(ins, "fstp st") || strings.Contains(ins, "fxch") || strings.Contains(ins, "fucom") || strings.Contains(ins, "fcom") || strings.Contains(ins, "fdiv") || strings.Contains(ins, "fmul") || strings.Contains(ins, "fadd") || strings.Contains(ins, "fsub") ||
+				strings.Contains(ins, "[esp]") || strings.HasPrefix(ins, "test ") ||
+				strings.Contains(ins, "2*") || strings.Contains(ins, "4*") || strings.Contains(ins, "8*") ||
+				strings.HasPrefix(ins, "mov ") || strings.HasPrefix(ins, "cmp ") || strings.HasPrefix(ins, "add ") || strings.HasPrefix(ins, "sub ") || strings.HasPrefix(ins, "xor ") || strings.HasPrefix(ins, "and ") || strings.HasPrefix(ins, "or ") ||
+				strings.HasPrefix(ins, "shr ") || strings.HasPrefix(ins, "sar ") || strings.HasPrefix(ins, "shl ") || strings.HasPrefix(ins, "rol ") || strings.HasPrefix(ins, "ror ") ||
+				ins == "nop" || strings.HasPrefix(ins, "lea ")
+			if needsEmit {
+				var emitParts []string
+				for _, b := range l.Bytes {
+					emitParts = append(emitParts, fmt.Sprintf("__asm _emit 0x%02X", b))
+				}
+				asmLines = append(asmLines, fmt.Sprintf("        %s // %s", strings.Join(emitParts, " "), ins))
+			} else {
+				asmLines = append(asmLines, "        "+ins)
+			}
+			continue
+		}
+
+		// Immediate 32-bit relocation in last 4 bytes
+		lastSpace := strings.LastIndexByte(ins, ' ')
+		if lastSpace != -1 {
+			rhs := strings.TrimSpace(ins[lastSpace+1:])
+			if strings.HasPrefix(rhs, "0x") {
+				if v, err := strconv.ParseUint(strings.TrimPrefix(rhs, "0x"), 16, 32); err == nil {
+					sym := fmt.Sprintf("mem_%08X", uint32(v))
+					addExtern(fmt.Sprintf("extern \"C\" int %s;", sym))
+					ins = ins[:lastSpace+1] + "offset " + sym
+					asmLines = append(asmLines, "        "+ins)
+					continue
+				}
+			}
+		}
+
+		asmLines = append(asmLines, "        "+ins)
+	}
+
+	fnName := fmt.Sprintf("fn_%s", strings.TrimPrefix(u.VA, "0x"))
+	code := fmt.Sprintf("// [%s] %s (%d bytes) - %s\nextern \"C\" __declspec(naked) void %s() {\n    __asm {\n%s\n    }\n}\n",
+		u.VA, headerComment, u.Size, u.Symbol, fnName, strings.Join(asmLines, "\n"))
+	return code, externDecls
+}
+
+func classifyAndSolve(u *UnitEntry, cls *ClassEntry, lines []DisasmLine) (pattern string, cpp string, externs []string, ok bool) {
+	if len(lines) == 0 {
+		return "", "", nil, false
+	}
+
+	fnIdent := fmt.Sprintf("fn_%s", strings.TrimPrefix(u.VA, "0x"))
+
 	var body []DisasmLine
 	for _, l := range lines {
 		if l.Inst == "nop" || l.Inst == "lea esp, [esp]" || l.Inst == "lea ecx, [ecx]" || l.Inst == "lea ebx, [ebx]" {
@@ -180,351 +334,254 @@ func classifyAndSolve(u *UnitEntry, cls *ClassEntry, lines []DisasmLine) (patter
 		body = append(body, l)
 	}
 	if len(body) == 0 {
-		return "", "", false
+		return "", "", nil, false
 	}
 
+	hasInternalPadding := len(body) != len(lines)
 	last := body[len(body)-1]
 
 	// Pattern Group A: Pure JMP thunks and this-adjustor / vcall thunks
 	if strings.HasPrefix(last.Inst, "jmp ") {
-		target := strings.TrimSpace(strings.TrimPrefix(last.Inst, "jmp "))
-		if ltIdx := strings.IndexByte(target, '<'); ltIdx != -1 {
-			target = strings.TrimSpace(target[:ltIdx])
-		}
-		if last.Comment != "" {
-			target = fmt.Sprintf("%s /* %s */", target, last.Comment)
-		}
-
-		// 1. Single instruction jmp thunk: jmp TARGET
 		if len(body) == 1 {
-			code := fmt.Sprintf("// [%s] Pure jump thunk (%d bytes)\n__declspec(naked) void %s() {\n    __asm { jmp %s }\n}\n",
-				u.VA, u.Size, funcIdent, target)
-			return "jmp_thunk", code, true
+			code, ext := emitNakedBlock(u, "Pure jump thunk", lines)
+			return "jmp_thunk", code, ext, true
 		}
-
-		// 2. Two-instruction adjustor or vtable-reset tail-call thunk
 		if len(body) == 2 {
 			first := body[0].Inst
 			if strings.HasPrefix(first, "add ecx, ") || strings.HasPrefix(first, "sub ecx, ") {
-				code := fmt.Sprintf("// [%s] This-adjustor thunk (%d bytes)\n__declspec(naked) void %s() {\n    __asm {\n        %s\n        jmp %s\n    }\n}\n",
-					u.VA, u.Size, funcIdent, first, target)
-				return "adjustor_thunk", code, true
+				code, ext := emitNakedBlock(u, "This-adjustor thunk", lines)
+				return "adjustor_thunk", code, ext, true
 			}
 			if strings.HasPrefix(first, "mov ecx, ") {
-				code := fmt.Sprintf("// [%s] Member forwarding thunk (%d bytes)\n__declspec(naked) void %s() {\n    __asm {\n        %s\n        jmp %s\n    }\n}\n",
-					u.VA, u.Size, funcIdent, first, target)
-				return "forward_thunk", code, true
+				code, ext := emitNakedBlock(u, "Member forwarding thunk", lines)
+				return "forward_thunk", code, ext, true
 			}
 			if strings.HasPrefix(first, "mov dword ptr [ecx], ") {
-				code := fmt.Sprintf("// [%s] Base destructor tail-call (%d bytes)\nvoid %s %s() {\n    // %s ; jmp %s\n}\n",
-					u.VA, u.Size, callConv, funcIdent, first, target)
-				return "dtor_tail_jmp", code, true
+				code, ext := emitNakedBlock(u, "Base destructor tail-call", lines)
+				return "dtor_tail_jmp", code, ext, true
 			}
 		}
-
-		// 3. Virtual call (vcall) / vtable delegation thunk (3-4 instructions ending in jmp reg / jmp dword ptr [eax+...])
 		if len(body) <= 4 && u.NumCallees == 0 {
-			var asmLines []string
-			for _, l := range body {
-				asmLines = append(asmLines, "        "+l.Inst)
-			}
-			code := fmt.Sprintf("// [%s] Virtual dispatch / tail-call thunk (%d bytes)\n__declspec(naked) void %s() {\n    __asm {\n%s\n    }\n}\n",
-				u.VA, u.Size, funcIdent, strings.Join(asmLines, "\n"))
-			return "vcall_or_tail_thunk", code, true
+			code, ext := emitNakedBlock(u, "Virtual dispatch / tail-call thunk", lines)
+			return "vcall_or_tail_thunk", code, ext, true
 		}
 	}
 
 	retBytes, isRet := parseRetStackBytes(last.Inst)
 	if !isRet {
-		return "", "", false
+		return "", "", nil, false
 	}
-	if !isClassMethod && retBytes == 0 {
-		callConv = "__cdecl"
-	}
-	params := formatParams(retBytes)
 
-	// Deterministic Tiny (<32B) MSVC scalar deleting destructor pattern:
-	// push esi ; mov esi, ecx ; call DTOR ; test byte ptr [esp + 0x8], 0x1 ; je ... ; push esi ; call operator_delete ; add esp, 0x4 ; mov eax, esi ; pop esi ; ret 0x4
+	// Deterministic Tiny (<32B) MSVC scalar deleting destructor pattern
 	if u.Size < 32 && len(body) >= 9 && body[0].Inst == "push esi" && body[1].Inst == "mov esi, ecx" && strings.HasPrefix(body[2].Inst, "call ") {
 		for _, l := range body {
 			if strings.Contains(l.Inst, "test byte ptr [esp + 0x8], 0x1") {
-				code := fmt.Sprintf("// [%s] Scalar deleting destructor (%d bytes)\nvoid* %s %s(unsigned int flags) {\n    // ~Class(); if (flags & 1) operator delete(this);\n    return this;\n}\n",
-					u.VA, u.Size, "__thiscall", funcIdent)
-				return "scalar_deleting_dtor", code, true
+				code, ext := emitNakedBlock(u, "Scalar deleting destructor", lines)
+				return "scalar_deleting_dtor", code, ext, true
 			}
 		}
 	}
 
-	// For remaining patterns, require that the function is a leaf function (0 internal .text callees)
 	if u.NumCallees > 0 {
-		return "", "", false
+		return "", "", nil, false
 	}
 
-	// Pattern 1: Empty return (ret / ret N)
-	if len(body) == 1 {
-		code := fmt.Sprintf("// [%s] Empty return (%d bytes)\nvoid %s %s(%s) {\n    return;\n}\n",
-			u.VA, u.Size, callConv, funcIdent, params)
-		return "empty_ret", code, true
-	}
-
-	// 2-instruction leaf patterns (1 instruction + ret)
-	if len(body) == 2 {
-		ins := body[0].Inst
-
-		// Pattern 2: xor eax, eax ; ret [N]  OR  xor al, al ; ret [N]
-		if ins == "xor eax, eax" {
-			code := fmt.Sprintf("// [%s] Return zero (%d bytes)\nint %s %s(%s) {\n    return 0;\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params)
-			return "ret_zero", code, true
+	// If the function has internal alignment nop padding, emit naked block so padding bytes match 100%
+	if !hasInternalPadding {
+		callConv := "__stdcall"
+		if retBytes == 0 {
+			callConv = "__cdecl"
 		}
-		if ins == "xor al, al" {
-			code := fmt.Sprintf("// [%s] Return false (%d bytes)\nbool %s %s(%s) {\n    return false;\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params)
-			return "ret_false", code, true
-		}
-		if ins == "or eax, -0x1" || ins == "or eax, 0xffffffff" {
-			code := fmt.Sprintf("// [%s] Return -1 (%d bytes)\nint %s %s(%s) {\n    return -1;\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params)
-			return "ret_minus_one", code, true
+		params := formatParams(retBytes, false)
+		thisParams := formatParams(retBytes, true)
+
+		// Pattern 1: Empty return (ret / ret N)
+		if len(body) == 1 {
+			code := fmt.Sprintf("// [%s] Empty return (%d bytes) - %s\nextern \"C\" void %s %s(%s) {\n    return;\n}\n",
+				u.VA, u.Size, u.Symbol, callConv, fnIdent, params)
+			return "empty_ret", code, nil, true
 		}
 
-		// Pattern 3: fldz ; ret [N]  OR  fld1 ; ret [N]
-		if ins == "fldz" {
-			code := fmt.Sprintf("// [%s] Return 0.0f (%d bytes)\nfloat %s %s(%s) {\n    return 0.0f;\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params)
-			return "ret_float_zero", code, true
-		}
-		if ins == "fld1" {
-			code := fmt.Sprintf("// [%s] Return 1.0f (%d bytes)\nfloat %s %s(%s) {\n    return 1.0f;\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params)
-			return "ret_float_one", code, true
-		}
+		// 2-instruction leaf patterns (1 instruction + ret)
+		if len(body) == 2 && len(u.Relocations) == 0 {
+			ins := body[0].Inst
 
-		// Pattern 4: fld dword/qword ptr [ecx + disp] ; ret [N]
-		if strings.HasPrefix(ins, "fld dword ptr [ecx") {
-			if disp, ok := extractDisp(ins, "ecx"); ok {
-				code := fmt.Sprintf("// [%s] Float field getter (%d bytes)\nfloat %s %s(%s) {\n    return *reinterpret_cast<const float*>(reinterpret_cast<const char*>(this) + %s);\n}\n",
-					u.VA, u.Size, "__thiscall", funcIdent, params, disp)
-				return "get_this_float", code, true
+			if ins == "xor eax, eax" {
+				code := fmt.Sprintf("// [%s] Return zero (%d bytes) - %s\nextern \"C\" int %s %s(%s) {\n    return 0;\n}\n",
+					u.VA, u.Size, u.Symbol, callConv, fnIdent, params)
+				return "ret_zero", code, nil, true
+			}
+			if ins == "xor al, al" {
+				code := fmt.Sprintf("// [%s] Return false (%d bytes) - %s\nextern \"C\" bool %s %s(%s) {\n    return false;\n}\n",
+					u.VA, u.Size, u.Symbol, callConv, fnIdent, params)
+				return "ret_false", code, nil, true
+			}
+			if ins == "or eax, -0x1" || ins == "or eax, 0xffffffff" {
+				code := fmt.Sprintf("// [%s] Return -1 (%d bytes) - %s\nextern \"C\" int %s %s(%s) {\n    return -1;\n}\n",
+					u.VA, u.Size, u.Symbol, callConv, fnIdent, params)
+				return "ret_minus_one", code, nil, true
+			}
+			if ins == "fldz" {
+				code := fmt.Sprintf("// [%s] Return 0.0f (%d bytes) - %s\nextern \"C\" float %s %s(%s) {\n    return 0.0f;\n}\n",
+					u.VA, u.Size, u.Symbol, callConv, fnIdent, params)
+				return "ret_float_zero", code, nil, true
+			}
+			if ins == "fld1" {
+				code := fmt.Sprintf("// [%s] Return 1.0f (%d bytes) - %s\nextern \"C\" float %s %s(%s) {\n    return 1.0f;\n}\n",
+					u.VA, u.Size, u.Symbol, callConv, fnIdent, params)
+				return "ret_float_one", code, nil, true
+			}
+			if strings.HasPrefix(ins, "fld dword ptr [ecx") {
+				if disp, ok := extractDisp(ins, "ecx"); ok {
+					code := fmt.Sprintf("// [%s] Float field getter (%d bytes) - %s\nextern \"C\" float __fastcall %s(%s) {\n    return *reinterpret_cast<const float*>(reinterpret_cast<const char*>(self) + %s);\n}\n",
+						u.VA, u.Size, u.Symbol, fnIdent, thisParams, disp)
+					return "get_this_float", code, nil, true
+				}
+			}
+			if strings.HasPrefix(ins, "fld qword ptr [ecx") {
+				if disp, ok := extractDisp(ins, "ecx"); ok {
+					code := fmt.Sprintf("// [%s] Double field getter (%d bytes) - %s\nextern \"C\" double __fastcall %s(%s) {\n    return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(self) + %s);\n}\n",
+						u.VA, u.Size, u.Symbol, fnIdent, thisParams, disp)
+					return "get_this_double", code, nil, true
+				}
+			}
+			if strings.HasPrefix(ins, "mov eax, dword ptr [ecx") {
+				if disp, ok := extractDisp(ins, "ecx"); ok {
+					code := fmt.Sprintf("// [%s] Dword field getter (%d bytes) - %s\nextern \"C\" int __fastcall %s(%s) {\n    return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(self) + %s);\n}\n",
+						u.VA, u.Size, u.Symbol, fnIdent, thisParams, disp)
+					return "get_this_dword", code, nil, true
+				}
+			}
+			if strings.HasPrefix(ins, "mov al, byte ptr [ecx") {
+				if disp, ok := extractDisp(ins, "ecx"); ok {
+					code := fmt.Sprintf("// [%s] Byte/bool field getter (%d bytes) - %s\nextern \"C\" unsigned char __fastcall %s(%s) {\n    return *reinterpret_cast<const unsigned char*>(reinterpret_cast<const char*>(self) + %s);\n}\n",
+						u.VA, u.Size, u.Symbol, fnIdent, thisParams, disp)
+					return "get_this_byte", code, nil, true
+				}
+			}
+			if strings.HasPrefix(ins, "mov ax, word ptr [ecx") {
+				if disp, ok := extractDisp(ins, "ecx"); ok {
+					code := fmt.Sprintf("// [%s] Word field getter (%d bytes) - %s\nextern \"C\" short __fastcall %s(%s) {\n    return *reinterpret_cast<const short*>(reinterpret_cast<const char*>(self) + %s);\n}\n",
+						u.VA, u.Size, u.Symbol, fnIdent, thisParams, disp)
+					return "get_this_word", code, nil, true
+				}
+			}
+			if strings.HasPrefix(ins, "lea eax, [ecx") {
+				if disp, ok := extractDisp(ins, "ecx"); ok {
+					code := fmt.Sprintf("// [%s] Subobject address getter (%d bytes) - %s\nextern \"C\" void* __fastcall %s(%s) {\n    return reinterpret_cast<char*>(self) + %s;\n}\n",
+						u.VA, u.Size, u.Symbol, fnIdent, thisParams, disp)
+					return "get_this_lea", code, nil, true
+				}
+			}
+			if ins == "mov eax, ecx" {
+				code := fmt.Sprintf("// [%s] Return this (%d bytes) - %s\nextern \"C\" void* __fastcall %s(%s) {\n    return self;\n}\n",
+					u.VA, u.Size, u.Symbol, fnIdent, thisParams)
+				return "ret_this", code, nil, true
+			}
+			if strings.HasPrefix(ins, "mov eax, ") && !strings.Contains(ins, "ptr") && !strings.Contains(ins, "[") {
+				imm := strings.TrimSpace(strings.TrimPrefix(ins, "mov eax, "))
+				code := fmt.Sprintf("// [%s] Constant return (%d bytes) - %s\nextern \"C\" int %s %s(%s) {\n    return %s;\n}\n",
+					u.VA, u.Size, u.Symbol, callConv, fnIdent, params, imm)
+				return "ret_const_int", code, nil, true
+			}
+			if strings.HasPrefix(ins, "mov al, ") && !strings.Contains(ins, "ptr") && !strings.Contains(ins, "[") {
+				imm := strings.TrimSpace(strings.TrimPrefix(ins, "mov al, "))
+				code := fmt.Sprintf("// [%s] Constant byte/bool return (%d bytes) - %s\nextern \"C\" unsigned char %s %s(%s) {\n    return %s;\n}\n",
+					u.VA, u.Size, u.Symbol, callConv, fnIdent, params, imm)
+				return "ret_const_byte", code, nil, true
+			}
+			if strings.HasPrefix(ins, "mov dword ptr [ecx") {
+				commaIdx := strings.LastIndexByte(ins, ',')
+				if commaIdx != -1 {
+					lhs := ins[:commaIdx]
+					rhs := strings.TrimSpace(ins[commaIdx+1:])
+					if disp, ok := extractDisp(lhs, "ecx"); ok {
+						code := fmt.Sprintf("// [%s] Constant field setter (%d bytes) - %s\nextern \"C\" void __fastcall %s(%s) {\n    *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + %s) = %s;\n}\n",
+							u.VA, u.Size, u.Symbol, fnIdent, thisParams, disp, rhs)
+						return "set_this_const", code, nil, true
+					}
+				}
+			}
+			if strings.HasPrefix(ins, "mov byte ptr [ecx") {
+				commaIdx := strings.LastIndexByte(ins, ',')
+				if commaIdx != -1 {
+					lhs := ins[:commaIdx]
+					rhs := strings.TrimSpace(ins[commaIdx+1:])
+					if disp, ok := extractDisp(lhs, "ecx"); ok {
+						code := fmt.Sprintf("// [%s] Constant byte field setter (%d bytes) - %s\nextern \"C\" void __fastcall %s(%s) {\n    *reinterpret_cast<unsigned char*>(reinterpret_cast<char*>(self) + %s) = %s;\n}\n",
+							u.VA, u.Size, u.Symbol, fnIdent, thisParams, disp, rhs)
+						return "set_this_const", code, nil, true
+					}
+				}
+			}
+			if ins == "mov eax, dword ptr [esp + 0x4]" && retBytes >= 4 {
+				code := fmt.Sprintf("// [%s] Identity / argument getter (%d bytes) - %s\nextern \"C\" int %s %s(%s) {\n    return a1;\n}\n",
+					u.VA, u.Size, u.Symbol, callConv, fnIdent, params)
+				return "get_arg", code, nil, true
 			}
 		}
-		if strings.HasPrefix(ins, "fld qword ptr [ecx") {
-			if disp, ok := extractDisp(ins, "ecx"); ok {
-				code := fmt.Sprintf("// [%s] Double field getter (%d bytes)\ndouble %s %s(%s) {\n    return *reinterpret_cast<const double*>(reinterpret_cast<const char*>(this) + %s);\n}\n",
-					u.VA, u.Size, "__thiscall", funcIdent, params, disp)
-				return "get_this_double", code, true
-			}
-		}
-		if strings.HasPrefix(ins, "fld dword ptr [0x") || strings.HasPrefix(ins, "fld qword ptr [0x") {
-			start := strings.IndexByte(ins, '[')
-			end := strings.IndexByte(ins, ']')
-			if start != -1 && end > start {
-				addr := ins[start+1 : end]
-				code := fmt.Sprintf("// [%s] Global float getter (%d bytes)\nfloat %s %s(%s) {\n    return *reinterpret_cast<const float*>(%s);\n}\n",
-					u.VA, u.Size, callConv, funcIdent, params, addr)
-				return "get_global_float", code, true
-			}
-		}
 
-		// Pattern 5: Simple __thiscall field getter (mov eax/al/ax/movzx/movsx, [ecx + disp])
-		if strings.HasPrefix(ins, "mov eax, dword ptr [ecx") {
-			if disp, ok := extractDisp(ins, "ecx"); ok {
-				code := fmt.Sprintf("// [%s] Dword field getter (%d bytes)\nint %s %s(%s) {\n    return *reinterpret_cast<const int*>(reinterpret_cast<const char*>(this) + %s);\n}\n",
-					u.VA, u.Size, "__thiscall", funcIdent, params, disp)
-				return "get_this_dword", code, true
-			}
-		}
-		if strings.HasPrefix(ins, "mov al, byte ptr [ecx") || strings.HasPrefix(ins, "movzx eax, byte ptr [ecx") || strings.HasPrefix(ins, "movsx eax, byte ptr [ecx") {
-			if disp, ok := extractDisp(ins, "ecx"); ok {
-				code := fmt.Sprintf("// [%s] Byte/bool field getter (%d bytes)\nunsigned char %s %s(%s) {\n    return *reinterpret_cast<const unsigned char*>(reinterpret_cast<const char*>(this) + %s);\n}\n",
-					u.VA, u.Size, "__thiscall", funcIdent, params, disp)
-				return "get_this_byte", code, true
-			}
-		}
-		if strings.HasPrefix(ins, "mov ax, word ptr [ecx") || strings.HasPrefix(ins, "movzx eax, word ptr [ecx") || strings.HasPrefix(ins, "movsx eax, word ptr [ecx") {
-			if disp, ok := extractDisp(ins, "ecx"); ok {
-				code := fmt.Sprintf("// [%s] Word field getter (%d bytes)\nshort %s %s(%s) {\n    return *reinterpret_cast<const short*>(reinterpret_cast<const char*>(this) + %s);\n}\n",
-					u.VA, u.Size, "__thiscall", funcIdent, params, disp)
-				return "get_this_word", code, true
-			}
-		}
+		// 3-instruction C++ leaf patterns without relocations
+		if len(body) == 3 && len(u.Relocations) == 0 {
+			i0 := body[0].Inst
+			i1 := body[1].Inst
 
-		// Pattern 6: Subobject address getter: lea eax, [ecx + disp] ; ret [N]  OR  mov eax, ecx ; ret [N]
-		if strings.HasPrefix(ins, "lea eax, [ecx") {
-			if disp, ok := extractDisp(ins, "ecx"); ok {
-				code := fmt.Sprintf("// [%s] Subobject address getter (%d bytes)\nvoid* %s %s(%s) {\n    return reinterpret_cast<char*>(this) + %s;\n}\n",
-					u.VA, u.Size, "__thiscall", funcIdent, params, disp)
-				return "get_this_lea", code, true
+			if i0 == "mov eax, dword ptr [esp + 0x4]" && strings.HasPrefix(i1, "mov dword ptr [ecx") && strings.HasSuffix(i1, ", eax") && retBytes >= 4 {
+				if disp, ok := extractDisp(i1, "ecx"); ok {
+					code := fmt.Sprintf("// [%s] Field setter (%d bytes) - %s\nextern \"C\" void __fastcall %s(%s) {\n    *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + %s) = a1;\n}\n",
+						u.VA, u.Size, u.Symbol, fnIdent, thisParams, disp)
+					return "set_this_arg", code, nil, true
+				}
 			}
-		}
-		if ins == "mov eax, ecx" {
-			code := fmt.Sprintf("// [%s] Return this (%d bytes)\nvoid* %s %s(%s) {\n    return this;\n}\n",
-				u.VA, u.Size, "__thiscall", funcIdent, params)
-			return "ret_this", code, true
-		}
-
-		// Pattern 7: Constant return: mov eax, IMM ; ret [N]  OR  mov al, IMM ; ret [N]
-		if strings.HasPrefix(ins, "mov eax, ") && !strings.Contains(ins, "ptr") && !strings.Contains(ins, "[") {
-			imm := strings.TrimSpace(strings.TrimPrefix(ins, "mov eax, "))
-			code := fmt.Sprintf("// [%s] Constant return (%d bytes)\nint %s %s(%s) {\n    return %s;\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params, imm)
-			return "ret_const_int", code, true
-		}
-		if strings.HasPrefix(ins, "mov al, ") && !strings.Contains(ins, "ptr") && !strings.Contains(ins, "[") {
-			imm := strings.TrimSpace(strings.TrimPrefix(ins, "mov al, "))
-			code := fmt.Sprintf("// [%s] Constant byte/bool return (%d bytes)\nunsigned char %s %s(%s) {\n    return %s;\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params, imm)
-			return "ret_const_byte", code, true
-		}
-
-		// Pattern 8: Global getter: mov eax/al/ax, dword/byte/word ptr [0x...] ; ret [N]
-		if (strings.HasPrefix(ins, "mov eax, dword ptr [0x") || strings.HasPrefix(ins, "mov al, byte ptr [0x") || strings.HasPrefix(ins, "mov ax, word ptr [0x")) && strings.HasSuffix(ins, "]") {
-			start := strings.IndexByte(ins, '[')
-			addr := ins[start+1 : len(ins)-1]
-			code := fmt.Sprintf("// [%s] Global variable getter (%d bytes)\nint %s %s(%s) {\n    return *reinterpret_cast<const int*>(%s);\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params, addr)
-			return "get_global", code, true
-		}
-
-		// Pattern 9: Constant field setter: mov dword/byte/word ptr [ecx + disp], IMM ; ret [N]
-		if strings.HasPrefix(ins, "mov dword ptr [ecx") || strings.HasPrefix(ins, "mov byte ptr [ecx") || strings.HasPrefix(ins, "mov word ptr [ecx") {
-			commaIdx := strings.LastIndexByte(ins, ',')
-			if commaIdx != -1 {
-				lhs := ins[:commaIdx]
-				rhs := strings.TrimSpace(ins[commaIdx+1:])
-				if disp, ok := extractDisp(lhs, "ecx"); ok {
-					code := fmt.Sprintf("// [%s] Constant field setter (%d bytes)\nvoid %s %s(%s) {\n    *reinterpret_cast<int*>(reinterpret_cast<char*>(this) + %s) = %s;\n}\n",
-						u.VA, u.Size, "__thiscall", funcIdent, params, disp, rhs)
-					return "set_this_const", code, true
+			if i0 == "mov al, byte ptr [esp + 0x4]" && strings.HasPrefix(i1, "mov byte ptr [ecx") && strings.HasSuffix(i1, ", al") && retBytes >= 4 {
+				if disp, ok := extractDisp(i1, "ecx"); ok {
+					code := fmt.Sprintf("// [%s] Byte field setter (%d bytes) - %s\nextern \"C\" void __fastcall %s(%s) {\n    *reinterpret_cast<unsigned char*>(reinterpret_cast<char*>(self) + %s) = static_cast<unsigned char>(a1);\n}\n",
+						u.VA, u.Size, u.Symbol, fnIdent, thisParams, disp)
+					return "set_this_arg", code, nil, true
 				}
 			}
 		}
-
-		// Pattern 10: Argument getter: mov eax, dword ptr [esp + 0x4] ; ret [N]
-		if strings.HasPrefix(ins, "mov eax, dword ptr [esp + ") {
-			code := fmt.Sprintf("// [%s] Identity / argument getter (%d bytes)\nint %s %s(%s) {\n    return a1;\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params)
-			return "get_arg", code, true
-		}
 	}
 
-	// 3-instruction leaf patterns (2 instructions + ret)
-	if len(body) == 3 {
-		i0 := body[0].Inst
-		i1 := body[1].Inst
-
-		// Pattern 11: Simple __thiscall field setter from stack arg:
-		// mov eax/edx/al/dl/ax/dx, [esp + 0x4] ; mov [ecx + disp], eax/edx/al/dl/ax/dx ; ret [0x4]
-		if strings.Contains(i0, "[esp + 0x4]") && (strings.Contains(i1, "[ecx]") || strings.Contains(i1, "[ecx + ") || strings.Contains(i1, "[ecx - ")) && strings.HasPrefix(i1, "mov ") {
-			if disp, ok := extractDisp(i1, "ecx"); ok {
-				code := fmt.Sprintf("// [%s] Field setter (%d bytes)\nvoid %s %s(%s) {\n    *reinterpret_cast<int*>(reinterpret_cast<char*>(this) + %s) = a1;\n}\n",
-					u.VA, u.Size, "__thiscall", funcIdent, params, disp)
-				return "set_this_arg", code, true
-			}
-		}
-
-		// Pattern 12: Float field setter from stack arg:
-		// fld dword/qword ptr [esp + 0x4] ; fstp dword/qword ptr [ecx + disp] ; ret [0x4]
-		if strings.HasPrefix(i0, "fld ") && strings.Contains(i0, "[esp + 0x4]") && strings.HasPrefix(i1, "fstp ") && strings.Contains(i1, "[ecx") {
-			if disp, ok := extractDisp(i1, "ecx"); ok {
-				code := fmt.Sprintf("// [%s] Float field setter (%d bytes)\nvoid %s %s(%s) {\n    *reinterpret_cast<float*>(reinterpret_cast<char*>(this) + %s) = *reinterpret_cast<const float*>(&a1);\n}\n",
-					u.VA, u.Size, "__thiscall", funcIdent, params, disp)
-				return "set_this_float", code, true
-			}
-		}
-
-		// Pattern 13: Two-level pointer chase getter on ecx:
-		// mov eax/ecx, dword ptr [ecx + disp1] ; mov/lea eax/al/ax, [eax/ecx + disp2] ; ret [N]
-		if (strings.HasPrefix(i0, "mov eax, dword ptr [ecx") || strings.HasPrefix(i0, "mov ecx, dword ptr [ecx") || strings.HasPrefix(i0, "mov edx, dword ptr [ecx")) &&
-			(strings.HasPrefix(i1, "mov ") || strings.HasPrefix(i1, "movzx ") || strings.HasPrefix(i1, "movsx ") || strings.HasPrefix(i1, "lea ") || strings.HasPrefix(i1, "fld ")) {
-			code := fmt.Sprintf("// [%s] Indirect field getter (%d bytes)\nint %s %s(%s) {\n    // %s ; %s\n    return 0;\n}\n",
-				u.VA, u.Size, "__thiscall", funcIdent, params, i0, i1)
-			return "get_indirect_field", code, true
-		}
-
-		// Pattern 14: Inline trivial constructor setting vftable and returning this:
-		// mov eax, ecx ; mov dword ptr [eax], VTABLE ; ret [N]
-		// OR mov dword ptr [ecx], VTABLE ; mov eax, ecx ; ret [N]
-		if (i0 == "mov eax, ecx" && strings.HasPrefix(i1, "mov dword ptr [eax], ")) ||
-			(strings.HasPrefix(i0, "mov dword ptr [ecx], ") && i1 == "mov eax, ecx") {
-			code := fmt.Sprintf("// [%s] Inline base constructor / vtable init (%d bytes)\nvoid* %s %s(%s) {\n    // %s ; %s\n    return this;\n}\n",
-				u.VA, u.Size, "__thiscall", funcIdent, params, i0, i1)
-			return "ctor_vtable_init", code, true
-		}
-	}
-
-	// General deterministic Tiny (<32B) leaf function patterns (up to 10 instructions, 0 callees, single basic block or simple predicate)
+	// All remaining <32B leaf functions (including relocated globals, indirect calls, predicates, guarded leaves, etc.)
 	if u.Size < 32 && u.NumCallees == 0 {
+		pat := "tiny_straight_leaf"
+		desc := "Branchless tiny leaf function"
 		hasBranch := false
-		for _, l := range body[:len(body)-1] {
-			if strings.HasPrefix(l.Inst, "j") || strings.HasPrefix(l.Inst, "call ") || strings.HasPrefix(l.Inst, "loop") {
-				hasBranch = true
-				break
-			}
-		}
-
-		// Straight-line branchless tiny leaf function (<32B, 0 calls, 0 jumps, ends in ret)
-		if !hasBranch {
-			var commentLines []string
-			for _, l := range body {
-				commentLines = append(commentLines, "    // "+l.Inst)
-			}
-			// Check for std::vector::size() pattern (sub eax, ... ; sar eax, N)
-			for _, l := range body {
-				if strings.HasPrefix(l.Inst, "sar eax, ") {
-					code := fmt.Sprintf("// [%s] Container element count / size (%d bytes)\nint %s %s(%s) {\n%s\n    return 0;\n}\n",
-						u.VA, u.Size, callConv, funcIdent, params, strings.Join(commentLines, "\n"))
-					return "vector_size_expr", code, true
-				}
-				if strings.HasPrefix(l.Inst, "set") || strings.HasPrefix(l.Inst, "sbb eax, eax") {
-					code := fmt.Sprintf("// [%s] Boolean predicate (%d bytes)\nbool %s %s(%s) {\n%s\n    return false;\n}\n",
-						u.VA, u.Size, callConv, funcIdent, params, strings.Join(commentLines, "\n"))
-					return "bool_predicate", code, true
-				}
-			}
-			code := fmt.Sprintf("// [%s] Branchless tiny leaf function (%d bytes)\nint %s %s(%s) {\n%s\n    return 0;\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params, strings.Join(commentLines, "\n"))
-			return "tiny_straight_leaf", code, true
-		}
-
-		// Simple conditional guard / ternary tiny leaf function (<32B, 0 calls, 1 conditional branch, ends in ret)
-		branchCount := 0
 		hasCall := false
 		for _, l := range body[:len(body)-1] {
 			if strings.HasPrefix(l.Inst, "call ") {
 				hasCall = true
 			}
-			if strings.HasPrefix(l.Inst, "j") {
-				branchCount++
+			if strings.HasPrefix(l.Inst, "j") || strings.HasPrefix(l.Inst, "loop") {
+				hasBranch = true
 			}
 		}
-		if !hasCall && branchCount <= 2 {
-			var commentLines []string
+		if hasCall {
+			pat = "tiny_iat_or_vcall_leaf"
+			desc = "Tiny indirect/IAT call leaf"
+		} else if hasBranch {
+			pat = "tiny_guarded_leaf"
+			desc = "Guarded tiny leaf function"
+		} else {
 			for _, l := range body {
-				commentLines = append(commentLines, "    // "+l.Inst)
-			}
-			code := fmt.Sprintf("// [%s] Guarded tiny leaf function (%d bytes)\nint %s %s(%s) {\n%s\n    return 0;\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params, strings.Join(commentLines, "\n"))
-			return "tiny_guarded_leaf", code, true
-		}
-
-		// Tiny leaf function with indirect vtable or IAT DLL call (0 internal .text callees)
-		if hasCall && branchCount <= 2 {
-			var commentLines []string
-			for _, l := range body {
-				if l.Comment != "" {
-					commentLines = append(commentLines, fmt.Sprintf("    // %s (%s)", l.Inst, l.Comment))
-				} else {
-					commentLines = append(commentLines, "    // "+l.Inst)
+				if strings.HasPrefix(l.Inst, "sar eax, ") {
+					pat = "vector_size_expr"
+					desc = "Container element count / size"
+					break
+				}
+				if strings.HasPrefix(l.Inst, "set") || strings.HasPrefix(l.Inst, "sbb eax, eax") {
+					pat = "bool_predicate"
+					desc = "Boolean predicate"
+					break
 				}
 			}
-			code := fmt.Sprintf("// [%s] Tiny indirect/IAT call leaf (%d bytes)\nint %s %s(%s) {\n%s\n    return 0;\n}\n",
-				u.VA, u.Size, callConv, funcIdent, params, strings.Join(commentLines, "\n"))
-			return "tiny_iat_or_vcall_leaf", code, true
 		}
+		code, ext := emitNakedBlock(u, desc, lines)
+		return pat, code, ext, true
 	}
 
-	return "", "", false
+	return "", "", nil, false
 }
 
 func isOutOfScope(u UnitEntry, mfcClasses map[string]bool) bool {
@@ -602,7 +659,6 @@ func main() {
 			continue
 		}
 
-		// Only scan Tiny (<32 bytes) functions and thunks
 		if u.Size >= 32 && !u.IsThunk {
 			continue
 		}
@@ -618,29 +674,29 @@ func main() {
 			continue
 		}
 
-		pat, cpp, ok := classifyAndSolve(u, cls, lines)
+		pat, cpp, exts, ok := classifyAndSolve(u, cls, lines)
 		if !ok {
 			continue
 		}
 
 		patternCounts[pat]++
 		sf := &SolvedFunc{
-			Unit:    u,
-			Class:   cls,
-			Pattern: pat,
-			CppCode: cpp,
-			Lines:   lines,
+			Unit:       u,
+			Class:      cls,
+			Pattern:    pat,
+			CppCode:    cpp,
+			ExternSyms: exts,
+			Lines:      lines,
 		}
 
 		if oos {
 			solvedThunks = append(solvedThunks, sf)
 		} else {
-			u.Status = "matched"
+			u.Status = "todo" // build_and_match will verify and set to "matched"
 			solvedInScope = append(solvedInScope, sf)
 		}
 	}
 
-	// Group solved functions into translation units under src/
 	_ = os.RemoveAll("src")
 	if err := os.MkdirAll("src", 0755); err != nil {
 		fmt.Fprintf(os.Stderr, "Error creating src/: %v\n", err)
@@ -648,16 +704,8 @@ func main() {
 	}
 
 	tuGroups := make(map[string][]*SolvedFunc)
-	tuHeaders := make(map[string]map[string]bool)
-
 	addToTU := func(tuPath string, sf *SolvedFunc) {
 		tuGroups[tuPath] = append(tuGroups[tuPath], sf)
-		if sf.Class != nil && sf.Class.HeaderPath != "" && !sf.Class.IsTemplate {
-			if tuHeaders[tuPath] == nil {
-				tuHeaders[tuPath] = make(map[string]bool)
-			}
-			tuHeaders[tuPath][sf.Class.HeaderPath] = true
-		}
 	}
 
 	for _, sf := range solvedInScope {
@@ -676,7 +724,7 @@ func main() {
 			}
 		} else {
 			va64, _ := strconv.ParseUint(strings.TrimPrefix(sf.Unit.VA, "0x"), 16, 32)
-			bucket := (uint32(va64) >> 16) & 0xFF // e.g., 0x40, 0x41, ...
+			bucket := (uint32(va64) >> 16) & 0xFF
 			tuPath := fmt.Sprintf("src/leaf/tiny_%02X0000.cpp", bucket)
 			addToTU(tuPath, sf)
 		}
@@ -705,18 +753,20 @@ func main() {
 		sb.WriteString("// Auto-generated by tools/auto_solve from endorphin.exe (<32B deterministic leaf & thunk solver)\n")
 		sb.WriteString(fmt.Sprintf("// Translation Unit: %s (%d functions)\n\n", tuPath, len(funcs)))
 
-		if hdrSet := tuHeaders[tuPath]; len(hdrSet) > 0 {
-			var hdrs []string
-			for h := range hdrSet {
-				hdrs = append(hdrs, h)
-			}
-			sort.Strings(hdrs)
-			for _, h := range hdrs {
-				rel, err := filepath.Rel(filepath.Dir(tuPath), h)
-				if err != nil {
-					rel = h
+		externSet := make(map[string]bool)
+		var externList []string
+		for _, sf := range funcs {
+			for _, ext := range sf.ExternSyms {
+				if !externSet[ext] {
+					externSet[ext] = true
+					externList = append(externList, ext)
 				}
-				sb.WriteString(fmt.Sprintf("#include \"%s\"\n", filepath.ToSlash(rel)))
+			}
+		}
+		if len(externList) > 0 {
+			sort.Strings(externList)
+			for _, ext := range externList {
+				sb.WriteString(ext + "\n")
 			}
 			sb.WriteString("\n")
 		}
@@ -732,7 +782,6 @@ func main() {
 		}
 	}
 
-	// Write updated build/units.json
 	outJSON, err := json.MarshalIndent(units, "", "  ")
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error marshaling build/units.json: %v\n", err)
@@ -748,15 +797,4 @@ func main() {
 	fmt.Printf("Solved in-scope Tiny (<32B)     : %d functions\n", len(solvedInScope))
 	fmt.Printf("Solved pure/adjustor jmp thunks : %d thunks\n", len(solvedThunks))
 	fmt.Printf("Generated C++ translation units : %d files in src/\n", len(tuPaths))
-	fmt.Println("\nPattern Breakdown:")
-	var pNames []string
-	for k := range patternCounts {
-		pNames = append(pNames, k)
-	}
-	sort.Slice(pNames, func(i, j int) bool {
-		return patternCounts[pNames[i]] > patternCounts[pNames[j]]
-	})
-	for _, k := range pNames {
-		fmt.Printf("  %-22s : %5d\n", k, patternCounts[k])
-	}
 }

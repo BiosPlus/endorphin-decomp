@@ -74,7 +74,7 @@ jobs:
 
   byte-match:
     name: MSVC 2005 Byte-for-Byte Parity Check
-    runs-on: ubuntu-slim
+    runs-on: windows-latest
     needs: verify-and-dashboard
     if: vars.ENABLE_MSVC_CI == 'true'
     steps:
@@ -88,28 +88,21 @@ jobs:
         with:
           go-version: "1.22"
 
-      - name: Install Wine and extraction tools
-        run: |
-          sudo dpkg --add-architecture i386
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends wine wine32 cabextract p7zip-full curl ca-certificates
-
-      - name: Download and set up MSVC8 compiler bundle
+      - name: Download and unpack MSVC8 compiler bundle
+        shell: pwsh
         env:
+          MSVC8_ZIP_URL: ${{ secrets.MSVC8_ZIP_URL }}
           MSVC8_BUNDLE_URL: ${{ secrets.MSVC8_BUNDLE_URL }}
         run: |
-          if [ -n "$MSVC8_BUNDLE_URL" ]; then
-            mkdir -p /tmp/msvc8_bundle
-            curl -fsSL "$MSVC8_BUNDLE_URL" -o /tmp/msvc8_bundle/msvc8.tar.zst || curl -fsSL "$MSVC8_BUNDLE_URL" -o /tmp/msvc8_bundle/msvc8.iso
-            if [ -f /tmp/msvc8_bundle/msvc8.tar.zst ]; then
-              mkdir -p .local/msvc8
-              tar -I zstd -xf /tmp/msvc8_bundle/msvc8.tar.zst -C .local/msvc8
-              ./tools/setup_msvc8.sh .local/msvc8
-            else
-              ./tools/setup_msvc8.sh /tmp/msvc8_bundle/msvc8.iso
-            fi
-          fi
+          $url = if ($env:MSVC8_ZIP_URL) { $env:MSVC8_ZIP_URL } else { $env:MSVC8_BUNDLE_URL }
+          if (-not $url) {
+            Write-Error "Missing MSVC8_ZIP_URL secret."
+            exit 1
+          }
+          New-Item -ItemType Directory -Force -Path .local/msvc8 | Out-Null
+          Invoke-WebRequest -Uri $url -OutFile .local/msvc8.zip
+          Expand-Archive -Path .local/msvc8.zip -DestinationPath .local/msvc8 -Force
 
       - name: Run build_and_match against modified units in src/
         run: |
-          go run ./tools/build_and_match -modified
+          go run ./tools/build_and_match -require-compiler -modified

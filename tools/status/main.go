@@ -293,9 +293,51 @@ func renderHTMLDashboard(
 	return sb.String()
 }
 
+func renderReadme(
+	totalClasses, inScopeClasses, mfcClasses int,
+	totalFuncs int, totalBytes uint64,
+	outOfScopeFuncs, outThunkFuncs, outCRTMFCFuncs int,
+	outOfScopeBytes, outThunkBytes, outCRTMFCBytes uint64,
+	inScopeFuncs, inScopeMatchedFuncs int,
+	inScopeBytes, inScopeMatchedBytes uint64,
+	tiers []*TierStats,
+) string {
+	var sb strings.Builder
+	funcPct := pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs))
+	bytePct := pct(inScopeMatchedBytes, inScopeBytes)
+
+	sb.WriteString("# Endorphin 2.7.1 Decompilation Project\n\n")
+	sb.WriteString("A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endorphin.exe`), compiled with **MSVC 2005 RTM (14.00.50727.42)** for x86.\n\n")
+	sb.WriteString("## Verified Byte-Match Scoreboard\n\n")
+	sb.WriteString(fmt.Sprintf("- **In-Scope Functions Matched:** `%d / %d` (**%.2f%%**)\n", inScopeMatchedFuncs, inScopeFuncs, funcPct))
+	sb.WriteString(fmt.Sprintf("- **In-Scope Code Bytes Matched:** `%d / %d bytes` (**%.2f%%** of %.2f MB)\n", inScopeMatchedBytes, inScopeBytes, bytePct, float64(inScopeBytes)/(1024.0*1024.0)))
+	sb.WriteString(fmt.Sprintf("- **RTTI Classes Extracted:** `%d` total (`%d` in-scope application/engine classes, `%d` MFC/ATL/std classes)\n", totalClasses, inScopeClasses, mfcClasses))
+	sb.WriteString(fmt.Sprintf("- **Out-of-Scope Boilerplate:** `%d` units (`%d` jump/adjustor thunks, `%d` CRT/MFC/SEH funclets)\n\n", outOfScopeFuncs, outThunkFuncs, outCRTMFCFuncs))
+
+	sb.WriteString("### Progress by Function Size Tier\n\n")
+	sb.WriteString("| Size Tier | Matched / Total Funcs | Func % | Matched / Total Bytes | Byte % | Remaining |\n")
+	sb.WriteString("| :--- | ---: | ---: | ---: | ---: | ---: |\n")
+	for _, t := range tiers {
+		fPct := pct(uint64(t.MatchedFuncs), uint64(t.TotalFuncs))
+		bPct := pct(t.MatchedBytes, t.TotalBytes)
+		sb.WriteString(fmt.Sprintf("| **%s** | %d / %d | %.2f%% | %d / %d | %.2f%% | %d fn |\n",
+			t.ShortName, t.MatchedFuncs, t.TotalFuncs, fPct, t.MatchedBytes, t.TotalBytes, bPct, t.RemainFuncs))
+	}
+
+	sb.WriteString("\n## Tooling & Workflow\n\n")
+	sb.WriteString("- `go run ./tools/build_and_match`: Compiles all translation units in `src/` with MSVC 2005 (`cl.exe`), masks 32-bit COFF relocations, and verifies 100% byte-for-byte parity against `.local/bin/endorphin.exe`.\n")
+	sb.WriteString("- `go run ./tools/worker next -n 20`: Displays the next 20 smallest unmatched leaf functions (`num_callees == 0`) along with their disassembly and RTTI class header context.\n")
+	sb.WriteString("- `go run ./tools/status -update`: Updates `README.md` and `docs/index.html` with the latest verified byte-match metrics.\n")
+	return sb.String()
+}
+
 func main() {
 	htmlOut := flag.String("html", "", "Optional path to write HTML dashboard (e.g. docs/index.html)")
+	updateAll := flag.Bool("update", false, "Update both README.md and docs/index.html with verified byte-match counts")
 	flag.Parse()
+	if *updateAll && *htmlOut == "" {
+		*htmlOut = filepath.Join("docs", "index.html")
+	}
 
 	unitsBytes, err := os.ReadFile("build/units.json")
 	if err != nil {
@@ -446,5 +488,22 @@ func main() {
 			fmt.Fprintf(os.Stderr, "Error writing %s: %v\n", *htmlOut, err)
 			os.Exit(1)
 		}
+	}
+
+	if *updateAll {
+		readme := renderReadme(
+			len(classes), inScopeClassCount, mfcClassCount,
+			totalFuncs, totalBytes,
+			outOfScopeFuncs, outThunkFuncs, outCRTMFCFuncs,
+			outOfScopeBytes, outThunkBytes, outCRTMFCBytes,
+			inScopeFuncs, inScopeMatchedFuncs,
+			inScopeBytes, inScopeMatchedBytes,
+			tiers,
+		)
+		if err := os.WriteFile("README.md", []byte(readme), 0644); err != nil {
+			fmt.Fprintf(os.Stderr, "Error writing README.md: %v\n", err)
+			os.Exit(1)
+		}
+		fmt.Printf("Updated README.md and %s\n", *htmlOut)
 	}
 }

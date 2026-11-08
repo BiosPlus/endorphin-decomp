@@ -6,6 +6,7 @@
 *.lib
 *.pdb
 *.idb
+*.iso
 *.gpr
 *.rep/
 dump/
