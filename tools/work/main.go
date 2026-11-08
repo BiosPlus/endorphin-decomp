@@ -273,23 +273,49 @@ func saveUnits(units []UnitEntry) error {
 	return os.WriteFile("build/units.json", append(out, '\n'), 0644)
 }
 
+func sizeTier(size uint32) int {
+	switch {
+	case size < 32:
+		return 0 // Tiny (<32B)
+	case size <= 256:
+		return 1 // Small (32-256B)
+	case size <= 512:
+		return 2 // Medium (257-512B)
+	default:
+		return 3 // Large (>512B)
+	}
+}
+
 func cmdNext(args []string) {
 	fs := flag.NewFlagSet("work next", flag.ExitOnError)
-	nFlag := fs.Int("n", 1, "Number of next ready leaf functions to display")
-	maxSize := fs.Int("max-size", 256, "Maximum function byte size (default 256 for Haiku Tiny/Small tier)")
-	tierFlag := fs.String("tier", "small", "Function size tier filter (tiny, small, all)")
+	nFlag := fs.Int("n", 1, "Number of next ready functions to display")
+	maxSize := fs.Int("max-size", 256, "Maximum function byte size (default 256; Tiny <32B are always prioritized first)")
+	tierFlag := fs.String("tier", "", "Function size tier filter (tiny [<32B], small [<=256B], medium [<=512B], all)")
+	peekFlag := fs.Bool("peek", false, "Peek at next function(s) without creating stub in src/")
 	_ = fs.Parse(args)
 
 	maxBytes := uint32(*maxSize)
-	if strings.EqualFold(*tierFlag, "tiny") && *maxSize == 256 {
-		maxBytes = 32
-	} else if strings.EqualFold(*tierFlag, "all") && *maxSize == 256 {
-		maxBytes = 0xFFFFFFFF
+	switch strings.ToLower(strings.TrimSpace(*tierFlag)) {
+	case "tiny":
+		maxBytes = 31
+	case "small":
+		if *maxSize == 256 {
+			maxBytes = 256
+		}
+	case "medium":
+		if *maxSize == 256 {
+			maxBytes = 512
+		}
+	case "all":
+		if *maxSize == 256 {
+			maxBytes = 0xFFFFFFFF
+		}
 	}
 
 	units, unitIdxByVA, _, classByName, mfcClasses := loadUnitsAndClasses()
 
 	var ready []UnitEntry
+	calleesReady := make(map[string]bool)
 	for _, u := range units {
 		if u.Size > maxBytes {
 			continue
@@ -311,17 +337,24 @@ func cmdNext(args []string) {
 				}
 			}
 		}
-		if allCalleesReady {
-			ready = append(ready, u)
-		}
+		calleesReady[u.VA] = allCalleesReady
+		ready = append(ready, u)
 	}
 
 	sort.Slice(ready, func(i, j int) bool {
-		if ready[i].NumCallees != ready[j].NumCallees {
-			return ready[i].NumCallees < ready[j].NumCallees
+		ti, tj := sizeTier(ready[i].Size), sizeTier(ready[j].Size)
+		if ti != tj {
+			return ti < tj
 		}
 		if ready[i].Size != ready[j].Size {
 			return ready[i].Size < ready[j].Size
+		}
+		if ready[i].NumCallees != ready[j].NumCallees {
+			return ready[i].NumCallees < ready[j].NumCallees
+		}
+		ri, rj := calleesReady[ready[i].VA], calleesReady[ready[j].VA]
+		if ri != rj {
+			return ri && !rj
 		}
 		return ready[i].VA < ready[j].VA
 	})
@@ -346,18 +379,20 @@ func cmdNext(args []string) {
 		stubAdded := false
 		if cppPath == "" {
 			cppPath = defaultCppFileForUnit(u, cls)
-			_ = os.MkdirAll(filepath.Dir(cppPath), 0755)
-			if _, err := os.Stat(cppPath); os.IsNotExist(err) {
-				header := fmt.Sprintf("// Decompiled translation unit: %s\n", cppPath)
-				_ = os.WriteFile(cppPath, []byte(header), 0644)
-			}
-			stub := fmt.Sprintf("\n// [%s] %s (%d bytes)\nextern \"C\" void __fastcall fn_%s(void* self) {\n    // TODO: implement\n}\n",
-				u.VA, u.Symbol, u.Size, strings.TrimPrefix(u.VA, "0x"))
-			f, err := os.OpenFile(cppPath, os.O_APPEND|os.O_WRONLY, 0644)
-			if err == nil {
-				_, _ = f.WriteString(stub)
-				_ = f.Close()
-				stubAdded = true
+			if !*peekFlag {
+				_ = os.MkdirAll(filepath.Dir(cppPath), 0755)
+				if _, err := os.Stat(cppPath); os.IsNotExist(err) {
+					header := fmt.Sprintf("// Decompiled translation unit: %s\n", cppPath)
+					_ = os.WriteFile(cppPath, []byte(header), 0644)
+				}
+				stub := fmt.Sprintf("\n// [%s] %s (%d bytes)\nextern \"C\" void __fastcall fn_%s(void* self) {\n    // TODO: implement\n}\n",
+					u.VA, u.Symbol, u.Size, strings.TrimPrefix(u.VA, "0x"))
+				f, err := os.OpenFile(cppPath, os.O_APPEND|os.O_WRONLY, 0644)
+				if err == nil {
+					_, _ = f.WriteString(stub)
+					_ = f.Close()
+					stubAdded = true
+				}
 			}
 		}
 

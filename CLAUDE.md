@@ -4,7 +4,7 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
 
 ## Strict Worker Loop
 
-1. **Claim next leaf function (`size <= 256`):**
+1. **Claim next function (Tiny `<32B` prioritized first, then Small `32-256B`):**
    ```bash
    go run ./tools/work next
    ```

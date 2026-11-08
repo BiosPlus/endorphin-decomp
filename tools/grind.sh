@@ -29,10 +29,10 @@ fi
 
 # Pick the best available runner based on target function byte size
 select_runner() {
-  local byte_size="${1:-64}"
+  local byte_size="${1:-16}"
 
-  # Tier 1: Tiny/Small functions (<= 160 bytes) -> Prefer Haiku first, then Gemini Flash, then Sonnet
-  if (( byte_size <= 160 )); then
+  # Tier 0: Tiny functions (< 32 bytes) -> Always prefer Haiku first, then Gemini Flash, then Sonnet
+  if (( byte_size < 32 )); then
     if [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_HAIKU -eq 0 ]]; then
       echo "claude-haiku"
       return
@@ -41,6 +41,23 @@ select_runner() {
       return
     elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_SONNET -eq 0 ]]; then
       echo "claude-sonnet"
+      return
+    fi
+  fi
+
+  # Tier 1: Small functions (32 - 256 bytes) -> Prefer Haiku (<= 160B), then Gemini Flash, then Sonnet
+  if (( byte_size <= 256 )); then
+    if (( byte_size <= 160 )) && [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_HAIKU -eq 0 ]]; then
+      echo "claude-haiku"
+      return
+    elif [[ $HAS_AGY -eq 1 && $EXHAUSTED_AGY -eq 0 ]]; then
+      echo "gemini-3.8-flash"
+      return
+    elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_SONNET -eq 0 ]]; then
+      echo "claude-sonnet"
+      return
+    elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_HAIKU -eq 0 ]]; then
+      echo "claude-haiku"
       return
     fi
   fi
@@ -123,10 +140,24 @@ run_agent_batch() {
 }
 
 for (( batch=1; batch<=MAX_BATCHES; batch++ )); do
-  # Peek at the next function size from tools/work (fallback to 128 if flag isn't added yet)
+  # Peek at the next function size from tools/work without creating a stub
   NEXT_INFO="$(go run ./tools/work next --peek 2>/dev/null || true)"
   NEXT_SIZE="$(echo "$NEXT_INFO" | grep -oE 'Size: [0-9]+' | awk '{print $2}' | head -n 1)"
-  NEXT_SIZE="${NEXT_SIZE:-96}"
+  NEXT_SIZE="${NEXT_SIZE:-16}"
+
+  if (( NEXT_SIZE < 32 )); then
+    BATCH_MAX_SIZE="31"
+    TIER_LABEL="Tiny (<32B)"
+  elif (( NEXT_SIZE <= 256 )); then
+    BATCH_MAX_SIZE="256"
+    TIER_LABEL="Small (32-256B)"
+  elif (( NEXT_SIZE <= 512 )); then
+    BATCH_MAX_SIZE="512"
+    TIER_LABEL="Medium (257-512B)"
+  else
+    BATCH_MAX_SIZE="65535"
+    TIER_LABEL="Large (>512B)"
+  fi
 
   RUNNER="$(select_runner "$NEXT_SIZE")"
   if [[ "$RUNNER" == "none" ]]; then
@@ -136,10 +167,10 @@ for (( batch=1; batch<=MAX_BATCHES; batch++ )); do
 
   echo ""
   echo "=================================================================="
-  echo "[Batch $batch / $MAX_BATCHES] Next fn ~${NEXT_SIZE}B -> Routing to: $RUNNER"
+  echo "[Batch $batch / $MAX_BATCHES] Next fn ~${NEXT_SIZE}B [${TIER_LABEL}] -> Routing to: $RUNNER (max-size ${BATCH_MAX_SIZE}B)"
   echo "=================================================================="
 
-  run_agent_batch "$RUNNER" "256"
+  run_agent_batch "$RUNNER" "$BATCH_MAX_SIZE"
   STATUS=$?
 
   if [[ $STATUS -eq 42 ]]; then

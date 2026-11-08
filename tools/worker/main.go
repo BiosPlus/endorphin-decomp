@@ -134,10 +134,10 @@ func main() {
 
 	var candidates []UnitEntry
 	for _, u := range units {
-		if isOutOfScope(u, mfcClasses) || isCompleted(u.Status) {
+		if isOutOfScope(u, mfcClasses) || isCompleted(u.Status) || u.Status == "deferred" || u.Status == "skipped" {
 			continue
 		}
-		if u.NumCallees == 0 && isValidCodeUnit(u.VA) {
+		if isValidCodeUnit(u.VA) {
 			candidates = append(candidates, u)
 		}
 	}
@@ -145,6 +145,9 @@ func main() {
 	sort.Slice(candidates, func(i, j int) bool {
 		if candidates[i].Size != candidates[j].Size {
 			return candidates[i].Size < candidates[j].Size
+		}
+		if candidates[i].NumCallees != candidates[j].NumCallees {
+			return candidates[i].NumCallees < candidates[j].NumCallees
 		}
 		return candidates[i].VA < candidates[j].VA
 	})
