@@ -10,3 +10,15 @@ extern "C" __declspec(naked) void __fastcall fn_004AEC60(void* self) {
         __asm _emit 0xFF __asm _emit 0xE2 // jmp edx
     }
 }
+
+// [0x004A2510] sub_004A2510 (17 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004A2510(void* self) {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x41 __asm _emit 0x14 // mov eax, dword ptr [ecx + 0x14]
+        __asm _emit 0xC6 __asm _emit 0x40 __asm _emit 0x04 __asm _emit 0x01 // mov byte ptr [eax + 0x4], 0x1
+        __asm _emit 0x8B __asm _emit 0x49 __asm _emit 0x1C // mov ecx, dword ptr [ecx + 0x1c]
+        __asm _emit 0x8B __asm _emit 0x11 // mov edx, dword ptr [ecx]
+        __asm _emit 0x8B __asm _emit 0x42 __asm _emit 0x04 // mov eax, dword ptr [edx + 0x4]
+        __asm _emit 0xFF __asm _emit 0xE0 // jmp eax
+    }
+}
