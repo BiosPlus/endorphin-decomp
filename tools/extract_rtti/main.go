@@ -847,7 +847,7 @@ func main() {
 			sb.WriteString("\n")
 		}
 
-		sb.WriteString(fmt.Sprintf("template <typename... Args>\n%s %s;\n\n", grp[0].Kind, tmplName))
+		sb.WriteString(fmt.Sprintf("template <typename T1 = void, typename T2 = void, typename T3 = void, typename T4 = void>\n%s %s;\n\n", grp[0].Kind, tmplName))
 		sb.WriteString(fmt.Sprintf("// Instantiations (%d):\n", len(grp)))
 		for _, inst := range grp {
 			sb.WriteString(fmt.Sprintf("// - %s\n", inst.DemangledName))

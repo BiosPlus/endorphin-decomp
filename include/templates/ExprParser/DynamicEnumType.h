@@ -3,7 +3,7 @@
 
 namespace ExprParser {
 
-template <typename... Args>
+template <typename T1 = void, typename T2 = void, typename T3 = void, typename T4 = void>
 class DynamicEnumType;
 
 // Instantiations (8):

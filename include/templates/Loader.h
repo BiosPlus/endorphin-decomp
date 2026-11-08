@@ -1,7 +1,7 @@
 #pragma once
 // Auto-generated template instantiations by tools/extract_rtti from endorphin.exe RTTI
 
-template <typename... Args>
+template <typename T1 = void, typename T2 = void, typename T3 = void, typename T4 = void>
 class Loader;
 
 // Instantiations (2):

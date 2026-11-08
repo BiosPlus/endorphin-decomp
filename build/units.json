@@ -66637,7 +66637,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched"
   },
   {
     "va": "0x0046FAC0",
@@ -104673,7 +104673,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched"
   },
   {
     "va": "0x004AEC70",

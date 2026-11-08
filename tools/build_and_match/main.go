@@ -45,6 +45,7 @@ type UnitEntry struct {
 	IsThunk     bool     `json:"is_thunk"`
 	Relocations []string `json:"relocations"`
 	Status      string   `json:"status"`
+	SkipReason  string   `json:"skip_reason,omitempty"`
 }
 
 type ObjFunc struct {
