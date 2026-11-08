@@ -49171,7 +49171,9 @@
       "0x00455AE0",
       "0x00455AE8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x00455AF0",
