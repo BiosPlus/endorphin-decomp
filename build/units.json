@@ -236529,7 +236529,9 @@
       "0x00587F85",
       "0x00587F8D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "gemini-3.8-flash",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x00587FA0",
