@@ -47,3 +47,18 @@ extern "C" __declspec(naked) void __fastcall fn_00540D00(void* self) {
         jmp edx
     }
 }
+
+// [0x005434C0] sub_005434C0 (25 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005434C0(void* self) {
+    __asm {
+        cmp dword ptr [ecx + 0x88], 0
+        jne forward
+        mov al, 1
+        ret
+    forward:
+        mov ecx, dword ptr [ecx + 0x88]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x20]
+        jmp edx
+    }
+}
