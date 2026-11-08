@@ -19,14 +19,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  windows-byte-match:
-    name: MSVC 2005 Byte-for-Byte Parity Check
+  windows-ci:
+    name: MSVC 2005 Parity & Dashboard (`windows-latest`)
     runs-on: windows-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Legal safety gate (forbid .exe, .dll, .obj, docs/, or .local/ in Git)
+        shell: pwsh
+        run: |
+          $forbidden = git ls-files | Select-String -Pattern '(^\.local/|^docs/|\.(exe|dll|obj|lib|pdb|idb)$)'
+          if ($forbidden) {
+            Write-Error "Forbidden binary, .local/, or docs/ files tracked in Git:`n$forbidden"
+            exit 1
+          }
+          Write-Host "Legal safety check passed: 0 forbidden files tracked."
 
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -66,10 +79,14 @@ jobs:
             gh release download --repo encounter/objdiff --pattern "objdiff-cli-windows-x86_64.exe" --output ".local/bin/objdiff-cli.exe" --clobber
           }
 
-      - name: Run build_and_match across all translation units
+      - name: Verify all matched functions in src/ against build/units.json
         shell: pwsh
         run: |
           $output = go run ./tools/build_and_match -all -require-compiler
+          if ($LASTEXITCODE -ne 0) {
+            Write-Error "build_and_match failed"
+            exit $LASTEXITCODE
+          }
           Write-Host $output
           @(
             "## MSVC 2005 Byte-for-Byte Verification (`windows-latest`)"
@@ -77,50 +94,14 @@ jobs:
             '```text'
             $output
             '```'
+            ""
           ) | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8
 
-  dashboard-and-pages:
-    name: Verify Repo Safety, Tooling & Publish Dashboard
-    runs-on: ubuntu-slim
-    needs: [windows-byte-match]
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Legal safety gate (forbid .exe, .dll, .obj, or .local/ in Git)
+      - name: Append decompilation scoreboard to step summary and generate HTML dashboard
+        shell: pwsh
         run: |
-          FORBIDDEN=$(git ls-files | grep -E '(^\.local/|\.(exe|dll|obj|lib|pdb|idb)$)' || true)
-          if [ -n "$FORBIDDEN" ]; then
-            echo "::error::Forbidden proprietary binary or .local/ files tracked in Git:"
-            echo "$FORBIDDEN"
-            exit 1
-          fi
-          echo "Legal safety check passed: 0 forbidden files tracked."
-
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: "1.22"
-
-      - name: Compile all CLI tools under tools/
-        run: |
-          mkdir -p /tmp/endorphin-tools
-          go build -v -o /tmp/endorphin-tools/ ./tools/...
-          go build ./tools/...
-          git clean -fd
-
-      - name: Generate decompilation scoreboard & HTML dashboard
-        run: |
-          mkdir -p docs
-          {
-            echo "## Endorphin 2.7.1 Decompilation Scoreboard"
-            echo '```text'
-            go run ./tools/status -html docs/index.html
-            echo '```'
-          } | tee -a "$GITHUB_STEP_SUMMARY"
+          go run ./tools/status -ci | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8
+          go run ./tools/status -html docs/index.html
 
       - name: Upload GitHub Pages artifact
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

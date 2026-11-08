@@ -179706,7 +179706,8 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "register allocation order eax vs edx"
   },
   {
     "va": "0x0051DE50",
@@ -180749,7 +180750,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched"
   },
   {
     "va": "0x0051F9E0",

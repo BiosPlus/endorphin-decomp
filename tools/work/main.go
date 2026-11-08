@@ -141,6 +141,38 @@ func isValidCodeUnit(va string) bool {
 	return strings.Contains(lastInst, "\tret") || strings.Contains(lastInst, "\tjmp")
 }
 
+func inferCallingConvention(va string) string {
+	cachePath := filepath.Join(".local", "cache", "funcs", va+".txt")
+	b, err := os.ReadFile(cachePath)
+	if err != nil {
+		return "__fastcall / __cdecl"
+	}
+	s := string(b)
+	var retImm string
+	lines := strings.Split(strings.TrimSpace(s), "\n")
+	for i := len(lines) - 1; i >= 0; i-- {
+		l := strings.TrimSpace(lines[i])
+		if idx := strings.Index(l, "\tret\t"); idx != -1 {
+			retImm = strings.TrimSpace(l[idx+5:])
+			break
+		} else if strings.HasSuffix(l, "\tret") {
+			retImm = "0"
+			break
+		}
+	}
+	usesECX := strings.Contains(s, "ecx")
+	if retImm != "" && retImm != "0" {
+		if usesECX {
+			return fmt.Sprintf("__thiscall (ret %s -> use __fastcall with self in ecx, dummy edx, plus %s bytes of stack args)", retImm, retImm)
+		}
+		return fmt.Sprintf("__stdcall / __thiscall (ret %s)", retImm)
+	}
+	if usesECX {
+		return "__thiscall / __fastcall (ret 0 -> use extern \"C\" ... __fastcall fn_XXXX(Class* self))"
+	}
+	return "__cdecl (ret 0 -> use extern \"C\" ... __cdecl fn_XXXX(...))"
+}
+
 func sanitizeFilename(s string) string {
 	r := strings.NewReplacer("::", "_", "<", "_", ">", "_", " ", "_", "*", "ptr", "&", "ref", ",", "_", "/", "_")
 	return r.Replace(s)
@@ -241,17 +273,24 @@ func saveUnits(units []UnitEntry) error {
 func cmdNext(args []string) {
 	fs := flag.NewFlagSet("work next", flag.ExitOnError)
 	nFlag := fs.Int("n", 1, "Number of next ready leaf functions to display")
+	maxSize := fs.Int("max-size", 256, "Maximum function byte size (default 256 for Haiku Tiny/Small tier)")
+	tierFlag := fs.String("tier", "small", "Function size tier filter (tiny, small, all)")
 	_ = fs.Parse(args)
+
+	maxBytes := uint32(*maxSize)
+	if strings.EqualFold(*tierFlag, "tiny") && *maxSize == 256 {
+		maxBytes = 32
+	} else if strings.EqualFold(*tierFlag, "all") && *maxSize == 256 {
+		maxBytes = 0xFFFFFFFF
+	}
 
 	units, unitIdxByVA, _, classByName, mfcClasses := loadUnitsAndClasses()
 
-	type candidate struct {
-		unit           UnitEntry
-		unmatchedCalls int
-	}
-
 	var ready []UnitEntry
 	for _, u := range units {
+		if u.Size > maxBytes {
+			continue
+		}
 		if isCompletedOrOutOfScope(u, mfcClasses) || u.Status == "deferred" || u.Status == "skipped" {
 			continue
 		}
@@ -289,7 +328,7 @@ func cmdNext(args []string) {
 		limit = len(ready)
 	}
 	if limit == 0 {
-		fmt.Println("No unmatched ready functions remaining in queue!")
+		fmt.Printf("No unmatched ready functions (size <= %d) remaining in queue!\n", maxBytes)
 		return
 	}
 
@@ -301,88 +340,66 @@ func cmdNext(args []string) {
 		}
 
 		cppPath := findCppFileForVA(u.VA)
-		isNewFile := false
+		stubAdded := false
 		if cppPath == "" {
 			cppPath = defaultCppFileForUnit(u, cls)
+			_ = os.MkdirAll(filepath.Dir(cppPath), 0755)
 			if _, err := os.Stat(cppPath); os.IsNotExist(err) {
-				isNewFile = true
-				_ = os.MkdirAll(filepath.Dir(cppPath), 0755)
-				header := fmt.Sprintf("// Decompiled translation unit: %s\n\n", cppPath)
+				header := fmt.Sprintf("// Decompiled translation unit: %s\n", cppPath)
 				_ = os.WriteFile(cppPath, []byte(header), 0644)
 			}
-		}
-
-		fmt.Println("================================================================================")
-		fmt.Printf("WORK ITEM [%d/%d] | %s | %s | %d bytes\n", i+1, limit, u.VA, u.Symbol, u.Size)
-		fmt.Println("================================================================================")
-		fmt.Printf("Target C++ File : %s", cppPath)
-		if isNewFile {
-			fmt.Printf(" (created)")
-		}
-		fmt.Println()
-		fmt.Printf("Symbol Convention: extern \"C\" ... fn_%s(...)  (accompanied by comment // [%s])\n",
-			strings.TrimPrefix(u.VA, "0x"), u.VA)
-
-		if len(u.Callees) > 0 {
-			var calleeDescs []string
-			for _, cva := range u.Callees {
-				norm := "0x" + strings.ToUpper(strings.TrimPrefix(cva, "0x"))
-				if cIdx, ok := unitIdxByVA[norm]; ok {
-					cu := units[cIdx]
-					calleeDescs = append(calleeDescs, fmt.Sprintf("%s (%s, %s)", cu.VA, cu.Symbol, cu.Status))
-				} else {
-					calleeDescs = append(calleeDescs, cva)
-				}
+			stub := fmt.Sprintf("\n// [%s] %s (%d bytes)\nextern \"C\" void __fastcall fn_%s(void* self) {\n    // TODO: implement\n}\n",
+				u.VA, u.Symbol, u.Size, strings.TrimPrefix(u.VA, "0x"))
+			f, err := os.OpenFile(cppPath, os.O_APPEND|os.O_WRONLY, 0644)
+			if err == nil {
+				_, _ = f.WriteString(stub)
+				_ = f.Close()
+				stubAdded = true
 			}
-			fmt.Printf("Callees (%d)     : %s\n", len(u.Callees), strings.Join(calleeDescs, ", "))
-		} else {
-			fmt.Printf("Callees (0)     : Pure leaf function (no direct calls)\n")
 		}
 
-		if len(u.Relocations) > 0 {
-			fmt.Printf("Relocations (%d) : %s\n", len(u.Relocations), strings.Join(u.Relocations, ", "))
+		fmt.Printf("FUNCTION: %s | Symbol: %s | Size: %d bytes\n", u.VA, u.Symbol, u.Size)
+		fmt.Printf("CALLING_CONV: %s\n", inferCallingConvention(u.VA))
+		if stubAdded {
+			fmt.Printf("TARGET_CPP: %s (stub fn_%s created)\n", cppPath, strings.TrimPrefix(u.VA, "0x"))
+		} else {
+			fmt.Printf("TARGET_CPP: %s (fn_%s)\n", cppPath, strings.TrimPrefix(u.VA, "0x"))
 		}
 
 		if cls != nil {
-			fmt.Println("--------------------------------------------------------------------------------")
-			fmt.Printf("Class Context   : %s (Header: %s | VTable: %s | %d vfuncs)\n",
-				cls.DemangledName, cls.HeaderPath, cls.VTableVA, len(cls.VirtualMethods))
-			if len(cls.BaseClasses) > 0 {
-				var bases []string
-				for _, bc := range cls.BaseClasses {
-					bases = append(bases, fmt.Sprintf("%s (+0x%X)", bc.DemangledName, bc.Offset))
-				}
-				fmt.Printf("Inheritance     : %s\n", strings.Join(bases, " -> "))
+			var bases []string
+			for _, bc := range cls.BaseClasses {
+				bases = append(bases, fmt.Sprintf("%s(+0x%X)", bc.DemangledName, bc.Offset))
 			}
-			if cls.HeaderPath != "" {
-				if hdrBytes, err := os.ReadFile(cls.HeaderPath); err == nil {
-					fmt.Println()
-					lines := strings.Split(strings.TrimSpace(string(hdrBytes)), "\n")
-					if len(lines) > 35 {
-						lines = append(lines[:35], "    // ... (truncated) ...", "};")
-					}
-					for _, l := range lines {
-						fmt.Println(l)
-					}
-				}
+			baseStr := "none"
+			if len(bases) > 0 {
+				baseStr = strings.Join(bases, ", ")
 			}
+			fmt.Printf("CLASS_INFO: %s | VTable: %s (%d vfuncs) | Header: %s | Bases: %s\n",
+				cls.DemangledName, cls.VTableVA, len(cls.VirtualMethods), cls.HeaderPath, baseStr)
 		}
 
-		fmt.Println("--------------------------------------------------------------------------------")
-		fmt.Printf("Target Disassembly (.local/cache/funcs/%s.txt):\n", u.VA)
-		fmt.Println("--------------------------------------------------------------------------------")
+		if len(u.Callees) > 0 {
+			fmt.Printf("CALLEES: %s\n", strings.Join(u.Callees, ", "))
+		}
+		if len(u.Relocations) > 0 {
+			fmt.Printf("RELOCS: %s\n", strings.Join(u.Relocations, ", "))
+		}
+
+		fmt.Println("TARGET_ASM:")
 		cachePath := filepath.Join(".local", "cache", "funcs", u.VA+".txt")
 		if b, err := os.ReadFile(cachePath); err == nil {
-			fmt.Print(string(b))
-		} else {
-			fmt.Printf("  (Disassembly cache not found at %s)\n", cachePath)
+			for _, line := range strings.Split(strings.TrimSpace(string(b)), "\n") {
+				if strings.HasPrefix(strings.TrimSpace(line), "//") {
+					continue
+				}
+				fmt.Println(line)
+			}
 		}
-		fmt.Println("--------------------------------------------------------------------------------")
-		fmt.Printf("Next step: Implement fn_%s in %s, then run:\n", strings.TrimPrefix(u.VA, "0x"), cppPath)
-		fmt.Printf("  go run ./tools/work check %s\n", u.VA)
-		fmt.Printf("If stuck after 15 attempts, defer with:\n")
-		fmt.Printf("  go run ./tools/work skip %s \"<reason>\"\n", u.VA)
-		fmt.Println("================================================================================")
+		fmt.Printf("VERIFY_CMD: go run ./tools/work check %s  |  SKIP_CMD: go run ./tools/work skip %s \"reason\"\n", u.VA, u.VA)
+		if i+1 < limit {
+			fmt.Println("---")
+		}
 	}
 }
 
@@ -397,6 +414,23 @@ func findMSVCClExe() string {
 		}
 	}
 	return ""
+}
+
+func filterClOutput(raw string) string {
+	var errs []string
+	for _, line := range strings.Split(raw, "\n") {
+		l := strings.TrimSpace(line)
+		if l == "" {
+			continue
+		}
+		if strings.Contains(l, ": error ") || strings.Contains(l, ": fatal error ") {
+			errs = append(errs, l)
+		}
+	}
+	if len(errs) > 0 {
+		return strings.Join(errs, "\n")
+	}
+	return strings.TrimSpace(raw)
 }
 
 func compileCppToObj(cppPath string) (string, func(), error) {
@@ -452,7 +486,7 @@ func compileCppToObj(cppPath string) (string, func(), error) {
 	out, err := cmd.CombinedOutput()
 	if err != nil {
 		cleanup()
-		return "", func() {}, fmt.Errorf("%s", strings.TrimSpace(string(out)))
+		return "", func() {}, fmt.Errorf("%s", filterClOutput(string(out)))
 	}
 	return objPath, cleanup, nil
 }
@@ -563,7 +597,6 @@ func loadTargetBytesForUnit(u UnitEntry, startVA uint32) ([]byte, error) {
 			}
 		}
 	}
-	// Fallback to .local/cache/funcs/<VA>.txt
 	return loadCachedBytes(u.VA)
 }
 
@@ -684,7 +717,6 @@ func maskAndCompare(compFn ObjFunc, targetBytes []byte, u UnitEntry, startVA uin
 	compMasked := append([]byte(nil), compFn.Bytes...)
 	tgtMasked := append([]byte(nil), targetBytes...)
 
-	// Trim trailing alignment padding (0xCC / 0x90) if compiled section is slightly padded
 	if len(compMasked) > len(tgtMasked) {
 		allPad := true
 		for i := len(tgtMasked); i < len(compMasked); i++ {
@@ -776,6 +808,58 @@ func formatInstColumn(inst *AsmInst) string {
 	return fmt.Sprintf("+%02X: %-19s %s", inst.Offset, hexPart, inst.Text)
 }
 
+func generateHaikuHints(tgtInsts, compInsts []AsmInst, tgtLen, compLen int) []string {
+	var hints []string
+	if len(tgtInsts) > 0 && len(compInsts) > 0 {
+		tLast := tgtInsts[len(tgtInsts)-1].Text
+		cLast := compInsts[len(compInsts)-1].Text
+		if strings.HasPrefix(tLast, "ret") && strings.HasPrefix(cLast, "ret") && tLast != cLast {
+			hints = append(hints, fmt.Sprintf("Stack return mismatch: target has `%s` vs your `%s`. Adjust __fastcall/__stdcall/__cdecl or parameter count.", tLast, cLast))
+		}
+	}
+	var tSubEsp, cSubEsp string
+	var hasJccDiff, hasRegDiff bool
+	maxLen := len(tgtInsts)
+	if len(compInsts) < maxLen {
+		maxLen = len(compInsts)
+	}
+	for i := 0; i < maxLen; i++ {
+		tTxt := tgtInsts[i].Text
+		cTxt := compInsts[i].Text
+		if strings.HasPrefix(tTxt, "sub esp,") {
+			tSubEsp = tTxt
+		}
+		if strings.HasPrefix(cTxt, "sub esp,") {
+			cSubEsp = cTxt
+		}
+		if tTxt != cTxt {
+			tFields := strings.Fields(tTxt)
+			cFields := strings.Fields(cTxt)
+			if len(tFields) > 0 && len(cFields) > 0 {
+				tOp, cOp := tFields[0], cFields[0]
+				if strings.HasPrefix(tOp, "j") && strings.HasPrefix(cOp, "j") && tOp != cOp {
+					hasJccDiff = true
+				} else if tOp == cOp {
+					hasRegDiff = true
+				}
+			}
+		}
+	}
+	if tSubEsp != cSubEsp && (tSubEsp != "" || cSubEsp != "") {
+		hints = append(hints, fmt.Sprintf("Stack frame size mismatch: target `%s` vs your `%s`. Adjust local variables.", tSubEsp, cSubEsp))
+	}
+	if hasJccDiff {
+		hints = append(hints, "Jump inversion detected: invert the `if (...)` condition or swap early-return / else branches.")
+	}
+	if hasRegDiff {
+		hints = append(hints, "Register/offset order difference: check struct member offsets, pointer vs value types, or expression evaluation order.")
+	}
+	if compLen != tgtLen && len(hints) == 0 {
+		hints = append(hints, fmt.Sprintf("Size difference: target is %d bytes vs your %d bytes.", tgtLen, compLen))
+	}
+	return hints
+}
+
 func cmdCheck(args []string) {
 	if len(args) < 1 {
 		fmt.Fprintln(os.Stderr, "Usage: go run ./tools/work check <address>")
@@ -801,12 +885,8 @@ func cmdCheck(args []string) {
 		os.Exit(1)
 	}
 
-	fmt.Printf("Compiling %s for %s (%s, %d bytes)...\n", cppPath, u.VA, u.Symbol, u.Size)
 	objPath, cleanup, err := compileCppToObj(cppPath)
 	if err != nil {
-		fmt.Println("================================================================================")
-		fmt.Printf("COMPILE FAILED (%s)\n", cppPath)
-		fmt.Println("================================================================================")
 		fmt.Println(err.Error())
 		os.Exit(1)
 	}
@@ -839,15 +919,10 @@ func cmdCheck(args []string) {
 				fmt.Fprintf(os.Stderr, "Warning: failed to update build/units.json: %v\n", err)
 			}
 		}
-		_ = exec.Command("go", "run", "./tools/status", "-update").Run()
-		fmt.Println("================================================================================")
-		fmt.Printf("EXACT MATCH (100%%) | %s | %s (%d / %d bytes)\n", u.VA, u.Symbol, len(compMasked), len(tgtMasked))
-		fmt.Println("================================================================================")
-		fmt.Printf("Updated build/units.json (\"status\": \"matched\"), README.md, and docs/index.html.\n")
+		fmt.Printf("EXACT MATCH (100%%) | %s | %s (%d bytes)\n", u.VA, u.Symbol, len(tgtMasked))
 		return
 	}
 
-	// Build side-by-side TARGET ASM vs COMPILED ASM diff
 	relocOffsets := make(map[uint32]bool)
 	for _, off := range compFn.Relocs {
 		relocOffsets[off] = true
@@ -865,12 +940,9 @@ func cmdCheck(args []string) {
 	tgtInsts, _ := parseDisasmFile(cachePath, startVA)
 	compInsts := disassembleCompiledObj(objPath, compFn.SymName)
 
-	fmt.Println("================================================================================")
-	fmt.Printf("MISMATCH: %.1f%% byte similarity | Target: %d bytes vs Compiled: %d bytes\n",
-		pct, len(tgtMasked), len(compMasked))
-	fmt.Println("================================================================================")
-	fmt.Printf("%-46s | %-46s\n", "TARGET ASM ("+u.VA+")", "COMPILED ASM ("+compFn.SymName+")")
-	fmt.Println(strings.Repeat("-", 98))
+	fmt.Printf("MISMATCH: %.1f%% match | Target: %dB vs Yours: %dB\n", pct, len(tgtMasked), len(compMasked))
+	fmt.Printf("%-44s | %-44s\n", "TARGET ASM ("+u.VA+")", "YOUR ASM ("+compFn.SymName+")")
+	fmt.Println(strings.Repeat("-", 94))
 
 	maxRows := len(tgtInsts)
 	if len(compInsts) > maxRows {
@@ -895,13 +967,13 @@ func cmdCheck(args []string) {
 		}
 		marker := ""
 		if !rowMatch {
-			marker = " <-- MISMATCH"
+			marker = " <--"
 		}
-		fmt.Printf("%-46s | %-46s%s\n", left, right, marker)
+		fmt.Printf("%-44s | %-44s%s\n", left, right, marker)
 	}
-	fmt.Println(strings.Repeat("-", 98))
-	fmt.Printf("Target Masked Hex  : %x\n", tgtMasked)
-	fmt.Printf("Compiled Masked Hex: %x\n", compMasked)
+	for _, h := range generateHaikuHints(tgtInsts, compInsts, len(tgtMasked), len(compMasked)) {
+		fmt.Printf("HINT: %s\n", h)
+	}
 	os.Exit(1)
 }
 
@@ -937,7 +1009,7 @@ func cmdSkip(args []string) {
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Fprintln(os.Stderr, "Usage:")
-		fmt.Fprintln(os.Stderr, "  go run ./tools/work next [-n 1]")
+		fmt.Fprintln(os.Stderr, "  go run ./tools/work next [--max-size 256]")
 		fmt.Fprintln(os.Stderr, "  go run ./tools/work check <address>")
 		fmt.Fprintln(os.Stderr, "  go run ./tools/work skip <address> \"<reason>\"")
 		os.Exit(1)

@@ -1,5 +1,7 @@
 # Proprietary binaries and local caches (NEVER COMMIT)
 .local/
+docs/
+opencode.json
 *.exe
 *.dll
 *.obj

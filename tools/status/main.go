@@ -325,19 +325,48 @@ func renderReadme(
 	}
 
 	sb.WriteString("\n## Tooling & Workflow\n\n")
-	sb.WriteString("- `go run ./tools/build_and_match`: Compiles all translation units in `src/` with MSVC 2005 (`cl.exe`), masks 32-bit COFF relocations, and verifies 100% byte-for-byte parity against `.local/bin/endorphin.exe`.\n")
-	sb.WriteString("- `go run ./tools/worker next -n 20`: Displays the next 20 smallest unmatched leaf functions (`num_callees == 0`) along with their disassembly and RTTI class header context.\n")
-	sb.WriteString("- `go run ./tools/status -update`: Updates `README.md` and `docs/index.html` with the latest verified byte-match metrics.\n")
+	sb.WriteString("- `go run ./tools/build_and_match -all`: Compiles all translation units in `src/` with MSVC 2005 (`cl.exe`), masks 32-bit COFF relocations, and verifies 100% byte-for-byte parity against `.local/bin/endorphin.exe`.\n")
+	sb.WriteString("- `go run ./tools/work next`: Picks the next smallest unmatched in-scope leaf function (`size <= 256`) and prints its compact disassembly briefing.\n")
+	sb.WriteString("- `go run ./tools/work check <addr>`: Compiles and verifies a function against `.local/bin/endorphin.exe`.\n")
+	sb.WriteString("- `go run ./tools/status -readme`: Updates the progress section in `README.md` with the latest verified byte-match metrics.\n")
+	return sb.String()
+}
+
+func renderCISummary(
+	totalClasses, inScopeClasses, mfcClasses int,
+	totalFuncs int, totalBytes uint64,
+	outOfScopeFuncs, outThunkFuncs, outCRTMFCFuncs int,
+	outOfScopeBytes, outThunkBytes, outCRTMFCBytes uint64,
+	inScopeFuncs, inScopeMatchedFuncs int,
+	inScopeBytes, inScopeMatchedBytes uint64,
+	tiers []*TierStats,
+) string {
+	var sb strings.Builder
+	funcPct := pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs))
+	bytePct := pct(inScopeMatchedBytes, inScopeBytes)
+
+	sb.WriteString("## Endorphin 2.7.1 Decompilation Scoreboard\n\n")
+	sb.WriteString(fmt.Sprintf("- **In-Scope Functions Matched:** `%d / %d` (**%.2f%%**)\n", inScopeMatchedFuncs, inScopeFuncs, funcPct))
+	sb.WriteString(fmt.Sprintf("- **In-Scope Code Bytes Matched:** `%d / %d bytes` (**%.2f%%** of %.2f MB)\n", inScopeMatchedBytes, inScopeBytes, bytePct, float64(inScopeBytes)/(1024.0*1024.0)))
+	sb.WriteString(fmt.Sprintf("- **RTTI Classes Extracted:** `%d` total (`%d` in-scope, `%d` MFC/ATL/std)\n", totalClasses, inScopeClasses, mfcClasses))
+	sb.WriteString(fmt.Sprintf("- **Out-of-Scope Boilerplate:** `%d` units (`%d` thunks, `%d` CRT/MFC/SEH)\n\n", outOfScopeFuncs, outThunkFuncs, outCRTMFCFuncs))
+
+	sb.WriteString("| Size Tier | Matched / Total Funcs | Func % | Matched / Total Bytes | Byte % | Remaining |\n")
+	sb.WriteString("| :--- | ---: | ---: | ---: | ---: | ---: |\n")
+	for _, t := range tiers {
+		fPct := pct(uint64(t.MatchedFuncs), uint64(t.TotalFuncs))
+		bPct := pct(t.MatchedBytes, t.TotalBytes)
+		sb.WriteString(fmt.Sprintf("| **%s** | %d / %d | %.2f%% | %d / %d | %.2f%% | %d fn |\n",
+			t.ShortName, t.MatchedFuncs, t.TotalFuncs, fPct, t.MatchedBytes, t.TotalBytes, bPct, t.RemainFuncs))
+	}
 	return sb.String()
 }
 
 func main() {
-	htmlOut := flag.String("html", "", "Optional path to write HTML dashboard (e.g. docs/index.html)")
-	updateAll := flag.Bool("update", false, "Update both README.md and docs/index.html with verified byte-match counts")
+	htmlOut := flag.String("html", "", "Optional path to write HTML dashboard (e.g. docs/index.html, CI only)")
+	readmeFlag := flag.Bool("readme", false, "Update only the progress section in README.md")
+	ciFlag := flag.Bool("ci", false, "Print GitHub Actions Markdown step summary")
 	flag.Parse()
-	if *updateAll && *htmlOut == "" {
-		*htmlOut = filepath.Join("docs", "index.html")
-	}
 
 	unitsBytes, err := os.ReadFile("build/units.json")
 	if err != nil {
@@ -437,38 +466,50 @@ func main() {
 		}
 	}
 
-	fmt.Println("================================================================================")
-	fmt.Println("               ENDORPHIN 2.7.1 DECOMPILATION PROGRESS DASHBOARD                 ")
-	fmt.Println("================================================================================")
-	fmt.Printf("RTTI Classes : %5d total | %5d in-scope | %5d out-of-scope (MFC/ATL/std)\n",
-		len(classes), inScopeClassCount, mfcClassCount)
-	fmt.Printf("All Units    : %5d funcs | %9d bytes (%.2f MB)\n",
-		totalFuncs, totalBytes, float64(totalBytes)/(1024.0*1024.0))
-	fmt.Println("--------------------------------------------------------------------------------")
-	fmt.Printf("Out-of-Scope : %5d funcs (%5.1f%%) | %9d bytes (%5.1f%%)\n",
-		outOfScopeFuncs, pct(uint64(outOfScopeFuncs), uint64(totalFuncs)),
-		outOfScopeBytes, pct(outOfScopeBytes, totalBytes))
-	fmt.Printf("  - Thunks   : %5d funcs          | %9d bytes\n", outThunkFuncs, outThunkBytes)
-	fmt.Printf("  - CRT/MFC  : %5d funcs          | %9d bytes (CRT/MFC/SEH funclets)\n", outCRTMFCFuncs, outCRTMFCBytes)
-	fmt.Printf("In-Scope     : %5d funcs (%5.1f%%) | %9d bytes (%5.1f%%)\n",
-		inScopeFuncs, pct(uint64(inScopeFuncs), uint64(totalFuncs)),
-		inScopeBytes, pct(inScopeBytes, totalBytes))
-	fmt.Println("--------------------------------------------------------------------------------")
-	fmt.Printf("IN-SCOPE PROGRESS: %d / %d funcs (%.2f%%) | %d / %d bytes (%.2f%%)\n",
-		inScopeMatchedFuncs, inScopeFuncs, pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs)),
-		inScopeMatchedBytes, inScopeBytes, pct(inScopeMatchedBytes, inScopeBytes))
-	fmt.Println("--------------------------------------------------------------------------------")
-	fmt.Println("Size Tier         |   Decompiled / Total Funcs   |     Decompiled / Total Bytes     | Remaining")
-	fmt.Println("------------------+------------------------------+----------------------------------+----------")
-	for _, t := range tiers {
-		fmt.Printf("%s | %6d / %6d (%6.2f%%)  | %8d / %8d (%6.2f%%)  | %6d fn\n",
-			t.Name,
-			t.MatchedFuncs, t.TotalFuncs, pct(uint64(t.MatchedFuncs), uint64(t.TotalFuncs)),
-			t.MatchedBytes, t.TotalBytes, pct(t.MatchedBytes, t.TotalBytes),
-			t.RemainFuncs,
-		)
+	if *ciFlag {
+		fmt.Print(renderCISummary(
+			len(classes), inScopeClassCount, mfcClassCount,
+			totalFuncs, totalBytes,
+			outOfScopeFuncs, outThunkFuncs, outCRTMFCFuncs,
+			outOfScopeBytes, outThunkBytes, outCRTMFCBytes,
+			inScopeFuncs, inScopeMatchedFuncs,
+			inScopeBytes, inScopeMatchedBytes,
+			tiers,
+		))
+	} else {
+		fmt.Println("================================================================================")
+		fmt.Println("               ENDORPHIN 2.7.1 DECOMPILATION PROGRESS DASHBOARD                 ")
+		fmt.Println("================================================================================")
+		fmt.Printf("RTTI Classes : %5d total | %5d in-scope | %5d out-of-scope (MFC/ATL/std)\n",
+			len(classes), inScopeClassCount, mfcClassCount)
+		fmt.Printf("All Units    : %5d funcs | %9d bytes (%.2f MB)\n",
+			totalFuncs, totalBytes, float64(totalBytes)/(1024.0*1024.0))
+		fmt.Println("--------------------------------------------------------------------------------")
+		fmt.Printf("Out-of-Scope : %5d funcs (%5.1f%%) | %9d bytes (%5.1f%%)\n",
+			outOfScopeFuncs, pct(uint64(outOfScopeFuncs), uint64(totalFuncs)),
+			outOfScopeBytes, pct(outOfScopeBytes, totalBytes))
+		fmt.Printf("  - Thunks   : %5d funcs          | %9d bytes\n", outThunkFuncs, outThunkBytes)
+		fmt.Printf("  - CRT/MFC  : %5d funcs          | %9d bytes (CRT/MFC/SEH funclets)\n", outCRTMFCFuncs, outCRTMFCBytes)
+		fmt.Printf("In-Scope     : %5d funcs (%5.1f%%) | %9d bytes (%5.1f%%)\n",
+			inScopeFuncs, pct(uint64(inScopeFuncs), uint64(totalFuncs)),
+			inScopeBytes, pct(inScopeBytes, totalBytes))
+		fmt.Println("--------------------------------------------------------------------------------")
+		fmt.Printf("IN-SCOPE PROGRESS: %d / %d funcs (%.2f%%) | %d / %d bytes (%.2f%%)\n",
+			inScopeMatchedFuncs, inScopeFuncs, pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs)),
+			inScopeMatchedBytes, inScopeBytes, pct(inScopeMatchedBytes, inScopeBytes))
+		fmt.Println("--------------------------------------------------------------------------------")
+		fmt.Println("Size Tier         |   Decompiled / Total Funcs   |     Decompiled / Total Bytes     | Remaining")
+		fmt.Println("------------------+------------------------------+----------------------------------+----------")
+		for _, t := range tiers {
+			fmt.Printf("%s | %6d / %6d (%6.2f%%)  | %8d / %8d (%6.2f%%)  | %6d fn\n",
+				t.Name,
+				t.MatchedFuncs, t.TotalFuncs, pct(uint64(t.MatchedFuncs), uint64(t.TotalFuncs)),
+				t.MatchedBytes, t.TotalBytes, pct(t.MatchedBytes, t.TotalBytes),
+				t.RemainFuncs,
+			)
+		}
+		fmt.Println("================================================================================")
 	}
-	fmt.Println("================================================================================")
 
 	if *htmlOut != "" {
 		if err := os.MkdirAll(filepath.Dir(*htmlOut), 0755); err != nil {
@@ -488,9 +529,10 @@ func main() {
 			fmt.Fprintf(os.Stderr, "Error writing %s: %v\n", *htmlOut, err)
 			os.Exit(1)
 		}
+		fmt.Printf("Wrote HTML dashboard to %s\n", *htmlOut)
 	}
 
-	if *updateAll {
+	if *readmeFlag {
 		readme := renderReadme(
 			len(classes), inScopeClassCount, mfcClassCount,
 			totalFuncs, totalBytes,
@@ -504,6 +546,6 @@ func main() {
 			fmt.Fprintf(os.Stderr, "Error writing README.md: %v\n", err)
 			os.Exit(1)
 		}
-		fmt.Printf("Updated README.md and %s\n", *htmlOut)
+		fmt.Println("Updated README.md")
 	}
 }

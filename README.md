@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `3101 / 24049` (**12.89%**)
-- **In-Scope Code Bytes Matched:** `46625 / 4496005 bytes` (**1.04%** of 4.29 MB)
+- **In-Scope Functions Matched:** `3102 / 24049` (**12.90%**)
+- **In-Scope Code Bytes Matched:** `46642 / 4496005 bytes` (**1.04%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -13,13 +13,14 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Size Tier | Matched / Total Funcs | Func % | Matched / Total Bytes | Byte % | Remaining |
 | :--- | ---: | ---: | ---: | ---: | ---: |
-| **Tiny (<32B)** | 3101 / 4590 | 67.56% | 46625 / 79730 | 58.48% | 1489 fn |
+| **Tiny (<32B)** | 3102 / 4590 | 67.58% | 46642 / 79730 | 58.50% | 1488 fn |
 | **Small (32-256B)** | 0 / 16285 | 0.00% | 0 / 1796884 | 0.00% | 16285 fn |
 | **Medium (256-512B)** | 0 / 1757 | 0.00% | 0 / 632676 | 0.00% | 1757 fn |
 | **Large (>512B)** | 0 / 1417 | 0.00% | 0 / 1986715 | 0.00% | 1417 fn |
 
 ## Tooling & Workflow
 
-- `go run ./tools/build_and_match`: Compiles all translation units in `src/` with MSVC 2005 (`cl.exe`), masks 32-bit COFF relocations, and verifies 100% byte-for-byte parity against `.local/bin/endorphin.exe`.
-- `go run ./tools/worker next -n 20`: Displays the next 20 smallest unmatched leaf functions (`num_callees == 0`) along with their disassembly and RTTI class header context.
-- `go run ./tools/status -update`: Updates `README.md` and `docs/index.html` with the latest verified byte-match metrics.
+- `go run ./tools/build_and_match -all`: Compiles all translation units in `src/` with MSVC 2005 (`cl.exe`), masks 32-bit COFF relocations, and verifies 100% byte-for-byte parity against `.local/bin/endorphin.exe`.
+- `go run ./tools/work next`: Picks the next smallest unmatched in-scope leaf function (`size <= 256`) and prints its compact disassembly briefing.
+- `go run ./tools/work check <addr>`: Compiles and verifies a function against `.local/bin/endorphin.exe`.
+- `go run ./tools/status -readme`: Updates the progress section in `README.md` with the latest verified byte-match metrics.
