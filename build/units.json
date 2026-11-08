@@ -4929,7 +4929,8 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Thiscall wrapper with word stack arg widened in place and tail-jmp to vtable[93]; MSVC keeps pushing forwarded args instead of sibling-jumping; best 10.5%"
   },
   {
     "va": "0x004086C0",
