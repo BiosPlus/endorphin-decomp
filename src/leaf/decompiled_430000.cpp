@@ -145,3 +145,15 @@ extern "C" __declspec(naked) void __fastcall fn_0043CB80(void* self) {
         ret 8
     }
 }
+
+// [0x00437DE0] sub_00437DE0 (8 bytes)
+// Pushes 1 and calls sub_00437DC0 (cdecl, caller cleans up the argument).
+extern "C" void ext_00437DC0();
+
+extern "C" __declspec(naked) void __cdecl fn_00437DE0() {
+    __asm {
+        push 1
+        call ext_00437DC0
+        ret
+    }
+}
