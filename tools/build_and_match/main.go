@@ -46,6 +46,8 @@ type UnitEntry struct {
 	Relocations []string `json:"relocations"`
 	Status      string   `json:"status"`
 	SkipReason  string   `json:"skip_reason,omitempty"`
+	MatchedBy   string   `json:"matched_by,omitempty"`
+	MatchedAt   string   `json:"matched_at,omitempty"`
 }
 
 type ObjFunc struct {

@@ -18,9 +18,15 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **Medium (256-512B)** | 0 / 1757 | 0.00% | 0 / 632676 | 0.00% | 1757 fn |
 | **Large (>512B)** | 0 / 1417 | 0.00% | 0 / 1986715 | 0.00% | 1417 fn |
 
+### Squad Leaderboard (Matches by Model)
+
+| Model / Solver | Matched Functions | Matched Bytes | Share of Matched |
+| :--- | ---: | ---: | ---: |
+| `script:auto_solve` | 3118 | 46947 | 100.00% |
+
 ## Tooling & Workflow
 
 - `go run ./tools/build_and_match -all`: Compiles all translation units in `src/` with MSVC 2005 (`cl.exe`), masks 32-bit COFF relocations, and verifies 100% byte-for-byte parity against `.local/bin/endorphin.exe`.
 - `go run ./tools/work next`: Picks the next smallest unmatched in-scope leaf function (`size <= 256`) and prints its compact disassembly briefing.
-- `go run ./tools/work check <addr>`: Compiles and verifies a function against `.local/bin/endorphin.exe`.
+- `go run ./tools/work check <addr> --model <name>`: Compiles and verifies a function against `.local/bin/endorphin.exe` and records the solving model.
 - `go run ./tools/status -readme`: Updates the progress section in `README.md` with the latest verified byte-match metrics.

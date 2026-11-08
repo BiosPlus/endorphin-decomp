@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -21,6 +22,15 @@ type UnitEntry struct {
 	IsThunk     bool     `json:"is_thunk"`
 	Relocations []string `json:"relocations"`
 	Status      string   `json:"status"`
+	SkipReason  string   `json:"skip_reason,omitempty"`
+	MatchedBy   string   `json:"matched_by,omitempty"`
+	MatchedAt   string   `json:"matched_at,omitempty"`
+}
+
+type ModelStats struct {
+	Model        string
+	MatchedFuncs int
+	MatchedBytes uint64
 }
 
 type ClassEntry struct {
@@ -89,6 +99,7 @@ func renderHTMLDashboard(
 	inScopeFuncs, inScopeMatchedFuncs int,
 	inScopeBytes, inScopeMatchedBytes uint64,
 	tiers []*TierStats,
+	leaderboard []ModelStats,
 ) string {
 	var sb strings.Builder
 	funcPct := pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs))
@@ -268,6 +279,34 @@ func renderHTMLDashboard(
 `, t.ShortName, t.MatchedFuncs, t.TotalFuncs, fPct, t.MatchedBytes, t.TotalBytes, bPct, t.RemainFuncs))
 	}
 
+	sb.WriteString(`        </tbody>
+      </table>
+    </div>
+    <div class="panel">
+      <h2 style="margin-top:0;font-size:18px;">Squad Leaderboard (Matches by Model)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Model / Solver</th>
+            <th class="num">Matched Functions</th>
+            <th class="num">Matched Bytes</th>
+            <th class="num">Share of Matched</th>
+          </tr>
+        </thead>
+        <tbody>
+`)
+
+	for _, m := range leaderboard {
+		sharePct := pct(uint64(m.MatchedFuncs), uint64(inScopeMatchedFuncs))
+		sb.WriteString(fmt.Sprintf(`          <tr>
+            <td><code>%s</code></td>
+            <td class="num">%d</td>
+            <td class="num">%d</td>
+            <td class="num">%.2f%%</td>
+          </tr>
+`, m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct))
+	}
+
 	sb.WriteString(fmt.Sprintf(`        </tbody>
       </table>
     </div>
@@ -301,6 +340,7 @@ func renderReadme(
 	inScopeFuncs, inScopeMatchedFuncs int,
 	inScopeBytes, inScopeMatchedBytes uint64,
 	tiers []*TierStats,
+	leaderboard []ModelStats,
 ) string {
 	var sb strings.Builder
 	funcPct := pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs))
@@ -324,10 +364,18 @@ func renderReadme(
 			t.ShortName, t.MatchedFuncs, t.TotalFuncs, fPct, t.MatchedBytes, t.TotalBytes, bPct, t.RemainFuncs))
 	}
 
+	sb.WriteString("\n### Squad Leaderboard (Matches by Model)\n\n")
+	sb.WriteString("| Model / Solver | Matched Functions | Matched Bytes | Share of Matched |\n")
+	sb.WriteString("| :--- | ---: | ---: | ---: |\n")
+	for _, m := range leaderboard {
+		sharePct := pct(uint64(m.MatchedFuncs), uint64(inScopeMatchedFuncs))
+		sb.WriteString(fmt.Sprintf("| `%s` | %d | %d | %.2f%% |\n", m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct))
+	}
+
 	sb.WriteString("\n## Tooling & Workflow\n\n")
 	sb.WriteString("- `go run ./tools/build_and_match -all`: Compiles all translation units in `src/` with MSVC 2005 (`cl.exe`), masks 32-bit COFF relocations, and verifies 100% byte-for-byte parity against `.local/bin/endorphin.exe`.\n")
 	sb.WriteString("- `go run ./tools/work next`: Picks the next smallest unmatched in-scope leaf function (`size <= 256`) and prints its compact disassembly briefing.\n")
-	sb.WriteString("- `go run ./tools/work check <addr>`: Compiles and verifies a function against `.local/bin/endorphin.exe`.\n")
+	sb.WriteString("- `go run ./tools/work check <addr> --model <name>`: Compiles and verifies a function against `.local/bin/endorphin.exe` and records the solving model.\n")
 	sb.WriteString("- `go run ./tools/status -readme`: Updates the progress section in `README.md` with the latest verified byte-match metrics.\n")
 	return sb.String()
 }
@@ -340,6 +388,7 @@ func renderCISummary(
 	inScopeFuncs, inScopeMatchedFuncs int,
 	inScopeBytes, inScopeMatchedBytes uint64,
 	tiers []*TierStats,
+	leaderboard []ModelStats,
 ) string {
 	var sb strings.Builder
 	funcPct := pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs))
@@ -358,6 +407,14 @@ func renderCISummary(
 		bPct := pct(t.MatchedBytes, t.TotalBytes)
 		sb.WriteString(fmt.Sprintf("| **%s** | %d / %d | %.2f%% | %d / %d | %.2f%% | %d fn |\n",
 			t.ShortName, t.MatchedFuncs, t.TotalFuncs, fPct, t.MatchedBytes, t.TotalBytes, bPct, t.RemainFuncs))
+	}
+
+	sb.WriteString("\n### Squad Leaderboard (Matches by Model)\n\n")
+	sb.WriteString("| Model / Solver | Matched Functions | Matched Bytes | Share of Matched |\n")
+	sb.WriteString("| :--- | ---: | ---: | ---: |\n")
+	for _, m := range leaderboard {
+		sharePct := pct(uint64(m.MatchedFuncs), uint64(inScopeMatchedFuncs))
+		sb.WriteString(fmt.Sprintf("| `%s` | %d | %d | %.2f%% |\n", m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct))
 	}
 	return sb.String()
 }
@@ -418,11 +475,15 @@ func main() {
 		{Name: "Large  (>512B)   ", ShortName: "Large (>512B)"},
 	}
 
-	for _, u := range units {
+	modelStatsMap := make(map[string]*ModelStats)
+	unitsUpdated := false
+
+	for i := range units {
+		u := &units[i]
 		totalFuncs++
 		totalBytes += uint64(u.Size)
 
-		if oos, reason := isOutOfScope(u, mfcClasses); oos {
+		if oos, reason := isOutOfScope(*u, mfcClasses); oos {
 			outOfScopeFuncs++
 			outOfScopeBytes += uint64(u.Size)
 			if reason == "thunk" {
@@ -454,10 +515,22 @@ func main() {
 		tier.TotalBytes += uint64(u.Size)
 
 		if isCompleted(u.Status) {
+			if u.MatchedBy == "" {
+				u.MatchedBy = "script:auto_solve"
+				unitsUpdated = true
+			}
 			inScopeMatchedFuncs++
 			inScopeMatchedBytes += uint64(u.Size)
 			tier.MatchedFuncs++
 			tier.MatchedBytes += uint64(u.Size)
+
+			ms, ok := modelStatsMap[u.MatchedBy]
+			if !ok {
+				ms = &ModelStats{Model: u.MatchedBy}
+				modelStatsMap[u.MatchedBy] = ms
+			}
+			ms.MatchedFuncs++
+			ms.MatchedBytes += uint64(u.Size)
 		} else {
 			inScopeRemainFuncs++
 			inScopeRemainBytes += uint64(u.Size)
@@ -465,6 +538,26 @@ func main() {
 			tier.RemainBytes += uint64(u.Size)
 		}
 	}
+
+	if unitsUpdated {
+		if outJSON, err := json.MarshalIndent(units, "", "  "); err == nil {
+			_ = os.WriteFile("build/units.json", append(outJSON, '\n'), 0644)
+		}
+	}
+
+	var leaderboard []ModelStats
+	for _, ms := range modelStatsMap {
+		leaderboard = append(leaderboard, *ms)
+	}
+	sort.Slice(leaderboard, func(i, j int) bool {
+		if leaderboard[i].MatchedFuncs != leaderboard[j].MatchedFuncs {
+			return leaderboard[i].MatchedFuncs > leaderboard[j].MatchedFuncs
+		}
+		if leaderboard[i].MatchedBytes != leaderboard[j].MatchedBytes {
+			return leaderboard[i].MatchedBytes > leaderboard[j].MatchedBytes
+		}
+		return leaderboard[i].Model < leaderboard[j].Model
+	})
 
 	if *ciFlag {
 		fmt.Print(renderCISummary(
@@ -475,6 +568,7 @@ func main() {
 			inScopeFuncs, inScopeMatchedFuncs,
 			inScopeBytes, inScopeMatchedBytes,
 			tiers,
+			leaderboard,
 		))
 	} else {
 		fmt.Println("================================================================================")
@@ -508,6 +602,16 @@ func main() {
 				t.RemainFuncs,
 			)
 		}
+		fmt.Println("--------------------------------------------------------------------------------")
+		fmt.Println("Squad Leaderboard (Matches by Model)")
+		fmt.Println("Model / Solver              | Matched Funcs | Matched Bytes | Share of Matched")
+		fmt.Println("----------------------------+---------------+---------------+-----------------")
+		for _, m := range leaderboard {
+			fmt.Printf("%-27s | %13d | %13d | %14.2f%%\n",
+				m.Model, m.MatchedFuncs, m.MatchedBytes,
+				pct(uint64(m.MatchedFuncs), uint64(inScopeMatchedFuncs)),
+			)
+		}
 		fmt.Println("================================================================================")
 	}
 
@@ -524,6 +628,7 @@ func main() {
 			inScopeFuncs, inScopeMatchedFuncs,
 			inScopeBytes, inScopeMatchedBytes,
 			tiers,
+			leaderboard,
 		)
 		if err := os.WriteFile(*htmlOut, []byte(html), 0644); err != nil {
 			fmt.Fprintf(os.Stderr, "Error writing %s: %v\n", *htmlOut, err)
@@ -541,6 +646,7 @@ func main() {
 			inScopeFuncs, inScopeMatchedFuncs,
 			inScopeBytes, inScopeMatchedBytes,
 			tiers,
+			leaderboard,
 		)
 		if err := os.WriteFile("README.md", []byte(readme), 0644); err != nil {
 			fmt.Fprintf(os.Stderr, "Error writing README.md: %v\n", err)

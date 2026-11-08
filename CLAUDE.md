@@ -18,9 +18,10 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
    - Relocated globals/callees are masked automatically; declare as `extern "C" void ext_XXXXXXXX();` or `extern "C" int mem_XXXXXXXX;`.
 3. **Compile & verify (iterate max 10 tries):**
    ```bash
-   go run ./tools/work check 0xXXXXXXXX
+   go run ./tools/work check 0xXXXXXXXX --model claude-haiku
    ```
-   - `EXACT MATCH (100%)` automatically marks `"status": "matched"` in `build/units.json`, updates `README.md`, and commits the match.
+   - Always pass your model identifier via `--model <name>` (e.g., `claude-haiku`, `claude-sonnet`, `claude-opus`, `agy-argon`) or `DECOMP_MODEL`.
+   - `EXACT MATCH (100%)` automatically marks `"status": "matched"`, `"matched_by"`, and `"matched_at"` in `build/units.json`, updates `README.md`, and commits `Match 0xXXXXXXXX (<symbol>) [model: <matched_by>]`.
 4. **If stuck after 10 tries, remove your broken code from the `.cpp` file and skip:**
    ```bash
    go run ./tools/work skip 0xXXXXXXXX "brief reason"

@@ -17,6 +17,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"time"
 )
 
 type TargetConfig struct {
@@ -44,6 +45,8 @@ type UnitEntry struct {
 	Relocations []string `json:"relocations"`
 	Status      string   `json:"status"`
 	SkipReason  string   `json:"skip_reason,omitempty"`
+	MatchedBy   string   `json:"matched_by,omitempty"`
+	MatchedAt   string   `json:"matched_at,omitempty"`
 }
 
 type BaseClassInfo struct {
@@ -396,7 +399,7 @@ func cmdNext(args []string) {
 				fmt.Println(line)
 			}
 		}
-		fmt.Printf("VERIFY_CMD: go run ./tools/work check %s  |  SKIP_CMD: go run ./tools/work skip %s \"reason\"\n", u.VA, u.VA)
+		fmt.Printf("VERIFY_CMD: go run ./tools/work check %s --model <model>  |  SKIP_CMD: go run ./tools/work skip %s \"reason\"\n", u.VA, u.VA)
 		if i+1 < limit {
 			fmt.Println("---")
 		}
@@ -860,7 +863,44 @@ func generateHaikuHints(tgtInsts, compInsts []AsmInst, tgtLen, compLen int) []st
 	return hints
 }
 
-func autoCommitMatch(va, symbol string) {
+func parseCheckArgs(args []string) (string, string) {
+	var addr, model string
+	for i := 0; i < len(args); i++ {
+		a := args[i]
+		if a == "--model" || a == "-model" {
+			if i+1 < len(args) {
+				model = strings.TrimSpace(args[i+1])
+				i++
+			}
+		} else if strings.HasPrefix(a, "--model=") {
+			model = strings.TrimSpace(strings.TrimPrefix(a, "--model="))
+		} else if strings.HasPrefix(a, "-model=") {
+			model = strings.TrimSpace(strings.TrimPrefix(a, "-model="))
+		} else if addr == "" && !strings.HasPrefix(a, "-") {
+			addr = a
+		}
+	}
+	if model == "" {
+		model = strings.TrimSpace(os.Getenv("DECOMP_MODEL"))
+	}
+	if model == "" {
+		model = "unknown"
+	}
+	return addr, model
+}
+
+func backfillAutoSolveModels(units []UnitEntry) bool {
+	changed := false
+	for i := range units {
+		if (units[i].Status == "matched" || units[i].Status == "decompiled" || units[i].Status == "solved") && units[i].MatchedBy == "" {
+			units[i].MatchedBy = "script:auto_solve"
+			changed = true
+		}
+	}
+	return changed
+}
+
+func autoCommitMatch(va, symbol, matchedBy string) {
 	_ = exec.Command("go", "run", "./tools/status", "-readme").Run()
 
 	_ = exec.Command("git", "add", "src/", "include/", "build/units.json", "README.md").Run()
@@ -897,24 +937,26 @@ func autoCommitMatch(va, symbol string) {
 		return
 	}
 
-	msg := fmt.Sprintf("Match %s (%s)", va, symbol)
+	msg := fmt.Sprintf("Match %s (%s) [model: %s]", va, symbol, matchedBy)
 	if out, err := exec.Command("git", "commit", "-m", msg).CombinedOutput(); err != nil {
 		fmt.Fprintf(os.Stderr, "Warning: git commit failed: %v (%s)\n", err, strings.TrimSpace(string(out)))
 	}
 }
 
 func cmdCheck(args []string) {
-	if len(args) < 1 {
-		fmt.Fprintln(os.Stderr, "Usage: go run ./tools/work check <address>")
+	addrArg, modelName := parseCheckArgs(args)
+	if addrArg == "" {
+		fmt.Fprintln(os.Stderr, "Usage: go run ./tools/work check <address> [--model <name>]")
 		os.Exit(1)
 	}
-	vaHex, startVA, err := normalizeVA(args[0])
+	vaHex, startVA, err := normalizeVA(addrArg)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 		os.Exit(1)
 	}
 
 	units, unitIdxByVA, _, _, _ := loadUnitsAndClasses()
+	_ = backfillAutoSolveModels(units)
 	uIdx, ok := unitIdxByVA[vaHex]
 	if !ok {
 		fmt.Fprintf(os.Stderr, "Error: unit %s not found in build/units.json\n", vaHex)
@@ -959,11 +1001,19 @@ func cmdCheck(args []string) {
 		if u.Status != "matched" && !u.IsThunk && u.Status != "out_of_scope" {
 			u.Status = "matched"
 			u.SkipReason = ""
+			u.MatchedBy = modelName
+			u.MatchedAt = time.Now().UTC().Format("2006-01-02")
 			if err := saveUnits(units); err != nil {
 				fmt.Fprintf(os.Stderr, "Warning: failed to update build/units.json: %v\n", err)
 			} else {
-				autoCommitMatch(u.VA, u.Symbol)
+				autoCommitMatch(u.VA, u.Symbol, u.MatchedBy)
 			}
+		} else if u.Status == "matched" && (u.MatchedBy == "" || u.MatchedBy == "unknown") && modelName != "unknown" {
+			u.MatchedBy = modelName
+			if u.MatchedAt == "" {
+				u.MatchedAt = time.Now().UTC().Format("2006-01-02")
+			}
+			_ = saveUnits(units)
 		}
 		return
 	}
@@ -1055,7 +1105,7 @@ func main() {
 	if len(os.Args) < 2 {
 		fmt.Fprintln(os.Stderr, "Usage:")
 		fmt.Fprintln(os.Stderr, "  go run ./tools/work next [--max-size 256]")
-		fmt.Fprintln(os.Stderr, "  go run ./tools/work check <address>")
+		fmt.Fprintln(os.Stderr, "  go run ./tools/work check <address> [--model <name>]")
 		fmt.Fprintln(os.Stderr, "  go run ./tools/work skip <address> \"<reason>\"")
 		os.Exit(1)
 	}

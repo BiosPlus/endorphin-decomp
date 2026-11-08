@@ -34,13 +34,13 @@ select_runner() {
   # Tier 1: Tiny/Small functions (<= 160 bytes) -> Prefer Haiku first, then agy, then Sonnet
   if (( byte_size <= 160 )); then
     if [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_HAIKU -eq 0 ]]; then
-      echo "claude:haiku"
+      echo "claude-haiku"
       return
     elif [[ $HAS_AGY -eq 1 && $EXHAUSTED_AGY -eq 0 ]]; then
-      echo "agy:default"
+      echo "agy-argon"
       return
     elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_SONNET -eq 0 ]]; then
-      echo "claude:sonnet"
+      echo "claude-sonnet"
       return
     fi
   fi
@@ -48,29 +48,29 @@ select_runner() {
   # Tier 2: Medium functions (161 - 512 bytes) -> Alternate Sonnet and agy to spread load
   if (( byte_size <= 512 )); then
     if (( RANDOM % 2 == 0 )) && [[ $HAS_AGY -eq 1 && $EXHAUSTED_AGY -eq 0 ]]; then
-      echo "agy:default"
+      echo "agy-argon"
       return
     elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_SONNET -eq 0 ]]; then
-      echo "claude:sonnet"
+      echo "claude-sonnet"
       return
     elif [[ $HAS_AGY -eq 1 && $EXHAUSTED_AGY -eq 0 ]]; then
-      echo "agy:default"
+      echo "agy-argon"
       return
     elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_HAIKU -eq 0 ]]; then
-      echo "claude:haiku"
+      echo "claude-haiku"
       return
     fi
   fi
 
   # Tier 3: Large functions (> 512 bytes) -> Prefer agy (Argon) or Opus/Sonnet
   if [[ $HAS_AGY -eq 1 && $EXHAUSTED_AGY -eq 0 ]]; then
-    echo "agy:default"
+    echo "agy-argon"
     return
   elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_OPUS -eq 0 ]]; then
-    echo "claude:opus"
+    echo "claude-opus"
     return
   elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_SONNET -eq 0 ]]; then
-    echo "claude:sonnet"
+    echo "claude-sonnet"
     return
   fi
 
@@ -81,10 +81,10 @@ mark_exhausted() {
   local runner="$1"
   echo "[!] Rate limit or quota hit on $runner — marking exhausted and failing over..."
   case "$runner" in
-    claude:haiku)  EXHAUSTED_CLAUDE_HAIKU=1 ;;
-    claude:sonnet) EXHAUSTED_CLAUDE_SONNET=1 ;;
-    claude:opus)   EXHAUSTED_CLAUDE_OPUS=1 ;;
-    agy:*)         EXHAUSTED_AGY=1 ;;
+    claude-haiku|claude:haiku)   EXHAUSTED_CLAUDE_HAIKU=1 ;;
+    claude-sonnet|claude:sonnet) EXHAUSTED_CLAUDE_SONNET=1 ;;
+    claude-opus|claude:opus)     EXHAUSTED_CLAUDE_OPUS=1 ;;
+    agy-*|agy:*)                 EXHAUSTED_AGY=1 ;;
   esac
 }
 
@@ -94,15 +94,17 @@ run_agent_batch() {
   local log_file
   log_file="$(mktemp /tmp/endorphin_batch.XXXXXX.log)"
 
-  local prompt="Read CLAUDE.md. Run 'go run ./tools/work next --max-size ${max_size}' and match the next ${FUNCS_PER_BATCH} functions one by one using 'go run ./tools/work check <addr>'. If a function does not match within 10 tries, run 'go run ./tools/work skip <addr> \"reason\"' and move to the next. Do NOT generate or edit any HTML files. Stop after ${FUNCS_PER_BATCH} functions. Always commit every successful translation immediately."
+  export DECOMP_MODEL="$runner"
+  local prompt="Read CLAUDE.md. Run 'go run ./tools/work next --max-size ${max_size}' and match the next ${FUNCS_PER_BATCH} functions one by one using 'go run ./tools/work check <addr> --model ${DECOMP_MODEL}'. If a function does not match within 10 tries, run 'go run ./tools/work skip <addr> \"reason\"' and move to the next. Do NOT generate or edit any HTML files. Stop after ${FUNCS_PER_BATCH} functions. Always commit every successful translation immediately."
 
   local exit_code=0
   case "$runner" in
-    claude:*)
-      local model="${runner#claude:}"
+    claude-*|claude:*)
+      local model="${runner#claude-}"
+      model="${model#claude:}"
       claude --model "$model" --dangerously-skip-permissions -p "$prompt" >"$log_file" 2>&1 || exit_code=$?
       ;;
-    agy:*)
+    agy-*|agy:*)
       # Adjust flag if your local agy wrapper uses a different headless flag than -p / --prompt
       agy -p "$prompt" >"$log_file" 2>&1 || exit_code=$?
       ;;
