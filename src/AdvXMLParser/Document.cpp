@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/AdvXMLParser/Document.cpp
 
 extern "C" void ext_004701E0();
+extern "C" void ext_00640840();
 
 // [0x0063E940] AdvXMLParser::Document::vfunc_3 (23 bytes)
 // If arg0 == 9, return true (ret 4); otherwise replace arg0 with the value and tail-jump to 0x004701E0.
@@ -14,5 +15,13 @@ extern "C" __declspec(naked) unsigned char __stdcall fn_0063E940(int a1) {
     not_nine:
         mov dword ptr [esp + 4], eax
         jmp ext_004701E0
+    }
+}
+
+// [0x006408B0] AdvXMLParser::Document::vfunc_4 (8 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006408B0(void* self, int edx_unused, int a1) {
+    __asm {
+        call ext_00640840
+        ret 4
     }
 }
