@@ -23,3 +23,29 @@ struct OuterObj_4AEC60 {
 extern "C" void __fastcall fn_004AEC60(OuterObj_4AEC60* self) {
     self->inner->sub.v20();
 }
+
+struct Flagged_4A2510 {
+    char pad[4];
+    unsigned char flag; // +0x04
+};
+
+struct Target_4A2510 {
+    void** vtbl; // +0x00
+};
+
+struct Self_4A2510 {
+    char pad[0x14];
+    Flagged_4A2510* a; // +0x14
+    char pad2[4];
+    Target_4A2510* c;  // +0x1c
+};
+
+typedef void (__fastcall* Fn_4A2510)(Target_4A2510*);
+
+// [0x004A2510] sub_004A2510 (17 bytes)
+extern "C" void __fastcall fn_004A2510(Self_4A2510* self) {
+    self->a->flag = 1;
+    Target_4A2510* c = self->c;
+    Fn_4A2510 f = (Fn_4A2510)c->vtbl[4 / 4];
+    f(c);
+}
