@@ -105490,7 +105490,9 @@
     "relocations": [
       "0x004AECB0"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x004AECC0",
