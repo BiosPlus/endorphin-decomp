@@ -87377,7 +87377,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched"
   },
   {
     "va": "0x00493E30",
@@ -104727,7 +104727,7 @@
     "relocations": [
       "0x004AECB0"
     ],
-    "status": "todo"
+    "status": "matched"
   },
   {
     "va": "0x004AECC0",
@@ -190612,7 +190612,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched"
   },
   {
     "va": "0x00532200",
@@ -295911,7 +295911,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched"
   },
   {
     "va": "0x005E09D0",
@@ -395417,7 +395417,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched"
   },
   {
     "va": "0x0066AF60",
