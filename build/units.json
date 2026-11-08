@@ -90496,7 +90496,9 @@
       "0x004975B8",
       "0x004975BF"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x004975E0",
