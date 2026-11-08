@@ -397506,7 +397506,9 @@
       "0x0066B068",
       "0x0066B06F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x0066B080",
