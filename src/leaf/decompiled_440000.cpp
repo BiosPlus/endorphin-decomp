@@ -36,3 +36,18 @@ extern "C" __declspec(naked) int __fastcall fn_00441060(void* self) {
         ret
     }
 }
+
+// [0x00441090] sub_00441090 (33 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00441090(void* self) {
+    __asm {
+        sub esp, 0xc
+        fld qword ptr [ecx + 0x98]
+        fadd qword ptr [mem_0092BD70]
+        fstp qword ptr [esp + 0x4]
+        fld qword ptr [esp + 0x4]
+        fistp dword ptr [esp]
+        mov eax, dword ptr [esp]
+        add esp, 0xc
+        ret
+    }
+}
