@@ -13,6 +13,7 @@ Decompile `.local/bin/endorphin.exe` into byte-matching C++ source code in `src/
 ## Hard Rules
 1. **Repo Safety:** NEVER commit `.local/`, `.exe`, `.dll`, `.obj`, or raw binary byte dumps to Git. `build/units.json` may only contain function virtual addresses, sizes, SHA-256 hashes, relocation addresses, and symbol names.
 2. **Keep It Simple:** Build small, self-contained Go CLI tools in `tools/`. Explain progress in plain English.
+3. **Commit Attribution:** Every Git commit MUST include a `Co-authored-by:` trailer for the AI assistant (e.g., `Co-authored-by: Antigravity <antigravity@google.com>` or `Co-authored-by: Claude <noreply@anthropic.com>`).
 
 ## Phase 1 To-Do List
 1. **Initialize Go Workspace:** Create `go.mod` in the root directory.
