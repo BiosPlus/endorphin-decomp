@@ -39,3 +39,16 @@ extern "C" __declspec(naked) void __fastcall fn_0066AF80(void* self) {
         jmp eax
     }
 }
+
+// [0x0066AFA0] ExprParser::ExtROType::vfunc_21 (20 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0066AFA0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [eax]
+        mov dword ptr [esp + 4], eax
+        mov edx, dword ptr [edx + 0x54]
+        jmp edx
+    }
+}
