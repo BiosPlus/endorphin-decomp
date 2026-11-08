@@ -195631,7 +195631,9 @@
       "0x00536E8F",
       "0x00536E98"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x00536EA0",
