@@ -70,3 +70,14 @@ extern "C" __declspec(naked) int __fastcall fn_004489E0(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x0044C910] sub_0044C910 (8 bytes)
+extern "C" void ext_0044C790();
+
+extern "C" __declspec(naked) void __cdecl fn_0044C910() {
+    __asm {
+        push 0
+        call ext_0044C790
+        ret
+    }
+}
