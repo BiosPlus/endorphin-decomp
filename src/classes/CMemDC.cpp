@@ -7,3 +7,11 @@ extern "C" __declspec(dllimport) int __stdcall TextOutA(void* hdc, int x, int y,
 extern "C" void __fastcall fn_0041B6E0(void* self, int edx_unused, int a1, int a2, const char* a3, int a4) {
     TextOutA(*(void**)((char*)self + 0x4), a1, a2, a3, a4);
 }
+
+extern "C" __declspec(dllimport) int __stdcall DrawTextA(void* hdc, const char* str, int len, void* rect, unsigned int format);
+
+// [0x0041B790] CMemDC::vfunc_28 (33 bytes)
+// Forwards to GDI/USER DrawTextA(this->m_hDC, str, len, rect, format).
+extern "C" void __fastcall fn_0041B790(void* self, int edx_unused, const char* a1, int a2, void* a3, unsigned int a4) {
+    DrawTextA(*(void**)((char*)self + 0x4), a1, a2, a3, a4);
+}
