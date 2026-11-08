@@ -39,3 +39,21 @@ extern "C" __declspec(naked) void __fastcall fn_004B6CF0(void* self) {
         ret
     }
 }
+
+extern "C" int mem_00A3849C;
+extern "C" int mem_00A384A0;
+extern "C" int mem_00A384A4;
+
+// [0x004B7030] sub_004B7030 (33 bytes)
+extern "C" __declspec(naked) void __stdcall fn_004B7030(void* out) {
+    __asm {
+        fld dword ptr [mem_00A3849C]
+        mov eax, dword ptr [esp + 0x4]
+        fstp dword ptr [eax]
+        fld dword ptr [mem_00A384A0]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [mem_00A384A4]
+        fstp dword ptr [eax + 0x8]
+        ret 0x4
+    }
+}

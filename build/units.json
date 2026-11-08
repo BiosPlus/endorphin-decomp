@@ -111561,7 +111561,9 @@
       "0x004B703E",
       "0x004B7047"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x004B7060",
