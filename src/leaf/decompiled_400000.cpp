@@ -27,3 +27,23 @@ extern "C" int __fastcall fn_00401AC0(void* self) {
     }
     return (int)(p[2] - begin) / 28;
 }
+
+// [0x0040A910] sub_0040A910 (33 bytes)
+extern "C" int mem_00924494;
+
+extern "C" __declspec(naked) void __fastcall fn_0040A910(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x68
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call dword ptr [mem_00924494]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
