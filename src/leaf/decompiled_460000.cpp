@@ -68,3 +68,14 @@ extern "C" __declspec(naked) void __cdecl fn_00467330() {
         ret
     }
 }
+
+// [0x00467380] sub_00467380 (8 bytes)
+extern "C" void ext_00467340();
+
+extern "C" __declspec(naked) void __cdecl fn_00467380() {
+    __asm {
+        push 0
+        call ext_00467340
+        ret
+    }
+}
