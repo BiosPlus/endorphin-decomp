@@ -210765,7 +210765,9 @@
     "relocations": [
       "0x005528DC"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x005528E0",
