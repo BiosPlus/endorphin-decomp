@@ -111385,7 +111385,9 @@
       "0x004B6CF2",
       "0x004B6CFB"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x004B6D20",
