@@ -136,3 +136,12 @@ extern "C" __declspec(naked) void __fastcall fn_00431310(void* self) {
         ret 4
     }
 }
+
+// [0x0043CB80] sub_0043CB80 (8 bytes)
+// Calls thunk_MFC80_ord_1903 (ext_006A5EA8) and returns, popping two stack arguments.
+extern "C" __declspec(naked) void __fastcall fn_0043CB80(void* self) {
+    __asm {
+        call ext_006A5EA8
+        ret 8
+    }
+}
