@@ -19,3 +19,11 @@ extern "C" __declspec(naked) void __fastcall fn_00536E80(void* self) {
         jmp ext_0065C650
     }
 }
+
+// [0x00533210] OglRenderer::vfunc_4 (33 bytes)
+extern "C" void __fastcall fn_00533210(void* self, int edx_unused, int* a1) {
+    char* p = (char*)self;
+    *(int*)(p + 0x41c) = a1[0];
+    *(int*)(p + 0x420) = a1[1];
+    *(int*)(p + 0x424) = a1[2];
+}
