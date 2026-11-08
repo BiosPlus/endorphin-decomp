@@ -13,3 +13,12 @@ extern "C" __declspec(naked) void __fastcall fn_00559180(void* self) {
         jmp ext_00559070
     }
 }
+
+// [0x00554110] sub_00554110 (33 bytes)
+extern "C" int __fastcall fn_00554110(int* self) {
+    int a = self[1];
+    if (a == 0) {
+        return 0;
+    }
+    return (self[2] - a) / 60;
+}
