@@ -17,3 +17,13 @@ extern "C" __declspec(naked) void __fastcall fn_00401B60(void* self) {
         jmp dword ptr [mem_009251C0]
     }
 }
+
+// [0x00401AC0] sub_00401AC0 (33 bytes)
+extern "C" int __fastcall fn_00401AC0(void* self) {
+    char** p = (char**)self;
+    char* begin = p[1];
+    if (begin == 0) {
+        return 0;
+    }
+    return (int)(p[2] - begin) / 28;
+}
