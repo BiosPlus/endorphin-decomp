@@ -46,3 +46,14 @@ extern "C" __declspec(naked) void __fastcall fn_006B6030(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x006B8B10] sub_006B8B10 (8 bytes)
+// Calls thunk_MFC80_ord_1903 (ext_006A5EA8) and returns, popping three stack arguments.
+extern "C" void ext_006A5EA8();
+
+extern "C" __declspec(naked) void __fastcall fn_006B8B10(void* self) {
+    __asm {
+        call ext_006A5EA8
+        ret 0xc
+    }
+}
