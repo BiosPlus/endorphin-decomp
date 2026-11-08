@@ -32,3 +32,15 @@ extern "C" bool __fastcall fn_0049AEC0(void* self, int edx_unused, void* a1, voi
     unsigned char* p = *(unsigned char**)a1;
     return *p == r;
 }
+
+// [0x0049B4A0] ExprParser::PrimitiveProxyType<int>::vfunc_42 (33 bytes)
+// Two stack arguments. obj = a2->m_ptr; r = obj->vtbl[2](a2) (thiscall, returns int);
+// returns whether the int pointed to by the first field of a1 equals r.
+extern "C" bool __fastcall fn_0049B4A0(void* self, int edx_unused, void* a1, void* a2) {
+    void* obj = *(void**)((char*)a2 + 0x4);
+    void** vtbl = *(void***)obj;
+    typedef int (__thiscall *SlotFn)(void*, void*);
+    int r = ((SlotFn)vtbl[2])(obj, a2);
+    int* p = *(int**)a1;
+    return *p == r;
+}
