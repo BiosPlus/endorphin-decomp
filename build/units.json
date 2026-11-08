@@ -180049,7 +180049,9 @@
     "relocations": [
       "0x0051C7D2"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x0051C7E0",
