@@ -26924,7 +26924,9 @@
       "0x00430FB0",
       "0x00430FB8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x00430FC0",
