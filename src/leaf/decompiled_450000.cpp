@@ -80,3 +80,13 @@ extern "C" __declspec(naked) void __fastcall fn_004584C0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00450A80] sub_00450A80 (8 bytes)
+extern "C" void ext_0044F780();
+
+extern "C" __declspec(naked) void __fastcall fn_00450A80(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        call ext_0044F780
+        ret 0x8
+    }
+}
