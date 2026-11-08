@@ -1,0 +1,12 @@
+// Decompiled translation unit: src/StateMachine/State.cpp
+
+// [0x0051DE30] StateMachine::State::vfunc_1 (17 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0051DE30(void* self) {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x89 __asm _emit 0x54 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [ecx + 0x154]
+        __asm _emit 0x8B __asm _emit 0x41 __asm _emit 0x10 // mov eax, dword ptr [ecx + 0x10]
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x10 // add ecx, 0x10
+        __asm _emit 0x8B __asm _emit 0x40 __asm _emit 0x04 // mov eax, dword ptr [eax + 0x4]
+        __asm _emit 0xFF __asm _emit 0xE0 // jmp eax
+    }
+}
