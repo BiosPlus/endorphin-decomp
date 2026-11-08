@@ -1,15 +1,26 @@
 # Endorphin 2.7.1 Decompilation Project
 
 ## Goal
-Decompile `.local/endorphin.exe` into readable C++ source code in `src/` and `include/`, modeled after `momusdigital/fnv_decomp`.
+Decompile `.local/bin/endorphin.exe` into byte-matching C++ source code in `src/` and `include/`, modeled after `momusdigital/fnv_decomp`.
 
-## Rules
-1. Never commit `.local/` or any `.exe` / `.dll` files to Git.
-2. Use Go or Bash for any helper scripts in `tools/` (do not use Python).
-3. Work step-by-step and keep me updated in plain English.
+## Local Machine Tooling (Verified Paths)
+- **Go:** `/usr/bin/go` (Use Go or Bash for all project tooling in `tools/`. NEVER use Python.)
+- **Ghidra Headless:** `/usr/bin/ghidra-analyzeHeadless` (and `/opt/ghidra/support/analyzeHeadless`). Note: Write any Ghidra post-scripts in `.java` (Ghidra's native script format), never Python.
+- **Disassembler:** `/usr/bin/llvm-objdump` and `/usr/bin/objdump`
+- **Wine / Compiler Runner:** `/usr/bin/wine` and `/usr/bin/umu-run`
+- **Build System:** `ninja` (`-j16`)
 
-## Your To-Do List (Do these in order)
-1. **Extract Function List:** Use `analyzeHeadless` (Ghidra) or `objdump` on `.local/endorphin.exe` to find all functions in the `.text` section and save the list of function addresses and sizes to `build/units.json`.
-2. **Extract Class Names:** Scan `.local/endorphin.exe` for MSVC RTTI class names (`.?AV`) and generate header stubs in `include/`.
-3. **Decompile Leaf Functions First:** Pick the smallest, simplest functions in `build/units.json`, extract their assembly and Ghidra pseudocode into `.local/cache/`, and write clean C++ reconstructions in `src/`.
-4. **Set Up Verification Later:** Once we have the function list and initial C++ files extracted, help me set up the MSVC 2005 (`14.00.50727`) compiler under Wine so we can start checking byte-for-byte matches.
+## Hard Rules
+1. **Repo Safety:** NEVER commit `.local/`, `.exe`, `.dll`, `.obj`, or raw binary byte dumps to Git. `build/units.json` may only contain function virtual addresses, sizes, SHA-256 hashes, relocation addresses, and symbol names.
+2. **Keep It Simple:** Build small, self-contained Go CLI tools in `tools/`. Explain progress in plain English.
+
+## Phase 1 To-Do List
+1. **Initialize Go Workspace:** Create `go.mod` in the root directory.
+2. **Build & Run `tools/extract_rtti`:**
+   - Parse `.local/bin/endorphin.exe` (verify SHA-256 against `build/target.json`).
+   - Extract all 2,352 MSVC RTTI classes, their `CompleteObjectLocator` structures, inheritance hierarchies, and vtable virtual addresses.
+   - Save the structured map to `build/classes.json` and generate C++ header stubs in `include/` (skipping standard Microsoft MFC/ATL `C*` classes).
+3. **Build & Run `tools/extract_units`:**
+   - Use `/usr/bin/llvm-objdump` (or `/usr/bin/ghidra-analyzeHeadless` with a `.java` script storing the Ghidra project in `.local/ghidra_proj`) to identify all functions in `.text` (`0x00401000` to `0x009221aa`).
+   - Dump each function's disassembly (and Ghidra decompiled C pseudocode) into `.local/cache/funcs/<address>.txt`.
+   - Generate `build/units.json` with function addresses, byte lengths, SHA-256 hashes, and call-graph dependencies (number of callees so we can sort by leaf functions).
