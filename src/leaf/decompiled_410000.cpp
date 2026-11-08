@@ -32,3 +32,24 @@ extern "C" __declspec(naked) void __fastcall fn_004137F0(void* self) {
         jmp ext_00454BA0
     }
 }
+
+// [0x00415F97] sub_00415F97 (28 bytes)
+extern "C" int mem_00925680;
+
+// Both conditional branches leave the 28-byte body (targets 0x415FBA / 0x415FB3),
+// so they are emitted as fixed short-jump encodings to keep the rel8 bytes exact.
+extern "C" __declspec(naked) void __fastcall fn_00415F97(void* self) {
+    __asm {
+        test eax, eax
+        _emit 0x74
+        _emit 0x1f
+        mov ecx, dword ptr [ecx + 0x54]
+        cmp ecx, -1
+        _emit 0x75
+        _emit 0x10
+        pop esi
+        pop ebx
+        mov dword ptr [esp + 4], 0xf
+        jmp dword ptr [mem_00925680]
+    }
+}
