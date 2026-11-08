@@ -1,0 +1,115 @@
+name: CI & Decompilation Dashboard
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages-${{ github.ref }}"
+  cancel-in-progress: false
+
+jobs:
+  verify-and-dashboard:
+    name: Verify Repo Safety, Tooling & Publish Dashboard
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Legal safety gate (forbid .exe, .dll, .obj, or .local/ in Git)
+        run: |
+          FORBIDDEN=$(git ls-files | grep -E '(^\.local/|\.(exe|dll|obj|lib|pdb|idb)$)' || true)
+          if [ -n "$FORBIDDEN" ]; then
+            echo "::error::Forbidden proprietary binary or .local/ files tracked in Git:"
+            echo "$FORBIDDEN"
+            exit 1
+          fi
+          echo "Legal safety check passed: 0 forbidden files tracked."
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - name: Compile all CLI tools under tools/
+        run: |
+          mkdir -p /tmp/endorphin-tools
+          go build -v -o /tmp/endorphin-tools/ ./tools/...
+          go build ./tools/...
+          git clean -fd
+
+      - name: Generate decompilation scoreboard & HTML dashboard
+        run: |
+          mkdir -p docs
+          {
+            echo "## Endorphin 2.7.1 Decompilation Scoreboard"
+            echo '```text'
+            go run ./tools/status -html docs/index.html
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/deploy-pages@v4
+
+  byte-match:
+    name: MSVC 2005 Byte-for-Byte Parity Check
+    runs-on: ubuntu-latest
+    needs: verify-and-dashboard
+    if: vars.ENABLE_MSVC_CI == 'true'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
+      - name: Install Wine and extraction tools
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends wine wine32 cabextract p7zip-full curl ca-certificates
+
+      - name: Download and set up MSVC8 compiler bundle
+        env:
+          MSVC8_BUNDLE_URL: ${{ secrets.MSVC8_BUNDLE_URL }}
+        run: |
+          if [ -n "$MSVC8_BUNDLE_URL" ]; then
+            mkdir -p /tmp/msvc8_bundle
+            curl -fsSL "$MSVC8_BUNDLE_URL" -o /tmp/msvc8_bundle/msvc8.tar.zst || curl -fsSL "$MSVC8_BUNDLE_URL" -o /tmp/msvc8_bundle/msvc8.iso
+            if [ -f /tmp/msvc8_bundle/msvc8.tar.zst ]; then
+              mkdir -p .local/msvc8
+              tar -I zstd -xf /tmp/msvc8_bundle/msvc8.tar.zst -C .local/msvc8
+              ./tools/setup_msvc8.sh .local/msvc8
+            else
+              ./tools/setup_msvc8.sh /tmp/msvc8_bundle/msvc8.iso
+            fi
+          fi
+
+      - name: Run build_and_match against modified units in src/
+        run: |
+          go run ./tools/build_and_match -modified
