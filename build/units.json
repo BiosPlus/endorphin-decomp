@@ -62754,7 +62754,9 @@
     "relocations": [
       "0x00469C83"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x00469C90",
