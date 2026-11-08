@@ -13,3 +13,13 @@ extern "C" __declspec(naked) void __fastcall fn_004806E0(void* self) {
         jmp ext_004A57F0
     }
 }
+
+// [0x0048FB30] sub_0048FB30 (33 bytes)
+// Returns 0 if this->f4 is 0; otherwise (this->f8 - this->f4) / 124 (signed).
+extern "C" int __fastcall fn_0048FB30(const int* self) {
+    int a = self[1];
+    if (a == 0) {
+        return 0;
+    }
+    return (self[2] - a) / 124;
+}
