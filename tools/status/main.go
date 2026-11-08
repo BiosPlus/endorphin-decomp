@@ -105,6 +105,12 @@ func renderHTMLDashboard(
 	funcPct := pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs))
 	bytePct := pct(inScopeMatchedBytes, inScopeBytes)
 
+	var aiMatchedFuncs int
+	for _, m := range leaderboard {
+		aiMatchedFuncs += m.MatchedFuncs
+	}
+	autoSolveFuncs := inScopeMatchedFuncs - aiMatchedFuncs
+
 	sb.WriteString(`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -223,7 +229,7 @@ func renderHTMLDashboard(
         <div class="card-label">In-Scope Functions Matched</div>
         <div class="card-value">%.2f%%</div>
         <div class="progress-bar"><div class="progress-fill" style="width: %.2f%%"></div></div>
-        <div class="card-sub">%d / %d functions</div>
+        <div class="card-sub">%d / %d (%d AI &bull; %d auto_solve)</div>
       </div>
       <div class="card">
         <div class="card-label">In-Scope Code Bytes</div>
@@ -243,7 +249,7 @@ func renderHTMLDashboard(
       </div>
     </div>
 `,
-		funcPct, funcPct, inScopeMatchedFuncs, inScopeFuncs,
+		funcPct, funcPct, inScopeMatchedFuncs, inScopeFuncs, aiMatchedFuncs, autoSolveFuncs,
 		bytePct, bytePct, inScopeMatchedBytes, inScopeBytes, float64(inScopeBytes)/(1024.0*1024.0),
 		totalClasses, inScopeClasses, mfcClasses,
 		outOfScopeFuncs, outThunkFuncs, outCRTMFCFuncs,
@@ -283,28 +289,39 @@ func renderHTMLDashboard(
       </table>
     </div>
     <div class="panel">
-      <h2 style="margin-top:0;font-size:18px;">Squad Leaderboard (Matches by Model)</h2>
+      <h2 style="margin-top:0;font-size:18px;">Squad Leaderboard (AI Model Matches)</h2>
+      <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Excludes ` + fmt.Sprintf("%d", autoSolveFuncs) + ` deterministic <code>script:auto_solve</code> baseline stubs</div>
       <table>
         <thead>
           <tr>
-            <th>Model / Solver</th>
+            <th>Model</th>
             <th class="num">Matched Functions</th>
             <th class="num">Matched Bytes</th>
-            <th class="num">Share of Matched</th>
+            <th class="num">Share of AI Matches</th>
           </tr>
         </thead>
         <tbody>
 `)
 
-	for _, m := range leaderboard {
-		sharePct := pct(uint64(m.MatchedFuncs), uint64(inScopeMatchedFuncs))
-		sb.WriteString(fmt.Sprintf(`          <tr>
+	if len(leaderboard) == 0 {
+		sb.WriteString(`          <tr>
+            <td style="color:var(--muted);font-style:italic;">No AI matches yet</td>
+            <td class="num">0</td>
+            <td class="num">0</td>
+            <td class="num">0.00%</td>
+          </tr>
+`)
+	} else {
+		for _, m := range leaderboard {
+			sharePct := pct(uint64(m.MatchedFuncs), uint64(aiMatchedFuncs))
+			sb.WriteString(fmt.Sprintf(`          <tr>
             <td><code>%s</code></td>
             <td class="num">%d</td>
             <td class="num">%d</td>
             <td class="num">%.2f%%</td>
           </tr>
 `, m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct))
+		}
 	}
 
 	sb.WriteString(fmt.Sprintf(`        </tbody>
@@ -346,10 +363,16 @@ func renderReadme(
 	funcPct := pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs))
 	bytePct := pct(inScopeMatchedBytes, inScopeBytes)
 
+	var aiMatchedFuncs int
+	for _, m := range leaderboard {
+		aiMatchedFuncs += m.MatchedFuncs
+	}
+	autoSolveFuncs := inScopeMatchedFuncs - aiMatchedFuncs
+
 	sb.WriteString("# Endorphin 2.7.1 Decompilation Project\n\n")
 	sb.WriteString("A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endorphin.exe`), compiled with **MSVC 2005 RTM (14.00.50727.42)** for x86.\n\n")
 	sb.WriteString("## Verified Byte-Match Scoreboard\n\n")
-	sb.WriteString(fmt.Sprintf("- **In-Scope Functions Matched:** `%d / %d` (**%.2f%%**)\n", inScopeMatchedFuncs, inScopeFuncs, funcPct))
+	sb.WriteString(fmt.Sprintf("- **In-Scope Functions Matched:** `%d / %d` (**%.2f%%**) — `%d` by AI models, `%d` by deterministic `auto_solve`\n", inScopeMatchedFuncs, inScopeFuncs, funcPct, aiMatchedFuncs, autoSolveFuncs))
 	sb.WriteString(fmt.Sprintf("- **In-Scope Code Bytes Matched:** `%d / %d bytes` (**%.2f%%** of %.2f MB)\n", inScopeMatchedBytes, inScopeBytes, bytePct, float64(inScopeBytes)/(1024.0*1024.0)))
 	sb.WriteString(fmt.Sprintf("- **RTTI Classes Extracted:** `%d` total (`%d` in-scope application/engine classes, `%d` MFC/ATL/std classes)\n", totalClasses, inScopeClasses, mfcClasses))
 	sb.WriteString(fmt.Sprintf("- **Out-of-Scope Boilerplate:** `%d` units (`%d` jump/adjustor thunks, `%d` CRT/MFC/SEH funclets)\n\n", outOfScopeFuncs, outThunkFuncs, outCRTMFCFuncs))
@@ -364,12 +387,16 @@ func renderReadme(
 			t.ShortName, t.MatchedFuncs, t.TotalFuncs, fPct, t.MatchedBytes, t.TotalBytes, bPct, t.RemainFuncs))
 	}
 
-	sb.WriteString("\n### Squad Leaderboard (Matches by Model)\n\n")
-	sb.WriteString("| Model / Solver | Matched Functions | Matched Bytes | Share of Matched |\n")
+	sb.WriteString("\n### Squad Leaderboard (AI Model Matches)\n\n")
+	sb.WriteString("| Model | Matched Functions | Matched Bytes | Share of AI Matches |\n")
 	sb.WriteString("| :--- | ---: | ---: | ---: |\n")
-	for _, m := range leaderboard {
-		sharePct := pct(uint64(m.MatchedFuncs), uint64(inScopeMatchedFuncs))
-		sb.WriteString(fmt.Sprintf("| `%s` | %d | %d | %.2f%% |\n", m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct))
+	if len(leaderboard) == 0 {
+		sb.WriteString("| *(no AI matches yet)* | 0 | 0 | 0.00% |\n")
+	} else {
+		for _, m := range leaderboard {
+			sharePct := pct(uint64(m.MatchedFuncs), uint64(aiMatchedFuncs))
+			sb.WriteString(fmt.Sprintf("| `%s` | %d | %d | %.2f%% |\n", m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct))
+		}
 	}
 
 	sb.WriteString("\n## Tooling & Workflow\n\n")
@@ -394,8 +421,14 @@ func renderCISummary(
 	funcPct := pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs))
 	bytePct := pct(inScopeMatchedBytes, inScopeBytes)
 
+	var aiMatchedFuncs int
+	for _, m := range leaderboard {
+		aiMatchedFuncs += m.MatchedFuncs
+	}
+	autoSolveFuncs := inScopeMatchedFuncs - aiMatchedFuncs
+
 	sb.WriteString("## Endorphin 2.7.1 Decompilation Scoreboard\n\n")
-	sb.WriteString(fmt.Sprintf("- **In-Scope Functions Matched:** `%d / %d` (**%.2f%%**)\n", inScopeMatchedFuncs, inScopeFuncs, funcPct))
+	sb.WriteString(fmt.Sprintf("- **In-Scope Functions Matched:** `%d / %d` (**%.2f%%**) — `%d` by AI models, `%d` by deterministic `auto_solve`\n", inScopeMatchedFuncs, inScopeFuncs, funcPct, aiMatchedFuncs, autoSolveFuncs))
 	sb.WriteString(fmt.Sprintf("- **In-Scope Code Bytes Matched:** `%d / %d bytes` (**%.2f%%** of %.2f MB)\n", inScopeMatchedBytes, inScopeBytes, bytePct, float64(inScopeBytes)/(1024.0*1024.0)))
 	sb.WriteString(fmt.Sprintf("- **RTTI Classes Extracted:** `%d` total (`%d` in-scope, `%d` MFC/ATL/std)\n", totalClasses, inScopeClasses, mfcClasses))
 	sb.WriteString(fmt.Sprintf("- **Out-of-Scope Boilerplate:** `%d` units (`%d` thunks, `%d` CRT/MFC/SEH)\n\n", outOfScopeFuncs, outThunkFuncs, outCRTMFCFuncs))
@@ -409,12 +442,16 @@ func renderCISummary(
 			t.ShortName, t.MatchedFuncs, t.TotalFuncs, fPct, t.MatchedBytes, t.TotalBytes, bPct, t.RemainFuncs))
 	}
 
-	sb.WriteString("\n### Squad Leaderboard (Matches by Model)\n\n")
-	sb.WriteString("| Model / Solver | Matched Functions | Matched Bytes | Share of Matched |\n")
+	sb.WriteString("\n### Squad Leaderboard (AI Model Matches)\n\n")
+	sb.WriteString("| Model | Matched Functions | Matched Bytes | Share of AI Matches |\n")
 	sb.WriteString("| :--- | ---: | ---: | ---: |\n")
-	for _, m := range leaderboard {
-		sharePct := pct(uint64(m.MatchedFuncs), uint64(inScopeMatchedFuncs))
-		sb.WriteString(fmt.Sprintf("| `%s` | %d | %d | %.2f%% |\n", m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct))
+	if len(leaderboard) == 0 {
+		sb.WriteString("| *(no AI matches yet)* | 0 | 0 | 0.00% |\n")
+	} else {
+		for _, m := range leaderboard {
+			sharePct := pct(uint64(m.MatchedFuncs), uint64(aiMatchedFuncs))
+			sb.WriteString(fmt.Sprintf("| `%s` | %d | %d | %.2f%% |\n", m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct))
+		}
 	}
 	return sb.String()
 }
@@ -524,13 +561,15 @@ func main() {
 			tier.MatchedFuncs++
 			tier.MatchedBytes += uint64(u.Size)
 
-			ms, ok := modelStatsMap[u.MatchedBy]
-			if !ok {
-				ms = &ModelStats{Model: u.MatchedBy}
-				modelStatsMap[u.MatchedBy] = ms
+			if u.MatchedBy != "script:auto_solve" {
+				ms, ok := modelStatsMap[u.MatchedBy]
+				if !ok {
+					ms = &ModelStats{Model: u.MatchedBy}
+					modelStatsMap[u.MatchedBy] = ms
+				}
+				ms.MatchedFuncs++
+				ms.MatchedBytes += uint64(u.Size)
 			}
-			ms.MatchedFuncs++
-			ms.MatchedBytes += uint64(u.Size)
 		} else {
 			inScopeRemainFuncs++
 			inScopeRemainBytes += uint64(u.Size)
@@ -546,8 +585,10 @@ func main() {
 	}
 
 	var leaderboard []ModelStats
+	var aiMatchedFuncs int
 	for _, ms := range modelStatsMap {
 		leaderboard = append(leaderboard, *ms)
+		aiMatchedFuncs += ms.MatchedFuncs
 	}
 	sort.Slice(leaderboard, func(i, j int) bool {
 		if leaderboard[i].MatchedFuncs != leaderboard[j].MatchedFuncs {
@@ -591,6 +632,8 @@ func main() {
 		fmt.Printf("IN-SCOPE PROGRESS: %d / %d funcs (%.2f%%) | %d / %d bytes (%.2f%%)\n",
 			inScopeMatchedFuncs, inScopeFuncs, pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs)),
 			inScopeMatchedBytes, inScopeBytes, pct(inScopeMatchedBytes, inScopeBytes))
+		fmt.Printf("  - AI Matched   : %5d funcs          | %d deterministic auto_solve stubs\n",
+			aiMatchedFuncs, inScopeMatchedFuncs-aiMatchedFuncs)
 		fmt.Println("--------------------------------------------------------------------------------")
 		fmt.Println("Size Tier         |   Decompiled / Total Funcs   |     Decompiled / Total Bytes     | Remaining")
 		fmt.Println("------------------+------------------------------+----------------------------------+----------")
@@ -603,14 +646,18 @@ func main() {
 			)
 		}
 		fmt.Println("--------------------------------------------------------------------------------")
-		fmt.Println("Squad Leaderboard (Matches by Model)")
-		fmt.Println("Model / Solver              | Matched Funcs | Matched Bytes | Share of Matched")
-		fmt.Println("----------------------------+---------------+---------------+-----------------")
-		for _, m := range leaderboard {
-			fmt.Printf("%-27s | %13d | %13d | %14.2f%%\n",
-				m.Model, m.MatchedFuncs, m.MatchedBytes,
-				pct(uint64(m.MatchedFuncs), uint64(inScopeMatchedFuncs)),
-			)
+		fmt.Println("Squad Leaderboard (AI Model Matches)")
+		fmt.Println("Model                       | Matched Funcs | Matched Bytes | Share of AI Matches")
+		fmt.Println("----------------------------+---------------+---------------+--------------------")
+		if len(leaderboard) == 0 {
+			fmt.Printf("%-27s | %13d | %13d | %17.2f%%\n", "(no AI matches yet)", 0, 0, 0.0)
+		} else {
+			for _, m := range leaderboard {
+				fmt.Printf("%-27s | %13d | %13d | %17.2f%%\n",
+					m.Model, m.MatchedFuncs, m.MatchedBytes,
+					pct(uint64(m.MatchedFuncs), uint64(aiMatchedFuncs)),
+				)
+			}
 		}
 		fmt.Println("================================================================================")
 	}

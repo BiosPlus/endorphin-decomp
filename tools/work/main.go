@@ -900,6 +900,18 @@ func backfillAutoSolveModels(units []UnitEntry) bool {
 	return changed
 }
 
+func coAuthorForModel(matchedBy string) string {
+	m := strings.ToLower(strings.TrimSpace(matchedBy))
+	switch {
+	case strings.Contains(m, "gemini") || strings.Contains(m, "agy") || strings.Contains(m, "antigravity"):
+		return "Co-authored-by: Antigravity <noreply@google.com>"
+	case strings.Contains(m, "claude") || strings.Contains(m, "haiku") || strings.Contains(m, "sonnet") || strings.Contains(m, "opus"):
+		return "Co-authored-by: Claude <noreply@anthropic.com>"
+	default:
+		return ""
+	}
+}
+
 func autoCommitMatch(va, symbol, matchedBy string) {
 	_ = exec.Command("go", "run", "./tools/status", "-readme").Run()
 
@@ -938,6 +950,9 @@ func autoCommitMatch(va, symbol, matchedBy string) {
 	}
 
 	msg := fmt.Sprintf("Match %s (%s) [model: %s]", va, symbol, matchedBy)
+	if trailer := coAuthorForModel(matchedBy); trailer != "" {
+		msg = msg + "\n\n" + trailer
+	}
 	if out, err := exec.Command("git", "commit", "-m", msg).CombinedOutput(); err != nil {
 		fmt.Fprintf(os.Stderr, "Warning: git commit failed: %v (%s)\n", err, strings.TrimSpace(string(out)))
 	}

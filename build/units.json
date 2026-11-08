@@ -4929,8 +4929,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x004086C0",
@@ -17389,8 +17388,7 @@
     "relocations": [
       "0x0041D83F"
     ],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x0041D850",
@@ -26604,8 +26602,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x00430CC0",
@@ -61405,8 +61402,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x004686A0",
@@ -61471,8 +61467,7 @@
     "relocations": [
       "0x0046875D"
     ],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x00468770",
@@ -61486,8 +61481,7 @@
     "relocations": [
       "0x0046877D"
     ],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x00468790",
@@ -67163,8 +67157,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x0046FAC0",
@@ -88012,8 +88005,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x00493E30",
@@ -97694,8 +97686,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x004A2530",
@@ -105424,8 +105415,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x004AEC70",
@@ -105482,8 +105472,7 @@
     "relocations": [
       "0x004AECB0"
     ],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x004AECC0",
@@ -149598,8 +149587,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x004EF310",
@@ -156935,8 +156923,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x004F9D20",
@@ -156989,8 +156976,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x004F9E60",
@@ -180732,8 +180718,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "deferred",
-    "skip_reason": "register allocation order eax vs edx"
+    "status": "todo"
   },
   {
     "va": "0x0051DE50",
@@ -181777,8 +181762,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x0051F9E0",
@@ -191693,8 +191677,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x00532200",
@@ -210774,8 +210757,7 @@
     "relocations": [
       "0x005528DC"
     ],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x005528E0",
@@ -259521,8 +259503,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x005AC6B0",
@@ -286024,8 +286005,7 @@
     "relocations": [
       "0x005D100F"
     ],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x005D1020",
@@ -297520,8 +297500,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x005E09D0",
@@ -326862,8 +326841,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x00609740",
@@ -397378,8 +397356,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x0066AF60",
@@ -397391,8 +397368,7 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x0066AF80",
@@ -397496,8 +397472,7 @@
       "0x0066B068",
       "0x0066B06F"
     ],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x0066B080",
@@ -447550,8 +447525,7 @@
     "relocations": [
       "0x006AD92E"
     ],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x006AD940",
@@ -569996,8 +569970,7 @@
     "relocations": [
       "0x007C8E1F"
     ],
-    "status": "matched",
-    "matched_by": "script:auto_solve"
+    "status": "todo"
   },
   {
     "va": "0x007C8E30",

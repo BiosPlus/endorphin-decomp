@@ -152,8 +152,21 @@ for (( batch=1; batch<=MAX_BATCHES; batch++ )); do
   go run ./tools/status -readme >/dev/null 2>&1 || true
 
   if [[ -n "$(git status --porcelain src/ include/ build/units.json README.md 2>/dev/null)" ]]; then
+    COAUTHOR=""
+    case "$RUNNER" in
+      gemini-*|agy-*|agy:*|antigravity*)
+        COAUTHOR="Co-authored-by: Antigravity <noreply@google.com>"
+        ;;
+      claude-*|claude:*)
+        COAUTHOR="Co-authored-by: Claude <noreply@anthropic.com>"
+        ;;
+    esac
     git add src/ include/ build/units.json README.md
-    git commit -m "Auto-grind batch $batch via $RUNNER" || true
+    if [[ -n "$COAUTHOR" ]]; then
+      git commit -m "Auto-grind batch $batch via $RUNNER" -m "$COAUTHOR" || true
+    else
+      git commit -m "Auto-grind batch $batch via $RUNNER" || true
+    fi
   fi
 
   if (( batch % PUSH_EVERY == 0 )); then

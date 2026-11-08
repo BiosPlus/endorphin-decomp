@@ -34,4 +34,4 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
 - **NEVER** commit `.local/`, `.exe`, `.dll`, `.obj`, `.lib`, `.pdb`, or `.idb` files.
 - **C++03 only** (no `auto`, `nullptr`, or variadic templates).
 - **No Python** (Go/Bash tooling only).
-- Include `Co-authored-by: Claude <noreply@anthropic.com>` (or `Antigravity <antigravity@google.com>`) on commits.
+- Include `Co-authored-by: Claude <noreply@anthropic.com>` (for Claude models) or `Co-authored-by: Antigravity <noreply@google.com>` (for Antigravity / `agy` / Gemini models) on commits.
