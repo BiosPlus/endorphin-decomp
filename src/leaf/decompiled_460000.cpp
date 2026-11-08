@@ -139,3 +139,16 @@ extern "C" __declspec(naked) void __cdecl fn_00465B30() {
         ret
     }
 }
+
+// [0x0046FAC0] sub_0046FAC0 (10 bytes)
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_0046FAC0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        push eax
+        call ext_006A5C5C
+        pop ecx
+        ret
+    }
+}
