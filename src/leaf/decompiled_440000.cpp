@@ -144,3 +144,12 @@ extern "C" __declspec(naked) void __cdecl fn_0044C980() {
         ret
     }
 }
+
+// [0x0044C990] sub_0044C990 (8 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0044C990() {
+    __asm {
+        push 8
+        call ext_0044C790
+        ret
+    }
+}
