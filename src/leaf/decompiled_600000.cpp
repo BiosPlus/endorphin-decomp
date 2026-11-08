@@ -10,3 +10,14 @@ extern "C" __declspec(naked) void __fastcall fn_00609730(void* self) {
         __asm _emit 0xFF __asm _emit 0xE2 // jmp edx
     }
 }
+
+extern "C" void ext_00602F20();
+
+// [0x00602F40] sub_00602F40 (9 bytes)
+extern "C" __declspec(naked) float __cdecl fn_00602F40() {
+    __asm {
+        call ext_00602F20
+        fld dword ptr [eax + 0x8]
+        ret
+    }
+}
