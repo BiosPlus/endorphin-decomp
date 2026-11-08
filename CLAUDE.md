@@ -20,13 +20,14 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
    ```bash
    go run ./tools/work check 0xXXXXXXXX
    ```
-   - `EXACT MATCH (100%)` automatically marks `"status": "matched"` in `build/units.json`.
+   - `EXACT MATCH (100%)` automatically marks `"status": "matched"` in `build/units.json`, updates `README.md`, and commits the match.
 4. **If stuck after 10 tries, remove your broken code from the `.cpp` file and skip:**
    ```bash
    go run ./tools/work skip 0xXXXXXXXX "brief reason"
    ```
 
 ## Hard Rules
+- **ALWAYS** commit every successful translation immediately (if `tools/work check` did not already auto-commit it). Never leave matched functions uncommitted.
 - **NEVER** edit `build/units.json` by hand.
 - **NEVER** touch, generate, or commit HTML files (`docs/`).
 - **NEVER** commit `.local/`, `.exe`, `.dll`, `.obj`, `.lib`, `.pdb`, or `.idb` files.

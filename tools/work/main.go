@@ -860,6 +860,49 @@ func generateHaikuHints(tgtInsts, compInsts []AsmInst, tgtLen, compLen int) []st
 	return hints
 }
 
+func autoCommitMatch(va, symbol string) {
+	_ = exec.Command("go", "run", "./tools/status", "-readme").Run()
+
+	_ = exec.Command("git", "add", "src/", "include/", "build/units.json", "README.md").Run()
+
+	stagedOut, err := exec.Command("git", "diff", "--cached", "--name-only").Output()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Warning: failed to inspect staged files: %v\n", err)
+		return
+	}
+	stagedLines := strings.Split(strings.TrimSpace(string(stagedOut)), "\n")
+	if len(stagedLines) == 0 || stagedLines[0] == "" {
+		return
+	}
+
+	var forbidden []string
+	for _, f := range stagedLines {
+		f = strings.TrimSpace(f)
+		if f == "" {
+			continue
+		}
+		lower := strings.ToLower(f)
+		if strings.HasPrefix(lower, ".local/") ||
+			strings.HasSuffix(lower, ".exe") ||
+			strings.HasSuffix(lower, ".obj") ||
+			strings.HasSuffix(lower, ".html") {
+			forbidden = append(forbidden, f)
+		}
+	}
+	if len(forbidden) > 0 {
+		for _, f := range forbidden {
+			_ = exec.Command("git", "reset", "HEAD", "--", f).Run()
+		}
+		fmt.Fprintf(os.Stderr, "Error: refused to commit forbidden staged files: %v\n", forbidden)
+		return
+	}
+
+	msg := fmt.Sprintf("Match %s (%s)", va, symbol)
+	if out, err := exec.Command("git", "commit", "-m", msg).CombinedOutput(); err != nil {
+		fmt.Fprintf(os.Stderr, "Warning: git commit failed: %v (%s)\n", err, strings.TrimSpace(string(out)))
+	}
+}
+
 func cmdCheck(args []string) {
 	if len(args) < 1 {
 		fmt.Fprintln(os.Stderr, "Usage: go run ./tools/work check <address>")
@@ -912,14 +955,16 @@ func cmdCheck(args []string) {
 
 	exact, pct, compMasked, tgtMasked := maskAndCompare(compFn, targetBytes, *u, startVA)
 	if exact {
+		fmt.Printf("EXACT MATCH (100%%) | %s | %s (%d bytes)\n", u.VA, u.Symbol, len(tgtMasked))
 		if u.Status != "matched" && !u.IsThunk && u.Status != "out_of_scope" {
 			u.Status = "matched"
 			u.SkipReason = ""
 			if err := saveUnits(units); err != nil {
 				fmt.Fprintf(os.Stderr, "Warning: failed to update build/units.json: %v\n", err)
+			} else {
+				autoCommitMatch(u.VA, u.Symbol)
 			}
 		}
-		fmt.Printf("EXACT MATCH (100%%) | %s | %s (%d bytes)\n", u.VA, u.Symbol, len(tgtMasked))
 		return
 	}
 
