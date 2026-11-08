@@ -22,3 +22,20 @@ extern "C" __declspec(naked) void __fastcall fn_004A2510(void* self) {
         __asm _emit 0xFF __asm _emit 0xE0 // jmp eax
     }
 }
+
+extern "C" int mem_00941484;
+
+// [0x004A98D0] sub_004A98D0 (33 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004A98D0(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, 1
+        mov dword ptr [eax], offset mem_00941484
+        mov dword ptr [eax + 0x4], 0
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax + 0x14], ecx
+        ret
+    }
+}
