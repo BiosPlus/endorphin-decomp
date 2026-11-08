@@ -26602,7 +26602,8 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "MSVC 2005 emits a tail jmp reusing the stack arg slot; C++03 formulations (cdecl/thiscall/stdcall virtual, fn-ptr, arg reassign, return-tail) all produced push/call, best 83%"
   },
   {
     "va": "0x00430CC0",
@@ -149599,7 +149600,9 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x004EF310",
