@@ -1,0 +1,14 @@
+# Proprietary binaries and local caches (NEVER COMMIT)
+.local/
+*.exe
+*.dll
+*.obj
+*.lib
+*.pdb
+*.idb
+*.gpr
+*.rep/
+dump/
+scout_report.json
+classes.txt
+source_paths.txt

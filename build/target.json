@@ -1,0 +1,17 @@
+{
+  "binary_name": "endorphin.exe",
+  "version": "2.7.1 Learning Edition",
+  "sha256": "7a1274d9ed03e1e8065a1f79b1f54835a35da71fec49d13b095a5cb09efbd505",
+  "image_base": "0x00400000",
+  "toolchain": {
+    "primary": "MSVC 2005 RTM (14.00.50727.42)",
+    "linker": "8.0",
+    "StaticLibs": ["ATLMFC (VC8)", "Mathengine Karma (Mcd - VC7.1)", "OpenGL32"]
+  },
+  "sections": {
+    ".text":  { "va": "0x00401000", "rva": "0x00001000", "virtual_size": 5378506, "raw_size": 5382144 },
+    "CONST":  { "va": "0x00923000", "rva": "0x00523000", "virtual_size": 48,      "raw_size": 4096 },
+    ".rdata": { "va": "0x00924000", "rva": "0x00524000", "virtual_size": 1087794, "raw_size": 1089536 },
+    ".data":  { "va": "0x00a2e000", "rva": "0x0062e000", "virtual_size": 1701668, "raw_size": 622592 }
+  }
+}
