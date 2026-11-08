@@ -1,0 +1,24 @@
+// Decompiled translation unit: src/leaf/decompiled_4D0000.cpp
+
+extern "C" int mem_00924FF0;
+
+// [0x004DDE10] sub_004DDE10 (33 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004DDE10(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        mov edi, dword ptr [esi]
+        push 0
+        push 0
+        call dword ptr [mem_00924FF0]
+        push eax
+        mov eax, dword ptr [edi + 0x8]
+        mov ecx, esi
+        call eax
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
