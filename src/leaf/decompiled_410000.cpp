@@ -99,3 +99,15 @@ extern "C" __declspec(naked) void __fastcall fn_0041FD10(void* self) {
         ret 0x8
     }
 }
+
+// [0x00418CD0] sub_00418CD0 (10 bytes)
+extern "C" void ext_00418BE0();
+
+extern "C" __declspec(naked) void __cdecl fn_00418CD0(void) {
+    __asm {
+        push 0x1
+        push 0x0
+        call ext_00418BE0
+        ret
+    }
+}
