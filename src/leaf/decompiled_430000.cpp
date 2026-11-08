@@ -106,3 +106,22 @@ extern "C" int __stdcall fn_0043C950(void* a0, int a1, int a2, int a3) {
         return ((VFn)(*(void***)a0)[9])(a0, a1, a2, a3);
     }
 }
+
+// [0x0043C9D0] sub_0043C9D0 (33 bytes)
+// Forwards arg1..arg4 to this->vtbl[0x154/4] (thiscall, not a tail jump) and returns its result.
+extern "C" __declspec(naked) int __fastcall fn_0043C9D0(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x154]
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push edx
+        call eax
+        ret 0x10
+    }
+}
