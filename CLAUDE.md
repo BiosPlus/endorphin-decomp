@@ -20,7 +20,7 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
    ```bash
    go run ./tools/work check 0xXXXXXXXX --model claude-haiku
    ```
-   - Always pass your model identifier via `--model <name>` (e.g., `claude-haiku`, `claude-sonnet`, `claude-opus`, `agy-argon`) or `DECOMP_MODEL`.
+   - Always pass your model identifier via `--model <name>` (e.g., `claude-haiku`, `claude-sonnet`, `claude-opus`, `gemini-4-argon`, `gemini-3.8-flash`) or `DECOMP_MODEL`.
    - `EXACT MATCH (100%)` automatically marks `"status": "matched"`, `"matched_by"`, and `"matched_at"` in `build/units.json`, updates `README.md`, and commits `Match 0xXXXXXXXX (<symbol>) [model: <matched_by>]`.
 4. **If stuck after 10 tries, remove your broken code from the `.cpp` file and skip:**
    ```bash

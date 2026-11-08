@@ -31,13 +31,13 @@ fi
 select_runner() {
   local byte_size="${1:-64}"
 
-  # Tier 1: Tiny/Small functions (<= 160 bytes) -> Prefer Haiku first, then agy, then Sonnet
+  # Tier 1: Tiny/Small functions (<= 160 bytes) -> Prefer Haiku first, then Gemini Flash, then Sonnet
   if (( byte_size <= 160 )); then
     if [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_HAIKU -eq 0 ]]; then
       echo "claude-haiku"
       return
     elif [[ $HAS_AGY -eq 1 && $EXHAUSTED_AGY -eq 0 ]]; then
-      echo "agy-argon"
+      echo "gemini-3.8-flash"
       return
     elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_SONNET -eq 0 ]]; then
       echo "claude-sonnet"
@@ -45,16 +45,16 @@ select_runner() {
     fi
   fi
 
-  # Tier 2: Medium functions (161 - 512 bytes) -> Alternate Sonnet and agy to spread load
+  # Tier 2: Medium functions (161 - 512 bytes) -> Alternate Sonnet and Gemini Argon to spread load
   if (( byte_size <= 512 )); then
     if (( RANDOM % 2 == 0 )) && [[ $HAS_AGY -eq 1 && $EXHAUSTED_AGY -eq 0 ]]; then
-      echo "agy-argon"
+      echo "gemini-4-argon"
       return
     elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_SONNET -eq 0 ]]; then
       echo "claude-sonnet"
       return
     elif [[ $HAS_AGY -eq 1 && $EXHAUSTED_AGY -eq 0 ]]; then
-      echo "agy-argon"
+      echo "gemini-4-argon"
       return
     elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_HAIKU -eq 0 ]]; then
       echo "claude-haiku"
@@ -62,9 +62,9 @@ select_runner() {
     fi
   fi
 
-  # Tier 3: Large functions (> 512 bytes) -> Prefer agy (Argon) or Opus/Sonnet
+  # Tier 3: Large functions (> 512 bytes) -> Prefer Gemini Argon or Opus/Sonnet
   if [[ $HAS_AGY -eq 1 && $EXHAUSTED_AGY -eq 0 ]]; then
-    echo "agy-argon"
+    echo "gemini-4-argon"
     return
   elif [[ $HAS_CLAUDE -eq 1 && $EXHAUSTED_CLAUDE_OPUS -eq 0 ]]; then
     echo "claude-opus"
@@ -84,7 +84,7 @@ mark_exhausted() {
     claude-haiku|claude:haiku)   EXHAUSTED_CLAUDE_HAIKU=1 ;;
     claude-sonnet|claude:sonnet) EXHAUSTED_CLAUDE_SONNET=1 ;;
     claude-opus|claude:opus)     EXHAUSTED_CLAUDE_OPUS=1 ;;
-    agy-*|agy:*)                 EXHAUSTED_AGY=1 ;;
+    gemini-*|agy-*|agy:*)        EXHAUSTED_AGY=1 ;;
   esac
 }
 
@@ -104,7 +104,7 @@ run_agent_batch() {
       model="${model#claude:}"
       claude --model "$model" --dangerously-skip-permissions -p "$prompt" >"$log_file" 2>&1 || exit_code=$?
       ;;
-    agy-*|agy:*)
+    gemini-*|agy-*|agy:*)
       # Adjust flag if your local agy wrapper uses a different headless flag than -p / --prompt
       agy -p "$prompt" >"$log_file" 2>&1 || exit_code=$?
       ;;
