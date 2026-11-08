@@ -229159,7 +229159,9 @@
       "0x005792A1",
       "0x005792A9"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku",
+    "matched_at": "2026-11-08"
   },
   {
     "va": "0x005792B0",
