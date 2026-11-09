@@ -32,3 +32,13 @@ extern "C" void __cdecl fn_00602D50() {
     ext_00620BC0();
     ext_0062E120();
 }
+
+// [0x0060E860] sub_0060E860 (33 bytes)
+extern "C" int __fastcall fn_0060E860(void* self) {
+    int begin = *(int*)((char*)self + 0x4);
+    if (begin == 0) {
+        return 0;
+    }
+    int diff = *(int*)((char*)self + 0x8) - begin;
+    return diff / 56;
+}
