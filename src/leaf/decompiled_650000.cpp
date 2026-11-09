@@ -35,3 +35,10 @@ extern "C" void ext_007CCDF0(int value);
 extern "C" void __fastcall fn_0065B0F0(void* self) {
     ext_007CCDF0(*(int*)((char*)self + 0x34));
 }
+
+// [0x0065BB70] sub_0065BB70 (11 bytes)
+extern "C" void ext_007C8B90(int value);
+
+extern "C" void __fastcall fn_0065BB70(void* self) {
+    ext_007C8B90(*(int*)((char*)self + 0x18));
+}
