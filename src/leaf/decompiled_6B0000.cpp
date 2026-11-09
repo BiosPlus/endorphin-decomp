@@ -82,3 +82,15 @@ extern "C" void __stdcall fn_006B4D90(int a1, int a2, int a3) {
         ext_006A5EA8();
     }
 }
+
+// [0x006BAF60] sub_006BAF60 (16 bytes)
+extern "C" void ext_006E6320();
+extern "C" __declspec(naked) void __fastcall fn_006BAF60(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        add ecx, 0x4
+        push eax
+        call ext_006E6320
+        ret 0x4
+    }
+}
