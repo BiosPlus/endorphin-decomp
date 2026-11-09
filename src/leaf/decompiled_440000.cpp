@@ -918,3 +918,17 @@ extern "C" __declspec(naked) void __fastcall fn_004499D0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0044B330] sub_0044B330 (41 bytes)
+extern "C" void* ext_0052EE00();
+
+extern "C" void __fastcall fn_0044B330(void* self_unused, int edx_unused, void* a1) {
+    void* obj = ext_0052EE00();
+    void** vt = *(void***)obj;
+    void** vt1 = *(void***)a1;
+    typedef unsigned char (__thiscall *GetFlagFn)(void*);
+    unsigned char flag = ((GetFlagFn)vt[0xbc / 4])(obj);
+    typedef void (__thiscall *ApplyFn)(void*, int);
+    ApplyFn apply = (ApplyFn)vt1[1];
+    apply(a1, (int)(unsigned int)flag);
+}
