@@ -130,3 +130,16 @@ extern "C" __declspec(naked) void __fastcall fn_005CFC80(void* self) {
         ret
     }
 }
+
+// [0x005C3F10] sub_005C3F10 (38 bytes)
+extern "C" int mem_00B44C08;
+extern "C" int mem_00B44C0C;
+
+extern "C" int __fastcall fn_005C3F10(void* self) {
+    int begin = mem_00B44C08;
+    if (begin == 0) {
+        return 0;
+    }
+    int n = mem_00B44C0C - begin;
+    return n / 28;
+}
