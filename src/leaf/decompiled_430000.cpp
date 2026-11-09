@@ -2155,3 +2155,28 @@ extern "C" __declspec(naked) void __fastcall fn_00430F70(void* self) {
         jmp dword ptr [mem_00924E9C]
     }
 }
+
+// [0x00434610] sub_00434610 (47 bytes)
+extern "C" void ext_00594000();
+
+extern "C" __declspec(naked) void __fastcall fn_00434610(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        call ext_00594000
+        mov eax, dword ptr [eax + 26Ch]
+        movzx ecx, byte ptr [eax + 531h]
+        mov esi, dword ptr [esp + 8]
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 4]
+        push ecx
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        push 1
+        mov ecx, esi
+        call edx
+        pop esi
+        ret 4
+    }
+}
