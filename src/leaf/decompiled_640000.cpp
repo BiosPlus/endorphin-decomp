@@ -352,3 +352,10 @@ extern "C" __declspec(naked) void __fastcall fn_0064DC80(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0064DCC0] sub_0064DCC0 (23 bytes)
+extern "C" void ext_007C5AD0(int a1, float a2);
+
+extern "C" void __fastcall fn_0064DCC0(void* self, int edx_unused, float a1) {
+    ext_007C5AD0(*(int*)((char*)self + 0x64), a1);
+}
