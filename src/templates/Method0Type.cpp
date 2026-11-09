@@ -8,6 +8,7 @@ extern "C" void ext_004CCAF0();
 extern "C" void ext_004CCB00();
 extern "C" void ext_00493D90();
 extern "C" void ext_0048A9F0();
+extern "C" void ext_004CCDE0();
 
 // [0x005C3380] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_13 (13 bytes)
 extern "C" __declspec(naked) void __stdcall fn_005C3380(int a1) {
@@ -89,6 +90,16 @@ extern "C" __declspec(naked) void __stdcall fn_0048B150(void* a1, int a2) {
         mov eax, dword ptr [esp + 0x4]
         mov ecx, dword ptr [eax]
         call ext_0048ABB0
+        ret 0x8
+    }
+}
+
+// [0x004CD7C0] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}>::vfunc_41 (14 bytes)
+extern "C" __declspec(naked) void __stdcall fn_004CD7C0(void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call ext_004CCDE0
         ret 0x8
     }
 }
