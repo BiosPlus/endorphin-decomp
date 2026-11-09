@@ -421243,7 +421243,9 @@
       "0x0068BD1C",
       "0x0068BD24"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:46:29Z"
   },
   {
     "va": "0x0068BD30",

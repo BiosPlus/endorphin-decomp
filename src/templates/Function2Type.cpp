@@ -31,3 +31,18 @@ extern "C" __declspec(naked) void* __stdcall fn_00594440(void* self) {
         ret 4
     }
 }
+
+// [0x0068BD10] ExprParser::Function2Type<Randomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}>::vfunc_16 (30 bytes)
+extern "C" __declspec(naked) void* __stdcall fn_0068BD10(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push 0AA3000h
+        push 0A2E2F8h
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
