@@ -74,3 +74,17 @@ extern "C" __declspec(naked) void __fastcall fn_004758E0(void* self) {
         ret 0x4
     }
 }
+
+// [0x00477380] sub_00477380 (36 bytes)
+extern "C" int mem_00924FDC;
+typedef void* (__thiscall *string_assign_fn)(void* self, const void* src);
+
+extern "C" void __fastcall fn_00477380(void* self, int edx_unused, unsigned char* a1, void* a2) {
+    *a1 = 0;
+    void* src = *(void**)((unsigned char*)self + 0x28);
+    if (((unsigned char*)src)[0x1c] != 0) {
+        *a1 = 1;
+    }
+    string_assign_fn assign = *(string_assign_fn*)&mem_00924FDC;
+    assign(a2, *(void**)((unsigned char*)self + 0x28));
+}
