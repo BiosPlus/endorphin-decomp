@@ -633,3 +633,14 @@ extern "C" __declspec(naked) void __fastcall fn_00414EC0(void* self) {
         ret 0x14
     }
 }
+
+// [0x00416AC0] sub_00416AC0 (45 bytes)
+extern "C" int mem_00925694;
+
+extern "C" void __fastcall fn_00416AC0(void* self) {
+    typedef int (__stdcall *FnSendMessageA)(int, unsigned int, unsigned int, int);
+    unsigned char* p = (unsigned char*)self;
+    int r = ((FnSendMessageA)mem_00925694)(*(int*)(p + 0xa8), 0xF0, 0, 0);
+    unsigned char* q = *(unsigned char**)(p + 0x184);
+    *(unsigned char*)(q + 0x178) = (r == 1) ? 1 : 0;
+}
