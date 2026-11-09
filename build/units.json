@@ -210731,7 +210731,9 @@
       "0x00551209",
       "0x0055120F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:11:04Z"
   },
   {
     "va": "0x00551220",
