@@ -1999,3 +1999,25 @@ extern "C" __declspec(naked) void __fastcall fn_004304F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00431400] sub_00431400 (43 bytes)
+extern "C" void ext_00430380();
+extern "C" void ext_00465B40();
+extern "C" __declspec(naked) void __fastcall fn_00431400(void* self) {
+    __asm {
+        call ext_00430380
+        test al, al
+        je short L_else_00431400
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0xd0]
+        jmp eax
+    L_else_00431400:
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0xcc]
+        jmp eax
+    }
+}

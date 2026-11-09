@@ -27492,7 +27492,9 @@
       "0x0043140A",
       "0x0043141B"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:40:07Z"
   },
   {
     "va": "0x00431430",
