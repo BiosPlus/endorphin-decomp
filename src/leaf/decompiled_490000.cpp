@@ -334,3 +334,30 @@ extern "C" __declspec(naked) int __stdcall fn_00497650(int a1, int a2) {
         ret 8
     }
 }
+
+// [0x0049AD40] sub_0049AD40 (42 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) unsigned char __fastcall fn_0049AD40(void* self, int edx_unused, void* other) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je call_invalid_0049AD40
+        cmp eax, dword ptr [edi]
+        je skip_invalid_0049AD40
+call_invalid_0049AD40:
+        call dword ptr [mem_00925134]
+skip_invalid_0049AD40:
+        mov eax, dword ptr [esi + 0x4]
+        xor ecx, ecx
+        cmp eax, dword ptr [edi + 0x4]
+        pop edi
+        setne cl
+        mov al, cl
+        pop esi
+        ret 0x4
+    }
+}
