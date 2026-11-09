@@ -91976,7 +91976,9 @@
     "relocations": [
       "0x00499191"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T09:48:14Z"
   },
   {
     "va": "0x004991A0",
