@@ -106113,7 +106113,9 @@
       "0x004AED0A",
       "0x004AED10"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:20:04Z"
   },
   {
     "va": "0x004AED20",

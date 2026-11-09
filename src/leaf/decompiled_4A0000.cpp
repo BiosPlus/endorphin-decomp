@@ -78,3 +78,15 @@ done:
         ret
     }
 }
+
+// [0x004AED00] sub_004AED00 (25 bytes)
+extern "C" void __fastcall ext_004F1D90(void* self);
+extern "C" void ext_006A5C5C();
+
+extern "C" void __fastcall fn_004AED00(void* self) {
+    void* esi = *(void**)self;
+    if (esi) {
+        ext_004F1D90(esi);
+        ((void (*)(void*))ext_006A5C5C)(esi);
+    }
+}
