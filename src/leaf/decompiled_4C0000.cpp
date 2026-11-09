@@ -142,3 +142,26 @@ extern "C" __declspec(naked) void __fastcall fn_004C4D80(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004CCC30] sub_004CCC30 (47 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004CCC30(void* self) {
+    __asm {
+        fldz
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov byte ptr [eax + 0x14], cl
+        mov byte ptr [eax + 0x15], 0x1
+        mov byte ptr [eax + 0x16], cl
+        fst dword ptr [eax + 0x20]
+        fst dword ptr [eax + 0x1c]
+        fst dword ptr [eax + 0x18]
+        fst dword ptr [eax + 0x2c]
+        fst dword ptr [eax + 0x28]
+        fstp dword ptr [eax + 0x24]
+        ret
+    }
+}
