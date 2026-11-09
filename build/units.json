@@ -356192,7 +356192,9 @@
       "0x006310F3",
       "0x006310F8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09"
   },
   {
     "va": "0x00631100",
