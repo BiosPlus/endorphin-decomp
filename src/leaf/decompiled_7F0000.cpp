@@ -46,3 +46,10 @@ extern "C" __declspec(naked) int __fastcall fn_007F1480(void* self) {
         ret
     }
 }
+
+// [0x007F0B90] sub_007F0B90 (38 bytes)
+extern "C" int __cdecl fn_007F0B90(const char* a, const char* b) {
+    float fa = *(const float*)(a + 0x15c);
+    float fb = *(const float*)(b + 0x15c);
+    return fa > fb ? 1 : 0;
+}
