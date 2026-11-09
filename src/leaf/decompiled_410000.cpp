@@ -288,3 +288,15 @@ extern "C" void __fastcall fn_0041CA90(void* self, int edx_unused, void* a1, voi
     void** vt = *(void***)p;
     ((VFn)vt[2])(p, r, a2);
 }
+
+// [0x0041DCF0] sub_0041DCF0 (34 bytes)
+extern "C" void __fastcall fn_0041DCF0(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    unsigned int zero = 0;
+    *(unsigned int*)(p + 0x30) = 0x8f8f8f;
+    *(unsigned int*)(p + 0x34) = 0xafafaf;
+    *(unsigned int*)(p + 0x38) = zero;
+    *(unsigned int*)(p + 0x3c) = 0x6f6f6f;
+    *(unsigned int*)(p + 0x40) = zero;
+    ext_0041D7B0();
+}
