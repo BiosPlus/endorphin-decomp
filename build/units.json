@@ -97507,7 +97507,9 @@
     "relocations": [
       "0x004A17BB"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T09:59:21Z"
   },
   {
     "va": "0x004A17C0",
