@@ -878,3 +878,13 @@ extern "C" void __cdecl fn_007CD4B0(void* self) {
     if (ext_007CC9F0(p) == 0) return;
     ext_007C8B30(*(void**)((char*)self + 0x210));
 }
+
+// [0x007CD4E0] sub_007CD4E0 (46 bytes)
+extern "C" void __cdecl ext_007C8B50(void* a0);
+
+extern "C" void __cdecl fn_007CD4E0(void* self) {
+    void* p = *(void**)((char*)self + 0x210);
+    if (p == 0) return;
+    if (ext_007CC9F0(p) == 0) return;
+    ext_007C8B50(*(void**)((char*)self + 0x210));
+}

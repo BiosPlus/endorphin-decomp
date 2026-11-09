@@ -576655,7 +576655,9 @@
       "0x007CD4F1",
       "0x007CD508"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:50:52Z"
   },
   {
     "va": "0x007CD510",
