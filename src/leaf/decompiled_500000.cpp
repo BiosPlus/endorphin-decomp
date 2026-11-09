@@ -46,3 +46,10 @@ extern "C" void __cdecl ext_0050D360(int a, void* b, int c);
 extern "C" void __fastcall fn_0050D7A0(void* self, int edx_unused, int a1) {
     ext_0050D360(a1, (char*)self + 4, mem_00A9F178);
 }
+
+// [0x0050D0B0] sub_0050D0B0 (28 bytes)
+extern "C" void __cdecl ext_0050CE30(int a, void* b, int c, int d);
+
+extern "C" void __fastcall fn_0050D0B0(void* self, int edx_unused, int a1) {
+    ext_0050CE30(a1, (char*)self + 4, mem_00A9F178, 1);
+}
