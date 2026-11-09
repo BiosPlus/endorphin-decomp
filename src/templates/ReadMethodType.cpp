@@ -357,3 +357,9 @@ extern "C" void* __stdcall fn_006747D0(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xAA19C8, 0);
 }
+
+// [0x00678940] ExprParser::ReadMethodType<SystemInfo, bool, &public: bool __thiscall SystemInfo::getSaveBinaryAttributes(void) const, 0>::vfunc_16 (30 bytes)
+extern "C" void* __stdcall fn_00678940(void* a1) {
+    typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
+    return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xAA1C30, 0);
+}
