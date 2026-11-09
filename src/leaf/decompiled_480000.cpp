@@ -88,3 +88,18 @@ extern "C" __declspec(naked) void __fastcall fn_0048A9F0(void* self) {
         ret
     }
 }
+
+// [0x0048ABD0] sub_0048ABD0 (26 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0048ABD0(void* self, int edx_unused, float a1) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x234]
+        test ecx, ecx
+        je done
+        fld dword ptr [esp + 0x4]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0048A360
+    done:
+        ret 0x4
+    }
+}
