@@ -190,3 +190,22 @@ extern "C" void* __cdecl fn_004BA200() {
     }
     return &mem_00AE16A4;
 }
+
+// [0x004B0F50] sub_004B0F50 (37 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004B0F50(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov al, 1
+        lea ecx, [esi + 4]
+        mov byte ptr [esi], al
+        mov byte ptr [esi + 1], al
+        mov byte ptr [esi + 2], al
+        mov byte ptr [esi + 3], 0
+        call dword ptr [mem_00924FE8]
+        mov dword ptr [esi + 0x20], 0
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
