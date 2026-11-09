@@ -644,3 +644,22 @@ extern "C" __declspec(naked) void __fastcall fn_004CCD80(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x005BB330] ExprParser::Method0Type<NMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}>::vfunc_4 (40 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_005BB330(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        push esi
+        mov dword ptr [esp + 0x4], 0
+        call ext_005B72E0
+        mov esi, dword ptr [esp + 0xc]
+        mov ecx, esi
+        call dword ptr [mem_00924FE8]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
