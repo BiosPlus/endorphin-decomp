@@ -888,3 +888,29 @@ extern "C" void __cdecl fn_007CD4E0(void* self) {
     if (ext_007CC9F0(p) == 0) return;
     ext_007C8B50(*(void**)((char*)self + 0x210));
 }
+
+// [0x007C1F60] sub_007C1F60 (47 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C1F60(void* self, unsigned int value) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov esi, dword ptr [eax + 0x8]
+        mov edi, dword ptr [eax + 0x14]
+        mov edx, ecx
+        shr edx, 0x8
+        mov byte ptr [esi + edi], dl
+        mov edx, dword ptr [eax + 0x14]
+        mov esi, dword ptr [eax + 0x8]
+        inc edx
+        mov dword ptr [eax + 0x14], edx
+        pop edi
+        mov byte ptr [edx + esi], cl
+        mov ecx, dword ptr [eax + 0x14]
+        inc ecx
+        pop esi
+        mov dword ptr [eax + 0x14], ecx
+        ret
+    }
+}
