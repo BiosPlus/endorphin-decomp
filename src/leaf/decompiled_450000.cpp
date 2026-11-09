@@ -212,3 +212,15 @@ extern "C" __declspec(naked) void __fastcall fn_00455CF0(void* self) {
         ret
     }
 }
+
+// [0x0045BBF0] sub_0045BBF0 (26 bytes)
+extern "C" void ext_006A5C6E();
+
+extern "C" void* __fastcall fn_0045BBF0(void* self) {
+    unsigned char* esi = static_cast<unsigned char*>(self);
+    ext_006A5C6E();
+    *reinterpret_cast<unsigned int*>(esi + 0x54) = 0;
+    *(esi + 0x58) = 0;
+    *reinterpret_cast<unsigned int*>(esi) = 0x00937D4C;
+    return esi;
+}
