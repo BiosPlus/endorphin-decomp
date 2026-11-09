@@ -329511,7 +329511,9 @@
       "0x0060A539",
       "0x0060A53E"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:37:32Z"
   },
   {
     "va": "0x0060A550",

@@ -42,3 +42,15 @@ extern "C" int __fastcall fn_0060E860(void* self) {
     int diff = *(int*)((char*)self + 0x8) - begin;
     return diff / 56;
 }
+
+extern "C" int mem_00B478D8;
+extern "C" int mem_00B478D4;
+
+// [0x0060A520] sub_0060A520 (35 bytes)
+extern "C" int* __cdecl fn_0060A520() {
+    if (!(mem_00B478D8 & 1)) {
+        mem_00B478D8 |= 1;
+        mem_00B478D4 = 0x971f90;
+    }
+    return &mem_00B478D4;
+}
