@@ -83154,7 +83154,9 @@
       "0x0048B0D1",
       "0x0048B0DE"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:22:18Z"
   },
   {
     "va": "0x0048B0F0",
