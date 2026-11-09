@@ -515,3 +515,16 @@ extern "C" int __cdecl fn_00662EF0(void* path) {
     ((SetAttrFn)mem_00924258)(path, newattr);
     return newattr != attr;
 }
+
+// [0x00662F20] sub_00662F20 (40 bytes)
+extern "C" int mem_00924264;
+extern "C" int mem_00924260;
+extern "C" int mem_009241E0;
+
+extern "C" void __cdecl fn_00662F20() {
+    void* ev = ((void* (__stdcall*)(void*, int, int, const char*))mem_00924264)(0, 1, 0, (const char*)0x009877b0);
+    if (ev) {
+        ((int (__stdcall*)(void*))mem_00924260)(ev);
+        ((int (__stdcall*)(void*))mem_009241E0)(ev);
+    }
+}
