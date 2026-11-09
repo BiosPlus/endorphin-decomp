@@ -364,3 +364,16 @@ done:
         ret 4
     }
 }
+
+// [0x00437DC0] sub_00437DC0 (18 bytes)
+extern "C" void ext_00436FA0();
+
+extern "C" __declspec(naked) void __stdcall fn_00437DC0(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0x92f9f8
+        push eax
+        call ext_00436FA0
+        ret 4
+    }
+}
