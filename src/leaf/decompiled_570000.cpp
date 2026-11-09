@@ -21,3 +21,15 @@ extern "C" void* __fastcall fn_00579870(void* self) {
     *((void**)self + 1) = (void*)0x957e98;
     return self;
 }
+
+// [0x00577480] sub_00577480 (34 bytes)
+extern "C" int mem_00925134;
+
+extern "C" unsigned int __fastcall fn_00577480(void* self) {
+    unsigned int* p = (unsigned int*)self;
+    unsigned int edi = p[1];
+    void (__cdecl *inv)() = (void (__cdecl*)())mem_00925134;
+    if (edi > p[2]) inv();
+    if (edi >= p[2]) inv();
+    return edi;
+}
