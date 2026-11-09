@@ -18,3 +18,12 @@ typedef void (__fastcall *CalleeFn006A7C20)(void* self, int edx_unused);
 extern "C" void __fastcall fn_006A7C20(void* self, int edx_unused, void* a1) {
     return ((CalleeFn006A7C20)ext_006AD120)(a1, edx_unused);
 }
+
+// [0x006A7C30] sub_006A7C30 (12 bytes)
+extern "C" void ext_006AD110();
+
+typedef void (__thiscall *CalleeFn006A7C30)(void* self);
+
+extern "C" void __stdcall fn_006A7C30(void* a1) {
+    return ((CalleeFn006A7C30)ext_006AD110)(a1);
+}
