@@ -15482,7 +15482,9 @@
       "0x0041B3C7",
       "0x0041B3CC"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T09:55:06Z"
   },
   {
     "va": "0x0041B3D0",
