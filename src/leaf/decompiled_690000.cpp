@@ -19,3 +19,12 @@ extern "C" void* __fastcall fn_006997D0(void* self) {
     ext_00680800(esi + 0x28);
     return esi + 0x7c;
 }
+
+// [0x00695440] sub_00695440 (19 bytes)
+extern "C" void ext_00695420();
+extern "C" void* __fastcall fn_00695440(void* self) {
+    char* esi = (char*)self;
+    esi[0x9d4] = 0;
+    ext_00695420();
+    return esi;
+}
