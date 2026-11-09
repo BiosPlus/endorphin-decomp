@@ -573,3 +573,15 @@ skip_alt:
         ret
     }
 }
+
+// [0x00642510] sub_00642510 (28 bytes)
+extern "C" void ext_006488A0();
+
+extern "C" void __fastcall fn_00642510(void* self) {
+    char* p = (char*)self;
+    if (p[0x10] != 0) {
+        ((void (__fastcall*)(void*))ext_006488A0)(*(void**)(p + 0xc));
+    }
+    *(int*)(p + 0x14) = 0;
+    p[0x10] = 0;
+}
