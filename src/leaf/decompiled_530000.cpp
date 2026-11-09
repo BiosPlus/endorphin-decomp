@@ -161,3 +161,12 @@ extern "C" __declspec(naked) void __fastcall fn_00537360(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00538EE0] sub_00538EE0 (18 bytes)
+extern "C" int mem_00955114;
+extern "C" void ext_00532B60();
+extern "C" void* __fastcall fn_00538EE0(void* self) {
+    ext_00532B60();
+    *(void**)self = (void*)&mem_00955114;
+    return self;
+}
