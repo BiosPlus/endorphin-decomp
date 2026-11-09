@@ -926,3 +926,22 @@ extern "C" __declspec(naked) void __fastcall fn_004691D0(void* self, int edx_unu
         ret 0x8                                             // c2 08 00
     }
 }
+
+// [0x0046C2F0] sub_0046C2F0 (39 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0046C2F0(void* self, int edx_unused, float a1) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4c]
+        fld dword ptr [esp + 0x4]
+        mov edx, dword ptr [eax + 0xf8]
+        fld dword ptr [edx + 0x138]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x1
+        jne skip_store
+        fstp dword ptr [ecx + 0x1c]
+        ret 0x4
+skip_store:
+        fstp st(0)
+        ret 0x4
+    }
+}
