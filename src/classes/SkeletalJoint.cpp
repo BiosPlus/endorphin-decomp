@@ -9,6 +9,7 @@ extern "C" void ext_007C5C80();
 extern "C" void ext_007C5C90();
 extern "C" void ext_007C5CA0();
 extern "C" void ext_007C5CB0();
+extern "C" void ext_007C5CC0();
 
 // [0x00646520] SkeletalJoint::vfunc_1 (17 bytes)
 extern "C" void __fastcall fn_00646520(void* self) {
@@ -62,4 +63,10 @@ extern "C" void __fastcall fn_00646460(void* self, int edx_unused, float a1) {
 extern "C" void __fastcall fn_00646480(void* self, int edx_unused, float a1) {
     int a = *(int*)((char*)self + 0x64);
     ((void (__cdecl*)(int, float))ext_007C5CB0)(a, a1);
+}
+
+// [0x006464A0] SkeletalJoint::vfunc_26 (23 bytes)
+extern "C" void __fastcall fn_006464A0(void* self, int edx_unused, float a1) {
+    int a = *(int*)((char*)self + 0x64);
+    ((void (__cdecl*)(int, float))ext_007C5CC0)(a, a1);
 }
