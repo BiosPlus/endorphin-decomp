@@ -136,3 +136,19 @@ extern "C" void __cdecl fn_007D4650(char* p) {
         } while (i < *(int*)(p + 0x14));
     }
 }
+
+// [0x007D4A70] sub_007D4A70 (35 bytes)
+extern "C" void* __cdecl fn_007D4A70(void* self) {
+    void** edx = (void**)self;
+    void** ecx = (void**)*edx;
+    if (ecx != edx) {
+        void** eax = (void**)*ecx;
+        if (eax != edx) {
+            do {
+                ecx = eax;
+                eax = (void**)*eax;
+            } while (eax != edx);
+        }
+    }
+    return (ecx != edx) ? (void*)ecx : 0;
+}
