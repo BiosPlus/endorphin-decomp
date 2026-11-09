@@ -693,3 +693,25 @@ extern "C" void __fastcall fn_0044B300(void* self) {
         ((VF)(*(void***)*(void**)((char*)self + 0x64))[0x154 / 4])(*(void**)((char*)self + 0x64));
     }
 }
+
+// [0x0044B360] sub_0044B360 (35 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0044B360(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x64], 0
+        je done
+        mov ecx, dword ptr [esi + 0x64]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x20]
+        call edx
+        mov ecx, dword ptr [esi + 0x64]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x154]
+        pop esi
+        jmp edx
+    done:
+        pop esi
+        ret
+    }
+}
