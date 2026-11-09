@@ -96,3 +96,15 @@ extern "C" __declspec(naked) void* __fastcall fn_0067AA30(void* self, int edx_un
 extern "C" float __stdcall fn_0066AEC0(char* a1) {
     return (*a1 != 0) ? 1.0f : 0.0f;
 }
+
+// [0x0067A720] ExprParser::BoolType::vfunc_7 (35 bytes)
+extern "C" void ext_00672080();
+
+extern "C" void __fastcall fn_0067A720(void* self, int edx_unused, char* a1, float a2) {
+    typedef void (__thiscall *VFn)(void* self, void* a);
+    typedef void (__thiscall *SubFn)(void* self, float a);
+    char* inner = *(char**)(a1 + 0x4);
+    void** vtbl = *(void***)inner;
+    ((VFn)vtbl[0x78 / 4])(inner, a1);
+    ((SubFn)ext_00672080)(a1, a2);
+}
