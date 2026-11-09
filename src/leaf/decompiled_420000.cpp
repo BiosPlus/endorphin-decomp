@@ -133,3 +133,16 @@ extern "C" __declspec(naked) void __fastcall fn_0042FE90(void* self) {
         jmp eax
     }
 }
+
+// [0x00428A40] sub_00428A40 (18 bytes)
+extern "C" void ext_00428050();
+extern "C" __declspec(naked) int __fastcall fn_00428A40(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        add ecx, 0x14
+        call ext_00428050
+        mov eax, dword ptr [eax]
+        ret 0x4
+    }
+}
