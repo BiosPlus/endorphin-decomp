@@ -399,3 +399,12 @@ extern "C" void __fastcall fn_00647EA0(void* self, int edx_unused, int a1) {
     void* vt = *(void**)inner;
     ext_007C6130(vt, a1);
 }
+
+// [0x00647EC0] sub_00647EC0 (25 bytes)
+extern "C" void ext_007D8450();
+extern "C" void __fastcall fn_00647EC0(void* self, int edx_unused, int a1) {
+    void* inner = *(void**)((char*)self + 0xa4);
+    void* vt = *(void**)inner;
+    typedef void (__cdecl *Callee)(void*, int);
+    ((Callee)&ext_007D8450)(vt, a1);
+}
