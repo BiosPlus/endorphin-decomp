@@ -64,3 +64,18 @@ extern "C" __declspec(naked) void __fastcall fn_00544040(void* self) {
         jmp edx
     }
 }
+
+// [0x005442A0] ForceApplicationTool::vfunc_29 (41 bytes)
+extern "C" void __fastcall ext_005528A0(void* self);
+extern "C" int mem_00940690;
+
+extern "C" void __fastcall fn_005442A0(void* self) {
+    typedef void (__fastcall *VFunc)(void*);
+    char* s = (char*)self;
+    ext_005528A0(s + 0xb0);
+    void* sub = *(void**)(s + 0xa8);
+    void* vt = *(void**)sub;
+    VFunc f = *(VFunc*)((char*)vt + 0x74);
+    f(sub);
+    *(float*)(s + 0xbc) = *(float*)&mem_00940690;
+}
