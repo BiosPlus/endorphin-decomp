@@ -20,3 +20,22 @@ extern "C" __declspec(naked) void __fastcall fn_0065F790(void* self) {
         ret 0x4
     }
 }
+
+// [0x0065F7C0] SymbolResolver::vfunc_1 (34 bytes)
+// Same shape as vfunc_0: std::string returned via hidden buffer (ret 0x4),
+// constructed from a literal C string through the imported basic_string(const char*, allocator) ctor.
+extern "C" __declspec(naked) void __fastcall fn_0065F7C0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0x9876e0
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
