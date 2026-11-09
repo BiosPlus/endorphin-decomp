@@ -4,6 +4,7 @@ extern "C" void ext_00671100();
 extern "C" void ext_0048ABF0();
 extern "C" void ext_004CA560();
 extern "C" void ext_004CCAF0();
+extern "C" void ext_004CCB00();
 
 // [0x005C3380] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_13 (13 bytes)
 extern "C" __declspec(naked) void __stdcall fn_005C3380(int a1) {
@@ -39,4 +40,10 @@ extern "C" __declspec(naked) void __stdcall fn_004CB470(void* a1, int a2) {
 extern "C" void __stdcall fn_004CCD10(void* a1, int a2) {
     void* obj = *(void**)a1;
     ((void (__fastcall*)(void*))ext_004CCAF0)(obj);
+}
+
+// [0x004CCDB0] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}>::vfunc_41 (14 bytes)
+extern "C" void __stdcall fn_004CCDB0(void* a1, int a2) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_004CCB00)(obj);
 }
