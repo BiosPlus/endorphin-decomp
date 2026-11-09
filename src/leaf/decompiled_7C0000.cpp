@@ -373,3 +373,12 @@ extern "C" void __cdecl fn_007C60B0(void* a0, float* a1) {
     a1[1] = *(float*)(p + 0xe4);
     a1[2] = *(float*)(p + 0xe8);
 }
+
+// [0x007C60E0] sub_007C60E0 (35 bytes)
+// Copies three floats from self+0xF0..0xF8 into the caller-supplied float triple out[0..2].
+// Both arguments are on the stack (cdecl, caller cleans up); ecx is not used.
+extern "C" void __cdecl fn_007C60E0(char* self, float* out) {
+    out[0] = *(float*)(self + 0xf0);
+    out[1] = *(float*)(self + 0xf4);
+    out[2] = *(float*)(self + 0xf8);
+}
