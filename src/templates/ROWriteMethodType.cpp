@@ -13,3 +13,15 @@ extern "C" __declspec(naked) void __fastcall fn_0051A4D0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0059E9B0] ExprParser::ROWriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>::vfunc_13 (13 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0059E9B0(void* self, int edx_unused, int a1) {
+    __asm {
+        push 0x16
+        call ext_00671100
+        _emit 0x83
+        _emit 0xC4
+        _emit 0x04
+        ret 4
+    }
+}
