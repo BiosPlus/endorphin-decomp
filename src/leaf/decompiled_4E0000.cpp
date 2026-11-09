@@ -84,3 +84,15 @@ extern "C" void __fastcall fn_004EF890(void* self) {
         *(void**)q = p;
     }
 }
+
+// [0x004EF8B0] sub_004EF8B0 (26 bytes)
+extern "C" void __fastcall fn_004EF8B0(void* self) {
+    void* p = ((void* (__cdecl*)(unsigned int))ext_006A5C62)(0x4c);
+    if (p) {
+        *(void**)p = p;
+    }
+    void** q = (void**)((char*)p + 4);
+    if (q) {
+        *q = p;
+    }
+}
