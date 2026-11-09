@@ -294,3 +294,10 @@ extern "C" void ext_007C6310(int a, float b);
 extern "C" void __fastcall fn_0064DD40(void* self, int edx_unused, float a1) {
     ext_007C6310(*(int*)((char*)self + 0x64), a1);
 }
+
+// [0x0064DD60] sub_0064DD60 (23 bytes)
+extern "C" void ext_007C5B40(int a, float b);
+
+extern "C" void __fastcall fn_0064DD60(void* self, int edx_unused, float a1) {
+    ext_007C5B40(*(int*)((char*)self + 0x64), a1);
+}
