@@ -313542,7 +313542,9 @@
       "0x005F5C1C",
       "0x005F5C24"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:55:52Z"
   },
   {
     "va": "0x005F5C30",

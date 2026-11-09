@@ -235,3 +235,9 @@ extern "C" void* __stdcall fn_005E3950(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA8F54C, 0);
 }
+
+// [0x005F5C10] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getColour(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void* __stdcall fn_005F5C10(void* a1) {
+    typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
+    return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA36F20, 0);
+}
