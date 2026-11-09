@@ -72,3 +72,22 @@ extern "C" __declspec(naked) void __fastcall fn_00496CE0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00496CC0] sub_00496CC0 (26 bytes)
+// Stores the stack argument at self+4, calls sub_004966F0(self), then sub_00496220(self).
+extern "C" void ext_004966F0();
+extern "C" void ext_00496220();
+
+extern "C" __declspec(naked) void __fastcall fn_00496CC0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi + 4], eax
+        call ext_004966F0
+        mov ecx, esi
+        call ext_00496220
+        pop esi
+        ret 4
+    }
+}
