@@ -319,3 +319,24 @@ extern "C" void __fastcall fn_00481C20(void* self) {
     s[3] = 0;
     s[4] = 0;
 }
+
+// [0x00486850] sub_00486850 (43 bytes)
+extern "C" __declspec(naked) float __fastcall fn_00486850(float* self, int edx_unused, const float* other) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x4]
+        fmul dword ptr [ecx + 0x4]
+        fld dword ptr [eax]
+        fmul dword ptr [ecx]
+        faddp st(1), st
+        fld dword ptr [eax + 0x8]
+        fmul dword ptr [ecx + 0x8]
+        faddp st(1), st
+        fld dword ptr [eax + 0xc]
+        fmul dword ptr [ecx + 0xc]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret 0x4
+    }
+}
