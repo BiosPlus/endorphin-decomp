@@ -166,3 +166,15 @@ extern "C" void __fastcall ext_0065D0A0(void* self, int edx_unused, float a1);
 extern "C" void __fastcall fn_00661A10(void* self, int edx_unused, float a1) {
     ext_0065D0A0(*(void**)((char*)self + 4), edx_unused, a1);
 }
+
+// [0x006667A0] sub_006667A0 (21 bytes)
+extern "C" void __stdcall ext_00666670(int arg);
+
+extern "C" void __fastcall fn_006667A0(void* self) {
+    int* p = (int*)self;
+    if (--p[1] == 0) {
+        int v = p[0];
+        p[0] = 0;
+        ext_00666670(v);
+    }
+}
