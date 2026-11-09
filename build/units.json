@@ -252461,7 +252461,9 @@
       "0x0059E20A",
       "0x0059E210"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:21:05Z"
   },
   {
     "va": "0x0059E220",
