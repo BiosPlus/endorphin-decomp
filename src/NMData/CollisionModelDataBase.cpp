@@ -12,3 +12,14 @@ extern "C" void __fastcall fn_0058F630(void* self, int edx_unused, int a1) {
     ((ThisCallArg1)ext_00589E30)(self, a1);
     ((ThisCallArg1)ext_0058EB60)(self, a1);
 }
+
+// [0x0058F650] NMData::CollisionModelDataBase::vfunc_22 (29 bytes)
+extern "C" void ext_00586C70();
+extern "C" void ext_0058A1C0();
+
+extern "C" int __fastcall fn_0058F650(void* self, int edx_unused, int a1) {
+    (void)edx_unused;
+    ((ThisCallArg1)ext_00586C70)(self, a1);
+    ((ThisCallArg1)ext_0058A1C0)(self, a1);
+    return a1;
+}
