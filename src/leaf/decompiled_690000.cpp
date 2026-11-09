@@ -151,3 +151,28 @@ extern "C" void* __fastcall fn_006955D0(void* self) {
     }
     return (void*)&mem_00B5BDB8;
 }
+
+// [0x006989B0] sub_006989B0 (37 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006989B0(const unsigned char* src, const unsigned char* end, unsigned char* dst) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [esp + 0Ch]
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        cmp ecx, esi
+        je done
+    loop_top:
+        test eax, eax
+        je skip_store
+        mov dl, byte ptr [ecx]
+        mov byte ptr [eax], dl
+    skip_store:
+        add ecx, 1
+        add eax, 1
+        cmp ecx, esi
+        jne loop_top
+    done:
+        pop esi
+        ret
+    }
+}
