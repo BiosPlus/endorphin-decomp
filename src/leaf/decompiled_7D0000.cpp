@@ -384,3 +384,14 @@ extern "C" void __cdecl fn_007D8420(void* a0) {
     ext_007D8400(self);
     reinterpret_cast<void (__cdecl*)(void*, void*)>(mem_00AB28C8)(edi + 0x15c, self);
 }
+
+// [0x007D86C0] sub_007D86C0 (36 bytes)
+extern "C" void __cdecl fn_007D86C0(void* self) {
+    typedef void (__cdecl *Fn)(void*);
+    char* cur = *(char**)((char*)self + 0x168);
+    while (cur) {
+        char* next = *(char**)(cur + 0x5c);
+        ((Fn)ext_007D8420)(cur);
+        cur = next;
+    }
+}
