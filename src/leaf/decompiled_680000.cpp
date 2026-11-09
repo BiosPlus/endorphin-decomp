@@ -236,3 +236,27 @@ extern "C" void __stdcall fn_00681140(void* p) {
     self[2] = 0;
     self[3] = 0;
 }
+
+// [0x00689570] sub_00689570 (47 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00689570(void* self) {
+    __asm {
+        fldz
+        mov eax, ecx
+        xor ecx, ecx
+        fst qword ptr [eax + 0x10]
+        fstp qword ptr [eax + 0x18]
+        mov byte ptr [eax], cl
+        fld1
+        mov byte ptr [eax + 0x1], cl
+        mov byte ptr [eax + 0x2], cl
+        mov byte ptr [eax + 0x3], cl
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x24], ecx
+        mov dword ptr [eax + 0x28], ecx
+        mov dword ptr [eax + 0x2c], ecx
+        fstp qword ptr [eax + 0x30]
+        ret
+    }
+}
