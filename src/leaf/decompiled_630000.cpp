@@ -53,3 +53,18 @@ extern "C" __declspec(naked) void* __fastcall fn_00630E80(void* self) {
         ret
     }
 }
+
+// [0x00630540] sub_00630540 (25 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00630540(void* self) {
+    __asm {
+        push esi
+        __asm _emit 0x8D __asm _emit 0xB1 __asm _emit 0x5C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea esi, [ecx + 0x15c]
+        __asm _emit 0x81 __asm _emit 0xC1 __asm _emit 0x90 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // add ecx, 0x90
+        push ecx
+        mov ecx, esi
+        call ext_00693F40
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
