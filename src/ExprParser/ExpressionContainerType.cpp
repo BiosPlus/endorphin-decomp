@@ -90,3 +90,21 @@ extern "C" __declspec(naked) void __cdecl fn_00670D60(void* a1) {
         jmp eax
     }
 }
+
+// [0x00699090] ExprParser::ExpressionContainerType::vfunc_30 (35 bytes)
+// Releases the ref-counted pointer held at *a1 (stdcall-style, ret 4): if non-null,
+// decrement its refcount (+0x4); on reaching zero, call its vtable[0] (deleting dtor, arg 1).
+// Then clear *a1.
+extern "C" void __fastcall fn_00699090(void* self, int edx_unused, void** a1) {
+    struct RefObj {
+        virtual void scalar_delete(int flags) = 0;
+        int refcount;
+    };
+    RefObj* p = (RefObj*)*a1;
+    if (p) {
+        if (--p->refcount == 0) {
+            p->scalar_delete(1);
+        }
+    }
+    *a1 = 0;
+}
