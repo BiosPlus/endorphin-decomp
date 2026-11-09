@@ -44,3 +44,10 @@ extern "C" __declspec(naked) void __fastcall fn_00516B20(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0050E390] ExprParser::WriteOnlyMethod0Type<NMData::PopulationData, &public: void __thiscall NMData::PopulationData::randomizeNow(void)>::vfunc_16 (30 bytes)
+extern "C" void* __cdecl ext_006A6E9E(void* p, long vfdelta, void* src_type, void* target_type, int is_reference);
+
+extern "C" void __stdcall fn_0050E390(void* self) {
+    ext_006A6E9E(self, 0, (void*)0x00A2E2F8, (void*)0x00A41ADC, 0);
+}
