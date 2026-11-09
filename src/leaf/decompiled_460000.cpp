@@ -999,3 +999,27 @@ extern "C" __declspec(naked) void __fastcall fn_00462D10(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" int mem_00924FE4;
+
+// [0x0046C460] sub_0046C460 (44 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0046C460(void* self) {
+    __asm {
+        push ecx
+        cmp byte ptr [esp + 0Ch], 0
+        mov dword ptr [esp], 0
+        mov eax, 92F10Ch
+        jne short L_0046C479
+        mov eax, 93A808h
+    L_0046C479:
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
