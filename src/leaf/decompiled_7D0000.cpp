@@ -279,3 +279,19 @@ extern "C" __declspec(naked) void fn_007D48F0() {
         ret
     }
 }
+
+// [0x007DAD70] sub_007DAD70 (40 bytes)
+extern "C" void ext_007D5950();
+
+extern "C" __declspec(naked) void __cdecl fn_007DAD70(void) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [ecx + 0xc]
+        mov eax, dword ptr [edx + 0xb0]
+        mov dword ptr [esp + 0xc], 0x99e1e0
+        mov dword ptr [esp + 8], eax
+        mov dword ptr [esp + 4], 0
+        jmp ext_007D5950
+    }
+}
