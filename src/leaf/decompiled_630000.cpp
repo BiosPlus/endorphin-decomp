@@ -261,3 +261,15 @@ extern "C" __declspec(naked) void __fastcall fn_00630510(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void* __cdecl ext_00594000();
+extern "C" float __fastcall ext_00594070(void* self);
+
+// [0x00630CB0] sub_00630CB0 (43 bytes)
+extern "C" void __fastcall fn_00630CB0(void* self, int edx_unused, float a1) {
+    char* esi = reinterpret_cast<char*>(self);
+    *reinterpret_cast<float*>(esi + 0x178) = 0.0f;
+    void* eax = ext_00594000();
+    *reinterpret_cast<float*>(esi + 0x17c) = ext_00594070(eax);
+    *reinterpret_cast<float*>(esi + 0xf0) = a1;
+}

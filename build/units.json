@@ -358334,7 +358334,9 @@
       "0x00630CBC",
       "0x00630CC3"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:32:15Z"
   },
   {
     "va": "0x00630CE0",
