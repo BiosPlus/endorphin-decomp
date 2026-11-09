@@ -253,3 +253,19 @@ extern "C" float __cdecl fn_007C5920(void* a0) {
     float r = (float)acos((double)v);
     return r + r;
 }
+
+// [0x007C5950] sub_007C5950 (34 bytes)
+extern "C" void ext_006A7256();
+extern "C" __declspec(naked) float __cdecl fn_007C5950(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x1b0]
+        call ext_006A7256
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fadd st(0), st
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret
+    }
+}
