@@ -243,3 +243,14 @@ extern "C" void* __fastcall fn_00427B50(char* self, int edx_unused, int* out) {
     out[2] = edi;
     return out;
 }
+
+// [0x00421D80] sub_00421D80 (37 bytes)
+extern "C" int mem_00924FD4;
+extern "C" int mem_00924ED0;
+
+extern "C" void __fastcall fn_00421D80(void* self, int edx_unused, const char* a1) {
+    typedef void* (__thiscall *AssignFn)(void*, const char*);
+    void* str = (char*)self + 0xc8;
+    ((AssignFn)mem_00924FD4)(str, "Command: ");
+    ((AssignFn)mem_00924ED0)(str, a1);
+}
