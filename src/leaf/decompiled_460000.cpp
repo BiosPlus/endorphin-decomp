@@ -945,3 +945,21 @@ skip_store:
         ret 0x4
     }
 }
+
+// [0x0046FBE0] sub_0046FBE0 (39 bytes)
+extern "C" double mem_0092BD70;
+
+extern "C" __declspec(naked) void __fastcall fn_0046FBE0(void* self, int edx_unused, float a1) {
+    __asm {
+        sub esp, 0x8
+        fld dword ptr [esp + 0xc]
+        fadd qword ptr [mem_0092BD70]
+        fstp qword ptr [esp]
+        fld qword ptr [esp]
+        fistp dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [ecx + 0x288], eax
+        add esp, 0x8
+        ret 0x4
+    }
+}
