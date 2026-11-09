@@ -736,3 +736,26 @@ extern "C" __declspec(naked) void __fastcall fn_00649B40(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00649BF0] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setRotationAxisY(float), 0}>::vfunc_41 (37 bytes)
+extern "C" void ext_00648E10();
+
+extern "C" __declspec(naked) void __fastcall fn_00649BF0(void* self, int edx_unused, void** a, void** b) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00648E10
+        pop esi
+        ret 8
+    }
+}
