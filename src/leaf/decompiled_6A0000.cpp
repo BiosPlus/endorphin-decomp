@@ -289,3 +289,18 @@ extern "C" void __fastcall fn_006A9510(char* self, int edx_unused, char a1) {
     if (hwnd == 0) return;
     ((InvalidateRectFn006A9510)mem_00925688)(hwnd, 0, 1);
 }
+
+// [0x006A7C70] sub_006A7C70 (41 bytes)
+extern "C" int ext_006ACFB0();
+
+typedef int (__fastcall *CalleeFn006A7C70)(void* p);
+typedef int (__thiscall *VCalleeFn006A7C70)(void* self, int a1, int a2);
+
+extern "C" int __fastcall fn_006A7C70(char* self, int edx_unused, int a1, int a2) {
+    if (*(void**)(self + 0x54) != 0) {
+        void* vtbl = *(void**)self;
+        int r = ((CalleeFn006A7C70)ext_006ACFB0)(*(void**)(self + 0x54));
+        ((VCalleeFn006A7C70)*(void**)((char*)vtbl + 0x150))(self, a1, r);
+    }
+    return 0;
+}
