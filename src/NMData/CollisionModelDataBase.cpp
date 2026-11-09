@@ -23,3 +23,23 @@ extern "C" int __fastcall fn_0058F650(void* self, int edx_unused, int a1) {
     ((ThisCallArg1)ext_0058A1C0)(self, a1);
     return a1;
 }
+
+// [0x005C3010] NMData::CollisionModelDataBase::vfunc_15 (32 bytes)
+extern "C" void ext_005DF1F0();
+
+extern "C" __declspec(naked) int __fastcall fn_005C3010(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push esi
+        mov dword ptr [esp + 0xc], 0
+        call ext_005DF1F0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
