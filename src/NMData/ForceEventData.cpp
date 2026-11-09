@@ -33,3 +33,15 @@ extern "C" __declspec(naked) void __fastcall fn_004C4E40(void* self) {
         ret 0x4
     }
 }
+
+// [0x004C1AF0] NMData::ForceEventData::vfunc_69 (35 bytes)
+extern "C" void ext_004C0340();
+
+extern "C" void __fastcall fn_004C1AF0(void* self, int edx_unused, int a1) {
+    char* p = (char*)self;
+    *(int*)(p + 0x15c) = a1;
+    if (a1 >= *(int*)(p + 0x160)) {
+        *(int*)(p + 0x160) = a1 + 1;
+    }
+    ext_004C0340();
+}
