@@ -46,3 +46,15 @@ extern "C" int __stdcall ext_004CE7B0(int value);
 extern "C" void __fastcall fn_004CEA10(void* self, int edx_unused, int a1) {
     *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x180) = ext_004CE7B0(a1);
 }
+
+// [0x004CCDC0] sub_004CCDC0 (25 bytes)
+extern "C" void ext_0046AC30();
+extern "C" void ext_006A5C5C();
+
+extern "C" void __fastcall fn_004CCDC0(void* self) {
+    void* esi = *reinterpret_cast<void**>(self);
+    if (esi != 0) {
+        reinterpret_cast<void (__fastcall*)(void*)>(ext_0046AC30)(esi);
+        reinterpret_cast<void (__cdecl*)(void*)>(ext_006A5C5C)(esi);
+    }
+}
