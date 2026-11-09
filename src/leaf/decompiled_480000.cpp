@@ -449,3 +449,35 @@ extern "C" __declspec(naked) void __cdecl fn_00480DD0(const void* src, const voi
         ret
     }
 }
+
+// [0x00481770] sub_00481770 (48 bytes)
+// For each of `count` 64-byte blocks starting at dst: if dst is non-null, copy 16 dwords from src into it.
+extern "C" __declspec(naked) void __cdecl fn_00481770(void* dst, int count, const void* src) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        test edx, edx
+        jbe done
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        push edi
+    lp:
+        test eax, eax
+        je skp
+        mov ecx, 0x10
+        mov esi, ebx
+        mov edi, eax
+        rep movsd
+    skp:
+        sub edx, 0x1
+        add eax, 0x40
+        test edx, edx
+        ja lp
+        pop edi
+        pop esi
+        pop ebx
+    done:
+        ret
+    }
+}
