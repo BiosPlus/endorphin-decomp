@@ -143,3 +143,23 @@ extern "C" int __fastcall fn_005C3F10(void* self) {
     int n = mem_00B44C0C - begin;
     return n / 28;
 }
+
+// [0x005CE4F0] sub_005CE4F0 (44 bytes)
+extern "C" void __fastcall fn_005CE4F0(void* self) {
+    float* f = (float*)self;
+    float z = 0.0f;
+    f[6] = z;
+    f[7] = z;
+    f[2] = z;
+    f[1] = z;
+    f[0] = z;
+    f[5] = z;
+    f[4] = z;
+    f[3] = z;
+    f[10] = z;
+    f[9] = z;
+    f[8] = z;
+    f[13] = z;
+    f[12] = z;
+    f[11] = z;
+}
