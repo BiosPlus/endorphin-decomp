@@ -484,3 +484,28 @@ extern "C" void* __fastcall fn_00673DD0(void* self) {
     }
     return (char*)s[1] + 0xC;
 }
+
+// [0x0067AE20] sub_0067AE20 (38 bytes)
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" __declspec(naked) void __fastcall fn_0067AE20(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi + 0x8]
+        mov ecx, edi
+        call ext_0065C640
+        mov eax, dword ptr [esi + 0xc]
+        cmp dword ptr [eax + 0x10], 0x0
+        mov ecx, edi
+        setne bl
+        call ext_0065C650
+        pop edi
+        pop esi
+        mov al, bl
+        pop ebx
+        ret
+    }
+}
