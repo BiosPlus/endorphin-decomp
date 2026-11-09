@@ -97,3 +97,20 @@ extern "C" __declspec(naked) void __fastcall fn_005C85C0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00494810] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_16 (30 bytes)
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void* __stdcall fn_00494810(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push 0A346B0h
+        push 0A2E2F8h
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
