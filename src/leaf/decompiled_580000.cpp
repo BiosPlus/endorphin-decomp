@@ -211,3 +211,27 @@ extern "C" __declspec(naked) float __fastcall fn_0058AB30(void* self) {
         ret
     }
 }
+
+// [0x0058AB60] sub_0058AB60 (44 bytes)
+extern "C" int mem_00B40644;
+extern "C" __declspec(naked) float __fastcall fn_0058AB60(void* self) {
+    __asm {
+        sub esp, 0x40
+        push esi
+        mov esi, dword ptr [mem_00B40644]
+        mov eax, ecx
+        mov edx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [edx + 0x10]
+        lea ecx, [eax + 0x4]
+        mov eax, dword ptr [eax + 0xf0]
+        push esi
+        push eax
+        lea eax, [esp + 0xc]
+        push eax
+        call edx
+        fld dword ptr [eax + 0x34]
+        pop esi
+        add esp, 0x40
+        ret
+    }
+}
