@@ -155,3 +155,15 @@ extern "C" void* __fastcall fn_005157F0(void* self, int edx_unused, int a1) {
     *(void**)s = (void*)0x951934;
     return self;
 }
+
+// [0x0051E530] sub_0051E530 (41 bytes)
+extern "C" void __fastcall fn_0051E530(void* self, int edx_unused, char* first, char* last) {
+    char* p = first;
+    if (p != last) {
+        do {
+            void** vtbl = *(void***)p;
+            ((void (__thiscall*)(void*, int))vtbl[0])(p, 0);
+            p += 0x168;
+        } while (p != last);
+    }
+}
