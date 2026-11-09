@@ -789,3 +789,14 @@ extern "C" void __cdecl fn_007C5BD0(char* self, const float* src) {
     *(float*)(self + 0x178) = src[2];
     *(float*)(self + 0x17c) = src[3];
 }
+
+// [0x007C9B30] sub_007C9B30 (44 bytes)
+extern "C" void __cdecl fn_007C9B30(char* dst, const float* src) {
+    float* d = (float*)(dst + 0x1a4);
+    const float* s = src;
+    float a = s[0];
+    d[0] = a;
+    d[1] = s[1];
+    d[2] = s[2];
+    d[3] = s[3];
+}
