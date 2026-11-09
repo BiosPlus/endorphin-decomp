@@ -394,3 +394,23 @@ extern "C" void* __fastcall fn_006B4C30(void* self) {
     p[0x58 / 4] = 0x92a254;
     return self;
 }
+
+// [0x006B4FA0] sub_006B4FA0 (33 bytes)
+extern "C" int mem_00924494;
+
+extern "C" __declspec(naked) void __fastcall fn_006B4FA0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x74
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 8], 0
+        call dword ptr [mem_00924494]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
