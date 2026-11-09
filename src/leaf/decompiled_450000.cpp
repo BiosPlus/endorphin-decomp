@@ -402,3 +402,25 @@ extern "C" void* __fastcall fn_00458550(void* self, int edx_unused, int a1, int 
     *reinterpret_cast<unsigned int*>(self) = 0x00937424;
     return self;
 }
+
+// [0x00454C00] sub_00454C00 (37 bytes)
+extern "C" void ext_006A651A();
+
+extern "C" __declspec(naked) void __fastcall fn_00454C00(void* self) {
+    __asm {
+        cmp dword ptr [esp + 4], 0x14
+        push esi
+        mov esi, ecx
+        jne short skip_call
+        mov ecx, dword ptr [esi + 0x88]
+        push 0
+        push 0
+        push esi
+        call ext_006A651A
+skip_call:
+        mov ecx, esi
+        call ext_006A5EA8
+        pop esi
+        ret 0xc
+    }
+}
