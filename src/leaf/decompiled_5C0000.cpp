@@ -74,3 +74,16 @@ extern "C" __declspec(naked) void __fastcall fn_005CEA30(void* self) {
         ret
     }
 }
+
+// [0x005C3760] sub_005C3760 (27 bytes)
+extern "C" void ext_00648450();
+
+extern "C" void __fastcall fn_005C3760(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    void* child = *(void**)(p + 0x16c);
+    if (child) {
+        typedef void (__fastcall *FnCall)(void*);
+        ((FnCall)ext_00648450)(child);
+        p[0x168] = 0;
+    }
+}
