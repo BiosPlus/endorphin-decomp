@@ -485,3 +485,20 @@ extern "C" __declspec(naked) void __fastcall fn_006B4D30(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006B0CA0] sub_006B0CA0 (42 bytes)
+extern "C" void ext_006A5C6E();
+
+extern "C" void* __fastcall fn_006B0CA0(void* self) {
+    unsigned int* p = (unsigned int*)self;
+    ext_006A5C6E();
+    p[0x54 / 4] = 0;
+    p[0x58 / 4] = 0;
+    p[0x5c / 4] = 0;
+    *((unsigned char*)self + 0x60) = 0;
+    volatile unsigned int* vp = (volatile unsigned int*)self;
+    vp[0] = 0x991364;
+    vp[0x68 / 4] = 0;
+    vp[0x64 / 4] = 0x92a254;
+    return self;
+}
