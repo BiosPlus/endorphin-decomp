@@ -160193,7 +160193,9 @@
       "0x004FDB2C",
       "0x004FDB34"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:10:07Z"
   },
   {
     "va": "0x004FDB40",
