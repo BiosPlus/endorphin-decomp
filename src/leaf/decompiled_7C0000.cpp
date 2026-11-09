@@ -486,3 +486,24 @@ extern "C" __declspec(naked) void __cdecl fn_007C9CD0(void* self, float v) {
         ret
     }
 }
+
+// [0x007C9D00] sub_007C9D00 (35 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C9D00(float* out, float v) {
+    __asm {
+        fldz
+        fld dword ptr [esp + 8]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 1
+        jne short neg_path
+        mov eax, dword ptr [esp + 4]
+        fstp dword ptr [eax + 8]
+        ret
+neg_path:
+        mov ecx, dword ptr [esp + 4]
+        fchs
+        fstp dword ptr [ecx + 8]
+        ret
+    }
+}
