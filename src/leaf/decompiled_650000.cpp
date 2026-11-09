@@ -42,3 +42,19 @@ extern "C" void ext_007C8B90(int value);
 extern "C" void __fastcall fn_0065BB70(void* self) {
     ext_007C8B90(*(int*)((char*)self + 0x18));
 }
+
+// [0x0065F2A0] sub_0065F2A0 (15 bytes)
+// Loads ecx from the global mem_00B58FF4 and pushes the dword at [self] as one stack argument
+// to sub_0066C030 (no caller cleanup), then returns. ecx must carry the global, which C++ can't express.
+extern "C" void ext_0066C030();
+extern "C" int mem_00B58FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0065F2A0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        mov ecx, dword ptr [mem_00B58FF4]
+        push eax
+        call ext_0066C030
+        ret
+    }
+}
