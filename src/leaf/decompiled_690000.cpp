@@ -258,3 +258,31 @@ extern "C" __declspec(naked) void __fastcall fn_00698B90(void* self, int edx_unu
         ret 0x14
     }
 }
+
+// [0x00698810] sub_00698810 (47 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00698810(void* self, int edx_unused, const char* a1) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx]
+    L_loop:
+        mov cl, byte ptr [eax]
+        cmp cl, byte ptr [edx]
+        jne short L_diff
+        test cl, cl
+        je short L_eq
+        mov cl, byte ptr [eax + 0x1]
+        cmp cl, byte ptr [edx + 0x1]
+        jne short L_diff
+        add eax, 0x2
+        add edx, 0x2
+        test cl, cl
+        jne short L_loop
+    L_eq:
+        xor eax, eax
+        ret 0x4
+    L_diff:
+        sbb eax, eax
+        sbb eax, -0x1
+        ret 0x4
+    }
+}
