@@ -67,3 +67,26 @@ done:
         ret 8
     }
 }
+
+// [0x006E8750] sub_006E8750 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006E8750(void* self, int edx_unused, double a1) {
+    __asm {
+        mov ecx, dword ptr [ecx]
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [ecx + 0x50]
+        fnstsw ax
+        test ah, 0x1
+        je short L_store_arg
+        mov eax, dword ptr [ecx + 0x50]
+        mov dword ptr [ecx + 0x58], eax
+        mov edx, dword ptr [ecx + 0x54]
+        mov dword ptr [ecx + 0x5c], edx
+        ret 0x8
+L_store_arg:
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0x58], eax
+        mov dword ptr [ecx + 0x5c], edx
+        ret 0x8
+    }
+}
