@@ -62734,7 +62734,9 @@
       "0x004693FA",
       "0x00469400"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:18:36Z"
   },
   {
     "va": "0x00469410",
