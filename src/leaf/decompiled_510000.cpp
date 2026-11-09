@@ -48,3 +48,15 @@ extern "C" void __fastcall fn_00519CF0(void* self) {
     vf(self);
     *(int*)(s + 0x28) = ext_005285A0(*(int*)(s + 0x20));
 }
+
+// [0x00511E40] sub_00511E40 (35 bytes)
+extern "C" int mem_00AEBDF8;
+extern "C" int mem_00AEBDF4;
+
+extern "C" void* __cdecl fn_00511E40(void) {
+    if (!(mem_00AEBDF8 & 1)) {
+        mem_00AEBDF8 |= 1;
+        mem_00AEBDF4 = 0x951390;
+    }
+    return &mem_00AEBDF4;
+}
