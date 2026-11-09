@@ -583,3 +583,24 @@ extern "C" __declspec(naked) void __fastcall fn_0048B1C0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004CB440] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_4 (40 bytes)
+extern "C" int mem_00924FE8;
+
+extern "C" __declspec(naked) void* __fastcall fn_004CB440(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        push esi
+        mov dword ptr [esp + 0x4], 0
+        call ext_004CA560
+        mov esi, dword ptr [esp + 0xc]
+        mov ecx, esi
+        call dword ptr [mem_00924FE8]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
