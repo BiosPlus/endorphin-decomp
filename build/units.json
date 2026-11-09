@@ -404821,7 +404821,9 @@
       "0x006718A7",
       "0x006718B4"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:52:58Z"
   },
   {
     "va": "0x006718C0",

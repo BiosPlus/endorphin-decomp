@@ -45,3 +45,22 @@ extern "C" void* __fastcall fn_00671880(void* self, int edx_unused, void** a1, v
     *a1 = ((Callee_006714E0)ext_006714E0)((char*)self + 4, 1, (int)*a2);
     return a1;
 }
+
+// [0x006718A0] ExprParser::StringType::vfunc_10 (28 bytes)
+extern "C" void ext_00671840();
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __fastcall fn_006718A0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push esi
+        call ext_00671840
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esi]
+        push eax
+        call dword ptr [mem_00924FDC]
+        pop esi
+        ret 8
+    }
+}
