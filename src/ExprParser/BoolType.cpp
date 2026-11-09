@@ -108,3 +108,23 @@ extern "C" void __fastcall fn_0067A720(void* self, int edx_unused, char* a1, flo
     ((VFn)vtbl[0x78 / 4])(inner, a1);
     ((SubFn)ext_00672080)(a1, a2);
 }
+
+// [0x0066AE90] ExprParser::BoolType::vfunc_0 (36 bytes)
+extern "C" void ext_006720A0();
+extern "C" __declspec(naked) void* __fastcall fn_0066AE90(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        movzx ecx, byte ptr [eax]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_006720A0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
