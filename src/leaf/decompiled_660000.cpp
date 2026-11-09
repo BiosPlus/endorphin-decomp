@@ -505,3 +505,13 @@ extern "C" int __cdecl fn_00662EC0(void* path) {
     ((SetAttrFn)mem_00924258)(path, newattr);
     return newattr != attr;
 }
+
+// [0x00662EF0] sub_00662EF0 (40 bytes)
+extern "C" int __cdecl fn_00662EF0(void* path) {
+    typedef unsigned long (__stdcall *GetAttrFn)(void*);
+    typedef int (__stdcall *SetAttrFn)(void*, unsigned long);
+    unsigned long attr = ((GetAttrFn)mem_0092425C)(path);
+    unsigned long newattr = attr & ~1ul;
+    ((SetAttrFn)mem_00924258)(path, newattr);
+    return newattr != attr;
+}
