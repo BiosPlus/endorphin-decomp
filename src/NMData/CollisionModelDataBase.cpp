@@ -43,3 +43,18 @@ extern "C" __declspec(naked) int __fastcall fn_005C3010(void* self, int edx_unus
         ret 8
     }
 }
+
+// [0x005C3660] NMData::CollisionModelDataBase::vfunc_33 (46 bytes)
+extern "C" void ext_0058A1A0();
+
+extern "C" void __fastcall fn_005C3660(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    void* obj = *(void**)(p + 0x15c);
+    if (obj) {
+        void** vt = *(void***)obj;
+        ((void (__thiscall *)(void*, int))vt[0])(obj, 1);
+    }
+    *(void**)(p + 0x15c) = 0;
+    *(unsigned char*)(p + 0x160) = 1;
+    ((void (__fastcall *)(void*))ext_0058A1A0)(self);
+}
