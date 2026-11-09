@@ -75,3 +75,17 @@ extern "C" __declspec(naked) void __fastcall fn_00602EC0(void* self) {
         ret
     }
 }
+
+// [0x0060B050] sub_0060B050 (46 bytes)
+extern "C" void* __stdcall fn_0060B050(void* dst, unsigned int count, const void* src) {
+    unsigned int n = count;
+    unsigned int* p = (unsigned int*)dst;
+    if (n > 0) {
+        do {
+            *p = *(const unsigned int*)src;
+            n = n - 1;
+            p = p + 1;
+        } while (n > 0);
+    }
+    return (char*)dst + count * 4;
+}
