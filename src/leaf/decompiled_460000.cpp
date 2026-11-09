@@ -518,3 +518,21 @@ extern "C" __declspec(naked) void* __cdecl fn_0046F7D0(void* p) {
         ret
     }
 }
+
+extern "C" int ext_0046F8A0();
+
+// [0x0046F8B0] sub_0046F8B0 (27 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0046F8B0(void* self) {
+    __asm {
+        call ext_0046F8A0
+        test al, al
+        je ret_zero
+        cmp byte ptr [ecx + 0x295], 0x0
+        je ret_zero
+        mov eax, 0x1
+        ret
+    ret_zero:
+        xor eax, eax
+        ret
+    }
+}
