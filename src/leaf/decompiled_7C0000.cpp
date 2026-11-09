@@ -311,3 +311,11 @@ extern "C" __declspec(naked) void __cdecl fn_007C5B70(void* self, const float* s
         ret
     }
 }
+
+// [0x007C5BA0] sub_007C5BA0 (35 bytes)
+extern "C" void __cdecl fn_007C5BA0(void* a0, const float* a1) {
+    char* self = (char*)a0;
+    *(float*)(self + 0x180) = a1[0];
+    *(float*)(self + 0x184) = a1[1];
+    *(float*)(self + 0x188) = a1[2];
+}
