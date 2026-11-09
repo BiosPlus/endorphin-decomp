@@ -1806,3 +1806,14 @@ extern "C" __declspec(naked) void __fastcall fn_0043D230(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00436F30] sub_00436F30 (42 bytes)
+extern "C" void __fastcall fn_00436F30(void* self) {
+    void** p = (void**)self;
+    if (p[1]) {
+        ext_006A5C5C(p[1]);
+    }
+    p[1] = 0;
+    p[2] = 0;
+    p[3] = 0;
+}
