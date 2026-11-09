@@ -51202,7 +51202,9 @@
       "0x00458535",
       "0x0045853B"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:51:45Z"
   },
   {
     "va": "0x00458550",
