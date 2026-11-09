@@ -784,3 +784,22 @@ extern "C" __declspec(naked) void __fastcall fn_00469150(void* self) {
         __asm _emit 0xC3                                       // ret
     }
 }
+
+// [0x00460990] sub_00460990 (35 bytes)
+extern "C" void ext_00665870();
+extern "C" void ext_00666120();
+extern "C" __declspec(naked) void __fastcall fn_00460990(void* self) {
+    __asm {
+        push 0x0
+        push 0x104
+        push 0x938458
+        call ext_006A5E60
+        cmp eax, 0x6
+        jne done
+        call ext_00665870
+        mov ecx, eax
+        jmp ext_00666120
+    done:
+        ret
+    }
+}
