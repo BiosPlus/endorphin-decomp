@@ -458,3 +458,16 @@ extern "C" __declspec(naked) void __fastcall fn_004031E0(void* self) {
         jmp ext_00558920
     }
 }
+
+// [0x00403350] sub_00403350 (36 bytes)
+extern "C" void ext_00558920();
+extern "C" int mem_009242F4;
+
+extern "C" void __fastcall fn_00403350(void* self) {
+    char* p = (char*)self;
+    *(int*)p = 0x0092945c;
+    *(int*)(p + 4) = 0x00929454;
+    typedef void (__fastcall *ctor_fn)(void*);
+    ((ctor_fn)(*(int*)&mem_009242F4))(p + 0x504);
+    ((void (__fastcall *)(void*))ext_00558920)(self);
+}
