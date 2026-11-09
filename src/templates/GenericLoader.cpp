@@ -13,3 +13,14 @@ extern "C" void* __fastcall fn_005AA3F0(void* self, int edx_unused, int flags) {
     }
     return self;
 }
+
+// [0x005AA420] GenericLoader<NMData::CharacterData, {public: void __thiscall NMData::CharacterData::loadNonEditableParts(class AdvXMLParser::Element const &), 0}>::vfunc_0 (36 bytes)
+extern "C" void* __fastcall fn_005AA420(void* self, int edx_unused, int flags) {
+    void** p = (void**)self;
+    *p = (void*)0x0095EEF4;
+    ext_0065C660(self);
+    if (flags & 1) {
+        ext_006A5C5C(self);
+    }
+    return self;
+}
