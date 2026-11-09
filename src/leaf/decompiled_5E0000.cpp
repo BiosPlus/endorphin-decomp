@@ -147,3 +147,18 @@ extern "C" __declspec(naked) void __fastcall fn_005E29A0(void* self) {
         ret
     }
 }
+
+// [0x005E05C0] sub_005E05C0 (40 bytes)
+extern "C" void __stdcall fn_005E05C0(float* self) {
+    float z = 0.0f;
+    self[3] = z;
+    self[2] = z;
+    self[1] = z;
+    self[0] = z;
+    self[4] = z;
+    self[5] = z;
+    self[6] = 1.0f;
+    self[7] = z;
+    self[8] = z;
+    self[9] = z;
+}
