@@ -240720,7 +240720,9 @@
       "0x0058CAFC",
       "0x0058CB04"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:51:43Z"
   },
   {
     "va": "0x0058CB10",
