@@ -311,3 +311,14 @@ extern "C" void __fastcall fn_00419960(void* self) {
         ((int (__stdcall*)(int, int, int, int))mem_00925694)(s[1], 0x466, 1, r);
     }
 }
+
+// [0x00419DF0] sub_00419DF0 (35 bytes)
+extern "C" int mem_00924300;
+extern "C" int mem_00925694;
+extern "C" void __fastcall fn_00419DF0(void* self, int edx_unused, int a1) {
+    typedef int (__fastcall *FnOrd876)(int);
+    typedef int (__stdcall *FnSendMessageA)(int, unsigned int, unsigned int, int);
+    int v = ((FnOrd876)mem_00924300)(a1);
+    int hwnd = *(int*)((char*)self + 0x20);
+    ((FnSendMessageA)mem_00925694)(hwnd, 0x466, 1, v);
+}
