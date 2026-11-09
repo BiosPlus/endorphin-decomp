@@ -243072,7 +243072,9 @@
       "0x0058F6FC",
       "0x0058F704"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:52:04Z"
   },
   {
     "va": "0x0058F710",
