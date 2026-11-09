@@ -128847,7 +128847,9 @@
       "0x004CE9FC",
       "0x004CEA04"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:45:32Z"
   },
   {
     "va": "0x004CEA10",
