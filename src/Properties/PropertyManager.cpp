@@ -35,3 +35,31 @@ extern "C" __declspec(naked) int __fastcall fn_00675D30(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x00675D80] Properties::PropertyManager::vfunc_6 (46 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00675D80(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x70], 0
+        je fail
+        mov ecx, dword ptr [esi + 0x70]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        call edx
+        test al, al
+        je fail
+        mov esi, dword ptr [esi + 0x6c]
+        test esi, esi
+        je fail
+        xor eax, eax
+        cmp byte ptr [esi + 0xb8], al
+        pop esi
+        sete al
+        ret
+    fail:
+        xor al, al
+        pop esi
+        ret
+    }
+}
