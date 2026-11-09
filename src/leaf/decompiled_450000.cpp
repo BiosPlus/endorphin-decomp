@@ -620,3 +620,25 @@ extern "C" __declspec(naked) void __fastcall fn_00455F10(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0045B6F0] sub_0045B6F0 (48 bytes)
+extern "C" void ext_00584C10();
+
+struct Obj_0045B6F0 {
+    virtual void v00(); virtual void v01(); virtual void v02(); virtual void v03();
+    virtual void v04(); virtual void v05(); virtual void v06(); virtual void v07();
+    virtual void v08(); virtual void v09(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+    virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+    virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27();
+    virtual void v28(); virtual void v29();
+    virtual bool v30();
+};
+
+extern "C" int __fastcall fn_0045B6F0(void* self, int edx_unused, Obj_0045B6F0* obj) {
+    if (obj && obj->v30() && ((bool (__fastcall *)(Obj_0045B6F0*))ext_00584C10)(obj)) {
+        return 1;
+    }
+    return 0;
+}
