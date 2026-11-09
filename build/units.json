@@ -14713,7 +14713,9 @@
       "0x00419C09",
       "0x00419C13"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:49:43Z"
   },
   {
     "va": "0x00419C20",

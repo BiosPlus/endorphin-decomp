@@ -722,3 +722,31 @@ null_child:
         ret 0xc
     }
 }
+
+// [0x00419BF0] sub_00419BF0 (46 bytes)
+extern "C" int mem_0092553C;
+extern "C" void ext_006A6304();
+
+extern "C" __declspec(naked) void __stdcall fn_00419BF0(void* p) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        test eax, eax
+        jne L_419BFB
+        ret 4
+    L_419BFB:
+        lea ecx, [esp + 4]
+        push ecx
+        push 0
+        push 0
+        push eax
+        push 0
+        call dword ptr [mem_0092553C]
+        test eax, eax
+        jge L_419C17
+        push eax
+        call ext_006A6304
+    L_419C17:
+        mov eax, dword ptr [esp + 4]
+        ret 4
+    }
+}
