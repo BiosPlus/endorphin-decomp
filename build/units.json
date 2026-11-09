@@ -458460,7 +458460,9 @@
     "relocations": [
       "0x006BC3A9"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:04:22Z"
   },
   {
     "va": "0x006BC3B0",
