@@ -2098,3 +2098,33 @@ extern "C" __declspec(naked) void __fastcall fn_0043D260(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0043C980] sub_0043C980 (45 bytes)
+// Stack-arg (__stdcall, ret 0x10) wrapper: if arg0 is non-null, calls sub_004407B0(arg0) to get an object,
+// then tail-dispatches vtbl[+0x2c] on it with (arg0, arg1, arg2, arg3) pushed in that order.
+extern "C" void ext_004407B0();
+
+extern "C" __declspec(naked) void __stdcall fn_0043C980(void* a1, int a2, int a3, int a4) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        test esi, esi
+        je done
+        mov ecx, esi
+        call ext_004407B0
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x2c]
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        push esi
+        mov ecx, eax
+        call edx
+    done:
+        pop esi
+        ret 0x10
+    }
+}
