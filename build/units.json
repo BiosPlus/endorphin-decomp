@@ -451487,7 +451487,9 @@
       "0x006AECA7",
       "0x006AECB8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:18:47Z"
   },
   {
     "va": "0x006AECC0",
