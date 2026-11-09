@@ -195,3 +195,20 @@ extern "C" void __fastcall fn_00453FE0(void* self, int edx_unused, int a1) {
         ext_00453620();
     }
 }
+
+// [0x00455CF0] sub_00455CF0 (25 bytes)
+extern "C" void ext_006A5EBA();
+extern "C" void ext_006A5ECC();
+
+extern "C" __declspec(naked) void __fastcall fn_00455CF0(void* self) {
+    __asm {
+        sub esp, 0x54
+        push ecx
+        lea ecx, [esp + 0x4]
+        call ext_006A5ECC
+        lea ecx, [esp]
+        call ext_006A5EBA
+        add esp, 0x54
+        ret
+    }
+}
