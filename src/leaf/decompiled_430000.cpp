@@ -350,3 +350,17 @@ done:
         ret 4
     }
 }
+
+extern "C" void ext_004444B0();
+
+// [0x00433B70] sub_00433B70 (18 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00433B70(void* self, int edx_unused, int a1) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0114h]
+        test ecx, ecx
+        je short done
+        call ext_004444B0
+done:
+        ret 4
+    }
+}

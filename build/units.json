@@ -28652,7 +28652,9 @@
     "relocations": [
       "0x00433B7B"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:17:14Z"
   },
   {
     "va": "0x00433B90",
