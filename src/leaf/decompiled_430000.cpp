@@ -419,3 +419,18 @@ extern "C" void __fastcall fn_00436C40(void* self) {
     VFn f = (VFn)(*(void***)obj)[15];
     f(obj);
 }
+
+// [0x00435B30] sub_00435B30 (22 bytes)
+extern "C" void ext_0045D270();
+extern "C" void ext_004339D0();
+extern "C" __declspec(naked) void __fastcall fn_00435B30(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x108]
+        call ext_0045D270
+        mov ecx, esi
+        pop esi
+        jmp ext_004339D0
+    }
+}
