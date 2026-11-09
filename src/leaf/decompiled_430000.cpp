@@ -570,3 +570,21 @@ extern "C" __declspec(naked) void __fastcall fn_004332B0(void* self) {
         jmp ext_0044B780
     }
 }
+
+// [0x004332D0] sub_004332D0 (26 bytes)
+// Saves esi, loads this+0x108 into ecx and calls sub_00440690, reloads ecx from this+0x100,
+// restores esi, and tail-jumps to sub_0044B7A0.
+extern "C" void ext_00440690();
+extern "C" void ext_0044B7A0();
+
+extern "C" __declspec(naked) void __fastcall fn_004332D0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x108]
+        call ext_00440690
+        mov ecx, dword ptr [esi + 0x100]
+        pop esi
+        jmp ext_0044B7A0
+    }
+}
