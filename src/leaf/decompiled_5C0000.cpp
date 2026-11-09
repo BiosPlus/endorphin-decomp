@@ -111,3 +111,22 @@ extern "C" void __fastcall fn_005C3740(void* self) {
         p[0x168] = 0;
     }
 }
+
+// [0x005CFC80] sub_005CFC80 (37 bytes)
+extern "C" void ext_00530730();
+extern "C" __declspec(naked) void __fastcall fn_005CFC80(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x158]
+        test ecx, ecx
+        je done
+        mov eax, dword ptr [esi + 0x154]
+        push eax
+        call ext_00530730
+        mov dword ptr [esi + 0x154], 0
+    done:
+        pop esi
+        ret
+    }
+}
