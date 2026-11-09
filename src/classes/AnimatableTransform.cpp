@@ -16,3 +16,10 @@ extern "C" __declspec(naked) void __fastcall fn_0058A1A0(void* self) {
         jmp ext_00593630
     }
 }
+
+// [0x00661990] AnimatableTransform::vfunc_12 (20 bytes)
+extern "C" void ext_0046F7D0();
+extern "C" void* __stdcall fn_00661990(void* a1) {
+    ((void (__cdecl*)(void*))ext_0046F7D0)(a1);
+    return a1;
+}
