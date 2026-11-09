@@ -104,3 +104,11 @@ extern "C" void __cdecl ext_007D5720(int a0, int a1, int a2);
 extern "C" void __cdecl fn_007C70A0(char* a0) {
     ext_007D5720(*(int*)(a0 + 0x48), *(int*)(a0 + 0x34), *(int*)(a0 + 0x38));
 }
+
+// [0x007CC200] sub_007CC200 (25 bytes)
+extern "C" void __cdecl ext_007CC8E0(int a0, int a1, int a2);
+
+extern "C" int __cdecl fn_007CC200(int a0, int a1) {
+    ext_007CC8E0(a0, a1, 3);
+    return a0;
+}
