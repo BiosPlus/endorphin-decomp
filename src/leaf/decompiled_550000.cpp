@@ -22,3 +22,14 @@ extern "C" int __fastcall fn_00554110(int* self) {
     }
     return (self[2] - a) / 60;
 }
+
+// [0x00552160] sub_00552160 (14 bytes)
+extern "C" void ext_005B11E0();
+extern "C" __declspec(naked) void __fastcall fn_00552160(void* self) {
+    __asm {
+        push 2
+        add ecx, 0x210
+        call ext_005B11E0
+        ret
+    }
+}
