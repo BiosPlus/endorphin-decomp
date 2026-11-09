@@ -669,3 +669,27 @@ extern "C" void __fastcall fn_006489A0(void* self) {
     char* p = *(char**)((char*)self + 0x28);
     ((void (__cdecl*)(int, float, float, float))ext_007C76E0)(*(int*)(p + 0x40), *(float*)(p + 0x20), *(float*)(p + 0x24), *(float*)(p + 0x28));
 }
+
+// [0x006489F0] sub_006489F0 (38 bytes)
+extern "C" void ext_006488F0();
+extern "C" void ext_00648930();
+extern "C" void ext_0065BF00();
+
+extern "C" __declspec(naked) void __fastcall fn_006489F0(void* self, int edx_unused, float a1) {
+    __asm {
+        call ext_00648930
+        call ext_006488F0
+        _emit 0xde
+        _emit 0xd9
+        fnstsw ax
+        test ah, 0x41
+        jne skip_006489F0
+        fld dword ptr [esp + 0x4]
+        push ecx
+        mov ecx, dword ptr [ecx + 0x28]
+        fstp dword ptr [esp]
+        call ext_0065BF00
+skip_006489F0:
+        ret 0x4
+    }
+}
