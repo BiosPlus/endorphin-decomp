@@ -306,3 +306,16 @@ skip_call:
         ret 0x4
     }
 }
+
+// [0x00481C20] sub_00481C20 (42 bytes)
+extern "C" void __fastcall fn_00481C20(void* self) {
+    void** s = (void**)self;
+    void* p = s[2];
+    if (p) {
+        typedef void (__cdecl *PFN)(void*);
+        reinterpret_cast<PFN>(ext_006A5C5C)(p);
+    }
+    s[2] = 0;
+    s[3] = 0;
+    s[4] = 0;
+}
