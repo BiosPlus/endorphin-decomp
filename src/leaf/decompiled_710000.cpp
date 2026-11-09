@@ -137,3 +137,30 @@ extern "C" __declspec(naked) void __fastcall fn_00711DC0(void* self, int edx_unu
         __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00                    // ret 4
     }
 }
+
+// [0x00711D40] sub_00711D40 (47 bytes)
+// Calls sub_0071E680 (this in ecx), saves its result, invokes vtable slot 0x50 of stack arg 2 with self as the one arg,
+// then stores stack args 1, 3, 4 into the returned object at +0x04, +0x10, +0x14 (ret 0x10).
+extern "C" void ext_0071E680();
+extern "C" __declspec(naked) void __fastcall fn_00711D40(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_0071E680
+        mov ecx, dword ptr [esp + 0x10]
+        mov esi, eax
+        push edi
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x50]
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [esi + 0x4], ecx
+        mov dword ptr [esi + 0x10], edx
+        mov dword ptr [esi + 0x14], eax
+        pop edi
+        pop esi
+        ret 0x10
+    }
+}
