@@ -67,3 +67,9 @@ extern "C" void* __stdcall fn_004C5890(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA329C8, 0);
 }
+
+// [0x004C72B0] ExprParser::ReadMethodType<NMData::SeverEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SeverEventData::getSeverEventType(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void* __stdcall fn_004C72B0(void* a1) {
+    typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
+    return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA329A4, 0);
+}
