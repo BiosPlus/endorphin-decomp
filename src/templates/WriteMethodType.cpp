@@ -279,3 +279,25 @@ extern "C" void __fastcall fn_00650E20(void* self, void* edx_unused, void** a1, 
     int r = ((VFn)(*(void***)p)[2])(p, a2);
     ((ExtFn)ext_006036A0)(obj, r);
 }
+
+// [0x006513E0] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}>::vfunc_41 (34 bytes)
+extern "C" void ext_0064F920();
+
+extern "C" __declspec(naked) void __fastcall fn_006513E0(void* self, void* edx_unused, void** a1, void** a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_0064F920
+        pop esi
+        ret 0x8
+    }
+}
