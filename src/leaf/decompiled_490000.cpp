@@ -35,3 +35,20 @@ extern "C" __declspec(naked) void __fastcall fn_004940D0(void* self) {
         ret
     }
 }
+
+// [0x004940E0] sub_004940E0 (24 bytes)
+extern "C" void ext_00494060();
+
+extern "C" __declspec(naked) void __fastcall fn_004940E0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test dword ptr [ecx], eax
+        setne dl
+        cmp dl, byte ptr [esp + 0x8]
+        je L_done
+        push eax
+        call ext_00494060
+    L_done:
+        ret 0x8
+    }
+}
