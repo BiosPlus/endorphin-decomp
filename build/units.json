@@ -392784,7 +392784,9 @@
     "relocations": [
       "0x006619B7"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:31:02Z"
   },
   {
     "va": "0x006619D0",
