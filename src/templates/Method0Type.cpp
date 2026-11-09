@@ -465,3 +465,10 @@ extern "C" int __stdcall fn_00693080(void* a1) {
     ((void (__fastcall*)(void*))ext_00692D90)(obj);
     return 0;
 }
+
+// [0x00693090] ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>::vfunc_3 (16 bytes)
+extern "C" bool __fastcall fn_00693090(void* self, int edx_unused, void* a1) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_00692D90)(obj);
+    return false;
+}
