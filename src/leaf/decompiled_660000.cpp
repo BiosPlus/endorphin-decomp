@@ -298,3 +298,22 @@ extern "C" __declspec(naked) void __fastcall fn_00662100(void* self) {
         ret
     }
 }
+
+// [0x00662F80] sub_00662F80 (33 bytes)
+// MessageBoxA(NULL, arg2->c_str(), arg1->c_str(), MB_ICONINFORMATION); both args are std::string*.
+extern "C" int mem_00924FF0;
+extern "C" int mem_009255E0;
+extern "C" __declspec(naked) void __cdecl fn_00662F80(void* a1, void* a2) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        push 0x40
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [esp + 0xc]
+        push eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        push 0
+        call dword ptr [mem_009255E0]
+        ret
+    }
+}
