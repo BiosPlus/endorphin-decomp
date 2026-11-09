@@ -424,3 +424,10 @@ extern "C" void __cdecl fn_007C6940(void* self, float a1, float a2, float a3) {
     *(float*)((char*)self + 0x24) += a2;
     *(float*)((char*)self + 0x28) += a3;
 }
+
+// [0x007C76E0] sub_007C76E0 (35 bytes)
+extern "C" void __cdecl fn_007C76E0(void* self, float a1, float a2, float a3) {
+    *(float*)((char*)self + 0x1DC) = a1;
+    *(float*)((char*)self + 0x1E0) = a2;
+    *(float*)((char*)self + 0x1E4) = a3;
+}
