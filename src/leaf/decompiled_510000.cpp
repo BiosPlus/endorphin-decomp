@@ -140,3 +140,18 @@ extern "C" __declspec(naked) int __fastcall fn_005142F0(void* self, int edx_unus
         ret 8
     }
 }
+
+// [0x005157F0] sub_005157F0 (38 bytes)
+extern "C" void ext_00661980();
+
+extern "C" void* __fastcall fn_005157F0(void* self, int edx_unused, int a1) {
+    typedef void (__fastcall *CalleeFn)(void*);
+    ((CalleeFn)ext_00661980)(self);
+    char* s = (char*)self;
+    *(int*)(s + 0x4) = a1;
+    *(int*)(s + 0x8) = 0;
+    *(int*)(s + 0xC) = 0;
+    *(int*)(s + 0x10) = 0;
+    *(void**)s = (void*)0x951934;
+    return self;
+}
