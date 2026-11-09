@@ -717,3 +717,11 @@ L_skip:
         ret 0Ch
     }
 }
+
+// [0x00647BC0] sub_00647BC0 (46 bytes)
+extern "C" void ext_007C62B0();
+
+extern "C" void __fastcall fn_00647BC0(void* self, int edx_unused, const float* v) {
+    int first = *(int*)*(void**)((char*)self + 0xa4);
+    ((void (__cdecl*)(int, float, float, float))ext_007C62B0)(first, v[0], v[1], v[2]);
+}
