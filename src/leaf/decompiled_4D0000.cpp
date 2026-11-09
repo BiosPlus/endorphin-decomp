@@ -94,3 +94,21 @@ extern "C" void __fastcall fn_004D3BF0(void* self, int edx_unused, unsigned char
     *((unsigned char*)self + 0x195) = a1;
     ext_004C0340();
 }
+
+// [0x004D3910] sub_004D3910 (24 bytes)
+extern "C" void ext_004D3880();
+extern "C" void ext_006798D0();
+
+extern "C" __declspec(naked) void __fastcall fn_004D3910(void* self) {
+    __asm {
+        push ecx
+        lea eax, [esp]
+        push 0x93e1b8
+        push eax
+        call ext_006798D0
+        mov ecx, eax
+        call ext_004D3880
+        pop ecx
+        ret
+    }
+}

@@ -132317,7 +132317,9 @@
       "0x004D391B",
       "0x004D3922"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:04:14Z"
   },
   {
     "va": "0x004D3930",
