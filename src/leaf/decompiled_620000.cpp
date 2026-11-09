@@ -94,3 +94,17 @@ extern "C" void __fastcall fn_00629DC0(void* self) {
     float v = ext_00594010(p);
     *(float*)((char*)self + 0x28) = v;
 }
+
+// [0x00629DF0] sub_00629DF0 (20 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00629DF0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00594000
+        mov ecx, eax
+        call ext_00594010
+        fstp dword ptr [esi + 0x30]
+        pop esi
+        ret
+    }
+}
