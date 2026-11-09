@@ -3,6 +3,7 @@
 extern "C" int mem_009253D8;
 extern "C" int mem_009253D4;
 extern "C" void ext_0054D2A0();
+extern "C" void ext_00539800();
 extern "C" int mem_00A44B84;
 
 // [0x00532C30] sub_00532C30 (30 bytes)
@@ -621,5 +622,27 @@ extern "C" void __cdecl fn_00539860(float* dst, unsigned int count, float* src) 
             --count;
             dst += 3;
         } while (count > 0);
+    }
+}
+
+// [0x00539B00] sub_00539B00 (41 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00539B00(void* self, int edx_unused, float* a1, float* a2, float* a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x10]
+        mov byte ptr [esp], 0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        push edx
+        call ext_00539800
+        add esp, 0x1c
+        ret 0xc
     }
 }
