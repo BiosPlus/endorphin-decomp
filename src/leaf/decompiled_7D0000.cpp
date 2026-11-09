@@ -152,3 +152,24 @@ extern "C" void* __cdecl fn_007D4A70(void* self) {
     }
     return (ecx != edx) ? (void*)ecx : 0;
 }
+
+// [0x007DC8C0] sub_007DC8C0 (37 bytes)
+extern "C" __declspec(naked) void fn_007DC8C0() {
+    __asm {
+        movzx ecx, word ptr [eax]
+        cmp cx, 0x24
+        je done
+        movzx ecx, cx
+        __asm _emit 0x8d __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x00 // lea esp, [esp]
+loop_top:
+        movsx ecx, cx
+        cmp ecx, edx
+        je done
+        movzx ecx, word ptr [eax + 0xc]
+        add eax, 0xc
+        cmp cx, 0x24
+        jne loop_top
+done:
+        ret
+    }
+}
