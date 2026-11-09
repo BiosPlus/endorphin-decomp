@@ -52,3 +52,16 @@ extern "C" void __stdcall fn_005B7C40(void** self, void** a1) {
     int r = ((VCallFn_005B7C40)((*(void***)sub)[5]))(sub, a1);
     ((CallFn_005B7C40)ext_005B72C0)(obj, r);
 }
+
+// [0x005B7D60] ExprParser::WriteMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyData::addImpulse(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
+extern "C" void ext_005B7280();
+
+typedef int (__thiscall *VCallFn_005B7D60)(void* self, void* a1);
+typedef void (__thiscall *CallFn_005B7D60)(void* self, int a1);
+
+extern "C" void __stdcall fn_005B7D60(void** self, void** a1) {
+    void* obj = *self;
+    void* sub = a1[1];
+    int r = ((VCallFn_005B7D60)((*(void***)sub)[5]))(sub, a1);
+    ((CallFn_005B7D60)ext_005B7280)(obj, r);
+}
