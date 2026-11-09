@@ -270,3 +270,26 @@ L_492A73:
         ret
     }
 }
+
+// [0x004970A0] sub_004970A0 (40 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __fastcall fn_004970A0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0BCh], 0
+        je short L_done
+        mov eax, dword ptr [esi + 0BCh]
+        lea ecx, [eax + 8]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        call edx
+        push eax
+        lea ecx, [esi + 30h]
+        call dword ptr [mem_00924FDC]
+    L_done:
+        pop esi
+        ret
+    }
+}
