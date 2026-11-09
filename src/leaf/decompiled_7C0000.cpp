@@ -525,3 +525,21 @@ extern "C" __declspec(naked) float __fastcall fn_007CA790(float* self, int edx_u
         ret 0x4
     }
 }
+
+// [0x007C9340] sub_007C9340 (36 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C9340(void* a0, int a1, float* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0x4]
+        shl eax, 0x5
+        fld dword ptr [eax + ecx + 0x10]
+        add eax, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 0x14]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [eax + 0x18]
+        fstp dword ptr [ecx + 0x8]
+        ret
+    }
+}
