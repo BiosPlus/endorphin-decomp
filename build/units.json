@@ -404128,7 +404128,9 @@
       "0x0066EDBF",
       "0x0066EDCC"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:20:44Z"
   },
   {
     "va": "0x0066EDE0",
