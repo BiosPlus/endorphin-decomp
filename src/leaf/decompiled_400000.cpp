@@ -220,3 +220,21 @@ extern "C" __declspec(naked) void __fastcall fn_0040E7C0(void* self) {
         ret
     }
 }
+
+// [0x00401D80] sub_00401D80 (25 bytes)
+extern "C" int mem_00928F28;
+extern "C" void ext_00401C60();
+
+extern "C" __declspec(naked) void __fastcall fn_00401D80(void* self) {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        push esi
+        push eax
+        __asm _emit 0x8B __asm _emit 0xF1 // mov esi, ecx
+        call ext_00401C60
+        mov dword ptr [esi], offset mem_00928F28
+        __asm _emit 0x8B __asm _emit 0xC6 // mov eax, esi
+        pop esi
+        ret 4
+    }
+}
