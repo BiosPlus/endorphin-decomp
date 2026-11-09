@@ -37529,7 +37529,9 @@
       "0x00442BC0",
       "0x00442BC6"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:55:59Z"
   },
   {
     "va": "0x00442BD0",
