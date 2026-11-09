@@ -533,3 +533,22 @@ extern "C" __declspec(naked) void __fastcall fn_0040FE70(void* self, int edx_unu
         ret 0xc
     }
 }
+
+extern "C" int mem_00925134;
+
+// [0x00403530] sub_00403530 (38 bytes)
+struct Dec403530Base { int pad[2]; unsigned int limit; };
+struct Dec403530Cursor { Dec403530Base* base; unsigned int off; };
+
+extern "C" void* __fastcall fn_00403530(Dec403530Cursor* self) {
+    typedef void (__cdecl *InvalidParamFn)();
+    InvalidParamFn invalid_param = (InvalidParamFn)mem_00925134;
+    if (self->base == 0) {
+        invalid_param();
+    }
+    if (self->off >= self->base->limit) {
+        invalid_param();
+    }
+    self->off += 0x1c;
+    return self;
+}
