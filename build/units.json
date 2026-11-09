@@ -215485,7 +215485,9 @@
     "relocations": [
       "0x00559631"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:43:03Z"
   },
   {
     "va": "0x00559640",
