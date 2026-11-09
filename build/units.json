@@ -62180,7 +62180,9 @@
       "0x00468B58",
       "0x00468B5F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:55:41Z"
   },
   {
     "va": "0x00468B70",
