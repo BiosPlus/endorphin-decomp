@@ -175,3 +175,13 @@ extern "C" __declspec(naked) void __fastcall fn_00415ED0(void* self) {
         ret
     }
 }
+
+// [0x0041CE20] sub_0041CE20 (22 bytes)
+extern "C" void ext_00672080();
+
+extern "C" void* __fastcall fn_0041CE20(void* self, int edx_unused, float a1) {
+    typedef void (__thiscall *Fn)(void*, float);
+    Fn f = (Fn)ext_00672080;
+    f(self, a1);
+    return self;
+}
