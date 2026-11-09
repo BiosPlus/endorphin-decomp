@@ -73,3 +73,23 @@ extern "C" void __fastcall fn_0059A8D0(void* self, int edx_unused, int a1, int a
     int* p = ((Callee)ext_00674150)((char*)self + 0x24c, a1);
     *p = a2;
 }
+
+// [0x00594790] sub_00594790 (25 bytes)
+extern "C" void ext_00675650();
+extern "C" void ext_006A5C5C();
+extern "C" __declspec(naked) void __fastcall fn_00594790(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx]
+        test esi, esi
+        je done
+        mov ecx, esi
+        call ext_00675650
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+    done:
+        pop esi
+        ret
+    }
+}
