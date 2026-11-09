@@ -17,3 +17,23 @@ extern "C" __declspec(naked) int __fastcall fn_00455AB0(void* self) {
         ret
     }
 }
+
+// [0x00455B90] SceneNotesEditor::vfunc_90 (29 bytes)
+extern "C" void ext_00455970();
+extern "C" void ext_006A5EA8();
+
+extern "C" __declspec(naked) void __fastcall fn_00455B90(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006A5EA8
+        mov eax, dword ptr [esp+0x10]
+        mov ecx, dword ptr [esp+0xc]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_00455970
+        pop esi
+        ret 0xc
+    }
+}
