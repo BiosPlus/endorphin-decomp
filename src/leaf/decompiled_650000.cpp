@@ -271,3 +271,29 @@ extern "C" void* __fastcall fn_0065AC90(void* self) {
     *(int*)((char*)self + 0x8) = 0;
     return self;
 }
+
+// [0x0065C230] sub_0065C230 (35 bytes)
+// If the dword at [self+0x8c] is nonzero, passes it to sub_007D8700, then passes that result to sub_007C9260.
+// Returns 1 if the second call's result is nonzero, else 0 (also 0 when [self+0x8c] is zero).
+extern "C" int __cdecl ext_007C9260(int value);
+
+extern "C" __declspec(naked) int __fastcall fn_0065C230(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8c]
+        test eax, eax
+        je short L_zero_0065C230
+        push eax
+        call ext_007D8700
+        push eax
+        call ext_007C9260
+        add esp, 8
+        neg eax
+        sbb eax, eax
+        neg eax
+        ret
+L_zero_0065C230:
+        __asm _emit 0x32
+        __asm _emit 0xC0
+        ret
+    }
+}
