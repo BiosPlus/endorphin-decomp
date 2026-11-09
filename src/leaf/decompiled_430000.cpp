@@ -1013,3 +1013,22 @@ done:
         ret
     }
 }
+
+// [0x00435130] sub_00435130 (33 bytes)
+// Saves this in esi, calls two helpers, then virtual-calls vtbl[+0x1c0] on the returned object,
+// restores this into ecx and tail-jumps to sub_004332D0.
+extern "C" __declspec(naked) void __fastcall fn_00435130(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_004332B0
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x1c0]
+        call eax
+        mov ecx, esi
+        pop esi
+        jmp ext_004332D0
+    }
+}

@@ -30075,7 +30075,9 @@
       "0x00435139",
       "0x0043514D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:07:21Z"
   },
   {
     "va": "0x00435160",
