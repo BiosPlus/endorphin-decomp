@@ -73,3 +73,15 @@ extern "C" __declspec(naked) void __fastcall fn_004D8B10(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004D8BA0] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_26 (14 bytes)
+extern "C" void ext_004D4190();
+
+extern "C" __declspec(naked) void __fastcall fn_004D8BA0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        call ext_004D4190
+        ret 4
+    }
+}
