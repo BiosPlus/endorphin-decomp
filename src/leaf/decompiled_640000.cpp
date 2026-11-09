@@ -81,3 +81,8 @@ extern "C" void __fastcall fn_0064DE80(void* self, int edx_unused, float a1) {
 extern "C" void __fastcall fn_0064DEA0(void* self, int edx_unused, float a1) {
     ext_0064DE00(1, a1);
 }
+
+// [0x0064DEC0] sub_0064DEC0 (18 bytes)
+extern "C" void __fastcall fn_0064DEC0(void* self, int edx_unused, float a1) {
+    ext_0064DE00(2, a1);
+}
