@@ -21,3 +21,8 @@ extern "C" void __cdecl fn_007EF8D0(int a1) {
 extern "C" void __cdecl fn_007EF8F0(int a1) {
     ((void (__cdecl*)(int, int, int))ext_007C8A50)(a1, 3, 0x007EF6F0);
 }
+
+// [0x007EFB20] sub_007EFB20 (21 bytes)
+extern "C" void __cdecl fn_007EFB20(int a1) {
+    ((void (__cdecl*)(int, int, int))ext_007C8A50)(a1, 2, 0x007EF910);
+}
