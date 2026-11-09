@@ -93,3 +93,11 @@ extern "C" __declspec(naked) void __fastcall fn_005478D0(void* self) {
         ret
     }
 }
+
+// [0x005470D0] sub_005470D0 (22 bytes)
+extern "C" void ext_00543350();
+extern "C" float mem_0093F8F0;
+extern "C" void __fastcall fn_005470D0(void* self) {
+    ext_00543350();
+    *(float*)((char*)self + 0xc4) = mem_0093F8F0;
+}
