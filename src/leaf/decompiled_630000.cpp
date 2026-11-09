@@ -68,3 +68,22 @@ extern "C" __declspec(naked) void* __fastcall fn_00630540(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0062CD30();
+
+// [0x0063D950] sub_0063D950 (29 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0063D950(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0062CD30
+        fldz
+        mov dword ptr [esi], 9793d4h
+        fst dword ptr [esi + 48h]
+        fst dword ptr [esi + 44h]
+        mov eax, esi
+        fstp dword ptr [esi + 40h]
+        pop esi
+        ret
+    }
+}
