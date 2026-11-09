@@ -60,3 +60,19 @@ extern "C" bool __fastcall fn_004F9BF0(void* self) {
     void* c = *(void**)((char*)b + 0x34);
     return !((Callee)ext_00480560)(c);
 }
+
+// [0x004FB3A0] VMCSModes::DefaultImplementation::vfunc_59 (22 bytes)
+extern "C" void ext_004667A0();
+extern "C" void ext_00469060();
+extern "C" __declspec(naked) void __fastcall fn_004FB3A0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        push 1
+        call ext_004667A0
+        mov ecx, dword ptr [esi + 0x8]
+        pop esi
+        jmp ext_00469060
+    }
+}
