@@ -261200,7 +261200,9 @@
       "0x005AC7F7",
       "0x005AC807"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:15:52Z"
   },
   {
     "va": "0x005AC820",
