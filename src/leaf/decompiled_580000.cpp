@@ -80,3 +80,16 @@ extern "C" void ext_0058ACA0();
 extern "C" void __fastcall fn_0058F610(void* self, int edx_unused, float a1) {
     ((void (__stdcall*)(float))ext_0058ACA0)(a1);
 }
+
+// [0x0058F620] sub_0058F620 (16 bytes)
+extern "C" void ext_0058AD80();
+
+extern "C" __declspec(naked) void __fastcall fn_0058F620(void* self, int edx_unused, float a1) {
+    __asm {
+        fld dword ptr [esp + 4]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0058AD80
+        ret 4
+    }
+}
