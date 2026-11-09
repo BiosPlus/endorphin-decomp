@@ -179,3 +179,16 @@ extern "C" void* __fastcall fn_004E9DB0(void* self) {
     *(int*)self = 0x94b12c;
     return self;
 }
+
+// [0x004E3110] sub_004E3110 (43 bytes)
+extern "C" int mem_0092524C;
+
+extern "C" void __fastcall fn_004E3110(void* self) {
+    char* s = (char*)self;
+    if (*(void**)(s + 0x4)) {
+        ((void (__cdecl*)(void*))mem_0092524C)(*(void**)(s + 0x4));
+    }
+    *(int*)(s + 0x4) = 0;
+    *(int*)(s + 0x8) = 0;
+    *(int*)(s + 0xc) = 0;
+}
