@@ -293,3 +293,22 @@ extern "C" __declspec(naked) void __fastcall fn_004970A0(void* self) {
         ret
     }
 }
+
+// [0x0049B310] sub_0049B310 (40 bytes)
+extern "C" int mem_00925134;
+
+extern "C" void* __fastcall fn_0049B310(void* self) {
+    int* s = static_cast<int*>(self);
+    void (*invalid_parameter)() = reinterpret_cast<void (*)()>(mem_00925134);
+    if (s[0] == 0) {
+        invalid_parameter();
+    }
+    int* node = reinterpret_cast<int*>(s[1]);
+    int eax = node[1];
+    int* ecx = reinterpret_cast<int*>(s[0]);
+    s[1] = eax;
+    if (eax == ecx[1]) {
+        invalid_parameter();
+    }
+    return self;
+}
