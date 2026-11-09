@@ -577583,7 +577583,9 @@
       "0x007DC867",
       "0x007DC86D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:40:45Z"
   },
   {
     "va": "0x007DC880",
