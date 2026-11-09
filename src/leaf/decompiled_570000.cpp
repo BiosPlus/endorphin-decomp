@@ -86,3 +86,32 @@ extern "C" void __stdcall fn_005739E0(void* begin, void* end) {
         } while (esi != edi);
     }
 }
+
+// [0x00577AE0] sub_00577AE0 (46 bytes)
+extern "C" __declspec(naked) void* __stdcall fn_00577AE0(void* dst, unsigned int count, const void* src) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [esp + 10h]
+        test edi, edi
+        mov eax, edi
+        mov ecx, ebp
+        jbe done
+        push esi
+        mov esi, dword ptr [esp + 18h]
+fill:
+        mov dl, byte ptr [esi]
+        mov byte ptr [ecx], dl
+        sub eax, 1
+        add ecx, 1
+        test eax, eax
+        ja fill
+        pop esi
+done:
+        lea eax, [edi + ebp]
+        pop edi
+        pop ebp
+        ret 0Ch
+    }
+}
