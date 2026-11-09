@@ -145,3 +145,12 @@ extern "C" __declspec(naked) void __cdecl fn_00528D30() {
         ret
     }
 }
+
+// [0x00528D00] sub_00528D00 (43 bytes)
+extern "C" unsigned int __cdecl ext_00528CD0(unsigned int x);
+
+extern "C" void __cdecl fn_00528D00(unsigned int* arr, int n) {
+    for (int i = 0; i < n; ++i) {
+        arr[i] = ext_00528CD0(arr[i]);
+    }
+}
