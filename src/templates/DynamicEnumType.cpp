@@ -131,3 +131,20 @@ extern "C" __declspec(naked) void* __stdcall fn_004A9CC0(void* self) {
         ret 4
     }
 }
+
+// [0x004B7160] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_16 (30 bytes)
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void* __stdcall fn_004B7160(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push 0A328D4h
+        push 0A2E2F8h
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
