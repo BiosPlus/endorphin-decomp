@@ -362,3 +362,16 @@ extern "C" void __fastcall fn_00676830(void* self) {
         ((Callee)ext_00451670)(static_cast<char*>(inner) + 4, &slot);
     }
 }
+
+// [0x0067AE50] sub_0067AE50 (29 bytes)
+extern "C" unsigned char __fastcall ext_0067AE20(void* self);
+extern "C" int mem_00924274;
+extern "C" __declspec(dllimport) unsigned long __stdcall WaitForSingleObject(void* h, unsigned long ms);
+extern "C" void __fastcall fn_0067AE50(void* self) {
+    struct Obj { char pad[0x0c]; void* handle_owner; };
+    if (ext_0067AE20(self)) {
+        Obj* o = reinterpret_cast<Obj*>(self);
+        void* h = *reinterpret_cast<void**>(reinterpret_cast<char*>(o->handle_owner) + 0x10);
+        WaitForSingleObject(h, 0xFFFFFFFF);
+    }
+}
