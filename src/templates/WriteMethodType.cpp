@@ -323,3 +323,26 @@ extern "C" __declspec(naked) void __fastcall fn_0068BC60(void* self, void* edx_u
         ret 0x8
     }
 }
+
+// [0x00487420] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}>::vfunc_41 (37 bytes)
+extern "C" void ext_00486C10();
+
+extern "C" __declspec(naked) void __stdcall fn_00487420(void* self, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00486C10
+        pop esi
+        ret 8
+    }
+}
