@@ -269,3 +269,11 @@ extern "C" __declspec(naked) float __cdecl fn_007C5950(void* self) {
         ret
     }
 }
+
+// [0x007C5980] sub_007C5980 (34 bytes)
+#include <math.h>
+extern "C" float __cdecl fn_007C5980(void* a0) {
+    float v = *(float*)((char*)a0 + 0x1b4);
+    float r = (float)acos((double)v);
+    return r + r;
+}
