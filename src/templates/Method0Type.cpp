@@ -280,3 +280,10 @@ extern "C" __declspec(naked) int __stdcall fn_005C61F0(void* a1) {
         ret 0x4
     }
 }
+
+// [0x005C6200] ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}>::vfunc_3 (16 bytes)
+extern "C" unsigned char __stdcall fn_005C6200(void* a1) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_005C3170)(obj);
+    return 0;
+}
