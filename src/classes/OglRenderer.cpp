@@ -41,3 +41,22 @@ extern "C" __declspec(naked) void __fastcall fn_00536D90(void* self) {
         ret
     }
 }
+
+// [0x00532F60] OglRenderer::vfunc_113 (25 bytes)
+extern "C" void ext_0067B410();
+extern "C" int mem_00925660;
+
+extern "C" __declspec(naked) void __fastcall fn_00532F60(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea ecx, [esi + 0x48]
+        call ext_0067B410
+        mov eax, dword ptr [esi + 0x1c]
+        push 1
+        push eax
+        call dword ptr [mem_00925660]
+        pop esi
+        ret
+    }
+}
