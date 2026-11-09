@@ -389,3 +389,32 @@ done_00486BB0:
         ret 0x4
     }
 }
+
+// [0x00480560] sub_00480560 (46 bytes)
+// Virtual call self->m10 vfunc[3] (returns pointer to a {vptr,?,first,end} vector-like);
+// returns true if first == NULL or (end - first) / 4 == 0.
+extern "C" __declspec(naked) void __fastcall fn_00480560(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x10]
+        mov edx, dword ptr [eax + 0xc]
+        add ecx, 0x10
+        call edx
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        jne short size_00480560
+        xor eax, eax
+        test eax, eax
+        sete cl
+        mov al, cl
+        ret
+size_00480560:
+        mov eax, dword ptr [eax + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        xor ecx, ecx
+        test eax, eax
+        sete cl
+        mov al, cl
+        ret
+    }
+}
