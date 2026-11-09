@@ -45,3 +45,24 @@ extern "C" void __cdecl ext_0049FE40(int, int, int, int);
 extern "C" void __fastcall fn_008703D0(void* self, int edx_unused, int a1, int a2) {
     ext_0049FE40(a1, (int)self + 4, a2, 1);
 }
+
+// [0x00871E00] sub_00871E00 (27 bytes)
+extern "C" void ext_00871BD0();
+extern "C" void ext_00871D00();
+
+extern "C" __declspec(naked) void __fastcall fn_00871E00(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_00871BD0
+        push edi
+        mov ecx, esi
+        call ext_00871D00
+        pop edi
+        pop esi
+        ret 4
+    }
+}
