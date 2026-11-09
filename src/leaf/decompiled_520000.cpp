@@ -43,3 +43,18 @@ extern "C" __declspec(naked) int __stdcall fn_0052ADA0(void* a1) {
         ret 4
     }
 }
+
+// [0x0052F140] sub_0052F140 (18 bytes)
+extern "C" void ext_00538530();
+extern "C" int mem_00953A14;
+extern "C" __declspec(naked) void __fastcall fn_0052F140(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00538530
+        mov dword ptr [esi], offset mem_00953A14
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
