@@ -65,3 +65,33 @@ extern "C" void __fastcall fn_005F5670(void* self, int edx_unused, const float* 
     *(float*)(dst + 0x4) = src[1];
     *(float*)(dst + 0x8) = src[2];
 }
+
+// [0x005FEFD0] sub_005FEFD0 (45 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __cdecl fn_005FEFD0() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je done
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_top:
+        push edi
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [edi + 0x1c]
+        mov dword ptr [esi + 0x1c], eax
+        add esi, 0x20
+        cmp esi, ebx
+        jne loop_top
+        pop edi
+    done:
+        pop esi
+        pop ebx
+        ret
+    }
+}
