@@ -82518,7 +82518,9 @@
     "relocations": [
       "0x0048B107"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:10:28Z"
   },
   {
     "va": "0x0048B110",
