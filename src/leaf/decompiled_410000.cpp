@@ -498,3 +498,26 @@ zero_path:
         ret 0xc
     }
 }
+
+// [0x00413990] sub_00413990 (40 bytes)
+extern "C" int mem_009242E4;
+extern "C" int mem_00924F9C;
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_00413990(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea eax, [esi + 0x44]
+        push eax
+        mov dword ptr [esi], 0x92c1f4
+        call dword ptr [mem_009242E4]
+        mov ecx, dword ptr [esi + 0x3c]
+        push ecx
+        call ext_006A5C5C
+        add esp, 4
+        mov ecx, esi
+        pop esi
+        jmp dword ptr [mem_00924F9C]
+    }
+}
