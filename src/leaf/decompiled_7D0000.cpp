@@ -344,3 +344,31 @@ extern "C" void* __cdecl fn_007DFE00(int a1, void* a2) {
     ((FillFn)ext_007DFD80)(esi, a1, a2);
     return esi;
 }
+
+// [0x007DAE50] sub_007DAE50 (43 bytes)
+extern "C" void ext_007DAD50();
+
+extern "C" __declspec(naked) void __cdecl fn_007DAE50(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov eax, dword ptr [esi + 0xb0]
+        mov ecx, dword ptr [eax + 8]
+        push 0x10
+        push 0x20
+        call ecx
+        add esp, 8
+        test eax, eax
+        je zero
+        push esi
+        push eax
+        call ext_007DAD50
+        add esp, 8
+        pop esi
+        ret
+    zero:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
