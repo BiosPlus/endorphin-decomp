@@ -417,3 +417,10 @@ extern "C" int __stdcall fn_004CD770(void* a1) {
     ((void (__fastcall*)(void*))ext_004CCDE0)(obj);
     return 0;
 }
+
+// [0x004CD780] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::clearMetaBodiesFromFSM(void), 0}>::vfunc_3 (16 bytes)
+extern "C" unsigned char __stdcall fn_004CD780(void* a1) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_004CCDE0)(obj);
+    return 0;
+}
