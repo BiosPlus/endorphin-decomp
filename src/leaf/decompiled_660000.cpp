@@ -602,3 +602,13 @@ extern "C" void __fastcall fn_0066C030(void* self, int edx_unused, void** node) 
     *(void**)self = node;
     ext_0065C650(s + 0x14);
 }
+
+// [0x006618C0] sub_006618C0 (47 bytes)
+extern "C" int __fastcall fn_006618C0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
+    typedef int (__thiscall *Fn)(void* self, int a1, void* p, int a2, int a3, int a4, int a5);
+    void* inner = *(void**)self;
+    void** vt = *(void***)inner;
+    Fn f = (Fn)vt[9];
+    f(inner, a1, (char*)self + 4, a2, a3, a4, a5);
+    return a1;
+}
