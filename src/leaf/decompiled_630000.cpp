@@ -246,3 +246,18 @@ extern "C" void __fastcall fn_006304E0(void* self, int edx_unused, const float* 
     *reinterpret_cast<float*>(p + 0xbc) = src[2];
     *reinterpret_cast<volatile unsigned char*>(p + 0xf6) = 0;
 }
+
+// [0x00630510] sub_00630510 (40 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00630510(void* self, int edx_unused, const float* src) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fstp dword ptr [ecx + 0xb4]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ecx + 0xb8]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ecx + 0xbc]
+        mov byte ptr [ecx + 0xf6], 0x1
+        ret 0x4
+    }
+}
