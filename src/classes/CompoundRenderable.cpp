@@ -122,3 +122,34 @@ extern "C" __declspec(naked) void __fastcall fn_00537D00(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00537D30] CompoundRenderable::vfunc_14 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00537D30(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x14]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        je L_skip
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x38]
+        push edi
+        push ebx
+        call edx
+    L_skip:
+        mov eax, dword ptr [esi + 0x18]
+        mov edx, dword ptr [eax + 0x38]
+        lea ecx, [esi + 0x18]
+        push edi
+        push ebx
+        call edx
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
