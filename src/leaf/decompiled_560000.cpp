@@ -17,3 +17,12 @@ extern "C" unsigned char __fastcall fn_00563220(void* self, int edx_unused, int 
     }
     return result;
 }
+
+// [0x00563240] sub_00563240 (24 bytes)
+extern "C" unsigned char __stdcall fn_00563240(int a1) {
+    unsigned char result = 0;
+    if (a1) {
+        result = (ext_007C5610((void*)a1) == 0x13) ? 1 : 0;
+    }
+    return result;
+}
