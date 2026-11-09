@@ -491,3 +491,20 @@ extern "C" __declspec(naked) void* __stdcall fn_00487EB0(void* p) {
         ret 4
     }
 }
+
+// [0x004CA420] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {[thunk]: __thiscall NMData::MetaBodyConstraintData::`vcall'{352, {flat}}, 0}>::vfunc_16 (30 bytes)
+extern "C" int mem_00A32978;
+
+extern "C" __declspec(naked) void* __stdcall fn_004CA420(void* p) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push offset mem_00A32978
+        push offset mem_00A2E2F8
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
