@@ -370,3 +370,13 @@ extern "C" __declspec(naked) void __fastcall fn_006A0530(void* self) {
         ret
     }
 }
+
+// [0x006A4B20] sub_006A4B20 (46 bytes)
+extern "C" void __cdecl fn_006A4B20(unsigned int* p) {
+    p[1] = 0;
+    p[0] = 0;
+    p[2] = 0x67452301;
+    p[3] = 0xefcdab89;
+    p[4] = 0x98badcfe;
+    p[5] = 0x10325476;
+}
