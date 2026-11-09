@@ -456,3 +456,11 @@ extern "C" __declspec(naked) void __fastcall fn_00647E80(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00647FB0] sub_00647FB0 (25 bytes)
+extern "C" void __cdecl ext_007C6250(int a, int b);
+
+extern "C" void __fastcall fn_00647FB0(void* self, int edx_unused, int a1) {
+    int* p = *(int**)((char*)self + 0xa4);
+    ext_007C6250(*p, a1);
+}
