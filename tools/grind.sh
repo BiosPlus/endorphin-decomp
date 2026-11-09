@@ -10,6 +10,17 @@ PUSH_EVERY="${3:-5}"                    # Run git push every N waves
 AGENT_TIMEOUT="${AGENT_TIMEOUT:-360}"   # Per-function agent timeout in seconds
 COOLDOWN_BASE_SECS="${COOLDOWN_BASE_SECS:-180}" # Initial rate-limit cooldown (3m -> 9m -> 27m)
 PREFER_AGY_CLAUDE="${PREFER_AGY_CLAUDE:-0}"     # Set to 1 to prefer AGY for Sonnet/Opus before native claude CLI
+DEPS_FIRST="${DEPS_FIRST:-1}"                  # 1 = prefer functions whose callees are already matched
+RETRY_DEFERRED="${RETRY_DEFERRED:-0}"          # 1 = also queue previously deferred functions (skips models that already failed them)
+IGNORE_ATTEMPTS="${IGNORE_ATTEMPTS:-0}"        # 1 = ignore .local/grind_attempts.tsv history
+# Pipeline: Haiku (stage 0) runs on EVERY function with WAVE_SIZE concurrent runners. A function only moves to the next
+# model when the previous one fails. Each escalation stage has its own concurrency cap (default ESC_CAP; override per model).
+ESC_CAP="${ESC_CAP:-2}"
+MODEL_CAPS="${MODEL_CAPS:-}"                    # e.g. claude-opus-5.5=1,gemini-4-argon=1
+ESC_BACKLOG_FACTOR="${ESC_BACKLOG_FACTOR:-4}"   # pause pulling new Haiku work if > FACTOR*WAVE_SIZE functions are waiting on escalations
+# Optional minimum function size (bytes) per model, e.g. "claude-opus-5.5=128,gemini-4-argon=128". Off by default:
+# any function that fails the cheaper models escalates all the way up regardless of size.
+MODEL_MIN_SIZE="${MODEL_MIN_SIZE:-}"
 
 # Strict single-model-at-a-time escalation order (cheapest & fastest tokens first -> heaviest last)
 MODEL_CHAIN=(
@@ -65,9 +76,9 @@ fi
 
 echo "=== Endorphin Autonomous Parallel Grinder (1 Agent / Function Try) ==="
 echo "Verified CLIs : claude=$HAS_CLAUDE | agy=$HAS_AGY"
-echo "Wave Config   : max_waves=$MAX_WAVES | parallel_agents_per_wave=$WAVE_SIZE | push_every=$PUSH_EVERY | timeout=${AGENT_TIMEOUT}s"
+echo "Pipeline      : haiku runners=$WAVE_SIZE (tries every function) | escalation cap=${ESC_CAP}/model | total_pulls=$((MAX_WAVES*WAVE_SIZE)) | push_every=$((PUSH_EVERY*WAVE_SIZE)) | timeout=${AGENT_TIMEOUT}s"
 echo "Model Chain   : claude-haiku-5.5 -> gpt-oss-120b -> gemini-3.8-flash -> claude-sonnet-5.5 -> claude-opus-5.5 -> gemini-4-argon"
-echo "Wave Policy   : Smallest-to-largest byte order; 1 single model choice across all parallel slots per pass (never mixed)"
+echo "Policy        : Haiku first on every function; a failure escalates only that function one stage up; per-model caps limit expensive concurrency"
 echo "Security Mode : Scoped Allowlist + Sandbox + PreToolUse Guard [NO skip-dangerously]"
 
 if [[ $HAS_CLAUDE -eq 0 && $HAS_AGY -eq 0 ]]; then
@@ -78,32 +89,40 @@ fi
 # Inline session-only least-privilege settings for `agy` (never saved to disk, no extra dotfiles required)
 AGY_INLINE_SETTINGS='{"agentMode":"auto","enableTerminalSandbox":true,"toolPermission":"proceed-in-sandbox","permissions":{"allow":["read_file(*)","write_file(src/*)","write_file(include/*)","edit_file(src/*)","edit_file(include/*)","command(./.local/bin/work*)","command(go run ./tools/work*)","command(./.local/bin/status*)","command(go run ./tools/status*)","command(./.local/bin/build_and_match*)","command(./tools/cl_wine.sh*)","command(git status*)","command(git diff*)","command(git log*)","command(git show*)","command(git add*)","command(git commit*)","command(git checkout*)"],"deny":["write_file(build/units.json)","edit_file(build/units.json)","write_file(docs/*)","write_file(*.html)","command(sudo*)","command(rm -rf*)","command(git reset --hard*)","command(git push --force*)","command(python*)","command(curl*)","command(wget*)"]}}'
 
-# Per-backend cooldown tracking (epoch seconds when backend:model becomes eligible again, and strike count)
-declare -A COOLDOWN_UNTIL=()
-declare -A STRIKE_COUNT=()
+# Per-backend cooldown tracking, kept in files so every concurrent worker subshell shares one view.
+# $STATE_DIR/cd.<key>  = epoch seconds when backend:model becomes eligible again
+# $STATE_DIR/st.<key>  = strike count
+STATE_DIR="$(mktemp -d /tmp/endorphin_grind_state.XXXXXX)"
+trap 'rm -rf "$STATE_DIR"' EXIT
+
+_state_key() { echo "${1//[^A-Za-z0-9._-]/_}"; }
 
 is_backend_cooling_down() {
-  local key="$1"
-  local now
+  local k; k="$(_state_key "$1")"
+  local now until=0
   now="$(date +%s)"
-  local until="${COOLDOWN_UNTIL[$key]:-0}"
+  [[ -f "$STATE_DIR/cd.$k" ]] && until="$(cat "$STATE_DIR/cd.$k" 2>/dev/null || echo 0)"
   (( now < until ))
 }
 
 mark_rate_limited() {
   local key="$1"
-  local strikes="${STRIKE_COUNT[$key]:-0}"
+  local k; k="$(_state_key "$key")"
+  # Several workers can hit the same limit at once: count only one strike per cooldown episode
+  if is_backend_cooling_down "$key"; then
+    return
+  fi
+  local strikes=0
+  [[ -f "$STATE_DIR/st.$k" ]] && strikes="$(cat "$STATE_DIR/st.$k" 2>/dev/null || echo 0)"
   ((strikes++))
-  STRIKE_COUNT["$key"]=$strikes
+  echo "$strikes" > "$STATE_DIR/st.$k"
 
   # Exponential backoff: 3m, 9m, 27m, then 2h
   local wait_secs=$(( COOLDOWN_BASE_SECS * (3 ** (strikes - 1)) ))
   if (( wait_secs > 7200 )); then
     wait_secs=7200
   fi
-  local now
-  now="$(date +%s)"
-  COOLDOWN_UNTIL["$key"]=$(( now + wait_secs ))
+  echo $(( $(date +%s) + wait_secs )) > "$STATE_DIR/cd.$k"
   echo "[!] Rate limit / quota hit on $key (strike $strikes) — cooling down for $((wait_secs / 60))m ($wait_secs s)..."
 }
 
@@ -163,19 +182,28 @@ is_invalid_model_log() {
   grep -qiE "invalid model selection|unknown model|model.*not found" "$log_file"
 }
 
+# Run a command with its pid (== process group id, since `timeout` makes itself a group leader) recorded in
+# $STATE_DIR/pg.*, so an interrupt can kill every agent group even after the worker subshells are gone.
+launch_tracked() {
+  local pf="$STATE_DIR/pg.$BASHPID.$RANDOM" rc=0
+  bash -c 'echo $$ > "$1"; shift; exec "$@"' _ "$pf" "$@" || rc=$?
+  rm -f "$pf"
+  return $rc
+}
+
 run_agy_with_model() {
   local agy_model="$1"
   local agy_effort="$2"
   local prompt="$3"
   local log_file="$4"
 
-  timeout --kill-after=20s "${AGENT_TIMEOUT}s" \
+  launch_tracked timeout --kill-after=20s "${AGENT_TIMEOUT_EFF:-$AGENT_TIMEOUT}s" \
     agy --model "$agy_model" \
     --effort "$agy_effort" \
     --mode auto \
     --sandbox \
     --settings "$AGY_INLINE_SETTINGS" \
-    --print-timeout "${AGENT_TIMEOUT}s" \
+    --print-timeout "${AGENT_TIMEOUT_EFF:-$AGENT_TIMEOUT}s" \
     -p "$prompt" >"$log_file" 2>&1
 }
 
@@ -199,7 +227,7 @@ run_single_function_agent() {
       claude-opus-5.5)   claude_alias="opus" ;;
     esac
 
-    timeout --kill-after=20s "${AGENT_TIMEOUT}s" \
+    launch_tracked timeout --kill-after=20s "${AGENT_TIMEOUT_EFF:-$AGENT_TIMEOUT}s" \
       claude --model "$claude_alias" \
       --permission-mode acceptEdits \
       --allowedTools \
@@ -265,137 +293,288 @@ run_single_function_agent() {
   return $exit_code
 }
 
-for (( wave=1; wave<=MAX_WAVES; wave++ )); do
-  # Clean any unverified stubs from previous wave before selecting next distinct-file wave
-  "$WORK_BIN" clean >/dev/null 2>&1 || true
+# ---- Stage configuration ---------------------------------------------------------------------------
+# The model chain is a pipeline of stages. Stage 0 (Haiku) gets WAVE_SIZE runners and tries EVERY function.
+# Only a function Haiku fails moves on to stage 1; a failure there moves it to stage 2, and so on.
+# Each later stage has its own small concurrency cap, so escalations never occupy Haiku runners.
+declare -A MODEL_CAP=()
+declare -A MODEL_MIN=()
+IFS=',' read -ra _mins <<< "$MODEL_MIN_SIZE"
+for _c in "${_mins[@]}"; do
+  [[ "$_c" == *=* ]] && MODEL_MIN["${_c%%=*}"]="${_c#*=}"
+done
+IFS=',' read -ra _caps <<< "$MODEL_CAPS"
+for _c in "${_caps[@]}"; do
+  [[ "$_c" == *=* ]] && MODEL_CAP["${_c%%=*}"]="${_c#*=}"
+done
 
-  # Always pull the next WAVE_SIZE smallest unmatched functions across distinct .cpp files
-  mapfile -t WAVE_ITEMS < <("$WORK_BIN" next -n "$WAVE_SIZE" --peek --distinct-files --addrs-only --max-size 65535 2>/dev/null || true)
+stage_cap() {
+  local idx="$1" model="${MODEL_CHAIN[$1]}" cap
+  if (( idx == 0 )); then echo "$WAVE_SIZE"; return; fi
+  cap="${MODEL_CAP[$model]:-$ESC_CAP}"
+  (( cap < 1 )) && cap=1
+  echo "$cap"
+}
 
-  if (( ${#WAVE_ITEMS[@]} == 0 )); then
-    echo "[!] No unmatched ready functions remaining in queue! Stopping cleanly."
-    break
-  fi
+# ---- Attempt history: (addr, model) pairs that already failed, so later sessions skip them ----
+ATTEMPTS_FILE="${GRIND_ATTEMPTS_FILE:-$REPO_ROOT/.local/grind_attempts.tsv}"
+already_failed() {
+  [[ "$IGNORE_ATTEMPTS" == 1 || ! -f "$ATTEMPTS_FILE" ]] && return 1
+  grep -qxF "$1$(printf '\t')$2" "$ATTEMPTS_FILE" 2>/dev/null
+}
+record_failure() { printf '%s\t%s\n' "$1" "$2" >> "$ATTEMPTS_FILE" 2>/dev/null || true; }
 
-  WAVE_ADDRS=()
-  declare -A FUNC_SIZES=()
-  declare -A FUNC_CPPS=()
+# Append one line per finished function: time, addr, size, outcome, winning model, seconds taken
+RESULTS_LOG="${GRIND_RESULTS_LOG:-$REPO_ROOT/.local/grind_results.log}"
+log_result() {
+  local addr="$1" size="$2" outcome="$3" model="$4" start="$5"
+  printf '%s\t%s\t%sB\t%s\t%s\t%ss\n' "$(date '+%F %T')" "$addr" "$size" "$outcome" "$model" "$(( $(date +%s) - start ))" >> "$RESULTS_LOG" 2>/dev/null || true
+}
 
-  for item in "${WAVE_ITEMS[@]}"; do
-    [[ -z "$item" ]] && continue
-    IFS='|' read -r addr size cpp <<< "$item"
-    WAVE_ADDRS+=("$addr")
-    FUNC_SIZES["$addr"]="$size"
-    FUNC_CPPS["$addr"]="$cpp"
-  done
+# One agent attempt: ONE function on ONE model (stage). Runs in a background subshell.
+# Writes "matched" | "failed" | "unavailable" to $STATE_DIR/res.<addr>.
+attempt_worker() {
+  local addr="$1" model_idx="$2"
+  local model_choice="${MODEL_CHAIN[$model_idx]}" total_steps="${#MODEL_CHAIN[@]}"
+  local backend log_file rc next_backend
 
-  echo ""
-  echo "================================================================================"
-  echo "[Wave $wave / $MAX_WAVES] Claimed ${#WAVE_ADDRS[@]} smallest ready function(s) across distinct files:"
-  for addr in "${WAVE_ADDRS[@]}"; do
-    echo "  - $addr (${FUNC_SIZES[$addr]}B) -> ${FUNC_CPPS[$addr]}"
-  done
-  echo "================================================================================"
+  # Larger functions get more time: +1s per 2 bytes, capped at 3x the base timeout
+  local extra=$(( ${FUNC_SIZES[$addr]:-0} / 2 )) cap=$(( AGENT_TIMEOUT * 2 ))
+  (( extra > cap )) && extra=$cap
+  AGENT_TIMEOUT_EFF=$(( AGENT_TIMEOUT + extra ))
 
-  UNSOLVED=("${WAVE_ADDRS[@]}")
-
-  # Escalate unsolved functions strictly through the 6-model linear chain (one model choice at a time)
-  for model_idx in "${!MODEL_CHAIN[@]}"; do
-    if (( ${#UNSOLVED[@]} == 0 )); then
-      break
+  # Retry the same model on an alternate backend (e.g. claude -> agy) if the first one is rate-limited
+  while true; do
+    backend="$(resolve_backend_for_model "$model_choice")"
+    if [[ "$backend" == "none" ]]; then
+      echo "  [!] $addr: $model_choice unavailable / cooling down on all backends."
+      echo unavailable > "$STATE_DIR/res.$addr"
+      return 0
     fi
 
-    model_choice="${MODEL_CHAIN[$model_idx]}"
-    step_num=$((model_idx + 1))
-    total_steps="${#MODEL_CHAIN[@]}"
+    echo "  [>] $addr (${FUNC_SIZES[$addr]}B): step $((model_idx + 1))/$total_steps $model_choice (via $backend)"
+    log_file="$(mktemp "/tmp/endorphin_${model_choice}_${addr}.XXXXXX.log")"
+    rc=0
+    run_single_function_agent "$model_choice" "$backend" "$addr" "$log_file" || rc=$?
+    rm -f "$log_file"
 
-    # We may retry the same model_choice on an alternate backend (e.g. claude -> agy for Sonnet/Opus) if rate-limited
-    while (( ${#UNSOLVED[@]} > 0 )); do
-      backend="$(resolve_backend_for_model "$model_choice")"
-      if [[ "$backend" == "none" ]]; then
-        echo "  [!] $model_choice is currently unavailable / cooling down on all backends; escalating to next model."
-        break
+    if "$WORK_BIN" is-matched "$addr" >/dev/null 2>&1; then
+      echo "  [+] MATCHED: $addr via $model_choice ($backend)!"
+      echo matched > "$STATE_DIR/res.$addr"
+      return 0
+    fi
+
+    echo "  [-] Unmatched on $model_choice ($backend): $addr"
+    # Give the next model a fresh stub rather than this model's half-finished attempt
+    "$WORK_BIN" clean "$addr" >/dev/null 2>&1 || true
+    if [[ $rc -eq 42 ]]; then
+      mark_rate_limited "${backend}:${model_choice}"
+      next_backend="$(resolve_backend_for_model "$model_choice")"
+      if [[ "$next_backend" != "none" && "$next_backend" != "$backend" ]]; then
+        echo "  [*] $addr: switching $model_choice to alternate backend ($next_backend)..."
+        continue
       fi
-
-      echo ""
-      echo "--- [Wave $wave | Step $step_num/$total_steps: $model_choice (via $backend)] Launching ${#UNSOLVED[@]} parallel agent(s) ---"
-
-      PIDS=()
-      PID_ADDR=()
-      PID_LOG=()
-
-      slot=0
-      for addr in "${UNSOLVED[@]}"; do
-        log_file="$(mktemp "/tmp/endorphin_w${wave}_s${step_num}_${model_choice}_${addr}.XXXXXX.log")"
-        echo "  [Slot $((slot+1))/${#UNSOLVED[@]}] $addr (${FUNC_SIZES[$addr]}B) -> $model_choice ($backend)"
-
-        run_single_function_agent "$model_choice" "$backend" "$addr" "$log_file" &
-        pid=$!
-        PIDS+=("$pid")
-        PID_ADDR["$pid"]="$addr"
-        PID_LOG["$pid"]="$log_file"
-        ((slot++))
-      done
-
-      rate_limited_in_pass=0
-      for pid in "${PIDS[@]}"; do
-        wait "$pid"
-        rc=$?
-        addr="${PID_ADDR[$pid]}"
-        log_file="${PID_LOG[$pid]}"
-
-        if "$WORK_BIN" is-matched "$addr" >/dev/null 2>&1; then
-          echo "  [+] MATCHED: $addr via $model_choice ($backend)!"
-        elif [[ $rc -eq 42 ]]; then
-          rate_limited_in_pass=1
-        else
-          echo "  [-] Unmatched on $model_choice ($backend): $addr"
-        fi
-        rm -f "$log_file"
-      done
-
-      # Clean any unverified stubs/edits from failed tries before next step
-      "$WORK_BIN" clean >/dev/null 2>&1 || true
-
-      # Recompute remaining unsolved functions in this wave
-      STILL_UNSOLVED=()
-      for addr in "${UNSOLVED[@]}"; do
-        if ! "$WORK_BIN" is-matched "$addr" >/dev/null 2>&1; then
-          STILL_UNSOLVED+=("$addr")
-        fi
-      done
-      UNSOLVED=("${STILL_UNSOLVED[@]}")
-
-      if (( rate_limited_in_pass == 1 )); then
-        mark_rate_limited "${backend}:${model_choice}"
-        # If this model is also available on the other backend (e.g. Sonnet/Opus via agy), loop once more to run on it!
-        next_backend="$(resolve_backend_for_model "$model_choice")"
-        if [[ "$next_backend" != "none" && "$next_backend" != "$backend" && ${#UNSOLVED[@]} -gt 0 ]]; then
-          echo "  [*] Switching $model_choice to alternate backend ($next_backend) for ${#UNSOLVED[@]} remaining function(s)..."
-          continue
-        fi
-      fi
-      break
-    done
+    else
+      record_failure "$addr" "$model_choice"
+    fi
+    break
   done
+  echo failed > "$STATE_DIR/res.$addr"
+}
 
-  # Any function still unsolved after all 6 models in MODEL_CHAIN is deferred via work skip
-  if (( ${#UNSOLVED[@]} > 0 )); then
-    echo "--- [Wave $wave] Deferring ${#UNSOLVED[@]} function(s) unmatched after full 6-model escalation ---"
-    for addr in "${UNSOLVED[@]}"; do
-      "$WORK_BIN" skip "$addr" "Unmatched after full escalation (claude-haiku-5.5 -> gpt-oss-120b -> gemini-3.8-flash -> claude-sonnet-5.5 -> claude-opus-5.5 -> gemini-4-argon)" || true
+# ---- Staged pipeline scheduler ---------------------------------------------------------------------
+TOTAL_JOBS=$(( MAX_WAVES * WAVE_SIZE ))          # functions pulled from the queue (each starts at Haiku)
+PUSH_EVERY_JOBS=$(( PUSH_EVERY * WAVE_SIZE ))
+NUM_STAGES="${#MODEL_CHAIN[@]}"
+
+declare -A FUNC_SIZES=()
+declare -A FUNC_CPP_OF=()
+declare -A FN_START=()
+declare -A JOB_INFO=()        # pid -> "addr stage"
+declare -A INFLIGHT_ADDR=()   # addr -> 1 while the function is anywhere in the pipeline
+declare -A INFLIGHT_CPP=()    # cpp  -> 1 (never two functions on the same .cpp at once)
+declare -A SEEN_ADDR=()       # addrs pulled this session (never re-pulled)
+declare -A PENDING=()         # stage -> space-separated FIFO of addrs waiting for that stage
+declare -A STAGE_RUNNING=()   # stage -> running attempts
+for (( s=0; s<NUM_STAGES; s++ )); do PENDING[$s]=""; STAGE_RUNNING[$s]=0; done
+
+launched=0; finished=0; matched_count=0; deferred_count=0
+
+cleanup_children() {
+  local pf pg pgs=()
+  for pf in "$STATE_DIR"/pg.*; do
+    [[ -f "$pf" ]] || continue
+    pg="$(cat "$pf" 2>/dev/null)"
+    [[ "$pg" =~ ^[0-9]+$ ]] && pgs+=("$pg")
+  done
+  for pg in "${pgs[@]}"; do kill -TERM -- "-$pg" 2>/dev/null || true; done
+  for pg in "${!JOB_INFO[@]}"; do kill -TERM "$pg" 2>/dev/null || true; done
+  sleep 2
+  for pg in "${pgs[@]}"; do kill -KILL -- "-$pg" 2>/dev/null || true; done   # agents that ignore TERM
+}
+trap 'echo "[!] Interrupted — stopping workers."; cleanup_children; exit 130' INT TERM
+
+# Cached queue of candidates (refetched when stale, empty, or fully conflicting)
+CANDIDATES=()
+CANDIDATE_REFRESH_AT=0
+refresh_candidates() {
+  mapfile -t CANDIDATES < <("$WORK_BIN" next -n 500 --peek --addrs-only --max-size 65535 $([[ "$DEPS_FIRST" == 1 ]] && echo --deps-first) $([[ "$RETRY_DEFERRED" == 1 ]] && echo --retry-deferred) 2>/dev/null || true)
+  CANDIDATE_REFRESH_AT=$(( finished + WAVE_SIZE ))
+}
+
+# First cached candidate not already pulled / in flight (by address or by target .cpp). Sets NEXT_ADDR/NEXT_CPP.
+pick_next_candidate() {
+  NEXT_ADDR=""; NEXT_CPP=""
+  local pass item addr size cpp
+  (( finished >= CANDIDATE_REFRESH_AT )) && refresh_candidates
+  for pass in 1 2; do
+    for item in "${CANDIDATES[@]}"; do
+      [[ -z "$item" ]] && continue
+      IFS='|' read -r addr size cpp <<< "$item"
+      [[ -n "${SEEN_ADDR[$addr]:-}" ]] && continue
+      [[ -n "${INFLIGHT_ADDR[$addr]:-}" ]] && continue
+      [[ -n "${INFLIGHT_CPP[$cpp]:-}" ]] && continue
+      NEXT_ADDR="$addr"; NEXT_CPP="$cpp"; FUNC_SIZES["$addr"]="$size"
+      return 0
     done
-  fi
+    (( pass == 1 )) && refresh_candidates
+  done
+  return 1
+}
 
-  # Ensure any solved functions are committed individually (1 commit per solved function) and clean unverified edits
+# Lowest stage >= $2 that may attempt function $1 (size gate, attempt history, backend availability). Prints index or -1.
+next_eligible_stage() {
+  local addr="$1" idx model size="${FUNC_SIZES[$1]:-0}"
+  for (( idx=$2; idx<NUM_STAGES; idx++ )); do
+    model="${MODEL_CHAIN[$idx]}"
+    if (( size < ${MODEL_MIN[$model]:-0} )); then
+      echo "  [~] $addr (${size}B): below $model minimum size (${MODEL_MIN[$model]}B); skipping." >&2; continue
+    fi
+    if already_failed "$addr" "$model"; then
+      echo "  [~] $addr: $model already failed it in an earlier session; skipping." >&2; continue
+    fi
+    if [[ "$(resolve_backend_for_model "$model")" == "none" ]]; then
+      echo "  [!] $addr: $model unavailable / cooling down on all backends; skipping." >&2; continue
+    fi
+    echo "$idx"; return
+  done
+  echo -1
+}
+
+total_pending() { local s n=0 w; for s in "${!PENDING[@]}"; do for w in ${PENDING[$s]}; do ((n++)); done; done; echo "$n"; }
+escalation_backlog() {   # functions that are past stage 0 (pending or running)
+  local s n=0 w
+  for (( s=1; s<NUM_STAGES; s++ )); do
+    for w in ${PENDING[$s]}; do ((n++)); done
+    (( n += STAGE_RUNNING[$s] ))
+  done
+  echo "$n"
+}
+
+finish_function() {   # $1=addr $2=outcome(matched|deferred) $3=model
+  local addr="$1" outcome="$2" model="$3"
+  unset "INFLIGHT_ADDR[$addr]"
+  unset "INFLIGHT_CPP[${FUNC_CPP_OF[$addr]}]"
+  ((finished++))
+  if [[ "$outcome" == matched ]]; then ((matched_count++)); else ((deferred_count++)); fi
+  log_result "$addr" "${FUNC_SIZES[$addr]:-?}" "$outcome" "$model" "${FN_START[$addr]:-$(date +%s)}"
   "$WORK_BIN" commit-pending >/dev/null 2>&1 || true
-  "$WORK_BIN" clean >/dev/null 2>&1 || true
-
-  if (( wave % PUSH_EVERY == 0 )); then
+  echo "[pool] done $addr ($outcome via $model) | finished=$finished/$TOTAL_JOBS matched=$matched_count deferred=$deferred_count haiku=${STAGE_RUNNING[0]} escalating=$(escalation_backlog)"
+  if (( PUSH_EVERY_JOBS > 0 && finished % PUSH_EVERY_JOBS == 0 )); then
     echo "[*] Pushing progress to GitHub (triggers Windows CI + HTML dashboard build)..."
     git push || true
   fi
+}
+
+defer_function() {
+  local addr="$1"
+  echo "  [x] Deferring $addr: unmatched after all eligible models"
+  "$WORK_BIN" skip "$addr" "Unmatched after full escalation (claude-haiku-5.5 -> gpt-oss-120b -> gemini-3.8-flash -> claude-sonnet-5.5 -> claude-opus-5.5 -> gemini-4-argon)" || true
+  finish_function "$addr" deferred "all-eligible-models"
+}
+
+advance_function() {   # route a function to its next eligible stage >= $2, or defer it
+  local addr="$1" nxt
+  nxt="$(next_eligible_stage "$addr" "$2")"
+  if (( nxt < 0 )); then defer_function "$addr"; else PENDING[$nxt]+="$addr "; fi
+}
+
+dispatch_stages() {
+  local s addr
+  for (( s=0; s<NUM_STAGES; s++ )); do
+    while (( STAGE_RUNNING[$s] < $(stage_cap "$s") )) && [[ -n "${PENDING[$s]// /}" ]]; do
+      addr="${PENDING[$s]%% *}"
+      PENDING[$s]="${PENDING[$s]#"$addr"}"; PENDING[$s]="${PENDING[$s]# }"
+      rm -f "$STATE_DIR/res.$addr"
+      attempt_worker "$addr" "$s" &
+      JOB_INFO["$!"]="$addr $s"
+      ((STAGE_RUNNING[$s]++))
+    done
+  done
+}
+
+reap_finished() {
+  local pid addr s res
+  for pid in "${!JOB_INFO[@]}"; do
+    if ! kill -0 "$pid" 2>/dev/null; then
+      read -r addr s <<< "${JOB_INFO[$pid]}"
+      unset 'JOB_INFO[$pid]'
+      ((STAGE_RUNNING[$s]--))
+      res=failed
+      [[ -f "$STATE_DIR/res.$addr" ]] && res="$(cat "$STATE_DIR/res.$addr")"
+      if [[ "$res" == matched ]]; then
+        finish_function "$addr" matched "${MODEL_CHAIN[$s]}"
+      else
+        advance_function "$addr" $(( s + 1 ))
+      fi
+    fi
+  done
+}
+
+# Remove stale unverified stubs before we start (nothing is in flight yet, so this is safe)
+"$WORK_BIN" clean >/dev/null 2>&1 || true
+
+queue_exhausted=0
+ESC_BACKLOG_MAX=$(( ESC_BACKLOG_FACTOR * WAVE_SIZE ))
+while true; do
+  # Keep Haiku saturated: pull fresh functions whenever Haiku has a free runner (unless escalations are backed up)
+  while (( launched < TOTAL_JOBS && queue_exhausted == 0 )) \
+        && (( STAGE_RUNNING[0] + $(set -- ${PENDING[0]}; echo $#) < WAVE_SIZE )) \
+        && (( $(escalation_backlog) < ESC_BACKLOG_MAX )); do
+    if ! pick_next_candidate; then
+      # Nothing usable: either the queue is truly empty, or what is left conflicts with in-flight work
+      if (( ${#JOB_INFO[@]} == 0 )) && [[ "$(total_pending)" == 0 ]]; then
+        echo "[!] No unmatched ready functions remaining in queue! Stopping cleanly."
+        queue_exhausted=1
+      fi
+      break
+    fi
+    addr="$NEXT_ADDR"
+    SEEN_ADDR["$addr"]=1; INFLIGHT_ADDR["$addr"]=1; INFLIGHT_CPP["$NEXT_CPP"]=1
+    FUNC_CPP_OF["$addr"]="$NEXT_CPP"; FN_START["$addr"]="$(date +%s)"
+    ((launched++))
+    echo "[pool] pull #$launched/$TOTAL_JOBS: $addr (${FUNC_SIZES[$addr]}B) -> $NEXT_CPP"
+    advance_function "$addr" 0
+  done
+
+  dispatch_stages
+
+  if (( ${#JOB_INFO[@]} == 0 )) && [[ "$(total_pending)" == 0 ]]; then
+    break
+  fi
+
+  # Wait for ANY attempt to finish, then loop: its stage (and Haiku) refill immediately
+  while true; do
+    sleep 1
+    ev=0
+    for pid in "${!JOB_INFO[@]}"; do kill -0 "$pid" 2>/dev/null || ev=1; done
+    (( ev )) && break
+  done
+  reap_finished
 done
 
-echo "=== Parallel grind session finished ==="
+# Everything is idle now, so a global clean is safe
+"$WORK_BIN" commit-pending >/dev/null 2>&1 || true
+"$WORK_BIN" clean >/dev/null 2>&1 || true
+echo "=== Parallel grind session finished (pulled=$launched matched=$matched_count deferred=$deferred_count) ==="
 "$STATUS_BIN" || true

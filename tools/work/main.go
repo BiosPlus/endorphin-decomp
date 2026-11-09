@@ -555,6 +555,7 @@ func cmdNext(args []string) {
 	retryDeferred := fs.Bool("retry-deferred", false, "Include previously deferred functions in candidate queue")
 	distinctFiles := fs.Bool("distinct-files", false, "Select functions that map to distinct .cpp target files (for parallel wave execution)")
 	addrsOnly := fs.Bool("addrs-only", false, "Print only space-ok/line-separated VA|Size|TargetCpp tuples for scripting")
+	depsFirst := fs.Bool("deps-first", false, "Prefer functions whose callees are all already matched (ahead of size ordering)")
 	_ = fs.Parse(args)
 
 	maxBytes := uint32(*maxSize)
@@ -613,6 +614,12 @@ func cmdNext(args []string) {
 		di, dj := ready[i].Status == "deferred", ready[j].Status == "deferred"
 		if di != dj {
 			return !di && dj
+		}
+		if *depsFirst {
+			ri, rj := calleesReady[ready[i].VA], calleesReady[ready[j].VA]
+			if ri != rj {
+				return ri
+			}
 		}
 		ti, tj := sizeTier(ready[i].Size), sizeTier(ready[j].Size)
 		if ti != tj {
@@ -1694,7 +1701,35 @@ func cmdCommitPending(_ []string) {
 	})
 }
 
-func cmdClean(_ []string) {
+func cmdClean(args []string) {
+	// `work clean <addr>`: strip only that function's unverified stub. Safe while other agents are
+	// working on other functions (the global clean below touches every dirty file in src/).
+	if len(args) > 0 {
+		vaHex, _, err := normalizeVA(args[0])
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+			os.Exit(1)
+		}
+		withWorkLock(func() {
+			_ = commitPendingMatches()
+			units, unitIdxByVA, _, _, _ := loadUnitsAndClasses()
+			if idx, ok := unitIdxByVA[vaHex]; ok {
+				st := units[idx].Status
+				if st == "matched" || st == "solved" || st == "decompiled" {
+					fmt.Printf("%s already %s; nothing to clean.\n", vaHex, st)
+					return
+				}
+			}
+			if cppPath := findCppFileForVA(vaHex); cppPath != "" {
+				if ok, _ := stripFunctionFromCpp(filepath.ToSlash(cppPath), vaHex); ok {
+					fmt.Printf("Cleaned stub for %s in %s.\n", vaHex, cppPath)
+					return
+				}
+			}
+			fmt.Printf("No stub found for %s.\n", vaHex)
+		})
+		return
+	}
 	withWorkLock(func() {
 		_ = commitPendingMatches()
 		units, unitIdxByVA, _, _, _ := loadUnitsAndClasses()
