@@ -181,3 +181,15 @@ extern "C" __declspec(naked) void __fastcall fn_004302A0(void* self) {
         jmp ext_00469A80
     }
 }
+
+// [0x00430330] sub_00430330 (12 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_0046BF80();
+
+extern "C" __declspec(naked) void __fastcall fn_00430330(void* self) {
+    __asm {
+        call ext_00465B30
+        mov ecx, eax
+        jmp ext_0046BF80
+    }
+}
