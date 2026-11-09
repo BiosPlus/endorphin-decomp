@@ -115,3 +115,24 @@ extern "C" __declspec(naked) void __fastcall fn_00545440(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005451B0] PoseTool::vfunc_26 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005451B0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x88]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xa4]
+        call edx
+        mov ecx, dword ptr [esi + 0x88]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xa8]
+        call edx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x80]
+        mov ecx, esi
+        pop esi
+        jmp edx
+    }
+}
