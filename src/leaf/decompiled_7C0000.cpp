@@ -209,3 +209,12 @@ extern "C" __declspec(naked) void __cdecl fn_007C7130(void* a0) {
         ret
     }
 }
+
+// [0x007CA430] sub_007CA430 (33 bytes)
+extern "C" int __cdecl fn_007CA430(float* a0, float* a1, float* a2) {
+    a1[2] = 0.0f;
+    a1[1] = 0.0f;
+    a1[0] = 0.0f;
+    *a2 = a0[4];
+    return 1;
+}
