@@ -27,3 +27,17 @@ extern "C" void __fastcall fn_00533210(void* self, int edx_unused, int* a1) {
     *(int*)(p + 0x420) = a1[1];
     *(int*)(p + 0x424) = a1[2];
 }
+
+// [0x00536D90] OglRenderer::vfunc_8 (23 bytes)
+extern "C" void ext_00541B50();
+
+extern "C" __declspec(naked) void __fastcall fn_00536D90(void* self) {
+    __asm {
+        add ecx, 0x9c
+        cmp byte ptr [ecx + 0x13d], 0
+        sete al
+        push eax
+        call ext_00541B50
+        ret
+    }
+}
