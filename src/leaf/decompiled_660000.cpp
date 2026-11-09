@@ -579,3 +579,14 @@ loc_ret:
         ret 0x4
     }
 }
+
+// [0x00666980] sub_00666980 (42 bytes)
+extern "C" int mem_00925134;
+extern "C" bool __fastcall fn_00666980(void* self, int edx_unused, void* other) {
+    int* s = static_cast<int*>(self);
+    int* o = static_cast<int*>(other);
+    if (s[0] == 0 || s[0] != o[0]) {
+        reinterpret_cast<void (*)()>(mem_00925134)();
+    }
+    return s[1] == o[1];
+}
