@@ -106,3 +106,21 @@ extern "C" void __fastcall fn_0059E200(void* self) {
         ((CalleeC)ext_006A5C5C)(p);
     }
 }
+
+// [0x0059E060] sub_0059E060 (31 bytes)
+extern "C" void ext_006AD940();
+extern "C" void ext_00492550();
+extern "C" __declspec(naked) void* __fastcall fn_0059E060(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x5f8]
+        test eax, eax
+        jne short L_059E06D
+        xor al, al
+        ret
+L_059E06D:
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        jmp ext_00492550
+    }
+}
