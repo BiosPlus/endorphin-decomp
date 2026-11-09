@@ -591,3 +591,21 @@ L_ok_00410D10:
         ret 0x4
     }
 }
+
+// [0x004148F0] sub_004148F0 (43 bytes)
+struct Pair8 {
+    int a;
+    int b;
+};
+
+extern "C" Pair8* __cdecl fn_004148F0(Pair8* first, Pair8* last, Pair8* dest) {
+    while (first != last) {
+        if (dest) {
+            dest->a = first->a;
+            dest->b = first->b;
+        }
+        ++first;
+        ++dest;
+    }
+    return dest;
+}
