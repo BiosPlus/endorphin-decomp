@@ -73,3 +73,11 @@ extern "C" __declspec(naked) void __fastcall fn_0065BEF0(void* self) {
         ret
     }
 }
+
+// [0x0065D110] sub_0065D110 (16 bytes)
+extern "C" void ext_006619D0();
+
+extern "C" void __fastcall fn_0065D110(void* self) {
+    typedef void (__thiscall *Fn)(void* thisp, void* arg);
+    ((Fn)&ext_006619D0)((char*)self + 0xcc, (char*)self + 0x6c);
+}
