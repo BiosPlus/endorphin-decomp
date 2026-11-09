@@ -192,3 +192,31 @@ extern "C" void __fastcall fn_004E3110(void* self) {
     *(int*)(s + 0x8) = 0;
     *(int*)(s + 0xc) = 0;
 }
+
+// [0x004ECA40] sub_004ECA40 (44 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_004ECA40(void* self, int edx_unused, unsigned int idx) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je bad_index
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x3
+        cmp edi, eax
+        jb ok_index
+bad_index:
+        call dword ptr [mem_00925134]
+ok_index:
+        mov eax, dword ptr [esi + 0x4]
+        lea eax, [eax + 8*edi]
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
