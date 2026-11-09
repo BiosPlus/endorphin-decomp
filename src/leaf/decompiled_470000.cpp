@@ -88,3 +88,15 @@ extern "C" void __fastcall fn_00477380(void* self, int edx_unused, unsigned char
     string_assign_fn assign = *(string_assign_fn*)&mem_00924FDC;
     assign(a2, *(void**)((unsigned char*)self + 0x28));
 }
+
+// [0x004779B0] sub_004779B0 (42 bytes)
+extern "C" void __cdecl fn_004779B0(unsigned int* first, unsigned int* last, const unsigned int* value) {
+    if (first != last) {
+        do {
+            first[0] = value[0];
+            first[1] = value[1];
+            first[2] = value[2];
+            first += 3;
+        } while (first != last);
+    }
+}
