@@ -266,3 +266,16 @@ extern "C" void __fastcall fn_00430D30(void* self) {
         call ext_004647D0
     }
 }
+
+// [0x00430380] sub_00430380 (17 bytes)
+extern "C" void ext_004658C0();
+extern "C" __declspec(naked) unsigned char __fastcall fn_00430380(void* self) {
+    __asm {
+        call ext_004658C0
+        xor ecx, ecx
+        cmp dword ptr [eax + 0x60], 0x1
+        sete cl
+        mov al, cl
+        ret
+    }
+}
