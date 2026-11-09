@@ -304,3 +304,25 @@ extern "C" __declspec(naked) void __cdecl fn_00540549() {
         jmp dword ptr [mem_00925438]
     }
 }
+
+// [0x0054E3D0] sub_0054E3D0 (42 bytes)
+extern "C" int mem_00955D10;
+extern "C" int mem_0093F7B8;
+
+extern "C" __declspec(naked) void __fastcall fn_0054E3D0(void* self) {
+    __asm {
+        fldz
+        mov byte ptr [ecx + 0x4], 0x1
+        fstp dword ptr [ecx + 0x48]
+        fld dword ptr [mem_00955D10]
+        fstp dword ptr [ecx + 0x4c]
+        fld1
+        fst dword ptr [ecx + 0x5c]
+        fstp dword ptr [ecx + 0x14]
+        fld dword ptr [mem_0093F7B8]
+        fst dword ptr [ecx + 0x58]
+        fst dword ptr [ecx + 0x34]
+        fstp dword ptr [ecx + 0x24]
+        ret
+    }
+}
