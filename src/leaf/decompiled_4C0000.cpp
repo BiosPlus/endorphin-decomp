@@ -101,3 +101,21 @@ extern "C" void* __cdecl fn_004C5FE0() {
     }
     return &mem_00AE3708;
 }
+
+extern "C" void ext_004C0340();
+
+// [0x004C1AC0] sub_004C1AC0 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004C1AC0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx + 0x15c]
+        cmp edx, eax
+        mov dword ptr [ecx + 0x160], edx
+        jg L_004C1ADD
+        add eax, 0x1
+        mov dword ptr [ecx + 0x160], eax
+L_004C1ADD:
+        call ext_004C0340
+        ret 0x4
+    }
+}
