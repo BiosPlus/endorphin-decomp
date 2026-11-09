@@ -113,3 +113,36 @@ extern "C" __declspec(naked) char* __cdecl fn_00859A20(char* dst, const char* sr
         ret
     }
 }
+
+// [0x0085BF40] sub_0085BF40 (47 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_0085BF40(void* self, unsigned int key) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        xor eax, eax
+        push esi
+        mov edx, dword ptr [ecx]
+        push edi
+        test edx, edx
+        jbe L_notfound
+        mov esi, dword ptr [ecx + 0x4]
+        mov edi, dword ptr [esp + 0x10]
+        mov ecx, esi
+    L_loop:
+        cmp edi, dword ptr [ecx]
+        je L_found
+        inc eax
+        add ecx, 0x8
+        cmp eax, edx
+        jb L_loop
+    L_notfound:
+        pop edi
+        pop esi
+        xor eax, eax
+        ret
+    L_found:
+        mov eax, dword ptr [esi + 8*eax + 0x4]
+        pop edi
+        pop esi
+        ret
+    }
+}
