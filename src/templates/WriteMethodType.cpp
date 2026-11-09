@@ -179,3 +179,25 @@ extern "C" __declspec(naked) void __stdcall fn_00649690(void** self, void** a1) 
         ret 0x8
     }
 }
+
+// [0x00649D50] ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setRotationMode(bool), 0}>::vfunc_41 (34 bytes)
+extern "C" void ext_00648E30();
+
+extern "C" __declspec(naked) void __stdcall fn_00649D50(void** self, void** a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        mov ecx, esi
+        push eax
+        call ext_00648E30
+        pop esi
+        ret 0x8
+    }
+}
