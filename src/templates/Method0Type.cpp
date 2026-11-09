@@ -435,3 +435,10 @@ extern "C" __declspec(naked) void __stdcall fn_0066DCE0(void* a1) {
         ret 0x4
     }
 }
+
+// [0x0066DCF0] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_2 (16 bytes)
+extern "C" int __stdcall fn_0066DCF0(void* a1) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_0067B860)(obj);
+    return 0;
+}
