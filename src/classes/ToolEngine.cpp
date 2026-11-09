@@ -110,3 +110,23 @@ extern "C" __declspec(naked) void __fastcall fn_004800E0(void* self) {
         ret
     }
 }
+
+// [0x00480100] ToolEngine::vfunc_26 (35 bytes)
+// Copies the float argument into a local, then calls vtable slot 25 (+0x64)
+// of *this with a pointer to that local as the single stack argument.
+extern "C" __declspec(naked) void __fastcall fn_00480100(void* self, int edx_unused, float a1) {
+    __asm {
+        sub esp, 0xc
+        fld dword ptr [esp + 0x10]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x64]
+        fst dword ptr [esp]
+        lea edx, [esp]
+        fst dword ptr [esp + 0x4]
+        push edx
+        fstp dword ptr [esp + 0xc]
+        call eax
+        add esp, 0xc
+        ret 0x4
+    }
+}
