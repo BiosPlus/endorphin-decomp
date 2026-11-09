@@ -2,6 +2,7 @@
 
 extern "C" void ext_0050F180();
 extern "C" void ext_0050DBE0();
+extern "C" void ext_00516890();
 
 // [0x0050F190] ExprParser::WriteOnlyMethod0Type<NMData::PopulationData, &public: void __thiscall NMData::PopulationData::randomizeNow(void)>::vfunc_41 (14 bytes)
 extern "C" __declspec(naked) void __fastcall fn_0050F190(void* self, int edx_unused, void* a1, int a2) {
@@ -19,6 +20,16 @@ extern "C" __declspec(naked) void __fastcall fn_0050E0A0(void* self, int edx_unu
         mov eax, dword ptr [esp + 4]
         mov ecx, dword ptr [eax]
         call ext_0050DBE0
+        ret 8
+    }
+}
+
+// [0x00516B10] ExprParser::WriteOnlyMethod0Type<NMData::EvolverRuntimeOptions, &public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)>::vfunc_41 (14 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00516B10(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        call ext_00516890
         ret 8
     }
 }
