@@ -120,3 +120,28 @@ ret_one:
         ret
     }
 }
+
+// [0x004AEF30] sub_004AEF30 (35 bytes)
+extern "C" void ext_00493D90();
+
+extern "C" __declspec(naked) void __fastcall fn_004AEF30(void* self, int edx_unused, void* begin, void* end) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done_4AEF30
+        __asm _emit 0x8B __asm _emit 0xFF // mov edi, edi
+loop_4AEF30:
+        mov ecx, esi
+        call ext_00493D90
+        add esi, 0x8
+        cmp esi, edi
+        jne loop_4AEF30
+done_4AEF30:
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
