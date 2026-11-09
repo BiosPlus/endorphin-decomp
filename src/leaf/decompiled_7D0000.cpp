@@ -89,3 +89,13 @@ extern "C" int __cdecl fn_007DAD50(int a, int b) {
     ((void (__cdecl*)(int, int, int))ext_007CC8E0)(a, b, 0);
     return a;
 }
+
+extern "C" void ext_007CC930(void*);
+extern "C" void ext_007DB130(void*);
+
+// [0x007DB500] sub_007DB500 (25 bytes)
+extern "C" void __cdecl fn_007DB500(void* self) {
+    ext_007DB130(static_cast<char*>(self) + 0x10);
+    ext_007CC930(self);
+}
+
