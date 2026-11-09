@@ -91,3 +91,8 @@ extern "C" __declspec(naked) void* __fastcall fn_0067AA30(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0066AEC0] ExprParser::BoolType::vfunc_1 (35 bytes)
+extern "C" float __stdcall fn_0066AEC0(char* a1) {
+    return (*a1 != 0) ? 1.0f : 0.0f;
+}
