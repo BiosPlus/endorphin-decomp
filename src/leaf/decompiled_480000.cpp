@@ -253,3 +253,30 @@ extern "C" __declspec(naked) void __fastcall fn_00480130(void* self) {
         ret
     }
 }
+
+// [0x00480C70] sub_00480C70 (41 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00480C70(void* dst, void* end, const void* src) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        cmp eax, edx
+        je done_00480C70
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        push edi
+    loop_00480C70:
+        mov edi, eax
+        add eax, 0x40
+        cmp eax, edx
+        mov ecx, 0x10
+        mov esi, ebx
+        rep movsd
+        jne loop_00480C70
+        pop edi
+        pop esi
+        pop ebx
+    done_00480C70:
+        ret
+    }
+}
