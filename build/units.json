@@ -224824,7 +224824,9 @@
       "0x0056CDFA",
       "0x0056CE00"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:21:08Z"
   },
   {
     "va": "0x0056CE10",
