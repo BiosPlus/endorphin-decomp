@@ -86,3 +86,20 @@ extern "C" __declspec(naked) void __fastcall fn_005F35A0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00603420] ExprParser::ROWriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_16 (30 bytes)
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void __fastcall fn_00603420(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push 0xa93714
+        push 0xa2e2f8
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        ret 4
+    }
+}
