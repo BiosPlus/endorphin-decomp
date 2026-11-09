@@ -93975,7 +93975,9 @@
     "relocations": [
       "0x0049B1FB"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:59:16Z"
   },
   {
     "va": "0x0049B210",
