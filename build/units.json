@@ -58385,7 +58385,9 @@
       "0x00464615",
       "0x0046461A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:36:50Z"
   },
   {
     "va": "0x00464630",

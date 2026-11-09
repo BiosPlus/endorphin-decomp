@@ -283,3 +283,11 @@ extern "C" void __fastcall fn_00462DF0(void* self) {
         ((void (__cdecl*)(void*))ext_006A5C5C)(p);
     }
 }
+
+// [0x00464610] sub_00464610 (22 bytes)
+extern "C" void __stdcall ext_006A5E60(int a, int b, int c);
+
+extern "C" int __fastcall fn_00464610(void* self, int edx_unused, int a1) {
+    ext_006A5E60(0x939518, 0x30, 0);
+    return 1;
+}
