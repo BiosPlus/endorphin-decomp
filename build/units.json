@@ -413933,7 +413933,9 @@
       "0x0067ED1F",
       "0x0067ED26"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:38:09Z"
   },
   {
     "va": "0x0067ED40",
