@@ -16,3 +16,24 @@ extern "C" __declspec(naked) unsigned char __stdcall fn_0063E270(int a1) {
         jmp ext_004701E0
     }
 }
+
+// [0x0063E390] AdvXMLParser::CharRef::vfunc_1 (36 bytes)
+// Constructs the std::string at a1 as a 1-character string holding the char at this+0x24; returns a1.
+extern "C" int mem_0092506C;
+extern "C" __declspec(naked) void* __fastcall fn_0063E390(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        movzx eax, byte ptr [ecx + 0x24]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push 0x1
+        mov ecx, esi
+        mov dword ptr [esp + 0xc], 0x0
+        call dword ptr [mem_0092506C]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
