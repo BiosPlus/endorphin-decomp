@@ -140,3 +140,17 @@ extern "C" void __fastcall fn_0049CF20(void* self) {
         *(void**)q = p;
     }
 }
+
+// [0x0049CF40] sub_0049CF40 (29 bytes)
+extern "C" void* __cdecl ext_006A5C62(unsigned int size);
+
+extern "C" void __fastcall fn_0049CF40(void* self) {
+    void* p = ext_006A5C62(0x140);
+    if (p) {
+        *(void**)p = p;
+    }
+    void* q = (char*)p + 4;
+    if (q) {
+        *(void**)q = p;
+    }
+}
