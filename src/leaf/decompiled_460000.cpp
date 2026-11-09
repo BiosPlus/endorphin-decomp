@@ -767,3 +767,20 @@ extern "C" __declspec(naked) void __fastcall fn_00469130(void* self) {
         __asm _emit 0xC3                                       // ret
     }
 }
+
+// [0x00469150] sub_00469150 (32 bytes)
+extern "C" void ext_004FFFA0();
+
+// [0x00469150] sub_00469150 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00469150(void* self) {
+    __asm {
+        call ext_004690C0                                      // call sub_004690C0
+        test al, al                                            // test al, al
+        __asm _emit 0x74 __asm _emit 0x16                      // je +0x16 (-> ret)
+        call ext_00594000                                      // call sub_00594000
+        mov eax, dword ptr [eax + 0x270]                       // mov eax, [eax+0x270]
+        mov ecx, dword ptr [eax + 0x140]                       // mov ecx, [eax+0x140]
+        jmp ext_004FFFA0                                       // jmp sub_004FFFA0
+        __asm _emit 0xC3                                       // ret
+    }
+}
