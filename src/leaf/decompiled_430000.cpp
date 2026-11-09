@@ -1356,3 +1356,14 @@ extern "C" __declspec(naked) void __fastcall fn_004308D0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00430930] sub_00430930 (38 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_004694E0();
+
+extern "C" void __fastcall fn_00430930(void* self, int edx_unused, void* a1) {
+    void* vtbl = *(void**)a1;
+    void* eax = ((void* (__stdcall*)(int))ext_00465B30)(0);
+    unsigned char al = ((unsigned char (__thiscall*)(void*))ext_004694E0)(eax);
+    ((void (__thiscall*)(void*, int))((void**)vtbl)[1])(a1, (int)al);
+}
