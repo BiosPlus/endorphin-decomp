@@ -187,3 +187,9 @@ extern "C" void* __stdcall fn_005AAB70(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA30138, 0);
 }
+
+// [0x005B1200] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam0(void) const, 0>::vfunc_16 (30 bytes)
+extern "C" void* __stdcall fn_005B1200(void* a1) {
+    typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
+    return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA88B18, 0);
+}

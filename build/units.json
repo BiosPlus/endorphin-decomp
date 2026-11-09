@@ -263558,7 +263558,9 @@
       "0x005B120C",
       "0x005B1214"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:52:53Z"
   },
   {
     "va": "0x005B1220",
