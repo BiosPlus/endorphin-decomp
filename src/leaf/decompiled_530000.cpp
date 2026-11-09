@@ -407,3 +407,16 @@ extern "C" void __fastcall fn_0053BE80(void* self) {
     ((void (__stdcall*)(void*))ext_0063E006)(quadric);
     ((void (__fastcall*)(void*))ext_0052F920)(self);
 }
+
+// [0x00536290] sub_00536290 (38 bytes)
+extern "C" void __fastcall fn_00536290(void* self, int edx_unused, void* first, void* last) {
+    char* esi = (char*)first;
+    char* edi = (char*)last;
+    if (esi != edi) {
+        do {
+            void** vtbl = *(void***)esi;
+            ((void (__thiscall*)(void*, int))vtbl[0])(esi, 0);
+            esi += 0x68;
+        } while (esi != edi);
+    }
+}
