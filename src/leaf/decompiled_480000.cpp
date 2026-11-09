@@ -140,3 +140,28 @@ extern "C" __declspec(naked) void* __fastcall fn_00482640(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x004809B0] sub_004809B0 (35 bytes)
+// Returns 0 if this->f8 is non-null, this->fc - this->f8 is non-zero (in elements),
+// and this->f20 == 0; otherwise returns 1.
+extern "C" __declspec(naked) int __fastcall fn_004809B0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx + 0x8]
+        test eax, eax
+        je short L_ret1_004809B0
+        mov edx, dword ptr [ecx + 0xc]
+        sub edx, eax
+        sar edx, 0x2
+        je short L_ret1_004809B0
+        cmp byte ptr [ecx + 0x20], 0x0
+        jne short L_ret1_004809B0
+        xor eax, eax
+        pop ecx
+        ret
+L_ret1_004809B0:
+        mov eax, 0x1
+        pop ecx
+        ret
+    }
+}
