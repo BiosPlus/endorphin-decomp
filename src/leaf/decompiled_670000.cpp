@@ -51,3 +51,9 @@ extern "C" __declspec(naked) void __fastcall fn_0067A220(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00671F80] sub_00671F80 (18 bytes)
+extern "C" int ext_00671100(int);
+extern "C" void __fastcall fn_00671F80(void* self) {
+    *(int*)((char*)self + 0x4) = ext_00671100(0);
+}
