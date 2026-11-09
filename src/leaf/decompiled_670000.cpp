@@ -153,3 +153,18 @@ extern "C" __declspec(naked) void __fastcall fn_0067A350(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0067A370] sub_0067A370 (22 bytes)
+extern "C" void ext_0067A260();
+extern "C" __declspec(naked) void __fastcall fn_0067A370(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push edx
+        lea eax, [ecx + 0x24]
+        push eax
+        call ext_0067A260
+        ret 0x8
+    }
+}
