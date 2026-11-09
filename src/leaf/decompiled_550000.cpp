@@ -50,3 +50,16 @@ extern "C" void ext_005591A0(int, int, int);
 extern "C" void __cdecl fn_00559770(int a) {
     ext_005591A0(a, 0, 1);
 }
+
+// [0x005576F0] sub_005576F0 (20 bytes)
+extern "C" void ext_00556AE0();
+extern "C" __declspec(naked) void __fastcall fn_005576F0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x420]
+        mov edx, dword ptr [ecx + 0x418]
+        push eax
+        push edx
+        call ext_00556AE0
+        ret
+    }
+}
