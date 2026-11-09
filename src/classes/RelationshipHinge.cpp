@@ -36,3 +36,14 @@ extern "C" float __fastcall fn_00658CD0(void* self, int edx_unused, int a1) {
     int b = ext_007C9DE0(a);
     return -ext_007C9CB0(b);
 }
+
+extern "C" float ext_007C9DF0(int);
+
+// [0x00658B90] RelationshipHinge::vfunc_8 (35 bytes)
+extern "C" float __fastcall fn_00658B90(void* self, int edx_unused, int a1) {
+    if (a1 == 0) {
+        int a = ext_007C9C50(*(int*)((char*)self + 0x64));
+        return -ext_007C9DF0(a);
+    }
+    return 0.0f;
+}
