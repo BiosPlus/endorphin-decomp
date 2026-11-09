@@ -395,3 +395,27 @@ extern "C" void __cdecl fn_007D86C0(void* self) {
         cur = next;
     }
 }
+
+// [0x007D5B30] sub_007D5B30 (45 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D5B30(void* a1, void* a2, int a3) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [edx]
+        mov eax, dword ptr [ecx]
+        mov ecx, dword ptr [ecx + 0xc]
+        mov ecx, dword ptr [ecx + 0x20]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        and eax, 0xff
+        lea eax, [eax + 4*eax]
+        push esi
+        push edx
+        mov edx, dword ptr [ecx + 8*eax + 0xc]
+        call edx
+        add esp, 0xc
+        pop esi
+        ret
+    }
+}
