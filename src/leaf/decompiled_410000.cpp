@@ -159,3 +159,19 @@ extern "C" void* __fastcall fn_004153E0(void* self) {
     *(unsigned int*)self = 0x0092C5ACu;
     return self;
 }
+
+// [0x00415ED0] sub_00415ED0 (20 bytes)
+extern "C" void ext_00404BE0();
+
+extern "C" __declspec(naked) void __fastcall fn_00415ED0(void* self) {
+    __asm {
+        push esi
+        push 0
+        mov esi, ecx
+        call ext_00404BE0
+        mov dword ptr [esi], 0x92c764
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
