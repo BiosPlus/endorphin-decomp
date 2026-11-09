@@ -47,3 +47,23 @@ extern "C" int __fastcall fn_00498B40(void* self, int edx_unused, int a1) {
     int r = ((FnT)ext_00498A50)(a1);
     return (r != -1) ? 2 : 1;
 }
+
+// [0x00499AF0] NMData::Transition::vfunc_6_off_10 (35 bytes)
+extern "C" int mem_00A9F354;
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void* __fastcall fn_00499AF0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [mem_00A9F354]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
