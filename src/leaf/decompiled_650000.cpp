@@ -158,3 +158,11 @@ extern "C" void __cdecl ext_007C8C10(int a, int b);
 extern "C" void __fastcall fn_0065AF30(void* self, int edx_unused, void* a1) {
     ext_007C8C10(*(int*)self, *(int*)(*(int*)((char*)a1 + 0x5c)));
 }
+
+// [0x0065BED0] sub_0065BED0 (24 bytes)
+extern "C" void __cdecl ext_007C7310(int value);
+
+extern "C" void __fastcall fn_0065BED0(void* self) {
+    ext_007C7310(*(int*)((char*)self + 0x40));
+    *(int*)((char*)self + 0x40) = 0;
+}
