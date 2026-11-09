@@ -205,3 +205,25 @@ extern "C" float __fastcall fn_0049AE50(void* self, int edx_unused, void** a1) {
     bool* p = *(bool**)a1;
     return *(unsigned char*)p ? 1.0f : 0.0f;
 }
+
+// [0x00497620] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_4 (37 bytes)
+extern "C" void ext_004276B0();
+
+extern "C" __declspec(naked) void __fastcall fn_00497620(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        push esi
+        mov dword ptr [esp + 0xc], 0
+        call ext_004276B0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
