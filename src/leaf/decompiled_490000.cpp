@@ -241,3 +241,32 @@ extern "C" int __fastcall fn_00494020(int* self, int edx_unused, int* other) {
         return 0;
     }
 }
+
+// [0x00492A50] sub_00492A50 (40 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) int __fastcall fn_00492A50(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_492A61
+        call edi
+L_492A61:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esi + 4]
+        cmp ecx, dword ptr [eax + 8]
+        jb L_492A73
+        call edi
+        mov eax, dword ptr [esi + 4]
+        pop edi
+        pop esi
+        ret
+L_492A73:
+        pop edi
+        mov eax, ecx
+        pop esi
+        ret
+    }
+}
