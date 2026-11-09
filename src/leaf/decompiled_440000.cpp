@@ -979,3 +979,28 @@ extern "C" __declspec(naked) void __fastcall fn_004429C0(void* self) {
         ret
     }
 }
+
+// [0x0044B390] sub_0044B390 (43 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0044B390(void* self, int edx_unused, void* a1) {
+    __asm {
+        cmp dword ptr [ecx + 0x64], 0
+        je done
+        mov ecx, dword ptr [ecx + 0x64]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xc0]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esi]
+        call edx
+        mov edx, dword ptr [edi + 0x4]
+        movzx eax, al
+        push eax
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+    done:
+        ret 4
+    }
+}
