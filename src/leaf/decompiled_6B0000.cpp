@@ -425,3 +425,16 @@ extern "C" int __stdcall fn_006B4D60(int a1, int a2, int a3) {
     ((int (__stdcall*)(void*))mem_00925704)(cursor);
     return 1;
 }
+
+// [0x006B2900] sub_006B2900 (39 bytes)
+extern "C" void ext_006B0C40();
+
+extern "C" void* __fastcall fn_006B2900(void* self, int edx_unused, int a1, unsigned char a2, unsigned char a3) {
+    unsigned char* p = (unsigned char*)self;
+    (void)edx_unused;
+    ((void (__stdcall*)(int))ext_006B0C40)(a1);
+    *(unsigned int*)p = 0x991830;
+    p[0x10] = a2;
+    p[0x11] = a3;
+    return self;
+}
