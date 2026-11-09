@@ -23,3 +23,11 @@ extern "C" int __fastcall fn_0048FB30(const int* self) {
     }
     return (self[2] - a) / 124;
 }
+
+// [0x0048A9A0] sub_0048A9A0 (22 bytes)
+extern "C" void ext_0048A120();
+
+extern "C" void __fastcall fn_0048A9A0(void* self, int edx_unused, int a1, int a2) {
+    typedef void (__cdecl *fn_t)(int, int, void*);
+    ((fn_t)ext_0048A120)(a1, a2, self);
+}
