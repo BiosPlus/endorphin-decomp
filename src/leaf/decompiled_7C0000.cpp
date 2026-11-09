@@ -722,3 +722,26 @@ L_nonzero:
         ret
     }
 }
+
+// [0x007CB940] sub_007CB940 (43 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007CB940(void* a0, float a1) {
+    __asm {
+        fldz
+        fld dword ptr [esp + 0x8]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp store_arg
+        mov eax, dword ptr [esp + 0x4]
+        fstp st(0)
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0x10]
+        ret
+store_arg:
+        mov ecx, dword ptr [esp + 0x4]
+        fstp st(1)
+        fstp dword ptr [ecx + 0x10]
+        ret
+    }
+}
