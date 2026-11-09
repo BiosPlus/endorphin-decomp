@@ -47,3 +47,11 @@ extern "C" void __stdcall fn_004CCDB0(void* a1, int a2) {
     void* obj = *(void**)a1;
     ((void (__fastcall*)(void*))ext_004CCB00)(obj);
 }
+
+extern "C" void ext_005B72E0();
+
+// [0x005BB360] ExprParser::Method0Type<NMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}>::vfunc_41 (14 bytes)
+extern "C" void __fastcall fn_005BB360(void* self, int edx_unused, void* a1, int a2) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_005B72E0)(obj);
+}
