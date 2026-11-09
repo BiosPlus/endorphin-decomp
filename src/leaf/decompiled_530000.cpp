@@ -344,3 +344,16 @@ extern "C" __declspec(naked) void __fastcall fn_0053BA10(void* self) {
         jmp ext_0053A810
     }
 }
+
+// [0x0053BBF0] sub_0053BBF0 (33 bytes)
+extern "C" void ext_0063E006();
+extern "C" void ext_0053A810();
+
+extern "C" void __fastcall fn_0053BBF0(void* self) {
+    unsigned char* s = (unsigned char*)self;
+    void* quadric = *(void**)(s + 0x44);
+    *(void**)s = (void*)0x955894;
+    *(void**)(s + 0x14) = (void*)0x95588c;
+    ((void (__stdcall*)(void*))ext_0063E006)(quadric);
+    ((void (__fastcall*)(void*))ext_0053A810)(self);
+}
