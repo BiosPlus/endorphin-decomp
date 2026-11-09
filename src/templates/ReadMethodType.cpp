@@ -324,3 +324,18 @@ extern "C" void __declspec(naked) __stdcall fn_0061BE80(void* self) {
         ret 4
     }
 }
+
+// [0x0061C910] ExprParser::ReadMethodType<NMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void __declspec(naked) __stdcall fn_0061C910(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push 0A91240h
+        push 0A2E2F8h
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
