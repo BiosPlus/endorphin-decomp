@@ -39,3 +39,16 @@ extern "C" int ext_00711DB0();
 extern "C" bool __fastcall fn_00712150(void* self) {
     return ext_00711DB0() == 0x11;
 }
+
+// [0x00714910] sub_00714910 (16 bytes)
+extern "C" void ext_007873F0();
+
+extern "C" __declspec(naked) void __fastcall fn_00714910(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        add ecx, 0x8
+        push eax
+        call ext_007873F0
+        ret 0x4
+    }
+}
