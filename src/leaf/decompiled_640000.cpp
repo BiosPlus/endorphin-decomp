@@ -235,3 +235,18 @@ extern "C" __declspec(naked) void __fastcall fn_0064C950(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0064CB00] sub_0064CB00 (20 bytes)
+extern "C" void ext_0064C970();
+
+extern "C" __declspec(naked) void __fastcall fn_0064CB00(void* self) {
+    __asm {
+        fld dword ptr [esp + 0x4]
+        push ecx
+        lea eax, [ecx + 0x6c]
+        fstp dword ptr [esp]
+        push eax
+        call ext_0064C970
+        ret 0x4
+    }
+}
