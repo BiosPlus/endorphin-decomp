@@ -585,3 +585,12 @@ extern "C" void __fastcall fn_00642510(void* self) {
     *(int*)(p + 0x14) = 0;
     p[0x10] = 0;
 }
+
+// [0x00647F50] sub_00647F50 (28 bytes)
+extern "C" void ext_007C6330();
+
+extern "C" void __fastcall fn_00647F50(void* self, int edx_unused, float a1) {
+    void* inner = *(void**)((char*)self + 0xa4);
+    void* p = *(void**)inner;
+    ((void (__cdecl*)(void*, float))ext_007C6330)(p, a1);
+}
