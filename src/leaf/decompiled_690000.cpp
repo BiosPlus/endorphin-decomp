@@ -28,3 +28,11 @@ extern "C" void* __fastcall fn_00695440(void* self) {
     ext_00695420();
     return esi;
 }
+
+// [0x00695420] sub_00695420 (20 bytes)
+extern "C" void ext_006953F0();
+extern "C" void ext_00695390();
+extern "C" void __fastcall fn_00695420(void* self) {
+    int r = ((int (__stdcall*)(int))ext_006953F0)(0);
+    ((void (__thiscall*)(void*, int))ext_00695390)(self, r);
+}
