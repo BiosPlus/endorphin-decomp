@@ -152268,7 +152268,9 @@
       "0x004F283A",
       "0x004F2842"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:49:44Z"
   },
   {
     "va": "0x004F2850",
