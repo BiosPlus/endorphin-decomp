@@ -40,3 +40,25 @@ extern "C" void __cdecl fn_00803990(void* self, int a2, int a3, int a4) {
     p[0] = a2 - 4;
     p[2] = 0;
 }
+
+// [0x0080AC00] sub_0080AC00 (47 bytes)
+extern "C" void ext_0080AC30();
+extern "C" int mem_00B73C80;
+extern "C" int mem_00B73C58;
+extern "C" int mem_009242E4;
+
+extern "C" __declspec(naked) void __cdecl fn_0080AC00() {
+    __asm {
+        call ext_0080AC30
+        __asm _emit 0xE9 __asm _emit 0x06 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // jmp +6 (to 0x0080AC10)
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 // padding
+        mov eax, dword ptr [mem_00B73C80]
+        test eax, eax
+        je L_0080AC2E
+        push offset mem_00B73C58
+        call dword ptr [mem_009242E4]
+        mov dword ptr [mem_00B73C80], 0x0
+L_0080AC2E:
+        ret
+    }
+}
