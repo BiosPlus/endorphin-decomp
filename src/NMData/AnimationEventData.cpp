@@ -130,3 +130,27 @@ extern "C" __declspec(naked) void __fastcall fn_00486BE0(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" int mem_00924FCC;
+extern "C" int mem_009443C8;
+
+// [0x004BF800] NMData::AnimationEventData::vfunc_3 (40 bytes)
+// Builds a temporary std::string via operator+(const char*, const std::string&) into the sret buffer a1 and returns a1.
+extern "C" __declspec(naked) void* __fastcall fn_004BF800(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x14
+        push ecx
+        push offset mem_009443C8
+        push esi
+        mov dword ptr [esp + 0x10], 0x0
+        call dword ptr [mem_00924FCC]
+        add esp, 0xc
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}

@@ -118312,7 +118312,9 @@
       "0x004BF80B",
       "0x004BF81A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:08:57Z"
   },
   {
     "va": "0x004BF830",
