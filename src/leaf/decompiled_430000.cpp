@@ -1193,3 +1193,25 @@ extern "C" void __fastcall fn_0043CDA0(void* self, int edx_unused, unsigned char
         f(*(void**)(p + 0x20), 0, 1);
     }
 }
+
+// [0x004329A0] sub_004329A0 (35 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_00469040();
+extern "C" void ext_006A651A();
+extern "C" __declspec(naked) void __fastcall fn_004329A0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469040
+        mov eax, dword ptr [esi + 0x11c]
+        push 0x0
+        push 0x1
+        push eax
+        mov ecx, esi
+        call ext_006A651A
+        pop esi
+        ret
+    }
+}
