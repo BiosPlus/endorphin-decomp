@@ -197363,7 +197363,9 @@
       "0x00537E7E",
       "0x00537E86"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:24:22Z"
   },
   {
     "va": "0x00537E90",
