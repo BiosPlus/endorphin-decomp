@@ -27,3 +27,22 @@ extern "C" __declspec(naked) void __fastcall fn_007F0B60(void* ecx_unused, void*
         ret
     }
 }
+
+// [0x007F1480] sub_007F1480 (36 bytes)
+extern "C" __declspec(naked) int __fastcall fn_007F1480(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov dword ptr [esp + 0x4], 0x0
+        mov eax, 0x1
+        push ebx
+        cpuid
+        pop ebx
+        and edx, 0x2000000
+        mov dword ptr [esp + 0x4], edx
+        mov eax, dword ptr [esp + 0x4]
+        pop ebx
+        pop ecx
+        ret
+    }
+}
