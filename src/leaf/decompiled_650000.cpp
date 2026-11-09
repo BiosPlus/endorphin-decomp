@@ -342,3 +342,28 @@ extern "C" void __fastcall fn_0065AA00(void* self) {
         ((void (__cdecl*)(int))ext_007C6C20)(eax2);
     }
 }
+
+// [0x0065D540] sub_0065D540 (39 bytes)
+// __stdcall(first, last, dest) ret 0xc: n = last - first; if n != 0, memmove_s(dest, n, first, n); returns dest + n.
+extern "C" int mem_009251EC;
+extern "C" __declspec(naked) int __stdcall fn_0065D540(int first, int last, int dest) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov ecx, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 0xc]
+        sub eax, ecx
+        push esi
+        lea esi, [eax + edx]
+        je skip_copy
+        push eax
+        push ecx
+        push eax
+        push edx
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+    skip_copy:
+        mov eax, esi
+        pop esi
+        ret 0xc
+    }
+}
