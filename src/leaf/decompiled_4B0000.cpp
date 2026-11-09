@@ -178,3 +178,15 @@ extern "C" int* __cdecl fn_004BA1D0() {
     }
     return &mem_00AE169C;
 }
+
+// [0x004BA200] sub_004BA200 (35 bytes)
+extern "C" int mem_00AE16A8;
+extern "C" int mem_00AE16A4;
+
+extern "C" void* __cdecl fn_004BA200() {
+    if (!(mem_00AE16A8 & 1)) {
+        mem_00AE16A8 |= 1;
+        mem_00AE16A4 = 0x943628;
+    }
+    return &mem_00AE16A4;
+}
