@@ -18,3 +18,15 @@ extern "C" void __fastcall fn_00469CB0(void* self) {
     typedef void (__thiscall *Callee)(void* self, int a, int b);
     ((Callee)ext_00469530)(static_cast<char*>(self) - 4, 5, 0);
 }
+
+// [0x0046A000] VMCSEngine::vfunc_0_off_C (17 bytes)
+extern "C" void ext_004667A0();
+
+extern "C" void __fastcall fn_0046A000(void* self) {
+    char* p = static_cast<char*>(self);
+    if (p[5] == 0) {
+        typedef void (__thiscall *Callee)(void*, int);
+        void* obj = *(void**)(p + 0xC);
+        ((Callee)ext_004667A0)(obj, 1);
+    }
+}
