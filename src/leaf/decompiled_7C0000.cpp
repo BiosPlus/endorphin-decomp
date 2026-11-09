@@ -602,3 +602,24 @@ extern "C" __declspec(naked) void __cdecl fn_007CA310(float* out, float s, float
         ret
     }
 }
+
+// [0x007CD550] sub_007CD550 (37 bytes)
+extern "C" int __cdecl ext_007D8700(int a1);
+extern "C" void __cdecl ext_007C9930(int a1);
+
+extern "C" __declspec(naked) void __cdecl fn_007CD550(void* a0) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx + 0x18]
+        test eax, eax
+        mov dword ptr [ecx + 0x18], 0x0
+        je done
+        push eax
+        call ext_007D8700
+        add esp, 0x4
+        mov dword ptr [esp + 0x4], eax
+        jmp ext_007C9930
+done:
+        ret
+    }
+}
