@@ -932,3 +932,27 @@ extern "C" void __fastcall fn_0044B330(void* self_unused, int edx_unused, void* 
     ApplyFn apply = (ApplyFn)vt1[1];
     apply(a1, (int)(unsigned int)flag);
 }
+
+// [0x0044C4D0] sub_0044C4D0 (41 bytes)
+extern "C" void ext_0044C2A0();
+
+extern "C" __declspec(naked) void __fastcall fn_0044C4D0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x10]
+        mov byte ptr [esp], 0x0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        push edx
+        call ext_0044C2A0
+        add esp, 0x1c
+        ret 0xc
+    }
+}
