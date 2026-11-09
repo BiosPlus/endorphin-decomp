@@ -377,3 +377,22 @@ extern "C" __declspec(naked) void __stdcall fn_00437DC0(int a1) {
         ret 4
     }
 }
+
+// [0x0043B400] sub_0043B400 (19 bytes)
+// Loads this->field_10; if non-null, pushes this and calls sub_00412D70, else returns 0.
+extern "C" void ext_00412D70();
+
+extern "C" __declspec(naked) void __fastcall fn_0043B400(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x10]
+        test ecx, ecx
+        je short no_call
+        push eax
+        call ext_00412D70
+        ret
+    no_call:
+        xor eax, eax
+        ret
+    }
+}
