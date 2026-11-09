@@ -388985,7 +388985,9 @@
       "0x0065B107",
       "0x0065B10D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:32:25Z"
   },
   {
     "va": "0x0065B120",

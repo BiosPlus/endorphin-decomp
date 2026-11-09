@@ -122,3 +122,15 @@ extern "C" void __fastcall fn_0065A8C0(void* self) {
     ext_007C6790(value);
     ext_007C67D0(value);
 }
+
+// [0x0065B100] sub_0065B100 (21 bytes)
+// Loads the dword at [[self]+0x10] (via self->[+0x4]) and calls sub_007C8A70 cdecl with that value
+// and the address of mem_00493D90 as its two stack arguments (caller cleans up).
+extern "C" void __cdecl ext_007C8A70(int value, int addr);
+extern "C" char mem_00493D90;
+
+extern "C" void __fastcall fn_0065B100(void* self) {
+    int obj = *(int*)((char*)self + 0x4);
+    int value = *(int*)(obj + 0x10);
+    ext_007C8A70(value, (int)&mem_00493D90);
+}
