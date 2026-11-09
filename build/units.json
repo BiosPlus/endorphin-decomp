@@ -353227,7 +353227,9 @@
       "0x0062A56C",
       "0x0062A574"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:45:58Z"
   },
   {
     "va": "0x0062A580",
