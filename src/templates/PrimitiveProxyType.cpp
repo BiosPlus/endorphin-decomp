@@ -248,3 +248,26 @@ extern "C" __declspec(naked) void* __fastcall fn_0049C010(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x004B7B50] ExprParser::PrimitiveProxyType<float>::vfunc_43 (38 bytes)
+// Two stack arguments. obj = a2->m_ptr; r = obj->vtbl[1](a2) (thiscall, returns float);
+// *(float*)a1 += r.
+extern "C" __declspec(naked) void __fastcall fn_004B7B50(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        call eax
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esi]
+        fadd dword ptr [esp + 0x8]
+        fstp dword ptr [esi]
+        pop esi
+        ret 0x8
+    }
+}
