@@ -37,3 +37,14 @@ extern "C" __declspec(naked) void __fastcall fn_00517510(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00519CF0] sub_00519CF0 (27 bytes)
+extern "C" int __cdecl ext_005285A0(int a1);
+
+extern "C" void __fastcall fn_00519CF0(void* self) {
+    char* s = (char*)self;
+    typedef void (__fastcall *VirtFn)(void*);
+    VirtFn vf = (VirtFn)(*(void***)s)[0x40 / 4];
+    vf(self);
+    *(int*)(s + 0x28) = ext_005285A0(*(int*)(s + 0x20));
+}
