@@ -96702,7 +96702,9 @@
     "relocations": [
       "0x0049F2F1"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:38:26Z"
   },
   {
     "va": "0x0049F300",
