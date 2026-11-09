@@ -146,3 +146,37 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_0085BF40(void* self, unsign
         ret
     }
 }
+
+// [0x0085F7B0] sub_0085F7B0 (47 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0085F7B0(const char* s1, const char* s2, unsigned int n) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        test eax, eax
+        jne L_nonzero
+        xor eax, eax
+        pop ebx
+        ret
+    L_nonzero:
+        dec eax
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        je L_exit
+    L_loop:
+        mov bl, byte ptr [ecx]
+        cmp byte ptr [edx], bl
+        jne L_exit
+        inc ecx
+        inc edx
+        dec eax
+        jne L_loop
+    L_exit:
+        xor eax, eax
+        pop ebx
+        mov al, byte ptr [ecx]
+        xor ecx, ecx
+        mov cl, byte ptr [edx]
+        sub eax, ecx
+        ret
+    }
+}
