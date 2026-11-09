@@ -271849,7 +271849,9 @@
       "0x005BB2E1",
       "0x005BB2EE"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:24:18Z"
   },
   {
     "va": "0x005BB300",

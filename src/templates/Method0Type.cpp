@@ -848,3 +848,24 @@ extern "C" __declspec(naked) void __stdcall fn_004CCD20(void* a1, int a2) {
         ret 0x8
     }
 }
+
+// [0x005BB2D0] ExprParser::Method0Type<NMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}>::vfunc_0 (41 bytes)
+extern "C" void ext_005B72E0();
+extern "C" __declspec(naked) void __fastcall fn_005BB2D0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        call ext_005B72E0
+        mov esi, dword ptr [esp + 0xc]
+        push 0x0
+        mov ecx, esi
+        call ext_006720C0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
