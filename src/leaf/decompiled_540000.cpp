@@ -326,3 +326,26 @@ extern "C" __declspec(naked) void __fastcall fn_0054E3D0(void* self) {
         ret
     }
 }
+
+// [0x00547B70] sub_00547B70 (43 bytes)
+extern "C" int mem_00955D14;
+extern "C" int mem_009254CC;
+
+extern "C" __declspec(naked) void __fastcall fn_00547B70(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x24]
+        cmp byte ptr [eax], 0
+        jne done
+        fldz
+        sub esp, 0x10
+        fst dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x8]
+        fld1
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [mem_00955D14]
+        fstp dword ptr [esp]
+        call dword ptr [mem_009254CC]
+done:
+        ret
+    }
+}
