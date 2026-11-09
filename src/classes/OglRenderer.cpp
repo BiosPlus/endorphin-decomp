@@ -141,3 +141,12 @@ extern "C" __declspec(naked) void __fastcall fn_00536D00(void* self) {
         ret
     }
 }
+
+// [0x00536D40] OglRenderer::vfunc_6 (42 bytes)
+extern "C" void __fastcall fn_00536D40(void* self, int edx_unused, float* a1) {
+    char* p = (char*)self;
+    *(float*)(p + 0x1b4) = a1[0];
+    *(float*)(p + 0x1b8) = a1[1];
+    *(float*)(p + 0x1bc) = a1[2];
+    *(float*)(p + 0x1c0) = a1[3];
+}
