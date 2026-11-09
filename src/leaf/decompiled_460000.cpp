@@ -396,3 +396,21 @@ extern "C" void __fastcall fn_00468B30(void* self) {
     void (__fastcall *target)(void*) = (void (__fastcall *)(void*))(*(void***)obj)[0];
     target(obj);
 }
+
+extern "C" void ext_004AEC10();
+
+// [0x00469000] sub_00469000 (25 bytes)
+// Loads this->[0x2c] as the callee's `this`, pushes this->[0x60] and the two stack args, calls sub_004AEC10, then returns popping 8 bytes.
+extern "C" __declspec(naked) void __fastcall fn_00469000(void* self, int edx_unused, void* a0, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov edx, dword ptr [esp + 4]
+        push eax
+        mov eax, dword ptr [ecx + 0x60]
+        mov ecx, dword ptr [ecx + 0x2c]
+        push edx
+        push eax
+        call ext_004AEC10
+        ret 8
+    }
+}
