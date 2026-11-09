@@ -120,3 +120,20 @@ L_0071C316:
         ret
     }
 }
+
+// [0x00711DC0] sub_00711DC0 (32 bytes)
+extern "C" void ext_0071E680();
+extern "C" __declspec(naked) void __fastcall fn_00711DC0(void* self, int edx_unused, int a1) {
+    __asm {
+        call ext_0071E680
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr [eax + 0xc], ecx
+        ret 4
+        __asm _emit 0x90                    // nop (padding inside the 32-byte unit)
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x04   // mov edx, [esp+4]
+        __asm _emit 0x8B __asm _emit 0x01                                     // mov eax, [ecx]
+        __asm _emit 0x52                                                      // push edx
+        __asm _emit 0xFF __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00  // call [eax+0x90]
+        __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00                    // ret 4
+    }
+}
