@@ -32,3 +32,10 @@ extern "C" __declspec(naked) void __fastcall fn_004CCC60(void* self) {
         jmp ext_0050BE20
     }
 }
+
+// [0x004CA1A0] sub_004CA1A0 (23 bytes)
+extern "C" void ext_004C98C0(void* p, int a, int b);
+
+extern "C" void __cdecl fn_004CA1A0(void* self) {
+    ext_004C98C0(reinterpret_cast<char*>(self) + 0x180, 0, 1);
+}
