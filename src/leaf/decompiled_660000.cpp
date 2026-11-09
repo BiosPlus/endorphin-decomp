@@ -85,3 +85,13 @@ extern "C" __declspec(naked) void __fastcall fn_0066A760(void* self) {
         ret
     }
 }
+
+// [0x00660D40] sub_00660D40 (13 bytes)
+extern "C" void ext_00660A50();
+
+extern "C" void __cdecl fn_00660D40() {
+    typedef int* (__cdecl *GetFn)();
+    GetFn get = (GetFn)ext_00660A50;
+    int* p = get();
+    p[2] = 0;
+}
