@@ -1039,3 +1039,26 @@ extern "C" void __fastcall fn_004658E0(void* self) {
         }
     }
 }
+
+extern "C" void ext_0046FD70();
+
+// [0x00468A00] sub_00468A00 (46 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00468A00(void* self, int edx_unused, void* out) {
+    __asm {
+        cmp byte ptr [ecx + 0x10], 0
+        jne short L_inner
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [eax], 0
+        mov dword ptr [eax + 0x4], 0
+        ret 0x4
+L_inner:
+        mov ecx, dword ptr [ecx + 0x14]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push esi
+        call ext_0046FD70
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
