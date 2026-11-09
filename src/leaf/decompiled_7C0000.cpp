@@ -700,3 +700,25 @@ extern "C" __declspec(naked) int __cdecl fn_007C8850(void* a0, int a1) {
         ret
     }
 }
+
+// [0x007C9E50] sub_007C9E50 (43 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C9E50(void* a0, int a1) {
+    __asm {
+        cmp dword ptr [esp + 0x8], 0x0
+        mov eax, dword ptr [esp + 0x4]
+        jne short L_nonzero
+        cmp dword ptr [eax], 0x0
+        jne short L_nonzero
+        cmp dword ptr [eax + 0x50], 0x0
+        jne short L_nonzero
+        cmp dword ptr [eax + 0x1c], 0x0
+        jne short L_nonzero
+        xor ecx, ecx
+        mov dword ptr [eax + 0x4], ecx
+        ret
+L_nonzero:
+        mov ecx, 0x1
+        mov dword ptr [eax + 0x4], ecx
+        ret
+    }
+}
