@@ -661,3 +661,11 @@ extern "C" void __fastcall fn_00649050(void* self, int edx_unused, float a1) {
         ((void (__thiscall*)(void*, int, double))vtbl[3])(self, i, (double)a1);
     }
 }
+
+// [0x006489A0] sub_006489A0 (39 bytes)
+extern "C" void ext_007C76E0();
+
+extern "C" void __fastcall fn_006489A0(void* self) {
+    char* p = *(char**)((char*)self + 0x28);
+    ((void (__cdecl*)(int, float, float, float))ext_007C76E0)(*(int*)(p + 0x40), *(float*)(p + 0x20), *(float*)(p + 0x24), *(float*)(p + 0x28));
+}
