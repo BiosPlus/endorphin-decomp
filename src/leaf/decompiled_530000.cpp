@@ -3,6 +3,7 @@
 extern "C" int mem_009253D8;
 extern "C" int mem_009253D4;
 extern "C" void ext_0054D2A0();
+extern "C" int mem_00A44B84;
 
 // [0x00532C30] sub_00532C30 (30 bytes)
 extern "C" __declspec(naked) void __fastcall fn_00532C30(void* self) {
@@ -558,5 +559,25 @@ extern "C" __declspec(naked) void __fastcall fn_0053A5E0(void* self, int edx_unu
 skip:
         pop esi
         ret 0x8
+    }
+}
+
+// [0x0053F960] sub_0053F960 (46 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0053F960(void* self) {
+    __asm {
+        mov edx, dword ptr [ecx + 0xc4]
+        sub edx, dword ptr [ecx + 0xbc]
+        mov eax, dword ptr [mem_00A44B84]
+        cmp edx, eax
+        jg short L_0053F988
+        mov edx, dword ptr [ecx + 0xc8]
+        sub edx, dword ptr [ecx + 0xc0]
+        cmp edx, eax
+        jg short L_0053F988
+        xor eax, eax
+        ret
+    L_0053F988:
+        mov eax, 1
+        ret
     }
 }
