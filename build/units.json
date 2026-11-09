@@ -218439,7 +218439,9 @@
       "0x0055E299",
       "0x0055E29F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:11:30Z"
   },
   {
     "va": "0x0055E2B0",

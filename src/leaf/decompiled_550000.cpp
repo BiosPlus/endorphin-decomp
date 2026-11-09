@@ -80,3 +80,12 @@ extern "C" void* __fastcall fn_00551200(void* self, int edx_unused, int a1) {
     *(int*)self = 0x009570dc;
     return self;
 }
+
+// [0x0055E290] sub_0055E290 (25 bytes)
+extern "C" void ext_00401C60();
+extern "C" void* __fastcall fn_0055E290(void* self, int edx_unused, int a1) {
+    typedef void (__fastcall *Callee)(void*, int, int);
+    ((Callee)ext_00401C60)(self, edx_unused, a1);
+    *(int*)self = 0x0095879c;
+    return self;
+}
