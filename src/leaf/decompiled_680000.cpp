@@ -223,3 +223,16 @@ done_00688BE0:
         ret 0x8
     }
 }
+
+// [0x00681140] sub_00681140 (46 bytes)
+extern "C" void ext_006A5C5C(void* p);
+
+extern "C" void __stdcall fn_00681140(void* p) {
+    unsigned int* self = (unsigned int*)p;
+    if (self[1] != 0) {
+        ext_006A5C5C((void*)self[1]);
+    }
+    self[1] = 0;
+    self[2] = 0;
+    self[3] = 0;
+}
