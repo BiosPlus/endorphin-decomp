@@ -1141,3 +1141,27 @@ extern "C" void __fastcall fn_00437330(void* self) {
         ((Callee_00436C60)ext_00436C60)(self);
     }
 }
+
+// [0x00430EB0] sub_00430EB0 (34 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00430EB0(void* self, int edx_unused, void* newObj) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, ecx
+        je store
+        test ecx, ecx
+        je store
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x4]
+        push 1
+        call edx
+store:
+        mov dword ptr [esi], edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
