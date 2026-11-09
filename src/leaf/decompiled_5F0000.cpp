@@ -17,3 +17,22 @@ extern "C" __declspec(naked) void __fastcall fn_005F3570(void* self) {
         ret
     }
 }
+
+// [0x005F5BA0] sub_005F5BA0 (25 bytes)
+extern "C" void ext_005F5240();
+extern "C" void ext_005F5470();
+
+extern "C" __declspec(naked) void __fastcall fn_005F5BA0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_005F5240
+        push eax
+        mov ecx, esi
+        call ext_005F5470
+        pop esi
+        ret 4
+    }
+}
