@@ -22,3 +22,10 @@ extern "C" __declspec(naked) void __fastcall fn_0067F8F0(void* self) {
         ret
     }
 }
+
+// [0x00678100] sub_00678100 (15 bytes)
+extern "C" void ext_00677D10();
+extern "C" void __fastcall fn_00678100(void* self, int edx_unused, int a1) {
+    *(int*)((char*)self + 0x10) = a1;
+    ext_00677D10();
+}
