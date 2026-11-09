@@ -334,3 +334,18 @@ extern "C" __declspec(naked) void __cdecl fn_007C5C00(void* self, const float* s
         ret
     }
 }
+
+// [0x007C5FA0] sub_007C5FA0 (35 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C5FA0(void* a0, float* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x140]
+        mov ecx, dword ptr [esp + 0x8]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 0x144]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [eax + 0x148]
+        fstp dword ptr [ecx + 0x8]
+        ret
+    }
+}
