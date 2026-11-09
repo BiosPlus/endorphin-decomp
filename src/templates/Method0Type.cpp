@@ -320,3 +320,14 @@ extern "C" __declspec(naked) void __fastcall fn_0060A150(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0068BFB0] ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_1 (16 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0068BFB0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call ext_0068BC50
+        fldz
+        ret 0x4
+    }
+}
