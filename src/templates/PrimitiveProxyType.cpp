@@ -127,3 +127,15 @@ extern "C" __declspec(naked) void __fastcall fn_0049DA30(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_0049DA40();
+
+// [0x0049DBE0] ExprParser::PrimitiveProxyType<int>::vfunc_38 (15 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0049DBE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        call ext_0049DA40
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x4], eax
+        ret 0x4
+    }
+}
