@@ -346,3 +346,22 @@ extern "C" void* __fastcall fn_006B16A0(void* self, int edx_unused, int a1) {
     *((unsigned char*)self + 0x70) = 0;
     return self;
 }
+
+// [0x006BB790] sub_006BB790 (31 bytes)
+extern "C" void ext_006D98E0();
+extern "C" __declspec(naked) void __fastcall fn_006BB790(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x4]
+        cmp eax, 0x2
+        jne done_006BB790
+        call ext_006D98E0
+        cmp eax, 0x2
+        je is2_006BB790
+        jmp ext_006D98E0
+    is2_006BB790:
+        mov eax, 0x1
+    done_006BB790:
+        ret
+    }
+}
