@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_7E0000.cpp
 
+#include <math.h>
+
 extern "C" void ext_007C8A50();
 
 // [0x007E4690] sub_007E4690 (21 bytes)
@@ -36,4 +38,12 @@ extern "C" void __cdecl fn_007EFF40(int a1) {
     ((void (__cdecl*)(int))ext_007CA710)(a1);
     ((void (__cdecl*)(int))ext_007CAEF0)(a1);
     ((void (__cdecl*)(int))ext_007CC590)(a1);
+}
+
+// [0x007E4740] sub_007E4740 (44 bytes)
+extern "C" void ext_006A7250();
+
+extern "C" float __fastcall fn_007E4740(float* self) {
+    float s = self[1] * self[1] + self[0] * self[0] + self[2] * self[2];
+    return (float)sqrt(s);
 }
