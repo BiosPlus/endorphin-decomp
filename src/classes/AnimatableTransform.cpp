@@ -36,3 +36,21 @@ extern "C" void* __fastcall fn_0058A3C0(void* self, int edx_unused, int a1) {
     int idx = ((int (__stdcall*)(int))ext_0058A2B0)(a1);
     return (char*)self + idx * 8 + 0xf4;
 }
+
+// [0x00626410] AnimatableTransform::vfunc_4_off_4 (27 bytes)
+extern "C" void ext_00585A80();
+extern "C" __declspec(naked) void* __stdcall fn_00626410(void* a1, void* a2, void* a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push eax
+        push edx
+        push esi
+        call ext_00585A80
+        mov eax, esi
+        pop esi
+        ret 0xc
+    }
+}
