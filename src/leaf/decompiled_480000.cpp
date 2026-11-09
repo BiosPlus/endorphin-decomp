@@ -103,3 +103,21 @@ extern "C" __declspec(naked) void __fastcall fn_0048ABD0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0048CCA0] sub_0048CCA0 (27 bytes)
+extern "C" void ext_0048CB80();
+
+extern "C" __declspec(naked) void __fastcall fn_0048CCA0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push ecx
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        push edx
+        call ext_0048CB80
+        add esp, 0x10
+        ret 0x8
+    }
+}
