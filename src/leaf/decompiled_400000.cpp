@@ -365,3 +365,18 @@ extern "C" __declspec(naked) void __fastcall fn_0040DA90(void* self) {
         ret
     }
 }
+
+// [0x0040F270] sub_0040F270 (28 bytes)
+extern "C" __declspec(naked) int __stdcall fn_0040F270(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        or dword ptr [eax + 0x2c], 0xb
+        call ext_006A5EA8
+        sub eax, -1
+        neg eax
+        sbb eax, eax
+        neg eax
+        sub eax, 1
+        ret 0x4
+    }
+}
