@@ -10,3 +10,11 @@ extern "C" __declspec(naked) void __fastcall fn_00468690(void* self) {
         __asm _emit 0xFF __asm _emit 0xE0 // jmp eax
     }
 }
+
+// [0x00469CB0] VMCSEngine::vfunc_0_off_4 (13 bytes)
+extern "C" void ext_00469530();
+
+extern "C" void __fastcall fn_00469CB0(void* self) {
+    typedef void (__thiscall *Callee)(void* self, int a, int b);
+    ((Callee)ext_00469530)(static_cast<char*>(self) - 4, 5, 0);
+}
