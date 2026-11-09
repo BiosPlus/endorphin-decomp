@@ -167671,7 +167671,9 @@
       "0x005088BC",
       "0x005088C4"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:48:08Z"
   },
   {
     "va": "0x005088D0",
