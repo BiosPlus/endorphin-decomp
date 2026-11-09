@@ -693,3 +693,27 @@ skip_006489F0:
         ret 0x4
     }
 }
+
+// [0x006408C0] sub_006408C0 (45 bytes)
+extern "C" int mem_0092F67C;
+
+extern "C" __declspec(naked) void __fastcall fn_006408C0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0Ch]
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 08h]
+        xor edx, edx
+        cmp ecx, edx
+        jne short L_skip
+        mov ecx, offset mem_0092F67C
+L_skip:
+        mov dword ptr [eax + 4], ecx
+        mov ecx, dword ptr [esp + 04h]
+        mov dword ptr [eax + 8], ecx
+        mov dword ptr [eax + 0Ch], edx
+        mov byte ptr [eax + 10h], dl
+        mov byte ptr [eax + 11h], dl
+        ret 0Ch
+    }
+}
