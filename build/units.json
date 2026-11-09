@@ -569585,7 +569585,9 @@
       "0x007C5B16",
       "0x007C5B1B"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:28:18Z"
   },
   {
     "va": "0x007C5B30",
