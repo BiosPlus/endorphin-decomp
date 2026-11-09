@@ -102,3 +102,22 @@ extern "C" void __fastcall fn_0055D020(void* self) {
         ((Callee2)ext_006A5C5C)(p);
     }
 }
+
+// [0x00553960] sub_00553960 (27 bytes)
+extern "C" void ext_00584C10();
+
+extern "C" __declspec(naked) unsigned char __stdcall fn_00553960(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        test ecx, ecx
+        je return_zero
+        call ext_00584C10
+        test al, al
+        jne return_zero
+        mov al, 1
+        ret 4
+    return_zero:
+        xor al, al
+        ret 4
+    }
+}
