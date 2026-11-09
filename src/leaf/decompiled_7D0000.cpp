@@ -64,3 +64,11 @@ extern "C" void __cdecl fn_007DC840(int a0) {
     typedef void (__cdecl *Fn)(int, int, int);
     ((Fn)ext_007C8A50)(a0, 8, 0x007DC600);
 }
+
+// [0x007D4AF0] sub_007D4AF0 (22 bytes)
+extern "C" void ext_007D4920();
+
+extern "C" void __cdecl fn_007D4AF0(void* a1, void* a2) {
+    typedef void (__cdecl *Fn)(void*, void*, void*);
+    ((Fn)ext_007D4920)(a1, *(void**)a1, a2);
+}
