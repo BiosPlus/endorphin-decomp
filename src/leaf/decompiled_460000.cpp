@@ -604,3 +604,21 @@ extern "C" void __fastcall fn_00468C80(void* self) {
     typedef void (__fastcall *F2)(void*);
     ((F2)vt[0x154 / 4])(o);
 }
+
+extern "C" void ext_00666040();
+
+// [0x00468CA0] sub_00468CA0 (28 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00468CA0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x38]
+        call ext_00666040
+        mov eax, dword ptr [esi + 0x14]
+        mov ecx, dword ptr [eax + 0x30]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x154]
+        pop esi
+        jmp eax
+    }
+}
