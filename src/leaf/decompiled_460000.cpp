@@ -643,3 +643,18 @@ extern "C" __declspec(naked) void __fastcall fn_00468B50(void* self) {
         jmp eax
     }
 }
+
+extern "C" void ext_004AEEA0();
+extern "C" void ext_006AD190();
+
+// [0x00469040] sub_00469040 (28 bytes)
+extern "C" void* __fastcall fn_00469040(void* self) {
+    typedef void (__fastcall *FnA)(void*);
+    typedef void* (__fastcall *FnB)(void*);
+    typedef void* (__fastcall *FnVirt)(void*);
+    char* s = (char*)self;
+    ((FnA)ext_004AEEA0)(*(void**)(s + 0x2c));
+    void* obj = ((FnB)ext_006AD190)(*(void**)(s + 0x14));
+    void** vtbl = *(void***)obj;
+    return ((FnVirt)vtbl[0])(obj);
+}
