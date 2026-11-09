@@ -193,3 +193,15 @@ extern "C" void __fastcall fn_00465950(void* self) {
     char* r = (char*)ext_00594000();
     ext_00493F80(r + 0x258);
 }
+
+extern "C" void ext_00477380();
+
+// [0x004691C0] sub_004691C0 (16 bytes)
+// C++ cannot express "call, then tail-jump with ecx loaded from eax", so use naked asm.
+extern "C" __declspec(naked) void __fastcall fn_004691C0(void* self) {
+    __asm {
+        call ext_00594000                                   // e8 3b ae 12 00
+        mov ecx, dword ptr [eax + 0x26c]                    // 8b 88 6c 02 00 00
+        jmp ext_00477380                                    // e9 b0 e1 00 00
+    }
+}

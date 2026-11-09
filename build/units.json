@@ -62422,7 +62422,9 @@
       "0x004691C1",
       "0x004691CC"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T09:56:15Z"
   },
   {
     "va": "0x004691D0",
