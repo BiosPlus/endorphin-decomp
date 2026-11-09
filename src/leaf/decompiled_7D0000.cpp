@@ -304,3 +304,12 @@ extern "C" int __cdecl fn_007DB060(float* src, float* out_xyz, float* out_w) {
     *out_w = src[0x3c / 4];
     return 1;
 }
+
+// [0x007DB8B0] sub_007DB8B0 (40 bytes)
+extern "C" int __cdecl fn_007DB8B0(float* src, float* out_xyz, float* out_w) {
+    out_xyz[0] = src[0x24 / 4];
+    out_xyz[1] = src[0x28 / 4];
+    out_xyz[2] = src[0x2c / 4];
+    *out_w = src[0x20 / 4];
+    return 1;
+}
