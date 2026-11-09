@@ -176,3 +176,23 @@ extern "C" __declspec(naked) int __fastcall fn_006AD130(void* self, int edx_unus
         __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
     }
 }
+
+// [0x006AD010] sub_006AD010 (33 bytes)
+extern "C" int mem_00924494;
+
+extern "C" __declspec(naked) void* __fastcall fn_006AD010(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp+12]
+        add ecx, 8
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp+8], 0
+        call dword ptr [mem_00924494]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
