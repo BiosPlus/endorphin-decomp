@@ -461,3 +461,25 @@ extern "C" __declspec(naked) int __cdecl fn_00664B20(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x006601E0] sub_006601E0 (38 bytes)
+extern "C" int mem_00B59080;
+extern "C" int mem_00B59084;
+
+extern "C" __declspec(naked) void __fastcall fn_006601E0(void* self) {
+    __asm {
+        push ecx
+        mov dword ptr [ecx], 0x00987730
+        mov eax, dword ptr [mem_00B59080]
+        test eax, eax
+        je done_006601E0
+        mov ecx, dword ptr [mem_00B59084]
+        sub ecx, eax
+        sar ecx, 0x2
+        je done_006601E0
+        sub dword ptr [mem_00B59084], 0x4
+done_006601E0:
+        pop ecx
+        ret
+    }
+}
