@@ -569488,7 +569488,9 @@
       "0x007C5A96",
       "0x007C5A9B"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:26:40Z"
   },
   {
     "va": "0x007C5AB0",
