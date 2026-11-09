@@ -745,3 +745,31 @@ store_arg:
         ret
     }
 }
+
+// [0x007CC5D0] sub_007CC5D0 (43 bytes)
+extern "C" void __cdecl ext_007CC200(void* a0, void* a1);
+
+extern "C" __declspec(naked) void __cdecl fn_007CC5D0(void* a0) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0xb0]
+        mov ecx, dword ptr [eax + 0x8]
+        push 0x10
+        push 0x10
+        call ecx
+        add esp, 0x8
+        test eax, eax
+        je short zero_ret
+        push esi
+        push eax
+        call ext_007CC200
+        add esp, 0x8
+        pop esi
+        ret
+zero_ret:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
