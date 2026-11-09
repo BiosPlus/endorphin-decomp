@@ -393904,7 +393904,9 @@
       "0x006620E8",
       "0x006620F6"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:56:43Z"
   },
   {
     "va": "0x00662100",

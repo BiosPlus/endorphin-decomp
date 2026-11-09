@@ -259,3 +259,23 @@ extern "C" void __fastcall fn_006658D0(void* self) {
         *ecx = eax;
     }
 }
+
+// [0x006620E0] sub_006620E0 (28 bytes)
+extern "C" void ext_00466BA0();
+extern "C" void ext_0065EEB0();
+extern "C" __declspec(naked) void __fastcall fn_006620E0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        push esi
+        call ext_0065EEB0
+        push 0x0
+        push esi
+        lea ecx, [esi + 0x10]
+        mov byte ptr [esi], 0x1
+        call ext_00466BA0
+        pop esi
+        ret
+    }
+}
