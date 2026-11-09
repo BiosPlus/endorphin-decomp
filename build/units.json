@@ -62704,7 +62704,9 @@
       "0x004690C7",
       "0x004690D0"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:39:17Z"
   },
   {
     "va": "0x004690F0",

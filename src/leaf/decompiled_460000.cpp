@@ -733,3 +733,18 @@ extern "C" __declspec(naked) void __fastcall fn_0046E780(void* self, int edx_unu
         ret 0xC
     }
 }
+
+// [0x004690C0] sub_004690C0 (35 bytes)
+extern "C" void* ext_00594000();
+extern "C" unsigned char __fastcall fn_004690C0(void* self) {
+    if (*((unsigned char*)self + 0x10) != 0) {
+        void* a = ext_00594000();
+        if (a != 0) {
+            void* b = ext_00594000();
+            if (*(int*)((unsigned char*)b + 0x270) != 0) {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
