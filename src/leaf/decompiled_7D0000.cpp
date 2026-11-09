@@ -27,3 +27,16 @@ extern "C" void __cdecl fn_007D8570(char* base, int index, float* out) {
     out[1] = src[1];
     out[2] = src[2];
 }
+
+// [0x007D8850] sub_007D8850 (12 bytes)
+extern "C" void ext_007D8420();
+
+extern "C" __declspec(naked) void __cdecl fn_007D8850(int a0, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        push eax
+        call ext_007D8420
+        pop ecx
+        ret
+    }
+}
