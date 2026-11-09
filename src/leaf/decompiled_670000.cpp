@@ -468,3 +468,19 @@ extern "C" void* __fastcall fn_00678890(void* self) {
     *(int*)(esi + 0xC) = 0;
     return self;
 }
+
+extern "C" int mem_00925134;
+
+// [0x00673DD0] sub_00673DD0 (38 bytes)
+extern "C" void* __fastcall fn_00673DD0(void* self) {
+    int* s = (int*)self;
+    void (*invalid_param)() = (void (*)())mem_00925134;
+    if (s[0] == 0) {
+        invalid_param();
+    }
+    int* p = (int*)s[0];
+    if (s[1] == p[1]) {
+        invalid_param();
+    }
+    return (char*)s[1] + 0xC;
+}
