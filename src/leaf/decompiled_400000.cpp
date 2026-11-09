@@ -419,3 +419,13 @@ extern "C" __declspec(naked) void** __fastcall fn_0040A8E0(void** self, int edx_
         ret 0x4
     }
 }
+
+// [0x0040FEA0] sub_0040FEA0 (34 bytes)
+extern "C" void ext_006A5EA8();
+
+extern "C" void __fastcall fn_0040FEA0(void* self, int edx_unused, int a1, int a2, int a3) {
+    int* flag = (int*)((char*)self + 0x54);
+    *flag = (*flag == 0);
+    ext_006A5EA8();
+    *flag = (*flag == 0);
+}
