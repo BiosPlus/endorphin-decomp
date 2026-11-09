@@ -319,3 +319,18 @@ extern "C" void __cdecl fn_007C5BA0(void* a0, const float* a1) {
     *(float*)(self + 0x184) = a1[1];
     *(float*)(self + 0x188) = a1[2];
 }
+
+// [0x007C5C00] sub_007C5C00 (35 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C5C00(void* self, const float* src) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        fld dword ptr [eax]
+        mov ecx, dword ptr [esp + 0x4]
+        fstp dword ptr [ecx + 0x190]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ecx + 0x194]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ecx + 0x198]
+        ret
+    }
+}
