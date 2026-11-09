@@ -255,3 +255,15 @@ extern "C" __declspec(naked) int __cdecl fn_00455F40() {
         ret
     }
 }
+
+// [0x00453FC0] sub_00453FC0 (28 bytes)
+extern "C" void ext_00451180();
+extern "C" void ext_00453620();
+
+extern "C" void __fastcall fn_00453FC0(void* self, int edx_unused, int a1) {
+    typedef unsigned char (__fastcall *Fn1)(void*, int, int);
+    typedef void (__fastcall *Fn2)(void*);
+    if (reinterpret_cast<Fn1>(ext_00451180)(self, edx_unused, a1)) {
+        reinterpret_cast<Fn2>(ext_00453620)(self);
+    }
+}
