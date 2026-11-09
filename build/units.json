@@ -573328,7 +573328,9 @@
       "0x007C885C",
       "0x007C8868"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:27:14Z"
   },
   {
     "va": "0x007C8880",
