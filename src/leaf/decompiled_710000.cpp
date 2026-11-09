@@ -27,3 +27,9 @@ extern "C" __declspec(naked) void __fastcall fn_00711DA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00711A70] sub_00711A70 (15 bytes)
+extern "C" void __stdcall ext_00711CF0(int a1, int a2);
+extern "C" void __stdcall fn_00711A70(int a1) {
+    ext_00711CF0(0x20, a1);
+}
