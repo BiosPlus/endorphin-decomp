@@ -97,3 +97,9 @@ extern "C" void* __stdcall fn_004E9D90(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA3E89C, 0);
 }
+
+// [0x004F4E30] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0>::vfunc_16 (30 bytes)
+extern "C" void* __stdcall fn_004F4E30(void* a1) {
+    typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
+    return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA3F550, 0);
+}

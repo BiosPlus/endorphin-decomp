@@ -153727,7 +153727,9 @@
       "0x004F4E3C",
       "0x004F4E44"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:47:06Z"
   },
   {
     "va": "0x004F4E50",
