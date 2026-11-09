@@ -465,3 +465,24 @@ extern "C" void __cdecl fn_007C9B90(void* self, float a1, float a2, float a3) {
     *(float*)(p + 0x1d0) = a2;
     *(float*)(p + 0x1d4) = a3;
 }
+
+// [0x007C9CD0] sub_007C9CD0 (35 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C9CD0(void* self, float v) {
+    __asm {
+        fldz
+        fld dword ptr [esp + 0x8]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        jne short L_neg
+        mov eax, dword ptr [esp + 0x4]
+        fstp dword ptr [eax + 0x4]
+        ret
+    L_neg:
+        mov ecx, dword ptr [esp + 0x4]
+        fchs
+        fstp dword ptr [ecx + 0x4]
+        ret
+    }
+}
