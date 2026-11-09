@@ -73,3 +73,25 @@ extern "C" __declspec(naked) void __fastcall fn_00545170(void* self) {
         ret
     }
 }
+
+// [0x005453D0] PoseTool::vfunc_18_off_98 (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005453D0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x2b8]
+        cmp eax, 1
+        jne not_one
+        mov ecx, dword ptr [ecx - 0x10]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x9c]
+        jmp eax
+    not_one:
+        cmp eax, 2
+        jne not_two
+        mov ecx, dword ptr [ecx - 0x10]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0xa0]
+        jmp edx
+    not_two:
+        ret 8
+    }
+}
