@@ -59,3 +59,15 @@ extern "C" void __fastcall fn_004E3DC0(void* self) {
         ((void (__cdecl*)(void*))ext_006A5C5C)(esi);
     }
 }
+
+// [0x004E6610] sub_004E6610 (25 bytes)
+extern "C" void __fastcall ext_004E5AE0(void* self);
+extern "C" void ext_006A5C5C();
+
+extern "C" void __fastcall fn_004E6610(void* self) {
+    void* esi = *(void**)self;
+    if (esi) {
+        ext_004E5AE0(esi);
+        ((void (__cdecl*)(void*))ext_006A5C5C)(esi);
+    }
+}
