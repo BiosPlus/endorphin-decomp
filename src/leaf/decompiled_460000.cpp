@@ -360,3 +360,11 @@ extern "C" __declspec(naked) void __fastcall fn_00466220(void* self) {
         jmp ext_004936C0
     }
 }
+
+// [0x0046F860] sub_0046F860 (24 bytes)
+extern "C" float __fastcall ext_00642620(void* self);
+
+extern "C" float __fastcall fn_0046F860(void* self) {
+    float v = ext_00642620(static_cast<char*>(self) + 0xd4);
+    return 1.0f / v;
+}
