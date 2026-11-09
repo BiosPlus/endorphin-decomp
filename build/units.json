@@ -51191,7 +51191,9 @@
       "0x004587A9",
       "0x004587B3"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:06:15Z"
   },
   {
     "va": "0x004587C0",
