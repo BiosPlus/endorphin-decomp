@@ -350,3 +350,15 @@ extern "C" __declspec(naked) void __fastcall fn_006719A0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00676830] sub_00676830 (28 bytes)
+extern "C" void ext_00451670();
+extern "C" void __fastcall fn_00676830(void* self) {
+    typedef void (__thiscall *Callee)(void*, void*);
+    char* p = static_cast<char*>(self);
+    void* inner = *(void**)(p + 0x40);
+    if (inner) {
+        void* slot = p + 4;
+        ((Callee)ext_00451670)(static_cast<char*>(inner) + 4, &slot);
+    }
+}
