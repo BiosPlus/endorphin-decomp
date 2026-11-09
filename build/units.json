@@ -83181,7 +83181,9 @@
       "0x0048B131",
       "0x0048B13D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:14:21Z"
   },
   {
     "va": "0x0048B150",
