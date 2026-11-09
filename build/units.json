@@ -415455,7 +415455,9 @@
       "0x00681CC9",
       "0x00681CCE"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:38:06Z"
   },
   {
     "va": "0x00681CE0",

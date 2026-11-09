@@ -107,3 +107,14 @@ extern "C" __declspec(naked) void* __fastcall fn_00687510(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00681CB0] sub_00681CB0 (35 bytes)
+extern "C" int mem_00B5A230;
+extern "C" int mem_00B5A22C;
+extern "C" void* __cdecl fn_00681CB0() {
+    if (!(mem_00B5A230 & 1)) {
+        mem_00B5A230 |= 1;
+        mem_00B5A22C = 0x0098CC54;
+    }
+    return &mem_00B5A22C;
+}
