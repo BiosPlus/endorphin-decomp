@@ -38,3 +38,11 @@ zero_ret:
         ret
     }
 }
+
+// [0x0050D7A0] sub_0050D7A0 (26 bytes)
+extern "C" int mem_00A9F178;
+extern "C" void __cdecl ext_0050D360(int a, void* b, int c);
+
+extern "C" void __fastcall fn_0050D7A0(void* self, int edx_unused, int a1) {
+    ext_0050D360(a1, (char*)self + 4, mem_00A9F178);
+}

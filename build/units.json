@@ -170773,7 +170773,9 @@
       "0x0050D7A1",
       "0x0050D7B0"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:28:17Z"
   },
   {
     "va": "0x0050D7C0",
