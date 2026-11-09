@@ -219,3 +219,12 @@ L_0063EA50_nonzero:
         ret
     }
 }
+
+// [0x00630480] sub_00630480 (40 bytes)
+extern "C" void __fastcall fn_00630480(void* self, int edx_unused, const float* src) {
+    unsigned char* p = static_cast<unsigned char*>(self);
+    *reinterpret_cast<float*>(p + 0x90) = src[0];
+    *reinterpret_cast<float*>(p + 0x94) = src[1];
+    *reinterpret_cast<float*>(p + 0x98) = src[2];
+    *reinterpret_cast<volatile unsigned char*>(p + 0xf5) = 0;
+}
