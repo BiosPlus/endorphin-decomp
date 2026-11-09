@@ -452977,7 +452977,9 @@
       "0x006B2599",
       "0x006B25A3"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:00:51Z"
   },
   {
     "va": "0x006B25B0",

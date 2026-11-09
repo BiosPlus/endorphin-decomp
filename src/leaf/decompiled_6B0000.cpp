@@ -365,3 +365,20 @@ extern "C" __declspec(naked) void __fastcall fn_006BB790(void* self) {
         ret
     }
 }
+
+// [0x006B2590] sub_006B2590 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006B2590(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_006B0C40
+        mov cl, byte ptr [esp + 0xc]
+        mov dword ptr [esi], 0x991810
+        mov byte ptr [esi + 0x10], cl
+        mov eax, esi
+        pop esi
+        ret 8
+    }
+}
