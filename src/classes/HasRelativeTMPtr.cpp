@@ -21,3 +21,13 @@ extern "C" void __fastcall fn_00532290(void* self, int edx_unused, void* a1) {
     vt = *(void***)a1;
     ((Fn)vt[4])(a1, *(int*)(p + 8));
 }
+
+// [0x005322C0] HasRelativeTMPtr::vfunc_12 (45 bytes)
+extern "C" void __fastcall fn_005322C0(void* self, int edx_unused, void* a1) {
+    unsigned char* p = (unsigned char*)self;
+    typedef void (__thiscall *Fn)(void*, int);
+    void** vt = *(void***)a1;
+    ((Fn)vt[7])(a1, *(int*)(p + 4) + 0x30);
+    vt = *(void***)a1;
+    ((Fn)vt[7])(a1, *(int*)(p + 8) + 0x30);
+}
