@@ -386,3 +386,13 @@ extern "C" __declspec(naked) void* __fastcall fn_00467030(void* self) {
         ret 0x4
     }
 }
+
+// [0x00468B30] sub_00468B30 (24 bytes)
+extern "C" void ext_00468250();
+
+extern "C" void __fastcall fn_00468B30(void* self) {
+    ((void (__fastcall *)(void*))ext_00468250)(self);
+    void* obj = ((void* (__fastcall *)(void*))ext_00468660)(self);
+    void (__fastcall *target)(void*) = (void (__fastcall *)(void*))(*(void***)obj)[0];
+    target(obj);
+}
