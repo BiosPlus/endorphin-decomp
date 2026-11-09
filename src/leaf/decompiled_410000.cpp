@@ -300,3 +300,14 @@ extern "C" void __fastcall fn_0041DCF0(void* self) {
     *(unsigned int*)(p + 0x40) = zero;
     ext_0041D7B0();
 }
+
+// [0x00419960] sub_00419960 (35 bytes)
+extern "C" int mem_00924300;
+extern "C" int mem_00925694;
+extern "C" void __fastcall fn_00419960(void* self) {
+    int* s = (int*)self;
+    if (s[1] != 0) {
+        int r = ((int (__cdecl*)())mem_00924300)();
+        ((int (__stdcall*)(int, int, int, int))mem_00925694)(s[1], 0x466, 1, r);
+    }
+}
