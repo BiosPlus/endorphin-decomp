@@ -47,3 +47,12 @@ extern "C" void ext_007D87D0(void* a, void* b);
 extern "C" void __cdecl fn_007D8400(void* self) {
     ext_007D87D0(*(void**)((char*)self + 0x68), self);
 }
+
+// [0x007D7A30] sub_007D7A30 (20 bytes)
+extern "C" void ext_007F1530();
+extern "C" int mem_00B61F78;
+
+extern "C" int __cdecl fn_007D7A30(void) {
+    ext_007F1530();
+    return (*(char*)&mem_00B61F78 != 0) + 1;
+}
