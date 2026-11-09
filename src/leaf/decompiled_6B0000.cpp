@@ -603,3 +603,27 @@ extern "C" void __fastcall fn_006B7330(void* self, int edx_unused, int a1, int a
     char* wnd = (char*)ext_006A5E00(parent);
     ((int (__stdcall*)(void*, unsigned int, int, int))mem_00925694)(*(void**)(wnd + 0x20), (unsigned int)mem_00B5D208, a1, a2);
 }
+
+// [0x006B8190] sub_006B8190 (46 bytes)
+extern "C" void ext_006A5E4E();
+extern "C" __declspec(naked) void __fastcall fn_006B8190(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        lea eax, [ecx + 0x88]
+        test eax, eax
+        je done
+        cmp dword ptr [eax + 0x20], 0x0
+        je done
+        mov edx, dword ptr [esp + 0xc]
+        push 0x214
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push edx
+        push 0x0
+        push 0x0
+        push ecx
+        mov ecx, eax
+        call ext_006A5E4E
+done:
+        ret 0xc
+    }
+}
