@@ -520,3 +520,26 @@ extern "C" void* __fastcall fn_00458580(void* self, int edx_unused, int a1, int 
     *(reinterpret_cast<unsigned char*>(self) + 0x14) = 0;
     return self;
 }
+
+// [0x0045B6C0] sub_0045B6C0 (41 bytes)
+extern "C" void ext_006A6820();
+extern "C" __declspec(naked) int __fastcall fn_0045B6C0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        push eax
+        mov dword ptr [esp + 0x8], 0
+        call ext_006A6820
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [esp + 0xc]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0xc]
+        push esi
+        call eax
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
