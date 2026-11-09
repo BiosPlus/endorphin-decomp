@@ -122,3 +122,14 @@ extern "C" __declspec(naked) void __fastcall fn_006ACFE0(void* self) {
         ret 0x4
     }
 }
+
+// [0x006A34B0] sub_006A34B0 (25 bytes)
+extern "C" void ext_00403560();
+
+typedef void (__stdcall *CalleeFn006A34B0)(int);
+
+extern "C" void* __fastcall fn_006A34B0(void* self, int edx_unused, int a1) {
+    ((CalleeFn006A34B0)ext_00403560)(a1);
+    *(int*)self = 0x009904B4;
+    return self;
+}
