@@ -803,3 +803,17 @@ extern "C" __declspec(naked) void __fastcall fn_00460990(void* self) {
         ret
     }
 }
+
+// [0x0046FD70] sub_0046FD70 (36 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0046FD70(void* self, int edx_unused, int* out) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xcc]
+        mov ecx, dword ptr [eax + 0x26c]
+        mov edx, dword ptr [ecx + 0x1e0]
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [ecx + 0x1e4]
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ecx
+        ret 0x4
+    }
+}
