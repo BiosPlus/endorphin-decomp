@@ -95,3 +95,11 @@ extern "C" void __cdecl fn_00660D40() {
     int* p = get();
     p[2] = 0;
 }
+
+// [0x00666200] sub_00666200 (15 bytes)
+extern "C" void ext_00665CA0();
+
+extern "C" void __fastcall fn_00666200(void* self, int edx_unused, int a1) {
+    *(int*)((char*)self + 0x8) = a1;
+    ext_00665CA0();
+}
