@@ -288,3 +288,19 @@ extern "C" void __fastcall fn_00549950(void* self, int edx_unused, float radius,
     void* quadric = *(void**)((char*)self + 0x18);
     ((GluCylinderFn)ext_0063E02A)(quadric, (double)radius, 0.0, (double)height, 8, 1);
 }
+
+// [0x00540549] sub_00540549 (41 bytes)
+extern "C" int mem_0092551C;
+extern "C" int mem_00925428;
+extern "C" int mem_00925438;
+extern "C" __declspec(naked) void __cdecl fn_00540549() {
+    __asm {
+        push 0x1b01
+        push 0x408
+        call dword ptr [mem_0092551C]
+        push 0x405
+        call dword ptr [mem_00925428]
+        mov dword ptr [esp + 4], 0xb44
+        jmp dword ptr [mem_00925438]
+    }
+}

@@ -202879,7 +202879,9 @@
       "0x00540560",
       "0x0054056E"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:16:49Z"
   },
   {
     "va": "0x00540572",
