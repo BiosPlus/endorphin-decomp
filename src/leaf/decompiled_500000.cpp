@@ -222,3 +222,14 @@ extern "C" __declspec(naked) void* __fastcall fn_005007C0(void* self) {
         ret 0x8
     }
 }
+
+// [0x00505CD0] sub_00505CD0 (38 bytes)
+extern "C" void __stdcall fn_00505CD0(void* first, void* last) {
+    if (first != last) {
+        do {
+            void** vt = *(void***)first;
+            ((void (__thiscall*)(void*, int))vt[0])(first, 0);
+            first = (char*)first + 0x28;
+        } while (first != last);
+    }
+}
