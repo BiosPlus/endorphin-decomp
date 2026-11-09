@@ -72,3 +72,15 @@ extern "C" void* __cdecl fn_00512950(void) {
     }
     return &mem_00AEBE14;
 }
+
+// [0x005170A0] sub_005170A0 (35 bytes)
+extern "C" int mem_00AEC0CC;
+extern "C" int mem_00AEC0C8;
+
+extern "C" void* __cdecl fn_005170A0(void) {
+    if (!(mem_00AEC0CC & 1)) {
+        mem_00AEC0CC |= 1;
+        mem_00AEC0C8 = 0x951F48;
+    }
+    return &mem_00AEC0C8;
+}
