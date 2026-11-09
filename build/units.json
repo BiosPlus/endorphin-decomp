@@ -330352,7 +330352,9 @@
       "0x0060BBF2",
       "0x0060BC08"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:37:39Z"
   },
   {
     "va": "0x0060BC20",
