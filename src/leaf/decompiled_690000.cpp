@@ -91,3 +91,19 @@ extern "C" __declspec(naked) unsigned char __stdcall fn_00698A70(char** p) {
         ret 4
     }
 }
+
+// [0x0069B560] sub_0069B560 (25 bytes)
+extern "C" void ext_00401C60();
+extern "C" __declspec(naked) void* __fastcall fn_0069B560(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_00401C60
+        mov dword ptr [esi], 0x98fb84
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
