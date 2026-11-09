@@ -48,3 +48,17 @@ extern "C" __declspec(naked) int __cdecl fn_007C8B30(void* a0) {
         ret
     }
 }
+
+// [0x007C8B50] sub_007C8B50 (22 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007C8B50(void* a0) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax + 0x20]
+        push 0x1
+        push ecx
+        mov ecx, dword ptr [eax + 0xc]
+        call ext_007DD0A0
+        movzx eax, al
+        ret
+    }
+}
