@@ -1242,3 +1242,14 @@ extern "C" __declspec(naked) void __fastcall fn_0064F6E0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00650EC0] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{88, {flat}}>::vfunc_41 (37 bytes)
+extern "C" void ext_005F35C0();
+
+extern "C" void __fastcall fn_00650EC0(void* self, void* edx_unused, void** a1, void** a2) {
+    void* obj = *a1;
+    void** p = (void**)a2[1];
+    typedef float (__thiscall *VFn)(void*, void**);
+    typedef void (__thiscall *ExtFn)(void*, float);
+    ((ExtFn)ext_005F35C0)(obj, ((VFn)(*(void***)p)[1])(p, a2));
+}
