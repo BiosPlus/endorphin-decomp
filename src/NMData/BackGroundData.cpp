@@ -74,3 +74,13 @@ extern "C" __declspec(naked) void __fastcall fn_005A9880(void* self) {
         ret 0x4
     }
 }
+
+// [0x0059DB70] NMData::BackGroundData::vfunc_23_off_4 (38 bytes)
+extern "C" int mem_0093BED0;
+extern "C" int mem_0093BEDC;
+typedef void* (__thiscall *AssignCStrF)(void* self, const char* s);
+extern "C" AssignCStrF mem_00924FD4;
+extern "C" void __fastcall fn_0059DB70(void* self, int edx_unused, int a1) {
+    mem_00924FD4(static_cast<char*>(self) + 0x14, reinterpret_cast<const char*>(mem_0093BED0));
+    mem_00924FD4(static_cast<char*>(self) + 0x30, reinterpret_cast<const char*>(mem_0093BEDC));
+}
