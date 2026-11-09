@@ -301,3 +301,24 @@ extern "C" __declspec(naked) void __fastcall fn_00627450(void* self) {
         ret
     }
 }
+
+// [0x00622290] sub_00622290 (41 bytes)
+extern "C" int mem_00976FC4;
+extern "C" __declspec(naked) void __fastcall fn_00622290(void* self) {
+    __asm {
+        fldz
+        mov eax, ecx
+        fst dword ptr [eax + 0x4]
+        mov dword ptr [eax], offset mem_00976FC4
+        fst dword ptr [eax + 0x8]
+        fst dword ptr [eax + 0xc]
+        fst dword ptr [eax + 0x10]
+        fst dword ptr [eax + 0x14]
+        fst dword ptr [eax + 0x18]
+        fst dword ptr [eax + 0x1c]
+        fst dword ptr [eax + 0x20]
+        fst dword ptr [eax + 0x24]
+        fstp dword ptr [eax + 0x28]
+        ret
+    }
+}
