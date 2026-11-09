@@ -914,3 +914,16 @@ extern "C" __declspec(naked) void __cdecl fn_007C1F60(void* self, unsigned int v
         ret
     }
 }
+
+// [0x007CC4E0] sub_007CC4E0 (47 bytes)
+extern "C" void __cdecl fn_007CC4E0(int unused, const float* src, float* dst) {
+    if (src) {
+        dst[0] = src[8];
+        dst[1] = src[9];
+        dst[2] = src[10];
+    } else {
+        dst[0] = 0.0f;
+        dst[1] = 0.0f;
+        dst[2] = 1.0f;
+    }
+}
