@@ -451027,7 +451027,9 @@
       "0x006AFDAA",
       "0x006AFDB2"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:51:58Z"
   },
   {
     "va": "0x006AFDC0",
