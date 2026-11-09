@@ -713,3 +713,23 @@ extern "C" void __fastcall fn_00465910(void* self) {
     int r = ((int (__thiscall*)(void*))(*(void**)&mem_00924300))((void*)0x00AD6CF4);
     ((void (__thiscall*)(void*, int))vtbl[0x58 / 4])(self, r);
 }
+
+// [0x0046E780] sub_0046E780 (34 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0046E780(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0xC]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0xC]
+        push edx
+        push esi
+        mov dword ptr [esp + 0xC], 0x0
+        call eax
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xC
+    }
+}
