@@ -229,3 +229,9 @@ extern "C" void* __stdcall fn_005E3560(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA2FBBC, 0);
 }
+
+// [0x005E3950] ExprParser::ReadMethodType<NMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void* __stdcall fn_005E3950(void* a1) {
+    typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
+    return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA8F54C, 0);
+}

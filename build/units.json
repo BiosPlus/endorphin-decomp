@@ -301335,7 +301335,9 @@
       "0x005E395C",
       "0x005E3964"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:55:30Z"
   },
   {
     "va": "0x005E3970",
