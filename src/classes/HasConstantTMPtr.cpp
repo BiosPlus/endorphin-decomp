@@ -28,3 +28,20 @@ extern "C" __declspec(naked) void __fastcall fn_00532200(void* self) {
         jmp edx
     }
 }
+
+extern "C" void ext_004F9950();
+
+// [0x0053A6A0] HasConstantTMPtr::vfunc_1 (20 bytes)
+// Loads ecx = this->+0x4, forwards arg1 to sub_004F9950 (ret 0x4), returns arg1 in eax.
+extern "C" __declspec(naked) void __fastcall fn_0053A6A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push esi
+        call ext_004F9950
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
