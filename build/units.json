@@ -376338,7 +376338,9 @@
       "0x00648EF8",
       "0x00648EFE"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:55:08Z"
   },
   {
     "va": "0x00648F10",
