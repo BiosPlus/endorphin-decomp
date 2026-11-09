@@ -441,3 +441,23 @@ extern "C" __declspec(naked) int __fastcall fn_006629B0(void* self) {
         ret
     }
 }
+
+// [0x00664B20] sub_00664B20 (37 bytes)
+// Returns strstr(a1->c_str(), a2->c_str()) != NULL as a bool in al; both args are std::string*.
+extern "C" int mem_00924FF0;
+extern "C" int mem_00925240;
+extern "C" __declspec(naked) int __cdecl fn_00664B20(void* a1, void* a2) {
+    __asm {
+        mov ecx, dword ptr [esp + 8]
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [esp + 4]
+        push eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_00925240]
+        add esp, 0x8
+        test eax, eax
+        setne al
+        ret
+    }
+}
