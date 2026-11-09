@@ -521,3 +521,23 @@ extern "C" __declspec(naked) void __fastcall fn_00413990(void* self) {
         jmp dword ptr [mem_00924F9C]
     }
 }
+
+// [0x00413C40] sub_00413C40 (40 bytes)
+extern "C" int mem_00924F48;
+extern "C" __declspec(naked) void __fastcall fn_00413C40(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea eax, [esi + 0x44]
+        push eax
+        mov dword ptr [esi], 0x92c230
+        call dword ptr [mem_009242E4]
+        mov ecx, dword ptr [esi + 0x3c]
+        push ecx
+        call ext_006A5C5C
+        add esp, 4
+        mov ecx, esi
+        pop esi
+        jmp dword ptr [mem_00924F48]
+    }
+}
