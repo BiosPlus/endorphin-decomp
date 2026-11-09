@@ -118,3 +118,30 @@ extern "C" unsigned int __cdecl fn_00528CD0(unsigned int x) {
     return ((x & 0x000000FFu) << 24) | ((x & 0x0000FF00u) << 8) |
            ((x & 0x00FF0000u) >> 8) | ((x & 0xFF000000u) >> 24);
 }
+
+// [0x00528D30] sub_00528D30 (42 bytes)
+extern "C" void ext_00528CC0();
+
+extern "C" __declspec(naked) void __cdecl fn_00528D30() {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        xor ecx, ecx
+        test esi, esi
+        jle done
+        mov edx, dword ptr [esp + 0x8]
+        _emit 0x90
+    loop_top:
+        movzx eax, word ptr [edx + 2*ecx]
+        push eax
+        call ext_00528CC0
+        mov word ptr [edx + 2*ecx], ax
+        add ecx, 1
+        add esp, 4
+        cmp ecx, esi
+        jl loop_top
+    done:
+        pop esi
+        ret
+    }
+}
