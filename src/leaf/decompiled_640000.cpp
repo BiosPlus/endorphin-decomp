@@ -266,3 +266,10 @@ extern "C" void __cdecl fn_00641F80(int a1) {
     ext_00641F10(a1);
     ext_00641E90(a1);
 }
+
+// [0x0064DC20] sub_0064DC20 (23 bytes)
+extern "C" void ext_007C5A40(int a1, float a2);
+
+extern "C" void __fastcall fn_0064DC20(void* self, int edx_unused, float a1) {
+    ext_007C5A40(*(int*)((char*)self + 0x64), a1);
+}
