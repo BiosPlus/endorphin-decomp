@@ -119377,7 +119377,9 @@
       "0x004C1A8D",
       "0x004C1A94"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:48:35Z"
   },
   {
     "va": "0x004C1AA0",

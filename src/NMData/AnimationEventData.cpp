@@ -53,3 +53,21 @@ extern "C" __declspec(naked) void __fastcall fn_004BFBE0(void* self) {
         ret
     }
 }
+
+extern "C" int mem_00924FDC;
+
+// [0x004C1A80] NMData::AnimationEventData::vfunc_23 (28 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004C1A80(void* self, int edx_unused, const void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esi + 14h]
+        call dword ptr [mem_00924FDC]
+        mov ecx, esi
+        call ext_004C0340
+        pop esi
+        ret 4
+    }
+}
