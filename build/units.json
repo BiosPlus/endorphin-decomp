@@ -412655,7 +412655,9 @@
     "relocations": [
       "0x0067E121"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:44:04Z"
   },
   {
     "va": "0x0067E130",
