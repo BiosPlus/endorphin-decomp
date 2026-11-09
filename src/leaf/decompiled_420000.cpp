@@ -266,3 +266,18 @@ extern "C" void __fastcall fn_00421DB0(void* self, int edx_unused, const char* a
     ((AssignFn)mem_00924FD4)(str, "");
     ((AppendFn)mem_00924FD8)(str, a1);
 }
+
+// [0x00425E30] sub_00425E30 (38 bytes)
+extern "C" void* __fastcall fn_00425E30(void* self) {
+    void (__cdecl *inv)() = (void (__cdecl*)())mem_00925134;
+    char* s = (char*)self;
+    if (*(char**)s == 0) {
+        inv();
+    }
+    char* hdr = *(char**)s;
+    if (!(*(unsigned*)(s + 4) < *(unsigned*)(hdr + 8))) {
+        inv();
+    }
+    *(unsigned*)(s + 4) += 4;
+    return self;
+}
