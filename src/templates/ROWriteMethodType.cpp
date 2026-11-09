@@ -54,3 +54,18 @@ extern "C" __declspec(naked) void __fastcall fn_004FDB20(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0059EB40] ExprParser::ROWriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>::vfunc_16 (30 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0059EB40(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push 0xa2fb54
+        push 0xa2e2f8
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        ret 4
+    }
+}
