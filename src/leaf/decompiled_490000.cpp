@@ -154,3 +154,24 @@ extern "C" void __fastcall fn_0049CF40(void* self) {
         *(void**)q = p;
     }
 }
+
+// [0x004936C0] sub_004936C0 (29 bytes)
+// Zeroes self->[0], [+8], [+0xC], [+0x10], calls sub_00493370 (ecx = this), then tail-jumps to sub_00492610 with ecx = this.
+extern "C" void ext_00493370();
+extern "C" void ext_00492610();
+
+extern "C" __declspec(naked) void __fastcall fn_004936C0(void* self) {
+    __asm {
+        xor eax, eax
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi], eax
+        mov dword ptr [esi + 0x8], eax
+        mov dword ptr [esi + 0xc], eax
+        mov dword ptr [esi + 0x10], eax
+        call ext_00493370
+        mov ecx, esi
+        pop esi
+        jmp ext_00492610
+    }
+}
