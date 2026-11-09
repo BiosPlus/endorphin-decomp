@@ -96,3 +96,24 @@ extern "C" void __fastcall fn_004EF8B0(void* self) {
         *q = p;
     }
 }
+
+// [0x004EFDB0] sub_004EFDB0 (28 bytes)
+extern "C" void ext_00451670();
+
+extern "C" __declspec(naked) void __fastcall fn_004EFDB0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx + 0x48]
+        test eax, eax
+        je done
+        add ecx, 4
+        mov dword ptr [esp], ecx
+        lea ecx, [esp]
+        push ecx
+        lea ecx, [eax + 4]
+        call ext_00451670
+done:
+        pop ecx
+        ret
+    }
+}
