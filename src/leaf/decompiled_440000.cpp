@@ -826,3 +826,28 @@ done:
         ret
     }
 }
+
+// [0x0044C2A0] sub_0044C2A0 (37 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0044C2A0() {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 8]
+        cmp ecx, edx
+        mov eax, dword ptr [esp + 0xc]
+        je done
+        push esi
+    loop_top:
+        test eax, eax
+        je skip_store
+        mov esi, dword ptr [ecx]
+        mov dword ptr [eax], esi
+    skip_store:
+        add ecx, 4
+        add eax, 4
+        cmp ecx, edx
+        jne loop_top
+        pop esi
+    done:
+        ret
+    }
+}
