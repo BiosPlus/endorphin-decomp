@@ -322,3 +322,28 @@ extern "C" void __fastcall fn_00419DF0(void* self, int edx_unused, int a1) {
     int hwnd = *(int*)((char*)self + 0x20);
     ((FnSendMessageA)mem_00925694)(hwnd, 0x466, 1, v);
 }
+
+// [0x0041A070] sub_0041A070 (35 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_0041A070(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je short L_0041A082
+        cmp eax, dword ptr [edi]
+        je short L_0041A088
+L_0041A082:
+        call dword ptr [mem_00925134]
+L_0041A088:
+        mov eax, dword ptr [esi + 0x4]
+        sub eax, dword ptr [edi + 0x4]
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
