@@ -432,3 +432,22 @@ extern "C" void* __fastcall fn_00537E90(void** self) {
     ((QuadricArgFn)ext_0063E00C)(*self, 0x186a0);
     return self;
 }
+
+// [0x00533FB0] sub_00533FB0 (39 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00533FB0(void* self, int edx_unused, float* out) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [eax]
+        mov dword ptr [esp], 0x0
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [ecx + 0x10]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [ecx + 0x14]
+        fstp dword ptr [eax + 0xc]
+        pop ecx
+        ret 0x4
+    }
+}
