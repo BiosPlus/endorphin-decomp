@@ -251719,7 +251719,9 @@
       "0x0059C785",
       "0x0059C78A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:02:15Z"
   },
   {
     "va": "0x0059C7A0",

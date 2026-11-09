@@ -124,3 +124,22 @@ L_059E06D:
         jmp ext_00492550
     }
 }
+
+// [0x0059C770] sub_0059C770 (33 bytes)
+extern "C" void ext_00599C40();
+extern "C" void ext_0059C150();
+extern "C" __declspec(naked) void __fastcall fn_0059C770(void* self, int edx_unused, int a1) {
+    __asm {
+        mov edx, dword ptr [ecx + 0xf4]
+        mov eax, dword ptr [esp + 0x4]
+        cmp edx, eax
+        je short L_059C78E
+        mov dword ptr [esp + 0x4], eax
+        jge short L_059C789
+        jmp ext_00599C40
+L_059C789:
+        jmp ext_0059C150
+L_059C78E:
+        ret 0x4
+    }
+}
