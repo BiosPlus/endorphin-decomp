@@ -26035,7 +26035,9 @@
       "0x004303F5",
       "0x004303FC"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:15:44Z"
   },
   {
     "va": "0x00430410",
