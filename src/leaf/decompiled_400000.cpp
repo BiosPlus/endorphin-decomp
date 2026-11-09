@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_400000.cpp
 
+#include <string>
+
 // [0x00401B60] sub_00401B60 (27 bytes)
 extern "C" int mem_00928ECC;
 extern "C" int mem_00924FF4;
@@ -551,4 +553,34 @@ extern "C" void* __fastcall fn_00403530(Dec403530Cursor* self) {
     }
     self->off += 0x1c;
     return self;
+}
+
+// [0x0040E1A0] sub_0040E1A0 (39 bytes)
+// Fill [first, last) with copies of *value (std::string elements, 0x1c bytes each).
+// Each element is assigned via the MSVCP80 import slot (operator=), matching the original call.
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __cdecl fn_0040E1A0(void* first, void* last, const void* value) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+loop_top:
+        push ebx
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        add esi, 0x1c
+        cmp esi, edi
+        jne loop_top
+        pop ebx
+done:
+        pop edi
+        pop esi
+        ret
+    }
 }
