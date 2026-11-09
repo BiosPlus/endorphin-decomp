@@ -170,3 +170,12 @@ extern "C" void* __fastcall fn_00538EE0(void* self) {
     *(void**)self = (void*)&mem_00955114;
     return self;
 }
+
+// [0x0053B7E0] sub_0053B7E0 (18 bytes)
+extern "C" int mem_00955714;
+extern "C" void ext_00532B60();
+extern "C" void* __fastcall fn_0053B7E0(void* self) {
+    ext_00532B60();
+    *(void**)self = (void*)&mem_00955714;
+    return self;
+}
