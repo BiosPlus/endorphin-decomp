@@ -84,3 +84,10 @@ extern "C" int mem_00AAC134;
 extern "C" void __cdecl fn_006C9600() {
     ext_006C99D0(0, 0, mem_00AAC134);
 }
+
+// [0x006C9610] sub_006C9610 (16 bytes)
+extern "C" int mem_00AAC138;
+
+extern "C" void __cdecl fn_006C9610() {
+    ext_006C99D0(0, 0, mem_00AAC138);
+}
