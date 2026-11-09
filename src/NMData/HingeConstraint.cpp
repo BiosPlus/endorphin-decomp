@@ -41,3 +41,28 @@ done:
         ret 8
     }
 }
+
+// [0x00611740] NMData::HingeConstraint::vfunc_67 (47 bytes)
+extern "C" __declspec(naked) float __fastcall fn_00611740(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0xc
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        cmp esi, 1
+        jge done
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x110]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+        fld dword ptr [eax + 4*esi]
+        pop esi
+        add esp, 0xc
+        ret 4
+    done:
+        fldz
+        pop esi
+        add esp, 0xc
+        ret 4
+    }
+}
