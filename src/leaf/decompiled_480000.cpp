@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_480000.cpp
 
+#include <string>
+
 // [0x004806E0] sub_004806E0 (31 bytes)
 extern "C" void ext_004A57F0();
 
@@ -359,5 +361,31 @@ extern "C" __declspec(naked) void __fastcall fn_0048E2E0(void* self, int edx_unu
         mov eax, esi
         pop esi
         ret 0x8
+    }
+}
+
+// [0x00486BB0] sub_00486BB0 (45 bytes)
+extern "C" void ext_004C0340();
+extern "C" int mem_00924FEC;
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void __fastcall fn_00486BB0(void* self, int edx_unused, const void* s) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        mov ecx, edi
+        call dword ptr [mem_00924FEC]
+        test al, al
+        jne short done_00486BB0
+        push edi
+        lea ecx, [esi + 0x180]
+        call dword ptr [mem_00924FDC]
+        mov ecx, esi
+        call ext_004C0340
+done_00486BB0:
+        pop edi
+        pop esi
+        ret 0x4
     }
 }
