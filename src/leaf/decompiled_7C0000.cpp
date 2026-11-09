@@ -543,3 +543,15 @@ extern "C" __declspec(naked) void __cdecl fn_007C9340(void* a0, int a1, float* a
         ret
     }
 }
+
+// [0x007CBB50] sub_007CBB50 (36 bytes)
+// Zeroes the float triple at arg2[0..2], stores (p[5] + p[4]) to *arg3 where p = arg1
+// (floats at +0x10 and +0x14), and returns 1.
+extern "C" int __cdecl fn_007CBB50(void* a0, float* a1, float* a2) {
+    float* p = (float*)a0;
+    a1[2] = 0.0f;
+    a1[1] = 0.0f;
+    a1[0] = 0.0f;
+    a2[0] = p[5] + p[4];
+    return 1;
+}
