@@ -269,3 +269,14 @@ extern "C" __declspec(naked) float __stdcall fn_005C61E0(void* a1) {
         ret 0x4
     }
 }
+
+// [0x005C61F0] ExprParser::Method0Type<NMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}>::vfunc_2 (16 bytes)
+extern "C" __declspec(naked) int __stdcall fn_005C61F0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call ext_005C3170
+        xor eax, eax
+        ret 0x4
+    }
+}
