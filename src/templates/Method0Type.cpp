@@ -364,3 +364,14 @@ extern "C" __declspec(naked) void __stdcall fn_0048B050(void* a1) {
         ret 0x4
     }
 }
+
+// [0x0048B060] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>::vfunc_2 (16 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0048B060(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call ext_0048A9F0
+        xor eax, eax
+        ret 0x4
+    }
+}
