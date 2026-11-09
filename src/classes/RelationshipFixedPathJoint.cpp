@@ -18,3 +18,11 @@ extern "C" void __fastcall fn_00659DD0(void* self, int edx_unused, int a1, int a
     ((void (__fastcall*)(void*))ext_00645A00)(self);
     ((void (__fastcall*)(void*))ext_00493D90)((char*)self + 0x64);
 }
+
+// [0x00659DF0] RelationshipFixedPathJoint::vfunc_55 (22 bytes)
+extern "C" void ext_007C9EF0();
+
+extern "C" void __fastcall fn_00659DF0(unsigned char* self, int edx_unused, int a1) {
+    int v = *(int*)(self + 0x64);
+    ((void (__cdecl*)(int, int, int))ext_007C9EF0)(v, 0, a1);
+}
