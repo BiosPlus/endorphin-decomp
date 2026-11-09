@@ -437,3 +437,26 @@ extern "C" __declspec(naked) void __stdcall fn_00594520(void* self, void* a1) {
         ret 8
     }
 }
+
+extern "C" void ext_0064F8E0();
+
+// [0x005F35D0] ExprParser::WriteMethodType<EffectorGroup, float, &[thunk]: __thiscall EffectorGroup::`vcall'{92, {flat}}>::vfunc_41 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005F35D0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_0064F8E0
+        pop esi
+        ret 8
+    }
+}
