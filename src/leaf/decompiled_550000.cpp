@@ -121,3 +121,18 @@ extern "C" __declspec(naked) unsigned char __stdcall fn_00553960(void* self) {
         ret 4
     }
 }
+
+// [0x00554CE0] sub_00554CE0 (27 bytes)
+extern "C" void ext_005530B0();
+extern "C" __declspec(naked) void __fastcall fn_00554CE0(void* self) {
+    __asm {
+        fld dword ptr [esp + 0x4]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_005530B0
+        fmul dword ptr [ecx + 0x20]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret 0x4
+    }
+}
