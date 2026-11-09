@@ -68,3 +68,14 @@ extern "C" __declspec(naked) void __cdecl fn_0085D510(void) {
         ret
     }
 }
+
+// [0x0085BEA0] sub_0085BEA0 (32 bytes)
+extern "C" void __cdecl ext_00859730(void* p);
+
+extern "C" void __cdecl fn_0085BEA0(void* self) {
+    void** s = static_cast<void**>(self);
+    if (s[1] != 0) {
+        ext_00859730(s[1]);
+    }
+    ext_00859730(self);
+}
