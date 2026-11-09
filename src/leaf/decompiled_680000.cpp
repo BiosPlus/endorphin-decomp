@@ -41,3 +41,12 @@ extern "C" __declspec(naked) void __fastcall fn_006829E0(void* self) {
         ret
     }
 }
+
+// [0x006824C0] sub_006824C0 (22 bytes)
+extern "C" void ext_00674150();
+extern "C" void __fastcall fn_006824C0(void* self, int edx_unused, int a1) {
+    typedef int* (__thiscall *Callee)(void* self, int a1);
+    Callee callee = reinterpret_cast<Callee>(&ext_00674150);
+    int* result = callee(static_cast<char*>(self) + 4, a1);
+    *result = 1;
+}
