@@ -159,3 +159,20 @@ extern "C" __declspec(naked) void __fastcall fn_006A9340(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006AD130] sub_006AD130 (29 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006AD130(void* self, int edx_unused, int a1) {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x04 // mov edx, dword ptr [esp + 0x4]
+        call ext_006ACFD0
+        __asm _emit 0x8B __asm _emit 0xC8 // mov ecx, eax
+        __asm _emit 0x85 __asm _emit 0xC9 // test ecx, ecx
+        __asm _emit 0x74 __asm _emit 0x04 // je L_006AD143
+        __asm _emit 0x3B __asm _emit 0xD1 // cmp edx, ecx
+        __asm _emit 0x75 __asm _emit 0xF1 // jne L_006AD134
+        __asm _emit 0x33 __asm _emit 0xC0 // xor eax, eax
+        __asm _emit 0x3B __asm _emit 0xD1 // cmp edx, ecx
+        __asm _emit 0x0F __asm _emit 0x94 __asm _emit 0xC0 // sete al
+        __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00 // ret 0x4
+    }
+}
