@@ -800,3 +800,26 @@ extern "C" void __cdecl fn_007C9B30(char* dst, const float* src) {
     d[2] = s[2];
     d[3] = s[3];
 }
+
+// [0x007CA8A0] sub_007CA8A0 (44 bytes)
+extern "C" int mem_0092C510;
+
+extern "C" __declspec(naked) void __cdecl fn_007CA8A0(float* a0, float* a1, float* a2, float* a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x10]
+        mov ecx, dword ptr [esp + 0x8]
+        fld qword ptr [mem_0092C510]
+        mov edx, dword ptr [esp + 0xc]
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 0x14]
+        fmul st, st(1)
+        fstp dword ptr [edx]
+        fmul dword ptr [eax + 0x18]
+        mov eax, dword ptr [esp + 0x10]
+        fstp dword ptr [eax]
+        ret
+    }
+}
