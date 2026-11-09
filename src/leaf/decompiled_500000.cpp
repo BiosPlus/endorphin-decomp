@@ -111,3 +111,27 @@ extern "C" int* __cdecl fn_0050A170() {
     }
     return &mem_00AEBCA4;
 }
+
+// [0x0050EE70] sub_0050EE70 (36 bytes)
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_0050EE70(void* self, int edx_unused, void* first, void* last) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done
+        mov edi, edi
+    loop_top:
+        mov ecx, esi
+        call dword ptr [mem_00924FF4]
+        add esi, 0x20
+        cmp esi, edi
+        jne loop_top
+    done:
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
