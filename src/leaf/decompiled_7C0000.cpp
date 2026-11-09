@@ -79,3 +79,21 @@ extern "C" int __cdecl fn_007C8B70(void* self) {
         *(void**)((char*)self + 0x0C), *(int*)((char*)self + 0x20));
     return !r;
 }
+
+// [0x007C97A0] sub_007C97A0 (25 bytes)
+extern "C" void ext_007C9260();
+
+extern "C" __declspec(naked) void __cdecl fn_007C97A0(void* self, int value) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push ecx
+        call ext_007C9260
+        add esp, 0x4
+        test eax, eax
+        jne short L_skip_007C97A0
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0x44], eax
+    L_skip_007C97A0:
+        ret
+    }
+}
