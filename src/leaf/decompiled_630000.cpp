@@ -195,3 +195,27 @@ extern "C" __declspec(naked) void* __fastcall fn_0063E240(void* self) {
         ret 8
     }
 }
+
+// [0x0063EA50] sub_0063EA50 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0063EA50(void* self) {
+    __asm {
+        mov edx, dword ptr [ecx + 28h]
+        test edx, edx
+        jne short L_0063EA50_nonzero
+        xor eax, eax
+        xor ecx, ecx
+        test eax, eax
+        sete cl
+        mov al, cl
+        ret
+L_0063EA50_nonzero:
+        mov eax, dword ptr [ecx + 2ch]
+        sub eax, edx
+        sar eax, 2
+        xor ecx, ecx
+        test eax, eax
+        sete cl
+        mov al, cl
+        ret
+    }
+}
