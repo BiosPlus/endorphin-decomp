@@ -112,3 +112,11 @@ extern "C" int __cdecl fn_007CC200(int a0, int a1) {
     ext_007CC8E0(a0, a1, 3);
     return a0;
 }
+
+// [0x007C5A50] sub_007C5A50 (26 bytes)
+extern "C" int mem_00993828;
+extern "C" void ext_006A6EAA();
+#include <math.h>
+extern "C" void __cdecl fn_007C5A50(void* self, float a1) {
+    *(float*)((char*)self + 0x1ac) = (float)cos((double)a1 * *(double*)&mem_00993828);
+}
