@@ -976,3 +976,26 @@ extern "C" void __stdcall fn_00464710(int a1) {
         }
     }
 }
+
+extern "C" void ext_00462A60();
+
+// [0x00462D10] sub_00462D10 (43 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00462D10(void* self, int edx_unused, int a1) {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x83 __asm _emit 0xE8 __asm _emit 0x01 // sub eax, 0x1
+        __asm _emit 0x74 __asm _emit 0x19 // je +0x19
+        __asm _emit 0x83 __asm _emit 0xE8 __asm _emit 0x01 // sub eax, 0x1
+        __asm _emit 0x75 __asm _emit 0x0F // jne +0x0F
+        __asm _emit 0x8B __asm _emit 0x49 __asm _emit 0x08 // mov ecx, dword ptr [ecx + 0x8]
+        __asm _emit 0x85 __asm _emit 0xC9 // test ecx, ecx
+        __asm _emit 0x74 __asm _emit 0x08 // je +0x08
+        call ext_00462A60
+        ret 0x4
+        __asm _emit 0x32 __asm _emit 0xC0 // xor al, al
+        ret 0x4
+        __asm _emit 0x8B __asm _emit 0x41 __asm _emit 0x0C // mov eax, dword ptr [ecx + 0xc]
+        __asm _emit 0x8A __asm _emit 0x40 __asm _emit 0x18 // mov al, byte ptr [eax + 0x18]
+        ret 0x4
+    }
+}
