@@ -39,3 +39,10 @@ extern "C" void ext_004C98C0(void* p, int a, int b);
 extern "C" void __cdecl fn_004CA1A0(void* self) {
     ext_004C98C0(reinterpret_cast<char*>(self) + 0x180, 0, 1);
 }
+
+// [0x004CEA10] sub_004CEA10 (23 bytes)
+extern "C" int __stdcall ext_004CE7B0(int value);
+
+extern "C" void __fastcall fn_004CEA10(void* self, int edx_unused, int a1) {
+    *reinterpret_cast<int*>(reinterpret_cast<char*>(self) + 0x180) = ext_004CE7B0(a1);
+}
