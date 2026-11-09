@@ -451,3 +451,29 @@ extern "C" __declspec(naked) void* __fastcall fn_00533FB0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x005356C0] sub_005356C0 (39 bytes)
+// cdecl(first, last, dest): n = last - first; if n > 0, memmove_s(dest, n, first, n); returns dest + n.
+extern "C" int mem_009251EC;
+extern "C" __declspec(naked) void* __cdecl fn_005356C0(void* a1, void* a2, void* a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0xc]
+        sub eax, ecx
+        test eax, eax
+        push esi
+        lea esi, [eax + edx]
+        jle skip_copy
+        push eax
+        push ecx
+        push eax
+        push edx
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+    skip_copy:
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
