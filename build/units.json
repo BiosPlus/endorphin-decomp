@@ -235493,7 +235493,9 @@
       "0x00584BD8",
       "0x00584BDF"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:15:24Z"
   },
   {
     "va": "0x00584C00",

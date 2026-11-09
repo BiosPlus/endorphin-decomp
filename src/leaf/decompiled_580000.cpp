@@ -142,3 +142,26 @@ extern "C" __declspec(naked) void* __fastcall fn_00584A10(void* self) {
         ret
     }
 }
+
+// [0x00584BD0] sub_00584BD0 (34 bytes)
+extern "C" int mem_00924FC8;
+extern "C" __declspec(naked) void* __fastcall fn_00584BD0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        lea edi, [esi + 0x4c]
+        push 0x928b5d
+        push edi
+        call dword ptr [mem_00924FC8]
+        add esp, 8
+        test al, al
+        mov eax, edi
+        jne short done_00584BD0
+        lea eax, [esi + 0x14]
+    done_00584BD0:
+        pop edi
+        pop esi
+        ret
+    }
+}
