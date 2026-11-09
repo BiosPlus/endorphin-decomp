@@ -963,3 +963,16 @@ extern "C" __declspec(naked) void __fastcall fn_0046FBE0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00464710] sub_00464710 (42 bytes)
+extern "C" void __fastcall ext_00431320(void* self);
+extern "C" int mem_00ACDB40;
+
+extern "C" void __stdcall fn_00464710(int a1) {
+    if (*(int*)(a1 + 4) == 0x100 && *(int*)(a1 + 8) == 0x1b) {
+        void* self = (void*)mem_00ACDB40;
+        if (*((unsigned char*)self + 0xf6) != 0) {
+            ext_00431320(self);
+        }
+    }
+}
