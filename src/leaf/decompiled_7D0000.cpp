@@ -56,3 +56,11 @@ extern "C" int __cdecl fn_007D7A30(void) {
     ext_007F1530();
     return (*(char*)&mem_00B61F78 != 0) + 1;
 }
+
+// [0x007DC840] sub_007DC840 (21 bytes)
+extern "C" void ext_007C8A50();
+
+extern "C" void __cdecl fn_007DC840(int a0) {
+    typedef void (__cdecl *Fn)(int, int, int);
+    ((Fn)ext_007C8A50)(a0, 8, 0x007DC600);
+}
