@@ -347500,7 +347500,9 @@
       "0x006227B7",
       "0x006227C7"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:17:25Z"
   },
   {
     "va": "0x006227E0",
