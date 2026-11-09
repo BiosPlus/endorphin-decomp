@@ -143,3 +143,12 @@ extern "C" void __fastcall fn_0040BC10(void* self) {
     typedef void (__fastcall *Fn)(void*);
     ((Fn)vtbl[0x168 / 4])(self);
 }
+
+// [0x0040D4E0] sub_0040D4E0 (23 bytes)
+extern "C" void ext_0040C050();
+extern "C" void* __fastcall fn_0040D4E0(void* self) {
+    typedef void (__thiscall *Fn)(void*, int);
+    ((Fn)ext_0040C050)(self, 0x24f);
+    *(unsigned int*)self = 0x92b1ac;
+    return self;
+}

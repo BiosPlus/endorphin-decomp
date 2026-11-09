@@ -7421,7 +7421,9 @@
       "0x0040D4E9",
       "0x0040D4EF"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:41:20Z"
   },
   {
     "va": "0x0040D500",
