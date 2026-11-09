@@ -904,3 +904,25 @@ extern "C" __declspec(naked) void __fastcall fn_004609C0(void* self) {
         ret
     }
 }
+
+// [0x004691D0] sub_004691D0 (37 bytes)
+// Stack args are forwarded to the callee in reversed push order, so use naked asm.
+extern "C" void ext_004773B0();
+extern "C" void* ext_00594000();
+
+extern "C" __declspec(naked) void __fastcall fn_004691D0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi                                            // 56
+        call ext_00594000                                   // e8 2a ae 12 00
+        mov esi, dword ptr [eax + 0x26c]                    // 8b b0 6c 02 00 00
+        mov eax, dword ptr [esp + 0xc]                      // 8b 44 24 0c
+        mov ecx, dword ptr [esp + 0x8]                      // 8b 4c 24 08
+        push eax                                            // 50
+        push ecx                                            // 51
+        mov ecx, esi                                        // 8b ce
+        call ext_004773B0                                   // e8 c3 e1 00 00
+        mov byte ptr [esi + 0x4], 0x1                       // c6 46 04 01
+        pop esi                                             // 5e
+        ret 0x8                                             // c2 08 00
+    }
+}
