@@ -281,3 +281,21 @@ extern "C" void* __fastcall fn_00425E30(void* self) {
     *(unsigned*)(s + 4) += 4;
     return self;
 }
+
+// [0x004276D0] sub_004276D0 (46 bytes)
+extern "C" int mem_00925134;
+
+extern "C" int __fastcall fn_004276D0(void* self) {
+    typedef void (*invalid_fn)(void);
+    unsigned int* s = (unsigned int*)self;
+    invalid_fn bad = (invalid_fn)mem_00925134;
+    if (s[1] == 0) {
+        bad();
+    }
+    unsigned int* c = (unsigned int*)s[1];
+    unsigned int pos = s[2];
+    if (pos >= c[2]) {
+        bad();
+    }
+    return *(int*)s[2];
+}
