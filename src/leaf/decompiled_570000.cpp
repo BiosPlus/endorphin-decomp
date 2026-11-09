@@ -33,3 +33,16 @@ extern "C" unsigned int __fastcall fn_00577480(void* self) {
     if (edi >= p[2]) inv();
     return edi;
 }
+
+// [0x00574F10] sub_00574F10 (43 bytes)
+extern "C" int mem_00925094;
+
+extern "C" void __fastcall fn_00574F10(void* self, int edx_unused, void* os) {
+    typedef void* (__thiscall *write_fn)(void*, const char*, int);
+    char c = 0;
+    int n = 0x20;
+    do {
+        (*(write_fn*)&mem_00925094)(os, &c, 1);
+        n--;
+    } while (n != 0);
+}
