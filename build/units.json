@@ -395601,7 +395601,9 @@
       "0x00662ECA",
       "0x00662ED9"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:10:52Z"
   },
   {
     "va": "0x00662EF0",

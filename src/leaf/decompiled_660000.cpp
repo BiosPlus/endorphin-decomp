@@ -492,3 +492,16 @@ extern "C" char* __fastcall fn_0066A950(void* self, int edx_unused, int a1, int 
     (*(char**)self)[a2 + 1] = 0;
     return (*(char**)self) + a1;
 }
+
+// [0x00662EC0] sub_00662EC0 (40 bytes)
+extern "C" int mem_0092425C;
+extern "C" int mem_00924258;
+
+extern "C" int __cdecl fn_00662EC0(void* path) {
+    typedef unsigned long (__stdcall *GetAttrFn)(void*);
+    typedef int (__stdcall *SetAttrFn)(void*, unsigned long);
+    unsigned long attr = ((GetAttrFn)mem_0092425C)(path);
+    unsigned long newattr = attr | 1;
+    ((SetAttrFn)mem_00924258)(path, newattr);
+    return newattr != attr;
+}
