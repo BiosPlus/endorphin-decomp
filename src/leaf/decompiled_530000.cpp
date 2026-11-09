@@ -581,3 +581,30 @@ extern "C" __declspec(naked) int __fastcall fn_0053F960(void* self) {
         ret
     }
 }
+
+// [0x00539800] sub_00539800 (47 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00539800(float* first, float* last, float* dst) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 8]
+        cmp ecx, edx
+        mov eax, dword ptr [esp + 0xc]
+        je done
+    loop_top:
+        test eax, eax
+        je skip
+        fld dword ptr [ecx]
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 4]
+        fstp dword ptr [eax + 4]
+        fld dword ptr [ecx + 8]
+        fstp dword ptr [eax + 8]
+    skip:
+        add ecx, 0xc
+        add eax, 0xc
+        cmp ecx, edx
+        jne loop_top
+    done:
+        ret
+    }
+}
