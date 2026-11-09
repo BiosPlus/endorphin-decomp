@@ -448404,7 +448404,9 @@
     "relocations": [
       "0x006AD153"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:33:21Z"
   },
   {
     "va": "0x006AD170",

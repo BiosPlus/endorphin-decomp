@@ -70,3 +70,22 @@ extern "C" void* __fastcall fn_006A3FF0(void* self) {
     ((CalleeFn006A3FF0)ext_006A3FA0)(0);
     return self;
 }
+
+// [0x006AD150] sub_006AD150 (21 bytes)
+extern "C" void ext_006ACFD0();
+
+extern "C" __declspec(naked) int __fastcall fn_006AD150(void* self) {
+    __asm {
+        __asm _emit 0x33 __asm _emit 0xD2 // xor edx, edx
+    L_006AD152:
+        call ext_006ACFD0
+        __asm _emit 0x8B __asm _emit 0xC8 // mov ecx, eax
+        __asm _emit 0x85 __asm _emit 0xC9 // test ecx, ecx
+        __asm _emit 0x74 __asm _emit 0x05 // je L_006AD162
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x01 // add edx, 1
+        __asm _emit 0xEB __asm _emit 0xF0 // jmp L_006AD152
+    L_006AD162:
+        __asm _emit 0x8B __asm _emit 0xC2 // mov eax, edx
+        __asm _emit 0xC3                  // ret
+    }
+}
