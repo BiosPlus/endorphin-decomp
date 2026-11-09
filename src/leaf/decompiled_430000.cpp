@@ -434,3 +434,11 @@ extern "C" __declspec(naked) void __fastcall fn_00435B30(void* self) {
         jmp ext_004339D0
     }
 }
+
+// [0x004339B0] sub_004339B0 (24 bytes)
+extern "C" void __fastcall fn_004339B0(void* self, int edx_unused, int a1) {
+    *(int*)((char*)self + 0x100) = a1;
+    void* ecx_val = *(void**)((char*)self + 0x108);
+    typedef void (__fastcall *CalleeFn)(void*);
+    ((CalleeFn)ext_0045D270)(ecx_val);
+}
