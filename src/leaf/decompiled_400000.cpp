@@ -440,3 +440,21 @@ extern "C" void __fastcall fn_004026B0(void* self, int edx_unused, void* first, 
         p += 0x1c;
     }
 }
+
+// [0x004031E0] sub_004031E0 (36 bytes)
+extern "C" void ext_00558920();
+extern "C" int mem_009242F4;
+
+extern "C" __declspec(naked) void __fastcall fn_004031E0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea ecx, [esi + 0x478]
+        mov dword ptr [esi], 0x00929364
+        mov dword ptr [esi + 0x4], 0x0092935C
+        call dword ptr [mem_009242F4]
+        mov ecx, esi
+        pop esi
+        jmp ext_00558920
+    }
+}
