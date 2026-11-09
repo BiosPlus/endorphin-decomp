@@ -11,3 +11,8 @@ extern "C" __declspec(naked) void __fastcall fn_004816E0(void* self) {
         ret
     }
 }
+
+// [0x004816F0] Commands::BufferTransformsCommand::vfunc_2 (10 bytes)
+extern "C" void __fastcall fn_004816F0(void* self) {
+    // TODO: implement
+}
