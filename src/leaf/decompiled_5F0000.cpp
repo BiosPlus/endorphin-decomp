@@ -49,3 +49,19 @@ extern "C" void __fastcall fn_005F53E0(void* self, int edx_unused, const float* 
         sub[0x4] = 1;
     }
 }
+
+// [0x005F5670] sub_005F5670 (44 bytes)
+extern "C" int mem_00B40640;
+
+extern "C" void __fastcall fn_005F5670(void* self, int edx_unused, const float* src) {
+    (void)edx_unused;
+    char* p = (char*)self;
+    char* obj = *(char**)(p + 0x4);
+    typedef char* (__thiscall *Fn)(void*, int);
+    Fn fn = *(Fn*)(obj + 0xc);
+    char* dst = fn(p + 0x4, mem_00B40640);
+    dst += 0x30;
+    *(float*)(dst + 0x0) = src[0];
+    *(float*)(dst + 0x4) = src[1];
+    *(float*)(dst + 0x8) = src[2];
+}
