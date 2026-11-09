@@ -130,3 +130,10 @@ extern "C" void* __fastcall fn_004F2870(void* self, int edx_unused, void* a1, vo
     *(void**)self = (void*)0x94c69c;
     return self;
 }
+
+// [0x004F2DE0] sub_004F2DE0 (32 bytes)
+extern "C" void* __fastcall fn_004F2DE0(void* self, int edx_unused, void* a1, void* a2) {
+    ((Init8Fn)ext_004F9800)(self, a1, a2);
+    *(void**)self = (void*)0x94c99c;
+    return self;
+}
