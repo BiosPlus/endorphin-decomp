@@ -280,3 +280,29 @@ extern "C" __declspec(naked) void __cdecl fn_00480C70(void* dst, void* end, cons
         ret
     }
 }
+
+// [0x00489320] sub_00489320 (42 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_00489320(void* self, int edx_unused, int* out) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov dword ptr [edi], 0x0
+        jbe skip_call
+        call dword ptr [mem_00925134]
+skip_call:
+        mov dword ptr [edi], esi
+        mov dword ptr [edi + 0x4], ebx
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
