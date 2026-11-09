@@ -142,3 +142,10 @@ extern "C" int __fastcall fn_00489570(void* self, int edx_unused, void* a1) {
     ((void (__fastcall*)(void*))ext_004CA560)(obj);
     return 0;
 }
+
+// [0x0048B190] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}>::vfunc_1 (16 bytes)
+extern "C" float __stdcall fn_0048B190(void* a1) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_0048ABF0)(obj);
+    return 0.0f;
+}
