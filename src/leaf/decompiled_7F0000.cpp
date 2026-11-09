@@ -114,3 +114,15 @@ extern "C" __declspec(naked) void __fastcall fn_007F0B30(void* self) {
         ret
     }
 }
+
+// [0x007F6850] sub_007F6850 (48 bytes)
+extern "C" void __cdecl fn_007F6850(void* a, void* b) {
+    unsigned char* A = (unsigned char*)a;
+    unsigned char* B = (unsigned char*)b;
+    *(int*)(A + 0x4) = *(int*)(B + 0x8);
+    *(int*)((unsigned char*)*(int*)(B + 0x8) + 0xc) = *(int*)(B + 0xc);
+    *(int*)((unsigned char*)*(int*)(B + 0xc) + 0x8) = *(int*)(B + 0x8);
+    *(int*)(B + 0x8) = *(int*)(A + 0x8);
+    *(int*)(A + 0xc) -= 1;
+    *(int*)(A + 0x8) = (int)b;
+}
