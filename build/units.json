@@ -47469,7 +47469,9 @@
       "0x0045323A",
       "0x00453242"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:55:49Z"
   },
   {
     "va": "0x00453250",
