@@ -773,3 +773,11 @@ zero_ret:
         ret
     }
 }
+
+// [0x007C59F0] sub_007C59F0 (44 bytes)
+extern "C" void __cdecl fn_007C59F0(char* self, float* out) {
+    out[0] = *(float*)(self + 0x170);
+    out[1] = *(float*)(self + 0x174);
+    out[2] = *(float*)(self + 0x178);
+    out[3] = *(float*)(self + 0x17c);
+}
