@@ -298,3 +298,14 @@ extern "C" __declspec(naked) void __stdcall fn_0060A070(void* a1) {
         ret 0x4
     }
 }
+
+// [0x0060A080] ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>::vfunc_3 (16 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0060A080(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call ext_00493D90
+        xor al, al
+        ret 0x4
+    }
+}
