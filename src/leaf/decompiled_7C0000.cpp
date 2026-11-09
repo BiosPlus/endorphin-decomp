@@ -62,3 +62,12 @@ extern "C" __declspec(naked) int __cdecl fn_007C8B50(void* a0) {
         ret
     }
 }
+
+// [0x007C8730] sub_007C8730 (22 bytes)
+extern "C" void __cdecl ext_007C8690(void* a0);
+extern "C" void __cdecl ext_007C8700(void* a0);
+
+extern "C" void __cdecl fn_007C8730(void* a0) {
+    ext_007C8700(a0);
+    ext_007C8690(a0);
+}
