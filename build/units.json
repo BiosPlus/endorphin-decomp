@@ -199934,7 +199934,9 @@
       "0x0053BA25",
       "0x0053BA2D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:05:28Z"
   },
   {
     "va": "0x0053BA40",
