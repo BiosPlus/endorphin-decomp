@@ -24,3 +24,17 @@ extern "C" __declspec(naked) unsigned char __stdcall fn_0067A6E0(void* self, int
         ret 0x8
     }
 }
+
+// [0x0067A700] ExprParser::BoolType::vfunc_35 (19 bytes)
+extern "C" void ext_00698ED0();
+
+extern "C" __declspec(naked) void __stdcall fn_0067A700(void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        push ecx
+        mov ecx, dword ptr [esp + 0xc]
+        call ext_00698ED0
+        ret 0x8
+    }
+}
