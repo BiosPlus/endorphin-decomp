@@ -481,3 +481,34 @@ extern "C" __declspec(naked) void __cdecl fn_00481770(void* dst, int count, cons
         ret
     }
 }
+
+// [0x0048A120] sub_0048A120 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0048A120(void* first, void* last) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp eax, edi
+        je done
+        push esi
+        lea esi, [eax + 0x4]
+loop_top:
+        cmp dword ptr [esi], 0x0
+        je skip
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esi - 0x4]
+        push edx
+        call eax
+skip:
+        add esi, 0x8
+        lea ecx, [esi - 0x4]
+        cmp ecx, edi
+        jne loop_top
+        pop esi
+done:
+        pop edi
+        ret
+    }
+}
