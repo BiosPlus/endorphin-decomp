@@ -543,3 +543,14 @@ extern "C" void __fastcall fn_00434A90(void* self) {
         ext_006A5C5C(esi);
     }
 }
+
+// [0x00434A70] sub_00434A70 (25 bytes)
+extern "C" void __fastcall ext_0041DE30(void* self);
+
+extern "C" void __fastcall fn_00434A70(void* self) {
+    void* esi = *(void**)self;
+    if (esi) {
+        ext_0041DE30(esi);
+        ext_006A5C5C(esi);
+    }
+}
