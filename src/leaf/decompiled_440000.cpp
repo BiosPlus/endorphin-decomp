@@ -366,3 +366,11 @@ extern "C" __declspec(naked) int __cdecl fn_004410C0() {
         ret
     }
 }
+
+// [0x00444490] sub_00444490 (18 bytes)
+extern "C" void ext_0045C820();
+extern "C" int mem_00A9F414;
+extern "C" void __fastcall fn_00444490(void* self) {
+    typedef void (__thiscall *FnT)(void*, int);
+    ((FnT)ext_0045C820)((char*)self + 0x15c, mem_00A9F414);
+}
