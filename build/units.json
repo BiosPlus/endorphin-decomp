@@ -42084,7 +42084,9 @@
       "0x00449D17",
       "0x00449D1F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:25:34Z"
   },
   {
     "va": "0x00449D30",
