@@ -91,3 +91,30 @@ extern "C" int mem_00AAC138;
 extern "C" void __cdecl fn_006C9610() {
     ext_006C99D0(0, 0, mem_00AAC138);
 }
+
+// [0x006C9A60] sub_006C9A60 (47 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C9A60(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx]
+        or edx, eax
+        mov eax, dword ptr [ecx + 0x10]
+        inc eax
+        mov dword ptr [ecx], edx
+        mov edx, dword ptr [ecx + 0x8]
+        mov dword ptr [ecx + 0x10], eax
+        mov eax, dword ptr [esp + 0x8]
+        cmp eax, edx
+        jl store_lo
+        cmp edx, -1
+        jne check_hi
+store_lo:
+        mov dword ptr [ecx + 0x8], eax
+check_hi:
+        cmp eax, dword ptr [ecx + 0xc]
+        jle done
+        mov dword ptr [ecx + 0xc], eax
+done:
+        ret 0x8
+    }
+}
