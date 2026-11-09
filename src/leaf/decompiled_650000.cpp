@@ -28,3 +28,10 @@ extern "C" __declspec(naked) void __fastcall fn_0065C5E0(void* self) {
         ret
     }
 }
+
+// [0x0065B0F0] sub_0065B0F0 (11 bytes)
+extern "C" void ext_007CCDF0(int value);
+
+extern "C" void __fastcall fn_0065B0F0(void* self) {
+    ext_007CCDF0(*(int*)((char*)self + 0x34));
+}
