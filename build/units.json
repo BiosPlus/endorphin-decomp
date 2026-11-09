@@ -110678,7 +110678,9 @@
       "0x004B4729",
       "0x004B472E"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:30:33Z"
   },
   {
     "va": "0x004B4740",
