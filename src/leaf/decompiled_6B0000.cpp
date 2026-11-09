@@ -502,3 +502,27 @@ extern "C" void* __fastcall fn_006B0CA0(void* self) {
     vp[0x64 / 4] = 0x92a254;
     return self;
 }
+
+// [0x006B7D90] sub_006B7D90 (42 bytes)
+extern "C" void ext_006A5F4A();
+
+extern "C" __declspec(naked) void __fastcall fn_006B7D90(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea eax, [esi + 0x74]
+        push eax
+        lea ecx, [esi + 0x88]
+        call ext_006A5F4A
+        cmp dword ptr [esi + 0x1a4], 0
+        je done
+        mov ecx, dword ptr [esi + 0x1a4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        push esi
+        call eax
+    done:
+        pop esi
+        ret
+    }
+}
