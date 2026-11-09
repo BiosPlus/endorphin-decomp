@@ -389,3 +389,17 @@ extern "C" void __cdecl fn_007C6220(char* self, float a, float b, float c) {
     *(float*)(self + 0x144) = b;
     *(float*)(self + 0x148) = c;
 }
+
+// [0x007C62B0] sub_007C62B0 (35 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C62B0(void* a0, float a1, float a2, float a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0xb0]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [eax + 0xb4]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [eax + 0xb8]
+        ret
+    }
+}
