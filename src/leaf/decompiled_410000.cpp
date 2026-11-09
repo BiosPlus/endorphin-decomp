@@ -368,3 +368,29 @@ extern "C" __declspec(naked) int __fastcall fn_0041CEB0(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x00414880] sub_00414880 (38 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_00414880(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je short L_00414892
+        cmp eax, dword ptr [edi]
+        je short L_00414898
+L_00414892:
+        call dword ptr [mem_00925134]
+L_00414898:
+        mov eax, dword ptr [esi + 0x4]
+        sub eax, dword ptr [edi + 0x4]
+        pop edi
+        sar eax, 3
+        pop esi
+        ret 0x4
+    }
+}
