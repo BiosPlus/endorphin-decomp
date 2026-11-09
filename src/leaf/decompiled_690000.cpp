@@ -209,3 +209,29 @@ extern "C" __declspec(naked) void* __fastcall fn_006997E0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00698A40] sub_00698A40 (40 bytes)
+extern "C" __declspec(naked) unsigned char* __cdecl fn_00698A40(void* a1, const unsigned char* src, void* a3, const unsigned char* end, unsigned char* dst) {
+    __asm {
+        mov ecx, dword ptr [esp + 8]
+        mov edx, dword ptr [esp + 14h]
+        push esi
+        mov esi, dword ptr [esp + 14h]
+        sub edx, ecx
+        cmp ecx, esi
+        push edi
+        lea edi, [edx + esi]
+        je done
+    loop_top:
+        mov al, byte ptr [ecx]
+        mov byte ptr [edx + ecx], al
+        add ecx, 1
+        cmp ecx, esi
+        jne loop_top
+    done:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
