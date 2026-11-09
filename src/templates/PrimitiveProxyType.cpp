@@ -185,3 +185,15 @@ extern "C" bool __fastcall fn_004B7A50(void* self, int edx_unused, void* a1) {
     float v = *p;
     return (double)v >= *(double*)&mem_009433D8;
 }
+
+// [0x004B7B20] ExprParser::PrimitiveProxyType<float>::vfunc_41 (34 bytes)
+// Two stack arguments. obj = a2->m_ptr; r = obj->vtbl[1](a2) (thiscall, returns float);
+// stores r through the float* held in the first field of a1.
+extern "C" void __fastcall fn_004B7B20(void* self, int edx_unused, void* a1, void* a2) {
+    void* obj = *(void**)((char*)a2 + 0x4);
+    void** vtbl = *(void***)obj;
+    typedef float (__thiscall *SlotFn)(void*, void*);
+    float r = ((SlotFn)vtbl[1])(obj, a2);
+    float* p = *(float**)a1;
+    *p = r;
+}
