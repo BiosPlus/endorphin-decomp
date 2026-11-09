@@ -584,3 +584,27 @@ done:
         ret
     }
 }
+
+// [0x0040B220] sub_0040B220 (41 bytes)
+// Returns " " + s via hidden sret pointer (a1); ecx slot is saved and zeroed as in the original.
+extern "C" int mem_00924FCC;
+extern "C" int mem_0092AB78;
+
+extern "C" __declspec(naked) void* __fastcall fn_0040B220(void* self, int edx_unused, void* a1, const void* a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push offset mem_0092AB78
+        push esi
+        mov dword ptr [esp + 0x10], 0x0
+        call dword ptr [mem_00924FCC]
+        add esp, 0xc
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
