@@ -234,3 +234,19 @@ extern "C" void* __fastcall fn_005B6C80(void* self, int edx_unused, void* a1) {
     }
     return p + 0x200;
 }
+
+// [0x005B6850] sub_005B6850 (43 bytes)
+extern "C" void ext_00647E00();
+
+extern "C" float* __fastcall fn_005B6850(void* self, int edx_unused, float* out) {
+    typedef float* (__thiscall *Fn)(void*, float*);
+    out[2] = 0.0f;
+    out[1] = 0.0f;
+    out[0] = 0.0f;
+    void* p = *(void**)((char*)self + 0x158);
+    if (p) {
+        void* q = *(void**)((char*)p + 0xac);
+        ((Fn)ext_00647E00)(q, out);
+    }
+    return out;
+}
