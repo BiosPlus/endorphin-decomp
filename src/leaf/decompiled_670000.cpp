@@ -255,3 +255,14 @@ extern "C" void __fastcall fn_006752B0(void* self) {
         ext_006A5C5C(p);
     }
 }
+
+// [0x0067B120] sub_0067B120 (25 bytes)
+extern "C" void __fastcall ext_0067B090(void* self);
+extern "C" void __cdecl ext_006A5C5C(void* p);
+extern "C" void __fastcall fn_0067B120(void* self) {
+    void* p = *(void**)self;
+    if (p) {
+        ext_0067B090(p);
+        ext_006A5C5C(p);
+    }
+}
