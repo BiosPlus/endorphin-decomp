@@ -7,3 +7,23 @@ extern "C" void __cdecl fn_007F88D0(int a1, float a2, int a3) {
     typedef void (__cdecl *F)(int, float, int);
     ((F)ext_007F8550)(a1, a2, a3);
 }
+
+// [0x007F0B60] sub_007F0B60 (34 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007F0B60(void* ecx_unused, void* self) {
+    __asm {
+        mov eax, dword ptr [edx + 0x4]
+        mov ecx, dword ptr [edx]
+        push esi
+        lea esi, [eax + 4*eax]
+        lea ecx, [ecx + 4*esi]
+        xor esi, esi
+        mov dword ptr [ecx], esi
+        mov dword ptr [ecx + 0x8], esi
+        mov dword ptr [ecx + 0x4], esi
+        mov dword ptr [ecx + 0x10], esi
+        mov dword ptr [ecx + 0xc], esi
+        add dword ptr [edx + 0x4], 0x1
+        pop esi
+        ret
+    }
+}
