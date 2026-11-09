@@ -10,3 +10,21 @@ extern "C" __declspec(naked) void __cdecl fn_005B6970() {
         ret
     }
 }
+
+// [0x005B67C0] sub_005B67C0 (32 bytes)
+extern "C" void ext_00647F50();
+
+extern "C" __declspec(naked) void __fastcall fn_005B67C0(void* self, int edx_unused, float a1) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x158]
+        test eax, eax
+        je done
+        fld dword ptr [esp + 4]
+        push ecx
+        mov ecx, dword ptr [eax + 0xac]
+        fstp dword ptr [esp]
+        call ext_00647F50
+    done:
+        ret 4
+    }
+}
