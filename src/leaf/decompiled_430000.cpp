@@ -442,3 +442,20 @@ extern "C" void __fastcall fn_004339B0(void* self, int edx_unused, int a1) {
     typedef void (__fastcall *CalleeFn)(void*);
     ((CalleeFn)ext_0045D270)(ecx_val);
 }
+
+// [0x0043DCD0] sub_0043DCD0 (24 bytes)
+extern "C" void ext_0043DC90();
+
+extern "C" __declspec(naked) void __fastcall fn_0043DCD0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x144]
+        test ecx, ecx
+        je done
+        cmp dword ptr [ecx + 0x20], 0
+        je done
+        push -1
+        call ext_0043DC90
+done:
+        ret
+    }
+}
