@@ -256,3 +256,26 @@ extern "C" __declspec(naked) void __fastcall fn_007DEC80(void* self) {
         ret
     }
 }
+
+// [0x007D48F0] sub_007D48F0 (40 bytes)
+extern "C" __declspec(naked) void fn_007D48F0() {
+    __asm {
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [ecx + 0x4]
+        mov dword ptr [eax], edx
+        mov dword ptr [edx + 0x8], eax
+        mov edx, dword ptr [eax + 0x8]
+        mov dword ptr [ecx + 0x8], edx
+        cmp eax, dword ptr [edx + 0x4]
+        jne not_left
+        mov dword ptr [edx + 0x4], ecx
+        mov dword ptr [ecx + 0x4], eax
+        mov dword ptr [eax + 0x8], ecx
+        ret
+    not_left:
+        mov dword ptr [edx], ecx
+        mov dword ptr [ecx + 0x4], eax
+        mov dword ptr [eax + 0x8], ecx
+        ret
+    }
+}
