@@ -612,3 +612,20 @@ extern "C" int __fastcall fn_006618C0(void* self, int edx_unused, int a1, int a2
     f(inner, a1, (char*)self + 4, a2, a3, a4, a5);
     return a1;
 }
+
+// [0x00661AE0] sub_00661AE0 (47 bytes)
+extern "C" void __fastcall fn_00661AE0(void* self) {
+    typedef void (__thiscall *VFn)(void* self);
+    unsigned char* s = (unsigned char*)self;
+    void** a = *(void***)(s + 0x10);
+    VFn f1 = (VFn)(a[3]);
+    f1((char*)self + 0x10);
+    void** b = *(void***)(s + 0x38);
+    VFn f2 = (VFn)(b[3]);
+    f2((char*)self + 0x38);
+    unsigned char* p = *(unsigned char**)(s + 0x4);
+    void* v = **(void***)(p + 0x64);
+    *(unsigned char**)(s + 0x8) = p + 0x60;
+    *(void**)(s + 0xc) = v;
+    s[0] = 1;
+}
