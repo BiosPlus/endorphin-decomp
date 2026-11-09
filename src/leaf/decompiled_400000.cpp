@@ -679,3 +679,32 @@ extern "C" __declspec(naked) int __fastcall fn_0040FD60(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x00408090] sub_00408090 (48 bytes)
+// __cdecl(first, last, dest): n = (last - first) >> 2; dest -= 4*n; if (n > 0) memmove_s(dest, 4*n, first, 4*n); return dest.
+// Naked: the body calls the MSVCR80!memmove_s IAT slot directly, and the original stack/register layout is kept.
+extern "C" int mem_009251EC;
+extern "C" __declspec(naked) void* __cdecl fn_00408090(void* a1, void* a2, void* a3) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov edx, dword ptr [esp + 4]
+        sub eax, edx
+        sar eax, 2
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        lea ecx, [4*eax]
+        sub esi, ecx
+        test eax, eax
+        jle done
+        push ecx
+        push edx
+        push ecx
+        push esi
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+    done:
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
