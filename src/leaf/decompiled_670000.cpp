@@ -454,3 +454,17 @@ extern "C" __declspec(naked) void __fastcall fn_0067ED10(void* self) {
         ret 0x4
     }
 }
+
+extern "C" void ext_00661980();
+extern "C" int mem_0098C254;
+
+// [0x00678890] sub_00678890 (36 bytes)
+extern "C" void* __fastcall fn_00678890(void* self) {
+    unsigned char* esi = (unsigned char*)self;
+    ((void (__fastcall*)(void*))ext_00661980)(self);
+    *(esi + 0x4) = 1;
+    *(int*)(esi + 0x8) = 1;
+    *(int*)esi = (int)&mem_0098C254;
+    *(int*)(esi + 0xC) = 0;
+    return self;
+}
