@@ -32,3 +32,14 @@ extern "C" __declspec(naked) void __fastcall fn_0042FB40(void* self) {
         jmp eax
     }
 }
+
+// [0x0042FB60] sub_0042FB60 (17 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0042FB60(void* self) {
+    __asm {
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0xd4]
+        jmp eax
+    }
+}
