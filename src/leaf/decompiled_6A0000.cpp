@@ -221,3 +221,16 @@ ret0_006A7A90:
         ret
     }
 }
+
+// [0x006A9590] sub_006A9590 (36 bytes)
+extern "C" int mem_00925668;
+
+typedef int (__stdcall *RedrawWindowFn006A9590)(void* hwnd, const void* rect, void* rgn, unsigned int flags);
+
+extern "C" void __fastcall fn_006A9590(char* self, int edx_unused, unsigned char a1) {
+    *(unsigned char*)(self + 0x180) = a1;
+    void* hwnd = *(void**)(self + 0x20);
+    if (hwnd) {
+        ((RedrawWindowFn006A9590)mem_00925668)(hwnd, 0, 0, 0x105);
+    }
+}
