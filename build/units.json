@@ -580513,7 +580513,9 @@
       "0x007EF8F5",
       "0x007EF8FD"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:34:48Z"
   },
   {
     "va": "0x007EF910",
