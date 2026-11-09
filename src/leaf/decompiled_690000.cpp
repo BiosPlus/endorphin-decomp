@@ -107,3 +107,11 @@ extern "C" __declspec(naked) void* __fastcall fn_0069B560(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x0069D4C0] sub_0069D4C0 (25 bytes)
+extern "C" void* __fastcall fn_0069D4C0(void* self, int edx_unused, int a1) {
+    typedef void (__stdcall *callee_t)(int);
+    reinterpret_cast<callee_t>(ext_00401C60)(a1);
+    *reinterpret_cast<unsigned int*>(self) = 0x0098FBDCu;
+    return self;
+}
