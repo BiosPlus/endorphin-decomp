@@ -45,3 +45,21 @@ extern "C" __declspec(naked) void __fastcall fn_0066D0C0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006719E0] ExprParser::Vector3Type::vfunc_28 (28 bytes)
+extern "C" void ext_006715C0();
+
+extern "C" __declspec(naked) void __fastcall fn_006719E0(void* self, int edx_unused, void** a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [eax]
+        push edx
+        push 0x1
+        add ecx, 0x8
+        call ext_006715C0
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [ecx], eax
+        mov eax, ecx
+        ret 0x8
+    }
+}
