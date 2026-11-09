@@ -1817,3 +1817,27 @@ extern "C" void __fastcall fn_00436F30(void* self) {
     p[2] = 0;
     p[3] = 0;
 }
+
+// [0x00436A20] sub_00436A20 (43 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00436A20(void* out, int a1, int* it, int unused, int* last, int* key) {
+    __asm {
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x14]
+        cmp ecx, eax
+        je done
+        mov edx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [edx]
+    loop_top:
+        cmp dword ptr [ecx], edx
+        je done
+        add ecx, 4
+        cmp ecx, eax
+        jne loop_top
+    done:
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 8]
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 4], ecx
+        ret
+    }
+}
