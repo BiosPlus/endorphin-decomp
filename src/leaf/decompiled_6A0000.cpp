@@ -234,3 +234,32 @@ extern "C" void __fastcall fn_006A9590(char* self, int edx_unused, unsigned char
         ((RedrawWindowFn006A9590)mem_00925668)(hwnd, 0, 0, 0x105);
     }
 }
+
+// [0x006A88A0] sub_006A88A0 (36 bytes)
+extern "C" void ext_006A7C10();
+extern "C" void ext_006A7C20();
+
+extern "C" __declspec(naked) int __fastcall fn_006A88A0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        xor edi, edi
+        call ext_006A7C10
+        test eax, eax
+        je L_done
+        nop
+    L_loop:
+        push eax
+        mov ecx, esi
+        add edi, 1
+        call ext_006A7C20
+        test eax, eax
+        jne L_loop
+    L_done:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
