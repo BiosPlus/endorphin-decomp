@@ -471,3 +471,22 @@ extern "C" void __fastcall fn_00403350(void* self) {
     ((ctor_fn)(*(int*)&mem_009242F4))(p + 0x504);
     ((void (__fastcall *)(void*))ext_00558920)(self);
 }
+
+// [0x0040AB30] sub_0040AB30 (36 bytes)
+extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void* __fastcall fn_0040AB30(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x2b4
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call dword ptr [mem_00924FE0]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
