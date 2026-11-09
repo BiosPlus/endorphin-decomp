@@ -72,3 +72,29 @@ L_null:
         ret 0x8
     }
 }
+
+// [0x00789620] sub_00789620 (48 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00789620(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 8]
+        test ecx, ecx
+        je short L_no_inner
+        mov edx, dword ptr [esp + 8]
+        mov eax, dword ptr [ecx]
+        push edx
+        mov edx, dword ptr [esp + 8]
+        push edx
+        call dword ptr [eax + 20h]
+        ret 8
+L_no_inner:
+        mov edx, dword ptr [esp + 8]
+        mov ecx, dword ptr [eax + 14h]
+        push edx
+        mov edx, dword ptr [esp + 8]
+        mov eax, dword ptr [ecx]
+        push edx
+        call dword ptr [eax + 34h]
+        ret 8
+    }
+}
