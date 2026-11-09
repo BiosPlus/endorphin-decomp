@@ -434215,7 +434215,9 @@
       "0x006A34E9",
       "0x006A34EF"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:14:24Z"
   },
   {
     "va": "0x006A3500",

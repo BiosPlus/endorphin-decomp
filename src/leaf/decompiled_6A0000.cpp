@@ -133,3 +133,14 @@ extern "C" void* __fastcall fn_006A34B0(void* self, int edx_unused, int a1) {
     *(int*)self = 0x009904B4;
     return self;
 }
+
+// [0x006A34E0] sub_006A34E0 (25 bytes)
+extern "C" void ext_00401C60();
+
+typedef void (__stdcall *CalleeFn006A34E0)(int);
+
+extern "C" void* __fastcall fn_006A34E0(void* self, int edx_unused, int a1) {
+    ((CalleeFn006A34E0)ext_00401C60)(a1);
+    *(int*)self = 0x009904B4;
+    return self;
+}
