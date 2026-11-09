@@ -294,3 +294,20 @@ done:
         ret
     }
 }
+
+// [0x0040F0B0] sub_0040F0B0 (25 bytes)
+extern "C" void ext_006A5C6E();
+extern "C" void ext_0040EFA0();
+extern "C" __declspec(naked) void* __fastcall fn_0040F0B0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006A5C6E
+        mov ecx, esi
+        mov dword ptr [esi], 0x92b7f4
+        call ext_0040EFA0
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
