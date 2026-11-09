@@ -127,3 +127,33 @@ extern "C" __declspec(naked) float* __stdcall fn_00479A90(float* dst, unsigned i
         ret 0xc
     }
 }
+
+// [0x00476630] sub_00476630 (47 bytes)
+// Constructs the std::string at a1 from a C string s (or empty if s is NULL); returns a1.
+// Stack args (__cdecl, ret 0): a1 at [esp+0x8], s at [esp+0xc] after prologue.
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FE8;
+extern "C" __declspec(naked) void* __cdecl fn_00476630(void* a1, const char* s) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0x0
+        mov ecx, esi
+        je empty_str
+        push eax
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+empty_str:
+        call dword ptr [mem_00924FE8]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
