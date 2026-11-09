@@ -63,3 +63,18 @@ extern "C" __declspec(naked) void __fastcall fn_004E8850(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004E8870] SelectionBuffer::vfunc_16 (24 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004E8870(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x20]
+        call edx
+        push eax
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        call ext_004E8570
+        add esp, 0x8
+        ret 0x4
+    }
+}
