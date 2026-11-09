@@ -50,3 +50,20 @@ extern "C" void __fastcall fn_006824C0(void* self, int edx_unused, int a1) {
     int* result = callee(static_cast<char*>(self) + 4, a1);
     *result = 1;
 }
+
+// [0x006813B0] sub_006813B0 (27 bytes)
+extern "C" void ext_006812A0();
+extern "C" __declspec(naked) void __fastcall fn_006813B0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push ecx
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        push edx
+        call ext_006812A0
+        add esp, 0x10
+        ret 0x8
+    }
+}
