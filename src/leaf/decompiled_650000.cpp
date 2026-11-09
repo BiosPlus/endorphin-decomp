@@ -112,3 +112,13 @@ extern "C" __declspec(naked) void __fastcall fn_0065F260(void* self) {
         jmp ext_0065F1F0
     }
 }
+
+// [0x0065A8C0] sub_0065A8C0 (20 bytes)
+extern "C" void ext_007C6790(int value);
+extern "C" void ext_007C67D0(int value);
+
+extern "C" void __fastcall fn_0065A8C0(void* self) {
+    int value = *(int*)self;
+    ext_007C6790(value);
+    ext_007C67D0(value);
+}
