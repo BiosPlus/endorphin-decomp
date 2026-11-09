@@ -18,3 +18,15 @@ extern "C" __declspec(naked) void __cdecl fn_005220B0() {
         jmp ext_00522080
     }
 }
+
+// [0x00525E70] sub_00525E70 (10 bytes)
+extern "C" void ext_00525C40();
+
+extern "C" __declspec(naked) void __fastcall fn_00525E70(void* self) {
+    __asm {
+        push ecx
+        add ecx, 0x60
+        call ext_00525C40
+        ret
+    }
+}
