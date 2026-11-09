@@ -168,3 +168,11 @@ extern "C" void* __fastcall fn_006B4840(void* self) {
     *s = (void*)0x991a6c;
     return s;
 }
+
+// [0x006B4E30] sub_006B4E30 (18 bytes)
+extern "C" void* __fastcall fn_006B4E30(void* self) {
+    void** s = (void**)self;
+    ext_006A5C6E();
+    *s = (void*)0x991e54;
+    return s;
+}
