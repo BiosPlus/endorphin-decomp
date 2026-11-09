@@ -366841,7 +366841,9 @@
       "0x0063DAB4",
       "0x0063DABC"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:03:18Z"
   },
   {
     "va": "0x0063DAD0",

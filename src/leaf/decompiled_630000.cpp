@@ -104,3 +104,20 @@ extern "C" __declspec(naked) void* __fastcall fn_0063D970(void* self) {
         ret
     }
 }
+
+// [0x0063DAB0] sub_0063DAB0 (29 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0063DAB0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0062CD30
+        fldz
+        mov dword ptr [esi], 9792f4h
+        fst dword ptr [esi + 44h]
+        fst dword ptr [esi + 40h]
+        mov eax, esi
+        fstp dword ptr [esi + 3ch]
+        pop esi
+        ret
+    }
+}
