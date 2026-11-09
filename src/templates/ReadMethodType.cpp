@@ -211,3 +211,9 @@ extern "C" void* __stdcall fn_005D07C0(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA8D6AC, 0);
 }
+
+// [0x005D1B00] ExprParser::ReadMethodType<NMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void* __stdcall fn_005D1B00(void* a1) {
+    typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
+    return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA2FC74, 0);
+}

@@ -288083,7 +288083,9 @@
       "0x005D1B0C",
       "0x005D1B14"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:54:25Z"
   },
   {
     "va": "0x005D1B20",
