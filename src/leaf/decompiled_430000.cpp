@@ -1475,3 +1475,31 @@ extern "C" __declspec(naked) void __fastcall fn_004345E0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0043D3B0] sub_0043D3B0 (39 bytes)
+// Stack args: arg1 = first, arg2 = last, arg3 = value. For p = first; p != last; p += 4: push value, ecx = p, call [mem_009244D4] (callee cleans the pushed arg). Plain ret.
+extern "C" int mem_009244D4;
+extern "C" __declspec(naked) void __fastcall fn_0043D3B0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+    loop_top:
+        push ebx
+        mov ecx, esi
+        call dword ptr [mem_009244D4]
+        add esi, 4
+        cmp esi, edi
+        jne loop_top
+        pop ebx
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
