@@ -576,3 +576,29 @@ L_nonzero:
         ret
     }
 }
+
+// [0x007CA310] sub_007CA310 (37 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007CA310(float* out, float s, float* v) {
+    __asm {
+        mov ecx, dword ptr [esp + 0xc]
+        fld dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x8]
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xca
+        _emit 0xd9
+        _emit 0xc9
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 0x4]
+        _emit 0xd8
+        _emit 0xc9
+        fstp dword ptr [eax + 0x4]
+        _emit 0xd8
+        _emit 0x49
+        _emit 0x08
+        fstp dword ptr [eax + 0x8]
+        ret
+    }
+}
