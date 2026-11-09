@@ -163,3 +163,14 @@ extern "C" __declspec(naked) void __fastcall fn_004BA260(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004BA3A0] ExprParser::PrimitiveProxyType<float>::vfunc_38 (15 bytes)
+extern "C" void ext_004BA270();
+extern "C" __declspec(naked) void __fastcall fn_004BA3A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        call ext_004BA270
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x4], eax
+        ret 0x4
+    }
+}
