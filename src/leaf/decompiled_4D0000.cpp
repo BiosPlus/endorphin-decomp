@@ -160,3 +160,23 @@ extern "C" int __cdecl ext_004D0B20(int);
 extern "C" void __fastcall fn_004D0DE0(void* self, int edx_unused, int a1) {
     *(int*)((char*)self + 0x188) = ext_004D0B20(a1);
 }
+
+// [0x004DE130] sub_004DE130 (35 bytes)
+extern "C" void ext_004C1AC0();
+extern "C" void ext_0047C480();
+extern "C" int mem_00AE29D0;
+
+extern "C" __declspec(naked) void __fastcall fn_004DE130(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_004C1AC0
+        mov ecx, dword ptr [esi + 0x168]
+        pop esi
+        mov dword ptr [esp + 0x4], ecx
+        mov ecx, dword ptr [mem_00AE29D0]
+        jmp ext_0047C480
+    }
+}
