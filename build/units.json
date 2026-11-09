@@ -368056,7 +368056,9 @@
       "0x0063E250",
       "0x0063E256"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:45:05Z"
   },
   {
     "va": "0x0063E260",
