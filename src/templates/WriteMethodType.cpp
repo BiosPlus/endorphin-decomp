@@ -201,3 +201,25 @@ extern "C" __declspec(naked) void __stdcall fn_00649D50(void** self, void** a1) 
         ret 0x8
     }
 }
+
+// [0x0064F790] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
+extern "C" void ext_0064DDE0();
+
+extern "C" __declspec(naked) void __stdcall fn_0064F790(void** self, void** a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_0064DDE0
+        pop esi
+        ret 0x8
+    }
+}
