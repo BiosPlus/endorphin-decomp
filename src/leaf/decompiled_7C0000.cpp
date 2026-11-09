@@ -245,3 +245,11 @@ extern "C" int __cdecl fn_007C5F50(char* a0) {
     int r = ((Fn)ext_007D4AF0)(*(int*)(a0 + 0x17c), (int)(a0 + 0x184));
     return r != 0 ? 1 : 0;
 }
+
+// [0x007C5920] sub_007C5920 (34 bytes)
+#include <math.h>
+extern "C" float __cdecl fn_007C5920(void* a0) {
+    float v = *(float*)((char*)a0 + 0x1ac);
+    float r = (float)acos((double)v);
+    return r + r;
+}
