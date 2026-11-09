@@ -356915,7 +356915,9 @@
       "0x00630E89",
       "0x00630E90"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:06:23Z"
   },
   {
     "va": "0x00630EA0",
