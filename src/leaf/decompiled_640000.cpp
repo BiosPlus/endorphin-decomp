@@ -301,3 +301,10 @@ extern "C" void ext_007C5B40(int a, float b);
 extern "C" void __fastcall fn_0064DD60(void* self, int edx_unused, float a1) {
     ext_007C5B40(*(int*)((char*)self + 0x64), a1);
 }
+
+extern "C" void ext_007C5B50(int a, float b);
+
+// [0x0064DD80] sub_0064DD80 (23 bytes)
+extern "C" void __fastcall fn_0064DD80(void* self, int edx_unused, float a1) {
+    ext_007C5B50(*(int*)((char*)self + 0x64), a1);
+}
