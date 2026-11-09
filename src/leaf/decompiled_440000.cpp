@@ -879,3 +879,22 @@ extern "C" void __fastcall fn_0044BCF0(void* self) {
     void* cursor = ((void* (__stdcall*)(void*, const char*))mem_0092571C)(0, (const char*)0x7f00);
     ((int (__stdcall*)(void*))mem_00925704)(cursor);
 }
+
+// [0x0044C230] sub_0044C230 (38 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0044C230(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x14]
+        mov dword ptr [esp], eax
+        mov eax, dword ptr [ecx + 0x58]
+        mov eax, dword ptr [eax]
+        add ecx, 0x58
+        mov dword ptr [esp + 0x4], edx
+        lea edx, [esp]
+        push edx
+        call eax
+        add esp, 0x8
+        ret 0xc
+    }
+}
