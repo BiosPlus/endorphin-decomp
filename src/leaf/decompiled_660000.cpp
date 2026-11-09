@@ -178,3 +178,11 @@ extern "C" void __fastcall fn_006667A0(void* self) {
         ext_00666670(v);
     }
 }
+
+// [0x006622D0] sub_006622D0 (24 bytes)
+extern "C" void ext_00451670();
+extern "C" void __fastcall fn_006622D0(void* self, int edx_unused, int a1) {
+    typedef void (__thiscall *Callee)(void*, int*);
+    int slot = a1;
+    ((Callee)ext_00451670)(static_cast<char*>(self) + 0x24, &slot);
+}
