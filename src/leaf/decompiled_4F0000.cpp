@@ -50,3 +50,23 @@ extern "C" float __fastcall fn_004F4F00(void* self) {
     tmp = (float)((double)((float (__fastcall*)(void*))ext_004F4ED0)(self) * mem_0094CE70);
     return tmp;
 }
+
+// [0x004F28C0] sub_004F28C0 (25 bytes)
+extern "C" void ext_0065C650();
+extern "C" void ext_006A5C5C();
+extern "C" __declspec(naked) void __fastcall fn_004F28C0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx]
+        test esi, esi
+        je done
+        mov ecx, dword ptr [esi]
+        call ext_0065C650
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+done:
+        pop esi
+        ret
+    }
+}
