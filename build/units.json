@@ -351351,7 +351351,9 @@
       "0x006272D5",
       "0x006272F0"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:56:16Z"
   },
   {
     "va": "0x00627300",
