@@ -247,3 +247,16 @@ extern "C" void __fastcall fn_0065C340(void* self, int edx_unused, int a1) {
     int r = ((Fn)ext_007C9BC0)(a1);
     *(int*)((char*)self + 0x8c) = r;
 }
+
+// [0x0065C260] sub_0065C260 (26 bytes)
+// If the dword at [self+0x8c] is nonzero, passes it to sub_007D8700, then passes that result to sub_007C97F0.
+extern "C" int __cdecl ext_007D8700(int value);
+extern "C" void __cdecl ext_007C97F0(int value);
+
+extern "C" void __fastcall fn_0065C260(void* self) {
+    int v = *(int*)((char*)self + 0x8c);
+    if (v) {
+        int r = ext_007D8700(v);
+        ext_007C97F0(r);
+    }
+}
