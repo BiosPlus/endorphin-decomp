@@ -222,3 +222,15 @@ extern "C" __declspec(naked) void __fastcall fn_0067A770(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x004B9A10] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_26 (42 bytes)
+extern "C" int mem_00AE1D18;
+extern "C" int mem_00AE1D1C;
+
+extern "C" int __fastcall fn_004B9A10(void* self, int edx_unused, int a1) {
+    int begin = mem_00AE1D18;
+    if (begin == 0) {
+        return 0;
+    }
+    return (mem_00AE1D1C - begin) / 28;
+}
