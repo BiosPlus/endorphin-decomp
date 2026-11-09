@@ -590,3 +590,15 @@ extern "C" bool __fastcall fn_00666980(void* self, int edx_unused, void* other) 
     }
     return s[1] == o[1];
 }
+
+// [0x0066C030] sub_0066C030 (42 bytes)
+extern "C" void __fastcall ext_0065C640(void* self);
+extern "C" void __fastcall ext_0065C650(void* self);
+extern "C" void __fastcall fn_0066C030(void* self, int edx_unused, void** node) {
+    if (node == 0) return;
+    char* s = (char*)self;
+    ext_0065C640(s + 0x14);
+    *(void**)node = *(void**)self;
+    *(void**)self = node;
+    ext_0065C650(s + 0x14);
+}
