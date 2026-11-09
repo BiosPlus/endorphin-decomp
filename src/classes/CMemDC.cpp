@@ -31,3 +31,11 @@ extern "C" __declspec(dllimport) int __stdcall DrawTextExA(void* hdc, const char
 extern "C" int __fastcall fn_0041B7C0(void* self, int edx_unused, const char* a1, int a2, void* a3, unsigned int a4, void* a5) {
     return DrawTextExA(*(void**)((char*)self + 0x4), a1, a2, a3, a4, a5);
 }
+
+extern "C" __declspec(dllimport) int __stdcall ExtTextOutA(void* hdc, int x, int y, unsigned int options, const void* lprect, const char* lpString, unsigned int c, const int* lpDx);
+
+// [0x0041B710] CMemDC::vfunc_26 (48 bytes)
+// Forwards to GDI32 ExtTextOutA(this->m_hDC, a1, a2, a3, a4, a5, a6, a7).
+extern "C" void __fastcall fn_0041B710(void* self, int edx_unused, int a1, int a2, unsigned int a3, const void* a4, const char* a5, unsigned int a6, const int* a7) {
+    ExtTextOutA(*(void**)((char*)self + 0x4), a1, a2, a3, a4, a5, a6, a7);
+}
