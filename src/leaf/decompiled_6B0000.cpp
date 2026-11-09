@@ -238,3 +238,21 @@ extern "C" __declspec(naked) void* __fastcall fn_006B1E60(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x006B20A0] sub_006B20A0 (25 bytes)
+extern "C" void ext_006B0C40();
+extern "C" int mem_009917BC;
+
+extern "C" __declspec(naked) void* __fastcall fn_006B20A0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_006B0C40
+        mov dword ptr [esi], offset mem_009917BC
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
