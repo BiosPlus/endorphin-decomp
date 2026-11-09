@@ -395,3 +395,10 @@ extern "C" void* __fastcall fn_00458520(void* self, int edx_unused, int a1, int 
     *(int*)self = 0x009373f4;
     return self;
 }
+
+// [0x00458550] sub_00458550 (37 bytes)
+extern "C" void* __fastcall fn_00458550(void* self, int edx_unused, int a1, int a2, int a3) {
+    fn_004584C0(self, a1, a1, a2, a3);
+    *reinterpret_cast<unsigned int*>(self) = 0x00937424;
+    return self;
+}
