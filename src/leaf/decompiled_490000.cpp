@@ -232,3 +232,12 @@ extern "C" void* __cdecl fn_00492C30(void* out, int a, float b, float c, float d
     o->e = e;
     return out;
 }
+
+// [0x00494020] sub_00494020 (39 bytes)
+extern "C" int __fastcall fn_00494020(int* self, int edx_unused, int* other) {
+    if (self[0] == other[0] && self[1] == other[1] && self[2] == other[2]) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
