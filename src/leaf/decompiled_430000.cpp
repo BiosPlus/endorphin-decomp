@@ -1331,3 +1331,28 @@ extern "C" void __fastcall fn_004308A0(void* self, int edx_unused, void* a1) {
     unsigned char al = ((Fn4694E0)ext_004694E0)(eax);
     ((FnVirt)edi[1])(esi, (int)al);
 }
+
+// [0x004308D0] sub_004308D0 (38 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_004694E0();
+
+extern "C" __declspec(naked) void __fastcall fn_004308D0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [esi]
+        push 0Bh
+        call ext_00465B30
+        mov ecx, eax
+        call ext_004694E0
+        mov edx, dword ptr [edi + 4]
+        movzx eax, al
+        push eax
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        ret 4
+    }
+}

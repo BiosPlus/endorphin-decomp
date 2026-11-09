@@ -26551,7 +26551,9 @@
       "0x004308DB",
       "0x004308E2"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:02:21Z"
   },
   {
     "va": "0x00430900",
