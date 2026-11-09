@@ -25604,7 +25604,9 @@
       "0x0042FDD1",
       "0x0042FDD8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:36:14Z"
   },
   {
     "va": "0x0042FDF0",
