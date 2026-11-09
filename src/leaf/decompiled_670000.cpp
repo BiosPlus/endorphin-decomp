@@ -394,3 +394,22 @@ extern "C" __declspec(naked) void __fastcall fn_0067CD10(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0067EB90] sub_0067EB90 (29 bytes)
+extern "C" void ext_0067E820();
+extern "C" void ext_0067E990();
+extern "C" __declspec(naked) void __fastcall fn_0067EB90(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_0067E820
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_0067E990
+        pop esi
+        ret 0x8
+    }
+}
