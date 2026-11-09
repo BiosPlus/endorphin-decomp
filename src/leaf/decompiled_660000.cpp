@@ -528,3 +528,27 @@ extern "C" void __cdecl fn_00662F20() {
         ((int (__stdcall*)(void*))mem_009241E0)(ev);
     }
 }
+
+// [0x00661710] sub_00661710 (41 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00661710(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov eax, ecx
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [ecx]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        add eax, 0x4
+        push eax
+        mov eax, dword ptr [edx]
+        push esi
+        mov dword ptr [esp + 0x10], 0
+        call eax
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
