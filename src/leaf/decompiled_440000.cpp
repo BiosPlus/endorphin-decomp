@@ -851,3 +851,17 @@ extern "C" __declspec(naked) void __cdecl fn_0044C2A0() {
         ret
     }
 }
+
+// [0x0044C330] sub_0044C330 (37 bytes)
+extern "C" void __cdecl fn_0044C330(unsigned int* dst, unsigned int count, const unsigned int* src) {
+    if (count > 0) {
+        do {
+            if (dst) {
+                unsigned int v = *src;
+                *dst = v;
+            }
+            --count;
+            ++dst;
+        } while (count > 0);
+    }
+}
