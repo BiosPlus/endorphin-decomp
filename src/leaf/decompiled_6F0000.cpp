@@ -119,3 +119,35 @@ extern "C" __declspec(naked) void __fastcall fn_006F79C0(void* self, int edx_unu
         jmp dword ptr [eax + 0x5dc]
     }
 }
+
+// [0x006FA8F0] sub_006FA8F0 (47 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_006FA8F0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        mov eax, dword ptr [edi + 0x8]
+        cmp eax, esi
+        je L_same
+        test eax, eax
+        je L_skip
+        mov edx, dword ptr [esi]
+        push eax
+        call dword ptr [edx + 0x54]
+    L_skip:
+        mov eax, dword ptr [edi]
+        push esi
+        mov ecx, edi
+        call dword ptr [eax + 0x44]
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    L_same:
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}
