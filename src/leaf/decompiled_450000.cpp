@@ -512,3 +512,11 @@ L_00455C98:
         ret 4
     }
 }
+
+// [0x00458580] sub_00458580 (41 bytes)
+extern "C" void* __fastcall fn_00458580(void* self, int edx_unused, int a1, int a2, int a3) {
+    fn_004584C0(self, a1, a1, a2, a3);
+    *reinterpret_cast<unsigned int*>(self) = 0x00937454;
+    *(reinterpret_cast<unsigned char*>(self) + 0x14) = 0;
+    return self;
+}
