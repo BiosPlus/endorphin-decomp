@@ -867,3 +867,14 @@ extern "C" __declspec(naked) void __cdecl fn_007C61F0(void* a, const void* b) {
         jmp ext_007D5170
     }
 }
+
+// [0x007CD4B0] sub_007CD4B0 (46 bytes)
+extern "C" int __cdecl ext_007CC9F0(void* a0);
+extern "C" void __cdecl ext_007C8B30(void* a0);
+
+extern "C" void __cdecl fn_007CD4B0(void* self) {
+    void* p = *(void**)((char*)self + 0x210);
+    if (p == 0) return;
+    if (ext_007CC9F0(p) == 0) return;
+    ext_007C8B30(*(void**)((char*)self + 0x210));
+}

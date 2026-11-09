@@ -576632,7 +576632,9 @@
       "0x007CD4C1",
       "0x007CD4D8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:50:28Z"
   },
   {
     "va": "0x007CD4E0",
