@@ -670,3 +670,29 @@ null_child:
         ret 0xc
     }
 }
+
+// [0x0041C5D0] sub_0041C5D0 (45 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0041C5D0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [ecx + 0xc], eax
+        mov dword ptr [ecx + 0x10], edx
+        mov ecx, dword ptr [ecx + 0x8]
+        test ecx, ecx
+        je zero
+        push esi
+        mov esi, dword ptr [ecx]
+        push edx
+        mov edx, dword ptr [esi + 0x18]
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        call edx
+        pop esi
+        ret 0xc
+zero:
+        xor al, al
+        ret 0xc
+    }
+}
