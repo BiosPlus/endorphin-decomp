@@ -320,3 +320,18 @@ extern "C" __declspec(naked) void __fastcall fn_00552130(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00553080] sub_00553080 (41 bytes)
+extern "C" bool __fastcall fn_00553080(int* self, int edx_unused, int a1) {
+    if (self[0] < 0) {
+        self[0] = 0;
+    }
+    int limit = a1 - 1;
+    if (self[1] >= limit) {
+        self[1] = limit;
+    }
+    if (self[1] < self[0]) {
+        self[1] = self[0];
+    }
+    return true;
+}
