@@ -9,6 +9,7 @@ extern "C" void ext_004CCB00();
 extern "C" void ext_00493D90();
 extern "C" void ext_0048A9F0();
 extern "C" void ext_004CCDE0();
+extern "C" void ext_0068BC50();
 
 // [0x005C3380] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_13 (13 bytes)
 extern "C" __declspec(naked) void __stdcall fn_005C3380(int a1) {
@@ -110,4 +111,14 @@ extern "C" void ext_0067B860();
 extern "C" void __fastcall fn_0066DD40(void* self, int edx_unused, void* a1, int a2) {
     void* obj = *(void**)a1;
     ((void (__fastcall*)(void*))ext_0067B860)(obj);
+}
+
+// [0x0068C010] ExprParser::Method0Type<Randomizer, {public: void __thiscall Randomizer::applySeed(void), 0}>::vfunc_41 (14 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0068C010(void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call ext_0068BC50
+        ret 0x8
+    }
 }
