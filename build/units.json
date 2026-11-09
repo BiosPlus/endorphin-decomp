@@ -356891,7 +356891,9 @@
       "0x00630E68",
       "0x00630E70"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:05:44Z"
   },
   {
     "va": "0x00630E80",

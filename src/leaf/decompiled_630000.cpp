@@ -18,3 +18,21 @@ extern "C" void* __fastcall fn_00630E40(void* self) {
     ext_00693FE0(eax);
     return esi;
 }
+
+extern "C" void ext_00630580();
+extern "C" void ext_00693F40();
+
+// [0x00630E60] sub_00630E60 (24 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00630E60(void* self) {
+    __asm {
+        push esi
+        lea esi, [ecx + 0f8h]
+        call ext_00630580
+        push eax
+        mov ecx, esi
+        call ext_00693F40
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
