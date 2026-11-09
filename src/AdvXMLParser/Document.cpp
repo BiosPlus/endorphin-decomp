@@ -25,3 +25,22 @@ extern "C" __declspec(naked) void __fastcall fn_006408B0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0065F5E0] AdvXMLParser::Document::vfunc_1 (34 bytes)
+// Constructs the std::string at a1 from an empty C string literal; returns a1.
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void* __fastcall fn_0065F5E0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0x928b5d
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
