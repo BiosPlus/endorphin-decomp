@@ -124,3 +124,11 @@ extern "C" __declspec(naked) void __cdecl fn_00415420() {
         ret
     }
 }
+
+extern "C" void ext_0041D7B0();
+
+// [0x0041D850] sub_0041D850 (15 bytes)
+extern "C" void __fastcall fn_0041D850(void* self, int edx_unused, int a1) {
+    *(int*)((char*)self + 0x34) = a1;
+    ext_0041D7B0();
+}
