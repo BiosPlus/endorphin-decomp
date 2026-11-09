@@ -37,3 +37,12 @@ extern "C" unsigned char __stdcall fn_00563260(void* p) {
     }
     return r;
 }
+
+// [0x0056D820] sub_0056D820 (25 bytes)
+extern "C" void ext_00558C10();
+extern "C" void* __fastcall fn_0056D820(void* self) {
+    ext_00558C10();
+    *(unsigned int*)self = 0x009578D4;
+    *((unsigned int*)self + 1) = 0x009578C8;
+    return self;
+}
