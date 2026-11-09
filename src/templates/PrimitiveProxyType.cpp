@@ -316,3 +316,28 @@ extern "C" __declspec(naked) void __stdcall fn_0049B260(void* a1, float a2) {
         ret 0x8
     }
 }
+
+// [0x004B7A10] ExprParser::PrimitiveProxyType<float>::vfunc_0 (40 bytes)
+// Two stack arguments (ret 0x8). Loads the float at **a2, then calls
+// sub_00672080 thiscall on a1 with (float, 0). Returns a1 in eax.
+extern "C" void ext_00672080();
+
+extern "C" __declspec(naked) void* __fastcall fn_004B7A10(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        fld dword ptr [ecx]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_00672080
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
