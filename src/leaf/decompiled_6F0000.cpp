@@ -62,3 +62,16 @@ extern "C" __declspec(naked) void __stdcall fn_006F6900(void* a) {
         ret 0x4
     }
 }
+
+// [0x006F6940] sub_006F6940 (16 bytes)
+extern "C" void ext_00782C80(int value);
+
+extern "C" __declspec(naked) void __stdcall fn_006F6940(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call ext_00782C80
+        add esp, 0x4
+        ret 0x4
+    }
+}
