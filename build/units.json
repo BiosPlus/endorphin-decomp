@@ -31676,7 +31676,9 @@
       "0x00437318",
       "0x0043731D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:09:13Z"
   },
   {
     "va": "0x00437330",

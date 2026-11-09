@@ -1096,3 +1096,26 @@ no_branch_004372D0:
         jmp ext_00436B20
     }
 }
+
+// [0x00437300] sub_00437300 (33 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_0046F890();
+extern "C" void ext_00436BE0();
+extern "C" void ext_00436C90();
+
+extern "C" __declspec(naked) void __fastcall fn_00437300(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00465B30
+        mov ecx, dword ptr [eax + 0x14]
+        call ext_0046F890
+        test al, al
+        mov ecx, esi
+        pop esi
+        je short no_branch_00437300
+        jmp ext_00436BE0
+no_branch_00437300:
+        jmp ext_00436C90
+    }
+}
