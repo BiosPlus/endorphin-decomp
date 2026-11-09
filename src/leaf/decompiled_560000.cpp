@@ -238,3 +238,25 @@ extern "C" int __cdecl ext_005631C0(double, double);
 extern "C" int __cdecl fn_0056B670(double a1, double a2, double a3) {
     return ext_005631C0(a1 - a2, a3);
 }
+
+// [0x00567040] sub_00567040 (45 bytes)
+extern "C" int mem_00958C0C;
+
+extern "C" __declspec(naked) void __fastcall fn_00567040(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [eax], offset mem_00958C0C
+        mov dl, byte ptr [ecx + 0x4]
+        mov byte ptr [eax + 0x4], dl
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax + 0xc]
+        fld dword ptr [ecx + 0x10]
+        fstp dword ptr [eax + 0x10]
+        fld dword ptr [ecx + 0x14]
+        fstp dword ptr [eax + 0x14]
+        ret 0x4
+    }
+}
