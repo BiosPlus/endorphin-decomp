@@ -545,3 +545,32 @@ fail:
         ret 0x4
     }
 }
+
+// [0x0067F9D0] sub_0067F9D0 (44 bytes)
+extern "C" void __cdecl ext_0048A120(void* first, void* last, void* self);
+extern "C" __declspec(naked) void __fastcall fn_0067F9D0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je done_0067F9D0
+        mov eax, dword ptr [esi + 0x8]
+        mov edx, eax
+        sub edx, ecx
+        sar edx, 0x3
+        je done_0067F9D0
+        push esi
+        push eax
+        add eax, -0x8
+        push eax
+        call ext_0048A120
+        add esp, 0xc
+        add dword ptr [esi + 0x8], -0x8
+    done_0067F9D0:
+        pop esi
+        pop ecx
+        ret
+    }
+}
