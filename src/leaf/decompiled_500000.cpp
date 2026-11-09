@@ -53,3 +53,14 @@ extern "C" void __cdecl ext_0050CE30(int a, void* b, int c, int d);
 extern "C" void __fastcall fn_0050D0B0(void* self, int edx_unused, int a1) {
     ext_0050CE30(a1, (char*)self + 4, mem_00A9F178, 1);
 }
+
+// [0x00500120] sub_00500120 (35 bytes)
+extern "C" int mem_00AEB2D8;
+extern "C" int mem_00AEB2D4;
+extern "C" int* __cdecl fn_00500120() {
+    if (!(mem_00AEB2D8 & 1)) {
+        mem_00AEB2D8 |= 1;
+        mem_00AEB2D4 = 0x94EC3C;
+    }
+    return &mem_00AEB2D4;
+}
