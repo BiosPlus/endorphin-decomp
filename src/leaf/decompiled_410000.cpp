@@ -454,3 +454,25 @@ zero_path:
         ret 0xc
     }
 }
+
+// [0x0041C5A0] sub_0041C5A0 (39 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0041C5A0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        cmp dword ptr [ecx + 0x8], 0
+        je zero_path
+        mov edx, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [ecx + 0x8]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0xc]
+        push edx
+        mov edx, dword ptr [esp + 0xc]
+        push edx
+        call eax
+        ret 0xc
+zero_path:
+        xor al, al
+        ret 0xc
+    }
+}
