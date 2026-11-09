@@ -67,3 +67,20 @@ extern "C" __declspec(naked) void* __fastcall fn_00499AF0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00497000] NMData::Transition::vfunc_4_off_8 (38 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00497000(void* self, int edx_unused, void* a1) {
+    __asm {
+        cmp dword ptr [ecx + 0xb0], 0x0
+        je L_null
+        mov eax, dword ptr [ecx + 0xb0]
+        lea ecx, [eax + 0x10]
+        mov eax, dword ptr [ecx]
+        mov dword ptr [esp + 0x4], 0x0
+        mov edx, dword ptr [eax + 0x10]
+        jmp edx
+    L_null:
+        xor eax, eax
+        ret 0x4
+    }
+}
