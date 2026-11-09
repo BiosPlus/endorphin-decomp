@@ -45,3 +45,21 @@ extern "C" void __fastcall fn_004C1AF0(void* self, int edx_unused, int a1) {
     }
     ext_004C0340();
 }
+
+// [0x004C1B20] NMData::ForceEventData::vfunc_73 (42 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004C1B20(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [eax]
+        mov dword ptr [ecx + 0x15c], edx
+        mov eax, dword ptr [eax + 0x4]
+        cmp edx, eax
+        mov dword ptr [ecx + 0x160], eax
+        jl L_call
+        add edx, 0x1
+        mov dword ptr [ecx + 0x160], edx
+    L_call:
+        call ext_004C0340
+        ret 0x4
+    }
+}
