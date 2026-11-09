@@ -31,3 +31,15 @@ extern "C" __declspec(naked) void __fastcall fn_00544070(void* self) {
         ret
     }
 }
+
+// [0x005441F0] ForceApplicationTool::vfunc_14 (35 bytes)
+extern "C" int __fastcall fn_005441F0(void* self) {
+    if (*(int*)((char*)self + 0xc0) < 0) {
+        void* sub = *(void**)((char*)self + 0xa8);
+        typedef unsigned char (__fastcall *VFunc)(void*);
+        if (!(*(VFunc*)(*(char**)sub + 0x38))(sub)) {
+            return 0;
+        }
+    }
+    return 1;
+}
