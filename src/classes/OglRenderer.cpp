@@ -150,3 +150,25 @@ extern "C" void __fastcall fn_00536D40(void* self, int edx_unused, float* a1) {
     *(float*)(p + 0x1bc) = a1[2];
     *(float*)(p + 0x1c0) = a1[3];
 }
+
+// [0x00533D10] OglRenderer::vfunc_40 (44 bytes)
+extern "C" void ext_00540F60();
+
+extern "C" __declspec(naked) void __fastcall fn_00533D10(void* self, int edx_unused, int a1_unused, int a2) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        sub esp, 0x8
+        mov esi, ecx
+        mov eax, esp
+        lea ecx, [esi + 0x9c]
+        mov dword ptr [eax], 0x93a444
+        mov dword ptr [eax + 0x4], edi
+        call ext_00540F60
+        mov dword ptr [esi + 0x498], edi
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
