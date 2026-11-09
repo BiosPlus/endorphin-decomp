@@ -209,3 +209,14 @@ extern "C" void* __cdecl fn_004952F0() {
     }
     return &mem_00ADC4E4;
 }
+
+// [0x0049D360] sub_0049D360 (35 bytes)
+extern "C" int mem_00ADD820;
+extern "C" int mem_00ADD81C;
+extern "C" int* __cdecl fn_0049D360() {
+    if (!(mem_00ADD820 & 1)) {
+        mem_00ADD820 |= 1;
+        mem_00ADD81C = 0x93fcc0;
+    }
+    return &mem_00ADD81C;
+}
