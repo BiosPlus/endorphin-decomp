@@ -57,3 +57,15 @@ extern "C" __declspec(naked) void __stdcall fn_004B7030(void* out) {
         ret 0x4
     }
 }
+
+// [0x004BA040] sub_004BA040 (26 bytes)
+extern "C" void ext_006A5C5C(void* p);
+extern "C" int mem_00924FF4;
+
+extern "C" void __fastcall fn_004BA040(void* self) {
+    void* p = *(void**)self;
+    if (p) {
+        ((void (__fastcall*)(void*))mem_00924FF4)(p);
+        ext_006A5C5C(p);
+    }
+}
