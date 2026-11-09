@@ -246,3 +246,26 @@ extern "C" void __fastcall fn_0050B930(void* self, int edx_unused, unsigned char
         } while (p != end);
     }
 }
+
+// [0x0050F9A0] sub_0050F9A0 (43 bytes)
+extern "C" int mem_00924FC0;
+extern "C" __declspec(naked) void __fastcall fn_0050F9A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi + 0xc], eax
+        mov eax, dword ptr [eax]
+        add eax, 0x3c
+        push 0x950a80
+        push eax
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        neg al
+        sbb eax, eax
+        neg eax
+        mov dword ptr [esi + 0x8], eax
+        pop esi
+        ret 0x4
+    }
+}
