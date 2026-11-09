@@ -993,3 +993,23 @@ extern "C" void __fastcall fn_00430DC0(void* self) {
         ext_006A5E60(0x92f8b8, 0x30, 0);
     }
 }
+
+// [0x00430DE0] sub_00430DE0 (31 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_00469C60();
+extern "C" void __stdcall ext_006A5E60(int a, int b, int c);
+extern "C" __declspec(naked) void __fastcall fn_00430DE0(void* self) {
+    __asm {
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469C60
+        test al, al
+        jne short done
+        push 0
+        push 0x30
+        push 0x92f8b8
+        call ext_006A5E60
+done:
+        ret
+    }
+}
