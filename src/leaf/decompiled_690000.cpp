@@ -60,3 +60,18 @@ extern "C" int __stdcall fn_00698A90(char** p) {
     *p += 4;
     return *(int*)r;
 }
+
+// [0x00698AB0] sub_00698AB0 (22 bytes)
+extern "C" __declspec(naked) float __stdcall fn_00698AB0(char** p) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_006989E0
+        add dword ptr [esi], 4
+        fld dword ptr [eax]
+        pop esi
+        ret 4
+    }
+}
