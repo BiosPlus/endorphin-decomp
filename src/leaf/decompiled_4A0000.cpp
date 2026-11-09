@@ -97,3 +97,26 @@ extern "C" void __fastcall fn_004A5860(void* self) {
     ext_00494050((char*)self + 0x1fc);
     ext_00494050((char*)self + 0x208);
 }
+
+// [0x004A5A50] sub_004A5A50 (35 bytes)
+extern "C" __declspec(naked) int __fastcall fn_004A5A50(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx + 0xc]
+        test eax, eax
+        je ret_one
+        mov edx, dword ptr [ecx + 0x10]
+        sub edx, eax
+        sar edx, 0x2
+        je ret_one
+        cmp byte ptr [ecx + 0x24], 0x0
+        jne ret_one
+        xor eax, eax
+        pop ecx
+        ret
+ret_one:
+        mov eax, 0x1
+        pop ecx
+        ret
+    }
+}
