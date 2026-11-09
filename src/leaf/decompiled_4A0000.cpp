@@ -90,3 +90,10 @@ extern "C" void __fastcall fn_004AED00(void* self) {
         ((void (*)(void*))ext_006A5C5C)(esi);
     }
 }
+
+// [0x004A5860] sub_004A5860 (26 bytes)
+extern "C" void __fastcall ext_00494050(void* self);
+extern "C" void __fastcall fn_004A5860(void* self) {
+    ext_00494050((char*)self + 0x1fc);
+    ext_00494050((char*)self + 0x208);
+}
