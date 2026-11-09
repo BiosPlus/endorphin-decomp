@@ -1215,3 +1215,29 @@ extern "C" __declspec(naked) void __fastcall fn_004329A0(void* self) {
         ret
     }
 }
+
+// [0x0043E3A0] sub_0043E3A0 (36 bytes)
+extern "C" int mem_009242F4;
+
+extern "C" __declspec(naked) void __stdcall fn_0043E3A0(void* first, void* last) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je fn43e3a0_done
+        _emit 0x8b
+        _emit 0xff
+    fn43e3a0_loop:
+        mov ecx, esi
+        call dword ptr [mem_009242F4]
+        add esi, 4
+        cmp esi, edi
+        jne fn43e3a0_loop
+    fn43e3a0_done:
+        pop edi
+        pop esi
+        ret 8
+    }
+}
