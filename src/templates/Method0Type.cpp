@@ -287,3 +287,14 @@ extern "C" unsigned char __stdcall fn_005C6200(void* a1) {
     ((void (__fastcall*)(void*))ext_005C3170)(obj);
     return 0;
 }
+
+// [0x0060A070] ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>::vfunc_2 (16 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0060A070(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call ext_00493D90
+        xor eax, eax
+        ret 0x4
+    }
+}
