@@ -32,3 +32,12 @@ extern "C" float __fastcall fn_004F4D90(void* self) {
     tmp = (float)atan2((double)p[2], (double)p[0]);
     return tmp;
 }
+
+// [0x004F4DB0] sub_004F4DB0 (20 bytes)
+extern "C" void ext_004F4D90();
+extern "C" double mem_0094CE70;
+extern "C" float __fastcall fn_004F4DB0(void* self) {
+    volatile float tmp;
+    tmp = (float)((double)((float (__fastcall*)(void*))ext_004F4D90)(self) * mem_0094CE70);
+    return tmp;
+}
