@@ -239106,7 +239106,9 @@
       "0x0058A172",
       "0x0058A188"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:37:22Z"
   },
   {
     "va": "0x0058A1A0",
