@@ -921,7 +921,9 @@
       "0x00401E69",
       "0x00401E6F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:08:46Z"
   },
   {
     "va": "0x00401E80",
