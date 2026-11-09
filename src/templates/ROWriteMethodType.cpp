@@ -205,3 +205,20 @@ extern "C" __declspec(naked) void __stdcall fn_00630CE0(void* self) {
         ret 4
     }
 }
+
+// [0x0063CA50] ExprParser::ROWriteMethodType<EffectorWithMemory, float, &public: void __thiscall EffectorWithMemory::setIntegralGradient(float)>::vfunc_16 (30 bytes)
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void __stdcall fn_0063CA50(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push 0a947f0h
+        push 0a2e2f8h
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
