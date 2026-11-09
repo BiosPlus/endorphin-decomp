@@ -374,3 +374,23 @@ extern "C" Ctl0049B140* __fastcall fn_0049B140(Ctl0049B140* self) {
     self->cur = (int)q->next;
     return self;
 }
+
+// [0x00497860] sub_00497860 (33 bytes)
+extern "C" void ext_0046C460();
+extern "C" __declspec(naked) void* __fastcall fn_00497860(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0Ch]
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        push eax
+        push esi
+        mov dword ptr [esp + 0Ch], 0
+        call ext_0046C460
+        add esp, 8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
