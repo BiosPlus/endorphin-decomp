@@ -887,7 +887,9 @@
       "0x00401DEA",
       "0x00401DF0"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:17:43Z"
   },
   {
     "va": "0x00401E00",
