@@ -45,3 +45,23 @@ extern "C" __declspec(naked) void __fastcall fn_0053A6A0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" int mem_009253D0;
+
+// [0x005321B0] HasConstantTMPtr::vfunc_13 (35 bytes)
+// Loads eax = this->+0x4, pushes the float triple at eax+0x30 (x, y, z=eax+0x38) and calls glTranslatef.
+extern "C" __declspec(naked) void __fastcall fn_005321B0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        fld dword ptr [eax + 0x38]
+        add eax, 0x30
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fstp dword ptr [esp]
+        call dword ptr [mem_009253D0]
+        ret
+    }
+}
