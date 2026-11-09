@@ -510,3 +510,26 @@ extern "C" __declspec(naked) void __fastcall fn_0040C300(void* self) {
         jmp ext_0042EE50
     }
 }
+
+// [0x0040FE70] sub_0040FE70 (37 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" int mem_00925688;
+
+extern "C" __declspec(naked) void __fastcall fn_0040FE70(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        xor eax, eax
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x54], eax
+        sete al
+        mov dword ptr [esi + 0x54], eax
+        call ext_006A5EA8
+        mov ecx, dword ptr [esi + 0x20]
+        push 1
+        push 0
+        push ecx
+        call dword ptr [mem_00925688]
+        pop esi
+        ret 0xc
+    }
+}
