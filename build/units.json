@@ -404502,7 +404502,9 @@
     "relocations": [
       "0x00671FE6"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:23:50Z"
   },
   {
     "va": "0x00672000",

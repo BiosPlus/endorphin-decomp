@@ -91,3 +91,9 @@ extern "C" void __fastcall fn_006720C0(void* self, int edx_unused, int a1) {
     ext_00671FC0();
     *(int*)self = a1;
 }
+
+// [0x00671FE0] sub_00671FE0 (18 bytes)
+extern "C" int ext_00671100(int);
+extern "C" void __fastcall fn_00671FE0(void* self) {
+    *(int*)((char*)self + 0x4) = ext_00671100(9);
+}
