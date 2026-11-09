@@ -1316,3 +1316,18 @@ extern "C" __declspec(naked) void __fastcall fn_00430870(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004308A0] sub_004308A0 (38 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_004694E0();
+
+extern "C" void __fastcall fn_004308A0(void* self, int edx_unused, void* a1) {
+    void** esi = (void**)a1;
+    void** edi = (void**)*esi;
+    typedef void* (__stdcall *Fn465B30)(int);
+    typedef unsigned char (__thiscall *Fn4694E0)(void*);
+    typedef void (__thiscall *FnVirt)(void*, int);
+    void* eax = ((Fn465B30)ext_00465B30)(10);
+    unsigned char al = ((Fn4694E0)ext_004694E0)(eax);
+    ((FnVirt)edi[1])(esi, (int)al);
+}
