@@ -285891,7 +285891,9 @@
       "0x005CEDEC",
       "0x005CEDF4"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:53:37Z"
   },
   {
     "va": "0x005CEE00",
