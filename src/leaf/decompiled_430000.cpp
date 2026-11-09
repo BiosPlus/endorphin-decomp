@@ -2021,3 +2021,29 @@ extern "C" __declspec(naked) void __fastcall fn_00431400(void* self) {
         jmp eax
     }
 }
+
+// [0x0043D170] sub_0043D170 (41 bytes)
+extern "C" void ext_0041C540();
+extern "C" void ext_006A5EA8();
+
+extern "C" __declspec(naked) void __fastcall fn_0043D170(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        lea ecx, [esi + 0x64]
+        call ext_0041C540
+        test al, al
+        jne done
+        mov ecx, esi
+        call ext_006A5EA8
+    done:
+        pop esi
+        ret 0xc
+    }
+}
