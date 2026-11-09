@@ -1,0 +1,18 @@
+// Decompiled translation unit: src/classes/SelectionBuffer.cpp
+
+extern "C" void ext_004E8570(int a, int b);
+
+// [0x004E87F0] SelectionBuffer::vfunc_12 (24 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004E87F0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xc]
+        call edx
+        push eax
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        call ext_004E8570
+        add esp, 0x8
+        ret 0x4
+    }
+}
