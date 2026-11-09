@@ -27,3 +27,15 @@ extern "C" void __fastcall fn_0066EEC0(void* self, int edx_unused, void** a1) {
     ((Callee_0066E050)ext_0066E050)((char*)self + 4, *a1);
     *a1 = 0;
 }
+
+// [0x0066B270] ExprParser::StringType::vfunc_2 (27 bytes)
+extern "C" void ext_0046C490();
+
+typedef void* (__cdecl *Callee_0046C490)(void* a);
+
+extern "C" void* __stdcall fn_0066B270(void** a1) {
+    if (*a1) {
+        return ((Callee_0046C490)ext_0046C490)(*a1);
+    }
+    return 0;
+}
