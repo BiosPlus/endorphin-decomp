@@ -281,3 +281,22 @@ extern "C" void* __fastcall fn_006B85D0(void* self) {
     ((int*)self)[23] = 0;
     return self;
 }
+
+// [0x006B8B50] sub_006B8B50 (26 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" void ext_006B87F0();
+extern "C" __declspec(naked) void __fastcall fn_006B8B50(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006A5EA8
+        mov ecx, dword ptr [esi + 0x5c]
+        test ecx, ecx
+        pop esi
+        je done_006B8B50
+        push 1
+        call ext_006B87F0
+    done_006B8B50:
+        ret 0xc
+    }
+}
