@@ -684,3 +684,12 @@ extern "C" __declspec(naked) void __fastcall fn_00449D00(void* self) {
         jmp ext_006A5F6E
     }
 }
+
+// [0x0044B300] sub_0044B300 (35 bytes)
+extern "C" void __fastcall fn_0044B300(void* self) {
+    typedef void (__thiscall *VF)(void* ecx);
+    if (*(void**)((char*)self + 0x64) != 0) {
+        ((VF)(*(void***)*(void**)((char*)self + 0x64))[0x1c / 4])(*(void**)((char*)self + 0x64));
+        ((VF)(*(void***)*(void**)((char*)self + 0x64))[0x154 / 4])(*(void**)((char*)self + 0x64));
+    }
+}
