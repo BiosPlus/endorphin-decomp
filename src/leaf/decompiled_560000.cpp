@@ -46,3 +46,21 @@ extern "C" void* __fastcall fn_0056D820(void* self) {
     *((unsigned int*)self + 1) = 0x009578C8;
     return self;
 }
+
+// [0x00566380] sub_00566380 (25 bytes)
+extern "C" void ext_00565120();
+extern "C" void ext_00565F00();
+extern "C" __declspec(naked) int __fastcall fn_00566380(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_00565120
+        push eax
+        mov ecx, esi
+        call ext_00565F00
+        pop esi
+        ret 4
+    }
+}
