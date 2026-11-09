@@ -16,3 +16,18 @@ extern "C" __declspec(naked) void* __stdcall fn_004ECA70(void* self) {
         ret 4
     }
 }
+
+// [0x00594440] ExprParser::Function2Type<World, ValuePtr, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_16 (30 bytes)
+extern "C" __declspec(naked) void* __stdcall fn_00594440(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push 0A87014h
+        push 0A2E2F8h
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
