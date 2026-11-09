@@ -297,3 +297,21 @@ L_zero_0065C230:
         ret
     }
 }
+
+// [0x00659E10] sub_00659E10 (36 bytes)
+extern "C" void ext_00659DB0();
+extern "C" void ext_00645EB0();
+
+extern "C" __declspec(naked) void __fastcall fn_00659E10(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi], 0x0097DE5C
+        mov dword ptr [esi + 0x4], 0x0097DE44
+        mov dword ptr [esi + 0x8], 0x0097DE10
+        call ext_00659DB0
+        mov ecx, esi
+        pop esi
+        jmp ext_00645EB0
+    }
+}
