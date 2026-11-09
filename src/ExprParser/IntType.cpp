@@ -25,3 +25,13 @@ extern "C" __declspec(naked) void* __fastcall fn_0066AE10(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0066B140] ExprParser::IntType::vfunc_42 (46 bytes)
+typedef void* (__thiscall *IntTypeVfn2)(void* self, void* arg);
+extern "C" bool __fastcall fn_0066B140(void* self, int edx_unused, void* a1, void* a2) {
+    void* o1 = *(void**)((char*)a1 + 0x4);
+    void* r1 = ((IntTypeVfn2)(*(void***)o1)[2])(o1, a1);
+    void* o2 = *(void**)((char*)a2 + 0x4);
+    void* r2 = ((IntTypeVfn2)(*(void***)o2)[2])(o2, a2);
+    return r1 == r2;
+}
