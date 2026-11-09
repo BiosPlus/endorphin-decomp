@@ -115,3 +115,11 @@ extern "C" void __cdecl fn_007DFDE0(void* a1, void* a2) {
     ((Fn1)ext_007DFDC0)(a1, a2);
     ((Fn2)(*(void**)((char*)a2 + 0x0c)))(a1);
 }
+
+// [0x007D47B0] sub_007D47B0 (29 bytes)
+extern "C" void ext_007D58E0();
+
+extern "C" void __cdecl fn_007D47B0(char* self) {
+    typedef void (__cdecl *Fn)(int, void*, int, int);
+    ((Fn)ext_007D58E0)(1, *(void**)(self + 0x1c), 0x0099DE5C, 0x0099DE60);
+}

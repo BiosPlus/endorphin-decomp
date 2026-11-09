@@ -575683,7 +575683,9 @@
       "0x007D47BD",
       "0x007D47C5"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:04:35Z"
   },
   {
     "va": "0x007D47D0",
