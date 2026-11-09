@@ -87,3 +87,20 @@ extern "C" __declspec(naked) void* __fastcall fn_0063D950(void* self) {
         ret
     }
 }
+
+// [0x0063D970] sub_0063D970 (29 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0063D970(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0062CD30
+        fldz
+        mov dword ptr [esi], 979284h
+        fst dword ptr [esi + 44h]
+        fst dword ptr [esi + 40h]
+        mov eax, esi
+        fstp dword ptr [esi + 3ch]
+        pop esi
+        ret
+    }
+}

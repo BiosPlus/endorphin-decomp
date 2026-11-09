@@ -366790,7 +366790,9 @@
       "0x0063D974",
       "0x0063D97C"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:02:36Z"
   },
   {
     "va": "0x0063D990",
