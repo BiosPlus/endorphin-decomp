@@ -717,3 +717,24 @@ extern "C" __declspec(naked) void __fastcall fn_00434E70(void* self) {
         ret
     }
 }
+
+// [0x00434E90] sub_00434E90 (28 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_00469410();
+extern "C" void ext_00433B70();
+
+extern "C" __declspec(naked) void __fastcall fn_00434E90(void* self) {
+    __asm {
+        push esi
+        push 5
+        mov esi, ecx
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469410
+        push 5
+        mov ecx, esi
+        call ext_00433B70
+        pop esi
+        ret
+    }
+}

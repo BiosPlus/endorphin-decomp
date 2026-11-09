@@ -29731,7 +29731,9 @@
       "0x00434E9D",
       "0x00434EA6"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:59:24Z"
   },
   {
     "va": "0x00434EB0",
