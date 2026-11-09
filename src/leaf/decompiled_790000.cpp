@@ -34,3 +34,29 @@ extern "C" __declspec(naked) int __cdecl fn_0079EEC0() {
         ret
     }
 }
+
+// [0x0079AFE0] sub_0079AFE0 (48 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0079AFE0(void* dst, int c, unsigned int n) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0xc]
+        and eax, 0xff
+        push ebx
+        mov bl, al
+        mov edx, ecx
+        mov bh, bl
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, ebx
+        shl eax, 0x10
+        mov ax, bx
+        shr ecx, 0x2
+        rep stosd
+        mov ecx, edx
+        and ecx, 0x3
+        rep stosb
+        pop edi
+        pop ebx
+        ret
+    }
+}
