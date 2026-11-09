@@ -185,3 +185,13 @@ extern "C" void __fastcall fn_0049AD20(void* self) {
     ext_006A5C5C(*(void**)((unsigned char*)self + 4));
     *(void**)((unsigned char*)self + 4) = 0;
 }
+
+// [0x0049E910] sub_0049E910 (29 bytes)
+extern "C" void ext_0049E8D0();
+extern "C" void ext_006A5C5C(void* arg);
+
+extern "C" void __fastcall fn_0049E910(void* self) {
+    ext_0049E8D0();
+    ext_006A5C5C(*(void**)((unsigned char*)self + 4));
+    *(void**)((unsigned char*)self + 4) = 0;
+}
