@@ -79,3 +79,37 @@ extern "C" void __cdecl fn_0085BEA0(void* self) {
     }
     ext_00859730(self);
 }
+
+// [0x00859A20] sub_00859A20 (47 bytes)
+extern "C" __declspec(naked) char* __cdecl fn_00859A20(char* dst, const char* src) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        mov eax, ecx
+        cmp byte ptr [ecx], 0x0
+        je L_end_dst
+    L_find_end:
+        mov dl, byte ptr [ecx + 0x1]
+        inc ecx
+        test dl, dl
+        jne L_find_end
+    L_end_dst:
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        inc ecx
+        mov dl, byte ptr [esi]
+        inc esi
+        mov byte ptr [ecx - 0x1], dl
+        test dl, dl
+        je L_done
+    L_copy:
+        mov dl, byte ptr [esi]
+        mov byte ptr [ecx], dl
+        inc ecx
+        inc esi
+        test dl, dl
+        jne L_copy
+    L_done:
+        pop esi
+        ret
+    }
+}
