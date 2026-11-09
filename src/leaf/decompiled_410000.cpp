@@ -750,3 +750,32 @@ extern "C" __declspec(naked) void __stdcall fn_00419BF0(void* p) {
         ret 4
     }
 }
+
+// [0x004152D0] sub_004152D0 (48 bytes)
+extern "C" int mem_009241E4;
+extern "C" int mem_009241E0;
+
+extern "C" __declspec(naked) void __fastcall fn_004152D0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x24], 0
+        je done
+        mov eax, dword ptr [esi + 0x2c]
+        push edi
+        push eax
+        call dword ptr [mem_009241E4]
+        mov ecx, dword ptr [esi + 0x28]
+        mov edi, dword ptr [mem_009241E0]
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0x24]
+        push edx
+        call edi
+        mov dword ptr [esi + 0x24], 0
+        pop edi
+done:
+        pop esi
+        ret
+    }
+}
