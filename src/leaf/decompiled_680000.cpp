@@ -174,3 +174,27 @@ extern "C" void* __cdecl fn_00681DA0() {
     }
     return &mem_00B5A254;
 }
+
+// [0x00688B20] sub_00688B20 (37 bytes)
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_00688B20(void* self, int edx_unused, void* first, void* last) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je short L_00688B40
+        mov edi, edi
+L_00688B30:
+        lea ecx, [esi + 0x10]
+        call dword ptr [mem_00924FF4]
+        add esi, 0x2c
+        cmp esi, edi
+        jne short L_00688B30
+L_00688B40:
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
