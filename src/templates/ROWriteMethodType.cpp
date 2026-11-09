@@ -188,3 +188,20 @@ extern "C" __declspec(naked) void __fastcall fn_0062A560(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00630CE0] ExprParser::ROWriteMethodType<EffectorSkeletal, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorSkeletal::`vcall'{60, {flat}}>::vfunc_16 (30 bytes)
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void __stdcall fn_00630CE0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push 0a947d0h
+        push 0a2e2f8h
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
