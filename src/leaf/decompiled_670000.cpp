@@ -375,3 +375,22 @@ extern "C" void __fastcall fn_0067AE50(void* self) {
         WaitForSingleObject(h, 0xFFFFFFFF);
     }
 }
+
+// [0x0067CD10] sub_0067CD10 (29 bytes)
+extern "C" void ext_0067C8C0();
+extern "C" void ext_0067C8F0();
+extern "C" __declspec(naked) void __fastcall fn_0067CD10(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_0067C8C0
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_0067C8F0
+        pop esi
+        ret 0x8
+    }
+}

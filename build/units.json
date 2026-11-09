@@ -412196,7 +412196,9 @@
       "0x0067CD19",
       "0x0067CD25"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:07:03Z"
   },
   {
     "va": "0x0067CD30",
