@@ -1650,3 +1650,16 @@ extern "C" void __fastcall fn_00430B70(void* self, int edx_unused, void* p) {
     unsigned char r = ((BoolFn)vt_obj[0x1b0 / 4])(obj);
     ((ArgFn)vt_p[0])(p, (unsigned int)r);
 }
+
+// [0x00430BA0] sub_00430BA0 (40 bytes)
+extern "C" void __fastcall fn_00430BA0(void* self, int edx_unused, void* p) {
+    typedef void* (__cdecl *GetFn)();
+    typedef unsigned char (__thiscall *BoolFn)(void*);
+    typedef void (__thiscall *ArgFn)(void*, unsigned int);
+
+    void* obj = ((GetFn)ext_00465B40)();
+    void** vt_obj = *(void***)obj;
+    void** vt_p = *(void***)p;
+    unsigned char r = ((BoolFn)vt_obj[0x118 / 4])(obj);
+    ((ArgFn)vt_p[0])(p, (unsigned int)r);
+}
