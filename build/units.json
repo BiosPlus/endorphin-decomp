@@ -6578,7 +6578,9 @@
       "0x0040BC52",
       "0x0040BC5E"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:30:17Z"
   },
   {
     "va": "0x0040BC70",

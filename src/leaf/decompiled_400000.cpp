@@ -617,3 +617,17 @@ extern "C" void __fastcall fn_00401050(void* self, int edx_unused, int a1, int a
     *(int*)(p + 0x16c) = a3;
     *(int*)(p + 0x170) = a4;
 }
+
+// [0x0040BC40] sub_0040BC40 (43 bytes)
+extern "C" void ext_006A5F50();
+extern "C" int mem_00924FF0;
+
+extern "C" void __fastcall fn_0040BC40(void* self) {
+    typedef const char* (__thiscall *CStrFn)(void*);
+    typedef void (__thiscall *AssignFn)(void*, const char*);
+    unsigned char* p = (unsigned char*)self;
+    p[0x35c] = 0;
+    const char* s = ((CStrFn)mem_00924FF0)(p + 0x340);
+    ((AssignFn)ext_006A5F50)(p + 0x428, s);
+    p[0x35c] = 1;
+}
