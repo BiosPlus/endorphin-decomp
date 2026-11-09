@@ -631,3 +631,27 @@ extern "C" void __fastcall fn_0040BC40(void* self) {
     ((AssignFn)ext_006A5F50)(p + 0x428, s);
     p[0x35c] = 1;
 }
+
+// [0x0040FDC0] sub_0040FDC0 (46 bytes)
+extern "C" void ext_006A5C6E();
+
+extern "C" __declspec(naked) void* __fastcall fn_0040FDC0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006A5C6E
+        xor eax, eax
+        mov ecx, 0xe6
+        mov dword ptr [esi + 0x54], eax
+        mov dword ptr [esi + 0x5c], eax
+        mov dword ptr [esi + 0x58], eax
+        mov dword ptr [esi + 0x64], eax
+        mov dword ptr [esi + 0x6c], eax
+        mov dword ptr [esi], 0x92b9d4
+        mov dword ptr [esi + 0x60], ecx
+        mov dword ptr [esi + 0x68], ecx
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
