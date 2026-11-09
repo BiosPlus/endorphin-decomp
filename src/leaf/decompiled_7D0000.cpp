@@ -173,3 +173,26 @@ done:
         ret
     }
 }
+
+// [0x007D48C0] sub_007D48C0 (38 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D48C0(void) {
+    __asm {
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax + 0x4], edx
+        mov dword ptr [edx + 0x8], eax
+        mov edx, dword ptr [eax + 0x8]
+        mov dword ptr [ecx + 0x8], edx
+        cmp eax, dword ptr [edx]
+        jne short notequal
+        mov dword ptr [edx], ecx
+        mov dword ptr [ecx], eax
+        mov dword ptr [eax + 0x8], ecx
+        ret
+    notequal:
+        mov dword ptr [edx + 0x4], ecx
+        mov dword ptr [ecx], eax
+        mov dword ptr [eax + 0x8], ecx
+        ret
+    }
+}
