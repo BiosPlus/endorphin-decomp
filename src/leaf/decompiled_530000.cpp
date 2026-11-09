@@ -608,3 +608,18 @@ extern "C" __declspec(naked) void __cdecl fn_00539800(float* first, float* last,
         ret
     }
 }
+
+// [0x00539860] sub_00539860 (47 bytes)
+extern "C" void __cdecl fn_00539860(float* dst, unsigned int count, float* src) {
+    if (count > 0) {
+        do {
+            if (dst) {
+                dst[0] = src[0];
+                dst[1] = src[1];
+                dst[2] = src[2];
+            }
+            --count;
+            dst += 3;
+        } while (count > 0);
+    }
+}
