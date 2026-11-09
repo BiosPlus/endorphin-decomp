@@ -27,3 +27,14 @@ extern "C" void __fastcall fn_00448040(void* self, int edx_unused, unsigned shor
     long lparam = (long)(((unsigned long)hi << 16) | (unsigned long)lo);
     ((SendMessageFn_00448040)mem_00925694)(*(void**)((char*)self + 0x24), 0x401, 0, lparam);
 }
+
+// [0x00448070] ProgressDialog::vfunc_1_off_74 (39 bytes)
+extern "C" int mem_0092568C;
+
+typedef int (__stdcall *SendMessageFn_00448070)(void*, unsigned int, unsigned int, long);
+typedef int (__stdcall *UpdateWindowFn_00448070)(void*);
+
+extern "C" int __fastcall fn_00448070(void* self, int edx_unused, unsigned int a1) {
+    ((SendMessageFn_00448070)mem_00925694)(*(void**)((char*)self + 0x24), 0x402, a1, 0);
+    return ((UpdateWindowFn_00448070)mem_0092568C)(*(void**)((char*)self - 0x54));
+}
