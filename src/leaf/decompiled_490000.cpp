@@ -361,3 +361,16 @@ skip_invalid_0049AD40:
         ret 0x4
     }
 }
+
+// [0x0049B140] sub_0049B140 (42 bytes)
+extern "C" int mem_00925134;
+struct Node0049B140 { Node0049B140* next; int val; };
+struct Ctl0049B140 { Node0049B140* head; int cur; };
+extern "C" Ctl0049B140* __fastcall fn_0049B140(Ctl0049B140* self) {
+    void (__cdecl *invalid)() = *(void (__cdecl **)())&mem_00925134;
+    if (self->head == 0) invalid();
+    if (self->cur == self->head->val) invalid();
+    Node0049B140* q = (Node0049B140*)self->cur;
+    self->cur = (int)q->next;
+    return self;
+}
