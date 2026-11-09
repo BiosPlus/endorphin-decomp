@@ -8447,7 +8447,9 @@
       "0x0040E80B",
       "0x0040E813"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:48:36Z"
   },
   {
     "va": "0x0040E820",
