@@ -150,3 +150,12 @@ extern "C" void __fastcall fn_0041D880(void* self, int edx_unused, int a1) {
     *(int*)((char*)self + 0x40) = a1;
     ext_0041D7B0();
 }
+
+extern "C" void ext_006A5C6E();
+
+// [0x004153E0] sub_004153E0 (18 bytes)
+extern "C" void* __fastcall fn_004153E0(void* self) {
+    ext_006A5C6E();
+    *(unsigned int*)self = 0x0092C5ACu;
+    return self;
+}
