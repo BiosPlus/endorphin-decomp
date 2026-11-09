@@ -301,3 +301,25 @@ extern "C" __declspec(naked) void __fastcall fn_006513E0(void* self, void* edx_u
         ret 0x8
     }
 }
+
+// [0x0068BC60] ExprParser::WriteMethodType<Randomizer, int, {public: void __thiscall Randomizer::setSeed(int), 0}>::vfunc_41 (34 bytes)
+extern "C" void ext_006B0C30();
+
+extern "C" __declspec(naked) void __fastcall fn_0068BC60(void* self, void* edx_unused, void** a1, void** a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x8]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_006B0C30
+        pop esi
+        ret 0x8
+    }
+}
