@@ -1119,3 +1119,25 @@ no_branch_00437300:
         jmp ext_00436C90
     }
 }
+
+// [0x00437330] sub_00437330 (33 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_0046F890();
+extern "C" void ext_00436BE0();
+extern "C" void ext_00436C60();
+
+typedef void* (__fastcall *Callee_00465B30)(void* self);
+typedef unsigned char (__fastcall *Callee_0046F890)(void* self);
+typedef void (__fastcall *Callee_00436BE0)(void* self);
+typedef void (__fastcall *Callee_00436C60)(void* self);
+
+extern "C" void __fastcall fn_00437330(void* self) {
+    void* obj = ((Callee_00465B30)ext_00465B30)(self);
+    void* inner = *(void**)((char*)obj + 0x14);
+    unsigned char r = ((Callee_0046F890)ext_0046F890)(inner);
+    if (r) {
+        ((Callee_00436BE0)ext_00436BE0)(self);
+    } else {
+        ((Callee_00436C60)ext_00436C60)(self);
+    }
+}
