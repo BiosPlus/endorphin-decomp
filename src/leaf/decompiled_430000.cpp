@@ -485,3 +485,14 @@ extern "C" void* __fastcall fn_00430280(void* self) {
     void* vtbl = *(void**)vobj;
     return ((void* (__fastcall *)(void*))(*(void**)((char*)vtbl + 0x1dc)))(vobj);
 }
+
+// [0x00430340] sub_00430340 (24 bytes)
+// Calls sub_00465B30(self) -> r, sub_00468660(r) -> o, then tail-jumps to vtbl[0x1bc/4] of o with this=o.
+extern "C" void ext_00465B30();
+extern "C" void ext_00468660();
+extern "C" void __fastcall fn_00430340(void* self) {
+    void* r = ((void* (__fastcall *)(void*))ext_00465B30)(self);
+    void* o = ((void* (__fastcall *)(void*))ext_00468660)(r);
+    void* vtbl = *(void**)o;
+    ((void (__fastcall *)(void*))(*(void**)((char*)vtbl + 0x1bc)))(o);
+}
