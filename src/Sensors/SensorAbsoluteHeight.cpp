@@ -13,3 +13,9 @@ extern "C" float __fastcall fn_00627210(void* self) {
     ext_006271D0();
     return *(float*)((char*)self + 0x34);
 }
+
+// [0x006271F0] Sensors::SensorAbsoluteHeight::vfunc_16 (20 bytes)
+extern "C" float __fastcall fn_006271F0(void* self, int edx_unused, int index) {
+    ext_006271D0();
+    return *(float*)((char*)self + 0x30 + index * 4);
+}
