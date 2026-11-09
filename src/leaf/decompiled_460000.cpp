@@ -702,3 +702,14 @@ extern "C" __declspec(naked) void __fastcall fn_00465DE0(void* self) {
         jmp ext_00440690
     }
 }
+
+// [0x00465910] sub_00465910 (34 bytes)
+extern "C" int mem_00924300;
+extern "C" void __fastcall fn_00465910(void* self) {
+    if (*(int*)((char*)self + 0x60) != 1) {
+        return;
+    }
+    void** vtbl = *(void***)self;
+    int r = ((int (__thiscall*)(void*))(*(void**)&mem_00924300))((void*)0x00AD6CF4);
+    ((void (__thiscall*)(void*, int))vtbl[0x58 / 4])(self, r);
+}
