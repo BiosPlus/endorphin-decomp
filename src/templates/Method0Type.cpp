@@ -516,3 +516,20 @@ extern "C" void* __stdcall fn_00609760(void* a1) {
     return ((void* (__cdecl*)(void*, int, void*, void*, int))ext_006A6E9E)(
         a1, 0, (void*)0x00A2E2F8, (void*)0x00A94A38, 0);
 }
+
+extern "C" void ext_006A6E9E();
+
+// [0x0066CBA0] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_16 (30 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0066CBA0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push 0x0
+        push 0xa85538
+        push 0xa2e2f8
+        push 0x0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        ret 0x4
+    }
+}
