@@ -40702,7 +40702,9 @@
       "0x00448289",
       "0x0044828F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:05:42Z"
   },
   {
     "va": "0x004482A0",

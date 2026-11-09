@@ -394,3 +394,19 @@ extern "C" void __fastcall fn_00440920(void* self, int edx_unused, double a1) {
     double sum = *(double*)((char*)self + 0x50) + a1;
     ((void (__stdcall*)(double))ext_004407E0)(sum);
 }
+
+// [0x00448280] sub_00448280 (25 bytes)
+extern "C" void ext_006B0C40();
+extern "C" __declspec(naked) void* __fastcall fn_00448280(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_006B0C40
+        mov dword ptr [esi], 0x93333c
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
