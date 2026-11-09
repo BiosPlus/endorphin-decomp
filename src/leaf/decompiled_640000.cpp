@@ -336,3 +336,19 @@ extern "C" void __cdecl ext_007C5A70(int a1, float a2);
 extern "C" void __fastcall fn_0064DC60(void* self, int edx_unused, float a1) {
     ext_007C5A70(*(int*)((char*)self + 0x64), a1);
 }
+
+// [0x0064DC80] sub_0064DC80 (23 bytes)
+extern "C" void ext_007C5A90();
+
+extern "C" __declspec(naked) void __fastcall fn_0064DC80(void* self, int edx_unused, float a1) {
+    __asm {
+        fld dword ptr [esp + 4]
+        mov eax, dword ptr [ecx + 0x64]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_007C5A90
+        add esp, 8
+        ret 4
+    }
+}
