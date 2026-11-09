@@ -236,3 +236,12 @@ extern "C" int __cdecl fn_007CB380(float* a0, float* a1, float* a2) {
     *a2 = a0[6];
     return 1;
 }
+
+// [0x007C5F50] sub_007C5F50 (33 bytes)
+extern "C" void ext_007D4AF0();
+
+extern "C" int __cdecl fn_007C5F50(char* a0) {
+    typedef int (__cdecl *Fn)(int, int);
+    int r = ((Fn)ext_007D4AF0)(*(int*)(a0 + 0x17c), (int)(a0 + 0x184));
+    return r != 0 ? 1 : 0;
+}
