@@ -86256,7 +86256,9 @@
       "0x0048FBEC",
       "0x0048FBF4"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:09:18Z"
   },
   {
     "va": "0x0048FC00",

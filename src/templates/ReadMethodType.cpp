@@ -13,3 +13,9 @@ extern "C" void* __fastcall fn_0046FBC0(void* self, int edx_unused, void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA31D58, 0);
 }
+
+// [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
+extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
+    typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
+    return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA34520, 0);
+}
