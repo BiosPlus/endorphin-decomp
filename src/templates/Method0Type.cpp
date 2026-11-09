@@ -135,3 +135,10 @@ extern "C" __declspec(naked) void __stdcall fn_006930D0(void* a1, int a2) {
         ret 0x8
     }
 }
+
+// [0x00489570] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_2 (16 bytes)
+extern "C" int __fastcall fn_00489570(void* self, int edx_unused, void* a1) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_004CA560)(obj);
+    return 0;
+}
