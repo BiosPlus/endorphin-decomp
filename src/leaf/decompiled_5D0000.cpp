@@ -36,3 +36,13 @@ extern "C" void __fastcall fn_005D0790(void* self, int edx_unused, void* value) 
     }
     *slot = value;
 }
+
+// [0x005D1430] sub_005D1430 (33 bytes)
+extern "C" void ext_005B11D0();
+
+extern "C" void __fastcall fn_005D1430(unsigned char* self, int edx_unused, float value) {
+    typedef float* (__thiscall *AllocFn)(void* ecx_this, int arg);
+    float* slot = ((AllocFn)ext_005B11D0)((void*)(self + 0x210), 0);
+    *slot = value;
+    self[0x214] = 1;
+}
