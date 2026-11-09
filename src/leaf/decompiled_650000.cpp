@@ -187,3 +187,23 @@ extern "C" __declspec(naked) void __fastcall fn_0065F400(void* self) {
         ret
     }
 }
+
+// [0x0065C620] sub_0065C620 (25 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" int mem_009242E4;
+extern "C" __declspec(naked) void __fastcall fn_0065C620(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx]
+        test esi, esi
+        je done_0065C620
+        push esi
+        call dword ptr [mem_009242E4]
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+    done_0065C620:
+        pop esi
+        ret
+    }
+}
