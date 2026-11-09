@@ -444601,7 +444601,9 @@
     "relocations": [
       "0x006A7C25"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09"
   },
   {
     "va": "0x006A7C30",
