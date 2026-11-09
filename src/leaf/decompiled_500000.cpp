@@ -296,3 +296,30 @@ extern "C" __declspec(naked) double* __fastcall fn_00503D00(void* self, int edx_
         ret 0xc
     }
 }
+
+// [0x0050E360] sub_0050E360 (44 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void* __fastcall fn_0050E360(void* self, int edx_unused, unsigned int index) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je short L_invalid
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb short L_ok
+    L_invalid:
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov eax, dword ptr [esi + 0x4]
+        lea eax, [eax + 4*edi]
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
