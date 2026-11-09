@@ -56,3 +56,13 @@ extern "C" __declspec(naked) void __stdcall fn_004A25D0(void* a1) {
         ret 0x4
     }
 }
+
+// [0x00511F80] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_13 (13 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00511F80(void* a1) {
+    __asm {
+        push 0x3
+        call ext_00671100
+        add esp, 0x4
+        ret 0x4
+    }
+}
