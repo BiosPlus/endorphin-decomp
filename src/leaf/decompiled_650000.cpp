@@ -315,3 +315,14 @@ extern "C" __declspec(naked) void __fastcall fn_00659E10(void* self) {
         jmp ext_00645EB0
     }
 }
+
+// [0x0065BDF0] sub_0065BDF0 (37 bytes)
+extern "C" void __fastcall fn_0065BDF0(void* self, int edx_unused, void* a1) {
+    unsigned char* s = (unsigned char*)self;
+    unsigned char* a = (unsigned char*)a1;
+    *(unsigned char*)(s + 0x1c) = *(a + 0x83);
+    if (*(a + 0x84) != 0) {
+        *(float*)(s + 0x2c) = *(float*)(a + 0x44);
+        *(float*)(s + 0x30) = *(float*)(a + 0x48);
+    }
+}
