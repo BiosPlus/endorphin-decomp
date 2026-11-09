@@ -95,3 +95,20 @@ extern "C" __declspec(naked) void __cdecl fn_005FEFD0() {
         ret
     }
 }
+
+// [0x005F5470] sub_005F5470 (47 bytes)
+extern "C" void ext_005B11D0();
+
+extern "C" void __fastcall fn_005F5470(void* self, int edx_unused, int a1) {
+    (void)edx_unused;
+    char* p = (char*)self;
+    *(int*)(p + 0x210) = a1;
+    typedef float* (__thiscall *Fn)(void*, int);
+    Fn fn = (Fn)ext_005B11D0;
+    float* dst = fn(p + 0x1c0, 2);
+    *dst = (float)a1;
+    char* q = *(char**)(p + 0x10);
+    if (q) {
+        q[0x4] = 1;
+    }
+}
