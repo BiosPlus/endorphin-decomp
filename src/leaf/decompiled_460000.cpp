@@ -825,3 +825,24 @@ extern "C" void __fastcall fn_0046FDE0(void* self, int edx_unused, int* a1) {
     *(int*)(tgt + 0x1e0) = a1[0];
     *(int*)(tgt + 0x1e4) = a1[1];
 }
+
+extern "C" void ext_0046F930();
+extern "C" int mem_00AD89B4;
+
+// [0x00468630] sub_00468630 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00468630(void* self) {
+    __asm {
+        cmp dword ptr [ecx], 0x0
+        je done
+        sub dword ptr [mem_00AD89B4], 0x1
+        jne done
+        mov eax, dword ptr [ecx]
+        mov byte ptr [eax + 0x153], 0x0
+        cmp byte ptr [ecx + 0x4], 0x0
+        je done
+        mov ecx, dword ptr [ecx]
+        jmp ext_0046F930
+    done:
+        ret
+    }
+}
