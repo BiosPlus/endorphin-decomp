@@ -97,3 +97,10 @@ extern "C" __declspec(naked) void __cdecl fn_007C97A0(void* self, int value) {
         ret
     }
 }
+
+// [0x007C70A0] sub_007C70A0 (25 bytes)
+extern "C" void __cdecl ext_007D5720(int a0, int a1, int a2);
+
+extern "C" void __cdecl fn_007C70A0(char* a0) {
+    ext_007D5720(*(int*)(a0 + 0x48), *(int*)(a0 + 0x34), *(int*)(a0 + 0x38));
+}
