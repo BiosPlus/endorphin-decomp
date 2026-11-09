@@ -86,3 +86,17 @@ extern "C" void __fastcall fn_0064DEA0(void* self, int edx_unused, float a1) {
 extern "C" void __fastcall fn_0064DEC0(void* self, int edx_unused, float a1) {
     ext_0064DE00(2, a1);
 }
+
+// [0x00642630] sub_00642630 (19 bytes)
+extern "C" void ext_00648900();
+
+extern "C" __declspec(naked) void __fastcall fn_00642630(void* self, int edx_unused, float a1) {
+    __asm {
+        fld dword ptr [esp + 0x4]
+        push ecx
+        mov ecx, dword ptr [ecx + 0xc]
+        fstp dword ptr [esp]
+        call ext_00648900
+        ret 0x4
+    }
+}
