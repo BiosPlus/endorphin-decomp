@@ -151,3 +151,10 @@ extern "C" __declspec(naked) void __stdcall fn_0065D0F0(int a1, int a2) {
         ret 0x8
     }
 }
+
+// [0x0065AF30] sub_0065AF30 (24 bytes)
+extern "C" void __cdecl ext_007C8C10(int a, int b);
+
+extern "C" void __fastcall fn_0065AF30(void* self, int edx_unused, void* a1) {
+    ext_007C8C10(*(int*)self, *(int*)(*(int*)((char*)a1 + 0x5c)));
+}
