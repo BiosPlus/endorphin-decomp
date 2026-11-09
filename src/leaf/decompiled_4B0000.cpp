@@ -111,3 +111,24 @@ extern "C" void __fastcall fn_004B5250(void* self, int edx_unused, unsigned char
         ext_004B4D30();
     }
 }
+
+// [0x004B6C90] sub_004B6C90 (34 bytes)
+// Returns a std::string by value (hidden return buffer is the first stack arg, ret 0x8).
+// Constructs the std::string in the hidden buffer from a literal C string via the
+// imported basic_string(const char*) ctor, then returns the buffer in eax.
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void __fastcall fn_004B6C90(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0x9433e0
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
