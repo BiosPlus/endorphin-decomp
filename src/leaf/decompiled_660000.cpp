@@ -483,3 +483,12 @@ done_006601E0:
         ret
     }
 }
+
+// [0x0066A950] sub_0066A950 (38 bytes)
+extern "C" char* __fastcall fn_0066A950(void* self, int edx_unused, int a1, int a2, char* a3) {
+    if (a3 != 0) {
+        *a3 = (*(char**)self)[a2 + 1];
+    }
+    (*(char**)self)[a2 + 1] = 0;
+    return (*(char**)self) + a1;
+}
