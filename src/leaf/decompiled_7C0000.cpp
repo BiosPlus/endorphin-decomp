@@ -365,3 +365,11 @@ extern "C" void __cdecl fn_007C6070(void* a0, float* a1) {
     a1[1] = *(float*)(p + 0xc4);
     a1[2] = *(float*)(p + 0xc8);
 }
+
+// [0x007C60B0] sub_007C60B0 (35 bytes)
+extern "C" void __cdecl fn_007C60B0(void* a0, float* a1) {
+    char* p = (char*)a0;
+    a1[0] = *(float*)(p + 0xe0);
+    a1[1] = *(float*)(p + 0xe4);
+    a1[2] = *(float*)(p + 0xe8);
+}
