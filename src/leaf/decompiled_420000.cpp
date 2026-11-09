@@ -122,3 +122,14 @@ extern "C" __declspec(naked) void __fastcall fn_0042FE70(void* self) {
         jmp edx
     }
 }
+
+// [0x0042FE90] sub_0042FE90 (17 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0042FE90(void* self) {
+    __asm {
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0xf4]
+        jmp eax
+    }
+}
