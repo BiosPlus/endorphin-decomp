@@ -388102,7 +388102,9 @@
     "relocations": [
       "0x0065AF24"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09"
   },
   {
     "va": "0x0065AF30",
