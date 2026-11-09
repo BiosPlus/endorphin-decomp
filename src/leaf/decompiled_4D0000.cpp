@@ -88,3 +88,9 @@ extern "C" void __fastcall fn_004D3BD0(void* self, int edx_unused, unsigned char
     *((unsigned char*)self + 0x194) = a1;
     ext_004C0340();
 }
+
+// [0x004D3BF0] sub_004D3BF0 (18 bytes)
+extern "C" void __fastcall fn_004D3BF0(void* self, int edx_unused, unsigned char a1) {
+    *((unsigned char*)self + 0x195) = a1;
+    ext_004C0340();
+}
