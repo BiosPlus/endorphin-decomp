@@ -126,3 +126,17 @@ extern "C" __declspec(naked) void __fastcall fn_0049F2E0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0049CF20] sub_0049CF20 (29 bytes)
+extern "C" void* __cdecl ext_006A5C62(unsigned int size);
+
+extern "C" void __fastcall fn_0049CF20(void* self) {
+    void* p = ext_006A5C62(0xd4);
+    if (p) {
+        *(void**)p = p;
+    }
+    void* q = (char*)p + 4;
+    if (q) {
+        *(void**)q = p;
+    }
+}
