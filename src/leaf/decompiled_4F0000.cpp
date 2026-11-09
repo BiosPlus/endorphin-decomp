@@ -23,3 +23,12 @@ extern "C" float __fastcall fn_004FD850(void* self) {
     tmp = ((float (__fastcall*)(void*))ext_0050EA10)((char*)self + 0x44);
     return tmp;
 }
+
+// [0x004F4D90] sub_004F4D90 (19 bytes)
+#include <math.h>
+extern "C" float __fastcall fn_004F4D90(void* self) {
+    volatile float tmp;
+    float* p = (float*)self;
+    tmp = (float)atan2((double)p[2], (double)p[0]);
+    return tmp;
+}

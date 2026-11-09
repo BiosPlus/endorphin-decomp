@@ -153150,7 +153150,9 @@
     "relocations": [
       "0x004F4D97"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:21:48Z"
   },
   {
     "va": "0x004F4DB0",
