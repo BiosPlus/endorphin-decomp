@@ -132425,7 +132425,9 @@
     "relocations": [
       "0x004D3BBB"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:18:16Z"
   },
   {
     "va": "0x004D3BD0",
