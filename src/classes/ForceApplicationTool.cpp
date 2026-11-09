@@ -43,3 +43,24 @@ extern "C" int __fastcall fn_005441F0(void* self) {
     }
     return 1;
 }
+
+// [0x00544040] ForceApplicationTool::vfunc_23 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00544040(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x88], 0x0
+        je done
+        mov ecx, dword ptr [esi + 0x88]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x38]
+        push 0x1
+        call edx
+    done:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x68]
+        mov ecx, esi
+        pop esi
+        jmp edx
+    }
+}
