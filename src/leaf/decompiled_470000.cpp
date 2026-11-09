@@ -100,3 +100,30 @@ extern "C" void __cdecl fn_004779B0(unsigned int* first, unsigned int* last, con
         } while (first != last);
     }
 }
+
+// [0x00479A90] sub_00479A90 (44 bytes)
+extern "C" __declspec(naked) float* __stdcall fn_00479A90(float* dst, unsigned int count, const float* src) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        test esi, esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, esi
+        mov ecx, edi
+        jbe done
+        mov edx, dword ptr [esp + 0x14]
+    copy_loop:
+        fld dword ptr [edx]
+        sub eax, 1
+        fstp dword ptr [ecx]
+        add ecx, 4
+        test eax, eax
+        ja copy_loop
+    done:
+        lea eax, [edi + 4*esi]
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
