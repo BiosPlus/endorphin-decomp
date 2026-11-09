@@ -39,3 +39,9 @@ extern "C" void* __stdcall fn_0066B270(void** a1) {
     }
     return 0;
 }
+
+// [0x00671880] ExprParser::StringType::vfunc_28 (28 bytes)
+extern "C" void* __fastcall fn_00671880(void* self, int edx_unused, void** a1, void** a2) {
+    *a1 = ((Callee_006714E0)ext_006714E0)((char*)self + 4, 1, (int)*a2);
+    return a1;
+}
