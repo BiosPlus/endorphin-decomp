@@ -219,3 +219,10 @@ extern "C" double __fastcall fn_004CCD50(void* self, int edx_unused, void** a1) 
     ((void (__fastcall*)(void*))ext_004CCB00)(obj);
     return 0.0;
 }
+
+// [0x004CCD60] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}>::vfunc_2 (16 bytes)
+extern "C" int __stdcall fn_004CCD60(void* a1) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_004CCB00)(obj);
+    return 0;
+}
