@@ -185,3 +185,13 @@ extern "C" void* __fastcall fn_0041CE20(void* self, int edx_unused, float a1) {
     f(self, a1);
     return self;
 }
+
+// [0x004151B0] sub_004151B0 (25 bytes)
+extern "C" void ext_00401C60();
+
+extern "C" void* __fastcall fn_004151B0(void* self, int edx_unused, int a1) {
+    typedef void (__fastcall *Callee)(void*, int, int);
+    ((Callee)ext_00401C60)(self, edx_unused, a1);
+    *(int*)self = 0x92c4c4;
+    return self;
+}
