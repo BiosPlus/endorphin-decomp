@@ -69,3 +69,26 @@ extern "C" __declspec(naked) void __cdecl fn_005AD1C0(void* dst, void* end, void
         ret
     }
 }
+
+// [0x005A3DC0] sub_005A3DC0 (43 bytes)
+extern "C" int mem_00924E90;
+extern "C" int mem_00924FA0;
+extern "C" int mem_00924E94;
+extern "C" int mem_00924E98;
+extern "C" __declspec(naked) void __fastcall fn_005A3DC0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00924E90]
+        mov ecx, dword ptr [ebp - 0x14]
+        mov edx, dword ptr [mem_00924FA0]
+        push eax
+        add ecx, 0xc
+        push ecx
+        push edx
+        call dword ptr [mem_00924E94]
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov eax, 0x5a3dad
+        ret
+    }
+}
