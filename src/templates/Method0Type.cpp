@@ -508,3 +508,11 @@ extern "C" __declspec(naked) void* __stdcall fn_004CA420(void* p) {
         ret 4
     }
 }
+
+extern "C" void ext_006A6E9E();
+
+// [0x00609760] ExprParser::Method0Type<NMData::DisabledCollisionPairList, {public: void __thiscall NMData::DisabledCollisionPairList::addSelectedCollisionModels(void), 0}>::vfunc_16 (30 bytes)
+extern "C" void* __stdcall fn_00609760(void* a1) {
+    return ((void* (__cdecl*)(void*, int, void*, void*, int))ext_006A6E9E)(
+        a1, 0, (void*)0x00A2E2F8, (void*)0x00A94A38, 0);
+}
