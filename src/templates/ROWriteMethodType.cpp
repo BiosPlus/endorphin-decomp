@@ -154,3 +154,20 @@ extern "C" __declspec(naked) void __fastcall fn_0062A0A0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0062A0F0] ExprParser::ROWriteMethodType<Sensors::SensorRelativeTime, float, &public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)>::vfunc_16 (30 bytes)
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void __fastcall fn_0062A0F0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push 0xa97cf8
+        push 0xa2e2f8
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        ret 4
+    }
+}
