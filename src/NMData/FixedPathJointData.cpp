@@ -11,3 +11,19 @@ extern "C" __declspec(naked) void __fastcall fn_005E09B0(void* self) {
         jmp edx
     }
 }
+
+extern "C" void __fastcall ext_005EBC10(void* self, int edx_unused, float* p);
+
+// [0x005ECCF0] NMData::FixedPathJointData::vfunc_4_off_C (26 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005ECCF0(void* self, int edx_unused, float* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        lea edx, [esp + 0x4]
+        push edx
+        fstp dword ptr [esp + 0x8]
+        add ecx, -0xc
+        call ext_005EBC10
+        ret 0x4
+    }
+}
