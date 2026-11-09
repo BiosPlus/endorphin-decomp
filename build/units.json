@@ -378106,7 +378106,9 @@
       "0x0064B0AC",
       "0x0064B0B4"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:47:04Z"
   },
   {
     "va": "0x0064B0C0",
