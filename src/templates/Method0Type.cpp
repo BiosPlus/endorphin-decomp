@@ -251,3 +251,10 @@ extern "C" int __stdcall fn_005BB310(void* a1) {
     ((void (__fastcall*)(void*))ext_005B72E0)(obj);
     return 0;
 }
+
+// [0x005BB320] ExprParser::Method0Type<NMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}>::vfunc_3 (16 bytes)
+extern "C" bool __stdcall fn_005BB320(void* a1) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_005B72E0)(obj);
+    return false;
+}
