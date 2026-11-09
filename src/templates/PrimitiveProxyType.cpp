@@ -102,3 +102,16 @@ extern "C" __declspec(naked) void __fastcall fn_00499190(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0049CFE0] ExprParser::PrimitiveProxyType<bool>::vfunc_37 (15 bytes)
+extern "C" void ext_0049B3A0();
+
+// this in ecx (passed through to callee), one stack arg (a1), ret 4.
+extern "C" __declspec(naked) void __fastcall fn_0049CFE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        call ext_0049B3A0
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x4], eax
+        ret 0x4
+    }
+}
