@@ -553,3 +553,18 @@ skip_iswindow:
         ret 0x4
     }
 }
+
+// [0x006B0E80] sub_006B0E80 (44 bytes)
+extern "C" void* __stdcall ext_006A5E00(void* hwnd);
+extern "C" void __fastcall ext_006A60D0(void* self);
+extern "C" int mem_00925650;
+
+extern "C" void __fastcall fn_006B0E80(void* self, int edx_unused, int a1, int a2, int a3) {
+    if (a1 == 0x1b) {
+        void* hwnd = *(void**)((char*)self + 0x20);
+        void* parent = ((void* (__stdcall*)(void*))mem_00925650)(hwnd);
+        void* wnd = ext_006A5E00(parent);
+        ext_006A60D0(wnd);
+    }
+    ((void (__fastcall*)(void*))ext_006A5EA8)(self);
+}
