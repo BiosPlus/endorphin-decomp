@@ -48,3 +48,16 @@ extern "C" void __fastcall ext_0058B540(void* self, int edx_unused, float a1);
 extern "C" void __fastcall fn_0058F580(void* self, int edx_unused, float a1) {
     ext_0058B540(self, edx_unused, a1);
 }
+
+// [0x0058F590] sub_0058F590 (16 bytes)
+extern "C" void ext_0058B5A0();
+
+extern "C" __declspec(naked) void __fastcall fn_0058F590(void* self, int edx_unused, float a1) {
+    __asm {
+        fld dword ptr [esp + 4]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0058B5A0
+        ret 4
+    }
+}
