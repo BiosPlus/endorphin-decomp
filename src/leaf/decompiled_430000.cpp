@@ -1841,3 +1841,29 @@ extern "C" __declspec(naked) void __cdecl fn_00436A20(void* out, int a1, int* it
         ret
     }
 }
+
+// [0x00431330] sub_00431330 (43 bytes)
+extern "C" void ext_006A651A();
+extern "C" __declspec(naked) void __fastcall fn_00431330(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x104]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x15c]
+        push 0x0
+        mov ecx, esi
+        call edx
+        neg eax
+        sbb eax, eax
+        add eax, 0x1
+        push eax
+        push esi
+        mov ecx, edi
+        call ext_006A651A
+        pop edi
+        pop esi
+        ret
+    }
+}
