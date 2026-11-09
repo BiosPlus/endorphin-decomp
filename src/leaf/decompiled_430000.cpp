@@ -157,3 +157,15 @@ extern "C" __declspec(naked) void __cdecl fn_00437DE0() {
         ret
     }
 }
+
+// [0x00434E30] sub_00434E30 (11 bytes)
+// Pushes 0x92f9f8 and calls sub_004310E0 (cdecl, caller does not clean up the argument).
+extern "C" void ext_004310E0();
+
+extern "C" __declspec(naked) void __cdecl fn_00434E30() {
+    __asm {
+        push 0x92f9f8
+        call ext_004310E0
+        ret
+    }
+}
