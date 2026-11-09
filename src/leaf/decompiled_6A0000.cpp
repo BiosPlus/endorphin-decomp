@@ -27,3 +27,12 @@ typedef void (__thiscall *CalleeFn006A7C30)(void* self);
 extern "C" void __stdcall fn_006A7C30(void* a1) {
     return ((CalleeFn006A7C30)ext_006AD110)(a1);
 }
+
+// [0x006A0790] sub_006A0790 (13 bytes)
+extern "C" void ext_006A06E0();
+
+typedef void (__stdcall *CalleeFn006A0790)(void* p);
+
+extern "C" void __stdcall fn_006A0790(void* a1) {
+    return ((CalleeFn006A0790)ext_006A06E0)((void*)&a1);
+}
