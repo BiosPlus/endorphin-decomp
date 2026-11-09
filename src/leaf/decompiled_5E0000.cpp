@@ -26,3 +26,20 @@ extern "C" __declspec(naked) void __fastcall fn_005E0E40(void* self) {
         ret
     }
 }
+
+extern "C" void __fastcall ext_005B11E0(void* self, int edx_unused, int a1);
+
+// [0x005E2770] sub_005E2770 (27 bytes)
+// __thiscall, ret 0: loads this+0x17c, calls its virtual slot +0x11c, then calls 0x005B11E0 on (result+8) with a single zero stack arg.
+extern "C" __declspec(naked) void __fastcall fn_005E2770(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x17c]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x11c]
+        call edx
+        push 0
+        lea ecx, [eax + 0x8]
+        call ext_005B11E0
+        ret
+    }
+}
