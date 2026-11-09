@@ -594,3 +594,13 @@ extern "C" void __fastcall fn_00647F50(void* self, int edx_unused, float a1) {
     void* p = *(void**)inner;
     ((void (__cdecl*)(void*, float))ext_007C6330)(p, a1);
 }
+
+// [0x00647DE0] sub_00647DE0 (28 bytes)
+extern "C" void __cdecl ext_007C6790(unsigned int a);
+extern "C" void __cdecl ext_007C67D0(unsigned int a);
+
+extern "C" void __fastcall fn_00647DE0(void* self) {
+    unsigned int* esi = *(unsigned int**)((char*)self + 0xa4);
+    ext_007C6790(*esi);
+    ext_007C67D0(*esi);
+}
