@@ -125,3 +125,13 @@ extern "C" __declspec(naked) bool __fastcall fn_005649D0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00563430] sub_00563430 (34 bytes)
+extern "C" void ext_007C562E();
+extern "C" void ext_007C5634();
+extern "C" void __fastcall fn_00563430(void* ecx_unused, void* edx_unused, void* self, unsigned char visibility) {
+    if (self == 0) return;
+    void* vis = ((void* (__thiscall*)(void*))ext_007C5634)(self);
+    if (vis == 0) return;
+    ((void (__thiscall*)(void*, unsigned short))ext_007C562E)(vis, (unsigned short)visibility);
+}
