@@ -738,3 +738,17 @@ extern "C" __declspec(naked) void __fastcall fn_00434E90(void* self) {
         ret
     }
 }
+
+// [0x00434EB0] sub_00434EB0 (28 bytes)
+extern "C" void ext_00433B70();
+extern "C" void ext_00465B30();
+extern "C" void ext_00469410();
+
+extern "C" void __fastcall fn_00434EB0(void* self) {
+    typedef void* (__stdcall *FnA)(int);
+    typedef void (__fastcall *FnB)(void*);
+    typedef void (__thiscall *FnC)(void*, int);
+    void* r = reinterpret_cast<FnA>(ext_00465B30)(10);
+    reinterpret_cast<FnB>(ext_00469410)(r);
+    reinterpret_cast<FnC>(ext_00433B70)(self, 10);
+}
