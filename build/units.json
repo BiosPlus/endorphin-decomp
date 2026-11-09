@@ -131933,7 +131933,9 @@
       "0x004D2C7A",
       "0x004D2C80"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:19:02Z"
   },
   {
     "va": "0x004D2C90",
