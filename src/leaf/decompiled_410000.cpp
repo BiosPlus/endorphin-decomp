@@ -276,3 +276,15 @@ L_00419990_done:
         ret 0x10
     }
 }
+
+// [0x0041CA90] sub_0041CA90 (32 bytes)
+extern "C" void ext_006AD180();
+
+extern "C" void __fastcall fn_0041CA90(void* self, int edx_unused, void* a1, void* a2) {
+    typedef void* (__fastcall *CalleeFn)(void*);
+    typedef void (__thiscall *VFn)(void*, void*, void*);
+    void* r = ((CalleeFn)ext_006AD180)(a1);
+    void* p = *(void**)((char*)self + 4);
+    void** vt = *(void***)p;
+    ((VFn)vt[2])(p, r, a2);
+}
