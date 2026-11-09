@@ -12,3 +12,16 @@ extern "C" __declspec(naked) bool __fastcall fn_00442BA0(void* self, int edx_unu
         ret 0Ch
     }
 }
+
+// [0x00442CC0] MultiTrackView::MultiTrackViewStates::PanState::vfunc_2 (16 bytes)
+extern "C" void ext_0043C900();
+extern "C" int mem_009256E0;
+
+extern "C" __declspec(naked) void __fastcall fn_00442CC0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 8]
+        push 0
+        call ext_0043C900
+        jmp dword ptr [mem_009256E0]
+    }
+}
