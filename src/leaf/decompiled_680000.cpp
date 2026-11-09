@@ -198,3 +198,28 @@ L_00688B40:
         ret 0x8
     }
 }
+
+// [0x00688BE0] sub_00688BE0 (37 bytes)
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_00688BE0(void* self, int edx_unused, void* first, void* last) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done_00688BE0
+        __asm _emit 0x8b
+        __asm _emit 0xff
+loop_00688BE0:
+        lea ecx, [esi + 0x8]
+        call dword ptr [mem_00924FF4]
+        add esi, 0x24
+        cmp esi, edi
+        jne loop_00688BE0
+done_00688BE0:
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
