@@ -215,3 +215,13 @@ extern "C" void __fastcall fn_00538CD0(void* self) {
     ((void (__stdcall*)(void*))ext_0063E006)(quadric);
     ((void (__fastcall*)(void*))ext_00532B40)(self);
 }
+
+// [0x00538F00] sub_00538F00 (26 bytes)
+extern "C" void ext_0063E006();
+extern "C" void ext_00532B40();
+extern "C" void __fastcall fn_00538F00(void* self) {
+    void* quadric = *(void**)((unsigned char*)self + 0x18);
+    *(void**)self = (void*)0x95517c;
+    ((void (__stdcall*)(void*))ext_0063E006)(quadric);
+    ((void (__fastcall*)(void*))ext_00532B40)(self);
+}
