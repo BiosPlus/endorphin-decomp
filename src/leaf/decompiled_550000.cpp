@@ -385,3 +385,28 @@ extern "C" void __fastcall fn_0055E120(unsigned char* self, int edx_unused, int 
         self[0x4d4] = (unsigned char)ext_00662EC0(a1);
     }
 }
+
+// [0x00550FA0] sub_00550FA0 (48 bytes)
+extern "C" void ext_0054FE50();
+extern "C" void ext_005500C0();
+extern "C" void ext_00550280();
+extern "C" __declspec(naked) void __cdecl fn_00550FA0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [eax + 0x18]
+        test edx, edx
+        je L_fallback
+        cmp dword ptr [eax + 0x20], 0x0
+        je L_second
+        mov dword ptr [esp + 0x4], eax
+        jmp ext_0054FE50
+    L_second:
+        test edx, edx
+        je L_fallback
+        mov dword ptr [esp + 0x4], eax
+        jmp ext_005500C0
+    L_fallback:
+        mov dword ptr [esp + 0x4], eax
+        jmp ext_00550280
+    }
+}
