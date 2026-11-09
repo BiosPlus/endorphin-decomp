@@ -115,3 +115,22 @@ extern "C" __declspec(naked) void __fastcall fn_0066BA30(void* self) {
         ret 4
     }
 }
+
+// [0x0066BB50] ExprParser::ExtROType::vfunc_47 (29 bytes)
+extern "C" void ext_0066BA00();
+
+extern "C" __declspec(naked) void __fastcall fn_0066BB50(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push esi
+        call ext_0066BA00
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xbc]
+        push esi
+        call edx
+        pop esi
+        ret 4
+    }
+}
