@@ -817,3 +817,11 @@ extern "C" __declspec(naked) void __fastcall fn_0046FD70(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0046FDE0] sub_0046FDE0 (36 bytes)
+extern "C" void __fastcall fn_0046FDE0(void* self, int edx_unused, int* a1) {
+    char* obj = *(char**)((char*)self + 0xcc);
+    char* tgt = *(char**)(obj + 0x26c);
+    *(int*)(tgt + 0x1e0) = a1[0];
+    *(int*)(tgt + 0x1e4) = a1[1];
+}
