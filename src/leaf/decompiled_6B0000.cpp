@@ -336,3 +336,13 @@ extern "C" __declspec(naked) void* __fastcall fn_006B95F0(void* self) {
         ret
     }
 }
+
+// [0x006B16A0] sub_006B16A0 (31 bytes)
+extern "C" void ext_006A609A();
+extern "C" void* __fastcall fn_006B16A0(void* self, int edx_unused, int a1) {
+    ext_006A609A();
+    *((int*)((unsigned char*)self + 0x74)) = a1;
+    *((int*)self) = 0x991564;
+    *((unsigned char*)self + 0x70) = 0;
+    return self;
+}
