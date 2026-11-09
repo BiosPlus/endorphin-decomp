@@ -218835,7 +218835,9 @@
       "0x0055DE22",
       "0x0055DE38"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:36:54Z"
   },
   {
     "va": "0x0055DE50",
