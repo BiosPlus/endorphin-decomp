@@ -71,3 +71,16 @@ extern "C" void __fastcall fn_004E6610(void* self) {
         ((void (__cdecl*)(void*))ext_006A5C5C)(esi);
     }
 }
+
+// [0x004EF890] sub_004EF890 (26 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void __fastcall fn_004EF890(void* self) {
+    void* p = ((void* (__cdecl*)(unsigned int))ext_006A5C62)(0x70);
+    if (p) {
+        *(void**)p = p;
+    }
+    void* q = (char*)p + 4;
+    if (q) {
+        *(void**)q = p;
+    }
+}
