@@ -44,3 +44,31 @@ L_null:
         ret 0x8
     }
 }
+
+// [0x007895F0] sub_007895F0 (48 bytes)
+// Forwards two stack args to a virtual on self->[8] (vtbl+0x1c) if non-null,
+// otherwise to a virtual on self->[0x14] (vtbl+0x30); ret 0x8.
+extern "C" __declspec(naked) void __fastcall fn_007895F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        je short L_null
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx]
+        push edx
+        mov edx, dword ptr [esp + 0x8]
+        push edx
+        call dword ptr [eax + 0x1c]
+        ret 0x8
+L_null:
+        mov edx, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [eax + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx]
+        push edx
+        call dword ptr [eax + 0x30]
+        ret 0x8
+    }
+}
