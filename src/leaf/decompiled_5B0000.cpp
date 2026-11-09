@@ -184,3 +184,20 @@ L_done_5B6C50:
         ret
     }
 }
+
+// [0x005B1B60] sub_005B1B60 (34 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005B1B60(void* self, int edx_unused, const float* src) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fstp dword ptr [ecx + 0x10]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ecx + 0x14]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ecx + 0x18]
+        fld dword ptr [eax + 0xc]
+        mov byte ptr [ecx + 0x4], 0x1
+        fstp dword ptr [ecx + 0x1c]
+        ret 0x4
+    }
+}
