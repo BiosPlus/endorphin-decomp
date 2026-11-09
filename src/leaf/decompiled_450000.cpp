@@ -140,3 +140,19 @@ extern "C" __declspec(naked) void __fastcall fn_00452100(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00458840] sub_00458840 (21 bytes)
+// Pushes arg0 and &arg1 (pointer into the caller's stack args), loads ecx = this->[0x54], then calls 0x004586E0 and returns 0xc.
+extern "C" void ext_004586E0();
+
+extern "C" __declspec(naked) void __fastcall fn_00458840(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [ecx + 0x54]
+        push eax
+        lea edx, [esp + 0xc]
+        push edx
+        call ext_004586E0
+        ret 0xc
+    }
+}
