@@ -29266,7 +29266,9 @@
       "0x004345E3",
       "0x004345F3"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:06:12Z"
   },
   {
     "va": "0x00434610",
