@@ -151,3 +151,9 @@ extern "C" void* __stdcall fn_005221B0(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA40E4C, 0);
 }
+
+// [0x00524810] ExprParser::ReadMethodType<NMData::VariableValue, float, &public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0>::vfunc_16 (30 bytes)
+extern "C" void* __stdcall fn_00524810(void* a1) {
+    typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
+    return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA40D44, 0);
+}
