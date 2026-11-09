@@ -880,3 +880,22 @@ extern "C" __declspec(naked) void __fastcall fn_00434F70(void* self) {
         ret
     }
 }
+
+// [0x0043C930] sub_0043C930 (31 bytes)
+extern "C" void ext_006A65E0();
+
+extern "C" __declspec(naked) void __fastcall fn_0043C930(void* self, int edx_unused, int a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov edx, dword ptr [eax]
+        push 0
+        push ecx
+        mov ecx, dword ptr [eax + 4]
+        push ecx
+        mov ecx, dword ptr [esp + 0x10]
+        push edx
+        push 0x102
+        call ext_006A65E0
+        ret 8
+    }
+}
