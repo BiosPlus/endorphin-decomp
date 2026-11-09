@@ -99,3 +99,9 @@ extern "C" void __cdecl fn_007DB500(void* self) {
     ext_007CC930(self);
 }
 
+
+// [0x007DB090] sub_007DB090 (26 bytes)
+extern "C" float __cdecl ext_007F5850(int, int, int);
+extern "C" void __cdecl fn_007DB090(int a1, int a2, int a3) {
+    ext_007F5850(a1, a2, a3);
+}
