@@ -175,3 +175,13 @@ extern "C" __declspec(naked) void __fastcall fn_004936C0(void* self) {
         jmp ext_00492610
     }
 }
+
+// [0x0049AD20] sub_0049AD20 (29 bytes)
+extern "C" void ext_004A1390();
+extern "C" void ext_006A5C5C(void* arg);
+
+extern "C" void __fastcall fn_0049AD20(void* self) {
+    ext_004A1390();
+    ext_006A5C5C(*(void**)((unsigned char*)self + 4));
+    *(void**)((unsigned char*)self + 4) = 0;
+}
