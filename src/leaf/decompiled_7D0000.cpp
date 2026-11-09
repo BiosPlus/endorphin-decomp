@@ -295,3 +295,12 @@ extern "C" __declspec(naked) void __cdecl fn_007DAD70(void) {
         jmp ext_007D5950
     }
 }
+
+// [0x007DB060] sub_007DB060 (40 bytes)
+extern "C" int __cdecl fn_007DB060(float* src, float* out_xyz, float* out_w) {
+    out_xyz[0] = src[0x40 / 4];
+    out_xyz[1] = src[0x44 / 4];
+    out_xyz[2] = src[0x48 / 4];
+    *out_w = src[0x3c / 4];
+    return 1;
+}
