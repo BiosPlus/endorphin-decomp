@@ -176,3 +176,18 @@ extern "C" void* __fastcall fn_006B4E30(void* self) {
     *s = (void*)0x991e54;
     return s;
 }
+
+// [0x006B4BE0] sub_006B4BE0 (19 bytes)
+extern "C" void ext_006B4AA0();
+extern "C" void ext_006A5EA8();
+extern "C" __declspec(naked) void __fastcall fn_006B4BE0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006B4AA0
+        mov ecx, esi
+        call ext_006A5EA8
+        pop esi
+        ret 0x0c
+    }
+}
