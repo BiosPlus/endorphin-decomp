@@ -631,3 +631,12 @@ extern "C" void* __fastcall fn_0044A360(void* self) {
     p[0x58 / 4] = 0xffffff;
     return self;
 }
+
+// [0x0044CF90] sub_0044CF90 (32 bytes)
+extern "C" void ext_006A5E4E();
+
+extern "C" void __fastcall fn_0044CF90(void* self, int edx_unused, int a1, int a2) {
+    typedef void (__thiscall *Callee)(void*, int, int, int, int, int, int);
+    Callee f = (Callee)ext_006A5E4E;
+    f((char*)self + 0xcf4, 0, 0, 0, a1, a2, 4);
+}
