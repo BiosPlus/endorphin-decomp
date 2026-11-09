@@ -594,3 +594,12 @@ extern "C" __declspec(naked) void __fastcall fn_006B9640(void* self) {
         ret 0x8
     }
 }
+
+// [0x006B7330] sub_006B7330 (46 bytes)
+extern "C" int mem_00B5D208;
+
+extern "C" void __fastcall fn_006B7330(void* self, int edx_unused, int a1, int a2) {
+    void* parent = ((void* (__stdcall*)(void*))mem_00925650)(*(void**)((char*)self + 0x20));
+    char* wnd = (char*)ext_006A5E00(parent);
+    ((int (__stdcall*)(void*, unsigned int, int, int))mem_00925694)(*(void**)(wnd + 0x20), (unsigned int)mem_00B5D208, a1, a2);
+}
