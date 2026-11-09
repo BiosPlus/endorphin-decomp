@@ -115,3 +115,27 @@ extern "C" void* __fastcall fn_0069D4C0(void* self, int edx_unused, int a1) {
     *reinterpret_cast<unsigned int*>(self) = 0x0098FBDCu;
     return self;
 }
+
+// [0x006991F0] sub_006991F0 (35 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006991F0(void* self, int edx_unused, void* newp) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, ecx
+        je short L_store
+        test ecx, ecx
+        je short L_store
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+L_store:
+        mov dword ptr [esi + 0x8], edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
