@@ -259,3 +259,23 @@ extern "C" __declspec(naked) void __fastcall fn_005435F0(void* self) {
         ret 0x8
     }
 }
+
+// [0x00547E80] sub_00547E80 (40 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00547E80(void* self) {
+    __asm {
+        cmp dword ptr [ecx + 0a0h], 0
+        jne short done
+        mov eax, dword ptr [esp + 4]
+        fld dword ptr [eax]
+        fstp dword ptr [ecx + 68h]
+        fld dword ptr [eax + 4]
+        fstp dword ptr [ecx + 6ch]
+        fld dword ptr [eax + 8]
+        fstp dword ptr [ecx + 70h]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 44h]
+        call edx
+done:
+        ret 4
+    }
+}
