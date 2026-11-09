@@ -85,3 +85,15 @@ extern "C" __declspec(naked) void __fastcall fn_004D8BA0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005C85C0] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_26 (14 bytes)
+extern "C" void ext_005C3F10();
+
+extern "C" __declspec(naked) void __fastcall fn_005C85C0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        call ext_005C3F10
+        ret 4
+    }
+}
