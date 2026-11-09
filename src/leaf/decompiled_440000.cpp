@@ -1120,3 +1120,17 @@ extern "C" __declspec(naked) void __fastcall fn_0044B290(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00442990] sub_00442990 (47 bytes)
+extern "C" void ext_00442960();
+
+extern "C" void* __fastcall fn_00442990(void* self, int edx_unused, int a1, int a2) {
+    typedef void (__thiscall *InitFn)(void*, int, int);
+    reinterpret_cast<InitFn>(ext_00442960)(self, a1, a2);
+    unsigned char* p = reinterpret_cast<unsigned char*>(self);
+    p[0x0c] = 0;
+    p[0x0d] = 0;
+    *reinterpret_cast<void**>(self) = reinterpret_cast<void*>(0x932534);
+    *reinterpret_cast<int*>(p + 0x10) = -2;
+    return self;
+}
