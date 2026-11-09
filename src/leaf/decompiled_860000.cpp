@@ -38,3 +38,29 @@ extern "C" __declspec(naked) void __cdecl fn_0086AF30(void) {
         ret
     }
 }
+
+// [0x00867360] sub_00867360 (42 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00867360(const char* s) {
+    __asm {
+        push esi
+        xor eax, eax
+        xor edx, edx
+        mov esi, dword ptr [esp + 0x8]
+        mov cl, byte ptr [esi]
+        cmp cl, 0x30
+        jl done
+    loop_top:
+        cmp cl, 0x39
+        jg done
+        movsx ecx, cl
+        lea eax, [eax + 4*eax]
+        inc edx
+        lea eax, [ecx + 2*eax - 0x30]
+        mov cl, byte ptr [edx + esi]
+        cmp cl, 0x30
+        jge loop_top
+    done:
+        pop esi
+        ret
+    }
+}
