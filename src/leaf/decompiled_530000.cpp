@@ -477,3 +477,17 @@ extern "C" __declspec(naked) void* __cdecl fn_005356C0(void* a1, void* a2, void*
         ret
     }
 }
+
+// [0x00539830] sub_00539830 (41 bytes)
+extern "C" void __cdecl fn_00539830(float* first, float* last, float* src) {
+    char* p = reinterpret_cast<char*>(first);
+    char* end = reinterpret_cast<char*>(last);
+    if (p == end) return;
+    do {
+        float* d = reinterpret_cast<float*>(p);
+        d[0] = src[0];
+        d[1] = src[1];
+        d[2] = src[2];
+        p += 12;
+    } while (p != end);
+}
