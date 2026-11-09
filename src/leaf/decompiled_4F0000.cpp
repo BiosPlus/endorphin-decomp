@@ -148,3 +148,17 @@ extern "C" void* __cdecl fn_004FFD60() {
     }
     return (void*)&mem_00AEB2CC;
 }
+
+// [0x004FD870] sub_004FD870 (46 bytes)
+extern "C" int mem_0093F8EC;
+extern "C" void __fastcall fn_004FD870(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    *(float*)(p + 0x04) = *(float*)&mem_0093F8EC;
+    *(int*)(p + 0x08) = 0;
+    *(int*)(p + 0x10) = 0x64;
+    *(int*)(p + 0x18) = 0x4B0;
+    *(int*)(p + 0x14) = 0x7FFFFFFF;
+    *(unsigned char*)(p + 0x1C) = 0;
+    *(unsigned char*)(p + 0x1D) = 1;
+    *(unsigned char*)(p + 0x1E) = 0;
+}
