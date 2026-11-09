@@ -733,3 +733,11 @@ extern "C" void __fastcall fn_00647CB0(void* self, int edx_unused, const float* 
     int first = *(int*)*(void**)((char*)self + 0xa4);
     ((void (__cdecl*)(int, float, float, float))ext_007C6850)(first, v[0], v[1], v[2]);
 }
+
+// [0x00647DB0] sub_00647DB0 (46 bytes)
+extern "C" void ext_007C6940();
+
+extern "C" void __fastcall fn_00647DB0(void* self, int edx_unused, const float* v) {
+    int first = *(int*)(*(int*)((char*)self + 0xa4));
+    ((void (__cdecl*)(int, float, float, float))ext_007C6940)(first, v[0], v[1], v[2]);
+}
