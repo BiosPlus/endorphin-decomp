@@ -190,3 +190,14 @@ extern "C" __declspec(naked) float __stdcall fn_004CCCB0(void* a1) {
         ret 0x4
     }
 }
+
+// [0x004CCCC0] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireEnable(void), 0}>::vfunc_2 (16 bytes)
+extern "C" __declspec(naked) void __stdcall fn_004CCCC0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call ext_004CCAF0
+        xor eax, eax
+        ret 0x4
+    }
+}
