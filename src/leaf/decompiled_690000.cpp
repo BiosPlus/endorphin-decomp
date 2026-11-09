@@ -50,3 +50,13 @@ extern "C" __declspec(naked) void __fastcall fn_006936A0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00698A90] sub_00698A90 (22 bytes)
+extern "C" void ext_006989E0();
+
+extern "C" int __stdcall fn_00698A90(char** p) {
+    typedef char* (__stdcall *Callee)(char*);
+    char* r = ((Callee)ext_006989E0)(*p);
+    *p += 4;
+    return *(int*)r;
+}
