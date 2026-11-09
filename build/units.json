@@ -341074,7 +341074,9 @@
       "0x0061A53C",
       "0x0061A544"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:57:33Z"
   },
   {
     "va": "0x0061A550",
