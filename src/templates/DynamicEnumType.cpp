@@ -148,3 +148,22 @@ extern "C" __declspec(naked) void* __stdcall fn_004B7160(void* self) {
         ret 4
     }
 }
+
+// [0x004D3E20] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}>::vfunc_16 (30 bytes)
+extern "C" int mem_00A3C268;
+extern "C" int mem_00A2E2F8;
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void* __stdcall fn_004D3E20(void* p) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push offset mem_00A3C268
+        push offset mem_00A2E2F8
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
