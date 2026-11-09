@@ -66,3 +66,13 @@ extern "C" void* __fastcall fn_0062E360(void* self) {
     *(int*)self = (int)&mem_0097961C;
     return self;
 }
+
+// [0x0062E380] sub_0062E380 (18 bytes)
+extern "C" void __fastcall ext_0062E290(void* self);
+extern "C" int mem_00979694;
+
+extern "C" void* __fastcall fn_0062E380(void* self) {
+    ext_0062E290(self);
+    *(int*)self = (int)&mem_00979694;
+    return self;
+}
