@@ -31,3 +31,20 @@ extern "C" void __fastcall fn_0048A9A0(void* self, int edx_unused, int a1, int a
     typedef void (__cdecl *fn_t)(int, int, void*);
     ((fn_t)ext_0048A120)(a1, a2, self);
 }
+
+// [0x0048ABB0] sub_0048ABB0 (22 bytes)
+extern "C" void ext_0048A360();
+
+extern "C" __declspec(naked) void __fastcall fn_0048ABB0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x234]
+        test ecx, ecx
+        je done
+        fldz
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0048A360
+done:
+        ret
+    }
+}
