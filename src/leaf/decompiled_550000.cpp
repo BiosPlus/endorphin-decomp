@@ -291,3 +291,13 @@ extern "C" __declspec(naked) void __fastcall fn_0055B860(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00559790] sub_00559790 (35 bytes)
+extern "C" void ext_00559770();
+extern "C" void* __cdecl fn_00559790(void* a) {
+    void* p = ((void* (__cdecl *)(void*))ext_00559770)((char*)a + 4);
+    void** vtbl = *(void***)p;
+    typedef void (__thiscall *VFn)(void*, void*);
+    ((VFn)vtbl[1])(p, a);
+    return p;
+}
