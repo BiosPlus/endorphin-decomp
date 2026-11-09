@@ -341,3 +341,26 @@ extern "C" __declspec(naked) void* __fastcall fn_004B7A10(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0049AE90] ExprParser::PrimitiveProxyType<bool>::vfunc_4 (40 bytes)
+extern "C" void ext_0046C460();
+
+extern "C" __declspec(naked) void __fastcall fn_0049AE90(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        movzx edx, byte ptr [ecx]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edx
+        push esi
+        mov dword ptr [esp + 0xc], 0
+        call ext_0046C460
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
