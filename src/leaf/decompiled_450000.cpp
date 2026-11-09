@@ -267,3 +267,23 @@ extern "C" void __fastcall fn_00453FC0(void* self, int edx_unused, int a1) {
         reinterpret_cast<Fn2>(ext_00453620)(self);
     }
 }
+
+// [0x00458670] sub_00458670 (30 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" void ext_004584A0();
+
+extern "C" __declspec(naked) void __fastcall fn_00458670(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006A5EA8
+        mov eax, dword ptr [esp + 8]
+        push eax
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esi + 0x54]
+        call ext_004584A0
+        pop esi
+        ret 0xc
+    }
+}
