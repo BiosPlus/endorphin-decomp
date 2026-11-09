@@ -176,3 +176,16 @@ extern "C" __declspec(naked) void __cdecl fn_006989B0(const unsigned char* src, 
         ret
     }
 }
+
+// [0x0069B530] sub_0069B530 (37 bytes)
+extern "C" bool __fastcall fn_0069B530(void* self) {
+    char* p = (char*)self;
+    int begin = *(int*)(p + 0x4);
+    int v;
+    if (begin == 0) {
+        v = 0;
+    } else {
+        v = (*(int*)(p + 0x8) - begin) >> 3;
+    }
+    return v == 0;
+}
