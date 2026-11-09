@@ -34,3 +34,22 @@ extern "C" __declspec(naked) void __fastcall fn_004BFC20(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_00594000();
+extern "C" void ext_00599F10();
+
+// [0x004BFBE0] NMData::AnimationEventData::vfunc_63 (25 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004BFBE0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 168h]
+        test eax, eax
+        jne short L_nonnull
+        ret
+    L_nonnull:
+        push eax
+        call ext_00594000
+        mov ecx, eax
+        call ext_00599F10
+        ret
+    }
+}
