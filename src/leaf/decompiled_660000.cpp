@@ -103,3 +103,16 @@ extern "C" void __fastcall fn_00666200(void* self, int edx_unused, int a1) {
     *(int*)((char*)self + 0x8) = a1;
     ext_00665CA0();
 }
+
+// [0x00662080] sub_00662080 (16 bytes)
+extern "C" void ext_00661F70(int value);
+
+extern "C" __declspec(naked) void __fastcall fn_00662080(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [eax + 0x130]
+        push edx
+        call ext_00661F70
+        ret
+    }
+}
