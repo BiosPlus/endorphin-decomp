@@ -55,3 +55,10 @@ extern "C" int __fastcall fn_00407730(void* self, int edx_unused, int a1, int a2
     ext_006A5EA8();
     return 1;
 }
+
+// [0x00401040] sub_00401040 (14 bytes)
+extern "C" void ext_006A5C5C(int);
+
+extern "C" void __fastcall fn_00401040(void* self, int edx_unused, int a1) {
+    ext_006A5C5C(a1);
+}
