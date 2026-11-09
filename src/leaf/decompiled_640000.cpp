@@ -440,3 +440,19 @@ extern "C" void __fastcall fn_00647E60(char* self, int edx_unused, int a1) {
     int* p = *(int**)(self + 0xa4);
     ext_007C60B0(*p, a1);
 }
+
+// [0x00647E80] sub_00647E80 (25 bytes)
+extern "C" void ext_007C60E0();
+
+extern "C" __declspec(naked) void __fastcall fn_00647E80(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [ecx + 0xa4]
+        mov edx, dword ptr [ecx]
+        push eax
+        push edx
+        call ext_007C60E0
+        add esp, 0x8
+        ret 0x4
+    }
+}
