@@ -197,3 +197,11 @@ extern "C" void __fastcall fn_004B7B20(void* self, int edx_unused, void* a1, voi
     float* p = *(float**)a1;
     *p = r;
 }
+
+// [0x0049AE50] ExprParser::PrimitiveProxyType<bool>::vfunc_1 (37 bytes)
+// One stack argument (a1 -> handle -> bool*). Returns 1.0f if the bool is
+// true, else 0.0f, in st(0) (ret 4). ecx is not read.
+extern "C" float __fastcall fn_0049AE50(void* self, int edx_unused, void** a1) {
+    bool* p = *(bool**)a1;
+    return *(unsigned char*)p ? 1.0f : 0.0f;
+}
