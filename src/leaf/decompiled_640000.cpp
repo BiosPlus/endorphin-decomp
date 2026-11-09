@@ -527,3 +527,16 @@ extern "C" void __fastcall fn_00642020(void* self) {
         ((fn_006A5C5C_t)ext_006A5C5C)(p);
     }
 }
+
+// [0x00648A90] sub_00648A90 (25 bytes)
+extern "C" void __fastcall ext_0065B550(void* self);
+
+typedef void (__cdecl *fn_006A5C5C_t)(void*);
+
+extern "C" void __fastcall fn_00648A90(void* self) {
+    void* p = *(void**)self;
+    if (p) {
+        ext_0065B550(p);
+        ((fn_006A5C5C_t)ext_006A5C5C)(p);
+    }
+}
