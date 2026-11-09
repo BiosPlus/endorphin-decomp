@@ -228,3 +228,18 @@ extern "C" __declspec(naked) void __fastcall fn_0042FB20(void* self) {
         ret
     }
 }
+
+// [0x00427B50] sub_00427B50 (36 bytes)
+extern "C" int mem_00925134;
+
+extern "C" void* __fastcall fn_00427B50(char* self, int edx_unused, int* out) {
+    int* esi = (int*)(self + 0x24);
+    int edi = esi[1];
+    if ((unsigned int)edi > (unsigned int)esi[2]) {
+        ((void (__cdecl*)())mem_00925134)();
+    }
+    out[0] = (int)esi;
+    out[1] = (int)esi;
+    out[2] = edi;
+    return out;
+}
