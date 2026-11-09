@@ -95,3 +95,20 @@ extern "C" void __fastcall fn_0065A980(void* self, int edx_unused, int a1) {
     typedef void (__cdecl *Fn)(int, int);
     ((Fn)&ext_007C5FD0)(*(int*)self, a1);
 }
+
+// [0x0065F260] sub_0065F260 (20 bytes)
+extern "C" void ext_0065D5B0();
+extern "C" void ext_0065F1F0();
+
+extern "C" __declspec(naked) void __fastcall fn_0065F260(void* self) {
+    __asm {
+        push esi
+        push 1
+        push 1
+        mov esi, ecx
+        call ext_0065D5B0
+        mov ecx, esi
+        pop esi
+        jmp ext_0065F1F0
+    }
+}
