@@ -99,3 +99,15 @@ extern "C" __declspec(naked) void __fastcall fn_004B0820(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004B5250] sub_004B5250 (27 bytes)
+extern "C" void ext_004B4CD0();
+extern "C" void ext_004B4D30();
+extern "C" void __fastcall fn_004B5250(void* self, int edx_unused, unsigned char flag) {
+    ((unsigned char*)self)[0x18] = flag;
+    if (flag) {
+        ext_004B4CD0();
+    } else {
+        ext_004B4D30();
+    }
+}
