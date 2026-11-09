@@ -10,3 +10,11 @@ extern "C" void* __fastcall fn_0054E8A0(void* self, int edx_unused, int flags) {
     }
     return self;
 }
+
+// [0x0054E8F0] GLMatrixStackManager::vfunc_7 (35 bytes)
+extern "C" int mem_009253D0;
+
+extern "C" void __stdcall fn_0054E8F0(const float* v) {
+    typedef void (__stdcall *PFN_glTranslatef)(float, float, float);
+    ((PFN_glTranslatef)mem_009253D0)(v[0], v[1], v[2]);
+}
