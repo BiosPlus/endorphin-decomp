@@ -312,3 +312,25 @@ extern "C" void* __fastcall fn_0049B310(void* self) {
     }
     return self;
 }
+
+// [0x00497650] sub_00497650 (40 bytes)
+extern "C" void ext_0046E780();
+extern "C" __declspec(naked) int __stdcall fn_00497650(int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0ch]
+        push esi
+        mov esi, dword ptr [esp + 0ch]
+        push eax
+        mov eax, dword ptr [esp + 14h]
+        mov ecx, dword ptr [eax + 4]
+        push eax
+        push esi
+        mov dword ptr [esp + 10h], 0
+        call ext_0046E780
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
