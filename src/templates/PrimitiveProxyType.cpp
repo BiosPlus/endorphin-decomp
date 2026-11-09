@@ -174,3 +174,14 @@ extern "C" __declspec(naked) void __fastcall fn_004BA3A0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004B7A50] ExprParser::PrimitiveProxyType<float>::vfunc_3 (34 bytes)
+// One stack argument (a1 -> handle -> float*). Loads the float and compares it
+// against a double constant at 0x009433D8; returns 1 if value >= constant, else 0.
+extern "C" int mem_009433D8;
+
+extern "C" bool __fastcall fn_004B7A50(void* self, int edx_unused, void* a1) {
+    float* p = *(float**)a1;
+    float v = *p;
+    return (double)v >= *(double*)&mem_009433D8;
+}
