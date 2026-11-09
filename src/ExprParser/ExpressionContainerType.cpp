@@ -26,3 +26,19 @@ extern "C" __declspec(naked) void __cdecl fn_00670CB0(void* a1) {
         jmp eax
     }
 }
+
+// [0x00670CD0] ExprParser::ExpressionContainerType::vfunc_2 (24 bytes)
+// Reads one stack arg, passes it to ext_006999B0 (stdcall), then tail-dispatches
+// through the returned object's vtable slot 2 with the arg replaced by the result.
+extern "C" __declspec(naked) void __cdecl fn_00670CD0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_006999B0
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [esp + 4], eax
+        mov eax, dword ptr [edx + 8]
+        jmp eax
+    }
+}
