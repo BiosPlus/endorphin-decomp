@@ -198,3 +198,20 @@ extern "C" int __fastcall fn_004D4190(void* self) {
     Elem28* end = *(Elem28**)((char*)self + 0x45C);
     return (int)(end - begin);
 }
+
+// [0x004D0DB0] sub_004D0DB0 (45 bytes)
+extern "C" int mem_00AE5598;
+extern "C" int mem_00AE558C;
+extern "C" int mem_00AE5590;
+extern "C" int mem_00AE5594;
+
+extern "C" void* __cdecl fn_004D0DB0() {
+    if (!(mem_00AE5598 & 1)) {
+        float zero = 0.0f;
+        mem_00AE5598 |= 1;
+        *(float*)&mem_00AE558C = zero;
+        *(float*)&mem_00AE5590 = zero;
+        *(float*)&mem_00AE5594 = zero;
+    }
+    return &mem_00AE558C;
+}
