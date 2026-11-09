@@ -179,3 +179,19 @@ extern "C" void* __fastcall fn_0053B7E0(void* self) {
     *(void**)self = (void*)&mem_00955714;
     return self;
 }
+
+// [0x0053C8F0] sub_0053C8F0 (18 bytes)
+extern "C" int mem_00955B6C;
+extern "C" void ext_00532B60();
+
+extern "C" __declspec(naked) void __fastcall fn_0053C8F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00532B60
+        mov dword ptr [esi], offset mem_00955B6C
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
