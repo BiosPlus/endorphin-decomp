@@ -101,3 +101,21 @@ extern "C" __declspec(naked) void __stdcall fn_006F6E40(int a1) {
         ret 0x4
     }
 }
+
+// [0x006F79C0] sub_006F79C0 (24 bytes)
+extern "C" void ext_00711DA0();
+extern "C" __declspec(naked) void __fastcall fn_006F79C0(void* self, int edx_unused, int a1) {
+    __asm {
+        push 0x0
+        call ext_00711DA0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [ecx]
+        jmp dword ptr [eax + 0x5dc]
+    }
+}
