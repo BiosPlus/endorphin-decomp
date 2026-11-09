@@ -276490,7 +276490,9 @@
       "0x005C35CC",
       "0x005C35D4"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:53:13Z"
   },
   {
     "va": "0x005C35E0",
