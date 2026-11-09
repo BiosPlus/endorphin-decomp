@@ -12,3 +12,15 @@ extern "C" __declspec(naked) void __cdecl fn_005D07E0() {
         ret
     }
 }
+
+// [0x005D06D0] sub_005D06D0 (14 bytes)
+extern "C" void ext_005B11E0();
+
+extern "C" __declspec(naked) void __fastcall fn_005D06D0(void* self) {
+    __asm {
+        push 0x0
+        add ecx, 0x210
+        call ext_005B11E0
+        ret
+    }
+}
