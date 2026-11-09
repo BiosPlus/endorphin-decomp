@@ -257,3 +257,17 @@ extern "C" void* __fastcall fn_004F9B70(void* self) {
     ((Callee)ext_0065C650)(esi);
     return edi;
 }
+
+// [0x004F9BA0] VMCSModes::DefaultImplementation::vfunc_40 (41 bytes)
+extern "C" void* __fastcall fn_004F9BA0(void* self) {
+    typedef void (__fastcall *Callee)(void*);
+    void* a = *(void**)((char*)self + 0x8);
+    void* b = *(void**)((char*)a + 0x14);
+    void* esi = (char*)b + 0x20;
+    ((Callee)ext_0065C640)(esi);
+    a = *(void**)((char*)self + 0x8);
+    b = *(void**)((char*)a + 0x14);
+    void* edi = *(void**)((char*)b + 0x14);
+    ((Callee)ext_0065C650)(esi);
+    return edi;
+}
