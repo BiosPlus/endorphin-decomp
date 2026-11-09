@@ -345,3 +345,23 @@ extern "C" __declspec(naked) void __fastcall fn_004064B0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0040DA90] sub_0040DA90 (27 bytes)
+extern "C" void ext_0040C490();
+extern "C" void ext_0040C510();
+extern "C" int mem_00AC87DC;
+extern "C" int mem_00AC853C;
+
+extern "C" __declspec(naked) void __fastcall fn_0040DA90(void* self) {
+    __asm {
+        push esi
+        push offset mem_00AC87DC
+        mov esi, ecx
+        call ext_0040C510
+        push offset mem_00AC853C
+        mov ecx, esi
+        call ext_0040C490
+        pop esi
+        ret
+    }
+}
