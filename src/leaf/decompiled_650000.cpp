@@ -222,3 +222,19 @@ extern "C" __declspec(naked) void* __fastcall fn_0065BFA0(void* self) {
         ret
     }
 }
+
+// [0x0065D440] sub_0065D440 (26 bytes)
+// Calls sub_006A5C62 with 0x6c as its single cdecl stack argument, then stores the returned pointer
+// into itself and into eax+4 (each store guarded by a null test), and returns.
+extern "C" void* __cdecl ext_006A5C62(int size);
+
+extern "C" void __fastcall fn_0065D440(void* self) {
+    void* p = ext_006A5C62(0x6c);
+    if (p) {
+        *(void**)p = p;
+    }
+    void* q = (char*)p + 4;
+    if (q) {
+        *(void**)q = p;
+    }
+}
