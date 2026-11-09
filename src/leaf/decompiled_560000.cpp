@@ -199,3 +199,27 @@ done:
         ret
     }
 }
+
+// [0x0056B900] sub_0056B900 (41 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0056B900(void* self) {
+    __asm {
+        mov edx, dword ptr [ecx + 0x28]
+        test edx, edx
+        jne short L_nonzero
+        xor eax, eax
+        mov ecx, 1
+        cmp ecx, eax
+        sbb eax, eax
+        neg eax
+        ret
+    L_nonzero:
+        mov eax, dword ptr [ecx + 0x2c]
+        sub eax, edx
+        sar eax, 2
+        mov ecx, 1
+        cmp ecx, eax
+        sbb eax, eax
+        neg eax
+        ret
+    }
+}
