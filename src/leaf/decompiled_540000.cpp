@@ -196,3 +196,24 @@ extern "C" void __fastcall fn_005499E0(void* self) {
     ((void (__stdcall*)(void*))ext_0063E006)(q2);
     ((void (__fastcall*)(void*))ext_00552850)(self);
 }
+
+// [0x00543550] sub_00543550 (40 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00543550(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esi]
+        mov eax, dword ptr [eax + 0x44]
+        push ecx
+        push edx
+        mov ecx, esi
+        call eax
+        xor cl, cl
+        mov byte ptr [esi + 0x90], cl
+        mov byte ptr [esi + 0x93], cl
+        pop esi
+        ret 0x8
+    }
+}
