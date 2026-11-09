@@ -279,3 +279,12 @@ done:
         ret 4
     }
 }
+
+// [0x00549950] sub_00549950 (40 bytes)
+extern "C" void ext_0063E02A();
+
+extern "C" void __fastcall fn_00549950(void* self, int edx_unused, float radius, float height) {
+    typedef void (__stdcall *GluCylinderFn)(void*, double, double, double, int, int);
+    void* quadric = *(void**)((char*)self + 0x18);
+    ((GluCylinderFn)ext_0063E02A)(quadric, (double)radius, 0.0, (double)height, 8, 1);
+}
