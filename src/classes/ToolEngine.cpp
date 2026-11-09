@@ -69,3 +69,25 @@ extern "C" __declspec(naked) void __fastcall fn_00485150(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004852F0] ToolEngine::vfunc_55 (27 bytes)
+// Calls vtable slot 0 of *this (virtual, no args), then calls sub_00483D20 with
+// this+0x3CC and the constant 1 pushed as stack arguments (callee pops them).
+extern "C" void ext_00483D20();
+
+extern "C" __declspec(naked) void __fastcall fn_004852F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        call edx
+        push 1
+        lea eax, [esi + 0x3CC]
+        push eax
+        mov ecx, esi
+        call ext_00483D20
+        pop esi
+        ret
+    }
+}
