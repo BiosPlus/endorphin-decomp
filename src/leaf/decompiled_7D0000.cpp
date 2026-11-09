@@ -486,3 +486,27 @@ extern "C" __declspec(naked) void __cdecl fn_007D8860(void) {
         ret
     }
 }
+
+// [0x007D8890] sub_007D8890 (43 bytes)
+extern "C" void ext_007D8710();
+extern "C" void ext_007D8860();
+
+extern "C" __declspec(naked) void __cdecl fn_007D8890(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax + 0x40]
+        mov edx, dword ptr [ecx + 0x5f0]
+        mov ecx, dword ptr [esp + 0xc]
+        push edx
+        mov edx, dword ptr [esp + 0xc]
+        push ecx
+        push edx
+        push eax
+        call ext_007D8710
+        add esp, 0x4
+        push eax
+        call ext_007D8860
+        add esp, 0x10
+        ret
+    }
+}
