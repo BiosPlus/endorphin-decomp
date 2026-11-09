@@ -269,3 +269,30 @@ extern "C" __declspec(naked) void __fastcall fn_0050F9A0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00503D00] sub_00503D00 (44 bytes)
+extern "C" __declspec(naked) double* __fastcall fn_00503D00(void* self, int edx_unused, unsigned int n, double* dst, const double* src) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        test esi, esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, esi
+        mov ecx, edi
+        jbe done_00503D00
+        mov edx, dword ptr [esp + 0x14]
+    loop_00503D00:
+        fld qword ptr [edx]
+        sub eax, 1
+        fstp qword ptr [ecx]
+        add ecx, 8
+        test eax, eax
+        ja loop_00503D00
+    done_00503D00:
+        lea eax, [edi + 8*esi]
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
