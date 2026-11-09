@@ -180,3 +180,33 @@ extern "C" __declspec(naked) int __cdecl fn_0085F7B0(const char* s1, const char*
         ret
     }
 }
+
+// [0x00859300] sub_00859300 (48 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00859300(void* a1, unsigned int a2) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        test byte ptr [ecx + 0x14], 0x4
+        je short L_noderef
+        mov ecx, dword ptr [ecx]
+L_noderef:
+        mov eax, dword ptr [ecx + 0x14]
+        test al, 0x1
+        jne short L_flagset
+        xor eax, eax
+        ret
+L_flagset:
+        mov edx, dword ptr [ecx]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp edx, esi
+        pop esi
+        jne short L_mismatch
+        and al, 0xfe
+        mov dword ptr [ecx + 0x14], eax
+        xor eax, eax
+        ret
+L_mismatch:
+        mov eax, 0xd
+        ret
+    }
+}
