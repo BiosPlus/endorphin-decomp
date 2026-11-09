@@ -157,3 +157,25 @@ extern "C" void __stdcall fn_006276F0(void** self, void** a1) {
     int r = ((VCallFn_006276F0)((*(void***)sub)[2]))(sub, a1);
     ((CallFn_006276F0)ext_00627510)(obj, r);
 }
+
+// [0x00649690] ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}>::vfunc_41 (34 bytes)
+extern "C" void ext_00648EA0();
+
+extern "C" __declspec(naked) void __stdcall fn_00649690(void** self, void** a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        mov ecx, esi
+        push eax
+        call ext_00648EA0
+        pop esi
+        ret 0x8
+    }
+}
