@@ -125,3 +125,19 @@ extern "C" __declspec(naked) void __fastcall fn_005330D0(void* self) {
         jmp ext_0065C650
     }
 }
+
+// [0x00536D00] OglRenderer::vfunc_12 (42 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00536D00(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x194]
+        mov edx, eax
+        shl edx, 4
+        sub edx, eax
+        cmp byte ptr [ecx + 4*edx + 0xb8], 0
+        lea eax, [ecx + 4*edx + 0xa4]
+        sete dl
+        mov byte ptr [eax + 0x14], dl
+        mov byte ptr [ecx + 0x464], 1
+        ret
+    }
+}
