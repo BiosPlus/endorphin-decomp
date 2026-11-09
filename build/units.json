@@ -194347,7 +194347,9 @@
       "0x005330E3",
       "0x005330F3"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:06:45Z"
   },
   {
     "va": "0x00533100",
