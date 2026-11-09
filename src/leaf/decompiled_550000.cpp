@@ -375,3 +375,13 @@ extern "C" __declspec(naked) void __fastcall fn_00553760(void* self) {
         ret
     }
 }
+
+// [0x0055E120] sub_0055E120 (43 bytes)
+extern "C" char __cdecl ext_00662EC0(int a1);
+extern "C" void __fastcall fn_0055E120(unsigned char* self, int edx_unused, int a1) {
+    self[0x4d4] = 0;
+    *(int*)(self + 0x4d0) = a1;
+    if (a1 != 0) {
+        self[0x4d4] = (unsigned char)ext_00662EC0(a1);
+    }
+}
