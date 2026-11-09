@@ -369,3 +369,25 @@ extern "C" __declspec(naked) void __stdcall fn_0048AD50(void* self, void* a1) {
         ret 8
     }
 }
+
+// [0x004FE0C0] ExprParser::WriteMethodType<EvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}>::vfunc_41 (37 bytes)
+extern "C" void ext_004FDC80();
+extern "C" __declspec(naked) void __fastcall fn_004FE0C0(void* self, void* edx_unused, void** a1, void** a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_004FDC80
+        pop esi
+        ret 0x8
+    }
+}
