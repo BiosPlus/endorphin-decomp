@@ -54,3 +54,21 @@ extern "C" __declspec(naked) void* __stdcall fn_00626410(void* a1, void* a2, voi
         ret 0xc
     }
 }
+
+// [0x005DF1F0] AnimatableTransform::vfunc_15 (30 bytes)
+extern "C" void ext_00671F30();
+extern "C" __declspec(naked) void* __fastcall fn_005DF1F0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
