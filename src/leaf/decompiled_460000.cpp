@@ -1062,3 +1062,29 @@ L_inner:
         ret 0x4
     }
 }
+
+// [0x004663A0] sub_004663A0 (47 bytes)
+extern "C" void ext_00465B40();
+
+extern "C" __declspec(naked) char __fastcall fn_004663A0(void* self) {
+    __asm {
+        cmp dword ptr [ecx + 0x60], 0x0
+        jne ret_true
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x84]
+        call eax
+        test al, al
+        je ret_true
+        push 0x0
+        push 0x0
+        push 0x939c7c
+        call ext_006A5E60
+        xor al, al
+        ret
+ret_true:
+        mov al, 0x1
+        ret
+    }
+}
