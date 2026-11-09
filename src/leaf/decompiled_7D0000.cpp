@@ -313,3 +313,23 @@ extern "C" int __cdecl fn_007DB8B0(float* src, float* out_xyz, float* out_w) {
     *out_w = src[0x20 / 4];
     return 1;
 }
+
+// [0x007DFD80] sub_007DFD80 (42 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007DFD80(void** out, int n, void* obj) {
+    __asm {
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [ecx]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        lea eax, [esi*4]
+        push eax
+        call edx
+        mov ecx, dword ptr [esp + 0xc]
+        add esp, 4
+        mov dword ptr [ecx + 4], esi
+        mov dword ptr [ecx], eax
+        mov dword ptr [ecx + 8], 0
+        pop esi
+        ret
+    }
+}
