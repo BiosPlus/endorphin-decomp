@@ -375,3 +375,10 @@ extern "C" __declspec(naked) void __stdcall fn_0048B060(void* a1) {
         ret 0x4
     }
 }
+
+// [0x0048B070] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>::vfunc_3 (16 bytes)
+extern "C" bool __stdcall fn_0048B070(void* a1) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_0048A9F0)(obj);
+    return false;
+}
