@@ -191,3 +191,17 @@ extern "C" __declspec(naked) void __fastcall fn_00599C10(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00596300] sub_00596300 (43 bytes)
+extern "C" void __cdecl fn_00596300(int* dst, unsigned int count, const int* src) {
+    if (count > 0) {
+        do {
+            if (dst) {
+                dst[0] = src[0];
+                dst[1] = src[1];
+            }
+            --count;
+            dst += 2;
+        } while (count > 0);
+    }
+}
