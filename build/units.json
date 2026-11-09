@@ -127031,7 +127031,9 @@
     "relocations": [
       "0x004CCD77"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:01:59Z"
   },
   {
     "va": "0x004CCD80",
