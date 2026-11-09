@@ -220,3 +220,15 @@ extern "C" int* __cdecl fn_0049D360() {
     }
     return &mem_00ADD81C;
 }
+
+// [0x00492C30] sub_00492C30 (39 bytes)
+extern "C" void* __cdecl fn_00492C30(void* out, int a, float b, float c, float d, float e) {
+    struct Out492C30 { int a; float b; float c; float d; float e; };
+    Out492C30* o = static_cast<Out492C30*>(out);
+    o->b = b;
+    o->a = a;
+    o->c = c;
+    o->d = d;
+    o->e = e;
+    return out;
+}
