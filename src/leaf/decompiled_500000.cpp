@@ -323,3 +323,16 @@ extern "C" __declspec(naked) void* __fastcall fn_0050E360(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00503AF0] sub_00503AF0 (48 bytes)
+// cdecl(first, last, dest): bytes = (last - first) / 8 * 8; if n > 0, memmove_s(dest - bytes, bytes, first, bytes); returns dest - bytes.
+extern "C" int mem_009251EC;
+extern "C" int __cdecl fn_00503AF0(int first, int last, int dest) {
+    int n = (last - first) >> 3;
+    int bytes = n * 8;
+    int result = dest - bytes;
+    if (n > 0) {
+        ((int (__cdecl*)(int, int, int, int))mem_009251EC)(result, bytes, first, bytes);
+    }
+    return result;
+}
