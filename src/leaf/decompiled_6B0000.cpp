@@ -459,3 +459,29 @@ extern "C" __declspec(naked) void __fastcall fn_006B51D0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006B4D30] sub_006B4D30 (41 bytes)
+// Calls ext_006A5EA8; if eax == -1, returns 0 (ret 4). Otherwise calls ext_006A673C(this, 0x200, 0, 0x20)
+// with ecx = saved this, then returns 0 (ret 4).
+extern "C" void ext_006A673C();
+extern "C" __declspec(naked) void __fastcall fn_006B4D30(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006A5EA8
+        cmp eax, -1
+        jne call_006B4D30
+        or eax, eax
+        pop esi
+        ret 4
+    call_006B4D30:
+        push 0x20
+        push 0
+        push 0x200
+        mov ecx, esi
+        call ext_006A673C
+        xor eax, eax
+        pop esi
+        ret 4
+    }
+}

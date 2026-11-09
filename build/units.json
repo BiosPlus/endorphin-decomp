@@ -455818,7 +455818,9 @@
       "0x006B4D34",
       "0x006B4D4F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:21:09Z"
   },
   {
     "va": "0x006B4D60",
