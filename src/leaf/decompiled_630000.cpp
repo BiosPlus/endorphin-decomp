@@ -237,3 +237,12 @@ extern "C" void __fastcall fn_006304B0(void* self, int edx_unused, const float* 
     *reinterpret_cast<float*>(p + 0x98) = src[2];
     *reinterpret_cast<volatile unsigned char*>(p + 0xf5) = 1;
 }
+
+// [0x006304E0] sub_006304E0 (40 bytes)
+extern "C" void __fastcall fn_006304E0(void* self, int edx_unused, const float* src) {
+    unsigned char* p = static_cast<unsigned char*>(self);
+    *reinterpret_cast<float*>(p + 0xb4) = src[0];
+    *reinterpret_cast<float*>(p + 0xb8) = src[1];
+    *reinterpret_cast<float*>(p + 0xbc) = src[2];
+    *reinterpret_cast<volatile unsigned char*>(p + 0xf6) = 0;
+}
