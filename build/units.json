@@ -413694,7 +413694,9 @@
       "0x0067EC80",
       "0x0067EC88"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:18:39Z"
   },
   {
     "va": "0x0067ECA0",
