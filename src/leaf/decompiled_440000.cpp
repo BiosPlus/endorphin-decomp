@@ -640,3 +640,28 @@ extern "C" void __fastcall fn_0044CF90(void* self, int edx_unused, int a1, int a
     Callee f = (Callee)ext_006A5E4E;
     f((char*)self + 0xcf4, 0, 0, 0, a1, a2, 4);
 }
+
+// [0x00440770] sub_00440770 (34 bytes)
+extern "C" int mem_00924FC8;
+extern "C" int mem_00928B5D;
+
+extern "C" __declspec(naked) void* __fastcall fn_00440770(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        lea edi, [esi + 0x28]
+        push offset mem_00928B5D
+        push edi
+        call dword ptr [mem_00924FC8]
+        add esp, 0x8
+        test al, al
+        mov eax, edi
+        jne skip
+        lea eax, [esi + 0xc]
+    skip:
+        pop edi
+        pop esi
+        ret
+    }
+}
