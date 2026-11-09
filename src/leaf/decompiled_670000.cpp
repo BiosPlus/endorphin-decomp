@@ -57,3 +57,11 @@ extern "C" int ext_00671100(int);
 extern "C" void __fastcall fn_00671F80(void* self) {
     *(int*)((char*)self + 0x4) = ext_00671100(0);
 }
+
+// [0x00672080] sub_00672080 (18 bytes)
+extern "C" void __fastcall ext_00671F80(void* self);
+extern "C" void __fastcall fn_00672080(void* self, int edx_unused, float v) {
+    void* saved = self;
+    ext_00671F80(saved);
+    *(float*)saved = v;
+}
