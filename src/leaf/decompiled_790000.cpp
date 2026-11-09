@@ -20,3 +20,17 @@ L_zero:
         ret
     }
 }
+
+// [0x0079EEC0] sub_0079EEC0 (16 bytes)
+extern "C" void ext_0079EBE0();
+extern "C" int mem_00925184;
+
+extern "C" __declspec(naked) int __cdecl fn_0079EEC0() {
+    __asm {
+        call ext_0079EBE0
+        push eax
+        call dword ptr [mem_00925184]
+        add esp, 0x4
+        ret
+    }
+}
