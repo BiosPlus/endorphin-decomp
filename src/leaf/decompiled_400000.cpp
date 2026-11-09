@@ -152,3 +152,20 @@ extern "C" void* __fastcall fn_0040D4E0(void* self) {
     *(unsigned int*)self = 0x92b1ac;
     return self;
 }
+
+// [0x0040D9C0] sub_0040D9C0 (23 bytes)
+extern "C" void ext_0040C050();
+extern "C" int mem_0092B50C;
+
+extern "C" __declspec(naked) void __fastcall fn_0040D9C0(void* self) {
+    __asm {
+        push esi
+        push 0x24f
+        mov esi, ecx
+        call ext_0040C050
+        mov dword ptr [esi], offset mem_0092B50C
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
