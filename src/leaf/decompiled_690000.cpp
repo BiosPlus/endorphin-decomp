@@ -2,6 +2,7 @@
 
 extern "C" void ext_0041A8B0();
 extern "C" void __fastcall ext_00680800(void* self);
+extern "C" void ext_006989B0();
 
 // [0x00698EC0] sub_00698EC0 (13 bytes)
 extern "C" __declspec(naked) void __stdcall fn_00698EC0(void* a1) {
@@ -233,5 +234,27 @@ extern "C" __declspec(naked) unsigned char* __cdecl fn_00698A40(void* a1, const 
         pop edi
         pop esi
         ret
+    }
+}
+
+// [0x00698B90] sub_00698B90 (41 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00698B90(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x18]
+        mov byte ptr [esp], 0x0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push edx
+        mov edx, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, dword ptr [esp + 0x20]
+        push eax
+        push ecx
+        push edx
+        call ext_006989B0
+        add esp, 0x1c
+        ret 0x14
     }
 }
