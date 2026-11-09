@@ -367,3 +367,11 @@ extern "C" __declspec(naked) int __stdcall fn_0065D540(int first, int last, int 
         ret 0xc
     }
 }
+
+// [0x0065BF00] sub_0065BF00 (42 bytes)
+extern "C" void __cdecl ext_007C76E0(int v, float a, float b, float c);
+
+extern "C" void __fastcall fn_0065BF00(void* self, int edx_unused, float a1) {
+    *(float*)((char*)self + 0x24) = a1;
+    ext_007C76E0(*(int*)((char*)self + 0x40), *(float*)((char*)self + 0x20), a1, *(float*)((char*)self + 0x28));
+}
