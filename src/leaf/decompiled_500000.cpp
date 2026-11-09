@@ -201,3 +201,24 @@ extern "C" __declspec(naked) void* __cdecl fn_00500310(void* self, int a2) {
         ret
     }
 }
+
+// [0x005007C0] sub_005007C0 (35 bytes)
+extern "C" void* __cdecl ext_00500310(void* a, int b);
+
+extern "C" __declspec(naked) void* __fastcall fn_005007C0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push esi
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_00500310
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
