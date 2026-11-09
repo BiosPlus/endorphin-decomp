@@ -165028,7 +165028,9 @@
       "0x00504BFC",
       "0x00504C04"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:47:27Z"
   },
   {
     "va": "0x00504C10",
