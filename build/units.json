@@ -415497,7 +415497,9 @@
       "0x00681D29",
       "0x00681D2E"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:38:47Z"
   },
   {
     "va": "0x00681D40",
