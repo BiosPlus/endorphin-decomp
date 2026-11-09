@@ -179,3 +179,12 @@ extern "C" void* __fastcall fn_00629E60(void* self) {
     *(float*)((char*)self + 0x2C) = 0.0f;
     return self;
 }
+
+// [0x00629EB0] sub_00629EB0 (26 bytes)
+extern "C" void* ext_00594000();
+extern "C" float __fastcall ext_00594010(void* a);
+extern "C" void __fastcall fn_00629EB0(void* self, int edx_unused, float a1) {
+    void* p = ext_00594000();
+    float v = ext_00594010(p);
+    *(float*)((char*)self + 0x30) = v - a1;
+}
