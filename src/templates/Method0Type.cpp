@@ -2,6 +2,7 @@
 
 extern "C" void ext_00671100();
 extern "C" void ext_0048ABF0();
+extern "C" void ext_0048ABB0();
 extern "C" void ext_004CA560();
 extern "C" void ext_004CCAF0();
 extern "C" void ext_004CCB00();
@@ -78,6 +79,16 @@ extern "C" __declspec(naked) void __stdcall fn_0048B0B0(void* a1, int a2) {
         mov eax, dword ptr [esp + 0x4]
         mov ecx, dword ptr [eax]
         call ext_0048A9F0
+        ret 0x8
+    }
+}
+
+// [0x0048B150] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}>::vfunc_41 (14 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0048B150(void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call ext_0048ABB0
         ret 0x8
     }
 }
