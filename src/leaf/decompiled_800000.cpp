@@ -28,3 +28,15 @@ extern "C" __declspec(naked) void __cdecl fn_0080FB10(void* p) {
         ret
     }
 }
+
+// [0x00803990] sub_00803990 (44 bytes)
+extern "C" void fn_00803980();
+
+extern "C" void __cdecl fn_00803990(void* self, int a2, int a3, int a4) {
+    int* p = reinterpret_cast<int*>(self);
+    p[1] = a3;
+    int cb = a4 ? a4 : reinterpret_cast<int>(&fn_00803980);
+    p[3] = cb;
+    p[0] = a2 - 4;
+    p[2] = 0;
+}
