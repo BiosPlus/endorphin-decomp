@@ -318953,7 +318953,9 @@
       "0x005FCB1C",
       "0x005FCB24"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:56:17Z"
   },
   {
     "va": "0x005FCB30",
