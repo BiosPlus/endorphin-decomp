@@ -217,3 +217,23 @@ extern "C" __declspec(naked) void __cdecl fn_007D6260(void* self) {
         ret
     }
 }
+
+// [0x007D5DA0] sub_007D5DA0 (39 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D5DA0(void) {
+    __asm {
+        push ecx
+        mov dword ptr [esp], 0x0
+        fnstcw word ptr [esp]
+        mov eax, dword ptr [esp + 8]
+        and eax, 0x3
+        shl eax, 8
+        mov edx, dword ptr [esp]
+        and edx, 0x7f
+        or eax, edx
+        mov dword ptr [esp], eax
+        fnclex
+        fldcw word ptr [esp]
+        pop ecx
+        ret
+    }
+}
