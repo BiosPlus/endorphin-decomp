@@ -250292,7 +250292,9 @@
     "relocations": [
       "0x0059A8DC"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:11:31Z"
   },
   {
     "va": "0x0059A8F0",
