@@ -390,3 +390,12 @@ extern "C" __declspec(naked) void __fastcall fn_00642660(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00647EA0] sub_00647EA0 (25 bytes)
+extern "C" void __cdecl ext_007C6130(void* a, int b);
+
+extern "C" void __fastcall fn_00647EA0(void* self, int edx_unused, int a1) {
+    void* inner = *(void**)((char*)self + 0xa4);
+    void* vt = *(void**)inner;
+    ext_007C6130(vt, a1);
+}
