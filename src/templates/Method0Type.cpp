@@ -6,6 +6,7 @@ extern "C" void ext_0048ABB0();
 extern "C" void ext_004CA560();
 extern "C" void ext_004CCAF0();
 extern "C" void ext_004CCB00();
+extern "C" void ext_006720C0();
 extern "C" void ext_00493D90();
 extern "C" void ext_0048A9F0();
 extern "C" void ext_004CCDE0();
@@ -817,6 +818,26 @@ extern "C" __declspec(naked) void __fastcall fn_004CCC80(void* self, int edx_unu
         push esi
         mov dword ptr [esp + 0x4], 0x0
         call ext_004CCAF0
+        mov esi, dword ptr [esp + 0xc]
+        push 0x0
+        mov ecx, esi
+        call ext_006720C0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
+
+// [0x004CCD20] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}>::vfunc_0 (41 bytes)
+extern "C" __declspec(naked) void __stdcall fn_004CCD20(void* a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        call ext_004CCB00
         mov esi, dword ptr [esp + 0xc]
         push 0x0
         mov ecx, esi
