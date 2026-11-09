@@ -15,3 +15,16 @@ extern "C" void __cdecl ext_007C8BC0(int value);
 extern "C" void __fastcall fn_0065AF20(void* self) {
     ext_007C8BC0(*(int*)self);
 }
+
+// [0x0065C5E0] sub_0065C5E0 (10 bytes)
+// Pushes &self->[+0x4c] as a single stack argument to sub_0065C3F0 (no caller cleanup), then returns.
+extern "C" void ext_0065C3F0();
+
+extern "C" __declspec(naked) void __fastcall fn_0065C5E0(void* self) {
+    __asm {
+        lea eax, [ecx + 0x4c]
+        push eax
+        call ext_0065C3F0
+        ret
+    }
+}
