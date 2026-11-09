@@ -3,6 +3,7 @@
 extern "C" void ext_004871D0();
 extern "C" void ext_0049ED40();
 extern "C" void ext_00505F00();
+extern "C" void ext_00498A50();
 
 // [0x00496FE0] NMData::Transition::vfunc_1_off_8 (30 bytes)
 extern "C" __declspec(naked) void __fastcall fn_00496FE0(void* self) {
@@ -38,4 +39,11 @@ extern "C" __declspec(naked) void __fastcall fn_00499CE0(void* self) {
         call ext_00505F00
         ret 0x4
     }
+}
+
+// [0x00498B40] NMData::Transition::vfunc_9 (26 bytes)
+extern "C" int __fastcall fn_00498B40(void* self, int edx_unused, int a1) {
+    typedef int (__stdcall *FnT)(int);
+    int r = ((FnT)ext_00498A50)(a1);
+    return (r != -1) ? 2 : 1;
 }
