@@ -81,3 +81,12 @@ extern "C" __declspec(naked) void* __fastcall fn_0049FAC0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0049FAF0] NMData::State::vfunc_18_off_8 (42 bytes)
+extern "C" void __fastcall fn_0049FAF0(void* self, int edx_unused, const int* a1) {
+    unsigned char* p = (unsigned char*)self;
+    *(int*)(p + 0xe0) = a1[0];
+    *(int*)(p + 0xe4) = a1[1];
+    *(int*)(p + 0xe8) = a1[2];
+    *(int*)(p + 0xec) = a1[3];
+}
