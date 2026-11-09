@@ -288,3 +288,11 @@ extern "C" void __cdecl fn_007C8700(void* a0) {
         p = *(void**)(self + 8);
     }
 }
+
+// [0x007C59C0] sub_007C59C0 (35 bytes)
+extern "C" void __cdecl fn_007C59C0(const char* src, float* dst) {
+    const float* v = reinterpret_cast<const float*>(src + 0x180);
+    dst[0] = v[0];
+    dst[1] = v[1];
+    dst[2] = v[2];
+}
