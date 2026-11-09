@@ -537,3 +537,26 @@ extern "C" void __stdcall fn_005305E0(void* src) {
     *(float*)&mem_00AF1414 = p[2];
     *(float*)&mem_00AF1418 = p[3];
 }
+
+// [0x0053A5E0] sub_0053A5E0 (44 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0053A5E0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x8], 0x0
+        je skip
+        mov ecx, dword ptr [esp + 0xc]
+        sub esp, 0x8
+        mov eax, esp
+        mov dword ptr [eax], 0x93a444
+        mov dword ptr [eax + 0x4], ecx
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x38]
+        call eax
+        mov byte ptr [esi + 0xc], al
+skip:
+        pop esi
+        ret 0x8
+    }
+}
