@@ -276,3 +276,16 @@ extern "C" void __fastcall fn_006A8980(char* self) {
         *(void**)(self + 0x100) = 0;
     }
 }
+
+// [0x006A9510] sub_006A9510 (39 bytes)
+extern "C" int mem_00925688;
+
+typedef int (__stdcall *InvalidateRectFn006A9510)(void* hwnd, void* rect, int erase);
+
+extern "C" void __fastcall fn_006A9510(char* self, int edx_unused, char a1) {
+    if (*(self + 0x179) == a1) return;
+    *(self + 0x179) = a1;
+    void* hwnd = *(void**)(self + 0x20);
+    if (hwnd == 0) return;
+    ((InvalidateRectFn006A9510)mem_00925688)(hwnd, 0, 1);
+}
