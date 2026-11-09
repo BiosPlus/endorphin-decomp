@@ -1624,3 +1624,16 @@ extern "C" __declspec(naked) void __fastcall fn_00430B10(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00430B40] sub_00430B40 (40 bytes)
+extern "C" void __fastcall fn_00430B40(void* self, int edx_unused, void* p) {
+    typedef void* (__cdecl *GetFn)();
+    typedef unsigned char (__thiscall *BoolFn)(void*);
+    typedef void (__thiscall *ArgFn)(void*, unsigned int);
+
+    void* obj = ((GetFn)ext_00465B40)();
+    void** vt_obj = *(void***)obj;
+    void** vt_p = *(void***)p;
+    unsigned char r = ((BoolFn)vt_obj[0x1a8 / 4])(obj);
+    ((ArgFn)vt_p[0])(p, (unsigned int)r);
+}
