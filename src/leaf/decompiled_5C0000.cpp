@@ -99,3 +99,15 @@ extern "C" void __fastcall fn_005C3780(void* self) {
         p[0x168] = 1;
     }
 }
+
+// [0x005C3740] sub_005C3740 (27 bytes)
+extern "C" void ext_00648800();
+extern "C" void __fastcall fn_005C3740(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    void* child = *(void**)(p + 0x16c);
+    if (child) {
+        typedef void (__fastcall *FnCall)(void*);
+        ((FnCall)ext_00648800)(child);
+        p[0x168] = 0;
+    }
+}
