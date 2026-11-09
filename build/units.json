@@ -331481,7 +331481,9 @@
       "0x0060D4D2",
       "0x0060D4E8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:38:05Z"
   },
   {
     "va": "0x0060D500",
