@@ -408,3 +408,14 @@ extern "C" __declspec(naked) void __fastcall fn_0043F2C0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00436C40] sub_00436C40 (19 bytes)
+extern "C" void ext_00436070();
+extern "C" void ext_00465B40();
+extern "C" void __fastcall fn_00436C40(void* self) {
+    ext_00436070();
+    void* obj = ((void* (__cdecl*)())ext_00465B40)();
+    typedef void (__fastcall *VFn)(void*);
+    VFn f = (VFn)(*(void***)obj)[15];
+    f(obj);
+}
