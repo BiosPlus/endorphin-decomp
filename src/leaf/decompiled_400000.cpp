@@ -256,3 +256,21 @@ extern "C" __declspec(naked) void __fastcall fn_00401E60(void* self) {
         ret 4
     }
 }
+
+// [0x004024E0] sub_004024E0 (25 bytes)
+extern "C" void ext_00401E00();
+extern "C" int mem_00928EE4;
+
+extern "C" __declspec(naked) void* __fastcall fn_004024E0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_00401E00
+        mov dword ptr [esi], offset mem_00928EE4
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
