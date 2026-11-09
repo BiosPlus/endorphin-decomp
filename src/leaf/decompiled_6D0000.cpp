@@ -68,3 +68,34 @@ extern "C" __declspec(naked) void __fastcall fn_006DAE00(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006D9790] sub_006D9790 (48 bytes)
+// Linear search over 12 x 32-byte records starting at 0x00B5D910 (key at +0xC).
+// Returns the record's dword at +0x10 for the matching key, otherwise 3.
+extern "C" int mem_00B5D910;
+extern "C" __declspec(naked) int __cdecl fn_006D9790(int key) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, 0x3
+        xor ecx, ecx
+        mov edx, offset mem_00B5D910 + 0xc
+    loop_top:
+        cmp dword ptr [edx], esi
+        je found
+        inc ecx
+        add edx, 0x20
+        cmp ecx, 0xc
+        jl loop_top
+        pop esi
+        ret
+    found:
+        shl ecx, 0x5
+        add ecx, offset mem_00B5D910
+        je done
+        mov eax, dword ptr [ecx + 0x10]
+    done:
+        pop esi
+        ret
+    }
+}
