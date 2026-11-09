@@ -46,3 +46,26 @@ extern "C" void* __fastcall fn_005AC670(void* self, int edx_unused, int a1) {
     *(int*)self = 0x95f4e4;
     return self;
 }
+
+// [0x005AD1C0] sub_005AD1C0 (36 bytes)
+extern "C" __declspec(naked) void __cdecl fn_005AD1C0(void* dst, void* end, void* src) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        cmp eax, edx
+        je done
+        mov ecx, dword ptr [esp + 0xc]
+        push esi
+    fill:
+        mov esi, dword ptr [ecx]
+        mov dword ptr [eax], esi
+        mov esi, dword ptr [ecx + 0x4]
+        mov dword ptr [eax + 0x4], esi
+        add eax, 0x8
+        cmp eax, edx
+        jne fill
+        pop esi
+    done:
+        ret
+    }
+}
