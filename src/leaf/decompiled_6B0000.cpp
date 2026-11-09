@@ -64,3 +64,14 @@ extern "C" void __fastcall fn_006B0EB0(void* self, int edx_unused, int a1, int a
     *((unsigned char*)self + 0x60) = 1;
     ext_006A5EA8();
 }
+
+// [0x006B1800] sub_006B1800 (12 bytes)
+extern "C" void ext_006B16F0();
+extern "C" __declspec(naked) void __stdcall fn_006B1800(int a1, int a2, int a3) {
+    __asm {
+        push 0
+        push 0
+        call ext_006B16F0
+        ret 0Ch
+    }
+}
