@@ -310512,7 +310512,9 @@
       "0x005F0D47",
       "0x005F0D57"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:17:01Z"
   },
   {
     "va": "0x005F0D70",
