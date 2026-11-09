@@ -100,3 +100,15 @@ extern "C" int* __cdecl fn_00527660() {
     }
     return &mem_00AED30C;
 }
+
+// [0x00528B60] sub_00528B60 (36 bytes)
+extern "C" void __fastcall fn_00528B60(void* self) {
+    char* s = (char*)self;
+    if (*(void**)(s + 4) != 0) {
+        *(int*)(*(char**)(s + 4) + 8) = 0;
+        void* o = *(void**)(s + 4);
+        typedef void (__thiscall *VFn)(void*);
+        ((VFn)(*(void***)o)[7])(o);
+        *(int*)(s + 4) = 0;
+    }
+}
