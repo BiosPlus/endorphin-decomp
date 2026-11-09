@@ -301,3 +301,22 @@ extern "C" void* __cdecl fn_00559790(void* a) {
     ((VFn)vtbl[1])(p, a);
     return p;
 }
+
+// [0x00552130] sub_00552130 (39 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00552130(void* self, int edx_unused, float* out, int idx) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        shl edx, 0x4
+        fld dword ptr [edx + ecx]
+        add edx, ecx
+        fstp dword ptr [eax]
+        fld dword ptr [edx + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [edx + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [edx + 0xc]
+        fstp dword ptr [eax + 0xc]
+        ret 0x8
+    }
+}
