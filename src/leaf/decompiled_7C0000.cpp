@@ -654,3 +654,23 @@ extern "C" void __cdecl fn_007CCA80(void* self, void* a1) {
     Fn f = *(Fn*)(table + idx * 40 + 0x18);
     f(self, a1);
 }
+
+// [0x007C97C0] sub_007C97C0 (38 bytes)
+extern "C" void ext_007C9260();
+
+extern "C" __declspec(naked) void __cdecl fn_007C97C0(void* self, int a1, int a2) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push ecx
+        call ext_007C9260
+        add esp, 0x4
+        test eax, eax
+        jne short L_skip_007C97C0
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [ecx + 0x94], eax
+        mov dword ptr [ecx + 0x98], edx
+    L_skip_007C97C0:
+        ret
+    }
+}
