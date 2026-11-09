@@ -224,3 +224,14 @@ extern "C" void* __fastcall fn_0045BBF0(void* self) {
     *reinterpret_cast<unsigned int*>(esi) = 0x00937D4C;
     return esi;
 }
+
+// [0x00453E00] sub_00453E00 (27 bytes)
+extern "C" void ext_0044E190();
+extern "C" void ext_00453250();
+extern "C" void __fastcall fn_00453E00(void* self) {
+    ext_0044E190();
+    if (*(reinterpret_cast<unsigned char*>(self) + 0xa9) != 0) {
+        typedef void (__fastcall *Tail)(void*);
+        reinterpret_cast<Tail>(ext_00453250)(self);
+    }
+}
