@@ -77,3 +77,15 @@ extern "C" __declspec(naked) void* __fastcall fn_004CFFE0(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x004C1BF0] sub_004C1BF0 (35 bytes)
+extern "C" int mem_00AE3050;
+extern "C" int mem_00AE304C;
+
+extern "C" void* __cdecl fn_004C1BF0() {
+    if ((mem_00AE3050 & 1) == 0) {
+        mem_00AE3050 |= 1;
+        mem_00AE304C = 0x944708;
+    }
+    return &mem_00AE304C;
+}
