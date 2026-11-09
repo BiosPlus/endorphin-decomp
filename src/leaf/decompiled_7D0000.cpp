@@ -105,3 +105,13 @@ extern "C" float __cdecl ext_007F5850(int, int, int);
 extern "C" void __cdecl fn_007DB090(int a1, int a2, int a3) {
     ext_007F5850(a1, a2, a3);
 }
+
+// [0x007DFDE0] sub_007DFDE0 (29 bytes)
+extern "C" void ext_007DFDC0();
+
+extern "C" void __cdecl fn_007DFDE0(void* a1, void* a2) {
+    typedef void (__cdecl *Fn1)(void*, void*);
+    typedef void (__cdecl *Fn2)(void*);
+    ((Fn1)ext_007DFDC0)(a1, a2);
+    ((Fn2)(*(void**)((char*)a2 + 0x0c)))(a1);
+}
