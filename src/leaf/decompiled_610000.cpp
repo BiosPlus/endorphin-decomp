@@ -45,3 +45,16 @@ extern "C" __declspec(naked) void __fastcall fn_00611100(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00610AF0] sub_00610AF0 (37 bytes)
+extern "C" int mem_0092C8CC;
+extern "C" int mem_0093F8EC;
+extern "C" int mem_0093E990;
+extern "C" void __fastcall fn_00610AF0(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    p[4] = 0;
+    *(float*)(p + 8) = 0.0f;
+    *(float*)(p + 0xC) = *(float*)&mem_0092C8CC;
+    *(float*)(p + 0x10) = *(float*)&mem_0093F8EC;
+    *(float*)(p + 0x14) = *(float*)&mem_0093E990;
+}
