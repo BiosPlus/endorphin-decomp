@@ -644,3 +644,13 @@ extern "C" __declspec(naked) int __cdecl fn_007C8820(void* a0, int a1) {
         ret
     }
 }
+
+// [0x007CCA80] sub_007CCA80 (38 bytes)
+extern "C" void __cdecl fn_007CCA80(void* self, void* a1) {
+    typedef void (__cdecl *Fn)(void*, void*);
+    unsigned int idx = *(unsigned int*)self & 0xFF;
+    char* p = *(char**)((char*)self + 0x0C);
+    char* table = *(char**)(p + 0x20);
+    Fn f = *(Fn*)(table + idx * 40 + 0x18);
+    f(self, a1);
+}
