@@ -6,3 +6,17 @@ extern "C" void* __fastcall fn_00544AC0(void* self, int edx_unused, int a1) {
     ext_00543470((char*)self - 0x98);
     return (char*)self - 0x94;
 }
+
+// [0x00544AE0] ReshapeTool::vfunc_32 (29 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00544AE0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00543470
+        mov eax, dword ptr [esi + 0x9c]
+        mov edx, dword ptr [eax + 0x80]
+        lea ecx, [esi + 0x9c]
+        pop esi
+        jmp edx
+    }
+}
