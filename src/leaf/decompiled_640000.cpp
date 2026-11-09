@@ -514,3 +514,16 @@ extern "C" __declspec(naked) void __fastcall fn_00648510(void* self) {
         ret
     }
 }
+
+// [0x00642020] sub_00642020 (25 bytes)
+extern "C" void __fastcall ext_00648AB0(void* self);
+
+typedef void (__cdecl *fn_006A5C5C_t)(void*);
+
+extern "C" void __fastcall fn_00642020(void* self) {
+    void* p = *(void**)self;
+    if (p) {
+        ext_00648AB0(p);
+        ((fn_006A5C5C_t)ext_006A5C5C)(p);
+    }
+}
