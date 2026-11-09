@@ -225,3 +225,21 @@ extern "C" void __fastcall fn_00538F00(void* self) {
     ((void (__stdcall*)(void*))ext_0063E006)(quadric);
     ((void (__fastcall*)(void*))ext_00532B40)(self);
 }
+
+// [0x00532B40] sub_00532B40 (28 bytes)
+extern "C" void ext_00528B90();
+extern "C" __declspec(naked) void __fastcall fn_00532B40(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        mov dword ptr [eax], 0x9543e4
+        je L_ret
+        cmp dword ptr [ecx + 0x4], eax
+        jne L_ret
+        push 0
+        call ext_00528B90
+    L_ret:
+        ret
+    }
+}
