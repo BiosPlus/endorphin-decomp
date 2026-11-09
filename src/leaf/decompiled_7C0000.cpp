@@ -555,3 +555,24 @@ extern "C" int __cdecl fn_007CBB50(void* a0, float* a1, float* a2) {
     a2[0] = p[5] + p[4];
     return 1;
 }
+
+// [0x007C9E20] sub_007C9E20 (37 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C9E20(int* out, int value) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [eax], ecx
+        jne short L_nonzero
+        cmp dword ptr [eax + 0x50], ecx
+        jne short L_nonzero
+        cmp dword ptr [eax + 0x1c], ecx
+        jne short L_nonzero
+        mov dword ptr [eax + 0x4], ecx
+        ret
+L_nonzero:
+        mov ecx, 0x1
+        mov dword ptr [eax + 0x4], ecx
+        ret
+    }
+}
