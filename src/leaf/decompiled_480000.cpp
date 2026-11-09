@@ -48,3 +48,24 @@ done:
         ret
     }
 }
+
+// [0x00480750] sub_00480750 (25 bytes)
+extern "C" void ext_004A7870();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_00480750(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx]
+        test esi, esi
+        je done
+        mov ecx, esi
+        call ext_004A7870
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+    done:
+        pop esi
+        ret
+    }
+}
