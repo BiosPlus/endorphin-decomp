@@ -83070,7 +83070,9 @@
       "0x0048B091",
       "0x0048B09D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:13:34Z"
   },
   {
     "va": "0x0048B0B0",

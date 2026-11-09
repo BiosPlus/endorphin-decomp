@@ -533,3 +533,13 @@ extern "C" __declspec(naked) void __stdcall fn_0066CBA0(void* a1) {
         ret 0x4
     }
 }
+
+// [0x0048B080] ExprParser::Method0Type<NMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::capturePoseForBlend(void), 0}>::vfunc_4 (40 bytes)
+extern "C" int mem_00924FE8;
+
+extern "C" void* __fastcall fn_0048B080(void* self, int edx_unused, void* a1, void* a2) {
+    volatile int tmp = 0;
+    ((void (__fastcall*)(void*))ext_0048A9F0)(*(void**)a2);
+    (*(void (__fastcall**)(void*))&mem_00924FE8)(a1);
+    return a1;
+}
