@@ -757,3 +757,26 @@ extern "C" __declspec(naked) void __fastcall fn_0044CFE0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0044B1F0] sub_0044B1F0 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0044B1F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 64h], 0
+        je no_child
+        mov ecx, dword ptr [esi + 64h]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 24h]
+        push 1
+        call edx
+        mov ecx, dword ptr [esi + 64h]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 154h]
+        pop esi
+        jmp edx
+    no_child:
+        pop esi
+        ret
+    }
+}
