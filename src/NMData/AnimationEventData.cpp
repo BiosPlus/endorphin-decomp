@@ -19,3 +19,18 @@ extern "C" void __fastcall fn_004C1AA0(void* self, int edx_unused, int a1) {
     *(int*)((char*)self + 0x164) = a1;
     ext_004C0340();
 }
+
+extern "C" void ext_0047D7C0();
+extern "C" int mem_00AE29D0;
+
+// [0x004BFC20] NMData::AnimationEventData::vfunc_13_off_C (20 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004BFC20(void* self, int edx_unused, int a1) {
+    __asm {
+        add ecx, -0Ch
+        push ecx
+        mov ecx, dword ptr [mem_00AE29D0]
+        call ext_0047D7C0
+        mov al, 1
+        ret 4
+    }
+}
