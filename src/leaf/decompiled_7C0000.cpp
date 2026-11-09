@@ -823,3 +823,25 @@ extern "C" __declspec(naked) void __cdecl fn_007CA8A0(float* a0, float* a1, floa
         ret
     }
 }
+
+// [0x007CCC00] sub_007CCC00 (44 bytes)
+extern "C" int mem_0094CE80;
+extern "C" __declspec(naked) void __cdecl fn_007CCC00(void* self, float a1) {
+    __asm {
+        fld dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0x4]
+        fst dword ptr [ecx + 0x1c]
+        fabs
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fcomp dword ptr [mem_0094CE80]
+        fnstsw ax
+        test ah, 0x41
+        jnp short L_below
+        or dword ptr [ecx + 0xc], 0x8
+        ret
+    L_below:
+        and dword ptr [ecx + 0xc], -0x9
+        ret
+    }
+}
