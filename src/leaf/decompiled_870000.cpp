@@ -38,3 +38,10 @@ extern "C" __declspec(naked) void __stdcall fn_00871090(unsigned char arg) {
         ret 4
     }
 }
+
+// [0x008703D0] sub_008703D0 (27 bytes)
+extern "C" void __cdecl ext_0049FE40(int, int, int, int);
+
+extern "C" void __fastcall fn_008703D0(void* self, int edx_unused, int a1, int a2) {
+    ext_0049FE40(a1, (int)self + 4, a2, 1);
+}
