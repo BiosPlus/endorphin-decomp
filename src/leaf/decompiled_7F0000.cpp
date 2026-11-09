@@ -66,3 +66,28 @@ extern "C" float __cdecl fn_007F56E0(void* self) {
     }
     return 0.0f;
 }
+
+// [0x007F0B00] sub_007F0B00 (47 bytes)
+// Uses edi as an implicit input (not a parameter): stores edx into [edi+0x218]
+// and stores edi as the value of a newly appended node.
+extern "C" __declspec(naked) void __fastcall fn_007F0B00(void* self, int index) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx]
+        mov dword ptr [edi + 0x218], edx
+        lea eax, [edx + 4*edx]
+        mov edx, dword ptr [ecx + 0x8]
+        lea eax, [esi + 4*eax]
+        mov esi, dword ptr [ecx + 0x10]
+        lea edx, [edx + 8*esi]
+        add esi, 0x1
+        mov dword ptr [ecx + 0x10], esi
+        mov dword ptr [edx + 0x4], edi
+        mov ecx, dword ptr [eax + 0x4]
+        mov dword ptr [edx], ecx
+        add dword ptr [eax + 0x8], 0x1
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        ret
+    }
+}
