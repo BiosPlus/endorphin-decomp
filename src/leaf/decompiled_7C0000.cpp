@@ -382,3 +382,10 @@ extern "C" void __cdecl fn_007C60E0(char* self, float* out) {
     out[1] = *(float*)(self + 0xf4);
     out[2] = *(float*)(self + 0xf8);
 }
+
+// [0x007C6220] sub_007C6220 (35 bytes)
+extern "C" void __cdecl fn_007C6220(char* self, float a, float b, float c) {
+    *(float*)(self + 0x140) = a;
+    *(float*)(self + 0x144) = b;
+    *(float*)(self + 0x148) = c;
+}
