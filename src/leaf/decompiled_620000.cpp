@@ -322,3 +322,28 @@ extern "C" __declspec(naked) void __fastcall fn_00622290(void* self) {
         ret
     }
 }
+
+// [0x00624EE0] sub_00624EE0 (42 bytes)
+extern "C" __declspec(naked) int __stdcall fn_00624EE0(const unsigned int* a, const unsigned int* b) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [edx]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esi]
+        cmp ecx, eax
+        ja L_ret1
+        jb L_ret0
+        mov eax, dword ptr [edx + 0x4]
+        cmp eax, dword ptr [esi + 0x4]
+        jb L_ret1
+    L_ret0:
+        xor eax, eax
+        pop esi
+        ret 0x8
+    L_ret1:
+        mov eax, 0x1
+        pop esi
+        ret 0x8
+    }
+}
