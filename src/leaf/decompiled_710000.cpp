@@ -33,3 +33,9 @@ extern "C" void __stdcall ext_00711CF0(int a1, int a2);
 extern "C" void __stdcall fn_00711A70(int a1) {
     ext_00711CF0(0x20, a1);
 }
+
+// [0x00712150] sub_00712150 (16 bytes)
+extern "C" int ext_00711DB0();
+extern "C" bool __fastcall fn_00712150(void* self) {
+    return ext_00711DB0() == 0x11;
+}
