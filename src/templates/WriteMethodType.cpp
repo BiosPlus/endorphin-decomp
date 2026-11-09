@@ -65,3 +65,16 @@ extern "C" void __stdcall fn_005B7D60(void** self, void** a1) {
     int r = ((VCallFn_005B7D60)((*(void***)sub)[5]))(sub, a1);
     ((CallFn_005B7D60)ext_005B7280)(obj, r);
 }
+
+// [0x005C3480] ExprParser::WriteMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {protected: void __thiscall NMData::CollisionModelDataBase::addTorque(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
+extern "C" void ext_005C30F0();
+
+typedef int (__thiscall *VCallFn_005C3480)(void* self, void* a1);
+typedef void (__thiscall *CallFn_005C3480)(void* self, int a1);
+
+extern "C" void __stdcall fn_005C3480(void** self, void** a1) {
+    void* obj = *self;
+    void* sub = a1[1];
+    int r = ((VCallFn_005C3480)((*(void***)sub)[5]))(sub, a1);
+    ((CallFn_005C3480)ext_005C30F0)(obj, r);
+}
