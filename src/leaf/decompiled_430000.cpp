@@ -693,3 +693,27 @@ extern "C" __declspec(naked) void __fastcall fn_00434E50(void* self) {
         ret
     }
 }
+
+// [0x00434E70] sub_00434E70 (28 bytes)
+// Pushes arg 2 before calling sub_00465B30 (no cleanup), passes its result as ecx to sub_00469410 (which
+// consumes the pushed arg), then calls sub_00433B70(self, 2) and returns. Stack-arg hand-off is not
+// expressible in C++03, so this is naked asm.
+extern "C" void ext_00465B30();
+extern "C" void ext_00469410();
+extern "C" void ext_00433B70();
+
+extern "C" __declspec(naked) void __fastcall fn_00434E70(void* self) {
+    __asm {
+        push esi
+        push 2
+        mov esi, ecx
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469410
+        push 2
+        mov ecx, esi
+        call ext_00433B70
+        pop esi
+        ret
+    }
+}
