@@ -418,3 +418,34 @@ size_00480560:
         ret
     }
 }
+
+// [0x00480DD0] sub_00480DD0 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00480DD0(const void* src, const void* end, void* dst) {
+    __asm {
+        mov edx, dword ptr [esp + 4]
+        mov eax, dword ptr [esp + 0Ch]
+        push ebx
+        mov ebx, dword ptr [esp + 0Ch]
+        cmp edx, ebx
+        je done
+        push esi
+        push edi
+    loop_top:
+        test eax, eax
+        je skip
+        mov ecx, 10h
+        mov esi, edx
+        mov edi, eax
+        rep movsd
+    skip:
+        add edx, 40h
+        add eax, 40h
+        cmp edx, ebx
+        jne loop_top
+        pop edi
+        pop esi
+    done:
+        pop ebx
+        ret
+    }
+}
