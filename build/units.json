@@ -476300,7 +476300,9 @@
       "0x006D98AD",
       "0x006D98C5"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T15:00:14Z"
   },
   {
     "va": "0x006D98D0",
