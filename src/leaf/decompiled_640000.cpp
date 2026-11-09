@@ -644,3 +644,12 @@ done:
         ret
     }
 }
+
+// [0x00648980] sub_00648980 (32 bytes)
+extern "C" void ext_007C76E0();
+
+extern "C" void __fastcall fn_00648980(void* self) {
+    char* eax = *(char**)((char*)self + 0x28);
+    void* ecx = *(void**)(eax + 0x40);
+    ((void (__cdecl*)(void*, float, float, float))ext_007C76E0)(ecx, 0.0f, 0.0f, 0.0f);
+}
