@@ -54,3 +54,24 @@ extern "C" int* __cdecl fn_0060A520() {
     }
     return &mem_00B478D4;
 }
+
+// [0x00602EC0] sub_00602EC0 (43 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00602EC0(void* self) {
+    __asm {
+        fldz
+        mov eax, ecx
+        mov dword ptr [eax], 0x0096F81C
+        xor ecx, ecx
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xC], ecx
+        mov dword ptr [eax + 0x10], ecx
+        fst dword ptr [eax + 0x1C]
+        fst dword ptr [eax + 0x18]
+        fst dword ptr [eax + 0x14]
+        fst dword ptr [eax + 0x28]
+        fst dword ptr [eax + 0x24]
+        fstp dword ptr [eax + 0x20]
+        ret
+    }
+}
