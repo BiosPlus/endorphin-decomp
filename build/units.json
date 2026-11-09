@@ -382194,7 +382194,9 @@
     "relocations": [
       "0x0064F64D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:13:26Z"
   },
   {
     "va": "0x0064F660",
