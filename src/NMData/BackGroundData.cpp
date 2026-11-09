@@ -50,3 +50,27 @@ extern "C" bool __fastcall fn_0059F4F0(void* self) {
     }
     return true;
 }
+
+// [0x005A9880] NMData::BackGroundData::vfunc_3_off_4 (37 bytes)
+// Calls vtable slot 9 (+0x24) on self with a 0 argument, then copy-constructs the
+// returned std::string into the hidden return buffer (stack arg, ret 0x4) via the
+// imported basic_string copy ctor; returns the buffer in eax.
+extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void __fastcall fn_005A9880(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        push esi
+        mov dword ptr [esp + 0x4], 0
+        call edx
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
