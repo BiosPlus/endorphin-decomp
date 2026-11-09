@@ -29,3 +29,10 @@ extern "C" void* __fastcall fn_006619B0(void* self, int edx_unused, void* a1, vo
     ((void (__cdecl*)(void*))ext_0046F7D0)(a1);
     return a1;
 }
+
+// [0x0058A3C0] AnimatableTransform::vfunc_57 (24 bytes)
+extern "C" void ext_0058A2B0();
+extern "C" void* __fastcall fn_0058A3C0(void* self, int edx_unused, int a1) {
+    int idx = ((int (__stdcall*)(int))ext_0058A2B0)(a1);
+    return (char*)self + idx * 8 + 0xf4;
+}
