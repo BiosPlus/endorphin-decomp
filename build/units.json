@@ -391684,7 +391684,9 @@
       "0x0065F407",
       "0x0065F40E"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:00:59Z"
   },
   {
     "va": "0x0065F420",

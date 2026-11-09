@@ -166,3 +166,24 @@ extern "C" void __fastcall fn_0065BED0(void* self) {
     ext_007C7310(*(int*)((char*)self + 0x40));
     *(int*)((char*)self + 0x40) = 0;
 }
+
+// [0x0065F400] sub_0065F400 (24 bytes)
+// Saves esi, calls sub_0065F310 with ecx loaded from the global mem_00B58FF4 and two stack args (0, 1),
+// stores the result into [self], returns self in eax. ecx must carry the global, which C++ can't express.
+extern "C" void ext_0065F310();
+extern "C" int mem_00B58FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0065F400(void* self) {
+    __asm {
+        push esi
+        push 0x0
+        mov esi, ecx
+        mov ecx, dword ptr [mem_00B58FF4]
+        push 0x1
+        call ext_0065F310
+        mov dword ptr [esi], eax
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
