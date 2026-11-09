@@ -66,3 +66,26 @@ extern "C" __declspec(naked) void __fastcall fn_00871E00(void* self) {
         ret 4
     }
 }
+
+extern "C" void ext_006A5EDE();
+extern "C" int mem_009251B4;
+
+// [0x008727FB] sub_008727FB (38 bytes)
+extern "C" __declspec(naked) void __fastcall fn_008727FB(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        call ext_006A5EDE
+        mov ecx, dword ptr [esp + 0x4]
+        test ecx, ecx
+        mov edx, dword ptr [esp + 0x8]
+        mov byte ptr [eax + 0x14], cl
+        mov dword ptr [eax + 0x44], edx
+        jne skip_0087281B
+        push -0x3
+        call dword ptr [mem_009251B4]
+        pop ecx
+    skip_0087281B:
+        xor eax, eax
+        inc eax
+        ret 0x8
+    }
+}
