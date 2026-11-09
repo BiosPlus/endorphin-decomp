@@ -176,3 +176,30 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_0066B1A0(void* self, in
         ret 0x8
     }
 }
+
+// [0x0066B1D0] ExprParser::BoolType::vfunc_43 (48 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_0066B1D0(void* self, int edx_unused, unsigned char* a1, void* a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        cmp byte ptr [esi], 0x0
+        jne L_set_true
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        test al, al
+        jne L_set_true
+        xor eax, eax
+        mov byte ptr [esi], al
+        pop esi
+        ret 0x8
+    L_set_true:
+        mov eax, 0x1
+        mov byte ptr [esi], al
+        pop esi
+        ret 0x8
+    }
+}
