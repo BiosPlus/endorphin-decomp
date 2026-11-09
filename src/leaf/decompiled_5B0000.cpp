@@ -250,3 +250,15 @@ extern "C" float* __fastcall fn_005B6850(void* self, int edx_unused, float* out)
     }
     return out;
 }
+
+// [0x005B6750] sub_005B6750 (47 bytes)
+extern "C" void __fastcall fn_005B6750(void* self, int edx_unused, void* a1) {
+    char* p = (char*)self;
+    void* old = *(void**)(p + 0x158);
+    if (a1 != old && old) {
+        void** vtbl = *(void***)old;
+        ((void (__thiscall*)(void*, int))vtbl[0])(old, 1);
+    }
+    *(void**)(p + 0x158) = a1;
+    *(void**)((char*)a1 + 0xb0) = self;
+}
