@@ -429,3 +429,14 @@ extern "C" void __fastcall fn_0040FEA0(void* self, int edx_unused, int a1, int a
     ext_006A5EA8();
     *flag = (*flag == 0);
 }
+
+// [0x004026B0] sub_004026B0 (36 bytes)
+extern "C" int mem_00924FF4;
+extern "C" void __fastcall fn_004026B0(void* self, int edx_unused, void* first, void* last) {
+    typedef void (__thiscall *dtor_t)(void*);
+    char* p = (char*)first;
+    while (p != (char*)last) {
+        reinterpret_cast<dtor_t>(mem_00924FF4)(p);
+        p += 0x1c;
+    }
+}
