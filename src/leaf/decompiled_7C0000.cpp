@@ -623,3 +623,24 @@ done:
         ret
     }
 }
+
+// [0x007C8820] sub_007C8820 (38 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007C8820(void* a0, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        test eax, eax
+        jl short L_007C8843
+        mov ecx, dword ptr [esp + 0x4]
+        cmp eax, dword ptr [ecx]
+        jge short L_007C8843
+        mov ecx, dword ptr [ecx + 0x20]
+        lea eax, [eax + 4*eax]
+        cmp dword ptr [ecx + 8*eax + 0x24], 0x0
+        je short L_007C8843
+        mov eax, 0x1
+        ret
+    L_007C8843:
+        xor eax, eax
+        ret
+    }
+}
