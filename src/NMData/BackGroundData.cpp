@@ -84,3 +84,24 @@ extern "C" void __fastcall fn_0059DB70(void* self, int edx_unused, int a1) {
     mem_00924FD4(static_cast<char*>(self) + 0x14, reinterpret_cast<const char*>(mem_0093BED0));
     mem_00924FD4(static_cast<char*>(self) + 0x30, reinterpret_cast<const char*>(mem_0093BEDC));
 }
+
+// [0x0059DD70] NMData::BackGroundData::vfunc_4_off_10 (40 bytes)
+// Scales the float at self+0x4dc by *a1, then calls vtable slot 25 (+0x64) on the
+// object at self-0xc with that product as a single float argument; returns its result.
+extern "C" __declspec(naked) float __fastcall fn_0059DD70(void* self, int edx_unused, const float* a1) {
+    __asm {
+        mov eax, ecx
+        fld dword ptr [eax + 0x4dc]
+        mov edx, dword ptr [eax - 0xc]
+        mov edx, dword ptr [edx + 0x64]
+        lea ecx, [eax - 0xc]
+        mov eax, dword ptr [esp + 0x4]
+        fmul dword ptr [eax]
+        push ecx
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [esp]
+        call edx
+        ret 0x4
+    }
+}
