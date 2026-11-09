@@ -208,3 +208,17 @@ extern "C" __declspec(naked) void* __fastcall fn_00519CB0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0051E040] sub_0051E040 (48 bytes)
+// Scans records of 0x168 bytes in [begin, end) and returns the first one for
+// which pred(record) (__fastcall, this in ecx) returns true; otherwise end-ish.
+extern "C" void* __cdecl fn_0051E040(char* begin, char* end, char (__fastcall *pred)(void*)) {
+    char* p = begin;
+    while (p != end) {
+        if (pred(p)) {
+            break;
+        }
+        p += 0x168;
+    }
+    return p;
+}
