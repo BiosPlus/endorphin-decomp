@@ -242785,7 +242785,9 @@
       "0x0058F63A",
       "0x0058F642"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:46:28Z"
   },
   {
     "va": "0x0058F650",
