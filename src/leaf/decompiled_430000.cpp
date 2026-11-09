@@ -2205,3 +2205,22 @@ extern "C" __declspec(naked) void __fastcall fn_00430BD0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0043CA00] sub_0043CA00 (48 bytes)
+// Builds a TRACKMOUSEEVENT on the stack (cbSize=0x10, TME_LEAVE, hwnd=this+0x20, HOVER_DEFAULT) and calls TrackMouseEvent via IAT.
+extern "C" int mem_009255E8;
+extern "C" __declspec(naked) void __fastcall fn_0043CA00(void* self) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [ecx + 0x20]
+        lea ecx, [esp]
+        push ecx
+        mov dword ptr [esp + 0x4], 0x10
+        mov dword ptr [esp + 0x8], 0x2
+        mov dword ptr [esp + 0xc], eax
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call dword ptr [mem_009255E8]
+        add esp, 0x10
+        ret
+    }
+}
