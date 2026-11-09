@@ -380271,7 +380271,9 @@
       "0x0064E365",
       "0x0064E372"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:56:45Z"
   },
   {
     "va": "0x0064E380",
