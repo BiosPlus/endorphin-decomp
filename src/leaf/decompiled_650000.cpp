@@ -238,3 +238,12 @@ extern "C" void __fastcall fn_0065D440(void* self) {
         *(void**)q = p;
     }
 }
+
+// [0x0065C340] sub_0065C340 (26 bytes)
+extern "C" void ext_007C9BC0();
+
+extern "C" void __fastcall fn_0065C340(void* self, int edx_unused, int a1) {
+    typedef int (__cdecl *Fn)(int);
+    int r = ((Fn)ext_007C9BC0)(a1);
+    *(int*)((char*)self + 0x8c) = r;
+}

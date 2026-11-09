@@ -390240,7 +390240,9 @@
     "relocations": [
       "0x0065C349"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:28:54Z"
   },
   {
     "va": "0x0065C360",
