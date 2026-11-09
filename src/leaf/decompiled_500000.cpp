@@ -135,3 +135,25 @@ extern "C" __declspec(naked) void __fastcall fn_0050EE70(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0050F9D0] sub_0050F9D0 (36 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_0050F9D0(void* self, int edx_unused, double a, double b) {
+    __asm {
+        cmp dword ptr [ecx + 0x8], 0x0
+        fld qword ptr [esp + 0xc]
+        fcomp qword ptr [esp + 0x4]
+        fnstsw ax
+        jne short nonzero_flag
+        test ah, 0x41
+        je short ret_true
+ret_false:
+        xor al, al
+        ret 0x10
+nonzero_flag:
+        test ah, 0x5
+        jp short ret_false
+ret_true:
+        mov al, 0x1
+        ret 0x10
+    }
+}
