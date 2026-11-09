@@ -47,3 +47,22 @@ extern "C" float __fastcall fn_00658B90(void* self, int edx_unused, int a1) {
     }
     return 0.0f;
 }
+
+// [0x00658910] RelationshipHinge::vfunc_10 (31 bytes)
+extern "C" int ext_007C9310(int, int, int);
+
+extern "C" __declspec(naked) void __fastcall fn_00658910(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [ecx + 0x64]
+        push eax
+        push 0x0
+        push ecx
+        call ext_007D8700
+        add esp, 0x4
+        push eax
+        call ext_007C9310
+        add esp, 0xc
+        ret 0x4
+    }
+}
