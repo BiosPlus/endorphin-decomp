@@ -29,3 +29,11 @@ extern "C" void __fastcall fn_00594080(void* self, int edx_unused, float a1) {
     void* inner = *(void**)((char*)self + 0xf8);
     ((Callee)ext_006426D0)(inner, a1);
 }
+
+// [0x005940A0] sub_005940A0 (22 bytes)
+extern "C" void ext_00642720();
+extern "C" void __fastcall fn_005940A0(void* self, int edx_unused, float a1) {
+    typedef void (__thiscall *Callee)(void*, float);
+    void* inner = *(void**)((char*)self + 0xf8);
+    ((Callee)ext_00642720)(inner, a1);
+}
