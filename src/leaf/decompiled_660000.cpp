@@ -227,3 +227,20 @@ extern "C" __declspec(naked) void __fastcall fn_00662420(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00666320] sub_00666320 (25 bytes)
+extern "C" void __stdcall ext_00666170(int a1);
+extern "C" __declspec(naked) void* __fastcall fn_00666320(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        push eax
+        mov dword ptr [esi], ecx
+        call ext_00666170
+        mov eax, esi
+        pop esi
+        ret 0x8
+    }
+}
