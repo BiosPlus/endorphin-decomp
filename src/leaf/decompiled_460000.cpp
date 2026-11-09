@@ -672,3 +672,18 @@ extern "C" void __fastcall fn_00469020(void* self) {
     void* obj = (void*)(*(unsigned int*)((char*)p + 0x34) + 8);
     ((FnC)ext_004AFEB0)(obj, arg);
 }
+
+extern "C" void ext_00493EA0();
+extern "C" void ext_0043C8F0();
+
+// [0x00465DC0] sub_00465DC0 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00465DC0(void* self) {
+    __asm {
+        call ext_00594000
+        lea ecx, [eax + 0x258]
+        call ext_00493EA0
+        mov eax, dword ptr [mem_00ACDB40]
+        mov ecx, dword ptr [eax + 0x108]
+        jmp ext_0043C8F0
+    }
+}

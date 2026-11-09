@@ -59949,7 +59949,9 @@
       "0x00465DD1",
       "0x00465DDC"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:01:48Z"
   },
   {
     "va": "0x00465DE0",
