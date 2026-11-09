@@ -424,3 +424,14 @@ extern "C" unsigned char __stdcall fn_004CD780(void* a1) {
     ((void (__fastcall*)(void*))ext_004CCDE0)(obj);
     return 0;
 }
+
+// [0x0066DCE0] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_1 (16 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0066DCE0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call ext_0067B860
+        fldz
+        ret 0x4
+    }
+}
