@@ -76,3 +76,16 @@ extern "C" __declspec(naked) void __stdcall fn_00594460(void* a1) {
         ret 0x4
     }
 }
+
+// [0x00498F80] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_37 (15 bytes)
+extern "C" void ext_004989F0();
+
+// this in ecx (passed through to callee), one stack arg (a1), ret 4.
+extern "C" __declspec(naked) void __fastcall fn_00498F80(void* self, int edx_unused, void* a1) {
+    __asm {
+        call ext_004989F0
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x4], eax
+        ret 0x4
+    }
+}
