@@ -372,3 +372,15 @@ extern "C" __declspec(naked) void __cdecl fn_007DAE50(void* self) {
         ret
     }
 }
+
+// [0x007D8420] sub_007D8420 (43 bytes)
+extern "C" void* __cdecl ext_007C9270(void* a0);
+extern "C" void __cdecl ext_007D8400(void* a0);
+extern "C" int mem_00AB28C8;
+
+extern "C" void __cdecl fn_007D8420(void* a0) {
+    char* self = (char*)a0;
+    char* edi = (char*)ext_007C9270(*(void**)(self + 0x68));
+    ext_007D8400(self);
+    reinterpret_cast<void (__cdecl*)(void*, void*)>(mem_00AB28C8)(edi + 0x15c, self);
+}
