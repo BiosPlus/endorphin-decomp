@@ -1165,3 +1165,19 @@ store:
         ret 0x4
     }
 }
+
+// [0x004349D0] sub_004349D0 (34 bytes)
+// Calls vtbl[1](1) on the object at this+0x124 if non-null, then clears this+0x124.
+namespace {
+struct Ep_Vtbl1Obj_004349D0 {
+    virtual void vf0();
+    virtual void vf1(int a1);
+};
+}
+extern "C" void __fastcall fn_004349D0(void* self) {
+    Ep_Vtbl1Obj_004349D0* obj = *(Ep_Vtbl1Obj_004349D0**)((unsigned char*)self + 0x124);
+    if (obj) {
+        obj->vf1(1);
+    }
+    *(void**)((unsigned char*)self + 0x124) = 0;
+}
