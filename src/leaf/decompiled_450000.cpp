@@ -574,3 +574,24 @@ extern "C" void __fastcall fn_00458470(void* self, int edx_unused, int* a1, int 
     typedef void (__fastcall *Fn)(void*, int, int*, int);
     ((Fn)vtbl[4])(obj, (int)vtbl, a1, a2);
 }
+
+// [0x00458650] sub_00458650 (32 bytes)
+extern "C" void ext_00458470();
+extern "C" void ext_006A5EA8();
+
+extern "C" __declspec(naked) void __fastcall fn_00458650(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esi + 0x54]
+        call ext_00458470
+        mov ecx, esi
+        call ext_006A5EA8
+        pop esi
+        ret 0xc
+    }
+}
