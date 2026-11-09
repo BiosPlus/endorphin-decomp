@@ -443,3 +443,21 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_007DD130(void* self, in
         ret 4
     }
 }
+
+// [0x007D47D0] sub_007D47D0 (46 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D47D0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [eax + 0x1c], ecx
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax], 0x2
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 0x4], 0x0
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0x10], edx
+        ret
+    }
+}
