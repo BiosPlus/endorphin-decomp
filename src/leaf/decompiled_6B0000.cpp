@@ -526,3 +526,30 @@ extern "C" __declspec(naked) void __fastcall fn_006B7D90(void* self) {
         ret
     }
 }
+
+// [0x006B8B20] sub_006B8B20 (44 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" int mem_0092561C;
+
+extern "C" __declspec(naked) void __fastcall fn_006B8B20(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi + 0x5c], eax
+        je skip_iswindow
+        mov eax, dword ptr [eax + 0x20]
+        push eax
+        call dword ptr [mem_0092561C]
+        test eax, eax
+        jne skip_iswindow
+        mov dword ptr [esi + 0x5c], eax
+skip_iswindow:
+        mov ecx, esi
+        call ext_006A5EA8
+        pop esi
+        ret 0x4
+    }
+}
