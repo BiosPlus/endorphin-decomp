@@ -210639,7 +210639,9 @@
       "0x00550F69",
       "0x00550F6F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:10:36Z"
   },
   {
     "va": "0x00550F80",
