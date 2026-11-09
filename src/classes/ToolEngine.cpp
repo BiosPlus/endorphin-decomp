@@ -91,3 +91,22 @@ extern "C" __declspec(naked) void __fastcall fn_004852F0(void* self) {
         ret
     }
 }
+
+// [0x004800E0] ToolEngine::vfunc_13 (29 bytes)
+// Walks self->[+0x3B0]->[+0x30], calls vtable slot 45 (+0xB4) of that object
+// with the constant argument 3, then passes the returned pointer as `this`
+// (ecx) to ext_00530290.
+extern "C" void ext_00530290();
+extern "C" __declspec(naked) void __fastcall fn_004800E0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x3b0]
+        mov ecx, dword ptr [ecx + 0x30]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xb4]
+        push 0x3
+        call edx
+        mov ecx, eax
+        call ext_00530290
+        ret
+    }
+}
