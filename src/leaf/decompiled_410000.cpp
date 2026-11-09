@@ -249,3 +249,14 @@ extern "C" __declspec(naked) void __fastcall fn_0041DE10(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004135A0] sub_004135A0 (28 bytes)
+extern "C" int mem_009244D4;
+extern "C" void ext_004133F0();
+
+extern "C" void __fastcall fn_004135A0(void* self, int edx_unused, int a1) {
+    typedef void (__thiscall *MfcFn)(void*, int);
+    MfcFn f = (MfcFn)mem_009244D4;
+    f((char*)self + 0x18, a1);
+    ((void (__thiscall *)(void*))ext_004133F0)(self);
+}
