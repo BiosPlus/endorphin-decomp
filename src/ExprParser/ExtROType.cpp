@@ -229,3 +229,23 @@ extern "C" __declspec(naked) void __fastcall fn_0066BB20(void* self, int edx_unu
         ret 8
     }
 }
+
+extern "C" void ext_0041CEB0();
+
+// [0x0066B000] ExprParser::ExtROType::vfunc_4 (33 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0066B000(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        mov dword ptr [esp + 0x8], 0
+        call ext_0041CEB0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
