@@ -575,3 +575,26 @@ extern "C" __declspec(naked) void __stdcall fn_00629FF0(void* self, void* a1) {
         ret 8
     }
 }
+
+// [0x006491D0] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredPositionX(float), 0}>::vfunc_41 (37 bytes)
+extern "C" void ext_00648E40();
+
+extern "C" __declspec(naked) void __stdcall fn_006491D0(void* a, void* b) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00648E40
+        pop esi
+        ret 8
+    }
+}
