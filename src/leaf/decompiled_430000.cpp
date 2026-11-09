@@ -253,3 +253,16 @@ extern "C" __declspec(naked) void __fastcall fn_00430370(void* self) {
         ret
     }
 }
+
+// [0x00430D30] sub_00430D30 (16 bytes)
+extern "C" void ext_004647D0();
+extern "C" int mem_00AD6BC8;
+extern "C" int mem_00ACDD94;
+
+extern "C" void __fastcall fn_00430D30(void* self) {
+    __asm {
+        push offset mem_00ACDD94
+        mov ecx, offset mem_00AD6BC8
+        call ext_004647D0
+    }
+}
