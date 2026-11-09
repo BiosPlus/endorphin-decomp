@@ -31,3 +31,22 @@ extern "C" __declspec(naked) void __fastcall fn_004AFE30(void* self) {
         ret
     }
 }
+
+extern "C" int mem_00924FE4;
+
+// [0x004AFDE0] ChangeSecondarySelectionCommand::vfunc_3 (34 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004AFDE0(void* self, int edx_unused, void* out) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0x941f98
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
