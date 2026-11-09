@@ -236896,7 +236896,9 @@
       "0x00587D1A",
       "0x00587D22"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:38:54Z"
   },
   {
     "va": "0x00587D30",
