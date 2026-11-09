@@ -31,3 +31,12 @@ extern "C" void __fastcall fn_004F9860(void* self, int edx_unused, int a1) {
     typedef void (__thiscall *Callee)(void*, int, int);
     ((Callee)ext_00469530)(*(void**)((char*)self + 0x8), a1, 0);
 }
+
+// [0x004F98A0] VMCSModes::DefaultImplementation::vfunc_27 (19 bytes)
+extern "C" void ext_00468A30();
+
+extern "C" bool __fastcall fn_004F98A0(void* self, int edx_unused, void** out) {
+    typedef void* (__fastcall *Callee)(void*);
+    *out = ((Callee)ext_00468A30)(*(void**)((char*)self + 0x8));
+    return true;
+}
