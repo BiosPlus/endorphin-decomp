@@ -84903,7 +84903,9 @@
       "0x0048DF97",
       "0x0048DFA7"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:10:37Z"
   },
   {
     "va": "0x0048DFC0",
