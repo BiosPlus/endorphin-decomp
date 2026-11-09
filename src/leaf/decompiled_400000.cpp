@@ -108,3 +108,11 @@ extern "C" __declspec(naked) void __fastcall fn_00407850(void* self) {
         ret
     }
 }
+
+// [0x00403160] sub_00403160 (20 bytes)
+extern "C" void ext_006A3442();
+
+extern "C" void* __fastcall fn_00403160(void* self, int edx_unused, int a1) {
+    typedef void* (__stdcall *GetFrameFn)(void*, int);
+    return ((GetFrameFn)ext_006A3442)(*(void**)((char*)self + 0x57c), a1);
+}
