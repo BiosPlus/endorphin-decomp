@@ -920,3 +920,26 @@ extern "C" __declspec(naked) void __stdcall fn_0064EDD0(void* self, void* a1) {
         ret 8
     }
 }
+
+extern "C" void ext_00649050();
+
+// [0x00649120] ExprParser::WriteMethodType<RelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setOrientationStrength(float), 0}>::vfunc_41 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00649120(void* self, int edx_unused, void** a1, void** a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00649050
+        pop esi
+        ret 0x8
+    }
+}
