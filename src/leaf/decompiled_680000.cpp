@@ -141,3 +141,14 @@ extern "C" void* __cdecl fn_00681D10() {
     }
     return &mem_00B5A23C;
 }
+
+// [0x00681D40] sub_00681D40 (35 bytes)
+extern "C" int mem_00B5A248;
+extern "C" int mem_00B5A244;
+extern "C" void* __cdecl fn_00681D40(void) {
+    if (!(mem_00B5A248 & 1)) {
+        mem_00B5A248 |= 1;
+        mem_00B5A244 = 0x98ccfc;
+    }
+    return &mem_00B5A244;
+}
