@@ -25,3 +25,18 @@ extern "C" __declspec(naked) void __fastcall fn_0066BB90(void* self) {
         ret 4
     }
 }
+
+extern "C" void ext_0041CF50();
+
+// [0x0066BC40] ExprParser::VPtrProxyType::vfunc_39 (19 bytes)
+// Loads *arg0 into ecx as the callee's `this`, pushes arg1 and calls sub_0041CF50, then returns popping 8 bytes.
+extern "C" __declspec(naked) void __fastcall fn_0066BC40(void* self, int edx_unused, void* a0, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov ecx, dword ptr [esp + 4]
+        mov ecx, dword ptr [ecx]
+        push eax
+        call ext_0041CF50
+        ret 8
+    }
+}
