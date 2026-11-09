@@ -196,3 +196,28 @@ extern "C" __declspec(naked) void* __fastcall fn_006AD010(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x006A7A90] sub_006A7A90 (36 bytes)
+extern "C" int mem_009255F4;
+
+extern "C" __declspec(naked) int __cdecl fn_006A7A90() {
+    __asm {
+        push esi
+        mov esi, dword ptr [mem_009255F4]
+        push 1Bh
+        call esi
+        test ax, ax
+        js ret0_006A7A90
+        push 9
+        call esi
+        test ax, ax
+        js ret0_006A7A90
+        mov eax, 4
+        pop esi
+        ret
+ret0_006A7A90:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
