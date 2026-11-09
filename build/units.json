@@ -603013,7 +603013,9 @@
       "0x00871091",
       "0x0087109C"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:32:04Z"
   },
   {
     "va": "0x008710B0",
