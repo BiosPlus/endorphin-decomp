@@ -97,3 +97,33 @@ not_taken_00593680:
         ret
     }
 }
+
+// [0x0058A550] AnimatableTransform::vfunc_1_off_8 (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0058A550(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, 0x3
+    loop_0058A563:
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax]
+        push ebp
+        push esi
+        push ebx
+        mov ecx, edi
+        call edx
+        add esi, 0x1
+        cmp esi, 0x7
+        jl loop_0058A563
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
