@@ -39,3 +39,23 @@ extern "C" __declspec(naked) void __fastcall fn_004A98D0(void* self) {
         ret
     }
 }
+
+// [0x004A5BE0] sub_004A5BE0 (25 bytes)
+extern "C" void ext_00644F30();
+extern "C" void ext_006A5C5C();
+extern "C" __declspec(naked) void __fastcall fn_004A5BE0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx]
+        test esi, esi
+        je done
+        mov ecx, esi
+        call ext_00644F30
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+done:
+        pop esi
+        ret
+    }
+}
