@@ -609,3 +609,27 @@ extern "C" Pair8* __cdecl fn_004148F0(Pair8* first, Pair8* last, Pair8* dest) {
     }
     return dest;
 }
+
+// [0x00414EC0] sub_00414EC0 (41 bytes)
+extern "C" void ext_004148F0();
+
+extern "C" __declspec(naked) void __fastcall fn_00414EC0(void* self) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x18]
+        mov byte ptr [esp], 0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push edx
+        mov edx, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, dword ptr [esp + 0x20]
+        push eax
+        push ecx
+        push edx
+        call ext_004148F0
+        add esp, 0x1c
+        ret 0x14
+    }
+}
