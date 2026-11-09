@@ -65,3 +65,19 @@ extern "C" __declspec(naked) void* __fastcall fn_0049FA70(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0049FAC0] NMData::State::vfunc_2_off_8 (42 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0049FAC0(void* self, int edx_unused, void* out) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx + 0xe0]
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [ecx + 0xe4]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [ecx + 0xe8]
+        mov ecx, dword ptr [ecx + 0xec]
+        mov dword ptr [eax + 0x8], edx
+        mov dword ptr [eax + 0xc], ecx
+        ret 0x4
+    }
+}
