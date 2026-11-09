@@ -120,3 +120,8 @@ extern "C" void ext_006A6EAA();
 extern "C" void __cdecl fn_007C5A50(void* self, float a1) {
     *(float*)((char*)self + 0x1ac) = (float)cos((double)a1 * *(double*)&mem_00993828);
 }
+
+// [0x007C5A70] sub_007C5A70 (26 bytes)
+extern "C" void __cdecl fn_007C5A70(void* self, float a1) {
+    *(float*)((char*)self + 0x1b0) = (float)cos((double)a1 * *(double*)&mem_00993828);
+}
