@@ -201,3 +201,24 @@ extern "C" __declspec(naked) void __fastcall fn_005C4870(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0067A770] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_9 (32 bytes)
+extern "C" void ext_006720A0();
+
+extern "C" __declspec(naked) void __fastcall fn_0067A770(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 78h]
+        push esi
+        call edx
+        mov eax, dword ptr [esp + 0Ch]
+        push eax
+        mov ecx, esi
+        call ext_006720A0
+        pop esi
+        ret 8
+    }
+}
