@@ -18793,7 +18793,9 @@
       "0x0041FF1F",
       "0x0041FF25"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:23:17Z"
   },
   {
     "va": "0x0041FF30",

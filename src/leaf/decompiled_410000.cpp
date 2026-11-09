@@ -195,3 +195,21 @@ extern "C" void* __fastcall fn_004151B0(void* self, int edx_unused, int a1) {
     *(int*)self = 0x92c4c4;
     return self;
 }
+
+// [0x0041FF10] sub_0041FF10 (26 bytes)
+extern "C" void ext_006A5E00();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_0041FF10(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x20]
+        push 0
+        push 0
+        push 0x1018
+        push eax
+        call dword ptr [mem_00925694]
+        push eax
+        call ext_006A5E00
+        ret
+    }
+}
