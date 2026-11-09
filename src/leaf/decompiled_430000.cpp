@@ -459,3 +459,19 @@ done:
         ret
     }
 }
+
+// [0x00430260] sub_00430260 (24 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_00468660();
+
+extern "C" __declspec(naked) void __fastcall fn_00430260(void* self) {
+    __asm {
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x1d8]
+        jmp eax
+    }
+}
