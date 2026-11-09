@@ -14,3 +14,28 @@ extern "C" void __fastcall fn_00602F50(void* self, int edx_unused, int a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     ((Fn)ext_006A6E9E)(*(void**)((char*)self + 4), 0, (void*)0xA93730, (void*)0xA2E2F8, 0);
 }
+
+// [0x006033B0] Effector::vfunc_30 (43 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006033B0(void* self, int edx_unused, float a1) {
+    __asm {
+        fldz
+        fcom dword ptr [ecx + 54h]
+        fnstsw ax
+        test ah, 41h
+        jne L_nonneg
+L_store:
+        fstp dword ptr [ecx + 54h]
+        ret 4
+L_nonneg:
+        fstp st(0)
+        fld dword ptr [ecx + 54h]
+        fld dword ptr [esp + 4]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 5
+        jnp L_store
+        fstp st(0)
+        ret 4
+    }
+}
