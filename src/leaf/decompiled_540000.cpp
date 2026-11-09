@@ -101,3 +101,13 @@ extern "C" void __fastcall fn_005470D0(void* self) {
     ext_00543350();
     *(float*)((char*)self + 0xc4) = mem_0093F8F0;
 }
+
+// [0x00549920] sub_00549920 (26 bytes)
+extern "C" void ext_0063E006();
+extern "C" void ext_00552850();
+extern "C" void __fastcall fn_00549920(void* self) {
+    void* quadric = *(void**)((unsigned char*)self + 0x18);
+    *(void**)self = (void*)0x956cfc;
+    ((void (__stdcall*)(void*))ext_0063E006)(quadric);
+    ((void (__fastcall*)(void*))ext_00552850)(self);
+}
