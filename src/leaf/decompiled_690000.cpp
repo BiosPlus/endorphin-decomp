@@ -75,3 +75,19 @@ extern "C" __declspec(naked) float __stdcall fn_00698AB0(char** p) {
         ret 4
     }
 }
+
+// [0x00698A70] sub_00698A70 (24 bytes)
+extern "C" __declspec(naked) unsigned char __stdcall fn_00698A70(char** p) {
+    __asm {
+        mov edx, dword ptr [esp + 4]
+        mov eax, dword ptr [edx]
+        push esi
+        lea esi, [eax + 1]
+        push eax
+        mov dword ptr [edx], esi
+        call ext_006989E0
+        mov al, byte ptr [eax]
+        pop esi
+        ret 4
+    }
+}
