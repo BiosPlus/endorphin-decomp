@@ -147,3 +147,19 @@ extern "C" __declspec(naked) void __fastcall fn_004EFDD0(void* self) {
         ret
     }
 }
+
+// [0x004E7E90] sub_004E7E90 (34 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004E7E90(void* self) {
+    __asm {
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax + 0x14], 1
+        mov dword ptr [eax + 0x18], 2
+        mov byte ptr [eax + 0x1c], cl
+        ret
+    }
+}
