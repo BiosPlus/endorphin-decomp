@@ -211174,7 +211174,9 @@
       "0x005528E2",
       "0x005528E7"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T09:43:53Z"
   },
   {
     "va": "0x005528F0",
