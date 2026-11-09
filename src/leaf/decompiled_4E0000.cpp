@@ -117,3 +117,15 @@ done:
         ret
     }
 }
+
+// [0x004E51C0] sub_004E51C0 (29 bytes)
+extern "C" void __fastcall ext_004E5180(void* self);
+extern "C" void ext_006A5C5C();
+
+extern "C" void __fastcall fn_004E51C0(void* self) {
+    char* esi = (char*)self;
+    ext_004E5180(self);
+    void* p = *(void**)(esi + 0x4);
+    ((void (__cdecl*)(void*))ext_006A5C5C)(p);
+    *(int*)(esi + 0x4) = 0;
+}
