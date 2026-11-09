@@ -604,3 +604,22 @@ extern "C" void __fastcall fn_00647DE0(void* self) {
     ext_007C6790(*esi);
     ext_007C67D0(*esi);
 }
+
+// [0x00648960] sub_00648960 (28 bytes)
+extern "C" void ext_0065BB70();
+extern "C" void ext_0065BF70();
+extern "C" void ext_0065B5E0();
+
+extern "C" __declspec(naked) void __fastcall fn_00648960(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x28]
+        call ext_0065BF70
+        mov ecx, dword ptr [esi + 0x2c]
+        call ext_0065BB70
+        mov ecx, dword ptr [esi + 0x30]
+        pop esi
+        jmp ext_0065B5E0
+    }
+}
