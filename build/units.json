@@ -192554,7 +192554,9 @@
       "0x00532518",
       "0x0053251F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:28:58Z"
   },
   {
     "va": "0x00532530",
