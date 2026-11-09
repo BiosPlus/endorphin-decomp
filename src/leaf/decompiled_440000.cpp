@@ -1027,3 +1027,25 @@ extern "C" __declspec(naked) void __fastcall fn_00441A60(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004408B0] sub_004408B0 (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004408B0(void* self, int edx_unused, double a1) {
+    __asm {
+        cmp byte ptr [ecx + 0x8d], 0
+        je done
+        fld qword ptr [ecx + 0x50]
+        fld qword ptr [esp + 4]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 5
+        jp store_arg
+        fstp st(0)
+        mov byte ptr [ecx + 0x89], 0
+        fld qword ptr [ecx + 0x50]
+    store_arg:
+        fstp qword ptr [ecx + 0x58]
+    done:
+        ret 8
+    }
+}
