@@ -36,3 +36,13 @@ typedef void (__stdcall *CalleeFn006A0790)(void* p);
 extern "C" void __stdcall fn_006A0790(void* a1) {
     return ((CalleeFn006A0790)ext_006A06E0)((void*)&a1);
 }
+
+// [0x006A3F90] sub_006A3F90 (13 bytes)
+extern "C" void __stdcall ext_00804CA0(void* arg);
+
+extern "C" void __fastcall fn_006A3F90(void* self) {
+    void* p = *(void**)self;
+    if (p) {
+        ext_00804CA0(p);
+    }
+}
