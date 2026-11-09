@@ -442,3 +442,12 @@ extern "C" int __stdcall fn_0066DCF0(void* a1) {
     ((void (__fastcall*)(void*))ext_0067B860)(obj);
     return 0;
 }
+
+extern "C" void ext_0067B860();
+
+// [0x0066DD00] ExprParser::Method0Type<NM::Vector3, &public: void __thiscall NM::Vector3::normalize2(void)>::vfunc_3 (16 bytes)
+extern "C" bool __fastcall fn_0066DD00(void* self, int edx_unused, void* a1) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_0067B860)(obj);
+    return false;
+}
