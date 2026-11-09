@@ -186,3 +186,16 @@ extern "C" void __fastcall fn_006622D0(void* self, int edx_unused, int a1) {
     int slot = a1;
     ((Callee)ext_00451670)(static_cast<char*>(self) + 0x24, &slot);
 }
+
+// [0x006622F0] sub_006622F0 (24 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006622F0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        lea edx, [esp + 0x4]
+        push edx
+        add ecx, 0x4c
+        mov dword ptr [esp + 0x8], eax
+        call ext_00451670
+        ret 0x4
+    }
+}
