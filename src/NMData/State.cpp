@@ -30,3 +30,17 @@ extern "C" void* __fastcall fn_0049F240(void* self, int edx_unused, int a1) {
     }
     return 0;
 }
+
+// [0x0049AC80] NMData::State::vfunc_4_off_10 (34 bytes)
+extern "C" void* __fastcall fn_0049AC80(void* self, int edx_unused, unsigned char a1) {
+    if (a1 != 0) {
+        if (*((char*)self + 0x54) != 0) {
+            return 0;
+        }
+    }
+    void* p = *(void**)((char*)self + 0xec);
+    if (p != 0) {
+        return (char*)p + 0x10;
+    }
+    return 0;
+}
