@@ -1104,3 +1104,26 @@ extern "C" __declspec(naked) void __fastcall fn_0064F2C0(void* self, void* edx_u
         ret 0x8
     }
 }
+
+// [0x0064F370] ExprParser::WriteMethodType<SkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialStiffness(float), 0}>::vfunc_41 (37 bytes)
+extern "C" void ext_0064DD20();
+
+extern "C" __declspec(naked) void __fastcall fn_0064F370(void* self, int edx_unused, void** a0, void** a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_0064DD20
+        pop esi
+        ret 8
+    }
+}
