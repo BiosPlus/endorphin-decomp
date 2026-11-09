@@ -46,3 +46,14 @@ extern "C" void __fastcall fn_00574F10(void* self, int edx_unused, void* os) {
         n--;
     } while (n != 0);
 }
+
+// [0x00574F40] sub_00574F40 (43 bytes)
+extern "C" void __fastcall fn_00574F40(void* self, int edx_unused, void* os) {
+    typedef void* (__thiscall *write_fn)(void*, const char*, int);
+    char c = 0;
+    int n = 2;
+    do {
+        (*(write_fn*)&mem_00925094)(os, &c, 1);
+        n--;
+    } while (n != 0);
+}
