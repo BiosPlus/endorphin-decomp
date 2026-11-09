@@ -2128,3 +2128,30 @@ extern "C" __declspec(naked) void __stdcall fn_0043C980(void* a1, int a2, int a3
         ret 0x10
     }
 }
+
+extern "C" void ext_00430F9E();
+extern "C" int mem_00924EA0;
+extern "C" int mem_00924E9C;
+
+// [0x00430F70] sub_00430F70 (46 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00430F70(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [eax]
+        mov ecx, dword ptr [ecx + 0x4]
+        add ecx, eax
+        call dword ptr [mem_00924EA0]
+        test eax, eax
+        __asm _emit 0x74 __asm _emit 0x18 // je ext_00430F9E (short)
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        mov ecx, dword ptr [edx + 0x4]
+        add ecx, eax
+        call dword ptr [mem_00924EA0]
+        mov ecx, eax
+        pop esi
+        jmp dword ptr [mem_00924E9C]
+    }
+}
