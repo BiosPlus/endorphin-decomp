@@ -89353,7 +89353,9 @@
       "0x004947EA",
       "0x004947F7"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:46:17Z"
   },
   {
     "va": "0x00494810",
