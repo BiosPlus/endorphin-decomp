@@ -123,3 +123,16 @@ extern "C" void __cdecl fn_007D47B0(char* self) {
     typedef void (__cdecl *Fn)(int, void*, int, int);
     ((Fn)ext_007D58E0)(1, *(void**)(self + 0x1c), 0x0099DE5C, 0x0099DE60);
 }
+
+// [0x007D4650] sub_007D4650 (35 bytes)
+extern "C" void __cdecl fn_007D4650(char* p) {
+    int base = *(int*)(p + 0x4);
+    int i = 0;
+    if (*(int*)(p + 0x14) > 0) {
+        do {
+            *(int*)(*(char**)(p + 0x8) + i * 4) = base;
+            base += *(int*)(p + 0x10);
+            i++;
+        } while (i < *(int*)(p + 0x14));
+    }
+}
