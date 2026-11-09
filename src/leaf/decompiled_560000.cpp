@@ -223,3 +223,11 @@ extern "C" __declspec(naked) int __fastcall fn_0056B900(void* self) {
         ret
     }
 }
+
+// [0x005631C0] sub_005631C0 (43 bytes)
+extern "C" int __cdecl fn_005631C0(double a1, double a2) {
+    if (a1 < a2 && -a2 < a1) {
+        return 1;
+    }
+    return 0;
+}
