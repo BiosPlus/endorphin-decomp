@@ -552,3 +552,26 @@ extern "C" __declspec(naked) void __stdcall fn_00629F40(void* self, void* a1) {
         ret 8
     }
 }
+
+// [0x00629FF0] ExprParser::WriteMethodType<Sensors::SensorMetaBodyRelativeTime, float, &public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)>::vfunc_41 (37 bytes)
+extern "C" void ext_00629F10();
+
+extern "C" __declspec(naked) void __stdcall fn_00629FF0(void* self, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00629F10
+        pop esi
+        ret 8
+    }
+}
