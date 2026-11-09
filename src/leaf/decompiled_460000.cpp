@@ -1023,3 +1023,19 @@ extern "C" __declspec(naked) void __fastcall fn_0046C460(void* self) {
         ret
     }
 }
+
+extern "C" int mem_00AD6C6C;
+extern "C" int mem_00AD6C7C;
+
+// [0x004658E0] sub_004658E0 (45 bytes)
+extern "C" void __fastcall fn_004658E0(void* self) {
+    char* s = (char*)self;
+    *(int*)(s + 0x64) = *(int*)(s + 0x60);
+    *(int*)(s + 0x60) = 0;
+    if (*(char*)&mem_00AD6C6C != 0) {
+        int v = mem_00AD6C7C;
+        if (v == 5 || v == 6) {
+            *(int*)(s + 0x60) = 1;
+        }
+    }
+}
