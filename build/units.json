@@ -448206,7 +448206,9 @@
     "relocations": [
       "0x006ACFEB"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:37:16Z"
   },
   {
     "va": "0x006AD000",
