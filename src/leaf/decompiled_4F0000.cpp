@@ -119,3 +119,14 @@ extern "C" __declspec(naked) void* __fastcall fn_004F27E0(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x004F2870] sub_004F2870 (32 bytes)
+extern "C" void ext_004F9800();
+
+typedef void* (__thiscall *Init8Fn)(void*, void*, void*);
+
+extern "C" void* __fastcall fn_004F2870(void* self, int edx_unused, void* a1, void* a2) {
+    ((Init8Fn)ext_004F9800)(self, a1, a2);
+    *(void**)self = (void*)0x94c69c;
+    return self;
+}
