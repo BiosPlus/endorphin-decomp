@@ -299,3 +299,28 @@ extern "C" int __fastcall fn_004276D0(void* self) {
     }
     return *(int*)s[2];
 }
+
+// [0x0042FC30] sub_0042FC30 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0042FC30(void* self) {
+    __asm {
+        push esi
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x9c]
+        call eax
+        mov esi, eax
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0xe0]
+        push 0
+        lea ecx, [esi + 0x3c]
+        push ecx
+        push esi
+        push 6
+        mov ecx, eax
+        call edx
+        pop esi
+        ret
+    }
+}
