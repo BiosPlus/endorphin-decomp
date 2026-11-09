@@ -869,3 +869,14 @@ done:
         ret 4
     }
 }
+
+// [0x0046FA50] sub_0046FA50 (37 bytes)
+extern "C" void ext_0046F920();
+extern "C" void __fastcall fn_0046FA50(void* self, int edx_unused, float v) {
+    float* p = (float*)((char*)self + 0x28c);
+    *p = v;
+    if (v == 0.0f) {
+        *p = 1.0f;
+    }
+    ext_0046F920();
+}
