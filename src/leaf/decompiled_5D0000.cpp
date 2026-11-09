@@ -24,3 +24,15 @@ extern "C" __declspec(naked) void __fastcall fn_005D06D0(void* self) {
         ret
     }
 }
+
+// [0x005D0790] sub_005D0790 (33 bytes)
+extern "C" void __fastcall fn_005D0790(void* self, int edx_unused, void* value) {
+    void** slot = (void**)self;
+    void* old = *slot;
+    if (value != old && old != 0) {
+        typedef void (__thiscall *VFn)(void*, int);
+        VFn fn = (VFn)((*(void***)old)[0]);
+        fn(old, 1);
+    }
+    *slot = value;
+}
