@@ -180,3 +180,12 @@ extern "C" __declspec(naked) void __fastcall fn_004DE130(void* self) {
         jmp ext_0047C480
     }
 }
+
+// [0x004D4160] sub_004D4160 (39 bytes)
+extern "C" int __fastcall fn_004D4160(void* self) {
+    struct Elem28 { char d[28]; };
+    Elem28* begin = *(Elem28**)((char*)self + 0x448);
+    if (!begin) return 0;
+    Elem28* end = *(Elem28**)((char*)self + 0x44C);
+    return (int)(end - begin);
+}
