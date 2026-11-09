@@ -96,3 +96,26 @@ extern "C" void* __fastcall fn_00517DB0(void* self) {
     *((char*)self + 0x20) = 1;
     return self;
 }
+
+// [0x005136C0] sub_005136C0 (37 bytes)
+extern "C" void ext_00511E40();
+extern "C" void ext_0055DA20();
+
+extern "C" __declspec(naked) void* __fastcall fn_005136C0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        push eax
+        mov dword ptr [esp + 8], 0
+        call ext_00511E40
+        mov esi, dword ptr [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call ext_0055DA20
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
