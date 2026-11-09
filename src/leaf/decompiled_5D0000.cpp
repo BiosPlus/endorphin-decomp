@@ -46,3 +46,21 @@ extern "C" void __fastcall fn_005D1430(unsigned char* self, int edx_unused, floa
     *slot = value;
     self[0x214] = 1;
 }
+
+// [0x005D0830] sub_005D0830 (47 bytes)
+extern "C" int mem_00924EA8;
+
+extern "C" void __fastcall fn_005D0830(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    typedef void (__thiscall *ClearFn)(void*);
+    ((ClearFn)mem_00924EA8)(p + 4);
+    *(float*)(p + 0x2c) = 0.0f;
+    *(float*)(p + 0x3c) = 0.0f;
+    *(int*)(p + 0x20) = 0;
+    *(float*)(p + 0x40) = 0.0f;
+    *(int*)(p + 0x24) = 0;
+    *(int*)(p + 0x28) = 0;
+    *(float*)(p + 0x34) = 1.0f;
+    *(unsigned char*)(p + 0x30) = 0;
+    *(float*)(p + 0x38) = 1.0f;
+}
