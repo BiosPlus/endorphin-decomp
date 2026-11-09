@@ -37,3 +37,12 @@ extern "C" __declspec(naked) void __fastcall fn_00455B90(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x004557F0] SceneNotesEditor::vfunc_63 (46 bytes)
+extern "C" void __stdcall ext_006A5F44(int a, int b, void* c);
+
+extern "C" void __fastcall fn_004557F0(void* self, int edx_unused, int a1) {
+    char* esi = (char*)self;
+    ext_006A5F44(a1, 0x509, esi + 0x74);
+    ext_006A5F44(a1, 0x4d4, esi + 0xc8);
+}
