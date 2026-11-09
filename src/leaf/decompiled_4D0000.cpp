@@ -54,3 +54,9 @@ extern "C" void __fastcall fn_004D3B30(unsigned char* self, int edx_unused, unsi
     self[0x192] = a1;
     ext_004C0340();
 }
+
+// [0x004D3B50] sub_004D3B50 (18 bytes)
+extern "C" void __fastcall fn_004D3B50(void* self, int edx_unused, int a1) {
+    *(unsigned char*)((char*)self + 0x193) = (unsigned char)a1;
+    ext_004C0340();
+}
