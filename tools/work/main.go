@@ -273,6 +273,265 @@ func saveUnits(units []UnitEntry) error {
 	return os.WriteFile("build/units.json", append(out, '\n'), 0644)
 }
 
+var unitMarkerLineRe = regexp.MustCompile(`^//\s*\[(0x[0-9A-Fa-f]{8})\]`)
+var asmHexCallRe = regexp.MustCompile(`\b(?:call|jmp|je|jne|jg|jge|jl|jle|ja|jae|jb|jbe)\s+(0x[0-9a-fA-F]{6,8})\b`)
+var asmHexMemRe = regexp.MustCompile(`\[(0x[0-9a-fA-F]{6,8})\]`)
+
+func stripFunctionFromCpp(cppPath, vaHex string) (bool, error) {
+	b, err := os.ReadFile(cppPath)
+	if err != nil {
+		return false, err
+	}
+	normTarget := "0x" + strings.ToUpper(strings.TrimPrefix(vaHex, "0x"))
+	lines := strings.Split(string(b), "\n")
+
+	type block struct {
+		va    string
+		lines []string
+	}
+	var blocks []block
+	cur := block{va: ""}
+	for _, l := range lines {
+		trimmed := strings.TrimSpace(l)
+		if m := unitMarkerLineRe.FindStringSubmatch(trimmed); len(m) == 2 {
+			blocks = append(blocks, cur)
+			cur = block{
+				va:    "0x" + strings.ToUpper(strings.TrimPrefix(m[1], "0x")),
+				lines: []string{l},
+			}
+		} else {
+			cur.lines = append(cur.lines, l)
+		}
+	}
+	blocks = append(blocks, cur)
+
+	removed := false
+	remainingFuncs := 0
+	var outLines []string
+	for _, blk := range blocks {
+		if blk.va == normTarget {
+			removed = true
+			continue
+		}
+		if blk.va != "" {
+			remainingFuncs++
+		}
+		outLines = append(outLines, blk.lines...)
+	}
+
+	if !removed {
+		return false, nil
+	}
+
+	if remainingFuncs == 0 {
+		if err := exec.Command("git", "ls-files", "--error-unmatch", cppPath).Run(); err == nil {
+			_ = exec.Command("git", "checkout", "HEAD", "--", cppPath).Run()
+		} else {
+			_ = os.Remove(cppPath)
+		}
+		return true, nil
+	}
+
+	newContent := strings.TrimRight(strings.Join(outLines, "\n"), "\n\t ") + "\n"
+	return true, os.WriteFile(cppPath, []byte(newContent), 0644)
+}
+
+func cleanUnmatchedStubs(units []UnitEntry, unitIdxByVA map[string]int) int {
+	cleaned := 0
+	_ = filepath.Walk("src", func(path string, info os.FileInfo, err error) error {
+		if err != nil || info.IsDir() || !strings.HasSuffix(path, ".cpp") {
+			return nil
+		}
+		slashPath := filepath.ToSlash(path)
+		if strings.HasPrefix(slashPath, "src/thunks/") {
+			return nil
+		}
+		b, err := os.ReadFile(path)
+		if err != nil {
+			return nil
+		}
+		lines := strings.Split(string(b), "\n")
+		var toRemove []string
+		curVA := ""
+		curHasTodo := false
+		for _, l := range lines {
+			trimmed := strings.TrimSpace(l)
+			if m := unitMarkerLineRe.FindStringSubmatch(trimmed); len(m) == 2 {
+				if curVA != "" && curHasTodo {
+					toRemove = append(toRemove, curVA)
+				}
+				curVA = "0x" + strings.ToUpper(strings.TrimPrefix(m[1], "0x"))
+				curHasTodo = false
+				if idx, ok := unitIdxByVA[curVA]; ok {
+					st := units[idx].Status
+					if st != "matched" && st != "solved" && st != "decompiled" && !units[idx].IsThunk {
+						curHasTodo = true
+					}
+				}
+			} else if strings.Contains(trimmed, "TODO: implement") {
+				curHasTodo = true
+			}
+		}
+		if curVA != "" && curHasTodo {
+			toRemove = append(toRemove, curVA)
+		}
+		for _, va := range toRemove {
+			if ok, _ := stripFunctionFromCpp(slashPath, va); ok {
+				cleaned++
+			}
+		}
+		return nil
+	})
+	return cleaned
+}
+
+func suggestExternsForUnit(u UnitEntry) []string {
+	seen := make(map[string]bool)
+	var decls []string
+	add := func(d string) {
+		if !seen[d] {
+			seen[d] = true
+			decls = append(decls, d)
+		}
+	}
+	for _, c := range u.Callees {
+		v, err := strconv.ParseUint(strings.TrimPrefix(c, "0x"), 16, 32)
+		if err == nil {
+			add(fmt.Sprintf("extern \"C\" void ext_%08X();", uint32(v)))
+		}
+	}
+	cachePath := filepath.Join(".local", "cache", "funcs", u.VA+".txt")
+	if b, err := os.ReadFile(cachePath); err == nil {
+		s := string(b)
+		for _, m := range asmHexCallRe.FindAllStringSubmatch(s, -1) {
+			if v, err := strconv.ParseUint(strings.TrimPrefix(m[1], "0x"), 16, 32); err == nil {
+				va64, _ := strconv.ParseUint(strings.TrimPrefix(u.VA, "0x"), 16, 32)
+				startVA := uint32(va64)
+				tVA := uint32(v)
+				if tVA < startVA || tVA >= startVA+u.Size {
+					add(fmt.Sprintf("extern \"C\" void ext_%08X();", tVA))
+				}
+			}
+		}
+		for _, m := range asmHexMemRe.FindAllStringSubmatch(s, -1) {
+			if v, err := strconv.ParseUint(strings.TrimPrefix(m[1], "0x"), 16, 32); err == nil {
+				add(fmt.Sprintf("extern \"C\" int mem_%08X;", uint32(v)))
+			}
+		}
+	}
+	return decls
+}
+
+func withWorkLock(fn func()) {
+	_ = os.MkdirAll(".local", 0755)
+	lockDir := filepath.Join(".local", "work.lock.d")
+	deadline := time.Now().Add(120 * time.Second)
+	for {
+		err := os.Mkdir(lockDir, 0755)
+		if err == nil {
+			defer func() { _ = os.RemoveAll(lockDir) }()
+			fn()
+			return
+		}
+		if info, statErr := os.Stat(lockDir); statErr == nil {
+			if time.Since(info.ModTime()) > 120*time.Second {
+				_ = os.RemoveAll(lockDir)
+				continue
+			}
+		}
+		if time.Now().After(deadline) {
+			_ = os.RemoveAll(lockDir)
+			fn()
+			return
+		}
+		time.Sleep(50 * time.Millisecond)
+	}
+}
+
+func printUnitBriefing(u UnitEntry, cls *ClassEntry, createStub bool) {
+	cppPath := findCppFileForVA(u.VA)
+	stubAdded := false
+	if cppPath == "" {
+		cppPath = defaultCppFileForUnit(u, cls)
+		if createStub {
+			withWorkLock(func() {
+				_ = os.MkdirAll(filepath.Dir(cppPath), 0755)
+				if _, err := os.Stat(cppPath); os.IsNotExist(err) {
+					header := fmt.Sprintf("// Decompiled translation unit: %s\n", cppPath)
+					_ = os.WriteFile(cppPath, []byte(header), 0644)
+				}
+				// Re-check inside lock in case stub already exists
+				if existing, err := os.ReadFile(cppPath); err == nil && strings.Contains(string(existing), u.VA) {
+					return
+				}
+				stub := fmt.Sprintf("\n// [%s] %s (%d bytes)\nextern \"C\" void __fastcall fn_%s(void* self) {\n    // TODO: implement\n}\n",
+					u.VA, u.Symbol, u.Size, strings.TrimPrefix(u.VA, "0x"))
+				f, err := os.OpenFile(cppPath, os.O_APPEND|os.O_WRONLY, 0644)
+				if err == nil {
+					_, _ = f.WriteString(stub)
+					_ = f.Close()
+					stubAdded = true
+				}
+			})
+		}
+	}
+
+	fmt.Printf("FUNCTION: %s | Symbol: %s | Size: %d bytes\n", u.VA, u.Symbol, u.Size)
+	fmt.Printf("CALLING_CONV: %s\n", inferCallingConvention(u.VA))
+	if stubAdded {
+		fmt.Printf("TARGET_CPP: %s (stub fn_%s created)\n", cppPath, strings.TrimPrefix(u.VA, "0x"))
+	} else {
+		fmt.Printf("TARGET_CPP: %s (fn_%s)\n", cppPath, strings.TrimPrefix(u.VA, "0x"))
+	}
+
+	if cls != nil {
+		var bases []string
+		for _, bc := range cls.BaseClasses {
+			bases = append(bases, fmt.Sprintf("%s(+0x%X)", bc.DemangledName, bc.Offset))
+		}
+		baseStr := "none"
+		if len(bases) > 0 {
+			baseStr = strings.Join(bases, ", ")
+		}
+		fmt.Printf("CLASS_INFO: %s | VTable: %s (%d vfuncs) | Header: %s | Bases: %s\n",
+			cls.DemangledName, cls.VTableVA, len(cls.VirtualMethods), cls.HeaderPath, baseStr)
+		if cls.HeaderPath != "" {
+			if hb, err := os.ReadFile(cls.HeaderPath); err == nil {
+				hLines := strings.Split(strings.TrimSpace(string(hb)), "\n")
+				if len(hLines) > 25 {
+					hLines = append(hLines[:25], "    // ... (truncated) ...", "};")
+				}
+				fmt.Println("HEADER_PREVIEW:")
+				for _, hl := range hLines {
+					fmt.Println("  " + hl)
+				}
+			}
+		}
+	}
+
+	if len(u.Callees) > 0 {
+		fmt.Printf("CALLEES: %s\n", strings.Join(u.Callees, ", "))
+	}
+	if len(u.Relocations) > 0 {
+		fmt.Printf("RELOCS: %s\n", strings.Join(u.Relocations, ", "))
+	}
+	if exts := suggestExternsForUnit(u); len(exts) > 0 {
+		fmt.Printf("SUGGESTED_EXTERNS: %s\n", strings.Join(exts, " "))
+	}
+
+	fmt.Println("TARGET_ASM:")
+	cachePath := filepath.Join(".local", "cache", "funcs", u.VA+".txt")
+	if b, err := os.ReadFile(cachePath); err == nil {
+		for _, line := range strings.Split(strings.TrimSpace(string(b)), "\n") {
+			if strings.HasPrefix(strings.TrimSpace(line), "//") {
+				continue
+			}
+			fmt.Println(line)
+		}
+	}
+	fmt.Printf("VERIFY_CMD: ./.local/bin/work check %s --model <model>  |  SKIP_CMD: ./.local/bin/work skip %s \"reason\"\n", u.VA, u.VA)
+}
+
 func sizeTier(size uint32) int {
 	switch {
 	case size < 32:
@@ -290,11 +549,16 @@ func cmdNext(args []string) {
 	fs := flag.NewFlagSet("work next", flag.ExitOnError)
 	nFlag := fs.Int("n", 1, "Number of next ready functions to display")
 	maxSize := fs.Int("max-size", 256, "Maximum function byte size (default 256; Tiny <32B are always prioritized first)")
+	minSize := fs.Int("min-size", 0, "Minimum function byte size")
 	tierFlag := fs.String("tier", "", "Function size tier filter (tiny [<32B], small [<=256B], medium [<=512B], all)")
 	peekFlag := fs.Bool("peek", false, "Peek at next function(s) without creating stub in src/")
+	retryDeferred := fs.Bool("retry-deferred", false, "Include previously deferred functions in candidate queue")
+	distinctFiles := fs.Bool("distinct-files", false, "Select functions that map to distinct .cpp target files (for parallel wave execution)")
+	addrsOnly := fs.Bool("addrs-only", false, "Print only space-ok/line-separated VA|Size|TargetCpp tuples for scripting")
 	_ = fs.Parse(args)
 
 	maxBytes := uint32(*maxSize)
+	minBytes := uint32(*minSize)
 	switch strings.ToLower(strings.TrimSpace(*tierFlag)) {
 	case "tiny":
 		maxBytes = 31
@@ -317,10 +581,13 @@ func cmdNext(args []string) {
 	var ready []UnitEntry
 	calleesReady := make(map[string]bool)
 	for _, u := range units {
-		if u.Size > maxBytes {
+		if u.Size > maxBytes || u.Size < minBytes {
 			continue
 		}
-		if isCompletedOrOutOfScope(u, mfcClasses) || u.Status == "deferred" || u.Status == "skipped" {
+		if isCompletedOrOutOfScope(u, mfcClasses) || u.Status == "skipped" {
+			continue
+		}
+		if u.Status == "deferred" && !*retryDeferred {
 			continue
 		}
 		if !isValidCodeUnit(u.VA) {
@@ -342,6 +609,11 @@ func cmdNext(args []string) {
 	}
 
 	sort.Slice(ready, func(i, j int) bool {
+		// Always prioritize fresh todo functions ahead of deferred retries
+		di, dj := ready[i].Status == "deferred", ready[j].Status == "deferred"
+		if di != dj {
+			return !di && dj
+		}
 		ti, tj := sizeTier(ready[i].Size), sizeTier(ready[j].Size)
 		if ti != tj {
 			return ti < tj
@@ -359,86 +631,96 @@ func cmdNext(args []string) {
 		return ready[i].VA < ready[j].VA
 	})
 
-	limit := *nFlag
-	if limit > len(ready) {
-		limit = len(ready)
-	}
-	if limit == 0 {
-		fmt.Printf("No unmatched ready functions (size <= %d) remaining in queue!\n", maxBytes)
-		return
-	}
-
-	for i := 0; i < limit; i++ {
-		u := ready[i]
+	var selected []UnitEntry
+	usedFiles := make(map[string]bool)
+	for _, u := range ready {
+		if len(selected) >= *nFlag {
+			break
+		}
 		var cls *ClassEntry
 		if idx := strings.LastIndex(u.Symbol, "::vfunc_"); idx != -1 {
 			cls = classByName[u.Symbol[:idx]]
 		}
-
 		cppPath := findCppFileForVA(u.VA)
-		stubAdded := false
 		if cppPath == "" {
 			cppPath = defaultCppFileForUnit(u, cls)
-			if !*peekFlag {
-				_ = os.MkdirAll(filepath.Dir(cppPath), 0755)
-				if _, err := os.Stat(cppPath); os.IsNotExist(err) {
-					header := fmt.Sprintf("// Decompiled translation unit: %s\n", cppPath)
-					_ = os.WriteFile(cppPath, []byte(header), 0644)
-				}
-				stub := fmt.Sprintf("\n// [%s] %s (%d bytes)\nextern \"C\" void __fastcall fn_%s(void* self) {\n    // TODO: implement\n}\n",
-					u.VA, u.Symbol, u.Size, strings.TrimPrefix(u.VA, "0x"))
-				f, err := os.OpenFile(cppPath, os.O_APPEND|os.O_WRONLY, 0644)
-				if err == nil {
-					_, _ = f.WriteString(stub)
-					_ = f.Close()
-					stubAdded = true
-				}
-			}
 		}
+		if *distinctFiles && usedFiles[cppPath] {
+			continue
+		}
+		usedFiles[cppPath] = true
+		selected = append(selected, u)
+	}
 
-		fmt.Printf("FUNCTION: %s | Symbol: %s | Size: %d bytes\n", u.VA, u.Symbol, u.Size)
-		fmt.Printf("CALLING_CONV: %s\n", inferCallingConvention(u.VA))
-		if stubAdded {
-			fmt.Printf("TARGET_CPP: %s (stub fn_%s created)\n", cppPath, strings.TrimPrefix(u.VA, "0x"))
-		} else {
-			fmt.Printf("TARGET_CPP: %s (fn_%s)\n", cppPath, strings.TrimPrefix(u.VA, "0x"))
+	if len(selected) == 0 {
+		if !*addrsOnly {
+			fmt.Printf("No unmatched ready functions (size <= %d) remaining in queue!\n", maxBytes)
 		}
+		return
+	}
 
-		if cls != nil {
-			var bases []string
-			for _, bc := range cls.BaseClasses {
-				bases = append(bases, fmt.Sprintf("%s(+0x%X)", bc.DemangledName, bc.Offset))
+	for i, u := range selected {
+		var cls *ClassEntry
+		if idx := strings.LastIndex(u.Symbol, "::vfunc_"); idx != -1 {
+			cls = classByName[u.Symbol[:idx]]
+		}
+		if *addrsOnly {
+			cppPath := findCppFileForVA(u.VA)
+			if cppPath == "" {
+				cppPath = defaultCppFileForUnit(u, cls)
 			}
-			baseStr := "none"
-			if len(bases) > 0 {
-				baseStr = strings.Join(bases, ", ")
-			}
-			fmt.Printf("CLASS_INFO: %s | VTable: %s (%d vfuncs) | Header: %s | Bases: %s\n",
-				cls.DemangledName, cls.VTableVA, len(cls.VirtualMethods), cls.HeaderPath, baseStr)
+			fmt.Printf("%s|%d|%s\n", u.VA, u.Size, cppPath)
+			continue
 		}
-
-		if len(u.Callees) > 0 {
-			fmt.Printf("CALLEES: %s\n", strings.Join(u.Callees, ", "))
-		}
-		if len(u.Relocations) > 0 {
-			fmt.Printf("RELOCS: %s\n", strings.Join(u.Relocations, ", "))
-		}
-
-		fmt.Println("TARGET_ASM:")
-		cachePath := filepath.Join(".local", "cache", "funcs", u.VA+".txt")
-		if b, err := os.ReadFile(cachePath); err == nil {
-			for _, line := range strings.Split(strings.TrimSpace(string(b)), "\n") {
-				if strings.HasPrefix(strings.TrimSpace(line), "//") {
-					continue
-				}
-				fmt.Println(line)
-			}
-		}
-		fmt.Printf("VERIFY_CMD: go run ./tools/work check %s --model <model>  |  SKIP_CMD: go run ./tools/work skip %s \"reason\"\n", u.VA, u.VA)
-		if i+1 < limit {
+		printUnitBriefing(u, cls, !*peekFlag && i == 0)
+		if i+1 < len(selected) {
 			fmt.Println("---")
 		}
 	}
+}
+
+func cmdClaim(args []string) {
+	if len(args) < 1 {
+		fmt.Fprintln(os.Stderr, "Usage: ./.local/bin/work claim <address>")
+		os.Exit(1)
+	}
+	vaHex, _, err := normalizeVA(args[0])
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+		os.Exit(1)
+	}
+	units, unitIdxByVA, _, classByName, _ := loadUnitsAndClasses()
+	uIdx, ok := unitIdxByVA[vaHex]
+	if !ok {
+		fmt.Fprintf(os.Stderr, "Error: unit %s not found in build/units.json\n", vaHex)
+		os.Exit(1)
+	}
+	u := units[uIdx]
+	var cls *ClassEntry
+	if idx := strings.LastIndex(u.Symbol, "::vfunc_"); idx != -1 {
+		cls = classByName[u.Symbol[:idx]]
+	}
+	printUnitBriefing(u, cls, true)
+}
+
+func cmdIsMatched(args []string) {
+	if len(args) < 1 {
+		os.Exit(1)
+	}
+	vaHex, _, err := normalizeVA(args[0])
+	if err != nil {
+		os.Exit(1)
+	}
+	units, unitIdxByVA, _, _, _ := loadUnitsAndClasses()
+	uIdx, ok := unitIdxByVA[vaHex]
+	if !ok {
+		os.Exit(1)
+	}
+	st := units[uIdx].Status
+	if st == "matched" || st == "solved" || st == "decompiled" {
+		os.Exit(0)
+	}
+	os.Exit(1)
 }
 
 func findMSVCClExe() string {
@@ -947,19 +1229,136 @@ func coAuthorForModel(matchedBy string) string {
 	}
 }
 
-func autoCommitMatch(va, symbol, matchedBy string) {
+func runStatusReadme() {
+	statusBin := filepath.Join(".local", "bin", "status")
+	if runtime.GOOS == "windows" {
+		statusBin += ".exe"
+	}
+	if st, err := os.Stat(statusBin); err == nil && !st.IsDir() {
+		if exec.Command(statusBin, "-readme").Run() == nil {
+			return
+		}
+	}
 	_ = exec.Command("go", "run", "./tools/status", "-readme").Run()
+}
 
-	_ = exec.Command("git", "add", "src/", "include/", "build/units.json", "README.md").Run()
+func isStatusCompleted(status string) bool {
+	return status == "matched" || status == "decompiled" || status == "solved"
+}
+
+func isGitWritable() bool {
+	probe := filepath.Join(".git", "work_write_probe.tmp")
+	if err := os.WriteFile(probe, []byte("ok"), 0644); err != nil {
+		return false
+	}
+	_ = os.Remove(probe)
+	return true
+}
+
+func waitForGitIndexLock() {
+	lockPath := filepath.Join(".git", "index.lock")
+	deadline := time.Now().Add(10 * time.Second)
+	for {
+		info, err := os.Stat(lockPath)
+		if os.IsNotExist(err) {
+			return
+		}
+		if err == nil && time.Since(info.ModTime()) > 30*time.Second {
+			_ = os.Remove(lockPath)
+			return
+		}
+		if time.Now().After(deadline) {
+			return
+		}
+		time.Sleep(50 * time.Millisecond)
+	}
+}
+
+func filterCppForCommit(cppPath string, allowedVAs map[string]bool) ([]byte, bool) {
+	origBytes, err := os.ReadFile(cppPath)
+	if err != nil {
+		return nil, false
+	}
+	lines := strings.Split(string(origBytes), "\n")
+	type block struct {
+		va      string
+		lines   []string
+		hasTodo bool
+	}
+	var blocks []block
+	cur := block{va: ""}
+	for _, l := range lines {
+		trimmed := strings.TrimSpace(l)
+		if m := unitMarkerLineRe.FindStringSubmatch(trimmed); len(m) == 2 {
+			blocks = append(blocks, cur)
+			cur = block{
+				va:    "0x" + strings.ToUpper(strings.TrimPrefix(m[1], "0x")),
+				lines: []string{l},
+			}
+		} else {
+			if strings.Contains(trimmed, "TODO: implement") {
+				cur.hasTodo = true
+			}
+			cur.lines = append(cur.lines, l)
+		}
+	}
+	blocks = append(blocks, cur)
+
+	filtered := false
+	keptFuncs := 0
+	var outLines []string
+	for _, blk := range blocks {
+		if blk.va != "" {
+			if blk.hasTodo || !allowedVAs[blk.va] {
+				filtered = true
+				continue
+			}
+			keptFuncs++
+		}
+		outLines = append(outLines, blk.lines...)
+	}
+	if !filtered || keptFuncs == 0 {
+		return origBytes, false
+	}
+	newContent := strings.TrimRight(strings.Join(outLines, "\n"), "\n\t ") + "\n"
+	if err := os.WriteFile(cppPath, []byte(newContent), 0644); err != nil {
+		return origBytes, false
+	}
+	return origBytes, true
+}
+
+func stageAndCommitSingleUnit(va, symbol, matchedBy, cppPath string, allowedVAs map[string]bool) bool {
+	waitForGitIndexLock()
+	_ = exec.Command("git", "reset", "HEAD").Run()
+
+	var origCpp []byte
+	var cppFiltered bool
+	if cppPath != "" {
+		origCpp, cppFiltered = filterCppForCommit(cppPath, allowedVAs)
+		defer func() {
+			if cppFiltered && len(origCpp) > 0 {
+				_ = os.WriteFile(cppPath, origCpp, 0644)
+			}
+		}()
+	}
+
+	addArgs := []string{"add", "include/", "build/units.json", "README.md"}
+	if cppPath != "" {
+		addArgs = append(addArgs, cppPath)
+	} else {
+		addArgs = append(addArgs, "src/")
+	}
+	waitForGitIndexLock()
+	_ = exec.Command("git", addArgs...).Run()
 
 	stagedOut, err := exec.Command("git", "diff", "--cached", "--name-only").Output()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Warning: failed to inspect staged files: %v\n", err)
-		return
+		return false
 	}
 	stagedLines := strings.Split(strings.TrimSpace(string(stagedOut)), "\n")
 	if len(stagedLines) == 0 || stagedLines[0] == "" {
-		return
+		return false
 	}
 
 	var forbidden []string
@@ -978,18 +1377,132 @@ func autoCommitMatch(va, symbol, matchedBy string) {
 	}
 	if len(forbidden) > 0 {
 		for _, f := range forbidden {
+			waitForGitIndexLock()
 			_ = exec.Command("git", "reset", "HEAD", "--", f).Run()
 		}
 		fmt.Fprintf(os.Stderr, "Error: refused to commit forbidden staged files: %v\n", forbidden)
-		return
+		return false
 	}
 
 	msg := fmt.Sprintf("Match %s (%s) [model: %s]", va, symbol, matchedBy)
 	if trailer := coAuthorForModel(matchedBy); trailer != "" {
 		msg = msg + "\n\n" + trailer
 	}
+	waitForGitIndexLock()
 	if out, err := exec.Command("git", "commit", "-m", msg).CombinedOutput(); err != nil {
-		fmt.Fprintf(os.Stderr, "Warning: git commit failed: %v (%s)\n", err, strings.TrimSpace(string(out)))
+		fmt.Fprintf(os.Stderr, "Warning: git commit failed for %s: %v (%s)\n", va, err, strings.TrimSpace(string(out)))
+		return false
+	}
+	return true
+}
+
+// commitPendingMatches compares build/units.json against HEAD:build/units.json
+// and ensures every newly matched function gets its own individual git commit
+// (1 commit per solved function, never lumped together).
+func commitPendingMatches() int {
+	if !isGitWritable() {
+		return 0
+	}
+
+	diskUnits, _, _, _, _ := loadUnitsAndClasses()
+	headOut, err := exec.Command("git", "show", "HEAD:build/units.json").Output()
+	if err != nil {
+		return 0
+	}
+	var headUnits []UnitEntry
+	if err := json.Unmarshal(headOut, &headUnits); err != nil {
+		return 0
+	}
+	headByVA := make(map[string]UnitEntry, len(headUnits))
+	for _, hu := range headUnits {
+		normVA := "0x" + strings.ToUpper(strings.TrimPrefix(hu.VA, "0x"))
+		headByVA[normVA] = hu
+	}
+
+	var pendingIdxs []int
+	for i, du := range diskUnits {
+		if du.IsThunk || du.Status == "out_of_scope" || !isStatusCompleted(du.Status) {
+			continue
+		}
+		normVA := "0x" + strings.ToUpper(strings.TrimPrefix(du.VA, "0x"))
+		hu, ok := headByVA[normVA]
+		if !ok || !isStatusCompleted(hu.Status) {
+			pendingIdxs = append(pendingIdxs, i)
+		}
+	}
+
+	if len(pendingIdxs) == 0 {
+		return 0
+	}
+
+	sort.Slice(pendingIdxs, func(a, b int) bool {
+		ua, ub := diskUnits[pendingIdxs[a]], diskUnits[pendingIdxs[b]]
+		if ua.MatchedAt != ub.MatchedAt {
+			return ua.MatchedAt < ub.MatchedAt
+		}
+		return ua.VA < ub.VA
+	})
+
+	finalUnits := make([]UnitEntry, len(diskUnits))
+	copy(finalUnits, diskUnits)
+
+	workingUnits := make([]UnitEntry, len(diskUnits))
+	copy(workingUnits, diskUnits)
+	for _, idx := range pendingIdxs {
+		normVA := "0x" + strings.ToUpper(strings.TrimPrefix(workingUnits[idx].VA, "0x"))
+		if hu, ok := headByVA[normVA]; ok {
+			workingUnits[idx] = hu
+		}
+	}
+
+	allowedVAs := make(map[string]bool, len(workingUnits))
+	for _, wu := range workingUnits {
+		if isStatusCompleted(wu.Status) {
+			allowedVAs["0x"+strings.ToUpper(strings.TrimPrefix(wu.VA, "0x"))] = true
+		}
+	}
+
+	committed := 0
+	for _, idx := range pendingIdxs {
+		targetUnit := finalUnits[idx]
+		normVA := "0x" + strings.ToUpper(strings.TrimPrefix(targetUnit.VA, "0x"))
+		workingUnits[idx] = targetUnit
+		allowedVAs[normVA] = true
+
+		_ = saveUnits(workingUnits)
+		runStatusReadme()
+
+		cppPath := findCppFileForVA(targetUnit.VA)
+		model := targetUnit.MatchedBy
+		if model == "" {
+			model = "unknown"
+		}
+		if stageAndCommitSingleUnit(targetUnit.VA, targetUnit.Symbol, model, cppPath, allowedVAs) {
+			committed++
+		}
+	}
+
+	_ = saveUnits(finalUnits)
+	runStatusReadme()
+	return committed
+}
+
+func autoCommitMatch(va, symbol, matchedBy, cppPath string) {
+	if !isGitWritable() {
+		// Running inside a read-only .git sandbox (e.g. agy --sandbox); host orchestrator will run `work commit-pending`.
+		runStatusReadme()
+		return
+	}
+	if commitPendingMatches() == 0 {
+		runStatusReadme()
+		allowedVAs := make(map[string]bool)
+		units, _, _, _, _ := loadUnitsAndClasses()
+		for _, u := range units {
+			if isStatusCompleted(u.Status) {
+				allowedVAs["0x"+strings.ToUpper(strings.TrimPrefix(u.VA, "0x"))] = true
+			}
+		}
+		stageAndCommitSingleUnit(va, symbol, matchedBy, cppPath, allowedVAs)
 	}
 }
 
@@ -1006,7 +1519,6 @@ func cmdCheck(args []string) {
 	}
 
 	units, unitIdxByVA, _, _, _ := loadUnitsAndClasses()
-	_ = backfillAutoSolveModels(units)
 	uIdx, ok := unitIdxByVA[vaHex]
 	if !ok {
 		fmt.Fprintf(os.Stderr, "Error: unit %s not found in build/units.json\n", vaHex)
@@ -1048,23 +1560,36 @@ func cmdCheck(args []string) {
 	exact, pct, compMasked, tgtMasked := maskAndCompare(compFn, targetBytes, *u, startVA)
 	if exact {
 		fmt.Printf("EXACT MATCH (100%%) | %s | %s (%d bytes)\n", u.VA, u.Symbol, len(tgtMasked))
-		if u.Status != "matched" && !u.IsThunk && u.Status != "out_of_scope" {
-			u.Status = "matched"
-			u.SkipReason = ""
-			u.MatchedBy = modelName
-			u.MatchedAt = time.Now().UTC().Format("2006-01-02")
-			if err := saveUnits(units); err != nil {
-				fmt.Fprintf(os.Stderr, "Warning: failed to update build/units.json: %v\n", err)
-			} else {
-				autoCommitMatch(u.VA, u.Symbol, u.MatchedBy)
+		withWorkLock(func() {
+			// Reload units inside lock so concurrent parallel workers never overwrite each other's updates
+			freshUnits, freshIdx, _, _, _ := loadUnitsAndClasses()
+			_ = backfillAutoSolveModels(freshUnits)
+			idx, exists := freshIdx[vaHex]
+			if !exists {
+				return
 			}
-		} else if u.Status == "matched" && (u.MatchedBy == "" || u.MatchedBy == "unknown") && modelName != "unknown" {
-			u.MatchedBy = modelName
-			if u.MatchedAt == "" {
-				u.MatchedAt = time.Now().UTC().Format("2006-01-02")
+			fu := &freshUnits[idx]
+			if fu.Status != "matched" && !fu.IsThunk && fu.Status != "out_of_scope" {
+				fu.Status = "matched"
+				fu.SkipReason = ""
+				fu.MatchedBy = modelName
+				fu.MatchedAt = time.Now().UTC().Format(time.RFC3339)
+				if err := saveUnits(freshUnits); err != nil {
+					fmt.Fprintf(os.Stderr, "Warning: failed to update build/units.json: %v\n", err)
+				} else {
+					autoCommitMatch(fu.VA, fu.Symbol, fu.MatchedBy, cppPath)
+				}
+			} else if fu.Status == "matched" {
+				if (fu.MatchedBy == "" || fu.MatchedBy == "unknown") && modelName != "unknown" {
+					fu.MatchedBy = modelName
+				}
+				if fu.MatchedAt == "" {
+					fu.MatchedAt = time.Now().UTC().Format(time.RFC3339)
+				}
+				_ = saveUnits(freshUnits)
+				autoCommitMatch(fu.VA, fu.Symbol, fu.MatchedBy, cppPath)
 			}
-			_ = saveUnits(units)
-		}
+		})
 		return
 	}
 
@@ -1134,29 +1659,89 @@ func cmdSkip(args []string) {
 	}
 	reason := strings.TrimSpace(strings.Join(args[1:], " "))
 
-	units, unitIdxByVA, _, _, _ := loadUnitsAndClasses()
-	uIdx, ok := unitIdxByVA[vaHex]
-	if !ok {
-		fmt.Fprintf(os.Stderr, "Error: unit %s not found in build/units.json\n", vaHex)
-		os.Exit(1)
-	}
+	withWorkLock(func() {
+		units, unitIdxByVA, _, _, _ := loadUnitsAndClasses()
+		uIdx, ok := unitIdxByVA[vaHex]
+		if !ok {
+			fmt.Fprintf(os.Stderr, "Error: unit %s not found in build/units.json\n", vaHex)
+			os.Exit(1)
+		}
 
-	units[uIdx].Status = "deferred"
-	units[uIdx].SkipReason = reason
-	if err := saveUnits(units); err != nil {
-		fmt.Fprintf(os.Stderr, "Error saving build/units.json: %v\n", err)
-		os.Exit(1)
-	}
+		if cppPath := findCppFileForVA(vaHex); cppPath != "" {
+			if removed, _ := stripFunctionFromCpp(cppPath, vaHex); removed {
+				fmt.Printf("Removed unverified stub for %s from %s\n", vaHex, cppPath)
+			}
+		}
 
-	fmt.Printf("Deferred %s (%s): %s\n", units[uIdx].VA, units[uIdx].Symbol, reason)
+		if units[uIdx].Status != "matched" && units[uIdx].Status != "solved" && units[uIdx].Status != "decompiled" {
+			units[uIdx].Status = "deferred"
+			units[uIdx].SkipReason = reason
+			if err := saveUnits(units); err != nil {
+				fmt.Fprintf(os.Stderr, "Error saving build/units.json: %v\n", err)
+				os.Exit(1)
+			}
+			fmt.Printf("Deferred %s (%s): %s\n", units[uIdx].VA, units[uIdx].Symbol, reason)
+		}
+	})
+}
+
+func cmdCommitPending(_ []string) {
+	withWorkLock(func() {
+		n := commitPendingMatches()
+		if n > 0 {
+			fmt.Printf("Committed %d pending matched function(s) individually.\n", n)
+		}
+	})
+}
+
+func cmdClean(_ []string) {
+	withWorkLock(func() {
+		_ = commitPendingMatches()
+		units, unitIdxByVA, _, _, _ := loadUnitsAndClasses()
+		removed := cleanUnmatchedStubs(units, unitIdxByVA)
+
+		// Also verify any dirty .cpp files in git working tree compile cleanly; if broken, revert them to HEAD
+		reverted := 0
+		if out, err := exec.Command("git", "status", "--porcelain", "--", "src/").Output(); err == nil {
+			for _, line := range strings.Split(strings.TrimSpace(string(out)), "\n") {
+				if len(line) < 4 {
+					continue
+				}
+				cppPath := strings.TrimSpace(line[3:])
+				if !strings.HasSuffix(cppPath, ".cpp") {
+					continue
+				}
+				if _, err := os.Stat(cppPath); os.IsNotExist(err) {
+					continue
+				}
+				if findMSVCClExe() != "" {
+					_, cleanup, compErr := compileCppToObj(cppPath)
+					cleanup()
+					if compErr != nil {
+						if exec.Command("git", "ls-files", "--error-unmatch", cppPath).Run() == nil {
+							_ = exec.Command("git", "checkout", "HEAD", "--", cppPath).Run()
+						} else {
+							_ = os.Remove(cppPath)
+						}
+						reverted++
+					}
+				}
+			}
+		}
+		fmt.Printf("Cleaned %d unmatched/TODO stub(s) and reverted %d broken .cpp file(s) in src/.\n", removed, reverted)
+	})
 }
 
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Fprintln(os.Stderr, "Usage:")
-		fmt.Fprintln(os.Stderr, "  go run ./tools/work next [--max-size 256]")
+		fmt.Fprintln(os.Stderr, "  go run ./tools/work next [--max-size 256] [--distinct-files] [--addrs-only]")
+		fmt.Fprintln(os.Stderr, "  go run ./tools/work claim <address>")
 		fmt.Fprintln(os.Stderr, "  go run ./tools/work check <address> [--model <name>]")
 		fmt.Fprintln(os.Stderr, "  go run ./tools/work skip <address> \"<reason>\"")
+		fmt.Fprintln(os.Stderr, "  go run ./tools/work is-matched <address>")
+		fmt.Fprintln(os.Stderr, "  go run ./tools/work commit-pending")
+		fmt.Fprintln(os.Stderr, "  go run ./tools/work clean")
 		os.Exit(1)
 	}
 
@@ -1165,12 +1750,20 @@ func main() {
 	switch subcmd {
 	case "next":
 		cmdNext(rest)
+	case "claim":
+		cmdClaim(rest)
 	case "check":
 		cmdCheck(rest)
 	case "skip":
 		cmdSkip(rest)
+	case "is-matched":
+		cmdIsMatched(rest)
+	case "commit-pending":
+		cmdCommitPending(rest)
+	case "clean":
+		cmdClean(rest)
 	default:
-		fmt.Fprintf(os.Stderr, "Unknown subcommand %q (expected: next, check, skip)\n", subcmd)
+		fmt.Fprintf(os.Stderr, "Unknown subcommand %q (expected: next, claim, check, skip, is-matched, commit-pending, clean)\n", subcmd)
 		os.Exit(1)
 	}
 }
