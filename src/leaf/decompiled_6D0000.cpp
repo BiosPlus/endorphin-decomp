@@ -39,3 +39,10 @@ extern "C" __declspec(naked) void __fastcall fn_006DBE10(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006DEF20] sub_006DEF20 (15 bytes)
+extern "C" void __stdcall ext_006DEED0(int a, int b);
+
+extern "C" void __stdcall fn_006DEF20(int a1) {
+    ext_006DEED0(a1, 1);
+}
