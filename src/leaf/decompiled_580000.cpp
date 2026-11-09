@@ -101,3 +101,21 @@ extern "C" void __fastcall fn_00587450(void* self, int edx_unused, int a1) {
     *(int*)((char*)self + 0x94) = a1;
     ext_00586D00();
 }
+
+// [0x0058F550] sub_0058F550 (27 bytes)
+extern "C" void ext_0058F4C0();
+
+extern "C" __declspec(naked) void __fastcall fn_0058F550(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_0058F4C0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
