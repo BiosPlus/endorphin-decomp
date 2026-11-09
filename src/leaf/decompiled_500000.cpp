@@ -64,3 +64,15 @@ extern "C" int* __cdecl fn_00500120() {
     }
     return &mem_00AEB2D4;
 }
+
+// [0x005054E0] sub_005054E0 (35 bytes)
+extern "C" int mem_00AEBB78;
+extern "C" int mem_00AEBB74;
+
+extern "C" void* __cdecl fn_005054E0() {
+    if (!(*(unsigned char*)&mem_00AEBB78 & 1)) {
+        mem_00AEBB78 |= 1;
+        mem_00AEBB74 = 0x94f0e8;
+    }
+    return &mem_00AEBB74;
+}
