@@ -317,3 +317,22 @@ extern "C" __declspec(naked) void __cdecl fn_00662F80(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x006619D0] sub_006619D0 (34 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006619D0(void* self, int edx_unused, void* other) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 4]
+        cmp ecx, eax
+        je done
+        mov edx, dword ptr [ecx + 4]
+        mov dword ptr [eax + 4], edx
+        mov edx, dword ptr [ecx + 8]
+        mov dword ptr [eax + 8], edx
+        mov ecx, dword ptr [ecx + 0Ch]
+        mov dword ptr [eax + 0Ch], ecx
+        mov byte ptr [eax], 1
+    done:
+        ret 4
+    }
+}
