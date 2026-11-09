@@ -151,3 +151,22 @@ extern "C" void ext_007C93E0();
 extern "C" int __cdecl fn_007C9460(int a1, int a2, int a3) {
     return ((int (__cdecl*)(int, int, int, int))ext_007C93E0)(a1, 1, a2, a3);
 }
+
+// [0x007C7310] sub_007C7310 (28 bytes)
+extern "C" void ext_007C7240();
+
+extern "C" __declspec(naked) void __cdecl fn_007C7310(void* a0) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push esi
+        call ext_007C7240
+        mov eax, dword ptr [esi + 0x5f0]
+        mov ecx, dword ptr [eax + 0xc]
+        push esi
+        call ecx
+        add esp, 0x8
+        pop esi
+        ret
+    }
+}

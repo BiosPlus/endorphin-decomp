@@ -571239,7 +571239,9 @@
     "relocations": [
       "0x007C7317"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:55:14Z"
   },
   {
     "va": "0x007C7330",
