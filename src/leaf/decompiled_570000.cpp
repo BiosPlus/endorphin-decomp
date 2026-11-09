@@ -57,3 +57,20 @@ extern "C" void __fastcall fn_00574F40(void* self, int edx_unused, void* os) {
         n--;
     } while (n != 0);
 }
+
+// [0x005761B0] sub_005761B0 (43 bytes)
+extern "C" int mem_00925084;
+extern "C" int mem_00925110;
+
+extern "C" void* __fastcall fn_005761B0(void* self) {
+    typedef void* (__thiscall *alloc_ctor_fn)(void*);
+    typedef void* (__thiscall *alloc_copy_fn)(void*, const void*);
+    char tmp;
+    (*(alloc_ctor_fn*)&mem_00925084)(&tmp);
+    (*(alloc_copy_fn*)&mem_00925110)(self, &tmp);
+    unsigned int* p = (unsigned int*)self;
+    p[1] = 0;
+    p[2] = 0;
+    p[3] = 0;
+    return self;
+}
