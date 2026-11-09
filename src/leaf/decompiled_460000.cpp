@@ -368,3 +368,21 @@ extern "C" float __fastcall fn_0046F860(void* self) {
     float v = ext_00642620(static_cast<char*>(self) + 0xd4);
     return 1.0f / v;
 }
+
+extern "C" void ext_00466F00();
+
+// [0x00467030] sub_00467030 (24 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00467030(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esi], eax
+        call ext_00466F00
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
