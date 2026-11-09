@@ -575810,7 +575810,9 @@
     "relocations": [
       "0x007D840A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:20:46Z"
   },
   {
     "va": "0x007D8420",
