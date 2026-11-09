@@ -76,3 +76,16 @@ extern "C" __declspec(naked) void __fastcall fn_004FB3A0(void* self) {
         jmp ext_00469060
     }
 }
+
+// [0x004FAC20] VMCSModes::DefaultImplementation::vfunc_0 (26 bytes)
+extern "C" void ext_004667A0();
+extern "C" void __fastcall fn_004FAC20(void* self) {
+    typedef void (__thiscall *Callee)(void*, int);
+    typedef void (__fastcall *VFn)(void*);
+    void* a = *(void**)((char*)self + 0x4);
+    ((Callee)ext_004667A0)(a, 0);
+    void* b = *(void**)((char*)self + 0x4);
+    void* c = *(void**)((char*)b + 0xc);
+    void* vt = *(void**)c;
+    ((VFn)(*(void**)vt))(c);
+}
