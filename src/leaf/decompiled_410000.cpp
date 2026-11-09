@@ -213,3 +213,21 @@ extern "C" __declspec(naked) void __fastcall fn_0041FF10(void* self) {
         ret
     }
 }
+
+// [0x0041CBD0] sub_0041CBD0 (27 bytes)
+extern "C" void ext_006AD180();
+
+extern "C" __declspec(naked) void __fastcall fn_0041CBD0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        call ext_006AD180
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        pop esi
+        mov dword ptr [esp + 0x4], eax
+        mov eax, dword ptr [edx + 0x14]
+        jmp eax
+    }
+}
