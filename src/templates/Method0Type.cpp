@@ -472,3 +472,22 @@ extern "C" bool __fastcall fn_00693090(void* self, int edx_unused, void* a1) {
     ((void (__fastcall*)(void*))ext_00692D90)(obj);
     return false;
 }
+
+// [0x00487EB0] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_16 (30 bytes)
+extern "C" int mem_00A2E93C;
+extern "C" int mem_00A2E2F8;
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void* __stdcall fn_00487EB0(void* p) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push offset mem_00A2E93C
+        push offset mem_00A2E2F8
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
