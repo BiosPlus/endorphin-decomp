@@ -151916,7 +151916,9 @@
       "0x004F2857",
       "0x004F2861"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:48:37Z"
   },
   {
     "va": "0x004F2870",
