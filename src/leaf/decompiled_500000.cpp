@@ -233,3 +233,16 @@ extern "C" void __stdcall fn_00505CD0(void* first, void* last) {
         } while (first != last);
     }
 }
+
+// [0x0050B930] sub_0050B930 (38 bytes)
+extern "C" void __fastcall fn_0050B930(void* self, int edx_unused, unsigned char* begin, unsigned char* end) {
+    typedef void (__thiscall *VDtor)(void*, int);
+    unsigned char* p = begin;
+    if (p != end) {
+        do {
+            void** vtbl = *(void***)p;
+            ((VDtor)vtbl[0])(p, 0);
+            p += 0x24;
+        } while (p != end);
+    }
+}
