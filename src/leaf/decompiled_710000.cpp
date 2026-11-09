@@ -15,3 +15,15 @@ extern "C" __declspec(naked) void __fastcall fn_0071DE80(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00711DA0] sub_00711DA0 (15 bytes)
+// Calls sub_0071E680 (this in ecx), then stores the stack arg at [eax+0x28] of the callee's returned pointer (ret 4).
+extern "C" void ext_0071E680();
+extern "C" __declspec(naked) void __fastcall fn_00711DA0(void* self, int edx_unused, int a1) {
+    __asm {
+        call ext_0071E680
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [eax + 0x28], ecx
+        ret 0x4
+    }
+}
