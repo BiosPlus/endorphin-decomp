@@ -374,3 +374,15 @@ extern "C" void __fastcall fn_00444490(void* self) {
     typedef void (__thiscall *FnT)(void*, int);
     ((FnT)ext_0045C820)((char*)self + 0x15c, mem_00A9F414);
 }
+
+// [0x00447D80] sub_00447D80 (19 bytes)
+extern "C" void ext_004478C0();
+extern "C" void ext_00468180();
+
+extern "C" void __fastcall fn_00447D80(void* self) {
+    ext_004478C0();
+    void* p = ((void* (*)())ext_00468180)();
+    void** vt = *(void***)p;
+    typedef void (__fastcall *Fn)(void*);
+    ((Fn)vt[1])(p);
+}
