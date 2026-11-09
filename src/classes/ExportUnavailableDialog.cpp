@@ -15,3 +15,24 @@ extern "C" __declspec(naked) void __fastcall fn_00461630(void* self) {
         ret 0x4
     }
 }
+
+extern "C" int mem_00ACB004;
+extern "C" int mem_00A2ECDC;
+extern "C" int mem_00A2ECE0;
+
+// [0x00419770] ExportUnavailableDialog::vfunc_7_off_74 (40 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00419770(void* self) {
+    __asm {
+        mov eax, 1
+        test byte ptr [mem_00ACB004], al
+        jne done
+        or dword ptr [mem_00ACB004], eax
+        xor eax, eax
+        xor ecx, ecx
+        mov dword ptr [mem_00A2ECDC], eax
+        mov dword ptr [mem_00A2ECE0], ecx
+    done:
+        mov eax, 0xa2ecd0
+        ret
+    }
+}
