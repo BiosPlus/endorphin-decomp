@@ -655,3 +655,27 @@ extern "C" __declspec(naked) void* __fastcall fn_0040FDC0(void* self) {
         ret
     }
 }
+
+// [0x0040FD60] sub_0040FD60 (47 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0040FD60(void* self, int edx_unused, unsigned int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        jbe L_out_of_range
+        cmp eax, 0x2
+        ja L_out_of_range
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x144]
+        push 0x1
+        call edx
+        xor eax, eax
+        ret 0x8
+    L_out_of_range:
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x144]
+        push 0x0
+        call edx
+        xor eax, eax
+        ret 0x8
+    }
+}
