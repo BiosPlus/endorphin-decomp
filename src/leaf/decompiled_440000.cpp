@@ -338,3 +338,16 @@ extern "C" void __fastcall fn_0044B1E0(void* self) {
     void* inner = *(void**)((char*)self + 0x68);
     ((void (__thiscall*)(void*, int))ext_00530D80)(inner, 0x13);
 }
+
+// [0x0044CF30] sub_0044CF30 (13 bytes)
+extern "C" void ext_00494300();
+
+extern "C" __declspec(naked) void __fastcall fn_0044CF30(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x74]
+        push eax
+        add ecx, 0x78
+        call ext_00494300
+        ret
+    }
+}
