@@ -1752,3 +1752,29 @@ extern "C" void __fastcall fn_0043D1A0(void* self, int edx_unused, int a1, int a
         ((Thunk0)ext_006A5EA8)(self);
     }
 }
+
+// [0x0043D1D0] sub_0043D1D0 (41 bytes)
+extern "C" void ext_0041C5A0();
+extern "C" void ext_006A5EA8();
+
+extern "C" __declspec(naked) void __fastcall fn_0043D1D0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        lea ecx, [esi + 0x64]
+        call ext_0041C5A0
+        test al, al
+        jne short done
+        mov ecx, esi
+        call ext_006A5EA8
+done:
+        pop esi
+        ret 0xc
+    }
+}
