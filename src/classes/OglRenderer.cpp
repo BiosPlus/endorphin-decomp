@@ -82,3 +82,23 @@ extern "C" __declspec(naked) void __fastcall fn_00536E50(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00532DD0();
+extern "C" void ext_00532DB0();
+
+// [0x00534350] OglRenderer::vfunc_104 (34 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00534350(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        test eax, eax
+        je  done
+        cmp byte ptr [ecx + 0491h], 0
+        mov dword ptr [esp + 4], eax
+        je  alt
+        jmp ext_00532DD0
+    alt:
+        jmp ext_00532DB0
+    done:
+        ret 4
+    }
+}
