@@ -38,3 +38,16 @@ extern "C" __declspec(naked) void __stdcall fn_0067A700(void* a1, void* a2) {
         ret 0x8
     }
 }
+
+// [0x0067A750] ExprParser::BoolType::vfunc_8 (32 bytes)
+extern "C" void ext_006720C0();
+
+extern "C" void __stdcall fn_0067A750(void* a1, void* a2) {
+    typedef void (__thiscall *VFn)(void* self, void* a);
+    char* obj = (char*)a1;
+    char* inner = *(char**)(obj + 0x4);
+    void** vtbl = *(void***)inner;
+    VFn vf = (VFn)vtbl[0x78 / 4];
+    vf(inner, a1);
+    ((VFn)ext_006720C0)(a1, a2);
+}
