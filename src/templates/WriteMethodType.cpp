@@ -144,3 +144,16 @@ extern "C" __declspec(naked) void __stdcall fn_00604C40(void** self, void** a1) 
         ret 8
     }
 }
+
+// [0x006276F0] ExprParser::WriteMethodType<Sensors::SensorAbsoluteOrientation, int, &public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)>::vfunc_41 (34 bytes)
+extern "C" void ext_00627510();
+
+typedef int (__thiscall *VCallFn_006276F0)(void* self, void* a1);
+typedef void (__thiscall *CallFn_006276F0)(void* self, int a1);
+
+extern "C" void __stdcall fn_006276F0(void** self, void** a1) {
+    void* obj = *self;
+    void* sub = a1[1];
+    int r = ((VCallFn_006276F0)((*(void***)sub)[2]))(sub, a1);
+    ((CallFn_006276F0)ext_00627510)(obj, r);
+}
