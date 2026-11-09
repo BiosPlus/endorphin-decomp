@@ -122,3 +122,16 @@ extern "C" __declspec(naked) void __stdcall fn_0068C010(void* a1, int a2) {
         ret 0x8
     }
 }
+
+// [0x006930D0] ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>::vfunc_41 (14 bytes)
+extern "C" void ext_00692D90();
+
+// [0x006930D0] ExprParser::Method0Type<ValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}>::vfunc_41 (14 bytes)
+extern "C" __declspec(naked) void __stdcall fn_006930D0(void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call ext_00692D90
+        ret 0x8
+    }
+}
