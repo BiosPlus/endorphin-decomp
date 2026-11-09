@@ -419,3 +419,27 @@ extern "C" __declspec(naked) void __cdecl fn_007D5B30(void* a1, void* a2, int a3
         ret
     }
 }
+
+// [0x007DD130] sub_007DD130 (45 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_007DD130(void* self, int edx_unused, int index) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        test eax, eax
+        jl fail
+        cmp eax, dword ptr [ecx + 0xc]
+        jge fail
+        mov ecx, dword ptr [ecx + 0x10]
+        mov edx, eax
+        imul edx, edx, 0x9c
+        add ecx, edx
+        cmp dword ptr [ecx + 0x8], eax
+        je found
+    fail:
+        xor al, al
+        ret 4
+    found:
+        mov eax, dword ptr [ecx + 0x10]
+        and eax, 1
+        ret 4
+    }
+}
