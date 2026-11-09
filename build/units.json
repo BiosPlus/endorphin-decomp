@@ -34637,7 +34637,9 @@
       "0x0043D1B6",
       "0x0043D1C1"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:22:13Z"
   },
   {
     "va": "0x0043D1D0",

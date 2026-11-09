@@ -1740,3 +1740,15 @@ extern "C" __declspec(naked) void __stdcall fn_00430520(void* p) {
         ret 0x4
     }
 }
+
+// [0x0043D1A0] sub_0043D1A0 (41 bytes)
+extern "C" void ext_0041C570();
+extern "C" void ext_006A5EA8();
+extern "C" void __fastcall fn_0043D1A0(void* self, int edx_unused, int a1, int a2, int a3) {
+    typedef unsigned char (__thiscall *Pred3)(void*, int, int, int);
+    typedef void (__thiscall *Thunk0)(void*);
+    unsigned char r = ((Pred3)ext_0041C570)((char*)self + 0x64, a1, a2, a3);
+    if (!r) {
+        ((Thunk0)ext_006A5EA8)(self);
+    }
+}
