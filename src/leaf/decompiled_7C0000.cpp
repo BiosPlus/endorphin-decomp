@@ -431,3 +431,21 @@ extern "C" void __cdecl fn_007C76E0(void* self, float a1, float a2, float a3) {
     *(float*)((char*)self + 0x1E0) = a2;
     *(float*)((char*)self + 0x1E4) = a3;
 }
+
+// [0x007C9310] sub_007C9310 (35 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C9310(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0x4]
+        shl eax, 0x5
+        fld dword ptr [eax + ecx]
+        add eax, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ecx + 0x8]
+        ret
+    }
+}
