@@ -143,3 +143,28 @@ L_059C78E:
         ret 0x4
     }
 }
+
+// [0x00599E70] sub_00599E70 (42 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) unsigned int __fastcall fn_00599E70(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x26c]
+        cmp dword ptr [eax + 0x20], 0x0
+        jne L_nonzero
+        xor eax, eax
+        ret
+    L_nonzero:
+        mov ecx, dword ptr [eax + 0x1c]
+        push esi
+        mov esi, dword ptr [ecx]
+        cmp esi, ecx
+        jne L_ok
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov edx, dword ptr [esi + 0x28]
+        mov eax, dword ptr [edx + 0x38c]
+        pop esi
+        ret
+    }
+}
