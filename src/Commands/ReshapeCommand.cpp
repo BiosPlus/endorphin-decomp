@@ -15,3 +15,17 @@ extern "C" __declspec(naked) void __fastcall fn_00486020(void* self) {
         ret
     }
 }
+
+// [0x00486000] Commands::ReshapeCommand::vfunc_1 (24 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00486000(void* self) {
+    __asm {
+        lea eax, [ecx + 0xa0]
+        push eax
+        lea edx, [ecx + 0x80]
+        push edx
+        lea eax, [ecx + 0x60]
+        push eax
+        call ext_00484CA0
+        ret
+    }
+}
