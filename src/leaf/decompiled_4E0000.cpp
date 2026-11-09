@@ -29,3 +29,21 @@ extern "C" void ext_004E8570();
 extern "C" void __fastcall fn_004E87D0(void* self, int edx_unused, int a1) {
     ((void (__cdecl*)(int, void*))ext_004E8570)(a1, (char*)self + 4);
 }
+
+// [0x004E5970] sub_004E5970 (24 bytes)
+extern "C" void* __stdcall ext_006798D0(void* a, int b);
+extern "C" void __fastcall ext_004E5850(void* self);
+
+extern "C" __declspec(naked) void __fastcall fn_004E5970(void* self) {
+    __asm {
+        push ecx
+        lea eax, [esp]
+        push 0x93e1b8
+        push eax
+        call ext_006798D0
+        mov ecx, eax
+        call ext_004E5850
+        pop ecx
+        ret
+    }
+}

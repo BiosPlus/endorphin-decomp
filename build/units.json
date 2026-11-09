@@ -144335,7 +144335,9 @@
       "0x004E597B",
       "0x004E5982"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:04:36Z"
   },
   {
     "va": "0x004E5990",
