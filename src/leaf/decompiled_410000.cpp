@@ -347,3 +347,24 @@ L_0041A088:
         ret 0x4
     }
 }
+
+// [0x0041CEB0] sub_0041CEB0 (35 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0041CEB0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov eax, dword ptr [edx + 0x10]
+        push esi
+        mov dword ptr [esp + 0xc], 0
+        call eax
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
