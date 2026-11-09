@@ -520,3 +520,28 @@ extern "C" void* __fastcall fn_0067B3B0(void* self) {
     *(int*)((char*)self + 0x4) = 0;
     return self;
 }
+
+// [0x00671F50] sub_00671F50 (45 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00671F50(void* self, int edx_unused, void* other) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x4]
+        cmp ecx, dword ptr [edx + 0x4]
+        jne fail
+        push esi
+        mov esi, dword ptr [ecx]
+        push edx
+        mov edx, dword ptr [esi + 0xa8]
+        push eax
+        call edx
+        test al, al
+        pop esi
+        je fail
+        mov eax, 0x1
+        ret 0x4
+fail:
+        xor eax, eax
+        ret 0x4
+    }
+}
