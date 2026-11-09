@@ -376,3 +376,22 @@ extern "C" __declspec(naked) void __fastcall fn_0053C060(void* self) {
         jmp ext_0053A810
     }
 }
+
+// [0x00532DD0] sub_00532DD0 (34 bytes)
+extern "C" void ext_0054C6E0();
+extern "C" __declspec(naked) void __fastcall fn_00532DD0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        push esi
+        mov esi, ecx
+        je skip
+        push eax
+        lea ecx, [esi + 0x460]
+        call ext_0054C6E0
+    skip:
+        mov byte ptr [esi + 0x464], 0x1
+        pop esi
+        ret 0x4
+    }
+}
