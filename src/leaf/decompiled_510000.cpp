@@ -84,3 +84,15 @@ extern "C" void* __cdecl fn_005170A0(void) {
     }
     return &mem_00AEC0C8;
 }
+
+// [0x00517DB0] sub_00517DB0 (34 bytes)
+extern "C" void __fastcall ext_00503CA0(void* self);
+
+extern "C" void* __fastcall fn_00517DB0(void* self) {
+    ext_00503CA0(self);
+    *(double*)((char*)self + 0x28) = 0.0;
+    *(void**)self = (void*)0x0094F084;
+    *(int*)((char*)self + 0x30) = 0x4B0;
+    *((char*)self + 0x20) = 1;
+    return self;
+}
