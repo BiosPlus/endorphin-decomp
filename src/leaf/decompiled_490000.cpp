@@ -52,3 +52,23 @@ extern "C" __declspec(naked) void __fastcall fn_004940E0(void* self) {
         ret 0x8
     }
 }
+
+// [0x00496CE0] sub_00496CE0 (25 bytes)
+// __thiscall with ret 4: pushes arg, calls sub_004948C0 (result pushed), then calls sub_00496CC0 with ecx=this.
+extern "C" void ext_004948C0();
+extern "C" void ext_00496CC0();
+
+extern "C" __declspec(naked) void __fastcall fn_00496CE0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_004948C0
+        push eax
+        mov ecx, esi
+        call ext_00496CC0
+        pop esi
+        ret 0x4
+    }
+}
