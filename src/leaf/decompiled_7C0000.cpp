@@ -145,3 +145,9 @@ extern "C" void __cdecl fn_007C5AF0(void* self, float a1) {
 extern "C" void __cdecl fn_007C5B10(void* self, float a1) {
     *(float*)((char*)self + 0x1d8) = (float)cos((double)a1 * *(double*)&mem_00993828);
 }
+
+// [0x007C9460] sub_007C9460 (26 bytes)
+extern "C" void ext_007C93E0();
+extern "C" int __cdecl fn_007C9460(int a1, int a2, int a3) {
+    return ((int (__cdecl*)(int, int, int, int))ext_007C93E0)(a1, 1, a2, a3);
+}
