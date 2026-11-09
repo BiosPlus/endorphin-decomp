@@ -386,3 +386,11 @@ extern "C" void __fastcall fn_00447D80(void* self) {
     typedef void (__fastcall *Fn)(void*);
     ((Fn)vt[1])(p);
 }
+
+// [0x00440920] sub_00440920 (21 bytes)
+extern "C" void ext_004407E0();
+
+extern "C" void __fastcall fn_00440920(void* self, int edx_unused, double a1) {
+    double sum = *(double*)((char*)self + 0x50) + a1;
+    ((void (__stdcall*)(double))ext_004407E0)(sum);
+}
