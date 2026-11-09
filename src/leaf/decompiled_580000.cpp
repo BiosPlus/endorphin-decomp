@@ -61,3 +61,16 @@ extern "C" __declspec(naked) void __fastcall fn_0058F590(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0058F600] sub_0058F600 (16 bytes)
+extern "C" void ext_0058ABC0();
+
+extern "C" __declspec(naked) void __fastcall fn_0058F600(void* self, int edx_unused, float a1) {
+    __asm {
+        fld dword ptr [esp + 4]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0058ABC0
+        ret 4
+    }
+}
