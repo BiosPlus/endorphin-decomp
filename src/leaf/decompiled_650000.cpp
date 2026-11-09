@@ -375,3 +375,33 @@ extern "C" void __fastcall fn_0065BF00(void* self, int edx_unused, float a1) {
     *(float*)((char*)self + 0x24) = a1;
     ext_007C76E0(*(int*)((char*)self + 0x40), *(float*)((char*)self + 0x20), a1, *(float*)((char*)self + 0x28));
 }
+
+// [0x0065C5F0] sub_0065C5F0 (43 bytes)
+extern "C" int mem_009241C0;
+extern "C" __declspec(naked) void* __fastcall fn_0065C5F0(void* self) {
+    __asm {
+        push esi
+        push edi
+        push 0x18
+        mov esi, ecx
+        call ext_006A5C62
+        mov edi, eax
+        add esp, 4
+        test edi, edi
+        je null_0065C5F0
+        push edi
+        call dword ptr [mem_009241C0]
+        mov dword ptr [esi], edi
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    null_0065C5F0:
+        xor eax, eax
+        mov dword ptr [esi], eax
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
