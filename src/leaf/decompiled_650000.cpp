@@ -207,3 +207,18 @@ extern "C" __declspec(naked) void __fastcall fn_0065C620(void* self) {
         ret
     }
 }
+
+// [0x0065BFA0] sub_0065BFA0 (25 bytes)
+extern "C" void ext_0065BDA0();
+extern "C" __declspec(naked) void* __fastcall fn_0065BFA0(void* self) {
+    __asm {
+        fldz
+        mov dword ptr [ecx], 0x984928
+        fst dword ptr [ecx + 0x28]
+        fst dword ptr [ecx + 0x24]
+        fstp dword ptr [ecx + 0x20]
+        call ext_0065BDA0
+        mov eax, ecx
+        ret
+    }
+}

@@ -389898,7 +389898,9 @@
       "0x0065BFA4",
       "0x0065BFB2"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:12:27Z"
   },
   {
     "va": "0x0065BFC0",
