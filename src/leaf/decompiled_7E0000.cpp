@@ -11,3 +11,8 @@ extern "C" void __cdecl fn_007E4690(int a1) {
 extern "C" void __cdecl fn_007E8EE0(int a1) {
     ((void (__cdecl*)(int, int, int))ext_007C8A50)(a1, 4, 0x007E8A00);
 }
+
+// [0x007EF8D0] sub_007EF8D0 (21 bytes)
+extern "C" void __cdecl fn_007EF8D0(int a1) {
+    ((void (__cdecl*)(int, int, int))ext_007C8A50)(a1, 1, 0x007EF3A0);
+}
