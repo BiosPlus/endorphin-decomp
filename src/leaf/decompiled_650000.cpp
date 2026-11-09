@@ -81,3 +81,9 @@ extern "C" void __fastcall fn_0065D110(void* self) {
     typedef void (__thiscall *Fn)(void* thisp, void* arg);
     ((Fn)&ext_006619D0)((char*)self + 0xcc, (char*)self + 0x6c);
 }
+
+// [0x0065D120] sub_0065D120 (16 bytes)
+extern "C" void __fastcall fn_0065D120(void* self) {
+    typedef void (__thiscall *Fn)(void* thisp, void* arg);
+    ((Fn)&ext_006619D0)((char*)self + 0x6c, (char*)self + 0xcc);
+}
