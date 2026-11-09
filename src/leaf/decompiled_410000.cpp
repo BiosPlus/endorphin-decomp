@@ -111,3 +111,16 @@ extern "C" __declspec(naked) void __cdecl fn_00418CD0(void) {
         ret
     }
 }
+
+// [0x00415420] sub_00415420 (11 bytes)
+// Calls thunk_MFC80_ord_1903 (ext_006A5EA8), then ORs eax with 0x80 and returns.
+// eax is the value left by the callee, so the body is written in naked asm to preserve it.
+extern "C" void ext_006A5EA8();
+
+extern "C" __declspec(naked) void __cdecl fn_00415420() {
+    __asm {
+        call ext_006A5EA8
+        or eax, 0x80
+        ret
+    }
+}
