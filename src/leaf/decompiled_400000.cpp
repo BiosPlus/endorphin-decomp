@@ -380,3 +380,22 @@ extern "C" __declspec(naked) int __stdcall fn_0040F270(void* self) {
         ret 0x4
     }
 }
+
+// [0x00403400] sub_00403400 (30 bytes)
+extern "C" void ext_006A3454();
+extern "C" int mem_009240A8;
+
+extern "C" __declspec(naked) void __fastcall fn_00403400(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xdc]
+        push eax
+        call ext_006A3454
+        mov ecx, dword ptr [esi + 0xe4]
+        push ecx
+        call dword ptr [mem_009240A8]
+        pop esi
+        ret
+    }
+}
