@@ -496,3 +496,23 @@ extern "C" void __fastcall fn_00430340(void* self) {
     void* vtbl = *(void**)o;
     ((void (__fastcall *)(void*))(*(void**)((char*)vtbl + 0x1bc)))(o);
 }
+
+// [0x00436740] sub_00436740 (25 bytes)
+extern "C" void ext_0042FED0();
+extern "C" void ext_00435920();
+extern "C" void ext_00435380();
+
+extern "C" __declspec(naked) void __fastcall fn_00436740(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0042FED0
+        test al, al
+        mov ecx, esi
+        pop esi
+        jne L_true
+        jmp ext_00435920
+    L_true:
+        jmp ext_00435380
+    }
+}
