@@ -6633,7 +6633,9 @@
       "0x0040BF04",
       "0x0040BF0C"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:31:01Z"
   },
   {
     "va": "0x0040BF20",

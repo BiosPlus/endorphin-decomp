@@ -116,3 +116,20 @@ extern "C" void* __fastcall fn_00403160(void* self, int edx_unused, int a1) {
     typedef void* (__stdcall *GetFrameFn)(void*, int);
     return ((GetFrameFn)ext_006A3442)(*(void**)((char*)self + 0x57c), a1);
 }
+
+// [0x0040BF00] sub_0040BF00 (20 bytes)
+extern "C" void ext_006A5EDE();
+extern "C" void ext_006A60D6();
+
+extern "C" __declspec(naked) void __fastcall fn_0040BF00(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006A5EDE
+        mov ecx, dword ptr [eax + 0x4]
+        call ext_006A60D6
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
