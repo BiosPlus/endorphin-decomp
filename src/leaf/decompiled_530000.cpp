@@ -134,3 +134,16 @@ extern "C" __declspec(naked) void __fastcall fn_00533E71(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00530250] sub_00530250 (17 bytes)
+extern "C" void ext_00541B50();
+
+extern "C" __declspec(naked) void __fastcall fn_00530250(void* self) {
+    __asm {
+        __asm _emit 0x80 __asm _emit 0xB9 __asm _emit 0x3D __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // cmp byte ptr [ecx + 0x13d], 0x0
+        __asm _emit 0x0F __asm _emit 0x94 __asm _emit 0xC0 // sete al
+        __asm _emit 0x50 // push eax
+        call ext_00541B50
+        ret
+    }
+}
