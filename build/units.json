@@ -288146,7 +288146,9 @@
       "0x005D071F",
       "0x005D072C"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:55:20Z"
   },
   {
     "va": "0x005D0740",

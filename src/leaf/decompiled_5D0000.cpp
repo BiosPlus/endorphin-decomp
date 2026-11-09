@@ -64,3 +64,15 @@ extern "C" void __fastcall fn_005D0830(void* self) {
     *(unsigned char*)(p + 0x30) = 0;
     *(float*)(p + 0x38) = 1.0f;
 }
+
+// [0x005D0710] sub_005D0710 (47 bytes)
+extern "C" void ext_005B11E0();
+
+extern "C" float __fastcall fn_005D0710(void* self) {
+    typedef float (__thiscall *GetFn)(void*, int);
+    GetFn get = (GetFn)ext_005B11E0;
+    void* p = (char*)self + 0x210;
+    double a = get(p, 1);
+    double b = get(p, 2);
+    return (float)(a / b);
+}
