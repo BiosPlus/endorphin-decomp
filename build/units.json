@@ -259368,7 +259368,9 @@
       "0x005AAD19",
       "0x005AAD21"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:21:21Z"
   },
   {
     "va": "0x005AAD30",
