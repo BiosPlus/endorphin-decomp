@@ -37,3 +37,24 @@ extern "C" __declspec(naked) void __fastcall fn_00544A10(void* self) {
         jmp eax
     }
 }
+
+// [0x00544A40] ReshapeTool::vfunc_17 (46 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00544A40(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x88]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x84]
+        call edx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x74]
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [esi + 0x9c]
+        lea ecx, [esi + 0x9c]
+        pop esi
+        mov eax, dword ptr [eax + 0x44]
+        jmp eax
+    }
+}
