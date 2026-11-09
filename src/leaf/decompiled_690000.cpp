@@ -139,3 +139,15 @@ L_store:
         ret 0x4
     }
 }
+
+// [0x006955D0] sub_006955D0 (35 bytes)
+extern "C" int mem_00B5C790;
+extern "C" int mem_00B5BDB8;
+extern "C" void ext_00695440();
+extern "C" void* __fastcall fn_006955D0(void* self) {
+    if (!(mem_00B5C790 & 1)) {
+        mem_00B5C790 |= 1;
+        ((void (__fastcall*)(void*))ext_00695440)((void*)&mem_00B5BDB8);
+    }
+    return (void*)&mem_00B5BDB8;
+}
