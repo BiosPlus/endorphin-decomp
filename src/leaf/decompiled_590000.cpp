@@ -205,3 +205,20 @@ extern "C" void __cdecl fn_00596300(int* dst, unsigned int count, const int* src
         } while (count > 0);
     }
 }
+
+// [0x00594750] sub_00594750 (48 bytes)
+extern "C" void __fastcall fn_00594750(void* self, int edx_unused, int a1) {
+    unsigned char* p = (unsigned char*)self;
+    unsigned int eax = (unsigned int)a1;
+    if (eax == 0) {
+        eax = *(unsigned int*)(p + 0x268);
+    }
+    *(unsigned int*)(p + 0x264) = eax;
+    if (eax == 0) {
+        eax = *(unsigned int*)(p + 0x270);
+        if (eax != 0) {
+            eax += 0xe0;
+            *(unsigned int*)(p + 0x264) = eax;
+        }
+    }
+}
