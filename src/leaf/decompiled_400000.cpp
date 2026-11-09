@@ -133,3 +133,13 @@ extern "C" __declspec(naked) void __fastcall fn_0040BF00(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0040B930();
+
+// [0x0040BC10] sub_0040BC10 (21 bytes)
+extern "C" void __fastcall fn_0040BC10(void* self) {
+    ext_0040B930();
+    void** vtbl = *(void***)self;
+    typedef void (__fastcall *Fn)(void*);
+    ((Fn)vtbl[0x168 / 4])(self);
+}
