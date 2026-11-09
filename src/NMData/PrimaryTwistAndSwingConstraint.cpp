@@ -10,3 +10,15 @@ extern "C" void __fastcall fn_00611EA0(void* self) {
     *(unsigned char*)(p + 0x229) = 1;
     *(unsigned char*)(p + 0x22a) = 1;
 }
+
+// [0x00611A10] NMData::PrimaryTwistAndSwingConstraint::vfunc_67 (47 bytes)
+extern "C" float __fastcall fn_00611A10(void* self, int edx_unused, int idx) {
+    if (idx < 4) {
+        void** vt = *(void***)self;
+        typedef float* (__thiscall *VFn)(void* self, float* out);
+        float tmp[3];
+        float* p = ((VFn)vt[0x110 / 4])(self, tmp);
+        return p[idx];
+    }
+    return 0.0f;
+}
