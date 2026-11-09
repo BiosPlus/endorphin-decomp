@@ -218,3 +218,12 @@ extern "C" int __cdecl fn_007CA430(float* a0, float* a1, float* a2) {
     *a2 = a0[4];
     return 1;
 }
+
+// [0x007CAB10] sub_007CAB10 (33 bytes)
+extern "C" int __cdecl fn_007CAB10(float* a0, float* a1, float* a2) {
+    a1[2] = 0.0f;
+    a1[1] = 0.0f;
+    a1[0] = 0.0f;
+    *a2 = a0[7];
+    return 1;
+}
