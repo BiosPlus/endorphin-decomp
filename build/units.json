@@ -201741,7 +201741,9 @@
       "0x0053F6AB",
       "0x0053F6B9"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:58:52Z"
   },
   {
     "va": "0x0053F6C0",
