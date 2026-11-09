@@ -326,3 +326,19 @@ extern "C" void __fastcall fn_0065BDF0(void* self, int edx_unused, void* a1) {
         *(float*)(s + 0x30) = *(float*)(a + 0x48);
     }
 }
+
+// [0x0065AA00] sub_0065AA00 (38 bytes)
+extern "C" void ext_007C6C10();
+extern "C" void ext_007C6C20();
+extern "C" int mem_00B55748;
+
+extern "C" void __fastcall fn_0065AA00(void* self) {
+    int eax = mem_00B55748;
+    int ecx = *(int*)(eax + 0x28);
+    if (*(unsigned char*)(ecx + 0x1c) != 0) {
+        int edx = *(int*)self;
+        ((void (__cdecl*)(int))ext_007C6C10)(edx);
+        int eax2 = *(int*)self;
+        ((void (__cdecl*)(int))ext_007C6C20)(eax2);
+    }
+}

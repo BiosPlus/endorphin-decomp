@@ -390077,7 +390077,9 @@
       "0x0065AA15",
       "0x0065AA1D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:00:42Z"
   },
   {
     "va": "0x0065AA30",
