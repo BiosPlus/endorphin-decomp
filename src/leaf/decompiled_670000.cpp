@@ -331,3 +331,22 @@ extern "C" void __fastcall fn_00671840(void* self, int edx_unused, void** a1) {
         *a1 = ((Callee_006714E0)ext_006714E0)((char*)self + 4, 1, 0);
     }
 }
+
+// [0x006719A0] sub_006719A0 (28 bytes)
+extern "C" void ext_006715C0();
+extern "C" __declspec(naked) void __fastcall fn_006719A0(void* self, int edx_unused, int* out) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        cmp dword ptr [esi], 0x0
+        jne done_006719A0
+        push 0x0
+        push 0x0
+        add ecx, 0x8
+        call ext_006715C0
+        mov dword ptr [esi], eax
+    done_006719A0:
+        pop esi
+        ret 0x4
+    }
+}
