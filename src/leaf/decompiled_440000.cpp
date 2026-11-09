@@ -268,3 +268,13 @@ extern "C" __declspec(naked) void __fastcall fn_0044B170(void* self) {
         ret
     }
 }
+
+// [0x0044B180] sub_0044B180 (11 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0044B180(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x68]
+        push 0xb
+        call ext_00530D80
+        ret
+    }
+}
