@@ -554,3 +554,19 @@ extern "C" void __fastcall fn_00434A70(void* self) {
         ext_006A5C5C(esi);
     }
 }
+
+// [0x004332B0] sub_004332B0 (26 bytes)
+extern "C" void ext_0043C8F0();
+extern "C" void ext_0044B780();
+
+extern "C" __declspec(naked) void __fastcall fn_004332B0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x108]
+        call ext_0043C8F0
+        mov ecx, dword ptr [esi + 0x100]
+        pop esi
+        jmp ext_0044B780
+    }
+}
