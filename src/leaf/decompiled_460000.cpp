@@ -291,3 +291,16 @@ extern "C" int __fastcall fn_00464610(void* self, int edx_unused, int a1) {
     ext_006A5E60(0x939518, 0x30, 0);
     return 1;
 }
+
+extern "C" void ext_004658C0();
+extern "C" void ext_00467380();
+
+// [0x00464780] sub_00464780 (22 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00464780(void* self) {
+    __asm {
+        mov dword ptr [ecx + 0xB4], 8
+        call ext_004658C0
+        mov ecx, eax
+        jmp ext_00467380
+    }
+}
