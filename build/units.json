@@ -42242,7 +42242,9 @@
       "0x0044A0E1",
       "0x0044A0E8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:48:21Z"
   },
   {
     "va": "0x0044A0F0",

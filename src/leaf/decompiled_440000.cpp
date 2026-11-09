@@ -447,3 +447,18 @@ extern "C" __declspec(naked) void __stdcall fn_004444C0(void* a1) {
         ret 4
     }
 }
+
+// [0x0044A0D0] sub_0044A0D0 (28 bytes)
+extern "C" void ext_00468180();
+extern "C" void ext_00469AC0();
+extern "C" __declspec(naked) void __fastcall fn_0044A0D0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx+0e0h]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax+1b8h]
+        jmp edx
+        call ext_00468180
+        mov ecx, eax
+        jmp ext_00469AC0
+    }
+}
