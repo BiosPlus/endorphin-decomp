@@ -335,3 +335,25 @@ extern "C" bool __fastcall fn_00553080(int* self, int edx_unused, int a1) {
     }
     return true;
 }
+
+// [0x00553980] sub_00553980 (41 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00553980(void* self) {
+    __asm {
+        fldz
+        mov eax, ecx
+        xor ecx, ecx
+        fst dword ptr [eax + 0x8]
+        fst dword ptr [eax + 0x4]
+        mov byte ptr [eax + 0x18], cl
+        fst dword ptr [eax]
+        mov byte ptr [eax + 0x19], cl
+        mov byte ptr [eax + 0x1a], cl
+        fst dword ptr [eax]
+        fst dword ptr [eax + 0x4]
+        fstp dword ptr [eax + 0x8]
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax + 0x14], ecx
+        ret
+    }
+}
