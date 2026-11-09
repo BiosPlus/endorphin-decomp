@@ -1,5 +1,6 @@
 # Proprietary binaries and local caches (NEVER COMMIT)
 .local/
+.claude/
 docs/
 opencode.json
 *.exe

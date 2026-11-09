@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Git pre-commit guard for endorphin_decomp:
+# 1. Blocks forbidden binary/cache/HTML paths (.local/, *.exe, *.dll, *.obj, *.lib, *.pdb, *.idb, *.html, docs/).
+# 2. Blocks committing unimplemented "// TODO: implement" stubs in src/*.cpp.
+set -euo pipefail
+
+STAGED_FILES="$(git diff --cached --name-only)"
+if [[ -z "$STAGED_FILES" ]]; then
+  exit 0
+fi
+
+FORBIDDEN=()
+TODO_STUBS=()
+
+while IFS= read -r file; do
+  [[ -z "$file" ]] && continue
+  lower="${file,,}"
+  case "$lower" in
+    .local/*|.claude/*|docs/*|*.exe|*.dll|*.obj|*.lib|*.pdb|*.idb|*.html|*.htm)
+      FORBIDDEN+=("$file")
+      ;;
+  esac
+
+  if [[ "$file" == src/*.cpp && -f "$file" ]]; then
+    if git diff --cached -- "$file" | grep -E '^\+' | grep -q 'TODO: implement'; then
+      TODO_STUBS+=("$file")
+    fi
+  fi
+done <<< "$STAGED_FILES"
+
+if [[ ${#FORBIDDEN[@]} -gt 0 ]]; then
+  echo "[pre-commit] ERROR: Refusing to commit forbidden files:" >&2
+  printf '  - %s\n' "${FORBIDDEN[@]}" >&2
+  exit 1
+fi
+
+if [[ ${#TODO_STUBS[@]} -gt 0 ]]; then
+  echo "[pre-commit] ERROR: Refusing to commit unimplemented '// TODO: implement' stub(s) in:" >&2
+  printf '  - %s\n' "${TODO_STUBS[@]}" >&2
+  echo "Run 'go run ./tools/work clean' or implement/skip the function before committing." >&2
+  exit 1
+fi
+
+exit 0
