@@ -75,3 +75,10 @@ extern "C" __declspec(naked) void __stdcall fn_006B1800(int a1, int a2, int a3) 
         ret 0Ch
     }
 }
+
+// [0x006B4D90] sub_006B4D90 (15 bytes)
+extern "C" void __stdcall fn_006B4D90(int a1, int a2, int a3) {
+    if (a1 != 0xd) {
+        ext_006A5EA8();
+    }
+}
