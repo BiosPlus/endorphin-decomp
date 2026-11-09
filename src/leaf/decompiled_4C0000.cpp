@@ -58,3 +58,22 @@ extern "C" void __fastcall fn_004CCDC0(void* self) {
         reinterpret_cast<void (__cdecl*)(void*)>(ext_006A5C5C)(esi);
     }
 }
+
+// [0x004CFFE0] sub_004CFFE0 (34 bytes)
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void* __fastcall fn_004CFFE0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0x947ac0
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
