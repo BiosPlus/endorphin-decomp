@@ -464335,7 +464335,9 @@
       "0x006C9501",
       "0x006C950A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T09:54:21Z"
   },
   {
     "va": "0x006C9510",

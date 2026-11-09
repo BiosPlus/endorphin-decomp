@@ -6,3 +6,8 @@ extern "C" void __stdcall ext_006C9960(int a, int b, int c);
 extern "C" void __cdecl fn_006C94F0() {
     ext_006C9960(0, 0, (int)0xaa8cf4);
 }
+
+// [0x006C9500] sub_006C9500 (15 bytes)
+extern "C" void __cdecl fn_006C9500() {
+    ext_006C9960(0, 0, (int)0xaa8d00);
+}
