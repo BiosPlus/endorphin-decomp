@@ -333,3 +333,14 @@ extern "C" __declspec(naked) void __cdecl fn_007DFD80(void** out, int n, void* o
         ret
     }
 }
+
+// [0x007DFE00] sub_007DFE00 (34 bytes)
+extern "C" void ext_007DFD80();
+
+extern "C" void* __cdecl fn_007DFE00(int a1, void* a2) {
+    typedef void* (__cdecl *AllocFn)(int);
+    typedef void (__cdecl *FillFn)(void*, int, void*);
+    void* esi = ((AllocFn)(*(void**)a2))(0xc);
+    ((FillFn)ext_007DFD80)(esi, a1, a2);
+    return esi;
+}
