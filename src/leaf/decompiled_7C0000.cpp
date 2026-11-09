@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_7C0000.cpp
 
 extern "C" float mem_0099D148;
+extern "C" void ext_007DD130();
 
 // [0x007CC3D0] sub_007CC3D0 (32 bytes)
 // Zeroes the float triple at arg2[0..2] (stores 0.0 to [+8], [+4], [0]), then stores
@@ -70,4 +71,11 @@ extern "C" void __cdecl ext_007C8700(void* a0);
 extern "C" void __cdecl fn_007C8730(void* a0) {
     ext_007C8700(a0);
     ext_007C8690(a0);
+}
+
+// [0x007C8B70] sub_007C8B70 (24 bytes)
+extern "C" int __cdecl fn_007C8B70(void* self) {
+    unsigned char r = ((unsigned char (__thiscall*)(void*, int))ext_007DD130)(
+        *(void**)((char*)self + 0x0C), *(int*)((char*)self + 0x20));
+    return !r;
 }
