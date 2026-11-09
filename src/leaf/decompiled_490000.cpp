@@ -195,3 +195,17 @@ extern "C" void __fastcall fn_0049E910(void* self) {
     ext_006A5C5C(*(void**)((unsigned char*)self + 4));
     *(void**)((unsigned char*)self + 4) = 0;
 }
+
+// [0x004952F0] sub_004952F0 (35 bytes)
+// One-time init: if bit0 of mem_00ADC4E8 is clear, set it and store 0x93EC28 into mem_00ADC4E4.
+// Returns the address of mem_00ADC4E4.
+extern "C" int mem_00ADC4E8;
+extern "C" int mem_00ADC4E4;
+
+extern "C" void* __cdecl fn_004952F0() {
+    if (!(mem_00ADC4E8 & 1)) {
+        mem_00ADC4E8 |= 1;
+        mem_00ADC4E4 = 0x0093EC28;
+    }
+    return &mem_00ADC4E4;
+}
