@@ -13,3 +13,15 @@ extern "C" __declspec(naked) void __fastcall fn_0066BCE0(void* self) {
         jmp eax
     }
 }
+
+extern "C" void ext_00671FE0();
+
+// [0x0066BB90] ExprParser::VPtrProxyType::vfunc_37 (12 bytes)
+// Forwards its stack arg as `this` (ecx) to sub_00671FE0, then returns popping 4 bytes.
+extern "C" __declspec(naked) void __fastcall fn_0066BB90(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        call ext_00671FE0
+        ret 4
+    }
+}
