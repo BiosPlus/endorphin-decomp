@@ -18,3 +18,13 @@ extern "C" __declspec(naked) void __fastcall fn_0052F420(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0052F450] Primitives::Arrow::vfunc_20 (44 bytes)
+extern "C" void __fastcall fn_0052F450(void* self, int edx_unused, float* out) {
+    float t0 = *(float*)((char*)self + 0x58);
+    float t1 = *(float*)((char*)self + 0x54);
+    float t2 = *(float*)((char*)self + 0x5c);
+    out[0] = t2;
+    out[1] = t1;
+    out[2] = t0;
+}
