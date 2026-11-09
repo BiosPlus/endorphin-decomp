@@ -603364,7 +603364,9 @@
     "relocations": [
       "0x00871D0C"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:15:55Z"
   },
   {
     "va": "0x00871D20",
