@@ -1715,3 +1715,28 @@ extern "C" __declspec(naked) void __fastcall fn_004304C0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00430520] sub_00430520 (41 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_00528530();
+extern "C" __declspec(naked) void __stdcall fn_00430520(void* p) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esi]
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00528530
+        mov edx, dword ptr [edi + 0x4]
+        xor ecx, ecx
+        cmp eax, 0x3
+        sete cl
+        push ecx
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
