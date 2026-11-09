@@ -41,3 +41,12 @@ extern "C" float __fastcall fn_004F4DB0(void* self) {
     tmp = (float)((double)((float (__fastcall*)(void*))ext_004F4D90)(self) * mem_0094CE70);
     return tmp;
 }
+
+// [0x004F4F00] sub_004F4F00 (20 bytes)
+extern "C" void ext_004F4ED0();
+extern "C" double mem_0094CE70;
+extern "C" float __fastcall fn_004F4F00(void* self) {
+    volatile float tmp;
+    tmp = (float)((double)((float (__fastcall*)(void*))ext_004F4ED0)(self) * mem_0094CE70);
+    return tmp;
+}
