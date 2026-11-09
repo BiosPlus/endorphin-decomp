@@ -135,3 +135,14 @@ extern "C" void __fastcall fn_0054C6E0(void* self, int edx_unused, void* a1) {
     ((void (__thiscall*)(void*, void*))ext_0041A920)((char*)self + 0x14, (void*)&a1);
     ((void**)a1)[4] = self;
 }
+
+// [0x005481A0] sub_005481A0 (31 bytes)
+extern "C" void ext_005B11E0();
+extern "C" double __fastcall fn_005481A0(void* self) {
+    typedef double (__thiscall *Callee_005B11E0)(void* self, int a);
+    void* inner = *(void**)((char*)self + 0xa0);
+    if (inner) {
+        return ((Callee_005B11E0)ext_005B11E0)((char*)inner + 0x210, 4);
+    }
+    return *(double*)((char*)self + 0xc8);
+}
