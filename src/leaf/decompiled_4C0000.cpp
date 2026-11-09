@@ -89,3 +89,15 @@ extern "C" void* __cdecl fn_004C1BF0() {
     }
     return &mem_00AE304C;
 }
+
+// [0x004C5FE0] sub_004C5FE0 (35 bytes)
+extern "C" int mem_00AE370C;
+extern "C" int mem_00AE3708;
+
+extern "C" void* __cdecl fn_004C5FE0() {
+    if ((mem_00AE370C & 1) == 0) {
+        mem_00AE370C |= 1;
+        mem_00AE3708 = 0x9453e4;
+    }
+    return &mem_00AE3708;
+}
