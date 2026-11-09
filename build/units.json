@@ -72251,7 +72251,9 @@
       "0x00476E6A",
       "0x00476E70"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:16:20Z"
   },
   {
     "va": "0x00476E80",

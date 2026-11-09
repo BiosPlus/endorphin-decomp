@@ -41,3 +41,13 @@ extern "C" __declspec(naked) void __fastcall fn_004758C0(void* self) {
         ret 0x4
     }
 }
+
+// [0x00476E60] sub_00476E60 (25 bytes)
+extern "C" void __fastcall ext_00504A70(void* self);
+extern "C" void __cdecl ext_006A5C5C(void* arg);
+extern "C" void __fastcall fn_00476E60(void** self) {
+    void* p = *self;
+    if (!p) return;
+    ext_00504A70(p);
+    ext_006A5C5C(p);
+}
