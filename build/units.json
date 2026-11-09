@@ -45398,7 +45398,9 @@
       "0x0044CEA3",
       "0x0044CEB7"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:46:55Z"
   },
   {
     "va": "0x0044CEC0",

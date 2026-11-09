@@ -1072,3 +1072,24 @@ extern "C" __declspec(naked) void __stdcall fn_00441A90(void* out, void* in) {
         ret 0x8
     }
 }
+
+// [0x0044CE90] sub_0044CE90 (45 bytes)
+extern "C" void ext_006A673C();
+extern "C" __declspec(naked) void __fastcall fn_0044CE90(void* self) {
+    __asm {
+        push esi
+        push 0x20
+        mov esi, ecx
+        push 0
+        push 0x20201
+        lea ecx, [esi + 0xac]
+        call ext_006A673C
+        push 0x20
+        push 0
+        push 0x20201
+        lea ecx, [esi + 0x9c0]
+        call ext_006A673C
+        pop esi
+        ret
+    }
+}
