@@ -865,3 +865,17 @@ extern "C" void __cdecl fn_0044C330(unsigned int* dst, unsigned int count, const
         } while (count > 0);
     }
 }
+
+// [0x0044BCF0] sub_0044BCF0 (38 bytes)
+extern "C" int mem_00925704;
+extern "C" int mem_0092571C;
+
+extern "C" void __fastcall fn_0044BCF0(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    if (p[0x74] != 0) {
+        ((int (__stdcall*)(void*))mem_00925704)(*(void**)(p + 0x70));
+        return;
+    }
+    void* cursor = ((void* (__stdcall*)(void*, const char*))mem_0092571C)(0, (const char*)0x7f00);
+    ((int (__stdcall*)(void*))mem_00925704)(cursor);
+}

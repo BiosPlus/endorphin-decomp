@@ -44037,7 +44037,9 @@
       "0x0044BD0A",
       "0x0044BD11"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:56:19Z"
   },
   {
     "va": "0x0044BD20",
