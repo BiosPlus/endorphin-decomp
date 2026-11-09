@@ -277,3 +277,14 @@ extern "C" float __cdecl fn_007C5980(void* a0) {
     float r = (float)acos((double)v);
     return r + r;
 }
+
+// [0x007C8700] sub_007C8700 (34 bytes)
+extern "C" void ext_007C7130(void* a0);
+extern "C" void __cdecl fn_007C8700(void* a0) {
+    unsigned char* self = (unsigned char*)a0;
+    void* p = *(void**)(self + 8);
+    while (p != 0) {
+        ext_007C7130(p);
+        p = *(void**)(self + 8);
+    }
+}
