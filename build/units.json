@@ -434288,7 +434288,9 @@
       "0x006A0551",
       "0x006A0556"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:30:39Z"
   },
   {
     "va": "0x006A0560",
