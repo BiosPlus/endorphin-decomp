@@ -163,3 +163,24 @@ L_005481D8:
         ret
     }
 }
+
+// [0x005498E0] sub_005498E0 (35 bytes)
+extern "C" void ext_0063E006();
+extern "C" void ext_00552850();
+
+extern "C" __declspec(naked) void __fastcall fn_005498E0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x18]
+        push eax
+        mov dword ptr [esi], 0x956ce4
+        call ext_0063E006
+        mov ecx, dword ptr [esi + 0x1c]
+        push ecx
+        call ext_0063E006
+        mov ecx, esi
+        pop esi
+        jmp ext_00552850
+    }
+}
