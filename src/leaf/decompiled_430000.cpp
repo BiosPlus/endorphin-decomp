@@ -981,3 +981,15 @@ extern "C" __declspec(naked) void __fastcall fn_00430DA0(void* self) {
         ret
     }
 }
+
+// [0x00430DC0] sub_00430DC0 (31 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_00469C70();
+extern "C" void __stdcall ext_006A5E60(int a, int b, int c);
+extern "C" void __fastcall fn_00430DC0(void* self) {
+    void* r = ((void* (__fastcall*)(void*))ext_00465B30)(self);
+    unsigned char ok = ((unsigned char (__fastcall*)(void*))ext_00469C70)(r);
+    if (!ok) {
+        ext_006A5E60(0x92f8b8, 0x30, 0);
+    }
+}
