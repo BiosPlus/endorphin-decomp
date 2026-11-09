@@ -257,3 +257,12 @@ extern "C" void __cdecl ext_007C5C00(int a, int b);
 extern "C" void __fastcall fn_0064DDE0(void* self, int edx_unused, int a1) {
     ext_007C5C00(*(int*)((char*)self + 0x64), a1);
 }
+
+// [0x00641F80] sub_00641F80 (22 bytes)
+extern "C" void __cdecl ext_00641E90(int a1);
+extern "C" void __cdecl ext_00641F10(int a1);
+
+extern "C" void __cdecl fn_00641F80(int a1) {
+    ext_00641F10(a1);
+    ext_00641E90(a1);
+}
