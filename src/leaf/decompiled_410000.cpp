@@ -394,3 +394,30 @@ L_00414898:
         ret 0x4
     }
 }
+
+// [0x0041A160] sub_0041A160 (38 bytes)
+// __cdecl(first, last, dest): n = last - first; dest -= n; if (n > 0) memmove_s(dest, n, first, n); return dest.
+// Naked: the body calls the MSVCR80!memmove_s IAT slot directly, and the original stack/register layout is kept.
+extern "C" int mem_009251EC;
+extern "C" __declspec(naked) void* __cdecl fn_0041A160(void* a1, void* a2, void* a3) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov ecx, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        sub eax, ecx
+        sub esi, eax
+        test eax, eax
+        jle done
+        push eax
+        push ecx
+        push eax
+        push esi
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+    done:
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
