@@ -1663,3 +1663,29 @@ extern "C" void __fastcall fn_00430BA0(void* self, int edx_unused, void* p) {
     unsigned char r = ((BoolFn)vt_obj[0x118 / 4])(obj);
     ((ArgFn)vt_p[0])(p, (unsigned int)r);
 }
+
+// [0x00430490] sub_00430490 (41 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_00528530();
+
+extern "C" __declspec(naked) void __fastcall fn_00430490(void* ecx_unused, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [esi]
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00528530
+        mov edx, dword ptr [edi + 4]
+        xor ecx, ecx
+        cmp eax, 4
+        sete cl
+        push ecx
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        ret 4
+    }
+}
