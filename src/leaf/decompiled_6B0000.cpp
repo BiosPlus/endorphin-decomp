@@ -414,3 +414,14 @@ extern "C" __declspec(naked) void __fastcall fn_006B4FA0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006B4D60] sub_006B4D60 (33 bytes)
+extern "C" void ext_006A5EDE();
+extern "C" int mem_0092571C;
+extern "C" int mem_00925704;
+extern "C" int __stdcall fn_006B4D60(int a1, int a2, int a3) {
+    ext_006A5EDE();
+    void* cursor = ((void* (__stdcall*)(void*, const char*))mem_0092571C)(0, (const char*)0x7f00);
+    ((int (__stdcall*)(void*))mem_00925704)(cursor);
+    return 1;
+}

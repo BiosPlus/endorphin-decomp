@@ -454844,7 +454844,9 @@
       "0x006B4D6E",
       "0x006B4D75"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:06:37Z"
   },
   {
     "va": "0x006B4D90",
