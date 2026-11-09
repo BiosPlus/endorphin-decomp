@@ -36,3 +36,16 @@ extern "C" __declspec(naked) void __fastcall fn_005F5BA0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005F53E0] sub_005F53E0 (44 bytes)
+extern "C" void __fastcall fn_005F53E0(void* self, int edx_unused, const float* src) {
+    (void)edx_unused;
+    char* p = (char*)self;
+    *(float*)(p + 0x170) = src[0];
+    *(float*)(p + 0x174) = src[1];
+    *(float*)(p + 0x178) = src[2];
+    char* sub = *(char**)(p + 0x10);
+    if (sub) {
+        sub[0x4] = 1;
+    }
+}
