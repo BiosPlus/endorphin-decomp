@@ -24,7 +24,7 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
    ./.local/bin/work check 0xXXXXXXXX --model <model>
    ```
    - Always pass your model identifier via `--model <name>` (e.g., `claude-haiku-5.5`, `gpt-oss-120b`, `gemini-3.8-flash`, `claude-sonnet-5.5`, `claude-opus-5.5`, `gemini-4-argon`) or `DECOMP_MODEL`.
-   - `EXACT MATCH (100%)` acquires an atomic lock, marks `"status": "matched"`, `"matched_by"`, and `"matched_at"` in `build/units.json`, updates `README.md`, and commits `Match 0xXXXXXXXX (<symbol>) [model: <matched_by>]`.
+   - `EXACT MATCH (100%)` acquires an atomic lock, marks `"status": "matched"`, `"matched_by"`, and `"matched_at"` in `build/units.json`, and commits `Match 0xXXXXXXXX (<symbol>) [model: <matched_by>]`.
 4. **If stuck after 10 tries:**
    - In `tools/grind.sh` parallel wave mode, simply stop after 10 tries — the orchestrator will clean the attempt and escalate `0xXXXXXXXX` along the linear model chain (`claude-haiku-5.5 -> gpt-oss-120b -> gemini-3.8-flash -> claude-sonnet-5.5 -> claude-opus-5.5 -> gemini-4-argon`), and only call `work skip` if all 6 fail.
    - If running standalone/manually, skip cleanly (automatically strips the stub from `src/`):
@@ -36,6 +36,7 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
 - **Scoped Permissions & Security Guard Active:** `.claude/settings.json`, `tools/security_guard.sh`, and `agy --sandbox --settings` enforce repository boundaries so `--dangerously-skip-permissions` is never required.
 - **ALWAYS** let `work check` auto-commit each matched function immediately. Never commit unverified `// TODO: implement` stubs (blocked by `tools/pre-commit` and `work clean`).
 - **NEVER** edit `build/units.json` or `build/classes.json` by hand.
+- **NEVER** edit, stage, or commit `README.md` yourself. Only the build workflow (`work check` → `tools/status -readme`) regenerates it; if it shows as modified, leave it alone.
 - **NEVER** touch, generate, or commit HTML files (`docs/`).
 - **NEVER** commit `.local/`, `.exe`, `.dll`, `.obj`, `.lib`, `.pdb`, or `.idb` files.
 - **C++03 only** (no `auto`, `nullptr`, or variadic templates).

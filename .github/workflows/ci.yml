@@ -53,7 +53,7 @@ jobs:
           path: |
             .local/msvc8
             .local/bin
-          key: msvc8-toolchain-v1
+          key: msvc8-toolchain-v2
 
       - name: Fetch MSVC 2005 toolchain from private vault (with Archive.org fallback)
         if: steps.cache-msvc8.outputs.cache-hit != 'true'
