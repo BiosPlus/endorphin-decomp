@@ -658,3 +658,17 @@ extern "C" void* __fastcall fn_00469040(void* self) {
     void** vtbl = *(void***)obj;
     return ((FnVirt)vtbl[0])(obj);
 }
+
+// [0x00469020] sub_00469020 (29 bytes)
+extern "C" void ext_004AFEB0();
+
+extern "C" void __fastcall fn_00469020(void* self) {
+    char* s = (char*)self;
+    if (s[0x10] == 0) return;
+    void* p = *(void**)(s + 0x14);
+    if (p == 0) return;
+    void* arg = *(void**)(s + 0x60);
+    typedef void (__thiscall *FnC)(void* self_, void* a1);
+    void* obj = (void*)(*(unsigned int*)((char*)p + 0x34) + 8);
+    ((FnC)ext_004AFEB0)(obj, arg);
+}
