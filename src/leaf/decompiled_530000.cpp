@@ -523,3 +523,17 @@ extern "C" void* __fastcall fn_00539310(void* self, int edx_unused, int a1, int 
     *(int*)(p + 0x18) = a2;
     return self;
 }
+
+extern "C" int mem_00AF140C;
+extern "C" int mem_00AF1410;
+extern "C" int mem_00AF1414;
+extern "C" int mem_00AF1418;
+
+// [0x005305E0] sub_005305E0 (42 bytes)
+extern "C" void __stdcall fn_005305E0(void* src) {
+    const float* p = (const float*)src;
+    *(float*)&mem_00AF140C = p[0];
+    *(float*)&mem_00AF1410 = p[1];
+    *(float*)&mem_00AF1414 = p[2];
+    *(float*)&mem_00AF1418 = p[3];
+}
