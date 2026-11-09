@@ -88,3 +88,20 @@ extern "C" void __fastcall fn_0056CE10(void* self) {
     ext_00569D90(p);
     ext_006A5C5C(p);
 }
+
+// [0x005694F0] sub_005694F0 (27 bytes)
+extern "C" void __cdecl ext_005693E0(int a1, int a2, void* self, int a4);
+extern "C" __declspec(naked) void __fastcall fn_005694F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov edx, dword ptr [esp + 4]
+        push eax
+        push ecx
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        push edx
+        call ext_005693E0
+        add esp, 0x10
+        ret 8
+    }
+}
