@@ -110,3 +110,17 @@ extern "C" int ext_00671100(int);
 extern "C" void __fastcall fn_00672000(void* self) {
     *(int*)((char*)self + 0x4) = ext_00671100(10);
 }
+
+// [0x006721B0] sub_006721B0 (18 bytes)
+extern "C" void ext_00672000();
+extern "C" __declspec(naked) void __fastcall fn_006721B0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00672000
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [esi], eax
+        pop esi
+        ret 4
+    }
+}
