@@ -69,3 +69,22 @@ extern "C" __declspec(naked) void __fastcall fn_00480750(void* self) {
         ret
     }
 }
+
+// [0x0048A9F0] sub_0048A9F0 (26 bytes)
+extern "C" void ext_0048A1D0();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_0048A9F0(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x234]
+        test ecx, ecx
+        je done
+        mov edx, dword ptr [mem_00B40640]
+        push edx
+        push eax
+        call ext_0048A1D0
+    done:
+        ret
+    }
+}
