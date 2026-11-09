@@ -186,3 +186,20 @@ extern "C" __declspec(naked) void __fastcall fn_0040E780(void* self) {
         ret
     }
 }
+
+// [0x0040E7A0] sub_0040E7A0 (24 bytes)
+extern "C" void ext_0040C510();
+extern "C" void ext_0040E420();
+extern "C" __declspec(naked) void __fastcall fn_0040E7A0(void* self) {
+    __asm {
+        push esi
+        push 0x00ac8814
+        __asm _emit 0x8B __asm _emit 0xF1 // mov esi, ecx
+        call ext_0040C510
+        push 0x1
+        __asm _emit 0x8B __asm _emit 0xCE // mov ecx, esi
+        call ext_0040E420
+        pop esi
+        ret
+    }
+}
