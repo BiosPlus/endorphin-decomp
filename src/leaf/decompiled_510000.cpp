@@ -167,3 +167,23 @@ extern "C" void __fastcall fn_0051E530(void* self, int edx_unused, char* first, 
         } while (p != last);
     }
 }
+
+// [0x00519C80] sub_00519C80 (42 bytes)
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void* __fastcall fn_00519C80(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 0x928b5d
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esi], 0x95219c
+        call dword ptr [mem_00924FE4]
+        xor eax, eax
+        mov dword ptr [esi + 0x24], eax
+        mov dword ptr [esi + 0x28], eax
+        mov dword ptr [esi + 0x20], 0x1
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
