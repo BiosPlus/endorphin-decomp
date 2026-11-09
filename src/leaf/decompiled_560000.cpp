@@ -135,3 +135,24 @@ extern "C" void __fastcall fn_00563430(void* ecx_unused, void* edx_unused, void*
     if (vis == 0) return;
     ((void (__thiscall*)(void*, unsigned short))ext_007C562E)(vis, (unsigned short)visibility);
 }
+
+// [0x005631F0] sub_005631F0 (35 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_005631F0(void* ecx_unused, int edx_unused, void* a1) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        xor al, al
+        test ecx, ecx
+        je done
+        call ext_007C5610
+        cmp eax, 0x1b
+        je yes
+        cmp eax, 0x1c
+        je yes
+        xor al, al
+        ret 4
+    yes:
+        mov al, 1
+    done:
+        ret 4
+    }
+}
