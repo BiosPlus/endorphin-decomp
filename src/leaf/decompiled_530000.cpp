@@ -420,3 +420,15 @@ extern "C" void __fastcall fn_00536290(void* self, int edx_unused, void* first, 
         } while (esi != edi);
     }
 }
+
+// [0x00537E90] sub_00537E90 (38 bytes)
+extern "C" void ext_0063E00C();
+extern "C" void ext_0063E012();
+
+extern "C" void* __fastcall fn_00537E90(void** self) {
+    typedef void (__stdcall *QuadricArgFn)(void*, int);
+    *self = ext_0063E000();
+    ((QuadricArgFn)ext_0063E012)(*self, 0x186ac);
+    ((QuadricArgFn)ext_0063E00C)(*self, 0x186a0);
+    return self;
+}
