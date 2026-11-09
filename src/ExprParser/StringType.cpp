@@ -64,3 +64,26 @@ extern "C" __declspec(naked) void __fastcall fn_006718A0(void* self) {
         ret 8
     }
 }
+
+// [0x0066B240] ExprParser::StringType::vfunc_1 (42 bytes)
+extern "C" int mem_00924FF0;
+extern "C" int mem_009251F0;
+
+extern "C" __declspec(naked) void __fastcall fn_0066B240(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        je short empty_str
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 8]
+        add esp, 4
+        ret 4
+empty_str:
+        fldz
+        ret 4
+    }
+}
