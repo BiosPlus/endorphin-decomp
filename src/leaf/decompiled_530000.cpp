@@ -510,3 +510,16 @@ extern "C" __declspec(naked) void __fastcall fn_00538D10(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00539310] sub_00539310 (41 bytes)
+extern "C" int mem_009551E4;
+extern "C" void ext_00532B60();
+extern "C" void* __fastcall fn_00539310(void* self, int edx_unused, int a1, int a2) {
+    char* p = (char*)self;
+    ext_00532B60();
+    *(int*)(p + 0x14) = a1;
+    *(int*)p = (int)&mem_009551E4;
+    *(int*)(p + 0x1c) = 0;
+    *(int*)(p + 0x18) = a2;
+    return self;
+}
