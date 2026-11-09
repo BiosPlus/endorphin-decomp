@@ -568,3 +568,29 @@ extern "C" void __fastcall fn_006B0E80(void* self, int edx_unused, int a1, int a
     }
     ((void (__fastcall*)(void*))ext_006A5EA8)(self);
 }
+
+// [0x006B9640] sub_006B9640 (46 bytes)
+extern "C" int mem_00925694;
+extern "C" int mem_00925688;
+
+extern "C" __declspec(naked) void __fastcall fn_006B9640(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esi + 0x20]
+        push eax
+        push ecx
+        push 0x19a
+        push edx
+        call dword ptr [mem_00925694]
+        mov eax, dword ptr [esi + 0x20]
+        push 0x1
+        push 0x0
+        push eax
+        call dword ptr [mem_00925688]
+        pop esi
+        ret 0x8
+    }
+}
