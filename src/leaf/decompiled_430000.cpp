@@ -1428,3 +1428,26 @@ extern "C" void __fastcall fn_00430A00(void* self, int edx_unused, void* a1) {
     unsigned char r = ((F8)&ext_004694E0)(o);
     ((VF)vt[1])(a1, (int)r);
 }
+
+// [0x004345B0] sub_004345B0 (38 bytes)
+extern "C" void ext_006658A0();
+extern "C" __declspec(naked) void __fastcall fn_004345B0(void* self) {
+    __asm {
+        push esi
+        push edi
+        call ext_00468180
+        mov eax, dword ptr [eax + 0x38]
+        mov esi, dword ptr [esp + 0xc]
+        mov edi, dword ptr [esi]
+        mov ecx, eax
+        call ext_006658A0
+        mov edx, dword ptr [edi]
+        movzx eax, al
+        push eax
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        ret 4
+    }
+}
