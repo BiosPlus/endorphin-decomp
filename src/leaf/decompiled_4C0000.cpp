@@ -119,3 +119,26 @@ L_004C1ADD:
         ret 0x4
     }
 }
+
+// [0x004C4D80] sub_004C4D80 (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004C4D80(void* self, int edx_unused, float* out, float s) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fldz
+        fst dword ptr [eax + 0x8]
+        fst dword ptr [eax + 0x4]
+        fstp dword ptr [eax]
+        fld dword ptr [ecx]
+        fld dword ptr [esp + 0x8]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 0x4]
+        fmul st, st(1)
+        fstp dword ptr [eax + 0x4]
+        fmul dword ptr [ecx + 0x8]
+        fstp dword ptr [eax + 0x8]
+        ret 0x8
+    }
+}
