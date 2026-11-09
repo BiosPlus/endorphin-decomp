@@ -12,3 +12,14 @@ extern "C" __declspec(naked) void __fastcall fn_0048E070(void* self) {
         ret
     }
 }
+
+// [0x0048E080] Commands::SetPlaybackStartFrameCommand::vfunc_2 (13 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0048E080(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x18]
+        mov ecx, dword ptr [ecx + 0x10]
+        push eax
+        call ext_00473670
+        ret
+    }
+}
