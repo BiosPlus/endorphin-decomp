@@ -374947,7 +374947,9 @@
       "0x0064820A",
       "0x00648210"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:16:45Z"
   },
   {
     "va": "0x00648220",
