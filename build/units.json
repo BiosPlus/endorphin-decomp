@@ -37317,7 +37317,9 @@
       "0x00442969",
       "0x00442973"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:54:43Z"
   },
   {
     "va": "0x00442980",
