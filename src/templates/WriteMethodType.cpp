@@ -100,3 +100,25 @@ extern "C" __declspec(naked) void __stdcall fn_00604930(void** self, void** a1) 
         ret 8
     }
 }
+
+// [0x00604BA0] ExprParser::WriteMethodType<EffectorBase, NM::Vector4 const &, &[thunk]: __thiscall EffectorBase::`vcall'{76, {flat}}>::vfunc_41 (34 bytes)
+extern "C" void ext_00603680();
+
+extern "C" __declspec(naked) void __stdcall fn_00604BA0(void** self, void** a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x18]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_00603680
+        pop esi
+        ret 8
+    }
+}
