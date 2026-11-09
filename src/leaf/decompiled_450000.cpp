@@ -424,3 +424,24 @@ skip_call:
         ret 0xc
     }
 }
+
+// [0x00453B90] sub_00453B90 (39 bytes)
+extern "C" void ext_00453680();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_00453B90(void* self) {
+    __asm {
+        push esi
+        push 0
+        push 0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xcc]
+        push 0x147
+        push eax
+        call dword ptr [mem_00925694]
+        mov dword ptr [esi + 0xa4], eax
+        mov ecx, esi
+        pop esi
+        jmp ext_00453680
+    }
+}
