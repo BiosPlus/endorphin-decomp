@@ -76952,7 +76952,9 @@
     "relocations": [
       "0x004816F5"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "gemini-4-argon",
+    "matched_at": "2026-11-09"
   },
   {
     "va": "0x00481700",
@@ -163995,7 +163997,9 @@
       "0x00504931",
       "0x00504936"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09"
   },
   {
     "va": "0x00504940",
