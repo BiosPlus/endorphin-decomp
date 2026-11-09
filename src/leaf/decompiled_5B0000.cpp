@@ -124,3 +124,23 @@ done:
         ret
     }
 }
+
+// [0x005B6BF0] sub_005B6BF0 (33 bytes)
+extern "C" void ext_005CE9F0();
+
+extern "C" __declspec(naked) void* __fastcall fn_005B6BF0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x158]
+        test ecx, ecx
+        lea eax, [esi + 0x1dc]
+        je done_5B6BF0
+        push eax
+        call ext_005CE9F0
+        lea eax, [esi + 0x1dc]
+done_5B6BF0:
+        pop esi
+        ret
+    }
+}
