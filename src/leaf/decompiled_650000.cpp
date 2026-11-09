@@ -134,3 +134,20 @@ extern "C" void __fastcall fn_0065B100(void* self) {
     int value = *(int*)(obj + 0x10);
     ext_007C8A70(value, (int)&mem_00493D90);
 }
+
+// [0x0065D0F0] sub_0065D0F0 (23 bytes)
+// Pushes its first stack argument to sub_0065D0C0 and its second to sub_0065D0E0 (both stdcall, callee cleans up), then returns 8.
+extern "C" void __stdcall ext_0065D0C0(int value);
+extern "C" void __stdcall ext_0065D0E0(int value);
+
+extern "C" __declspec(naked) void __stdcall fn_0065D0F0(int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call ext_0065D0C0
+        mov edx, dword ptr [esp + 0x8]
+        push edx
+        call ext_0065D0E0
+        ret 0x8
+    }
+}

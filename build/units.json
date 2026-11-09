@@ -390472,7 +390472,9 @@
       "0x0065D0F6",
       "0x0065D100"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:48:43Z"
   },
   {
     "va": "0x0065D110",
