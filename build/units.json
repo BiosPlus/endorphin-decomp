@@ -121242,7 +121242,9 @@
     "relocations": [
       "0x004C4E8B"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:15:37Z"
   },
   {
     "va": "0x004C4EA0",
