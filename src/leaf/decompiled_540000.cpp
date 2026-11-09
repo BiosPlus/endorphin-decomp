@@ -146,3 +146,20 @@ extern "C" double __fastcall fn_005481A0(void* self) {
     }
     return *(double*)((char*)self + 0xc8);
 }
+
+// [0x005481C0] sub_005481C0 (31 bytes)
+extern "C" void ext_005B11E0();
+extern "C" __declspec(naked) double __fastcall fn_005481C0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xa0]
+        test eax, eax
+        je L_005481D8
+        push 0x3
+        lea ecx, [eax + 0x210]
+        call ext_005B11E0
+        ret
+L_005481D8:
+        fld qword ptr [ecx + 0xd0]
+        ret
+    }
+}
