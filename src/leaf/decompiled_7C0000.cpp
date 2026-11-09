@@ -19,3 +19,16 @@ extern "C" __declspec(naked) int __cdecl fn_007CC3D0(int a0, float* a1, float* a
         ret
     }
 }
+
+// [0x007C71C0] sub_007C71C0 (12 bytes)
+extern "C" void __cdecl ext_007C7150(int value);
+
+extern "C" __declspec(naked) void __cdecl fn_007C71C0(int a0) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call ext_007C7150
+        pop ecx
+        ret
+    }
+}
