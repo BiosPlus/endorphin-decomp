@@ -137,3 +137,14 @@ extern "C" void* __fastcall fn_004F2DE0(void* self, int edx_unused, void* a1, vo
     *(void**)self = (void*)0x94c99c;
     return self;
 }
+
+// [0x004FFD60] sub_004FFD60 (35 bytes)
+extern "C" int mem_00AEB2D0;
+extern "C" int mem_00AEB2CC;
+extern "C" void* __cdecl fn_004FFD60() {
+    if (!(mem_00AEB2D0 & 1)) {
+        mem_00AEB2D0 |= 1;
+        mem_00AEB2CC = 0x0094ECA4;
+    }
+    return (void*)&mem_00AEB2CC;
+}
