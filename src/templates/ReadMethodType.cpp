@@ -309,3 +309,18 @@ extern "C" void __declspec(naked) __stdcall fn_0061B960(void* self) {
         ret 4
     }
 }
+
+// [0x0061BE80] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void __declspec(naked) __stdcall fn_0061BE80(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push 0A95BECh
+        push 0A2E2F8h
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
