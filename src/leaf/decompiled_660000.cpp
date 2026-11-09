@@ -244,3 +244,18 @@ extern "C" __declspec(naked) void* __fastcall fn_00666320(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x006658D0] sub_006658D0 (26 bytes)
+extern "C" void ext_006A5C62();
+
+extern "C" void __fastcall fn_006658D0(void* self) {
+    typedef void* (__cdecl *AllocFn)(unsigned int);
+    void* eax = ((AllocFn)ext_006A5C62)(12);
+    if (eax) {
+        *(void**)eax = eax;
+    }
+    void** ecx = (void**)((char*)eax + 4);
+    if (ecx) {
+        *ecx = eax;
+    }
+}
