@@ -78,3 +78,25 @@ extern "C" void __stdcall fn_005C3480(void** self, void** a1) {
     int r = ((VCallFn_005C3480)((*(void***)sub)[5]))(sub, a1);
     ((CallFn_005C3480)ext_005C30F0)(obj, r);
 }
+
+// [0x00604930] ExprParser::WriteMethodType<EffectorBase, bool, &[thunk]: __thiscall EffectorBase::`vcall'{68, {flat}}>::vfunc_41 (34 bytes)
+extern "C" void ext_0062A580();
+
+extern "C" __declspec(naked) void __stdcall fn_00604930(void** self, void** a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        mov ecx, esi
+        push eax
+        call ext_0062A580
+        pop esi
+        ret 8
+    }
+}
