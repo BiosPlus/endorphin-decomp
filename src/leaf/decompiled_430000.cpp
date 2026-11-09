@@ -227,3 +227,17 @@ extern "C" __declspec(naked) void __fastcall fn_00433FF0(void* self) {
         ret
     }
 }
+
+// [0x004303A0] sub_004303A0 (15 bytes)
+extern "C" void ext_00468180();
+extern "C" void ext_0046BEC0();
+
+extern "C" __declspec(naked) void __fastcall fn_004303A0(void* self) {
+    __asm {
+        push 1
+        call ext_00468180
+        mov ecx, eax
+        call ext_0046BEC0
+        ret
+    }
+}
