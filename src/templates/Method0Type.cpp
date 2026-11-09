@@ -625,3 +625,22 @@ extern "C" __declspec(naked) void __fastcall fn_004CCCE0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004CCD80] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {public: void __thiscall NMData::MetaBodyConstraintData::fireDisable(void), 0}>::vfunc_4 (40 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004CCD80(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        push esi
+        mov dword ptr [esp + 0x4], 0
+        call ext_004CCB00
+        mov esi, dword ptr [esp + 0xc]
+        mov ecx, esi
+        call dword ptr [mem_00924FE8]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
