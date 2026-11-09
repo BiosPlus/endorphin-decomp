@@ -451954,7 +451954,9 @@
       "0x006AF8E1",
       "0x006AF900"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:20:41Z"
   },
   {
     "va": "0x006AF910",

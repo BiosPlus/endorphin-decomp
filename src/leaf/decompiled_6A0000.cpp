@@ -304,3 +304,27 @@ extern "C" int __fastcall fn_006A7C70(char* self, int edx_unused, int a1, int a2
     }
     return 0;
 }
+
+// [0x006AF8E0] sub_006AF8E0 (41 bytes)
+extern "C" void ext_006A60EE();
+
+extern "C" __declspec(naked) int __fastcall fn_006AF8E0(void* self, int edx_unused, int idx) {
+    __asm {
+        call ext_006A7C10
+        mov edx, dword ptr [esp + 4]
+        cmp edx, eax
+        jge L_zero
+        test edx, edx
+        jl L_err
+        cmp edx, dword ptr [ecx + 0x58]
+        jge L_err
+        mov eax, dword ptr [ecx + 0x54]
+        mov eax, dword ptr [eax + 4*edx]
+        ret 4
+    L_err:
+        call ext_006A60EE
+    L_zero:
+        xor eax, eax
+        ret 4
+    }
+}
