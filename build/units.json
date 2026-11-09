@@ -329718,7 +329718,9 @@
       "0x0060A0A1",
       "0x0060A0AD"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:19:00Z"
   },
   {
     "va": "0x0060A0C0",
