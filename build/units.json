@@ -61870,7 +61870,9 @@
       "0x00468674",
       "0x0046868A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:07:53Z"
   },
   {
     "va": "0x00468690",

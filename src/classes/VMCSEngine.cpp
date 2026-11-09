@@ -30,3 +30,21 @@ extern "C" void __fastcall fn_0046A000(void* self) {
         ((Callee)ext_004667A0)(obj, 1);
     }
 }
+
+// [0x00468670] VMCSEngine::vfunc_0 (30 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_00480130();
+
+extern "C" __declspec(naked) void __fastcall fn_00468670(void* self) {
+    __asm {
+        __asm _emit 0x56                                           // push esi
+        __asm _emit 0x8B __asm _emit 0xF1                          // mov esi, ecx
+        __asm call ext_00594000                                    // call sub_00594000
+        __asm _emit 0x8B __asm _emit 0x80 __asm _emit 0x6C __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [eax + 0x26c]
+        __asm _emit 0xC6 __asm _emit 0x40 __asm _emit 0x04 __asm _emit 0x01 // mov byte ptr [eax + 4], 1
+        __asm _emit 0x8B __asm _emit 0x4E __asm _emit 0x14         // mov ecx, dword ptr [esi + 0x14]
+        __asm _emit 0x8B __asm _emit 0x49 __asm _emit 0x34         // mov ecx, dword ptr [ecx + 0x34]
+        __asm _emit 0x5E                                           // pop esi
+        __asm jmp ext_00480130                                     // jmp sub_00480130
+    }
+}
