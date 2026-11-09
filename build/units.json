@@ -375267,7 +375267,9 @@
       "0x0064851A",
       "0x00648520"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:17:09Z"
   },
   {
     "va": "0x00648530",
