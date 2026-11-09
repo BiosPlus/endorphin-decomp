@@ -507,3 +507,21 @@ neg_path:
         ret
     }
 }
+
+// [0x007CA790] sub_007CA790 (35 bytes)
+extern "C" __declspec(naked) float __fastcall fn_007CA790(float* self, int edx_unused, const float* a) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x4]
+        fmul dword ptr [ecx + 0x4]
+        fld dword ptr [eax]
+        fmul dword ptr [ecx]
+        faddp st(1), st
+        fld dword ptr [eax + 0x8]
+        fmul dword ptr [ecx + 0x8]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret 0x4
+    }
+}
