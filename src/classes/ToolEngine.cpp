@@ -14,3 +14,15 @@ extern "C" void __fastcall fn_00482440(void* self) {
     typedef void (__fastcall *SlotFn)(void*);
     ((SlotFn)vtbl[2])(sub);
 }
+
+// [0x004800C0] ToolEngine::vfunc_16 (11 bytes)
+extern "C" void ext_004AFC60();
+
+extern "C" __declspec(naked) void __fastcall fn_004800C0(void* self) {
+    __asm {
+        push 0
+        add ecx, 0x8
+        call ext_004AFC60
+        ret
+    }
+}
