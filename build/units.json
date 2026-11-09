@@ -152436,7 +152436,9 @@
       "0x004F2E2A",
       "0x004F2E36"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:27:16Z"
   },
   {
     "va": "0x004F2E40",
