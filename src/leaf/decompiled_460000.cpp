@@ -880,3 +880,27 @@ extern "C" void __fastcall fn_0046FA50(void* self, int edx_unused, float v) {
     }
     ext_0046F920();
 }
+
+extern "C" void ext_00665870();
+extern "C" void ext_00665C10();
+
+// [0x004609C0] sub_004609C0 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004609C0(void* self) {
+    __asm {
+        test ecx, ecx
+        je null_self
+        lea eax, [ecx + 0x74]
+        push eax
+        call ext_00665870
+        mov ecx, eax
+        call ext_00665C10
+        ret
+    null_self:
+        xor eax, eax
+        push eax
+        call ext_00665870
+        mov ecx, eax
+        call ext_00665C10
+        ret
+    }
+}
