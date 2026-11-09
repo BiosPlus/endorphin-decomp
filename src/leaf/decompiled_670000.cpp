@@ -39,3 +39,15 @@ extern "C" void __cdecl fn_00671F20() {
     ext_00693620();
     ext_0068ED90();
 }
+
+// [0x0067A220] sub_0067A220 (16 bytes)
+extern "C" void ext_0041A920();
+extern "C" __declspec(naked) void __fastcall fn_0067A220(void* self, int edx_unused, int a1) {
+    __asm {
+        lea eax, [esp + 0x4]
+        push eax
+        add ecx, 0x44
+        call ext_0041A920
+        ret 0x4
+    }
+}
