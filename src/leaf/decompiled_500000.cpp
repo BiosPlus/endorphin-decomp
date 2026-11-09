@@ -157,3 +157,24 @@ ret_true:
         ret 0x10
     }
 }
+
+// [0x00503CA0] sub_00503CA0 (37 bytes)
+extern "C" int mem_0094F074;
+
+extern "C" __declspec(naked) void __fastcall fn_00503CA0(void* self) {
+    __asm {
+        fldz
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax], offset mem_0094F074
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x14], ecx
+        mov dword ptr [eax + 0x18], ecx
+        mov dword ptr [eax + 0x1c], ecx
+        fstp qword ptr [eax + 0x28]
+        mov byte ptr [eax + 0x20], cl
+        mov byte ptr [eax + 0x21], cl
+        ret
+    }
+}
