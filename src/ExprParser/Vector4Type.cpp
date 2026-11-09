@@ -16,3 +16,10 @@ extern "C" void __fastcall fn_0066EF70(void* self, int edx_unused, int* out) {
     reinterpret_cast<Callee>(ext_0066C030)(static_cast<char*>(self) + 4, *out);
     *out = 0;
 }
+
+// [0x00671A80] ExprParser::Vector4Type::vfunc_28 (28 bytes)
+extern "C" int* __fastcall fn_00671A80(void* self, int edx_unused, int* out, int* in) {
+    typedef int (__thiscall *Callee)(void*, int, int);
+    *out = reinterpret_cast<Callee>(ext_00671690)(static_cast<char*>(self) + 4, 1, *in);
+    return out;
+}
