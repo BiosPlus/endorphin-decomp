@@ -25,3 +25,15 @@ extern "C" __declspec(naked) void __fastcall fn_00495020(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00515D10] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_26 (14 bytes)
+extern "C" void ext_00515830();
+
+extern "C" __declspec(naked) void __fastcall fn_00515D10(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        call ext_00515830
+        ret 4
+    }
+}
