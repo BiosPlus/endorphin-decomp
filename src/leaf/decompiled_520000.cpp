@@ -112,3 +112,9 @@ extern "C" void __fastcall fn_00528B60(void* self) {
         *(int*)(s + 4) = 0;
     }
 }
+
+// [0x00528CD0] sub_00528CD0 (40 bytes)
+extern "C" unsigned int __cdecl fn_00528CD0(unsigned int x) {
+    return ((x & 0x000000FFu) << 24) | ((x & 0x0000FF00u) << 8) |
+           ((x & 0x00FF0000u) >> 8) | ((x & 0xFF000000u) >> 24);
+}
