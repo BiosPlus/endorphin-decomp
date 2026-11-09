@@ -246596,7 +246596,9 @@
       "0x00593696",
       "0x0059369C"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T14:26:45Z"
   },
   {
     "va": "0x005936B0",
