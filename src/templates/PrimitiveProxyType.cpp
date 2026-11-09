@@ -2,6 +2,7 @@
 
 extern "C" int mem_00924FF0;
 extern "C" int mem_009251F0;
+extern "C" int mem_0093F958;
 
 // [0x004975B0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_1 (33 bytes)
 // One stack argument (pointer to a string handle). Calls the imported
@@ -290,6 +291,28 @@ extern "C" __declspec(naked) void __fastcall fn_0049B1E0(void* self) {
         mov eax, esi
         pop esi
         pop ecx
+        ret 0x8
+    }
+}
+
+// [0x0049B260] ExprParser::PrimitiveProxyType<bool>::vfunc_7 (40 bytes)
+// Two stack arguments: a1 (object whose first field points at the bool storage)
+// and a float value. Stores (value >= K) into *storage, where K is a double constant.
+extern "C" __declspec(naked) void __stdcall fn_0049B260(void* a1, float a2) {
+    __asm {
+        fld dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0x4]
+        fcomp qword ptr [mem_0093F958]
+        mov edx, dword ptr [ecx]
+        fnstsw ax
+        test ah, 0x1
+        jne L_false
+        mov eax, 0x1
+        mov byte ptr [edx], al
+        ret 0x8
+    L_false:
+        xor eax, eax
+        mov byte ptr [edx], al
         ret 0x8
     }
 }
