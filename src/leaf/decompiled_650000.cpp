@@ -260,3 +260,14 @@ extern "C" void __fastcall fn_0065C260(void* self) {
         ext_007C97F0(r);
     }
 }
+
+// [0x0065AC90] sub_0065AC90 (28 bytes)
+// Calls sub_0065F400 on &self->[+0x4] (ecx), zeroes [self] and [self+0x8], returns self in eax.
+extern "C" void __fastcall ext_0065F400(void* self);
+
+extern "C" void* __fastcall fn_0065AC90(void* self) {
+    ext_0065F400((char*)self + 0x4);
+    *(int*)self = 0;
+    *(int*)((char*)self + 0x8) = 0;
+    return self;
+}
