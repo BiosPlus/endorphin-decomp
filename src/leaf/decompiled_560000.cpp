@@ -76,3 +76,15 @@ extern "C" void __fastcall fn_0056CDF0(void* self) {
     ext_00569D10(p);
     ext_006A5C5C(p);
 }
+
+// [0x0056CE10] sub_0056CE10 (25 bytes)
+extern "C" void __fastcall ext_00569D90(void* self);
+extern "C" void ext_006A5C5C(void* a1);
+extern "C" void __fastcall fn_0056CE10(void* self) {
+    void* p = *(void**)self;
+    if (!p) {
+        return;
+    }
+    ext_00569D90(p);
+    ext_006A5C5C(p);
+}
