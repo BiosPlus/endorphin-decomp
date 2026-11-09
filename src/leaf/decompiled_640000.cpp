@@ -554,3 +554,22 @@ extern "C" void ext_007C6310(int a, float b);
 extern "C" void __fastcall fn_006481A0(void* self, int edx_unused, float a1) {
     ext_007C6310(**(int**)((char*)self + 0xa4), a1);
 }
+
+// [0x00640A80] sub_00640A80 (28 bytes)
+extern "C" void ext_00427550();
+extern "C" int mem_0092F10C;
+extern "C" int mem_0093A808;
+
+extern "C" __declspec(naked) void __fastcall fn_00640A80(void* self) {
+    __asm {
+        cmp byte ptr [esp + 0x8], 0x0
+        mov eax, offset mem_0092F10C
+        jne short skip_alt
+        mov eax, offset mem_0093A808
+skip_alt:
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_00427550
+        ret
+    }
+}
