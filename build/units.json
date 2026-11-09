@@ -388540,7 +388540,9 @@
       "0x006588FC",
       "0x00658905"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T13:48:11Z"
   },
   {
     "va": "0x00658910",
