@@ -449,3 +449,11 @@ extern "C" __declspec(naked) void __cdecl fn_007C9310(void) {
         ret
     }
 }
+
+// [0x007C9B60] sub_007C9B60 (35 bytes)
+extern "C" void __cdecl fn_007C9B60(void* self, float a1, float a2, float a3) {
+    char* p = (char*)self;
+    *(float*)(p + 0x1c0) = a1;
+    *(float*)(p + 0x1c4) = a2;
+    *(float*)(p + 0x1c8) = a3;
+}
