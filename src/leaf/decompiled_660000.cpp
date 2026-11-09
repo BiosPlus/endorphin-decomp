@@ -357,3 +357,23 @@ extern "C" __declspec(naked) void __stdcall fn_0066BA00(void* arg) {
         ret 4
     }
 }
+
+// [0x0066BD00] sub_0066BD00 (34 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00988094;
+
+extern "C" __declspec(naked) void* __fastcall fn_0066BD00(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x4], eax
+        mov dword ptr [esi], offset mem_00988094
+        mov dword ptr [esi + 0x8], ecx
+        mov eax, esi
+        pop esi
+        ret 0x8
+    }
+}
