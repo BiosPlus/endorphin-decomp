@@ -491,3 +491,22 @@ extern "C" void __cdecl fn_00539830(float* first, float* last, float* src) {
         p += 12;
     } while (p != end);
 }
+
+// [0x00538D10] sub_00538D10 (41 bytes)
+extern "C" void ext_00538CF0();
+
+extern "C" __declspec(naked) void __fastcall fn_00538D10(void* self, int edx_unused, float a1, float a2, float a3, int a4) {
+    __asm {
+        fld dword ptr [esp + 0xc]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [esp]
+        call ext_00538CF0
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x24], eax
+        ret 0x10
+    }
+}
