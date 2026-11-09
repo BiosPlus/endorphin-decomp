@@ -47,3 +47,28 @@ extern "C" void __fastcall fn_00448170(void* self) {
     int pos = send(*(void**)((char*)self + 0x24), 0x408, 0, 0);
     send(*(void**)((char*)self + 0x24), 0x402, (unsigned int)(pos + 1), 0);
 }
+
+// [0x00448000] ProgressDialog::vfunc_63 (46 bytes)
+extern "C" void ext_006A5F44();
+
+extern "C" __declspec(naked) void __fastcall fn_00448000(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        lea eax, [esi + 0x78]
+        push eax
+        push 0x169
+        push edi
+        call ext_006A5F44
+        add esi, 0xcc
+        push esi
+        push 0x16b
+        push edi
+        call ext_006A5F44
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
