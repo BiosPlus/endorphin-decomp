@@ -22,3 +22,14 @@ extern "C" __declspec(naked) void __fastcall fn_004DDE10(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004DE440] sub_004DE440 (12 bytes)
+extern "C" void ext_004DE160();
+
+extern "C" __declspec(naked) void __fastcall fn_004DE440(void* self) {
+    __asm {
+        call ext_004DE160
+        add eax, dword ptr [ecx + 0x9d0]
+        ret
+    }
+}
