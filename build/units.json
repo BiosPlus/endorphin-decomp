@@ -152234,7 +152234,9 @@
       "0x004F27F0",
       "0x004F27F6"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:56:23Z"
   },
   {
     "va": "0x004F2800",
