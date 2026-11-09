@@ -25,3 +25,9 @@ extern "C" void* __fastcall fn_00497CA0(void* self, int edx_unused, void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA2F13C, 0);
 }
+
+// [0x0049AF40] ExprParser::ReadMethodType<NMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void* __fastcall fn_0049AF40(void* self, int edx_unused, void* a1) {
+    typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
+    return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA351A8, 0);
+}
