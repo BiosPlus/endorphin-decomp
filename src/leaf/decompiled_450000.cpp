@@ -235,3 +235,23 @@ extern "C" void __fastcall fn_00453E00(void* self) {
         reinterpret_cast<Tail>(ext_00453250)(self);
     }
 }
+
+// [0x00455F40] sub_00455F40 (27 bytes)
+extern "C" void ext_004090C0();
+extern "C" void ext_00455CB0();
+
+extern "C" __declspec(naked) int __cdecl fn_00455F40() {
+    __asm {
+        call ext_00455CB0
+        test eax, eax
+        jne fail
+        call ext_004090C0
+        test eax, eax
+        jne fail
+        mov eax, 1
+        ret
+    fail:
+        xor eax, eax
+        ret
+    }
+}
