@@ -53,3 +53,16 @@ extern "C" int __cdecl fn_007F0B90(const char* a, const char* b) {
     float fb = *(const float*)(b + 0x15c);
     return fa > fb ? 1 : 0;
 }
+
+// [0x007F56E0] sub_007F56E0 (42 bytes)
+extern "C" float __cdecl fn_007F56E0(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    int t = *(int*)self & 0xff;
+    if (t == 7) {
+        return *(float*)(p + 0x38);
+    }
+    if (t == 1 || t == 5 || t > 9) {
+        return *(float*)(p + 0x10);
+    }
+    return 0.0f;
+}
