@@ -21,3 +21,14 @@ extern "C" __declspec(naked) void __fastcall fn_0051F9C0(void* self) {
         __asm _emit 0xFF __asm _emit 0xE2 // jmp edx
     }
 }
+
+// [0x0051DDE0] StateMachine::State::vfunc_4 (37 bytes)
+extern "C" int __fastcall fn_0051DDE0(void* self, int edx_unused, unsigned char a1) {
+    if (a1 != 0) {
+        char* p = *(char**)((char*)self + 0x154);
+        if (p != 0 && p[0x64] != 0) {
+            return 0;
+        }
+    }
+    return *(int*)((char*)self + 0x150);
+}
