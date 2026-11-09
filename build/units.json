@@ -123940,7 +123940,9 @@
       "0x004C816E",
       "0x004C8177"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:05:12Z"
   },
   {
     "va": "0x004C8180",
