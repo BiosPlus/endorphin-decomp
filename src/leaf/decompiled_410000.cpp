@@ -260,3 +260,19 @@ extern "C" void __fastcall fn_004135A0(void* self, int edx_unused, int a1) {
     f((char*)self + 0x18, a1);
     ((void (__thiscall *)(void*))ext_004133F0)(self);
 }
+
+// [0x00419990] sub_00419990 (28 bytes)
+extern "C" void ext_00419960();
+extern "C" __declspec(naked) int __stdcall fn_00419990(int a1, int a2, int a3, int* a4) {
+    __asm {
+        cmp dword ptr [esp + 0x8], 0x1
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x4], eax
+        jne short L_00419990_done
+        call ext_00419960
+L_00419990_done:
+        xor eax, eax
+        ret 0x10
+    }
+}
