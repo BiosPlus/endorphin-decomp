@@ -128,3 +128,10 @@ L_one:
         ret
     }
 }
+
+// [0x0054C6E0] sub_0054C6E0 (27 bytes)
+extern "C" void ext_0041A920();
+extern "C" void __fastcall fn_0054C6E0(void* self, int edx_unused, void* a1) {
+    ((void (__thiscall*)(void*, void*))ext_0041A920)((char*)self + 0x14, (void*)&a1);
+    ((void**)a1)[4] = self;
+}
