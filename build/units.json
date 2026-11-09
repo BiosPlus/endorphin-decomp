@@ -36485,7 +36485,9 @@
       "0x004410C1",
       "0x004410C8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T10:13:59Z"
   },
   {
     "va": "0x004410E0",

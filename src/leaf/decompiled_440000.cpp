@@ -351,3 +351,18 @@ extern "C" __declspec(naked) void __fastcall fn_0044CF30(void* self) {
         ret
     }
 }
+
+// [0x004410C0] sub_004410C0 (17 bytes)
+extern "C" int ext_00441020();
+extern "C" int ext_00441040();
+
+extern "C" __declspec(naked) int __cdecl fn_004410C0() {
+    __asm {
+        call ext_00441040
+        mov edx, eax
+        call ext_00441020
+        sub edx, eax
+        mov eax, edx
+        ret
+    }
+}
