@@ -21,3 +21,14 @@ extern "C" __declspec(naked) float __cdecl fn_00602F40() {
         ret
     }
 }
+
+extern "C" void ext_00602810();
+extern "C" void ext_00620BC0();
+extern "C" void ext_0062E120();
+
+// [0x00602D50] sub_00602D50 (15 bytes)
+extern "C" void __cdecl fn_00602D50() {
+    ext_00602810();
+    ext_00620BC0();
+    ext_0062E120();
+}
