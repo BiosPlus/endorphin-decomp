@@ -100,3 +100,14 @@ extern "C" void* __cdecl fn_0050A140() {
     }
     return &mem_00AEBC9C;
 }
+
+// [0x0050A170] sub_0050A170 (35 bytes)
+extern "C" int mem_00AEBCA8;
+extern "C" int mem_00AEBCA4;
+extern "C" int* __cdecl fn_0050A170() {
+    if (!(mem_00AEBCA8 & 1)) {
+        mem_00AEBCA8 |= 1;
+        mem_00AEBCA4 = 0x9500e0;
+    }
+    return &mem_00AEBCA4;
+}
