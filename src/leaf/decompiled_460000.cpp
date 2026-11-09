@@ -337,3 +337,12 @@ extern "C" __declspec(naked) void __fastcall fn_00465330(void* self) {
         ret
     }
 }
+
+// [0x00462840] sub_00462840 (23 bytes)
+extern "C" void ext_00447550();
+extern "C" void* __fastcall fn_00462840(void* self, int edx_unused, int a1) {
+    int* p = static_cast<int*>(self);
+    p[0] = reinterpret_cast<int (*)()>(ext_00447550)();
+    p[1] = a1;
+    return self;
+}
