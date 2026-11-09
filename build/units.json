@@ -64663,7 +64663,9 @@
       "0x0046C53C",
       "0x0046C544"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:07:59Z"
   },
   {
     "va": "0x0046C550",
