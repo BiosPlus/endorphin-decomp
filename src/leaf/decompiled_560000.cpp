@@ -231,3 +231,10 @@ extern "C" int __cdecl fn_005631C0(double a1, double a2) {
     }
     return 0;
 }
+
+// [0x0056B670] sub_0056B670 (31 bytes)
+extern "C" int __cdecl ext_005631C0(double, double);
+
+extern "C" int __cdecl fn_0056B670(double a1, double a2, double a3) {
+    return ext_005631C0(a1 - a2, a3);
+}
