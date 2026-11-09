@@ -165,3 +165,27 @@ L_ret1_004809B0:
         ret
     }
 }
+
+// [0x00480280] sub_00480280 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00480280(void* self) {
+    __asm {
+        mov edx, dword ptr [ecx + 0x4]
+        test edx, edx
+        jne short L_nonzero
+        xor eax, eax
+        xor ecx, ecx
+        test eax, eax
+        sete cl
+        mov al, cl
+        ret
+    L_nonzero:
+        mov eax, dword ptr [ecx + 0x8]
+        sub eax, edx
+        sar eax, 0x2
+        xor ecx, ecx
+        test eax, eax
+        sete cl
+        mov al, cl
+        ret
+    }
+}
