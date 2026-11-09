@@ -74,3 +74,15 @@ extern "C" void* __fastcall fn_005761B0(void* self) {
     p[3] = 0;
     return self;
 }
+
+// [0x005739E0] sub_005739E0 (43 bytes)
+extern "C" void __stdcall fn_005739E0(void* begin, void* end) {
+    char* esi = (char*)begin;
+    char* edi = (char*)end;
+    if (esi != edi) {
+        do {
+            ext_006A6D5C(esi, 0x10, 3, 0x436f30);
+            esi += 0x30;
+        } while (esi != edi);
+    }
+}
