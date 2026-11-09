@@ -2,6 +2,7 @@
 
 extern "C" void ext_004871D0();
 extern "C" void ext_0049ED40();
+extern "C" void ext_00505F00();
 
 // [0x00496FE0] NMData::Transition::vfunc_1_off_8 (30 bytes)
 extern "C" __declspec(naked) void __fastcall fn_00496FE0(void* self) {
@@ -25,5 +26,16 @@ extern "C" __declspec(naked) void __fastcall fn_00497090(void* self) {
         mov ecx, dword ptr [ecx + 0xb8]
         call ext_0049ED40
         ret
+    }
+}
+
+// [0x00499CE0] NMData::Transition::vfunc_30 (19 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00499CE0(void* self) {
+    __asm {
+        add ecx, 0x84
+        push ecx
+        mov ecx, dword ptr [esp + 0x8]
+        call ext_00505F00
+        ret 0x4
     }
 }
