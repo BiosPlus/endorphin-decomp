@@ -22,3 +22,14 @@ extern "C" __declspec(naked) void __fastcall fn_00611120(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00611140] sub_00611140 (20 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00611140(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_006110A0
+        fld dword ptr [ecx + eax*4 + 0ACh]
+        ret 4
+    }
+}
