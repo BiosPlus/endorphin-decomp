@@ -70,3 +70,13 @@ done:
         ret
     }
 }
+
+// [0x004FDC60] sub_004FDC60 (25 bytes)
+extern "C" void ext_00661980();
+extern "C" void ext_004FD870();
+extern "C" void* __fastcall fn_004FDC60(void* self) {
+    ((void (__fastcall*)(void*))ext_00661980)(self);
+    *(void**)self = (void*)0x0094EBE4;
+    ((void (__fastcall*)(void*))ext_004FD870)(self);
+    return self;
+}
