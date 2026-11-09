@@ -67437,7 +67437,9 @@
     "relocations": [
       "0x0046F8D1"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:33:17Z"
   },
   {
     "va": "0x0046F8F0",
