@@ -409447,7 +409447,9 @@
       "0x00679C4C",
       "0x00679C53"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T11:05:06Z"
   },
   {
     "va": "0x00679C60",
