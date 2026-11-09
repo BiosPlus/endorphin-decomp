@@ -320,3 +320,14 @@ extern "C" __declspec(naked) void* __fastcall fn_0067E110(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00671840] sub_00671840 (28 bytes)
+extern "C" void ext_006714E0();
+
+typedef void* (__thiscall *Callee_006714E0)(void* self, int a, int b);
+
+extern "C" void __fastcall fn_00671840(void* self, int edx_unused, void** a1) {
+    if (*a1 == 0) {
+        *a1 = ((Callee_006714E0)ext_006714E0)((char*)self + 4, 1, 0);
+    }
+}
