@@ -44,3 +44,15 @@ extern "C" bool __fastcall fn_0049B4A0(void* self, int edx_unused, void* a1, voi
     int* p = *(int**)a1;
     return *p == r;
 }
+
+extern "C" void ext_00671100();
+
+// [0x004A25D0] ExprParser::PrimitiveProxyType<bool>::vfunc_13 (13 bytes)
+extern "C" __declspec(naked) void __stdcall fn_004A25D0(void* a1) {
+    __asm {
+        push 0x2
+        call ext_00671100
+        add esp, 0x4
+        ret 0x4
+    }
+}
