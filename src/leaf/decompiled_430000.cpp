@@ -1181,3 +1181,15 @@ extern "C" void __fastcall fn_004349D0(void* self) {
     }
     *(void**)((unsigned char*)self + 0x124) = 0;
 }
+
+// [0x0043CDA0] sub_0043CDA0 (35 bytes)
+extern "C" int mem_00925688;
+extern "C" void __fastcall fn_0043CDA0(void* self, int edx_unused, unsigned char flag) {
+    unsigned char* p = (unsigned char*)self;
+    if (p[0x164] != flag) {
+        p[0x164] = flag;
+        typedef int (__stdcall *pfn_InvalidateRect)(void*, const void*, int);
+        pfn_InvalidateRect f = (pfn_InvalidateRect)mem_00925688;
+        f(*(void**)(p + 0x20), 0, 1);
+    }
+}
