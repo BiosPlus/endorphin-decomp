@@ -184360,7 +184360,9 @@
       "0x005221BC",
       "0x005221C4"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-09T12:50:16Z"
   },
   {
     "va": "0x005221D0",

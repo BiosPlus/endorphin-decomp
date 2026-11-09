@@ -145,3 +145,9 @@ extern "C" void* __stdcall fn_00521420(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA434B0, 0);
 }
+
+// [0x005221B0] ExprParser::ReadMethodType<ThreeLayerNet, int, &public: int __thiscall ThreeLayerNet::getNumHidden(void) const, 0>::vfunc_16 (30 bytes)
+extern "C" void* __stdcall fn_005221B0(void* a1) {
+    typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
+    return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA40E4C, 0);
+}
