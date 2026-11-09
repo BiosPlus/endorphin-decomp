@@ -237,3 +237,10 @@ extern "C" __declspec(naked) void __stdcall fn_004CCD70(void* a1) {
         ret 0x4
     }
 }
+
+// [0x005BB300] ExprParser::Method0Type<NMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}>::vfunc_1 (16 bytes)
+extern "C" float __stdcall fn_005BB300(void* a1) {
+    void* obj = *(void**)a1;
+    ((void (__fastcall*)(void*))ext_005B72E0)(obj);
+    return 0.0f;
+}
