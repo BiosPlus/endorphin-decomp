@@ -35,3 +35,20 @@ extern "C" __declspec(naked) void* __stdcall fn_0062E3C0(void* p) {
         ret 4
     }
 }
+
+// [0x006922D0] ExprParser::FunctionType<ValuePtrArrayObject, ValuePtr const &, ValuePtr const &, {public: class ValuePtr const & __thiscall ValuePtrArrayObject::push(class ValuePtr const &), 0}>::vfunc_16 (30 bytes)
+extern "C" int mem_00A398D0;
+
+extern "C" __declspec(naked) void* __stdcall fn_006922D0(void* p) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push offset mem_00A398D0
+        push offset mem_00A2E2F8
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    }
+}
