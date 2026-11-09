@@ -395,3 +395,15 @@ extern "C" __declspec(naked) void __fastcall fn_00532DD0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_0052F920();
+
+// [0x0053BE80] sub_0053BE80 (36 bytes)
+extern "C" void __fastcall fn_0053BE80(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    void* quadric = *(void**)(p + 0xd4);
+    *(int*)p = 0x9559b4;
+    *(int*)(p + 0x14) = 0x9559ac;
+    ((void (__stdcall*)(void*))ext_0063E006)(quadric);
+    ((void (__fastcall*)(void*))ext_0052F920)(self);
+}
