@@ -487,3 +487,43 @@ extern "C" void __fastcall fn_00696DD0(void* self) {
         }
     }
 }
+
+// [0x00699360] sub_00699360 (60 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void* __fastcall fn_00699360(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        je L_ret0_00699360
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, eax
+        sar ecx, 5
+        je L_ret0_00699360
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push edi
+        mov edi, eax
+        cmp edi, dword ptr [esi + 0xc]
+        jbe L_chk_00699360
+        call ebx
+        cmp edi, dword ptr [esi + 0xc]
+L_chk_00699360:
+        jb L_ok_00699360
+        call ebx
+L_ok_00699360:
+        mov eax, edi
+        pop edi
+        pop ebx
+        pop esi
+        pop ecx
+        ret
+L_ret0_00699360:
+        mov eax, 0xb59400
+        pop esi
+        pop ecx
+        ret
+    }
+}
