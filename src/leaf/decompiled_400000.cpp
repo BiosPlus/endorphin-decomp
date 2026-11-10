@@ -737,3 +737,14 @@ done:
         ret 0x10
     }
 }
+
+// [0x00403250] sub_00403250 (51 bytes)
+extern "C" void ext_006A3448();
+extern "C" void __fastcall fn_00403250(void* self, int edx_unused, long lStart, void** p) {
+    typedef long (__stdcall *AVIStreamWrite_t)(void*, long, long, void*, long, unsigned long, long*, long*);
+    unsigned char* y = *(unsigned char**)p;
+    unsigned long cb = *(unsigned long*)(y + 0x14);
+    unsigned char* buf = y + *(unsigned long*)y + 4 * *(unsigned long*)(y + 0x20);
+    void* stream = *(void**)((unsigned char*)self + 0x500);
+    ((AVIStreamWrite_t)ext_006A3448)(stream, lStart, 1, buf, (long)cb, 0x10, 0, 0);
+}
