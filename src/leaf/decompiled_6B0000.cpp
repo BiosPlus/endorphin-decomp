@@ -1086,3 +1086,42 @@ extern "C" __declspec(naked) void __fastcall fn_006B0DE0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006B16F0] sub_006B16F0 (82 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006B16F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 2Ch
+        mov eax, dword ptr [ecx + 74h]
+        xor edx, edx
+        cmp eax, edx
+        mov byte ptr [ecx + 70h], dl
+        mov dword ptr [esp], 2Ch
+        jne short L_nonnull
+        mov dword ptr [esp + 8], edx
+        jmp short L_second
+L_nonnull:
+        push esi
+        mov esi, dword ptr [eax + 20h]
+        mov dword ptr [esp + 0Ch], esi
+        pop esi
+L_second:
+        cmp eax, edx
+        jne short L_nonnull2
+        mov dword ptr [esp + 0Ch], edx
+        jmp short L_send
+L_nonnull2:
+        mov eax, dword ptr [eax + 20h]
+        mov dword ptr [esp + 0Ch], eax
+L_send:
+        mov ecx, dword ptr [ecx + 20h]
+        lea eax, [esp]
+        push eax
+        push edx
+        push 411h
+        push ecx
+        call dword ptr [mem_00925694]
+        xor eax, eax
+        add esp, 2Ch
+        ret 8
+    }
+}
