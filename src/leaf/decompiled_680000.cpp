@@ -743,3 +743,48 @@ extern "C" __declspec(naked) int __fastcall fn_006872E0(void* self) {
         ret
     }
 }
+
+// [0x00687330] sub_00687330 (77 bytes)
+// Copies [first, last) of 0x2c-byte elements to dest: four dword fields, then std::string
+// (0x1c bytes at +0x10) assigned via the MSVCP80 operator= import. Returns dest end (or dest if empty).
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_00687330(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je short empty
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+copy_loop:
+        mov eax, dword ptr [esi]
+        mov dword ptr [edi], eax
+        mov ecx, dword ptr [esi + 0x4]
+        mov dword ptr [edi + 0x4], ecx
+        mov edx, dword ptr [esi + 0x8]
+        lea ecx, [esi + 0x10]
+        mov dword ptr [edi + 0x8], edx
+        mov eax, dword ptr [esi + 0xc]
+        push ecx
+        lea ecx, [edi + 0x10]
+        mov dword ptr [edi + 0xc], eax
+        call dword ptr [mem_00924FDC]
+        add esi, 0x2c
+        add edi, 0x2c
+        cmp esi, ebx
+        jne short copy_loop
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+empty:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
