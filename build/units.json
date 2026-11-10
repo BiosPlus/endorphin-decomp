@@ -214812,7 +214812,9 @@
       "0x005541CA",
       "0x005541DB"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T14:08:18Z"
   },
   {
     "va": "0x005541F0",
