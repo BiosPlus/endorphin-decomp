@@ -65,3 +65,35 @@ extern "C" __declspec(naked) void __fastcall fn_005321B0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0067DAD0();
+
+// [0x0053A6C0] HasConstantTMPtr::vfunc_3 (58 bytes)
+// Zeroes the float block at arg1 (+0x0..+0x14 ordered as in the original), sets +0x0/+0x10 to 1.0,
+// then calls sub_0067DAD0 with arg1 pushed and returns arg1 in eax (ret 0x4).
+extern "C" __declspec(naked) void __fastcall fn_0053A6C0(void* self, int edx_unused, void* a1) {
+    __asm {
+        fldz
+        mov ecx, dword ptr [ecx + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        fst dword ptr [esi + 0x8]
+        push esi
+        fst dword ptr [esi + 0x4]
+        fst dword ptr [esi]
+        fst dword ptr [esi + 0x14]
+        fst dword ptr [esi + 0x10]
+        fst dword ptr [esi + 0xc]
+        fst dword ptr [esi + 0x20]
+        fst dword ptr [esi + 0x1c]
+        fstp dword ptr [esi + 0x18]
+        fld1
+        fst dword ptr [esi]
+        fst dword ptr [esi + 0x10]
+        fstp dword ptr [esi + 0x20]
+        call ext_0067DAD0
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
