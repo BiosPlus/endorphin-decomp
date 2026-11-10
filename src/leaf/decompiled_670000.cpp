@@ -780,3 +780,17 @@ extern "C" void __fastcall fn_0067DAD0(void* self, int edx_unused, float* dst) {
     dst[5] = src[6];
     dst[8] = src[10];
 }
+
+// [0x00678130] sub_00678130 (61 bytes)
+extern "C" double mem_0098C1D8;
+extern "C" double mem_00955090;
+extern "C" float __fastcall fn_00678130(void* self, int edx_unused, float a1) {
+    int mode = *(int*)((char*)self + 0xc);
+    if (mode == 0) {
+        return (float)(a1 * mem_0098C1D8);
+    }
+    if (mode == 2) {
+        return (float)(a1 / mem_00955090);
+    }
+    return a1;
+}
