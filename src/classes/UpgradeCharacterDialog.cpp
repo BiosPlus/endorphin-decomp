@@ -21,3 +21,18 @@ extern "C" int __fastcall fn_00461FF0(void* self) {
     }
     return 1;
 }
+
+// [0x00461FA0] UpgradeCharacterDialog::vfunc_63 (79 bytes)
+extern "C" void ext_006A5F44();
+extern "C" void ext_006A6610();
+
+extern "C" void __fastcall fn_00461FA0(void* self, int edx_unused, int a1) {
+    typedef void (__stdcall *DdxFn)(int, int, void*);
+    char* p = (char*)self;
+    DdxFn ctl = (DdxFn)ext_006A6610;
+    DdxFn ddx = (DdxFn)ext_006A5F44;
+    ctl(a1, 0x3ef, p + 0x78);
+    ctl(a1, 0x4da, p + 0x7c);
+    ctl(a1, 0x4db, p + 0x80);
+    ddx(a1, 0x4dc, p + 0xd8);
+}
