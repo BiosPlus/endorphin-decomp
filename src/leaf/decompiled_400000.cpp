@@ -1505,3 +1505,50 @@ extern "C" __declspec(naked) void* __cdecl fn_00404E40(void* first, void* last, 
         ret
     }
 }
+
+extern "C" int mem_00924FDC;
+
+// [0x00404EA0] sub_00404EA0 (86 bytes)
+// Backward copy of [first, last) ending at dest; element is 0x58 bytes: int at +0,
+// three std::string (0x1c each) at +4, +0x20, +0x3c. Returns the final dest.
+extern "C" __declspec(naked) void* __cdecl fn_00404EA0(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je done
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+loop_top:
+        mov eax, dword ptr [esi - 0x58]
+        sub esi, 0x58
+        lea ecx, [esi + 0x4]
+        sub edi, 0x58
+        push ecx
+        lea ecx, [edi + 0x4]
+        mov dword ptr [edi], eax
+        call dword ptr [mem_00924FDC]
+        lea edx, [esi + 0x20]
+        push edx
+        lea ecx, [edi + 0x20]
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi + 0x3c]
+        push eax
+        lea ecx, [edi + 0x3c]
+        call dword ptr [mem_00924FDC]
+        cmp esi, ebx
+        jne loop_top
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+done:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
