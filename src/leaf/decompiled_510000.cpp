@@ -260,3 +260,15 @@ not_equal_second:
         ret
     }
 }
+
+// [0x0051E1A0] sub_0051E1A0 (56 bytes)
+extern "C" void* __cdecl fn_0051E1A0(void* ret, int unused1, void* first, int unused2, void* last, void (__fastcall *fn)(void*)) {
+    if (first != last) {
+        do {
+            fn(first);
+            first = (char*)first + 0x168;
+        } while (first != last);
+    }
+    *(void (__fastcall **)(void*))ret = fn;
+    return ret;
+}
