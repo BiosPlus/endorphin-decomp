@@ -1198,3 +1198,29 @@ extern "C" void __cdecl fn_007C6970(char* self, float a, float b, float c) {
     *(float*)(self + 0x154) += b;
     *(float*)(self + 0x158) += c;
 }
+
+// [0x007C9AA0] sub_007C9AA0 (63 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C9AA0(void* self, float x, float y, float z, int flag) {
+    __asm {
+        cmp dword ptr [esp + 0x14], 0x0
+        mov eax, dword ptr [esp + 0x4]
+        jne short L_007C9AC5
+        fld dword ptr [esp + 0x8]
+        add eax, 0xec
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [eax + 0x8]
+        ret
+L_007C9AC5:
+        fld dword ptr [esp + 0x8]
+        add eax, 0x12c
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [eax + 0x8]
+        ret
+    }
+}
