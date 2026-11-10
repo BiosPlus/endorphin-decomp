@@ -105,3 +105,16 @@ extern "C" __declspec(naked) float __fastcall fn_0059DD70(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0059FFD0] NMData::BackGroundData::vfunc_0_off_15C (35 bytes)
+extern "C" void ext_0059FF10();
+extern "C" int mem_00B40644;
+extern "C" float __fastcall fn_0059FFD0(void* self) {
+    typedef void* (__thiscall *LookupF)(void*, int);
+    int key = *(int*)((char*)self + 0x4c0);
+    if (key == 0x7fffffff) {
+        return *(float*)((char*)self + 0x4bc);
+    }
+    void* p = ((LookupF)ext_0059FF10)((void*)mem_00B40644, key);
+    return *(float*)p;
+}
