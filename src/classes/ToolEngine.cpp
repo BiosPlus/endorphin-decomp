@@ -205,3 +205,50 @@ done:
         ret
     }
 }
+
+// [0x004812B0] ToolEngine::vfunc_10 (80 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004812B0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x10]
+        mov edx, dword ptr [eax + 0xc]
+        add ecx, 0x10
+        push esi
+        push edi
+        call edx
+        mov edi, eax
+        mov esi, dword ptr [edi + 0x4]
+        test esi, esi
+        je L_ret4
+        mov ecx, dword ptr [edi + 0x8]
+        mov eax, ecx
+        sub eax, esi
+        sar eax, 0x2
+        cmp eax, 0x1
+        jne L_ret4
+        cmp esi, ecx
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        jbe L_chk2
+        call ebx
+    L_chk2:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_ok
+        call ebx
+    L_ok:
+        mov esi, dword ptr [esi]
+        mov eax, dword ptr [esi + 0xc]
+        mov edx, dword ptr [eax]
+        lea ecx, [esi + 0xc]
+        pop ebx
+        pop edi
+        pop esi
+        jmp edx
+    L_ret4:
+        pop edi
+        mov eax, 0x4
+        pop esi
+        ret
+    }
+}
