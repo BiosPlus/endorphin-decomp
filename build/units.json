@@ -329366,7 +329366,9 @@
       "0x00607E4B",
       "0x00607E58"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:44:48Z"
   },
   {
     "va": "0x00607E70",
