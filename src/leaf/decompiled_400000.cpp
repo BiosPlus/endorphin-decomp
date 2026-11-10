@@ -1419,3 +1419,46 @@ extern "C" __declspec(naked) void __fastcall fn_00401BB0(void* self) {
         ret
     }
 }
+
+// [0x0040B6B0] sub_0040B6B0 (84 bytes)
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) bool __stdcall fn_0040B6B0(const void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [mem_00924FC4]
+        push 0xac853c
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne found
+        push 0xac85ac
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne found
+        push 0xac87a4
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne found
+        push 0xac87c0
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne found
+        pop edi
+        pop esi
+        ret 4
+    found:
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
