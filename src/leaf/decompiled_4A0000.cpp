@@ -145,3 +145,20 @@ done_4AEF30:
         ret 0x8
     }
 }
+
+// [0x004A9720] sub_004A9720 (53 bytes)
+extern "C" int mem_00ADF300;
+extern "C" int mem_00928B5D;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FD4;
+
+typedef void* (__thiscall *StrAssignFn)(void* self, const void* src);
+
+// Cdecl (int idx, std::string* dst): ret 0, args on stack.
+// idx < 3 -> dst = table[idx] (28-byte std::string stride), else dst = literal.
+extern "C" void* __cdecl fn_004A9720(int idx, void* dst) {
+    if (idx < 3) {
+        return ((StrAssignFn)mem_00924FDC)(dst, (char*)&mem_00ADF300 + 28 * idx);
+    }
+    return ((StrAssignFn)mem_00924FD4)(dst, (const void*)&mem_00928B5D);
+}
