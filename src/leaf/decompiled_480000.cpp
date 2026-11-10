@@ -1092,3 +1092,39 @@ L_done:
         ret 4
     }
 }
+
+// [0x00489080] sub_00489080 (71 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00489080(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0Ch]
+        push esi
+        mov esi, dword ptr [esp + 08h]
+        push edi
+        mov edi, dword ptr [esp + 10h]
+        cmp esi, edi
+        je done_00489080
+        lea ecx, [eax + 0Ch]
+        lea edx, [esi + 0Ch]
+    loop_00489080:
+        fld dword ptr [esi]
+        add esi, 14h
+        fstp dword ptr [eax]
+        add eax, 14h
+        fld dword ptr [edx - 8]
+        add ecx, 14h
+        fstp dword ptr [ecx - 1Ch]
+        add edx, 14h
+        cmp esi, edi
+        fld dword ptr [edx - 18h]
+        fstp dword ptr [ecx - 18h]
+        fld dword ptr [edx - 14h]
+        fstp dword ptr [ecx - 14h]
+        fld dword ptr [edx - 10h]
+        fstp dword ptr [ecx - 10h]
+        jne loop_00489080
+    done_00489080:
+        pop edi
+        pop esi
+        ret
+    }
+}
