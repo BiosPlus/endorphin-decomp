@@ -1360,3 +1360,42 @@ L_null_0041C660:
         ret 0x10
     }
 }
+
+// [0x0041CAB0] sub_0041CAB0 (68 bytes)
+extern "C" void ext_006AD180();
+
+extern "C" __declspec(naked) void __fastcall fn_0041CAB0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        push edi
+        mov byte ptr [esi + 0x2c], 0x1
+        call ext_006AD180
+        mov ecx, dword ptr [esp + 0x10]
+        test ecx, ecx
+        mov edi, eax
+        je L_null_0041CAB0
+        call ext_006AD180
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        push edi
+        call eax
+        pop edi
+        pop esi
+        ret 0x8
+L_null_0041CAB0:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        xor eax, eax
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        push edi
+        call eax
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
