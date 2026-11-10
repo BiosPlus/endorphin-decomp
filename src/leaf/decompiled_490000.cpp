@@ -1051,3 +1051,21 @@ extern "C" __declspec(naked) void* __cdecl fn_00499130(void* out, int val) {
         ret
     }
 }
+
+// [0x0049D3F0] sub_0049D3F0 (30 bytes)
+extern "C" void ext_0049BE80();
+
+extern "C" __declspec(naked) void __fastcall fn_0049D3F0(void* self) {
+    __asm {
+        push ecx
+        mov dword ptr [esp], 0
+        call ext_0049BE80
+        mov edx, dword ptr [esp + 0xc]
+        mov ecx, eax
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ecx
+        pop ecx
+        ret
+    }
+}
