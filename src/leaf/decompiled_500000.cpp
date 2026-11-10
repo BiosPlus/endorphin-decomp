@@ -336,3 +336,29 @@ extern "C" int __cdecl fn_00503AF0(int first, int last, int dest) {
     }
     return result;
 }
+
+// [0x00503C20] sub_00503C20 (49 bytes)
+extern "C" int mem_009251EC;
+extern "C" __declspec(naked) void* __stdcall fn_00503C20(void* first, void* last, void* dest) {
+    __asm {
+        mov eax, [esp+8]
+        mov ecx, [esp+4]
+        mov edx, [esp+0xc]
+        sub eax, ecx
+        sar eax, 3
+        lea eax, [8*eax]
+        push esi
+        lea esi, [eax+edx]
+        je skip
+        push eax
+        push ecx
+        push eax
+        push edx
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+    skip:
+        mov eax, esi
+        pop esi
+        ret 0xc
+    }
+}
