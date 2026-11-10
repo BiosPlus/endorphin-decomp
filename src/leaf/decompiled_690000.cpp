@@ -551,3 +551,39 @@ done:
         ret 4
     }
 }
+
+// [0x00691FC0] sub_00691FC0 (63 bytes)
+extern "C" __declspec(naked) bool __cdecl fn_00691FC0(const unsigned char* a, const unsigned char* b) {
+    __asm {
+        mov edx, dword ptr [esp + 8]
+        mov ecx, dword ptr [esp + 4]
+    loop_top_00691FC0:
+        mov al, byte ptr [ecx]
+        cmp al, byte ptr [edx]
+        jne diff_00691FC0
+        test al, al
+        je equal_00691FC0
+        mov al, byte ptr [ecx + 1]
+        cmp al, byte ptr [edx + 1]
+        jne diff_00691FC0
+        add ecx, 2
+        add edx, 2
+        test al, al
+        jne loop_top_00691FC0
+    equal_00691FC0:
+        xor eax, eax
+        xor ecx, ecx
+        test eax, eax
+        setl cl
+        mov al, cl
+        ret
+    diff_00691FC0:
+        sbb eax, eax
+        sbb eax, -1
+        xor ecx, ecx
+        test eax, eax
+        setl cl
+        mov al, cl
+        ret
+    }
+}
