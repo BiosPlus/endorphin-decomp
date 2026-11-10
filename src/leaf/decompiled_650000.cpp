@@ -893,3 +893,51 @@ extern "C" __declspec(naked) void __fastcall fn_0065BDA0(void* self) {
         ret
     }
 }
+
+// [0x0065F7F0] sub_0065F7F0 (82 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_00924E44;
+
+extern "C" __declspec(naked) void __fastcall fn_0065F7F0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        cmp eax, -0x2
+        je L_0065F838
+        test eax, eax
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        jne L_0065F80C
+        call ebp
+L_0065F80C:
+        push edi
+        mov edi, dword ptr [esi]
+        mov ecx, edi
+        call dword ptr [mem_00924E44]
+        mov ecx, dword ptr [esi + 0x4]
+        add eax, dword ptr [edi + 0x14]
+        add ecx, ebx
+        cmp ecx, eax
+        ja L_0065F834
+        mov ecx, edi
+        call dword ptr [mem_00924E44]
+        mov edx, dword ptr [esi + 0x4]
+        add edx, ebx
+        cmp edx, eax
+        jae L_0065F836
+L_0065F834:
+        call ebp
+L_0065F836:
+        pop edi
+        pop ebp
+L_0065F838:
+        add dword ptr [esi + 0x4], ebx
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
