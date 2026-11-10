@@ -1088,3 +1088,35 @@ ret_true:
         ret
     }
 }
+
+extern "C" int mem_00925134;
+
+// [0x00469570] sub_00469570 (52 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00469570(void* self, int edx_unused, unsigned int index) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x54]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je L_invalid
+        mov eax, dword ptr [esi + 0x58]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb L_ok
+    L_invalid:
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esi + 0x54]
+        mov eax, dword ptr [eax + 4*edi]
+        pop edi
+        pop esi
+        ret 4
+    L_ok:
+        mov eax, dword ptr [ecx + 4*edi]
+        pop edi
+        pop esi
+        ret 4
+    }
+}
