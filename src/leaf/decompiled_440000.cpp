@@ -1904,3 +1904,48 @@ skip_call:
         ret 0xc
     }
 }
+
+// [0x0044E100] sub_0044E100 (87 bytes)
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) int __fastcall fn_0044E100(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0x0
+        push 0x0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x768]
+        push 0x18b
+        push eax
+        call edi
+        test eax, eax
+        je fail_0044E100
+        mov ecx, dword ptr [esi + 0x768]
+        push 0x0
+        push 0x0
+        push 0x190
+        push ecx
+        call edi
+        test eax, eax
+        je fail_0044E100
+        mov edx, dword ptr [esi + 0x768]
+        push 0x0
+        push 0x0
+        push 0x187
+        push edx
+        call edi
+        neg eax
+        sbb eax, eax
+        pop edi
+        add eax, 0x1
+        pop esi
+        ret
+    fail_0044E100:
+        pop edi
+        xor al, al
+        pop esi
+        ret
+    }
+}
