@@ -1120,3 +1120,16 @@ extern "C" __declspec(naked) int __fastcall fn_00469570(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x00464630] sub_00464630 (53 bytes)
+extern "C" void ext_006A6916();
+extern "C" int mem_009242F4;
+
+extern "C" void __fastcall fn_00464630(void* self) {
+    typedef void (__fastcall *ThisFn)(void*);
+    *(void**)self = (void*)0x93957c;
+    ((ThisFn)mem_009242F4)((char*)self + 0xb0);
+    ((ThisFn)mem_009242F4)((char*)self + 0xac);
+    ((ThisFn)mem_009242F4)((char*)self + 0xa8);
+    ((ThisFn)ext_006A6916)(self);
+}

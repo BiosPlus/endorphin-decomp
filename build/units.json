@@ -59037,7 +59037,9 @@
       "0x00464659",
       "0x00464661"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T04:46:47Z"
   },
   {
     "va": "0x00464670",
