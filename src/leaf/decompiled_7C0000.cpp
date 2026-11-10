@@ -1107,3 +1107,34 @@ extern "C" void __cdecl fn_007C6790(void* self) {
     *(float*)(p + 0x48) = z;
     *(unsigned int*)(p + 0x4c) = 0;
 }
+
+// [0x007CAB40] sub_007CAB40 (57 bytes)
+extern "C" float mem_0093F7B8;
+extern "C" __declspec(naked) float __cdecl fn_007CAB40(float a0) {
+    __asm {
+        fldz
+        fld st(0)
+        fld dword ptr [esp + 0x4]
+        fucom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x44
+        jp L_cmp_007CAB40
+        fstp st(0)
+        ret
+    L_cmp_007CAB40:
+        fcompp
+        fnstsw ax
+        test ah, 0x5
+        jp L_one_007CAB40
+        fld dword ptr [mem_0093F7B8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret
+    L_one_007CAB40:
+        fld1
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret
+    }
+}
