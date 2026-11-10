@@ -1191,3 +1191,43 @@ extern "C" __declspec(naked) void __fastcall fn_0048A9C0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0048E3D0] sub_0048E3D0 (77 bytes)
+// Copies the 12-byte records in [first, last) forward to dest; returns dest + count (count = (last-first)/12).
+extern "C" __declspec(naked) void* __cdecl fn_0048E3D0(void* first, void* last, void* dest) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov edx, esi
+        sub edx, ecx
+        mov eax, 0x2aaaaaab
+        imul edx
+        __asm __asm _emit 0xD1 __asm _emit 0xFA // sar edx, 1
+        mov eax, edx
+        __asm __asm _emit 0xC1 __asm _emit 0xE8 __asm _emit 0x1F // shr eax, 0x1f
+        add eax, edx
+        cmp ecx, esi
+        mov edx, dword ptr [esp + 0x10]
+        __asm __asm _emit 0x8D __asm _emit 0x04 __asm _emit 0x40 // lea eax, [eax + 2*eax]
+        __asm __asm _emit 0x8D __asm _emit 0x04 __asm _emit 0x82 // lea eax, [edx + 4*eax]
+        je L_0048E41B
+        sub edx, ecx
+        push edi
+        __asm __asm _emit 0x8B __asm _emit 0xFF // mov edi, edi
+L_0048E400:
+        mov edi, dword ptr [ecx]
+        __asm __asm _emit 0x89 __asm _emit 0x3C __asm _emit 0x0A // mov dword ptr [edx + ecx], edi
+        mov edi, dword ptr [ecx + 0x4]
+        __asm __asm _emit 0x89 __asm _emit 0x7C __asm _emit 0x0A __asm _emit 0x04 // mov dword ptr [edx + ecx + 0x4], edi
+        mov edi, dword ptr [ecx + 0x8]
+        __asm __asm _emit 0x89 __asm _emit 0x7C __asm _emit 0x0A __asm _emit 0x08 // mov dword ptr [edx + ecx + 0x8], edi
+        add ecx, 0xc
+        cmp ecx, esi
+        jne L_0048E400
+        pop edi
+L_0048E41B:
+        pop esi
+        ret
+    }
+}
