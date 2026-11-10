@@ -311232,7 +311232,9 @@
       "0x005EFFDB",
       "0x005EFFE0"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T04:20:07Z"
   },
   {
     "va": "0x005EFFF0",

@@ -175,3 +175,16 @@ extern "C" void __fastcall fn_005EFAF0(void* self) {
     p[0x154 / 4] = 0x0096b50c;
     ext_005EF450();
 }
+
+// [0x005EFFB0] sub_005EFFB0 (52 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005EFFB0(void* self) {
+    __asm {
+        mov dword ptr [ecx], 0x96b814
+        mov dword ptr [ecx + 0x4], 0x96b7cc
+        mov dword ptr [ecx + 0x8], 0x96b78c
+        mov dword ptr [ecx + 0xc], 0x96b73c
+        mov dword ptr [ecx + 0x150], 0x96b728
+        mov dword ptr [ecx + 0x154], 0x96b720
+        jmp ext_005EF450
+    }
+}
