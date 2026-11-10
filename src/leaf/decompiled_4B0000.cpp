@@ -307,3 +307,25 @@ extern "C" void __fastcall fn_004B0ED0(void* self, int edx_unused, const float* 
         *(float*)((char*)self + 0x28) = bounds[3];
     }
 }
+
+// [0x004B10A0] sub_004B10A0 (46 bytes)
+extern "C" void ext_004B0ED0();
+
+extern "C" __declspec(naked) void __fastcall fn_004B10A0(void* self, int edx_unused, float a1) {
+    __asm {
+        sub esp, 0x10
+        fld dword ptr [esp + 0x14]
+        lea eax, [esp]
+        fstp dword ptr [esp]
+        push eax
+        fld dword ptr [ecx + 0x20]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x24]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [ecx + 0x28]
+        fstp dword ptr [esp + 0x10]
+        call ext_004B0ED0
+        add esp, 0x10
+        ret 0x4
+    }
+}
