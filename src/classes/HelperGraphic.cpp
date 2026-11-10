@@ -28,3 +28,30 @@ extern "C" __declspec(naked) void* __fastcall fn_005F5220(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0058F670] HelperGraphic::vfunc_15_off_4 (58 bytes)
+extern "C" void ext_00661A70();
+extern "C" __declspec(naked) void __fastcall fn_0058F670(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea eax, [esi - 0x4]
+        test eax, eax
+        je short L_null_path
+        mov ecx, dword ptr [esp + 0x8]
+        lea eax, [esi + 0x14c]
+        push eax
+        call ext_00661A70
+        mov dword ptr [esi + 0xe4], eax
+        pop esi
+        ret 0x4
+L_null_path:
+        mov ecx, dword ptr [esp + 0x8]
+        xor eax, eax
+        push eax
+        call ext_00661A70
+        mov dword ptr [esi + 0xe4], eax
+        pop esi
+        ret 0x4
+    }
+}
