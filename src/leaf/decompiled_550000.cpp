@@ -449,3 +449,17 @@ extern "C" void* __fastcall fn_0055D280(void* self) {
     s[2] = 0;
     return self;
 }
+
+// [0x00555470] sub_00555470 (55 bytes)
+extern "C" void ext_006A5C62();
+
+extern "C" void* __fastcall fn_00555470(void* self) {
+    void* p = ((void* (__cdecl*)(unsigned int))ext_006A5C62)(0x3c);
+    char* base = (char*)p;
+    if (base) *(int*)base = 0;
+    if (base + 4) *(int*)(base + 4) = 0;
+    if (base + 8) *(int*)(base + 8) = 0;
+    base[0x38] = 1;
+    base[0x39] = 0;
+    return p;
+}
