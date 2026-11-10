@@ -410,3 +410,34 @@ L_5B1BD0:
         ret 0x4
     }
 }
+
+// [0x005B51E0] sub_005B51E0 (83 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005B51E0(void* self) {
+    __asm {
+        push -1
+        push 0x008A3649
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax], 0x0096085C
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xC], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax + 0x18], ecx
+        mov dword ptr [eax + 0x1C], ecx
+        mov dword ptr [eax + 0x20], ecx
+        mov dword ptr [eax + 0x28], ecx
+        mov dword ptr [eax + 0x2C], ecx
+        mov dword ptr [eax + 0x30], ecx
+        mov dword ptr [eax + 0x38], ecx
+        mov dword ptr [eax + 0x3C], ecx
+        mov dword ptr [eax + 0x40], ecx
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
