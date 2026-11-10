@@ -336874,7 +336874,9 @@
       "0x0061239D",
       "0x006123AC"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:45:44Z"
   },
   {
     "va": "0x006123C0",

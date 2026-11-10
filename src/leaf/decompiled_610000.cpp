@@ -469,3 +469,34 @@ extern "C" __declspec(naked) void __fastcall fn_00610C60(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00612370] sub_00612370 (69 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00612370(void* self, int edx_unused, float a1) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00594000
+        push 0
+        lea ecx, [esi + 8]
+        mov edi, eax
+        call ext_005B11D0
+        fld dword ptr [esp + 0Ch]
+        fstp dword ptr [eax]
+        mov byte ptr [esi + 0Ch], 1
+        mov esi, dword ptr [esi + 0BCh]
+        cmp dword ptr [esi], 0
+        je skip_e1330
+        mov ecx, dword ptr [esi]
+        call ext_005E1330
+skip_e1330:
+        test edi, edi
+        je skip_493ee0
+        lea ecx, [edi + 258h]
+        call ext_00493EE0
+skip_493ee0:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
