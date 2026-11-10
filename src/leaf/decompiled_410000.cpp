@@ -1288,3 +1288,40 @@ L_zero_0041CB00:
         ret 0x8
     }
 }
+
+// [0x004180E0] sub_004180E0 (66 bytes)
+extern "C" void ext_006A617E();
+extern "C" void ext_00417340();
+extern "C" int mem_0093A0C0;
+extern "C" int mem_0093A0B0;
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_004180E0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_0093A0C0]
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [mem_0093A0B0]
+        push 0
+        push eax
+        lea esi, [edi + 0x368]
+        push ecx
+        mov ecx, esi
+        call ext_006A617E
+        test esi, esi
+        je skip_load
+        mov esi, dword ptr [esi + 4]
+    skip_load:
+        mov edx, dword ptr [edi + 0x390]
+        push 1
+        push esi
+        push 0x30
+        push edx
+        call dword ptr [mem_00925694]
+        mov ecx, edi
+        pop edi
+        pop esi
+        jmp ext_00417340
+    }
+}
