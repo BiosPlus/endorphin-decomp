@@ -44,3 +44,46 @@ extern "C" __declspec(naked) void __fastcall fn_0054EA30(void* self) {
         ret
     }
 }
+
+// [0x0054EB50] NMMatrixStackManager::vfunc_5 (83 bytes)
+extern "C" int mem_009254B4;
+
+extern "C" __declspec(naked) void __fastcall fn_0054EB50(void* self, int edx_unused, const float* m) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x4]
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_54EB69
+        call ebx
+    L_54EB69:
+        lea eax, [edi - 0x40]
+        cmp eax, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x10], edi
+        ja L_54EB7A
+        cmp eax, dword ptr [esi + 0x4]
+        jae L_54EB7C
+    L_54EB7A:
+        call ebx
+    L_54EB7C:
+        add edi, -0x40
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_54EB86
+        call ebx
+    L_54EB86:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, 0x10
+        mov esi, eax
+        rep movsd
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x8
+        mov dword ptr [esp + 0x4], eax
+        jmp dword ptr [mem_009254B4]
+    }
+}
