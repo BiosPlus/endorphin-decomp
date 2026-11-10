@@ -1361,3 +1361,23 @@ L_7C9EBE:
         ret
     }
 }
+
+// [0x007CDB20] sub_007CDB20 (67 bytes)
+extern "C" void __cdecl fn_007CDB20(int* self) {
+    unsigned char* p = reinterpret_cast<unsigned char*>(self);
+    *reinterpret_cast<int*>(p + 0x04) = 0;
+    *reinterpret_cast<int*>(p + 0x14) = 0;
+    *reinterpret_cast<int*>(p + 0x20) = 0;
+    *reinterpret_cast<int*>(p + 0x2c) = 0;
+    *reinterpret_cast<int*>(p + 0x38) = 0;
+    *reinterpret_cast<int*>(p + 0x44) = 0;
+    *reinterpret_cast<int*>(p + 0x50) = 0;
+    *reinterpret_cast<int*>(p + 0x5c) = 0;
+    *reinterpret_cast<int*>(p + 0x68) = 0;
+    *reinterpret_cast<int*>(p + 0x74) = 0;
+    *reinterpret_cast<int*>(p + 0xa8) = 0;
+    *reinterpret_cast<int*>(p + 0xa4) = 0;
+    *reinterpret_cast<int*>(p + 0xac) = 0;
+    *reinterpret_cast<int*>(p + 0xb0) = 0;
+    *reinterpret_cast<int*>(p + 0xb4) = 0;
+}
