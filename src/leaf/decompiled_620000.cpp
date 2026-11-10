@@ -890,3 +890,43 @@ extern "C" __declspec(naked) void __fastcall fn_0062E290(void* self) {
         ret
     }
 }
+
+// [0x006210E0] sub_006210E0 (66 bytes)
+// Fill [first, last) with copies of *value (0x48-byte elements: two std::string at +0x0 and +0x1c,
+// doubles at +0x38 and +0x40). Each string is assigned via the MSVCP80 import slot (operator=).
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __cdecl fn_006210E0(void* first, void* last, const void* value) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebp
+        je done
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        lea ebx, [edi + 0x1c]
+loop_top:
+        push edi
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        push ebx
+        lea ecx, [esi + 0x1c]
+        call dword ptr [mem_00924FDC]
+        fld qword ptr [edi + 0x38]
+        fstp qword ptr [esi + 0x38]
+        add esi, 0x48
+        cmp esi, ebp
+        fld qword ptr [edi + 0x40]
+        fstp qword ptr [esi - 0x8]
+        jne loop_top
+        pop edi
+        pop ebx
+done:
+        pop esi
+        pop ebp
+        ret
+    }
+}
