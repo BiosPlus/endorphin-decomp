@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/ExprParser/Vector3Type.cpp
 
+#include <math.h>
+
 // [0x0066B5D0] ExprParser::Vector3Type::vfunc_35 (19 bytes)
 extern "C" void ext_00699000();
 
@@ -181,4 +183,17 @@ L_done:
 L_ret:
         ret 0x4
     }
+}
+
+// [0x0066B770] ExprParser::Vector3Type::vfunc_47 (78 bytes)
+extern "C" void ext_006A7250();
+
+extern "C" void __fastcall fn_0066B770(void* self, int edx_unused, void* a1) {
+    typedef float* (__thiscall *Get3Fn)(void*, void*);
+    typedef void (__thiscall *Sink2Fn)(void*, void*, float);
+    void** obj = *(void***)((char*)a1 + 0x4);
+    float* v = ((Get3Fn)(*(void***)obj)[5])(obj, a1);
+    float len = (float)sqrt((double)(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]));
+    void** obj2 = *(void***)((char*)a1 + 0x4);
+    ((Sink2Fn)(*(void***)obj2)[7])(obj2, a1, len);
 }
