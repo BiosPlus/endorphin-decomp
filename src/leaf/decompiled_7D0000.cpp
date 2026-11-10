@@ -932,3 +932,39 @@ fn_007DFCE0_done:
         ret
     }
 }
+
+// [0x007D9630] sub_007D9630 (78 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007D9630(void* ecx_unused, int edx_unused, int* out, int a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        cdq
+        idiv esi
+        cmp esi, 0x1
+        mov ecx, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov dword ptr [ecx], edi
+        mov dword ptr [ecx + 0x8], 0x0
+        lea edx, [eax + edi]
+        mov dword ptr [ecx + 0x4], edx
+        jle fn_007D9630_done
+        add ecx, 0x20
+        add esi, -0x1
+        nop
+fn_007D9630_loop:
+        mov edx, dword ptr [ecx - 0x1c]
+        mov dword ptr [ecx - 0x8], edx
+        add edx, eax
+        mov dword ptr [ecx], 0x0
+        mov dword ptr [ecx - 0x4], edx
+        add ecx, 0x18
+        sub esi, 0x1
+        jne fn_007D9630_loop
+fn_007D9630_done:
+        pop edi
+        pop esi
+        ret 0x10
+    }
+}
