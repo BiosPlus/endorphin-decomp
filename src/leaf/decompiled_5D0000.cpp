@@ -128,3 +128,23 @@ tail_005DC480:
         jmp ext_00552940
     }
 }
+
+// [0x005D00C0] sub_005D00C0 (75 bytes)
+extern "C" int mem_00B40644;
+
+struct Mat4_005D00C0 {
+    float m[16];
+};
+
+typedef Mat4_005D00C0* (__thiscall *GetMat_005D00C0)(void* self, int arg);
+
+extern "C" void __fastcall fn_005D00C0(void* self, int edx_unused, float* out) {
+    void* obj = (char*)self + 4;
+    void** vtbl = *(void***)obj;
+    GetMat_005D00C0 fn = (GetMat_005D00C0)vtbl[5];
+    Mat4_005D00C0 m = *fn(obj, mem_00B40644);
+    out[0] = m.m[4];
+    out[1] = m.m[5];
+    out[2] = m.m[6];
+    out[3] = m.m[7];
+}
