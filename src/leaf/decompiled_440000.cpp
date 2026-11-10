@@ -1533,3 +1533,36 @@ extern "C" void __fastcall fn_00440870(void* self, int edx_unused, double a1) {
     }
     *(double*)(p + 0x50) = a1;
 }
+
+// [0x0044BF00] sub_0044BF00 (63 bytes)
+extern "C" int mem_0092561C;
+
+extern "C" __declspec(naked) void __fastcall fn_0044BF00(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006A5EA8
+        mov eax, dword ptr [esi + 0x20]
+        push eax
+        call dword ptr [mem_0092561C]
+        test eax, eax
+        je done_0044BF00
+        mov edx, dword ptr [esp + 0xc]
+        test edx, edx
+        jle done_0044BF00
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        jle done_0044BF00
+        cmp dword ptr [esi + 0x64], 0
+        je done_0044BF00
+        mov ecx, dword ptr [esi + 0x64]
+        mov esi, dword ptr [ecx]
+        push eax
+        push edx
+        mov edx, dword ptr [esi + 0x15c]
+        call edx
+    done_0044BF00:
+        pop esi
+        ret 0xc
+    }
+}
