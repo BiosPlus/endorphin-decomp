@@ -588,3 +588,32 @@ extern "C" __declspec(naked) void __fastcall fn_004820D0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x004817A0] sub_004817A0 (53 bytes)
+extern "C" __declspec(naked) void __cdecl fn_004817A0(float* dst, unsigned int count, const float* src) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        jbe done
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x4]
+    loop_top:
+        test eax, eax
+        je skip
+        fld dword ptr [edx]
+        fstp dword ptr [eax]
+        fld dword ptr [edx + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [edx + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [edx + 0xc]
+        fstp dword ptr [eax + 0xc]
+    skip:
+        sub ecx, 0x1
+        add eax, 0x10
+        test ecx, ecx
+        ja loop_top
+    done:
+        ret
+    }
+}
