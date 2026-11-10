@@ -296,3 +296,41 @@ extern "C" __declspec(naked) void __stdcall fn_00574E20(void* os) {
         ret 0x4
     }
 }
+
+// [0x0057BBE0] sub_0057BBE0 (64 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_0057BBE0(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je done_eq
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    copy_loop:
+        sub esi, 0x38
+        sub edi, 0x38
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi + 0x1c]
+        push eax
+        lea ecx, [edi + 0x1c]
+        call dword ptr [mem_00924FDC]
+        cmp esi, ebx
+        jne copy_loop
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    done_eq:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
