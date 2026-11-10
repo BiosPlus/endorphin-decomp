@@ -168,3 +168,34 @@ done:
         ret 8
     }
 }
+
+// [0x00570380] sub_00570380 (54 bytes)
+extern "C" int mem_009250BC;
+extern "C" int mem_009250C0;
+
+extern "C" __declspec(naked) bool __fastcall fn_00570380(void* self, int edx_unused, void* is) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+    read_loop:
+        lea eax, [esp + 8]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_009250BC]
+        mov ecx, dword ptr [eax]
+        mov ecx, dword ptr [ecx + 4]
+        add ecx, eax
+        call dword ptr [mem_009250C0]
+        test al, al
+        jne fail
+        cmp byte ptr [esp + 8], 0Ah
+        jne read_loop
+        mov al, 1
+        pop esi
+        ret 4
+    fail:
+        xor al, al
+        pop esi
+        ret 4
+    }
+}
