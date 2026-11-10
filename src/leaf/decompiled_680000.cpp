@@ -788,3 +788,49 @@ empty:
         ret
     }
 }
+
+// [0x006873D0] sub_006873D0 (78 bytes)
+// Backward counterpart of fn_00687330: copies [first, last) of 0x2c-byte elements into the
+// range ending at dest (walking from last to first), same std::string operator= per element.
+// Returns the new beginning of the written range (dest - n*0x2c), or dest if empty.
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_006873D0(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je short empty
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+copy_loop:
+        mov eax, dword ptr [esi - 0x2c]
+        sub esi, 0x2c
+        sub edi, 0x2c
+        mov dword ptr [edi], eax
+        mov ecx, dword ptr [esi + 0x4]
+        mov dword ptr [edi + 0x4], ecx
+        mov edx, dword ptr [esi + 0x8]
+        lea ecx, [esi + 0x10]
+        mov dword ptr [edi + 0x8], edx
+        mov eax, dword ptr [esi + 0xc]
+        push ecx
+        lea ecx, [edi + 0x10]
+        mov dword ptr [edi + 0xc], eax
+        call dword ptr [mem_00924FDC]
+        cmp esi, ebx
+        jne short copy_loop
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+empty:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
