@@ -211,3 +211,53 @@ extern "C" __declspec(naked) void __fastcall fn_00868690(void* self) {
         __asm _emit 0xC3 // ret
     }
 }
+
+// [0x0086AEB0] sub_0086AEB0 (80 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0086AEB0(void) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        test esi, esi
+        je zero_ret
+        mov ebx, dword ptr [esp + 0x14]
+        mov edi, dword ptr [esp + 0x10]
+        dec esi
+        mov eax, dword ptr [edi + 4*esi]
+        mov ecx, dword ptr [ebx + 4*esi]
+        lea edx, [ebx + 4*esi]
+        cmp eax, ecx
+        ja gt_ret
+        sub edi, ebx
+        cmp eax, ecx
+    check_jb:
+        jb lt_ret
+        test esi, esi
+        je zero_ret
+        mov eax, dword ptr [edi + edx - 0x4]
+        mov ecx, dword ptr [edx - 0x4]
+        sub edx, 0x4
+        dec esi
+        cmp eax, ecx
+        jbe check_jb
+    gt_ret:
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+    lt_ret:
+        pop edi
+        pop esi
+        or eax, -0x1
+        pop ebx
+        ret
+    zero_ret:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
