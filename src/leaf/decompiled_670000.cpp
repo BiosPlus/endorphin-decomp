@@ -702,3 +702,37 @@ extern "C" __declspec(naked) void __fastcall fn_0067AEF0(void* self, int edx_unu
         jmp dword ptr [mem_0092428C]
     }
 }
+
+// [0x0067AE70] sub_0067AE70 (58 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_00924274;
+extern "C" __declspec(naked) void __fastcall fn_0067AE70(void* self, int edx_unused, int idx) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0x8]
+        test edi, edi
+        jl done_0067AE70
+        push esi
+        mov esi, dword ptr [ecx + 0xc]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je invalid_0067AE70
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb ok_0067AE70
+    invalid_0067AE70:
+        call dword ptr [mem_00925134]
+    ok_0067AE70:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 4*edi]
+        push -1
+        push ecx
+        call dword ptr [mem_00924274]
+        pop esi
+    done_0067AE70:
+        pop edi
+        ret 0x4
+    }
+}
