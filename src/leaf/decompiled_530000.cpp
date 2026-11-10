@@ -749,3 +749,15 @@ extern "C" __declspec(naked) void* __fastcall fn_005398C0(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x0053B470] sub_0053B470 (56 bytes)
+extern "C" void __fastcall fn_0053B470(float* self, int edx_unused, float* out, float s) {
+    out[3] = 0.0f;
+    out[2] = 0.0f;
+    out[1] = 0.0f;
+    out[0] = 0.0f;
+    out[0] = self[0] * s;
+    out[1] = self[1] * s;
+    out[2] = self[2] * s;
+    out[3] = self[3] * s;
+}
