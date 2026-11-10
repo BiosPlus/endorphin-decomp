@@ -821,3 +821,17 @@ extern "C" __declspec(naked) float __fastcall fn_00678170(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006781B0] sub_006781B0 (63 bytes)
+extern "C" int mem_0098C1D0;
+extern "C" int mem_009576E8;
+extern "C" float __fastcall fn_006781B0(void* self, int edx_unused, float a1) {
+    int mode = *(int*)((char*)self + 0xc);
+    if (mode == 0) {
+        return (float)(a1 * *(double*)&mem_0098C1D0);
+    }
+    if (mode == 2) {
+        return (float)(a1 * *(double*)&mem_009576E8 + a1 * *(double*)&mem_009576E8);
+    }
+    return a1;
+}
