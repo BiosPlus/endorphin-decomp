@@ -102,3 +102,36 @@ extern "C" __declspec(naked) void __cdecl fn_0086B1C0(void* self) {
         ret
     }
 }
+
+// [0x0086F0E0] sub_0086F0E0 (61 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086F0E0(unsigned int* p) {
+    __asm {
+        mov edx, dword ptr [esp + 4]
+        push esi
+        mov si, 13h
+    L_not:
+        movsx eax, si
+        lea eax, [edx + 4*eax]
+        mov ecx, dword ptr [eax]
+        not ecx
+        and ecx, 0ffffh
+        dec si
+        mov dword ptr [eax], ecx
+        jns short L_not
+        mov si, 13h
+    L_inc:
+        movsx eax, si
+        lea ecx, [edx + 4*eax]
+        mov eax, dword ptr [ecx]
+        inc eax
+        mov dword ptr [ecx], eax
+        and eax, 0ffffh
+        jne short L_done
+        dec si
+        mov dword ptr [ecx], eax
+        jns short L_inc
+    L_done:
+        pop esi
+        ret
+    }
+}
