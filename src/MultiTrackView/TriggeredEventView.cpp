@@ -81,3 +81,22 @@ extern "C" int __fastcall fn_0043CB00(char* self, int edx_unused, char* a1) {
     Callee2 c2 = (Callee2)ext_006A5DA0;
     return c2(self, a1);
 }
+
+// [0x0045E470] MultiTrackView::TriggeredEventView::vfunc_80 (36 bytes)
+extern "C" void ext_00460540();
+extern "C" void ext_006A5E72();
+extern "C" __declspec(naked) void __fastcall fn_0045E470(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x2d0]
+        push eax
+        call ext_00460540
+        mov ecx, dword ptr [esi + 0x2d0]
+        push 0x5
+        call ext_006A5E72
+        pop esi
+        ret 0x4
+    }
+}
