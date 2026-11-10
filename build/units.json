@@ -270303,7 +270303,9 @@
       "0x005B7F83",
       "0x005B7F8D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:38:51Z"
   },
   {
     "va": "0x005B7FA0",
