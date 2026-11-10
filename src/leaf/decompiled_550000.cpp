@@ -504,3 +504,35 @@ extern "C" __declspec(naked) void __cdecl fn_0055F390(void* dst, unsigned int co
         ret
     }
 }
+
+// [0x0055F670] sub_0055F670 (55 bytes)
+extern "C" void ext_0055F390();
+
+extern "C" __declspec(naked) int __fastcall fn_0055F670(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0x8], 0
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push edx
+        push ecx
+        push eax
+        push esi
+        push edi
+        call ext_0055F390
+        mov eax, esi
+        add esp, 0x18
+        shl eax, 0x4
+        add eax, edi
+        pop edi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
