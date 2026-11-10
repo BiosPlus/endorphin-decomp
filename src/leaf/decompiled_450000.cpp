@@ -1073,3 +1073,36 @@ extern "C" __declspec(naked) void __fastcall fn_00453BC0(void* self) {
         ret
     }
 }
+
+// [0x00454AD0] sub_00454AD0 (76 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00454AD0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x124], 0
+        jne skip_send
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x1a8]
+        call edx
+        mov eax, dword ptr [esi + 0x20]
+        push 0
+        push 0
+        push 0x85
+        push eax
+        call dword ptr [mem_00925694]
+skip_send:
+        cmp byte ptr [esi + 0x128], 0
+        jne done
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x8]
+        push ecx
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_00456210
+done:
+        pop esi
+        ret 0xc
+    }
+}
