@@ -286,3 +286,13 @@ extern "C" __declspec(naked) int __fastcall fn_00698810(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x00697650] sub_00697650 (49 bytes)
+extern "C" int mem_0092F678;
+extern "C" float __fastcall fn_00697650(void* self) {
+    char* p = (char*)self;
+    int* b = *(int**)(p + 4);
+    int* e = *(int**)(p + 8);
+    unsigned int n = !b ? 0 : (unsigned int)(e - b);
+    return *(float*)(p + 0x18) / (float)n;
+}
