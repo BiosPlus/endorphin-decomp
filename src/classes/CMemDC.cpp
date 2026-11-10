@@ -73,3 +73,38 @@ skip:
         ret 0x20
     }
 }
+
+extern "C" int mem_00925600;
+
+// [0x0041B740] CMemDC::vfunc_27 (68 bytes)
+// CSize CDC::TabbedTextOut(x, y, str, len, nTabPositions, lpnTabStops, nTabOrigin) -> USER32 TabbedTextOutA(this->m_hDC, ...).
+// Hidden SIZE return pointer is the first stack arg; result DWORD split into sign-extended cx (low word) / cy (high word).
+extern "C" __declspec(naked) void* __fastcall fn_0041B740(void* self, int edx_unused, void* ret, int a1, int a2, const char* a3, int a4, int a5, const int* a6, int a7) {
+    __asm {
+        mov eax, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [ecx + 0x4]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push edx
+        mov edx, dword ptr [esp + 0x1c]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push edx
+        mov edx, dword ptr [esp + 0x1c]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push edx
+        push eax
+        push ecx
+        call dword ptr [mem_00925600]
+        mov ecx, dword ptr [esp + 0x4]
+        movsx edx, ax
+        shr eax, 0x10
+        movsx eax, ax
+        mov dword ptr [ecx + 0x4], eax
+        mov dword ptr [ecx], edx
+        mov eax, ecx
+        ret 0x20
+    }
+}
