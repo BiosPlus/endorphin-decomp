@@ -297,3 +297,58 @@ extern "C" __declspec(naked) void __fastcall fn_006F8700(void* self) {
         ret
     }
 }
+
+// [0x006FB550] sub_006FB550 (80 bytes)
+// Reverse linear search over 12-byte entries [start, start + count): matches entry.key == *arg->ptr and entry.ptr == arg->ptr.
+// Returns index relative to start, or -1 (ret 4).
+struct Dec6FB550Entry { int key; int* ptr; int extra; };
+struct Dec6FB550Owner { Dec6FB550Entry* items; int start; int count; };
+struct Dec6FB550Arg { int pad; int* ptr; };
+extern "C" __declspec(naked) int __fastcall fn_006FB550(Dec6FB550Owner* self, int edx_unused, Dec6FB550Arg* a1) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8]
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [ecx + 0x4]
+        lea eax, [eax + edi - 0x1]
+        cmp eax, edi
+        jl fail
+        mov ecx, dword ptr [ecx]
+        mov ebx, dword ptr [esp + 0x10]
+        lea edx, [eax + 2*eax]
+        lea esi, [ecx + 4*edx]
+    loop_top:
+        test ebx, ebx
+        je null_arg
+        mov ecx, dword ptr [ebx + 0x4]
+        mov edx, dword ptr [ecx]
+        jmp cmp_pair
+    null_arg:
+        xor edx, edx
+        xor ecx, ecx
+    cmp_pair:
+        cmp edx, dword ptr [esi]
+        jne next
+        cmp ecx, dword ptr [esi + 0x4]
+        je found
+    next:
+        dec eax
+        sub esi, 0xc
+        cmp eax, edi
+        jl fail
+        jmp loop_top
+    found:
+        sub eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    fail:
+        pop edi
+        pop esi
+        or eax, -1
+        pop ebx
+        ret 0x4
+    }
+}
