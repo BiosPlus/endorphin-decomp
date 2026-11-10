@@ -2832,3 +2832,38 @@ extern "C" __declspec(naked) bool __fastcall fn_00434F90(void* self) {
         ret
     }
 }
+
+// [0x00434760] sub_00434760 (65 bytes)
+extern "C" void ext_00430370();
+extern "C" void ext_00492570();
+extern "C" void ext_00594000();
+extern "C" void ext_006AD940();
+
+extern "C" __declspec(naked) void __fastcall fn_00434760(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        call ext_00492570
+        test al, al
+        je short L_no_434760
+        mov ecx, esi
+        call ext_00430370
+        test al, al
+        je short L_no_434760
+        mov eax, 1
+        jmp short L_done_434760
+L_no_434760:
+        xor eax, eax
+L_done_434760:
+        mov ecx, dword ptr [esp + 8]
+        mov edx, dword ptr [ecx]
+        pop esi
+        mov dword ptr [esp + 4], eax
+        mov eax, dword ptr [edx]
+        jmp eax
+    }
+}
