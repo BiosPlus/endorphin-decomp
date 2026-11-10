@@ -407,3 +407,37 @@ extern "C" void* __fastcall fn_0059F5C0(void* self) {
     p[0x2d] = 0;
     return p;
 }
+
+// [0x005991D0] sub_005991D0 (63 bytes)
+extern "C" __declspec(naked) int* __fastcall fn_005991D0(void* self, int edx_unused, int* out, int val, int pos) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        lea eax, [edi + 0x8]
+        cmp eax, esi
+        je done
+        lea edx, [eax - 0x8]
+        push ebx
+    copy_loop:
+        mov ebx, dword ptr [eax]
+        mov dword ptr [edx], ebx
+        mov ebx, dword ptr [eax + 0x4]
+        mov dword ptr [edx + 0x4], ebx
+        add eax, 0x8
+        add edx, 0x8
+        cmp eax, esi
+        jne copy_loop
+        pop ebx
+    done:
+        mov eax, dword ptr [esp + 0xc]
+        add dword ptr [ecx + 0x8], -0x8
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 0x4], edi
+        pop edi
+        mov dword ptr [eax], ecx
+        pop esi
+        ret 0xc
+    }
+}
