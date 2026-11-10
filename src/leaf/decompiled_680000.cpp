@@ -703,3 +703,43 @@ extern "C" __declspec(naked) void __cdecl fn_00682280(void* first, void* last, v
         ret
     }
 }
+
+// [0x006872E0] sub_006872E0 (76 bytes)
+extern "C" int mem_00A9F838;
+extern "C" int mem_00924FC0;
+extern "C" __declspec(naked) int __fastcall fn_006872E0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x48], 0x15
+        jne short L_other_006872E0
+        cmp byte ptr [esi + 0xb2], 0x0
+        jne short L_zero_006872E0
+        cmp byte ptr [esi + 0xb3], 0x0
+        jne short L_zero_006872E0
+        mov eax, 0x1
+        pop esi
+        ret
+    L_zero_006872E0:
+        xor eax, eax
+        pop esi
+        ret
+    L_other_006872E0:
+        mov eax, dword ptr [mem_00A9F838]
+        push eax
+        lea ecx, [esi + 0x10]
+        push ecx
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        je short L_table_006872E0
+        xor al, al
+        pop esi
+        ret
+    L_table_006872E0:
+        mov edx, dword ptr [esi + 0x48]
+        mov al, byte ptr [edx + 0xaa2fe4]
+        pop esi
+        ret
+    }
+}
