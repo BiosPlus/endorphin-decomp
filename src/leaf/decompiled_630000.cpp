@@ -443,3 +443,23 @@ extern "C" __declspec(naked) void* __fastcall fn_0063F350(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0063F600] sub_0063F600 (32 bytes)
+extern "C" void ext_0063F350();
+
+extern "C" __declspec(naked) void* __fastcall fn_0063F600(void* self) {
+    __asm {
+        mov eax, dword ptr [esp+8]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp+8]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_0063F350
+        mov dword ptr [esi], 0x97cc60
+        mov eax, esi
+        pop esi
+        ret 8
+    }
+}
