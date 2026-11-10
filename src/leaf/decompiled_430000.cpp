@@ -2799,3 +2799,36 @@ done:
         ret
     }
 }
+
+// [0x00434F90] sub_00434F90 (63 bytes)
+extern "C" int mem_0092FA04;
+extern "C" void ext_00594000();
+
+extern "C" __declspec(naked) bool __fastcall fn_00434F90(void* self) {
+    __asm {
+        push ebx
+        xor bl, bl
+        call ext_00594000
+        mov eax, dword ptr [eax + 0x26c]
+        cmp dword ptr [eax + 0x20], 0x64
+        jne L_ret_bl
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x11c]
+        call eax
+        test al, al
+        je L_ret_bl
+        push 0x0
+        push 0x0
+        push offset mem_0092FA04
+        call ext_006A5E60
+        mov al, 0x1
+        pop ebx
+        ret
+    L_ret_bl:
+        mov al, bl
+        pop ebx
+        ret
+    }
+}
