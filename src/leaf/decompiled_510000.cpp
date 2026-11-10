@@ -589,3 +589,41 @@ extern "C" SortedEntry51A5C0* __cdecl fn_0051A5C0(SortedEntry51A5C0* first, Sort
     }
     return first;
 }
+
+// [0x00510830] sub_00510830 (73 bytes)
+extern "C" void ext_004C72D0();
+extern "C" __declspec(naked) void __fastcall fn_00510830(void* self) {
+    __asm {
+        sub esp, 8
+        mov edx, dword ptr [esp + 0x14]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        xor al, al
+        mov byte ptr [esp + 0x10], al
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0xc], al
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        push edi
+        push esi
+        push ebx
+        call ext_004C72D0
+        sub esi, ebx
+        add esp, 0x18
+        sar esi, 5
+        shl esi, 5
+        mov eax, edi
+        pop edi
+        sub eax, esi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
