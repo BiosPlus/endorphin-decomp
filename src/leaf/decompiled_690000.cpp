@@ -898,3 +898,20 @@ extern "C" __declspec(naked) void* __cdecl fn_00692010(void* first, void* last, 
         ret
     }
 }
+
+// [0x00692070] sub_00692070 (87 bytes)
+// upper_bound over 4-byte elements with a cdecl predicate pred(value, elem).
+extern "C" int* __cdecl fn_00692070(int* first, int* last, const int* value, bool (__cdecl* pred)(int, int)) {
+    int count = last - first;
+    while (count > 0) {
+        int half = count / 2;
+        int* mid = first + half;
+        if (!pred(*value, *mid)) {
+            first = mid + 1;
+            count -= half + 1;
+        } else {
+            count = half;
+        }
+    }
+    return first;
+}
