@@ -203,3 +203,38 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_0066B1D0(void* self, in
         ret 0x8
     }
 }
+
+// [0x0067A930] ExprParser::BoolType::vfunc_47 (64 bytes)
+extern "C" __declspec(naked) float __fastcall fn_0067A930(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x4]
+        push esi
+        call edx
+        fstp dword ptr [esp + 0x8]
+        fldz
+        fld dword ptr [esp + 0x8]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jp fn_0067A930_neg_done
+        mov ecx, dword ptr [esi + 0x4]
+        fchs
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1c]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call edx
+        pop esi
+        ret 0x4
+    fn_0067A930_neg_done:
+        fstp st(0)
+        pop esi
+        ret 0x4
+    }
+}
