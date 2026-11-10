@@ -2346,3 +2346,22 @@ extern "C" __declspec(naked) void __fastcall fn_0043CEF0(void* self) {
         ret
     }
 }
+
+// [0x00434000] sub_00434000 (49 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_00468660();
+extern "C" int mem_00925688;
+
+extern "C" void __fastcall fn_00434000(void* self) {
+    typedef void* (__fastcall *GetFn)(void*);
+    typedef void (__fastcall *VFn)(void*);
+    typedef void (__stdcall *InvalidateRectFn)(void*, int, int);
+
+    void* a = ((GetFn)ext_00465B30)(self);
+    void* b = ((GetFn)ext_00468660)(a);
+    void** vt = *(void***)b;
+    ((VFn)vt[0x184 / 4])(b);
+    char* s = *(char**)((char*)self + 0x108);
+    void* hwnd = *(void**)(s + 0x20);
+    ((InvalidateRectFn)mem_00925688)(hwnd, 0, 1);
+}
