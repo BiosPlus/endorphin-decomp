@@ -535,3 +535,32 @@ extern "C" __declspec(naked) void __fastcall fn_0048C860(void* self) {
         jmp ext_00519CE0
     }
 }
+
+// [0x00480E00] sub_00480E00 (53 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00480E00(const float* src, const float* end, float* dst) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        cmp ecx, edx
+        mov eax, dword ptr [esp + 0xc]
+        je done
+    loop_top:
+        test eax, eax
+        je skip_copy
+        fld dword ptr [ecx]
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax + 0xc]
+    skip_copy:
+        add ecx, 0x10
+        add eax, 0x10
+        cmp ecx, edx
+        jne loop_top
+    done:
+        ret
+    }
+}
