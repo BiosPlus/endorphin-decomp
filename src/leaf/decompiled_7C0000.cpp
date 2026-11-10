@@ -952,3 +952,29 @@ extern "C" __declspec(naked) void __cdecl fn_007CCCD0(char* p, float a) {
         ret
     }
 }
+
+// [0x007CAFD0] sub_007CAFD0 (49 bytes)
+extern "C" void __cdecl ext_006A7250();
+
+extern "C" __declspec(naked) void __cdecl fn_007CAFD0(void* a0, float a1) {
+    __asm {
+        fld dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        fst dword ptr [esi + 0x10]
+        fld dword ptr [esi + 0x14]
+        fld st(1)
+        fmulp st(2), st
+        _emit 0xdc
+        _emit 0xc8
+        faddp st(1), st
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        call ext_006A7250
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [esi + 0x18]
+        pop esi
+        ret
+    }
+}
