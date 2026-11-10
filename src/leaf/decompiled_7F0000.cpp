@@ -460,3 +460,13 @@ extern "C" __declspec(naked) void __fastcall fn_007F7FA0(void* self) {
         ret
     }
 }
+
+// [0x007FC1D0] sub_007FC1D0 (85 bytes)
+extern "C" int __fastcall fn_007FC1D0(const float* self, int edx_unused, const float* other) {
+    int mask = 0;
+    if (self[0] < other[0]) mask |= 1;
+    if (self[1] < other[1]) mask |= 2;
+    if (self[2] < other[2]) mask |= 4;
+    if (self[3] < other[3]) mask |= 8;
+    return mask;
+}
