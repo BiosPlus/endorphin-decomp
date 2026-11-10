@@ -56549,7 +56549,9 @@
       "0x00460D19",
       "0x00460D32"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T06:27:31Z"
   },
   {
     "va": "0x00460D40",
