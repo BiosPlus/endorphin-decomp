@@ -328,3 +328,26 @@ zero_path:
         ret
     }
 }
+
+// [0x005B6930] sub_005B6930 (64 bytes)
+extern "C" void ext_00647E00();
+extern "C" int mem_00B40640;
+
+extern "C" void* __fastcall fn_005B6930(void* self) {
+    char* p = static_cast<char*>(self);
+    if (*reinterpret_cast<int*>(p + 0x184) > 1) {
+        void* obj = *reinterpret_cast<void**>(p + 0x158);
+        if (obj) {
+            char* esi = p + 0x214;
+            void* inner = *reinterpret_cast<void**>(static_cast<char*>(obj) + 0xac);
+            typedef void (__thiscall *CalleeFn)(void*, void*);
+            reinterpret_cast<CalleeFn>(&ext_00647E00)(inner, esi);
+            return esi;
+        }
+    }
+    void* sub = *reinterpret_cast<void**>(p + 4);
+    typedef void* (__thiscall *VFn)(void*, int);
+    VFn fnp = *reinterpret_cast<VFn*>(static_cast<char*>(sub) + 0x14);
+    void* r = fnp(p + 4, mem_00B40640);
+    return static_cast<char*>(r) + 0x30;
+}
