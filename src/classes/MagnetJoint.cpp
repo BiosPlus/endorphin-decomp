@@ -22,3 +22,38 @@ extern "C" void __cdecl ext_007C9B60(int a0, float a1, float a2, float a3);
 extern "C" void __fastcall fn_0065A1D0(unsigned char* self, int edx_unused, float* v) {
     ext_007C9B60(*(int*)(self + 0x6C), v[0], v[1], v[2]);
 }
+
+// [0x00645D30] MagnetJoint::vfunc_3 (65 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00645D30(void* self, int edx_unused, unsigned int idx, double v) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 10h]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0Ch]
+        je L_bad
+        mov ecx, dword ptr [esi + 14h]
+        sub ecx, eax
+        mov eax, 2aaaaaabh
+        imul ecx
+        sar edx, 2
+        mov eax, edx
+        shr eax, 1Fh
+        add eax, edx
+        cmp edi, eax
+        jb L_ok
+    L_bad:
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov ecx, dword ptr [esi + 10h]
+        fld qword ptr [esp + 10h]
+        lea eax, [edi + 2*edi]
+        pop edi
+        fstp qword ptr [ecx + 8*eax]
+        pop esi
+        ret 0Ch
+    }
+}
