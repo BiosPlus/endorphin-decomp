@@ -1244,3 +1244,19 @@ extern "C" __declspec(naked) void __fastcall fn_0046F830(void* self) {
         jmp ext_0067B050
     }
 }
+
+extern "C" void ext_006A5C62();
+
+// [0x0046A490] sub_0046A490 (57 bytes)
+extern "C" void* __stdcall fn_0046A490(int a1, int a2, int a3, int* a4, unsigned char a5) {
+    unsigned char* p = (unsigned char*)((void* (__cdecl*)(unsigned int))ext_006A5C62)(0x14);
+    if (p != 0) {
+        *(int*)p = a1;
+        *(int*)(p + 0x04) = a2;
+        *(int*)(p + 0x08) = a3;
+        *(int*)(p + 0x0C) = *a4;
+        p[0x10] = a5;
+        p[0x11] = 0;
+    }
+    return p;
+}
