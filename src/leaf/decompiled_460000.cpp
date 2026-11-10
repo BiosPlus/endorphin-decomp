@@ -1367,3 +1367,38 @@ extern "C" void __fastcall fn_00462A20(void* self, int edx_unused, void* a1, int
     const char* s = ((CStrFn)mem_00924FF0)(a1);
     ((SubFn)ext_00447510)(*(void**)self, s);
 }
+
+extern "C" void ext_00401930();
+extern "C" void ext_00462A60();
+extern "C" void ext_00462BA0();
+
+// [0x00462E10] sub_00462E10 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00462E10(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov eax, dword ptr [eax + 0x4]
+        sub eax, 0x1
+        je L_STATE1_462E10
+        sub eax, 0x1
+        jne L_END_462E10
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        je L_END_462E10
+        call ext_00462A60
+        test al, al
+        je L_END_462E10
+        pop esi
+        jmp ext_00462BA0
+L_STATE1_462E10:
+        mov ecx, dword ptr [esp + 0x8]
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [esi + 0xc]
+        push eax
+        call ext_00401930
+L_END_462E10:
+        pop esi
+        ret 0x4
+    }
+}
