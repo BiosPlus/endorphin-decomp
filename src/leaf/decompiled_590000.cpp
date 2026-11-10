@@ -786,3 +786,35 @@ extern "C" void __fastcall fn_005941F0(char* self, int edx_unused, char* x) {
     *(char**)(n + 0x8) = x;
     *(char**)(x + 0x4) = n;
 }
+
+// [0x00593EB0] sub_00593EB0 (86 bytes)
+extern "C" void ext_0041CF50();
+
+extern "C" __declspec(naked) void __fastcall fn_00593EB0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8a0ac8
+        push eax
+        mov dword ptr fs:[0x0], esp
+        lea eax, [esp + 0x10]
+        push eax
+        mov ecx, 0xaecc04
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x14]
+        test ecx, ecx
+        mov dword ptr [esp + 0x8], -0x1
+        je skip_call_00593EB0
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x10]
+        push eax
+        call edx
+skip_call_00593EB0:
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
