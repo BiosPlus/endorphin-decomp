@@ -78273,7 +78273,9 @@
     "relocations": [
       "0x00481E43"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:31:36Z"
   },
   {
     "va": "0x00481E60",
