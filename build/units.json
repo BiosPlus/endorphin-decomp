@@ -17987,7 +17987,9 @@
       "0x0041DDAC",
       "0x0041DDCE"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T03:58:51Z"
   },
   {
     "va": "0x0041DDE0",

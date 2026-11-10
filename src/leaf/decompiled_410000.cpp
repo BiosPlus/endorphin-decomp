@@ -779,3 +779,27 @@ done:
         ret
     }
 }
+
+// [0x0041DDA0] sub_0041DDA0 (50 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0041DDA0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x24]
+        test eax, eax
+        je short L_skip_41DDA0
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+L_skip_41DDA0:
+        mov dword ptr [esi + 0x24], 0
+        mov dword ptr [esi + 0x28], 0
+        mov dword ptr [esi + 0x2c], 0
+        lea ecx, [esi + 4]
+        pop esi
+        jmp dword ptr [mem_00924FF4]
+    }
+}
