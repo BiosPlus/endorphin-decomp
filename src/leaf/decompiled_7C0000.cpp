@@ -1251,3 +1251,16 @@ extern "C" __declspec(naked) void __cdecl fn_007CB010(float* self, float arg) {
         ret
     }
 }
+
+// [0x007C7710] sub_007C7710 (49 bytes)
+extern "C" void __cdecl ext_007C6790(void* a0);
+extern "C" void* __cdecl ext_007D4A70(void* a0);
+extern "C" void* __cdecl ext_007D4AA0(void* a0, void* a1);
+
+extern "C" void __cdecl fn_007C7710(void* a0) {
+    void* esi = ext_007D4A70(a0);
+    while (esi) {
+        ext_007C6790(*(void**)((char*)esi + 0x14));
+        esi = ext_007D4AA0(a0, esi);
+    }
+}
