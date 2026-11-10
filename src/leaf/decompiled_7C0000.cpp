@@ -978,3 +978,27 @@ extern "C" __declspec(naked) void __cdecl fn_007CAFD0(void* a0, float a1) {
         ret
     }
 }
+
+// [0x007C9A60] sub_007C9A60 (50 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C9A60(char* a0, int a1, float* a2) {
+    __asm {
+        cmp dword ptr [esp + 0x8], 0x0
+        mov eax, dword ptr [esp + 0x4]
+        jne short L_nonzero
+        add eax, 0x160
+        jmp short L_copy
+L_nonzero:
+        add eax, 0x174
+L_copy:
+        fld dword ptr [eax]
+        mov ecx, dword ptr [esp + 0xc]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ecx + 0x8]
+        fld dword ptr [eax + 0xc]
+        fstp dword ptr [ecx + 0xc]
+        ret
+    }
+}
