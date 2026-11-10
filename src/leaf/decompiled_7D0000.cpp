@@ -774,3 +774,37 @@ extern "C" int __cdecl fn_007D5B60(void* self, void* out_a, void* out_b) {
     b[2] = f[7];
     return 1;
 }
+
+// [0x007DCAC0] sub_007DCAC0 (61 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007DCAC0(void* self) {
+    __asm {
+        push esi
+        mov ecx, edx
+        sar ecx, 0x10
+        mov esi, edx
+        and esi, 0xffff
+        xor ecx, esi
+        mov esi, dword ptr [eax + 0x8]
+        mov eax, dword ptr [eax]
+        sub esi, 0x1
+        and ecx, esi
+        cmp dword ptr [eax + 4*ecx], 0x0
+        lea ecx, [eax + 4*ecx]
+        pop esi
+        je not_found
+chain_loop:
+        mov eax, dword ptr [ecx]
+        cmp dword ptr [eax + 0x8], edx
+        je found
+        cmp dword ptr [eax + 0x10], 0x0
+        lea ecx, [eax + 0x10]
+        jne chain_loop
+not_found:
+        xor eax, eax
+        ret
+found:
+        mov edx, dword ptr [eax + 0x10]
+        mov dword ptr [ecx], edx
+        ret
+    }
+}
