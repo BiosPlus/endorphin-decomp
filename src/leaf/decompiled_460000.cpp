@@ -1507,3 +1507,31 @@ L_END_462F00:
         ret 4
     }
 }
+
+// [0x0046F930] sub_0046F930 (65 bytes)
+extern "C" void ext_0046F890();
+extern "C" void ext_0067AEB0();
+
+extern "C" __declspec(naked) void __fastcall fn_0046F930(void* self) {
+    __asm {
+        call ext_0046F890
+        test al, al
+        jne done
+        cmp byte ptr [ecx + 0x153], al
+        jne done
+        cmp byte ptr [ecx + 0x152], 0x0
+        mov al, 0x1
+        mov byte ptr [ecx + 0x150], al
+        je skip
+        mov byte ptr [ecx + 0x151], al
+    skip:
+        cmp dword ptr [ecx + 0x28], 0x0
+        je done
+        mov eax, dword ptr [ecx + 0x148]
+        push eax
+        add ecx, 0x160
+        call ext_0067AEB0
+    done:
+        ret
+    }
+}
