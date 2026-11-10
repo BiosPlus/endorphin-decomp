@@ -186,3 +186,25 @@ extern "C" __declspec(naked) double __fastcall fn_005245D0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0052A410] sub_0052A410 (55 bytes)
+extern "C" void ext_006A5C62();
+
+extern "C" void* __cdecl fn_0052A410() {
+    typedef void* (__cdecl *AllocFn)(unsigned int);
+    char* p = (char*)((AllocFn)ext_006A5C62)(0x64);
+    if (p) {
+        *(int*)p = 0;
+    }
+    int* q = (int*)(p + 0x4);
+    if (q) {
+        *q = 0;
+    }
+    int* r = (int*)(p + 0x8);
+    if (r) {
+        *r = 0;
+    }
+    p[0x60] = 1;
+    p[0x61] = 0;
+    return p;
+}
