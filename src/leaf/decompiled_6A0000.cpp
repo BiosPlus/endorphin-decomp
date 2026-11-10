@@ -577,3 +577,28 @@ extern "C" __declspec(naked) int* __fastcall fn_006ACF10(void* self, int edx_unu
         ret 0x14
     }
 }
+
+// [0x006A7FF0] sub_006A7FF0 (42 bytes)
+// Lazily resolves GetProcAddress(ext_0041FD20(self), 0x990980) into [self+0x3c], then stores it to *out.
+extern "C" void ext_0041FD20();
+extern "C" int mem_009241D8;
+
+extern "C" __declspec(naked) void __fastcall fn_006A7FF0(void* self, int edx_unused, void** out) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x3c], 0x0
+        jne short L_006A800D
+        push 0x990980
+        call ext_0041FD20
+        push eax
+        call dword ptr [mem_009241D8]
+        mov dword ptr [esi + 0x3c], eax
+    L_006A800D:
+        mov ecx, dword ptr [esi + 0x3c]
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [eax], ecx
+        pop esi
+        ret 0x4
+    }
+}
