@@ -948,3 +948,50 @@ extern "C" __declspec(naked) void __fastcall fn_00455B50(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00455C20();
+extern "C" void ext_006A63BE();
+extern "C" void ext_006A60EE();
+
+// [0x00456C20] sub_00456C20 (75 bytes)
+// Walks a singly linked list at this->[0x88]; for each node calls ext_00455C20(), then ext_006A63BE(node->obj, result);
+// when that returns nonzero, calls obj->vtbl[0x17C/4](arg1) with ecx = obj.
+extern "C" __declspec(naked) void __cdecl fn_00456C20(void* self, void* arg1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax + 0x88]
+        test esi, esi
+        je L_done
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push edi
+    L_top:
+        test esi, esi
+        mov eax, esi
+        je L_tail
+        mov esi, dword ptr [esi]
+        mov edi, dword ptr [eax + 8]
+        call ext_00455C20
+        push eax
+        mov ecx, edi
+        call ext_006A63BE
+        test eax, eax
+        je L_next
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [edx + 0x17c]
+        push ebx
+        mov ecx, edi
+        call eax
+    L_next:
+        test esi, esi
+        jne L_top
+        pop edi
+        pop ebx
+    L_done:
+        pop esi
+        ret
+    L_tail:
+        jmp ext_006A60EE
+    }
+}
