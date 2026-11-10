@@ -349,3 +349,20 @@ done:
         ret
     }
 }
+
+// [0x00540572] sub_00540572 (52 bytes)
+extern "C" int mem_009254E4;
+extern "C" int mem_00925418;
+extern "C" __declspec(naked) void __cdecl fn_00540572() {
+    __asm {
+        push 0x1b02
+        push 0x408
+        call dword ptr [mem_0092551C]
+        push 0x901
+        call dword ptr [mem_009254E4]
+        push 0x405
+        call dword ptr [mem_00925428]
+        mov dword ptr [esp + 4], 0xb44
+        jmp dword ptr [mem_00925418]
+    }
+}
