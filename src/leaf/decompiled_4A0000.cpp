@@ -250,3 +250,41 @@ extern "C" __declspec(naked) void __cdecl fn_004ABA70(int* out, int a2, void* fi
         ret
     }
 }
+
+// [0x004A6020] sub_004A6020 (62 bytes)
+extern "C" int mem_009251EC;
+
+// __thiscall ret 0xc: erase element at pos from the 4-byte-element array at self (end ptr at +8),
+// then write the result pair {value, pos} to out.
+// Naked: the body calls the MSVCR80!memmove_s IAT slot directly, and the original stack/register layout is kept.
+extern "C" __declspec(naked) void __fastcall fn_004A6020(void* self, int edx_unused, int* out, int value, int* pos) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x8]
+        lea ecx, [edi + 0x4]
+        sub eax, ecx
+        sar eax, 0x2
+        test eax, eax
+        jle skip_copy
+        add eax, eax
+        add eax, eax
+        push eax
+        push ecx
+        push eax
+        push edi
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+    skip_copy:
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x10]
+        add dword ptr [esi + 0x8], -0x4
+        mov dword ptr [eax + 0x4], edi
+        pop edi
+        mov dword ptr [eax], ecx
+        pop esi
+        ret 0xc
+    }
+}
