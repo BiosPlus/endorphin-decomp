@@ -1245,3 +1245,31 @@ extern "C" __declspec(naked) void __fastcall fn_0044BC10(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0044B220] sub_0044B220 (50 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0044B220(void* self, int edx_unused, void* a1) {
+    __asm {
+        cmp dword ptr [ecx + 0x64], 0x0
+        je done
+        mov ecx, dword ptr [ecx + 0x64]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xb8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esi]
+        call edx
+        sub eax, 0x1
+        neg eax
+        sbb eax, eax
+        add eax, 0x1
+        push eax
+        mov eax, dword ptr [edi + 0x4]
+        mov ecx, esi
+        call eax
+        pop edi
+        pop esi
+done:
+        ret 0x4
+    }
+}
