@@ -643,3 +643,33 @@ extern "C" __declspec(naked) void __fastcall fn_004803F0(void* self) {
         ret
     }
 }
+
+// [0x00480CA0] sub_00480CA0 (55 bytes)
+// Fills each 16-byte slot in [dst, end) with the 4-float vector at src.
+extern "C" __declspec(naked) void __cdecl fn_00480CA0(float* dst, float* end, const float* src) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        cmp eax, edx
+        je l480ca0_done
+        mov ecx, dword ptr [esp + 0xc]
+        add eax, 0x8
+        push esi
+    l480ca0_top:
+        fld dword ptr [ecx]
+        add eax, 0x10
+        fstp dword ptr [eax - 0x18]
+        lea esi, [eax - 0x8]
+        cmp esi, edx
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [eax - 0x14]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [eax - 0x10]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax - 0xc]
+        jne l480ca0_top
+        pop esi
+    l480ca0_done:
+        ret
+    }
+}
