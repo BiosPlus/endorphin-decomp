@@ -45,3 +45,17 @@ extern "C" __declspec(naked) float __fastcall fn_005B19F0(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x005B1190] Geometry::CylinderType::vfunc_9 (57 bytes)
+extern "C" int mem_00993828;
+
+extern "C" float __fastcall fn_005B1190(void* self, int edx_unused, int a1, void* a2) {
+    float* v = (float*)a2;
+    if (a1 == 2) {
+        return (float)(v[1] * *(double*)&mem_00993828);
+    }
+    if (a1 == 1) {
+        return v[0];
+    }
+    return v[a1];
+}
