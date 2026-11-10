@@ -1817,3 +1817,38 @@ extern "C" __declspec(naked) void __fastcall fn_00448420(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00443960] MultiTrackView::MultiTrackViewStates::MoveState::MoveState (82 bytes)
+extern "C" void ext_00442960();
+extern "C" int mem_009327F4;
+
+extern "C" __declspec(naked) void* __fastcall fn_00443960(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push -1
+        push 0x87ba78
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x18]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_00442960
+        mov ecx, dword ptr [esp + 0x8]
+        xor eax, eax
+        mov dword ptr [esi], offset mem_009327F4
+        mov dword ptr [esi + 0x10], eax
+        mov dword ptr [esi + 0x14], eax
+        mov dword ptr [esi + 0x18], eax
+        mov byte ptr [esi + 0x30], al
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x8
+    }
+}
