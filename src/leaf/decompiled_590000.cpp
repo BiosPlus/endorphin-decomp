@@ -333,3 +333,30 @@ extern "C" __declspec(naked) int __fastcall fn_00596370(void* self) {
         ret
     }
 }
+
+// [0x00595C50] sub_00595C50 (55 bytes)
+extern "C" void ext_006A5C62();
+extern "C" __declspec(naked) void __fastcall fn_00595C50(void* self) {
+    __asm {
+        push 0x34
+        call ext_006A5C62
+        add esp, 4
+        test eax, eax
+        je L_skip0
+        mov dword ptr [eax], 0
+    L_skip0:
+        lea ecx, [eax + 4]
+        test ecx, ecx
+        je L_skip1
+        mov dword ptr [ecx], 0
+    L_skip1:
+        lea ecx, [eax + 8]
+        test ecx, ecx
+        je L_skip2
+        mov dword ptr [ecx], 0
+    L_skip2:
+        mov byte ptr [eax + 0x30], 1
+        mov byte ptr [eax + 0x31], 0
+        ret
+    }
+}
