@@ -1012,3 +1012,43 @@ index_ok:
         ret
     }
 }
+
+// [0x007DB130] sub_007DB130 (83 bytes)
+extern "C" __declspec(naked) void __stdcall fn_007DB130(void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x24]
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        call edx
+        mov eax, dword ptr [esi + 0x24]
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        call edx
+        mov eax, dword ptr [esi + 0x24]
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        call edx
+        mov eax, dword ptr [esi + 0x24]
+        mov ecx, dword ptr [esi + 0xc]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        call edx
+        mov eax, dword ptr [esi + 0x24]
+        mov ecx, dword ptr [esi + 0x10]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        call edx
+        mov eax, dword ptr [esi + 0x24]
+        mov ecx, dword ptr [esi + 0x14]
+        add esp, 0x14
+        pop esi
+        mov dword ptr [esp + 0x4], ecx
+        mov edx, dword ptr [eax + 0xc]
+        jmp edx
+    }
+}
