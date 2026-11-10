@@ -69,3 +69,51 @@ extern "C" __declspec(naked) void __fastcall fn_00516E60(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00516E10] EvolvedIndividual::vfunc_0_off_8 (80 bytes)
+// Stores (self - 8) into a1->+0x30, then for each element of the vector at
+// self+0xC (begin) / self+0x10 (end) stores its index into element->+0x34.
+// Two stack args (ret 0x8): a1 is used, a2 is unused.
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00516E10(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        lea eax, [esi - 0x8]
+        push edi
+        mov dword ptr [ecx + 0x30], eax
+        xor edi, edi
+    loop_top:
+        mov ecx, dword ptr [esi + 0xc]
+        test ecx, ecx
+        je loop_end
+        mov eax, dword ptr [esi + 0x10]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jae loop_end
+        test ecx, ecx
+        je call_inval
+        mov eax, dword ptr [esi + 0x10]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb body
+    call_inval:
+        call ebx
+    body:
+        mov edx, dword ptr [esi + 0xc]
+        mov eax, dword ptr [edx + 4 * edi]
+        mov dword ptr [eax + 0x34], edi
+        add edi, 1
+        jmp loop_top
+    loop_end:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}

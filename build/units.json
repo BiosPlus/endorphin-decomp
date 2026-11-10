@@ -178880,7 +178880,9 @@
     "relocations": [
       "0x00516E13"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T14:15:22Z"
   },
   {
     "va": "0x00516E60",
