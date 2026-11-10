@@ -480,3 +480,34 @@ extern "C" void __fastcall fn_0052A090(void* self, int edx_unused, void* node) {
     *(char**)p = n;
     *(char**)(n + 0x4) = p;
 }
+
+// [0x00526C70] sub_00526C70 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00526C70(void* self) {
+    __asm {
+        push -1
+        push 0893BFEh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 4], ecx
+        mov dword ptr [eax + 8], ecx
+        mov dword ptr [eax + 0Ch], ecx
+        mov dword ptr [eax + 14h], ecx
+        mov dword ptr [eax + 18h], ecx
+        mov dword ptr [eax + 1Ch], ecx
+        mov dword ptr [eax + 24h], ecx
+        mov dword ptr [eax + 28h], ecx
+        mov dword ptr [eax + 2Ch], ecx
+        mov dword ptr [eax + 34h], ecx
+        mov dword ptr [eax + 38h], ecx
+        mov dword ptr [eax + 3Ch], ecx
+        mov byte ptr [eax + 40h], cl
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
