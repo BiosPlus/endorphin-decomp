@@ -406,3 +406,33 @@ extern "C" int* __stdcall fn_004959E0(int* first, int* last, int* dest) {
     }
     return r;
 }
+
+// [0x004925D0] sub_004925D0 (52 bytes)
+// __thiscall with ret 4. Checks this->f0 == 1; then arg==0 -> (f8 == fC), arg==1 -> (f8 == f10), else 0.
+extern "C" __declspec(naked) int __fastcall fn_004925D0(void* self, int edx_unused, int a1) {
+    __asm {
+        cmp dword ptr [ecx], 1
+        je L_a
+        xor al, al
+        ret 4
+    L_a:
+        mov eax, dword ptr [esp + 4]
+        test eax, eax
+        jne L_b
+        mov eax, dword ptr [ecx + 8]
+        cmp eax, dword ptr [ecx + 0xc]
+        je L_true
+    L_false:
+        xor eax, eax
+        ret 4
+    L_b:
+        cmp eax, 1
+        jne L_false
+        mov edx, dword ptr [ecx + 8]
+        cmp edx, dword ptr [ecx + 0x10]
+        jne L_false
+    L_true:
+        mov eax, 1
+        ret 4
+    }
+}
