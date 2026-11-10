@@ -1358,3 +1358,36 @@ extern "C" char* __cdecl fn_004898F0(char* first, char* last, const unsigned int
     }
     return cur;
 }
+
+// [0x0048E310] sub_0048E310 (83 bytes)
+extern "C" void ext_00665810();
+extern "C" __declspec(naked) void __fastcall fn_0048E310(void* self) {
+    __asm {
+        push -1
+        push 0x88a1e8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov ecx, dword ptr [esi + 0x14]
+        test ecx, ecx
+        mov dword ptr [esp + 0x10], 0x0
+        je skip_release
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+skip_release:
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_00665810
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
