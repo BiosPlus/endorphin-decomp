@@ -186,3 +186,25 @@ extern "C" __declspec(naked) void __cdecl fn_00477E60(void* dst, unsigned int co
         ret
     }
 }
+
+// [0x00477470] sub_00477470 (54 bytes)
+extern "C" int mem_00925134;
+extern "C" void __fastcall fn_00477470(void* self, int edx_unused, void* a1, unsigned int a2) {
+    void (__cdecl* fail)() = (void (__cdecl*)())mem_00925134;
+    unsigned int* s = (unsigned int*)self;
+    unsigned int* base = (unsigned int*)s[0];
+    unsigned int off = s[1];
+    if (base == 0) {
+        fail();
+    }
+    off = off + a2 * 4;
+    if (off <= base[2]) {
+        if (off >= base[1]) {
+            goto done;
+        }
+    }
+    fail();
+done:
+    ((unsigned int*)a1)[1] = off;
+    ((unsigned int*)a1)[0] = (unsigned int)base;
+}
