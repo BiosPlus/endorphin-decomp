@@ -1048,3 +1048,36 @@ extern "C" void __fastcall fn_00647FD0(void* self) {
     int second = *(int*)*(void**)((char*)self + 0xa4);
     ((void (__cdecl*)(int, float, float, float))ext_007C62B0)(second, 0.0f, 0.0f, 0.0f);
 }
+
+// [0x00645EB0] sub_00645EB0 (72 bytes)
+extern "C" int mem_0097D99C;
+extern "C" int mem_0097D988;
+extern "C" int mem_0097D954;
+extern "C" void ext_006A5C5C();
+extern "C" void ext_0065F440();
+
+extern "C" __declspec(naked) void __fastcall fn_00645EB0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi + 0x8]
+        mov dword ptr [esi], offset mem_0097D99C
+        mov dword ptr [esi + 0x4], offset mem_0097D988
+        mov dword ptr [edi], offset mem_0097D954
+        mov eax, dword ptr [esi + 0x10]
+        test eax, eax
+        je skip_release
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    skip_release:
+        mov ecx, edi
+        pop edi
+        mov dword ptr [esi + 0x10], 0
+        mov dword ptr [esi + 0x14], 0
+        mov dword ptr [esi + 0x18], 0
+        pop esi
+        jmp ext_0065F440
+    }
+}
