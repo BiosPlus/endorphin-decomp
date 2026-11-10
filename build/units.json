@@ -424816,7 +424816,9 @@
       "0x0068DDE1",
       "0x0068DDE8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T04:21:49Z"
   },
   {
     "va": "0x0068DE10",
