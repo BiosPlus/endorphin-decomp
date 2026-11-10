@@ -1557,3 +1557,35 @@ extern "C" void* __cdecl fn_004685A0(void* a1) {
     }
     return edi;
 }
+
+// [0x0046C490] sub_0046C490 (69 bytes)
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00924FF0;
+extern "C" int mem_009251F0;
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) int __cdecl fn_0046C490(void* s) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 0x8]
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 0x4]
+        fldz
+        add esp, 0x4
+        fld dword ptr [esp]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        jne neg_path
+        fadd qword ptr [mem_00993828]
+        add esp, 0x4
+        jmp ext_006A6DE0
+neg_path:
+        fsub qword ptr [mem_00993828]
+        add esp, 0x4
+        jmp ext_006A6DE0
+    }
+}

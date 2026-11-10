@@ -65314,7 +65314,9 @@
       "0x0046C4C9",
       "0x0046C4D1"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:41:26Z"
   },
   {
     "va": "0x0046C4E0",
