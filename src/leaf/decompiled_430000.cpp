@@ -2489,3 +2489,31 @@ extern "C" __declspec(naked) void* __fastcall fn_00434AB0(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0043D780] sub_0043D780 (55 bytes)
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void __fastcall fn_0043D780(void* self) {
+    __asm {
+        push 0x18
+        call ext_006A5C62
+        add esp, 4
+        test eax, eax
+        je L_skip0
+        mov dword ptr [eax], 0
+    L_skip0:
+        lea ecx, [eax + 4]
+        test ecx, ecx
+        je L_skip1
+        mov dword ptr [ecx], 0
+    L_skip1:
+        lea ecx, [eax + 8]
+        test ecx, ecx
+        je L_skip2
+        mov dword ptr [ecx], 0
+    L_skip2:
+        mov byte ptr [eax + 0x14], 1
+        mov byte ptr [eax + 0x15], 0
+        ret
+    }
+}
