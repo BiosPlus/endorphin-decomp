@@ -162,3 +162,33 @@ extern "C" __declspec(naked) int __cdecl fn_007F6690(int a1, int a2, int a3, int
         ret
     }
 }
+
+// [0x007F0BC0] sub_007F0BC0 (55 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007F0BC0(void* a, void* b) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [esp + 8]
+        fld dword ptr [ecx + 58h]
+        mov edx, dword ptr [edx]
+        fld dword ptr [edx + 58h]
+        fcompp
+        fnstsw ax
+        test ah, 41h
+        jne second
+        or eax, -1
+        ret
+second:
+        fld dword ptr [ecx + 58h]
+        fld dword ptr [edx + 58h]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp unordered
+        mov eax, 1
+        ret
+unordered:
+        xor eax, eax
+        ret
+    }
+}
