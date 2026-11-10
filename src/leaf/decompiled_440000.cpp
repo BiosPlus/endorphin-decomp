@@ -1134,3 +1134,31 @@ extern "C" void* __fastcall fn_00442990(void* self, int edx_unused, int a1, int 
     *reinterpret_cast<int*>(p + 0x10) = -2;
     return self;
 }
+
+// [0x0044BA30] sub_0044BA30 (48 bytes)
+extern "C" void ext_00530690();
+extern "C" int mem_00A2FFE0;
+extern "C" int mem_00924FC0;
+extern "C" __declspec(naked) void __fastcall fn_0044BA30(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, [mem_00A2FFE0]
+        mov ecx, [ecx + 0x68]
+        push esi
+        mov esi, [esp + 8]
+        push edi
+        mov edi, [esi]
+        push eax
+        call ext_00530690
+        push eax
+        call dword ptr [mem_00924FC0]
+        mov edx, [edi + 4]
+        movzx ecx, al
+        add esp, 8
+        push ecx
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        ret 4
+    }
+}
