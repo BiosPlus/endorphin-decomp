@@ -38710,7 +38710,9 @@
       "0x004439EB",
       "0x004439F8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:43:32Z"
   },
   {
     "va": "0x00443A10",
