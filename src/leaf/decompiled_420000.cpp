@@ -339,3 +339,34 @@ extern "C" void __fastcall fn_0042FC60(void* self) {
     void** vt2 = *(void***)obj2;
     ((Fn1)vt2[0xe0 / 4])(obj2, 2, esi, (char*)esi + 0x3c, 0);
 }
+
+// [0x00422B20] sub_00422B20 (53 bytes)
+extern "C" void ext_006A62FE();
+extern "C" int mem_00925618;
+
+extern "C" __declspec(naked) int __fastcall fn_00422B20(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006A62FE
+        test eax, eax
+        je short L_no_obj
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x7c]
+        call eax
+        jmp short L_after
+    L_no_obj:
+        xor eax, eax
+    L_after:
+        mov ecx, dword ptr [esi + 0x84]
+        mov edx, dword ptr [eax + 0x20]
+        push 0
+        push ecx
+        push 0x111
+        push edx
+        call dword ptr [mem_00925618]
+        pop esi
+        ret 0xc
+    }
+}
