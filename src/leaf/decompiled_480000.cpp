@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_480000.cpp
 
+#include <cstdio>
+#include <new>
 #include <string>
 
 // [0x004806E0] sub_004806E0 (31 bytes)
@@ -895,5 +897,37 @@ extern "C" __declspec(naked) void __fastcall fn_004801C0(void* unused, int edx_u
         pop edi
     done:
         ret 0x8
+    }
+}
+
+// [0x00486880] sub_00486880 (67 bytes)
+// Formats d with "%lf" into a 50-byte buffer via _snprintf, then constructs
+// the std::string at out (first stack arg) and returns out. ecx is not used.
+extern "C" int mem_009251E0;
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void* __cdecl fn_00486880(std::string* out, double d) {
+    __asm {
+        sub esp, 0x38
+        fld qword ptr [esp + 0x40]
+        push esi
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        push 0x93c670
+        lea eax, [esp + 0x14]
+        push 0x32
+        push eax
+        mov dword ptr [esp + 0x18], 0x0
+        call dword ptr [mem_009251E0]
+        mov esi, dword ptr [esp + 0x54]
+        add esp, 0x14
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        add esp, 0x38
+        ret
     }
 }
