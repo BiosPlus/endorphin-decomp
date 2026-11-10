@@ -410,3 +410,17 @@ extern "C" __declspec(naked) void __fastcall fn_005C39F0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005C8650] sub_005C8650 (62 bytes)
+extern "C" void ext_005C83D0();
+extern "C" void __fastcall fn_005C8650(void* self) {
+    unsigned int* p = (unsigned int*)self;
+    p[0] = 0x965704;
+    p[1] = 0x9656bc;
+    p[2] = 0x96567c;
+    p[3] = 0x96562c;
+    p[0x150 / 4] = 0x965614;
+    p[0x154 / 4] = 0x96560c;
+    p[0x158 / 4] = 0x965600;
+    ext_005C83D0();
+}
