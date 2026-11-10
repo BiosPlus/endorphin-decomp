@@ -617,3 +617,29 @@ extern "C" __declspec(naked) void __cdecl fn_004817A0(float* dst, unsigned int c
         ret
     }
 }
+
+// [0x004803F0] sub_004803F0 (54 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004803F0(void* self) {
+    __asm {
+        fld1
+        mov eax, ecx
+        fst dword ptr [eax]
+        fldz
+        fst dword ptr [eax + 0x4]
+        fst dword ptr [eax + 0x8]
+        fst dword ptr [eax + 0xc]
+        fst dword ptr [eax + 0x10]
+        fst dword ptr [eax + 0x18]
+        fst dword ptr [eax + 0x1c]
+        fst dword ptr [eax + 0x20]
+        fst dword ptr [eax + 0x24]
+        fst dword ptr [eax + 0x2c]
+        fst dword ptr [eax + 0x30]
+        fst dword ptr [eax + 0x34]
+        fstp dword ptr [eax + 0x38]
+        fst dword ptr [eax + 0x14]
+        fst dword ptr [eax + 0x28]
+        fstp dword ptr [eax + 0x3c]
+        ret
+    }
+}
