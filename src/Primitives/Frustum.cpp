@@ -39,3 +39,45 @@ flags_set:
         ret 0xc
     }
 }
+
+// [0x0053BC40] Primitives::Frustum::vfunc_28 (82 bytes)
+extern "C" void ext_005B11D0();
+extern "C" void ext_0063E02A();
+
+extern "C" __declspec(naked) void __fastcall fn_0053BC40(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x20]
+        push 2
+        call ext_005B11D0
+        mov ecx, dword ptr [esi + 0x20]
+        push 1
+        mov edi, eax
+        call ext_005B11D0
+        mov ecx, dword ptr [esi + 0x20]
+        push 0
+        mov ebx, eax
+        call ext_005B11D0
+        fld dword ptr [edi]
+        mov ecx, dword ptr [esi + 0x40]
+        mov edx, dword ptr [esi + 0x3c]
+        push ecx
+        push edx
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld dword ptr [ebx]
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [eax]
+        mov eax, dword ptr [esi + 0x44]
+        fstp qword ptr [esp]
+        push eax
+        call ext_0063E02A
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
