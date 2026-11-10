@@ -449742,7 +449742,9 @@
       "0x006A9384",
       "0x006A9392"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T06:39:58Z"
   },
   {
     "va": "0x006A93A0",

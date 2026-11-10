@@ -407,3 +407,39 @@ extern "C" __declspec(naked) void __fastcall fn_006A8800(void* self) {
         ret 0x8
     }
 }
+
+// [0x006A9360] sub_006A9360 (60 bytes)
+extern "C" void ext_006A8980();
+extern "C" int mem_009256BC;
+extern "C" int mem_00925688;
+
+extern "C" __declspec(naked) int __fastcall fn_006A9360(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        cmp eax, esi
+        je L_006A9360_done
+        test eax, eax
+        je L_006A9360_nullarg
+        mov eax, dword ptr [eax + 0x20]
+    L_006A9360_nullarg:
+        push eax
+        mov eax, dword ptr [esi + 0x20]
+        push eax
+        call dword ptr [mem_009256BC]
+        test eax, eax
+        jne L_006A9360_done
+        mov ecx, esi
+        call ext_006A8980
+        mov ecx, dword ptr [esi + 0x20]
+        push 0x1
+        push 0x0
+        push ecx
+        call dword ptr [mem_00925688]
+    L_006A9360_done:
+        xor eax, eax
+        pop esi
+        ret 0x8
+    }
+}
