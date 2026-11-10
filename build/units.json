@@ -396650,7 +396650,9 @@
       "0x00662C0B",
       "0x00662C1F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T06:47:09Z"
   },
   {
     "va": "0x00662C30",

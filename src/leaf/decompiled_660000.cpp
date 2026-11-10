@@ -719,3 +719,28 @@ extern "C" void* __fastcall fn_00668CD0(void* self) {
     *(unsigned int*)(esi + 8) = 0;
     return self;
 }
+
+// [0x00662BF0] sub_00662BF0 (61 bytes)
+extern "C" int mem_00924254;
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void* __cdecl fn_00662BF0(void) {
+    __asm {
+        sub esp, 0x108
+        push esi
+        lea eax, [esp + 0x8]
+        push eax
+        push 0x104
+        mov dword ptr [esp + 0xc], 0
+        call dword ptr [mem_00924254]
+        mov esi, dword ptr [esp + 0x110]
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        add esp, 0x108
+        ret
+    }
+}
