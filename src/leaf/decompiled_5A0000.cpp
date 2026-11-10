@@ -459,3 +459,36 @@ extern "C" void __fastcall fn_005AC860(char* self, int edx_unused, char* x) {
     *(char**)(n + 0x8) = x;
     *(char**)(x + 0x4) = n;
 }
+
+// [0x005ACD80] sub_005ACD80 (83 bytes)
+extern "C" void ext_00665810();
+extern "C" __declspec(naked) void __fastcall fn_005ACD80(void* self) {
+    __asm {
+        push -1
+        push 0x88a1e8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov ecx, dword ptr [esi + 0x1c]
+        test ecx, ecx
+        mov dword ptr [esp + 0x10], 0x0
+        je skip_release
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+    skip_release:
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_00665810
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
