@@ -134,3 +134,44 @@ extern "C" __declspec(naked) void __fastcall fn_00783570(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" int mem_00925184;
+extern "C" int mem_009252C4;
+
+// [0x007835B0] sub_007835B0 (64 bytes)
+// Two-part unit: ftell wrapper on self->[4]->[4] (ret), then fseek(file, arg, 0) wrapper (ret 0x4).
+extern "C" __declspec(naked) void __fastcall fn_007835B0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov cl, byte ptr [eax + 0x4]
+        test cl, cl
+        je short L_tell_null
+        mov eax, dword ptr [eax]
+        push eax
+        call dword ptr [mem_00925184]
+        add esp, 0x4
+        ret
+L_tell_null:
+        xor eax, eax
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        mov eax, dword ptr [ecx + 0x4]
+        mov cl, byte ptr [eax + 0x4]
+        test cl, cl
+        je short L_seek_null
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [eax]
+        push 0x0
+        push ecx
+        push edx
+        call dword ptr [mem_009252C4]
+        add esp, 0xc
+L_seek_null:
+        ret 0x4
+    }
+}

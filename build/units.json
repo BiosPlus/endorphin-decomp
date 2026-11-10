@@ -551548,7 +551548,9 @@
       "0x007835BF",
       "0x007835E6"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T07:52:53Z"
   },
   {
     "va": "0x007835F0",
