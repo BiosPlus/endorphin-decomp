@@ -2989,3 +2989,38 @@ extern "C" __declspec(naked) void __fastcall fn_0043CC60(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0043E640] sub_0043E640 (71 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0043E640(void* self) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        push esi
+        mov esi, dword ptr [ebx + 4]
+        test esi, esi
+        je done
+        push edi
+        mov edi, dword ptr [ebx + 8]
+        cmp esi, edi
+        je skip
+    lp:
+        mov ecx, esi
+        call dword ptr [mem_009242F4]
+        add esi, 4
+        cmp esi, edi
+        jne lp
+    skip:
+        mov eax, dword ptr [ebx + 4]
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+        pop edi
+    done:
+        pop esi
+        mov dword ptr [ebx + 4], 0
+        mov dword ptr [ebx + 8], 0
+        mov dword ptr [ebx + 0xc], 0
+        pop ebx
+        ret
+    }
+}
