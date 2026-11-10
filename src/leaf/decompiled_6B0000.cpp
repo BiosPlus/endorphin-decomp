@@ -968,3 +968,46 @@ clear_flag:
         ret 0x4
     }
 }
+
+// [0x006B8B70] sub_006B8B70 (73 bytes)
+extern "C" int mem_0092561C;
+extern "C" int mem_009256CC;
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) int __fastcall fn_006B8B70(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        test esi, esi
+        jne L_has_self
+        xor eax, eax
+        jmp L_push_hwnd
+    L_has_self:
+        mov eax, dword ptr [esi + 0x20]
+    L_push_hwnd:
+        push eax
+        call dword ptr [mem_0092561C]
+        test eax, eax
+        je L_fail
+        mov eax, dword ptr [esi + 0x20]
+        push eax
+        call dword ptr [mem_009256CC]
+        test eax, eax
+        je L_fail
+        mov ecx, dword ptr [esi + 0x20]
+        push 0x0
+        push 0x0
+        push 0x18b
+        push ecx
+        call dword ptr [mem_00925694]
+        test eax, eax
+        je L_fail
+        mov eax, 0x1
+        pop esi
+        ret
+    L_fail:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
