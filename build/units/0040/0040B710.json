@@ -22,5 +22,7 @@
     "0x0040B753",
     "0x0040B75B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T15:09:32Z"
 }

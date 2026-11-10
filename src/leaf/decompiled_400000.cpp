@@ -1349,3 +1349,43 @@ L_fail:
         ret 4
     }
 }
+
+// [0x0040B710] sub_0040B710 (81 bytes)
+extern "C" void ext_0040FD30();
+extern "C" void ext_0040FD40();
+extern "C" void ext_0040FD50();
+extern "C" void ext_006A7BC0();
+extern "C" int mem_0093A0C4;
+extern "C" int mem_0093A0CC;
+extern "C" int mem_0093A0C8;
+extern "C" int mem_0093A0D0;
+
+extern "C" __declspec(naked) void __fastcall fn_0040B710(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x340]
+        mov edx, dword ptr [eax + 0x144]
+        push esi
+        lea esi, [ecx + 0x340]
+        push 0x0
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [mem_0093A0C4]
+        push eax
+        mov ecx, esi
+        call ext_0040FD30
+        mov ecx, dword ptr [mem_0093A0CC]
+        push ecx
+        mov ecx, esi
+        call ext_0040FD40
+        mov edx, dword ptr [mem_0093A0C8]
+        push edx
+        mov ecx, esi
+        call ext_006A7BC0
+        mov eax, dword ptr [mem_0093A0D0]
+        push eax
+        mov ecx, esi
+        call ext_0040FD50
+        pop esi
+        ret
+    }
+}
