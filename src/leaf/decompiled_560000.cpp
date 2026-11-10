@@ -451,3 +451,38 @@ extern "C" __declspec(naked) void __fastcall fn_00566FF0(void* self) {
         ret
     }
 }
+
+// [0x005634D0] sub_005634D0 (75 bytes)
+extern "C" int mem_00925754;
+extern "C" int mem_00925750;
+extern "C" int mem_0092574C;
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void* __stdcall fn_005634D0(void* a1, void* a2) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        add esi, 4
+        push 0x928b5d
+        mov ecx, esi
+        mov dword ptr [esp + 8], 0
+        call dword ptr [mem_00925754]
+        test al, al
+        je short skip_assign
+        push 0xb39fd8
+        mov ecx, esi
+        call dword ptr [mem_00925750]
+    skip_assign:
+        mov ecx, esi
+        call dword ptr [mem_0092574C]
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
