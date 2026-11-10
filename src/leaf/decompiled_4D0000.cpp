@@ -272,3 +272,43 @@ extern "C" __declspec(naked) void __fastcall fn_004D3DE0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004D0B20] sub_004D0B20 (63 bytes)
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) int __cdecl fn_004D0B20(int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, 0x00AE5C10
+    loop_004D0B20:
+        push esi
+        push ebx
+        call ebp
+        add esp, 0x8
+        test al, al
+        jne found_004D0B20
+        add esi, 0x1c
+        add edi, 0x1
+        cmp esi, 0x00AE5C64
+        jl loop_004D0B20
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x4
+        pop ebx
+        ret
+    found_004D0B20:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
