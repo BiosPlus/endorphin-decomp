@@ -377,3 +377,36 @@ extern "C" __declspec(naked) void* __fastcall fn_005B1930(void* self) {
         ret
     }
 }
+
+// [0x005B1B90] sub_005B1B90 (72 bytes)
+extern "C" __declspec(naked) float __fastcall fn_005B1B90(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0x10
+        cmp eax, 0x3
+        jge short L_5B1BD0
+        fld dword ptr [ecx + 0x10]
+        push esi
+        fstp dword ptr [esp + 0x4]
+        lea esi, [esp + 0x4]
+        fld dword ptr [ecx + 0x14]
+        push esi
+        fstp dword ptr [esp + 0xc]
+        push eax
+        fld dword ptr [ecx + 0x18]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [ecx + 0x1c]
+        mov ecx, dword ptr [ecx + 0xc]
+        fstp dword ptr [esp + 0x18]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        pop esi
+        add esp, 0x10
+        ret 0x4
+L_5B1BD0:
+        fldz
+        add esp, 0x10
+        ret 0x4
+    }
+}
