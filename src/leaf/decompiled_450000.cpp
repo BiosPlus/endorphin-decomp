@@ -678,3 +678,13 @@ extern "C" __declspec(naked) void __fastcall fn_0045B4F0(void* self) {
         ret
     }
 }
+
+// [0x00454560] sub_00454560 (53 bytes)
+extern "C" void __fastcall fn_00454560(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
+    int* p = (int*)((char*)self + 0x130);
+    p[0] = a1;
+    p[1] = a2;
+    p[2] = a3;
+    p[3] = a4;
+    p[4] = a5;
+}

@@ -48952,7 +48952,9 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "gemini-3.8-flash",
+    "matched_at": "2026-11-10T04:56:35Z"
   },
   {
     "va": "0x004545A0",
