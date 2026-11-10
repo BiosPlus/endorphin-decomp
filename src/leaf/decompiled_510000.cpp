@@ -347,3 +347,37 @@ extern "C" __declspec(naked) int __cdecl fn_00519C40(void* s) {
         ret
     }
 }
+
+// [0x00516EB0] sub_00516EB0 (59 bytes)
+extern "C" int mem_00AEC0A4;
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) int __stdcall fn_00516EB0(int self) {
+    __asm {
+        mov eax, dword ptr [mem_00AEC0A4]
+        test eax, eax
+        jne short L_has
+        ret 0x4
+    L_has:
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [ecx + 0x34]
+        mov ecx, dword ptr [eax + 0x14]
+        test ecx, ecx
+        push edi
+        lea edi, [eax + 0x14]
+        je short L_invalid
+        mov eax, dword ptr [eax + 0x18]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp esi, eax
+        jb short L_ok
+    L_invalid:
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [edx + 4*esi]
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
