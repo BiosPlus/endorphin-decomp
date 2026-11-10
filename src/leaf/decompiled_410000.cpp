@@ -1509,3 +1509,42 @@ extern "C" __declspec(naked) int __fastcall fn_004141D0(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x0041FD20] sub_0041FD20 (72 bytes)
+extern "C" int mem_009245A8;
+extern "C" int mem_00924208;
+extern "C" int mem_009241D4;
+extern "C" __declspec(naked) void* __fastcall fn_0041FD20(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x4], 0
+        jne have
+        push edi
+        lea edi, [esi + 0xc]
+        mov ecx, edi
+        call dword ptr [mem_009245A8]
+        push eax
+        call dword ptr [mem_00924208]
+        test eax, eax
+        mov dword ptr [esi + 0x4], eax
+        jne done
+        mov ecx, edi
+        call dword ptr [mem_009245A8]
+        push eax
+        call dword ptr [mem_009241D4]
+        test eax, eax
+        mov dword ptr [esi + 0x4], eax
+        setne al
+        mov byte ptr [esi + 0x8], al
+        mov eax, dword ptr [esi + 0x4]
+done:
+        pop edi
+        pop esi
+        ret
+have:
+        mov eax, dword ptr [esi + 0x4]
+        pop esi
+        ret
+    }
+}
