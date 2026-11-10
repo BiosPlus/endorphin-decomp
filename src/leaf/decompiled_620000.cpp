@@ -1317,3 +1317,48 @@ extern "C" void __fastcall fn_00624F50(void* self, int edx_unused, void* node) {
     *(char**)p = n;
     *(char**)(n + 0x4) = p;
 }
+
+// [0x00622700] sub_00622700 (80 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00622700(void* first, void* last, void* dest_end) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, esi
+        je done_00622700
+        lea edx, [eax + 0xc]
+        lea ecx, [esi + 0xc]
+        push ebx
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+copy_00622700:
+        mov ebx, dword ptr [esi - 0x14]
+        mov dword ptr [eax - 0x14], ebx
+        fld dword ptr [ecx - 0x1c]
+        sub esi, 0x14
+        fstp dword ptr [edx - 0x1c]
+        fld dword ptr [ecx - 0x18]
+        sub ecx, 0x14
+        sub eax, 0x14
+        fstp dword ptr [edx - 0x18]
+        fld dword ptr [ecx]
+        sub edx, 0x14
+        cmp esi, edi
+        fstp dword ptr [edx]
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [edx + 0x4]
+        jne copy_00622700
+        pop ebx
+done_00622700:
+        pop edi
+        pop esi
+        ret
+    }
+}
