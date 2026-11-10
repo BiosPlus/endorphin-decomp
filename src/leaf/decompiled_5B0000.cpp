@@ -295,3 +295,36 @@ extern "C" __declspec(naked) void __fastcall fn_005B34C0(void* self) {
         ret
     }
 }
+
+// [0x005B68F0] sub_005B68F0 (56 bytes)
+extern "C" double mem_00928E78;
+
+extern "C" __declspec(naked) float __fastcall fn_005B68F0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [ecx + 0x158]
+        test esi, esi
+        je zero_path
+        mov ecx, dword ptr [esi + 0x30]
+        mov edx, dword ptr [ecx]
+        lea eax, [esi + 0x24]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esi + 0x70]
+        pop esi
+        fmul dword ptr [esp]
+        fmul qword ptr [mem_00928E78]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        pop ecx
+        ret
+zero_path:
+        fldz
+        pop esi
+        pop ecx
+        ret
+    }
+}
