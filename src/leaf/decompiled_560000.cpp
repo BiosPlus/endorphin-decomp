@@ -406,3 +406,20 @@ done:
         ret
     }
 }
+
+// [0x0056B800] sub_0056B800 (68 bytes)
+extern "C" void ext_00553960();
+extern "C" void ext_006A6E9E();
+
+typedef void* (__cdecl *RTDynCastFn56B800)(void*, int, void*, void*, int);
+typedef unsigned char (__thiscall *SubFn56B800)(void*, void*);
+
+extern "C" int __fastcall fn_0056B800(void* self, int edx_unused, void* a1) {
+    void* r = ((RTDynCastFn56B800)ext_006A6E9E)(a1, 0, (void*)0x00A2FBBC, (void*)0x00A36694, 0);
+    if (a1 != 0 && r == 0) {
+        if (!((SubFn56B800)ext_00553960)(self, a1)) {
+            return 1;
+        }
+    }
+    return 0;
+}
