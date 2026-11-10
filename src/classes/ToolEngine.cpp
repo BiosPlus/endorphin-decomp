@@ -153,3 +153,31 @@ ret_one_004809E0:
         ret
     }
 }
+
+// [0x00480060] ToolEngine::vfunc_17 (53 bytes)
+extern "C" void ext_00494000();
+extern "C" __declspec(naked) void __fastcall fn_00480060(void* self) {
+    __asm {
+        sub esp, 0xc
+        push esi
+        push 0x0
+        push 0x0
+        mov esi, ecx
+        push -0x1
+        lea ecx, [esp + 0x10]
+        call ext_00494000
+        mov eax, dword ptr [esi + 0x10]
+        mov eax, dword ptr [eax + 0x60]
+        push 0x1
+        lea edx, [esp + 0x8]
+        push edx
+        mov edx, dword ptr [esp + 0x1c]
+        lea ecx, [esi + 0x10]
+        push 0x3
+        push edx
+        call eax
+        pop esi
+        add esp, 0xc
+        ret 0x4
+    }
+}
