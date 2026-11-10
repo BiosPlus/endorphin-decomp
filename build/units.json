@@ -240158,7 +240158,9 @@
     "relocations": [
       "0x0058A946"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-sonnet-5.5",
+    "matched_at": "2026-11-10T03:45:15Z"
   },
   {
     "va": "0x0058A960",
