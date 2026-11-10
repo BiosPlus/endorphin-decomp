@@ -108,3 +108,28 @@ extern "C" void __fastcall fn_00699090(void* self, int edx_unused, void** a1) {
     }
     *a1 = 0;
 }
+
+// [0x00699220] ExprParser::ExpressionContainerType::vfunc_29 (49 bytes)
+extern "C" void ext_00699180();
+extern "C" void ext_006A5C62();
+extern "C" __declspec(naked) void __fastcall fn_00699220(void* self, int edx_unused, void** out) {
+    __asm {
+        push 0Ch
+        call ext_006A5C62
+        add esp, 4
+        test eax, eax
+        je L1
+        mov ecx, eax
+        call ext_00699180
+        mov ecx, dword ptr [esp + 4]
+        add dword ptr [eax + 4], 1
+        mov dword ptr [ecx], eax
+        ret 4
+    L1:
+        mov ecx, dword ptr [esp + 4]
+        xor eax, eax
+        add dword ptr [eax + 4], 1
+        mov dword ptr [ecx], eax
+        ret 4
+    }
+}
