@@ -1308,3 +1308,32 @@ extern "C" __declspec(naked) void __fastcall fn_00480010(void* self) {
         ret
     }
 }
+
+// [0x00486DD0] sub_00486DD0 (82 bytes)
+extern "C" void __fastcall fn_00486DD0(void* self, int edx_unused, void* a1) {
+    char* x = (char*)a1;
+    char* n = *(char**)x;
+    *(char**)x = *(char**)(n + 0x8);
+    char* m = *(char**)(n + 0x8);
+    if (m[0x69] == 0) {
+        *(char**)(m + 0x4) = x;
+    }
+    *(char**)(n + 0x4) = *(char**)(x + 0x4);
+    char* h = *(char**)((char*)self + 0x4);
+    if (x == *(char**)(h + 0x4)) {
+        *(char**)(h + 0x4) = n;
+        *(char**)(n + 0x8) = x;
+        *(char**)(x + 0x4) = n;
+        return;
+    }
+    char* q = *(char**)(x + 0x4);
+    if (x == *(char**)(q + 0x8)) {
+        *(char**)(q + 0x8) = n;
+        *(char**)(n + 0x8) = x;
+        *(char**)(x + 0x4) = n;
+        return;
+    }
+    *(char**)q = n;
+    *(char**)(n + 0x8) = x;
+    *(char**)(x + 0x4) = n;
+}
