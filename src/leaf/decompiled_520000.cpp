@@ -208,3 +208,38 @@ extern "C" void* __cdecl fn_0052A410() {
     p[0x61] = 0;
     return p;
 }
+
+// [0x00522220] sub_00522220 (57 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __cdecl fn_00522220(void* first, void* last, void* src) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebp
+        je done
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        lea ebx, [edi + 0xc]
+    loop_top:
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [esi + 0x4], eax
+        mov ecx, dword ptr [edi + 0x8]
+        mov dword ptr [esi + 0x8], ecx
+        push ebx
+        lea ecx, [esi + 0xc]
+        call dword ptr [mem_00924FDC]
+        add esi, 0x28
+        cmp esi, ebp
+        jne loop_top
+        pop edi
+        pop ebx
+    done:
+        pop esi
+        pop ebp
+        ret
+    }
+}
