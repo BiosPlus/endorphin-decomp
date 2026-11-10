@@ -188,3 +188,26 @@ extern "C" __declspec(naked) void __fastcall fn_005EFFB0(void* self) {
         jmp ext_005EF450
     }
 }
+
+// [0x005E4DE0] sub_005E4DE0 (55 bytes)
+// __fastcall-style, ret 0: allocates 0x54 bytes via 0x006A5C62 (cdecl), zeroes the dwords at +0, +4 and +8
+// (each store guarded by a null test), sets byte +0x50 to 1 and byte +0x51 to 0, and returns the block pointer.
+extern "C" void* __cdecl ext_006A5C62(int size);
+
+extern "C" void* __fastcall fn_005E4DE0(void* self) {
+    void* p = ext_006A5C62(0x54);
+    if (p) {
+        *(int*)p = 0;
+    }
+    void* q = (char*)p + 4;
+    if (q) {
+        *(int*)q = 0;
+    }
+    void* r = (char*)p + 8;
+    if (r) {
+        *(int*)r = 0;
+    }
+    ((unsigned char*)p)[0x50] = 1;
+    ((unsigned char*)p)[0x51] = 0;
+    return p;
+}
