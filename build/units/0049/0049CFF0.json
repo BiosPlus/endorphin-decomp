@@ -18,5 +18,7 @@
     "0x0049D030",
     "0x0049D038"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T15:37:50Z"
 }
