@@ -71,3 +71,33 @@ L_done:
         ret 0x4
     }
 }
+
+// [0x005E0E70] NMData::FixedPathJointData::vfunc_0_off_154 (63 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005E0E70(void* self, int edx_unused, int a1) {
+    __asm {
+        cmp dword ptr [ecx + 0x140], 0x0
+        jne L_ret
+        push edi
+        mov edi, dword ptr [ecx + 0xe0]
+        test edi, edi
+        je L_pop_edi
+        mov eax, dword ptr [ecx - 0x150]
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [eax + 0x14]
+        push esi
+        mov esi, dword ptr [edi]
+        add ecx, 0xfffffeb0
+        push edx
+        add esi, 0xac
+        call eax
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, edi
+        call edx
+        pop esi
+L_pop_edi:
+        pop edi
+L_ret:
+        ret 0x4
+    }
+}
