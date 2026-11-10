@@ -341,3 +341,46 @@ extern "C" __declspec(naked) void* __cdecl fn_008597E0(void) {
         ret
     }
 }
+
+// [0x00859E00] sub_00859E00 (79 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00859E00(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        or eax, -1
+        push esi
+        mov esi, ecx
+        test byte ptr [ecx + 0x14], 0x4
+        je short L_noderef
+        mov esi, dword ptr [ecx]
+    L_noderef:
+        mov edx, dword ptr [esp + 0x10]
+        sub edx, 0
+        je short L_mode0
+        dec edx
+        je short L_mode1
+        dec edx
+        jne short L_check
+        mov eax, dword ptr [esp + 0xc]
+        jmp short L_check
+    L_mode1:
+        mov eax, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esp + 0xc]
+        sub eax, edx
+        jmp short L_check
+    L_mode0:
+        mov eax, dword ptr [ecx + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        add eax, edx
+    L_check:
+        mov edx, dword ptr [esi + 0x4]
+        pop esi
+        cmp eax, edx
+        jbe short L_ok
+        mov eax, 0x1d
+        ret
+    L_ok:
+        mov dword ptr [ecx + 0x8], eax
+        xor eax, eax
+        ret
+    }
+}
