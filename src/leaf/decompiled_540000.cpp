@@ -612,3 +612,32 @@ extern "C" int __fastcall fn_00546520(float* self, int edx_unused, float* other)
     }
     return 0;
 }
+
+// [0x00547080] sub_00547080 (76 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00547080(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        fld dword ptr [edx]
+        mov eax, dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx]
+        fadd dword ptr [esp + 0x8]
+        fstp dword ptr [eax]
+        fld dword ptr [edx + 0x4]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x4]
+        fadd dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [edx + 0x8]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x8]
+        fadd dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [edx + 0xc]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0xc]
+        fadd dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0xc]
+        ret 0x8
+    }
+}
