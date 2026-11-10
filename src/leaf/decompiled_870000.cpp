@@ -206,3 +206,37 @@ extern "C" char __fastcall fn_00870E90(Decomp870E90State* self) {
     self->col++;
     return c;
 }
+
+// [0x008710B0] sub_008710B0 (61 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_008710B0(void* self) {
+    __asm {
+        call ext_00870E90
+        cmp al, 0x20
+        je  loop_008710D0
+        cmp al, 0x9
+        je  loop_008710D0
+        cmp al, 0xd
+        je  loop_008710D0
+        cmp al, 0xa
+        je  loop_008710D0
+        call ext_00870EF0
+        xor al, al
+        ret
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    loop_008710D0:
+        call ext_00870E90
+        cmp al, 0x20
+        je  loop_008710D0
+        cmp al, 0x9
+        je  loop_008710D0
+        cmp al, 0xd
+        je  loop_008710D0
+        cmp al, 0xa
+        je  loop_008710D0
+        call ext_00870EF0
+        mov al, 1
+        ret
+    }
+}
