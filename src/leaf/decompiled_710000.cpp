@@ -164,3 +164,30 @@ extern "C" __declspec(naked) void __fastcall fn_00711D40(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x0071C210] sub_0071C210 (63 bytes)
+extern "C" int mem_00996640;
+extern "C" int mem_00993828;
+extern "C" int mem_00993C80;
+
+extern "C" __declspec(naked) double __fastcall fn_0071C210(void* self, int edx_unused, double a1, double a2, double a3) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xc]
+        cmp dword ptr [eax + 0x408], 0x2
+        jne other
+        fld qword ptr [esp + 0xc]
+        fmul qword ptr [mem_00996640]
+        jmp done
+    other:
+        fld qword ptr [esp + 0x4]
+        fmul qword ptr [mem_00996640]
+        fmul qword ptr [eax + 0xd28]
+    done:
+        fdiv qword ptr [esp + 0x14]
+        fmul qword ptr [mem_00993828]
+        fld1
+        fpatan
+        fmul qword ptr [mem_00993C80]
+        ret 0x18
+    }
+}
