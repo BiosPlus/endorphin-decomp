@@ -817,3 +817,35 @@ extern "C" void __fastcall fn_00416F70(void* self) {
     typedef void (__fastcall *TailFn)(void*);
     ((TailFn)ext_00416E00)(self);
 }
+
+// [0x00414260] sub_00414260 (52 bytes)
+extern "C" int mem_0092431C;
+extern "C" int mem_00924300;
+
+extern "C" __declspec(naked) int __fastcall fn_00414260(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi]
+        mov ecx, ebx
+        call dword ptr [mem_0092431C]
+        push eax
+        mov ecx, ebx
+        call dword ptr [mem_00924300]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [edi + 0x64]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push eax
+        push ecx
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        pop ebx
+        ret 0xc
+    }
+}
