@@ -359,3 +359,49 @@ extern "C" void __fastcall fn_004C7F50(void* self, int edx_unused, void* a1) {
     }
     *slot = a1;
 }
+
+// [0x004CA590] sub_004CA590 (75 bytes)
+extern "C" void ext_004CA570();
+extern "C" int mem_00924FC0;
+extern "C" int mem_00945F78;
+
+extern "C" __declspec(naked) void __fastcall fn_004CA590(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00924FC0]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov ebp, ecx
+        xor esi, esi
+    loop_004CA590:
+        mov eax, dword ptr [4*esi + mem_00945F78]
+        push eax
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        jne found_004CA590
+        add esi, 0x1
+        cmp esi, 0x5
+        jl loop_004CA590
+        push 0x2
+        mov ecx, ebp
+        call ext_004CA570
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    found_004CA590:
+        push esi
+        mov ecx, ebp
+        call ext_004CA570
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}

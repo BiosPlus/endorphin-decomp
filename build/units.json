@@ -126490,7 +126490,9 @@
       "0x004CA5C1",
       "0x004CA5D0"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:37:24Z"
   },
   {
     "va": "0x004CA5E0",
