@@ -926,3 +926,50 @@ extern "C" void* __fastcall fn_00552940(void* self) {
     }
     return (void*)0x00AF7D00;
 }
+
+// [0x0055F340] sub_0055F340 (77 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_0055F340(void* first, void* last, void* value) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        sub esi, edi
+        sar esi, 0x4
+        test esi, esi
+        jle lb_done_0055F340
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+    lb_loop_0055F340:
+        mov eax, esi
+        cdq
+        sub eax, edx
+        mov edx, eax
+        sar edx, 1
+        mov ecx, edx
+        shl ecx, 4
+        add ecx, edi
+        fld dword ptr [ecx]
+        fld dword ptr [ebx]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne lb_left_0055F340
+        or eax, -1
+        sub eax, edx
+        lea edi, [ecx + 0x10]
+        add esi, eax
+        jmp lb_test_0055F340
+    lb_left_0055F340:
+        mov esi, edx
+    lb_test_0055F340:
+        test esi, esi
+        jg lb_loop_0055F340
+        pop ebx
+    lb_done_0055F340:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
