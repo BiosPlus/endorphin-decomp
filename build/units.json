@@ -237573,7 +237573,9 @@
       "0x0058512A",
       "0x00585146"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T14:05:48Z"
   },
   {
     "va": "0x00585170",
