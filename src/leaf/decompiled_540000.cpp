@@ -474,3 +474,13 @@ extern "C" __declspec(naked) void __fastcall fn_00540510(void* self) {
         jmp dword ptr [mem_00925418]
     }
 }
+
+// [0x00548110] sub_00548110 (58 bytes)
+extern "C" void __fastcall fn_00548110(void* self, int edx_unused, int a1, int a2) {
+    (void)edx_unused;
+    if (a2 == 0) a2 = 1;
+    if (a1 == 0) a1 = 1;
+    *(double*)((char*)self + 0xb0) = (double)a1;
+    *(double*)((char*)self + 0xb8) = (double)a2;
+    *(double*)((char*)self + 0xc0) = (double)a1 / (double)a2;
+}
