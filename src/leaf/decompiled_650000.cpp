@@ -573,3 +573,50 @@ extern "C" void __fastcall fn_0065D710(void* self, int edx_unused, int* out, int
     out[0] = a2;
     out[1] = a3;
 }
+
+// [0x0065D6C0] sub_0065D6C0 (70 bytes)
+// Indexed node lookup: walks the list head stored at [self+0x64] and returns
+// head_node->[+0x10] + (index << 6), with a bounds check against the count
+// derived from [+0x14]-[+0x10] (64-byte elements). Failed checks call the
+// invalid-parameter handler pointer at mem_00925134.
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_0065D6C0(void* self, int edx_unused, unsigned int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x64]
+        mov esi, dword ptr [eax]
+        cmp esi, eax
+        jne L_first
+        call ebx
+    L_first:
+        mov esi, dword ptr [esi]
+        cmp esi, dword ptr [edi + 0x64]
+        jne L_second
+        call ebx
+    L_second:
+        mov ecx, dword ptr [esi + 0x10]
+        test ecx, ecx
+        mov edi, dword ptr [esp + 0x10]
+        je L_call
+        mov eax, dword ptr [esi + 0x14]
+        sub eax, ecx
+        sar eax, 0x6
+        cmp edi, eax
+        jb L_index
+    L_call:
+        call ebx
+    L_index:
+        mov eax, edi
+        shl eax, 0x6
+        add eax, dword ptr [esi + 0x10]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
