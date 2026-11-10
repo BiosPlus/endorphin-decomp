@@ -484,3 +484,24 @@ extern "C" void __fastcall fn_00548110(void* self, int edx_unused, int a1, int a
     *(double*)((char*)self + 0xb8) = (double)a2;
     *(double*)((char*)self + 0xc0) = (double)a1 / (double)a2;
 }
+
+// [0x00540E10] sub_00540E10 (34 bytes)
+extern "C" void ext_00548110();
+extern "C" __declspec(naked) void __fastcall fn_00540E10(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x4]
+        test ecx, ecx
+        mov dword ptr [eax], ecx
+        je done
+        mov edx, dword ptr [eax + 0x10]
+        sub edx, dword ptr [eax + 0x8]
+        push edx
+        mov edx, dword ptr [eax + 0xc]
+        sub edx, dword ptr [eax + 0x4]
+        push edx
+        call ext_00548110
+    done:
+        ret 0x4
+    }
+}
