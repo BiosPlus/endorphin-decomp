@@ -1035,3 +1035,41 @@ extern "C" __declspec(naked) void __fastcall fn_00670EC0(void* self) {
         ret
     }
 }
+
+// [0x00672810] sub_00672810 (73 bytes)
+extern "C" void __cdecl ext_0041CDE0();
+extern "C" __declspec(naked) void* __cdecl fn_00672810(void* first, void* last, void* dest) {
+    __asm {
+        sub esp, 0x8
+        mov edx, dword ptr [esp + 0x14]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        xor al, al
+        mov byte ptr [esp + 0x10], al
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0xc], al
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        push esi
+        push edi
+        push ebx
+        call ext_0041CDE0
+        mov eax, edi
+        sub eax, ebx
+        add esp, 0x18
+        sar eax, 0x5
+        shl eax, 0x5
+        pop edi
+        add eax, esi
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
