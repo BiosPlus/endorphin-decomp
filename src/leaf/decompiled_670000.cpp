@@ -669,3 +669,36 @@ extern "C" __declspec(naked) int __fastcall fn_0067AEB0(void* self, int edx_unus
         jmp dword ptr [mem_00924260]
     }
 }
+
+// [0x0067AEF0] sub_0067AEF0 (56 bytes)
+extern "C" void ext_0067AF28();
+extern "C" int mem_00925134;
+extern "C" int mem_0092428C;
+extern "C" __declspec(naked) void __fastcall fn_0067AEF0(void* self, int edx_unused, int idx) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0x8]
+        test edi, edi
+        _emit 0x7c
+        _emit 0x2f
+        push esi
+        mov esi, dword ptr [ecx + 0xc]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je L_invalid
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb L_ok
+    L_invalid:
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 4*edi]
+        pop esi
+        pop edi
+        mov dword ptr [esp + 0x4], ecx
+        jmp dword ptr [mem_0092428C]
+    }
+}
