@@ -395,3 +395,15 @@ extern "C" __declspec(naked) void __fastcall fn_0049B220(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004B78E0] ExprParser::PrimitiveProxyType<float>::vfunc_42 (53 bytes)
+// Two stack arguments. obj = a2->m_ptr; r = obj->vtbl[1](a2) (thiscall, returns float);
+// returns whether the float pointed to by the first field of a1 equals r (ordered compare).
+extern "C" bool __fastcall fn_004B78E0(void* self, int edx_unused, void* a1, void* a2) {
+    void* obj = *(void**)((char*)a2 + 0x4);
+    void** vtbl = *(void***)obj;
+    typedef float (__thiscall *SlotFn)(void*, void*);
+    float r = ((SlotFn)vtbl[1])(obj, a2);
+    float* p = *(float**)a1;
+    return *p == r;
+}
