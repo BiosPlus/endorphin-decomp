@@ -3365,3 +3365,50 @@ extern "C" __declspec(naked) void __fastcall fn_004342E0(void* self, int edx_unu
         jmp eax
     }
 }
+
+// [0x004306C0] sub_004306C0 (86 bytes)
+extern "C" void ext_0044B5B0();
+extern "C" void ext_0044B5C0();
+
+extern "C" __declspec(naked) void __fastcall fn_004306C0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax]
+        mov esi, ecx
+        push 1
+        mov ecx, edi
+        call edx
+        mov ecx, dword ptr [esi + 0x100]
+        test ecx, ecx
+        je done_4306C0
+        call ext_0044B5B0
+        cmp eax, 6
+        jne fallback_4306C0
+        mov ecx, dword ptr [esi + 0x100]
+        call ext_0044B5C0
+        cmp eax, 1
+        jne fallback_4306C0
+        mov edx, dword ptr [edi]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        mov ecx, edi
+        call eax
+        pop edi
+        pop esi
+        ret 4
+    fallback_4306C0:
+        mov edx, dword ptr [edi]
+        xor eax, eax
+        push eax
+        mov eax, dword ptr [edx + 4]
+        mov ecx, edi
+        call eax
+    done_4306C0:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
