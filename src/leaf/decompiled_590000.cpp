@@ -818,3 +818,32 @@ skip_call_00593EB0:
         ret
     }
 }
+
+// [0x005957F0] sub_005957F0 (87 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00B413D0;
+extern "C" int mem_00B413CC;
+
+extern "C" __declspec(naked) void* __fastcall fn_005957F0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8a0bee
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00B413D0], al
+        jne L_done
+        or dword ptr [mem_00B413D0], eax
+        mov ecx, offset mem_00B413CC
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov dword ptr [mem_00B413CC], 0x95d04c
+    L_done:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00B413CC
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
