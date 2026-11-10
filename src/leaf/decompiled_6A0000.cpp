@@ -488,3 +488,24 @@ L_006AF87D:
         jmp ext_006A60EE
     }
 }
+
+// [0x006A8610] sub_006A8610 (67 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" int mem_009256E0;
+
+typedef void (__stdcall *ReleaseCaptureFn006A8610)();
+typedef void (__fastcall *CallFn006A8610)(void* self);
+
+extern "C" void __fastcall fn_006A8610(char* self, int edx_unused, int a1, int a2, int a3) {
+    if (self[0x15c] != 0) {
+        self[0x15c] = 0;
+        ((ReleaseCaptureFn006A8610)mem_009256E0)();
+        ((CallFn006A8610)ext_006A5EA8)(self);
+        return;
+    }
+    if (self[0xf4] != 0) {
+        self[0xf4] = 0;
+        ((ReleaseCaptureFn006A8610)mem_009256E0)();
+    }
+    ((CallFn006A8610)ext_006A5EA8)(self);
+}
