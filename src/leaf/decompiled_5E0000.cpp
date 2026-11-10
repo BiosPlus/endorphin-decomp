@@ -162,3 +162,16 @@ extern "C" void __stdcall fn_005E05C0(float* self) {
     self[8] = z;
     self[9] = z;
 }
+
+// [0x005EFAF0] sub_005EFAF0 (52 bytes)
+extern "C" void ext_005EF450();
+extern "C" void __fastcall fn_005EFAF0(void* self) {
+    unsigned int* p = (unsigned int*)self;
+    p[0] = 0x0096b604;
+    p[1] = 0x0096b5bc;
+    p[2] = 0x0096b57c;
+    p[3] = 0x0096b52c;
+    p[0x150 / 4] = 0x0096b514;
+    p[0x154 / 4] = 0x0096b50c;
+    ext_005EF450();
+}
