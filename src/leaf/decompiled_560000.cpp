@@ -331,3 +331,39 @@ L_match_005637D0:
         ret 4
     }
 }
+
+// [0x00569470] sub_00569470 (64 bytes)
+extern "C" void ext_00681250();
+extern "C" __declspec(naked) int __fastcall fn_00569470(void* self) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x10]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov byte ptr [esp + 0xc], 0
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        push edi
+        push esi
+        push ebx
+        call ext_00681250
+        sub esi, ebx
+        add esp, 018h
+        sar esi, 4
+        shl esi, 4
+        mov eax, edi
+        pop edi
+        sub eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
