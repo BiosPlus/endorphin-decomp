@@ -1468,3 +1468,33 @@ extern "C" __declspec(naked) void* __cdecl fn_007CB5F0(void* a0, int a1, float a
         ret
     }
 }
+
+// [0x007CC180] sub_007CC180 (57 bytes)
+extern "C" void ext_007CB940();
+extern "C" void ext_007CB980();
+
+extern "C" __declspec(naked) void* __cdecl fn_007CC180(void* a0, int a1, float a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push 0x5
+        push eax
+        push esi
+        call ext_007CC8E0
+        fld dword ptr [esp + 0x1c]
+        add esp, 0x8
+        fstp dword ptr [esp]
+        push esi
+        call ext_007CB940
+        fld dword ptr [esp + 0x1c]
+        add esp, 0x4
+        fstp dword ptr [esp]
+        push esi
+        call ext_007CB980
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
