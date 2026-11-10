@@ -500,3 +500,37 @@ skip_493ee0:
         ret 4
     }
 }
+
+// [0x00610C10] sub_00610C10 (76 bytes)
+extern "C" void ext_005B11D0();
+extern "C" __declspec(naked) void __fastcall fn_00610C10(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi + 20h]
+        push 1
+        mov ecx, edi
+        mov byte ptr [esi + 4], 0
+        call ext_005B11D0
+        fldz
+        push 0
+        fstp dword ptr [eax]
+        mov ecx, edi
+        call ext_005B11D0
+        fldz
+        fstp dword ptr [eax]
+        pop edi
+        fld dword ptr [mem_0092C8CC]
+        fst dword ptr [esi + 0Ch]
+        fstp dword ptr [esi + 8]
+        fld dword ptr [mem_0093E990]
+        fst dword ptr [esi + 1Ch]
+        fstp dword ptr [esi + 18h]
+        fld dword ptr [mem_0093F8EC]
+        fst dword ptr [esi + 14h]
+        fstp dword ptr [esi + 10h]
+        pop esi
+        ret
+    }
+}
