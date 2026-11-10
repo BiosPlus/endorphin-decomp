@@ -988,3 +988,24 @@ L_004047AD:
         ret 0x8
     }
 }
+
+// [0x0040F2B0] sub_0040F2B0 (67 bytes)
+extern "C" void ext_006A6118();
+extern "C" int mem_009242F4;
+
+extern "C" void __fastcall fn_0040F2B0(void* self) {
+    char* p = (char*)self;
+    *(int*)p = 0x0092b954;
+    if (*(int*)(p + 4) != 0) {
+        int i = 0;
+        if (*(int*)(p + 8) > 0) {
+            do {
+                char* base = *(char**)(p + 4);
+                ((void (__fastcall *)(void*))mem_009242F4)(base + 4 * i);
+                ++i;
+            } while (i < *(int*)(p + 8));
+        }
+        int buf = *(int*)(p + 4);
+        ((void (__cdecl *)(int))ext_006A6118)(buf);
+    }
+}
