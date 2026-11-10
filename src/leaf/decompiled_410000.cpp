@@ -1735,3 +1735,47 @@ done_0041CF50:
         ret 4
     }
 }
+
+// [0x0041C820] sub_0041C820 (86 bytes)
+// Constructor with an SEH frame (try level -1, handler 0x8a7a5b): stores the vtable
+// 0x92db90 at this+0, zeroes this+8, allocates 0x10 bytes via ext_006A5C62 (cdecl
+// operator new), zeroes the first three dwords of the block (NULL if allocation failed),
+// stores the block at this+4, restores the previous SEH link and returns this in eax.
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void* __fastcall fn_0041C820(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        mov esi, ecx
+        xor edi, edi
+        push 0x10
+        mov dword ptr [esi], 0x92db90
+        mov dword ptr [esi + 0x8], edi
+        call ext_006A5C62
+        add esp, 0x4
+        cmp eax, edi
+        je null_block
+        mov dword ptr [eax + 0x4], edi
+        mov dword ptr [eax + 0x8], edi
+        mov dword ptr [eax + 0xc], edi
+        jmp store_block
+    null_block:
+        xor eax, eax
+    store_block:
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x4], eax
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
