@@ -1154,3 +1154,39 @@ extern "C" void __fastcall fn_00666AE0(void* self, int edx_unused, void* node) {
     *(char**)p = n;
     *(char**)(n + 0x4) = p;
 }
+
+// [0x00662A50] sub_00662A50 (83 bytes)
+// Returns std::string(GetTempPathA result) via the hidden sret pointer (first stack arg, cdecl ret 0).
+extern "C" int mem_0092424C;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FE8;
+
+extern "C" __declspec(naked) void* __fastcall fn_00662A50(void* self) {
+    __asm {
+        sub esp, 0x108
+        push esi
+        lea eax, [esp + 0x8]
+        push eax
+        push 0x104
+        mov dword ptr [esp + 0xc], 0x0
+        call dword ptr [mem_0092424C]
+        test eax, eax
+        mov esi, dword ptr [esp + 0x110]
+        je empty
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        add esp, 0x108
+        ret
+empty:
+        mov ecx, esi
+        call dword ptr [mem_00924FE8]
+        mov eax, esi
+        pop esi
+        add esp, 0x108
+        ret
+    }
+}
