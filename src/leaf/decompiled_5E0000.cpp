@@ -337,3 +337,22 @@ extern "C" void __fastcall fn_005ECC50(void* self) {
         ++p;
     }
 }
+
+// [0x005E2790] sub_005E2790 (34 bytes)
+// __thiscall, ret 4: loads this+0x17c, calls its virtual slot +0x120 with the float arg, then passes the result (ecx) to 0x00612370.
+extern "C" void ext_00612370();
+
+extern "C" __declspec(naked) void __fastcall fn_005E2790(void* self, int edx_unused, float a1) {
+    __asm {
+        mov ecx, dword ptr [ecx + 17Ch]
+        fld dword ptr [esp + 4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 120h]
+        push ecx
+        fstp dword ptr [esp]
+        call edx
+        mov ecx, eax
+        call ext_00612370
+        ret 4
+    }
+}
