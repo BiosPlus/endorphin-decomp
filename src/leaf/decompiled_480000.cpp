@@ -1391,3 +1391,52 @@ skip_release:
         ret
     }
 }
+
+// [0x00480770] sub_00480770 (85 bytes)
+// Backward copy of 16-byte (4-float) elements from [first, last) ending at d_last; returns d_last - count.
+extern "C" __declspec(naked) void* __cdecl fn_00480770(const void* first, const void* last, void* d_last) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, edx
+        sub eax, edi
+        sar eax, 0x4
+        shl eax, 0x4
+        mov ecx, eax
+        mov eax, ebx
+        sub eax, ecx
+        cmp edi, edx
+        je done
+        push esi
+        mov esi, edx
+        lea ecx, [ebx + 0x8]
+        sub esi, ebx
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    loop_top:
+        fld dword ptr [edx - 0x10]
+        sub edx, 0x10
+        sub ecx, 0x10
+        cmp edx, edi
+        fstp dword ptr [ecx - 0x8]
+        fld dword ptr [edx + 0x4]
+        fstp dword ptr [ecx - 0x4]
+        fld dword ptr [esi + ecx]
+        fstp dword ptr [ecx]
+        fld dword ptr [edx + 0xc]
+        fstp dword ptr [ecx + 0x4]
+        jne loop_top
+        pop esi
+    done:
+        pop edi
+        pop ebx
+        ret
+    }
+}
