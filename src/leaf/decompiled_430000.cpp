@@ -2395,3 +2395,32 @@ fn0043B6E0_done:
         ret
     }
 }
+
+// [0x00435CC0] sub_00435CC0 (51 bytes)
+extern "C" void ext_006A5C62();
+extern "C" __declspec(naked) void __fastcall fn_00435CC0(void* self, int edx_unused, int a1, int a2, int* a3) {
+    __asm {
+        push 0xc
+        call ext_006A5C62
+        add esp, 4
+        test eax, eax
+        je skip_store0
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr [eax], ecx
+    skip_store0:
+        lea ecx, [eax + 4]
+        test ecx, ecx
+        je skip_store1
+        mov edx, dword ptr [esp + 8]
+        mov dword ptr [ecx], edx
+    skip_store1:
+        lea ecx, [eax + 8]
+        test ecx, ecx
+        je skip_store2
+        mov edx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [edx]
+        mov dword ptr [ecx], edx
+    skip_store2:
+        ret 0xc
+    }
+}
