@@ -838,3 +838,34 @@ extern "C" __declspec(naked) void* __cdecl fn_00481700(void* a1, void* a2, void*
         ret
     }
 }
+
+// [0x00480C30] sub_00480C30 (54 bytes)
+extern "C" void ext_0046F930();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00AD89B4;
+
+extern "C" __declspec(naked) void __fastcall fn_00480C30(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx]
+        test esi, esi
+        je L_00480C64
+        cmp dword ptr [esi], 0
+        je L_00480C5B
+        sub dword ptr [mem_00AD89B4], 1
+        jne L_00480C5B
+        mov eax, dword ptr [esi]
+        mov byte ptr [eax + 0x153], 0
+        cmp byte ptr [esi + 4], 0
+        je L_00480C5B
+        mov ecx, dword ptr [esi]
+        call ext_0046F930
+L_00480C5B:
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+L_00480C64:
+        pop esi
+        ret
+    }
+}
