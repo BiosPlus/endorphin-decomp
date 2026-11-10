@@ -930,3 +930,40 @@ done:
         ret
     }
 }
+
+// [0x00622D30] sub_00622D30 (68 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00622D30(void* dst, unsigned int count, const void* src) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        test esi, esi
+        jbe L_done_00622D30
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x10]
+        lea eax, [ecx + 0xc]
+        push edi
+    L_loop_00622D30:
+        test ecx, ecx
+        je L_skip_00622D30
+        mov edi, dword ptr [edx]
+        mov dword ptr [ecx], edi
+        fld dword ptr [edx + 0x4]
+        fstp dword ptr [eax - 0x8]
+        fld dword ptr [edx + 0x8]
+        fstp dword ptr [eax - 0x4]
+        fld dword ptr [edx + 0xc]
+        fstp dword ptr [eax]
+        fld dword ptr [edx + 0x10]
+        fstp dword ptr [eax + 0x4]
+    L_skip_00622D30:
+        sub esi, 1
+        add ecx, 0x14
+        add eax, 0x14
+        test esi, esi
+        ja L_loop_00622D30
+        pop edi
+    L_done_00622D30:
+        pop esi
+        ret
+    }
+}
