@@ -911,3 +911,54 @@ extern "C" __declspec(naked) bool __fastcall fn_00515B20(void* self) {
         ret
     }
 }
+
+// [0x0051A670] sub_0051A670 (81 bytes)
+extern "C" int mem_00924EF4;
+
+extern "C" __declspec(naked) void* __cdecl fn_0051A670(void* first, void* last, const void* value) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        sub ebx, ebp
+        sar ebx, 0x5
+        test ebx, ebx
+        jle done
+        push esi
+        push edi
+    loop_top:
+        mov eax, ebx
+        cdq
+        sub eax, edx
+        mov edi, eax
+        mov eax, dword ptr [esp + 0x1c]
+        sar edi, 1
+        mov esi, edi
+        shl esi, 0x5
+        push eax
+        add esi, ebp
+        push esi
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        je go_left
+        or ecx, -1
+        sub ecx, edi
+        lea ebp, [esi + 0x20]
+        add ebx, ecx
+        jmp loop_check
+    go_left:
+        mov ebx, edi
+    loop_check:
+        test ebx, ebx
+        jg loop_top
+        pop edi
+        pop esi
+    done:
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+    }
+}
