@@ -234,3 +234,37 @@ L_skip_5DC930:
         ret
     }
 }
+
+extern "C" void ext_005B11E0();
+extern "C" void ext_006A7262();
+extern "C" int mem_00955AD8;
+extern "C" int mem_00965CE0;
+extern "C" int mem_00993828;
+
+// [0x005D0610] sub_005D0610 (84 bytes)
+extern "C" __declspec(naked) float __fastcall fn_005D0610(void* self, int edx_unused, float a1) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        push 0x1
+        lea ecx, [esi + 0x210]
+        call ext_005B11E0
+        fmul dword ptr [esi + 0x204]
+        fmul qword ptr [mem_00955AD8]
+        fld dword ptr [esp + 0x10]
+        fmul qword ptr [mem_00965CE0]
+        fmul qword ptr [mem_00993828]
+        fxch st(1)
+        fstp qword ptr [esp + 0x4]
+        call ext_006A7262
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        pop esi
+        fdivr qword ptr [esp]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        add esp, 0x8
+        ret 0x4
+    }
+}
