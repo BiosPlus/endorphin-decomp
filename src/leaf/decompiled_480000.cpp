@@ -1337,3 +1337,24 @@ extern "C" void __fastcall fn_00486DD0(void* self, int edx_unused, void* a1) {
     *(char**)(n + 0x8) = x;
     *(char**)(x + 0x4) = n;
 }
+
+// [0x004898F0] sub_004898F0 (82 bytes)
+// lower_bound over 104-byte records keyed by an unsigned dword at offset 0.
+extern "C" char* __cdecl fn_004898F0(char* first, char* last, const unsigned int* value) {
+    char* cur = first;
+    int count = (int)(last - first) / 104;
+    if (count > 0) {
+        unsigned int key = *value;
+        do {
+            int half = count / 2;
+            char* mid = cur + half * 104;
+            if (*(unsigned int*)mid < key) {
+                cur = mid + 104;
+                count = count - half - 1;
+            } else {
+                count = half;
+            }
+        } while (count > 0);
+    }
+    return cur;
+}
