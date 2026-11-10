@@ -1081,3 +1081,17 @@ extern "C" __declspec(naked) void __fastcall fn_00645EB0(void* self) {
         jmp ext_0065F440
     }
 }
+
+// [0x00640960] sub_00640960 (74 bytes)
+extern "C" char mem_0097CD00;
+
+extern "C" char* __cdecl fn_00640960(int value, char* buf, int size) {
+    char* p = buf + size - 2;
+    p[1] = 0;
+    while (value > 0) {
+        *p = (&mem_0097CD00)[value % 16];
+        value /= 16;
+        --p;
+    }
+    return p;
+}
