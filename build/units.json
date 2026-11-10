@@ -453397,7 +453397,9 @@
       "0x006AF863",
       "0x006AF87E"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:21:13Z"
   },
   {
     "va": "0x006AF890",

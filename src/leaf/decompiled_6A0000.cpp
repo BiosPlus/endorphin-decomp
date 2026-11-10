@@ -443,3 +443,48 @@ extern "C" __declspec(naked) int __fastcall fn_006A9360(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x006AF840] sub_006AF840 (66 bytes)
+extern "C" void ext_006AD090();
+extern "C" void ext_006A60EE();
+
+extern "C" __declspec(naked) bool __fastcall fn_006AF840(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        xor esi, esi
+        cmp dword ptr [edi + 0x58], esi
+        jle short L_006AF873
+        jmp short L_006AF850
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+L_006AF850:
+        test esi, esi
+        jl short L_006AF87D
+        cmp esi, dword ptr [edi + 0x58]
+        jge short L_006AF87D
+        mov eax, dword ptr [edi + 0x54]
+        mov ecx, dword ptr [eax + 4*esi]
+        lea eax, [eax + 4*esi]
+        call ext_006AD090
+        test al, al
+        jne short L_006AF878
+        add esi, 1
+        cmp esi, dword ptr [edi + 0x58]
+        jl short L_006AF850
+L_006AF873:
+        pop edi
+        xor al, al
+        pop esi
+        ret
+L_006AF878:
+        pop edi
+        mov al, 1
+        pop esi
+        ret
+L_006AF87D:
+        jmp ext_006A60EE
+    }
+}
