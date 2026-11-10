@@ -432628,7 +432628,9 @@
       "0x006999DD",
       "0x006999E5"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T06:39:01Z"
   },
   {
     "va": "0x006999F0",

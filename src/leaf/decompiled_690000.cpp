@@ -527,3 +527,27 @@ L_ret0_00699360:
         ret
     }
 }
+
+// [0x006999B0] sub_006999B0 (60 bytes)
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B5C9A4;
+extern "C" int mem_00B599BC;
+extern "C" int mem_00B5C99C;
+extern "C" int mem_00B5C9A0;
+extern "C" __declspec(naked) void* __stdcall fn_006999B0(void* a1) {
+    __asm {
+        mov eax, 1
+        test byte ptr [mem_00B5C9A4], al
+        jne done
+        or dword ptr [mem_00B5C9A4], eax
+        mov eax, dword ptr [mem_00B599BC]
+        push 0x921fe0
+        mov dword ptr [mem_00B5C99C], 0
+        mov dword ptr [mem_00B5C9A0], eax
+        call ext_006A6C87
+        add esp, 4
+done:
+        mov eax, offset mem_00B5C99C
+        ret 4
+    }
+}
