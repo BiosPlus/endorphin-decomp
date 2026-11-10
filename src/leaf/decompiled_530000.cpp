@@ -761,3 +761,24 @@ extern "C" void __fastcall fn_0053B470(float* self, int edx_unused, float* out, 
     out[2] = self[2] * s;
     out[3] = self[3] * s;
 }
+
+// [0x0053F990] sub_0053F990 (56 bytes)
+extern "C" void ext_0053F960();
+extern "C" __declspec(naked) void __fastcall fn_0053F990(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xd0]
+        cmp eax, dword ptr [ecx + 0xd8]
+        jne short L_0053F9BD
+        mov edx, dword ptr [ecx + 0xd4]
+        cmp edx, dword ptr [ecx + 0xdc]
+        jne short L_0053F9BD
+        call ext_0053F960
+        test al, al
+        jne short L_0053F9BD
+        add dword ptr [ecx + 0xe0], 1
+        ret
+L_0053F9BD:
+        mov dword ptr [ecx + 0xe0], 0
+        ret
+    }
+}
