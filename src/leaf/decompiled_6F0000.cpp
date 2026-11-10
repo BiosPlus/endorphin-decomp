@@ -195,3 +195,40 @@ extern "C" __declspec(naked) void __fastcall fn_006F7970(void* self) {
         ret 0x10
     }
 }
+
+// [0x006F7560] sub_006F7560 (80 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006F7560(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x19c]
+        test ecx, ecx
+        je zero
+        mov eax, dword ptr [esi + 0x198]
+        test eax, eax
+        jne check1
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x8]
+        cmp eax, 0x6
+        jne check1
+        mov eax, dword ptr [esi + 0x19c]
+        pop esi
+        ret
+    check1:
+        cmp dword ptr [esi + 0x198], 0x1
+        jne zero
+        mov ecx, dword ptr [esi + 0x19c]
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x8]
+        cmp eax, 0x8
+        jne zero
+        mov eax, dword ptr [esi + 0x19c]
+        cmp eax, esi
+        jne done
+    zero:
+        xor eax, eax
+    done:
+        pop esi
+        ret
+    }
+}
