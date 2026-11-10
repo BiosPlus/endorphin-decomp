@@ -1254,3 +1254,38 @@ extern "C" __declspec(naked) void __fastcall fn_0053B0E0(void* self) {
         jmp eax
     }
 }
+
+// [0x0053A580] sub_0053A580 (78 bytes)
+extern "C" int mem_00AEFED0;
+extern "C" int mem_00AEFED4;
+extern "C" int mem_00AEFED8;
+extern "C" int mem_00AEFEDC;
+extern "C" int mem_00AEFEE0;
+extern "C" int mem_00AEFEE4;
+extern "C" int mem_00AEFEE8;
+extern "C" int mem_00AEFEEC;
+extern "C" int mem_00AEFEF0;
+extern "C" int mem_00AEFEF4;
+extern "C" int mem_00AEFEF8;
+extern "C" int mem_00AEFEFC;
+extern "C" int mem_00AEFF00;
+extern "C" int mem_00AEFF04;
+extern "C" int mem_00AEFF08;
+
+extern "C" void __cdecl fn_0053A580() {
+    mem_00AEFED0 = 0;
+    mem_00AEFED4 = 0;
+    mem_00AEFED8 = 0;
+    mem_00AEFEDC = 0;
+    mem_00AEFEE0 = 0;
+    mem_00AEFEE4 = 0;
+    mem_00AEFEE8 = 0;
+    mem_00AEFEEC = 0;
+    mem_00AEFEF0 = 0;
+    mem_00AEFEF4 = 0;
+    mem_00AEFEF8 = 0;
+    mem_00AEFEFC = 0;
+    mem_00AEFF00 = 0;
+    mem_00AEFF04 = 0;
+    mem_00AEFF08 = 0;
+}

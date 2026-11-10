@@ -200400,7 +200400,9 @@
       "0x0053A5C4",
       "0x0053A5C9"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T14:00:27Z"
   },
   {
     "va": "0x0053A5D0",
