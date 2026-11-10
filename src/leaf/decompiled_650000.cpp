@@ -554,3 +554,22 @@ extern "C" __declspec(naked) void __fastcall fn_0065BF30(void* self, int edx_unu
         ret 0x0c
     }
 }
+
+// [0x0065D710] sub_0065D710 (69 bytes)
+// __thiscall, ret 0x14. Validates arg1 against arg3 (invalid_parameter if arg1 is non-null and != arg3),
+// then if arg4 != arg5 updates self->[+0x8] via sub_0065D500(arg5, old [+0x8], arg4).
+// Writes (arg2, arg4) to the out buffer (arg0).
+extern "C" int mem_00925134;
+extern "C" void* __cdecl fn_0065D500(const void* first, const void* last, void* dest);
+
+extern "C" void __fastcall fn_0065D710(void* self, int edx_unused, int* out, int a2, int a3, int a4, int a5) {
+    if (a2 == 0 || a2 != a4) {
+        void (*invalid_parameter)() = reinterpret_cast<void (*)()>(mem_00925134);
+        invalid_parameter();
+    }
+    if (a3 != a5) {
+        *(int*)((char*)self + 0x8) = (int)fn_0065D500((const void*)a5, *(const void**)((char*)self + 0x8), (void*)a3);
+    }
+    out[0] = a2;
+    out[1] = a3;
+}
