@@ -1826,3 +1826,37 @@ extern "C" void* __cdecl fn_007C8DC0(unsigned int a, unsigned int b) {
     ((unsigned int*)p)[-2] = pad;
     return p;
 }
+
+// [0x007C9D80] sub_007C9D80 (79 bytes)
+extern "C" void ext_007C9C90();
+extern "C" float mem_0099D148;
+
+extern "C" __declspec(naked) void __cdecl fn_007C9D80(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        fldz
+        fst dword ptr [ecx + 0x10]
+        xor eax, eax
+        fst dword ptr [ecx + 0x54]
+        mov dword ptr [ecx + 0x50], eax
+        fst dword ptr [ecx + 0x58]
+        mov dword ptr [ecx + 0x1c], eax
+        fst dword ptr [ecx + 0x24]
+        mov dword ptr [ecx], eax
+        fst dword ptr [ecx + 0x14]
+        mov dword ptr [ecx + 0x4], eax
+        fst dword ptr [ecx + 0x20]
+        mov dword ptr [ecx + 0x8], eax
+        fstp dword ptr [ecx + 0x28]
+        mov dword ptr [ecx + 0xc], eax
+        fld dword ptr [mem_0099D148]
+        lea eax, [ecx + 0x30]
+        push eax
+        fstp dword ptr [ecx + 0x2c]
+        call ext_007C9C90
+        add esp, 0x4
+        add ecx, 0x40
+        mov dword ptr [esp + 0x4], ecx
+        jmp ext_007C9C90
+    }
+}
