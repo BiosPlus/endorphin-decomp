@@ -167,3 +167,47 @@ extern "C" __declspec(naked) void __cdecl fn_0086B180(void* self) {
         ret
     }
 }
+
+// [0x00868690] sub_00868690 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00868690(void* self) {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x08 // mov edx, dword ptr [esp + 0x8]
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04 // mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x56 // push esi
+        __asm _emit 0x8B __asm _emit 0x74 __asm _emit 0x24 __asm _emit 0x10 // mov esi, dword ptr [esp + 0x10]
+        __asm _emit 0x85 __asm _emit 0xF6 // test esi, esi
+        __asm _emit 0x89 __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x0C // mov dword ptr [esp + 0xc], edx
+        __asm _emit 0x74 __asm _emit 0x39 // je 0x4E
+        __asm _emit 0x83 __asm _emit 0xFE __asm _emit 0x40 // cmp esi, 0x40
+        __asm _emit 0x72 __asm _emit 0x06 // jb 0x20
+        __asm _emit 0x33 __asm _emit 0xC0 // xor eax, eax
+        __asm _emit 0x33 __asm _emit 0xD2 // xor edx, edx
+        __asm _emit 0x5E // pop esi
+        __asm _emit 0xC3 // ret
+        __asm _emit 0x83 __asm _emit 0xFE __asm _emit 0x1F // cmp esi, 0x1f
+        __asm _emit 0x57 // push edi
+        __asm _emit 0x76 __asm _emit 0x0E // jbe 0x34
+        __asm _emit 0x8D __asm _emit 0x4E __asm _emit 0xE0 // lea ecx, [esi - 0x20]
+        __asm _emit 0x33 __asm _emit 0xFF // xor edi, edi
+        __asm _emit 0xD3 __asm _emit 0xEA // shr edx, cl
+        __asm _emit 0x8B __asm _emit 0xC2 // mov eax, edx
+        __asm _emit 0x8B __asm _emit 0xD7 // mov edx, edi
+        __asm _emit 0x5F // pop edi
+        __asm _emit 0x5E // pop esi
+        __asm _emit 0xC3 // ret
+        __asm _emit 0x8B __asm _emit 0xFA // mov edi, edx
+        __asm _emit 0x8B __asm _emit 0xCE // mov ecx, esi
+        __asm _emit 0xD3 __asm _emit 0xEF // shr edi, cl
+        __asm _emit 0xB9 __asm _emit 0x20 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, 0x20
+        __asm _emit 0x2B __asm _emit 0xCE // sub ecx, esi
+        __asm _emit 0xD3 __asm _emit 0xE2 // shl edx, cl
+        __asm _emit 0x8B __asm _emit 0xCE // mov ecx, esi
+        __asm _emit 0xD3 __asm _emit 0xE8 // shr eax, cl
+        __asm _emit 0x0B __asm _emit 0xD0 // or edx, eax
+        __asm _emit 0x8B __asm _emit 0xC2 // mov eax, edx
+        __asm _emit 0x8B __asm _emit 0xD7 // mov edx, edi
+        __asm _emit 0x5F // pop edi
+        __asm _emit 0x5E // pop esi
+        __asm _emit 0xC3 // ret
+    }
+}
