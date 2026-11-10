@@ -239,3 +239,32 @@ extern "C" __declspec(naked) void* __fastcall fn_00478C20(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x00476660] sub_00476660 (62 bytes)
+// Formats into a local buffer via _snprintf, then constructs the std::string at a1 from it; returns a1.
+extern "C" int mem_009251E0;
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void* __cdecl fn_00476660(void* a1, int a2) {
+    __asm {
+        sub esp, 0x38
+        mov eax, dword ptr [esp + 0x40]
+        push esi
+        push eax
+        push 0x93bf08
+        lea ecx, [esp + 0x10]
+        push 0x32
+        push ecx
+        mov dword ptr [esp + 0x14], 0x0
+        call dword ptr [mem_009251E0]
+        mov esi, dword ptr [esp + 0x50]
+        add esp, 0x10
+        lea edx, [esp + 0x8]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        add esp, 0x38
+        ret
+    }
+}
