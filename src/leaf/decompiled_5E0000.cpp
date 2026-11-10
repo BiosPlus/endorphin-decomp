@@ -470,3 +470,61 @@ extern "C" void __fastcall fn_005E2B80(char* self, int edx_unused, char* x) {
     *(char**)(n + 0x8) = x;
     *(char**)(x + 0x4) = n;
 }
+
+// [0x005ECDC0] sub_005ECDC0 (82 bytes)
+extern "C" int mem_00925134;
+
+// Walks the vector of object pointers at this+0x200 (first at +0x4, last at +0x8)
+// and sets byte [obj+0x4] = 1 on each element. The _SECURE_SCL iterator guards
+// (cmp esi,esi / range checks) call the _invalid_parameter_noinfo pointer held in
+// ebx; they are kept for byte parity.
+extern "C" __declspec(naked) void __fastcall fn_005ECDC0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push ebp
+        push esi
+        lea esi, [ecx + 0x200]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe vc_loop
+        call ebx
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    vc_loop:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebp
+        jbe vc_a
+        call ebx
+    vc_a:
+        cmp esi, esi
+        je vc_b
+        call ebx
+    vc_b:
+        cmp edi, ebp
+        je vc_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb vc_c
+        call ebx
+    vc_c:
+        mov eax, dword ptr [edi]
+        mov byte ptr [eax + 0x4], 1
+        cmp edi, dword ptr [esi + 0x8]
+        jb vc_d
+        call ebx
+    vc_d:
+        add edi, 4
+        jmp vc_loop
+    vc_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
