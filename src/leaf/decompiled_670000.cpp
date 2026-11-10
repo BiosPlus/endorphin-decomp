@@ -1073,3 +1073,32 @@ extern "C" __declspec(naked) void* __cdecl fn_00672810(void* first, void* last, 
         ret
     }
 }
+
+// [0x0067B450] sub_0067B450 (80 bytes)
+extern "C" void ext_0065C620();
+extern "C" void ext_0067B410();
+
+extern "C" __declspec(naked) void __fastcall fn_0067B450(void* self) {
+    __asm {
+        push -1
+        push 0x008B4A9B
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x0098C5EC
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_0067B410
+        lea ecx, [esi + 0x18]
+        mov dword ptr [esp + 0x10], -1
+        call ext_0065C620
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
