@@ -1192,3 +1192,36 @@ extern "C" __declspec(naked) void __fastcall fn_00465960(void* self) {
         ret
     }
 }
+
+extern "C" int mem_00925134;
+
+// [0x00469530] sub_00469530 (56 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00469530(void* self, int edx_unused, unsigned int idx, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x54]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je invalid_path
+        mov eax, dword ptr [esi + 0x58]
+        sub eax, ecx
+        sar eax, 2
+        cmp edi, eax
+        jb valid_path
+invalid_path:
+        call dword ptr [mem_00925134]
+valid_path:
+        mov eax, dword ptr [esi + 0x54]
+        mov ecx, dword ptr [eax + 4*edi]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [edx + 4]
+        push eax
+        call edx
+        pop edi
+        pop esi
+        ret 8
+    }
+}
