@@ -289,3 +289,28 @@ extern "C" __declspec(naked) void __fastcall fn_006118A0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00611910] sub_00611910 (57 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00611910(void* self, int edx_unused, float a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00594000
+        fld dword ptr [esp + 8]
+        push ecx
+        lea ecx, [eax + 2E0h]
+        fstp dword ptr [esp]
+        call ext_006781B0
+        fstp dword ptr [esp + 8]
+        mov eax, dword ptr [esi]
+        fld dword ptr [esp + 8]
+        mov edx, dword ptr [eax + 0F0h]
+        push ecx
+        fstp dword ptr [esp]
+        push 1
+        mov ecx, esi
+        call edx
+        pop esi
+        ret 4
+    }
+}
