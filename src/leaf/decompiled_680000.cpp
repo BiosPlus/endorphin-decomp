@@ -419,3 +419,42 @@ L_0068EEB7:
         ret 0x4
     }
 }
+
+// [0x00687380] sub_00687380 (65 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_00687380(void) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je done_00687380
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_00687380:
+        mov eax, dword ptr [esi]
+        mov dword ptr [edi], eax
+        mov cl, byte ptr [esi + 0x4]
+        lea edx, [esi + 0x8]
+        mov byte ptr [edi + 0x4], cl
+        push edx
+        lea ecx, [edi + 0x8]
+        call dword ptr [mem_00924FDC]
+        add esi, 0x24
+        add edi, 0x24
+        cmp esi, ebx
+        jne loop_00687380
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    done_00687380:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
