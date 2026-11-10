@@ -1164,3 +1164,29 @@ extern "C" __declspec(naked) void __fastcall fn_007CA1A0(void* self) {
         ret
     }
 }
+
+// [0x007CCA20] sub_007CCA20 (59 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007CCA20(void* a0, int a1, int a2, int a3) {
+    __asm {
+        sub esp, 0x38
+        mov ecx, dword ptr [esp + 0x3c]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [ecx + 0xc]
+        mov edx, dword ptr [edx + 0x20]
+        and eax, 0xff
+        lea eax, [eax + 4*eax]
+        mov eax, dword ptr [edx + 8*eax + 0xc]
+        mov edx, dword ptr [esp + 0x40]
+        mov dword ptr [esp], ecx
+        mov ecx, dword ptr [esp + 0x48]
+        push ecx
+        mov dword ptr [esp + 8], edx
+        mov edx, dword ptr [esp + 0x48]
+        push edx
+        lea ecx, [esp + 8]
+        push ecx
+        call eax
+        add esp, 0x44
+        ret
+    }
+}
