@@ -744,3 +744,41 @@ extern "C" __declspec(naked) void* __cdecl fn_00662BF0(void) {
         ret
     }
 }
+
+// [0x0066A720] sub_0066A720 (63 bytes)
+extern "C" void ext_006A611E();
+
+extern "C" __declspec(naked) void __fastcall fn_0066A720(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        xor ebx, ebx
+        cmp edi, ebx
+        mov esi, ecx
+        je zero_path
+        push edi
+        call ext_006A611E
+        mov dword ptr [esi], eax
+        mov dword ptr [esi + 0x8], edi
+        add esp, 0x4
+        mov dword ptr [esi + 0x4], ebx
+        mov byte ptr [eax], bl
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi]
+        pop edi
+        pop esi
+        mov byte ptr [eax + ecx - 0x1], bl
+        pop ebx
+        ret 0x4
+zero_path:
+        pop edi
+        mov dword ptr [esi], ebx
+        mov dword ptr [esi + 0x4], ebx
+        mov dword ptr [esi + 0x8], ebx
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
