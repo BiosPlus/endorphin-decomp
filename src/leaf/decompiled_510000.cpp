@@ -868,3 +868,46 @@ extern "C" __declspec(naked) void __cdecl fn_00519E50(float* first, float* last,
         ret
     }
 }
+
+// [0x00515B20] sub_00515B20 (79 bytes)
+extern "C" void* __fastcall ext_0050E360(void* self, int edx_unused, unsigned int index);
+
+extern "C" __declspec(naked) bool __fastcall fn_00515B20(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov eax, dword ptr [eax + 0xa0]
+        test eax, eax
+        je short L_false
+        cmp byte ptr [eax + 0x30], 0x0
+        je short L_false
+        mov edx, dword ptr [eax + 0x20]
+        test edx, edx
+        lea ecx, [eax + 0x1c]
+        je short L_false
+        mov eax, dword ptr [ecx + 0x8]
+        sub eax, edx
+        sar eax, 0x2
+        je short L_false
+        cmp dword ptr [esi + 0xc], eax
+        jb short L_keep
+        mov dword ptr [esi + 0xc], 0
+    L_keep:
+        mov edx, dword ptr [esi + 0xc]
+        push edx
+        call ext_0050E360
+        mov eax, dword ptr [eax]
+        mov dword ptr [esi + 0x10], eax
+        mov al, 1
+        pop esi
+        pop ecx
+        ret
+    L_false:
+        xor al, al
+        pop esi
+        pop ecx
+        ret
+    }
+}
