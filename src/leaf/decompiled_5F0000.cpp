@@ -112,3 +112,17 @@ extern "C" void __fastcall fn_005F5470(void* self, int edx_unused, int a1) {
         q[0x4] = 1;
     }
 }
+
+// [0x005F53A0] sub_005F53A0 (49 bytes)
+extern "C" void ext_005B11D0();
+typedef float* (__thiscall *GetFloatPtrFn5F53A0)(void* self, int idx);
+
+extern "C" void __fastcall fn_005F53A0(char* self, int edx_unused, float value) {
+    *(float*)(self + 0x160) = value;
+    float* p = ((GetFloatPtrFn5F53A0)ext_005B11D0)(self + 0x1c0, 0);
+    *p = *(float*)(self + 0x160);
+    char* child = *(char**)(self + 0x10);
+    if (child) {
+        child[4] = 1;
+    }
+}
