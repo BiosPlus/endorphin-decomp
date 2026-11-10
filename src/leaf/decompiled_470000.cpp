@@ -702,3 +702,12 @@ extern "C" __declspec(naked) void __fastcall fn_004788A0(void* self) {
         ret
     }
 }
+
+// [0x00476D00] sub_00476D00 (84 bytes)
+extern "C" void __cdecl fn_00476D00(float* first, int hole, int top, float val) {
+    for (int idx = (hole - 1) / 2; top < hole && first[idx] < val; idx = (hole - 1) / 2) {
+        first[hole] = first[idx];
+        hole = idx;
+    }
+    first[hole] = val;
+}
