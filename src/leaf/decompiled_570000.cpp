@@ -732,3 +732,49 @@ extern "C" __declspec(naked) void* __cdecl fn_0057BB90(void* first, void* last, 
         ret
     }
 }
+
+// [0x005703C0] sub_005703C0 (80 bytes)
+extern "C" int mem_009250E4;
+extern "C" int mem_009250E8;
+extern "C" int mem_009250EC;
+
+extern "C" __declspec(naked) bool __fastcall fn_005703C0(void* self, int edx_unused, void* is) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, ecx
+    loop_top:
+        mov ecx, esi
+        call dword ptr [mem_009250E4]
+        cmp al, 0x20
+        mov byte ptr [esp + 0xc], al
+        je skip_check
+        cmp al, 0x9
+        jne not_ws
+    skip_check:
+        cmp al, 0xff
+        jne loop_top
+    done_false:
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
+    not_ws:
+        cmp al, 0xa
+        je done_false
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_009250E8]
+        add edi, 0x46c
+        push edi
+        push esi
+        call dword ptr [mem_009250EC]
+        add esp, 0x8
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    }
+}
