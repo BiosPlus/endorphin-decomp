@@ -262,3 +262,36 @@ extern "C" void __fastcall fn_005B6750(void* self, int edx_unused, void* a1) {
     *(void**)(p + 0x158) = a1;
     *(void**)((char*)a1 + 0xb0) = self;
 }
+
+// [0x005B34C0] sub_005B34C0 (50 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005B34C0(void* self) {
+    __asm {
+        push esi
+        mov al, 0x1
+        xor esi, esi
+        mov edx, ecx
+    loop_top:
+        cmp esi, 0x3
+        jge short loop_done
+        mov eax, edx
+        mov ecx, dword ptr [eax + 0x4]
+        add esi, 0x1
+        add edx, 0x10
+        test ecx, ecx
+        jne short nonzero
+        xor eax, eax
+        jmp short compute
+    nonzero:
+        mov eax, dword ptr [eax + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+    compute:
+        test eax, eax
+        sete al
+        test al, al
+        jne short loop_top
+    loop_done:
+        pop esi
+        ret
+    }
+}
