@@ -970,3 +970,33 @@ extern "C" __declspec(naked) void __cdecl fn_0048CB80(void* first, void* last) {
         ret
     }
 }
+
+// [0x0048D310] sub_0048D310 (63 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0048D310(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je L_0048D337
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esi + 0x8]
+        push ecx
+        push esi
+        push edx
+        push eax
+        call ext_0048CB80
+        mov eax, dword ptr [esi + 0x4]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x14
+L_0048D337:
+        mov dword ptr [esi + 0x4], 0x0
+        mov dword ptr [esi + 0x8], 0x0
+        mov dword ptr [esi + 0xc], 0x0
+        pop esi
+        pop ecx
+        ret
+    }
+}
