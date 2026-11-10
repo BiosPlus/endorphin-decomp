@@ -815,3 +815,38 @@ skip_call:
         ret 0xc
     }
 }
+
+// [0x0045BC30] sub_0045BC30 (63 bytes)
+extern "C" int mem_00925694;
+extern "C" __declspec(naked) void __fastcall fn_0045BC30(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925694]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push edi
+        push 0x9
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x20]
+        push 0x110b
+        push eax
+        call ebx
+        mov ecx, dword ptr [esi + 0x20]
+        push edi
+        push 0x9
+        push 0x110b
+        push ecx
+        call ebx
+        mov edx, dword ptr [esi + 0x20]
+        push edi
+        push 0x0
+        push 0x1114
+        push edx
+        call ebx
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
