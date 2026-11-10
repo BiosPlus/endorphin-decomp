@@ -574,3 +574,46 @@ extern "C" __declspec(naked) void* __fastcall fn_0059B120(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0059FF10] sub_0059FF10 (75 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_0059FF10(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x8], 0x0
+        push edi
+        jne L_has_a
+        call ebx
+    L_has_a:
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0xc]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne L_ok1
+        call ebx
+    L_ok1:
+        mov esi, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [esi + 0x30]
+        mov edi, dword ptr [esp + 0x10]
+        add esi, 0x2c
+        test ecx, ecx
+        je L_bad
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb L_ok2
+    L_bad:
+        call ebx
+    L_ok2:
+        mov edx, dword ptr [esi + 0x4]
+        lea eax, [edx + 4*edi]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
