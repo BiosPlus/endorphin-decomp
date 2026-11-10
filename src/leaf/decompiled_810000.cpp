@@ -95,3 +95,42 @@ extern "C" __declspec(naked) void __cdecl fn_008101C0(void) {
         ret
     }
 }
+
+// [0x00810200] sub_00810200 (64 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_00810200(void* p) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 4]
+        mov eax, dword ptr [ecx + 4]
+        shr eax, 3
+        and eax, 1
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        je L1
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax + 4]
+        or dword ptr [eax + 4], 8
+        ret
+    L1:
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [ecx + 4]
+        and dword ptr [eax + 4], -9
+        ret
+    }
+}
