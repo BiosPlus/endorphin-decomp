@@ -323,3 +323,21 @@ extern "C" __declspec(naked) void __fastcall fn_004C4390(void* self) {
         ret
     }
 }
+
+// [0x004C64D0] sub_004C64D0 (73 bytes)
+extern "C" void ext_006A5C5C();
+typedef void (__cdecl *ReleaseFn_004C64D0)(void*);
+extern "C" void __fastcall fn_004C64D0(void* self, int edx_unused, void* a1) {
+    void** slot = (void**)self;
+    void** old = (void**)*slot;
+    if (a1 != (void*)old && old != 0) {
+        if (old[1] != 0) {
+            ((ReleaseFn_004C64D0)ext_006A5C5C)(old[1]);
+        }
+        old[1] = 0;
+        old[2] = 0;
+        old[3] = 0;
+        ((ReleaseFn_004C64D0)ext_006A5C5C)((void*)old);
+    }
+    *slot = a1;
+}
