@@ -133,3 +133,26 @@ extern "C" __declspec(naked) float __fastcall fn_00803B60(void* self) {
         ret
     }
 }
+
+// [0x00803F80] sub_00803F80 (72 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00803F80(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, 1
+        test byte ptr [eax + 1bch], cl
+        mov dword ptr [eax + 1c0h], 0
+        mov dword ptr [eax + 1c4h], ecx
+        je done
+    loop_top:
+        shl dword ptr [eax + 1c4h], 1
+        add dword ptr [eax + 1c0h], ecx
+        mov edx, dword ptr [eax + 1c4h]
+        test dword ptr [eax + 1bch], edx
+        jne loop_top
+    done:
+        mov ecx, dword ptr [eax + 1c0h]
+        lea ecx, [ecx + 2*ecx]
+        lea eax, [eax + 8*ecx]
+        ret
+    }
+}
