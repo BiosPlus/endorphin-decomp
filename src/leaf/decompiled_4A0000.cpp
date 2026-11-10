@@ -226,3 +226,27 @@ extern "C" __declspec(naked) void __fastcall fn_004A5810(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_00430EF0();
+
+// [0x004ABA70] sub_004ABA70 (39 bytes)
+// Cdecl (int* out, int a2, void* first, int a4_unused, void* last, const void* value):
+// out[0] = a2; out[1] = sub_00430EF0(first, last, value).
+extern "C" __declspec(naked) void __cdecl fn_004ABA70(int* out, int a2, void* first, int a4_unused, void* last, const void* value) {
+    __asm {
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        call ext_00430EF0
+        mov edx, dword ptr [esp + 0x14]
+        mov ecx, eax
+        mov eax, dword ptr [esp + 0x10]
+        add esp, 0xc
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ecx
+        ret
+    }
+}
