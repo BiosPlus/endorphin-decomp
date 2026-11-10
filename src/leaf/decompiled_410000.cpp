@@ -881,3 +881,33 @@ extern "C" __declspec(naked) void __fastcall fn_004142A0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0041CB40] sub_0041CB40 (52 bytes)
+// Ignores ecx-this; takes one stack arg (a1 at [esp+4]). If a1 is null, returns 0.
+// Otherwise calls 0x006AD180(a1) with ecx=a1, calls 0x006616C0 on (result + 0x10),
+// then returns __RTDynamicCast(result, 0, 0xA2E2D8, 0xA2EFEC, 0) (ret 4).
+extern "C" void ext_006AD180();
+extern "C" void ext_006616C0();
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void* __fastcall fn_0041CB40(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        test ecx, ecx
+        je L_null
+        call ext_006AD180
+        lea ecx, [eax + 10h]
+        call ext_006616C0
+        push 0
+        push 0A2EFECh
+        push 0A2E2D8h
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        ret 4
+    L_null:
+        xor eax, eax
+        ret 4
+    }
+}

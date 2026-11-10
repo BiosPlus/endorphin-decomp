@@ -16900,7 +16900,9 @@
       "0x0041CB5D",
       "0x0041CB65"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T04:27:19Z"
   },
   {
     "va": "0x0041CB80",
