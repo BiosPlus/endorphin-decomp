@@ -1611,3 +1611,50 @@ L_zero_41CF00:
         ret 4
     }
 }
+
+// [0x00419B90] sub_00419B90 (81 bytes)
+extern "C" void ext_006A6304();
+extern "C" int mem_00925540;
+
+extern "C" __declspec(naked) void __fastcall fn_00419B90(void* self) {
+    __asm {
+        push edi
+        mov edi, ecx
+        cmp dword ptr [edi + 0x60], 0
+        je L_done_00419B90
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        xor bl, bl
+        test esi, esi
+        jne L_call_00419B90
+        lea eax, [esp + 0x10]
+        push eax
+        mov bl, 1
+        call dword ptr [mem_00925540]
+        test eax, eax
+        jge L_call_00419B90
+        push eax
+        call ext_006A6304
+L_call_00419B90:
+        mov edx, dword ptr [edi + 0x60]
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx + 0x14]
+        push edx
+        push esi
+        call eax
+        test bl, bl
+        je L_skip_00419B90
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx + 0x8]
+        push esi
+        call edx
+L_skip_00419B90:
+        pop esi
+        mov dword ptr [edi + 0x60], 0
+        pop ebx
+L_done_00419B90:
+        pop edi
+        ret 4
+    }
+}
