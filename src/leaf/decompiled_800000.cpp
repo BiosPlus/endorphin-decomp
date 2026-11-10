@@ -62,3 +62,42 @@ L_0080AC2E:
         ret
     }
 }
+
+// [0x00802D40] sub_00802D40 (66 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00802D40(void* self) {
+    __asm {
+        xor edx, edx
+        push esi
+    L_00802D40_top:
+        mov eax, dword ptr [ecx + 0x4]
+        mov esi, eax
+        and esi, 0x80000003
+        jns L_00802D40_a
+        dec esi
+        or esi, -0x4
+        inc esi
+    L_00802D40_a:
+        je L_00802D40_cmp
+        mov esi, eax
+        and esi, 0x80000003
+        jns L_00802D40_b
+        dec esi
+        or esi, -0x4
+        inc esi
+    L_00802D40_b:
+        sub eax, esi
+        add eax, 0x4
+    L_00802D40_cmp:
+        cmp edx, eax
+        jge L_00802D40_done
+        mov eax, dword ptr [ecx + 0x30]
+        fld dword ptr [eax + 4*edx]
+        mov esi, dword ptr [ecx + 0x40]
+        fstp dword ptr [esi + 4*edx]
+        add edx, 0x1
+        jmp L_00802D40_top
+    L_00802D40_done:
+        pop esi
+        ret
+    }
+}
