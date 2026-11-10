@@ -257,3 +257,39 @@ extern "C" void* __fastcall fn_004C4C40(void* self) {
     *reinterpret_cast<int*>(esi + 0xc) = 0;
     return esi;
 }
+
+// [0x004C72D0] sub_004C72D0 (57 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_004C72D0(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je skip_004C72D0
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_004C72D0:
+        sub esi, 0x20
+        sub edi, 0x20
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        cmp esi, ebx
+        mov eax, dword ptr [esi + 0x1c]
+        mov dword ptr [edi + 0x1c], eax
+        jne loop_004C72D0
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    skip_004C72D0:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
