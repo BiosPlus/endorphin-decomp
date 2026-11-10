@@ -1548,3 +1548,28 @@ have:
         ret
     }
 }
+
+// [0x0041FD70] sub_0041FD70 (42 bytes)
+// Lazily resolves GetProcAddress(ext_0041FD20(self), 0x92E180) into [self+0x2c], then stores it to *out.
+extern "C" void ext_0041FD20();
+extern "C" int mem_009241D8;
+
+extern "C" __declspec(naked) void __fastcall fn_0041FD70(void* self, int edx_unused, void** out) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x2c], 0x0
+        jne short L_0041FD8D
+        push 0x92e180
+        call ext_0041FD20
+        push eax
+        call dword ptr [mem_009241D8]
+        mov dword ptr [esi + 0x2c], eax
+    L_0041FD8D:
+        mov ecx, dword ptr [esi + 0x2c]
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [eax], ecx
+        pop esi
+        ret 0x4
+    }
+}
