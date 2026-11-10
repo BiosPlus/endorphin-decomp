@@ -536,3 +536,36 @@ extern "C" __declspec(naked) int __fastcall fn_0055F670(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x00552860] sub_00552860 (61 bytes)
+extern "C" int mem_00940690;
+extern "C" __declspec(naked) void __fastcall fn_00552860(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 8]
+        push edi
+        call edx
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, eax
+        jl fail
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xc]
+        mov ecx, esi
+        call edx
+        cmp edi, eax
+        jg fail
+        fld dword ptr [mem_00940690]
+        mov dword ptr [esi + 0x10], edi
+        pop edi
+        fstp dword ptr [esi + 0xc]
+        pop esi
+        ret 4
+    fail:
+        pop edi
+        mov dword ptr [esi + 0x10], 0xffffffff
+        pop esi
+        ret 4
+    }
+}
