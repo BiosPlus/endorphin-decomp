@@ -50606,7 +50606,9 @@
       "0x004564B7",
       "0x004564D2"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:58:04Z"
   },
   {
     "va": "0x004564E0",

@@ -741,3 +741,34 @@ ret_path:
         ret 0xc
     }
 }
+
+extern "C" void ext_006A5E00();
+extern "C" void ext_006A5E5A();
+extern "C" int mem_009256B0;
+
+// [0x004564A0] sub_004564A0 (57 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004564A0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        test byte ptr [ecx + 0x94], 0x20
+        je L_done_004564A0
+        mov eax, dword ptr [ecx + 0x20]
+        push 5
+        push eax
+        call dword ptr [mem_009256B0]
+        push eax
+        call ext_006A5E00
+        test eax, eax
+        je L_done_004564A0
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x8]
+        push 1
+        push ecx
+        push edx
+        push 0
+        push 0
+        mov ecx, eax
+        call ext_006A5E5A
+L_done_004564A0:
+        ret 0xc
+    }
+}
