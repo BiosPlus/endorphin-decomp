@@ -914,3 +914,34 @@ extern "C" __declspec(naked) void __fastcall fn_0053B4B0(void* self) {
         ret
     }
 }
+
+// [0x0053F9D0] sub_0053F9D0 (63 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0053F9D0(void* self, int edx_unused, int* out, int x, int y, int size) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xb4]
+        mov ecx, dword ptr [eax + 0x1d4]
+        sub ecx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov eax, edi
+        cdq
+        sub eax, edx
+        mov edx, eax
+        mov eax, dword ptr [esp + 0xc]
+        __asm _emit 0xd1
+        __asm _emit 0xfa
+        sub esi, edx
+        sub ecx, edx
+        mov dword ptr [eax], esi
+        add esi, edi
+        mov dword ptr [eax + 0x4], ecx
+        add ecx, edi
+        pop edi
+        mov dword ptr [eax + 0x8], esi
+        mov dword ptr [eax + 0xc], ecx
+        pop esi
+        ret 0x10
+    }
+}
