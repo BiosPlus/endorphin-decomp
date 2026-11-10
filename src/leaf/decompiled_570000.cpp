@@ -334,3 +334,44 @@ extern "C" __declspec(naked) void* __cdecl fn_0057BBE0(void* first, void* last, 
         ret
     }
 }
+
+// [0x005774B0] sub_005774B0 (66 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_005774B0(void* self) {
+    __asm {
+        sub     esp, 8
+        push    ebp
+        mov     ebp, dword ptr [mem_00925134]
+        push    esi
+        mov     esi, ecx
+        push    edi
+        mov     edi, dword ptr [esi + 8]
+        cmp     dword ptr [esi + 4], edi
+        jbe     SHORT L_5774C8
+        call    ebp
+L_5774C8:
+        lea     eax, [edi - 0x14]
+        cmp     eax, dword ptr [esi + 8]
+        push    ebx
+        mov     ebx, esi
+        mov     dword ptr [esp + 0x14], edi
+        ja      SHORT L_5774DC
+        cmp     eax, dword ptr [esi + 4]
+        jae     SHORT L_5774DE
+L_5774DC:
+        call    ebp
+L_5774DE:
+        lea     esi, [edi - 0x14]
+        cmp     esi, dword ptr [ebx + 8]
+        pop     ebx
+        jb      SHORT L_5774E9
+        call    ebp
+L_5774E9:
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        pop     ebp
+        add     esp, 8
+        ret
+    }
+}
