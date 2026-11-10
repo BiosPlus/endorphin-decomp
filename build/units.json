@@ -336778,7 +336778,9 @@
       "0x0061248A",
       "0x0061249A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:14:50Z"
   },
   {
     "va": "0x006124B0",
