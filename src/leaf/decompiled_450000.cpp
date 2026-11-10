@@ -772,3 +772,11 @@ L_done_004564A0:
         ret 0xc
     }
 }
+
+// [0x00455D40] sub_00455D40 (61 bytes)
+extern "C" int __stdcall fn_00455D40(int a1) {
+    if (a1 == 0) return 0xa;
+    if (a1 == 1) return 0xc;
+    if (a1 == 2) return 0xb;
+    return (a1 == 3) ? 0xf : 0;
+}
