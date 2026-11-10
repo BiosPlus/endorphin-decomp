@@ -2318,3 +2318,31 @@ extern "C" __declspec(naked) void __fastcall fn_004346C0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0043CEF0] sub_0043CEF0 (49 bytes)
+// Gets cursor position, finds the window under it, and returns whether that window is `self`.
+extern "C" void ext_006A5E00();
+extern "C" int mem_00925718;
+extern "C" int mem_00925714;
+extern "C" __declspec(naked) void __fastcall fn_0043CEF0(void* self) {
+    __asm {
+        sub esp, 8
+        push esi
+        lea eax, [esp + 4]
+        push eax
+        mov esi, ecx
+        call dword ptr [mem_00925718]
+        mov ecx, dword ptr [esp + 8]
+        mov edx, dword ptr [esp + 4]
+        push ecx
+        push edx
+        call dword ptr [mem_00925714]
+        push eax
+        call ext_006A5E00
+        cmp eax, esi
+        sete al
+        pop esi
+        add esp, 8
+        ret
+    }
+}
