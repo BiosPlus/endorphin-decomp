@@ -1658,3 +1658,34 @@ L_done_00419B90:
         ret 4
     }
 }
+
+// [0x0041A0A0] sub_0041A0A0 (82 bytes)
+extern "C" void __fastcall fn_0041A0A0(void* self, int edx_unused, void* a1) {
+    char* node = (char*)a1;
+    char* eax = *(char**)node;
+    char* esi = *(char**)(eax + 8);
+    *(char**)node = esi;
+    esi = *(char**)(eax + 8);
+    if (*(unsigned char*)(esi + 0x15) == 0) {
+        *(char**)(esi + 4) = node;
+    }
+    esi = *(char**)(node + 4);
+    *(char**)(eax + 4) = esi;
+    char* ecx = *(char**)((char*)self + 4);
+    if (node == *(char**)(ecx + 4)) {
+        *(char**)(ecx + 4) = eax;
+        *(char**)(eax + 8) = node;
+        *(char**)(node + 4) = eax;
+        return;
+    }
+    ecx = *(char**)(node + 4);
+    if (node == *(char**)(ecx + 8)) {
+        *(char**)(ecx + 8) = eax;
+        *(char**)(eax + 8) = node;
+        *(char**)(node + 4) = eax;
+        return;
+    }
+    *(char**)ecx = eax;
+    *(char**)(eax + 8) = node;
+    *(char**)(node + 4) = eax;
+}
