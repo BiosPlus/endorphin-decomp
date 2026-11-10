@@ -1285,3 +1285,29 @@ ret_path:
         ret
     }
 }
+
+// [0x0046FC10] sub_0046FC10 (62 bytes)
+extern "C" void ext_00642630();
+extern "C" __declspec(naked) void __fastcall fn_0046FC10(void* self, int edx_unused, float a1) {
+    __asm {
+        push ecx
+        fld dword ptr [esp + 0x8]
+        push esi
+        fld1
+        mov esi, ecx
+        fdivrp st(1), st
+        push ecx
+        lea ecx, [esi + 0xd4]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [esp]
+        call ext_00642630
+        fld dword ptr [esp + 0xc]
+        mov eax, dword ptr [esi + 0xcc]
+        mov ecx, dword ptr [eax + 0x26c]
+        fstp dword ptr [ecx + 0x1d0]
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
