@@ -588,3 +588,19 @@ extern "C" __declspec(naked) void* __fastcall fn_0054EFF0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0054ECB0] sub_0054ECB0 (60 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" int mem_009253D4;
+extern "C" void __fastcall fn_0054ECB0(void* self) {
+    int* p = (int*)self;
+    p[0] = 0x956fdc;
+    ((void (__stdcall*)())mem_009253D4)();
+    if (p[2] != 0) {
+        ((void (__cdecl*)(int))ext_006A5C5C)(p[2]);
+    }
+    p[2] = 0;
+    p[3] = 0;
+    p[4] = 0;
+    p[0] = 0x956f94;
+}
