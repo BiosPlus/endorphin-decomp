@@ -842,3 +842,59 @@ extern "C" __declspec(naked) bool __cdecl fn_00696B70(void* is, void* s) {
         ret
     }
 }
+
+// [0x00692010] sub_00692010 (87 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00692010(void* first, void* last, const void* value, void* pred) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        sub edi, ebx
+        sar edi, 0x2
+        test edi, edi
+        jle done
+        push ebp
+        mov ebp, dword ptr [esp + 0x1c]
+        push esi
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    loop_top:
+        mov eax, edi
+        cdq
+        sub eax, edx
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [eax]
+        sar esi, 1
+        mov edx, dword ptr [ebx + 4 * esi]
+        push ecx
+        push edx
+        call ebp
+        add esp, 0x8
+        test al, al
+        je not_less
+        or eax, -1
+        sub eax, esi
+        lea ebx, [ebx + 4 * esi + 4]
+        add edi, eax
+        jmp next
+    not_less:
+        mov edi, esi
+    next:
+        test edi, edi
+        jg loop_top
+        pop esi
+        pop ebp
+    done:
+        pop edi
+        mov eax, ebx
+        pop ebx
+        ret
+    }
+}
