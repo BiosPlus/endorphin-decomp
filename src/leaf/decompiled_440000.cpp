@@ -1607,3 +1607,41 @@ L_00448989:
         ret 0x4
     }
 }
+
+// [0x00444750] sub_00444750 (68 bytes)
+extern "C" void ext_004564A0();
+extern "C" void ext_006A5E4E();
+extern "C" __declspec(naked) void __fastcall fn_00444750(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        push edi
+        push ebx
+        push eax
+        mov esi, ecx
+        call ext_004564A0
+        lea ecx, [esi + 0x15c]
+        test ecx, ecx
+        je done
+        cmp dword ptr [ecx + 0x20], 0x0
+        je done
+        push 0x4
+        add edi, -0x4
+        push edi
+        add ebx, -0x4
+        push ebx
+        push 0x2
+        push 0x2
+        push 0x0
+        call ext_006A5E4E
+done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0xc
+    }
+}
