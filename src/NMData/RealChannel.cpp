@@ -68,3 +68,23 @@ extern "C" __declspec(naked) float __fastcall fn_0051AB80(void* self) {
         ret
     }
 }
+
+// [0x0051AED0] NMData::RealChannel::vfunc_8 (31 bytes)
+extern "C" void ext_0051AE20();
+
+extern "C" __declspec(naked) void __fastcall fn_0051AED0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        push esi
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_0051AE20
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
