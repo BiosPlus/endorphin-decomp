@@ -611,3 +611,34 @@ extern "C" __declspec(naked) void __cdecl fn_007D4860(void) {
         ret
     }
 }
+
+// [0x007D4720] sub_007D4720 (55 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D4720(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        cmp dword ptr [esi + 0x14], 0
+        jle done
+        cmp dword ptr [esi + 0x18], 0
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [esi + 0x1c]
+        push ecx
+        je use_c
+        mov edx, dword ptr [eax + 0x10]
+        jmp do_call
+    use_c:
+        mov edx, dword ptr [eax + 0xc]
+    do_call:
+        call edx
+        mov eax, dword ptr [esi + 0x1c]
+        mov ecx, dword ptr [esi + 0x8]
+        add esp, 4
+        pop esi
+        mov dword ptr [esp + 4], ecx
+        mov edx, dword ptr [eax + 0xc]
+        jmp edx
+    done:
+        pop esi
+        ret
+    }
+}
