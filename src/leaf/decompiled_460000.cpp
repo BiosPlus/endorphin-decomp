@@ -1535,3 +1535,25 @@ extern "C" __declspec(naked) void __fastcall fn_0046F930(void* self) {
         ret
     }
 }
+
+// [0x004685A0] sub_004685A0 (66 bytes)
+// Walks a chain: __RTDynamicCast(obj, 0, 0xA2E2F8, 0xA2FB54, 0); if null, calls vtable slot 4
+// (thiscall, arg 0) on obj and repeats with the result. Returns the cast result or NULL.
+extern "C" void ext_006A6E9E();
+typedef void* (__cdecl *RTDynCastFn)(void*, int, void*, void*, int);
+
+extern "C" void* __cdecl fn_004685A0(void* a1) {
+    typedef void* (__thiscall *VFn)(void*, void*);
+    void* esi = a1;
+    void* edi = 0;
+    if (esi != 0) {
+        do {
+            edi = ((RTDynCastFn)ext_006A6E9E)(esi, 0, (void*)0x00A2E2F8, (void*)0x00A2FB54, 0);
+            if (edi != 0) {
+                break;
+            }
+            esi = ((VFn)(*(void***)esi)[4])(esi, edi);
+        } while (esi != 0);
+    }
+    return edi;
+}
