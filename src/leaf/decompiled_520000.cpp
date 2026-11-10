@@ -243,3 +243,45 @@ extern "C" __declspec(naked) void __cdecl fn_00522220(void* first, void* last, v
         ret
     }
 }
+
+// [0x00527AF0] sub_00527AF0 (66 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_00527AF0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_527B08
+        call ebp
+    L_527B08:
+        lea eax, [edi - 0x4]
+        cmp eax, dword ptr [esi + 0x8]
+        push ebx
+        mov ebx, esi
+        mov dword ptr [esp + 0x14], edi
+        ja L_527B1C
+        cmp eax, dword ptr [esi + 0x4]
+        jae L_527B1E
+    L_527B1C:
+        call ebp
+    L_527B1E:
+        lea esi, [edi - 0x4]
+        cmp esi, dword ptr [ebx + 0x8]
+        pop ebx
+        jb L_527B29
+        call ebp
+    L_527B29:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        add esp, 0x8
+        ret
+    }
+}
