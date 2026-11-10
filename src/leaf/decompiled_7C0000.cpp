@@ -1328,3 +1328,36 @@ extern "C" __declspec(naked) void __cdecl fn_007CDB70(void* self) {
         ret
     }
 }
+
+// [0x007C9E80] sub_007C9E80 (66 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C9E80(void* self, float a1, float a2) {
+    __asm {
+        fld dword ptr [esp+8]
+        mov ecx, dword ptr [esp+4]
+        fstp dword ptr [ecx+0x54]
+        fldz
+        fld st(0)
+        fld dword ptr [esp+0xc]
+        fucom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x44
+        jnp short L_7C9EA5
+        mov eax, 1
+        jmp short L_7C9EA7
+L_7C9EA5:
+        xor eax, eax
+L_7C9EA7:
+        fcom st(1)
+        mov dword ptr [ecx+0x50], eax
+        mov dword ptr [ecx+0x1c], 0
+        fnstsw ax
+        fstp st(1)
+        test ah, 5
+        jp short L_7C9EBE
+        fchs
+L_7C9EBE:
+        fstp dword ptr [ecx+0x58]
+        ret
+    }
+}
