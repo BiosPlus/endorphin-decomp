@@ -912,3 +912,34 @@ skip_0067F910_d:
         ret
     }
 }
+
+// [0x00676780] sub_00676780 (70 bytes)
+extern "C" int mem_00924FE8;
+extern "C" __declspec(naked) void __fastcall fn_00676780(void* self) {
+    __asm {
+        push -1
+        push 0x89a0fc
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        xor edi, edi
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esi], edi
+        call dword ptr [mem_00924FE8]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x24], edi
+        mov dword ptr [esi + 0x28], edi
+        mov dword ptr [esi + 0x2c], edi
+        mov dword ptr [esi + 0x30], edi
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
