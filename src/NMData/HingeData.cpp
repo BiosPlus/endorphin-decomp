@@ -34,3 +34,36 @@ extern "C" __declspec(naked) void __fastcall fn_005EF8A0(void* self) {
         ret 0x4
     }
 }
+
+// [0x005E05F0] NMData::HingeData::vfunc_55 (62 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_005E05F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov edx, dword ptr [eax + 0x1c]
+        lea ecx, [esi + 0x4]
+        call edx
+        test al, al
+        je L_ret_false_05E05F0
+        cmp byte ptr [esi + 0x17a], 0x0
+        jne L_ret_true_05E05F0
+        mov eax, dword ptr [esp + 0x8]
+        test eax, eax
+        je L_ret_true_05E05F0
+        cmp eax, 0x1
+        je L_ret_true_05E05F0
+        cmp eax, 0x2
+        je L_ret_true_05E05F0
+        cmp eax, 0x6
+        jne L_ret_false_05E05F0
+L_ret_true_05E05F0:
+        mov al, 0x1
+        pop esi
+        ret 0x4
+L_ret_false_05E05F0:
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}
