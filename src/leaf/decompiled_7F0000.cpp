@@ -226,3 +226,37 @@ extern "C" __declspec(naked) int __cdecl fn_007F8500(void* a, void* b) {
         ret
     }
 }
+
+// [0x007F4A60] sub_007F4A60 (66 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007F4A60(float* a1, float* a2) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, esi
+        sub ecx, esi
+        mov edx, 0x3
+    loop1:
+        fld dword ptr [ecx + eax]
+        add eax, 0x4
+        sub edx, 0x1
+        fadd dword ptr [eax - 0x4]
+        fstp dword ptr [eax - 0x4]
+        jne loop1
+        lea eax, [esi + 0x10]
+        mov edx, 0x3
+        pop esi
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    loop2:
+        fld dword ptr [eax + ecx]
+        add eax, 0x4
+        sub edx, 0x1
+        fadd dword ptr [eax - 0x4]
+        fstp dword ptr [eax - 0x4]
+        jne loop2
+        ret
+    }
+}
