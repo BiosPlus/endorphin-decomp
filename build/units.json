@@ -158690,7 +158690,9 @@
       "0x004F9B49",
       "0x004F9B62"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:59:31Z"
   },
   {
     "va": "0x004F9B70",
