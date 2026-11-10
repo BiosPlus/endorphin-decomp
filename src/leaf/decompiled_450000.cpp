@@ -995,3 +995,44 @@ extern "C" __declspec(naked) void __cdecl fn_00456C20(void* self, void* arg1) {
         jmp ext_006A60EE
     }
 }
+
+// [0x00456C70] sub_00456C70 (75 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00456C70(void* self, void* arg1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax + 0x88]
+        test esi, esi
+        je L_done
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push edi
+    L_top:
+        test esi, esi
+        mov eax, esi
+        je L_tail
+        mov esi, dword ptr [esi]
+        mov edi, dword ptr [eax + 8]
+        call ext_00455C20
+        push eax
+        mov ecx, edi
+        call ext_006A63BE
+        test eax, eax
+        je L_next
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [edx + 0x180]
+        push ebx
+        mov ecx, edi
+        call eax
+    L_next:
+        test esi, esi
+        jne L_top
+        pop edi
+        pop ebx
+    L_done:
+        pop esi
+        ret
+    L_tail:
+        jmp ext_006A60EE
+    }
+}
