@@ -969,3 +969,39 @@ extern "C" __declspec(naked) void* __fastcall fn_00678520(void* self) {
         ret
     }
 }
+
+// [0x00672D10] sub_00672D10 (71 bytes)
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_00672D10(void* self) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        push esi
+        mov esi, dword ptr [ebx + 4]
+        test esi, esi
+        je done
+        push edi
+        mov edi, dword ptr [ebx + 8]
+        cmp esi, edi
+        je skip
+    lp:
+        mov ecx, esi
+        call dword ptr [mem_00924FF4]
+        add esi, 0x20
+        cmp esi, edi
+        jne lp
+    skip:
+        mov eax, dword ptr [ebx + 4]
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+        pop edi
+    done:
+        pop esi
+        mov dword ptr [ebx + 4], 0
+        mov dword ptr [ebx + 8], 0
+        mov dword ptr [ebx + 0xc], 0
+        pop ebx
+        ret
+    }
+}

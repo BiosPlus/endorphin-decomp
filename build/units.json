@@ -408841,7 +408841,9 @@
       "0x00672D27",
       "0x00672D37"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:12:46Z"
   },
   {
     "va": "0x00672D60",
