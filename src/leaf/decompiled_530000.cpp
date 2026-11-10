@@ -1393,3 +1393,31 @@ L_791:
         ret 0x4
     }
 }
+
+// [0x00530C00] sub_00530C00 (50 bytes)
+extern "C" void ext_00530740();
+extern "C" void ext_005435A0();
+extern "C" __declspec(naked) void __fastcall fn_00530C00(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4c]
+        push edi
+        lea eax, [esp + 0x14]
+        push eax
+        call ext_005435A0
+        push edi
+        mov ecx, esi
+        call ext_00530740
+        mov ecx, dword ptr [esi + 0x10]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x158]
+        push 0
+        call eax
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
