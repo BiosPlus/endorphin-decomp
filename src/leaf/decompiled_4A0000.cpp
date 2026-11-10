@@ -610,3 +610,21 @@ extern "C" __declspec(naked) void* __fastcall fn_004AB880(void* self) {
         ret
     }
 }
+
+// [0x004ABAA0] sub_004ABAA0 (30 bytes)
+extern "C" void ext_004AB880();
+
+extern "C" __declspec(naked) void __fastcall fn_004ABAA0(void* self) {
+    __asm {
+        push ecx
+        mov dword ptr [esp], 0
+        call ext_004AB880
+        mov edx, dword ptr [esp + 0xc]
+        mov ecx, eax
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ecx
+        pop ecx
+        ret
+    }
+}
