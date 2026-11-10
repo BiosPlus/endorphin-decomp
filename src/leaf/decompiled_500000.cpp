@@ -562,3 +562,50 @@ empty_range:
         ret
     }
 }
+
+// [0x00508860] sub_00508860 (65 bytes)
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) void* __cdecl fn_00508860(void* first, void* last, const void* key) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je early_ret
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+loop_top:
+        lea eax, [esi + 0x4]
+        push ebx
+        push eax
+        call ebp
+        add esp, 0x8
+        test al, al
+        jne found
+        add esi, 0x24
+        cmp esi, edi
+        jne loop_top
+found:
+        pop ebp
+        pop ebx
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+early_ret:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
