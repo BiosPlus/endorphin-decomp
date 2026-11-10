@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_7C0000.cpp
 
 extern "C" float mem_0099D148;
+extern "C" int mem_009552D0;
 extern "C" void ext_007DD130();
 
 // [0x007CC3D0] sub_007CC3D0 (32 bytes)
@@ -1135,6 +1136,31 @@ extern "C" __declspec(naked) float __cdecl fn_007CAB40(float a0) {
         fld1
         fstp dword ptr [esp + 0x4]
         fld dword ptr [esp + 0x4]
+        ret
+    }
+}
+
+// [0x007CA1A0] sub_007CA1A0 (59 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007CA1A0(void* self) {
+    __asm {
+        fld dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x4]
+        xor ecx, ecx
+        fmul qword ptr [mem_009552D0]
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], ecx
+        fmul st, st(1)
+        mov dword ptr [eax + 0x14], ecx
+        mov dword ptr [eax + 0x18], ecx
+        mov dword ptr [eax + 0x1c], ecx
+        fmulp st(1), st
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fst dword ptr [eax]
+        fst dword ptr [eax + 0x10]
+        fstp dword ptr [eax + 0x20]
         ret
     }
 }
