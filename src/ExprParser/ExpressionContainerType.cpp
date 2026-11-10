@@ -196,3 +196,25 @@ extern "C" __declspec(naked) void __fastcall fn_00699140(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00670D10] ExprParser::ExpressionContainerType::vfunc_4 (39 bytes)
+extern "C" void ext_0041CEB0();
+
+extern "C" __declspec(naked) int __fastcall fn_00670D10(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        push eax
+        mov dword ptr [esp + 0xc], 0
+        call ext_006999B0
+        mov ecx, eax
+        call ext_0041CEB0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
