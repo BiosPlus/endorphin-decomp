@@ -179639,7 +179639,9 @@
       "0x005180A0",
       "0x005180AA"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:47:09Z"
   },
   {
     "va": "0x005180D0",

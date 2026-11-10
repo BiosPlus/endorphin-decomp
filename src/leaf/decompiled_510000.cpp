@@ -758,3 +758,31 @@ L_done:
         ret
     }
 }
+
+// [0x00518080] sub_00518080 (76 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00518080(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x00892D18
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_0050F970
+        fld qword ptr [mem_0092C508]
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi], 0x009520C4
+        xor eax, eax
+        mov dword ptr [esi + 0x3C], eax
+        mov dword ptr [esi + 0x40], eax
+        mov dword ptr [esi + 0x44], eax
+        fstp qword ptr [esi + 0x30]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
