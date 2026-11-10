@@ -708,3 +708,32 @@ extern "C" __declspec(naked) void* __cdecl fn_00408090(void* a1, void* a2, void*
         ret
     }
 }
+
+// [0x00401000] sub_00401000 (50 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00401000(void* base, int stride, int count, void* callback) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        sub edi, 1
+        js done
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        __asm _emit 0x8d __asm _emit 0xa4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+loop_top:
+        mov ecx, esi
+        call ebx
+        add esi, ebp
+        sub edi, 1
+        jns loop_top
+        pop esi
+        pop ebp
+        pop ebx
+done:
+        pop edi
+        ret 0x10
+    }
+}
