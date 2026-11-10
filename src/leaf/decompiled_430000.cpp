@@ -2903,3 +2903,17 @@ L_done_430C33:
         jmp eax
     }
 }
+
+// [0x0043D290] sub_0043D290 (48 bytes)
+extern "C" void ext_0041C660();
+extern "C" void ext_006A5EA8();
+
+extern "C" int __fastcall fn_0043D290(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    typedef char (__fastcall *Callee4)(void*, int, int, int, int, int);
+    typedef void (__fastcall *Callee0)(void*);
+    char r = reinterpret_cast<Callee4>(ext_0041C660)(static_cast<char*>(self) + 0x64, a2, a1, a2, a3, a4);
+    if (!r) {
+        reinterpret_cast<Callee0>(ext_006A5EA8)(self);
+    }
+    return 0;
+}
