@@ -1218,3 +1218,41 @@ extern "C" void __fastcall fn_00666B40(char* self, int edx_unused, char* x) {
     *(char**)(n + 0x8) = x;
     *(char**)(x + 0x4) = n;
 }
+
+// [0x006629F0] sub_006629F0 (86 bytes)
+// Returns a std::string by value (hidden return buffer is the first stack arg, plain ret).
+// Calls PathRelativePathToA into a local buffer; on failure uses the second path arg
+// directly. The resulting C string is used to construct the std::string in the hidden buffer.
+extern "C" int mem_00925558;
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void __cdecl fn_006629F0(void* sret, const char* from, const char* to) {
+    __asm {
+        sub esp, 0x108
+        mov eax, dword ptr [esp + 0x110]
+        push esi
+        mov esi, dword ptr [esp + 0x118]
+        push 0x80
+        push esi
+        push 0x10
+        push eax
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov dword ptr [esp + 0x18], 0
+        call dword ptr [mem_00925558]
+        test eax, eax
+        je short L_no_rel
+        lea edx, [esp + 0x8]
+        push edx
+        jmp short L_ctor
+    L_no_rel:
+        push esi
+    L_ctor:
+        mov esi, dword ptr [esp + 0x114]
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        add esp, 0x108
+        ret
+    }
+}
