@@ -465,3 +465,23 @@ L_059D69C:
         ret 0x4
     }
 }
+
+// [0x00595C10] sub_00595C10 (64 bytes)
+extern "C" void* __fastcall fn_00595C10(void* self) {
+    typedef void* (__cdecl *Alloc)(int);
+    void* p = ((Alloc)ext_006A5C62)(0xbc);
+    if (p) {
+        *(int*)p = 0;
+    }
+    void* q = (char*)p + 4;
+    if (q) {
+        *(int*)q = 0;
+    }
+    void* r = (char*)p + 8;
+    if (r) {
+        *(int*)r = 0;
+    }
+    ((unsigned char*)p)[0xb8] = 1;
+    ((unsigned char*)p)[0xb9] = 0;
+    return p;
+}
