@@ -801,3 +801,40 @@ skip_0048C960:
         ret 0x4
     }
 }
+
+// [0x00481700] sub_00481700 (62 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00481700(void* a1, void* a2, void* a3) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        mov eax, edx
+        sub eax, ebx
+        sar eax, 0x6
+        shl eax, 0x6
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        mov ecx, eax
+        mov eax, ebp
+        sub eax, ecx
+        cmp ebx, edx
+        je done_00481700
+        push esi
+        sub ebp, edx
+        push edi
+    loop_00481700:
+        sub edx, 0x40
+        cmp edx, ebx
+        lea edi, [edx + ebp]
+        mov ecx, 0x10
+        mov esi, edx
+        rep movsd
+        jne loop_00481700
+        pop edi
+        pop esi
+    done_00481700:
+        pop ebp
+        pop ebx
+        ret
+    }
+}
