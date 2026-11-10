@@ -898,3 +898,37 @@ extern "C" void __cdecl fn_007DFD30(void* self) {
     }
     *(void**)(esi + 0x14) = 0;
 }
+
+// [0x007DFCE0] sub_007DFCE0 (68 bytes)
+extern "C" void ext_007C8880();
+extern "C" __declspec(naked) void __cdecl fn_007DFCE0(void* self, void* a, void* b) {
+    __asm {
+        mov eax, dword ptr [esp+8]
+        mov ecx, dword ptr [esp+0xc]
+        push esi
+        mov esi, dword ptr [esp+8]
+        mov dword ptr [esi], eax
+        mov dword ptr [esi+4], ecx
+        mov edx, dword ptr [eax]
+        push edx
+        call ext_007C8880
+        xor ecx, ecx
+        mov dword ptr [esi+0xc], eax
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi+0x10], ecx
+        mov dword ptr [esi+0x1c], ecx
+        mov dword ptr [esi+0x18], ecx
+        mov dword ptr [esi+0x14], ecx
+        mov eax, dword ptr [eax]
+        mov eax, dword ptr [eax+0x98]
+        add esp, 4
+        cmp eax, ecx
+        je fn_007DFCE0_done
+        push esi
+        call eax
+        add esp, 4
+fn_007DFCE0_done:
+        pop esi
+        ret
+    }
+}
