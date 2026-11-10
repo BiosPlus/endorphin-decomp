@@ -691,3 +691,41 @@ extern "C" void __cdecl fn_007D5AF0(void* a1, void* a2, void* a3) {
         *(unsigned int*)(obj + 0x24) &= ~1u;
     }
 }
+
+// [0x007D4820] sub_007D4820 (60 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007D4820(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov eax, dword ptr [esi + 4]
+        cmp eax, dword ptr [esi + 0xc]
+        jl fn4820_body
+    fn4820_zero:
+        xor eax, eax
+        pop esi
+        ret
+    fn4820_body:
+        mov eax, dword ptr [esi + 0x10]
+        test eax, eax
+        mov ecx, dword ptr [esi + 0x1c]
+        mov edx, dword ptr [esi + 0x8]
+        jne fn4820_two
+        mov eax, dword ptr [ecx]
+        push edx
+        call eax
+        add esp, 4
+        jmp fn4820_after
+    fn4820_two:
+        push eax
+        mov eax, dword ptr [ecx + 8]
+        push edx
+        call eax
+        add esp, 8
+    fn4820_after:
+        test eax, eax
+        je fn4820_zero
+        add dword ptr [esi + 4], 1
+        pop esi
+        ret
+    }
+}
