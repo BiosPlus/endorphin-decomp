@@ -587,3 +587,46 @@ extern "C" __declspec(naked) bool __cdecl fn_00691FC0(const unsigned char* a, co
         ret
     }
 }
+
+// [0x0069B0C0] sub_0069B0C0 (64 bytes)
+extern "C" __declspec(naked) bool __cdecl fn_0069B0C0(char** pp, const char* lit) {
+    __asm {
+        mov ecx, dword ptr [esp + 8]
+        mov al, byte ptr [ecx]
+        test al, al
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov ebx, dword ptr [edi]
+        je short L_ret_true
+    L_loop:
+        mov esi, dword ptr [edi]
+        mov dl, byte ptr [esi]
+        test dl, dl
+        je short L_fail
+        cmp dl, al
+        jne short L_fail
+        add esi, 1
+        add ecx, 1
+        mov dword ptr [edi], esi
+        mov al, byte ptr [ecx]
+        test al, al
+        jne short L_loop
+    L_ret_true:
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        ret
+    L_fail:
+        cmp byte ptr [ecx], 0
+        je short L_ret_true
+        mov dword ptr [edi], ebx
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret
+    }
+}
