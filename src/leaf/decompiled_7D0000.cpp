@@ -567,3 +567,16 @@ extern "C" __declspec(naked) void __cdecl fn_007D6290(void* self, int state) {
         ret
     }
 }
+
+// [0x007D6220] sub_007D6220 (53 bytes)
+extern "C" void __cdecl fn_007D6220(void* self, unsigned int a1, int a2) {
+    char* p = reinterpret_cast<char*>(self);
+    *reinterpret_cast<unsigned int*>(p + 0xc) = (a1 < 4) ? 4u : a1;
+    *reinterpret_cast<int*>(p + 0x14) = 0;
+    *reinterpret_cast<int*>(p + 0x8) = 0;
+    *reinterpret_cast<int*>(p + 0x0) = 0;
+    *reinterpret_cast<int*>(p + 0x4) = 0;
+    *reinterpret_cast<int*>(p + 0x18) = 1;
+    *reinterpret_cast<int*>(p + 0x10) = 1;
+    *reinterpret_cast<int*>(p + 0x1c) = a2;
+}
