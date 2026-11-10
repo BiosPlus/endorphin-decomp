@@ -415854,7 +415854,9 @@
       "0x0067ECB9",
       "0x0067ECD0"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:19:00Z"
   },
   {
     "va": "0x0067ECF0",

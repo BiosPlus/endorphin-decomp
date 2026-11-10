@@ -835,3 +835,39 @@ extern "C" float __fastcall fn_006781B0(void* self, int edx_unused, float a1) {
     }
     return a1;
 }
+
+// [0x0067ECA0] sub_0067ECA0 (66 bytes)
+extern "C" int mem_00924FFC;
+extern "C" int mem_0092530C;
+extern "C" __declspec(naked) void __fastcall fn_0067ECA0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push 0x10
+        push 0x0
+        mov esi, ecx
+        push 0x0
+        mov ecx, edi
+        call dword ptr [mem_00924FFC]
+        mov ebx, dword ptr [mem_0092530C]
+        push eax
+        call ebx
+        add esp, 0xc
+        push 0x10
+        push 0x0
+        push 0x9
+        mov ecx, edi
+        mov dword ptr [esi + 0x4], eax
+        call dword ptr [mem_00924FFC]
+        push eax
+        call ebx
+        add esp, 0xc
+        pop edi
+        mov dword ptr [esi], eax
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
