@@ -808,3 +808,43 @@ found:
         ret
     }
 }
+
+// [0x007D4AA0] sub_007D4AA0 (64 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_007D4AA0(void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [esp + 4]
+        cmp ecx, edx
+        je r4aa0_root
+        mov eax, ecx
+        mov ecx, dword ptr [eax]
+        cmp ecx, edx
+        je r4aa0_out
+    r4aa0_l1:
+        mov eax, ecx
+        mov ecx, dword ptr [ecx]
+        cmp ecx, edx
+        jne r4aa0_l1
+        ret
+    r4aa0_root:
+        mov ecx, dword ptr [eax + 8]
+        cmp ecx, edx
+        je r4aa0_tail
+    r4aa0_l2:
+        cmp eax, dword ptr [ecx + 4]
+        jne r4aa0_tail
+        mov eax, ecx
+        mov ecx, dword ptr [ecx + 8]
+        cmp ecx, edx
+        jne r4aa0_l2
+    r4aa0_tail:
+        mov eax, ecx
+        sub eax, edx
+        neg eax
+        sbb eax, eax
+        and eax, ecx
+    r4aa0_out:
+        ret
+    }
+}
