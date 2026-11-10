@@ -1785,3 +1785,20 @@ extern "C" __declspec(naked) void __cdecl fn_007CCAB0(char* self) {
         ret
     }
 }
+
+// [0x007C9AE0] sub_007C9AE0 (73 bytes)
+extern "C" void __cdecl fn_007C9AE0(void* self, float a, float b, float c, float d, int flag) {
+    char* s = (char*)self;
+    float* dst;
+    if (flag == 0) {
+        dst = (float*)(s + 0x160);
+        *(int*)(s + 0x170) = 1;
+    } else {
+        dst = (float*)(s + 0x174);
+        *(int*)(s + 0x184) = 1;
+    }
+    dst[0] = a;
+    dst[1] = b;
+    dst[2] = c;
+    dst[3] = d;
+}
