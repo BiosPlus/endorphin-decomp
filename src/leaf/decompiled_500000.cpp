@@ -488,3 +488,40 @@ extern "C" __declspec(naked) void __fastcall fn_00508800(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00509C10] sub_00509C10 (61 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_00509C10() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je short empty_range
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+copy_loop:
+        lea eax, [esi + 0x4]
+        push eax
+        lea ecx, [edi + 0x4]
+        call dword ptr [mem_00924FDC]
+        fld dword ptr [esi + 0x20]
+        fstp dword ptr [edi + 0x20]
+        add esi, 0x24
+        add edi, 0x24
+        cmp esi, ebx
+        jne short copy_loop
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+empty_range:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
