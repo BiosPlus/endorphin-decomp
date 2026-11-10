@@ -826,3 +826,17 @@ extern "C" __declspec(naked) void __fastcall fn_006426F0(void* self, int edx_unu
         ret 0x0c
     }
 }
+
+// [0x006490B0] sub_006490B0 (60 bytes)
+extern "C" void __cdecl fn_006490B0(unsigned int* dst, unsigned int* dst_end, unsigned int* src) {
+    if (dst == dst_end) return;
+    do {
+        dst[0] = src[0];
+        dst[1] = src[1];
+        dst[2] = src[2];
+        dst[3] = src[3];
+        dst[4] = src[4];
+        dst[5] = src[5];
+        dst += 6;
+    } while (dst != dst_end);
+}
