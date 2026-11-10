@@ -1573,3 +1573,41 @@ extern "C" __declspec(naked) void __fastcall fn_0041FD70(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0041CF00] sub_0041CF00 (76 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0041CF00(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        cmp dword ptr [esi + 4], 0
+        push edi
+        mov edi, ecx
+        je L_zero_41CF00
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x70]
+        push esi
+        lea edx, [esp + 0x10]
+        push edx
+        call eax
+        mov ecx, dword ptr [eax]
+        mov dword ptr [edi], ecx
+        mov edx, dword ptr [esi + 4]
+        mov dword ptr [edi + 4], edx
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 4
+L_zero_41CF00:
+        lea eax, [esp + 0xc]
+        mov dword ptr [esp + 0xc], 0
+        mov ecx, dword ptr [eax]
+        mov dword ptr [edi], ecx
+        mov edx, dword ptr [esi + 4]
+        mov dword ptr [edi + 4], edx
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 4
+    }
+}
