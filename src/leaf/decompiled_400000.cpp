@@ -821,3 +821,13 @@ extern "C" __declspec(naked) void __fastcall fn_00401080(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0040D9F0] sub_0040D9F0 (54 bytes)
+extern "C" int mem_00925134;
+
+extern "C" int __fastcall fn_0040D9F0(int* self, int edx_unused, int* other) {
+    if (self[0] == 0 || self[0] != other[0]) {
+        (*(void (__cdecl**)())&mem_00925134)();
+    }
+    return (self[1] - other[1]) / 28;
+}
