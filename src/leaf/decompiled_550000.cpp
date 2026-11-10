@@ -471,3 +471,36 @@ extern "C" int __fastcall fn_00551960(float* self, int edx_unused, float* other)
     }
     return 0;
 }
+
+// [0x0055F390] sub_0055F390 (60 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0055F390(void* dst, unsigned int count, const float* src) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        test edx, edx
+        jbe done
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        lea eax, [ecx + 0xc]
+    loop_top:
+        test ecx, ecx
+        je skip
+        fld dword ptr [esi]
+        fstp dword ptr [ecx]
+        fld dword ptr [esi + 0x4]
+        fstp dword ptr [eax - 0x8]
+        fld dword ptr [esi + 0x8]
+        fstp dword ptr [eax - 0x4]
+        fld dword ptr [esi + 0xc]
+        fstp dword ptr [eax]
+    skip:
+        sub edx, 1
+        add ecx, 0x10
+        add eax, 0x10
+        test edx, edx
+        ja loop_top
+        pop esi
+    done:
+        ret
+    }
+}
