@@ -210,3 +210,40 @@ L_mismatch:
         ret
     }
 }
+
+// [0x00859740] sub_00859740 (64 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00859740(void* dst, int c, unsigned int n) {
+    __asm {
+        mov eax, dword ptr [esp + 0Ch]
+        mov ecx, eax
+        dec eax
+        test ecx, ecx
+        jbe L_ret_dst_00859740
+        lea ecx, [eax + 1]
+        mov al, byte ptr [esp + 8]
+        push ebx
+        mov bl, al
+        mov bh, bl
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        mov eax, ebx
+        mov edx, ecx
+        push edi
+        shl eax, 10h
+        mov edi, esi
+        mov ax, bx
+        shr ecx, 2
+        rep stosd
+        mov ecx, edx
+        and ecx, 3
+        rep stosb
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_ret_dst_00859740:
+        mov eax, dword ptr [esp + 4]
+        ret
+    }
+}
