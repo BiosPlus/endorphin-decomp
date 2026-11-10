@@ -2453,3 +2453,39 @@ extern "C" __declspec(naked) void __fastcall fn_00431360(void* self) {
         ret
     }
 }
+
+// [0x00434AB0] sub_00434AB0 (55 bytes)
+// Copies the two dwords at this[0..1] to the out buffer (arg1), calls _invalid_parameter_noinfo
+// when the first dword is null or when this[1] >= vtbl-held limit at [this[0]+8], then advances this[1] by 0x1c.
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_00434AB0(void* self, int edx_unused, void* out, int unused) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        test eax, eax
+        mov ecx, dword ptr [esi + 0x4]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov dword ptr [edi], eax
+        mov dword ptr [edi + 0x4], ecx
+        jne skip1
+        call ebx
+    skip1:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [esi + 0x4]
+        cmp eax, dword ptr [edx + 0x8]
+        jb skip2
+        call ebx
+    skip2:
+        add dword ptr [esi + 0x4], 0x1c
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
