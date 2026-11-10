@@ -827,3 +827,52 @@ extern "C" __declspec(naked) void __fastcall fn_0055F620(void* self) {
         ret
     }
 }
+
+// [0x00555420] sub_00555420 (74 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00555420(void* first_, void* last_, const unsigned int* value) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp+0ch]
+        push edi
+        mov edi, dword ptr [esp+0ch]
+        sub esi, edi
+        sar esi, 5
+        test esi, esi
+        jle short L_done
+        mov eax, dword ptr [esp+14h]
+        push ebx
+        mov ebx, dword ptr [eax]
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+L_loop:
+        mov eax, esi
+        cdq
+        sub eax, edx
+        sar eax, 1
+        mov ecx, eax
+        shl ecx, 5
+        add ecx, edi
+        cmp dword ptr [ecx], ebx
+        jae short L_else
+        lea edi, [ecx+20h]
+        or ecx, -1
+        sub ecx, eax
+        add esi, ecx
+        jmp short L_test
+L_else:
+        mov esi, eax
+L_test:
+        test esi, esi
+        jg short L_loop
+        pop ebx
+L_done:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
