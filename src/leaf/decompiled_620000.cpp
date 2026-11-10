@@ -575,3 +575,36 @@ extern "C" __declspec(naked) void __fastcall fn_00621B30(void* self) {
         ret
     }
 }
+
+// [0x00622C00] sub_00622C00 (62 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00622C00(void) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp edx, esi
+        je fill_done_00622C00
+        mov ecx, dword ptr [esp + 0x10]
+        lea eax, [edx + 0xc]
+        push edi
+fill_loop_00622C00:
+        mov edi, dword ptr [ecx]
+        mov dword ptr [edx], edi
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [eax - 0x8]
+        add edx, 0x14
+        fld dword ptr [ecx + 0x8]
+        add eax, 0x14
+        cmp edx, esi
+        fstp dword ptr [eax - 0x18]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax - 0x14]
+        fld dword ptr [ecx + 0x10]
+        fstp dword ptr [eax - 0x10]
+        jne fill_loop_00622C00
+        pop edi
+fill_done_00622C00:
+        pop esi
+        ret
+    }
+}
