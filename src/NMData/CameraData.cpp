@@ -16,3 +16,31 @@ extern "C" void __fastcall fn_005D1000(void* self, int edx_unused, int a1) {
     *(void**)&f = (void*)ext_005CFE10;
     (next->*f)(a1);
 }
+
+// [0x005D06E0] NMData::CameraData::vfunc_57 (44 bytes)
+extern "C" void ext_0058A3C0();
+extern "C" void ext_005CFD60();
+
+extern "C" __declspec(naked) void* __fastcall fn_005D06E0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_005CFD60
+        cmp eax, 0x3
+        je L_vfunc57
+        pop edi
+        lea eax, [esi + 8*eax + 0x264]
+        pop esi
+        ret 0x4
+    L_vfunc57:
+        push edi
+        mov ecx, esi
+        call ext_0058A3C0
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
