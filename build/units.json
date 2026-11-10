@@ -2079,7 +2079,9 @@
       "0x004032BF",
       "0x004032C5"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:57:27Z"
   },
   {
     "va": "0x004032D0",
