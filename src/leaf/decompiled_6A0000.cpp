@@ -637,3 +637,36 @@ extern "C" __declspec(naked) void* __stdcall fn_006ACE90(void* dst, const void* 
         ret 0x8
     }
 }
+
+// [0x006AD290] sub_006AD290 (75 bytes)
+extern "C" int mem_009242FC;
+
+extern "C" __declspec(naked) void* __fastcall fn_006AD290(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea ecx, [esi + 0x8]
+        mov dword ptr [esi], 0x99103c
+        call dword ptr [mem_009242FC]
+        lea ecx, [esi + 0xc]
+        call dword ptr [mem_009242FC]
+        xor eax, eax
+        mov dword ptr [esi + 0x18], eax
+        mov dword ptr [esi + 0x1c], eax
+        mov dword ptr [esi + 0x20], eax
+        mov dword ptr [esi + 0x24], eax
+        mov dword ptr [esi + 0x28], eax
+        mov dword ptr [esi + 0x2c], eax
+        mov dword ptr [esi + 0x30], eax
+        mov dword ptr [esi + 0x34], eax
+        mov byte ptr [esi + 0x38], al
+        mov dword ptr [esi + 0x3c], eax
+        mov byte ptr [esi + 0x40], al
+        mov byte ptr [esi + 0x41], al
+        mov dword ptr [esi + 0x44], eax
+        mov dword ptr [esi + 0x4c], eax
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
