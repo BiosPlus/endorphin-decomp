@@ -1259,3 +1259,52 @@ extern "C" void __fastcall fn_00486D80(void* self, int edx_unused, void* node) {
     *(char**)p = n;
     *(char**)(n + 0x4) = p;
 }
+
+// [0x00480010] sub_00480010 (78 bytes)
+extern "C" int __cdecl ext_005631C0(double, double);
+extern "C" double mem_0093C2D8;
+
+extern "C" __declspec(naked) void __fastcall fn_00480010(void* self) {
+    __asm {
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, ecx
+    outer:
+        xor ecx, ecx
+        mov edx, esi
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    inner:
+        fld qword ptr [mem_0093C2D8]
+        sub esp, 0x10
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [edx]
+        fstp qword ptr [esp]
+        call ext_005631C0
+        add esp, 0x10
+        test al, al
+        je fail
+        add ecx, 1
+        add edx, 4
+        cmp ecx, 4
+        jl inner
+        add edi, 1
+        add esi, 0x10
+        cmp edi, 4
+        jl outer
+        pop edi
+        mov al, 1
+        pop esi
+        ret
+    fail:
+        pop edi
+        xor al, al
+        pop esi
+        ret
+    }
+}
