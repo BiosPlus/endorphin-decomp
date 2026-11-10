@@ -68002,7 +68002,9 @@
       "0x0046F848",
       "0x0046F854"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:42:33Z"
   },
   {
     "va": "0x0046F860",

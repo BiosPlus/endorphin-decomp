@@ -1225,3 +1225,22 @@ valid_path:
         ret 8
     }
 }
+
+extern "C" void ext_0067AEB0();
+extern "C" void ext_0067B050();
+
+// [0x0046F830] sub_0046F830 (40 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0046F830(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x148]
+        push eax
+        lea ecx, [esi + 0x160]
+        mov byte ptr [esi + 0x12c], 0x0
+        call ext_0067AEB0
+        lea ecx, [esi + 0x128]
+        pop esi
+        jmp ext_0067B050
+    }
+}
