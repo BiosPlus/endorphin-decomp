@@ -1589,3 +1589,43 @@ neg_path:
         jmp ext_006A6DE0
     }
 }
+
+extern "C" int mem_00925690;
+extern "C" void ext_006A5E5A();
+
+// [0x00460540] sub_00460540 (76 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00460540(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x20]
+        lea eax, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        call dword ptr [mem_00925690]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0xc]
+        push 0x1
+        mov edx, eax
+        sub edx, ecx
+        push edx
+        mov edx, dword ptr [esp + 0x18]
+        sub edx, dword ptr [esp + 0x10]
+        push edx
+        mov edx, dword ptr [esp + 0x28]
+        mov edi, dword ptr [edx + 0x4]
+        sub edi, eax
+        mov eax, dword ptr [edx]
+        add edi, ecx
+        push edi
+        push eax
+        mov ecx, esi
+        call ext_006A5E5A
+        pop edi
+        pop esi
+        add esp, 0x10
+        ret 0x4
+    }
+}
