@@ -528,3 +528,29 @@ extern "C" __declspec(naked) void* __cdecl fn_0065D500(const void* first, const 
         ret
     }
 }
+
+// [0x0065BF30] sub_0065BF30 (59 bytes)
+// Stores three float args at [self+0x20], [self+0x24], [self+0x28], then calls sub_007C76E0 with
+// ([self+0x40] as int, then the three floats) cdecl, and returns with ret 0xC.
+extern "C" __declspec(naked) void __fastcall fn_0065BF30(void* self, int edx_unused, float a1, float a2, float a3) {
+    __asm {
+        fld dword ptr [esp + 0x4]
+        sub esp, 0x0c
+        fstp dword ptr [ecx + 0x20]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [ecx + 0x24]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [ecx + 0x28]
+        mov eax, dword ptr [ecx + 0x40]
+        fld dword ptr [ecx + 0x28]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x24]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [ecx + 0x20]
+        fstp dword ptr [esp]
+        push eax
+        call ext_007C76E0
+        add esp, 0x10
+        ret 0x0c
+    }
+}
