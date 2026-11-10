@@ -215,3 +215,29 @@ extern "C" void* __cdecl fn_004D0DB0() {
     }
     return &mem_00AE558C;
 }
+
+// [0x004D0010] sub_004D0010 (57 bytes)
+extern "C" int mem_00924FE8;
+
+extern "C" void* __fastcall fn_004D0010(void* self) {
+    typedef void (__fastcall *ctor_t)(void*);
+    ctor_t ctor = (ctor_t)mem_00924FE8;
+    ctor(self);
+    float zero = 0.0f;
+    char* p = (char*)self;
+    *(float*)(p + 0x24) = zero;
+    *(float*)(p + 0x20) = zero;
+    *(float*)(p + 0x1c) = zero;
+    *(float*)(p + 0x34) = zero;
+    *(float*)(p + 0x30) = zero;
+    *(float*)(p + 0x2c) = zero;
+    *(float*)(p + 0x28) = zero;
+    *(float*)(p + 0x44) = zero;
+    *(float*)(p + 0x40) = zero;
+    *(float*)(p + 0x3c) = zero;
+    *(float*)(p + 0x38) = zero;
+    *(float*)(p + 0x50) = zero;
+    *(float*)(p + 0x4c) = zero;
+    *(float*)(p + 0x48) = zero;
+    return self;
+}
