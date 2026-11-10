@@ -4,6 +4,7 @@ extern "C" int mem_009253D8;
 extern "C" int mem_009253D4;
 extern "C" void ext_0054D2A0();
 extern "C" void ext_00539800();
+extern "C" void ext_006A5C62();
 extern "C" int mem_00A44B84;
 
 // [0x00532C30] sub_00532C30 (30 bytes)
@@ -963,4 +964,43 @@ extern "C" void __fastcall fn_00539900(void* self) {
     p[15] = 0;
     p[16] = 0;
     ((void (__fastcall*)(void*))ext_00532B40)(self);
+}
+
+// [0x0053AFA0] sub_0053AFA0 (70 bytes)
+extern "C" int mem_009553B8;
+extern "C" __declspec(naked) void __fastcall fn_0053AFA0(void* self) {
+    __asm {
+        push esi
+        push edi
+        push 0x8
+        mov edi, ecx
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je short null_result
+        mov dword ptr [eax], offset mem_009553B8
+        mov dword ptr [eax + 0x4], 0x0
+        mov esi, eax
+        jmp short store_result
+null_result:
+        xor esi, esi
+store_result:
+        mov ecx, dword ptr [edi + 0x38]
+        cmp esi, ecx
+        je short skip_release
+        test ecx, ecx
+        je short skip_release
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+skip_release:
+        mov dword ptr [edi + 0x38], esi
+        mov ecx, esi
+        mov eax, dword ptr [ecx]
+        pop edi
+        pop esi
+        mov eax, dword ptr [eax + 0x20]
+        jmp eax
+    }
 }
