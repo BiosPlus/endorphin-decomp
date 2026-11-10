@@ -282,3 +282,36 @@ extern "C" __declspec(naked) void __fastcall fn_0068DDD0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006812A0] sub_006812A0 (53 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006812A0(void* first, void* last) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je done
+        push edi
+        xor edi, edi
+    loop_top:
+        mov eax, dword ptr [esi + 0x4]
+        cmp eax, edi
+        je skip_call
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    skip_call:
+        mov dword ptr [esi + 0x4], edi
+        mov dword ptr [esi + 0x8], edi
+        mov dword ptr [esi + 0xc], edi
+        add esi, 0x10
+        cmp esi, ebx
+        jne loop_top
+        pop edi
+    done:
+        pop esi
+        pop ebx
+        ret
+    }
+}
