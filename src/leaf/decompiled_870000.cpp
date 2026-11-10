@@ -130,3 +130,42 @@ extern "C" __declspec(naked) void __fastcall fn_00871890(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00870EF0] sub_00870EF0 (76 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00870EF0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8]
+        cmp eax, dword ptr [ecx + 0xc]
+        ja  done_00870EF0
+        mov edx, dword ptr [ecx + 0x4]
+        push esi
+        lea esi, [eax - 0x1]
+        cmp esi, edx
+        pop esi
+        jae l16_00870EF0
+        mov eax, 0x1
+        mov dword ptr [ecx + 0x8], edx
+        mov dword ptr [ecx + 0x18], eax
+        mov dword ptr [ecx + 0x10], eax
+        mov dword ptr [ecx + 0x14], eax
+        ret
+    l16_00870EF0:
+        add eax, -0x1
+        mov dword ptr [ecx + 0x8], eax
+        cmp byte ptr [eax], 0xa
+        jne l35_00870EF0
+        cmp eax, edx
+        jbe l31_00870EF0
+        cmp byte ptr [eax - 0x1], 0xd
+        jne l31_00870EF0
+        add eax, -0x1
+        mov dword ptr [ecx + 0x8], eax
+    l31_00870EF0:
+        add dword ptr [ecx + 0x10], -0x1
+    l35_00870EF0:
+        mov eax, dword ptr [ecx + 0x18]
+        mov dword ptr [ecx + 0x14], eax
+    done_00870EF0:
+        ret
+    }
+}
