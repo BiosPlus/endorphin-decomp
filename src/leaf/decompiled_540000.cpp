@@ -366,3 +366,25 @@ extern "C" __declspec(naked) void __cdecl fn_00540572() {
         jmp dword ptr [mem_00925418]
     }
 }
+
+// [0x005434F0] sub_005434F0 (54 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005434F0(void* self) {
+    __asm {
+        cmp byte ptr [ecx + 0x90], 0
+        mov al, 1
+        je skip_93
+        mov byte ptr [ecx + 0x93], al
+    skip_93:
+        cmp byte ptr [ecx + 0x91], 0
+        je skip_94
+        mov byte ptr [ecx + 0x94], al
+    skip_94:
+        cmp byte ptr [ecx + 0x92], 0
+        je skip_95
+        mov byte ptr [ecx + 0x95], al
+    skip_95:
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x3c]
+        jmp eax
+    }
+}
