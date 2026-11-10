@@ -1482,3 +1482,36 @@ done:
         ret
     }
 }
+
+// [0x0044F740] sub_0044F740 (59 bytes)
+extern "C" void ext_00492520();
+extern "C" void ext_006AD940();
+
+extern "C" __declspec(naked) int __fastcall fn_0044F740(void* self) {
+    __asm {
+        push esi
+        push edi
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov esi, eax
+        push 0x0
+        mov ecx, esi
+        call ext_00492520
+        push 0x1
+        mov ecx, esi
+        mov edi, eax
+        call ext_00492520
+        test edi, edi
+        pop edi
+        pop esi
+        je fail_0044F740
+        test eax, eax
+        je fail_0044F740
+        mov eax, 0x1
+        ret
+    fail_0044F740:
+        xor eax, eax
+        ret
+    }
+}
