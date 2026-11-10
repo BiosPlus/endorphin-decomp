@@ -351,3 +351,29 @@ extern "C" void* __fastcall fn_005B6930(void* self) {
     void* r = fnp(p + 4, mem_00B40640);
     return static_cast<char*>(r) + 0x30;
 }
+
+// [0x005B1930] sub_005B1930 (70 bytes)
+extern "C" int mem_00924FE8;
+extern "C" __declspec(naked) void* __fastcall fn_005B1930(void* self) {
+    __asm {
+        push -1
+        push 0x8a33a8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0x10], 0x0
+        mov dword ptr [esi], 0x95fcf4
+        call dword ptr [mem_00924FE8]
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
