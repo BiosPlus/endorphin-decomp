@@ -362,3 +362,16 @@ extern "C" __declspec(naked) void* __stdcall fn_00503C20(void* first, void* last
         ret 0xc
     }
 }
+
+// [0x005049F0] sub_005049F0 (49 bytes)
+extern "C" bool __fastcall fn_005049F0(void* self) {
+    int a = *(int*)((char*)self + 4);
+    int v;
+    if (a == 0) {
+        v = 0;
+    } else {
+        int b = *(int*)((char*)self + 8);
+        v = (b - a) / 104;
+    }
+    return v == 0;
+}
