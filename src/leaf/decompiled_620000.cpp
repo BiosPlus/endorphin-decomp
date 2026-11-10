@@ -347,3 +347,41 @@ extern "C" __declspec(naked) int __stdcall fn_00624EE0(const unsigned int* a, co
         ret 0x8
     }
 }
+
+// [0x00626770] sub_00626770 (54 bytes)
+extern "C" int mem_00924FC0;
+extern "C" int mem_00A97F70;
+
+extern "C" __declspec(naked) int __cdecl fn_00626770(void* arg) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00924FC0]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        xor esi, esi
+        nop
+    loop_top:
+        mov eax, dword ptr mem_00A97F70[esi*4]
+        push eax
+        push edi
+        call ebx
+        add esp, 8
+        test al, al
+        jne found
+        add esi, 1
+        cmp esi, 9
+        jl loop_top
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    found:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret
+    }
+}
