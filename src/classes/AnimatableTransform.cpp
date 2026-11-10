@@ -188,3 +188,40 @@ extern "C" __declspec(naked) void* __fastcall fn_00593D00(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x005936B0] AnimatableTransform::vfunc_43 (82 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005936B0(void* self) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [eax + 0x24]
+        push esi
+        lea esi, [ecx + 0x4]
+        push edi
+        mov ecx, esi
+        call edx
+        mov edi, eax
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x2c]
+        mov ecx, esi
+        call edx
+        fld dword ptr [eax + 0x30]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x34]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x38]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [edi + 0x30]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [edi + 0x34]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [edi + 0x38]
+        fld1
+        fstp dword ptr [edi + 0x3c]
+        pop edi
+        pop esi
+        add esp, 0x10
+        ret
+    }
+}
