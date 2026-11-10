@@ -725,3 +725,39 @@ extern "C" __declspec(naked) void __fastcall fn_006991A0(void* self) {
         ret
     }
 }
+
+// [0x006981A0] sub_006981A0 (83 bytes)
+// Copy-constructor for a two-std::string struct (strings at +0x0 and +0x1c, copied from a1):
+// installs an SEH frame (handler 0x872c79), copy-constructs both members via the imported
+// MSVCP80 basic_string copy ctor, restores the previous SEH frame and returns this.
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_006981A0(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push -1
+        push 0x872c79
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        call dword ptr [mem_00924FE0]
+        add edi, 0x1c
+        push edi
+        lea ecx, [esi + 0x1c]
+        mov dword ptr [esp + 0x18], 0x0
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
