@@ -1176,3 +1176,42 @@ extern "C" void __fastcall fn_0045DB00(void* self, int edx_unused, void* a1) {
     *(unsigned char**)y = x;
     *(unsigned char**)(x + 4) = y;
 }
+
+// [0x004561C0] sub_004561C0 (79 bytes)
+// __thiscall with ret 4: sets flag 0x20 on arg0, GetParent(this->[0x20]), stores result at this->[0xf4],
+// then conditionally sets this->[0xe0] = 1 when the arg's flag 0x40 is set and sub_00455F40 returns 0.
+extern "C" void ext_006A67AE();
+extern "C" void ext_006A5E00();
+extern "C" void ext_006A5EC0();
+extern "C" int mem_00925650;
+
+extern "C" __declspec(naked) void __fastcall fn_004561C0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0ch]
+        or dword ptr [edi + 18h], 20h
+        push edi
+        mov esi, ecx
+        call ext_006A67AE
+        mov eax, dword ptr [esi + 20h]
+        push eax
+        call dword ptr [mem_00925650]
+        push eax
+        call ext_006A5E00
+        mov ecx, eax
+        call ext_006A5EC0
+        mov ecx, esi
+        mov dword ptr [esi + 0f4h], eax
+        call ext_00455F40
+        test eax, eax
+        jne done
+        test byte ptr [edi + 18h], 40h
+        je done
+        mov dword ptr [esi + 0e0h], 1
+    done:
+        pop edi
+        pop esi
+        ret 4
+    }
+}

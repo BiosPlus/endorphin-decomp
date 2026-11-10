@@ -50630,7 +50630,9 @@
       "0x004561E5",
       "0x004561F2"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T14:14:43Z"
   },
   {
     "va": "0x00456210",
