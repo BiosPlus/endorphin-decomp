@@ -1302,3 +1302,29 @@ extern "C" __declspec(naked) int __cdecl fn_007C6810(void* a0, void (__cdecl* a1
         ret
     }
 }
+
+// [0x007CDB70] sub_007CDB70 (65 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007CDB70(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax + 0xac]
+        mov edx, ecx
+        and edx, 0x80000003
+        jns short L_pos
+        dec edx
+        or edx, -0x4
+        inc edx
+    L_pos:
+        je short L_zero
+        sub ecx, edx
+        add ecx, 0x4
+    L_zero:
+        mov dword ptr [eax + 0xac], ecx
+        mov ecx, 0x1
+        add dword ptr [eax + 0x80], ecx
+        add dword ptr [eax + 0x8c], ecx
+        add dword ptr [eax + 0x74], ecx
+        add dword ptr [eax + 0xa8], ecx
+        ret
+    }
+}
