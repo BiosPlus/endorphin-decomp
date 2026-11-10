@@ -168,3 +168,28 @@ extern "C" void __fastcall fn_005F0F60(void* self) {
     *(unsigned int*)(p + 0x154) = 0x0096bb58u;
     ext_005EF450();
 }
+
+// [0x005FF040] sub_005FF040 (54 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_0065F440();
+
+extern "C" __declspec(naked) void __fastcall fn_005FF040(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi], 0x96eaec
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        je skip_release
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+skip_release:
+        mov dword ptr [esi + 0x8], 0
+        mov dword ptr [esi + 0xc], 0
+        mov dword ptr [esi + 0x10], 0
+        mov ecx, esi
+        pop esi
+        jmp ext_0065F440
+    }
+}
