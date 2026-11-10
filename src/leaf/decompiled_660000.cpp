@@ -871,3 +871,39 @@ extern "C" __declspec(naked) int __fastcall fn_00660210(void* self) {
         ret
     }
 }
+
+// [0x00662B20] sub_00662B20 (67 bytes)
+// Appends a trailing '\\' to s (in place) if missing, then copy-constructs *out from s.
+extern "C" int mem_00924EAC;
+extern "C" int mem_0092500C;
+extern "C" int mem_00924EC0;
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void* __cdecl fn_00662B20(void* out, void* s) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, esi
+        mov dword ptr [esp + 0x4], 0x0
+        call dword ptr [mem_00924EAC]
+        sub eax, 0x1
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_0092500C]
+        cmp byte ptr [eax], 0x5c
+        je short L_has_sep
+        push 0x5c
+        mov ecx, esi
+        call dword ptr [mem_00924EC0]
+    L_has_sep:
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
