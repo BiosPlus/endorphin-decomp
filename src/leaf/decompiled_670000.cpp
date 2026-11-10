@@ -766,3 +766,17 @@ extern "C" __declspec(naked) void __fastcall fn_0067B410(void* self) {
         ret
     }
 }
+
+// [0x0067DAD0] sub_0067DAD0 (59 bytes)
+extern "C" void __fastcall fn_0067DAD0(void* self, int edx_unused, float* dst) {
+    const float* src = (const float*)self;
+    dst[0] = src[0];
+    dst[3] = src[4];
+    dst[6] = src[8];
+    dst[1] = src[1];
+    dst[4] = src[5];
+    dst[7] = src[9];
+    dst[2] = src[2];
+    dst[5] = src[6];
+    dst[8] = src[10];
+}
