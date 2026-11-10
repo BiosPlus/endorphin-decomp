@@ -131,3 +131,32 @@ extern "C" __declspec(naked) void __cdecl fn_007E5240(float* out, const float* s
         ret
     }
 }
+
+// [0x007E5280] sub_007E5280 (60 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007E5280(float* a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        fldz
+        push esi
+        push edi
+        mov edi, dword ptr [esp+0x10]
+        mov ecx, edi
+        fstp dword ptr [eax+4*edi]
+        mov edx, 1
+        shl edx, cl
+        mov esi, 1
+        pop edi
+        and edx, 3
+        mov ecx, edx
+        shl esi, cl
+        mov ecx, dword ptr [esp+0x10]
+        and esi, 3
+        fld dword ptr [ecx+4*esi]
+        fchs
+        fstp dword ptr [eax+4*edx]
+        fld dword ptr [ecx+4*edx]
+        fstp dword ptr [eax+4*esi]
+        pop esi
+        ret
+    }
+}
