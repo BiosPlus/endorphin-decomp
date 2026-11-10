@@ -608,3 +608,41 @@ fill_done_00622C00:
         ret
     }
 }
+
+// [0x0062B8B0] sub_0062B8B0 (64 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_0062B8B0(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je copy_empty_0062B8B0
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+copy_loop_0062B8B0:
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi + 0x1c]
+        push eax
+        lea ecx, [edi + 0x1c]
+        call dword ptr [mem_00924FDC]
+        add esi, 0x38
+        add edi, 0x38
+        cmp esi, ebx
+        jne copy_loop_0062B8B0
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+copy_empty_0062B8B0:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}

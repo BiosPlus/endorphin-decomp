@@ -356171,7 +356171,9 @@
       "0x0062B8C8",
       "0x0062B8D5"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T07:16:44Z"
   },
   {
     "va": "0x0062B8F0",
