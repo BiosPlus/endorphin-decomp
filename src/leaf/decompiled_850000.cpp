@@ -290,3 +290,54 @@ extern "C" __declspec(naked) void __cdecl fn_0085E720(const char* src, int len) 
         ret
     }
 }
+
+// [0x008597E0] sub_008597E0 (79 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_008597E0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, eax
+        push edi
+        mov edx, eax
+        jae forward
+        lea edi, [esi + ecx]
+        cmp eax, edi
+        jae forward
+        mov edx, edi
+        lea esi, [eax + ecx]
+        mov edi, ecx
+        dec ecx
+        test edi, edi
+        je done
+        lea edi, [ecx + 1]
+    back_loop:
+        mov cl, byte ptr [edx - 1]
+        dec edx
+        dec esi
+        dec edi
+        mov byte ptr [esi], cl
+        jne back_loop
+        pop edi
+        pop esi
+        ret
+    forward:
+        mov edi, ecx
+        dec ecx
+        test edi, edi
+        je done
+        sub esi, eax
+        lea edi, [ecx + 1]
+    fwd_loop:
+        mov cl, byte ptr [esi + edx]
+        mov byte ptr [edx], cl
+        inc edx
+        dec edi
+        jne fwd_loop
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
