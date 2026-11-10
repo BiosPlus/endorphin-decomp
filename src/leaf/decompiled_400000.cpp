@@ -894,3 +894,34 @@ skip_c_00403290:
         jmp ext_006A342A
     }
 }
+
+// [0x0040C010] sub_0040C010 (61 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) int __fastcall fn_0040C010(void* self, int edx_unused, unsigned int idx) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x23c]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je L_bad_0040C010
+        mov eax, dword ptr [esi + 0x240]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb L_good_0040C010
+    L_bad_0040C010:
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esi + 0x23c]
+        mov eax, dword ptr [eax + 4*edi]
+        pop edi
+        pop esi
+        ret 0x4
+    L_good_0040C010:
+        mov eax, dword ptr [ecx + 4*edi]
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
