@@ -780,3 +780,19 @@ extern "C" int __stdcall fn_00455D40(int a1) {
     if (a1 == 2) return 0xb;
     return (a1 == 3) ? 0xf : 0;
 }
+
+// [0x00456210] sub_00456210 (62 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" int mem_00925630;
+
+extern "C" void __fastcall fn_00456210(void* self, int edx_unused, int a1, int a2, int a3) {
+    unsigned char* p = (unsigned char*)self;
+    if (*(int*)(p + 0x8c) != 0) {
+        (*(int (__stdcall**)(void*, int*))&mem_00925630)(*(void**)(p + 0x20), &a2);
+        void* obj = *(void**)(p + 0x90);
+        void** vt = *(void***)obj;
+        ((void (__thiscall*)(void*, int, int))vt[0])(obj, a2, a3);
+    } else {
+        ((void (__thiscall*)(void*))ext_006A5EA8)(self);
+    }
+}
