@@ -1354,3 +1354,42 @@ extern "C" __declspec(naked) int __stdcall fn_0053F8A0(int count, void* ptr) {
         ret 0x8
     }
 }
+
+// [0x00530740] sub_00530740 (84 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00530740(void* self, int edx_unused, int arg1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, eax
+        and edx, 0x1
+        je L_758
+        test al, 0x2
+        je L_758
+        mov byte ptr [ecx + 0x86], 0x1
+        jmp L_781
+L_758:
+        push esi
+        mov esi, eax
+        and esi, 0x10
+        je L_76d
+        test al, 0x2
+        je L_76d
+        mov byte ptr [ecx + 0x86], 0x1
+        jmp L_780
+L_76d:
+        test edx, edx
+        jne L_780
+        test esi, esi
+        jne L_780
+        test al, 0x2
+        jne L_780
+        mov byte ptr [ecx + 0x86], 0x0
+L_780:
+        pop esi
+L_781:
+        cmp byte ptr [ecx + 0x84], 0x0
+        je L_791
+        mov byte ptr [ecx + 0x86], 0x1
+L_791:
+        ret 0x4
+    }
+}
