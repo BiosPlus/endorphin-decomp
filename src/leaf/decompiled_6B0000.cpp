@@ -803,3 +803,28 @@ L_006B87E9:
         ret
     }
 }
+
+// [0x006B2F70] sub_006B2F70 (61 bytes)
+extern "C" void ext_006A6E8C();
+extern "C" int mem_0092414C;
+
+extern "C" __declspec(naked) int __fastcall fn_006B2F70(void* self) {
+    __asm {
+        sub esp, 0x94
+        push 0x90
+        lea eax, [esp + 0x8]
+        push 0x0
+        push eax
+        call ext_006A6E8C
+        add esp, 0xc
+        lea ecx, [esp]
+        push ecx
+        mov dword ptr [esp + 0x4], 0x94
+        call dword ptr [mem_0092414C]
+        xor eax, eax
+        cmp dword ptr [esp + 0x10], 0x2
+        sete al
+        add esp, 0x94
+        ret
+    }
+}
