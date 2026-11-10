@@ -90601,7 +90601,9 @@
     "relocations": [
       "0x00495A04"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-opus-5.5",
+    "matched_at": "2026-11-10T03:31:32Z"
   },
   {
     "va": "0x00495A20",

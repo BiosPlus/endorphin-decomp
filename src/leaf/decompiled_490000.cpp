@@ -394,3 +394,15 @@ extern "C" __declspec(naked) void* __fastcall fn_00497860(void* self) {
         ret
     }
 }
+
+// [0x004959E0] sub_004959E0 (49 bytes)
+typedef int (__cdecl *memmove_s_fn_004959E0)(void*, unsigned int, const void*, unsigned int);
+extern "C" memmove_s_fn_004959E0 mem_009251EC;
+extern "C" int* __stdcall fn_004959E0(int* first, int* last, int* dest) {
+    int n = last - first;
+    int* r = dest + n;
+    if (n != 0) {
+        mem_009251EC(dest, n * 4, first, n * 4);
+    }
+    return r;
+}
