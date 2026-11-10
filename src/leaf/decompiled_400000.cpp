@@ -762,3 +762,34 @@ extern "C" void __fastcall fn_00405410(void* self) {
     *(int*)(p + 0x684) = 0;
     p[0x688] = 0;
 }
+
+// [0x00409080] sub_00409080 (52 bytes)
+extern "C" void ext_00407730();
+extern "C" void ext_006A608E();
+
+extern "C" __declspec(naked) int __fastcall fn_00409080(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_00407730
+        test eax, eax
+        je fail_00409080
+        push 0x0
+        mov ecx, esi
+        call ext_006A608E
+        test eax, eax
+        je fail_00409080
+        mov eax, 0x1
+        pop esi
+        ret 0x8
+    fail_00409080:
+        xor eax, eax
+        pop esi
+        ret 0x8
+    }
+}
