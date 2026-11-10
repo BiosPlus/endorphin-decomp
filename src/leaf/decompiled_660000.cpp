@@ -830,3 +830,44 @@ extern "C" void* __fastcall fn_00667F80(void* self) {
     *(unsigned int*)(esi + 8) = 0;
     return edi;
 }
+
+// [0x00660210] sub_00660210 (66 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) int __fastcall fn_00660210(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe skip1
+        call ebp
+    skip1:
+        lea eax, [edi - 0x1c]
+        cmp eax, dword ptr [esi + 0x8]
+        push ebx
+        mov ebx, esi
+        mov dword ptr [esp + 0x14], edi
+        ja do_call2
+        cmp eax, dword ptr [esi + 0x4]
+        jae skip2
+    do_call2:
+        call ebp
+    skip2:
+        lea esi, [edi - 0x1c]
+        cmp esi, dword ptr [ebx + 0x8]
+        pop ebx
+        jb skip3
+        call ebp
+    skip3:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        add esp, 0x8
+        ret
+    }
+}
