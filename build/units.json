@@ -336019,7 +336019,9 @@
       "0x006118F1",
       "0x00611903"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T06:52:25Z"
   },
   {
     "va": "0x00611910",
