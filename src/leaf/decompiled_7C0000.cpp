@@ -1742,3 +1742,16 @@ extern "C" void __cdecl fn_007CD580(void* a0, void* a1) {
     *(int*)((char*)a1 + 0x90) = 0x007cd550;
     *(int*)((char*)a1 + 0x9c) = 0x007cd510;
 }
+
+// [0x007C9EF0] sub_007C9EF0 (71 bytes)
+extern "C" void __cdecl fn_007C9EF0(char* self, int flag, float* out) {
+    float* src;
+    if (flag == 0) {
+        src = (float*)(self + 0x160);
+    } else {
+        src = (float*)(self + 0x16c);
+    }
+    out[0] = src[0];
+    out[1] = src[1];
+    out[2] = src[2];
+}
