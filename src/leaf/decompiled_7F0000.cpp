@@ -274,3 +274,37 @@ extern "C" int __cdecl fn_007F71F0(float* out, float a, float b, float c) {
     *out = a;
     return 0;
 }
+
+// [0x007FC490] sub_007FC490 (71 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007FC490(void* self) {
+    __asm {
+        fld dword ptr [ecx + 0x10]
+        fmul dword ptr [eax + 0x4]
+        fld dword ptr [ecx]
+        fmul dword ptr [eax]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x20]
+        fmul dword ptr [eax + 0x8]
+        faddp st(1), st
+        fstp dword ptr [edx]
+        fld dword ptr [ecx + 0x4]
+        fmul dword ptr [eax]
+        fld dword ptr [ecx + 0x14]
+        fmul dword ptr [eax + 0x4]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x24]
+        fmul dword ptr [eax + 0x8]
+        faddp st(1), st
+        fstp dword ptr [edx + 0x4]
+        fld dword ptr [ecx + 0x8]
+        fmul dword ptr [eax]
+        fld dword ptr [ecx + 0x18]
+        fmul dword ptr [eax + 0x4]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x28]
+        fmul dword ptr [eax + 0x8]
+        faddp st(1), st
+        fstp dword ptr [edx + 0x8]
+        ret
+    }
+}
