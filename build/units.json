@@ -180110,7 +180110,9 @@
       "0x00519C43",
       "0x00519C53"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:52:36Z"
   },
   {
     "va": "0x00519C80",

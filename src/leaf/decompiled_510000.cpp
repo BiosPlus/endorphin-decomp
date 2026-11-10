@@ -310,3 +310,40 @@ extern "C" __declspec(naked) int __cdecl fn_00519C00(const std::string& s) {
         ret
     }
 }
+
+// [0x00519C40] sub_00519C40 (57 bytes)
+extern "C" int mem_00924FC0;
+extern "C" const char* const mem_00AECC44[2];
+extern "C" __declspec(naked) int __cdecl fn_00519C40(void* s) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00924FC0]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        xor esi, esi
+        nop
+    loop_00519C40:
+        mov eax, dword ptr [mem_00AECC44 + esi*4]
+        push eax
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        jne found_00519C40
+        add esi, 0x1
+        cmp esi, 0x2
+        jl loop_00519C40
+        pop edi
+        pop esi
+        mov eax, 0x3
+        pop ebx
+        ret
+    found_00519C40:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret
+    }
+}
