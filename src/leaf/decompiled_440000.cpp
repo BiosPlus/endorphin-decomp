@@ -1645,3 +1645,41 @@ done:
         ret 0xc
     }
 }
+
+// [0x0044B6B0] sub_0044B6B0 (70 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0044B6B0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x64], 0
+        je done
+        mov ecx, dword ptr [esi + 0x64]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xc4]
+        call edx
+        mov ecx, dword ptr [esi + 0x64]
+        test al, al
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x28]
+        je not_set
+        push 0
+        jmp call_a
+not_set:
+        push 1
+        call edx
+        mov ecx, dword ptr [esi + 0x64]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x2c]
+        push 1
+call_a:
+        call edx
+        mov ecx, dword ptr [esi + 0x64]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x154]
+        pop esi
+        jmp edx
+done:
+        pop esi
+        ret
+    }
+}
