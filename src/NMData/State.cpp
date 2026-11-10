@@ -121,3 +121,41 @@ extern "C" __declspec(naked) void __fastcall fn_0049ABE0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" void ext_0046F7D0();
+extern "C" void ext_0049D360();
+extern "C" void ext_0055DA20();
+
+// [0x0049DF50] NMData::State::vfunc_14_off_10 (77 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0049DF50(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        cmp byte ptr [ecx + 0x54], 0x0
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        je short L_store_0049DF50
+    L_call_0049DF50:
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_0046F7D0
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_store_0049DF50:
+        cmp dword ptr [esp + 0x10], 0x1b3
+        jne short L_call_0049DF50
+        add ecx, 0x10c
+        push ecx
+        call ext_0049D360
+        mov esi, dword ptr [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call ext_0055DA20
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
