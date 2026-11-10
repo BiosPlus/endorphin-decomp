@@ -811,3 +811,32 @@ L_copy:
         ret 0x4
     }
 }
+
+// [0x00534020] sub_00534020 (58 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00534020(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        fldz
+        mov dword ptr [esp], 0x0
+        fcomp dword ptr [ecx + 0x34]
+        fnstsw ax
+        test ah, 0x41
+        jp short L_534039
+        add ecx, 0x28
+        jmp short L_53403C
+L_534039:
+        add ecx, 0x8
+L_53403C:
+        mov eax, dword ptr [esp + 0x8]
+        fld dword ptr [ecx]
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax + 0xc]
+        pop ecx
+        ret 4
+    }
+}
