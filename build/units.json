@@ -357852,7 +357852,9 @@
       "0x0062E294",
       "0x0062E29C"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:15:42Z"
   },
   {
     "va": "0x0062E2D0",
