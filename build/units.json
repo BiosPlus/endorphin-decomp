@@ -111649,7 +111649,9 @@
       "0x004B490A",
       "0x004B491A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:44:18Z"
   },
   {
     "va": "0x004B4930",
