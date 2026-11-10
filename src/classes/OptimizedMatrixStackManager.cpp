@@ -95,3 +95,27 @@ extern "C" __declspec(naked) void __fastcall fn_0054EFC0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0054E940] OptimizedMatrixStackManager::vfunc_2 (66 bytes)
+extern "C" void __fastcall fn_0054E940(void* self) {
+    unsigned char* s = (unsigned char*)self;
+    *(int*)(s + 0x4) += 1;
+    if (*(int*)(s + 0x4) < *(int*)(s + 0x8)) {
+        void* sub = s + 0x20;
+        void** vt = *(void***)sub;
+        ((void (__fastcall*)(void*))vt[2])(sub);
+        return;
+    }
+    if (*(int*)(s + 0x4) == *(int*)(s + 0x8)) {
+        void* sub = s + 0x20;
+        void** vt = *(void***)sub;
+        ((void (__fastcall*)(void*))vt[2])(sub);
+        void* sub2 = s + 0xc;
+        void** vt2 = *(void***)sub2;
+        ((void (__fastcall*)(void*))vt2[1])(sub2);
+        return;
+    }
+    void* sub3 = s + 0xc;
+    void** vt3 = *(void***)sub3;
+    ((void (__fastcall*)(void*))vt3[2])(sub3);
+}
