@@ -1325,3 +1325,38 @@ extern "C" __declspec(naked) void __fastcall fn_004180E0(void* self) {
         jmp ext_00417340
     }
 }
+
+// [0x0041C660] sub_0041C660 (68 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0041C660(void* self, int edx_unused, int a1, short a2, int a3, int a4) {
+    __asm {
+        cmp dword ptr [ecx + 0x8], 0x0
+        je short L_null_0041C660
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [ecx + 0x8]
+        push esi
+        movsx esi, word ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [ecx]
+        push eax
+        push edx
+        mov eax, 0x88888889
+        imul esi
+        add edx, esi
+        sar edx, 0x6
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        mov edx, dword ptr [esp + 0x14]
+        push eax
+        mov eax, dword ptr [edi + 0x34]
+        push edx
+        call eax
+        pop edi
+        pop esi
+        ret 0x10
+L_null_0041C660:
+        xor al, al
+        ret 0x10
+    }
+}
