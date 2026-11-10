@@ -738,3 +738,28 @@ extern "C" __declspec(naked) void* __fastcall fn_00429150(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00427810] sub_00427810 (80 bytes)
+struct LB36Entry_00427810 {
+    unsigned int key;
+    unsigned int rest[8];
+};
+
+extern "C" LB36Entry_00427810* __cdecl fn_00427810(LB36Entry_00427810* first, LB36Entry_00427810* last, const unsigned int* value) {
+    LB36Entry_00427810* it = first;
+    int count = (int)(last - first);
+    if (count > 0) {
+        unsigned int key = *value;
+        do {
+            int half = count / 2;
+            LB36Entry_00427810* mid = it + half;
+            if (mid->key < key) {
+                it = mid + 1;
+                count = count - half - 1;
+            } else {
+                count = half;
+            }
+        } while (count > 0);
+    }
+    return it;
+}
