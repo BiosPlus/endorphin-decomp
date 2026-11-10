@@ -246,3 +246,19 @@ extern "C" __declspec(naked) void __fastcall fn_004EBE30(void* self) {
         ret
     }
 }
+
+// [0x004E7490] sub_004E7490 (57 bytes)
+extern "C" void __fastcall fn_004E7490(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    p[0x34] = 1;
+    p[0x48] = 1;
+    p[0x5c] = 1;
+    p[0x70] = 1;
+    p[0x84] = 1;
+    p[0x98] = 1;
+    p[0xac] = 1;
+    p[0xc0] = 1;
+    p[0xd4] = 1;
+    p[0xe8] = 1;
+    p[0xf8] = 1;
+}
