@@ -86,3 +86,45 @@ extern "C" void __fastcall fn_005D0740(unsigned char* self, int edx_unused, int 
         *(int*)(self + 0x25c) = ((Fn)ext_005CFD20)(a1);
     }
 }
+
+// [0x005DC480] sub_005DC480 (66 bytes)
+extern "C" void ext_00552940();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005DC480(void* self) {
+    __asm {
+        push edi
+        mov edi, dword ptr [ecx + 0x4]
+        test edi, edi
+        je tail_005DC480
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [ecx]
+        add esi, 0x8
+        cmp dword ptr [esi], 0x0
+        jne skip1_005DC480
+        call ebx
+skip1_005DC480:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esi + 0x4]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne skip2_005DC480
+        call ebx
+skip2_005DC480:
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [edx + 0x8]
+        mov edx, dword ptr [edi]
+        push eax
+        mov eax, dword ptr [edx + 0x50]
+        mov ecx, edi
+        call eax
+        pop esi
+        pop ebx
+        pop edi
+        ret
+tail_005DC480:
+        pop edi
+        jmp ext_00552940
+    }
+}
