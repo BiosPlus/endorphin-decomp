@@ -163,3 +163,36 @@ extern "C" __declspec(naked) void __fastcall fn_00699100(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00699140] ExprParser::ExpressionContainerType::vfunc_32 (56 bytes)
+// Calls vtable slot 24 on self with a1 (thiscall, ret 4), dynamic_casts the result via
+// __RTDynamicCast(result, 0, 0xA2E2F8, 0xA2E1FC, 0). If non-null, calls its vtable slot 3
+// with a2 (thiscall, ret 4). Returns with ret 8.
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void __fastcall fn_00699140(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax + 0x60]
+        push 0
+        push 0A2E1FCh
+        push 0A2E2F8h
+        push 0
+        push edx
+        call eax
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        test eax, eax
+        je L_done
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0xc]
+        push ecx
+        mov ecx, eax
+        call edx
+    L_done:
+        ret 0x8
+    }
+}
