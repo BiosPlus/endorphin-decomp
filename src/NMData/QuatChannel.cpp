@@ -43,3 +43,53 @@ extern "C" void* __fastcall fn_0051C5F0(void* self, int edx_unused, int a1) {
     }
     return self;
 }
+
+// [0x0051ADC0] NMData::QuatChannel::vfunc_7 (82 bytes)
+extern "C" __declspec(naked) float __fastcall fn_0051ADC0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x30]
+        test eax, eax
+        je L_zero
+        mov ecx, dword ptr [esi + 0x34]
+        sub ecx, eax
+        mov eax, 0x66666667
+        imul ecx
+        sar edx, 0x3
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        jne L_main
+    L_zero:
+        fldz
+        pop esi
+        pop ecx
+        ret
+    L_main:
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push edi
+        mov edi, dword ptr [esi + 0x34]
+        cmp dword ptr [esi + 0x30], edi
+        jbe L_chk1
+        call ebx
+    L_chk1:
+        cmp edi, dword ptr [esi + 0x30]
+        ja L_chk2
+        call ebx
+    L_chk2:
+        add edi, -0x14
+        cmp edi, dword ptr [esi + 0x34]
+        jb L_chk3
+        call ebx
+    L_chk3:
+        fld dword ptr [edi]
+        pop edi
+        pop ebx
+        pop esi
+        pop ecx
+        ret
+    }
+}
