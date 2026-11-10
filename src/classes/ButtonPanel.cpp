@@ -31,3 +31,29 @@ extern "C" void __fastcall fn_004564E0(void* self) {
     void* p = *(void**)((unsigned char*)self + 0x88);
     *(unsigned int*)((unsigned char*)p + 0xd0) |= 0xc;
 }
+
+// [0x00455C30] ButtonPanel::vfunc_93 (77 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00455C30(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 10h]
+        mov eax, dword ptr [esp + 0Ch]
+        mov dword ptr [ecx + 0B0h], edx
+        mov dword ptr [ecx + 0A8h], edx
+        mov dword ptr [ecx + 0A0h], edx
+        mov edx, dword ptr [esp + 1Ch]
+        push edx
+        mov edx, dword ptr [esp + 1Ch]
+        push edx
+        mov edx, dword ptr [esp + 10h]
+        mov dword ptr [ecx + 0ACh], eax
+        mov dword ptr [ecx + 0A4h], eax
+        mov dword ptr [ecx + 09Ch], eax
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 170h]
+        push edx
+        mov edx, dword ptr [esp + 10h]
+        push edx
+        call eax
+        ret 1Ch
+    }
+}
