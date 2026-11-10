@@ -931,3 +931,42 @@ extern "C" __declspec(naked) void* __cdecl fn_00486880(std::string* out, double 
         ret
     }
 }
+
+// [0x0048CB80] sub_0048CB80 (67 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0048CB80(void* first, void* last) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, ebp
+        je done
+        push ebx
+        push esi
+        lea esi, [edi + 0x34]
+        xor ebx, ebx
+    loop_top:
+        mov eax, dword ptr [esi]
+        cmp eax, ebx
+        je skip_free
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    skip_free:
+        lea ecx, [esi - 0x30]
+        mov dword ptr [esi], ebx
+        mov dword ptr [esi + 0x4], ebx
+        mov dword ptr [esi + 0x8], ebx
+        call ext_00519CE0
+        add edi, 0x68
+        add esi, 0x68
+        cmp edi, ebp
+        jne loop_top
+        pop esi
+        pop ebx
+    done:
+        pop edi
+        pop ebp
+        ret
+    }
+}
