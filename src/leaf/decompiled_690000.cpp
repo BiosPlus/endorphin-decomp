@@ -431,3 +431,42 @@ extern "C" __declspec(naked) void __cdecl fn_00698200(void* first, void* last, c
         ret
     }
 }
+
+// [0x006968D0] sub_006968D0 (58 bytes)
+// Reads chars from the stream at a1 (via get) until '\n' or 0xFF is seen; returns true on that,
+// false if the stream is in a fail state. Stack argument (ret 0); ecx is not used as input.
+extern "C" int mem_009250BC;
+extern "C" int mem_009250C0;
+extern "C" __declspec(naked) bool __cdecl fn_006968D0(void* a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+    loop_top:
+        lea eax, [esp + 7]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_009250BC]
+        mov ecx, dword ptr [eax]
+        mov ecx, dword ptr [ecx + 4]
+        add ecx, eax
+        call dword ptr [mem_009250C0]
+        test al, al
+        jne fail
+        mov al, byte ptr [esp + 7]
+        cmp al, 0xa
+        je done_true
+        cmp al, 0xff
+        jne loop_top
+    done_true:
+        mov al, 1
+        pop esi
+        pop ecx
+        ret
+    fail:
+        xor al, al
+        pop esi
+        pop ecx
+        ret
+    }
+}
