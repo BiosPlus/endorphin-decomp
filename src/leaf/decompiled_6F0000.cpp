@@ -151,3 +151,47 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_006FA8F0(void* self, in
         ret 0x4
     }
 }
+
+// [0x006F7970] sub_006F7970 (79 bytes)
+// Unit holds two paths: a virtual call at [vtbl+0x8c] with 4 pushed args (ret 8), then
+// padding and a cached-value getter that stores into *arg (ret 0x10).
+extern "C" __declspec(naked) void __fastcall fn_006F7970(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        push 0x0
+        push 0x0
+        lea edx, [esp + 0xc]
+        push 0x0
+        push edx
+        call dword ptr [eax + 0x8c]
+        ret 0x8
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x50]
+        test eax, eax
+        je no_fn
+        mov ecx, dword ptr [esi + 0x8]
+        call eax
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi + 0x80], eax
+        pop esi
+        mov dword ptr [ecx], eax
+        ret 0x10
+    no_fn:
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esi + 0x80]
+        pop esi
+        mov dword ptr [eax], edx
+        ret 0x10
+    }
+}
