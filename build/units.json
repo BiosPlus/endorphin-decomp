@@ -353908,7 +353908,9 @@
       "0x00629379",
       "0x00629381"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:13:03Z"
   },
   {
     "va": "0x006293A0",
