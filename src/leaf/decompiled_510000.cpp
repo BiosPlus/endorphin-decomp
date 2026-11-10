@@ -500,3 +500,41 @@ L_0051A000_call:
         ret 4
     }
 }
+
+// [0x00519170] sub_00519170 (71 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_0050F990();
+
+extern "C" __declspec(naked) void __fastcall fn_00519170(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esi], 0x950a9c
+        mov eax, dword ptr [esi + 0x64]
+        xor edi, edi
+        cmp eax, edi
+        je L_0051918C
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+L_0051918C:
+        mov dword ptr [esi + 0x64], edi
+        mov dword ptr [esi + 0x68], edi
+        mov dword ptr [esi + 0x6c], edi
+        mov eax, dword ptr [esi + 0x34]
+        cmp eax, edi
+        je L_005191A5
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+L_005191A5:
+        mov dword ptr [esi + 0x34], edi
+        mov dword ptr [esi + 0x38], edi
+        mov dword ptr [esi + 0x3c], edi
+        pop edi
+        mov ecx, esi
+        pop esi
+        jmp ext_0050F990
+    }
+}
