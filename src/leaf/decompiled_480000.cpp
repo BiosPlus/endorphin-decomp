@@ -869,3 +869,31 @@ L_00480C64:
         ret
     }
 }
+
+// [0x004801C0] sub_004801C0 (44 bytes)
+extern "C" void ext_00584B10();
+
+extern "C" __declspec(naked) void __fastcall fn_004801C0(void* unused, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        xor al, al
+        test ecx, ecx
+        je done
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        test edi, edi
+        je done_pop_edi
+        push esi
+        call ext_00584B10
+        mov ecx, edi
+        mov esi, eax
+        call ext_00584B10
+        cmp esi, eax
+        setne al
+        pop esi
+    done_pop_edi:
+        pop edi
+    done:
+        ret 0x8
+    }
+}

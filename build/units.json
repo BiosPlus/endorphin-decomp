@@ -77055,7 +77055,9 @@
       "0x004801D5",
       "0x004801DE"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:17:33Z"
   },
   {
     "va": "0x004801F0",
