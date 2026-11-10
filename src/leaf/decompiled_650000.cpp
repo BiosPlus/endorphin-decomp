@@ -620,3 +620,45 @@ extern "C" __declspec(naked) void* __fastcall fn_0065D6C0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0065D2B0] sub_0065D2B0 (72 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0065D2B0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        test edi, edi
+        mov esi, ecx
+        jl done
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        jne nonnull
+        xor eax, eax
+        jmp have_size
+nonnull:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+have_size:
+        cmp eax, edi
+        jle done
+        test ecx, ecx
+        je invalid
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb store
+invalid:
+        call dword ptr [mem_00925134]
+store:
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 4 * edi], 0x0
+done:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
