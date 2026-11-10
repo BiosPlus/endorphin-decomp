@@ -1381,3 +1381,23 @@ extern "C" void __cdecl fn_007CDB20(int* self) {
     *reinterpret_cast<int*>(p + 0xb0) = 0;
     *reinterpret_cast<int*>(p + 0xb4) = 0;
 }
+
+// [0x007CC8E0] sub_007CC8E0 (68 bytes)
+extern "C" void __cdecl fn_007CC8E0(int a0, int a1, int a2) {
+    char* node = (char*)a0;
+    char* owner = (char*)a1;
+    int v = (int)(short)a2;
+    *(int*)(node + 0xc) = a1;
+    *(int*)node = v;
+    if (*(int*)(owner + 0xc) == 0) {
+        *(int*)(owner + 0xc) = a0;
+        *(int*)(node + 0x4) = a0;
+        *(int*)(node + 0x8) = a0;
+    } else {
+        *(int*)(node + 0x4) = *(int*)(*(int*)(owner + 0xc) + 0x4);
+        *(int*)(node + 0x8) = *(int*)(owner + 0xc);
+        *(int*)(*(int*)(node + 0x4) + 0x8) = a0;
+        *(int*)(*(int*)(node + 0x8) + 0x4) = a0;
+    }
+    *(int*)(owner + 0x1c) += 1;
+}
