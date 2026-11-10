@@ -1234,3 +1234,20 @@ extern "C" __declspec(naked) void __fastcall fn_00418830(void* self) {
         ret
     }
 }
+
+// [0x004102D0] sub_004102D0 (62 bytes)
+extern "C" void ext_006A5FF2();
+extern "C" void ext_006A5FFE();
+extern "C" int mem_0092407C;
+extern "C" int mem_00925668;
+
+extern "C" void __fastcall fn_004102D0(void* self, int edx_unused, int a1) {
+    unsigned char* p = (unsigned char*)self;
+    void* field = p + 0x54;
+    *(int*)(p + 0x5c) = a1;
+    ((void (__thiscall*)(void*))ext_006A5FF2)(field);
+    void* brush = ((void* (__stdcall*)(int))mem_0092407C)(a1);
+    ((void (__thiscall*)(void*, void*))ext_006A5FFE)(field, brush);
+    int hwnd = *(int*)(p + 0x20);
+    ((int (__stdcall*)(int, int, int, int))mem_00925668)(hwnd, 0, 0, 0x105);
+}
