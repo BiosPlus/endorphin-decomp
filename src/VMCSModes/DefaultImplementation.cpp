@@ -365,3 +365,35 @@ extern "C" __declspec(naked) bool __fastcall fn_004F9AA0(void* self) {
         ret
     }
 }
+
+// [0x004FA1B0] VMCSModes::DefaultImplementation::vfunc_136 (58 bytes)
+extern "C" void ext_005B11F0();
+
+extern "C" __declspec(naked) void __fastcall fn_004FA1B0(void* self) {
+    __asm {
+        __asm _emit 0x8B __asm _emit 0x41 __asm _emit 0x08 // mov eax, dword ptr [ecx + 0x8]
+        __asm _emit 0x8B __asm _emit 0x48 __asm _emit 0x14 // mov ecx, dword ptr [eax + 0x14]
+        __asm _emit 0x8B __asm _emit 0x49 __asm _emit 0x34 // mov ecx, dword ptr [ecx + 0x34]
+        __asm call ext_005B11F0
+        __asm _emit 0x8B __asm _emit 0x10 // mov edx, dword ptr [eax]
+        __asm _emit 0x8B __asm _emit 0xC8 // mov ecx, eax
+        __asm _emit 0x8B __asm _emit 0x42 __asm _emit 0x14 // mov eax, dword ptr [edx + 0x14]
+        __asm _emit 0xFF __asm _emit 0xD0 // call eax
+        __asm _emit 0x8B __asm _emit 0x48 __asm _emit 0x04 // mov ecx, dword ptr [eax + 0x4]
+        __asm _emit 0x85 __asm _emit 0xC9 // test ecx, ecx
+        __asm _emit 0x75 __asm _emit 0x0A // jne +0x0A
+        __asm _emit 0x33 __asm _emit 0xC0 // xor eax, eax
+        __asm _emit 0x85 __asm _emit 0xC0 // test eax, eax
+        __asm _emit 0x0F __asm _emit 0x95 __asm _emit 0xC1 // setne cl
+        __asm _emit 0x8A __asm _emit 0xC1 // mov al, cl
+        __asm _emit 0xC3 // ret
+        __asm _emit 0x8B __asm _emit 0x40 __asm _emit 0x08 // mov eax, dword ptr [eax + 0x8]
+        __asm _emit 0x2B __asm _emit 0xC1 // sub eax, ecx
+        __asm _emit 0xC1 __asm _emit 0xF8 __asm _emit 0x02 // sar eax, 0x2
+        __asm _emit 0x33 __asm _emit 0xC9 // xor ecx, ecx
+        __asm _emit 0x85 __asm _emit 0xC0 // test eax, eax
+        __asm _emit 0x0F __asm _emit 0x95 __asm _emit 0xC1 // setne cl
+        __asm _emit 0x8A __asm _emit 0xC1 // mov al, cl
+        __asm _emit 0xC3 // ret
+    }
+}
