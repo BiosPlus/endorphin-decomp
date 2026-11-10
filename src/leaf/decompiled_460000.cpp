@@ -1851,3 +1851,46 @@ L_END_462980:
         ret 8
     }
 }
+
+extern "C" int mem_009255F4;
+extern "C" int mem_009256E4;
+
+// [0x004646B0] sub_004646B0 (84 bytes)
+extern "C" __declspec(naked) int __fastcall fn_004646B0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        mov esi, dword ptr [mem_009255F4]
+        push 0x1
+        call esi
+        test ax, ax
+        push 0x4
+        __asm _emit 0x0F __asm _emit 0x9C __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x0E // setl byte ptr [esp+0xe]
+        call esi
+        test ax, ax
+        push 0x2
+        __asm _emit 0x0F __asm _emit 0x9C __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x0F // setl byte ptr [esp+0xf]
+        call esi
+        test ax, ax
+        push 0x12
+        __asm _emit 0x0F __asm _emit 0x9C __asm _emit 0xC3 // setl bl
+        call dword ptr [mem_009256E4]
+        test ax, ax
+        __asm _emit 0x79 __asm _emit 0x16 // jns +0x16
+        __asm _emit 0x80 __asm _emit 0x7C __asm _emit 0x24 __asm _emit 0x0A __asm _emit 0x00 // cmp byte ptr [esp+0xa], 0
+        __asm _emit 0x75 __asm _emit 0x06 // jne +6
+        __asm _emit 0x0A __asm _emit 0x5C __asm _emit 0x24 __asm _emit 0x0B // or bl, byte ptr [esp+0xb]
+        __asm _emit 0x74 __asm _emit 0x09 // je +9
+        pop esi
+        mov eax, 1
+        pop ebx
+        pop ecx
+        ret
+        pop esi
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret
+    }
+}
