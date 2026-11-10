@@ -1665,3 +1665,31 @@ extern "C" __declspec(naked) void __fastcall fn_004689B0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0046A370] sub_0046A370 (78 bytes)
+extern "C" void __fastcall fn_0046A370(void* self, int edx_unused, void* node) {
+    char* n = (char*)node;
+    char* s = (char*)self;
+    char* p = *(char**)(n + 0x8);
+    *(char**)(n + 0x8) = *(char**)p;
+    char* q = *(char**)p;
+    if (*(q + 0x11) == 0) {
+        *(char**)(q + 0x4) = n;
+    }
+    *(char**)(p + 0x4) = *(char**)(n + 0x4);
+    char* c = *(char**)(s + 0x4);
+    if (n == *(char**)(c + 0x4)) {
+        *(char**)(c + 0x4) = p;
+        *(char**)p = n;
+        *(char**)(n + 0x4) = p;
+        return;
+    }
+    char* c2 = *(char**)(n + 0x4);
+    if (n == *(char**)c2) {
+        *(char**)c2 = p;
+    } else {
+        *(char**)(c2 + 0x8) = p;
+    }
+    *(char**)p = n;
+    *(char**)(n + 0x4) = p;
+}
