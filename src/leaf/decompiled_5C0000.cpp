@@ -327,3 +327,31 @@ L_005C3966:
         ret
     }
 }
+
+// [0x005C3970] sub_005C3970 (60 bytes)
+extern "C" void ext_005B6BC0();
+extern "C" int mem_00AE5598;
+extern "C" int mem_00AE558C;
+extern "C" int mem_00AE5590;
+extern "C" int mem_00AE5594;
+
+extern "C" __declspec(naked) void* __fastcall fn_005C3970(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x164]
+        test ecx, ecx
+        je init
+        jmp ext_005B6BC0
+    init:
+        mov eax, 1
+        test byte ptr [mem_00AE5598], al
+        jne done
+        fldz
+        or dword ptr [mem_00AE5598], eax
+        fst dword ptr [mem_00AE558C]
+        fst dword ptr [mem_00AE5590]
+        fstp dword ptr [mem_00AE5594]
+    done:
+        mov eax, offset mem_00AE558C
+        ret
+    }
+}
