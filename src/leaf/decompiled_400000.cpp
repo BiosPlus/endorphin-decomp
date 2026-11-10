@@ -1061,3 +1061,37 @@ extern "C" void __fastcall fn_0040EFA0(void* self) {
     *(int*)(p + 0x6c) = getSysColor(0x10);
     *(int*)(p + 0x70) = getSysColor(0x15);
 }
+
+// [0x004053C0] sub_004053C0 (70 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_004053C0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x564]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esi + 0x684]
+        je fail_004053C0
+        mov ecx, dword ptr [esi + 0x568]
+        sub ecx, eax
+        mov eax, 0x2e8ba2e9
+        imul ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb ok_004053C0
+fail_004053C0:
+        call dword ptr [mem_00925134]
+ok_004053C0:
+        mov eax, dword ptr [esi + 0x564]
+        imul edi, edi, 0x58
+        mov eax, dword ptr [edi + eax]
+        pop edi
+        pop esi
+        ret
+    }
+}
