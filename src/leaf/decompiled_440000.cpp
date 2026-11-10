@@ -1449,3 +1449,36 @@ extern "C" __declspec(naked) char* __cdecl fn_0044C360(char* first, char* last, 
         ret
     }
 }
+
+// [0x0044B2C0] sub_0044B2C0 (58 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0044B2C0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x64], 0
+        je done
+        mov ecx, dword ptr [esi + 0x64]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xb8]
+        call edx
+        mov ecx, dword ptr [esi + 0x64]
+        test eax, eax
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        jne notzero
+        push 1
+        jmp docall
+notzero:
+        push 0
+docall:
+        call edx
+        mov ecx, dword ptr [esi + 0x64]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x154]
+        pop esi
+        jmp edx
+done:
+        pop esi
+        ret
+    }
+}
