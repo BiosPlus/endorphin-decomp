@@ -1435,3 +1435,39 @@ extern "C" __declspec(naked) void* __fastcall fn_0041CCC0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0041CD10] sub_0041CD10 (69 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_0041CD10(void* self, int edx_unused, unsigned int index) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je L_bad
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb L_ok
+    L_bad:
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov ecx, dword ptr [esi + 0x4]
+        lea eax, [8*edi]
+        sub eax, edi
+        pop edi
+        lea eax, [ecx + 8*eax]
+        pop esi
+        ret 0x4
+    }
+}
