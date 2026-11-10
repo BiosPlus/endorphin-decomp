@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/ExprParser/Vector4Type.cpp
 
+#include <math.h>
+
 // [0x00671A60] ExprParser::Vector4Type::vfunc_29 (21 bytes)
 extern "C" void ext_00671690();
 
@@ -89,4 +91,16 @@ extern "C" __declspec(naked) void __fastcall fn_0066B8A0(void* self, int edx_unu
         fstp dword ptr [ecx + 0Ch]
         ret 8
     }
+}
+
+// [0x0066D1D0] ExprParser::Vector4Type::vfunc_47 (86 bytes)
+extern "C" void __fastcall fn_0066D1D0(void* self, int edx_unused, void* a1) {
+    typedef float* (__thiscall *Get4Fn)(void*, void*);
+    typedef void (__thiscall *Sink2Fn)(void*, void*, float);
+    void** obj = *(void***)((char*)a1 + 0x4);
+    float* v = ((Get4Fn)(*(void***)obj)[6])(obj, a1);
+    float sum = v[0] * v[0] + v[1] * v[1] + v[2] * v[2];
+    float len = (float)sqrt((double)sum);
+    void** obj2 = *(void***)((char*)a1 + 0x4);
+    ((Sink2Fn)(*(void***)obj2)[7])(obj2, a1, len);
 }
