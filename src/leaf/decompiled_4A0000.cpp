@@ -311,3 +311,48 @@ extern "C" void* __fastcall fn_004A5FE0(void* self) {
     ((unsigned char*)p)[0xAD] = 0;
     return p;
 }
+
+// [0x004A5A00] sub_004A5A00 (66 bytes)
+// Walks a chain like fn_004685A0: __RTDynamicCast(obj, 0, 0xA2E2F8, 0xA2FB78, 0); if null,
+// calls vtable slot 4 (thiscall, arg 0) on obj and repeats. Returns the cast result or NULL.
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void* __cdecl fn_004A5A00(void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        xor eax, eax
+        test esi, esi
+        je L_4A5A00_done
+        push edi
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    L_4A5A00_loop:
+        push 0
+        push 0xa2fb78
+        push 0xa2e2f8
+        push 0
+        push esi
+        call ext_006A6E9E
+        mov edi, eax
+        add esp, 0x14
+        test edi, edi
+        jne L_4A5A00_found
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x10]
+        push edi
+        mov ecx, esi
+        call edx
+        mov esi, eax
+        test esi, esi
+        jne L_4A5A00_loop
+    L_4A5A00_found:
+        mov eax, edi
+        pop edi
+    L_4A5A00_done:
+        pop esi
+        ret
+    }
+}

@@ -102057,7 +102057,9 @@
       "0x004A5A18",
       "0x004A5A20"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:20:33Z"
   },
   {
     "va": "0x004A5A50",
