@@ -1172,3 +1172,44 @@ extern "C" __declspec(naked) void* __fastcall fn_0053E290(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0053B090] sub_0053B090 (77 bytes)
+extern "C" void ext_006A5C62();
+extern "C" int mem_00955430;
+extern "C" __declspec(naked) void __fastcall fn_0053B090(void* self) {
+    __asm {
+        push esi
+        push edi
+        push 0xc
+        mov edi, ecx
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je short null_result
+        mov dword ptr [eax], offset mem_00955430
+        mov dword ptr [eax + 0x8], 0x0
+        mov dword ptr [eax + 0x4], 0xffffffff
+        mov esi, eax
+        jmp short store_result
+null_result:
+        xor esi, esi
+store_result:
+        mov ecx, dword ptr [edi + 0x38]
+        cmp esi, ecx
+        je short skip_release
+        test ecx, ecx
+        je short skip_release
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+skip_release:
+        mov dword ptr [edi + 0x38], esi
+        mov ecx, esi
+        mov eax, dword ptr [ecx]
+        pop edi
+        pop esi
+        mov eax, dword ptr [eax + 0x14]
+        jmp eax
+    }
+}
