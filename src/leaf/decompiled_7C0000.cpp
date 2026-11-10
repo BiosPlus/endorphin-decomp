@@ -1860,3 +1860,41 @@ extern "C" __declspec(naked) void __cdecl fn_007C9D80(void* self) {
         jmp ext_007C9C90
     }
 }
+
+// [0x007CA1E0] sub_007CA1E0 (81 bytes)
+extern "C" int mem_009548E0;
+
+extern "C" __declspec(naked) void __cdecl fn_007CA1E0() {
+    __asm {
+        fld     dword ptr [esp + 0xc]
+        mov     eax, dword ptr [esp + 0x14]
+        fmul    st(0), st
+        xor     ecx, ecx
+        fld     dword ptr [esp + 0x10]
+        mov     dword ptr [eax + 0x4], ecx
+        fmul    st(0), st
+        mov     dword ptr [eax + 0x8], ecx
+        fld     dword ptr [esp + 0x4]
+        mov     dword ptr [eax + 0xc], ecx
+        fdiv    qword ptr [mem_009548E0]
+        mov     dword ptr [eax + 0x14], ecx
+        mov     dword ptr [eax + 0x18], ecx
+        mov     dword ptr [eax + 0x1c], ecx
+        fld     st(1)
+        fadd    st, st(3)
+        fmul    st, st(1)
+        fstp    dword ptr [eax]
+        fld     dword ptr [esp + 0x8]
+        fmul    st(0), st
+        fld     st(0)
+        faddp   st(3), st
+        fxch    st(2)
+        fmul    st, st(1)
+        fstp    dword ptr [eax + 0x10]
+        fxch    st(1)
+        faddp   st(2), st
+        fmulp   st(1), st
+        fstp    dword ptr [eax + 0x20]
+        ret
+    }
+}
