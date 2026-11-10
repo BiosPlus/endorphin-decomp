@@ -1061,3 +1061,43 @@ extern "C" __declspec(naked) void __fastcall fn_006296D0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00621040] sub_00621040 (76 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00621040(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je copy_empty_00621040
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    copy_loop_00621040:
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi + 0x1c]
+        push eax
+        lea ecx, [edi + 0x1c]
+        call dword ptr [mem_00924FDC]
+        fld qword ptr [esi + 0x38]
+        fstp qword ptr [edi + 0x38]
+        add esi, 0x48
+        fld qword ptr [esi - 0x8]
+        add edi, 0x48
+        cmp esi, ebx
+        fstp qword ptr [edi - 0x8]
+        jne copy_loop_00621040
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    copy_empty_00621040:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
