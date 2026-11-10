@@ -407,3 +407,39 @@ extern "C" __declspec(naked) void __fastcall fn_0063E980(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0063F350] sub_0063F350 (85 bytes)
+extern "C" void ext_0063E0C0();
+extern "C" int mem_0097CC44;
+
+extern "C" __declspec(naked) void* __fastcall fn_0063F350(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push -1
+        push 0x8aed58
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x18]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_0063E0C0
+        mov ecx, dword ptr [esp + 0x8]
+        xor eax, eax
+        mov dword ptr [esi], offset mem_0097CC44
+        mov dword ptr [esi + 0x28], eax
+        mov dword ptr [esi + 0x2c], eax
+        mov dword ptr [esi + 0x30], eax
+        mov dword ptr [esi + 0x34], eax
+        mov dword ptr [esi + 0x38], eax
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x8
+    }
+}
