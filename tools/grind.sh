@@ -79,12 +79,16 @@ if command -v agy >/dev/null 2>&1 && agy --help >/dev/null 2>&1; then
   HAS_AGY=1
 fi
 
+if [[ "${GRIND_VERBOSE:-0}" == 1 ]]; then
 echo "=== Endorphin Autonomous Parallel Grinder (1 Agent / Function Try) ==="
 echo "Verified CLIs : claude=$HAS_CLAUDE | agy=$HAS_AGY"
 echo "Pipeline      : haiku runners=$WAVE_SIZE (tries every function) | escalation cap=${ESC_CAP}/model | total_pulls=$((MAX_WAVES*WAVE_SIZE)) | push_every=$((PUSH_EVERY*WAVE_SIZE)) | timeout=${AGENT_TIMEOUT}s"
 echo "Model Chain   : claude-haiku-5.5 -> gpt-oss-120b -> gemini-3.8-flash -> claude-sonnet-5.5 -> claude-opus-5.5 -> gemini-4-argon"
 echo "Policy        : Haiku first on every function; a failure escalates only that function one stage up; per-model caps limit expensive concurrency"
 echo "Security Mode : Scoped Allowlist + Sandbox + PreToolUse Guard [NO skip-dangerously]"
+else
+  echo "Endorphin grinder: haiku x$WAVE_SIZE, escalation cap ${ESC_CAP}/model, ${MAX_WAVES} waves, timeout ${AGENT_TIMEOUT}s  (claude=$HAS_CLAUDE agy=$HAS_AGY; GRIND_VERBOSE=1 for details)"
+fi
 
 if [[ $HAS_CLAUDE -eq 0 && $HAS_AGY -eq 0 ]]; then
   echo "Error: Neither a working 'claude' nor 'agy' CLI was found in PATH."
@@ -98,7 +102,28 @@ AGY_INLINE_SETTINGS='{"agentMode":"auto","enableTerminalSandbox":true,"toolPermi
 # $STATE_DIR/cd.<key>  = epoch seconds when backend:model becomes eligible again
 # $STATE_DIR/st.<key>  = strike count
 STATE_DIR="$(mktemp -d /tmp/endorphin_grind_state.XXXXXX)"
-trap 'rm -rf "$STATE_DIR"' EXIT
+
+# ---- Event log + live dashboard ----------------------------------------------------------------------
+# Every status message goes through emit() into $EVENTS (workers run in subshells, so a file is the shared channel).
+# On a terminal the main loop redraws a dashboard in place and shows the latest events inside it; when stdout is not a
+# TTY (or GRIND_PLAIN=1) the events are printed as ordinary lines instead. The full event history is appended to
+# .local/grind_events.log when the session ends.
+EVENTS="$STATE_DIR/events"
+EVENTS_HISTORY="${GRIND_EVENTS_LOG:-$REPO_ROOT/.local/grind_events.log}"
+: > "$EVENTS"
+DASH=0
+[[ -t 1 && "${GRIND_PLAIN:-0}" != 1 && "${TERM:-dumb}" != dumb ]] && DASH=1
+DASH_EVENT_ROWS="${DASH_EVENT_ROWS:-8}"
+trap 'cat "$EVENTS" >> "$EVENTS_HISTORY" 2>/dev/null; rm -rf "$STATE_DIR"' EXIT
+
+emit() { printf '%(%T)T %s\n' -1 "$*" >> "$EVENTS"; }
+
+fmt_dur() {   # seconds -> 1h02m03s / 4m05s / 6s
+  local s="${1:-0}"
+  if (( s >= 3600 )); then printf '%dh%02dm%02ds' $((s/3600)) $((s%3600/60)) $((s%60))
+  elif (( s >= 60 )); then printf '%dm%02ds' $((s/60)) $((s%60))
+  else printf '%ds' "$s"; fi
+}
 
 _state_key() { echo "${1//[^A-Za-z0-9._-]/_}"; }
 
@@ -128,7 +153,7 @@ mark_rate_limited() {
     wait_secs=7200
   fi
   echo $(( $(date +%s) + wait_secs )) > "$STATE_DIR/cd.$k"
-  echo "[!] Rate limit / quota hit on $key (strike $strikes) — cooling down for $((wait_secs / 60))m ($wait_secs s)..."
+  emit "[!] Rate limit / quota hit on $key (strike $strikes) — cooling down for $((wait_secs / 60))m ($wait_secs s)"
 }
 
 # Resolve which CLI backend ("claude" or "agy") to use for a given model choice.
@@ -179,7 +204,8 @@ resolve_backend_for_model() {
 
 is_rate_limit_log() {
   local log_file="$1"
-  grep -qiE "rate_limit_error|rate limit exceeded|quota exceeded|usage limit|credit balance is too low|HTTP/[0-9.]+ 429|status( code)?[: ]+429|RESOURCE_EXHAUSTED|overloaded_error|hit your.*limit|too many requests" "$log_file"
+  # stream-json logs start with a huge init/hook preamble (tool and skill descriptions); only scan the real events
+  grep -vE '"subtype":"(init|hook_started|hook_response)"|"type":"system"' "$log_file" | grep -qiE "rate_limit_error|rate limit exceeded|quota exceeded|usage limit|credit balance is too low|HTTP/[0-9.]+ 429|status( code)?[: ]+429|RESOURCE_EXHAUSTED|overloaded_error|hit your.*limit|too many requests"
 }
 
 is_invalid_model_log() {
@@ -235,6 +261,7 @@ run_single_function_agent() {
     launch_tracked timeout --kill-after=20s "${AGENT_TIMEOUT_EFF:-$AGENT_TIMEOUT}s" \
       claude --model "$claude_alias" \
       --permission-mode acceptEdits \
+      --output-format stream-json --verbose \
       --allowedTools \
         "Read" "Grep" "Glob" \
         "Edit(src/**)" "Edit(include/**)" "Write(src/**)" "Write(include/**)" \
@@ -343,8 +370,8 @@ log_result() {
 ROUTE_RULES=()
 if [[ "$ADAPTIVE_CHAIN" == 1 ]]; then
   mapfile -t ROUTE_RULES < <("$WORK_BIN" route --machine --min-trials "$ROUTE_MIN_TRIALS" --min-yield "$ROUTE_MIN_YIELD" 2>/dev/null || true)
-  echo "Adaptive chain: ON (skip stage if measured yield < ${ROUTE_MIN_YIELD} over >= ${ROUTE_MIN_TRIALS} trials; ADAPTIVE_CHAIN=0 disables)"
-  "$WORK_BIN" route --min-trials "$ROUTE_MIN_TRIALS" --min-yield "$ROUTE_MIN_YIELD" 2>/dev/null | sed 's/^/  /' || true
+  [[ "${GRIND_VERBOSE:-0}" == 1 ]] && echo "Adaptive chain: ON (skip stage if measured yield < ${ROUTE_MIN_YIELD} over >= ${ROUTE_MIN_TRIALS} trials; ADAPTIVE_CHAIN=0 disables)"
+  [[ "${GRIND_VERBOSE:-0}" == 1 ]] && "$WORK_BIN" route --min-trials "$ROUTE_MIN_TRIALS" --min-yield "$ROUTE_MIN_YIELD" 2>/dev/null | sed 's/^/  /' || true
 fi
 
 low_yield_stage() {   # $1=model $2=size_bytes ; true if that stage should be skipped for this size
@@ -372,31 +399,32 @@ attempt_worker() {
   while true; do
     backend="$(resolve_backend_for_model "$model_choice")"
     if [[ "$backend" == "none" ]]; then
-      echo "  [!] $addr: $model_choice unavailable / cooling down on all backends."
+      emit "[!] $addr: $model_choice unavailable / cooling down on all backends"
       echo unavailable > "$STATE_DIR/res.$addr"
       return 0
     fi
 
-    echo "  [>] $addr (${FUNC_SIZES[$addr]}B): step $((model_idx + 1))/$total_steps $model_choice (via $backend)"
+    emit "[>] $addr (${FUNC_SIZES[$addr]}B): step $((model_idx + 1))/$total_steps $model_choice via $backend"
     log_file="$(mktemp "/tmp/endorphin_${model_choice}_${addr}.XXXXXX.log")"
+    printf '%s %s %s %s\n' "$model_choice" "$backend" "$(date +%s)" "$log_file" > "$STATE_DIR/run.$addr"
     rc=0
     run_single_function_agent "$model_choice" "$backend" "$addr" "$log_file" || rc=$?
     rm -f "$log_file"
 
     if "$WORK_BIN" is-matched "$addr" >/dev/null 2>&1; then
-      echo "  [+] MATCHED: $addr via $model_choice ($backend)!"
+      emit "[+] MATCHED $addr via $model_choice ($backend) in $(fmt_dur $(( $(date +%s) - ${FN_START[$addr]:-$(date +%s)} )))"
       echo matched > "$STATE_DIR/res.$addr"
       return 0
     fi
 
-    echo "  [-] Unmatched on $model_choice ($backend): $addr"
+    emit "[-] Unmatched on $model_choice ($backend): $addr"
     # Give the next model a fresh stub rather than this model's half-finished attempt
     "$WORK_BIN" clean "$addr" >/dev/null 2>&1 || true
     if [[ $rc -eq 42 ]]; then
       mark_rate_limited "${backend}:${model_choice}"
       next_backend="$(resolve_backend_for_model "$model_choice")"
       if [[ "$next_backend" != "none" && "$next_backend" != "$backend" ]]; then
-        echo "  [*] $addr: switching $model_choice to alternate backend ($next_backend)..."
+        emit "[*] $addr: switching $model_choice to alternate backend ($next_backend)"
         continue
       fi
     else
@@ -437,7 +465,7 @@ cleanup_children() {
   sleep 2
   for pg in "${pgs[@]}"; do kill -KILL -- "-$pg" 2>/dev/null || true; done   # agents that ignore TERM
 }
-trap 'echo "[!] Interrupted — stopping workers."; cleanup_children; exit 130' INT TERM
+trap 'echo; echo "[!] Interrupted — stopping workers."; cleanup_children; exit 130' INT TERM
 
 # Cached queue of candidates (refetched when stale, empty, or fully conflicting)
 CANDIDATES=()
@@ -473,16 +501,16 @@ next_eligible_stage() {
   for (( idx=$2; idx<NUM_STAGES; idx++ )); do
     model="${MODEL_CHAIN[$idx]}"
     if (( size < ${MODEL_MIN[$model]:-0} )); then
-      echo "  [~] $addr (${size}B): below $model minimum size (${MODEL_MIN[$model]}B); skipping." >&2; continue
+      emit "[~] $addr (${size}B): below $model minimum size (${MODEL_MIN[$model]}B); skipping"; continue
     fi
     if (( idx > 0 )) && low_yield_stage "$model" "$size"; then
-      echo "  [~] $addr (${size}B): $model has low measured yield at this size; skipping." >&2; continue
+      emit "[~] $addr (${size}B): $model has low measured yield at this size; skipping"; continue
     fi
     if already_failed "$addr" "$model"; then
-      echo "  [~] $addr: $model already failed it in an earlier session; skipping." >&2; continue
+      emit "[~] $addr: $model already failed it in an earlier session; skipping"; continue
     fi
     if [[ "$(resolve_backend_for_model "$model")" == "none" ]]; then
-      echo "  [!] $addr: $model unavailable / cooling down on all backends; skipping." >&2; continue
+      emit "[!] $addr: $model unavailable / cooling down on all backends; skipping"; continue
     fi
     echo "$idx"; return
   done
@@ -507,16 +535,16 @@ finish_function() {   # $1=addr $2=outcome(matched|deferred) $3=model
   if [[ "$outcome" == matched ]]; then ((matched_count++)); else ((deferred_count++)); fi
   log_result "$addr" "${FUNC_SIZES[$addr]:-?}" "$outcome" "$model" "${FN_START[$addr]:-$(date +%s)}"
   "$WORK_BIN" commit-pending >/dev/null 2>&1 || true
-  echo "[pool] done $addr ($outcome via $model) | finished=$finished/$TOTAL_JOBS matched=$matched_count deferred=$deferred_count haiku=${STAGE_RUNNING[0]} escalating=$(escalation_backlog)"
+  emit "[done] $addr ($outcome via $model) finished=$finished/$TOTAL_JOBS matched=$matched_count deferred=$deferred_count"
   if (( PUSH_EVERY_JOBS > 0 && finished % PUSH_EVERY_JOBS == 0 )); then
-    echo "[*] Pushing progress to GitHub (triggers Windows CI + HTML dashboard build)..."
-    git push || true
+    emit "[*] Pushing progress to GitHub (triggers Windows CI + HTML dashboard build)"
+    if git push >/dev/null 2>&1; then emit "[*] Push ok"; else emit "[!] Push failed"; fi
   fi
 }
 
 defer_function() {
   local addr="$1"
-  echo "  [x] Deferring $addr: unmatched after all eligible models"
+  emit "[x] Deferring $addr: unmatched after all eligible models"
   "$WORK_BIN" skip "$addr" "Unmatched after escalation through all eligible models in the chain" || true
   finish_function "$addr" deferred "all-eligible-models"
 }
@@ -547,6 +575,7 @@ reap_finished() {
     if ! kill -0 "$pid" 2>/dev/null; then
       read -r addr s <<< "${JOB_INFO[$pid]}"
       unset 'JOB_INFO[$pid]'
+      rm -f "$STATE_DIR/run.$addr"
       ((STAGE_RUNNING[$s]--))
       res=failed
       [[ -f "$STATE_DIR/res.$addr" ]] && res="$(cat "$STATE_DIR/res.$addr")"
@@ -559,9 +588,141 @@ reap_finished() {
   done
 }
 
+# ---- Dashboard rendering ---------------------------------------------------------------------------
+SESSION_START="$(date +%s)"
+EVENTS_SHOWN=0
+DASH_PREV_LINES=0
+
+C_RST=$'\033[0m'; C_DIM=$'\033[2m'; C_BOLD=$'\033[1m'
+C_RED=$'\033[31m'; C_GRN=$'\033[32m'; C_YEL=$'\033[33m'; C_BLU=$'\033[34m'; C_MAG=$'\033[35m'; C_CYN=$'\033[36m'
+
+# Only these events scroll past above the dashboard; everything else stays in the history log.
+event_style() {   # $1=text ; sets EV_COLOR, returns 1 if the event should not be shown on screen
+  EV_COLOR=""
+  case "$1" in
+    *"[+]"*)                 EV_COLOR="$C_GRN" ;;
+    *"[x]"*|*"[!]"*)         EV_COLOR="$C_RED" ;;
+    *"[*] Push"*)            EV_COLOR="$C_DIM" ;;
+    *) return 1 ;;
+  esac
+}
+
+fmt_tok() {   # 1234 -> 1.2k, 1500000 -> 1.5M
+  local n="${1:-0}"
+  if (( n >= 1000000 )); then printf '%d.%dM' $((n/1000000)) $((n%1000000/100000))
+  elif (( n >= 1000 )); then printf '%d.%dk' $((n/1000)) $((n%1000/100))
+  else printf '%d' "$n"; fi
+}
+
+# Tokens an agent has used so far, read live from its claude stream-json log: input + cache-creation + output per message
+# (cache reads are excluded: they only count the same context being re-read each turn). Streamed events carry partial
+# output counts, so this slightly undercounts until the agent finishes. Cached by log size so jq only reruns when the log
+# has grown. Prints "-" when the log has no usage data (e.g. the agy backend).
+declare -A TOK_SIZE=() TOK_VAL=()
+agent_tokens() {   # $1=addr $2=log file ; sets AGENT_TOK (not a subshell, so the cache persists)
+  local f="$2" sz
+  AGENT_TOK="-"; [[ -f "$f" ]] || return
+  sz="$(stat -c %s "$f" 2>/dev/null || echo 0)"
+  if [[ "${TOK_SIZE[$1]:-}" != "$sz" ]]; then
+    TOK_SIZE[$1]="$sz"
+    TOK_VAL[$1]="$(jq -nR '[inputs | fromjson? | select(.type=="assistant") | .message] | group_by(.id)
+      | map((map(.usage.input_tokens // 0) | max) + (map(.usage.cache_creation_input_tokens // 0) | max) + (map(.usage.output_tokens // 0) | max))
+      | add // empty' "$f" 2>/dev/null)"
+  fi
+  AGENT_TOK="${TOK_VAL[$1]:--}"
+}
+
+mini_bar() {   # $1=value $2=max $3=width -> [=====>    ]
+  local v="$1" m="$2" w="$3" f a b
+  (( m < 1 )) && m=1; (( v > m )) && v=$m
+  f=$(( v * w / m ))
+  printf -v a '%*s' "$f" ''; printf -v b '%*s' $(( w - f )) ''
+  printf '[%s%s]' "${a// /=}" "${b// / }"
+}
+
+render() {
+  local total; total="$(wc -l < "$EVENTS")"
+  if (( ! DASH )); then
+    # Plain mode: just print events that arrived since the last call
+    (( total > EVENTS_SHOWN )) && tail -n +$((EVENTS_SHOWN + 1)) "$EVENTS"
+    EVENTS_SHOWN=$total
+    return
+  fi
+
+  local cols now elapsed out="" line ev
+  cols="$(tput cols 2>/dev/null || echo 100)"; (( cols < 50 )) && cols=50
+  now="$(date +%s)"; elapsed=$(( now - SESSION_START ))
+
+  # Erase the previous block, then print any new notable events as permanent lines above the new block
+  (( DASH_PREV_LINES > 0 )) && out+="$(printf '\033[%dA' "$DASH_PREV_LINES")"
+  out+=$'\r\033[J'
+  if (( total > EVENTS_SHOWN )); then
+    while IFS= read -r ev; do
+      event_style "$ev" && out+="${EV_COLOR}${ev}${C_RST}"$'\n'
+    done < <(tail -n +$((EVENTS_SHOWN + 1)) "$EVENTS")
+  fi
+  EVENTS_SHOWN=$total
+
+  local -a rows=()
+  local pct=0 eta="-" per="-"
+  (( TOTAL_JOBS > 0 )) && pct=$(( finished * 100 / TOTAL_JOBS ))
+  if (( finished > 0 )); then
+    eta="$(fmt_dur $(( elapsed * (TOTAL_JOBS - finished) / finished )))"
+    per="$(fmt_dur $(( elapsed / finished )))"
+  fi
+  rows+=("${C_DIM}Matched:     ${C_RST} ${C_GRN}${matched_count}${C_RST} / ${TOTAL_JOBS} ($pct%), ${C_YEL}${deferred_count} deferred${C_RST}  $(mini_bar "$finished" "$TOTAL_JOBS" 20)")
+  rows+=("${C_DIM}Elapsed:     ${C_RST} $(fmt_dur "$elapsed"), ETA $eta, ~$per/function")
+
+  local s st="" r p w
+  for (( s=0; s<NUM_STAGES; s++ )); do
+    r="${STAGE_RUNNING[$s]}"; p=0
+    for w in ${PENDING[$s]}; do ((p++)); done
+    (( r + p == 0 )) && continue
+    st+="${MODEL_CHAIN[$s]#claude-} $r/$(stage_cap "$s")"
+    (( p > 0 )) && st+="+$p waiting"
+    st+="  "
+  done
+  rows+=("${C_DIM}Agents:      ${C_RST} ${st:-idle}")
+
+  if (( ${#JOB_INFO[@]} > 0 )); then
+    rows+=("${C_DIM}Working on:${C_RST}")
+    local pid addr stage model backend started logf att tmo mc tc
+    for pid in $(printf '%s\n' "${!JOB_INFO[@]}" | sort -n); do
+      read -r addr stage <<< "${JOB_INFO[$pid]}"
+      model="${MODEL_CHAIN[$stage]}"; backend="-"; started="$now"; logf=""
+      [[ -f "$STATE_DIR/run.$addr" ]] && read -r model backend started logf < "$STATE_DIR/run.$addr"
+      att=$(( now - started ))
+      tmo=$(( ${FUNC_SIZES[$addr]:-0} / 2 )); (( tmo > AGENT_TIMEOUT * 2 )) && tmo=$(( AGENT_TIMEOUT * 2 )); tmo=$(( AGENT_TIMEOUT + tmo ))
+      case "$stage" in
+        0) mc="$C_GRN" ;; 1) mc="$C_CYN" ;; 2) mc="$C_BLU" ;; 3) mc="$C_YEL" ;; 4) mc="$C_MAG" ;; *) mc="$C_RED" ;;
+      esac
+      tc=""
+      (( att * 100 >= tmo * 60 )) && tc="$C_YEL"
+      (( att * 100 >= tmo * 90 )) && tc="$C_RED"
+      AGENT_TOK="-"; [[ "$backend" == claude ]] && agent_tokens "$addr" "${logf:-}"
+      [[ "$AGENT_TOK" =~ ^[0-9]+$ ]] && AGENT_TOK="$(fmt_tok "$AGENT_TOK")"
+      rows+=("$(printf " * %s %5sB  %s%-19s%s %s%-9s%s %7s tok  (total %s)" \
+        "$addr" "${FUNC_SIZES[$addr]:-?}" "$mc" "${model#claude-}/$backend" "$C_RST" \
+        "$tc" "${att}s/${tmo}s" "$C_RST" "$AGENT_TOK" \
+        "$(fmt_dur $(( now - ${FN_START[$addr]:-$now} )))")")
+    done
+  fi
+
+  local plain
+  for line in "${rows[@]}"; do
+    plain="${line//$'\033'\[[0-9;]*m/}"
+    (( ${#plain} > cols - 1 )) && line="${plain:0:cols-1}"
+    out+="$line"$'\n'
+  done
+  DASH_PREV_LINES=${#rows[@]}
+  printf '%s' "$out"
+}
+
 # Remove stale unverified stubs before we start (nothing is in flight yet, so this is safe)
+echo "Cleaning stale stubs and scanning the function queue (can take ~20s)..."
 "$WORK_BIN" clean >/dev/null 2>&1 || true
 
+SESSION_START="$(date +%s)"
 queue_exhausted=0
 ESC_BACKLOG_MAX=$(( ESC_BACKLOG_FACTOR * WAVE_SIZE ))
 while true; do
@@ -572,7 +733,7 @@ while true; do
     if ! pick_next_candidate; then
       # Nothing usable: either the queue is truly empty, or what is left conflicts with in-flight work
       if (( ${#JOB_INFO[@]} == 0 )) && [[ "$(total_pending)" == 0 ]]; then
-        echo "[!] No unmatched ready functions remaining in queue! Stopping cleanly."
+        emit "[!] No unmatched ready functions remaining in queue; stopping cleanly"
         queue_exhausted=1
       fi
       break
@@ -581,7 +742,7 @@ while true; do
     SEEN_ADDR["$addr"]=1; INFLIGHT_ADDR["$addr"]=1; INFLIGHT_CPP["$NEXT_CPP"]=1
     FUNC_CPP_OF["$addr"]="$NEXT_CPP"; FN_START["$addr"]="$(date +%s)"
     ((launched++))
-    echo "[pool] pull #$launched/$TOTAL_JOBS: $addr (${FUNC_SIZES[$addr]}B) -> $NEXT_CPP"
+    emit "[pull] #$launched/$TOTAL_JOBS $addr (${FUNC_SIZES[$addr]}B) -> $NEXT_CPP"
     advance_function "$addr" 0
   done
 
@@ -591,11 +752,13 @@ while true; do
     break
   fi
 
-  # Wait for ANY attempt to finish, then loop: its stage (and Haiku) refill immediately
+  # Wait for ANY attempt to finish (redrawing once a second), then loop: its stage (and Haiku) refill immediately
+  render
   while true; do
     sleep 1
     ev=0
     for pid in "${!JOB_INFO[@]}"; do kill -0 "$pid" 2>/dev/null || ev=1; done
+    render
     (( ev )) && break
   done
   reap_finished
@@ -604,5 +767,6 @@ done
 # Everything is idle now, so a global clean is safe
 "$WORK_BIN" commit-pending >/dev/null 2>&1 || true
 "$WORK_BIN" clean >/dev/null 2>&1 || true
+render
 echo "=== Parallel grind session finished (pulled=$launched matched=$matched_count deferred=$deferred_count) ==="
 "$STATUS_BIN" || true
