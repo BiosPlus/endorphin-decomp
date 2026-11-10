@@ -402307,7 +402307,9 @@
       "0x0066B2A3",
       "0x0066B2B2"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:09:26Z"
   },
   {
     "va": "0x0066B2E0",

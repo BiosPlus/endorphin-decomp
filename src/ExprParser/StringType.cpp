@@ -120,3 +120,43 @@ empty_str:
         ret 0x8
     }
 }
+
+// [0x0066B290] ExprParser::StringType::vfunc_3 (71 bytes)
+extern "C" int mem_00924FC0;
+
+extern "C" __declspec(naked) void __stdcall fn_0066B290(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je short null_str
+        push edi
+        mov edi, dword ptr [mem_00924FC0]
+        push 0x92f10c
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short match
+        push 0x93a810
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short match
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x4
+    match:
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret 0x4
+    null_str:
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}
