@@ -42,9 +42,9 @@ fi
 mkdir -p "$REPO_ROOT/.local/bin"
 build_tool_if_needed() {
   local name="$1"
-  local src="$REPO_ROOT/tools/$name/main.go"
   local bin="$REPO_ROOT/.local/bin/$name"
-  if [[ ! -x "$bin" || "$src" -nt "$bin" ]]; then
+  # Rebuild if any .go file in the tool dir is newer than the binary (tools may span several files)
+  if [[ ! -x "$bin" || -n "$(find "$REPO_ROOT/tools/$name" -name '*.go' -newer "$bin" -print -quit)" ]]; then
     echo "[*] Building fast binary: .local/bin/$name ..."
     go build -o "$bin" "./tools/$name"
   fi
@@ -216,7 +216,7 @@ run_single_function_agent() {
 
   export DECOMP_MODEL="$model_choice"
 
-  local prompt="Read CLAUDE.md. You are assigned a single function: ${addr}. Run './.local/bin/work claim ${addr}' and match ${addr} using './.local/bin/work check ${addr} --model ${DECOMP_MODEL}'. Use HEADER_PREVIEW and SUGGESTED_EXTERNS from the claim output. Iterate up to 10 tries (switch to __declspec(naked) __asm after 3-4 failed C++03 tries). Stop immediately as soon as ${addr} matches or after 10 tries. Do NOT run work next, do NOT call work skip, and do NOT touch any other function, HTML files, or build/units.json."
+  local prompt="Read CLAUDE.md. You are assigned a single function: ${addr}. Run './.local/bin/work claim ${addr}' and match ${addr} using './.local/bin/work check ${addr} --model ${DECOMP_MODEL}'. Use HEADER_PREVIEW and SUGGESTED_EXTERNS from the claim output; if SIMILAR_MATCHED is present, treat those solved neighbors as a hint for the C++ idiom (identical-shape ones usually differ only in constants, offsets and call targets). Iterate up to 10 tries (switch to __declspec(naked) __asm after 3-4 failed C++03 tries). Stop immediately as soon as ${addr} matches or after 10 tries. Do NOT run work next, do NOT call work skip, and do NOT touch any other function, HTML files, or build/units.json."
 
   local exit_code=0
   if [[ "$backend" == "claude" ]]; then

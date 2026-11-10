@@ -519,6 +519,10 @@ func printUnitBriefing(u UnitEntry, cls *ClassEntry, createStub bool) {
 		fmt.Printf("SUGGESTED_EXTERNS: %s\n", strings.Join(exts, " "))
 	}
 
+	if allUnits, _, _, _, _ := loadUnitsAndClasses(); allUnits != nil {
+		printSimilarMatched(u, allUnits)
+	}
+
 	fmt.Println("TARGET_ASM:")
 	cachePath := filepath.Join(".local", "cache", "funcs", u.VA+".txt")
 	if b, err := os.ReadFile(cachePath); err == nil {
@@ -1797,6 +1801,8 @@ func main() {
 		cmdCommitPending(rest)
 	case "clean":
 		cmdClean(rest)
+	case "similar":
+		cmdSimilar(rest)
 	default:
 		fmt.Fprintf(os.Stderr, "Unknown subcommand %q (expected: next, claim, check, skip, is-matched, commit-pending, clean)\n", subcmd)
 		os.Exit(1)
