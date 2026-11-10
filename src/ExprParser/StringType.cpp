@@ -87,3 +87,36 @@ empty_str:
         ret 4
     }
 }
+
+// [0x0066B2E0] ExprParser::StringType::vfunc_4 (61 bytes)
+extern "C" void ext_004276B0();
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void* __fastcall fn_0066B2E0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0
+        je short empty_str
+        push eax
+        push esi
+        call ext_004276B0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+empty_str:
+        push 0x928b5d
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
