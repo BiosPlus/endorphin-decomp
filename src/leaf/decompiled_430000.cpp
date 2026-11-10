@@ -2867,3 +2867,39 @@ L_done_434760:
         jmp eax
     }
 }
+
+// [0x00430C00] sub_00430C00 (66 bytes)
+extern "C" void ext_00430370();
+extern "C" void ext_00465B30();
+extern "C" void ext_00468660();
+
+extern "C" __declspec(naked) void __fastcall fn_00430C00(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x11c]
+        call eax
+        test al, al
+        jne L_true_430C31
+        mov ecx, esi
+        call ext_00430370
+        test al, al
+        je L_true_430C31
+        mov eax, 1
+        jmp L_done_430C33
+L_true_430C31:
+        xor eax, eax
+L_done_430C33:
+        mov ecx, dword ptr [esp + 8]
+        mov edx, dword ptr [ecx]
+        pop esi
+        mov dword ptr [esp + 4], eax
+        mov eax, dword ptr [edx]
+        jmp eax
+    }
+}
