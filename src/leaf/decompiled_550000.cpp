@@ -583,3 +583,31 @@ extern "C" float __fastcall fn_005530B0(int* self, int edx_unused, float a1) {
     }
     return a1;
 }
+
+// [0x00553170] sub_00553170 (63 bytes)
+extern "C" int mem_00957598;
+extern "C" int mem_009576E8;
+extern "C" __declspec(naked) float __fastcall fn_00553170(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x28]
+        test eax, eax
+        jne check_two
+        fld dword ptr [esp + 0x4]
+        fmul qword ptr [mem_00957598]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret 0x4
+    check_two:
+        cmp eax, 0x2
+        jne passthrough
+        fld dword ptr [esp + 0x4]
+        fmul qword ptr [mem_009576E8]
+        fadd st(0), st
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret 0x4
+    passthrough:
+        fld dword ptr [esp + 0x4]
+        ret 0x4
+    }
+}
