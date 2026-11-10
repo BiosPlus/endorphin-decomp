@@ -470,3 +470,20 @@ extern "C" __declspec(naked) bool __cdecl fn_006968D0(void* a1) {
         ret
     }
 }
+
+// [0x00696DD0] sub_00696DD0 (60 bytes)
+extern "C" void __fastcall fn_00696DD0(void* self) {
+    int* p = (int*)self;
+    if (p[4] > p[0]) {
+        p[3] += p[4] / p[0];
+        p[4] = p[4] % p[0];
+        if (p[3] > 59) {
+            p[2] += p[3] / 60;
+            p[3] = p[3] % 60;
+            if (p[2] > 59) {
+                p[1] += p[2] / 60;
+                p[2] = p[2] % 60;
+            }
+        }
+    }
+}
