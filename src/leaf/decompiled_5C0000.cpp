@@ -299,3 +299,31 @@ extern "C" __declspec(naked) void* __fastcall fn_005C38F0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_005B6B90();
+extern "C" int mem_00AE5598;
+extern "C" int mem_00AE558C;
+extern "C" int mem_00AE5590;
+extern "C" int mem_00AE5594;
+
+// [0x005C3930] sub_005C3930 (60 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_005C3930(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x164]
+        test ecx, ecx
+        je short L_005C393F
+        jmp ext_005B6B90
+L_005C393F:
+        mov eax, 1
+        test byte ptr [mem_00AE5598], al
+        jne short L_005C3966
+        fldz
+        or dword ptr [mem_00AE5598], eax
+        fst dword ptr [mem_00AE558C]
+        fst dword ptr [mem_00AE5590]
+        fstp dword ptr [mem_00AE5594]
+L_005C3966:
+        mov eax, offset mem_00AE558C
+        ret
+    }
+}
