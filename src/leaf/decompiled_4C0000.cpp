@@ -187,3 +187,24 @@ extern "C" __declspec(naked) void __fastcall fn_004CCB10(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004CCB50] sub_004CCB50 (50 bytes)
+extern "C" void ext_004CC6A0();
+
+extern "C" __declspec(naked) void __fastcall fn_004CCB50(void* self, int edx_unused, const float* v) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x180]
+        test ecx, ecx
+        __asm _emit 0x74 __asm _emit 0x05 // je +5
+        jmp ext_004CC6A0
+        mov ecx, dword ptr [esp + 0x4]
+        fld dword ptr [ecx]
+        fstp dword ptr [eax + 0x194]
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [eax + 0x198]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [eax + 0x19c]
+        ret 0x4
+    }
+}
