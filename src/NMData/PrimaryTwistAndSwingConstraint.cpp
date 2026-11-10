@@ -46,3 +46,17 @@ done:
         ret 0x8
     }
 }
+
+// [0x006119C0] NMData::PrimaryTwistAndSwingConstraint::vfunc_60 (66 bytes)
+extern "C" void __fastcall fn_006119C0(void* self, int edx_unused, int idx, float val) {
+    if (idx >= 4) {
+        return;
+    }
+    typedef void (__thiscall *VFn)(void* self, float* out);
+    float tmp[3];
+    VFn getter = (VFn)(*(void***)self)[0x110 / 4];
+    getter(self, tmp);
+    tmp[idx] = val;
+    VFn setter = (VFn)(*(void***)self)[0xf4 / 4];
+    setter(self, tmp);
+}
