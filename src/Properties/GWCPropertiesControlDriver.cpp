@@ -27,3 +27,19 @@ extern "C" __declspec(naked) void __fastcall fn_0041CA70(void* self) {
         ret 4
     }
 }
+
+// [0x0041D390] Properties::GWCPropertiesControlDriver::vfunc_2 (52 bytes)
+extern "C" void __fastcall ext_006A95C0(void* self);
+extern "C" void* __fastcall ext_006A7BB0(void* self);
+extern "C" void* __fastcall ext_006ACFB0(void* self);
+
+extern "C" void __fastcall fn_0041D390(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    ext_006A95C0(*(void**)(p + 0x0c));
+    if (ext_006A7BB0(*(void**)(p + 0x0c)) != 0) {
+        void* r = ext_006ACFB0(ext_006A7BB0(*(void**)(p + 0x0c)));
+        *(void**)(p + 0x18) = r;
+    } else {
+        *(int*)(p + 0x18) = 0;
+    }
+}
