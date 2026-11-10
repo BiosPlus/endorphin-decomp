@@ -220,3 +220,29 @@ ok_index:
         ret 0x4
     }
 }
+
+// [0x004EBE30] sub_004EBE30 (55 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004EBE30(void* self) {
+    __asm {
+        push 0x48
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je  L_skip0
+        mov dword ptr [eax], 0x0
+    L_skip0:
+        lea ecx, [eax + 0x4]
+        test ecx, ecx
+        je  L_skip1
+        mov dword ptr [ecx], 0x0
+    L_skip1:
+        lea ecx, [eax + 0x8]
+        test ecx, ecx
+        je  L_skip2
+        mov dword ptr [ecx], 0x0
+    L_skip2:
+        mov byte ptr [eax + 0x44], 0x1
+        mov byte ptr [eax + 0x45], 0x0
+        ret
+    }
+}
