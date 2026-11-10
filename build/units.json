@@ -401787,7 +401787,9 @@
       "0x0066B58D",
       "0x0066B592"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:53:41Z"
   },
   {
     "va": "0x0066B5A0",

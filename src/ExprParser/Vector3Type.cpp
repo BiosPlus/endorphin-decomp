@@ -155,3 +155,30 @@ extern "C" __declspec(naked) void __fastcall fn_0066B5A0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0066B560] ExprParser::Vector3Type::vfunc_5 (57 bytes)
+extern "C" int mem_00B59648;
+extern "C" int mem_00B59644;
+extern "C" int mem_00B59640;
+extern "C" int mem_00B5963C;
+
+extern "C" __declspec(naked) void* __stdcall fn_0066B560(void** a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        jne short L_ret
+        mov eax, 0x1
+        test byte ptr [mem_00B59648], al
+        jne short L_done
+        fldz
+        or dword ptr [mem_00B59648], eax
+        fst dword ptr [mem_00B59644]
+        fst dword ptr [mem_00B59640]
+        fstp dword ptr [mem_00B5963C]
+L_done:
+        mov eax, offset mem_00B5963C
+L_ret:
+        ret 0x4
+    }
+}
