@@ -462,3 +462,32 @@ L_0065D570_b:
         ret
     }
 }
+
+// [0x0065CCA0] sub_0065CCA0 (51 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0065CCA0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        jne short L_nonzero
+        xor ecx, ecx
+        test eax, eax
+        setne cl
+        mov al, cl
+        ret
+    L_nonzero:
+        mov ecx, dword ptr [ecx + 0x8]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        xor ecx, ecx
+        test eax, eax
+        setne cl
+        mov al, cl
+        ret
+    }
+}
