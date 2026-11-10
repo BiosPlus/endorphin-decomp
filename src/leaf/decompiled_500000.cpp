@@ -409,3 +409,43 @@ ok_path:
         ret 0x4
     }
 }
+
+// [0x0050A6E0] sub_0050A6E0 (60 bytes)
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void __cdecl fn_0050A6E0() {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebp
+        je done_0050A6E0
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        lea ebx, [edi + 0x4]
+        jmp loop_0050A6E0
+        __asm _emit 0x8D
+        __asm _emit 0xA4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    loop_0050A6E0:
+        push ebx
+        lea ecx, [esi + 0x4]
+        call dword ptr [mem_00924FDC]
+        fld dword ptr [edi + 0x20]
+        fstp dword ptr [esi + 0x20]
+        add esi, 0x24
+        cmp esi, ebp
+        jne loop_0050A6E0
+        pop edi
+        pop ebx
+    done_0050A6E0:
+        pop esi
+        pop ebp
+        ret
+    }
+}
