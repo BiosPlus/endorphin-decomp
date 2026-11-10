@@ -688,3 +688,16 @@ extern "C" void __fastcall fn_00454560(void* self, int edx_unused, int a1, int a
     p[3] = a4;
     p[4] = a5;
 }
+
+// [0x004553D0] sub_004553D0 (55 bytes)
+extern "C" void __fastcall fn_004553D0(void* self) {
+    typedef void (__thiscall *Fn)(void* self, int flag);
+    char* p = (char*)self;
+    if (*(unsigned char*)(p + 0x158) != 0) {
+        Fn f = *(Fn*)(*(char**)(p + 0xc8) + 0x144);
+        f(p + 0xc8, 1);
+    } else {
+        Fn f = *(Fn*)(*(char**)(p + 0xc8) + 0x144);
+        f(p + 0xc8, 0);
+    }
+}
