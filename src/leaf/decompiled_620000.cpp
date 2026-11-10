@@ -551,3 +551,27 @@ extern "C" __declspec(naked) float __fastcall fn_0062A590(void* self) {
         ret
     }
 }
+
+// [0x00621B30] sub_00621B30 (59 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00621B30(void* self) {
+    __asm {
+        push -1
+        push 0x008AA388
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xC], ecx
+        mov dword ptr [eax + 0x14], ecx
+        mov dword ptr [eax + 0x18], ecx
+        mov dword ptr [eax + 0x1C], ecx
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
