@@ -38,3 +38,33 @@ ready:
         ret 4
     }
 }
+
+// [0x005EBFF0] NMData::Constraint::vfunc_70 (83 bytes)
+extern "C" void ext_00610AF0();
+extern "C" void ext_00661980();
+
+extern "C" __declspec(naked) void __fastcall fn_005EBFF0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push -1
+        push 0x008A66B8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        mov ecx, esi
+        mov dword ptr [esp + 0x4], 0
+        call ext_00661980
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esi], 0x00958C0C
+        call ext_00610AF0
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0xc
+    }
+}
