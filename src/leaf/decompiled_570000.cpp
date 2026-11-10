@@ -269,3 +269,30 @@ extern "C" __declspec(naked) void* __fastcall fn_00575DF0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00574E20] sub_00574E20 (63 bytes)
+extern "C" int mem_00925094;
+
+extern "C" __declspec(naked) void __stdcall fn_00574E20(void* os) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push 0x2
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, esi
+        mov byte ptr [esp + 0xc], 0x56
+        mov byte ptr [esp + 0xd], 0x23
+        mov dword ptr [esp + 0x10], 0x1
+        call dword ptr [mem_00925094]
+        push 0x2
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00925094]
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    }
+}
