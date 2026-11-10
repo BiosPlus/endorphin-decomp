@@ -914,3 +914,15 @@ extern "C" __declspec(naked) void* __fastcall fn_005528F0(void* self) {
         ret
     }
 }
+
+// [0x00552940] sub_00552940 (35 bytes)
+extern "C" int mem_00B37F38;
+extern "C" int mem_00B37F34;
+extern "C" void ext_005528F0();
+extern "C" void* __fastcall fn_00552940(void* self) {
+    if (!(mem_00B37F38 & 1)) {
+        mem_00B37F38 |= 1;
+        ((void (__fastcall*)(void*))ext_005528F0)((void*)&mem_00B37F34);
+    }
+    return (void*)0x00AF7D00;
+}
