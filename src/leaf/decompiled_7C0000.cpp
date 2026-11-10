@@ -1002,3 +1002,32 @@ L_copy:
         ret
     }
 }
+
+// [0x007CC930] sub_007CC930 (52 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007CC930(void* a0) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax + 0xc]
+        cmp eax, dword ptr [ecx + 0xc]
+        jne short L_7CC94B
+        cmp eax, dword ptr [eax + 0x4]
+        jne short L_7CC945
+        xor edx, edx
+        jmp short L_7CC948
+L_7CC945:
+        mov edx, dword ptr [eax + 0x8]
+L_7CC948:
+        mov dword ptr [ecx + 0xc], edx
+L_7CC94B:
+        mov edx, dword ptr [eax + 0x8]
+        push esi
+        mov esi, dword ptr [eax + 0x4]
+        mov dword ptr [edx + 0x4], esi
+        mov edx, dword ptr [eax + 0x4]
+        mov eax, dword ptr [eax + 0x8]
+        mov dword ptr [edx + 0x8], eax
+        add dword ptr [ecx + 0x1c], -1
+        pop esi
+        ret
+    }
+}
