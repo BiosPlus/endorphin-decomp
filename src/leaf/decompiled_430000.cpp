@@ -2365,3 +2365,33 @@ extern "C" void __fastcall fn_00434000(void* self) {
     void* hwnd = *(void**)(s + 0x20);
     ((InvalidateRectFn)mem_00925688)(hwnd, 0, 1);
 }
+
+extern "C" int mem_009251EC;
+
+// [0x0043B6E0] sub_0043B6E0 (51 bytes)
+extern "C" __declspec(naked) int* __cdecl fn_0043B6E0(const int* first, const int* last, int* dest) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        sub eax, edx
+        push esi
+        sar eax, 0x2
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        lea ecx, [4*eax]
+        lea esi, [ecx + edi]
+        jle short fn0043B6E0_done
+        push ecx
+        push edx
+        push ecx
+        push edi
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+fn0043B6E0_done:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
