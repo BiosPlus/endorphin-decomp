@@ -1368,3 +1368,31 @@ extern "C" __declspec(naked) void __fastcall fn_00651330(void* self, void* edx_u
         ret 0x8
     }
 }
+
+// [0x00603440] ExprParser::WriteMethodType<EffectorBase, bool, &public: void __thiscall EffectorBase::setEnabled(bool)>::vfunc_41 (49 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00603440(void** self, void** a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        test al, al
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [ecx]
+        je L1
+        mov eax, dword ptr [edx + 0x18]
+        call eax
+        pop esi
+        ret 8
+    L1:
+        mov eax, dword ptr [edx + 0x1c]
+        call eax
+        pop esi
+        ret 8
+    }
+}

@@ -218388,7 +218388,8 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x0055BEA0",
@@ -324938,7 +324939,9 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-sonnet-5.5",
+    "matched_at": "2026-11-10T03:35:17Z"
   },
   {
     "va": "0x00603480",
