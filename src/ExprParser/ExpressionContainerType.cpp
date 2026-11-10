@@ -218,3 +218,38 @@ extern "C" __declspec(naked) int __fastcall fn_00670D10(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x0067A7D0] ExprParser::ExpressionContainerType::vfunc_43 (66 bytes)
+// Two stack args (both objects); calls vtable slot 1 on arg1 (float result),
+// then vtable slot 1 on arg2 and adds it, then tail-dispatches slot 7 (0x1c)
+// on arg1's member with the sum. Returns with ret 8.
+extern "C" __declspec(naked) void __fastcall fn_0067A7D0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push esi
+        call edx
+        fstp dword ptr [esp + 8]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        call eax
+        fadd dword ptr [esp + 8]
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x1c]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 8]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call eax
+        pop esi
+        ret 0x8
+    }
+}
