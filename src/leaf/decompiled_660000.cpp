@@ -1126,3 +1126,31 @@ L_done:
         ret
     }
 }
+
+// [0x00666AE0] sub_00666AE0 (81 bytes)
+extern "C" void __fastcall fn_00666AE0(void* self, int edx_unused, void* node) {
+    char* n = (char*)node;
+    char* s = (char*)self;
+    char* p = *(char**)(n + 0x8);
+    *(char**)(n + 0x8) = *(char**)p;
+    char* q = *(char**)p;
+    if (*(q + 0xc1) == 0) {
+        *(char**)(q + 0x4) = n;
+    }
+    *(char**)(p + 0x4) = *(char**)(n + 0x4);
+    char* c = *(char**)(s + 0x4);
+    if (n == *(char**)(c + 0x4)) {
+        *(char**)(c + 0x4) = p;
+        *(char**)p = n;
+        *(char**)(n + 0x4) = p;
+        return;
+    }
+    char* c2 = *(char**)(n + 0x4);
+    if (n == *(char**)c2) {
+        *(char**)c2 = p;
+    } else {
+        *(char**)(c2 + 0x8) = p;
+    }
+    *(char**)p = n;
+    *(char**)(n + 0x4) = p;
+}
