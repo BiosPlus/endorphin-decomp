@@ -672,3 +672,33 @@ extern "C" __declspec(naked) void __fastcall fn_0055F800(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00554260] sub_00554260 (68 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00554260(void* self) {
+    __asm {
+        mov eax, ecx
+        sub esp, 0x24
+        push esi
+        push edi
+        mov ecx, 0x9
+        mov esi, eax
+        lea edi, [esp + 0x8]
+        rep movsd
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x20]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [eax + 0xc]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [eax + 0x14]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [eax + 0x18]
+        fld dword ptr [esp + 0x1c]
+        pop edi
+        fstp dword ptr [eax + 0x1c]
+        pop esi
+        add esp, 0x24
+        ret
+    }
+}
