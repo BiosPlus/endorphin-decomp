@@ -1171,3 +1171,24 @@ extern "C" void* __fastcall fn_0046A3C0(void* self) {
     p[0x11] = 0;
     return p;
 }
+
+// [0x00465960] sub_00465960 (56 bytes)
+// Assigns the empty C string literal to three std::string members at self+0x84, +0xA0, +0xBC.
+extern "C" int mem_00924FD4;
+extern "C" __declspec(naked) void __fastcall fn_00465960(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 0x928b5d
+        lea ecx, [esi + 0x84]
+        call dword ptr [mem_00924FD4]
+        push 0x928b5d
+        lea ecx, [esi + 0xa0]
+        call dword ptr [mem_00924FD4]
+        push 0x928b5d
+        lea ecx, [esi + 0xbc]
+        call dword ptr [mem_00924FD4]
+        pop esi
+        ret
+    }
+}

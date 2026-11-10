@@ -60205,7 +60205,9 @@
       "0x00465986",
       "0x00465992"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:38:16Z"
   },
   {
     "va": "0x004659A0",
