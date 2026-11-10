@@ -911,3 +911,16 @@ extern "C" __declspec(naked) void* __fastcall fn_0041CB40(void* self) {
         ret 4
     }
 }
+
+// [0x00414DC0] sub_00414DC0 (54 bytes)
+struct Pair8_00414DC0 { unsigned int lo; unsigned int hi; };
+extern "C" void* __cdecl fn_00414DC0(void* a1, void* first, void* a3, void* last, void* dest) {
+    Pair8_00414DC0* f = (Pair8_00414DC0*)first;
+    Pair8_00414DC0* l = (Pair8_00414DC0*)last;
+    Pair8_00414DC0* d = (Pair8_00414DC0*)dest;
+    Pair8_00414DC0* end = d + (l - f);
+    while (f != l) {
+        *d++ = *f++;
+    }
+    return end;
+}
