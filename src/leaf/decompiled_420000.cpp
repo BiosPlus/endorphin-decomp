@@ -791,3 +791,48 @@ extern "C" void __fastcall fn_00427390(char* self, int edx_unused, char* x) {
     *(char**)(n + 0x8) = x;
     *(char**)(x + 0x4) = n;
 }
+
+// [0x00427480] sub_00427480 (82 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __cdecl fn_00427480(void) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0x8]
+        cmp edi, dword ptr [esp + 0xc]
+        je done
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        lea ebx, [ebp + 0x4]
+        lea esi, [edi + 0x5]
+    loop_top:
+        mov eax, dword ptr [ebp]
+        lea ecx, [esi - 0x1]
+        cmp ecx, ebx
+        mov dword ptr [edi], eax
+        je skip
+        mov dl, byte ptr [ebx]
+        mov byte ptr [esi - 0x1], dl
+        mov al, byte ptr [ebx + 0x2]
+        mov byte ptr [esi + 0x1], al
+        mov cl, byte ptr [ebx + 0x1]
+        lea edx, [ebx + 0x4]
+        mov byte ptr [esi], cl
+        push edx
+        lea ecx, [esi + 0x3]
+        call dword ptr [mem_00924FDC]
+    skip:
+        add edi, 0x24
+        add esi, 0x24
+        cmp edi, dword ptr [esp + 0x18]
+        jne loop_top
+        pop esi
+        pop ebp
+        pop ebx
+    done:
+        pop edi
+        ret
+    }
+}
