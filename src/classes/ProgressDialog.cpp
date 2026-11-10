@@ -72,3 +72,34 @@ extern "C" __declspec(naked) void __fastcall fn_00448000(void* self) {
         ret 0x4
     }
 }
+
+// [0x004481A0] ProgressDialog::vfunc_4_off_74 (67 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004481A0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push edi
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esi + 0x58]
+        call ext_006A5F50
+        mov eax, dword ptr [esi + 0x24]
+        mov edi, dword ptr [mem_00925694]
+        push 0x0
+        push 0x0
+        push 0x408
+        push eax
+        call edi
+        add eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esi + 0x24]
+        push 0x0
+        push eax
+        push 0x402
+        push ecx
+        call edi
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
