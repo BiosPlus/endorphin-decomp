@@ -641,3 +641,11 @@ extern "C" void* __fastcall fn_006B81E0(void* self) {
     p[0x58 / 4] = 0xcdcdcd;
     return self;
 }
+
+// [0x006B67A0] sub_006B67A0 (49 bytes)
+extern "C" int (__stdcall *mem_00925618)(void*, unsigned int, unsigned int, long);
+extern "C" void __fastcall fn_006B67A0(char* self, int edx_unused, unsigned int a1, unsigned short a2, unsigned short a3) {
+    if (a1 != 0xd) {
+        mem_00925618(*(void**)(self + 0xc8), 0x100, a1, (long)(((unsigned int)a3 << 16) | a2));
+    }
+}
