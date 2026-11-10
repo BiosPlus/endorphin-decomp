@@ -101,3 +101,13 @@ extern "C" __declspec(naked) void __fastcall fn_00610CB0(void* self) {
         ret
     }
 }
+
+// [0x00610CE0] sub_00610CE0 (39 bytes)
+extern "C" void ext_005B11E0();
+extern "C" void ext_00594000();
+extern "C" void ext_00678130();
+extern "C" void __fastcall fn_00610CE0(void* self) {
+    float f = ((float (__thiscall*)(void*, int))ext_005B11E0)((char*)self + 0x20, 1);
+    void* p = ((void* (__cdecl*)())ext_00594000)();
+    ((void (__thiscall*)(void*, float))ext_00678130)((char*)p + 0x2E0, f);
+}
