@@ -232,3 +232,68 @@ extern "C" __declspec(naked) void* __fastcall fn_006F7560(void* self) {
         ret
     }
 }
+
+// [0x006F8700] sub_006F8700 (80 bytes)
+// Two incremental-link style thunks: each jumps over 11 nop padding to a body.
+// Body 1: copy the double at *_HUGE into mem_00B5E260/64.
+// Body 2: store -(*_HUGE) into mem_00B5E258.
+extern "C" int mem_00925284;
+extern "C" int mem_00B5E260;
+extern "C" int mem_00B5E264;
+extern "C" int mem_00B5E258;
+extern "C" __declspec(naked) void __fastcall fn_006F8700(void* self) {
+    __asm {
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5E260], ecx
+        mov dword ptr [mem_00B5E264], edx
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5E258]
+        ret
+    }
+}
