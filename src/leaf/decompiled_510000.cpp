@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_510000.cpp
 
+#include <string>
+
 // [0x0051DE70] sub_0051DE70 (33 bytes)
 extern "C" int __fastcall fn_0051DE70(int* self) {
     int a = self[1];
@@ -221,4 +223,40 @@ extern "C" void* __cdecl fn_0051E040(char* begin, char* end, char (__fastcall *p
         p += 0x168;
     }
     return p;
+}
+
+// [0x00519D10] sub_00519D10 (52 bytes)
+// Compares the std::string argument against two runtime-constructed global std::strings
+// (at 0x00AECC0C and 0x00AECC28) via the imported basic_string operator==.
+extern "C" int mem_00AECC0C;
+extern "C" int mem_00AECC28;
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void __cdecl fn_00519D10(void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [mem_00924FC4]
+        push offset mem_00AECC0C
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je short not_equal_second
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+not_equal_second:
+        push offset mem_00AECC28
+        push esi
+        call edi
+        add esp, 0x8
+        neg al
+        pop edi
+        pop esi
+        sbb eax, eax
+        neg eax
+        ret
+    }
 }
