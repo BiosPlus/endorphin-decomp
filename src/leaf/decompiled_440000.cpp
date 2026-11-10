@@ -1417,3 +1417,35 @@ null_path:
         ret
     }
 }
+
+// [0x0044C360] sub_0044C360 (53 bytes)
+extern "C" __declspec(naked) char* __cdecl fn_0044C360(char* first, char* last, char* dest_end) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, ecx
+        sub eax, edx
+        sar eax, 0x2
+        add eax, eax
+        add eax, eax
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, eax
+        mov eax, esi
+        sub eax, edi
+        cmp edx, ecx
+        je done_copy
+        sub esi, ecx
+    copy_loop:
+        mov edi, dword ptr [ecx - 0x4]
+        sub ecx, 0x4
+        cmp ecx, edx
+        mov dword ptr [esi + ecx], edi
+        jne copy_loop
+    done_copy:
+        pop edi
+        pop esi
+        ret
+    }
+}
