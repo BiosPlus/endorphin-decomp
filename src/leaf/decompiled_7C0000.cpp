@@ -1224,3 +1224,30 @@ L_007C9AC5:
         ret
     }
 }
+
+// [0x007CB010] sub_007CB010 (63 bytes)
+extern "C" void ext_006A7250();
+extern "C" __declspec(naked) void __cdecl fn_007CB010(float* self, float arg) {
+    __asm {
+        fld dword ptr [esp + 0x8]
+        push esi
+        fmul qword ptr [mem_00993828]
+        mov esi, dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fst dword ptr [esi + 0x14]
+        fld dword ptr [esi + 0x10]
+        fmul st(0), st
+        fld st(1)
+        fmulp st(2), st
+        faddp st(1), st
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        call ext_006A7250
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [esi + 0x18]
+        pop esi
+        ret
+    }
+}
