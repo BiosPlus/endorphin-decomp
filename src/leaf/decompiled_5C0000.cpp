@@ -216,3 +216,30 @@ done:
         ret 0x4
     }
 }
+
+// [0x005C3090] sub_005C3090 (54 bytes)
+extern "C" void ext_005B72A0();
+extern "C" int mem_00B40640;
+extern "C" __declspec(naked) void __fastcall fn_005C3090(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x164], 0
+        je done
+        mov eax, dword ptr [esi + 0x4]
+        mov edx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [eax + 0x14]
+        lea ecx, [esi + 0x4]
+        push edx
+        call eax
+        mov ecx, dword ptr [esp + 0x8]
+        add eax, 0x30
+        push eax
+        push ecx
+        mov ecx, dword ptr [esi + 0x164]
+        call ext_005B72A0
+    done:
+        pop esi
+        ret 0x4
+    }
+}
