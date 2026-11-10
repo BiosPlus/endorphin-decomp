@@ -1401,3 +1401,10 @@ extern "C" void __cdecl fn_007CC8E0(int a0, int a1, int a2) {
     }
     *(int*)(owner + 0x1c) += 1;
 }
+
+// [0x007CA340] sub_007CA340 (32 bytes)
+extern "C" void* __cdecl fn_007CA340(void* a0, int a1, float a2) {
+    ext_007CC8E0((int)a0, a1, 1);
+    *(float*)((char*)a0 + 0x10) = a2;
+    return a0;
+}
