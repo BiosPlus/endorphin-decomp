@@ -90,3 +90,36 @@ extern "C" __declspec(naked) void __fastcall fn_00645D80(void* self, int edx_unu
         ret 0Ch
     }
 }
+
+// [0x00645DD0] MagnetJoint::vfunc_5 (66 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00645DD0(void* self, int edx_unused, unsigned int idx, double v) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 10h]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0Ch]
+        je L_bad
+        mov ecx, dword ptr [esi + 14h]
+        sub ecx, eax
+        mov eax, 2aaaaaabh
+        imul ecx
+        sar edx, 2
+        mov eax, edx
+        shr eax, 1Fh
+        add eax, edx
+        cmp edi, eax
+        jb L_ok
+    L_bad:
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov ecx, dword ptr [esi + 10h]
+        fld qword ptr [esp + 10h]
+        lea eax, [edi + 2*edi]
+        pop edi
+        fstp qword ptr [ecx + 8*eax + 8h]
+        pop esi
+        ret 0Ch
+    }
+}
