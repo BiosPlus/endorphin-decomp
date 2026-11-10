@@ -1273,3 +1273,33 @@ done:
         ret 0x4
     }
 }
+
+// [0x0044CCF0] sub_0044CCF0 (50 bytes)
+extern "C" int mem_00B41B80;
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) bool __fastcall fn_0044CCF0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x28]
+        call edx
+        test al, al
+        jne L_false
+        push offset mem_00B41B80
+        add esi, 0x458
+        push esi
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je L_false
+        mov eax, 1
+        pop esi
+        ret
+L_false:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
