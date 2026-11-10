@@ -611,3 +611,40 @@ extern "C" __declspec(naked) float __fastcall fn_00553170(void* self) {
         ret 0x4
     }
 }
+
+// [0x0055E940] sub_0055E940 (67 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0055E940(void* first, void* last, void* dst) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done
+        lea ecx, [eax + 0xc]
+        lea edx, [esi + 0xc]
+    copy:
+        test eax, eax
+        je skip
+        fld dword ptr [esi]
+        fstp dword ptr [eax]
+        fld dword ptr [edx - 0x8]
+        fstp dword ptr [ecx - 0x8]
+        fld dword ptr [edx - 0x4]
+        fstp dword ptr [ecx - 0x4]
+        fld dword ptr [edx]
+        fstp dword ptr [ecx]
+    skip:
+        add esi, 0x10
+        add eax, 0x10
+        add ecx, 0x10
+        add edx, 0x10
+        cmp esi, edi
+        jne copy
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
