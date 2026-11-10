@@ -55,3 +55,20 @@ L_null_path:
         ret 0x4
     }
 }
+
+// [0x005F57B0] HelperGraphic::vfunc_0_off_158 (34 bytes)
+extern "C" void ext_005F5410();
+extern "C" __declspec(naked) void __fastcall fn_005F57B0(void* self, int edx_unused, void* a1) {
+    __asm {
+        add ecx, 0xfffffea8
+        call ext_005F5410
+        fld dword ptr [eax]
+        mov ecx, dword ptr [esp + 0x4]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ecx + 0x8]
+        ret 0x4
+    }
+}
