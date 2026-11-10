@@ -1244,3 +1244,21 @@ extern "C" void __fastcall fn_00553230(int* self, int edx_unused, float* out, fl
     out[1] = y;
     out[2] = z;
 }
+
+// [0x00553340] sub_00553340 (87 bytes)
+// mem_00957598 is declared as int above (asm use); read it as a double here.
+extern "C" void __fastcall fn_00553340(int* self, int edx_unused, float* out, float x, float y, float z) {
+    int mode = self[0x28 / 4];
+    if (mode == 0) {
+        x = (float)(x * *(double*)&mem_00957598);
+        y = (float)(y * *(double*)&mem_00957598);
+        z = (float)(z * *(double*)&mem_00957598);
+    } else if (mode == 2) {
+        x = (float)(x * mem_00955090);
+        y = (float)(y * mem_00955090);
+        z = (float)(z * mem_00955090);
+    }
+    out[0] = x;
+    out[1] = y;
+    out[2] = z;
+}
