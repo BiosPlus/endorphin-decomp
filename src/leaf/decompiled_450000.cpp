@@ -642,3 +642,14 @@ extern "C" int __fastcall fn_0045B6F0(void* self, int edx_unused, Obj_0045B6F0* 
     }
     return 0;
 }
+
+// [0x0045DB50] sub_0045DB50 (49 bytes)
+extern "C" int mem_00B53A34;
+extern "C" int mem_00B53B30;
+extern "C" int mem_00B53AB0;
+extern "C" int mem_00B53A70;
+extern "C" int mem_00B53AF0;
+extern "C" int __fastcall fn_0045DB50(void* self) {
+    return self == &mem_00B53A34 || self == &mem_00B53B30 || self == &mem_00B53AB0 ||
+           self == &mem_00B53A70 || self == &mem_00B53AF0;
+}

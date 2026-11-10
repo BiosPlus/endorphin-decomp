@@ -8930,7 +8930,8 @@
     "relocations": [
       "0x0040F25A"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x0040F270",
@@ -20305,7 +20306,8 @@
       "0x00422BD0",
       "0x00422BE5"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x00422C00",
@@ -25691,7 +25693,8 @@
       "0x0042FCD2",
       "0x0042FCE5"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x0042FD00",
@@ -25708,7 +25711,8 @@
       "0x0042FD02",
       "0x0042FD15"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x0042FD30",
@@ -29196,7 +29200,8 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x004342E0",
@@ -29224,7 +29229,8 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x00434380",
@@ -43995,7 +44001,8 @@
       "0x0044B9B2",
       "0x0044B9B9"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x0044B9D0",
@@ -44013,7 +44020,8 @@
       "0x0044B9E2",
       "0x0044B9E9"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x0044BA00",
@@ -44031,7 +44039,8 @@
       "0x0044BA12",
       "0x0044BA19"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x0044BA30",
@@ -49780,7 +49789,8 @@
       "0x00455843",
       "0x00455849"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x00455860",
@@ -51605,7 +51615,8 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x00458720",
@@ -54585,7 +54596,9 @@
       "0x0045DB6A",
       "0x0045DB72"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-sonnet-5.5",
+    "matched_at": "2026-11-10T03:30:12Z"
   },
   {
     "va": "0x0045DB90",
@@ -71608,7 +71621,8 @@
       "0x00474C1C",
       "0x00474C3C"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x00474C40",
@@ -84061,7 +84075,8 @@
       "0x0048C17C",
       "0x0048C19C"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x0048C1A0",
@@ -105523,7 +105538,8 @@
       "0x004AC0AC",
       "0x004AC0CC"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x004AC0D0",
@@ -165151,7 +165167,8 @@
       "0x00503CD5",
       "0x00503CE2"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x00503D00",
@@ -219668,7 +219685,8 @@
     "relocations": [
       "0x0055E16A"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x0055E180",
@@ -240088,7 +240106,8 @@
     "relocations": [
       "0x0058A916"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x0058A920",
@@ -331591,7 +331610,8 @@
       "0x0060C4A2",
       "0x0060C4B4"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x0060C4C0",
@@ -406687,7 +406707,8 @@
     "relocations": [
       "0x00671A37"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x00671A60",
@@ -411158,7 +411179,8 @@
       "0x00678DE5",
       "0x00678DF2"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x00678E10",
@@ -436765,7 +436787,8 @@
       "0x006A4033",
       "0x006A403B"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x006A4040",
@@ -563612,7 +563635,8 @@
       "0x007AD5AB",
       "0x007AD5B3"
     ],
-    "status": "todo"
+    "status": "deferred",
+    "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
   },
   {
     "va": "0x007AD5C0",
