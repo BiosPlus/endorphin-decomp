@@ -1777,3 +1777,36 @@ extern "C" void __fastcall fn_0046FFE0(void* self, int edx_unused, void* node) {
     *(char**)p = n;
     *(char**)(n + 0x4) = p;
 }
+
+extern "C" int mem_00924FE0;
+
+// [0x0046FB20] sub_0046FB20 (82 bytes)
+// Two-string constructor under an SEH frame: copy-constructs std::string at this+0 from a1
+// and std::string at this+0x1c from a2; returns this. ret 8.
+extern "C" __declspec(naked) void* __fastcall fn_0046FB20(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x872c79
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 0x8], esi
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x1c]
+        push ecx
+        lea ecx, [esi + 0x1c]
+        mov dword ptr [esp + 0x14], 0
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x8
+    }
+}
