@@ -248,3 +248,22 @@ extern "C" __declspec(naked) void __fastcall fn_005E2830(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void __fastcall ext_00612460(void* self, int edx_unused, float a1);
+
+// [0x005E2880] sub_005E2880 (34 bytes)
+// __thiscall, ret 4: loads this+0x17c, calls its virtual slot +0x120 with arg1, then passes the result to 0x00612460 with arg1.
+extern "C" __declspec(naked) void __fastcall fn_005E2880(void* self, int edx_unused, float a1) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x17c]
+        fld dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x120]
+        push ecx
+        fstp dword ptr [esp]
+        call edx
+        mov ecx, eax
+        call ext_00612460
+        ret 0x4
+    }
+}
