@@ -124626,7 +124626,9 @@
       "0x004C7F20",
       "0x004C7F3E"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:32:36Z"
   },
   {
     "va": "0x004C7F50",

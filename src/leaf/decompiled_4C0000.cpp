@@ -223,3 +223,18 @@ extern "C" void __fastcall fn_004C6490(void* self) {
         reinterpret_cast<void (__cdecl*)(void*)>(ext_006A5C5C)(esi);
     }
 }
+
+// [0x004C7F10] sub_004C7F10 (55 bytes)
+extern "C" void __fastcall fn_004C7F10(void* self) {
+    void* esi = *reinterpret_cast<void**>(self);
+    if (esi != 0) {
+        void* eax = *reinterpret_cast<void**>(reinterpret_cast<char*>(esi) + 0x8);
+        if (eax != 0) {
+            reinterpret_cast<void (__cdecl*)(void*)>(ext_006A5C5C)(eax);
+        }
+        *reinterpret_cast<int*>(reinterpret_cast<char*>(esi) + 0x8) = 0;
+        *reinterpret_cast<int*>(reinterpret_cast<char*>(esi) + 0xC) = 0;
+        *reinterpret_cast<int*>(reinterpret_cast<char*>(esi) + 0x10) = 0;
+        reinterpret_cast<void (__cdecl*)(void*)>(ext_006A5C5C)(esi);
+    }
+}
