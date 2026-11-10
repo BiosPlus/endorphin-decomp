@@ -32,3 +32,34 @@ extern "C" __declspec(naked) void __fastcall fn_0050AAB0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0050AA70] NMData::Task::vfunc_15 (57 bytes)
+extern "C" void ext_0050A120();
+extern "C" void ext_00671F30();
+
+extern "C" __declspec(naked) int __fastcall fn_0050AA70(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        cmp dword ptr [esp + 0xc], 0x386
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0x0
+        jne short not_magic
+        push ecx
+        push esi
+        call ext_0050A120
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    not_magic:
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
