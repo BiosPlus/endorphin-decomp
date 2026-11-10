@@ -883,3 +883,22 @@ extern "C" __declspec(naked) void* __fastcall fn_00508740(void* self) {
         ret
     }
 }
+
+// [0x0050FCD0] sub_0050FCD0 (82 bytes)
+namespace {
+struct Fcd0Keyed {
+    char _pad[0x20];
+    double key;
+};
+}
+extern "C" void __cdecl fn_0050FCD0(Fcd0Keyed** a, Fcd0Keyed** b, Fcd0Keyed** c) {
+    if ((*b)->key > (*a)->key) {
+        Fcd0Keyed* t = *b; *b = *a; *a = t;
+    }
+    if ((*c)->key > (*b)->key) {
+        Fcd0Keyed* t = *c; *c = *b; *b = t;
+    }
+    if ((*b)->key > (*a)->key) {
+        Fcd0Keyed* t = *b; *b = *a; *a = t;
+    }
+}
