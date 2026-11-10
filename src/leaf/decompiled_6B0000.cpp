@@ -876,3 +876,19 @@ L_006B1782:
         ret 0xc
     }
 }
+
+// [0x006B52D0] sub_006B52D0 (65 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" int mem_00925694;
+
+extern "C" void __fastcall fn_006B52D0(void* self, int edx_unused, int a1) {
+    ext_006A5EA8();
+    char* p = (char*)self;
+    if (*(unsigned char*)(p + 0xdc) != 0) {
+        void* hwnd = *(void**)(p + 0x88);
+        typedef int (__stdcall *PFN_SendMessageA)(void*, unsigned int, unsigned int, long);
+        PFN_SendMessageA send = (PFN_SendMessageA)mem_00925694;
+        send(hwnd, 0xb1, 0, 0);
+        send(*(void**)(p + 0x88), 0xb7, 0, 0);
+    }
+}
