@@ -749,3 +749,35 @@ extern "C" void __fastcall fn_00647F80(void* self, int edx_unused, const float* 
     int first = *(int*)(*(int*)((char*)self + 0xa4));
     ((void (__cdecl*)(int, float, float, float))ext_007C6220)(first, v[0], v[1], v[2]);
 }
+
+// [0x00649010] sub_00649010 (49 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00649010(void* self, int edx_unused, float a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, 0x3
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    loop_top:
+        mov eax, dword ptr [edi]
+        fld dword ptr [esp + 0xc]
+        mov edx, dword ptr [eax + 0xc]
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        push esi
+        mov ecx, edi
+        call edx
+        add esi, 0x1
+        cmp esi, 0x6
+        jl loop_top
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
