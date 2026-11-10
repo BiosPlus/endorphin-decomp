@@ -114,3 +114,34 @@ extern "C" __declspec(naked) void __fastcall fn_004972E0(void* self) {
         ret 0x8
     }
 }
+
+// [0x00497680] NMData::Transition::vfunc_12 (66 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00497680(void* self, int edx_unused, int* out, int idx) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x88]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        je L_fail
+        mov eax, dword ptr [esi + 0x8c]
+        sub eax, ecx
+        sar eax, 0x3
+        cmp edi, eax
+        jb L_ok
+    L_fail:
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov esi, dword ptr [esi + 0x88]
+        mov ecx, dword ptr [esi + edi*8]
+        mov edx, dword ptr [esi + edi*8 + 0x4]
+        mov eax, dword ptr [esp + 0xc]
+        pop edi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        ret 0x8
+    }
+}
