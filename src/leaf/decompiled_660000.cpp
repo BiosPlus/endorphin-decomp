@@ -810,3 +810,23 @@ L_skip2:
         ret
     }
 }
+
+// [0x00667F80] sub_00667F80 (59 bytes)
+extern "C" void ext_00667140();
+
+extern "C" void* __fastcall fn_00667F80(void* self) {
+    char* edi = (char*)self;
+    char* esi = edi + 4;
+    *(unsigned int*)edi = 0x987a3c;
+    char* eax = (char*)((void* (__fastcall*)(void*))ext_00667140)(esi);
+    *(char**)(esi + 4) = eax;
+    eax[0xc1] = 1;
+    eax = *(char**)(esi + 4);
+    *(char**)(eax + 4) = eax;
+    eax = *(char**)(esi + 4);
+    *(char**)eax = eax;
+    eax = *(char**)(esi + 4);
+    *(char**)(eax + 8) = eax;
+    *(unsigned int*)(esi + 8) = 0;
+    return edi;
+}
