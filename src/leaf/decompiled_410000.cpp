@@ -1204,3 +1204,33 @@ extern "C" __declspec(naked) void __fastcall fn_00413810(void* self) {
         ret
     }
 }
+
+// [0x00418830] sub_00418830 (62 bytes)
+extern "C" void ext_006A5FDA();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_00418830(void* self) {
+    __asm {
+        push esi
+        push edi
+        push 0x0
+        push 0x0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x8d0]
+        push 0xf0
+        push eax
+        call dword ptr [mem_00925694]
+        cmp eax, 0x1
+        sete al
+        movzx edi, al
+        push edi
+        lea ecx, [esi + 0x808]
+        call ext_006A5FDA
+        push edi
+        lea ecx, [esi + 0x85c]
+        call ext_006A5FDA
+        pop edi
+        pop esi
+        ret
+    }
+}
