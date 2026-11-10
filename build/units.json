@@ -3322,7 +3322,9 @@
       "0x00405425",
       "0x00405430"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T04:23:44Z"
   },
   {
     "va": "0x00405450",

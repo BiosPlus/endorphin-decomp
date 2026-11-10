@@ -748,3 +748,17 @@ extern "C" void __fastcall fn_00403250(void* self, int edx_unused, long lStart, 
     void* stream = *(void**)((unsigned char*)self + 0x500);
     ((AVIStreamWrite_t)ext_006A3448)(stream, lStart, 1, buf, (long)cb, 0x10, 0, 0);
 }
+
+// [0x00405410] sub_00405410 (52 bytes)
+extern "C" void ext_006A5F50();
+extern "C" int mem_00925660;
+
+extern "C" void __fastcall fn_00405410(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    typedef void (__stdcall *KillTimerFn)(void*, int);
+    ((KillTimerFn)mem_00925660)(*(void**)(p + 0x20), *(int*)(p + 0x680));
+    typedef void (__thiscall *AssignFn)(void*, int);
+    ((AssignFn)ext_006A5F50)(p + 0x2c0, 0x00929f4c);
+    *(int*)(p + 0x684) = 0;
+    p[0x688] = 0;
+}
