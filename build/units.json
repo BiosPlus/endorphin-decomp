@@ -348636,7 +348636,9 @@
       "0x006210AE",
       "0x006210BB"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:44:46Z"
   },
   {
     "va": "0x006210E0",

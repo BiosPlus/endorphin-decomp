@@ -1101,3 +1101,45 @@ extern "C" __declspec(naked) void* __cdecl fn_00621040(void* first, void* last, 
         ret
     }
 }
+
+// [0x00621090] sub_00621090 (76 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_00621090(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je done_eq
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    copy_loop:
+        sub esi, 0x48
+        sub edi, 0x48
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi + 0x1c]
+        push eax
+        lea ecx, [edi + 0x1c]
+        call dword ptr [mem_00924FDC]
+        fld qword ptr [esi + 0x38]
+        cmp esi, ebx
+        fstp qword ptr [edi + 0x38]
+        fld qword ptr [esi + 0x40]
+        fstp qword ptr [edi + 0x40]
+        jne copy_loop
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    done_eq:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
