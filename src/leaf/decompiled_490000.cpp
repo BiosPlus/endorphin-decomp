@@ -481,3 +481,20 @@ extern "C" __declspec(naked) void* __cdecl fn_00492CC0() {
         ret
     }
 }
+
+// [0x00493C60] sub_00493C60 (43 bytes)
+extern "C" void* ext_00492CC0();
+extern "C" void* __fastcall fn_00493C60(void* self) {
+    char* esi = (char*)self;
+    char* eax = (char*)ext_00492CC0();
+    *(char**)(esi + 0x4) = eax;
+    eax[0x21] = 1;
+    eax = *(char**)(esi + 0x4);
+    *(char**)(eax + 0x4) = eax;
+    eax = *(char**)(esi + 0x4);
+    *(char**)eax = eax;
+    eax = *(char**)(esi + 0x4);
+    *(char**)(eax + 0x8) = eax;
+    *(int*)(esi + 0x8) = 0;
+    return esi;
+}
