@@ -455,3 +455,29 @@ extern "C" void* __cdecl fn_00490690(void* first, void* last, void* dest) {
     }
     return result;
 }
+
+// [0x00492CC0] sub_00492CC0 (55 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00492CC0() {
+    __asm {
+        push 0x24
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je L_skip0
+        mov dword ptr [eax], 0x0
+    L_skip0:
+        lea ecx, [eax + 0x4]
+        test ecx, ecx
+        je L_skip1
+        mov dword ptr [ecx], 0x0
+    L_skip1:
+        lea ecx, [eax + 0x8]
+        test ecx, ecx
+        je L_skip2
+        mov dword ptr [ecx], 0x0
+    L_skip2:
+        mov byte ptr [eax + 0x20], 0x1
+        mov byte ptr [eax + 0x21], 0x0
+        ret
+    }
+}
