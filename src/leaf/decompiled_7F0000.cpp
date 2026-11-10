@@ -126,3 +126,39 @@ extern "C" void __cdecl fn_007F6850(void* a, void* b) {
     *(int*)(A + 0xc) -= 1;
     *(int*)(A + 0x8) = (int)b;
 }
+
+// [0x007F6690] sub_007F6690 (54 bytes)
+extern "C" void ext_007C7000();
+extern "C" void ext_007CCA00();
+
+extern "C" __declspec(naked) int __cdecl fn_007F6690(int a1, int a2, int a3, int* a4) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        push esi
+        mov dword ptr [edi], esi
+        call ext_007C7000
+        push eax
+        call ext_007CCA00
+        add esp, 0x8
+        test eax, eax
+        jne L_call_fp
+        pop edi
+        pop esi
+        ret
+    L_call_fp:
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push edi
+        push ecx
+        push edx
+        push esi
+        call eax
+        add esp, 0x10
+        pop edi
+        pop esi
+        ret
+    }
+}
