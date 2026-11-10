@@ -2750,3 +2750,52 @@ extern "C" __declspec(naked) int __fastcall fn_0043D7C0(void* self) {
         ret
     }
 }
+
+// [0x00430EF0] sub_00430EF0 (62 bytes)
+// Linear search over std::string elements (0x1c stride) in [first, last) for *value,
+// using the imported basic_string operator== (called as op==(elem, value)).
+// Returns the first matching element, or last if none matches.
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) void* __cdecl fn_00430EF0(void* first, void* last, const void* value) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je short done
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+loop_top:
+        push ebx
+        push esi
+        call ebp
+        add esp, 0x8
+        test al, al
+        jne short found
+        add esi, 0x1c
+        cmp esi, edi
+        jne short loop_top
+found:
+        pop ebp
+        pop ebx
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+done:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
