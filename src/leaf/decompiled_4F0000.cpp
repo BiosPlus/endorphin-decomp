@@ -365,3 +365,21 @@ extern "C" __declspec(naked) void __fastcall fn_004F9530(void* self) {
         ret
     }
 }
+
+// [0x004F9550] sub_004F9550 (30 bytes)
+extern "C" void ext_004F92B0();
+
+extern "C" __declspec(naked) void __fastcall fn_004F9550(void* self) {
+    __asm {
+        push ecx
+        mov dword ptr [esp], 0
+        call ext_004F92B0
+        mov edx, dword ptr [esp + 0xc]
+        mov ecx, eax
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ecx
+        pop ecx
+        ret
+    }
+}
