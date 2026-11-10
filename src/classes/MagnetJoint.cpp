@@ -123,3 +123,14 @@ extern "C" __declspec(naked) void __fastcall fn_00645DD0(void* self, int edx_unu
         ret 0Ch
     }
 }
+
+// [0x0065A100] MagnetJoint::vfunc_43 (84 bytes)
+extern "C" void __cdecl ext_007C9AA0(int a0, float a1, float a2, float a3, int a4);
+
+struct Mat16_0065A100 { float m[16]; };
+
+extern "C" void __fastcall fn_0065A100(unsigned char* self, int edx_unused, const Mat16_0065A100* src) {
+    Mat16_0065A100 tmp = *src;
+    ext_007D8700(*(int*)(self + 0x6C));
+    ext_007C9AA0(*(int*)(self + 0x6C), tmp.m[12], tmp.m[13], tmp.m[14], 1);
+}
