@@ -384,3 +384,44 @@ extern "C" __declspec(naked) void __fastcall fn_00859E00(void* self) {
         ret
     }
 }
+
+// [0x0085D340] sub_0085D340 (80 bytes)
+extern "C" int mem_00AB91A0;
+
+extern "C" __declspec(naked) unsigned int __cdecl fn_0085D340(const unsigned char* buf, unsigned int len) {
+    __asm {
+        push ebx
+        mov eax, 0xffffffff
+        push esi
+        xor ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        cmp edi, ecx
+        je L_done
+        mov edx, dword ptr [esp + 0x10]
+    L_loop:
+        xor ebx, ebx
+        mov bl, byte ptr [edx + ecx]
+        inc ecx
+        xor ebx, eax
+        shr eax, 8
+        and ebx, 0xff
+        mov esi, dword ptr [4*ebx + mem_00AB91A0]
+        xor esi, eax
+        cmp ecx, edi
+        mov eax, esi
+        jb L_loop
+    L_done:
+        not eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+        __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [ecx], eax
+        mov eax, 0x1
+        ret
+    }
+}
