@@ -2585,3 +2585,36 @@ done_0043D370:
         ret
     }
 }
+
+// [0x00430780] sub_00430780 (56 bytes)
+extern "C" void ext_0044B5B0();
+
+extern "C" __declspec(naked) void __fastcall fn_00430780(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        push edi
+        mov edi, ecx
+        push 1
+        mov ecx, esi
+        call edx
+        mov ecx, dword ptr [edi + 0x100]
+        test ecx, ecx
+        je done
+        mov edi, dword ptr [esi]
+        call ext_0044B5B0
+        mov edx, dword ptr [edi + 4]
+        xor ecx, ecx
+        cmp eax, 4
+        sete cl
+        push ecx
+        mov ecx, esi
+        call edx
+    done:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
