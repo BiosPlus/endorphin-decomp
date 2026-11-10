@@ -902,3 +902,55 @@ extern "C" void __cdecl fn_0050FCD0(Fcd0Keyed** a, Fcd0Keyed** b, Fcd0Keyed** c)
         Fcd0Keyed* t = *b; *b = *a; *a = t;
     }
 }
+
+// [0x0050FDA0] sub_0050FDA0 (82 bytes)
+namespace {
+struct Fda0Keyed {
+    char _pad[0x20];
+    double key;
+};
+}
+extern "C" __declspec(naked) void __cdecl fn_0050FDA0(Fda0Keyed** a, Fda0Keyed** b, Fda0Keyed** c) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [ecx]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, dword ptr [edi]
+        fld qword ptr [esi + 0x20]
+        fcomp qword ptr [edx + 0x20]
+        fnstsw ax
+        test ah, 0x41
+        jne fda0_s1
+        mov dword ptr [ecx], esi
+        mov dword ptr [edi], edx
+    fda0_s1:
+        mov esi, dword ptr [ecx]
+        fld qword ptr [esi + 0x20]
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [ebx]
+        fcomp qword ptr [edx + 0x20]
+        fnstsw ax
+        test ah, 0x41
+        jne fda0_s2
+        mov dword ptr [ebx], esi
+        mov dword ptr [ecx], edx
+    fda0_s2:
+        mov esi, dword ptr [edi]
+        mov edx, dword ptr [ecx]
+        fld qword ptr [esi + 0x20]
+        fcomp qword ptr [edx + 0x20]
+        pop ebx
+        fnstsw ax
+        test ah, 0x41
+        jne fda0_s3
+        mov dword ptr [ecx], esi
+        mov dword ptr [edi], edx
+    fda0_s3:
+        pop edi
+        pop esi
+        ret
+    }
+}
