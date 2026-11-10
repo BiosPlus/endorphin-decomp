@@ -296,3 +296,36 @@ extern "C" float __fastcall fn_00697650(void* self) {
     unsigned int n = !b ? 0 : (unsigned int)(e - b);
     return *(float*)(p + 0x18) / (float)n;
 }
+
+// [0x0069B100] sub_0069B100 (49 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0069B100(char c) {
+    __asm {
+        mov al, byte ptr [esp + 4]
+        test al, al
+        je L_0069B110
+        cmp al, 41h
+        jl L_0069B110
+        cmp al, 5ah
+        jle L_0069B12B
+    L_0069B110:
+        cmp al, 61h
+        jl L_0069B118
+        cmp al, 7ah
+        jle L_0069B12B
+    L_0069B118:
+        cmp al, 30h
+        jl L_0069B120
+        cmp al, 39h
+        jle L_0069B12B
+    L_0069B120:
+        cmp al, 5fh
+        je L_0069B12B
+        cmp al, 24h
+        je L_0069B12B
+        xor eax, eax
+        ret
+    L_0069B12B:
+        mov eax, 1
+        ret
+    }
+}
