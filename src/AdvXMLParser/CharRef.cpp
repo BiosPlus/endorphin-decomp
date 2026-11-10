@@ -37,3 +37,41 @@ extern "C" __declspec(naked) void* __fastcall fn_0063E390(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006409B0] AdvXMLParser::CharRef::vfunc_5 (86 bytes)
+// Builds "&#x<hex(char at this+0x24)>;" into the std::string at a1+0x8 (after clearing a1+0x11); returns that string.
+extern "C" void ext_00640960();
+extern "C" int mem_00924ED0;
+extern "C" int mem_00924EC0;
+extern "C" __declspec(naked) void* __fastcall fn_006409B0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0xc
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        push 0x97cd10
+        mov byte ptr [esi + 0x11], 0x0
+        call dword ptr [mem_00924ED0]
+        movsx ecx, byte ptr [edi + 0x24]
+        push 0xa
+        lea eax, [esp + 0xc]
+        push eax
+        push ecx
+        call ext_00640960
+        mov ecx, dword ptr [esi + 0x8]
+        add esp, 0xc
+        push eax
+        mov byte ptr [esi + 0x11], 0x0
+        call dword ptr [mem_00924ED0]
+        mov ecx, dword ptr [esi + 0x8]
+        push 0x3b
+        mov byte ptr [esi + 0x11], 0x0
+        call dword ptr [mem_00924EC0]
+        pop edi
+        pop esi
+        add esp, 0xc
+        ret 0x4
+    }
+}
