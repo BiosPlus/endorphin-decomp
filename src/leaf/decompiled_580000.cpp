@@ -285,3 +285,30 @@ extern "C" __declspec(naked) void __fastcall fn_0058A920(void* self) {
         ret
     }
 }
+
+// [0x0058A960] sub_0058A960 (49 bytes)
+extern "C" void ext_00552130();
+extern "C" int mem_00A85D54;
+extern "C" __declspec(naked) void __fastcall fn_0058A960(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 4]
+        add ecx, 4
+        sub esp, 0x10
+        cmp byte ptr [mem_00A85D54], 0
+        je L1
+        mov edx, dword ptr [eax + 0x30]
+        jmp L2
+    L1:
+        mov edx, dword ptr [eax + 0x28]
+    L2:
+        call edx
+        push 3
+        lea ecx, [esp + 4]
+        push ecx
+        mov ecx, eax
+        call ext_00552130
+        fld dword ptr [eax + 8]
+        add esp, 0x10
+        ret
+    }
+}
