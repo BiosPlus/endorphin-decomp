@@ -1490,3 +1490,45 @@ extern "C" void __fastcall fn_00624C90(char* self, int edx_unused, char* x) {
     *(char**)(n + 0x8) = x;
     *(char**)(x + 0x4) = n;
 }
+
+// [0x00622B40] sub_00622B40 (84 bytes)
+// __thiscall with ret 0x14: stores three dwords at +0/+4/+8, copy-constructs a
+// std::string at +0xc from arg3 (via the MSVCP80 copy-ctor import), copies four floats
+// (arg3+0x1c..0x28 -> +0x28..0x34), stores the byte arg4 at +0x38 and clears +0x39.
+// Returns self in eax.
+extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void* __fastcall fn_00622B40(void* self, int edx_unused, int a0, int a1, int a2, const void* a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0xc]
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x10]
+        push edi
+        mov dword ptr [esi + 0x4], ecx
+        lea edi, [esi + 0xc]
+        push ebx
+        mov ecx, edi
+        mov dword ptr [esi], eax
+        mov dword ptr [esi + 0x8], edx
+        call dword ptr [mem_00924FE0]
+        fld dword ptr [ebx + 0x1c]
+        mov al, byte ptr [esp + 0x20]
+        fstp dword ptr [edi + 0x1c]
+        fld dword ptr [ebx + 0x20]
+        fstp dword ptr [edi + 0x20]
+        fld dword ptr [ebx + 0x24]
+        fstp dword ptr [edi + 0x24]
+        fld dword ptr [ebx + 0x28]
+        fstp dword ptr [edi + 0x28]
+        mov byte ptr [esi + 0x38], al
+        pop edi
+        mov byte ptr [esi + 0x39], 0
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret 0x14
+    }
+}
