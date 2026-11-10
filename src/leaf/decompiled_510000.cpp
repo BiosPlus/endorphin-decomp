@@ -272,3 +272,41 @@ extern "C" void* __cdecl fn_0051E1A0(void* ret, int unused1, void* first, int un
     *(void (__fastcall **)(void*))ret = fn;
     return ret;
 }
+
+// [0x00519C00] sub_00519C00 (57 bytes)
+extern "C" int mem_00924FC0;
+extern "C" const char* mem_00A430F4[3];
+
+extern "C" __declspec(naked) int __cdecl fn_00519C00(const std::string& s) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00924FC0]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        xor esi, esi
+        nop
+    loop_top:
+        mov eax, dword ptr mem_00A430F4[esi*4]
+        push eax
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        jne found
+        add esi, 0x1
+        cmp esi, 0x3
+        jl loop_top
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+    found:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret
+    }
+}
