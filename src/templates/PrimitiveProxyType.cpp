@@ -438,3 +438,40 @@ neg_path:
         ret 0x4
     }
 }
+
+// [0x004975E0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_3 (61 bytes)
+extern "C" int mem_00924FC0;
+
+// One stack argument (a1). esi = *a1 (string handle). Compares it against two
+// string literals via the imported operator==(const string&, const char*)
+// (cdecl, add esp,8); returns 1 if either matches, else 0 (ret 4).
+extern "C" __declspec(naked) void __stdcall fn_004975E0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        push edi
+        mov edi, dword ptr [mem_00924FC0]
+        push 0x92f10c
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne match
+        push 0x93a810
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne match
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x4
+    match:
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret 0x4
+    }
+}
