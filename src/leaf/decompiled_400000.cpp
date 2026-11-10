@@ -1204,3 +1204,38 @@ extern "C" __declspec(naked) void __fastcall fn_0040C330(void* self) {
         ret
     }
 }
+
+// [0x0040BE90] sub_0040BE90 (73 bytes)
+extern "C" void ext_004102D0();
+extern "C" void ext_00410310();
+extern "C" int mem_0093A0C8;
+extern "C" int mem_0093A0CC;
+
+extern "C" __declspec(naked) void __fastcall fn_0040BE90(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_0093A0C8]
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi + 0x360]
+        push eax
+        mov ecx, edi
+        call ext_00410310
+        mov ecx, dword ptr [mem_0093A0CC]
+        push ecx
+        mov ecx, edi
+        call ext_004102D0
+        mov edx, dword ptr [mem_0093A0C8]
+        add esi, 0x3c4
+        push edx
+        mov ecx, esi
+        call ext_00410310
+        mov eax, dword ptr [mem_0093A0CC]
+        push eax
+        mov ecx, esi
+        call ext_004102D0
+        pop edi
+        pop esi
+        ret
+    }
+}
