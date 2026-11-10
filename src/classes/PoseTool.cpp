@@ -224,3 +224,23 @@ extern "C" __declspec(naked) int __fastcall fn_00545320(void* self, int edx_unus
         ret 8
     }
 }
+
+// [0x00545240] PoseTool::vfunc_16 (76 bytes)
+extern "C" void ext_00543530();
+extern "C" int __fastcall fn_00545240(void* self, int edx_unused, int a1, int a2) {
+    typedef int (__thiscall *SubFn)(void*, int, int);
+    typedef void (__thiscall *VFunc1)(void*, int, int);
+    typedef void (__thiscall *VFunc2)(void*);
+    char* s = (char*)self;
+    *(int*)(s + 0x350) = 1;
+    int r = ((SubFn)ext_00543530)(s + 0x254, a1, a2);
+    if (r >= 0) {
+        void** vt = *(void***)self;
+        VFunc1 f = (VFunc1)vt[0x70 / 4];
+        f(self, a1, r);
+        void** vt2 = *(void***)(*(void**)(s + 0x88));
+        VFunc2 g = (VFunc2)vt2[0xbc / 4];
+        g(*(void**)(s + 0x88));
+    }
+    return 1;
+}
