@@ -79,3 +79,28 @@ extern "C" void __fastcall fn_005442A0(void* self) {
     f(sub);
     *(float*)(s + 0xbc) = *(float*)&mem_00940690;
 }
+
+// [0x005441C0] ForceApplicationTool::vfunc_28 (44 bytes)
+extern "C" void ext_00552860();
+
+extern "C" __declspec(naked) void __fastcall fn_005441C0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, ecx
+        push edi
+        lea ecx, [esi + 0xb0]
+        call ext_00552860
+        mov ecx, dword ptr [esi + 0xa8]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [eax + 0x70]
+        push edi
+        push edx
+        call eax
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
