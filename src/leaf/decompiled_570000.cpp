@@ -534,3 +534,33 @@ extern "C" __declspec(naked) void __fastcall fn_00570410(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00575120] sub_00575120 (75 bytes)
+// Fills [dst, dst_end) with copies of *src (0x54-byte element: three std::string).
+extern "C" int mem_00924FDC;
+
+namespace {
+typedef void* (__thiscall *StrAssignFn00575120)(void* self, const void* rhs);
+
+struct Elem00575120 {
+    unsigned char s0[0x1C];
+    unsigned char s1[0x1C];
+    unsigned char s2[0x1C];
+};
+
+inline void str_assign00575120(void* dst, const void* src) {
+    (*(StrAssignFn00575120*)&mem_00924FDC)(dst, src);
+}
+}
+
+extern "C" void __cdecl fn_00575120(Elem00575120* dst, Elem00575120* dst_end, Elem00575120* src) {
+    if (dst == dst_end) {
+        return;
+    }
+    do {
+        str_assign00575120(dst->s0, src->s0);
+        str_assign00575120(dst->s1, src->s1);
+        str_assign00575120(dst->s2, src->s2);
+        ++dst;
+    } while (dst != dst_end);
+}
