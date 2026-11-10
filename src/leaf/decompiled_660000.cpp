@@ -967,3 +967,32 @@ extern "C" char* __cdecl fn_00664BA0(const char* first, const char* last, char* 
     }
     return dst;
 }
+
+// [0x00662E70] sub_00662E70 (70 bytes)
+// std::string fn(const std::string& s): hidden return slot at [esp+4], s at [esp+8].
+// Canonicalizes s.c_str() into a MAX_PATH buffer via PathCanonicalizeA and constructs the result string.
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00925550;
+extern "C" __declspec(naked) void* __cdecl fn_00662E70(void* ret, void* s) {
+    __asm {
+        sub esp, 0x108
+        mov ecx, dword ptr [esp + 0x110]
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea eax, [esp + 0xc]
+        push eax
+        call dword ptr [mem_00925550]
+        mov esi, dword ptr [esp + 0x110]
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        add esp, 0x108
+        ret
+    }
+}
