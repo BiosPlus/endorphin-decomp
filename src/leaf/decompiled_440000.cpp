@@ -1708,3 +1708,47 @@ extern "C" __declspec(naked) void __fastcall fn_00444360(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0044DA40] sub_0044DA40 (76 bytes)
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) int __fastcall fn_0044DA40(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        xor ebx, ebx
+        push ebx
+        push ebx
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x5b8]
+        push 0x188
+        push eax
+        call edi
+        cmp eax, -1
+        je fail_path
+        mov ecx, dword ptr [esi + 0x5b8]
+        push ebx
+        push ebx
+        push 0x188
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0x5b8]
+        push ebx
+        push eax
+        push 0x199
+        push edx
+        call edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    fail_path:
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        ret
+    }
+}
