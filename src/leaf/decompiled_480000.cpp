@@ -1506,3 +1506,43 @@ extern "C" __declspec(naked) void* __cdecl fn_00489A80(void* first, void* last, 
         ret
     }
 }
+
+// [0x0048B730] sub_0048B730 (58 bytes)
+extern "C" void ext_00489A80();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0048B730(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_chk1
+        call ebp
+    L_chk1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L_chk2
+        call ebp
+    L_chk2:
+        cmp ebx, edi
+        je L_done
+        mov eax, dword ptr [esi + 0x8]
+        push ebx
+        push eax
+        push edi
+        call ext_00489A80
+        add esp, 0x0c
+        mov dword ptr [esi + 0x8], eax
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}

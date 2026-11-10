@@ -13,5 +13,7 @@
     "0x0048B734",
     "0x0048B75B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T15:31:56Z"
 }
