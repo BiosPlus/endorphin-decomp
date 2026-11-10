@@ -386,3 +386,24 @@ extern "C" __declspec(naked) void __fastcall fn_0059DC60(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0059F5C0] sub_0059F5C0 (55 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void* __fastcall fn_0059F5C0(void* self) {
+    typedef void* (__cdecl *Alloc)(unsigned int);
+    char* p = (char*)((Alloc)ext_006A5C62)(0x30);
+    if (p) {
+        *(int*)p = 0;
+    }
+    int* q = (int*)(p + 0x4);
+    if (q) {
+        *q = 0;
+    }
+    int* r = (int*)(p + 0x8);
+    if (r) {
+        *r = 0;
+    }
+    p[0x2c] = 1;
+    p[0x2d] = 0;
+    return p;
+}
