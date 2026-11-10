@@ -2549,3 +2549,39 @@ extern "C" __declspec(naked) void __stdcall fn_00430960(void* a1) {
         ret 4
     }
 }
+
+// [0x0043D370] sub_0043D370 (56 bytes)
+extern "C" int mem_009244D4;
+
+extern "C" __declspec(naked) void* __cdecl fn_0043D370(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov eax, edi
+        sub eax, esi
+        sar eax, 0x2
+        cmp esi, edi
+        lea ebp, [ebx + 4*eax]
+        je done_0043D370
+        sub ebx, esi
+loop_0043D370:
+        push esi
+        lea ecx, [ebx + esi]
+        call dword ptr [mem_009244D4]
+        add esi, 0x4
+        cmp esi, edi
+        jne loop_0043D370
+done_0043D370:
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+    }
+}
