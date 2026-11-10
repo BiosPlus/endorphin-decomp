@@ -268,3 +268,38 @@ extern "C" __declspec(naked) void* __cdecl fn_00476660(void* a1, int a2) {
         ret
     }
 }
+
+// [0x004788D0] sub_004788D0 (62 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_004788D0(void* first, void* last, void* d_last) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, ecx
+        sub eax, esi
+        sar eax, 0x3
+        add eax, eax
+        add eax, eax
+        add eax, eax
+        push edi
+        mov edi, eax
+        mov eax, edx
+        sub eax, edi
+        cmp esi, ecx
+        je fn_004788D0_done
+        sub edx, ecx
+    fn_004788D0_loop:
+        mov edi, dword ptr [ecx - 0x8]
+        sub ecx, 0x8
+        cmp ecx, esi
+        mov dword ptr [edx + ecx], edi
+        mov edi, dword ptr [ecx + 0x4]
+        mov dword ptr [edx + ecx + 0x4], edi
+        jne fn_004788D0_loop
+    fn_004788D0_done:
+        pop edi
+        pop esi
+        ret
+    }
+}
