@@ -41,3 +41,29 @@ extern "C" __declspec(naked) void __fastcall fn_0066AD40(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0066AD80] ExprParser::RealType::vfunc_2 (55 bytes)
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __stdcall fn_0066AD80(float* value) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x4]
+        fldz
+        fld dword ptr [esp + 0x4]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        jne short neg_path
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        ret 0x4
+neg_path:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        ret 0x4
+    }
+}
