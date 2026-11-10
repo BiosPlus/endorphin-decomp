@@ -38,3 +38,48 @@ extern "C" __declspec(naked) void __fastcall fn_004B00E0(void* self) {
         ret 0x4
     }
 }
+
+// [0x004B0130] ChangePrimarySelectionCommand::vfunc_0 (86 bytes)
+extern "C" void ext_00665810();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void* __fastcall fn_004B0130(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x38]
+        push edi
+        xor edi, edi
+        cmp eax, edi
+        je skip38
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    skip38:
+        mov dword ptr [esi + 0x38], edi
+        mov dword ptr [esi + 0x3c], edi
+        mov dword ptr [esi + 0x40], edi
+        mov eax, dword ptr [esi + 0x18]
+        cmp eax, edi
+        je skip18
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    skip18:
+        mov ecx, esi
+        mov dword ptr [esi + 0x18], edi
+        mov dword ptr [esi + 0x1c], edi
+        mov dword ptr [esi + 0x20], edi
+        call ext_00665810
+        test byte ptr [esp + 0xc], 0x1
+        je noflag
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    noflag:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
