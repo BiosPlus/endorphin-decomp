@@ -90,3 +90,34 @@ extern "C" void __fastcall fn_0049FAF0(void* self, int edx_unused, const int* a1
     *(int*)(p + 0xe8) = a1[2];
     *(int*)(p + 0xec) = a1[3];
 }
+
+// [0x0049ABE0] NMData::State::vfunc_35_off_8 (56 bytes)
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void __fastcall fn_0049ABE0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        push 0x0
+        push 0xa30418
+        push 0xa303f4
+        push 0x0
+        push eax
+        mov esi, ecx
+        call ext_006A6E9E
+        add esp, 0x14
+        test eax, eax
+        je L_end
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x28]
+        add esi, -0x8
+        push esi
+        push ecx
+        mov ecx, eax
+        call edx
+    L_end:
+        pop esi
+        ret 0x8
+    }
+}
