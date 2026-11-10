@@ -1143,3 +1143,36 @@ extern "C" __declspec(naked) void __fastcall fn_004562F0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0045DB00] sub_0045DB00 (78 bytes)
+extern "C" void __fastcall fn_0045DB00(void* self, int edx_unused, void* a1) {
+    unsigned char* x = (unsigned char*)a1;
+    unsigned char* y;
+    unsigned char* yl;
+    unsigned char* head;
+    unsigned char* p;
+
+    y = *(unsigned char**)(x + 8);
+    *(unsigned char**)(x + 8) = *(unsigned char**)y;
+    yl = *(unsigned char**)y;
+    if (!yl[0x15]) {
+        *(unsigned char**)(yl + 4) = x;
+    }
+    *(unsigned char**)(y + 4) = *(unsigned char**)(x + 4);
+
+    head = *(unsigned char**)((unsigned char*)self + 4);
+    if (x == *(unsigned char**)(head + 4)) {
+        *(unsigned char**)(head + 4) = y;
+        *(unsigned char**)y = x;
+        *(unsigned char**)(x + 4) = y;
+        return;
+    }
+    p = *(unsigned char**)(x + 4);
+    if (x == *(unsigned char**)p) {
+        *(unsigned char**)p = y;
+    } else {
+        *(unsigned char**)(p + 8) = y;
+    }
+    *(unsigned char**)y = x;
+    *(unsigned char**)(x + 4) = y;
+}
