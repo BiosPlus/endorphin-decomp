@@ -491,3 +491,40 @@ extern "C" __declspec(naked) void __fastcall fn_0065CCA0(void* self) {
         ret
     }
 }
+
+// [0x0065D500] sub_0065D500 (58 bytes)
+// Copies 64-byte records from [first, last) to dest (do-while, 16 dwords per record), then returns
+// dest + ((last - first) rounded down to a multiple of 64). Three stack args, cdecl.
+extern "C" __declspec(naked) void* __cdecl fn_0065D500(const void* first, const void* last, void* dest) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        mov eax, ebx
+        sub eax, edx
+        sar eax, 0x6
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        shl eax, 0x6
+        add eax, ebp
+        cmp edx, ebx
+        je done
+        push esi
+        sub ebp, edx
+        push edi
+    copy_loop:
+        lea edi, [edx + ebp]
+        mov esi, edx
+        add edx, 0x40
+        cmp edx, ebx
+        mov ecx, 0x10
+        rep movsd
+        jne copy_loop
+        pop edi
+        pop esi
+    done:
+        pop ebp
+        pop ebx
+        ret
+    }
+}
