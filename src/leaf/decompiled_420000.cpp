@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_420000.cpp
 
+#include <string>
+
 // [0x004276B0] sub_004276B0 (32 bytes)
 extern "C" int mem_00924FE0;
 
@@ -590,5 +592,31 @@ extern "C" __declspec(naked) void __fastcall fn_00428A60(void* self) {
         mov dword ptr [ebx + 0xc], 0
         pop ebx
         ret
+    }
+}
+
+// [0x00422C80] sub_00422C80 (77 bytes)
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+// s: by-value std::string (28 bytes on the stack, callee-cleaned via ret 0x1c); declared raw because naked functions cannot take unwinding types.
+extern "C" __declspec(naked) void __fastcall fn_00422C80(void* self, int edx_unused, void* s) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x881709
+        push eax
+        mov dword ptr fs:[0x0], esp
+        lea eax, [esp + 0x10]
+        push eax
+        add ecx, 0x50
+        mov dword ptr [esp + 0xc], 0x0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x8], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret 0x1c
     }
 }
