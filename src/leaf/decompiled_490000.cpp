@@ -1156,3 +1156,37 @@ extern "C" __declspec(naked) void* __fastcall fn_0049DA40(void* self) {
         ret
     }
 }
+
+// [0x0049D390] sub_0049D390 (87 bytes)
+// Two stack args (out ptr at [esp+4], value at [esp+8] on entry), cdecl, returns out ptr in eax.
+// Installs an SEH frame (handler 0x887089), stores zero/global into *out, calls ext_0049CFF0, then stores result.
+extern "C" void ext_0049CFF0();
+extern "C" __declspec(naked) void* __cdecl fn_0049D390(void* out, int val) {
+    __asm {
+        push -1
+        push 0x887089
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        xor eax, eax
+        mov dword ptr [esp], eax
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        mov dword ptr [esi], eax
+        mov ecx, dword ptr [mem_00B599BC]
+        mov dword ptr [esi + 0x4], ecx
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esp + 0x4], 0x1
+        call ext_0049CFF0
+        mov edx, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi + 0x4], eax
+        mov dword ptr [esi], edx
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
