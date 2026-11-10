@@ -1362,3 +1362,51 @@ done_00622700:
         ret
     }
 }
+
+// [0x00622D80] sub_00622D80 (82 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00622D80(void* first, void* last, void* dst) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je L_622DCF
+        lea ecx, [eax + 0xc]
+        lea edx, [esi + 0xc]
+        push ebx
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+L_622DA0:
+        test eax, eax
+        je L_622DBE
+        mov ebx, dword ptr [esi]
+        mov dword ptr [eax], ebx
+        fld dword ptr [edx - 0x8]
+        fstp dword ptr [ecx - 0x8]
+        fld dword ptr [edx - 0x4]
+        fstp dword ptr [ecx - 0x4]
+        fld dword ptr [edx]
+        fstp dword ptr [ecx]
+        fld dword ptr [edx + 0x4]
+        fstp dword ptr [ecx + 0x4]
+L_622DBE:
+        add esi, 0x14
+        add eax, 0x14
+        add ecx, 0x14
+        add edx, 0x14
+        cmp esi, edi
+        jne L_622DA0
+        pop ebx
+L_622DCF:
+        pop edi
+        pop esi
+        ret
+    }
+}
