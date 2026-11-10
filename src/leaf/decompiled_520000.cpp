@@ -154,3 +154,35 @@ extern "C" void __cdecl fn_00528D00(unsigned int* arr, int n) {
         arr[i] = ext_00528CD0(arr[i]);
     }
 }
+
+extern "C" int mem_00925134;
+
+// [0x005245D0] sub_005245D0 (52 bytes)
+extern "C" __declspec(naked) double __fastcall fn_005245D0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je L_bad
+        mov eax, dword ptr [esi + 0xc]
+        sub eax, ecx
+        sar eax, 0x3
+        cmp edi, eax
+        jb L_ok
+    L_bad:
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esi + 0x8]
+        fld qword ptr [eax + 8*edi]
+        pop edi
+        pop esi
+        ret 0x4
+    L_ok:
+        fld qword ptr [ecx + 8*edi]
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
