@@ -1802,3 +1802,27 @@ extern "C" void __cdecl fn_007C9AE0(void* self, float a, float b, float c, float
     dst[2] = c;
     dst[3] = d;
 }
+
+// [0x007C8DC0] sub_007C8DC0 (74 bytes)
+extern "C" int mem_00925208;
+
+extern "C" void* __cdecl fn_007C8DC0(unsigned int a, unsigned int b) {
+    unsigned char* p = (unsigned char*)((void* (__cdecl*)(unsigned int))mem_00925208)(a + b + 8);
+    unsigned int pad;
+    if (p == 0) {
+        return 0;
+    }
+    pad = b - ((unsigned int)p % b);
+    if (pad == b) {
+        pad = 0;
+    }
+    if (pad < 8) {
+        do {
+            pad += b;
+        } while (pad < 8);
+    }
+    p += pad;
+    ((unsigned int*)p)[-1] = a;
+    ((unsigned int*)p)[-2] = pad;
+    return p;
+}
