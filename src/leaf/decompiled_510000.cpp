@@ -412,3 +412,23 @@ extern "C" __declspec(naked) void __cdecl fn_00519E10(char* dst, char* end, cons
         ret
     }
 }
+
+// [0x0051AA60] sub_0051AA60 (66 bytes)
+extern "C" void __cdecl fn_0051AA60(float* dst, unsigned int count, const float* src) {
+    if (count <= 0) {
+        return;
+    }
+    float* eax = dst + 3;
+    do {
+        if (dst != 0) {
+            dst[0] = src[0];
+            eax[-2] = src[1];
+            eax[-1] = src[2];
+            eax[0] = src[3];
+            eax[1] = src[4];
+        }
+        --count;
+        dst += 5;
+        eax += 5;
+    } while (count > 0);
+}
