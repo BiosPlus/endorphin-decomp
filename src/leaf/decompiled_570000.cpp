@@ -375,3 +375,36 @@ L_5774E9:
         ret
     }
 }
+
+// [0x0057BD30] sub_0057BD30 (68 bytes)
+// Fills [dst, dst_end) with copies of *src (0x3C-byte element: two chars + two std::string).
+extern "C" int mem_00924FDC;
+
+namespace {
+typedef void* (__thiscall *StrAssignFn0057BD30)(void* self, const void* rhs);
+
+struct Elem0057BD30 {
+    char a;
+    char b;
+    unsigned char pad0[2];
+    unsigned char s1[0x1C];
+    unsigned char s2[0x1C];
+};
+
+inline void str_assign0057BD30(void* dst, const void* src) {
+    (*(StrAssignFn0057BD30*)&mem_00924FDC)(dst, src);
+}
+}
+
+extern "C" void __cdecl fn_0057BD30(Elem0057BD30* dst, Elem0057BD30* dst_end, Elem0057BD30* src) {
+    if (dst == dst_end) {
+        return;
+    }
+    do {
+        dst->a = src->a;
+        dst->b = src->b;
+        str_assign0057BD30(dst->s1, src->s1);
+        str_assign0057BD30(dst->s2, src->s2);
+        ++dst;
+    } while (dst != dst_end);
+}
