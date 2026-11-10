@@ -678,3 +678,28 @@ skip_invalidate:
         ret 4
     }
 }
+
+// [0x006B2230] sub_006B2230 (53 bytes)
+extern "C" void ext_006B0C40();
+
+extern "C" __declspec(naked) void* __fastcall fn_006B2230(void* self, int edx_unused, int a0, unsigned char a1, unsigned char a2, unsigned char a3, unsigned char a4) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_006B0C40
+        mov cl, byte ptr [esp + 0xc]
+        mov al, byte ptr [esp + 0x10]
+        mov dl, byte ptr [esp + 0x14]
+        mov byte ptr [esi + 0x10], cl
+        mov cl, byte ptr [esp + 0x18]
+        mov byte ptr [esi + 0x12], al
+        mov dword ptr [esi], 0x9917d8
+        mov byte ptr [esi + 0x11], dl
+        mov byte ptr [esi + 0x13], cl
+        mov eax, esi
+        pop esi
+        ret 0x14
+    }
+}
