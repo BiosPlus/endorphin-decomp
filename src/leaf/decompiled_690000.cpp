@@ -3,6 +3,8 @@
 extern "C" void ext_0041A8B0();
 extern "C" void __fastcall ext_00680800(void* self);
 extern "C" void ext_006989B0();
+extern "C" void ext_0069B0C0();
+extern "C" void ext_0069B100();
 
 // [0x00698EC0] sub_00698EC0 (13 bytes)
 extern "C" __declspec(naked) void __stdcall fn_00698EC0(void* a1) {
@@ -627,6 +629,39 @@ extern "C" __declspec(naked) bool __cdecl fn_0069B0C0(char** pp, const char* lit
         pop esi
         xor al, al
         pop ebx
+        ret
+    }
+}
+
+// [0x0069B5A0] sub_0069B5A0 (63 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0069B5A0(void* a1, void* a2) {
+    __asm {
+        mov ecx, dword ptr [esp + 8]
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov eax, dword ptr [esi]
+        push ecx
+        lea edx, [esp + 0xc]
+        push edx
+        mov dword ptr [esp + 0x10], eax
+        call ext_0069B0C0
+        add esp, 8
+        test al, al
+        je fail_0069B5A0
+        mov ecx, dword ptr [esp + 8]
+        movzx eax, byte ptr [ecx]
+        push eax
+        call ext_0069B100
+        add esp, 4
+        test al, al
+        jne fail_0069B5A0
+        mov dword ptr [esi], ecx
+        mov al, 1
+        pop esi
+        ret
+fail_0069B5A0:
+        xor al, al
+        pop esi
         ret
     }
 }
