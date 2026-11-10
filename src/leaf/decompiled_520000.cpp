@@ -539,3 +539,39 @@ extern "C" void __fastcall fn_0052A0E0(char* self, int edx_unused, char* x) {
     *(char**)(n + 0x8) = x;
     *(char**)(x + 0x4) = n;
 }
+
+extern "C" int mem_00953474;
+extern "C" int mem_00953454;
+
+// [0x00528AE0] sub_00528AE0 (83 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00528AE0(void* self) {
+    __asm {
+        push -1
+        push 0x893e78
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], offset mem_00953474
+        mov eax, dword ptr [esi + 0x4]
+        xor ecx, ecx
+        cmp eax, ecx
+        mov dword ptr [esp + 0x10], ecx
+        je L_00528B1D
+        mov dword ptr [eax + 0x8], ecx
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1c]
+        call edx
+    L_00528B1D:
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi], offset mem_00953454
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
