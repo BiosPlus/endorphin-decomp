@@ -535,3 +535,22 @@ extern "C" __declspec(naked) void __fastcall fn_00540DD0(void* self) {
         ret 0x4
     }
 }
+
+// [0x005491B0] sub_005491B0 (58 bytes)
+extern "C" int mem_00AE5598;
+extern "C" int mem_00AE558C;
+extern "C" int mem_00AE5590;
+extern "C" int mem_00AE5594;
+
+extern "C" void* __fastcall fn_005491B0(char* self) {
+    if (*(int*)(self + 0xa0) != 0) {
+        if (!(mem_00AE5598 & 1)) {
+            mem_00AE5598 |= 1;
+            *(float*)&mem_00AE558C = 0.0f;
+            *(float*)&mem_00AE5590 = 0.0f;
+            *(float*)&mem_00AE5594 = 0.0f;
+        }
+        return (void*)&mem_00AE558C;
+    }
+    return self + 0x68;
+}
