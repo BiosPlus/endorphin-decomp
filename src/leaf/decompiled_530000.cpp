@@ -1043,3 +1043,45 @@ skip_release:
         jmp eax
     }
 }
+
+// [0x0053AFF0] sub_0053AFF0 (71 bytes)
+extern "C" void ext_006A5C62();
+extern "C" int mem_0095546C;
+extern "C" __declspec(naked) void __fastcall fn_0053AFF0(void* self) {
+    __asm {
+        push esi
+        push edi
+        push 0xc
+        mov edi, ecx
+        call ext_006A5C62
+        xor edx, edx
+        add esp, 0x4
+        cmp eax, edx
+        je short L_null
+        mov dword ptr [eax], offset mem_0095546C
+        mov dword ptr [eax + 0x8], edx
+        mov dword ptr [eax + 0x4], edx
+        mov esi, eax
+        jmp short L_store
+    L_null:
+        xor esi, esi
+    L_store:
+        mov ecx, dword ptr [edi + 0x38]
+        cmp esi, ecx
+        je short L_noold
+        cmp ecx, edx
+        je short L_noold
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+    L_noold:
+        mov dword ptr [edi + 0x38], esi
+        mov ecx, esi
+        mov eax, dword ptr [ecx]
+        pop edi
+        pop esi
+        mov eax, dword ptr [eax + 0x18]
+        jmp eax
+    }
+}
