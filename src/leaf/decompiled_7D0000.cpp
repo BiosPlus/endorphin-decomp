@@ -848,3 +848,33 @@ extern "C" __declspec(naked) void* __cdecl fn_007D4AA0(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x007DA820] sub_007DA820 (46 bytes)
+extern "C" void ext_007D4AA0();
+extern "C" __declspec(naked) void* __cdecl fn_007DA820(void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        push esi
+        je da820_zero
+        mov esi, dword ptr [esp + 8]
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    da820_loop:
+        mov ecx, dword ptr [eax + 0x14]
+        test byte ptr [ecx + 0x1c4], 2
+        je da820_done
+        push eax
+        push esi
+        call ext_007D4AA0
+        add esp, 8
+        test eax, eax
+        jne da820_loop
+    da820_zero:
+        xor eax, eax
+    da820_done:
+        pop esi
+        ret
+    }
+}
