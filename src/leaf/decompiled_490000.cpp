@@ -676,3 +676,39 @@ extern "C" __declspec(naked) void __fastcall fn_00493720(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004976D0] sub_004976D0 (71 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_004976D0(void* self, int edx_unused, const float* a1) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        fld dword ptr [edx]
+        fld dword ptr [ecx]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp SHORT L4976D0_fail
+        fld dword ptr [edx]
+        fld dword ptr [ecx + 0x8]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        jne SHORT L4976D0_fail
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [ecx + 0x4]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp SHORT L4976D0_fail
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [ecx + 0xc]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        jne SHORT L4976D0_fail
+        mov al, 0x1
+        ret 0x4
+    L4976D0_fail:
+        xor al, al
+        ret 0x4
+    }
+}
