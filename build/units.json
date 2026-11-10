@@ -57895,7 +57895,9 @@
       "0x00462A0F",
       "0x00462A17"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T07:10:57Z"
   },
   {
     "va": "0x00462A20",

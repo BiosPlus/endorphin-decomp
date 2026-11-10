@@ -1311,3 +1311,36 @@ extern "C" __declspec(naked) void __fastcall fn_0046FC10(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004629E0] sub_004629E0 (63 bytes)
+extern "C" void ext_004474F0();
+extern "C" int mem_009255E0;
+extern "C" int mem_00924FF0;
+
+extern "C" __declspec(naked) void __fastcall fn_004629E0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp+8]
+        test eax, eax
+        push esi
+        mov esi, ecx
+        je L_END_4629E0
+        cmp eax, 2
+        je L_STR_4629E0
+        push 4
+        push 0x938d28
+        push 0x938dd4
+        push 0
+        call dword ptr [mem_009255E0]
+        cmp eax, 6
+        jne L_END_4629E0
+L_STR_4629E0:
+        mov ecx, dword ptr [esp+8]
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [esi]
+        push eax
+        call ext_004474F0
+L_END_4629E0:
+        pop esi
+        ret 8
+    }
+}
