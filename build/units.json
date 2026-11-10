@@ -233255,7 +233255,9 @@
       "0x0057BBBD",
       "0x0057BBCA"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T14:08:39Z"
   },
   {
     "va": "0x0057BBE0",

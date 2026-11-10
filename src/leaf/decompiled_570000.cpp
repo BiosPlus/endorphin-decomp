@@ -689,3 +689,46 @@ extern "C" __declspec(naked) void* __cdecl fn_0057BC20(void* first, void* last, 
         ret
     }
 }
+
+// [0x0057BB90] sub_0057BB90 (79 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_0057BB90(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je done_0057BB90
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_0057BB90:
+        mov al, byte ptr [esi - 0x3c]
+        sub esi, 0x3c
+        sub edi, 0x3c
+        mov byte ptr [edi], al
+        mov cl, byte ptr [esi + 0x1]
+        lea edx, [esi + 0x4]
+        mov byte ptr [edi + 0x1], cl
+        push edx
+        lea ecx, [edi + 0x4]
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi + 0x20]
+        push eax
+        lea ecx, [edi + 0x20]
+        call dword ptr [mem_00924FDC]
+        cmp esi, ebx
+        jne loop_0057BB90
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    done_0057BB90:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
