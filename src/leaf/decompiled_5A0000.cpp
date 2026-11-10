@@ -374,3 +374,32 @@ extern "C" __declspec(naked) void* __fastcall fn_005ACB00(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x005ACD30] sub_005ACD30 (77 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_005ACD30(void* self, int edx_unused, int a1, int a2, const float* a3) {
+    __asm {
+        push esi
+        push 0x0
+        mov esi, ecx
+        call ext_006657F0
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x14], eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [esi], 0x95f5ac
+        mov dword ptr [esi + 0x10], 0x0
+        mov dword ptr [esi + 0x18], ecx
+        fld dword ptr [eax]
+        fstp dword ptr [esi + 0x20]
+        mov dword ptr [esi + 0x1c], 0x0
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esi + 0x24]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esi + 0x28]
+        fld dword ptr [eax + 0xc]
+        mov eax, esi
+        fstp dword ptr [esi + 0x2c]
+        pop esi
+        ret 0xc
+    }
+}
