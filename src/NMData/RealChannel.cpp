@@ -23,3 +23,48 @@ extern "C" __declspec(naked) void __fastcall fn_0051BEF0(void* self) {
         ret
     }
 }
+
+// [0x0051AB80] NMData::RealChannel::vfunc_7 (67 bytes)
+extern "C" __declspec(naked) float __fastcall fn_0051AB80(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x30]
+        test eax, eax
+        je L_zero
+        mov ecx, dword ptr [esi + 0x34]
+        sub ecx, eax
+        sar ecx, 0x3
+        jne L_main
+    L_zero:
+        fldz
+        pop esi
+        pop ecx
+        ret
+    L_main:
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push edi
+        mov edi, dword ptr [esi + 0x34]
+        cmp eax, edi
+        jbe L_chk1
+        call ebx
+    L_chk1:
+        cmp edi, dword ptr [esi + 0x30]
+        ja L_chk2
+        call ebx
+    L_chk2:
+        add edi, -8
+        cmp edi, dword ptr [esi + 0x34]
+        jb L_chk3
+        call ebx
+    L_chk3:
+        fld dword ptr [edi]
+        pop edi
+        pop ebx
+        pop esi
+        pop ecx
+        ret
+    }
+}
