@@ -289,3 +289,32 @@ extern "C" __declspec(naked) void __fastcall fn_005D1460(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005D05B0] sub_005D05B0 (86 bytes)
+extern "C" int mem_00B3F200;
+
+extern "C" __declspec(naked) float __fastcall fn_005D05B0(void* self) {
+    __asm {
+        push -1
+        push 0x008A5248
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x8
+        mov byte ptr [mem_00B3F200], 0x1
+        lea eax, [ecx + 0x26c]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        mov dword ptr [esp + 0x14], 0x0
+        call eax
+        fstp dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x4]
+        mov byte ptr [mem_00B3F200], 0x0
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x14
+        ret
+    }
+}
