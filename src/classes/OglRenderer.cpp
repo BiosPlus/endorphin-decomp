@@ -172,3 +172,23 @@ extern "C" __declspec(naked) void __fastcall fn_00533D10(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00533340] OglRenderer::vfunc_15 (53 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00533340(void* self, int edx_unused, float a1) {
+    __asm {
+        cmp byte ptr [ecx + 0x379], 0
+        fld dword ptr [esp + 0x4]
+        je L_else
+        fst dword ptr [ecx + 0x38c]
+        jmp L_join
+    L_else:
+        fst dword ptr [ecx + 0x37c]
+    L_join:
+        mov eax, dword ptr [ecx]
+        fstp dword ptr [ecx + 0x454]
+        mov edx, dword ptr [eax + 0x154]
+        mov byte ptr [ecx + 0x430], 1
+        call edx
+        ret 0x4
+    }
+}
