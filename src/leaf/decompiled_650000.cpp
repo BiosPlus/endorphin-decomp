@@ -828,3 +828,36 @@ extern "C" __declspec(naked) void __fastcall fn_0065D3F0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0065D140] sub_0065D140 (72 bytes)
+// Calls _aligned_malloc(arg1 << 6, 16); returns on success. On failure constructs a
+// std::exception-derived object (bad_alloc vtable) and throws it via CxxThrowException.
+extern "C" void ext_006A6DD2();
+extern "C" int mem_009252E4;
+extern "C" int mem_009252E0;
+
+extern "C" __declspec(naked) void __fastcall fn_0065D140(void* self, int edx_unused, int size, int unused) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0xc
+        shl eax, 0x6
+        push 0x10
+        push eax
+        call dword ptr [mem_009252E4]
+        add esp, 0x8
+        test eax, eax
+        jne done
+        push 0x1
+        push 0xa9ece4
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_009252E0]
+        push 0x9cdf94
+        lea ecx, [esp + 0x4]
+        push ecx
+        mov dword ptr [esp + 0x8], 0x928ec0
+        call ext_006A6DD2
+done:
+        add esp, 0xc
+        ret 0x8
+    }
+}
