@@ -381,3 +381,34 @@ extern "C" __declspec(naked) int __stdcall fn_00516EB0(int self) {
         ret 0x4
     }
 }
+
+// [0x00519E10] sub_00519E10 (61 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00519E10(char* dst, char* end, const float* src) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp edx, esi
+        je short done
+        mov ecx, dword ptr [esp + 0x10]
+        lea eax, [edx + 0xc]
+    loop_top:
+        fld dword ptr [ecx]
+        add edx, 0x14
+        fstp dword ptr [edx - 0x14]
+        add eax, 0x14
+        cmp edx, esi
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [eax - 0x1c]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [eax - 0x18]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax - 0x14]
+        fld dword ptr [ecx + 0x10]
+        fstp dword ptr [eax - 0x10]
+        jne short loop_top
+    done:
+        pop esi
+        ret
+    }
+}
