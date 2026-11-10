@@ -1004,3 +1004,42 @@ skip_release:
         jmp eax
     }
 }
+
+// [0x0053B040] sub_0053B040 (70 bytes)
+extern "C" int mem_009553F4;
+extern "C" __declspec(naked) void __fastcall fn_0053B040(void* self) {
+    __asm {
+        push esi
+        push edi
+        push 0x8
+        mov edi, ecx
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je short null_result
+        mov dword ptr [eax], offset mem_009553F4
+        mov dword ptr [eax + 0x4], 0xffffffff
+        mov esi, eax
+        jmp short store_result
+null_result:
+        xor esi, esi
+store_result:
+        mov ecx, dword ptr [edi + 0x38]
+        cmp esi, ecx
+        je short skip_release
+        test ecx, ecx
+        je short skip_release
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+skip_release:
+        mov dword ptr [edi + 0x38], esi
+        mov ecx, esi
+        mov eax, dword ptr [ecx]
+        pop edi
+        pop esi
+        mov eax, dword ptr [eax + 0x24]
+        jmp eax
+    }
+}
