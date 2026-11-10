@@ -241,3 +241,34 @@ extern "C" void* __fastcall fn_004D0010(void* self) {
     *(float*)(p + 0x48) = zero;
     return self;
 }
+
+// [0x004D3DE0] sub_004D3DE0 (57 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_00642680();
+extern "C" __declspec(naked) void __fastcall fn_004D3DE0(void* self, int edx_unused, int a1) {
+    __asm {
+        cmp byte ptr [esp + 0x4], 0
+        push edi
+        mov edi, ecx
+        je L_end
+        push ebx
+        push esi
+        call ext_00594000
+        mov ebx, dword ptr [eax + 0xf8]
+        xor esi, esi
+        cmp dword ptr [edi + 0x1ec], esi
+        jle L_pop
+    L_loop:
+        mov ecx, ebx
+        call ext_00642680
+        add esi, 1
+        cmp esi, dword ptr [edi + 0x1ec]
+        jl L_loop
+    L_pop:
+        pop esi
+        pop ebx
+    L_end:
+        pop edi
+        ret 4
+    }
+}

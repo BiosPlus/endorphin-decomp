@@ -133944,7 +133944,9 @@
       "0x004D3DED",
       "0x004D3E04"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:58:05Z"
   },
   {
     "va": "0x004D3E20",
