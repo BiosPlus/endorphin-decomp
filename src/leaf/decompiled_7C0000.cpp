@@ -1190,3 +1190,11 @@ extern "C" __declspec(naked) int __cdecl fn_007CCA20(void* a0, int a1, int a2, i
         ret
     }
 }
+
+// [0x007C6970] sub_007C6970 (63 bytes)
+extern "C" void __cdecl fn_007C6970(char* self, float a, float b, float c) {
+    *(float*)(self + 0x150) += a;
+    *(unsigned int*)(self + 0x1c4) |= 0x400;
+    *(float*)(self + 0x154) += b;
+    *(float*)(self + 0x158) += c;
+}
