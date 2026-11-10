@@ -510,3 +510,29 @@ extern "C" __declspec(naked) void __cdecl fn_007D8890(void) {
         ret
     }
 }
+
+// [0x007DB9E0] sub_007DB9E0 (51 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007DB9E0(void* self) {
+    __asm {
+        fldz
+        fst dword ptr [eax + 0x20]
+        fst dword ptr [eax + 0x10]
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [ecx + 0x8]
+        fchs
+        fstp dword ptr [eax + 0xc]
+        fld dword ptr [ecx + 0x4]
+        fchs
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [eax + 0x18]
+        fld dword ptr [ecx]
+        fstp dword ptr [eax + 0x14]
+        fld dword ptr [ecx]
+        fchs
+        fstp dword ptr [eax + 0x1c]
+        ret
+    }
+}
