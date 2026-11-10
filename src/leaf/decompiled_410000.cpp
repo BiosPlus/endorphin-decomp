@@ -980,3 +980,20 @@ extern "C" __declspec(naked) int __fastcall fn_0041B540(void* self) {
         ret 0xc
     }
 }
+
+// [0x004148B0] sub_004148B0 (56 bytes)
+extern "C" int mem_00925134;
+
+extern "C" void __cdecl fn_004148B0(unsigned int* c, int n) {
+    void (*invalid)() = (void (*)())mem_00925134;
+    if (c[0] == 0) {
+        invalid();
+    }
+    unsigned int* r = (unsigned int*)c[0];
+    unsigned int step = (unsigned int)n << 3;
+    unsigned int e = c[1] + step;
+    if (e > r[2] || e < r[1]) {
+        invalid();
+    }
+    c[1] += step;
+}
