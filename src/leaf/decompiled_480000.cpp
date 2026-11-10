@@ -512,3 +512,26 @@ done:
         ret
     }
 }
+
+// [0x0048C860] sub_0048C860 (49 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_00519CE0();
+extern "C" __declspec(naked) void __fastcall fn_0048C860(void* self) {
+    __asm {
+        mov eax, [ecx+0x34]
+        test eax, eax
+        push esi
+        lea esi, [ecx+4]
+        je skip
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    skip:
+        mov dword ptr [esi+0x30], 0
+        mov dword ptr [esi+0x34], 0
+        mov dword ptr [esi+0x38], 0
+        mov ecx, esi
+        pop esi
+        jmp ext_00519CE0
+    }
+}
