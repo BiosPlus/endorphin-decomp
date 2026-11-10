@@ -1085,3 +1085,25 @@ L_pos:
         ret
     }
 }
+
+// [0x007C6790] sub_007C6790 (57 bytes)
+extern "C" void __cdecl fn_007C6790(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    float z = 0.0f;
+    *(float*)(p + 0x10) = z;
+    *(float*)(p + 0x14) = z;
+    *(float*)(p + 0x18) = z;
+    *(unsigned int*)(p + 0x1c) = 0;
+    *(float*)(p + 0x20) = z;
+    *(float*)(p + 0x24) = z;
+    *(float*)(p + 0x28) = z;
+    *(unsigned int*)(p + 0x2c) = 0;
+    *(float*)(p + 0x30) = z;
+    *(float*)(p + 0x34) = z;
+    *(float*)(p + 0x38) = z;
+    *(unsigned int*)(p + 0x3c) = 0;
+    *(float*)(p + 0x40) = z;
+    *(float*)(p + 0x44) = z;
+    *(float*)(p + 0x48) = z;
+    *(unsigned int*)(p + 0x4c) = 0;
+}
