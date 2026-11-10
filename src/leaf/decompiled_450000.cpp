@@ -712,3 +712,32 @@ extern "C" bool __fastcall fn_0045BCF0(void* self) {
     int second = send(*(int*)((char*)self + 0x20), 0x110a, 0, 0);
     return first == second;
 }
+
+extern "C" int ext_00455F40();
+
+// [0x00456280] sub_00456280 (56 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00456280(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        cmp dword ptr [ecx + 0xdc], 0
+        jne ret_path
+        call ext_00455F40
+        test eax, eax
+        jne ret_path
+        mov eax, dword ptr [esp + 4]
+        lea edx, [eax - 0xa]
+        cmp edx, 7
+        ja ret_path
+        mov edx, dword ptr [ecx]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push esi
+        push eax
+        mov eax, dword ptr [edx + 0x184]
+        call eax
+        pop esi
+ret_path:
+        ret 0xc
+    }
+}
