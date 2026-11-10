@@ -356,3 +356,45 @@ extern "C" __declspec(naked) void* __cdecl fn_004A5A00(void* a1) {
         ret
     }
 }
+
+// [0x004A9760] sub_004A9760 (67 bytes)
+// __stdcall (ret 4): linear scan of a 0x1c-stride table at 0xADF238..0xADF28C comparing each
+// entry against the std::string argument via the imported basic_string operator== (mem_00924FC4).
+// Returns the index of the first match, or 1 if none matches.
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) int __stdcall fn_004A9760(const void* name) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, 0xadf238
+loop_top:
+        push ebx
+        push esi
+        call ebp
+        add esp, 0x8
+        test al, al
+        jne found
+        add esi, 0x1c
+        add edi, 0x1
+        cmp esi, 0xadf28c
+        jl loop_top
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        ret 0x4
+found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
