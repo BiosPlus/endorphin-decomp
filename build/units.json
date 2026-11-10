@@ -393042,7 +393042,9 @@
     "relocations": [
       "0x0065D583"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T03:57:13Z"
   },
   {
     "va": "0x0065D5B0",

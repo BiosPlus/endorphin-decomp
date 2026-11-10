@@ -428,3 +428,37 @@ extern "C" __declspec(naked) void __fastcall fn_0065D760(void* self, int edx_unu
         ret 0Ch
     }
 }
+
+// [0x0065D570] sub_0065D570 (50 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) int __fastcall fn_0065D570(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x68], 0
+        jne L_0065D570_nz
+        xor eax, eax
+        pop esi
+        ret
+L_0065D570_nz:
+        mov eax, dword ptr [esi + 0x64]
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push edi
+        mov edi, dword ptr [eax + 4]
+        cmp edi, eax
+        jne L_0065D570_a
+        call ebx
+L_0065D570_a:
+        cmp edi, dword ptr [esi + 0x64]
+        jne L_0065D570_b
+        call ebx
+L_0065D570_b:
+        mov eax, dword ptr [edi + 8]
+        pop edi
+        pop ebx
+        add eax, 1
+        pop esi
+        ret
+    }
+}
