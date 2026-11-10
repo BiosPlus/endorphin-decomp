@@ -1239,3 +1239,43 @@ extern "C" __declspec(naked) void __fastcall fn_0040BE90(void* self) {
         ret
     }
 }
+
+// [0x004060F0] sub_004060F0 (75 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __cdecl fn_004060F0(void* first, void* last, const void* src) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        cmp esi, dword ptr [esp + 0xc]
+        je done
+        push ebx
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        lea ebx, [edi + 0x4]
+        lea ebp, [edi + 0x20]
+    loop_top:
+        mov eax, dword ptr [edi]
+        push ebx
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esi], eax
+        call dword ptr [mem_00924FDC]
+        push ebp
+        lea ecx, [esi + 0x20]
+        call dword ptr [mem_00924FDC]
+        lea eax, [edi + 0x3c]
+        push eax
+        lea ecx, [esi + 0x3c]
+        call dword ptr [mem_00924FDC]
+        add esi, 0x58
+        cmp esi, dword ptr [esp + 0x18]
+        jne loop_top
+        pop edi
+        pop ebp
+        pop ebx
+    done:
+        pop esi
+        ret
+    }
+}
