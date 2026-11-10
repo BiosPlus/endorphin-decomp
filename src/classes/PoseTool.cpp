@@ -179,3 +179,14 @@ extern "C" __declspec(naked) void __fastcall fn_00545400(void* self) {
         ret 0xc
     }
 }
+
+// [0x00545200] PoseTool::vfunc_15 (62 bytes)
+extern "C" void ext_005434F0();
+extern "C" int __fastcall fn_00545200(void* self, int edx_unused, int a1, int a2, int a3) {
+    typedef int (__thiscall *Callee)(void*, int, int, int);
+    Callee f = (Callee)ext_005434F0;
+    if (!f(*(void**)((char*)self + 0xa0), a1, a2, a3)) {
+        f((char*)self + 0x254, a1, a2, a3);
+    }
+    return 1;
+}
