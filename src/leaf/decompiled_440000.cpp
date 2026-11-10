@@ -1303,3 +1303,33 @@ L_false:
         ret
     }
 }
+
+// [0x0044B560] sub_0044B560 (50 bytes)
+extern "C" void ext_004339B0();
+extern "C" void ext_006A6718();
+extern "C" int mem_00ACDB40;
+
+extern "C" __declspec(naked) void __fastcall fn_0044B560(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [mem_00ACDB40]
+        test ecx, ecx
+        je skip_first
+        push 0
+        call ext_004339B0
+    skip_first:
+        mov ecx, esi
+        call ext_006A6718
+        mov ecx, dword ptr [esi + 0x64]
+        test ecx, ecx
+        je skip_call
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 8]
+        call edx
+    skip_call:
+        mov dword ptr [esi + 0x64], 0
+        pop esi
+        ret
+    }
+}
