@@ -1546,3 +1546,57 @@ extern "C" __declspec(naked) void __fastcall fn_0048B730(void* self) {
         ret
     }
 }
+
+// [0x004890D0] sub_004890D0 (87 bytes)
+// Three-element sorting network over std::string refs (a=arg1, b=arg2, c=arg3) using a comparator
+// loaded from an IAT slot; swaps go through the MSVCP80 std::string::swap IAT slot.
+extern "C" int mem_00924EF4;
+extern "C" int mem_00924FBC;
+
+extern "C" __declspec(naked) void __cdecl fn_004890D0(std::string* a, std::string* b, std::string* c) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00924EF4]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push edi
+        push esi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_skip1
+        push edi
+        mov ecx, esi
+        call dword ptr [mem_00924FBC]
+    L_skip1:
+        mov ebp, dword ptr [esp + 0x1c]
+        push esi
+        push ebp
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_skip2
+        push esi
+        mov ecx, ebp
+        call dword ptr [mem_00924FBC]
+    L_skip2:
+        push edi
+        push esi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_skip3
+        push edi
+        mov ecx, esi
+        call dword ptr [mem_00924FBC]
+    L_skip3:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
