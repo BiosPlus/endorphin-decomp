@@ -67,3 +67,41 @@ extern "C" __declspec(naked) void __fastcall fn_0053E240(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0053A8E0] Primitives::Animation::vfunc_18 (75 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0053A8E0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        jne L_case_nonzero
+        mov eax, dword ptr [ecx + 0x1c]
+        and al, 0x8
+        xor ecx, ecx
+        cmp al, 0x8
+        setne cl
+        mov eax, ecx
+        ret 0x4
+    L_case_nonzero:
+        cmp eax, 0x1
+        jne L_case_not1
+        mov edx, dword ptr [ecx + 0x1c]
+        and dl, 0x8
+        xor eax, eax
+        cmp dl, 0x8
+        sete al
+        ret 0x4
+    L_case_not1:
+        cmp eax, 0x2
+        jne L_case_default
+        mov eax, dword ptr [ecx + 0x1c]
+        and eax, 0x18
+        xor ecx, ecx
+        cmp al, 0x18
+        sete cl
+        mov eax, ecx
+        ret 0x4
+    L_case_default:
+        xor eax, eax
+        ret 0x4
+    }
+}
