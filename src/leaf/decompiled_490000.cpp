@@ -498,3 +498,39 @@ extern "C" void* __fastcall fn_00493C60(void* self) {
     *(int*)(esi + 0x8) = 0;
     return esi;
 }
+
+// [0x0049BEE0] sub_0049BEE0 (57 bytes)
+// __cdecl (ret 0). Walks a singly linked list (next at +0) from node until end, calling vfunc[10] of the
+// embedded object at node+8 with a6; stops at the first hit. Writes {a2, found_node} to out.
+extern "C" __declspec(naked) void __cdecl fn_0049BEE0(int* out, void* a2, int* node, void* a4, int* end, void* a6) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        nop
+    L_loop:
+        cmp esi, ebx
+        je L_done
+        mov eax, dword ptr [esi + 0x8]
+        mov edx, dword ptr [eax + 0x28]
+        lea ecx, [esi + 0x8]
+        push edi
+        call edx
+        test al, al
+        jne L_done
+        mov esi, dword ptr [esi]
+        jmp L_loop
+    L_done:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        pop esi
+        mov dword ptr [eax], ecx
+        pop ebx
+        ret
+    }
+}
