@@ -398,3 +398,20 @@ found:
         ret 0x4
     }
 }
+
+// [0x004AB940] sub_004AB940 (68 bytes)
+extern "C" unsigned int* __cdecl fn_004AB940(unsigned int* first, unsigned int* last, const unsigned int* val) {
+    int count = (int)(last - first);
+    unsigned int* it = first;
+    while (count > 0) {
+        int half = count / 2;
+        unsigned int* mid = it + half;
+        if (*mid < *val) {
+            it = mid + 1;
+            count -= half + 1;
+        } else {
+            count = half;
+        }
+    }
+    return it;
+}
