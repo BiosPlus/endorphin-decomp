@@ -407,3 +407,34 @@ extern "C" bool __fastcall fn_004B78E0(void* self, int edx_unused, void* a1, voi
     float* p = *(float**)a1;
     return *p == r;
 }
+
+// [0x004B7180] ExprParser::PrimitiveProxyType<float>::vfunc_2 (57 bytes)
+// One stack argument (pointer to a pointer to a float). Loads the float,
+// compares against 0.0; adds (non-negative) or subtracts (negative) the
+// double constant at 0x00993828, then tail-calls sub_006A6DE0 with the
+// result left on the x87 stack. ret 4.
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __fastcall fn_004B7180(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        fld dword ptr [ecx]
+        fstp dword ptr [esp + 0x4]
+        fldz
+        fld dword ptr [esp + 0x4]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        jne short neg_path
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        ret 0x4
+neg_path:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        ret 0x4
+    }
+}
