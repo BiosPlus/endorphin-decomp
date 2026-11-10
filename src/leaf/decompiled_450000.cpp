@@ -1106,3 +1106,40 @@ done:
         ret 0xc
     }
 }
+
+// [0x004562F0] sub_004562F0 (77 bytes)
+// __thiscall, ret 0xc: if this->[0xdc] != 0, ClientToScreen(this->[0x20], &POINT{arg1, arg2})
+// then calls vtable[0x18c](&POINT) on this; finally tail-calls thunk 0x006A5EA8 with ecx = this.
+extern "C" void ext_006A5EA8();
+extern "C" int mem_00925630;
+
+extern "C" __declspec(naked) void __fastcall fn_004562F0(void* self, int edx_unused, int a0, int a1, int a2) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0xdc], 0
+        je skip
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x18]
+        lea edx, [esp + 4]
+        mov dword ptr [esp + 4], eax
+        mov eax, dword ptr [esi + 0x20]
+        push edx
+        push eax
+        mov dword ptr [esp + 0x10], ecx
+        call dword ptr [mem_00925630]
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 0x18c]
+        lea eax, [esp + 4]
+        push eax
+        mov ecx, esi
+        call edx
+    skip:
+        mov ecx, esi
+        call ext_006A5EA8
+        pop esi
+        add esp, 8
+        ret 0xc
+    }
+}
