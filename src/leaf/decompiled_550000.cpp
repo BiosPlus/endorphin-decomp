@@ -876,3 +876,41 @@ L_done:
         ret
     }
 }
+
+// [0x005528F0] sub_005528F0 (76 bytes)
+extern "C" int mem_00AF7D00;
+extern "C" __declspec(naked) void* __fastcall fn_005528F0(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        xor ebx, ebx
+        mov esi, offset mem_00AF7D00 + 1
+        mov al, 0xff
+        __asm _emit 0x8D __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x00 // lea esp, [esp]
+    L_5528F0_outer:
+        xor edi, edi
+    L_5528F0_inner:
+        mov edx, edi
+        xor edx, ebx
+        shr edx, 3
+        and edx, 1
+        imul edx, edx, 0xff
+        mov byte ptr [esi - 1], dl
+        mov byte ptr [esi], dl
+        mov byte ptr [esi + 1], dl
+        mov byte ptr [esi + 2], al
+        add edi, 1
+        add esi, 4
+        cmp edi, 0x100
+        jl L_5528F0_inner
+        add ebx, 1
+        cmp esi, offset mem_00AF7D00 + 0x40001
+        jl L_5528F0_outer
+        pop edi
+        pop esi
+        mov eax, ecx
+        pop ebx
+        ret
+    }
+}
