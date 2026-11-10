@@ -541,7 +541,9 @@
       "0x00401A3A",
       "0x00401A4A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:57:47Z"
   },
   {
     "va": "0x00401A60",
