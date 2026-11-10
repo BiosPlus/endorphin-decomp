@@ -102,3 +102,32 @@ extern "C" __declspec(naked) void __fastcall fn_007E51F0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x007E5240] sub_007E5240 (60 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007E5240(float* out, const float* src, int idx) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        fldz
+        push esi
+        push edi
+        mov edi, dword ptr [esp+0x14]
+        mov ecx, edi
+        fstp dword ptr [eax+4*edi]
+        mov edx, 1
+        shl edx, cl
+        mov esi, 1
+        pop edi
+        and edx, 3
+        mov ecx, edx
+        shl esi, cl
+        mov ecx, dword ptr [esp+0xc]
+        and esi, 3
+        fld dword ptr [ecx+4*esi]
+        fstp dword ptr [eax+4*edx]
+        fld dword ptr [ecx+4*edx]
+        fchs
+        fstp dword ptr [eax+4*esi]
+        pop esi
+        ret
+    }
+}
