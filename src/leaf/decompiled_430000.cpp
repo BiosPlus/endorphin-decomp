@@ -2711,3 +2711,42 @@ extern "C" __declspec(naked) void __fastcall fn_00430AA0(void* self) {
         jmp eax
     }
 }
+
+// [0x0043D7C0] sub_0043D7C0 (61 bytes)
+// Stack args: arg1 = first, arg2 = last, arg3 = value. Walks p from last-4 down to first: push p, ecx = value - (last - p), call [mem_009244D4] (callee cleans the pushed arg). Returns value - (last - first) in eax.
+extern "C" int mem_009244D4;
+extern "C" __declspec(naked) int __fastcall fn_0043D7C0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov eax, esi
+        sub eax, edi
+        sar eax, 2
+        add eax, eax
+        add eax, eax
+        mov ebp, ebx
+        sub ebp, eax
+        cmp edi, esi
+        je done
+        sub ebx, esi
+    loop_top:
+        sub esi, 4
+        push esi
+        lea ecx, [ebx + esi]
+        call dword ptr [mem_009244D4]
+        cmp esi, edi
+        jne loop_top
+    done:
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+    }
+}
