@@ -509,3 +509,37 @@ extern "C" void __fastcall fn_006A8610(char* self, int edx_unused, int a1, int a
     }
     ((CallFn006A8610)ext_006A5EA8)(self);
 }
+
+// [0x006ACE40] sub_006ACE40 (67 bytes)
+extern "C" void ext_00626440();
+extern "C" void ext_006A7C40();
+
+extern "C" __declspec(naked) void __fastcall fn_006ACE40(void* self, int edx_unused, int* a1, const int* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [eax + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [eax]
+        mov dword ptr [esi], ecx
+        mov ecx, dword ptr [eax + 0x8]
+        mov dword ptr [esi + 0x4], edx
+        mov edx, dword ptr [eax + 0xc]
+        mov dword ptr [esi + 0x8], ecx
+        mov ecx, dword ptr [edi + 0x14]
+        mov dword ptr [esi + 0xc], edx
+        call ext_00626440
+        mov ecx, dword ptr [edi + 0x14]
+        add eax, 0x1
+        add dword ptr [esi], eax
+        call ext_006A7C40
+        add eax, dword ptr [esi]
+        pop edi
+        mov dword ptr [esi + 0x8], eax
+        mov eax, esi
+        pop esi
+        ret 0x8
+    }
+}
