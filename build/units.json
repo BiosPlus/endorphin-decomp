@@ -180660,7 +180660,9 @@
       "0x0051A013",
       "0x0051A018"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:08:47Z"
   },
   {
     "va": "0x0051A050",
