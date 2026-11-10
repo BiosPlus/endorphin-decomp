@@ -637,3 +637,45 @@ extern "C" __declspec(naked) void* __fastcall fn_0050C480(void* self) {
         ret
     }
 }
+
+// [0x00508BC0] sub_00508BC0 (70 bytes)
+extern "C" int mem_00925134;
+
+// [0x00508BC0] sub_00508BC0 (70 bytes)
+// __thiscall, ret 4: clears this+0x34, then if idx < element count of the vector at this+0x28..0x2c
+// loads element[idx] into this+0x34; out-of-range/null bounds call _invalid_parameter_noinfo (mem_00925134).
+extern "C" __declspec(naked) void __fastcall fn_00508BC0(void* self, int edx_unused, unsigned int idx) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi + 0x34], 0
+        mov ecx, dword ptr [esi + 0x28]
+        test ecx, ecx
+        je m508_done
+        mov eax, dword ptr [esi + 0x2c]
+        sub eax, ecx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        sar eax, 0x2
+        cmp edi, eax
+        jae m508_pop
+        test ecx, ecx
+        je m508_bad
+        mov eax, dword ptr [esi + 0x2c]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb m508_ok
+    m508_bad:
+        call dword ptr [mem_00925134]
+    m508_ok:
+        mov eax, dword ptr [esi + 0x28]
+        mov ecx, dword ptr [eax + 4 * edi]
+        mov dword ptr [esi + 0x34], ecx
+    m508_pop:
+        pop edi
+    m508_done:
+        pop esi
+        ret 4
+    }
+}
