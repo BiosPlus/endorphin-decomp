@@ -756,3 +756,21 @@ extern "C" __declspec(naked) void __cdecl fn_007D59C0(void* self) {
         ret
     }
 }
+
+// [0x007D5B60] sub_007D5B60 (61 bytes)
+extern "C" int __cdecl fn_007D5B60(void* self, void* out_a, void* out_b) {
+    unsigned char* p = (unsigned char*)self;
+    if (!(p[0x24] & 1)) {
+        return 0;
+    }
+    float* f = (float*)self;
+    float* a = (float*)out_a;
+    float* b = (float*)out_b;
+    a[0] = f[2];
+    a[1] = f[3];
+    a[2] = f[4];
+    b[0] = f[5];
+    b[1] = f[6];
+    b[2] = f[7];
+    return 1;
+}
