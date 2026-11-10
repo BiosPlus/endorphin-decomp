@@ -459,3 +459,25 @@ L_null3:
         ret
     }
 }
+
+// [0x006203B0] sub_006203B0 (56 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006203B0(void* self) {
+    __asm {
+        push -1
+        push 0x008A6088
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xC], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr [eax], 0x976C34
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
