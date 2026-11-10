@@ -1894,3 +1894,39 @@ extern "C" __declspec(naked) int __fastcall fn_004646B0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0067ADE0();
+extern "C" void ext_0067AE70();
+
+// [0x0046F980] sub_0046F980 (85 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0046F980(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x152], 0
+        je L_done
+        push edi
+        lea edi, [esi + 0x154]
+        mov ecx, edi
+        call ext_0065C640
+        mov ecx, edi
+        mov byte ptr [esi + 0x150], 0
+        call ext_0065C650
+        lea ecx, [esi + 0x128]
+        call ext_0067ADE0
+        test al, al
+        pop edi
+        je L_fail
+        mov byte ptr [esi + 0x152], 0
+        pop esi
+        ret
+    L_fail:
+        mov eax, dword ptr [esi + 0x14c]
+        push eax
+        lea ecx, [esi + 0x160]
+        call ext_0067AE70
+    L_done:
+        pop esi
+        ret
+    }
+}
