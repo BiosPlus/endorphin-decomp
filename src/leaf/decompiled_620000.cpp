@@ -411,3 +411,24 @@ skip:
         jmp ext_005FF040
     }
 }
+
+// [0x0062CCF0] sub_0062CCF0 (54 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0062CCF0(void* self) {
+    __asm {
+        push esi
+        __asm _emit 0x8B __asm _emit 0xF1 // mov esi, ecx
+        __asm _emit 0xC7 __asm _emit 0x06 __asm _emit 0xA4 __asm _emit 0x91 __asm _emit 0x97 __asm _emit 0x00 // mov dword ptr [esi], 0x9791a4
+        __asm _emit 0x8B __asm _emit 0x46 __asm _emit 0x2C // mov eax, dword ptr [esi + 0x2c]
+        __asm _emit 0x85 __asm _emit 0xC0 // test eax, eax
+        __asm _emit 0x74 __asm _emit 0x09 // je +9
+        __asm _emit 0x50 // push eax
+        call ext_006A5C5C
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04 // add esp, 0x4
+        __asm _emit 0xC7 __asm _emit 0x46 __asm _emit 0x2C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [esi + 0x2c], 0
+        __asm _emit 0xC7 __asm _emit 0x46 __asm _emit 0x30 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [esi + 0x30], 0
+        __asm _emit 0xC7 __asm _emit 0x46 __asm _emit 0x34 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [esi + 0x34], 0
+        __asm _emit 0x8B __asm _emit 0xCE // mov ecx, esi
+        pop esi
+        jmp ext_005FF040
+    }
+}

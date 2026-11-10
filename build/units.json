@@ -356438,7 +356438,9 @@
       "0x0062CD02",
       "0x0062CD22"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:23:33Z"
   },
   {
     "va": "0x0062CD30",
