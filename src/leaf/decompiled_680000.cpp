@@ -569,3 +569,39 @@ extern "C" __declspec(naked) void __cdecl fn_00687890(void* first, void* last, c
         ret
     }
 }
+
+// [0x006821D0] sub_006821D0 (69 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_006821D0(void* self, int edx_unused, unsigned int index) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x14]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je L_bad
+        mov ecx, dword ptr [esi + 0x18]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb L_ok
+    L_bad:
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov ecx, dword ptr [esi + 0x14]
+        lea eax, [8*edi]
+        sub eax, edi
+        pop edi
+        lea eax, [ecx + 4*eax]
+        pop esi
+        ret 0x4
+    }
+}
