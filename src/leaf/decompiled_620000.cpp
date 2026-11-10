@@ -481,3 +481,38 @@ extern "C" __declspec(naked) void __fastcall fn_006203B0(void* self) {
         ret
     }
 }
+
+// [0x00624F10] sub_00624F10 (57 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00624F10(void* self, int edx_unused, const unsigned int* key) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [eax + 0x4]
+        cmp byte ptr [ecx + 0x19], 0x0
+        jne done
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, dword ptr [edi]
+    loop_top:
+        mov edx, dword ptr [ecx + 0xc]
+        cmp esi, edx
+        ja go_right
+        jb go_left
+        mov edx, dword ptr [ecx + 0x10]
+        cmp edx, dword ptr [edi + 0x4]
+        jae go_left
+    go_right:
+        mov ecx, dword ptr [ecx + 0x8]
+        jmp check_nil
+    go_left:
+        mov eax, ecx
+        mov ecx, dword ptr [ecx]
+    check_nil:
+        cmp byte ptr [ecx + 0x19], 0x0
+        je loop_top
+        pop edi
+        pop esi
+    done:
+        ret 0x4
+    }
+}
