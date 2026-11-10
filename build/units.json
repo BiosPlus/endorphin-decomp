@@ -265026,7 +265026,9 @@
       "0x005B1A02",
       "0x005B1A0C"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-sonnet-5.5",
+    "matched_at": "2026-11-10T03:46:44Z"
   },
   {
     "va": "0x005B1A30",

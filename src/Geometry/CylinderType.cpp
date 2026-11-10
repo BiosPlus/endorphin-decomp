@@ -22,3 +22,26 @@ extern "C" __declspec(naked) void __fastcall fn_005B1050(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" void ext_005B11E0();
+extern "C" int mem_009576E8;
+
+// [0x005B19F0] Geometry::CylinderType::vfunc_3 (49 bytes)
+extern "C" __declspec(naked) float __fastcall fn_005B19F0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        push 0
+        call ext_005B11E0
+        fstp dword ptr [esp + 4]
+        push 1
+        call ext_005B11E0
+        fld dword ptr [esp + 4]
+        fld qword ptr [mem_009576E8]
+        fmul st, st(1)
+        fmulp st(1), st
+        fmulp st(1), st
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 4]
+        ret 4
+    }
+}
