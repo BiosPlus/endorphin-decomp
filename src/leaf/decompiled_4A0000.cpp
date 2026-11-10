@@ -288,3 +288,26 @@ extern "C" __declspec(naked) void __fastcall fn_004A6020(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x004A5FE0] sub_004A5FE0 (64 bytes)
+// __fastcall-style, ret 0: allocates 0xB0 bytes via 0x006A5C62 (cdecl), zeroes the dwords at +0, +4 and +8
+// (each store guarded by a null test), sets byte +0xAC to 1 and byte +0xAD to 0, and returns the block pointer.
+extern "C" void* __cdecl ext_006A5C62(int size);
+
+extern "C" void* __fastcall fn_004A5FE0(void* self) {
+    void* p = ext_006A5C62(0xB0);
+    if (p) {
+        *(int*)p = 0;
+    }
+    void* q = (char*)p + 4;
+    if (q) {
+        *(int*)q = 0;
+    }
+    void* r = (char*)p + 8;
+    if (r) {
+        *(int*)r = 0;
+    }
+    ((unsigned char*)p)[0xAC] = 1;
+    ((unsigned char*)p)[0xAD] = 0;
+    return p;
+}
