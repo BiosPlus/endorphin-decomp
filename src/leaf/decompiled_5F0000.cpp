@@ -126,3 +126,17 @@ extern "C" void __fastcall fn_005F53A0(char* self, int edx_unused, float value) 
         child[4] = 1;
     }
 }
+
+// [0x005F05E0] sub_005F05E0 (52 bytes)
+extern "C" void ext_005EF450();
+extern "C" __declspec(naked) void __fastcall fn_005F05E0(void* self) {
+    __asm {
+        mov dword ptr [ecx], 0x96ba3c
+        mov dword ptr [ecx + 0x4], 0x96b9f4
+        mov dword ptr [ecx + 0x8], 0x96b9b4
+        mov dword ptr [ecx + 0xc], 0x96b964
+        mov dword ptr [ecx + 0x150], 0x96b950
+        mov dword ptr [ecx + 0x154], 0x96b948
+        jmp ext_005EF450
+    }
+}
