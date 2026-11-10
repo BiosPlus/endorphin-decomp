@@ -118,3 +118,43 @@ done:
         ret 0x8
     }
 }
+
+// [0x006C3C10] sub_006C3C10 (80 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_006C3C10(void* out, const double* a, const double* b) {
+    __asm {
+        sub esp, 8
+        mov ecx, dword ptr [esp+0x14]
+        mov eax, dword ptr [esp+0x10]
+        fld qword ptr [ecx]
+        fmul qword ptr [eax+0x10]
+        fld qword ptr [ecx+0x10]
+        fmul qword ptr [eax]
+        fsubp st(1), st
+        fld qword ptr [ecx+0x8]
+        fmul qword ptr [eax]
+        fld qword ptr [eax+0x8]
+        fmul qword ptr [ecx]
+        fsubp st(1), st
+        _emit 0xdd
+        _emit 0x5c
+        _emit 0x24
+        _emit 0x00
+        fld qword ptr [ecx+0x10]
+        fmul qword ptr [eax+0x8]
+        fld qword ptr [ecx+0x8]
+        fmul qword ptr [eax+0x10]
+        mov eax, dword ptr [esp+0xc]
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        mov edx, dword ptr [esp+0x4]
+        fsubp st(1), st
+        mov dword ptr [eax+0x10], ecx
+        mov dword ptr [eax+0x14], edx
+        fstp qword ptr [eax]
+        fstp qword ptr [eax+0x8]
+        add esp, 8
+        ret
+    }
+}
