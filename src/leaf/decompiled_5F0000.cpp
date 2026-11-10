@@ -140,3 +140,17 @@ extern "C" __declspec(naked) void __fastcall fn_005F05E0(void* self) {
         jmp ext_005EF450
     }
 }
+
+// [0x005F09E0] sub_005F09E0 (52 bytes)
+extern "C" void ext_005EF450();
+extern "C" __declspec(naked) void __fastcall fn_005F09E0(void* self) {
+    __asm {
+        mov dword ptr [ecx], 0x95a52c
+        mov dword ptr [ecx + 0x4], 0x95a4e4
+        mov dword ptr [ecx + 0x8], 0x95a4a4
+        mov dword ptr [ecx + 0xc], 0x95a454
+        mov dword ptr [ecx + 0x150], 0x95a440
+        mov dword ptr [ecx + 0x154], 0x95a438
+        jmp ext_005EF450
+    }
+}
