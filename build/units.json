@@ -91071,7 +91071,9 @@
       "0x00495A7A",
       "0x00495A82"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:54:52Z"
   },
   {
     "va": "0x00495AB0",
