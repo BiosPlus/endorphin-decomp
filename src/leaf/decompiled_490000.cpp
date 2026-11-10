@@ -436,3 +436,22 @@ extern "C" __declspec(naked) int __fastcall fn_004925D0(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x00490690] sub_00490690 (54 bytes)
+extern "C" void* __cdecl fn_00490690(void* first, void* last, void* dest) {
+    // copy [first, last) of 8-byte elements to dest, return dest end
+    unsigned int* src = (unsigned int*)first;
+    unsigned int* end = (unsigned int*)last;
+    unsigned int* d = (unsigned int*)dest;
+    int count = ((char*)end - (char*)src) >> 3;
+    unsigned int* result = d + count * 2;
+    if (src != end) {
+        do {
+            d[0] = src[0];
+            d[1] = src[1];
+            src += 2;
+            d += 2;
+        } while (src != end);
+    }
+    return result;
+}
