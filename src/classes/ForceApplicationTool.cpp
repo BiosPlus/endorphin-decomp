@@ -104,3 +104,23 @@ extern "C" __declspec(naked) void __fastcall fn_005441C0(void* self) {
         ret 0x8
     }
 }
+
+// [0x005440F0] ForceApplicationTool::vfunc_16 (63 bytes)
+extern "C" void ext_00543530();
+
+extern "C" int __fastcall fn_005440F0(void* self, int edx_unused, int a1, int a2) {
+    typedef int (__thiscall *SubFn)(void*, int, int);
+    typedef void (__thiscall *VFunc1)(void*, int, int);
+    typedef void (__thiscall *VFunc2)(void*);
+    char* s = (char*)self;
+    int r = ((SubFn)ext_00543530)(*(void**)(s + 0xac), a1, a2);
+    if (r >= 0) {
+        void** vt = *(void***)self;
+        VFunc1 f = (VFunc1)vt[0x70 / 4];
+        f(self, a1, r);
+    }
+    void** vt2 = *(void***)(*(void**)(s + 0x88));
+    VFunc2 g = (VFunc2)vt2[0x50 / 4];
+    g(*(void**)(s + 0x88));
+    return 1;
+}
