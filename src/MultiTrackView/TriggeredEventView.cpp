@@ -29,3 +29,38 @@ extern "C" __declspec(naked) void __fastcall fn_004602B0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0043CAB0] MultiTrackView::TriggeredEventView::vfunc_69 (66 bytes)
+extern "C" void ext_0041C710();
+extern "C" void ext_006A5DB2();
+extern "C" __declspec(naked) void __fastcall fn_0043CAB0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, 0x2a3
+        mov esi, ecx
+        jne short L_43CAD6
+        lea ecx, [esi + 0x64]
+        call ext_0041C710
+        test al, al
+        je short L_43CAD6
+        pop edi
+        mov eax, 1
+        pop esi
+        ret 0x10
+L_43CAD6:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push eax
+        push ecx
+        push edx
+        push edi
+        mov ecx, esi
+        call ext_006A5DB2
+        pop edi
+        pop esi
+        ret 0x10
+    }
+}
