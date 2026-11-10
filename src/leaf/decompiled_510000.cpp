@@ -962,3 +962,54 @@ extern "C" __declspec(naked) void* __cdecl fn_0051A670(void* first, void* last, 
         ret
     }
 }
+
+// [0x0051DF60] sub_0051DF60 (81 bytes)
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) void* __cdecl fn_0051DF60(void* first, void* last, const std::string* key) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebp
+        je L_ret_first
+        push ebx
+        mov ebx, dword ptr [mem_00924FC4]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_loop:
+        mov eax, dword ptr [esi + 0x154]
+        lea ecx, [eax + 0x8]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x4]
+        push edi
+        call edx
+        push eax
+        call ebx
+        add esp, 0x8
+        test al, al
+        jne L_found
+        add esi, 0x168
+        cmp esi, ebp
+        jne L_loop
+    L_found:
+        pop edi
+        pop ebx
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret
+    L_ret_first:
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret
+    }
+}
