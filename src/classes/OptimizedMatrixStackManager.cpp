@@ -71,3 +71,27 @@ extern "C" __declspec(naked) void __fastcall fn_0054E9F0(void* self) {
         jmp eax
     }
 }
+
+// [0x0054EFC0] OptimizedMatrixStackManager::vfunc_0 (46 bytes)
+extern "C" void ext_0054ECB0();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_0054EFC0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea ecx, [esi + 0xc]
+        mov dword ptr [esi + 0x20], 0x956f94
+        call ext_0054ECB0
+        test byte ptr [esp + 0x8], 0x1
+        mov dword ptr [esi], 0x956f94
+        je L_skip
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    L_skip:
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
