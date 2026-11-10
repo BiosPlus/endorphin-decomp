@@ -182241,7 +182241,9 @@
       "0x0051C5BA",
       "0x0051C5C4"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:12:19Z"
   },
   {
     "va": "0x0051C5F0",

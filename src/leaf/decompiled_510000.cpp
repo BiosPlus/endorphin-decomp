@@ -538,3 +538,33 @@ L_005191A5:
         jmp ext_0050F990
     }
 }
+
+// [0x0051C5A0] sub_0051C5A0 (71 bytes)
+extern "C" void ext_00519C80();
+
+extern "C" __declspec(naked) void __fastcall fn_0051C5A0(void* self) {
+    __asm {
+        push -1
+        push 0x00892EB8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_00519C80
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi], 0x00952574
+        xor eax, eax
+        mov dword ptr [esi + 0x30], eax
+        mov dword ptr [esi + 0x34], eax
+        mov dword ptr [esi + 0x38], eax
+        mov dword ptr [esi + 0x3C], eax
+        mov dword ptr [esi + 0x40], eax
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
