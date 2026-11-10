@@ -273,3 +273,24 @@ extern "C" void __fastcall fn_00630CB0(void* self, int edx_unused, float a1) {
     *reinterpret_cast<float*>(esi + 0x17c) = ext_00594070(eax);
     *reinterpret_cast<float*>(esi + 0xf0) = a1;
 }
+
+extern "C" int mem_00940694;
+
+// [0x0063DB50] sub_0063DB50 (38 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0063DB50(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0062CD30
+        fldz
+        mov dword ptr [esi], 979364h
+        fst dword ptr [esi + 44h]
+        fst dword ptr [esi + 40h]
+        mov eax, esi
+        fstp dword ptr [esi + 3ch]
+        fld dword ptr [mem_00940694]
+        fstp dword ptr [esi + 48h]
+        pop esi
+        ret
+    }
+}
