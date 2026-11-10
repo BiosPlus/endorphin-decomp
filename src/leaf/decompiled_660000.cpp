@@ -907,3 +907,49 @@ extern "C" __declspec(naked) void* __cdecl fn_00662B20(void* out, void* s) {
         ret
     }
 }
+
+// [0x00664B50] sub_00664B50 (67 bytes)
+#include <ctype.h>
+extern "C" int mem_009252F4;
+
+extern "C" __declspec(naked) char* __cdecl fn_00664B50(const char* src, const char* end, char* dst) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je L_done_00664B50
+        push ebp
+        mov ebp, dword ptr [mem_009252F4]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+L_loop_00664B50:
+        movsx eax, byte ptr [esi]
+        push eax
+        call ebp
+        mov byte ptr [edi], al
+        add esi, 0x1
+        add esp, 0x4
+        add edi, 0x1
+        cmp esi, ebx
+        jne L_loop_00664B50
+        mov eax, edi
+        pop edi
+        pop ebp
+        pop esi
+        pop ebx
+        ret
+L_done_00664B50:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
