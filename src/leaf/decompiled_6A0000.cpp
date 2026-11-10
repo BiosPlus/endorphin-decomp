@@ -602,3 +602,38 @@ extern "C" __declspec(naked) void __fastcall fn_006A7FF0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006ACE90] sub_006ACE90 (74 bytes)
+extern "C" int mem_0092563C;
+extern "C" __declspec(naked) void* __stdcall fn_006ACE90(void* dst, const void* src) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov dword ptr [esi], ecx
+        mov ecx, dword ptr [eax + 0x8]
+        mov dword ptr [esi + 0x4], edx
+        mov edx, dword ptr [eax + 0xc]
+        push edi
+        mov edi, dword ptr [mem_0092563C]
+        mov dword ptr [esi + 0x8], ecx
+        mov dword ptr [esi + 0xc], edx
+        add dword ptr [esi + 0x4], 0x1
+        add dword ptr [esi + 0x8], -0x4
+        push 0x47
+        call edi
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        push 0x48
+        mov dword ptr [esi], ecx
+        call edi
+        add eax, dword ptr [esi + 0x4]
+        pop edi
+        mov dword ptr [esi + 0xc], eax
+        mov eax, esi
+        pop esi
+        ret 0x8
+    }
+}
