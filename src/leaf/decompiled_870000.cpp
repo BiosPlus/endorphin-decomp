@@ -316,3 +316,38 @@ extern "C" __declspec(naked) void __fastcall fn_00870F40(void* self) {
         ret 0x4
     }
 }
+
+// [0x00870F90] sub_00870F90 (74 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00870F90(int* out) {
+    __asm {
+        call ext_00870E90
+        mov dl, al
+        sub dl, 0x30
+        cmp dl, 0x9
+        jbe parse_digits_00870FA4
+        xor al, al
+        ret 4
+    parse_digits_00870FA4:
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov dword ptr [esi], 0
+        nop
+    loop_00870FB0:
+        mov dl, al
+        sub dl, 0x30
+        cmp dl, 0x9
+        ja done_00870FCF
+        mov edx, dword ptr [esi]
+        movsx eax, al
+        lea edx, [edx + 4*edx]
+        lea edx, [eax + 2*edx - 0x30]
+        mov dword ptr [esi], edx
+        call ext_00870E90
+        jmp loop_00870FB0
+    done_00870FCF:
+        call ext_00870EF0
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
