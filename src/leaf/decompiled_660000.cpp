@@ -953,3 +953,17 @@ L_done_00664B50:
         ret
     }
 }
+
+// [0x00664BA0] sub_00664BA0 (67 bytes)
+extern "C" int mem_009252F8;
+extern "C" char* __cdecl fn_00664BA0(const char* first, const char* last, char* dst) {
+    if (first != last) {
+        int (__cdecl *tolower_fp)(int) = (int (__cdecl *)(int))mem_009252F8;
+        do {
+            *dst = (char)tolower_fp((int)*first);
+            ++first;
+            ++dst;
+        } while (first != last);
+    }
+    return dst;
+}
