@@ -381524,7 +381524,9 @@
     "relocations": [
       "0x0064CC7F"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:24:40Z"
   },
   {
     "va": "0x0064CC90",
