@@ -47,3 +47,31 @@ extern "C" float __fastcall fn_007E4740(float* self) {
     float s = self[1] * self[1] + self[0] * self[0] + self[2] * self[2];
     return (float)sqrt(s);
 }
+
+// [0x007EC6E0] sub_007EC6E0 (55 bytes)
+extern "C" int mem_0099EC8C;
+
+extern "C" __declspec(naked) void __cdecl fn_007EC6E0() {
+    __asm {
+        fld dword ptr [esp+4]
+        fld st(0)
+        fabs
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        fcomp dword ptr [mem_0099EC8C]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_nonzero
+        fld1
+        fdivrp st(1), st
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        ret
+    L_nonzero:
+        fstp st(0)
+        fldz
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        ret
+    }
+}
