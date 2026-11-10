@@ -397,3 +397,36 @@ extern "C" __declspec(naked) void __fastcall fn_004FA1B0(void* self) {
         __asm _emit 0xC3 // ret
     }
 }
+
+// [0x004FA1F0] VMCSModes::DefaultImplementation::vfunc_137 (58 bytes)
+extern "C" void ext_005B11F0();
+
+extern "C" __declspec(naked) bool __fastcall fn_004FA1F0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8]
+        mov ecx, dword ptr [eax + 0x14]
+        mov ecx, dword ptr [ecx + 0x34]
+        call ext_005B11F0
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x18]
+        call eax
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        jne short L_nonempty
+        xor eax, eax
+        test eax, eax
+        setne cl
+        mov al, cl
+        ret
+    L_nonempty:
+        mov eax, dword ptr [eax + 0x8]
+        sub eax, ecx
+        sar eax, 2
+        xor ecx, ecx
+        test eax, eax
+        setne cl
+        mov al, cl
+        ret
+    }
+}
