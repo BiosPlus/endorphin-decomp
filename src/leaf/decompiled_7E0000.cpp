@@ -160,3 +160,39 @@ extern "C" __declspec(naked) void __cdecl fn_007E5280(float* a1, int a2) {
         ret
     }
 }
+
+// [0x007E4870] sub_007E4870 (81 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007E4870(void* self, int edx_unused, const void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        fld dword ptr [ecx+0x10]
+        fmul dword ptr [eax+4]
+        mov edx, dword ptr [esp+8]
+        fld dword ptr [eax]
+        fmul dword ptr [ecx]
+        faddp st(1), st
+        fld dword ptr [ecx+0x20]
+        fmul dword ptr [eax+8]
+        faddp st(1), st
+        fstp dword ptr [edx]
+        fld dword ptr [ecx+4]
+        fmul dword ptr [eax]
+        fld dword ptr [ecx+0x14]
+        fmul dword ptr [eax+4]
+        faddp st(1), st
+        fld dword ptr [ecx+0x24]
+        fmul dword ptr [eax+8]
+        faddp st(1), st
+        fstp dword ptr [edx+4]
+        fld dword ptr [ecx+8]
+        fmul dword ptr [eax]
+        fld dword ptr [ecx+0x18]
+        fmul dword ptr [eax+4]
+        faddp st(1), st
+        fld dword ptr [ecx+0x28]
+        fmul dword ptr [eax+8]
+        faddp st(1), st
+        fstp dword ptr [edx+8]
+        ret 8
+    }
+}
