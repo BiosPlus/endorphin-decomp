@@ -15,5 +15,7 @@
     "0x006E775C",
     "0x006E776C"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T14:54:07Z"
 }
