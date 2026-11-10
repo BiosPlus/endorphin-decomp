@@ -1689,3 +1689,49 @@ extern "C" void __fastcall fn_0041A0A0(void* self, int edx_unused, void* a1) {
     *(char**)(eax + 8) = node;
     *(char**)(node + 4) = eax;
 }
+
+// [0x0041CF50] sub_0041CF50 (85 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0041CF50(void* self, int edx_unused, void* other) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        cmp esi, edi
+        je done_0041CF50
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je skip_release_0041CF50
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x78]
+        push esi
+        call edx
+skip_release_0041CF50:
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [esi + 0x4], eax
+        cmp dword ptr [edi + 0x4], 0
+        lea eax, [esp + 0xc]
+        je zero_0041CF50
+        mov ecx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push edi
+        push eax
+        call edx
+        mov eax, dword ptr [eax]
+        mov dword ptr [esi], eax
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+zero_0041CF50:
+        mov dword ptr [esp + 0xc], 0
+        mov eax, dword ptr [eax]
+        mov dword ptr [esi], eax
+done_0041CF50:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
