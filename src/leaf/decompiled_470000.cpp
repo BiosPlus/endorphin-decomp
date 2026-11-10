@@ -303,3 +303,24 @@ extern "C" __declspec(naked) void* __cdecl fn_004788D0(void* first, void* last, 
         ret
     }
 }
+
+// [0x00477A30] sub_00477A30 (68 bytes)
+struct Lb477A30Elem { unsigned int key; unsigned int val; };
+extern "C" Lb477A30Elem* __cdecl fn_00477A30(Lb477A30Elem* first, Lb477A30Elem* last, const unsigned int* value) {
+    int n = (int)(last - first);
+    Lb477A30Elem* f = first;
+    if (n > 0) {
+        unsigned int v = *value;
+        do {
+            int half = n / 2;
+            Lb477A30Elem* mid = f + half;
+            if (mid->key < v) {
+                f = mid + 1;
+                n = n - half - 1;
+            } else {
+                n = half;
+            }
+        } while (n > 0);
+    }
+    return f;
+}
