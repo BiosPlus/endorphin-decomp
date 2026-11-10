@@ -878,3 +878,23 @@ extern "C" __declspec(naked) void* __cdecl fn_007DA820(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x007DFD30] sub_007DFD30 (65 bytes)
+typedef void (__cdecl *Fn007DFD30Cb)(void*);
+extern "C" void __cdecl fn_007DFD30(void* self) {
+    char* esi = (char*)self;
+    char* edi = *(char**)(*(char**)esi);
+    Fn007DFD30Cb cb0 = *(Fn007DFD30Cb*)(esi + 0x14);
+    if (cb0) {
+        cb0(esi);
+    }
+    Fn007DFD30Cb cb1 = *(Fn007DFD30Cb*)(edi + 0x90);
+    if (cb1) {
+        cb1(esi);
+    }
+    Fn007DFD30Cb cb2 = *(Fn007DFD30Cb*)(edi + 0x94);
+    if (cb2) {
+        cb2(esi);
+    }
+    *(void**)(esi + 0x14) = 0;
+}
