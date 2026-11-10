@@ -416,3 +416,38 @@ extern "C" __declspec(naked) void __fastcall fn_00543E00(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00540D20] sub_00540D20 (56 bytes)
+extern "C" int mem_00924FC0;
+extern "C" int mem_00A44BB8;
+extern "C" __declspec(naked) unsigned char __stdcall fn_00540D20(const void* s) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00924FC0]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, offset mem_00A44BB8
+    loop_top:
+        mov eax, dword ptr [esi]
+        push eax
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        jne found
+        add esi, 0x4
+        cmp esi, offset mem_00A44BB8 + 0x1c
+        jl loop_top
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    found:
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret 0x4
+    }
+}
