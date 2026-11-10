@@ -1166,3 +1166,41 @@ extern "C" __declspec(naked) void* __fastcall fn_0040B2B0(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0040C330] sub_0040C330 (73 bytes)
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_0040C330(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0
+        push 0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xa4]
+        push 0x18b
+        push eax
+        call edi
+        cmp eax, 2
+        push 0
+        jl short neg_branch_0040C330
+        mov ecx, dword ptr [esi + 0xa4]
+        push 1
+        push 0x186
+        push ecx
+        call edi
+        pop edi
+        pop esi
+        ret
+    neg_branch_0040C330:
+        mov edx, dword ptr [esi + 0xa4]
+        push -1
+        push 0x186
+        push edx
+        call edi
+        pop edi
+        pop esi
+        ret
+    }
+}
