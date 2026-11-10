@@ -702,3 +702,20 @@ loc_005331DE:
         ret
     }
 }
+
+// [0x005396E0] sub_005396E0 (51 bytes)
+extern "C" void ext_00532B60();
+extern "C" void* __cdecl ext_0063E000();
+extern "C" void ext_0063E00C();
+extern "C" void ext_0063E012();
+
+extern "C" void* __fastcall fn_005396E0(void* self) {
+    typedef void (__stdcall *QuadricArgFn)(void*, int);
+    typedef void (__fastcall *InitFn)(void*);
+    ((InitFn)ext_00532B60)(self);
+    *(void**)self = (void*)0x95517c;
+    ((void**)self)[6] = ext_0063E000();
+    ((QuadricArgFn)ext_0063E012)(((void**)self)[6], 0x186ac);
+    ((QuadricArgFn)ext_0063E00C)(((void**)self)[6], 0x186a0);
+    return self;
+}
