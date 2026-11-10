@@ -155,3 +155,36 @@ extern "C" __declspec(naked) void __fastcall fn_00585170(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00593D00] AnimatableTransform::vfunc_2_off_4 (60 bytes)
+extern "C" void ext_00661B10();
+extern "C" void ext_0053E290();
+extern "C" __declspec(naked) void* __fastcall fn_00593D00(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x1c]
+        push edi
+        call edx
+        test al, al
+        je L_fail
+        mov edi, dword ptr [esp + 0xc]
+        mov ecx, edi
+        call ext_00661B10
+        test al, al
+        jne L_fail
+        mov eax, dword ptr [esi + 0xe4]
+        push eax
+        mov ecx, edi
+        call ext_0053E290
+        pop edi
+        pop esi
+        ret 0x4
+    L_fail:
+        mov eax, dword ptr [esi + 0xe0]
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
