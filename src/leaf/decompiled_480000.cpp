@@ -1000,3 +1000,49 @@ L_0048D337:
         ret
     }
 }
+
+// [0x00487C00] sub_00487C00 (70 bytes)
+extern "C" int mem_00924EF4;
+
+extern "C" __declspec(naked) void* __fastcall fn_00487C00(void* self, int edx_unused, const void* key) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        push esi
+        mov esi, dword ptr [eax + 0x4]
+        cmp byte ptr [esi + 0x69], 0x0
+        push edi
+        mov edi, eax
+        jne done_early
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        mov ebp, dword ptr [mem_00924EF4]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    loop_top:
+        lea eax, [esi + 0xc]
+        push ebx
+        push eax
+        call ebp
+        add esp, 0x8
+        test al, al
+        je go_left
+        mov esi, dword ptr [esi + 0x8]
+        jmp loop_check
+    go_left:
+        mov edi, esi
+        mov esi, dword ptr [esi]
+    loop_check:
+        cmp byte ptr [esi + 0x69], 0x0
+        je loop_top
+        pop ebp
+        mov eax, edi
+        pop ebx
+    done_early:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
