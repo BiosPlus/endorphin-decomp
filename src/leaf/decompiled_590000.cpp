@@ -299,3 +299,37 @@ extern "C" float __fastcall fn_005963B0(void* self) {
     int n = ((Callee2)ext_00596330)(self);
     return (float)((double)n * d);
 }
+
+extern "C" int mem_00B40644;
+extern "C" int mem_00925134;
+
+// [0x00596370] sub_00596370 (53 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00596370(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [mem_00B40644]
+        add esi, 0x8
+        cmp dword ptr [esi], 0x0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne skip1
+        call edi
+    skip1:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esi + 0x4]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne skip2
+        call edi
+    skip2:
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [edx + 0x8]
+        test eax, eax
+        pop edi
+        pop esi
+        jne dec1
+        ret
+    dec1:
+        add eax, -1
+        ret
+    }
+}
