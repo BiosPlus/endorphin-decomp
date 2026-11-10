@@ -288,3 +288,14 @@ extern "C" __declspec(naked) int __fastcall fn_00596330(void* self) {
         ret
     }
 }
+
+// [0x005963B0] sub_005963B0 (51 bytes)
+extern "C" void ext_00596330();
+extern "C" void ext_00661A40();
+extern "C" float __fastcall fn_005963B0(void* self) {
+    typedef double (__fastcall *Callee1)(void*);
+    typedef int (__fastcall *Callee2)(void*);
+    double d = ((Callee1)ext_00661A40)((char*)self + 0x168);
+    int n = ((Callee2)ext_00596330)(self);
+    return (float)((double)n * d);
+}
