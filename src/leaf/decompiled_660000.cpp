@@ -699,3 +699,23 @@ extern "C" __declspec(naked) int __fastcall fn_00661B10(void* self) {
         ret
     }
 }
+
+// [0x00668CD0] sub_00668CD0 (56 bytes)
+extern "C" void ext_00555470();
+
+extern "C" void* __fastcall fn_00668CD0(void* self) {
+    unsigned int edi = (unsigned int)self;
+    unsigned int esi = edi + 4;
+    *(unsigned int*)edi = 0x00987A44;
+    unsigned int eax = ((unsigned int (__fastcall*)(unsigned int))ext_00555470)(esi);
+    *(unsigned int*)(esi + 4) = eax;
+    *(unsigned char*)(eax + 0x39) = 1;
+    eax = *(unsigned int*)(esi + 4);
+    *(unsigned int*)(eax + 4) = eax;
+    eax = *(unsigned int*)(esi + 4);
+    *(unsigned int*)eax = eax;
+    eax = *(unsigned int*)(esi + 4);
+    *(unsigned int*)(eax + 8) = eax;
+    *(unsigned int*)(esi + 8) = 0;
+    return self;
+}
