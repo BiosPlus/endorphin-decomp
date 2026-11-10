@@ -36,3 +36,30 @@ extern "C" void __fastcall fn_0066B7C0(void* self, int edx_unused, float** dst, 
     d[2] = v[2];
     d[3] = v[3];
 }
+
+// [0x0066B860] ExprParser::Vector4Type::vfunc_43 (57 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0066B860(void* self, int edx_unused, float** dst, char* src) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 18h]
+        call eax
+        mov ecx, dword ptr [esp + 4]
+        mov ecx, dword ptr [ecx]
+        fld dword ptr [ecx]
+        fadd dword ptr [eax]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 4]
+        fadd dword ptr [ecx + 4]
+        fstp dword ptr [ecx + 4]
+        fld dword ptr [eax + 8]
+        fadd dword ptr [ecx + 8]
+        fstp dword ptr [ecx + 8]
+        fld dword ptr [eax + 0Ch]
+        fadd dword ptr [ecx + 0Ch]
+        fstp dword ptr [ecx + 0Ch]
+        ret 8
+    }
+}
