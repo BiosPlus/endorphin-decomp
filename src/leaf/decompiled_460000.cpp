@@ -1260,3 +1260,28 @@ extern "C" void* __stdcall fn_0046A490(int a1, int a2, int a3, int* a4, unsigned
     }
     return p;
 }
+
+// [0x004690F0] sub_004690F0 (60 bytes)
+extern "C" void ext_004FFF70();
+extern "C" __declspec(naked) void __fastcall fn_004690F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_004690C0
+        test al, al
+        je short ret_path
+        mov esi, dword ptr [esi + 0x28]
+        call ext_00594000
+        mov eax, dword ptr [eax + 0x270]
+        mov ecx, dword ptr [eax + 0x140]
+        mov dword ptr [ecx + 0x18], esi
+        call ext_00594000
+        mov edx, dword ptr [eax + 0x270]
+        mov ecx, dword ptr [edx + 0x140]
+        pop esi
+        jmp ext_004FFF70
+ret_path:
+        pop esi
+        ret
+    }
+}
