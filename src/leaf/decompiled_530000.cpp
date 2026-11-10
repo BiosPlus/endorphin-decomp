@@ -840,3 +840,38 @@ L_53403C:
         ret 4
     }
 }
+
+// [0x00533F10] sub_00533F10 (61 bytes)
+extern "C" int mem_00925400;
+extern "C" int mem_009253FC;
+
+extern "C" __declspec(naked) void __fastcall fn_00533F10(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x10]
+        sub eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esi + 0x8]
+        push eax
+        mov eax, dword ptr [esi + 0x4]
+        push ecx
+        push edx
+        push eax
+        call dword ptr [mem_00925400]
+        mov ecx, dword ptr [esi + 0x10]
+        sub ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [esi + 0xc]
+        sub edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [esi + 0x8]
+        push ecx
+        mov ecx, dword ptr [esi + 0x4]
+        push edx
+        push eax
+        push ecx
+        call dword ptr [mem_009253FC]
+        pop esi
+        ret
+    }
+}

@@ -196132,7 +196132,9 @@
       "0x00533F2B",
       "0x00533F47"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T06:45:30Z"
   },
   {
     "va": "0x00533F50",
