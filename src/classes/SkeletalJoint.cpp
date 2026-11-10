@@ -99,3 +99,14 @@ extern "C" void __fastcall fn_0064E360(void* self, int edx_unused, int a1) {
     int b = ((int (__cdecl*)(int))ext_007D8700)(*(int*)((char*)self + 0x64));
     ((void (__cdecl*)(int, int, int))ext_007C93A0)(b, 0, a1);
 }
+
+// [0x0064E9E0] SkeletalJoint::vfunc_17 (55 bytes)
+extern "C" void __fastcall fn_0064E9E0(void* self, int edx_unused, float* out) {
+    char* p = (char*)self;
+    out[0] = *(float*)(p + 0x70);
+    out[1] = *(float*)(p + 0x74);
+    out[2] = *(float*)(p + 0x78);
+    out[0] = out[0] / *(float*)(p + 0x7C);
+    out[1] = out[1] / *(float*)(p + 0x80);
+    out[2] = out[2] / *(float*)(p + 0x84);
+}
