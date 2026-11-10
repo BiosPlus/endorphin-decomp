@@ -329,3 +329,31 @@ extern "C" __declspec(naked) int __cdecl fn_0069B100(char c) {
         ret
     }
 }
+
+// [0x00698B50] sub_00698B50 (49 bytes)
+extern "C" void ext_00698AB0();
+extern "C" __declspec(naked) void __fastcall fn_00698B50(void* self, int edx_unused, char** p, float* out) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push edi
+        mov esi, ecx
+        call ext_00698AB0
+        mov ebx, dword ptr [esp + 0x14]
+        push edi
+        fstp dword ptr [ebx]
+        mov ecx, esi
+        call ext_00698AB0
+        fstp dword ptr [ebx + 0x4]
+        push edi
+        mov ecx, esi
+        call ext_00698AB0
+        fstp dword ptr [ebx + 0x8]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
