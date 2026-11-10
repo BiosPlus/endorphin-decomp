@@ -34,3 +34,25 @@ extern "C" __declspec(naked) float __stdcall fn_005B1990(void* self) {
         ret 0x4
     }
 }
+
+// [0x005B1700] Geometry::SphereType::vfunc_5 (50 bytes)
+extern "C" int mem_009576E8;
+
+extern "C" __declspec(naked) float __stdcall fn_005B1700(void* self, int a1) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push 0x0
+        call ext_005B11E0
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fld qword ptr [mem_009576E8]
+        fmul st, st(1)
+        fmulp st(1), st
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fabs
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret 0x8
+    }
+}
