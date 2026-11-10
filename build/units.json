@@ -576582,7 +576582,9 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-sonnet-5.5",
+    "matched_at": "2026-11-10T03:42:31Z"
   },
   {
     "va": "0x007CCD10",

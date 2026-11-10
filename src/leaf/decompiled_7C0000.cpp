@@ -927,3 +927,28 @@ extern "C" void __cdecl fn_007CC4E0(int unused, const float* src, float* dst) {
         dst[2] = 1.0f;
     }
 }
+
+// [0x007CCCD0] sub_007CCCD0 (49 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007CCCD0(char* p, float a) {
+    __asm {
+        fldz
+        fld dword ptr [esp+8]
+        fcom st(1)
+        fnstsw ax
+        test ah, 5
+        jp L1
+        mov eax, dword ptr [esp+4]
+        fstp st(0)
+        fstp dword ptr [esp+8]
+        fld dword ptr [esp+8]
+        fst dword ptr [eax+0x20]
+        fstp dword ptr [eax+0x2c]
+        ret
+    L1:
+        mov eax, dword ptr [esp+4]
+        fstp st(1)
+        fst dword ptr [eax+0x20]
+        fstp dword ptr [eax+0x2c]
+        ret
+    }
+}
