@@ -1190,3 +1190,32 @@ extern "C" __declspec(naked) void* __cdecl fn_0049D390(void* out, int val) {
         ret
     }
 }
+
+// [0x0049DAA0] sub_0049DAA0 (87 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00ADD830;
+extern "C" int mem_00ADD82C;
+
+extern "C" __declspec(naked) void* __fastcall fn_0049DAA0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x88703e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00ADD830], al
+        jne L_done
+        or dword ptr [mem_00ADD830], eax
+        mov ecx, offset mem_00ADD82C
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov dword ptr [mem_00ADD82C], 0x9400fc
+    L_done:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00ADD82C
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
