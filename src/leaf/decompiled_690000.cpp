@@ -915,3 +915,61 @@ extern "C" int* __cdecl fn_00692070(int* first, int* last, const int* value, boo
     }
     return first;
 }
+
+// [0x00698840] sub_00698840 (87 bytes)
+// find_first_of-style search: returns the first index >= start in self's buffer
+// (data at +0, length at +4) whose byte appears in the NUL-terminated set `chars`, else -1.
+extern "C" __declspec(naked) int __fastcall fn_00698840(void* self, int edx_unused, const char* chars, int start) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov eax, ebp
+        push edi
+        lea esi, [eax + 0x1]
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_len:
+        mov dl, byte ptr [eax]
+        add eax, 0x1
+        test dl, dl
+        jne short L_len
+        mov edi, dword ptr [ecx + 0x4]
+        sub eax, esi
+        mov esi, dword ptr [esp + 0x18]
+        cmp esi, edi
+        jge short L_notfound
+        mov ebx, dword ptr [ecx]
+    L_outer:
+        mov dl, byte ptr [ebx + esi]
+        xor ecx, ecx
+        test eax, eax
+        jle short L_next
+    L_inner:
+        cmp dl, byte ptr [ecx + ebp]
+        je short L_found
+        add ecx, 0x1
+        cmp ecx, eax
+        jl short L_inner
+    L_next:
+        add esi, 0x1
+        cmp esi, edi
+        jl short L_outer
+    L_notfound:
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -0x1
+        pop ebx
+        ret 0x8
+    L_found:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
