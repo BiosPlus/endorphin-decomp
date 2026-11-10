@@ -653,3 +653,28 @@ extern "C" int __fastcall fn_0045DB50(void* self) {
     return self == &mem_00B53A34 || self == &mem_00B53B30 || self == &mem_00B53AB0 ||
            self == &mem_00B53A70 || self == &mem_00B53AF0;
 }
+
+// [0x0045B4F0] sub_0045B4F0 (50 bytes)
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_0045B4F0(void* self) {
+    __asm {
+        push esi
+        push 0x0
+        push 0x0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x1a8]
+        push 0xf0
+        push eax
+        call dword ptr [mem_00925694]
+        mov ecx, dword ptr [esi + 0x88]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x88]
+        cmp eax, 0x1
+        sete al
+        push eax
+        call edx
+        pop esi
+        ret
+    }
+}
