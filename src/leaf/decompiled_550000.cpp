@@ -1226,3 +1226,21 @@ extern "C" __declspec(naked) void __fastcall fn_00559800(void* self) {
         ret
     }
 }
+
+// [0x00553230] sub_00553230 (87 bytes)
+extern "C" double mem_009576F0;
+extern "C" void __fastcall fn_00553230(int* self, int edx_unused, float* out, float x, float y, float z) {
+    int mode = self[0x28 / 4];
+    if (mode == 0) {
+        x = (float)(x * mem_009575A0);
+        y = (float)(y * mem_009575A0);
+        z = (float)(z * mem_009575A0);
+    } else if (mode == 2) {
+        x = (float)(x * mem_009576F0);
+        y = (float)(y * mem_009576F0);
+        z = (float)(z * mem_009576F0);
+    }
+    out[0] = x;
+    out[1] = y;
+    out[2] = z;
+}
