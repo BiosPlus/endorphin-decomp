@@ -162,3 +162,42 @@ extern "C" void* __cdecl fn_004A9720(int idx, void* dst) {
     }
     return ((StrAssignFn)mem_00924FD4)(dst, (const void*)&mem_00928B5D);
 }
+
+// [0x004A96E0] sub_004A96E0 (60 bytes)
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void __cdecl fn_004A96E0(const void* name) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, 0xadf300
+loop_top:
+        push ebx
+        push esi
+        call ebp
+        add esp, 0x8
+        test al, al
+        jne found
+        add esi, 0x1c
+        add edi, 0x1
+        cmp esi, 0xadf354
+        jl loop_top
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
