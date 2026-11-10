@@ -649,3 +649,32 @@ extern "C" void __fastcall fn_006B67A0(char* self, int edx_unused, unsigned int 
         mem_00925618(*(void**)(self + 0xc8), 0x100, a1, (long)(((unsigned int)a3 << 16) | a2));
     }
 }
+
+// [0x006B53D0] sub_006B53D0 (49 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" void ext_006AD0D0();
+extern "C" int mem_00925688;
+
+extern "C" __declspec(naked) void __fastcall fn_006B53D0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x64], 0
+        je skip_invalidate
+        mov ecx, dword ptr [esi + 0x58]
+        call ext_006AD0D0
+        test al, al
+        jne skip_invalidate
+        push 1
+        mov byte ptr [esi + 0x64], al
+        mov eax, dword ptr [esi + 0x20]
+        push 0
+        push eax
+        call dword ptr [mem_00925688]
+skip_invalidate:
+        mov ecx, esi
+        call ext_006A5EA8
+        pop esi
+        ret 4
+    }
+}
