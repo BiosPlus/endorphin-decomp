@@ -345419,7 +345419,9 @@
       "0x0061D285",
       "0x0061D28E"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:15:50Z"
   },
   {
     "va": "0x0061D2A0",
