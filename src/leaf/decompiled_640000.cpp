@@ -947,3 +947,38 @@ done:
         ret
     }
 }
+
+// [0x0064C900] sub_0064C900 (67 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0064C900(void* dst, unsigned int count, const void* src) {
+    __asm {
+        mov edx, dword ptr [esp + 8]
+        test edx, edx
+        jbe done
+        mov ecx, dword ptr [esp + 0Ch]
+        mov eax, dword ptr [esp + 4]
+        push esi
+    loop_top:
+        test eax, eax
+        je skip
+        mov esi, dword ptr [ecx]
+        mov dword ptr [eax], esi
+        mov esi, dword ptr [ecx + 4]
+        mov dword ptr [eax + 4], esi
+        mov esi, dword ptr [ecx + 8]
+        mov dword ptr [eax + 8], esi
+        mov esi, dword ptr [ecx + 0Ch]
+        mov dword ptr [eax + 0Ch], esi
+        mov esi, dword ptr [ecx + 10h]
+        mov dword ptr [eax + 10h], esi
+        mov esi, dword ptr [ecx + 14h]
+        mov dword ptr [eax + 14h], esi
+    skip:
+        sub edx, 1
+        add eax, 18h
+        test edx, edx
+        ja loop_top
+        pop esi
+    done:
+        ret
+    }
+}
