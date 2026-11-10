@@ -397,3 +397,37 @@ extern "C" int __cdecl fn_0069B140(char c) {
     }
     return 0;
 }
+
+// [0x00698200] sub_00698200 (54 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __cdecl fn_00698200(void* first, void* last, const void* value) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebp
+        je done
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        lea ebx, [edi + 0x1c]
+    loop_top:
+        push edi
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        push ebx
+        lea ecx, [esi + 0x1c]
+        call dword ptr [mem_00924FDC]
+        add esi, 0x38
+        cmp esi, ebp
+        jne loop_top
+        pop edi
+        pop ebx
+    done:
+        pop esi
+        pop ebp
+        ret
+    }
+}

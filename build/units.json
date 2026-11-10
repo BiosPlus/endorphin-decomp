@@ -431184,7 +431184,9 @@
       "0x0069821C",
       "0x00698226"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:17:01Z"
   },
   {
     "va": "0x00698240",
