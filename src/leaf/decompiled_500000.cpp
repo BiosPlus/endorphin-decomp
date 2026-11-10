@@ -609,3 +609,31 @@ early_ret:
         ret
     }
 }
+
+// [0x0050C480] sub_0050C480 (68 bytes)
+extern "C" void ext_00661980();
+extern "C" __declspec(naked) void* __fastcall fn_0050C480(void* self) {
+    __asm {
+        push -1
+        push 0x00891E68
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_00661980
+        mov ecx, dword ptr [esp + 0x8]
+        xor eax, eax
+        mov dword ptr [esi], 0x00950314
+        mov dword ptr [esi + 0x8], eax
+        mov dword ptr [esi + 0xC], eax
+        mov dword ptr [esi + 0x10], eax
+        mov dword ptr [esi + 0x14], eax
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}

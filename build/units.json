@@ -171559,7 +171559,9 @@
       "0x0050C49A",
       "0x0050C4A6"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:30:42Z"
   },
   {
     "va": "0x0050C4D0",
