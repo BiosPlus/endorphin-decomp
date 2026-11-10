@@ -386,3 +386,14 @@ extern "C" __declspec(naked) int __fastcall fn_0069B640(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x0069B140] sub_0069B140 (53 bytes)
+extern "C" int __cdecl fn_0069B140(char c) {
+    if ((c != 0 && c >= 'A' && c <= 'Z') ||
+        (c >= 'a' && c <= 'z') ||
+        (c >= '0' && c <= '9') ||
+        c == '.' || c == '_' || c == '$') {
+        return 1;
+    }
+    return 0;
+}
