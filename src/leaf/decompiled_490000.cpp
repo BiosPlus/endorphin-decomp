@@ -534,3 +534,37 @@ extern "C" __declspec(naked) void __cdecl fn_0049BEE0(int* out, void* a2, int* n
         ret
     }
 }
+
+// [0x0049DBA0] sub_0049DBA0 (57 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0049DBA0() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        nop
+    loop_top:
+        cmp esi, ebx
+        je loop_done
+        mov eax, dword ptr [esi + 0x10]
+        mov edx, dword ptr [eax + 0x28]
+        lea ecx, [esi + 0x10]
+        push edi
+        call edx
+        test al, al
+        jne loop_done
+        mov esi, dword ptr [esi]
+        jmp loop_top
+    loop_done:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        pop esi
+        mov dword ptr [eax], ecx
+        pop ebx
+        ret
+    }
+}
