@@ -200747,7 +200747,9 @@
       "0x0053B4C7",
       "0x0053B4E2"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T06:50:14Z"
   },
   {
     "va": "0x0053B4F0",
