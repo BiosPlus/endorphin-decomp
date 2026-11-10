@@ -438,3 +438,43 @@ extern "C" void __fastcall fn_005C88B0(void* self) {
     *(unsigned int*)(p + 0x158) = 0x0096580c;
     ext_005C83D0();
 }
+
+// [0x005CFCE0] sub_005CFCE0 (64 bytes)
+extern "C" int mem_00924FC4;
+extern "C" char mem_00B45854[];
+extern "C" __declspec(naked) int __stdcall fn_005CFCE0(const void* a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, offset mem_00B45854
+    loop_top:
+        push ebx
+        push esi
+        call ebp
+        add esp, 8
+        test al, al
+        jne found
+        add esi, 1Ch
+        add edi, 1
+        cmp esi, offset mem_00B45854 + 38h
+        jl loop_top
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 4
+    found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
