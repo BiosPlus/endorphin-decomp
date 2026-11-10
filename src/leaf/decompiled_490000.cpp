@@ -568,3 +568,20 @@ extern "C" __declspec(naked) void __cdecl fn_0049DBA0() {
         ret
     }
 }
+
+// [0x004908A0] sub_004908A0 (59 bytes)
+// Returns {value, min} where min is the first-minimum float* in [begin, end) (begin if range < 2).
+struct Pair004908A0 { int first; float* second; };
+extern "C" Pair004908A0* __cdecl fn_004908A0(Pair004908A0* out, int value, float* begin, int unused_0x10, float* end) {
+    float* best = begin;
+    if (begin != end && begin + 1 != end) {
+        for (float* p = begin + 1; p != end; ++p) {
+            if (*p < *best) {
+                best = p;
+            }
+        }
+    }
+    out->first = value;
+    out->second = best;
+    return out;
+}
