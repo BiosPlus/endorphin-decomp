@@ -1037,3 +1037,14 @@ extern "C" __declspec(naked) int __fastcall fn_0064CB20(int self, int edx_unused
         ret 0xc
     }
 }
+
+// [0x00647FD0] sub_00647FD0 (68 bytes)
+extern "C" void ext_007C62E0();
+extern "C" void ext_007C62B0();
+
+extern "C" void __fastcall fn_00647FD0(void* self) {
+    int first = *(int*)*(void**)((char*)self + 0xa4);
+    ((void (__cdecl*)(int, float, float, float))ext_007C62E0)(first, 0.0f, 0.0f, 0.0f);
+    int second = *(int*)*(void**)((char*)self + 0xa4);
+    ((void (__cdecl*)(int, float, float, float))ext_007C62B0)(second, 0.0f, 0.0f, 0.0f);
+}
