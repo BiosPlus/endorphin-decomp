@@ -1289,3 +1289,23 @@ extern "C" void __cdecl fn_0053A580() {
     mem_00AEFF04 = 0;
     mem_00AEFF08 = 0;
 }
+
+// [0x005361D0] sub_005361D0 (82 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_009251EC;
+extern "C" void __fastcall fn_005361D0(void* self, int edx_unused, unsigned int* out, unsigned int a2, unsigned int a3, unsigned int a4, unsigned int a5) {
+    unsigned int* p = (unsigned int*)self;
+    if (a2 == 0 || a2 != a4) {
+        ((void (__cdecl*)())mem_00925134)();
+    }
+    if (a3 != a5) {
+        int diff = (int)(p[2] - a5);
+        unsigned int ebx = (unsigned int)(diff + (int)a3);
+        if (diff > 0) {
+            ((void* (__cdecl*)(void*, size_t, const void*, size_t))mem_009251EC)((void*)a3, (size_t)diff, (const void*)a5, (size_t)diff);
+        }
+        p[2] = ebx;
+    }
+    out[0] = a2;
+    out[1] = a3;
+}
