@@ -163,3 +163,29 @@ extern "C" void __fastcall fn_005CE4F0(void* self) {
     f[12] = z;
     f[11] = z;
 }
+
+// [0x005CFE10] sub_005CFE10 (51 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005CFE10(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x2c4]
+        test ecx, ecx
+        je null_obj
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x4]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebx
+        call edx
+        mov byte ptr [esi + 0x1f2], bl
+        pop ebx
+        pop esi
+        ret 0x4
+null_obj:
+        mov al, byte ptr [esp + 0x8]
+        mov byte ptr [esi + 0x1f2], al
+        pop esi
+        ret 0x4
+    }
+}
