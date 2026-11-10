@@ -441,3 +441,27 @@ extern "C" __declspec(naked) int* __fastcall fn_005991D0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0059D660] sub_0059D660 (63 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0059D660(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0xb53a34
+        je L_059D69C
+        cmp eax, 0xb53b30
+        je L_059D69C
+        cmp eax, 0xb53ab0
+        je L_059D69C
+        cmp eax, 0xb53a70
+        je L_059D69C
+        cmp eax, 0xb53af0
+        je L_059D69C
+        mov edx, dword ptr [ecx + 0x160]
+        add ecx, 0x160
+        mov dword ptr [esp + 0x4], eax
+        mov eax, dword ptr [edx + 0x54]
+        jmp eax
+L_059D69C:
+        ret 0x4
+    }
+}
