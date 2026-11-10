@@ -675,3 +675,19 @@ extern "C" void __cdecl fn_007D4B50(void* self, unsigned int a1, unsigned int a2
     *(unsigned int*)(p + 0xc) = 1;
     *(unsigned int*)(p + 0x30) = 0;
 }
+
+// [0x007D5AF0] sub_007D5AF0 (59 bytes)
+typedef int (__cdecl *fn_007D5AF0_cb)(void*, void*, void*);
+extern "C" void __cdecl fn_007D5AF0(void* a1, void* a2, void* a3) {
+    unsigned char* obj = (unsigned char*)a1;
+    unsigned char* inner = *(unsigned char**)obj;
+    unsigned int idx = (*(unsigned int*)inner) & 0xff;
+    unsigned char* mid = *(unsigned char**)(inner + 0xc);
+    unsigned char* table = *(unsigned char**)(mid + 0x20);
+    fn_007D5AF0_cb cb = *(fn_007D5AF0_cb*)(table + 40 * idx + 4);
+    if (cb(a1, a2, a3)) {
+        *(unsigned int*)(obj + 0x24) |= 1;
+    } else {
+        *(unsigned int*)(obj + 0x24) &= ~1u;
+    }
+}
