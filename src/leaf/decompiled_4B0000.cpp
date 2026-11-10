@@ -393,3 +393,31 @@ extern "C" __declspec(naked) void __fastcall fn_004B1130(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" int mem_00924FD4;
+extern "C" int mem_00924FDC;
+extern "C" int mem_009433A0;
+extern "C" int mem_00AE173C;
+extern "C" int mem_0093C18C;
+
+// [0x004B6FF0] sub_004B6FF0 (61 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B6FF0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push offset mem_009433A0
+        lea ecx, [esi + 0x4]
+        call dword ptr [mem_00924FD4]
+        push offset mem_00AE173C
+        lea ecx, [esi + 0x20]
+        call dword ptr [mem_00924FDC]
+        push offset mem_00AE173C
+        lea ecx, [esi + 0x3c]
+        call dword ptr [mem_00924FDC]
+        push offset mem_0093C18C
+        lea ecx, [esi + 0x58]
+        call dword ptr [mem_00924FD4]
+        pop esi
+        ret
+    }
+}
