@@ -13,5 +13,7 @@
     "0x0064CC25",
     "0x0064CC3C"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T15:31:58Z"
 }

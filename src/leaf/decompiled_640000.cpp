@@ -1174,3 +1174,21 @@ extern "C" __declspec(naked) void* __cdecl fn_0064C0A0(void* a1, void* a2, void*
         ret
     }
 }
+
+// [0x0064CC10] sub_0064CC10 (69 bytes)
+// __thiscall, ret 0x14. Validates arg1 against arg3 (invalid_parameter if arg1 is non-null and != arg3),
+// then if arg4 != arg5 updates self->[+0x8] via sub_0064C0A0(arg5, old [+0x8], arg4).
+// Writes (arg2, arg4) to the out buffer (arg0).
+extern "C" int mem_00925134;
+
+extern "C" void __fastcall fn_0064CC10(void* self, int edx_unused, int* out, int a2, int a3, int a4, int a5) {
+    if (a2 == 0 || a2 != a4) {
+        void (*invalid_parameter)() = reinterpret_cast<void (*)()>(mem_00925134);
+        invalid_parameter();
+    }
+    if (a3 != a5) {
+        *(int*)((char*)self + 0x8) = (int)fn_0064C0A0((void*)a5, *(void**)((char*)self + 0x8), (void*)a3);
+    }
+    out[0] = a2;
+    out[1] = a3;
+}
