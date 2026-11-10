@@ -554,3 +554,37 @@ extern "C" void* __fastcall fn_005491B0(char* self) {
     }
     return self + 0x68;
 }
+
+// [0x0054EFF0] sub_0054EFF0 (60 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_0054EFF0(void* self, int edx_unused, unsigned int index) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x1c]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je L_invalid
+        mov ecx, dword ptr [esi + 0x20]
+        sub ecx, eax
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb L_ok
+    L_invalid:
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov eax, edi
+        imul eax, eax, 0x68
+        add eax, dword ptr [esi + 0x1c]
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
