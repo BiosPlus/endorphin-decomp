@@ -1462,3 +1462,46 @@ extern "C" __declspec(naked) bool __stdcall fn_0040B6B0(const void* a1) {
         ret 4
     }
 }
+
+// [0x00404E40] sub_00404E40 (85 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00404E40(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je done_00404E40
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_00404E40:
+        mov eax, dword ptr [esi]
+        lea ecx, [esi + 0x4]
+        push ecx
+        lea ecx, [edi + 0x4]
+        mov dword ptr [edi], eax
+        call dword ptr [mem_00924FDC]
+        lea edx, [esi + 0x20]
+        push edx
+        lea ecx, [edi + 0x20]
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi + 0x3c]
+        push eax
+        lea ecx, [edi + 0x3c]
+        call dword ptr [mem_00924FDC]
+        add esi, 0x58
+        add edi, 0x58
+        cmp esi, ebx
+        jne loop_00404E40
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    done_00404E40:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
