@@ -1683,3 +1683,28 @@ done:
         ret
     }
 }
+
+// [0x00444360] sub_00444360 (42 bytes)
+extern "C" void ext_0041FD20();
+extern "C" int mem_009241D8;
+extern "C" int mem_009328A0;
+
+extern "C" __declspec(naked) void __fastcall fn_00444360(void* self, int edx_unused, void** out) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x44], 0
+        jne done
+        push offset mem_009328A0
+        call ext_0041FD20
+        push eax
+        call dword ptr [mem_009241D8]
+        mov dword ptr [esi + 0x44], eax
+    done:
+        mov ecx, dword ptr [esi + 0x44]
+        mov eax, dword ptr [esp + 8]
+        mov dword ptr [eax], ecx
+        pop esi
+        ret 4
+    }
+}

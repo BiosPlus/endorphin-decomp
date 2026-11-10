@@ -39019,7 +39019,9 @@
       "0x0044436F",
       "0x00444376"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:14:11Z"
   },
   {
     "va": "0x00444390",
