@@ -997,3 +997,39 @@ extern "C" void __cdecl fn_004148B0(unsigned int* c, int n) {
     }
     c[1] += step;
 }
+
+// [0x00410290] sub_00410290 (57 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00410290(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        lea eax, [edi + 0x54]
+        test eax, eax
+        jne short L_nonnull
+        xor ebx, ebx
+        jmp short L_loaded
+    L_nonnull:
+        mov ebx, dword ptr [eax + 0x4]
+    L_loaded:
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [edi + 0x5c]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x34]
+        push ecx
+        mov ecx, esi
+        call edx
+        mov ecx, dword ptr [edi + 0x60]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x38]
+        push ecx
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        ret 0x8
+    }
+}
