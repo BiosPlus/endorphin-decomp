@@ -1074,3 +1074,39 @@ extern "C" __declspec(naked) int __fastcall fn_00412E20(void* self) {
         ret
     }
 }
+
+// [0x0041CDE0] sub_0041CDE0 (57 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_0041CDE0(const void* first, const void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je short L_eq_0041CDE0
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        L_loop_0041CDE0:
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [esi + 0x1c]
+        mov dword ptr [edi + 0x1c], eax
+        add esi, 0x20
+        add edi, 0x20
+        cmp esi, ebx
+        jne short L_loop_0041CDE0
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+        L_eq_0041CDE0:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
