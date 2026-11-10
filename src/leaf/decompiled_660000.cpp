@@ -664,3 +664,38 @@ extern "C" __declspec(naked) void* __cdecl fn_00664BF0(const unsigned char* firs
         ret
     }
 }
+
+// [0x00661B10] sub_00661B10 (51 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_00661B10(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        jne L_nonnull
+        xor al, al
+        pop esi
+        ret
+    L_nonnull:
+        mov ecx, dword ptr [eax + 0x64]
+        add eax, 0x60
+        push edi
+        mov edi, dword ptr [ecx]
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        je L_call
+        cmp ecx, eax
+        je L_skip
+    L_call:
+        call dword ptr [mem_00925134]
+    L_skip:
+        xor eax, eax
+        cmp dword ptr [esi + 0xc], edi
+        pop edi
+        sete al
+        pop esi
+        ret
+    }
+}
