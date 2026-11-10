@@ -1,0 +1,17 @@
+{
+  "va": "0x00579290",
+  "size": 32,
+  "sha256": "9413590fbc435b7f41e1d3c0ae7de133cc241339446643497391f68978bb6d4b",
+  "symbol": "VSTParser::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005792A1",
+    "0x005792A9"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:14:53Z"
+}

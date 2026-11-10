@@ -1,0 +1,16 @@
+{
+  "va": "0x0041B740",
+  "size": 68,
+  "sha256": "8edf64bb9369fce43dd227bd2e7bf541c9491d53824e2d60ff8d7658fb9027d8",
+  "symbol": "CMemDC::vfunc_27",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041B769"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:27:46Z"
+}

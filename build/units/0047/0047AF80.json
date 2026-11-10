@@ -1,0 +1,21 @@
+{
+  "va": "0x0047AF80",
+  "size": 114,
+  "sha256": "691c192eb8ccb28fde5d3176086335c3cd61569c3bbbd950bac65f07a35039a0",
+  "symbol": "ContainerEventDispatcher\u003cpointainer\u003cstd::vector\u003cNMData::TriggeredEventData *, std::allocator\u003cNMData::TriggeredEventData *\u003e\u003e\u003e, NMData::TriggeredEventData\u003e::vfunc_1",
+  "callees": [
+    "0x00678D70"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0047AF96",
+    "0x0047AFAA",
+    "0x0047AFB4",
+    "0x0047AFC3",
+    "0x0047AFD7",
+    "0x0047AFE6"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x004816E0",
+  "size": 10,
+  "sha256": "5bd088af2f3499838fedd53190b993764ccb44e779db03dba8291a870f1ac9ba",
+  "symbol": "Commands::BufferTransformsCommand::vfunc_1",
+  "callees": [
+    "0x00480B00"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004816E5"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:50:32Z"
+}

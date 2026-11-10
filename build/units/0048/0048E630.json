@@ -1,0 +1,22 @@
+{
+  "va": "0x0048E630",
+  "size": 163,
+  "sha256": "a15eef80a7941a3008369fa80c6d331cfd3edd9bd8a77203ee06afdc363418b7",
+  "symbol": "Commands::SetSaveStartFrameCommand::vfunc_3",
+  "callees": [
+    "0x00435D00"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048E633",
+    "0x0048E660",
+    "0x0048E66D",
+    "0x0048E67E",
+    "0x0048E689",
+    "0x0048E69B",
+    "0x0048E6B5"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x00421DE0",
+  "size": 30,
+  "sha256": "ae2a27b67e29fa16bfbbc3d7022cf342b2c4c03bee8801ec343ea359e86cb9da",
+  "symbol": "CHotKeyCtrl::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A641E"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00421DE4",
+    "0x00421DF1"
+  ],
+  "status": "out_of_scope"
+}

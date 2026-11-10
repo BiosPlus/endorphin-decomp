@@ -1,0 +1,15 @@
+{
+  "va": "0x0042F650",
+  "size": 139,
+  "sha256": "208015881eb6d059cd36fa63627a1101e5fb22c5d6d3123479f2c8c066a81160",
+  "symbol": "LoadPoseDialog::vfunc_86",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0042F654",
+    "0x0042F6D7"
+  ],
+  "status": "todo"
+}

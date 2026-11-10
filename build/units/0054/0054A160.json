@@ -1,0 +1,36 @@
+{
+  "va": "0x0054A160",
+  "size": 449,
+  "sha256": "9609604f323167e71e8f82ab1b996618f8e812ca1d0170b45fa4a6149e082938",
+  "symbol": "ToolGraphics::ForceApplicatorHandleGraphic::vfunc_4",
+  "callees": [
+    "0x0063E02A"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054A16A",
+    "0x0054A1AA",
+    "0x0054A1B8",
+    "0x0054A1BE",
+    "0x0054A1EE",
+    "0x0054A1FA",
+    "0x0054A211",
+    "0x0054A219",
+    "0x0054A245",
+    "0x0054A24D",
+    "0x0054A253",
+    "0x0054A26D",
+    "0x0054A275",
+    "0x0054A28C",
+    "0x0054A29E",
+    "0x0054A2C0",
+    "0x0054A2D9",
+    "0x0054A303",
+    "0x0054A309",
+    "0x0054A30F",
+    "0x0054A315"
+  ],
+  "status": "todo"
+}

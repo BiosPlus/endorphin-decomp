@@ -1,0 +1,22 @@
+{
+  "va": "0x0048E7B0",
+  "size": 169,
+  "sha256": "6e47ddcd21e7a3586c3a2335a02efee3aaf1d76f279e4156233a745470e6bc68",
+  "symbol": "Commands::DestroyTriggeredEventCommand::vfunc_3",
+  "callees": [
+    "0x00435D00"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048E7B3",
+    "0x0048E7E0",
+    "0x0048E7F3",
+    "0x0048E804",
+    "0x0048E80F",
+    "0x0048E821",
+    "0x0048E83B"
+  ],
+  "status": "todo"
+}

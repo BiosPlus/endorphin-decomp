@@ -1,0 +1,19 @@
+{
+  "va": "0x00419ED0",
+  "size": 30,
+  "sha256": "3bf32564912867d17116016e4071010166bffa671b97050e47cfc53f2b487cb0",
+  "symbol": "FolderDialog::vfunc_1",
+  "callees": [
+    "0x00419E30",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00419ED4",
+    "0x00419EE1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

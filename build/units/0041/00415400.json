@@ -1,0 +1,19 @@
+{
+  "va": "0x00415400",
+  "size": 30,
+  "sha256": "7dde4f1d189fea55f42d37eb3f8a1f221d93d7a191939b889a8be25d6d254eed",
+  "symbol": "EditBox::vfunc_1",
+  "callees": [
+    "0x004153D0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00415404",
+    "0x00415411"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

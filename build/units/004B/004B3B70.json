@@ -1,0 +1,23 @@
+{
+  "va": "0x004B3B70",
+  "size": 84,
+  "sha256": "a54ddc51dc2922926eb67683b0f1199ea06d3b352b3caf13a2961d77f9b9f5c8",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0\u003e::vfunc_4",
+  "callees": [
+    "0x0046C390",
+    "0x0046C3C0",
+    "0x0048FAD0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B3B86",
+    "0x004B3B9C",
+    "0x004B3BB1",
+    "0x004B3BB6",
+    "0x004B3BC0"
+  ],
+  "status": "todo"
+}

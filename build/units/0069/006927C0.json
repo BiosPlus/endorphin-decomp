@@ -1,0 +1,23 @@
+{
+  "va": "0x006927C0",
+  "size": 71,
+  "sha256": "8e6fce8aab128218a7502d61a1300406278309cc10d175af21073c6443b213f4",
+  "symbol": "ExprParser::ReadMethodType\u003cValuePtrArrayObject, int, {public: int __thiscall ValuePtrArrayObject::getSize(void) const, 0}, 0\u003e::vfunc_0",
+  "callees": [
+    "0x0046C3C0",
+    "0x006720C0",
+    "0x00692210",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006927D6",
+    "0x006927E2",
+    "0x006927F4",
+    "0x006927F9",
+    "0x00692803"
+  ],
+  "status": "todo"
+}

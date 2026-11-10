@@ -1,0 +1,23 @@
+{
+  "va": "0x004ECCF0",
+  "size": 122,
+  "sha256": "2d1ea38764cabfe64659b2e36c1bd2bb6d9881c9b42e1a2d51481d6e24dbf624",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cSelectionVariable, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall SelectionVariable::`vcall'{36, {flat}}, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall SelectionVariable::setName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004ECCF9",
+    "0x004ECD0C",
+    "0x004ECD14",
+    "0x004ECD19",
+    "0x004ECD26",
+    "0x004ECD34",
+    "0x004ECD3B",
+    "0x004ECD56"
+  ],
+  "status": "todo"
+}

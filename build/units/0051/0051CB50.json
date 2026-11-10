@@ -1,0 +1,27 @@
+{
+  "va": "0x0051CB50",
+  "size": 358,
+  "sha256": "0e2425ae33c6b1facf5243c701b25f9fb0408203b41cc3ece82603a2ba2a4654",
+  "symbol": "NMData::RealChannel::vfunc_5",
+  "callees": [
+    "0x00492A50",
+    "0x0051A780",
+    "0x0051C820"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0051CB77",
+    "0x0051CB8B",
+    "0x0051CBBB",
+    "0x0051CBDF",
+    "0x0051CC08",
+    "0x0051CC29",
+    "0x0051CC4D",
+    "0x0051CC71",
+    "0x0051CC84",
+    "0x0051CCA8"
+  ],
+  "status": "todo"
+}

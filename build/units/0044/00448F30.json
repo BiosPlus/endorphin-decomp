@@ -1,0 +1,33 @@
+{
+  "va": "0x00448F30",
+  "size": 172,
+  "sha256": "997909aee9e32b6fb2328b8fcb001af020fc8166633fd11eb3040ff565a3beae",
+  "symbol": "Properties::PropInPlaceSpinbuttonEdit::vfunc_0_off_54",
+  "callees": [
+    "0x0041CF50",
+    "0x00448C90",
+    "0x00448DD0",
+    "0x00665870",
+    "0x00665880",
+    "0x006AD180",
+    "0x006AD940",
+    "0x006B4440"
+  ],
+  "num_callees": 8,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00448F49",
+    "0x00448F50",
+    "0x00448F58",
+    "0x00448F73",
+    "0x00448F7F",
+    "0x00448F97",
+    "0x00448FA9",
+    "0x00448FB1",
+    "0x00448FB8",
+    "0x00448FBE",
+    "0x00448FCC"
+  ],
+  "status": "todo"
+}

@@ -18,6 +18,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"endorphin_decomp/internal/unitstore"
 )
 
 type TargetConfig struct {
@@ -225,14 +227,14 @@ func defaultCppFileForUnit(u UnitEntry, cls *ClassEntry) string {
 }
 
 func loadUnitsAndClasses() ([]UnitEntry, map[string]int, []ClassEntry, map[string]*ClassEntry, map[string]bool) {
-	unitsBytes, err := os.ReadFile("build/units.json")
+	unitsBytes, err := unitstore.ReadAll()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error reading build/units.json: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error reading unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
 	var units []UnitEntry
 	if err := json.Unmarshal(unitsBytes, &units); err != nil {
-		fmt.Fprintf(os.Stderr, "Error parsing build/units.json: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error parsing unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
 
@@ -270,7 +272,7 @@ func saveUnits(units []UnitEntry) error {
 	if err != nil {
 		return err
 	}
-	return os.WriteFile("build/units.json", append(out, '\n'), 0644)
+	return unitstore.WriteAll(out)
 }
 
 var unitMarkerLineRe = regexp.MustCompile(`^//\s*\[(0x[0-9A-Fa-f]{8})\]`)
@@ -522,6 +524,7 @@ func printUnitBriefing(u UnitEntry, cls *ClassEntry, createStub bool) {
 	if allUnits, _, _, _, _ := loadUnitsAndClasses(); allUnits != nil {
 		printSimilarMatched(u, allUnits)
 	}
+	printPriorAttempts(u)
 
 	fmt.Println("TARGET_ASM:")
 	cachePath := filepath.Join(".local", "cache", "funcs", u.VA+".txt")
@@ -703,7 +706,7 @@ func cmdClaim(args []string) {
 	units, unitIdxByVA, _, classByName, _ := loadUnitsAndClasses()
 	uIdx, ok := unitIdxByVA[vaHex]
 	if !ok {
-		fmt.Fprintf(os.Stderr, "Error: unit %s not found in build/units.json\n", vaHex)
+		fmt.Fprintf(os.Stderr, "Error: unit %s not found in the unit ledger (build/units/)\n", vaHex)
 		os.Exit(1)
 	}
 	u := units[uIdx]
@@ -1339,6 +1342,10 @@ func filterCppForCommit(cppPath string, allowedVAs map[string]bool) ([]byte, boo
 }
 
 func stageAndCommitSingleUnit(va, symbol, matchedBy, cppPath string, allowedVAs map[string]bool) bool {
+	if !unitstore.HeadHasStore() {
+		fmt.Fprintf(os.Stderr, "Refusing to commit %s: HEAD has no %s/ yet. Commit the units migration first (git add -A build/units build/units.json), otherwise this match commit would sweep in every unit file.\n", va, unitstore.Dir)
+		return false
+	}
 	waitForGitIndexLock()
 	_ = exec.Command("git", "reset", "HEAD").Run()
 
@@ -1353,7 +1360,7 @@ func stageAndCommitSingleUnit(va, symbol, matchedBy, cppPath string, allowedVAs 
 		}()
 	}
 
-	addArgs := []string{"add", "include/", "build/units.json", "README.md"}
+	addArgs := []string{"add", "include/", unitstore.Dir + "/", "README.md"}
 	if cppPath != "" {
 		addArgs = append(addArgs, cppPath)
 	} else {
@@ -1407,7 +1414,7 @@ func stageAndCommitSingleUnit(va, symbol, matchedBy, cppPath string, allowedVAs 
 	return true
 }
 
-// commitPendingMatches compares build/units.json against HEAD:build/units.json
+// commitPendingMatches compares the unit ledger on disk (build/units/) against the ledger at HEAD
 // and ensures every newly matched function gets its own individual git commit
 // (1 commit per solved function, never lumped together).
 func commitPendingMatches() int {
@@ -1416,8 +1423,9 @@ func commitPendingMatches() int {
 	}
 
 	diskUnits, _, _, _, _ := loadUnitsAndClasses()
-	headOut, err := exec.Command("git", "show", "HEAD:build/units.json").Output()
-	if err != nil {
+	// Until the per-function ledger migration is committed, HEAD has no build/units/ and there is nothing to diff against.
+	headOut, haveHead, err := unitstore.ReadAllFromGit("HEAD")
+	if err != nil || !haveHead {
 		return 0
 	}
 	var headUnits []UnitEntry
@@ -1532,7 +1540,7 @@ func cmdCheck(args []string) {
 	units, unitIdxByVA, _, _, _ := loadUnitsAndClasses()
 	uIdx, ok := unitIdxByVA[vaHex]
 	if !ok {
-		fmt.Fprintf(os.Stderr, "Error: unit %s not found in build/units.json\n", vaHex)
+		fmt.Fprintf(os.Stderr, "Error: unit %s not found in the unit ledger (build/units/)\n", vaHex)
 		os.Exit(1)
 	}
 	u := &units[uIdx]
@@ -1571,6 +1579,7 @@ func cmdCheck(args []string) {
 	exact, pct, compMasked, tgtMasked := maskAndCompare(compFn, targetBytes, *u, startVA)
 	if exact {
 		fmt.Printf("EXACT MATCH (100%%) | %s | %s (%d bytes)\n", u.VA, u.Symbol, len(tgtMasked))
+		clearDiagnosis(u.VA)
 		withWorkLock(func() {
 			// Reload units inside lock so concurrent parallel workers never overwrite each other's updates
 			freshUnits, freshIdx, _, _, _ := loadUnitsAndClasses()
@@ -1586,7 +1595,7 @@ func cmdCheck(args []string) {
 				fu.MatchedBy = modelName
 				fu.MatchedAt = time.Now().UTC().Format(time.RFC3339)
 				if err := saveUnits(freshUnits); err != nil {
-					fmt.Fprintf(os.Stderr, "Warning: failed to update build/units.json: %v\n", err)
+					fmt.Fprintf(os.Stderr, "Warning: failed to update the unit ledger: %v\n", err)
 				} else {
 					autoCommitMatch(fu.VA, fu.Symbol, fu.MatchedBy, cppPath)
 				}
@@ -1652,9 +1661,11 @@ func cmdCheck(args []string) {
 		}
 		fmt.Printf("%-44s | %-44s%s\n", left, right, marker)
 	}
-	for _, h := range generateHaikuHints(tgtInsts, compInsts, len(tgtMasked), len(compMasked)) {
+	hints := generateHaikuHints(tgtInsts, compInsts, len(tgtMasked), len(compMasked))
+	for _, h := range hints {
 		fmt.Printf("HINT: %s\n", h)
 	}
+	recordDiagnosis(u.VA, modelName, pct, tgtInsts, compInsts, relocOffsets, hints)
 	os.Exit(1)
 }
 
@@ -1674,7 +1685,7 @@ func cmdSkip(args []string) {
 		units, unitIdxByVA, _, _, _ := loadUnitsAndClasses()
 		uIdx, ok := unitIdxByVA[vaHex]
 		if !ok {
-			fmt.Fprintf(os.Stderr, "Error: unit %s not found in build/units.json\n", vaHex)
+			fmt.Fprintf(os.Stderr, "Error: unit %s not found in the unit ledger (build/units/)\n", vaHex)
 			os.Exit(1)
 		}
 
@@ -1688,7 +1699,7 @@ func cmdSkip(args []string) {
 			units[uIdx].Status = "deferred"
 			units[uIdx].SkipReason = reason
 			if err := saveUnits(units); err != nil {
-				fmt.Fprintf(os.Stderr, "Error saving build/units.json: %v\n", err)
+				fmt.Fprintf(os.Stderr, "Error saving unit ledger (build/units/): %v\n", err)
 				os.Exit(1)
 			}
 			fmt.Printf("Deferred %s (%s): %s\n", units[uIdx].VA, units[uIdx].Symbol, reason)
@@ -1803,6 +1814,8 @@ func main() {
 		cmdClean(rest)
 	case "similar":
 		cmdSimilar(rest)
+	case "route":
+		cmdRoute(rest)
 	default:
 		fmt.Fprintf(os.Stderr, "Unknown subcommand %q (expected: next, claim, check, skip, is-matched, commit-pending, clean)\n", subcmd)
 		os.Exit(1)

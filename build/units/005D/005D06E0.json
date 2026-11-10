@@ -1,0 +1,20 @@
+{
+  "va": "0x005D06E0",
+  "size": 44,
+  "sha256": "ba42dc5231a99caf71c62a364ddd2b5fb99f32e4ce1c668462d57e67741da988",
+  "symbol": "NMData::CameraData::vfunc_57",
+  "callees": [
+    "0x0058A3C0",
+    "0x005CFD60"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005D06EA",
+    "0x005D0703"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:23:29Z"
+}

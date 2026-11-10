@@ -1,0 +1,19 @@
+{
+  "va": "0x0054A3B0",
+  "size": 30,
+  "sha256": "b583ee0e27a5841c5c72b254ac0f052e368bd6701da3c3df6b8eca7d312a67e1",
+  "symbol": "ToolGraphics::RotateHandleGraphic::vfunc_0",
+  "callees": [
+    "0x005498E0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054A3B4",
+    "0x0054A3C1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

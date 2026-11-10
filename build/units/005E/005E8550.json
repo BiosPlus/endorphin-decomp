@@ -1,0 +1,23 @@
+{
+  "va": "0x005E8550",
+  "size": 47,
+  "sha256": "b44361af89244a58644f7df46efa8938dda8ed3c63d2fb9013a93dd84be7d2aa",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::SkeletalJointData::getFixedCoordsName(void) const, 0}, 0\u003e::vfunc_5",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x005E0E40",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005E855E",
+    "0x005E8564",
+    "0x005E856C",
+    "0x005E8571",
+    "0x005E857B"
+  ],
+  "status": "todo"
+}

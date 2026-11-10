@@ -1,0 +1,25 @@
+{
+  "va": "0x00500FC0",
+  "size": 205,
+  "sha256": "dbe28018bc1ab395a761ba09da7ddc3db7bb7bd8b05ec46b6857c027d6da9ee9",
+  "symbol": "PointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e::AddElementCommand::vfunc_3",
+  "callees": [
+    "0x00435D00",
+    "0x00500050"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00500FC3",
+    "0x00500FF0",
+    "0x00501009",
+    "0x00501016",
+    "0x00501024",
+    "0x0050102E",
+    "0x00501043",
+    "0x00501055",
+    "0x0050106F"
+  ],
+  "status": "todo"
+}

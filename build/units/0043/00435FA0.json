@@ -1,0 +1,25 @@
+{
+  "va": "0x00435FA0",
+  "size": 66,
+  "sha256": "2ebb221b1a70f833dbffd27b045e276529621598ca9fd5ddbdaefe9803c09a0f",
+  "symbol": "MainFrame::vfunc_26",
+  "callees": [
+    "0x00434E30",
+    "0x006A5EDE",
+    "0x006A6328"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00435FAD",
+    "0x00435FB2",
+    "0x00435FB8",
+    "0x00435FCD",
+    "0x00435FD6",
+    "0x00435FDE"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:21:15Z"
+}

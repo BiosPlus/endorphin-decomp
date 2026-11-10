@@ -1,0 +1,16 @@
+{
+  "va": "0x0054C260",
+  "size": 76,
+  "sha256": "4d8631fdd884843620b1829137960dc9c0e13786b5b1f871ff49ece6ff1640bc",
+  "symbol": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_2",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054C264"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T13:43:06Z"
+}

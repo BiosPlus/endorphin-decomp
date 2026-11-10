@@ -1,0 +1,23 @@
+{
+  "va": "0x00642290",
+  "size": 122,
+  "sha256": "4778df4e60762657f7bac1c9861efdebb675ec6ad03d8eb6fb85cad704c96645",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawGeometryEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawGeometryEnabled(bool), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00642299",
+    "0x006422AC",
+    "0x006422B4",
+    "0x006422B9",
+    "0x006422C6",
+    "0x006422D4",
+    "0x006422DB",
+    "0x006422F6"
+  ],
+  "status": "todo"
+}

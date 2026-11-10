@@ -1,0 +1,23 @@
+{
+  "va": "0x005CBC80",
+  "size": 55,
+  "sha256": "f7ddc35a918eec882212b4172790f31204701d81e235749c4df0290d2728e839",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CollisionModelData, bool, {[thunk]: __thiscall NMData::CollisionModelData::`vcall'{108, {flat}}, 0}, 0\u003e::vfunc_5",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x005C3640",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005CBC8E",
+    "0x005CBC9C",
+    "0x005CBCA4",
+    "0x005CBCA9",
+    "0x005CBCB3"
+  ],
+  "status": "todo"
+}

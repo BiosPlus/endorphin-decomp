@@ -1,0 +1,23 @@
+{
+  "va": "0x00618B30",
+  "size": 122,
+  "sha256": "e5359e2623b881b36b857ed11e2ec47bb4e0fa8d4c97061c06c79a26f5b81ed4",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getLowerRestitution(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setLowerRestitution(float)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00618B39",
+    "0x00618B4C",
+    "0x00618B54",
+    "0x00618B59",
+    "0x00618B66",
+    "0x00618B74",
+    "0x00618B7B",
+    "0x00618B96"
+  ],
+  "status": "todo"
+}

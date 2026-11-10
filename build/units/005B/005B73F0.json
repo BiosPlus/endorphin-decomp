@@ -1,0 +1,18 @@
+{
+  "va": "0x005B73F0",
+  "size": 34,
+  "sha256": "f197fe94b6033d853c1ad8a7191608b199f7158c4ba0aa4e7ae17cc7f0718d9e",
+  "symbol": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::applyImpulseViaVelocity(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x005B6780"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B740A"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:20:38Z"
+}

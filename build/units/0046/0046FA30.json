@@ -1,0 +1,18 @@
+{
+  "va": "0x0046FA30",
+  "size": 11,
+  "sha256": "3c6798ad425e6f171fdccbf7e9c37ec17a8321ea12fd15b37e412a847de425df",
+  "symbol": "RuntimeEngine::vfunc_0_off_C",
+  "callees": [
+    "0x0046F930"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046FA34"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T08:51:22Z"
+}

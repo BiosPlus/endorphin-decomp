@@ -1,0 +1,16 @@
+{
+  "va": "0x0064F5B0",
+  "size": 113,
+  "sha256": "a9710265f8fe20f87e7a0b315830a01d6c2eaf0ab128c63969e237c9e7c67b4f",
+  "symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitRadialDamping(float), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x0064DD80"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064F5D7"
+  ],
+  "status": "todo"
+}

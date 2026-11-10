@@ -1,0 +1,14 @@
+{
+  "va": "0x00522150",
+  "size": 5,
+  "sha256": "a185f1087a43b2a57dc589b232b5389d34255553a5e2f80dfdb76fb51cf65860",
+  "symbol": "ThreeLayerNet::vfunc_27",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00522151"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,15 @@
+{
+  "va": "0x00474ED0",
+  "size": 8,
+  "sha256": "305722d0088aab9cf9d9b92ee4f1f837bd3e510a2cd322f9d33a067bcc3291f8",
+  "symbol": "RuntimeEngine::vfunc_0_off_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00474ED4"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

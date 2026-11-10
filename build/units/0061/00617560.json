@@ -1,0 +1,23 @@
+{
+  "va": "0x00617560",
+  "size": 122,
+  "sha256": "b17d8b9dd5a25e8cc0716e1a8353442dc36ea7f04df2f821b67fd36cb9c417d4",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getRestitution(void) const, float, \u0026public: void __thiscall NMData::JointLimit::setRestitution(float)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00617569",
+    "0x0061757C",
+    "0x00617584",
+    "0x00617589",
+    "0x00617596",
+    "0x006175A4",
+    "0x006175AB",
+    "0x006175C6"
+  ],
+  "status": "todo"
+}

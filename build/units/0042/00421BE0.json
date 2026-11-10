@@ -1,0 +1,14 @@
+{
+  "va": "0x00421BE0",
+  "size": 5,
+  "sha256": "c725f1ffc4866dc8e56464e46807229df68ddc4f8841e92cc1332f3533a4c976",
+  "symbol": "HotkeyDialog::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00421BE1"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,26 @@
+{
+  "va": "0x004C11A0",
+  "size": 159,
+  "sha256": "5b7f39e1914a671473697214e0a911fae9a93a8c3e1515453a43cf0b136d2e62",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, int, {public: int __thiscall NMData::ForceEventData::getFrameNumber(void) const, 0}, 0\u003e::vfunc_44",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x005C84B0",
+    "0x006720C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C11A9",
+    "0x004C11C4",
+    "0x004C11CE",
+    "0x004C11E2",
+    "0x004C122C",
+    "0x004C1231",
+    "0x004C123B"
+  ],
+  "status": "todo"
+}

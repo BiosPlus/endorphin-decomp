@@ -1,0 +1,26 @@
+{
+  "va": "0x00471AB0",
+  "size": 165,
+  "sha256": "6118e6111f3ad4e604cf806b4d01b52c33b036f45978a8a496d3831989f226bc",
+  "symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, 0\u003e::vfunc_47",
+  "callees": [
+    "0x00407700",
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00471AB9",
+    "0x00471AD4",
+    "0x00471AE9",
+    "0x00471AFD",
+    "0x00471B42",
+    "0x00471B47",
+    "0x00471B51"
+  ],
+  "status": "todo"
+}

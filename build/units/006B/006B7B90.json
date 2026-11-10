@@ -1,0 +1,15 @@
+{
+  "va": "0x006B7B90",
+  "size": 6,
+  "sha256": "78193c49793f3e2792aa9a31da8b04f088b9afd2d8f1cf03113d4877628fe664",
+  "symbol": "NMCMultilineEditDlg::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B7B91"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

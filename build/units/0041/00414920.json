@@ -1,0 +1,19 @@
+{
+  "va": "0x00414920",
+  "size": 36,
+  "sha256": "6b3caf0ebf8d4e9e23971489bba83c1c6c1e827c00d3ed6c2a04defe648ea72b",
+  "symbol": "CBitmap::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A5FF2"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00414925",
+    "0x0041492A",
+    "0x00414937"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x007F3870",
+  "size": 802,
+  "sha256": "6d797fdc95b7ac2845356dfae13a602b032cf5ec77ea574b2e7fa6073e516060",
+  "symbol": "MdtArthur::arthurSolver_vanilla::vfunc_2",
+  "callees": [
+    "0x007F2F80",
+    "0x007F3440"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x007F3974",
+    "0x007F3AC0",
+    "0x007F3B6E",
+    "0x007F3B8E"
+  ],
+  "status": "todo"
+}

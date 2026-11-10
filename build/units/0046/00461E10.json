@@ -1,0 +1,15 @@
+{
+  "va": "0x00461E10",
+  "size": 6,
+  "sha256": "be95cd41ca7d6218369c64b186678c820360d0f796e181a12807328cf3b28b4f",
+  "symbol": "UpgradeCharacterDialog::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00461E11"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

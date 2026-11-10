@@ -1,0 +1,15 @@
+{
+  "va": "0x0089ECD6",
+  "size": 11,
+  "sha256": "4ebcda493c0303682cac8ff99157cb19bbd777fac9f230e45e942e2565280b05",
+  "symbol": "sub_0089ECD6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0089ECD7",
+    "0x0089ECDD"
+  ],
+  "status": "out_of_scope"
+}

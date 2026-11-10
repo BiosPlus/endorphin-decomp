@@ -1,0 +1,19 @@
+{
+  "va": "0x0068BD40",
+  "size": 30,
+  "sha256": "356f40c4aacb63fc000faf063292e93a511484015b2dca507a17cfa2811fbe9e",
+  "symbol": "Randomizer::vfunc_0",
+  "callees": [
+    "0x0068BB60",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0068BD44",
+    "0x0068BD51"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

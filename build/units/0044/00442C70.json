@@ -1,0 +1,19 @@
+{
+  "va": "0x00442C70",
+  "size": 25,
+  "sha256": "bd7ee16b908a810e3d6999f191c3790aa9d21fe020dd6ef674720ed1761752fa",
+  "symbol": "MultiTrackView::MultiTrackViewStates::MoveState::vfunc_2",
+  "callees": [
+    "0x0043C900"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00442C79",
+    "0x00442C7F"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T11:05:40Z"
+}

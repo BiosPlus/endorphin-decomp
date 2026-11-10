@@ -1,0 +1,14 @@
+{
+  "va": "0x006A78F6",
+  "size": 6,
+  "sha256": "af54950b685be82b29255fa4ea6e4f929dc6e750c8cc0e74c8bbdeda62959588",
+  "symbol": "thunk_MSVCP80_?seekoff@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAE?AV?$fpos@H@2@JHH@Z",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006A78F8"
+  ],
+  "status": "out_of_scope"
+}

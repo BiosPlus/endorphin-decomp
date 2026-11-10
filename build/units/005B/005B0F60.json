@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0F60",
+  "size": 5,
+  "sha256": "6ee949addd53e50c07f6b987ca929c999757bf18a7da90c6eb3129eaf504ccf6",
+  "symbol": "Geometry::SkeletalJointType::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005B0F61"
+  ],
+  "status": "out_of_scope"
+}

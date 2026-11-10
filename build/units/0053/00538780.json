@@ -1,0 +1,18 @@
+{
+  "va": "0x00538780",
+  "size": 276,
+  "sha256": "93606cdf1742cae346cdb6496a8ede7dd9e8a1ff14b1dcf3290b194f9e614c2e",
+  "symbol": "UtilityGraphics::CrossLocator::vfunc_22",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053878D",
+    "0x00538799",
+    "0x005387A5",
+    "0x005387C5",
+    "0x00538887"
+  ],
+  "status": "todo"
+}

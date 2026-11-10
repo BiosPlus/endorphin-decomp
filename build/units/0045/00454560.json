@@ -1,0 +1,14 @@
+{
+  "va": "0x00454560",
+  "size": 53,
+  "sha256": "8b3698b4180c5ec31e9008577d8422ab13ee82212d38af1f3d19505cd423b6d7",
+  "symbol": "sub_00454560",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash",
+  "matched_at": "2026-11-10T04:56:35Z"
+}

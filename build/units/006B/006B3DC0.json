@@ -1,0 +1,43 @@
+{
+  "va": "0x006B3DC0",
+  "size": 483,
+  "sha256": "8a8396cfb2943034c0a80aa5f3ad48c28f938bcfea00d6863ea6498e68aa6816",
+  "symbol": "GWCHotKeyPropertyValue::vfunc_2",
+  "callees": [
+    "0x00430E20"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B3DC3",
+    "0x006B3DEB",
+    "0x006B3E0B",
+    "0x006B3E1A",
+    "0x006B3E58",
+    "0x006B3E5D",
+    "0x006B3E70",
+    "0x006B3E81",
+    "0x006B3E8B",
+    "0x006B3E94",
+    "0x006B3E9A",
+    "0x006B3EC1",
+    "0x006B3EC6",
+    "0x006B3ED9",
+    "0x006B3EEA",
+    "0x006B3EF4",
+    "0x006B3EFD",
+    "0x006B3F03",
+    "0x006B3F2B",
+    "0x006B3F30",
+    "0x006B3F43",
+    "0x006B3F54",
+    "0x006B3F5E",
+    "0x006B3F67",
+    "0x006B3F6D",
+    "0x006B3F7A",
+    "0x006B3F81",
+    "0x006B3F89"
+  ],
+  "status": "todo"
+}

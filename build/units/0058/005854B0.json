@@ -1,0 +1,24 @@
+{
+  "va": "0x005854B0",
+  "size": 164,
+  "sha256": "712fe276d1bc212d147e50e70d65954aa6217f1d1cd6845bb2e944b8ee5d457e",
+  "symbol": "ExprParser::ReadMethodType\u003cObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0\u003e::vfunc_42",
+  "callees": [
+    "0x0046C3C0",
+    "0x00584C00",
+    "0x006720A0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005854B9",
+    "0x005854D4",
+    "0x005854E6",
+    "0x00585541",
+    "0x00585546",
+    "0x00585550"
+  ],
+  "status": "todo"
+}

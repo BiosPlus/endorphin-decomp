@@ -1,0 +1,19 @@
+{
+  "va": "0x0046A350",
+  "size": 30,
+  "sha256": "41d79d95d84dead9e5fe62068ef0f688caa26acd0c27ab1400e4421409214ff5",
+  "symbol": "VMCSEngine::vfunc_2",
+  "callees": [
+    "0x0046A020",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046A354",
+    "0x0046A361"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

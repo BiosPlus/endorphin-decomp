@@ -1,0 +1,21 @@
+{
+  "va": "0x004ECE40",
+  "size": 47,
+  "sha256": "98c6964fba4f489de39b15d38e6ed7e1b6ee77fa7cb5c3d3bb0b1ee01203dc2f",
+  "symbol": "ExprParser::ReadMethodType\u003cSelectionVariable, int, {public: int __thiscall SelectionVariable::getNumRequiredObjects(void) const, 0}, 0\u003e::vfunc_2",
+  "callees": [
+    "0x0046C3C0",
+    "0x00536F00",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004ECE4E",
+    "0x004ECE5C",
+    "0x004ECE61",
+    "0x004ECE6B"
+  ],
+  "status": "todo"
+}

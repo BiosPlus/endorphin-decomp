@@ -1,0 +1,26 @@
+{
+  "va": "0x004AB480",
+  "size": 159,
+  "sha256": "6fe7c195cae14885c46067a3d032e7d5c6bce876a7f788e87b02afe2c1fe4b17",
+  "symbol": "ExprParser::DynamicEnumType\u003cNMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}\u003e::vfunc_45",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x004A9CE0",
+    "0x006720C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004AB489",
+    "0x004AB4A4",
+    "0x004AB4AE",
+    "0x004AB4C2",
+    "0x004AB50C",
+    "0x004AB511",
+    "0x004AB51B"
+  ],
+  "status": "todo"
+}

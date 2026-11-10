@@ -1,0 +1,21 @@
+{
+  "va": "0x004CCBE0",
+  "size": 68,
+  "sha256": "5576b6453b485eac6233cfb9378ba3362552e7bcca949130ab66472426c6bc52",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::MetaBodyConstraintData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::setAngularStrengthFromFSM(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x004CCB50",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CCC01",
+    "0x004CCC11",
+    "0x004CCC16",
+    "0x004CCC20"
+  ],
+  "status": "todo"
+}

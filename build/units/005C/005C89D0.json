@@ -1,0 +1,21 @@
+{
+  "va": "0x005C89D0",
+  "size": 55,
+  "sha256": "8146dda75a25a24c4865ffc97c32d9fc4e56a4ad5eae4fef96bfd31f05c9a9aa",
+  "symbol": "ExprParser::DynamicEnumType\u003cNMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}\u003e::vfunc_1",
+  "callees": [
+    "0x0046C3C0",
+    "0x005C3FB0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C89DE",
+    "0x005C89F4",
+    "0x005C89F9",
+    "0x005C8A03"
+  ],
+  "status": "todo"
+}

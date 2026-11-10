@@ -1,0 +1,20 @@
+{
+  "va": "0x004D1820",
+  "size": 30,
+  "sha256": "6410bce9f9558beaf2adc7884df9b111dc965cf5136c72fa6e3e8aad83db6537",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D1827",
+    "0x004D182C",
+    "0x004D1834"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:45:55Z"
+}

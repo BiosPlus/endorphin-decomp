@@ -1,0 +1,17 @@
+{
+  "va": "0x005AC7F0",
+  "size": 34,
+  "sha256": "1ccbb12bbcdb43d01fdc666ed3e4be807a16b073c10d135af9cd86c2bf54671c",
+  "symbol": "Commands::RemoveFluidObjectCommand::vfunc_3",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005AC7F7",
+    "0x005AC807"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:15:52Z"
+}

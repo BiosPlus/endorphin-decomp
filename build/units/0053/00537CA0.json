@@ -1,0 +1,14 @@
+{
+  "va": "0x00537CA0",
+  "size": 29,
+  "sha256": "451365eb6e02617ac817436ed21615054c8eae84f28bc59b59e0fa2da1f9624b",
+  "symbol": "CompoundRenderable::vfunc_2",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:09:24Z"
+}

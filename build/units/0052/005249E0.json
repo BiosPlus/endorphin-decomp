@@ -1,0 +1,23 @@
+{
+  "va": "0x005249E0",
+  "size": 122,
+  "sha256": "2572afa04b6730fdc778899f2d36e3059d04c8e7fc0cee01fbb88fe729f69c5d",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::NetworkConnectorData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall NMData::NetworkConnectorData::`vcall'{36, {flat}}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall NMData::NetworkConnectorData::setName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005249E9",
+    "0x005249FC",
+    "0x00524A04",
+    "0x00524A09",
+    "0x00524A16",
+    "0x00524A24",
+    "0x00524A2B",
+    "0x00524A46"
+  ],
+  "status": "todo"
+}

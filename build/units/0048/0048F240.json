@@ -1,0 +1,27 @@
+{
+  "va": "0x0048F240",
+  "size": 173,
+  "sha256": "f0709185814b9cd5aa0224dd3c7e47851061cb5a9ae07cd999c712156e437210",
+  "symbol": "Commands::SetTriggeredEventEnabledCommand::vfunc_1",
+  "callees": [
+    "0x00468180",
+    "0x0047D900",
+    "0x0048EF80",
+    "0x00528BF0",
+    "0x00594000"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048F256",
+    "0x0048F264",
+    "0x0048F274",
+    "0x0048F27D",
+    "0x0048F282",
+    "0x0048F29A",
+    "0x0048F2BB",
+    "0x0048F2C0"
+  ],
+  "status": "todo"
+}

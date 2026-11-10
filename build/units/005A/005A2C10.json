@@ -1,0 +1,16 @@
+{
+  "va": "0x005A2C10",
+  "size": 34,
+  "sha256": "43daeec0f536f76b584e767c339909b66f43b586e439a712fc8378f543513bb0",
+  "symbol": "ExprParser::WriteMethodType\u003cNMData::CharacterData, int, {public: void __thiscall NMData::CharacterData::setPhysicsLevelFromFSM(int), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x005A1A30"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005A2C2A"
+  ],
+  "status": "todo"
+}

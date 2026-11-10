@@ -1,0 +1,22 @@
+{
+  "va": "0x006189D0",
+  "size": 165,
+  "sha256": "f06408dd03a366a6a83cacad71286858c8d5fc52b83c659cb038b1c12cf403e4",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0\u003e::vfunc_42",
+  "callees": [
+    "0x0046C3C0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006189D9",
+    "0x00618A07",
+    "0x00618A62",
+    "0x00618A67",
+    "0x00618A71"
+  ],
+  "status": "todo"
+}

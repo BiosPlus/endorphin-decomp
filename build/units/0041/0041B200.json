@@ -1,0 +1,15 @@
+{
+  "va": "0x0041B200",
+  "size": 6,
+  "sha256": "743584c7edb04d2cbd2f5820726f942ae76c7e12b25cb616e88cc5ca42fdb638",
+  "symbol": "GettingStartedDialog::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041B201"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

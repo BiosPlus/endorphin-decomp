@@ -1,0 +1,19 @@
+{
+  "va": "0x004554A0",
+  "size": 30,
+  "sha256": "24340d55e6b2ba3d7c43bc7b0b70e02ed2e20b2a4d8b9a15564bf9ef12d0f184",
+  "symbol": "SceneNotesFrame::vfunc_1",
+  "callees": [
+    "0x00455280",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004554A4",
+    "0x004554B1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

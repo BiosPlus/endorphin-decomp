@@ -1,0 +1,20 @@
+{
+  "va": "0x00624E30",
+  "size": 30,
+  "sha256": "ad4dbe0771335146feaa0d158261dc91807a6ca810cf685ce743d2670ba6b451",
+  "symbol": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00624E37",
+    "0x00624E3C",
+    "0x00624E44"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:58:58Z"
+}

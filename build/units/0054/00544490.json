@@ -1,0 +1,21 @@
+{
+  "va": "0x00544490",
+  "size": 172,
+  "sha256": "bc1a8fd7c21a68e1298e8bcd21add9c1cd4c68fa3f02ae4a3ee51fed0056c81d",
+  "symbol": "ForceApplicationTool::vfunc_31",
+  "callees": [
+    "0x00480430",
+    "0x005434C0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00544497",
+    "0x005444A7",
+    "0x005444B1",
+    "0x005444B8",
+    "0x00544520"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x0040F7C0",
+  "size": 5,
+  "sha256": "1c7c3addaa3449ba02bd251a384dbc9d0dae4a1d07c75b01728316d42045f7e8",
+  "symbol": "CColorButton::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0040F7C1"
+  ],
+  "status": "out_of_scope"
+}

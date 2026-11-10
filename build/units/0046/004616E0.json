@@ -1,0 +1,14 @@
+{
+  "va": "0x004616E0",
+  "size": 5,
+  "sha256": "bf5cfd587b9ea2058021d387ea166107741f8ae4bfa39b85553ea5028f8b978a",
+  "symbol": "ExportUnavailableDialog::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x004616E1"
+  ],
+  "status": "out_of_scope"
+}

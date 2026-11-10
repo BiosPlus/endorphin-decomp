@@ -1,0 +1,21 @@
+{
+  "va": "0x00607ED0",
+  "size": 69,
+  "sha256": "ba2cabd32185510288374e2e8c488b7ff2e9d591d257a4d4ce4e28b982566945",
+  "symbol": "EffectorWithMemory::vfunc_0",
+  "callees": [
+    "0x00602EF0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00607EDC",
+    "0x00607EFB",
+    "0x00607F08"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:45:04Z"
+}

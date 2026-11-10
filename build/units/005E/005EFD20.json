@@ -1,0 +1,40 @@
+{
+  "va": "0x005EFD20",
+  "size": 437,
+  "sha256": "c06d17aa7e998a459867aef4270ab440c1caf6bc58cbf45dacda305e9d9f9130",
+  "symbol": "NMData::HingeData::vfunc_40",
+  "callees": [
+    "0x00466910",
+    "0x00466F00",
+    "0x0053B470",
+    "0x00586D00",
+    "0x00661B10",
+    "0x00662120",
+    "0x0067E6C0"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005EFD23",
+    "0x005EFD4F",
+    "0x005EFD7A",
+    "0x005EFD81",
+    "0x005EFD95",
+    "0x005EFDBD",
+    "0x005EFDE0",
+    "0x005EFDE5",
+    "0x005EFDF2",
+    "0x005EFE06",
+    "0x005EFE0C",
+    "0x005EFE1C",
+    "0x005EFE22",
+    "0x005EFE4B",
+    "0x005EFE52",
+    "0x005EFE66",
+    "0x005EFE8A",
+    "0x005EFEAD",
+    "0x005EFEB6"
+  ],
+  "status": "todo"
+}

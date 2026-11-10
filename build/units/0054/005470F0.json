@@ -1,0 +1,14 @@
+{
+  "va": "0x005470F0",
+  "size": 28,
+  "sha256": "5c0fc481b24c18c58c6be37018e120b9ac908a71379c06f6964648d4c3da07be",
+  "symbol": "JointTool::vfunc_23",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:08:48Z"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x0060C490",
+  "size": 48,
+  "sha256": "2321e423cdaac2cd4f782115c817219967d745224ee0ebb47e0bbe9bda9b998e",
+  "symbol": "NMData::EffectorWithModesData::vfunc_19",
+  "callees": [
+    "0x0060BDF0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060C494",
+    "0x0060C499",
+    "0x0060C4A2",
+    "0x0060C4B4"
+  ],
+  "status": "deferred",
+  "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
+}

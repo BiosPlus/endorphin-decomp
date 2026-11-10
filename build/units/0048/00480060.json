@@ -1,0 +1,18 @@
+{
+  "va": "0x00480060",
+  "size": 53,
+  "sha256": "c47c374f630f15af65dcf11b32bb25b6783cd3d4394c750cbf77aa1a448919fd",
+  "symbol": "ToolEngine::vfunc_17",
+  "callees": [
+    "0x00494000"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00480071"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T04:56:28Z"
+}

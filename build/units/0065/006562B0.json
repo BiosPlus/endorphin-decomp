@@ -1,0 +1,23 @@
+{
+  "va": "0x006562B0",
+  "size": 122,
+  "sha256": "569e4fa33ac70fd2e66edad6e395f32cc48806f0fd93adb18213d4f6137adacd",
+  "symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006562B9",
+    "0x006562CC",
+    "0x006562D4",
+    "0x006562D9",
+    "0x006562E6",
+    "0x006562F4",
+    "0x006562FB",
+    "0x00656316"
+  ],
+  "status": "todo"
+}

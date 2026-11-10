@@ -1,0 +1,19 @@
+{
+  "va": "0x006A7FD0",
+  "size": 30,
+  "sha256": "4f67fe5a76a36d0e127d427975e69945b9aeedd06b37cf3a3ee1678f0b632d5a",
+  "symbol": "CTypedPtrMap\u003cCMapStringToPtr, ATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e, GWCPropertyFeel *\u003e::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x0087273C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A7FD4",
+    "0x006A7FE1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

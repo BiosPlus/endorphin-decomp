@@ -1,0 +1,14 @@
+{
+  "va": "0x00482440",
+  "size": 33,
+  "sha256": "4d82a2f40b6e522c2acc3784bf76c44ad00f490f78664df5e37eaa970ef8d776",
+  "symbol": "ToolEngine::vfunc_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:26:33Z"
+}

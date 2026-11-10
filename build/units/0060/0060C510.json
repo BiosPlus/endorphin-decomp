@@ -1,0 +1,19 @@
+{
+  "va": "0x0060C510",
+  "size": 30,
+  "sha256": "c82d97c72848512ca651a711fce18681a4fbc3b17b91906776665687614de1e8",
+  "symbol": "NMData::EffectorBaseData::vfunc_0",
+  "callees": [
+    "0x0060BA10",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060C514",
+    "0x0060C521"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

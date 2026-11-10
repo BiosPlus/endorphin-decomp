@@ -1,0 +1,15 @@
+{
+  "va": "0x00449C80",
+  "size": 6,
+  "sha256": "e52cc88c2909597c5efdf2682bfee82cac2b39214c2ebe80eae2f4fd18faa741",
+  "symbol": "ReloadCharacterDialog::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00449C81"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

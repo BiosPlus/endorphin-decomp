@@ -1,0 +1,25 @@
+{
+  "va": "0x0041E400",
+  "size": 178,
+  "sha256": "018f1bb0dc5bc815d328b5f8987c9779bf0d650e208f55ca350fecc72f3e1f8c",
+  "symbol": "Properties::GWCPropertiesControlDriver::vfunc_4",
+  "callees": [
+    "0x0041E160",
+    "0x00598FF0",
+    "0x006A63BE",
+    "0x006AEC60",
+    "0x006AEC90"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041E43A",
+    "0x0041E442",
+    "0x0041E45C",
+    "0x0041E465",
+    "0x0041E48D",
+    "0x0041E49C"
+  ],
+  "status": "todo"
+}

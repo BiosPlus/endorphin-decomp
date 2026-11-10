@@ -1,0 +1,19 @@
+{
+  "va": "0x006B16D0",
+  "size": 30,
+  "sha256": "7f8b5673e60d310b4d98cef97f022789fb581680e710a7532a3dec9bbec5df2c",
+  "symbol": "GWCToolTipCtrl::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B16C0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B16D4",
+    "0x006B16E1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

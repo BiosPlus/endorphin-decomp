@@ -1,0 +1,29 @@
+{
+  "va": "0x005B1540",
+  "size": 305,
+  "sha256": "2b03db2606a87098d4efe562abc74597d9b37067dcf1f6b38c59267dc7711a5d",
+  "symbol": "Geometry::SphylType::vfunc_4",
+  "callees": [
+    "0x0047FFA0",
+    "0x0053B470",
+    "0x00540D60",
+    "0x00547080",
+    "0x005B11E0",
+    "0x006A7250"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B155A",
+    "0x005B1560",
+    "0x005B15AC",
+    "0x005B15B5",
+    "0x005B15BE",
+    "0x005B15D0",
+    "0x005B15FC",
+    "0x005B161F",
+    "0x005B165C"
+  ],
+  "status": "todo"
+}

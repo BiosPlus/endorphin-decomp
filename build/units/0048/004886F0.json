@@ -1,0 +1,23 @@
+{
+  "va": "0x004886F0",
+  "size": 122,
+  "sha256": "9b6eaa16d144254428dc63be00f9c45eb5b74dddfff1be8239a87eb14b912ac3",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriod(float), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004886F9",
+    "0x0048870C",
+    "0x00488714",
+    "0x00488719",
+    "0x00488726",
+    "0x00488734",
+    "0x0048873B",
+    "0x00488756"
+  ],
+  "status": "todo"
+}

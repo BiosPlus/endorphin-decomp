@@ -1,0 +1,15 @@
+{
+  "va": "0x0043CEE0",
+  "size": 15,
+  "sha256": "bd4b5c41adb5741fedf9346170ae1355f291c3a805a37a649b2de15ed02c319b",
+  "symbol": "MultiTrackView::View::vfunc_81",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0043CEEA"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

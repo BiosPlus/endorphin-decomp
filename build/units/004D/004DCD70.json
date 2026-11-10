@@ -1,0 +1,14 @@
+{
+  "va": "0x004DCD70",
+  "size": 5,
+  "sha256": "60a10348a68547636a3b7759b4687055112f70c8e830fbb6793d8acae4b8956c",
+  "symbol": "NMData::RigEventData::vfunc_89",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x004DCD71"
+  ],
+  "status": "out_of_scope"
+}

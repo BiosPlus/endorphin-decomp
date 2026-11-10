@@ -1,0 +1,19 @@
+{
+  "va": "0x00559FA0",
+  "size": 30,
+  "sha256": "8c5c432a33e1323306e181044a0099271a1064598345698e78237aaf70a6cef9",
+  "symbol": "NMCIO::vfunc_0",
+  "callees": [
+    "0x0056D840",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00559FA4",
+    "0x00559FB1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

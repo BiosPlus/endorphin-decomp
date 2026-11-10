@@ -1,0 +1,14 @@
+{
+  "va": "0x0063E024",
+  "size": 6,
+  "sha256": "654d22c2bbcb7ec1ac7f3ffa0db35a9433fc803d262a554ea88841b582e3f7ff",
+  "symbol": "thunk_GLU32_gluDisk",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0063E026"
+  ],
+  "status": "out_of_scope"
+}

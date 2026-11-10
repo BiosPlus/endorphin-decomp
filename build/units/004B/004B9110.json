@@ -1,0 +1,24 @@
+{
+  "va": "0x004B9110",
+  "size": 168,
+  "sha256": "819ccc7c8e82c31b53495852d78a15d9b9fab61bcf9974b948f99618c5b01c42",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e::vfunc_44",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x006720A0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B9119",
+    "0x004B9147",
+    "0x004B915B",
+    "0x004B91A5",
+    "0x004B91AA",
+    "0x004B91B4"
+  ],
+  "status": "todo"
+}

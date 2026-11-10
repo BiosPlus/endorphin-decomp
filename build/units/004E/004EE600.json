@@ -1,0 +1,20 @@
+{
+  "va": "0x004EE600",
+  "size": 25,
+  "sha256": "881b6c1586450bb58739dc21a3f1ef5eda3aa1daf0d7d11b26a333b18daf7614",
+  "symbol": "MetaBodyJointSelection::vfunc_1_off_4",
+  "callees": [
+    "0x004EC660",
+    "0x004EE200"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004EE609",
+    "0x004EE611"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T11:20:17Z"
+}

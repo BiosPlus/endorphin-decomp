@@ -1,0 +1,20 @@
+{
+  "va": "0x004154A0",
+  "size": 149,
+  "sha256": "3ac4f9c0cba85227c8cc40685ae9f9743a175e46eded2189986d6f20f6648cb5",
+  "symbol": "EditBox::vfunc_66",
+  "callees": [
+    "0x00415430",
+    "0x006A5DA0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004154BE",
+    "0x004154E4",
+    "0x00415524",
+    "0x0041552C"
+  ],
+  "status": "todo"
+}

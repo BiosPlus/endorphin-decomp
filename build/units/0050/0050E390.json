@@ -1,0 +1,20 @@
+{
+  "va": "0x0050E390",
+  "size": 30,
+  "sha256": "4be92a2a6f7c2090cfde1ac87e30a5a26a998c3e2d36b3d28c834c9433b24b3f",
+  "symbol": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, \u0026public: void __thiscall NMData::PopulationData::randomizeNow(void)\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0050E397",
+    "0x0050E39C",
+    "0x0050E3A4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:10:39Z"
+}

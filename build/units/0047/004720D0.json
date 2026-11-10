@@ -1,0 +1,21 @@
+{
+  "va": "0x004720D0",
+  "size": 55,
+  "sha256": "f6d0030af6798d5e2740d45f962fd693cbea33a7df658b555b63b676c92515d0",
+  "symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0\u003e::vfunc_1",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046F7C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004720DE",
+    "0x004720F4",
+    "0x004720F9",
+    "0x00472103"
+  ],
+  "status": "todo"
+}

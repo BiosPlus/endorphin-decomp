@@ -1,0 +1,19 @@
+{
+  "va": "0x0053A610",
+  "size": 55,
+  "sha256": "d4d13e7af78d803aae136432ad849534f2112f6cfd49ec40cdfcf65ecd14d27d",
+  "symbol": "Primitives::Plane::vfunc_25",
+  "callees": [
+    "0x00661A80"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053A615",
+    "0x0053A62A"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T05:33:44Z"
+}

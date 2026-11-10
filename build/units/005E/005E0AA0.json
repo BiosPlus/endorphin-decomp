@@ -1,0 +1,13 @@
+{
+  "va": "0x005E0AA0",
+  "size": 8,
+  "sha256": "55c2aef17306576b904de275a91ef3e9b11ab2371af4b804c42b7c4cc83b5db5",
+  "symbol": "NMData::RPROMagnetData::vfunc_19",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

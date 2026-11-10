@@ -1,0 +1,19 @@
+{
+  "va": "0x004616C0",
+  "size": 30,
+  "sha256": "e589340cba10f33c6eab30f6e5a37cbadd1b1c72c51f64ae7a05b014bbc388c3",
+  "symbol": "UpdateAvailableDialog::vfunc_1",
+  "callees": [
+    "0x004615B0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004616C4",
+    "0x004616D1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

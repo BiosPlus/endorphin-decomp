@@ -1,0 +1,19 @@
+{
+  "va": "0x0041B930",
+  "size": 30,
+  "sha256": "442e3cd872afc14b63b39117e42e944a43fba1241c969c216173d926d4c53587",
+  "symbol": "CMemDC::vfunc_1",
+  "callees": [
+    "0x0041B860",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041B934",
+    "0x0041B941"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

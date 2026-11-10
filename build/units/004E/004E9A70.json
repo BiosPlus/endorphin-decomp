@@ -1,0 +1,16 @@
+{
+  "va": "0x004E9A70",
+  "size": 31,
+  "sha256": "d4b19d6f6d07f694f3f139b3609b8793987e6d82eca2704c903268b902324e91",
+  "symbol": "SelectionBuffer::vfunc_5",
+  "callees": [
+    "0x004E8B60"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004E9A80"
+  ],
+  "status": "todo"
+}

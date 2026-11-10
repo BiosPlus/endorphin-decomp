@@ -1,0 +1,32 @@
+{
+  "va": "0x0068BA70",
+  "size": 192,
+  "sha256": "96e1088407141b312a9abfdeffd5d998b825d634f0aded7c86f8ac55e08905ca",
+  "symbol": "MetaXMLElement::vfunc_1",
+  "callees": [
+    "0x004275E0",
+    "0x0063EFE0",
+    "0x0068B7E0",
+    "0x0068B7F0",
+    "0x00692180"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0068BA76",
+    "0x0068BA8C",
+    "0x0068BAA6",
+    "0x0068BAB0",
+    "0x0068BAB8",
+    "0x0068BABF",
+    "0x0068BACC",
+    "0x0068BAD7",
+    "0x0068BADD",
+    "0x0068BAE8",
+    "0x0068BAF2",
+    "0x0068BB01",
+    "0x0068BB19"
+  ],
+  "status": "todo"
+}

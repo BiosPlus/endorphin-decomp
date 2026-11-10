@@ -1,0 +1,21 @@
+{
+  "va": "0x006569A0",
+  "size": 47,
+  "sha256": "a88f6a265d34c9a96a79ead1c7a4d0059990d5d61a28c7144a166687aa70fe03",
+  "symbol": "ExprParser::ReadMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall SkeletalJoint::getSecondaryConstraintOrientationTSA(void) const, 0}, 1\u003e::vfunc_5",
+  "callees": [
+    "0x0046C3C0",
+    "0x006508C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006569AE",
+    "0x006569BC",
+    "0x006569C1",
+    "0x006569CB"
+  ],
+  "status": "todo"
+}

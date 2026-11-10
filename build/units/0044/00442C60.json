@@ -1,0 +1,14 @@
+{
+  "va": "0x00442C60",
+  "size": 6,
+  "sha256": "93b2d67c2f233ce89acdaaf1d19a23e72615d44112489f8add9eb544bd43c385",
+  "symbol": "thunk_USER32_ReleaseCapture",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00442C62"
+  ],
+  "status": "out_of_scope"
+}

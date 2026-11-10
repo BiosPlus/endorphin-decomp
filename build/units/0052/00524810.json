@@ -1,0 +1,20 @@
+{
+  "va": "0x00524810",
+  "size": 30,
+  "sha256": "d75166e45f5547eef1c037d7eb984ab081dd4c636af95fb1451d8ef64b06f14c",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getBestValue(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00524817",
+    "0x0052481C",
+    "0x00524824"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:50:38Z"
+}

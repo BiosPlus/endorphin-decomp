@@ -1,0 +1,26 @@
+{
+  "va": "0x004A40A0",
+  "size": 167,
+  "sha256": "1903a0d180e7530ef8ad3708d43c563b94731de99b2a942833120886fe221045",
+  "symbol": "ExprParser::ReadMethodType\u003cStateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0\u003e::vfunc_44",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x0049AA60",
+    "0x006720A0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004A40A9",
+    "0x004A40C4",
+    "0x004A40D6",
+    "0x004A40EA",
+    "0x004A4134",
+    "0x004A4139",
+    "0x004A4143"
+  ],
+  "status": "todo"
+}

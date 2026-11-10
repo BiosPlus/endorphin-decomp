@@ -1,0 +1,18 @@
+{
+  "va": "0x00629520",
+  "size": 15,
+  "sha256": "38c4cd8c29e00e1b5a731e8e573763916f8dee3f6a7771d6bdc18362fcef5f41",
+  "symbol": "Sensors::SensorActualHingeAngle::vfunc_22",
+  "callees": [
+    "0x006294F0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00629524"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:45:58Z"
+}

@@ -1,0 +1,16 @@
+{
+  "va": "0x00584610",
+  "size": 75,
+  "sha256": "c1ce1a81ac38ebe252fdb85d8a442fe08ecdda7173ec36c91d6bd9f79974de3b",
+  "symbol": "AcclaimIO::vfunc_14",
+  "callees": [
+    "0x005557A0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058463C"
+  ],
+  "status": "todo"
+}

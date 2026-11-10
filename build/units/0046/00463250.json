@@ -1,0 +1,19 @@
+{
+  "va": "0x00463250",
+  "size": 82,
+  "sha256": "ea5c20bae750f578b5244421e93c6fe5720aca6b777a82492549de24c994a4bb",
+  "symbol": "VersionControlSettingsDialog::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00463263",
+    "0x00463275",
+    "0x00463287",
+    "0x00463299"
+  ],
+  "status": "todo"
+}

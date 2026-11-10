@@ -1,0 +1,17 @@
+{
+  "va": "0x0058A170",
+  "size": 35,
+  "sha256": "2b47db9bfbce2d57d2d877c3d6e9932fbdfb11bfa7ab7587f01ff52ec3182a2b",
+  "symbol": "sub_0058A170",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058A172",
+    "0x0058A188"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:37:22Z"
+}

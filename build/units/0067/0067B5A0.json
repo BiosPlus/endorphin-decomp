@@ -1,0 +1,19 @@
+{
+  "va": "0x0067B5A0",
+  "size": 30,
+  "sha256": "6c459822033af7d92c8572adafd05a315d66657025be0d49cde8910882ef70ae",
+  "symbol": "Timer::vfunc_0",
+  "callees": [
+    "0x0067B450",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0067B5A4",
+    "0x0067B5B1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

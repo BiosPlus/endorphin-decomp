@@ -1,0 +1,19 @@
+{
+  "va": "0x004B0880",
+  "size": 30,
+  "sha256": "c618ba264a5cc10f7a85347c258435fc08f4ce01c38affd2b88d8da1bbd04b6f",
+  "symbol": "ViewManager::vfunc_0",
+  "callees": [
+    "0x004B0840",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B0884",
+    "0x004B0891"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

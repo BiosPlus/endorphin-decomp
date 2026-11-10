@@ -1,0 +1,19 @@
+{
+  "va": "0x0050FB00",
+  "size": 30,
+  "sha256": "bbd46893ab982931e8fe55c21c56e4e04590338fea1a6b793e625b709fce96eb",
+  "symbol": "SelectionMethod::vfunc_0",
+  "callees": [
+    "0x0050F990",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0050FB04",
+    "0x0050FB11"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x005ACF20",
+  "size": 81,
+  "sha256": "79eafcbd700b3022e61c19880791d01a8c38cf3b24ea92935a8972f7ce4598f1",
+  "symbol": "Commands::RemoveFluidObjectCommand::vfunc_1",
+  "callees": [
+    "0x00468180",
+    "0x00468F70",
+    "0x00528B60",
+    "0x005BF5B0"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005ACF33",
+    "0x005ACF3A",
+    "0x005ACF5E",
+    "0x005ACF6A"
+  ],
+  "status": "todo"
+}

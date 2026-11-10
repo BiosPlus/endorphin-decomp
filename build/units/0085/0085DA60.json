@@ -1,0 +1,16 @@
+{
+  "va": "0x0085DA60",
+  "size": 29,
+  "sha256": "f85524e8bf400c3987925842459caebc232e1b1798bcfeb17f7be31c209d4ff9",
+  "symbol": "sub_0085DA60",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0085DA61",
+    "0x0085DA6E"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

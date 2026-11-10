@@ -1,0 +1,27 @@
+{
+  "va": "0x00456CE0",
+  "size": 248,
+  "sha256": "ea94e3be40ce565571dbe0ca5fec5709375e89069a0393ab185e1c81d1229776",
+  "symbol": "ButtonPanel::vfunc_92",
+  "callees": [
+    "0x00455F10",
+    "0x006A5CE6",
+    "0x006A64AE"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00456CE9",
+    "0x00456D0A",
+    "0x00456D18",
+    "0x00456D39",
+    "0x00456D41",
+    "0x00456D4C",
+    "0x00456D8C",
+    "0x00456D94",
+    "0x00456DA5",
+    "0x00456DBE"
+  ],
+  "status": "todo"
+}

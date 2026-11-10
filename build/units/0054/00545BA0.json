@@ -1,0 +1,14 @@
+{
+  "va": "0x00545BA0",
+  "size": 51,
+  "sha256": "59a09ef993eefe24e4c193ed0b1af1408f117fdc351ece2056a46c6b295a5d55",
+  "symbol": "ResizeTool::vfunc_17",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T04:02:28Z"
+}

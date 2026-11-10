@@ -1,0 +1,30 @@
+{
+  "va": "0x0043BD40",
+  "size": 414,
+  "sha256": "13dae28cdc38af8fc78253c398ed6df85189b0d8a71bbc36282d43da74143e08",
+  "symbol": "MultiTrackView::MarkerTrack::vfunc_2",
+  "callees": [
+    "0x0043B450",
+    "0x0043B4D0",
+    "0x0043F2C0",
+    "0x00441020"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0043BD49",
+    "0x0043BD6B",
+    "0x0043BDA8",
+    "0x0043BDBE",
+    "0x0043BDC8",
+    "0x0043BDDD",
+    "0x0043BE11",
+    "0x0043BE34",
+    "0x0043BE51",
+    "0x0043BEA1",
+    "0x0043BEAF",
+    "0x0043BEC3"
+  ],
+  "status": "todo"
+}

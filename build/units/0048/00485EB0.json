@@ -1,0 +1,16 @@
+{
+  "va": "0x00485EB0",
+  "size": 31,
+  "sha256": "b077d4d31f150fc15e0a0769c85021cfdae1e2bc5c92c68adfc5fab1b928ead3",
+  "symbol": "Commands::ResizeCommand::vfunc_1",
+  "callees": [
+    "0x00484A70"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00485ECA"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x0053CA80",
+  "size": 30,
+  "sha256": "2eb36cfd2b6e1b6fdc1a6217137b9c0b87067dffa6abae5ef9139911d649130a",
+  "symbol": "Primitives::Frustum::vfunc_0",
+  "callees": [
+    "0x0053BBF0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053CA84",
+    "0x0053CA91"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

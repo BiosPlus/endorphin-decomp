@@ -1,0 +1,20 @@
+{
+  "va": "0x0061BE80",
+  "size": 30,
+  "sha256": "dcd561ce6f12240bd4a360507d526a9ec62c9cd8a7a9519dbeb0c34a9f8f295c",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing1(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061BE87",
+    "0x0061BE8C",
+    "0x0061BE94"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:58:13Z"
+}

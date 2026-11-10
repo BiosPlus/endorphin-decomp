@@ -1,0 +1,26 @@
+{
+  "va": "0x00670330",
+  "size": 170,
+  "sha256": "3d737d3543d7c6ce3a6ff262bfc95513661fc6f0fb0d5be9c23df5f284ecc8b6",
+  "symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::getPolarAngleXZ(void) const, 1\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00672080",
+    "0x0067C550",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00670339",
+    "0x00670354",
+    "0x00670369",
+    "0x0067037D",
+    "0x006703C7",
+    "0x006703CC",
+    "0x006703D6"
+  ],
+  "status": "todo"
+}

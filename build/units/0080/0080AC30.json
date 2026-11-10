@@ -1,0 +1,17 @@
+{
+  "va": "0x0080AC30",
+  "size": 31,
+  "sha256": "59c8d2b7960003dd374be87053471f400b8a37c2092def96bc29eb34343bec79",
+  "symbol": "sub_0080AC30",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0080AC31",
+    "0x0080AC3A",
+    "0x0080AC40"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

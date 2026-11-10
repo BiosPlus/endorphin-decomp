@@ -1,0 +1,15 @@
+{
+  "va": "0x00458460",
+  "size": 6,
+  "sha256": "53065d91c3bdd2d92bfe5344fcabecff1f27a547252c7d6e31ecae8945710b37",
+  "symbol": "SpinButtonView::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00458461"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

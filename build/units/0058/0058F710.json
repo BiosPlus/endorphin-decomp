@@ -1,0 +1,23 @@
+{
+  "va": "0x0058F710",
+  "size": 82,
+  "sha256": "ebe92bef68e666de21018d94813822c522c6593afab1caa7b6d34d3b12c3c646",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cTransformNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall TransformNode::getUserRefFrame(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: void __thiscall TransformNode::setUserRefFrame(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046E780",
+    "0x0058F4F0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058F737",
+    "0x0058F73E",
+    "0x0058F74F",
+    "0x0058F754",
+    "0x0058F75E"
+  ],
+  "status": "todo"
+}

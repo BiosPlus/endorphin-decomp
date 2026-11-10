@@ -1,0 +1,18 @@
+{
+  "va": "0x00517910",
+  "size": 84,
+  "sha256": "fff8b05cb803a099e68057fd7830d527b31bf443deb7033ce3d744a9d65e1da3",
+  "symbol": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_2",
+  "callees": [
+    "0x00517510",
+    "0x00527EC0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00517936",
+    "0x0051795C"
+  ],
+  "status": "todo"
+}

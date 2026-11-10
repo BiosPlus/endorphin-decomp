@@ -1,0 +1,19 @@
+{
+  "va": "0x0042EF10",
+  "size": 30,
+  "sha256": "3ba1ac9a821b83e8fe057b34797544b22fa0735b42384a1a285d17d5a63f2f9a",
+  "symbol": "ListBox::vfunc_1",
+  "callees": [
+    "0x0042EC80",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0042EF14",
+    "0x0042EF21"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

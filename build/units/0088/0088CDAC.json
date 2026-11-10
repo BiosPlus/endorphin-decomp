@@ -1,0 +1,15 @@
+{
+  "va": "0x0088CDAC",
+  "size": 11,
+  "sha256": "8c67cb4e77aac1663c256fe2a904fba2ebf2a07d2a8df68620dc641e301a2b91",
+  "symbol": "sub_0088CDAC",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0088CDAD",
+    "0x0088CDB3"
+  ],
+  "status": "out_of_scope"
+}

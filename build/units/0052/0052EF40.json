@@ -1,0 +1,13 @@
+{
+  "va": "0x0052EF40",
+  "size": 9,
+  "sha256": "bf17444afd6fdf897158fc1494744d7626f48774a09c3f504a058c5897a9152a",
+  "symbol": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_17",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

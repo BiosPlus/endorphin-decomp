@@ -1,0 +1,13 @@
+{
+  "va": "0x00544A00",
+  "size": 13,
+  "sha256": "34daf46371c0e9dc06c3249867c73c9e15fd1f7b76fbabb0fe7a9b43d541a120",
+  "symbol": "ReshapeTool::vfunc_15",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

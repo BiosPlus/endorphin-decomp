@@ -1,0 +1,39 @@
+{
+  "va": "0x0041E210",
+  "size": 488,
+  "sha256": "bec9f2b48f2f62a264c37d4b2431c27e65aeb5797cf3e696e5ba728c750aa2d7",
+  "symbol": "Properties::AutoCompleteSupplier::vfunc_3",
+  "callees": [
+    "0x0041DA50",
+    "0x0041E0D0",
+    "0x00660280",
+    "0x00660870",
+    "0x006737B0",
+    "0x00673830",
+    "0x006A5C5C"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041E219",
+    "0x0041E22E",
+    "0x0041E24D",
+    "0x0041E264",
+    "0x0041E276",
+    "0x0041E29A",
+    "0x0041E2C1",
+    "0x0041E2E0",
+    "0x0041E32F",
+    "0x0041E33A",
+    "0x0041E352",
+    "0x0041E364",
+    "0x0041E36F",
+    "0x0041E375",
+    "0x0041E37D",
+    "0x0041E3A4",
+    "0x0041E3B5",
+    "0x0041E3DA"
+  ],
+  "status": "todo"
+}

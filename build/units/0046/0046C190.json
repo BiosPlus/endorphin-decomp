@@ -1,0 +1,23 @@
+{
+  "va": "0x0046C190",
+  "size": 266,
+  "sha256": "f24997cf949c3670eaf4be5a986763f2ae3339de4f743d08d87dd51442e24f41",
+  "symbol": "ImageExporter::vfunc_0",
+  "callees": [
+    "0x00662650"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046C199",
+    "0x0046C1D6",
+    "0x0046C1E0",
+    "0x0046C201",
+    "0x0046C213",
+    "0x0046C228",
+    "0x0046C251",
+    "0x0046C26B"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x006596B0",
+  "size": 187,
+  "sha256": "b3aa2be304f0432f00d56c9a0ddfd7f502fdf28aa12328c483ffa8cccb6d3129",
+  "symbol": "RelationshipRPROJoint::vfunc_8",
+  "callees": [
+    "0x0067DAD0",
+    "0x00694D80"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065974E",
+    "0x0065975C"
+  ],
+  "status": "todo"
+}

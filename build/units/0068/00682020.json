@@ -1,0 +1,29 @@
+{
+  "va": "0x00682020",
+  "size": 222,
+  "sha256": "72c9a4b0dff12ed1f21d90ab8a88e705d6a6935e85a515438d6e44d708290beb",
+  "symbol": "XMLDocumentLoader::vfunc_2",
+  "callees": [
+    "0x00640390",
+    "0x00870E10",
+    "0x00870E30",
+    "0x008726F0"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00682029",
+    "0x00682062",
+    "0x00682075",
+    "0x0068209B",
+    "0x006820AD",
+    "0x006820B2",
+    "0x006820B9",
+    "0x006820C0",
+    "0x006820C7",
+    "0x006820CE",
+    "0x006820E4"
+  ],
+  "status": "todo"
+}

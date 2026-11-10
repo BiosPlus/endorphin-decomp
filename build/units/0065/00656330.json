@@ -1,0 +1,23 @@
+{
+  "va": "0x00656330",
+  "size": 122,
+  "sha256": "1baf35ef779f127e32096d87b9560fed9c729c83e1caa7bd6cb0d64656603de5",
+  "symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector4 const \u0026, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00656339",
+    "0x0065634C",
+    "0x00656354",
+    "0x00656359",
+    "0x00656366",
+    "0x00656374",
+    "0x0065637B",
+    "0x00656396"
+  ],
+  "status": "todo"
+}

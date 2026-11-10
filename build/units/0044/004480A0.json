@@ -1,0 +1,25 @@
+{
+  "va": "0x004480A0",
+  "size": 203,
+  "sha256": "f89074a089304cf68a725b8e71fdf09c839fd9763a35a6e48f64ca05a82c2ff1",
+  "symbol": "ProgressDialog::vfunc_84",
+  "callees": [
+    "0x006A5EDE",
+    "0x006A5FC8"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004480A3",
+    "0x004480BE",
+    "0x004480C3",
+    "0x004480CC",
+    "0x004480DB",
+    "0x004480ED",
+    "0x0044811E",
+    "0x00448128",
+    "0x00448150"
+  ],
+  "status": "todo"
+}

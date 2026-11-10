@@ -1,0 +1,17 @@
+{
+  "va": "0x00401800",
+  "size": 41,
+  "sha256": "56551fdd1cf62c5c87eeb6cf326f9e4508357d0f75be04d6099bc7c934aa0b72",
+  "symbol": "AdvRenderOptions::vfunc_66",
+  "callees": [
+    "0x00401740"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00401814",
+    "0x00401825"
+  ],
+  "status": "todo"
+}

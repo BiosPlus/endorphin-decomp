@@ -1,0 +1,20 @@
+{
+  "va": "0x004FDB20",
+  "size": 30,
+  "sha256": "e9c2ea462a115b5ea083659ead8d9b9b59dd42bbf06b81b924903102233d1b43",
+  "symbol": "ExprParser::ROWriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004FDB27",
+    "0x004FDB2C",
+    "0x004FDB34"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:10:07Z"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x004CDEC0",
+  "size": 30,
+  "sha256": "f3260238eff1fefc8fbe9452fda55f8a337e8c862b23b4f2bcc809a43d89eafd",
+  "symbol": "ClassFactory\u003cCompoundSensor\u003e::vfunc_0",
+  "callees": [
+    "0x004CDE30",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CDEC4",
+    "0x004CDED1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

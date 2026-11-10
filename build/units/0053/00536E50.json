@@ -1,0 +1,19 @@
+{
+  "va": "0x00536E50",
+  "size": 33,
+  "sha256": "c3e7076dd074a16b986dd5409ad0966ea1897604cd8322f431a19870b98a4950",
+  "symbol": "OglRenderer::vfunc_119",
+  "callees": [
+    "0x0065C640"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00536E57",
+    "0x00536E6B"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:04:25Z"
+}

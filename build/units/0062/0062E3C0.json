@@ -1,0 +1,20 @@
+{
+  "va": "0x0062E3C0",
+  "size": 30,
+  "sha256": "23fe02761707b85eb088b0ff0d74fd9a386f53038a0814cd218d93000dca69b9",
+  "symbol": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes, float, NM::Vector3 const \u0026, \u0026public: float __thiscall Sensors::CompoundSensorPlanes::checkDistance(class NM::Vector3 const \u0026)\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062E3C7",
+    "0x0062E3CC",
+    "0x0062E3D4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:45:04Z"
+}

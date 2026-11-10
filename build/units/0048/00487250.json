@@ -1,0 +1,20 @@
+{
+  "va": "0x00487250",
+  "size": 162,
+  "sha256": "9858632765c0599feea73c47ce56e1131e8ed6ebed663a0b1011ca6414b25140",
+  "symbol": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setStrengthFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x0046E780",
+    "0x004C6F50"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00487253",
+    "0x0048728B",
+    "0x0048729B",
+    "0x004872AD"
+  ],
+  "status": "todo"
+}

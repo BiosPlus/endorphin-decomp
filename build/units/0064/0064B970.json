@@ -1,0 +1,31 @@
+{
+  "va": "0x0064B970",
+  "size": 293,
+  "sha256": "9250b38590e62a8e56429c496501a4a4d1f7de719c92e378c891a95a7db7f4fe",
+  "symbol": "RelationshipRPROMagnet::vfunc_48",
+  "callees": [
+    "0x00480920",
+    "0x006457F0",
+    "0x00647F00",
+    "0x007C9480",
+    "0x007C97A0",
+    "0x007C9BC0",
+    "0x007D8700"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064B9CB",
+    "0x0064B9D7",
+    "0x0064B9E3",
+    "0x0064BA01",
+    "0x0064BA22",
+    "0x0064BA2D",
+    "0x0064BA46",
+    "0x0064BA4F",
+    "0x0064BA6A",
+    "0x0064BA86"
+  ],
+  "status": "todo"
+}

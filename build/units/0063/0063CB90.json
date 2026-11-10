@@ -1,0 +1,12 @@
+{
+  "va": "0x0063CB90",
+  "size": 105,
+  "sha256": "77002c37c06a33e77e0d2d1b58238f76680f59d21a63bf5434fa35ec82867ec9",
+  "symbol": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e::vfunc_48",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "todo"
+}

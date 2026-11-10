@@ -1,0 +1,19 @@
+{
+  "va": "0x00629E40",
+  "size": 30,
+  "sha256": "2a44d28d1c3bdf643b6ca534768faef1eb94714e24b57e7dfb8b05eddd88eb2c",
+  "symbol": "MetaBodySensor::vfunc_0",
+  "callees": [
+    "0x005FF040",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00629E44",
+    "0x00629E51"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

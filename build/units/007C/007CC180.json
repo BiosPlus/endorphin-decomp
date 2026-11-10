@@ -1,0 +1,22 @@
+{
+  "va": "0x007CC180",
+  "size": 57,
+  "sha256": "651da6e3f4683a33c79b837bfc359b64616ff57c6061b857f76639fd72d38d83",
+  "symbol": "sub_007CC180",
+  "callees": [
+    "0x007CB940",
+    "0x007CB980",
+    "0x007CC8E0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x007CC18E",
+    "0x007CC19E",
+    "0x007CC1AE"
+  ],
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5",
+  "matched_at": "2026-11-10T13:04:33Z"
+}

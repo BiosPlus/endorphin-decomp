@@ -1,0 +1,16 @@
+{
+  "va": "0x0064F240",
+  "size": 113,
+  "sha256": "3b11c7575e0b89afa71306d01bc4b45b2e758e9252b7eda03657d27136e7168f",
+  "symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setSoftLimitSwingAngle1(float), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x0064DCE0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064F267"
+  ],
+  "status": "todo"
+}

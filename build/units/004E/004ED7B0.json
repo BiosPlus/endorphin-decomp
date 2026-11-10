@@ -1,0 +1,13 @@
+{
+  "va": "0x004ED7B0",
+  "size": 6,
+  "sha256": "de95eef5b6591c0be60521f7f444233d61009682bd3c2c0bfd867e8ca39d4ebc",
+  "symbol": "CollisionSelection::vfunc_21",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

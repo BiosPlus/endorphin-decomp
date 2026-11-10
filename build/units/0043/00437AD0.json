@@ -1,0 +1,17 @@
+{
+  "va": "0x00437AD0",
+  "size": 60,
+  "sha256": "2ff56705561115cd75e6c977b2a6f689df2e8346b05976a4192881656dee7c21",
+  "symbol": "BaseEventDispatcher::vfunc_3",
+  "callees": [
+    "0x00596660"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00437AD7",
+    "0x00437B00"
+  ],
+  "status": "todo"
+}

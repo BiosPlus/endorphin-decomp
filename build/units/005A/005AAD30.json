@@ -1,0 +1,14 @@
+{
+  "va": "0x005AAD30",
+  "size": 5,
+  "sha256": "7aea68a929f7e0d1ba3bce26ceca8d756c94765527a11499892025d7afd6d42e",
+  "symbol": "NMData::RigRoot::vfunc_21",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005AAD31"
+  ],
+  "status": "out_of_scope"
+}

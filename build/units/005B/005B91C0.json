@@ -1,0 +1,26 @@
+{
+  "va": "0x005B91C0",
+  "size": 170,
+  "sha256": "71ca2712d531ffd1665822b6e55e0b762834d7c16a624e4e59af6d9162a73171",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, float, {public: float __thiscall NMData::MetaBodyData::getAbsolutePositionY(void) const, 0}, 1\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x005B6970",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B91C9",
+    "0x005B91E4",
+    "0x005B91F9",
+    "0x005B920D",
+    "0x005B9257",
+    "0x005B925C",
+    "0x005B9266"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x005F0D20",
+  "size": 32,
+  "sha256": "558bd1223a85d9d90a64b513f24b0e9ff840ab56dcc18eb31ddc89f1adc6a211",
+  "symbol": "NMData::MagnetJointData::vfunc_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:15:16Z"
+}

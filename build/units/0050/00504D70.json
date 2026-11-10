@@ -1,0 +1,19 @@
+{
+  "va": "0x00504D70",
+  "size": 43,
+  "sha256": "0b87e7ece6b6d21b7b7ec66e6d9d39a3662c821aa758abe8ce784dad1fd28128",
+  "symbol": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e::vfunc_2",
+  "callees": [
+    "0x0046C3C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00504D88",
+    "0x00504D8D",
+    "0x00504D97"
+  ],
+  "status": "todo"
+}

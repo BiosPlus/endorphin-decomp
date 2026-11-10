@@ -1,0 +1,23 @@
+{
+  "va": "0x0062A7D0",
+  "size": 122,
+  "sha256": "f44eeb66fd7669808efbef17bd63d24e93d60eb8fbcd6c504b302b6377babe1c",
+  "symbol": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062A7D9",
+    "0x0062A7EC",
+    "0x0062A7F4",
+    "0x0062A7F9",
+    "0x0062A806",
+    "0x0062A814",
+    "0x0062A81B",
+    "0x0062A836"
+  ],
+  "status": "todo"
+}

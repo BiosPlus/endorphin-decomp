@@ -1,0 +1,39 @@
+{
+  "va": "0x004CE5F0",
+  "size": 282,
+  "sha256": "30ee33fa457e314ce3f2ab5f80f80ed6bf0ca26d60a9ed9947a536f11dfb844c",
+  "symbol": "NMData::IncarnationEventData::vfunc_21",
+  "callees": [
+    "0x004275E0",
+    "0x0046C0A0",
+    "0x004C24C0",
+    "0x004CE590",
+    "0x0053F5F0",
+    "0x0063EFE0"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CE5F3",
+    "0x004CE612",
+    "0x004CE61C",
+    "0x004CE621",
+    "0x004CE631",
+    "0x004CE63C",
+    "0x004CE646",
+    "0x004CE64E",
+    "0x004CE65B",
+    "0x004CE660",
+    "0x004CE667",
+    "0x004CE66E",
+    "0x004CE675",
+    "0x004CE67C",
+    "0x004CE69D",
+    "0x004CE6AF",
+    "0x004CE6B7",
+    "0x004CE6CA",
+    "0x004CE6F3"
+  ],
+  "status": "todo"
+}

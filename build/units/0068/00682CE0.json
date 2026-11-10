@@ -1,0 +1,16 @@
+{
+  "va": "0x00682CE0",
+  "size": 85,
+  "sha256": "d89b7bc1f7413c5ae698c379d54a2a5cb75bf502077eab20907917442de8cb23",
+  "symbol": "NMData::ValuePtrData::vfunc_17",
+  "callees": [
+    "0x0067A050"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00682D27"
+  ],
+  "status": "todo"
+}

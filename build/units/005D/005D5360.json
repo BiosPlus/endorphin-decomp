@@ -1,0 +1,21 @@
+{
+  "va": "0x005D5360",
+  "size": 71,
+  "sha256": "6d6df4ef0ecbf21f5c2c1b2a1b150ac323ab3de24f8f1e79337da127d1216ef7",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::CameraData, float, {public: float __thiscall NMData::CameraData::getFrontCutPlane(void) const, 0}, float, {public: void __thiscall NMData::CameraData::setFrontCutPlane(float), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x005D1160",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005D5384",
+    "0x005D5394",
+    "0x005D5399",
+    "0x005D53A3"
+  ],
+  "status": "todo"
+}

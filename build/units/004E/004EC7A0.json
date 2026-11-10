@@ -1,0 +1,23 @@
+{
+  "va": "0x004EC7A0",
+  "size": 181,
+  "sha256": "cb77479e01a41d44dced7216657003b9b24ab95e58035194e0aef5cb3cbda0a7",
+  "symbol": "MetaBodyAndCollisionSelection::vfunc_0_off_18",
+  "callees": [
+    "0x00494000",
+    "0x004940E0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004EC7B2",
+    "0x004EC7D1",
+    "0x004EC7DF",
+    "0x004EC7ED",
+    "0x004EC802",
+    "0x004EC821",
+    "0x004EC82F"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,25 @@
+{
+  "va": "0x0044AF40",
+  "size": 265,
+  "sha256": "380efdb04c90a77992d21bcdbf4be04e940979c29dbb6092c2f98dabda57af4e",
+  "symbol": "RenderOptionsPropertyPage::vfunc_91",
+  "callees": [
+    "0x0044A900",
+    "0x006A6226"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044AF49",
+    "0x0044AF5E",
+    "0x0044AF6A",
+    "0x0044AFA2",
+    "0x0044AFB7",
+    "0x0044AFC9",
+    "0x0044AFEC",
+    "0x0044AFF5",
+    "0x0044B02E"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,26 @@
+{
+  "va": "0x004F5370",
+  "size": 96,
+  "sha256": "211e903405083093d17d58427f5b65a1c4d494042a78aa00f0de63ea65066940",
+  "symbol": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getPhi(void) const, 0\u003e::vfunc_2",
+  "callees": [
+    "0x0046C3C0",
+    "0x004F4DB0",
+    "0x006A6DD2",
+    "0x006A6DE0"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004F537E",
+    "0x004F5399",
+    "0x004F539E",
+    "0x004F53AA",
+    "0x004F53AF",
+    "0x004F53BD",
+    "0x004F53C2",
+    "0x004F53CC"
+  ],
+  "status": "todo"
+}

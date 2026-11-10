@@ -1,0 +1,25 @@
+{
+  "va": "0x00506F50",
+  "size": 134,
+  "sha256": "c22b98ca7d8d82dbbb689b9bccfbd8d53d6ec3d40c37e03b31a9e019d7a99fdc",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall Interpreter::setType(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046E780",
+    "0x00506ED0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00506F59",
+    "0x00506F86",
+    "0x00506F96",
+    "0x00506FA8",
+    "0x00506FC3",
+    "0x00506FC8",
+    "0x00506FD2"
+  ],
+  "status": "todo"
+}

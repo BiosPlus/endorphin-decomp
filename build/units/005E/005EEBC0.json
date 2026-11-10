@@ -1,0 +1,24 @@
+{
+  "va": "0x005EEBC0",
+  "size": 219,
+  "sha256": "29f07448c85fa5f71e493376ee7b670c8746119b229792d6c11a19ee5bbb9423",
+  "symbol": "NMData::RootRelationshipData::vfunc_67",
+  "callees": [
+    "0x00412690",
+    "0x0048EF80"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005EEBC7",
+    "0x005EEBF3",
+    "0x005EEC0D",
+    "0x005EEC27",
+    "0x005EEC41",
+    "0x005EEC5B",
+    "0x005EEC75",
+    "0x005EEC8F"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,16 @@
+{
+  "va": "0x0053FA10",
+  "size": 181,
+  "sha256": "dd9e790a730854ce2d04c4d7765b83e80dc93c12c8c6164b4f419291106bd7b7",
+  "symbol": "SelectionTool::vfunc_15",
+  "callees": [
+    "0x00543630"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053FA14"
+  ],
+  "status": "todo"
+}

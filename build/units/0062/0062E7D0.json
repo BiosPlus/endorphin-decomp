@@ -1,0 +1,24 @@
+{
+  "va": "0x0062E7D0",
+  "size": 157,
+  "sha256": "2fc324a4a46c87c09f2f80329700b230d8be7721fe870d8e3c404905f215f22f",
+  "symbol": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1\u003e::vfunc_46",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00672110",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062E7D9",
+    "0x0062E7FC",
+    "0x0062E810",
+    "0x0062E85A",
+    "0x0062E85F",
+    "0x0062E869"
+  ],
+  "status": "todo"
+}

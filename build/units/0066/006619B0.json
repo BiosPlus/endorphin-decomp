@@ -1,0 +1,18 @@
+{
+  "va": "0x006619B0",
+  "size": 20,
+  "sha256": "d36744a0002c494d24b90f006e78f7cce61b181f49c1bf31812d3f59c0d408ca",
+  "symbol": "AnimatableTransform::vfunc_13",
+  "callees": [
+    "0x0046F7D0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006619B7"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:31:02Z"
+}

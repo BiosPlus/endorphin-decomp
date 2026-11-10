@@ -1,0 +1,18 @@
+{
+  "va": "0x00640EE0",
+  "size": 104,
+  "sha256": "75dcfbfbf13599ff1067456251834a252cb84c389fc212cd2feca9f355dec161",
+  "symbol": "AdvXMLParser::NodeContainer::vfunc_5",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00640EF1",
+    "0x00640F0A",
+    "0x00640F14",
+    "0x00640F23",
+    "0x00640F38"
+  ],
+  "status": "todo"
+}

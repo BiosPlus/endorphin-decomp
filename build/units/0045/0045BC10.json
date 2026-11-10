@@ -1,0 +1,19 @@
+{
+  "va": "0x0045BC10",
+  "size": 30,
+  "sha256": "9ab9cb96ed635052c8955b9f4e0fdd13f77b0679688a95db5bfad10c1e02599e",
+  "symbol": "TransformNodeViewCtrl::vfunc_1",
+  "callees": [
+    "0x0045B6B0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0045BC14",
+    "0x0045BC21"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

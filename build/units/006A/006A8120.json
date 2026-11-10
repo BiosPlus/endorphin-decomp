@@ -1,0 +1,18 @@
+{
+  "va": "0x006A8120",
+  "size": 30,
+  "sha256": "d68533398c84798313ad0d1c23750e1ea5837f1878a92b4d353439fda1804bc9",
+  "symbol": "CScrollBar::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x0087276C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A8124",
+    "0x006A8131"
+  ],
+  "status": "out_of_scope"
+}

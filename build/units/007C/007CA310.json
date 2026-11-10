@@ -1,0 +1,14 @@
+{
+  "va": "0x007CA310",
+  "size": 37,
+  "sha256": "4903304376d12fdb5280a47051655bac154927dd479baeacb2e0a88e641dd95d",
+  "symbol": "sub_007CA310",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:50:51Z"
+}

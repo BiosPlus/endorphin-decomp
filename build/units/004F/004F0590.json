@@ -1,0 +1,16 @@
+{
+  "va": "0x004F0590",
+  "size": 36,
+  "sha256": "afcd3b70dbef1cea0d0b8106f0eb062b9372a036db8d8cdf3fe4e331658c2a6c",
+  "symbol": "Properties::TestControl::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004F05A8"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:43:15Z"
+}

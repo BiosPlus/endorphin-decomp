@@ -1,0 +1,23 @@
+{
+  "va": "0x00524850",
+  "size": 122,
+  "sha256": "97ee320bbd63f14de2f46132bcaca240bb332a1ef5f58e6cd673431c98a8f2a9",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::VariableValue, float, \u0026public: float __thiscall NMData::VariableValue::getInitialValue(void) const, float, \u0026public: void __thiscall NMData::VariableValue::setInitialValue(float)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00524859",
+    "0x0052486C",
+    "0x00524874",
+    "0x00524879",
+    "0x00524886",
+    "0x00524894",
+    "0x0052489B",
+    "0x005248B6"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x006B1C30",
+  "size": 30,
+  "sha256": "00f9a20929560cfe91e6e9e6a8e2761a54786664ed79eea7a70a934a63fabe74",
+  "symbol": "GWCPropertyHotKeyFeel::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B1C20"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B1C34",
+    "0x006B1C41"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

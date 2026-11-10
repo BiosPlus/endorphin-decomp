@@ -1,0 +1,19 @@
+{
+  "va": "0x006B1AD0",
+  "size": 30,
+  "sha256": "0d42983849a96fe636a161d5341ed0819cc0b75f228a30e759a54884d3f91263",
+  "symbol": "GWCPropertyCheckboxFeel::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B1AC0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B1AD4",
+    "0x006B1AE1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x0053D1E0",
+  "size": 57,
+  "sha256": "fe87c5b318848efd9fa5a3961d76e0adb8f865de5fd4f8c7201cef32948bde2e",
+  "symbol": "Primitives::RadiusLimit::vfunc_23",
+  "callees": [
+    "0x0053A5E0",
+    "0x0053AD70"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053D1E4",
+    "0x0053D1F8",
+    "0x0053D1FD"
+  ],
+  "status": "todo"
+}

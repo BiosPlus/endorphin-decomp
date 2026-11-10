@@ -1,0 +1,21 @@
+{
+  "va": "0x005BD810",
+  "size": 47,
+  "sha256": "ca08bbcd8f4ba0d23638e678eb713b11500d9fa59e7865300009ad26731e76ce",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getOrientationSE(void) const, 0}, 0\u003e::vfunc_5",
+  "callees": [
+    "0x0046C3C0",
+    "0x005B6AF0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005BD81E",
+    "0x005BD82C",
+    "0x005BD831",
+    "0x005BD83B"
+  ],
+  "status": "todo"
+}

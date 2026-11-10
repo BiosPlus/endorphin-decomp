@@ -1,0 +1,28 @@
+{
+  "va": "0x0050B2A0",
+  "size": 151,
+  "sha256": "4ae7e815cef4b3db2d576473bcc6eb17689d2f8d9f71c27c9e407bccaffd31c5",
+  "symbol": "ExprParser::PrimitiveProxyCreator\u003cNMData::TaskParam, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, 4\u003e::vfunc_17",
+  "callees": [
+    "0x00403560",
+    "0x00498F90",
+    "0x006A6DD2",
+    "0x006A6E9E"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0050B2A3",
+    "0x0050B2C0",
+    "0x0050B2C5",
+    "0x0050B2D5",
+    "0x0050B2E3",
+    "0x0050B2ED",
+    "0x0050B2FF",
+    "0x0050B304",
+    "0x0050B30E",
+    "0x0050B313"
+  ],
+  "status": "todo"
+}

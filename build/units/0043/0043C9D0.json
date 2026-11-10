@@ -1,0 +1,14 @@
+{
+  "va": "0x0043C9D0",
+  "size": 33,
+  "sha256": "bdca99d073f077312bfd8d42231e8e786e05b9a59720f0021d5d51ba70ea0333",
+  "symbol": "sub_0043C9D0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:24:40Z"
+}

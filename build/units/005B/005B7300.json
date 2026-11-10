@@ -1,0 +1,13 @@
+{
+  "va": "0x005B7300",
+  "size": 6,
+  "sha256": "22954e48ba4d89914bc8c4663a473a80db700de51e9090145042da6fcbabdf10",
+  "symbol": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getVelocityAtPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x00464670",
+  "size": 40,
+  "sha256": "c58c01ef49e4d6f41b61bcc1b07170510a5b69ae2d878c6cdc57a4c97ef0ebf1",
+  "symbol": "CAboutDlg::vfunc_7_off_74",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00464677",
+    "0x0046467F",
+    "0x00464688",
+    "0x0046468E",
+    "0x00464693"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:08:32Z"
+}

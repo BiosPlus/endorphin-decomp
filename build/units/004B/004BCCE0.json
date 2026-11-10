@@ -1,0 +1,20 @@
+{
+  "va": "0x004BCCE0",
+  "size": 149,
+  "sha256": "ee0cdad1d53eddaab388740d9c192c65c946289fb46a93c4000280f1512264a8",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::MaterialPair, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1\u003e::vfunc_42",
+  "callees": [
+    "0x004BC770",
+    "0x006720E0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004BCCE3",
+    "0x004BCD06",
+    "0x004BCD18",
+    "0x004BCD27"
+  ],
+  "status": "todo"
+}

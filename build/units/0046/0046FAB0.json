@@ -1,0 +1,14 @@
+{
+  "va": "0x0046FAB0",
+  "size": 13,
+  "sha256": "ec7eef7ff01a91d7341f81e5d53d1b88dd284946289984ecd62e90ff1d941817",
+  "symbol": "ThreadRunner\u003cRuntimeEngine\u003e::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T14:53:05Z"
+}

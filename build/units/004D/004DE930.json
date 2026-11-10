@@ -1,0 +1,21 @@
+{
+  "va": "0x004DE930",
+  "size": 68,
+  "sha256": "897f7b72314a5a9abd8218fa52e16d4326e071ef4985cd3e35eda946e9646ace",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getCopyFromReferenceObjectDummy(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::copyFromReferenceObject(int), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x00402040",
+    "0x0046C3C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004DE951",
+    "0x004DE961",
+    "0x004DE966",
+    "0x004DE970"
+  ],
+  "status": "todo"
+}

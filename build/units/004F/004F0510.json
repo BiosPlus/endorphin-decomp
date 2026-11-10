@@ -1,0 +1,13 @@
+{
+  "va": "0x004F0510",
+  "size": 19,
+  "sha256": "dfbba85e154d6cdd719ab1fa6cbb63268a1091253e0074cf8d2a694ca345f91b",
+  "symbol": "Properties::TestControl::vfunc_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x00404E00",
+  "size": 30,
+  "sha256": "b632880e98294acda13be26d7cb3b3b5b8252bfd5b4d8958ac33782e8d64f72e",
+  "symbol": "CComboBox::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A5F2C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00404E04",
+    "0x00404E11"
+  ],
+  "status": "out_of_scope"
+}

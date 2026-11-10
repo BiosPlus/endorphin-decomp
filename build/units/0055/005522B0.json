@@ -1,0 +1,15 @@
+{
+  "va": "0x005522B0",
+  "size": 134,
+  "sha256": "39aa0087570eeacaec20dbc9be142cc41cb75736d954edb3a0a76f47de1133d3",
+  "symbol": "NMCamera::Perspective::vfunc_20",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005522C3",
+    "0x005522D4"
+  ],
+  "status": "todo"
+}

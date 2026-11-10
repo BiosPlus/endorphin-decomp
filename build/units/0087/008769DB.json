@@ -1,0 +1,15 @@
+{
+  "va": "0x008769DB",
+  "size": 11,
+  "sha256": "79adfd08cc8ffdc001a038613aae5ba6e3f4bdef14deab73fd65cda6f7f7e9e2",
+  "symbol": "sub_008769DB",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x008769DC",
+    "0x008769E2"
+  ],
+  "status": "out_of_scope"
+}

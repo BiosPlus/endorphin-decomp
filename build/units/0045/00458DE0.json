@@ -1,0 +1,13 @@
+{
+  "va": "0x00458DE0",
+  "size": 13,
+  "sha256": "e05407482fb2cfa446ef461e18c81b95321488f14caee466be9a43f4aa6b9b7b",
+  "symbol": "CMessageReflector::vfunc_2",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

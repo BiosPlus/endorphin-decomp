@@ -1,0 +1,18 @@
+{
+  "va": "0x00693090",
+  "size": 16,
+  "sha256": "e43b688849a36ea20b44c52068c8a7a920331851330707f00e45e6751a50dcc3",
+  "symbol": "ExprParser::Method0Type\u003cValuePtrArrayObject, {public: void __thiscall ValuePtrArrayObject::clear(void), 0}\u003e::vfunc_3",
+  "callees": [
+    "0x00692D90"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00693097"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:16:05Z"
+}

@@ -1,0 +1,15 @@
+{
+  "va": "0x00442C00",
+  "size": 8,
+  "sha256": "67672fc457900b9c53bfed9ad9f723805595c72bac813bfc057a806564d86843",
+  "symbol": "MultiTrackView::MultiTrackViewStates::SelectOrMoveState::vfunc_2",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00442C04"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

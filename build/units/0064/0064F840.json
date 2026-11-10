@@ -1,0 +1,18 @@
+{
+  "va": "0x0064F840",
+  "size": 34,
+  "sha256": "8df5988e882d38765dc7910de9789022b2d273cbe1c29999bf98ebb1ee22a83f",
+  "symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector4 const \u0026, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const \u0026), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x00402040"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064F85A"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:26:21Z"
+}

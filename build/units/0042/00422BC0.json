@@ -1,0 +1,16 @@
+{
+  "va": "0x00422BC0",
+  "size": 49,
+  "sha256": "72db7b291c68d48e6c214ecf5dcad28b98e95d840a35b7f3a82114811f45b9c6",
+  "symbol": "CImageButton::vfunc_69",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00422BD0",
+    "0x00422BE5"
+  ],
+  "status": "deferred",
+  "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
+}

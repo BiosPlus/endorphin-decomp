@@ -1,0 +1,27 @@
+{
+  "va": "0x006B7CA0",
+  "size": 177,
+  "sha256": "58102f4e36fd31f99bcf390d19993d182dcd6610a498f7a9e8d13d1730f9a338",
+  "symbol": "NMCMultilineEditDlg::vfunc_84",
+  "callees": [
+    "0x006A5F50",
+    "0x006A5FC8"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B7CA6",
+    "0x006B7CB3",
+    "0x006B7CC5",
+    "0x006B7CD9",
+    "0x006B7CEC",
+    "0x006B7CF7",
+    "0x006B7D0C",
+    "0x006B7D19",
+    "0x006B7D2C",
+    "0x006B7D38",
+    "0x006B7D44"
+  ],
+  "status": "todo"
+}

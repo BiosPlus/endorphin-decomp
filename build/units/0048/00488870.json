@@ -1,0 +1,23 @@
+{
+  "va": "0x00488870",
+  "size": 84,
+  "sha256": "acf7d4cfafba65c9cc97484bc9f22bc9c91c6e229a8e0eb4498141541b186be9",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0\u003e::vfunc_4",
+  "callees": [
+    "0x0046C390",
+    "0x0046C3C0",
+    "0x00486970",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00488886",
+    "0x0048889C",
+    "0x004888B1",
+    "0x004888B6",
+    "0x004888C0"
+  ],
+  "status": "todo"
+}

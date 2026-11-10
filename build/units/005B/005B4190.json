@@ -1,0 +1,22 @@
+{
+  "va": "0x005B4190",
+  "size": 116,
+  "sha256": "b46254e6c622d0cb01ffe42a16fbd08590c24573a32cf052afdcc5d4820dea1d",
+  "symbol": "Geometry::CuboidType::vfunc_18",
+  "callees": [
+    "0x005B3FF0",
+    "0x005B4010",
+    "0x005B4030",
+    "0x00671F30"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B41B7",
+    "0x005B41CC",
+    "0x005B41E1",
+    "0x005B41F6"
+  ],
+  "status": "todo"
+}

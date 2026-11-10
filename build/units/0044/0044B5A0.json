@@ -1,0 +1,14 @@
+{
+  "va": "0x0044B5A0",
+  "size": 5,
+  "sha256": "91bac05383b96f18b247b149d01e8864fc40fb7e6f13e03de69a6638776af264",
+  "symbol": "RenderView::vfunc_26",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0044B5A1"
+  ],
+  "status": "out_of_scope"
+}

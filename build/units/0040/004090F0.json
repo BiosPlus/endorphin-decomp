@@ -1,0 +1,19 @@
+{
+  "va": "0x004090F0",
+  "size": 42,
+  "sha256": "a722499bc4e9fced925d815e0ab2fbcfd647e8b39641987778743caf11d5c16e",
+  "symbol": "ButtonPanel::vfunc_66",
+  "callees": [
+    "0x006A600A"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00409109",
+    "0x00409111"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:25:41Z"
+}

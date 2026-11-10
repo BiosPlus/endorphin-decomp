@@ -1,0 +1,24 @@
+{
+  "va": "0x00638CF0",
+  "size": 160,
+  "sha256": "06541ef62b7b749df81242892c5416129b275781f86c84051b5f44ab743a05dc",
+  "symbol": "ExprParser::ReadMethodType\u003cEffectorSkeletal, int, \u0026public: int __thiscall EffectorSkeletal::getAngularDriveMode(void) const, 0\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x006720C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00638CF9",
+    "0x00638D1F",
+    "0x00638D33",
+    "0x00638D7D",
+    "0x00638D82",
+    "0x00638D8C"
+  ],
+  "status": "todo"
+}

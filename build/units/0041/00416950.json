@@ -1,0 +1,30 @@
+{
+  "va": "0x00416950",
+  "size": 367,
+  "sha256": "561ed5d8d3bf345afc44a5dc855264be0527bac60a493dc051b3736c512b4578",
+  "symbol": "EventViewIndicator::vfunc_91",
+  "callees": [
+    "0x00404F00",
+    "0x006A5F50",
+    "0x006A6226"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00416953",
+    "0x0041696D",
+    "0x00416979",
+    "0x00416990",
+    "0x004169A5",
+    "0x004169BA",
+    "0x004169EC",
+    "0x00416A01",
+    "0x00416A16",
+    "0x00416A74",
+    "0x00416A87",
+    "0x00416A93",
+    "0x00416AA5"
+  ],
+  "status": "todo"
+}

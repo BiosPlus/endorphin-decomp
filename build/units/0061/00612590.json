@@ -1,0 +1,18 @@
+{
+  "va": "0x00612590",
+  "size": 30,
+  "sha256": "19448d90925f0d40a44fc027598c9b6ba358d1905e95d36f021468b4a1886630",
+  "symbol": "NMData::DriveFrame::vfunc_33",
+  "callees": [
+    "0x006114B0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00612594"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:45:15Z"
+}

@@ -1,0 +1,26 @@
+{
+  "va": "0x00498600",
+  "size": 159,
+  "sha256": "f26e4060fc8b5074e72ac08efbed1fe8f8c44f890c110e2283bffcb2595319ba",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::Transition, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::Transition::getCondition(void) const, 0}, 0\u003e::vfunc_46",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00496F20",
+    "0x006720E0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00498609",
+    "0x00498624",
+    "0x0049862E",
+    "0x00498642",
+    "0x0049868C",
+    "0x00498691",
+    "0x0049869B"
+  ],
+  "status": "todo"
+}

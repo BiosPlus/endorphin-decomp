@@ -1,0 +1,23 @@
+{
+  "va": "0x0062BDC0",
+  "size": 354,
+  "sha256": "08cb1fbffc6abdb2ba609ff3b186dfa7d97ddefbd136cecf69d44f14b19f3f7e",
+  "symbol": "Sensors::HorizontalAxisSensor::vfunc_27",
+  "callees": [
+    "0x0067B7F0",
+    "0x006A7250"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062BDCD",
+    "0x0062BDFC",
+    "0x0062BE0C",
+    "0x0062BEC0",
+    "0x0062BEE3",
+    "0x0062BEF2",
+    "0x0062BF05"
+  ],
+  "status": "todo"
+}

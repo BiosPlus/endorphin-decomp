@@ -1,0 +1,17 @@
+{
+  "va": "0x00416010",
+  "size": 46,
+  "sha256": "b36c802692d666c1cb3bd47ae6aa7dfbdfc31b55a2612da2f37f3ea0a72d4c32",
+  "symbol": "CEnTabCtrl::vfunc_85",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00416011",
+    "0x0041603A"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:47:52Z"
+}

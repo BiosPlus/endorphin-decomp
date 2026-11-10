@@ -1,0 +1,16 @@
+{
+  "va": "0x00533C90",
+  "size": 42,
+  "sha256": "eca51ab6aad6240034eb38e6d3d00da70026e0573db9faf138b946466f0cab0e",
+  "symbol": "OglRenderer::vfunc_83",
+  "callees": [
+    "0x00541C20"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00533CA0"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,17 @@
+{
+  "va": "0x0066DD10",
+  "size": 40,
+  "sha256": "099db5bcc76c9abe29b66019f6f2f5b279a219bca52aac12e665cc1063679c15",
+  "symbol": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_4",
+  "callees": [
+    "0x0067B860"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066DD21",
+    "0x0066DD2D"
+  ],
+  "status": "todo"
+}

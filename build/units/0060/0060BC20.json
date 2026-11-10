@@ -1,0 +1,22 @@
+{
+  "va": "0x0060BC20",
+  "size": 157,
+  "sha256": "69095ee11f5f29fb476898a3e74754dc66dc5472bba3131bbf6a444e3a8c1fea",
+  "symbol": "NMData::EffectorBaseData::vfunc_20",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060BC23",
+    "0x0060BC3C",
+    "0x0060BC4E",
+    "0x0060BC66",
+    "0x0060BC6F",
+    "0x0060BC7C",
+    "0x0060BC96",
+    "0x0060BC9F",
+    "0x0060BCA5"
+  ],
+  "status": "todo"
+}

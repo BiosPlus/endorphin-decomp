@@ -1,0 +1,14 @@
+{
+  "va": "0x00569FD0",
+  "size": 38,
+  "sha256": "2b8554185ec61c3565e107246f694e709542f48fc790fd061406928b7eee3775",
+  "symbol": "ASFData::Bone::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:57:35Z"
+}

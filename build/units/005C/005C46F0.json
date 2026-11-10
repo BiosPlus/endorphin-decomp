@@ -1,0 +1,32 @@
+{
+  "va": "0x005C46F0",
+  "size": 139,
+  "sha256": "7362f6ae5850e6402db43d2f435ead253a14998b2f43f180c0dfe362130accb7",
+  "symbol": "NMData::FluidObjectData::vfunc_22",
+  "callees": [
+    "0x00427550",
+    "0x0058F650",
+    "0x005B44B0",
+    "0x00640110",
+    "0x006404E0",
+    "0x00640A80"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C46F1",
+    "0x005C4700",
+    "0x005C470A",
+    "0x005C4718",
+    "0x005C4722",
+    "0x005C472A",
+    "0x005C4736",
+    "0x005C4740",
+    "0x005C4746",
+    "0x005C474E",
+    "0x005C475C",
+    "0x005C476F"
+  ],
+  "status": "todo"
+}

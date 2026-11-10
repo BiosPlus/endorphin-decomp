@@ -1,0 +1,22 @@
+{
+  "va": "0x0058FCC0",
+  "size": 157,
+  "sha256": "6c3af9b308e17edd53233c92d94a67e10a482ab87becda68e9b90b88099096b9",
+  "symbol": "ExprParser::ReadMethodType\u003cTransformNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall TransformNode::getUserRefFrame(void) const, 0}, 0\u003e::vfunc_46",
+  "callees": [
+    "0x0041CF50",
+    "0x0058F770",
+    "0x006720E0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058FCC3",
+    "0x0058FCE6",
+    "0x0058FCF8",
+    "0x0058FD09",
+    "0x0058FD34"
+  ],
+  "status": "todo"
+}

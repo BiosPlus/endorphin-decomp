@@ -1,0 +1,13 @@
+{
+  "va": "0x004591A0",
+  "size": 11,
+  "sha256": "c3ff50787ae21c0cbc663088122bdd43d3dab21a638b60466946cc951ddb2912",
+  "symbol": "MultiTrackView::TimeRuler::vfunc_0_off_54",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

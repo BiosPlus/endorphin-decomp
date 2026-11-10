@@ -1,0 +1,14 @@
+{
+  "va": "0x005467E0",
+  "size": 128,
+  "sha256": "c7c54dcc5bc44fe71456955f5235f817f2a7a920dcd4c25865d566d85151a94d",
+  "symbol": "RotateTool::vfunc_21",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054681E"
+  ],
+  "status": "todo"
+}

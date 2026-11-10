@@ -1,0 +1,22 @@
+{
+  "va": "0x005951E0",
+  "size": 73,
+  "sha256": "65d0f333a124122ae089f49e090acd2218463bdecd5d30ec3dcfd50815ece52e",
+  "symbol": "ExprParser::ReadMethodType\u003cWorld, float, {public: float __thiscall World::getPhysicsTimeStep(void) const, 0}, 1\u003e::vfunc_3",
+  "callees": [
+    "0x0046C3C0",
+    "0x00594070",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005951EE",
+    "0x005951F4",
+    "0x00595216",
+    "0x0059521B",
+    "0x00595225"
+  ],
+  "status": "todo"
+}

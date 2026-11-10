@@ -1,0 +1,27 @@
+{
+  "va": "0x00592860",
+  "size": 153,
+  "sha256": "9a020eda0d45a7a151f90a20e884e140fc9e72c0cb6969c8ba40d96e6ee7f418",
+  "symbol": "HelperGraphic::vfunc_17_off_C",
+  "callees": [
+    "0x00586D00",
+    "0x0058F2F0",
+    "0x006A5C62"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00592863",
+    "0x00592880",
+    "0x005928A0",
+    "0x005928AA",
+    "0x005928B0",
+    "0x005928B7",
+    "0x005928BE",
+    "0x005928C5",
+    "0x005928CF",
+    "0x005928E2"
+  ],
+  "status": "todo"
+}

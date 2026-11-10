@@ -1,0 +1,23 @@
+{
+  "va": "0x0058C2D0",
+  "size": 122,
+  "sha256": "bc1b8398d9caf591e907c2711edcb1939a3a667d7385c7eebef83de64fad73c5",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getEulerZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setEulerZ(float), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058C2D9",
+    "0x0058C2EC",
+    "0x0058C2F4",
+    "0x0058C2F9",
+    "0x0058C306",
+    "0x0058C314",
+    "0x0058C31B",
+    "0x0058C336"
+  ],
+  "status": "todo"
+}

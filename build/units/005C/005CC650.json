@@ -1,0 +1,19 @@
+{
+  "va": "0x005CC650",
+  "size": 99,
+  "sha256": "954c77196bdeed1e2eb675c48d13bd04e3c84ba230f80394a7e6e92fed9c257e",
+  "symbol": "NMData::FluidObjectData::vfunc_17_off_C",
+  "callees": [
+    "0x005CC5C0",
+    "0x006A5C62"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005CC653",
+    "0x005CC66F",
+    "0x005CC68D"
+  ],
+  "status": "todo"
+}

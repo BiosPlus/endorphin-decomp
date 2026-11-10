@@ -1,0 +1,20 @@
+{
+  "va": "0x004B71F0",
+  "size": 30,
+  "sha256": "1726f07245fd1c240bdc157c1b96f2878fca7826138166e0bdae3f48d60038eb",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::EngineData, bool, \u0026public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B71F7",
+    "0x004B71FC",
+    "0x004B7204"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:43:18Z"
+}

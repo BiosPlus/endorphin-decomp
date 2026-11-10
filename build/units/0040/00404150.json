@@ -1,0 +1,21 @@
+{
+  "va": "0x00404150",
+  "size": 158,
+  "sha256": "3497246faa35815a71f7afa409e42249bc327b9bdbeccf43d5e57e692b22c047",
+  "symbol": "VideoExporter::vfunc_33",
+  "callees": [
+    "0x0041CD60",
+    "0x00558080"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00404160",
+    "0x00404173",
+    "0x0040417D",
+    "0x004041AA",
+    "0x004041BB"
+  ],
+  "status": "todo"
+}

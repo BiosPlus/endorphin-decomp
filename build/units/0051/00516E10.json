@@ -1,0 +1,16 @@
+{
+  "va": "0x00516E10",
+  "size": 80,
+  "sha256": "f692d38b3485e2d269cbad81ad5106e68284fbe2e2ba717ddb1eee4b43b33374",
+  "symbol": "EvolvedIndividual::vfunc_0_off_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00516E13"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T14:15:22Z"
+}

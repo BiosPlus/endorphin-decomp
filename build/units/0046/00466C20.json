@@ -1,0 +1,18 @@
+{
+  "va": "0x00466C20",
+  "size": 10,
+  "sha256": "96c06bd52e59d7f245f5c42db93c5a41b205f186127af19dc32eff93f2297e30",
+  "symbol": "EventDispatcherWithArgs\u003cFrameBufferIterator, FrameBufferPlaybackEventListener, \u0026[thunk]: __thiscall FrameBufferTickEventListener::`vcall'{0, {flat}}\u003e::vfunc_2",
+  "callees": [
+    "0x00466BA0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00466C25"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:50:25Z"
+}

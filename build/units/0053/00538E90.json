@@ -1,0 +1,23 @@
+{
+  "va": "0x00538E90",
+  "size": 68,
+  "sha256": "0361ed1350828bfedbeb34323c310717ea4d88dc32d1baec50b1d8caf5ed0e6d",
+  "symbol": "UtilityGraphics::StippledLine::vfunc_22",
+  "callees": [
+    "0x00538E40"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00538E97",
+    "0x00538EA4",
+    "0x00538EAF",
+    "0x00538EBB",
+    "0x00538EC6",
+    "0x00538ECC"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:30:37Z"
+}

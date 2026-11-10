@@ -1,0 +1,20 @@
+{
+  "va": "0x005B7320",
+  "size": 206,
+  "sha256": "6cd141d6b5a2525547473e664ba573bd55e6412367bf9f8d468f44f6b25f79a3",
+  "symbol": "ExprParser::FunctionType\u003cNMData::MetaBodyData, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall NMData::MetaBodyData::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x0046E780",
+    "0x005B64E0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B7323",
+    "0x005B735B",
+    "0x005B7370",
+    "0x005B73D5"
+  ],
+  "status": "todo"
+}

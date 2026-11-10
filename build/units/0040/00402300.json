@@ -1,0 +1,22 @@
+{
+  "va": "0x00402300",
+  "size": 117,
+  "sha256": "c4021b076f245375ca6093ba35ca6e54ee49b0f504255357eef1516934d5b39a",
+  "symbol": "AVIIO::vfunc_20",
+  "callees": [
+    "0x00403420",
+    "0x00553080",
+    "0x00661A30",
+    "0x006A6DE0"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00402321",
+    "0x0040232E",
+    "0x00402349",
+    "0x00402368"
+  ],
+  "status": "todo"
+}

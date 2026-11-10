@@ -1,0 +1,31 @@
+{
+  "va": "0x00610920",
+  "size": 318,
+  "sha256": "b42339fbca4fbf3cdb6371dc2833a6b6b8398e1fc86fa21e8d01557166fec5e1",
+  "symbol": "NMData::CompoundSensorData::vfunc_59",
+  "callees": [
+    "0x0041A920",
+    "0x005DF5C0",
+    "0x00610630"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00610933",
+    "0x00610947",
+    "0x00610956",
+    "0x00610968",
+    "0x006109A3",
+    "0x006109BE",
+    "0x006109CE",
+    "0x006109E0",
+    "0x006109ED",
+    "0x006109FD",
+    "0x00610A0C",
+    "0x00610A2B",
+    "0x00610A38",
+    "0x00610A40"
+  ],
+  "status": "todo"
+}

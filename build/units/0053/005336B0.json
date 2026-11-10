@@ -1,0 +1,27 @@
+{
+  "va": "0x005336B0",
+  "size": 196,
+  "sha256": "e58c2dd4dbf29b1aaf6a452debab0964ad44a975fa0039863ccd76a4d7cf8129",
+  "symbol": "OglRenderer::vfunc_110",
+  "callees": [
+    "0x006690D0",
+    "0x00669AD0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005336B3",
+    "0x005336CD",
+    "0x005336D7",
+    "0x005336DC",
+    "0x005336EF",
+    "0x00533708",
+    "0x0053370F",
+    "0x0053371E",
+    "0x0053372D",
+    "0x00533745",
+    "0x0053375F"
+  ],
+  "status": "todo"
+}

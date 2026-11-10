@@ -1,0 +1,20 @@
+{
+  "va": "0x005AAB70",
+  "size": 30,
+  "sha256": "778cfc9820552bcf410001e4acbc798cfc85ba92e4aef63ec18a5e3dee7cf350",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::RigNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005AAB77",
+    "0x005AAB7C",
+    "0x005AAB84"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:52:21Z"
+}

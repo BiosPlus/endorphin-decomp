@@ -1,0 +1,16 @@
+{
+  "va": "0x0054E8F0",
+  "size": 35,
+  "sha256": "7b5bcbdcb29fe93459b30c51379a96a496a1cf326f804f2b5660dcccb585f3ab",
+  "symbol": "GLMatrixStackManager::vfunc_7",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054E90C"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:36:42Z"
+}

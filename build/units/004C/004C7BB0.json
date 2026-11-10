@@ -1,0 +1,27 @@
+{
+  "va": "0x004C7BB0",
+  "size": 279,
+  "sha256": "5f4530a72f21318983ab89511c21ed111e0ef367378d33d265d8bd594a550d90",
+  "symbol": "SeverEventTypes::Enable::vfunc_0",
+  "callees": [
+    "0x00528BF0",
+    "0x00594000"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C7BB4",
+    "0x004C7BED",
+    "0x004C7C1B",
+    "0x004C7C4C",
+    "0x004C7C5F",
+    "0x004C7C73",
+    "0x004C7C85",
+    "0x004C7C9B",
+    "0x004C7CAB",
+    "0x004C7CB5",
+    "0x004C7CBD"
+  ],
+  "status": "todo"
+}

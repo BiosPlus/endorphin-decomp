@@ -1,0 +1,16 @@
+{
+  "va": "0x00627720",
+  "size": 110,
+  "sha256": "a731756f79f87fefe4b83df4200e968fa792e20f95125d83b8679574985572c9",
+  "symbol": "ExprParser::WriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, \u0026public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)\u003e::vfunc_48",
+  "callees": [
+    "0x00627510"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00627744"
+  ],
+  "status": "todo"
+}

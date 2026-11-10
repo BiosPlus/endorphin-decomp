@@ -1,0 +1,19 @@
+{
+  "va": "0x00456CC0",
+  "size": 30,
+  "sha256": "f84a9eec7ba255abcab19fea818c94b3f9a315c6899009615c511159931c1059",
+  "symbol": "CSizingControlBar::vfunc_1",
+  "callees": [
+    "0x00455EB0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00456CC4",
+    "0x00456CD1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

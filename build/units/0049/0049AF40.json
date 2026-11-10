@@ -1,0 +1,20 @@
+{
+  "va": "0x0049AF40",
+  "size": 30,
+  "sha256": "fe9e1a09826f849c0a5d543ddab82acc504488d985f55beeda021c8265a7b5d4",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0049AF47",
+    "0x0049AF4C",
+    "0x0049AF54"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:10:06Z"
+}

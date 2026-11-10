@@ -1,0 +1,18 @@
+{
+  "va": "0x0041FE80",
+  "size": 30,
+  "sha256": "268a58217432429b9bf536bfa191aee8c08cc3ff943e4f460965363eabdb9a8a",
+  "symbol": "CListCtrl::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A63C4"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041FE84",
+    "0x0041FE91"
+  ],
+  "status": "out_of_scope"
+}

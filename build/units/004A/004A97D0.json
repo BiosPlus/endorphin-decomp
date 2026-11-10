@@ -1,0 +1,37 @@
+{
+  "va": "0x004A97D0",
+  "size": 253,
+  "sha256": "31990d16cc91ae3a02a4e92ba0d19e4b7ea84e3a3f5b5b9a0532d5c47398aa3e",
+  "symbol": "VersionControlManager::vfunc_3",
+  "callees": [
+    "0x00427550",
+    "0x0063F8D0",
+    "0x00640110",
+    "0x00640270",
+    "0x006404E0"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004A97D3",
+    "0x004A97F3",
+    "0x004A97FA",
+    "0x004A980D",
+    "0x004A9817",
+    "0x004A9821",
+    "0x004A9826",
+    "0x004A982D",
+    "0x004A9836",
+    "0x004A9844",
+    "0x004A984E",
+    "0x004A9862",
+    "0x004A9868",
+    "0x004A9871",
+    "0x004A987C",
+    "0x004A9890",
+    "0x004A98A2",
+    "0x004A98AE"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x00401CE0",
+  "size": 30,
+  "sha256": "b0ed007c84798c357d87c8d2eb6bb0f1c41cb8ee91e70966cd4f493c07cf77e2",
+  "symbol": "DirtyOrClean\u003cLoadableFromXMLBase\u003e::vfunc_0",
+  "callees": [
+    "0x0065C660",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00401CE4",
+    "0x00401CF1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

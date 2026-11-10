@@ -1,0 +1,25 @@
+{
+  "va": "0x005EE690",
+  "size": 134,
+  "sha256": "02c9e33f0daea6a42ea2a515b2dcd86e38029993beda1bcee4582d609e39ed58",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::RelationshipData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::RelationshipData::getMetaBodyName1(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::RelationshipData::setMetaBodyName1(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046E780",
+    "0x005EDFB0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005EE699",
+    "0x005EE6C6",
+    "0x005EE6D6",
+    "0x005EE6E8",
+    "0x005EE703",
+    "0x005EE708",
+    "0x005EE712"
+  ],
+  "status": "todo"
+}

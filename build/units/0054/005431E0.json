@@ -1,0 +1,18 @@
+{
+  "va": "0x005431E0",
+  "size": 15,
+  "sha256": "c0006411a56f3bf1f1bef14e3a5016c0c149d59c28deb39346680986a19f2f15",
+  "symbol": "ViewportManager::vfunc_3",
+  "callees": [
+    "0x00541410"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005431E8"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:52:38Z"
+}

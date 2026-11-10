@@ -1,0 +1,15 @@
+{
+  "va": "0x00609740",
+  "size": 29,
+  "sha256": "0bdf9f6eac039f8977a2aa8b812768965bccb189aa4fe6a895e6870fb94473a4",
+  "symbol": "ExprParser::ROMethod0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00609752"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

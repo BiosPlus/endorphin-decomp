@@ -1,0 +1,17 @@
+{
+  "va": "0x006A7240",
+  "size": 10,
+  "sha256": "e9ca567ef82b846485c4d2d04e03a66ad3408e5ef3acb2c5f7ba1def30e470f3",
+  "symbol": "WinMainCRTStartup",
+  "callees": [
+    "0x006A7716"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A7241",
+    "0x006A7246"
+  ],
+  "status": "out_of_scope"
+}

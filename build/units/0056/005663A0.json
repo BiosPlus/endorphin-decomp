@@ -1,0 +1,26 @@
+{
+  "va": "0x005663A0",
+  "size": 131,
+  "sha256": "15ed83612470490174698c71d4f2ba16f6ce223501901c207ac673b5f09f932d",
+  "symbol": "XSIIO::vfunc_14",
+  "callees": [
+    "0x00564600",
+    "0x00565FF0",
+    "0x006A6DD2",
+    "0x007C56DC",
+    "0x007C570C"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005663A6",
+    "0x005663CB",
+    "0x005663E1",
+    "0x005663E8",
+    "0x005663F3",
+    "0x00566416",
+    "0x0056641F"
+  ],
+  "status": "todo"
+}

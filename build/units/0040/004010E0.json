@@ -1,0 +1,18 @@
+{
+  "va": "0x004010E0",
+  "size": 30,
+  "sha256": "2f8acab16817f84e5c933fd23c1324f8992a050cf7a6262383be2889f5a05ccb",
+  "symbol": "CButton::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A5DFA"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004010E4",
+    "0x004010F1"
+  ],
+  "status": "out_of_scope"
+}

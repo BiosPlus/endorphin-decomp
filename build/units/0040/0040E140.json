@@ -1,0 +1,14 @@
+{
+  "va": "0x0040E140",
+  "size": 5,
+  "sha256": "0459e67d91c9a92e05955c4c4a26031c9f5a934c59798d1fb2743265f368d1ac",
+  "symbol": "SaveCharacterDialog::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0040E141"
+  ],
+  "status": "out_of_scope"
+}

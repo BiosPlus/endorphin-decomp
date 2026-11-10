@@ -1,0 +1,22 @@
+{
+  "va": "0x004904F0",
+  "size": 111,
+  "sha256": "eb03980a35a264727911a220754f96bfa7251b3b965da3377af53b185a049891",
+  "symbol": "GraphEngine::vfunc_0_off_4",
+  "callees": [
+    "0x0048FC70",
+    "0x006A6DE0",
+    "0x006A6E92"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0049050D",
+    "0x00490512",
+    "0x0049052C",
+    "0x00490534",
+    "0x00490541"
+  ],
+  "status": "todo"
+}

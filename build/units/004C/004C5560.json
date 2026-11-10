@@ -1,0 +1,16 @@
+{
+  "va": "0x004C5560",
+  "size": 38,
+  "sha256": "7f2325238a6a82562697113c3598a010bfc2cf3c78efdc243b5f4f5b618a5787",
+  "symbol": "Properties::TerminalParentType\u003cMatrixWithProperties\u003e::vfunc_0",
+  "callees": [
+    "0x004F9610"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C557B"
+  ],
+  "status": "todo"
+}

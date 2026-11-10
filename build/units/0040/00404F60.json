@@ -1,0 +1,30 @@
+{
+  "va": "0x00404F60",
+  "size": 277,
+  "sha256": "bd1a1c041bad7962253095edeeeceebb7f27adec1b6bc248d8e5a027541bed68",
+  "symbol": "BatchModeDialog::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00404F73",
+    "0x00404F85",
+    "0x00404F97",
+    "0x00404FA9",
+    "0x00404FBB",
+    "0x00404FCD",
+    "0x00404FDF",
+    "0x00404FEE",
+    "0x00405000",
+    "0x00405012",
+    "0x00405024",
+    "0x00405036",
+    "0x00405048",
+    "0x0040505A",
+    "0x0040506C"
+  ],
+  "status": "todo"
+}

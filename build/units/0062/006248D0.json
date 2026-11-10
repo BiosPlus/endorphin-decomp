@@ -1,0 +1,15 @@
+{
+  "va": "0x006248D0",
+  "size": 8,
+  "sha256": "8b679e088218cf84c599d8460e46dce4f1f82213566cc2535dd3e69f51e9bf0f",
+  "symbol": "SymbolMap\u003cSymbolSourcePointerMap\u003cEffectorBase\u003e\u003e::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006248D4"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

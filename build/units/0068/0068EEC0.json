@@ -1,0 +1,20 @@
+{
+  "va": "0x0068EEC0",
+  "size": 30,
+  "sha256": "805cbbeda7d7a27389be3f188e692fc435b07408ad453b2a03a0e7ca3f8be0a6",
+  "symbol": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0068EEC7",
+    "0x0068EECC",
+    "0x0068EED4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:00:59Z"
+}

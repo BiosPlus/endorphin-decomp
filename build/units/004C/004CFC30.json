@@ -1,0 +1,19 @@
+{
+  "va": "0x004CFC30",
+  "size": 99,
+  "sha256": "8b8b45d0f2cb4821ea1e62dcc3315079536fafa4dc5e233ddc6c4c2d279b6e1a",
+  "symbol": "NMData::IncarnationEventData::vfunc_17_off_C",
+  "callees": [
+    "0x004CFB10",
+    "0x006A5C62"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CFC33",
+    "0x004CFC4F",
+    "0x004CFC6D"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,21 @@
+{
+  "va": "0x004F7640",
+  "size": 47,
+  "sha256": "6778249ec058f4001b4d43049a33f3af9feddb48a4309d8f1b9da64074ebcabb",
+  "symbol": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getTheta(void) const, 0\u003e::vfunc_1",
+  "callees": [
+    "0x0046C3C0",
+    "0x004F4F00",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004F764E",
+    "0x004F765C",
+    "0x004F7661",
+    "0x004F766B"
+  ],
+  "status": "todo"
+}

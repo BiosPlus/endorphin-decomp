@@ -1,0 +1,37 @@
+{
+  "va": "0x006B9350",
+  "size": 385,
+  "sha256": "fdce17e0be56e50249f61d5306a7e8d29e9593512677ceb061b28aea9666ba32",
+  "symbol": "NMCAutoCompleteEdit::vfunc_66",
+  "callees": [
+    "0x006A5DA0",
+    "0x006B87B0",
+    "0x006B87F0",
+    "0x006B8B70",
+    "0x006B8CE0"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B9376",
+    "0x006B9387",
+    "0x006B938F",
+    "0x006B939C",
+    "0x006B93AC",
+    "0x006B93F4",
+    "0x006B9404",
+    "0x006B9415",
+    "0x006B941C",
+    "0x006B943C",
+    "0x006B9444",
+    "0x006B9456",
+    "0x006B9460",
+    "0x006B9475",
+    "0x006B9498",
+    "0x006B94A8",
+    "0x006B94B9",
+    "0x006B94C2"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,36 @@
+{
+  "va": "0x0059AFC0",
+  "size": 165,
+  "sha256": "4dbe23bbaad0de26de0eb5a6e7c0b15bbb02001ed0d088bbaead87146c36a1c1",
+  "symbol": "World::vfunc_21",
+  "callees": [
+    "0x0059AB50",
+    "0x0059AE40",
+    "0x0063F530"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0059AFC1",
+    "0x0059AFD5",
+    "0x0059AFDA",
+    "0x0059AFE1",
+    "0x0059AFE8",
+    "0x0059AFEF",
+    "0x0059AFF6",
+    "0x0059AFFD",
+    "0x0059B005",
+    "0x0059B00B",
+    "0x0059B017",
+    "0x0059B01C",
+    "0x0059B023",
+    "0x0059B02A",
+    "0x0059B031",
+    "0x0059B038",
+    "0x0059B03F",
+    "0x0059B045",
+    "0x0059B052"
+  ],
+  "status": "todo"
+}

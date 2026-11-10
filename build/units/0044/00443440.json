@@ -1,0 +1,17 @@
+{
+  "va": "0x00443440",
+  "size": 23,
+  "sha256": "6bc310f6609c29f66b0441a8e6e828240250806a460cc6cc9a6fb361ef3ecbd5",
+  "symbol": "MultiTrackView::MultiTrackViewStates::DragZoomState::vfunc_2",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044344D",
+    "0x00443453"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:02:58Z"
+}

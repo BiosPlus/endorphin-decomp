@@ -1,0 +1,23 @@
+{
+  "va": "0x00495910",
+  "size": 208,
+  "sha256": "d87cf17519d37f29cd8e2e192f90ce254284b4d48bda438959bb09b3bf55ee53",
+  "symbol": "Properties::SequenceType\u003cUnsortedSet\u003cNMData::SourceRigNode *\u003e, Properties::GetPropertySource, DeRefPointer\u003e::vfunc_3",
+  "callees": [
+    "0x00493D90",
+    "0x00494FF0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00495919",
+    "0x00495944",
+    "0x0049595E",
+    "0x00495971",
+    "0x00495982",
+    "0x004959AC",
+    "0x004959BF"
+  ],
+  "status": "todo"
+}

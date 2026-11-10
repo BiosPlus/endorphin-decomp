@@ -1,0 +1,18 @@
+{
+  "va": "0x004FAC20",
+  "size": 26,
+  "sha256": "3f022ca75ccf478b71e6697b28bc7492dd067256dc5647493880516713f7afea",
+  "symbol": "VMCSModes::DefaultImplementation::vfunc_0",
+  "callees": [
+    "0x004667A0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004FAC29"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T11:27:41Z"
+}

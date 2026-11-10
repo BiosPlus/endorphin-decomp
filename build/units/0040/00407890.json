@@ -1,0 +1,28 @@
+{
+  "va": "0x00407890",
+  "size": 247,
+  "sha256": "0fb28702ff30bda14577aae3278a1dfb1c18a91e188ac06273d5421a688a821f",
+  "symbol": "BottomPanel::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004078A6",
+    "0x004078B8",
+    "0x004078CA",
+    "0x004078DC",
+    "0x004078EE",
+    "0x00407900",
+    "0x00407912",
+    "0x00407924",
+    "0x00407936",
+    "0x00407948",
+    "0x0040795A",
+    "0x0040796C",
+    "0x0040797E"
+  ],
+  "status": "todo"
+}

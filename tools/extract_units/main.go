@@ -17,6 +17,8 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+
+	"endorphin_decomp/internal/unitstore"
 )
 
 type TargetConfig struct {
@@ -720,17 +722,17 @@ func main() {
 	close(jobs)
 	wg.Wait()
 
-	// Step 5: Write build/units.json
+	// Step 5: Write the per-function unit ledger (build/units/)
 	outJSON, err := json.MarshalIndent(units, "", "  ")
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error marshaling build/units.json: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error marshaling unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
-	if err := os.WriteFile("build/units.json", append(outJSON, '\n'), 0644); err != nil {
-		fmt.Fprintf(os.Stderr, "Error writing build/units.json: %v\n", err)
+	if err := unitstore.WriteAll(outJSON); err != nil {
+		fmt.Fprintf(os.Stderr, "Error writing unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
-	fmt.Printf("Wrote build/units.json (%d functions: %d leaf functions, %d thunks)\n", len(units), leafCount, thunkCount)
+	fmt.Printf("Wrote build/units/ (%d functions: %d leaf functions, %d thunks)\n", len(units), leafCount, thunkCount)
 	fmt.Printf("Cached %d function disassembly files in %s/\n", len(units), cacheDir)
 
 	if *runGhidra {

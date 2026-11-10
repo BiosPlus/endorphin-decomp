@@ -1,0 +1,18 @@
+{
+  "va": "0x0054C090",
+  "size": 96,
+  "sha256": "e5ac940fcafb2baa694a96e4a4e6fd38db6a507aaa2967e5090629e247cc9fd5",
+  "symbol": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_17",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054C0A3",
+    "0x0054C0B1",
+    "0x0054C0BB",
+    "0x0054C0CA",
+    "0x0054C0E0"
+  ],
+  "status": "todo"
+}

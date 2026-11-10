@@ -1,0 +1,19 @@
+{
+  "va": "0x00608160",
+  "size": 30,
+  "sha256": "a7a4d40061f5e3634dcf35f09a479b8a0dabb99286d097939d00719fecde6c5d",
+  "symbol": "EffectorWithModes::vfunc_0",
+  "callees": [
+    "0x006080D0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00608164",
+    "0x00608171"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

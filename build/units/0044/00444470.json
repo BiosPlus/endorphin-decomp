@@ -1,0 +1,15 @@
+{
+  "va": "0x00444470",
+  "size": 11,
+  "sha256": "a3a4611ec24ea7db740b5ffdb8dbc35626acf9cd444d4997ff04a05285bc14f9",
+  "symbol": "NodeView::vfunc_106",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00444477"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x004C7870",
+  "size": 42,
+  "sha256": "c9ba48efdb3da7784ffdb857ce2f30b1397b1eb8e17d47e6892d6bc33bed728b",
+  "symbol": "NMData::SeverEventData::vfunc_84",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:23:19Z"
+}

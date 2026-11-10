@@ -1,0 +1,20 @@
+{
+  "va": "0x005B8660",
+  "size": 30,
+  "sha256": "d18793de80a5ed74db8da76f7a9335c3e6db5f3ed1615cbe7890cea809c1e391",
+  "symbol": "ExprParser::FunctionType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getNearestGeomPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B8667",
+    "0x005B866C",
+    "0x005B8674"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:11:43Z"
+}

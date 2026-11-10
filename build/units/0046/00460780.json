@@ -1,0 +1,19 @@
+{
+  "va": "0x00460780",
+  "size": 30,
+  "sha256": "cc87ff9f2b4b2fc036843998afa37d424518d2951b3283ede098c38a30a5c9cf",
+  "symbol": "TriggeredEventViewPrefs::vfunc_1",
+  "callees": [
+    "0x00460490",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00460784",
+    "0x00460791"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

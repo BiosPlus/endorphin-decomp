@@ -1,0 +1,13 @@
+{
+  "va": "0x00407740",
+  "size": 5,
+  "sha256": "af146aa151844ad3c4229c6dcf275a68d8976d69b40d423e3c86cc8e01df0753",
+  "symbol": "BottomPanel::vfunc_0_off_A4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

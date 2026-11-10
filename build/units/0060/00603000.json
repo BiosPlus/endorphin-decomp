@@ -1,0 +1,13 @@
+{
+  "va": "0x00603000",
+  "size": 13,
+  "sha256": "289409cf0a19c966c0f3480d8307feeb45d5bada45831d68b2f83407c18e457f",
+  "symbol": "Effector::vfunc_27",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

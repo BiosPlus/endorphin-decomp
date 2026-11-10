@@ -1,0 +1,19 @@
+{
+  "va": "0x006B7DF0",
+  "size": 30,
+  "sha256": "9c3eecf0d485f8cc6d12ec50702ad58ea9045124ebbf40c78a9a96bbd5892f74",
+  "symbol": "NMCMultilineEditDlg::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B7C30"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B7DF4",
+    "0x006B7E01"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

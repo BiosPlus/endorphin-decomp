@@ -1,0 +1,19 @@
+{
+  "va": "0x006B3C20",
+  "size": 30,
+  "sha256": "80f03aabe99dd2242798969f1b772a94ec04c81f36f306975bb7fba947e6f371",
+  "symbol": "GWCRGBPropertyValue::vfunc_0",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B3AB0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B3C24",
+    "0x006B3C31"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

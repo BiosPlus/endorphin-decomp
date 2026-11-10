@@ -1,0 +1,23 @@
+{
+  "va": "0x006B6720",
+  "size": 118,
+  "sha256": "9a3a285edc7220212be866ae3b741d1fc7706907adde06ecae57c3b5d45867f4",
+  "symbol": "GWCPropInPlaceSpinEdit::vfunc_66",
+  "callees": [
+    "0x006A5E00",
+    "0x006A60D0",
+    "0x006A663A"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B673E",
+    "0x006B674C",
+    "0x006B675A",
+    "0x006B6780",
+    "0x006B6786",
+    "0x006B678D"
+  ],
+  "status": "todo"
+}

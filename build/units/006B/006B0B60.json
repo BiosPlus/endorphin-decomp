@@ -1,0 +1,18 @@
+{
+  "va": "0x006B0B60",
+  "size": 136,
+  "sha256": "5b5158768c470f7250fec385aae617381c07e091d1de9ec1eb86a6e33126d44d",
+  "symbol": "GWCCategoryWithButtonsItem::vfunc_10",
+  "callees": [
+    "0x006B0770"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B0B85",
+    "0x006B0B96",
+    "0x006B0BDB"
+  ],
+  "status": "todo"
+}

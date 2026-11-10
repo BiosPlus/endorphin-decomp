@@ -1,0 +1,25 @@
+{
+  "va": "0x005852D0",
+  "size": 134,
+  "sha256": "53e4f95abd25bad4ffd6d5ce8840b3bea0a13dd977b41431162df2711b949d1c",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cObjectNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall ObjectNode::`vcall'{36, {flat}}, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall ObjectNode::`vcall'{92, {flat}}, 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046E780",
+    "0x0064F8E0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005852D9",
+    "0x00585306",
+    "0x00585316",
+    "0x00585328",
+    "0x00585343",
+    "0x00585348",
+    "0x00585352"
+  ],
+  "status": "todo"
+}

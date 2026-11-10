@@ -1,0 +1,18 @@
+{
+  "va": "0x00461630",
+  "size": 22,
+  "sha256": "ceea3d9e1a946b1e79b93128b2181d9efcad48d037721a6d1df0257f99fcbcfe",
+  "symbol": "ExportUnavailableDialog::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046163F"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:36:45Z"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x0041C980",
+  "size": 30,
+  "sha256": "1ecb78e8c0c55d6fe3443f32740a71b64581cd9f187e3f70ef0e58acfd5eea89",
+  "symbol": "GuiControllerMFC::vfunc_0",
+  "callees": [
+    "0x0041C8E0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041C984",
+    "0x0041C991"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

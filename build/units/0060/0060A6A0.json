@@ -1,0 +1,25 @@
+{
+  "va": "0x0060A6A0",
+  "size": 205,
+  "sha256": "d381598ac8dc72f21d3239ec1753b2b1a43fa6ef90a0fc597631a1e43ed354bf",
+  "symbol": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::DisabledCollisionPair\u003e\u003e::RemoveElementCommand::vfunc_3",
+  "callees": [
+    "0x00435D00",
+    "0x0060A4F0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060A6A3",
+    "0x0060A6D0",
+    "0x0060A6E9",
+    "0x0060A6F6",
+    "0x0060A704",
+    "0x0060A70E",
+    "0x0060A723",
+    "0x0060A735",
+    "0x0060A74F"
+  ],
+  "status": "todo"
+}

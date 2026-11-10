@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0EF0",
+  "size": 5,
+  "sha256": "ff69cf263e80294633f786fe415940d412177bca782f4672c380f30c850d4374",
+  "symbol": "Geometry::FrustumType::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005B0EF1"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x00646480",
+  "size": 23,
+  "sha256": "1aac86a32c748b1a1cdd463ec55346596902aa90f82b9306df1f1d956c97139c",
+  "symbol": "SkeletalJoint::vfunc_29",
+  "callees": [
+    "0x007C5CB0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064648D"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:42:32Z"
+}

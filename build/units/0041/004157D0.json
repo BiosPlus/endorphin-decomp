@@ -1,0 +1,19 @@
+{
+  "va": "0x004157D0",
+  "size": 59,
+  "sha256": "b90286fde4d7e4f70c036ffcda62b8f52c19f9c7d6dd2dc51a8c6559c716ba9d",
+  "symbol": "CEditLog::vfunc_4",
+  "callees": [
+    "0x00458E10",
+    "0x00459100"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004157E4",
+    "0x004157EE",
+    "0x00415802"
+  ],
+  "status": "todo"
+}

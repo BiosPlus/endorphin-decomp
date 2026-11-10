@@ -1,0 +1,21 @@
+{
+  "va": "0x00642040",
+  "size": 68,
+  "sha256": "dacee5110c1f893b59dc4c4c95f85e2e5b1b4854c9dec3c79418964772693166",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDebugDrawEnabled(bool), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x00641FA0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00642061",
+    "0x00642071",
+    "0x00642076",
+    "0x00642080"
+  ],
+  "status": "todo"
+}

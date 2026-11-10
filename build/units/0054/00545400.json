@@ -1,0 +1,14 @@
+{
+  "va": "0x00545400",
+  "size": 58,
+  "sha256": "05ce7518e67dbb882328f44a493718f48db4ab4436c337c89fd00520597f409f",
+  "symbol": "PoseTool::vfunc_22_off_98",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T06:00:18Z"
+}

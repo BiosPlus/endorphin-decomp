@@ -1,0 +1,18 @@
+{
+  "va": "0x0053A6A0",
+  "size": 20,
+  "sha256": "90e6824fb385a904779389aead40df82cf4843faadd25b26d72ea0eb69a807bd",
+  "symbol": "HasConstantTMPtr::vfunc_1",
+  "callees": [
+    "0x004F9950"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053A6AA"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:26:31Z"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x00544BC0",
+  "size": 30,
+  "sha256": "ec9c703ba968c8a7124c837255636de75615dbd52f8f03233c2ff77d79a53bac",
+  "symbol": "ReshapeTool::vfunc_1",
+  "callees": [
+    "0x00544920",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00544BC4",
+    "0x00544BD1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

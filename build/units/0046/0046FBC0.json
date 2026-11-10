@@ -1,0 +1,20 @@
+{
+  "va": "0x0046FBC0",
+  "size": 30,
+  "sha256": "3191a275f3dbad60b449cbdd9ce5f110b5315a8a1d4f0061caa8f469fe8381fe",
+  "symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046FBC7",
+    "0x0046FBCC",
+    "0x0046FBD4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:08:30Z"
+}

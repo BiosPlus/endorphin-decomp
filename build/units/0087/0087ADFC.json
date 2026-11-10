@@ -1,0 +1,22 @@
+{
+  "va": "0x0087ADFC",
+  "size": 121,
+  "sha256": "b3c8af80d914c9394a9e9ec733c5697a8cd28705c7a40fe91f48eee0b327eb25",
+  "symbol": "sub_0087ADFC",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0087AE06",
+    "0x0087AE14",
+    "0x0087AE22",
+    "0x0087AE30",
+    "0x0087AE3E",
+    "0x0087AE4C",
+    "0x0087AE54",
+    "0x0087AE62",
+    "0x0087AE71"
+  ],
+  "status": "out_of_scope"
+}

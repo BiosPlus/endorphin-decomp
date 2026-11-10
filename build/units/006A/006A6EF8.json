@@ -1,0 +1,14 @@
+{
+  "va": "0x006A6EF8",
+  "size": 6,
+  "sha256": "5b159dae5cea29e63120ed638992cc19bf24a79ff14ecae135473036acba607e",
+  "symbol": "thunk_MSVCR80_memcpy",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006A6EFA"
+  ],
+  "status": "out_of_scope"
+}

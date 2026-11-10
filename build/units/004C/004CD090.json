@@ -1,0 +1,22 @@
+{
+  "va": "0x004CD090",
+  "size": 58,
+  "sha256": "867a0eaa94963d4bf5eb5a7a8215621c3a9e4ddb69cfeea9e9583ea7a7d078b8",
+  "symbol": "NMData::MetaBodyConstraintData::vfunc_87",
+  "callees": [
+    "0x0046AC30",
+    "0x004CCC60",
+    "0x006A5C5C"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CD09F",
+    "0x004CD0B0",
+    "0x004CD0B6"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T06:06:11Z"
+}

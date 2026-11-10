@@ -1,0 +1,15 @@
+{
+  "va": "0x0044CFD0",
+  "size": 12,
+  "sha256": "ec3e88713f785ce884aa9e6130515b1ab8c1b16b8468dc75ed414937305204a2",
+  "symbol": "sub_0044CFD0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044CFD8"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

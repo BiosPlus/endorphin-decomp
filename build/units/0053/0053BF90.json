@@ -1,0 +1,28 @@
+{
+  "va": "0x0053BF90",
+  "size": 201,
+  "sha256": "e16b5fd482ea713006a713f9069ae2b4433aef6b862eeddd6d77cdc63b1ca9f1",
+  "symbol": "Primitives::TwistLimit::vfunc_28",
+  "callees": [
+    "0x00537ED0",
+    "0x0053B470",
+    "0x005B11F0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053BF92",
+    "0x0053BFA9",
+    "0x0053BFB0",
+    "0x0053BFCB",
+    "0x0053BFD8",
+    "0x0053BFE2",
+    "0x0053BFFB",
+    "0x0053C004",
+    "0x0053C031",
+    "0x0053C048",
+    "0x0053C04E"
+  ],
+  "status": "todo"
+}

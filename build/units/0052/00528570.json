@@ -1,0 +1,16 @@
+{
+  "va": "0x00528570",
+  "size": 39,
+  "sha256": "110a97f3ada229e5c1ac6b723c03cbeb2f28d040d9c641cd7216d6bb8676cd8c",
+  "symbol": "Interpolator::Const::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00528573"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:04:47Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x00584500",
+  "size": 5,
+  "sha256": "8c69c47d7ba77553476adeda8b7448e2ffb4563867887697e13a5f0f88334c52",
+  "symbol": "Acclaim2CharacterIO::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00584501"
+  ],
+  "status": "out_of_scope"
+}

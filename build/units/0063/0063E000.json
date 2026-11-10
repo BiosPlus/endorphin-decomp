@@ -1,0 +1,14 @@
+{
+  "va": "0x0063E000",
+  "size": 6,
+  "sha256": "6e0596390aa283ce02b846309fb31f88f8c68dcc1bb1c788c4c6707a311eb7c0",
+  "symbol": "thunk_GLU32_gluNewQuadric",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0063E002"
+  ],
+  "status": "out_of_scope"
+}

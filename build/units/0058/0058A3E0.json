@@ -1,0 +1,29 @@
+{
+  "va": "0x0058A3E0",
+  "size": 365,
+  "sha256": "32702108ea2eef162274dd0be52327685d0c0c73b6ffc8fa2b24205f5d7493b6",
+  "symbol": "AnimatableTransform::vfunc_0_off_8",
+  "callees": [
+    "0x0041CF50",
+    "0x004C48B0",
+    "0x0058A200"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058A3E9",
+    "0x0058A3F9",
+    "0x0058A43B",
+    "0x0058A44F",
+    "0x0058A463",
+    "0x0058A478",
+    "0x0058A49E",
+    "0x0058A4C7",
+    "0x0058A4DF",
+    "0x0058A4F3",
+    "0x0058A4FD",
+    "0x0058A519"
+  ],
+  "status": "todo"
+}

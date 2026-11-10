@@ -1,0 +1,19 @@
+{
+  "va": "0x00611270",
+  "size": 42,
+  "sha256": "8af50fb4513a48cb6c9b72d509a33fd0feb7c5e53cc1cd4a59957037d4cc8aad",
+  "symbol": "NMData::Constraint::vfunc_22",
+  "callees": [
+    "0x00640390",
+    "0x0067F040"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00611271",
+    "0x00611287",
+    "0x0061128D"
+  ],
+  "status": "todo"
+}

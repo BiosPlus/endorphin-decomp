@@ -1,0 +1,19 @@
+{
+  "va": "0x0053CA60",
+  "size": 30,
+  "sha256": "760e1242bfac4f3067c660bfeff5db97d42402042e9e7cf1416cb744c03073b9",
+  "symbol": "Primitives::Cylinder::vfunc_0",
+  "callees": [
+    "0x0053BA10",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053CA64",
+    "0x0053CA71"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

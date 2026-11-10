@@ -1,0 +1,23 @@
+{
+  "va": "0x004D8420",
+  "size": 81,
+  "sha256": "3cf43a6e076bc2f57eb542e67a7d1db25e6d18a86e1030b9a35c06113826ccf6",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0\u003e::vfunc_4",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C460",
+    "0x004D3A00",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D8436",
+    "0x004D8449",
+    "0x004D845E",
+    "0x004D8463",
+    "0x004D846D"
+  ],
+  "status": "todo"
+}

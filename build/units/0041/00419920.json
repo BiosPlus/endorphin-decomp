@@ -1,0 +1,19 @@
+{
+  "va": "0x00419920",
+  "size": 30,
+  "sha256": "12e1c9ec56a846608ba730b4b7595c20e35c17401c5dc241f3e95f81b19b7acf",
+  "symbol": "ExportUnavailableDialog::vfunc_1",
+  "callees": [
+    "0x00419840",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00419924",
+    "0x00419931"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

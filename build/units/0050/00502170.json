@@ -1,0 +1,19 @@
+{
+  "va": "0x00502170",
+  "size": 56,
+  "sha256": "958dc80176ce8d2ea51d84320480dda2711c8f7699deed31c11ad9ebf4ce1ca8",
+  "symbol": "PointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e::RenameElementCommand::vfunc_2",
+  "callees": [
+    "0x00501970",
+    "0x00527EC0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00502188",
+    "0x00502195",
+    "0x0050219F"
+  ],
+  "status": "todo"
+}

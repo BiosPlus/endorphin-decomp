@@ -1,0 +1,26 @@
+{
+  "va": "0x0062AE90",
+  "size": 170,
+  "sha256": "9d0995a2b567baa16b9ce07586eeff57ea5db50b1bcd57d46a13634254efbf30",
+  "symbol": "ExprParser::ReadMethodType\u003cSensors::SensorIntegral, float, \u0026public: float __thiscall Sensors::SensorIntegral::getAverage(void) const, 1\u003e::vfunc_45",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x0062A590",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062AE99",
+    "0x0062AEB4",
+    "0x0062AEC9",
+    "0x0062AEDD",
+    "0x0062AF27",
+    "0x0062AF2C",
+    "0x0062AF36"
+  ],
+  "status": "todo"
+}

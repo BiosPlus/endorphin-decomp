@@ -1,0 +1,17 @@
+{
+  "va": "0x005AC750",
+  "size": 34,
+  "sha256": "53e0eb0c396689a3da8ab943b7a922856937595b6fae90a23430a64c7b831729",
+  "symbol": "Commands::RemoveCollisionModelCommand::vfunc_3",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005AC757",
+    "0x005AC767"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:15:29Z"
+}

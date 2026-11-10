@@ -1,0 +1,16 @@
+{
+  "va": "0x006ACDF0",
+  "size": 41,
+  "sha256": "1ff902f14cc03dbd45aa81d69a66579e1436f5f5c50476f753484f2514f3b544",
+  "symbol": "GWCHotLinkItem::vfunc_5",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006ACE12"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:17:58Z"
+}

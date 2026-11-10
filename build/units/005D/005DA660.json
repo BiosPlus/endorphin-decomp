@@ -1,0 +1,26 @@
+{
+  "va": "0x005DA660",
+  "size": 170,
+  "sha256": "2133ae15938b15457a542fbc3c27c5779191ebcb6c60a679a68e0f08ad77c90b",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CameraData, float, {private: float __thiscall NMData::CameraData::getVPFieldOfView(void) const, 0}, 0\u003e::vfunc_46",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x005D12A0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005DA669",
+    "0x005DA684",
+    "0x005DA699",
+    "0x005DA6AD",
+    "0x005DA6F7",
+    "0x005DA6FC",
+    "0x005DA706"
+  ],
+  "status": "todo"
+}

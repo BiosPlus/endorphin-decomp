@@ -1,0 +1,21 @@
+{
+  "va": "0x0060F640",
+  "size": 89,
+  "sha256": "7304219689f667c7a45d919bce638bbe6090923db2758a7c35a9c2f65517eef3",
+  "symbol": "NMData::CompoundSensorData::vfunc_62",
+  "callees": [
+    "0x00406510",
+    "0x0060E540"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060F64A",
+    "0x0060F664",
+    "0x0060F672",
+    "0x0060F682",
+    "0x0060F695"
+  ],
+  "status": "todo"
+}

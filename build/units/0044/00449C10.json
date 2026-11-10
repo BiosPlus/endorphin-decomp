@@ -1,0 +1,21 @@
+{
+  "va": "0x00449C10",
+  "size": 79,
+  "sha256": "ec1711e63fd03bc61ad731fd7a1f0c13f215c7c42e63fb61f251a6d51dd63efc",
+  "symbol": "RegistrationDialog::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00449C26",
+    "0x00449C38",
+    "0x00449C47",
+    "0x00449C56"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T14:10:40Z"
+}

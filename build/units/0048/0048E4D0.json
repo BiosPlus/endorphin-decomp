@@ -1,0 +1,22 @@
+{
+  "va": "0x0048E4D0",
+  "size": 163,
+  "sha256": "817302796cb0a2c63ea5c436689b1ff434d5c5a7b6013bd622488dcd27015e0f",
+  "symbol": "Commands::SetPlaybackStartFrameCommand::vfunc_3",
+  "callees": [
+    "0x00435D00"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048E4D3",
+    "0x0048E500",
+    "0x0048E50D",
+    "0x0048E51E",
+    "0x0048E529",
+    "0x0048E53B",
+    "0x0048E555"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x005B8130",
+  "size": 69,
+  "sha256": "bdb91565394fa7638b95bca51d13d2b6913b9e41c60dac73fafe7a92399869f0",
+  "symbol": "ExprParser::FunctionType\u003cNMData::MetaBodyData, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::MetaBodyData::getAreaToNormal(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x005B71E0",
+    "0x00672080"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B8153",
+    "0x005B816A"
+  ],
+  "status": "todo"
+}

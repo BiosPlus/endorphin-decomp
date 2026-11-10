@@ -1,0 +1,28 @@
+{
+  "va": "0x00460D40",
+  "size": 182,
+  "sha256": "1c40084ad9e59e8f4e49547b74e7c995939d00bb306f414fb89096533b813ad4",
+  "symbol": "UndoHistoryDialog::vfunc_84",
+  "callees": [
+    "0x00404F00",
+    "0x00665870",
+    "0x006A5F50",
+    "0x006A5FC8"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00460D49",
+    "0x00460D5C",
+    "0x00460D61",
+    "0x00460D6E",
+    "0x00460D79",
+    "0x00460D96",
+    "0x00460DA9",
+    "0x00460DB5",
+    "0x00460DC7",
+    "0x00460DDD"
+  ],
+  "status": "todo"
+}

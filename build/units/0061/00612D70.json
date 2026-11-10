@@ -1,0 +1,28 @@
+{
+  "va": "0x00612D70",
+  "size": 261,
+  "sha256": "bffc4e11cdeb8d7376e055f891fd511afdc1d8715e327bd9cbbf09d5bdde0808",
+  "symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_7_off_C",
+  "callees": [
+    "0x004875A0",
+    "0x0067DAD0",
+    "0x0067E5B0",
+    "0x0067E990",
+    "0x00694840"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00612D78",
+    "0x00612DA9",
+    "0x00612DB9",
+    "0x00612DDA",
+    "0x00612DEA",
+    "0x00612DF4",
+    "0x00612E36",
+    "0x00612E44",
+    "0x00612E68"
+  ],
+  "status": "todo"
+}

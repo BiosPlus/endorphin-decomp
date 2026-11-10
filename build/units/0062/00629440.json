@@ -1,0 +1,18 @@
+{
+  "va": "0x00629440",
+  "size": 13,
+  "sha256": "21170c7b2746f902ed4c21a9f15476e36cf7517b90ffe846bb751a46dc2bee25",
+  "symbol": "Sensors::SensorAbsoluteShoulderBeta::vfunc_17",
+  "callees": [
+    "0x006293D0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00629444"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:28:42Z"
+}

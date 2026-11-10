@@ -1,0 +1,17 @@
+{
+  "va": "0x006A1500",
+  "size": 52,
+  "sha256": "ad777b0fed2c75421ac21cf9fb1eb7b551ca801850fa74f31e465f64605a8477",
+  "symbol": "ExprParser::Operators::Conditional::vfunc_3",
+  "callees": [
+    "0x006A1490"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A151C",
+    "0x006A152C"
+  ],
+  "status": "todo"
+}

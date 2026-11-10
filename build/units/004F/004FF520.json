@@ -1,0 +1,24 @@
+{
+  "va": "0x004FF520",
+  "size": 156,
+  "sha256": "0d11da600ae9b488fcf42afe545b19f6fc003cf58b34ea69a89a162fc51fa091",
+  "symbol": "ExprParser::ReadMethodType\u003cEvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1\u003e::vfunc_42",
+  "callees": [
+    "0x0046C3C0",
+    "0x006720C0",
+    "0x006A6DD2",
+    "0x006A7C10"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004FF529",
+    "0x004FF544",
+    "0x004FF54E",
+    "0x004FF5A9",
+    "0x004FF5AE",
+    "0x004FF5B8"
+  ],
+  "status": "todo"
+}

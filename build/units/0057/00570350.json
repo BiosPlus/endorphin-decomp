@@ -1,0 +1,19 @@
+{
+  "va": "0x00570350",
+  "size": 37,
+  "sha256": "e75028526aa886fbe81157053f9d4d8790f3f5d176b9d4be68bb74a7021f77ec",
+  "symbol": "CDLCharacterIO::vfunc_3",
+  "callees": [
+    "0x00553720",
+    "0x00640390"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0057035B",
+    "0x00570362",
+    "0x0057036A"
+  ],
+  "status": "todo"
+}

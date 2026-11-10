@@ -1,0 +1,14 @@
+{
+  "va": "0x0054E930",
+  "size": 6,
+  "sha256": "7b65ceb6c85402155e91975939faeb9a8fd8e07ea684cf2a1bfd5a6ed92a60ef",
+  "symbol": "thunk_OPENGL32_glPopMatrix",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0054E932"
+  ],
+  "status": "out_of_scope"
+}

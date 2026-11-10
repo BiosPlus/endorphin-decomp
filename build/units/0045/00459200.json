@@ -1,0 +1,18 @@
+{
+  "va": "0x00459200",
+  "size": 15,
+  "sha256": "b5b6ff4e9e76bc4e466c971f51327865e019212a6710b0527af96eec5fce6112",
+  "symbol": "MultiTrackView::TimeRuler::vfunc_11",
+  "callees": [
+    "0x00468180"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00459208"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:45:13Z"
+}

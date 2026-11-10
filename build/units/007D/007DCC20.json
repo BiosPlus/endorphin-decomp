@@ -1,0 +1,12 @@
+{
+  "va": "0x007DCC20",
+  "size": 110,
+  "sha256": "0163a03db9f529300f193e7508e29dd4eb67418ac764a0d1f131e0f18859f42b",
+  "symbol": "sub_007DCC20",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "todo"
+}

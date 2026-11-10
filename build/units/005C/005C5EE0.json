@@ -1,0 +1,18 @@
+{
+  "va": "0x005C5EE0",
+  "size": 69,
+  "sha256": "d538ac9da08489ffa249fa6a865c4b424e40b1817f8ad89d339c0548a0306212",
+  "symbol": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::CollisionModelDataBase::getAreaToNormal(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x005C3DB0",
+    "0x00672080"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C5F03",
+    "0x005C5F1A"
+  ],
+  "status": "todo"
+}

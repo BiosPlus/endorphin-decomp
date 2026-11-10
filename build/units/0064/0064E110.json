@@ -1,0 +1,22 @@
+{
+  "va": "0x0064E110",
+  "size": 170,
+  "sha256": "6a8ba672242558dd20beee1142975cb7c68c9ff31c2ac750ac4fddb8db977d37",
+  "symbol": "SkeletalJoint::vfunc_43",
+  "callees": [
+    "0x0067E820",
+    "0x007C9490",
+    "0x007C9550",
+    "0x007D8700"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064E144",
+    "0x0064E14D",
+    "0x0064E188",
+    "0x0064E1AA"
+  ],
+  "status": "todo"
+}

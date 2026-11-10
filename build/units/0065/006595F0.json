@@ -1,0 +1,20 @@
+{
+  "va": "0x006595F0",
+  "size": 24,
+  "sha256": "7d2b3db0cf85a64b279e99f11481b89648a60a410f9f97a721a00282f2f6d5aa",
+  "symbol": "RelationshipRPROJoint::vfunc_52",
+  "callees": [
+    "0x00645A00",
+    "0x0065C5E0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006595F4",
+    "0x00659600"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T11:05:02Z"
+}

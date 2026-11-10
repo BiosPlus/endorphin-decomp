@@ -1,0 +1,20 @@
+{
+  "va": "0x007DB500",
+  "size": 25,
+  "sha256": "1bffd8b92a07377becb9c13cc2630cf52c8c3e02a41f8e8091bda63a5be6c784",
+  "symbol": "sub_007DB500",
+  "callees": [
+    "0x007CC930",
+    "0x007DB130"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x007DB50A",
+    "0x007DB510"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T11:22:57Z"
+}

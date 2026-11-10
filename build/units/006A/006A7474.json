@@ -1,0 +1,14 @@
+{
+  "va": "0x006A7474",
+  "size": 6,
+  "sha256": "e49ca36941207774a267d69a7e3f4fd5a565fb1903b9c8c985fc727c86898b8a",
+  "symbol": "thunk_MSVCR80___dllonexit",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006A7476"
+  ],
+  "status": "out_of_scope"
+}

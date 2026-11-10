@@ -1,0 +1,19 @@
+{
+  "va": "0x0067B260",
+  "size": 30,
+  "sha256": "950276a4f8ec5f24febba4349f8cd5b73a74a76ccf82de4566c8e2db5f0313cb",
+  "symbol": "RuntimeEngine::NullThread::vfunc_0",
+  "callees": [
+    "0x0067B1F0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0067B264",
+    "0x0067B271"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

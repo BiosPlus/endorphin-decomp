@@ -1,0 +1,23 @@
+{
+  "va": "0x004C17A0",
+  "size": 122,
+  "sha256": "9f82a9542afcd4de1408e69d09139bcca4e442504085ac7086038ed557e90365",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::TriggeredEventData, bool, {public: bool __thiscall NMData::TriggeredEventData::isEnabled(void) const, 0}, bool, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{272, {flat}}, 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C17A9",
+    "0x004C17BC",
+    "0x004C17C4",
+    "0x004C17C9",
+    "0x004C17D6",
+    "0x004C17E4",
+    "0x004C17EB",
+    "0x004C1806"
+  ],
+  "status": "todo"
+}

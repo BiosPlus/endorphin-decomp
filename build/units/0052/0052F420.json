@@ -1,0 +1,18 @@
+{
+  "va": "0x0052F420",
+  "size": 37,
+  "sha256": "b1528361ab3d6b496b7eee07236495eec7a832383e4a7dcaf2cd07de1d9c192b",
+  "symbol": "Primitives::Arrow::vfunc_13",
+  "callees": [
+    "0x00538CF0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0052F43E"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:52:14Z"
+}

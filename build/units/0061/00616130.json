@@ -1,0 +1,21 @@
+{
+  "va": "0x00616130",
+  "size": 47,
+  "sha256": "937700b13a2c179b306cf5fc2510e355561a2c33852ddcd9358166f6a8d34e2f",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::HingeConstraint, float, {private: float __thiscall NMData::HingeConstraint::getUserInitialTwist(void) const, 0}, 0\u003e::vfunc_1",
+  "callees": [
+    "0x0046C3C0",
+    "0x00611870",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061613E",
+    "0x0061614C",
+    "0x00616151",
+    "0x0061615B"
+  ],
+  "status": "todo"
+}

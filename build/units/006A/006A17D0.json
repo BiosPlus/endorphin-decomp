@@ -1,0 +1,17 @@
+{
+  "va": "0x006A17D0",
+  "size": 106,
+  "sha256": "e03502cb138bf010732ccf2455a941ab125964bcbba955f6c0114fbc28f0cd52",
+  "symbol": "ExprParser::Operators::Acos::vfunc_3",
+  "callees": [
+    "0x006A7256"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A1801",
+    "0x006A181C"
+  ],
+  "status": "todo"
+}

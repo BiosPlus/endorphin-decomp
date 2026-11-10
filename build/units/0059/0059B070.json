@@ -1,0 +1,17 @@
+{
+  "va": "0x0059B070",
+  "size": 110,
+  "sha256": "febfeff1e79e75cddfbf8610b083f6a49736ec42931145c552c1c970b41c1857",
+  "symbol": "SearchableMap\u003cNM::Color *, GetNameFromAttribute\u003cNM::Color *\u003e\u003e::vfunc_0",
+  "callees": [
+    "0x005A07A0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0059B095",
+    "0x0059B0A4"
+  ],
+  "status": "todo"
+}

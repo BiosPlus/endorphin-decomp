@@ -1,0 +1,18 @@
+{
+  "va": "0x0044A130",
+  "size": 30,
+  "sha256": "996ff3ddf64ce80f1a4d98dcf917a2af0232074d7d34a6c679a1f82177b4d63e",
+  "symbol": "CSliderCtrl::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A6640"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044A134",
+    "0x0044A141"
+  ],
+  "status": "out_of_scope"
+}

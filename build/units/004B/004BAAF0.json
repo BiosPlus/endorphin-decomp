@@ -1,0 +1,22 @@
+{
+  "va": "0x004BAAF0",
+  "size": 359,
+  "sha256": "19dc71cb9253a698ba6ac1042cb1d6d87ba6a90e13c18bee06adbb9263739acd",
+  "symbol": "NMData::MaterialPair::vfunc_15",
+  "callees": [
+    "0x00499130",
+    "0x00671F30"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004BAB0D",
+    "0x004BAB14",
+    "0x004BAB22",
+    "0x004BAB3A",
+    "0x004BAB52",
+    "0x004BAB66"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,15 @@
+{
+  "va": "0x0044A380",
+  "size": 227,
+  "sha256": "022b2ba30828e170b34005662693af9841d7a0b25675aa2c8a9b67d93e1397b3",
+  "symbol": "sub_0044A380",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044A394",
+    "0x0044A457"
+  ],
+  "status": "todo"
+}

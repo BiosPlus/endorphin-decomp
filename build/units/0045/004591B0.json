@@ -1,0 +1,24 @@
+{
+  "va": "0x004591B0",
+  "size": 76,
+  "sha256": "53b8ad1e7712ed96b6210b4473db993d634481f9cc7cbaee23f7a2a601868bd6",
+  "symbol": "MultiTrackView::TimeRuler::vfunc_10",
+  "callees": [
+    "0x0043CEB0",
+    "0x0043DC90",
+    "0x00468180",
+    "0x00468660",
+    "0x004686A0"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004591C2",
+    "0x004591CD",
+    "0x004591D4",
+    "0x004591DE",
+    "0x004591E5"
+  ],
+  "status": "todo"
+}

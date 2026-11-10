@@ -1,0 +1,23 @@
+{
+  "va": "0x00545850",
+  "size": 134,
+  "sha256": "9d6023893b3aa12fef5e953a27e3099fbc7225abbbd0dc6174b82743e02bf4c5",
+  "symbol": "JointTool::vfunc_31",
+  "callees": [
+    "0x005434C0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00545860",
+    "0x0054586A",
+    "0x00545872",
+    "0x00545878",
+    "0x00545892",
+    "0x005458AF",
+    "0x005458C8",
+    "0x005458CE"
+  ],
+  "status": "todo"
+}

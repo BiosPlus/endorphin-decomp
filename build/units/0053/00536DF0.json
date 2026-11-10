@@ -1,0 +1,13 @@
+{
+  "va": "0x00536DF0",
+  "size": 7,
+  "sha256": "14ef4aba7aef347cb36055889541c3a1b48f7f2aaa8adf3c9e194afdbb1ce8c9",
+  "symbol": "OglRenderer::vfunc_48",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

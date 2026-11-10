@@ -1,0 +1,18 @@
+{
+  "va": "0x00666880",
+  "size": 41,
+  "sha256": "0ad61e5aff6884fc91d9bfdaa77e83de068b0a9fac1ea07742471305134f0448",
+  "symbol": "FileProject::vfunc_10",
+  "callees": [
+    "0x00663690",
+    "0x0067CFF0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00666890",
+    "0x006668A0"
+  ],
+  "status": "todo"
+}

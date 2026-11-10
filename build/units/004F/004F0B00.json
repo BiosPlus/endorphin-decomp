@@ -1,0 +1,15 @@
+{
+  "va": "0x004F0B00",
+  "size": 8,
+  "sha256": "734ea9521557f878e2be2e2999537bfb87fbb53c10ee40f2f862e2ef68de9523",
+  "symbol": "Properties::TargetSelectionProxy::vfunc_0_off_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004F0B04"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

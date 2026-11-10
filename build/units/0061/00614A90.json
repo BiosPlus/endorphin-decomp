@@ -1,0 +1,26 @@
+{
+  "va": "0x00614A90",
+  "size": 170,
+  "sha256": "e7bc6618f7e348d9cb65f36a61acd58413d2dae954c88a0c7a8da4d84e36d25b",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getUserSwing2Size(void) const, 0\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x006111D0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00614A99",
+    "0x00614AB4",
+    "0x00614AC9",
+    "0x00614ADD",
+    "0x00614B27",
+    "0x00614B2C",
+    "0x00614B36"
+  ],
+  "status": "todo"
+}

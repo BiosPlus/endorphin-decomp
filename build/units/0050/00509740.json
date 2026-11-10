@@ -1,0 +1,26 @@
+{
+  "va": "0x00509740",
+  "size": 159,
+  "sha256": "331b81601dfe89968de58b8d715d3a399f50c65ebb9482a6964d15137e54295f",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::TaskManager, int, {public: int __thiscall NMData::TaskManager::getAccumulationType(void) const, 0}, 0\u003e::vfunc_44",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00503A00",
+    "0x006720C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00509749",
+    "0x00509764",
+    "0x0050976E",
+    "0x00509782",
+    "0x005097CC",
+    "0x005097D1",
+    "0x005097DB"
+  ],
+  "status": "todo"
+}

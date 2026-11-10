@@ -1,0 +1,19 @@
+{
+  "va": "0x00547110",
+  "size": 142,
+  "sha256": "57355b8dceeeda0055c2c0fa6fb5e5b490f12cf656bc8074bf00c9341dbfa57e",
+  "symbol": "TranslateTool::vfunc_31",
+  "callees": [
+    "0x005434C0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00547117",
+    "0x00547121",
+    "0x0054712B",
+    "0x00547193"
+  ],
+  "status": "todo"
+}

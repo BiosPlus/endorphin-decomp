@@ -1,0 +1,39 @@
+{
+  "va": "0x004B0C40",
+  "size": 267,
+  "sha256": "916948d4e142dec4a4dc7f04d5a1ad48c3d2129417dd4fae314ed07c41b13134",
+  "symbol": "ViewManager::vfunc_1",
+  "callees": [
+    "0x004275C0",
+    "0x004B0930",
+    "0x0063EFE0",
+    "0x0063F530"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B0C43",
+    "0x004B0C59",
+    "0x004B0C72",
+    "0x004B0C77",
+    "0x004B0C7E",
+    "0x004B0C85",
+    "0x004B0C8C",
+    "0x004B0C93",
+    "0x004B0C9A",
+    "0x004B0CA4",
+    "0x004B0CB3",
+    "0x004B0CBB",
+    "0x004B0CC0",
+    "0x004B0CC7",
+    "0x004B0CCE",
+    "0x004B0CD5",
+    "0x004B0CDC",
+    "0x004B0CF0",
+    "0x004B0CF5",
+    "0x004B0D19",
+    "0x004B0D26"
+  ],
+  "status": "todo"
+}

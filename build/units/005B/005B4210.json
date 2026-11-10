@@ -1,0 +1,20 @@
+{
+  "va": "0x005B4210",
+  "size": 88,
+  "sha256": "f6c221e9fe1ccb1865654f2819665c78474cb934fc7f7249c913a211d1bb7320",
+  "symbol": "Geometry::CylinderType::vfunc_18",
+  "callees": [
+    "0x005B3FF0",
+    "0x005B4010",
+    "0x00671F30"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B4230",
+    "0x005B4245",
+    "0x005B425A"
+  ],
+  "status": "todo"
+}

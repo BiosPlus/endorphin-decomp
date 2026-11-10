@@ -1,0 +1,39 @@
+{
+  "va": "0x0059E080",
+  "size": 337,
+  "sha256": "cbbb67540f572e8cbae6d4ba38fa45b86d55247f8902afc206c6648cfc08989a",
+  "symbol": "NMData::BackGroundData::vfunc_25_off_4",
+  "callees": [
+    "0x00410390",
+    "0x00410420",
+    "0x00492520",
+    "0x00492540",
+    "0x00493EE0",
+    "0x00586660",
+    "0x00586D00",
+    "0x00594000",
+    "0x0059DE20",
+    "0x0059DE40",
+    "0x006AD940"
+  ],
+  "num_callees": 11,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0059E085",
+    "0x0059E098",
+    "0x0059E0AF",
+    "0x0059E0B6",
+    "0x0059E0EB",
+    "0x0059E0FE",
+    "0x0059E113",
+    "0x0059E16A",
+    "0x0059E188",
+    "0x0059E18F",
+    "0x0059E1A6",
+    "0x0059E1AD",
+    "0x0059E1B2",
+    "0x0059E1BD"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x005CE760",
+  "size": 64,
+  "sha256": "7c56f4f0b530a9b015be16c07d924607e6755475dd92f33df2a6caee3a65df12",
+  "symbol": "NMData::InertialBodyData::vfunc_14",
+  "callees": [
+    "0x0046F7D0",
+    "0x00661650"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005CE780",
+    "0x005CE795"
+  ],
+  "status": "todo"
+}

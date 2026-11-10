@@ -1,0 +1,14 @@
+{
+  "va": "0x0063E018",
+  "size": 6,
+  "sha256": "a52110829edefccd118e06e226dc918d046db81fc68e94e55b1b8679adde5c76",
+  "symbol": "thunk_GLU32_gluPartialDisk",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0063E01A"
+  ],
+  "status": "out_of_scope"
+}

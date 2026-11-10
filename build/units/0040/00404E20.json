@@ -1,0 +1,18 @@
+{
+  "va": "0x00404E20",
+  "size": 30,
+  "sha256": "f8061446b5f703a9c175a57d997b66dd0828ed8265a4d286c9f743c353f1bbfa",
+  "symbol": "CEdit::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A5F38"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00404E24",
+    "0x00404E31"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x004B0F10",
+  "size": 30,
+  "sha256": "c5d4153af3980bdd1998023292cc73460d2ff0a6e437149da64cb3c131e0d085",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B0F17",
+    "0x004B0F1C",
+    "0x004B0F24"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:10:59Z"
+}

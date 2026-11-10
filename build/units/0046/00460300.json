@@ -1,0 +1,15 @@
+{
+  "va": "0x00460300",
+  "size": 8,
+  "sha256": "160f031f309a08fbde9d63a9442545201e10c43a6f52a9a277537c0a95017a1d",
+  "symbol": "MultiTrackView::TriggeredEventView::vfunc_0_off_24C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00460304"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

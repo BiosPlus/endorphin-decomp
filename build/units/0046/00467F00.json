@@ -1,0 +1,17 @@
+{
+  "va": "0x00467F00",
+  "size": 30,
+  "sha256": "716141f7e3b9bbe2e4103b9b514fc4b6cea05157ff634921f051f15456b13d31",
+  "symbol": "VMCActionDocManager::vfunc_13",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00467F0D",
+    "0x00467F1A"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:09:53Z"
+}

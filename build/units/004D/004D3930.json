@@ -1,0 +1,13 @@
+{
+  "va": "0x004D3930",
+  "size": 10,
+  "sha256": "dab808b8879a3e26a72cdebff8e414f446eb490366d19f755864ab3b69ddc2b9",
+  "symbol": "Sensors::CompoundSensorFrontalPlane::vfunc_26",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

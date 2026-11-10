@@ -1,0 +1,23 @@
+{
+  "va": "0x004D1CB0",
+  "size": 122,
+  "sha256": "29a111e460c0eb58ade7828d9551af898adb93055de3bd27d9f6ac15e101eab5",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::TransitionEventData::setMomentumScaleFactor(float), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D1CB9",
+    "0x004D1CCC",
+    "0x004D1CD4",
+    "0x004D1CD9",
+    "0x004D1CE6",
+    "0x004D1CF4",
+    "0x004D1CFB",
+    "0x004D1D16"
+  ],
+  "status": "todo"
+}

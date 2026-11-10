@@ -1,0 +1,23 @@
+{
+  "va": "0x0040F760",
+  "size": 83,
+  "sha256": "e79226b9c8c7b83096d149f138efaac4de7efbe52779cdf6b5b7e74c9e7073d1",
+  "symbol": "CArray\u003cATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e, ATL::CStringT\u003cchar, StrTraitMFC_DLL\u003cchar, ATL::ChTraitsCRT\u003cchar\u003e\u003e\u003e\u003e::vfunc_2",
+  "callees": [
+    "0x0040F320",
+    "0x006A612A",
+    "0x006A6130",
+    "0x006A6136"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040F778",
+    "0x0040F786",
+    "0x0040F792",
+    "0x0040F79C",
+    "0x0040F7AA"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x00455F60",
+  "size": 30,
+  "sha256": "fa65dc19b29b839f591f756114c0a30eb51c652113e5a312b45632c5b67d6169",
+  "symbol": "CTypedPtrArray\u003cCPtrArray, CSizingControlBar *\u003e::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A6784"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00455F64",
+    "0x00455F71"
+  ],
+  "status": "out_of_scope"
+}

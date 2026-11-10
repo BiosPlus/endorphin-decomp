@@ -1,0 +1,17 @@
+{
+  "va": "0x00517C80",
+  "size": 120,
+  "sha256": "74482556456131f0b36220a73f3eca65af3a25d462c28e9a0b70750af5d76334",
+  "symbol": "Individual::vfunc_1",
+  "callees": [
+    "0x00517B60"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00517C90",
+    "0x00517C96"
+  ],
+  "status": "todo"
+}

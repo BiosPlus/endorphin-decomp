@@ -1,0 +1,23 @@
+{
+  "va": "0x005FDDA0",
+  "size": 82,
+  "sha256": "2fb272880ecf2836474be9718563dac92828b59c5d1832eb5b61273f4f8f9776",
+  "symbol": "ExprParser::ReadMethodType\u003cSensor, float, \u0026[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1\u003e::vfunc_0",
+  "callees": [
+    "0x0046C3C0",
+    "0x005FCB30",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005FDDB6",
+    "0x005FDDCD",
+    "0x005FDDDF",
+    "0x005FDDE4",
+    "0x005FDDEE"
+  ],
+  "status": "todo"
+}

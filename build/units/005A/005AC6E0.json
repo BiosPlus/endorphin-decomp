@@ -1,0 +1,20 @@
+{
+  "va": "0x005AC6E0",
+  "size": 50,
+  "sha256": "ca42d490b7b62276552f82ef06b65ebad92ebf8a145cc7a4137f50102099962d",
+  "symbol": "Commands::MirrorCollisionModelCommand::vfunc_2",
+  "callees": [
+    "0x00468180",
+    "0x00468F70",
+    "0x005BF460"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005AC6F2",
+    "0x005AC6F9",
+    "0x005AC705"
+  ],
+  "status": "todo"
+}

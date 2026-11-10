@@ -1,0 +1,20 @@
+{
+  "va": "0x0058F6F0",
+  "size": 30,
+  "sha256": "5d24f21b37753d7640068b518a4432de25decb8525eb6e512f86a6054f180f91",
+  "symbol": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserEulerX(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058F6F7",
+    "0x0058F6FC",
+    "0x0058F704"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:52:04Z"
+}

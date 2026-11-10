@@ -1,0 +1,21 @@
+{
+  "va": "0x005F3330",
+  "size": 63,
+  "sha256": "4f8190abffbb4e4553ed807d11ca7b13948617ea29b8b0801a5a39e483d92942",
+  "symbol": "NMData::RPROJointData::vfunc_21",
+  "callees": [
+    "0x00427640",
+    "0x005F2970",
+    "0x0063EFE0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005F333A",
+    "0x005F333F",
+    "0x005F3347",
+    "0x005F335C"
+  ],
+  "status": "todo"
+}

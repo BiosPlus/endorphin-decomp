@@ -1,0 +1,19 @@
+{
+  "va": "0x0055A1E0",
+  "size": 30,
+  "sha256": "4b5ff800ae2b48db25dbf7ac446c29370e46f00a7e8be8ebe89cd21473d330eb",
+  "symbol": "VSTIO::vfunc_0",
+  "callees": [
+    "0x005797D0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0055A1E4",
+    "0x0055A1F1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

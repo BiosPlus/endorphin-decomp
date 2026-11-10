@@ -1,0 +1,20 @@
+{
+  "va": "0x0061C910",
+  "size": 30,
+  "sha256": "a223d48c7c6c8c734935084237e11cf451218e04a8c8ccfbe75d55c7643ef258",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::PrimaryTwistAndSwingConstraint, bool, {private: bool __thiscall NMData::PrimaryTwistAndSwingConstraint::isLinearEnabled(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061C917",
+    "0x0061C91C",
+    "0x0061C924"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:58:35Z"
+}

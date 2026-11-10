@@ -1,0 +1,26 @@
+{
+  "va": "0x004C1820",
+  "size": 167,
+  "sha256": "b4981f38e504b1bcf8087c976c7d783993ee28c1acbb96f972ac026d6e46d7a0",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0\u003e::vfunc_46",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x004A9A60",
+    "0x006720A0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C1829",
+    "0x004C1844",
+    "0x004C1856",
+    "0x004C186A",
+    "0x004C18B4",
+    "0x004C18B9",
+    "0x004C18C3"
+  ],
+  "status": "todo"
+}

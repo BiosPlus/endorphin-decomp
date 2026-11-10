@@ -1,0 +1,20 @@
+{
+  "va": "0x004CA4B0",
+  "size": 162,
+  "sha256": "5edf1f7526570f9216a72e846a68b3220cca65b52091f529782c17f897dc0ef3",
+  "symbol": "ExprParser::WriteMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::MetaBodyConstraintData::addMetaBodyFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x0046E780",
+    "0x004CA300"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CA4B3",
+    "0x004CA4EB",
+    "0x004CA4FB",
+    "0x004CA50D"
+  ],
+  "status": "todo"
+}

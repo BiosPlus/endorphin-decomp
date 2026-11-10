@@ -1,0 +1,15 @@
+{
+  "va": "0x00882CFD",
+  "size": 11,
+  "sha256": "45f022be5cf85fab1cb7d5005b267448e1eea6f00ddc2d2f16402b9b17f17641",
+  "symbol": "sub_00882CFD",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00882CFE",
+    "0x00882D04"
+  ],
+  "status": "out_of_scope"
+}

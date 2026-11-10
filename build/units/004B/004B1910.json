@@ -1,0 +1,23 @@
+{
+  "va": "0x004B1910",
+  "size": 122,
+  "sha256": "e453865f8f960ba5da5f9b257a07af9da880b5a933a3206e27ac792b6857265c",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEntryData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::GraphEntryData::getExpression(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall NMData::GraphEntryData::setExpression(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B1919",
+    "0x004B192C",
+    "0x004B1934",
+    "0x004B1939",
+    "0x004B1946",
+    "0x004B1954",
+    "0x004B195B",
+    "0x004B1976"
+  ],
+  "status": "todo"
+}

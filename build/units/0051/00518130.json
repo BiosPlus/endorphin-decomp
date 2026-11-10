@@ -1,0 +1,19 @@
+{
+  "va": "0x00518130",
+  "size": 30,
+  "sha256": "13639fdd7dddf7aed563e7626b892541229bbb3730dd4692eaa7ec3a51b00ea1",
+  "symbol": "SelectionMethodEgalitarianElitist::vfunc_0",
+  "callees": [
+    "0x005180D0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00518134",
+    "0x00518141"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x00545B80",
+  "size": 18,
+  "sha256": "793960ad1300e46018340bf288523de8cbbe79380848dbb0c2e5b418d530f1ff",
+  "symbol": "ResizeTool::vfunc_16",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

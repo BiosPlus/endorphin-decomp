@@ -1,0 +1,19 @@
+{
+  "va": "0x0053D260",
+  "size": 30,
+  "sha256": "06886ac79b4cac503c5b005d8977cc785090998e1508450911d69f44f0b9d54a",
+  "symbol": "Primitives::RadiusLimit::vfunc_0",
+  "callees": [
+    "0x0053C060",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053D264",
+    "0x0053D271"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

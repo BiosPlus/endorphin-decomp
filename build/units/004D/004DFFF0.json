@@ -1,0 +1,23 @@
+{
+  "va": "0x004DFFF0",
+  "size": 122,
+  "sha256": "32539ebfcf8b4ec0da62973afd1171e23ef8ab250fe981e4477dc4a2c6ec006a",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getEntryBlendPeriod(void) const, 0}, float, {public: void __thiscall NMData::AnimationEventData::setEntryBlendPeriod(float), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004DFFF9",
+    "0x004E000C",
+    "0x004E0014",
+    "0x004E0019",
+    "0x004E0026",
+    "0x004E0034",
+    "0x004E003B",
+    "0x004E0056"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,15 @@
+{
+  "va": "0x0089CEBA",
+  "size": 10,
+  "sha256": "f94f1f48e8a68d729aa4408477071feffe2598ae4c365e9fc9fd4a0a8bb71766",
+  "symbol": "sub_0089CEBA",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0089CEBB",
+    "0x0089CEC0"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x0066DCE0",
+  "size": 16,
+  "sha256": "fa42953472c799ab445fb4723f16656f2f4170e4dc8deb0f21c50a61c512d9e4",
+  "symbol": "ExprParser::Method0Type\u003cNM::Vector3, \u0026public: void __thiscall NM::Vector3::normalize2(void)\u003e::vfunc_1",
+  "callees": [
+    "0x0067B860"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066DCE7"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:13:22Z"
+}

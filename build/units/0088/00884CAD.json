@@ -1,0 +1,15 @@
+{
+  "va": "0x00884CAD",
+  "size": 17,
+  "sha256": "71cfa20b31208c8aa601792fa4841970680a41978a8238dc0d7dececa2e32353",
+  "symbol": "sub_00884CAD",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00884CB1",
+    "0x00884CBA"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x005B80F0",
+  "size": 58,
+  "sha256": "138b2b4d6c28e6ab968fb56eaa87fb8c682590a707d3dbca142c528aca166c64",
+  "symbol": "ExprParser::FunctionType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getNearestGeomPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x005B70E0",
+    "0x00672110"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B8113",
+    "0x005B811F"
+  ],
+  "status": "todo"
+}

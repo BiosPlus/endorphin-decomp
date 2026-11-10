@@ -1,0 +1,19 @@
+{
+  "va": "0x00458F00",
+  "size": 216,
+  "sha256": "80a2b23affe7494c84e230dab7e84e0932fd9f431e84c1e593e583a79b586d00",
+  "symbol": "CSubclassWnd::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00458F09",
+    "0x00458F50",
+    "0x00458F6E",
+    "0x00458F7E",
+    "0x00458F96",
+    "0x00458FBF"
+  ],
+  "status": "todo"
+}

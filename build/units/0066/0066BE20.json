@@ -1,0 +1,14 @@
+{
+  "va": "0x0066BE20",
+  "size": 110,
+  "sha256": "9446a8a8aab3bf610dcabcc54f3619532c23de4e848ff034bee0294d13461bd2",
+  "symbol": "ExprParser::SubComponentType::vfunc_3",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066BE23"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0EC0",
+  "size": 5,
+  "sha256": "ee4c12a134c233cda5efe1d39eeb6d744aca78c2f3e8fc252681764f72de0e0a",
+  "symbol": "Geometry::PlaneType::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005B0EC1"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x0053A650",
+  "size": 41,
+  "sha256": "490b7bcb8f35d39856240eb88fc4d785aed203ef9029626f94bbe4a6a89c8f5b",
+  "symbol": "Primitives::Animation::vfunc_27",
+  "callees": [
+    "0x005B11F0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053A658"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:19:14Z"
+}

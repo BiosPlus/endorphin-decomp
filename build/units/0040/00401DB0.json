@@ -1,0 +1,19 @@
+{
+  "va": "0x00401DB0",
+  "size": 36,
+  "sha256": "52632ec163131fdcfcd50dc1838343e2b971e623777ecebf8aa61aca139b5c0a",
+  "symbol": "AVIException::vfunc_0",
+  "callees": [
+    "0x00401BB0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00401DB5",
+    "0x00401DBA",
+    "0x00401DC7"
+  ],
+  "status": "todo"
+}

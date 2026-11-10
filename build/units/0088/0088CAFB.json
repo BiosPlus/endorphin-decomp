@@ -1,0 +1,15 @@
+{
+  "va": "0x0088CAFB",
+  "size": 10,
+  "sha256": "c2c0e7ae9e155ff273e4ff0fe996d303559cd7abb2e9f0befab7298f226a8265",
+  "symbol": "sub_0088CAFB",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0088CAFC",
+    "0x0088CB01"
+  ],
+  "status": "out_of_scope"
+}

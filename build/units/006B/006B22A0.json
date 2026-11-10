@@ -1,0 +1,37 @@
+{
+  "va": "0x006B22A0",
+  "size": 352,
+  "sha256": "b0c303c9ad350bf2e49cdbd4acbb4a006ff8279b61272a6468616815c578339a",
+  "symbol": "GWCPropertyButtonFeel::vfunc_5",
+  "callees": [
+    "0x006A5C62",
+    "0x006A5E5A",
+    "0x006A5F50",
+    "0x006A5FFE",
+    "0x006A7BF0",
+    "0x006B0C10",
+    "0x006B4FF0",
+    "0x006B5AE0",
+    "0x006B6030"
+  ],
+  "num_callees": 9,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B22A9",
+    "0x006B22D1",
+    "0x006B22F6",
+    "0x006B230C",
+    "0x006B2320",
+    "0x006B233E",
+    "0x006B2362",
+    "0x006B2369",
+    "0x006B2375",
+    "0x006B2385",
+    "0x006B23AB",
+    "0x006B23B7",
+    "0x006B23C3",
+    "0x006B23E7"
+  ],
+  "status": "todo"
+}

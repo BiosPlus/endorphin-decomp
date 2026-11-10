@@ -1,0 +1,13 @@
+{
+  "va": "0x00626440",
+  "size": 7,
+  "sha256": "5dab826e294f52b1cc85e02e007434fc0cda436477f3db22da94d6d0108ce87d",
+  "symbol": "TransformRefNode::vfunc_6_off_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

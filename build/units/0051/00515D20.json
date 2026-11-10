@@ -1,0 +1,19 @@
+{
+  "va": "0x00515D20",
+  "size": 118,
+  "sha256": "b8ea99d1b6410e1ba8e33f23e4c4a43ff7487e9630c336529106b7608b2146b7",
+  "symbol": "ExprParser::DynamicEnumType\u003cNMData::EvolverRuntimeOptions, \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), \u0026public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const\u003e::vfunc_27",
+  "callees": [
+    "0x00515890"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00515D23",
+    "0x00515D52",
+    "0x00515D67",
+    "0x00515D7E"
+  ],
+  "status": "todo"
+}

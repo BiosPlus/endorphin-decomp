@@ -1,0 +1,18 @@
+{
+  "va": "0x005471A0",
+  "size": 42,
+  "sha256": "c437f85e7c131d847aa1a13350e562fce9674f4593d0ac6eea7b1bcb0dd0a38b",
+  "symbol": "TranslateTool::vfunc_29",
+  "callees": [
+    "0x005528A0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005471AA"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:26:14Z"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x005C60B0",
+  "size": 122,
+  "sha256": "014cf1590edf23c07fd29b880bd49cc200639e4d12b0035033028c15f8ba6220",
+  "symbol": "ExprParser::Method2Type\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addForceAtPostion(class NM::Vector3 const \u0026, NM::Vector3 const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C60B9",
+    "0x005C60CC",
+    "0x005C60D4",
+    "0x005C60D9",
+    "0x005C60E6",
+    "0x005C60F4",
+    "0x005C60FB",
+    "0x005C6116"
+  ],
+  "status": "todo"
+}

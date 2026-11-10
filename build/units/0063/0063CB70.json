@@ -1,0 +1,13 @@
+{
+  "va": "0x0063CB70",
+  "size": 29,
+  "sha256": "d430194ef11ebca1cc8b52e3a88b3c807a56f1007494f9567b6a8b6be013dc3c",
+  "symbol": "ExprParser::WriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e::vfunc_41",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

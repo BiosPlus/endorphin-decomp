@@ -1,0 +1,22 @@
+{
+  "va": "0x00458740",
+  "size": 70,
+  "sha256": "82f87262b08d842520f734c0053bd5dd0dbd39826f24ba5c86ac143cb0cf0b63",
+  "symbol": "SpinButtonStates::ClickedDownState::vfunc_3",
+  "callees": [
+    "0x004586A0",
+    "0x004586C0",
+    "0x006A5EC0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00458756",
+    "0x00458772",
+    "0x0045877E"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T13:02:30Z"
+}

@@ -1,0 +1,35 @@
+{
+  "va": "0x006229C0",
+  "size": 373,
+  "sha256": "cd27aa3fc1e8fba4d5f7976a12c9bd10a9d1091242636fba235d59f0d7de908d",
+  "symbol": "NMData::SkeletalCalibrationVariables::vfunc_29",
+  "callees": [
+    "0x00487A30"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006229CE",
+    "0x006229E8",
+    "0x006229F2",
+    "0x00622A0C",
+    "0x00622A16",
+    "0x00622A30",
+    "0x00622A3A",
+    "0x00622A54",
+    "0x00622A5E",
+    "0x00622A78",
+    "0x00622A82",
+    "0x00622A9C",
+    "0x00622AA6",
+    "0x00622AC0",
+    "0x00622ACA",
+    "0x00622AE4",
+    "0x00622AEE",
+    "0x00622B08",
+    "0x00622B12",
+    "0x00622B2C"
+  ],
+  "status": "todo"
+}

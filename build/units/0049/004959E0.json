@@ -1,0 +1,16 @@
+{
+  "va": "0x004959E0",
+  "size": 49,
+  "sha256": "32477ce559d92911ca33b1fff55b8fd159914d00efa840cbf6e076b8069c4655",
+  "symbol": "sub_004959E0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00495A04"
+  ],
+  "status": "matched",
+  "matched_by": "claude-opus-5.5",
+  "matched_at": "2026-11-10T03:31:32Z"
+}

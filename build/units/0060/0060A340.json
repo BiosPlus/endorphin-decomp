@@ -1,0 +1,18 @@
+{
+  "va": "0x0060A340",
+  "size": 85,
+  "sha256": "f8a38a584aed4088f68126f7c611bbc87cf9c78ae50e2ae515ea7b5343396633",
+  "symbol": "sub_0060A340",
+  "callees": [
+    "0x00609670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060A350",
+    "0x0060A36B",
+    "0x0060A381"
+  ],
+  "status": "todo"
+}

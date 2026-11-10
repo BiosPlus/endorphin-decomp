@@ -1,0 +1,18 @@
+{
+  "va": "0x0059E9B0",
+  "size": 13,
+  "sha256": "276b145b99b4311479a22c86073365f62538b08710676a2fde7d518df93e1e19",
+  "symbol": "ExprParser::ROWriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e::vfunc_13",
+  "callees": [
+    "0x00671100"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0059E9B3"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:26:37Z"
+}

@@ -1,0 +1,27 @@
+{
+  "va": "0x0060DC00",
+  "size": 184,
+  "sha256": "5727053ddcab5fe2d937c35899e38fbeb8519fa7e2fa9d05af06b7f36e4fd8c5",
+  "symbol": "NMData::EffectorWithModesData::vfunc_15",
+  "callees": [
+    "0x00608350",
+    "0x0060CDE0",
+    "0x0063D460",
+    "0x0063D480",
+    "0x0063D5D0",
+    "0x006A5C62"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060DC03",
+    "0x0060DC2D",
+    "0x0060DC44",
+    "0x0060DC5D",
+    "0x0060DC68",
+    "0x0060DC79",
+    "0x0060DCA0"
+  ],
+  "status": "todo"
+}

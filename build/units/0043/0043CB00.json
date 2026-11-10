@@ -1,0 +1,20 @@
+{
+  "va": "0x0043CB00",
+  "size": 66,
+  "sha256": "3932a1eeb8f840eb7efc68f77a70271e18eabf1ad2cdc12ed4848febe305d2f1",
+  "symbol": "MultiTrackView::TriggeredEventView::vfunc_66",
+  "callees": [
+    "0x0041C6B0",
+    "0x006A5DA0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0043CB23",
+    "0x0043CB39"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:21:33Z"
+}

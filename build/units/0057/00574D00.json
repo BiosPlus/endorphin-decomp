@@ -1,0 +1,19 @@
+{
+  "va": "0x00574D00",
+  "size": 37,
+  "sha256": "47003d64b479ceee052e76077a36d282b7adc2d1a201ab68a11958cc26f7b202",
+  "symbol": "VIO::vfunc_3",
+  "callees": [
+    "0x00553720",
+    "0x00640390"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00574D0B",
+    "0x00574D12",
+    "0x00574D1A"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,28 @@
+{
+  "va": "0x006758E0",
+  "size": 277,
+  "sha256": "c6f3f2681895b4d0b9eb0e338fc64f77863a937b6c6d1f49ed1ed2277c378213",
+  "symbol": "Properties::PropertyManager::vfunc_2",
+  "callees": [
+    "0x0041CF00",
+    "0x00666670",
+    "0x006720A0",
+    "0x006A0360",
+    "0x006A5C62"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006758E9",
+    "0x00675911",
+    "0x00675921",
+    "0x0067594C",
+    "0x0067596D",
+    "0x00675985",
+    "0x006759A3",
+    "0x006759AF",
+    "0x006759C1"
+  ],
+  "status": "todo"
+}

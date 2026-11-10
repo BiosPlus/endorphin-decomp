@@ -1,0 +1,23 @@
+{
+  "va": "0x004B4D90",
+  "size": 208,
+  "sha256": "4f2b97be50a171aad6b040291fccc60fd8a3119a996985752edfec4bbc530645",
+  "symbol": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e, Properties::GetTerminalParent\u003e::vfunc_3",
+  "callees": [
+    "0x00493D90",
+    "0x004B4C00"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B4D99",
+    "0x004B4DC4",
+    "0x004B4DDE",
+    "0x004B4DF1",
+    "0x004B4E02",
+    "0x004B4E2C",
+    "0x004B4E3F"
+  ],
+  "status": "todo"
+}

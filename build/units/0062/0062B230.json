@@ -1,0 +1,19 @@
+{
+  "va": "0x0062B230",
+  "size": 30,
+  "sha256": "8666485f8c46a9b86201f2409cbf40d11f95eb157a75e01d373e990abac8acca",
+  "symbol": "Sensors::SensorIntegral::vfunc_0",
+  "callees": [
+    "0x0062B1F0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062B234",
+    "0x0062B241"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

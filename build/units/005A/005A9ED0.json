@@ -1,0 +1,15 @@
+{
+  "va": "0x005A9ED0",
+  "size": 15,
+  "sha256": "d4b598fd65cfcb0b8069cc25155effef61061f4f3c2791375200fa79c99aa4a4",
+  "symbol": "CharacterReloader::vfunc_14",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005A9ED6"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

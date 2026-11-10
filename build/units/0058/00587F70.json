@@ -1,0 +1,17 @@
+{
+  "va": "0x00587F70",
+  "size": 33,
+  "sha256": "befa227449268dfc2ff9cbad0809ca4dab077264d2edf5c4da15f9b85388bb42",
+  "symbol": "NMData::Marker::vfunc_33",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00587F85",
+    "0x00587F8D"
+  ],
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash",
+  "matched_at": "2026-11-08T15:32:35Z"
+}

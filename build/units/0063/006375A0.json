@@ -1,0 +1,22 @@
+{
+  "va": "0x006375A0",
+  "size": 168,
+  "sha256": "acedfa80f07dad7c87a778f93877fb9c5a33c48e3e1f8576d3bf360990816688",
+  "symbol": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getLinearForceLimit(void) const, 0\u003e::vfunc_42",
+  "callees": [
+    "0x0046C3C0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006375A9",
+    "0x006375DA",
+    "0x00637635",
+    "0x0063763A",
+    "0x00637644"
+  ],
+  "status": "todo"
+}

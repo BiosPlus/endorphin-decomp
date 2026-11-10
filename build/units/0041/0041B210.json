@@ -1,0 +1,36 @@
+{
+  "va": "0x0041B210",
+  "size": 136,
+  "sha256": "e71f5dc75446c572900e4dd4b40c322a85bd1bc42c325b318b98d7ed58a6ed4b",
+  "symbol": "GettingStartedDialog::vfunc_84",
+  "callees": [
+    "0x0040F230",
+    "0x0040FD30",
+    "0x0040FD40",
+    "0x0040FD50",
+    "0x006A5E72",
+    "0x006A6244",
+    "0x006A7BC0"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041B214",
+    "0x0041B219",
+    "0x0041B21F",
+    "0x0041B225",
+    "0x0041B22B",
+    "0x0041B239",
+    "0x0041B248",
+    "0x0041B25C",
+    "0x0041B264",
+    "0x0041B26A",
+    "0x0041B272",
+    "0x0041B277",
+    "0x0041B27F",
+    "0x0041B285",
+    "0x0041B28D"
+  ],
+  "status": "todo"
+}

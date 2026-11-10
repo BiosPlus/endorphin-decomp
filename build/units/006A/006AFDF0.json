@@ -1,0 +1,26 @@
+{
+  "va": "0x006AFDF0",
+  "size": 292,
+  "sha256": "f2e7f7d862aadfdf9739aeea6bcb4fd720a4f7df880d7b9addf0d099f6310943",
+  "symbol": "NMCSingleLineLook::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006AFDF3",
+    "0x006AFE52",
+    "0x006AFE67",
+    "0x006AFE7C",
+    "0x006AFE90",
+    "0x006AFE9F",
+    "0x006AFEAB",
+    "0x006AFEB4",
+    "0x006AFEBE",
+    "0x006AFED7",
+    "0x006AFEE2",
+    "0x006AFEF3",
+    "0x006AFEFD"
+  ],
+  "status": "todo"
+}

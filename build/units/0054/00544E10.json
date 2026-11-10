@@ -1,0 +1,13 @@
+{
+  "va": "0x00544E10",
+  "size": 10,
+  "sha256": "81d0b5a17ad0cbe9d22ca22f2c22f5a8d8e1183bd3060c5096c6ec11b8256d66",
+  "symbol": "SnapTranslateTool::vfunc_19_off_98",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x00603340",
+  "size": 35,
+  "sha256": "3879a48230a2577101647f42c76cd779fa85f90887e17bcc4667603c798128b4",
+  "symbol": "Effector::vfunc_16",
+  "callees": [
+    "0x005DFB80",
+    "0x00603090"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00603350",
+    "0x0060335B"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x0051A3E0",
+  "size": 30,
+  "sha256": "6e6a0fa84d0d3915814fa53c95f804954259ea0123af5aabccaad16a94476190",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0051A3E7",
+    "0x0051A3EC",
+    "0x0051A3F4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:49:37Z"
+}

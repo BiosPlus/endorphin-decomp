@@ -1,0 +1,13 @@
+{
+  "va": "0x0052EF70",
+  "size": 7,
+  "sha256": "3da724114d30b1e2d75ed6e9ce6aaa415e04110b4cba9cc955158e1d4a62d0dd",
+  "symbol": "Primitives::Animation::vfunc_26",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

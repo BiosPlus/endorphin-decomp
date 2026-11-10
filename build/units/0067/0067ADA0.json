@@ -1,0 +1,14 @@
+{
+  "va": "0x0067ADA0",
+  "size": 6,
+  "sha256": "2c179940ddf356c460bdd60d32b68494e198afd7ef6a74ba31c32acad46dc6d1",
+  "symbol": "thunk_KERNEL32_GetCurrentThreadId",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0067ADA2"
+  ],
+  "status": "out_of_scope"
+}

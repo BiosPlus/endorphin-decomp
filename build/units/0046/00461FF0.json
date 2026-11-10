@@ -1,0 +1,22 @@
+{
+  "va": "0x00461FF0",
+  "size": 53,
+  "sha256": "1410e89fd3417f05252b9436a8410e757a528a0ea7c5d0d50f1d765aa9ddfcfa",
+  "symbol": "UpgradeCharacterDialog::vfunc_84",
+  "callees": [
+    "0x006A5FC8",
+    "0x006A5FDA"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00461FF4",
+    "0x00462000",
+    "0x0046200A",
+    "0x0046201A"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T04:58:35Z"
+}

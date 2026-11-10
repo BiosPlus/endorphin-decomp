@@ -1,0 +1,15 @@
+{
+  "va": "0x004C6BE0",
+  "size": 11,
+  "sha256": "f761a01c5d2560b28dbf53db1e872b3bdb4b61f476da3046f8461115d1539507",
+  "symbol": "NMData::ForceEventData::vfunc_1_off_158",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C6BE7"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

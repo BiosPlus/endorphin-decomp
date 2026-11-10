@@ -1,0 +1,23 @@
+{
+  "va": "0x005F7490",
+  "size": 55,
+  "sha256": "5a4fae03006c40922ac4dac762ca5bac5d04647820c1fd808e8fdb2b337b5793",
+  "symbol": "ExprParser::ReadMethodType\u003cHelperGraphic, bool, {public: bool __thiscall HelperGraphic::getFSMVisibility(void) const, 0}, 0\u003e::vfunc_5",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x005F51B0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005F749E",
+    "0x005F74AC",
+    "0x005F74B4",
+    "0x005F74B9",
+    "0x005F74C3"
+  ],
+  "status": "todo"
+}

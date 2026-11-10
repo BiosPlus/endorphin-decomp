@@ -1,0 +1,26 @@
+{
+  "va": "0x00471BF0",
+  "size": 96,
+  "sha256": "df43e5acfa53e46d12e9558bd9e6515d52aa077936ba9eb0a6230db18e682f8d",
+  "symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, 0\u003e::vfunc_2",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046F860",
+    "0x006A6DD2",
+    "0x006A6DE0"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00471BFE",
+    "0x00471C19",
+    "0x00471C1E",
+    "0x00471C2A",
+    "0x00471C2F",
+    "0x00471C3D",
+    "0x00471C42",
+    "0x00471C4C"
+  ],
+  "status": "todo"
+}

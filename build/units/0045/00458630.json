@@ -1,0 +1,18 @@
+{
+  "va": "0x00458630",
+  "size": 30,
+  "sha256": "90902920c7caa9c8f3db516fc26539d2b11010ae0d934d7205b733c9f96d2579",
+  "symbol": "CSpinButtonCtrl::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A6808"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00458634",
+    "0x00458641"
+  ],
+  "status": "out_of_scope"
+}

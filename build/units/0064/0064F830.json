@@ -1,0 +1,18 @@
+{
+  "va": "0x0064F830",
+  "size": 13,
+  "sha256": "692ae1f05471ac04bab6fd9e8dfcd2691bd00040c7f51bead61be80977cb7305",
+  "symbol": "ExprParser::ROWriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const \u0026)\u003e::vfunc_13",
+  "callees": [
+    "0x00671100"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064F833"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:32:26Z"
+}

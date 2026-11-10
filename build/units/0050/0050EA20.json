@@ -1,0 +1,28 @@
+{
+  "va": "0x0050EA20",
+  "size": 151,
+  "sha256": "391f5cd3487cad55bdfd4aace9a9692607745f4feb3479c0e74c3f5451a11b0c",
+  "symbol": "ExprParser::PrimitiveProxyCreator\u003cNMData::PopulationData, int, 4\u003e::vfunc_17",
+  "callees": [
+    "0x00403560",
+    "0x0049DA40",
+    "0x006A6DD2",
+    "0x006A6E9E"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0050EA23",
+    "0x0050EA40",
+    "0x0050EA45",
+    "0x0050EA55",
+    "0x0050EA63",
+    "0x0050EA6D",
+    "0x0050EA7F",
+    "0x0050EA84",
+    "0x0050EA8E",
+    "0x0050EA93"
+  ],
+  "status": "todo"
+}

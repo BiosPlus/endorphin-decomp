@@ -1,0 +1,24 @@
+{
+  "va": "0x0065F8E0",
+  "size": 96,
+  "sha256": "38334a09a06b90b81244560f5503eac8ecfac8f761722881296ac9233fcd810b",
+  "symbol": "CalibrationManager::vfunc_9",
+  "callees": [
+    "0x006A6C87"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065F8E9",
+    "0x0065F8FC",
+    "0x0065F904",
+    "0x0065F909",
+    "0x0065F90E",
+    "0x0065F91C",
+    "0x0065F921",
+    "0x0065F926",
+    "0x0065F931"
+  ],
+  "status": "todo"
+}

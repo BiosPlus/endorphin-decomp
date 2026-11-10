@@ -1,0 +1,22 @@
+{
+  "va": "0x005B22B0",
+  "size": 165,
+  "sha256": "14bf181f2a4781efa1a44f90ed73f5eb8f3119415e720105b3254f000f4d9aca",
+  "symbol": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam1(void) const, 0\u003e::vfunc_42",
+  "callees": [
+    "0x0046C3C0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B22B9",
+    "0x005B22E7",
+    "0x005B2342",
+    "0x005B2347",
+    "0x005B2351"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x005459B0",
+  "size": 30,
+  "sha256": "32b329f0915cbade9499c51b33996da708cbb2a24f5d1bc25292ed0cf1134ed7",
+  "symbol": "JointTool::vfunc_1",
+  "callees": [
+    "0x005457B0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005459B4",
+    "0x005459C1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

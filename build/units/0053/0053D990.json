@@ -1,0 +1,14 @@
+{
+  "va": "0x0053D990",
+  "size": 80,
+  "sha256": "f8d5b73f2bb310730cde9d120b49a39828643122bed3a9327930d84123eba8eb",
+  "symbol": "Primitives::Sensor2::vfunc_25",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T14:15:45Z"
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x0067AF30",
+  "size": 118,
+  "sha256": "3aeb2961bf9ad5379bb6ee37f43473b763543abfa0e39d99ddebf8aeb8a1b220",
+  "symbol": "EvolveEngine::vfunc_2",
+  "callees": [
+    "0x0065C640",
+    "0x0065C650",
+    "0x0067AE20"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0067AF33",
+    "0x0067AF54",
+    "0x0067AF67",
+    "0x0067AF78",
+    "0x0067AF91"
+  ],
+  "status": "todo"
+}

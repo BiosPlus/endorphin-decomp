@@ -1,0 +1,14 @@
+{
+  "va": "0x0049AEC0",
+  "size": 33,
+  "sha256": "c295bbbe5658b1d19664c8f55a9358d6bbfedb4bf87128099a0093a730e53257",
+  "symbol": "ExprParser::PrimitiveProxyType\u003cbool\u003e::vfunc_42",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:27:50Z"
+}

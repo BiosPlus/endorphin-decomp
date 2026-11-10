@@ -1,0 +1,18 @@
+{
+  "va": "0x00649490",
+  "size": 37,
+  "sha256": "cb62e5b2202ea11c59edecd635331a989d0b01cec972791541f6a502f3f8e90a",
+  "symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationBeta(float), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x00648E80"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006494AD"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:01:14Z"
+}

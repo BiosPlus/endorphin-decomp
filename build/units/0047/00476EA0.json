@@ -1,0 +1,13 @@
+{
+  "va": "0x00476EA0",
+  "size": 28,
+  "sha256": "4af0f24a0e20b37a5d9bf63178cac6796ed1e1922486ee6d317b58e43d45eafd",
+  "symbol": "SymbolPtrMap\u003cSearchableMap\u003cNMData::TriggeredEventData *, GetNameFromAttribute\u003cNMData::TriggeredEventData *\u003e\u003e\u003e::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

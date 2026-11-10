@@ -1,0 +1,19 @@
+{
+  "va": "0x00416D70",
+  "size": 30,
+  "sha256": "e3307946a018395cd580fa1ef14d7baede51f2b8862452032b272e77da7630d2",
+  "symbol": "EventViewPrefs::vfunc_1",
+  "callees": [
+    "0x00416B90",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00416D74",
+    "0x00416D81"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

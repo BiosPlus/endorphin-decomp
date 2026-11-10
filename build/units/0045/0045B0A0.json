@@ -1,0 +1,24 @@
+{
+  "va": "0x0045B0A0",
+  "size": 175,
+  "sha256": "dc062930c3f49aeb0bbe621bc481892564cad70736a0ca6cece5521a95a67e81",
+  "symbol": "ToolsPropertyPage::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0045B0B6",
+    "0x0045B0C8",
+    "0x0045B0DA",
+    "0x0045B0EC",
+    "0x0045B0FE",
+    "0x0045B110",
+    "0x0045B122",
+    "0x0045B134",
+    "0x0045B146"
+  ],
+  "status": "todo"
+}

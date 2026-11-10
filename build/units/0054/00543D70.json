@@ -1,0 +1,22 @@
+{
+  "va": "0x00543D70",
+  "size": 140,
+  "sha256": "cf956183d46779712c6a60ab6d7b3893bcb8d21c72ce3d1f1848e306f3ba229c",
+  "symbol": "CameraTool::vfunc_31",
+  "callees": [
+    "0x00543C00"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00543DA2",
+    "0x00543DB4",
+    "0x00543DBB",
+    "0x00543DC1",
+    "0x00543DCB",
+    "0x00543DE4",
+    "0x00543DF4"
+  ],
+  "status": "todo"
+}

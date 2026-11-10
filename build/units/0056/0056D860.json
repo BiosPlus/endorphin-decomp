@@ -1,0 +1,21 @@
+{
+  "va": "0x0056D860",
+  "size": 190,
+  "sha256": "cbb9cba8cca9ec331b775d67ce0cb75dd5128523a2a20d02b5ff9ce7de3ebd44",
+  "symbol": "NMCIO::vfunc_10",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0056D863",
+    "0x0056D88E",
+    "0x0056D898",
+    "0x0056D89D",
+    "0x0056D8AF",
+    "0x0056D8F0",
+    "0x0056D8F6",
+    "0x0056D908"
+  ],
+  "status": "todo"
+}

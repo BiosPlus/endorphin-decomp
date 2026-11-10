@@ -1,0 +1,19 @@
+{
+  "va": "0x0055A0E0",
+  "size": 30,
+  "sha256": "f98c2fb95309085d243b4f04d3528722fd66aa15e159a726ca5e9b60c2d190f5",
+  "symbol": "CDLCharacterIO::vfunc_0",
+  "callees": [
+    "0x005702F0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0055A0E4",
+    "0x0055A0F1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,17 @@
+{
+  "va": "0x0053DEA0",
+  "size": 81,
+  "sha256": "a3aed725c58f68f2829d027b072475a1d0534473b0360240c355c77608961af9",
+  "symbol": "Primitives::HingeLimit::vfunc_25",
+  "callees": [
+    "0x0053A610"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053DEB6",
+    "0x0053DEE5"
+  ],
+  "status": "todo"
+}

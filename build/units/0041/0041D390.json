@@ -1,0 +1,23 @@
+{
+  "va": "0x0041D390",
+  "size": 52,
+  "sha256": "3cec3b4047d3631e91f44469aafb5f628bc5a2895c3673262016e956e9db2037",
+  "symbol": "Properties::GWCPropertiesControlDriver::vfunc_2",
+  "callees": [
+    "0x006A7BB0",
+    "0x006A95C0",
+    "0x006ACFB0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041D397",
+    "0x0041D39F",
+    "0x0041D3AB",
+    "0x0041D3B2"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T04:27:43Z"
+}

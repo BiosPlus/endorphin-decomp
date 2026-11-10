@@ -1,0 +1,36 @@
+{
+  "va": "0x0065BC70",
+  "size": 210,
+  "sha256": "5a0fd7bedcadfc831ba7977ffacb3eb6d8baef1469a558d765051a4df402e6f0",
+  "symbol": "Space::vfunc_1",
+  "callees": [
+    "0x0046C0A0",
+    "0x0053F5F0",
+    "0x0063EFE0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065BC77",
+    "0x0065BC86",
+    "0x0065BC92",
+    "0x0065BC9E",
+    "0x0065BCAA",
+    "0x0065BCB5",
+    "0x0065BCBD",
+    "0x0065BCCF",
+    "0x0065BCD4",
+    "0x0065BCDF",
+    "0x0065BCF1",
+    "0x0065BCF6",
+    "0x0065BD01",
+    "0x0065BD06",
+    "0x0065BD0D",
+    "0x0065BD14",
+    "0x0065BD1B",
+    "0x0065BD22",
+    "0x0065BD36"
+  ],
+  "status": "todo"
+}

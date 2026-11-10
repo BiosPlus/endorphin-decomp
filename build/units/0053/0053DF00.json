@@ -1,0 +1,17 @@
+{
+  "va": "0x0053DF00",
+  "size": 81,
+  "sha256": "9bc84ff3faadb589aaa2ab3c0855bf37b6ca83f5b10617044042d5464d5cc364",
+  "symbol": "Primitives::SwingLimit::vfunc_25",
+  "callees": [
+    "0x0053A610"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053DF16",
+    "0x0053DF45"
+  ],
+  "status": "todo"
+}

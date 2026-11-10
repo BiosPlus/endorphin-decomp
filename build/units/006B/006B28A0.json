@@ -1,0 +1,19 @@
+{
+  "va": "0x006B28A0",
+  "size": 86,
+  "sha256": "6d2e8f7afc8637a1e390ee6484a7a155344106657d3b0226ff79543175597aab",
+  "symbol": "GWCPropertyEditFeel::vfunc_6",
+  "callees": [
+    "0x006A5C62",
+    "0x006B0CA0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B28A3",
+    "0x006B28B9",
+    "0x006B28D2"
+  ],
+  "status": "todo"
+}

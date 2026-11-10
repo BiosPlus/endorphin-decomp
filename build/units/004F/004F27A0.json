@@ -1,0 +1,18 @@
+{
+  "va": "0x004F27A0",
+  "size": 28,
+  "sha256": "69be65eaba8c43f9ee583424c2cafadb7a6978077c3b32ff9456009e8eeac08c",
+  "symbol": "Properties::MultiSelectProxy::vfunc_0_off_4",
+  "callees": [
+    "0x004F2750"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004F27B5"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T11:51:28Z"
+}

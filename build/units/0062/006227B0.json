@@ -1,0 +1,17 @@
+{
+  "va": "0x006227B0",
+  "size": 34,
+  "sha256": "b8c6440c814eea901b552c45b5c2a7e3a0b7ed720f353b43020e23d2de32be93",
+  "symbol": "NMData::HingeCalibrationVariables::vfunc_28",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006227B7",
+    "0x006227C7"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:17:25Z"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x0048F600",
+  "size": 30,
+  "sha256": "96000c2c73fc651ced1bb60475c2a4ed2ee5a0fb832090a292ca5edca20a1738",
+  "symbol": "Commands::CreateTriggeredEventCommand::vfunc_0",
+  "callees": [
+    "0x0048F590",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048F604",
+    "0x0048F611"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

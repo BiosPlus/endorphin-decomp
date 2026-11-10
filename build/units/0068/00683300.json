@@ -1,0 +1,23 @@
+{
+  "va": "0x00683300",
+  "size": 122,
+  "sha256": "a41b1e2d3e6fdd38c250a7b9a0e6eb08481e3efeeca7eeb44c80aeee12250f9e",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::ValuePtrData::getType(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::ValuePtrData::setType(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00683309",
+    "0x0068331C",
+    "0x00683324",
+    "0x00683329",
+    "0x00683336",
+    "0x00683344",
+    "0x0068334B",
+    "0x00683366"
+  ],
+  "status": "todo"
+}

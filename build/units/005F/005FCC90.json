@@ -1,0 +1,22 @@
+{
+  "va": "0x005FCC90",
+  "size": 158,
+  "sha256": "57e047e3c596b54c2f5a3e1b4e319a939da25218f21f2d344ccb2a4c619fe4b8",
+  "symbol": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e::vfunc_42",
+  "callees": [
+    "0x0046C3C0",
+    "0x00672110",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005FCC99",
+    "0x005FCCC0",
+    "0x005FCD1B",
+    "0x005FCD20",
+    "0x005FCD2A"
+  ],
+  "status": "todo"
+}

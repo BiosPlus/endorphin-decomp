@@ -1,0 +1,13 @@
+{
+  "va": "0x00681C40",
+  "size": 8,
+  "sha256": "eeae6fdce5d7c220743596ebc919ded90027357263812a6359bc4ec3071ceb3b",
+  "symbol": "Properties::PropertyIteratorTypes::MatrixTypeIterator\u003cNM::Matrix4, 4\u003e::vfunc_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,16 @@
+{
+  "va": "0x00649410",
+  "size": 113,
+  "sha256": "39592ba47d69bfebbcaf267f43823fdb4f7ac638694eec6ff12dcabd88a020eb",
+  "symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setCachedDesiredOrientationAlpha(float), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x00648E70"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00649437"
+  ],
+  "status": "todo"
+}

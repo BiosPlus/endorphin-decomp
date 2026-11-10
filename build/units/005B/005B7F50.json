@@ -1,0 +1,20 @@
+{
+  "va": "0x005B7F50",
+  "size": 75,
+  "sha256": "afc9941b46470acdc6818bfdbffe244932b15bcdfcf5bab96580e5ec03d5550f",
+  "symbol": "ExprParser::Method2Type\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addImpulseAtPostion(class NM::Vector3 const \u0026, NM::Vector3 const \u0026), 0}\u003e::vfunc_49",
+  "callees": [
+    "0x005B72A0",
+    "0x00671F30"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B7F83",
+    "0x005B7F8D"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T13:38:51Z"
+}

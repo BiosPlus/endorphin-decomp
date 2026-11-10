@@ -1,0 +1,23 @@
+{
+  "va": "0x004F4690",
+  "size": 180,
+  "sha256": "c8e33cd4bdf5bdd2770188ab47d31b0fe6f339ffe486f08231477c995b37093b",
+  "symbol": "VMCSModes::EditMode::vfunc_20",
+  "callees": [
+    "0x0046F930",
+    "0x00472350",
+    "0x00472650"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004F4699",
+    "0x004F46E4",
+    "0x004F46EA",
+    "0x004F470C",
+    "0x004F471E",
+    "0x004F472E"
+  ],
+  "status": "todo"
+}

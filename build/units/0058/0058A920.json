@@ -1,0 +1,18 @@
+{
+  "va": "0x0058A920",
+  "size": 49,
+  "sha256": "a908f6d23710319c4a08b6747d8207c11f9f16d0f538da5783c29309c92c98db",
+  "symbol": "sub_0058A920",
+  "callees": [
+    "0x00552130"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058A946"
+  ],
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5",
+  "matched_at": "2026-11-10T03:45:15Z"
+}

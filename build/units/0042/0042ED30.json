@@ -1,0 +1,37 @@
+{
+  "va": "0x0042ED30",
+  "size": 275,
+  "sha256": "c45ae474d4477187f7094eb46c5b5cb2f3425bdb392799b4684ce217f465c6ca",
+  "symbol": "ListBox::vfunc_81",
+  "callees": [
+    "0x0042ECC0",
+    "0x006A5FF2",
+    "0x006A6004",
+    "0x006A617E"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0042ED33",
+    "0x0042ED53",
+    "0x0042ED59",
+    "0x0042ED6B",
+    "0x0042ED82",
+    "0x0042ED8E",
+    "0x0042ED93",
+    "0x0042ED9D",
+    "0x0042EDA3",
+    "0x0042EDAE",
+    "0x0042EDC1",
+    "0x0042EDCB",
+    "0x0042EDDA",
+    "0x0042EDE5",
+    "0x0042EDF0",
+    "0x0042EDFA",
+    "0x0042EE12",
+    "0x0042EE26",
+    "0x0042EE2B"
+  ],
+  "status": "todo"
+}

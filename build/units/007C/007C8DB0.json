@@ -1,0 +1,14 @@
+{
+  "va": "0x007C8DB0",
+  "size": 6,
+  "sha256": "c2a5e7194387e98ce9b593a97f46e07429d10c1599887c22a2cf148f33771f2c",
+  "symbol": "thunk_MSVCR80_realloc",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x007C8DB2"
+  ],
+  "status": "out_of_scope"
+}

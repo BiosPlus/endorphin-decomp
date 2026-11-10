@@ -1,0 +1,29 @@
+{
+  "va": "0x006AACE0",
+  "size": 303,
+  "sha256": "1e8d1a01867c2636e854066673c5497175daeef768b8430d7018255415d41df3",
+  "symbol": "GWCPropertiesCtrl::vfunc_91",
+  "callees": [
+    "0x006A6790",
+    "0x006A8980",
+    "0x006A89B0",
+    "0x006AA2E0",
+    "0x006ACFB0",
+    "0x006AD090"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006AAD31",
+    "0x006AAD77",
+    "0x006AAD7F",
+    "0x006AADB7",
+    "0x006AADBE",
+    "0x006AADE1",
+    "0x006AADE8",
+    "0x006AADF6",
+    "0x006AAE0B"
+  ],
+  "status": "todo"
+}

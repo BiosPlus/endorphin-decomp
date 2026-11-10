@@ -1,0 +1,15 @@
+{
+  "va": "0x0089CCDB",
+  "size": 11,
+  "sha256": "4887c14f31fd3dd90aec99b20b8cecccad3bc8833753b7f74f91d9fbe1ca9687",
+  "symbol": "sub_0089CCDB",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0089CCDC",
+    "0x0089CCE2"
+  ],
+  "status": "out_of_scope"
+}

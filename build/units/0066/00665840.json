@@ -1,0 +1,16 @@
+{
+  "va": "0x00665840",
+  "size": 33,
+  "sha256": "10dfc2f20212c9de1791a93a7b2066827820dadd1d33d137148ddaf4e46e40fe",
+  "symbol": "MacroCommand::vfunc_3",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00665856"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:03:22Z"
+}

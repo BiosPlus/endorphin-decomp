@@ -1,0 +1,17 @@
+{
+  "va": "0x006B8AB0",
+  "size": 90,
+  "sha256": "8d6b9db0f369074bac71acd1fa5c80ce2c473a46546d7c93a08362b6f6b8bf7a",
+  "symbol": "NMCAutoCompleteList::vfunc_66",
+  "callees": [
+    "0x006A5DA0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B8AE8",
+    "0x006B8B01"
+  ],
+  "status": "todo"
+}

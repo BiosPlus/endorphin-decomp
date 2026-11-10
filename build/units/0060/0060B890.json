@@ -1,0 +1,25 @@
+{
+  "va": "0x0060B890",
+  "size": 63,
+  "sha256": "e239520e7afe50ebd740f3b154482d8f2e1e7dc2044b9fe595ff699464d3da80",
+  "symbol": "sub_0060B890",
+  "callees": [
+    "0x0060B620",
+    "0x0060B6A0",
+    "0x0060B750",
+    "0x0060B800"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060B89D",
+    "0x0060B8A3",
+    "0x0060B8AD",
+    "0x0060B8B2",
+    "0x0060B8BB",
+    "0x0060B8C0",
+    "0x0060B8C9"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x004CEF40",
+  "size": 122,
+  "sha256": "2620092675422bb26df1f68be680bdd6e391e469ec75780efd317de37a158d0d",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, float, {public: void __thiscall NMData::IncarnationEventData::setMomentumScaleFactor(float), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CEF49",
+    "0x004CEF5C",
+    "0x004CEF64",
+    "0x004CEF69",
+    "0x004CEF76",
+    "0x004CEF84",
+    "0x004CEF8B",
+    "0x004CEFA6"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x004138E0",
+  "size": 135,
+  "sha256": "714d1e03b5e9cab5c88e3b7a8b7ebe9ae30a00367804175e86bfc434cfb57083",
+  "symbol": "std::basic_editstreambuf\u003cchar, std::char_traits\u003cchar\u003e, 512\u003e::vfunc_1",
+  "callees": [
+    "0x00415720"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004138EB",
+    "0x004138F3",
+    "0x004138FB",
+    "0x0041391B",
+    "0x0041393A",
+    "0x00413940",
+    "0x00413954",
+    "0x00413960"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x0040E0B0",
+  "size": 42,
+  "sha256": "4cd93b801a7d3c81d23d4b6f50b552427dfb17a1f9ef405ff0e2714f21ce28fb",
+  "symbol": "OpenCharacterDialog::vfunc_84",
+  "callees": [
+    "0x0040AE10",
+    "0x0040DA50",
+    "0x006A5F50"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040E0B5",
+    "0x0040E0BA",
+    "0x0040E0C2",
+    "0x0040E0CA",
+    "0x0040E0D1"
+  ],
+  "status": "todo"
+}

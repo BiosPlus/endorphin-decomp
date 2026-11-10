@@ -1,0 +1,19 @@
+{
+  "va": "0x004248D0",
+  "size": 30,
+  "sha256": "844a21a9c1656a688b3b50f21b98640a65c008cd570b83373931683dcd4e7b0a",
+  "symbol": "ImportDialog::vfunc_1",
+  "callees": [
+    "0x00423260",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004248D4",
+    "0x004248E1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

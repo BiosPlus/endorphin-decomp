@@ -1,0 +1,24 @@
+{
+  "va": "0x006A4010",
+  "size": 48,
+  "sha256": "51399fdd1b7bee419f6212dfa3d248c57ee9a37669cfdcddf77a96db20522745",
+  "symbol": "sub_006A4010",
+  "callees": [
+    "0x006A3FF0",
+    "0x006A6C87"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A4017",
+    "0x006A401F",
+    "0x006A4024",
+    "0x006A4029",
+    "0x006A402E",
+    "0x006A4033",
+    "0x006A403B"
+  ],
+  "status": "deferred",
+  "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
+}

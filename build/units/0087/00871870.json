@@ -1,0 +1,19 @@
+{
+  "va": "0x00871870",
+  "size": 30,
+  "sha256": "57ffa4758de05116ef5f1a43b7667d392caadc16f5a8ee18112d4552fc4e39b8",
+  "symbol": "AdvXMLParser::Parser::vfunc_0",
+  "callees": [
+    "0x006A5C5C",
+    "0x00870E30"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00871874",
+    "0x00871881"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x0050B7F0",
+  "size": 208,
+  "sha256": "eca918bdb98ec2aa9e9faf8844cec49536a3ad74d5cc961ba0b155deb14af8ad",
+  "symbol": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_3",
+  "callees": [
+    "0x00493D90",
+    "0x00494FF0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0050B7F9",
+    "0x0050B824",
+    "0x0050B83E",
+    "0x0050B851",
+    "0x0050B862",
+    "0x0050B88C",
+    "0x0050B89F"
+  ],
+  "status": "todo"
+}

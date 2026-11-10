@@ -1,0 +1,15 @@
+{
+  "va": "0x004153C0",
+  "size": 6,
+  "sha256": "c0dcf1cf3e3285878e812585a061ff72d1ecca36788031fde50b820e96262b39",
+  "symbol": "EditBox::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004153C1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

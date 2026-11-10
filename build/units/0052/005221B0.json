@@ -1,0 +1,20 @@
+{
+  "va": "0x005221B0",
+  "size": 30,
+  "sha256": "cfcc7ba5db793298e5cac286e8c8d7cf8b0c902f898b8f3bec41eb22f880baeb",
+  "symbol": "ExprParser::ReadMethodType\u003cThreeLayerNet, int, \u0026public: int __thiscall ThreeLayerNet::getNumHidden(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005221B7",
+    "0x005221BC",
+    "0x005221C4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:50:16Z"
+}

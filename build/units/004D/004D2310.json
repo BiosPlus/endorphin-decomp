@@ -1,0 +1,24 @@
+{
+  "va": "0x004D2310",
+  "size": 156,
+  "sha256": "e1f17ebeafed58b7f4dfc39de8d3329c5913f1658c100bb2ee79629d3e727d44",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::TransitionEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, 0\u003e::vfunc_42",
+  "callees": [
+    "0x0046C3C0",
+    "0x004D0E00",
+    "0x006720E0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D2319",
+    "0x004D2334",
+    "0x004D233E",
+    "0x004D2399",
+    "0x004D239E",
+    "0x004D23A8"
+  ],
+  "status": "todo"
+}

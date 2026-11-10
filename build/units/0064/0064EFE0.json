@@ -1,0 +1,18 @@
+{
+  "va": "0x0064EFE0",
+  "size": 37,
+  "sha256": "5ec4569e5b703fde351ea0c5b191aacbd601cd1d12413ce02af0db78bf5dcb5f",
+  "symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {public: void __thiscall SkeletalJoint::setHardLimitSwingAngle2(float), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0064DC80"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064EFFD"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:08:18Z"
+}

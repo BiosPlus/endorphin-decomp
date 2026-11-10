@@ -1,0 +1,18 @@
+{
+  "va": "0x0050F190",
+  "size": 14,
+  "sha256": "b0e6c0486b46f2cab3c510ce45b7551bfb7ca7c928c7c7099ffab35f00c99403",
+  "symbol": "ExprParser::WriteOnlyMethod0Type\u003cNMData::PopulationData, \u0026public: void __thiscall NMData::PopulationData::randomizeNow(void)\u003e::vfunc_41",
+  "callees": [
+    "0x0050F180"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0050F197"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:34:29Z"
+}

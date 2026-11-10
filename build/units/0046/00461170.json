@@ -1,0 +1,19 @@
+{
+  "va": "0x00461170",
+  "size": 30,
+  "sha256": "f879ceccceb996d75a6ff4df985babd4e5790c2a7f578a450c3717352c9b83eb",
+  "symbol": "UndoHistoryDialog::vfunc_1",
+  "callees": [
+    "0x00460B70",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00461174",
+    "0x00461181"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

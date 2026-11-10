@@ -1,0 +1,23 @@
+{
+  "va": "0x0051B240",
+  "size": 47,
+  "sha256": "ec71a9f1ab7c1ce12af9c8acef5768437cb739870f11d7795c242aa7aa4ec1ad",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, 0\u003e::vfunc_2",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x0051AEF0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0051B24E",
+    "0x0051B254",
+    "0x0051B25C",
+    "0x0051B261",
+    "0x0051B26B"
+  ],
+  "status": "todo"
+}

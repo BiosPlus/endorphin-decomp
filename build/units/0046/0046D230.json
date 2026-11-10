@@ -1,0 +1,28 @@
+{
+  "va": "0x0046D230",
+  "size": 114,
+  "sha256": "39bf787ad44de51575996cc82b01bcee615aeb83deb0a24df9b57a295d49b549",
+  "symbol": "ExprParser::ReadMethodType\u003cImageExporter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ImageExporter::getDestination(void) const, 0}, 0\u003e::vfunc_2",
+  "callees": [
+    "0x0042F6E0",
+    "0x0046C3C0",
+    "0x006A6DD2",
+    "0x006A6DE0"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046D23E",
+    "0x0046D246",
+    "0x0046D24D",
+    "0x0046D26B",
+    "0x0046D270",
+    "0x0046D27C",
+    "0x0046D281",
+    "0x0046D28F",
+    "0x0046D294",
+    "0x0046D29E"
+  ],
+  "status": "todo"
+}

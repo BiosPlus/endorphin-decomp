@@ -1,0 +1,20 @@
+{
+  "va": "0x00630A70",
+  "size": 168,
+  "sha256": "b5a323e4c873b64373e792cbd55681f3e38cd5c53180a5c7a9a1a18753f1a0d6",
+  "symbol": "EffectorSkeletal::vfunc_22",
+  "callees": [
+    "0x005DFAD0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00630A73",
+    "0x00630A8D",
+    "0x00630A97",
+    "0x00630AB0",
+    "0x00630AC4"
+  ],
+  "status": "todo"
+}

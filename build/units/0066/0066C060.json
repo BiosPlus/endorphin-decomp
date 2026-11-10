@@ -1,0 +1,18 @@
+{
+  "va": "0x0066C060",
+  "size": 75,
+  "sha256": "5ed59e2831870c03117d62785ae7035d2d7d426cab4ae03e304e5f859d1d2334",
+  "symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_TS(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+  "callees": [
+    "0x00671F30",
+    "0x0067CD30"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066C093",
+    "0x0066C09D"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,21 @@
+{
+  "va": "0x0059F820",
+  "size": 50,
+  "sha256": "190ae93e5b8fd00383df497bd633b5711118c96d4b6db0f674382abe2fd809c7",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, 0\u003e::vfunc_1",
+  "callees": [
+    "0x0046C3C0",
+    "0x0059DEB0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0059F831",
+    "0x0059F83F",
+    "0x0059F844",
+    "0x0059F84E"
+  ],
+  "status": "todo"
+}

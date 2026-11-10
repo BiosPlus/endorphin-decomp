@@ -1,0 +1,18 @@
+{
+  "va": "0x004104E0",
+  "size": 47,
+  "sha256": "62a2556403fd63f70552cbb726a5ef15526f38536d70480d5209b33f2b40b1b1",
+  "symbol": "MultiTrackView::CompositeEventTrack::vfunc_2",
+  "callees": [
+    "0x00594000",
+    "0x00597630"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004104E5",
+    "0x004104EC"
+  ],
+  "status": "todo"
+}

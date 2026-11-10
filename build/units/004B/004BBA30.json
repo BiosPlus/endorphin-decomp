@@ -1,0 +1,25 @@
+{
+  "va": "0x004BBA30",
+  "size": 205,
+  "sha256": "6e3dd8ae6cfc04d466df9f48f60f6b41988d2bd55e4a80037e739c4ef784146c",
+  "symbol": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e::AddElementCommand::vfunc_3",
+  "callees": [
+    "0x00435D00",
+    "0x004BA670"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004BBA33",
+    "0x004BBA60",
+    "0x004BBA79",
+    "0x004BBA86",
+    "0x004BBA94",
+    "0x004BBA9E",
+    "0x004BBAB3",
+    "0x004BBAC5",
+    "0x004BBADF"
+  ],
+  "status": "todo"
+}

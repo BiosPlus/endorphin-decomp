@@ -1,0 +1,30 @@
+{
+  "va": "0x005141D0",
+  "size": 189,
+  "sha256": "fde4120ee52c9da8293a2d6c004420023e022cee7760545eed13fd95cba0e8ea",
+  "symbol": "Chromosome::vfunc_13",
+  "callees": [
+    "0x0046F7D0",
+    "0x00512950",
+    "0x0055DA20",
+    "0x00661650"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005141D4",
+    "0x005141DF",
+    "0x005141FE",
+    "0x00514206",
+    "0x0051420B",
+    "0x00514210",
+    "0x00514215",
+    "0x00514225",
+    "0x00514233",
+    "0x00514253",
+    "0x0051426A",
+    "0x0051427D"
+  ],
+  "status": "todo"
+}

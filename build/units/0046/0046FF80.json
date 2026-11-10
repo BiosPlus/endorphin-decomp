@@ -1,0 +1,15 @@
+{
+  "va": "0x0046FF80",
+  "size": 8,
+  "sha256": "5d1296f34124ad2a4284e09065766a74a5e807250b8fa00cb72bffadf78e201f",
+  "symbol": "RuntimeEngine::TickFrameBufferForPlaybackTicker::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046FF84"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

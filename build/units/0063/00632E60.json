@@ -1,0 +1,19 @@
+{
+  "va": "0x00632E60",
+  "size": 66,
+  "sha256": "27d690c6a336b91415725b587d98255b9b8df775a52c754e3024e1fb80c0b94d",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getSwingDamping(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setSwingDamping(float)\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00632E8F",
+    "0x00632E94",
+    "0x00632E9E"
+  ],
+  "status": "todo"
+}

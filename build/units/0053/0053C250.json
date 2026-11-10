@@ -1,0 +1,30 @@
+{
+  "va": "0x0053C250",
+  "size": 621,
+  "sha256": "02cc9847ae1a23b984f0465a82a33dbe96b72f8166b068e4aaf4afd2a8d5f3ea",
+  "symbol": "Primitives::CameraFrustum::vfunc_28",
+  "callees": [
+    "0x005B11D0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053C267",
+    "0x0053C277",
+    "0x0053C28B",
+    "0x0053C29B",
+    "0x0053C2B4",
+    "0x0053C2C2",
+    "0x0053C2CA",
+    "0x0053C2D8",
+    "0x0053C320",
+    "0x0053C334",
+    "0x0053C344",
+    "0x0053C34C",
+    "0x0053C358",
+    "0x0053C4AC",
+    "0x0053C4B2"
+  ],
+  "status": "todo"
+}

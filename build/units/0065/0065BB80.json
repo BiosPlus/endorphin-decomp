@@ -1,0 +1,19 @@
+{
+  "va": "0x0065BB80",
+  "size": 30,
+  "sha256": "f87daf5d0f0c5d890b028f0e5fd7d36a09414135d6fd9b57fe5eedbf3046aae5",
+  "symbol": "Space::vfunc_0",
+  "callees": [
+    "0x0065BB60",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065BB84",
+    "0x0065BB91"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

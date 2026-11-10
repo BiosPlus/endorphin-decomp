@@ -1,0 +1,21 @@
+{
+  "va": "0x005AA3F0",
+  "size": 36,
+  "sha256": "f96808cec4d58dd87b34df6f228f5385812d62da98dc0fb367909574d90b295c",
+  "symbol": "GenericLoader\u003cNMData::CharacterData, {public: void __thiscall NMData::CharacterData::loadUserEditableParts(class AdvXMLParser::Element const \u0026), 0}\u003e::vfunc_0",
+  "callees": [
+    "0x0065C660",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005AA3F5",
+    "0x005AA3FA",
+    "0x005AA407"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:46:38Z"
+}

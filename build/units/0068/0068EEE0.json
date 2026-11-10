@@ -1,0 +1,25 @@
+{
+  "va": "0x0068EEE0",
+  "size": 140,
+  "sha256": "827637e010c5b1c35ff8c8484118af35a3a15c4a40d12dcc400877cd668c6a15",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall UnitsWithProperties::setAngleUnitName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046E780",
+    "0x0068EE80",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0068EEE9",
+    "0x0068EF16",
+    "0x0068EF26",
+    "0x0068EF3E",
+    "0x0068EF59",
+    "0x0068EF5E",
+    "0x0068EF68"
+  ],
+  "status": "todo"
+}

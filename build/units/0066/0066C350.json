@@ -1,0 +1,16 @@
+{
+  "va": "0x0066C350",
+  "size": 37,
+  "sha256": "d4536a1f6087eecbc8c953fab80d3f38e47da1babf649717c942ab628064b5af",
+  "symbol": "ExprParser::WriteMethodType\u003cNM::Vector3, float, \u0026public: void __thiscall NM::Vector3::radRotateX(float)\u003e::vfunc_41",
+  "callees": [
+    "0x0067C3D0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066C36D"
+  ],
+  "status": "todo"
+}

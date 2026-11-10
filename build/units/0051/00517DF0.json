@@ -1,0 +1,20 @@
+{
+  "va": "0x00517DF0",
+  "size": 26,
+  "sha256": "933993b4c03dc06aafb3e21fa0c5fa046e16e318ed2987799d05ebc2c6c8c92b",
+  "symbol": "PhysicalEvaluator::vfunc_1",
+  "callees": [
+    "0x0046F7F0",
+    "0x00472350"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00517DFC",
+    "0x00517E03"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T11:30:57Z"
+}

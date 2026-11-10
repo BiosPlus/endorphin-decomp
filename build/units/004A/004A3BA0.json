@@ -1,0 +1,23 @@
+{
+  "va": "0x004A3BA0",
+  "size": 122,
+  "sha256": "56e6e001af69c936fe4c5ff39279ad0ee69d44d622750195b65b9a775b4927ca",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cStateMachineEditor::FSMEditView, int, {public: int __thiscall StateMachineEditor::FSMEditView::getCodeWindowFontSize(void) const, 0}, int, {public: void __thiscall StateMachineEditor::FSMEditView::setCodeWindowFontSize(int), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004A3BA9",
+    "0x004A3BBC",
+    "0x004A3BC4",
+    "0x004A3BC9",
+    "0x004A3BD6",
+    "0x004A3BE4",
+    "0x004A3BEB",
+    "0x004A3C06"
+  ],
+  "status": "todo"
+}

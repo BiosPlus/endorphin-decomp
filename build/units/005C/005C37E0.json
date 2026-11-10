@@ -1,0 +1,16 @@
+{
+  "va": "0x005C37E0",
+  "size": 82,
+  "sha256": "7340e76066fa6fd571f7724fbb0f155d4e78d06e4839d6ce08ca6e6726d2fa02",
+  "symbol": "NMData::CollisionModelData::vfunc_5_off_C",
+  "callees": [
+    "0x005B1B60"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C37F7"
+  ],
+  "status": "todo"
+}

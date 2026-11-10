@@ -1,0 +1,18 @@
+{
+  "va": "0x00413DB0",
+  "size": 30,
+  "sha256": "36b92f9452b213ccb8011df37bc2540e8f0eab45e5dab93e2e3eabc37974747d",
+  "symbol": "std::basic_editstreambuf\u003cchar, std::char_traits\u003cchar\u003e, 512\u003e::vfunc_0",
+  "callees": [
+    "0x00413990",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00413DB4",
+    "0x00413DC1"
+  ],
+  "status": "out_of_scope"
+}

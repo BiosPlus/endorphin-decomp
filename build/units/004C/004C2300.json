@@ -1,0 +1,19 @@
+{
+  "va": "0x004C2300",
+  "size": 30,
+  "sha256": "2221f3d3a2d87b30903d25df7c8df91770af0c532ecb34055165f5eb6fa80125",
+  "symbol": "ValuePtrArrayObject::vfunc_0",
+  "callees": [
+    "0x00692BA0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C2304",
+    "0x004C2311"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x0041BB70",
+  "size": 54,
+  "sha256": "7373296275a45fb31423af53624fb055e48d0978df138c5e7f3c75f00fe220c2",
+  "symbol": "GridPropertyPage::vfunc_84",
+  "callees": [
+    "0x0052EE00",
+    "0x006A5FC8",
+    "0x006A608E"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041BB74",
+    "0x0041BB79",
+    "0x0041BB9B"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T05:25:06Z"
+}

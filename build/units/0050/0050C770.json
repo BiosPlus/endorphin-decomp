@@ -1,0 +1,21 @@
+{
+  "va": "0x0050C770",
+  "size": 96,
+  "sha256": "76b44218513361d5e027016934d6a3122f588d5d2d9f479ae706ac92706e116f",
+  "symbol": "NMData::Task::vfunc_0",
+  "callees": [
+    "0x0050B960",
+    "0x0065F440",
+    "0x006A5C5C"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0050C773",
+    "0x0050C799",
+    "0x0050C7A8",
+    "0x0050C7B5"
+  ],
+  "status": "todo"
+}

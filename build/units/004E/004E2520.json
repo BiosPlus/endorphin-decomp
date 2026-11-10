@@ -1,0 +1,26 @@
+{
+  "va": "0x004E2520",
+  "size": 165,
+  "sha256": "3e92a0bbde90a89fc838291f4186a1cd4e6759853cee882c6f2b3faf6d98c9e4",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, float, {public: float __thiscall NMData::AnimationEventData::getDummyBufferTime(void) const, 0}, 1\u003e::vfunc_47",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x004E1980",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004E2529",
+    "0x004E2544",
+    "0x004E2559",
+    "0x004E256D",
+    "0x004E25B2",
+    "0x004E25B7",
+    "0x004E25C1"
+  ],
+  "status": "todo"
+}

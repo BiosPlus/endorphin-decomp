@@ -1,0 +1,14 @@
+{
+  "va": "0x006A73D2",
+  "size": 6,
+  "sha256": "9e64ac8a7aa52ee04de5c8714a90e9643ce506134bb84f94fabd777d0f8f19fa",
+  "symbol": "thunk_MSVCR80__CIcosh",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006A73D4"
+  ],
+  "status": "out_of_scope"
+}

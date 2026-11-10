@@ -1,0 +1,14 @@
+{
+  "va": "0x004658D0",
+  "size": 5,
+  "sha256": "61eb07805c06739a55ba0f255960e2cdf091b04c892c618fba9ddf79ca6f6d9a",
+  "symbol": "VMCActionDoc::vfunc_29",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x004658D1"
+  ],
+  "status": "out_of_scope"
+}

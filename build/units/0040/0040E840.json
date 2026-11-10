@@ -1,0 +1,19 @@
+{
+  "va": "0x0040E840",
+  "size": 16,
+  "sha256": "65b92ae620a37925d972ce08b4efd9d03858ab98ef8dbdc3c8c38aa07bfcac57",
+  "symbol": "SaveCharacterDialog::vfunc_89",
+  "callees": [
+    "0x0040E780"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040E844",
+    "0x0040E84C"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:58:22Z"
+}

@@ -1,0 +1,36 @@
+{
+  "va": "0x004CA6A0",
+  "size": 164,
+  "sha256": "cdcd1ab083a21ab265be3a6ba27e95fa4eb991d5852968cfea38359631c30302",
+  "symbol": "NMData::MetaBodyConstraintData::vfunc_22",
+  "callees": [
+    "0x00427550",
+    "0x004C1DE0",
+    "0x004CA5E0",
+    "0x00640110",
+    "0x00640390",
+    "0x00640A80",
+    "0x0067F040"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CA6A1",
+    "0x004CA6B2",
+    "0x004CA6C0",
+    "0x004CA6CB",
+    "0x004CA6D1",
+    "0x004CA6D9",
+    "0x004CA6E2",
+    "0x004CA6EE",
+    "0x004CA6F8",
+    "0x004CA6FE",
+    "0x004CA70F",
+    "0x004CA715",
+    "0x004CA71B",
+    "0x004CA72F",
+    "0x004CA735"
+  ],
+  "status": "todo"
+}

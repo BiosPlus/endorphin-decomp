@@ -1,0 +1,14 @@
+{
+  "va": "0x006B32D0",
+  "size": 38,
+  "sha256": "bcce1879d51a2e2b9399e58b2ae07c1bc00aa4a21256c59b8918c1ed2a5d2115",
+  "symbol": "GWCPropertyCheckboxLook::vfunc_2",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:58:29Z"
+}

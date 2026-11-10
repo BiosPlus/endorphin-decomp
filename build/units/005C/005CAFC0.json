@@ -1,0 +1,24 @@
+{
+  "va": "0x005CAFC0",
+  "size": 167,
+  "sha256": "eda3d0761bd271cf87d47b76e14e6d36bfdd5807d5a64847f0b900c2ba8ebf9a",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1\u003e::vfunc_42",
+  "callees": [
+    "0x0046C3C0",
+    "0x005C3C00",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005CAFC9",
+    "0x005CAFE4",
+    "0x005CAFF9",
+    "0x005CB054",
+    "0x005CB059",
+    "0x005CB063"
+  ],
+  "status": "todo"
+}

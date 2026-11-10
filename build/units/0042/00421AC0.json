@@ -1,0 +1,33 @@
+{
+  "va": "0x00421AC0",
+  "size": 275,
+  "sha256": "069e2c82d36564f11843f0a58bb46f785562fcf43eabc97cd0f4d5fb292e87bd",
+  "symbol": "HotkeyDialog::vfunc_66",
+  "callees": [
+    "0x0041FEA0",
+    "0x0041FEC0",
+    "0x0041FEF0",
+    "0x0041FF10",
+    "0x004216F0",
+    "0x006A5E00",
+    "0x006A5F7A",
+    "0x006A6418"
+  ],
+  "num_callees": 8,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00421AD9",
+    "0x00421AE4",
+    "0x00421B06",
+    "0x00421B20",
+    "0x00421B30",
+    "0x00421B38",
+    "0x00421B5B",
+    "0x00421B67",
+    "0x00421B92",
+    "0x00421BAE",
+    "0x00421BC9"
+  ],
+  "status": "todo"
+}

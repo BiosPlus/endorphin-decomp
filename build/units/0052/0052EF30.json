@@ -1,0 +1,13 @@
+{
+  "va": "0x0052EF30",
+  "size": 4,
+  "sha256": "f82485647da88f1345396046db25899cbf8e6fe84b931a28e4691b98a1ca10b1",
+  "symbol": "ManagedDisplayList\u003cRenderableList\u003e::vfunc_15",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

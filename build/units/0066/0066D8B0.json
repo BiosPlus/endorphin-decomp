@@ -1,0 +1,23 @@
+{
+  "va": "0x0066D8B0",
+  "size": 122,
+  "sha256": "423531380e8a31e989f4505bf7e60f9354382dda22ae00fe59c85c4da3487abd",
+  "symbol": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::createCrossProductOrientationSE(class NM::Vector3 const \u0026)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066D8B9",
+    "0x0066D8CC",
+    "0x0066D8D4",
+    "0x0066D8D9",
+    "0x0066D8E6",
+    "0x0066D8F4",
+    "0x0066D8FB",
+    "0x0066D916"
+  ],
+  "status": "todo"
+}

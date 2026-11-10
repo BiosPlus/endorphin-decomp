@@ -1,0 +1,13 @@
+{
+  "va": "0x00661970",
+  "size": 7,
+  "sha256": "d40e99e9c8cd12675033837c77fcb46e2f954edda81423587aa03246c892ea50",
+  "symbol": "AnimatableTransform::vfunc_17",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

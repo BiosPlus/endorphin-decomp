@@ -1,0 +1,30 @@
+{
+  "va": "0x0054BF50",
+  "size": 221,
+  "sha256": "e075761b3c8b41cf6bc9df745c4fa97b492ae2314eeb598950418bb57297b7f0",
+  "symbol": "ToolGraphics::ResizeHandleGraphic::vfunc_4",
+  "callees": [
+    "0x0054B180",
+    "0x0054B780",
+    "0x0054BB30"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054BF55",
+    "0x0054BF72",
+    "0x0054BF85",
+    "0x0054BF98",
+    "0x0054BF9E",
+    "0x0054BFB5",
+    "0x0054BFBB",
+    "0x0054BFD2",
+    "0x0054BFD8",
+    "0x0054BFED",
+    "0x0054BFF3",
+    "0x0054C008",
+    "0x0054C00E"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,12 @@
+{
+  "va": "0x0053AD10",
+  "size": 91,
+  "sha256": "2a79da775eff1db143609d6c0a3deaedae5999a83bffe42f6277308779bca0b3",
+  "symbol": "Primitives::Animation::vfunc_29",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "todo"
+}

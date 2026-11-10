@@ -1,0 +1,13 @@
+{
+  "va": "0x005B1900",
+  "size": 9,
+  "sha256": "8ded23f52e6231d2cece35a7df03f23d0f53e14dc27de3bf117c11e3ebcb0247",
+  "symbol": "Geometry::SphereType::vfunc_9",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

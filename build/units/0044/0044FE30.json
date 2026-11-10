@@ -1,0 +1,31 @@
+{
+  "va": "0x0044FE30",
+  "size": 214,
+  "sha256": "b8a44e581e7fb2c45ffc015032b5bfc0cf83eb3c35e18033579b89eadc96ac20",
+  "symbol": "RigEditorAddRenameDialog::vfunc_89",
+  "callees": [
+    "0x006A6010",
+    "0x006A6E9E"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044FE43",
+    "0x0044FE48",
+    "0x0044FE50",
+    "0x0044FE5D",
+    "0x0044FE62",
+    "0x0044FE69",
+    "0x0044FE76",
+    "0x0044FE7B",
+    "0x0044FE82",
+    "0x0044FE96",
+    "0x0044FE9C",
+    "0x0044FEAC",
+    "0x0044FECB",
+    "0x0044FED1",
+    "0x0044FEE1"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,28 @@
+{
+  "va": "0x005282A0",
+  "size": 109,
+  "sha256": "2d7ea08de4a50d5950e05a9f2ff9020e11e8947af66711862b2f1ca937a2ca44",
+  "symbol": "InitialVariableValues::vfunc_21",
+  "callees": [
+    "0x00507D10",
+    "0x00528150",
+    "0x0063F530"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005282AA",
+    "0x005282AF",
+    "0x005282BB",
+    "0x005282C0",
+    "0x005282C7",
+    "0x005282CE",
+    "0x005282D5",
+    "0x005282DC",
+    "0x005282E3",
+    "0x005282E9",
+    "0x005282F6"
+  ],
+  "status": "todo"
+}

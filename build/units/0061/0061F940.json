@@ -1,0 +1,20 @@
+{
+  "va": "0x0061F940",
+  "size": 80,
+  "sha256": "898ad89a9a23b5c120a314b83442b7d730c3611bfd0c2ce84a4e94c550ed4b01",
+  "symbol": "NMData::HingeConstraint::vfunc_15",
+  "callees": [
+    "0x005DF1F0",
+    "0x0061EF90",
+    "0x0061EFB0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061F963",
+    "0x0061F971",
+    "0x0061F982"
+  ],
+  "status": "todo"
+}

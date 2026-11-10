@@ -1,0 +1,26 @@
+{
+  "va": "0x0040E100",
+  "size": 56,
+  "sha256": "878a5757294487023efa4eee9817830c5e997160804de277ae1d7355d5c659a9",
+  "symbol": "SaveCharacterDialog::vfunc_84",
+  "callees": [
+    "0x0040AE10",
+    "0x0040BC40",
+    "0x0040BE90",
+    "0x0040DA50",
+    "0x006A5F50"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040E105",
+    "0x0040E10A",
+    "0x0040E112",
+    "0x0040E11A",
+    "0x0040E121",
+    "0x0040E128",
+    "0x0040E12F"
+  ],
+  "status": "todo"
+}

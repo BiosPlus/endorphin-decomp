@@ -1,0 +1,20 @@
+{
+  "va": "0x0060E690",
+  "size": 44,
+  "sha256": "2ac60dd2a2ae018cd02b2617605ce70a98e06bcea7ed8136478032370378c2cc",
+  "symbol": "NMData::AxisDefineSensorData::vfunc_62",
+  "callees": [
+    "0x0060E540"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060E694",
+    "0x0060E6A0",
+    "0x0060E6AC"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:17:59Z"
+}

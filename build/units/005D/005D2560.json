@@ -1,0 +1,23 @@
+{
+  "va": "0x005D2560",
+  "size": 122,
+  "sha256": "d3f2d82bc65d6d49e8dc4e1241c31d58db0754c816248a3257a280fba3ab2b71",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, float, \u0026public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, float, \u0026public: void __thiscall NMData::VideoPlaneData::setFrameRate(float)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005D2569",
+    "0x005D257C",
+    "0x005D2584",
+    "0x005D2589",
+    "0x005D2596",
+    "0x005D25A4",
+    "0x005D25AB",
+    "0x005D25C6"
+  ],
+  "status": "todo"
+}

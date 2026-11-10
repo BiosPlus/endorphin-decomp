@@ -1,0 +1,18 @@
+{
+  "va": "0x005C5E50",
+  "size": 69,
+  "sha256": "b6984540fd845caf6431683b58cd3c4d935488ba6825bd9c37f9016fb1bedb9b",
+  "symbol": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::CollisionModelDataBase::getDistanceToPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x005C3C20",
+    "0x00672080"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C5E73",
+    "0x005C5E8A"
+  ],
+  "status": "todo"
+}

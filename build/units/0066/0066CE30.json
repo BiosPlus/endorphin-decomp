@@ -1,0 +1,24 @@
+{
+  "va": "0x0066CE30",
+  "size": 98,
+  "sha256": "629150f8e85dd0109e5b8b1df1a579aa0aff4b47ce2e5adafa21177503397af7",
+  "symbol": "ExprParser::RealType::vfunc_18",
+  "callees": [
+    "0x00672080",
+    "0x006A6C87"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066CE39",
+    "0x0066CE4C",
+    "0x0066CE54",
+    "0x0066CE5F",
+    "0x0066CE6C",
+    "0x0066CE71",
+    "0x0066CE76",
+    "0x0066CE81"
+  ],
+  "status": "todo"
+}

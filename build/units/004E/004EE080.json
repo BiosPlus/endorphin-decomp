@@ -1,0 +1,37 @@
+{
+  "va": "0x004EE080",
+  "size": 379,
+  "sha256": "6d45fc55850136101850681afdbc57b3feb5f2c33780450c12617ceaf46bc824",
+  "symbol": "MetaBodyJointSelection::vfunc_1_off_18",
+  "callees": [
+    "0x0041A920",
+    "0x0048AE00",
+    "0x004AC4B0",
+    "0x004EDC90",
+    "0x00596660",
+    "0x005A63F0"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004EE0A7",
+    "0x004EE0B5",
+    "0x004EE0BF",
+    "0x004EE0DE",
+    "0x004EE0ED",
+    "0x004EE0FE",
+    "0x004EE10C",
+    "0x004EE11C",
+    "0x004EE136",
+    "0x004EE14A",
+    "0x004EE159",
+    "0x004EE198",
+    "0x004EE1A3",
+    "0x004EE1BA",
+    "0x004EE1C8",
+    "0x004EE1D6",
+    "0x004EE1EA"
+  ],
+  "status": "todo"
+}

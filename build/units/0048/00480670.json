@@ -1,0 +1,15 @@
+{
+  "va": "0x00480670",
+  "size": 11,
+  "sha256": "e4db61edef31de63336f492df797ed8554d122e035b3d307241efd216c8701fe",
+  "symbol": "ToolEngine::vfunc_45",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00480677"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x006B3D20",
+  "size": 30,
+  "sha256": "d5a4f61a2b1aca7ca78c325f57130f52b0dd6cdb073c255001d8a176b51963c7",
+  "symbol": "GWCHotKeyPropertyValue::vfunc_0",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B3CB0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B3D24",
+    "0x006B3D31"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,15 @@
+{
+  "va": "0x00537D80",
+  "size": 84,
+  "sha256": "6c2b5b5eb7b650a95687920765b64ef2de6cee00559c9651de59dfa1afd66414",
+  "symbol": "CompoundRenderable::vfunc_23",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00537D96",
+    "0x00537DB6"
+  ],
+  "status": "todo"
+}

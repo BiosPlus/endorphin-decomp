@@ -1,0 +1,20 @@
+{
+  "va": "0x005B1200",
+  "size": 30,
+  "sha256": "87577a48650d088756321b6499e1e261287cadce0987c84d815d8667b9704dac",
+  "symbol": "ExprParser::ReadMethodType\u003cGeometry, float, \u0026private: float __thiscall Geometry::getParam0(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B1207",
+    "0x005B120C",
+    "0x005B1214"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:52:53Z"
+}

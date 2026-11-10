@@ -1,0 +1,19 @@
+{
+  "va": "0x00571DF0",
+  "size": 37,
+  "sha256": "1c75cecdc623a08a0377202726cd2a79403da8bd6cbc266c613adeea4181be55",
+  "symbol": "CSMMotionIO::vfunc_3",
+  "callees": [
+    "0x00553720",
+    "0x00640390"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00571DFB",
+    "0x00571E02",
+    "0x00571E0A"
+  ],
+  "status": "todo"
+}

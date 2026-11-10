@@ -1,0 +1,19 @@
+{
+  "va": "0x00420190",
+  "size": 30,
+  "sha256": "9694c7d107982118f073f29862ad307e1a93a90b68ea00006c23214fd4282479",
+  "symbol": "HotkeyDialog::vfunc_1",
+  "callees": [
+    "0x0041FC70",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00420194",
+    "0x004201A1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

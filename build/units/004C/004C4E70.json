@@ -1,0 +1,13 @@
+{
+  "va": "0x004C4E70",
+  "size": 8,
+  "sha256": "3b74567abe375b14ca17bdeacb67a063edb7155de6ca5636c8fabc80510815b7",
+  "symbol": "NMData::ForceEventData::vfunc_19",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

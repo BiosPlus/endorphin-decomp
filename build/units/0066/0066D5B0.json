@@ -1,0 +1,23 @@
+{
+  "va": "0x0066D5B0",
+  "size": 122,
+  "sha256": "45a34b64f63c05c8c3fe5a85ac8383f6190a019aef7d47e3b721520da8dd15bb",
+  "symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationEulersAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066D5B9",
+    "0x0066D5CC",
+    "0x0066D5D4",
+    "0x0066D5D9",
+    "0x0066D5E6",
+    "0x0066D5F4",
+    "0x0066D5FB",
+    "0x0066D616"
+  ],
+  "status": "todo"
+}

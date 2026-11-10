@@ -1,0 +1,20 @@
+{
+  "va": "0x006274D0",
+  "size": 30,
+  "sha256": "299e41f26d32e35b392f49907b72595aac9d5a0f0c29793eb9f53d549b488202",
+  "symbol": "ExprParser::ROWriteMethodType\u003cSensors::SensorAbsoluteOrientation, int, \u0026public: void __thiscall Sensors::SensorAbsoluteOrientation::setReference(int)\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006274D7",
+    "0x006274DC",
+    "0x006274E4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:44:56Z"
+}

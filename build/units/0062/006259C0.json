@@ -1,0 +1,21 @@
+{
+  "va": "0x006259C0",
+  "size": 99,
+  "sha256": "947201d4481bdf0c5b35cd61904079a5db5ff90f7fe81c248fb6b2e2f8aea004",
+  "symbol": "Sensors::SensorIsCollidingWith::vfunc_2",
+  "callees": [
+    "0x006259A0",
+    "0x00671F30"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006259CA",
+    "0x006259CF",
+    "0x006259E8",
+    "0x006259FC",
+    "0x00625A13"
+  ],
+  "status": "todo"
+}

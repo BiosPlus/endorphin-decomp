@@ -1,0 +1,21 @@
+{
+  "va": "0x00539340",
+  "size": 101,
+  "sha256": "2eda495e4b7d54fecad169355faf442ff6142f443b72ccf3e961f7bda8a0aab6",
+  "symbol": "UtilityGraphics::Label::vfunc_22",
+  "callees": [
+    "0x0054C800"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053935D",
+    "0x00539363",
+    "0x00539382",
+    "0x0053938B",
+    "0x00539394",
+    "0x0053939D"
+  ],
+  "status": "todo"
+}

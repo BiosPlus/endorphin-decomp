@@ -1,0 +1,21 @@
+{
+  "va": "0x004D5460",
+  "size": 68,
+  "sha256": "5231883c382085610d472d90f36c6ecdea2f7c30a8e43ea2d36874a6d523f8dc",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isGravityEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setGravityEnabled(bool), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x004D3BD0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D5481",
+    "0x004D5491",
+    "0x004D5496",
+    "0x004D54A0"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x005FCB10",
+  "size": 30,
+  "sha256": "75b800fb1c89dff2e848695783023a17dd9496efa71955b528bbc057ea2e32cf",
+  "symbol": "ExprParser::ReadMethodType\u003cSensor, NM::Vector3 const \u0026, \u0026private: class NM::Vector3 const \u0026 __thiscall Sensor::getMutableVector3(void) const, 1\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005FCB17",
+    "0x005FCB1C",
+    "0x005FCB24"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:56:17Z"
+}

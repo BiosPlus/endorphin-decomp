@@ -1,0 +1,14 @@
+{
+  "va": "0x0044B050",
+  "size": 5,
+  "sha256": "412279360b9430cc27040cf0fe92f68f519fe505107253bb184a6441ece3f15b",
+  "symbol": "RenderOptionsPropertyPage::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0044B051"
+  ],
+  "status": "out_of_scope"
+}

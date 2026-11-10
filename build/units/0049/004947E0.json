@@ -1,0 +1,21 @@
+{
+  "va": "0x004947E0",
+  "size": 36,
+  "sha256": "aea6b9647a0421839a1614780deee31ceb6b5efe024aa7fde2303b8db05f7bbb",
+  "symbol": "Loader\u003cNMData::RigRoot\u003e::vfunc_0",
+  "callees": [
+    "0x0065C660",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004947E5",
+    "0x004947EA",
+    "0x004947F7"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:46:17Z"
+}

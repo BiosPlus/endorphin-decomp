@@ -1,0 +1,15 @@
+{
+  "va": "0x00454400",
+  "size": 8,
+  "sha256": "55f896210d3361d04d087bb136fa66d3a711fd88f3e0127d12184eb1198e972d",
+  "symbol": "RigEditorFrame::vfunc_1_off_148",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00454404"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

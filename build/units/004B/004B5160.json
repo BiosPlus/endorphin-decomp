@@ -1,0 +1,19 @@
+{
+  "va": "0x004B5160",
+  "size": 30,
+  "sha256": "174689e868bdaab01edfcb53a80463ecceffc0d81f674c3b517b33a3e824af07",
+  "symbol": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::GraphEntryData\u003e\u003e::AddElementCommand::vfunc_0",
+  "callees": [
+    "0x004B5030",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B5164",
+    "0x004B5171"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

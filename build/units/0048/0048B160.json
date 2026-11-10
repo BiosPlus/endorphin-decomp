@@ -1,0 +1,20 @@
+{
+  "va": "0x0048B160",
+  "size": 41,
+  "sha256": "7e58999be558b13d82ca66d482bf40657162f87296b0d7aeb41402fbca215bfc",
+  "symbol": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::endEvent(void), 0}\u003e::vfunc_0",
+  "callees": [
+    "0x0048ABF0",
+    "0x006720C0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048B171",
+    "0x0048B17E"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:22:55Z"
+}

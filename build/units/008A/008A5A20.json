@@ -1,0 +1,16 @@
+{
+  "va": "0x008A5A20",
+  "size": 23,
+  "sha256": "850a78c99992388b39d9b7ce500395cf4d1f64bbf247ed6031f6c076857e65a0",
+  "symbol": "sub_008A5A20",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x008A5A21",
+    "0x008A5A29",
+    "0x008A5A33"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,30 @@
+{
+  "va": "0x005B4CD0",
+  "size": 359,
+  "sha256": "37397ee429b710d39fcb96515f730e9ef341dbe79c87b71edc73b99c60d3bdb9",
+  "symbol": "Geometry::SphereType::vfunc_16",
+  "callees": [
+    "0x00539AA0",
+    "0x00539FB0",
+    "0x005B11E0",
+    "0x006A6EAA",
+    "0x006A6EB0",
+    "0x006A73BA"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B4CDE",
+    "0x005B4CE9",
+    "0x005B4CFF",
+    "0x005B4D21",
+    "0x005B4D7D",
+    "0x005B4D8A",
+    "0x005B4DC6",
+    "0x005B4DD7",
+    "0x005B4DF0",
+    "0x005B4E0C"
+  ],
+  "status": "todo"
+}

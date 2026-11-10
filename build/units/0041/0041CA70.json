@@ -1,0 +1,18 @@
+{
+  "va": "0x0041CA70",
+  "size": 21,
+  "sha256": "ed4cbad92d843f4185c8dd0ce4616a4bf84d4ebaded55690c4a512890660e6bd",
+  "symbol": "Properties::GWCPropertiesControlDriver::vfunc_8",
+  "callees": [
+    "0x006AD180"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041CA7E"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:32:27Z"
+}

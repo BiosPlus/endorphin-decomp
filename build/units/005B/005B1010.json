@@ -1,0 +1,18 @@
+{
+  "va": "0x005B1010",
+  "size": 17,
+  "sha256": "638697943dba288b7a270d9cc8059cc6294d0c65e22ef34717b2b1bde26a9a18",
+  "symbol": "Geometry::SphereType::vfunc_2",
+  "callees": [
+    "0x006484D0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B101A"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:09:17Z"
+}

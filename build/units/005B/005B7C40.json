@@ -1,0 +1,18 @@
+{
+  "va": "0x005B7C40",
+  "size": 34,
+  "sha256": "7f874aa21b2e8c0e7f9a01a11f9dfa070c53a8b5bd7a66c61ee6fc4175d6a041",
+  "symbol": "ExprParser::WriteMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: void __thiscall NMData::MetaBodyData::addTorque(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x005B72C0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B7C5A"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:21:28Z"
+}

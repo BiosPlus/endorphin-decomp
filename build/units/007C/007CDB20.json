@@ -1,0 +1,14 @@
+{
+  "va": "0x007CDB20",
+  "size": 67,
+  "sha256": "28b060ecf8c2c882328a26f3a9c7415e26b37b0ff03a261abb649024ac679dd2",
+  "symbol": "sub_007CDB20",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:24:19Z"
+}

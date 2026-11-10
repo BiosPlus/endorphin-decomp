@@ -1,0 +1,19 @@
+{
+  "va": "0x005ABB70",
+  "size": 99,
+  "sha256": "52aeaaf333f7062a01f5b0c49aa6dca2577111135cc7bb81c9353cb63b9f3f6c",
+  "symbol": "NMData::RigNode::vfunc_17_off_C",
+  "callees": [
+    "0x005ABA70",
+    "0x006A5C62"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005ABB73",
+    "0x005ABB8F",
+    "0x005ABBAD"
+  ],
+  "status": "todo"
+}

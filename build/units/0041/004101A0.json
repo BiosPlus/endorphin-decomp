@@ -1,0 +1,14 @@
+{
+  "va": "0x004101A0",
+  "size": 5,
+  "sha256": "d3924e57fd88ef2a81379c5267a92c0832cb8dde7b57c8da1f4efb45e2dfcaaa",
+  "symbol": "CColorCheck::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x004101A1"
+  ],
+  "status": "out_of_scope"
+}

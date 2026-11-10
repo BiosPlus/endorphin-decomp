@@ -1,0 +1,23 @@
+{
+  "va": "0x00594AA0",
+  "size": 252,
+  "sha256": "bf567c9a057198ca21d69e9e49b3f65d6c905276c49bddcf49b09d8510063fe5",
+  "symbol": "ExprParser::Function2Type\u003cWorld, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_49",
+  "callees": [
+    "0x0046E780",
+    "0x00593F90"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00594AA3",
+    "0x00594ADB",
+    "0x00594AFC",
+    "0x00594B0F",
+    "0x00594B74",
+    "0x00594B7D",
+    "0x00594B83"
+  ],
+  "status": "todo"
+}

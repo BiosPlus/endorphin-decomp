@@ -21,6 +21,11 @@ ESC_BACKLOG_FACTOR="${ESC_BACKLOG_FACTOR:-4}"   # pause pulling new Haiku work i
 # Optional minimum function size (bytes) per model, e.g. "claude-opus-5.5=128,gemini-4-argon=128". Off by default:
 # any function that fails the cheaper models escalates all the way up regardless of size.
 MODEL_MIN_SIZE="${MODEL_MIN_SIZE:-}"
+# Adaptive chain: skip an escalation stage whose measured yield (from .local/grind_results.log + grind_attempts.tsv, per
+# function-size band) is below ROUTE_MIN_YIELD once it has >= ROUTE_MIN_TRIALS trials. Stage 0 is never skipped. Set 0 to disable.
+ADAPTIVE_CHAIN="${ADAPTIVE_CHAIN:-1}"
+ROUTE_MIN_TRIALS="${ROUTE_MIN_TRIALS:-20}"
+ROUTE_MIN_YIELD="${ROUTE_MIN_YIELD:-0.05}"
 
 # Strict single-model-at-a-time escalation order (cheapest & fastest tokens first -> heaviest last)
 MODEL_CHAIN=(
@@ -44,7 +49,7 @@ build_tool_if_needed() {
   local name="$1"
   local bin="$REPO_ROOT/.local/bin/$name"
   # Rebuild if any .go file in the tool dir is newer than the binary (tools may span several files)
-  if [[ ! -x "$bin" || -n "$(find "$REPO_ROOT/tools/$name" -name '*.go' -newer "$bin" -print -quit)" ]]; then
+  if [[ ! -x "$bin" || -n "$(find "$REPO_ROOT/tools/$name" "$REPO_ROOT/internal" -name '*.go' -newer "$bin" -print -quit)" ]]; then
     echo "[*] Building fast binary: .local/bin/$name ..."
     go build -o "$bin" "./tools/$name"
   fi
@@ -87,7 +92,7 @@ if [[ $HAS_CLAUDE -eq 0 && $HAS_AGY -eq 0 ]]; then
 fi
 
 # Inline session-only least-privilege settings for `agy` (never saved to disk, no extra dotfiles required)
-AGY_INLINE_SETTINGS='{"agentMode":"auto","enableTerminalSandbox":true,"toolPermission":"proceed-in-sandbox","permissions":{"allow":["read_file(*)","write_file(src/*)","write_file(include/*)","edit_file(src/*)","edit_file(include/*)","command(./.local/bin/work*)","command(go run ./tools/work*)","command(./.local/bin/status*)","command(go run ./tools/status*)","command(./.local/bin/build_and_match*)","command(./tools/cl_wine.sh*)","command(git status*)","command(git diff*)","command(git log*)","command(git show*)","command(git add*)","command(git commit*)","command(git checkout*)"],"deny":["write_file(build/units.json)","edit_file(build/units.json)","write_file(docs/*)","write_file(*.html)","command(sudo*)","command(rm -rf*)","command(git reset --hard*)","command(git push --force*)","command(python*)","command(curl*)","command(wget*)"]}}'
+AGY_INLINE_SETTINGS='{"agentMode":"auto","enableTerminalSandbox":true,"toolPermission":"proceed-in-sandbox","permissions":{"allow":["read_file(*)","write_file(src/*)","write_file(include/*)","edit_file(src/*)","edit_file(include/*)","command(./.local/bin/work*)","command(go run ./tools/work*)","command(./.local/bin/status*)","command(go run ./tools/status*)","command(./.local/bin/build_and_match*)","command(./tools/cl_wine.sh*)","command(git status*)","command(git diff*)","command(git log*)","command(git show*)","command(git add*)","command(git commit*)","command(git checkout*)"],"deny":["write_file(build/units.json)","edit_file(build/units.json)","write_file(build/units/*)","edit_file(build/units/*)","write_file(docs/*)","write_file(*.html)","command(sudo*)","command(rm -rf*)","command(git reset --hard*)","command(git push --force*)","command(python*)","command(curl*)","command(wget*)"]}}'
 
 # Per-backend cooldown tracking, kept in files so every concurrent worker subshell shares one view.
 # $STATE_DIR/cd.<key>  = epoch seconds when backend:model becomes eligible again
@@ -216,7 +221,7 @@ run_single_function_agent() {
 
   export DECOMP_MODEL="$model_choice"
 
-  local prompt="Read CLAUDE.md. You are assigned a single function: ${addr}. Run './.local/bin/work claim ${addr}' and match ${addr} using './.local/bin/work check ${addr} --model ${DECOMP_MODEL}'. Use HEADER_PREVIEW and SUGGESTED_EXTERNS from the claim output; if SIMILAR_MATCHED is present, treat those solved neighbors as a hint for the C++ idiom (identical-shape ones usually differ only in constants, offsets and call targets). Iterate up to 10 tries (switch to __declspec(naked) __asm after 3-4 failed C++03 tries). Stop immediately as soon as ${addr} matches or after 10 tries. Do NOT run work next, do NOT call work skip, and do NOT touch any other function, HTML files, or build/units.json."
+  local prompt="Read CLAUDE.md. You are assigned a single function: ${addr}. Run './.local/bin/work claim ${addr}' and match ${addr} using './.local/bin/work check ${addr} --model ${DECOMP_MODEL}'. Use HEADER_PREVIEW and SUGGESTED_EXTERNS from the claim output; if SIMILAR_MATCHED is present, treat those solved neighbors as a hint for the C++ idiom (identical-shape ones usually differ only in constants, offsets and call targets). If PRIOR_ATTEMPTS is present, it lists facts about earlier failed checks on this function (where the output diverged, what the compiler emitted); use it to avoid dead ends, but do not assume the earlier approach was close, and never go looking for the earlier source. Iterate up to 10 tries (switch to __declspec(naked) __asm after 3-4 failed C++03 tries). Stop immediately as soon as ${addr} matches or after 10 tries. Do NOT run work next, do NOT call work skip, and do NOT touch any other function, HTML files, or build/units.json."
 
   local exit_code=0
   if [[ "$backend" == "claude" ]]; then
@@ -329,6 +334,26 @@ RESULTS_LOG="${GRIND_RESULTS_LOG:-$REPO_ROOT/.local/grind_results.log}"
 log_result() {
   local addr="$1" size="$2" outcome="$3" model="$4" start="$5"
   printf '%s\t%s\t%sB\t%s\t%s\t%ss\n' "$(date '+%F %T')" "$addr" "$size" "$outcome" "$model" "$(( $(date +%s) - start ))" >> "$RESULTS_LOG" 2>/dev/null || true
+}
+
+# ---- Adaptive chain: skip stages with proven-low yield for a function's size band ----
+# `work route --machine` prints "<model> <lo> <hi> skip|keep" per size band, computed once per session from the
+# results log and attempt history. A band with too little evidence is judged on the model's all-size results, and
+# a model with too little evidence overall is kept.
+ROUTE_RULES=()
+if [[ "$ADAPTIVE_CHAIN" == 1 ]]; then
+  mapfile -t ROUTE_RULES < <("$WORK_BIN" route --machine --min-trials "$ROUTE_MIN_TRIALS" --min-yield "$ROUTE_MIN_YIELD" 2>/dev/null || true)
+  echo "Adaptive chain: ON (skip stage if measured yield < ${ROUTE_MIN_YIELD} over >= ${ROUTE_MIN_TRIALS} trials; ADAPTIVE_CHAIN=0 disables)"
+  "$WORK_BIN" route --min-trials "$ROUTE_MIN_TRIALS" --min-yield "$ROUTE_MIN_YIELD" 2>/dev/null | sed 's/^/  /' || true
+fi
+
+low_yield_stage() {   # $1=model $2=size_bytes ; true if that stage should be skipped for this size
+  local m lo hi dec rule
+  for rule in "${ROUTE_RULES[@]}"; do
+    read -r m lo hi dec <<< "$rule"
+    [[ "$m" == "$1" && "$dec" == skip ]] && (( $2 >= lo && $2 < hi )) && return 0
+  done
+  return 1
 }
 
 # One agent attempt: ONE function on ONE model (stage). Runs in a background subshell.
@@ -450,6 +475,9 @@ next_eligible_stage() {
     if (( size < ${MODEL_MIN[$model]:-0} )); then
       echo "  [~] $addr (${size}B): below $model minimum size (${MODEL_MIN[$model]}B); skipping." >&2; continue
     fi
+    if (( idx > 0 )) && low_yield_stage "$model" "$size"; then
+      echo "  [~] $addr (${size}B): $model has low measured yield at this size; skipping." >&2; continue
+    fi
     if already_failed "$addr" "$model"; then
       echo "  [~] $addr: $model already failed it in an earlier session; skipping." >&2; continue
     fi
@@ -489,7 +517,7 @@ finish_function() {   # $1=addr $2=outcome(matched|deferred) $3=model
 defer_function() {
   local addr="$1"
   echo "  [x] Deferring $addr: unmatched after all eligible models"
-  "$WORK_BIN" skip "$addr" "Unmatched after full escalation (claude-haiku-5.5 -> gpt-oss-120b -> gemini-3.8-flash -> claude-sonnet-5.5 -> claude-opus-5.5 -> gemini-4-argon)" || true
+  "$WORK_BIN" skip "$addr" "Unmatched after escalation through all eligible models in the chain" || true
   finish_function "$addr" deferred "all-eligible-models"
 }
 

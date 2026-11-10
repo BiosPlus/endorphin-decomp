@@ -1,0 +1,21 @@
+{
+  "va": "0x00633240",
+  "size": 68,
+  "sha256": "b35bda624ce8e0ec2b2c24f4975f592b128874aa26cfac4285475b4184f43dcd",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredTwistAndSwingAngle(void) const, NM::Vector3 const \u0026, \u0026public: void __thiscall EffectorSkeletal::setDesiredTwistAndSwingAngleRaw(class NM::Vector3 const \u0026)\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x006304B0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00633261",
+    "0x00633271",
+    "0x00633276",
+    "0x00633280"
+  ],
+  "status": "todo"
+}

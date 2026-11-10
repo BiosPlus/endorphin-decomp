@@ -1,0 +1,17 @@
+{
+  "va": "0x00622380",
+  "size": 34,
+  "sha256": "bd8912fcfa268016c72f58bfe433ad70bfd7675ff05f5b772170345f8a9c2120",
+  "symbol": "NMData::SkeletalCalibrationVariables::vfunc_28",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00622387",
+    "0x00622397"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:17:27Z"
+}

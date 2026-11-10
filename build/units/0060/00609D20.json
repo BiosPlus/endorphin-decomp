@@ -1,0 +1,26 @@
+{
+  "va": "0x00609D20",
+  "size": 159,
+  "sha256": "3878a334093277d0b2b6a8112bba121bcf6296228d907d22ef4e63e53ef0272c",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::DisabledCollisionPairList, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00609730",
+    "0x006720E0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00609D29",
+    "0x00609D44",
+    "0x00609D4E",
+    "0x00609D62",
+    "0x00609DAC",
+    "0x00609DB1",
+    "0x00609DBB"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,17 @@
+{
+  "va": "0x005388A0",
+  "size": 604,
+  "sha256": "a1da9198f696f0ece42448d0f479113a67b904348b3088972d5fddb00d2fdaeb",
+  "symbol": "UtilityGraphics::CubeLocator::vfunc_22",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005388A9",
+    "0x005388B5",
+    "0x005388BF",
+    "0x00538AF1"
+  ],
+  "status": "todo"
+}

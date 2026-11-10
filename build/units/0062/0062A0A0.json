@@ -1,0 +1,20 @@
+{
+  "va": "0x0062A0A0",
+  "size": 30,
+  "sha256": "f5742fa75d7ed13e5a8ee893de9e4330104564f1411be85cbb3a3833016c58ab",
+  "symbol": "ExprParser::ROWriteMethodType\u003cSensors::SensorMetaBodyRelativeTime, float, \u0026public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062A0A7",
+    "0x0062A0AC",
+    "0x0062A0B4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:45:22Z"
+}

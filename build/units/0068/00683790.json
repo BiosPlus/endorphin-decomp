@@ -1,0 +1,20 @@
+{
+  "va": "0x00683790",
+  "size": 109,
+  "sha256": "2d2c9b63c446b1159461daa24d48676c594de6621d82122fbe4382af0166d5e4",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::ValuePtrData::getPropertyDescription(void) const, 0}, 1\u003e::vfunc_1",
+  "callees": [
+    "0x00683100"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00683793",
+    "0x006837B5",
+    "0x006837C5",
+    "0x006837CC",
+    "0x006837E4"
+  ],
+  "status": "todo"
+}

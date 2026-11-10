@@ -1,0 +1,14 @@
+{
+  "va": "0x0054E8E0",
+  "size": 6,
+  "sha256": "ea63074c356add25bdab7c20fb150d2df0651fcf8284fae300e0ebd8eef74218",
+  "symbol": "thunk_OPENGL32_glLoadMatrixf",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0054E8E2"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,24 @@
+{
+  "va": "0x00538F20",
+  "size": 115,
+  "sha256": "25b91708499806fdf19167c2db1a59885b18904347a01ef8c2e14d5a4a25192d",
+  "symbol": "UtilityGraphics::Arrow::vfunc_22",
+  "callees": [
+    "0x00538E40",
+    "0x0063E02A"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00538F29",
+    "0x00538F2F",
+    "0x00538F38",
+    "0x00538F56",
+    "0x00538F5F",
+    "0x00538F7C",
+    "0x00538F85",
+    "0x00538F8B"
+  ],
+  "status": "todo"
+}

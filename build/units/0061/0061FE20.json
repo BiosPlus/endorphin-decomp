@@ -1,0 +1,21 @@
+{
+  "va": "0x0061FE20",
+  "size": 48,
+  "sha256": "2bc65c895f18ad08fa482c59c4f82c30aa063f89b4addb2ca1a162797a52941a",
+  "symbol": "NMData::GraphicData::vfunc_22",
+  "callees": [
+    "0x0058F650",
+    "0x005B44B0",
+    "0x006404E0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061FE21",
+    "0x0061FE2F",
+    "0x0061FE3D",
+    "0x0061FE45"
+  ],
+  "status": "todo"
+}

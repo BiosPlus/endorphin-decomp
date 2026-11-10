@@ -1,0 +1,21 @@
+{
+  "va": "0x0046F1E0",
+  "size": 47,
+  "sha256": "e353d8b66e47efead5e677fa83bbc2bb5a2d37ffc9ffd7aa097e429e64675886",
+  "symbol": "ExprParser::ReadMethodType\u003cImageExporter, int, {public: int __thiscall ImageExporter::getImageWidth(void) const, 0}, 0\u003e::vfunc_2",
+  "callees": [
+    "0x0046C090",
+    "0x0046C3C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046F1EE",
+    "0x0046F1FC",
+    "0x0046F201",
+    "0x0046F20B"
+  ],
+  "status": "todo"
+}

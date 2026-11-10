@@ -1,0 +1,23 @@
+{
+  "va": "0x004DED10",
+  "size": 81,
+  "sha256": "639072570b3a8d5ff7c1c45ca9f92b44f9d736db81aa4e7e7cbe24f3ec2dc9fa",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::isPassiveAnimationEnabled(void) const, 0}, 0\u003e::vfunc_4",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C460",
+    "0x004DDE60",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004DED26",
+    "0x004DED39",
+    "0x004DED4E",
+    "0x004DED53",
+    "0x004DED5D"
+  ],
+  "status": "todo"
+}

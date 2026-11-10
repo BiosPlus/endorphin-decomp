@@ -1,0 +1,20 @@
+{
+  "va": "0x00504BF0",
+  "size": 30,
+  "sha256": "04f1bf6b9da1a8e0fe176b5108ab660028ff5c68e2894db2305ed782da931309",
+  "symbol": "ExprParser::ReadMethodType\u003cInterpreter, int, \u0026public: int __thiscall Interpreter::bogus(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00504BF7",
+    "0x00504BFC",
+    "0x00504C04"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:47:27Z"
+}

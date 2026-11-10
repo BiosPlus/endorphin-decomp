@@ -1,0 +1,26 @@
+{
+  "va": "0x0051B5A0",
+  "size": 170,
+  "sha256": "4fe7cbfb2663387a931dad7b67b687d7ccd88aa725a415a4e3fa745e47b8df52",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::RealChannel, float, \u0026public: float __thiscall NMData::RealChannel::getValue(void) const, 0\u003e::vfunc_44",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x0051AE90",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0051B5A9",
+    "0x0051B5C4",
+    "0x0051B5D9",
+    "0x0051B5ED",
+    "0x0051B637",
+    "0x0051B63C",
+    "0x0051B646"
+  ],
+  "status": "todo"
+}

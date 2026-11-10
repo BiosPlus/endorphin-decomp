@@ -1,0 +1,19 @@
+{
+  "va": "0x0054B760",
+  "size": 30,
+  "sha256": "ee786bad1b443fa09c124bfcf7281026ef7367fe7917251e1bb2329812a83981",
+  "symbol": "ToolGraphics::ForceApplicatorHandleGraphic::vfunc_0",
+  "callees": [
+    "0x0054A0E0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054B764",
+    "0x0054B771"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

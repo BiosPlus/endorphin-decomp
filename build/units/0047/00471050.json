@@ -1,0 +1,21 @@
+{
+  "va": "0x00471050",
+  "size": 77,
+  "sha256": "d4d7494daa84c3fce7ef4b90f26643600cbadc53425687f793eccdc8eba00bac",
+  "symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, bool, {public: bool __thiscall RuntimeEngine::getPlaybackLoopingEnabled(void) const, 0}, 0\u003e::vfunc_1",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046F910",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0047105E",
+    "0x0047108A",
+    "0x0047108F",
+    "0x00471099"
+  ],
+  "status": "todo"
+}

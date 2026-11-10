@@ -1,0 +1,14 @@
+{
+  "va": "0x0054E9F0",
+  "size": 30,
+  "sha256": "9f5b2f5354350f8d12652b7dae37b544f1153bb86065ba6df9aec35d617f3c11",
+  "symbol": "OptimizedMatrixStackManager::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:11:18Z"
+}

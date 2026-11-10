@@ -1,0 +1,18 @@
+{
+  "va": "0x00404DE0",
+  "size": 30,
+  "sha256": "8dbb0670e2f96bd953eab9a2fa91c4a0bde5173fbc31642fa1fa15006304b1dd",
+  "symbol": "CStatic::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A5EFC"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00404DE4",
+    "0x00404DF1"
+  ],
+  "status": "out_of_scope"
+}

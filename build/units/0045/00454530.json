@@ -1,0 +1,14 @@
+{
+  "va": "0x00454530",
+  "size": 5,
+  "sha256": "1112e6f999beb333c0875ac9d54ad149a6691db37eba764d560e1c928d058b1a",
+  "symbol": "RigEditor::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00454531"
+  ],
+  "status": "out_of_scope"
+}

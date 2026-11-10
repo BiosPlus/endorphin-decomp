@@ -1,0 +1,20 @@
+{
+  "va": "0x005E3950",
+  "size": 30,
+  "sha256": "d973450d6b231c64667d93b82f958d7ca36cd7d0129cb994d9c60d8dff8cd051",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005E3957",
+    "0x005E395C",
+    "0x005E3964"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:55:30Z"
+}

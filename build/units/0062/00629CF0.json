@@ -1,0 +1,18 @@
+{
+  "va": "0x00629CF0",
+  "size": 13,
+  "sha256": "a1db50289f4fb40694125fae8678a23058227e9a0531895ed8c6af05f590e6a2",
+  "symbol": "Sensors::SensorTreeCentreOfMassVelocityZ::vfunc_17",
+  "callees": [
+    "0x00629B10"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00629CF4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:29:58Z"
+}

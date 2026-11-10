@@ -1,0 +1,18 @@
+{
+  "va": "0x0064F790",
+  "size": 34,
+  "sha256": "18a364eb856d05e8762a49192eafbdc0050db1231611874a88b3c85382e41615",
+  "symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDriveAngularVel(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0064DDE0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064F7AA"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:25:54Z"
+}

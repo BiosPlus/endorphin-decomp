@@ -1,0 +1,23 @@
+{
+  "va": "0x005058B0",
+  "size": 73,
+  "sha256": "ebbc81c37c862e44271f205b279ae6fcac8f4e67b8a2176e94aaa5eb82ca1842",
+  "symbol": "Interpreter::vfunc_22",
+  "callees": [
+    "0x00427550",
+    "0x00505420",
+    "0x00640110"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005058B1",
+    "0x005058C1",
+    "0x005058CE",
+    "0x005058D8",
+    "0x005058DE",
+    "0x005058EB"
+  ],
+  "status": "todo"
+}

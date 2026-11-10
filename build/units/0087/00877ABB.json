@@ -1,0 +1,15 @@
+{
+  "va": "0x00877ABB",
+  "size": 11,
+  "sha256": "da2bb37ae51ec974947f2d3f9cdf7e23bfdb9a546c08c10b8510b49f990acd18",
+  "symbol": "sub_00877ABB",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00877ABC",
+    "0x00877AC2"
+  ],
+  "status": "out_of_scope"
+}

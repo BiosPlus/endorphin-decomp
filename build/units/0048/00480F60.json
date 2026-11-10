@@ -1,0 +1,22 @@
+{
+  "va": "0x00480F60",
+  "size": 154,
+  "sha256": "a8d19862fb36795e93e7d44624a446df933544f1e31ae767594912bfee40b809",
+  "symbol": "ToolEngine::vfunc_19",
+  "callees": [
+    "0x00594000",
+    "0x0065D120"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00480F6C",
+    "0x00480F77",
+    "0x00480F92",
+    "0x00480FAA",
+    "0x00480FB9",
+    "0x00480FD1"
+  ],
+  "status": "todo"
+}

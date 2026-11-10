@@ -1,0 +1,18 @@
+{
+  "va": "0x00516B10",
+  "size": 14,
+  "sha256": "26bd4e702159085f2c16e2a94dd0ff00b6d8c0ff067044bde7651a14f1e26448",
+  "symbol": "ExprParser::WriteOnlyMethod0Type\u003cNMData::EvolverRuntimeOptions, \u0026public: void __thiscall NMData::EvolverRuntimeOptions::printCurrentIndividual(void)\u003e::vfunc_41",
+  "callees": [
+    "0x00516890"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00516B17"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:45:16Z"
+}

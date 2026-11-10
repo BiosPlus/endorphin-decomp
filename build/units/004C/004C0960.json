@@ -1,0 +1,22 @@
+{
+  "va": "0x004C0960",
+  "size": 157,
+  "sha256": "fc755526b135c9856d7cbda10f05fff9fc8e7592e59d83042ebaa0942853f8b6",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x004C0280",
+    "0x006720E0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C0963",
+    "0x004C0986",
+    "0x004C0998",
+    "0x004C09A9",
+    "0x004C09D4"
+  ],
+  "status": "todo"
+}

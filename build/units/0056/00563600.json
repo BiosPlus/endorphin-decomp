@@ -1,0 +1,19 @@
+{
+  "va": "0x00563600",
+  "size": 37,
+  "sha256": "d693c09bdbaa0bfcf05f77b539db3954d19268cdc83b5cc8a096e9fe733360f0",
+  "symbol": "XSIIO::vfunc_3",
+  "callees": [
+    "0x00553720",
+    "0x00640390"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0056360B",
+    "0x00563612",
+    "0x0056361A"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x00681C10",
+  "size": 21,
+  "sha256": "8e382c77c1bd37b185bfcfe38a27be5cfd21bb94d42eb07b35e2fbc777b1d733",
+  "symbol": "Properties::PropertyIteratorTypes::PropertySourceType::vfunc_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

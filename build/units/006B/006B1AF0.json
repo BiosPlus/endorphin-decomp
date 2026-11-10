@@ -1,0 +1,29 @@
+{
+  "va": "0x006B1AF0",
+  "size": 268,
+  "sha256": "e91d61d47e133ce1c4733be5664288c7f6eb118ea0cc69ffd14b31c268d64f7c",
+  "symbol": "GWCPropertyCheckboxFeel::vfunc_5",
+  "callees": [
+    "0x006A5C62",
+    "0x006A5E5A",
+    "0x006B0C10",
+    "0x006B4840",
+    "0x006B4870",
+    "0x006B4C20"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B1AF9",
+    "0x006B1B1A",
+    "0x006B1B30",
+    "0x006B1B6B",
+    "0x006B1B7D",
+    "0x006B1B8D",
+    "0x006B1BB5",
+    "0x006B1BC3",
+    "0x006B1BE3"
+  ],
+  "status": "todo"
+}

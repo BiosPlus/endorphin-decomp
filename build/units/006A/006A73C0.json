@@ -1,0 +1,14 @@
+{
+  "va": "0x006A73C0",
+  "size": 6,
+  "sha256": "37d1620e642bae0fe6dccf7c82c35f93e1d74771266b3c315eaa136c5e5fa5ec",
+  "symbol": "thunk_MSVCR80__CIatan",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006A73C2"
+  ],
+  "status": "out_of_scope"
+}

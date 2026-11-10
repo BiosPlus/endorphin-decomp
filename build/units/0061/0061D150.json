@@ -1,0 +1,25 @@
+{
+  "va": "0x0061D150",
+  "size": 65,
+  "sha256": "b9e20063e7d2d2ef39ddc76be0486f07a420ba37860e2ed8337176a3d0f1cc7c",
+  "symbol": "NMData::DriveFrame::vfunc_22",
+  "callees": [
+    "0x00593AE0",
+    "0x00611270",
+    "0x006125B0",
+    "0x00640390",
+    "0x0067F040"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061D15B",
+    "0x0061D160",
+    "0x0061D16A",
+    "0x0061D173",
+    "0x0061D17A",
+    "0x0061D185"
+  ],
+  "status": "todo"
+}

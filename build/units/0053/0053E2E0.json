@@ -1,0 +1,29 @@
+{
+  "va": "0x0053E2E0",
+  "size": 651,
+  "sha256": "ac8bb604d60bed026cefc80bba017efea445e42f94a59ba312da7c64639e08f1",
+  "symbol": "Primitives::Mesh::vfunc_28",
+  "callees": [
+    "0x005B11F0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053E336",
+    "0x0053E33C",
+    "0x0053E344",
+    "0x0053E360",
+    "0x0053E36C",
+    "0x0053E3CB",
+    "0x0053E460",
+    "0x0053E4DB",
+    "0x0053E51E",
+    "0x0053E537",
+    "0x0053E53D",
+    "0x0053E54C",
+    "0x0053E552",
+    "0x0053E567"
+  ],
+  "status": "todo"
+}

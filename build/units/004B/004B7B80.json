@@ -1,0 +1,19 @@
+{
+  "va": "0x004B7B80",
+  "size": 63,
+  "sha256": "ccbfd6b2ac49bf8edd69e08b052f75abfafc3ffa48a78115f234b37c1e043c4b",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::EngineData, float, \u0026public: float __thiscall NMData::EngineData::getTimeZoomFactor(void) const, float, \u0026public: void __thiscall NMData::EngineData::setTimeZoomFactor(float)\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B7BAC",
+    "0x004B7BB1",
+    "0x004B7BBB"
+  ],
+  "status": "todo"
+}

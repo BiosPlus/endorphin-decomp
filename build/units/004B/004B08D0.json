@@ -1,0 +1,24 @@
+{
+  "va": "0x004B08D0",
+  "size": 86,
+  "sha256": "a8387161fc4d2f7b3703e0315e507c5154f5e5d6b2057ca5e531404e4aac1d66",
+  "symbol": "ViewManager::vfunc_3",
+  "callees": [
+    "0x004B08A0",
+    "0x00640110",
+    "0x006404E0",
+    "0x00640A80"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B08D1",
+    "0x004B08E1",
+    "0x004B08F3",
+    "0x004B08FB",
+    "0x004B0905",
+    "0x004B090C"
+  ],
+  "status": "todo"
+}

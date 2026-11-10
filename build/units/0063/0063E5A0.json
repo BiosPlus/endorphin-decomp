@@ -1,0 +1,14 @@
+{
+  "va": "0x0063E5A0",
+  "size": 5,
+  "sha256": "5fc155db69abe4ddbf3c6cdcfe0683d805109c24e5bcf05f7fb5517a21b26e74",
+  "symbol": "AdvXMLParser::Comment::vfunc_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0063E5A1"
+  ],
+  "status": "out_of_scope"
+}

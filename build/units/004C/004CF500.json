@@ -1,0 +1,23 @@
+{
+  "va": "0x004CF500",
+  "size": 71,
+  "sha256": "61fef3a77a348f46324f59b5ea9fe79d85cc11d6e7a2b04287cd8d71d2cb768e",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, 0\u003e::vfunc_0",
+  "callees": [
+    "0x0046C3C0",
+    "0x004CEA30",
+    "0x006720E0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CF516",
+    "0x004CF522",
+    "0x004CF534",
+    "0x004CF539",
+    "0x004CF543"
+  ],
+  "status": "todo"
+}

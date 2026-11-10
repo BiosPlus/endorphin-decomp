@@ -1,0 +1,27 @@
+{
+  "va": "0x00681ED0",
+  "size": 257,
+  "sha256": "4fbacf62873ea65483e69bb1e8e5c3152ca524fdeb3150b5ea0c435edffb1979",
+  "symbol": "Properties::PropertyIteratorTypes::MatrixTypeIterator\u003cNM::Matrix4, 4\u003e::vfunc_2",
+  "callees": [
+    "0x004BA740",
+    "0x0055DA20",
+    "0x00671F30",
+    "0x00681B00",
+    "0x00681E50"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00681EF3",
+    "0x00681EFA",
+    "0x00681F18",
+    "0x00681F2D",
+    "0x00681F41",
+    "0x00681F9B",
+    "0x00681FAF",
+    "0x00681FC3"
+  ],
+  "status": "todo"
+}

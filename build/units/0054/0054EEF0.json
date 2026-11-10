@@ -1,0 +1,17 @@
+{
+  "va": "0x0054EEF0",
+  "size": 88,
+  "sha256": "16c176b49c08f227f03e8a4396423302ef1fe4301842733646355ae5dc786220",
+  "symbol": "NMMatrixStackManager::vfunc_2",
+  "callees": [
+    "0x00484E90"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054EEF7",
+    "0x0054EF3C"
+  ],
+  "status": "todo"
+}

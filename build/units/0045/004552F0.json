@@ -1,0 +1,24 @@
+{
+  "va": "0x004552F0",
+  "size": 209,
+  "sha256": "f7bc6e30492721a4e1ef01b239ee940d8fb68f9cd6ee793705d70c30afe23714",
+  "symbol": "SceneNotesEditor::vfunc_66",
+  "callees": [
+    "0x006A5F7A",
+    "0x006A674E",
+    "0x006A6754"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0045531D",
+    "0x00455345",
+    "0x00455356",
+    "0x0045536B",
+    "0x0045538F",
+    "0x004553A0",
+    "0x004553B5"
+  ],
+  "status": "todo"
+}

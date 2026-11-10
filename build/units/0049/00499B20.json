@@ -1,0 +1,13 @@
+{
+  "va": "0x00499B20",
+  "size": 8,
+  "sha256": "d33bea762d3a0d70e0b91fdcc64fb5cfd34ac81caf99b5c2a10d3a7d20fb3f01",
+  "symbol": "NMData::Transition::vfunc_19_off_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

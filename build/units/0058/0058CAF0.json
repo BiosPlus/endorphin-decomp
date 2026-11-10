@@ -1,0 +1,20 @@
+{
+  "va": "0x0058CAF0",
+  "size": 30,
+  "sha256": "d269d62febbafb88acf08e99179894b5375be82cc5ce2ce58790ab05cc513a98",
+  "symbol": "ExprParser::ReadMethodType\u003cAnimatableTransform, NM::Vector4 const \u0026, {protected: class NM::Vector4 const \u0026 __thiscall AnimatableTransform::getQuat(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058CAF7",
+    "0x0058CAFC",
+    "0x0058CB04"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:51:43Z"
+}

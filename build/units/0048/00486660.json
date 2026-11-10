@@ -1,0 +1,19 @@
+{
+  "va": "0x00486660",
+  "size": 30,
+  "sha256": "a16121516bc56843294af1f4683d07476dfa5a8c6f9b73399d92613fedf0dec5",
+  "symbol": "Commands::ReshapeCommand::vfunc_0",
+  "callees": [
+    "0x00486520",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00486664",
+    "0x00486671"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x00550F80",
+  "size": 30,
+  "sha256": "0750164f88390570834f0cde84207cc2a937e87bd0424f0c3e1f01eb8940e96e",
+  "symbol": "ModelImporter::vfunc_0",
+  "callees": [
+    "0x0054FCB0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00550F84",
+    "0x00550F91"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x0041B690",
+  "size": 5,
+  "sha256": "d3f38227a4af7193ccdffdf7c2201957cc9a667664950878de86c5a348aa6380",
+  "symbol": "GettingStartedDialog::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0041B691"
+  ],
+  "status": "out_of_scope"
+}

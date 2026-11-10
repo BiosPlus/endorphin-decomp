@@ -1,0 +1,19 @@
+{
+  "va": "0x00534640",
+  "size": 30,
+  "sha256": "0ebb0a2f1679bcce8e9f157f3a39bb17d700c543b18e8c9283419c9ce3b31ba6",
+  "symbol": "Light::vfunc_0",
+  "callees": [
+    "0x0054E360",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00534644",
+    "0x00534651"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

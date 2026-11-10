@@ -1,0 +1,24 @@
+{
+  "va": "0x006398B0",
+  "size": 159,
+  "sha256": "fefe173d100e4b55a07d12b19c35b5025d48739923c1aa51ca1e212b42548040",
+  "symbol": "ExprParser::ReadMethodType\u003cEffectorSkeletal, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0\u003e::vfunc_45",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00672110",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006398B9",
+    "0x006398DE",
+    "0x006398F2",
+    "0x0063993C",
+    "0x00639941",
+    "0x0063994B"
+  ],
+  "status": "todo"
+}

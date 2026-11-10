@@ -1,0 +1,13 @@
+{
+  "va": "0x00437E70",
+  "size": 10,
+  "sha256": "66e67c49b268e71add920650306787e686b9ac183394d81534e88bd245f87422",
+  "symbol": "BaseEventDispatcher::vfunc_2",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

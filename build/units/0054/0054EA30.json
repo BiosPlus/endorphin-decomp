@@ -1,0 +1,17 @@
+{
+  "va": "0x0054EA30",
+  "size": 77,
+  "sha256": "86258702e8606ec990bffdfccd58d8f57ec445740fdec0e6412a7c521ab3278f",
+  "symbol": "NMMatrixStackManager::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054EA36",
+    "0x0054EA72"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T13:51:43Z"
+}

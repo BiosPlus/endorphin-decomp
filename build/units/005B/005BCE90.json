@@ -1,0 +1,23 @@
+{
+  "va": "0x005BCE90",
+  "size": 60,
+  "sha256": "04a165fb5984f1dca211343ed5c638b400ab263d3714bd7b19934b6822401dd7",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::MetaBodyData, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::MetaBodyData::getAbsolutePosition(void) const, 0}, 0\u003e::vfunc_4",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x005B6930",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005BCEA5",
+    "0x005BCEB0",
+    "0x005BCEB9",
+    "0x005BCEBE",
+    "0x005BCEC8"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x0068EE80",
+  "size": 64,
+  "sha256": "5df420bd8f17050d8f81c94cda2b4e1d1fc3264474f54d4af500dc10c0a3cad4",
+  "symbol": "sub_0068EE80",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0068EE88",
+    "0x0068EE91",
+    "0x0068EEA8"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T07:52:20Z"
+}

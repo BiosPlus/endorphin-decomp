@@ -1,0 +1,14 @@
+{
+  "va": "0x005EC090",
+  "size": 5,
+  "sha256": "9347352a5b75b4b96b8a4d10d875f4adef3c17cf333092ef8c8a7c4bc501080c",
+  "symbol": "NMData::Constraint::vfunc_75",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005EC091"
+  ],
+  "status": "out_of_scope"
+}

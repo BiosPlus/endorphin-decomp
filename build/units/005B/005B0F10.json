@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0F10",
+  "size": 5,
+  "sha256": "ca6526886f9e4fe2ecbf9ff4b414f91d350af7453b234672e62b3b4daa86da5f",
+  "symbol": "Geometry::CameraFrustumType::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005B0F11"
+  ],
+  "status": "out_of_scope"
+}

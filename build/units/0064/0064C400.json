@@ -1,0 +1,23 @@
+{
+  "va": "0x0064C400",
+  "size": 122,
+  "sha256": "3ac518afec8d736cf50a02aa00c729503c9feb8dfb4075cfc7ae291f16113d46",
+  "symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, float, {public: void __thiscall RelationshipRPROMagnet::setPositionStrength(float), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064C409",
+    "0x0064C41C",
+    "0x0064C424",
+    "0x0064C429",
+    "0x0064C436",
+    "0x0064C444",
+    "0x0064C44B",
+    "0x0064C466"
+  ],
+  "status": "todo"
+}

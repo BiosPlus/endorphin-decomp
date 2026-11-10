@@ -1,0 +1,15 @@
+{
+  "va": "0x00873FDA",
+  "size": 10,
+  "sha256": "cf51fbe022d720230b701daf00dab0e89ec798dca0d65197b52ba8ccd2946a54",
+  "symbol": "sub_00873FDA",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00873FDB",
+    "0x00873FE0"
+  ],
+  "status": "out_of_scope"
+}

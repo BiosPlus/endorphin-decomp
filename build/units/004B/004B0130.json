@@ -1,0 +1,20 @@
+{
+  "va": "0x004B0130",
+  "size": 86,
+  "sha256": "8175335d7bcf4ef4962a4cec1161da02a0cd4f8625e453158ede71ef8b7dfa79",
+  "symbol": "ChangePrimarySelectionCommand::vfunc_0",
+  "callees": [
+    "0x00665810",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B013F",
+    "0x004B0158",
+    "0x004B016B",
+    "0x004B0178"
+  ],
+  "status": "todo"
+}

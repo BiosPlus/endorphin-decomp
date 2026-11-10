@@ -1,0 +1,16 @@
+{
+  "va": "0x005F4AC0",
+  "size": 113,
+  "sha256": "e1f8fa3309707a36bd8cfad1419f1fee47c3775001fcacd75f5633ce921af8d1",
+  "symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setGradients(float)\u003e::vfunc_48",
+  "callees": [
+    "0x005F4660"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005F4AE7"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x0068BD60",
+  "size": 42,
+  "sha256": "ec46ffc0401ff6dce9c5405195fbbc98390d2ac5a7ca7e06450925fa2d7df77e",
+  "symbol": "Randomizer::vfunc_1_off_4",
+  "callees": [
+    "0x0053F5F0",
+    "0x0063EFE0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0068BD68",
+    "0x0068BD6D",
+    "0x0068BD7F"
+  ],
+  "status": "todo"
+}

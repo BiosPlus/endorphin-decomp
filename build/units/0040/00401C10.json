@@ -1,0 +1,19 @@
+{
+  "va": "0x00401C10",
+  "size": 30,
+  "sha256": "b44fc37ffc612a6342e8a0a3249062adeca5fff4bf1808e9eb5febfe821260c9",
+  "symbol": "DIBException::vfunc_0",
+  "callees": [
+    "0x00401BB0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00401C14",
+    "0x00401C21"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

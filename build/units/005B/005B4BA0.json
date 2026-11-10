@@ -1,0 +1,27 @@
+{
+  "va": "0x005B4BA0",
+  "size": 299,
+  "sha256": "b760314cec8518372246b26f344e58d077107dc9f5d0709154a14d982a817f03",
+  "symbol": "Geometry::CylinderType::vfunc_16",
+  "callees": [
+    "0x00539AA0",
+    "0x00539FB0",
+    "0x005B11E0",
+    "0x006A6EAA",
+    "0x006A6EB0"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B4BAE",
+    "0x005B4BB9",
+    "0x005B4BCD",
+    "0x005B4BEF",
+    "0x005B4C56",
+    "0x005B4C67",
+    "0x005B4C80",
+    "0x005B4C9C"
+  ],
+  "status": "todo"
+}

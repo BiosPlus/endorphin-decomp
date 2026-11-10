@@ -1,0 +1,33 @@
+{
+  "va": "0x00543E40",
+  "size": 182,
+  "sha256": "d24d9399b2aad959f95d44692011042cae750e41e9b149a65c64b7bbc386a318",
+  "symbol": "ForceApplicationTool::vfunc_3",
+  "callees": [
+    "0x00427550",
+    "0x00640110",
+    "0x00640BC0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00543E41",
+    "0x00543E51",
+    "0x00543E61",
+    "0x00543E67",
+    "0x00543E72",
+    "0x00543E82",
+    "0x00543E96",
+    "0x00543E9E",
+    "0x00543EA3",
+    "0x00543EAE",
+    "0x00543EB6",
+    "0x00543EBC",
+    "0x00543ECA",
+    "0x00543ED0",
+    "0x00543ED8",
+    "0x00543EE8"
+  ],
+  "status": "todo"
+}

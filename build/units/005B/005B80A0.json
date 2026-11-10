@@ -1,0 +1,18 @@
+{
+  "va": "0x005B80A0",
+  "size": 69,
+  "sha256": "1fd800e9cfbc83c3ffe86565ecc7194330c2854c1e8e512a29bfee44ff6e6f43",
+  "symbol": "ExprParser::FunctionType\u003cNMData::MetaBodyData, float, NM::Vector3 const \u0026, {public: float __thiscall NMData::MetaBodyData::getDistanceToPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x005B7060",
+    "0x00672080"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B80C3",
+    "0x005B80DA"
+  ],
+  "status": "todo"
+}

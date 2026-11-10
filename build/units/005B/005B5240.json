@@ -1,0 +1,13 @@
+{
+  "va": "0x005B5240",
+  "size": 4,
+  "sha256": "4f2f5aebc83e057a70bdaddfb7545120a3e11bcdaa823c1def1422f8768ac3ed",
+  "symbol": "Geometry::MeshType::vfunc_14",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

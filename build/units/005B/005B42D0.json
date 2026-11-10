@@ -1,0 +1,22 @@
+{
+  "va": "0x005B42D0",
+  "size": 114,
+  "sha256": "0baeaf8d6ee680d684ff964ac412463f8a4493a02a524f2f2b250e79d7b3405d",
+  "symbol": "Geometry::FrustumType::vfunc_18",
+  "callees": [
+    "0x005B3FF0",
+    "0x005B4010",
+    "0x005B4030",
+    "0x00671F30"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B42F5",
+    "0x005B430A",
+    "0x005B431F",
+    "0x005B4334"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x0040F0D0",
+  "size": 30,
+  "sha256": "8bc0da7b9928b172b7980a42fc2967b90949bc79956a8ba781850c222b81fc00",
+  "symbol": "CColorButton::vfunc_1",
+  "callees": [
+    "0x0040EF90",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040F0D4",
+    "0x0040F0E1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

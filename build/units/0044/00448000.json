@@ -1,0 +1,19 @@
+{
+  "va": "0x00448000",
+  "size": 46,
+  "sha256": "44ab4031279630a16ab8cf92f352ef5adf507b2af8747cbc9108825dd8d131c8",
+  "symbol": "ProgressDialog::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00448013",
+    "0x00448025"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:49:55Z"
+}

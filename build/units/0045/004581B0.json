@@ -1,0 +1,14 @@
+{
+  "va": "0x004581B0",
+  "size": 5,
+  "sha256": "df968735707e79d235bfd0be0bec1ba529376943b7eb9e00e489f70ccaae2639",
+  "symbol": "CSizingControlBar::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x004581B1"
+  ],
+  "status": "out_of_scope"
+}

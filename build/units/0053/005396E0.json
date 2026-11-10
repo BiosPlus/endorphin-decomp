@@ -1,0 +1,25 @@
+{
+  "va": "0x005396E0",
+  "size": 51,
+  "sha256": "f5ef37464e2cf4797e8b8319627a7728c57d5e5f26a04d620b8839c06b75ff4e",
+  "symbol": "sub_005396E0",
+  "callees": [
+    "0x00532B60",
+    "0x0063E000",
+    "0x0063E00C",
+    "0x0063E012"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005396E4",
+    "0x005396EA",
+    "0x005396EF",
+    "0x005396FD",
+    "0x0053970B"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T04:12:17Z"
+}

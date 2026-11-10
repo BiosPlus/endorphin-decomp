@@ -1,0 +1,14 @@
+{
+  "va": "0x006A6E9E",
+  "size": 6,
+  "sha256": "90c8288baaf9b86103bdbe23fd4086ad3ebc54f16674b6884cef813e0ba2798f",
+  "symbol": "thunk_MSVCR80___RTDynamicCast",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006A6EA0"
+  ],
+  "status": "out_of_scope"
+}

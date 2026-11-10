@@ -1,0 +1,17 @@
+{
+  "va": "0x00448920",
+  "size": 45,
+  "sha256": "f47b97bd16af778a7b84a7600b630b2cf2bb4bd450ab5c631e2712a251b8822e",
+  "symbol": "Properties::PropInPlaceSpinbuttonEdit::vfunc_66",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044893B",
+    "0x00448949"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:44:05Z"
+}

@@ -1,0 +1,16 @@
+{
+  "va": "0x007D9C00",
+  "size": 86,
+  "sha256": "ed23ee88f7a3f85e1e9a04d342be181781942d5011765a71d3c75d4678e68045",
+  "symbol": "keaFunctions_SSE::vfunc_3",
+  "callees": [
+    "0x007D96C0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x007D9C4C"
+  ],
+  "status": "todo"
+}

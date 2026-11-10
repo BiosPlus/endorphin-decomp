@@ -1,0 +1,20 @@
+{
+  "va": "0x006049D0",
+  "size": 106,
+  "sha256": "e794628f79e47da766bd2501c14ba273f58a59c70295d8afb4ba56218575a560",
+  "symbol": "ExprParser::WriteMethodType\u003cEffectorBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}\u003e::vfunc_41",
+  "callees": [
+    "0x0046E780",
+    "0x00603690"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006049D3",
+    "0x00604A02",
+    "0x00604A12",
+    "0x00604A24"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x0051DE10",
+  "size": 28,
+  "sha256": "e95f01de6f169aa59351041ac59bd9ce70b22847b44e4e314a30db4ef102937f",
+  "symbol": "StateMachine::State::vfunc_11",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

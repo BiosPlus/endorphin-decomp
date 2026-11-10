@@ -1,0 +1,19 @@
+{
+  "va": "0x006B9610",
+  "size": 30,
+  "sha256": "8c4c90742a83849f5e937a0ba737c3af619e95ab706957fdf3e12da551ca4f05",
+  "symbol": "CFontStyleListBox::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B95D0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B9614",
+    "0x006B9621"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

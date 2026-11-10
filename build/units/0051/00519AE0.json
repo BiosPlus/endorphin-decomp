@@ -1,0 +1,36 @@
+{
+  "va": "0x00519AE0",
+  "size": 284,
+  "sha256": "aed80326f0b8dbde24678492e76fa2e94a9aab7479e4727e702e0a340df7257f",
+  "symbol": "SelectionMethodSteadyStateGrid::vfunc_2",
+  "callees": [
+    "0x00435D00",
+    "0x005193A0",
+    "0x00519820",
+    "0x00695240",
+    "0x006955D0"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00519AE8",
+    "0x00519B01",
+    "0x00519B07",
+    "0x00519B0E",
+    "0x00519B14",
+    "0x00519B1F",
+    "0x00519B27",
+    "0x00519B36",
+    "0x00519B65",
+    "0x00519BB7",
+    "0x00519BBD",
+    "0x00519BCD",
+    "0x00519BD2",
+    "0x00519BD8",
+    "0x00519BDE",
+    "0x00519BE9",
+    "0x00519BF0"
+  ],
+  "status": "todo"
+}

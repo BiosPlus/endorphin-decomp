@@ -1,0 +1,28 @@
+{
+  "va": "0x005143C0",
+  "size": 151,
+  "sha256": "a016c813a7c7cde4b5aecf7676b6c937f4f80bdd26200f368a7b1feeb1047b6b",
+  "symbol": "ExprParser::PrimitiveProxyCreator\u003cChromosome::Descriptor, float, 60\u003e::vfunc_17",
+  "callees": [
+    "0x00403560",
+    "0x004BA270",
+    "0x006A6DD2",
+    "0x006A6E9E"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005143C3",
+    "0x005143E0",
+    "0x005143E5",
+    "0x005143F5",
+    "0x00514403",
+    "0x0051440D",
+    "0x0051441F",
+    "0x00514424",
+    "0x0051442E",
+    "0x00514433"
+  ],
+  "status": "todo"
+}

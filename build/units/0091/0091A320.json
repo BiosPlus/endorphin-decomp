@@ -1,0 +1,18 @@
+{
+  "va": "0x0091A320",
+  "size": 21,
+  "sha256": "1cfed8a2245fb9dcf7fc4e4754b0806ea1b1cebf46812b7e43d3d4bdde8f55d0",
+  "symbol": "sub_0091A320",
+  "callees": [
+    "0x006A6D5C"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0091A321",
+    "0x0091A32B",
+    "0x0091A330"
+  ],
+  "status": "out_of_scope"
+}

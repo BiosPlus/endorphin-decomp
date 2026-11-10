@@ -1,0 +1,25 @@
+{
+  "va": "0x00488480",
+  "size": 134,
+  "sha256": "1f12910e4c1d051650ae1b93b0633a1d80974fa5d983140bbb3e0e7c0e4e4aec",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::AnimationEventData::`vcall'{324, {flat}}, 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046E780",
+    "0x00488260",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00488489",
+    "0x004884B6",
+    "0x004884C6",
+    "0x004884D8",
+    "0x004884F3",
+    "0x004884F8",
+    "0x00488502"
+  ],
+  "status": "todo"
+}

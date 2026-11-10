@@ -1,0 +1,21 @@
+{
+  "va": "0x004EC900",
+  "size": 165,
+  "sha256": "c4bd76a3e168939cf1d7b74e2620ccf402b7014939ca5b36d7fe4f352465bb99",
+  "symbol": "FluidObjectSelection::vfunc_0_off_18",
+  "callees": [
+    "0x00494000",
+    "0x004940E0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004EC915",
+    "0x004EC937",
+    "0x004EC945",
+    "0x004EC95D",
+    "0x004EC97F"
+  ],
+  "status": "todo"
+}

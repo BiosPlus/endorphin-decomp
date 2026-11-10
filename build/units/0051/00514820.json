@@ -1,0 +1,23 @@
+{
+  "va": "0x00514820",
+  "size": 206,
+  "sha256": "a4fbf127905e6627ad09f7152453c8d0a71ac255999abaa57f8f7cdaa9e44dde",
+  "symbol": "Properties::SequenceType\u003cDoubleArray, Properties::GetTerminalParent, DeRefValue\u003e::vfunc_3",
+  "callees": [
+    "0x00493D90",
+    "0x005142F0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00514829",
+    "0x00514854",
+    "0x0051486E",
+    "0x00514881",
+    "0x00514890",
+    "0x005148BA",
+    "0x005148CD"
+  ],
+  "status": "todo"
+}

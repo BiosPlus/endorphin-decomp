@@ -1,0 +1,14 @@
+{
+  "va": "0x00449FC0",
+  "size": 5,
+  "sha256": "ae2b9c64587f92098803a093d047e66faaeea202f146e863635f9331d1eddfee",
+  "symbol": "ReloadCharacterDialog::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00449FC1"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,16 @@
+{
+  "va": "0x0064ED30",
+  "size": 34,
+  "sha256": "3792580dc064a42b770d2206b73b96a613c91b1029ca363c77e22a2b3be606bf",
+  "symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwing(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0064DF20"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064ED4A"
+  ],
+  "status": "todo"
+}

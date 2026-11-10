@@ -1,0 +1,17 @@
+{
+  "va": "0x005AC7C0",
+  "size": 34,
+  "sha256": "b315cd16c3d5972c836f229ad58baa28befb5e8f97cb73d6a9ef1d5f367c6622",
+  "symbol": "Commands::MirrorFluidObjectCommand::vfunc_3",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005AC7C7",
+    "0x005AC7D7"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:15:51Z"
+}

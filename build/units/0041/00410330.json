@@ -1,0 +1,19 @@
+{
+  "va": "0x00410330",
+  "size": 30,
+  "sha256": "062b0985e9b93d9adb557bf42b6dcc2dd2ade0aca19bb03fd1abea28eab22f83",
+  "symbol": "CColorStatic::vfunc_1",
+  "callees": [
+    "0x00410230",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00410334",
+    "0x00410341"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

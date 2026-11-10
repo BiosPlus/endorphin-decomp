@@ -1,0 +1,16 @@
+{
+  "va": "0x0044CAB0",
+  "size": 31,
+  "sha256": "032011aeb23d8d1b478aeca9cf83aecd6b639281aa7481c800aee162818fca7d",
+  "symbol": "sub_0044CAB0",
+  "callees": [
+    "0x0044C830"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044CABB"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x006A344E",
+  "size": 6,
+  "sha256": "db3a582d373891e9efd78c96a57072cb85a8e8f9d443531a075764f7a5e49b71",
+  "symbol": "thunk_MSVFW32_DrawDibOpen",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006A3450"
+  ],
+  "status": "out_of_scope"
+}

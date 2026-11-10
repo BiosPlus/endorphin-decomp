@@ -1,0 +1,24 @@
+{
+  "va": "0x005F4840",
+  "size": 233,
+  "sha256": "0df73c541ebd1a4d3dede48f70bb8a50bcaab86017174022fa64b05c1ecce980",
+  "symbol": "EffectorGroup::vfunc_16",
+  "callees": [
+    "0x005F3E70"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005F4846",
+    "0x005F4883",
+    "0x005F4892",
+    "0x005F489E",
+    "0x005F48B4",
+    "0x005F48C1",
+    "0x005F48D4",
+    "0x005F48DA",
+    "0x005F491B"
+  ],
+  "status": "todo"
+}

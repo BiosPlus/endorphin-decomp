@@ -1,0 +1,14 @@
+{
+  "va": "0x00544D80",
+  "size": 31,
+  "sha256": "265d34127fc62217aa1261738ffe8364bf756c43a22e7205b38c040d55627287",
+  "symbol": "SnapTranslateTool::vfunc_26",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:12:25Z"
+}

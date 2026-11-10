@@ -83,7 +83,7 @@ case "$TOOL_NAME" in
 
       # Block direct edits to protected ledger, CI, security hooks, HTML, or binary caches
       case "$REL_PATH" in
-        build/units.json|build/classes.json|build/target.json)
+        build/units.json|build/units/*|build/classes.json|build/target.json)
           deny_tool "Direct editing of $REL_PATH is forbidden; use ./tools/work check or ./tools/work skip."
           ;;
         docs/*|*.html|*.htm)
@@ -127,7 +127,7 @@ case "$TOOL_NAME" in
       fi
 
       # Block shell redirection or in-place edits targeting build/units.json, HTML files, or security hooks
-      if echo "$CMD_LINE" | grep -qE '(>|>>|tee[[:space:]]+|sed[[:space:]]+-i|awk[[:space:]]+-i|mv[[:space:]]+.*|cp[[:space:]]+.*)(build/units\.json|docs/|\.html|\.claude/|tools/security_guard\.sh|\.git/hooks)'; then
+      if echo "$CMD_LINE" | grep -qE '(>|>>|tee[[:space:]]+|sed[[:space:]]+-i|awk[[:space:]]+-i|mv[[:space:]]+.*|cp[[:space:]]+.*)(build/units(\.json|/)|docs/|\.html|\.claude/|tools/security_guard\.sh|\.git/hooks)'; then
         deny_tool "Direct shell modification of protected files (build/units.json, HTML, or security hooks) is forbidden."
       fi
     fi

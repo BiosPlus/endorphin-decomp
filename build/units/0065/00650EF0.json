@@ -1,0 +1,16 @@
+{
+  "va": "0x00650EF0",
+  "size": 113,
+  "sha256": "b10afb2994d7c76322f952b3e6952b43cecad439df2ded200044261218205305",
+  "symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026[thunk]: __thiscall EffectorGroup::`vcall'{88, {flat}}\u003e::vfunc_48",
+  "callees": [
+    "0x005F35C0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00650F17"
+  ],
+  "status": "todo"
+}

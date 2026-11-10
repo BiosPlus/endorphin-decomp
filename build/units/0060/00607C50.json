@@ -1,0 +1,23 @@
+{
+  "va": "0x00607C50",
+  "size": 122,
+  "sha256": "3a5967f28354c8a6018cc32fc62ffbbd355f131b0e3f3d54f775ff5b064386d5",
+  "symbol": "ExprParser::WriteMethodType\u003cEffector, float, \u0026[thunk]: __thiscall Effector::`vcall'{100, {flat}}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00607C59",
+    "0x00607C6C",
+    "0x00607C74",
+    "0x00607C79",
+    "0x00607C86",
+    "0x00607C94",
+    "0x00607C9B",
+    "0x00607CB6"
+  ],
+  "status": "todo"
+}

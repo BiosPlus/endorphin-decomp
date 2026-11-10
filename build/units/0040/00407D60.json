@@ -1,0 +1,19 @@
+{
+  "va": "0x00407D60",
+  "size": 67,
+  "sha256": "c7ce33fdeed281080a4ba1cce12bea8a4cb3caec656cbcece8816a11bc8ec095",
+  "symbol": "BottomPanel::vfunc_61",
+  "callees": [
+    "0x00407BB0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00407D72",
+    "0x00407D79",
+    "0x00407D7E",
+    "0x00407D8F"
+  ],
+  "status": "todo"
+}

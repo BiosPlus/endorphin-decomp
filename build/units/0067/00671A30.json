@@ -1,0 +1,17 @@
+{
+  "va": "0x00671A30",
+  "size": 48,
+  "sha256": "0e0e47fbafc68cffdaedcd2b8ecb222dd992bede09365f4015faa576a3ed4132",
+  "symbol": "ExprParser::Vector3Type::vfunc_41",
+  "callees": [
+    "0x006719A0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00671A37"
+  ],
+  "status": "deferred",
+  "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
+}

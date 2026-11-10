@@ -1,0 +1,19 @@
+{
+  "va": "0x0040FDA0",
+  "size": 22,
+  "sha256": "3a04698d686336083832478f689acfc7312fab5d3de22cc117937e7a9eb065c6",
+  "symbol": "CColorCheck::vfunc_22",
+  "callees": [
+    "0x006A5EA2"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040FDAA",
+    "0x0040FDB2"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:36:13Z"
+}

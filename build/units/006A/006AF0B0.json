@@ -1,0 +1,34 @@
+{
+  "va": "0x006AF0B0",
+  "size": 311,
+  "sha256": "1a1675de4c540e1ad5794510b190979f595de0c72df0548443896eca4326fab4",
+  "symbol": "GWCCategoryItem::vfunc_13",
+  "callees": [
+    "0x006A5E00",
+    "0x006A6010",
+    "0x006A7C00",
+    "0x006A7D50",
+    "0x006A7D70",
+    "0x006A9540",
+    "0x006AD010"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006AF0B3",
+    "0x006AF112",
+    "0x006AF123",
+    "0x006AF12D",
+    "0x006AF133",
+    "0x006AF14C",
+    "0x006AF158",
+    "0x006AF162",
+    "0x006AF177",
+    "0x006AF183",
+    "0x006AF1A1",
+    "0x006AF1AA",
+    "0x006AF1C4"
+  ],
+  "status": "todo"
+}

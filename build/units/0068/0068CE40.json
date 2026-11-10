@@ -1,0 +1,26 @@
+{
+  "va": "0x0068CE40",
+  "size": 170,
+  "sha256": "3215c7b4df7fdcc7ccd4ab9b4521445ebd41a1960fb245989a45f2881e366abf",
+  "symbol": "ExprParser::ReadMethodType\u003cRandomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00672080",
+    "0x0068BED0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0068CE49",
+    "0x0068CE64",
+    "0x0068CE79",
+    "0x0068CE8D",
+    "0x0068CED7",
+    "0x0068CEDC",
+    "0x0068CEE6"
+  ],
+  "status": "todo"
+}

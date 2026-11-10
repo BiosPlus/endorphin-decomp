@@ -1,0 +1,14 @@
+{
+  "va": "0x00603440",
+  "size": 49,
+  "sha256": "33d03f89421c248e8b7074b4f31bbe58d3386eac5b1962a7b9fa2d6ffe0936fc",
+  "symbol": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e::vfunc_41",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5",
+  "matched_at": "2026-11-10T03:35:17Z"
+}

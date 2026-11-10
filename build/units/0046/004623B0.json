@@ -1,0 +1,19 @@
+{
+  "va": "0x004623B0",
+  "size": 132,
+  "sha256": "6a80d93c3354a9803fdd7ee72591257e29b3ecdf667bf4d2af5b732e1e7dee8d",
+  "symbol": "Properties::ValidatingValue::vfunc_3",
+  "callees": [
+    "0x0041CE40"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004623B3",
+    "0x004623DA",
+    "0x004623E4",
+    "0x0046241F"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x005B1000",
+  "size": 5,
+  "sha256": "66439c46432f1ce243b5bc8f58dbb18bba433d8e7d6e6d84b58a86e342414c59",
+  "symbol": "Geometry::AnimationType::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005B1001"
+  ],
+  "status": "out_of_scope"
+}

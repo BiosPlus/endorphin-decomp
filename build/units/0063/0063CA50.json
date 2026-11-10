@@ -1,0 +1,20 @@
+{
+  "va": "0x0063CA50",
+  "size": 30,
+  "sha256": "da1eab65858d505370f9e531f8ee29242b153b945993678aff0d426a0e82c8fd",
+  "symbol": "ExprParser::ROWriteMethodType\u003cEffectorWithMemory, float, \u0026public: void __thiscall EffectorWithMemory::setIntegralGradient(float)\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0063CA57",
+    "0x0063CA5C",
+    "0x0063CA64"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:46:42Z"
+}

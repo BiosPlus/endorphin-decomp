@@ -9,6 +9,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"endorphin_decomp/internal/unitstore"
 )
 
 type UnitEntry struct {
@@ -100,14 +102,14 @@ func main() {
 		os.Exit(1)
 	}
 
-	unitsBytes, err := os.ReadFile("build/units.json")
+	unitsBytes, err := unitstore.ReadAll()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error reading build/units.json: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error reading unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
 	var units []UnitEntry
 	if err := json.Unmarshal(unitsBytes, &units); err != nil {
-		fmt.Fprintf(os.Stderr, "Error parsing build/units.json: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error parsing unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
 

@@ -1,0 +1,24 @@
+{
+  "va": "0x0049EDF0",
+  "size": 100,
+  "sha256": "e23ed0fd000e25d105c05bac0f98a8873982f9a7cffff078701c421f43399fc0",
+  "symbol": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVectorWithFind\u003cNMData::ValuePtrData\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_10",
+  "callees": [
+    "0x0049CF60",
+    "0x00527AF0",
+    "0x006616B0",
+    "0x006A6E9E"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0049EDFF",
+    "0x0049EE20",
+    "0x0049EE2D",
+    "0x0049EE32",
+    "0x0049EE3A",
+    "0x0049EE4B"
+  ],
+  "status": "todo"
+}

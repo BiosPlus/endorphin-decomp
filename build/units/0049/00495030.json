@@ -1,0 +1,19 @@
+{
+  "va": "0x00495030",
+  "size": 118,
+  "sha256": "afa7b57a05439e2d8650db73110f532e8d6c5538ab1a750d56015c0248ffd8c8",
+  "symbol": "ExprParser::DynamicEnumType\u003cRigManager, \u0026public: int __thiscall RigManager::getRigTypeIndex(void) const, \u0026public: void __thiscall RigManager::setRigTypeIndex(int), \u0026public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall RigManager::getRigTypeNameFromIndex(int) const\u003e::vfunc_27",
+  "callees": [
+    "0x00494860"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00495033",
+    "0x00495062",
+    "0x00495077",
+    "0x0049508E"
+  ],
+  "status": "todo"
+}

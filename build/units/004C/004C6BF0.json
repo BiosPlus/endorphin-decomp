@@ -1,0 +1,41 @@
+{
+  "va": "0x004C6BF0",
+  "size": 382,
+  "sha256": "1d3c0a94cc48b274dfbfe9366c53b528239c99ad47ca69206d9cd6b4ec829b2f",
+  "symbol": "NMData::ForceEventData::vfunc_1_off_154",
+  "callees": [
+    "0x004026E0",
+    "0x00466910",
+    "0x00466F00",
+    "0x004A6970",
+    "0x004C28C0",
+    "0x004C6130",
+    "0x00528BB0",
+    "0x00528BF0",
+    "0x00586D00",
+    "0x00594000",
+    "0x00661F70",
+    "0x006A5C5C"
+  ],
+  "num_callees": 12,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C6BF9",
+    "0x004C6C11",
+    "0x004C6C72",
+    "0x004C6C85",
+    "0x004C6CA1",
+    "0x004C6CBE",
+    "0x004C6CCC",
+    "0x004C6CDB",
+    "0x004C6CE9",
+    "0x004C6CF4",
+    "0x004C6D0F",
+    "0x004C6D19",
+    "0x004C6D2A",
+    "0x004C6D39",
+    "0x004C6D50"
+  ],
+  "status": "todo"
+}

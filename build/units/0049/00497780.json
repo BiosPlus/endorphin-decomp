@@ -1,0 +1,19 @@
+{
+  "va": "0x00497780",
+  "size": 105,
+  "sha256": "d6138b16d693c3094ef7c59110d3c375c66c752e851c4c60d03fd2aeef011540",
+  "symbol": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e::vfunc_42",
+  "callees": [
+    "0x00497650"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00497783",
+    "0x004977A4",
+    "0x004977BA",
+    "0x004977D1"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,24 @@
+{
+  "va": "0x006B5D60",
+  "size": 311,
+  "sha256": "b8fa306e9304e774a20520084ad45312afbfec9daa7609bf5230777b7e7f14e8",
+  "symbol": "GWCPropInPlaceButton::vfunc_66",
+  "callees": [
+    "0x006A5DA0",
+    "0x006A5E00"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B5D90",
+    "0x006B5DDF",
+    "0x006B5DE8",
+    "0x006B5DF8",
+    "0x006B5E2A",
+    "0x006B5E51",
+    "0x006B5E7E",
+    "0x006B5E8E"
+  ],
+  "status": "todo"
+}

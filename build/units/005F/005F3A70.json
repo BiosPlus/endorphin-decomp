@@ -1,0 +1,23 @@
+{
+  "va": "0x005F3A70",
+  "size": 122,
+  "sha256": "69a23e912827cad78581f463974305701d42891e18d00949e7b35b6383b88bbd",
+  "symbol": "ExprParser::WriteMethodType\u003cEffectorGroup, float, \u0026public: void __thiscall EffectorGroup::setForceCaps(float)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005F3A79",
+    "0x005F3A8C",
+    "0x005F3A94",
+    "0x005F3A99",
+    "0x005F3AA6",
+    "0x005F3AB4",
+    "0x005F3ABB",
+    "0x005F3AD6"
+  ],
+  "status": "todo"
+}

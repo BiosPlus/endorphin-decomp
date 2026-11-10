@@ -1,0 +1,18 @@
+{
+  "va": "0x00604C40",
+  "size": 34,
+  "sha256": "a13ba695a2f15f5243c059c95dbb8ed86e4b55c5581158176c742006dfeea3fc",
+  "symbol": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e::vfunc_41",
+  "callees": [
+    "0x006036A0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00604C5A"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:24:07Z"
+}

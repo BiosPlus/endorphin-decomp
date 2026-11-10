@@ -1,0 +1,21 @@
+{
+  "va": "0x004EC6B0",
+  "size": 47,
+  "sha256": "e338d2c41dda4f85810a4e9465b7a9d53e8e757bb2eb8c2bf56a0ce7dfa69f6b",
+  "symbol": "CharacterSelection::vfunc_3_off_4",
+  "callees": [
+    "0x00640110",
+    "0x00640A50",
+    "0x00692A80"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004EC6B1",
+    "0x004EC6C1",
+    "0x004EC6CB",
+    "0x004EC6D6"
+  ],
+  "status": "todo"
+}

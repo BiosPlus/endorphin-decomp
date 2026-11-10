@@ -1,0 +1,13 @@
+{
+  "va": "0x004F9840",
+  "size": 13,
+  "sha256": "da3d58affc4aa423cfaeab8c524750df21ec137be37d9d4172bbc44be334ae90",
+  "symbol": "VMCSModes::DefaultImplementation::vfunc_16",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,15 @@
+{
+  "va": "0x0040CDF0",
+  "size": 6,
+  "sha256": "7382d93947245ad49e08e4cf3334e8cd3f64422492b2847ddb3e7a56e41fb79f",
+  "symbol": "NewCharacterDialog::vfunc_92",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040CDF1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

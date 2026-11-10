@@ -1,0 +1,22 @@
+{
+  "va": "0x005ACC90",
+  "size": 81,
+  "sha256": "33ac46c2b624ef0866b13f480b56cd1d9386eb92ae8bc2bb626d624d5eea0683",
+  "symbol": "Commands::RemoveCollisionModelCommand::vfunc_1",
+  "callees": [
+    "0x00468180",
+    "0x00468F70",
+    "0x00528B60",
+    "0x005BF4A0"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005ACCA3",
+    "0x005ACCAA",
+    "0x005ACCCE",
+    "0x005ACCDA"
+  ],
+  "status": "todo"
+}

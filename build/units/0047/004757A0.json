@@ -1,0 +1,18 @@
+{
+  "va": "0x004757A0",
+  "size": 67,
+  "sha256": "26cd0251d232b1a8fd5f735636029a4c1bf3fc2aea2f729ebd40a8b2d7dbc07c",
+  "symbol": "RuntimeEngine::vfunc_0_off_8",
+  "callees": [
+    "0x0046F930",
+    "0x005A6300"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004757D3",
+    "0x004757DB"
+  ],
+  "status": "todo"
+}

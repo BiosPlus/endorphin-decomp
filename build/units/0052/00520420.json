@@ -1,0 +1,19 @@
+{
+  "va": "0x00520420",
+  "size": 30,
+  "sha256": "b58ca67394f37032f33336ca54501ec0f2deec903f8c323c3f9f580e67fb7ef3",
+  "symbol": "StateMachine::State::vfunc_0",
+  "callees": [
+    "0x0051FBB0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00520424",
+    "0x00520431"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

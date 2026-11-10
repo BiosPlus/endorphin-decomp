@@ -1,0 +1,36 @@
+{
+  "va": "0x005F52A0",
+  "size": 172,
+  "sha256": "f4d3b08e849ec80b5bc275f0b02f226e946cd92c708f0d686ab91b01f96234f5",
+  "symbol": "HelperGraphic::vfunc_22",
+  "callees": [
+    "0x00427550",
+    "0x005329A0",
+    "0x0058F650",
+    "0x00640110",
+    "0x00640390",
+    "0x00640BC0"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005F52AA",
+    "0x005F52AF",
+    "0x005F52B6",
+    "0x005F52C6",
+    "0x005F52D0",
+    "0x005F52D5",
+    "0x005F52DD",
+    "0x005F52ED",
+    "0x005F52F5",
+    "0x005F52FC",
+    "0x005F5312",
+    "0x005F531C",
+    "0x005F5326",
+    "0x005F532B",
+    "0x005F5335",
+    "0x005F5341"
+  ],
+  "status": "todo"
+}

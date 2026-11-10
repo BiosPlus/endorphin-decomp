@@ -1,0 +1,13 @@
+{
+  "va": "0x005455F0",
+  "size": 13,
+  "sha256": "2d24aaa53dbdc49b88dfcb06be13e75d2938fd7c92383d678e77da9f407f2b4e",
+  "symbol": "PoseTool::vfunc_28",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

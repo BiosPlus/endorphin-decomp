@@ -1,0 +1,29 @@
+{
+  "va": "0x005246E0",
+  "size": 105,
+  "sha256": "99d05a892cb9816522b268d13c4c0c0fab99638bbbf132fcf72109fbf1d9cc92",
+  "symbol": "NMData::NetworkConnectorData::vfunc_22",
+  "callees": [
+    "0x00427550",
+    "0x005058B0",
+    "0x00640110",
+    "0x00870300"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005246E1",
+    "0x005246F1",
+    "0x00524701",
+    "0x0052470B",
+    "0x00524711",
+    "0x00524717",
+    "0x00524722",
+    "0x00524727",
+    "0x0052472D",
+    "0x00524738",
+    "0x00524740"
+  ],
+  "status": "todo"
+}

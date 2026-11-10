@@ -1,0 +1,23 @@
+{
+  "va": "0x00597DA0",
+  "size": 71,
+  "sha256": "82edba804b0ddee169b32c3c4c59db79f270cb4c454ddd690d306cd78f99dc4b",
+  "symbol": "ExprParser::ReadMethodType\u003cWorld, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1\u003e::vfunc_0",
+  "callees": [
+    "0x0046C3C0",
+    "0x00596330",
+    "0x006720C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00597DB6",
+    "0x00597DC2",
+    "0x00597DD4",
+    "0x00597DD9",
+    "0x00597DE3"
+  ],
+  "status": "todo"
+}

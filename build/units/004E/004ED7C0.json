@@ -1,0 +1,15 @@
+{
+  "va": "0x004ED7C0",
+  "size": 8,
+  "sha256": "75f0568e11feaf4f0a604c893aa6225eaae8e19db2fad21365b8da0affb2b816",
+  "symbol": "MetaBodyJointSelection::vfunc_0_off_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004ED7C4"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

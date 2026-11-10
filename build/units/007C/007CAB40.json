@@ -1,0 +1,16 @@
+{
+  "va": "0x007CAB40",
+  "size": 57,
+  "sha256": "7154019c00055d126a5fe0d68ffcc1dd81d132e49a069c7d4d5d9c955189951e",
+  "symbol": "sub_007CAB40",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007CAB61"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T05:55:57Z"
+}

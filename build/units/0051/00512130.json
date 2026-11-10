@@ -1,0 +1,23 @@
+{
+  "va": "0x00512130",
+  "size": 82,
+  "sha256": "0d27412b1e6ac3e438efb8142ee307179741ad2ef450f1c8c6b819a639c6843b",
+  "symbol": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, float, {public: float __thiscall Chromosome::Descriptor::getLowerLimit(void) const, 0}, 0\u003e::vfunc_0",
+  "callees": [
+    "0x0046C3C0",
+    "0x00511270",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00512146",
+    "0x0051215D",
+    "0x0051216F",
+    "0x00512174",
+    "0x0051217E"
+  ],
+  "status": "todo"
+}

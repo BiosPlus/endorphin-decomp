@@ -19,6 +19,8 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+
+	"endorphin_decomp/internal/unitstore"
 )
 
 type TargetConfig struct {
@@ -348,7 +350,7 @@ func compareMaskedBytes(compiled ObjFunc, targetBytes []byte, unit UnitEntry, st
 		}
 	}
 
-	// Mask 32-bit relocations recorded on the target unit in build/units.json
+	// Mask 32-bit relocations recorded on the target unit in the unit ledger (build/units/)
 	for _, rHex := range unit.Relocations {
 		if rVA64, err := strconv.ParseUint(strings.TrimPrefix(rHex, "0x"), 16, 32); err == nil {
 			rVA := uint32(rVA64)
@@ -375,14 +377,14 @@ func main() {
 		*modifiedOnly = false
 	}
 
-	unitsBytes, err := os.ReadFile("build/units.json")
+	unitsBytes, err := unitstore.ReadAll()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error reading build/units.json: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error reading unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
 	var units []UnitEntry
 	if err := json.Unmarshal(unitsBytes, &units); err != nil {
-		fmt.Fprintf(os.Stderr, "Error parsing build/units.json: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error parsing unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
 
@@ -471,7 +473,7 @@ func main() {
 			}
 			u := &units[uIdx]
 			if len(u.SHA256) != 64 || u.Size == 0 {
-				failures = append(failures, fmt.Sprintf("%s: unit %s has invalid metadata in build/units.json", cppPath, va))
+				failures = append(failures, fmt.Sprintf("%s: unit %s has invalid metadata in the unit ledger (build/units/)", cppPath, va))
 				continue
 			}
 
@@ -522,7 +524,7 @@ func main() {
 	if unitsUpdated {
 		outJSON, err := json.MarshalIndent(units, "", "  ")
 		if err == nil {
-			_ = os.WriteFile("build/units.json", append(outJSON, '\n'), 0644)
+			_ = unitstore.WriteAll(outJSON)
 		}
 	}
 

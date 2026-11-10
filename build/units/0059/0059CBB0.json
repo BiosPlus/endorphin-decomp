@@ -1,0 +1,15 @@
+{
+  "va": "0x0059CBB0",
+  "size": 8,
+  "sha256": "0804d2de2f50a6c9b9cd0fcddef2511e41723c65973e06d8d0298d745fd28591",
+  "symbol": "World::vfunc_1_off_C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0059CBB4"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x006264A0",
+  "size": 99,
+  "sha256": "f5192d9ba2a5b5a8a8009717d633061af6fe319a61a7d9bf38fa754aac4a9c9b",
+  "symbol": "TransformRefNode::vfunc_17_off_C",
+  "callees": [
+    "0x00626450",
+    "0x006A5C62"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006264A3",
+    "0x006264BF",
+    "0x006264DD"
+  ],
+  "status": "todo"
+}

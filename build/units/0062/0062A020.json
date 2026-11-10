@@ -1,0 +1,16 @@
+{
+  "va": "0x0062A020",
+  "size": 113,
+  "sha256": "049dda941d1717ae495e99e3682bde37aff6e17ecbb7673fc77c0a4e13dbd7d8",
+  "symbol": "ExprParser::WriteMethodType\u003cSensors::SensorMetaBodyRelativeTime, float, \u0026public: void __thiscall Sensors::SensorMetaBodyRelativeTime::resetTime(float)\u003e::vfunc_48",
+  "callees": [
+    "0x00629F10"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062A047"
+  ],
+  "status": "todo"
+}

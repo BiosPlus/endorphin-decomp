@@ -1,0 +1,19 @@
+{
+  "va": "0x004495D0",
+  "size": 82,
+  "sha256": "945ce19292cbbb94c3173a2cc011779b938756378adf3bc19f31f3eff4e3f635",
+  "symbol": "RangeDialog::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004495E3",
+    "0x004495F5",
+    "0x00449607",
+    "0x00449619"
+  ],
+  "status": "todo"
+}

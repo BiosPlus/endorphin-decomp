@@ -1,0 +1,24 @@
+{
+  "va": "0x006390D0",
+  "size": 97,
+  "sha256": "25a2e63ab4f62fd8fa125ecd551fbb4a59dd934832cf7b6a07aba2d683c28cb3",
+  "symbol": "ExprParser::ReadMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTimeDelay(void) const, 0\u003e::vfunc_2",
+  "callees": [
+    "0x0046C3C0",
+    "0x006A6DD2",
+    "0x006A6DE0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006390FA",
+    "0x006390FF",
+    "0x0063910B",
+    "0x00639110",
+    "0x0063911E",
+    "0x00639123",
+    "0x0063912D"
+  ],
+  "status": "todo"
+}

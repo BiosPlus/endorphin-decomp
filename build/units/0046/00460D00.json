@@ -1,0 +1,21 @@
+{
+  "va": "0x00460D00",
+  "size": 59,
+  "sha256": "57d02f5bbcf02299b406f1863d109e7c24fa97c3319345f74232d962747c6c2e",
+  "symbol": "UndoHistoryDialog::vfunc_66",
+  "callees": [
+    "0x006A5E00",
+    "0x006A5F7A"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00460D13",
+    "0x00460D19",
+    "0x00460D32"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T06:27:31Z"
+}

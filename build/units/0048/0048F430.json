@@ -1,0 +1,26 @@
+{
+  "va": "0x0048F430",
+  "size": 186,
+  "sha256": "ac817edeba722867d5f430bdeefa766325bdec7c09861a630fa5806f0b3de814",
+  "symbol": "Commands::SetTriggeredEventFrameRangeCommand::vfunc_1",
+  "callees": [
+    "0x0047D870",
+    "0x0047D970",
+    "0x0048EF20",
+    "0x0048EF80"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048F446",
+    "0x0048F454",
+    "0x0048F464",
+    "0x0048F475",
+    "0x0048F487",
+    "0x0048F49B",
+    "0x0048F4A4",
+    "0x0048F4AD"
+  ],
+  "status": "todo"
+}

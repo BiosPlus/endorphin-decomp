@@ -1,0 +1,19 @@
+{
+  "va": "0x00547060",
+  "size": 30,
+  "sha256": "149598b7967b9c00a241565c05e4a80e15978643bd0023cbee41673ab2156ef6",
+  "symbol": "RotateTool::vfunc_1",
+  "callees": [
+    "0x005450C0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00547064",
+    "0x00547071"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

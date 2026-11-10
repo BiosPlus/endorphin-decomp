@@ -1,0 +1,19 @@
+{
+  "va": "0x00528C80",
+  "size": 30,
+  "sha256": "98c79fdf95e18c68741f46e60f267bd427558c3fec05a441b58d55a3bdd5dd29",
+  "symbol": "RenderObjectOwner::vfunc_1",
+  "callees": [
+    "0x00528AE0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00528C84",
+    "0x00528C91"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x004B1F70",
+  "size": 122,
+  "sha256": "f1f426bd1826402af18be2d27e0e8d87f6709b5b1e887618b2bfdbee89394a57",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMin(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setXMin(float), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B1F79",
+    "0x004B1F8C",
+    "0x004B1F94",
+    "0x004B1F99",
+    "0x004B1FA6",
+    "0x004B1FB4",
+    "0x004B1FBB",
+    "0x004B1FD6"
+  ],
+  "status": "todo"
+}

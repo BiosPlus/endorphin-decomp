@@ -1,0 +1,19 @@
+{
+  "va": "0x00506160",
+  "size": 30,
+  "sha256": "67683a9d8b7f67148750613953e67dbab47b5b0e916d07583c95853034c141c7",
+  "symbol": "Chromosome::vfunc_0",
+  "callees": [
+    "0x005149F0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00506164",
+    "0x00506171"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x004B7460",
+  "size": 122,
+  "sha256": "04cb44ef6e9f3004740c77191561156db5dfe2d86785e443eae9512f53bcfeb9",
+  "symbol": "ExprParser::DynamicEnumType\u003cNMData::MaterialPair, \u0026public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, \u0026public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), \u0026public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B7469",
+    "0x004B747C",
+    "0x004B7484",
+    "0x004B7489",
+    "0x004B7496",
+    "0x004B74A4",
+    "0x004B74AB",
+    "0x004B74C6"
+  ],
+  "status": "todo"
+}

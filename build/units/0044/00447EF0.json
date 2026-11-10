@@ -1,0 +1,18 @@
+{
+  "va": "0x00447EF0",
+  "size": 22,
+  "sha256": "efec93cd7fe58e0379f9e73ff09ae1d450980e834db1f233120d3c283e047e1f",
+  "symbol": "ProcessorWarningDialog::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00447EFF"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:36:43Z"
+}

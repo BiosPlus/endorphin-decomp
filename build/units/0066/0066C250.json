@@ -1,0 +1,18 @@
+{
+  "va": "0x0066C250",
+  "size": 75,
+  "sha256": "5b1f6cb0a5596dcf29dfbe369d8a13f6bdf4f7a168561a2563a8e18fe90475df",
+  "symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::orientationTwistSwingAnglesAtoB(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_49",
+  "callees": [
+    "0x00671F30",
+    "0x0067CA30"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066C283",
+    "0x0066C28D"
+  ],
+  "status": "todo"
+}

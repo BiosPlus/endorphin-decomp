@@ -1,0 +1,20 @@
+{
+  "va": "0x0044A170",
+  "size": 103,
+  "sha256": "cc684a3b5af342c2841702810763b19fe51e48fc9abe4c106ab9907fb3d07e66",
+  "symbol": "RenderOptionsPropertyPage::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044A186",
+    "0x0044A198",
+    "0x0044A1AA",
+    "0x0044A1BC",
+    "0x0044A1CE"
+  ],
+  "status": "todo"
+}

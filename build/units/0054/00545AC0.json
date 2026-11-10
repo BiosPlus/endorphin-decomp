@@ -1,0 +1,19 @@
+{
+  "va": "0x00545AC0",
+  "size": 142,
+  "sha256": "77d5023fe0f5137617c7e831cd03bc24952c93a5275fe7e391c05a831a896377",
+  "symbol": "ResizeTool::vfunc_31",
+  "callees": [
+    "0x005434C0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00545AC7",
+    "0x00545AD1",
+    "0x00545ADB",
+    "0x00545B43"
+  ],
+  "status": "todo"
+}

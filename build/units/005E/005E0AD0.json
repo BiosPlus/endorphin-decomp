@@ -1,0 +1,13 @@
+{
+  "va": "0x005E0AD0",
+  "size": 8,
+  "sha256": "16fc79ac38c765030258e185c9a289a7a01b2c17252cb013eb298eab5aa56a93",
+  "symbol": "CompoundBool\u003cenum MainPhysicsAdapter::DebugDrawOptions\u003e::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

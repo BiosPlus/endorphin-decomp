@@ -1,0 +1,23 @@
+{
+  "va": "0x0049CB70",
+  "size": 55,
+  "sha256": "d69c8e8626d3cebdb76b521019f2e5236532e1795ff983cc7e3332e34a415c16",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::State, bool, {public: bool __thiscall NMData::State::isDeactivated(void) const, 0}, 0\u003e::vfunc_5",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x0049AA20",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0049CB7E",
+    "0x0049CB8C",
+    "0x0049CB94",
+    "0x0049CB99",
+    "0x0049CBA3"
+  ],
+  "status": "todo"
+}

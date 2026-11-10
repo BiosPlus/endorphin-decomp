@@ -1,0 +1,19 @@
+{
+  "va": "0x00462390",
+  "size": 30,
+  "sha256": "66ea1856f8e347f0f5019f7b79e05e15a503e0dc27bf272d17bdbd9e59b6df1c",
+  "symbol": "Properties::ValidatingValue::vfunc_0",
+  "callees": [
+    "0x00462380",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00462394",
+    "0x004623A1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

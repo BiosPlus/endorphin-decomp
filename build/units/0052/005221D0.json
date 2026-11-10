@@ -1,0 +1,24 @@
+{
+  "va": "0x005221D0",
+  "size": 66,
+  "sha256": "46cea49084cd4c697194f241929059cf9b0b041b1ee2abcaacea5e98224ae3d8",
+  "symbol": "ThreeLayerNet::vfunc_22",
+  "callees": [
+    "0x005246E0",
+    "0x00640110",
+    "0x00640390",
+    "0x00640A50"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005221D1",
+    "0x005221E3",
+    "0x005221E9",
+    "0x005221F1",
+    "0x005221FE",
+    "0x00522209"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,21 @@
+{
+  "va": "0x004B2020",
+  "size": 71,
+  "sha256": "846b7c4d8b1d088d914f04d075002a71624de5a0b2772e8e40d62299ba03e2ea",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, float, {public: void __thiscall NMData::GraphEngineData::setXMax(float), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x004B10D0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B2044",
+    "0x004B2054",
+    "0x004B2059",
+    "0x004B2063"
+  ],
+  "status": "todo"
+}

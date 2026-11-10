@@ -1,0 +1,13 @@
+{
+  "va": "0x00681B20",
+  "size": 7,
+  "sha256": "12476721bbc907caa629b98f1baea87188c41767fe1f8e1642a868755658e6d7",
+  "symbol": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x0048FE80",
+  "size": 82,
+  "sha256": "c6c6590426925ec11f094b72620f754d62111dd7e69c1db9226bd0ffa6efea62",
+  "symbol": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e::vfunc_0",
+  "callees": [
+    "0x0046C3C0",
+    "0x0048FB10",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048FE96",
+    "0x0048FEAD",
+    "0x0048FEBF",
+    "0x0048FEC4",
+    "0x0048FECE"
+  ],
+  "status": "todo"
+}

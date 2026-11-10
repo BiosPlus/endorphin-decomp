@@ -1,0 +1,14 @@
+{
+  "va": "0x00810200",
+  "size": 64,
+  "sha256": "87ca1dd93168fb69fb0548d273806f1ae672ed67a439c0bdf94debfee0883b91",
+  "symbol": "sub_00810200",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5",
+  "matched_at": "2026-11-10T08:01:46Z"
+}

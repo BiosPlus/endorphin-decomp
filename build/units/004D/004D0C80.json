@@ -1,0 +1,18 @@
+{
+  "va": "0x004D0C80",
+  "size": 86,
+  "sha256": "a48cdfb82bec2654cb879e610e4ae41c13a40e91697a48f8e2dc14538816a933",
+  "symbol": "NMData::TransitionEventData::vfunc_14",
+  "callees": [
+    "0x004C2070",
+    "0x00661650"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D0CB5",
+    "0x004D0CCA"
+  ],
+  "status": "todo"
+}

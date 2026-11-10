@@ -1,0 +1,21 @@
+{
+  "va": "0x004CAF60",
+  "size": 53,
+  "sha256": "05a8436bc9f7eb04a377be69379944dc92630ea1f421db5e226452c321d460c3",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, bool, {public: bool __thiscall NMData::MetaBodyConstraintData::mustKeepOffset(void) const, 0}, 0\u003e::vfunc_2",
+  "callees": [
+    "0x0046C3C0",
+    "0x004CA2F0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CAF6E",
+    "0x004CAF82",
+    "0x004CAF87",
+    "0x004CAF91"
+  ],
+  "status": "todo"
+}

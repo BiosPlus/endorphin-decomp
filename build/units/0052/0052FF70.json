@@ -1,0 +1,21 @@
+{
+  "va": "0x0052FF70",
+  "size": 96,
+  "sha256": "550fd3a02c70516c1ee7ec0b76bf31bffdf87f31470ed9ea802a5f09322e7f44",
+  "symbol": "Primitives::Marker::vfunc_0",
+  "callees": [
+    "0x00532B40",
+    "0x0053A810",
+    "0x006A5C5C"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0052FF73",
+    "0x0052FF99",
+    "0x0052FFA8",
+    "0x0052FFB5"
+  ],
+  "status": "todo"
+}

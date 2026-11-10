@@ -1,0 +1,18 @@
+{
+  "va": "0x0068C230",
+  "size": 80,
+  "sha256": "a23546f340090bff09552057d86ac140ebe761a4d06cec703e7d78970837abd7",
+  "symbol": "ExprParser::FunctionType\u003cRandomizer, float, float, {public: float __thiscall Randomizer::randN(float), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x00672080",
+    "0x0068BE40"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0068C25E",
+    "0x0068C275"
+  ],
+  "status": "todo"
+}

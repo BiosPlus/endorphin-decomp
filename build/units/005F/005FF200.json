@@ -1,0 +1,16 @@
+{
+  "va": "0x005FF200",
+  "size": 51,
+  "sha256": "9977d4613e1f73b1aa2e65c18ee6d811ed4c9e94828c0dd7e03429ca9ab169e0",
+  "symbol": "Sensors::SensorTreeCentreOfMassVelocity::vfunc_14",
+  "callees": [
+    "0x00629B10"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005FF207"
+  ],
+  "status": "todo"
+}

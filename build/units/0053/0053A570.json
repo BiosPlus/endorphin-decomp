@@ -1,0 +1,13 @@
+{
+  "va": "0x0053A570",
+  "size": 15,
+  "sha256": "23fc5cff7e20d7aa3d3f10ac5b634708810dec6781af72fe6ba45de8883bcc05",
+  "symbol": "HasCustomBufferedTMPtr::vfunc_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x00499AE0",
+  "size": 10,
+  "sha256": "3e29a857a984d873066c4620c813a4b02068dcf1bffa83fc9c9922f0209072f0",
+  "symbol": "GuiBaseElement::vfunc_24",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

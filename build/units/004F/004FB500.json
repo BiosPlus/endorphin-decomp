@@ -1,0 +1,16 @@
+{
+  "va": "0x004FB500",
+  "size": 30,
+  "sha256": "502f68e8b9d7a70af2cad52cf3970b62d88ee8dc8d7fedb16510e51860f7275d",
+  "symbol": "VMCSModes::DefaultImplementation::vfunc_124",
+  "callees": [
+    "0x004667A0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004FB509"
+  ],
+  "status": "todo"
+}

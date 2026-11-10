@@ -1,0 +1,24 @@
+{
+  "va": "0x00606CD0",
+  "size": 168,
+  "sha256": "02b3b6a8d506eae11cb2e6714d78f88e0ed53fdcfb3108026d6f349522ce78ef",
+  "symbol": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getForceBaseCap(void) const, 0\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00606CD9",
+    "0x00606D07",
+    "0x00606D1B",
+    "0x00606D65",
+    "0x00606D6A",
+    "0x00606D74"
+  ],
+  "status": "todo"
+}

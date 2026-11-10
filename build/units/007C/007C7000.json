@@ -1,0 +1,15 @@
+{
+  "va": "0x007C7000",
+  "size": 16,
+  "sha256": "762fee43554c4e146b94a7de382d9f4a15ff1c3e3e13ae6771a515014346c7df",
+  "symbol": "sub_007C7000",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007C700C"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

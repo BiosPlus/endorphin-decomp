@@ -1,0 +1,15 @@
+{
+  "va": "0x004D9580",
+  "size": 8,
+  "sha256": "cb8a3e3db549b993e3f703f4d964b10d655713f3a8bfdc009adc4e3c005791f9",
+  "symbol": "NMData::RigNode::vfunc_1_off_C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D9584"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

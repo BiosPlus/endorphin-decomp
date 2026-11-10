@@ -1,0 +1,17 @@
+{
+  "va": "0x005A27B0",
+  "size": 51,
+  "sha256": "f5cfcc8e62d412fd2546b37027f53ec4e569ed037c6bbc09e0e08f195c9a2077",
+  "symbol": "SymbolMapWithChildNameValidation\u003cPointainerMap\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, NMData::DesiredPoseData\u003e\u003e::vfunc_1",
+  "callees": [
+    "0x005DF5C0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005A27C4",
+    "0x005A27CC"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,17 @@
+{
+  "va": "0x0053DA40",
+  "size": 90,
+  "sha256": "85bfc34e58ef6bf6598678065cd9dac4ffb1b9411a6d6b79085216614714479e",
+  "symbol": "Primitives::Sphyl::vfunc_25",
+  "callees": [
+    "0x0053A610"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053DA56",
+    "0x0053DA8C"
+  ],
+  "status": "todo"
+}

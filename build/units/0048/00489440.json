@@ -1,0 +1,23 @@
+{
+  "va": "0x00489440",
+  "size": 122,
+  "sha256": "38da26636d5f7a047dcfffcc498964357b5be1f8509ca1cff10c2c44c015ec8a",
+  "symbol": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::loadPoseDataFromFile(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00489449",
+    "0x0048945C",
+    "0x00489464",
+    "0x00489469",
+    "0x00489476",
+    "0x00489484",
+    "0x0048948B",
+    "0x004894A6"
+  ],
+  "status": "todo"
+}

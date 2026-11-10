@@ -1,0 +1,13 @@
+{
+  "va": "0x004DAB40",
+  "size": 11,
+  "sha256": "c942c23aafcbf9f3109c5a2e60da3b81e66f64b7752f2f38481a8d381672af10",
+  "symbol": "NMData::RigEventData::vfunc_93",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

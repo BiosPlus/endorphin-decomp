@@ -1,0 +1,27 @@
+{
+  "va": "0x004DCA50",
+  "size": 197,
+  "sha256": "ec422948aee216df96b01da565d7945e5ff501bfa7e352b0a3573370fa81f4b6",
+  "symbol": "NMData::RigEventData::vfunc_82",
+  "callees": [
+    "0x004D9480",
+    "0x004DBBE0",
+    "0x004EE590"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004DCA59",
+    "0x004DCA8B",
+    "0x004DCA90",
+    "0x004DCA9B",
+    "0x004DCAAF",
+    "0x004DCAC1",
+    "0x004DCAC7",
+    "0x004DCAD2",
+    "0x004DCAED",
+    "0x004DCAFF"
+  ],
+  "status": "todo"
+}

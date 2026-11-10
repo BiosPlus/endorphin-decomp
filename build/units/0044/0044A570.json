@@ -1,0 +1,28 @@
+{
+  "va": "0x0044A570",
+  "size": 188,
+  "sha256": "5bc8674617eec049e0d1a95734673e770938bc2bb6ffdb0f90c9d8f59810a4d7",
+  "symbol": "NMColourSwatch::vfunc_84",
+  "callees": [
+    "0x006A5E5A",
+    "0x006A5EDE",
+    "0x006A5F50",
+    "0x006A5FC8"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044A579",
+    "0x0044A57E",
+    "0x0044A587",
+    "0x0044A596",
+    "0x0044A5A6",
+    "0x0044A5AF",
+    "0x0044A5B9",
+    "0x0044A5DC",
+    "0x0044A5EB",
+    "0x0044A61C"
+  ],
+  "status": "todo"
+}

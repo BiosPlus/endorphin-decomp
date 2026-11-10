@@ -1,0 +1,20 @@
+{
+  "va": "0x00513020",
+  "size": 113,
+  "sha256": "1ee8749ca9b226efdaacc0bdc9b99ec458a369312e465f286f68316528f7082c",
+  "symbol": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1\u003e::vfunc_0",
+  "callees": [
+    "0x005119F0",
+    "0x006720E0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00513023",
+    "0x0051304E",
+    "0x00513062",
+    "0x00513079"
+  ],
+  "status": "todo"
+}

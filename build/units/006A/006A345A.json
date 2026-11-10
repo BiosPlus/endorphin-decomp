@@ -1,0 +1,14 @@
+{
+  "va": "0x006A345A",
+  "size": 6,
+  "sha256": "fe34918181b426a36ebfbba9a962d1d1957078f7587d8146d952f6f2f913c6bf",
+  "symbol": "thunk_MSVFW32_DrawDibDraw",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006A345C"
+  ],
+  "status": "out_of_scope"
+}

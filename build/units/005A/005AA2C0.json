@@ -1,0 +1,31 @@
+{
+  "va": "0x005AA2C0",
+  "size": 138,
+  "sha256": "70a5009f6b5068cfa2c86548ff1b94fb6da407adfa4994d4f44382a3bbbdbbdb",
+  "symbol": "GenericLoader\u003cNMData::CharacterData, {public: void __thiscall NMData::CharacterData::loadUserEditableParts(class AdvXMLParser::Element const \u0026), 0}\u003e::vfunc_1",
+  "callees": [
+    "0x005A5AD0",
+    "0x0063F530"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005AA2D4",
+    "0x005AA2D9",
+    "0x005AA2E0",
+    "0x005AA2E7",
+    "0x005AA2EE",
+    "0x005AA2F5",
+    "0x005AA2FC",
+    "0x005AA30F",
+    "0x005AA314",
+    "0x005AA31B",
+    "0x005AA322",
+    "0x005AA329",
+    "0x005AA330",
+    "0x005AA337",
+    "0x005AA342"
+  ],
+  "status": "todo"
+}

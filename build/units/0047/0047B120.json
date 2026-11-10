@@ -1,0 +1,17 @@
+{
+  "va": "0x0047B120",
+  "size": 74,
+  "sha256": "ead4bdf73d747e77017ac5fe408863ee83ee6d43f586de7283d618ceafe619cc",
+  "symbol": "SymbolPtrMap\u003cSearchableMap\u003cNMData::TriggeredEventData *, GetNameFromAttribute\u003cNMData::TriggeredEventData *\u003e\u003e\u003e::vfunc_6",
+  "callees": [
+    "0x00479C80"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0047B146",
+    "0x0047B15C"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,17 @@
+{
+  "va": "0x006B4760",
+  "size": 211,
+  "sha256": "d60a9397a77c4c3b05038bd305057cff3e08b189bed83ef02bacd37e18981c62",
+  "symbol": "GWCFontPropertyValue::vfunc_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B47CD",
+    "0x006B47D6",
+    "0x006B47E1",
+    "0x006B47EB"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x00521880",
+  "size": 73,
+  "sha256": "21ab64a970c073ad1250388ee57d98c9c254566eb68e36beaad8730c710b8b59",
+  "symbol": "ExprParser::ReadMethodType\u003cPoseLoader, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall PoseLoader::getPath(void) const, 0}, 0\u003e::vfunc_1",
+  "callees": [
+    "0x0046C3C0",
+    "0x00687090",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0052188E",
+    "0x00521896",
+    "0x0052189D",
+    "0x005218B6",
+    "0x005218BB",
+    "0x005218C5"
+  ],
+  "status": "todo"
+}

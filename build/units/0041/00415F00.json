@@ -1,0 +1,23 @@
+{
+  "va": "0x00415F00",
+  "size": 151,
+  "sha256": "5aa4a7ded34faba928aed58c30657e4ebe19bdc240ddbd79e87a79ea4821739a",
+  "symbol": "CEnTabCtrl::vfunc_84",
+  "callees": [
+    "0x00415E30"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00415F03",
+    "0x00415F37",
+    "0x00415F41",
+    "0x00415F4B",
+    "0x00415F59",
+    "0x00415F65",
+    "0x00415F6B",
+    "0x00415F93"
+  ],
+  "status": "todo"
+}

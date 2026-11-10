@@ -1,0 +1,23 @@
+{
+  "va": "0x0049B5F0",
+  "size": 73,
+  "sha256": "80f2632ab4e3a7e3d3aed26e0d88fb4fb851252990efd93f27e7aaf93925fb74",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::State, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::State::getFileName(void) const, 0}, 0\u003e::vfunc_4",
+  "callees": [
+    "0x004276B0",
+    "0x0046C3C0",
+    "0x0049AA10",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0049B606",
+    "0x0049B611",
+    "0x0049B626",
+    "0x0049B62B",
+    "0x0049B635"
+  ],
+  "status": "todo"
+}

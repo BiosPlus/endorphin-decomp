@@ -1,0 +1,22 @@
+{
+  "va": "0x0060B1E0",
+  "size": 88,
+  "sha256": "3843e8f2b1a860b56572bf34ba392a01dced03b2400cffa6ffeb32516ba5ad08",
+  "symbol": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::DisabledCollisionPair\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_9",
+  "callees": [
+    "0x00494FF0",
+    "0x0060B080",
+    "0x006A6E9E"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060B1F7",
+    "0x0060B1FC",
+    "0x0060B20C",
+    "0x0060B21D",
+    "0x0060B22C"
+  ],
+  "status": "todo"
+}

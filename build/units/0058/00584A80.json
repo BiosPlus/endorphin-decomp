@@ -1,0 +1,15 @@
+{
+  "va": "0x00584A80",
+  "size": 91,
+  "sha256": "68548e334a69b1ff5cf1a14bf11b7f38c4d2f31c388d3297f90d8a2f7f1a17ab",
+  "symbol": "ObjectNode::vfunc_13_off_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00584A99",
+    "0x00584AB5"
+  ],
+  "status": "todo"
+}

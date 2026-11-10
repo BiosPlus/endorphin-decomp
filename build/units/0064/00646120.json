@@ -1,0 +1,15 @@
+{
+  "va": "0x00646120",
+  "size": 8,
+  "sha256": "9691e37bb80df553328228ee47da00df0b11ed1eca69d3bfc300143be83b5dbf",
+  "symbol": "RelationshipRPROMagnet::vfunc_0_off_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00646124"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,26 @@
+{
+  "va": "0x004E0340",
+  "size": 159,
+  "sha256": "fb4341148ba13df79c997c4cc2438287f277a91a8eb8b9eba912678f0123fdab",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::AnimationEventData::getCharacterName(void) const, 0}, 0\u003e::vfunc_46",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00486C90",
+    "0x006720E0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004E0349",
+    "0x004E0364",
+    "0x004E036E",
+    "0x004E0382",
+    "0x004E03CC",
+    "0x004E03D1",
+    "0x004E03DB"
+  ],
+  "status": "todo"
+}

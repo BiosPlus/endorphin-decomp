@@ -1,0 +1,14 @@
+{
+  "va": "0x006B9630",
+  "size": 5,
+  "sha256": "f630e56c0c167ac3584aa91fa2b0ac12e9efe532ca714db2fe4760ca5bd0ed22",
+  "symbol": "CFontStyleListBox::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006B9631"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x005088B0",
+  "size": 30,
+  "sha256": "bc8a83c2ae75b20b15136d81edb495139034d8ca98701f1d7cbcdda2ede83301",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::Task, int, \u0026public: int __thiscall NMData::Task::getID(void) const, 1\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005088B7",
+    "0x005088BC",
+    "0x005088C4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:48:08Z"
+}

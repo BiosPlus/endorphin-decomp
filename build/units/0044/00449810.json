@@ -1,0 +1,19 @@
+{
+  "va": "0x00449810",
+  "size": 30,
+  "sha256": "5cd0b59f1830efa7a8afd20dcd58a60079779d23e9f4efb8e1b68efee0875760",
+  "symbol": "RangeDialog::vfunc_1",
+  "callees": [
+    "0x004493C0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00449814",
+    "0x00449821"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

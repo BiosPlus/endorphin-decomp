@@ -1,0 +1,23 @@
+{
+  "va": "0x005F8620",
+  "size": 47,
+  "sha256": "93f674d0e2e6b2240ae026ab4fbc58285ef6cd1a9b226c6ff046a0b3fc1259f5",
+  "symbol": "ExprParser::ReadMethodType\u003cHelperGraphic, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall HelperGraphic::getType(void) const, 0}, 0\u003e::vfunc_5",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x005F5120",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005F862E",
+    "0x005F8634",
+    "0x005F863C",
+    "0x005F8641",
+    "0x005F864B"
+  ],
+  "status": "todo"
+}

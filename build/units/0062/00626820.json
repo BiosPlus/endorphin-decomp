@@ -1,0 +1,17 @@
+{
+  "va": "0x00626820",
+  "size": 34,
+  "sha256": "ec7d5e7f08848146db769f937ce0a4691848cd6124ccbcf24e10b4b8d345ac1b",
+  "symbol": "NMData::EffectorSkeletalData::vfunc_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00626827",
+    "0x00626837"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:17:43Z"
+}

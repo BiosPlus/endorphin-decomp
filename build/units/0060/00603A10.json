@@ -1,0 +1,21 @@
+{
+  "va": "0x00603A10",
+  "size": 47,
+  "sha256": "4867a156708b8c77a59c6e382f6e0d145a6edf00fbc2d763194e41da046a88a6",
+  "symbol": "ExprParser::ReadMethodType\u003cEffectorBase, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall EffectorBase::getForce(void) const, 1\u003e::vfunc_5",
+  "callees": [
+    "0x0046C3C0",
+    "0x00602F00",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00603A1E",
+    "0x00603A2C",
+    "0x00603A31",
+    "0x00603A3B"
+  ],
+  "status": "todo"
+}

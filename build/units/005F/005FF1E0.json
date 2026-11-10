@@ -1,0 +1,14 @@
+{
+  "va": "0x005FF1E0",
+  "size": 5,
+  "sha256": "781be8c445d3f4f4b0fe7a4f9ff4ca0a7fafd1b1bc6d69701eca0796cfbcbde8",
+  "symbol": "Sensors::SensorAbsoluteShoulderAlpha::vfunc_14",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005FF1E1"
+  ],
+  "status": "out_of_scope"
+}

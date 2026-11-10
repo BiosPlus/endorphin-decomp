@@ -1,0 +1,23 @@
+{
+  "va": "0x00489700",
+  "size": 122,
+  "sha256": "01ba8aef005d22164703493a36b882220c8c3200edd6822dc855c02f0fdbfed9",
+  "symbol": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00489709",
+    "0x0048971C",
+    "0x00489724",
+    "0x00489729",
+    "0x00489736",
+    "0x00489744",
+    "0x0048974B",
+    "0x00489766"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,21 @@
+{
+  "va": "0x004EC860",
+  "size": 159,
+  "sha256": "47d5f186d831a2fbb252aa362cfd18f4745a81627994c48d03018c3e357b6e9f",
+  "symbol": "CollisionSelection::vfunc_0_off_18",
+  "callees": [
+    "0x00494000",
+    "0x004940E0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004EC872",
+    "0x004EC894",
+    "0x004EC8A2",
+    "0x004EC8B7",
+    "0x004EC8D9"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x00540180",
+  "size": 30,
+  "sha256": "fbe502e3eeb7e0a1596f16b329b12cdb1105d6c90a4109ddc6130e08eb375d44",
+  "symbol": "CameraTool::vfunc_1",
+  "callees": [
+    "0x00540130",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00540184",
+    "0x00540191"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

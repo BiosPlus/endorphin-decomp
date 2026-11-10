@@ -10,6 +10,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"endorphin_decomp/internal/unitstore"
 )
 
 type UnitEntry struct {
@@ -610,14 +612,14 @@ func sanitizeFilename(s string) string {
 }
 
 func main() {
-	unitsBytes, err := os.ReadFile("build/units.json")
+	unitsBytes, err := unitstore.ReadAll()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error reading build/units.json: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error reading unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
 	var units []UnitEntry
 	if err := json.Unmarshal(unitsBytes, &units); err != nil {
-		fmt.Fprintf(os.Stderr, "Error parsing build/units.json: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error parsing unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
 
@@ -784,11 +786,11 @@ func main() {
 
 	outJSON, err := json.MarshalIndent(units, "", "  ")
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error marshaling build/units.json: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error marshaling unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
-	if err := os.WriteFile("build/units.json", append(outJSON, '\n'), 0644); err != nil {
-		fmt.Fprintf(os.Stderr, "Error writing build/units.json: %v\n", err)
+	if err := unitstore.WriteAll(outJSON); err != nil {
+		fmt.Fprintf(os.Stderr, "Error writing unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
 

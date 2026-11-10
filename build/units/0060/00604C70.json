@@ -1,0 +1,16 @@
+{
+  "va": "0x00604C70",
+  "size": 110,
+  "sha256": "4d2834e095d62215bc5655facee1d14b2de055b81317e5bdc2701ebe56313686",
+  "symbol": "ExprParser::WriteMethodType\u003cEffectorBase, NM::Vector4 const \u0026, \u0026[thunk]: __thiscall EffectorBase::`vcall'{80, {flat}}\u003e::vfunc_48",
+  "callees": [
+    "0x006036A0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00604C94"
+  ],
+  "status": "todo"
+}

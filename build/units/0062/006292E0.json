@@ -1,0 +1,22 @@
+{
+  "va": "0x006292E0",
+  "size": 143,
+  "sha256": "e343bd04481662d82b9fdf731ea548dc05375ee750097d2b1d582d26d74fe4c9",
+  "symbol": "Sensors::SensorRelativeOrientation::vfunc_15",
+  "callees": [
+    "0x00554490",
+    "0x0067E110"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006292FB",
+    "0x00629305",
+    "0x00629340",
+    "0x0062934A",
+    "0x00629356",
+    "0x00629361"
+  ],
+  "status": "todo"
+}

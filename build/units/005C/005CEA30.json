@@ -1,0 +1,20 @@
+{
+  "va": "0x005CEA30",
+  "size": 25,
+  "sha256": "5adf906122df4f954be19f85ecd6b3784860f5ecbedf088858c883d5b34382b6",
+  "symbol": "sub_005CEA30",
+  "callees": [
+    "0x00648300",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005CEA3A",
+    "0x005CEA40"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T11:22:13Z"
+}

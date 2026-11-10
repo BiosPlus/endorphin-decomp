@@ -1,0 +1,15 @@
+{
+  "va": "0x0041CFC0",
+  "size": 11,
+  "sha256": "5f7de2c9f7171bbc48036dd29d8b3d90c08d55cdcbe957d98a944dffdcb61994",
+  "symbol": "Properties::PropertiesControl::vfunc_87",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041CFC7"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

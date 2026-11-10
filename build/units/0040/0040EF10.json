@@ -1,0 +1,30 @@
+{
+  "va": "0x0040EF10",
+  "size": 126,
+  "sha256": "e2b7b1d60382b63fd5ab5e896c549bcd8d8761faa5288035168dfac4a4d69679",
+  "symbol": "AddCharacterDialog::vfunc_86",
+  "callees": [
+    "0x0040BF20",
+    "0x0040CEF0",
+    "0x0040CF60",
+    "0x0040E2F0",
+    "0x0040ED60",
+    "0x006A5EDE",
+    "0x006A60D6"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040EF13",
+    "0x0040EF2A",
+    "0x0040EF32",
+    "0x0040EF41",
+    "0x0040EF4E",
+    "0x0040EF55",
+    "0x0040EF62",
+    "0x0040EF69",
+    "0x0040EF7A"
+  ],
+  "status": "todo"
+}

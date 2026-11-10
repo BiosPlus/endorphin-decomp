@@ -1,0 +1,24 @@
+{
+  "va": "0x006051F0",
+  "size": 179,
+  "sha256": "00c753e5325303684225f6b633946935b6c5ab68f860c70fc26b13e4be164100",
+  "symbol": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1\u003e::vfunc_46",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006051F9",
+    "0x00605232",
+    "0x00605246",
+    "0x00605290",
+    "0x00605295",
+    "0x0060529F"
+  ],
+  "status": "todo"
+}

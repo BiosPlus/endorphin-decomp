@@ -1,0 +1,15 @@
+{
+  "va": "0x00899CAB",
+  "size": 11,
+  "sha256": "4e907a374d30feea5d4ab335c3b077617afc2ff41593f1c79c6bad1b5755a918",
+  "symbol": "sub_00899CAB",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00899CAC",
+    "0x00899CB2"
+  ],
+  "status": "out_of_scope"
+}

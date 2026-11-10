@@ -1,0 +1,13 @@
+{
+  "va": "0x00537AA0",
+  "size": 10,
+  "sha256": "df58e732ae3c3982f62d9fb8d1c4d3a6c8c16c4f54225e4a784377958941aea0",
+  "symbol": "CompoundRenderable::vfunc_13",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x0054C160",
+  "size": 130,
+  "sha256": "deb4c2f7ac975d4d0869e43494d1bc1b63c368ca4a9d65a34ea0f2ce7f6e787c",
+  "symbol": "RenderableList::vfunc_22",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054C175",
+    "0x0054C18A",
+    "0x0054C194",
+    "0x0054C19E",
+    "0x0054C1B0",
+    "0x0054C1C0",
+    "0x0054C1D2"
+  ],
+  "status": "todo"
+}

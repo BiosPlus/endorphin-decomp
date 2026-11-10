@@ -1,0 +1,15 @@
+{
+  "va": "0x00401B50",
+  "size": 9,
+  "sha256": "89c28343ceb7d2fa0d66b9e499af776de8846be71363a14707b3919c18131140",
+  "symbol": "AVIException::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00401B55"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x00459D20",
+  "size": 30,
+  "sha256": "a69fda75d40c908145b0a669fee3faebcfb33a7935d7bcb8e5bf68f944e075be",
+  "symbol": "TriggeredEventMarkers::Reticule::vfunc_0",
+  "callees": [
+    "0x004593A0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00459D24",
+    "0x00459D31"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

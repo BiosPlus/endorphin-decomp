@@ -1,0 +1,16 @@
+{
+  "va": "0x006AF890",
+  "size": 64,
+  "sha256": "8ab4e3fdfe9993184b70d7e77747a62b14c81ab458fd350cdbec6c981d433f05",
+  "symbol": "GWCCategoryItem::vfunc_6",
+  "callees": [
+    "0x006A60EE"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006AF8CC"
+  ],
+  "status": "todo"
+}

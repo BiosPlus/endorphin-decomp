@@ -1,0 +1,15 @@
+{
+  "va": "0x00473C50",
+  "size": 8,
+  "sha256": "bbdd59468262eb0f31f2796d532a47a58eb876c470ccba9f96f9d718e966cf6a",
+  "symbol": "RuntimeEngine::SimulationTicker::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00473C54"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

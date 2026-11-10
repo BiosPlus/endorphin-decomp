@@ -1,0 +1,24 @@
+{
+  "va": "0x005EC2D0",
+  "size": 80,
+  "sha256": "c21db5012c2a77e7b0eacbe1af5d2b80e478bfddafb87146a1c9e5ef2584a1b2",
+  "symbol": "NMData::RPROMagnetData::vfunc_22",
+  "callees": [
+    "0x005EB5A0",
+    "0x00640110",
+    "0x006404E0",
+    "0x00640A80"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005EC2D1",
+    "0x005EC2E2",
+    "0x005EC2EC",
+    "0x005EC2FB",
+    "0x005EC303",
+    "0x005EC311"
+  ],
+  "status": "todo"
+}

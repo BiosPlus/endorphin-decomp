@@ -1,0 +1,17 @@
+{
+  "va": "0x005324B0",
+  "size": 33,
+  "sha256": "e775960757b0fe6dcd8d24ed0e05eb44b148e590f61a19b22698407f63365778",
+  "symbol": "HasBufferedTMPtr::vfunc_12",
+  "callees": [
+    "0x00661B50"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005324B5",
+    "0x005324BB"
+  ],
+  "status": "todo"
+}

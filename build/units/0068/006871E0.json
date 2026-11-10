@@ -1,0 +1,13 @@
+{
+  "va": "0x006871E0",
+  "size": 6,
+  "sha256": "bd645df092611a961b334cd5ac095e00b780b30b1b489bb06c76e63fef9ffa6a",
+  "symbol": "SymbolContainer::vfunc_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

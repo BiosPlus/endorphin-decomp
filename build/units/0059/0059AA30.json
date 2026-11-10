@@ -1,0 +1,23 @@
+{
+  "va": "0x0059AA30",
+  "size": 178,
+  "sha256": "3dda2b2e5d2ecf85c3285a4a2adecd93482f76be62ea871ecbeb5bb3e12fb8bd",
+  "symbol": "World::vfunc_6",
+  "callees": [
+    "0x0040ECB0",
+    "0x00479C80"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0059AA33",
+    "0x0059AA72",
+    "0x0059AA8C",
+    "0x0059AA9C",
+    "0x0059AAA7",
+    "0x0059AAB7",
+    "0x0059AAC9"
+  ],
+  "status": "todo"
+}

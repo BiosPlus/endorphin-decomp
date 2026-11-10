@@ -1,0 +1,23 @@
+{
+  "va": "0x005264A0",
+  "size": 84,
+  "sha256": "50a62dfd594d101006c655e2e79cefb39a407b6ef9c6f274cc6ac48d0ff7c69b",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::NetworkConnectorData, float, \u0026public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1\u003e::vfunc_4",
+  "callees": [
+    "0x0046C390",
+    "0x0046C3C0",
+    "0x00525E70",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005264B6",
+    "0x005264CC",
+    "0x005264E1",
+    "0x005264E6",
+    "0x005264F0"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x0062A1D0",
+  "size": 122,
+  "sha256": "9ffb7fa8698bf052deffa6581bfaed9c8f0c4d643005516c8faaab27df22f2e5",
+  "symbol": "ExprParser::WriteMethodType\u003cSensors::SensorRelativeTime, float, \u0026public: void __thiscall Sensors::SensorRelativeTime::resetTime(float)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062A1D9",
+    "0x0062A1EC",
+    "0x0062A1F4",
+    "0x0062A1F9",
+    "0x0062A206",
+    "0x0062A214",
+    "0x0062A21B",
+    "0x0062A236"
+  ],
+  "status": "todo"
+}

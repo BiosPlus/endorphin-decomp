@@ -1,0 +1,14 @@
+{
+  "va": "0x00465840",
+  "size": 5,
+  "sha256": "879a110ac1c347ba70fcb71c1723c142757c9f4a024d360ba9f0f827970a9f8a",
+  "symbol": "CAboutDlg::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00465841"
+  ],
+  "status": "out_of_scope"
+}

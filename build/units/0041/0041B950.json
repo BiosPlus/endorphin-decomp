@@ -1,0 +1,15 @@
+{
+  "va": "0x0041B950",
+  "size": 6,
+  "sha256": "0ac9482b81cc176c687eabf3bbd7f586e7ef901fd6d463f6076d8286e162ba13",
+  "symbol": "GridPropertyPage::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041B951"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

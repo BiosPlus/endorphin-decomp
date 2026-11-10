@@ -1,0 +1,19 @@
+{
+  "va": "0x005AA050",
+  "size": 30,
+  "sha256": "594bf6e2248ccd5d14eec4808cb7e3557a7877d139166294b093423a8d1ee022",
+  "symbol": "CharacterUpgrader::vfunc_0",
+  "callees": [
+    "0x005A9EE0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005AA054",
+    "0x005AA061"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

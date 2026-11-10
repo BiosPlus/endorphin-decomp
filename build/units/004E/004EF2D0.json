@@ -1,0 +1,16 @@
+{
+  "va": "0x004EF2D0",
+  "size": 31,
+  "sha256": "7ddb7c1ee78db7c9409428183a2ee6ebc19278e37b84cbd9579c6f58b9b4c960",
+  "symbol": "Properties::MultiSelectProxy::vfunc_0",
+  "callees": [
+    "0x00675DD0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004EF2E5"
+  ],
+  "status": "todo"
+}

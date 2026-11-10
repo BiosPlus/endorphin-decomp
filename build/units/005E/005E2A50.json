@@ -1,0 +1,18 @@
+{
+  "va": "0x005E2A50",
+  "size": 52,
+  "sha256": "b2afa93f8743189896b704b90c81bb65b727f9ea05a795367b1ea62522930155",
+  "symbol": "NMData::SkeletalJointData::vfunc_14",
+  "callees": [
+    "0x005E29F0",
+    "0x00661650"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005E2A6A",
+    "0x005E2A79"
+  ],
+  "status": "todo"
+}

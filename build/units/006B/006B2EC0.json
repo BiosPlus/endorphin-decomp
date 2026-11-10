@@ -1,0 +1,19 @@
+{
+  "va": "0x006B2EC0",
+  "size": 30,
+  "sha256": "59394ab8a44fa41bb32889c9caf467c5457b9e0758afb4dd8f47074ba07f941d",
+  "symbol": "GWCHotLinkItem::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B2BC0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B2EC4",
+    "0x006B2ED1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

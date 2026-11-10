@@ -1,0 +1,13 @@
+{
+  "va": "0x00569FC0",
+  "size": 13,
+  "sha256": "a419ffa1ec122896accca11b9b2521e4ec84c023989dadd2112b52e0fedf361b",
+  "symbol": "ASFData::Bone::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

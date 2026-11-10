@@ -1,0 +1,18 @@
+{
+  "va": "0x005C3010",
+  "size": 32,
+  "sha256": "fec0dcda0db4b3ccb7f762e445f8354a36eef6d4601c44fc88aa6e57ea40b853",
+  "symbol": "NMData::CollisionModelDataBase::vfunc_15",
+  "callees": [
+    "0x005DF1F0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C3025"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:59:40Z"
+}

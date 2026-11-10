@@ -1,0 +1,23 @@
+{
+  "va": "0x004CB5E0",
+  "size": 71,
+  "sha256": "9052d60db870638797a7046b0481a598b965d815ecddfaa51503783ec06173f3",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::MetaBodyConstraintData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::MetaBodyConstraintData::getLockTypeString(void) const, 0}, 0\u003e::vfunc_0",
+  "callees": [
+    "0x0046C3C0",
+    "0x004CA5E0",
+    "0x006720E0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CB5F6",
+    "0x004CB602",
+    "0x004CB614",
+    "0x004CB619",
+    "0x004CB623"
+  ],
+  "status": "todo"
+}

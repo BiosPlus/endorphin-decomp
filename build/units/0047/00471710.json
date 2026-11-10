@@ -1,0 +1,24 @@
+{
+  "va": "0x00471710",
+  "size": 167,
+  "sha256": "40931939206aa8ab6dd4a5cf7d6d20be01ae993594f2fbd52a2bcc7a3a03bd74",
+  "symbol": "ExprParser::ReadMethodType\u003cRuntimeEngine, float, {public: float __thiscall RuntimeEngine::getPosBufferFrameRate(void) const, 0}, 0\u003e::vfunc_42",
+  "callees": [
+    "0x0046C110",
+    "0x0046C3C0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00471719",
+    "0x00471734",
+    "0x00471749",
+    "0x004717A4",
+    "0x004717A9",
+    "0x004717B3"
+  ],
+  "status": "todo"
+}

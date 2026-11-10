@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0F00",
+  "size": 5,
+  "sha256": "08eb118694eea7cdb2d1491915713ce3bc7aadd91b6b9b326c3fdabc4870f1e8",
+  "symbol": "Geometry::MarkerType::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005B0F01"
+  ],
+  "status": "out_of_scope"
+}

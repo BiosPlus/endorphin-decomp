@@ -1,0 +1,16 @@
+{
+  "va": "0x0053D810",
+  "size": 91,
+  "sha256": "95d287d6cc8317c13d0048d3be923580e85e0ce6c2dd58c4edc58ccc82db605f",
+  "symbol": "Primitives::Sensor::vfunc_25",
+  "callees": [
+    "0x0053A610"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053D826"
+  ],
+  "status": "todo"
+}

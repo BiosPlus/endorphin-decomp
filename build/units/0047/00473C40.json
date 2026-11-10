@@ -1,0 +1,18 @@
+{
+  "va": "0x00473C40",
+  "size": 11,
+  "sha256": "3c0cfc1a342a998e8ded88945040122b6d5222739a8ecc8b217869fccb484000",
+  "symbol": "RuntimeEngine::SimulationAndRendererTicker::vfunc_0",
+  "callees": [
+    "0x00472C90"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00473C44"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T08:51:19Z"
+}

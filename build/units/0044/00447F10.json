@@ -1,0 +1,15 @@
+{
+  "va": "0x00447F10",
+  "size": 6,
+  "sha256": "46931407b1eba5259504908d4b5433ba20481300014c5b9f5ea7d4765f770751",
+  "symbol": "ProgressDialog::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00447F11"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

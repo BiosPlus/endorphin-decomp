@@ -1,0 +1,22 @@
+{
+  "va": "0x006A6B98",
+  "size": 73,
+  "sha256": "511d57b3e35b369dc8499c1024f2110e31b59b7b77ba12809de9eef35905c37e",
+  "symbol": "type_info::vfunc_0",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A6D5C",
+    "0x006A78B4"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A6BA7",
+    "0x006A6BB4",
+    "0x006A6BBF",
+    "0x006A6BCA",
+    "0x006A6BD5"
+  ],
+  "status": "out_of_scope"
+}

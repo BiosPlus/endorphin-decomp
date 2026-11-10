@@ -1,0 +1,23 @@
+{
+  "va": "0x005922F0",
+  "size": 84,
+  "sha256": "89ff02027de9f9a06f746c9948f64ec7c4751fd8d5ec51a2d7815478aeb599ca",
+  "symbol": "ExprParser::ReadMethodType\u003cTransformNode, float, {public: float __thiscall TransformNode::getUserTY(void) const, 0}, 0\u003e::vfunc_4",
+  "callees": [
+    "0x0046C390",
+    "0x0046C3C0",
+    "0x0058F5E0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00592306",
+    "0x0059231C",
+    "0x00592331",
+    "0x00592336",
+    "0x00592340"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,17 @@
+{
+  "va": "0x0048E310",
+  "size": 83,
+  "sha256": "c57c08db2709c196f9ae342c74404fc2530305781f573f4267354c205d292c27",
+  "symbol": "sub_0048E310",
+  "callees": [
+    "0x00665810"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048E313",
+    "0x0048E34F"
+  ],
+  "status": "todo"
+}

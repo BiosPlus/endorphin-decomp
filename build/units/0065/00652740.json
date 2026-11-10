@@ -1,0 +1,26 @@
+{
+  "va": "0x00652740",
+  "size": 96,
+  "sha256": "46d279d47a2e748264bc530137421eb6d7aec8a22ddc805eba7696f19fe345f9",
+  "symbol": "ExprParser::ReadMethodType\u003cSkeletalJoint, float, {public: float __thiscall SkeletalJoint::getHardLimitTwistAngle(void) const, 0}, 1\u003e::vfunc_2",
+  "callees": [
+    "0x0046C3C0",
+    "0x0064EA50",
+    "0x006A6DD2",
+    "0x006A6DE0"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065274E",
+    "0x00652769",
+    "0x0065276E",
+    "0x0065277A",
+    "0x0065277F",
+    "0x0065278D",
+    "0x00652792",
+    "0x0065279C"
+  ],
+  "status": "todo"
+}

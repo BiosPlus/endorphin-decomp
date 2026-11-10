@@ -1,0 +1,18 @@
+{
+  "va": "0x006A1910",
+  "size": 184,
+  "sha256": "84eb73dc11d91f9beff0cd3eaabafc2aa666095b5bfba11c97589e7e94028e73",
+  "symbol": "ExprParser::Operators::ConstrainPi::vfunc_3",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A192A",
+    "0x006A1937",
+    "0x006A1946",
+    "0x006A197C",
+    "0x006A1994"
+  ],
+  "status": "todo"
+}

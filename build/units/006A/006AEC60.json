@@ -1,0 +1,15 @@
+{
+  "va": "0x006AEC60",
+  "size": 6,
+  "sha256": "6da0fb1e739a56544913ee4c82daaceaca8a8f4b0ea6df59379b90a2d906ddf7",
+  "symbol": "GWCCategoryItem::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006AEC61"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x0048B7E0",
+  "size": 162,
+  "sha256": "e843b933b5a8f7eac670c33243d7ba20b199c2a7b7495e528d722900fad19d04",
+  "symbol": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::DesiredPoseEventData::addJointWithChildren(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x0046E780",
+    "0x0048B2A0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048B7E3",
+    "0x0048B81B",
+    "0x0048B82B",
+    "0x0048B83D"
+  ],
+  "status": "todo"
+}

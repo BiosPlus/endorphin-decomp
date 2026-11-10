@@ -1,0 +1,19 @@
+{
+  "va": "0x00665A90",
+  "size": 124,
+  "sha256": "de3e9dbf27cdcf21068d914a581ab87105a0fdadc333147cd0da7adc6b5cddd8",
+  "symbol": "MacroCommand::vfunc_2",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00665AAF",
+    "0x00665AC1",
+    "0x00665ACF",
+    "0x00665ADC",
+    "0x00665AF0",
+    "0x00665AFE"
+  ],
+  "status": "todo"
+}

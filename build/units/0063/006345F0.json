@@ -1,0 +1,23 @@
+{
+  "va": "0x006345F0",
+  "size": 122,
+  "sha256": "83b21e7c79ccfb190d9f76cd9f40598753778694209b7eab6018d4045ffe4218",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cEffectorSkeletal, float, \u0026public: float __thiscall EffectorSkeletal::getTwistStiffness(void) const, float, \u0026public: void __thiscall EffectorSkeletal::setTwistStiffness(float)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006345F9",
+    "0x0063460C",
+    "0x00634614",
+    "0x00634619",
+    "0x00634626",
+    "0x00634634",
+    "0x0063463B",
+    "0x00634656"
+  ],
+  "status": "todo"
+}

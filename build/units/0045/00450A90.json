@@ -1,0 +1,19 @@
+{
+  "va": "0x00450A90",
+  "size": 30,
+  "sha256": "49fe001c9a982dfeb3ef0a5d90437264fffd6f23425512460510166590ccc2d9",
+  "symbol": "RigEditorAddRenameDialog::vfunc_1",
+  "callees": [
+    "0x0044FB70",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00450A94",
+    "0x00450AA1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

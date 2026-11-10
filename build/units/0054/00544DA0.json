@@ -1,0 +1,18 @@
+{
+  "va": "0x00544DA0",
+  "size": 89,
+  "sha256": "a9908bdfa46ac1239cfe27c09f74e8bbb39cf3be78da78023c07c48d1f8e863a",
+  "symbol": "SnapTranslateTool::vfunc_31",
+  "callees": [
+    "0x005371F0",
+    "0x0053F740"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00544DC8",
+    "0x00544DF0"
+  ],
+  "status": "todo"
+}

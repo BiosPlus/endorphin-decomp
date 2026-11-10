@@ -1,0 +1,23 @@
+{
+  "va": "0x005C7D80",
+  "size": 122,
+  "sha256": "35e5f03dbed2740a5f60ca71422461e0a06b96ad80d8e8f2784e100446ad072a",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::CollisionModelDataBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameFromFSM(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C7D89",
+    "0x005C7D9C",
+    "0x005C7DA4",
+    "0x005C7DA9",
+    "0x005C7DB6",
+    "0x005C7DC4",
+    "0x005C7DCB",
+    "0x005C7DE6"
+  ],
+  "status": "todo"
+}

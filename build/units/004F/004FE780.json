@@ -1,0 +1,23 @@
+{
+  "va": "0x004FE780",
+  "size": 82,
+  "sha256": "ac39b9712822dec92d6b87c5813a2128510d649b1d2cc7875afdd32de4ff481a",
+  "symbol": "ExprParser::ReadMethodType\u003cEvolveEngine, float, {public: float __thiscall EvolveEngine::getAverageFitness(void) const, 0}, 1\u003e::vfunc_0",
+  "callees": [
+    "0x0046C3C0",
+    "0x004FD830",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004FE796",
+    "0x004FE7AD",
+    "0x004FE7BF",
+    "0x004FE7C4",
+    "0x004FE7CE"
+  ],
+  "status": "todo"
+}

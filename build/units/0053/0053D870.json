@@ -1,0 +1,33 @@
+{
+  "va": "0x0053D870",
+  "size": 286,
+  "sha256": "c1f67d1dfd1f92a46f517e506cc4eddb6cc9c14ce15841acb4296e6a14c3fcf1",
+  "symbol": "Primitives::Sensor::vfunc_28",
+  "callees": [
+    "0x0053C9A0",
+    "0x0053D3C0",
+    "0x005B11D0",
+    "0x006A5C5C",
+    "0x006A6DE0"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053D882",
+    "0x0053D889",
+    "0x0053D892",
+    "0x0053D898",
+    "0x0053D8A8",
+    "0x0053D8C1",
+    "0x0053D8DC",
+    "0x0053D8F7",
+    "0x0053D912",
+    "0x0053D92D",
+    "0x0053D936",
+    "0x0053D950",
+    "0x0053D974",
+    "0x0053D981"
+  ],
+  "status": "todo"
+}

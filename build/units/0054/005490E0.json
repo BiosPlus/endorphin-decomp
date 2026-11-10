@@ -1,0 +1,25 @@
+{
+  "va": "0x005490E0",
+  "size": 200,
+  "sha256": "7b14f2ba4d9e3673918645103e923b0231a519084f3ffe90bb8585c12ad41ba2",
+  "symbol": "Camera::vfunc_17",
+  "callees": [
+    "0x0047FFA0",
+    "0x0053B470",
+    "0x00540D60",
+    "0x00547820",
+    "0x006936A0"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00549117",
+    "0x00549147",
+    "0x0054914E",
+    "0x00549156",
+    "0x00549165",
+    "0x00549176"
+  ],
+  "status": "todo"
+}

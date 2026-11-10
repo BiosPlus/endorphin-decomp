@@ -1,0 +1,27 @@
+{
+  "va": "0x00449840",
+  "size": 90,
+  "sha256": "6157f5f887f3af8c4a3de10d8fd37dd0578fb3038b3902219222e8e65e90a273",
+  "symbol": "RegistrationDialog::vfunc_84",
+  "callees": [
+    "0x0040F230",
+    "0x006A6244"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00449844",
+    "0x00449849",
+    "0x0044984F",
+    "0x00449855",
+    "0x0044985B",
+    "0x00449869",
+    "0x0044986F",
+    "0x00449875",
+    "0x0044987A",
+    "0x00449881",
+    "0x0044988F"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,30 @@
+{
+  "va": "0x0046F6C0",
+  "size": 247,
+  "sha256": "863ae96fa5071e02f3594eef012d1b04bba92418a0b53a4c869f609a399af6ba",
+  "symbol": "ImageExporter::vfunc_15_off_4",
+  "callees": [
+    "0x0046F5E0",
+    "0x0046F600",
+    "0x0046F620",
+    "0x0046F640",
+    "0x0046F660",
+    "0x0046F680",
+    "0x0046F6A0",
+    "0x00671F30"
+  ],
+  "num_callees": 8,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046F6F2",
+    "0x0046F70A",
+    "0x0046F722",
+    "0x0046F73A",
+    "0x0046F761",
+    "0x0046F779",
+    "0x0046F791",
+    "0x0046F7A9"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x004DE1B0",
+  "size": 34,
+  "sha256": "dfb2bb66a29a8f6332eed6d4640a5f0ed6fed1b3bb813b4e7a5b142896e8a503",
+  "symbol": "NMData::AnimationEventData::vfunc_60",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:14:36Z"
+}

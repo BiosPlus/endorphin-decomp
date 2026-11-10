@@ -1,0 +1,19 @@
+{
+  "va": "0x0044A800",
+  "size": 30,
+  "sha256": "d9a0358b2f5fad63141caf61d1547a289f0861c0f71d1ec3aa161f753f59059f",
+  "symbol": "NMColourSwatch::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A5F6E"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044A804",
+    "0x0044A811"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

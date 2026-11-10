@@ -1,0 +1,34 @@
+{
+  "va": "0x0061F130",
+  "size": 467,
+  "sha256": "11af6ff5be5c580a282373b853f2f80698911d37c4b8adba9ba9be63a93c8b2f",
+  "symbol": "NMData::HingeLimit::vfunc_15",
+  "callees": [
+    "0x0061ED50",
+    "0x0061ED70",
+    "0x0061ED90",
+    "0x0061EDB0",
+    "0x0061EDD0",
+    "0x0061EDF0",
+    "0x0061EE10",
+    "0x0061EE30",
+    "0x00671F30"
+  ],
+  "num_callees": 9,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061F151",
+    "0x0061F158",
+    "0x0061F163",
+    "0x0061F178",
+    "0x0061F18D",
+    "0x0061F1A2",
+    "0x0061F1B7",
+    "0x0061F1CC",
+    "0x0061F1E1",
+    "0x0061F1F6",
+    "0x0061F20A"
+  ],
+  "status": "todo"
+}

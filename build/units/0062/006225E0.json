@@ -1,0 +1,18 @@
+{
+  "va": "0x006225E0",
+  "size": 186,
+  "sha256": "26c59edbc5990cb240e2e2993a1af5165c48ff82a9dad87fb1e1ed98921af867",
+  "symbol": "NMData::SkeletalCalibrationVariables::vfunc_27",
+  "callees": [
+    "0x00622290",
+    "0x006A5C62"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006225E7",
+    "0x006225F5"
+  ],
+  "status": "todo"
+}

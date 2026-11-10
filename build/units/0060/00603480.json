@@ -1,0 +1,12 @@
+{
+  "va": "0x00603480",
+  "size": 121,
+  "sha256": "73bb6b5001959d94e40b6907bf8c77c0ee8d65d92ee197ab71e4dc3211f6ffd5",
+  "symbol": "ExprParser::WriteMethodType\u003cEffectorBase, bool, \u0026public: void __thiscall EffectorBase::setEnabled(bool)\u003e::vfunc_48",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "todo"
+}

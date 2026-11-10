@@ -1,0 +1,21 @@
+{
+  "va": "0x004D6C80",
+  "size": 68,
+  "sha256": "7f2212b5a2b44206081ff60fadf615d1be4e1285c750ad15902a9226e0f336fb",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::RigEventData, int, {private: int __thiscall NMData::RigEventData::getSaveTweakToStockCharacterDummy(void) const, 0}, int, {private: void __thiscall NMData::RigEventData::saveTweakToStockCharacter(int), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x004D4650",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D6CA1",
+    "0x004D6CB1",
+    "0x004D6CB6",
+    "0x004D6CC0"
+  ],
+  "status": "todo"
+}

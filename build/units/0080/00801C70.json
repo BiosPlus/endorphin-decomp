@@ -1,0 +1,20 @@
+{
+  "va": "0x00801C70",
+  "size": 1703,
+  "sha256": "7a81e5e299ae7db01d1ecf2d1e9f6ac382b4d8413cbb1098e78ad102c0f0e07e",
+  "symbol": "keaMatrix_pcSparse_SSE::vfunc_3",
+  "callees": [
+    "0x006A7250"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00801DA5",
+    "0x00801E6D",
+    "0x00801F2F",
+    "0x00801FD9",
+    "0x00802205"
+  ],
+  "status": "todo"
+}

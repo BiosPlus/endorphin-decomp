@@ -1,0 +1,21 @@
+{
+  "va": "0x00522260",
+  "size": 68,
+  "sha256": "fd13810feed95e8db58f5c7a43aa687770f08e85e0236e90bb3e9d9e98e1a15c",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cThreeLayerNet, int, \u0026public: int __thiscall ThreeLayerNet::getNumHidden(void) const, int, \u0026public: void __thiscall ThreeLayerNet::setNumHidden(int)\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x00522190",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00522281",
+    "0x00522291",
+    "0x00522296",
+    "0x005222A0"
+  ],
+  "status": "todo"
+}

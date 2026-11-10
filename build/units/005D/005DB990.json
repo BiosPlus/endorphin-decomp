@@ -1,0 +1,24 @@
+{
+  "va": "0x005DB990",
+  "size": 156,
+  "sha256": "bd4b14da6d211e60e5fac030d8bc25b8da37997bbaebb1f1b2192d595f5f730e",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CameraData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::CameraData::getCameraTypeName(void) const, 0}, 0\u003e::vfunc_42",
+  "callees": [
+    "0x0046C3C0",
+    "0x005D07E0",
+    "0x006720E0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005DB999",
+    "0x005DB9B4",
+    "0x005DB9BE",
+    "0x005DBA19",
+    "0x005DBA1E",
+    "0x005DBA28"
+  ],
+  "status": "todo"
+}

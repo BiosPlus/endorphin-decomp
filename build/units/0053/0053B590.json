@@ -1,0 +1,37 @@
+{
+  "va": "0x0053B590",
+  "size": 277,
+  "sha256": "95a2998ac19b1e983ad18fb3e97515b0eb374231cc830188a9a95f3001d634b6",
+  "symbol": "Primitives::Plane::vfunc_28",
+  "callees": [
+    "0x005B11D0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053B596",
+    "0x0053B5A1",
+    "0x0053B5AB",
+    "0x0053B5B7",
+    "0x0053B5D1",
+    "0x0053B5D9",
+    "0x0053B5F1",
+    "0x0053B5F7",
+    "0x0053B5FC",
+    "0x0053B606",
+    "0x0053B613",
+    "0x0053B621",
+    "0x0053B632",
+    "0x0053B63C",
+    "0x0053B646",
+    "0x0053B657",
+    "0x0053B665",
+    "0x0053B676",
+    "0x0053B680",
+    "0x0053B68B",
+    "0x0053B696",
+    "0x0053B69C"
+  ],
+  "status": "todo"
+}

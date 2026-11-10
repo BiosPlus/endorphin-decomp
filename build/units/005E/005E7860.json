@@ -1,0 +1,26 @@
+{
+  "va": "0x005E7860",
+  "size": 170,
+  "sha256": "16842dabf320f25307b4e171588240618a1ca4a863b68623ad5c8d59869d9fc2",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::HingeData, float, {private: float __thiscall NMData::HingeData::getUserCurrentAngle(void) const, 0}, 0\u003e::vfunc_46",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x005E25B0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005E7869",
+    "0x005E7884",
+    "0x005E7899",
+    "0x005E78AD",
+    "0x005E78F7",
+    "0x005E78FC",
+    "0x005E7906"
+  ],
+  "status": "todo"
+}

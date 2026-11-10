@@ -1,0 +1,23 @@
+{
+  "va": "0x004D1710",
+  "size": 122,
+  "sha256": "54e7e8795c6ab9093c56a6d083129da753a5ee3a48ed30e6a6fc64b3cde4423f",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::TransitionEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::TransitionEventData::getWindowTypeName(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::TransitionEventData::setWindowTypeName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D1719",
+    "0x004D172C",
+    "0x004D1734",
+    "0x004D1739",
+    "0x004D1746",
+    "0x004D1754",
+    "0x004D175B",
+    "0x004D1776"
+  ],
+  "status": "todo"
+}

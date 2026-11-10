@@ -1,0 +1,23 @@
+{
+  "va": "0x0050AD30",
+  "size": 206,
+  "sha256": "69106399d5fd4950db74086d20890b56a2ef301f8ff1f163530f0367af7b16da",
+  "symbol": "Properties::SequenceType\u003cstd::vector\u003cNMData::TaskParam, std::allocator\u003cNMData::TaskParam\u003e\u003e, Properties::GetPropertySource, DeRefValue\u003e::vfunc_3",
+  "callees": [
+    "0x00493D90",
+    "0x00494FF0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0050AD39",
+    "0x0050AD64",
+    "0x0050AD7E",
+    "0x0050AD91",
+    "0x0050ADA0",
+    "0x0050ADCA",
+    "0x0050ADDD"
+  ],
+  "status": "todo"
+}

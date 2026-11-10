@@ -1,0 +1,20 @@
+{
+  "va": "0x00451390",
+  "size": 29,
+  "sha256": "5aab406806b1642580bad42bb216cbe853b05a0b731eca81d78ea1cf3c468754",
+  "symbol": "RigEditor::vfunc_90",
+  "callees": [
+    "0x00451140",
+    "0x006A5EA8"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00451394",
+    "0x004513A5"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:04:29Z"
+}

@@ -1,0 +1,25 @@
+{
+  "va": "0x004CEDE0",
+  "size": 134,
+  "sha256": "8c934f30eee8ea5d0be4ceadad51104e87f2d7c6ee9c3c42fa4a2da23cd62703",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::IncarnationEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::IncarnationEventData::getPhysicsLevel(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::IncarnationEventData::setPhysicsLevel(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046E780",
+    "0x004CEA10",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CEDE9",
+    "0x004CEE16",
+    "0x004CEE26",
+    "0x004CEE38",
+    "0x004CEE53",
+    "0x004CEE58",
+    "0x004CEE62"
+  ],
+  "status": "todo"
+}

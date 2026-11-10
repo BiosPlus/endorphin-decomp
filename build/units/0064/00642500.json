@@ -1,0 +1,15 @@
+{
+  "va": "0x00642500",
+  "size": 8,
+  "sha256": "a8aff07f8b95ac872e04cc3f57b309b598ca7d82767042f67f129ffe2af173c2",
+  "symbol": "MainPhysicsAdapter::vfunc_0_off_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00642504"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

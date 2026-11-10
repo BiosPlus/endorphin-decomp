@@ -1,0 +1,18 @@
+{
+  "va": "0x00630C90",
+  "size": 17,
+  "sha256": "a28590c8f15225d46fa81f70bb5ffab898cafdc560ab5b0b8855d72062937f7e",
+  "symbol": "EffectorSkeletal::vfunc_31",
+  "callees": [
+    "0x006944D0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00630C9A"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:13:23Z"
+}

@@ -1,0 +1,28 @@
+{
+  "va": "0x005E23F0",
+  "size": 128,
+  "sha256": "bd4c4d1c4b274d27a2776657ac03f20f25e811ef0fc793086ab729a01b470a47",
+  "symbol": "NMData::RPROJointData::vfunc_54",
+  "callees": [
+    "0x005B5780",
+    "0x005E0380",
+    "0x006A6C87"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005E23F9",
+    "0x005E240C",
+    "0x005E2417",
+    "0x005E241E",
+    "0x005E242B",
+    "0x005E2430",
+    "0x005E2435",
+    "0x005E2445",
+    "0x005E244C",
+    "0x005E245B",
+    "0x005E2460"
+  ],
+  "status": "todo"
+}

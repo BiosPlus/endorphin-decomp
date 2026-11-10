@@ -1,0 +1,20 @@
+{
+  "va": "0x00617340",
+  "size": 30,
+  "sha256": "3b57e03499aee48c70f77cde22bd995edaed2565ac59a799e36bd88546bf7b5c",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getDamping(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00617347",
+    "0x0061734C",
+    "0x00617354"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:56:38Z"
+}

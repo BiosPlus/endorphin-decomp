@@ -1,0 +1,23 @@
+{
+  "va": "0x005B5DF0",
+  "size": 82,
+  "sha256": "ad72124ba38f17c62f4bac98263362818a396d5cdb48d99f0c671621f049a995",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: void __thiscall Geometry::setTypeString(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e)\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046E780",
+    "0x005B5B50",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B5E17",
+    "0x005B5E1E",
+    "0x005B5E2F",
+    "0x005B5E34",
+    "0x005B5E3E"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,42 @@
+{
+  "va": "0x006B08E0",
+  "size": 459,
+  "sha256": "b5c89ad81e191b5cd7d9390e14d6ba4835e66b78b2a7797c444a310b08500222",
+  "symbol": "GWCCategoryWithButtonsItem::vfunc_15",
+  "callees": [
+    "0x006A6010",
+    "0x006A7C00",
+    "0x006A7D10",
+    "0x006A7D70",
+    "0x006ACE20",
+    "0x006ACE40",
+    "0x006B0720"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B08E3",
+    "0x006B0904",
+    "0x006B0915",
+    "0x006B092C",
+    "0x006B095E",
+    "0x006B096A",
+    "0x006B0971",
+    "0x006B0986",
+    "0x006B0992",
+    "0x006B099D",
+    "0x006B09B8",
+    "0x006B09C3",
+    "0x006B09DD",
+    "0x006B09F2",
+    "0x006B09FD",
+    "0x006B0A18",
+    "0x006B0A23",
+    "0x006B0A3D",
+    "0x006B0A6C",
+    "0x006B0A81",
+    "0x006B0A8A"
+  ],
+  "status": "todo"
+}

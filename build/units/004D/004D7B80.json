@@ -1,0 +1,26 @@
+{
+  "va": "0x004D7B80",
+  "size": 159,
+  "sha256": "7c10e0574d72f50542cb296e72f056434a8f3ffef482bcded230d0bfd9bec527",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getPhysicsTicks(void) const, 0}, 0\u003e::vfunc_44",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x004D39E0",
+    "0x006720C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D7B89",
+    "0x004D7BA4",
+    "0x004D7BAE",
+    "0x004D7BC2",
+    "0x004D7C0C",
+    "0x004D7C11",
+    "0x004D7C1B"
+  ],
+  "status": "todo"
+}

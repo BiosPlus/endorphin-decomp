@@ -1,0 +1,19 @@
+{
+  "va": "0x006B4460",
+  "size": 30,
+  "sha256": "ddafc970d782c376da1509bc9a771e6de16fca96e7a08c1b25f39863dda39214",
+  "symbol": "GWCFontPropertyValue::vfunc_0",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B4420"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B4464",
+    "0x006B4471"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

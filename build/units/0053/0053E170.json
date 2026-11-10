@@ -1,0 +1,18 @@
+{
+  "va": "0x0053E170",
+  "size": 78,
+  "sha256": "dd167e864df8e3350bb7e0a248e8f9963726c18339c72013a714373c721417e3",
+  "symbol": "Primitives::CameraFrustum::vfunc_25",
+  "callees": [
+    "0x0053A610"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053E185"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T14:04:30Z"
+}

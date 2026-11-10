@@ -1,0 +1,22 @@
+{
+  "va": "0x005393B0",
+  "size": 216,
+  "sha256": "f13658f472c1ff47a5d8a86d9fe87672579c02a048b98a2d52e1449d3f983fdd",
+  "symbol": "UtilityGraphics::Plane::vfunc_22",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005393B9",
+    "0x005393C8",
+    "0x005393D8",
+    "0x005393E3",
+    "0x005393EB",
+    "0x00539403",
+    "0x0053940B",
+    "0x00539477",
+    "0x0053947D"
+  ],
+  "status": "todo"
+}

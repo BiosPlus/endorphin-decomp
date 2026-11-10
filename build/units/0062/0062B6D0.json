@@ -1,0 +1,13 @@
+{
+  "va": "0x0062B6D0",
+  "size": 15,
+  "sha256": "3f10dbf644c01393aade7e1369399ad44cb3b5e0e3ff0af735072399ae7ae03f",
+  "symbol": "Sensors::AxisSensor::vfunc_14",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

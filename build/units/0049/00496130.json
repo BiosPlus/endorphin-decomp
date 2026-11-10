@@ -1,0 +1,19 @@
+{
+  "va": "0x00496130",
+  "size": 30,
+  "sha256": "151032313435d78c9f715785060322da859bc3c1ad96a3a14d2a5ca4c57c1536",
+  "symbol": "RigManager::vfunc_0",
+  "callees": [
+    "0x00495AB0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00496134",
+    "0x00496141"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

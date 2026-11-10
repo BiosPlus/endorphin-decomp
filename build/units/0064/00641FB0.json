@@ -1,0 +1,20 @@
+{
+  "va": "0x00641FB0",
+  "size": 30,
+  "sha256": "2ec891cd20526f359f041a57bac1f6c80f9108bb36a415f5141a773d872a03ce",
+  "symbol": "ExprParser::ReadMethodType\u003cMainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDebugDrawEnabled(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00641FB7",
+    "0x00641FBC",
+    "0x00641FC4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:59:20Z"
+}

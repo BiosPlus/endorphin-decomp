@@ -1,0 +1,23 @@
+{
+  "va": "0x005D20D0",
+  "size": 122,
+  "sha256": "70f13f0e801a5fff3952a986725e60237844413acab282be490351cd33b9dd01",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::VideoPlaneData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::VideoPlaneData::getFileName(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall NMData::VideoPlaneData::setFileName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005D20D9",
+    "0x005D20EC",
+    "0x005D20F4",
+    "0x005D20F9",
+    "0x005D2106",
+    "0x005D2114",
+    "0x005D211B",
+    "0x005D2136"
+  ],
+  "status": "todo"
+}

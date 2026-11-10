@@ -1,0 +1,25 @@
+{
+  "va": "0x00517750",
+  "size": 205,
+  "sha256": "b5657391c5e874eff328abbd487cd21db9d3bed44ba762b41a259283a35961d8",
+  "symbol": "PointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e::AddElementCommand::vfunc_3",
+  "callees": [
+    "0x00435D00",
+    "0x00517070"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00517753",
+    "0x00517780",
+    "0x00517799",
+    "0x005177A6",
+    "0x005177B4",
+    "0x005177BE",
+    "0x005177D3",
+    "0x005177E5",
+    "0x005177FF"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x006A348A",
+  "size": 6,
+  "sha256": "dc9051bf910aa2965d799a56f4577e1e10da245e74177aafa116234c890169ae",
+  "symbol": "thunk_AVIFIL32_AVIStreamSampleToTime",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006A348C"
+  ],
+  "status": "out_of_scope"
+}

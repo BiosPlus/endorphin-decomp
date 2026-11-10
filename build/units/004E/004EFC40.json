@@ -1,0 +1,32 @@
+{
+  "va": "0x004EFC40",
+  "size": 356,
+  "sha256": "2609fa6242f5b38d29f706576fbee0a05076fa39a9d62f8f26aa6c6aeb3d28a6",
+  "symbol": "Properties::MultiSelectProxy::vfunc_1",
+  "callees": [
+    "0x0041A190",
+    "0x0041CF50",
+    "0x00666320",
+    "0x006667D0"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004EFC49",
+    "0x004EFC71",
+    "0x004EFC86",
+    "0x004EFC9C",
+    "0x004EFCA7",
+    "0x004EFCBB",
+    "0x004EFCC0",
+    "0x004EFCCA",
+    "0x004EFCE2",
+    "0x004EFCF1",
+    "0x004EFD15",
+    "0x004EFD34",
+    "0x004EFD65",
+    "0x004EFD8B"
+  ],
+  "status": "todo"
+}

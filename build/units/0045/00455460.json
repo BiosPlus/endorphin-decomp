@@ -1,0 +1,18 @@
+{
+  "va": "0x00455460",
+  "size": 30,
+  "sha256": "d22e3856a0efe872f8b8b1dbaf5a6cb6e495a95331bf0927d65ffe94d4d96485",
+  "symbol": "CRichEditCtrl::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A6760"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00455464",
+    "0x00455471"
+  ],
+  "status": "out_of_scope"
+}

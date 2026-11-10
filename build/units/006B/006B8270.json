@@ -1,0 +1,19 @@
+{
+  "va": "0x006B8270",
+  "size": 30,
+  "sha256": "0f7807a2847d9037bb3ce10854561f28273ceb4ace79671b3faeb8adacaa2201",
+  "symbol": "GWCListBox::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B8210"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B8274",
+    "0x006B8281"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

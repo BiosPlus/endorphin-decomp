@@ -1,0 +1,14 @@
+{
+  "va": "0x00454520",
+  "size": 5,
+  "sha256": "f956583c6bc79c8e6434e28e371f3a542520230fbc9a59bed019fc7e77f1c63c",
+  "symbol": "RigEditorAddRenameDialog::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00454521"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,24 @@
+{
+  "va": "0x0062EB80",
+  "size": 159,
+  "sha256": "5c0f2132efa10256226026b8d5b2704465a1446996a39531aae582cec12fb412",
+  "symbol": "ExprParser::ReadMethodType\u003cSensors::CompoundSensorPlanes, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::CompoundSensorPlanes::getHorzAxis(void) const, 1\u003e::vfunc_44",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00672110",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062EB89",
+    "0x0062EBAE",
+    "0x0062EBC2",
+    "0x0062EC0C",
+    "0x0062EC11",
+    "0x0062EC1B"
+  ],
+  "status": "todo"
+}

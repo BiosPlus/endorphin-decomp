@@ -1,0 +1,17 @@
+{
+  "va": "0x0042E7B0",
+  "size": 110,
+  "sha256": "85096c1430e4676d36bdd1c4845ef0434aa1a13408dfa5dd27c8a5ae6c8b4024",
+  "symbol": "SearchableMap\u003cKeyMapping, GetNameFromAttribute\u003cKeyMapping\u003e\u003e::vfunc_0",
+  "callees": [
+    "0x004280C0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0042E7D5",
+    "0x0042E7E4"
+  ],
+  "status": "todo"
+}

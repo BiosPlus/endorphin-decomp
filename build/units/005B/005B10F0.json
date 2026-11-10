@@ -1,0 +1,15 @@
+{
+  "va": "0x005B10F0",
+  "size": 9,
+  "sha256": "1fbe4f50bde974bddd73eb8ea92efa7a730f394d01b220264d2f65f72ad5c24f",
+  "symbol": "Geometry::AnimationType::vfunc_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B10F2"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

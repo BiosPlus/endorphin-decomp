@@ -1,0 +1,16 @@
+{
+  "va": "0x0065D6C0",
+  "size": 70,
+  "sha256": "614d463b492118ce42be8c386767d7d95860b4ce3813054bcd70973bf0a61e89",
+  "symbol": "sub_0065D6C0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065D6C3"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:49:03Z"
+}

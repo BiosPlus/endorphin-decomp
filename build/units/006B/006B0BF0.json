@@ -1,0 +1,19 @@
+{
+  "va": "0x006B0BF0",
+  "size": 30,
+  "sha256": "0e48ad83ab477f4df833c03a9331d699c84f2c3ae580757f16dd2c330bcaa00c",
+  "symbol": "GWCCategoryWithButtonsItem::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B06A0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B0BF4",
+    "0x006B0C01"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

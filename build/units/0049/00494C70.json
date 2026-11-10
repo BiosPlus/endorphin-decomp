@@ -1,0 +1,29 @@
+{
+  "va": "0x00494C70",
+  "size": 142,
+  "sha256": "8f7d3760549c0f15e07f88f1a383b593d3fd3ce7981626b4285b63275807dc4e",
+  "symbol": "Loader\u003cNMData::CameraData\u003e::vfunc_1",
+  "callees": [
+    "0x0063F530"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00494C84",
+    "0x00494C89",
+    "0x00494C90",
+    "0x00494C97",
+    "0x00494C9E",
+    "0x00494CA5",
+    "0x00494CAC",
+    "0x00494CBF",
+    "0x00494CC4",
+    "0x00494CCB",
+    "0x00494CD2",
+    "0x00494CD9",
+    "0x00494CE0",
+    "0x00494CE7"
+  ],
+  "status": "todo"
+}

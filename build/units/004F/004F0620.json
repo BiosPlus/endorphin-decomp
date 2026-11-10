@@ -1,0 +1,17 @@
+{
+  "va": "0x004F0620",
+  "size": 155,
+  "sha256": "788119f27ad1f6ee8c7166c8206850f64620a987f67769a6deb54a85fc88b95f",
+  "symbol": "Properties::TargetSelectionProxy::vfunc_2",
+  "callees": [
+    "0x004F01A0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004F0640",
+    "0x004F069A"
+  ],
+  "status": "todo"
+}

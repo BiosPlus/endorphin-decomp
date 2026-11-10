@@ -1,0 +1,23 @@
+{
+  "va": "0x005B3060",
+  "size": 141,
+  "sha256": "0ea5c7ef1d49e4f054e5d593c6934229ebf74b6978a975e0be2934bf32b8261c",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Geometry::getFileName(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall Geometry::setFileName(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046E780",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B3069",
+    "0x005B3096",
+    "0x005B30BF",
+    "0x005B30DA",
+    "0x005B30DF",
+    "0x005B30E9"
+  ],
+  "status": "todo"
+}

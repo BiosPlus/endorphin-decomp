@@ -1,0 +1,24 @@
+{
+  "va": "0x005C8150",
+  "size": 104,
+  "sha256": "1ede8488dde855e3f9ee771401c7c17b60fd56271c2f5df8ade540c1421087e7",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::CollisionModelDataBase::getMaterialName(void) const, 0}, 0\u003e::vfunc_3",
+  "callees": [
+    "0x0046C3C0",
+    "0x005C2F40",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C8160",
+    "0x005C8166",
+    "0x005C816D",
+    "0x005C817C",
+    "0x005C81A5",
+    "0x005C81AA",
+    "0x005C81B4"
+  ],
+  "status": "todo"
+}

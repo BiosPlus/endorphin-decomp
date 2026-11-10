@@ -1,0 +1,26 @@
+{
+  "va": "0x004AA7D0",
+  "size": 159,
+  "sha256": "d6d0d112b64544e494106e59920ece061b51fc6d01e20679ffa9ff5b883211b0",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::BehaviourData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0\u003e::vfunc_44",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x004A9A40",
+    "0x006720E0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004AA7D9",
+    "0x004AA7F4",
+    "0x004AA7FE",
+    "0x004AA812",
+    "0x004AA85C",
+    "0x004AA861",
+    "0x004AA86B"
+  ],
+  "status": "todo"
+}

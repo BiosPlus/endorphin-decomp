@@ -1,0 +1,20 @@
+{
+  "va": "0x00524830",
+  "size": 30,
+  "sha256": "e698a7c9a5e0b59a89c391a421d9c3bc50d474484efbc514ceb92685efeb1f00",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::NetworkConnectorData, float, \u0026public: float __thiscall NMData::NetworkConnectorData::callTickMethod(void) const, 1\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00524837",
+    "0x0052483C",
+    "0x00524844"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:51:01Z"
+}

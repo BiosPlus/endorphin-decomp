@@ -1,0 +1,23 @@
+{
+  "va": "0x00628510",
+  "size": 47,
+  "sha256": "daf2fed12e356ac48fec0ccda9900b55c0db3a078f04e8344145042a3328c2ab",
+  "symbol": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffTwistSwingAngles(void) const, 1\u003e::vfunc_2",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x00627610",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062851E",
+    "0x00628524",
+    "0x0062852C",
+    "0x00628531",
+    "0x0062853B"
+  ],
+  "status": "todo"
+}

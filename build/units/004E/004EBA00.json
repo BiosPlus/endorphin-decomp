@@ -1,0 +1,14 @@
+{
+  "va": "0x004EBA00",
+  "size": 82,
+  "sha256": "84afd88aa3187cfd64483228fcb5b01922b3308ba11fe1bc97e1047225f5bc4b",
+  "symbol": "GuiBaseElement::vfunc_14",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004EBA18"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,36 @@
+{
+  "va": "0x00546990",
+  "size": 1388,
+  "sha256": "b35339a511f14af906e1f6bcf5909281583053396e7e4cd05ee179fb52ee079b",
+  "symbol": "RotateTool::vfunc_15",
+  "callees": [
+    "0x0047FFA0",
+    "0x00540D60",
+    "0x005465D0",
+    "0x0067E020",
+    "0x006936C0",
+    "0x006943B0",
+    "0x00694480"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00546A86",
+    "0x00546C09",
+    "0x00546C6F",
+    "0x00546CC1",
+    "0x00546D1D",
+    "0x00546DC0",
+    "0x00546DCA",
+    "0x00546DDE",
+    "0x00546DE8",
+    "0x00546DFD",
+    "0x00546E04",
+    "0x00546E34",
+    "0x00546E3B",
+    "0x00546E7D",
+    "0x00546E93"
+  ],
+  "status": "todo"
+}

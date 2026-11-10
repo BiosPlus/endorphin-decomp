@@ -1,0 +1,19 @@
+{
+  "va": "0x00700A20",
+  "size": 32,
+  "sha256": "e66d20528f500e4956e7ab0c9bb5c4d53bf704a523f7215d39dccd234af147a0",
+  "symbol": "sub_00700A20",
+  "callees": [
+    "0x006C9510",
+    "0x006DC460"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00700A24",
+    "0x00700A2B",
+    "0x00700A32"
+  ],
+  "status": "todo"
+}

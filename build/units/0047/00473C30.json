@@ -1,0 +1,18 @@
+{
+  "va": "0x00473C30",
+  "size": 11,
+  "sha256": "8cbec65de693c634fb8ccd72dc755523531f45d1099ac1b907abde30a014b16c",
+  "symbol": "RuntimeEngine::CaptureTicker::vfunc_0",
+  "callees": [
+    "0x00472D80"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00473C34"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T08:51:13Z"
+}

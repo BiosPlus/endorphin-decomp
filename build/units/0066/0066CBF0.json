@@ -1,0 +1,16 @@
+{
+  "va": "0x0066CBF0",
+  "size": 110,
+  "sha256": "4785e45d0e51302eac276157c12edfc6abdef70d398b8481a2e750aff4717d9b",
+  "symbol": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::getOrthonormalVector(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+  "callees": [
+    "0x0067C060"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066CC14"
+  ],
+  "status": "todo"
+}

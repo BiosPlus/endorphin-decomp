@@ -1,0 +1,20 @@
+{
+  "va": "0x004ECA70",
+  "size": 30,
+  "sha256": "e5d740c14a20e7dbe85653eddcc564167a7ed18486ac55a350dfc7dde381d1a5",
+  "symbol": "ExprParser::Function2Type\u003cSelectionVariable, bool, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026), 0}\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004ECA77",
+    "0x004ECA7C",
+    "0x004ECA84"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:09:46Z"
+}

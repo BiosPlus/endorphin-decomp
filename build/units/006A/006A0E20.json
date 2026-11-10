@@ -1,0 +1,23 @@
+{
+  "va": "0x006A0E20",
+  "size": 235,
+  "sha256": "8c6952dfa9a8f85bf7d37796891b7c160e2f108cc37665c8b446f14f1241c09d",
+  "symbol": "ExprParser::Operators::AssignAdd::vfunc_3",
+  "callees": [
+    "0x0041CF00",
+    "0x0041CF50",
+    "0x004ECB40",
+    "0x00672040"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A0E29",
+    "0x006A0E52",
+    "0x006A0EAA",
+    "0x006A0EC9",
+    "0x006A0ED9"
+  ],
+  "status": "todo"
+}

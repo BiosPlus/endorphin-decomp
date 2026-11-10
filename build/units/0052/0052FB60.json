@@ -1,0 +1,13 @@
+{
+  "va": "0x0052FB60",
+  "size": 20,
+  "sha256": "1c06e7d5608cc4ec0906c10998688ef6145f8830bc5c3c90b22b05b3625bb054",
+  "symbol": "Primitives::Hinge::vfunc_20",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

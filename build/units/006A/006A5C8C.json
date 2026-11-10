@@ -1,0 +1,14 @@
+{
+  "va": "0x006A5C8C",
+  "size": 6,
+  "sha256": "54c074a3fad8d98f6529b2a9f737e19411705a7d98fce1689e7d0e2dd2374a54",
+  "symbol": "thunk_MFC80_ord_2644",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006A5C8E"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,31 @@
+{
+  "va": "0x0060EA90",
+  "size": 157,
+  "sha256": "c434b7d0ef57fc19e88390baad57292413c22da841dfd2b9c5c72f9ec33edaf8",
+  "symbol": "NMData::MetaBodySensorData::vfunc_21",
+  "callees": [
+    "0x004275E0",
+    "0x0053F5F0",
+    "0x0060E890",
+    "0x0063EFE0"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060EAA6",
+    "0x0060EAAB",
+    "0x0060EAB3",
+    "0x0060EAC0",
+    "0x0060EAC6",
+    "0x0060EAD1",
+    "0x0060EADE",
+    "0x0060EAE4",
+    "0x0060EAEF",
+    "0x0060EAFC",
+    "0x0060EB01",
+    "0x0060EB0C",
+    "0x0060EB21"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x0041CD80",
+  "size": 30,
+  "sha256": "8b9bab65f429063c02f8eabcd9596f390bae5163bfa1c104b965aa4cd8bf94bc",
+  "symbol": "ClassFactoryBase::vfunc_0",
+  "callees": [
+    "0x0066AC80",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041CD84",
+    "0x0041CD91"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

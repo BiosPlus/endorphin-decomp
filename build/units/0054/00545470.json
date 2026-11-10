@@ -1,0 +1,18 @@
+{
+  "va": "0x00545470",
+  "size": 85,
+  "sha256": "740fdcfb7f4a7d0d007cddfb28b663f4f96e14b488ef551cce1670e1ed8c7066",
+  "symbol": "PoseTool::vfunc_31",
+  "callees": [
+    "0x005371F0",
+    "0x0053F740"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00545494",
+    "0x005454BC"
+  ],
+  "status": "todo"
+}

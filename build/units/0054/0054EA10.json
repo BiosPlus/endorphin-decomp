@@ -1,0 +1,13 @@
+{
+  "va": "0x0054EA10",
+  "size": 30,
+  "sha256": "79e255b81565190ee20a419c56a5d407f104a2f10e09d54af38dd2d5f84de46b",
+  "symbol": "OptimizedMatrixStackManager::vfunc_3",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

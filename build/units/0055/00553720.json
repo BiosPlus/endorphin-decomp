@@ -1,0 +1,17 @@
+{
+  "va": "0x00553720",
+  "size": 36,
+  "sha256": "cfc3a35c24b2118287c24c729c386ed43eddf574c74bf5d2020e2c91f8ff826f",
+  "symbol": "NMFileIO::vfunc_3",
+  "callees": [
+    "0x00552B00"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0055372D",
+    "0x00553739"
+  ],
+  "status": "todo"
+}

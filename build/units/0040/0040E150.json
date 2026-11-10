@@ -1,0 +1,19 @@
+{
+  "va": "0x0040E150",
+  "size": 30,
+  "sha256": "441071a1829d82dc307bea9679c775b1d1988944592eb0a94d72747aaecf9c6f",
+  "symbol": "OpenReferenceCharacterDialog::vfunc_1",
+  "callees": [
+    "0x0040D9E0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040E154",
+    "0x0040E161"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

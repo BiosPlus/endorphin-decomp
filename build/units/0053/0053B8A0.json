@@ -1,0 +1,33 @@
+{
+  "va": "0x0053B8A0",
+  "size": 278,
+  "sha256": "d25f1d0f85e01eb8218c0eeb5159e5aed154dd1d6375e559caba7e25b1939250",
+  "symbol": "Primitives::Sphyl::vfunc_28",
+  "callees": [
+    "0x005B11D0",
+    "0x0063E01E",
+    "0x0063E02A",
+    "0x0063E036"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053B8B0",
+    "0x0053B8BA",
+    "0x0053B8C2",
+    "0x0053B8CA",
+    "0x0053B8EE",
+    "0x0053B907",
+    "0x0053B915",
+    "0x0053B91F",
+    "0x0053B92B",
+    "0x0053B939",
+    "0x0053B962",
+    "0x0053B96C",
+    "0x0053B98A",
+    "0x0053B9A3",
+    "0x0053B9A9"
+  ],
+  "status": "todo"
+}

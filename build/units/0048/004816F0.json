@@ -1,0 +1,18 @@
+{
+  "va": "0x004816F0",
+  "size": 10,
+  "sha256": "40cb04d7dabba0f605edb7ba73e350f8961c211fe75ba204fef64bc920eff405",
+  "symbol": "Commands::BufferTransformsCommand::vfunc_2",
+  "callees": [
+    "0x00480B00"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004816F5"
+  ],
+  "status": "matched",
+  "matched_by": "gemini-4-argon",
+  "matched_at": "2026-11-09"
+}

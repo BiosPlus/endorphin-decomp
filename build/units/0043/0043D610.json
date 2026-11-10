@@ -1,0 +1,14 @@
+{
+  "va": "0x0043D610",
+  "size": 5,
+  "sha256": "a8842acdd0a1f6c074327d35f1ca76ed2769b864a1d340331c361e1a897f7c70",
+  "symbol": "MultiTrackView::Frame::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0043D611"
+  ],
+  "status": "out_of_scope"
+}

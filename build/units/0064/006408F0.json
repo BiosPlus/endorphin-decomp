@@ -1,0 +1,15 @@
+{
+  "va": "0x006408F0",
+  "size": 49,
+  "sha256": "89c571d75f6aadb23824a6f97df97671167a28f4a24b9669ed9f99b7bfccaac8",
+  "symbol": "sub_006408F0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0064090D"
+  ],
+  "status": "deferred",
+  "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
+}

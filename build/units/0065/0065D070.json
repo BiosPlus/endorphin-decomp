@@ -1,0 +1,21 @@
+{
+  "va": "0x0065D070",
+  "size": 45,
+  "sha256": "ef8b6a803b76f5bfb0e025d22109d21cbf96e890adb85c5faca1ad0e5986f3bf",
+  "symbol": "HasBufferedVector::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065D077",
+    "0x0065D081",
+    "0x0065D087",
+    "0x0065D08D",
+    "0x0065D093",
+    "0x0065D098"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:46:18Z"
+}

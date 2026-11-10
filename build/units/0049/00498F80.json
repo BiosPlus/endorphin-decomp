@@ -1,0 +1,18 @@
+{
+  "va": "0x00498F80",
+  "size": 15,
+  "sha256": "e980daab56b1af0fcdab41dbc5d730f2b3639cdd3b20aa0bc1f2371721d745ad",
+  "symbol": "ExprParser::PrimitiveProxyType\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e\u003e::vfunc_37",
+  "callees": [
+    "0x004989F0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00498F81"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:47:29Z"
+}

@@ -1,0 +1,17 @@
+{
+  "va": "0x00584F50",
+  "size": 35,
+  "sha256": "816ee87bfdd1c20e84bc0c8eea11be101f093a59291fbeafd864ea77d35e2e25",
+  "symbol": "NMData::RPROMagnetData::vfunc_59",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00584F52",
+    "0x00584F68"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:37:08Z"
+}

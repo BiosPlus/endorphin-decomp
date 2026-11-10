@@ -1,0 +1,18 @@
+{
+  "va": "0x0068BFB0",
+  "size": 16,
+  "sha256": "a9e3698aa3caa2903adb23929827157b173bdd1f0c4b81141ecd435678baadcb",
+  "symbol": "ExprParser::Method0Type\u003cRandomizer, {public: void __thiscall Randomizer::applySeed(void), 0}\u003e::vfunc_1",
+  "callees": [
+    "0x0068BC50"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0068BFB7"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:07:14Z"
+}

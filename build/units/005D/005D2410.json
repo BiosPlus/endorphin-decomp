@@ -1,0 +1,19 @@
+{
+  "va": "0x005D2410",
+  "size": 45,
+  "sha256": "59a57907b1193f73bde0b90ebad12cb9ee5b69462935ab22a1051150333d7d8a",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, int, \u0026public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0\u003e::vfunc_1",
+  "callees": [
+    "0x0046C3C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005D242A",
+    "0x005D242F",
+    "0x005D2439"
+  ],
+  "status": "todo"
+}

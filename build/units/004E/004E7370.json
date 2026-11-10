@@ -1,0 +1,13 @@
+{
+  "va": "0x004E7370",
+  "size": 24,
+  "sha256": "6b3d47265c2ad060c50bf3c4e4086cbf6af90430359ab9fcfde7f3eb1d5076cd",
+  "symbol": "SelectionBuffer::vfunc_22",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

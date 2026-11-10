@@ -1,0 +1,19 @@
+{
+  "va": "0x005731A0",
+  "size": 37,
+  "sha256": "1a43c2e1b79d2f96963abac72e11e32068d5684bbd91b29c74b84ac8b864338d",
+  "symbol": "OBJIO::vfunc_3",
+  "callees": [
+    "0x00553720",
+    "0x00640390"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005731AB",
+    "0x005731B2",
+    "0x005731BA"
+  ],
+  "status": "todo"
+}

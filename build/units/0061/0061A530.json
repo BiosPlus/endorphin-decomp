@@ -1,0 +1,20 @@
+{
+  "va": "0x0061A530",
+  "size": 30,
+  "sha256": "eb01a1a07e4eb46ebf9f759a8051aa35f5b6c5396b7a53415b1ee73db5c750ac",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::TwistAndSwingLimit, float, \u0026public: float __thiscall NMData::TwistAndSwingLimit::getLinearDamping(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061A537",
+    "0x0061A53C",
+    "0x0061A544"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:57:33Z"
+}

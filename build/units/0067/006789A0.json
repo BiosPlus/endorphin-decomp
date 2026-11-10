@@ -1,0 +1,23 @@
+{
+  "va": "0x006789A0",
+  "size": 122,
+  "sha256": "10c3222655aefbd87583eb02a1c247a6b73583d088c4394ca7f19c3a9a82d429",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cSystemInfo, bool, \u0026public: bool __thiscall SystemInfo::getSaveBinaryAttributes(void) const, bool, \u0026public: void __thiscall SystemInfo::setSaveBinaryAttributes(bool)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006789A9",
+    "0x006789BC",
+    "0x006789C4",
+    "0x006789C9",
+    "0x006789D6",
+    "0x006789E4",
+    "0x006789EB",
+    "0x00678A06"
+  ],
+  "status": "todo"
+}

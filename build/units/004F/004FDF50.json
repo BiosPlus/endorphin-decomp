@@ -1,0 +1,14 @@
+{
+  "va": "0x004FDF50",
+  "size": 40,
+  "sha256": "0b59cdbacf6a54011027fbdef61ec8846f91fa84fc32eda29d85bc7be0a9d1ae",
+  "symbol": "Properties::TerminalParentType\u003cNMData::ValuePtrData\u003e::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:09:17Z"
+}

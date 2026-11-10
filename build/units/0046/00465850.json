@@ -1,0 +1,20 @@
+{
+  "va": "0x00465850",
+  "size": 44,
+  "sha256": "87d09bfc2fe370b3c01add4be92d80c5336eea10923fc9046672a5474661036a",
+  "symbol": "VMCActionApp::vfunc_24",
+  "callees": [
+    "0x00464710",
+    "0x004650B0",
+    "0x006A6A00"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00465863",
+    "0x0046586B",
+    "0x00465873"
+  ],
+  "status": "todo"
+}

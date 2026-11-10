@@ -1,0 +1,16 @@
+{
+  "va": "0x00487450",
+  "size": 113,
+  "sha256": "64f096f02cca8e35a52ff87abfb6e191d723b02cc683311b6d4b73735af1bb52",
+  "symbol": "ExprParser::WriteMethodType\u003cNMData::DesiredPoseEventData, float, {public: void __thiscall NMData::DesiredPoseEventData::setEntryBlendPeriodFromFSM(float), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x00486C10"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00487477"
+  ],
+  "status": "todo"
+}

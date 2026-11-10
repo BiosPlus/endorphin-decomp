@@ -1,0 +1,27 @@
+{
+  "va": "0x00441220",
+  "size": 258,
+  "sha256": "d846d678343e54ec67366c86bc288aa750a756686739fb299b50bbcce5029cde",
+  "symbol": "MultiTrackView::DiamondMarker::vfunc_2",
+  "callees": [
+    "0x0041A790",
+    "0x0041A830",
+    "0x0066A180",
+    "0x006A610C",
+    "0x006A61A8"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044129F",
+    "0x004412CE",
+    "0x004412DB",
+    "0x004412E6",
+    "0x004412EF",
+    "0x00441302",
+    "0x0044130A",
+    "0x00441312"
+  ],
+  "status": "todo"
+}

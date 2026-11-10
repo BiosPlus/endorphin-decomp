@@ -1,0 +1,19 @@
+{
+  "va": "0x00502110",
+  "size": 30,
+  "sha256": "40b420f2c77d478cd4f8fc1182e690f46698900e1db203d672b02fc7df9bf7a4",
+  "symbol": "EvolveEngine::vfunc_0",
+  "callees": [
+    "0x00501DC0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00502114",
+    "0x00502121"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

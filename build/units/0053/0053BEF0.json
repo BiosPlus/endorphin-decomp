@@ -1,0 +1,23 @@
+{
+  "va": "0x0053BEF0",
+  "size": 152,
+  "sha256": "4b9406377249527cb970a6254cfc8558a7ff2bc827b42535b26e730a6a08f87f",
+  "symbol": "Primitives::HingeLimit::vfunc_28",
+  "callees": [
+    "0x00537ED0",
+    "0x005B11F0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053BEFA",
+    "0x0053BF0D",
+    "0x0053BF26",
+    "0x0053BF2F",
+    "0x0053BF60",
+    "0x0053BF77",
+    "0x0053BF7D"
+  ],
+  "status": "todo"
+}

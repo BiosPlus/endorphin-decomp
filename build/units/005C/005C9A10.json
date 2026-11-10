@@ -1,0 +1,23 @@
+{
+  "va": "0x005C9A10",
+  "size": 71,
+  "sha256": "83e362ee581e2f2d90ef4cefb5baacd4e417f6e1e34b4a56f2a811b48e7dc789",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLinearVelocity(void) const, 0}, 1\u003e::vfunc_0",
+  "callees": [
+    "0x0046C3C0",
+    "0x005C38F0",
+    "0x00672110",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C9A26",
+    "0x005C9A32",
+    "0x005C9A44",
+    "0x005C9A49",
+    "0x005C9A53"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x00448F00",
+  "size": 30,
+  "sha256": "7532a528c76a95e51846844752af5ecec76879732b0cc97067ecac5b083d48f5",
+  "symbol": "Properties::PropInPlaceSpinbuttonEdit::vfunc_1",
+  "callees": [
+    "0x00448540",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00448F04",
+    "0x00448F11"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

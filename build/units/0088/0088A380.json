@@ -1,0 +1,16 @@
+{
+  "va": "0x0088A380",
+  "size": 18,
+  "sha256": "1afeac3bad35d616735969aeff2afc66da7c85d327addda5c1ae1fff967a9bf6",
+  "symbol": "sub_0088A380",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0088A384",
+    "0x0088A389",
+    "0x0088A38E"
+  ],
+  "status": "out_of_scope"
+}

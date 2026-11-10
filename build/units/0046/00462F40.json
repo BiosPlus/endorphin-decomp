@@ -1,0 +1,19 @@
+{
+  "va": "0x00462F40",
+  "size": 30,
+  "sha256": "dbb3c6ede5f7325ce9f91b88b0264e6c389e2eb21708a87d571bfe6b5d2577f6",
+  "symbol": "VersionControlObserver::vfunc_0",
+  "callees": [
+    "0x00462DF0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00462F44",
+    "0x00462F51"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

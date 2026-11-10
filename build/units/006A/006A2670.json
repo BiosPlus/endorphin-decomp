@@ -1,0 +1,43 @@
+{
+  "va": "0x006A2670",
+  "size": 718,
+  "sha256": "9409a70381673555915246dc0bf37543b834622c55b010f2aba673a88fe94b27",
+  "symbol": "ExprParser::Operators::FunctionNPtr::vfunc_2",
+  "callees": [
+    "0x00401CC0",
+    "0x0041CF00",
+    "0x0041CF50",
+    "0x0048A120",
+    "0x004ECA40",
+    "0x004ECB40",
+    "0x006A6DD2"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A2679",
+    "0x006A26A3",
+    "0x006A26B5",
+    "0x006A26BC",
+    "0x006A2731",
+    "0x006A273B",
+    "0x006A2763",
+    "0x006A2772",
+    "0x006A27B1",
+    "0x006A27C3",
+    "0x006A27CB",
+    "0x006A27E9",
+    "0x006A27FB",
+    "0x006A2816",
+    "0x006A2822",
+    "0x006A2843",
+    "0x006A2864",
+    "0x006A2885",
+    "0x006A2893",
+    "0x006A28CA",
+    "0x006A2928",
+    "0x006A293A"
+  ],
+  "status": "todo"
+}

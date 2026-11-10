@@ -1,0 +1,20 @@
+{
+  "va": "0x0068BD10",
+  "size": 30,
+  "sha256": "71883608c6220be54df505d086f2bbd86ab7f6ddeaf069f0a89fb612225c2073",
+  "symbol": "ExprParser::Function2Type\u003cRandomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0068BD17",
+    "0x0068BD1C",
+    "0x0068BD24"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:46:29Z"
+}

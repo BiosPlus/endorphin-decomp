@@ -1,0 +1,19 @@
+{
+  "va": "0x00416190",
+  "size": 30,
+  "sha256": "2fc7f179e7143b2ec3464c3c9cede1a172bcb351aa0073af330997a3e4396932",
+  "symbol": "CEnTabCtrl::vfunc_1",
+  "callees": [
+    "0x00415EF0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00416194",
+    "0x004161A1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

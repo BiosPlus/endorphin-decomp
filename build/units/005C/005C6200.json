@@ -1,0 +1,18 @@
+{
+  "va": "0x005C6200",
+  "size": 16,
+  "sha256": "05195181977a56f0c7e6e65471d09dc85e80ea64797b51bad3058ce7032beb1f",
+  "symbol": "ExprParser::Method0Type\u003cNMData::CollisionModelDataBase, {protected: void __thiscall NMData::CollisionModelDataBase::resetForcesAndImpulses(void), 0}\u003e::vfunc_3",
+  "callees": [
+    "0x005C3170"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C6207"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:05:06Z"
+}

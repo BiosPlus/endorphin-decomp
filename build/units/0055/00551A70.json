@@ -1,0 +1,14 @@
+{
+  "va": "0x00551A70",
+  "size": 5,
+  "sha256": "39d55b033c7d1e8fcabf6b7836b1e82d33cb91584d7c95d8db2ec554f8b59f3c",
+  "symbol": "NMCamera::Orthogonal::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00551A71"
+  ],
+  "status": "out_of_scope"
+}

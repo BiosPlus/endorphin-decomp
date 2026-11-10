@@ -1,0 +1,15 @@
+{
+  "va": "0x0046FF70",
+  "size": 8,
+  "sha256": "612cdc50bf3d880b1abcbe169bce035e32fd54e499aebe0df9e74105bd818442",
+  "symbol": "RuntimeEngine::AdvanceVisibleFrameTicker::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046FF74"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

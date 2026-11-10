@@ -1,0 +1,31 @@
+{
+  "va": "0x00445F80",
+  "size": 250,
+  "sha256": "992d8ea5c2860d5174e168372e231ec4cd0ba85246ae09c6bcbefddf969c75bf",
+  "symbol": "NodeView::vfunc_0_off_148",
+  "callees": [
+    "0x004447E0",
+    "0x0045C1C0",
+    "0x0045C980",
+    "0x0045CA40",
+    "0x006A6E9E"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00445F93",
+    "0x00445FAC",
+    "0x00445FDD",
+    "0x00445FED",
+    "0x00445FFC",
+    "0x00446005",
+    "0x0044600A",
+    "0x00446012",
+    "0x00446023",
+    "0x00446032",
+    "0x00446047",
+    "0x00446068"
+  ],
+  "status": "todo"
+}

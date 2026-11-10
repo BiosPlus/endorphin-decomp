@@ -1,0 +1,16 @@
+{
+  "va": "0x00594550",
+  "size": 113,
+  "sha256": "4a0e380008d7e14e5c78b02f0a5596e63289a01441ab8109bb3144dedc93b8ec",
+  "symbol": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setFriction(float), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x005940A0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00594577"
+  ],
+  "status": "todo"
+}

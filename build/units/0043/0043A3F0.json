@@ -1,0 +1,28 @@
+{
+  "va": "0x0043A3F0",
+  "size": 203,
+  "sha256": "1d788e7b559bea006bf89932a9398018819658e666962307c728835df0c57d06",
+  "symbol": "EventDispatcher\u003cEngineEventListener, \u0026[thunk]: __thiscall SelectionListener::`vcall'{0, {flat}}\u003e::vfunc_1",
+  "callees": [
+    "0x0043CB70",
+    "0x0046A3C0",
+    "0x0046A810",
+    "0x004750C0",
+    "0x00678D70",
+    "0x006A5C5C"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0043A3F3",
+    "0x0043A411",
+    "0x0043A44D",
+    "0x0043A458",
+    "0x0043A465",
+    "0x0043A475",
+    "0x0043A497",
+    "0x0043A4A1"
+  ],
+  "status": "todo"
+}

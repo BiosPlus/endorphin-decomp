@@ -1,0 +1,18 @@
+{
+  "va": "0x0048E0B0",
+  "size": 13,
+  "sha256": "0514b397c7bf4b6c5f1dc895868c507c9afbcfa49eaf013aee90241974f0af2e",
+  "symbol": "Commands::SetSaveStartFrameCommand::vfunc_1",
+  "callees": [
+    "0x0046FDA0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048E0B8"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:21:57Z"
+}

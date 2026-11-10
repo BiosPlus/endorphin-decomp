@@ -1,0 +1,16 @@
+{
+  "va": "0x006496C0",
+  "size": 110,
+  "sha256": "c47f3cdd4e71b0df63765ce35a261ba45c29926d286fc03f3136786e973e9d5e",
+  "symbol": "ExprParser::WriteMethodType\u003cRelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::setEnabled(bool), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x00648EA0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006496E4"
+  ],
+  "status": "todo"
+}

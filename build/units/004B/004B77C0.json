@@ -1,0 +1,13 @@
+{
+  "va": "0x004B77C0",
+  "size": 19,
+  "sha256": "310882db52cfaa0e3607210d73260befea0472b8c63df16d697dda9c190dc479",
+  "symbol": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::RenameElementCommand::vfunc_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

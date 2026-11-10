@@ -1,0 +1,23 @@
+{
+  "va": "0x0059F6C0",
+  "size": 122,
+  "sha256": "43f81ecf7636ef00e345d2e0617277c07dd2ef33ae0826b0cb8bcf447036c16b",
+  "symbol": "ExprParser::WriteMethodType\u003cNMData::CharacterData, ValuePtr const \u0026, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0059F6C9",
+    "0x0059F6DC",
+    "0x0059F6E4",
+    "0x0059F6E9",
+    "0x0059F6F6",
+    "0x0059F704",
+    "0x0059F70B",
+    "0x0059F726"
+  ],
+  "status": "todo"
+}

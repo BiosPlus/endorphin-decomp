@@ -1,0 +1,18 @@
+{
+  "va": "0x00629DE0",
+  "size": 13,
+  "sha256": "6411977f3457a11647bcde9f1d28b1bf004618f0b1018ac97b0f7f91f4142417",
+  "symbol": "Sensors::SensorAbsoluteTime::vfunc_17",
+  "callees": [
+    "0x00629DC0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00629DE4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:30:21Z"
+}

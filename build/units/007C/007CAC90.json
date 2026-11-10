@@ -1,0 +1,15 @@
+{
+  "va": "0x007CAC90",
+  "size": 190,
+  "sha256": "c92c160df3e9c8d1359aa7289c5290e83af1444273fb5a4b537b812f00290acf",
+  "symbol": "sub_007CAC90",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x007CACD8",
+    "0x007CAD3D"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,26 @@
+{
+  "va": "0x0061C4F0",
+  "size": 170,
+  "sha256": "f896edb6f22cd2e33009dfb987037668dc252077c321117434f24ea51609e442",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0\u003e::vfunc_44",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00611950",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061C4F9",
+    "0x0061C514",
+    "0x0061C529",
+    "0x0061C53D",
+    "0x0061C587",
+    "0x0061C58C",
+    "0x0061C596"
+  ],
+  "status": "todo"
+}

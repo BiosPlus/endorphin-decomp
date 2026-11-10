@@ -1,0 +1,21 @@
+{
+  "va": "0x00528730",
+  "size": 234,
+  "sha256": "715e9012397b841d4bb0a37b7be1fa1a709da05277574379866fa2b71863ae48",
+  "symbol": "Interpolator::Linear::vfunc_2",
+  "callees": [
+    "0x00693DB0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00528735",
+    "0x00528766",
+    "0x0052878D",
+    "0x00528799",
+    "0x005287A3",
+    "0x005287FA"
+  ],
+  "status": "todo"
+}

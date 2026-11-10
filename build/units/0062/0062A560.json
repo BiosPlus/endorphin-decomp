@@ -1,0 +1,20 @@
+{
+  "va": "0x0062A560",
+  "size": 30,
+  "sha256": "78b203023cc5c3b15d260e03bb613261a169d62db50aa942f9f9f4b0c38582e3",
+  "symbol": "ExprParser::ROWriteMethodType\u003cSensors::SensorIntegral, float, \u0026public: void __thiscall Sensors::SensorIntegral::insert(float)\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062A567",
+    "0x0062A56C",
+    "0x0062A574"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:45:58Z"
+}

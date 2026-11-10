@@ -1,0 +1,13 @@
+{
+  "va": "0x00536EA0",
+  "size": 7,
+  "sha256": "3700d49b5691425aa9af46958fa9449b97d056c0d7af19b60561bdf49e426f5a",
+  "symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_71",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,21 @@
+{
+  "va": "0x00622940",
+  "size": 120,
+  "sha256": "6e0fab06e33dc1df389a888e648710f8727be5c93b33a4ec735db5b2496be767",
+  "symbol": "NMData::HingeCalibrationVariables::vfunc_29",
+  "callees": [
+    "0x00487A30"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062294D",
+    "0x00622967",
+    "0x00622971",
+    "0x0062298B",
+    "0x00622995",
+    "0x006229AF"
+  ],
+  "status": "todo"
+}

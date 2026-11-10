@@ -1,0 +1,20 @@
+{
+  "va": "0x005B19F0",
+  "size": 49,
+  "sha256": "ff1eedf83a3afa5d3c7b8e438e6abba3646022189df721ba131fd72c82995ae4",
+  "symbol": "Geometry::CylinderType::vfunc_3",
+  "callees": [
+    "0x005B11E0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B19F7",
+    "0x005B1A02",
+    "0x005B1A0C"
+  ],
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5",
+  "matched_at": "2026-11-10T03:46:44Z"
+}

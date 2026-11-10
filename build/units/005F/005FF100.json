@@ -1,0 +1,17 @@
+{
+  "va": "0x005FF100",
+  "size": 76,
+  "sha256": "47868ec9d49de0d6b34f42de1854068b17a7027c2def78670724e3554bfff520",
+  "symbol": "CompoundSensor::vfunc_24",
+  "callees": [
+    "0x005FF080"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005FF122",
+    "0x005FF138"
+  ],
+  "status": "todo"
+}

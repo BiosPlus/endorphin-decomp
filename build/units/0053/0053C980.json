@@ -1,0 +1,13 @@
+{
+  "va": "0x0053C980",
+  "size": 20,
+  "sha256": "86069a0ca3fc0af83c3d70f9f4209c1dd8aebae5d1fb26b480efe3ece2543c03",
+  "symbol": "Primitives::Sensor2::vfunc_20",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

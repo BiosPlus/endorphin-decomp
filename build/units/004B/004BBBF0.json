@@ -1,0 +1,16 @@
+{
+  "va": "0x004BBBF0",
+  "size": 38,
+  "sha256": "f8c1e8d6c91dbaa637b483d42277d827ee5b3a7c20bd96d004dfff06f9ac962e",
+  "symbol": "Properties::TerminalParentType\u003cNMData::MaterialInteraction\u003e::vfunc_0",
+  "callees": [
+    "0x004BA950"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004BBC0B"
+  ],
+  "status": "todo"
+}

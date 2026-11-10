@@ -1,0 +1,31 @@
+{
+  "va": "0x0050AC30",
+  "size": 231,
+  "sha256": "14e6153633634749db58e0584362078b74b861d90523fab498afa80709e2c6ac",
+  "symbol": "NMData::TaskManager::vfunc_13",
+  "callees": [
+    "0x0046F7D0",
+    "0x0050A170",
+    "0x0055DA20"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0050AC33",
+    "0x0050AC49",
+    "0x0050AC50",
+    "0x0050AC70",
+    "0x0050AC7A",
+    "0x0050ACA9",
+    "0x0050ACB0",
+    "0x0050ACC6",
+    "0x0050ACCE",
+    "0x0050ACD3",
+    "0x0050ACD8",
+    "0x0050ACDE",
+    "0x0050ACEE",
+    "0x0050ACFA"
+  ],
+  "status": "todo"
+}

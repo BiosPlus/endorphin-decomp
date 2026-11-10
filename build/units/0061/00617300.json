@@ -1,0 +1,19 @@
+{
+  "va": "0x00617300",
+  "size": 63,
+  "sha256": "310c42001f3a7f1cd73d1d189daf87f174901c587de4539a81bf042c45a5e10a",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::HingeLimit, float, \u0026public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, float, \u0026public: void __thiscall NMData::HingeLimit::setUpperStiffness(float)\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061732C",
+    "0x00617331",
+    "0x0061733B"
+  ],
+  "status": "todo"
+}

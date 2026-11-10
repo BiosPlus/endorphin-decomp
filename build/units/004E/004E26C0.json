@@ -1,0 +1,19 @@
+{
+  "va": "0x004E26C0",
+  "size": 50,
+  "sha256": "619a2a625ee83e8c3eff36b542d704690f8da823cacc4771aea7adb83de968d7",
+  "symbol": "NMData::AnimationEventData::vfunc_68",
+  "callees": [
+    "0x0047C480",
+    "0x004E1DC0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004E26D6",
+    "0x004E26DC",
+    "0x004E26E9"
+  ],
+  "status": "todo"
+}

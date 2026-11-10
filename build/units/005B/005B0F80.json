@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0F80",
+  "size": 5,
+  "sha256": "46e6573fd36961f3e78859d3f2405fc6e050420603896f47a4bb4318b0ee56f7",
+  "symbol": "Geometry::SwingLimitType::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005B0F81"
+  ],
+  "status": "out_of_scope"
+}

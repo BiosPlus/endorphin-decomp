@@ -1,0 +1,17 @@
+{
+  "va": "0x00546760",
+  "size": 31,
+  "sha256": "383b33eacc93b0634dfa4c40f27864cb8c2f0e6d9b539a1c14893fb7e503aaeb",
+  "symbol": "RotateTool::vfunc_29",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00546770",
+    "0x0054677B"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:12:34Z"
+}

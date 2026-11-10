@@ -1,0 +1,23 @@
+{
+  "va": "0x0068F1F0",
+  "size": 78,
+  "sha256": "061cd3f966a749a1ac1f0db4674320bf8dbcd961a9c9eff3175e08c34c621f03",
+  "symbol": "ExprParser::ReadMethodType\u003cUnitsWithProperties, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0\u003e::vfunc_0",
+  "callees": [
+    "0x0046C3C0",
+    "0x006720E0",
+    "0x0068EE60",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0068F20D",
+    "0x0068F219",
+    "0x0068F22B",
+    "0x0068F230",
+    "0x0068F23A"
+  ],
+  "status": "todo"
+}

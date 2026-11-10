@@ -1,0 +1,19 @@
+{
+  "va": "0x004D8BB0",
+  "size": 118,
+  "sha256": "2984da3f450dd49e260ed781a99f3e2ab33cdf983c53a250ae51d6e2e0a7d114",
+  "symbol": "ExprParser::DynamicEnumType\u003cNMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTweakNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTweakNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTweaks(void) const, 0}, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getAvailableTweakDescription(int) const, 0}\u003e::vfunc_27",
+  "callees": [
+    "0x004D4230"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D8BB3",
+    "0x004D8BE2",
+    "0x004D8BF7",
+    "0x004D8C0E"
+  ],
+  "status": "todo"
+}

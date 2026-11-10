@@ -1,0 +1,20 @@
+{
+  "va": "0x0048DF50",
+  "size": 62,
+  "sha256": "a536218f452273cbc8d7e47ab609d98ebb5facf35514e46c5c33631fbb95552b",
+  "symbol": "Commands::BufferPoseCommand::vfunc_2",
+  "callees": [
+    "0x00594000",
+    "0x005975A0",
+    "0x0059B5A0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048DF55",
+    "0x0048DF62",
+    "0x0048DF7E"
+  ],
+  "status": "todo"
+}

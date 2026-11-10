@@ -1,0 +1,20 @@
+{
+  "va": "0x00594440",
+  "size": 30,
+  "sha256": "7e274faed157d5ffa7adf36e99a0a74b8329f8da41bbbbfcf07bcb6614322028",
+  "symbol": "ExprParser::Function2Type\u003cWorld, ValuePtr, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00594447",
+    "0x0059444C",
+    "0x00594454"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:11:01Z"
+}

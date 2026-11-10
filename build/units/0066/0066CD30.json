@@ -1,0 +1,18 @@
+{
+  "va": "0x0066CD30",
+  "size": 86,
+  "sha256": "8a08b42798e22c05a9f008f07dcb8d4419fa2759d886bba1bba08579fee0b924",
+  "symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, float, \u0026public: void __thiscall NM::Vector3::radArbitraryRotateTS(class NM::Vector3 const \u0026, float)\u003e::vfunc_49",
+  "callees": [
+    "0x00671F30",
+    "0x0067C760"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066CD6E",
+    "0x0066CD78"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x004C5680",
+  "size": 84,
+  "sha256": "0d03a99ba011c316731876c9e3ec09e3df588fc03c346e9bfb7e610ad9f24fc3",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0\u003e::vfunc_4",
+  "callees": [
+    "0x0046C390",
+    "0x0046C3C0",
+    "0x004C4DB0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C5696",
+    "0x004C56AC",
+    "0x004C56C1",
+    "0x004C56C6",
+    "0x004C56D0"
+  ],
+  "status": "todo"
+}

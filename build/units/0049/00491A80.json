@@ -1,0 +1,15 @@
+{
+  "va": "0x00491A80",
+  "size": 8,
+  "sha256": "c4381d5d13ae8e1096e81a106bb838ab3f7ba98eae25b8f9d93ca39473522683",
+  "symbol": "GraphEngine::vfunc_0_off_10",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00491A84"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

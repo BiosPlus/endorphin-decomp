@@ -1,0 +1,20 @@
+{
+  "va": "0x00519DF0",
+  "size": 30,
+  "sha256": "70a2516c25854ec8a46340d68d6afcc949ecb265cdd0c6167f14070b99d51861",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::QuatChannel, NM::Vector4 const \u0026, \u0026public: class NM::Vector4 const \u0026 __thiscall NMData::QuatChannel::getValue(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00519DF7",
+    "0x00519DFC",
+    "0x00519E04"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:49:14Z"
+}

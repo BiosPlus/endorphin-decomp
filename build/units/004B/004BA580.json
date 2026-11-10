@@ -1,0 +1,19 @@
+{
+  "va": "0x004BA580",
+  "size": 30,
+  "sha256": "b0b40c9a209107dd0bfbb4c34e25010a3d18a643a83a0063fde48203daff9f19",
+  "symbol": "PointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialInteraction\u003e\u003e::AddElementCommand::vfunc_0",
+  "callees": [
+    "0x004BA170",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004BA584",
+    "0x004BA591"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

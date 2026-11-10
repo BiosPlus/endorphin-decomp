@@ -1,0 +1,42 @@
+{
+  "va": "0x00443750",
+  "size": 528,
+  "sha256": "e0c1384f9c5c2b694a27b27c7bdf9c67d9a53f8ecc7867502547e058976fd6a3",
+  "symbol": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_4",
+  "callees": [
+    "0x0041C880",
+    "0x0043C9B0",
+    "0x0043CDD0",
+    "0x0043D620",
+    "0x0043DD60",
+    "0x0043F2E0",
+    "0x0043F490",
+    "0x0043F4C0",
+    "0x006A5C5C",
+    "0x006A60D0"
+  ],
+  "num_callees": 10,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00443753",
+    "0x004437B2",
+    "0x004437C1",
+    "0x004437CF",
+    "0x004437D4",
+    "0x004437F1",
+    "0x00443805",
+    "0x00443834",
+    "0x0044385E",
+    "0x0044389C",
+    "0x004438A6",
+    "0x004438C6",
+    "0x00443907",
+    "0x00443911",
+    "0x00443919",
+    "0x0044392A",
+    "0x00443934",
+    "0x00443942"
+  ],
+  "status": "todo"
+}

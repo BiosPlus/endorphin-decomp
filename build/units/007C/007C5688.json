@@ -1,0 +1,14 @@
+{
+  "va": "0x007C5688",
+  "size": 6,
+  "sha256": "d6a05812b39a50c0437ccb8f07dfae3807f5d3ad11987b52096326192fef8385",
+  "symbol": "thunk_XSIFtk-3.6.2.1_?SetTranslation@CSLTransform@@QAEXAAVCSIBCVector3D@@@Z",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x007C568A"
+  ],
+  "status": "out_of_scope"
+}

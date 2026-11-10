@@ -1,0 +1,19 @@
+{
+  "va": "0x0055A120",
+  "size": 30,
+  "sha256": "89cfb057cca4ddb2cf07c61cfdc548068ce3031af8243effa95937fbc85fc606",
+  "symbol": "OBJIO::vfunc_0",
+  "callees": [
+    "0x00573180",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0055A124",
+    "0x0055A131"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

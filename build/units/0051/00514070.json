@@ -1,0 +1,28 @@
+{
+  "va": "0x00514070",
+  "size": 117,
+  "sha256": "79d386a818104860a3654553472649b2dd422cc45ead2a65e91ae9926d8c1f58",
+  "symbol": "ExprParser::ReadMethodType\u003cChromosome::Descriptor, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0\u003e::vfunc_2",
+  "callees": [
+    "0x0046C3C0",
+    "0x00682ED0",
+    "0x006A6DD2",
+    "0x006A6DE0"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00514081",
+    "0x00514089",
+    "0x00514090",
+    "0x005140AE",
+    "0x005140B3",
+    "0x005140BF",
+    "0x005140C4",
+    "0x005140D2",
+    "0x005140D7",
+    "0x005140E1"
+  ],
+  "status": "todo"
+}

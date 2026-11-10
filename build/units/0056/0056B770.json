@@ -1,0 +1,33 @@
+{
+  "va": "0x0056B770",
+  "size": 131,
+  "sha256": "2270192407819ba2df532c61e5499adc795703f27a24936cd89505809a4b22ab",
+  "symbol": "Acclaim2CharacterIO::vfunc_3",
+  "callees": [
+    "0x00553720",
+    "0x0063F530",
+    "0x00640390"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0056B771",
+    "0x0056B785",
+    "0x0056B78A",
+    "0x0056B791",
+    "0x0056B798",
+    "0x0056B79F",
+    "0x0056B7A6",
+    "0x0056B7AD",
+    "0x0056B7B2",
+    "0x0056B7B9",
+    "0x0056B7C0",
+    "0x0056B7C7",
+    "0x0056B7CE",
+    "0x0056B7D6",
+    "0x0056B7E0",
+    "0x0056B7E8"
+  ],
+  "status": "todo"
+}

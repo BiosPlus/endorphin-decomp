@@ -1,0 +1,30 @@
+{
+  "va": "0x0053D0D0",
+  "size": 271,
+  "sha256": "49882f370c173b8421baf70874f07951207f318d6fdc0f9c99023d4cf767fa77",
+  "symbol": "Primitives::SkeletalJoint::vfunc_28",
+  "callees": [
+    "0x0053CB60",
+    "0x0063E02A"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053D0E1",
+    "0x0053D0F6",
+    "0x0053D102",
+    "0x0053D10B",
+    "0x0053D118",
+    "0x0053D122",
+    "0x0053D13B",
+    "0x0053D144",
+    "0x0053D176",
+    "0x0053D190",
+    "0x0053D1A0",
+    "0x0053D1C8",
+    "0x0053D1CE",
+    "0x0053D1D4"
+  ],
+  "status": "todo"
+}

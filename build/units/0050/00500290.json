@@ -1,0 +1,23 @@
+{
+  "va": "0x00500290",
+  "size": 122,
+  "sha256": "109e5c73ff6a765960ce498f465baa9207f03437256abd8e70dcd5d112dac3d1",
+  "symbol": "ExprParser::WriteMethodType\u003cEvolveEngine, float, {private: void __thiscall EvolveEngine::stopWithFitness(float), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00500299",
+    "0x005002AC",
+    "0x005002B4",
+    "0x005002B9",
+    "0x005002C6",
+    "0x005002D4",
+    "0x005002DB",
+    "0x005002F6"
+  ],
+  "status": "todo"
+}

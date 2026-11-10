@@ -1,0 +1,15 @@
+{
+  "va": "0x00454B90",
+  "size": 6,
+  "sha256": "388978e5379e4a8f184fde6c6e9d2a651fd4106f7d6ec86172b59c825354a0a7",
+  "symbol": "ButtonPanel::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00454B91"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

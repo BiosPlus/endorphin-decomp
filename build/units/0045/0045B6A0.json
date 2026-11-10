@@ -1,0 +1,15 @@
+{
+  "va": "0x0045B6A0",
+  "size": 6,
+  "sha256": "3cd18d3da8deeb2af299ef7b5c867bd399fa930098d9d296c486ff42dba50260",
+  "symbol": "TransformNodeViewCtrl::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0045B6A1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

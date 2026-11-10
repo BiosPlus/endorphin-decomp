@@ -1,0 +1,19 @@
+{
+  "va": "0x0052FBF0",
+  "size": 30,
+  "sha256": "cd1635dbbd763a839813d3dbe7632496418c5b9939d1602cc893eb995424609c",
+  "symbol": "Primitives::RPRO::vfunc_0",
+  "callees": [
+    "0x0052FB80",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0052FBF4",
+    "0x0052FC01"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

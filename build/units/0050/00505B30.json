@@ -1,0 +1,23 @@
+{
+  "va": "0x00505B30",
+  "size": 206,
+  "sha256": "c9c1f68f0fdbece8f4294528af7025948c1667f43c6769499dc65854b3281a0d",
+  "symbol": "Properties::SequenceType\u003cstd::vector\u003cChromosome, std::allocator\u003cChromosome\u003e\u003e, Properties::GetPropertySource, DeRefValue\u003e::vfunc_3",
+  "callees": [
+    "0x00493D90",
+    "0x00494FF0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00505B39",
+    "0x00505B64",
+    "0x00505B7E",
+    "0x00505B91",
+    "0x00505BA0",
+    "0x00505BCA",
+    "0x00505BDD"
+  ],
+  "status": "todo"
+}

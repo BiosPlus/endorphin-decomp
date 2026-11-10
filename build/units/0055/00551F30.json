@@ -1,0 +1,24 @@
+{
+  "va": "0x00551F30",
+  "size": 228,
+  "sha256": "7319b7e5a95c30cedb1ea34eb62e319cf297d203e82af7cc27aef64c17a1fd86",
+  "symbol": "NMCamera::Orthogonal::vfunc_10",
+  "callees": [
+    "0x004875A0",
+    "0x005480D0",
+    "0x00548150",
+    "0x00551D20",
+    "0x006943B0"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00551F3B",
+    "0x00551FBF",
+    "0x00551FD5",
+    "0x00551FDE",
+    "0x00551FEF"
+  ],
+  "status": "todo"
+}

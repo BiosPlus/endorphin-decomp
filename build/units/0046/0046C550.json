@@ -1,0 +1,15 @@
+{
+  "va": "0x0046C550",
+  "size": 8,
+  "sha256": "d83fadba250708ed27e7b543a87388cfe28ccc9246a5a55862b0a680cea41504",
+  "symbol": "ImageExporter::vfunc_0_off_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046C554"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

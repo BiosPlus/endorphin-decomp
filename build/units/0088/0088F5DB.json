@@ -1,0 +1,20 @@
+{
+  "va": "0x0088F5DB",
+  "size": 74,
+  "sha256": "9ec41bae934945097cb59f34aa51384d08f69a3c98b7ca2b42da584e19feb4fd",
+  "symbol": "sub_0088F5DB",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0088F5DF",
+    "0x0088F5ED",
+    "0x0088F5FB",
+    "0x0088F609",
+    "0x0088F617",
+    "0x0088F61C",
+    "0x0088F621"
+  ],
+  "status": "out_of_scope"
+}

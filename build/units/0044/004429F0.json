@@ -1,0 +1,18 @@
+{
+  "va": "0x004429F0",
+  "size": 77,
+  "sha256": "92c8c75e5e52b1e150859c47ec05b6b76e23cf2082bc140cbd292d216c9da7d1",
+  "symbol": "MultiTrackView::MultiTrackViewStates::WaitState::vfunc_4",
+  "callees": [
+    "0x0043D620",
+    "0x006A60D0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00442A08",
+    "0x00442A33"
+  ],
+  "status": "todo"
+}

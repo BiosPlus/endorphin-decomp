@@ -1,0 +1,18 @@
+{
+  "va": "0x006B3CC0",
+  "size": 93,
+  "sha256": "9497cb84909c32e8924af7eda1b15dae55fe5087bb640270a51933aa78849800",
+  "symbol": "GWCHotKeyPropertyValue::vfunc_5",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A5C62"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B3CD7",
+    "0x006B3D09"
+  ],
+  "status": "todo"
+}

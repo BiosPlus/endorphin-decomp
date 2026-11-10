@@ -1,0 +1,26 @@
+{
+  "va": "0x0053FB80",
+  "size": 99,
+  "sha256": "4ca613b412bbee91d1be06eec509ddd4df8c30799ddf455bd90c9f6d466dec53",
+  "symbol": "SelectionTool::vfunc_2",
+  "callees": [
+    "0x004B69A0",
+    "0x0053F5F0",
+    "0x0063EFE0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053FB82",
+    "0x0053FB8F",
+    "0x0053FB99",
+    "0x0053FBA2",
+    "0x0053FBA8",
+    "0x0053FBB3",
+    "0x0053FBC6",
+    "0x0053FBD5",
+    "0x0053FBDA"
+  ],
+  "status": "todo"
+}

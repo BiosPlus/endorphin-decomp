@@ -1,0 +1,15 @@
+{
+  "va": "0x0087FACA",
+  "size": 10,
+  "sha256": "4f479c072bb826f8a716f12efdf7e3bddd58baf2a0b37770022a74c41cf18672",
+  "symbol": "sub_0087FACA",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0087FACB",
+    "0x0087FAD0"
+  ],
+  "status": "out_of_scope"
+}

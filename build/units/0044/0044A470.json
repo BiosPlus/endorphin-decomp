@@ -1,0 +1,30 @@
+{
+  "va": "0x0044A470",
+  "size": 242,
+  "sha256": "6236c3215b69523ff1982ee68804ba299d039c4e5f280adcd1a4a6b825e8f0bd",
+  "symbol": "NMColourButton::vfunc_80",
+  "callees": [
+    "0x006A5F4A",
+    "0x006A6004",
+    "0x006A6010",
+    "0x006A6172"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044A473",
+    "0x0044A4AD",
+    "0x0044A4B7",
+    "0x0044A4BD",
+    "0x0044A4CB",
+    "0x0044A4D5",
+    "0x0044A4E9",
+    "0x0044A4F2",
+    "0x0044A516",
+    "0x0044A521",
+    "0x0044A53F",
+    "0x0044A549"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x007CAD50",
+  "size": 414,
+  "sha256": "e8490e134625ef32a83340d14029e6bc2e23861ae8d3b414ec2022e157429987",
+  "symbol": "sub_007CAD50",
+  "callees": [
+    "0x007CA8A0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x007CAD74",
+    "0x007CAD7E",
+    "0x007CAD8E",
+    "0x007CAEDD"
+  ],
+  "status": "todo"
+}

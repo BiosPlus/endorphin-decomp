@@ -1,0 +1,19 @@
+{
+  "va": "0x0053C8B0",
+  "size": 30,
+  "sha256": "c8981ab77c5055f4c02fbed000b23ca49435e33ee51f41916df626f40085a2ac",
+  "symbol": "Primitives::Sphere::vfunc_0",
+  "callees": [
+    "0x0053B710",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053C8B4",
+    "0x0053C8C1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

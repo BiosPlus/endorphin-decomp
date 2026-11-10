@@ -1,0 +1,31 @@
+{
+  "va": "0x0040FAE0",
+  "size": 500,
+  "sha256": "43b0267ab0812807e72aaf9c50739e3b2427578c53d5a02c3e6cc856fb112be7",
+  "symbol": "CColorButton::vfunc_80",
+  "callees": [
+    "0x0040F0F0",
+    "0x0040F5D0",
+    "0x0040F7D0",
+    "0x006A5F4A",
+    "0x006A6004"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040FAE3",
+    "0x0040FB07",
+    "0x0040FB10",
+    "0x0040FB3B",
+    "0x0040FBA4",
+    "0x0040FBB8",
+    "0x0040FBF4",
+    "0x0040FC38",
+    "0x0040FC52",
+    "0x0040FC7A",
+    "0x0040FC84",
+    "0x0040FCB4"
+  ],
+  "status": "todo"
+}

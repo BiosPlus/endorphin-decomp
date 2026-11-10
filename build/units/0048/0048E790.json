@@ -1,0 +1,19 @@
+{
+  "va": "0x0048E790",
+  "size": 30,
+  "sha256": "cb19bd49a92dd84ec3d190d470d96754da5699b3638ed15ff2203bc8efea0bc3",
+  "symbol": "Commands::DestroyTriggeredEventCommand::vfunc_0",
+  "callees": [
+    "0x0048E310",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048E794",
+    "0x0048E7A1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

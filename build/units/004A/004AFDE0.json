@@ -1,0 +1,17 @@
+{
+  "va": "0x004AFDE0",
+  "size": 34,
+  "sha256": "ca45c81f7f4f3da16871dc37de0c9095fbcd5bfb7d5043825a2010afd3128d08",
+  "symbol": "ChangeSecondarySelectionCommand::vfunc_3",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004AFDE7",
+    "0x004AFDF7"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:11:51Z"
+}

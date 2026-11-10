@@ -1,0 +1,23 @@
+{
+  "va": "0x004BB0E0",
+  "size": 126,
+  "sha256": "bc3aa7fa2a4227ba65eae60cf188a334c348637e5cbe79e3da9b8cb167e88bb5",
+  "symbol": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::MaterialPair\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_10",
+  "callees": [
+    "0x004B77E0",
+    "0x006616B0",
+    "0x006A6E9E"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004BB0EF",
+    "0x004BB114",
+    "0x004BB137",
+    "0x004BB13C",
+    "0x004BB144",
+    "0x004BB155"
+  ],
+  "status": "todo"
+}

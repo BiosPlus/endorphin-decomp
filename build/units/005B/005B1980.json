@@ -1,0 +1,15 @@
+{
+  "va": "0x005B1980",
+  "size": 9,
+  "sha256": "f12b5b2134adb4c8981521fbf1464b332d949fa6b56462d12a0ef4bb2995df2f",
+  "symbol": "Geometry::FileType::vfunc_7",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B1985"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

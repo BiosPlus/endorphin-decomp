@@ -1,0 +1,21 @@
+{
+  "va": "0x00606F90",
+  "size": 72,
+  "sha256": "0772bc083b794ea8b424d56e3f50ca037990d79feb132126cb70050e6f8227fe",
+  "symbol": "ExprParser::ReadMethodType\u003cEffector, float, \u0026public: float __thiscall Effector::getGradient(void) const, 0\u003e::vfunc_0",
+  "callees": [
+    "0x0046C3C0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00606FB3",
+    "0x00606FC5",
+    "0x00606FCA",
+    "0x00606FD4"
+  ],
+  "status": "todo"
+}

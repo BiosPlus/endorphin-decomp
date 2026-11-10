@@ -1,0 +1,19 @@
+{
+  "va": "0x0069AA80",
+  "size": 30,
+  "sha256": "fff631967e845808d978f8d241e4410fc3f511b32c0376a543ad200449a32aa4",
+  "symbol": "ExprParser::ExpressionContainer::vfunc_0",
+  "callees": [
+    "0x0069A830",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0069AA84",
+    "0x0069AA91"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,15 @@
+{
+  "va": "0x00447580",
+  "size": 6,
+  "sha256": "dd7dd089e8e55324b219321962b5c8e2dcc6a539a13ad6a6bb31e2d0cfbdf33d",
+  "symbol": "PrimitivesPropertyPage::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00447581"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

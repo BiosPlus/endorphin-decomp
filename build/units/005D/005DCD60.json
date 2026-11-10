@@ -1,0 +1,19 @@
+{
+  "va": "0x005DCD60",
+  "size": 30,
+  "sha256": "d0e6a36b03b62bcef9352d16d405dfd216b0f7afd48e3a93a2ec0aadeadebcce",
+  "symbol": "NMData::VideoPlaneData::vfunc_0",
+  "callees": [
+    "0x005DC6C0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005DCD64",
+    "0x005DCD71"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

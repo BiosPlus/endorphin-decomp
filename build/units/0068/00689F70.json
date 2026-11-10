@@ -1,0 +1,19 @@
+{
+  "va": "0x00689F70",
+  "size": 30,
+  "sha256": "70da7a06695166a674820816ab1d5c11a97211d176f81ac65368ba1164f9e343",
+  "symbol": "MetaXMLElement::vfunc_0",
+  "callees": [
+    "0x006895E0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00689F74",
+    "0x00689F81"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

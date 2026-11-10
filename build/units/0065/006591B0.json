@@ -1,0 +1,23 @@
+{
+  "va": "0x006591B0",
+  "size": 52,
+  "sha256": "c9926b4e9f0f69f2270cea9950b38d773bdb3816576a6a2b791225dfe00f4e37",
+  "symbol": "RelationshipHinge::vfunc_6",
+  "callees": [
+    "0x00658D50",
+    "0x007C9260",
+    "0x007C97F0",
+    "0x007D8700"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006591B8",
+    "0x006591BE",
+    "0x006591CC",
+    "0x006591D5",
+    "0x006591DB"
+  ],
+  "status": "todo"
+}

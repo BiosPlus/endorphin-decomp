@@ -1,0 +1,26 @@
+{
+  "va": "0x005171B0",
+  "size": 114,
+  "sha256": "e76d54fae96528eaae9da9632f45f705e1cbcf92c70540fc4bf54edf7374a40f",
+  "symbol": "EvolvedIndividual::vfunc_13_off_C",
+  "callees": [
+    "0x0046F7D0",
+    "0x005170A0",
+    "0x0055DA20"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005171B8",
+    "0x005171CB",
+    "0x005171D0",
+    "0x005171D5",
+    "0x005171DA",
+    "0x005171E6",
+    "0x005171F3",
+    "0x00517203",
+    "0x00517214"
+  ],
+  "status": "todo"
+}

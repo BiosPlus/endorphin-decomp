@@ -1,0 +1,14 @@
+{
+  "va": "0x00483090",
+  "size": 5,
+  "sha256": "d74b70a66501ab8032a9c60af4e4f8a174ba07029708590e2bb09640272aee54",
+  "symbol": "ToolEngine::vfunc_36",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00483091"
+  ],
+  "status": "out_of_scope"
+}

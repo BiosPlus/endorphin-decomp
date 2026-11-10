@@ -1,0 +1,24 @@
+{
+  "va": "0x00695AD0",
+  "size": 167,
+  "sha256": "9c391c16c1581d803acee135a7f83ba2c610750135d44c648d01025b9dee7282",
+  "symbol": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00695AD9",
+    "0x00695B06",
+    "0x00695B1A",
+    "0x00695B64",
+    "0x00695B69",
+    "0x00695B73"
+  ],
+  "status": "todo"
+}

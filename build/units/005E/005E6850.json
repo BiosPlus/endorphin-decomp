@@ -1,0 +1,21 @@
+{
+  "va": "0x005E6850",
+  "size": 47,
+  "sha256": "18cdc52dce6168f08c443a05d4b5c9eced69798589ea295d8549c33ff13a9477",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing2SizeForValuePtr(void) const, 0}, 0\u003e::vfunc_1",
+  "callees": [
+    "0x0046C3C0",
+    "0x005E2950",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005E685E",
+    "0x005E686C",
+    "0x005E6871",
+    "0x005E687B"
+  ],
+  "status": "todo"
+}

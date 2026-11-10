@@ -1,0 +1,24 @@
+{
+  "va": "0x00441D40",
+  "size": 228,
+  "sha256": "15d6b1e48d09466c8d4fc2ba2268877b6f5fd31a4edf066cbf9edc41db35c942",
+  "symbol": "MultiTrackView::RangeMarker::vfunc_1",
+  "callees": [
+    "0x00441020",
+    "0x00441040",
+    "0x0066A180",
+    "0x006A6172"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00441D45",
+    "0x00441D4C",
+    "0x00441D75",
+    "0x00441D98",
+    "0x00441DEA",
+    "0x00441DF9"
+  ],
+  "status": "todo"
+}

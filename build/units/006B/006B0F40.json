@@ -1,0 +1,19 @@
+{
+  "va": "0x006B0F40",
+  "size": 30,
+  "sha256": "ef73830488a638de7ecf3c91de4d24b52b70618e974be87f7bd680701d6ce32d",
+  "symbol": "GWCPropInPlaceEdit::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B0CD0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B0F44",
+    "0x006B0F51"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

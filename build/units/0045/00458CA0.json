@@ -1,0 +1,20 @@
+{
+  "va": "0x00458CA0",
+  "size": 288,
+  "sha256": "cfbdfefea798f077074ee18761664196853e18878ed252f49d402f12586e3ffd",
+  "symbol": "CMessageReflector::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00458CAA",
+    "0x00458CDE",
+    "0x00458CF9",
+    "0x00458D0D",
+    "0x00458D78",
+    "0x00458D80",
+    "0x00458DA9"
+  ],
+  "status": "todo"
+}

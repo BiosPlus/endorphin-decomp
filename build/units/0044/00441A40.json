@@ -1,0 +1,19 @@
+{
+  "va": "0x00441A40",
+  "size": 30,
+  "sha256": "bddc613fff62a589c106d9428f18ca6909f9f89c90349d6d80d6527992a3b0dc",
+  "symbol": "MultiTrackView::SimpleRangeMarker::vfunc_0",
+  "callees": [
+    "0x00440A10",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00441A44",
+    "0x00441A51"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

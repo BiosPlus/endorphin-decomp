@@ -1,0 +1,31 @@
+{
+  "va": "0x0060BF00",
+  "size": 116,
+  "sha256": "b0b6dadbeb46ec0cc4b998d140aaa9c732f0fbdaacb4c3994dbe85400b89c178",
+  "symbol": "NMData::EffectorWithMemoryData::vfunc_14",
+  "callees": [
+    "0x00427550",
+    "0x0060BCF0",
+    "0x00640110",
+    "0x00640390",
+    "0x00640AA0",
+    "0x00640BC0"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060BF0B",
+    "0x0060BF12",
+    "0x0060BF1A",
+    "0x0060BF1F",
+    "0x0060BF2C",
+    "0x0060BF32",
+    "0x0060BF3C",
+    "0x0060BF46",
+    "0x0060BF4B",
+    "0x0060BF58",
+    "0x0060BF65"
+  ],
+  "status": "todo"
+}

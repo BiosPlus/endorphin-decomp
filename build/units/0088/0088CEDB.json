@@ -1,0 +1,15 @@
+{
+  "va": "0x0088CEDB",
+  "size": 11,
+  "sha256": "b47c5b118ca7e383bcfbbe41152c4bfa2e863c297483e346c7492e536320862e",
+  "symbol": "sub_0088CEDB",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0088CEDC",
+    "0x0088CEE2"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x005472B0",
+  "size": 12,
+  "sha256": "e7e63f7b05c08b8eb9a1dc33c1be762efe5033a19645634a8f0a2416f9b29073",
+  "symbol": "TranslateTool::vfunc_14",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

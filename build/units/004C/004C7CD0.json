@@ -1,0 +1,42 @@
+{
+  "va": "0x004C7CD0",
+  "size": 575,
+  "sha256": "879e45be1523be8d0a1d69c6353947b9d1055474d76a67e1e6d089db03d8b847",
+  "symbol": "SeverEventTypes::SeverSwitchOffChildren::vfunc_0",
+  "callees": [
+    "0x00528BF0",
+    "0x00594000",
+    "0x005E12F0",
+    "0x005EED30",
+    "0x006A5C5C"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C7CD3",
+    "0x004C7CFD",
+    "0x004C7D13",
+    "0x004C7D21",
+    "0x004C7D2B",
+    "0x004C7D47",
+    "0x004C7D4C",
+    "0x004C7D73",
+    "0x004C7D98",
+    "0x004C7DCA",
+    "0x004C7DDC",
+    "0x004C7DE6",
+    "0x004C7E22",
+    "0x004C7E34",
+    "0x004C7E3F",
+    "0x004C7E52",
+    "0x004C7E64",
+    "0x004C7E7A",
+    "0x004C7E8D",
+    "0x004C7E98",
+    "0x004C7EAC",
+    "0x004C7ED6",
+    "0x004C7EF8"
+  ],
+  "status": "todo"
+}

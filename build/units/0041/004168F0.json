@@ -1,0 +1,19 @@
+{
+  "va": "0x004168F0",
+  "size": 85,
+  "sha256": "99e0bd363a4aeba45fc9b612e024f1e9e030eb919f0e32150b6a68f703ff8c7d",
+  "symbol": "EventViewIndicator::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00416906",
+    "0x00416918",
+    "0x0041692A",
+    "0x0041693C"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x004CE9F0",
+  "size": 30,
+  "sha256": "e308d9a8d353def82d58ce56603f1ef87963087290c3b6221e68c49ea748349e",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CE9F7",
+    "0x004CE9FC",
+    "0x004CEA04"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:45:32Z"
+}

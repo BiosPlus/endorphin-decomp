@@ -1,0 +1,25 @@
+{
+  "va": "0x006B2EE0",
+  "size": 129,
+  "sha256": "0b40f4642488b3e7b029922e541430e8d7bc12beea3eb9d99696029be88e9945",
+  "symbol": "GWCHotLinkItem::vfunc_9",
+  "callees": [
+    "0x006A5EDE",
+    "0x006A63D6",
+    "0x006ACE20",
+    "0x006B2D70"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B2EF9",
+    "0x006B2F0A",
+    "0x006B2F20",
+    "0x006B2F29",
+    "0x006B2F3A",
+    "0x006B2F41",
+    "0x006B2F48"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x006A7C50",
+  "size": 7,
+  "sha256": "1c6db594994d52f64aa4c8d716ac65ce8319289d08375799d7b791bc2d38f960",
+  "symbol": "sub_006A7C50",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

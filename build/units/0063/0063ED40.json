@@ -1,0 +1,25 @@
+{
+  "va": "0x0063ED40",
+  "size": 214,
+  "sha256": "7a3a2200a5e4e56bac6f981a867dabbba994733e040f2d9ff4ef7d2aa23095c7",
+  "symbol": "AdvXMLParser::Attribute::vfunc_2",
+  "callees": [
+    "0x00641E90"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0063ED43",
+    "0x0063ED70",
+    "0x0063ED8D",
+    "0x0063ED9B",
+    "0x0063EDA5",
+    "0x0063EDB4",
+    "0x0063EDD3",
+    "0x0063EDE2",
+    "0x0063EDED",
+    "0x0063EDF8"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x00459A70",
+  "size": 30,
+  "sha256": "60eeffe8302985b41b6481d47fbc4be98e12a5dd8ca16e03e0aed16098c83d45",
+  "symbol": "TriggeredEventMarkers::IncarnationMarker::vfunc_0",
+  "callees": [
+    "0x004592F0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00459A74",
+    "0x00459A81"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

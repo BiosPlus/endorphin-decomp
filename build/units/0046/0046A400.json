@@ -1,0 +1,21 @@
+{
+  "va": "0x0046A400",
+  "size": 111,
+  "sha256": "833e826b0bb62b7af6c6ad95b89efdded93ecca0f7788960a2f43874bf0820b0",
+  "symbol": "EventDispatcher\u003cEngineEventListener, \u0026[thunk]: __thiscall EngineEventListener::`vcall'{4, {flat}}\u003e::vfunc_3",
+  "callees": [
+    "0x00596660"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046A415",
+    "0x0046A424",
+    "0x0046A434",
+    "0x0046A446",
+    "0x0046A454",
+    "0x0046A464"
+  ],
+  "status": "todo"
+}

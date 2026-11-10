@@ -1,0 +1,13 @@
+{
+  "va": "0x005521D0",
+  "size": 13,
+  "sha256": "eb8c26baa6b919ad8ac85e9b429da26abd602098d63c58972428483a9b3e7c16",
+  "symbol": "NMCamera::Perspective::vfunc_3",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

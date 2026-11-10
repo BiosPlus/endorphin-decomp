@@ -1,0 +1,39 @@
+{
+  "va": "0x0065A360",
+  "size": 547,
+  "sha256": "53f19b7ad75661d3d84beb69020fe24cb01307e3c9ee3c0b0779bd5b5f63edc8",
+  "symbol": "MagnetJoint::vfunc_52",
+  "callees": [
+    "0x00552130",
+    "0x00645A00",
+    "0x00647F00",
+    "0x006944D0",
+    "0x007C9480",
+    "0x007C9AA0",
+    "0x007C9AE0",
+    "0x007D8700"
+  ],
+  "num_callees": 8,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065A3C8",
+    "0x0065A3E8",
+    "0x0065A402",
+    "0x0065A40B",
+    "0x0065A45B",
+    "0x0065A48A",
+    "0x0065A494",
+    "0x0065A4C1",
+    "0x0065A4D2",
+    "0x0065A4E2",
+    "0x0065A4F4",
+    "0x0065A519",
+    "0x0065A52A",
+    "0x0065A53A",
+    "0x0065A54A",
+    "0x0065A56B",
+    "0x0065A575"
+  ],
+  "status": "todo"
+}

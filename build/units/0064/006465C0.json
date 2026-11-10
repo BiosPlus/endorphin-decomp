@@ -1,0 +1,15 @@
+{
+  "va": "0x006465C0",
+  "size": 8,
+  "sha256": "9691e37bb80df553328228ee47da00df0b11ed1eca69d3bfc300143be83b5dbf",
+  "symbol": "MagnetJoint::vfunc_0_off_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006465C4"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

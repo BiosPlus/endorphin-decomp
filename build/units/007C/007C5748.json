@@ -1,0 +1,14 @@
+{
+  "va": "0x007C5748",
+  "size": 6,
+  "sha256": "ce0c3dbfb4c7c0c98474390db3eb4422d6d57df93d172e4517a6dfbdf8246360",
+  "symbol": "thunk_XSIFtk-3.6.2.1_?SetSolverType@CSLIKJoint@@QAEXW4EJointSolverType@1@@Z",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x007C574A"
+  ],
+  "status": "out_of_scope"
+}

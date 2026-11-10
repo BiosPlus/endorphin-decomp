@@ -1,0 +1,15 @@
+{
+  "va": "0x0087CAEC",
+  "size": 11,
+  "sha256": "7926eaeb886325adc55f312795c3ff6066c28c6102ee1444a9283030ae5abde9",
+  "symbol": "sub_0087CAEC",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0087CAED",
+    "0x0087CAF3"
+  ],
+  "status": "out_of_scope"
+}

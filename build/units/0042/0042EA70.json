@@ -1,0 +1,18 @@
+{
+  "va": "0x0042EA70",
+  "size": 30,
+  "sha256": "09f48aa5e3370782c5ddfdc4208f25f6e3e24791f085914087262e82da2f9212",
+  "symbol": "CListBox::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A64A2"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0042EA74",
+    "0x0042EA81"
+  ],
+  "status": "out_of_scope"
+}

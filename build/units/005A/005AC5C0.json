@@ -1,0 +1,14 @@
+{
+  "va": "0x005AC5C0",
+  "size": 123,
+  "sha256": "0718d613541893a85f0c5c687a1d17fd694e09e7013e18e694ec95f8a6593cba",
+  "symbol": "Commands::MirrorCommand::vfunc_2",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005AC5E0"
+  ],
+  "status": "todo"
+}

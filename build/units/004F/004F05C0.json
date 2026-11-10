@@ -1,0 +1,19 @@
+{
+  "va": "0x004F05C0",
+  "size": 82,
+  "sha256": "c6844cd3458c50ade91fcdb35a196727a4a828945eabf1990ded00020b8df301",
+  "symbol": "Properties::TestControl::vfunc_1",
+  "callees": [
+    "0x00596660"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004F05E1",
+    "0x004F05EF",
+    "0x004F05FF",
+    "0x004F060E"
+  ],
+  "status": "todo"
+}

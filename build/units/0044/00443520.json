@@ -1,0 +1,23 @@
+{
+  "va": "0x00443520",
+  "size": 174,
+  "sha256": "fe2dd872c228c9e180695ab1536c3b34c2f280cd72d2553ec44bfd558b23ab58",
+  "symbol": "MultiTrackView::MultiTrackViewStates::DragSelectState::vfunc_18",
+  "callees": [
+    "0x00419EF0",
+    "0x00493D90",
+    "0x0066A330",
+    "0x006A6010"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00443523",
+    "0x00443546",
+    "0x00443582",
+    "0x004435A3",
+    "0x004435B4"
+  ],
+  "status": "todo"
+}

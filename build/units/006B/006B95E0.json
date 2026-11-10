@@ -1,0 +1,15 @@
+{
+  "va": "0x006B95E0",
+  "size": 6,
+  "sha256": "99fc63a188f95daf685628f687d0afe8c810102109e28e7a6eb57d2ad1ef4740",
+  "symbol": "NMCAutoCompleteEdit::vfunc_80",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B95E1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

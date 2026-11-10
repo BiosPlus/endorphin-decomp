@@ -1,0 +1,18 @@
+{
+  "va": "0x004046A0",
+  "size": 30,
+  "sha256": "84f756ba936adfc2600ed21c6d48a7ff2a2550c723e106142c52bd7c1021a63e",
+  "symbol": "CTabCtrl::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A5E84"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004046A4",
+    "0x004046B1"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x006B60C0",
+  "size": 30,
+  "sha256": "05b65058550df8ecfc5b7dd6268918b44ebe2b7d928ca6d57e193cb855525500",
+  "symbol": "GWCPropInPlaceFontButton::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B6090"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B60C4",
+    "0x006B60D1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

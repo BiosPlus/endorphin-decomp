@@ -1,0 +1,19 @@
+{
+  "va": "0x00401B80",
+  "size": 48,
+  "sha256": "0798307415f9f981a5a9d85698bbaca2033d09456994402e59019473a86a3172",
+  "symbol": "std::length_error::vfunc_0",
+  "callees": [
+    "0x006A5C5C"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00401B88",
+    "0x00401B8E",
+    "0x00401B96",
+    "0x00401BA3"
+  ],
+  "status": "out_of_scope"
+}

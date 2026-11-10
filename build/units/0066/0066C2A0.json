@@ -1,0 +1,13 @@
+{
+  "va": "0x0066C2A0",
+  "size": 6,
+  "sha256": "4becd086c8729211c845a4bf1497d75a688c76b952462edfe7f7b5a56f63b399",
+  "symbol": "ExprParser::Method2Type\u003cNM::Vector3, NM::Vector3 const \u0026, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::cartesianAtoB_E(class NM::Vector3 const \u0026, NM::Vector3 const \u0026)\u003e::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0F90",
+  "size": 5,
+  "sha256": "81ca14f883a14072ca7c2f8e93c256dcb32f64ef1d59da0948d684fe19d340a8",
+  "symbol": "Geometry::TwistLimitType::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005B0F91"
+  ],
+  "status": "out_of_scope"
+}

@@ -1,0 +1,21 @@
+{
+  "va": "0x0040CC60",
+  "size": 85,
+  "sha256": "75736d5da547f6ac012f720bf066c5d7b8e559d038f84c483904a0fdbc48278b",
+  "symbol": "AddCharacterDialog::vfunc_66",
+  "callees": [
+    "0x0040C380",
+    "0x006A5E00",
+    "0x006A5F7A"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040CC73",
+    "0x0040CC79",
+    "0x0040CC8A",
+    "0x0040CCAC"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x00650D80",
+  "size": 34,
+  "sha256": "9d2280c47fe37d73c4d06c5e9a9d7fa3e6849b099add52df59f163194f4edd31",
+  "symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, int, {[thunk]: __thiscall SkeletalJoint::`vcall'{84, {flat}}, 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0064F900"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00650D9A"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:27:06Z"
+}

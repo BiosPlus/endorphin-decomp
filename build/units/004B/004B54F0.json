@@ -1,0 +1,21 @@
+{
+  "va": "0x004B54F0",
+  "size": 68,
+  "sha256": "db8551c1a385625ae0ca1267cfc7521fd9c16beec3c13c0dadd9844bbe81f8e8",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::GraphEngineData, bool, {public: bool __thiscall NMData::GraphEngineData::attachToFrameBuffer(void) const, 0}, bool, {public: void __thiscall NMData::GraphEngineData::setAttachToFrameBuffer(bool), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x004B5250",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B5511",
+    "0x004B5521",
+    "0x004B5526",
+    "0x004B5530"
+  ],
+  "status": "todo"
+}

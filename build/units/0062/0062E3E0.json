@@ -1,0 +1,18 @@
+{
+  "va": "0x0062E3E0",
+  "size": 69,
+  "sha256": "75475bb17605efe778dc360bc8573365e11648495772169ebb87c558d43d4eb1",
+  "symbol": "ExprParser::FunctionType\u003cSensors::CompoundSensorPlanes, float, NM::Vector3 const \u0026, \u0026public: float __thiscall Sensors::CompoundSensorPlanes::checkDistance(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+  "callees": [
+    "0x0062E2D0",
+    "0x00672080"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062E403",
+    "0x0062E41A"
+  ],
+  "status": "todo"
+}

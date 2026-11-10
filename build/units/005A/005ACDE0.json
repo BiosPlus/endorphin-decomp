@@ -1,0 +1,29 @@
+{
+  "va": "0x005ACDE0",
+  "size": 253,
+  "sha256": "4fa81e534b5ffc492ec08275e2685f615ba150f1c0cd6caebc895c6455738df7",
+  "symbol": "Commands::MirrorFluidObjectCommand::vfunc_1",
+  "callees": [
+    "0x00587180",
+    "0x005AC560",
+    "0x005AC9C0",
+    "0x005BF510",
+    "0x005CC5C0",
+    "0x00665810",
+    "0x006A5C62"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005ACDE9",
+    "0x005ACE19",
+    "0x005ACE3A",
+    "0x005ACE79",
+    "0x005ACE85",
+    "0x005ACE9A",
+    "0x005ACEAE",
+    "0x005ACEC2"
+  ],
+  "status": "todo"
+}

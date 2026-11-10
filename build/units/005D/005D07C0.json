@@ -1,0 +1,20 @@
+{
+  "va": "0x005D07C0",
+  "size": 30,
+  "sha256": "9ff1e1dd11755649f7a726867b5f21eafc84def284af6fc945fcab4dde616ced",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::VideoPlaneData, bool, \u0026public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005D07C7",
+    "0x005D07CC",
+    "0x005D07D4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:54:02Z"
+}

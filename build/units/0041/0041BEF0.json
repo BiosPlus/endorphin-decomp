@@ -1,0 +1,25 @@
+{
+  "va": "0x0041BEF0",
+  "size": 175,
+  "sha256": "567edb1f3de5739beba7d9b30cfd2f5d484c63c87a5022aca5e0d54ae95d2a54",
+  "symbol": "GridPropertyPage::vfunc_63",
+  "callees": [
+    "0x006A5F44",
+    "0x006A63AC"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041BF06",
+    "0x0041BF18",
+    "0x0041BF2A",
+    "0x0041BF3C",
+    "0x0041BF4E",
+    "0x0041BF60",
+    "0x0041BF72",
+    "0x0041BF84",
+    "0x0041BF96"
+  ],
+  "status": "todo"
+}

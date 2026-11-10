@@ -1,0 +1,21 @@
+{
+  "va": "0x004B1160",
+  "size": 71,
+  "sha256": "080a69ae08264488a48d493b7ebe69c6e4b6d45bbdcc0f991312676c33a5fd3d",
+  "symbol": "ExprParser::ReadMethodType\u003cInterpreter, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall Interpreter::getType(void) const, 0\u003e::vfunc_4",
+  "callees": [
+    "0x004276B0",
+    "0x0046C3C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B117F",
+    "0x004B1194",
+    "0x004B1199",
+    "0x004B11A3"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x00458720",
+  "size": 30,
+  "sha256": "af1e90f7a6549f3adc05d9aa595d4b30b8a7850eded06b107f484785fbb660cb",
+  "symbol": "SpinButtonStates::ClickedDownState::vfunc_0",
+  "callees": [
+    "0x004584E0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00458724",
+    "0x00458731"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

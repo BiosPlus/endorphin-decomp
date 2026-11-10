@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0E90",
+  "size": 5,
+  "sha256": "cacfe4401d41068ff55c6ae08cbdb7c2815c25df002277e3b8aba077f641a678",
+  "symbol": "Geometry::MeshType::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005B0E91"
+  ],
+  "status": "out_of_scope"
+}

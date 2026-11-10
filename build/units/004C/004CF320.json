@@ -1,0 +1,18 @@
+{
+  "va": "0x004CF320",
+  "size": 29,
+  "sha256": "6fc0bac841c33adfb1dfe658625b4a7524bf87e84a6c4270e859f7d2923f95b6",
+  "symbol": "NMData::IncarnationEventData::vfunc_89",
+  "callees": [
+    "0x004CEAC0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CF338"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:01:45Z"
+}

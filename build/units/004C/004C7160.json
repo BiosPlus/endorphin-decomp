@@ -1,0 +1,19 @@
+{
+  "va": "0x004C7160",
+  "size": 30,
+  "sha256": "a7c773962580b88c5f1353c67c8a0f60d35c2a94c26072a7d96fbb1a7590d0bb",
+  "symbol": "UnregisteredTypeException::vfunc_0",
+  "callees": [
+    "0x004C70F0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C7164",
+    "0x004C7171"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x005F76B0",
+  "size": 49,
+  "sha256": "3adea1fa55bef2f93c92334f259663d181b8338704f69f60caa16ee4f59e6c45",
+  "symbol": "ExprParser::ReadMethodType\u003cHelperGraphic, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall HelperGraphic::getPosition(void) const, 0}, 0\u003e::vfunc_1",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x005F5140",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005F76BE",
+    "0x005F76C4",
+    "0x005F76CE",
+    "0x005F76D3",
+    "0x005F76DD"
+  ],
+  "status": "todo"
+}

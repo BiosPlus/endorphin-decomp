@@ -1,0 +1,18 @@
+{
+  "va": "0x0065A1A0",
+  "size": 41,
+  "sha256": "87a84bf59113c84ac69b822ce54b5c0e3a073703dc2b0e83b14b4b5d699b3f39",
+  "symbol": "MagnetJoint::vfunc_41",
+  "callees": [
+    "0x007C9B90"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065A1BF"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:19:52Z"
+}

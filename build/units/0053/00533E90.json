@@ -1,0 +1,22 @@
+{
+  "va": "0x00533E90",
+  "size": 54,
+  "sha256": "9aaad94cfa9de5aff41a3bf61f662cf55bb330506e1aebd6fe3e1edb20f27a22",
+  "symbol": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_0",
+  "callees": [
+    "0x00532B40",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00533E9A",
+    "0x00533EA5",
+    "0x00533EAC",
+    "0x00533EB9"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T05:23:02Z"
+}

@@ -1,0 +1,15 @@
+{
+  "va": "0x00873DAB",
+  "size": 11,
+  "sha256": "984072764c27a9f453b624a676a32df734a6568101b33c9ce6e8c9f83265a3dd",
+  "symbol": "sub_00873DAB",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00873DAC",
+    "0x00873DB2"
+  ],
+  "status": "out_of_scope"
+}

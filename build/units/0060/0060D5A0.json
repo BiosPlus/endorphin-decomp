@@ -1,0 +1,19 @@
+{
+  "va": "0x0060D5A0",
+  "size": 67,
+  "sha256": "01fbedd69063e7a3c4d55d19315183e7ce8dd58f186992fa9caa83f1f0599750",
+  "symbol": "NMData::EffectorGroupData::vfunc_19",
+  "callees": [
+    "0x00406510",
+    "0x0060BB50"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060D5AA",
+    "0x0060D5B3",
+    "0x0060D5D7"
+  ],
+  "status": "todo"
+}

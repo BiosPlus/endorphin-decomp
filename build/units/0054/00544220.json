@@ -1,0 +1,19 @@
+{
+  "va": "0x00544220",
+  "size": 30,
+  "sha256": "13d134a3408c2bf76c3d489782fba0312a7b0e6a2fba58248d111051630d55c0",
+  "symbol": "ForceApplicationTool::vfunc_1",
+  "callees": [
+    "0x00544130",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00544224",
+    "0x00544231"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

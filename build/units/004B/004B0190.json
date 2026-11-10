@@ -1,0 +1,19 @@
+{
+  "va": "0x004B0190",
+  "size": 30,
+  "sha256": "fac7c3311e2c2b14ba4b400a10b79c67b43318dc7d2b66060b2a6c995dc7fde9",
+  "symbol": "ChangeSecondarySelectionCommand::vfunc_0",
+  "callees": [
+    "0x004AFE50",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B0194",
+    "0x004B01A1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x0053CA40",
+  "size": 30,
+  "sha256": "ec4530f7d617e5dfc9787cdbcbcbfda0dd544a6b040bab456ea39d54e48ef317",
+  "symbol": "Primitives::Sphyl::vfunc_0",
+  "callees": [
+    "0x0053B850",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053CA44",
+    "0x0053CA51"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

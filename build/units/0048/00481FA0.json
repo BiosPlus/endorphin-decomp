@@ -1,0 +1,16 @@
+{
+  "va": "0x00481FA0",
+  "size": 39,
+  "sha256": "b09ce2452b6933853204f816a00a27b79f011d032ac4958959791dc6ccd3f6bf",
+  "symbol": "ToolEngine::vfunc_54",
+  "callees": [
+    "0x00481D80"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00481FAA"
+  ],
+  "status": "todo"
+}

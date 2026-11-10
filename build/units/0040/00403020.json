@@ -1,0 +1,19 @@
+{
+  "va": "0x00403020",
+  "size": 30,
+  "sha256": "7a3fc1b83bf8f5a7716c6d7072df3215a08cab1fa19040058e5e882999bfd066",
+  "symbol": "NMFileIO::vfunc_0",
+  "callees": [
+    "0x00558920",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00403024",
+    "0x00403031"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

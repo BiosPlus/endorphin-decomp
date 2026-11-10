@@ -1,0 +1,31 @@
+{
+  "va": "0x005EC320",
+  "size": 225,
+  "sha256": "804a1d67b566f6e2c97e223c7df72fbf4d1d48771b62c0d56344afed43f5a60f",
+  "symbol": "NMData::MagnetJointData::vfunc_22",
+  "callees": [
+    "0x005EB5A0",
+    "0x00640110",
+    "0x006404E0",
+    "0x00640A80",
+    "0x00640AA0"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005EC32A",
+    "0x005EC331",
+    "0x005EC33B",
+    "0x005EC340",
+    "0x005EC347",
+    "0x005EC354",
+    "0x005EC3A1",
+    "0x005EC3A9",
+    "0x005EC3B7",
+    "0x005EC3DC",
+    "0x005EC3E4",
+    "0x005EC3F2"
+  ],
+  "status": "todo"
+}

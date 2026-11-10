@@ -1,0 +1,39 @@
+{
+  "va": "0x0060D280",
+  "size": 281,
+  "sha256": "add849b5ea5814c2fd602c927ff68666936dcc2251f00107059fff79ae21ae29",
+  "symbol": "NMData::EffectorGroupData::vfunc_14",
+  "callees": [
+    "0x00427550",
+    "0x0063F8D0",
+    "0x00640110",
+    "0x00640270",
+    "0x006404E0"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060D283",
+    "0x0060D299",
+    "0x0060D2A9",
+    "0x0060D2AF",
+    "0x0060D2BD",
+    "0x0060D2CA",
+    "0x0060D2D4",
+    "0x0060D2E5",
+    "0x0060D2FA",
+    "0x0060D304",
+    "0x0060D30E",
+    "0x0060D316",
+    "0x0060D323",
+    "0x0060D32B",
+    "0x0060D334",
+    "0x0060D33F",
+    "0x0060D353",
+    "0x0060D365",
+    "0x0060D370",
+    "0x0060D37C"
+  ],
+  "status": "todo"
+}

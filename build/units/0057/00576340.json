@@ -1,0 +1,24 @@
+{
+  "va": "0x00576340",
+  "size": 192,
+  "sha256": "132ba8788b632bd506a58c9c36a25d3f265ddb99be396c11ea0897947ef2a51d",
+  "symbol": "VSKIO::vfunc_10",
+  "callees": [
+    "0x00574CF0",
+    "0x005760E0",
+    "0x006639E0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00576343",
+    "0x00576363",
+    "0x00576392",
+    "0x005763A3",
+    "0x005763AE",
+    "0x005763D7",
+    "0x005763E8"
+  ],
+  "status": "todo"
+}

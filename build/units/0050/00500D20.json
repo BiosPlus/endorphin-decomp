@@ -1,0 +1,23 @@
+{
+  "va": "0x00500D20",
+  "size": 126,
+  "sha256": "787c12e897af6d6a27636aec3b788b1d7adb9c47997cebc003415d69f8e87f52",
+  "symbol": "Properties::SetType\u003cPointainerWithUndo\u003cPointainerSet\u003cNMData::ValuePtrData\u003e\u003e, Properties::GetTerminalParent\u003e::vfunc_10",
+  "callees": [
+    "0x004FDF80",
+    "0x006616B0",
+    "0x006A6E9E"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00500D2F",
+    "0x00500D54",
+    "0x00500D77",
+    "0x00500D7C",
+    "0x00500D84",
+    "0x00500D95"
+  ],
+  "status": "todo"
+}

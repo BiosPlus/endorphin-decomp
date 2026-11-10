@@ -1,0 +1,29 @@
+{
+  "va": "0x006A0560",
+  "size": 267,
+  "sha256": "5c2b73fe3d095d5b1e6b993d2acc8eb28f7c4f7b239ff7d9e9cea1dead45e0c8",
+  "symbol": "Commands::ChangePropertyCommand::vfunc_3",
+  "callees": [
+    "0x0041CEB0",
+    "0x00435D00"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A0563",
+    "0x006A0591",
+    "0x006A05A9",
+    "0x006A05C0",
+    "0x006A05C6",
+    "0x006A05D0",
+    "0x006A05DE",
+    "0x006A05E4",
+    "0x006A05F3",
+    "0x006A060E",
+    "0x006A0620",
+    "0x006A0632",
+    "0x006A064C"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x005C5EA0",
+  "size": 58,
+  "sha256": "d0bad94f1b5d979567dd7868f10001ba8ca07a1f4fa07180567a7188a2f1f417",
+  "symbol": "ExprParser::FunctionType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {public: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getNearestGeomPoint(class NM::Vector3 const \u0026), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x005C3CB0",
+    "0x00672110"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C5EC3",
+    "0x005C5ECF"
+  ],
+  "status": "todo"
+}

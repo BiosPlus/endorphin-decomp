@@ -1,0 +1,19 @@
+{
+  "va": "0x00582B60",
+  "size": 38,
+  "sha256": "1ada43c7f4947e00322e7857c0f2d84fb593f2038364e3eefba59ef4e2f3bf95",
+  "symbol": "Acclaim2MotionIO::vfunc_3",
+  "callees": [
+    "0x00553720",
+    "0x00640390"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00582B61",
+    "0x00582B73",
+    "0x00582B7B"
+  ],
+  "status": "todo"
+}

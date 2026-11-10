@@ -1,0 +1,16 @@
+{
+  "va": "0x00651410",
+  "size": 110,
+  "sha256": "a517605f27d4e63faf1616452c848170782a0258ead2bcb41a231aec12e6c581",
+  "symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, NM::Vector3 const \u0026, {[thunk]: __thiscall SkeletalJoint::`vcall'{132, {flat}}, 0}\u003e::vfunc_48",
+  "callees": [
+    "0x0064F920"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00651434"
+  ],
+  "status": "todo"
+}

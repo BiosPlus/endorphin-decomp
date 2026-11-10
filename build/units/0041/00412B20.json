@@ -1,0 +1,33 @@
+{
+  "va": "0x00412B20",
+  "size": 227,
+  "sha256": "346e6f7a0e99f9769e0acf81b262434519de6ba84b66f8b931f6f035afea66be",
+  "symbol": "MultiTrackView::CompositeEventTrack::vfunc_5",
+  "callees": [
+    "0x00410DD0",
+    "0x00412720",
+    "0x0041A4F0",
+    "0x0041AB80",
+    "0x00594000",
+    "0x00597630"
+  ],
+  "num_callees": 6,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00412B26",
+    "0x00412B33",
+    "0x00412B4C",
+    "0x00412B63",
+    "0x00412B76",
+    "0x00412B89",
+    "0x00412B9C",
+    "0x00412BAF",
+    "0x00412BC2",
+    "0x00412BD5",
+    "0x00412BDD",
+    "0x00412BE9",
+    "0x00412BF8"
+  ],
+  "status": "todo"
+}

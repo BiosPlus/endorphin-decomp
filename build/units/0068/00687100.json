@@ -1,0 +1,17 @@
+{
+  "va": "0x00687100",
+  "size": 71,
+  "sha256": "94f5ac87afa404ba03c4f3015292e5439c58a1d21f566a138a3fbf26eef47cda",
+  "symbol": "SymbolContainer::vfunc_6",
+  "callees": [
+    "0x00479C80"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00687123",
+    "0x00687139"
+  ],
+  "status": "todo"
+}

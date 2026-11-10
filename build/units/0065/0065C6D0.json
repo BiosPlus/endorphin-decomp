@@ -1,0 +1,23 @@
+{
+  "va": "0x0065C6D0",
+  "size": 146,
+  "sha256": "181580e7f5e361301d99926f0c37b01625d9f440ae6db45340c1718b9617b24d",
+  "symbol": "AVIIO::vfunc_9",
+  "callees": [
+    "0x00663110",
+    "0x00663470",
+    "0x00663DB0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065C6D3",
+    "0x0065C6F2",
+    "0x0065C6FF",
+    "0x0065C729",
+    "0x0065C736",
+    "0x0065C74B"
+  ],
+  "status": "todo"
+}

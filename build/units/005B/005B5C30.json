@@ -1,0 +1,16 @@
+{
+  "va": "0x005B5C30",
+  "size": 67,
+  "sha256": "381cd655507b10925883f0468cc815c9c79f3363cf1cbdfc8074b4b5a8526e53",
+  "symbol": "Geometry::vfunc_15",
+  "callees": [
+    "0x005B4130"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B5C65"
+  ],
+  "status": "todo"
+}

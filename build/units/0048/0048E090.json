@@ -1,0 +1,18 @@
+{
+  "va": "0x0048E090",
+  "size": 13,
+  "sha256": "53a613c25fb4c1f5827462de5efee54339db795853ad92707d72bb53ba0e0bff",
+  "symbol": "Commands::SetPlaybackEndFrameCommand::vfunc_1",
+  "callees": [
+    "0x004736B0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048E098"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:24:19Z"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x0041CC30",
+  "size": 60,
+  "sha256": "a2b040b4036749891444fe39f35786770a98907e5ae78466280a07482462abdd",
+  "symbol": "Properties::AutoCompleteSupplier::vfunc_2",
+  "callees": [
+    "0x00660280"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041CC3B",
+    "0x0041CC59",
+    "0x0041CC61"
+  ],
+  "status": "todo"
+}

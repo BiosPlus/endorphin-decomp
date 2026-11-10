@@ -1,0 +1,14 @@
+{
+  "va": "0x00872822",
+  "size": 6,
+  "sha256": "b2b0a96e96fa2b0609e3b14371cfad5a8ad93f4a338a0895bdc99f918e9ea734",
+  "symbol": "thunk_MSVCR80___CxxFrameHandler",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00872824"
+  ],
+  "status": "out_of_scope"
+}

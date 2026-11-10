@@ -1,0 +1,17 @@
+{
+  "va": "0x004A74B0",
+  "size": 110,
+  "sha256": "c58a432ffbf4d7cd27c8c46339cbce3ce0b20217c4e16c9b2b703ec63b735dc8",
+  "symbol": "SearchableMap\u003cNMData::PoseData, GetNameFromAttribute\u003cNMData::PoseData\u003e\u003e::vfunc_0",
+  "callees": [
+    "0x004A7440"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004A74D5",
+    "0x004A74E4"
+  ],
+  "status": "todo"
+}

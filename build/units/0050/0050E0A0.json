@@ -1,0 +1,18 @@
+{
+  "va": "0x0050E0A0",
+  "size": 14,
+  "sha256": "8614ba8e6cd0ba4c05b9f4c19adc392ce9a9bd29776291f4a11f96dcb50545b9",
+  "symbol": "ExprParser::WriteOnlyMethod0Type\u003cNMData::TaskManager, {public: void __thiscall NMData::TaskManager::randomizeTasks(void), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0050DBE0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0050E0A7"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:44:49Z"
+}

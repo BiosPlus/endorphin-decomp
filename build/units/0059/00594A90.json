@@ -1,0 +1,13 @@
+{
+  "va": "0x00594A90",
+  "size": 6,
+  "sha256": "8e3e785d41dddc521601c78e6b419295110be69e63907076843ba16e092e98c9",
+  "symbol": "ExprParser::Function2Type\u003cRandomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}\u003e::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

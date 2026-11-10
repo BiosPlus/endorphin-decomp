@@ -1,0 +1,19 @@
+{
+  "va": "0x00533D80",
+  "size": 65,
+  "sha256": "7348be77958d3662d41b3c18ed7a6b3430ebb1d1dd08488d4f67e3bb9e50354c",
+  "symbol": "ManagedDisplayList\u003cUtilityGraphics::Grid\u003e::vfunc_22",
+  "callees": [
+    "0x00538FC0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00533D98",
+    "0x00533DA4",
+    "0x00533DAA",
+    "0x00533DBD"
+  ],
+  "status": "todo"
+}

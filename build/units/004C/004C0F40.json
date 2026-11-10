@@ -1,0 +1,23 @@
+{
+  "va": "0x004C0F40",
+  "size": 122,
+  "sha256": "e546cccc5a5650b878aba2cc5bcca4dd4a92940065454c77abde03f7a3d24b4b",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::TriggeredEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{36, {flat}}, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::TriggeredEventData::`vcall'{368, {flat}}, 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C0F49",
+    "0x004C0F5C",
+    "0x004C0F64",
+    "0x004C0F69",
+    "0x004C0F76",
+    "0x004C0F84",
+    "0x004C0F8B",
+    "0x004C0FA6"
+  ],
+  "status": "todo"
+}

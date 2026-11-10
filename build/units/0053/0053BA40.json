@@ -1,0 +1,16 @@
+{
+  "va": "0x0053BA40",
+  "size": 32,
+  "sha256": "d6ab3a4fd782a458f7b98abc5998a8fc56e567433731a88d5fe1aff18bee0bc9",
+  "symbol": "Primitives::Cylinder::vfunc_29",
+  "callees": [
+    "0x0053AD10"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053BA44"
+  ],
+  "status": "todo"
+}

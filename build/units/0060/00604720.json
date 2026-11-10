@@ -1,0 +1,26 @@
+{
+  "va": "0x00604720",
+  "size": 170,
+  "sha256": "a467495ea9747ff3ab72e5b793893bfe54b565b189f34d3f07d11c41db06257f",
+  "symbol": "ExprParser::ReadMethodType\u003cEffectorBase, float, \u0026public: float __thiscall EffectorBase::getTorqueZ(void) const, 1\u003e::vfunc_45",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00602F40",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00604729",
+    "0x00604744",
+    "0x00604759",
+    "0x0060476D",
+    "0x006047B7",
+    "0x006047BC",
+    "0x006047C6"
+  ],
+  "status": "todo"
+}

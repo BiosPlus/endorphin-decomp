@@ -1,0 +1,14 @@
+{
+  "va": "0x0048ED30",
+  "size": 238,
+  "sha256": "7368739d2f06bfa2a2f06f6d66168f3a337459c560b779f170e09fe6d86912a1",
+  "symbol": "Commands::SetTriggeredEventFrameRangeCommand::vfunc_2",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048ED37"
+  ],
+  "status": "todo"
+}

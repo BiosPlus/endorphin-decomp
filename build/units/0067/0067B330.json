@@ -1,0 +1,15 @@
+{
+  "va": "0x0067B330",
+  "size": 81,
+  "sha256": "ffcd89362c636023509ee99fa68625db3de3fc554caeb6a720692db3ce5a84ac",
+  "symbol": "RateSynchronizer::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0067B33E",
+    "0x0067B368"
+  ],
+  "status": "todo"
+}

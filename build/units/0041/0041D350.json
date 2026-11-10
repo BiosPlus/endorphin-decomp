@@ -1,0 +1,13 @@
+{
+  "va": "0x0041D350",
+  "size": 17,
+  "sha256": "09381af982d565f8c84c5ee1700a2bf1ac4692f8b4f758bb91353d2cf6054c02",
+  "symbol": "Properties::GWCPropertiesControlDriver::vfunc_9",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

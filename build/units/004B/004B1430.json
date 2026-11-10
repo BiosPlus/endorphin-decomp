@@ -1,0 +1,19 @@
+{
+  "va": "0x004B1430",
+  "size": 45,
+  "sha256": "ae2265a8f8c2291f5cb80efc55d392be735e28cfd13d360330b5c76c4f963e0e",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::GraphEntryData, bool, \u0026public: bool __thiscall NMData::GraphEntryData::isActive(void) const, 0\u003e::vfunc_3",
+  "callees": [
+    "0x0046C3C0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B144A",
+    "0x004B144F",
+    "0x004B1459"
+  ],
+  "status": "todo"
+}

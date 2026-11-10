@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0FA0",
+  "size": 5,
+  "sha256": "5e0e4de41caade668248320f3f97616d2baf1b9422c37c58f4932d5c22e26819",
+  "symbol": "Geometry::RadiusLimitType::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005B0FA1"
+  ],
+  "status": "out_of_scope"
+}

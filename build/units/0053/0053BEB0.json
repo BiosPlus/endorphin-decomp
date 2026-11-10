@@ -1,0 +1,16 @@
+{
+  "va": "0x0053BEB0",
+  "size": 30,
+  "sha256": "db2239d2d101557faf32afc4a6cd94624f35da5da991b10cae458c6b63ec5863",
+  "symbol": "Primitives::SkeletalJoint::vfunc_29",
+  "callees": [
+    "0x0053AD10"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053BEB4"
+  ],
+  "status": "todo"
+}

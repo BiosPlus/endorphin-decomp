@@ -1,0 +1,38 @@
+{
+  "va": "0x008DC2D0",
+  "size": 181,
+  "sha256": "6fbb6d2018b7172215c901460c44c3ceb3bb2ab8450555be18b9871b04ac3fca",
+  "symbol": "sub_008DC2D0",
+  "callees": [
+    "0x006A6C87",
+    "0x006A6C99"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x008DC2D9",
+    "0x008DC2E6",
+    "0x008DC2EB",
+    "0x008DC2F1",
+    "0x008DC2F6",
+    "0x008DC2FB",
+    "0x008DC309",
+    "0x008DC30E",
+    "0x008DC313",
+    "0x008DC31E",
+    "0x008DC323",
+    "0x008DC328",
+    "0x008DC333",
+    "0x008DC338",
+    "0x008DC33D",
+    "0x008DC348",
+    "0x008DC34D",
+    "0x008DC353",
+    "0x008DC35E",
+    "0x008DC368",
+    "0x008DC36D",
+    "0x008DC372"
+  ],
+  "status": "out_of_scope"
+}

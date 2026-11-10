@@ -1,0 +1,14 @@
+{
+  "va": "0x007C5700",
+  "size": 6,
+  "sha256": "358d3fd9eebf5aa94d6b24ddfd6a94b170f47dfe5617f25bc6d03c3b4e3621e3",
+  "symbol": "thunk_XSIFtk-3.6.2.1_?SetFrameRate@CSLSceneInfo@@QAEXM@Z",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x007C5702"
+  ],
+  "status": "out_of_scope"
+}

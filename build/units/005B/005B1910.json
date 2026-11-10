@@ -1,0 +1,15 @@
+{
+  "va": "0x005B1910",
+  "size": 28,
+  "sha256": "bdfd9ff36e793bc0fa8bf143535a5bf615ae136fb64c8915daf32dcb7c957598",
+  "symbol": "Geometry::CuboidType::vfunc_9",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B191D"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,15 @@
+{
+  "va": "0x004C8090",
+  "size": 8,
+  "sha256": "5ddef727635744e2a3d0cf60de0a614c5d4feb2def6550de3ef252aadbc64c5c",
+  "symbol": "NMData::SeverEventData::vfunc_1_off_C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C8094"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

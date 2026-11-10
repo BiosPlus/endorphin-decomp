@@ -1,0 +1,27 @@
+{
+  "va": "0x00640D60",
+  "size": 123,
+  "sha256": "c4cb5ce49c68b28408fe411fd52878e8ff8127513ecd92f5c542817efdde61cc",
+  "symbol": "AdvXMLParser::Pi::vfunc_5",
+  "callees": [
+    "0x00640930",
+    "0x00640940",
+    "0x00640CB0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00640D6C",
+    "0x00640D76",
+    "0x00640D7F",
+    "0x00640D8F",
+    "0x00640DA2",
+    "0x00640DB2",
+    "0x00640DBA",
+    "0x00640DC3",
+    "0x00640DCA",
+    "0x00640DD1"
+  ],
+  "status": "todo"
+}

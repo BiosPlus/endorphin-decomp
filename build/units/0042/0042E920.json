@@ -1,0 +1,17 @@
+{
+  "va": "0x0042E920",
+  "size": 35,
+  "sha256": "3b917dd970421217e580e38cdaf014a29d57b293d2a677d87b89472941ebedf2",
+  "symbol": "KeyMappingManager::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0042E922",
+    "0x0042E938"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:24:23Z"
+}

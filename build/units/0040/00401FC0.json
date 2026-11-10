@@ -1,0 +1,15 @@
+{
+  "va": "0x00401FC0",
+  "size": 9,
+  "sha256": "469259eedebae9befc79c3cf313321b3d59aebbe3d8b2ed46f044fdd4d609ef9",
+  "symbol": "AVIIO::vfunc_0_off_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00401FC5"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

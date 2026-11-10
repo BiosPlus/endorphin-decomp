@@ -1,0 +1,25 @@
+{
+  "va": "0x005279F0",
+  "size": 205,
+  "sha256": "7db53d15ab033f09a9419ca74f6e6c4eb5ec10764d56d140c1800c01a8828ebe",
+  "symbol": "PointainerWithUndo\u003cUndoablePointainerVector\u003cNMData::VariableValue\u003e\u003e::RemoveElementCommand::vfunc_3",
+  "callees": [
+    "0x00435D00",
+    "0x00527570"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005279F3",
+    "0x00527A20",
+    "0x00527A39",
+    "0x00527A46",
+    "0x00527A54",
+    "0x00527A5E",
+    "0x00527A73",
+    "0x00527A85",
+    "0x00527A9F"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,24 @@
+{
+  "va": "0x004D0CF0",
+  "size": 67,
+  "sha256": "5fbbceb545856127abe8a7a0d5555475921fd8df5ef520a164292aa49c577709",
+  "symbol": "NMData::TransitionEventData::vfunc_81",
+  "callees": [
+    "0x004C0340",
+    "0x00594000",
+    "0x00594640",
+    "0x005AA830"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D0CF9",
+    "0x004D0D00",
+    "0x004D0D24",
+    "0x004D0D2B"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:27:21Z"
+}

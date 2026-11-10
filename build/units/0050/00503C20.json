@@ -1,0 +1,16 @@
+{
+  "va": "0x00503C20",
+  "size": 49,
+  "sha256": "917e9cfbf18f7c5d3c52a8acb56606fa75d852915f3a13bc9bf0a67bf1e8afc5",
+  "symbol": "sub_00503C20",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00503C44"
+  ],
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5",
+  "matched_at": "2026-11-10T03:35:20Z"
+}

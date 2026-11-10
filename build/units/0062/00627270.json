@@ -1,0 +1,13 @@
+{
+  "va": "0x00627270",
+  "size": 10,
+  "sha256": "325a69df8f21ac4bc79202bedf52def0e57059b8f419c3bc22e2628fc380fe51",
+  "symbol": "CompoundSensor::vfunc_18",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

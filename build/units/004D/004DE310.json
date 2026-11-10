@@ -1,0 +1,13 @@
+{
+  "va": "0x004DE310",
+  "size": 7,
+  "sha256": "f1ade0e3c6f0fa74627fb1cf5d930bc46c6c609a9db12c3560b7434e4814c617",
+  "symbol": "NMData::AnimationEventData::vfunc_54",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

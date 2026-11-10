@@ -1,0 +1,20 @@
+{
+  "va": "0x0053C090",
+  "size": 42,
+  "sha256": "6813084a0983b759b3f6a1f1a8ba14107d0e0ee48011efd62a0ebbbe53cd7724",
+  "symbol": "Primitives::RadiusLimit::vfunc_28",
+  "callees": [
+    "0x005B11D0",
+    "0x0063E036"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053C099",
+    "0x0053C0B2"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:27:17Z"
+}

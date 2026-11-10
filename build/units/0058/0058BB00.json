@@ -1,0 +1,26 @@
+{
+  "va": "0x0058BB00",
+  "size": 170,
+  "sha256": "a21a7fc149a675d620acc6200e8c5349dc135321c85f959604f191512bf8af7f",
+  "symbol": "ExprParser::ReadMethodType\u003cAnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTY(void) const, 0}, 0\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x0058A920",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058BB09",
+    "0x0058BB24",
+    "0x0058BB39",
+    "0x0058BB4D",
+    "0x0058BB97",
+    "0x0058BB9C",
+    "0x0058BBA6"
+  ],
+  "status": "todo"
+}

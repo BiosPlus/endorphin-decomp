@@ -1,0 +1,23 @@
+{
+  "va": "0x004DF840",
+  "size": 122,
+  "sha256": "a0442bd6cf6dcf108df6576073321cbbb577360890794e6782e03daa8e2bba2b",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, int, {public: void __thiscall NMData::AnimationEventData::setMotionStartFrameNumber(int), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004DF849",
+    "0x004DF85C",
+    "0x004DF864",
+    "0x004DF869",
+    "0x004DF876",
+    "0x004DF884",
+    "0x004DF88B",
+    "0x004DF8A6"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x005C48E0",
+  "size": 75,
+  "sha256": "adf18d6bf2252a23732d38df45455725ac5ecfcbeaf080ae8229d95e20afbcb8",
+  "symbol": "ExprParser::Method2Type\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addImpulseAtPostion(class NM::Vector3 const \u0026, NM::Vector3 const \u0026), 0}\u003e::vfunc_49",
+  "callees": [
+    "0x005C30D0",
+    "0x00671F30"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C4913",
+    "0x005C491D"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T13:39:40Z"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x005B0F20",
+  "size": 5,
+  "sha256": "6ecb2b49812433b072825c89e49bf0e9b008309d84e7656a9d0d76564443bfbc",
+  "symbol": "Geometry::SensorType::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x005B0F21"
+  ],
+  "status": "out_of_scope"
+}

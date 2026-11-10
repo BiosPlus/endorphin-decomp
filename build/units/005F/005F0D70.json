@@ -1,0 +1,15 @@
+{
+  "va": "0x005F0D70",
+  "size": 8,
+  "sha256": "310df21ba3c614bb82a77af51fbffe61d1a45c5e7182e5ae5fc5224a19917344",
+  "symbol": "NMData::MagnetJointData::vfunc_1_off_C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005F0D74"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

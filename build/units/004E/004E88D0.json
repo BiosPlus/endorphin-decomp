@@ -1,0 +1,18 @@
+{
+  "va": "0x004E88D0",
+  "size": 24,
+  "sha256": "7462bbd86f4a89443d86af9fa1f21b8010240a2cb37dc648f954c48e5f5c2c3d",
+  "symbol": "SelectionBuffer::vfunc_19",
+  "callees": [
+    "0x004E8570"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004E88DE"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T11:00:47Z"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x004DB920",
+  "size": 30,
+  "sha256": "a0df9dd47a259c0e5951fcb4586198defcf7339b369f909860e4d8bd726d2cc4",
+  "symbol": "NMData::RigEventData::vfunc_0",
+  "callees": [
+    "0x004DADE0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004DB924",
+    "0x004DB931"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

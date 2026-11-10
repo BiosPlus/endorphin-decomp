@@ -1,0 +1,16 @@
+{
+  "va": "0x0053C150",
+  "size": 75,
+  "sha256": "29d1d2a6ebed4d4a4808efb8a740a123485f12c0faf23d482c37124ad4f8625d",
+  "symbol": "Primitives::RPRO::vfunc_29",
+  "callees": [
+    "0x0053AD10"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053C154"
+  ],
+  "status": "todo"
+}

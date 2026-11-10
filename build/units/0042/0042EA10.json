@@ -1,0 +1,19 @@
+{
+  "va": "0x0042EA10",
+  "size": 30,
+  "sha256": "fe079091f73bef5e7f8280c85158ed07aef30b9d6b45a831a3f8d6f66e3660cd",
+  "symbol": "KeyMappingManager::vfunc_0",
+  "callees": [
+    "0x0042E950",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0042EA14",
+    "0x0042EA21"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,21 @@
+{
+  "va": "0x00443390",
+  "size": 49,
+  "sha256": "00c60cb26161802876523d3f200ea55bc9988a08da8eec215fe3eae8314f40f9",
+  "symbol": "MultiTrackView::MultiTrackViewStates::ZoomState::vfunc_1",
+  "callees": [
+    "0x0043C900",
+    "0x006A5E00"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004433A8",
+    "0x004433B5",
+    "0x004433BB"
+  ],
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5",
+  "matched_at": "2026-11-10T03:50:06Z"
+}

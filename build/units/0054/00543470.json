@@ -1,0 +1,14 @@
+{
+  "va": "0x00543470",
+  "size": 71,
+  "sha256": "d79066be6588a90e77a12575b3ba25e3efff06a35eeec2947b150c23f66d514d",
+  "symbol": "CameraTool::vfunc_32",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T13:09:14Z"
+}

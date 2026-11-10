@@ -1,0 +1,13 @@
+{
+  "va": "0x004CF310",
+  "size": 14,
+  "sha256": "45cdc4d7f32fe28cc8dea08aa4a01918420d9afbc5f7d33ad8772dd0346795c4",
+  "symbol": "NMData::IncarnationEventData::vfunc_1_off_154",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

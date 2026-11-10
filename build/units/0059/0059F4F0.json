@@ -1,0 +1,18 @@
+{
+  "va": "0x0059F4F0",
+  "size": 36,
+  "sha256": "0015d3ad5971fbbdc4668b0ff279aabee862b0eed46d8dfb4a25314859418616",
+  "symbol": "NMData::BackGroundData::vfunc_30_off_4",
+  "callees": [
+    "0x0059E060"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0059F4F7"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:45:49Z"
+}

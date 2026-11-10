@@ -1,0 +1,42 @@
+{
+  "va": "0x0052A940",
+  "size": 315,
+  "sha256": "8b6b2d90b97e24aea196b2c61da2c3a5cf97108c04fbea21062cb9df2ce93584",
+  "symbol": "MaterialList::vfunc_3",
+  "callees": [
+    "0x00427550",
+    "0x0052A1C0",
+    "0x005329A0",
+    "0x0063F8D0",
+    "0x00640110",
+    "0x00640270",
+    "0x006404E0"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0052A943",
+    "0x0052A959",
+    "0x0052A96B",
+    "0x0052A970",
+    "0x0052A97D",
+    "0x0052A9A4",
+    "0x0052A9B2",
+    "0x0052A9BA",
+    "0x0052A9CA",
+    "0x0052A9D5",
+    "0x0052A9DB",
+    "0x0052A9E6",
+    "0x0052A9F0",
+    "0x0052A9F9",
+    "0x0052AA04",
+    "0x0052AA18",
+    "0x0052AA2A",
+    "0x0052AA35",
+    "0x0052AA42",
+    "0x0052AA4B",
+    "0x0052AA60"
+  ],
+  "status": "todo"
+}

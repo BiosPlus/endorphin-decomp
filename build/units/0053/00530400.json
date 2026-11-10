@@ -1,0 +1,19 @@
+{
+  "va": "0x00530400",
+  "size": 149,
+  "sha256": "49c878eb3ab2a25984d704dbf0e88d2797059bbaa437513dceae4fe8bda58f87",
+  "symbol": "Input::vfunc_0_off_4",
+  "callees": [
+    "0x0065C640",
+    "0x0065C650"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00530403",
+    "0x00530431",
+    "0x0053047D"
+  ],
+  "status": "todo"
+}

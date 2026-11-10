@@ -1,0 +1,19 @@
+{
+  "va": "0x00464AA0",
+  "size": 30,
+  "sha256": "d85ca9043e6321927e6c150023ec859abe347410c99fa26fb351c5a708b41459",
+  "symbol": "VMCActionApp::vfunc_1",
+  "callees": [
+    "0x00464630",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00464AA4",
+    "0x00464AB1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

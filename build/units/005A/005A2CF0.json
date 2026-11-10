@@ -1,0 +1,22 @@
+{
+  "va": "0x005A2CF0",
+  "size": 122,
+  "sha256": "bbcc0d18f1f3cc03498834e686ddbb7786ee22b1be6145b9052581127ce0da0c",
+  "symbol": "MultiSymbolMap\u003cPointainerMap\u003cstd::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, NMData::RelationshipData\u003e\u003e::vfunc_1",
+  "callees": [
+    "0x005DF5C0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005A2D04",
+    "0x005A2D12",
+    "0x005A2D1C",
+    "0x005A2D34",
+    "0x005A2D3F",
+    "0x005A2D46",
+    "0x005A2D57"
+  ],
+  "status": "todo"
+}

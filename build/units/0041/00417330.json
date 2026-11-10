@@ -1,0 +1,15 @@
+{
+  "va": "0x00417330",
+  "size": 6,
+  "sha256": "c28ac8172334c997f3e1e23eee601def7d0428af88aa25930f237b493d406302",
+  "symbol": "ExportDialog::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00417331"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

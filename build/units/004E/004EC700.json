@@ -1,0 +1,21 @@
+{
+  "va": "0x004EC700",
+  "size": 159,
+  "sha256": "083376fa56409f14d7fa2c349c2ac5d32cbc0fa2379aca426cf35b489deefce1",
+  "symbol": "MetaBodyJointSelection::vfunc_0_off_18",
+  "callees": [
+    "0x00494000",
+    "0x004940E0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004EC712",
+    "0x004EC734",
+    "0x004EC742",
+    "0x004EC757",
+    "0x004EC779"
+  ],
+  "status": "todo"
+}

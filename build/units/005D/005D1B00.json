@@ -1,0 +1,20 @@
+{
+  "va": "0x005D1B00",
+  "size": 30,
+  "sha256": "c63390e23d9d9c08c9cae47c3e4b277a57e69c5d1847e7316b2c969b53e01754",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005D1B07",
+    "0x005D1B0C",
+    "0x005D1B14"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:54:25Z"
+}

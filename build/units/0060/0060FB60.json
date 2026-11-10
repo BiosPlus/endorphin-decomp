@@ -1,0 +1,15 @@
+{
+  "va": "0x0060FB60",
+  "size": 8,
+  "sha256": "bf6da6c3bd982c59ce2a25d3e22248063e46e6a45b50ecca77b86ba165329d69",
+  "symbol": "NMData::AxisDefineSensorData::vfunc_1_off_C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060FB64"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

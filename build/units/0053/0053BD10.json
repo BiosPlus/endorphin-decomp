@@ -1,0 +1,18 @@
+{
+  "va": "0x0053BD10",
+  "size": 58,
+  "sha256": "80da16c9721787731489051e0a5078cc84a374b4dc5ee3cf6cfa4133ef2912fb",
+  "symbol": "Primitives::File::vfunc_29",
+  "callees": [
+    "0x0053AD10",
+    "0x0054FD10"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053BD15",
+    "0x0053BD24"
+  ],
+  "status": "todo"
+}

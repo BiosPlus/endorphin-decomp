@@ -1,0 +1,18 @@
+{
+  "va": "0x00594470",
+  "size": 37,
+  "sha256": "f891188b4c0330233be04743219d5bc93c6e869dd3158e03cc2884c701e77f36",
+  "symbol": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setGravity(float), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x00594080"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0059448D"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:53:29Z"
+}

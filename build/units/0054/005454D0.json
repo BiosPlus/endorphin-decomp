@@ -1,0 +1,12 @@
+{
+  "va": "0x005454D0",
+  "size": 109,
+  "sha256": "d7e5e2b5615012cb3a441ab1a48bdaf577eaa87f3c75d01d404793af3f9f1b4e",
+  "symbol": "PoseTool::vfunc_5",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "todo"
+}

@@ -1,0 +1,16 @@
+{
+  "va": "0x006B67A0",
+  "size": 49,
+  "sha256": "7a8f078466d207101b54094905824de0333fa86684cef10008b91c9d3d68bddf",
+  "symbol": "sub_006B67A0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B67C9"
+  ],
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5",
+  "matched_at": "2026-11-10T03:41:19Z"
+}

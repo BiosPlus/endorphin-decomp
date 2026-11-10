@@ -1,0 +1,22 @@
+{
+  "va": "0x0062A110",
+  "size": 87,
+  "sha256": "58a54220a8ac8089c304bf327f8945e59d50e64270f8fa60bf433ba4035d3e59",
+  "symbol": "sub_0062A110",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062A119",
+    "0x0062A12C",
+    "0x0062A134",
+    "0x0062A139",
+    "0x0062A146",
+    "0x0062A150",
+    "0x0062A158"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x0053BC20",
+  "size": 24,
+  "sha256": "1121ade452193fd98c5d23510145ecff3b62cd33908881270fb05c32c685b416",
+  "symbol": "Primitives::Frustum::vfunc_29",
+  "callees": [
+    "0x0053AD10"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053BC24"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T10:58:24Z"
+}

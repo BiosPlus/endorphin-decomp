@@ -1,0 +1,20 @@
+{
+  "va": "0x0041B3C0",
+  "size": 16,
+  "sha256": "7c9efafffee7d3c586aac6c5fde51fbbc1c4e1b1d852dcf17ecc55fdacbcedc7",
+  "symbol": "GettingStartedDialog::vfunc_71",
+  "callees": [
+    "0x006A5DBE"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041B3C1",
+    "0x0041B3C7",
+    "0x0041B3CC"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:55:06Z"
+}

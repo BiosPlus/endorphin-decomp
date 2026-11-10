@@ -1,0 +1,26 @@
+{
+  "va": "0x005C5580",
+  "size": 159,
+  "sha256": "d663a98b307607fcac652c9d31c44c74924680ca03f59d032bca318d7cc7bfcf",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLocalZAxisInWorldSpace(void) const, 0}, 1\u003e::vfunc_44",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x005C3150",
+    "0x00672110",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C5589",
+    "0x005C55A4",
+    "0x005C55AE",
+    "0x005C55C2",
+    "0x005C560C",
+    "0x005C5611",
+    "0x005C561B"
+  ],
+  "status": "todo"
+}

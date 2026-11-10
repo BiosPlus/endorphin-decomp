@@ -1,0 +1,20 @@
+{
+  "va": "0x005B2660",
+  "size": 149,
+  "sha256": "149beeae8da29a03f64b1477891a36161010d2ccab826f6a78cee563d071ad74",
+  "symbol": "ExprParser::ReadMethodType\u003cGeometry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall Geometry::getTypeNameNonConst(void) const, 0\u003e::vfunc_42",
+  "callees": [
+    "0x005B1220",
+    "0x006720E0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B2663",
+    "0x005B2686",
+    "0x005B2698",
+    "0x005B26A7"
+  ],
+  "status": "todo"
+}

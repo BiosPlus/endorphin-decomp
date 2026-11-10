@@ -1,0 +1,36 @@
+{
+  "va": "0x0065D190",
+  "size": 138,
+  "sha256": "f1a80c4dfa3745434bd1460d7d28b87e20206d8db5a2a76ba5d63456f2a042d8",
+  "symbol": "HasBufferedTM::vfunc_2",
+  "callees": [
+    "0x006A6C87"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065D197",
+    "0x0065D1A1",
+    "0x0065D1A7",
+    "0x0065D1AC",
+    "0x0065D1B4",
+    "0x0065D1BA",
+    "0x0065D1C0",
+    "0x0065D1C6",
+    "0x0065D1CC",
+    "0x0065D1D2",
+    "0x0065D1D8",
+    "0x0065D1DE",
+    "0x0065D1E4",
+    "0x0065D1EA",
+    "0x0065D1F0",
+    "0x0065D1F6",
+    "0x0065D1FC",
+    "0x0065D202",
+    "0x0065D208",
+    "0x0065D20D",
+    "0x0065D215"
+  ],
+  "status": "todo"
+}

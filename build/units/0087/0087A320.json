@@ -1,0 +1,14 @@
+{
+  "va": "0x0087A320",
+  "size": 9,
+  "sha256": "9ed9208e31ea4a237c71220888d4c3beeb39f6a691ac25443dd430a050d499c8",
+  "symbol": "sub_0087A320",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0087A325"
+  ],
+  "status": "out_of_scope"
+}

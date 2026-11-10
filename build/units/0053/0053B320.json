@@ -1,0 +1,33 @@
+{
+  "va": "0x0053B320",
+  "size": 323,
+  "sha256": "aa7efe91157d028b548860e765365260c5ea2d9777bd789b26332ab7b29f067f",
+  "symbol": "Primitives::Animation::vfunc_22",
+  "callees": [
+    "0x0053B130",
+    "0x00661C90"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053B334",
+    "0x0053B33A",
+    "0x0053B36D",
+    "0x0053B38C",
+    "0x0053B39A",
+    "0x0053B3A2",
+    "0x0053B3BE",
+    "0x0053B3CE",
+    "0x0053B3D9",
+    "0x0053B3E3",
+    "0x0053B402",
+    "0x0053B412",
+    "0x0053B41F",
+    "0x0053B436",
+    "0x0053B43C",
+    "0x0053B44D",
+    "0x0053B459"
+  ],
+  "status": "todo"
+}

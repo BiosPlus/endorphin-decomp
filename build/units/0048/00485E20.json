@@ -1,0 +1,19 @@
+{
+  "va": "0x00485E20",
+  "size": 30,
+  "sha256": "840d6e22fae27e2759bf56593149420885353bf66f26c37eadd412dfb69b74fc",
+  "symbol": "Commands::BufferTransformsCommand::vfunc_0",
+  "callees": [
+    "0x00485D80",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00485E24",
+    "0x00485E31"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

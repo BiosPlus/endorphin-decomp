@@ -1,0 +1,20 @@
+{
+  "va": "0x00682EB0",
+  "size": 30,
+  "sha256": "15b6ca852a053924ec6ddf8f7b83cd7928a58416b8206470db43d3edc3876c00",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::ValuePtrData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {[thunk]: __thiscall NMData::ValuePtrData::`vcall'{36, {flat}}, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00682EB7",
+    "0x00682EBC",
+    "0x00682EC4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:00:32Z"
+}

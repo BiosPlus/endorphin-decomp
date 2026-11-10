@@ -1,0 +1,14 @@
+{
+  "va": "0x005CE870",
+  "size": 58,
+  "sha256": "87df3edf39eccc108ceebfe8d0819f8eab337176eeac9966bbdd0c86bcbfb977",
+  "symbol": "NMData::InertialBodyData::vfunc_1_off_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T06:01:33Z"
+}

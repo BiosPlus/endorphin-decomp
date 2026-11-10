@@ -1,0 +1,15 @@
+{
+  "va": "0x0088B957",
+  "size": 10,
+  "sha256": "3bfaeb364b8942630bd23c084146bd32633f0a3d0f9c7719874e5ad232d182a2",
+  "symbol": "sub_0088B957",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0088B958",
+    "0x0088B95D"
+  ],
+  "status": "out_of_scope"
+}

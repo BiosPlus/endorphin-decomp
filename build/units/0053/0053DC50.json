@@ -1,0 +1,29 @@
+{
+  "va": "0x0053DC50",
+  "size": 307,
+  "sha256": "8440c441a9fad2bcd9670e41afa83f5c0f003679447b07698252b2c603175717",
+  "symbol": "Primitives::Hinge::vfunc_25",
+  "callees": [
+    "0x005371F0",
+    "0x00538550",
+    "0x0053A050",
+    "0x0053A610"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053DC59",
+    "0x0053DC7E",
+    "0x0053DCDE",
+    "0x0053DCEE",
+    "0x0053DCF9",
+    "0x0053DD16",
+    "0x0053DD26",
+    "0x0053DD2B",
+    "0x0053DD35",
+    "0x0053DD42",
+    "0x0053DD6C"
+  ],
+  "status": "todo"
+}

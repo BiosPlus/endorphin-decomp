@@ -1,0 +1,14 @@
+{
+  "va": "0x004C8040",
+  "size": 5,
+  "sha256": "d4baba0ccef003a414b2b5d013b4d69feeb19597d3f25945eb4533bf71867096",
+  "symbol": "NMData::ForceEventData::vfunc_80",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x004C8041"
+  ],
+  "status": "out_of_scope"
+}

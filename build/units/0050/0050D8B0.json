@@ -1,0 +1,18 @@
+{
+  "va": "0x0050D8B0",
+  "size": 11,
+  "sha256": "24cf407a3d989edfeeaf714fbf98f04251a279003e8a9a3af80813630dca30bd",
+  "symbol": "NMData::TaskManager::vfunc_1_off_8",
+  "callees": [
+    "0x0050D7C0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0050D8B4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T08:51:48Z"
+}

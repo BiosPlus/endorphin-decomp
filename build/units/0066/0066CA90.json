@@ -1,0 +1,16 @@
+{
+  "va": "0x0066CA90",
+  "size": 110,
+  "sha256": "4d8dbbdcab50c705d98865e982f4ca9b61f7d5fa467589a7d9a13b751733c2a1",
+  "symbol": "ExprParser::WriteMethodType\u003cNM::Vector3, NM::Vector3 const \u0026, \u0026public: void __thiscall NM::Vector3::convertEtoTS(class NM::Vector3 const \u0026)\u003e::vfunc_48",
+  "callees": [
+    "0x0067BE20"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066CAB4"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x00559E30",
+  "size": 13,
+  "sha256": "621c43e1c745aa04f51edcdb7a6b91aa060fa9779441429826f8b61b23534fab",
+  "symbol": "Acclaim2CharacterIO::vfunc_16",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

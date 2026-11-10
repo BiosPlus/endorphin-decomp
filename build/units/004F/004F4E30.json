@@ -1,0 +1,20 @@
+{
+  "va": "0x004F4E30",
+  "size": 30,
+  "sha256": "8b11b2664343b1ce8bcff49ec132bb0b775fc0db75f2bdcb0fd36294c35d4286",
+  "symbol": "ExprParser::ReadMethodType\u003cMatrixWithProperties, float, \u0026public: float __thiscall MatrixWithProperties::getAlpha(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004F4E37",
+    "0x004F4E3C",
+    "0x004F4E44"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:47:06Z"
+}

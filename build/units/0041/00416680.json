@@ -1,0 +1,27 @@
+{
+  "va": "0x00416680",
+  "size": 126,
+  "sha256": "7c236d671a32458f0cdc36c7993446332bdf6a28d9724d2da23101739e5794da",
+  "symbol": "CEnTabCtrl::vfunc_82",
+  "callees": [
+    "0x00415D50",
+    "0x00415E30",
+    "0x006A6004",
+    "0x006A6172",
+    "0x006A61C6"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00416696",
+    "0x0041669F",
+    "0x004166BE",
+    "0x004166C4",
+    "0x004166CE",
+    "0x004166D4",
+    "0x004166E2",
+    "0x004166F2"
+  ],
+  "status": "todo"
+}

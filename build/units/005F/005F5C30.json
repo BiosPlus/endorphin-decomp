@@ -1,0 +1,25 @@
+{
+  "va": "0x005F5C30",
+  "size": 134,
+  "sha256": "6af56ec6911a8c0e81384921a4e9616fa0e7baad9739898c60f4340c5b323c7a",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cHelperGraphic, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall HelperGraphic::getType(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall HelperGraphic::setType(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046E780",
+    "0x005F54A0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005F5C39",
+    "0x005F5C66",
+    "0x005F5C76",
+    "0x005F5C88",
+    "0x005F5CA3",
+    "0x005F5CA8",
+    "0x005F5CB2"
+  ],
+  "status": "todo"
+}

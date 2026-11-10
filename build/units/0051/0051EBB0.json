@@ -1,0 +1,20 @@
+{
+  "va": "0x0051EBB0",
+  "size": 76,
+  "sha256": "8700161cea408e8474021493fa72281213e2efe833121e2e393f8d4c73d2f0e0",
+  "symbol": "StateMachine::State::vfunc_2",
+  "callees": [
+    "0x00501140",
+    "0x0065F450",
+    "0x006721F0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0051EBC9",
+    "0x0051EBD8",
+    "0x0051EBF0"
+  ],
+  "status": "todo"
+}

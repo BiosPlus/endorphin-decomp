@@ -1,0 +1,22 @@
+{
+  "va": "0x004EE390",
+  "size": 145,
+  "sha256": "8890eec498dc33ada44982a042c15b6e713fc1e08af17798bdf87bee79944a12",
+  "symbol": "ExprParser::Function2Type\u003cSelectionVariable, bool, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, ValuePtr const \u0026), 0}\u003e::vfunc_49",
+  "callees": [
+    "0x0046E780",
+    "0x004EDE30",
+    "0x006720A0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004EE393",
+    "0x004EE3C9",
+    "0x004EE3DE",
+    "0x004EE3F2",
+    "0x004EE409"
+  ],
+  "status": "todo"
+}

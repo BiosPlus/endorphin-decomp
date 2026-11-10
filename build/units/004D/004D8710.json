@@ -1,0 +1,21 @@
+{
+  "va": "0x004D8710",
+  "size": 130,
+  "sha256": "2acc6ee4cd462408a59f5af7eca70d8d887088dfc6424f8b1ad1ca119aeb3e84",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::RigEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0\u003e::vfunc_3",
+  "callees": [
+    "0x004D5560"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004D8713",
+    "0x004D8738",
+    "0x004D8740",
+    "0x004D8745",
+    "0x004D875A",
+    "0x004D8778"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x0060B980",
+  "size": 4,
+  "sha256": "4181cb1fec090d6487f323c8ce84a17ff37429613d7843b4f5f40f5eae266b77",
+  "symbol": "Chromosome::Descriptor::vfunc_9_off_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

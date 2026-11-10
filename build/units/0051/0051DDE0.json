@@ -1,0 +1,14 @@
+{
+  "va": "0x0051DDE0",
+  "size": 37,
+  "sha256": "9ff543b9dc071bccdb916723a6ea2892eced09c411c5d512be5d4884b9d739b1",
+  "symbol": "StateMachine::State::vfunc_4",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:48:40Z"
+}

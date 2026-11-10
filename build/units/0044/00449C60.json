@@ -1,0 +1,19 @@
+{
+  "va": "0x00449C60",
+  "size": 30,
+  "sha256": "7812bf8fcdeff3eb5d10a5fbe4cac29b2e4bbb3292459522db8e798b276efaa6",
+  "symbol": "RegistrationDialog::vfunc_1",
+  "callees": [
+    "0x00449B40",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00449C64",
+    "0x00449C71"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

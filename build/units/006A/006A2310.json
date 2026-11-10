@@ -1,0 +1,23 @@
+{
+  "va": "0x006A2310",
+  "size": 264,
+  "sha256": "6c35129bf640ded72cff3bfa9b14500aba987f981bc8ae2e09ef298dd73fb4a8",
+  "symbol": "ExprParser::Operators::Conditional::vfunc_2",
+  "callees": [
+    "0x0048A120",
+    "0x006A6DD2"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006A2330",
+    "0x006A2342",
+    "0x006A2351",
+    "0x006A2370",
+    "0x006A238F",
+    "0x006A23C7",
+    "0x006A23EB"
+  ],
+  "status": "todo"
+}

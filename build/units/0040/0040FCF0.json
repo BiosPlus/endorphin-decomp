@@ -1,0 +1,15 @@
+{
+  "va": "0x0040FCF0",
+  "size": 6,
+  "sha256": "583458c88ca12cfb4b163516bc2524531cc6eff290f47fc2a2d438c8c6d8fd75",
+  "symbol": "CColorCheck::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040FCF1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

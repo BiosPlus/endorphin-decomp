@@ -1,0 +1,14 @@
+{
+  "va": "0x0040B770",
+  "size": 5,
+  "sha256": "5e36236ae15662294d4fe28f84101d97ab2d7e6c66d3dfd50eba51f83657679b",
+  "symbol": "AddCharacterDialog::vfunc_91",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0040B771"
+  ],
+  "status": "out_of_scope"
+}

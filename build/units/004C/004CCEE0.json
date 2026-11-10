@@ -1,0 +1,15 @@
+{
+  "va": "0x004CCEE0",
+  "size": 11,
+  "sha256": "0cbd95609c3e8edbcbae88a958b3cf92de1cf2ea205d5d9e3c8c44ec5df08581",
+  "symbol": "NMData::MetaBodyConstraintData::vfunc_0_off_158",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CCEE7"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

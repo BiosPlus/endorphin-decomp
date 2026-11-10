@@ -1,0 +1,24 @@
+{
+  "va": "0x0061F090",
+  "size": 146,
+  "sha256": "9dc81508078ac887284642bd11ef8731b4ed382887282324629396951bb13f35",
+  "symbol": "NMData::JointLimit::vfunc_15",
+  "callees": [
+    "0x0061ECD0",
+    "0x0061ECF0",
+    "0x0061ED10",
+    "0x0061ED30",
+    "0x00671F30"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061F0BA",
+    "0x0061F0CF",
+    "0x0061F0E4",
+    "0x0061F0FF",
+    "0x0061F114"
+  ],
+  "status": "todo"
+}

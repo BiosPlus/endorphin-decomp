@@ -1,0 +1,23 @@
+{
+  "va": "0x00487DB0",
+  "size": 122,
+  "sha256": "9b1295f220329bd7c57bcdc8de325b0658698ae4da16db17e5fd57a43ee4d8de",
+  "symbol": "ExprParser::Method0Type\u003cNMData::DesiredPoseEventData, {public: void __thiscall NMData::DesiredPoseEventData::fire(void), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00487DB9",
+    "0x00487DCC",
+    "0x00487DD4",
+    "0x00487DD9",
+    "0x00487DE6",
+    "0x00487DF4",
+    "0x00487DFB",
+    "0x00487E16"
+  ],
+  "status": "todo"
+}

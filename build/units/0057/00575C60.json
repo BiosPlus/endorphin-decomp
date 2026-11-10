@@ -1,0 +1,19 @@
+{
+  "va": "0x00575C60",
+  "size": 30,
+  "sha256": "9e3486e108b750c87073ae55863d543c8056e84b9eff8aaeb51f010d559c4d2b",
+  "symbol": "VSTParser::vfunc_0",
+  "callees": [
+    "0x00574CF0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00575C64",
+    "0x00575C71"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

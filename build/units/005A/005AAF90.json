@@ -1,0 +1,23 @@
+{
+  "va": "0x005AAF90",
+  "size": 47,
+  "sha256": "d7f07c562b038a1a532ee4dd252bb5bc30a25605d5249567ff848594b7152755",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::RigNode, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {private: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::RigNode::getHoldModeName(void) const, 0}, 0\u003e::vfunc_5",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x005AA9E0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005AAF9E",
+    "0x005AAFA4",
+    "0x005AAFAC",
+    "0x005AAFB1",
+    "0x005AAFBB"
+  ],
+  "status": "todo"
+}

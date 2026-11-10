@@ -1,0 +1,17 @@
+{
+  "va": "0x0060D4D0",
+  "size": 35,
+  "sha256": "ae1080325af82be0a85f67851e0945ab75ed7bd4a1d74e6fdf7460b7cb6531a6",
+  "symbol": "NMData::EffectorGroupData::vfunc_8",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060D4D2",
+    "0x0060D4E8"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:38:05Z"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x00454DB0",
+  "size": 187,
+  "sha256": "ee695d39f70bd00adbb6cb3245d1ef50ee5f2e0868b545062b77b9d897316fb9",
+  "symbol": "CSizingControlBarG::vfunc_81",
+  "callees": [
+    "0x00454D10"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00454DD1",
+    "0x00454DE2",
+    "0x00454DF4",
+    "0x00454E60"
+  ],
+  "status": "todo"
+}

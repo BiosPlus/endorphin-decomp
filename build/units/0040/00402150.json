@@ -1,0 +1,13 @@
+{
+  "va": "0x00402150",
+  "size": 17,
+  "sha256": "8e982a76ab2aa62da6fad20fe864396c79f84801bbfffcaa79cc6f3294020555",
+  "symbol": "HelperGraphic::vfunc_1_off_150",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

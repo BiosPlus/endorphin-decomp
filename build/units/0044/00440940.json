@@ -1,0 +1,14 @@
+{
+  "va": "0x00440940",
+  "size": 47,
+  "sha256": "613a6d017e3748f6a7244f0c2ef050438e366a820872d276b159d632ce37ba33",
+  "symbol": "MultiTrackView::DiamondMarker::vfunc_3",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:51:16Z"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x006222E0",
+  "size": 4,
+  "sha256": "2d67a11ceddf3a8222542b6d2ebc752358b59c5364139e589c23543f8a9a8d4d",
+  "symbol": "NMData::SkeletalCalibrationVariables::vfunc_9",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

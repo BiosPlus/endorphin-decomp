@@ -1,0 +1,17 @@
+{
+  "va": "0x004CA380",
+  "size": 34,
+  "sha256": "d4dd281c14160f7c359217c124165ffb634a7a15a1c0424a4a57ac7a04dbbcd6",
+  "symbol": "NMData::MetaBodyConstraintData::vfunc_59",
+  "callees": [
+    "0x006404E0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004CA381",
+    "0x004CA391"
+  ],
+  "status": "todo"
+}

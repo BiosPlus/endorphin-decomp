@@ -1,0 +1,18 @@
+{
+  "va": "0x00675D30",
+  "size": 37,
+  "sha256": "59dbee0a0237d3f43eb8590a65dc53716b428f36c29867267875c2ae94233f86",
+  "symbol": "Properties::PropertyManager::vfunc_7",
+  "callees": [
+    "0x006616C0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00675D4E"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:53:08Z"
+}

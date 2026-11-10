@@ -1,0 +1,14 @@
+{
+  "va": "0x0055BE30",
+  "size": 37,
+  "sha256": "103cf20f37d7215cd7a269eb584a196c41a95ea9947a579e0eed41728b4b2e55",
+  "symbol": "AcclaimIO::vfunc_19",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:49:27Z"
+}

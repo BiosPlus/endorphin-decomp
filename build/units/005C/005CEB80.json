@@ -1,0 +1,24 @@
+{
+  "va": "0x005CEB80",
+  "size": 167,
+  "sha256": "f42081b2d4aaad45c826c558586b1459dd7d7df803a7148f858699dbfac798d9",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0\u003e::vfunc_42",
+  "callees": [
+    "0x0046C3C0",
+    "0x005CE4E0",
+    "0x00672080",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005CEB89",
+    "0x005CEBA4",
+    "0x005CEBB9",
+    "0x005CEC14",
+    "0x005CEC19",
+    "0x005CEC23"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,26 @@
+{
+  "va": "0x0053B4F0",
+  "size": 150,
+  "sha256": "dd22492810c151a79baf9c093be50db1590fa8158a3235394b1571d1ed60141a",
+  "symbol": "Primitives::Cuboid::vfunc_28",
+  "callees": [
+    "0x0053B4B0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053B506",
+    "0x0053B50E",
+    "0x0053B514",
+    "0x0053B51A",
+    "0x0053B51F",
+    "0x0053B527",
+    "0x0053B537",
+    "0x0053B53C",
+    "0x0053B55E",
+    "0x0053B56C",
+    "0x0053B578"
+  ],
+  "status": "todo"
+}

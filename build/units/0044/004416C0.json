@@ -1,0 +1,19 @@
+{
+  "va": "0x004416C0",
+  "size": 30,
+  "sha256": "394a022ed20ac6da363f7cdfa358c569bdbf6e2f13b926f2068f7aa052927804",
+  "symbol": "MultiTrackView::DiamondMarker::vfunc_0",
+  "callees": [
+    "0x00440A00",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004416C4",
+    "0x004416D1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

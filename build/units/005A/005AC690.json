@@ -1,0 +1,14 @@
+{
+  "va": "0x005AC690",
+  "size": 17,
+  "sha256": "e883120787d7af377a293e58b73aa1024ed11205fa2b270efe346fbeb1ccea52",
+  "symbol": "Commands::MirrorVMUpdateCommand::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T14:55:01Z"
+}

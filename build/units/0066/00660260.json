@@ -1,0 +1,19 @@
+{
+  "va": "0x00660260",
+  "size": 30,
+  "sha256": "48d5d4f8107028c5c87cd69096f8744254b7481c8ddc54dd21be9bb832ea7ba3",
+  "symbol": "SymbolResolver::vfunc_4",
+  "callees": [
+    "0x006601E0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00660264",
+    "0x00660271"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

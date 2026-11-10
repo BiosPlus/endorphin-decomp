@@ -1,0 +1,15 @@
+{
+  "va": "0x004636C0",
+  "size": 28,
+  "sha256": "3e3ff1c9bda7ab0e7ed7ff98f1dd45742dce109e41fc76c23f9633b142797eb5",
+  "symbol": "VideoGeneratorDialog::vfunc_1_off_74",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x004636D5"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

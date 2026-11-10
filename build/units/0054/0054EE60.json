@@ -1,0 +1,19 @@
+{
+  "va": "0x0054EE60",
+  "size": 30,
+  "sha256": "3a452a57e34d0e4b75468056430469d728549a9dc191498da99254228db7c67f",
+  "symbol": "NMMatrixStackManager::vfunc_0",
+  "callees": [
+    "0x0054ECB0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0054EE64",
+    "0x0054EE71"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

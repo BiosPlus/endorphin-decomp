@@ -1,0 +1,15 @@
+{
+  "va": "0x00447DC0",
+  "size": 6,
+  "sha256": "c448ed987c46b0106eeecbcfa41cb188dbe93896eee1d1328130b55dc700bf07",
+  "symbol": "ProcessorWarningDialog::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00447DC1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,18 @@
+{
+  "va": "0x005C33E0",
+  "size": 34,
+  "sha256": "505dc36257fc5dbca2826b053ef13301b0c51e89843e71e62a6bb46ad635d63f",
+  "symbol": "ExprParser::WriteMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: void __thiscall NMData::CollisionModelDataBase::addForce(class NM::Vector3 const \u0026), 0}\u003e::vfunc_41",
+  "callees": [
+    "0x005C3030"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C33FA"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T05:22:05Z"
+}

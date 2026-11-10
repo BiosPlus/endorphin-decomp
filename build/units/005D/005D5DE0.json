@@ -1,0 +1,26 @@
+{
+  "va": "0x005D5DE0",
+  "size": 167,
+  "sha256": "e3f24ad94d2a3efe40f58b4cff6507ed1b36ecd6489bd91785ee46ffb87a56b9",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CameraData, bool, {private: bool __thiscall NMData::CameraData::isFrustumVisible(void) const, 0}, 0\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x005CFE50",
+    "0x006720A0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005D5DE9",
+    "0x005D5E04",
+    "0x005D5E16",
+    "0x005D5E2A",
+    "0x005D5E74",
+    "0x005D5E79",
+    "0x005D5E83"
+  ],
+  "status": "todo"
+}

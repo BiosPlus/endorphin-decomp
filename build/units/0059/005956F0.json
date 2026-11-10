@@ -1,0 +1,23 @@
+{
+  "va": "0x005956F0",
+  "size": 122,
+  "sha256": "d7a98fa84c384672b3a92c954874ca8cf73d54ea7d37cf2a5f13cbd620114dee",
+  "symbol": "ExprParser::WriteMethodType\u003cWorld, float, {private: void __thiscall World::setGravity(float), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005956F9",
+    "0x0059570C",
+    "0x00595714",
+    "0x00595719",
+    "0x00595726",
+    "0x00595734",
+    "0x0059573B",
+    "0x00595756"
+  ],
+  "status": "todo"
+}

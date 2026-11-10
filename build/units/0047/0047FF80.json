@@ -1,0 +1,19 @@
+{
+  "va": "0x0047FF80",
+  "size": 30,
+  "sha256": "8dce70a6980955ae645f8dc999150a44e1c2bfb00dc7e2a00f071982ac95d9e7",
+  "symbol": "NMData::SceneData::vfunc_0",
+  "callees": [
+    "0x0047DBC0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0047FF84",
+    "0x0047FF91"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

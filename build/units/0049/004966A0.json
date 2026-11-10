@@ -1,0 +1,22 @@
+{
+  "va": "0x004966A0",
+  "size": 75,
+  "sha256": "afc6a386b8c266552ae3c1e0ea2bc4b4d1fd76da1778bb894451a0722c8a3ad3",
+  "symbol": "RigManager::vfunc_14",
+  "callees": [
+    "0x0046F7D0",
+    "0x004952F0",
+    "0x00496220",
+    "0x0055DA20"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004966BC",
+    "0x004966CB",
+    "0x004966D4",
+    "0x004966E0"
+  ],
+  "status": "todo"
+}

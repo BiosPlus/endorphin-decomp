@@ -1,0 +1,18 @@
+{
+  "va": "0x00446760",
+  "size": 41,
+  "sha256": "81525f66eacaf368776ef13788b13cdfd85abc4136601f403910757e3e156dc1",
+  "symbol": "NodeView::vfunc_0_off_144",
+  "callees": [
+    "0x00444480",
+    "0x00446710"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00446770",
+    "0x00446782"
+  ],
+  "status": "todo"
+}

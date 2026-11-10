@@ -1,0 +1,17 @@
+{
+  "va": "0x0041DED0",
+  "size": 60,
+  "sha256": "5d0bbd6b3f93a8b04e4cdc8ab1b9de9f21884cb32cd1340417c18d75562fd85b",
+  "symbol": "Properties::GWCPropertiesControlDriver::vfunc_5",
+  "callees": [
+    "0x0048EF80"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0041DED7",
+    "0x0041DF00"
+  ],
+  "status": "todo"
+}

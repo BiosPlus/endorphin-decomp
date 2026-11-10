@@ -1,0 +1,20 @@
+{
+  "va": "0x0053BC40",
+  "size": 82,
+  "sha256": "e3d47e59078cb66104ec8cd81d5d4e2aec581f7f996467418c4b1031a47d231f",
+  "symbol": "Primitives::Frustum::vfunc_28",
+  "callees": [
+    "0x005B11D0",
+    "0x0063E02A"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0053BC4B",
+    "0x0053BC57",
+    "0x0053BC63",
+    "0x0053BC88"
+  ],
+  "status": "todo"
+}

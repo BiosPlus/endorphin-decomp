@@ -1,0 +1,16 @@
+{
+  "va": "0x00603500",
+  "size": 37,
+  "sha256": "f68522e92b4a540f9aff019d4c9ba1bb6cfdbe5eb6bafdf2aa17db8b9cbe19c1",
+  "symbol": "ExprParser::WriteMethodType\u003cEffector, float, \u0026public: void __thiscall Effector::setDesiredVelocity(float)\u003e::vfunc_41",
+  "callees": [
+    "0x006032B0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060351D"
+  ],
+  "status": "todo"
+}

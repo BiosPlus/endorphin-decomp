@@ -1,0 +1,13 @@
+{
+  "va": "0x0055BBD0",
+  "size": 22,
+  "sha256": "cbf0863e2d2bce3b5c8fc79703229cce9527ade67d17076f676349b4ae895912",
+  "symbol": "Acclaim2MotionIO::vfunc_47",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

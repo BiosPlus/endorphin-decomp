@@ -1,0 +1,16 @@
+{
+  "va": "0x005B1190",
+  "size": 57,
+  "sha256": "d8cc57447cf3b6c481c681ab0c0e8d045b3177b9fd12dab71fece83050f9f3bf",
+  "symbol": "Geometry::CylinderType::vfunc_9",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005B11A2"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T05:53:01Z"
+}

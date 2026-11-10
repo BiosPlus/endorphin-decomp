@@ -1,0 +1,13 @@
+{
+  "va": "0x006227A0",
+  "size": 10,
+  "sha256": "58dfce541f8ca77b697e2e994665f006ac596692529ae4a1e176f9773d7bad67",
+  "symbol": "NMData::HingeCalibrationVariables::vfunc_5",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

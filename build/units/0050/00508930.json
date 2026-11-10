@@ -1,0 +1,19 @@
+{
+  "va": "0x00508930",
+  "size": 30,
+  "sha256": "13a95e4b4c8424298d3b5f129571d6758f860b318099a65d718e0a21b4603e02",
+  "symbol": "NMData::TaskTemplateParam::vfunc_0",
+  "callees": [
+    "0x005086E0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00508934",
+    "0x00508941"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

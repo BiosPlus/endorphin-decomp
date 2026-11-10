@@ -1,0 +1,14 @@
+{
+  "va": "0x00402020",
+  "size": 5,
+  "sha256": "0f20b4b5e99744afa19de87aa25c7ceecca652203ad32e6301a8ff90c6ca61ed",
+  "symbol": "AnimatableTransform::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00402021"
+  ],
+  "status": "out_of_scope"
+}

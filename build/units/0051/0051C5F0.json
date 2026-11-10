@@ -1,0 +1,21 @@
+{
+  "va": "0x0051C5F0",
+  "size": 69,
+  "sha256": "057144accbed2a7c72c663bdbd1ef375f95dac1f1a6d0b2d10c14dfbf56f15f6",
+  "symbol": "NMData::QuatChannel::vfunc_0",
+  "callees": [
+    "0x00519CE0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0051C5FC",
+    "0x0051C61B",
+    "0x0051C628"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:44:44Z"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x006122F0",
+  "size": 30,
+  "sha256": "7580a0fa60bf3957d9eab84f37770f9c6d91c7fbfa5c906f2084f2d7f10969eb",
+  "symbol": "NMData::TwistAndSwingLimit::vfunc_0",
+  "callees": [
+    "0x00610D10",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006122F4",
+    "0x00612301"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

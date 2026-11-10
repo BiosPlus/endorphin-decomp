@@ -1,0 +1,15 @@
+{
+  "va": "0x00407720",
+  "size": 6,
+  "sha256": "b1f3f45fc52dffdb32b6aa59bf6750b5907b944ebc012fc71de62cc3af32d11e",
+  "symbol": "BottomPanel::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00407721"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,33 @@
+{
+  "va": "0x00538B00",
+  "size": 456,
+  "sha256": "c89b498241977d02c02d0a835844a17443fb3dd3427556f0dd14b4aab1e1c852",
+  "symbol": "UtilityGraphics::BallLocator::vfunc_22",
+  "callees": [
+    "0x006A6EAA",
+    "0x006A6EB0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00538B0C",
+    "0x00538B29",
+    "0x00538B34",
+    "0x00538B41",
+    "0x00538B57",
+    "0x00538B5D",
+    "0x00538B6F",
+    "0x00538B90",
+    "0x00538BBC",
+    "0x00538BD6",
+    "0x00538BDC",
+    "0x00538BE9",
+    "0x00538C0A",
+    "0x00538C56",
+    "0x00538C5C",
+    "0x00538C69",
+    "0x00538C92"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,21 @@
+{
+  "va": "0x004272F0",
+  "size": 126,
+  "sha256": "16f371656fb7439b1034395062e518966858647adeba505f6ca0ed637c8768f7",
+  "symbol": "KeyMappingManager::vfunc_9",
+  "callees": [
+    "0x00663110",
+    "0x00663DB0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004272F3",
+    "0x00427312",
+    "0x0042731F",
+    "0x00427342",
+    "0x00427357"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x00674880",
+  "size": 122,
+  "sha256": "92277927983b94bbecc656afb85c556225d9dc34101a46b0e3713fa78cbc3f08",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cExpressionEntry, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall ExpressionEntry::getExpression(void) const, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, \u0026public: void __thiscall ExpressionEntry::setExpression(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00674889",
+    "0x0067489C",
+    "0x006748A4",
+    "0x006748A9",
+    "0x006748B6",
+    "0x006748C4",
+    "0x006748CB",
+    "0x006748E6"
+  ],
+  "status": "todo"
+}

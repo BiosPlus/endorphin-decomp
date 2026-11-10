@@ -1,0 +1,13 @@
+{
+  "va": "0x005945F0",
+  "size": 8,
+  "sha256": "7a245dff70afba3743d8a55c40181e4e60f5ec2216ce39450bbd037e5e55f6aa",
+  "symbol": "UnitsWithProperties::vfunc_19",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

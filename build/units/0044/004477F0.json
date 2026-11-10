@@ -1,0 +1,25 @@
+{
+  "va": "0x004477F0",
+  "size": 193,
+  "sha256": "d062a66ee45b8414c33fec8cc6a61f8c70c6ee09f122907920f1e1b9e805cf3b",
+  "symbol": "PrimitivesPropertyPage::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00447806",
+    "0x00447818",
+    "0x0044782A",
+    "0x0044783C",
+    "0x0044784E",
+    "0x00447860",
+    "0x00447872",
+    "0x00447884",
+    "0x00447896",
+    "0x004478A8"
+  ],
+  "status": "todo"
+}

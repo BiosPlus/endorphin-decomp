@@ -1,0 +1,15 @@
+{
+  "va": "0x0060EC20",
+  "size": 8,
+  "sha256": "07c1cfac4bd9a0e77aa1b948d7b6eb4a1eded13988b6250c2eced59e2d6214f4",
+  "symbol": "NMData::SensorData::vfunc_1_off_C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060EC24"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,24 @@
+{
+  "va": "0x00625240",
+  "size": 178,
+  "sha256": "ffb330c1deed876b1f5bb339b5bdad0fcf488c09c69fb93be8da3fdd070c56a0",
+  "symbol": "ExprParser::ReadMethodType\u003cSensors::SensorIsCollidingWith, bool, \u0026public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x006720A0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00625249",
+    "0x00625280",
+    "0x00625294",
+    "0x006252DF",
+    "0x006252E4",
+    "0x006252EE"
+  ],
+  "status": "todo"
+}

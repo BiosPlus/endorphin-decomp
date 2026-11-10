@@ -1,0 +1,18 @@
+{
+  "va": "0x004B0120",
+  "size": 13,
+  "sha256": "34f9f1472a90d8544a0818f679982c3c4a81757a8eb2beaf56ab3eba74b09980",
+  "symbol": "ChangePrimarySelectionCommand::vfunc_2",
+  "callees": [
+    "0x004AFC20"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004B0128"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:25:46Z"
+}

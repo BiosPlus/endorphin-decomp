@@ -1,0 +1,15 @@
+{
+  "va": "0x0088ECDA",
+  "size": 10,
+  "sha256": "052ddf8c23b71c25989ee9e86068a70cc4adce7f8636a56ebf58999d5b7b5d3d",
+  "symbol": "sub_0088ECDA",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0088ECDB",
+    "0x0088ECE0"
+  ],
+  "status": "out_of_scope"
+}

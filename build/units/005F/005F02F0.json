@@ -1,0 +1,13 @@
+{
+  "va": "0x005F02F0",
+  "size": 7,
+  "sha256": "6d726ee9d4a08e3cf41e756921ab9887620c691d0ec95de6a8f3fb045d1a2b0e",
+  "symbol": "NMData::SkeletalJointData::vfunc_62",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

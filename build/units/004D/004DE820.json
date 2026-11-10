@@ -1,0 +1,20 @@
+{
+  "va": "0x004DE820",
+  "size": 30,
+  "sha256": "f6adc5919988b6dbb85ab181d4fe12286b39de85e9db34e064bbc13246b3c469",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004DE827",
+    "0x004DE82C",
+    "0x004DE834"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:46:18Z"
+}

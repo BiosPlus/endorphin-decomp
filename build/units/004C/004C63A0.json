@@ -1,0 +1,20 @@
+{
+  "va": "0x004C63A0",
+  "size": 80,
+  "sha256": "ce2ce992f70a9c1c5114eadb4cd902fc34d1e373a48bdf1e89b2005e69911c1f",
+  "symbol": "NMData::ForceEventData::vfunc_15",
+  "callees": [
+    "0x004C3410",
+    "0x004C6360",
+    "0x004C6380"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C63C3",
+    "0x004C63D1",
+    "0x004C63E2"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x0048E420",
+  "size": 163,
+  "sha256": "0b18f3c680a41cbaa6c2e19b5a81c84756086e37816cb22008ac8ee544927921",
+  "symbol": "Commands::GoToFrameCommand::vfunc_3",
+  "callees": [
+    "0x00435D00"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048E423",
+    "0x0048E450",
+    "0x0048E45D",
+    "0x0048E46E",
+    "0x0048E479",
+    "0x0048E48B",
+    "0x0048E4A5"
+  ],
+  "status": "todo"
+}

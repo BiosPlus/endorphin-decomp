@@ -1,0 +1,20 @@
+{
+  "va": "0x006B1250",
+  "size": 147,
+  "sha256": "387be397931029cc4c626a3e74d681d386438b76802e6789565871c5873315f3",
+  "symbol": "GWCRGBPropertiesFactory::vfunc_1",
+  "callees": [
+    "0x006A5C62",
+    "0x006B3A90"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B1259",
+    "0x006B126C",
+    "0x006B1275",
+    "0x006B1295"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,38 @@
+{
+  "va": "0x0061F310",
+  "size": 508,
+  "sha256": "4ae28c6d10548af463aee711657d7057a65eac2dd63e539a4341835dcf07114c",
+  "symbol": "NMData::TwistAndSwingLimit::vfunc_15",
+  "callees": [
+    "0x0061EE50",
+    "0x0061EE70",
+    "0x0061EE90",
+    "0x0061EEB0",
+    "0x0061EED0",
+    "0x0061EEF0",
+    "0x0061EF10",
+    "0x0061EF30",
+    "0x0061EF50",
+    "0x0061EF70",
+    "0x00671F30"
+  ],
+  "num_callees": 11,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0061F331",
+    "0x0061F338",
+    "0x0061F343",
+    "0x0061F358",
+    "0x0061F36D",
+    "0x0061F382",
+    "0x0061F397",
+    "0x0061F3AC",
+    "0x0061F3C1",
+    "0x0061F3D6",
+    "0x0061F3EB",
+    "0x0061F400",
+    "0x0061F414"
+  ],
+  "status": "todo"
+}

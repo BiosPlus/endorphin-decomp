@@ -1,0 +1,17 @@
+{
+  "va": "0x005AC640",
+  "size": 34,
+  "sha256": "5abdf4e3df90c0288dde51a5cea83f71bb456462092051e7ace3bf6ebe8bed1f",
+  "symbol": "Commands::MirrorCommand::vfunc_3",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005AC647",
+    "0x005AC657"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:14:50Z"
+}

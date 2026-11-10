@@ -1,0 +1,18 @@
+{
+  "va": "0x0059C7E0",
+  "size": 8,
+  "sha256": "59c6caeeb3951262db49b6f186017e179fb4421cfa9ca8548ca59b1851bb20e1",
+  "symbol": "World::vfunc_33",
+  "callees": [
+    "0x0059C770"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0059C7E3"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:47:02Z"
+}

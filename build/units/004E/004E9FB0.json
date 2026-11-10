@@ -1,0 +1,23 @@
+{
+  "va": "0x004E9FB0",
+  "size": 122,
+  "sha256": "e459c49dade2ad086e8b6b5f4449723015b1599cc100f030d1e3636955579231",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::PoseToolOptions, bool, \u0026public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, bool, \u0026public: void __thiscall NMData::PoseToolOptions::setCollisionEnabled(bool)\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004E9FB9",
+    "0x004E9FCC",
+    "0x004E9FD4",
+    "0x004E9FD9",
+    "0x004E9FE6",
+    "0x004E9FF4",
+    "0x004E9FFB",
+    "0x004EA016"
+  ],
+  "status": "todo"
+}

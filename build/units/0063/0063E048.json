@@ -1,0 +1,14 @@
+{
+  "va": "0x0063E048",
+  "size": 6,
+  "sha256": "643046ea647c0c0db1c1a6ffeac42842f4f4242e7ef09255d3bb218de63e570f",
+  "symbol": "thunk_GLU32_gluPerspective",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x0063E04A"
+  ],
+  "status": "out_of_scope"
+}

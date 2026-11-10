@@ -1,0 +1,24 @@
+{
+  "va": "0x007FD130",
+  "size": 920,
+  "sha256": "e7ebdef909a6e386f7dc61ec3ce1904223f4ecda609fb993d668ea172a513532",
+  "symbol": "sub_007FD130",
+  "callees": [
+    "0x007FC700"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x007FD138",
+    "0x007FD146",
+    "0x007FD154",
+    "0x007FD15E",
+    "0x007FD168",
+    "0x007FD172",
+    "0x007FD17C",
+    "0x007FD186",
+    "0x007FD1D3"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x006294C0",
+  "size": 5,
+  "sha256": "2dcc58ac90485faa64cc5e48b6149cc0fd601de776a89e51b7e807acbbc1217c",
+  "symbol": "Sensors::SensorAbsoluteGeneralEulers::vfunc_14",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006294C1"
+  ],
+  "status": "out_of_scope"
+}

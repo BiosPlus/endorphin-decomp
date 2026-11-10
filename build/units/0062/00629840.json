@@ -1,0 +1,18 @@
+{
+  "va": "0x00629840",
+  "size": 13,
+  "sha256": "249fa45fc570e38f73293da3ac8f36caea0e0f8c7242225c1a867c16ff95de03",
+  "symbol": "Sensors::SensorCollisionOrientation::vfunc_15",
+  "callees": [
+    "0x006297B0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00629844"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T09:28:59Z"
+}

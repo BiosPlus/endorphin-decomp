@@ -1,0 +1,16 @@
+{
+  "va": "0x005A7260",
+  "size": 32,
+  "sha256": "be1c65c59afcb87eec2fa6ecaabd78c85bc6a383a044426056dbad9c9a211822",
+  "symbol": "NMData::CalibrationData::vfunc_2",
+  "callees": [
+    "0x006720E0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005A7275"
+  ],
+  "status": "todo"
+}

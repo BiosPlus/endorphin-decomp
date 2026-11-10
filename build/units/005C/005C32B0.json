@@ -1,0 +1,18 @@
+{
+  "va": "0x005C32B0",
+  "size": 32,
+  "sha256": "7f34d1fdef0f3d46faf4e153acd4e0a894f4cd37b3259cd198d13ff134e690fa",
+  "symbol": "NMData::FluidObjectData::vfunc_15",
+  "callees": [
+    "0x005C3010"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C32C5"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:00:12Z"
+}

@@ -1,0 +1,17 @@
+{
+  "va": "0x00522160",
+  "size": 34,
+  "sha256": "86e3ef3cbc26da1866e0329d870d0e438801bbd8b8b811dfc5680066397210d1",
+  "symbol": "ThreeLayerNet::vfunc_25",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00522167",
+    "0x00522177"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:13:40Z"
+}

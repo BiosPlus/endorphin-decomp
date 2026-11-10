@@ -1,0 +1,23 @@
+{
+  "va": "0x006561B0",
+  "size": 122,
+  "sha256": "db450613fe72d2c858f39556dee603a3ed0aee1d5ff05791c90d974d25fcbde6",
+  "symbol": "ExprParser::WriteMethodType\u003cSkeletalJoint, float, {[thunk]: __thiscall SkeletalJoint::`vcall'{108, {flat}}, 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006561B9",
+    "0x006561CC",
+    "0x006561D4",
+    "0x006561D9",
+    "0x006561E6",
+    "0x006561F4",
+    "0x006561FB",
+    "0x00656216"
+  ],
+  "status": "todo"
+}

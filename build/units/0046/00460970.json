@@ -1,0 +1,14 @@
+{
+  "va": "0x00460970",
+  "size": 5,
+  "sha256": "250110ca50e5dad71ab68d7eb34d41f5434e212c164c3cfa2695d5ac3bd45695",
+  "symbol": "TriggeredEventViewPrefs::vfunc_12",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x00460971"
+  ],
+  "status": "out_of_scope"
+}

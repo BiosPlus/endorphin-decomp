@@ -1,0 +1,15 @@
+{
+  "va": "0x0089DBC2",
+  "size": 10,
+  "sha256": "51c7797928f2dafa5ea56211797e0b6d6607e775b7307e63ce03d7a56d9de208",
+  "symbol": "sub_0089DBC2",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0089DBC3",
+    "0x0089DBC8"
+  ],
+  "status": "out_of_scope"
+}

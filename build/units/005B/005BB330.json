@@ -1,0 +1,19 @@
+{
+  "va": "0x005BB330",
+  "size": 40,
+  "sha256": "66d31d6d63f7fb53699c4fbcefb23cf7bf6a5c7dea4026304e305adf7f4d39f0",
+  "symbol": "ExprParser::Method0Type\u003cNMData::MetaBodyData, {public: void __thiscall NMData::MetaBodyData::resetForcesAndImpulses(void), 0}\u003e::vfunc_4",
+  "callees": [
+    "0x005B72E0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005BB341",
+    "0x005BB34D"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:17:41Z"
+}

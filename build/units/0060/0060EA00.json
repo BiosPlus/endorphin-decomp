@@ -1,0 +1,24 @@
+{
+  "va": "0x0060EA00",
+  "size": 135,
+  "sha256": "4533eabef969f21b734dd392e2c436a204956af4134c6d823e75648234ae4da6",
+  "symbol": "NMData::AxisDefineSensorData::vfunc_64",
+  "callees": [
+    "0x00486CB0",
+    "0x00487A30"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060EA09",
+    "0x0060EA1A",
+    "0x0060EA1F",
+    "0x0060EA36",
+    "0x0060EA41",
+    "0x0060EA5A",
+    "0x0060EA65",
+    "0x0060EA7E"
+  ],
+  "status": "todo"
+}

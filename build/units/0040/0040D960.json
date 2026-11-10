@@ -1,0 +1,20 @@
+{
+  "va": "0x0040D960",
+  "size": 73,
+  "sha256": "14dfaeee93cc542a41859ee67891bb52f1912756c7c686a46f58179da4ed8268",
+  "symbol": "SaveCharacterDialog::vfunc_63",
+  "callees": [
+    "0x0040CD90",
+    "0x006A5F44"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0040D96A",
+    "0x0040D97C",
+    "0x0040D98E",
+    "0x0040D9A0"
+  ],
+  "status": "todo"
+}

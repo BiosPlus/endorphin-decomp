@@ -1,0 +1,16 @@
+{
+  "va": "0x00692FD0",
+  "size": 100,
+  "sha256": "7497a40cef7ac8aecfb300c37078515f9216d1879a0dc2be19dfb99603bf4953",
+  "symbol": "ExprParser::FunctionType\u003cValuePtrArrayObject, ValuePtr const \u0026, ValuePtr const \u0026, {public: class ValuePtr const \u0026 __thiscall ValuePtrArrayObject::push(class ValuePtr const \u0026), 0}\u003e::vfunc_48",
+  "callees": [
+    "0x00692F50"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00692FE6"
+  ],
+  "status": "todo"
+}

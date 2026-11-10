@@ -1,0 +1,19 @@
+{
+  "va": "0x006B20D0",
+  "size": 30,
+  "sha256": "f48f49bdafcb723c8f93327e30e201e9424a5251d4fa24b314f2f9d272982a89",
+  "symbol": "GWCPropertyFontFeel::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006B20C0"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B20D4",
+    "0x006B20E1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

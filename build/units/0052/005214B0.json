@@ -1,0 +1,23 @@
+{
+  "va": "0x005214B0",
+  "size": 122,
+  "sha256": "4cfbff34b8ca494926b6032cf909a134cb93588626f9d3015ba47a88206649c6",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cPoseLoader, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall PoseLoader::getPath(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall PoseLoader::setPath(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005214B9",
+    "0x005214CC",
+    "0x005214D4",
+    "0x005214D9",
+    "0x005214E6",
+    "0x005214F4",
+    "0x005214FB",
+    "0x00521516"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x00612F90",
+  "size": 84,
+  "sha256": "12166bdc2847d124a31c2841ad173ec282589dfb89479329b0956164d3adefaa",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::JointLimit, float, \u0026public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0\u003e::vfunc_4",
+  "callees": [
+    "0x0046C390",
+    "0x0046C3C0",
+    "0x00610B20",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00612FA6",
+    "0x00612FBC",
+    "0x00612FD1",
+    "0x00612FD6",
+    "0x00612FE0"
+  ],
+  "status": "todo"
+}

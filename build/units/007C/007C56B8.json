@@ -1,0 +1,14 @@
+{
+  "va": "0x007C56B8",
+  "size": 6,
+  "sha256": "d6ba7cabe527aa1b07d895eb4fafccbd20ecfab9508f93f81db261ba91596e43",
+  "symbol": "thunk_XSIFtk-3.6.2.1_?GetFCurveType@CSLFCurve@@QAE?AW4EFCurveType@CSLTemplate@@XZ",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x007C56BA"
+  ],
+  "status": "out_of_scope"
+}

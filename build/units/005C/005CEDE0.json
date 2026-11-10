@@ -1,0 +1,20 @@
+{
+  "va": "0x005CEDE0",
+  "size": 30,
+  "sha256": "032a9d2870454022fcd175ff9cd8fc20252b36b463b25953d2701cbb0e89563b",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::InertialBodyData, float, {public: float __thiscall NMData::InertialBodyData::getDensity(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005CEDE7",
+    "0x005CEDEC",
+    "0x005CEDF4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:53:37Z"
+}

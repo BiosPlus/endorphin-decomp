@@ -1,0 +1,41 @@
+{
+  "va": "0x0065CB50",
+  "size": 328,
+  "sha256": "9d6585c7d81521ed15ae6547528a931d6f8658bd626cf926352b93fd726ea17d",
+  "symbol": "AVIIO::vfunc_4",
+  "callees": [
+    "0x00427550",
+    "0x0063F750",
+    "0x00640110",
+    "0x006405C0",
+    "0x006408C0",
+    "0x00640AA0",
+    "0x006410D0"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0065CB53",
+    "0x0065CB8B",
+    "0x0065CB95",
+    "0x0065CBA7",
+    "0x0065CBB7",
+    "0x0065CBDB",
+    "0x0065CBE1",
+    "0x0065CBE7",
+    "0x0065CBEF",
+    "0x0065CC0B",
+    "0x0065CC10",
+    "0x0065CC16",
+    "0x0065CC1B",
+    "0x0065CC25",
+    "0x0065CC2F",
+    "0x0065CC40",
+    "0x0065CC47",
+    "0x0065CC5B",
+    "0x0065CC69",
+    "0x0065CC7D"
+  ],
+  "status": "todo"
+}

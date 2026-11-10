@@ -1,0 +1,17 @@
+{
+  "va": "0x0058A670",
+  "size": 94,
+  "sha256": "d627b5c801a8dbf6166c42d5d056f4655b7fab7a777e814a72f5c82c3d1ef4b1",
+  "symbol": "AnimatableTransform::vfunc_12_off_8",
+  "callees": [
+    "0x0041CF50"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058A679",
+    "0x0058A69E"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x006B8470",
+  "size": 42,
+  "sha256": "dca6ec1ae095d4e528d61265302a9d967c408fecfaa288068adace354b865d4d",
+  "symbol": "NMCAutoCompleteEdit::vfunc_79",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:25:04Z"
+}

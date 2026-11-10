@@ -1,0 +1,19 @@
+{
+  "va": "0x0060F170",
+  "size": 30,
+  "sha256": "4381d2bc9ed84b02269bd494bc263c449cb34c4f491de774ddfc4a339e499483",
+  "symbol": "NMData::MetaBodySensorData::vfunc_0",
+  "callees": [
+    "0x0060ED60",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060F174",
+    "0x0060F181"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

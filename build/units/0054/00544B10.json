@@ -1,0 +1,13 @@
+{
+  "va": "0x00544B10",
+  "size": 10,
+  "sha256": "797f8dc0382896b9c58f3a571acd121242d81f795f142cfdd391e1cdf2f6dcbc",
+  "symbol": "ForceApplicationTool::vfunc_18_off_98",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,14 @@
+{
+  "va": "0x006A73CC",
+  "size": 6,
+  "sha256": "bc5620b0260cc0538796098699fedd6e5e8057b35b36c8c4dc670070a4aacb86",
+  "symbol": "thunk_MSVCR80__CIfmod",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": false,
+  "is_thunk": true,
+  "relocations": [
+    "0x006A73CE"
+  ],
+  "status": "out_of_scope"
+}

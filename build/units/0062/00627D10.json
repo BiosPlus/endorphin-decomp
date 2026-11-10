@@ -1,0 +1,26 @@
+{
+  "va": "0x00627D10",
+  "size": 159,
+  "sha256": "bba8db39aa283253764e8f5ab2ddc24e1773321ccfd1e8c76d99a15094dd8b63",
+  "symbol": "ExprParser::ReadMethodType\u003cSensors::SensorAbsoluteOrientation, NM::Vector3 const \u0026, \u0026public: class NM::Vector3 const \u0026 __thiscall Sensors::SensorAbsoluteOrientation::getDiffShoulders(void) const, 1\u003e::vfunc_44",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00627530",
+    "0x00672110",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00627D19",
+    "0x00627D34",
+    "0x00627D3E",
+    "0x00627D52",
+    "0x00627D9C",
+    "0x00627DA1",
+    "0x00627DAB"
+  ],
+  "status": "todo"
+}

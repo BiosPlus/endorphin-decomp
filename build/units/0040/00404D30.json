@@ -1,0 +1,15 @@
+{
+  "va": "0x00404D30",
+  "size": 6,
+  "sha256": "c68142214ffeb860eb69928e0a3f9459a7e4cdf2c13e936307726a56a18f2f42",
+  "symbol": "BatchModeDialog::vfunc_0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x00404D31"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

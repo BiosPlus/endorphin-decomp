@@ -1,0 +1,16 @@
+{
+  "va": "0x0062B350",
+  "size": 34,
+  "sha256": "f6e74d44709eb967f13682f748b4919216dfcbf683e5339fdcc5664be0eb20d9",
+  "symbol": "ExprParser::WriteMethodType\u003cSensors::SensorIntegral, int, \u0026public: void __thiscall Sensors::SensorIntegral::resize(int)\u003e::vfunc_41",
+  "callees": [
+    "0x0062B2E0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062B36A"
+  ],
+  "status": "todo"
+}

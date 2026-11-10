@@ -1,0 +1,19 @@
+{
+  "va": "0x004046C0",
+  "size": 30,
+  "sha256": "f1e5d2a06d7b0f5d3c99b6f60027176d253125137fb8bd725ed85b386353aa3b",
+  "symbol": "CBaseTabCtrl::vfunc_1",
+  "callees": [
+    "0x00404650",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004046C4",
+    "0x004046D1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

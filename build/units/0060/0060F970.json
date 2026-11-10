@@ -1,0 +1,19 @@
+{
+  "va": "0x0060F970",
+  "size": 30,
+  "sha256": "fcb9e7c50d34020c8507a7a21592cc6f76b0f958d6248ca911b155499bda9563",
+  "symbol": "NMData::CompoundSensorData::vfunc_0",
+  "callees": [
+    "0x0060F5E0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0060F974",
+    "0x0060F981"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,17 @@
+{
+  "va": "0x00612E80",
+  "size": 45,
+  "sha256": "1590ee26f5f7f0adf37c320e2ad458ee31ba3189e512b53c47075bb54aeca7b9",
+  "symbol": "NMData::PrimaryTwistAndSwingConstraint::vfunc_59",
+  "callees": [
+    "0x00612310"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00612E98",
+    "0x00612EA6"
+  ],
+  "status": "todo"
+}

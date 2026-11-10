@@ -1,0 +1,18 @@
+{
+  "va": "0x00447FC0",
+  "size": 30,
+  "sha256": "6a3269a8cbfe84dcf0ad4c092aa0f022cfd5368f7f3275e192412477d670c90a",
+  "symbol": "CProgressCtrl::vfunc_1",
+  "callees": [
+    "0x006A5C5C",
+    "0x006A6622"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00447FC4",
+    "0x00447FD1"
+  ],
+  "status": "out_of_scope"
+}

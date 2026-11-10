@@ -1,0 +1,15 @@
+{
+  "va": "0x006B1900",
+  "size": 9,
+  "sha256": "47c536e1fe26971701e8a2748e4a53f080c0ad1c9a3dbd746cc187f0e7ba293a",
+  "symbol": "sub_006B1900",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B1904"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

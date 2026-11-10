@@ -1,0 +1,24 @@
+{
+  "va": "0x00562A30",
+  "size": 70,
+  "sha256": "b3440971a4a28171361fb2353edbfcc5c3b4da0695e1cddfc0ae4d13170cce3a",
+  "symbol": "FBXIO::vfunc_13",
+  "callees": [
+    "0x0055E990",
+    "0x0055F4E0",
+    "0x005605A0",
+    "0x005619C0",
+    "0x006629B0"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00562A34",
+    "0x00562A4D",
+    "0x00562A5B",
+    "0x00562A62",
+    "0x00562A6E"
+  ],
+  "status": "todo"
+}

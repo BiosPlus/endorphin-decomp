@@ -1,0 +1,21 @@
+{
+  "va": "0x004546D0",
+  "size": 44,
+  "sha256": "cac06194a3812c0d87f66e303491ba4c826eac5d0d901de14280ba3a435b50e6",
+  "symbol": "CSizingControlBarCF::vfunc_1",
+  "callees": [
+    "0x00454BA0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004546DB",
+    "0x004546E2",
+    "0x004546EF"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:43:17Z"
+}

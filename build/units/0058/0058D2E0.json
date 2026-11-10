@@ -1,0 +1,26 @@
+{
+  "va": "0x0058D2E0",
+  "size": 159,
+  "sha256": "00b4d0d80a06a74a90d82ed6ba3f4d4479b2bb05442d083349401f887d5a6206",
+  "symbol": "ExprParser::ReadMethodType\u003cAnimatableTransform, NM::Vector4 const \u0026, {protected: class NM::Vector4 const \u0026 __thiscall AnimatableTransform::getQuat(void) const, 0}, 0\u003e::vfunc_43",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x0058B2A0",
+    "0x00672150",
+    "0x006A6DD2"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0058D2E9",
+    "0x0058D304",
+    "0x0058D30E",
+    "0x0058D322",
+    "0x0058D36C",
+    "0x0058D371",
+    "0x0058D37B"
+  ],
+  "status": "todo"
+}

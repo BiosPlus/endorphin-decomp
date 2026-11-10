@@ -1,0 +1,18 @@
+{
+  "va": "0x00419E20",
+  "size": 10,
+  "sha256": "77e1d54f1d5ce480f6db62aa5eafda65a8b7e47f8b485e2d91550afc31874e5c",
+  "symbol": "FolderDialog::vfunc_79",
+  "callees": [
+    "0x00419DF0"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00419E25"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-08T15:49:54Z"
+}

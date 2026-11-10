@@ -1,0 +1,15 @@
+{
+  "va": "0x005C84A0",
+  "size": 8,
+  "sha256": "71113807db8aa88fdae7adb2e19c5a6a146ebe8284ff036e7c4bfc6700baf51b",
+  "symbol": "NMData::CollisionModelDataBase::vfunc_1_off_C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C84A4"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

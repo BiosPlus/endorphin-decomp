@@ -1,0 +1,20 @@
+{
+  "va": "0x00695600",
+  "size": 30,
+  "sha256": "8faa12968996b039a36c92f260efe4c649b60d805e94303bb8b3c7eae8871632",
+  "symbol": "ExprParser::ReadMethodType\u003cDoubleWithProperties, float, \u0026public: float __thiscall DoubleWithProperties::getValue(void) const, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00695607",
+    "0x0069560C",
+    "0x00695614"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T13:01:22Z"
+}

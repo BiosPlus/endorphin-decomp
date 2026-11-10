@@ -1,0 +1,13 @@
+{
+  "va": "0x00607E00",
+  "size": 7,
+  "sha256": "457c303b66a89553a4bc03dcf414aad63c8a868fb48a7cb9ebc9044d44860463",
+  "symbol": "EffectorSkeletal::vfunc_13",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

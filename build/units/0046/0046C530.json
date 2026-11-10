@@ -1,0 +1,20 @@
+{
+  "va": "0x0046C530",
+  "size": 30,
+  "sha256": "c043d72face064d24f5d22f417667794c858bf5a93731958ad03c566f927de09",
+  "symbol": "ExprParser::ReadMethodType\u003cImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0046C537",
+    "0x0046C53C",
+    "0x0046C544"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:07:59Z"
+}

@@ -1,0 +1,19 @@
+{
+  "va": "0x004557F0",
+  "size": 46,
+  "sha256": "cf8a8a80991a89c52698fed834b69e9774043a6671afdaa3b140c7f104019750",
+  "symbol": "SceneNotesEditor::vfunc_63",
+  "callees": [
+    "0x006A5F44"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00455803",
+    "0x00455815"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T14:50:01Z"
+}

@@ -1,0 +1,23 @@
+{
+  "va": "0x0048DE90",
+  "size": 117,
+  "sha256": "0f4a73a013d2133b3279852239141f286e0ebaa44bbfd73a2c6791ae6dd4c957",
+  "symbol": "NMData::DesiredPoseEventData::vfunc_88",
+  "callees": [
+    "0x0048BC80",
+    "0x0048DDA0",
+    "0x00660A50",
+    "0x006A5C5C"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048DE93",
+    "0x0048DECC",
+    "0x0048DED3",
+    "0x0048DEDF",
+    "0x0048DEEF"
+  ],
+  "status": "todo"
+}

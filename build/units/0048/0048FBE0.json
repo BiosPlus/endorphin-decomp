@@ -1,0 +1,20 @@
+{
+  "va": "0x0048FBE0",
+  "size": 30,
+  "sha256": "a6715dcd76ed852d226808e5d83df85f048ceb41de63c25b96d8d12e013a4f76",
+  "symbol": "ExprParser::ReadMethodType\u003cGraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1\u003e::vfunc_16",
+  "callees": [
+    "0x006A6E9E"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048FBE7",
+    "0x0048FBEC",
+    "0x0048FBF4"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T12:09:18Z"
+}

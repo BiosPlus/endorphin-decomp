@@ -1,0 +1,13 @@
+{
+  "va": "0x006A07A0",
+  "size": 6,
+  "sha256": "7140f35dee6220b79b12aecc27acf5105bf3b77d1588e89fce345de7c16c72b7",
+  "symbol": "CSMMotionIO::vfunc_57",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

@@ -1,0 +1,20 @@
+{
+  "va": "0x0045DB50",
+  "size": 49,
+  "sha256": "bb45a865cf80a9da774242f85f9f10e39705d9bcb2c0571176a71b16390128e0",
+  "symbol": "sub_0045DB50",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x0045DB52",
+    "0x0045DB5A",
+    "0x0045DB62",
+    "0x0045DB6A",
+    "0x0045DB72"
+  ],
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5",
+  "matched_at": "2026-11-10T03:30:12Z"
+}

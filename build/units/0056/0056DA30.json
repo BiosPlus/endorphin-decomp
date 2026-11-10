@@ -1,0 +1,19 @@
+{
+  "va": "0x0056DA30",
+  "size": 38,
+  "sha256": "3c2f81965ce8e2ee4e9c100efeb32d18384a684c9d0f7655a954f17a9bb7d359",
+  "symbol": "BVHIO::vfunc_3",
+  "callees": [
+    "0x00553720",
+    "0x00640390"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0056DA31",
+    "0x0056DA43",
+    "0x0056DA4B"
+  ],
+  "status": "todo"
+}

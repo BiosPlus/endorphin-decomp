@@ -1,0 +1,19 @@
+{
+  "va": "0x00585250",
+  "size": 30,
+  "sha256": "370dabb45e4974e65f2bf2e78e24ac56fd47de3b150d6a40f0636c09d81e6e6b",
+  "symbol": "NMData::RPROJointData::vfunc_0",
+  "callees": [
+    "0x005F09E0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00585254",
+    "0x00585261"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

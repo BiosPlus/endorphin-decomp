@@ -1,0 +1,23 @@
+{
+  "va": "0x005C4A30",
+  "size": 47,
+  "sha256": "764ba7b293f0a324b905d339cb2764a527bb437215d6fa85698409de2c9e028d",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getLocalXAxisInWorldSpace(void) const, 0}, 1\u003e::vfunc_2",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x005C3110",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C4A3E",
+    "0x005C4A44",
+    "0x005C4A4C",
+    "0x005C4A51",
+    "0x005C4A5B"
+  ],
+  "status": "todo"
+}

@@ -1,0 +1,13 @@
+{
+  "va": "0x0061D330",
+  "size": 8,
+  "sha256": "b2ef6ea5cf5f9433313afac1fa0e3e036a625b3afb00345e2d755d09923f9db7",
+  "symbol": "NMData::HingeConstraint::vfunc_63",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

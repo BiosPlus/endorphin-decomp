@@ -1,0 +1,31 @@
+{
+  "va": "0x0044E520",
+  "size": 214,
+  "sha256": "59f7849b47ba2d137579509ecfd4bf7f3b56a46ee1410a8ce1d1d4456c152bd2",
+  "symbol": "RigEditor::vfunc_89",
+  "callees": [
+    "0x006A6010",
+    "0x006A6E9E"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0044E533",
+    "0x0044E538",
+    "0x0044E540",
+    "0x0044E54D",
+    "0x0044E552",
+    "0x0044E559",
+    "0x0044E566",
+    "0x0044E56B",
+    "0x0044E572",
+    "0x0044E586",
+    "0x0044E58C",
+    "0x0044E59C",
+    "0x0044E5BB",
+    "0x0044E5C1",
+    "0x0044E5D1"
+  ],
+  "status": "todo"
+}

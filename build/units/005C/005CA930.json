@@ -1,0 +1,23 @@
+{
+  "va": "0x005CA930",
+  "size": 49,
+  "sha256": "6cf289ed4dc8eeae6aca620f5e3eabfe1e1e7e761ea0541b264f0d6a70a689ac",
+  "symbol": "ExprParser::ReadMethodType\u003cNMData::CollisionModelDataBase, NM::Vector3 const \u0026, {protected: class NM::Vector3 const \u0026 __thiscall NMData::CollisionModelDataBase::getAngularAcceleration(void) const, 0}, 1\u003e::vfunc_1",
+  "callees": [
+    "0x0046C3C0",
+    "0x0046C4E0",
+    "0x005C39B0",
+    "0x006A6DD2"
+  ],
+  "num_callees": 4,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005CA93E",
+    "0x005CA944",
+    "0x005CA94E",
+    "0x005CA953",
+    "0x005CA95D"
+  ],
+  "status": "todo"
+}

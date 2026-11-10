@@ -1,0 +1,15 @@
+{
+  "va": "0x006595C0",
+  "size": 8,
+  "sha256": "e7452ed36fac7add3c798491e61a61e49b0e86bfd36208382942d0ccd2488866",
+  "symbol": "RelationshipRPROJoint::vfunc_6",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006595C4"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

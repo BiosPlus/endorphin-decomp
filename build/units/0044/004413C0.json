@@ -1,0 +1,19 @@
+{
+  "va": "0x004413C0",
+  "size": 30,
+  "sha256": "9c0cb3a32377893005cdfdd6033712ffac619e01f77a1670f73bdcb49aa5c4d8",
+  "symbol": "MultiTrackView::TriangleMarker::vfunc_0",
+  "callees": [
+    "0x004409F0",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004413C4",
+    "0x004413D1"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

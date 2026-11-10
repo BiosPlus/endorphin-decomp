@@ -1,0 +1,29 @@
+{
+  "va": "0x005ACB50",
+  "size": 253,
+  "sha256": "160c5dda62455b101e730807167a3978ae81cd275c997c1d5872a1576f52d586",
+  "symbol": "Commands::MirrorCollisionModelCommand::vfunc_1",
+  "callees": [
+    "0x00587180",
+    "0x005AC560",
+    "0x005AC9C0",
+    "0x005BF400",
+    "0x005CC390",
+    "0x00665810",
+    "0x006A5C62"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x005ACB59",
+    "0x005ACB89",
+    "0x005ACBAA",
+    "0x005ACBE9",
+    "0x005ACBF5",
+    "0x005ACC0A",
+    "0x005ACC1E",
+    "0x005ACC32"
+  ],
+  "status": "todo"
+}

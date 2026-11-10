@@ -1,0 +1,17 @@
+{
+  "va": "0x0062F100",
+  "size": 603,
+  "sha256": "d6d17a4dd81d96b81d932859f35530367bea7f46a7b9a2c9f2978e188dfa23a9",
+  "symbol": "Sensors::CompoundSensorSagittalPlane::vfunc_27",
+  "callees": [
+    "0x005B6930"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0062F10E",
+    "0x0062F249"
+  ],
+  "status": "todo"
+}

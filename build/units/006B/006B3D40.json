@@ -1,0 +1,17 @@
+{
+  "va": "0x006B3D40",
+  "size": 123,
+  "sha256": "00a9cfdcec4c5a78c0791aa3354dd73d9763b0413cee48466a01c8f3166176b8",
+  "symbol": "GWCDateTimePropertyValue::vfunc_1",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B3D43",
+    "0x006B3D88",
+    "0x006B3D91",
+    "0x006B3DA3"
+  ],
+  "status": "todo"
+}

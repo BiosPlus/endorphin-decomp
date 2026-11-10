@@ -1,0 +1,19 @@
+{
+  "va": "0x00507730",
+  "size": 30,
+  "sha256": "94327a8f6c76ee7a36ff283020c72413bb1e6eaa49daa407f5a16b5a54927973",
+  "symbol": "ThreeLayerNet::vfunc_0",
+  "callees": [
+    "0x00523160",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00507734",
+    "0x00507741"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

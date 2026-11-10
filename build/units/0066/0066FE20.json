@@ -1,0 +1,26 @@
+{
+  "va": "0x0066FE20",
+  "size": 198,
+  "sha256": "0a1d530912bfc883cae73a414b3c8de1750f9f862c804a11fe10d7bb07e0c453",
+  "symbol": "ExprParser::ReadMethodType\u003cNM::Vector3, float, \u0026public: float __thiscall NM::Vector3::calcNorm(void) const, 1\u003e::vfunc_45",
+  "callees": [
+    "0x0041CF50",
+    "0x0046C3C0",
+    "0x00672080",
+    "0x006A6DD2",
+    "0x006A7250"
+  ],
+  "num_callees": 5,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0066FE29",
+    "0x0066FE60",
+    "0x0066FE75",
+    "0x0066FE89",
+    "0x0066FED3",
+    "0x0066FED8",
+    "0x0066FEE2"
+  ],
+  "status": "todo"
+}

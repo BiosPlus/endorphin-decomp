@@ -1,0 +1,13 @@
+{
+  "va": "0x00430CA0",
+  "size": 18,
+  "sha256": "ad7d13dfabbec5eb69f32983a9ab9d98f12064d0d8ed562975e48aad8770ce33",
+  "symbol": "sub_00430CA0",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "deferred",
+  "skip_reason": "MSVC 2005 emits a tail jmp reusing the stack arg slot; C++03 formulations (cdecl/thiscall/stdcall virtual, fn-ptr, arg reassign, return-tail) all produced push/call, best 83%"
+}

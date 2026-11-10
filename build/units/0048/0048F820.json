@@ -1,0 +1,21 @@
+{
+  "va": "0x0048F820",
+  "size": 69,
+  "sha256": "bda7d08b4f92893c6ce48991bea60b07436c7145362afb9990838900da1eec8d",
+  "symbol": "Commands::SetTriggeredEventStartFrameCommand::vfunc_0",
+  "callees": [
+    "0x00665810",
+    "0x006A5C5C"
+  ],
+  "num_callees": 2,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x0048F82C",
+    "0x0048F84B",
+    "0x0048F858"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T08:43:47Z"
+}

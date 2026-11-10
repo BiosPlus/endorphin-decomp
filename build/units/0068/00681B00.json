@@ -1,0 +1,18 @@
+{
+  "va": "0x00681B00",
+  "size": 28,
+  "sha256": "c071fd52973d5976b9e73b40aa000be17004c210e119613950fc987f678f974b",
+  "symbol": "Properties::PointainerVectorType\u003cPointainerWithUndo\u003cUndoablePointainerVector\u003cInterpreter\u003e\u003e, Properties::GetPropertySource\u003e::vfunc_1",
+  "callees": [
+    "0x00661620"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x00681B11"
+  ],
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-09T11:54:47Z"
+}

@@ -1,0 +1,22 @@
+{
+  "va": "0x006B4F20",
+  "size": 88,
+  "sha256": "396a21003a08415ebbe6d03a559dacd917007769a8d786857503d168abbe7642",
+  "symbol": "GWCPropInPlaceDateTime::vfunc_66",
+  "callees": [
+    "0x006A5DA0",
+    "0x006A5E00",
+    "0x006A60D0"
+  ],
+  "num_callees": 3,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B4F48",
+    "0x006B4F52",
+    "0x006B4F58",
+    "0x006B4F5F",
+    "0x006B4F70"
+  ],
+  "status": "todo"
+}

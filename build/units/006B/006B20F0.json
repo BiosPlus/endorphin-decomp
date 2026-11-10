@@ -1,0 +1,32 @@
+{
+  "va": "0x006B20F0",
+  "size": 312,
+  "sha256": "c9f33cf04cd9f2d21cc34b8400daf8e3c49411eefb0aa303796b508765f8db47",
+  "symbol": "GWCPropertyFontFeel::vfunc_5",
+  "callees": [
+    "0x006A5C62",
+    "0x006A5E5A",
+    "0x006A5FFE",
+    "0x006A7BF0",
+    "0x006B0C10",
+    "0x006B5AE0",
+    "0x006B6070"
+  ],
+  "num_callees": 7,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x006B20F9",
+    "0x006B2121",
+    "0x006B2137",
+    "0x006B2151",
+    "0x006B2165",
+    "0x006B2182",
+    "0x006B21A9",
+    "0x006B21B9",
+    "0x006B21E1",
+    "0x006B21EF",
+    "0x006B220F"
+  ],
+  "status": "todo"
+}

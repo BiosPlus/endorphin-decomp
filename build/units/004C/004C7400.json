@@ -1,0 +1,23 @@
+{
+  "va": "0x004C7400",
+  "size": 122,
+  "sha256": "595441de49d98938d3e9aefd2f73d621e882c232a8f268316ce98805506e3862",
+  "symbol": "ExprParser::ReadWriteMethodType\u003cNMData::SeverEventData, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026 __thiscall NMData::SeverEventData::getSeverEventType(void) const, 0}, std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026, {public: void __thiscall NMData::SeverEventData::setSeverEventType(class std::basic_string\u003cchar, std::char_traits\u003cchar\u003e, std::allocator\u003cchar\u003e\u003e const \u0026), 0}\u003e::vfunc_40",
+  "callees": [
+    "0x0067A670"
+  ],
+  "num_callees": 1,
+  "is_leaf": false,
+  "is_thunk": false,
+  "relocations": [
+    "0x004C7409",
+    "0x004C741C",
+    "0x004C7424",
+    "0x004C7429",
+    "0x004C7436",
+    "0x004C7444",
+    "0x004C744B",
+    "0x004C7466"
+  ],
+  "status": "todo"
+}

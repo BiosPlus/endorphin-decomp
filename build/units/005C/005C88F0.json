@@ -1,0 +1,15 @@
+{
+  "va": "0x005C88F0",
+  "size": 8,
+  "sha256": "babd6d5ebf5f765abe14d237158ff3360015b7140655724b1d5643201ab82801",
+  "symbol": "NMData::FluidObjectData::vfunc_1_off_C",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [
+    "0x005C88F4"
+  ],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}

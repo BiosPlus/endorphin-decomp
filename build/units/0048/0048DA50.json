@@ -1,0 +1,13 @@
+{
+  "va": "0x0048DA50",
+  "size": 13,
+  "sha256": "0a8a7ca2042dbc9e9e68672f635ea5e12c0baa0d30fa9eea4216004a001f88d9",
+  "symbol": "NMData::DesiredPoseEventData::vfunc_75",
+  "callees": [],
+  "num_callees": 0,
+  "is_leaf": true,
+  "is_thunk": false,
+  "relocations": [],
+  "status": "matched",
+  "matched_by": "script:auto_solve"
+}
