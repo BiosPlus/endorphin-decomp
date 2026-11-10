@@ -1061,3 +1061,27 @@ extern "C" void __cdecl fn_007C67D0(char* self) {
     *(float*)(self + 0x168) = z;
     *(float*)(self + 0x16c) = z;
 }
+
+// [0x007CB980] sub_007CB980 (55 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007CB980(void* self, float x) {
+    __asm {
+        fldz
+        fcom dword ptr [esp + 0x8]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_pos
+        mov eax, dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fmul qword ptr [mem_00993828]
+        fstp dword ptr [eax + 0x14]
+        ret
+L_pos:
+        mov eax, dword ptr [esp + 0x4]
+        fstp st(0)
+        fld dword ptr [esp + 0x8]
+        fmul qword ptr [mem_00993828]
+        fstp dword ptr [eax + 0x14]
+        ret
+    }
+}
