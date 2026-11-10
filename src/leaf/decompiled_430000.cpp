@@ -2641,3 +2641,38 @@ extern "C" __declspec(naked) void __fastcall fn_0043C640(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00430A60] sub_00430A60 (59 bytes)
+// Calls sub_00465B40(), then virtual slot 0x220 on the result; if that returns false, calls sub_00430370(this).
+// Stores the final bool over stack arg0 and tail-jumps to vtbl[0] of arg0 object.
+extern "C" void ext_00430370();
+extern "C" void ext_00465B40();
+
+extern "C" __declspec(naked) void __fastcall fn_00430A60(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x220]
+        call eax
+        test al, al
+        jne short L_false
+        mov ecx, esi
+        call ext_00430370
+        test al, al
+        je short L_false
+        mov eax, 1
+        jmp short L_done
+    L_false:
+        xor eax, eax
+    L_done:
+        mov ecx, dword ptr [esp + 8]
+        mov edx, dword ptr [ecx]
+        pop esi
+        mov dword ptr [esp + 4], eax
+        mov eax, dword ptr [edx]
+        jmp eax
+    }
+}
