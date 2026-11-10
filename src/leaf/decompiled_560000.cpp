@@ -294,3 +294,40 @@ L_fail_005632F0:
         ret 4
     }
 }
+
+// [0x005637D0] sub_005637D0 (59 bytes)
+extern "C" void ext_00563220();
+extern "C" void ext_00563240();
+extern "C" void ext_00563260();
+
+extern "C" __declspec(naked) void __fastcall fn_005637D0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_00563220
+        test al, al
+        jne L_match_005637D0
+        push edi
+        mov ecx, esi
+        call ext_00563240
+        test al, al
+        jne L_match_005637D0
+        push edi
+        mov ecx, esi
+        call ext_00563260
+        test al, al
+        jne L_match_005637D0
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 4
+L_match_005637D0:
+        pop edi
+        mov eax, 1
+        pop esi
+        ret 4
+    }
+}
