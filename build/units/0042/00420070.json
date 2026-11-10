@@ -14,5 +14,7 @@
     "0x0042009A",
     "0x004200A9"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-10T15:18:44Z"
 }
