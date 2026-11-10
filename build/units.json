@@ -68547,7 +68547,9 @@
       "0x0046FAFA",
       "0x0046FB0A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:59:07Z"
   },
   {
     "va": "0x0046FB20",
