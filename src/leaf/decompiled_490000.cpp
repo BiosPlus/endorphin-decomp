@@ -772,3 +772,40 @@ extern "C" void __fastcall fn_00492A80(void* self, int edx_unused, void* node) {
     *(char**)p = n;
     *(char**)(n + 0x4) = p;
 }
+
+// [0x00492C60] sub_00492C60 (81 bytes)
+// Allocates a 0x24-byte record (operator new), fills it from three dword args, a { int, float x4 }
+// source block, and a flag byte; returns the record (or NULL if allocation failed). Stdcall, ret 0x14.
+extern "C" void* __cdecl ext_006A5C62(unsigned int size);
+
+extern "C" __declspec(naked) void* __stdcall fn_00492C60(int a1, int a2, int a3, const void* src, unsigned char flag) {
+    __asm {
+        push 0x24
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je done
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x8], ecx
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 0x4], edx
+        fld dword ptr [ecx + 0x4]
+        mov edx, dword ptr [ecx]
+        fstp dword ptr [eax + 0x10]
+        fld dword ptr [ecx + 0x8]
+        mov dword ptr [eax + 0xc], edx
+        fstp dword ptr [eax + 0x14]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax + 0x18]
+        fld dword ptr [ecx + 0x10]
+        mov cl, byte ptr [esp + 0x14]
+        fstp dword ptr [eax + 0x1c]
+        mov byte ptr [eax + 0x20], cl
+        mov byte ptr [eax + 0x21], 0x0
+    done:
+        ret 0x14
+    }
+}
