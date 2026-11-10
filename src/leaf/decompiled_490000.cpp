@@ -642,3 +642,37 @@ extern "C" __declspec(naked) void* __cdecl fn_0049DB60(int* ret, int* first, int
         ret
     }
 }
+
+// [0x00493720] sub_00493720 (69 bytes)
+// __thiscall, ret 4. Compares arg against self->[+8]; on match tests self->[0] and tail-jumps to sub_004936E0 with arg set to 0/1,
+// or for self->[0]==2 calls sub_004936C0 and returns.
+extern "C" void ext_004936C0();
+extern "C" void ext_004936E0();
+
+extern "C" __declspec(naked) void __fastcall fn_00493720(void* self, int edx_unused, int a1) {
+    __asm {
+        mov edx, dword ptr [ecx + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, edx
+        jne L493762
+        cmp dword ptr [ecx], 0x1
+        jne L493754
+        cmp eax, dword ptr [ecx + 0xc]
+        jne L493742
+        mov dword ptr [esp + 0x4], 0x0
+        jmp ext_004936E0
+    L493742:
+        cmp eax, dword ptr [ecx + 0x10]
+        jne L493762
+        mov dword ptr [esp + 0x4], 0x1
+        jmp ext_004936E0
+    L493754:
+        cmp eax, edx
+        jne L493762
+        cmp dword ptr [ecx], 0x2
+        jne L493762
+        call ext_004936C0
+    L493762:
+        ret 0x4
+    }
+}

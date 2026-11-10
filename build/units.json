@@ -89227,7 +89227,9 @@
       "0x00493750",
       "0x0049375E"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:42:17Z"
   },
   {
     "va": "0x00493770",
