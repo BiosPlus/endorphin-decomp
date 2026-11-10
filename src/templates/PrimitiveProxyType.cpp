@@ -364,3 +364,34 @@ extern "C" __declspec(naked) void __fastcall fn_0049AE90(void* self) {
         ret 0x8
     }
 }
+
+// [0x0049B220] ExprParser::PrimitiveProxyType<bool>::vfunc_43 (50 bytes)
+// Two stack arguments (ret 0x8). p = *(bool**)a1; if *p is already true, set it
+// to true. Otherwise r = obj->vtbl[3](a2) (thiscall, returns bool) with obj = a2->m_ptr,
+// and *p = r.
+extern "C" __declspec(naked) void __fastcall fn_0049B220(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        cmp byte ptr [esi], 0x0
+        jne L_set_true
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        test al, al
+        jne L_set_true
+        xor eax, eax
+        mov byte ptr [esi], al
+        pop esi
+        ret 0x8
+    L_set_true:
+        mov eax, 0x1
+        mov byte ptr [esi], al
+        pop esi
+        ret 0x8
+    }
+}
