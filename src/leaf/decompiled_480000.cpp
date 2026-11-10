@@ -1600,3 +1600,32 @@ extern "C" __declspec(naked) void __cdecl fn_004890D0(std::string* a, std::strin
         ret
     }
 }
+
+// [0x00487ED0] sub_00487ED0 (87 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00AD9DF0;
+extern "C" int mem_00AD9DEC;
+
+extern "C" __declspec(naked) void* __fastcall fn_00487ED0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8849fe
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00AD9DF0], al
+        jne L_done
+        or dword ptr [mem_00AD9DF0], eax
+        mov ecx, offset mem_00AD9DEC
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov dword ptr [mem_00AD9DEC], 0x93ce3c
+    L_done:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00AD9DEC
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
