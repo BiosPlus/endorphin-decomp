@@ -892,3 +892,42 @@ extern "C" void __fastcall fn_006B52D0(void* self, int edx_unused, int a1) {
         send(*(void**)(p + 0x88), 0xb7, 0, 0);
     }
 }
+
+// [0x006B12F0] sub_006B12F0 (68 bytes)
+// Rounds a double arg to nearest int: n = ext_006A6DE0(x) (helper pops x from the x87 stack, returns int in eax);
+// if |x - n| > mem_00993828 (0.5) then n += (x < 0 ? -1 : +1). Returns n.
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) int __cdecl fn_006B12F0(double x) {
+    __asm {
+        fld qword ptr [esp + 4]
+        fld st(0)
+        call ext_006A6DE0
+        mov ecx, eax
+        mov dword ptr [esp + 4], ecx
+        fild dword ptr [esp + 4]
+        fsubr st, st(1)
+        fabs
+        fcomp qword ptr [mem_00993828]
+        fnstsw ax
+        test ah, 0x5
+        jp short far_006B12F0
+        fstp st(0)
+        mov eax, ecx
+        ret
+far_006B12F0:
+        fldz
+        fcompp
+        fnstsw ax
+        test ah, 0x5
+        jp short neg_006B12F0
+        mov eax, 0x1
+        add eax, ecx
+        ret
+neg_006B12F0:
+        or eax, -0x1
+        add eax, ecx
+        ret
+    }
+}
