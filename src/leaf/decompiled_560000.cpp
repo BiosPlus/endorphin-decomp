@@ -517,3 +517,32 @@ skip_release:
         ret 4
     }
 }
+
+// [0x005693E0] sub_005693E0 (82 bytes)
+extern "C" int mem_00924FF4;
+
+struct Range16_005693E0 {
+    int pad0;
+    char* begin;
+    char* end;
+    int cap;
+};
+
+extern "C" void __cdecl fn_005693E0(Range16_005693E0* first, Range16_005693E0* last) {
+    for (; first != last; ++first) {
+        char* begin = first->begin;
+        if (begin != 0) {
+            char* end = first->end;
+            if (begin != end) {
+                do {
+                    ((void (__thiscall*)(void*))mem_00924FF4)(begin);
+                    begin += 0x1c;
+                } while (begin != end);
+            }
+            ext_006A5C5C(first->begin);
+        }
+        first->begin = 0;
+        first->end = 0;
+        first->cap = 0;
+    }
+}
