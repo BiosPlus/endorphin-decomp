@@ -554,3 +554,29 @@ extern "C" void __fastcall fn_00476EC0(void* self, int edx_unused, void* node) {
     *(char**)p = n;
     *(char**)(n + 0x4) = p;
 }
+
+// [0x004779E0] sub_004779E0 (79 bytes)
+struct LB12Entry_004779E0 {
+    unsigned int key;
+    unsigned int v1;
+    unsigned int v2;
+};
+
+extern "C" LB12Entry_004779E0* __cdecl fn_004779E0(LB12Entry_004779E0* first, LB12Entry_004779E0* last, const unsigned int* value) {
+    LB12Entry_004779E0* it = first;
+    int count = (int)(last - first);
+    if (count > 0) {
+        unsigned int key = *value;
+        do {
+            int half = count / 2;
+            LB12Entry_004779E0* mid = it + half;
+            if (mid->key < key) {
+                it = mid + 1;
+                count = count - half - 1;
+            } else {
+                count = half;
+            }
+        } while (count > 0);
+    }
+    return it;
+}
