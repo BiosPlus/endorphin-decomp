@@ -1515,3 +1515,21 @@ extern "C" __declspec(naked) int __fastcall fn_0044F740(void* self) {
         ret
     }
 }
+
+// [0x00440870] sub_00440870 (62 bytes)
+extern "C" void __fastcall fn_00440870(void* self, int edx_unused, double a1) {
+    unsigned char* p = (unsigned char*)self;
+    if (p[0x8c] == 0) {
+        return;
+    }
+    if (a1 < 0.0) {
+        *(double*)(p + 0x50) = 0.0;
+        return;
+    }
+    if (a1 > *(double*)(p + 0x58)) {
+        p[0x89] = 1;
+        *(double*)(p + 0x50) = *(double*)(p + 0x58);
+        return;
+    }
+    *(double*)(p + 0x50) = a1;
+}
