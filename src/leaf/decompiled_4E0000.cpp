@@ -262,3 +262,30 @@ extern "C" void __fastcall fn_004E7490(void* self) {
     p[0xe8] = 1;
     p[0xf8] = 1;
 }
+
+// [0x004EF970] sub_004EF970 (63 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004EF970(void* self, int edx_unused, int a1, int a2, int a3, const int* a4, unsigned char a5) {
+    __asm {
+        push 0x18
+        call ext_006A5C62
+        add esp, 4
+        test eax, eax
+        je done
+        mov ecx, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 8]
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 8], ecx
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 4], edx
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax + 0xc], edx
+        mov ecx, dword ptr [ecx + 4]
+        mov dl, byte ptr [esp + 0x14]
+        mov dword ptr [eax + 0x10], ecx
+        mov byte ptr [eax + 0x14], dl
+        mov byte ptr [eax + 0x15], 0
+done:
+        ret 0x14
+    }
+}
