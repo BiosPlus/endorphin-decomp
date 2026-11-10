@@ -782,3 +782,32 @@ L_0053F9BD:
         ret
     }
 }
+
+// [0x00533FE0] sub_00533FE0 (58 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00533FE0(void* self, int edx_unused, float* out) {
+    __asm {
+        push ecx
+        fldz
+        mov dword ptr [esp], 0
+        fcomp dword ptr [ecx + 0x24]
+        fnstsw ax
+        test ah, 0x41
+        jp short L_alt
+        add ecx, 0x18
+        jmp short L_copy
+L_alt:
+        add ecx, 0x8
+L_copy:
+        mov eax, dword ptr [esp + 0x8]
+        fld dword ptr [ecx]
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax + 0xc]
+        pop ecx
+        ret 0x4
+    }
+}
