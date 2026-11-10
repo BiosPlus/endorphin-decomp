@@ -648,3 +648,44 @@ extern "C" __declspec(naked) void* __cdecl fn_005752C0(void* first, void* last, 
         ret
     }
 }
+
+// [0x0057BC20] sub_0057BC20 (78 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_0057BC20(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je done_0057BC20
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_0057BC20:
+        mov al, byte ptr [esi]
+        mov byte ptr [edi], al
+        mov cl, byte ptr [esi + 0x1]
+        lea edx, [esi + 0x4]
+        mov byte ptr [edi + 0x1], cl
+        push edx
+        lea ecx, [edi + 0x4]
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi + 0x20]
+        push eax
+        lea ecx, [edi + 0x20]
+        call dword ptr [mem_00924FDC]
+        add esi, 0x3c
+        add edi, 0x3c
+        cmp esi, ebx
+        jne loop_0057BC20
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    done_0057BC20:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
