@@ -325,3 +325,42 @@ extern "C" __declspec(naked) void __fastcall fn_005F51D0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005F5350] sub_005F5350 (74 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __fastcall fn_005F5350(void* self, int edx_unused, const void* src) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        test edi, edi
+        mov esi, ecx
+        je zero_src
+        lea eax, [edi + 0x4]
+        jmp load_byte
+    zero_src:
+        xor eax, eax
+    load_byte:
+        mov al, byte ptr [eax]
+        mov byte ptr [esi + 0x4], al
+        fld dword ptr [edi + 0x8]
+        fstp dword ptr [esi + 0x8]
+        lea ecx, [edi + 0x18]
+        fld dword ptr [edi + 0xc]
+        push ecx
+        fstp dword ptr [esi + 0xc]
+        lea ecx, [esi + 0x18]
+        fld dword ptr [edi + 0x10]
+        fstp dword ptr [esi + 0x10]
+        fld dword ptr [edi + 0x14]
+        fstp dword ptr [esi + 0x14]
+        call dword ptr [mem_00924FDC]
+        mov dl, byte ptr [edi + 0x34]
+        pop edi
+        mov byte ptr [esi + 0x34], dl
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
