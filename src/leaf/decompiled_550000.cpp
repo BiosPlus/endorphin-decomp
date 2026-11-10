@@ -1142,3 +1142,55 @@ extern "C" __declspec(naked) void __fastcall fn_005597C0(void* self) {
         ret
     }
 }
+
+// [0x00558F80] sub_00558F80 (85 bytes)
+// Destroys each 0x1c-byte record in [begin, end): its vector of 0x1c-byte strings at +0x10 is torn down and zeroed.
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __cdecl fn_00558F80(void* begin, void* end) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0x8]
+        cmp ebp, dword ptr [esp + 0xc]
+        je L558FD3
+        push ebx
+        push esi
+        push edi
+        lea edi, [ebp + 0x10]
+    L558F91:
+        mov esi, dword ptr [edi]
+        test esi, esi
+        je L558FBA
+        mov ebx, dword ptr [edi + 0x4]
+        cmp esi, ebx
+        je L558FAF
+        mov edi, edi
+    L558FA0:
+        mov ecx, esi
+        call dword ptr [mem_00924FF4]
+        add esi, 0x1c
+        cmp esi, ebx
+        jne L558FA0
+    L558FAF:
+        mov eax, dword ptr [edi]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    L558FBA:
+        xor eax, eax
+        mov dword ptr [edi], eax
+        mov dword ptr [edi + 0x4], eax
+        mov dword ptr [edi + 0x8], eax
+        add ebp, 0x1c
+        add edi, 0x1c
+        cmp ebp, dword ptr [esp + 0x18]
+        jne L558F91
+        pop edi
+        pop esi
+        pop ebx
+    L558FD3:
+        pop ebp
+        ret
+    }
+}
