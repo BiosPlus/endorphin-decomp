@@ -142,3 +142,30 @@ extern "C" __declspec(naked) void __fastcall fn_0064E3F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0064E560] SkeletalJoint::vfunc_36 (67 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0064E560(void* self, int edx_unused, const float* a1, float* a2) {
+    __asm {
+        fld dword ptr [ecx + 0x7c]
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        fmul dword ptr [edx]
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 0x80]
+        fmul dword ptr [edx + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [ecx + 0x84]
+        fmul dword ptr [edx + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [eax]
+        fadd dword ptr [ecx + 0x70]
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 0x74]
+        fadd dword ptr [eax + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [ecx + 0x78]
+        fadd dword ptr [eax + 0x8]
+        fstp dword ptr [eax + 0x8]
+        ret 0x8
+    }
+}
