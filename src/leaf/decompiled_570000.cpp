@@ -778,3 +778,42 @@ extern "C" __declspec(naked) bool __fastcall fn_005703C0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00575C80] sub_00575C80 (82 bytes)
+extern "C" int mem_0092508C;
+extern "C" int mem_00925090;
+
+extern "C" __declspec(naked) void __stdcall fn_00575C80(void* s) {
+    __asm {
+        sub esp, 0x1c
+        push esi
+        mov esi, dword ptr [esp + 0x24]
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_0092508C]
+        push 0x2
+        lea ecx, [esp + 0x28]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00925090]
+        push 0x2
+        lea edx, [esp + 0x8]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00925090]
+        mov ax, word ptr [esp + 0x24]
+        cmp al, 0x56
+        pop esi
+        jne not_match
+        cmp ah, 0x23
+        jne not_match
+        xor al, al
+        add esp, 0x1c
+        ret 0x4
+    not_match:
+        mov al, 0x1
+        add esp, 0x1c
+        ret 0x4
+    }
+}
