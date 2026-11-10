@@ -1264,3 +1264,41 @@ extern "C" void __cdecl fn_007C7710(void* a0) {
         esi = ext_007D4AA0(a0, esi);
     }
 }
+
+// [0x007C6810] sub_007C6810 (64 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007C6810(void* a0, void (__cdecl* a1)(void*, void*), void* a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        add ebx, 0x1d4
+        push ebx
+        call ext_007D4A70
+        add esp, 4
+        test eax, eax
+        je c6810_out
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        nop
+    c6810_loop:
+        mov edi, dword ptr [eax + 0x14]
+        push eax
+        push ebx
+        call ext_007D4AA0
+        push ebp
+        push edi
+        mov esi, eax
+        call dword ptr [esp + 0x28]
+        add esp, 0x10
+        test esi, esi
+        mov eax, esi
+        jne c6810_loop
+        pop edi
+        pop esi
+        pop ebp
+    c6810_out:
+        pop ebx
+        ret
+    }
+}
