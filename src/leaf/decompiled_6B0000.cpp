@@ -931,3 +931,40 @@ neg_006B12F0:
         ret
     }
 }
+
+// [0x006B0E30] sub_006B0E30 (69 bytes)
+extern "C" int mem_00925694;
+extern "C" void ext_006A663A();
+
+extern "C" __declspec(naked) void __fastcall fn_006B0E30(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_006A663A
+        cmp byte ptr [esi + 0x60], 0x0
+        jne clear_flag
+        mov ecx, dword ptr [esi + 0x20]
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push -0x1
+        push 0x0
+        push 0xb1
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0x20]
+        push 0x0
+        push 0x0
+        push 0xb7
+        push edx
+        call edi
+        pop edi
+        pop esi
+        ret 0x4
+clear_flag:
+        mov byte ptr [esi + 0x60], 0x0
+        pop esi
+        ret 0x4
+    }
+}
