@@ -375,3 +375,37 @@ extern "C" bool __fastcall fn_005049F0(void* self) {
     }
     return v == 0;
 }
+
+// [0x005049B0] sub_005049B0 (60 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_005049B0(void* self, int edx_unused, unsigned int idx) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        je short invalid_path
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb short ok_path
+invalid_path:
+        call dword ptr [mem_00925134]
+ok_path:
+        mov eax, edi
+        imul eax, eax, 0x68
+        add eax, dword ptr [esi + 0x4]
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
