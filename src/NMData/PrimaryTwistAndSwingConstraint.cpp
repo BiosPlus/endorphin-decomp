@@ -22,3 +22,27 @@ extern "C" float __fastcall fn_00611A10(void* self, int edx_unused, int idx) {
     }
     return 0.0f;
 }
+
+// [0x00611CA0] NMData::PrimaryTwistAndSwingConstraint::vfunc_66 (60 bytes)
+extern "C" void ext_00468180();
+extern "C" void ext_00469530();
+
+extern "C" __declspec(naked) void __fastcall fn_00611CA0(void* self, int edx_unused, int a1, unsigned char a2) {
+    __asm {
+        mov al, byte ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        mov byte ptr [edx + ecx + 0x328], al
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x13c]
+        call edx
+        call ext_00468180
+        test eax, eax
+        je done
+        mov dword ptr [esp + 0x8], 0
+        mov dword ptr [esp + 0x4], 5
+        mov ecx, eax
+        jmp ext_00469530
+done:
+        ret 0x8
+    }
+}
