@@ -586,7 +586,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:22:47Z"
   },
   {
@@ -666,7 +666,7 @@
       "0x00401B77"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:07:03Z"
   },
   {
@@ -5874,7 +5874,7 @@
       "0x0040A926"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:23:10Z"
   },
   {
@@ -11208,7 +11208,7 @@
       "0x00413803"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:02:48Z"
   },
   {
@@ -12753,7 +12753,7 @@
       "0x00415FAF"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:08:01Z"
   },
   {
@@ -14300,7 +14300,7 @@
       "0x00418CD5"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:49:46Z"
   },
   {
@@ -14855,7 +14855,7 @@
       "0x00419E25"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:49:54Z"
   },
   {
@@ -15901,7 +15901,7 @@
       "0x0041B6FA"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:23:46Z"
   },
   {
@@ -15947,7 +15947,7 @@
       "0x0041B7AA"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:23:57Z"
   },
   {
@@ -15995,7 +15995,7 @@
       "0x0041B84A"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:24:04Z"
   },
   {
@@ -17078,7 +17078,7 @@
       "0x0041CCB9"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:08:59Z"
   },
   {
@@ -17655,7 +17655,7 @@
       "0x0041D83F"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:58:37Z"
   },
   {
@@ -18831,7 +18831,7 @@
       "0x0041FD13"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:49:05Z"
   },
   {
@@ -18962,7 +18962,7 @@
       "0x0041FF0B"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:11:45Z"
   },
   {
@@ -22272,7 +22272,7 @@
       "0x004276C7"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:13:24Z"
   },
   {
@@ -26354,7 +26354,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:05:26Z"
   },
   {
@@ -26368,7 +26368,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:05:33Z"
   },
   {
@@ -26382,7 +26382,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:05:40Z"
   },
   {
@@ -27375,7 +27375,7 @@
       "0x00430FB8"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:08:11Z"
   },
   {
@@ -27517,7 +27517,7 @@
       "0x00431311"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:43:37Z"
   },
   {
@@ -32305,7 +32305,7 @@
       "0x00437DE3"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:44:20Z"
   },
   {
@@ -34168,7 +34168,7 @@
       "0x0043C639"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:09:07Z"
   },
   {
@@ -34326,7 +34326,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:24:21Z"
   },
   {
@@ -34371,7 +34371,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:24:40Z"
   },
   {
@@ -34496,7 +34496,7 @@
       "0x0043CB81"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:43:45Z"
   },
   {
@@ -34592,7 +34592,7 @@
       "0x0043CD72"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:13:34Z"
   },
   {
@@ -36747,7 +36747,7 @@
       "0x004409D5"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:50:09Z"
   },
   {
@@ -36765,7 +36765,7 @@
       "0x004409E5"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:50:16Z"
   },
   {
@@ -36979,7 +36979,7 @@
       "0x0044106B"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:25:01Z"
   },
   {
@@ -36995,7 +36995,7 @@
       "0x0044109B"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:25:10Z"
   },
   {
@@ -38383,7 +38383,7 @@
       "0x00443453"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:02:58Z"
   },
   {
@@ -41547,7 +41547,7 @@
       "0x004489F8"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:25:28Z"
   },
   {
@@ -44522,7 +44522,7 @@
       "0x0044BF5D"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:26:00Z"
   },
   {
@@ -44664,7 +44664,7 @@
       "0x0044C0E7"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:07:21Z"
   },
   {
@@ -45030,7 +45030,7 @@
       "0x0044C913"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:44:38Z"
   },
   {
@@ -45048,7 +45048,7 @@
       "0x0044C923"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:44:44Z"
   },
   {
@@ -45066,7 +45066,7 @@
       "0x0044C933"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:44:48Z"
   },
   {
@@ -45084,7 +45084,7 @@
       "0x0044C943"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:44:53Z"
   },
   {
@@ -45102,7 +45102,7 @@
       "0x0044C953"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:44:57Z"
   },
   {
@@ -45120,7 +45120,7 @@
       "0x0044C963"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:45:11Z"
   },
   {
@@ -45138,7 +45138,7 @@
       "0x0044C973"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:45:17Z"
   },
   {
@@ -45156,7 +45156,7 @@
       "0x0044C983"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:45:22Z"
   },
   {
@@ -45174,7 +45174,7 @@
       "0x0044C993"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:45:28Z"
   },
   {
@@ -45192,7 +45192,7 @@
       "0x0044C9A3"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:45:32Z"
   },
   {
@@ -47034,7 +47034,7 @@
       "0x00450A81"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:45:48Z"
   },
   {
@@ -49337,7 +49337,7 @@
       "0x00454BF5"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:05:59Z"
   },
   {
@@ -49600,7 +49600,7 @@
       "0x00455299"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:09:15Z"
   },
   {
@@ -50071,7 +50071,7 @@
       "0x00455AE8"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:08:19Z"
   },
   {
@@ -50312,7 +50312,7 @@
       "0x00455CE6"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:06:51Z"
   },
   {
@@ -51561,7 +51561,7 @@
       "0x004584D3"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:13:44Z"
   },
   {
@@ -60390,7 +60390,7 @@
       "0x00465B31"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:48:05Z"
   },
   {
@@ -60609,7 +60609,7 @@
       "0x00465EBC"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:26:14Z"
   },
   {
@@ -61288,7 +61288,7 @@
       "0x00466C25"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:50:25Z"
   },
   {
@@ -61641,7 +61641,7 @@
       "0x00467323"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:45:56Z"
   },
   {
@@ -61659,7 +61659,7 @@
       "0x00467333"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:46:01Z"
   },
   {
@@ -61700,7 +61700,7 @@
       "0x00467383"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:46:07Z"
   },
   {
@@ -61718,7 +61718,7 @@
       "0x00467393"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:46:11Z"
   },
   {
@@ -62073,7 +62073,7 @@
       "0x00467F1A"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:09:53Z"
   },
   {
@@ -62521,7 +62521,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:53:29Z"
   },
   {
@@ -62588,7 +62588,7 @@
       "0x0046875D"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:54:12Z"
   },
   {
@@ -62604,7 +62604,7 @@
       "0x0046877D"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:54:20Z"
   },
   {
@@ -63759,7 +63759,7 @@
       "0x00469C53"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:46:16Z"
   },
   {
@@ -63777,7 +63777,7 @@
       "0x00469C63"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:46:34Z"
   },
   {
@@ -63795,7 +63795,7 @@
       "0x00469C73"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:46:40Z"
   },
   {
@@ -63813,7 +63813,7 @@
       "0x00469C83"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:46:45Z"
   },
   {
@@ -65213,7 +65213,7 @@
       "0x0046C432"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:49:21Z"
   },
   {
@@ -68372,7 +68372,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:53:05Z"
   },
   {
@@ -68390,7 +68390,7 @@
       "0x0046FAC4"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:49:30Z"
   },
   {
@@ -77546,7 +77546,7 @@
       "0x004806FB"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:12:04Z"
   },
   {
@@ -78105,7 +78105,7 @@
       "0x004816E5"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:50:32Z"
   },
   {
@@ -78617,7 +78617,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:26:33Z"
   },
   {
@@ -80880,7 +80880,7 @@
       "0x00486C3B"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:12:16Z"
   },
   {
@@ -86998,7 +86998,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:26:54Z"
   },
   {
@@ -89489,7 +89489,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:59:50Z"
   },
   {
@@ -89792,7 +89792,7 @@
       "0x004940D1"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:43:55Z"
   },
   {
@@ -90029,7 +90029,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:27:02Z"
   },
   {
@@ -91641,7 +91641,7 @@
       "0x00496FFA"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:10:00Z"
   },
   {
@@ -91924,7 +91924,7 @@
       "0x004975BF"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:27:29Z"
   },
   {
@@ -94379,7 +94379,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:27:50Z"
   },
   {
@@ -94775,7 +94775,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:27:57Z"
   },
   {
@@ -99294,7 +99294,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:54:28Z"
   },
   {
@@ -103849,7 +103849,7 @@
       "0x004A98D9"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:28:35Z"
   },
   {
@@ -107064,7 +107064,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:53:15Z"
   },
   {
@@ -107123,7 +107123,7 @@
       "0x004AECB0"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:00:01Z"
   },
   {
@@ -112973,7 +112973,7 @@
       "0x004B6CC5"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:28:44Z"
   },
   {
@@ -112990,7 +112990,7 @@
       "0x004B6CFB"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:28:53Z"
   },
   {
@@ -113168,7 +113168,7 @@
       "0x004B7047"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:29:00Z"
   },
   {
@@ -140528,7 +140528,7 @@
       "0x004DDE20"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:29:13Z"
   },
   {
@@ -151567,7 +151567,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:56:37Z"
   },
   {
@@ -158963,7 +158963,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:58:47Z"
   },
   {
@@ -159018,7 +159018,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:53:37Z"
   },
   {
@@ -181900,7 +181900,7 @@
       "0x0051BF02"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:14:10Z"
   },
   {
@@ -182208,7 +182208,7 @@
       "0x0051C7D2"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:14:19Z"
   },
   {
@@ -182955,7 +182955,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:54:37Z"
   },
   {
@@ -182982,7 +182982,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:29:36Z"
   },
   {
@@ -184009,7 +184009,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:54:44Z"
   },
   {
@@ -185495,7 +185495,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:06:19Z"
   },
   {
@@ -193998,7 +193998,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:00:08Z"
   },
   {
@@ -194012,7 +194012,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:03:13Z"
   },
   {
@@ -194755,7 +194755,7 @@
       "0x00532C40"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:10:18Z"
   },
   {
@@ -195172,7 +195172,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:29:47Z"
   },
   {
@@ -196020,7 +196020,7 @@
       "0x00533D6D"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:30:00Z"
   },
   {
@@ -196103,7 +196103,7 @@
       "0x00533E1D"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:30:06Z"
   },
   {
@@ -196351,7 +196351,7 @@
       "0x0053439C"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:14:31Z"
   },
   {
@@ -197966,7 +197966,7 @@
       "0x00536E98"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:08:28Z"
   },
   {
@@ -198733,7 +198733,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:09:24Z"
   },
   {
@@ -198789,7 +198789,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:09:36Z"
   },
   {
@@ -198945,7 +198945,7 @@
       "0x00537EC4"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:48:13Z"
   },
   {
@@ -200499,7 +200499,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:14:39Z"
   },
   {
@@ -200558,7 +200558,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:14:46Z"
   },
   {
@@ -203840,7 +203840,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:05:49Z"
   },
   {
@@ -204970,7 +204970,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:06:29Z"
   },
   {
@@ -205011,7 +205011,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:01:44Z"
   },
   {
@@ -205039,7 +205039,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:01:50Z"
   },
   {
@@ -205067,7 +205067,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:01:56Z"
   },
   {
@@ -206215,7 +206215,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:12:25Z"
   },
   {
@@ -206404,7 +206404,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:09:45Z"
   },
   {
@@ -207289,7 +207289,7 @@
       "0x0054677B"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:12:34Z"
   },
   {
@@ -207521,7 +207521,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:08:48Z"
   },
   {
@@ -211353,7 +211353,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:10:56Z"
   },
   {
@@ -211367,7 +211367,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:11:04Z"
   },
   {
@@ -211381,7 +211381,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:11:11Z"
   },
   {
@@ -211395,7 +211395,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:11:18Z"
   },
   {
@@ -212737,7 +212737,7 @@
       "0x00551A11"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:44:03Z"
   },
   {
@@ -213441,7 +213441,7 @@
       "0x005528DC"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:53:48Z"
   },
   {
@@ -214410,7 +214410,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:30:11Z"
   },
   {
@@ -216956,7 +216956,7 @@
       "0x0055919B"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:12:42Z"
   },
   {
@@ -231859,7 +231859,7 @@
       "0x005792A9"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:14:53Z"
   },
   {
@@ -240374,7 +240374,7 @@
       "0x0058A1B2"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:02:32Z"
   },
   {
@@ -242473,7 +242473,7 @@
       "0x0058CFB1"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:46:53Z"
   },
   {
@@ -242491,7 +242491,7 @@
       "0x0058CFC1"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:48:33Z"
   },
   {
@@ -242509,7 +242509,7 @@
       "0x0058CFD1"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:48:39Z"
   },
   {
@@ -253276,7 +253276,7 @@
       "0x0059C7E3"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:47:02Z"
   },
   {
@@ -253465,7 +253465,7 @@
       "0x0059CC61"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:47:38Z"
   },
   {
@@ -257693,7 +257693,7 @@
       "0x005A3613"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:47:48Z"
   },
   {
@@ -262532,7 +262532,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:55:01Z"
   },
   {
@@ -268784,7 +268784,7 @@
       "0x005B6971"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:48:46Z"
   },
   {
@@ -278555,7 +278555,7 @@
       "0x005C3AA1"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:48:52Z"
   },
   {
@@ -289258,7 +289258,7 @@
       "0x005D100F"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:58:59Z"
   },
   {
@@ -300767,7 +300767,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:00:15Z"
   },
   {
@@ -312080,7 +312080,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:15:16Z"
   },
   {
@@ -315068,7 +315068,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:15:32Z"
   },
   {
@@ -325266,7 +325266,7 @@
       "0x00602F41"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:48:20Z"
   },
   {
@@ -330248,7 +330248,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:53:22Z"
   },
   {
@@ -331785,7 +331785,7 @@
       "0x0060BB62"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:02:40Z"
   },
   {
@@ -352338,7 +352338,7 @@
       "0x00627527"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:07:30Z"
   },
   {
@@ -354093,7 +354093,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:15:46Z"
   },
   {
@@ -369518,7 +369518,7 @@
       "0x0063E193"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:03:34Z"
   },
   {
@@ -369567,7 +369567,7 @@
       "0x0063E233"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:03:42Z"
   },
   {
@@ -369616,7 +369616,7 @@
       "0x0063E283"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:03:49Z"
   },
   {
@@ -369702,7 +369702,7 @@
       "0x0063E3D3"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:03:57Z"
   },
   {
@@ -369763,7 +369763,7 @@
       "0x0063E4F3"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:04:12Z"
   },
   {
@@ -369868,7 +369868,7 @@
       "0x0063E6B3"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:04:21Z"
   },
   {
@@ -369963,7 +369963,7 @@
       "0x0063E883"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:04:29Z"
   },
   {
@@ -370013,7 +370013,7 @@
       "0x0063E953"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:04:36Z"
   },
   {
@@ -371279,7 +371279,7 @@
       "0x006408B1"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:47:58Z"
   },
   {
@@ -395735,7 +395735,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:16:06Z"
   },
   {
@@ -395749,7 +395749,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:16:12Z"
   },
   {
@@ -400968,7 +400968,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:16:44Z"
   },
   {
@@ -401150,7 +401150,7 @@
       "0x0066A764"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:49:37Z"
   },
   {
@@ -401459,7 +401459,7 @@
       "0x0066ADC8"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:16:59Z"
   },
   {
@@ -401625,7 +401625,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:00:21Z"
   },
   {
@@ -401639,7 +401639,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:00:46Z"
   },
   {
@@ -401653,7 +401653,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:00:53Z"
   },
   {
@@ -401667,7 +401667,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:00:59Z"
   },
   {
@@ -401681,7 +401681,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:01:05Z"
   },
   {
@@ -401695,7 +401695,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:01:10Z"
   },
   {
@@ -401727,7 +401727,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:01:27Z"
   },
   {
@@ -401757,7 +401757,7 @@
       "0x0066B06F"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:59:08Z"
   },
   {
@@ -402376,7 +402376,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:01:34Z"
   },
   {
@@ -402709,7 +402709,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:04:51Z"
   },
   {
@@ -416223,7 +416223,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:17:19Z"
   },
   {
@@ -436439,7 +436439,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:02:19Z"
   },
   {
@@ -452313,7 +452313,7 @@
       "0x006AD92E"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:57:09Z"
   },
   {
@@ -457991,7 +457991,7 @@
       "0x006B6049"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:17:29Z"
   },
   {
@@ -458171,7 +458171,7 @@
       "0x006B6285"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:06:42Z"
   },
   {
@@ -459873,7 +459873,7 @@
       "0x006B8B11"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:44:11Z"
   },
   {
@@ -461959,7 +461959,7 @@
       "0x006BB74B"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:12:56Z"
   },
   {
@@ -477790,7 +477790,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:17:52Z"
   },
   {
@@ -477804,7 +477804,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:18:11Z"
   },
   {
@@ -479924,7 +479924,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:18:24Z"
   },
   {
@@ -494204,7 +494204,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:18:35Z"
   },
   {
@@ -494446,7 +494446,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:18:46Z"
   },
   {
@@ -513009,7 +513009,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:18:54Z"
   },
   {
@@ -520118,7 +520118,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:19:14Z"
   },
   {
@@ -530854,7 +530854,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:19:24Z"
   },
   {
@@ -551703,7 +551703,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:19:33Z"
   },
   {
@@ -559255,7 +559255,7 @@
       "0x0079EAD0"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:19:45Z"
   },
   {
@@ -575101,7 +575101,7 @@
       "0x007C8E1F"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T14:59:23Z"
   },
   {
@@ -576990,7 +576990,7 @@
       "0x007CC3E4"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:19:55Z"
   },
   {
@@ -577346,7 +577346,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:11:30Z"
   },
   {
@@ -579256,7 +579256,7 @@
       "0x007D5C7B"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:13:09Z"
   },
   {
@@ -579986,7 +579986,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:20:10Z"
   },
   {
@@ -592234,7 +592234,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:20:40Z"
   },
   {
@@ -598107,7 +598107,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:20:56Z"
   },
   {
@@ -598493,7 +598493,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:21:27Z"
   },
   {
@@ -599682,7 +599682,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:21:50Z"
   },
   {
@@ -602613,7 +602613,7 @@
       "0x00864F4B"
     ],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:22:17Z"
   },
   {
@@ -604190,7 +604190,7 @@
     "is_thunk": false,
     "relocations": [],
     "status": "matched",
-    "matched_by": "claude-haiku",
+    "matched_by": "claude-haiku-5.5",
     "matched_at": "2026-11-08T15:22:27Z"
   },
   {

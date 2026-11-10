@@ -1229,6 +1229,11 @@ func main() {
 				u.MatchedBy = "script:auto_solve"
 				unitsUpdated = true
 			}
+			if u.MatchedBy == "claude-haiku" {
+				// Early matches were recorded without the version suffix.
+				u.MatchedBy = "claude-haiku-5.5"
+				unitsUpdated = true
+			}
 			inScopeMatchedFuncs++
 			inScopeMatchedBytes += uint64(u.Size)
 			tier.MatchedFuncs++

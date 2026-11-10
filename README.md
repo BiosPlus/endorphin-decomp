@@ -22,8 +22,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5` | 2470 | 84718 | 91.75% |
-| `claude-haiku` | 199 | 4550 | 7.39% |
+| `claude-haiku-5.5` | 2669 | 89268 | 99.15% |
 | `claude-sonnet-5.5` | 18 | 890 | 0.67% |
 | `gemini-3.8-flash` | 3 | 145 | 0.11% |
 | `claude-opus-5.5` | 1 | 49 | 0.04% |
