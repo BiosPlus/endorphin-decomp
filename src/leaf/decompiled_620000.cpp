@@ -516,3 +516,38 @@ extern "C" __declspec(naked) void* __fastcall fn_00624F10(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0062A590] sub_0062A590 (57 bytes)
+extern "C" int mem_0092F678;
+
+extern "C" __declspec(naked) float __fastcall fn_0062A590(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx + 0x34]
+        test eax, eax
+        push esi
+        jne L_nonzero
+        xor esi, esi
+        jmp L_have_count
+    L_nonzero:
+        mov esi, dword ptr [ecx + 0x38]
+        sub esi, eax
+        sar esi, 0x2
+    L_have_count:
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x44]
+        call edx
+        test esi, esi
+        mov dword ptr [esp + 0x4], esi
+        fild dword ptr [esp + 0x4]
+        jge L_nonneg
+        fadd dword ptr [mem_0092F678]
+    L_nonneg:
+        fdivp st(1), st
+        pop esi
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        pop ecx
+        ret
+    }
+}
