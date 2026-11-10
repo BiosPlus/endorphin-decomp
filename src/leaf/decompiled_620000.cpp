@@ -646,3 +646,28 @@ copy_empty_0062B8B0:
         ret
     }
 }
+
+// [0x0062CD30] sub_0062CD30 (65 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0062CD30(void* self) {
+    __asm {
+        push -1
+        push 0x008ADAD0
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xC], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax], 0x009791A4
+        mov dword ptr [eax + 0x2C], ecx
+        mov dword ptr [eax + 0x30], ecx
+        mov dword ptr [eax + 0x34], ecx
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
