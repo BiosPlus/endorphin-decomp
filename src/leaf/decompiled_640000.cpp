@@ -840,3 +840,35 @@ extern "C" void __cdecl fn_006490B0(unsigned int* dst, unsigned int* dst_end, un
         dst += 6;
     } while (dst != dst_end);
 }
+
+// [0x00649730] sub_00649730 (63 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00649730(const void* first, const void* last, void* dst) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        cmp ecx, edx
+        mov eax, dword ptr [esp + 0xc]
+        je done_00649730
+        push esi
+    copy_00649730:
+        mov esi, dword ptr [ecx]
+        mov dword ptr [eax], esi
+        mov esi, dword ptr [ecx + 0x4]
+        mov dword ptr [eax + 0x4], esi
+        mov esi, dword ptr [ecx + 0x8]
+        mov dword ptr [eax + 0x8], esi
+        mov esi, dword ptr [ecx + 0xc]
+        mov dword ptr [eax + 0xc], esi
+        mov esi, dword ptr [ecx + 0x10]
+        mov dword ptr [eax + 0x10], esi
+        mov esi, dword ptr [ecx + 0x14]
+        mov dword ptr [eax + 0x14], esi
+        add ecx, 0x18
+        add eax, 0x18
+        cmp ecx, edx
+        jne copy_00649730
+        pop esi
+    done_00649730:
+        ret
+    }
+}
