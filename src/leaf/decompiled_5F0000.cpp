@@ -154,3 +154,17 @@ extern "C" __declspec(naked) void __fastcall fn_005F09E0(void* self) {
         jmp ext_005EF450
     }
 }
+
+// [0x005F0F60] sub_005F0F60 (52 bytes)
+extern "C" void ext_005EF450();
+
+extern "C" void __fastcall fn_005F0F60(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    *(unsigned int*)(p + 0x00) = 0x0096bc4cu;
+    *(unsigned int*)(p + 0x04) = 0x0096bc04u;
+    *(unsigned int*)(p + 0x08) = 0x0096bbc4u;
+    *(unsigned int*)(p + 0x0c) = 0x0096bb74u;
+    *(unsigned int*)(p + 0x150) = 0x0096bb60u;
+    *(unsigned int*)(p + 0x154) = 0x0096bb58u;
+    ext_005EF450();
+}

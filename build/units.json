@@ -311661,7 +311661,9 @@
       "0x005F0F8B",
       "0x005F0F90"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T04:21:22Z"
   },
   {
     "va": "0x005F0FA0",
