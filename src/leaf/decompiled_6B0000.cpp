@@ -735,3 +735,33 @@ extern "C" __declspec(naked) void __fastcall fn_006B4870(void* self) {
         ret 0x10
     }
 }
+
+// [0x006B7420] sub_006B7420 (60 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006B7420(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov dl, byte ptr [ecx + 0x60]
+        test dl, dl
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x68], eax
+        jne L_active
+        cmp eax, 0xd
+        je L_zero
+        or eax, -1
+        ret 0x8
+    L_zero:
+        test dl, dl
+        je L_ret0
+    L_active:
+        cmp eax, 0xd
+        je L_ret0
+        push 0
+        push eax
+        mov eax, dword ptr [ecx + 0x90]
+        push 0x100
+        push eax
+        call dword ptr [mem_00925618]
+    L_ret0:
+        xor eax, eax
+        ret 0x8
+    }
+}
