@@ -93,3 +93,25 @@ extern "C" __declspec(naked) float __fastcall fn_0051ADC0(void* self) {
         ret
     }
 }
+
+// [0x0051C7E0] NMData::QuatChannel::vfunc_3 (58 bytes)
+extern "C" void ext_00489A80();
+
+extern "C" void __fastcall fn_0051C7E0(void* self) {
+    unsigned char* p = static_cast<unsigned char*>(self);
+    void (*invalid_parameter)() = reinterpret_cast<void (*)()>(mem_00925134);
+    unsigned int old_end = *reinterpret_cast<unsigned int*>(p + 0x34);
+    if (*reinterpret_cast<unsigned int*>(p + 0x30) > old_end) {
+        invalid_parameter();
+    }
+    unsigned int start = *reinterpret_cast<unsigned int*>(p + 0x30);
+    if (start > *reinterpret_cast<unsigned int*>(p + 0x34)) {
+        invalid_parameter();
+    }
+    if (start != old_end) {
+        typedef void* (__cdecl *Fn)(unsigned int, unsigned int, unsigned int);
+        Fn f = reinterpret_cast<Fn>(ext_00489A80);
+        void* r = f(old_end, *reinterpret_cast<unsigned int*>(p + 0x34), start);
+        *reinterpret_cast<void**>(p + 0x34) = r;
+    }
+}
