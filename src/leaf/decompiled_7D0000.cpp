@@ -968,3 +968,47 @@ fn_007D9630_done:
         ret 0x10
     }
 }
+
+// [0x007D6660] sub_007D6660 (79 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007D6660(void* self) {
+    __asm {
+        mov ecx, eax
+        and ecx, 0x80000003
+        jns no_neg_fix
+        dec ecx
+        or ecx, -4
+        inc ecx
+no_neg_fix:
+        je no_adjust
+        sub eax, ecx
+        add eax, 4
+no_adjust:
+        mov ecx, dword ptr [esi + 0x14]
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        add ecx, -1
+        cmp eax, ecx
+        mov edx, eax
+        jl clamp_lo
+        mov edx, ecx
+clamp_lo:
+        test edx, edx
+        jge in_range
+        mov ecx, dword ptr [esi + 0x10]
+        xor eax, eax
+        add dword ptr [ecx + 4*eax], 1
+        lea eax, [ecx + 4*eax]
+        ret
+in_range:
+        cmp eax, ecx
+        jl index_ok
+        mov eax, ecx
+index_ok:
+        mov ecx, dword ptr [esi + 0x10]
+        add dword ptr [ecx + 4*eax], 1
+        lea eax, [ecx + 4*eax]
+        ret
+    }
+}
