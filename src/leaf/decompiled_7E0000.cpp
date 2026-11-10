@@ -75,3 +75,30 @@ extern "C" __declspec(naked) void __cdecl fn_007EC6E0() {
         ret
     }
 }
+
+// [0x007E51F0] sub_007E51F0 (57 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007E51F0(void* self, int edx_unused, float* out, const float* b) {
+    __asm {
+        mov edx, dword ptr [esp+8]
+        fld dword ptr [edx+8]
+        mov eax, dword ptr [esp+4]
+        fmul dword ptr [ecx+4]
+        fld dword ptr [edx+4]
+        fmul dword ptr [ecx+8]
+        fsubp st(1), st
+        fstp dword ptr [eax]
+        fld dword ptr [ecx+8]
+        fmul dword ptr [edx]
+        fld dword ptr [ecx]
+        fmul dword ptr [edx+8]
+        fsubp st(1), st
+        fstp dword ptr [eax+4]
+        fld dword ptr [edx+4]
+        fmul dword ptr [ecx]
+        fld dword ptr [edx]
+        fmul dword ptr [ecx+4]
+        fsubp st(1), st
+        fstp dword ptr [eax+8]
+        ret 8
+    }
+}
