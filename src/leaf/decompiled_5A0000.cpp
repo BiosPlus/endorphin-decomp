@@ -181,3 +181,31 @@ done:
         ret 4
     }
 }
+
+// [0x005AD180] sub_005AD180 (55 bytes)
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void __fastcall fn_005AD180(void* self) {
+    __asm {
+        push 0x2c
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je L_005AD194
+        mov dword ptr [eax], 0x0
+    L_005AD194:
+        lea ecx, [eax + 0x4]
+        test ecx, ecx
+        je L_005AD1A1
+        mov dword ptr [ecx], 0x0
+    L_005AD1A1:
+        lea ecx, [eax + 0x8]
+        test ecx, ecx
+        je L_005AD1AE
+        mov dword ptr [ecx], 0x0
+    L_005AD1AE:
+        mov byte ptr [eax + 0x28], 0x1
+        mov byte ptr [eax + 0x29], 0x0
+        ret
+    }
+}
