@@ -828,3 +828,23 @@ extern "C" __declspec(naked) int __fastcall fn_006B2F70(void* self) {
         ret
     }
 }
+
+// [0x006B4DA0] sub_006B4DA0 (63 bytes)
+extern "C" void ext_006A6172();
+extern "C" void ext_006A7D30();
+extern "C" void ext_006AD1C0();
+extern "C" int mem_0092566C;
+
+struct Dec6B4DA0Rect { long left; long top; long right; long bottom; };
+
+extern "C" int __fastcall fn_006B4DA0(void* self, int edx_unused, void* a1) {
+    Dec6B4DA0Rect rc;
+    void* hwnd = *(void**)((char*)self + 0x20);
+    typedef int (__stdcall *PFN_GetClientRect)(void*, Dec6B4DA0Rect*);
+    (*(PFN_GetClientRect*)&mem_0092566C)(hwnd, &rc);
+    void* sel = *(void**)((char*)self + 0x54);
+    void* v = ((void* (__thiscall*)(void*))ext_006AD1C0)(sel);
+    void* r = ((void* (__thiscall*)(void*))ext_006A7D30)(v);
+    ((void (__thiscall*)(void*, Dec6B4DA0Rect*, void*))ext_006A6172)(a1, &rc, r);
+    return 1;
+}
