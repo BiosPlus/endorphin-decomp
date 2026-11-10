@@ -165,3 +165,25 @@ extern "C" __declspec(naked) void __fastcall fn_004CCC30(void* self) {
         ret
     }
 }
+
+// [0x004CCB10] sub_004CCB10 (50 bytes)
+extern "C" void ext_004CC610();
+
+extern "C" __declspec(naked) void __fastcall fn_004CCB10(void* self, int edx_unused, const float* v) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x180]
+        test ecx, ecx
+        je copy_004CCB10
+        jmp ext_004CC610
+    copy_004CCB10:
+        mov ecx, dword ptr [esp + 0x4]
+        fld dword ptr [ecx]
+        fstp dword ptr [eax + 0x188]
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [eax + 0x18c]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [eax + 0x190]
+        ret 0x4
+    }
+}
