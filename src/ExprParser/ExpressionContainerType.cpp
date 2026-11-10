@@ -253,3 +253,43 @@ extern "C" __declspec(naked) void __fastcall fn_0067A7D0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0066C0B0] ExprParser::ExpressionContainerType::vfunc_0 (79 bytes)
+// Writes a {ptr, ptr} pair to *out: if obj->f4 is non-null, first = *(obj->f4->vfunc_28(obj)), else first = 0; second = obj->f4.
+extern "C" __declspec(naked) void __fastcall fn_0066C0B0(void* self, int edx_unused, int* out, int* obj) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        xor eax, eax
+        cmp dword ptr [esi + 0x4], eax
+        mov dword ptr [esp + 0x4], eax
+        je L_null_0066C0B0
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x70]
+        push esi
+        lea edx, [esp + 0x14]
+        push edx
+        call eax
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0x8
+L_null_0066C0B0:
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x10], eax
+        lea eax, [esp + 0x10]
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
