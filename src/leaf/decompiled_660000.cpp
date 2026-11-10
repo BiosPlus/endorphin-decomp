@@ -1027,3 +1027,52 @@ extern "C" __declspec(naked) void* __cdecl fn_006648C0(void* a1, double a2, int 
         ret
     }
 }
+
+// [0x006630C0] sub_006630C0 (75 bytes)
+extern "C" int mem_00924EAC;
+extern "C" int mem_00924FFC;
+extern "C" char mem_00A9FB8C;
+extern "C" __declspec(naked) void __fastcall fn_006630C0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push edi
+        mov ecx, ebx
+        call dword ptr [mem_00924EAC]
+        mov edi, eax
+        cmp edi, 0x14
+        jae L_long
+        pop edi
+        xor al, al
+        pop ebx
+        ret
+    L_long:
+        push esi
+        xor esi, esi
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    L_loop:
+        lea eax, [edi + esi - 0x10]
+        push eax
+        mov ecx, ebx
+        call dword ptr [mem_00924FFC]
+        mov cl, byte ptr [eax]
+        cmp cl, byte ptr [esi + mem_00A9FB8C]
+        jne L_fail
+        add esi, 0x1
+        cmp esi, 0x10
+        jb L_loop
+        pop esi
+        pop edi
+        mov al, 0x1
+        pop ebx
+        ret
+    L_fail:
+        pop esi
+        pop edi
+        xor al, al
+        pop ebx
+        ret
+    }
+}
