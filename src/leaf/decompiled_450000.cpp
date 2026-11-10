@@ -1036,3 +1036,40 @@ extern "C" __declspec(naked) void __cdecl fn_00456C70(void* self, void* arg1) {
         jmp ext_006A60EE
     }
 }
+
+// [0x00453BC0] sub_00453BC0 (55 bytes)
+extern "C" void ext_0044DA40();
+extern "C" void ext_0044DA90();
+extern "C" void ext_005AA8D0();
+extern "C" void ext_00452E20();
+
+extern "C" __declspec(naked) void __fastcall fn_00453BC0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_0044DA40
+        mov ecx, esi
+        mov edi, eax
+        call ext_0044DA90
+        test edi, edi
+        je done
+        test eax, eax
+        je done
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        push eax
+        mov ecx, edi
+        call ext_005AA8D0
+        pop edi
+        mov ecx, esi
+        pop esi
+        jmp ext_00452E20
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
