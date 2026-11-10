@@ -463,3 +463,11 @@ extern "C" void* __fastcall fn_00555470(void* self) {
     base[0x39] = 0;
     return p;
 }
+
+// [0x00551960] sub_00551960 (60 bytes)
+extern "C" int __fastcall fn_00551960(float* self, int edx_unused, float* other) {
+    if (self[0] == other[0] && self[1] == other[1] && self[2] == other[2]) {
+        return 1;
+    }
+    return 0;
+}
