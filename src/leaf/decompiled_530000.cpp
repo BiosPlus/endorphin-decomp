@@ -1309,3 +1309,48 @@ extern "C" void __fastcall fn_005361D0(void* self, int edx_unused, unsigned int*
     out[0] = a2;
     out[1] = a3;
 }
+
+// [0x0053F8A0] sub_0053F8A0 (82 bytes)
+extern "C" __declspec(naked) int __stdcall fn_0053F8A0(int count, void* ptr) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        push edi
+        or eax, -0x1
+        or edi, -0x1
+        test edx, edx
+        jne L_pos
+        or eax, -0x1
+        pop edi
+        ret 0x8
+    L_pos:
+        jle L_done
+        push ebx
+        push esi
+        mov ebx, edx
+    L_loop:
+        mov esi, dword ptr [ecx]
+        mov edx, dword ptr [ecx + 0x4]
+        add ecx, 0x4
+        add ecx, 0xc
+        cmp dword ptr [ecx], 0xbaadf00d
+        jne L_skip
+        add ecx, 0x4
+        cmp edx, edi
+        jae L_next
+        mov eax, dword ptr [ecx]
+        mov edi, edx
+        jmp L_next
+    L_skip:
+        add ecx, 0x4
+    L_next:
+        sub ebx, 0x1
+        lea ecx, [ecx + 4*esi - 0x8]
+        jne L_loop
+        pop esi
+        pop ebx
+    L_done:
+        pop edi
+        ret 0x8
+    }
+}
