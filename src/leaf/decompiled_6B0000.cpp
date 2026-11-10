@@ -1125,3 +1125,19 @@ L_send:
         ret 8
     }
 }
+
+// [0x006B83F0] sub_006B83F0 (84 bytes)
+extern "C" void ext_008727F0();
+
+extern "C" void __fastcall fn_006B83F0(void* self, int edx_unused, int a1, int a2, int a3) {
+    int out;
+    ((void (__fastcall*)(void*))ext_006A5EA8)(self);
+    int r = ((int (__thiscall*)(void*, int, int, int*))ext_008727F0)(self, a2, a3, &out);
+    ((int (__stdcall*)(void*, unsigned int, int, int))mem_00925694)(*(void**)((char*)self + 0x20), 0x186, r, 0);
+    void* target = *(void**)((char*)self + 0x38);
+    if (target == 0) {
+        target = ((void* (__stdcall*)(void*))mem_00925650)(*(void**)((char*)self + 0x20));
+    }
+    void* wnd = ext_006A5E00(target);
+    ext_006A60D0(wnd);
+}
