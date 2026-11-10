@@ -924,3 +924,28 @@ extern "C" void* __cdecl fn_00414DC0(void* a1, void* first, void* a3, void* last
     }
     return end;
 }
+
+// [0x00411590] sub_00411590 (54 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_00413480();
+
+extern "C" __declspec(naked) void __fastcall fn_00411590(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi], 0x0092BE30
+        mov eax, dword ptr [esi + 0x58]
+        test eax, eax
+        je short skip_call
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    skip_call:
+        mov dword ptr [esi + 0x58], 0
+        mov dword ptr [esi + 0x5c], 0
+        mov dword ptr [esi + 0x60], 0
+        mov ecx, esi
+        pop esi
+        jmp ext_00413480
+    }
+}
