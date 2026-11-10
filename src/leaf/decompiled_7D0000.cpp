@@ -656,3 +656,22 @@ extern "C" void __cdecl fn_007D6360(char* self, void* a2) {
         *(int*)(self + 0x14) = 0;
     }
 }
+
+// [0x007D4B50] sub_007D4B50 (59 bytes)
+extern "C" void fn_007D4B10();
+extern "C" void fn_007D4B20();
+
+extern "C" void __cdecl fn_007D4B50(void* self, unsigned int a1, unsigned int a2) {
+    char* p = (char*)self;
+    *(unsigned int*)(p + 0x20) = a2;
+    *(void**)(p + 0x24) = (void*)fn_007D4B10;
+    *(void**)(p + 0x28) = (void*)fn_007D4B20;
+    *(unsigned int*)(p + 0x2c) = 0;
+    *(unsigned int*)(p + 0x18) = 0;
+    *(unsigned int*)(p + 0x1c) = a1;
+    *(void**)(p + 0x0) = self;
+    *(void**)(p + 0x4) = self;
+    *(void**)(p + 0x8) = self;
+    *(unsigned int*)(p + 0xc) = 1;
+    *(unsigned int*)(p + 0x30) = 0;
+}
