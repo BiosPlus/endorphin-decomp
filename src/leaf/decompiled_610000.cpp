@@ -438,3 +438,34 @@ done:
         ret 4
     }
 }
+
+// [0x00610C60] sub_00610C60 (66 bytes)
+extern "C" void ext_005B11D0();
+extern "C" __declspec(naked) void __fastcall fn_00610C60(void* self, int edx_unused, const float* a1, int a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        fld dword ptr [edi + 0x8]
+        mov esi, ecx
+        push ebx
+        fstp dword ptr [esp + 0x14]
+        lea ecx, [esi + 0x20]
+        call ext_005B11D0
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [eax]
+        fld dword ptr [edi + 0xc]
+        fstp dword ptr [esi + 4*ebx + 0x8]
+        fld dword ptr [edi + 0x14]
+        fstp dword ptr [esi + 4*ebx + 0x18]
+        fld dword ptr [edi + 0x10]
+        pop edi
+        fstp dword ptr [esi + 4*ebx + 0x10]
+        mov byte ptr [esi + 0x4], 1
+        pop esi
+        pop ebx
+        ret 8
+    }
+}
