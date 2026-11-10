@@ -872,3 +872,11 @@ extern "C" __declspec(naked) void* __cdecl fn_00649730(const void* first, const 
         ret
     }
 }
+
+// [0x00647D30] sub_00647D30 (46 bytes)
+extern "C" void ext_007C6970();
+
+extern "C" void __fastcall fn_00647D30(void* self, int edx_unused, const float* v) {
+    int a = **(int**)((char*)self + 0xa4);
+    ((void (__cdecl*)(int, float, float, float))ext_007C6970)(a, v[0], v[1], v[2]);
+}
