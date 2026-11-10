@@ -1307,3 +1307,45 @@ extern "C" __declspec(naked) void __fastcall fn_00401A10(void* self) {
         ret
     }
 }
+
+// [0x00404720] sub_00404720 (80 bytes)
+extern "C" void ext_006A5EA2();
+extern "C" int mem_00925688;
+extern "C" __declspec(naked) int __fastcall fn_00404720(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 8]
+        cmp ecx, 2
+        ja L_fail
+        mov eax, dword ptr [esi + 0x20]
+        test eax, eax
+        mov dword ptr [esi + 0x5c], ecx
+        je L_ok
+        test ecx, ecx
+        push 0
+        mov ecx, esi
+        je L_zero
+        push 0x2000
+        push 0
+        jmp L_call
+L_zero:
+        push 0
+        push 0x2000
+L_call:
+        call ext_006A5EA2
+        mov eax, dword ptr [esi + 0x20]
+        push 1
+        push 0
+        push eax
+        call dword ptr [mem_00925688]
+L_ok:
+        mov eax, 1
+        pop esi
+        ret 4
+L_fail:
+        xor eax, eax
+        pop esi
+        ret 4
+    }
+}
