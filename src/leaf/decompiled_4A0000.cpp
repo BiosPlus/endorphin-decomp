@@ -201,3 +201,28 @@ found:
         ret
     }
 }
+
+// [0x004A5810] sub_004A5810 (61 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004A5810(void* self, int edx_unused, unsigned char a1) {
+    __asm {
+        mov al, byte ptr [esp + 4]
+        not al
+        movzx edx, al
+        mov eax, dword ptr [ecx + 0x258]
+        and edx, 1
+        test eax, eax
+        mov dword ptr [ecx + 0x200], edx
+        je short L_no_obj
+        mov eax, dword ptr [eax + 0x168]
+        test eax, eax
+        je short L_null_sub
+        add eax, 4
+        mov dword ptr [ecx + 0x204], eax
+        ret 4
+    L_null_sub:
+        xor eax, eax
+        mov dword ptr [ecx + 0x204], eax
+    L_no_obj:
+        ret 4
+    }
+}
