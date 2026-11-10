@@ -139,3 +139,24 @@ extern "C" __declspec(naked) void __fastcall fn_005ABBE0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005AA850] sub_005AA850 (54 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005AA850(void* self, int edx_unused, const float* src) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fstp dword ptr [ecx + 0x158]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ecx + 0x15c]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ecx + 0x160]
+        cmp dword ptr [ecx + 0x190], 0x0
+        je done
+        mov ecx, dword ptr [ecx + 0x190]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        call edx
+    done:
+        ret 0x4
+    }
+}
