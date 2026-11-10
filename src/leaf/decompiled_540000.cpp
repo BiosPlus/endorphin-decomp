@@ -451,3 +451,26 @@ extern "C" __declspec(naked) unsigned char __stdcall fn_00540D20(const void* s) 
         ret 0x4
     }
 }
+
+extern "C" int mem_0092551C;
+extern "C" int mem_00925428;
+extern "C" int mem_00925418;
+
+// [0x00540510] sub_00540510 (57 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00540510(void* self) {
+    __asm {
+        cmp byte ptr [ecx + 0x14], 0x0
+        _emit 0x74
+        _emit 0x5c
+        cmp dword ptr [esp + 0x4], 0x1c02
+        _emit 0x75
+        _emit 0x29
+        push 0x1b02
+        push 0x408
+        call dword ptr [mem_0092551C]
+        push 0x404
+        call dword ptr [mem_00925428]
+        mov dword ptr [esp + 0x4], 0xb44
+        jmp dword ptr [mem_00925418]
+    }
+}
