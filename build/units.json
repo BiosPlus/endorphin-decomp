@@ -22965,7 +22965,9 @@
       "0x00428A78",
       "0x00428A88"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:18:30Z"
   },
   {
     "va": "0x00428AB0",
