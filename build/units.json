@@ -454590,7 +454590,9 @@
       "0x006B177E",
       "0x006B1785"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T07:58:03Z"
   },
   {
     "va": "0x006B1790",
