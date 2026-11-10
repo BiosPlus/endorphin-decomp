@@ -1031,3 +1031,20 @@ L_7CC94B:
         ret
     }
 }
+
+// [0x007CDBC0] sub_007CDBC0 (53 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007CDBC0(void* a0) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax + 0x80]
+        mov edx, dword ptr [eax + 0x7c]
+        mov dword ptr [edx + 4*ecx], 0x0
+        mov ecx, dword ptr [eax + 0x8c]
+        mov edx, dword ptr [eax + 0x88]
+        mov dword ptr [edx + 4*ecx], 0x0
+        mov ecx, dword ptr [eax + 0x74]
+        mov edx, dword ptr [eax + 0x70]
+        mov dword ptr [edx + 4*ecx], 0x0
+        ret
+    }
+}
