@@ -568,3 +568,24 @@ extern "C" __declspec(naked) void __fastcall fn_0051C5A0(void* self) {
         ret
     }
 }
+
+// [0x0051A5C0] sub_0051A5C0 (72 bytes)
+struct SortedEntry51A5C0 {
+    float key;
+    int val;
+};
+
+extern "C" SortedEntry51A5C0* __cdecl fn_0051A5C0(SortedEntry51A5C0* first, SortedEntry51A5C0* last, const float* value) {
+    int count = last - first;
+    while (count > 0) {
+        int step = count / 2;
+        SortedEntry51A5C0* mid = first + step;
+        if (mid->key < *value) {
+            first = mid + 1;
+            count = count - step - 1;
+        } else {
+            count = step;
+        }
+    }
+    return first;
+}

@@ -180948,7 +180948,9 @@
     "is_leaf": true,
     "is_thunk": false,
     "relocations": [],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:15:09Z"
   },
   {
     "va": "0x0051A610",
