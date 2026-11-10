@@ -289,3 +289,47 @@ done:
         ret 0x14
     }
 }
+
+// [0x004EF790] sub_004EF790 (67 bytes)
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) void* __cdecl fn_004EF790(void* out, char* first1, char* last1, char* first2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        cmp esi, ebx
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        je done
+        mov ebp, dword ptr [mem_00924FC4]
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+loop_top:
+        push edi
+        push esi
+        call ebp
+        add esp, 8
+        test al, al
+        je done
+        add esi, 0x1c
+        add edi, 0x1c
+        cmp esi, ebx
+        jne loop_top
+done:
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr [eax + 4], edi
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
