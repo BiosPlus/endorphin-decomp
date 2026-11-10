@@ -45479,7 +45479,9 @@
       "0x0044CD45",
       "0x0044CD5A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:58:39Z"
   },
   {
     "va": "0x0044CD70",
