@@ -157,3 +157,32 @@ empty_str:
         ret
     }
 }
+
+// [0x00477E60] sub_00477E60 (49 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00477E60(void* dst, unsigned int count, const void* src) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        jbe done
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+    loop_top:
+        test eax, eax
+        je skip
+        mov esi, dword ptr [edx]
+        mov dword ptr [eax], esi
+        mov esi, dword ptr [edx + 0x4]
+        mov dword ptr [eax + 0x4], esi
+        mov esi, dword ptr [edx + 0x8]
+        mov dword ptr [eax + 0x8], esi
+    skip:
+        sub ecx, 0x1
+        add eax, 0xc
+        test ecx, ecx
+        ja loop_top
+        pop esi
+    done:
+        ret
+    }
+}
