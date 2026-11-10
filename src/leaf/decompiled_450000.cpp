@@ -850,3 +850,42 @@ extern "C" __declspec(naked) void __fastcall fn_0045BC30(void* self) {
         ret 0x4
     }
 }
+
+// [0x00458860] sub_00458860 (68 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00458860(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x10]
+        test ecx, ecx
+        push edi
+        je short L_skip_virt
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x8]
+        call edx
+    L_skip_virt:
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        mov edi, dword ptr [esp + 0xc]
+        je short L_invalid
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb short L_ok
+    L_invalid:
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 4*edi]
+        mov dword ptr [esi + 0x10], ecx
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x4]
+        call eax
+        pop edi
+        pop esi
+        ret 4
+    }
+}
