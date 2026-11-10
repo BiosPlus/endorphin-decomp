@@ -10839,7 +10839,9 @@
     "relocations": [
       "0x00412E3D"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:48:58Z"
   },
   {
     "va": "0x00412E60",

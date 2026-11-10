@@ -1033,3 +1033,44 @@ extern "C" __declspec(naked) int __fastcall fn_00410290(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x00412E20] sub_00412E20 (57 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) int __fastcall fn_00412E20(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        je L_zero
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, eax
+        sar ecx, 0x2
+        jne L_nonempty
+    L_zero:
+        xor eax, eax
+        pop esi
+        pop ecx
+        ret
+    L_nonempty:
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push edi
+        mov edi, eax
+        cmp edi, dword ptr [esi + 0xc]
+        jbe L_chk2
+        call ebx
+        cmp edi, dword ptr [esi + 0xc]
+    L_chk2:
+        jb L_load
+        call ebx
+    L_load:
+        mov eax, dword ptr [edi]
+        pop edi
+        pop ebx
+        pop esi
+        pop ecx
+        ret
+    }
+}
