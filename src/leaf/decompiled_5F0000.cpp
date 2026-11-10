@@ -193,3 +193,35 @@ skip_release:
         jmp ext_0065F440
     }
 }
+
+extern "C" int mem_00B46790;
+
+// [0x005F3A30] sub_005F3A30 (59 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005F3A30(void* self, int edx_unused, void* arg) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        test edx, edx
+        mov eax, ecx
+        je L_nonnull_zero
+        push esi
+        mov esi, dword ptr [edx + 0x4]
+        test esi, esi
+        je L_store_zero
+        mov ecx, dword ptr [edx + 0x8]
+        sub ecx, esi
+        sar ecx, 0x2
+        jne L_store_arg
+L_store_zero:
+        xor ecx, ecx
+        mov dword ptr [mem_00B46790], ecx
+        pop esi
+        ret 0x4
+L_nonnull_zero:
+        mov dword ptr [mem_00B46790], edx
+        ret 0x4
+L_store_arg:
+        mov dword ptr [mem_00B46790], edx
+        pop esi
+        ret 0x4
+    }
+}
