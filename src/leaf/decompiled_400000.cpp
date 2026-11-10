@@ -1130,3 +1130,39 @@ extern "C" __declspec(naked) void __fastcall fn_004026E0(void* self) {
         ret
     }
 }
+
+// [0x0040B2B0] sub_0040B2B0 (72 bytes)
+extern "C" int mem_00928B5D;
+extern "C" int mem_00AC8884;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void* __fastcall fn_0040B2B0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, 0x1
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        je short L_copy
+        cmp eax, 0x2
+        je short L_copy
+        mov esi, dword ptr [esp + 0xc]
+        push offset mem_00928B5D
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_copy:
+        mov esi, dword ptr [esp + 0xc]
+        push offset mem_00AC8884
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
