@@ -665,3 +665,32 @@ fail_0069B5A0:
         ret
     }
 }
+
+// [0x00692B50] sub_00692B50 (79 bytes)
+extern "C" void ext_00661980();
+extern "C" __declspec(naked) void* __fastcall fn_00692B50(void* self) {
+    __asm {
+        push -1
+        push 0x0088B143
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_00661980
+        mov dword ptr [esi + 0x4], 0x00928EFC
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi], 0x00944E74
+        mov dword ptr [esi + 0x4], 0x00944E44
+        xor eax, eax
+        mov dword ptr [esi + 0xC], eax
+        mov dword ptr [esi + 0x10], eax
+        mov dword ptr [esi + 0x14], eax
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
