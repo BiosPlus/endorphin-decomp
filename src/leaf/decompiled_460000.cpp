@@ -1435,3 +1435,39 @@ L_END_462E80:
         ret 0x4
     }
 }
+
+// [0x00462EC0] sub_00462EC0 (64 bytes)
+extern "C" void ext_00401950();
+extern "C" void ext_00462A60();
+extern "C" void ext_00462C30();
+extern "C" int mem_00924FF0;
+
+extern "C" __declspec(naked) void __fastcall fn_00462EC0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 4]
+        mov eax, dword ptr [eax + 4]
+        sub eax, 1
+        je L_STATE1_462EC0
+        sub eax, 1
+        jne L_END_462EC0
+        mov ecx, dword ptr [esi + 8]
+        test ecx, ecx
+        je L_END_462EC0
+        call ext_00462A60
+        test al, al
+        je L_END_462EC0
+        pop esi
+        jmp ext_00462C30
+L_STATE1_462EC0:
+        mov ecx, dword ptr [esp + 8]
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [esi + 0Ch]
+        push eax
+        call ext_00401950
+L_END_462EC0:
+        pop esi
+        ret 4
+    }
+}
