@@ -1755,3 +1755,33 @@ extern "C" void __cdecl fn_007C9EF0(char* self, int flag, float* out) {
     out[1] = src[1];
     out[2] = src[2];
 }
+
+// [0x007CCAB0] sub_007CCAB0 (71 bytes)
+extern "C" float mem_00968ED8;
+extern "C" __declspec(naked) void __cdecl fn_007CCAB0(char* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        fldz
+        fst dword ptr [eax + 0x10]
+        xor ecx, ecx
+        fld dword ptr [mem_00968ED8]
+        mov dword ptr [eax], ecx
+        fstp dword ptr [eax + 0x14]
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], ecx
+        fst dword ptr [eax + 0x18]
+        fst dword ptr [eax + 0x1c]
+        fst dword ptr [eax + 0x40]
+        fld dword ptr [mem_0099D148]
+        fst dword ptr [eax + 0x20]
+        fstp dword ptr [eax + 0x2c]
+        fst dword ptr [eax + 0x24]
+        fst dword ptr [eax + 0x28]
+        fst dword ptr [eax + 0x30]
+        fst dword ptr [eax + 0x34]
+        fst dword ptr [eax + 0x38]
+        fstp dword ptr [eax + 0x3c]
+        ret
+    }
+}
