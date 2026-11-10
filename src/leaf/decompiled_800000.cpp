@@ -101,3 +101,35 @@ extern "C" __declspec(naked) void __fastcall fn_00802D40(void* self) {
         ret
     }
 }
+
+// [0x00803B60] sub_00803B60 (67 bytes)
+extern "C" __declspec(naked) float __fastcall fn_00803B60(void* self) {
+    __asm {
+        push ecx
+        fld dword ptr [ecx + 0x4]
+        fsub dword ptr [eax + 0x4]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fabs
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fld dword ptr [ecx]
+        fsub dword ptr [eax]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fabs
+        fstp dword ptr [esp]
+        fadd dword ptr [esp]
+        fld dword ptr [ecx + 0x8]
+        fsub dword ptr [eax + 0x8]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fabs
+        fstp dword ptr [esp]
+        fadd dword ptr [esp]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        pop ecx
+        ret
+    }
+}
