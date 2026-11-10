@@ -551,3 +551,43 @@ extern "C" __declspec(naked) void __fastcall fn_005C2BE0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x005CFD60] sub_005CFD60 (67 bytes)
+extern "C" int mem_00924FC4;
+extern "C" char mem_00B45900[];
+extern "C" __declspec(naked) int __stdcall fn_005CFD60(const void* a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, offset mem_00B45900
+    loop_top:
+        push ebx
+        push esi
+        call ebp
+        add esp, 8
+        test al, al
+        jne found
+        add esi, 1Ch
+        add edi, 1
+        cmp esi, offset mem_00B45900 + 38h
+        jl loop_top
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 3
+        pop ebx
+        ret 4
+    found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
