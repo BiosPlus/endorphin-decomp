@@ -90,3 +90,69 @@ L_store_arg:
         ret 0x8
     }
 }
+
+extern "C" int mem_00925284;
+extern "C" int mem_00B5DD98;
+extern "C" int mem_00B5DD9C;
+extern "C" int mem_00B5DD90;
+
+// [0x006E6360] sub_006E6360 (80 bytes)
+// Two incremental-link style thunks: each jumps over 11 nop padding to a body.
+// Body 1: copy the double at *_HUGE into mem_00B5DD98/9C.
+// Body 2: store -(*_HUGE) into mem_00B5DD90.
+extern "C" __declspec(naked) void __fastcall fn_006E6360(void* self) {
+    __asm {
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DD98], ecx
+        mov dword ptr [mem_00B5DD9C], edx
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5DD90]
+        ret
+    }
+}
