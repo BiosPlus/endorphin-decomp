@@ -341,3 +341,21 @@ extern "C" void __fastcall fn_004C64D0(void* self, int edx_unused, void* a1) {
     }
     *slot = a1;
 }
+
+// [0x004C7F50] sub_004C7F50 (73 bytes)
+extern "C" void ext_006A5C5C();
+typedef void (__cdecl *ReleaseFn_004C7F50)(void*);
+extern "C" void __fastcall fn_004C7F50(void* self, int edx_unused, void* a1) {
+    void** slot = (void**)self;
+    void** old = (void**)*slot;
+    if (a1 != (void*)old && old != 0) {
+        if (old[2] != 0) {
+            ((ReleaseFn_004C7F50)ext_006A5C5C)(old[2]);
+        }
+        old[2] = 0;
+        old[3] = 0;
+        old[4] = 0;
+        ((ReleaseFn_004C7F50)ext_006A5C5C)((void*)old);
+    }
+    *slot = a1;
+}
