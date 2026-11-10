@@ -158,3 +158,65 @@ extern "C" __declspec(naked) void* __cdecl fn_006C3C10(void* out, const double* 
         ret
     }
 }
+
+// [0x006C8E00] sub_006C8E00 (80 bytes)
+extern "C" int mem_00925284;
+extern "C" int mem_00B5D5E8;
+extern "C" int mem_00B5D5EC;
+extern "C" int mem_00B5D5E0;
+extern "C" __declspec(naked) void __fastcall fn_006C8E00(void* self) {
+    __asm {
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax+0x4]
+        mov dword ptr [mem_00B5D5E8], ecx
+        mov dword ptr [mem_00B5D5EC], edx
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5D5E0]
+        ret
+    }
+}
