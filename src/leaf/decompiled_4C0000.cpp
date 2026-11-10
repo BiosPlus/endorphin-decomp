@@ -293,3 +293,33 @@ extern "C" __declspec(naked) void* __cdecl fn_004C72D0(void* first, void* last, 
         ret
     }
 }
+
+// [0x004C4390] sub_004C4390 (70 bytes)
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924EA8;
+
+extern "C" __declspec(naked) void __fastcall fn_004C4390(void* self) {
+    __asm {
+        push -1
+        push 0x872c79
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        call dword ptr [mem_00924FE8]
+        xor eax, eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], eax
+        mov byte ptr [esi + 0x1c], al
+        call dword ptr [mem_00924EA8]
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
