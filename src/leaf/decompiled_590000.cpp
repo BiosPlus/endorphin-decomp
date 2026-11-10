@@ -730,3 +730,31 @@ extern "C" void __fastcall fn_00594190(void* self, int edx_unused, void* node) {
     *(char**)p = n;
     *(char**)(n + 0x4) = p;
 }
+
+// [0x00594880] sub_00594880 (82 bytes)
+extern "C" void __fastcall fn_00594880(char* self, int edx_unused, char* x) {
+    char* n = *(char**)x;
+    *(char**)x = *(char**)(n + 0x8);
+    char* m = *(char**)(n + 0x8);
+    if (m[0x31] == 0) {
+        *(char**)(m + 0x4) = x;
+    }
+    *(char**)(n + 0x4) = *(char**)(x + 0x4);
+    char* h = *(char**)(self + 0x4);
+    if (x == *(char**)(h + 0x4)) {
+        *(char**)(h + 0x4) = n;
+        *(char**)(n + 0x8) = x;
+        *(char**)(x + 0x4) = n;
+        return;
+    }
+    char* q = *(char**)(x + 0x4);
+    if (x == *(char**)(q + 0x8)) {
+        *(char**)(q + 0x8) = n;
+        *(char**)(n + 0x8) = x;
+        *(char**)(x + 0x4) = n;
+        return;
+    }
+    *(char**)q = n;
+    *(char**)(n + 0x8) = x;
+    *(char**)(x + 0x4) = n;
+}
