@@ -85,3 +85,31 @@ extern "C" __declspec(naked) void __fastcall fn_006588F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00645F40] RelationshipHinge::vfunc_11 (50 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00645F40(void* self, float a1, float a2) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        fld dword ptr [ecx]
+        fld dword ptr [esp + 0x8]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x41
+        jne L_clamp_hi
+L_store:
+        fstp dword ptr [ecx]
+        ret 0xc
+L_clamp_hi:
+        fstp st(0)
+        fld dword ptr [ecx]
+        fld dword ptr [esp + 0xc]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jnp L_store
+        fstp st(0)
+        ret 0xc
+    }
+}
