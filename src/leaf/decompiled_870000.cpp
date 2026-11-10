@@ -169,3 +169,40 @@ extern "C" __declspec(naked) void __fastcall fn_00870EF0(void* self) {
         ret
     }
 }
+
+// [0x00870E90] sub_00870E90 (81 bytes)
+struct Decomp870E90State {
+    unsigned char pad0[8];
+    char* cur;   // +0x08
+    char* end;   // +0x0c
+    int line;    // +0x10
+    int col;     // +0x14
+    int prevCol; // +0x18
+};
+
+extern "C" char __fastcall fn_00870E90(Decomp870E90State* self) {
+    char* p = self->cur;
+    char* e = self->end;
+    if (p >= e) {
+        self->cur = e + 1;
+        return 0;
+    }
+    char c = *p;
+    p++;
+    self->cur = p;
+    if (c == 0x0d) {
+        if (p < e && *p == 0x0a) {
+            p++;
+            self->cur = p;
+        }
+        c = 0x0a;
+    }
+    self->prevCol = self->col;
+    if (c == 0x0a) {
+        self->line++;
+        self->col = 0;
+        return c;
+    }
+    self->col++;
+    return c;
+}
