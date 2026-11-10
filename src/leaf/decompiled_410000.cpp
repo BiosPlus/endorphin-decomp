@@ -803,3 +803,17 @@ L_skip_41DDA0:
         jmp dword ptr [mem_00924FF4]
     }
 }
+
+// [0x00416F70] sub_00416F70 (51 bytes)
+extern "C" void ext_00416E00();
+extern "C" int mem_00925694;
+
+extern "C" void __fastcall fn_00416F70(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    typedef int (__stdcall *SendMessageFn)(void*, unsigned int, unsigned int, long);
+    int r = ((SendMessageFn)mem_00925694)(*(void**)(p + 0x154), 0xf0, 0, 0);
+    unsigned char* edx = *(unsigned char**)(p + 0x88);
+    edx[0x165] = (unsigned char)(r == 1);
+    typedef void (__fastcall *TailFn)(void*);
+    ((TailFn)ext_00416E00)(self);
+}
