@@ -64,3 +64,20 @@ L_43CAD6:
         ret 0x10
     }
 }
+
+// [0x0043CB00] MultiTrackView::TriggeredEventView::vfunc_66 (66 bytes)
+extern "C" void ext_0041C6B0();
+extern "C" void ext_006A5DA0();
+extern "C" int __fastcall fn_0043CB00(char* self, int edx_unused, char* a1) {
+    typedef char (__thiscall *Callee1)(void* self, unsigned int a, unsigned int b, unsigned int c);
+    typedef int (__thiscall *Callee2)(void* self, void* a1);
+    if (*(int*)(a1 + 0x4) == 0x100) {
+        Callee1 c1 = (Callee1)ext_0041C6B0;
+        char r = c1(self + 0x64, *(unsigned int*)(a1 + 0x8), *(unsigned short*)(a1 + 0xc), *(unsigned short*)(a1 + 0xe));
+        if (r != 0) {
+            return 1;
+        }
+    }
+    Callee2 c2 = (Callee2)ext_006A5DA0;
+    return c2(self, a1);
+}
