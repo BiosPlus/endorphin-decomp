@@ -58262,7 +58262,9 @@
       "0x00462EAF",
       "0x00462EB8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T07:59:23Z"
   },
   {
     "va": "0x00462EC0",
