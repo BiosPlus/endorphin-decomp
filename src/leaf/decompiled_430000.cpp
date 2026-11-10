@@ -2237,3 +2237,30 @@ extern "C" void __fastcall fn_00430D50(void* self) {
     typedef void (__thiscall *Fn2)(void*, int, int, int, int);
     ((Fn2)vt2[0xe0 / 4])(obj2, 9, r, r + 0xf, 0);
 }
+
+// [0x00434640] sub_00434640 (49 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00434640(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        push edi
+        mov edi, ecx
+        push 1
+        mov ecx, esi
+        call edx
+        mov ecx, dword ptr [edi + 0x114]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x15c]
+        mov edi, dword ptr [esi]
+        call edx
+        push eax
+        mov eax, dword ptr [edi + 0x4]
+        mov ecx, esi
+        call eax
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
