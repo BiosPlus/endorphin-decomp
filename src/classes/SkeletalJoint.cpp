@@ -15,6 +15,8 @@ extern "C" void ext_007C5CE0();
 extern "C" void ext_007C5CF0();
 extern "C" void ext_007C93A0();
 extern "C" void ext_007D8700();
+extern "C" void ext_007C5900();
+extern "C" void ext_007C5910();
 
 // [0x00646520] SkeletalJoint::vfunc_1 (17 bytes)
 extern "C" void __fastcall fn_00646520(void* self) {
@@ -109,4 +111,34 @@ extern "C" void __fastcall fn_0064E9E0(void* self, int edx_unused, float* out) {
     out[0] = out[0] / *(float*)(p + 0x7C);
     out[1] = out[1] / *(float*)(p + 0x80);
     out[2] = out[2] / *(float*)(p + 0x84);
+}
+
+// [0x0064E3F0] SkeletalJoint::vfunc_19 (60 bytes)
+extern "C" int mem_009802E0;
+
+extern "C" __declspec(naked) void __fastcall fn_0064E3F0(void* self, int edx_unused, float* out) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x64]
+        push eax
+        call ext_007C5900
+        add esp, 0x4
+        test eax, 0x700
+        je short L_0064E41C
+        mov ecx, dword ptr [esi + 0x64]
+        push ecx
+        call ext_007C5910
+        mov edx, dword ptr [esp + 0xc]
+        add esp, 0x4
+        fstp dword ptr [edx]
+        pop esi
+        ret 0x4
+    L_0064E41C:
+        fld dword ptr [mem_009802E0]
+        mov eax, dword ptr [esp + 0x8]
+        fstp dword ptr [eax]
+        pop esi
+        ret 0x4
+    }
 }

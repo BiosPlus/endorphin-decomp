@@ -382410,7 +382410,9 @@
       "0x0064E40B",
       "0x0064E41E"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T06:41:29Z"
   },
   {
     "va": "0x0064E430",
