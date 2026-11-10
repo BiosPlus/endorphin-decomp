@@ -578807,7 +578807,9 @@
       "0x007D59C6",
       "0x007D59E2"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T06:37:09Z"
   },
   {
     "va": "0x007D5A00",

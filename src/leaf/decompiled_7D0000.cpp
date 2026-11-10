@@ -729,3 +729,30 @@ extern "C" __declspec(naked) int __cdecl fn_007D4820(void* self) {
         ret
     }
 }
+
+// [0x007D59C0] sub_007D59C0 (60 bytes)
+extern "C" int mem_0099D148;
+extern "C" int mem_0093C1A8;
+extern "C" __declspec(naked) void __cdecl fn_007D59C0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        fld dword ptr [mem_0099D148]
+        xor ecx, ecx
+        mov dword ptr [eax + 0x20], ecx
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x24], ecx
+        fst dword ptr [eax + 0x8]
+        fst dword ptr [eax + 0xc]
+        fstp dword ptr [eax + 0x10]
+        fld dword ptr [mem_0093C1A8]
+        fst dword ptr [eax + 0x14]
+        fst dword ptr [eax + 0x18]
+        fstp dword ptr [eax + 0x1c]
+        mov dword ptr [eax + 0x2c], ecx
+        mov dword ptr [eax + 0x28], ecx
+        mov dword ptr [eax + 0x30], ecx
+        mov dword ptr [eax + 0x34], ecx
+        ret
+    }
+}
