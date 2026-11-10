@@ -414,3 +414,45 @@ extern "C" __declspec(naked) void __fastcall fn_0058AA20(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00584B10] sub_00584B10 (66 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00584B10(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x70]
+        push edi
+        xor edi, edi
+        call edx
+        test al, al
+        je L_first_fail_00584B10
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    L_first_fail_00584B10:
+        mov esi, dword ptr [esi + 0x94]
+        test esi, esi
+        je L_done_00584B10
+    L_loop_00584B10:
+        test edi, edi
+        jne L_done_00584B10
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x70]
+        mov ecx, esi
+        call edx
+        test al, al
+        je L_skip_00584B10
+        mov edi, esi
+    L_skip_00584B10:
+        mov esi, dword ptr [esi + 0x94]
+        test esi, esi
+        jne L_loop_00584B10
+    L_done_00584B10:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
