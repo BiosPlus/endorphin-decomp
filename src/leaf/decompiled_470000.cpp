@@ -636,3 +636,45 @@ extern "C" void __fastcall fn_00475060(char* self, int edx_unused, char* x) {
     *(char**)(n + 0x8) = x;
     *(char**)(x + 0x4) = n;
 }
+
+// [0x004772E0] sub_004772E0 (83 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_004772E0(void* first, void* last, void* d_last) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov edx, ecx
+        sub edx, esi
+        mov eax, 0x2aaaaaab
+        imul edx
+        sar edx, 1
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        mov edx, dword ptr [esp + 0x10]
+        lea eax, [eax + 2*eax]
+        add eax, eax
+        add eax, eax
+        push edi
+        mov edi, eax
+        mov eax, edx
+        sub eax, edi
+        cmp esi, ecx
+        je done_copy
+        sub edx, ecx
+    copy_loop:
+        mov edi, dword ptr [ecx - 0xc]
+        sub ecx, 0xc
+        cmp ecx, esi
+        mov dword ptr [edx + ecx], edi
+        mov edi, dword ptr [ecx + 0x4]
+        mov dword ptr [edx + ecx + 0x4], edi
+        mov edi, dword ptr [ecx + 0x8]
+        mov dword ptr [edx + ecx + 0x8], edi
+        jne copy_loop
+    done_copy:
+        pop edi
+        pop esi
+        ret
+    }
+}
