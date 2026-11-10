@@ -312,3 +312,19 @@ extern "C" __declspec(naked) int __cdecl fn_004D0B20(int a1) {
         ret
     }
 }
+
+// [0x004DE780] sub_004DE780 (76 bytes)
+extern "C" void* __cdecl fn_004DE780(void* first_, void* last_, void* dest_) {
+    struct Vec16 { float v[4]; };
+    Vec16* first = (Vec16*)first_;
+    Vec16* last = (Vec16*)last_;
+    Vec16* dest = (Vec16*)dest_;
+    Vec16* ret = dest + (last - first);
+    for (Vec16* p = first; p != last; ++p, ++dest) {
+        dest->v[0] = p->v[0];
+        dest->v[1] = p->v[1];
+        dest->v[2] = p->v[2];
+        dest->v[3] = p->v[3];
+    }
+    return ret;
+}
