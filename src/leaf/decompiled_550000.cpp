@@ -1262,3 +1262,39 @@ extern "C" void __fastcall fn_00553340(int* self, int edx_unused, float* out, fl
     out[1] = y;
     out[2] = z;
 }
+
+// [0x00554E50] sub_00554E50 (85 bytes)
+extern "C" void ext_00553340();
+extern "C" __declspec(naked) float* __fastcall fn_00554E50(void* self, int edx_unused, float* dst, float x, float y, float z) {
+    __asm {
+        sub esp, 0x0c
+        fld dword ptr [esp + 0x14]
+        sub esp, 0x0c
+        mov eax, esp
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x28]
+        fstp dword ptr [eax + 0x8]
+        lea eax, [esp + 0x0c]
+        push eax
+        call ext_00553340
+        fld dword ptr [ecx + 0x20]
+        fld1
+        mov ecx, dword ptr [esp + 0x10]
+        fdivrp st(1), st
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fld st(0)
+        fmul dword ptr [eax]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 0x4]
+        fmul st, st(1)
+        fstp dword ptr [ecx + 0x4]
+        fmul dword ptr [eax + 0x8]
+        mov eax, ecx
+        fstp dword ptr [ecx + 0x8]
+        add esp, 0x0c
+        ret 0x10
+    }
+}
