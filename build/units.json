@@ -199317,7 +199317,9 @@
       "0x00538EC6",
       "0x00538ECC"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:30:37Z"
   },
   {
     "va": "0x00538EE0",
