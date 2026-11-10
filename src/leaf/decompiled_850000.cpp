@@ -247,3 +247,46 @@ L_ret_dst_00859740:
         ret
     }
 }
+
+// [0x0085E720] sub_0085E720 (76 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085E720(const char* src, int len) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        push esi
+        push edi
+        xor esi, esi
+        push ebp
+        mov ebp, dword ptr [esp + 0x2c]
+        test ebp, ebp
+        je done
+        mov eax, 0
+        jle done
+        mov edi, dword ptr [esp + 0x28]
+        mov edx, 0x2e
+        xor ebx, ebx
+    loop_top:
+        mov cl, byte ptr [edi + eax]
+        mov byte ptr [esp + esi + 0x10], dl
+        cmp cl, 0x20
+        jb skip_store
+        mov byte ptr [esp + esi + 0x10], cl
+    skip_store:
+        mov byte ptr [esp + esi + 0x11], bl
+        inc esi
+        cmp esi, 0xf
+        jle no_wrap
+        xor esi, esi
+    no_wrap:
+        inc eax
+        cmp eax, ebp
+        jl loop_top
+    done:
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x14
+        ret
+    }
+}
