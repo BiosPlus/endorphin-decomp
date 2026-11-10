@@ -1408,3 +1408,33 @@ extern "C" void* __cdecl fn_007CA340(void* a0, int a1, float a2) {
     *(float*)((char*)a0 + 0x10) = a2;
     return a0;
 }
+
+// [0x007CA750] sub_007CA750 (51 bytes)
+extern "C" void ext_007CA340();
+extern "C" __declspec(naked) void* __cdecl fn_007CA750(void* self, float a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0xb0]
+        mov ecx, dword ptr [eax + 0x8]
+        push 0x10
+        push 0x14
+        call ecx
+        add esp, 0x8
+        test eax, eax
+        je short loc_zero_007CA750
+        fld dword ptr [esp + 0xc]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        push eax
+        call ext_007CA340
+        add esp, 0xc
+        pop esi
+        ret
+    loc_zero_007CA750:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
