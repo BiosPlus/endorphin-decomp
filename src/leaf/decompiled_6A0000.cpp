@@ -380,3 +380,30 @@ extern "C" void __cdecl fn_006A4B20(unsigned int* p) {
     p[4] = 0x98badcfe;
     p[5] = 0x10325476;
 }
+
+// [0x006A8800] sub_006A8800 (54 bytes)
+extern "C" void ext_006B0C30();
+extern "C" void ext_00872754();
+
+extern "C" __declspec(naked) void __fastcall fn_006A8800(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x16c]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        lea ecx, [eax + 0x1]
+        mov dword ptr [esi + 0x16c], ecx
+        push eax
+        mov ecx, edi
+        call ext_006B0C30
+        mov edx, dword ptr [esp + 0xc]
+        push edx
+        lea ecx, [esi + 0xb0]
+        call ext_00872754
+        mov dword ptr [eax], edi
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}

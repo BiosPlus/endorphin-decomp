@@ -449041,7 +449041,9 @@
       "0x006A881B",
       "0x006A882B"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:23:45Z"
   },
   {
     "va": "0x006A8840",
