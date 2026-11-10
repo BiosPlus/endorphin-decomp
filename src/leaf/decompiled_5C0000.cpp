@@ -518,3 +518,36 @@ extern "C" __declspec(naked) int __stdcall fn_005CFD20(const void* a1) {
         ret 4
     }
 }
+
+// [0x005C2BE0] sub_005C2BE0 (66 bytes)
+extern "C" void ext_005C1D50();
+extern "C" void ext_005BE9F0();
+extern "C" __declspec(naked) void __fastcall fn_005C2BE0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        cmp eax, 3
+        je set2
+        cmp eax, 1
+        jne not1
+        xor eax, eax
+        jmp compare
+    not1:
+        cmp eax, 4
+        jne compare
+        cmp dword ptr [ecx + 0x158], 0
+        jne compare
+    set2:
+        mov eax, 2
+    compare:
+        mov edx, dword ptr [ecx + 0x184]
+        cmp edx, eax
+        je done
+        mov dword ptr [esp + 4], eax
+        jge to_be9f0
+        jmp ext_005C1D50
+    to_be9f0:
+        jmp ext_005BE9F0
+    done:
+        ret 8
+    }
+}
