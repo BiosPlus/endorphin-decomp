@@ -996,3 +996,34 @@ extern "C" __declspec(naked) void* __cdecl fn_00662E70(void* ret, void* s) {
         ret
     }
 }
+
+// [0x006648C0] sub_006648C0 (72 bytes)
+extern "C" int mem_009251E0;
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void* __cdecl fn_006648C0(void* a1, double a2, int a3) {
+    __asm {
+        sub esp, 0x38
+        fld qword ptr [esp + 0x40]
+        mov eax, dword ptr [esp + 0x48]
+        push esi
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        push eax
+        push 0x9879c8
+        lea ecx, [esp + 0x18]
+        push 0x32
+        push ecx
+        mov dword ptr [esp + 0x1c], 0x0
+        call dword ptr [mem_009251E0]
+        mov esi, dword ptr [esp + 0x58]
+        add esp, 0x18
+        lea edx, [esp + 0x8]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        add esp, 0x38
+        ret
+    }
+}
