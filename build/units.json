@@ -426216,7 +426216,9 @@
       "0x0068EE91",
       "0x0068EEA8"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T07:52:20Z"
   },
   {
     "va": "0x0068EEC0",

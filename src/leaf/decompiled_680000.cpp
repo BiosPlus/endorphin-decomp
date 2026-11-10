@@ -380,3 +380,42 @@ extern "C" __declspec(naked) void __fastcall fn_006816F0(void* self) {
         ret
     }
 }
+
+// [0x0068EE80] sub_0068EE80 (64 bytes)
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) int __stdcall fn_0068EE80(void* arg) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, 0xb5ae40
+L_0068EE95:
+        push esi
+        push ebx
+        call ebp
+        add esp, 0x8
+        test al, al
+        jne L_0068EEB7
+        add esi, 0x1c
+        add edi, 0x1
+        cmp esi, 0xb5ae94
+        jl L_0068EE95
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x4
+L_0068EEB7:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
