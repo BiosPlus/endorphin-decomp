@@ -468,3 +468,32 @@ extern "C" void __cdecl fn_00476D60(int* first, int holeIndex, int topIndex, int
     }
     first[holeIndex] = value;
 }
+
+// [0x0047FFA0] sub_0047FFA0 (76 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0047FFA0(void* self, int edx_unused, float* out, const float* b) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        fld dword ptr [edx]
+        mov eax, dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx]
+        fsub dword ptr [esp + 0x8]
+        fstp dword ptr [eax]
+        fld dword ptr [edx + 0x4]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x4]
+        fsub dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [edx + 0x8]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x8]
+        fsub dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [edx + 0xc]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0xc]
+        fsub dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0xc]
+        ret 0x8
+    }
+}
