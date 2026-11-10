@@ -133,3 +133,24 @@ extern "C" __declspec(naked) void __fastcall fn_00658B60(void* self) {
         ret
     }
 }
+
+extern "C" int mem_00984790;
+
+// [0x00658B30] RelationshipHinge::vfunc_53 (40 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00658B30(void* self) {
+    __asm {
+        fld dword ptr [mem_00984790]
+        mov eax, dword ptr [ecx + 0x64]
+        sub esp, 0x8
+        fstp dword ptr [esp + 0x4]
+        fldz
+        fstp dword ptr [esp]
+        push eax
+        call ext_007C9C50
+        add esp, 0x4
+        push eax
+        call ext_007C9E80
+        add esp, 0xc
+        ret
+    }
+}
