@@ -629,3 +629,38 @@ extern "C" void __fastcall fn_00661AE0(void* self) {
     *(void**)(s + 0xc) = v;
     s[0] = 1;
 }
+
+// [0x00664BF0] sub_00664BF0 (50 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00664BF0(const unsigned char* first, const unsigned char* last, int (__cdecl* pred)(int)) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je empty
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+    loop_top:
+        movzx eax, byte ptr [esi]
+        push eax
+        call ebx
+        add esp, 4
+        test al, al
+        jne found
+        add esi, 1
+        cmp esi, edi
+        jne loop_top
+    found:
+        pop ebx
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    empty:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
