@@ -925,3 +925,32 @@ extern "C" __declspec(naked) int __fastcall fn_0040C010(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x00405160] sub_00405160 (63 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00405160(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x564]
+        test eax, eax
+        je L_cnt_00405160
+        mov edx, dword ptr [ecx + 0x568]
+        sub edx, eax
+        mov eax, 0x2e8ba2e9
+        imul edx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+    L_cnt_00405160:
+        mov edx, dword ptr [ecx + 0x684]
+        add eax, -0x1
+        cmp edx, eax
+        je L_fail_00405160
+        add edx, 0x1
+        mov dword ptr [ecx + 0x684], edx
+        mov al, 0x1
+        ret
+    L_fail_00405160:
+        xor al, al
+        ret
+    }
+}
