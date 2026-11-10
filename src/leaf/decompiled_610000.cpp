@@ -58,3 +58,23 @@ extern "C" void __fastcall fn_00610AF0(void* self) {
     *(float*)(p + 0x10) = *(float*)&mem_0093F8EC;
     *(float*)(p + 0x14) = *(float*)&mem_0093E990;
 }
+
+// [0x00610B20] sub_00610B20 (32 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_00678130();
+
+extern "C" __declspec(naked) void __fastcall fn_00610B20(void* self) {
+    __asm {
+        push ecx
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [esp]
+        call ext_00594000
+        fld dword ptr [esp]
+        push ecx
+        lea ecx, [eax + 0x2E0]
+        fstp dword ptr [esp]
+        call ext_00678130
+        pop ecx
+        ret
+    }
+}
