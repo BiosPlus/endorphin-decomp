@@ -159,3 +159,39 @@ extern "C" __declspec(naked) void* __fastcall fn_0049DF50(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0049AF70] NMData::State::vfunc_10_off_8 (84 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_0049AF70(void* self, int edx_unused, const float* a1) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        fld dword ptr [edx]
+        fld dword ptr [ecx + 0xe0]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp SHORT L49AF70_fail
+        fld dword ptr [edx]
+        fld dword ptr [ecx + 0xe8]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        jne SHORT L49AF70_fail
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [ecx + 0xe4]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp SHORT L49AF70_fail
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [ecx + 0xec]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        jne SHORT L49AF70_fail
+        mov al, 0x1
+        ret 0x4
+    L49AF70_fail:
+        xor al, al
+        ret 0x4
+    }
+}
