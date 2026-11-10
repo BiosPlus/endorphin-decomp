@@ -104,3 +104,42 @@ extern "C" __declspec(naked) void __fastcall fn_005C3840(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005C37E0] NMData::CollisionModelData::vfunc_5_off_C (82 bytes)
+extern "C" void ext_005B1B60();
+
+extern "C" __declspec(naked) void __fastcall fn_005C37E0(void* self, int edx_unused, const float* a1) {
+    __asm {
+        sub esp, 0x10
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [edi + 0x150]
+        test ecx, ecx
+        je done
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        push esi
+        call ext_005B1B60
+        fldz
+        cmp dword ptr [edi + 0x4], 0x0
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esi]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esi + 0x4]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esi + 0x8]
+        fstp dword ptr [esp + 0x10]
+        pop esi
+        je done
+        mov ecx, dword ptr [edi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x34]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+done:
+        pop edi
+        add esp, 0x10
+        ret 0x4
+    }
+}
