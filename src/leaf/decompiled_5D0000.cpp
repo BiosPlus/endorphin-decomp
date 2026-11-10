@@ -76,3 +76,13 @@ extern "C" float __fastcall fn_005D0710(void* self) {
     double b = get(p, 2);
     return (float)(a / b);
 }
+
+// [0x005D0740] sub_005D0740 (32 bytes)
+extern "C" void ext_005CFD20();
+
+extern "C" void __fastcall fn_005D0740(unsigned char* self, int edx_unused, int a1) {
+    typedef int (__stdcall *Fn)(int);
+    if (self[0x1f1] == 0) {
+        *(int*)(self + 0x25c) = ((Fn)ext_005CFD20)(a1);
+    }
+}
