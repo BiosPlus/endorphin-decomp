@@ -861,3 +861,35 @@ done:
         ret 0x8
     }
 }
+
+// [0x0065BDA0] sub_0065BDA0 (74 bytes)
+extern "C" int mem_00984920;
+extern "C" int mem_0093F7B8;
+extern "C" int mem_00944240;
+extern "C" __declspec(naked) void __fastcall fn_0065BDA0(void* self) {
+    __asm {
+        fldz
+        xor eax, eax
+        fst dword ptr [ecx + 0x4]
+        mov dword ptr [ecx + 0xc], eax
+        fld dword ptr [mem_00984920]
+        mov dword ptr [ecx + 0x10], eax
+        fstp dword ptr [ecx + 0x8]
+        mov byte ptr [ecx + 0x1c], al
+        fld dword ptr [mem_0093F7B8]
+        fst dword ptr [ecx + 0x14]
+        fstp dword ptr [ecx + 0x18]
+        fst dword ptr [ecx + 0x20]
+        fld dword ptr [mem_00944240]
+        fstp dword ptr [ecx + 0x24]
+        fstp dword ptr [ecx + 0x28]
+        mov dword ptr [ecx + 0x34], eax
+        fld1
+        mov dword ptr [ecx + 0x38], eax
+        fst dword ptr [ecx + 0x2c]
+        mov word ptr [ecx + 0x3c], ax
+        fstp dword ptr [ecx + 0x30]
+        mov dword ptr [ecx + 0x40], eax
+        ret
+    }
+}

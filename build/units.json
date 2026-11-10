@@ -392883,7 +392883,9 @@
       "0x0065BDBB",
       "0x0065BDCA"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T13:30:57Z"
   },
   {
     "va": "0x0065BDF0",
