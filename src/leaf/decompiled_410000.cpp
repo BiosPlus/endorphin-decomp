@@ -1251,3 +1251,40 @@ extern "C" void __fastcall fn_004102D0(void* self, int edx_unused, int a1) {
     int hwnd = *(int*)(p + 0x20);
     ((int (__stdcall*)(int, int, int, int))mem_00925668)(hwnd, 0, 0, 0x105);
 }
+
+// [0x0041CB00] sub_0041CB00 (64 bytes)
+extern "C" void ext_006AD180();
+extern "C" __declspec(naked) int __fastcall fn_0041CB00(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        push edi
+        call ext_006AD180
+        mov ecx, dword ptr [esp + 0x10]
+        test ecx, ecx
+        mov edi, eax
+        je short L_zero_0041CB00
+        call ext_006AD180
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x10]
+        push edi
+        call eax
+        pop edi
+        pop esi
+        ret 0x8
+L_zero_0041CB00:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        xor eax, eax
+        push eax
+        mov eax, dword ptr [edx + 0x10]
+        push edi
+        call eax
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
