@@ -324,3 +324,42 @@ extern "C" __declspec(naked) void* __cdecl fn_005224E0(void* begin, void* end, v
         ret
     }
 }
+
+// [0x00522530] sub_00522530 (67 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_00522530(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp+0x8]
+        push esi
+        mov esi, dword ptr [esp+0x10]
+        cmp ebx, esi
+        je empty_00522530
+        push edi
+        mov edi, dword ptr [esp+0x18]
+    loop_00522530:
+        mov eax, dword ptr [esi-0x24]
+        sub esi, 0x28
+        sub edi, 0x28
+        mov dword ptr [edi+0x4], eax
+        mov ecx, dword ptr [esi+0x8]
+        lea edx, [esi+0xc]
+        mov dword ptr [edi+0x8], ecx
+        push edx
+        lea ecx, [edi+0xc]
+        call dword ptr [mem_00924FDC]
+        cmp esi, ebx
+        jne loop_00522530
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    empty_00522530:
+        mov eax, dword ptr [esp+0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
