@@ -525,3 +525,40 @@ empty_range:
         ret
     }
 }
+
+// [0x00509C50] sub_00509C50 (61 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_00509C50() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je short empty_range
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+copy_back_loop:
+        sub esi, 0x24
+        lea eax, [esi + 0x4]
+        sub edi, 0x24
+        push eax
+        lea ecx, [edi + 0x4]
+        call dword ptr [mem_00924FDC]
+        fld dword ptr [esi + 0x20]
+        cmp esi, ebx
+        fstp dword ptr [edi + 0x20]
+        jne short copy_back_loop
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+empty_range:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
