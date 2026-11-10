@@ -235021,7 +235021,9 @@
       "0x0057FD13",
       "0x0057FD2A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:31:11Z"
   },
   {
     "va": "0x0057FD60",

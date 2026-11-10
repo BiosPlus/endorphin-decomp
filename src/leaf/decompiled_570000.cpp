@@ -408,3 +408,33 @@ extern "C" void __cdecl fn_0057BD30(Elem0057BD30* dst, Elem0057BD30* dst_end, El
         ++dst;
     } while (dst != dst_end);
 }
+
+// [0x0057FD10] sub_0057FD10 (68 bytes)
+extern "C" void ext_00696D90();
+
+extern "C" __declspec(naked) void __fastcall fn_0057FD10(void* self) {
+    __asm {
+        push -1
+        push 0x0089A6EB
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_00696D90
+        xor eax, eax
+        mov dword ptr [esi + 0x1C], eax
+        mov dword ptr [esi + 0x20], eax
+        mov dword ptr [esi + 0x24], eax
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr [esi + 0x2C], eax
+        mov dword ptr [esi + 0x30], eax
+        mov dword ptr [esi + 0x34], eax
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
