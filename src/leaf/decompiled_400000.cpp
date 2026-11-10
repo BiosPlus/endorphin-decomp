@@ -1044,3 +1044,20 @@ extern "C" __declspec(naked) void __fastcall fn_004077E0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0040EFA0] sub_0040EFA0 (69 bytes)
+extern "C" int mem_00925680;
+
+extern "C" void __fastcall fn_0040EFA0(void* self) {
+    typedef int (__stdcall *GetSysColorFn)(int);
+    GetSysColorFn getSysColor = (GetSysColorFn)mem_00925680;
+    char* p = (char*)self;
+    *(int*)(p + 0x54) = getSysColor(0x12);
+    *(int*)(p + 0x58) = getSysColor(0x0f);
+    *(int*)(p + 0x5c) = getSysColor(0x11);
+    *(int*)(p + 0x60) = getSysColor(0x0f);
+    *(int*)(p + 0x64) = getSysColor(0x16);
+    *(int*)(p + 0x68) = getSysColor(0x14);
+    *(int*)(p + 0x6c) = getSysColor(0x10);
+    *(int*)(p + 0x70) = getSysColor(0x15);
+}
