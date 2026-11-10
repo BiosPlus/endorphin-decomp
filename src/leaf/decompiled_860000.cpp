@@ -64,3 +64,41 @@ extern "C" __declspec(naked) int __cdecl fn_00867360(const char* s) {
         ret
     }
 }
+
+// [0x0086B1C0] sub_0086B1C0 (58 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086B1C0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ebx]
+        _emit 0xc1
+        _emit 0xe8
+        _emit 0x01
+        mov dword ptr [ebx], eax
+        mov eax, dword ptr [ebx + 0x4]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0x4], eax
+        mov eax, dword ptr [ebx + 0x8]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0x8], eax
+        mov eax, dword ptr [ebx + 0xc]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0xc], eax
+        mov eax, dword ptr [ebx + 0x10]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0x10], eax
+        jae done
+        or dword ptr [ebx], 0x20000000
+    done:
+        pop ebx
+        ret
+    }
+}
