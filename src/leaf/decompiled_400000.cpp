@@ -831,3 +831,34 @@ extern "C" int __fastcall fn_0040D9F0(int* self, int edx_unused, int* other) {
     }
     return (self[1] - other[1]) / 28;
 }
+
+// [0x00408050] sub_00408050 (54 bytes)
+extern "C" void ext_006A6010();
+extern "C" int mem_0093A0CC;
+
+extern "C" __declspec(naked) int __fastcall fn_00408050(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, ecx
+        push 0x1
+        mov ecx, esi
+        call ext_006A6010
+        mov ecx, dword ptr [mem_0093A0CC]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x38]
+        push ecx
+        mov ecx, esi
+        call edx
+        lea eax, [edi + 0x4c0]
+        test eax, eax
+        pop edi
+        pop esi
+        jne short L_nonzero
+        ret 0xc
+    L_nonzero:
+        mov eax, dword ptr [eax + 0x4]
+        ret 0xc
+    }
+}
