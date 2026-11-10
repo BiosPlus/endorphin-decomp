@@ -297,3 +297,13 @@ extern "C" __declspec(naked) void* __fastcall fn_004BA920(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x004B0ED0] sub_004B0ED0 (59 bytes)
+extern "C" void __fastcall fn_004B0ED0(void* self, int edx_unused, const float* bounds) {
+    if (bounds[0] < bounds[1] && bounds[2] < bounds[3]) {
+        *(float*)((char*)self + 0x1c) = bounds[0];
+        *(float*)((char*)self + 0x20) = bounds[1];
+        *(float*)((char*)self + 0x24) = bounds[2];
+        *(float*)((char*)self + 0x28) = bounds[3];
+    }
+}
