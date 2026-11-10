@@ -457,3 +457,14 @@ extern "C" __declspec(naked) void* __fastcall fn_004774B0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00476D60] sub_00476D60 (76 bytes)
+extern "C" void __cdecl fn_00476D60(int* first, int holeIndex, int topIndex, int value) {
+    int parent = (holeIndex - 1) / 2;
+    while (topIndex < holeIndex && first[parent] < value) {
+        first[holeIndex] = first[parent];
+        holeIndex = parent;
+        parent = (holeIndex - 1) / 2;
+    }
+    first[holeIndex] = value;
+}
