@@ -39,3 +39,33 @@ L_nonneg:
         ret 4
     }
 }
+
+// [0x00603370] Effector::vfunc_28 (56 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00603370(void* self, int edx_unused, float a1) {
+    __asm {
+        fld dword ptr [esp + 4]
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 64h]
+        push ecx
+        fstp dword ptr [esp]
+        call edx
+        mov eax, dword ptr [esi]
+        fld dword ptr [esp + 8]
+        mov edx, dword ptr [eax + 68h]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call edx
+        fld dword ptr [esp + 8]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 6Ch]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call edx
+        pop esi
+        ret 4
+    }
+}
