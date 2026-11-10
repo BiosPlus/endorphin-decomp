@@ -135,3 +135,35 @@ extern "C" __declspec(naked) void __cdecl fn_0086F0E0(unsigned int* p) {
         ret
     }
 }
+
+// [0x0086B180] sub_0086B180 (63 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086B180(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push ebx
+        push esi
+        push edi
+        mov si, 0x4
+        mov edi, dword ptr [edx]
+        and edi, 0x20000000
+        shr edi, 0x1d
+    loop_top:
+        movsx eax, si
+        lea ecx, [edx + 4*eax]
+        mov eax, dword ptr [ecx]
+        mov ebx, eax
+        add eax, eax
+        and ebx, 0x80000000
+        or eax, edi
+        shr ebx, 0x1f
+        mov dword ptr [ecx], eax
+        dec si
+        mov edi, ebx
+        jns loop_top
+        pop edi
+        and dword ptr [edx], 0x3fffffff
+        pop esi
+        pop ebx
+        ret
+    }
+}
