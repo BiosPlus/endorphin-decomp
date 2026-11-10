@@ -225,3 +225,45 @@ L_store_arg:
         ret 0x4
     }
 }
+
+// [0x005F5240] sub_005F5240 (64 bytes)
+// Linear search over 6 entries (stride 0x1c) starting at 0x00B46F80, comparing each
+// with the std::string argument via the imported basic_string operator==.
+// Returns the index of the first match, or 0 if none matched.
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) int __stdcall fn_005F5240(const void* name) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, 0xb46f80
+loop_top:
+        push ebx
+        push esi
+        call ebp
+        add esp, 0x8
+        test al, al
+        jne found
+        add esi, 0x1c
+        add edi, 0x1
+        cmp esi, 0xb47028
+        jl loop_top
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x4
+found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
