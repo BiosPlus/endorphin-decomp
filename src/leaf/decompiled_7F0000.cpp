@@ -386,3 +386,41 @@ extern "C" __declspec(naked) void __cdecl fn_007F67C0(void* p, int count) {
         ret
     }
 }
+
+// [0x007FC440] sub_007FC440 (80 bytes)
+// eax = matrix (floats), ecx = input vec3, edx = output vec3: out = M * in + translation
+extern "C" __declspec(naked) void __fastcall fn_007FC440(void* self) {
+    __asm {
+        fld dword ptr [eax + 0x10]
+        fmul dword ptr [ecx + 0x4]
+        fld dword ptr [eax]
+        fmul dword ptr [ecx]
+        faddp st(1), st
+        fld dword ptr [eax + 0x20]
+        fmul dword ptr [ecx + 0x8]
+        faddp st(1), st
+        fadd dword ptr [eax + 0x30]
+        fstp dword ptr [edx]
+        fld dword ptr [eax + 0x4]
+        fmul dword ptr [ecx]
+        fld dword ptr [eax + 0x14]
+        fmul dword ptr [ecx + 0x4]
+        faddp st(1), st
+        fld dword ptr [eax + 0x24]
+        fmul dword ptr [ecx + 0x8]
+        faddp st(1), st
+        fadd dword ptr [eax + 0x34]
+        fstp dword ptr [edx + 0x4]
+        fld dword ptr [eax + 0x8]
+        fmul dword ptr [ecx]
+        fld dword ptr [eax + 0x18]
+        fmul dword ptr [ecx + 0x4]
+        faddp st(1), st
+        fld dword ptr [eax + 0x28]
+        fmul dword ptr [ecx + 0x8]
+        faddp st(1), st
+        fadd dword ptr [eax + 0x38]
+        fstp dword ptr [edx + 0x8]
+        ret
+    }
+}
