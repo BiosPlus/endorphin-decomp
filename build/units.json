@@ -206486,7 +206486,9 @@
       "0x00544C0C",
       "0x00544C1B"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T14:13:36Z"
   },
   {
     "va": "0x00544C30",
