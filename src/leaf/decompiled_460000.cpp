@@ -1156,3 +1156,18 @@ done_00466360:
         ret
     }
 }
+
+// [0x0046A3C0] sub_0046A3C0 (55 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void* __fastcall fn_0046A3C0(void* self) {
+    typedef void* (__cdecl *alloc_fn)(unsigned int);
+    char* p = (char*)((alloc_fn)ext_006A5C62)(0x14);
+    if (p) *(int*)p = 0;
+    char* q = p + 4;
+    if (q) *(int*)q = 0;
+    char* r = p + 8;
+    if (r) *(int*)r = 0;
+    p[0x10] = 1;
+    p[0x11] = 0;
+    return p;
+}
