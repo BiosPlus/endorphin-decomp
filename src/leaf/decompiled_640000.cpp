@@ -880,3 +880,35 @@ extern "C" void __fastcall fn_00647D30(void* self, int edx_unused, const float* 
     int a = **(int**)((char*)self + 0xa4);
     ((void (__cdecl*)(int, float, float, float))ext_007C6970)(a, v[0], v[1], v[2]);
 }
+
+// [0x00649770] sub_00649770 (65 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00649770(const void* first, const void* last, void* dst) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        cmp edx, ecx
+        mov eax, dword ptr [esp + 0xc]
+        je done_00649770
+        push esi
+    copy_00649770:
+        mov esi, dword ptr [ecx - 0x18]
+        sub ecx, 0x18
+        mov dword ptr [eax - 0x18], esi
+        mov esi, dword ptr [ecx + 0x4]
+        sub eax, 0x18
+        cmp ecx, edx
+        mov dword ptr [eax + 0x4], esi
+        mov esi, dword ptr [ecx + 0x8]
+        mov dword ptr [eax + 0x8], esi
+        mov esi, dword ptr [ecx + 0xc]
+        mov dword ptr [eax + 0xc], esi
+        mov esi, dword ptr [ecx + 0x10]
+        mov dword ptr [eax + 0x10], esi
+        mov esi, dword ptr [ecx + 0x14]
+        mov dword ptr [eax + 0x14], esi
+        jne copy_00649770
+        pop esi
+    done_00649770:
+        ret
+    }
+}
