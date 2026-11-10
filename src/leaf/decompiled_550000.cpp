@@ -748,3 +748,44 @@ extern "C" __declspec(naked) void* __fastcall fn_0055C490(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0055E230] sub_0055E230 (73 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0055E230(float* first, float* last, float* dest) {
+    __asm {
+        mov eax, dword ptr [esp + 0Ch]
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        push edi
+        mov edi, dword ptr [esp + 0Ch]
+        cmp edi, esi
+        je short done
+        lea edx, [eax + 0Ch]
+        lea ecx, [esi + 0Ch]
+        jmp short loop_top
+        _emit 0x8D
+        _emit 0x9B
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    loop_top:
+        fld dword ptr [esi - 10h]
+        sub esi, 10h
+        fstp dword ptr [eax - 10h]
+        sub ecx, 10h
+        fld dword ptr [ecx - 8]
+        sub eax, 10h
+        sub edx, 10h
+        cmp esi, edi
+        fstp dword ptr [edx - 8]
+        fld dword ptr [ecx - 4]
+        fstp dword ptr [edx - 4]
+        fld dword ptr [ecx]
+        fstp dword ptr [edx]
+        jne short loop_top
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
