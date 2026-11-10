@@ -424,3 +424,39 @@ extern "C" __declspec(naked) void __fastcall fn_007FC440(void* self) {
         ret
     }
 }
+
+// [0x007F7FA0] sub_007F7FA0 (80 bytes)
+extern "C" void ext_006A7250();
+
+extern "C" __declspec(naked) void __fastcall fn_007F7FA0(void* self) {
+    __asm {
+        sub esp, 0x10
+        fld dword ptr [ecx]
+        fsub dword ptr [eax]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [ecx + 0x4]
+        fsub dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x8]
+        fsub dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0xc]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        call ext_006A7250
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        add esp, 0x10
+        ret
+    }
+}
