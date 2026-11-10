@@ -580,3 +580,34 @@ extern "C" void __cdecl fn_007D6220(void* self, unsigned int a1, int a2) {
     *reinterpret_cast<int*>(p + 0x10) = 1;
     *reinterpret_cast<int*>(p + 0x1c) = a2;
 }
+
+// [0x007D4860] sub_007D4860 (54 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D4860(void) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        je done
+        cmp dword ptr [esi + 0x10], 0x0
+        jne alt
+        mov eax, dword ptr [esi + 0x1c]
+        mov eax, dword ptr [eax + 0xc]
+        jmp docall
+    alt:
+        mov edx, dword ptr [esi + 0x1c]
+        mov eax, dword ptr [edx + 0x10]
+    docall:
+        push ecx
+        call eax
+        mov eax, dword ptr [esi + 0x4]
+        add esp, 0x4
+        test eax, eax
+        jle done
+        add eax, -0x1
+        mov dword ptr [esi + 0x4], eax
+    done:
+        pop esi
+        ret
+    }
+}
