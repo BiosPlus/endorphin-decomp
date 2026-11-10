@@ -475,3 +475,35 @@ extern "C" __declspec(naked) void __stdcall fn_004975E0(void* a1) {
         ret 0x4
     }
 }
+
+// [0x0049C080] ExprParser::PrimitiveProxyType<int>::vfunc_7 (61 bytes)
+// Two stack arguments: [esp+4] = pointer to an int-holder pointer, [esp+8] = float x.
+// Computes x + c when x >= 0, else x - c (c = double constant at 0x00993828),
+// passes the result in st(0) to sub_006A6DE0 (returns int in eax), and stores it
+// through **[esp+4]. ret 8.
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00993828;
+extern "C" __declspec(naked) void __fastcall fn_0049C080(void* self) {
+    __asm {
+        fldz
+        fld dword ptr [esp + 0x8]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        jne neg_0049C080
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [edx], eax
+        ret 0x8
+neg_0049C080:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [edx], eax
+        ret 0x8
+    }
+}

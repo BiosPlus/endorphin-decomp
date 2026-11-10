@@ -95403,7 +95403,9 @@
       "0x0049C0A9",
       "0x0049C0AE"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T06:49:37Z"
   },
   {
     "va": "0x0049C0C0",
