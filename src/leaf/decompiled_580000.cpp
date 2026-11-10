@@ -456,3 +456,50 @@ extern "C" __declspec(naked) void* __fastcall fn_00584B10(void* self) {
         ret
     }
 }
+
+// [0x00582A20] sub_00582A20 (73 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_00582A20(void* self) {
+    __asm {
+        fld1
+        push esi
+        fldz
+        push edi
+        xor edi, edi
+        xor esi, esi
+    L_outer:
+        xor edx, edx
+    L_inner:
+        cmp edi, edx
+        lea eax, [esi + edx]
+        jne L_off
+        fld st(1)
+        fcomp dword ptr [ecx + 4*eax]
+        jmp L_cmp
+    L_off:
+        fcom dword ptr [ecx + 4*eax]
+    L_cmp:
+        fnstsw ax
+        test ah, 0x44
+        jp L_fail
+        add edx, 1
+        cmp edx, 3
+        jl L_inner
+        add esi, 3
+        add edi, 1
+        cmp esi, 9
+        jl L_outer
+        fstp st(1)
+        pop edi
+        fstp st(0)
+        mov al, 1
+        pop esi
+        ret
+    L_fail:
+        fstp st(1)
+        pop edi
+        fstp st(0)
+        xor al, al
+        pop esi
+        ret
+    }
+}
