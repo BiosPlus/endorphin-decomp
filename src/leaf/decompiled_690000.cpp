@@ -792,3 +792,53 @@ extern "C" __declspec(naked) void __fastcall fn_00699950(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00696B70] sub_00696B70 (86 bytes)
+extern "C" int mem_009250E4;
+extern "C" int mem_009250E8;
+extern "C" int mem_009250EC;
+extern "C" __declspec(naked) bool __cdecl fn_00696B70(void* is, void* s) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+    L_00696B77:
+        mov ecx, esi
+        call dword ptr [mem_009250E4]
+        mov bl, al
+        cmp bl, 0x20
+        mov byte ptr [esp + 0x8], bl
+        je L_00696B8F
+        cmp bl, 0x9
+        jne L_00696B9A
+    L_00696B8F:
+        cmp bl, -1
+        jne L_00696B77
+    L_00696B94:
+        pop esi
+        xor al, al
+        pop ebx
+        pop ecx
+        ret
+    L_00696B9A:
+        cmp bl, -1
+        je L_00696B94
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_009250E8]
+        cmp bl, 0xa
+        je L_00696B94
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        push esi
+        call dword ptr [mem_009250EC]
+        add esp, 8
+        pop esi
+        mov al, 1
+        pop ebx
+        pop ecx
+        ret
+    }
+}
