@@ -83337,7 +83337,9 @@
       "0x0048AFB1",
       "0x0048AFBA"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:47:52Z"
   },
   {
     "va": "0x0048AFE0",

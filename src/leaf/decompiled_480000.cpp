@@ -764,3 +764,17 @@ L_skip2:
         ret
     }
 }
+
+// [0x0048AFA0] sub_0048AFA0 (56 bytes)
+extern "C" void __fastcall fn_0048AFA0(void* self) {
+    typedef void (__cdecl *PFN3)(int, int, void*);
+    typedef void (__cdecl *PFN1)(int);
+    int* p = (int*)self;
+    if (p[1] != 0) {
+        ((PFN3)ext_0048A120)(p[1], p[2], self);
+        ((PFN1)ext_006A5C5C)(p[1]);
+    }
+    p[1] = 0;
+    p[2] = 0;
+    p[3] = 0;
+}
