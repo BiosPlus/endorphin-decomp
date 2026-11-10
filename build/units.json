@@ -288371,7 +288371,9 @@
       "0x005CFD31",
       "0x005CFD48"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T07:51:18Z"
   },
   {
     "va": "0x005CFD60",
