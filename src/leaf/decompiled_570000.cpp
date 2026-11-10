@@ -115,3 +115,26 @@ done:
         ret 0Ch
     }
 }
+
+// [0x00572680] sub_00572680 (49 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_00572680(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x20]
+        test eax, eax
+        je skip
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    skip:
+        mov dword ptr [esi + 0x20], 0
+        mov dword ptr [esi + 0x24], 0
+        mov dword ptr [esi + 0x28], 0
+        mov ecx, esi
+        pop esi
+        jmp dword ptr [mem_00924FF4]
+    }
+}
