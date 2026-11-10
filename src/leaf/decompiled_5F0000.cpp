@@ -267,3 +267,27 @@ found:
         ret 0x4
     }
 }
+
+// [0x005FF240] sub_005FF240 (65 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005FF240(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x008A6088
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xC], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [eax + 0x28], ecx
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr [eax], 0x0096F154
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
