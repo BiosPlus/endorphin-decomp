@@ -585,3 +585,20 @@ extern "C" Pair004908A0* __cdecl fn_004908A0(Pair004908A0* out, int value, float
     out->second = best;
     return out;
 }
+
+// [0x004908E0] sub_004908E0 (59 bytes)
+// Returns {value, max} where max is the first-maximum float* in [begin, end) (begin if range < 2).
+struct Pair004908E0 { int first; float* second; };
+extern "C" Pair004908E0* __cdecl fn_004908E0(Pair004908E0* out, int value, float* begin, int unused_0x10, float* end) {
+    float* best = begin;
+    if (begin != end && begin + 1 != end) {
+        for (float* p = begin + 1; p != end; ++p) {
+            if (*best < *p) {
+                best = p;
+            }
+        }
+    }
+    out->first = value;
+    out->second = best;
+    return out;
+}
