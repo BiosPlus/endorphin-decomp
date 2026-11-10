@@ -222,3 +222,36 @@ extern "C" void __fastcall fn_00594750(void* self, int edx_unused, int a1) {
         }
     }
 }
+
+// [0x00596A30] sub_00596A30 (51 bytes)
+// __cdecl stack args: [esp+4]=out, [esp+0xc]=begin, [esp+0x14]=end, [esp+0x18]=fn, [esp+0x1c]=base
+extern "C" __declspec(naked) void fn_00596A30() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x20]
+        push ebp
+        mov ebp, dword ptr [esp + 0x20]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        cmp esi, edi
+        je L_596A55_done
+    L_596A48_loop:
+        mov ecx, dword ptr [esi]
+        add ecx, ebx
+        call ebp
+        add esi, 4
+        cmp esi, edi
+        jne L_596A48_loop
+    L_596A55_done:
+        mov eax, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        mov dword ptr [eax], ebp
+        pop ebp
+        mov dword ptr [eax + 4], ebx
+        pop ebx
+        ret
+    }
+}
