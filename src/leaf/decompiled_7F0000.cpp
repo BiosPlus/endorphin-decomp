@@ -260,3 +260,17 @@ extern "C" __declspec(naked) void __cdecl fn_007F4A60(float* a1, float* a2) {
         ret
     }
 }
+
+// [0x007F71F0] sub_007F71F0 (71 bytes)
+extern "C" int __cdecl fn_007F71F0(float* out, float a, float b, float c) {
+    if (a < b) {
+        *out = b;
+        return 1;
+    }
+    if (c < a) {
+        *out = c;
+        return 1;
+    }
+    *out = a;
+    return 0;
+}
