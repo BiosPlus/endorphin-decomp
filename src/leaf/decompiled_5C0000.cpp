@@ -424,3 +424,17 @@ extern "C" void __fastcall fn_005C8650(void* self) {
     p[0x158 / 4] = 0x965600;
     ext_005C83D0();
 }
+
+// [0x005C88B0] sub_005C88B0 (62 bytes)
+extern "C" void ext_005C83D0();
+extern "C" void __fastcall fn_005C88B0(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    *(unsigned int*)(p + 0x00) = 0x0096590c;
+    *(unsigned int*)(p + 0x04) = 0x009658c4;
+    *(unsigned int*)(p + 0x08) = 0x00965884;
+    *(unsigned int*)(p + 0x0c) = 0x00965834;
+    *(unsigned int*)(p + 0x150) = 0x00965820;
+    *(unsigned int*)(p + 0x154) = 0x00965818;
+    *(unsigned int*)(p + 0x158) = 0x0096580c;
+    ext_005C83D0();
+}
