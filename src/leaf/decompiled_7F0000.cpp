@@ -350,3 +350,39 @@ extern "C" __declspec(naked) void __cdecl fn_007F63D0(void* a1) {
         ret
     }
 }
+
+// [0x007F67C0] sub_007F67C0 (74 bytes)
+// Builds a free-list of 16-byte nodes (next pointer at +8) over p->base[0..count).
+extern "C" __declspec(naked) void __cdecl fn_007F67C0(void* p, int count) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        lea esi, [edi - 0x1]
+        test esi, esi
+        jle skip_loop
+        xor ecx, ecx
+        push ebp
+    build_loop:
+        mov eax, dword ptr [edx]
+        add eax, ecx
+        lea ebp, [eax + 0x10]
+        add ecx, 0x10
+        sub esi, 0x1
+        mov dword ptr [eax + 0x8], ebp
+        jne build_loop
+        pop ebp
+    skip_loop:
+        mov ecx, dword ptr [edx]
+        shl edi, 0x4
+        mov dword ptr [edi + ecx - 0x8], 0x0
+        mov eax, dword ptr [edx]
+        pop edi
+        mov dword ptr [edx + 0x4], 0x0
+        mov dword ptr [edx + 0x8], eax
+        mov dword ptr [edx + 0xc], 0x0
+        pop esi
+        ret
+    }
+}
