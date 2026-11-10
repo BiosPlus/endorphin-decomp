@@ -43,3 +43,27 @@ extern "C" __declspec(naked) int __fastcall fn_0055BE30(void* self) {
         ret
     }
 }
+
+// [0x005846F0] AcclaimIO::vfunc_48 (59 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005846F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xe4]
+        call edx
+        test al, 0x1
+        je short L_else
+        mov eax, dword ptr [esi + 0x46c]
+        mov edx, dword ptr [eax + 0xc0]
+        lea ecx, [esi + 0x46c]
+        pop esi
+        jmp edx
+    L_else:
+        mov eax, dword ptr [esi + 0x964]
+        mov edx, dword ptr [eax + 0xc0]
+        lea ecx, [esi + 0x964]
+        pop esi
+        jmp edx
+    }
+}
