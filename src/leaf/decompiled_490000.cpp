@@ -602,3 +602,43 @@ extern "C" Pair004908E0* __cdecl fn_004908E0(Pair004908E0* out, int value, float
     out->second = best;
     return out;
 }
+
+// [0x0049DB60] sub_0049DB60 (62 bytes)
+// __cdecl find over a singly linked node list: walks from first (node->next at +0) until last,
+// stopping at the first node whose string at +0x24 compares equal to key via the imported
+// std::string operator== (mem_00924FC4). Writes {first, found} into ret and returns ret.
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void* __cdecl fn_0049DB60(int* ret, int* first, int* last, int a4, int a5, const void* key) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00924FC4]
+        push ebp
+        mov ebp, dword ptr [esp + 0x1c]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x28]
+    loop_top:
+        cmp esi, ebp
+        je done
+        lea eax, [esi + 0x24]
+        push edi
+        push eax
+        call ebx
+        add esp, 8
+        test al, al
+        jne done
+        mov esi, dword ptr [esi]
+        jmp loop_top
+    done:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x18]
+        pop edi
+        mov dword ptr [eax + 4], esi
+        pop esi
+        pop ebp
+        mov dword ptr [eax], ecx
+        pop ebx
+        ret
+    }
+}
