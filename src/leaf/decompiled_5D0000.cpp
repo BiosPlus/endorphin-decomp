@@ -209,3 +209,28 @@ L_skip_5D9F30:
         ret
     }
 }
+
+// [0x005DC930] sub_005DC930 (37 bytes)
+extern "C" void ext_005D9F30();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_005DC930(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x44]
+        test esi, esi
+        je L_skip_5DC930
+        mov ecx, esi
+        call ext_005D9F30
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+L_skip_5DC930:
+        mov dword ptr [edi + 0x44], 0
+        pop edi
+        pop esi
+        ret
+    }
+}
