@@ -1133,3 +1133,26 @@ extern "C" void __fastcall fn_00464630(void* self) {
     ((ThisFn)mem_009242F4)((char*)self + 0xa8);
     ((ThisFn)ext_006A6916)(self);
 }
+
+// [0x00466360] sub_00466360 (55 bytes)
+// C++ cannot keep the vtable in edx while calling through eax, so use naked asm.
+extern "C" __declspec(naked) void __fastcall fn_00466360(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00594000
+        mov eax, dword ptr [eax + 0x26c]
+        mov dword ptr [eax + 0x558], 0x0
+        mov ecx, dword ptr [esi + 0xd8]
+        test ecx, ecx
+        je SHORT done_00466360
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x4]
+        push 0x1
+        call eax
+        mov dword ptr [esi + 0xd8], 0x0
+done_00466360:
+        pop esi
+        ret
+    }
+}
