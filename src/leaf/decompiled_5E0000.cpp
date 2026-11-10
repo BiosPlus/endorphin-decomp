@@ -318,3 +318,22 @@ extern "C" __declspec(naked) void __fastcall fn_005E29C0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void __fastcall ext_005E1350(void* a1);
+extern "C" int mem_00925134;
+
+// [0x005ECC50] sub_005ECC50 (67 bytes)
+// __thiscall, ret 0: validates the vector at this+0x1d4..0x1d8 (calling _invalid_parameter_noinfo on bad bounds), then calls 0x005E1350 on each element.
+extern "C" void __fastcall fn_005ECC50(void* self) {
+    typedef void (*invalid_fn)();
+    invalid_fn bad = (invalid_fn)mem_00925134;
+    unsigned int* end = *(unsigned int**)((char*)self + 0x1d8);
+    unsigned int* begin = *(unsigned int**)((char*)self + 0x1d4);
+    if (begin > end) bad();
+    unsigned int* p = *(unsigned int**)((char*)self + 0x1d4);
+    if (p > *(unsigned int**)((char*)self + 0x1d8)) bad();
+    while (p != end) {
+        ext_005E1350((void*)*p);
+        ++p;
+    }
+}
