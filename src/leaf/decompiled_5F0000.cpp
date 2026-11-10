@@ -364,3 +364,31 @@ extern "C" __declspec(naked) void* __fastcall fn_005F5350(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x005F5410] sub_005F5410 (81 bytes)
+extern "C" int mem_00B46878;
+extern "C" float mem_00B4686C;
+extern "C" float mem_00B46870;
+extern "C" float mem_00B46874;
+
+extern "C" __declspec(naked) void __fastcall fn_005F5410(void* self) {
+    __asm {
+        mov eax, 1
+        test byte ptr [mem_00B46878], al
+        jne skip_init
+        fldz
+        or dword ptr [mem_00B46878], eax
+        fst dword ptr [mem_00B46874]
+        fst dword ptr [mem_00B46870]
+        fstp dword ptr [mem_00B4686C]
+    skip_init:
+        fld dword ptr [ecx + 0x170]
+        mov eax, offset mem_00B4686C
+        fstp dword ptr [mem_00B4686C]
+        fld dword ptr [ecx + 0x174]
+        fstp dword ptr [mem_00B46870]
+        fld dword ptr [ecx + 0x178]
+        fstp dword ptr [mem_00B46874]
+        ret
+    }
+}
