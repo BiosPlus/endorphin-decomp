@@ -119,3 +119,32 @@ extern "C" __declspec(naked) void* __cdecl fn_0060B8D0(void* a1, int a2) {
         ret
     }
 }
+
+// [0x0060C4C0] sub_0060C4C0 (77 bytes)
+extern "C" void ext_0060BCC0();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0060C4C0(void* self) {
+    __asm {
+        push -1
+        push 0x008A8748
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        lea ecx, [esi + 0x60]
+        mov dword ptr [esp + 0x10], 0x0
+        call dword ptr [mem_00924FF4]
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_0060BCC0
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
