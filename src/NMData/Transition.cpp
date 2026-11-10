@@ -145,3 +145,36 @@ extern "C" __declspec(naked) void __fastcall fn_00497680(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004991A0] NMData::Transition::vfunc_15_off_8 (59 bytes)
+extern "C" void ext_00499130();
+extern "C" void ext_00671F30();
+
+extern "C" __declspec(naked) void* __fastcall fn_004991A0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        sub eax, 0x2
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0x0
+        je L_eq
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_eq:
+        add ecx, 0x60
+        push ecx
+        push esi
+        call ext_00499130
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
