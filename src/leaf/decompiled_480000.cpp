@@ -778,3 +778,26 @@ extern "C" void __fastcall fn_0048AFA0(void* self) {
     p[2] = 0;
     p[3] = 0;
 }
+
+// [0x0048C960] sub_0048C960 (56 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0048C960(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x34]
+        add esi, 0x4
+        test eax, eax
+        je skip_0048C960
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+skip_0048C960:
+        mov ecx, esi
+        mov dword ptr [esi + 0x30], 0x0
+        mov dword ptr [esi + 0x34], 0x0
+        mov dword ptr [esi + 0x38], 0x0
+        call ext_00519CE0
+        pop esi
+        ret 0x4
+    }
+}
