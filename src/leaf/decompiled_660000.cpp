@@ -782,3 +782,31 @@ zero_path:
         ret 0x4
     }
 }
+
+// [0x00667140] sub_00667140 (64 bytes)
+// __fastcall-style, ret 0: allocates 0xC4 bytes via 0x006A5C62 (cdecl), zeroes the dwords at +0, +4 and +8
+// (each store guarded by a null test), sets byte +0xC0 to 1 and byte +0xC1 to 0.
+extern "C" __declspec(naked) void __fastcall fn_00667140(void* self) {
+    __asm {
+        push 0xc4
+        call ext_006A5C62
+        add esp, 4
+        test eax, eax
+        je L_skip0
+        mov dword ptr [eax], 0
+L_skip0:
+        lea ecx, [eax + 4]
+        test ecx, ecx
+        je L_skip1
+        mov dword ptr [ecx], 0
+L_skip1:
+        lea ecx, [eax + 8]
+        test ecx, ecx
+        je L_skip2
+        mov dword ptr [ecx], 0
+L_skip2:
+        mov byte ptr [eax + 0xc0], 1
+        mov byte ptr [eax + 0xc1], 0
+        ret
+    }
+}
