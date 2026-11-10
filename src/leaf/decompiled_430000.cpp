@@ -3024,3 +3024,23 @@ extern "C" __declspec(naked) void __fastcall fn_0043E640(void* self) {
         ret
     }
 }
+
+// [0x004369D0] sub_004369D0 (72 bytes)
+extern "C" void __fastcall fn_004369D0(void* self) {
+    unsigned int* s = (unsigned int*)self;
+    unsigned int head = s[1];
+    unsigned int eax = ((unsigned int*)head)[0];
+    ((unsigned int*)head)[0] = head;
+    ((unsigned int*)s[1])[1] = s[1];
+    s[2] = 0;
+    if (eax != s[1]) {
+        unsigned int edi;
+        do {
+            edi = ((unsigned int*)eax)[0];
+            ext_006A5C5C((void*)eax);
+            eax = edi;
+        } while (edi != s[1]);
+    }
+    ext_006A5C5C((void*)s[1]);
+    s[1] = 0;
+}
