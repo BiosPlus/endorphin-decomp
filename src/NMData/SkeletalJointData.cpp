@@ -31,3 +31,40 @@ extern "C" __declspec(naked) void __fastcall fn_005F02B0(void* self) {
         ret 0x4
     }
 }
+
+// [0x005E0970] NMData::SkeletalJointData::vfunc_60 (50 bytes)
+extern "C" __declspec(naked) int __fastcall fn_005E0970(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        xor ebx, ebx
+        mov edi, ecx
+        xor esi, esi
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    loop_top:
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0xdc]
+        push esi
+        mov ecx, edi
+        call edx
+        test al, al
+        je skip_inc
+        add ebx, 1
+    skip_inc:
+        add esi, 1
+        cmp esi, 6
+        jl loop_top
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        ret
+    }
+}
