@@ -628,3 +628,49 @@ extern "C" void __cdecl fn_0059DE60(unsigned int* first, int holeIndex, int topI
     }
     first[holeIndex] = value;
 }
+
+// [0x00596C50] sub_00596C50 (76 bytes)
+// Loops over the pointer range [this+0x23c, this+0x240) calling ext_005A3610 on each element,
+// then tail-calls ext_00594020(this, 2). The debug iterator guards call the
+// _invalid_parameter_noinfo pointer held in ebp; kept for byte parity.
+extern "C" void ext_00594020();
+extern "C" void ext_005A3610();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00596C50(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov ebx, ecx
+        push edi
+        mov edi, dword ptr [ebx + 0x240]
+        cmp dword ptr [ebx + 0x23c], edi
+        jbe mv_guard1
+        call ebp
+    mv_guard1:
+        mov esi, dword ptr [ebx + 0x23c]
+        cmp esi, dword ptr [ebx + 0x240]
+        jbe mv_guard2
+        call ebp
+    mv_guard2:
+        cmp esi, edi
+        je mv_done
+    mv_loop:
+        mov ecx, dword ptr [esi]
+        call ext_005A3610
+        add esi, 4
+        cmp esi, edi
+        jne mv_loop
+    mv_done:
+        push 2
+        mov ecx, ebx
+        call ext_00594020
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
