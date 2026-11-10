@@ -536,3 +536,34 @@ extern "C" __declspec(naked) void __fastcall fn_007DB9E0(void* self) {
         ret
     }
 }
+
+// [0x007D6290] sub_007D6290 (52 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D6290(void* self, int state) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov eax, dword ptr [esi + 0x10]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp eax, edi
+        je done
+        cmp dword ptr [esi + 0x14], 0
+        jne store
+        cmp eax, 1
+        jne store
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je store
+        mov ecx, dword ptr [esi + 0x1c]
+        mov edx, dword ptr [ecx + 0x10]
+        push eax
+        call edx
+        add esp, 4
+    store:
+        mov dword ptr [esi + 0x10], edi
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
