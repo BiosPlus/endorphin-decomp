@@ -265595,7 +265595,9 @@
       "0x005B1A91",
       "0x005B1A9B"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T07:56:46Z"
   },
   {
     "va": "0x005B1AB0",
