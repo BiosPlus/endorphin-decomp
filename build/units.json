@@ -278351,7 +278351,9 @@
       "0x005C39E2",
       "0x005C39E7"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T06:34:59Z"
   },
   {
     "va": "0x005C39F0",
