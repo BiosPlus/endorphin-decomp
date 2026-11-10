@@ -113,3 +113,23 @@ L_clamp_hi:
         ret 0xc
     }
 }
+
+// [0x00658B60] RelationshipHinge::vfunc_1 (34 bytes)
+extern "C" void ext_007C9E80();
+
+extern "C" __declspec(naked) void __fastcall fn_00658B60(void* self) {
+    __asm {
+        fldz
+        mov eax, dword ptr [ecx + 0x64]
+        sub esp, 0x8
+        fst dword ptr [esp + 0x4]
+        fstp dword ptr [esp]
+        push eax
+        call ext_007C9C50
+        add esp, 0x4
+        push eax
+        call ext_007C9E80
+        add esp, 0xc
+        ret
+    }
+}

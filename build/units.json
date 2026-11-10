@@ -390370,7 +390370,9 @@
       "0x00658B71",
       "0x00658B7A"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T08:19:20Z"
   },
   {
     "va": "0x00658B90",
