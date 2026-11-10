@@ -173,3 +173,39 @@ extern "C" LB20Entry_005DF2B0* __cdecl fn_005DF2B0(LB20Entry_005DF2B0* first, LB
     }
     return it;
 }
+
+// [0x005D9F30] sub_005D9F30 (81 bytes)
+namespace {
+struct Decomp5D9F30Obj { virtual ~Decomp5D9F30Obj() {} };
+struct Decomp5D9F30Owner { int pad; Decomp5D9F30Obj* m_p; };
+}
+extern "C" void __fastcall ext_005D14A0();
+extern "C" __declspec(naked) void __fastcall fn_005D9F30(void* self) {
+    __asm {
+        push -1
+        push 0x8a562b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        mov dword ptr [esp + 0x10], 0
+        call ext_005D14A0
+        mov ecx, dword ptr [esi + 4]
+        test ecx, ecx
+        mov dword ptr [esp + 0x10], 0xffffffff
+        pop esi
+        je L_skip_5D9F30
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+L_skip_5D9F30:
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
