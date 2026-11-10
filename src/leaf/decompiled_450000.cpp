@@ -701,3 +701,14 @@ extern "C" void __fastcall fn_004553D0(void* self) {
         f(p + 0xc8, 0);
     }
 }
+
+// [0x0045BCF0] sub_0045BCF0 (56 bytes)
+extern "C" int mem_00925694;
+typedef int (__stdcall *SendMessageAFn)(int, unsigned int, int, int);
+
+extern "C" bool __fastcall fn_0045BCF0(void* self) {
+    SendMessageAFn send = (SendMessageAFn)mem_00925694;
+    int first = send(*(int*)((char*)self + 0x20), 0x110a, 9, 0);
+    int second = send(*(int*)((char*)self + 0x20), 0x110a, 0, 0);
+    return first == second;
+}
