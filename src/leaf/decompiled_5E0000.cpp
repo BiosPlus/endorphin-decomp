@@ -375,3 +375,42 @@ extern "C" __declspec(naked) void __fastcall fn_005E28D0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005E4D90] sub_005E4D90 (74 bytes)
+// __thiscall-style, ret 0x14: allocates 0x54 bytes via 0x006A5C62 (cdecl), stores arg0/arg1/arg2 at +0/+4/+8,
+// copies *arg3 to +0xc and 16 dwords from arg3+4 to +0x10, then stores arg4 byte at +0x50 and zero at +0x51.
+// Returns the block pointer (or NULL if allocation failed).
+extern "C" void* __cdecl ext_006A5C62(int size);
+
+extern "C" __declspec(naked) void* __fastcall fn_005E4D90(void* self, int edx_unused, unsigned int a1, unsigned int a2,
+                                        unsigned int a3, const int* a4, unsigned char a5) {
+    __asm {
+        push 0x54
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je done
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x8], ecx
+        mov ecx, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [ecx]
+        lea esi, [ecx + 0x4]
+        mov dword ptr [eax + 0xc], edx
+        lea edi, [eax + 0x10]
+        mov ecx, 0x10
+        rep movsd
+        mov cl, byte ptr [esp + 0x1c]
+        pop edi
+        mov byte ptr [eax + 0x50], cl
+        mov byte ptr [eax + 0x51], 0x0
+        pop esi
+    done:
+        ret 0x14
+    }
+}
