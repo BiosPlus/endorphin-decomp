@@ -360,3 +360,29 @@ extern "C" __declspec(naked) void __fastcall fn_00595C50(void* self) {
         ret
     }
 }
+
+// [0x0059DC60] sub_0059DC60 (55 bytes)
+extern "C" void ext_00661A90();
+extern "C" __declspec(naked) void __fastcall fn_0059DC60(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        test esi, esi
+        je L_null_0059DC60
+        mov ecx, dword ptr [esp + 0x8]
+        lea eax, [esi + 0x158]
+        push eax
+        call ext_00661A90
+        mov dword ptr [esi + 0x61c], eax
+        pop esi
+        ret 0x4
+    L_null_0059DC60:
+        mov ecx, dword ptr [esp + 0x8]
+        xor eax, eax
+        push eax
+        call ext_00661A90
+        mov dword ptr [esi + 0x61c], eax
+        pop esi
+        ret 0x4
+    }
+}
