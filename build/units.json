@@ -199677,7 +199677,9 @@
       "0x0053991B",
       "0x0053993B"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T07:13:09Z"
   },
   {
     "va": "0x00539940",

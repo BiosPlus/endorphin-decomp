@@ -945,3 +945,22 @@ extern "C" __declspec(naked) void __fastcall fn_0053F9D0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00539900] sub_00539900 (63 bytes)
+extern "C" void ext_0063E006();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_00532B40();
+extern "C" void __fastcall fn_00539900(void* self) {
+    int* p = reinterpret_cast<int*>(self);
+    void* quadric = reinterpret_cast<void*>(p[5]);
+    p[0] = 0x95526c;
+    ((void (__stdcall*)(void*))ext_0063E006)(quadric);
+    void* q = reinterpret_cast<void*>(p[14]);
+    if (q) {
+        ((void (__cdecl*)(void*))ext_006A5C5C)(q);
+    }
+    p[14] = 0;
+    p[15] = 0;
+    p[16] = 0;
+    ((void (__fastcall*)(void*))ext_00532B40)(self);
+}
