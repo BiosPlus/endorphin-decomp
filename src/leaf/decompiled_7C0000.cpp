@@ -1600,3 +1600,36 @@ extern "C" __declspec(naked) void __cdecl fn_007C9D30(char* self, float x) {
         ret
     }
 }
+
+// [0x007CCB60] sub_007CCB60 (69 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007CCB60(void* self, float a1) {
+    __asm {
+        fldz
+        fld dword ptr [esp + 0x8]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp short L_nonneg
+        fstp st(0)
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        jmp short L_store
+    L_nonneg:
+        fstp st(1)
+    L_store:
+        mov ecx, dword ptr [esp + 0x4]
+        fst dword ptr [ecx + 0x10]
+        fabs
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fcomp dword ptr [mem_0094CE80]
+        fnstsw ax
+        test ah, 0x41
+        jnp short L_below
+        or dword ptr [ecx + 0xc], 0x2
+        ret
+    L_below:
+        and dword ptr [ecx + 0xc], -0x3
+        ret
+    }
+}
