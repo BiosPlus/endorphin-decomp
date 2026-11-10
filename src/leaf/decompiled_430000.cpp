@@ -3240,3 +3240,43 @@ done_4305A0:
         ret 4
     }
 }
+
+// [0x00434040] sub_00434040 (80 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_00468660();
+extern "C" int mem_00925688;
+
+extern "C" __declspec(naked) void __fastcall fn_00434040(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x7c]
+        call eax
+        mov bl, al
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x80]
+        test bl, bl
+        sete cl
+        push ecx
+        mov ecx, eax
+        call edx
+        mov eax, dword ptr [esi + 0x108]
+        mov ecx, dword ptr [eax + 0x20]
+        push 0x1
+        push 0x0
+        push ecx
+        call dword ptr [mem_00925688]
+        pop esi
+        pop ebx
+        ret
+    }
+}
