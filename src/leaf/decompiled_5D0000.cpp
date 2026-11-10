@@ -148,3 +148,28 @@ extern "C" void __fastcall fn_005D00C0(void* self, int edx_unused, float* out) {
     out[2] = m.m[6];
     out[3] = m.m[7];
 }
+
+// [0x005DF2B0] sub_005DF2B0 (80 bytes)
+struct LB20Entry_005DF2B0 {
+    int key;
+    unsigned int rest[4];
+};
+
+extern "C" LB20Entry_005DF2B0* __cdecl fn_005DF2B0(LB20Entry_005DF2B0* first, LB20Entry_005DF2B0* last, const int* value) {
+    LB20Entry_005DF2B0* it = first;
+    int count = (int)(last - first);
+    if (count > 0) {
+        int key = *value;
+        do {
+            int half = count / 2;
+            LB20Entry_005DF2B0* mid = it + half;
+            if (mid->key < key) {
+                it = mid + 1;
+                count = count - half - 1;
+            } else {
+                count = half;
+            }
+        } while (count > 0);
+    }
+    return it;
+}
