@@ -25712,7 +25712,9 @@
       "0x0042FC94",
       "0x0042FC9B"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:18:49Z"
   },
   {
     "va": "0x0042FCD0",
