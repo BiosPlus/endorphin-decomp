@@ -3,6 +3,8 @@
 extern "C" int mem_00924FF0;
 extern "C" int mem_009251F0;
 extern "C" int mem_0093F958;
+extern "C" int mem_00993828;
+extern "C" void ext_006A6DE0();
 
 // [0x004975B0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_1 (33 bytes)
 // One stack argument (pointer to a string handle). Calls the imported
@@ -505,5 +507,32 @@ neg_0049C080:
         mov edx, dword ptr [ecx]
         mov dword ptr [edx], eax
         ret 0x8
+    }
+}
+
+// [0x00497930] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_2 (71 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00497930(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 0x8]
+        fldz
+        add esp, 0x4
+        fld dword ptr [esp + 0x4]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        jne short L_neg
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        ret 0x4
+    L_neg:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        ret 0x4
     }
 }
