@@ -1009,3 +1009,38 @@ extern "C" void __fastcall fn_0040F2B0(void* self) {
         ((void (__cdecl *)(int))ext_006A6118)(buf);
     }
 }
+
+// [0x004077E0] sub_004077E0 (69 bytes)
+extern "C" int mem_0092431C;
+extern "C" int mem_00924300;
+extern "C" int mem_00924080;
+
+extern "C" __declspec(naked) void __fastcall fn_004077E0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        lea eax, [esp + 0x8]
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call dword ptr [mem_0092431C]
+        push eax
+        mov ecx, edi
+        call dword ptr [mem_00924300]
+        mov ecx, dword ptr [esi + 0x8]
+        push eax
+        push ecx
+        call dword ptr [mem_00924080]
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ecx
+        pop esi
+        add esp, 0x8
+        ret 0x8
+    }
+}
