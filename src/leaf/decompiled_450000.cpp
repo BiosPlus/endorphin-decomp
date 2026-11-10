@@ -796,3 +796,22 @@ extern "C" void __fastcall fn_00456210(void* self, int edx_unused, int a1, int a
         ((void (__thiscall*)(void*))ext_006A5EA8)(self);
     }
 }
+
+// [0x00458290] sub_00458290 (32 bytes)
+extern "C" void ext_00456210();
+
+extern "C" __declspec(naked) void __fastcall fn_00458290(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        cmp byte ptr [ecx + 0x128], 0
+        jne skip_call
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x8]
+        push eax
+        mov eax, dword ptr [esp + 0x8]
+        push edx
+        push eax
+        call ext_00456210
+skip_call:
+        ret 0xc
+    }
+}
