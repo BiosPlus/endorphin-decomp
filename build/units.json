@@ -413364,7 +413364,9 @@
       "0x0067B3DA",
       "0x0067B3FE"
     ],
-    "status": "todo"
+    "status": "matched",
+    "matched_by": "claude-haiku-5.5",
+    "matched_at": "2026-11-10T05:36:47Z"
   },
   {
     "va": "0x0067B410",
