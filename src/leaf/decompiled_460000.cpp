@@ -1344,3 +1344,26 @@ L_END_4629E0:
         ret 8
     }
 }
+
+extern "C" void ext_00447510();
+extern "C" int mem_009255E0;
+extern "C" int mem_00924FF0;
+
+// [0x00462A20] sub_00462A20 (63 bytes)
+typedef int (__stdcall *MsgBoxFn)(void*, const char*, const char*, unsigned int);
+typedef const char* (__thiscall *CStrFn)(void*);
+typedef void (__thiscall *SubFn)(void*, const char*);
+
+extern "C" void __fastcall fn_00462A20(void* self, int edx_unused, void* a1, int mode) {
+    if (mode == 0) {
+        return;
+    }
+    if (mode != 2) {
+        int r = ((MsgBoxFn)mem_009255E0)(0, (const char*)0x938e00, (const char*)0x938d28, 4);
+        if (r != 6) {
+            return;
+        }
+    }
+    const char* s = ((CStrFn)mem_00924FF0)(a1);
+    ((SubFn)ext_00447510)(*(void**)self, s);
+}
