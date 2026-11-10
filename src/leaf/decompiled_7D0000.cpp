@@ -642,3 +642,17 @@ extern "C" __declspec(naked) void __cdecl fn_007D4720(void* self) {
         ret
     }
 }
+
+// [0x007D6360] sub_007D6360 (55 bytes)
+extern "C" void __cdecl fn_007D6360(char* self, void* a2) {
+    if (*(int*)(self + 0x14) != 0) {
+        if (*(int*)(self + 0x10) == 2) {
+            void* obj = *(void**)(self + 0x1c);
+            void (*fp)(void*) = *(void (**)(void*))((char*)obj + 0x10);
+            fp(a2);
+            *(int*)(self + 0x0) = 0;
+            *(int*)(self + 0x4) = 0;
+        }
+        *(int*)(self + 0x14) = 0;
+    }
+}
