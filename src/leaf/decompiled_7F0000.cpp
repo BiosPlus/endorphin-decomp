@@ -192,3 +192,37 @@ unordered:
         ret
     }
 }
+
+// [0x007F8500] sub_007F8500 (65 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007F8500(void* a, void* b) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x10]
+        mov ecx, dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [ecx + 0x10]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x8]
+        _emit 0xd8
+        _emit 0xd1
+        fnstsw ax
+        test ah, 0x41
+        jne L_cmp_eq
+        fstp st(1)
+        or eax, -1
+        fstp st(0)
+        ret
+    L_cmp_eq:
+        _emit 0xde
+        _emit 0xd9
+        fnstsw ax
+        test ah, 0x5
+        jp L_zero
+        mov eax, 0x1
+        ret
+    L_zero:
+        xor eax, eax
+        ret
+    }
+}
