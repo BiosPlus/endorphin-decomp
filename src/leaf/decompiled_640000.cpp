@@ -912,3 +912,38 @@ extern "C" __declspec(naked) void* __cdecl fn_00649770(const void* first, const 
         ret
     }
 }
+
+// [0x0064B840] sub_0064B840 (67 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0064B840(void* first, void* last, void* result) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 8]
+        cmp ecx, edx
+        mov eax, dword ptr [esp + 0Ch]
+        je done
+        push esi
+loop_top:
+        test eax, eax
+        je skip
+        mov esi, dword ptr [ecx]
+        mov dword ptr [eax], esi
+        mov esi, dword ptr [ecx + 4]
+        mov dword ptr [eax + 4], esi
+        mov esi, dword ptr [ecx + 8]
+        mov dword ptr [eax + 8], esi
+        mov esi, dword ptr [ecx + 0Ch]
+        mov dword ptr [eax + 0Ch], esi
+        mov esi, dword ptr [ecx + 10h]
+        mov dword ptr [eax + 10h], esi
+        mov esi, dword ptr [ecx + 14h]
+        mov dword ptr [eax + 14h], esi
+skip:
+        add ecx, 18h
+        add eax, 18h
+        cmp ecx, edx
+        jne loop_top
+        pop esi
+done:
+        ret
+    }
+}
