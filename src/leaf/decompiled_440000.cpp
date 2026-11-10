@@ -1882,3 +1882,25 @@ extern "C" __declspec(naked) void __fastcall fn_00447DD0(void* self) {
         ret
     }
 }
+
+// [0x0044BFB0] sub_0044BFB0 (42 bytes)
+extern "C" void ext_00530C00();
+extern "C" int mem_009256E0;
+extern "C" __declspec(naked) void __fastcall fn_0044BFB0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        cmp dword ptr [ecx + 0x64], 0x0
+        mov byte ptr [ecx + 0x78], 0x0
+        je skip_call
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [ecx + 0x68]
+        push edx
+        push eax
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        call ext_00530C00
+skip_call:
+        call dword ptr [mem_009256E0]
+        ret 0xc
+    }
+}
