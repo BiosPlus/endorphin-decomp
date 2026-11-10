@@ -39,3 +39,16 @@ extern "C" __declspec(naked) void* __fastcall fn_00449A00(void* self) {
         ret
     }
 }
+
+// [0x00449C10] RegistrationDialog::vfunc_63 (79 bytes)
+extern "C" void ext_006A5F44();
+
+extern "C" void __fastcall fn_00449C10(void* self, int edx_unused, int a1) {
+    char* p = (char*)self;
+    typedef void (__stdcall *DdxFn)(int, int, void*);
+    DdxFn ddx = (DdxFn)ext_006A5F44;
+    ddx(a1, 0x4e1, p + 0x11c);
+    ddx(a1, 0x4e2, p + 0x170);
+    ddx(a1, 1, p + 0x1fc);
+    ddx(a1, 2, p + 0x270);
+}
