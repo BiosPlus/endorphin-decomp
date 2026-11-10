@@ -388,3 +388,31 @@ extern "C" __declspec(naked) void __fastcall fn_005434F0(void* self) {
         jmp eax
     }
 }
+
+// [0x00543E00] sub_00543E00 (55 bytes)
+extern "C" int mem_0092C508;
+extern "C" int mem_0093F8EC;
+extern "C" __declspec(naked) void __fastcall fn_00543E00(void* self, int edx_unused, float a1) {
+    __asm {
+        fld dword ptr [esp + 4]
+        fadd dword ptr [ecx + 0x14]
+        fstp dword ptr [ecx + 0x14]
+        fld dword ptr [ecx + 0x14]
+        fcomp qword ptr [mem_0092C508]
+        fnstsw ax
+        test ah, 0x5
+        jp clamp
+        fld dword ptr [mem_0093F8EC]
+    store:
+        fstp dword ptr [ecx + 0x14]
+        ret 4
+    clamp:
+        fld1
+        fcom dword ptr [ecx + 0x14]
+        fnstsw ax
+        test ah, 0x5
+        jnp store
+        fstp st(0)
+        ret 4
+    }
+}
