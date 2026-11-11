@@ -615,3 +615,16 @@ extern "C" int __cdecl fn_007E89C0(int* self) {
     ((F)ext_007C8960)(self, 1, 6, d);
     return 1;
 }
+
+// [0x007EC6A0] sub_007EC6A0 (63 bytes)
+extern "C" int __cdecl fn_007EC6A0(int* self) {
+    typedef void (__cdecl *F)(int*, int, int, const int*);
+    int d[6];
+    d[0] = 0;
+    d[5] = 0;
+    d[1] = 0x7ec400;
+    d[2] = 0x7e97c0;
+    d[4] = 1;
+    ((F)ext_007C8960)(self, 4, 4, d);
+    return 1;
+}
