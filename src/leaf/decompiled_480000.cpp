@@ -2368,3 +2368,57 @@ store:
         ret 0x8
     }
 }
+
+// [0x0048EF80] sub_0048EF80 (106 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0048EF80(void* self) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        test ebp, ebp
+        push esi
+        push edi
+        mov edi, ecx
+        je L_0048EF93
+        cmp ebp, dword ptr [esp + 0x1c]
+        je L_0048EF99
+    L_0048EF93:
+        call dword ptr [mem_00925134]
+    L_0048EF99:
+        mov esi, dword ptr [esp + 0x18]
+        mov eax, dword ptr [esp + 0x20]
+        cmp esi, eax
+        je L_0048EFDB
+        mov ecx, dword ptr [edi + 0x8]
+        mov edx, ecx
+        sub edx, eax
+        sar edx, 0x3
+        cmp eax, ecx
+        push ebx
+        lea ebx, [esi + edx*8]
+        je L_0048EFD7
+        mov edx, esi
+        sub edx, eax
+        jmp L_0048EFC0
+        __asm _emit 0x8D __asm _emit 0x49 __asm _emit 0x00
+    L_0048EFC0:
+        mov ebp, dword ptr [eax]
+        mov dword ptr [edx + eax], ebp
+        mov ebp, dword ptr [eax + 0x4]
+        mov dword ptr [edx + eax + 0x4], ebp
+        add eax, 0x8
+        cmp eax, ecx
+        jne L_0048EFC0
+        mov ebp, dword ptr [esp + 0x18]
+    L_0048EFD7:
+        mov dword ptr [edi + 0x8], ebx
+        pop ebx
+    L_0048EFDB:
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        pop esi
+        mov dword ptr [eax], ebp
+        pop ebp
+        ret 0x14
+    }
+}
