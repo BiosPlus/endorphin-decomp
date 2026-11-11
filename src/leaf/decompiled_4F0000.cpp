@@ -1500,3 +1500,73 @@ extern "C" __declspec(naked) void __fastcall fn_004F1BD0(void* self) {
         ret
     }
 }
+
+// [0x004FDBD0] sub_004FDBD0 (137 bytes)
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void* __cdecl fn_004FDBD0(char* first, char* last, char* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        cmp dword ptr [esp + 0x8], ebx
+        je ret_dest_
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        lea esi, [ebx + 0x20]
+        lea edi, [ebp + 0x20]
+    loop_top_:
+        sub ebx, 0x24
+        sub ebp, 0x24
+        push ebx
+        mov ecx, ebp
+        sub esi, 0x24
+        sub edi, 0x24
+        call dword ptr [mem_00924FDC]
+        lea eax, [edi - 0x4]
+        lea ecx, [esi - 0x4]
+        cmp eax, ecx
+        je skip_body_
+        mov ecx, dword ptr [edi]
+        test ecx, ecx
+        je no_old_
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [edi - 0x4]
+        push eax
+        call edx
+    no_old_:
+        mov eax, dword ptr [esi]
+        mov dword ptr [edi], eax
+        cmp dword ptr [esi], 0x0
+        je null_new_
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        lea eax, [esi - 0x4]
+        push eax
+        lea eax, [esp + 0x1c]
+        push eax
+        call edx
+        jmp store_
+    null_new_:
+        mov dword ptr [esp + 0x1c], 0x0
+        lea eax, [esp + 0x1c]
+    store_:
+        mov eax, dword ptr [eax]
+        mov dword ptr [edi - 0x4], eax
+    skip_body_:
+        cmp ebx, dword ptr [esp + 0x14]
+        jne loop_top_
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+    ret_dest_:
+        mov eax, dword ptr [esp + 0x10]
+        pop ebx
+        ret
+    }
+}
