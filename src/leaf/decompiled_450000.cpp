@@ -1948,3 +1948,59 @@ extern "C" __declspec(naked) void __cdecl fn_0045E4C0(void* a1, void* a2, void* 
         ret
     }
 }
+
+extern "C" void ext_00594000();
+extern "C" void ext_00451AE0();
+extern "C" void ext_00468180();
+extern "C" void ext_00468F40();
+
+// [0x0045E8A0] sub_0045E8A0 (113 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0045E8A0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        test esi, esi
+        push edi
+        je short L_null1
+        lea edi, [esi + 0x248]
+        jmp short L_call1
+    L_null1:
+        xor edi, edi
+    L_call1:
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x2dc]
+        push edi
+        call ext_00451AE0
+        test esi, esi
+        je short L_null2
+        lea edi, [esi + 0x24c]
+        jmp short L_call2
+    L_null2:
+        xor edi, edi
+    L_call2:
+        call ext_00594000
+        mov eax, dword ptr [eax + 0x26c]
+        mov ecx, dword ptr [eax + 0x58]
+        push edi
+        call ext_00451AE0
+        test esi, esi
+        je short L_null3
+        lea eax, [esi + 0x250]
+        push eax
+        call ext_00468180
+        mov ecx, eax
+        call ext_00468F40
+        pop edi
+        pop esi
+        ret
+    L_null3:
+        xor eax, eax
+        push eax
+        call ext_00468180
+        mov ecx, eax
+        call ext_00468F40
+        pop edi
+        pop esi
+        ret
+    }
+}
