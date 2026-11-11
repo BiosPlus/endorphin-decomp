@@ -182,3 +182,47 @@ extern "C" __declspec(naked) void __fastcall fn_0059FF60(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0059F490] NMData::BackGroundData::vfunc_14_off_4 (84 bytes)
+// If a2 == 0x14b and sub_0059E060(self-4) is true, calls sub_00661650(arg1) with self+0x61c
+// and returns arg1; otherwise forwards (arg1, a2) to AxisDefineSensorData::vfunc_14 and returns arg1.
+extern "C" void ext_0058F6B0();
+extern "C" void ext_00661650();
+
+extern "C" __declspec(naked) void* __fastcall fn_0059F490(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        cmp edi, 0x14b
+        mov esi, ecx
+        mov dword ptr [esp + 0x8], 0x0
+        jne L_else
+        lea ecx, [esi - 0x4]
+        call ext_0059E060
+        test al, al
+        je L_else
+        add esi, 0x61c
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, esi
+        call ext_00661650
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_else:
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push edi
+        mov ecx, esi
+        call ext_0058F6B0
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
