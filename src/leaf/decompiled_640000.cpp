@@ -2232,3 +2232,62 @@ extern "C" __declspec(naked) void __fastcall fn_00641E90(void* self) {
         ret
     }
 }
+
+// [0x00641350] sub_00641350 (114 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00641350(void* self, int edx_unused, void* ret_out, const char* key) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [edx + 0x4]
+        cmp byte ptr [eax + 0x2d], 0x0
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        jne L_after_00641350
+        mov cl, byte ptr [edi]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+L_loop_00641350:
+        cmp byte ptr [eax + 0xc], cl
+        jge L_left_00641350
+        mov eax, dword ptr [eax + 0x8]
+        jmp L_chk_00641350
+L_left_00641350:
+        mov edx, eax
+        mov eax, dword ptr [eax]
+L_chk_00641350:
+        cmp byte ptr [eax + 0x2d], 0x0
+        je L_loop_00641350
+L_after_00641350:
+        mov eax, dword ptr [esi + 0x4]
+        cmp edx, eax
+        mov dword ptr [esp + 0xc], edx
+        mov dword ptr [esp + 0x8], esi
+        je L_head_00641350
+        mov cl, byte ptr [edi]
+        cmp cl, byte ptr [edx + 0xc]
+        jl L_head_00641350
+        lea ecx, [esp + 0x8]
+        jmp L_fin_00641350
+L_head_00641350:
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [esp + 0x10], esi
+        lea ecx, [esp + 0x10]
+L_fin_00641350:
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [ecx + 0x4]
+        pop edi
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ecx
+        pop esi
+        add esp, 0x10
+        ret 0x8
+    }
+}
