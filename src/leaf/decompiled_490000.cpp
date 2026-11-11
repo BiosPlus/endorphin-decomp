@@ -1722,3 +1722,68 @@ extern "C" __declspec(naked) void __fastcall fn_00495AB0(void* self) {
         ret
     }
 }
+
+// [0x00492BC0] sub_00492BC0 (108 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00492BC0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_skip_call_00492BC0
+        call edi
+    L_skip_call_00492BC0:
+        mov eax, dword ptr [esi + 4]
+        cmp byte ptr [eax + 21h], 0
+        je L_not_nil_00492BC0
+        call edi
+        pop edi
+        pop esi
+        ret
+    L_not_nil_00492BC0:
+        mov ecx, dword ptr [eax + 8]
+        cmp byte ptr [ecx + 21h], 0
+        jne L_right_nil_00492BC0
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 21h], 0
+        jne L_store_left_00492BC0
+    L_leftmost_loop_00492BC0:
+        mov ecx, eax
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 21h], 0
+        je L_leftmost_loop_00492BC0
+    L_store_left_00492BC0:
+        pop edi
+        mov dword ptr [esi + 4], ecx
+        pop esi
+        ret
+    L_right_nil_00492BC0:
+        mov eax, dword ptr [eax + 4]
+        cmp byte ptr [eax + 21h], 0
+        jne L_store_parent_00492BC0
+        _emit 0x8D
+        _emit 0xA4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_parent_loop_00492BC0:
+        mov ecx, dword ptr [esi + 4]
+        cmp ecx, dword ptr [eax + 8]
+        jne L_store_parent_00492BC0
+        mov dword ptr [esi + 4], eax
+        mov edx, eax
+        mov eax, dword ptr [edx + 4]
+        cmp byte ptr [eax + 21h], 0
+        je L_parent_loop_00492BC0
+    L_store_parent_00492BC0:
+        pop edi
+        mov dword ptr [esi + 4], eax
+        pop esi
+        ret
+    }
+}
