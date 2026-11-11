@@ -2377,3 +2377,57 @@ L_z_ecx:
         ret
     }
 }
+
+// [0x007CB8D0] sub_007CB8D0 (103 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007CB8D0(void* self) {
+    __asm {
+        push ecx
+        fld dword ptr [edx]
+        fld dword ptr [ecx]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp L_b8_x_ecx
+        fld dword ptr [edx]
+        jmp L_b8_x_store
+L_b8_x_ecx:
+        fld dword ptr [ecx]
+L_b8_x_store:
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi]
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [ecx + 0x4]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp L_b8_y_ecx
+        fld dword ptr [edx + 0x4]
+        jmp L_b8_y_store
+L_b8_y_ecx:
+        fld dword ptr [ecx + 0x4]
+L_b8_y_store:
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi + 0x4]
+        fld dword ptr [edx + 0x8]
+        fld dword ptr [ecx + 0x8]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp L_b8_z_ecx
+        fld dword ptr [edx + 0x8]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi + 0x8]
+        pop ecx
+        ret
+L_b8_z_ecx:
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi + 0x8]
+        pop ecx
+        ret
+    }
+}
