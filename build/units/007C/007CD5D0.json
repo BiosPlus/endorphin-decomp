@@ -48,5 +48,7 @@
     "0x007CD640",
     "0x007CD646"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T14:10:17Z"
 }

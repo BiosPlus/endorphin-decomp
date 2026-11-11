@@ -3435,3 +3435,47 @@ extern "C" __declspec(naked) void __cdecl fn_007CC3F0(void* a0, int a1, float* a
         ret
     }
 }
+
+// [0x007CD5D0] sub_007CD5D0 (132 bytes)
+extern "C" void __cdecl ext_007E1720(void* a0);
+extern "C" void __cdecl ext_007E19D0(void* a0);
+extern "C" void __cdecl ext_007E1D30(void* a0);
+extern "C" void __cdecl ext_007E2AF0(void* a0);
+extern "C" void __cdecl ext_007E3D70(void* a0);
+extern "C" void __cdecl ext_007E3FB0(void* a0);
+extern "C" void __cdecl ext_007E4690(void* a0);
+extern "C" void __cdecl ext_007E62C0(void* a0);
+extern "C" void __cdecl ext_007E7F90(void* a0);
+extern "C" void __cdecl ext_007E89C0(void* a0);
+extern "C" void __cdecl ext_007E8EE0(void* a0);
+extern "C" void __cdecl ext_007EC6A0(void* a0);
+extern "C" void __cdecl ext_007ECC90(void* a0);
+extern "C" void __cdecl ext_007ED4A0(void* a0);
+extern "C" void __cdecl ext_007EF0D0(void* a0);
+extern "C" void __cdecl ext_007EF8D0(void* a0);
+extern "C" void __cdecl ext_007EF8F0(void* a0);
+extern "C" void __cdecl ext_007EFB20(void* a0);
+extern "C" void __cdecl ext_007EFB40(void* a0);
+
+extern "C" int __cdecl fn_007CD5D0(void* a0) {
+    ext_007EFB40(a0);
+    ext_007EF8D0(a0);
+    ext_007EFB20(a0);
+    ext_007EF8F0(a0);
+    ext_007EF0D0(a0);
+    ext_007ED4A0(a0);
+    ext_007ECC90(a0);
+    ext_007EC6A0(a0);
+    ext_007E8EE0(a0);
+    ext_007E89C0(a0);
+    ext_007E7F90(a0);
+    ext_007E62C0(a0);
+    ext_007E1720(a0);
+    ext_007E19D0(a0);
+    ext_007E1D30(a0);
+    ext_007E2AF0(a0);
+    ext_007E3D70(a0);
+    ext_007E3FB0(a0);
+    ext_007E4690(a0);
+    return 1;
+}
