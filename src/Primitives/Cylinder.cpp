@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/Primitives/Cylinder.cpp
 
 extern "C" void ext_0053A610();
+extern "C" void ext_0053AD10();
 extern "C" int mem_00924FFC;
 
 // [0x0053DAA0] Primitives::Cylinder::vfunc_25 (85 bytes)
@@ -37,4 +38,15 @@ skip_flag:
         pop esi
         ret 0Ch
     }
+}
+
+// [0x0053BA40] Primitives::Cylinder::vfunc_29 (32 bytes)
+extern "C" void __fastcall fn_0053BA40(void* self) {
+    typedef void (__fastcall *AnimVfunc29)(void*);
+    unsigned char* p = static_cast<unsigned char*>(self);
+    ((AnimVfunc29)ext_0053AD10)(self);
+    *reinterpret_cast<int*>(p + 0x3c) = 0x14;
+    *reinterpret_cast<int*>(p + 0x40) = 1;
+    *(p + 0x44) = 1;
+    *(p + 0x45) = 0x7a;
 }
