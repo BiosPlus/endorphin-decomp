@@ -1205,3 +1205,61 @@ extern "C" __declspec(naked) void __fastcall fn_00427640(void* self) {
         ret
     }
 }
+
+// [0x0042ECC0] sub_0042ECC0 (102 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) bool __fastcall fn_0042ECC0(void* self, int edx_unused, int value) {
+    __asm {
+        sub esp, 8
+        push ebx
+        mov ebx, dword ptr [ecx + 0x5c]
+        cmp dword ptr [ecx + 0x58], ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x54]
+        push edi
+        jbe SHORT L_chk1
+        call ebp
+    L_chk1:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe SHORT L_chk2
+        call ebp
+    L_chk2:
+        cmp edi, ebx
+        mov dword ptr [esp + 0x14], edi
+        je SHORT L_found
+        mov eax, dword ptr [esp + 0x1c]
+    L_loop:
+        cmp dword ptr [edi], eax
+        je SHORT L_found
+        add edi, 4
+        cmp edi, ebx
+        jne SHORT L_loop
+    L_found:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe SHORT L_chk3
+        call ebp
+        mov ebp, dword ptr [mem_00925134]
+    L_chk3:
+        test esi, esi
+        je SHORT L_inv
+        cmp esi, esi
+        je SHORT L_ret
+    L_inv:
+        call ebp
+    L_ret:
+        xor eax, eax
+        cmp edi, ebx
+        pop edi
+        pop esi
+        pop ebp
+        setne al
+        pop ebx
+        add esp, 8
+        ret 4
+    }
+}
