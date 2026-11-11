@@ -284,3 +284,67 @@ extern "C" __declspec(naked) void __fastcall fn_0066D120(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0066B6E0] ExprParser::Vector3Type::vfunc_45 (136 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0066B6E0(void* self, int edx_unused, void** a1, void* a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x3c]
+        push esi
+        call edx
+        test al, al
+        mov ecx, dword ptr [esi + 0x4]
+        je L_0066B736
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x14]
+        push edi
+        push esi
+        call edx
+        mov esi, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esi]
+        fld dword ptr [edx + 0x4]
+        mov ecx, dword ptr [esi + 0x4]
+        fmul dword ptr [eax + 0x4]
+        mov edi, dword ptr [ecx]
+        fld dword ptr [edx]
+        push ecx
+        fmul dword ptr [eax]
+        faddp st(1), st
+        fld dword ptr [edx + 0x8]
+        fmul dword ptr [eax + 0x8]
+        mov eax, dword ptr [edi + 0x1c]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [esp]
+        push esi
+        call eax
+        pop edi
+        pop esi
+        ret 0x8
+    L_0066B736:
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x4]
+        push esi
+        call eax
+        fstp dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx]
+        fld dword ptr [eax]
+        pop esi
+        fld dword ptr [esp + 0x8]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [eax]
+        fld dword ptr [eax + 0x4]
+        fmul st, st(1)
+        fstp dword ptr [eax + 0x4]
+        fmul dword ptr [eax + 0x8]
+        fstp dword ptr [eax + 0x8]
+        ret 0x8
+    }
+}
