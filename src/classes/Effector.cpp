@@ -111,3 +111,44 @@ extern "C" __declspec(naked) void __fastcall fn_00603020(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_00603230();
+
+// [0x00603720] Effector::vfunc_33 (72 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00603720(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00603230
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 34h]
+        mov ecx, esi
+        call edx
+        mov ecx, dword ptr [esi + 4]
+        sub esp, 8
+        test al, al
+        je L_zero
+        fld dword ptr [esi + 54h]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi + 34h]
+        fstp qword ptr [esp]
+        mov eax, dword ptr [eax + 0ch]
+        push edx
+        call eax
+        jmp L_tail
+L_zero:
+        fldz
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esi + 34h]
+        fstp qword ptr [esp]
+        mov edx, dword ptr [edx + 0ch]
+        push eax
+        call edx
+L_tail:
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        pop esi
+        jmp edx
+    }
+}
