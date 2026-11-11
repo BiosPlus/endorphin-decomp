@@ -365,3 +365,39 @@ extern "C" __declspec(naked) void __fastcall fn_0066D2B0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0066D330] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::cartesianAtoB_SE(class NM::Vector3 const &, NM::Vector3 const &)>::vfunc_40 (122 bytes)
+extern "C" int mem_00B5969C;
+extern "C" int mem_00B59698;
+extern "C" void ext_0067A670();
+
+extern "C" __declspec(naked) void __fastcall fn_0066D330(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b34be
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B5969C], al
+        jne L_guarded
+        or dword ptr [mem_00B5969C], eax
+        mov ecx, offset mem_00B59698
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00B59698], 0x0098867c
+        mov dword ptr [eax + 0x4], offset mem_00B59698
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00B59698
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
