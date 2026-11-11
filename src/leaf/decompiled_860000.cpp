@@ -312,3 +312,69 @@ L_0860E90_end:
         ret
     }
 }
+
+// [0x00865C00] sub_00865C00 (122 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00865C00() {
+    __asm {
+        sub esp, 4
+        __asm _emit 0xc7
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x0c
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        mov edx, dword ptr [esp + 8]
+        push ebx
+        push esi
+        push edi
+        mov esi, dword ptr [esp + 18h]
+        push ebp
+        add esi, 64h
+    loop_00865C1A:
+        mov ebp, dword ptr [edx]
+        mov eax, dword ptr [edx + 4]
+        sub ebp, dword ptr [esi]
+        mov ebx, eax
+        shr ebx, 7
+        mov edi, ebp
+        and bl, 1fh
+        mov cl, 20h
+        sub cl, bl
+        sub esi, 8
+        shl edi, cl
+        mov cl, bl
+        shr ebp, cl
+        or edi, ebp
+        mov cl, 20h
+        xor edi, eax
+        mov eax, edi
+        mov dword ptr [edx], edi
+        shr eax, 4
+        mov ebx, dword ptr [esi + 4]
+        add ebx, dword ptr [edx + 4]
+        and al, 1fh
+        mov ebp, ebx
+        sub cl, al
+        shl ebp, cl
+        mov cl, al
+        shr ebx, cl
+        or ebp, ebx
+        xor ebp, edi
+        dec dword ptr [esp + 10h]
+        mov dword ptr [edx + 4], ebp
+        jne loop_00865C1A
+        mov eax, dword ptr [esp + 1ch]
+        pop ebp
+        pop edi
+        pop esi
+        mov ecx, dword ptr [eax + 4]
+        sub dword ptr [edx], ecx
+        mov ebx, dword ptr [eax]
+        sub dword ptr [edx + 4], ebx
+        pop ebx
+        add esp, 4
+        ret
+    }
+}
