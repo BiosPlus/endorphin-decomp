@@ -599,3 +599,50 @@ found:
         ret 0x4
     }
 }
+
+// [0x004D41C0] sub_004D41C0 (103 bytes)
+// __thiscall, ret 0x8: returns std::string by value (hidden buffer = a1) copied from
+// vector<std::string> element at this+0x448 (begin) / this+0x44c (end), index a2.
+// Out-of-range index calls _invalid_parameter_noinfo (mem_00925134) then falls through.
+extern "C" int mem_00925134;
+extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void __fastcall fn_004D41C0(void* self, int edx_unused, void* a1, unsigned int a2) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x448]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov dword ptr [esp + 0x8], 0x0
+        je L_fail
+        mov ecx, dword ptr [esi + 0x44c]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb L_ok
+L_fail:
+        call dword ptr [mem_00925134]
+L_ok:
+        mov ecx, dword ptr [esi + 0x448]
+        mov esi, dword ptr [esp + 0x10]
+        lea eax, [8 * edi]
+        sub eax, edi
+        lea edx, [ecx + 4 * eax]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
