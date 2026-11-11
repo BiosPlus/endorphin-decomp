@@ -637,3 +637,34 @@ L_zero_00563330:
         ret 4
     }
 }
+
+// [0x00564660] sub_00564660 (100 bytes)
+extern "C" void ext_007C56A6();
+extern "C" void ext_007C56A0();
+extern "C" void ext_007C564C();
+
+typedef void* (__fastcall* FnPtrP)(void*);
+typedef int (__fastcall* FnPtrI)(void*);
+
+extern "C" void __fastcall fn_00564660(void* self) {
+    unsigned char* s = (unsigned char*)self;
+    void* angle = ((FnPtrP)ext_007C56AC)(*(void**)(s + 0x494));
+    if (angle) {
+        int t = ((FnPtrI)ext_007C56A6)(angle);
+        if (t == 0) {
+            *(int*)(s + 0x84) = t;
+        } else {
+            t = ((FnPtrI)ext_007C56A6)(angle);
+            if (t == 1) {
+                *(int*)(s + 0x84) = t;
+            }
+        }
+    }
+    s[0x70] = 1;
+    void* cs = ((FnPtrP)ext_007C56A0)(*(void**)(s + 0x494));
+    if (cs) {
+        if (((FnPtrI)ext_007C564C)((unsigned char*)cs + 0x88) == 2) {
+            s[0x70] = 0;
+        }
+    }
+}
