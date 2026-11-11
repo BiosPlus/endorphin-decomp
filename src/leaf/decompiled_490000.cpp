@@ -2427,3 +2427,60 @@ extern "C" __declspec(naked) void __fastcall fn_0049F490(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00497530] sub_00497530 (122 bytes)
+// Line through (a1,a2),(a3,a4): stores slope m, intercept b, and a type code
+// (0 = general, 1 = horizontal, 2 = vertical). Returns self.
+struct Line00497530 { float m; float b; int type; };
+extern "C" __declspec(naked) Line00497530* __fastcall fn_00497530(Line00497530* self, int edx_unused, float a1, float a2, float a3, float a4) {
+    __asm {
+        push ecx
+        fld dword ptr [esp+10h]
+        mov dword ptr [ecx+8], 0
+        fld st(0)
+        fsub dword ptr [esp+8]
+        fstp dword ptr [esp]
+        fldz
+        fld st(0)
+        fld dword ptr [esp]
+        fucom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 44h
+        jp L_756b
+        fstp st(0)
+        mov dword ptr [ecx+8], 2
+        fstp dword ptr [ecx]
+        mov eax, ecx
+        fstp dword ptr [ecx+4]
+        pop ecx
+        ret 10h
+    L_756b:
+        fld dword ptr [esp+14h]
+        fld st(0)
+        fsub dword ptr [esp+0ch]
+        fstp dword ptr [esp+10h]
+        fld dword ptr [esp+10h]
+        fucom st(3)
+        fnstsw ax
+        fstp st(3)
+        test ah, 44h
+        jp L_758f
+        mov dword ptr [ecx+8], 1
+    L_758f:
+        fxch st(2)
+        mov eax, ecx
+        _emit 0xde
+        _emit 0xf1
+        fstp dword ptr [esp+10h]
+        fld dword ptr [esp+10h]
+        fst dword ptr [ecx]
+        _emit 0xde
+        _emit 0xca
+        _emit 0xde
+        _emit 0xe1
+        fstp dword ptr [ecx+4]
+        pop ecx
+        ret 10h
+    }
+}
