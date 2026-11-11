@@ -1320,3 +1320,47 @@ extern "C" __declspec(naked) void* __cdecl fn_0049E440(void* out, int val) {
         ret
     }
 }
+
+// [0x00494860] sub_00494860 (88 bytes)
+extern "C" void ext_0041CCC0();
+extern "C" void ext_00494830();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void __fastcall fn_00494860(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        test edi, edi
+        mov esi, ecx
+        mov dword ptr [esp + 0x8], 0
+        jl L_else_00494860
+        call ext_00494830
+        sub eax, 1
+        cmp edi, eax
+        jg L_else_00494860
+        push edi
+        lea ecx, [esi + 8]
+        call ext_0041CCC0
+        mov esi, dword ptr [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    L_else_00494860:
+        mov esi, dword ptr [esp + 0x10]
+        push 0x928b5d
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
