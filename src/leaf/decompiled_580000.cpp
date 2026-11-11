@@ -1372,3 +1372,21 @@ L_00587413:
         ret 0x4
     }
 }
+
+// [0x0058A0D0] sub_0058A0D0 (147 bytes)
+struct Vec3_58A0D0 {
+    float x, y, z;
+    Vec3_58A0D0(const Vec3_58A0D0& v) : x(v.x), y(v.y), z(v.z) {}
+};
+
+extern "C" bool __fastcall ext_0056B690(void* self, Vec3_58A0D0 v, double eps);
+
+extern "C" int __fastcall fn_0058A0D0(void* self, int edx_unused, const Vec3_58A0D0* other, double eps) {
+    if (ext_0056B690(self, other[0], eps) &&
+        ext_0056B690((char*)self + 12, other[1], eps) &&
+        ext_0056B690((char*)self + 24, other[2], eps))
+    {
+        return 1;
+    }
+    return 0;
+}
