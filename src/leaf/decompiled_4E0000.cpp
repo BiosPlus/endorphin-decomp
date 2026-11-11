@@ -785,3 +785,16 @@ extern "C" __declspec(naked) void __fastcall fn_004ED640(void* self) {
         ret
     }
 }
+
+// [0x004ED720] sub_004ED720 (39 bytes)
+extern "C" void ext_004ED640();
+
+extern "C" void* __fastcall fn_004ED720(void* self) {
+    unsigned int* p = (unsigned int*)self;
+    ext_004ED640();
+    p[0] = 0x94524c;
+    p[0x04 / 4] = 0x945220;
+    p[0x18 / 4] = 0x945210;
+    p[0x38 / 4] = 1;
+    return self;
+}
