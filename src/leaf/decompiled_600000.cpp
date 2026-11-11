@@ -1116,3 +1116,65 @@ extern "C" __declspec(naked) void* __fastcall fn_0060C360(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00603230] sub_00603230 (121 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00603230(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi + 0x34]
+        mov eax, dword ptr [eax + 0x20]
+        push edx
+        call eax
+        fsub dword ptr [esi + 0x2c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fst dword ptr [esi + 0x30]
+        fchs
+        fmul dword ptr [esi + 0x4c]
+        fld dword ptr [esi + 0x50]
+        fchs
+        fld dword ptr [esi + 0x50]
+        fxch st(2)
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp L603230_b
+L603230_a:
+        fstp st(0)
+L603230_c:
+        fstp st(1)
+L603230_d:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esi + 0x34]
+        mov edx, dword ptr [edx + 0x10]
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        push eax
+        call edx
+        fld dword ptr [esi + 0x2c]
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi + 0x34]
+        mov eax, dword ptr [eax + 0x14]
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        push edx
+        call eax
+        pop esi
+        pop ecx
+        ret
+L603230_b:
+        fstp st(1)
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne L603230_c
+        fstp st(0)
+        jmp L603230_d
+    }
+}
