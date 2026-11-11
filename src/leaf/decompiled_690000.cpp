@@ -1565,3 +1565,65 @@ extern "C" __declspec(naked) void __fastcall fn_00692D90(void* self) {
         ret
     }
 }
+
+// [0x00697840] sub_00697840 (125 bytes)
+// Stack-argument thiscall (ret 0xc): a1 = struct ref (std::string at +4, ints at +0x50/+0x54/+0x58),
+// a2 = index into a const char* table, a3 = const std::string&.
+// this+0xc = std::string assigned from table[a2]; replace the 2-char marker found in it.
+extern "C" int mem_00AA3D0C;
+extern "C" int mem_0098F6C0;
+extern "C" int mem_009548E8;
+extern "C" int mem_00924FD4;
+extern "C" int mem_00925014;
+extern "C" int mem_00925020;
+extern "C" __declspec(naked) void __fastcall fn_00697840(void* self, int edx_unused, void* a1, int a2, void* a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [4*eax + mem_00AA3D0C]
+        lea esi, [edi + 0xc]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924FD4]
+        push 0x0
+        push offset mem_0098F6C0
+        mov ecx, esi
+        call dword ptr [mem_00925014]
+        test eax, eax
+        mov ebx, dword ptr [esp + 0x10]
+        jl skip1
+        lea edx, [ebx + 0x4]
+        push edx
+        push 0x2
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00925020]
+skip1:
+        push 0x0
+        push offset mem_009548E8
+        mov ecx, esi
+        call dword ptr [mem_00925014]
+        test eax, eax
+        jl skip2
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        push 0x2
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00925020]
+skip2:
+        mov edx, dword ptr [ebx + 0x54]
+        mov dword ptr [edi + 0x28], edx
+        mov eax, dword ptr [ebx + 0x58]
+        mov dword ptr [edi + 0x2c], eax
+        mov ecx, dword ptr [ebx + 0x50]
+        mov dword ptr [edi + 0x30], ecx
+        pop edi
+        pop esi
+        pop ebx
+        ret 0xc
+    }
+}
