@@ -39,3 +39,15 @@ L_skip:
         ret 0xc
     }
 }
+
+// [0x0053B880] Primitives::Sphyl::vfunc_29 (32 bytes)
+extern "C" void __fastcall ext_0053AD10(void* self);
+
+extern "C" void __fastcall fn_0053B880(void* self) {
+    ext_0053AD10(self);
+    int* p = (int*)self;
+    *(int*)((char*)self + 0x3c) = 0x14;
+    *(int*)((char*)self + 0x40) = 1;
+    *(int*)((char*)self + 0x44) = 0x14;
+    *((unsigned char*)self + 0x48) = 0x7a;
+}
