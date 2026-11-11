@@ -2259,3 +2259,34 @@ extern "C" __declspec(naked) void __fastcall fn_0046F6A0(void* self) {
         ret
     }
 }
+
+// [0x004616F0] sub_004616F0 (89 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004616F0(void* self, int edx_unused, void* a1, void* a2, int a3) {
+    __asm {
+        push -1
+        push 0x872c79
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 0x8], esi
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x1c]
+        push ecx
+        lea ecx, [esi + 0x1c]
+        mov dword ptr [esp + 0x14], 0
+        call dword ptr [mem_00924FE0]
+        mov edx, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi + 0x38], edx
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0xc
+    }
+}
