@@ -858,3 +858,28 @@ extern "C" __declspec(naked) void __fastcall fn_00497AD0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004B71C0] ExprParser::PrimitiveProxyType<float>::vfunc_4 (42 bytes)
+// Two stack arguments (ret 8). v = **(float**)a2; calls sub_0046C390(a1, v) (cdecl)
+// and returns a1.
+extern "C" void ext_0046C390();
+extern "C" __declspec(naked) void* __fastcall fn_004B71C0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        fld dword ptr [ecx]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_0046C390
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
