@@ -637,3 +637,28 @@ extern "C" __declspec(naked) void __fastcall fn_00497BB0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0049C050] ExprParser::PrimitiveProxyType<int>::vfunc_4 (39 bytes)
+extern "C" void ext_0046C500();
+
+// this in ecx (unused), two stack args (a1, a2), ret 8. Loads the vtable
+// pointer of **a2 and passes it with a1 to the shared helper; returns a1.
+extern "C" __declspec(naked) void* __fastcall fn_0049C050(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [ecx]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edx
+        push esi
+        mov dword ptr [esp + 0xc], 0
+        call ext_0046C500
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
