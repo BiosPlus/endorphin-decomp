@@ -1779,3 +1779,43 @@ extern "C" __declspec(naked) void* __fastcall fn_0041C820(void* self) {
         ret
     }
 }
+
+// [0x00414D30] sub_00414D30 (88 bytes)
+extern "C" __declspec(naked) float* __fastcall fn_00414D30(float* self, int edx_unused, float a0, float a1, float a2, float a3) {
+    __asm {
+        fld dword ptr [esp + 0x4]
+        fst dword ptr [ecx]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [esp + 0xc]
+        fst dword ptr [ecx + 0x8]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [ecx + 0xc]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp short L_noswap02
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [ecx]
+        fstp dword ptr [ecx + 0x8]
+        jmp short L_cmp13
+L_noswap02:
+        fstp st(0)
+L_cmp13:
+        fld dword ptr [ecx + 0x4]
+        fld dword ptr [ecx + 0xc]
+        fcompp
+        fnstsw ax
+        test ah, 0x5
+        mov eax, ecx
+        jp short L_ret
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [esp + 0x4]
+        fstp dword ptr [ecx + 0xc]
+L_ret:
+        ret 0x10
+    }
+}
