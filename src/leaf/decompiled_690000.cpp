@@ -1468,3 +1468,60 @@ extern "C" void __fastcall fn_00693D40(float* self) {
     self[13] = t.m[7];
     self[14] = t.m[11];
 }
+
+// [0x00693CC0] sub_00693CC0 (115 bytes)
+extern "C" void ext_006A7250();
+extern "C" __declspec(naked) void* __fastcall fn_00693CC0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        fld dword ptr [esi + 0x4]
+        fld dword ptr [esi]
+        fld dword ptr [esi + 0x8]
+        fld dword ptr [esi + 0xc]
+        fld st(2)
+        fmulp st(3), st
+        fld st(3)
+        fmulp st(4), st
+        fxch st(2)
+        faddp st(3), st
+        fmul st(0), st
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        call ext_006A7250
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fldz
+        fld dword ptr [esp + 0x4]
+        fucom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x44
+        mov eax, esi
+        jnp skip_zero
+        fld dword ptr [esi]
+        fdiv st, st(1)
+        fstp dword ptr [esi]
+        fld dword ptr [esi + 0x4]
+        fdiv st, st(1)
+        fstp dword ptr [esi + 0x4]
+        fld dword ptr [esi + 0x8]
+        fdiv st, st(1)
+        fstp dword ptr [esi + 0x8]
+        fdivr dword ptr [esi + 0xc]
+        fstp dword ptr [esi + 0xc]
+        pop esi
+        pop ecx
+        ret
+skip_zero:
+        fstp st(0)
+        pop esi
+        pop ecx
+        ret
+    }
+}
