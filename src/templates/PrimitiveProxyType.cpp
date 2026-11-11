@@ -536,3 +536,32 @@ extern "C" __declspec(naked) void __stdcall fn_00497930(void* a1) {
         ret 0x4
     }
 }
+
+// [0x004B7AE0] ExprParser::PrimitiveProxyType<float>::vfunc_10 (53 bytes)
+// Two stack arguments (ret 0x8). Copy-constructs a std::string temporary from
+// a2 on the stack, calls sub_004B79B0 (float result in st(0), temp passed as
+// stack arg, caller cleans), and stores the float through **a1.
+extern "C" int mem_00924FE0;
+extern "C" void ext_004B79B0();
+
+extern "C" __declspec(naked) void __fastcall fn_004B7AE0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0xc]
+        push eax
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push edx
+        call dword ptr [mem_00924FE0]
+        call ext_004B79B0
+        fstp dword ptr [esp + 0x2c]
+        mov eax, dword ptr [esp + 0x28]
+        fld dword ptr [esp + 0x2c]
+        mov ecx, dword ptr [eax]
+        fstp dword ptr [ecx]
+        add esp, 0x24
+        ret 0x8
+    }
+}
