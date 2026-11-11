@@ -2291,3 +2291,34 @@ skip_init:
         ret
     }
 }
+
+// [0x00659650] sub_00659650 (93 bytes)
+extern "C" void ext_006595E0();
+extern "C" void ext_00645EB0();
+
+extern "C" __declspec(naked) void __fastcall fn_00659650(void* self) {
+    __asm {
+        push -1
+        push 0x008B1828
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x0097DBFC
+        mov dword ptr [esi + 0x4], 0x0097DBE4
+        mov dword ptr [esi + 0x8], 0x0097DBB0
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_006595E0
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_00645EB0
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
