@@ -2019,3 +2019,34 @@ extern "C" void __fastcall fn_00612230(void* self, int edx_unused, float a1) {
     float v = ((FloatThisFloatFn00612230)ext_006781B0)(reinterpret_cast<char*>(r) + 0x2e0, a1);
     ((VoidThisFloatFn00612230)ext_00612130)(self, v);
 }
+
+// [0x00610D10] sub_00610D10 (89 bytes)
+extern "C" void ext_005B1870();
+extern "C" void ext_0065F440();
+extern "C" __declspec(naked) void __fastcall fn_00610D10(void* self) {
+    __asm {
+        push -1
+        push 0x008A8E63
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        lea ecx, [esi + 0x54]
+        mov dword ptr [esp + 0x10], 0x1
+        call ext_005B1870
+        lea ecx, [esi + 0x8]
+        mov byte ptr [esp + 0x10], 0x0
+        call ext_005B1870
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_0065F440
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
