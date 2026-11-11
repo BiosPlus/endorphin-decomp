@@ -878,3 +878,47 @@ extern "C" __declspec(naked) void __fastcall fn_004B4D30(void* self) {
         ret
     }
 }
+
+// [0x004B7340] sub_004B7340 (90 bytes)
+extern "C" int mem_00AE1D18;
+extern "C" int mem_00AE1D1C;
+extern "C" int mem_00925134;
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __fastcall fn_004B7340(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [mem_00AE1D18]
+        test esi, esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov ebx, ecx
+        je invalid_path
+        mov ecx, dword ptr [mem_00AE1D1C]
+        sub ecx, esi
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb in_range
+    invalid_path:
+        call dword ptr [mem_00925134]
+        mov esi, dword ptr [mem_00AE1D18]
+    in_range:
+        lea eax, [edi*8]
+        sub eax, edi
+        lea ecx, [esi + eax*4]
+        push ecx
+        lea ecx, [ebx + 0x58]
+        call dword ptr [mem_00924FDC]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
