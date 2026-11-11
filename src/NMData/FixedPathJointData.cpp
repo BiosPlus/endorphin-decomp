@@ -263,3 +263,76 @@ extern "C" __declspec(naked) void __fastcall fn_005ECB10(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005EB890] NMData::FixedPathJointData::vfunc_10_off_C (139 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005EB890(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x74]
+        cmp esi, dword ptr [edi + 0x78]
+        jbe L_b1
+        call dword ptr [mem_00925134]
+    L_b1:
+        mov ebx, dword ptr [esp + 0x14]
+    L_loop:
+        mov ebp, dword ptr [edi + 0x78]
+        cmp dword ptr [edi + 0x74], ebp
+        jbe L_b2
+        call dword ptr [mem_00925134]
+    L_b2:
+        cmp esi, ebp
+        je L_done
+        cmp byte ptr [esp + 0x18], 0x0
+        mov ebp, dword ptr [mem_00925134]
+        jne L_call
+        cmp esi, dword ptr [edi + 0x78]
+        jb L_c1
+        call ebp
+    L_c1:
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xc4]
+        call edx
+        test al, al
+        jne L_next
+    L_call:
+        cmp esi, dword ptr [edi + 0x78]
+        jb L_c2
+        call ebp
+    L_c2:
+        mov eax, dword ptr [esi]
+        lea ecx, [eax + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        push ebx
+        call edx
+        cmp esi, dword ptr [edi + 0x78]
+        jb L_c3
+        call ebp
+    L_c3:
+        mov eax, dword ptr [esi]
+        lea ecx, [eax + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x28]
+        push 0x1
+        push ebx
+        call edx
+    L_next:
+        cmp esi, dword ptr [edi + 0x78]
+        jb L_c4
+        call ebp
+    L_c4:
+        add esi, 0x4
+        jmp L_loop
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
