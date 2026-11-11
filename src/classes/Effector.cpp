@@ -69,3 +69,45 @@ extern "C" __declspec(naked) void __fastcall fn_00603370(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00603020] Effector::vfunc_12 (100 bytes)
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void __fastcall fn_00603020(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push 1
+        push 0A93790h
+        push 0A93768h
+        push 0
+        push eax
+        mov esi, ecx
+        call ext_006A6E9E
+        mov ecx, dword ptr [eax + 44h]
+        mov dword ptr [esi + 34h], ecx
+        mov edx, dword ptr [eax + 48h]
+        mov dword ptr [esi + 4Ch], edx
+        mov ecx, dword ptr [eax + 4Ch]
+        mov dword ptr [esi + 50h], ecx
+        mov edx, dword ptr [eax + 50h]
+        mov dword ptr [esi + 54h], edx
+        mov ecx, dword ptr [eax + 54h]
+        mov dword ptr [esi + 58h], ecx
+        mov edx, dword ptr [eax + 58h]
+        mov dword ptr [esi + 5Ch], edx
+        mov ecx, dword ptr [eax + 48h]
+        mov dword ptr [esi + 38h], ecx
+        mov edx, dword ptr [eax + 4Ch]
+        mov dword ptr [esi + 3Ch], edx
+        mov ecx, dword ptr [eax + 50h]
+        mov dword ptr [esi + 40h], ecx
+        mov edx, dword ptr [eax + 54h]
+        mov dword ptr [esi + 44h], edx
+        mov eax, dword ptr [eax + 58h]
+        add esp, 14h
+        mov dword ptr [esi + 48h], eax
+        pop esi
+        ret 4
+    }
+}
