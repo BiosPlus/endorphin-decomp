@@ -3266,3 +3266,22 @@ extern "C" __declspec(naked) void* __fastcall fn_00666A60(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00662120] sub_00662120 (32 bytes)
+extern "C" void ext_00466BA0();
+extern "C" __declspec(naked) void __fastcall fn_00662120(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [eax + 0x64]
+        mov edx, dword ptr [edx]
+        add eax, 0x60
+        push 0x0
+        mov dword ptr [ecx + 0x8], eax
+        mov dword ptr [ecx + 0xc], edx
+        mov byte ptr [ecx], 0x1
+        push ecx
+        add ecx, 0x38
+        call ext_00466BA0
+        ret
+    }
+}
