@@ -746,3 +746,60 @@ extern "C" __declspec(naked) void* __cdecl fn_004DE3D0(void* first_, void* last_
         ret
     }
 }
+
+// [0x004D4060] sub_004D4060 (121 bytes)
+extern "C" void ext_0041CCC0();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00A3464C;
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void* __fastcall fn_004D4060(void* self, int edx_unused, void* ret) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [ecx + 0x43c]
+        test edi, edi
+        mov dword ptr [esp + 0x8], 0x0
+        jl L_bad
+        mov eax, dword ptr [ecx + 0x448]
+        add ecx, 0x444
+        test eax, eax
+        je L_zero
+        mov esi, dword ptr [ecx + 0x8]
+        sub esi, eax
+        mov eax, 0x92492493
+        imul esi
+        add edx, esi
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+    L_zero:
+        add eax, -0x1
+        cmp edi, eax
+        jg L_bad
+        push edi
+        call ext_0041CCC0
+        mov esi, dword ptr [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    L_bad:
+        mov eax, dword ptr [mem_00A3464C]
+        mov esi, dword ptr [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
