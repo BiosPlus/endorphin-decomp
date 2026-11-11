@@ -1732,3 +1732,45 @@ extern "C" __declspec(naked) void __fastcall fn_0067DB90(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00679990] sub_00679990 (96 bytes)
+extern "C" int mem_0092427C;
+extern "C" double mem_00928E78;
+extern "C" __declspec(naked) float __fastcall fn_00679990(void* self) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        lea eax, [esp + 0x4]
+        push eax
+        mov esi, ecx
+        call dword ptr [mem_0092427C]
+        mov eax, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [esi + 0x14]
+        mov dword ptr [esp + 0xc], eax
+        or eax, ecx
+        mov dword ptr [esp + 0x10], ecx
+        jne nonzero_00679990
+        fldz
+        pop esi
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        add esp, 0x10
+        ret
+    nonzero_00679990:
+        mov ecx, dword ptr [esp + 0x4]
+        sub ecx, dword ptr [esi]
+        mov edx, dword ptr [esp + 0x8]
+        sbb edx, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x4], ecx
+        mov dword ptr [esp + 0x8], edx
+        fild qword ptr [esp + 0x4]
+        pop esi
+        fmul qword ptr [mem_00928E78]
+        fild qword ptr [esp + 0x8]
+        fdivp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        add esp, 0x10
+        ret
+    }
+}
