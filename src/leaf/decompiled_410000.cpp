@@ -3499,3 +3499,45 @@ extern "C" __declspec(naked) void* __fastcall fn_00413AF0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00415300] sub_00415300 (145 bytes)
+extern "C" void ext_004152D0();
+extern "C" void ext_006A6118();
+extern "C" int mem_009241EC;
+extern "C" int mem_009241E8;
+extern "C" int mem_00924090;
+
+extern "C" void __fastcall fn_00415300(void* self) {
+    int* p = (int*)self;
+    ((void (__fastcall *)(void*))ext_004152D0)(self);
+    if (p[5] == 1) {
+        ((void (__cdecl *)(int))ext_006A6118)(p[3]);
+    } else if (p[5] == 2) {
+        ((void (__stdcall *)(int))mem_009241EC)(p[4]);
+        ((void (__stdcall *)(int))mem_009241E8)(p[4]);
+    }
+    if (p[6] == 1) {
+        ((void (__cdecl *)(int))ext_006A6118)(p[2]);
+    }
+    int zero = 0;
+    int (__stdcall *delobj)(int) = (int (__stdcall *)(int))mem_00924090;
+    if (p[12] != zero) {
+        delobj(p[12]);
+    }
+    if (p[1] != zero) {
+        delobj(p[1]);
+    }
+    p[6] = zero;
+    p[5] = zero;
+    p[4] = zero;
+    p[3] = zero;
+    p[2] = zero;
+    p[0] = zero;
+    p[8] = zero;
+    p[7] = zero;
+    p[11] = zero;
+    p[10] = zero;
+    p[9] = zero;
+    p[1] = zero;
+    p[12] = zero;
+}
