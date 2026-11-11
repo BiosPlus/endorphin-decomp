@@ -2689,3 +2689,21 @@ extern "C" __declspec(naked) void __fastcall fn_0044A2D0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004407E0] sub_004407E0 (132 bytes)
+extern "C" void __fastcall fn_004407E0(void* self, int edx_unused, double a1) {
+    char* p = (char*)self;
+    if (*(p + 0x8c) == 0 && *(p + 0x8d) == 0) {
+        double v = (a1 < 0.0) ? 0.0 : a1;
+        *(double*)(p + 0x58) = v;
+        *(double*)(p + 0x50) = v;
+        *(double*)(p + 0x98) = v;
+        *(double*)(p + 0x90) = v;
+        return;
+    }
+    double v = (a1 < 0.0) ? 0.0 : a1;
+    *(double*)(p + 0x58) = *(double*)(p + 0x58) - *(double*)(p + 0x50) + v;
+    *(double*)(p + 0x90) = *(double*)(p + 0x90) - *(double*)(p + 0x50) + v;
+    *(double*)(p + 0x98) = *(double*)(p + 0x98) - *(double*)(p + 0x50) + v;
+    *(double*)(p + 0x50) = v;
+}
