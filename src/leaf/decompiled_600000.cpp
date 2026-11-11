@@ -1178,3 +1178,38 @@ L603230_b:
         jmp L603230_d
     }
 }
+
+// [0x0060B2B0] sub_0060B2B0 (109 bytes)
+extern "C" void ext_004026E0();
+extern "C" void ext_006246B0();
+extern "C" void ext_0065F440();
+extern "C" __declspec(naked) void __fastcall fn_0060B2B0(void* self) {
+    __asm {
+        push -1
+        push 0x008a8373
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        mov dword ptr [esi], 0x0097202c
+        mov dword ptr [esi + 4], 0x00972020
+        mov dword ptr [esi + 8], 0x00972010
+        lea ecx, [esi + 0x20]
+        mov dword ptr [esp + 0x10], 1
+        call ext_004026E0
+        lea ecx, [esi + 0x10]
+        mov byte ptr [esp + 0x10], 0
+        call ext_006246B0
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_0065F440
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
