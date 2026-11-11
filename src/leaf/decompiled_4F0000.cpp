@@ -1025,3 +1025,25 @@ extern "C" float __fastcall fn_004F4EA0(void* self) {
     }
     return x;
 }
+
+// [0x004F4ED0] sub_004F4ED0 (44 bytes)
+extern "C" void ext_004F4EA0();
+extern "C" void ext_006A7256();
+extern "C" __declspec(naked) void __fastcall fn_004F4ED0(void* self) {
+    __asm {
+        sub esp, 0x8
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp qword ptr [esp]
+        call ext_004F4EA0
+        fdivr qword ptr [esp]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        call ext_006A7256
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        add esp, 0x8
+        ret
+    }
+}
