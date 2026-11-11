@@ -2468,3 +2468,88 @@ extern "C" __declspec(naked) void* __fastcall fn_0059DD00(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0059FE80] sub_0059FE80 (142 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0059FE80(void* first, void* last) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        cmp ebx, eax
+        je L_59FE80_ret1
+        push esi
+        lea esi, [ebx + 0x4]
+        cmp esi, eax
+        je L_59FE80_ret2
+        mov eax, 0x4
+        push ebp
+        mov ebp, dword ptr [mem_009251EC]
+        sub eax, ebx
+        push edi
+        mov dword ptr [esp + 0x14], eax
+        jmp L_59FE80_head
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+L_59FE80_top:
+        mov eax, dword ptr [esp + 0x14]
+L_59FE80_head:
+        mov edi, dword ptr [esi]
+        cmp edi, dword ptr [ebx]
+        mov edx, esi
+        jae L_59FE80_unguarded
+        lea eax, [eax + esi - 0x4]
+        sar eax, 0x2
+        test eax, eax
+        jle L_59FE80_store_first
+        add eax, eax
+        add eax, eax
+        push eax
+        mov ecx, esi
+        push ebx
+        sub ecx, eax
+        push eax
+        add ecx, 0x4
+        push ecx
+        call ebp
+        add esp, 0x10
+L_59FE80_store_first:
+        mov dword ptr [ebx], edi
+        jmp L_59FE80_next
+L_59FE80_unguarded:
+        mov ecx, dword ptr [esi - 0x4]
+        cmp edi, ecx
+        lea eax, [esi - 0x4]
+        jae L_59FE80_store_hole
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+L_59FE80_shift:
+        mov dword ptr [edx], ecx
+        mov ecx, dword ptr [eax - 0x4]
+        mov edx, eax
+        sub eax, 0x4
+        cmp edi, ecx
+        jb L_59FE80_shift
+L_59FE80_store_hole:
+        mov dword ptr [edx], edi
+L_59FE80_next:
+        add esi, 0x4
+        cmp esi, dword ptr [esp + 0x18]
+        jne L_59FE80_top
+        pop edi
+        pop ebp
+L_59FE80_ret2:
+        pop esi
+L_59FE80_ret1:
+        pop ebx
+        ret
+    }
+}
