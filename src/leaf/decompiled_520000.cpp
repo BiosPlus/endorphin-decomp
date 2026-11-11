@@ -966,3 +966,60 @@ L_ret:
         ret 4
     }
 }
+
+// [0x00527D60] sub_00527D60 (99 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_009251EC;
+
+extern "C" __declspec(naked) void* __fastcall fn_00527D60(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        test ebx, ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        push edi
+        mov edi, ecx
+        jne L_527D60_a
+        call ebp
+L_527D60_a:
+        mov esi, dword ptr [esp + 0x1c]
+        cmp esi, dword ptr [ebx + 0x8]
+        jb L_527D60_b
+        call ebp
+L_527D60_b:
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_527D60_c
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+L_527D60_c:
+        mov eax, dword ptr [edi + 0x8]
+        lea ecx, [esi + 0x4]
+        sub eax, ecx
+        sar eax, 0x2
+        test eax, eax
+        jle L_527D60_d
+        add eax, eax
+        add eax, eax
+        push eax
+        push ecx
+        push eax
+        push esi
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+L_527D60_d:
+        mov eax, dword ptr [esp + 0x14]
+        add dword ptr [edi + 0x8], -0x4
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        pop esi
+        pop ebp
+        mov dword ptr [eax], ebx
+        pop ebx
+        ret 0xc
+    }
+}
