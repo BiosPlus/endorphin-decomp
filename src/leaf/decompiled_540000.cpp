@@ -1856,3 +1856,73 @@ extern "C" __declspec(naked) void __fastcall fn_0054D220(void* self) {
         ret
     }
 }
+
+// [0x00543220] sub_00543220 (124 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00543220(void* self, int edx_unused, int idx, bool flag) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, 0x0a
+        mov esi, ecx
+        jge short L543220_ret
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        je short L543220_inv1
+        mov eax, dword ptr [esi + 0xc]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb short L543220_after1
+L543220_inv1:
+        call ebx
+L543220_after1:
+        mov ecx, dword ptr [esi + 0x14]
+        mov eax, dword ptr [esi + 0x8]
+        cmp ecx, dword ptr [eax + 4*edi]
+        je short L543220_pop
+        test ecx, ecx
+        je short L543220_nocur
+        cmp byte ptr [esp + 0x14], 0x00
+        mov edx, dword ptr [ecx]
+        je short L543220_else
+        mov eax, dword ptr [edx + 0x64]
+        jmp short L543220_docall
+L543220_else:
+        mov eax, dword ptr [edx + 0x60]
+L543220_docall:
+        call eax
+L543220_nocur:
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        je short L543220_inv2
+        mov eax, dword ptr [esi + 0xc]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb short L543220_after2
+L543220_inv2:
+        call ebx
+L543220_after2:
+        mov ecx, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [ecx + 4*edi]
+        test ecx, ecx
+        mov dword ptr [esi + 0x14], ecx
+        je short L543220_nonew
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x5c]
+        call eax
+L543220_nonew:
+        mov dword ptr [esi], edi
+L543220_pop:
+        pop ebx
+L543220_ret:
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
