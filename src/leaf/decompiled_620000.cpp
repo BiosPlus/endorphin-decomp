@@ -2160,3 +2160,41 @@ extern "C" __declspec(naked) void* __fastcall fn_0062C510(void* self, int edx_un
         ret 0x10
     }
 }
+
+// [0x00629850] sub_00629850 (91 bytes)
+extern "C" int mem_00928EAC;
+extern "C" int mem_009783FC;
+extern "C" int mem_009783E4;
+extern "C" __declspec(naked) void* __fastcall fn_00629850(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_005FF240
+        fld1
+        mov dword ptr [esi + 0x30], offset mem_00928EAC
+        mov dword ptr [esi], offset mem_009783FC
+        mov dword ptr [esi + 0x30], offset mem_009783E4
+        fst dword ptr [esi + 0x34]
+        fldz
+        mov eax, esi
+        fst dword ptr [esi + 0x38]
+        fst dword ptr [esi + 0x3c]
+        fst dword ptr [esi + 0x40]
+        fst dword ptr [esi + 0x44]
+        fst dword ptr [esi + 0x4c]
+        fst dword ptr [esi + 0x50]
+        fst dword ptr [esi + 0x54]
+        fst dword ptr [esi + 0x58]
+        fst dword ptr [esi + 0x60]
+        fst dword ptr [esi + 0x64]
+        fst dword ptr [esi + 0x68]
+        fstp dword ptr [esi + 0x6c]
+        fst dword ptr [esi + 0x48]
+        fst dword ptr [esi + 0x5c]
+        fstp dword ptr [esi + 0x70]
+        pop esi
+        ret 0x10
+    }
+}
