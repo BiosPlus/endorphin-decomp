@@ -2649,3 +2649,49 @@ extern "C" __declspec(naked) void __fastcall fn_0040C490(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004034B0] sub_004034B0 (123 bytes)
+extern "C" int mem_00924090;
+extern "C" void ext_006A343C();
+extern "C" void ext_006A3436();
+extern "C" void ext_006A342A();
+extern "C" __declspec(naked) void __fastcall fn_004034B0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xe0]
+        push edi
+        xor edi, edi
+        cmp eax, edi
+        je L_no_gdi
+        push eax
+        call dword ptr [mem_00924090]
+L_no_gdi:
+        mov eax, dword ptr [esi + 0x90]
+        cmp eax, edi
+        je L_no_frame
+        push eax
+        call ext_006A343C
+L_no_frame:
+        mov eax, dword ptr [esi + 0x8c]
+        cmp eax, edi
+        je L_no_stream
+        push eax
+        call ext_006A3436
+L_no_stream:
+        call ext_006A342A
+        mov dword ptr [esi + 0xe8], edi
+        mov dword ptr [esi + 0x8c], edi
+        mov dword ptr [esi + 0x90], edi
+        mov dword ptr [esi + 0xbc], edi
+        mov dword ptr [esi + 0xc0], edi
+        mov dword ptr [esi + 0xc4], edi
+        mov dword ptr [esi + 0xc8], edi
+        mov dword ptr [esi + 0xcc], edi
+        mov dword ptr [esi + 0xe0], edi
+        mov dword ptr [esi + 0xd8], edi
+        pop edi
+        pop esi
+        ret
+    }
+}
