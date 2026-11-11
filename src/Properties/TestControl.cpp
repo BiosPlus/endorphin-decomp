@@ -58,3 +58,35 @@ extern "C" __declspec(naked) void __fastcall fn_004F05C0(void* self) {
         jmp ext_004EFDF0
     }
 }
+
+// [0x004F0530] Properties::TestControl::vfunc_7 (93 bytes)
+extern "C" void ext_0041CEB0();
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void* __fastcall fn_004F0530(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x008B56F9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1C
+        mov ecx, dword ptr [esp + 0x30]
+        lea eax, [esp]
+        push eax
+        call ext_0041CEB0
+        mov ecx, dword ptr [esp + 0x2C]
+        push eax
+        add ecx, 0x1C
+        mov dword ptr [esp + 0x28], 0x0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp]
+        mov dword ptr [esp + 0x24], 0xFFFFFFFF
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x1C]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x8
+    }
+}
