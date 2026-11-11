@@ -199,3 +199,63 @@ extern "C" __declspec(naked) void __fastcall fn_0054EC30(void* self) {
         jmp dword ptr [mem_009253D4]
     }
 }
+
+// [0x0054EBB0] NMMatrixStackManager::vfunc_7 (125 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_009253D0;
+
+extern "C" __declspec(naked) void __fastcall fn_0054EBB0(void* self, int edx_unused, const float* m) {
+    __asm {
+        sub esp, 0x8
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x4]
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_54EBC9
+        call ebp
+    L_54EBC9:
+        lea eax, [edi - 0x40]
+        cmp eax, dword ptr [esi + 0x8]
+        push ebx
+        mov ebx, esi
+        mov dword ptr [esp + 0x14], edi
+        ja L_54EBDD
+        cmp eax, dword ptr [esi + 0x4]
+        jae L_54EBDF
+    L_54EBDD:
+        call ebp
+    L_54EBDF:
+        lea esi, [edi - 0x40]
+        cmp esi, dword ptr [ebx + 0x8]
+        pop ebx
+        jb L_54EBEA
+        call ebp
+    L_54EBEA:
+        mov eax, dword ptr [esp + 0x18]
+        fld dword ptr [eax]
+        sub esp, 0xc
+        fadd dword ptr [esi + 0x30]
+        fstp dword ptr [esi + 0x30]
+        fld dword ptr [esi + 0x34]
+        fadd dword ptr [eax + 0x4]
+        fstp dword ptr [esi + 0x34]
+        fld dword ptr [eax + 0x8]
+        fadd dword ptr [esi + 0x38]
+        fstp dword ptr [esi + 0x38]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fstp dword ptr [esp]
+        call dword ptr [mem_009253D0]
+        pop edi
+        pop esi
+        pop ebp
+        add esp, 0x8
+        ret 0x4
+    }
+}
