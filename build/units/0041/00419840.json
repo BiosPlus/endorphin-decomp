@@ -20,5 +20,7 @@
     "0x0041988F",
     "0x0041989E"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T08:58:48Z"
 }
