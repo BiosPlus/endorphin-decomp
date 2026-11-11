@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_550000.cpp
 
+#include <string.h>
+
 // [0x00559180] sub_00559180 (31 bytes)
 extern "C" void ext_00559070();
 
@@ -2267,5 +2269,73 @@ extern "C" __declspec(naked) void __fastcall fn_00556680(void* self) {
         pop ebx
         add esp, 8
         ret
+    }
+}
+
+// [0x005503A0] sub_005503A0 (124 bytes)
+extern "C" int mem_009252BC;
+
+extern "C" __declspec(naked) int __fastcall fn_005503A0(void* self, int edx_unused, const char* src) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        lea esi, [ecx + 0x4]
+        mov edx, esi
+        sub edx, eax
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    copy_loop:
+        mov cl, byte ptr [eax]
+        mov byte ptr [edx + eax], cl
+        add eax, 0x1
+        test cl, cl
+        jne copy_loop
+        mov eax, esi
+        lea edx, [eax + 0x1]
+    len_loop:
+        mov cl, byte ptr [eax]
+        add eax, 0x1
+        test cl, cl
+        jne len_loop
+        sub eax, edx
+        jne have_len
+        xor eax, eax
+        pop esi
+        ret 0x4
+    have_len:
+        push edi
+        push 0x9525bc
+        push esi
+        mov esi, dword ptr [mem_009252BC]
+        call esi
+        add esp, 0x8
+        test eax, eax
+        je use_src
+        xor edi, edi
+        jmp second_tok
+    use_src:
+        mov edi, dword ptr [esp + 0xc]
+    second_tok:
+        push 0x9570a8
+        push 0x0
+        call esi
+        add esp, 0x8
+        test eax, eax
+        je done
+    count_loop:
+        push 0x9570a8
+        push 0x0
+        add edi, 0x1
+        call esi
+        add esp, 0x8
+        test eax, eax
+        jne count_loop
+    done:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
     }
 }
