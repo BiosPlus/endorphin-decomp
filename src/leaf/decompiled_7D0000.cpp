@@ -2082,3 +2082,22 @@ extern "C" __declspec(naked) void __cdecl fn_007D7990(void) {
         ret
     }
 }
+
+// [0x007DC770] sub_007DC770 (83 bytes)
+extern "C" void ext_007C8960();
+extern "C" void ext_007DC220();
+extern "C" void ext_007DC440();
+
+extern "C" int __cdecl fn_007DC770(int* self) {
+    typedef void (__cdecl *Fn)(int*, int, int, int*);
+    int cell[6];
+    int i;
+    cell[0] = 0;
+    cell[1] = (int)ext_007DC220;
+    cell[2] = (int)ext_007DC440;
+    cell[4] = 1;
+    for (i = 0; i < self[0]; i++) {
+        ((Fn)ext_007C8960)(self, 8, i, cell);
+    }
+    return 1;
+}
