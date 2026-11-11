@@ -778,3 +778,62 @@ extern "C" __declspec(naked) void __fastcall fn_007FC3D0(void* self, void* out) 
         ret
     }
 }
+
+// [0x007F4C50] sub_007F4C50 (116 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007F4C50(float* dst, unsigned char* base, int idx) {
+    __asm {
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        shl ecx, 0x5
+        lea ebx, [ecx + edx]
+        push edi
+        mov eax, ebp
+        mov esi, ebx
+        mov edi, 0x3
+        nop
+    f4c50_outer1:
+        mov ecx, esi
+        mov edx, 0x4
+    f4c50_inner1:
+        fld dword ptr [ecx]
+        add eax, 0x4
+        fstp dword ptr [eax - 0x4]
+        add ecx, 0x40
+        sub edx, 0x1
+        jne f4c50_inner1
+        add esi, 0x4
+        sub edi, 0x1
+        jne f4c50_outer1
+        lea eax, [ebp + 0x30]
+        lea esi, [ebx + 0x10]
+        mov edi, 0x3
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    f4c50_outer2:
+        mov ecx, esi
+        mov edx, 0x4
+    f4c50_inner2:
+        fld dword ptr [ecx]
+        add eax, 0x4
+        fstp dword ptr [eax - 0x4]
+        add ecx, 0x40
+        sub edx, 0x1
+        jne f4c50_inner2
+        add esi, 0x4
+        sub edi, 0x1
+        jne f4c50_outer2
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
