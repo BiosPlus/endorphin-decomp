@@ -4876,3 +4876,42 @@ extern "C" void __fastcall fn_00436D00(void* self) {
     void* c = ((GetFn)ext_00465B40)();
     ((Fn1)(*(void***)c)[0x98 / 4])(c, 5);
 }
+
+// [0x00436BE0] sub_00436BE0 (84 bytes)
+extern "C" void ext_00436070();
+extern "C" void ext_00465B30();
+extern "C" void ext_00465B40();
+extern "C" void ext_0046F930();
+extern "C" void ext_00493F80();
+extern "C" void ext_00594000();
+extern "C" void ext_0044B7C0();
+extern "C" __declspec(naked) void __fastcall fn_00436BE0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x8c]
+        call eax
+        call ext_00465B30
+        cmp dword ptr [eax + 0x14], 0
+        je L_skip
+        call ext_00465B30
+        mov ecx, dword ptr [eax + 0x14]
+        call ext_0046F930
+L_skip:
+        call ext_00594000
+        lea ecx, [eax + 0x258]
+        call ext_00493F80
+        mov ecx, esi
+        call ext_00436070
+        mov ecx, dword ptr [esi + 0x100]
+        test ecx, ecx
+        pop esi
+        je L_ret
+        jmp ext_0044B7C0
+L_ret:
+        ret
+    }
+}
