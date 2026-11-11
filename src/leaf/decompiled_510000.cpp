@@ -1502,3 +1502,42 @@ extern "C" __declspec(naked) void __fastcall fn_0051AE60(void* self) {
         ret
     }
 }
+
+// [0x00517FC0] sub_00517FC0 (101 bytes)
+// Two stack args: [esp+4] = double* out, [esp+8] = object pointer passed to sub_004275C0
+// (which fills a local std::string and returns it). Calls c_str() on that string, passes
+// the result to atof, stores the double into *out. Local string is destroyed via the
+// imported dtor under an SEH frame (fs:[0]). Caller cleans (ret 0).
+extern "C" void ext_004275C0();
+extern "C" int mem_00924FF0;
+extern "C" int mem_009251F0;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __cdecl fn_00517FC0() {
+    __asm {
+        push -0x1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        mov ecx, dword ptr [esp + 0x30]
+        lea eax, [esp]
+        push eax
+        call ext_004275C0
+        mov ecx, eax
+        mov dword ptr [esp + 0x24], 0x0
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        mov ecx, dword ptr [esp + 0x30]
+        fstp qword ptr [ecx]
+        add esp, 0x4
+        lea ecx, [esp]
+        mov dword ptr [esp + 0x24], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret
+    }
+}
