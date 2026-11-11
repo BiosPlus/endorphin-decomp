@@ -2925,3 +2925,70 @@ extern "C" __declspec(naked) void* __fastcall fn_00668150(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x00665CA0] sub_00665CA0 (119 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_00665B80();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00665CA0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x8]
+        cmp eax, -1
+        je tail_call
+        push ebx
+        push edi
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+loop_top:
+        cmp dword ptr [esi + 0x18], eax
+        jle loop_done
+        mov eax, dword ptr [esi + 0x14]
+        mov edi, dword ptr [eax]
+        cmp edi, eax
+        jne check_head2
+        call dword ptr [mem_00925134]
+check_head2:
+        mov ecx, dword ptr [esi + 0x14]
+        mov ebx, dword ptr [edi + 0x8]
+        mov edi, dword ptr [ecx]
+        cmp edi, ecx
+        jne unlink_node
+        call dword ptr [mem_00925134]
+unlink_node:
+        cmp edi, dword ptr [esi + 0x14]
+        je skip_unlink
+        mov edx, dword ptr [edi + 0x4]
+        mov eax, dword ptr [edi]
+        mov dword ptr [edx], eax
+        mov ecx, dword ptr [edi]
+        mov edx, dword ptr [edi + 0x4]
+        push edi
+        mov dword ptr [ecx + 0x4], edx
+        call ext_006A5C5C
+        add esp, 0x4
+        add dword ptr [esi + 0x18], -1
+skip_unlink:
+        test ebx, ebx
+        je no_delete
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        mov ecx, ebx
+        call edx
+no_delete:
+        mov eax, dword ptr [esi + 0x8]
+        cmp eax, -1
+        jne loop_top
+loop_done:
+        pop edi
+        pop ebx
+tail_call:
+        mov ecx, esi
+        pop esi
+        jmp ext_00665B80
+    }
+}
