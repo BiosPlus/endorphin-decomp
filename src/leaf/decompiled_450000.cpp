@@ -2278,3 +2278,25 @@ extern "C" void __fastcall fn_00458210(void* self, int edx_unused, int a1, int a
 dispatch:
     reinterpret_cast<VFn>((*reinterpret_cast<void***>(self))[0x184 / sizeof(void*)])(self, a1, a2, a3);
 }
+
+// [0x0045DE30] sub_0045DE30 (119 bytes)
+extern "C" void ext_00468180();
+extern "C" void ext_00468660();
+extern "C" void ext_0043CDD0();
+extern "C" void ext_0043DD60();
+extern "C" int mem_00993830;
+extern "C" int mem_00925688;
+
+extern "C" void __fastcall fn_0045DE30(void* self) {
+    typedef void* (__fastcall *PFn)(void*);
+    typedef double (__thiscall *DFn)(void*, int);
+    typedef void (__thiscall *DDFn)(void*, double, double);
+    void* a = ((PFn)ext_00468180)(self);
+    void* b = ((PFn)ext_00468660)(a);
+    int c = ((int (__fastcall *)(void*))(*(void***)b)[0xa0 / sizeof(void*)])(b);
+    double d1 = ((DFn)ext_0043CDD0)(self, *(int*)((char*)self + 0xfc) + 8);
+    double d2 = ((DFn)ext_0043CDD0)(self, *(int*)((char*)self + 0xfc));
+    double v = (d1 - d2) + (double)c;
+    ((DDFn)ext_0043DD60)(self, *(double*)&mem_00993830, v);
+    ((void (__stdcall *)(int, int, int))mem_00925688)(*(int*)((char*)self + 0x20), 0, 1);
+}
