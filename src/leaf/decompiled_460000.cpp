@@ -2343,3 +2343,24 @@ extern "C" void __fastcall fn_00460590(void* self) {
     void* hwnd2 = *(void**)(*(char**)((char*)self + 0xb4) + 0x20);
     (*(PFN_Upd*)&mem_0092568C)(hwnd2);
 }
+
+// [0x0046C500] sub_0046C500 (33 bytes)
+extern "C" void ext_00404F00();
+
+extern "C" __declspec(naked) void* __fastcall fn_0046C500(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0Ch]
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        push eax
+        push esi
+        mov dword ptr [esp + 0Ch], 0
+        call ext_00404F00
+        add esp, 8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
