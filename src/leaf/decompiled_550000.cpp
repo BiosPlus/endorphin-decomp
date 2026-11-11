@@ -2467,3 +2467,53 @@ extern "C" __declspec(naked) void __fastcall fn_00554D00(void* self) {
         ret 0x4
     }
 }
+
+// [0x005531B0] sub_005531B0 (126 bytes)
+extern "C" int mem_009334D8;
+extern "C" int mem_00928E78;
+extern "C" int mem_009575B0;
+extern "C" int mem_009575C0;
+extern "C" int mem_009575D0;
+extern "C" __declspec(naked) float __fastcall fn_005531B0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x2c]
+        cmp eax, 0x1
+        jne chk_2
+        fld dword ptr [esp + 0x4]
+        fdiv qword ptr [mem_009334D8]
+        fstp dword ptr [esp + 0x4]
+    chk_2:
+        cmp eax, 0x2
+        jne chk_3
+        fld dword ptr [esp + 0x4]
+        fdiv qword ptr [mem_00928E78]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret 0x4
+    chk_3:
+        cmp eax, 0x3
+        jne chk_4
+        fld dword ptr [esp + 0x4]
+        fmul qword ptr [mem_009575B0]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret 0x4
+    chk_4:
+        cmp eax, 0x4
+        jne chk_5
+        fld dword ptr [esp + 0x4]
+        fmul qword ptr [mem_009575C0]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret 0x4
+    chk_5:
+        cmp eax, 0x5
+        jne chk_end
+        fld dword ptr [esp + 0x4]
+        fmul qword ptr [mem_009575D0]
+        fstp dword ptr [esp + 0x4]
+    chk_end:
+        fld dword ptr [esp + 0x4]
+        ret 0x4
+    }
+}
