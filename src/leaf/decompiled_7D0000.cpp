@@ -1276,3 +1276,16 @@ extern "C" void __cdecl fn_007D87D0(char* self, char* node) {
     *(int*)(node + 0x68) = 0;
     *(int*)(self + 0x164) -= 1;
 }
+
+// [0x007D5870] sub_007D5870 (105 bytes)
+extern "C" int mem_009252FC;
+
+extern "C" void __cdecl fn_007D5870(int p0, char* sink, const char* fmt, ...) {
+    char buf[0x1388];
+    char* ap = reinterpret_cast<char*>(&fmt) + sizeof(fmt);
+    typedef int (__cdecl *vsnprintf_t)(char*, unsigned int, const char*, char*);
+    reinterpret_cast<vsnprintf_t>(mem_009252FC)(buf, 0x1388, fmt, ap);
+    typedef void (__cdecl *cb_t)(int, char*, int);
+    cb_t cb = *reinterpret_cast<cb_t*>(sink + 0x18);
+    cb(0, buf, *reinterpret_cast<int*>(sink + 0x1c));
+}
