@@ -2500,3 +2500,57 @@ L_false_5185D0:
         ret 0x8
     }
 }
+
+// [0x00518840] sub_00518840 (96 bytes)
+extern "C" void ext_005185D0();
+
+extern "C" __declspec(naked) void __cdecl fn_00518840(void* first, int hole, int top, unsigned val, void* pred) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        lea eax, [edi - 1]
+        cdq
+        sub eax, edx
+        mov esi, eax
+        sar esi, 1
+        cmp dword ptr [esp + 0x14], edi
+        jge L_early_518840
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        mov ebp, dword ptr [esp + 0x20]
+L_head_518840:
+        mov eax, dword ptr [ebx + 4*esi]
+        push ebp
+        push eax
+        lea ecx, [esp + 0x2c]
+        call ext_005185D0
+        test al, al
+        je L_exit_518840
+        mov ecx, dword ptr [ebx + 4*esi]
+        lea eax, [esi - 1]
+        cdq
+        sub eax, edx
+        mov dword ptr [ebx + 4*edi], ecx
+        mov edi, esi
+        sar eax, 1
+        cmp dword ptr [esp + 0x1c], edi
+        mov esi, eax
+        jl L_head_518840
+L_exit_518840:
+        mov dword ptr [ebx + 4*edi], ebp
+        pop ebp
+        pop ebx
+        pop edi
+        pop esi
+        ret
+L_early_518840:
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 4*edi], edx
+        pop edi
+        pop esi
+        ret
+    }
+}
