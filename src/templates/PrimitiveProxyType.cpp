@@ -699,3 +699,38 @@ extern "C" __declspec(naked) void __fastcall fn_004979F0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00497A60] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_9 (102 bytes)
+extern "C" void ext_00497860();
+
+// SEH-framed, same frame as vfunc_8 at 0x004979F0; differs only in the callee (ext_00497860).
+extern "C" __declspec(naked) void __fastcall fn_00497A60(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x30]
+        mov ecx, dword ptr [esp + 0x30]
+        push eax
+        push ecx
+        lea edx, [esp + 0x8]
+        push edx
+        call ext_00497860
+        add esp, 0xc
+        mov ecx, dword ptr [esp + 0x2c]
+        mov ecx, dword ptr [ecx]
+        push eax
+        mov dword ptr [esp + 0x28], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp]
+        mov dword ptr [esp + 0x24], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x8
+    }
+}
