@@ -35,3 +35,22 @@ L_005B3615:
         ret 0x4
     }
 }
+
+// [0x005B4350] Geometry::FileType::vfunc_18 (90 bytes)
+extern "C" void __cdecl ext_005B4050(void* a, void* c);
+extern "C" void __cdecl ext_005B3FF0(void* a, void* c);
+extern "C" void __cdecl ext_00671F30(void* a);
+
+extern "C" void* __fastcall fn_005B4350(void* self, int edx_unused, void* a, int type, void* c) {
+    volatile int local = 0;
+    if (type != 0x256) {
+        if (type != 0x317) {
+            ext_00671F30(a);
+        } else {
+            ext_005B3FF0(a, c);
+        }
+    } else {
+        ext_005B4050(a, c);
+    }
+    return a;
+}
