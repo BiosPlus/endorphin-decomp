@@ -3428,3 +3428,61 @@ tail_done:
         ret
     }
 }
+
+// [0x00664840] sub_00664840 (125 bytes)
+// std::string-returning float formatter: snprintf("%.6f"), strip trailing zeros
+// after the '.', then construct the hidden-return std::string from the buffer.
+extern "C" int mem_009251E0;
+extern "C" int mem_009252DC;
+extern "C" int mem_00924FE4;
+static const char kFmt_00664840[] = "%.6f";
+extern "C" __declspec(naked) void __cdecl fn_00664840(void) {
+    __asm {
+        sub esp, 0x38
+        fld dword ptr [esp + 0x40]
+        push esi
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        push offset kFmt_00664840
+        lea eax, [esp + 0x14]
+        push 0x32
+        push eax
+        mov dword ptr [esp + 0x18], 0x0
+        call dword ptr [mem_009251E0]
+        lea ecx, [esp + 0x1c]
+        push 0x2e
+        push ecx
+        call dword ptr [mem_009252DC]
+        lea ecx, [esp + 0x24]
+        add esp, 0x1c
+        lea esi, [ecx + 0x1]
+        nop
+    len_loop:
+        mov dl, byte ptr [ecx]
+        add ecx, 0x1
+        test dl, dl
+        jne len_loop
+        sub ecx, esi
+        lea ecx, [esp + ecx + 0x7]
+        add eax, 0x1
+        cmp ecx, eax
+        jbe done
+    strip_loop:
+        cmp byte ptr [ecx], 0x30
+        jne done
+        mov byte ptr [ecx], 0x0
+        sub ecx, 0x1
+        cmp ecx, eax
+        ja strip_loop
+    done:
+        mov esi, dword ptr [esp + 0x40]
+        lea edx, [esp + 0x8]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        add esp, 0x38
+        ret
+    }
+}
