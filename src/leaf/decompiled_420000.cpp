@@ -984,3 +984,30 @@ extern "C" __declspec(naked) void __fastcall fn_004207F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004225E0] sub_004225E0 (89 bytes)
+extern "C" void ext_006A5C6E();
+extern "C" int mem_0092E8F4;
+extern "C" void* __fastcall fn_004225E0(void* self) {
+    char* p = (char*)self;
+    ((void (__cdecl*)())ext_006A5C6E)();
+    *(int*)(p + 0x54) = 0;
+    *(int*)(p + 0x58) = 0;
+    *(int*)(p + 0x5c) = 0;
+    *(int*)(p + 0x60) = 0;
+    *(int*)(p + 0x64) = 0;
+    *(int*)(p + 0x68) = 0;
+    *(unsigned char*)(p + 0x6c) = 0;
+    *(int*)(p + 0x70) = 0;
+    *(int*)(p + 0x74) = 0;
+    *(int*)(p + 0x78) = 0;
+    *(int*)(p + 0x7c) = 0;
+    *(int*)(p + 0x80) = 0;
+    *(int*)(p + 0x84) = 0;
+    *(int*)(p + 0x88) = 0;
+    *(unsigned char*)(p + 0x8c) = 0;
+    *(unsigned char*)(p + 0x8d) = 0;
+    *(unsigned char*)(p + 0x8e) = 0;
+    *(int*)p = (int)&mem_0092E8F4;
+    return self;
+}
