@@ -1212,3 +1212,63 @@ extern "C" __declspec(naked) void __fastcall fn_0052A1C0(void* self) {
         ret
     }
 }
+
+// [0x005230B0] sub_005230B0 (108 bytes)
+extern "C" void ext_00522840();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005230B0(void* self, int edx_unused) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        test esi, esi
+        mov ebp, ecx
+        je L_invalid
+        cmp esi, dword ptr [esp + 0x18]
+        je L_cont
+    L_invalid:
+        call dword ptr [mem_00925134]
+    L_cont:
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x14]
+        cmp ecx, eax
+        je L_store
+        push ebx
+        push edi
+        push ecx
+        mov ecx, dword ptr [ebp + 8]
+        push ecx
+        push eax
+        call ext_00522840
+        mov edi, dword ptr [ebp + 8]
+        mov ebx, eax
+        add esp, 0xc
+        cmp ebx, edi
+        mov esi, ebx
+        je L_done
+        nop
+    L_loop:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx]
+        push 0
+        mov ecx, esi
+        call eax
+        add esi, 0x28
+        cmp esi, edi
+        jne L_loop
+    L_done:
+        mov ecx, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [esp + 0x18]
+        pop edi
+        mov dword ptr [ebp + 8], ebx
+        pop ebx
+    L_store:
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [eax], esi
+        pop esi
+        mov dword ptr [eax + 4], ecx
+        pop ebp
+        ret 0x14
+    }
+}
