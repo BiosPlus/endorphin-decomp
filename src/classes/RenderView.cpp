@@ -2,6 +2,7 @@
 
 extern "C" int mem_00ACDB40;
 extern "C" int mem_00925690;
+extern "C" int mem_00925134;
 
 // [0x0044BF40] RenderView::vfunc_28 (33 bytes)
 extern "C" __declspec(naked) void __fastcall fn_0044BF40(void* self) {
@@ -42,6 +43,63 @@ extern "C" __declspec(naked) void __fastcall fn_0044C260(void* self) {
         lea ecx, [esi - 0x60]
         call ext_0044BC60
         pop esi
+        ret 0x4
+    }
+}
+
+// [0x0044C3A0] RenderView::vfunc_0_off_5C (117 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0044C3A0(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov ebx, ecx
+        mov byte ptr [ebx + 0x19], 0x0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x2c]
+        push edi
+        mov ecx, esi
+        call edx
+        mov edi, eax
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x2c]
+        mov ecx, esi
+        call edx
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        je skip_0044C3A0
+        mov eax, dword ptr [eax + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp eax, 0x1
+        jne skip_0044C3A0
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        jbe chk2_0044C3A0
+        call ebp
+        cmp esi, dword ptr [edi + 0x8]
+chk2_0044C3A0:
+        jb chk3_0044C3A0
+        call ebp
+chk3_0044C3A0:
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        pop ebp
+        je skip_0044C3A0
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xf8]
+        call edx
+        cmp eax, 0x6
+        jne skip_0044C3A0
+        mov byte ptr [ebx + 0x19], 0x1
+skip_0044C3A0:
+        lea ecx, [ebx - 0x5c]
+        call ext_0044BC60
+        pop edi
+        pop esi
+        pop ebx
         ret 0x4
     }
 }
