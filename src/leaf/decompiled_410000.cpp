@@ -1923,3 +1923,32 @@ extern "C" __declspec(naked) void __fastcall fn_00410420(void* self) {
         ret
     }
 }
+
+// [0x004103F0] sub_004103F0 (47 bytes)
+extern "C" __declspec(naked) int __fastcall fn_004103F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x28]
+        call edx
+        test al, al
+        jne short L_second
+        mov ecx, esi
+        call ext_00410390
+        test al, al
+        je short L_one
+    L_second:
+        mov ecx, esi
+        call ext_00410390
+        test al, al
+        jne short L_one
+        xor eax, eax
+        pop esi
+        ret
+    L_one:
+        mov eax, 1
+        pop esi
+        ret
+    }
+}
