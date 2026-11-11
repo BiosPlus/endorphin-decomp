@@ -55,3 +55,48 @@ extern "C" __declspec(naked) void __fastcall fn_00551AF0(void* self) {
         ret
     }
 }
+
+// [0x00551CB0] NMCamera::Orthogonal::vfunc_19 (104 bytes)
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __fastcall fn_00551CB0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_005480D0
+        fdiv qword ptr [esi + 0xb8]
+        mov edi, dword ptr [esp + 0x14]
+        fld qword ptr [esi + 0xb0]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fld qword ptr [mem_00993828]
+        fmul st(1), st
+        fld dword ptr [edi]
+        fdiv st, st(3)
+        faddp st(2), st
+        fadd st(1), st
+        fxch st(1)
+        call ext_006A6DE0
+        mov ebx, dword ptr [esp + 0x18]
+        mov dword ptr [ebx], eax
+        fld qword ptr [esi + 0xb8]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fmul st, st(1)
+        fld dword ptr [edi + 0x4]
+        fdivrp st(3), st
+        fsubrp st(2), st
+        faddp st(1), st
+        call ext_006A6DE0
+        pop edi
+        pop esi
+        mov dword ptr [ebx + 0x4], eax
+        pop ebx
+        pop ecx
+        ret 8
+    }
+}
