@@ -1415,3 +1415,48 @@ not_found:
         ret
     }
 }
+
+// [0x005C3A30] sub_005C3A30 (107 bytes)
+extern "C" void ext_00648480();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void* __fastcall fn_005C3A30(void* self) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x16c]
+        test ecx, ecx
+        je L_else_005C3A30
+        cmp byte ptr [esi + 0x168], 0
+        je L_else_005C3A30
+        call ext_00648480
+        fld dword ptr [eax + 0x30]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x34]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x38]
+        lea eax, [esi + 0x170]
+        fstp dword ptr [esp + 0xc]
+        pop esi
+        fld dword ptr [esp]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0x8]
+        add esp, 0x10
+        ret
+L_else_005C3A30:
+        mov eax, dword ptr [esi + 0x4]
+        mov edx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [eax + 0x14]
+        lea ecx, [esi + 0x4]
+        push edx
+        call eax
+        add eax, 0x30
+        pop esi
+        add esp, 0x10
+        ret
+    }
+}
