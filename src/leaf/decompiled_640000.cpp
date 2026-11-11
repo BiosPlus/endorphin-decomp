@@ -2506,3 +2506,13 @@ extern "C" void* __fastcall fn_0064E220(char* self) {
     ext_007C93A0(ext_007D8700(*(int*)(self + 0x64)), 1, p);
     return p;
 }
+
+// [0x0064E250] sub_0064E250 (35 bytes)
+extern "C" int __cdecl ext_007D8700(int v);
+extern "C" void __cdecl ext_007C93A0(int a0, int a1, void* a2);
+
+extern "C" void* __fastcall fn_0064E250(char* self) {
+    void* p = self + 0x8c;
+    ext_007C93A0(ext_007D8700(*(int*)(self + 0x64)), 0, p);
+    return p;
+}
