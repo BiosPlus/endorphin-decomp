@@ -6769,3 +6769,78 @@ extern "C" __declspec(naked) void* __fastcall fn_0043BB40(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x0043D580] sub_0043D580 (143 bytes)
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924494;
+extern "C" int mem_009242F4;
+
+// try { for (p = first; p != last; ++p, ++dest) { if (dest) ctor(dest, p); } }
+// catch (...) { destroy [begin, dest); throw; }
+// return dest;
+// Naked: EH frame written out by hand (see fn_004062C0 for the same pattern).
+extern "C" __declspec(naked) void* __cdecl fn_0043D580(void* first, void* last, void* dest) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x0087b351
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        push edi
+        mov edi, dword ptr [ebp + 0x8]
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], ebx
+        nop
+    loop_top:
+        cmp edi, dword ptr [ebp + 0xc]
+        je exit_path
+        mov dword ptr [ebp + 0x8], esi
+        mov dword ptr [ebp - 0x18], esi
+        cmp esi, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je skip_ctor
+        push edi
+        mov ecx, esi
+        call dword ptr [mem_00924494]
+    skip_ctor:
+        add esi, 0x4
+        mov byte ptr [ebp - 0x4], bl
+        mov dword ptr [ebp + 0x10], esi
+        add edi, 0x4
+        jmp loop_top
+    handler:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je handler_rethrow
+    destroy_loop:
+        mov ecx, esi
+        call dword ptr [mem_009242F4]
+        add esi, 0x4
+        cmp esi, edi
+        jne destroy_loop
+    handler_rethrow:
+        xor ebx, ebx
+        push ebx
+        push ebx
+        call ext_006A6DD2
+    exit_path:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
