@@ -2014,3 +2014,33 @@ extern "C" __declspec(naked) void __fastcall fn_005149F0(void* self) {
         ret
     }
 }
+
+// [0x005180D0] sub_005180D0 (82 bytes)
+extern "C" void ext_0050F990();
+extern "C" void ext_006246B0();
+
+extern "C" __declspec(naked) void __fastcall fn_005180D0(void* self) {
+    __asm {
+        push -1
+        push 0x00892D18
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x009520C4
+        lea ecx, [esi + 0x38]
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_006246B0
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_0050F990
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
