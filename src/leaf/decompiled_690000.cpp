@@ -1195,3 +1195,50 @@ extern "C" __declspec(naked) void __cdecl fn_00696BD0(void* in, void* s) {
         ret
     }
 }
+
+// [0x006996C0] sub_006996C0 (88 bytes)
+// Reads its single stack argument (ret 0). Returns 0 if arg or arg->[0x48] is null. Otherwise
+// __RTDynamicCast(arg->[0x4C], 0, 0xAA1808, 0xA31114, 0); if non-null, calls vtable slot 0x60
+// of arg->[0x4C] with (esi=&arg->[0x48]), 0xAA3D80, 0xA2E2F8, 0 and passes the result to
+// __RTDynamicCast again (ret 0), returning its result.
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void __fastcall fn_006996C0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        push esi
+        je L_fail
+        cmp dword ptr [eax + 0x48], 0
+        lea esi, [eax + 0x48]
+        je L_fail
+        mov eax, dword ptr [esi + 0x4]
+        push 0
+        push 0AA1808h
+        push 0A31114h
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        test eax, eax
+        je L_fail
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x60]
+        push 0
+        push 0AA3D80h
+        push 0A2E2F8h
+        push 0
+        push esi
+        call edx
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        pop esi
+        ret
+    L_fail:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
