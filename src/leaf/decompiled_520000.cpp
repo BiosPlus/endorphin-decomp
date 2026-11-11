@@ -2120,3 +2120,45 @@ L_null_524A60:
         ret
     }
 }
+
+extern "C" void ext_0053B240();
+extern "C" void ext_006A5C62();
+
+// [0x0052FFD0] sub_0052FFD0 (114 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0052FFD0(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push 0x40
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 0x4
+        mov dword ptr [esp + 0x4], esi
+        test esi, esi
+        mov dword ptr [esp + 0x10], 0x0
+        je short L_fail_0052FFD0
+        mov ecx, esi
+        call ext_0053B240
+        mov dword ptr [esi], 0x953f94
+        mov dword ptr [esi + 0x14], 0x953f8c
+        mov dword ptr [esi + 0x3c], 0x0
+        mov eax, esi
+        pop esi
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+L_fail_0052FFD0:
+        mov ecx, dword ptr [esp + 0x8]
+        xor eax, eax
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
