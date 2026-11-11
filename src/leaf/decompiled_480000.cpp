@@ -2480,3 +2480,68 @@ L_empty:
         ret
     }
 }
+
+// [0x00486E30] sub_00486E30 (108 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00486E30(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0x0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne check_node
+        call edi
+    check_node:
+        mov eax, dword ptr [esi + 0x4]
+        cmp byte ptr [eax + 0x69], 0x0
+        je advance
+        call edi
+        pop edi
+        pop esi
+        ret
+    advance:
+        mov ecx, dword ptr [eax + 0x8]
+        cmp byte ptr [ecx + 0x69], 0x0
+        jne climb
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 0x69], 0x0
+        jne store_left
+    leftmost:
+        mov ecx, eax
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 0x69], 0x0
+        je leftmost
+    store_left:
+        pop edi
+        mov dword ptr [esi + 0x4], ecx
+        pop esi
+        ret
+    climb:
+        mov eax, dword ptr [eax + 0x4]
+        cmp byte ptr [eax + 0x69], 0x0
+        jne done
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    climb_loop:
+        mov ecx, dword ptr [esi + 0x4]
+        cmp ecx, dword ptr [eax + 0x8]
+        jne done
+        mov dword ptr [esi + 0x4], eax
+        mov edx, eax
+        mov eax, dword ptr [edx + 0x4]
+        cmp byte ptr [eax + 0x69], 0x0
+        je climb_loop
+    done:
+        pop edi
+        mov dword ptr [esi + 0x4], eax
+        pop esi
+        ret
+    }
+}
