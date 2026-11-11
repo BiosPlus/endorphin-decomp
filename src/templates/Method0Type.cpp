@@ -970,3 +970,39 @@ extern "C" __declspec(naked) void* __fastcall fn_0066DCB0(void* self, int edx_un
         ret 0x8
     }
 }
+
+extern "C" void ext_0067A670();
+extern "C" int mem_00AD9DD0;
+extern "C" int mem_00AD9DCC;
+
+// [0x00487CB0] ExprParser::Method0Type<NMData::DesiredPoseEventData, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{352, {flat}}, 0}>::vfunc_40 (122 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00487CB0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x88497e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00AD9DD0], al
+        jne L_guarded
+        or dword ptr [mem_00AD9DD0], eax
+        mov ecx, offset mem_00AD9DCC
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00AD9DCC], 0x0093CA04
+        mov dword ptr [eax + 0x4], offset mem_00AD9DCC
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00AD9DCC
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
