@@ -1860,3 +1860,27 @@ extern "C" __declspec(naked) void __fastcall fn_0067B530(void* self) {
         ret
     }
 }
+
+// [0x0067B5C0] sub_0067B5C0 (34 bytes)
+extern "C" void ext_0067B530();
+extern "C" int mem_00924248;
+extern "C" __declspec(naked) void __fastcall fn_0067B5C0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0067B530
+        cmp dword ptr [esi + 0x4], 0x0
+        je done_0067B5C0
+        push edi
+        mov edi, dword ptr [mem_00924248]
+    wait_0067B5C0:
+        push 0x32
+        call edi
+        cmp dword ptr [esi + 0x4], 0x0
+        jne wait_0067B5C0
+        pop edi
+    done_0067B5C0:
+        pop esi
+        ret
+    }
+}
