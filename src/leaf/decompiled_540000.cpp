@@ -1036,3 +1036,47 @@ extern "C" bool __fastcall fn_00540F00(void* self, int edx_unused, int a1, int a
     }
     return false;
 }
+
+// [0x00546570] sub_00546570 (93 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00546570(const float* self, int edx_unused, const float* other) {
+    __asm {
+        fld dword ptr [ecx]
+        mov edx, dword ptr [esp + 4]
+        fld dword ptr [edx]
+        fucompp
+        fnstsw ax
+        test ah, 0x44
+        jp ne_fail_00546570
+        fld dword ptr [ecx + 0x4]
+        fld dword ptr [edx + 0x4]
+        fucompp
+        fnstsw ax
+        test ah, 0x44
+        jp ne_fail_00546570
+        fld dword ptr [ecx + 0x8]
+        fld dword ptr [edx + 0x8]
+        fucompp
+        fnstsw ax
+        test ah, 0x44
+        jp ne_fail_00546570
+        fld dword ptr [ecx + 0xc]
+        fld dword ptr [edx + 0xc]
+        fucompp
+        fnstsw ax
+        test ah, 0x44
+        jp ne_fail_00546570
+        mov eax, 1
+        xor ecx, ecx
+        test al, al
+        sete cl
+        mov al, cl
+        ret 4
+    ne_fail_00546570:
+        xor eax, eax
+        xor ecx, ecx
+        test al, al
+        sete cl
+        mov al, cl
+        ret 4
+    }
+}
