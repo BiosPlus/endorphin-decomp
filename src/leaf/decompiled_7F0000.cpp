@@ -1463,3 +1463,73 @@ extern "C" __declspec(naked) void __fastcall fn_007FC670(void* self) {
         ret
     }
 }
+
+// [0x007F0DA0] sub_007F0DA0 (138 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007F0DA0(void* self) {
+    __asm {
+        mov eax, dword ptr [eax]
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        lea esi, [esi + 4*esi]
+        lea ecx, [edx + 4*edx]
+        lea esi, [eax + 4*esi]
+        lea ecx, [eax + 4*ecx]
+        mov eax, dword ptr [esi + 0x4]
+        xor ebp, ebp
+        cmp eax, ebp
+        push edi
+        mov ebx, 1
+        je L_7F0DE5
+L_7F0DC2:
+        mov edi, dword ptr [eax + 0x4]
+        mov dword ptr [edi + 0x218], edx
+        add dword ptr [ecx + 0x8], ebx
+        mov edi, eax
+        mov eax, dword ptr [eax]
+        cmp eax, ebp
+        jne L_7F0DC2
+        cmp edi, ebp
+        je L_7F0DE5
+        mov eax, dword ptr [ecx + 0x4]
+        mov dword ptr [edi], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [ecx + 0x4], eax
+L_7F0DE5:
+        mov eax, dword ptr [esi + 0xc]
+        cmp eax, ebp
+        je L_7F0E13
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+L_7F0DF0:
+        mov edi, dword ptr [eax + 0x4]
+        mov dword ptr [edi + 0x154], edx
+        add dword ptr [ecx + 0x10], ebx
+        mov edi, eax
+        mov eax, dword ptr [eax]
+        cmp eax, ebp
+        jne L_7F0DF0
+        cmp edi, ebp
+        je L_7F0E13
+        mov edx, dword ptr [ecx + 0xc]
+        mov dword ptr [edi], edx
+        mov eax, dword ptr [esi + 0xc]
+        mov dword ptr [ecx + 0xc], eax
+L_7F0E13:
+        mov edx, dword ptr [esi]
+        add dword ptr [ecx], edx
+        pop edi
+        mov dword ptr [esi + 0x8], ebp
+        mov dword ptr [esi + 0x4], ebp
+        mov dword ptr [esi + 0x10], ebp
+        mov dword ptr [esi + 0xc], ebp
+        mov dword ptr [esi], ebp
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
