@@ -118,3 +118,67 @@ extern "C" float __fastcall fn_0059FFD0(void* self) {
     void* p = ((LookupF)ext_0059FF10)((void*)mem_00B40644, key);
     return *(float*)p;
 }
+
+// [0x0059FF60] NMData::BackGroundData::vfunc_10_off_10 (109 bytes)
+// Iterates a container of 4-byte element pointers from [self+0x74] (begin) to [self+0x78] (end),
+// with the MSVC iterator checks (failure -> invalid_parameter_noinfo). For each element it calls
+// subobject vtable slot 9 (+0x24) with arg a1, then slot 10 (+0x28) with (a1, 1).
+// Stack args: a1 at [esp+4] on entry, one unused dword; ret 0x8.
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0059FF60(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x74]
+        cmp esi, dword ptr [edi + 0x78]
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+    L_chk1:
+        mov ebp, dword ptr [esp + 0x14]
+    L_top:
+        mov ebx, dword ptr [edi + 0x78]
+        cmp dword ptr [edi + 0x74], ebx
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+    L_chk2:
+        cmp esi, ebx
+        je L_done
+        cmp esi, dword ptr [edi + 0x78]
+        mov ebx, dword ptr [mem_00925134]
+        jb L_chk3
+        call ebx
+    L_chk3:
+        mov eax, dword ptr [esi]
+        lea ecx, [eax + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        push ebp
+        call edx
+        cmp esi, dword ptr [edi + 0x78]
+        jb L_chk4
+        call ebx
+    L_chk4:
+        mov eax, dword ptr [esi]
+        lea ecx, [eax + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x28]
+        push 1
+        push ebp
+        call edx
+        cmp esi, dword ptr [edi + 0x78]
+        jb L_chk5
+        call ebx
+    L_chk5:
+        add esi, 4
+        jmp L_top
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
