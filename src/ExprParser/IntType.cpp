@@ -35,3 +35,33 @@ extern "C" bool __fastcall fn_0066B140(void* self, int edx_unused, void* a1, voi
     void* r2 = ((IntTypeVfn2)(*(void***)o2)[2])(o2, a2);
     return r1 == r2;
 }
+
+// [0x0066CF10] ExprParser::IntType::vfunc_18 (94 bytes)
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B59660;
+extern "C" __declspec(naked) void __fastcall fn_0066CF10(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b33fe
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B59660], al
+        jne L_66CF59
+        or dword ptr [mem_00B59660], eax
+        push 0
+        mov ecx, 0xb59658
+        mov dword ptr [esp + 0xc], 0
+        call ext_006720C0
+        push 0x921750
+        call ext_006A6C87
+        add esp, 4
+    L_66CF59:
+        mov ecx, dword ptr [esp]
+        mov eax, 0xb59658
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+    }
+}
