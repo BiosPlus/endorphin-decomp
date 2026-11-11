@@ -26,3 +26,32 @@ extern "C" void __fastcall fn_0053DF90(void* self, int edx_unused, int a1, void*
     *(int*)(s + 0x3c) = *(int*)(o + 0x80);
     *(int*)(s + 0x44) = *(int*)(o + 0x84);
 }
+
+// [0x0053D1E0] Primitives::RadiusLimit::vfunc_23 (57 bytes)
+extern "C" void ext_0053A5E0();
+extern "C" void ext_0053AD70();
+
+extern "C" __declspec(naked) void __fastcall fn_0053D1E0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0053AD70
+        mov ecx, dword ptr [esp + 0xc]
+        sub esp, 0x8
+        mov eax, esp
+        mov dword ptr [eax + 0x4], ecx
+        mov ecx, esi
+        mov dword ptr [eax], 0x93a444
+        call ext_0053A5E0
+        mov eax, dword ptr [esi + 0x20]
+        test eax, eax
+        je skip_set
+        cmp byte ptr [eax + 0x4], 0x0
+        je skip_set
+        mov byte ptr [esi + 0x4], 0x1
+skip_set:
+        mov al, byte ptr [esi + 0x4]
+        pop esi
+        ret 0x8
+    }
+}
