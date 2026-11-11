@@ -1149,3 +1149,66 @@ extern "C" __declspec(naked) void __fastcall fn_0052EBA0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0052A1C0] sub_0052A1C0 (108 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0052A1C0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_skip_call_0052A1C0
+        call edi
+    L_skip_call_0052A1C0:
+        mov eax, dword ptr [esi + 4]
+        cmp byte ptr [eax + 61h], 0
+        je L_not_nil_0052A1C0
+        call edi
+        pop edi
+        pop esi
+        ret
+    L_not_nil_0052A1C0:
+        mov ecx, dword ptr [eax + 8]
+        cmp byte ptr [ecx + 61h], 0
+        jne L_right_nil_0052A1C0
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 61h], 0
+        jne L_store_left_0052A1C0
+    L_leftmost_loop_0052A1C0:
+        mov ecx, eax
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 61h], 0
+        je L_leftmost_loop_0052A1C0
+    L_store_left_0052A1C0:
+        pop edi
+        mov dword ptr [esi + 4], ecx
+        pop esi
+        ret
+    L_right_nil_0052A1C0:
+        mov eax, dword ptr [eax + 4]
+        cmp byte ptr [eax + 61h], 0
+        jne L_done_0052A1C0
+        __asm _emit 0x8D
+        __asm _emit 0xA4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_climb_loop_0052A1C0:
+        mov ecx, dword ptr [esi + 4]
+        cmp ecx, dword ptr [eax + 8]
+        jne L_done_0052A1C0
+        mov dword ptr [esi + 4], eax
+        mov edx, eax
+        mov eax, dword ptr [edx + 4]
+        cmp byte ptr [eax + 61h], 0
+        je L_climb_loop_0052A1C0
+    L_done_0052A1C0:
+        pop edi
+        mov dword ptr [esi + 4], eax
+        pop esi
+        ret
+    }
+}
