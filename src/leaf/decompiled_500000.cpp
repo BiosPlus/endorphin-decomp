@@ -1572,3 +1572,59 @@ extern "C" __declspec(naked) void* __fastcall fn_00506030(void* self) {
         ret
     }
 }
+
+// [0x0050FA40] sub_0050FA40 (91 bytes)
+struct Elem_0050FA40 {
+    unsigned char pad[0x20];
+    double key;
+};
+
+extern "C" __declspec(naked) void __cdecl fn_0050FA40(void* arr, int hi, int lo, void* item) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp+0x10]
+        push esi
+        mov esi, dword ptr [esp+0x10]
+        lea eax, [esi-1]
+        cdq
+        sub eax, edx
+        mov ecx, eax
+        sar ecx, 1
+        cmp ebp, esi
+        jge L_place_0050FA40
+        push ebx
+        mov ebx, dword ptr [esp+0x1c]
+        push edi
+        mov edi, dword ptr [esp+0x14]
+    L_loop_0050FA40:
+        mov edx, dword ptr [edi+4*ecx]
+        fld qword ptr [ebx+0x20]
+        fcomp qword ptr [edx+0x20]
+        fnstsw ax
+        test ah, 5
+        jp L_store_0050FA40
+        lea eax, [ecx-1]
+        mov dword ptr [edi+4*esi], edx
+        cdq
+        sub eax, edx
+        mov esi, ecx
+        sar eax, 1
+        cmp ebp, esi
+        mov ecx, eax
+        jl L_loop_0050FA40
+    L_store_0050FA40:
+        mov dword ptr [edi+4*esi], ebx
+        pop edi
+        pop ebx
+        pop esi
+        pop ebp
+        ret
+    L_place_0050FA40:
+        mov eax, dword ptr [esp+0x18]
+        mov ecx, dword ptr [esp+0xc]
+        mov dword ptr [ecx+4*esi], eax
+        pop esi
+        pop ebp
+        ret
+    }
+}
