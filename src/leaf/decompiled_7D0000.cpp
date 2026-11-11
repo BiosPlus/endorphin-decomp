@@ -1300,3 +1300,14 @@ extern "C" void __cdecl fn_007D58E0(int p0, char* sink, const char* fmt, ...) {
     cb_t cb = *reinterpret_cast<cb_t*>(sink + 0x18);
     cb(1, buf, *reinterpret_cast<int*>(sink + 0x1c));
 }
+
+// [0x007D5950] sub_007D5950 (105 bytes)
+extern "C" void __cdecl fn_007D5950(int p0, char* sink, const char* fmt, ...) {
+    char buf[0x1388];
+    char* ap = reinterpret_cast<char*>(&fmt) + sizeof(fmt);
+    typedef int (__cdecl *vsnprintf_t)(char*, unsigned int, const char*, char*);
+    reinterpret_cast<vsnprintf_t>(mem_009252FC)(buf, 0x1388, fmt, ap);
+    typedef void (__cdecl *cb_t)(int, char*, int);
+    cb_t cb = *reinterpret_cast<cb_t*>(sink + 0x18);
+    cb(2, buf, *reinterpret_cast<int*>(sink + 0x1c));
+}
