@@ -105,3 +105,55 @@ extern "C" __declspec(naked) void* __cdecl fn_006266E0(void) {
         ret
     }
 }
+
+// [0x006265C0] TransformRefNode::vfunc_3_off_4 (140 bytes)
+extern "C" int mem_00B4B818;
+extern "C" int mem_00B4B7D8;
+extern "C" int mem_00B4B7DC;
+extern "C" int mem_00B4B7E0;
+extern "C" int mem_00B4B7E4;
+extern "C" int mem_00B4B7E8;
+extern "C" int mem_00B4B7EC;
+extern "C" int mem_00B4B7F0;
+extern "C" int mem_00B4B7F4;
+extern "C" int mem_00B4B7F8;
+extern "C" int mem_00B4B7FC;
+extern "C" int mem_00B4B800;
+extern "C" int mem_00B4B804;
+extern "C" int mem_00B4B808;
+extern "C" int mem_00B4B80C;
+extern "C" int mem_00B4B810;
+extern "C" int mem_00B4B814;
+
+extern "C" __declspec(naked) void* __fastcall fn_006265C0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, 1
+        test byte ptr [mem_00B4B818], al
+        jne early_out
+        fld1
+        or dword ptr [mem_00B4B818], eax
+        fst dword ptr [mem_00B4B7D8]
+        push 0x91f1e0
+        fldz
+        fst dword ptr [mem_00B4B7DC]
+        fst dword ptr [mem_00B4B7E0]
+        fst dword ptr [mem_00B4B7E4]
+        fst dword ptr [mem_00B4B7E8]
+        fst dword ptr [mem_00B4B7F0]
+        fst dword ptr [mem_00B4B7F4]
+        fst dword ptr [mem_00B4B7F8]
+        fst dword ptr [mem_00B4B7FC]
+        fst dword ptr [mem_00B4B804]
+        fst dword ptr [mem_00B4B808]
+        fst dword ptr [mem_00B4B80C]
+        fstp dword ptr [mem_00B4B810]
+        fst dword ptr [mem_00B4B7EC]
+        fst dword ptr [mem_00B4B800]
+        fstp dword ptr [mem_00B4B814]
+        call ext_006A6C87
+        add esp, 4
+    early_out:
+        mov eax, offset mem_00B4B7D8
+        ret 4
+    }
+}
