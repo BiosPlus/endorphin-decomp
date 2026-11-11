@@ -321,3 +321,78 @@ extern "C" __declspec(naked) void __fastcall fn_005C4020(void* self) {
         ret
     }
 }
+
+// [0x005CCCF0] NMData::CollisionModelData::vfunc_15 (147 bytes)
+extern "C" void ext_005C3010();
+extern "C" void ext_005CC750();
+extern "C" void ext_005CC770();
+extern "C" void ext_005CC790();
+extern "C" void ext_005CC7B0();
+
+extern "C" __declspec(naked) void __fastcall fn_005CCCF0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, 0x221
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        jg short L_jg
+        je short L_221
+        mov edx, eax
+        sub edx, 0x21f
+        je short L_21f
+        sub edx, 0x1
+        jne short L_default
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        push esi
+        call ext_005CC770
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_21f:
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        push esi
+        call ext_005CC750
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_221:
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        push esi
+        call ext_005CC790
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_jg:
+        cmp eax, 0x373
+        je short L_373
+    L_default:
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push esi
+        call ext_005C3010
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_373:
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        push esi
+        call ext_005CC7B0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
