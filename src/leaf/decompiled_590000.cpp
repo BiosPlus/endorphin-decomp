@@ -2164,3 +2164,31 @@ extern "C" __declspec(naked) void* __fastcall fn_00596B20(void* self) {
         ret
     }
 }
+
+// [0x00598930] sub_00598930 (53 bytes)
+extern "C" void ext_00596B20();
+extern "C" __declspec(naked) void __fastcall fn_00598930(void* self) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x10]
+        mov byte ptr [esp], 0x0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        push edx
+        mov edx, dword ptr [esp + 0x1c]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        push edx
+        push eax
+        push ecx
+        call ext_00596B20
+        add esp, 0x24
+        ret
+    }
+}
