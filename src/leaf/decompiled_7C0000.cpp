@@ -2167,3 +2167,55 @@ extern "C" __declspec(naked) int __cdecl fn_007CCF80(void* self, int a2, int a3)
         ret
     }
 }
+
+// [0x007CCFE0] sub_007CCFE0 (93 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007CCFE0(void* self, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [eax]
+        cmp ebx, esi
+        push edi
+        ja L_zero_007CCFE0
+        mov edi, dword ptr [esp + 0x18]
+        cmp edi, esi
+        ja L_zero_007CCFE0
+        mov eax, edi
+        sub eax, ebx
+        sar eax, 0x1f
+        mov ecx, eax
+        not ecx
+        push ebp
+        mov ebp, eax
+        mov edx, ecx
+        and ecx, edi
+        and eax, ebx
+        or eax, ecx
+        and edx, ebx
+        and ebp, edi
+        or edx, ebp
+        lea ecx, [edx + 0x1]
+        imul esi, edx
+        imul ecx, edx
+        mov edx, dword ptr [esp + 0x14]
+        sar ecx, 1
+        sub eax, ecx
+        mov ecx, dword ptr [edx + 0x8]
+        add eax, esi
+        imul eax, eax, 0x58
+        mov eax, dword ptr [eax + ecx + 0x54]
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_zero_007CCFE0:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
