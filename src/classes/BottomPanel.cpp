@@ -54,3 +54,72 @@ extern "C" __declspec(naked) void __fastcall fn_00407750(void* self) {
         ret 8
     }
 }
+
+extern "C" void ext_006A5E00();
+extern "C" void ext_006A600A();
+extern "C" int mem_00925694;
+extern "C" int mem_00925654;
+extern "C" int mem_00925650;
+
+// [0x00407990] BottomPanel::vfunc_66 (143 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00407990(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925694]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        push esi
+        push 0
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0xd8]
+        push 0x407
+        push eax
+        call ebx
+        mov ecx, dword ptr [edi + 0x148]
+        push esi
+        push 0
+        push 0x407
+        push ecx
+        call ebx
+        cmp dword ptr [esi + 4], 0x102
+        jne short L_else
+        call dword ptr [mem_00925654]
+        push eax
+        call ext_006A5E00
+        mov ebp, eax
+        test ebp, ebp
+        je short L_else
+        mov edx, dword ptr [ebp + 0x20]
+        push edx
+        call dword ptr [mem_00925650]
+        push eax
+        call ext_006A5E00
+        cmp eax, edi
+        jne short L_else
+        mov eax, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [esi + 8]
+        mov edx, dword ptr [ebp + 0x20]
+        push eax
+        push ecx
+        push 0x102
+        push edx
+        call ebx
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 1
+        pop ebx
+        ret 4
+L_else:
+        push esi
+        mov ecx, edi
+        call ext_006A600A
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
