@@ -1572,3 +1572,45 @@ extern "C" __declspec(naked) void __fastcall fn_00427270(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00426980] sub_00426980 (114 bytes)
+// __fastcall(ecx/edx unused, a1 [stack +4], a2 [stack +8]) with ret 0x8.
+// SEH-framed (state -1/0): std::string tmp("<literal 0x92ee48>"); a2->assign(*a1); a2->append(tmp); ~tmp().
+// Declared raw because naked functions cannot take unwinding types.
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924EB8;
+extern "C" int mem_00924EBC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00426980(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push esi
+        push 0x92ee48
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FE4]
+        mov eax, dword ptr [esp + 0x30]
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x2c], 0x0
+        call dword ptr [mem_00924EB8]
+        lea ecx, [esp + 0x4]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924EBC]
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x8
+    }
+}
