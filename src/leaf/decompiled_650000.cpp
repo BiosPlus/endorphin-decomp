@@ -2252,3 +2252,11 @@ extern "C" __declspec(naked) bool __cdecl fn_0065C670(void* s) {
         ret
     }
 }
+
+// [0x0065B040] sub_0065B040 (35 bytes)
+extern "C" void ext_007CCEC0();
+extern "C" void ext_007CCCD0();
+extern "C" void __fastcall fn_0065B040(void* self, int edx_unused, float a1) {
+    void* p = ((void* (__cdecl*)(int*, unsigned, unsigned))&ext_007CCEC0)(*(int**)((char*)self + 0x34), 0, 0);
+    ((void (__cdecl*)(char*, float))&ext_007CCCD0)((char*)p, a1);
+}
