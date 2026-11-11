@@ -1593,3 +1593,34 @@ extern "C" __declspec(naked) int __cdecl fn_007DCC20(void* a1, void* a2, void* a
         ret
     }
 }
+
+// [0x007DA8E0] sub_007DA8E0 (52 bytes)
+extern "C" void ext_007C9280();
+
+extern "C" __declspec(naked) void __cdecl fn_007DA8E0(void) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push edi
+        call ext_007D8710
+        push edi
+        mov esi, eax
+        call ext_007C9280
+        mov ecx, dword ptr [esp + 0x14]
+        add dword ptr [ecx], eax
+        add esp, 0x8
+        test esi, esi
+        je L_007DA8E0_zero
+        mov eax, dword ptr [esi + 0x164]
+        add dword ptr [ecx + 0x4], eax
+        pop edi
+        pop esi
+        ret
+    L_007DA8E0_zero:
+        add dword ptr [ecx + 0x8], 1
+        pop edi
+        pop esi
+        ret
+    }
+}
