@@ -218,3 +218,92 @@ extern "C" __declspec(naked) void __cdecl fn_00788C90(void* out) {
         ret
     }
 }
+
+extern "C" int mem_00925284;
+extern "C" int mem_00B60B38;
+extern "C" int mem_00B60B3C;
+extern "C" int mem_00B60B30;
+
+// [0x00787430] sub_00787430 (144 bytes)
+// Copies eight stack args into self->[0..0x1C]; ret 0x20. The block also holds two
+// linker-incremental thunks (jmp -> body at +0x50: copies _HUGE pair to globals;
+// jmp -> body at +0x80: loads -_HUGE as double into a global), reproduced byte-for-byte.
+extern "C" __declspec(naked) void __fastcall fn_00787430(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [ecx], eax
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [ecx + 0x4], edx
+        mov edx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x8], eax
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr [ecx + 0xc], edx
+        mov edx, dword ptr [esp + 0x18]
+        mov dword ptr [ecx + 0x10], eax
+        mov eax, dword ptr [esp + 0x1c]
+        mov dword ptr [ecx + 0x14], edx
+        mov edx, dword ptr [esp + 0x20]
+        mov dword ptr [ecx + 0x18], eax
+        mov dword ptr [ecx + 0x1c], edx
+        ret 0x20
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0xe9
+        __asm _emit 0x0b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B60B38], ecx
+        mov dword ptr [mem_00B60B3C], edx
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0xe9
+        __asm _emit 0x0b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B60B30]
+        ret
+    }
+}
