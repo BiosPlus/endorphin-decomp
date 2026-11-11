@@ -117,3 +117,59 @@ extern "C" __declspec(naked) void __fastcall fn_00516E10(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x005171B0] EvolvedIndividual::vfunc_13_off_C (114 bytes)
+// Returns its hidden-buffer argument (ret 0x8). If the string argument equals the
+// global literal, fills the buffer with (cached static pointer, self + 4); otherwise
+// default-constructs it via sub_0046F7D0.
+extern "C" int mem_00A9EFC0;
+extern "C" int mem_00AEC0D0;
+extern "C" int mem_00AEC0D4;
+extern "C" int mem_00924FC0;
+extern "C" void ext_005170A0();
+extern "C" void ext_0046F7D0();
+extern "C" void ext_0055DA20();
+
+extern "C" __declspec(naked) void* __fastcall fn_005171B0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, 1
+        test byte ptr [mem_00AEC0D4], al
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], 0
+        jne skip_init
+        or dword ptr [mem_00AEC0D4], eax
+        call ext_005170A0
+        mov dword ptr [mem_00AEC0D0], eax
+    skip_init:
+        mov eax, dword ptr [mem_00A9EFC0]
+        mov ecx, dword ptr [esp + 0x10]
+        push eax
+        push ecx
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        je not_equal
+        mov edx, dword ptr [mem_00AEC0D0]
+        add esi, 0x4
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edx
+        mov ecx, esi
+        call ext_0055DA20
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    not_equal:
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_0046F7D0
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
