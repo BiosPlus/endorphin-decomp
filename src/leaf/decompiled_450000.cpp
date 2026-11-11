@@ -1617,3 +1617,39 @@ extern "C" __declspec(naked) void __fastcall fn_0045B450(void* self) {
         ret
     }
 }
+
+// [0x0045B4A0] sub_0045B4A0 (65 bytes)
+extern "C" void ext_0045AEE0();
+
+extern "C" __declspec(naked) void __fastcall fn_0045B4A0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        lea eax, [esi + 0x134]
+        push eax
+        call ext_0045AEE0
+        fstp dword ptr [esp + 0x4]
+        fldz
+        fld dword ptr [esp + 0x4]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x41
+        jne not_positive
+        mov ecx, dword ptr [esi + 0x88]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x84]
+        push ecx
+        fstp dword ptr [esp]
+        call eax
+        pop esi
+        pop ecx
+        ret
+    not_positive:
+        fstp st(0)
+        pop esi
+        pop ecx
+        ret
+    }
+}
