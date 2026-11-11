@@ -1080,3 +1080,47 @@ extern "C" __declspec(naked) bool __fastcall fn_00546570(const float* self, int 
         ret 4
     }
 }
+
+// [0x00545C40] sub_00545C40 (94 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00545C40(void* self, int edx_unused, float* out, int idx, float val) {
+    __asm {
+        fld1
+        mov ecx, dword ptr [ecx + 0x88]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x28]
+        push esi
+        mov esi, dword ptr [esp + 8]
+        fst dword ptr [esi]
+        fst dword ptr [esi + 4]
+        fst dword ptr [esi + 8]
+        fstp dword ptr [esi + 0Ch]
+        call edx
+        cmp eax, 1
+        jne L_not_one
+        fld dword ptr [esp + 10h]
+        fst dword ptr [esi]
+        fst dword ptr [esi + 4]
+        fstp dword ptr [esi + 8]
+        pop esi
+        ret 0Ch
+    L_not_one:
+        cmp eax, 2
+        mov eax, dword ptr [esp + 0Ch]
+        jne L_store
+        test eax, eax
+        je L_pair
+        cmp eax, 1
+        jne L_store
+    L_pair:
+        fld dword ptr [esp + 10h]
+        fst dword ptr [esi]
+        fstp dword ptr [esi + 4]
+        pop esi
+        ret 0Ch
+    L_store:
+        fld dword ptr [esp + 10h]
+        fstp dword ptr [esi + eax * 4]
+        pop esi
+        ret 0Ch
+    }
+}
