@@ -2241,3 +2241,42 @@ extern "C" int __stdcall fn_004868F0(double a, double b, double c) {
     finite_t is_finite = (finite_t)mem_00925248;
     return (is_finite(a) && is_finite(b) && is_finite(c) && fabs(a - b) <= c) ? 1 : 0;
 }
+
+// [0x0048E200] sub_0048E200 (101 bytes)
+// SEH-framed thiscall (ret 8): calls 0x6657F0(1) on self, stores vtable + two args,
+// then stores *0x46FD70(arg1, &local) into self->f18.
+extern "C" void ext_006657F0();
+extern "C" void ext_0046FD70();
+extern "C" int mem_0093E5B8;
+extern "C" __declspec(naked) void* __fastcall fn_0048E200(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8852f8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push esi
+        mov esi, ecx
+        push 1
+        mov dword ptr [esp + 0x8], esi
+        call ext_006657F0
+        mov ecx, dword ptr [esp + 0x20]
+        mov eax, dword ptr [esp + 0x24]
+        lea edx, [esp + 0x8]
+        push edx
+        mov dword ptr [esp + 0x1c], 0
+        mov dword ptr [esi], offset mem_0093E5B8
+        mov dword ptr [esi + 0x10], ecx
+        mov dword ptr [esi + 0x14], eax
+        call ext_0046FD70
+        mov eax, dword ptr [eax]
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x18], eax
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x18
+        ret 0x8
+    }
+}
