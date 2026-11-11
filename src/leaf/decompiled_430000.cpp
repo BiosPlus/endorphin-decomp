@@ -3507,3 +3507,61 @@ extern "C" __declspec(naked) int __fastcall fn_00430660(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x0043E090] sub_0043E090 (92 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0043E090(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [ecx + 0x58]
+        cmp esi, dword ptr [ecx + 0x5c]
+        push edi
+        lea edi, [ecx + 0x54]
+        jbe L_ok1
+        call ebp
+    L_ok1:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_ok2
+        call ebp
+    L_ok2:
+        test edi, edi
+        je L_bad1
+        cmp edi, edi
+        je L_ok3
+    L_bad1:
+        call ebp
+    L_ok3:
+        cmp esi, ebx
+        je L_done
+        test edi, edi
+        jne L_ok4
+        call ebp
+    L_ok4:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_ok5
+        call ebp
+    L_ok5:
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [eax]
+        push edx
+        call eax
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_ok6
+        call ebp
+    L_ok6:
+        add esi, 4
+        jmp L_ok1
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
