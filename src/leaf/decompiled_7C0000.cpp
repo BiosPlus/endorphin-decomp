@@ -2695,3 +2695,30 @@ extern "C" __declspec(naked) void __cdecl fn_007CA830(void* self, float f, float
         ret
     }
 }
+
+// [0x007CAF30] sub_007CAF30 (54 bytes)
+extern "C" void ext_007CA830();
+
+extern "C" __declspec(naked) void __cdecl fn_007CAF30() {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push 2
+        push eax
+        push esi
+        call ext_007CC8E0
+        fld dword ptr [esp + 24h]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 20h]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 1Ch]
+        fstp dword ptr [esp]
+        push esi
+        call ext_007CA830
+        add esp, 10h
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
