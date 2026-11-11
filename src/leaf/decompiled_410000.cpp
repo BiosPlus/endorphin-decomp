@@ -2049,3 +2049,40 @@ done:
         ret
     }
 }
+
+// [0x0041E070] sub_0041E070 (96 bytes)
+extern "C" void ext_0041DCF0();
+
+extern "C" __declspec(naked) void __fastcall fn_0041E070(void* self) {
+    __asm {
+        push -1
+        push 0x00877691
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        xor eax, eax
+        mov dword ptr [esi + 0x4], eax
+        mov dword ptr [esi], 0x0092DF58
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi + 0x8], eax
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esi + 0xc], eax
+        mov dword ptr [esi + 0x14], eax
+        mov dword ptr [esi + 0x18], eax
+        mov dword ptr [esi + 0x20], eax
+        mov dword ptr [esi + 0x24], eax
+        mov dword ptr [esi + 0x28], eax
+        mov byte ptr [esp + 0x10], 0x2
+        mov byte ptr [esi + 0x2c], al
+        call ext_0041DCF0
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
