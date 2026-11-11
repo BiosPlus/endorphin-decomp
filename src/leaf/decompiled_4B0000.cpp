@@ -1390,3 +1390,38 @@ extern "C" void* __cdecl fn_004BA2D0(char* first, char* last, const void* val) {
     }
     return first;
 }
+
+// [0x004BE680] sub_004BE680 (105 bytes)
+extern "C" void ext_0065F440();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_004BE680(void* self) {
+    __asm {
+        push -1
+        push 0x0088A870
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        lea ecx, [esi + 0x58]
+        mov dword ptr [esp + 0x10], 0x2
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 0x3C]
+        mov byte ptr [esp + 0x10], 0x1
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 0x20]
+        mov byte ptr [esp + 0x10], 0x0
+        call dword ptr [mem_00924FF4]
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_0065F440
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
