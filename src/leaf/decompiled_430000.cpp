@@ -6942,3 +6942,33 @@ extern "C" __declspec(naked) void __cdecl fn_0043D870(void* begin, unsigned int 
         ret
     }
 }
+
+// [0x0043E360] sub_0043E360 (51 bytes)
+extern "C" void ext_0043D870();
+
+extern "C" __declspec(naked) unsigned int* __fastcall fn_0043E360(void* self, int edx_unused, unsigned int* a1, unsigned int a2, unsigned int a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0x8], 0x0
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push edx
+        push ecx
+        push eax
+        push esi
+        push edi
+        call ext_0043D870
+        add esp, 0x18
+        lea eax, [edi + 4*esi]
+        pop edi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
