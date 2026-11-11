@@ -3395,3 +3395,58 @@ skip:
         ret
     }
 }
+
+// [0x00413850] sub_00413850 (142 bytes)
+extern "C" void ext_006A611E();
+extern "C" int mem_00924F94;
+extern "C" int mem_00924F98;
+extern "C" int mem_009241C0;
+
+// SEH-framed constructor (try level -1, handler 0x875729): calls the base streambuf ctor,
+// stores the vtable 0x92c1f4 and the arg at this+0x40, allocates 0x200 bytes via the MFC
+// cdecl helper, calls setbuf(buf, 0x200), fills the get/put pointer slots and calls
+// InitializeCriticalSection on this+0x44. Returns this, restores the SEH link, ret 4.
+extern "C" __declspec(naked) void* __fastcall fn_00413850(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x875729
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        call dword ptr [mem_00924F94]
+        mov eax, dword ptr [esp + 0x18]
+        push 0x200
+        mov dword ptr [esp + 0x14], 0x0
+        mov dword ptr [esi], 0x92c1f4
+        mov dword ptr [esi + 0x40], eax
+        call ext_006A611E
+        add esp, 0x4
+        push 0x200
+        push eax
+        mov ecx, esi
+        mov dword ptr [esi + 0x3c], eax
+        call dword ptr [mem_00924F98]
+        mov eax, dword ptr [esi + 0x3c]
+        mov edx, dword ptr [esi + 0x14]
+        mov dword ptr [edx], eax
+        mov edx, dword ptr [esi + 0x24]
+        lea ecx, [eax + 0x1fe]
+        sub ecx, eax
+        mov dword ptr [edx], eax
+        mov eax, dword ptr [esi + 0x34]
+        mov dword ptr [eax], ecx
+        lea ecx, [esi + 0x44]
+        push ecx
+        call dword ptr [mem_009241C0]
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
