@@ -970,3 +970,56 @@ extern "C" __declspec(naked) void __fastcall fn_004CFDE0(void* self) {
         ret
     }
 }
+
+// [0x004CE590] sub_004CE590 (95 bytes)
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) int __cdecl fn_004CE590(void* a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, 0x00AE51C8
+    loop_004CE590:
+        push esi
+        push ebx
+        call ebp
+        add esp, 0x8
+        test al, al
+        jne found_004CE590
+        add esi, 0x1c
+        add edi, 0x1
+        cmp esi, 0x00AE528C
+        jl loop_004CE590
+        xor edi, edi
+        mov esi, 0x00AE5290
+    loop2_004CE590:
+        push esi
+        push ebx
+        call ebp
+        add esp, 0x8
+        test al, al
+        jne found_004CE590
+        add esi, 0x1c
+        add edi, 0x1
+        cmp esi, 0x00AE5354
+        jl loop2_004CE590
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x7
+        pop ebx
+        ret
+    found_004CE590:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
