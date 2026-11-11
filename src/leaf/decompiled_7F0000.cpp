@@ -1056,3 +1056,38 @@ extern "C" __declspec(naked) void __cdecl fn_007F9E30(int count, float* dst, con
         ret
     }
 }
+
+// [0x007FA1B0] sub_007FA1B0 (69 bytes)
+extern "C" void ext_007F9E30();
+extern "C" void ext_007F9F30();
+extern "C" int mem_00B61F7C;
+extern "C" int mem_00B61F8C;
+extern "C" int mem_00B61F9C;
+extern "C" int mem_00B61FA0;
+extern "C" __declspec(naked) void __cdecl fn_007FA1B0(float v) {
+    __asm {
+        fld dword ptr [esp + 4]
+        sub esp, 10h
+        push esi
+        mov esi, dword ptr [mem_00B61F9C]
+        push ecx
+        fstp dword ptr [esp]
+        push offset mem_00B61F8C
+        lea eax, [esp + 0ch]
+        push eax
+        push esi
+        call ext_007F9F30
+        push offset mem_00B61F7C
+        lea ecx, [esp + 18h]
+        push ecx
+        push esi
+        call ext_007F9E30
+        lea edx, [esp + 20h]
+        push edx
+        call dword ptr [mem_00B61FA0]
+        add esp, 20h
+        pop esi
+        add esp, 10h
+        ret
+    }
+}
