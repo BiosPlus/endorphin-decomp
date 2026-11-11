@@ -909,3 +909,11 @@ extern "C" __declspec(naked) void __fastcall fn_00477EC0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00476C30] sub_00476C30 (102 bytes)
+extern "C" void __cdecl fn_00476C30(float* a, float* b, float* c) {
+    float t;
+    if (*b < *a) { t = *b; *b = *a; *a = t; }
+    if (*c < *b) { t = *c; *c = *b; *b = t; }
+    if (*b < *a) { t = *b; *b = *a; *a = t; }
+}
