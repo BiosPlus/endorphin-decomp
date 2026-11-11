@@ -1345,3 +1345,19 @@ done:
         ret
     }
 }
+
+// [0x007DADA0] sub_007DADA0 (33 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007DADA0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 0xc]
+        mov edx, dword ptr [ecx + 0xb0]
+        push 0x99e218
+        push edx
+        push 0
+        call ext_007D5950
+        add esp, 0xc
+        xor ax, ax
+        ret
+    }
+}
