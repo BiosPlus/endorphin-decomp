@@ -4395,3 +4395,39 @@ extern "C" __declspec(naked) void __fastcall fn_00590E80(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0059EBF0] ExprParser::ReadWriteMethodType<NMData::CharacterData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CharacterData::getDisplayName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::CharacterData::`vcall'{96, {flat}}, 4}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00B414A0;
+extern "C" int mem_00B4149C;
+
+extern "C" __declspec(naked) void __fastcall fn_0059EBF0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a163e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B414A0], al
+        jne L_guarded
+        or dword ptr [mem_00B414A0], eax
+        mov ecx, offset mem_00B4149C
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00B4149C], 0x0095e45c
+        mov dword ptr [eax + 0x4], offset mem_00B4149C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00B4149C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
