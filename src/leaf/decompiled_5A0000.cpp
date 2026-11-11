@@ -1091,3 +1091,37 @@ extern "C" __declspec(naked) void* __fastcall fn_005A71E0(void* self) {
         ret
     }
 }
+
+// [0x005A1600] sub_005A1600 (59 bytes)
+extern "C" void __cdecl ext_005B8EA0(void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7);
+
+extern "C" __declspec(naked) void __fastcall fn_005A1600(void* self) {
+    __asm {
+        sub esp, 8
+        cmp dword ptr [ecx + 0x5ec], 0
+        je done
+        push esi
+        push edi
+        lea eax, [ecx + 0x598]
+        mov ecx, dword ptr [eax + 4]
+        xor esi, esi
+        push esi
+        mov edx, 0x5b67a0
+        push edx
+        push ecx
+        push eax
+        mov edi, ecx
+        mov edi, dword ptr [edi]
+        push edi
+        push eax
+        lea eax, [esp + 0x20]
+        push eax
+        call ext_005B8EA0
+        add esp, 0x1c
+        pop edi
+        pop esi
+    done:
+        add esp, 8
+        ret
+    }
+}
