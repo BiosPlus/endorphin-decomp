@@ -976,3 +976,19 @@ extern "C" __declspec(naked) bool __fastcall fn_00582A70(float* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00584980] sub_00584980 (115 bytes)
+extern "C" void __fastcall fn_00584980(float* self, int edx_unused, const float* a) {
+    float s0 = a[0];
+    self[0] *= s0;
+    self[1] *= s0;
+    self[2] *= s0;
+    float s1 = a[1];
+    self[3] *= s1;
+    self[4] *= s1;
+    self[5] *= s1;
+    float s2 = a[2];
+    self[6] *= s2;
+    self[7] *= s2;
+    self[8] *= s2;
+}
