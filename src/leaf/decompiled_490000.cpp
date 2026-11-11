@@ -1518,3 +1518,51 @@ extern "C" __declspec(naked) void* __fastcall fn_00497830(void* self) {
         ret
     }
 }
+
+// [0x00497890] sub_00497890 (98 bytes)
+// SEH-framed (handler 0x008A28D3): saves esi=first stack arg, calls sub_004276B0(esi, &arg2),
+// then runs the std::string dtor on arg2 (state 1), restores the SEH chain and returns esi.
+extern "C" void ext_004276B0();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00497890(void* self) {
+    __asm {
+        push -1
+        push 0x8a28d3
+        mov eax, dword ptr fs:[0]
+        push eax
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push ecx
+        push esi
+        mov dword ptr [esp + 0x4], 0
+        mov esi, dword ptr [esp + 0x18]
+        lea eax, [esp + 0x1c]
+        push eax
+        push esi
+        mov dword ptr [esp + 0x18], 1
+        call ext_004276B0
+        add esp, 0x8
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x4], 1
+        mov byte ptr [esp + 0x10], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0D
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add esp, 0x10
+        ret
+    }
+}
