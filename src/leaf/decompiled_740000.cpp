@@ -66,3 +66,89 @@ extern "C" __declspec(naked) void __fastcall fn_0074B330(void* self) {
         ret
     }
 }
+
+// [0x007435A0] sub_007435A0 (144 bytes)
+// Stack arg (ret 0, cdecl): returns 1 if s == "Index", 2 if s == "IndexToDirect", else 0.
+static const char s_fn007435A0_index[] = "Index";
+static const char s_fn007435A0_idx2direct[] = "IndexToDirect";
+extern "C" __declspec(naked) int __cdecl fn_007435A0(const char* s) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        xor ebp, ebp
+        mov esi, offset s_fn007435A0_index
+        mov ecx, edi
+    cmp1_loop:
+        mov al, byte ptr [ecx]
+        mov bl, byte ptr [esi]
+        mov dl, al
+        cmp al, bl
+        jne cmp1_mis
+        test dl, dl
+        je cmp1_eq
+        mov al, byte ptr [ecx + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov dl, al
+        cmp al, bl
+        jne cmp1_mis
+        add ecx, 0x2
+        add esi, 0x2
+        test dl, dl
+        jne cmp1_loop
+    cmp1_eq:
+        xor ecx, ecx
+        jmp cmp1_done
+    cmp1_mis:
+        sbb ecx, ecx
+        sbb ecx, -1
+    cmp1_done:
+        test ecx, ecx
+        jne try2
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        ret
+    try2:
+        mov esi, offset s_fn007435A0_idx2direct
+        mov ecx, edi
+    cmp2_loop:
+        mov al, byte ptr [ecx]
+        mov bl, byte ptr [esi]
+        mov dl, al
+        cmp al, bl
+        jne cmp2_mis
+        test dl, dl
+        je cmp2_eq
+        mov al, byte ptr [ecx + 0x1]
+        mov bl, byte ptr [esi + 0x1]
+        mov dl, al
+        cmp al, bl
+        jne cmp2_mis
+        add ecx, 0x2
+        add esi, 0x2
+        test dl, dl
+        jne cmp2_loop
+    cmp2_eq:
+        xor ecx, ecx
+        jmp cmp2_done
+    cmp2_mis:
+        sbb ecx, ecx
+        sbb ecx, -1
+    cmp2_done:
+        test ecx, ecx
+        mov eax, 0x2
+        je cmp2_out
+        mov eax, ebp
+    cmp2_out:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
