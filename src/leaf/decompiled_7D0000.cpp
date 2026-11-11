@@ -1052,3 +1052,22 @@ extern "C" __declspec(naked) void __stdcall fn_007DB130(void* a1) {
         jmp edx
     }
 }
+
+// [0x007D6AA0] sub_007D6AA0 (89 bytes)
+struct Dec007D6AA0Buf {
+    int* data;
+    int count;
+};
+
+extern "C" void __cdecl fn_007D6AA0(Dec007D6AA0Buf* a1, Dec007D6AA0Buf* a2, const int* src, int n) {
+    int i = 0;
+    if (n != 0) {
+        do {
+            a1->data[i] = src[i] + 0x10;
+            a2->data[i] = src[i] + 0x30;
+            ++i;
+        } while (i != n);
+    }
+    a1->count = n;
+    a2->count = n;
+}
