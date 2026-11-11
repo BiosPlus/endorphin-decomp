@@ -67,3 +67,35 @@ L_ret_false_05E05F0:
         ret 0x4
     }
 }
+
+// [0x005EE3B0] NMData::HingeData::vfunc_15 (56 bytes)
+extern "C" void ext_005EE360();
+extern "C" void ext_005EC910();
+
+extern "C" __declspec(naked) int __fastcall fn_005EE3B0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, 0x22f
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0x0
+        je L_22f_05EE3B0
+        push eax
+        push esi
+        call ext_005EE360
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+L_22f_05EE3B0:
+        push ecx
+        push esi
+        call ext_005EC910
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
