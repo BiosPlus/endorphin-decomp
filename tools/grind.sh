@@ -96,8 +96,12 @@ if [[ $HAS_CLAUDE -eq 0 && $HAS_AGY -eq 0 ]]; then
   exit 1
 fi
 
-# Inline session-only least-privilege settings for `agy` (never saved to disk, no extra dotfiles required)
-AGY_INLINE_SETTINGS='{"agentMode":"auto","enableTerminalSandbox":true,"toolPermission":"proceed-in-sandbox","permissions":{"allow":["read_file(*)","write_file(src/*)","write_file(include/*)","edit_file(src/*)","edit_file(include/*)","command(./.local/bin/work*)","command(go run ./tools/work*)","command(./.local/bin/status*)","command(go run ./tools/status*)","command(./.local/bin/build_and_match*)","command(./tools/cl_wine.sh*)","command(git status*)","command(git diff*)","command(git log*)","command(git show*)","command(git add*)","command(git commit*)","command(git checkout*)"],"deny":["write_file(build/units.json)","edit_file(build/units.json)","write_file(build/units/*)","edit_file(build/units/*)","write_file(docs/*)","write_file(*.html)","command(sudo*)","command(rm -rf*)","command(git reset --hard*)","command(git push --force*)","command(python*)","command(curl*)","command(wget*)"]}}'
+# Inline session-only least-privilege settings for `agy` (never saved to disk, no extra dotfiles required).
+# NOTE: agy converts write_file/edit_file allow/deny entries into sandbox readwrite/readonly paths, and the sandbox rejects
+# globs ("globs not supported") and relative paths ("non-absolute file path"). Any such entry makes EVERY sandboxed shell
+# command fail to launch, so use absolute, glob-free directories here. build/units must stay writable: `work check` records
+# matches there (.git stays read-only; the host runs `work commit-pending`).
+AGY_INLINE_SETTINGS='{"agentMode":"auto","enableTerminalSandbox":true,"toolPermission":"proceed-in-sandbox","permissions":{"allow":["read_file(*)","write_file('"$REPO_ROOT"'/src)","write_file('"$REPO_ROOT"'/include)","edit_file('"$REPO_ROOT"'/src)","edit_file('"$REPO_ROOT"'/include)","command(./.local/bin/work*)","command(go run ./tools/work*)","command(./.local/bin/status*)","command(go run ./tools/status*)","command(./.local/bin/build_and_match*)","command(./tools/cl_wine.sh*)","command(git status*)","command(git diff*)","command(git log*)","command(git show*)","command(git add*)","command(git commit*)","command(git checkout*)"],"deny":["write_file('"$REPO_ROOT"'/docs)","command(sudo*)","command(rm -rf*)","command(python*)","command(curl*)","command(wget*)"]}}'
 
 # Per-backend cooldown tracking, kept in files so every concurrent worker subshell shares one view.
 # $STATE_DIR/cd.<key>  = epoch seconds when backend:model becomes eligible again
