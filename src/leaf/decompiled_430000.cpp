@@ -3611,3 +3611,19 @@ extern "C" __declspec(naked) void __fastcall fn_00434700(void* self) {
         jmp eax
     }
 }
+
+// [0x0043C670] sub_0043C670 (94 bytes)
+extern "C" void __fastcall fn_0043C670(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    *(unsigned char*)(p + 0x165) = 1;
+    *(int*)(p + 0x168) = 0x1f4;
+    *(int*)(p + 0x16c) = 0x1388;
+    *(int*)(p + 0x170) = 0xe1;
+    *(int*)(p + 0x174) = 2;
+    *(unsigned char*)(p + 0x178) = 1;
+    *(int*)(p + 0x17c) = 1;
+    *(int*)(p + 0x180) = 0;
+    *(int*)(p + 0x188) = 1;
+    *(int*)(p + 0x184) = 8;
+    *(unsigned char*)(p + 0x166) = 0;
+}
