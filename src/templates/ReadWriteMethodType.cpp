@@ -2265,3 +2265,39 @@ extern "C" __declspec(naked) void __fastcall fn_004D5980(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004D5BE0] ExprParser::ReadWriteMethodType<NMData::RigEventData, int, {public: int __thiscall NMData::RigEventData::getInitialPhysicsTicks(void) const, 0}, int, {public: void __thiscall NMData::RigEventData::setInitialPhysicsTicks(int), 0}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00AE5D20;
+extern "C" int mem_00AE5D1C;
+
+extern "C" __declspec(naked) void __fastcall fn_004D5BE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x88d0de
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00AE5D20], al
+        jne L_guarded
+        or dword ptr [mem_00AE5D20], eax
+        mov ecx, offset mem_00AE5D1C
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00AE5D1C], 0x00948b1c
+        mov dword ptr [eax + 0x4], offset mem_00AE5D1C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00AE5D1C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
