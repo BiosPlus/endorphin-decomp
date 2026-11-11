@@ -1058,3 +1058,44 @@ extern "C" __declspec(naked) void __fastcall fn_004AC060(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004A2410] sub_004A2410 (114 bytes)
+extern "C" void ext_006A6C87();
+extern "C" int mem_00ADDAA0;
+extern "C" int mem_00ADDA84;
+extern "C" int mem_00ADDA88;
+extern "C" int mem_00ADDA8C;
+extern "C" int mem_00ADDA7C;
+extern "C" int mem_00ADDA94;
+extern "C" int mem_00ADDA98;
+extern "C" int mem_00ADDA9C;
+extern "C" __declspec(naked) void __fastcall fn_004A2410(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x887938
+        push eax
+        mov eax, 0x1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00ADDAA0], al
+        jne L_004A246F
+        or dword ptr [mem_00ADDAA0], eax
+        xor eax, eax
+        mov dword ptr [mem_00ADDA84], eax
+        mov dword ptr [mem_00ADDA88], eax
+        mov dword ptr [mem_00ADDA8C], eax
+        push 0x917B40
+        mov dword ptr [mem_00ADDA7C], 0x940704
+        mov dword ptr [mem_00ADDA94], eax
+        mov dword ptr [mem_00ADDA98], eax
+        mov dword ptr [mem_00ADDA9C], eax
+        call ext_006A6C87
+        add esp, 0x4
+L_004A246F:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00ADDA7C
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xC
+        ret
+    }
+}
