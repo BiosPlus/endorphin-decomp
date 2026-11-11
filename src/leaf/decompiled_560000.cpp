@@ -668,3 +668,59 @@ extern "C" void __fastcall fn_00564660(void* self) {
         }
     }
 }
+
+// [0x00563280] sub_00563280 (103 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00563280(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push edi
+        mov esi, ecx
+        call ext_00563220
+        test al, al
+        jne L_set1
+        push edi
+        mov ecx, esi
+        call ext_00563240
+        test al, al
+        jne L_set1
+        push edi
+        mov ecx, esi
+        call ext_00563260
+        test al, al
+        jne L_set1
+        xor bl, bl
+        jmp L_after1
+    L_set1:
+        mov bl, 1
+    L_after1:
+        mov edi, dword ptr [esp + 0x14]
+        push edi
+        mov ecx, esi
+        call ext_00563240
+        test al, al
+        jne L_set2
+        push edi
+        mov ecx, esi
+        call ext_00563260
+        test al, al
+        je L_after2
+    L_set2:
+        mov al, 1
+    L_after2:
+        pop edi
+        pop esi
+        test bl, bl
+        pop ebx
+        je L_zero
+        test al, al
+        je L_zero
+        mov eax, 1
+        ret 8
+    L_zero:
+        xor eax, eax
+        ret 8
+    }
+}
