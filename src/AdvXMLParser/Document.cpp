@@ -44,3 +44,51 @@ extern "C" __declspec(naked) void* __fastcall fn_0065F5E0(void* self, int edx_un
         ret 0x4
     }
 }
+
+extern "C" void ext_00640940();
+extern "C" void ext_00640EE0();
+extern "C" int mem_00924ED0;
+extern "C" int mem_00924FD8;
+
+// [0x006410D0] AdvXMLParser::Document::vfunc_5 (115 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006410D0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        xor bl, bl
+        push 0x97cd6c
+        mov byte ptr [esi + 0x11], bl
+        call dword ptr [mem_00924ED0]
+        mov ecx, dword ptr [esi + 0x8]
+        lea eax, [edi + 0x3c]
+        push eax
+        mov byte ptr [esi + 0x11], bl
+        call dword ptr [mem_00924FD8]
+        mov ecx, dword ptr [esi + 0x8]
+        push 0x97cd5c
+        mov byte ptr [esi + 0x11], bl
+        call dword ptr [mem_00924ED0]
+        lea ecx, [edi + 0x58]
+        push ecx
+        mov ecx, dword ptr [esi + 0x8]
+        mov byte ptr [esi + 0x11], bl
+        call dword ptr [mem_00924FD8]
+        mov ecx, dword ptr [esi + 0x8]
+        push 0x97cd58
+        mov byte ptr [esi + 0x11], bl
+        call dword ptr [mem_00924ED0]
+        mov ecx, esi
+        call ext_00640940
+        push esi
+        mov ecx, edi
+        call ext_00640EE0
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
