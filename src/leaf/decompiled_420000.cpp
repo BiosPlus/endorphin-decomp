@@ -1715,3 +1715,26 @@ L_00427B80_ok2:
         ret
     }
 }
+
+// [0x00423AD0] sub_00423AD0 (117 bytes)
+extern "C" void ext_006A6448();
+extern "C" int mem_00925694;
+extern "C" void __fastcall fn_00423AD0(void* self, int edx_unused, int a1) {
+    typedef int (__stdcall *SendFn)(void*, unsigned int, unsigned int, int);
+    typedef int (__thiscall *ThisFn)(void*, int);
+    char* p = (char*)self;
+    SendFn send = (SendFn)mem_00925694;
+    int esi;
+    send(*(void**)(p + 0xbd0), 0x1102, 2, a1);
+    if (!((ThisFn)ext_006A6448)(p + 0xbb0, a1)) {
+        return;
+    }
+    esi = send(*(void**)(p + 0xbd0), 0x110a, 4, a1);
+    if (esi == 0) {
+        return;
+    }
+    do {
+        send(*(void**)(p + 0xbd0), 0x1102, 2, esi);
+        esi = send(*(void**)(p + 0xbd0), 0x110a, 1, esi);
+    } while (esi != 0);
+}
