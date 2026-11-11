@@ -7130,3 +7130,39 @@ extern "C" __declspec(naked) void __fastcall fn_0062A750(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0062A7D0] ExprParser::WriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00B51C30;
+extern "C" int mem_00B51C2C;
+
+extern "C" __declspec(naked) void __fastcall fn_0062A7D0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8ad66e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B51C30], al
+        jne L_guarded
+        or dword ptr [mem_00B51C30], eax
+        mov ecx, offset mem_00B51C2C
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00B51C2C], 0x00978e8c
+        mov dword ptr [eax + 0x4], offset mem_00B51C2C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00B51C2C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
