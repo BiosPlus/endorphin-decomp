@@ -19,5 +19,7 @@
     "0x006121CF",
     "0x006121DE"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T02:47:29Z"
 }

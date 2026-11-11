@@ -1973,3 +1973,23 @@ extern "C" void __fastcall fn_00612130(void* self, int edx_unused, float a1) {
         }
     }
 }
+
+// [0x00612190] sub_00612190 (87 bytes)
+extern "C" void __fastcall fn_00612190(void* self, int edx_unused, float a1) {
+    char* p = reinterpret_cast<char*>(self);
+    void* sub = p + 0x20;
+    float* cur = ((GetFloatPtrFn00612130)ext_005B11D0)(sub, 1);
+    if (!(a1 > *cur)) {
+        float* dst = ((GetFloatPtrFn00612130)ext_005B11D0)(sub, 0);
+        *dst = a1;
+        void* obj = *reinterpret_cast<void**>(p + 0x6c);
+        *reinterpret_cast<unsigned char*>(p + 0x24) = 1;
+        if (obj) {
+            ((VoidThisFn00612130)ext_005E1330)(obj);
+        }
+        void* r = ((GetPtrFn00612130)ext_00594000)();
+        if (r) {
+            ((VoidThisFn00612130)ext_00493EE0)(reinterpret_cast<char*>(r) + 0x258);
+        }
+    }
+}
