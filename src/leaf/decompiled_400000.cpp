@@ -2978,3 +2978,27 @@ extern "C" __declspec(naked) void* __cdecl fn_004062C0(void* first, void* last, 
         ret
     }
 }
+
+// [0x00406610] sub_00406610 (41 bytes)
+extern "C" void ext_004062C0();
+
+extern "C" __declspec(naked) void __fastcall fn_00406610(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x10]
+        mov byte ptr [esp], 0x0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        push edx
+        call ext_004062C0
+        add esp, 0x1c
+        ret 0xc
+    }
+}
