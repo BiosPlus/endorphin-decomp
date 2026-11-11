@@ -1483,3 +1483,54 @@ L_noshift:
         ret 0xc
     }
 }
+
+extern "C" int mem_00AE1D18;
+extern "C" int mem_00AE1D1C;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FE8;
+
+// [0x004B73A0] sub_004B73A0 (109 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B73A0(void* self, int edx_unused, void* out, unsigned int idx) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00AE1D18]
+        test edi, edi
+        mov dword ptr [esp + 0x8], 0
+        je empty
+        mov ecx, dword ptr [mem_00AE1D1C]
+        mov esi, dword ptr [esp + 0x14]
+        sub ecx, edi
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp esi, eax
+        jae empty
+        lea eax, [esi*8]
+        sub eax, esi
+        mov esi, dword ptr [esp + 0x10]
+        lea ecx, [edi + eax*4]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    empty:
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, esi
+        call dword ptr [mem_00924FE8]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
