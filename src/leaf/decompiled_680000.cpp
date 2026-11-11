@@ -2307,3 +2307,81 @@ extern "C" __declspec(naked) void* __cdecl fn_00681DD0(void* out, int a2, char f
         ret
     }
 }
+
+// [0x00681E50] sub_00681E50 (119 bytes)
+extern "C" void ext_00681DD0();
+extern "C" void ext_00681CB0();
+extern "C" void ext_00681CE0();
+extern "C" void ext_00681D10();
+extern "C" void ext_00681D40();
+extern "C" void ext_00681D70();
+extern "C" void ext_00681DA0();
+extern "C" __declspec(naked) void* __fastcall fn_00681E50(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x6
+        ja L_default
+        jmp dword ptr [eax * 4 + 0x681E84]
+    L_case0:
+        jmp ext_00681CB0
+    L_case1:
+        jmp ext_00681CE0
+    L_case2:
+        jmp ext_00681D10
+    L_case3:
+        jmp ext_00681D40
+    L_case4:
+        jmp ext_00681D70
+    L_case6:
+        jmp ext_00681DA0
+    L_default:
+        xor eax, eax
+        ret
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+        _emit 0x60
+        _emit 0x1e
+        _emit 0x68
+        _emit 0x00
+        _emit 0x65
+        _emit 0x1e
+        _emit 0x68
+        _emit 0x00
+        _emit 0x6a
+        _emit 0x1e
+        _emit 0x68
+        _emit 0x00
+        _emit 0x6f
+        _emit 0x1e
+        _emit 0x68
+        _emit 0x00
+        _emit 0x74
+        _emit 0x1e
+        _emit 0x68
+        _emit 0x00
+        _emit 0x7e
+        _emit 0x1e
+        _emit 0x68
+        _emit 0x00
+        _emit 0x79
+        _emit 0x1e
+        _emit 0x68
+        _emit 0x00
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0x1
+        push ecx
+        push esi
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_00681DD0
+        add esp, 0xc
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
