@@ -1850,3 +1850,28 @@ extern "C" __declspec(naked) void __fastcall fn_00558B90(void* self) {
         ret
     }
 }
+
+// [0x00559C50] sub_00559C50 (35 bytes)
+extern "C" void ext_00558B90();
+
+extern "C" __declspec(naked) void __fastcall fn_00559C50(void* self, int edx_unused, void* begin, void* end) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done_559C50
+        __asm _emit 0x8B __asm _emit 0xFF // mov edi, edi
+    loop_559C50:
+        mov ecx, esi
+        call ext_00558B90
+        add esi, 0x2c
+        cmp esi, edi
+        jne loop_559C50
+    done_559C50:
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
