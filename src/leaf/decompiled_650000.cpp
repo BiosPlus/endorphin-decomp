@@ -2588,3 +2588,58 @@ extern "C" __declspec(naked) void __fastcall fn_0065C360(void* self) {
         ret
     }
 }
+
+// [0x0065ACD0] sub_0065ACD0 (113 bytes)
+extern "C" void ext_007C6F80();
+extern "C" void ext_007C6FE0();
+extern "C" void ext_007C7010();
+extern "C" void ext_007C70F0();
+
+extern "C" __declspec(naked) void __fastcall fn_0065ACD0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi + 0x8], eax
+        mov ecx, dword ptr [mem_00B55748]
+        mov eax, dword ptr [ecx + 0x2c]
+        movzx ecx, word ptr [eax + 0x14]
+        movzx edx, cx
+        add ecx, 1
+        push edx
+        mov word ptr [eax + 0x14], cx
+        mov edx, dword ptr [esi]
+        push edx
+        call ext_007C70F0
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esi]
+        push eax
+        push ecx
+        call ext_007C6FE0
+        mov eax, dword ptr [esp + 0x18]
+        add esp, 0x10
+        test eax, eax
+        je short zero_path
+        mov edx, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi]
+        push 0
+        push edx
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        call ext_007C7010
+        add esp, 0x14
+        pop esi
+        ret 0x10
+zero_path:
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esi]
+        push edx
+        push eax
+        call ext_007C6F80
+        add esp, 0x8
+        pop esi
+        ret 0x10
+    }
+}
