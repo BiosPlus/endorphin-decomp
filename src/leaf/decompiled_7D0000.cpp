@@ -2101,3 +2101,65 @@ extern "C" int __cdecl fn_007DC770(int* self) {
     }
     return 1;
 }
+
+// [0x007DD0A0] sub_007DD0A0 (144 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007DD0A0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        push esi
+        jl L_fail
+        cmp eax, dword ptr [ecx + 0xc]
+        jge L_fail
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, eax
+        imul edx, edx, 0x9c
+        add esi, edx
+        cmp dword ptr [esi + 0x8], eax
+        je L_idok
+    L_fail:
+        xor al, al
+        pop esi
+        ret 0x8
+    L_idok:
+        cmp byte ptr [esp + 0xc], 0x0
+        je L_clear
+        test byte ptr [esi + 0x10], 0x1
+        jne L_done
+        mov eax, dword ptr [ecx + 0x10]
+        or dword ptr [eax + edx + 0x10], 0x1
+        lea eax, [eax + edx + 0x10]
+        mov eax, dword ptr [ecx + 0x10]
+        add eax, edx
+        add ecx, 0xc0
+        mov dword ptr [eax + 0x4], ecx
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax], edx
+        mov dword ptr [ecx], eax
+        mov ecx, dword ptr [eax]
+        mov dword ptr [ecx + 0x4], eax
+        mov al, 0x1
+        pop esi
+        ret 0x8
+    L_clear:
+        test byte ptr [esi + 0x10], 0x1
+        je L_done
+        mov eax, dword ptr [ecx + 0x10]
+        and dword ptr [eax + edx + 0x10], -0x2
+        lea eax, [eax + edx + 0x10]
+        mov eax, dword ptr [ecx + 0x10]
+        mov ecx, dword ptr [eax + edx]
+        add eax, edx
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [ecx + 0x4], edx
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [eax]
+        mov dword ptr [ecx], edx
+        mov dword ptr [eax + 0x4], eax
+        mov dword ptr [eax], eax
+    L_done:
+        mov al, 0x1
+        pop esi
+        ret 0x8
+    }
+}
