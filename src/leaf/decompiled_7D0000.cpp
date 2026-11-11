@@ -91,6 +91,7 @@ extern "C" int __cdecl fn_007DAD50(int a, int b) {
 }
 
 extern "C" void ext_007CC930(void*);
+extern "C" void ext_007CC9E0();
 extern "C" void ext_007DB130(void*);
 
 // [0x007DB500] sub_007DB500 (25 bytes)
@@ -1079,4 +1080,50 @@ extern "C" int __fastcall fn_007DFE30(float* self) {
     int eax = self[1] > self[2];
     int sh = (esi << 4) | (edx << 3) | (eax << 2);
     return (0x21312300 >> sh) & 3;
+}
+
+// [0x007DB6C0] sub_007DB6C0 (96 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007DB6C0(void* self) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0x8]
+        test edi, edi
+        je short L_end
+        push esi
+        xor esi, esi
+        cmp dword ptr [edi + 0x1c], esi
+        jle short L_post
+L_loop:
+        mov eax, dword ptr [edi + 0x14]
+        cmp dword ptr [eax + 4*esi], 0x0
+        lea eax, [eax + 4*esi]
+        je short L_post
+        mov ecx, dword ptr [eax]
+        push ecx
+        call ext_007CC9E0
+        add esi, 0x1
+        add esp, 0x4
+        cmp esi, dword ptr [edi + 0x1c]
+        jl short L_loop
+L_post:
+        mov edx, dword ptr [edi + 0xc]
+        mov eax, dword ptr [edx + 0xb0]
+        mov ecx, dword ptr [edi + 0x14]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        call edx
+        mov eax, dword ptr [edi + 0xc]
+        mov ecx, dword ptr [eax + 0xb0]
+        mov edx, dword ptr [edi + 0x10]
+        mov eax, dword ptr [ecx + 0x10]
+        push edx
+        call eax
+        push edi
+        call ext_007CC930
+        add esp, 0xc
+        pop esi
+L_end:
+        pop edi
+        ret
+    }
 }
