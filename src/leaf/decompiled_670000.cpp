@@ -1943,3 +1943,58 @@ extern "C" void __fastcall fn_0067DA60(void* self, int edx_unused, float* dst) {
     dst[11] = src[11];
     dst[15] = src[15];
 }
+
+// [0x00676710] sub_00676710 (102 bytes)
+extern "C" void ext_006616D0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __cdecl fn_00676710(void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        mov esi, ebp
+        sub esi, ebx
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        sar esi, 0x3
+        test edi, edi
+        jne chk_ok_00676710
+        call dword ptr [mem_00925134]
+    chk_ok_00676710:
+        mov eax, dword ptr [esp + 0x20]
+        lea eax, [eax + 8*esi]
+        cmp eax, dword ptr [edi + 0x8]
+        ja chk_fail_00676710
+        cmp eax, dword ptr [edi + 0x4]
+        jae chk_pass_00676710
+    chk_fail_00676710:
+        call dword ptr [mem_00925134]
+    chk_pass_00676710:
+        cmp ebx, ebp
+        mov esi, ebx
+        je done_00676710
+        mov edi, dword ptr [esp + 0x20]
+        sub edi, ebx
+    loop_00676710:
+        lea ecx, [edi + esi]
+        push ecx
+        mov ecx, esi
+        call ext_006616D0
+        test al, al
+        je done_00676710
+        add esi, 0x8
+        cmp esi, ebp
+        jne loop_00676710
+    done_00676710:
+        pop edi
+        xor eax, eax
+        cmp esi, ebp
+        pop esi
+        pop ebp
+        sete al
+        pop ebx
+        ret
+    }
+}
