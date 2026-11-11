@@ -8,6 +8,8 @@ extern "C" int mem_0092563C;
 extern "C" int mem_00924300;
 extern "C" int mem_0092521C;
 extern "C" int mem_009242F4;
+extern "C" int mem_009242FC;
+extern "C" int mem_00924410;
 
 // [0x006B3C40] GWCRGBPropertyValue::vfunc_1 (79 bytes)
 extern "C" __declspec(naked) void __fastcall fn_006B3C40(void* self) {
@@ -121,6 +123,45 @@ extern "C" __declspec(naked) void __fastcall fn_006B3BB0(void* self, int edx_unu
         call dword ptr [mem_009242F4]
         pop esi
         add esp, 0Ch
+        ret 4
+    }
+}
+
+// [0x006B3B30] GWCRGBPropertyValue::vfunc_2 (115 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006B3B30(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 879E7Ah
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov dword ptr [esp + 4], 0
+        mov esi, dword ptr [esp + 18h]
+        push edi
+        mov edi, ecx
+        mov ecx, esi
+        call dword ptr [mem_009242FC]
+        mov eax, dword ptr [edi + 40h]
+        movzx ecx, byte ptr [eax + 2]
+        movzx edx, byte ptr [eax + 1]
+        movzx eax, byte ptr [eax]
+        push ecx
+        push edx
+        push eax
+        push 9919D4h
+        push esi
+        mov dword ptr [esp + 28h], 0
+        mov dword ptr [esp + 1Ch], 1
+        call dword ptr [mem_00924410]
+        mov ecx, dword ptr [esp + 20h]
+        add esp, 14h
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
         ret 4
     }
 }
