@@ -261,3 +261,54 @@ extern "C" __declspec(naked) int __cdecl fn_0086AEB0(void) {
         ret
     }
 }
+
+// [0x00860E90] sub_00860E90 (96 bytes)
+extern "C" int mem_00AB9650;
+
+extern "C" __declspec(naked) void __cdecl fn_00860E90(char* out, const unsigned char* in, int len) {
+    __asm {
+        push ebx
+        xor edx, edx
+        push esi
+        xor ecx, ecx
+        mov eax, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        push ebp
+        cmp edi, ecx
+        jle L_0860E90_end
+        mov esi, dword ptr [esp + 0x18]
+L_0860E90_loop:
+        mov bl, byte ptr [esi + ecx]
+        mov ebp, dword ptr [mem_00AB9650]
+        shr bl, 0x4
+        inc edx
+        and bl, 0xf
+        inc edx
+        movsx ebx, bl
+        inc ecx
+        mov bl, byte ptr [ebx + ebp]
+        mov byte ptr [edx + eax - 0x2], bl
+        xor ebx, ebx
+        mov bl, byte ptr [esi + ecx - 0x1]
+        mov ebp, dword ptr [mem_00AB9650]
+        and ebx, 0xf
+        cmp ecx, edi
+        mov bl, byte ptr [ebx + ebp]
+        mov byte ptr [edx + eax - 0x1], bl
+        jl L_0860E90_loop
+        pop ebp
+        mov byte ptr [edx + eax], 0
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_0860E90_end:
+        pop ebp
+        mov byte ptr [edx + eax], 0
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
