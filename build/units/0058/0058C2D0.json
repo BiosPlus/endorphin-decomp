@@ -19,5 +19,7 @@
     "0x0058C31B",
     "0x0058C336"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T13:02:05Z"
 }
