@@ -2179,3 +2179,43 @@ extern "C" __declspec(naked) void __fastcall fn_0050BFF0(void* self, int edx_unu
         ret 0x14
     }
 }
+
+// [0x0050C610] sub_0050C610 (59 bytes)
+extern "C" void ext_0050BFF0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0050C610(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe m50c610_ok1
+        call ebp
+    m50c610_ok1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe m50c610_ok2
+        call ebp
+    m50c610_ok2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_0050BFF0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
