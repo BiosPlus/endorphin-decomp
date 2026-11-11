@@ -1122,3 +1122,44 @@ extern "C" __declspec(naked) void __fastcall fn_0063EC10(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0063F4E0] sub_0063F4E0 (80 bytes)
+extern "C" void ext_0063EC10();
+extern "C" void ext_0063F480();
+extern "C" __declspec(naked) void __fastcall fn_0063F4E0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        mov ebx, dword ptr [edi + 0x28]
+        cmp ebx, dword ptr [edi + 0x2c]
+        lea esi, [edi + 0x24]
+        jbe short L_inrange
+        call dword ptr [mem_00925134]
+    L_inrange:
+        mov ecx, dword ptr [esp + 0x18]
+        lea eax, [esp + 0xc]
+        push eax
+        push ecx
+        mov ecx, edi
+        mov dword ptr [esp + 0x14], esi
+        mov dword ptr [esp + 0x18], ebx
+        call ext_0063EC10
+        test al, al
+        je short L_done
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0xc]
+        push edx
+        push eax
+        mov ecx, edi
+        call ext_0063F480
+    L_done:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
