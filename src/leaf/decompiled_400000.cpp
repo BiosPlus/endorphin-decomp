@@ -3256,3 +3256,27 @@ extern "C" __declspec(naked) void __cdecl fn_0040E6F0(void* begin, unsigned int 
         ret
     }
 }
+
+// [0x00406480] sub_00406480 (41 bytes)
+extern "C" void ext_004023D0();
+
+extern "C" __declspec(naked) void __fastcall fn_00406480(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x10]
+        mov byte ptr [esp], 0x0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        push edx
+        call ext_004023D0
+        add esp, 0x1c
+        ret 0xc
+    }
+}
