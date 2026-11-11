@@ -285,3 +285,56 @@ extern "C" __declspec(naked) void __fastcall fn_005454D0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00545290] PoseTool::vfunc_17 (141 bytes)
+extern "C" void ext_00543550();
+extern "C" __declspec(naked) int __fastcall fn_00545290(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x38]
+        call edx
+        test al, al
+        je skip_a
+        mov ecx, dword ptr [esi + 0x88]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xc0]
+        call edx
+    skip_a:
+        cmp dword ptr [esi + 0x9c], 1
+        jne skip_b
+        mov eax, dword ptr [esi + 0x16c]
+        mov edx, dword ptr [eax + 0x1c]
+        lea ecx, [esi + 0x16c]
+        call edx
+        test al, al
+        je skip_b
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x2c]
+        mov ecx, esi
+        call edx
+        test al, al
+        jne skip_b
+        mov byte ptr [esi + 0x338], 1
+    skip_b:
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        lea ecx, [esi + 0x254]
+        call ext_00543550
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x74]
+        mov ecx, esi
+        mov dword ptr [esi + 0x350], 0
+        call eax
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x80]
+        mov ecx, esi
+        call eax
+        mov eax, 1
+        pop esi
+        ret 8
+    }
+}
