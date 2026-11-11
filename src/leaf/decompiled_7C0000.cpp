@@ -1942,3 +1942,54 @@ extern "C" __declspec(naked) void __cdecl fn_007C6250(void* self, const void* in
         jmp ext_007D5170
     }
 }
+
+// [0x007CCEC0] sub_007CCEC0 (89 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_007CCEC0(int* a0, unsigned a1, unsigned a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [eax]
+        cmp ebx, esi
+        push edi
+        ja fail_007CCEC0
+        mov edi, dword ptr [esp + 0x18]
+        cmp edi, esi
+        ja fail_007CCEC0
+        mov eax, edi
+        sub eax, ebx
+        sar eax, 0x1f
+        mov ecx, eax
+        push ebp
+        not ecx
+        mov ebp, eax
+        mov edx, ecx
+        and eax, ebx
+        and ecx, edi
+        and edx, ebx
+        and ebp, edi
+        or edx, ebp
+        or eax, ecx
+        imul esi, edx
+        lea ecx, [edx + 0x1]
+        imul ecx, edx
+        mov edx, dword ptr [esp + 0x14]
+        sar ecx, 0x1
+        sub eax, ecx
+        add eax, esi
+        imul eax, eax, 0x58
+        add eax, dword ptr [edx + 0x8]
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+fail_007CCEC0:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
