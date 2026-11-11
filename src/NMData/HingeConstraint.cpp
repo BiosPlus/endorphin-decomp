@@ -111,3 +111,51 @@ L_247:
         ret 0x8
     }
 }
+
+// [0x00611580] NMData::HingeConstraint::vfunc_69 (98 bytes)
+// Stack args: (std::string* out, int kind). Constructs std::string(const char*) into
+// out from one of three sources (kind==0: global A, kind==1: global B, else literal),
+// returns out in eax. ret 0x8.
+extern "C" int mem_00A9F058;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00A9F380;
+extern "C" __declspec(naked) void* __fastcall fn_00611580(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        push esi
+        mov dword ptr [esp + 0x4], 0
+        jne not_zero
+        mov eax, dword ptr [mem_00A9F058]
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+not_zero:
+        cmp eax, 1
+        jne other
+        mov ecx, dword ptr [mem_00A9F380]
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+other:
+        mov esi, dword ptr [esp + 0xc]
+        push 0x928b5d
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
