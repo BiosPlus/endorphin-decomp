@@ -2802,3 +2802,73 @@ extern "C" __declspec(naked) void __fastcall fn_0065B610(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0065FC80] sub_0065FC80 (142 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0065FC80(void* a, void* b, void* c) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov eax, esi
+        sub eax, ecx
+        sar eax, 0x5
+        cmp eax, 0x28
+        jle short L_small
+        add eax, 0x1
+        cdq
+        push ebx
+        and edx, 0x7
+        add eax, edx
+        push ebp
+        push edi
+        sar eax, 0x3
+        mov edi, eax
+        shl eax, 0x5
+        shl edi, 0x6
+        mov ebx, eax
+        lea edx, [edi + ecx]
+        lea eax, [ebx + ecx]
+        push edx
+        push eax
+        push ecx
+        mov dword ptr [esp + 0x20], eax
+        call fn_0065FB60
+        mov ebp, dword ptr [esp + 0x24]
+        lea eax, [ebx + ebp]
+        push eax
+        mov ecx, ebp
+        sub ecx, ebx
+        push ebp
+        push ecx
+        call fn_0065FB60
+        mov eax, esi
+        sub eax, ebx
+        push esi
+        push eax
+        sub esi, edi
+        push esi
+        mov dword ptr [esp + 0x40], eax
+        call fn_0065FB60
+        mov edx, dword ptr [esp + 0x40]
+        mov eax, dword ptr [esp + 0x38]
+        push edx
+        push ebp
+        push eax
+        call fn_0065FB60
+        add esp, 0x30
+        pop edi
+        pop ebp
+        pop ebx
+        pop esi
+        ret
+L_small:
+        mov edx, dword ptr [esp + 0xc]
+        push esi
+        push edx
+        push ecx
+        call fn_0065FB60
+        add esp, 0xc
+        pop esi
+        ret
+    }
+}
