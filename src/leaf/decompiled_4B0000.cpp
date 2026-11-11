@@ -1203,3 +1203,59 @@ not_found:
         ret
     }
 }
+
+// [0x004B4930] sub_004B4930 (100 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B4930(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+    f4b4930_top:
+        test esi, esi
+        je f4b4930_call1
+        cmp esi, dword ptr [esp + 0x1c]
+        je f4b4930_after1
+    f4b4930_call1:
+        call ebp
+    f4b4930_after1:
+        cmp ebx, dword ptr [esp + 0x20]
+        je f4b4930_ret
+        test esi, esi
+        mov edi, ebx
+        jne f4b4930_a
+        call ebp
+    f4b4930_a:
+        cmp ebx, dword ptr [esi + 0x8]
+        jb f4b4930_b
+        call ebp
+    f4b4930_b:
+        add ebx, 0x4
+        test esi, esi
+        jne f4b4930_c
+        call ebp
+    f4b4930_c:
+        cmp edi, dword ptr [esi + 0x8]
+        jb f4b4930_d
+        call ebp
+    f4b4930_d:
+        mov edi, dword ptr [edi]
+        test edi, edi
+        je f4b4930_top
+        lea ecx, [edi + 0x4]
+        call dword ptr [mem_00924FF4]
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+        jmp f4b4930_top
+    f4b4930_ret:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
