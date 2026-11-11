@@ -2262,3 +2262,49 @@ extern "C" __declspec(naked) void __fastcall fn_007CD900(void* self) {
         ret
     }
 }
+
+// [0x007CD960] sub_007CD960 (100 bytes)
+// Writes negated/copied components of the 4-float input at ecx into the 12-float block at eax.
+extern "C" __declspec(naked) void __fastcall fn_007CD960(void* self) {
+    __asm {
+        push ecx
+        fld dword ptr [ecx + 0x4]
+        fchs
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 0x8]
+        fchs
+        fstp dword ptr [eax + 0x10]
+        fld dword ptr [ecx + 0xc]
+        fchs
+        fstp dword ptr [eax + 0x20]
+        fld dword ptr [ecx]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fst dword ptr [eax + 0x2c]
+        fst dword ptr [eax + 0x18]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [ecx + 0x4]
+        fchs
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fst dword ptr [eax + 0x28]
+        fchs
+        fstp dword ptr [eax + 0x1c]
+        fld dword ptr [ecx + 0x8]
+        fchs
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fst dword ptr [eax + 0xc]
+        fchs
+        fstp dword ptr [eax + 0x24]
+        fld dword ptr [ecx + 0xc]
+        fchs
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fst dword ptr [eax + 0x14]
+        fchs
+        fstp dword ptr [eax + 0x8]
+        pop ecx
+        ret
+    }
+}
