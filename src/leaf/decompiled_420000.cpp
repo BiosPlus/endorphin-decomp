@@ -1685,3 +1685,33 @@ extern "C" __declspec(naked) void __fastcall fn_00427A60(void* self) {
         ret
     }
 }
+
+// [0x00427B80] sub_00427B80 (47 bytes)
+extern "C" void ext_00427A60();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00427B80(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x4], 0x0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_00427B80_ok1
+        call edi
+L_00427B80_ok1:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi + 0x8]
+        cmp ecx, dword ptr [eax + 0x8]
+        jb L_00427B80_ok2
+        call edi
+L_00427B80_ok2:
+        add dword ptr [esi + 0x8], 0x4
+        mov ecx, esi
+        call ext_00427A60
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
