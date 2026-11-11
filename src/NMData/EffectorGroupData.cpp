@@ -59,3 +59,46 @@ extern "C" __declspec(naked) void __fastcall fn_0060DB20(void* self) {
         ret 0x4
     }
 }
+
+// [0x0060D5A0] NMData::EffectorGroupData::vfunc_19 (67 bytes)
+extern "C" void ext_00406510();
+extern "C" void ext_0060BB50();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0060D5A0(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_0060BB50
+        mov edi, dword ptr [esi + 0x4c]
+        mov ebp, dword ptr [mem_00925134]
+        add esi, 0x44
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_chk1
+        call ebp
+    L_chk1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L_chk2
+        call ebp
+    L_chk2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_00406510
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
