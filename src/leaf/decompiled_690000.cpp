@@ -1694,3 +1694,52 @@ extern "C" __declspec(naked) void __fastcall fn_00693C30(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006947B0] sub_006947B0 (135 bytes)
+extern "C" int __cdecl ext_0056B670(double, double, double);
+extern "C" double mem_00957788;
+
+extern "C" __declspec(naked) int __cdecl fn_006947B0(double a1, double a2, double a3) {
+    __asm {
+        fld qword ptr [esp + 0x14]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [esp + 0x24]
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [esp + 0x1c]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        jne RET_TRUE
+        fld qword ptr [esp + 0x14]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [esp + 0x24]
+        fsub qword ptr [mem_00957788]
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [esp + 0x1c]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        jne RET_TRUE
+        fld qword ptr [esp + 0x14]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [esp + 0x24]
+        fadd qword ptr [mem_00957788]
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [esp + 0x1c]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        jne RET_TRUE
+        xor eax, eax
+        ret
+    RET_TRUE:
+        mov eax, 0x1
+        ret
+    }
+}
