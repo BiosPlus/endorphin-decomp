@@ -2199,3 +2199,50 @@ extern "C" __declspec(naked) void __fastcall fn_00673C20(void* self) {
         ret
     }
 }
+
+// [0x0067C450] sub_0067C450 (113 bytes)
+extern "C" void ext_006A6EAA();
+extern "C" void ext_006A6EB0();
+extern "C" __declspec(naked) void __fastcall fn_0067C450(void* self, int edx_unused, float a1) {
+    __asm {
+        sub esp, 0xc
+        fld dword ptr [esp + 0x10]
+        push esi
+        mov esi, ecx
+        call ext_006A6EAA
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x14]
+        call ext_006A6EB0
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esi]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esi + 0x8]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fld st(0)
+        fld dword ptr [esp + 0x4]
+        fld st(0)
+        fmulp st(2), st
+        fld dword ptr [esp + 0x8]
+        fld st(0)
+        fld dword ptr [esp + 0xc]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(4)
+        faddp st(1), st
+        fstp dword ptr [esi]
+        fxch st(3)
+        fmulp st(2), st
+        fmulp st(2), st
+        __asm _emit 0xde
+        __asm _emit 0xe1
+        fstp dword ptr [esi + 0x8]
+        pop esi
+        add esp, 0xc
+        ret 0x4
+    }
+}
