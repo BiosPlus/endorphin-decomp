@@ -925,3 +925,54 @@ L_done:
         ret
     }
 }
+
+// [0x00582A70] sub_00582A70 (100 bytes)
+extern "C" int __cdecl ext_005631C0(double, double);
+extern "C" int __cdecl ext_0056B670(double, double, double);
+extern "C" double mem_0095A0C0;
+
+extern "C" __declspec(naked) bool __fastcall fn_00582A70(float* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        xor esi, esi
+    OUTER_TOP:
+        xor edx, edx
+    INNER_TOP:
+        cmp esi, edx
+        fld qword ptr [mem_0095A0C0]
+        lea eax, [edx + 4*esi]
+        jne ELSE_BR
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld1
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ecx + 4*eax]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        jmp AFTER_CALL
+    ELSE_BR:
+        sub esp, 0x10
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ecx + 4*eax]
+        fstp qword ptr [esp]
+        call ext_005631C0
+        add esp, 0x10
+    AFTER_CALL:
+        test al, al
+        je RET_FALSE
+        add edx, 0x1
+        cmp edx, 0x4
+        jl INNER_TOP
+        add esi, 0x1
+        cmp esi, 0x4
+        jl OUTER_TOP
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    RET_FALSE:
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}
