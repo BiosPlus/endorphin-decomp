@@ -807,3 +807,54 @@ extern "C" __declspec(naked) void __cdecl fn_00478D00(int* first, int* last) {
         ret
     }
 }
+
+// [0x00477F30] sub_00477F30 (99 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00477F30(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        lea esi, [ecx + 0x30]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        xor ebp, ebp
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_loop
+        call dword ptr [mem_00925134]
+    L_loop:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+    L_chk2:
+        cmp esi, esi
+        je L_chk3
+        call dword ptr [mem_00925134]
+    L_chk3:
+        cmp edi, ebx
+        je L_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_call
+        call dword ptr [mem_00925134]
+    L_call:
+        mov eax, dword ptr [edi]
+        mov eax, dword ptr [eax + 0x160]
+        cmp eax, ebp
+        jle L_skip
+        mov ebp, eax
+    L_skip:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_inc
+        call dword ptr [mem_00925134]
+    L_inc:
+        add edi, 0x4
+        jmp L_loop
+    L_done:
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+    }
+}
