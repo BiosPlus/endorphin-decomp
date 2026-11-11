@@ -1308,3 +1308,47 @@ L_5CFE03:
         ret 0x4
     }
 }
+
+// [0x005C3EA0] sub_005C3EA0 (99 bytes)
+extern "C" int mem_00B44C08;
+extern "C" int mem_00B44C0C;
+extern "C" int mem_00925134;
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void __fastcall fn_005C3EA0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov ebx, ecx
+        push edi
+        mov dword ptr [ebx + 0x198], esi
+        mov edi, dword ptr [mem_00B44C08]
+        test edi, edi
+        je fail_005C3EA0
+        mov ecx, dword ptr [mem_00B44C0C]
+        sub ecx, edi
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp esi, eax
+        jb ok_005C3EA0
+    fail_005C3EA0:
+        call dword ptr [mem_00925134]
+        mov edi, dword ptr [mem_00B44C08]
+    ok_005C3EA0:
+        lea eax, [8*esi]
+        sub eax, esi
+        lea ecx, [edi + 4*eax]
+        push ecx
+        lea ecx, [ebx + 0x17c]
+        call dword ptr [mem_00924FDC]
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
