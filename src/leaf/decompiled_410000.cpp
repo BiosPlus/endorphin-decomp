@@ -2511,3 +2511,57 @@ extern "C" __declspec(naked) void __fastcall fn_0041A200(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00414E60] sub_00414E60 (94 bytes)
+extern "C" void ext_004153A0();
+extern "C" void ext_00419F50();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00414E60(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov edi, edi
+    L_loop_00414E60:
+        mov esi, dword ptr [esp + 0x14]
+        test esi, esi
+        je L_inv1_00414E60
+        cmp esi, dword ptr [esp + 0x1c]
+        je L_ok1_00414E60
+    L_inv1_00414E60:
+        call ebx
+    L_ok1_00414E60:
+        mov edi, dword ptr [esp + 0x18]
+        cmp edi, ebp
+        je L_done_00414E60
+        lea ecx, [esp + 0x14]
+        call ext_00419F50
+        test esi, esi
+        jne L_skip2_00414E60
+        call ebx
+    L_skip2_00414E60:
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_skip3_00414E60
+        call ebx
+    L_skip3_00414E60:
+        mov edi, dword ptr [edi + 0x10]
+        test edi, edi
+        je L_loop_00414E60
+        mov ecx, edi
+        call ext_004153A0
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+        jmp L_loop_00414E60
+    L_done_00414E60:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
