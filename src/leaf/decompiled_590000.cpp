@@ -1848,3 +1848,55 @@ extern "C" __declspec(naked) void __fastcall fn_005969C0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00594250] sub_00594250 (113 bytes)
+// Constructor-style: installs an SEH frame (handler 0x872c79), copy-constructs the
+// std::string at +0x0 from a1 via the imported basic_string copy ctor, then stores
+// the result of a virtual call (slot 28, +0x70) on a1->sub->obj into +0x1c, and the
+// object pointer itself into +0x20 (or 0/0 when the pointer is null). Returns this.
+extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void* __fastcall fn_00594250(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push -1
+        push 0x872c79
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, ecx
+        push esi
+        mov dword ptr [esp + 0xc], edi
+        call dword ptr [mem_00924FE0]
+        xor eax, eax
+        add esi, 0x1c
+        cmp dword ptr [esi + 0x4], eax
+        mov dword ptr [esp + 0x14], eax
+        je short null_obj
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x70]
+        push esi
+        lea edx, [esp + 0x20]
+        push edx
+        call eax
+        jmp short store_result
+null_obj:
+        mov dword ptr [esp + 0x1c], eax
+        lea eax, [esp + 0x1c]
+store_result:
+        mov ecx, dword ptr [eax]
+        mov dword ptr [edi + 0x1c], ecx
+        mov edx, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [edi + 0x20], edx
+        mov eax, edi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
