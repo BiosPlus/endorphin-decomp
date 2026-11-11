@@ -1792,3 +1792,20 @@ extern "C" void __fastcall fn_0067B860(void* self) {
         v[2] = (float)(z * inv);
     }
 }
+
+// [0x0067B7F0] sub_0067B7F0 (100 bytes)
+extern "C" void ext_006A7250();
+extern "C" void* __fastcall fn_0067B7F0(void* self) {
+    float* v = (float*)self;
+    double x = (double)v[0];
+    double y = (double)v[1];
+    double z = (double)v[2];
+    double len = sqrt(x * x + y * y + z * z);
+    if (len != 0.0) {
+        double inv = 1.0 / len;
+        v[0] = (float)(x * inv);
+        v[1] = (float)(y * inv);
+        v[2] = (float)(z * inv);
+    }
+    return self;
+}
