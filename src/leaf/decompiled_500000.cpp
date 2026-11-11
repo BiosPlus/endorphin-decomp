@@ -2368,3 +2368,48 @@ extern "C" void* __fastcall fn_00507E40(void* self) {
     p[11] = -1;
     return self;
 }
+
+// [0x0050EDF0] sub_0050EDF0 (113 bytes)
+extern "C" void ext_006246B0();
+
+extern "C" __declspec(naked) void __fastcall fn_0050EDF0(void* self) {
+    __asm {
+        push -1
+        push 0x892376
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov [esp+4], esi
+        mov eax, [esi]
+        lea ecx, [esi+0x1c]
+        mov dword ptr [esp+0x10], 1
+        mov dword ptr [eax+0x74], 0
+        call ext_006246B0
+        mov ecx, [esi+8]
+        test ecx, ecx
+        mov byte ptr [esp+0x10], 0
+        je L_skip1
+        mov edx, [ecx]
+        mov eax, [edx]
+        push 1
+        call eax
+    L_skip1:
+        mov ecx, [esi+4]
+        test ecx, ecx
+        mov dword ptr [esp+0x10], -1
+        pop esi
+        je L_skip2
+        mov edx, [ecx]
+        mov eax, [edx]
+        push 1
+        call eax
+    L_skip2:
+        mov ecx, [esp+4]
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
