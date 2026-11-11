@@ -1099,3 +1099,54 @@ extern "C" __declspec(naked) void* __fastcall fn_00695E20(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x00698900] sub_00698900 (87 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00698900(void* self, int edx_unused, int* pos, const char* chars) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        mov eax, dword ptr [ebp]
+        push esi
+        push edi
+        push eax
+        push ebx
+        mov esi, ecx
+        call fn_00698840
+        cmp eax, -0x1
+        jne short L_found
+        mov dword ptr [ebp], eax
+        mov edi, dword ptr [esi + 0x4]
+        sub edi, 0x1
+        jmp short L_result
+    L_found:
+        push eax
+        push ebx
+        mov ecx, esi
+        lea edi, [eax - 0x1]
+        call fn_006988A0
+        cmp eax, -0x1
+        jne short L_store
+        mov dword ptr [ebp], eax
+        jmp short L_result
+    L_store:
+        mov dword ptr [ebp], eax
+    L_result:
+        test edi, edi
+        jge short L_pos
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x8
+    L_pos:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
