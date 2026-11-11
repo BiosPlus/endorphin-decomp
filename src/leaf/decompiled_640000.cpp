@@ -1811,3 +1811,47 @@ L_chk2:
         ret
     }
 }
+
+// [0x00648800] sub_00648800 (74 bytes)
+extern "C" void ext_0065ACC0();
+extern "C" void ext_00596660();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00648800(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x5c]
+        push edi
+        call ext_0065ACC0
+        mov ebp, dword ptr [mem_00925134]
+        mov byte ptr [esi + 0x46], 0x0
+        mov edi, dword ptr [esi + 0x50]
+        add esi, 0x48
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_chk1
+        call ebp
+    L_chk1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L_chk2
+        call ebp
+    L_chk2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_00596660
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
