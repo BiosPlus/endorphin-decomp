@@ -1643,3 +1643,39 @@ extern "C" __declspec(naked) void __fastcall fn_00490920(void* self) {
         ret
     }
 }
+
+// [0x00490810] sub_00490810 (69 bytes)
+extern "C" void ext_0048FC00();
+extern "C" __declspec(naked) void __fastcall fn_00490810(void* self) {
+    __asm {
+        sub esp, 8
+        mov edx, dword ptr [esp + 0x14]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        xor al, al
+        mov byte ptr [esp + 0x10], al
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0xc], al
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        push edi
+        push esi
+        push ebx
+        call ext_0048FC00
+        add esp, 0x18
+        sub esi, ebx
+        sar esi, 3
+        lea eax, [edi + 8*esi]
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
