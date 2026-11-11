@@ -1993,3 +1993,42 @@ fail_007CCEC0:
         ret
     }
 }
+
+// [0x007CA7C0] sub_007CA7C0 (90 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007CA7C0(void* self, int edx_unused, const float* src, float* dst) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [ecx + 0x10]
+        fmul dword ptr [eax + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        fld dword ptr [eax]
+        fmul dword ptr [ecx]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x20]
+        fmul dword ptr [eax + 0x8]
+        faddp st(1), st
+        fadd dword ptr [ecx + 0x30]
+        fstp dword ptr [edx]
+        fld dword ptr [ecx + 0x4]
+        fmul dword ptr [eax]
+        fld dword ptr [ecx + 0x14]
+        fmul dword ptr [eax + 0x4]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x24]
+        fmul dword ptr [eax + 0x8]
+        faddp st(1), st
+        fadd dword ptr [ecx + 0x34]
+        fstp dword ptr [edx + 0x4]
+        fld dword ptr [ecx + 0x8]
+        fmul dword ptr [eax]
+        fld dword ptr [ecx + 0x18]
+        fmul dword ptr [eax + 0x4]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x28]
+        fmul dword ptr [eax + 0x8]
+        faddp st(1), st
+        fadd dword ptr [ecx + 0x38]
+        fstp dword ptr [edx + 0x8]
+        ret 8
+    }
+}
