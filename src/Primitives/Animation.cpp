@@ -185,3 +185,61 @@ extern "C" __declspec(naked) void __fastcall fn_0053AD10(void* self) {
         ret
     }
 }
+
+// [0x0053B2B0] Primitives::Animation::vfunc_12 (112 bytes)
+extern "C" void ext_0053B1F0();
+extern "C" void ext_00661B10();
+
+extern "C" __declspec(naked) void __fastcall fn_0053B2B0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push edi
+        mov edi, ecx
+        mov ecx, ebx
+        call ext_00661B10
+        test al, al
+        jne L_else
+        mov eax, dword ptr [edi + 0x30]
+        cmp eax, 0x7fffffff
+        je L_else
+        push esi
+        push eax
+        mov ecx, ebx
+        call ext_0053B1F0
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, esi
+        and ecx, eax
+        cmp ecx, eax
+        sete dl
+        cmp dl, byte ptr [esp + 0x14]
+        je L_skip
+        xor esi, eax
+    L_skip:
+        mov eax, dword ptr [edi + 0x30]
+        push eax
+        mov ecx, ebx
+        call ext_0053B1F0
+        mov dword ptr [eax], esi
+        pop esi
+        pop edi
+        pop ebx
+        ret 0xc
+    L_else:
+        mov eax, dword ptr [edi + 0x1c]
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, eax
+        and edx, ecx
+        cmp edx, ecx
+        sete dl
+        cmp dl, byte ptr [esp + 0x10]
+        je L_done
+        xor eax, ecx
+        mov dword ptr [edi + 0x1c], eax
+    L_done:
+        pop edi
+        pop ebx
+        ret 0xc
+    }
+}
