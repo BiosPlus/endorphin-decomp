@@ -1374,3 +1374,53 @@ extern "C" __declspec(naked) void __fastcall fn_005ECAF0(void* self) {
         ret
     }
 }
+
+// [0x005E0BB0] sub_005E0BB0 (91 bytes)
+// __thiscall, ret 4: float vec[3] at self; returns 1 if |len(vec) - 1| <= tol, else 0.
+extern "C" void ext_006A7250();
+
+extern "C" __declspec(naked) int __fastcall fn_005E0BB0(void* self, int edx_unused, float tol) {
+    __asm {
+        push ecx
+        fld dword ptr [ecx + 0x4]
+        fld dword ptr [ecx]
+        fld dword ptr [ecx + 0x8]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp]
+        fld dword ptr [esp + 0x8]
+        fld st(0)
+        fld1
+        fld st(0)
+        fsubrp st(2), st
+        fld dword ptr [esp]
+        fcom st(2)
+        fnstsw ax
+        fstp st(2)
+        test ah, 0x1
+        jne short L_lo_fail
+        faddp st(2), st
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp short L_fail
+        mov eax, 0x1
+        pop ecx
+        ret 0x4
+L_lo_fail:
+        fstp st(2)
+        fstp st(1)
+        fstp st(0)
+L_fail:
+        xor eax, eax
+        pop ecx
+        ret 0x4
+    }
+}
