@@ -1246,3 +1246,64 @@ extern "C" __declspec(naked) void __fastcall fn_0063E310(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" int mem_00925134;
+
+// [0x0063DAD0] sub_0063DAD0 (123 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0063DAD0(void* self) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 2ch]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        je L_call1
+        mov eax, dword ptr [esi + 30h]
+        sub eax, ecx
+        sar eax, 2
+        cmp eax, 1
+        ja L_after1
+    L_call1:
+        call edi
+    L_after1:
+        mov eax, dword ptr [esi + 2ch]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 44h]
+        call eax
+        fstp dword ptr [esp + 8]
+        mov eax, dword ptr [esi + 2ch]
+        test eax, eax
+        je L_call2
+        mov ecx, dword ptr [esi + 30h]
+        sub ecx, eax
+        sar ecx, 2
+        jne L_after2
+    L_call2:
+        call edi
+    L_after2:
+        mov edx, dword ptr [esi + 2ch]
+        mov ecx, dword ptr [edx]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 44h]
+        call edx
+        fstp dword ptr [esp + 0ch]
+        fld dword ptr [esp + 8]
+        fld dword ptr [esp + 0ch]
+        fcompp
+        fnstsw ax
+        test ah, 41h
+        lea eax, [esp + 8]
+        je L_pick
+        lea eax, [esp + 0ch]
+    L_pick:
+        fld dword ptr [eax]
+        pop edi
+        fstp dword ptr [esi + 38h]
+        pop esi
+        add esp, 8
+        ret
+    }
+}
