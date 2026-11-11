@@ -2375,3 +2375,13 @@ L_done:
         ret 0x4
     }
 }
+
+extern "C" void ext_004545D0();
+
+// [0x00455480] sub_00455480 (30 bytes)
+extern "C" void* __fastcall fn_00455480(char* self, int edx_unused, int a1) {
+    ((void (__thiscall*)(void*))ext_004545D0)(self);
+    *(int*)(self + 0x144) = a1;
+    *(int*)self = 0x9367a4;
+    return self;
+}
