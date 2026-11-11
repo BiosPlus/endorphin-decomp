@@ -911,3 +911,57 @@ extern "C" __declspec(naked) void __fastcall fn_006A9210(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006A9190] sub_006A9190 (119 bytes)
+extern "C" void ext_006A5E5A();
+extern "C" int mem_0092566C;
+extern "C" int mem_0092563C;
+
+struct Dec6A9190Rect { long left; long top; long right; long bottom; };
+
+extern "C" __declspec(naked) void __fastcall fn_006A9190(void* self) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x128], 0x0
+        je L_done
+        mov ecx, dword ptr [esi + 0x20]
+        lea eax, [esp + 0x4]
+        push eax
+        push ecx
+        call dword ptr [mem_0092566C]
+        cmp byte ptr [esi + 0xfc], 0x0
+        je L_skip_top
+        add dword ptr [esp + 0x8], 0x1c
+L_skip_top:
+        cmp byte ptr [esi + 0xf6], 0x0
+        je L_skip_bottom
+        mov edx, dword ptr [esi + 0xf8]
+        sub dword ptr [esp + 0x10], edx
+L_skip_bottom:
+        push edi
+        push 0x2
+        call dword ptr [mem_0092563C]
+        mov edx, dword ptr [esp + 0x10]
+        mov edi, dword ptr [esp + 0x14]
+        mov ecx, edx
+        sub ecx, eax
+        mov eax, dword ptr [esp + 0xc]
+        push 0x1
+        sub edi, eax
+        push edi
+        sub edx, ecx
+        push edx
+        push eax
+        mov dword ptr [esp + 0x18], ecx
+        push ecx
+        lea ecx, [esi + 0x108]
+        call ext_006A5E5A
+        pop edi
+L_done:
+        pop esi
+        add esp, 0x10
+        ret
+    }
+}
