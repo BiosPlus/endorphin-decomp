@@ -257,3 +257,50 @@ skip_0058A670:
         ret 0xc
     }
 }
+
+// [0x00584B60] AnimatableTransform::vfunc_29 (98 bytes)
+extern "C" int mem_00924ED0;
+extern "C" int mem_00924FC8;
+extern "C" int mem_00924FD8;
+extern "C" __declspec(naked) void __fastcall fn_00584B60(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x94], 0x0
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        je L_584B8D
+        mov ecx, dword ptr [esi + 0x94]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x74]
+        push edi
+        call edx
+        push 0x92ab70
+        mov ecx, edi
+        call dword ptr [mem_00924ED0]
+L_584B8D:
+        lea ebx, [esi + 0x30]
+        push 0x928b5d
+        push ebx
+        call dword ptr [mem_00924FC8]
+        add esp, 0x8
+        test al, al
+        mov ecx, edi
+        je L_584BB2
+        push ebx
+        call dword ptr [mem_00924FD8]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+L_584BB2:
+        add esi, 0x14
+        push esi
+        call dword ptr [mem_00924FD8]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
