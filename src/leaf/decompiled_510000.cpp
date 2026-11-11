@@ -1397,3 +1397,20 @@ extern "C" __declspec(naked) void __fastcall fn_0051AE40(void* self) {
         ret
     }
 }
+
+// [0x0051A610] sub_0051A610 (90 bytes)
+extern "C" void* __cdecl fn_0051A610(void* begin, void* end, const float* value) {
+    char* first = (char*)begin;
+    int count = ((char*)end - (char*)begin) / 20;
+    while (count > 0) {
+        int half = count / 2;
+        char* mid = first + half * 20;
+        if (*(const float*)mid < *value) {
+            first = mid + 20;
+            count = count - half - 1;
+        } else {
+            count = half;
+        }
+    }
+    return first;
+}
