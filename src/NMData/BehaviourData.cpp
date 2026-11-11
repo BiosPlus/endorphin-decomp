@@ -166,3 +166,72 @@ extern "C" __declspec(naked) void __fastcall fn_004A9AC0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x004ABE70] NMData::BehaviourData::vfunc_8_off_C (145 bytes)
+extern "C" void ext_00493EE0();
+extern "C" void ext_00594000();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004ABE70(void* self, int edx_unused, int a1) {
+    __asm {
+        mov al, byte ptr [esp + 0x4]
+        push ebp
+        mov ebp, ecx
+        push esi
+        lea esi, [ebp + 0x3cc]
+        mov byte ptr [ebp + 0x5c], al
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je L_out
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        sar ecx, 0x2
+        je L_out
+        push ebx
+        push edi
+        mov edi, eax
+    L_top:
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_c1
+        call dword ptr [mem_00925134]
+    L_c1:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_c2
+        call dword ptr [mem_00925134]
+    L_c2:
+        cmp esi, esi
+        je L_c3
+        call dword ptr [mem_00925134]
+    L_c3:
+        cmp edi, ebx
+        je L_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_elem
+        call dword ptr [mem_00925134]
+    L_elem:
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0xc]
+        mov edx, dword ptr [edx + 0x20]
+        lea ecx, [eax + 0xc]
+        movzx eax, byte ptr [ebp + 0x5c]
+        push eax
+        call edx
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_next
+        call dword ptr [mem_00925134]
+    L_next:
+        add edi, 0x4
+        jmp L_c1
+    L_done:
+        call ext_00594000
+        lea ecx, [eax + 0x258]
+        call ext_00493EE0
+        pop edi
+        pop ebx
+    L_out:
+        pop esi
+        pop ebp
+        ret 0x4
+    }
+}
