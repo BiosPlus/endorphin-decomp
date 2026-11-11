@@ -1887,3 +1887,49 @@ L_0049ACB0_f1d:
         ret
     }
 }
+
+// [0x0049B170] sub_0049B170 (112 bytes)
+// Builds a local empty std::string (SEH-guarded) and returns s == "true" || s == "TRUE".
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_0049B170(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x881709
+        push eax
+        mov dword ptr fs:[0], esp
+        push ebx
+        push esi
+        mov esi, dword ptr [mem_00924FC0]
+        lea eax, [esp + 0x18]
+        push 0x92f10c
+        xor ebx, ebx
+        push eax
+        mov dword ptr [esp + 0x18], ebx
+        call esi
+        add esp, 8
+        test al, al
+        jne set_true
+        lea ecx, [esp + 0x18]
+        push 0x93a810
+        push ecx
+        call esi
+        add esp, 8
+        test al, al
+        je cleanup
+    set_true:
+        mov bl, 1
+    cleanup:
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov al, bl
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
