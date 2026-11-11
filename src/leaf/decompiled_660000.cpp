@@ -3497,3 +3497,12 @@ extern "C" void* __fastcall fn_00661620(void* self) {
     p[1] = 0;
     return self;
 }
+
+// [0x00661650] sub_00661650 (35 bytes)
+extern "C" void* __fastcall fn_00661650(void* self, int edx_unused, int a1) {
+    int* p = (int*)self;
+    p[1] = 0;
+    p[0] = (int)ext_00681E50(1);
+    p[1] = a1;
+    return self;
+}
