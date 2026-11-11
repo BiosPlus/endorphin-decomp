@@ -1797,3 +1797,14 @@ extern "C" __declspec(naked) void __fastcall fn_00519100(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0050FE00();
+
+// [0x00510010] sub_00510010 (63 bytes)
+extern "C" void __cdecl fn_00510010(unsigned int* first, unsigned int* last, int comp) {
+    int len = last - first;
+    for (int hole = len / 2; hole > 0; ) {
+        --hole;
+        ((void (__cdecl*)(unsigned int*, int, int, unsigned int, int))ext_0050FE00)(first, hole, len, first[hole], comp);
+    }
+}
