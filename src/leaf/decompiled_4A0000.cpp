@@ -1355,3 +1355,78 @@ CLIMB_DONE:
         ret
     }
 }
+
+// [0x004AFB60] sub_004AFB60 (138 bytes)
+// Calls virtual slot 2 (+0x8) on the embedded polymorphic member at self+0x8 to get a container,
+// then walks its element-pointer range [+0x4, +0x8) (MSVC iterator checks, failure -> invalid_parameter_noinfo).
+// For each element it calls vtable slot 20 (+0x50); if bit 0x40 is clear it calls sub_00494070(0xC0, elem),
+// and a non-zero result sets self+0x361 = 1 and returns. Otherwise self+0x361 = 0.
+extern "C" void ext_00494070();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004AFB60(void* self) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        mov eax, dword ptr [ebx + 0x8]
+        mov edx, dword ptr [eax + 0x8]
+        push ebp
+        lea ecx, [ebx + 0x8]
+        push esi
+        push edi
+        call edx
+        mov edi, eax
+        mov ebp, dword ptr [edi + 0x4]
+        cmp ebp, dword ptr [edi + 0x8]
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+    L_chk1:
+        mov esi, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], esi
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+    L_chk2:
+        cmp ebp, esi
+        je L_false
+        cmp ebp, dword ptr [edi + 0x8]
+        jb L_elem
+        call dword ptr [mem_00925134]
+    L_elem:
+        mov esi, dword ptr [ebp]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x50]
+        mov ecx, esi
+        call edx
+        test al, 0x40
+        jne L_next
+        push esi
+        push 0xc0
+        call ext_00494070
+        add esp, 0x8
+        test eax, eax
+        jne L_true
+    L_next:
+        cmp ebp, dword ptr [edi + 0x8]
+        jb L_inc
+        call dword ptr [mem_00925134]
+    L_inc:
+        add ebp, 0x4
+        jmp L_chk1
+    L_true:
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebp
+        mov byte ptr [ebx + 0x361], al
+        pop ebx
+        ret
+    L_false:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebp
+        mov byte ptr [ebx + 0x361], al
+        pop ebx
+        ret
+    }
+}
