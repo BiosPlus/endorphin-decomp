@@ -4785,3 +4785,20 @@ extern "C" __declspec(naked) void __fastcall fn_00436070(void* self) {
         ret
     }
 }
+
+// [0x00436C60] sub_00436C60 (36 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00436C60(void* self) {
+    __asm {
+        call ext_00436070
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx+8Ch]
+        call eax
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx+54h]
+        jmp eax
+    }
+}
