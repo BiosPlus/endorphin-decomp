@@ -425,3 +425,58 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_0085D340(const unsigned cha
         ret
     }
 }
+
+// [0x0085D9D0] sub_0085D9D0 (106 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0085D9D0(void) {
+    __asm {
+        push ebx
+        mov eax, 1
+        mov cx, word ptr [esp + 0x8]
+        push esi
+        mov dx, word ptr [esp + 0x10]
+        push edi
+        mov si, word ptr [esp + 0x18]
+        push ebp
+        mov ebp, 0xffffffff
+        mov ebx, 0xabb380
+        mov edi, dword ptr [esp + 0x20]
+loop_top:
+        cmp dword ptr [ebx], 0x0
+        jne check_keys
+        test ebp, ebp
+        jge next_entry
+        mov ebp, eax
+        jmp next_entry
+check_keys:
+        cmp word ptr [ebx - 0x8], si
+        jne next_entry
+        cmp word ptr [ebx - 0xc], cx
+        jne next_entry
+        cmp word ptr [ebx - 0xa], dx
+        jne next_entry
+        cmp dword ptr [ebx - 0x4], edi
+        je found
+next_entry:
+        add ebx, 0x14
+        inc eax
+        cmp ebx, 0xac018c
+        jbe loop_top
+        test ebp, ebp
+        jge neg_empty
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+neg_empty:
+        mov eax, ebp
+        neg eax
+found:
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
