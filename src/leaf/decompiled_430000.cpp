@@ -4997,3 +4997,55 @@ L_436F00:
         ret
     }
 }
+
+// [0x00436DD0] sub_00436DD0 (114 bytes)
+extern "C" void ext_00436070();
+extern "C" void ext_00465B40();
+extern "C" __declspec(naked) void __fastcall fn_00436DD0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x9c]
+        call eax
+        test eax, eax
+        jle done
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_00436070
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x8c]
+        call eax
+        call ext_00465B40
+        mov edi, eax
+        call ext_00465B40
+        mov edx, dword ptr [edi]
+        mov ebx, eax
+        mov esi, dword ptr [ebx]
+        mov eax, dword ptr [edx + 0x9c]
+        mov ecx, edi
+        add esi, 0x58
+        call eax
+        mov edx, dword ptr [esi]
+        sub eax, 1
+        push eax
+        mov ecx, ebx
+        call edx
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x98]
+        push 5
+        call eax
+        pop edi
+        pop ebx
+        done:
+        pop esi
+        ret
+    }
+}
