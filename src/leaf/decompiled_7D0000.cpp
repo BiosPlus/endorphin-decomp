@@ -1624,3 +1624,53 @@ extern "C" __declspec(naked) void __cdecl fn_007DA8E0(void) {
         ret
     }
 }
+
+// [0x007D5DD0] sub_007D5DD0 (117 bytes)
+extern "C" int mem_009241A0;
+extern "C" int mem_0092419C;
+extern "C" __declspec(naked) void __cdecl fn_007D5DD0(void* self) {
+    __asm {
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        xor ebx, ebx
+        cmp dword ptr [edi + 0x294], ebx
+        je epilogue
+        cmp dword ptr [edi + 0x29c], ebx
+        mov dword ptr [edi + 0x294], ebx
+        jle epilogue
+        push ebp
+        mov ebp, dword ptr [mem_009241A0]
+        push esi
+        lea esi, [edi + 0x56c]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+loop_top:
+        mov ecx, dword ptr [esi]
+        lea eax, [esp + 0x14]
+        push eax
+        push ecx
+        call dword ptr [mem_0092419C]
+        mov edx, dword ptr [esi]
+        push eax
+        push edx
+        call ebp
+        add ebx, 1
+        add esi, 4
+        cmp ebx, dword ptr [edi + 0x29c]
+        jl loop_top
+        pop esi
+        xor ebx, ebx
+        pop ebp
+epilogue:
+        mov dword ptr [edi + 0x298], ebx
+        mov dword ptr [edi + 0x2a0], ebx
+        mov dword ptr [edi + 0x294], ebx
+        mov dword ptr [edi + 0x29c], 1
+        pop edi
+        pop ebx
+        ret
+    }
+}
