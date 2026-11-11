@@ -2158,3 +2158,42 @@ L_F040_d:
         ret 4
     }
 }
+
+extern "C" int mem_00924FDC;
+extern "C" int mem_00ADCB28;
+extern "C" void ext_0049ED70();
+extern "C" void ext_004A2510();
+
+// [0x00497030] sub_00497030 (82 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00497030(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push edi
+        lea ecx, [esi + 0x30]
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [esi + 0xb8]
+        test eax, eax
+        mov dword ptr [esi + 0xbc], 0x0
+        je L_497030_tail
+        mov ecx, dword ptr [eax + 0xfc]
+        test ecx, ecx
+        push edi
+        jne L_497030_call
+        mov ecx, eax
+L_497030_call:
+        call ext_0049ED70
+        mov dword ptr [esi + 0xbc], eax
+L_497030_tail:
+        mov ecx, dword ptr [mem_00ADCB28]
+        test ecx, ecx
+        pop edi
+        pop esi
+        je L_497030_ret
+        call ext_004A2510
+L_497030_ret:
+        ret 0x4
+    }
+}
