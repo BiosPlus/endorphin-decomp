@@ -1819,3 +1819,34 @@ L_ret:
         ret 0x10
     }
 }
+
+// [0x00410230] sub_00410230 (88 bytes)
+extern "C" void ext_006A5EFC();
+extern "C" void ext_006A5FF2();
+
+extern "C" __declspec(naked) void __fastcall fn_00410230(void* self) {
+    __asm {
+        push -1
+        push 0x00874FB8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x0092BBCC
+        lea ecx, [esi + 0x54]
+        mov dword ptr [esp + 0x10], 0x0
+        mov dword ptr [ecx], 0x0092A23C
+        call ext_006A5FF2
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_006A5EFC
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
