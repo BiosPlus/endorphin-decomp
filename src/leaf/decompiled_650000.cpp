@@ -2424,3 +2424,35 @@ extern "C" __declspec(naked) void* __cdecl fn_0065FAF0(void* first, void* last) 
         ret
     }
 }
+
+// [0x0065B000] sub_0065B000 (50 bytes)
+extern "C" void ext_0065AF20();
+extern "C" void ext_007C7000();
+extern "C" void ext_007C7130();
+extern "C" void ext_007CC970();
+
+extern "C" __declspec(naked) void __fastcall fn_0065B000(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0
+        je done
+        push edi
+        call ext_0065AF20
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_007C7000
+        mov ecx, dword ptr [esi]
+        push ecx
+        mov edi, eax
+        call ext_007C7130
+        push edi
+        call ext_007CC970
+        add esp, 0Ch
+        mov dword ptr [esi], 0
+        pop edi
+done:
+        pop esi
+        ret
+    }
+}
