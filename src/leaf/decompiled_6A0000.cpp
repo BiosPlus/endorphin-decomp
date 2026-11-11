@@ -965,3 +965,76 @@ L_done:
         ret
     }
 }
+
+// [0x006A7D80] sub_006A7D80 (120 bytes)
+extern "C" void ext_006A63BE();
+extern "C" void ext_006A7C10();
+extern "C" void ext_006AD090();
+extern "C" void ext_006AEC60();
+extern "C" void ext_006AEC90();
+extern "C" void ext_006AF8E0();
+
+extern "C" __declspec(naked) void* __fastcall fn_006A7D80(void* self, int edx_unused, void* a1, unsigned char a2) {
+    __asm {
+        push ebx
+        mov bl, byte ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L_top:
+        mov ecx, ebp
+        call ext_006AEC90
+        test al, al
+        jne short L_check
+        test bl, bl
+        je short L_ret_ebp
+    L_check:
+        mov ecx, ebp
+        call ext_006A7C10
+        test eax, eax
+        je short L_ret_ebp
+        mov ecx, ebp
+        call ext_006A7C10
+        mov esi, eax
+    L_dec:
+        sub esi, 1
+        test esi, esi
+        jl short L_ret_ebp
+        push esi
+        mov ecx, ebp
+        call ext_006AF8E0
+        mov edi, eax
+        mov ecx, edi
+        call ext_006AD090
+        test al, al
+        je short L_dec
+        call ext_006AEC60
+        push eax
+        mov ecx, edi
+        call ext_006A63BE
+        test eax, eax
+        je short L_ret_edi
+        xor bl, bl
+        mov ebp, edi
+        jmp short L_top
+    L_ret_edi:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    L_ret_ebp:
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
