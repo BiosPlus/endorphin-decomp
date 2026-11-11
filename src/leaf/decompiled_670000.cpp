@@ -2293,3 +2293,65 @@ extern "C" __declspec(naked) void __fastcall fn_0067C4D0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0067D9E0] sub_0067D9E0 (114 bytes)
+extern "C" int __cdecl ext_005631C0(double, double);
+extern "C" int __cdecl ext_0056B670(double, double, double);
+
+extern "C" __declspec(naked) bool __fastcall fn_0067D9E0(float* self, int edx_unused, float a1) {
+    __asm {
+        push esi
+        push edi
+        xor edi, edi
+        xor esi, esi
+    OUTER_TOP:
+        xor edx, edx
+        jmp INNER_TOP
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    INNER_TOP:
+        cmp edi, edx
+        fld dword ptr [esp + 0xc]
+        lea eax, [esi + edx]
+        jne ELSE_BR
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld1
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ecx + 4*eax]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        jmp AFTER_CALL
+    ELSE_BR:
+        sub esp, 0x10
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ecx + 4*eax]
+        fstp qword ptr [esp]
+        call ext_005631C0
+        add esp, 0x10
+    AFTER_CALL:
+        test al, al
+        je RET_FALSE
+        add edx, 0x1
+        cmp edx, 0x3
+        jl INNER_TOP
+        add esi, 0x3
+        add edi, 0x1
+        cmp esi, 0x9
+        jl OUTER_TOP
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    RET_FALSE:
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}
