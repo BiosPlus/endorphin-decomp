@@ -2308,3 +2308,72 @@ extern "C" __declspec(naked) void __fastcall fn_00528040(void* self) {
         ret
     }
 }
+
+// [0x0052A280] sub_0052A280 (132 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0052A280(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0x0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne SKIP_INV1
+        call edi
+    SKIP_INV1:
+        mov eax, dword ptr [esi + 0x4]
+        cmp byte ptr [eax + 0x61], 0x0
+        je L_LEFT
+        mov eax, dword ptr [eax + 0x8]
+        mov dword ptr [esi + 0x4], eax
+        cmp byte ptr [eax + 0x61], 0x0
+        je L_DONE
+    L_INV1:
+        call edi
+        pop edi
+        pop esi
+        ret
+    L_LEFT:
+        mov ecx, dword ptr [eax]
+        cmp byte ptr [ecx + 0x61], 0x0
+        jne L_CLIMB
+        mov eax, dword ptr [ecx + 0x8]
+        cmp byte ptr [eax + 0x61], 0x0
+        jne L_STORE_C
+        __asm _emit 0x8d __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x00
+    L_RLOOP:
+        mov ecx, eax
+        mov eax, dword ptr [ecx + 0x8]
+        cmp byte ptr [eax + 0x61], 0x0
+        je L_RLOOP
+    L_STORE_C:
+        pop edi
+        mov dword ptr [esi + 0x4], ecx
+        pop esi
+        ret
+    L_CLIMB:
+        mov eax, dword ptr [eax + 0x4]
+        cmp byte ptr [eax + 0x61], 0x0
+        jne L_FIX
+        __asm _emit 0x8d __asm _emit 0x9b __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+    L_CLOOP:
+        mov ecx, dword ptr [esi + 0x4]
+        cmp ecx, dword ptr [eax]
+        jne L_FIX
+        mov dword ptr [esi + 0x4], eax
+        mov edx, eax
+        mov eax, dword ptr [edx + 0x4]
+        cmp byte ptr [eax + 0x61], 0x0
+        je L_CLOOP
+    L_FIX:
+        mov ecx, dword ptr [esi + 0x4]
+        cmp byte ptr [ecx + 0x61], 0x0
+        jne L_INV1
+        mov dword ptr [esi + 0x4], eax
+    L_DONE:
+        pop edi
+        pop esi
+        ret
+    }
+}
