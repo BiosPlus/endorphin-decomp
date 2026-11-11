@@ -495,3 +495,78 @@ extern "C" __declspec(naked) void __fastcall fn_006DBE60(void* self, int edx_unu
         ret
     }
 }
+
+// [0x006D2170] sub_006D2170 (144 bytes)
+// Insert-at-index into a block-grown array (ret 8): clamps idx to count, grows storage by one block when full,
+// shifts [idx, count) up by one row, copies the src row into slot idx, bumps count, returns idx.
+extern "C" int mem_0092528C;
+extern "C" __declspec(naked) int __fastcall fn_006D2170(void* self, int edx_unused, int idx, void* src) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi]
+        cmp edi, edx
+        jle idx_ok
+        mov edi, edx
+idx_ok:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi + 0x8]
+        mov ebx, eax
+        imul ebx, ecx
+        cmp edx, ebx
+        jl no_grow
+        mov edx, dword ptr [esi + 0xc]
+        inc eax
+        imul edx, eax
+        imul edx, ecx
+        mov dword ptr [esi + 0x4], eax
+        mov eax, dword ptr [esi + 0x10]
+        push edx
+        push eax
+        call dword ptr [mem_00925290]
+        add esp, 0x8
+        mov dword ptr [esi + 0x10], eax
+no_grow:
+        mov eax, dword ptr [esi]
+        mov ebx, dword ptr [mem_0092528C]
+        cmp edi, eax
+        jge no_shift
+        mov ecx, dword ptr [esi + 0xc]
+        sub eax, edi
+        imul eax, ecx
+        push eax
+        mov eax, ecx
+        imul eax, edi
+        mov edx, dword ptr [esi + 0x10]
+        add eax, edx
+        push eax
+        lea eax, [edi + 0x1]
+        imul eax, ecx
+        add eax, edx
+        push eax
+        call ebx
+        add esp, 0xc
+no_shift:
+        mov eax, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        imul eax, edi
+        push ecx
+        mov ecx, dword ptr [esi + 0x10]
+        add eax, ecx
+        push eax
+        call ebx
+        mov eax, dword ptr [esi]
+        add esp, 0xc
+        inc eax
+        mov dword ptr [esi], eax
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
