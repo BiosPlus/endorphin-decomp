@@ -3,6 +3,8 @@
 extern "C" float mem_0099D148;
 extern "C" int mem_009552D0;
 extern "C" void ext_007DD130();
+extern "C" void ext_007C7900();
+extern "C" void ext_007C7970();
 
 // [0x007CC3D0] sub_007CC3D0 (32 bytes)
 // Zeroes the float triple at arg2[0..2] (stores 0.0 to [+8], [+4], [0]), then stores
@@ -3295,5 +3297,82 @@ extern "C" void __cdecl fn_007C8960(int* self, int b, int c, const Cell007C8960*
         Cell007C8960* f = (Cell007C8960*)(((char*)self[10]) + 24 * (self[0] * b + c));
         *f = *d;
         f->v[3] = 1;
+    }
+}
+
+// [0x007C79E0] sub_007C79E0 (141 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007C79E0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ebx + 0x18]
+        mov edx, dword ptr [ebx + 0x1c]
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [ecx + 4*ebp]
+        push edi
+        mov edi, dword ptr [edx + 4*ebp]
+        add edi, esi
+        cmp esi, edi
+        jge L_second
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_loop1:
+        test eax, eax
+        jne L_second
+        mov eax, dword ptr [ebx + 0x14]
+        mov ecx, dword ptr [eax + 4*esi]
+        push ecx
+        call ext_007C7900
+        add esi, 1
+        add esp, 4
+        cmp esi, edi
+        jl L_loop1
+    L_second:
+        mov edx, dword ptr [ebx + 0x4]
+        mov ecx, dword ptr [ebx + 0x8]
+        mov esi, dword ptr [edx + 4*ebp]
+        mov edi, dword ptr [ecx + 4*ebp]
+        add edi, esi
+        cmp esi, edi
+        jge L_tail
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L_loop2:
+        test eax, eax
+        jne L_tail_call
+        mov edx, dword ptr [ebx]
+        mov eax, dword ptr [edx + 4*esi]
+        push eax
+        call ext_007C7970
+        add esi, 1
+        add esp, 4
+        cmp esi, edi
+        jl L_loop2
+    L_tail:
+        test eax, eax
+        je L_done
+    L_tail_call:
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [ecx + 0x5c4]
+        test eax, eax
+        je L_done
+        mov ecx, dword ptr [ecx + 0x5cc]
+        push ecx
+        push ebp
+        push ebx
+        call eax
+        add esp, 0xc
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        ret
     }
 }
