@@ -87,3 +87,55 @@ extern "C" __declspec(naked) void __fastcall fn_0054EB50(void* self, int edx_unu
         jmp dword ptr [mem_009254B4]
     }
 }
+
+// [0x0054ECF0] NMMatrixStackManager::vfunc_3 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0054ECF0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8]
+        sub esp, 0x8
+        test eax, eax
+        push ebp
+        push esi
+        lea esi, [ecx + 0x4]
+        push edi
+        je L_54ED12
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, ecx
+        sub edx, eax
+        sar edx, 0x6
+        je L_54ED12
+        add ecx, -0x40
+        mov dword ptr [esi + 0x8], ecx
+    L_54ED12:
+        mov edi, dword ptr [esi + 0x8]
+        cmp eax, edi
+        mov ebp, dword ptr [mem_00925134]
+        jbe L_54ED21
+        call ebp
+    L_54ED21:
+        lea eax, [edi - 0x40]
+        cmp eax, dword ptr [esi + 0x8]
+        push ebx
+        mov ebx, esi
+        mov dword ptr [esp + 0x14], edi
+        ja L_54ED35
+        cmp eax, dword ptr [esi + 0x4]
+        jae L_54ED37
+    L_54ED35:
+        call ebp
+    L_54ED37:
+        lea esi, [edi - 0x40]
+        cmp esi, dword ptr [ebx + 0x8]
+        pop ebx
+        jb L_54ED42
+        call ebp
+    L_54ED42:
+        push esi
+        call dword ptr [mem_009254B4]
+        pop edi
+        pop esi
+        pop ebp
+        add esp, 0x8
+        ret
+    }
+}
