@@ -996,3 +996,21 @@ extern "C" __declspec(naked) void __fastcall fn_004FDEF0(void* self) {
         ret
     }
 }
+
+// [0x004FFE30] sub_004FFE30 (95 bytes)
+extern "C" int mem_00924EF4;
+typedef bool (__cdecl *LessStr_004FFE30)(const void*, const void*);
+extern "C" void* __cdecl fn_004FFE30(char* first, char* last, const void* val) {
+    int count = (int)((last - first) / 36);
+    while (count > 0) {
+        int half = count / 2;
+        char* mid = first + half * 36;
+        if (((LessStr_004FFE30)mem_00924EF4)(mid, val)) {
+            first = mid + 36;
+            count -= half + 1;
+        } else {
+            count = half;
+        }
+    }
+    return first;
+}
