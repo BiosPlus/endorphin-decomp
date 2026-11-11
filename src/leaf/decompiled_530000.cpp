@@ -2207,3 +2207,26 @@ extern "C" void* __fastcall fn_0053BBA0(void* self) {
     ((QuadricArgFn)ext_0063E030)(((void**)self)[17], 1);
     return self;
 }
+
+// [0x0053B6B0] sub_0053B6B0 (83 bytes)
+extern "C" void ext_0053B240();
+extern "C" void* ext_0063E000();
+extern "C" void ext_0063E00C();
+extern "C" void ext_0063E012();
+extern "C" void ext_0063E01E();
+extern "C" void ext_0063E030();
+
+extern "C" void* __fastcall fn_0053B6B0(void* self) {
+    typedef void (__fastcall *InitFn)(void*);
+    typedef void* (__stdcall *NewQuadricFn)();
+    typedef void (__stdcall *QuadricArgFn)(void*, int);
+    ((InitFn)ext_0053B240)(self);
+    *(void**)self = (void*)0x955694;
+    ((void**)self)[5] = (void*)0x955688;
+    ((void**)self)[17] = ((NewQuadricFn)ext_0063E000)();
+    ((QuadricArgFn)ext_0063E012)(((void**)self)[17], 0x186ac);
+    ((QuadricArgFn)ext_0063E01E)(((void**)self)[17], 0x186b4);
+    ((QuadricArgFn)ext_0063E00C)(((void**)self)[17], 0x186a0);
+    ((QuadricArgFn)ext_0063E030)(((void**)self)[17], 1);
+    return self;
+}
