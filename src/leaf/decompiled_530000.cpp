@@ -1786,3 +1786,16 @@ extern "C" __declspec(naked) void __fastcall fn_00533F50(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005364D0] sub_005364D0 (85 bytes)
+extern "C" void __fastcall ext_0050BE20(void* self);
+extern "C" void __fastcall fn_005364D0(void* self) {
+    ext_0050BE20((char*)self + 0x238);
+    ext_0050BE20((char*)self + 0x474);
+    *((unsigned char*)self + 0x464) = 1;
+    ext_0050BE20((char*)self + 0x264);
+    ext_0050BE20((char*)self + 0x290);
+    ext_0050BE20((char*)self + 0x2BC);
+    ext_0050BE20((char*)self + 0x2E8);
+    *((int*)((char*)self + 0x40)) = 0;
+}
