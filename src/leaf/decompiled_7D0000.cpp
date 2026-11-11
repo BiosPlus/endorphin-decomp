@@ -1727,3 +1727,56 @@ reject_007D5BD0:
         ret
     }
 }
+
+// [0x007DB640] sub_007DB640 (120 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007DB640(void* self) {
+    __asm {
+        sub esp, 0ch
+        fld dword ptr [ecx]
+        fsub dword ptr [eax + 30h]
+        fstp dword ptr [esp]
+        fld dword ptr [ecx + 4]
+        fsub dword ptr [eax + 34h]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [ecx + 8]
+        fsub dword ptr [eax + 38h]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [eax + 4]
+        fld dword ptr [esp + 4]
+        fld st(0)
+        fmulp st(2), st
+        fld dword ptr [eax]
+        fld dword ptr [esp]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(3)
+        faddp st(1), st
+        fld dword ptr [eax + 8]
+        fld dword ptr [esp + 8]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fstp dword ptr [edx]
+        fld dword ptr [eax + 14h]
+        fmul st, st(2)
+        fld dword ptr [eax + 10h]
+        fmul st, st(4)
+        faddp st(1), st
+        fld dword ptr [eax + 18h]
+        fmul st, st(2)
+        faddp st(1), st
+        fstp dword ptr [edx + 4]
+        fld dword ptr [eax + 24h]
+        fmulp st(2), st
+        fld dword ptr [eax + 20h]
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul dword ptr [eax + 28h]
+        faddp st(1), st
+        fstp dword ptr [edx + 8]
+        add esp, 0ch
+        ret
+    }
+}
