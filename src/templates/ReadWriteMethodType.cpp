@@ -2229,3 +2229,39 @@ extern "C" __declspec(naked) void __fastcall fn_004D5670(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004D5980] ExprParser::ReadWriteMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isUseSubTicksEnabled(void) const, 0}, bool, {public: void __thiscall NMData::RigEventData::setIsUseSubticksEnabled(bool), 0}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00AE5D18;
+extern "C" int mem_00AE5D14;
+
+extern "C" __declspec(naked) void __fastcall fn_004D5980(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x88d0be
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00AE5D18], al
+        jne L_guarded
+        or dword ptr [mem_00AE5D18], eax
+        mov ecx, offset mem_00AE5D14
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00AE5D14], 0x0094896c
+        mov dword ptr [eax + 0x4], offset mem_00AE5D14
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00AE5D14
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
