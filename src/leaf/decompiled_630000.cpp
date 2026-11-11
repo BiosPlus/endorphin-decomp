@@ -1688,3 +1688,79 @@ L_notfound:
         ret 0x4
     }
 }
+
+// [0x0063F620] sub_0063F620 (136 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC0;
+extern "C" __declspec(naked) void* __fastcall fn_0063F620(void* self, int edx_unused, const char* a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [ecx + 0x40]
+        cmp esi, dword ptr [ecx + 0x44]
+        push edi
+        lea edi, [ecx + 0x3c]
+        jbe L_0063F637
+        call ebp
+    L_0063F637:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_0063F647
+        call ebp
+        mov ebp, dword ptr [mem_00925134]
+    L_0063F647:
+        test edi, edi
+        je L_0063F64F
+        cmp edi, edi
+        je L_0063F657
+    L_0063F64F:
+        call ebp
+        mov ebp, dword ptr [mem_00925134]
+    L_0063F657:
+        cmp esi, ebx
+        jae L_0063F69C
+        test edi, edi
+        jne L_0063F661
+        call ebp
+    L_0063F661:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_0063F668
+        call ebp
+    L_0063F668:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 0x14]
+        add eax, 0x4
+        push ecx
+        push eax
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        jne L_0063F68C
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_0063F687
+        call ebp
+    L_0063F687:
+        add esi, 0x4
+        jmp L_0063F637
+    L_0063F68C:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_0063F693
+        call ebp
+    L_0063F693:
+        mov eax, dword ptr [esi]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    L_0063F69C:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0xb53a34
+        pop ebx
+        ret 0x4
+    }
+}
