@@ -347,3 +347,62 @@ extern "C" __declspec(naked) void __fastcall fn_0054C1F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0054C330] ManagedDisplayList<RenderableList>::vfunc_11 (109 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0054C330(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        lea esi, [ecx + 0x14]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+    L_chk1:
+        mov ebp, dword ptr [esp + 0x14]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_loop:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+    L_chk2:
+        cmp esi, esi
+        je L_chk3
+        call dword ptr [mem_00925134]
+    L_chk3:
+        cmp edi, ebx
+        je L_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_call
+        call dword ptr [mem_00925134]
+    L_call:
+        mov ecx, dword ptr [edi]
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x2c]
+        push edx
+        push ebp
+        call eax
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_inc
+        call dword ptr [mem_00925134]
+    L_inc:
+        add edi, 0x4
+        jmp L_loop
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
