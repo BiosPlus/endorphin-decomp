@@ -13,11 +13,11 @@ PREFER_AGY_CLAUDE="${PREFER_AGY_CLAUDE:-0}"     # Set to 1 to prefer AGY for Son
 DEPS_FIRST="${DEPS_FIRST:-1}"                  # 1 = prefer functions whose callees are already matched
 RETRY_DEFERRED="${RETRY_DEFERRED:-0}"          # 1 = also queue previously deferred functions (skips models that already failed them)
 IGNORE_ATTEMPTS="${IGNORE_ATTEMPTS:-0}"        # 1 = ignore .local/grind_attempts.tsv history
-# Pipeline: Haiku (stage 0) runs on EVERY function with WAVE_SIZE concurrent runners. A function only moves to the next
-# model when the previous one fails. Each escalation stage has its own concurrency cap (default ESC_CAP; override per model).
+# Pipeline: tier 0 runs on EVERY function with WAVE_SIZE concurrent runners. A function moves up a tier only once every model in its tier has failed it.
+# Each model has its own concurrency cap (tier 0: WAVE_SIZE; later tiers: ESC_CAP unless overridden below).
 ESC_CAP="${ESC_CAP:-2}"
 MODEL_CAPS="${MODEL_CAPS:-}"                    # e.g. claude-opus-5.5=1,gemini-4-argon=1
-ESC_BACKLOG_FACTOR="${ESC_BACKLOG_FACTOR:-4}"   # pause pulling new Haiku work if > FACTOR*WAVE_SIZE functions are waiting on escalations
+ESC_BACKLOG_FACTOR="${ESC_BACKLOG_FACTOR:-4}"   # pause pulling new tier-0 work if > FACTOR*WAVE_SIZE functions are waiting on escalations
 # Optional minimum function size (bytes) per model, e.g. "claude-opus-5.5=128,gemini-4-argon=128". Off by default:
 # any function that fails the cheaper models escalates all the way up regardless of size.
 MODEL_MIN_SIZE="${MODEL_MIN_SIZE:-}"
@@ -27,16 +27,26 @@ ADAPTIVE_CHAIN="${ADAPTIVE_CHAIN:-1}"
 ROUTE_MIN_TRIALS="${ROUTE_MIN_TRIALS:-20}"
 ROUTE_MIN_YIELD="${ROUTE_MIN_YIELD:-0.05}"
 
-# Strict single-model-at-a-time escalation order (cheapest & fastest tokens first -> heaviest last)
-MODEL_CHAIN=(
-  "claude-haiku-5.5"
-  "gpt-oss-120b"
-  "gemini-3.8-flash"
-  "claude-sonnet-5.5"
-  "claude-opus-5.5"
-  "gemini-4-argon"
-  "gemini-4-carbon"
-)
+# Model tiers, cheapest first. Every model in a tier gets one real attempt at a function before it moves up a tier, and
+# within a tier a function goes to whichever owed model is free and not rate-limited (spreads load across quota pools).
+# Override with MODEL_TIERS="modelA modelB|modelC|modelD modelE|modelF" ("|" separates tiers).
+MODEL_TIERS="${MODEL_TIERS:-claude-haiku-5.5 gemini-3.8-flash|claude-sonnet-5.5|gemini-4-argon claude-opus-5.5|gemini-4-carbon}"
+# Quota pools. Each has its own 5h usage window, so a limit hit cools down the whole pool, not just one model:
+#   claude     = native claude CLI (haiku/sonnet/opus)      agy-gemini = every gemini-* model on agy
+#   agy-other  = everything else on agy (claude models)
+# Hard usage limits (not transient 429s) use LIMIT_PROBE_SECS (doubling, capped at LIMIT_PROBE_MAX_SECS) unless the CLI
+# prints a reset time we can parse.
+LIMIT_PROBE_SECS="${LIMIT_PROBE_SECS:-900}"
+LIMIT_PROBE_MAX_SECS="${LIMIT_PROBE_MAX_SECS:-3600}"
+MODEL_CHAIN=()                 # flat list, tier order
+declare -A MODEL_IDX=() MODEL_TIER=()
+TIER_MODELS=()                 # tier index -> space-separated models
+IFS='|' read -ra _tiers <<< "$MODEL_TIERS"
+for _ti in "${!_tiers[@]}"; do
+  TIER_MODELS[$_ti]="${_tiers[$_ti]}"
+  for _m in ${_tiers[$_ti]}; do MODEL_IDX[$_m]=${#MODEL_CHAIN[@]}; MODEL_TIER[$_m]=$_ti; MODEL_CHAIN+=("$_m"); done
+done
+NUM_TIERS="${#TIER_MODELS[@]}"
 
 # Ensure git pre-commit security hook is installed if .git/hooks is writable
 if [[ -f "$REPO_ROOT/tools/pre-commit" && -w "$REPO_ROOT/.git/hooks" ]]; then
@@ -84,11 +94,11 @@ if [[ "${GRIND_VERBOSE:-0}" == 1 ]]; then
 echo "=== Endorphin Autonomous Parallel Grinder (1 Agent / Function Try) ==="
 echo "Verified CLIs : claude=$HAS_CLAUDE | agy=$HAS_AGY"
 echo "Pipeline      : haiku runners=$WAVE_SIZE (tries every function) | escalation cap=${ESC_CAP}/model | total_pulls=$((MAX_WAVES*WAVE_SIZE)) | push_every=$((PUSH_EVERY*WAVE_SIZE)) | timeout=${AGENT_TIMEOUT}s"
-echo "Model Chain   : claude-haiku-5.5 -> gpt-oss-120b -> gemini-3.8-flash -> claude-sonnet-5.5 -> claude-opus-5.5 -> gemini-4-argon -> gemini-4-carbon"
-echo "Policy        : Haiku first on every function; a failure escalates only that function one stage up; per-model caps limit expensive concurrency"
+echo "Model Tiers   : ${MODEL_TIERS//|/  ->  }"
+echo "Policy        : every model in a tier tries a function (least-loaded first) before it moves up; rate-limited pools are waited out, never counted as failures"
 echo "Security Mode : Scoped Allowlist + Sandbox + PreToolUse Guard [NO skip-dangerously]"
 else
-  echo "Endorphin grinder: haiku x$WAVE_SIZE, escalation cap ${ESC_CAP}/model, ${MAX_WAVES} waves, timeout ${AGENT_TIMEOUT}s  (claude=$HAS_CLAUDE agy=$HAS_AGY; GRIND_VERBOSE=1 for details)"
+  echo "Endorphin grinder: tier0 x$WAVE_SIZE, escalation cap ${ESC_CAP}/model, ${MAX_WAVES} waves, timeout ${AGENT_TIMEOUT}s  (claude=$HAS_CLAUDE agy=$HAS_AGY; GRIND_VERBOSE=1 for details)"
 fi
 
 if [[ $HAS_CLAUDE -eq 0 && $HAS_AGY -eq 0 ]]; then
@@ -104,8 +114,8 @@ fi
 AGY_INLINE_SETTINGS='{"agentMode":"auto","enableTerminalSandbox":true,"toolPermission":"proceed-in-sandbox","permissions":{"allow":["read_file(*)","write_file('"$REPO_ROOT"'/src)","write_file('"$REPO_ROOT"'/include)","edit_file('"$REPO_ROOT"'/src)","edit_file('"$REPO_ROOT"'/include)","command(./.local/bin/work*)","command(go run ./tools/work*)","command(./.local/bin/status*)","command(go run ./tools/status*)","command(./.local/bin/build_and_match*)","command(./tools/cl_wine.sh*)","command(git status*)","command(git diff*)","command(git log*)","command(git show*)","command(git add*)","command(git commit*)","command(git checkout*)"],"deny":["write_file('"$REPO_ROOT"'/docs)","command(sudo*)","command(rm -rf*)","command(python*)","command(curl*)","command(wget*)"]}}'
 
 # Per-backend cooldown tracking, kept in files so every concurrent worker subshell shares one view.
-# $STATE_DIR/cd.<key>  = epoch seconds when backend:model becomes eligible again
-# $STATE_DIR/st.<key>  = strike count
+# $STATE_DIR/cd.<pool>  = epoch seconds when that quota pool becomes eligible again (pools: see MODEL_TIERS above)
+# $STATE_DIR/st.<pool>  = strike count (reset when a run on the pool finishes without hitting a limit)
 STATE_DIR="$(mktemp -d /tmp/endorphin_grind_state.XXXXXX)"
 
 # ---- Event log + live dashboard ----------------------------------------------------------------------
@@ -140,65 +150,97 @@ is_backend_cooling_down() {
   (( now < until ))
 }
 
+# Quota pool a backend+model draws from (each pool has its own usage window)
+pool_of() {   # $1=backend $2=model
+  if [[ "$1" == claude ]]; then echo claude
+  elif [[ "$2" == gemini-* ]]; then echo agy-gemini
+  else echo agy-other; fi
+}
+
+# $1=pool $2=kind (hard|soft) $3=reset epoch parsed from the CLI output (0 = unknown)
 mark_rate_limited() {
-  local key="$1"
-  local k; k="$(_state_key "$key")"
+  local pool="$1" kind="${2:-soft}" reset="${3:-0}"
+  local k; k="$(_state_key "$pool")"
   # Several workers can hit the same limit at once: count only one strike per cooldown episode
-  if is_backend_cooling_down "$key"; then
+  if is_backend_cooling_down "$pool"; then
     return
   fi
-  local strikes=0
+  local strikes=0 now wait_secs
+  now="$(date +%s)"
   [[ -f "$STATE_DIR/st.$k" ]] && strikes="$(cat "$STATE_DIR/st.$k" 2>/dev/null || echo 0)"
   ((strikes++))
   echo "$strikes" > "$STATE_DIR/st.$k"
 
-  # Exponential backoff: 3m, 9m, 27m, then 2h
-  local wait_secs=$(( COOLDOWN_BASE_SECS * (3 ** (strikes - 1)) ))
-  if (( wait_secs > 7200 )); then
-    wait_secs=7200
+  if [[ "$kind" == hard && "$reset" =~ ^[0-9]+$ ]] && (( reset > now )); then
+    wait_secs=$(( reset - now + 30 ))                # wait for the window the CLI told us about
+  elif [[ "$kind" == hard ]]; then
+    wait_secs=$(( LIMIT_PROBE_SECS * (2 ** (strikes - 1)) ))   # 5h window, unknown reset: probe now and then
+    (( wait_secs > LIMIT_PROBE_MAX_SECS )) && wait_secs=$LIMIT_PROBE_MAX_SECS
+  else
+    wait_secs=$(( COOLDOWN_BASE_SECS * (3 ** (strikes - 1)) ))   # transient 429/overloaded: 3m, 9m, 27m, then 2h
+    (( wait_secs > 7200 )) && wait_secs=7200
   fi
-  echo $(( $(date +%s) + wait_secs )) > "$STATE_DIR/cd.$k"
-  emit "[!] Rate limit / quota hit on $key (strike $strikes) — cooling down for $((wait_secs / 60))m ($wait_secs s)"
+  echo $(( now + wait_secs )) > "$STATE_DIR/cd.$k"
+  emit "[!] $kind limit on pool $pool (strike $strikes) — waiting $((wait_secs / 60))m ($wait_secs s)"
+}
+
+# Print "<hard|soft> <reset_epoch|0>" for a rate-limited agent log. Hard = a usage/quota window; soft = transient 429/overload.
+# Reset time is parsed best-effort from "|<epoch>" or "resets <time>" in the CLI's message.
+classify_rate_limit() {
+  local log_file="$1" body kind=soft reset=0 t
+  body="$(grep -vE '"subtype":"(init|hook_started|hook_response)"|"type":"system"' "$log_file" 2>/dev/null)"
+  grep -qiE "usage limit|hit your.*limit|limit reached|quota exceeded|credit balance is too low|RESOURCE_EXHAUSTED" <<< "$body" && kind=hard
+  if [[ "$kind" == hard ]]; then
+    reset="$(grep -oiE 'limit reached\|[0-9]{10}' <<< "$body" | head -n1 | grep -oE '[0-9]{10}$')"
+    if [[ -z "$reset" ]]; then
+      t="$(grep -oiE 'resets? (at )?[0-9]{1,2}(:[0-9]{2})? ?[ap]m' <<< "$body" | head -n1 | sed -E 's/^resets? (at )?//I')"
+      [[ -n "$t" ]] && reset="$(date -d "$t" +%s 2>/dev/null || echo 0)"
+      # a bare clock time already past today means tomorrow
+      [[ "$reset" =~ ^[0-9]+$ ]] && (( reset > 0 && reset <= $(date +%s) )) && reset=$(( reset + 86400 ))
+    fi
+  fi
+  echo "$kind ${reset:-0}"
 }
 
 # Resolve which CLI backend ("claude" or "agy") to use for a given model choice.
 # Note: claude-sonnet-5.5 and claude-opus-5.5 (and haiku fallback) are available on BOTH claude and agy!
+# Availability is per quota pool (pool_of), not per model: one limit hit cools down everything on that pool.
 resolve_backend_for_model() {
   local model_choice="$1"
   case "$model_choice" in
     claude-haiku-5.5)
-      if [[ $HAS_CLAUDE -eq 1 ]] && ! is_backend_cooling_down "claude:$model_choice"; then
+      if [[ $HAS_CLAUDE -eq 1 ]] && ! is_backend_cooling_down claude; then
         echo "claude"
         return
       fi
-      if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "agy:$model_choice"; then
+      if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "$(pool_of agy "$model_choice")"; then
         echo "agy"
         return
       fi
       ;;
     claude-sonnet-5.5|claude-opus-5.5)
       if [[ "$PREFER_AGY_CLAUDE" -eq 1 ]]; then
-        if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "agy:$model_choice"; then
+        if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "$(pool_of agy "$model_choice")"; then
           echo "agy"
           return
         fi
-        if [[ $HAS_CLAUDE -eq 1 ]] && ! is_backend_cooling_down "claude:$model_choice"; then
+        if [[ $HAS_CLAUDE -eq 1 ]] && ! is_backend_cooling_down claude; then
           echo "claude"
           return
         fi
       else
-        if [[ $HAS_CLAUDE -eq 1 ]] && ! is_backend_cooling_down "claude:$model_choice"; then
+        if [[ $HAS_CLAUDE -eq 1 ]] && ! is_backend_cooling_down claude; then
           echo "claude"
           return
         fi
-        if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "agy:$model_choice"; then
+        if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "$(pool_of agy "$model_choice")"; then
           echo "agy"
           return
         fi
       fi
       ;;
-    gpt-oss-120b|gemini-3.8-flash|gemini-4-argon|gemini-4-carbon)
-      if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "agy:$model_choice"; then
+    gemini-3.8-flash|gemini-4-argon|gemini-4-carbon)
+      if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "$(pool_of agy "$model_choice")"; then
         echo "agy"
         return
       fi
@@ -279,16 +321,6 @@ run_single_function_agent() {
       -p "$prompt" >"$log_file" 2>&1 || exit_code=$?
   else
     case "$model_choice" in
-      gpt-oss-120b)
-        # Try user-facing slug and Vertex MaaS / enum slugs in order if CLI rejects a slug format
-        for slug in "${AGY_GPT_OSS_SLUG:-openai/gpt-oss-120b-maas}" "gpt-oss-120b" "MODEL_OPENAI_GPT_OSS_120B_MEDIUM"; do
-          exit_code=0
-          run_agy_with_model "$slug" "medium" "$prompt" "$log_file" || exit_code=$?
-          if ! is_invalid_model_log "$log_file"; then
-            break
-          fi
-        done
-        ;;
       gemini-3.8-flash)
         run_agy_with_model "gemini-3.8-flash" "high" "$prompt" "$log_file" || exit_code=$?
         ;;
@@ -327,6 +359,7 @@ run_single_function_agent() {
     "$WORK_BIN" commit-pending >/dev/null 2>&1 || true
   else
     if is_rate_limit_log "$log_file"; then
+      classify_rate_limit "$log_file" > "$STATE_DIR/rl.$addr"
       return 42
     fi
   fi
@@ -334,9 +367,10 @@ run_single_function_agent() {
 }
 
 # ---- Stage configuration ---------------------------------------------------------------------------
-# The model chain is a pipeline of stages. Stage 0 (Haiku) gets WAVE_SIZE runners and tries EVERY function.
-# Only a function Haiku fails moves on to stage 1; a failure there moves it to stage 2, and so on.
-# Each later stage has its own small concurrency cap, so escalations never occupy Haiku runners.
+# The models form a tiered pipeline. Tier 0 tries EVERY function (WAVE_SIZE runners in total across its models; each tier-0
+# model may use up to WAVE_SIZE of them). A function is owed one real attempt from each model in its current tier and goes to
+# whichever owed model is free and not rate-limited; once every model in the tier has failed it, it moves up a tier.
+# Later tiers have a small per-model concurrency cap, so escalations never starve tier 0.
 declare -A MODEL_CAP=()
 declare -A MODEL_MIN=()
 IFS=',' read -ra _mins <<< "$MODEL_MIN_SIZE"
@@ -350,7 +384,7 @@ done
 
 stage_cap() {
   local idx="$1" model="${MODEL_CHAIN[$1]}" cap
-  if (( idx == 0 )); then echo "$WAVE_SIZE"; return; fi
+  if (( ${MODEL_TIER[$model]} == 0 )) && [[ -z "${MODEL_CAP[$model]:-}" ]]; then echo "$WAVE_SIZE"; return; fi
   cap="${MODEL_CAP[$model]:-$ESC_CAP}"
   (( cap < 1 )) && cap=1
   echo "$cap"
@@ -392,11 +426,13 @@ low_yield_stage() {   # $1=model $2=size_bytes ; true if that stage should be sk
 }
 
 # One agent attempt: ONE function on ONE model (stage). Runs in a background subshell.
-# Writes "matched" | "failed" | "unavailable" to $STATE_DIR/res.<addr>.
+# Writes "matched" | "failed" | "limited" | "unavailable" to $STATE_DIR/res.<addr>.
+# "failed" = the model really tried and did not match (recorded in the attempts file). "limited"/"unavailable" = the quota pool
+# stopped the run: nothing is recorded against the model, the function stays owed to it and the scheduler waits for the reset.
 attempt_worker() {
   local addr="$1" model_idx="$2"
   local model_choice="${MODEL_CHAIN[$model_idx]}" total_steps="${#MODEL_CHAIN[@]}"
-  local backend log_file rc next_backend
+  local backend log_file rc next_backend rl_kind rl_reset
 
   # Larger functions get more time: +1s per 2 bytes, capped at 3x the base timeout
   local extra=$(( ${FUNC_SIZES[$addr]:-0} / 2 )) cap=$(( AGENT_TIMEOUT * 2 ))
@@ -419,6 +455,7 @@ attempt_worker() {
     run_single_function_agent "$model_choice" "$backend" "$addr" "$log_file" || rc=$?
     rm -f "$log_file"
 
+    if [[ $rc -ne 42 ]]; then rm -f "$STATE_DIR/st.$(_state_key "$(pool_of "$backend" "$model_choice")")"; fi   # pool is healthy again
     if "$WORK_BIN" is-matched "$addr" >/dev/null 2>&1; then
       emit "[+] MATCHED $addr via $model_choice ($backend) in $(fmt_dur $(( $(date +%s) - ${FN_START[$addr]:-$(date +%s)} )))"
       echo matched > "$STATE_DIR/res.$addr"
@@ -429,22 +466,26 @@ attempt_worker() {
     # Give the next model a fresh stub rather than this model's half-finished attempt
     "$WORK_BIN" clean "$addr" >/dev/null 2>&1 || true
     if [[ $rc -eq 42 ]]; then
-      mark_rate_limited "${backend}:${model_choice}"
+      rl_kind=soft; rl_reset=0
+      read -r rl_kind rl_reset < "$STATE_DIR/rl.$addr" 2>/dev/null || true
+      rm -f "$STATE_DIR/rl.$addr"
+      mark_rate_limited "$(pool_of "$backend" "$model_choice")" "$rl_kind" "$rl_reset"
       next_backend="$(resolve_backend_for_model "$model_choice")"
       if [[ "$next_backend" != "none" && "$next_backend" != "$backend" ]]; then
         emit "[*] $addr: switching $model_choice to alternate backend ($next_backend)"
         continue
       fi
-    else
-      record_failure "$addr" "$model_choice"
+      echo limited > "$STATE_DIR/res.$addr"     # not a failure: do not record it, do not count it against the model
+      return 0
     fi
+    record_failure "$addr" "$model_choice"
     break
   done
   echo failed > "$STATE_DIR/res.$addr"
 }
 
 # ---- Staged pipeline scheduler ---------------------------------------------------------------------
-TOTAL_JOBS=$(( MAX_WAVES * WAVE_SIZE ))          # functions pulled from the queue (each starts at Haiku)
+TOTAL_JOBS=$(( MAX_WAVES * WAVE_SIZE ))          # functions pulled from the queue (each starts in tier 0)
 PUSH_EVERY_JOBS=$(( PUSH_EVERY * WAVE_SIZE ))
 NUM_STAGES="${#MODEL_CHAIN[@]}"
 
@@ -455,9 +496,12 @@ declare -A JOB_INFO=()        # pid -> "addr stage"
 declare -A INFLIGHT_ADDR=()   # addr -> 1 while the function is anywhere in the pipeline
 declare -A INFLIGHT_CPP=()    # cpp  -> 1 (never two functions on the same .cpp at once)
 declare -A SEEN_ADDR=()       # addrs pulled this session (never re-pulled)
-declare -A PENDING=()         # stage -> space-separated FIFO of addrs waiting for that stage
-declare -A STAGE_RUNNING=()   # stage -> running attempts
-for (( s=0; s<NUM_STAGES; s++ )); do PENDING[$s]=""; STAGE_RUNNING[$s]=0; done
+declare -A PENDING=()         # tier -> space-separated FIFO of addrs waiting for a model in that tier
+declare -A STAGE_RUNNING=()   # model index -> running attempts
+declare -A FN_TIER=()         # addr -> current tier
+declare -A FN_OWED=()         # addr -> models in its current tier that still owe it a real attempt
+for (( s=0; s<NUM_TIERS; s++ )); do PENDING[$s]=""; done
+for (( s=0; s<NUM_STAGES; s++ )); do STAGE_RUNNING[$s]=0; done
 
 launched=0; finished=0; matched_count=0; deferred_count=0
 
@@ -503,35 +547,29 @@ pick_next_candidate() {
   return 1
 }
 
-# Lowest stage >= $2 that may attempt function $1 (size gate, attempt history, backend availability). Prints index or -1.
-next_eligible_stage() {
-  local addr="$1" idx model size="${FUNC_SIZES[$1]:-0}"
-  for (( idx=$2; idx<NUM_STAGES; idx++ )); do
-    model="${MODEL_CHAIN[$idx]}"
-    if (( size < ${MODEL_MIN[$model]:-0} )); then
-      emit "[~] $addr (${size}B): below $model minimum size (${MODEL_MIN[$model]}B); skipping"; continue
-    fi
-    if (( idx > 0 )) && low_yield_stage "$model" "$size"; then
-      emit "[~] $addr (${size}B): $model has low measured yield at this size; skipping"; continue
-    fi
-    if already_failed "$addr" "$model"; then
-      emit "[~] $addr: $model already failed it in an earlier session; skipping"; continue
-    fi
-    if [[ "$(resolve_backend_for_model "$model")" == "none" ]]; then
-      emit "[!] $addr: $model unavailable / cooling down on all backends; skipping"; continue
-    fi
-    echo "$idx"; return
+# Models in tier $2 that may still attempt function $1: not size-gated, not low-yield (the first chain model is never
+# skipped), and not already failed it in an earlier session. Availability is NOT considered here (that is dispatch's job).
+owed_models() {
+  local addr="$1" t="$2" model size="${FUNC_SIZES[$1]:-0}" out=""
+  for model in ${TIER_MODELS[$t]}; do
+    (( size < ${MODEL_MIN[$model]:-0} )) && continue
+    if [[ "$model" != "${MODEL_CHAIN[0]}" ]] && low_yield_stage "$model" "$size"; then continue; fi
+    already_failed "$addr" "$model" && continue
+    out+="$model "
   done
-  echo -1
+  echo "${out% }"
 }
 
 total_pending() { local s n=0 w; for s in "${!PENDING[@]}"; do for w in ${PENDING[$s]}; do ((n++)); done; done; echo "$n"; }
-escalation_backlog() {   # functions that are past stage 0 (pending or running)
-  local s n=0 w
-  for (( s=1; s<NUM_STAGES; s++ )); do
-    for w in ${PENDING[$s]}; do ((n++)); done
-    (( n += STAGE_RUNNING[$s] ))
-  done
+tier_load() {   # attempts running + functions waiting in tier $1
+  local t="$1" n=0 w m
+  for w in ${PENDING[$t]}; do ((n++)); done
+  for m in ${TIER_MODELS[$t]}; do (( n += STAGE_RUNNING[${MODEL_IDX[$m]}] )); done
+  echo "$n"
+}
+escalation_backlog() {   # functions that are past tier 0 (pending or running)
+  local t n=0
+  for (( t=1; t<NUM_TIERS; t++ )); do (( n += $(tier_load "$t") )); done
   echo "$n"
 }
 
@@ -557,41 +595,68 @@ defer_function() {
   finish_function "$addr" deferred "all-eligible-models"
 }
 
-advance_function() {   # route a function to its next eligible stage >= $2, or defer it
-  local addr="$1" nxt
-  nxt="$(next_eligible_stage "$addr" "$2")"
-  if (( nxt < 0 )); then defer_function "$addr"; else PENDING[$nxt]+="$addr "; fi
+advance_function() {   # put a function into the first tier >= $2 that still has owed models, or defer it
+  local addr="$1" t="$2" owed
+  for (( ; t<NUM_TIERS; t++ )); do
+    owed="$(owed_models "$addr" "$t")"
+    if [[ -n "$owed" ]]; then
+      FN_TIER["$addr"]=$t; FN_OWED["$addr"]="$owed"; PENDING[$t]+="$addr "
+      emit "[~] $addr: tier $t owes attempts from: $owed"
+      return
+    fi
+  done
+  defer_function "$addr"
 }
 
+# Launch waiting functions on owed models that have a free slot and a usable quota pool. Among those, take the least loaded
+# model so work spreads across pools. A function whose owed models are all busy or rate-limited just keeps waiting.
 dispatch_stages() {
-  local s addr
-  for (( s=0; s<NUM_STAGES; s++ )); do
-    while (( STAGE_RUNNING[$s] < $(stage_cap "$s") )) && [[ -n "${PENDING[$s]// /}" ]]; do
-      addr="${PENDING[$s]%% *}"
-      PENDING[$s]="${PENDING[$s]#"$addr"}"; PENDING[$s]="${PENDING[$s]# }"
+  local t addr m idx best score bestscore newq cap
+  for (( t=0; t<NUM_TIERS; t++ )); do
+    newq=""
+    for addr in ${PENDING[$t]}; do
+      best=-1; bestscore=0
+      for m in ${FN_OWED[$addr]}; do
+        idx=${MODEL_IDX[$m]}; cap="$(stage_cap "$idx")"
+        (( STAGE_RUNNING[$idx] >= cap )) && continue
+        [[ "$(resolve_backend_for_model "$m")" == none ]] && continue
+        score=$(( STAGE_RUNNING[$idx] * 1000 / cap ))
+        if (( best < 0 || score < bestscore )); then best=$idx; bestscore=$score; fi
+      done
+      if (( best < 0 )); then newq+="$addr "; continue; fi
       rm -f "$STATE_DIR/res.$addr"
-      attempt_worker "$addr" "$s" &
-      JOB_INFO["$!"]="$addr $s"
-      ((STAGE_RUNNING[$s]++))
+      attempt_worker "$addr" "$best" &
+      JOB_INFO["$!"]="$addr $best"
+      ((STAGE_RUNNING[$best]++))
     done
+    PENDING[$t]="$newq"   # entries keep a trailing space so appends stay separated
   done
 }
 
 reap_finished() {
-  local pid addr s res
+  local pid addr s res m rest
   for pid in "${!JOB_INFO[@]}"; do
     if ! kill -0 "$pid" 2>/dev/null; then
-      read -r addr s <<< "${JOB_INFO[$pid]}"
+      read -r addr s <<< "${JOB_INFO[$pid]}"      # s = model index
       unset 'JOB_INFO[$pid]'
       rm -f "$STATE_DIR/run.$addr"
       ((STAGE_RUNNING[$s]--))
       res=failed
       [[ -f "$STATE_DIR/res.$addr" ]] && res="$(cat "$STATE_DIR/res.$addr")"
-      if [[ "$res" == matched ]]; then
-        finish_function "$addr" matched "${MODEL_CHAIN[$s]}"
-      else
-        advance_function "$addr" $(( s + 1 ))
-      fi
+      case "$res" in
+        matched)
+          finish_function "$addr" matched "${MODEL_CHAIN[$s]}" ;;
+        limited|unavailable)
+          # Quota stopped the run, not the model: it stays owed, and the function waits for the pool to reset
+          emit "[~] $addr: ${MODEL_CHAIN[$s]} $res; still owed, waiting"
+          PENDING[${FN_TIER[$addr]}]+="$addr " ;;
+        *)
+          rest=""
+          for m in ${FN_OWED[$addr]}; do [[ "$m" != "${MODEL_CHAIN[$s]}" ]] && rest+="$m "; done
+          FN_OWED["$addr"]="${rest% }"
+          if [[ -n "$rest" ]]; then PENDING[${FN_TIER[$addr]}]+="$addr "
+          else advance_function "$addr" $(( ${FN_TIER[$addr]} + 1 )); fi ;;
+      esac
     fi
   done
 }
@@ -681,16 +746,27 @@ render() {
   rows+=("${C_DIM}Matched:     ${C_RST} ${C_GRN}${matched_count}${C_RST} / ${TOTAL_JOBS} ($pct%), ${C_YEL}${deferred_count} deferred${C_RST}  $(mini_bar "$finished" "$TOTAL_JOBS" 20)")
   rows+=("${C_DIM}Elapsed:     ${C_RST} $(fmt_dur "$elapsed"), ETA $eta, ~$per/function")
 
-  local s st="" r p w
-  for (( s=0; s<NUM_STAGES; s++ )); do
-    r="${STAGE_RUNNING[$s]}"; p=0
-    for w in ${PENDING[$s]}; do ((p++)); done
-    (( r + p == 0 )) && continue
-    st+="${MODEL_CHAIN[$s]#claude-} $r/$(stage_cap "$s")"
-    (( p > 0 )) && st+="+$p waiting"
-    st+="  "
+  local t m i st="" r p w tr part pl cdrow="" cdk cdu
+  for (( t=0; t<NUM_TIERS; t++ )); do
+    p=0; tr=0; part=""
+    for w in ${PENDING[$t]}; do ((p++)); done
+    for m in ${TIER_MODELS[$t]}; do
+      i=${MODEL_IDX[$m]}; r="${STAGE_RUNNING[$i]}"; ((tr += r))
+      part+="${m#claude-} $r/$(stage_cap "$i") "
+    done
+    (( tr + p == 0 )) && continue
+    st+="T$t: ${part}"
+    (( p > 0 )) && st+="(+$p waiting) "
+    st+=" "
   done
   rows+=("${C_DIM}Agents:      ${C_RST} ${st:-idle}")
+  for pl in claude agy-gemini agy-other; do
+    if is_backend_cooling_down "$pl"; then
+      cdk="$(_state_key "$pl")"; cdu="$(cat "$STATE_DIR/cd.$cdk" 2>/dev/null || echo 0)"
+      cdrow+="$pl resets in $(fmt_dur $(( cdu - now )))  "
+    fi
+  done
+  [[ -n "$cdrow" ]] && rows+=("${C_DIM}Limits:      ${C_RST} ${C_RED}${cdrow}${C_RST}")
 
   if (( ${#JOB_INFO[@]} > 0 )); then
     rows+=("${C_DIM}Working on:${C_RST}")
@@ -701,7 +777,7 @@ render() {
       [[ -f "$STATE_DIR/run.$addr" ]] && read -r model backend started logf < "$STATE_DIR/run.$addr"
       att=$(( now - started ))
       tmo=$(( ${FUNC_SIZES[$addr]:-0} / 2 )); (( tmo > AGENT_TIMEOUT * 2 )) && tmo=$(( AGENT_TIMEOUT * 2 )); tmo=$(( AGENT_TIMEOUT + tmo ))
-      case "$stage" in
+      case "${MODEL_TIER[$model]:-9}" in
         0) mc="$C_GRN" ;; 1) mc="$C_CYN" ;; 2) mc="$C_BLU" ;; 3) mc="$C_YEL" ;; 4) mc="$C_MAG" ;; *) mc="$C_RED" ;;
       esac
       tc=""
@@ -734,9 +810,9 @@ SESSION_START="$(date +%s)"
 queue_exhausted=0
 ESC_BACKLOG_MAX=$(( ESC_BACKLOG_FACTOR * WAVE_SIZE ))
 while true; do
-  # Keep Haiku saturated: pull fresh functions whenever Haiku has a free runner (unless escalations are backed up)
+  # Keep tier 0 saturated: pull fresh functions whenever tier 0 has a free slot (unless escalations are backed up)
   while (( launched < TOTAL_JOBS && queue_exhausted == 0 )) \
-        && (( STAGE_RUNNING[0] + $(set -- ${PENDING[0]}; echo $#) < WAVE_SIZE )) \
+        && (( $(tier_load 0) < WAVE_SIZE )) \
         && (( $(escalation_backlog) < ESC_BACKLOG_MAX )); do
     if ! pick_next_candidate; then
       # Nothing usable: either the queue is truly empty, or what is left conflicts with in-flight work
@@ -760,12 +836,13 @@ while true; do
     break
   fi
 
-  # Wait for ANY attempt to finish (redrawing once a second), then loop: its stage (and Haiku) refill immediately
+  # Wait for ANY attempt to finish (redrawing once a second), then loop: its tier (and tier 0) refill immediately
   render
   while true; do
     sleep 1
     ev=0
     for pid in "${!JOB_INFO[@]}"; do kill -0 "$pid" 2>/dev/null || ev=1; done
+    (( ${#JOB_INFO[@]} == 0 )) && ev=1   # nothing running: waiting on a pool reset, so re-check dispatch every tick
     render
     (( ev )) && break
   done
