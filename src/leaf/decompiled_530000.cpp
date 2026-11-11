@@ -2484,3 +2484,46 @@ L530290_store:
         ret 0x4
     }
 }
+
+// [0x005327F0] sub_005327F0 (127 bytes)
+extern "C" int mem_00924FE0;
+extern "C" void ext_0066A330();
+
+extern "C" __declspec(naked) void __fastcall fn_005327F0(void* self, int edx_unused, float a1, float a2, float a3, float a4, void* a5) {
+    __asm {
+        push -1
+        push 0x0089557B
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        fld dword ptr [esp + 0x20]
+        push esi
+        sub esp, 0x10
+        fstp dword ptr [esp + 0xc]
+        mov esi, ecx
+        fld dword ptr [esp + 0x30]
+        mov byte ptr [esi + 0x4], 0x1
+        fstp dword ptr [esp + 0x8]
+        lea ecx, [esi + 0x8]
+        fld dword ptr [esp + 0x2c]
+        mov dword ptr [esp + 0x14], esi
+        fstp dword ptr [esp + 0x4]
+        mov dword ptr [esi], 0x009543B4
+        fld dword ptr [esp + 0x28]
+        fstp dword ptr [esp]
+        call ext_0066A330
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        lea ecx, [esi + 0x18]
+        mov dword ptr [esp + 0x14], 0x0
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x8]
+        mov byte ptr [esi + 0x34], 0x0
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x14
+    }
+}
