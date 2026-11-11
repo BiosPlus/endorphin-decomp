@@ -1936,3 +1936,43 @@ extern "C" __declspec(naked) void* __fastcall fn_0057CEA0(void* self, int edx_un
         ret 0Ch
     }
 }
+
+// [0x00575D50] sub_00575D50 (147 bytes)
+extern "C" int mem_0092508C;
+extern "C" int mem_00925090;
+extern "C" int mem_00925088;
+
+struct Fpos {
+    int a, b, c, d, e, f;
+};
+
+extern "C" bool __fastcall fn_00575D50(void* self, int edx_unused, void* stream, int* pVersion, int* pSize, void* pBuf) {
+    typedef void (__thiscall *tellg_fn)(void*, Fpos*);
+    typedef void* (__thiscall *read_fn)(void*, void*, int);
+    typedef bool (__thiscall *eof_fn)(void*);
+
+    short version;
+    Fpos fpos;
+
+    (*(tellg_fn*)&mem_0092508C)(stream, &fpos);
+
+    (*(read_fn*)&mem_00925090)(stream, &version, 2);
+    int v = version;
+    *pVersion = v;
+    if (v < 1) {
+        return true;
+    }
+
+    short size;
+    (*(read_fn*)&mem_00925090)(stream, &size, 2);
+    *pSize = size;
+    (*(read_fn*)&mem_00925090)(stream, pBuf, 4);
+
+    void* ios = (char*)stream + *(int*)(*(char**)stream + 4);
+    if ((*(eof_fn*)&mem_00925088)(ios)) {
+        return true;
+    }
+
+    *pSize = size;
+    return false;
+}
