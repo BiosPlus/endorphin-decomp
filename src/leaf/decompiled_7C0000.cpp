@@ -3229,3 +3229,55 @@ extern "C" void __cdecl fn_007C9500(void* a0, float a1, float a2, float a3) {
     ext_007C9490(a0, 0, a1, a2, a3);
     ext_007C9490(a0, 1, a1, a2, a3);
 }
+
+// [0x007CA460] sub_007CA460 (132 bytes)
+// out[i] = B->vec30[i] + v[i] * A->f10, where A = ext_007D5AE0(a1), B = ext_007D48A0(a1).
+extern "C" void ext_007D5AE0();
+extern "C" __declspec(naked) void __cdecl fn_007CA460(void* a1, float* v, float* out) {
+    __asm {
+        sub esp, 0x1c
+        push esi
+        mov esi, dword ptr [esp + 0x24]
+        push edi
+        push esi
+        call ext_007D5AE0
+        push esi
+        mov edi, eax
+        call ext_007D48A0
+        fld dword ptr [edi + 0x10]
+        mov ecx, dword ptr [esp + 0x34]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [ecx]
+        add esp, 0x8
+        fld dword ptr [esp + 0x8]
+        pop edi
+        fld st(0)
+        pop esi
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [ecx + 0x4]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x8]
+        fmul dword ptr [ecx + 0x8]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x30]
+        fadd dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [eax + 0x34]
+        fadd dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [eax + 0x38]
+        mov eax, dword ptr [esp + 0x28]
+        fadd dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [eax + 0x8]
+        add esp, 0x1c
+        ret
+    }
+}
