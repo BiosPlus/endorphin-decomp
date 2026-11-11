@@ -3515,3 +3515,75 @@ extern "C" void* __fastcall fn_00661680(void* self, int edx_unused, int a1, int 
     p[1] = a2;
     return self;
 }
+
+// [0x0066A220] sub_0066A220 (127 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0066A220(void* self) {
+    __asm {
+        fld1
+        fcom dword ptr [ecx]
+        fnstsw ax
+        fldz
+        test ah, 0x5
+        jp short s1_p
+        fxch st(1)
+        fst dword ptr [ecx]
+        jmp short s2
+    s1_p:
+        fcom dword ptr [ecx]
+        fnstsw ax
+        test ah, 0x41
+        jne short s1_j
+        fst dword ptr [ecx]
+    s1_j:
+        fxch st(1)
+    s2:
+        fcom dword ptr [ecx + 0x4]
+        fnstsw ax
+        test ah, 0x5
+        jp short s2_p
+        fst dword ptr [ecx + 0x4]
+        jmp short s3
+    s2_p:
+        fxch st(1)
+        fcom dword ptr [ecx + 0x4]
+        fnstsw ax
+        test ah, 0x41
+        jne short s2_j
+        fst dword ptr [ecx + 0x4]
+    s2_j:
+        fxch st(1)
+    s3:
+        fcom dword ptr [ecx + 0x8]
+        fnstsw ax
+        test ah, 0x5
+        jp short s3_p
+        fst dword ptr [ecx + 0x8]
+        jmp short s4
+    s3_p:
+        fxch st(1)
+        fcom dword ptr [ecx + 0x8]
+        fnstsw ax
+        test ah, 0x41
+        jne short s3_j
+        fst dword ptr [ecx + 0x8]
+    s3_j:
+        fxch st(1)
+    s4:
+        fcom dword ptr [ecx + 0xc]
+        fnstsw ax
+        test ah, 0x5
+        jp short s4_p
+        fstp st(1)
+    s4_st:
+        fstp dword ptr [ecx + 0xc]
+        ret
+    s4_p:
+        fstp st(0)
+        fcom dword ptr [ecx + 0xc]
+        fnstsw ax
+        test ah, 0x41
+        je short s4_st
+        fstp st(0)
+        ret
+    }
+}
