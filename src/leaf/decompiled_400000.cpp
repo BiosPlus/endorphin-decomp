@@ -2013,3 +2013,51 @@ extern "C" __declspec(naked) void __fastcall fn_00404CD0(void* self) {
         ret
     }
 }
+
+// [0x0040FE10] sub_0040FE10 (93 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0040FE10(void* a0, int a1, int a2, int a3, int a4, const char* a5, int a6) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x1c]
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x38]
+        push edi
+        push ecx
+        mov ecx, esi
+        call edx
+        push 1
+        mov ecx, esi
+        mov edi, eax
+        call ext_006A6010
+        mov edx, dword ptr [esp + 0x24]
+        mov eax, edx
+        lea ebx, [eax + 0x1]
+        __asm _emit 0x8D __asm _emit 0xA4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+    loop_0040FE40:
+        mov cl, byte ptr [eax]
+        add eax, 0x1
+        test cl, cl
+        jne loop_0040FE40
+        push 0x25
+        lea ecx, [esp + 0x18]
+        push ecx
+        sub eax, ebx
+        mov ebx, dword ptr [esi]
+        push eax
+        push edx
+        mov edx, dword ptr [ebx + 0x70]
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x38]
+        push edi
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x1c
+    }
+}
