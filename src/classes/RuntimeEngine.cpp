@@ -10,3 +10,39 @@ extern "C" __declspec(naked) void __fastcall fn_0046FA30(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0046F9E0] RuntimeEngine::vfunc_14_off_4 (70 bytes)
+extern "C" void ext_0046F7D0();
+extern "C" void ext_00661650();
+extern "C" __declspec(naked) void* __fastcall fn_0046F9E0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        xor eax, eax
+        cmp dword ptr [esp + 0xc], 0x21
+        push esi
+        mov dword ptr [esp + 0x4], eax
+        je short L_match
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_0046F7D0
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_match:
+        lea edx, [ecx + 0x17c]
+        test edx, edx
+        je short L_null
+        lea eax, [ecx + 0x180]
+    L_null:
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call ext_00661650
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
