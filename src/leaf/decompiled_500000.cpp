@@ -1499,3 +1499,39 @@ extern "C" __declspec(naked) void* __fastcall fn_0050E930(void* self) {
         ret
     }
 }
+
+// [0x00509EB0] sub_00509EB0 (88 bytes)
+extern "C" int mem_00924FE0;
+
+// EH-framed copy constructor: copies a std::string at +0x4 and a float at +0x20
+// from the source object (stack arg) into a new object whose vtable is 0x94F92C.
+extern "C" __declspec(naked) void __fastcall fn_00509EB0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x891e68
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x8], esi
+        mov edi, dword ptr [esp + 0x1c]
+        lea eax, [edi + 0x4]
+        push eax
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0x18], 0x0
+        mov dword ptr [esi], 0x94f92c
+        call dword ptr [mem_00924FE0]
+        fld dword ptr [edi + 0x20]
+        mov ecx, dword ptr [esp + 0xc]
+        fstp dword ptr [esi + 0x20]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
