@@ -2550,3 +2550,55 @@ extern "C" __declspec(naked) void __cdecl fn_007C8690(int* a0) {
         ret
     }
 }
+
+// [0x007C8C90] sub_007C8C90 (106 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007C8C90(void* a0, int* a1, int* a2) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esi + 0xc]
+        cmp dword ptr [ecx], edx
+        jge done_check
+        push ebx
+        push edi
+loop_top:
+        mov eax, dword ptr [ecx]
+        test eax, eax
+        jl loop_next
+        cmp eax, dword ptr [esi + 0xc]
+        jge loop_next
+        mov ebx, dword ptr [esi + 0x10]
+        mov edi, eax
+        imul edi, edi, 0x9c
+        cmp dword ptr [edi + ebx + 0x8], eax
+        je loop_found
+loop_next:
+        add eax, 0x1
+        cmp eax, edx
+        mov dword ptr [ecx], eax
+        jl loop_top
+loop_found:
+        pop edi
+        pop ebx
+done_check:
+        mov eax, dword ptr [ecx]
+        cmp eax, edx
+        jne has_value
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [eax], 0x0
+        xor eax, eax
+        pop esi
+        ret
+has_value:
+        mov edx, dword ptr [esi + 0x10]
+        imul eax, eax, 0x9c
+        mov eax, dword ptr [eax + edx + 0xc]
+        mov edx, dword ptr [esp + 0x10]
+        mov dword ptr [edx], eax
+        add dword ptr [ecx], 0x1
+        mov eax, 0x1
+        pop esi
+        ret
+    }
+}
