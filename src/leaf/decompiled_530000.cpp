@@ -2697,3 +2697,25 @@ extern "C" __declspec(naked) void __fastcall fn_00532900(void* self) {
         ret 0x4
     }
 }
+
+// [0x0053AC50] sub_0053AC50 (148 bytes)
+extern "C" void* __fastcall fn_0053AC50(void* self) {
+    unsigned int flags = *(unsigned int*)((char*)self + 0x1c);
+    if ((flags & 0x18) == 0x18) {
+        return (void*)(mem_00AEFED4 + 8);
+    }
+    if ((flags & 0x400008) == 0x400008) {
+        return (void*)(mem_00AEFED8 + 8);
+    }
+    if ((flags & 0x800008) == 0x800008) {
+        return (void*)(mem_00AEFEDC + 8);
+    }
+    if ((flags & 0x10008) == 0x10008) {
+        return (void*)(mem_00AEFEE4 + 8);
+    }
+    if ((flags & 0x4008) == 0x4008) {
+        return (void*)(mem_00AEFEE0 + 8);
+    }
+    int res = (flags & 0x8008) == 0x8008 ? mem_00AEFEE8 : mem_00AEFED0;
+    return (void*)(res + 8);
+}
