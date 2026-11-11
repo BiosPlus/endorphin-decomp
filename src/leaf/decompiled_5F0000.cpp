@@ -797,3 +797,18 @@ extern "C" __declspec(naked) void* __fastcall fn_005FD270(void* self) {
         ret
     }
 }
+
+// [0x005FF080] sub_005FF080 (93 bytes)
+extern "C" double mem_00993828;
+
+extern "C" double __cdecl fn_005FF080(double a, double b, double c, double d, double e) {
+    if (e >= b) {
+        return d;
+    }
+    if (a >= e) {
+        return c;
+    }
+    double s = (d - c) / (b - a);
+    double x = e - (b + a) * mem_00993828;
+    return x * s + mem_00993828 * (c + d);
+}
