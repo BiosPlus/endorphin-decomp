@@ -714,3 +714,33 @@ extern "C" void* __fastcall fn_00528E90(void* self, int edx_unused, const int* a
     *((int*)self + 10) = a1[10];
     return self;
 }
+
+// [0x00528100] sub_00528100 (79 bytes)
+extern "C" void ext_00506030();
+
+extern "C" __declspec(naked) void* __fastcall fn_00528100(void* self) {
+    __asm {
+        push -1
+        push 0x00893C78
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_00506030
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi + 0x38], 0x0094F0DC
+        mov dword ptr [esi], 0x0094F654
+        mov dword ptr [esi + 0x38], 0x0094F648
+        xor eax, eax
+        mov dword ptr [esi + 0x40], eax
+        mov dword ptr [esi + 0x44], eax
+        mov dword ptr [esi + 0x48], eax
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
