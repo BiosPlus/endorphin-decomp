@@ -1297,3 +1297,56 @@ extern "C" __declspec(naked) void __fastcall fn_005D01A0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005D0350] sub_005D0350 (125 bytes)
+extern "C" void ext_005CFEC0();
+extern "C" void ext_005CFF60();
+extern "C" int mem_0092C508;
+extern "C" int mem_0093F8EC;
+
+extern "C" __declspec(naked) void __fastcall fn_005D0350(void* self) {
+    __asm {
+        sub esp, 0x10
+        push edi
+        mov edi, ecx
+        cmp byte ptr [edi + 0x1f1], 0
+        jne short L_ret_005D0350
+        push esi
+        call ext_005CFF60
+        fld dword ptr [eax]
+        mov ecx, dword ptr [edi + 0x154]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        lea esi, [edi + 0x1f4]
+        fstp dword ptr [esp + 0xc]
+        push esi
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [eax + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x14]
+        fstp dword ptr [esp + 0x18]
+        call edx
+        fmul dword ptr [esp + 0x1c]
+        fadd dword ptr [esi]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x1c]
+        fst dword ptr [esi]
+        fcomp qword ptr [mem_0092C508]
+        fnstsw ax
+        test ah, 0x5
+        jp short L_skip_005D0350
+        fld dword ptr [mem_0093F8EC]
+        fstp dword ptr [esi]
+    L_skip_005D0350:
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, edi
+        call ext_005CFEC0
+        pop esi
+    L_ret_005D0350:
+        pop edi
+        add esp, 0x10
+        ret 4
+    }
+}
