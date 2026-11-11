@@ -2134,3 +2134,68 @@ extern "C" __declspec(naked) void __fastcall fn_0067AB10(void* self) {
         ret
     }
 }
+
+// [0x00673C20] sub_00673C20 (108 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00673C20(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_skip_call_00673C20
+        call edi
+    L_skip_call_00673C20:
+        mov eax, dword ptr [esi + 4]
+        cmp byte ptr [eax + 2Dh], 0
+        je L_not_nil_00673C20
+        call edi
+        pop edi
+        pop esi
+        ret
+    L_not_nil_00673C20:
+        mov ecx, dword ptr [eax + 8]
+        cmp byte ptr [ecx + 2Dh], 0
+        jne L_right_nil_00673C20
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 2Dh], 0
+        jne L_store_left_00673C20
+    L_leftmost_loop_00673C20:
+        mov ecx, eax
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 2Dh], 0
+        je L_leftmost_loop_00673C20
+    L_store_left_00673C20:
+        pop edi
+        mov dword ptr [esi + 4], ecx
+        pop esi
+        ret
+    L_right_nil_00673C20:
+        mov eax, dword ptr [eax + 4]
+        cmp byte ptr [eax + 2Dh], 0
+        jne L_done_00673C20
+        __asm _emit 0x8D
+        __asm _emit 0xA4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_loop_00673C20:
+        mov ecx, dword ptr [esi + 4]
+        cmp ecx, dword ptr [eax + 8]
+        jne L_done_00673C20
+        mov dword ptr [esi + 4], eax
+        mov edx, eax
+        mov eax, dword ptr [edx + 4]
+        cmp byte ptr [eax + 2Dh], 0
+        je L_loop_00673C20
+    L_done_00673C20:
+        pop edi
+        mov dword ptr [esi + 4], eax
+        pop esi
+        ret
+    }
+}
