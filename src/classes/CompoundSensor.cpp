@@ -35,3 +35,39 @@ extern "C" __declspec(naked) float __fastcall fn_005FF100(void* self) {
         ret
     }
 }
+
+// [0x005FF150] CompoundSensor::vfunc_23 (84 bytes)
+extern "C" __declspec(naked) float __fastcall fn_005FF150(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x40
+        sub esp, 0x3c
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [ebp + 0x8]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x40]
+        push ecx
+        mov ecx, esi
+        call edx
+        sub esp, 0x28
+        fstp qword ptr [esp + 0x20]
+        fld1
+        fstp qword ptr [esp + 0x18]
+        fld qword ptr [mem_00993830]
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [esi + 0x20]
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [esi + 0x18]
+        fstp qword ptr [esp]
+        call ext_005FF080
+        fstp dword ptr [esp + 0x64]
+        fld dword ptr [esp + 0x64]
+        add esp, 0x28
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+    }
+}
