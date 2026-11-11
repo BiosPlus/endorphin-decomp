@@ -2540,3 +2540,51 @@ extern "C" __declspec(naked) void __fastcall fn_0065C770(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0065C360] sub_0065C360 (129 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0065C360(void* self) {
+    __asm {
+        mov eax, ecx
+        fld1
+        fst dword ptr [eax + 0xc]
+        xor ecx, ecx
+        fldz
+        mov dword ptr [eax], ecx
+        fst dword ptr [eax + 0x10]
+        mov dword ptr [eax + 0x4], ecx
+        fst dword ptr [eax + 0x14]
+        mov dword ptr [eax + 0x8c], ecx
+        fst dword ptr [eax + 0x18]
+        fst dword ptr [eax + 0x1c]
+        fst dword ptr [eax + 0x24]
+        fst dword ptr [eax + 0x28]
+        fst dword ptr [eax + 0x2c]
+        fst dword ptr [eax + 0x30]
+        fst dword ptr [eax + 0x38]
+        fst dword ptr [eax + 0x3c]
+        fst dword ptr [eax + 0x40]
+        fst dword ptr [eax + 0x44]
+        fxch st(1)
+        fst dword ptr [eax + 0x20]
+        fst dword ptr [eax + 0x34]
+        fst dword ptr [eax + 0x48]
+        fst dword ptr [eax + 0x4c]
+        fxch st(1)
+        fst dword ptr [eax + 0x50]
+        fst dword ptr [eax + 0x54]
+        fst dword ptr [eax + 0x58]
+        fst dword ptr [eax + 0x5c]
+        fst dword ptr [eax + 0x64]
+        fst dword ptr [eax + 0x68]
+        fst dword ptr [eax + 0x6c]
+        fst dword ptr [eax + 0x70]
+        fst dword ptr [eax + 0x78]
+        fst dword ptr [eax + 0x7c]
+        fst dword ptr [eax + 0x80]
+        fstp dword ptr [eax + 0x84]
+        fst dword ptr [eax + 0x60]
+        fst dword ptr [eax + 0x74]
+        fstp dword ptr [eax + 0x88]
+        ret
+    }
+}
