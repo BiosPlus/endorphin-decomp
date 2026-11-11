@@ -2228,3 +2228,63 @@ extern "C" __declspec(naked) void __fastcall fn_004B6EC0(void* self) {
         ret 0x4
     }
 }
+
+// [0x004BF6A0] sub_004BF6A0 (99 bytes)
+extern "C" void ext_00661E80();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) bool __fastcall fn_004BF6A0(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        xor edi, edi
+        cmp dword ptr [esi + 0x70], edi
+        mov bl, 0x1
+        jbe L_4BF6C5
+        __asm _emit 0x8b
+        __asm _emit 0xff
+    L_4BF6B0:
+        test bl, bl
+        je L_4BF6C5
+        mov ecx, dword ptr [esi]
+        call ext_00661E80
+        add edi, 0x1
+        cmp edi, dword ptr [esi + 0x70]
+        mov bl, al
+        jb L_4BF6B0
+    L_4BF6C5:
+        mov edi, dword ptr [esi]
+        add edi, 0x8
+        cmp dword ptr [edi], 0x0
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        jne L_4BF6D8
+        call ebp
+    L_4BF6D8:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [edi + 0x4]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne L_4BF6E4
+        call ebp
+    L_4BF6E4:
+        mov edx, dword ptr [edi + 0x4]
+        mov eax, dword ptr [edx + 0x8]
+        cmp eax, dword ptr [esi + 0x6c]
+        pop ebp
+        jg L_4BF6FD
+        test bl, bl
+        je L_4BF6FD
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+    L_4BF6FD:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
