@@ -1096,3 +1096,38 @@ found:
         ret 4
     }
 }
+
+// [0x00422B60] sub_00422B60 (92 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" int mem_00925688;
+extern "C" int mem_009255E8;
+
+extern "C" __declspec(naked) void __fastcall fn_00422B60(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi+0x8e], 0
+        jne skip
+        mov eax, dword ptr [esi+0x20]
+        push 0
+        push 0
+        push eax
+        mov byte ptr [esi+0x8e], 1
+        call dword ptr [mem_00925688]
+        mov ecx, dword ptr [esi+0x20]
+        lea edx, [esp+4]
+        push edx
+        mov dword ptr [esp+8], 0x10
+        mov dword ptr [esp+0xc], 2
+        mov dword ptr [esp+0x10], ecx
+        mov dword ptr [esp+0x14], 0xffffffff
+        call dword ptr [mem_009255E8]
+skip:
+        mov ecx, esi
+        call ext_006A5EA8
+        pop esi
+        add esp, 0x10
+        ret 0xc
+    }
+}
