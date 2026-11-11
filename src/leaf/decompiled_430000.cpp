@@ -4330,3 +4330,39 @@ done_0043D800:
         ret
     }
 }
+
+extern "C" void ext_0043D800();
+
+// [0x0043E690] sub_0043E690 (94 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0043E690() {
+    __asm {
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x1c]
+        sub esp, 0xc
+        push eax
+        sub esp, 0xc
+        mov eax, esp
+        mov dword ptr [eax + 0x4], ecx
+        mov ecx, dword ptr [esp + 0x28]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [esp + 0x2c]
+        mov dword ptr [eax], 0x0
+        sub esp, 0xc
+        mov eax, esp
+        mov dword ptr [eax], 0x0
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], edx
+        lea eax, [esp + 0x1c]
+        push eax
+        call ext_0043D800
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [eax + 0x8]
+        mov eax, dword ptr [esp + 0x30]
+        mov dword ptr [eax], 0x0
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], edx
+        add esp, 0x2c
+        ret
+    }
+}
