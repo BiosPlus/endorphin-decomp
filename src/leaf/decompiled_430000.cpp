@@ -4274,3 +4274,59 @@ extern "C" __declspec(naked) int __fastcall fn_0043CEB0(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x0043D800] sub_0043D800 (110 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0043D800(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+loop_top_0043D800:
+        cmp ebp, dword ptr [esp + 0x2c]
+        je done_0043D800
+        mov esi, ebp
+        mov edi, ebp
+        shr esi, 0x2
+        and edi, 0x3
+        test ebx, ebx
+        jne ok1_0043D800
+        call dword ptr [mem_00925134]
+ok1_0043D800:
+        mov eax, dword ptr [ebx + 0x10]
+        add eax, dword ptr [ebx + 0xc]
+        cmp ebp, eax
+        jb ok2_0043D800
+        call dword ptr [mem_00925134]
+ok2_0043D800:
+        mov eax, dword ptr [ebx + 0x8]
+        cmp eax, esi
+        ja ok3_0043D800
+        sub esi, eax
+ok3_0043D800:
+        mov ecx, dword ptr [ebx + 0x4]
+        mov edx, dword ptr [ecx + 4*esi]
+        mov eax, dword ptr [edx + 4*edi]
+        mov ecx, dword ptr [esp + 0x30]
+        cmp eax, dword ptr [ecx]
+        je done_0043D800
+        add ebp, 0x1
+        jmp loop_top_0043D800
+done_0043D800:
+        mov eax, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        mov dword ptr [eax + 0x8], ebp
+        pop ebp
+        mov dword ptr [eax + 0x4], ebx
+        mov dword ptr [eax], 0
+        pop ebx
+        ret
+    }
+}
