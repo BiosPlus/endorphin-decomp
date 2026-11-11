@@ -2787,3 +2787,28 @@ skip_00673420:
         ret
     }
 }
+
+// [0x00673720] sub_00673720 (35 bytes)
+extern "C" void ext_00673420();
+
+extern "C" __declspec(naked) void __fastcall fn_00673720(void* self, int edx_unused, void* begin, void* end) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done_673720
+        __asm _emit 0x8B __asm _emit 0xFF // mov edi, edi
+    loop_673720:
+        mov ecx, esi
+        call ext_00673420
+        add esi, 0x50
+        cmp esi, edi
+        jne loop_673720
+    done_673720:
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
