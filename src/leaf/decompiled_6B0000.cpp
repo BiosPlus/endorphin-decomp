@@ -1361,3 +1361,44 @@ extern "C" __declspec(naked) void __fastcall fn_006B2BC0(void* self) {
         ret
     }
 }
+
+// [0x006B40A0] sub_006B40A0 (116 bytes)
+extern "C" int mem_00925270;
+
+extern "C" __declspec(naked) bool __fastcall fn_006B40A0(void* self, int edx_unused, void* out) {
+    __asm {
+        sub esp, 0x24
+        push ecx
+        lea eax, [esp + 0x4]
+        push eax
+        call dword ptr [mem_00925270]
+        add esp, 0x8
+        test eax, eax
+        je L_006B40BE
+        xor al, al
+        add esp, 0x24
+        ret 0x4
+L_006B40BE:
+        mov eax, dword ptr [esp + 0x28]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        add ecx, 0x76c
+        mov word ptr [eax], cx
+        movzx ecx, word ptr [esp + 0x18]
+        add edx, 0x1
+        mov word ptr [eax + 0x2], dx
+        movzx edx, word ptr [esp + 0xc]
+        mov word ptr [eax + 0x4], cx
+        movzx ecx, word ptr [esp + 0x8]
+        mov word ptr [eax + 0x6], dx
+        movzx edx, word ptr [esp + 0x4]
+        mov word ptr [eax + 0x8], cx
+        movzx ecx, word ptr [esp]
+        mov word ptr [eax + 0xa], dx
+        mov word ptr [eax + 0xc], cx
+        mov word ptr [eax + 0xe], 0x0
+        mov al, 0x1
+        add esp, 0x24
+        ret 0x4
+    }
+}
