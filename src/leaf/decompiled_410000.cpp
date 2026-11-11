@@ -2251,3 +2251,69 @@ pop_ret_0041DA50:
         ret
     }
 }
+
+// [0x0041A190] sub_0041A190 (105 bytes)
+struct TreeNode_0041A190 {
+    TreeNode_0041A190* left;
+    TreeNode_0041A190* parent;
+    TreeNode_0041A190* right;
+    unsigned int key;
+    unsigned char pad[4];
+    unsigned char color;
+    unsigned char isnil;
+};
+
+struct TreePair_0041A190 {
+    void* first;
+    TreeNode_0041A190* second;
+};
+
+extern "C" __declspec(naked) void __fastcall fn_0041A190(void* self, int edx_unused, TreePair_0041A190* ret, const unsigned int* key) {
+    __asm {
+        mov edx, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [edx + 0x4]
+        sub esp, 0x10
+        cmp byte ptr [eax + 0x15], 0x0
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        jne L_1bb_0041A190
+        mov esi, dword ptr [edi]
+    L_1a7_0041A190:
+        cmp dword ptr [eax + 0xc], esi
+        jae L_1b1_0041A190
+        mov eax, dword ptr [eax + 0x8]
+        jmp L_1b5_0041A190
+    L_1b1_0041A190:
+        mov edx, eax
+        mov eax, dword ptr [eax]
+    L_1b5_0041A190:
+        cmp byte ptr [eax + 0x15], 0x0
+        je L_1a7_0041A190
+    L_1bb_0041A190:
+        mov eax, dword ptr [ecx + 0x4]
+        cmp edx, eax
+        mov dword ptr [esp + 0xc], edx
+        mov dword ptr [esp + 0x8], ecx
+        je L_1d7_0041A190
+        mov esi, dword ptr [edi]
+        cmp esi, dword ptr [edx + 0xc]
+        jb L_1d7_0041A190
+        lea ecx, [esp + 0x8]
+        jmp L_1e3_0041A190
+    L_1d7_0041A190:
+        mov dword ptr [esp + 0x10], ecx
+        mov dword ptr [esp + 0x14], eax
+        lea ecx, [esp + 0x10]
+    L_1e3_0041A190:
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [ecx + 0x4]
+        pop edi
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ecx
+        pop esi
+        add esp, 0x10
+        ret 0x8
+    }
+}
