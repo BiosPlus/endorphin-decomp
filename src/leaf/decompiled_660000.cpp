@@ -3607,3 +3607,25 @@ extern "C" __declspec(naked) void __fastcall fn_0066A4E0(void* self) {
         ret
     }
 }
+
+// [0x0066A2E0] sub_0066A2E0 (47 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0066A2E0(void* self, int edx_unused, const float* other) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fadd dword ptr [ecx]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 0x4]
+        fadd dword ptr [ecx + 0x4]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [eax + 0x8]
+        fadd dword ptr [ecx + 0x8]
+        fstp dword ptr [ecx + 0x8]
+        fld dword ptr [eax + 0xc]
+        fadd dword ptr [ecx + 0xc]
+        fstp dword ptr [ecx + 0xc]
+        call ext_0066A220
+        mov eax, ecx
+        ret 0x4
+    }
+}
