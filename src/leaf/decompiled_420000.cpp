@@ -1614,3 +1614,74 @@ extern "C" __declspec(naked) void __fastcall fn_00426980(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00427A60] sub_00427A60 (117 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00427A60(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        push edi
+        mov esi, ecx
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    loop_top:
+        mov edi, dword ptr [esi]
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe chk1
+        call ebp
+    chk1:
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je chk1_fail
+        cmp eax, edi
+        je chk1_ok
+    chk1_fail:
+        call ebp
+    chk1_ok:
+        cmp dword ptr [esi + 0x8], ebx
+        jae done
+        cmp dword ptr [esi + 0x4], 0x0
+        jne chk2
+        call ebp
+    chk2:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi + 0x8]
+        cmp ecx, dword ptr [eax + 0x8]
+        jb chk3
+        call ebp
+    chk3:
+        mov edx, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [edx]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xc]
+        push 0x1
+        call edx
+        test al, al
+        jne done
+        cmp dword ptr [esi + 0x4], 0x0
+        jne chk4
+        call ebp
+    chk4:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi + 0x8]
+        cmp ecx, dword ptr [eax + 0x8]
+        jb chk5
+        call ebp
+    chk5:
+        add dword ptr [esi + 0x8], 0x4
+        jmp loop_top
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
