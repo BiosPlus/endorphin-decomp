@@ -2057,3 +2057,66 @@ extern "C" __declspec(naked) void __fastcall fn_0052F830(void* self) {
         ret
     }
 }
+
+// [0x00524A60] sub_00524A60 (114 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00524A60(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x4]
+        test esi, esi
+        je short L_null_524A60
+        mov eax, dword ptr [esi + 0x24]
+        test eax, eax
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        je short L_inv1_524A60
+        mov ecx, dword ptr [esi + 0x28]
+        sub ecx, eax
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        jne short L_cont_524A60
+L_inv1_524A60:
+        call ebx
+L_cont_524A60:
+        mov esi, dword ptr [esi + 0x24]
+        mov ecx, dword ptr [esi + 0x8]
+        mov edi, dword ptr [edi + 0x8]
+        add esi, 0x4
+        test ecx, ecx
+        je short L_inv2_524A60
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x3
+        cmp edi, eax
+        jb short L_ok_524A60
+L_inv2_524A60:
+        call ebx
+L_ok_524A60:
+        mov ecx, dword ptr [esi + 0x4]
+        fld qword ptr [ecx + 8*edi]
+        pop ebx
+        fstp dword ptr [esp + 0x8]
+        pop edi
+        fld dword ptr [esp + 0x4]
+        pop esi
+        pop ecx
+        ret
+L_null_524A60:
+        fldz
+        pop edi
+        fstp dword ptr [esp + 0x4]
+        pop esi
+        fld dword ptr [esp]
+        pop ecx
+        ret
+    }
+}
