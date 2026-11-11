@@ -955,3 +955,36 @@ extern "C" __declspec(naked) void* __fastcall fn_0060CCC0(void* self) {
 }
 
 extern "C" void ext_00661980();
+
+// [0x0060B240] sub_0060B240 (102 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0060B240(void* self) {
+    __asm {
+        push -1
+        push 0x008A8373
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr fs:[0]
+        push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_00661980
+        mov dword ptr [esi + 0x4], 0x00971B4C
+        mov dword ptr [esi + 0x8], 0x009443BC
+        xor eax, eax
+        mov dword ptr [esi], 0x0097202C
+        mov dword ptr [esi + 0x4], 0x00972020
+        mov dword ptr [esi + 0x8], 0x00972010
+        mov dword ptr [esi + 0x14], eax
+        mov dword ptr [esi + 0x18], eax
+        mov dword ptr [esi + 0x1C], eax
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi + 0x24], eax
+        mov dword ptr [esi + 0x28], eax
+        mov dword ptr [esi + 0x2C], eax
+        __asm _emit 0x8B __asm _emit 0xC6 // mov eax, esi
+        pop esi
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
