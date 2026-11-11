@@ -20,3 +20,14 @@ extern "C" __declspec(naked) void __fastcall fn_0040E7E0(void* self) {
         jmp ext_0040C330
     }
 }
+
+// [0x0040CEC0] AddCharacterDialog::vfunc_63 (37 bytes)
+extern "C" void ext_0040CD90();
+extern "C" void ext_006A5F44();
+
+extern "C" void __fastcall fn_0040CEC0(void* self, int edx_unused, int a1) {
+    typedef void (__thiscall *ThisFn)(void*, int);
+    typedef void (__stdcall *StdFn)(int, int, int);
+    ((ThisFn)ext_0040CD90)(self, a1);
+    ((StdFn)ext_006A5F44)(a1, 0x4f4, (int)self + 0x340);
+}
