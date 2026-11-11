@@ -943,3 +943,61 @@ extern "C" __declspec(naked) void __cdecl fn_007F9DB0(int count, float* dst, con
         ret
     }
 }
+
+// [0x007F9F30] sub_007F9F30 (116 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007F9F30(int count, float* dst, const float* src, float s) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        lea edi, [ecx + 4*eax]
+        mov eax, edi
+        sub eax, ecx
+        add eax, 0x3
+        cdq
+        and edx, 0x3
+        add eax, edx
+        sar eax, 0x2
+        cmp eax, 0x4
+        jl scalar_tail
+        fld st(0)
+        lea eax, [edi - 0xc]
+    unroll_loop:
+        fld dword ptr [esi]
+        add ecx, 0x10
+        fmul st, st(1)
+        add esi, 0x10
+        cmp ecx, eax
+        fstp dword ptr [ecx - 0x10]
+        fld dword ptr [esi - 0xc]
+        fmul st, st(1)
+        fstp dword ptr [ecx - 0xc]
+        fld dword ptr [esi - 0x8]
+        fmul st, st(1)
+        fstp dword ptr [ecx - 0x8]
+        fld dword ptr [esi - 0x4]
+        fmul st, st(1)
+        fstp dword ptr [ecx - 0x4]
+        jl unroll_loop
+        fstp st(0)
+    scalar_tail:
+        cmp ecx, edi
+        jae done
+    scalar_loop:
+        fld dword ptr [esi]
+        add ecx, 0x4
+        fmul st, st(1)
+        add esi, 0x4
+        cmp ecx, edi
+        fstp dword ptr [ecx - 0x4]
+        jb scalar_loop
+    done:
+        pop edi
+        fstp st(0)
+        pop esi
+        ret
+    }
+}
