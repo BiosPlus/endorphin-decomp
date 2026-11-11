@@ -106,3 +106,62 @@ extern "C" __declspec(naked) void* __fastcall fn_0061FF40(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x00620120] NMData::GraphicData::vfunc_34 (139 bytes)
+extern "C" void ext_00493E40();
+extern "C" void ext_00528B90();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_00620120(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x891da8
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, ecx
+        test esi, esi
+        push edi
+        je short null_this
+        lea eax, [esi + 0xc]
+        jmp short after_this
+null_this:
+        xor eax, eax
+after_this:
+        mov edx, dword ptr [mem_00B40640]
+        push 0x0
+        push eax
+        mov eax, dword ptr [esi + 0x4]
+        mov eax, dword ptr [eax + 0xc]
+        lea ecx, [esi + 0x4]
+        push edx
+        call eax
+        mov edx, dword ptr [esi]
+        push eax
+        mov eax, dword ptr [edx + 0xd8]
+        mov ecx, esi
+        call eax
+        mov ecx, dword ptr [esp + 0x24]
+        push eax
+        call ext_00493E40
+        mov edi, eax
+        mov dword ptr [esp + 0x18], edi
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0xd8]
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0x0
+        call eax
+        push edi
+        lea ecx, [esi + 0xc]
+        mov dword ptr [edi + 0x20], eax
+        call ext_00528B90
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, edi
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x4
+    }
+}
