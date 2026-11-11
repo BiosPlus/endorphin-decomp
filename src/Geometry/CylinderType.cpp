@@ -59,3 +59,49 @@ extern "C" float __fastcall fn_005B1190(void* self, int edx_unused, int a1, void
     }
     return v[a1];
 }
+
+// [0x005B4210] Geometry::CylinderType::vfunc_18 (88 bytes)
+extern "C" void ext_005B3FF0();
+extern "C" void ext_005B4010();
+extern "C" void ext_00671F30();
+
+extern "C" __declspec(naked) void* __fastcall fn_005B4210(void* self, int edx_unused, void* a1, int a2, void* a3) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        sub eax, 0x29e
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0x0
+        je L4010
+        sub eax, 0x59
+        je L3FF0
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    L3FF0:
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        push esi
+        call ext_005B3FF0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    L4010:
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        push esi
+        call ext_005B4010
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
