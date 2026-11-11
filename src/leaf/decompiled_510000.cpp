@@ -2384,3 +2384,14 @@ L_call_518A00:
         ret
     }
 }
+
+// [0x00518FE0] sub_00518FE0 (63 bytes)
+extern "C" void ext_00518A00();
+
+extern "C" void __cdecl fn_00518FE0(unsigned int* first, unsigned int* last, int comp) {
+    int len = last - first;
+    for (int hole = len / 2; hole > 0; ) {
+        --hole;
+        ((void (__cdecl*)(unsigned int*, int, int, unsigned int, int))ext_00518A00)(first, hole, len, first[hole], comp);
+    }
+}
