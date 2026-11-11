@@ -19,6 +19,8 @@ extern "C" int mem_00AD8FEC;
 extern "C" int mem_00AD8FF0;
 extern "C" int mem_00AD8FF4;
 extern "C" int mem_00AD8FF8;
+extern "C" int mem_00AD8FFC;
+extern "C" int mem_00AD9000;
 
 // [0x0046DF60] ExprParser::ReadWriteMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, float, {public: void __thiscall ImageExporter::setFrameRate(float), 0}>::vfunc_40 (122 bytes)
 extern "C" __declspec(naked) void __fastcall fn_0046DF60(void* self, int edx_unused, void* a1) {
@@ -301,6 +303,38 @@ extern "C" __declspec(naked) void __fastcall fn_004706A0(void* self, int edx_unu
     init_done:
         mov ecx, dword ptr [esp + 0x10]
         mov dword ptr [ecx + 0x4], offset mem_00AD8FF4
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
+
+// [0x00470B40] ExprParser::ReadWriteMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getSimulationFrameRate(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setSimulationFrameRate(float), 0}>::vfunc_40 (122 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00470B40(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x882dce
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00AD9000], al
+        jne init_done
+        or dword ptr [mem_00AD9000], eax
+        mov ecx, offset mem_00AD8FFC
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00AD8FFC], 0x0093b884
+        mov dword ptr [eax + 0x4], offset mem_00AD8FFC
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    init_done:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00AD8FFC
         mov ecx, dword ptr [esp]
         mov dword ptr fs:[0], ecx
         add esp, 0xc
