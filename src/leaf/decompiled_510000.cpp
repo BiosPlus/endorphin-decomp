@@ -2437,3 +2437,66 @@ extern "C" __declspec(naked) void __cdecl fn_00519060(unsigned int* first, unsig
         ret
     }
 }
+
+// [0x005185D0] sub_005185D0 (125 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) bool __fastcall fn_005185D0(void* self, int edx_unused, unsigned a, unsigned b) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je L_call1_5185D0
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp ebx, eax
+        jb L_ok1_5185D0
+L_call1_5185D0:
+        call ebp
+L_ok1_5185D0:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 4*ebx]
+        mov esi, dword ptr [edi]
+        fld qword ptr [ecx + 0x20]
+        mov ecx, dword ptr [esi + 0x4]
+        fstp qword ptr [esp + 0x10]
+        test ecx, ecx
+        mov edi, dword ptr [esp + 0x20]
+        je L_call2_5185D0
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb L_ok2_5185D0
+L_call2_5185D0:
+        call ebp
+L_ok2_5185D0:
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [edx + 4*edi]
+        fld qword ptr [eax + 0x20]
+        pop edi
+        fcomp qword ptr [esp + 0xc]
+        pop esi
+        pop ebp
+        pop ebx
+        fnstsw ax
+        test ah, 0x5
+        jp L_false_5185D0
+        mov eax, 0x1
+        add esp, 0x8
+        ret 0x8
+L_false_5185D0:
+        xor eax, eax
+        add esp, 0x8
+        ret 0x8
+    }
+}
