@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_6D0000.cpp
 
+#include <math.h>
+
 // [0x006DBDF0] sub_006DBDF0 (32 bytes)
 // 64-bit add: *out = *this + *in, where out = arg0 and in = arg1 (ret 8).
 extern "C" __declspec(naked) void __fastcall fn_006DBDF0(void* self, int edx_unused, void* out, void* in) {
@@ -128,5 +130,48 @@ extern "C" __declspec(naked) int __cdecl fn_006D98A0(int key) {
     done:
         pop esi
         ret
+    }
+}
+
+// [0x006D2940] sub_006D2940 (96 bytes)
+extern "C" int mem_00993810;
+
+extern "C" __declspec(naked) bool __fastcall fn_006D2940(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        fld qword ptr [ecx]
+        fsub qword ptr [edx]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je short L_fail_006D2940
+        fld qword ptr [ecx + 0x8]
+        fsub qword ptr [edx + 0x8]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je short L_fail_006D2940
+        fld qword ptr [ecx + 0x10]
+        fsub qword ptr [edx + 0x10]
+        fabs
+        fcomp qword ptr [mem_00993810]
+        fnstsw ax
+        test ah, 0x41
+        je short L_fail_006D2940
+        xor eax, eax
+        xor ecx, ecx
+        test eax, eax
+        sete cl
+        mov al, cl
+        ret 0x4
+    L_fail_006D2940:
+        mov eax, 0x1
+        xor ecx, ecx
+        test eax, eax
+        sete cl
+        mov al, cl
+        ret 0x4
     }
 }
