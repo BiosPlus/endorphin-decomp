@@ -237,3 +237,53 @@ extern "C" __declspec(naked) void* __fastcall fn_007E80E0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x007E4770] sub_007E4770 (107 bytes)
+extern "C" void ext_006A7250();
+extern "C" __declspec(naked) void __fastcall fn_007E4770(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        fld dword ptr [esi]
+        fmul dword ptr [esi]
+        fld dword ptr [esi + 0x4]
+        fmul dword ptr [esi + 0x4]
+        faddp st(1), st
+        fld dword ptr [esi + 0x8]
+        fmul dword ptr [esi + 0x8]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        call ext_006A7250
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fldz
+        fld dword ptr [esp + 0x4]
+        fucom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x44
+        jnp short L_done_7E4770
+        fld st(0)
+        fld1
+        fdivrp st(1), st
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esi]
+        fld dword ptr [esp + 0x4]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esi]
+        fld st(0)
+        fmul dword ptr [esi + 0x4]
+        fstp dword ptr [esi + 0x4]
+        fmul dword ptr [esi + 0x8]
+        fstp dword ptr [esi + 0x8]
+    L_done_7E4770:
+        pop esi
+        pop ecx
+        ret
+    }
+}
