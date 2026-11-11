@@ -3155,3 +3155,30 @@ extern "C" __declspec(naked) void __cdecl fn_007C9370(void* a0, float* a1) {
         ret
     }
 }
+
+// [0x007C93A0] sub_007C93A0 (64 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C93A0(void* a0, int a1, int a2) {
+    __asm {
+        cmp dword ptr [esp + 0x8], 0x0
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        mov eax, dword ptr [esp + 0x8]
+        push 0x0
+        jne short alt_007C93C9
+        mov edx, dword ptr [eax + 0x94]
+        lea ecx, [eax + 0xec]
+        push ecx
+        push edx
+        call ext_007CA120
+        add esp, 0x10
+        ret
+alt_007C93C9:
+        mov edx, dword ptr [eax + 0x98]
+        lea ecx, [eax + 0x12c]
+        push ecx
+        push edx
+        call ext_007CA120
+        add esp, 0x10
+        ret
+    }
+}
