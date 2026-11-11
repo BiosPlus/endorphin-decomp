@@ -1383,3 +1383,63 @@ extern "C" __declspec(naked) void __fastcall fn_004F04A0(void* self) {
         ret
     }
 }
+
+// [0x004F1430] sub_004F1430 (98 bytes)
+extern "C" void ext_004F0430();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004F1430(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+    f5f1430_top:
+        test esi, esi
+        je f5f1430_call1
+        cmp esi, dword ptr [esp + 0x1c]
+        je f5f1430_after1
+    f5f1430_call1:
+        call ebp
+    f5f1430_after1:
+        cmp ebx, dword ptr [esp + 0x20]
+        je f5f1430_ret
+        test esi, esi
+        mov edi, ebx
+        jne f5f1430_a
+        call ebp
+    f5f1430_a:
+        cmp ebx, dword ptr [esi + 0x8]
+        jb f5f1430_b
+        call ebp
+    f5f1430_b:
+        add ebx, 0x4
+        test esi, esi
+        jne f5f1430_c
+        call ebp
+    f5f1430_c:
+        cmp edi, dword ptr [esi + 0x8]
+        jb f5f1430_d
+        call ebp
+    f5f1430_d:
+        mov edi, dword ptr [edi]
+        test edi, edi
+        je f5f1430_top
+        mov ecx, edi
+        call ext_004F0430
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+        jmp f5f1430_top
+    f5f1430_ret:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
