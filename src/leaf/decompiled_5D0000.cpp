@@ -1244,3 +1244,56 @@ epilogue:
         ret 0x4
     }
 }
+
+// [0x005D01A0] sub_005D01A0 (145 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_0065C640();
+extern "C" void ext_005B11D0();
+extern "C" void ext_00493EE0();
+extern "C" void ext_0065C650();
+
+extern "C" __declspec(naked) void __fastcall fn_005D01A0(void* self, int edx_unused, float a1) {
+    __asm {
+        push -1
+        push 0x008A56C8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        mov ebx, ecx
+        cmp byte ptr [ebx + 0x1f1], 0x0
+        jne L_exit
+        push esi
+        push edi
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x258]
+        lea esi, [eax + 0x258]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        call edx
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp + 0xc], edi
+        call ext_0065C640
+        push 0x5
+        lea ecx, [ebx + 0x210]
+        mov dword ptr [esp + 0x1c], 0x0
+        call ext_005B11D0
+        fld dword ptr [esp + 0x20]
+        mov ecx, esi
+        fstp dword ptr [eax]
+        call ext_00493EE0
+        mov ecx, edi
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call ext_0065C650
+        pop edi
+        pop esi
+    L_exit:
+        mov ecx, dword ptr [esp + 0x8]
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
