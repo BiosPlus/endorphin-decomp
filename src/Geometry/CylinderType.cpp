@@ -105,3 +105,46 @@ extern "C" __declspec(naked) void* __fastcall fn_005B4210(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x005B1740] Geometry::CylinderType::vfunc_5 (111 bytes)
+extern "C" __declspec(naked) float __fastcall fn_005B1740(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 0x8]
+        push 0x0
+        call ext_005B11E0
+        fstp dword ptr [esp + 0x8]
+        push 0x1
+        call ext_005B11E0
+        fld dword ptr [esp + 0x8]
+        fld st(0)
+        mov eax, dword ptr [esp + 0xc]
+        fadd st, st(1)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp]
+        fld qword ptr [mem_009576E8]
+        fmul st, st(1)
+        fmulp st(1), st
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fmul dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fabs
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax]
+        fld dword ptr [esp]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fadd dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fmulp st(2), st
+        faddp st(1), st
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        pop ecx
+        ret 0x8
+    }
+}
