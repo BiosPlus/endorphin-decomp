@@ -156,3 +156,40 @@ extern "C" __declspec(naked) void* __cdecl fn_00803F80(void* self) {
         ret
     }
 }
+
+// [0x00803F20] sub_00803F20 (91 bytes)
+extern "C" void ext_00803DF0();
+extern "C" __declspec(naked) void __cdecl fn_00803F20(float* out, int a, int flag, unsigned char* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 8]
+        test ecx, ecx
+        jne short tail_path
+        cmp dword ptr [esp + 0Ch], 0
+        mov ecx, dword ptr [esp + 10h]
+        mov eax, dword ptr [ecx + 1C0h]
+        je short zero_path
+        lea eax, [eax + 2*eax]
+        lea eax, [ecx + 8*eax + 0Ch]
+        jmp short load_path
+    zero_path:
+        lea edx, [eax + 2*eax]
+        lea eax, [ecx + 8*edx]
+    load_path:
+        fld dword ptr [eax]
+        mov ecx, dword ptr [esp + 4]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 4]
+        fstp dword ptr [ecx + 4]
+        fld dword ptr [eax + 8]
+        mov eax, 1
+        fstp dword ptr [ecx + 8]
+        ret
+    tail_path:
+        mov eax, dword ptr [esp + 10h]
+        mov dword ptr [esp + 10h], eax
+        mov eax, dword ptr [eax + 1C4h]
+        or eax, ecx
+        mov dword ptr [esp + 8], eax
+        jmp ext_00803DF0
+    }
+}
