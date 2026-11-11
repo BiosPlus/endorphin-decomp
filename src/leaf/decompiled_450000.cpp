@@ -1284,3 +1284,49 @@ extern "C" __declspec(naked) void __fastcall fn_00454B20(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0045BED0] sub_0045BED0 (87 bytes)
+extern "C" void ext_0045BCF0();
+extern "C" void ext_0045B6C0();
+extern "C" int mem_00A9F414;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) int __fastcall fn_0045BED0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], 0
+        call ext_0045BCF0
+        test al, al
+        je short L_0045BEFE
+        mov eax, dword ptr [mem_00A9F414]
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+L_0045BEFE:
+        mov ecx, dword ptr [esi + 0x20]
+        push edi
+        push 0x0
+        push 0x9
+        push 0x110a
+        push ecx
+        call dword ptr [mem_00925694]
+        mov edi, dword ptr [esp + 0x10]
+        push eax
+        push edi
+        mov ecx, esi
+        call ext_0045B6C0
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
