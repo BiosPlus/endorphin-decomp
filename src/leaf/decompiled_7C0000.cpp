@@ -2032,3 +2032,34 @@ extern "C" __declspec(naked) void __fastcall fn_007CA7C0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x007CC480] sub_007CC480 (91 bytes)
+extern "C" short __cdecl fn_007CC480(void* unused, float* m4, float* m3) {
+    m3[0] = 1.0f;
+    m3[4] = 1.0f;
+    m3[8] = 1.0f;
+    m3[1] = 0.0f;
+    m3[2] = 0.0f;
+    m3[3] = 0.0f;
+    m3[5] = 0.0f;
+    m3[6] = 0.0f;
+    m3[7] = 0.0f;
+
+    m4[0] = 1.0f;
+    m4[5] = 1.0f;
+    m4[10] = 1.0f;
+    m4[15] = 1.0f;
+    m4[1] = 0.0f;
+    m4[2] = 0.0f;
+    m4[3] = 0.0f;
+    m4[4] = 0.0f;
+    m4[6] = 0.0f;
+    m4[7] = 0.0f;
+    m4[8] = 0.0f;
+    m4[9] = 0.0f;
+    m4[11] = 0.0f;
+    m4[12] = 0.0f;
+    m4[13] = 0.0f;
+    m4[14] = 0.0f;
+    return 0;
+}
