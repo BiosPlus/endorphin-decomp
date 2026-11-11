@@ -2377,3 +2377,15 @@ extern "C" __declspec(naked) void __fastcall fn_0052A280(void* self) {
         ret
     }
 }
+
+// [0x00524670] sub_00524670 (35 bytes)
+extern "C" void ext_004275E0();
+extern "C" void ext_0063EFE0();
+extern "C" int mem_00A9F838;
+
+extern "C" void __fastcall fn_00524670(void* self, int edx_unused, void* a1) {
+    typedef void* (__fastcall *FnA)(void* self, int edx_unused, void* a1);
+    typedef void (__cdecl *FnB)(void* dst, void* src);
+    void* r = ((FnA)ext_0063EFE0)(a1, edx_unused, (void*)mem_00A9F838);
+    ((FnB)ext_004275E0)((char*)self + 0x0c, r);
+}
