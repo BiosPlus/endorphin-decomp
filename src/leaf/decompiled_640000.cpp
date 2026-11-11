@@ -1743,3 +1743,27 @@ extern "C" __declspec(naked) void* __fastcall fn_0064B780(void* self) {
         ret
     }
 }
+
+// [0x00648A60] sub_00648A60 (38 bytes)
+extern "C" void ext_006488F0();
+extern "C" void ext_00648930();
+extern "C" void ext_0065B040();
+
+extern "C" __declspec(naked) void __fastcall fn_00648A60(void* self, int edx_unused, float a1) {
+    __asm {
+        call ext_00648930
+        call ext_006488F0
+        _emit 0xde
+        _emit 0xd9
+        fnstsw ax
+        test ah, 0x41
+        jne skip_00648A60
+        fld dword ptr [esp + 0x4]
+        push ecx
+        mov ecx, dword ptr [ecx + 0x30]
+        fstp dword ptr [esp]
+        call ext_0065B040
+    skip_00648A60:
+        ret 0x4
+    }
+}
