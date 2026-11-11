@@ -812,3 +812,63 @@ extern "C" double __cdecl fn_005FF080(double a, double b, double c, double d, do
     double x = e - (b + a) * mem_00993828;
     return x * s + mem_00993828 * (c + d);
 }
+
+// [0x005F3E70] sub_005F3E70 (109 bytes)
+extern "C" void ext_004AB940();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __cdecl fn_005F3E70(void* a1, void* a2, void* a3, void* a4, void* a5, void* a6) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        push ebp
+        mov ebp, dword ptr [esp + 0x1c]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        push 0
+        push ecx
+        push ebp
+        push ebx
+        push eax
+        mov dword ptr [esp + 0x2c], eax
+        call ext_004AB940
+        add esp, 0x14
+        test esi, esi
+        mov edi, eax
+        je L_005F3EA6
+        cmp esi, dword ptr [esp + 0x1c]
+        je L_005F3EAC
+    L_005F3EA6:
+        call dword ptr [mem_00925134]
+    L_005F3EAC:
+        cmp edi, ebx
+        je L_005F3ED6
+        test esi, esi
+        jne L_005F3EBA
+        call dword ptr [mem_00925134]
+    L_005F3EBA:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_005F3EC5
+        call dword ptr [mem_00925134]
+    L_005F3EC5:
+        mov edx, dword ptr [ebp]
+        cmp edx, dword ptr [edi]
+        jb L_005F3ED6
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 1
+        pop ebx
+        ret
+    L_005F3ED6:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
