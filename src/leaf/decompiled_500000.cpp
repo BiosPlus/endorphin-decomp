@@ -2341,3 +2341,12 @@ L_call:
         ret
     }
 }
+
+// [0x0050FF20] sub_0050FF20 (63 bytes)
+extern "C" void __cdecl fn_0050FF20(unsigned int* first, unsigned int* last, int comp) {
+    int len = last - first;
+    for (int hole = len / 2; hole > 0; ) {
+        --hole;
+        fn_0050FD30(first, hole, len, (void*)first[hole], (void*)comp);
+    }
+}
