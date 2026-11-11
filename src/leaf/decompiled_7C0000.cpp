@@ -3064,3 +3064,57 @@ extern "C" __declspec(naked) void __cdecl fn_007C7010(void* self, int a1, int a2
         ret
     }
 }
+
+// [0x007CA080] sub_007CA080 (130 bytes)
+// (a1 + 0x110, a3 + 0x110) are transform sub-objects; callees take eax/ecx/edx.
+extern "C" void ext_007DB640();
+extern "C" void ext_007FC440();
+
+extern "C" __declspec(naked) void __cdecl fn_007CA080(void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 0ch
+        test eax, eax
+        je L_a1_null
+        mov ecx, dword ptr [esp + 14h]
+        push esi
+        mov esi, dword ptr [esp + 1ch]
+        add eax, 110h
+        test esi, esi
+        je L_a3_null
+        lea edx, [esp + 4]
+        call ext_007FC440
+        mov ecx, edx
+        mov edx, dword ptr [esp + 20h]
+        lea eax, [esi + 110h]
+        call ext_007DB640
+        pop esi
+        add esp, 0ch
+        ret
+L_a3_null:
+        mov edx, dword ptr [esp + 20h]
+        pop esi
+        add esp, 0ch
+        jmp ext_007FC440
+L_a1_null:
+        mov eax, dword ptr [esp + 18h]
+        test eax, eax
+        je L_copy
+        mov ecx, dword ptr [esp + 14h]
+        mov edx, dword ptr [esp + 1ch]
+        add eax, 110h
+        add esp, 0ch
+        jmp ext_007DB640
+L_copy:
+        mov eax, dword ptr [esp + 14h]
+        mov edx, dword ptr [eax]
+        mov ecx, dword ptr [esp + 1ch]
+        mov dword ptr [ecx], edx
+        mov edx, dword ptr [eax + 4]
+        mov dword ptr [ecx + 4], edx
+        mov eax, dword ptr [eax + 8]
+        mov dword ptr [ecx + 8], eax
+        add esp, 0ch
+        ret
+    }
+}
