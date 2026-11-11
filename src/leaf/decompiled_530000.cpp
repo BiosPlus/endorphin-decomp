@@ -1799,3 +1799,55 @@ extern "C" void __fastcall fn_005364D0(void* self) {
     ext_0050BE20((char*)self + 0x2E8);
     *((int*)((char*)self + 0x40)) = 0;
 }
+
+// [0x005397A0] sub_005397A0 (95 bytes)
+// cdecl(first, last, dst_end): copy_backward of 12-byte (3-float) elements from [first,last) to end at dst_end; returns dst_end - n.
+extern "C" __declspec(naked) void* __cdecl fn_005397A0(void* first, void* last, void* dst_end) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov ebx, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov ecx, esi
+        sub ecx, edi
+        mov eax, 0x2aaaaaab
+        imul ecx
+        sar edx, 1
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        lea eax, [eax + 2 * eax]
+        add eax, eax
+        add eax, eax
+        mov ecx, eax
+        mov eax, ebx
+        sub eax, ecx
+        cmp edi, esi
+        mov edx, esi
+        je done
+        lea ecx, [ebx + 0x8]
+        sub esi, ebx
+        jmp loop_top
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    loop_top:
+        fld dword ptr [edx - 0xc]
+        sub edx, 0xc
+        sub ecx, 0xc
+        cmp edx, edi
+        fstp dword ptr [ecx - 0x8]
+        fld dword ptr [edx + 0x4]
+        fstp dword ptr [ecx - 0x4]
+        fld dword ptr [esi + ecx]
+        fstp dword ptr [ecx]
+        jne loop_top
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
