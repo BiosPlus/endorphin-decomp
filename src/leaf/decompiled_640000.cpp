@@ -2516,3 +2516,49 @@ extern "C" void* __fastcall fn_0064E250(char* self) {
     ext_007C93A0(ext_007D8700(*(int*)(self + 0x64)), 0, p);
     return p;
 }
+
+// [0x00645E20] sub_00645E20 (142 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00645E20(void* self) {
+    __asm {
+        push -1
+        push 0x8af6ab
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        mov eax, ecx
+        mov dword ptr [eax + 0x4], 0x928eac
+        mov dword ptr [eax + 0x8], 0x93bf24
+        fld1
+        fst dword ptr [eax + 0x1c]
+        xor ecx, ecx
+        fldz
+        mov dword ptr [eax], 0x97d99c
+        fst dword ptr [eax + 0x20]
+        mov dword ptr [eax + 0x4], 0x97d988
+        fst dword ptr [eax + 0x24]
+        mov dword ptr [eax + 0x8], 0x97d954
+        fst dword ptr [eax + 0x28]
+        mov dword ptr [eax + 0x10], ecx
+        fst dword ptr [eax + 0x2c]
+        mov dword ptr [eax + 0x14], ecx
+        fst dword ptr [eax + 0x34]
+        mov dword ptr [eax + 0x18], ecx
+        fst dword ptr [eax + 0x38]
+        mov dword ptr [eax + 0x5c], ecx
+        fst dword ptr [eax + 0x3c]
+        mov dword ptr [eax + 0x60], ecx
+        mov ecx, dword ptr [esp + 0x4]
+        fst dword ptr [eax + 0x40]
+        fst dword ptr [eax + 0x48]
+        fst dword ptr [eax + 0x4c]
+        fst dword ptr [eax + 0x50]
+        fstp dword ptr [eax + 0x54]
+        fst dword ptr [eax + 0x30]
+        fst dword ptr [eax + 0x44]
+        fstp dword ptr [eax + 0x58]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
