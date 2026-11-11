@@ -1674,3 +1674,56 @@ epilogue:
         ret
     }
 }
+
+// [0x007D5BD0] sub_007D5BD0 (118 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007D5BD0(const char* a, const char* b) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx + 0x24]
+        mov edx, dword ptr [esp + 0x8]
+        and eax, dword ptr [edx + 0x24]
+        and eax, 0x1
+        je reject_007D5BD0
+        fld dword ptr [ecx + 0x8]
+        fld dword ptr [edx + 0x14]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne reject_007D5BD0
+        fld dword ptr [edx + 0x8]
+        fld dword ptr [ecx + 0x14]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne reject_007D5BD0
+        fld dword ptr [ecx + 0xc]
+        fld dword ptr [edx + 0x18]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne reject_007D5BD0
+        fld dword ptr [edx + 0xc]
+        fld dword ptr [ecx + 0x18]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne reject_007D5BD0
+        fld dword ptr [ecx + 0x10]
+        fld dword ptr [edx + 0x1c]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne reject_007D5BD0
+        fld dword ptr [edx + 0x10]
+        fld dword ptr [ecx + 0x1c]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne reject_007D5BD0
+        mov eax, 0x1
+        ret
+reject_007D5BD0:
+        xor eax, eax
+        ret
+    }
+}
