@@ -2987,3 +2987,19 @@ L_zero_7C8E30:
         ret
     }
 }
+
+// [0x007C6330] sub_007C6330 (128 bytes)
+extern "C" void __cdecl fn_007C6330(void* self, float v) {
+    char* p = reinterpret_cast<char*>(self);
+    char* q = *reinterpret_cast<char**>(p + 0x17c);
+    *reinterpret_cast<float*>(p + 0x1c8) = v;
+    float a = *reinterpret_cast<float*>(q + 0x1f8);
+    float b = *reinterpret_cast<float*>(q + 0x204);
+    if (v < a / b) {
+        *reinterpret_cast<float*>(p + 0x1c8) = a / b;
+    }
+    if (a * b < v) {
+        *reinterpret_cast<float*>(p + 0x1c8) = a * b;
+    }
+    *reinterpret_cast<float*>(p + 0x8) = 1.0f / *reinterpret_cast<float*>(p + 0x1c8);
+}
