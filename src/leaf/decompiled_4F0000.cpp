@@ -1341,3 +1341,45 @@ skip_free:
         ret
     }
 }
+
+// [0x004F04A0] sub_004F04A0 (103 bytes)
+extern "C" void ext_004EF8B0();
+extern "C" void ext_004F0250();
+extern "C" __declspec(naked) void __fastcall fn_004F04A0(void* self) {
+    __asm {
+        push -1
+        push 0x88f3e6
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        xor ebx, ebx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi + 0x4], ebx
+        mov dword ptr [esi], 0x94c0c8
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        mov dword ptr [esi + 0xc], ebx
+        mov dword ptr [esi + 0x10], ebx
+        mov dword ptr [esi + 0x14], ebx
+        lea edi, [esi + 0x18]
+        mov ecx, edi
+        mov dword ptr [esp + 0x18], ebx
+        call ext_004EF8B0
+        mov dword ptr [edi + 0x4], eax
+        mov dword ptr [edi + 0x8], ebx
+        mov ecx, esi
+        mov byte ptr [esp + 0x18], 0x1
+        call ext_004F0250
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
