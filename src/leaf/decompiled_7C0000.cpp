@@ -2454,3 +2454,43 @@ extern "C" void __cdecl fn_007C7150(void* self) {
     *(float*)(p + 0x5c) = *(float*)(p + 0x5c) + *(float*)(p + 0x1c);
     *(float*)(p + 0x60) = *(float*)(p + 0x60) + *(float*)(p + 0x1c);
 }
+
+// [0x007CC970] sub_007CC970 (80 bytes)
+extern "C" void ext_007D58E0();
+extern "C" __declspec(naked) void __cdecl fn_007CC970(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        test dword ptr [esi], 0xffffff00
+        je skip_flags
+        mov eax, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [eax + 0xb0]
+        push 0x0099dd3c
+        push ecx
+        push 0
+        call ext_007D58E0
+        add esp, 0xc
+skip_flags:
+        mov eax, dword ptr [esi]
+        and eax, 0xff
+        lea edx, [eax + 4*eax]
+        mov eax, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [eax + 0x20]
+        mov edx, dword ptr [ecx + 8*edx]
+        push esi
+        call edx
+        mov eax, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [eax + 0xb0]
+        mov edx, dword ptr [ecx + 0x10]
+        push esi
+        call edx
+        add esp, 8
+        pop esi
+        ret
+    }
+}
+
+extern "C" int mem_0099D228;
+extern "C" int mem_009548E8;
+extern "C" void ext_007CC9C0();
+extern "C" void ext_007CC970();
