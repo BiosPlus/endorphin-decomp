@@ -2628,3 +2628,59 @@ extern "C" __declspec(naked) void __fastcall fn_0067E650(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00673B90] sub_00673B90 (130 bytes)
+// Walks the +0xC linked list of self; for each node builds a 2-dword temp {node+0x10, node+0x14},
+// calls vfunc 6 on temp.first and, if that is false, returns vfunc 7 on temp.first (sets edi).
+extern "C" void ext_006616B0();
+extern "C" void ext_006616C0();
+extern "C" void ext_00493D90();
+
+extern "C" __declspec(naked) void __fastcall fn_00673B90(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8b40d8
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push esi
+        mov esi, dword ptr [ecx + 0xc]
+        push edi
+        xor edi, edi
+    L_loop:
+        test esi, esi
+        je L_end
+        mov eax, dword ptr [esi + 0x10]
+        mov dword ptr [esp + 0x8], eax
+        mov ecx, dword ptr [esi + 0x14]
+        mov dword ptr [esp + 0xc], ecx
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x1c], 0x0
+        call ext_006616B0
+        test al, al
+        jne L_next
+        lea ecx, [esp + 0x8]
+        call ext_006616C0
+        mov edi, eax
+    L_next:
+        mov esi, dword ptr [esi + 0xc]
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        call ext_00493D90
+        test edi, edi
+        je L_loop
+    L_end:
+        mov ecx, dword ptr [esp + 0x14]
+        mov eax, edi
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
