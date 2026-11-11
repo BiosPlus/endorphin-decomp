@@ -3904,3 +3904,38 @@ init_done:
         ret 4
     }
 }
+
+// [0x0058C060] ExprParser::ReadWriteMethodType<AnimatableTransform, NM::Vector4 const &, {protected: class NM::Vector4 const & __thiscall AnimatableTransform::getQuat(void) const, 0}, NM::Vector4 const &, {protected: void __thiscall AnimatableTransform::setQuat(class NM::Vector4 const &), 0}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00B3F900;
+extern "C" int mem_00B3F8FC;
+extern "C" __declspec(naked) void __fastcall fn_0058C060(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x89fa4e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B3F900], al
+        jne init_done
+        or dword ptr [mem_00B3F900], eax
+        mov ecx, offset mem_00B3F8FC
+        mov dword ptr [esp+8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp+0x10]
+        mov dword ptr [mem_00B3F8FC], 0x95b41c
+        mov dword ptr [eax+4], offset mem_00B3F8FC
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+init_done:
+        mov ecx, dword ptr [esp+0x10]
+        mov dword ptr [ecx+4], offset mem_00B3F8FC
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+    }
+}
