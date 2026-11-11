@@ -416,3 +416,52 @@ extern "C" __declspec(naked) void __fastcall fn_005338B0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005332A0] OglRenderer::vfunc_14 (147 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005332A0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov al, byte ptr [esp + 4]
+        test al, al
+        mov byte ptr [ecx + 379h], al
+        je short L1
+        fld dword ptr [ecx + 38Ch]
+        jmp short L2
+    L1:
+        fld dword ptr [ecx + 37Ch]
+    L2:
+        test al, al
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 4]
+        fstp dword ptr [ecx + 454h]
+        je short L3
+        fld dword ptr [ecx + 390h]
+        jmp short L4
+    L3:
+        fld dword ptr [ecx + 380h]
+    L4:
+        test al, al
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 4]
+        fstp dword ptr [ecx + 458h]
+        je short L5
+        mov eax, dword ptr [ecx + 394h]
+        jmp short L6
+    L5:
+        mov eax, dword ptr [ecx + 384h]
+    L6:
+        mov dword ptr [ecx + 44Ch], eax
+        cmp byte ptr [ecx + 379h], 0
+        je short L7
+        mov eax, dword ptr [ecx + 398h]
+        jmp short L8
+    L7:
+        mov eax, dword ptr [ecx + 388h]
+    L8:
+        mov edx, dword ptr [ecx]
+        mov dword ptr [ecx + 450h], eax
+        mov eax, dword ptr [edx + 154h]
+        mov byte ptr [ecx + 430h], 1
+        call eax
+        ret 4
+    }
+}
