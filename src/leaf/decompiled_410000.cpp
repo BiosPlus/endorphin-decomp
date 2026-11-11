@@ -1952,3 +1952,61 @@ extern "C" __declspec(naked) int __fastcall fn_004103F0(void* self) {
         ret
     }
 }
+
+// [0x00412E60] sub_00412E60 (93 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_00412E60(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        test ebx, ebx
+        push esi
+        mov esi, ecx
+        jl L_fail
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        jne L_nz
+        xor eax, eax
+        jmp L_sz
+    L_nz:
+        mov eax, dword ptr [esi + 0xc]
+        sub eax, ecx
+        sar eax, 0x2
+    L_sz:
+        add eax, -0x1
+        cmp ebx, eax
+        jg L_fail
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push edi
+        mov edi, ecx
+        cmp edi, dword ptr [esi + 0xc]
+        jbe L_c1
+        call ebp
+    L_c1:
+        lea edi, [edi + 4*ebx]
+        cmp edi, dword ptr [esi + 0xc]
+        ja L_c2
+        cmp edi, dword ptr [esi + 0x8]
+        jae L_c3
+    L_c2:
+        call ebp
+    L_c3:
+        cmp edi, dword ptr [esi + 0xc]
+        jb L_c4
+        call ebp
+    L_c4:
+        mov eax, dword ptr [edi]
+        pop edi
+        pop ebp
+        pop esi
+        pop ebx
+        ret 0x4
+    L_fail:
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret 0x4
+    }
+}
