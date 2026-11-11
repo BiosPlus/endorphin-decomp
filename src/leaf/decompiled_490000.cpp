@@ -2859,3 +2859,78 @@ extern "C" __declspec(naked) void* __cdecl fn_00490860(void* a0, void* a1, void*
         ret
     }
 }
+
+// [0x00492B30] sub_00492B30 (132 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00492B30(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_00492B41
+        call edi
+    L_00492B41:
+        mov eax, dword ptr [esi + 0x4]
+        cmp byte ptr [eax + 0x21], 0
+        je L_00492B5B
+        mov eax, dword ptr [eax + 0x8]
+        mov dword ptr [esi + 0x4], eax
+        cmp byte ptr [eax + 0x21], 0
+        je L_00492BB1
+    L_00492B56:
+        call edi
+        pop edi
+        pop esi
+        ret
+    L_00492B5B:
+        mov ecx, dword ptr [eax]
+        cmp byte ptr [ecx + 0x21], 0
+        jne L_00492B81
+        mov eax, dword ptr [ecx + 0x8]
+        cmp byte ptr [eax + 0x21], 0
+        jne L_00492B7B
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    L_00492B70:
+        mov ecx, eax
+        mov eax, dword ptr [ecx + 0x8]
+        cmp byte ptr [eax + 0x21], 0
+        je L_00492B70
+    L_00492B7B:
+        pop edi
+        mov dword ptr [esi + 0x4], ecx
+        pop esi
+        ret
+    L_00492B81:
+        mov eax, dword ptr [eax + 0x4]
+        cmp byte ptr [eax + 0x21], 0
+        jne L_00492BA5
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_00492B90:
+        mov ecx, dword ptr [esi + 0x4]
+        cmp ecx, dword ptr [eax]
+        jne L_00492BA5
+        mov dword ptr [esi + 0x4], eax
+        mov edx, eax
+        mov eax, dword ptr [edx + 0x4]
+        cmp byte ptr [eax + 0x21], 0
+        je L_00492B90
+    L_00492BA5:
+        mov ecx, dword ptr [esi + 0x4]
+        cmp byte ptr [ecx + 0x21], 0
+        jne L_00492B56
+        mov dword ptr [esi + 0x4], eax
+    L_00492BB1:
+        pop edi
+        pop esi
+        ret
+    }
+}
