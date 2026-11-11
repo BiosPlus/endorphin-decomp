@@ -2456,3 +2456,31 @@ L_00537AF1:
         ret
     }
 }
+
+// [0x00530290] sub_00530290 (56 bytes)
+extern "C" void ext_00543220();
+
+extern "C" __declspec(naked) void __fastcall fn_00530290(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x3
+        push esi
+        mov esi, ecx
+        jne short L530290_store
+        cmp dword ptr [esi + 0x88], eax
+        jne short L530290_store
+        mov eax, 0x7
+L530290_store:
+        push 0x0
+        push eax
+        lea ecx, [esi + 0x38]
+        mov dword ptr [esi + 0x70], eax
+        call ext_00543220
+        mov ecx, dword ptr [esi + 0x10]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x154]
+        call edx
+        pop esi
+        ret 0x4
+    }
+}
