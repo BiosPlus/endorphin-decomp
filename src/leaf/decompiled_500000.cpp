@@ -2350,3 +2350,21 @@ extern "C" void __cdecl fn_0050FF20(unsigned int* first, unsigned int* last, int
         fn_0050FD30(first, hole, len, (void*)first[hole], (void*)comp);
     }
 }
+
+// [0x00507E40] sub_00507E40 (48 bytes)
+extern "C" int mem_0094F7FC;
+extern "C" int mem_0094F854;
+extern "C" int mem_0094F860;
+extern "C" void ext_00517AD0();
+
+extern "C" void* __fastcall fn_00507E40(void* self) {
+    int* p = (int*)self;
+    ((void (__fastcall*)(void*))ext_00517AD0)(self);
+    *(double*)((char*)self + 0x20) = 0.0;
+    p[0] = (int)&mem_0094F860;
+    p[2] = (int)&mem_0094F854;
+    p[3] = (int)&mem_0094F7FC;
+    *((char*)self + 0x28) = 0;
+    p[11] = -1;
+    return self;
+}
