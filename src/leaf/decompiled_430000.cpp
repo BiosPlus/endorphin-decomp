@@ -3834,3 +3834,53 @@ L_store_top:
         ret
     }
 }
+
+// [0x0043CF30] sub_0043CF30 (103 bytes)
+extern "C" void ext_00455F40();
+extern "C" void ext_006A65F8();
+extern "C" int mem_0092566C;
+extern "C" int mem_00925710;
+
+extern "C" __declspec(naked) void __fastcall fn_0043CF30(void* self) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x20]
+        lea eax, [esp + 0x4]
+        push eax
+        push ecx
+        call dword ptr [mem_0092566C]
+        mov ecx, dword ptr [esi + 0x18c]
+        call ext_00455F40
+        test eax, eax
+        je short L_else_0043CF30
+        mov edx, dword ptr [esp + 0x10]
+        sub edx, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esi + 0x20]
+        xor eax, eax
+        cmp dword ptr [esi + 0xf8], edx
+        setg al
+        push eax
+        push 0x1
+        push ecx
+        jmp short L_call_0043CF30
+    L_else_0043CF30:
+        mov edx, dword ptr [esi + 0x20]
+        push 0x0
+        push 0x1
+        push edx
+    L_call_0043CF30:
+        call dword ptr [mem_00925710]
+        mov eax, dword ptr [esi + 0xf8]
+        push 0x1
+        push eax
+        push 0x0
+        push 0x1
+        mov ecx, esi
+        call ext_006A65F8
+        pop esi
+        add esp, 0x10
+        ret
+    }
+}
