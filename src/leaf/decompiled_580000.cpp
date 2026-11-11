@@ -992,3 +992,40 @@ extern "C" void __fastcall fn_00584980(float* self, int edx_unused, const float*
     self[7] *= s2;
     self[8] *= s2;
 }
+
+// [0x005850C0] sub_005850C0 (89 bytes)
+extern "C" void ext_0067DAD0();
+extern "C" void ext_00584980();
+extern "C" void ext_0067DB10();
+extern "C" __declspec(naked) void __fastcall fn_005850C0(void* self, int edx_unused, const float* scale) {
+    __asm {
+        sub esp, 24h
+        fldz
+        push esi
+        fst dword ptr [esp + 0ch]
+        lea eax, [esp + 4]
+        fst dword ptr [esp + 8]
+        push eax
+        fst dword ptr [esp + 1ch]
+        mov esi, ecx
+        fst dword ptr [esp + 14h]
+        fst dword ptr [esp + 24h]
+        fstp dword ptr [esp + 20h]
+        fld1
+        fst dword ptr [esp + 8]
+        fst dword ptr [esp + 18h]
+        fstp dword ptr [esp + 28h]
+        call ext_0067DAD0
+        mov ecx, dword ptr [esp + 2ch]
+        push ecx
+        lea ecx, [esp + 8]
+        call ext_00584980
+        lea edx, [esp + 4]
+        push edx
+        mov ecx, esi
+        call ext_0067DB10
+        pop esi
+        add esp, 24h
+        ret 4
+    }
+}
