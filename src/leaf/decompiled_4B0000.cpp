@@ -824,3 +824,57 @@ extern "C" __declspec(naked) void* __cdecl fn_004BA740(void* out, int val) {
         ret
     }
 }
+
+// [0x004B4D30] sub_004B4D30 (89 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B4D30(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [ecx + 0xc]
+        cmp esi, dword ptr [ecx + 0x10]
+        push edi
+        lea edi, [ecx + 0x8]
+        jbe L_a
+        call ebp
+    L_a:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_b
+        call ebp
+    L_b:
+        cmp edi, edi
+        je L_c
+        call ebp
+    L_c:
+        cmp esi, ebx
+        je L_end
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_d
+        call ebp
+    L_d:
+        cmp esi, dword ptr [edi + 0x8]
+        mov eax, dword ptr [esi]
+        mov bl, byte ptr [eax + 0x2]
+        jb L_e
+        call ebp
+    L_e:
+        mov edx, dword ptr [esi]
+        test bl, bl
+        sete cl
+        mov byte ptr [edx + 0x1], cl
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_f
+        call ebp
+    L_f:
+        add esi, 4
+        jmp L_a
+    L_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
