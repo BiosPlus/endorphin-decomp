@@ -859,3 +859,55 @@ extern "C" __declspec(naked) void __fastcall fn_006AD3C0(void* self) {
         ret
     }
 }
+
+// [0x006A9210] sub_006A9210 (119 bytes)
+extern "C" int mem_0092566C;
+extern "C" int mem_009256CC;
+extern "C" int mem_0092563C;
+extern "C" int mem_00925678;
+
+extern "C" __declspec(naked) void __fastcall fn_006A9210(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x20]
+        push edi
+        push eax
+        call dword ptr [mem_0092566C]
+        cmp byte ptr [esi + 0xfc], 0x0
+        je L_skip1
+        add dword ptr [edi + 0x4], 0x1c
+    L_skip1:
+        cmp byte ptr [esi + 0xf6], 0x0
+        je L_skip2
+        mov ecx, dword ptr [esi + 0xf8]
+        sub dword ptr [edi + 0xc], ecx
+    L_skip2:
+        lea eax, [esi + 0x108]
+        test eax, eax
+        je L_skip3
+        cmp dword ptr [eax + 0x20], 0x0
+        je L_skip3
+        mov edx, dword ptr [esi + 0x128]
+        push edx
+        call dword ptr [mem_009256CC]
+        test eax, eax
+        je L_skip3
+        push 0x2
+        call dword ptr [mem_0092563C]
+        sub dword ptr [edi + 0x8], eax
+    L_skip3:
+        cmp byte ptr [esi + 0x179], 0x0
+        je L_done
+        push -0x1
+        push -0x1
+        push edi
+        call dword ptr [mem_00925678]
+    L_done:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
