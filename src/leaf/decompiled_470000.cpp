@@ -1678,3 +1678,17 @@ extern "C" __declspec(naked) void __cdecl fn_00477DD0(int* first, int* last) {
         ret
     }
 }
+
+// [0x00477090] sub_00477090 (143 bytes)
+extern "C" void __cdecl fn_00477090(float* first, float* mid, float* last) {
+    int n = (int)(last - first);
+    if (n > 40) {
+        int step = (n + 1) / 8;
+        fn_00476C30(first, first + step, first + 2 * step);
+        fn_00476C30(mid - step, mid, mid + step);
+        fn_00476C30(last - 2 * step, last - step, last);
+        fn_00476C30(first + step, mid, last - step);
+    } else {
+        fn_00476C30(first, mid, last);
+    }
+}
