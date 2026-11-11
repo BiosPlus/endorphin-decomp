@@ -728,3 +728,45 @@ extern "C" void __cdecl fn_00477280(int* first, int holeIndex, int len, int valu
     }
     fn_00476D60(first, holeIndex, topIndex, value);
 }
+
+// [0x00477D90] sub_00477D90 (59 bytes)
+extern "C" void ext_00477280();
+
+// [0x00477D90] make_heap-style loop: for (parent = n/2; parent > 0; --parent) adjust(first, parent-1, n, first[parent-1])
+extern "C" __declspec(naked) void __cdecl fn_00477D90(int* first, int* last) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        sub edi, ebx
+        sar edi, 0x2
+        mov eax, edi
+        cdq
+        sub eax, edx
+        mov esi, eax
+        sar esi, 0x1
+        test esi, esi
+        jle done
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    loop_top:
+        mov eax, dword ptr [ebx + esi*4 - 0x4]
+        sub esi, 0x1
+        push eax
+        push edi
+        push esi
+        push ebx
+        call ext_00477280
+        add esp, 0x10
+        test esi, esi
+        jg loop_top
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
