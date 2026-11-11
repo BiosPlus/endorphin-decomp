@@ -1356,3 +1356,57 @@ extern "C" __declspec(naked) void __cdecl fn_0059FE40(unsigned int* first, unsig
         ret
     }
 }
+
+// [0x00599EA0] sub_00599EA0 (98 bytes)
+extern "C" void ext_00599E70();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00599EA0(void* self) {
+    __asm {
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x26c]
+        cmp dword ptr [eax + 0x20], 0
+        jne L_body
+        xor eax, eax
+        pop edi
+        ret
+    L_body:
+        mov ecx, dword ptr [eax + 0x1c]
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [ecx]
+        cmp esi, ecx
+        jne L_c1
+        call ebx
+    L_c1:
+        mov esi, dword ptr [esi + 0x28]
+        mov ecx, dword ptr [esi + 0x334]
+        add esi, 0x330
+        test ecx, ecx
+        je L_tail
+        mov eax, dword ptr [esi + 8]
+        sub eax, ecx
+        sar eax, 2
+        jne L_cnt
+    L_tail:
+        pop esi
+        pop ebx
+        mov ecx, edi
+        pop edi
+        jmp ext_00599E70
+    L_cnt:
+        test eax, eax
+        ja L_ok
+        call ebx
+    L_ok:
+        mov edx, dword ptr [esi + 4]
+        mov eax, dword ptr [edx]
+        mov eax, dword ptr [eax + 0x22c]
+        pop esi
+        pop ebx
+        pop edi
+        ret
+    }
+}
