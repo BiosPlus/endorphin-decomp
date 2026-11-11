@@ -311,3 +311,16 @@ extern "C" __declspec(naked) void __fastcall fn_00480E40(void* self) {
         ret
     }
 }
+
+// [0x00481FA0] ToolEngine::vfunc_54 (39 bytes)
+extern "C" void __fastcall ext_00481D80(void* self);
+
+extern "C" void __fastcall fn_00481FA0(void* self) {
+    char* esi = (char*)self;
+    ext_00481D80(esi + 0x3cc);
+    void** vtbl = *(void***)esi;
+    typedef void (__fastcall *VFn)(void* self);
+    ((VFn)vtbl[0xd4 / 4])(esi);
+    vtbl = *(void***)esi;
+    ((VFn)vtbl[0xf8 / 4])(esi);
+}
