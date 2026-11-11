@@ -2009,3 +2009,36 @@ extern "C" void __fastcall fn_0044E160(unsigned char* self, int edx_unused, unsi
     fn_0044CEC0(self);
     ((void (__stdcall*)(void*, int, int))mem_00925688)(*(void**)(self + 0x20), 0, 1);
 }
+
+// [0x004406C0] sub_004406C0 (98 bytes)
+extern "C" void ext_00493D90();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_004406C0(void* self) {
+    __asm {
+        push -1
+        push 0x0087B8A8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x0093240C
+        lea ecx, [esi + 0x78]
+        mov dword ptr [esp + 0x10], 0x1
+        call ext_00493D90
+        lea ecx, [esi + 0x28]
+        mov byte ptr [esp + 0x10], 0x0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 0xc]
+        mov dword ptr [esp + 0x10], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
