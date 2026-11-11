@@ -811,3 +811,49 @@ done_005D0530:
         ret 4
     }
 }
+
+// [0x005D02D0] sub_005D02D0 (127 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" void ext_00493EE0();
+
+extern "C" __declspec(naked) void __fastcall fn_005D02D0(void* self, int edx_unused, unsigned int a1) {
+    __asm {
+        push -1
+        push 0x8a56c8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov ebx, ecx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x258]
+        lea esi, [eax + 0x258]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        call edx
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp + 0xc], edi
+        call ext_0065C640
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, esi
+        mov dword ptr [esp + 0x18], 0
+        mov dword ptr [ebx + 0x208], eax
+        call ext_00493EE0
+        mov ecx, edi
+        mov dword ptr [esp + 0x18], -1
+        call ext_0065C650
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
