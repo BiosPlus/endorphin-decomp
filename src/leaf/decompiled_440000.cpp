@@ -1949,3 +1949,54 @@ extern "C" __declspec(naked) int __fastcall fn_0044E100(void* self) {
         ret
     }
 }
+
+// [0x0044CEC0] sub_0044CEC0 (97 bytes)
+extern "C" void ext_0040FD30();
+extern "C" void ext_0040FD40();
+extern "C" void ext_0040FD50();
+extern "C" void ext_006A7BC0();
+extern "C" int mem_0093A0C4;
+extern "C" int mem_0093A0C8;
+extern "C" int mem_0093A0CC;
+extern "C" int mem_0093A0D0;
+
+extern "C" __declspec(naked) void __fastcall fn_0044CEC0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_0093A0C4]
+        push esi
+        push edi
+        mov edi, ecx
+        lea esi, [edi + 0xc80]
+        push eax
+        mov ecx, esi
+        call ext_0040FD30
+        mov ecx, dword ptr [mem_0093A0CC]
+        push ecx
+        mov ecx, esi
+        call ext_0040FD40
+        mov edx, dword ptr [mem_0093A0C8]
+        push edx
+        mov ecx, esi
+        call ext_006A7BC0
+        mov eax, dword ptr [mem_0093A0D0]
+        push eax
+        mov ecx, esi
+        call ext_0040FD50
+        cmp byte ptr [edi + 0xa9], 0
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x144]
+        mov ecx, esi
+        je fn_0044CEC0_zero
+        push 1
+        call eax
+        pop edi
+        pop esi
+        ret
+    fn_0044CEC0_zero:
+        push 0
+        call eax
+        pop edi
+        pop esi
+        ret
+    }
+}

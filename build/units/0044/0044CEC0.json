@@ -22,5 +22,7 @@
     "0x0044CEF4",
     "0x0044CEFC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T03:35:44Z"
 }
