@@ -1552,3 +1552,54 @@ done:
         ret
     }
 }
+
+// [0x00406090] sub_00406090 (88 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) std::string* __cdecl fn_00406090(std::string* first, std::string* last, std::string* dest) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov ebx, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov ecx, edi
+        sub ecx, esi
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        lea ecx, [eax*8]
+        sub ecx, eax
+        cmp esi, edi
+        lea ebp, [ebx + ecx*4]
+        je done_00406090
+        sub ebx, esi
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    loop_00406090:
+        push esi
+        lea ecx, [ebx + esi]
+        call dword ptr [mem_00924FDC]
+        add esi, 0x1c
+        cmp esi, edi
+        jne loop_00406090
+    done_00406090:
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+    }
+}
