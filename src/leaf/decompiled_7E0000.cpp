@@ -287,3 +287,45 @@ extern "C" __declspec(naked) void __fastcall fn_007E4770(void* self) {
         ret
     }
 }
+
+// [0x007EFE60] sub_007EFE60 (107 bytes)
+extern "C" int mem_0092A278;
+
+extern "C" __declspec(naked) void __cdecl fn_007EFE60() {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        fld dword ptr [eax+10h]
+        mov ecx, dword ptr [esp+8]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax+14h]
+        fstp dword ptr [ecx+4]
+        fld dword ptr [eax+18h]
+        fstp dword ptr [ecx+8]
+        fld dword ptr [eax+20h]
+        fld dword ptr [eax+1ch]
+        fld dword ptr [eax+24h]
+        fld st(1)
+        fmulp st(2), st
+        fxch st(1)
+        fadd qword ptr [mem_0092A278]
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        fld st(2)
+        fmulp st(3), st
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp+4]
+        fld st(0)
+        fmulp st(1), st
+        fadd dword ptr [esp+4]
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        call ext_006A7250
+        fstp dword ptr [esp+4]
+        mov eax, dword ptr [esp+0ch]
+        fld dword ptr [esp+4]
+        fstp dword ptr [eax]
+        mov eax, 1
+        ret
+    }
+}
