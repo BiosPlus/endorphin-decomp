@@ -2534,3 +2534,76 @@ extern "C" void* __fastcall fn_00403380(void* self) {
     *(void**)(s + 0xdc) = ((DrawDibOpenFn)ext_006A344E)();
     return self;
 }
+
+// [0x00402630] sub_00402630 (117 bytes)
+struct Elem32_00402630 {
+    int   a;
+    float f1;
+    float f2;
+    float f3;
+    int   b;
+    int   c;
+    int   d;
+    unsigned short w;
+    unsigned char  by;
+};
+
+extern "C" __declspec(naked) Elem32_00402630* __cdecl fn_00402630(const Elem32_00402630* first, const Elem32_00402630* last, Elem32_00402630* dest) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebp
+        je empty_00402630
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        lea ecx, [edi + 0xc]
+        lea edx, [esi + 0xc]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+loop_00402630:
+        test edi, edi
+        je skip_00402630
+        mov eax, dword ptr [esi]
+        mov dword ptr [edi], eax
+        fld dword ptr [edx - 0x8]
+        fstp dword ptr [ecx - 0x8]
+        fld dword ptr [edx - 0x4]
+        fstp dword ptr [ecx - 0x4]
+        fld dword ptr [edx]
+        fstp dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x4]
+        mov dword ptr [ecx + 0x4], eax
+        mov eax, dword ptr [edx + 0x8]
+        mov dword ptr [ecx + 0x8], eax
+        mov eax, dword ptr [edx + 0xc]
+        mov dword ptr [ecx + 0xc], eax
+        mov ax, word ptr [edx + 0x10]
+        mov word ptr [ecx + 0x10], ax
+        mov al, byte ptr [edx + 0x12]
+        mov byte ptr [ecx + 0x12], al
+skip_00402630:
+        add esi, 0x20
+        add edi, 0x20
+        add ecx, 0x20
+        add edx, 0x20
+        cmp esi, ebp
+        jne loop_00402630
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        ret
+empty_00402630:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebp
+        ret
+    }
+}
