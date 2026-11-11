@@ -3281,3 +3281,19 @@ extern "C" __declspec(naked) void __cdecl fn_007CA460(void* a1, float* v, float*
         ret
     }
 }
+
+// [0x007C8960] sub_007C8960 (141 bytes)
+struct Cell007C8960 {
+    int v[6];
+};
+
+extern "C" void __cdecl fn_007C8960(int* self, int b, int c, const Cell007C8960* d) {
+    Cell007C8960* e = (Cell007C8960*)(((char*)self[10]) + 24 * (self[0] * c + b));
+    *e = *d;
+    e->v[3] = 0;
+    if (b != c) {
+        Cell007C8960* f = (Cell007C8960*)(((char*)self[10]) + 24 * (self[0] * b + c));
+        *f = *d;
+        f->v[3] = 1;
+    }
+}
