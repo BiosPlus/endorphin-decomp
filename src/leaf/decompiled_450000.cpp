@@ -2040,3 +2040,20 @@ extern "C" __declspec(naked) void __fastcall fn_00453EB0(void* self) {
         ret
     }
 }
+
+// [0x0045BF30] sub_0045BF30 (117 bytes)
+typedef int (__stdcall *SendMessageFn_0045BF30)(int, unsigned int, unsigned int, int);
+extern "C" int __fastcall fn_0045BF30(char* self, int edx_unused, int a1) {
+    SendMessageFn_0045BF30 send = (SendMessageFn_0045BF30)mem_00925694;
+    int r = send(*(int*)(self + 0x20), 0x110a, 4, a1);
+    if (r) return r;
+    r = send(*(int*)(self + 0x20), 0x110a, 1, a1);
+    if (r) return r;
+    int esi = send(*(int*)(self + 0x20), 0x110a, 3, a1);
+    while (esi) {
+        r = send(*(int*)(self + 0x20), 0x110a, 1, esi);
+        if (r) return r;
+        esi = send(*(int*)(self + 0x20), 0x110a, 3, esi);
+    }
+    return 0;
+}
