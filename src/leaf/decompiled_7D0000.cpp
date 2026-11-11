@@ -1186,3 +1186,25 @@ extern "C" __declspec(naked) void __fastcall fn_007DD040(void* self) {
         ret
     }
 }
+
+// [0x007D8760] sub_007D8760 (98 bytes)
+extern "C" int mem_0099E0B0;
+
+extern "C" void __cdecl fn_007D8760(void* a, void* b) {
+    char* p = reinterpret_cast<char*>(a);
+    char* n = reinterpret_cast<char*>(b);
+    if (*reinterpret_cast<int*>(p + 0x168) == mem_0099E0B0) {
+        *reinterpret_cast<char**>(p + 0x16c) = n;
+        *reinterpret_cast<char**>(p + 0x168) = n;
+        *reinterpret_cast<int*>(n + 0x60) = mem_0099E0B0;
+        *reinterpret_cast<int*>(n + 0x5c) = mem_0099E0B0;
+        *reinterpret_cast<char**>(n + 0x68) = p;
+        ++*reinterpret_cast<int*>(p + 0x164);
+    } else {
+        *reinterpret_cast<char**>(n + 0x60) = *reinterpret_cast<char**>(p + 0x16c);
+        *reinterpret_cast<char**>(*reinterpret_cast<char**>(p + 0x16c) + 0x5c) = n;
+        *reinterpret_cast<char**>(p + 0x16c) = n;
+        *reinterpret_cast<char**>(n + 0x68) = p;
+        ++*reinterpret_cast<int*>(p + 0x164);
+    }
+}
