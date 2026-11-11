@@ -770,3 +770,40 @@ extern "C" __declspec(naked) void __cdecl fn_00477D90(int* first, int* last) {
         ret
     }
 }
+
+// [0x00478D00] sub_00478D00 (67 bytes)
+// sort_heap-style loop: while (last - first > 1) { --last; val = *last; *last = *first; adjust(first, 0, last - first, val); }
+extern "C" __declspec(naked) void __cdecl fn_00478D00(int* first, int* last) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        sub esi, edi
+        mov eax, esi
+        sar eax, 0x2
+        cmp eax, 0x1
+        jle done
+    loop_top:
+        mov eax, dword ptr [edi + esi - 0x4]
+        mov ecx, dword ptr [edi]
+        push eax
+        lea edx, [esi - 0x4]
+        sar edx, 0x2
+        push edx
+        push 0x0
+        push edi
+        mov dword ptr [edi + esi - 0x4], ecx
+        call ext_00477280
+        sub esi, 0x4
+        mov eax, esi
+        sar eax, 0x2
+        add esp, 0x10
+        cmp eax, 0x1
+        jg loop_top
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
