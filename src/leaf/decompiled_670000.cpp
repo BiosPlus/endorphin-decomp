@@ -1525,3 +1525,56 @@ extern "C" __declspec(naked) void __fastcall fn_00672590(void* self) {
         ret
     }
 }
+
+// [0x00670C50] sub_00670C50 (90 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00670C50(void** first, void** last, void** val) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x8]
+        sub ecx, edi
+        sar ecx, 0x2
+        test ecx, ecx
+        jle ret_00670C50
+        mov eax, dword ptr [esp + 0x10]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [eax]
+        mov ebx, dword ptr [ebp + 0x4]
+        push esi
+        mov edi, edi
+    loop_00670C50:
+        mov eax, ecx
+        cdq
+        sub eax, edx
+        sar eax, 0x1
+        mov edx, dword ptr [edi + 4*eax]
+        mov esi, dword ptr [edx + 0x4]
+        cmp esi, ebx
+        jb right_00670C50
+        jne left_00670C50
+        mov edx, dword ptr [edx + 0x8]
+        cmp edx, dword ptr [ebp + 0x8]
+        setb dl
+        test dl, dl
+        je left_00670C50
+    right_00670C50:
+        or edx, -0x1
+        sub edx, eax
+        lea edi, [edi + 4*eax + 0x4]
+        add ecx, edx
+        jmp test_00670C50
+    left_00670C50:
+        mov ecx, eax
+    test_00670C50:
+        test ecx, ecx
+        jg loop_00670C50
+        pop esi
+        pop ebp
+        pop ebx
+    ret_00670C50:
+        mov eax, edi
+        pop edi
+        ret
+    }
+}
