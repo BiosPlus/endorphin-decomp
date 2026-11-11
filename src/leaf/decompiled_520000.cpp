@@ -1023,3 +1023,22 @@ L_527D60_d:
         ret 0xc
     }
 }
+
+// [0x00528D60] sub_00528D60 (32 bytes)
+extern "C" int mem_009534CC;
+extern "C" void ext_00403560();
+extern "C" __declspec(naked) void* __fastcall fn_00528D60(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_00403560
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi], offset mem_009534CC
+        mov dword ptr [esi + 0x28], ecx
+        mov eax, esi
+        pop esi
+        ret 0x8
+    }
+}
