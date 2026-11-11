@@ -988,3 +988,21 @@ extern "C" __declspec(naked) void __fastcall fn_0060B240(void* self) {
         ret
     }
 }
+
+// [0x0060ECF0] sub_0060ECF0 (103 bytes)
+extern "C" int mem_00924EF4;
+typedef bool (__cdecl *LessStr_0060ECF0)(const void*, const void*);
+extern "C" void* __cdecl fn_0060ECF0(char* first, char* last, const void* val) {
+    int count = (int)((last - first) / 56);
+    while (count > 0) {
+        int half = count / 2;
+        char* mid = first + half * 56;
+        if (((LessStr_0060ECF0)mem_00924EF4)(mid, val)) {
+            first = mid + 56;
+            count -= half + 1;
+        } else {
+            count = half;
+        }
+    }
+    return first;
+}
