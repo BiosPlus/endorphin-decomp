@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_640000.cpp
 
+#include <math.h>
+
 // [0x00648480] sub_00648480 (15 bytes)
 extern "C" void ext_007C6F70();
 
@@ -2430,6 +2432,67 @@ extern "C" __declspec(naked) void __fastcall fn_0064DF20(void* self, int edx_unu
         add esp, 0x8
         pop esi
         add esp, 0x10
+        ret 0x4
+    }
+}
+
+// [0x0064E630] sub_0064E630 (130 bytes)
+extern "C" void ext_006A7250();
+extern "C" double mem_009802F0;
+
+extern "C" __declspec(naked) void __fastcall fn_0064E630(void* self, int edx_unused, float* a1) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x4c]
+        push esi
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+        fld dword ptr [esp + 0x4]
+        fmul qword ptr [mem_009802F0]
+        mov esi, dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esi + 0x4]
+        fld dword ptr [esi]
+        fld dword ptr [esi + 0x8]
+        __asm _emit 0xD9 __asm _emit 0xC1                  // fld st(1)
+        __asm _emit 0xDE __asm _emit 0xCA                  // fmulp st(2), st
+        __asm _emit 0xD9 __asm _emit 0xC2                  // fld st(2)
+        __asm _emit 0xDE __asm _emit 0xCB                  // fmulp st(3), st
+        __asm _emit 0xD9 __asm _emit 0xC9                  // fxch st(1)
+        __asm _emit 0xDE __asm _emit 0xC2                  // faddp st(2), st
+        __asm _emit 0xDC __asm _emit 0xC8                  // fmul st(0), st
+        __asm _emit 0xDE __asm _emit 0xC1                  // faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x4]
+        __asm _emit 0xD8 __asm _emit 0xD1                  // fcom st(1)
+        __asm _emit 0xDF __asm _emit 0xE0                  // fnstsw ax
+        __asm _emit 0xF6 __asm _emit 0xC4 __asm _emit 0x05 // test ah, 0x5
+        __asm _emit 0x7A __asm _emit 0x27                  // jp +0x27 (-> exit_skip)
+        __asm _emit 0xDE __asm _emit 0xF1                  // fdivrp st(1), st
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esi]
+        fld dword ptr [esp + 0xc]
+        __asm _emit 0xD9 __asm _emit 0xC0                  // fld st(0)
+        __asm _emit 0xDE __asm _emit 0xCA                  // fmulp st(2), st
+        __asm _emit 0xD9 __asm _emit 0xC9                  // fxch st(1)
+        fstp dword ptr [esi]
+        __asm _emit 0xD9 __asm _emit 0xC0                  // fld st(0)
+        __asm _emit 0xD8 __asm _emit 0x4E __asm _emit 0x04 // fmul dword ptr [esi + 0x4]
+        fstp dword ptr [esi + 0x4]
+        __asm _emit 0xD8 __asm _emit 0x4E __asm _emit 0x08 // fmul dword ptr [esi + 0x8]
+        fstp dword ptr [esi + 0x8]
+        pop esi
+        pop ecx
+        ret 0x4
+exit_skip:
+        __asm _emit 0xDD __asm _emit 0xD9                  // fstp st(1)
+        pop esi
+        __asm _emit 0xDD __asm _emit 0xD8                  // fstp st(0)
+        pop ecx
         ret 0x4
     }
 }
