@@ -1743,3 +1743,79 @@ extern "C" __declspec(naked) int __cdecl fn_006947B0(double a1, double a2, doubl
         ret
     }
 }
+
+// [0x00699A50] sub_00699A50 (141 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __cdecl fn_00699A50(void* a1, void* a2, void* a3) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        cmp ebx, dword ptr [esp + 0x10]
+        je L_done
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        lea edi, [ebp + 0x24]
+        lea esi, [ebx + 0x28]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_loop:
+        push ebp
+        mov ecx, ebx
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [ebp + 0x1c]
+        mov dword ptr [esi - 0xc], eax
+        mov ecx, dword ptr [ebp + 0x20]
+        lea edx, [esi - 0x4]
+        cmp edx, edi
+        mov dword ptr [esi - 0x8], ecx
+        je L_next
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_skip1
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esi - 0x4]
+        push edx
+        call eax
+    L_skip1:
+        mov ecx, dword ptr [edi + 0x4]
+        mov dword ptr [esi], ecx
+        cmp dword ptr [edi + 0x4], 0
+        je L_null
+        mov ecx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push edi
+        lea eax, [esp + 0x14]
+        push eax
+        call edx
+        jmp L_store
+    L_null:
+        mov dword ptr [esp + 0x18], 0
+        lea eax, [esp + 0x18]
+    L_store:
+        mov eax, dword ptr [eax]
+        mov dword ptr [esi - 0x4], eax
+    L_next:
+        add ebx, 0x2c
+        add esi, 0x2c
+        cmp ebx, dword ptr [esp + 0x1c]
+        jne L_loop
+        pop edi
+        pop esi
+        pop ebp
+    L_done:
+        pop ebx
+        pop ecx
+        ret
+    }
+}
