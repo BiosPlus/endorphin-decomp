@@ -1250,3 +1250,48 @@ done_4FDB40:
         ret
     }
 }
+
+// [0x004F0250] sub_004F0250 (78 bytes)
+extern "C" void ext_00596660();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_004F0250(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        xor eax, eax
+        push edi
+        lea ecx, [esi + 0x18]
+        mov dword ptr [esi + 0x28], eax
+        mov dword ptr [esi + 0x24], eax
+        call ext_004EFDF0
+        mov edi, dword ptr [esi + 0x10]
+        mov ebp, dword ptr [mem_00925134]
+        add esi, 0x8
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_chk1
+        call ebp
+    L_chk1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L_chk2
+        call ebp
+    L_chk2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_00596660
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
