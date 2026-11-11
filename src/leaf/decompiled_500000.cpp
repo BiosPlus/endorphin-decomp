@@ -1850,3 +1850,39 @@ extern "C" __declspec(naked) void __fastcall fn_0050BE20(void* self) {
         ret
     }
 }
+
+// [0x00505290] sub_00505290 (92 bytes)
+extern "C" int mem_00924FE0;
+
+// EH-framed copy constructor: copies two dwords (+0x4, +0x8) and a std::string at +0xC
+// from the source object (stack arg) into a new object whose vtable is 0x94F484.
+extern "C" __declspec(naked) void* __fastcall fn_00505290(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x891e68
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [esi], 0x94f484
+        mov ecx, dword ptr [eax + 0x4]
+        mov dword ptr [esi + 0x4], ecx
+        mov edx, dword ptr [eax + 0x8]
+        add eax, 0xc
+        push eax
+        lea ecx, [esi + 0xc]
+        mov dword ptr [esp + 0x14], 0x0
+        mov dword ptr [esi + 0x8], edx
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
