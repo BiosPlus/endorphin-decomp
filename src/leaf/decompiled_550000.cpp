@@ -2156,3 +2156,77 @@ L_zero:
         ret
     }
 }
+
+// [0x00555160] sub_00555160 (122 bytes)
+// cdecl(first, last, dest_end): copy_backward of 32-byte elements from [first,last) ending at dest_end; returns dest_end - n.
+struct Elem00555160 {
+    int           a;
+    float         f1;
+    float         f2;
+    float         f3;
+    int           b;
+    int           c;
+    int           d;
+    unsigned char e;
+    unsigned char f;
+    unsigned char g;
+};
+
+extern "C" __declspec(naked) Elem00555160* __cdecl fn_00555160(Elem00555160* first, Elem00555160* last, Elem00555160* dest_end) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebp, esi
+        je empty_00555160
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        lea edx, [edi + 0xc]
+        lea ecx, [esi + 0xc]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+loop_00555160:
+        fld dword ptr [ecx - 0x28]
+        mov eax, dword ptr [esi - 0x20]
+        fstp dword ptr [edx - 0x28]
+        sub ecx, 0x20
+        fld dword ptr [ecx - 0x4]
+        sub edx, 0x20
+        fstp dword ptr [edx - 0x4]
+        mov dword ptr [edi - 0x20], eax
+        fld dword ptr [ecx]
+        sub esi, 0x20
+        fstp dword ptr [edx]
+        mov eax, dword ptr [ecx + 0x4]
+        mov dword ptr [edx + 0x4], eax
+        mov eax, dword ptr [ecx + 0x8]
+        sub edi, 0x20
+        cmp esi, ebp
+        mov dword ptr [edx + 0x8], eax
+        mov eax, dword ptr [ecx + 0xc]
+        mov dword ptr [edx + 0xc], eax
+        movzx eax, byte ptr [ecx + 0x10]
+        mov byte ptr [edx + 0x10], al
+        movzx eax, byte ptr [ecx + 0x11]
+        mov byte ptr [edx + 0x11], al
+        movzx eax, byte ptr [ecx + 0x12]
+        mov byte ptr [edx + 0x12], al
+        jne loop_00555160
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        ret
+empty_00555160:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebp
+        ret
+    }
+}
