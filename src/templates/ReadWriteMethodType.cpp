@@ -5288,3 +5288,39 @@ extern "C" __declspec(naked) void __fastcall fn_005D1CE0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005D20D0] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::VideoPlaneData::getFileName(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall NMData::VideoPlaneData::setFileName(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_40 (122 bytes)
+extern "C" int mem_00B459BC;
+extern "C" int mem_00B459B8;
+extern "C" void ext_0067A670();
+
+extern "C" __declspec(naked) void __fastcall fn_005D20D0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a52ee
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B459BC], al
+        jne L_guarded
+        or dword ptr [mem_00B459BC], eax
+        mov ecx, offset mem_00B459B8
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00B459B8], 0x00965e1c
+        mov dword ptr [eax + 0x4], offset mem_00B459B8
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00B459B8
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
