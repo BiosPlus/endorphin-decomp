@@ -612,3 +612,62 @@ extern "C" __declspec(naked) void __cdecl fn_007F9D50(int count, float* p) {
         ret
     }
 }
+
+// [0x007F6750] sub_007F6750 (99 bytes)
+extern "C" __declspec(naked) float __cdecl fn_007F6750(const float* a, const float* b, const float* c, const float* d) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [edx]
+        fsub dword ptr [eax]
+        mov ecx, dword ptr [esp + 0x10]
+        fld dword ptr [edx + 0x8]
+        fsub dword ptr [eax + 0x8]
+        fld dword ptr [edx + 0x4]
+        mov edx, dword ptr [esp + 0xc]
+        fsub dword ptr [eax + 0x4]
+        fld dword ptr [ecx]
+        _emit 0xd8
+        _emit 0xc9
+        fld dword ptr [ecx + 0x4]
+        _emit 0xd8
+        _emit 0xcc
+        _emit 0xde
+        _emit 0xe9
+        fld dword ptr [edx + 0x8]
+        fsub dword ptr [eax + 0x8]
+        _emit 0xde
+        _emit 0xc9
+        fld dword ptr [ecx + 0x8]
+        _emit 0xde
+        _emit 0xcc
+        fld dword ptr [ecx]
+        _emit 0xd8
+        _emit 0xcb
+        _emit 0xde
+        _emit 0xec
+        fld dword ptr [edx + 0x4]
+        fsub dword ptr [eax + 0x4]
+        _emit 0xde
+        _emit 0xcc
+        _emit 0xde
+        _emit 0xc3
+        fld dword ptr [ecx + 0x4]
+        _emit 0xde
+        _emit 0xca
+        _emit 0xd8
+        _emit 0x49
+        _emit 0x08
+        _emit 0xde
+        _emit 0xe9
+        fld dword ptr [edx]
+        fsub dword ptr [eax]
+        _emit 0xde
+        _emit 0xc9
+        _emit 0xde
+        _emit 0xc1
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        ret
+    }
+}
