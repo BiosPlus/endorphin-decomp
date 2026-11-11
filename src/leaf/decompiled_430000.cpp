@@ -4610,3 +4610,71 @@ L_s3:
         ret
     }
 }
+
+// [0x00436A50] sub_00436A50 (127 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00436A50(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx + 0xec]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        lea esi, [ecx + 0xe8]
+        push edi
+        mov edi, dword ptr [eax]
+        mov dword ptr [esp + 0x10], ecx
+        jmp L_00436A70
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    L_00436A70:
+        test esi, esi
+        mov ebx, dword ptr [esi + 0x4]
+        je L_00436A7B
+        cmp esi, esi
+        je L_00436A81
+    L_00436A7B:
+        call dword ptr [mem_00925134]
+    L_00436A81:
+        cmp edi, ebx
+        je L_00436AB1
+        test esi, esi
+        mov ebx, dword ptr [mem_00925134]
+        jne L_00436A91
+        call ebx
+    L_00436A91:
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_00436A98
+        call ebx
+    L_00436A98:
+        mov ecx, dword ptr [edi + 0x8]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x178]
+        push ebp
+        call eax
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_00436AAD
+        call ebx
+    L_00436AAD:
+        mov edi, dword ptr [edi]
+        jmp L_00436A70
+    L_00436AB1:
+        cmp byte ptr [esp + 0x1c], 0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        je L_00436ACB
+        mov ecx, dword ptr [esp]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x150]
+        push 1
+        call eax
+    L_00436ACB:
+        pop ecx
+        ret 0x8
+    }
+}
