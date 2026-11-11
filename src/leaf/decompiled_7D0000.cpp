@@ -1834,3 +1834,61 @@ extern "C" void __cdecl fn_007DB0B0(char* self, void* (__cdecl** alloc)(unsigned
     *(void**)(self + 0x10) = (*alloc)(*(unsigned int*)(self + 0x20) * 20);
     *(void**)(self + 0x14) = (*alloc)(*(unsigned int*)(self + 0x20) * 4);
 }
+
+// [0x007DEC00] sub_007DEC00 (124 bytes)
+extern "C" double mem_00993830;
+
+extern "C" __declspec(naked) void __fastcall fn_007DEC00(void* unused, void* self) {
+    __asm {
+        fld dword ptr [edx + 0x10]
+        push esi
+        fld qword ptr [mem_00993830]
+        xor esi, esi
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [edx + 0x10]
+        fld dword ptr [edx + 0x14]
+        fmul st, st(1)
+        fstp dword ptr [edx + 0x14]
+        fld dword ptr [edx + 0x18]
+        fmul st, st(1)
+        fstp dword ptr [edx + 0x18]
+        cmp dword ptr [edx + 0xc], esi
+        jle L_7DEC78
+        push ebx
+        push edi
+        xor edi, edi
+    L_7DEC2C:
+        mov eax, dword ptr [edx + 0x4]
+        mov ecx, dword ptr [eax + edi + 0x20]
+        mov ebx, dword ptr [eax + edi + 0x24]
+        add eax, edi
+        mov dword ptr [eax + 0x24], ecx
+        movzx ecx, word ptr [eax + 0x1c]
+        mov dword ptr [eax + 0x20], ebx
+        mov ebx, ecx
+        shl ebx, 8
+        sar cx, 8
+        add bx, cx
+        mov word ptr [eax + 0x1c], bx
+        add esi, 1
+        fld dword ptr [eax + 0xc]
+        add edi, 0x28
+        fmul st, st(1)
+        fstp dword ptr [eax + 0xc]
+        fld dword ptr [eax + 0x10]
+        fmul st, st(1)
+        fstp dword ptr [eax + 0x10]
+        fld dword ptr [eax + 0x14]
+        fmul st, st(1)
+        fstp dword ptr [eax + 0x14]
+        cmp esi, dword ptr [edx + 0xc]
+        jl L_7DEC2C
+        pop edi
+        pop ebx
+    L_7DEC78:
+        fstp st(0)
+        pop esi
+        ret
+    }
+}
