@@ -1424,3 +1424,42 @@ L_fail:
         ret 0x4
     }
 }
+
+extern "C" void ext_0059F5C0();
+
+// [0x005E0060] sub_005E0060 (104 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005E0060(void* self) {
+    __asm {
+        push -1
+        push 0x008a6088
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, ecx
+        mov dword ptr [esp + 0x8], edi
+        lea esi, [edi + 0x4]
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0
+        mov dword ptr [edi], 0x00968df4
+        call ext_0059F5C0
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x4], eax
+        mov byte ptr [eax + 0x2d], 1
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x4], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x8], eax
+        mov eax, edi
+        mov dword ptr [esi + 0x8], 0
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
