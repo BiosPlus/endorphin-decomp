@@ -2770,3 +2770,68 @@ extern "C" __declspec(naked) void __stdcall fn_004647D0(void* arg) {
         ret 0x4
     }
 }
+
+extern "C" void ext_0043CB70();
+extern "C" void ext_00678D70();
+extern "C" int mem_00925134;
+
+// [0x00466BA0] sub_00466BA0 (121 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00466BA0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        cmp dword ptr [esp + 0x8], 0x0
+        mov dword ptr [esp], ecx
+        jne L_466BB2
+        mov eax, dword ptr [ecx + 0x24]
+        mov dword ptr [esp + 0x8], eax
+L_466BB2:
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x14]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_466BD0
+        __asm _emit 0xFF __asm _emit 0xD5 // call ebp
+        __asm _emit 0x8D __asm _emit 0xA4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea esp, [esp]
+L_466BD0:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_466BDA
+        __asm _emit 0xFF __asm _emit 0xD5 // call ebp
+L_466BDA:
+        __asm _emit 0x3B __asm _emit 0xF6 // cmp esi, esi
+        je L_466BE0
+        __asm _emit 0xFF __asm _emit 0xD5 // call ebp
+L_466BE0:
+        cmp edi, ebx
+        je L_466C03
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_466BEB
+        __asm _emit 0xFF __asm _emit 0xD5 // call ebp
+L_466BEB:
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [edi]
+        call ext_0043CB70
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_466BFE
+        __asm _emit 0xFF __asm _emit 0xD5 // call ebp
+L_466BFE:
+        add edi, 0x4
+        jmp L_466BD0
+L_466C03:
+        mov edx, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x10]
+        push edx
+        call ext_00678D70
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
