@@ -2264,3 +2264,59 @@ L_F0C0_ret0:
         ret 4
     }
 }
+
+// [0x0049ECB0] sub_0049ECB0 (120 bytes)
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __cdecl fn_0049ECB0(void* first, void* last) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b2fe9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        cmp esi, edi
+        je L_0049ED17
+        jmp L_0049ECE0
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L_0049ECE0:
+        cmp dword ptr [esi + 0x20], 0x0
+        lea eax, [esi + 0x1c]
+        mov dword ptr [esp + 0x10], 0x0
+        je L_0049ECFC
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x78]
+        call eax
+    L_0049ECFC:
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        add esi, 0x24
+        cmp esi, edi
+        mov dword ptr [esp + 0x18], esi
+        jne L_0049ECE0
+    L_0049ED17:
+        mov ecx, dword ptr [esp + 0x8]
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
