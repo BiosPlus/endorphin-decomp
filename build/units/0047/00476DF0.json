@@ -16,5 +16,7 @@
     "0x00476E2C",
     "0x00476E42"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T07:12:57Z"
 }

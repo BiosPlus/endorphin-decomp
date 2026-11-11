@@ -917,3 +917,41 @@ extern "C" void __cdecl fn_00476C30(float* a, float* b, float* c) {
     if (*c < *b) { t = *c; *c = *b; *b = t; }
     if (*b < *a) { t = *b; *b = *a; *a = t; }
 }
+
+// [0x00476DF0] sub_00476DF0 (102 bytes)
+extern "C" void ext_006A6D5C();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00476DF0(void* self) {
+    __asm {
+        push -1
+        push 0x88ca07
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        push 0x504a70
+        push 0x7
+        push 0x54
+        lea eax, [esi + 0x90]
+        push eax
+        mov dword ptr [esp + 0x20], 0x0
+        call ext_006A6D5C
+        mov ecx, dword ptr [mem_00924FF4]
+        push ecx
+        push 0x4
+        push 0x1c
+        add esi, 0x18
+        push esi
+        mov dword ptr [esp + 0x20], 0xffffffff
+        call ext_006A6D5C
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
