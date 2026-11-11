@@ -242,3 +242,44 @@ extern "C" __declspec(naked) void __fastcall fn_006D7500(void* self) {
         ret
     }
 }
+
+// [0x006D9070] sub_006D9070 (96 bytes)
+// state = self->[0x10]; if state is 1 or 2, copy 3 doubles from arg into self->[0x0c]->[0x270],
+// set self->[0x16] = 1 and return true; otherwise return false (ret 4).
+extern "C" __declspec(naked) bool __fastcall fn_006D9070(void* self, int edx_unused, const double* src) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x10]
+        sub esp, 0x20
+        cmp eax, 0x1
+        je L_006D9088
+        cmp eax, 0x2
+        je L_006D9088
+        xor al, al
+        add esp, 0x20
+        ret 0x4
+L_006D9088:
+        mov eax, dword ptr [esp + 0x24]
+        push esi
+        fld qword ptr [eax]
+        fld qword ptr [eax + 0x8]
+        fstp qword ptr [esp + 0xc]
+        fld qword ptr [eax + 0x10]
+        mov eax, dword ptr [ecx + 0xc]
+        mov edx, dword ptr [esp + 0xc]
+        mov esi, dword ptr [esp + 0x10]
+        add eax, 0x270
+        fstp qword ptr [esp + 0x14]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [esp + 0x14]
+        fstp qword ptr [eax]
+        mov dword ptr [eax + 0xc], esi
+        mov esi, dword ptr [esp + 0x18]
+        mov dword ptr [eax + 0x10], edx
+        mov dword ptr [eax + 0x14], esi
+        mov byte ptr [ecx + 0x16], 0x1
+        mov al, 0x1
+        pop esi
+        add esp, 0x20
+        ret 0x4
+    }
+}
