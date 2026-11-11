@@ -3944,3 +3944,50 @@ L_0043D76F:
         ret
     }
 }
+
+// [0x0043CE40] sub_0043CE40 (105 bytes)
+extern "C" void ext_006A6DE0();
+extern "C" int mem_0092566C;
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) int __fastcall fn_0043CE40(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x14
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x20]
+        lea eax, [esp + 0x8]
+        push eax
+        push ecx
+        call dword ptr [mem_0092566C]
+        mov eax, dword ptr [esi + 0xf8]
+        mov dword ptr [esp + 0x4], eax
+        sub eax, dword ptr [esp + 0x14]
+        fild dword ptr [esp + 0x4]
+        add eax, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], eax
+        fild dword ptr [esp + 0x4]
+        fild dword ptr [esp + 0x1c]
+        fld st(2)
+        fldz
+        fadd st(1), st
+        fld qword ptr [mem_00993828]
+        fmul st(2), st
+        fxch st(3)
+        fsubrp st(2), st
+        fld st(3)
+        fsub st, st(1)
+        fxch st(5)
+        fsub st, st(1)
+        fdivp st(5), st
+        fxch st(1)
+        fmulp st(4), st
+        faddp st(2), st
+        fmulp st(1), st
+        faddp st(1), st
+        call ext_006A6DE0
+        pop esi
+        add esp, 0x14
+        ret 0x4
+    }
+}
