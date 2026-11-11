@@ -2308,3 +2308,18 @@ extern "C" __declspec(naked) void __fastcall fn_007CD960(void* self) {
         ret
     }
 }
+
+// [0x007C7970] sub_007C7970 (103 bytes)
+extern "C" int __cdecl fn_007C7970(char* self) {
+    int i = 0;
+    unsigned int* p = (unsigned int*)(self + 0x20);
+    do {
+        if ((p[-8] & 0x7f800000u) == 0x7f800000u) return 1;
+        if ((p[-4] & 0x7f800000u) == 0x7f800000u) return 1;
+        if ((p[0] & 0x7f800000u) == 0x7f800000u) return 1;
+        if ((p[4] & 0x7f800000u) == 0x7f800000u) return 1;
+        ++i;
+        ++p;
+    } while (i < 3);
+    return 0;
+}
