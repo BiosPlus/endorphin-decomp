@@ -2607,3 +2607,45 @@ empty_00402630:
         ret
     }
 }
+
+// [0x0040C490] sub_0040C490 (119 bytes)
+extern "C" void ext_0040B220();
+extern "C" int mem_00924FF0;
+extern "C" int mem_00925694;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0040C490(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        call ext_0040B220
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], 0
+        call dword ptr [mem_00924FF0]
+        mov edx, dword ptr [esi + 0xa4]
+        push eax
+        push 0
+        push 0x180
+        push edx
+        call dword ptr [mem_00925694]
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
