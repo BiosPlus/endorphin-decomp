@@ -17,5 +17,7 @@
     "0x0040D4B0",
     "0x0040D4BF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T03:20:55Z"
 }
