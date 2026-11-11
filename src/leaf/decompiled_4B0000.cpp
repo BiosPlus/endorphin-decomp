@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_4B0000.cpp
 
+#include <string>
+
 extern "C" int mem_00924FE8;
 
 // [0x004B6CC0] sub_004B6CC0 (33 bytes)
@@ -1080,5 +1082,61 @@ extern "C" __declspec(naked) void __fastcall fn_004B5030(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 0x10
         ret
+    }
+}
+
+// [0x004BA060] sub_004BA060 (99 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004BA060(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+    f60a0_top:
+        test esi, esi
+        je f60a0_call1
+        cmp esi, dword ptr [esp + 0x1c]
+        je f60a0_after1
+    f60a0_call1:
+        call ebp
+    f60a0_after1:
+        cmp ebx, dword ptr [esp + 0x20]
+        je f60a0_ret
+        test esi, esi
+        mov edi, ebx
+        jne f60a0_a
+        call ebp
+    f60a0_a:
+        cmp ebx, dword ptr [esi + 0x8]
+        jb f60a0_b
+        call ebp
+    f60a0_b:
+        add ebx, 0x4
+        test esi, esi
+        jne f60a0_c
+        call ebp
+    f60a0_c:
+        cmp edi, dword ptr [esi + 0x8]
+        jb f60a0_d
+        call ebp
+    f60a0_d:
+        mov edi, dword ptr [edi]
+        test edi, edi
+        je f60a0_top
+        mov ecx, edi
+        call dword ptr [mem_00924FF4]
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+        jmp f60a0_top
+    f60a0_ret:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
     }
 }
