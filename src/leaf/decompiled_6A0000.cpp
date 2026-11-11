@@ -1476,3 +1476,73 @@ extern "C" __declspec(naked) void __fastcall fn_006ADBF0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006A84D0] sub_006A84D0 (144 bytes)
+extern "C" void ext_006A5EDE();
+extern "C" void ext_006A631C();
+extern "C" void ext_006A6724();
+extern "C" int mem_009256C4;
+extern "C" int mem_009255BC;
+extern "C" int mem_0092571C;
+
+struct WndClassA006A84D0 {
+    unsigned int style;
+    void* lpfnWndProc;
+    int cbClsExtra;
+    int cbWndExtra;
+    void* hInstance;
+    void* hIcon;
+    void* hCursor;
+    void* hbrBackground;
+    const char* lpszMenuName;
+    const char* lpszClassName;
+};
+
+extern "C" __declspec(naked) int __fastcall fn_006A84D0(void* self) {
+    __asm {
+        sub esp, 0x28
+        push edi
+        call ext_006A5EDE
+        mov edi, dword ptr [eax + 0x8]
+        lea eax, [esp + 0x4]
+        push eax
+        push 0x92df38
+        push edi
+        call dword ptr [mem_009256C4]
+        test eax, eax
+        jne ret_true_006A84D0
+        mov ecx, dword ptr [mem_009255BC]
+        push esi
+        xor esi, esi
+        mov dword ptr [esp + 0x8], 0x848
+        mov dword ptr [esp + 0xc], ecx
+        mov dword ptr [esp + 0x14], esi
+        mov dword ptr [esp + 0x10], esi
+        mov dword ptr [esp + 0x18], edi
+        mov dword ptr [esp + 0x1c], esi
+        call ext_006A5EDE
+        push 0x7f00
+        push esi
+        call dword ptr [mem_0092571C]
+        lea edx, [esp + 0x8]
+        push edx
+        mov dword ptr [esp + 0x24], eax
+        mov dword ptr [esp + 0x28], esi
+        mov dword ptr [esp + 0x2c], esi
+        mov dword ptr [esp + 0x30], 0x92df38
+        call ext_006A6724
+        test eax, eax
+        pop esi
+        jne ret_true_006A84D0
+        call ext_006A631C
+        xor eax, eax
+        pop edi
+        add esp, 0x28
+        ret
+    ret_true_006A84D0:
+        mov eax, 1
+        pop edi
+        add esp, 0x28
+        ret
+    }
+}
