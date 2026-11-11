@@ -2179,3 +2179,56 @@ L_ret:
         ret
     }
 }
+
+// [0x00641E90] sub_00641E90 (113 bytes)
+extern "C" int mem_00925064;
+extern "C" int mem_00925100;
+
+extern "C" __declspec(naked) void __fastcall fn_00641E90(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push 0x4
+        push 0x0
+        push 0x97cdac
+        mov ecx, esi
+        call dword ptr [mem_00925060]
+        mov ecx, dword ptr [mem_00924EC4]
+        mov ecx, dword ptr [ecx]
+        cmp eax, ecx
+        jne short L_found
+        push ecx
+        push 0x0
+        mov ecx, esi
+        call dword ptr [mem_00925100]
+        pop esi
+        ret
+    L_found:
+        test eax, eax
+        je short L_last
+        push eax
+        push 0x0
+        mov ecx, esi
+        call dword ptr [mem_00925100]
+    L_last:
+        mov edx, dword ptr [mem_00924EC4]
+        mov eax, dword ptr [edx]
+        push 0x4
+        push eax
+        push 0x97cdac
+        mov ecx, esi
+        call dword ptr [mem_00925064]
+        mov ecx, dword ptr [mem_00924EC4]
+        mov ecx, dword ptr [ecx]
+        cmp eax, ecx
+        je short L_done
+        push ecx
+        add eax, 0x1
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00925100]
+    L_done:
+        pop esi
+        ret
+    }
+}
