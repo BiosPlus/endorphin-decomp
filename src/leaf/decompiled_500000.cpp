@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_500000.cpp
 
+#include <string>
+
 // [0x00504930] sub_00504930 (10 bytes)
 extern "C" void ext_00527280();
 extern "C" void ext_005220C0();
@@ -2027,5 +2029,49 @@ extern "C" __declspec(naked) void __fastcall fn_00504B80(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 0x14
         ret
+    }
+}
+
+// [0x00505360] sub_00505360 (100 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __fastcall fn_00505360(void* self, int edx_unused, const void* src) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0ch]
+        mov esi, ecx
+        lea eax, [edi + 8]
+        push eax
+        lea ecx, [esi + 8]
+        call dword ptr [mem_00924FDC]
+        mov ecx, dword ptr [edi + 24h]
+        mov dword ptr [esi + 24h], ecx
+        fld dword ptr [edi + 28h]
+        fstp dword ptr [esi + 28h]
+        mov eax, esi
+        fld dword ptr [edi + 2ch]
+        fstp dword ptr [esi + 2ch]
+        fld dword ptr [edi + 30h]
+        fstp dword ptr [esi + 30h]
+        fld dword ptr [edi + 34h]
+        fstp dword ptr [esi + 34h]
+        fld dword ptr [edi + 38h]
+        fstp dword ptr [esi + 38h]
+        fld dword ptr [edi + 3ch]
+        fstp dword ptr [esi + 3ch]
+        fld dword ptr [edi + 40h]
+        fstp dword ptr [esi + 40h]
+        fld dword ptr [edi + 44h]
+        fstp dword ptr [esi + 44h]
+        fld dword ptr [edi + 48h]
+        fstp dword ptr [esi + 48h]
+        fld dword ptr [edi + 4ch]
+        fstp dword ptr [esi + 4ch]
+        mov edx, dword ptr [edi + 50h]
+        pop edi
+        mov dword ptr [esi + 50h], edx
+        pop esi
+        ret 4
     }
 }
