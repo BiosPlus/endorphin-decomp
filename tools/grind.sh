@@ -35,6 +35,7 @@ MODEL_CHAIN=(
   "claude-sonnet-5.5"
   "claude-opus-5.5"
   "gemini-4-argon"
+  "gemini-4-carbon"
 )
 
 # Ensure git pre-commit security hook is installed if .git/hooks is writable
@@ -83,7 +84,7 @@ if [[ "${GRIND_VERBOSE:-0}" == 1 ]]; then
 echo "=== Endorphin Autonomous Parallel Grinder (1 Agent / Function Try) ==="
 echo "Verified CLIs : claude=$HAS_CLAUDE | agy=$HAS_AGY"
 echo "Pipeline      : haiku runners=$WAVE_SIZE (tries every function) | escalation cap=${ESC_CAP}/model | total_pulls=$((MAX_WAVES*WAVE_SIZE)) | push_every=$((PUSH_EVERY*WAVE_SIZE)) | timeout=${AGENT_TIMEOUT}s"
-echo "Model Chain   : claude-haiku-5.5 -> gpt-oss-120b -> gemini-3.8-flash -> claude-sonnet-5.5 -> claude-opus-5.5 -> gemini-4-argon"
+echo "Model Chain   : claude-haiku-5.5 -> gpt-oss-120b -> gemini-3.8-flash -> claude-sonnet-5.5 -> claude-opus-5.5 -> gemini-4-argon -> gemini-4-carbon"
 echo "Policy        : Haiku first on every function; a failure escalates only that function one stage up; per-model caps limit expensive concurrency"
 echo "Security Mode : Scoped Allowlist + Sandbox + PreToolUse Guard [NO skip-dangerously]"
 else
@@ -192,7 +193,7 @@ resolve_backend_for_model() {
         fi
       fi
       ;;
-    gpt-oss-120b|gemini-3.8-flash|gemini-4-argon)
+    gpt-oss-120b|gemini-3.8-flash|gemini-4-argon|gemini-4-carbon)
       if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "agy:$model_choice"; then
         echo "agy"
         return
@@ -307,6 +308,9 @@ run_single_function_agent() {
         ;;
       gemini-4-argon)
         run_agy_with_model "gemini-4-argon" "high" "$prompt" "$log_file" || exit_code=$?
+        ;;
+      gemini-4-carbon)
+        run_agy_with_model "gemini-4-carbon" "high" "$prompt" "$log_file" || exit_code=$?
         ;;
       claude-haiku-5.5)
         run_agy_with_model "claude-haiku-4-5@20251001" "high" "$prompt" "$log_file" || exit_code=$?
