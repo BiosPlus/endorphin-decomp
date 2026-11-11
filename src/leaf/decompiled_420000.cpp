@@ -1971,3 +1971,41 @@ extern "C" __declspec(naked) void __fastcall fn_00425DC0(void* self) {
         ret
     }
 }
+
+// [0x00425E60] sub_00425E60 (124 bytes)
+extern "C" void ext_004197A0();
+extern "C" void ext_00419840();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5FA4();
+
+extern "C" __declspec(naked) void __fastcall fn_00425E60(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push -1
+        push 0x878903
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x190
+        push 0x0
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x19c], 0x0
+        call ext_004197A0
+        lea ecx, [esp]
+        mov byte ptr [esp + 0x198], 0x1
+        call ext_006A5FA4
+        lea ecx, [esp]
+        mov byte ptr [esp + 0x198], 0x0
+        call ext_00419840
+        mov eax, dword ptr [esp + 0x1a4]
+        test eax, eax
+        je done_00425E60
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    done_00425E60:
+        mov ecx, dword ptr [esp + 0x190]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x19c
+        ret 0x10
+    }
+}
