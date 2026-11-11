@@ -4048,3 +4048,65 @@ L_end:
         ret 4
     }
 }
+
+// [0x004360C0] sub_004360C0 (105 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_005B11F0();
+extern "C" void ext_0042FE70();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004360C0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        mov ebx, ecx
+        call ext_00465B30
+        mov eax, dword ptr [eax + 0x14]
+        mov ecx, dword ptr [eax + 0x34]
+        call ext_005B11F0
+        mov esi, eax
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x1c]
+        mov ecx, esi
+        call eax
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        je done_4360C0
+        mov edx, dword ptr [eax + 0x8]
+        sub edx, ecx
+        sar edx, 0x2
+        je done_4360C0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x1c]
+        push ebp
+        push edi
+        mov ecx, esi
+        call edx
+        mov ebp, dword ptr [mem_00925134]
+        mov esi, eax
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe bounds_ok_4360C0
+        call ebp
+        cmp edi, dword ptr [esi + 0x8]
+bounds_ok_4360C0:
+        jb load_4360C0
+        call ebp
+load_4360C0:
+        mov edi, dword ptr [edi]
+        test edi, edi
+        je skip_4360C0
+        push edi
+        mov ecx, ebx
+        call ext_0042FE70
+skip_4360C0:
+        pop edi
+        pop ebp
+done_4360C0:
+        pop esi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
