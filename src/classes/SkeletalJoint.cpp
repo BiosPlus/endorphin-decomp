@@ -169,3 +169,59 @@ extern "C" __declspec(naked) void __fastcall fn_0064E560(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" void ext_007C5920();
+extern "C" void ext_007C5950();
+extern "C" void ext_007C5980();
+extern "C" int mem_009802E0;
+extern "C" int mem_00955A40;
+
+// [0x0064E380] SkeletalJoint::vfunc_18 (106 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0064E380(void* self, int edx_unused, float* out) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x64]
+        push edi
+        push eax
+        call ext_007C5900
+        mov ebx, eax
+        add esp, 0x4
+        test bl, 0x1
+        je L_e380_else1
+        mov ecx, dword ptr [esi + 0x64]
+        push ecx
+        call ext_007C5920
+        add esp, 0x4
+        jmp L_e380_join1
+L_e380_else1:
+        fld dword ptr [mem_009802E0]
+L_e380_join1:
+        test bl, 0x6
+        mov edi, dword ptr [esp + 0x10]
+        fstp dword ptr [edi]
+        je L_e380_else2
+        mov edx, dword ptr [esi + 0x64]
+        push edx
+        call ext_007C5950
+        fstp dword ptr [edi + 0x4]
+        mov eax, dword ptr [esi + 0x64]
+        push eax
+        call ext_007C5980
+        fstp dword ptr [edi + 0x8]
+        add esp, 0x8
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+L_e380_else2:
+        fld dword ptr [mem_00955A40]
+        fst dword ptr [edi + 0x4]
+        fstp dword ptr [edi + 0x8]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
