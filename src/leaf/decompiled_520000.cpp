@@ -1955,3 +1955,37 @@ extern "C" __declspec(naked) void __fastcall fn_0052F610(void* self) {
         ret
     }
 }
+
+// [0x0052F690] sub_0052F690 (91 bytes)
+extern "C" void ext_00538530();
+extern "C" void ext_0053B240();
+
+extern "C" __declspec(naked) void __fastcall fn_0052F690(void* self) {
+    __asm {
+        push -1
+        push 0x894d68
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 8], esi
+        call ext_0053B240
+        lea edi, [esi + 0x3c]
+        mov ecx, edi
+        mov dword ptr [esp + 0x14], 0
+        mov dword ptr [esi], 0x953f0c
+        mov dword ptr [esi + 0x14], 0x953f04
+        call ext_00538530
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [edi], 0x953a14
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
