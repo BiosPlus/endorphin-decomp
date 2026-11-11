@@ -1364,3 +1364,60 @@ extern "C" __declspec(naked) void __fastcall fn_00494860(void* self) {
         ret 8
     }
 }
+
+// [0x00494070] sub_00494070 (89 bytes)
+// Walks a chain starting at 'start': returns the first node whose vfunc[0x14]() & mask == mask,
+// else 0. Each step is cur = dynamic_cast<Tgt*>(cur->vfunc[4](0)).
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void* __cdecl fn_00494070(unsigned int mask, void* start) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        xor ebx, ebx
+        test esi, esi
+        je null_exit
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+loop_top:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x50]
+        mov ecx, esi
+        call edx
+        and eax, edi
+        cmp eax, edi
+        je found
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x10]
+        push 0
+        push 0xa2e2d8
+        push 0xa2e2f8
+        push 0
+        push 0
+        mov ecx, esi
+        call edx
+        push eax
+        call ext_006A6E9E
+        mov esi, eax
+        add esp, 0x14
+        test esi, esi
+        jne loop_top
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        ret
+found:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret
+null_exit:
+        pop esi
+        mov eax, ebx
+        pop ebx
+        ret
+    }
+}
