@@ -1045,3 +1045,54 @@ extern "C" __declspec(naked) void __cdecl fn_004275E0(void* dst, void* src) {
         ret
     }
 }
+
+// [0x00427210] sub_00427210 (91 bytes)
+extern "C" int mem_00924FF0;
+extern "C" int mem_00ACD9D8[54];
+
+extern "C" __declspec(naked) void* __fastcall fn_00427210(void* self, int edx_unused, void* str) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0Ch]
+        xor esi, esi
+loop_top:
+        mov ecx, edi
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr mem_00ACD9D8[esi*4]
+cmp_loop:
+        mov dl, byte ptr [ecx]
+        cmp dl, byte ptr [eax]
+        jne short diff
+        test dl, dl
+        je short zero_result
+        mov dl, byte ptr [ecx + 1]
+        cmp dl, byte ptr [eax + 1]
+        jne short diff
+        add ecx, 2
+        add eax, 2
+        test dl, dl
+        jne short cmp_loop
+zero_result:
+        xor eax, eax
+        jmp short result
+diff:
+        sbb eax, eax
+        sbb eax, -1
+result:
+        test eax, eax
+        je short found
+        add esi, 1
+        cmp esi, 36h
+        jl short loop_top
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 4
+found:
+        mov eax, dword ptr mem_00ACD9D8[esi*4]
+        pop edi
+        pop esi
+        ret 4
+    }
+}
