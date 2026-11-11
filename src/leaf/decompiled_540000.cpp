@@ -1014,3 +1014,25 @@ extern "C" __declspec(naked) void __fastcall fn_0054A0E0(void* self) {
         ret
     }
 }
+
+// [0x00540F00] sub_00540F00 (93 bytes)
+extern "C" bool __fastcall fn_00540F00(void* self, int edx_unused, int a1, int a2) {
+    char* p = (char*)self;
+    if (*(int*)(p + 0x108) == 0) {
+        return false;
+    }
+    int esi = *(int*)(p + 0x138) - a2;
+    int k = 0;
+    char* e = p + 0x10;
+    for (; k < 4; ++k, e += 0x3c) {
+        if (a1 < *(int*)(e - 4) || a1 > *(int*)(e + 4) || esi < *(int*)e || esi > *(int*)(e + 8)) {
+            continue;
+        }
+        if (*(int*)(p + 0xf8) == k) {
+            return false;
+        }
+        *(int*)(p + 0xf8) = k;
+        return true;
+    }
+    return false;
+}
