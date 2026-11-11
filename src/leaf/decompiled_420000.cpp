@@ -1510,3 +1510,65 @@ extern "C" __declspec(naked) void __fastcall fn_00427B20(void* self) {
         ret
     }
 }
+
+// [0x00427270] sub_00427270 (113 bytes)
+extern "C" int mem_00924FEC;
+extern "C" int mem_00924FC0;
+
+extern "C" __declspec(naked) void __fastcall fn_00427270(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        lea esi, [ebx + 0x4]
+        mov ecx, esi
+        call dword ptr [mem_00924FEC]
+        test al, al
+        je L_00427270_nonempty
+        pop esi
+        xor al, al
+        pop ebx
+        ret 0x4
+    L_00427270_nonempty:
+        push edi
+        mov edi, dword ptr [mem_00924FC0]
+        push 0x92e3c8
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je L_00427270_alt
+        cmp byte ptr [ebx + 0x1], 0x0
+        jne L_00427270_false
+    L_00427270_alt:
+        push 0x92e3d0
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je L_00427270_ctrl
+        cmp byte ptr [ebx + 0x2], 0x0
+        jne L_00427270_false
+    L_00427270_ctrl:
+        push 0x92f104
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je L_00427270_true
+        cmp byte ptr [ebx], 0x0
+        je L_00427270_true
+    L_00427270_false:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 0x4
+    L_00427270_true:
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret 0x4
+    }
+}
