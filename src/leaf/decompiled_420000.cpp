@@ -906,3 +906,46 @@ extern "C" __declspec(naked) void __fastcall fn_00420070(void* self) {
         ret
     }
 }
+
+// [0x0042F6F0] sub_0042F6F0 (89 bytes)
+extern "C" int mem_00924EA8;
+extern "C" int mem_00924ED0;
+extern "C" int mem_00924FD8;
+extern "C" int mem_0092F880;
+extern "C" int mem_0092F878;
+extern "C" int mem_0092F870;
+extern "C" __declspec(naked) void __fastcall fn_0042F6F0(void* self, int edx_unused, void* out) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp+0xc]
+        mov esi, ecx
+        mov ecx, edi
+        call dword ptr [mem_00924EA8]
+        cmp byte ptr [esi], 0
+        je skip1
+        push offset mem_0092F880
+        mov ecx, edi
+        call dword ptr [mem_00924ED0]
+skip1:
+        cmp byte ptr [esi+2], 0
+        je skip2
+        push offset mem_0092F878
+        mov ecx, edi
+        call dword ptr [mem_00924ED0]
+skip2:
+        cmp byte ptr [esi+1], 0
+        je skip3
+        push offset mem_0092F870
+        mov ecx, edi
+        call dword ptr [mem_00924ED0]
+skip3:
+        add esi, 4
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FD8]
+        pop edi
+        pop esi
+        ret 4
+    }
+}
