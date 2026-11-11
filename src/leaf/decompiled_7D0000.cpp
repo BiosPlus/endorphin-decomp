@@ -1536,3 +1536,60 @@ L_007DD179:
         ret 8
     }
 }
+
+// [0x007DCC20] sub_007DCC20 (110 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007DCC20(void* a1, void* a2, void* a3) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        mov dword ptr [esi + 0x8], 0x0
+    L32:
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [eax + 0x28]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        jne L60
+    L40:
+        add dword ptr [ecx], 0x1
+        mov eax, dword ptr [ecx]
+        cmp eax, dword ptr [edx + 0x8]
+        jge L55
+        mov ebx, dword ptr [edx]
+        cmp dword ptr [ebx + 4*eax], 0x0
+        je L40
+        cmp eax, dword ptr [edx + 0x8]
+    L55:
+        jne L5B
+        xor eax, eax
+        jmp L75
+    L5B:
+        mov edx, dword ptr [edx]
+        mov eax, dword ptr [edx + 4*eax]
+    L60:
+        mov edx, dword ptr [eax + 0x10]
+        mov dword ptr [ecx + 0x4], edx
+        mov edx, dword ptr [esi + 0x8]
+        mov ebp, dword ptr [eax + 0xc]
+        mov ebx, dword ptr [esi]
+        mov dword ptr [ebx + 4*edx], ebp
+        add dword ptr [esi + 0x8], 0x1
+    L75:
+        mov edx, dword ptr [esi + 0x8]
+        cmp edx, dword ptr [esi + 0x4]
+        jge L81
+        test eax, eax
+        jne L32
+    L81:
+        xor ecx, ecx
+        test eax, eax
+        setne cl
+        pop esi
+        pop ebp
+        pop ebx
+        mov eax, ecx
+        ret
+    }
+}
