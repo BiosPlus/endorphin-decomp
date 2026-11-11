@@ -986,3 +986,64 @@ extern "C" __declspec(naked) void __fastcall fn_004E3A30(void* self) {
         ret
     }
 }
+
+// [0x004EFB20] sub_004EFB20 (126 bytes)
+extern "C" void ext_004EF790();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) bool __cdecl fn_004EFB20() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov ecx, edi
+        sub ecx, ebp
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov esi, edx
+        shr esi, 0x1f
+        add esi, edx
+        test ebx, ebx
+        jne chk_ok1
+        call dword ptr [mem_00925134]
+chk_ok1:
+        lea eax, [8*esi]
+        sub eax, esi
+        mov esi, dword ptr [esp + 0x20]
+        lea eax, [esi + 4*eax]
+        cmp eax, dword ptr [ebx + 0x8]
+        ja chk_bad2
+        cmp eax, dword ptr [ebx + 0x4]
+        jae chk_ok2
+chk_bad2:
+        call dword ptr [mem_00925134]
+chk_ok2:
+        mov byte ptr [esp + 0x18], 0
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x18]
+        push ecx
+        push edx
+        push esi
+        push edi
+        lea eax, [esp + 0x2c]
+        push ebp
+        push eax
+        call ext_004EF790
+        add esp, 0x18
+        xor ecx, ecx
+        cmp dword ptr [eax], edi
+        pop edi
+        pop esi
+        sete cl
+        pop ebp
+        mov al, cl
+        pop ebx
+        ret
+    }
+}
