@@ -3118,3 +3118,21 @@ L_copy:
         ret
     }
 }
+
+// [0x007CA120] sub_007CA120 (121 bytes)
+extern "C" void __cdecl fn_007CA120(void* a0, float* a1, void* a2, float* a3) {
+    float tmp[3];
+    float* p = a1;
+    if (a0 != 0) {
+        tmp[0] = *(float*)((char*)a0 + 0x170) + a1[0];
+        tmp[1] = *(float*)((char*)a0 + 0x174) + a1[1];
+        tmp[2] = *(float*)((char*)a0 + 0x178) + a1[2];
+        p = tmp;
+    }
+    fn_007CA080(a0, p, a2, a3);
+    if (a2 != 0) {
+        a3[0] -= *(float*)((char*)a2 + 0x170);
+        a3[1] -= *(float*)((char*)a2 + 0x174);
+        a3[2] -= *(float*)((char*)a2 + 0x178);
+    }
+}
