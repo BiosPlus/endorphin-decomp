@@ -1881,3 +1881,49 @@ extern "C" __declspec(naked) void* __cdecl fn_00489230(void* a1, void* a2, void*
         ret
     }
 }
+
+// [0x0048EF20] sub_0048EF20 (89 bytes)
+extern "C" void ext_0048E3D0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0048EF20(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        test ebx, ebx
+        push esi
+        push edi
+        mov esi, ecx
+        je L_invalid
+        cmp ebx, dword ptr [esp + 0x1c]
+        je L_ok
+L_invalid:
+        call dword ptr [mem_00925134]
+L_ok:
+        mov edi, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x20]
+        cmp edi, ecx
+        je L_store
+        mov eax, dword ptr [esi + 0x8]
+        mov byte ptr [esp + 0x14], 0
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x18]
+        push edx
+        push edi
+        push eax
+        push ecx
+        call ext_0048E3D0
+        add esp, 0x18
+        mov dword ptr [esi + 0x8], eax
+L_store:
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 0x4], edi
+        pop edi
+        pop esi
+        mov dword ptr [eax], ebx
+        pop ebx
+        ret 0x14
+    }
+}

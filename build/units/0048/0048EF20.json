@@ -13,5 +13,7 @@
     "0x0048EF35",
     "0x0048EF60"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T02:54:35Z"
 }
