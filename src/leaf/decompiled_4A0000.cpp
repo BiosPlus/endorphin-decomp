@@ -849,3 +849,63 @@ extern "C" __declspec(naked) void __cdecl fn_004ABF10(unsigned int* first, unsig
         ret
     }
 }
+
+// [0x004A5F70] sub_004A5F70 (98 bytes)
+extern "C" void ext_00644F30();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004A5F70(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+    f5f70_top:
+        test esi, esi
+        je f5f70_call1
+        cmp esi, dword ptr [esp + 0x1c]
+        je f5f70_after1
+    f5f70_call1:
+        call ebp
+    f5f70_after1:
+        cmp ebx, dword ptr [esp + 0x20]
+        je f5f70_ret
+        test esi, esi
+        mov edi, ebx
+        jne f5f70_a
+        call ebp
+    f5f70_a:
+        cmp ebx, dword ptr [esi + 0x8]
+        jb f5f70_b
+        call ebp
+    f5f70_b:
+        add ebx, 0x4
+        test esi, esi
+        jne f5f70_c
+        call ebp
+    f5f70_c:
+        cmp edi, dword ptr [esi + 0x8]
+        jb f5f70_d
+        call ebp
+    f5f70_d:
+        mov edi, dword ptr [edi]
+        test edi, edi
+        je f5f70_top
+        mov ecx, edi
+        call ext_00644F30
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+        jmp f5f70_top
+    f5f70_ret:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
