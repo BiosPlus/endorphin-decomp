@@ -1,5 +1,8 @@
 // Decompiled translation unit: src/ExprParser/RealType.cpp
 
+#include <math.h>
+#pragma intrinsic(fabs)
+
 // [0x0066ADC0] ExprParser::RealType::vfunc_3 (32 bytes)
 extern "C" double mem_00987B78;
 
@@ -66,4 +69,17 @@ neg_path:
         call ext_006A6DE0
         ret 0x4
     }
+}
+
+// [0x0066CEA0] ExprParser::RealType::vfunc_42 (97 bytes)
+typedef float (__thiscall *RealVfunc1Fn)(void* self, void* arg);
+
+extern "C" int __fastcall fn_0066CEA0(void* self, int edx_unused, void* a1, void* a2) {
+    void* o1 = *(void**)((char*)a1 + 0x4);
+    float f1 = ((RealVfunc1Fn)(*(void***)o1)[1])(o1, a1);
+    void* o2 = *(void**)((char*)a2 + 0x4);
+    float f2 = ((RealVfunc1Fn)(*(void***)o2)[1])(o2, a2);
+    float d = (float)(f1 - f2);
+    d = (float)fabs((double)d);
+    return ((double)d <= mem_00987B78) ? 1 : 0;
 }
