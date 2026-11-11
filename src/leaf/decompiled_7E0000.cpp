@@ -515,3 +515,18 @@ extern "C" int __cdecl fn_007E3D70(int a1) {
     ((void (__cdecl*)(int, int, int, int*))ext_007C8960)(a1, 5, 4, cell);
     return 1;
 }
+
+extern "C" void ext_007FB140();
+extern "C" void ext_007FB7A0();
+extern "C" void ext_007FC190();
+extern "C" void ext_007FE320();
+extern "C" void ext_007FE800();
+
+// [0x007EFB40] sub_007EFB40 (40 bytes)
+extern "C" void __cdecl fn_007EFB40(int a1) {
+    ((void (__cdecl*)(int))ext_007FE800)(a1);
+    ((void (__cdecl*)(int))ext_007FE320)(a1);
+    ((void (__cdecl*)(int))ext_007FC190)(a1);
+    ((void (__cdecl*)(int))ext_007FB7A0)(a1);
+    ((void (__cdecl*)(int))ext_007FB140)(a1);
+}
