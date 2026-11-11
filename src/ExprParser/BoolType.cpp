@@ -311,3 +311,36 @@ extern "C" __declspec(naked) void __fastcall fn_0067A820(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0066CF70] ExprParser::BoolType::vfunc_18 (94 bytes)
+extern "C" void ext_006720A0();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B5966C;
+extern "C" int mem_00B59664;
+
+extern "C" __declspec(naked) void __fastcall fn_0066CF70(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x008b341e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B5966C], al
+        jne done_0066CF70
+        or dword ptr [mem_00B5966C], eax
+        push 0
+        mov ecx, offset mem_00B59664
+        mov dword ptr [esp + 0xc], 0
+        call ext_006720A0
+        push 0x00921770
+        call ext_006A6C87
+        add esp, 4
+done_0066CF70:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00B59664
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+    }
+}
