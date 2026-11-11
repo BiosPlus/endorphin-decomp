@@ -1137,3 +1137,68 @@ extern "C" __declspec(naked) void __fastcall fn_00476770(void* self) {
         ret
     }
 }
+
+// [0x00470120] sub_00470120 (108 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00470120(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0x0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_check_cur
+        call edi
+    L_check_cur:
+        mov eax, dword ptr [esi + 0x4]
+        cmp byte ptr [eax + 0x45], 0x0
+        je L_has_cur
+        call edi
+        pop edi
+        pop esi
+        ret
+    L_has_cur:
+        mov ecx, dword ptr [eax + 0x8]
+        cmp byte ptr [ecx + 0x45], 0x0
+        jne L_climb
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 0x45], 0x0
+        jne L_store_left
+    L_left_loop:
+        mov ecx, eax
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 0x45], 0x0
+        je L_left_loop
+    L_store_left:
+        pop edi
+        mov dword ptr [esi + 0x4], ecx
+        pop esi
+        ret
+    L_climb:
+        mov eax, dword ptr [eax + 0x4]
+        cmp byte ptr [eax + 0x45], 0x0
+        jne L_store_parent
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_climb_loop:
+        mov ecx, dword ptr [esi + 0x4]
+        cmp ecx, dword ptr [eax + 0x8]
+        jne L_store_parent
+        mov dword ptr [esi + 0x4], eax
+        mov edx, eax
+        mov eax, dword ptr [edx + 0x4]
+        cmp byte ptr [eax + 0x45], 0x0
+        je L_climb_loop
+    L_store_parent:
+        pop edi
+        mov dword ptr [esi + 0x4], eax
+        pop esi
+        ret
+    }
+}
