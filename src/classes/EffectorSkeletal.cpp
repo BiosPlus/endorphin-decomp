@@ -34,3 +34,37 @@ extern "C" float* __fastcall fn_006310C0(void* self, int edx_unused, float* out)
     out[3] = src[3];
     return out;
 }
+
+// [0x006309E0] EffectorSkeletal::vfunc_28 (131 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006309E0(void* self) {
+    __asm {
+        fld dword ptr [esp + 0x4]
+        fld st(0)
+        fmul dword ptr [ecx + 0xd0]
+        fstp dword ptr [ecx + 0xd0]
+        fld dword ptr [ecx + 0xec]
+        fmul st, st(1)
+        fstp dword ptr [ecx + 0xec]
+        fld dword ptr [ecx + 0xcc]
+        fmul st, st(1)
+        fstp dword ptr [ecx + 0xcc]
+        fld dword ptr [ecx + 0xdc]
+        fmul st, st(1)
+        fstp dword ptr [ecx + 0xdc]
+        fld dword ptr [ecx + 0xe4]
+        fmul st, st(1)
+        fstp dword ptr [ecx + 0xe4]
+        fld dword ptr [ecx + 0xd4]
+        fmul st, st(1)
+        fstp dword ptr [ecx + 0xd4]
+        fld dword ptr [ecx + 0xe0]
+        fmul st, st(1)
+        fstp dword ptr [ecx + 0xe0]
+        fld dword ptr [ecx + 0xe8]
+        fmul st, st(1)
+        fstp dword ptr [ecx + 0xe8]
+        fmul dword ptr [ecx + 0xd8]
+        fstp dword ptr [ecx + 0xd8]
+        ret 0x4
+    }
+}
