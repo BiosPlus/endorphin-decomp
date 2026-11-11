@@ -143,3 +143,22 @@ done:
         ret 0x4
     }
 }
+
+extern "C" void __fastcall ext_00648470(void* p);
+extern "C" void __fastcall ext_00648790(void* p);
+extern "C" void __cdecl ext_006A5C5C(void* p);
+
+// [0x005C8860] NMData::CollisionModelData::vfunc_64 (65 bytes)
+extern "C" void __fastcall fn_005C8860(void* self) {
+    char* s = (char*)self;
+    if (*(void**)(s + 0x16C)) {
+        ext_00648470(*(void**)(s + 0x16C));
+        void* p = *(void**)(s + 0x16C);
+        if (p) {
+            ext_00648790(p);
+            ext_006A5C5C(p);
+        }
+        *(void**)(s + 0x16C) = 0;
+        *(unsigned char*)(s + 0x168) = 0;
+    }
+}
