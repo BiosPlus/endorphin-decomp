@@ -3136,3 +3136,22 @@ extern "C" void __cdecl fn_007CA120(void* a0, float* a1, void* a2, float* a3) {
         a3[2] -= *(float*)((char*)a2 + 0x178);
     }
 }
+
+// [0x007C9370] sub_007C9370 (34 bytes)
+extern "C" void ext_007CA120();
+
+extern "C" __declspec(naked) void __cdecl fn_007C9370(void* a0, float* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [eax + 0x98]
+        push 0x0
+        lea ecx, [eax + 0x12c]
+        push ecx
+        push edx
+        call ext_007CA120
+        add esp, 0x10
+        ret
+    }
+}
