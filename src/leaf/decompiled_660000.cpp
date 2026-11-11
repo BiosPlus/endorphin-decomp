@@ -4055,3 +4055,68 @@ L_661F05:
         ret
     }
 }
+
+// [0x00664DB0] sub_00664DB0 (143 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00664DB0(std::string::iterator* ret, const char* first, const char* last, std::string::iterator out, bool (*pred)(char)) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        cmp ebp, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        je L_EPI
+        push ebx
+    L_LOOP:
+        movzx eax, byte ptr [ebp]
+        push eax
+        call dword ptr [esp + 0x2c]
+        add esp, 0x4
+        test al, al
+        jne L_SKIP
+        cmp esi, -0x2
+        mov ebx, edi
+        je L_NC1
+        test esi, esi
+        jne L_OK1
+        call dword ptr [mem_00925134]
+    L_OK1:
+        mov ecx, esi
+        call dword ptr [mem_00924E44]
+        add eax, dword ptr [esi + 0x14]
+        cmp edi, eax
+        jb L_NC1
+        call dword ptr [mem_00925134]
+    L_NC1:
+        add edi, 0x1
+        cmp esi, -0x2
+        je L_NC2
+        test esi, esi
+        jne L_OK2
+        call dword ptr [mem_00925134]
+    L_OK2:
+        mov ecx, esi
+        call dword ptr [mem_00924E44]
+        add eax, dword ptr [esi + 0x14]
+        cmp ebx, eax
+        jb L_NC2
+        call dword ptr [mem_00925134]
+    L_NC2:
+        mov cl, byte ptr [ebp]
+        mov byte ptr [ebx], cl
+    L_SKIP:
+        add ebp, 0x1
+        cmp ebp, dword ptr [esp + 0x1c]
+        jne L_LOOP
+        pop ebx
+    L_EPI:
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 0x4], edi
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        pop ebp
+        ret
+    }
+}
