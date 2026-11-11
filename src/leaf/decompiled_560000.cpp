@@ -776,3 +776,62 @@ extern "C" __declspec(naked) void __fastcall fn_0056B850(void* self) {
         ret 8
     }
 }
+
+extern "C" int mem_009250EC;
+extern "C" int mem_009250E4;
+extern "C" int mem_009250E8;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924FD8;
+extern "C" int mem_00924EC0;
+
+// [0x00566F70] sub_00566F70 (109 bytes)
+// Reads chars from the istream until ':' is seen; on ':' puts it back, reads a word into this+4 and returns true if it equals the literal at 0x958BFC, else appends it to *(this)+0x3c and loops. Otherwise appends the char to *(this)+0x3c. ret 4.
+extern "C" __declspec(naked) void __fastcall fn_00566F70(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_009250EC]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov ebx, ecx
+    loop_top:
+        mov ecx, edi
+        call dword ptr [mem_009250E4]
+        cmp al, 0x3a
+        mov byte ptr [esp + 0x14], al
+        jne not_colon
+        push 0x3a
+        mov ecx, edi
+        call dword ptr [mem_009250E8]
+        lea esi, [ebx + 0x4]
+        push esi
+        push edi
+        call ebp
+        push 0x958bfc
+        push esi
+        call dword ptr [mem_00924FC0]
+        add esp, 0x10
+        test al, al
+        jne done_true
+        mov ecx, dword ptr [ebx]
+        push esi
+        add ecx, 0x3c
+        call dword ptr [mem_00924FD8]
+        jmp loop_top
+    not_colon:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [ebx]
+        push eax
+        add ecx, 0x3c
+        call dword ptr [mem_00924EC0]
+        jmp loop_top
+    done_true:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        ret 0x4
+    }
+}
