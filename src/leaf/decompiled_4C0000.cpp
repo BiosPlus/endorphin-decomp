@@ -1023,3 +1023,45 @@ extern "C" __declspec(naked) int __cdecl fn_004CE590(void* a1) {
         ret
     }
 }
+
+extern "C" void ext_0067DAD0();
+extern "C" void ext_006A7250();
+
+// [0x004C50C0] sub_004C50C0 (96 bytes)
+// Builds a 3x3 identity block on the stack, passes its address to sub_0067DAD0 (stdcall-style,
+// callee pops), then returns the Euclidean length of row 0 via CIsqrt.
+extern "C" __declspec(naked) float __cdecl fn_004C50C0(void) {
+    __asm {
+        sub esp, 0x28
+        fldz
+        lea eax, [esp + 0x4]
+        fst dword ptr [esp + 0xc]
+        push eax
+        fst dword ptr [esp + 0xc]
+        fst dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0x14]
+        fst dword ptr [esp + 0x24]
+        fstp dword ptr [esp + 0x20]
+        fld1
+        fst dword ptr [esp + 0x8]
+        fst dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0x28]
+        call ext_0067DAD0
+        fld dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0xc]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        add esp, 0x28
+        ret
+    }
+}
