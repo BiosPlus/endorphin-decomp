@@ -2315,3 +2315,41 @@ extern "C" __declspec(naked) void* __cdecl fn_0062BA00(void* a1, void* a2, void*
         ret
     }
 }
+
+// [0x00620F80] sub_00620F80 (95 bytes)
+// __thiscall ret 0x4: copy-constructs the 0x48-byte element (std::string at +0x0 and +0x1c from arg,
+// doubles at +0x38/+0x40) inside an SEH frame (state -1 -> 0 between the two string copies).
+extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void* __fastcall fn_00620F80(void* self, int edx_unused, const void* src) {
+    __asm {
+        push -1
+        push 0x872c79
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        call dword ptr [mem_00924FE0]
+        lea eax, [edi + 0x1c]
+        push eax
+        lea ecx, [esi + 0x1c]
+        mov dword ptr [esp + 0x18], 0
+        call dword ptr [mem_00924FE0]
+        fld qword ptr [edi + 0x38]
+        mov ecx, dword ptr [esp + 0xc]
+        fstp qword ptr [esi + 0x38]
+        fld qword ptr [edi + 0x40]
+        pop edi
+        fstp qword ptr [esi + 0x40]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
