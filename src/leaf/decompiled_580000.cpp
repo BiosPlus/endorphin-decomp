@@ -1238,3 +1238,80 @@ L_notfound:
         ret 0x4
     }
 }
+
+// [0x00586BE0] sub_00586BE0 (134 bytes)
+extern "C" void ext_00585010();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __cdecl fn_00586BE0() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        cmp esi, ebx
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov dword ptr [esp + 0x1c], esi
+        je L_00586C0B
+        mov eax, dword ptr [esp + 0x28]
+        mov eax, dword ptr [eax]
+        __asm _emit 0x8b
+        __asm _emit 0xff
+L_00586C00:
+        cmp dword ptr [esi], eax
+        je L_00586C0B
+        add esi, 4
+        cmp esi, ebx
+        jne L_00586C00
+L_00586C0B:
+        test edi, edi
+        mov ebp, dword ptr [mem_00925134]
+        je L_00586C1B
+        cmp edi, dword ptr [esp + 0x20]
+        je L_00586C1D
+L_00586C1B:
+        call ebp
+L_00586C1D:
+        cmp esi, ebx
+        jne L_00586C2F
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr [eax], edi
+        pop edi
+        mov dword ptr [eax + 4], esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+L_00586C2F:
+        test edi, edi
+        jne L_00586C35
+        call ebp
+L_00586C35:
+        cmp esi, dword ptr [edi + 8]
+        jb L_00586C3C
+        call ebp
+L_00586C3C:
+        mov edx, dword ptr [esp + 0x28]
+        mov byte ptr [esp + 0x18], 0
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        push edx
+        push esi
+        push edi
+        lea eax, [esi + 4]
+        mov esi, dword ptr [esp + 0x24]
+        push ebx
+        push eax
+        push esi
+        call ext_00585010
+        add esp, 0x1c
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
