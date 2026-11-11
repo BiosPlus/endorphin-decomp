@@ -3951,3 +3951,26 @@ extern "C" __declspec(naked) void __fastcall fn_0064CB90(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0066C350] ExprParser::WriteMethodType<NM::Vector3, float, &public: void __thiscall NM::Vector3::radRotateX(float)>::vfunc_41 (37 bytes)
+extern "C" void ext_0067C3D0();
+
+extern "C" __declspec(naked) void __fastcall fn_0066C350(void* self, void* edx_unused, void** a1, void** a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_0067C3D0
+        pop esi
+        ret 0x8
+    }
+}
