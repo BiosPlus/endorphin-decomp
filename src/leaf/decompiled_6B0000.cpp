@@ -1994,3 +1994,23 @@ extern "C" int __fastcall fn_006B5140(void* self, int edx_unused, int a1) {
     }
     return 0;
 }
+
+// [0x006B3A90] sub_006B3A90 (32 bytes)
+extern "C" void ext_006ADBF0();
+
+extern "C" __declspec(naked) void* __fastcall fn_006B3A90(void* self) {
+    __asm {
+        mov eax, dword ptr [esp+8]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp+8]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006ADBF0
+        mov dword ptr [esi], 0x9919bc
+        mov eax, esi
+        pop esi
+        ret 8
+    }
+}
