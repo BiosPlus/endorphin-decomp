@@ -225,3 +225,22 @@ L_e380_else2:
         ret 0x4
     }
 }
+
+// [0x0064E5B0] SkeletalJoint::vfunc_37 (117 bytes)
+extern "C" void __fastcall fn_0064E5B0(void* self, int edx_unused, const float* src, float* dst) {
+    char* s = (char*)self;
+    float tmp[3];
+    tmp[0] = src[0];
+    tmp[1] = src[1];
+    tmp[2] = src[2];
+    tmp[0] = tmp[0] - *(float*)(s + 0x70);
+    tmp[1] = tmp[1] - *(float*)(s + 0x74);
+    tmp[2] = tmp[2] - *(float*)(s + 0x78);
+    volatile float* d = dst;
+    d[0] = tmp[0];
+    d[1] = tmp[1];
+    d[2] = tmp[2];
+    d[0] = d[0] * *(float*)(s + 0x7c);
+    d[1] = d[1] * *(float*)(s + 0x80);
+    d[2] = d[2] * *(float*)(s + 0x84);
+}
