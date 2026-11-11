@@ -2882,3 +2882,35 @@ L_done:
         ret
     }
 }
+
+// [0x004447E0] sub_004447E0 (73 bytes)
+extern "C" void ext_0045BE30();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_004447E0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x17c]
+        push 0
+        push 0x110a
+        push eax
+        mov byte ptr [esi + 0x1b8], 0
+        call edi
+        mov ecx, dword ptr [esi + 0x17c]
+        push eax
+        push 2
+        push 0x1102
+        push ecx
+        call edi
+        lea ecx, [esi + 0x15c]
+        call ext_0045BE30
+        pop edi
+        mov byte ptr [esi + 0x1b8], 1
+        pop esi
+        ret
+    }
+}
