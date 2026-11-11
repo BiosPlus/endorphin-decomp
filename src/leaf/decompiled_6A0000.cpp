@@ -712,3 +712,38 @@ extern "C" __declspec(naked) void __fastcall fn_006A92F0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006A9290] sub_006A9290 (88 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006A9290(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        call ext_006A5EA8
+        cmp eax, -1
+        jne short L_006A92A9
+        or eax, eax
+        pop esi
+        add esp, 0x10
+        ret 4
+    L_006A92A9:
+        xor eax, eax
+        push 0x3e8
+        push esi
+        mov dword ptr [esp + 0xc], eax
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [esp + 0x18], eax
+        mov eax, dword ptr [esi + 0x108]
+        mov eax, dword ptr [eax + 0x13c]
+        lea ecx, [esi + 0x108]
+        lea edx, [esp + 0xc]
+        push edx
+        push 0x40000005
+        call eax
+        xor eax, eax
+        pop esi
+        add esp, 0x10
+        ret 4
+    }
+}
