@@ -275,3 +275,49 @@ done:
         ret 0x4
     }
 }
+
+// [0x005C4020] NMData::CollisionModelData::vfunc_33 (145 bytes)
+// SEH-framed: builds a temporary std::string from a literal, assigns it into this+0x17C,
+// destroys the temporary, sets the four flag fields (+0x198 dword, +0x19C..+0x19E = 1,
+// +0x19F = 0), then tail-calls the base vfunc_33 via ext_005C3660 and unwinds the frame.
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+extern "C" void ext_005C3660();
+
+extern "C" __declspec(naked) void __fastcall fn_005C4020(void* self) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        mov esi, ecx
+        push 0x928b5d
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FE4]
+        lea eax, [esp + 0x4]
+        push eax
+        lea ecx, [esi + 0x17c]
+        mov dword ptr [esp + 0x2c], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], -1
+        call dword ptr [mem_00924FF4]
+        mov al, 1
+        mov ecx, esi
+        mov dword ptr [esi + 0x198], 0
+        mov byte ptr [esi + 0x19c], al
+        mov byte ptr [esi + 0x19d], al
+        mov byte ptr [esi + 0x19e], al
+        mov byte ptr [esi + 0x19f], 0
+        call ext_005C3660
+        mov ecx, dword ptr [esp + 0x20]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret
+    }
+}
