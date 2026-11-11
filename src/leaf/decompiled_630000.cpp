@@ -1017,3 +1017,38 @@ L_0063D9CB:
         ret
     }
 }
+
+// [0x0063E050] sub_0063E050 (102 bytes)
+extern "C" int mem_00925070;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_0063E050(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push -1
+        push 08b56f9h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 1ch
+        mov eax, dword ptr [ecx + 4]
+        mov ecx, dword ptr [ecx]
+        mov edx, dword ptr [ecx + 8]
+        sub edx, eax
+        sub edx, dword ptr [esp + 30h]
+        lea ecx, [esp]
+        push edx
+        push eax
+        call dword ptr [mem_00925070]
+        mov ecx, dword ptr [esp + 2ch]
+        push eax
+        mov dword ptr [esp + 28h], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp]
+        mov dword ptr [esp + 24h], 0ffffffffh
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 1ch]
+        mov dword ptr fs:[0], ecx
+        add esp, 28h
+        ret 8
+    }
+}
