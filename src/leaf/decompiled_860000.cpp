@@ -378,3 +378,71 @@ extern "C" __declspec(naked) void __cdecl fn_00865C00() {
         ret
     }
 }
+
+// [0x00860210] sub_00860210 (141 bytes)
+extern "C" __declspec(naked) unsigned short __cdecl fn_00860210(unsigned char a, unsigned char* buf, unsigned int len) {
+    __asm {
+        sub esp, 0x4
+        mov cl, byte ptr [esp + 0x8]
+        push ebx
+        mov edx, dword ptr [esp + 0x10]
+        push esi
+        xor si, si
+        push edi
+        cmp dword ptr [esp + 0x1c], 0x0
+        push ebp
+        je L_skip_xor
+L_xor_loop:
+        movzx eax, si
+        inc si
+        xor byte ptr [eax + edx], cl
+        movzx ebx, si
+        cmp ebx, dword ptr [esp + 0x20]
+        jb L_xor_loop
+L_skip_xor:
+        xor ax, ax
+        mov al, cl
+        and ax, 0xf
+        mov word ptr [esp + 0x12], ax
+L_outer:
+        mov di, word ptr [esp + 0x20]
+        xor cl, cl
+        dec di
+        mov esi, edx
+        cmp word ptr [esp + 0x20], 0x0
+        je L_skip_rot
+L_rot_loop:
+        mov bl, byte ptr [esi]
+        mov ebp, esi
+        inc esi
+        mov al, cl
+        shl al, 0x7
+        mov cl, bl
+        __asm _emit 0xc0
+        __asm _emit 0xeb
+        __asm _emit 0x01
+        and cl, 0x1
+        or bl, al
+        mov byte ptr [ebp], bl
+        mov bp, di
+        dec di
+        test bp, bp
+        jne L_rot_loop
+L_skip_rot:
+        test cl, cl
+        je L_no_wrap
+        or byte ptr [edx], -0x80
+L_no_wrap:
+        mov ax, word ptr [esp + 0x12]
+        dec word ptr [esp + 0x12]
+        test ax, ax
+        jne L_outer
+        xor ax, ax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x4
+        ret
+    }
+}
