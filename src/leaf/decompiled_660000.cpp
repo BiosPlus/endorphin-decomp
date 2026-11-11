@@ -2609,3 +2609,42 @@ extern "C" __declspec(naked) void __fastcall fn_00668D10(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0066E050] sub_0066E050 (105 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0066E050(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b37d8
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        test edi, edi
+        mov esi, ecx
+        je short L_done_0066E050
+        lea ebx, [esi + 0x14]
+        mov ecx, ebx
+        mov dword ptr [esp + 0x1c], ebx
+        call ext_0065C640
+        mov ecx, edi
+        mov dword ptr [esp + 0x14], 0x0
+        call dword ptr [mem_00924FF4]
+        mov eax, dword ptr [esi]
+        mov dword ptr [edi], eax
+        mov ecx, ebx
+        mov dword ptr [esi], edi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_0065C650
+    L_done_0066E050:
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        add esp, 0xc
+        ret 0x4
+    }
+}
