@@ -1692,3 +1692,71 @@ extern "C" void __cdecl fn_00477090(float* first, float* mid, float* last) {
         fn_00476C30(first, mid, last);
     }
 }
+
+// [0x00476940] sub_00476940 (144 bytes)
+extern "C" int mem_00924FF0;
+extern "C" int mem_00925240;
+extern "C" int mem_00924EAC;
+extern "C" int mem_00924FFC;
+
+extern "C" __declspec(naked) void __fastcall fn_00476940(void* self, int edx_unused, const void* arg) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        call dword ptr [mem_00924FF0]
+        mov esi, dword ptr [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_00925240]
+        add esp, 0x8
+        mov ecx, esi
+        mov ebx, eax
+        call dword ptr [mem_00924FF0]
+        cmp ebx, eax
+        jne L_476990
+        push ebp
+        mov ecx, esi
+        call dword ptr [mem_00924EAC]
+        mov ecx, edi
+        mov ebp, eax
+        call dword ptr [mem_00924EAC]
+        cmp ebp, eax
+        pop ebp
+        jne L_476990
+L_476988:
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret 0x4
+L_476990:
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        cmp ebx, eax
+        jne L_4769C8
+        mov ecx, esi
+        call dword ptr [mem_00924EAC]
+        mov ecx, edi
+        mov ebx, eax
+        call dword ptr [mem_00924EAC]
+        cmp ebx, eax
+        jbe L_4769C8
+        mov ecx, edi
+        call dword ptr [mem_00924EAC]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FFC]
+        cmp byte ptr [eax], 0x2e
+        je L_476988
+L_4769C8:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 0x4
+    }
+}
