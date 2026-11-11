@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_4A0000.cpp
 
+#include <string>
+
 // [0x004AEC60] sub_004AEC60 (14 bytes)
 extern "C" __declspec(naked) void __fastcall fn_004AEC60(void* self) {
     __asm {
@@ -1097,5 +1099,43 @@ L_004A246F:
         mov dword ptr fs:[0x0], ecx
         add esp, 0xC
         ret
+    }
+}
+
+// [0x004ABFF0] sub_004ABFF0 (112 bytes)
+extern "C" void ext_0049E2F0();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) int __fastcall fn_004ABFF0(void* self, int edx_unused, const char* a1) {
+    __asm {
+        push -0x1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FE4]
+        mov ecx, dword ptr [esi + 0x180]
+        lea edx, [esp + 0x4]
+        add ecx, 0x11c
+        push edx
+        mov dword ptr [esp + 0x2c], 0x0
+        call ext_0049E2F0
+        lea ecx, [esp + 0x4]
+        mov esi, eax
+        mov dword ptr [esp + 0x28], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x4
     }
 }
