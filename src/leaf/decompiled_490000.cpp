@@ -2024,3 +2024,70 @@ extern "C" __declspec(naked) void* __fastcall fn_00495460(int* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0049ED70] sub_0049ED70 (117 bytes)
+extern "C" int mem_00925134;
+extern "C" void ext_0049DB60();
+extern "C" __declspec(naked) void __fastcall fn_0049ED70(void* self) {
+    __asm {
+        sub esp, 8
+        mov edx, dword ptr [esp+0xc]
+        push ebp
+        push esi
+        push edi
+        lea esi, [ecx+0xdc]
+        mov ecx, dword ptr [esi+4]
+        push edx
+        push ecx
+        mov eax, ecx
+        mov eax, dword ptr [eax]
+        push esi
+        push eax
+        mov dword ptr [esp+0x20], eax
+        lea eax, [esp+0x1c]
+        push esi
+        push eax
+        call ext_0049DB60
+        mov ecx, dword ptr [eax]
+        mov edi, dword ptr [eax+4]
+        mov ebp, dword ptr [mem_00925134]
+        add esp, 0x18
+        cmp esi, ecx
+        je L_ED70_a
+        call ebp
+L_ED70_a:
+        test esi, esi
+        push ebx
+        mov ebx, dword ptr [esi+4]
+        je L_ED70_b
+        cmp esi, esi
+        je L_ED70_c
+L_ED70_b:
+        call ebp
+L_ED70_c:
+        cmp edi, ebx
+        pop ebx
+        je L_ED70_d
+        test esi, esi
+        jne L_ED70_e
+        call ebp
+L_ED70_e:
+        cmp edi, dword ptr [esi+4]
+        jne L_ED70_f
+        call ebp
+L_ED70_f:
+        lea eax, [edi+8]
+        pop edi
+        pop esi
+        pop ebp
+        add esp, 8
+        ret 4
+L_ED70_d:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebp
+        add esp, 8
+        ret 4
+    }
+}
