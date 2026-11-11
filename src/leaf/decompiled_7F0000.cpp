@@ -523,3 +523,42 @@ extern "C" __declspec(naked) int __cdecl fn_007F7190(float* out, float a, float 
         ret
     }
 }
+
+// [0x007FC4E0] sub_007FC4E0 (95 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007FC4E0(void* self) {
+    __asm {
+        fld dword ptr [eax]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ecx + 0x8]
+        fld dword ptr [eax + 0xc]
+        fstp dword ptr [ecx + 0xc]
+        fld dword ptr [eax + 0x10]
+        fstp dword ptr [ecx + 0x10]
+        fld dword ptr [eax + 0x14]
+        fstp dword ptr [ecx + 0x14]
+        fld dword ptr [eax + 0x18]
+        fstp dword ptr [ecx + 0x18]
+        fld dword ptr [eax + 0x1c]
+        fstp dword ptr [ecx + 0x1c]
+        fld dword ptr [eax + 0x20]
+        fstp dword ptr [ecx + 0x20]
+        fld dword ptr [eax + 0x24]
+        fstp dword ptr [ecx + 0x24]
+        fld dword ptr [eax + 0x28]
+        fstp dword ptr [ecx + 0x28]
+        fld dword ptr [eax + 0x2c]
+        fstp dword ptr [ecx + 0x2c]
+        fld dword ptr [eax + 0x30]
+        fstp dword ptr [ecx + 0x30]
+        fld dword ptr [eax + 0x34]
+        fstp dword ptr [ecx + 0x34]
+        fld dword ptr [eax + 0x38]
+        fstp dword ptr [ecx + 0x38]
+        fld dword ptr [eax + 0x3c]
+        fstp dword ptr [ecx + 0x3c]
+        ret
+    }
+}
