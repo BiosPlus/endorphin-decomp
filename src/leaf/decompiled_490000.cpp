@@ -1828,3 +1828,62 @@ extern "C" __declspec(naked) void __fastcall fn_004939B0(void* self) {
         ret
     }
 }
+
+// [0x0049ACB0] sub_0049ACB0 (112 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0049ACB0(float* self) {
+    __asm {
+        fldz
+        fcom dword ptr [ecx]
+        fnstsw ax
+        test ah, 0x41
+        jp L_0049ACB0_f1b
+        fld1
+        fcom dword ptr [ecx]
+        fnstsw ax
+        test ah, 0x1
+        jne L_0049ACB0_f19
+        fxch st(1)
+        fcom dword ptr [ecx + 0x4]
+        fnstsw ax
+        test ah, 0x41
+        jp L_0049ACB0_f12
+        fxch st(1)
+        fcom dword ptr [ecx + 0x4]
+        fnstsw ax
+        test ah, 0x1
+        jne L_0049ACB0_f19
+        fxch st(1)
+        fcom dword ptr [ecx + 0x8]
+        fnstsw ax
+        test ah, 0x41
+        jp L_0049ACB0_f12
+        fxch st(1)
+        fcom dword ptr [ecx + 0x8]
+        fnstsw ax
+        test ah, 0x1
+        jne L_0049ACB0_f19
+        fxch st(1)
+        fcomp dword ptr [ecx + 0xc]
+        fnstsw ax
+        test ah, 0x41
+        jp L_0049ACB0_f1b
+        fcomp dword ptr [ecx + 0xc]
+        fnstsw ax
+        test ah, 0x1
+        jne L_0049ACB0_f1d
+        mov eax, 1
+        ret
+L_0049ACB0_f12:
+        fstp st(1)
+        xor eax, eax
+        fstp st(0)
+        ret
+L_0049ACB0_f19:
+        fstp st(0)
+L_0049ACB0_f1b:
+        fstp st(0)
+L_0049ACB0_f1d:
+        xor eax, eax
+        ret
+    }
+}
