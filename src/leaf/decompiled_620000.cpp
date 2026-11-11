@@ -2952,3 +2952,54 @@ extern "C" __declspec(naked) void __fastcall fn_006297B0(void* self) {
         ret
     }
 }
+
+// [0x0062C010] sub_0062C010 (129 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0062C010(void* first, void* last) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8ad728
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        cmp esi, edi
+        je done
+        jmp loop_head
+        __asm _emit 0x8D __asm _emit 0xA4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0x8D __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x00
+    loop_head:
+        cmp dword ptr [esi + 0xc], 0x0
+        lea eax, [esi + 0x8]
+        mov dword ptr [esp + 0x10], 0x0
+        je skip_first
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x78]
+        call eax
+    skip_first:
+        cmp dword ptr [esi + 0x4], 0x0
+        mov dword ptr [esp + 0x10], -0x1
+        je skip_second
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x78]
+        push esi
+        call eax
+    skip_second:
+        add esi, 0x10
+        cmp esi, edi
+        mov dword ptr [esp + 0x18], esi
+        jne loop_head
+    done:
+        mov ecx, dword ptr [esp + 0x8]
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
