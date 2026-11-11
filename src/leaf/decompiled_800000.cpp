@@ -244,3 +244,55 @@ extern "C" __declspec(naked) int __cdecl fn_008039C0(void* self, int value) {
         ret
     }
 }
+
+// [0x00802D90] sub_00802D90 (115 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00802D90(void* self, int edx_unused, int* a1, int* a2) {
+    __asm {
+        push esi
+        xor esi, esi
+        cmp dword ptr [ecx + 0x4], esi
+        jle fn_00802D90_end
+        mov edx, dword ptr [esp + 0xc]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push edi
+        sub ebx, edx
+    fn_00802D90_loop:
+        mov eax, dword ptr [ecx + 0x30]
+        fld dword ptr [eax + 4*esi]
+        lea edi, [eax + 4*esi]
+        mov eax, dword ptr [ecx + 0x3c]
+        fld dword ptr [eax + 4*esi]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne fn_00802D90_b2
+        mov dword ptr [ebx + edx], 0xffffffff
+        jmp fn_00802D90_storeb
+    fn_00802D90_b2:
+        mov eax, dword ptr [ecx + 0x38]
+        fld dword ptr [edi]
+        fld dword ptr [eax + 4*esi]
+        fcompp
+        fnstsw ax
+        test ah, 0x5
+        jp fn_00802D90_zero
+        mov dword ptr [ebx + edx], 0xffffffff
+        mov dword ptr [edx], 0xffffffff
+        jmp fn_00802D90_next
+    fn_00802D90_zero:
+        mov dword ptr [ebx + edx], 0
+    fn_00802D90_storeb:
+        mov dword ptr [edx], 0
+    fn_00802D90_next:
+        add esi, 1
+        add edx, 4
+        cmp esi, dword ptr [ecx + 0x4]
+        jl fn_00802D90_loop
+        pop edi
+        pop ebx
+    fn_00802D90_end:
+        pop esi
+        ret 8
+    }
+}
