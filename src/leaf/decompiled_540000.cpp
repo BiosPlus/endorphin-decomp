@@ -1401,3 +1401,49 @@ extern "C" __declspec(naked) void __fastcall fn_0054E360(void* self) {
         ret
     }
 }
+
+// [0x0054C800] sub_0054C800 (109 bytes)
+extern "C" int mem_009252B8;
+extern "C" int mem_0092546C;
+extern "C" int mem_00AF657C;
+extern "C" int mem_00925518;
+extern "C" int mem_00925514;
+extern "C" int mem_0092552C;
+extern "C" __declspec(naked) void __cdecl fn_0054C800(const char* fmt, ...) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 0x100
+        test eax, eax
+        je done
+        lea ecx, [esp + 0x108]
+        push ecx
+        push eax
+        lea edx, [esp + 0x8]
+        push edx
+        call dword ptr [mem_009252B8]
+        add esp, 0xc
+        push 0x20000
+        call dword ptr [mem_0092546C]
+        mov eax, dword ptr [mem_00AF657C]
+        add eax, -0x20
+        push eax
+        call dword ptr [mem_00925518]
+        lea eax, [esp]
+        lea edx, [eax + 1]
+    scan:
+        mov cl, byte ptr [eax]
+        add eax, 1
+        test cl, cl
+        jne scan
+        lea ecx, [esp]
+        push ecx
+        sub eax, edx
+        push 0x1401
+        push eax
+        call dword ptr [mem_00925514]
+        call dword ptr [mem_0092552C]
+    done:
+        add esp, 0x100
+        ret
+    }
+}
