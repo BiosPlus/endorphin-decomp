@@ -101,3 +101,48 @@ L_ret:
         ret 0x4
     }
 }
+
+// [0x005EE360] NMData::FixedPathJointData::vfunc_15 (80 bytes)
+extern "C" void ext_005EC8D0();
+extern "C" void ext_005EC8F0();
+extern "C" void ext_005DF1F0();
+
+extern "C" __declspec(naked) int __fastcall fn_005EE360(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, edx
+        sub eax, 0x2c4
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0x0
+        je L_2c4
+        sub eax, 0x1
+        je L_2c5
+        push edx
+        push esi
+        call ext_005DF1F0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+L_2c5:
+        push ecx
+        push esi
+        call ext_005EC8F0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+L_2c4:
+        push ecx
+        push esi
+        call ext_005EC8D0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
