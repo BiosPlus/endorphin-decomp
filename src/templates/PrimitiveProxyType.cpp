@@ -801,3 +801,60 @@ extern "C" __declspec(naked) void __fastcall fn_0049B2C0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00497AD0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_10 (118 bytes)
+// Two stack arguments (ret 8); self (ecx) is unused. SEH-framed (fs:[0] chain).
+// Copy-constructs a std::string temp from *a2, calls sub_00497890(&tmp-slot) (stdcall, returns its
+// argument), assigns the result into *a1 via operator=, then destroys the temp.
+// Written as naked asm: the SEH frame setup cannot be expressed in C++03 with matching codegen.
+extern "C" void ext_00497890();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00497AD0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        sub esp, 0x20
+        mov eax, dword ptr [esp + 0x34]
+        mov edx, dword ptr [esp + 0x34]
+        push eax
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push edx
+        call dword ptr [mem_00924FE0]
+        lea eax, [esp + 0x24]
+        push eax
+        call ext_00497890
+        add esp, 0x24
+        mov ecx, dword ptr [esp + 0x30]
+        mov ecx, dword ptr [ecx]
+        push eax
+        mov dword ptr [esp + 0x2c], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add esp, 0x2c
+        ret 0x8
+    }
+}
