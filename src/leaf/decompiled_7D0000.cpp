@@ -1311,3 +1311,16 @@ extern "C" void __cdecl fn_007D5950(int p0, char* sink, const char* fmt, ...) {
     cb_t cb = *reinterpret_cast<cb_t*>(sink + 0x18);
     cb(2, buf, *reinterpret_cast<int*>(sink + 0x1c));
 }
+
+// [0x007DADD0] sub_007DADD0 (49 bytes)
+extern "C" void ext_007D58E0();
+extern "C" int mem_00AB29F0;
+
+extern "C" void __cdecl fn_007DADD0(char* a1) {
+    typedef void (__cdecl *Fn)(int, void*, int);
+    if (mem_00AB29F0) {
+        void* edx = *(void**)(*(char**)(a1 + 0x0c) + 0xb0);
+        ((Fn)ext_007D58E0)(0, edx, 0x0099E250);
+    }
+    mem_00AB29F0 = 0;
+}
