@@ -482,3 +482,68 @@ neg_path:
         ret
     }
 }
+
+// [0x00802320] sub_00802320 (146 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00802320(void) {
+    __asm {
+        sub esp, 8
+        mov ecx, 0x1e
+        sub ecx, dword ptr [esp + 0x1c]
+        mov eax, 0x7fffffff
+        sar eax, cl
+        cmp dword ptr [esp + 0x20], 0
+        mov dword ptr [esp + 0x1c], 0
+        jle L_008023AE
+        mov edx, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x14]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        sub esi, edx
+        sub edi, edx
+        sub ecx, edx
+        push ebx
+        mov dword ptr [esp + 0xc], esi
+        mov dword ptr [esp + 0x10], ecx
+        push ebp
+    L_loop:
+        cmp dword ptr [esi + edx], 0
+        jne L_00802370
+        mov ebx, dword ptr [edx]
+        not ebx
+        jmp L_00802390
+    L_00802370:
+        and eax, dword ptr [edx]
+        je L_008023AA
+        mov esi, dword ptr [edi + edx]
+        mov ecx, dword ptr [ecx + edx]
+        mov ebx, ecx
+        mov ebp, esi
+        not ebx
+        not ebp
+        and ecx, esi
+        mov esi, dword ptr [esp + 0x10]
+        and ebx, ebp
+        or ebx, ecx
+        mov ecx, dword ptr [esp + 0x14]
+    L_00802390:
+        and eax, ebx
+        test eax, eax
+        je L_008023AA
+        mov ebx, dword ptr [esp + 0x2c]
+        add ebx, 1
+        add edx, 4
+        cmp ebx, dword ptr [esp + 0x30]
+        mov dword ptr [esp + 0x2c], ebx
+        jl L_loop
+    L_008023AA:
+        pop ebp
+        pop ebx
+        pop edi
+        pop esi
+    L_008023AE:
+        add esp, 8
+        ret
+    }
+}
