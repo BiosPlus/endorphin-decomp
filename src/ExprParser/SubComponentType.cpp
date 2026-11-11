@@ -171,3 +171,52 @@ extern "C" __declspec(naked) void* __fastcall fn_0066BE90(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0066BF10] ExprParser::SubComponentType::vfunc_0 (134 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0066BF10(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b33a1
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        mov edx, dword ptr [esp + 0x20]
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax]
+        push edx
+        lea edx, [esp + 0xc]
+        push edx
+        call eax
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [ecx]
+        mov esi, dword ptr [esp + 0x20]
+        mov edx, dword ptr [edx]
+        lea eax, [esp + 0x8]
+        push eax
+        push esi
+        mov dword ptr [esp + 0x20], 0x1
+        call edx
+        mov ecx, dword ptr [esp + 0xc]
+        test ecx, ecx
+        mov dword ptr [esp + 0x4], 0x1
+        mov byte ptr [esp + 0x18], 0x0
+        je L_66BF82
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x8]
+        push edx
+        call eax
+    L_66BF82:
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x18
+        ret 0x8
+    }
+}
