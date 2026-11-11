@@ -252,3 +252,62 @@ extern "C" __declspec(naked) void __fastcall fn_004812B0(void* self) {
         ret
     }
 }
+
+// [0x00480E40] ToolEngine::vfunc_9 (91 bytes)
+extern "C" void ext_00584C00();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00480E40(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x10]
+        mov edx, dword ptr [eax + 0xc]
+        push ebx
+        push ebp
+        add ecx, 0x10
+        push esi
+        push edi
+        call edx
+        mov ebp, dword ptr [mem_00925134]
+        mov esi, eax
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_loop
+        call ebp
+    L_loop:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_chk_eq
+        call ebp
+    L_chk_eq:
+        cmp edi, ebx
+        je L_false
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_deref
+        call ebp
+    L_deref:
+        mov ecx, dword ptr [edi]
+        call ext_00584C00
+        test al, al
+        jne L_true
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_inc
+        call ebp
+    L_inc:
+        add edi, 0x4
+        jmp L_loop
+    L_true:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        ret
+    L_false:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret
+    }
+}
