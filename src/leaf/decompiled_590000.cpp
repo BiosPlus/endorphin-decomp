@@ -1900,3 +1900,47 @@ store_result:
         ret 0x4
     }
 }
+
+// [0x005971D0] sub_005971D0 (113 bytes)
+extern "C" void ext_00596330();
+extern "C" void ext_00596370();
+extern "C" void ext_00661A40();
+extern "C" int mem_00B3F200;
+extern "C" int mem_00B40640;
+extern "C" int mem_00B40644;
+extern "C" __declspec(naked) float __fastcall fn_005971D0(void* self) {
+    __asm {
+        sub esp, 0x8
+        cmp byte ptr [mem_00B3F200], 0x0
+        push esi
+        mov esi, ecx
+        je L_else_005971D0
+        call ext_00596370
+        add eax, dword ptr [esi + 0xec]
+        mov ecx, dword ptr [mem_00B40644]
+        mov dword ptr [esp + 0x4], eax
+        fild dword ptr [esp + 0x4]
+        fstp qword ptr [esp + 0x4]
+        call ext_00661A40
+        fmul qword ptr [esp + 0x4]
+        pop esi
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        add esp, 0x8
+        ret
+    L_else_005971D0:
+        call ext_00596330
+        add eax, dword ptr [esi + 0xec]
+        mov ecx, dword ptr [mem_00B40640]
+        mov dword ptr [esp + 0x4], eax
+        fild dword ptr [esp + 0x4]
+        fstp qword ptr [esp + 0x4]
+        call ext_00661A40
+        fmul qword ptr [esp + 0x4]
+        pop esi
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        add esp, 0x8
+        ret
+    }
+}
