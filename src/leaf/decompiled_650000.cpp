@@ -2260,3 +2260,34 @@ extern "C" void __fastcall fn_0065B040(void* self, int edx_unused, float a1) {
     void* p = ((void* (__cdecl*)(int*, unsigned, unsigned))&ext_007CCEC0)(*(int**)((char*)self + 0x34), 0, 0);
     ((void (__cdecl*)(char*, float))&ext_007CCCD0)((char*)p, a1);
 }
+
+// [0x0065F2B0] sub_0065F2B0 (90 bytes)
+extern "C" void ext_00670EC0();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B58F9C;
+extern "C" int mem_00B58F84;
+extern "C" __declspec(naked) void __fastcall fn_0065F2B0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b25fe
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B58F9C], al
+        jne skip_init
+        or dword ptr [mem_00B58F9C], eax
+        mov ecx, offset mem_00B58F84
+        mov dword ptr [esp + 8], 0
+        call ext_00670EC0
+        push 0x9213e0
+        call ext_006A6C87
+        add esp, 4
+skip_init:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00B58F84
+        mov dword ptr fs:[0], ecx
+        add esp, 0Ch
+        ret
+    }
+}
