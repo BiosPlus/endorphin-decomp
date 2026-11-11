@@ -50,3 +50,66 @@ extern "C" __declspec(naked) void __fastcall fn_004A9C90(void* self, int edx_unu
         jmp ext_0047D300
     }
 }
+
+// [0x004ABF60] NMData::BehaviourData::vfunc_87 (133 bytes)
+extern "C" void ext_00596660();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004ABF60(void* self) {
+    __asm {
+        sub esp, 0x8
+        push edi
+        mov edi, ecx
+        cmp dword ptr [edi + 0x184], 0
+        je short L_end
+        mov eax, dword ptr [edi + 0x10]
+        test eax, eax
+        je short L_skip1
+        mov eax, dword ptr [eax + 0x10]
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x14]
+        call eax
+    L_skip1:
+        push ebx
+        mov ebx, dword ptr [edi + 0x3e0]
+        cmp dword ptr [edi + 0x3dc], ebx
+        push ebp
+        push esi
+        lea esi, [edi + 0x3d8]
+        jbe short L_chk1
+        call dword ptr [mem_00925134]
+    L_chk1:
+        mov ebp, dword ptr [esi + 0x4]
+        cmp ebp, dword ptr [esi + 0x8]
+        jbe short L_chk2
+        call dword ptr [mem_00925134]
+    L_chk2:
+        push ebx
+        push esi
+        push ebp
+        push esi
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, esi
+        call ext_00596660
+        mov ecx, dword ptr [edi + 0x2f0]
+        xor esi, esi
+        cmp ecx, esi
+        je short L_skip2
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        push 0x1
+        call eax
+    L_skip2:
+        mov dword ptr [edi + 0x2f0], esi
+        mov dword ptr [edi + 0x184], esi
+        pop esi
+        pop ebp
+        pop ebx
+    L_end:
+        pop edi
+        add esp, 0x8
+        ret
+    }
+}
