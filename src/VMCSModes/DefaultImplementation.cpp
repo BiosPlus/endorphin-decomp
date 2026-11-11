@@ -570,3 +570,68 @@ extern "C" __declspec(naked) void __fastcall fn_004F9C40(void* self) {
         ret
     }
 }
+
+// [0x004FAAB0] VMCSModes::DefaultImplementation::vfunc_72 (114 bytes)
+extern "C" void ext_005B11F0();
+extern "C" void ext_00594000();
+extern "C" void ext_00477FA0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004FAAB0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx + 0x8]
+        mov ecx, dword ptr [eax + 0x14]
+        mov ecx, dword ptr [ecx + 0x34]
+        push ebx
+        push esi
+        call ext_005B11F0
+        mov esi, eax
+        call ext_00594000
+        mov edx, dword ptr [esi]
+        mov ebx, dword ptr [eax + 0x26C]
+        mov eax, dword ptr [edx + 0x1C]
+        mov ecx, esi
+        call eax
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        je L_ret0
+        mov edx, dword ptr [eax + 0x8]
+        sub edx, ecx
+        sar edx, 2
+        je L_ret0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x1C]
+        push ebp
+        push edi
+        mov ecx, esi
+        call edx
+        mov ebp, dword ptr [mem_00925134]
+        mov esi, eax
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_b
+        call ebp
+        cmp edi, dword ptr [esi + 0x8]
+    L_b:
+        jb L_c
+        call ebp
+    L_c:
+        mov edi, dword ptr [edi]
+        push edi
+        mov ecx, ebx
+        call ext_00477FA0
+        pop edi
+        pop ebp
+        pop esi
+        pop ebx
+        pop ecx
+        ret
+    L_ret0:
+        pop esi
+        xor al, al
+        pop ebx
+        pop ecx
+        ret
+    }
+}
