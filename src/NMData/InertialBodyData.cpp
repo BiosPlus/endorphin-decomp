@@ -45,3 +45,38 @@ L_005CF8F8:
         ret 8
     }
 }
+
+// [0x005CE760] NMData::InertialBodyData::vfunc_14 (64 bytes)
+extern "C" void ext_0046F7D0();
+extern "C" void ext_00661650();
+
+extern "C" __declspec(naked) void* __fastcall fn_005CE760(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        sub eax, 0x9c
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0
+        je short L_005CE78E
+        sub eax, 0x1b
+        je short L_005CE791
+        push esi
+        call ext_0046F7D0
+        add esp, 4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+L_005CE78E:
+        add ecx, 0x24
+L_005CE791:
+        push ecx
+        mov ecx, esi
+        call ext_00661650
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
