@@ -1295,3 +1295,22 @@ extern "C" __declspec(naked) void __fastcall fn_00596660(void* self, int edx_unu
         ret 0x14
     }
 }
+
+extern "C" void ext_0059DE60(unsigned int* first, int holeIndex, int topIndex, int value);
+
+// [0x0059F310] sub_0059F310 (92 bytes)
+extern "C" void __cdecl fn_0059F310(unsigned int* first, int holeIndex, int len, int value) {
+    int topIndex = holeIndex;
+    int idx = 2 * holeIndex + 2;
+    while (idx < len) {
+        if (first[idx] < first[idx - 1]) --idx;
+        first[holeIndex] = first[idx];
+        holeIndex = idx;
+        idx = 2 * idx + 2;
+    }
+    if (idx == len) {
+        first[holeIndex] = first[len - 1];
+        holeIndex = len - 1;
+    }
+    ext_0059DE60(first, holeIndex, topIndex, value);
+}
