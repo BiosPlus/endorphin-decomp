@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_400000.cpp
 
+#include <exception>
+#include <new>
 #include <string>
 
 // [0x00401B60] sub_00401B60 (27 bytes)
@@ -2170,6 +2172,49 @@ extern "C" __declspec(naked) void* __cdecl fn_00404F00(void* a1, int a2) {
         mov eax, esi
         pop esi
         add esp, 0x24
+        ret
+    }
+}
+
+// [0x004030F0] sub_004030F0 (98 bytes)
+extern "C" void ext_006A342A();
+extern "C" void ext_006A3430();
+extern "C" void ext_006A3436();
+extern "C" void ext_006A343C();
+
+extern "C" __declspec(naked) void __fastcall fn_004030F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x57c]
+        push edi
+        xor edi, edi
+        cmp eax, edi
+        je L1
+        push eax
+        call ext_006A343C
+        mov dword ptr [esi + 0x57c], edi
+    L1:
+        mov eax, dword ptr [esi + 0x480]
+        cmp eax, edi
+        je L2
+        push eax
+        call ext_006A3436
+        mov dword ptr [esi + 0x480], edi
+    L2:
+        mov eax, dword ptr [esi + 0x47c]
+        cmp eax, edi
+        je L3
+        push eax
+        call ext_006A3430
+        mov dword ptr [esi + 0x47c], edi
+    L3:
+        call ext_006A342A
+        mov dword ptr [esi + 0x46c], edi
+        mov dword ptr [esi + 0x470], edi
+        mov dword ptr [esi + 0x474], edi
+        pop edi
+        pop esi
         ret
     }
 }
