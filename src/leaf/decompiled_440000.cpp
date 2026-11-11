@@ -2747,3 +2747,43 @@ extern "C" __declspec(naked) void* __fastcall fn_004481F0(void* self, int edx_un
         ret 0x4
     }
 }
+
+extern "C" void ext_00465B30();
+extern "C" void ext_004691A0();
+extern "C" void ext_0046A320();
+
+// [0x0044BD20] sub_0044BD20 (66 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0044BD20(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        test esi, esi
+        je L_0044BD2C
+        lea eax, [esi + 0x5c]
+        jmp L_0044BD2E
+L_0044BD2C:
+        xor eax, eax
+L_0044BD2E:
+        push eax
+        call ext_00465B30
+        mov ecx, eax
+        call ext_0046A320
+        test esi, esi
+        je L_0044BD51
+        lea eax, [esi + 0x60]
+        push eax
+        call ext_00465B30
+        mov ecx, eax
+        call ext_004691A0
+        pop esi
+        ret
+L_0044BD51:
+        xor eax, eax
+        push eax
+        call ext_00465B30
+        mov ecx, eax
+        call ext_004691A0
+        pop esi
+        ret
+    }
+}
