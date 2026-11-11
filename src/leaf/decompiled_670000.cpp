@@ -1284,3 +1284,55 @@ extern "C" __declspec(naked) void* __fastcall fn_00670BF0(void* self) {
         ret
     }
 }
+
+// [0x00670D80] sub_00670D80 (87 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00670D80(int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    L_head_00670D80:
+        test esi, esi
+        je L_inv1_00670D80
+        cmp esi, dword ptr [esp + 0x1c]
+        je L_ok1_00670D80
+    L_inv1_00670D80:
+        call ebp
+    L_ok1_00670D80:
+        cmp edi, dword ptr [esp + 0x20]
+        je L_done_00670D80
+        test esi, esi
+        mov ebx, edi
+        jne L_ok2_00670D80
+        call ebp
+    L_ok2_00670D80:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_ok3_00670D80
+        call ebp
+    L_ok3_00670D80:
+        add edi, 0x4
+        test esi, esi
+        jne L_ok4_00670D80
+        call ebp
+    L_ok4_00670D80:
+        cmp ebx, dword ptr [esi + 0x8]
+        jb L_ok5_00670D80
+        call ebp
+    L_ok5_00670D80:
+        mov eax, dword ptr [ebx]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+        jmp L_head_00670D80
+    L_done_00670D80:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
