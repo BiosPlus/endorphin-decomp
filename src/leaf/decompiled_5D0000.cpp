@@ -751,3 +751,63 @@ extern "C" __declspec(naked) void __fastcall fn_005DFE30(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x005D0530] sub_005D0530 (126 bytes)
+extern "C" int mem_00B40644;
+
+struct Mat4_005D0530 {
+    float m[16];
+};
+
+typedef Mat4_005D0530* (__thiscall *GetMat_005D0530)(void* self, int arg);
+typedef void (__thiscall *Apply_005D0530)(void* self, int flag, Mat4_005D0530* m, int ctx);
+
+extern "C" __declspec(naked) void __fastcall fn_005D0530(void* self, int edx_unused, float* a1) {
+    __asm {
+        sub esp, 0x40
+        cmp byte ptr [ecx + 0x1f1], 0
+        jne done_005D0530
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [eax + 0x14]
+        push ebx
+        push esi
+        lea ebx, [ecx + 0x4]
+        mov ecx, dword ptr [mem_00B40644]
+        push edi
+        push ecx
+        mov ecx, ebx
+        call edx
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x50]
+        mov ecx, 0x10
+        lea edi, [esp + 0xc]
+        rep movsd
+        fld dword ptr [esp + 0x3c]
+        fsub dword ptr [eax]
+        fstp dword ptr [esp + 0x3c]
+        fld dword ptr [esp + 0x40]
+        fsub dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x40]
+        fld dword ptr [esp + 0x44]
+        fsub dword ptr [eax + 0x8]
+        mov ecx, dword ptr [mem_00B40644]
+        push ecx
+        lea edx, [esp + 0x10]
+        fstp dword ptr [esp + 0x48]
+        push edx
+        fld dword ptr [esp + 0x50]
+        push 0
+        fsub dword ptr [eax + 0xc]
+        mov eax, dword ptr [ebx]
+        mov eax, dword ptr [eax]
+        mov ecx, ebx
+        fstp dword ptr [esp + 0x54]
+        call eax
+        pop edi
+        pop esi
+        pop ebx
+done_005D0530:
+        add esp, 0x40
+        ret 4
+    }
+}
