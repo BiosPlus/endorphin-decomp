@@ -314,3 +314,43 @@ extern "C" __declspec(naked) void* __fastcall fn_004B9A40(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x004D8B20] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_27 (118 bytes)
+extern "C" void ext_004D41C0();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void* __fastcall fn_004D8B20(void* self, int edx_unused, void* sret, void* holder, int idx) {
+    __asm {
+        push -1
+        push 0x88afd3
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x20
+        mov eax, dword ptr [esp + 0x34]
+        mov edx, dword ptr [esp + 0x38]
+        push esi
+        mov dword ptr [esp + 4], 0
+        mov ecx, dword ptr [eax]
+        push edx
+        lea eax, [esp + 0xc]
+        push eax
+        call ext_004D41C0
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x30], 1
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 4], 1
+        mov byte ptr [esp + 0x2c], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret 0xc
+    }
+}
