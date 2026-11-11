@@ -2722,3 +2722,18 @@ extern "C" __declspec(naked) void __cdecl fn_007CAF30() {
         ret
     }
 }
+
+// [0x007C7900] sub_007C7900 (109 bytes)
+extern "C" int __cdecl fn_007C7900(char* self) {
+    int i = 0;
+    unsigned int* p = (unsigned int*)(self + 0xF0);
+    do {
+        if ((p[-4] & 0x7f800000u) == 0x7f800000u) return 1;
+        if ((p[0] & 0x7f800000u) == 0x7f800000u) return 1;
+        if ((p[-48] & 0x7f800000u) == 0x7f800000u) return 1;
+        if ((p[-44] & 0x7f800000u) == 0x7f800000u) return 1;
+        ++i;
+        ++p;
+    } while (i < 3);
+    return 0;
+}
