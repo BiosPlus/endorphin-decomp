@@ -2811,3 +2811,53 @@ extern "C" __declspec(naked) void __fastcall fn_00480430(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00468180();
+extern "C" void ext_00469570();
+extern "C" void ext_006657F0();
+
+// [0x0048F2F0] sub_0048F2F0 (132 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0048F2F0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push -1
+        push 0x8853b3
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        mov esi, ecx
+        xor edi, edi
+        push edi
+        mov [esp + 0xc], esi
+        call ext_006657F0
+        mov eax, [esp + 0x1c]
+        mov ecx, [esp + 0x20]
+        mov dword ptr [esi], 0x93e718
+        mov [esi + 0x10], eax
+        mov [esi + 0x14], ecx
+        mov [esp + 0x14], edi
+        mov [esi + 0x20], edi
+        mov [esi + 0x24], edi
+        mov [esi + 0x28], edi
+        mov edx, [esp + 0x24]
+        push edi
+        mov byte ptr [esp + 0x18], 1
+        mov [esi + 0x2c], edx
+        call ext_00468180
+        mov ecx, eax
+        call ext_00469570
+        mov [esi + 0x8], eax
+        mov eax, [esi + 0x10]
+        mov ecx, [eax + 0x15c]
+        mov [esi + 0x18], ecx
+        mov ecx, [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret 0xc
+    }
+}
