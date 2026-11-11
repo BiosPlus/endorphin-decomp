@@ -671,3 +671,59 @@ extern "C" __declspec(naked) float __cdecl fn_007F6750(const float* a, const flo
         ret
     }
 }
+
+// [0x007F9CE0] sub_007F9CE0 (103 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007F9CE0(int count, float* dst, const float* src) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        lea edi, [ecx + 4*eax]
+        mov eax, edi
+        sub eax, ecx
+        add eax, 0x3
+        cdq
+        and edx, 0x3
+        add eax, edx
+        sar eax, 0x2
+        cmp eax, 0x4
+        jl tail_check
+        lea eax, [edi - 0xc]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    unroll_loop:
+        fld dword ptr [esi]
+        add ecx, 0x10
+        fstp dword ptr [ecx - 0x10]
+        add esi, 0x10
+        cmp ecx, eax
+        fld dword ptr [esi - 0xc]
+        fstp dword ptr [ecx - 0xc]
+        fld dword ptr [esi - 0x8]
+        fstp dword ptr [ecx - 0x8]
+        fld dword ptr [esi - 0x4]
+        fstp dword ptr [ecx - 0x4]
+        jl unroll_loop
+    tail_check:
+        cmp ecx, edi
+        jae done
+    tail_loop:
+        fld dword ptr [esi]
+        add ecx, 0x4
+        fstp dword ptr [ecx - 0x4]
+        add esi, 0x4
+        cmp ecx, edi
+        jb tail_loop
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
