@@ -154,3 +154,71 @@ extern "C" __declspec(naked) void __fastcall fn_00658B30(void* self) {
         ret
     }
 }
+
+extern "C" int mem_00925134;
+
+// [0x006593E0] RelationshipHinge::vfunc_0 (142 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006593E0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x10]
+        test eax, eax
+        push edi
+        je L_inv1
+        mov ecx, dword ptr [esi + 0x14]
+        sub ecx, eax
+        mov eax, 0x2aaaaaab
+        imul ecx
+        sar edx, 0x2
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        jne L_ok1
+L_inv1:
+        call ebx
+L_ok1:
+        mov edi, dword ptr [esi + 0x10]
+        mov eax, edi
+        test eax, eax
+        je L_inv2
+        mov ecx, dword ptr [esi + 0x14]
+        sub ecx, eax
+        mov eax, 0x2aaaaaab
+        imul ecx
+        sar edx, 0x2
+        mov ecx, edx
+        shr ecx, 0x1f
+        add ecx, edx
+        jne L_ok2
+L_inv2:
+        call ebx
+L_ok2:
+        fld qword ptr [edi]
+        mov eax, dword ptr [esi + 0x10]
+        mov edx, dword ptr [esi + 0x64]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        sub esp, 0x8
+        fstp dword ptr [esp + 0x4]
+        fld qword ptr [eax + 0x10]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fchs
+        fstp dword ptr [esp]
+        push edx
+        call ext_007C9C50
+        add esp, 0x4
+        push eax
+        call ext_007C9E80
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
