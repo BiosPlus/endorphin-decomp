@@ -3182,3 +3182,42 @@ alt_007C93C9:
         ret
     }
 }
+
+// [0x007C9490] sub_007C9490 (103 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C9490(void* a0, int a1, float a2, float a3, float a4) {
+    __asm {
+        sub esp, 0ch
+        cmp dword ptr [esp + 14h], 0x0
+        fld dword ptr [esp + 18h]
+        mov eax, dword ptr [esp + 10h]
+        fstp dword ptr [esp]
+        fld dword ptr [esp + 1ch]
+        fstp dword ptr [esp + 4h]
+        fld dword ptr [esp + 20h]
+        fstp dword ptr [esp + 8h]
+        jne short alt_007C94D6
+        mov edx, dword ptr [eax + 94h]
+        lea ecx, [eax + 0ech]
+        push ecx
+        push edx
+        lea eax, [esp + 8h]
+        push eax
+        push 0x0
+        call ext_007CA120
+        add esp, 10h
+        add esp, 0ch
+        ret
+alt_007C94D6:
+        mov edx, dword ptr [eax + 98h]
+        lea ecx, [eax + 12ch]
+        push ecx
+        push edx
+        lea eax, [esp + 8h]
+        push eax
+        push 0x0
+        call ext_007CA120
+        add esp, 10h
+        add esp, 0ch
+        ret
+    }
+}
