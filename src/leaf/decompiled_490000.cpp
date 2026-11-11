@@ -1933,3 +1933,73 @@ extern "C" __declspec(naked) void __fastcall fn_0049B170(void* self) {
         ret
     }
 }
+
+// [0x0049E2F0] sub_0049E2F0 (116 bytes)
+// __thiscall (ret 4): scans the vector<T*> at this+0x4 (begin) / this+0x8 (end) and returns the
+// first element whose vfunc_9() result compares equal (basic_string operator==) to the argument.
+// Returns NULL if none matches. Out-of-range iterator checks call _invalid_parameter_noinfo.
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void* __fastcall fn_0049E2F0(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe L_0049E304
+        call dword ptr [mem_00925134]
+    L_0049E304:
+        mov ebp, dword ptr [esp + 0x14]
+    L_0049E308:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_0049E316
+        call dword ptr [mem_00925134]
+    L_0049E316:
+        cmp esi, ebx
+        je L_0049E35B
+    L_0049E31A:
+        cmp esi, dword ptr [edi + 0x8]
+        mov ebx, dword ptr [mem_00925134]
+        jb L_0049E327
+        call ebx
+    L_0049E327:
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        push ebp
+        call edx
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        jne L_0049E34B
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_0049E346
+        call ebx
+    L_0049E346:
+        add esi, 0x4
+        jmp L_0049E308
+    L_0049E34B:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_0049E352
+        call ebx
+    L_0049E352:
+        mov eax, dword ptr [esi]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    L_0049E35B:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x4
+    }
+}
