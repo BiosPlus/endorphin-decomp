@@ -1277,3 +1277,40 @@ extern "C" __declspec(naked) void __fastcall fn_006992E0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0069C1C0] sub_0069C1C0 (90 bytes)
+// Constructor-style: SEH prologue (scope table 0x008B6814), two std::string member
+// default-constructions via the imported basic_string ctor, zeroes the fields in between.
+extern "C" int mem_00924FE8;
+extern "C" __declspec(naked) void __fastcall fn_0069C1C0(void* self) {
+    __asm {
+        push -1
+        push 0x008B6814
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x8], esi
+        call dword ptr [mem_00924FE8]
+        xor edi, edi
+        mov dword ptr [esp + 0x14], edi
+        mov dword ptr [esi + 0x20], edi
+        mov dword ptr [esi + 0x24], edi
+        mov dword ptr [esi + 0x28], edi
+        lea ecx, [esi + 0x2c]
+        mov byte ptr [esp + 0x14], 0x1
+        call dword ptr [mem_00924FE8]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x48], edi
+        mov dword ptr [esi + 0x4c], edi
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
