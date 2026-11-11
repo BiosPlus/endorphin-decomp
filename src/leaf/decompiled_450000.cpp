@@ -2197,3 +2197,54 @@ extern "C" __declspec(naked) void __fastcall fn_0045AE60(void* self) {
         ret
     }
 }
+
+// [0x0045BC70] sub_0045BC70 (126 bytes)
+// Returns a std::string by value (hidden return buffer is the stack arg, ret 0x4).
+// Sends a custom message to the owner's window, fetches the resulting text into a
+// local CString, converts it to std::string in the hidden buffer, then tears down the
+// SEH frame and the CString.
+extern "C" void ext_006A6826();
+extern "C" int mem_00925694;
+extern "C" int mem_00924300;
+extern "C" int mem_00924FE4;
+extern "C" int mem_009242F4;
+
+extern "C" __declspec(naked) void __fastcall fn_0045BC70(void* self) {
+    __asm {
+        push -1
+        push 0x87cc19
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push 0
+        push 9
+        mov esi, ecx
+        mov dword ptr [esp + 0xc], 0
+        mov eax, dword ptr [esi + 0x20]
+        push 0x110a
+        push eax
+        call dword ptr [mem_00925694]
+        push eax
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        call ext_006A6826
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x10], 0
+        call dword ptr [mem_00924300]
+        mov esi, dword ptr [esp + 0x18]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x4]
+        call dword ptr [mem_009242F4]
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
