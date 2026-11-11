@@ -2358,3 +2358,69 @@ extern "C" __declspec(naked) void __fastcall fn_0065DCB0(void* self) {
         ret
     }
 }
+
+// [0x0065FAF0] sub_0065FAF0 (104 bytes)
+extern "C" int mem_00924FC4;
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_0065FAF0(void* first, void* last) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp esi, ebx
+        push edi
+        mov edi, esi
+        je L_ret_last
+        mov ebp, dword ptr [mem_00924FC4]
+    L_top:
+        add esi, 0x20
+        cmp esi, ebx
+        je L_ret_last
+        push esi
+        push edi
+        call ebp
+        add esp, 8
+        test al, al
+        jne L_p2
+        mov edi, esi
+        jmp L_top
+    L_p2:
+        add esi, 0x20
+        cmp esi, ebx
+        je L_ret_dest
+    L_p2loop:
+        push esi
+        push edi
+        call ebp
+        add esp, 8
+        test al, al
+        jne L_skip
+        add edi, 0x20
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [esi + 0x1c]
+        mov dword ptr [edi + 0x1c], eax
+    L_skip:
+        add esi, 0x20
+        cmp esi, ebx
+        jne L_p2loop
+    L_ret_dest:
+        lea eax, [edi + 0x20]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_ret_last:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        ret
+    }
+}
