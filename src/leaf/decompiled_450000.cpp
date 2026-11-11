@@ -2057,3 +2057,36 @@ extern "C" int __fastcall fn_0045BF30(char* self, int edx_unused, int a1) {
     }
     return 0;
 }
+
+// [0x0045C090] sub_0045C090 (43 bytes)
+extern "C" void ext_0045BF30();
+extern "C" void ext_006A6820();
+
+extern "C" __declspec(naked) void __fastcall fn_0045C090(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        push edi
+        mov edi, ecx
+        je done
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    loop_top:
+        push esi
+        mov ecx, edi
+        call ext_006A6820
+        push esi
+        mov ecx, edi
+        call ext_0045BF30
+        mov esi, eax
+        test esi, esi
+        jne loop_top
+    done:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
