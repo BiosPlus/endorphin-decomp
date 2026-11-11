@@ -4114,3 +4114,38 @@ extern "C" __declspec(naked) void __fastcall fn_0058C7A0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0058CB10] ExprParser::ReadWriteMethodType<AnimatableTransform, float, {protected: float __thiscall AnimatableTransform::getTZ(void) const, 0}, float, {protected: void __thiscall AnimatableTransform::setTZ(float), 0}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00B3F930;
+extern "C" int mem_00B3F92C;
+extern "C" __declspec(naked) void __fastcall fn_0058CB10(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x89fb0e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B3F930], al
+        jne init_done
+        or dword ptr [mem_00B3F930], eax
+        mov ecx, offset mem_00B3F92C
+        mov dword ptr [esp+8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp+0x10]
+        mov dword ptr [mem_00B3F92C], 0x95be3c
+        mov dword ptr [eax+4], offset mem_00B3F92C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+    init_done:
+        mov ecx, dword ptr [esp+0x10]
+        mov dword ptr [ecx+4], offset mem_00B3F92C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+    }
+}
