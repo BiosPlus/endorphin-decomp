@@ -2246,3 +2246,23 @@ extern "C" __declspec(naked) int __fastcall fn_004490F0(void* self) {
         ret
     }
 }
+
+// [0x00449220] sub_00449220 (74 bytes)
+extern "C" int __fastcall ext_004490F0(void* self);
+
+extern "C" void __fastcall fn_00449220(void* self, int edx_unused, int* out) {
+    char* p = (char*)self;
+    if (*out <= ext_004490F0(self)) {
+        *out = ext_004490F0(self) + 1;
+    }
+    if (p[0x140] != 0) {
+        int hi = *(int*)(p + 0x134);
+        int lo = *(int*)(p + 0x13c);
+        int cur = *out;
+        if (cur < lo) {
+            *out = lo;
+        } else if (cur > hi) {
+            *out = hi;
+        }
+    }
+}
