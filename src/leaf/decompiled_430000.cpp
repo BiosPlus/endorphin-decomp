@@ -5152,3 +5152,14 @@ L_push:
         ret
     }
 }
+
+// [0x0043B7D0] sub_0043B7D0 (63 bytes)
+extern "C" void __cdecl fn_0043B650(void* first, int hole, int len, int value, void* comp);
+
+extern "C" void __cdecl fn_0043B7D0(unsigned int* first, unsigned int* last, int comp) {
+    int len = last - first;
+    for (int hole = len / 2; hole > 0; ) {
+        --hole;
+        fn_0043B650(first, hole, len, first[hole], (void*)comp);
+    }
+}
