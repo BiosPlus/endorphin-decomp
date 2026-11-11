@@ -230,3 +230,63 @@ extern "C" __declspec(naked) int __fastcall fn_0054C090(void* self) {
         ret
     }
 }
+
+// [0x0054C0F0] ManagedDisplayList<RenderableList>::vfunc_18 (101 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0054C0F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x14]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_chk1
+        call ebp
+L_chk1:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_chk2
+        call ebp
+L_chk2:
+        cmp esi, esi
+        je L_chk3
+        call ebp
+L_chk3:
+        cmp edi, ebx
+        je L_false
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_call
+        call ebp
+L_call:
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [eax + 0x48]
+        push edx
+        call eax
+        test eax, eax
+        jne L_true
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_inc
+        call ebp
+L_inc:
+        add edi, 0x4
+        jmp L_chk1
+L_true:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        ret 0x4
+L_false:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x4
+    }
+}
