@@ -2650,3 +2650,48 @@ extern "C" __declspec(naked) void __fastcall fn_007CFEC0(void* self) {
         ret
     }
 }
+
+// [0x007CA830] sub_007CA830 (108 bytes)
+extern "C" void ext_006A7250();
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __cdecl fn_007CA830(void* self, float f, float g, float h) {
+    __asm {
+        fld dword ptr [esp + 0x8]
+        push esi
+        fld qword ptr [mem_00993828]
+        mov esi, dword ptr [esp + 0x8]
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fst dword ptr [esi + 0x10]
+        fld dword ptr [esp + 0x10]
+        fmul st, st(2)
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fst dword ptr [esi + 0x14]
+        fld dword ptr [esp + 0x14]
+        fmulp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fst dword ptr [esi + 0x18]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        call ext_006A7250
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [esi + 0x1c]
+        pop esi
+        ret
+    }
+}
