@@ -1390,3 +1390,50 @@ extern "C" __declspec(naked) void __fastcall fn_004773D0(void* self) {
         ret
     }
 }
+
+// [0x004767E0] sub_004767E0 (125 bytes)
+// Copy-constructs a record: four std::string (0x1c each) at +0, +0x1c, +0x38, +0x54 and a byte at +0x70. Returns this.
+// EH frame (state at trylevel slot): -1 before s0, 0 before s1, 1 before s2, 2 before s3.
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void* __fastcall fn_004767E0(void* self, int edx_unused, const void* src) {
+    __asm {
+        push -1
+        push 0x883701
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        call dword ptr [mem_00924FE0]
+        lea eax, [edi + 0x1c]
+        push eax
+        lea ecx, [esi + 0x1c]
+        mov dword ptr [esp + 0x18], 0x0
+        call dword ptr [mem_00924FE0]
+        lea ecx, [edi + 0x38]
+        push ecx
+        lea ecx, [esi + 0x38]
+        mov byte ptr [esp + 0x18], 0x1
+        call dword ptr [mem_00924FE0]
+        lea edx, [edi + 0x54]
+        push edx
+        lea ecx, [esi + 0x54]
+        mov byte ptr [esp + 0x18], 0x2
+        call dword ptr [mem_00924FE0]
+        mov al, byte ptr [edi + 0x70]
+        mov ecx, dword ptr [esp + 0xc]
+        mov byte ptr [esi + 0x70], al
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
