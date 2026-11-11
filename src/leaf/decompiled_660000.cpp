@@ -4120,3 +4120,13 @@ extern "C" __declspec(naked) void* __cdecl fn_00664DB0(std::string::iterator* re
         ret
     }
 }
+
+// [0x0066A180] sub_0066A180 (145 bytes)
+extern "C" unsigned int __fastcall fn_0066A180(float* self) {
+    unsigned int r = (unsigned char)(int)(self[2] * 255.0);
+    r <<= 8;
+    r |= (unsigned char)(int)(self[1] * 255.0);
+    r <<= 8;
+    r |= (unsigned char)(int)(self[0] * 255.0);
+    return r;
+}
