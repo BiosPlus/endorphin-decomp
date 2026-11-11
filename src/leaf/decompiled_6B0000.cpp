@@ -1141,3 +1141,52 @@ extern "C" void __fastcall fn_006B83F0(void* self, int edx_unused, int a1, int a
     void* wnd = ext_006A5E00(target);
     ext_006A60D0(wnd);
 }
+
+// [0x006B8390] sub_006B8390 (87 bytes)
+extern "C" void ext_006A5FF2();
+extern "C" void ext_006A5FFE();
+extern "C" void ext_006A6010();
+extern "C" int mem_0092407C;
+
+extern "C" __declspec(naked) int __fastcall fn_006B8390(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, ecx
+        push 0x1
+        mov ecx, esi
+        call ext_006A6010
+        mov ecx, dword ptr [edi + 0x58]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x38]
+        push ecx
+        mov ecx, esi
+        call edx
+        lea esi, [edi + 0x5c]
+        test esi, esi
+        je skip_brush
+        cmp dword ptr [esi + 0x4], 0x0
+        je skip_brush
+        mov ecx, esi
+        call ext_006A5FF2
+    skip_brush:
+        mov edi, dword ptr [edi + 0x54]
+        push edi
+        call dword ptr [mem_0092407C]
+        push eax
+        mov ecx, esi
+        call ext_006A5FFE
+        test esi, esi
+        jne has_obj
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x8
+    has_obj:
+        mov eax, dword ptr [esi + 0x4]
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
