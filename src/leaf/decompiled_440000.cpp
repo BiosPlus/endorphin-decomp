@@ -2000,3 +2000,12 @@ extern "C" __declspec(naked) void __fastcall fn_0044CEC0(void* self) {
         ret
     }
 }
+
+// [0x0044E160] sub_0044E160 (36 bytes)
+extern "C" int mem_00925688;
+
+extern "C" void __fastcall fn_0044E160(unsigned char* self, int edx_unused, unsigned char a1) {
+    self[0xa9] = a1;
+    fn_0044CEC0(self);
+    ((void (__stdcall*)(void*, int, int))mem_00925688)(*(void**)(self + 0x20), 0, 1);
+}
