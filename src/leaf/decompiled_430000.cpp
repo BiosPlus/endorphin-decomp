@@ -3627,3 +3627,55 @@ extern "C" void __fastcall fn_0043C670(void* self) {
     *(int*)(p + 0x184) = 8;
     *(unsigned char*)(p + 0x166) = 0;
 }
+
+// [0x00434810] sub_00434810 (97 bytes)
+extern "C" void ext_00430380();
+extern "C" void ext_00492520();
+extern "C" void ext_004925D0();
+extern "C" void ext_00594000();
+extern "C" void ext_006AD940();
+extern "C" __declspec(naked) void __fastcall fn_00434810(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, esi
+        mov edi, eax
+        call ext_00430380
+        test al, al
+        je short L_false_434810
+        push 0
+        mov ecx, edi
+        call ext_00492520
+        test eax, eax
+        je short L_false_434810
+        mov eax, 1
+        jmp short L_done_434810
+    L_false_434810:
+        xor eax, eax
+    L_done_434810:
+        mov esi, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi]
+        push eax
+        mov eax, dword ptr [edx]
+        mov ecx, esi
+        call eax
+        mov ebx, dword ptr [esi]
+        push 0
+        mov ecx, edi
+        call ext_004925D0
+        mov edx, dword ptr [ebx + 4]
+        movzx ecx, al
+        push ecx
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
