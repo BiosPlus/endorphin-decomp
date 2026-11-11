@@ -2280,3 +2280,40 @@ extern "C" __declspec(naked) void* __fastcall fn_0048E200(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0048E270] sub_0048E270 (102 bytes)
+extern "C" void ext_006657F0();
+extern "C" void ext_0046FD70();
+extern "C" int mem_0093E5D0;
+extern "C" __declspec(naked) void* __fastcall fn_0048E270(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8852f8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push esi
+        mov esi, ecx
+        push 1
+        mov dword ptr [esp + 0x8], esi
+        call ext_006657F0
+        mov ecx, dword ptr [esp + 0x20]
+        mov eax, dword ptr [esp + 0x24]
+        lea edx, [esp + 0x8]
+        push edx
+        mov dword ptr [esp + 0x1c], 0
+        mov dword ptr [esi], offset mem_0093E5D0
+        mov dword ptr [esi + 0x10], ecx
+        mov dword ptr [esi + 0x14], eax
+        call ext_0046FD70
+        mov eax, dword ptr [eax + 0x4]
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x18], eax
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x18
+        ret 0x8
+    }
+}
