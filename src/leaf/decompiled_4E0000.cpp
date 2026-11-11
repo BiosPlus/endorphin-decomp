@@ -455,3 +455,50 @@ extern "C" __declspec(naked) void __fastcall fn_004E13C0(void* self) {
         ret
     }
 }
+
+// [0x004E3140] sub_004E3140 (89 bytes)
+extern "C" void ext_004DE780();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_004E3140(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4, void* a5) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        test ebx, ebx
+        push esi
+        push edi
+        mov esi, ecx
+        je invalid
+        cmp ebx, dword ptr [esp + 0x1c]
+        je check
+    invalid:
+        call dword ptr [mem_00925134]
+    check:
+        mov edi, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x20]
+        cmp edi, ecx
+        je store
+        mov eax, dword ptr [esi + 0x8]
+        mov byte ptr [esp + 0x14], 0
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x18]
+        push edx
+        push edi
+        push eax
+        push ecx
+        call ext_004DE780
+        add esp, 0x18
+        mov dword ptr [esi + 0x8], eax
+    store:
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 0x4], edi
+        pop edi
+        pop esi
+        mov dword ptr [eax], ebx
+        pop ebx
+        ret 0x14
+    }
+}
