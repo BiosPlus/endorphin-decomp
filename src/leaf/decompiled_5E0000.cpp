@@ -1682,3 +1682,34 @@ extern "C" __declspec(naked) void __fastcall fn_005E2BE0(void* self) {
         ret
     }
 }
+
+// [0x005E02F0] sub_005E02F0 (137 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005E02F0(void* self, int edx_unused, int a1) {
+    __asm {
+        fldz
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x294], eax
+        fst dword ptr [ecx + 0x2a4]
+        fst dword ptr [ecx + 0x2a0]
+        xor eax, eax
+        fst dword ptr [ecx + 0x29c]
+        fst dword ptr [ecx + 0x2b0]
+        fst dword ptr [ecx + 0x2ac]
+        fst dword ptr [ecx + 0x2a8]
+        fst dword ptr [ecx + 0x2bc]
+        fst dword ptr [ecx + 0x2b8]
+        fst dword ptr [ecx + 0x2b4]
+        mov dword ptr [ecx + 0x2c0], eax
+        fst dword ptr [ecx + 0x2cc]
+        fst dword ptr [ecx + 0x2c8]
+        fst dword ptr [ecx + 0x2c4]
+        fst dword ptr [ecx + 0x2d8]
+        fst dword ptr [ecx + 0x2d4]
+        fst dword ptr [ecx + 0x2d0]
+        fst dword ptr [ecx + 0x2e4]
+        fst dword ptr [ecx + 0x2e0]
+        fstp dword ptr [ecx + 0x2dc]
+        mov dword ptr [ecx + 0x2e8], eax
+        ret 0x4
+    }
+}
