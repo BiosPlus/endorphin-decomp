@@ -2509,3 +2509,28 @@ extern "C" __declspec(naked) void __fastcall fn_00406590(void* self) {
         ret
     }
 }
+
+// [0x00403380] sub_00403380 (116 bytes)
+extern "C" int mem_009240AC;
+extern "C" void ext_006A344E();
+typedef void* (__stdcall *CreateCompatibleDCFn)(void*);
+typedef void* (__cdecl *DrawDibOpenFn)();
+extern "C" void* __fastcall fn_00403380(void* self) {
+    char* s = (char*)self;
+    *(int*)(s + 0x8c) = 0;
+    *(int*)(s + 0x90) = 0;
+    *(int*)(s + 0xbc) = 0;
+    *(int*)(s + 0xc0) = 0;
+    *(int*)(s + 0xc4) = 0;
+    *(int*)(s + 0xc8) = 0;
+    *(int*)(s + 0xcc) = 0;
+    *(int*)(s + 0xd0) = 0x100;
+    *(int*)(s + 0xd4) = 0x100;
+    *(int*)(s + 0xd8) = 0;
+    *(int*)(s + 0xe0) = 0;
+    *(int*)(s + 0xe4) = 0;
+    *(int*)(s + 0xe8) = 0;
+    *(void**)(s + 0xe4) = ((CreateCompatibleDCFn)mem_009240AC)(0);
+    *(void**)(s + 0xdc) = ((DrawDibOpenFn)ext_006A344E)();
+    return self;
+}
