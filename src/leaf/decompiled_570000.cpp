@@ -1030,3 +1030,28 @@ extern "C" __declspec(naked) void __fastcall fn_0057C010(void* self) {
         ret
     }
 }
+
+// [0x0057BE60] sub_0057BE60 (93 bytes)
+struct LB20Entry_0057BE60 {
+    int key;
+    unsigned int rest[14];
+};
+
+extern "C" LB20Entry_0057BE60* __cdecl fn_0057BE60(LB20Entry_0057BE60* first, LB20Entry_0057BE60* last, const int* value) {
+    LB20Entry_0057BE60* it = first;
+    int count = (int)(last - first);
+    if (count > 0) {
+        int key = *value;
+        do {
+            int half = count / 2;
+            LB20Entry_0057BE60* mid = it + half;
+            if (mid->key < key) {
+                it = mid + 1;
+                count = count - half - 1;
+            } else {
+                count = half;
+            }
+        } while (count > 0);
+    }
+    return it;
+}
