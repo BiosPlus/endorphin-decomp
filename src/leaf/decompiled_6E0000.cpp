@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_6E0000.cpp
 
+#include <math.h>
+
 // [0x006E0900] sub_006E0900 (32 bytes)
 // Zero-initialise the object's 8 dwords, then store 1.0 (double) at offset 0x18.
 extern "C" __declspec(naked) void __fastcall fn_006E0900(void* self) {
@@ -182,6 +184,45 @@ extern "C" __declspec(naked) void __fastcall fn_006E7730(void* self) {
         pop esi
         mov dword ptr fs:[0], ecx
         add esp, 0x10
+        ret
+    }
+}
+
+// [0x006E4CD0] sub_006E4CD0 (95 bytes)
+extern "C" double mem_00993CC8;
+extern "C" double mem_00993828;
+extern "C" double mem_009324A8;
+extern "C" double mem_00993CC0;
+extern "C" double mem_0092A270;
+extern "C" int mem_00925294;
+extern "C" __declspec(naked) double __cdecl fn_006E4CD0(double a, double b) {
+    __asm {
+        fld qword ptr [esp + 0xc]
+        fsub qword ptr [esp + 0x4]
+        lea eax, [esp + 0xc]
+        push eax
+        fmul qword ptr [mem_00993CC8]
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        call dword ptr [mem_00925294]
+        fcom qword ptr [mem_00993828]
+        add esp, 0xc
+        fnstsw ax
+        test ah, 0x41
+        jne short L_skip_inc
+        fld qword ptr [esp + 0xc]
+        fadd qword ptr [mem_0092A270]
+        fstp qword ptr [esp + 0xc]
+L_skip_inc:
+        fcomp qword ptr [mem_009324A8]
+        fld qword ptr [esp + 0xc]
+        fnstsw ax
+        test ah, 0x1
+        je short L_skip_dec
+        fsub qword ptr [mem_0092A270]
+L_skip_dec:
+        fmul qword ptr [mem_00993CC0]
+        fadd qword ptr [esp + 0x4]
         ret
     }
 }
