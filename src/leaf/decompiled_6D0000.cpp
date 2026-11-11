@@ -283,3 +283,64 @@ L_006D9088:
         ret 0x4
     }
 }
+
+extern "C" void ext_006C9A60();
+extern "C" void ext_006D03D0();
+
+// [0x006D03E0] sub_006D03E0 (112 bytes)
+// Thiscall with 2 stack args (ret 0x8).
+extern "C" __declspec(naked) void __fastcall fn_006D03E0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov al, byte ptr [esi + 0x1d]
+        test al, al
+        je done
+        mov eax, dword ptr [esp + 0x14]
+        mov edi, dword ptr [esp + 0x10]
+        lea ebx, [esi + 0x54]
+        push eax
+        push edi
+        mov ecx, ebx
+        call ext_006C9A60
+        mov eax, dword ptr [esi + 0x18]
+        cmp edi, 0x100
+        jne inc_path
+        add eax, 0x10000
+        jmp store_path
+inc_path:
+        inc eax
+store_path:
+        mov dword ptr [esi + 0x18], eax
+        mov al, byte ptr [esi + 0x1c]
+        test al, al
+        je done
+        mov eax, dword ptr [esi + 0x68]
+        xor edi, edi
+        test eax, eax
+        jle after_loop
+loop_top:
+        mov edx, dword ptr [esi + 0x90]
+        mov ecx, dword ptr [esi + 0x78]
+        mov eax, dword ptr [edx + 4*edi]
+        push eax
+        push ebx
+        push esi
+        call dword ptr [ecx + 4*edi]
+        mov eax, dword ptr [esi + 0x68]
+        add esp, 0xc
+        inc edi
+        cmp edi, eax
+        jl loop_top
+after_loop:
+        mov ecx, esi
+        call ext_006D03D0
+done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
