@@ -972,3 +972,46 @@ extern "C" void __cdecl fn_00477210(float* first, int hole, int len, float val) 
     }
     fn_00476D00(first, hole, top, val);
 }
+
+// [0x00477B70] sub_00477B70 (62 bytes)
+extern "C" void ext_00477210();
+
+// [0x00477B70] make_heap-style loop over float elements: for (k = n/2; k > 0; ) { v = first[k-1]; --k; adjust(v, n, k, first); }
+extern "C" __declspec(naked) void __cdecl fn_00477B70(float* first, float* last) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        sub edi, ebx
+        sar edi, 0x2
+        mov eax, edi
+        cdq
+        sub eax, edx
+        mov esi, eax
+        sar esi, 0x1
+        test esi, esi
+        jle done
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    loop_top:
+        fld dword ptr [ebx + esi*4 - 0x4]
+        push ecx
+        sub esi, 0x1
+        fstp dword ptr [esp]
+        push edi
+        push esi
+        push ebx
+        call ext_00477210
+        add esp, 0x10
+        test esi, esi
+        jg loop_top
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
