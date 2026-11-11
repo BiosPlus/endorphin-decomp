@@ -66,3 +66,48 @@ extern "C" __declspec(naked) float __fastcall fn_00611740(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x0061F940] NMData::HingeConstraint::vfunc_15 (80 bytes)
+extern "C" void ext_005DF1F0();
+extern "C" void ext_0061EF90();
+extern "C" void ext_0061EFB0();
+
+extern "C" __declspec(naked) int __fastcall fn_0061F940(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, edx
+        sub eax, 0x247
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0x0
+        je L_247
+        sub eax, 0x35
+        je L_27c
+        push edx
+        push esi
+        call ext_005DF1F0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+L_27c:
+        push ecx
+        push esi
+        call ext_0061EF90
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+L_247:
+        push ecx
+        push esi
+        call ext_0061EFB0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
