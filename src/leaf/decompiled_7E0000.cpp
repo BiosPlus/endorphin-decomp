@@ -487,3 +487,17 @@ extern "C" int __cdecl fn_007E1D30(int a1) {
     ((void (__cdecl*)(int, int, int, int*))ext_007C8960)(a1, 5, 5, cell);
     return 1;
 }
+
+// [0x007E2AF0] sub_007E2AF0 (59 bytes)
+extern "C" int mem_007E1D70;
+
+extern "C" int __cdecl fn_007E2AF0(int a1) {
+    int cell[6];
+    cell[0] = 0;
+    cell[2] = 0;
+    cell[5] = 0;
+    cell[1] = (int)&mem_007E1D70;
+    cell[4] = 1;
+    ((void (__cdecl*)(int, int, int, int*))ext_007C8960)(a1, 5, 2, cell);
+    return 1;
+}
