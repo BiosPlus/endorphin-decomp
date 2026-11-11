@@ -2134,3 +2134,42 @@ extern "C" __declspec(naked) void* __fastcall fn_004019B0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00404F00] sub_00404F00 (96 bytes)
+// Formats an int into a 30-byte local buffer via _snprintf, then constructs the std::string at a1 from it; returns a1.
+extern "C" int mem_009251E0;
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void* __cdecl fn_00404F00(void* a1, int a2) {
+    __asm {
+        sub esp, 0x24
+        xor eax, eax
+        push esi
+        mov dword ptr [esp + 0x4], eax
+        mov byte ptr [esp + 0x8], al
+        mov dword ptr [esp + 0x9], eax
+        mov dword ptr [esp + 0xd], eax
+        mov dword ptr [esp + 0x11], eax
+        mov dword ptr [esp + 0x15], eax
+        mov dword ptr [esp + 0x19], eax
+        mov dword ptr [esp + 0x1d], eax
+        mov dword ptr [esp + 0x21], eax
+        mov byte ptr [esp + 0x25], al
+        mov eax, dword ptr [esp + 0x30]
+        push eax
+        push 0x929f48
+        lea ecx, [esp + 0x10]
+        push 0x1e
+        push ecx
+        call dword ptr [mem_009251E0]
+        mov esi, dword ptr [esp + 0x3c]
+        add esp, 0x10
+        lea edx, [esp + 0x8]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        add esp, 0x24
+        ret
+    }
+}
