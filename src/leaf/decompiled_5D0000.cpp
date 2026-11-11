@@ -1158,3 +1158,41 @@ L_ret_5D9EF0:
         ret
     }
 }
+
+// [0x005DC430] sub_005DC430 (65 bytes)
+extern "C" void ext_005DC1E0();
+extern "C" void ext_005DC270();
+extern "C" void ext_005DC300();
+extern "C" void ext_005DC390();
+
+extern "C" __declspec(naked) void __fastcall fn_005DC430(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx + 0x4]
+        test esi, esi
+        je L_done_5DC430
+        mov eax, dword ptr [esi + 0x68]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, edi
+        call ext_005DC390
+        mov ecx, dword ptr [esi + 0x5c]
+        push ecx
+        mov ecx, edi
+        call ext_005DC1E0
+        mov edx, dword ptr [esi + 0x60]
+        push edx
+        mov ecx, edi
+        call ext_005DC270
+        fld dword ptr [esi + 0x64]
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        call ext_005DC300
+        pop edi
+    L_done_5DC430:
+        pop esi
+        ret 0x4
+    }
+}
