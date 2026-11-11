@@ -54,3 +54,28 @@ extern "C" __declspec(naked) void __fastcall fn_0053D9E0(void* self, int edx_unu
         jmp edx
     }
 }
+
+// [0x0053CA10] Primitives::Sensor2::vfunc_29 (44 bytes)
+extern "C" void ext_0053AD10();
+
+extern "C" __declspec(naked) void __fastcall fn_0053CA10(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0053AD10
+        mov ecx, dword ptr [esi + 0x5c]
+        test ecx, ecx
+        je short L_skip
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+    L_skip:
+        fld1
+        mov dword ptr [esi + 0x5c], 0x0
+        fstp dword ptr [esi + 0x60]
+        mov dword ptr [esi + 0x3c], 0x0
+        pop esi
+        ret
+    }
+}
