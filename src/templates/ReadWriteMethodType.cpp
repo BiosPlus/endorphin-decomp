@@ -3869,3 +3869,38 @@ init_done:
         ret 4
     }
 }
+
+// [0x00585430] ExprParser::ReadWriteMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, bool, {[thunk]: __thiscall ObjectNode::`vcall'{32, {flat}}, 12}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00B3EB90;
+extern "C" int mem_00B3EB8C;
+extern "C" __declspec(naked) void __fastcall fn_00585430(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x89f4de
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B3EB90], al
+        jne init_done
+        or dword ptr [mem_00B3EB90], eax
+        mov ecx, offset mem_00B3EB8C
+        mov dword ptr [esp+8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp+0x10]
+        mov dword ptr [mem_00B3EB8C], 0x95a8d4
+        mov dword ptr [eax+4], offset mem_00B3EB8C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+init_done:
+        mov ecx, dword ptr [esp+0x10]
+        mov dword ptr [ecx+4], offset mem_00B3EB8C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+    }
+}
