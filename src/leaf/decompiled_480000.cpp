@@ -2115,3 +2115,55 @@ extern "C" __declspec(naked) void __fastcall fn_00481300(void* self) {
         jmp ext_00480920
     }
 }
+
+// [0x00481B50] sub_00481B50 (96 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) bool __cdecl fn_00481B50(int* first, int* last, void* range, int* first2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        mov esi, ebp
+        sub esi, ebx
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        sar esi, 0x2
+        test edi, edi
+        jne L_range_ok
+        call dword ptr [mem_00925134]
+    L_range_ok:
+        mov eax, dword ptr [esp + 0x20]
+        lea eax, [eax + 4*esi]
+        cmp eax, dword ptr [edi + 0x8]
+        ja L_range_fail
+        cmp eax, dword ptr [edi + 0x4]
+        jae L_range_ok2
+    L_range_fail:
+        call dword ptr [mem_00925134]
+    L_range_ok2:
+        cmp ebx, ebp
+        mov eax, ebx
+        je L_done
+        mov ecx, dword ptr [esp + 0x20]
+        sub ecx, ebx
+    L_loop:
+        mov edx, dword ptr [eax]
+        cmp edx, dword ptr [ecx + eax]
+        jne L_done
+        add eax, 0x4
+        cmp eax, ebp
+        jne L_loop
+    L_done:
+        pop edi
+        xor ecx, ecx
+        cmp eax, ebp
+        pop esi
+        sete cl
+        pop ebp
+        mov al, cl
+        pop ebx
+        ret
+    }
+}
