@@ -1663,3 +1663,45 @@ extern "C" __declspec(naked) void* __fastcall fn_00553F00(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0055CD10] sub_0055CD10 (104 bytes)
+extern "C" void ext_0059F5C0();
+extern "C" __declspec(naked) void __fastcall fn_0055CD10(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0059F5C0
+        fld1
+        mov dword ptr [esi+4], eax
+        mov byte ptr [eax+2dh], 1
+        mov eax, dword ptr [esi+4]
+        mov dword ptr [eax+4], eax
+        mov eax, dword ptr [esi+4]
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [esi+4]
+        mov dword ptr [eax+8], eax
+        mov eax, dword ptr [esp+8]
+        mov dword ptr [esi+0ch], eax
+        mov dword ptr [esi+8], 0
+        fst dword ptr [esi+10h]
+        fldz
+        mov eax, esi
+        fst dword ptr [esi+14h]
+        fst dword ptr [esi+18h]
+        fst dword ptr [esi+1ch]
+        fst dword ptr [esi+20h]
+        fst dword ptr [esi+28h]
+        fst dword ptr [esi+2ch]
+        fst dword ptr [esi+30h]
+        fst dword ptr [esi+34h]
+        fst dword ptr [esi+3ch]
+        fst dword ptr [esi+40h]
+        fst dword ptr [esi+44h]
+        fstp dword ptr [esi+48h]
+        fst dword ptr [esi+24h]
+        fst dword ptr [esi+38h]
+        fstp dword ptr [esi+4ch]
+        pop esi
+        ret 4
+    }
+}
