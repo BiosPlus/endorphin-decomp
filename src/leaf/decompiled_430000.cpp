@@ -5423,3 +5423,58 @@ extern "C" void __fastcall fn_004332F0(void* self, int edx_unused, void* a1) {
     void* r = ((FnA)ext_0063EFE0)(a1, edx_unused, (void*)mem_00A9FA74);
     ((FnB)ext_004275E0)((char*)self + 0x04, r);
 }
+
+// [0x0043DD60] sub_0043DD60 (134 bytes)
+extern "C" int mem_00993830;
+extern "C" int mem_00996B98;
+extern "C" int mem_009320F0;
+extern "C" void ext_00466BA0();
+
+extern "C" __declspec(naked) void __fastcall fn_0043DD60(void* self, int edx_unused, double a1, double a2) {
+    __asm {
+        fld qword ptr [esp + 0x4]
+        fst qword ptr [ecx + 0xe8]
+        fld qword ptr [mem_00993830]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x41
+        jne L_43DD83
+        fstp qword ptr [ecx + 0xe8]
+        jmp L_43DD85
+    L_43DD83:
+        fstp st(0)
+    L_43DD85:
+        fld qword ptr [esp + 0xc]
+        fst qword ptr [ecx + 0xf0]
+        fld qword ptr [mem_00996B98]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne L_43DDA8
+        fstp st(1)
+    L_43DDA0:
+        fstp qword ptr [ecx + 0xf0]
+        jmp L_43DDBD
+    L_43DDA8:
+        fstp st(0)
+        fld qword ptr [mem_009320F0]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jnp L_43DDA0
+        fstp st(0)
+    L_43DDBD:
+        fld qword ptr [ecx + 0xe8]
+        push 0x0
+        fstp dword ptr [esp + 0x8]
+        lea eax, [esp + 0x8]
+        fld qword ptr [ecx + 0xf0]
+        push eax
+        add ecx, 0x13c
+        fstp dword ptr [esp + 0x10]
+        call ext_00466BA0
+        ret 0x10
+    }
+}
