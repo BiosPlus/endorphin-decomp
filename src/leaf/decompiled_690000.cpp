@@ -1878,3 +1878,22 @@ extern "C" __declspec(naked) void __fastcall fn_00692BA0(void* self) {
         ret
     }
 }
+
+#include <math.h>
+
+// [0x00693F40] sub_00693F40 (148 bytes)
+extern "C" void ext_00693C30();
+
+extern "C" void __fastcall fn_00693F40(void* self, int edx_unused, const float* a1) {
+    float temp[3];
+    temp[0] = a1[0];
+    temp[1] = a1[1];
+    temp[2] = a1[2];
+    temp[0] *= 0.25f;
+    temp[1] *= 0.25f;
+    temp[2] *= 0.25f;
+    temp[0] = tanf(temp[0]);
+    temp[1] = tanf(temp[1]);
+    temp[2] = tanf(temp[2]);
+    ((void (__thiscall*)(void*, float*))ext_00693C30)(self, temp);
+}
