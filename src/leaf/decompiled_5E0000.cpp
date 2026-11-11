@@ -1500,3 +1500,55 @@ extern "C" __declspec(naked) void __fastcall fn_005E0180(void* self) {
         ret
     }
 }
+
+// [0x005ED2C0] sub_005ED2C0 (105 bytes)
+// __thiscall, ret 8: map-style find on this (head at this+4). Writes a 2-word pair {this or head/node} to out and returns out.
+extern "C" __declspec(naked) void __fastcall fn_005ED2C0(void* self) {
+    __asm {
+        mov edx, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [edx + 0x4]
+        sub esp, 0x10
+        cmp byte ptr [eax + 0x51], 0x0
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        jne L_phase2
+        mov esi, dword ptr [edi]
+    L_loop:
+        cmp dword ptr [eax + 0xc], esi
+        jae L_left
+        mov eax, dword ptr [eax + 0x8]
+        jmp L_chk
+    L_left:
+        mov edx, eax
+        mov eax, dword ptr [eax]
+    L_chk:
+        cmp byte ptr [eax + 0x51], 0x0
+        je L_loop
+    L_phase2:
+        mov eax, dword ptr [ecx + 0x4]
+        cmp edx, eax
+        mov dword ptr [esp + 0xc], edx
+        mov dword ptr [esp + 0x8], ecx
+        je L_head
+        mov esi, dword ptr [edi]
+        cmp esi, dword ptr [edx + 0xc]
+        jb L_head
+        lea ecx, [esp + 0x8]
+        jmp L_done
+    L_head:
+        mov dword ptr [esp + 0x10], ecx
+        mov dword ptr [esp + 0x14], eax
+        lea ecx, [esp + 0x10]
+    L_done:
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [ecx + 0x4]
+        pop edi
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ecx
+        pop esi
+        add esp, 0x10
+        ret 0x8
+    }
+}
