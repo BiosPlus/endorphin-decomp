@@ -4467,3 +4467,46 @@ extern "C" __declspec(naked) void __fastcall fn_00431460(void* self) {
         ret
     }
 }
+
+// [0x0043DDF0] sub_0043DDF0 (111 bytes)
+extern "C" int mem_00993830;
+extern "C" int mem_009320F0;
+extern "C" void ext_00466BA0();
+
+extern "C" __declspec(naked) void __fastcall fn_0043DDF0(void* self, int edx_unused, double a1) {
+    __asm {
+        fld qword ptr [esp + 0x4]
+        fld st(0)
+        fadd qword ptr [ecx + 0xe8]
+        fxch st(1)
+        fadd qword ptr [ecx + 0xf0]
+        fld qword ptr [mem_00993830]
+        fcomp st(2)
+        fnstsw ax
+        test ah, 0x41
+        jp L_43DE32
+        fld qword ptr [mem_009320F0]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x1
+        jne L_43DE32
+        fxch st(1)
+        fstp qword ptr [ecx + 0xe8]
+        fstp qword ptr [ecx + 0xf0]
+        jmp L_43DE36
+    L_43DE32:
+        fstp st(1)
+        fstp st(0)
+    L_43DE36:
+        fld qword ptr [ecx + 0xe8]
+        push 0
+        fstp dword ptr [esp + 0x8]
+        lea eax, [esp + 0x8]
+        fld qword ptr [ecx + 0xf0]
+        push eax
+        add ecx, 0x13c
+        fstp dword ptr [esp + 0x10]
+        call ext_00466BA0
+        ret 0x8
+    }
+}
