@@ -2082,3 +2082,52 @@ extern "C" __declspec(naked) void __fastcall fn_00547AF0(void* self) {
         ret 8
     }
 }
+
+// [0x00547D10] sub_00547D10 (89 bytes)
+extern "C" void ext_005D0350();
+extern "C" int mem_0092C508;
+extern "C" int mem_0093F8EC;
+
+extern "C" __declspec(naked) void __fastcall fn_00547D10(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0xa0]
+        test ecx, ecx
+        je short loc_547D2E
+        fld dword ptr [esp + 8]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_005D0350
+        pop esi
+        ret 4
+
+    loc_547D2E:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x14]
+        push edi
+        lea edi, [esi + 0x70]
+        push edi
+        mov ecx, esi
+        call edx
+        fmul dword ptr [esp + 0xc]
+        fadd dword ptr [edi]
+        fstp dword ptr [edi]
+        fld dword ptr [edi]
+        fcomp qword ptr [mem_0092C508]
+        fnstsw ax
+        test ah, 5
+        jp short loc_547D5B
+        fld dword ptr [mem_0093F8EC]
+        fstp dword ptr [edi]
+
+    loc_547D5B:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x44]
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        ret 4
+    }
+}
