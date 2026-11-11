@@ -1038,3 +1038,60 @@ extern "C" __declspec(naked) void* __fastcall fn_006A7D80(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x006AD580] sub_006AD580 (127 bytes)
+extern "C" void ext_006ACE90();
+extern "C" void ext_006ACFC0();
+extern "C" int mem_009256C8;
+
+extern "C" __declspec(naked) void __fastcall fn_006AD580(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x38], 0x0
+        je L_006AD5F8
+        push edi
+        call ext_006ACFD0
+        mov edi, eax
+        mov eax, dword ptr [esp + 0x20]
+        push eax
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_006ACE90
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [esp + 0x24]
+        mov dword ptr [edx], ecx
+        mov ecx, dword ptr [eax + 0x4]
+        mov dword ptr [edx + 0x4], ecx
+        mov ecx, dword ptr [eax + 0x8]
+        mov dword ptr [edx + 0x8], ecx
+        mov eax, dword ptr [eax + 0xc]
+        mov ecx, edi
+        mov dword ptr [edx + 0xc], eax
+        call ext_006ACFC0
+        mov ecx, dword ptr [esi + 0x3c]
+        mov cl, byte ptr [ecx]
+        neg al
+        sbb eax, eax
+        and eax, 0xffffff00
+        add eax, 0x100
+        neg cl
+        sbb ecx, ecx
+        and ecx, 0x400
+        or eax, ecx
+        push eax
+        push 0x4
+        push edx
+        mov edx, dword ptr [esp + 0x28]
+        mov eax, dword ptr [edx + 0x4]
+        push eax
+        call dword ptr [mem_009256C8]
+        pop edi
+    L_006AD5F8:
+        pop esi
+        add esp, 0x10
+        ret 0xc
+    }
+}
