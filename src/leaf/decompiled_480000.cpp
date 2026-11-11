@@ -3119,3 +3119,30 @@ extern "C" __declspec(naked) void __fastcall fn_00486CB0(void* self) {
         ret 0xc
     }
 }
+
+// [0x00480880] sub_00480880 (148 bytes)
+extern "C" void ext_00480370();
+
+extern "C" void __cdecl fn_00480880(void** first, int hole, int bottom, void* val, int pred) {
+    int top = hole;
+    int idx = 2 * hole + 2;
+    while (idx < bottom) {
+        char* p2 = (char*)first[idx - 1];
+        char* p1 = (char*)first[idx];
+        bool less;
+        if (*(int*)(p1 + 0x98) == *(int*)(p2 + 0x98))
+            less = *(int*)(p1 + 0x9c) > *(int*)(p2 + 0x9c);
+        else
+            less = *(int*)(p1 + 0x98) < *(int*)(p2 + 0x98);
+        if (less)
+            --idx;
+        first[hole] = first[idx];
+        hole = idx;
+        idx = 2 * idx + 2;
+    }
+    if (idx == bottom) {
+        first[hole] = first[bottom - 1];
+        hole = bottom - 1;
+    }
+    ((void (__cdecl*)(void**, int, int, void*, int))ext_00480370)(first, hole, top, val, pred);
+}
