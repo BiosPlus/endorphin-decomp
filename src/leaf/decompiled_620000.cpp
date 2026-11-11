@@ -3243,3 +3243,67 @@ extern "C" __declspec(naked) void __fastcall fn_00629530(void* self) {
         ret
     }
 }
+
+// [0x00629720] sub_00629720 (136 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_00629720(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x28]
+        mov ecx, dword ptr [eax + 0x160]
+        mov ecx, dword ptr [ecx]
+        add eax, 0x15c
+        push edi
+        xor edi, edi
+        cmp dword ptr [esi + 0x3c], edi
+        mov ebp, eax
+        mov ebx, ecx
+        mov dword ptr [esp + 0x10], ebp
+        mov dword ptr [esp + 0x14], ebx
+        jle L_skip_loop_629720
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    L_loop_629720:
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        add edi, 1
+        cmp edi, dword ptr [esi + 0x3c]
+        jl L_loop_629720
+        mov ebx, dword ptr [esp + 0x14]
+        mov ebp, dword ptr [esp + 0x10]
+    L_skip_loop_629720:
+        test ebp, ebp
+        mov edi, dword ptr [mem_00925134]
+        jne L_skip_call1_629720
+        call edi
+    L_skip_call1_629720:
+        cmp ebx, dword ptr [ebp + 4]
+        jne L_skip_call2_629720
+        call edi
+    L_skip_call2_629720:
+        mov edx, dword ptr [ebx + 0x28]
+        mov ecx, dword ptr [edx + 0x16c]
+        add esi, 0x30
+        call ext_00648480
+        fld dword ptr [eax + 0x30]
+        fstp dword ptr [esi]
+        pop edi
+        fld dword ptr [eax + 0x34]
+        fstp dword ptr [esi + 0x4]
+        fld dword ptr [eax + 0x38]
+        mov eax, esi
+        fstp dword ptr [esi + 0x8]
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}

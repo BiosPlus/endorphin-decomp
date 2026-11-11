@@ -192,3 +192,74 @@ extern "C" __declspec(naked) void __fastcall fn_005E29F0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x005ECB10] NMData::FixedPathJointData::vfunc_9_off_C (136 bytes)
+// Stack arg a1 remapped (1 -> 3, 2 -> 4, else unchanged), then forwarded to AnimatableTransform::vfunc_9_off_C
+// (0x00528C30). Then iterates the element-pointer vector at [self+0x1f8]..[self+0x1fc] (MSVC iterator checks,
+// failure -> invalid_parameter_noinfo) and calls each element's vtable slot 8 (+0x20) with the remapped arg.
+// ret 0x4.
+extern "C" void ext_00528C30();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005ECB10(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        cmp ebp, 0x1
+        push esi
+        push edi
+        mov esi, ecx
+        jne L_chk2
+        mov ebp, 0x3
+        jmp L_call
+    L_chk2:
+        cmp ebp, 0x2
+        jne L_call
+        mov ebp, 0x4
+    L_call:
+        push ebp
+        call ext_00528C30
+        mov edi, dword ptr [esi + 0x1f8]
+        add esi, 0x1f4
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_top
+        call dword ptr [mem_00925134]
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_top:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_chk3
+        call dword ptr [mem_00925134]
+    L_chk3:
+        cmp esi, esi
+        je L_chk4
+        call dword ptr [mem_00925134]
+    L_chk4:
+        cmp edi, ebx
+        je L_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_elem
+        call dword ptr [mem_00925134]
+    L_elem:
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x20]
+        push ebp
+        call edx
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_next
+        call dword ptr [mem_00925134]
+    L_next:
+        add edi, 0x4
+        jmp L_top
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}

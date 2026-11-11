@@ -232,3 +232,50 @@ extern "C" __declspec(naked) void __fastcall fn_00671930(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0066B410] ExprParser::StringType::vfunc_42 (136 bytes)
+extern "C" void ext_0041CEB0();
+extern "C" int mem_00924FC4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0066B410(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b2ae2
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x38
+        mov ecx, dword ptr [esp + 0x4c]
+        push ebx
+        push esi
+        lea eax, [esp + 0x24]
+        push eax
+        call ext_0041CEB0
+        mov esi, eax
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, dword ptr [esp + 0x54]
+        mov dword ptr [esp + 0x4c], 0
+        call ext_0041CEB0
+        push esi
+        push eax
+        mov byte ptr [esp + 0x50], 1
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        lea ecx, [esp + 0x8]
+        mov bl, al
+        mov byte ptr [esp + 0x48], 0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x24]
+        mov dword ptr [esp + 0x48], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x40]
+        pop esi
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x44
+        ret 0x8
+    }
+}

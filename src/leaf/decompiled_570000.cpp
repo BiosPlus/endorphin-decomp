@@ -1534,3 +1534,80 @@ extern "C" __declspec(naked) void __fastcall fn_00574D90(void* self) {
         ret
     }
 }
+
+// [0x00570700] sub_00570700 (136 bytes)
+extern "C" void ext_00570380();
+extern "C" int mem_00924FB0;
+extern "C" int mem_009250EC;
+extern "C" int mem_009250C0;
+extern "C" int mem_0092500C;
+
+extern "C" __declspec(naked) bool __fastcall fn_00570700(void* self, int edx_unused, void* a1, void* is) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        push eax
+        lea esi, [ebp + 0x46c]
+        push esi
+        call dword ptr [mem_00924FB0]
+        add esp, 0x8
+        test al, al
+        je done_true
+        mov edi, dword ptr [esp + 0x18]
+        mov ebx, dword ptr [mem_009250EC]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    read_loop:
+        push esi
+        push edi
+        call ebx
+        mov ecx, dword ptr [eax]
+        mov ecx, dword ptr [ecx + 0x4]
+        add esp, 0x8
+        add ecx, eax
+        call dword ptr [mem_009250C0]
+        test al, al
+        jne done_false
+        push 0x0
+        mov ecx, esi
+        call dword ptr [mem_0092500C]
+        cmp byte ptr [eax], 0x23
+        jne check_loop
+        push edi
+        mov ecx, ebp
+        call ext_00570380
+        test al, al
+        je done_false
+    check_loop:
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        push esi
+        call dword ptr [mem_00924FB0]
+        add esp, 0x8
+        test al, al
+        jne read_loop
+    done_true:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        ret 0x8
+    done_false:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret 0x8
+    }
+}

@@ -2787,3 +2787,48 @@ L_0044BD51:
         ret
     }
 }
+
+// [0x0044B080] sub_0044B080 (127 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_004691A0();
+extern "C" void ext_0046A320();
+extern "C" void ext_006A6688();
+
+extern "C" __declspec(naked) void __fastcall fn_0044B080(void* self) {
+    __asm {
+        push -1
+        push 0x87d6f8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        lea eax, [esi + 0x5c]
+        lea edi, [esi + 0x60]
+        mov dword ptr [esp + 0x8], esi
+        mov dword ptr [esi], 0x934c14
+        mov dword ptr [esi + 0x58], 0x934c0c
+        mov dword ptr [eax], 0x934c04
+        mov dword ptr [edi], 0x934bfc
+        push eax
+        mov dword ptr [esp + 0x18], 0x0
+        call ext_00465B30
+        mov ecx, eax
+        call ext_0046A320
+        push edi
+        call ext_00465B30
+        mov ecx, eax
+        call ext_004691A0
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_006A6688
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
