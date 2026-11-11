@@ -1697,3 +1697,57 @@ extern "C" __declspec(naked) void __fastcall fn_004B75A0(void* self) {
         ret 10h
     }
 }
+
+// [0x004B5270] sub_004B5270 (121 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B5270(void* self) {
+    __asm {
+        push -0x1
+        push 0x8882e8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        mov edi, dword ptr [esi + 0x8]
+        xor ebp, ebp
+        cmp dword ptr [esi + 0x4], edi
+        mov dword ptr [esp + 0x18], ebp
+        jbe f4b5270_chk1
+        call dword ptr [mem_00925134]
+    f4b5270_chk1:
+        push ebx
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe f4b5270_chk2
+        call dword ptr [mem_00925134]
+    f4b5270_chk2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        mov ecx, esi
+        call ext_004B4930
+        mov eax, dword ptr [esi + 0x4]
+        cmp eax, ebp
+        pop ebx
+        je f4b5270_nofree
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    f4b5270_nofree:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x4], ebp
+        mov dword ptr [esi + 0x8], ebp
+        mov dword ptr [esi + 0xc], ebp
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
