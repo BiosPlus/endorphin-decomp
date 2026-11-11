@@ -1603,3 +1603,43 @@ extern "C" __declspec(naked) void __fastcall fn_00493F80(void* self) {
         ret
     }
 }
+
+// [0x00490920] sub_00490920 (59 bytes)
+extern "C" void ext_0048EF80();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00490920(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe m490920_ok1
+        call ebp
+    m490920_ok1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe m490920_ok2
+        call ebp
+    m490920_ok2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_0048EF80
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
