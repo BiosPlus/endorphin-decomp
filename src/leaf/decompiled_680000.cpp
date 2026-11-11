@@ -1328,3 +1328,34 @@ extern "C" __declspec(naked) void* __fastcall fn_0068C400(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0065C660();
+extern "C" void ext_0065F440();
+
+// [0x0068BB60] sub_0068BB60 (88 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0068BB60(void* self) {
+    __asm {
+        push -0x1
+        push 0x891e68
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x98dd14
+        mov dword ptr [ecx], 0x98dce4
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_0065C660
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_0065F440
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
