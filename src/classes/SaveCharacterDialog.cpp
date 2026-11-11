@@ -62,3 +62,14 @@ extern "C" __declspec(naked) void __fastcall fn_0040D640(void* self) {
         ret
     }
 }
+
+extern "C" void __fastcall ext_0040CD90(void* self, int edx_unused, int a1);
+extern "C" void __stdcall ext_006A5F44(void* a1, int a2, void* a3);
+
+// [0x0040D960] SaveCharacterDialog::vfunc_63 (73 bytes)
+extern "C" void __fastcall fn_0040D960(void* self, int edx_unused, int a1) {
+    ext_0040CD90(self, edx_unused, a1);
+    ext_006A5F44(reinterpret_cast<void*>(a1), 0x4ca, static_cast<char*>(self) + 0x428);
+    ext_006A5F44(reinterpret_cast<void*>(a1), 0x3ef, static_cast<char*>(self) + 0x360);
+    ext_006A5F44(reinterpret_cast<void*>(a1), 0x4c9, static_cast<char*>(self) + 0x3c4);
+}
