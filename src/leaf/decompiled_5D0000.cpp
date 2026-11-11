@@ -1074,3 +1074,54 @@ epilogue:
         ret 0x4
     }
 }
+
+extern "C" void ext_00493EE0();
+extern "C" void ext_00594000();
+extern "C" void ext_005DA150();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+
+// [0x005DC300] sub_005DC300 (136 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005DC300(void* self, int edx_unused, float a1) {
+    __asm {
+        push -1
+        push 0x8a56c8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x258]
+        lea edi, [eax + 0x258]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        call edx
+        mov ebx, eax
+        mov ecx, ebx
+        mov dword ptr [esp + 0xc], ebx
+        call ext_0065C640
+        fld dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esi + 0x44]
+        fst dword ptr [esi + 0x2c]
+        push ecx
+        fstp dword ptr [esp]
+        mov dword ptr [esp + 0x1c], 0
+        call ext_005DA150
+        mov ecx, edi
+        call ext_00493EE0
+        mov ecx, ebx
+        mov dword ptr [esp + 0x18], -1
+        call ext_0065C650
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
