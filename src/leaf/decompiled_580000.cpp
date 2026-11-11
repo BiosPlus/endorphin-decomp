@@ -1166,3 +1166,75 @@ L_notfound:
         ret 0x4
     }
 }
+
+// [0x00586140] sub_00586140 (134 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) void* __fastcall fn_00586140(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [ecx + 0x80]
+        cmp esi, dword ptr [ecx + 0x84]
+        push edi
+        lea edi, [ecx + 0x7c]
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+L_chk1:
+        mov ebp, dword ptr [esp + 0x14]
+        nop
+L_head:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+L_chk2:
+        cmp edi, edi
+        je L_chk3
+        call dword ptr [mem_00925134]
+L_chk3:
+        cmp esi, ebx
+        je L_notfound
+        cmp esi, dword ptr [edi + 0x8]
+        mov ebx, dword ptr [mem_00925134]
+        jb L_chk4
+        call ebx
+L_chk4:
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        call edx
+        push ebp
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        jne L_found
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_chk5
+        call ebx
+L_chk5:
+        add esi, 0x4
+        jmp L_head
+L_found:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_chk6
+        call ebx
+L_chk6:
+        mov eax, dword ptr [esi]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+L_notfound:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x4
+    }
+}
