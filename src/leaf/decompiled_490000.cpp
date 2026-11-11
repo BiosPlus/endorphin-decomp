@@ -1787,3 +1787,44 @@ extern "C" __declspec(naked) void __fastcall fn_00492BC0(void* self) {
         ret
     }
 }
+
+// [0x004939B0] sub_004939B0 (111 bytes)
+// SEH-guarded constructor-style routine: installs an EH frame, initialises two
+// subobjects (+0x50, +0x30) via sub_006A6D5C, then destroys the std::string at +0x14.
+extern "C" void ext_006A6D5C();
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_004939B0(void* self) {
+    __asm {
+        push -1
+        push 0x885be2
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        push 0x493970
+        push 2
+        push 0xc
+        lea eax, [esi + 0x50]
+        push eax
+        mov dword ptr [esp + 0x20], 1
+        call ext_006A6D5C
+        push 0x436f30
+        push 2
+        push 0x10
+        lea ecx, [esi + 0x30]
+        push ecx
+        mov byte ptr [esp + 0x20], 0
+        call ext_006A6D5C
+        lea ecx, [esi + 0x14]
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
