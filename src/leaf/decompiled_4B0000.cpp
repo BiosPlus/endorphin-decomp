@@ -1534,3 +1534,61 @@ extern "C" __declspec(naked) void __fastcall fn_004B73A0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004B5180] sub_004B5180 (109 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_00924FF4;
+extern "C" int mem_009251EC;
+extern "C" __declspec(naked) void __fastcall fn_004B5180(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        test ebp, ebp
+        push esi
+        push edi
+        mov edi, ecx
+        jne short L_ok1
+        call ebx
+L_ok1:
+        mov esi, dword ptr [esp + 0x1c]
+        cmp esi, dword ptr [ebp + 8]
+        jb short L_ok2
+        call ebx
+L_ok2:
+        mov ebx, dword ptr [esi]
+        test ebx, ebx
+        je short L_skip
+        lea ecx, [ebx + 4]
+        call dword ptr [mem_00924FF4]
+        push ebx
+        call ext_006A5C5C
+        add esp, 4
+L_skip:
+        mov eax, dword ptr [edi + 8]
+        lea ecx, [esi + 4]
+        sub eax, ecx
+        sar eax, 2
+        test eax, eax
+        jle short L_noshift
+        add eax, eax
+        add eax, eax
+        push eax
+        push ecx
+        push eax
+        push esi
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+L_noshift:
+        mov eax, dword ptr [esp + 0x14]
+        add dword ptr [edi + 8], -4
+        pop edi
+        mov dword ptr [eax + 4], esi
+        pop esi
+        mov dword ptr [eax], ebp
+        pop ebp
+        pop ebx
+        ret 0xc
+    }
+}
