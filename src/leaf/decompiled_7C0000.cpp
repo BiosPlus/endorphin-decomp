@@ -3221,3 +3221,11 @@ alt_007C94D6:
         ret
     }
 }
+
+// [0x007C9500] sub_007C9500 (78 bytes)
+extern "C" void __cdecl ext_007C9490(void* a0, int a1, float a2, float a3, float a4);
+
+extern "C" void __cdecl fn_007C9500(void* a0, float a1, float a2, float a3) {
+    ext_007C9490(a0, 0, a1, a2, a3);
+    ext_007C9490(a0, 1, a1, a2, a3);
+}
