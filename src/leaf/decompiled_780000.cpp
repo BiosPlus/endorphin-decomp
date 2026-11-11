@@ -175,3 +175,46 @@ L_seek_null:
         ret 0x4
     }
 }
+
+// [0x00788C90] sub_00788C90 (112 bytes)
+// Calls GetLocalTime into a stack SYSTEMTIME, then copies year/month/day/hour/minute/second/ms
+// (each masked to 16 bits) into out[0..6] as dwords; ret 0.
+extern "C" int mem_00924164;
+extern "C" __declspec(naked) void __cdecl fn_00788C90(void* out) {
+    __asm {
+        sub esp, 0x14
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        push eax
+        call dword ptr [mem_00924164]
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        mov eax, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x2]
+        and ecx, 0xffff
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x6]
+        and edx, 0xffff
+        and ecx, 0xffff
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [eax + 0x8], ecx
+        mov ecx, dword ptr [esp + 0xa]
+        and edx, 0xffff
+        and ecx, 0xffff
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x10], ecx
+        mov ecx, dword ptr [esp + 0xe]
+        and edx, 0xffff
+        and ecx, 0xffff
+        mov dword ptr [eax + 0x14], edx
+        mov dword ptr [eax + 0x18], ecx
+        add esp, 0x14
+        ret
+    }
+}
