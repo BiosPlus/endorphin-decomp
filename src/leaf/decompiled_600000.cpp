@@ -877,3 +877,20 @@ extern "C" __declspec(naked) void* __fastcall fn_0060B910(void* self) {
         ret
     }
 }
+
+// [0x0060C570] sub_0060C570 (33 bytes)
+extern "C" void ext_0060B910();
+extern "C" __declspec(naked) void* __fastcall fn_0060C570(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0060B910
+        lea ecx, [esi + 0x48]
+        mov dword ptr [esi], 0x0097215c
+        mov dword ptr [esi + 0x44], 0x0
+        call ext_0060BCD0
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
