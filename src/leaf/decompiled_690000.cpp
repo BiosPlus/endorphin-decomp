@@ -1450,3 +1450,21 @@ fail:
         ret
     }
 }
+
+// [0x00693D40] sub_00693D40 (110 bytes)
+extern "C" void __fastcall fn_00693D40(float* self) {
+    struct Mat4 { float m[16]; };
+    Mat4 t = *reinterpret_cast<Mat4*>(self);
+    self[1]  = t.m[4];
+    self[2]  = t.m[8];
+    self[3]  = t.m[12];
+    self[4]  = t.m[1];
+    self[6]  = t.m[9];
+    self[7]  = t.m[13];
+    self[8]  = t.m[2];
+    self[9]  = t.m[6];
+    self[11] = t.m[14];
+    self[12] = t.m[3];
+    self[13] = t.m[7];
+    self[14] = t.m[11];
+}
