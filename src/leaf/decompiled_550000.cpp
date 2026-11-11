@@ -3022,3 +3022,33 @@ done_loop:
         ret
     }
 }
+
+// [0x00559B20] sub_00559B20 (63 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00559B20(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je L_clear_00559B20
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esi + 0x8]
+        push ecx
+        push esi
+        push edx
+        push eax
+        call ext_00558FE0
+        mov eax, dword ptr [esi + 0x4]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x14
+    L_clear_00559B20:
+        mov dword ptr [esi + 0x4], 0x0
+        mov dword ptr [esi + 0x8], 0x0
+        mov dword ptr [esi + 0xc], 0x0
+        pop esi
+        pop ecx
+        ret
+    }
+}
