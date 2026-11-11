@@ -159,3 +159,46 @@ other:
         ret 0x8
     }
 }
+
+// [0x006115F0] NMData::HingeConstraint::vfunc_14 (85 bytes)
+extern "C" void ext_0046F7D0();
+extern "C" void ext_0058F6B0();
+extern "C" void ext_00661650();
+
+extern "C" __declspec(naked) void* __fastcall fn_006115F0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, 0xc8
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0
+        je hinge_6115f0_c8
+        push eax
+        push esi
+        call ext_0058F6B0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+hinge_6115f0_c8:
+        cmp byte ptr [ecx + 0x160], 0
+        je hinge_6115f0_zero
+        add ecx, 0x164
+        push ecx
+        mov ecx, esi
+        call ext_00661650
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+hinge_6115f0_zero:
+        push esi
+        call ext_0046F7D0
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
