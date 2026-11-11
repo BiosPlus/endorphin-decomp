@@ -2835,3 +2835,24 @@ L_466C03:
         ret 0x8
     }
 }
+
+// [0x0046C390] sub_0046C390 (36 bytes)
+extern "C" void ext_00664840();
+extern "C" __declspec(naked) void* __cdecl fn_0046C390(void* a1, float a2) {
+    __asm {
+        push ecx
+        fld dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_00664840
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
