@@ -1047,3 +1047,42 @@ extern "C" __declspec(naked) void __fastcall fn_004F4ED0(void* self) {
         ret
     }
 }
+
+// [0x004F0A90] sub_004F0A90 (102 bytes)
+extern "C" void ext_00661980();
+
+extern "C" __declspec(naked) void __fastcall fn_004F0A90(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x88f426
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi + 0x4]
+        mov ecx, edi
+        mov dword ptr [esi], 0x9443bc
+        call ext_00661980
+        mov eax, dword ptr [esp + 0x1c]
+        mov dword ptr [esi + 0x8], eax
+        xor eax, eax
+        mov dword ptr [esi], 0x94c14c
+        mov dword ptr [edi], 0x94c0f4
+        mov dword ptr [esi + 0x10], eax
+        mov dword ptr [esi + 0x14], eax
+        mov dword ptr [esi + 0x18], eax
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x20], eax
+        mov dword ptr [esi + 0x24], eax
+        mov dword ptr [esi + 0x28], eax
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
