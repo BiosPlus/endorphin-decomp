@@ -2973,3 +2973,57 @@ extern "C" __declspec(naked) void __fastcall fn_004974E0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004950B0] sub_004950B0 (135 bytes)
+// Returns a std::string by value (hidden return buffer is the first stack arg, ret 0x8).
+// Initializes the buffer from "" via the imported basic_string(const char*) ctor, then if
+// 0 <= idx < sub_00494830(self), assigns the element at self+8[idx] into the buffer.
+extern "C" void ext_0041CCC0();
+extern "C" void ext_00494830();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __fastcall fn_004950B0(void* self, int edx_unused, void* out, int idx) {
+    __asm {
+        push -1
+        push 0x8864ea
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov dword ptr [esp + 0xc], 0x0
+        mov esi, dword ptr [esp + 0x20]
+        mov edi, ecx
+        push 0x928b5d
+        mov ecx, esi
+        mov dword ptr [esp + 0x1c], 0x0
+        call dword ptr [mem_00924FE4]
+        mov ebx, dword ptr [esp + 0x24]
+        test ebx, ebx
+        mov dword ptr [esp + 0x18], 0x0
+        mov dword ptr [esp + 0xc], 0x1
+        jl short L_004950B0_done
+        mov ecx, edi
+        call ext_00494830
+        cmp ebx, eax
+        jge short L_004950B0_done
+        push ebx
+        lea ecx, [edi + 0x8]
+        call ext_0041CCC0
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+L_004950B0_done:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x8
+    }
+}
