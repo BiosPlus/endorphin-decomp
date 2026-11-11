@@ -1365,3 +1365,48 @@ extern "C" __declspec(naked) void __fastcall fn_00553FF0(void* self) {
         ret
     }
 }
+
+// [0x005555D0] sub_005555D0 (94 bytes)
+extern "C" __declspec(naked) void __cdecl fn_005555D0(void* dst, unsigned int count, const void* src) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        test edi, edi
+        jbe done_pop_edi
+        mov ecx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        lea eax, [esi + 0xc]
+    loop_top:
+        test esi, esi
+        je skip_copy
+        mov edx, dword ptr [ecx]
+        mov dword ptr [esi], edx
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [eax - 0x8]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [eax - 0x4]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax]
+        mov edx, dword ptr [ecx + 0x10]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [ecx + 0x14]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [ecx + 0x18]
+        mov dword ptr [eax + 0xc], edx
+        mov dx, word ptr [ecx + 0x1c]
+        mov word ptr [eax + 0x10], dx
+        mov dl, byte ptr [ecx + 0x1e]
+        mov byte ptr [eax + 0x12], dl
+    skip_copy:
+        sub edi, 0x1
+        add esi, 0x20
+        add eax, 0x20
+        test edi, edi
+        ja loop_top
+        pop esi
+    done_pop_edi:
+        pop edi
+        ret
+    }
+}
