@@ -17,6 +17,8 @@ extern "C" int mem_00AD8334;
 extern "C" int mem_00AD8338;
 extern "C" int mem_00AD8FEC;
 extern "C" int mem_00AD8FF0;
+extern "C" int mem_00AD8FF4;
+extern "C" int mem_00AD8FF8;
 
 // [0x0046DF60] ExprParser::ReadWriteMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, float, {public: void __thiscall ImageExporter::setFrameRate(float), 0}>::vfunc_40 (122 bytes)
 extern "C" __declspec(naked) void __fastcall fn_0046DF60(void* self, int edx_unused, void* a1) {
@@ -267,6 +269,38 @@ extern "C" __declspec(naked) void __fastcall fn_00470290(void* self, int edx_unu
     init_done:
         mov ecx, dword ptr [esp + 0x10]
         mov dword ptr [ecx + 0x4], offset mem_00AD8FEC
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
+
+// [0x004706A0] ExprParser::ReadWriteMethodType<RuntimeEngine, float, {public: float __thiscall RuntimeEngine::getTimeZoomFactor(void) const, 0}, float, {public: void __thiscall RuntimeEngine::setTimeZoomFactor(float), 0}>::vfunc_40 (122 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004706A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x882dae
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00AD8FF8], al
+        jne init_done
+        or dword ptr [mem_00AD8FF8], eax
+        mov ecx, offset mem_00AD8FF4
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00AD8FF4], 0x0093b6d4
+        mov dword ptr [eax + 0x4], offset mem_00AD8FF4
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    init_done:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00AD8FF4
         mov ecx, dword ptr [esp]
         mov dword ptr fs:[0], ecx
         add esp, 0xc
