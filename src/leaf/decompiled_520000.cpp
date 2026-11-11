@@ -913,3 +913,56 @@ extern "C" __declspec(naked) void* __fastcall fn_00524540(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x00524B50] sub_00524B50 (99 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00524B50(void* self, int edx_unused, float v) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 4]
+        test esi, esi
+        je L_ret
+        mov eax, dword ptr [esi + 0x24]
+        test eax, eax
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        je L_call1
+        mov ecx, dword ptr [esi + 0x28]
+        sub ecx, eax
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        jne L_cont
+L_call1:
+        call ebx
+L_cont:
+        mov esi, dword ptr [esi + 0x24]
+        mov ecx, dword ptr [esi + 8]
+        mov edi, dword ptr [edi + 8]
+        add esi, 4
+        test ecx, ecx
+        je L_call2
+        mov eax, dword ptr [esi + 8]
+        sub eax, ecx
+        sar eax, 3
+        cmp edi, eax
+        jb L_store
+L_call2:
+        call ebx
+L_store:
+        fld dword ptr [esp + 20]
+        mov ecx, dword ptr [esi + 4]
+        fstp qword ptr [ecx + 8*edi]
+        pop ebx
+L_ret:
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
