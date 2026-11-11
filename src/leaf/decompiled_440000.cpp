@@ -2966,3 +2966,62 @@ extern "C" __declspec(naked) void __fastcall fn_00441C10(void* self) {
         ret 8
     }
 }
+
+// [0x00448BF0] sub_00448BF0 (145 bytes)
+extern "C" void ext_00678170();
+extern "C" void ext_006AD180();
+extern "C" int mem_009334D8;
+
+extern "C" __declspec(naked) void __fastcall fn_00448BF0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0xc8]
+        call ext_006AD180
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [ecx + 0xfc]
+        add ecx, 0xf8
+        cmp eax, 1
+        je short loc_448c2c
+        cmp eax, 2
+        jne short loc_448c32
+        fldz
+        fld qword ptr [esp + 0x4]
+        fucom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x44
+        jnp short loc_448c2a
+        fmul qword ptr [ecx + 0x30]
+        ret 8
+    loc_448c2a:
+        fstp st(0)
+    loc_448c2c:
+        fld qword ptr [ecx + 0x30]
+        ret 8
+    loc_448c32:
+        cmp eax, 3
+        jne short loc_448c61
+        fld qword ptr [ecx + 0x30]
+        fstp qword ptr [esp + 0x4]
+        call ext_00594000
+        fld qword ptr [esp + 0x4]
+        push ecx
+        fstp dword ptr [esp + 0x8]
+        lea ecx, [eax + 0x2e0]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [esp]
+        call ext_00678170
+        ret 8
+    loc_448c61:
+        cmp byte ptr [ecx + 3], 0
+        je short loc_448c7c
+        cmp byte ptr [ecx + 2], 0
+        je short loc_448c7c
+        fld qword ptr [ecx + 0x18]
+        fsub qword ptr [ecx + 0x10]
+        fdiv qword ptr [mem_009334D8]
+        ret 8
+    loc_448c7c:
+        fld1
+        ret 8
+    }
+}
