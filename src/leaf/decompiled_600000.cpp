@@ -1044,3 +1044,34 @@ extern "C" __declspec(naked) void* __fastcall fn_0060B990(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x0060BBA0] sub_0060BBA0 (66 bytes)
+extern "C" void ext_0060B990();
+extern "C" __declspec(naked) void* __fastcall fn_0060BBA0(void* self, int edx_unused, void* src) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_0060B990
+        mov dword ptr [esi], 0x97215c
+        mov eax, dword ptr [edi + 0x44]
+        mov dword ptr [esi + 0x44], eax
+        mov ecx, dword ptr [edi + 0x48]
+        lea eax, [edi + 0x48]
+        mov dword ptr [esi + 0x48], ecx
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [esi + 0x4c], edx
+        mov ecx, dword ptr [eax + 0x8]
+        mov dword ptr [esi + 0x50], ecx
+        mov edx, dword ptr [eax + 0xc]
+        mov dword ptr [esi + 0x54], edx
+        mov eax, dword ptr [eax + 0x10]
+        mov dword ptr [esi + 0x58], eax
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
