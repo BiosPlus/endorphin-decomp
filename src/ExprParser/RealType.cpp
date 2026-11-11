@@ -83,3 +83,38 @@ extern "C" int __fastcall fn_0066CEA0(void* self, int edx_unused, void* a1, void
     d = (float)fabs((double)d);
     return ((double)d <= mem_00987B78) ? 1 : 0;
 }
+
+// [0x0066CE30] ExprParser::RealType::vfunc_18 (98 bytes)
+extern "C" void ext_00672080();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B59654;
+extern "C" int mem_00B5964C;
+
+extern "C" __declspec(naked) void __fastcall fn_0066CE30(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8b33de
+        push eax
+        mov eax, 0x1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00B59654], al
+        jne L_done_0066CE30
+        or dword ptr [mem_00B59654], eax
+        fldz
+        push ecx
+        fstp dword ptr [esp]
+        mov ecx, offset mem_00B5964C
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_00672080
+        push 0x921730
+        call ext_006A6C87
+        add esp, 0x4
+    L_done_0066CE30:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00B5964C
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
