@@ -1258,3 +1258,53 @@ extern "C" __declspec(naked) void __fastcall fn_005CF4A0(void* self) {
         ret
     }
 }
+
+// [0x005CFDB0] sub_005CFDB0 (92 bytes)
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) int __stdcall fn_005CFDB0(void* a1) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0x8]
+        push 0x92f10c
+        push ebp
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        je L_5CFDD1
+        mov eax, 0x1
+        pop ebp
+        ret 0x4
+L_5CFDD1:
+        push ebx
+        mov ebx, dword ptr [mem_00924FC4]
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, 0xb45938
+L_5CFDE1:
+        push ebp
+        push esi
+        call ebx
+        add esp, 0x8
+        test al, al
+        jne L_5CFE03
+        add esi, 0x1c
+        add edi, 0x1
+        cmp esi, 0xb459a8
+        jl L_5CFDE1
+        pop edi
+        pop esi
+        pop ebx
+        xor eax, eax
+        pop ebp
+        ret 0x4
+L_5CFE03:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        pop ebp
+        ret 0x4
+    }
+}
