@@ -2451,3 +2451,69 @@ L_688570_notfound:
         ret 0x4
     }
 }
+
+// [0x006885F0] sub_006885F0 (127 bytes)
+// __thiscall (ret 4): scans the 0x24-stride vector at self+0x140..0x148 for the first element whose
+// node (at element[0]+0x10, a basic_string) compares equal to the argument via the imported
+// basic_string operator== (mem_00924FC4). Returns that element's first dword, or NULL.
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void* __fastcall fn_006885F0(void* self, int edx_unused, const void* name) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [ecx + 0x144]
+        cmp esi, dword ptr [ecx + 0x148]
+        push edi
+        lea edi, [ecx + 0x140]
+        jbe L_6885F0_ok1
+        call dword ptr [mem_00925134]
+L_6885F0_ok1:
+        mov ebp, dword ptr [esp + 0x14]
+L_6885F0_top:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_6885F0_ok2
+        call dword ptr [mem_00925134]
+L_6885F0_ok2:
+        cmp edi, edi
+        je L_6885F0_ok3
+        call dword ptr [mem_00925134]
+L_6885F0_ok3:
+        cmp esi, ebx
+        je L_6885F0_notfound
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_6885F0_ok4
+        call dword ptr [mem_00925134]
+L_6885F0_ok4:
+        mov eax, dword ptr [esi]
+        add eax, 0x10
+        push ebp
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        jne L_6885F0_found
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_6885F0_ok5
+        call dword ptr [mem_00925134]
+L_6885F0_ok5:
+        add esi, 0x24
+        jmp L_6885F0_top
+L_6885F0_found:
+        mov eax, dword ptr [esi]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+L_6885F0_notfound:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x4
+    }
+}
