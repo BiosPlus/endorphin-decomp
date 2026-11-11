@@ -2568,3 +2568,76 @@ extern "C" __declspec(naked) void __fastcall fn_00532870(void* self, int edx_unu
         ret 0x18
     }
 }
+
+// [0x00536140] sub_00536140 (136 bytes)
+// Box intersect: self (ecx), out (hidden return ptr), other (stack arg)
+extern "C" __declspec(naked) void __fastcall fn_00536140(void* self, int edx_unused, void* out, const void* other) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        lea eax, [esi + 0xc]
+        push edi
+        mov edi, dword ptr [eax]
+        cmp edi, dword ptr [ecx + 0xc]
+        lea edx, [ecx + 0xc]
+        mov ebx, eax
+        jl L_d
+        mov ebx, edx
+L_d:
+        mov edi, dword ptr [esi + 0x8]
+        cmp edi, dword ptr [ecx + 0x8]
+        lea eax, [esi + 0x8]
+        lea edx, [ecx + 0x8]
+        mov edi, eax
+        jl L_c
+        mov edi, edx
+L_c:
+        push ebp
+        mov ebp, dword ptr [ecx + 0x4]
+        cmp ebp, dword ptr [esi + 0x4]
+        lea edx, [ecx + 0x4]
+        lea eax, [esi + 0x4]
+        pop ebp
+        jl L_b
+        mov eax, edx
+L_b:
+        mov edx, dword ptr [ecx]
+        cmp edx, dword ptr [esi]
+        jge L_a
+        mov ecx, esi
+L_a:
+        mov edx, dword ptr [edi]
+        mov esi, dword ptr [eax]
+        mov ecx, dword ptr [ecx]
+        mov edi, dword ptr [ebx]
+        mov eax, edx
+        sub eax, ecx
+        test eax, eax
+        jle L_empty
+        mov eax, edi
+        sub eax, esi
+        test eax, eax
+        jle L_empty
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], esi
+        mov dword ptr [eax + 0x8], edx
+        mov dword ptr [eax + 0xc], edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+L_empty:
+        mov eax, dword ptr [esp + 0x10]
+        xor ecx, ecx
+        pop edi
+        pop esi
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax], ecx
+        pop ebx
+        ret 0x8
+    }
+}
