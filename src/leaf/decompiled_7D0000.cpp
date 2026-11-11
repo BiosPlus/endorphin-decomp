@@ -1324,3 +1324,24 @@ extern "C" void __cdecl fn_007DADD0(char* a1) {
     }
     mem_00AB29F0 = 0;
 }
+
+// [0x007D4800] sub_007D4800 (32 bytes)
+extern "C" void ext_007D5950();
+
+extern "C" __declspec(naked) void __cdecl fn_007D4800(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [ecx + 4]
+        test eax, eax
+        je done
+        push eax
+        mov eax, dword ptr [ecx + 0x1c]
+        push 0x99de84
+        push eax
+        push 0
+        call ext_007D5950
+        add esp, 0x10
+done:
+        ret
+    }
+}
