@@ -2651,3 +2651,75 @@ extern "C" void* __cdecl fn_0049FB70(void* a, void* obj, int code) {
     ((void (__cdecl*)(void*))ext_00671F30)(a);
     return a;
 }
+
+// [0x004948C0] sub_004948C0 (127 bytes)
+extern "C" void ext_00494830();
+extern "C" int mem_00924FC4;
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) int __fastcall fn_004948C0(void* self, int edx_unused, const void* key) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        or ebx, -1
+        call ext_00494830
+        mov ebp, eax
+        xor edi, edi
+        test ebp, ebp
+        jle empty
+        xor ebx, ebx
+    loop_top:
+        mov eax, dword ptr [esi + 0xc]
+        test eax, eax
+        je inv
+        mov ecx, dword ptr [esi + 0x10]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb ok
+    inv:
+        call dword ptr [mem_00925134]
+    ok:
+        mov eax, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [esp + 0x14]
+        add eax, ebx
+        push ecx
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 8
+        test al, al
+        jne found
+        add edi, 1
+        add ebx, 0x1c
+        cmp edi, ebp
+        jl loop_top
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -1
+        pop ebx
+        ret 4
+    found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    empty:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        ret 4
+    }
+}
