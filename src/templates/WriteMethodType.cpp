@@ -1586,3 +1586,42 @@ extern "C" __declspec(naked) void __fastcall fn_004871E0(void* self) {
         ret 8
     }
 }
+
+// [0x00487300] ExprParser::WriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: void __thiscall NMData::DesiredPoseEventData::setRootFromFSM(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_41 (106 bytes)
+extern "C" void ext_00402040();
+extern "C" void ext_0046E780();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00487300(void* self) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esp + 0x2c]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax + 0x4]
+        push edx
+        push eax
+        lea eax, [esp + 0xc]
+        push eax
+        call ext_0046E780
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x2c], 0
+        call ext_00402040
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 8
+    }
+}
