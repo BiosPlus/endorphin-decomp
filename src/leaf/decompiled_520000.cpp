@@ -1412,3 +1412,30 @@ extern "C" __declspec(naked) void __fastcall fn_0052F3C0(void* self) {
         ret
     }
 }
+
+// [0x0052FC10] sub_0052FC10 (81 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0052FC10(void* self) {
+    __asm {
+        push -0x1
+        push 0x894d48
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        call ext_0053B240
+        lea ecx, [esi + 0x44]
+        mov dword ptr [esp + 0x10], 0x0
+        mov dword ptr [esi], 0x9541b4
+        mov dword ptr [esi + 0x14], 0x9541ac
+        call ext_00537E90
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
