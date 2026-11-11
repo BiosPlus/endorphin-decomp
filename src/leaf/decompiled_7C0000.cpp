@@ -2063,3 +2063,55 @@ extern "C" short __cdecl fn_007CC480(void* unused, float* m4, float* m3) {
     m4[14] = 0.0f;
     return 0;
 }
+
+// [0x007CCF20] sub_007CCF20 (93 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007CCF20(void* self, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [eax]
+        cmp ebx, esi
+        push edi
+        ja L_zero_007CCF20
+        mov edi, dword ptr [esp + 0x18]
+        cmp edi, esi
+        ja L_zero_007CCF20
+        mov eax, edi
+        sub eax, ebx
+        sar eax, 0x1f
+        mov ecx, eax
+        not ecx
+        push ebp
+        mov ebp, eax
+        mov edx, ecx
+        and ecx, edi
+        and eax, ebx
+        or eax, ecx
+        and edx, ebx
+        and ebp, edi
+        or edx, ebp
+        lea ecx, [edx + 0x1]
+        imul esi, edx
+        imul ecx, edx
+        mov edx, dword ptr [esp + 0x14]
+        sar ecx, 1
+        sub eax, ecx
+        mov ecx, dword ptr [edx + 0x8]
+        add eax, esi
+        imul eax, eax, 0x58
+        mov eax, dword ptr [eax + ecx + 0x4c]
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_zero_007CCF20:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
