@@ -34,3 +34,48 @@ done:
         ret
     }
 }
+
+// [0x005433F0] CameraTool::vfunc_33 (113 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005433F0(void* self) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x88], 0x0
+        je done
+        mov eax, dword ptr [esi + 0x88]
+        mov edx, dword ptr [esi]
+        push edi
+        mov edi, dword ptr [eax]
+        mov eax, dword ptr [edx + 0x78]
+        call eax
+        mov ecx, dword ptr [esi + 0x88]
+        mov edx, dword ptr [edi + 0x18]
+        push eax
+        call edx
+        fld dword ptr [eax + 0x30]
+        fstp dword ptr [esp + 0x8]
+        pop edi
+        fld dword ptr [eax + 0x34]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x38]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x4]
+        fst dword ptr [esi + 0x34]
+        fld dword ptr [esp + 0x8]
+        fst dword ptr [esi + 0x38]
+        fld dword ptr [esp + 0xc]
+        fst dword ptr [esi + 0x3c]
+        fld1
+        fst dword ptr [esi + 0x40]
+        fstp dword ptr [esi + 0x80]
+        fxch st(2)
+        fstp dword ptr [esi + 0x74]
+        fstp dword ptr [esi + 0x78]
+        fstp dword ptr [esi + 0x7c]
+done:
+        pop esi
+        add esp, 0x10
+        ret
+    }
+}
