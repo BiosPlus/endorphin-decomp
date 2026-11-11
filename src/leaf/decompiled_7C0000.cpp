@@ -2737,3 +2737,38 @@ extern "C" int __cdecl fn_007C7900(char* self) {
     } while (i < 3);
     return 0;
 }
+
+// [0x007CAF70] sub_007CAF70 (69 bytes)
+extern "C" void ext_007CAF30();
+
+extern "C" __declspec(naked) void* __cdecl fn_007CAF70(void* self, float a1, float a2, float a3) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0xb0]
+        mov ecx, dword ptr [eax + 0x8]
+        push 0x10
+        push 0x20
+        call ecx
+        add esp, 0x8
+        test eax, eax
+        je short loc_zero_007CAF70
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [esp]
+        push esi
+        push eax
+        call ext_007CAF30
+        add esp, 0x14
+        pop esi
+        ret
+    loc_zero_007CAF70:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
