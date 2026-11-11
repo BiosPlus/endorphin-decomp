@@ -2384,3 +2384,46 @@ extern "C" __declspec(naked) void __fastcall fn_0049EFC0(void* self) {
         ret
     }
 }
+
+// [0x0049F490] sub_0049F490 (77 bytes)
+extern "C" void ext_0049ED70();
+extern "C" void ext_0049EFC0();
+extern "C" int mem_00924FC4;
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __fastcall fn_0049F490(void* self, int edx_unused, void* arg) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push esi
+        push edi
+        mov esi, ecx
+        lea edi, [esi + 0x1c]
+        push edi
+        push ebx
+        call dword ptr [mem_00924FC4]
+        add esp, 8
+        test al, al
+        jne done
+        mov ecx, dword ptr [esi + 0xfc]
+        test ecx, ecx
+        je assign
+        push ebx
+        call ext_0049ED70
+        test eax, eax
+        jne done
+    assign:
+        push ebx
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        mov ecx, dword ptr [esi + 0xfc]
+        test ecx, ecx
+        je done
+        call ext_0049EFC0
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
