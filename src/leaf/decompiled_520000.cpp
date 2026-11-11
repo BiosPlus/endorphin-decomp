@@ -1042,3 +1042,58 @@ extern "C" __declspec(naked) void* __fastcall fn_00528D60(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x00524AE0] sub_00524AE0 (104 bytes)
+extern "C" void ext_00504970();
+extern "C" void ext_005049B0();
+extern "C" void ext_005245D0();
+
+extern "C" __declspec(naked) float __fastcall fn_00524AE0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je L_zero
+        call ext_00504970
+        mov ecx, eax
+        test ecx, ecx
+        je L_zero
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je L_zero
+        mov edx, dword ptr [ecx + 0x8]
+        sub edx, eax
+        mov eax, 0x4ec4ec4f
+        imul edx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        je L_zero
+        push 0
+        call ext_005049B0
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        je L_zero
+        mov edx, dword ptr [eax + 0xc]
+        sub edx, ecx
+        sar edx, 0x3
+        je L_zero
+        mov ecx, dword ptr [esi + 0x8]
+        push ecx
+        mov ecx, eax
+        call ext_005245D0
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        pop esi
+        pop ecx
+        ret
+    L_zero:
+        fldz
+        pop esi
+        pop ecx
+        ret
+    }
+}
