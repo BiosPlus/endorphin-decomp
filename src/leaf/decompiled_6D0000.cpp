@@ -409,3 +409,89 @@ done_early:
         ret 0x4
     }
 }
+
+// [0x006DBE60] sub_006DBE60 (128 bytes)
+// Calls ext_006A7310(*self, *in) (64-bit args, callee-cleaned) and stores the
+// 64-bit result into *out (out = arg0, in = arg1, ret 8).
+// The ledger window (128 bytes) also covers the nop padding, two ILT jmp thunks
+// (-> 0x006DBEA0 and 0x006DBED0) and the two small blobs they jump to, so those
+// are reproduced here byte-for-byte.
+extern "C" void ext_006A7310();
+extern "C" int mem_00925284;
+extern "C" int mem_00B5DA98;
+extern "C" int mem_00B5DA9C;
+extern "C" int mem_00B5DA90;
+extern "C" __declspec(naked) void __fastcall fn_006DBE60(void* self, int edx_unused, void* out, void* in) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [eax + 0x4]
+        mov eax, dword ptr [eax]
+        push edx
+        mov edx, dword ptr [ecx + 0x4]
+        push eax
+        mov eax, dword ptr [ecx]
+        push edx
+        push eax
+        call ext_006A7310
+        mov ecx, eax
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        ret 0x8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        __asm _emit 0xE9 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DA98], ecx
+        mov dword ptr [mem_00B5DA9C], edx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        __asm _emit 0xE9 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5DA90]
+        ret
+    }
+}
