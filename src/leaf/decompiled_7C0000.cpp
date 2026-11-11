@@ -2323,3 +2323,57 @@ extern "C" int __cdecl fn_007C7970(char* self) {
     } while (i < 3);
     return 0;
 }
+
+// [0x007CA280] sub_007CA280 (103 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007CA280(void* self) {
+    __asm {
+        push ecx
+        fld dword ptr [edx]
+        fld dword ptr [ecx]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L_x_ecx
+        fld dword ptr [edx]
+        jmp L_x_store
+L_x_ecx:
+        fld dword ptr [ecx]
+L_x_store:
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi]
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [ecx + 0x4]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L_y_ecx
+        fld dword ptr [edx + 0x4]
+        jmp L_y_store
+L_y_ecx:
+        fld dword ptr [ecx + 0x4]
+L_y_store:
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi + 0x4]
+        fld dword ptr [edx + 0x8]
+        fld dword ptr [ecx + 0x8]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L_z_ecx
+        fld dword ptr [edx + 0x8]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi + 0x8]
+        pop ecx
+        ret
+L_z_ecx:
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi + 0x8]
+        pop ecx
+        ret
+    }
+}
