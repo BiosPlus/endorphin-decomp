@@ -872,3 +872,50 @@ extern "C" __declspec(naked) int __cdecl fn_005F3E70(void* a1, void* a2, void* a
         ret
     }
 }
+
+// [0x005FF290] sub_005FF290 (112 bytes)
+// SEH-framed `new` + construct: allocates 0x40 bytes via 0x006A5C62, then (if non-null) calls the
+// base ctor 0x00627240 with the 4 stack args (ret 0 => caller cleans), sets vtable 0x96EB5C, returns block.
+extern "C" void ext_006A5C62();
+extern "C" void ext_00627240();
+
+extern "C" __declspec(naked) void __fastcall fn_005FF290(void* self) {
+    __asm {
+        push -1
+        push 8A7A5Bh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push 40h
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [esp + 4], esi
+        xor eax, eax
+        cmp esi, eax
+        mov dword ptr [esp + 10h], eax
+        je done_5FF290
+        mov ecx, dword ptr [esp + 18h]
+        mov edx, dword ptr [esp + 1Ch]
+        sub esp, 10h
+        mov eax, esp
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 30h]
+        mov dword ptr [eax + 4], edx
+        mov edx, dword ptr [esp + 34h]
+        mov dword ptr [eax + 8], ecx
+        mov ecx, esi
+        mov dword ptr [eax + 0Ch], edx
+        call ext_00627240
+        mov dword ptr [esi], 96EB5Ch
+        mov eax, esi
+    done_5FF290:
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 10h
+        ret
+    }
+}
