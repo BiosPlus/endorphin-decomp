@@ -31,3 +31,55 @@ extern "C" __declspec(naked) void __fastcall fn_0053F570(void* self) {
         ret
     }
 }
+
+// [0x0052EE20] NullRenderer::vfunc_102 (139 bytes)
+extern "C" void ext_00537A30();
+extern "C" void ext_00537B10();
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void* __fastcall fn_0052EE20(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x894cc6
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push 0x44
+        call ext_006A5C62
+        add esp, 0x4
+        test esi, esi
+        mov dword ptr [esp + 0x14], eax
+        je L_52EE72
+        test eax, eax
+        mov dword ptr [esp + 0xc], 0x0
+        je L_52EE97
+        push esi
+        mov ecx, eax
+        call ext_00537B10
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x4
+    L_52EE72:
+        test eax, eax
+        mov dword ptr [esp + 0xc], 0x1
+        je L_52EE97
+        mov ecx, eax
+        call ext_00537A30
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x4
+    L_52EE97:
+        mov ecx, dword ptr [esp + 0x4]
+        xor eax, eax
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x4
+    }
+}
