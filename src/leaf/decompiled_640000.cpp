@@ -2117,3 +2117,65 @@ extern "C" __declspec(naked) void __fastcall fn_00648300(void* self) {
         ret
     }
 }
+
+// [0x00641F10] sub_00641F10 (112 bytes)
+extern "C" int mem_00925068;
+extern "C" int mem_00924EC4;
+extern "C" int mem_00925060;
+extern "C" int mem_0092505C;
+
+extern "C" __declspec(naked) void __cdecl fn_00641F10(int a1) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0x8]
+        xor eax, eax
+        cmp dword ptr [edi + 0x14], eax
+        jbe short L_ret
+        push esi
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+L_loop:
+        push 4
+        push eax
+        push 0x97cdac
+        mov ecx, edi
+        call dword ptr [mem_00925068]
+        mov esi, eax
+        mov eax, dword ptr [mem_00924EC4]
+        cmp esi, dword ptr [eax]
+        je short L_pop
+        push 4
+        push esi
+        push 0x97cdac
+        mov ecx, edi
+        call dword ptr [mem_00925060]
+        mov ecx, dword ptr [mem_00924EC4]
+        cmp eax, dword ptr [ecx]
+        push 0x20
+        push 1
+        mov ecx, edi
+        je short L_tail
+        sub eax, esi
+        push eax
+        push esi
+        call dword ptr [mem_0092505C]
+        lea eax, [esi + 1]
+        cmp eax, dword ptr [edi + 0x14]
+        jb short L_loop
+        pop esi
+        pop edi
+        ret
+L_tail:
+        mov edx, dword ptr [edi + 0x14]
+        sub edx, esi
+        push edx
+        push esi
+        call dword ptr [mem_0092505C]
+L_pop:
+        pop esi
+L_ret:
+        pop edi
+        ret
+    }
+}
