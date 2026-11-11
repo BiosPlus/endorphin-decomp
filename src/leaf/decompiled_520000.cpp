@@ -704,3 +704,13 @@ extern "C" __declspec(naked) void* __fastcall fn_005247B0(void* self) {
         ret
     }
 }
+
+// [0x00528E90] sub_00528E90 (33 bytes)
+extern "C" void ext_00401C60();
+extern "C" void* __fastcall fn_00528E90(void* self, int edx_unused, const int* a1) {
+    typedef void (__fastcall *Callee)(void*, int, const int*);
+    ((Callee)ext_00401C60)(self, edx_unused, a1);
+    *(int*)self = 0x009534CC;
+    *((int*)self + 10) = a1[10];
+    return self;
+}
