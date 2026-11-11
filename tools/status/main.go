@@ -33,10 +33,24 @@ type UnitEntry struct {
 	MatchedAt   string   `json:"matched_at,omitempty"`
 }
 
+const numTiers = 10
+
 type ModelStats struct {
 	Model        string
 	MatchedFuncs int
 	MatchedBytes uint64
+	Sizes        []uint32
+	TierCounts   [numTiers]int
+}
+
+// sizeStats returns the average, median, and largest function size this model has matched.
+func (m ModelStats) sizeStats() (avg float64, median, largest uint32) {
+	if len(m.Sizes) == 0 {
+		return 0, 0, 0
+	}
+	sorted := append([]uint32(nil), m.Sizes...)
+	sort.Slice(sorted, func(i, j int) bool { return sorted[i] < sorted[j] })
+	return float64(m.MatchedBytes) / float64(len(sorted)), sorted[len(sorted)/2], sorted[len(sorted)-1]
 }
 
 type ClassEntry struct {
@@ -57,6 +71,103 @@ type TierStats struct {
 	MatchedBytes uint64
 	RemainFuncs  int
 	RemainBytes  uint64
+	MinSize      uint32
+	MaxSize      uint32
+}
+
+// buildDecileTiers ranks in-scope functions by size (ties broken by VA) and splits them into
+// ten equal-count percentile tiers. It returns the tiers and a unit-index -> tier-index map.
+func buildDecileTiers(units []UnitEntry, mfcClasses map[string]bool) ([]*TierStats, map[int]int) {
+	type ref struct {
+		idx  int
+		size uint32
+		va   string
+	}
+	var refs []ref
+	for i := range units {
+		if oos, _ := isOutOfScope(units[i], mfcClasses); !oos {
+			refs = append(refs, ref{i, units[i].Size, units[i].VA})
+		}
+	}
+	sort.Slice(refs, func(i, j int) bool {
+		if refs[i].size != refs[j].size {
+			return refs[i].size < refs[j].size
+		}
+		return refs[i].va < refs[j].va
+	})
+
+	tiers := make([]*TierStats, numTiers)
+	for i := range tiers {
+		tiers[i] = &TierStats{}
+	}
+	tierOf := make(map[int]int, len(refs))
+	seen := make([]bool, numTiers)
+	for r, rf := range refs {
+		t := r * numTiers / len(refs)
+		tierOf[rf.idx] = t
+		if !seen[t] {
+			seen[t] = true
+			tiers[t].MinSize = rf.size
+		}
+		tiers[t].MaxSize = rf.size
+	}
+	for i, t := range tiers {
+		rng := fmt.Sprintf("%d-%dB", t.MinSize, t.MaxSize)
+		if t.MinSize == t.MaxSize {
+			rng = fmt.Sprintf("%dB", t.MinSize)
+		}
+		t.ShortName = fmt.Sprintf("P%d-%d (%s)", i*10, (i+1)*10, rng)
+		t.Name = fmt.Sprintf("%-22s", t.ShortName)
+	}
+	return tiers, tierOf
+}
+
+// Projection is a run-rate based completion estimate (byte-weighted, wall-clock).
+type Projection struct {
+	Valid      bool
+	Done       bool
+	RateBps    float64 // bytes per second over the trailing window
+	WindowDays float64
+	ETA        time.Time
+	Now        time.Time
+}
+
+func computeProjection(events []MatchEvent, remainBytes uint64) Projection {
+	now := time.Now().UTC()
+	p := Projection{Now: now}
+	if remainBytes == 0 {
+		p.Valid, p.Done, p.ETA = true, true, now
+		return p
+	}
+	if len(events) == 0 {
+		return p
+	}
+	start := now.Unix() - 7*86400
+	if first := events[0].UnixSec; first > start {
+		start = first
+	}
+	span := float64(now.Unix() - start)
+	if span < 86400 {
+		span = 86400 // avoid wild extrapolation from a sub-day window
+	}
+	var bytes uint64
+	for _, ev := range events {
+		if ev.UnixSec >= start {
+			bytes += uint64(ev.Size)
+		}
+	}
+	if bytes == 0 {
+		return p
+	}
+	p.RateBps = float64(bytes) / span
+	p.WindowDays = span / 86400.0
+	secs := float64(remainBytes) / p.RateBps
+	if secs > 3.0e9 { // ~95 years: not a meaningful estimate
+		return p
+	}
+	p.ETA = now.Add(time.Duration(secs) * time.Second)
+	p.Valid = true
+	return p
 }
 
 type MatchEvent struct {
@@ -154,6 +265,24 @@ func pct(part, total uint64) float64 {
 	return (float64(part) * 100.0) / float64(total)
 }
 
+// formatETA renders the projected completion date and a short explanation of how it was derived.
+func formatETA(p Projection, remainBytes uint64, activeBytesPerHr float64) (val, sub string) {
+	if p.Done {
+		return "Complete", "all in-scope bytes matched"
+	}
+	if !p.Valid {
+		return "n/a", "not enough recent matches to project"
+	}
+	days := p.ETA.Sub(p.Now).Hours() / 24.0
+	val = p.ETA.Format("2006-01-02")
+	sub = fmt.Sprintf("in ~%.0f days &bull; %.1f KB/day over last %.0f d (%.0f KB left)",
+		days, p.RateBps*86400.0/1024.0, p.WindowDays, float64(remainBytes)/1024.0)
+	if activeBytesPerHr > 0 {
+		sub += fmt.Sprintf(" &bull; ~%.0f active hrs", float64(remainBytes)/activeBytesPerHr)
+	}
+	return val, sub
+}
+
 func renderVelocityGraphPanel(
 	events []MatchEvent,
 	inScopeFuncs, inScopeMatchedFuncs int,
@@ -222,6 +351,19 @@ func renderVelocityGraphPanel(
 		}
 	}
 	recentSessionRateHr := (float64(recentSessionFuncs) * 3600.0) / float64(recentSessionSpanSec)
+
+	var remainBytes uint64
+	if inScopeBytes > inScopeMatchedBytes {
+		remainBytes = inScopeBytes - inScopeMatchedBytes
+	}
+	proj := computeProjection(events, remainBytes)
+	etaVal, etaSub := formatETA(proj, remainBytes, activeBytesPerHr)
+	completeVal := fmt.Sprintf("%.2f%%", pct(inScopeMatchedBytes, inScopeBytes))
+	completeSub := fmt.Sprintf("bytes &bull; %.2f%% of functions", pct(uint64(inScopeMatchedFuncs), uint64(inScopeFuncs)))
+	var etaUnix int64
+	if proj.Valid && !proj.Done {
+		etaUnix = proj.ETA.Unix()
+	}
 
 	// Build fallback static SVG points (Active Grind progression across up to 32 buckets)
 	const svgW = 900.0
@@ -305,11 +447,22 @@ func renderVelocityGraphPanel(
             <button type="button" class="chart-btn active" data-metric="ai_funcs">AI Funcs</button>
             <button type="button" class="chart-btn" data-metric="ai_bytes">AI Bytes</button>
             <button type="button" class="chart-btn" data-metric="total_funcs">Total Scope</button>
+            <button type="button" class="chart-btn" data-metric="pct">%% to 100 &amp; ETA</button>
           </div>
         </div>
       </div>
 
       <div class="velocity-kpis">
+        <div class="vkpi">
+          <span class="vkpi-label">Overall Completion</span>
+          <span class="vkpi-val">%s</span>
+          <span class="vkpi-sub">%s</span>
+        </div>
+        <div class="vkpi">
+          <span class="vkpi-label">Projected Completion (ETA)</span>
+          <span class="vkpi-val">%s</span>
+          <span class="vkpi-sub">%s</span>
+        </div>
         <div class="vkpi">
           <span class="vkpi-label">Active Wave Velocity</span>
           <span class="vkpi-val">%.0f fn/hr</span>
@@ -350,6 +503,7 @@ func renderVelocityGraphPanel(
           <g id="chart-bars">%s</g>
           <polygon id="chart-area" points="%s" fill="url(#cumAreaGrad)"/>
           <polyline id="chart-line" points="%s" fill="none" stroke="#3fb950" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline id="chart-proj" points="" fill="none" stroke="#d29922" stroke-width="2" stroke-dasharray="6,5" stroke-linecap="round"/>
           <g id="chart-gaps"></g>
           <g id="chart-dots"></g>
           <g id="chart-axes"></g>
@@ -361,6 +515,7 @@ func renderVelocityGraphPanel(
       <div class="chart-legend">
         <span><span class="legend-swatch" style="background:#3fb950;"></span> Cumulative Progress (left axis)</span>
         <span><span class="legend-swatch" style="background:rgba(88,166,255,0.65);"></span> Solves per Interval (right axis)</span>
+        <span><span class="legend-swatch" style="background:#d29922;"></span> Projection at current run rate (%% to 100 view)</span>
         <span id="chart-bucket-note" style="margin-left:auto;color:var(--muted);">Hover over chart for per-wave details</span>
       </div>
       <script>
@@ -370,6 +525,9 @@ func renderVelocityGraphPanel(
         const AUTO_BYTES = %d;
         const TOTAL_FUNCS = %d;
         const TOTAL_BYTES = %d;
+        const RATE_BPS = %.6f;   // trailing wall-clock bytes/sec
+        const NOW_SEC = %d;
+        const ETA_SEC = %d;      // 0 when no projection is possible
 
         let curMode = 'active';
         let curMetric = 'ai_funcs';
@@ -378,6 +536,7 @@ func renderVelocityGraphPanel(
         const gBars = document.getElementById('chart-bars');
         const polyArea = document.getElementById('chart-area');
         const polyLine = document.getElementById('chart-line');
+        const polyProj = document.getElementById('chart-proj');
         const gGaps = document.getElementById('chart-gaps');
         const gDots = document.getElementById('chart-dots');
         const gAxes = document.getElementById('chart-axes');
@@ -400,10 +559,22 @@ func renderVelocityGraphPanel(
           return mo + '-' + da + ' ' + hh + ':' + mm;
         }
 
-        function buildBuckets() {
+        function fmtDate(unixSec) {
+          const d = new Date(unixSec * 1000);
+          return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+        }
+        // Percent of in-scope work done for a plotted value under the current metric.
+        function pctOfValue(v) {
+          if (curMetric === 'ai_bytes') return 100 * (AUTO_BYTES + v) / TOTAL_BYTES;
+          if (curMetric === 'total_funcs') return 100 * v / TOTAL_FUNCS;
+          return 100 * (AUTO_FUNCS + v) / TOTAL_FUNCS;
+        }
+
+        function buildBuckets(modeOverride) {
+          const mode = modeOverride || curMode;
           if (!EVENTS || EVENTS.length === 0) return [];
           let filtered = EVENTS;
-          if (curMode === 'latest') {
+          if (mode === 'latest') {
             let startIdx = EVENTS.length - 1;
             while (startIdx > 0 && (EVENTS[startIdx].t - EVENTS[startIdx - 1].t) <= 1800) {
               startIdx--;
@@ -411,7 +582,7 @@ func renderVelocityGraphPanel(
             filtered = EVENTS.slice(startIdx);
           }
 
-          if (curMode === 'active') {
+          if (mode === 'active') {
             // Split into contiguous active sessions (gap > 20m starts a new session segment)
             const bucketSec = 120; // 2-minute active buckets
             const map = new Map();
@@ -443,11 +614,11 @@ func renderVelocityGraphPanel(
           const tMin = filtered[0].t;
           const tMax = Math.max(tMin + 60, filtered[filtered.length - 1].t);
           const span = tMax - tMin;
-          const numBuckets = Math.min(48, Math.max(12, Math.ceil(span / (curMode === 'latest' ? 30 : 1800))));
+          const numBuckets = Math.min(48, Math.max(12, Math.ceil(span / (mode === 'latest' ? 30 : 1800))));
           const step = Math.max(1, Math.ceil(span / numBuckets));
 
           let baseFuncs = 0, baseBytes = 0;
-          if (curMode === 'latest' && filtered.length < EVENTS.length) {
+          if (mode === 'latest' && filtered.length < EVENTS.length) {
             const cutIdx = EVENTS.length - filtered.length;
             baseFuncs = cutIdx;
             for (let i = 0; i < cutIdx; i++) baseBytes += EVENTS[i].b;
@@ -478,7 +649,84 @@ func renderVelocityGraphPanel(
 
         let renderedBuckets = [];
 
+        // "pct to 100 and ETA" view: wall-clock x axis running from the first match to the projected ETA.
+        function renderProjection() {
+          const bks = buildBuckets('wall');
+          renderedBuckets = bks;
+          if (bks.length === 0) return;
+
+          const t0 = bks[0].tStart;
+          const tNow = Math.max(NOW_SEC, bks[bks.length - 1].tEnd);
+          const tEnd = (ETA_SEC > tNow) ? ETA_SEC : tNow;
+          const span = Math.max(1, tEnd - t0);
+          const xT = (t) => PAD_L + ((t - t0) / span) * PW;
+          const pctOf = (b) => 100 * (AUTO_BYTES + b.cumBytes) / TOTAL_BYTES;
+          const yP = (p) => PAD_T + PH - (Math.min(100, p) / 100) * PH;
+
+          let maxDelta = 1;
+          for (const b of bks) if (b.dBytes > maxDelta) maxDelta = b.dBytes;
+
+          const pts = [];
+          const areaPts = [];
+          let barsHTML = '';
+          for (let i = 0; i < bks.length; i++) {
+            const b = bks[i];
+            const x = xT(Math.min(b.tEnd, tNow));
+            const y = yP(pctOf(b));
+            b._x = x;
+            b._y = y;
+            pts.push(x.toFixed(1) + ',' + y.toFixed(1));
+            areaPts.push(x.toFixed(1) + ',' + y.toFixed(1));
+            if (b.dBytes > 0) {
+              const bw = Math.max(2, ((b.tEnd - b.tStart) / span) * PW * 0.8);
+              const bh = (b.dBytes / maxDelta) * (PH * 0.44);
+              barsHTML += '<rect x="' + (x - bw).toFixed(1) + '" y="' + (PAD_T + PH - bh).toFixed(1) + '" width="' + bw.toFixed(1) + '" height="' + bh.toFixed(1) + '" rx="1" fill="rgba(88,166,255,0.30)"/>';
+            }
+          }
+          const lastB = bks[bks.length - 1];
+          const xNow = lastB._x, yNow = lastB._y, curPct = pctOf(lastB);
+          areaPts.unshift(pts[0].split(',')[0] + ',' + (PAD_T + PH).toFixed(1));
+          areaPts.push(xNow.toFixed(1) + ',' + (PAD_T + PH).toFixed(1));
+
+          gBars.innerHTML = barsHTML;
+          polyArea.setAttribute('points', areaPts.join(' '));
+          polyLine.setAttribute('points', pts.join(' '));
+          gGaps.innerHTML = '';
+
+          let dotsHTML = '<circle cx="' + xNow.toFixed(1) + '" cy="' + yNow.toFixed(1) + '" r="4" fill="#3fb950"/>';
+          let axesHTML = '';
+          if (ETA_SEC > tNow) {
+            const xE = xT(ETA_SEC);
+            polyProj.setAttribute('points', xNow.toFixed(1) + ',' + yNow.toFixed(1) + ' ' + xE.toFixed(1) + ',' + yP(100).toFixed(1));
+            dotsHTML += '<circle cx="' + xE.toFixed(1) + '" cy="' + yP(100).toFixed(1) + '" r="4" fill="#d29922"/>';
+            axesHTML += '<text x="' + (xE - 8).toFixed(1) + '" y="' + (PAD_T + 16) + '" fill="#d29922" font-size="11" font-weight="600" text-anchor="end">ETA ' + fmtDate(ETA_SEC) + '</text>';
+          } else {
+            polyProj.setAttribute('points', '');
+          }
+          gDots.innerHTML = dotsHTML;
+
+          for (let s = 0; s <= 4; s++) {
+            const p = 100 - s * 25;
+            axesHTML += '<text x="' + (PAD_L - 8) + '" y="' + (PAD_T + (PH * s) / 4 + 4).toFixed(1) + '" fill="#8b949e" font-size="11" text-anchor="end">' + p + '%%</text>';
+          }
+          const nowLabelX = Math.min(xNow + 8, W - PAD_R - 60);
+          axesHTML += '<text x="' + nowLabelX.toFixed(1) + '" y="' + Math.max(PAD_T + 30, yNow - 10).toFixed(1) + '" fill="#3fb950" font-size="11" font-weight="600">' + curPct.toFixed(1) + '%% now</text>';
+          const ticks = 5;
+          for (let t = 0; t < ticks; t++) {
+            const tt = t0 + (span * t) / (ticks - 1);
+            const anchor = (t === 0) ? 'start' : (t === ticks - 1 ? 'end' : 'middle');
+            axesHTML += '<text x="' + xT(tt).toFixed(1) + '" y="' + (H - 8) + '" fill="#8b949e" font-size="11" text-anchor="' + anchor + '">' + fmtDate(tt) + '</text>';
+          }
+          gAxes.innerHTML = axesHTML;
+
+          let note = curPct.toFixed(1) + '%% of in-scope bytes complete';
+          note += (ETA_SEC > tNow) ? ' • projected 100%% on ' + fmtDate(ETA_SEC) + ' at current run rate (' + (RATE_BPS * 86400 / 1024).toFixed(1) + ' KB/day)' : ' • no projection available';
+          bucketNote.textContent = note;
+        }
+
         function render() {
+          if (curMetric !== 'pct') polyProj.setAttribute('points', '');
+          if (curMetric === 'pct') { renderProjection(); return; }
           renderedBuckets = buildBuckets();
           if (renderedBuckets.length === 0) return;
 
@@ -546,6 +794,7 @@ func renderVelocityGraphPanel(
             const v = minY + ((maxY - minY) * (steps - s)) / steps;
             const y = PAD_T + (PH * s) / steps + 4;
             axesHTML += '<text x="' + (PAD_L - 8) + '" y="' + y.toFixed(1) + '" fill="#8b949e" font-size="11" text-anchor="end">' + fmtInt(v) + '</text>';
+            axesHTML += '<text x="' + (PAD_L - 8) + '" y="' + (y + 11).toFixed(1) + '" fill="#3fb950" font-size="9" text-anchor="end">' + pctOfValue(v).toFixed(1) + '%%</text>';
           }
           // Right axis (max interval velocity)
           axesHTML += '<text x="' + (W - PAD_R + 6) + '" y="' + (PAD_T + PH * 0.56) + '" fill="#58a6ff" font-size="10" text-anchor="start">+' + fmtInt(maxDelta) + '</text>';
@@ -591,7 +840,7 @@ func renderVelocityGraphPanel(
           tooltip.innerHTML =
             '<div style="font-weight:600;margin-bottom:2px;">' + fmtTimeShort(best.tStart) + ' (' + durMin + 'm window)</div>' +
             '<div>Cumulative AI: <strong>' + fmtInt(best.cumFuncs) + ' funcs</strong> (' + fmtInt(best.cumBytes) + ' B)</div>' +
-            '<div>Total In-Scope: <strong>' + fmtInt(AUTO_FUNCS + best.cumFuncs) + ' / ' + fmtInt(TOTAL_FUNCS) + '</strong></div>' +
+            '<div>Total In-Scope: <strong>' + fmtInt(AUTO_FUNCS + best.cumFuncs) + ' / ' + fmtInt(TOTAL_FUNCS) + '</strong> (' + (100 * (AUTO_BYTES + best.cumBytes) / TOTAL_BYTES).toFixed(1) + '%% of bytes)</div>' +
             '<div style="color:#58a6ff;">Window Delta: <strong>+' + fmtInt(best.dFuncs) + ' funcs</strong> (+' + fmtInt(best.dBytes) + ' B &bull; ~' + fmtInt(rateHr) + ' fn/hr)</div>' +
             '<div style="font-size:11px;color:#e6edf3;margin-top:2px;">Models: <code>' + modelList + '</code></div>' +
             sampleHtml;
@@ -626,6 +875,7 @@ func renderVelocityGraphPanel(
       </script>
     </div>
 `,
+		completeVal, completeSub, etaVal, etaSub,
 		activeFuncsPerHr, activeBytesPerHr/1024.0, activeHours,
 		recentSessionFuncs, recentSessionRateHr, recentSessionBytes,
 		peak10mFuncs, peak10mFuncs*6, peak10mBytes,
@@ -635,6 +885,7 @@ func renderVelocityGraphPanel(
 		strings.Join(polyPoints, " "),
 		string(eventsJSON),
 		autoSolveFuncs, autoSolveBytes, inScopeFuncs, inScopeBytes,
+		proj.RateBps, proj.Now.Unix(), etaUnix,
 	))
 	return sb.String()
 }
@@ -659,6 +910,12 @@ func renderHTMLDashboard(
 		aiMatchedFuncs += m.MatchedFuncs
 	}
 	autoSolveFuncs := inScopeMatchedFuncs - aiMatchedFuncs
+
+	var remainBytes uint64
+	if inScopeBytes > inScopeMatchedBytes {
+		remainBytes = inScopeBytes - inScopeMatchedBytes
+	}
+	cardETAVal, cardETASub := formatETA(computeProjection(matchEvents, remainBytes), remainBytes, 0)
 
 	sb.WriteString(`<!DOCTYPE html>
 <html lang="en">
@@ -904,6 +1161,11 @@ func renderHTMLDashboard(
         <div class="card-sub">%d / %d bytes (%.2f MB)</div>
       </div>
       <div class="card">
+        <div class="card-label">Projected Completion (ETA)</div>
+        <div class="card-value">%s</div>
+        <div class="card-sub">%s</div>
+      </div>
+      <div class="card">
         <div class="card-label">RTTI Classes Extracted</div>
         <div class="card-value">%d</div>
         <div class="card-sub">%d in-scope &bull; %d MFC/ATL/std</div>
@@ -917,6 +1179,7 @@ func renderHTMLDashboard(
 `,
 		funcPct, funcPct, inScopeMatchedFuncs, inScopeFuncs, aiMatchedFuncs, autoSolveFuncs,
 		bytePct, bytePct, inScopeMatchedBytes, inScopeBytes, float64(inScopeBytes)/(1024.0*1024.0),
+		cardETAVal, cardETASub,
 		totalClasses, inScopeClasses, mfcClasses,
 		outOfScopeFuncs, outThunkFuncs, outCRTMFCFuncs,
 	))
@@ -929,7 +1192,8 @@ func renderHTMLDashboard(
 	))
 
 	sb.WriteString(`    <div class="panel">
-      <h2 style="margin-top:0;font-size:18px;">In-Scope Progress by Size Tier</h2>
+      <h2 style="margin-top:0;font-size:18px;">In-Scope Progress by Size Decile</h2>
+      <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">In-scope functions ranked by size and split into ten equal-count percentile tiers (P0-10 = smallest 10%)</div>
       <table>
         <thead>
           <tr>
@@ -971,6 +1235,10 @@ func renderHTMLDashboard(
             <th class="num">Matched Functions</th>
             <th class="num">Matched Bytes</th>
             <th class="num">Share of AI Matches</th>
+            <th class="num">Avg Size</th>
+            <th class="num">Median</th>
+            <th class="num">Largest</th>
+            <th>Matches by Size Decile (small &rarr; large)</th>
           </tr>
         </thead>
         <tbody>
@@ -982,18 +1250,46 @@ func renderHTMLDashboard(
             <td class="num">0</td>
             <td class="num">0</td>
             <td class="num">0.00%</td>
+            <td class="num">-</td>
+            <td class="num">-</td>
+            <td class="num">-</td>
+            <td></td>
           </tr>
 `)
 	} else {
 		for _, m := range leaderboard {
 			sharePct := pct(uint64(m.MatchedFuncs), uint64(aiMatchedFuncs))
+			avg, med, largest := m.sizeStats()
+
+			maxCount := 1
+			for _, c := range m.TierCounts {
+				if c > maxCount {
+					maxCount = c
+				}
+			}
+			var strip strings.Builder
+			strip.WriteString(`<div style="display:flex;gap:2px;">`)
+			for i, c := range m.TierCounts {
+				alpha := 0.06
+				if c > 0 {
+					alpha = 0.25 + 0.75*float64(c)/float64(maxCount)
+				}
+				strip.WriteString(fmt.Sprintf(`<div title="%s: %d funcs" style="width:22px;height:18px;border-radius:2px;background:rgba(63,185,80,%.2f);"></div>`,
+					tiers[i].ShortName, c, alpha))
+			}
+			strip.WriteString(`</div>`)
+
 			sb.WriteString(fmt.Sprintf(`          <tr>
             <td><code>%s</code></td>
             <td class="num">%d</td>
             <td class="num">%d</td>
             <td class="num">%.2f%%</td>
+            <td class="num">%.0f B</td>
+            <td class="num">%d B</td>
+            <td class="num">%d B</td>
+            <td>%s</td>
           </tr>
-`, m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct))
+`, m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct, avg, med, largest, strip.String()))
 		}
 	}
 
@@ -1178,12 +1474,7 @@ func main() {
 	var inScopeFuncs, inScopeMatchedFuncs, inScopeRemainFuncs int
 	var inScopeBytes, inScopeMatchedBytes, inScopeRemainBytes uint64
 
-	tiers := []*TierStats{
-		{Name: "Tiny   (<32B)    ", ShortName: "Tiny (<32B)"},
-		{Name: "Small  (32-256B) ", ShortName: "Small (32-256B)"},
-		{Name: "Medium (256-512B)", ShortName: "Medium (256-512B)"},
-		{Name: "Large  (>512B)   ", ShortName: "Large (>512B)"},
-	}
+	tiers, tierOf := buildDecileTiers(units, mfcClasses)
 
 	modelStatsMap := make(map[string]*ModelStats)
 	unitsUpdated := false
@@ -1211,17 +1502,8 @@ func main() {
 		inScopeFuncs++
 		inScopeBytes += uint64(u.Size)
 
-		var tier *TierStats
-		switch {
-		case u.Size < 32:
-			tier = tiers[0]
-		case u.Size <= 256:
-			tier = tiers[1]
-		case u.Size <= 512:
-			tier = tiers[2]
-		default:
-			tier = tiers[3]
-		}
+		tierIdx := tierOf[i]
+		tier := tiers[tierIdx]
 
 		tier.TotalFuncs++
 		tier.TotalBytes += uint64(u.Size)
@@ -1249,6 +1531,8 @@ func main() {
 				}
 				ms.MatchedFuncs++
 				ms.MatchedBytes += uint64(u.Size)
+				ms.Sizes = append(ms.Sizes, u.Size)
+				ms.TierCounts[tierIdx]++
 
 				normVA := "0x" + strings.ToUpper(strings.TrimPrefix(u.VA, "0x"))
 				if len(u.MatchedAt) <= 10 {
@@ -1343,8 +1627,8 @@ func main() {
 		fmt.Printf("  - AI Matched   : %5d funcs          | %d deterministic auto_solve stubs\n",
 			aiMatchedFuncs, inScopeMatchedFuncs-aiMatchedFuncs)
 		fmt.Println("--------------------------------------------------------------------------------")
-		fmt.Println("Size Tier         |   Decompiled / Total Funcs   |     Decompiled / Total Bytes     | Remaining")
-		fmt.Println("------------------+------------------------------+----------------------------------+----------")
+		fmt.Println("Size Tier (decile)       |   Decompiled / Total Funcs   |     Decompiled / Total Bytes     | Remaining")
+		fmt.Println("-----------------------+------------------------------+----------------------------------+----------")
 		for _, t := range tiers {
 			fmt.Printf("%s | %6d / %6d (%6.2f%%)  | %8d / %8d (%6.2f%%)  | %6d fn\n",
 				t.Name,
