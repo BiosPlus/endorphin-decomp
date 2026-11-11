@@ -3451,3 +3451,85 @@ extern "C" __declspec(naked) void __fastcall fn_00677C70(void* self) {
         ret
     }
 }
+
+// [0x006725F0] sub_006725F0 (148 bytes)
+extern "C" int mem_00924EF4;
+
+extern "C" __declspec(naked) void __cdecl fn_006725F0(void* first, void* mid, void* last) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ebx, dword ptr [esi]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        call edx
+        push eax
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0x24]
+        mov ecx, ebx
+        call edx
+        mov ebp, dword ptr [mem_00924EF4]
+        push eax
+        call ebp
+        add esp, 8
+        test al, al
+        je short L_skip1
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi], ecx
+        mov dword ptr [edi], eax
+    L_skip1:
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [ecx]
+        mov ebx, dword ptr [edx]
+        mov edx, dword ptr [eax + 0x24]
+        call edx
+        push eax
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0x24]
+        mov ecx, ebx
+        call edx
+        push eax
+        call ebp
+        add esp, 8
+        test al, al
+        je short L_skip2
+        mov ecx, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [ecx]
+        mov dword ptr [ecx], edx
+        mov dword ptr [esi], eax
+    L_skip2:
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        mov ebx, dword ptr [esi]
+        call edx
+        push eax
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0x24]
+        mov ecx, ebx
+        call edx
+        push eax
+        call ebp
+        add esp, 8
+        test al, al
+        je short L_skip3
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi], ecx
+        mov dword ptr [edi], eax
+    L_skip3:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
