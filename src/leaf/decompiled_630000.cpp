@@ -812,3 +812,43 @@ extern "C" __declspec(naked) void __fastcall fn_0063F480(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0063D8F0] sub_0063D8F0 (92 bytes)
+extern "C" int mem_009518E0;
+extern "C" int mem_00956EE0;
+
+// [0x0063D8F0] sub_0063D8F0 (92 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0063D8F0(void* self) {
+    __asm {
+        fldz
+        mov byte ptr [ecx + 38h], 1
+        fst dword ptr [ecx + 8h]
+        xor eax, eax
+        fst dword ptr [ecx + 4h]
+        fst dword ptr [ecx]
+        fst dword ptr [ecx + 14h]
+        fst dword ptr [ecx + 10h]
+        fst dword ptr [ecx + 0ch]
+        fst dword ptr [ecx + 20h]
+        fst dword ptr [ecx + 1ch]
+        fst dword ptr [ecx + 18h]
+        fst dword ptr [ecx + 2ch]
+        fst dword ptr [ecx + 28h]
+        fst dword ptr [ecx + 24h]
+        fld dword ptr [mem_009518E0]
+        mov dword ptr [ecx + 30h], eax
+        fst dword ptr [ecx + 3ch]
+        mov dword ptr [ecx + 34h], eax
+        fst dword ptr [ecx + 40h]
+        fst dword ptr [ecx + 44h]
+        fst dword ptr [ecx + 48h]
+        fld dword ptr [mem_00956EE0]
+        fst dword ptr [ecx + 4ch]
+        fst dword ptr [ecx + 50h]
+        fstp dword ptr [ecx + 5ch]
+        fst dword ptr [ecx + 54h]
+        fstp dword ptr [ecx + 58h]
+        fstp dword ptr [ecx + 60h]
+        ret
+    }
+}
