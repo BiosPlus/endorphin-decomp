@@ -66,3 +66,53 @@ extern "C" __declspec(naked) void __fastcall fn_0053C150(void* self) {
         ret
     }
 }
+
+// [0x0053C0C0] Primitives::RPRO::vfunc_13 (133 bytes)
+extern "C" int mem_0092A280;
+extern "C" int mem_0093F790;
+extern "C" void ext_00538550();
+extern "C" void ext_00538D10();
+
+extern "C" __declspec(naked) void __fastcall fn_0053C0C0(void* self, int edx_unused, float* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov byte ptr [esi + 0x4], 0x1
+        fld dword ptr [eax]
+        push 0x0
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        push 0x0
+        push ecx
+        fst dword ptr [esi + 0x3c]
+        lea ecx, [esi + 0xec]
+        fstp dword ptr [esp]
+        call ext_00538550
+        fld dword ptr [esi + 0x3c]
+        push 0x0
+        push 0x0
+        push ecx
+        lea ecx, [esi + 0x108]
+        fstp dword ptr [esp]
+        call ext_00538550
+        fld dword ptr [esi + 0x3c]
+        fmul qword ptr [mem_0092A280]
+        push 0xa
+        sub esp, 0xc
+        lea ecx, [esi + 0xc4]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esi + 0x3c]
+        fmul qword ptr [mem_0093F790]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esi + 0x3c]
+        fstp dword ptr [esp]
+        call ext_00538D10
+        pop esi
+        ret 0x4
+    }
+}
