@@ -444,3 +444,18 @@ L_zero_7E46B0:
         ret
     }
 }
+
+// [0x007E1720] sub_007E1720 (59 bytes)
+extern "C" void ext_007C8960();
+extern "C" int mem_007E1350;
+
+extern "C" int __cdecl fn_007E1720(int a1) {
+    int cell[6];
+    cell[0] = 0;
+    cell[2] = 0;
+    cell[5] = 0;
+    cell[1] = (int)&mem_007E1350;
+    cell[4] = 1;
+    ((void (__cdecl*)(int, int, int, int*))ext_007C8960)(a1, 5, 3, cell);
+    return 1;
+}

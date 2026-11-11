@@ -13,5 +13,7 @@
     "0x007E1741",
     "0x007E174E"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T14:01:30Z"
 }
