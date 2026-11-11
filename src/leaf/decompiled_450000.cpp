@@ -1489,3 +1489,59 @@ extern "C" __declspec(naked) float __fastcall fn_0045AEE0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0045E700] sub_0045E700 (102 bytes)
+extern "C" void ext_0041A190();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_0045E700(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        lea eax, [esp + 0x1c]
+        push eax
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        call ext_0041A190
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        mov ebx, dword ptr [esi + 4]
+        je chk_fail1
+        cmp edi, esi
+        je chk_ok1
+    chk_fail1:
+        call dword ptr [mem_00925134]
+    chk_ok1:
+        mov ebp, dword ptr [esp + 0x14]
+        cmp ebp, ebx
+        je at_end
+        test edi, edi
+        jne chk_ok2
+        call dword ptr [mem_00925134]
+    chk_ok2:
+        cmp ebp, dword ptr [edi + 4]
+        jne chk_ok3
+        call dword ptr [mem_00925134]
+    chk_ok3:
+        mov eax, dword ptr [ebp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 4
+    at_end:
+        mov eax, dword ptr [esi + 0x1c]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 4
+    }
+}
