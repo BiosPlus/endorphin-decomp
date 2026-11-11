@@ -1817,3 +1817,42 @@ extern "C" __declspec(naked) void __fastcall fn_0054C5E0(void* self) {
         ret
     }
 }
+
+// [0x0054D220] sub_0054D220 (122 bytes)
+extern "C" int mem_00924FE8;
+extern "C" __declspec(naked) void __fastcall fn_0054D220(void* self) {
+    __asm {
+        push -1
+        push 0x8991f0
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x8], esi
+        xor ebx, ebx
+        lea ecx, [esi + 0x18]
+        mov dword ptr [esp + 0x14], ebx
+        mov dword ptr [esi], 0x956e2c
+        call dword ptr [mem_00924FE8]
+        lea ecx, [esi + 0x60]
+        mov byte ptr [esp + 0x14], 0x1
+        mov byte ptr [esi + 0x3d], bl
+        call dword ptr [mem_00924FE8]
+        lea ecx, [esi + 0x9c]
+        mov byte ptr [esp + 0x14], 0x2
+        call dword ptr [mem_00924FE8]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0xd0], ebx
+        mov dword ptr [esi + 0xd4], ebx
+        mov byte ptr [esi + 0xd8], bl
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
