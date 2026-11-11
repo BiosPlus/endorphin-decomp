@@ -1478,3 +1478,61 @@ extern "C" __declspec(naked) void* __cdecl fn_007DCA30(int a1, int n, void* allo
         ret
     }
 }
+
+// [0x007DD160] sub_007DD160 (109 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007DD160(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0Ch]
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 10h]
+        cmp edi, ebx
+        mov ebp, ecx
+        jne short L_007DD179
+        pop edi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret 8
+L_007DD179:
+        mov eax, ebx
+        sub eax, edi
+        sar eax, 1Fh
+        mov edx, eax
+        mov ecx, eax
+        not edx
+        push esi
+        mov esi, edx
+        and eax, edi
+        and ecx, ebx
+        and edx, ebx
+        or eax, edx
+        and esi, edi
+        or esi, ecx
+        lea ecx, [esi + 1]
+        lea edx, [esi + 2]
+        imul edx, ecx
+        sar edx, 1
+        sub eax, edx
+        mov edx, dword ptr [ebp + 0Ch]
+        imul edx, esi
+        add eax, edx
+        mov edx, dword ptr [ebp + 20h]
+        mov ecx, eax
+        sar eax, 1
+        movzx eax, byte ptr [eax + edx]
+        and cl, 1
+        add cl, cl
+        add cl, cl
+        shr eax, cl
+        pop esi
+        pop edi
+        pop ebp
+        shr eax, 2
+        not eax
+        and eax, 1
+        pop ebx
+        ret 8
+    }
+}
