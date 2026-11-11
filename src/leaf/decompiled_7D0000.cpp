@@ -2010,3 +2010,75 @@ extern "C" __declspec(naked) void* __cdecl fn_007DA850(void* a1, int n, int m) {
         ret
     }
 }
+
+// [0x007D7990] sub_007D7990 (135 bytes)
+extern "C" void ext_007D5950();
+
+extern "C" __declspec(naked) void __cdecl fn_007D7990(void) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [ebx + 0x10]
+        test eax, eax
+        push esi
+        jne mode_nonzero
+        mov eax, dword ptr [esp + 0x2c]
+        test eax, eax
+        jbe done
+        mov ecx, dword ptr [esp + 0xc]
+        mov esi, dword ptr [esp + 0x20]
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        sub esi, ecx
+        mov ebp, eax
+    div_loop:
+        test edi, edi
+        je zero_loop
+        mov eax, dword ptr [esi + ecx]
+        imul eax, dword ptr [ebx + 0x14]
+        xor edx, edx
+        div edi
+        mov dword ptr [ecx], eax
+        jmp next_elem
+    zero_loop:
+        mov dword ptr [ecx], 0
+    next_elem:
+        add ecx, 4
+        sub ebp, 1
+        jne div_loop
+        pop edi
+        pop ebp
+        pop esi
+        pop ebx
+        ret
+    mode_nonzero:
+        cmp eax, 1
+        jne bad_mode
+        mov ecx, dword ptr [esp + 0x2c]
+        xor eax, eax
+        test ecx, ecx
+        jbe done
+        mov edx, dword ptr [esp + 0xc]
+    fill_loop:
+        mov esi, dword ptr [ebx + 0x18]
+        mov dword ptr [edx + 4*eax], esi
+        add eax, 1
+        cmp eax, ecx
+        jb fill_loop
+        pop esi
+        pop ebx
+        ret
+    bad_mode:
+        mov eax, dword ptr [esp + 0x30]
+        push 0x99e03c
+        push eax
+        push 0
+        call ext_007D5950
+        add esp, 0xc
+    done:
+        pop esi
+        pop ebx
+        ret
+    }
+}
