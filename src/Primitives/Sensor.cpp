@@ -3,6 +3,7 @@
 extern "C" void ext_005B11D0();
 extern "C" void ext_006A6DE0();
 extern "C" void ext_0053ADD0();
+extern "C" void ext_0053AD10();
 
 // [0x0053B7A0] Primitives::Sensor::vfunc_23 (61 bytes)
 extern "C" __declspec(naked) void __fastcall fn_0053B7A0(void* self, int edx_unused, int a1, int a2) {
@@ -29,5 +30,25 @@ extern "C" __declspec(naked) void __fastcall fn_0053B7A0(void* self, int edx_unu
         call ext_0053ADD0
         pop esi
         ret 0x8
+    }
+}
+
+// [0x0053C8D0] Primitives::Sensor::vfunc_29 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0053C8D0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0053AD10
+        mov ecx, dword ptr [esi + 0x3c]
+        test ecx, ecx
+        je short L_done
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+    L_done:
+        mov dword ptr [esi + 0x3c], 0
+        pop esi
+        ret
     }
 }
