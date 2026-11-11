@@ -2671,3 +2671,14 @@ L_call_518A80:
         ret
     }
 }
+
+// [0x00519020] sub_00519020 (63 bytes)
+extern "C" void ext_00518A80();
+
+extern "C" void __cdecl fn_00519020(unsigned int* first, unsigned int* last, int comp) {
+    int len = last - first;
+    for (int hole = len / 2; hole > 0; ) {
+        --hole;
+        ((void (__cdecl*)(unsigned int*, int, int, unsigned int, int))ext_00518A80)(first, hole, len, first[hole], comp);
+    }
+}
