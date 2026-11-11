@@ -1075,3 +1075,44 @@ extern "C" __declspec(naked) void* __fastcall fn_0060BBA0(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x0060C360] sub_0060C360 (112 bytes)
+extern "C" void ext_0060BBA0();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void* __fastcall fn_0060C360(void* self, int edx_unused, void* src) {
+    __asm {
+        push -1
+        push 0x8a8748
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        call ext_0060BBA0
+        lea ecx, [edi + 0x60]
+        mov dword ptr [esi], 0x972234
+        mov eax, dword ptr [edi + 0x5c]
+        push ecx
+        lea ecx, [esi + 0x60]
+        mov dword ptr [esp + 0x18], 0
+        mov dword ptr [esi + 0x5c], eax
+        call dword ptr [mem_00924FE0]
+        fld dword ptr [edi + 0x7c]
+        mov ecx, dword ptr [esp + 0xc]
+        fstp dword ptr [esi + 0x7c]
+        fld dword ptr [edi + 0x80]
+        pop edi
+        fstp dword ptr [esi + 0x80]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
