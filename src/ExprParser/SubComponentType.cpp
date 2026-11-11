@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/ExprParser/SubComponentType.cpp
 
+extern "C" void ext_0041CEB0();
+
 // [0x0066BDB0] ExprParser::SubComponentType::vfunc_2 (110 bytes)
 extern "C" __declspec(naked) void* __fastcall fn_0066BDB0(void* self, int edx_unused, void* a1) {
     __asm {
@@ -124,5 +126,48 @@ extern "C" __declspec(naked) float __fastcall fn_0066BD40(void* self, int edx_un
         mov dword ptr fs:[0], ecx
         add esp, 0x14
         ret 0x4
+    }
+}
+
+// [0x0066BE90] ExprParser::SubComponentType::vfunc_4 (122 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0066BE90(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b3372
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        mov edx, dword ptr [esp + 0x20]
+        push esi
+        mov dword ptr [esp + 0x4], 0
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax]
+        push edx
+        lea edx, [esp + 0xc]
+        push edx
+        call eax
+        mov esi, dword ptr [esp + 0x20]
+        push esi
+        mov ecx, eax
+        mov dword ptr [esp + 0x1c], 0x1
+        call ext_0041CEB0
+        mov ecx, dword ptr [esp + 0xc]
+        test ecx, ecx
+        mov dword ptr [esp + 0x4], 0x1
+        mov byte ptr [esp + 0x18], 0
+        je L_66BEF6
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x8]
+        push eax
+        call edx
+    L_66BEF6:
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x18
+        ret 0x8
     }
 }
