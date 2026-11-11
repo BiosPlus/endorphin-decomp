@@ -2090,3 +2090,14 @@ extern "C" __declspec(naked) void __fastcall fn_0045C090(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0045C240] sub_0045C240 (32 bytes)
+extern "C" int mem_00925694;
+extern "C" void ext_0045C090();
+
+extern "C" void __fastcall fn_0045C240(void* self) {
+    typedef int (__stdcall *SendFn)(void*, unsigned int, unsigned int, unsigned int);
+    typedef void (__thiscall *ThisFn)(void*, int);
+    int r = ((SendFn)mem_00925694)(*(void**)((char*)self + 0x20), 0x110a, 0, 0);
+    ((ThisFn)ext_0045C090)(self, r);
+}
