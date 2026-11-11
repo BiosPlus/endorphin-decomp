@@ -79,3 +79,56 @@ done:
         ret
     }
 }
+
+// [0x00543D70] CameraTool::vfunc_31 (140 bytes)
+extern "C" int mem_00925424;
+extern "C" int mem_00925438;
+extern "C" int mem_00925414;
+extern "C" int mem_009253C8;
+extern "C" int mem_00925404;
+extern "C" int mem_00925418;
+extern "C" void ext_00543C00();
+
+extern "C" __declspec(naked) void __fastcall fn_00543D70(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        cmp dword ptr [esp + 0x4], 0x1c02
+        push esi
+        mov esi, ecx
+        je done
+        mov eax, dword ptr [esi + 0x84]
+        mov ecx, dword ptr [eax + 0xf8]
+        cmp ecx, dword ptr [eax + 0xfc]
+        jne done
+        cmp byte ptr [esi + 0xc4], 0x0
+        je done
+        push edi
+        push 0xb50
+        call dword ptr [mem_00925424]
+        movzx edi, al
+        test edi, edi
+        je skip_enable
+        push 0xb50
+        call dword ptr [mem_00925438]
+skip_enable:
+        mov ecx, esi
+        call ext_00543C00
+        call dword ptr [mem_00925414]
+        lea edx, [esi + 0x4]
+        push edx
+        call dword ptr [mem_009253C8]
+        mov eax, dword ptr [esi + 0x98]
+        mov edx, dword ptr [eax + 0x58]
+        lea ecx, [esi + 0x98]
+        push 0x1
+        call edx
+        call dword ptr [mem_00925404]
+        test edi, edi
+        pop edi
+        je done
+        push 0xb50
+        call dword ptr [mem_00925418]
+done:
+        pop esi
+        ret 0x8
+    }
+}
