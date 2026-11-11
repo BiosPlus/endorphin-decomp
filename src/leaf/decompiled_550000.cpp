@@ -2953,3 +2953,72 @@ done_ret:
         ret 0xc
     }
 }
+
+// [0x00558FE0] sub_00558FE0 (140 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00558FE0(void) {
+    __asm {
+        __asm _emit 0x64
+        __asm _emit 0xa1
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        push -1
+        push 0x89a53c
+        push eax
+        mov dword ptr fs:[0], esp
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        cmp esi, dword ptr [esp + 0x20]
+        push edi
+        je done_loop
+        xor ebp, ebp
+outer_loop:
+        mov edi, dword ptr [esi + 0x2c]
+        cmp edi, ebp
+        mov dword ptr [esp + 0x18], ebp
+        je skip_vec
+        mov ebx, dword ptr [esi + 0x30]
+        cmp edi, ebx
+        je free_vec
+inner_loop:
+        mov ecx, edi
+        call dword ptr [mem_00924FF4]
+        add edi, 0x1c
+        cmp edi, ebx
+        jne inner_loop
+free_vec:
+        mov eax, dword ptr [esi + 0x2c]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+skip_vec:
+        lea ecx, [esi + 0xc]
+        mov dword ptr [esi + 0x2c], ebp
+        mov dword ptr [esi + 0x30], ebp
+        mov dword ptr [esi + 0x34], ebp
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        add esi, 0x38
+        cmp esi, dword ptr [esp + 0x24]
+        mov dword ptr [esp + 0x20], esi
+        jne outer_loop
+done_loop:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        __asm _emit 0x64
+        __asm _emit 0x89
+        __asm _emit 0x0d
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
