@@ -2374,3 +2374,26 @@ extern "C" __declspec(naked) void __fastcall fn_0040B930(void* self) {
         ret
     }
 }
+
+// [0x0040CAC0] sub_0040CAC0 (40 bytes)
+extern "C" void ext_0040B640();
+extern "C" void ext_0040C300();
+
+extern "C" __declspec(naked) void __fastcall fn_0040CAC0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0040B640
+        mov ecx, esi
+        call ext_0040C300
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x164]
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x168]
+        mov ecx, esi
+        pop esi
+        jmp edx
+    }
+}
