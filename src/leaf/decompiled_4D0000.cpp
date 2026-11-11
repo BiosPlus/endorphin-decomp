@@ -550,3 +550,52 @@ extern "C" __declspec(naked) void __cdecl fn_004DE370(void* a1, void* a2, void* 
         ret
     }
 }
+
+// [0x004D0D40] sub_004D0D40 (97 bytes)
+// __thiscall (ret 4): linear scan of a 0x1c-stride table at 0xAE5C68..0xAE5CF4 comparing each
+// entry against the std::string argument via the imported basic_string operator== (mem_00924FC4).
+// Stores the index of the first match into self->[0x190], or 0 if none matches.
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void __fastcall fn_004D0D40(void* self, int edx_unused, const void* name) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        push esi
+        push edi
+        mov dword ptr [esp + 0x10], ecx
+        xor edi, edi
+        mov esi, 0xae5c68
+        __asm _emit 0x8D __asm _emit 0x9B __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ebx, [ebx] (disp32 form)
+loop_top:
+        push esi
+        push ebx
+        call ebp
+        add esp, 0x8
+        test al, al
+        jne found
+        add esi, 0x1c
+        add edi, 0x1
+        cmp esi, 0xae5cf4
+        jl loop_top
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [ecx + 0x190], 0x0
+        pop ebx
+        pop ecx
+        ret 0x4
+found:
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 0x190], edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x4
+    }
+}
