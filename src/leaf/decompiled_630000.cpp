@@ -1388,3 +1388,48 @@ extern "C" __declspec(naked) void* __fastcall fn_0063E460(void* self) {
         ret 8
     }
 }
+
+// [0x0063E1A0] sub_0063E1A0 (105 bytes)
+// Allocates 0x40 bytes via ext_006A5C62 (operator new) inside an MSVC SEH frame (state -1,
+// __ehhandler 0x8A7A5B). On success calls the 2-arg ctor ext_0063E100 (ret 8) with
+// (arg, this+0x24) on the new object and returns its eax; NULL if the allocation failed.
+extern "C" void ext_006A5C62();
+extern "C" void ext_0063E100();
+
+extern "C" __declspec(naked) void* __fastcall fn_0063E1A0(void* self, int edx_unused, int arg) {
+    __asm {
+        push -1
+        push 8A7A5Bh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push 40h
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 10h], 0
+        je null_path_63E1A0
+        mov ecx, dword ptr [esp + 18h]
+        add esi, 24h
+        push esi
+        push ecx
+        mov ecx, eax
+        call ext_0063E100
+        pop esi
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret 4
+    null_path_63E1A0:
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret 4
+    }
+}
