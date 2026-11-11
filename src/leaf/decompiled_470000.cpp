@@ -1760,3 +1760,48 @@ L_4769C8:
         ret 0x4
     }
 }
+
+// [0x00476BC0] sub_00476BC0 (106 bytes)
+extern "C" void ext_00476940();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void* __cdecl fn_00476BC0(const void* first, const void* last) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x883778
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        push edi
+        mov esi, dword ptr [esp + 0x18]
+        mov edi, dword ptr [esp + 0x1c]
+        cmp esi, edi
+        mov dword ptr [esp + 0x10], 0x0
+        je L_00476C05
+        jmp L_00476BF0
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    L_00476BF0:
+        push esi
+        lea ecx, [esp + 0x24]
+        call ext_00476940
+        test al, al
+        jne L_00476C05
+        add esi, 0x1c
+        cmp esi, edi
+        jne L_00476BF0
+    L_00476C05:
+        lea ecx, [esp + 0x20]
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x8]
+        pop edi
+        mov eax, esi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
