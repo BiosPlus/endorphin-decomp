@@ -1592,3 +1592,89 @@ extern "C" __declspec(naked) void __fastcall fn_00477FA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00477DD0] sub_00477DD0 (142 bytes)
+extern "C" int mem_009251EC;
+extern "C" __declspec(naked) void __cdecl fn_00477DD0(int* first, int* last) {
+    __asm {
+        mov eax, dword ptr [esp+8]
+        push ebx
+        mov ebx, dword ptr [esp+8]
+        cmp ebx, eax
+        je L_ret1
+        push esi
+        lea esi, [ebx+4]
+        cmp esi, eax
+        je L_ret2
+        mov eax, 4
+        push ebp
+        mov ebp, dword ptr [mem_009251EC]
+        sub eax, ebx
+        push edi
+        mov dword ptr [esp+20], eax
+        jmp L_body
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_top:
+        mov eax, dword ptr [esp+20]
+    L_body:
+        mov edi, dword ptr [esi]
+        cmp edi, dword ptr [ebx]
+        mov edx, esi
+        jge L_ge
+        lea eax, [eax+esi-4]
+        sar eax, 2
+        test eax, eax
+        jle L_memskip
+        add eax, eax
+        add eax, eax
+        push eax
+        mov ecx, esi
+        push ebx
+        sub ecx, eax
+        push eax
+        add ecx, 4
+        push ecx
+        call ebp
+        add esp, 16
+    L_memskip:
+        mov dword ptr [ebx], edi
+        jmp L_next
+    L_ge:
+        mov ecx, dword ptr [esi-4]
+        cmp edi, ecx
+        lea eax, [esi-4]
+        jge L_store
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_shift:
+        mov dword ptr [edx], ecx
+        mov ecx, dword ptr [eax-4]
+        mov edx, eax
+        sub eax, 4
+        cmp edi, ecx
+        jl L_shift
+    L_store:
+        mov dword ptr [edx], edi
+    L_next:
+        add esi, 4
+        cmp esi, dword ptr [esp+24]
+        jne L_top
+        pop edi
+        pop ebp
+    L_ret2:
+        pop esi
+    L_ret1:
+        pop ebx
+        ret
+    }
+}
