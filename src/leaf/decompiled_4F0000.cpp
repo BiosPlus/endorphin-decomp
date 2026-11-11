@@ -1617,3 +1617,76 @@ extern "C" __declspec(naked) int __cdecl fn_004FFE90(int a1, int a2, int a3) {
         ret
     }
 }
+
+// [0x004F0340] sub_004F0340 (138 bytes)
+extern "C" int mem_00925134;
+extern "C" void ext_00493D90();
+
+extern "C" __declspec(naked) void __fastcall fn_004F0340(void* self) {
+    __asm {
+        push ecx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        test edi, edi
+        mov esi, ecx
+        mov dword ptr [esp + 0xc], esi
+        je L_invalid
+        cmp edi, dword ptr [esp + 0x20]
+        je L_ok
+L_invalid:
+        call dword ptr [mem_00925134]
+L_ok:
+        mov ebp, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [esp + 0x24]
+        cmp ebp, eax
+        je L_ret
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, ecx
+        sub edx, eax
+        sar edx, 0x3
+        cmp eax, ecx
+        push ebx
+        lea ebx, [ebp + 8*edx]
+        je L_nocopy
+        mov edx, ebp
+        sub edx, eax
+L_copy:
+        mov edi, dword ptr [eax]
+        mov dword ptr [edx + eax], edi
+        mov edi, dword ptr [eax + 0x4]
+        mov dword ptr [edx + eax + 0x4], edi
+        add eax, 0x8
+        cmp eax, ecx
+        jne L_copy
+L_nocopy:
+        mov edi, dword ptr [esi + 0x8]
+        cmp ebx, edi
+        mov esi, ebx
+        je L_nodtor
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+L_dtor:
+        mov ecx, esi
+        call ext_00493D90
+        add esi, 0x8
+        cmp esi, edi
+        jne L_dtor
+L_nodtor:
+        mov eax, dword ptr [esp + 0x10]
+        mov edi, dword ptr [esp + 0x1c]
+        mov dword ptr [eax + 0x8], ebx
+        pop ebx
+L_ret:
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr [eax], edi
+        pop edi
+        pop esi
+        mov dword ptr [eax + 0x4], ebp
+        pop ebp
+        pop ecx
+        ret 0x14
+    }
+}
