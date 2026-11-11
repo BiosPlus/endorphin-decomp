@@ -44,3 +44,41 @@ extern "C" __declspec(naked) void* __fastcall fn_005D06E0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x005D13B0] NMData::CameraData::vfunc_7_off_C (115 bytes)
+extern "C" void ext_005B11D0();
+extern "C" int mem_00B3F200;
+
+extern "C" __declspec(naked) void __fastcall fn_005D13B0(void* self) {
+    __asm {
+        push -1
+        push 0x008A5248
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        mov byte ptr [mem_00B3F200], 0x1
+        mov ecx, dword ptr [esi + 0x25c]
+        mov edx, dword ptr [ecx]
+        lea eax, [esi + 0x258]
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        mov dword ptr [esp + 0x18], 0x0
+        call eax
+        fstp dword ptr [esp + 0x8]
+        push 0x0
+        lea ecx, [esi + 0x204]
+        call ext_005B11D0
+        fld dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0xc]
+        fstp dword ptr [eax]
+        mov byte ptr [esi + 0x208], 0x1
+        mov byte ptr [mem_00B3F200], 0x0
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x14
+        ret
+    }
+}
