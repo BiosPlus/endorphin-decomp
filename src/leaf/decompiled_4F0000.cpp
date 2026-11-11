@@ -1014,3 +1014,14 @@ extern "C" void* __cdecl fn_004FFE30(char* first, char* last, const void* val) {
     }
     return first;
 }
+
+// [0x004F4EA0] sub_004F4EA0 (41 bytes)
+extern "C" void ext_004C50C0();
+extern "C" int mem_0094CE80;
+extern "C" float __fastcall fn_004F4EA0(void* self) {
+    float x = ((float (__cdecl*)(void))ext_004C50C0)();
+    if (x == 0.0f) {
+        x = *(float*)&mem_0094CE80;
+    }
+    return x;
+}
