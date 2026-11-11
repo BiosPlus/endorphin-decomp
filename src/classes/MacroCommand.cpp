@@ -131,3 +131,68 @@ extern "C" __declspec(naked) void __fastcall fn_00665B10(void* self) {
         ret
     }
 }
+
+// [0x00665A90] MacroCommand::vfunc_2 (124 bytes)
+// Reverse walk of the sub-command std::list (debug-checked reverse iterator): starts at
+// this+0x30, dereferences as node->_Prev->_Myval (+0x8), calls virtual slot 2 (+0x8) on
+// each Command, and advances via _Prev (+0x4) until it reaches the list head sentinel.
+// The _invalid_parameter guards are kept for byte parity.
+extern "C" __declspec(naked) void __fastcall fn_00665A90(void* self) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [ecx + 0x30]
+        push ebp
+        push esi
+        lea ebp, [ecx + 0x2c]
+        push edi
+        mov esi, ebp
+        nop
+    mc2_loop:
+        test esi, esi
+        mov eax, dword ptr [ebp + 0x4]
+        mov edi, dword ptr [eax]
+        je mc2_chk1
+        cmp esi, ebp
+        je mc2_chk2
+    mc2_chk1:
+        call dword ptr [mem_00925134]
+    mc2_chk2:
+        cmp ebx, edi
+        je mc2_done
+        test esi, esi
+        mov dword ptr [esp + 0x18], ebx
+        jne mc2_chk3
+        call dword ptr [mem_00925134]
+    mc2_chk3:
+        mov edi, dword ptr [ebx + 0x4]
+        cmp edi, dword ptr [esi + 0x4]
+        jne mc2_call
+        call dword ptr [mem_00925134]
+        cmp edi, dword ptr [esi + 0x4]
+        mov ebp, esi
+        jne mc2_call
+        call dword ptr [mem_00925134]
+    mc2_call:
+        mov ecx, dword ptr [edi + 0x8]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x8]
+        call eax
+        test esi, esi
+        jne mc2_next
+        call dword ptr [mem_00925134]
+    mc2_next:
+        mov ebx, dword ptr [ebx + 0x4]
+        cmp ebx, dword ptr [esi + 0x4]
+        jne mc2_loop
+        call dword ptr [mem_00925134]
+        jmp mc2_loop
+    mc2_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
