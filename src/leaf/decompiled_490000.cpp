@@ -3027,3 +3027,58 @@ L_004950B0_done:
         ret 0x8
     }
 }
+
+// [0x0049CE90] sub_0049CE90 (137 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0049CE90(void* self, int edx_unused, float* out, const float* b) {
+    __asm {
+        sub esp, 8
+        mov eax, dword ptr [esp + 0x10]
+        fld dword ptr [ecx + 0x4]
+        fadd dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [ecx + 0x8]
+        fadd dword ptr [eax]
+        fstp dword ptr [esp]
+        fld dword ptr [ecx + 0xc]
+        fadd dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fadd dword ptr [ecx]
+        mov ecx, dword ptr [esp + 0xc]
+        fstp dword ptr [ecx]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [esp]
+        fst dword ptr [ecx + 0x8]
+        fld dword ptr [esp + 0x4]
+        fstp dword ptr [ecx + 0xc]
+        fld dword ptr [ecx]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne short L_CE90_a
+        fld dword ptr [ecx]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [ecx]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [ecx + 0x8]
+L_CE90_a:
+        fld dword ptr [ecx + 0x4]
+        fld dword ptr [ecx + 0xc]
+        fcompp
+        fnstsw ax
+        test ah, 0x5
+        mov eax, ecx
+        jp short L_CE90_b
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [ecx + 0xc]
+L_CE90_b:
+        add esp, 8
+        ret 8
+    }
+}
