@@ -105,3 +105,41 @@ extern "C" __declspec(naked) int __fastcall fn_0053A8E0(void* self, int edx_unus
         ret 0x4
     }
 }
+
+extern "C" void ext_0053A5E0();
+extern "C" void ext_0053AD70();
+
+// [0x0053ADD0] Primitives::Animation::vfunc_23 (77 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0053ADD0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        je L_skip_vcall
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1c]
+        call edx
+    L_skip_vcall:
+        mov ecx, esi
+        call ext_0053AD70
+        mov ecx, dword ptr [esp + 0xc]
+        sub esp, 0x8
+        mov eax, esp
+        mov dword ptr [eax + 0x4], ecx
+        mov ecx, esi
+        mov dword ptr [eax], 0x93a444
+        call ext_0053A5E0
+        mov eax, dword ptr [esi + 0x20]
+        test eax, eax
+        je L_done
+        cmp byte ptr [eax + 0x4], 0x0
+        je L_done
+        mov byte ptr [esi + 0x4], 0x1
+        mov byte ptr [eax + 0x4], 0x0
+    L_done:
+        mov al, byte ptr [esi + 0x4]
+        pop esi
+        ret 0x8
+    }
+}
