@@ -3884,3 +3884,63 @@ extern "C" __declspec(naked) void __fastcall fn_0043CF30(void* self) {
         ret
     }
 }
+
+// [0x0043D710] sub_0043D710 (104 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0043D710(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        xor ebx, ebx
+        cmp dword ptr [esi + 0x10], ebx
+        je L_0043D739
+        jmp L_0043D720
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+L_0043D720:
+        mov eax, dword ptr [esi + 0x10]
+        cmp eax, ebx
+        je L_0043D734
+        add eax, -1
+        cmp eax, ebx
+        mov dword ptr [esi + 0x10], eax
+        jne L_0043D734
+        mov dword ptr [esi + 0x0c], ebx
+L_0043D734:
+        cmp dword ptr [esi + 0x10], ebx
+        jne L_0043D720
+L_0043D739:
+        push edi
+        mov edi, dword ptr [esi + 0x08]
+        cmp edi, ebx
+        jbe L_0043D75E
+L_0043D741:
+        mov eax, dword ptr [esi + 0x04]
+        sub edi, 1
+        cmp dword ptr [eax + 4*edi], ebx
+        lea eax, [eax + 4*edi]
+        je L_0043D75A
+        mov ecx, dword ptr [eax]
+        push ecx
+        call ext_006A5C5C
+        add esp, 4
+L_0043D75A:
+        cmp edi, ebx
+        ja L_0043D741
+L_0043D75E:
+        mov eax, dword ptr [esi + 0x04]
+        cmp eax, ebx
+        pop edi
+        je L_0043D76F
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+L_0043D76F:
+        mov dword ptr [esi + 0x04], ebx
+        mov dword ptr [esi + 0x08], ebx
+        pop esi
+        pop ebx
+        ret
+    }
+}
