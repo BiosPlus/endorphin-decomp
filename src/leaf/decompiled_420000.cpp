@@ -1315,3 +1315,67 @@ extern "C" __declspec(naked) void __fastcall fn_004280C0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00420680] sub_00420680 (108 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00420680(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne SKIP_NULL
+        call edi
+SKIP_NULL:
+        mov eax, dword ptr [esi + 4]
+        cmp byte ptr [eax + 59h], 0
+        je HAS_NODE
+        call edi
+        pop edi
+        pop esi
+        ret
+HAS_NODE:
+        mov ecx, dword ptr [eax + 8]
+        cmp byte ptr [ecx + 59h], 0
+        jne RIGHT_NIL
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 59h], 0
+        jne STORE_RIGHT
+LEFTMOST:
+        mov ecx, eax
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 59h], 0
+        je LEFTMOST
+STORE_RIGHT:
+        pop edi
+        mov dword ptr [esi + 4], ecx
+        pop esi
+        ret
+RIGHT_NIL:
+        mov eax, dword ptr [eax + 4]
+        cmp byte ptr [eax + 59h], 0
+        jne STORE_PARENT
+        _emit 0x8D
+        _emit 0xA4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+UP_LOOP:
+        mov ecx, dword ptr [esi + 4]
+        cmp ecx, dword ptr [eax + 8]
+        jne STORE_PARENT
+        mov dword ptr [esi + 4], eax
+        mov edx, eax
+        mov eax, dword ptr [edx + 4]
+        cmp byte ptr [eax + 59h], 0
+        je UP_LOOP
+STORE_PARENT:
+        pop edi
+        mov dword ptr [esi + 4], eax
+        pop esi
+        ret
+    }
+}
