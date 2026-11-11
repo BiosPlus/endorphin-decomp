@@ -2602,3 +2602,51 @@ has_value:
         ret
     }
 }
+
+// [0x007CFEC0] sub_007CFEC0 (108 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007CFEC0(void* self) {
+    __asm {
+        push ecx
+        fld dword ptr [eax+10h]
+        fmul dword ptr [ecx+4]
+        fld dword ptr [eax]
+        fmul dword ptr [ecx]
+        faddp st(1), st
+        fld dword ptr [eax+20h]
+        fmul dword ptr [ecx+8]
+        faddp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fst dword ptr [edx]
+        fadd dword ptr [eax+30h]
+        fstp dword ptr [esi]
+        fld dword ptr [eax+4]
+        fmul dword ptr [ecx]
+        fld dword ptr [eax+14h]
+        fmul dword ptr [ecx+4]
+        faddp st(1), st
+        fld dword ptr [eax+24h]
+        fmul dword ptr [ecx+8]
+        faddp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fst dword ptr [edx+4]
+        fadd dword ptr [eax+34h]
+        fstp dword ptr [esi+4]
+        fld dword ptr [eax+8]
+        fmul dword ptr [ecx]
+        fld dword ptr [eax+18h]
+        fmul dword ptr [ecx+4]
+        faddp st(1), st
+        fld dword ptr [eax+28h]
+        fmul dword ptr [ecx+8]
+        faddp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fst dword ptr [edx+8]
+        fadd dword ptr [eax+38h]
+        fstp dword ptr [esi+8]
+        pop ecx
+        ret
+    }
+}
