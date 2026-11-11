@@ -83,3 +83,50 @@ extern "C" __declspec(naked) int __fastcall fn_00544CE0(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x00544C70] SnapTranslateTool::vfunc_18_off_98 (111 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00544C70(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 0x10
+        fldz
+        push esi
+        fst dword ptr [esp + 0x10]
+        mov esi, ecx
+        cmp byte ptr [esi + 0x1c9], 0x0
+        fst dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esi - 0x10]
+        fst dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx]
+        je else_path
+        mov eax, dword ptr [eax + 0xc8]
+        lea edx, [esp + 0x4]
+        push edx
+        mov edx, dword ptr [esp + 0x1c]
+        push edx
+        call eax
+        test al, al
+        je end_path
+        mov ecx, dword ptr [esi - 0x10]
+        mov byte ptr [esi + 0x1c8], 0x1
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x4c]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+        pop esi
+        add esp, 0x10
+        ret 0x8
+    else_path:
+        mov edx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [eax + 0x48]
+        push edx
+        mov edx, dword ptr [esp + 0x1c]
+        push edx
+        call eax
+    end_path:
+        pop esi
+        add esp, 0x10
+        ret 0x8
+    }
+}
