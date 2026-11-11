@@ -2845,3 +2845,22 @@ extern "C" __declspec(naked) void __fastcall fn_0040F0F0(void* self, int edx_unu
         ret 0x18
     }
 }
+
+// [0x00403420] sub_00403420 (130 bytes)
+extern "C" void ext_006A345A();
+
+extern "C" int __fastcall fn_00403420(char* self, int edx_unused, int frame) {
+    typedef void* (__stdcall *GetFrameFn)(void*, int);
+    typedef int (__stdcall *DrawDibDrawFn)(void*, void*, int, int, int, int, void*, void*, int, int, int, int, unsigned int);
+    if (frame < *(int*)(self + 0xc4)) {
+        unsigned char* hdr = (unsigned char*)((GetFrameFn)ext_006A3442)(*(void**)(self + 0x90), frame);
+        unsigned char* lpBits = hdr + *(int*)hdr + 4 * *(int*)(hdr + 0x20);
+        *(unsigned char**)(self + 0xbc) = lpBits;
+        ((DrawDibDrawFn)ext_006A345A)(*(void**)(self + 0xdc), *(void**)(self + 0xe4), 0, 0,
+                     *(int*)(self + 0xd0), *(int*)(self + 0xd4),
+                     hdr, lpBits, 0, 0,
+                     *(int*)(self + 0xc8), *(int*)(self + 0xcc), 0);
+        *(int*)(self + 0xd8) = *(int*)(self + 0xc0) * frame;
+    }
+    return *(int*)(self + 0xe8);
+}
