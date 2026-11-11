@@ -139,3 +139,53 @@ extern "C" __declspec(naked) void __fastcall fn_00551A80(void* self) {
         ret
     }
 }
+
+// [0x00551C30] NMCamera::Orthogonal::vfunc_20 (125 bytes)
+extern "C" void ext_005480D0();
+extern "C" int mem_0092A270;
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __fastcall fn_00551C30(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_005480D0
+        mov edi, dword ptr [esp + 0x10]
+        fild dword ptr [edi]
+        mov ecx, esi
+        fadd st(0), st
+        fdiv qword ptr [esi + 0xb0]
+        fsub qword ptr [mem_0092A270]
+        fmulp st(1), st
+        fmul qword ptr [mem_00993828]
+        fmul qword ptr [esi + 0xc0]
+        fstp dword ptr [esp + 0x10]
+        call ext_005480D0
+        fild dword ptr [edi + 0x4]
+        mov eax, dword ptr [esp + 0x14]
+        pop edi
+        fadd st(0), st
+        fdiv qword ptr [esi + 0xb8]
+        pop esi
+        fld1
+        fsubrp st(1), st
+        fmulp st(1), st
+        fmul qword ptr [mem_00993828]
+        fstp dword ptr [esp]
+        fld dword ptr [eax]
+        mov eax, dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [eax]
+        fld dword ptr [esp]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [eax + 0x8]
+        fld1
+        fstp dword ptr [eax + 0xc]
+        pop ecx
+        ret 0xc
+    }
+}
