@@ -1391,3 +1391,62 @@ extern "C" __declspec(naked) void __fastcall fn_006998D0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00696910] sub_00696910 (100 bytes)
+extern "C" int mem_009250BC;
+extern "C" int mem_009250C0;
+extern "C" int mem_009250E8;
+extern "C" void ext_006968D0();
+extern "C" __declspec(naked) void __cdecl fn_00696910(void* a1, char a2) {
+    __asm {
+        push ecx
+        push ebx
+        mov bl, byte ptr [esp + 10h]
+        push esi
+        mov esi, dword ptr [esp + 10h]
+        jmp short loop_top
+        _emit 0x8D
+        _emit 0x49
+        _emit 0x00
+loop_top:
+        lea eax, [esp + 8]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_009250BC]
+        mov ecx, dword ptr [eax]
+        mov ecx, dword ptr [ecx + 4]
+        add ecx, eax
+        call dword ptr [mem_009250C0]
+        test al, al
+        jne fail
+        mov eax, dword ptr [esp + 8]
+        cmp al, 23h
+        jne check_delim
+        push esi
+        call ext_006968D0
+        add esp, 4
+        test al, al
+        je fail
+        mov eax, dword ptr [esp + 8]
+check_delim:
+        cmp al, bl
+        je found
+        cmp al, 0FFh
+        jne loop_top
+found:
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_009250E8]
+        pop esi
+        mov al, 1
+        pop ebx
+        pop ecx
+        ret
+fail:
+        pop esi
+        xor al, al
+        pop ebx
+        pop ecx
+        ret
+    }
+}
