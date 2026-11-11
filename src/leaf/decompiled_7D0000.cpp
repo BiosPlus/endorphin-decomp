@@ -1127,3 +1127,23 @@ L_end:
         ret
     }
 }
+
+// [0x007DCBB0] sub_007DCBB0 (97 bytes)
+extern "C" void ext_007D6260(void* a);
+extern "C" void ext_007D6360(void* a, int b);
+extern "C" void ext_007DCAA0(int a, void* b);
+extern "C" int mem_00AB28BC;
+
+extern "C" void __cdecl fn_007DCBB0(void* self) {
+    char* s = (char*)self;
+    typedef void (__cdecl *fn_int)(int);
+    typedef void (__cdecl *fn_self)(void*);
+    ext_007DCAA0(*(int*)(s + 0x28), *(void**)(s + 0x64));
+    ((fn_int)mem_00AB28BC)(*(int*)(s + 0x30));
+    (*(fn_int*)(*(char**)(s + 0x64) + 0xc))(*(int*)(s + 0x30));
+    ((fn_int)mem_00AB28BC)(*(int*)(s + 0x2c));
+    (*(fn_int*)(*(char**)(s + 0x64) + 0xc))(*(int*)(s + 0x2c));
+    ext_007D6360(s + 0x44, *(int*)(s + 0x44));
+    ext_007D6260(s + 0x44);
+    (*(fn_self*)(*(char**)(s + 0x64) + 0xc))(self);
+}
