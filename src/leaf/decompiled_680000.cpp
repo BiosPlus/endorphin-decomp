@@ -1,5 +1,6 @@
 // Decompiled translation unit: src/leaf/decompiled_680000.cpp
 
+
 // [0x0068BC50] sub_0068BC50 (15 bytes)
 extern "C" void ext_00695390();
 extern "C" __declspec(naked) void __fastcall fn_0068BC50(void* self) {
@@ -2596,5 +2597,58 @@ extern "C" __declspec(naked) void __fastcall fn_00681AA0(void* self) {
         mov dword ptr fs:[0x0], ecx
         add esp, 0xc
         ret
+    }
+}
+
+// [0x00687150] sub_00687150 (143 bytes)
+extern "C" void ext_0059F5C0();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00B5ADB0;
+extern "C" __declspec(naked) void* __fastcall fn_00687150(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        __asm _emit 0x68 __asm _emit 0xC4 __asm _emit 0x56 __asm _emit 0x8B __asm _emit 0x00 // push 0x008b56c4 (SEH handler)
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, fs:[0]
+        push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov fs:[0], esp
+        push ecx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        mov eax, dword ptr [esp + 0x20]
+        xor ebp, ebp
+        push eax
+        lea ecx, [esi + 0x8]
+        mov dword ptr [esp + 0x1c], ebp
+        __asm _emit 0xC7 __asm _emit 0x06 __asm _emit 0x34 __asm _emit 0xD8 __asm _emit 0x98 __asm _emit 0x00 // mov dword ptr [esi], 0x0098d834
+        call dword ptr [mem_00924FE0]
+        lea edi, [esi + 0x28]
+        mov ecx, edi
+        mov byte ptr [esp + 0x18], 0x1
+        call ext_0059F5C0
+        mov dword ptr [edi + 0x4], eax
+        mov byte ptr [eax + 0x2d], 0x1
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [eax + 0x4], eax
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [eax + 0x8], eax
+        mov dword ptr [edi + 0x8], ebp
+        mov dword ptr [esi + 0x34], ebp
+        mov ecx, dword ptr [mem_00B5ADB0]
+        mov dword ptr [esi + 0x4], ecx
+        add dword ptr [mem_00B5ADB0], 0x1
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x24], ebp
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
     }
 }
