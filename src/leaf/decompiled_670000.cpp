@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_670000.cpp
 
+#include <math.h>
+
 // [0x0067F8F0] sub_0067F8F0 (32 bytes)
 extern "C" __declspec(naked) void __fastcall fn_0067F8F0(void* self) {
     __asm {
@@ -1772,5 +1774,21 @@ extern "C" __declspec(naked) float __fastcall fn_00679990(void* self) {
         fld dword ptr [esp]
         add esp, 0x10
         ret
+    }
+}
+
+// [0x0067B860] sub_0067B860 (98 bytes)
+extern "C" void ext_006A7250();
+extern "C" void __fastcall fn_0067B860(void* self) {
+    float* v = (float*)self;
+    double x = (double)v[0];
+    double y = (double)v[1];
+    double z = (double)v[2];
+    double len = sqrt(x * x + y * y + z * z);
+    if (len != 0.0) {
+        double inv = 1.0 / len;
+        v[0] = (float)(x * inv);
+        v[1] = (float)(y * inv);
+        v[2] = (float)(z * inv);
     }
 }
