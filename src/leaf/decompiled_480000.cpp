@@ -1,5 +1,6 @@
 // Decompiled translation unit: src/leaf/decompiled_480000.cpp
 
+#include <cmath>
 #include <cstdio>
 #include <new>
 #include <string>
@@ -2230,4 +2231,13 @@ extern "C" __declspec(naked) std::string* __cdecl fn_00486F20(std::string* first
         pop ebx
         ret
     }
+}
+
+// [0x004868F0] sub_004868F0 (100 bytes)
+extern "C" int mem_00925248;
+
+extern "C" int __stdcall fn_004868F0(double a, double b, double c) {
+    typedef int (__cdecl *finite_t)(double);
+    finite_t is_finite = (finite_t)mem_00925248;
+    return (is_finite(a) && is_finite(b) && is_finite(c) && fabs(a - b) <= c) ? 1 : 0;
 }
