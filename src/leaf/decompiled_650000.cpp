@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_650000.cpp
 
+#include <string>
+
 // [0x0065ACC0] sub_0065ACC0 (10 bytes)
 // Calls sub_007C7150 with the dword at [self] as its single stack argument, then returns.
 extern "C" void __cdecl ext_007C7150(int value);
@@ -2641,5 +2643,52 @@ zero_path:
         add esp, 0x8
         pop esi
         ret 0x10
+    }
+}
+
+// [0x0065F850] sub_0065F850 (130 bytes)
+// Swaps two {std::string, int} records (string at +0x0, int at +0x1c) passed as stack args.
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __cdecl fn_0065F850(void* a, void* b) {
+    __asm {
+        push -1
+        push 08b4158h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 20h
+        push esi
+        mov esi, dword ptr [esp + 34h]
+        push edi
+        push esi
+        lea ecx, [esp + 0ch]
+        call dword ptr [mem_00924FE0]
+        mov eax, dword ptr [esi + 1ch]
+        mov dword ptr [esp + 24h], eax
+        mov edi, dword ptr [esp + 3ch]
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp + 34h], 0
+        call dword ptr [mem_00924FDC]
+        mov ecx, dword ptr [edi + 1ch]
+        lea edx, [esp + 8h]
+        mov dword ptr [esi + 1ch], ecx
+        push edx
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [esp + 24h]
+        lea ecx, [esp + 8h]
+        mov dword ptr [edi + 1ch], eax
+        mov dword ptr [esp + 30h], 0ffffffffh
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 28h]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 2ch
+        ret
     }
 }
