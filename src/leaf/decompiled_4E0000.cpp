@@ -558,3 +558,41 @@ extern "C" __declspec(naked) void __fastcall fn_004EFAC0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x004E7E40] sub_004E7E40 (67 bytes)
+extern "C" void __cdecl ext_0059F310(int* first, int hole, int len, int value);
+
+extern "C" __declspec(naked) void __cdecl fn_004E7E40(int* first, int* last) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        sub esi, edi
+        mov eax, esi
+        sar eax, 0x2
+        cmp eax, 0x1
+        jle done
+loop_top:
+        mov eax, dword ptr [edi + esi - 0x4]
+        mov ecx, dword ptr [edi]
+        push eax
+        lea edx, [esi - 0x4]
+        sar edx, 0x2
+        push edx
+        push 0x0
+        push edi
+        mov dword ptr [edi + esi - 0x4], ecx
+        call ext_0059F310
+        sub esi, 0x4
+        mov eax, esi
+        sar eax, 0x2
+        add esp, 0x10
+        cmp eax, 0x1
+        jg loop_top
+done:
+        pop edi
+        pop esi
+        ret
+    }
+}
