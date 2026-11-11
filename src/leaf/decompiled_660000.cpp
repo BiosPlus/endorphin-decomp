@@ -2865,3 +2865,22 @@ extern "C" void __fastcall fn_00665C20(void* self, int edx_unused, Lst00665C20He
         a1->_Mysize = a1->_Mysize - 1;
     } while (a1->_Mysize != 0);
 }
+
+// [0x00666120] sub_00666120 (65 bytes)
+extern "C" void __fastcall fn_00666120(void* self) {
+    typedef void (__thiscall *ThisFn)(void* self, Lst00665C20Head* a1);
+    typedef void (__thiscall *DelFn)(void* self, int flags);
+    char* p = (char*)self;
+    ThisFn clear = reinterpret_cast<ThisFn>(fn_00665C20);
+    clear(self, (Lst00665C20Head*)(p + 0x10));
+    clear(self, (Lst00665C20Head*)(p + 0x1c));
+    void* obj = *(void**)self;
+    if (obj) {
+        void** vtbl = *(void***)obj;
+        reinterpret_cast<DelFn>(vtbl[0])(obj, 1);
+    }
+    *(void**)self = 0;
+    *(int*)(p + 0x4) = 0;
+    *(int*)(p + 0xc) = 0;
+    fn_00665B80(self);
+}
