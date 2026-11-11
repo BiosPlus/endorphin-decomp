@@ -1517,3 +1517,42 @@ extern "C" __declspec(naked) void __fastcall fn_005577A0(void* self) {
         ret
     }
 }
+
+// [0x005567D0] sub_005567D0 (97 bytes)
+// __cdecl(first, last): SEH-framed (state -1/0) loop over 0x3c-byte elements, destroying the
+// std::string at +0x20 then the one at +0x04 via the MSVCP80 ~basic_string import.
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __cdecl fn_005567D0(void* first, void* last) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x89a29c
+        push eax
+        mov dword ptr fs:[0], esp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        cmp esi, edi
+        je done
+    loop_top:
+        lea ecx, [esi + 0x20]
+        mov dword ptr [esp + 0x10], 0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0x10], -1
+        call dword ptr [mem_00924FF4]
+        add esi, 0x3c
+        cmp esi, edi
+        mov dword ptr [esp + 0x18], esi
+        jne loop_top
+    done:
+        mov ecx, dword ptr [esp + 0x8]
+        pop edi
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
