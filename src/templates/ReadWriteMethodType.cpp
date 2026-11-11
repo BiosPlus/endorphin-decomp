@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/templates/ReadWriteMethodType.cpp
 
 extern "C" void ext_0067A670();
+extern "C" int mem_00AEBB48;
+extern "C" int mem_00AEBB44;
 extern "C" int mem_00AE3704;
 extern "C" int mem_00AE3700;
 extern "C" int mem_00AE0D04;
@@ -3370,5 +3372,37 @@ extern "C" __declspec(naked) void __fastcall fn_004F6D40(void* self, int edx_unu
         mov dword ptr fs:[0], ecx
         add esp, 0xc
         ret 0x4
+    }
+}
+
+// [0x00504C10] ExprParser::ReadWriteMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: void __thiscall Interpreter::setType(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &)>::vfunc_40 (122 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00504C10(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x891bae
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00AEBB48], al
+        jne init_done
+        or dword ptr [mem_00AEBB48], eax
+        mov ecx, offset mem_00AEBB44
+        mov dword ptr [esp+8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp+0x10]
+        mov dword ptr [mem_00AEBB44], 0x94f3ac
+        mov dword ptr [eax+4], offset mem_00AEBB44
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+init_done:
+        mov ecx, dword ptr [esp+0x10]
+        mov dword ptr [ecx+4], offset mem_00AEBB44
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
     }
 }
