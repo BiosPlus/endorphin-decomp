@@ -779,3 +779,22 @@ L_skip3:
         jmp ext_00665810
     }
 }
+
+extern "C" void __cdecl ext_0059DE60(unsigned int* first, int holeIndex, int topIndex, unsigned int value, int comp);
+
+// [0x004AB230] sub_004AB230 (97 bytes)
+extern "C" void __cdecl fn_004AB230(unsigned int* first, int holeIndex, int len, unsigned int value, int comp) {
+    int topIndex = holeIndex;
+    int idx = 2 * holeIndex + 2;
+    while (idx < len) {
+        if (first[idx] < first[idx - 1]) --idx;
+        first[holeIndex] = first[idx];
+        holeIndex = idx;
+        idx = 2 * idx + 2;
+    }
+    if (idx == len) {
+        first[holeIndex] = first[len - 1];
+        holeIndex = len - 1;
+    }
+    ext_0059DE60(first, holeIndex, topIndex, value, comp);
+}
