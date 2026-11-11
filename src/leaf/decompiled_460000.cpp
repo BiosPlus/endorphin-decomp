@@ -2321,3 +2321,25 @@ extern "C" __declspec(naked) void __fastcall fn_0046C120(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0043C670();
+extern "C" void ext_006A5E66();
+extern "C" int mem_00925688;
+extern "C" int mem_0092568C;
+
+// [0x00460590] sub_00460590 (71 bytes)
+extern "C" void __fastcall fn_00460590(void* self) {
+    typedef void (__fastcall *FnFC)(void*);
+    typedef void* (__fastcall *FnFCRet)(void*);
+    typedef int (__stdcall *PFN_Inv)(void*, void*, int);
+    typedef int (__stdcall *PFN_Upd)(void*);
+    void* a = *(void**)((char*)self + 0xb4);
+    ((FnFC)&ext_0043C670)(a);
+    void* d = ((FnFCRet)&ext_006A5E66)(self);
+    void** vt = *(void***)d;
+    ((FnFC)vt[0x16c / 4])(d);
+    void* hwnd = *(void**)(*(char**)((char*)self + 0xb4) + 0x20);
+    (*(PFN_Inv*)&mem_00925688)(hwnd, 0, 1);
+    void* hwnd2 = *(void**)(*(char**)((char*)self + 0xb4) + 0x20);
+    (*(PFN_Upd*)&mem_0092568C)(hwnd2);
+}
