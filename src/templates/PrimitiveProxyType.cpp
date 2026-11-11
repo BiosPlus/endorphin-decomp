@@ -601,3 +601,39 @@ extern "C" __declspec(naked) void __fastcall fn_00497B50(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00497BB0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_43 (94 bytes)
+// SEH-framed. Same shape as vfunc_41 at 0x00497B50: calls ext_00497650(self, a2) with a
+// hidden string return slot, assigns the result into *a1 via std::string::operator=
+// (through mem_00924FD8), then destroys the temp (mem_00924FF4). ret 8.
+extern "C" void ext_00497650();
+extern "C" int mem_00924FD8;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00497BB0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x30]
+        push eax
+        lea edx, [esp + 0x4]
+        push edx
+        call ext_00497650
+        mov ecx, dword ptr [esp + 0x2c]
+        mov ecx, dword ptr [ecx]
+        push eax
+        mov dword ptr [esp + 0x28], 0
+        call dword ptr [mem_00924FD8]
+        lea ecx, [esp]
+        mov dword ptr [esp + 0x24], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x8
+    }
+}
