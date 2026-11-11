@@ -2248,3 +2248,33 @@ extern "C" __declspec(naked) void __fastcall fn_0045BC70(void* self) {
         ret 0x4
     }
 }
+
+// [0x00458210] sub_00458210 (128 bytes)
+// __thiscall, ret 0xc: if this->[0xdc] == 0 and sub_00455F40() == 0 and arg1 in {10,11,12,15},
+// dispatches to vtable[0x184](arg1, arg2, arg3) unless the matching flag byte at [0x124..0x127] is set.
+extern "C" int ext_00455F40();
+
+extern "C" void __fastcall fn_00458210(void* self, int edx_unused, int a1, int a2, int a3) {
+    typedef void (__thiscall *VFn)(void*, int, int, int);
+    unsigned char* p = reinterpret_cast<unsigned char*>(self);
+    if (*reinterpret_cast<int*>(p + 0xdc) != 0) return;
+    if (ext_00455F40() != 0) return;
+    unsigned int k = static_cast<unsigned int>(a1) - 10u;
+    if (k > 7u) return;
+    if (a1 == 10) {
+        if (p[0x124] == 0) goto dispatch;
+        return;
+    }
+    if (a1 == 12) {
+        if (p[0x125] == 0) goto dispatch;
+        return;
+    }
+    if (a1 == 11) {
+        if (p[0x126] == 0) goto dispatch;
+        return;
+    }
+    if (a1 != 15) return;
+    if (p[0x127] != 0) return;
+dispatch:
+    reinterpret_cast<VFn>((*reinterpret_cast<void***>(self))[0x184 / sizeof(void*)])(self, a1, a2, a3);
+}
