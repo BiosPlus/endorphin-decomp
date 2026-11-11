@@ -2422,3 +2422,61 @@ extern "C" __declspec(naked) void __fastcall fn_0048EF80(void* self) {
         ret 0x14
     }
 }
+
+// [0x0048FC00] sub_0048FC00 (107 bytes)
+extern "C" __declspec(naked) void fn_0048FC00() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je L_empty
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+L_loop:
+        cmp edi, esi
+        je L_next
+        mov ecx, dword ptr [edi + 0x4]
+        test ecx, ecx
+        je L_nullold
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x78]
+        push edi
+        call edx
+L_nullold:
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [edi + 0x4], eax
+        cmp dword ptr [esi + 0x4], 0
+        je L_nullsrc
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push esi
+        lea eax, [esp + 0x14]
+        push eax
+        call edx
+        jmp L_store
+L_nullsrc:
+        mov dword ptr [esp + 0x18], 0
+        lea eax, [esp + 0x18]
+L_store:
+        mov eax, dword ptr [eax]
+        mov dword ptr [edi], eax
+L_next:
+        add esi, 8
+        add edi, 8
+        cmp esi, ebx
+        jne L_loop
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_empty:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
