@@ -480,3 +480,46 @@ extern "C" int __fastcall fn_007FC230(const float* self, int edx_unused, const f
     if (self[3] > other[3]) mask |= 8;
     return mask;
 }
+
+// [0x007F7190] sub_007F7190 (91 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007F7190(float* out, float a, float b, float c, float d) {
+    __asm {
+        fld dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0xc]
+        fld st(0)
+        fld dword ptr [esp + 0x10]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fcomp st(3)
+        fnstsw ax
+        test ah, 0x41
+        jne SHORT L_lt
+        mov eax, dword ptr [esp + 0x4]
+        fstp st(2)
+        fstp st(0)
+        fstp dword ptr [eax]
+        mov eax, 1
+        ret
+    L_lt:
+        fstp st(0)
+        fld dword ptr [esp + 0x14]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(2)
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne SHORT L_zero
+        mov ecx, dword ptr [esp + 0x4]
+        fstp dword ptr [ecx]
+        mov eax, 1
+        ret
+    L_zero:
+        fstp st(0)
+        xor eax, eax
+        ret
+    }
+}
