@@ -798,3 +798,32 @@ extern "C" void* __fastcall fn_004ED720(void* self) {
     p[0x38 / 4] = 1;
     return self;
 }
+
+// [0x004ED750] sub_004ED750 (82 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004ED750(void* self) {
+    __asm {
+        push -1
+        push 0x88ef98
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_004ED640
+        mov ecx, dword ptr [esp + 0x8]
+        xor eax, eax
+        mov dword ptr [esi + 0x50], eax
+        mov dword ptr [esi], 0x94bf94
+        mov dword ptr [esi + 0x4], 0x94bf68
+        mov dword ptr [esi + 0x18], 0x94bf58
+        mov dword ptr [esi + 0x58], eax
+        mov dword ptr [esi + 0x5c], eax
+        mov dword ptr [esi + 0x60], eax
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
