@@ -1780,3 +1780,46 @@ extern "C" __declspec(naked) void __fastcall fn_007DB640(void* self) {
         ret
     }
 }
+
+// [0x007D8600] sub_007D8600 (123 bytes)
+extern "C" int mem_0092A278;
+extern "C" int mem_0099E0B4;
+extern "C" __declspec(naked) void __cdecl fn_007D8600(void* self, float x, float y, float z) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [ecx + 0x78]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [ecx + 0x7c]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [ecx + 0x80]
+        fld dword ptr [ecx + 0x7c]
+        fld dword ptr [ecx + 0x78]
+        fld dword ptr [ecx + 0x80]
+        fld st(1)
+        fmulp st(2), st
+        fxch st(1)
+        fadd qword ptr [mem_0092A278]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fld st(2)
+        fmulp st(3), st
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x4]
+        fld st(0)
+        fmulp st(1), st
+        fadd dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fcomp dword ptr [mem_0099E0B4]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_7D8670
+        or dword ptr [ecx + 0x90], 0x100
+        ret
+L_7D8670:
+        and dword ptr [ecx + 0x90], 0xfffffeff
+        ret
+    }
+}
