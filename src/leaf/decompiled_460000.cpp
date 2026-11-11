@@ -3062,3 +3062,46 @@ done:
         ret 0x4
     }
 }
+
+// [0x00461E20] sub_00461E20 (140 bytes)
+extern "C" void ext_006A5DFA();
+extern "C" void ext_006A5EFC();
+extern "C" void ext_006A5F6E();
+extern "C" int mem_009242F4;
+
+extern "C" __declspec(naked) void __fastcall fn_00461E20(void* self) {
+    __asm {
+        push -1
+        push 0x8807C9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        mov dword ptr [esi], 0x9389D4
+        lea ecx, [esi + 0xD8]
+        mov dword ptr [esp + 0x10], 5
+        call ext_006A5DFA
+        lea ecx, [esi + 0x84]
+        mov byte ptr [esp + 0x10], 4
+        call ext_006A5EFC
+        lea ecx, [esi + 0x80]
+        call dword ptr [mem_009242F4]
+        lea ecx, [esi + 0x7C]
+        call dword ptr [mem_009242F4]
+        lea ecx, [esi + 0x78]
+        call dword ptr [mem_009242F4]
+        lea ecx, [esi + 0x74]
+        call dword ptr [mem_009242F4]
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xFFFFFFFF
+        call ext_006A5F6E
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
