@@ -4550,3 +4550,63 @@ extern "C" __declspec(naked) void __fastcall fn_0043B450(void* self) {
         ret
     }
 }
+
+// [0x0043B5D0] sub_0043B5D0 (123 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0043B5D0(int* p0, int* p1, int* p2) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov ebx, dword ptr [edi]
+        call ext_004410C0
+        cmp eax, 1
+        jle L_s1
+        mov ecx, ebx
+        call ext_004410C0
+        cmp eax, 1
+        jg L_s1
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi], ecx
+        mov dword ptr [edi], eax
+L_s1:
+        mov ebx, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [ebx]
+        push ebp
+        mov ebp, dword ptr [esi]
+        call ext_004410C0
+        cmp eax, 1
+        jle L_s2
+        mov ecx, ebp
+        call ext_004410C0
+        cmp eax, 1
+        jg L_s2
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [ebx]
+        mov dword ptr [ebx], edx
+        mov dword ptr [esi], eax
+L_s2:
+        mov ecx, dword ptr [esi]
+        mov ebx, dword ptr [edi]
+        call ext_004410C0
+        cmp eax, 1
+        pop ebp
+        jle L_s3
+        mov ecx, ebx
+        call ext_004410C0
+        cmp eax, 1
+        jg L_s3
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi], ecx
+        mov dword ptr [edi], eax
+L_s3:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
