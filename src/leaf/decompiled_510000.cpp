@@ -1414,3 +1414,12 @@ extern "C" void* __cdecl fn_0051A610(void* begin, void* end, const float* value)
     }
     return first;
 }
+
+// [0x005112B0] sub_005112B0 (49 bytes)
+extern "C" double __cdecl ext_005FF080(double a, double b, double c, double d, double e);
+
+extern "C" double __fastcall fn_005112B0(void* self, int edx_unused, double e) {
+    char* p = (char*)self;
+    return ext_005FF080(*(float*)(p + 0x30), *(float*)(p + 0x34),
+                        *(float*)(p + 0x28), *(float*)(p + 0x2c), e);
+}
