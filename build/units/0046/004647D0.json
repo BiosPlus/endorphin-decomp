@@ -16,5 +16,7 @@
     "0x0046481F",
     "0x00464830"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T09:09:16Z"
 }
