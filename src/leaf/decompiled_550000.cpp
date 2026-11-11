@@ -2670,3 +2670,52 @@ extern "C" __declspec(naked) void __fastcall fn_00559680(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00559840] sub_00559840 (80 bytes)
+extern "C" void ext_00556740();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __cdecl fn_00559840(void) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, ebp
+        je L_done
+        push ebx
+        push esi
+        lea esi, [edi + 0x8]
+        xor ebx, ebx
+    L_loop:
+        mov eax, dword ptr [esi]
+        cmp eax, ebx
+        je L_skip
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, dword ptr [esi + 0x4]
+        lea edx, [esi - 0x4]
+        push edx
+        push ecx
+        push eax
+        call ext_00556740
+        mov edx, dword ptr [esi]
+        push edx
+        call ext_006A5C5C
+        add esp, 0x14
+    L_skip:
+        mov dword ptr [esi], ebx
+        mov dword ptr [esi + 0x4], ebx
+        mov dword ptr [esi + 0x8], ebx
+        add edi, 0x14
+        add esi, 0x14
+        cmp edi, ebp
+        jne L_loop
+        pop esi
+        pop ebx
+    L_done:
+        pop edi
+        pop ebp
+        ret
+    }
+}
