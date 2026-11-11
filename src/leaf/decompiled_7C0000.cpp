@@ -2818,3 +2818,56 @@ extern "C" void __cdecl fn_007C93E0(void* a0, int a1, int a2, int a3) {
         ((void (__cdecl*)(int, int, int, int))ext_007CA110)(*(int*)(self + 0x98), (int)(self + 0x10c), 0, a3);
     }
 }
+
+// [0x007CC510] sub_007CC510 (123 bytes)
+extern "C" void ext_007CC4E0(int a0, int a1, float* a2);
+
+struct Cc510Xf {
+    char pad[0x30];
+    float ox, oy, oz;
+};
+
+extern "C" __declspec(naked) float __cdecl fn_007CC510(int a0, Cc510Xf* a1, float* a2) {
+    __asm {
+        sub esp, 0x18
+        mov edx, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+        lea eax, [esp + 0xc]
+        push eax
+        push edx
+        push ecx
+        call ext_007CC4E0
+        mov eax, dword ptr [esp + 0x30]
+        fld dword ptr [eax]
+        add esp, 0xc
+        test edx, edx
+        fstp dword ptr [esp]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x8]
+        je short L_no_xf
+        fld dword ptr [esp]
+        fsub dword ptr [edx + 0x30]
+        fstp dword ptr [esp]
+        fld dword ptr [esp + 0x4]
+        fsub dword ptr [edx + 0x34]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x8]
+        fsub dword ptr [edx + 0x38]
+        fstp dword ptr [esp + 0x8]
+L_no_xf:
+        fld dword ptr [esp + 0x10]
+        fmul dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0xc]
+        fmul dword ptr [esp]
+        faddp st(1), st
+        fld dword ptr [esp + 0x14]
+        fmul dword ptr [esp + 0x8]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x20]
+        add esp, 0x18
+        ret
+    }
+}
