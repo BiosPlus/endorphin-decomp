@@ -1071,3 +1071,12 @@ extern "C" void __cdecl fn_007D6AA0(Dec007D6AA0Buf* a1, Dec007D6AA0Buf* a2, cons
     a1->count = n;
     a2->count = n;
 }
+
+// [0x007DFE30] sub_007DFE30 (96 bytes)
+extern "C" int __fastcall fn_007DFE30(float* self) {
+    int esi = self[0] > self[1];
+    int edx = self[0] > self[2];
+    int eax = self[1] > self[2];
+    int sh = (esi << 4) | (edx << 3) | (eax << 2);
+    return (0x21312300 >> sh) & 3;
+}
