@@ -2477,3 +2477,64 @@ extern "C" __declspec(naked) void __cdecl fn_0050A780(void* a, void* b) {
         ret
     }
 }
+
+// [0x0050B6A0] sub_0050B6A0 (111 bytes)
+extern "C" void ext_0050A780();
+extern "C" int mem_00924EF4;
+
+extern "C" __declspec(naked) void __cdecl fn_0050B6A0(void* a, void* b, void* c) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00924EF4]
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        add edi, 0x4
+        lea esi, [ebp + 0x4]
+        push edi
+        push esi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_skip1
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        push ebp
+        call ext_0050A780
+        add esp, 0x8
+    L_skip1:
+        mov ecx, dword ptr [esp + 0x1c]
+        add ecx, 0x4
+        push esi
+        push ecx
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_skip2
+        mov edx, dword ptr [esp + 0x1c]
+        push ebp
+        push edx
+        call ext_0050A780
+        add esp, 0x8
+    L_skip2:
+        push edi
+        push esi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_skip3
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        push ebp
+        call ext_0050A780
+        add esp, 0x8
+    L_skip3:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
