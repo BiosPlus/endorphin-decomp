@@ -1395,3 +1395,71 @@ extern "C" __declspec(naked) void __fastcall fn_007FC5E0(void* self) {
         ret
     }
 }
+
+// [0x007FC670] sub_007FC670 (135 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007FC670(void* self) {
+    __asm {
+        push ecx
+        fld dword ptr [edx]
+        fld dword ptr [ecx]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp L_7670_x_ecx
+        fld dword ptr [edx]
+        jmp L_7670_x_store
+    L_7670_x_ecx:
+        fld dword ptr [ecx]
+    L_7670_x_store:
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi]
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [ecx + 0x4]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp L_7670_y_ecx
+        fld dword ptr [edx + 0x4]
+        jmp L_7670_y_store
+    L_7670_y_ecx:
+        fld dword ptr [ecx + 0x4]
+    L_7670_y_store:
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi + 0x4]
+        fld dword ptr [edx + 0x8]
+        fld dword ptr [ecx + 0x8]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp L_7670_z_ecx
+        fld dword ptr [edx + 0x8]
+        jmp L_7670_z_store
+    L_7670_z_ecx:
+        fld dword ptr [ecx + 0x8]
+    L_7670_z_store:
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi + 0x8]
+        fld dword ptr [edx + 0xc]
+        fld dword ptr [ecx + 0xc]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp L_7670_w_ecx
+        fld dword ptr [edx + 0xc]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi + 0xc]
+        pop ecx
+        ret
+    L_7670_w_ecx:
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fstp dword ptr [esi + 0xc]
+        pop ecx
+        ret
+    }
+}
