@@ -2864,3 +2864,46 @@ extern "C" int __fastcall fn_00403420(char* self, int edx_unused, int frame) {
     }
     return *(int*)(self + 0xe8);
 }
+
+// [0x0040AC20] sub_0040AC20 (131 bytes)
+extern "C" void ext_00665010();
+extern "C" int mem_00924FCC;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00B59208;
+
+extern "C" __declspec(naked) void __fastcall fn_0040AC20(void* self) {
+    __asm {
+        push -1
+        push 0x88afd3
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x20
+        push esi
+        push offset mem_00B59208
+        lea eax, [esp + 0xc]
+        push 0x92ab70
+        push eax
+        mov dword ptr [esp + 0x10], 0x0
+        call dword ptr [mem_00924FCC]
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov dword ptr [esp + 0x3c], 0x1
+        call ext_00665010
+        mov esi, dword ptr [esp + 0x44]
+        add esp, 0x10
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x4], 0x1
+        mov byte ptr [esp + 0x2c], 0x0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x2c
+        ret 0x4
+    }
+}
