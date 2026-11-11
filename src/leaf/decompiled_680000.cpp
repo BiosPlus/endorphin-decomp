@@ -2517,3 +2517,53 @@ L_6885F0_notfound:
         ret 0x4
     }
 }
+
+// [0x00681820] sub_00681820 (130 bytes)
+extern "C" void ext_0065C5F0();
+extern "C" void ext_006799F0();
+extern "C" int mem_00924FE8;
+extern "C" int mem_008B50A4;
+extern "C" __declspec(naked) void __fastcall fn_00681820(void* self) {
+    __asm {
+        push -1
+        push offset mem_008B50A4
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push ebx
+        xor ebx, ebx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 8], esi
+        mov dword ptr [esi + 4], ebx
+        mov dword ptr [esi + 8], ebx
+        mov dword ptr [esi + 0Ch], ebx
+        mov dword ptr [esp + 14h], ebx
+        mov dword ptr [esi + 14h], ebx
+        mov dword ptr [esi + 18h], ebx
+        mov dword ptr [esi + 1Ch], ebx
+        mov dword ptr [esi + 24h], ebx
+        mov dword ptr [esi + 28h], ebx
+        mov dword ptr [esi + 2Ch], ebx
+        lea ecx, [esi + 30h]
+        mov byte ptr [esp + 14h], 2
+        call ext_0065C5F0
+        lea ecx, [esi + 34h]
+        mov byte ptr [esp + 14h], 3
+        call ext_006799F0
+        lea ecx, [esi + 44h]
+        mov byte ptr [esp + 14h], 4
+        call dword ptr [mem_00924FE8]
+        fldz
+        mov ecx, dword ptr [esp + 0Ch]
+        fstp dword ptr [esi + 40h]
+        mov byte ptr [esi + 38h], bl
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
