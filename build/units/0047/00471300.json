@@ -19,5 +19,7 @@
     "0x0047134B",
     "0x00471366"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T09:42:35Z"
 }
