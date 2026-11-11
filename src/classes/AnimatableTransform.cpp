@@ -225,3 +225,35 @@ extern "C" __declspec(naked) void __fastcall fn_005936B0(void* self) {
         ret
     }
 }
+
+// [0x0058A670] AnimatableTransform::vfunc_12_off_8 (94 bytes)
+extern "C" void ext_0041CF50();
+extern "C" __declspec(naked) void __fastcall fn_0058A670(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x89f968
+        push eax
+        mov dword ptr fs:[0x0], esp
+        mov edx, dword ptr [esp + 0x10]
+        lea eax, [esp + 0x14]
+        push eax
+        lea ecx, [ecx + edx*8 + 0xec]
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x18]
+        test ecx, ecx
+        mov dword ptr [esp + 0x8], 0xffffffff
+        je short skip_0058A670
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x14]
+        push edx
+        call eax
+skip_0058A670:
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret 0xc
+    }
+}
