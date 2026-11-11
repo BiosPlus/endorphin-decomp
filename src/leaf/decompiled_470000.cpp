@@ -711,3 +711,20 @@ extern "C" void __cdecl fn_00476D00(float* first, int hole, int top, float val) 
     }
     first[hole] = val;
 }
+
+// [0x00477280] sub_00477280 (92 bytes)
+extern "C" void __cdecl fn_00477280(int* first, int holeIndex, int len, int value) {
+    int topIndex = holeIndex;
+    int idx = 2 * holeIndex + 2;
+    while (idx < len) {
+        if (first[idx] < first[idx - 1]) --idx;
+        first[holeIndex] = first[idx];
+        holeIndex = idx;
+        idx = 2 * idx + 2;
+    }
+    if (idx == len) {
+        first[holeIndex] = first[len - 1];
+        holeIndex = len - 1;
+    }
+    fn_00476D60(first, holeIndex, topIndex, value);
+}
