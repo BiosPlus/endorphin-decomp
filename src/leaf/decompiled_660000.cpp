@@ -3486,3 +3486,14 @@ extern "C" __declspec(naked) void __cdecl fn_00664840(void) {
         ret
     }
 }
+
+// [0x00661620] sub_00661620 (33 bytes)
+extern "C" void* __cdecl ext_00681E50(int arg);
+
+extern "C" void* __fastcall fn_00661620(void* self) {
+    int* p = (int*)self;
+    p[1] = 0;
+    p[0] = (int)ext_00681E50(0);
+    p[1] = 0;
+    return self;
+}
