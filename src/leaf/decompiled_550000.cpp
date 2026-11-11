@@ -3052,3 +3052,75 @@ extern "C" __declspec(naked) void __fastcall fn_00559B20(void* self) {
         ret
     }
 }
+
+// [0x00555980] sub_00555980 (141 bytes)
+extern "C" void ext_00553F00();
+extern "C" void ext_00663060();
+extern "C" void ext_006A6DD2();
+// Naked: C++ try/catch under /EHsc drops the EH frame around extern "C" callees, and the
+// target keeps a per-iteration EH state byte, so the frame and loop are written out directly.
+extern "C" __declspec(naked) char* __cdecl fn_00555980(char* first, char* last, char* dest) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x89a1b1
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        push edi
+        mov edi, dword ptr [ebp + 0x8]
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], ebx
+        nop
+    loop_top:
+        cmp edi, dword ptr [ebp + 0xc]
+        je done
+        mov dword ptr [ebp + 0x8], esi
+        mov dword ptr [ebp - 0x18], esi
+        cmp esi, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je skip_copy
+        push edi
+        mov ecx, esi
+        call ext_00553F00
+    skip_copy:
+        add esi, 0x54
+        mov byte ptr [ebp - 0x4], bl
+        mov dword ptr [ebp + 0x10], esi
+        add edi, 0x54
+        jmp loop_top
+    unwind_funclet:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je rethrow
+    dtor_loop:
+        mov ecx, esi
+        call ext_00663060
+        add esi, 0x54
+        cmp esi, edi
+        jne dtor_loop
+    rethrow:
+        xor ebx, ebx
+        push ebx
+        push ebx
+        call ext_006A6DD2
+    done:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
