@@ -268,3 +268,80 @@ extern "C" __declspec(naked) void __fastcall fn_00710520(void* self) {
         ret
     }
 }
+
+// [0x00714AE0] sub_00714AE0 (96 bytes)
+extern "C" int mem_00925284;
+extern "C" int mem_00B5FA90;
+extern "C" int mem_00B5FA94;
+extern "C" int mem_00B5FA88;
+
+// Three-thunk layout: body 1 at +0x00 returns [ecx+0xD8];
+// body 2 at +0x20 copies the double at *_HUGE into mem_00B5FA90/94 via jmp over nop padding;
+// body 3 at +0x50 stores -(*_HUGE) into mem_00B5FA88.
+extern "C" __declspec(naked) void __fastcall fn_00714AE0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xd8]
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5FA90], ecx
+        mov dword ptr [mem_00B5FA94], edx
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5FA88]
+        ret
+    }
+}
