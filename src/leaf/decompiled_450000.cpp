@@ -2155,3 +2155,45 @@ extern "C" __declspec(naked) void __fastcall fn_0045C1C0(void* self) {
         ret
     }
 }
+
+// [0x0045AE60] sub_0045AE60 (126 bytes)
+extern "C" int mem_009251E4;
+extern "C" __declspec(naked) void __fastcall fn_0045AE60(void* self) {
+    __asm {
+        push -1
+        push 0x0087CC19
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        lea ecx, [esp + 0x4]
+        call dword ptr [mem_009242FC]
+        lea eax, [esp + 0x4]
+        push eax
+        lea ecx, [esi + 0x32C]
+        mov dword ptr [esp + 0x14], 0x0
+        call ext_006A5F4A
+        lea ecx, [esp + 0x4]
+        call dword ptr [mem_00924300]
+        push eax
+        call dword ptr [mem_009251E4]
+        add esp, 0x4
+        test eax, eax
+        jle skip_call
+        mov ecx, dword ptr [esi + 0x88]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x9C]
+        call eax
+    skip_call:
+        lea ecx, [esp + 0x4]
+        call dword ptr [mem_009242F4]
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
