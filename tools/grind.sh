@@ -203,7 +203,7 @@ classify_rate_limit() {
 }
 
 # Resolve which CLI backend ("claude" or "agy") to use for a given model choice.
-# Note: claude-sonnet-5.5 and claude-opus-5.5 (and haiku fallback) are available on BOTH claude and agy!
+# Note: claude-sonnet-5.5 and claude-opus-5.5 are available on BOTH claude and agy; claude-haiku-5.5 is claude-only.
 # Availability is per quota pool (pool_of), not per model: one limit hit cools down everything on that pool.
 resolve_backend_for_model() {
   local model_choice="$1"
@@ -211,10 +211,6 @@ resolve_backend_for_model() {
     claude-haiku-5.5)
       if [[ $HAS_CLAUDE -eq 1 ]] && ! is_backend_cooling_down claude; then
         echo "claude"
-        return
-      fi
-      if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "$(pool_of agy "$model_choice")"; then
-        echo "agy"
         return
       fi
       ;;
@@ -347,9 +343,6 @@ run_single_function_agent() {
         ;;
       gemini-4-carbon)
         run_agy_with_model "gemini-4-carbon" "high" "$prompt" "$log_file" || exit_code=$?
-        ;;
-      claude-haiku-5.5)
-        run_agy_with_model "claude-haiku-4-5@20251001" "high" "$prompt" "$log_file" || exit_code=$?
         ;;
     esac
   fi
@@ -786,7 +779,7 @@ render() {
       AGENT_TOK="-"; [[ "$backend" == claude ]] && agent_tokens "$addr" "${logf:-}"
       [[ "$AGENT_TOK" =~ ^[0-9]+$ ]] && AGENT_TOK="$(fmt_tok "$AGENT_TOK")"
       rows+=("$(printf " * %s %5sB  %s%-19s%s %s%-9s%s %7s tok  (total %s)" \
-        "$addr" "${FUNC_SIZES[$addr]:-?}" "$mc" "${model#claude-}/$backend" "$C_RST" \
+        "$addr" "${FUNC_SIZES[$addr]:-?}" "$mc" "$backend/${model#claude-}" "$C_RST" \
         "$tc" "${att}s/${tmo}s" "$C_RST" "$AGENT_TOK" \
         "$(fmt_dur $(( now - ${FN_START[$addr]:-$now} )))")")
     done
