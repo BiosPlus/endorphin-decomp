@@ -56,3 +56,35 @@ extern "C" __declspec(naked) float __stdcall fn_005B1700(void* self, int a1) {
         ret 0x8
     }
 }
+
+// [0x005B4150] Geometry::SphereType::vfunc_18 (61 bytes)
+extern "C" void ext_005B3FF0();
+extern "C" void ext_00671F30();
+
+extern "C" __declspec(naked) void* __fastcall fn_005B4150(void* self, int edx_unused, void* a1, int a2, int a3) {
+    __asm {
+        push ecx
+        cmp dword ptr [esp + 0xc], 0x2f7
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0x0
+        je short L_else
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+L_else:
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        push esi
+        call ext_005B3FF0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
