@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/templates/ReadWriteMethodType.cpp
 
 extern "C" void ext_0067A670();
+extern "C" int mem_00ADE0F0;
+extern "C" int mem_00ADE0EC;
 extern "C" int mem_00ADE0E8;
 extern "C" int mem_00ADE0E4;
 extern "C" int mem_00AD8340;
@@ -793,6 +795,42 @@ extern "C" __declspec(naked) void __fastcall fn_004A2E70(void* self, int edx_unu
     L_guarded:
         mov ecx, dword ptr [esp + 0x10]
         mov dword ptr [ecx + 0x4], offset mem_00ADE0E4
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
+
+// [0x004A3140] ExprParser::ReadWriteMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawConditions(void) const, 0}, bool, {public: void __thiscall StateMachineEditor::FSMEditView::setDrawConditions(bool), 0}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00ADE0F0;
+extern "C" int mem_00ADE0EC;
+
+extern "C" __declspec(naked) void __fastcall fn_004A3140(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x887c4e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00ADE0F0], al
+        jne L_guarded
+        or dword ptr [mem_00ADE0F0], eax
+        mov ecx, offset mem_00ADE0EC
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00ADE0EC], 0x00940d44
+        mov dword ptr [eax + 0x4], offset mem_00ADE0EC
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00ADE0EC
         mov ecx, dword ptr [esp]
         mov dword ptr fs:[0], ecx
         add esp, 0xc
