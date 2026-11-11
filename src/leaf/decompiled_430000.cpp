@@ -4413,3 +4413,57 @@ L_skip_unlock:
         ret
     }
 }
+
+// [0x00431460] sub_00431460 (121 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_00468660();
+extern "C" int mem_00924E90;
+extern "C" int mem_00924FA0;
+extern "C" int mem_00924E94;
+extern "C" int mem_00924E98;
+
+extern "C" __declspec(naked) void __fastcall fn_00431460(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x879eb0
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x8
+        push ebx
+        push esi
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x4], 0
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x4]
+        call eax
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+        mov ecx, dword ptr [mem_00924E90]
+        mov edx, dword ptr [ebp - 0x14]
+        mov eax, dword ptr [mem_00924FA0]
+        push ecx
+        add edx, 0xc
+        push edx
+        push eax
+        call dword ptr [mem_00924E94]
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov eax, 0x43149d
+        ret
+    }
+}
