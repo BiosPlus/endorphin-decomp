@@ -2014,3 +2014,23 @@ extern "C" __declspec(naked) void* __fastcall fn_006B3A90(void* self) {
         ret 8
     }
 }
+
+// [0x006B3C90] sub_006B3C90 (32 bytes)
+extern "C" void ext_006ADBF0();
+
+extern "C" __declspec(naked) void* __fastcall fn_006B3C90(void* self) {
+    __asm {
+        mov eax, dword ptr [esp+8]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp+8]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006ADBF0
+        mov dword ptr [esi], 0x9919ec
+        mov eax, esi
+        pop esi
+        ret 8
+    }
+}
