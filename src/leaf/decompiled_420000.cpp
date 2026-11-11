@@ -1011,3 +1011,37 @@ extern "C" void* __fastcall fn_004225E0(void* self) {
     *(int*)p = (int)&mem_0092E8F4;
     return self;
 }
+
+// [0x004275E0] sub_004275E0 (90 bytes)
+// __cdecl(dst, src): std::string tmp = src->vfunc_2(); *dst = tmp; (stack args at [esp+4], [esp+8]).
+// SEH-framed (state -1/0), operator= and ~basic_string via imports; vfunc_2 is a hidden-return std::string getter.
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __cdecl fn_004275E0(void* dst, void* src) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        mov ecx, dword ptr [esp + 0x30]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x8]
+        lea edx, [esp]
+        push edx
+        call eax
+        mov ecx, dword ptr [esp + 0x2c]
+        push eax
+        mov dword ptr [esp + 0x28], 0x0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp]
+        mov dword ptr [esp + 0x24], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret
+    }
+}
