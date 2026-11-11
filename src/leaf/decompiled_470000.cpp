@@ -1015,3 +1015,42 @@ extern "C" __declspec(naked) void __cdecl fn_00477B70(float* first, float* last)
         ret
     }
 }
+
+// [0x00478CB0] sub_00478CB0 (78 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00478CB0(float* first, float* last) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        sub esi, edi
+        mov eax, esi
+        sar eax, 0x2
+        cmp eax, 0x1
+        jle done
+    loop_top:
+        fld dword ptr [edi + esi - 0x4]
+        push ecx
+        fstp dword ptr [esp + 0x14]
+        lea eax, [esi - 0x4]
+        fld dword ptr [edi]
+        sar eax, 0x2
+        fstp dword ptr [edi + esi - 0x4]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [esp]
+        push eax
+        push 0x0
+        push edi
+        call ext_00477210
+        sub esi, 0x4
+        mov eax, esi
+        sar eax, 0x2
+        add esp, 0x10
+        cmp eax, 0x1
+        jg loop_top
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
