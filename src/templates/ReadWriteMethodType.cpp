@@ -5431,3 +5431,38 @@ extern "C" __declspec(naked) void __fastcall fn_005D2390(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005D2560] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, float, &public: float __thiscall NMData::VideoPlaneData::getFrameRate(void) const, float, &public: void __thiscall NMData::VideoPlaneData::setFrameRate(float)>::vfunc_40 (122 bytes)
+extern "C" int mem_00B459DC;
+extern "C" int mem_00B459D8;
+
+extern "C" __declspec(naked) void __fastcall fn_005D2560(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a536e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B459DC], al
+        jne L_guarded
+        or dword ptr [mem_00B459DC], eax
+        mov ecx, offset mem_00B459D8
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00B459D8], 0x009664dc
+        mov dword ptr [eax + 0x4], offset mem_00B459D8
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00B459D8
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
