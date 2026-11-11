@@ -2200,3 +2200,55 @@ extern "C" void* __fastcall fn_0065CB20(void* self, int edx_unused, int a1) {
     *(int*)((char*)self + 0x30) = *(int*)((char*)a1 + 0x30);
     return self;
 }
+
+// [0x0065C670] sub_0065C670 (89 bytes)
+extern "C" int mem_00924EAC;
+extern "C" int mem_00924FFC;
+extern "C" char mem_00B58E70;
+extern "C" __declspec(naked) bool __cdecl fn_0065C670(void* s) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ecx, offset mem_00B58E70
+        call dword ptr [mem_00924EAC]
+        mov ebp, dword ptr [esp + 0x14]
+        mov ecx, ebp
+        mov ebx, eax
+        call dword ptr [mem_00924EAC]
+        cmp eax, ebx
+        jbe L_true
+        xor esi, esi
+        test ebx, ebx
+        jle L_true
+    L_loop:
+        push esi
+        mov ecx, ebp
+        call dword ptr [mem_00924FFC]
+        push esi
+        mov ecx, offset mem_00B58E70
+        mov edi, eax
+        call dword ptr [mem_00924FFC]
+        mov cl, byte ptr [edi]
+        cmp cl, byte ptr [eax]
+        jne L_fail
+        add esi, 1
+        cmp esi, ebx
+        jl L_loop
+    L_true:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret
+    L_fail:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret
+    }
+}
