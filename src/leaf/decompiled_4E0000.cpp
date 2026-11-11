@@ -596,3 +596,59 @@ done:
         ret
     }
 }
+
+// [0x004E1F50] sub_004E1F50 (100 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_00598A90();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004E1F50(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x34]
+        test eax, eax
+        je skip_store
+        mov dword ptr [eax + 0x298], 0
+skip_store:
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        mov ebp, dword ptr [mem_00925134]
+        jbe loop_top
+        call ebp
+loop_top:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe chk2
+        call ebp
+chk2:
+        cmp esi, ebx
+        je loop_end
+        cmp esi, dword ptr [edi + 0x8]
+        jb chk3
+        call ebp
+chk3:
+        mov eax, dword ptr [esi]
+        lea ecx, [eax + 0x8]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x38]
+        call edx
+        cmp esi, dword ptr [edi + 0x8]
+        jb chk4
+        call ebp
+chk4:
+        add esi, 0x4
+        jmp loop_top
+loop_end:
+        call ext_00594000
+        pop edi
+        pop esi
+        pop ebp
+        mov ecx, eax
+        pop ebx
+        jmp ext_00598A90
+    }
+}
