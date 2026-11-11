@@ -662,3 +662,40 @@ extern "C" __declspec(naked) void* __fastcall fn_0049C050(void* self) {
         ret 0x8
     }
 }
+
+// [0x004979F0] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_8 (102 bytes)
+extern "C" void ext_00497830();
+
+// SEH-framed. Same frame as vfunc_41 at 0x00497B50, but ecx is reloaded with a2
+// before the call to ext_00497830 (a2 is pushed twice), then the same string
+// temp is assigned via mem_00924FDC and destroyed via mem_00924FF4. ret 8.
+extern "C" __declspec(naked) void __fastcall fn_004979F0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x30]
+        mov ecx, dword ptr [esp + 0x30]
+        push eax
+        push ecx
+        lea edx, [esp + 0x8]
+        push edx
+        call ext_00497830
+        add esp, 0xc
+        mov ecx, dword ptr [esp + 0x2c]
+        mov ecx, dword ptr [ecx]
+        push eax
+        mov dword ptr [esp + 0x28], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp]
+        mov dword ptr [esp + 0x24], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x8
+    }
+}
