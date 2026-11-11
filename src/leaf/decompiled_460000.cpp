@@ -2965,3 +2965,80 @@ extern "C" __declspec(naked) void __fastcall fn_00462F60(void* self) {
         ret
     }
 }
+
+// [0x0046A8E0] sub_0046A8E0 (132 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0046A8E0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_8F1
+        call edi
+    L_8F1:
+        mov eax, dword ptr [esi + 4]
+        cmp byte ptr [eax + 0x11], 0
+        je L_90B
+        mov eax, dword ptr [eax + 8]
+        mov dword ptr [esi + 4], eax
+        cmp byte ptr [eax + 0x11], 0
+        je L_961
+    L_906:
+        call edi
+        pop edi
+        pop esi
+        ret
+    L_90B:
+        mov ecx, dword ptr [eax]
+        cmp byte ptr [ecx + 0x11], 0
+        jne L_931
+        mov eax, dword ptr [ecx + 8]
+        cmp byte ptr [eax + 0x11], 0
+        jne L_92B
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L_920:
+        mov ecx, eax
+        mov eax, dword ptr [ecx + 8]
+        cmp byte ptr [eax + 0x11], 0
+        je L_920
+    L_92B:
+        pop edi
+        mov dword ptr [esi + 4], ecx
+        pop esi
+        ret
+    L_931:
+        mov eax, dword ptr [eax + 4]
+        cmp byte ptr [eax + 0x11], 0
+        jne L_955
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_940:
+        mov ecx, dword ptr [esi + 4]
+        cmp ecx, dword ptr [eax]
+        jne L_955
+        mov dword ptr [esi + 4], eax
+        mov edx, eax
+        mov eax, dword ptr [edx + 4]
+        cmp byte ptr [eax + 0x11], 0
+        je L_940
+    L_955:
+        mov ecx, dword ptr [esi + 4]
+        cmp byte ptr [ecx + 0x11], 0
+        jne L_906
+        mov dword ptr [esi + 4], eax
+    L_961:
+        pop edi
+        pop esi
+        ret
+    }
+}
