@@ -1309,3 +1309,46 @@ extern "C" __declspec(naked) void* __fastcall fn_00476530(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x004765B0] sub_004765B0 (119 bytes)
+// Ctor (thiscall, ret 0xc): default-constructs the string at +0x00, copy-constructs
+// strings at +0x1c (from arg3), +0x38 (from arg1), +0x54 (from arg2) with an EH state
+// unwind frame (fs:[0] handler 0x883701), then sets the byte at +0x70 to 1.
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FE8;
+extern "C" __declspec(naked) void __fastcall fn_004765B0(void* self, int edx_unused, const void* a1, const void* a2, const void* a3) {
+    __asm {
+        push -0x1
+        push 0x883701
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        call dword ptr [mem_00924FE8]
+        mov eax, dword ptr [esp + 0x20]
+        push eax
+        lea ecx, [esi + 0x1c]
+        mov dword ptr [esp + 0x14], 0x0
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        lea ecx, [esi + 0x38]
+        mov byte ptr [esp + 0x14], 0x1
+        call dword ptr [mem_00924FE0]
+        mov edx, dword ptr [esp + 0x1c]
+        push edx
+        lea ecx, [esi + 0x54]
+        mov byte ptr [esp + 0x14], 0x2
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x8]
+        mov byte ptr [esi + 0x70], 0x1
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0xc
+    }
+}
