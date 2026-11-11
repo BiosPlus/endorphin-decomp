@@ -2399,3 +2399,14 @@ extern "C" __declspec(naked) void __fastcall fn_0059E2B0(void* self) {
         ret
     }
 }
+
+// [0x0059DCD0] sub_0059DCD0 (39 bytes)
+// Calls sub_00586140(self + 4, a1) (thiscall, ret 4), then dynamic_casts the result
+// from ObjectNode* to NMData::Characterization* via __RTDynamicCast. Returns with ret 4.
+extern "C" void* __fastcall fn_00586140(void* self, int edx_unused, void* a1);
+extern "C" void ext_006A6E9E();
+extern "C" void* __fastcall fn_0059DCD0(void* self, int edx_unused, void* a1) {
+    typedef void* (__cdecl *RTDynCast)(void*, int, void*, void*, int);
+    void* p = fn_00586140((char*)self + 4, edx_unused, a1);
+    return ((RTDynCast)ext_006A6E9E)(p, 0, (void*)0xA2E2BC, (void*)0xA30158, 0);
+}
