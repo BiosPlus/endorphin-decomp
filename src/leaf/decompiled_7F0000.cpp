@@ -562,3 +562,53 @@ extern "C" __declspec(naked) void __fastcall fn_007FC4E0(void* self) {
         ret
     }
 }
+
+// [0x007F9D50] sub_007F9D50 (96 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007F9D50(int count, float* p) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        lea esi, [ecx + 4*eax]
+        mov eax, esi
+        sub eax, ecx
+        add eax, 0x3
+        cdq
+        and edx, 0x3
+        add eax, edx
+        sar eax, 0x2
+        cmp eax, 0x4
+        jl tail_check
+        lea eax, [esi - 0xc]
+    unroll_loop:
+        fld dword ptr [ecx]
+        add ecx, 0x10
+        cmp ecx, eax
+        fchs
+        fstp dword ptr [ecx - 0x10]
+        fld dword ptr [ecx - 0xc]
+        fchs
+        fstp dword ptr [ecx - 0xc]
+        fld dword ptr [ecx - 0x8]
+        fchs
+        fstp dword ptr [ecx - 0x8]
+        fld dword ptr [ecx - 0x4]
+        fchs
+        fstp dword ptr [ecx - 0x4]
+        jl unroll_loop
+    tail_check:
+        cmp ecx, esi
+        jae done
+        mov edi, edi
+    tail_loop:
+        fld dword ptr [ecx]
+        add ecx, 0x4
+        cmp ecx, esi
+        fchs
+        fstp dword ptr [ecx - 0x4]
+        jb tail_loop
+    done:
+        pop esi
+        ret
+    }
+}
