@@ -1095,3 +1095,73 @@ extern "C" __declspec(naked) void __fastcall fn_006AD580(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006AA890] sub_006AA890 (129 bytes)
+extern "C" void ext_006A8980();
+extern "C" void ext_006A6790();
+extern "C" void ext_006A60EE();
+extern "C" int mem_00925688;
+
+extern "C" __declspec(naked) void __fastcall fn_006AA890(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        add dword ptr [esi + 0x19c], 0x1
+        push edi
+        call ext_006A8980
+        xor ebx, ebx
+        xor edi, edi
+        cmp dword ptr [esi + 0x7c], ebx
+        jle short L_006AA890_after_loop
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+L_006AA890_loop:
+        cmp edi, ebx
+        jl short L_006AA890_tail
+        cmp edi, dword ptr [esi + 0x7c]
+        jge short L_006AA890_tail
+        mov eax, dword ptr [esi + 0x78]
+        mov ecx, dword ptr [eax + 4*edi]
+        cmp ecx, ebx
+        je short L_006AA890_next
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x4]
+        push 0x1
+        call eax
+L_006AA890_next:
+        add edi, 0x1
+        cmp edi, dword ptr [esi + 0x7c]
+        jl short L_006AA890_loop
+L_006AA890_after_loop:
+        push -0x1
+        push ebx
+        lea ecx, [esi + 0x74]
+        call ext_006A6790
+        mov dword ptr [esi + 0x68], ebx
+        mov dword ptr [esi + 0x60], ebx
+        mov dword ptr [esi + 0x64], ebx
+        mov dword ptr [esi + 0x58], ebx
+        mov dword ptr [esi + 0x5c], ebx
+        mov dword ptr [esi + 0x100], ebx
+        mov dword ptr [esi + 0x54], ebx
+        mov esi, dword ptr [esi + 0x20]
+        cmp esi, ebx
+        je short L_006AA890_ret
+        push 0x1
+        push ebx
+        push esi
+        call dword ptr [mem_00925688]
+L_006AA890_ret:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_006AA890_tail:
+        jmp ext_006A60EE
+    }
+}
