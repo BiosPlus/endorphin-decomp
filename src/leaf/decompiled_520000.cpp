@@ -2423,3 +2423,63 @@ extern "C" __declspec(naked) void __fastcall fn_0052A140(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00526960] sub_00526960 (102 bytes)
+extern "C" void ext_005013F0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00526960(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        mov byte ptr [esi + 0x40], 0
+        jbe m526960_ok1
+        call ebp
+    m526960_ok1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe m526960_ok2
+        call ebp
+    m526960_ok2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_005013F0
+        mov edi, dword ptr [esi + 0x18]
+        add esi, 0x10
+        cmp dword ptr [esi + 0x4], edi
+        jbe m526960_ok3
+        call ebp
+    m526960_ok3:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe m526960_ok4
+        call ebp
+    m526960_ok4:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, esi
+        call ext_005013F0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
