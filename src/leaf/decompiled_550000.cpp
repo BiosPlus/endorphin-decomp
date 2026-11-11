@@ -2007,3 +2007,63 @@ extern "C" __declspec(naked) void __stdcall fn_00550420(void* stream, int* count
         ret 0xc
     }
 }
+
+// [0x00555550] sub_00555550 (121 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00555550(const void* first, const void* last, void* dest) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebp
+        je short L_555550_empty
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        lea ecx, [edi + 0xc]
+        lea edx, [esi + 0xc]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+L_555550_loop:
+        fld dword ptr [edx - 0x8]
+        mov eax, dword ptr [esi]
+        fstp dword ptr [ecx - 0x8]
+        mov dword ptr [edi], eax
+        fld dword ptr [edx - 0x4]
+        add esi, 0x20
+        fstp dword ptr [ecx - 0x4]
+        add edi, 0x20
+        fld dword ptr [edx]
+        add ecx, 0x20
+        fstp dword ptr [ecx - 0x20]
+        mov eax, dword ptr [edx + 0x4]
+        mov dword ptr [ecx - 0x1c], eax
+        mov eax, dword ptr [edx + 0x8]
+        mov dword ptr [ecx - 0x18], eax
+        mov eax, dword ptr [edx + 0xc]
+        mov dword ptr [ecx - 0x14], eax
+        movzx eax, byte ptr [edx + 0x10]
+        mov byte ptr [ecx - 0x10], al
+        movzx eax, byte ptr [edx + 0x11]
+        mov byte ptr [ecx - 0xf], al
+        movzx eax, byte ptr [edx + 0x12]
+        mov byte ptr [ecx - 0xe], al
+        add edx, 0x20
+        cmp esi, ebp
+        jne short L_555550_loop
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        ret
+L_555550_empty:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebp
+        ret
+    }
+}
