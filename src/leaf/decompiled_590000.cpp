@@ -1166,3 +1166,45 @@ extern "C" __declspec(naked) void* __fastcall fn_0059EAE0(void* self) {
         ret
     }
 }
+
+// [0x0059DDA0] sub_0059DDA0 (82 bytes)
+extern "C" void ext_00410390();
+extern "C" int mem_00924FC4;
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __fastcall fn_0059DDA0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x28]
+        call edx
+        test al, al
+        jne ddA0_check2
+        mov ecx, esi
+        call ext_00410390
+        test al, al
+        je ddA0_assign
+ddA0_check2:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x28]
+        mov ecx, esi
+        call edx
+        test al, al
+        jne ddA0_ret
+        lea eax, [esi + 0x458]
+        push 0xb41b80
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je ddA0_ret
+ddA0_assign:
+        push 0xb41b9c
+        lea ecx, [esi + 0x458]
+        call dword ptr [mem_00924FDC]
+ddA0_ret:
+        pop esi
+        ret
+    }
+}
