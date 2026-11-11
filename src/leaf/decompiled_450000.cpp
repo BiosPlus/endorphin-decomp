@@ -2385,3 +2385,14 @@ extern "C" void* __fastcall fn_00455480(char* self, int edx_unused, int a1) {
     *(int*)self = 0x9367a4;
     return self;
 }
+
+// [0x00459210] sub_00459210 (49 bytes)
+extern "C" void ext_0043BB40();
+
+extern "C" void* __fastcall fn_00459210(void* self, int edx_unused, int a1, int a2, int a3) {
+    ((void (__thiscall*)(void*, int, int, int))ext_0043BB40)(self, a1, a2, a3);
+    *(int*)((char*)self + 0x40) = a3;
+    *(int*)self = 0x937924;
+    *(int*)((char*)self + 0x28) = 0x18;
+    return self;
+}
