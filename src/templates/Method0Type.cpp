@@ -1113,3 +1113,39 @@ extern "C" __declspec(naked) void __fastcall fn_00487E30(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004CA750] ExprParser::Method0Type<NMData::MetaBodyConstraintData, {[thunk]: __thiscall NMData::MetaBodyConstraintData::`vcall'{352, {flat}}, 0}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00AE4484;
+extern "C" int mem_00AE4480;
+
+extern "C" __declspec(naked) void __fastcall fn_004CA750(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x88c00e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00AE4484], al
+        jne L_guarded
+        or dword ptr [mem_00AE4484], eax
+        mov ecx, offset mem_00AE4480
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00AE4480], 0x0094631c
+        mov dword ptr [eax + 0x4], offset mem_00AE4480
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00AE4480
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
