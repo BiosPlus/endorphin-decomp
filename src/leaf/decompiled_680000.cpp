@@ -1770,3 +1770,60 @@ extern "C" __declspec(naked) void __fastcall fn_006877B0(void* self) {
         ret 0x10
     }
 }
+
+// [0x006823B0] sub_006823B0 (104 bytes)
+extern "C" int mem_00B5ACB4;
+extern "C" int mem_00B5ACB8;
+extern "C" int mem_00B5ACBC;
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_006823B0(void* self) {
+    __asm {
+        mov edx, dword ptr [mem_00B5ACB8]
+        sub esp, 0x8
+        test edx, edx
+        je empty_006823B0
+        mov eax, dword ptr [mem_00B5ACBC]
+        mov ecx, eax
+        sub ecx, edx
+        sar ecx, 0x2
+        je empty_006823B0
+        cmp edx, eax
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, eax
+        jbe chk_006823B0
+        call ebx
+        mov eax, dword ptr [mem_00B5ACBC]
+        mov edx, dword ptr [mem_00B5ACB8]
+chk_006823B0:
+        mov ecx, offset mem_00B5ACB4
+        push edi
+        mov edi, ecx
+        lea ecx, [esi - 0x4]
+        cmp ecx, eax
+        mov dword ptr [esp + 0x10], esi
+        ja bad1_006823B0
+        cmp ecx, edx
+        jae ok1_006823B0
+bad1_006823B0:
+        call ebx
+ok1_006823B0:
+        add esi, -0x4
+        cmp esi, dword ptr [edi + 0x8]
+        pop edi
+        jb ok2_006823B0
+        call ebx
+ok2_006823B0:
+        mov eax, dword ptr [esi]
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret
+empty_006823B0:
+        xor eax, eax
+        add esp, 0x8
+        ret
+    }
+}
