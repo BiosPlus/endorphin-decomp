@@ -2926,3 +2926,64 @@ extern "C" __declspec(naked) void __fastcall fn_007CD880(void* self) {
         ret
     }
 }
+
+// [0x007C8E30] sub_007C8E30 (125 bytes)
+extern "C" int mem_0092A278;
+extern "C" void ext_006A7250();
+
+extern "C" __declspec(naked) void __fastcall fn_007C8E30(void* self) {
+    __asm {
+        push ecx
+        fld dword ptr [esi]
+        fld dword ptr [esi + 0x4]
+        fld dword ptr [esi + 0x8]
+        fld st(2)
+        fmulp st(3), st
+        fxch st(2)
+        fadd qword ptr [mem_0092A278]
+        fstp dword ptr [esp]
+        fld st(0)
+        fmulp st(1), st
+        fadd dword ptr [esp]
+        fstp dword ptr [esp]
+        fld st(0)
+        fmulp st(1), st
+        fadd dword ptr [esp]
+        fstp dword ptr [esp]
+        fldz
+        fld dword ptr [esp]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne short L_zero_7C8E30
+        fstp st(1)
+        call ext_006A7250
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fld st(0)
+        fld1
+        fdivrp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fld dword ptr [esi]
+        fmul st, st(1)
+        fstp dword ptr [esi]
+        fld dword ptr [esi + 0x4]
+        fmul st, st(1)
+        fstp dword ptr [esi + 0x4]
+        fmul dword ptr [esi + 0x8]
+        fstp dword ptr [esi + 0x8]
+        pop ecx
+        ret
+L_zero_7C8E30:
+        fstp st(0)
+        fst dword ptr [esp]
+        fld1
+        fstp dword ptr [esi]
+        fst dword ptr [esi + 0x4]
+        fstp dword ptr [esi + 0x8]
+        fld dword ptr [esp]
+        pop ecx
+        ret
+    }
+}
