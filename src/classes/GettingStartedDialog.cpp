@@ -51,3 +51,49 @@ extern "C" __declspec(naked) void __fastcall fn_0041B2A0(void* self) {
         jmp edx
     }
 }
+
+// [0x0041B590] GettingStartedDialog::vfunc_7_off_74 (120 bytes)
+extern "C" int mem_00A2EE1C;
+extern "C" int mem_00A2EE28;
+extern "C" int mem_00A2EE2C;
+extern "C" int mem_00A2EE30;
+extern "C" int mem_00A2EE34;
+extern "C" int mem_00A2EE38;
+extern "C" int mem_00A2EE3C;
+extern "C" int mem_00A2EE40;
+extern "C" int mem_00A2EE44;
+extern "C" int mem_00A2EE48;
+extern "C" int mem_00A2EE4C;
+extern "C" int mem_00A2EE50;
+extern "C" int mem_00A2EE54;
+extern "C" int mem_00ACB05C;
+extern "C" void ext_0041B300();
+extern "C" void fn_0041B3B0();
+
+extern "C" __declspec(naked) void __fastcall fn_0041B590(void* self) {
+    __asm {
+        mov eax, 1
+        test byte ptr mem_00ACB05C, al
+        jne done
+        or dword ptr mem_00ACB05C, eax
+        mov eax, offset ext_0041B300
+        xor ecx, ecx
+        mov dword ptr mem_00A2EE28, eax
+        mov eax, offset fn_0041B3B0
+        mov dword ptr mem_00A2EE3C, eax
+        xor eax, eax
+        mov dword ptr mem_00A2EE2C, ecx
+        mov dword ptr mem_00A2EE30, ecx
+        mov dword ptr mem_00A2EE34, 0fffffda8h
+        mov dword ptr mem_00A2EE38, 0092d7b0h
+        mov dword ptr mem_00A2EE40, ecx
+        mov dword ptr mem_00A2EE44, 5
+        mov dword ptr mem_00A2EE48, ecx
+        mov dword ptr mem_00A2EE4C, ecx
+        mov dword ptr mem_00A2EE50, eax
+        mov dword ptr mem_00A2EE54, ecx
+    done:
+        mov eax, offset mem_00A2EE1C
+        ret
+    }
+}
