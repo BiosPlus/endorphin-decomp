@@ -1421,3 +1421,39 @@ null_exit:
         ret
     }
 }
+
+// [0x00497720] sub_00497720 (91 bytes)
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __fastcall fn_00497720(void* self, int edx_unused, float* out, const float* in) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [esp + 0x18]
+        fld dword ptr [eax]
+        fsub dword ptr [ecx]
+        fstp dword ptr [esp]
+        fld dword ptr [eax + 0x4]
+        mov eax, dword ptr [esp + 0x14]
+        fsub dword ptr [ecx + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp]
+        fld qword ptr [mem_00993828]
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [esp]
+        fmul dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [ecx]
+        fadd dword ptr [esp]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x4]
+        fadd dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [eax], ecx
+        fstp dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x4], edx
+        add esp, 0x10
+        ret 8
+    }
+}
