@@ -1410,3 +1410,63 @@ extern "C" __declspec(naked) void __fastcall fn_00599EA0(void* self) {
         ret
     }
 }
+
+// [0x00597630] sub_00597630 (99 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) int __fastcall fn_00597630(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x2cc]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe chk_b
+        call ebp
+    chk_b:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe chk_c
+        call ebp
+    chk_c:
+        cmp esi, esi
+        je chk_d
+        call ebp
+    chk_d:
+        cmp edi, ebx
+        je not_found
+        cmp edi, dword ptr [esi + 0x8]
+        jb chk_e
+        call ebp
+    chk_e:
+        mov eax, dword ptr [esp + 0x14]
+        cmp dword ptr [edi + 0x4], eax
+        je found
+        cmp edi, dword ptr [esi + 0x8]
+        jb chk_f
+        call ebp
+    chk_f:
+        add edi, 0x8
+        jmp chk_c
+    found:
+        cmp edi, dword ptr [esi + 0x8]
+        jb chk_g
+        call ebp
+    chk_g:
+        mov eax, dword ptr [edi]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    not_found:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x4
+    }
+}
