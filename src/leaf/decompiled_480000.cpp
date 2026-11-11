@@ -2951,3 +2951,47 @@ extern "C" __declspec(naked) void __fastcall fn_00482080(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00480920] sub_00480920 (138 bytes)
+extern "C" void ext_006A6C87(int);
+extern "C" int mem_00AD9778;
+extern "C" float mem_00AD9738;
+extern "C" float mem_00AD973C;
+extern "C" float mem_00AD9740;
+extern "C" float mem_00AD9744;
+extern "C" float mem_00AD9748;
+extern "C" float mem_00AD974C;
+extern "C" float mem_00AD9750;
+extern "C" float mem_00AD9754;
+extern "C" float mem_00AD9758;
+extern "C" float mem_00AD975C;
+extern "C" float mem_00AD9760;
+extern "C" float mem_00AD9764;
+extern "C" float mem_00AD9768;
+extern "C" float mem_00AD976C;
+extern "C" float mem_00AD9770;
+extern "C" float mem_00AD9774;
+extern "C" void* __cdecl fn_00480920() {
+    if (mem_00AD9778 & 1) {
+        return &mem_00AD9738;
+    }
+    mem_00AD9778 |= 1;
+    mem_00AD9738 = 1.0f;
+    mem_00AD973C = 0.0f;
+    mem_00AD9740 = 0.0f;
+    mem_00AD9744 = 0.0f;
+    mem_00AD9748 = 0.0f;
+    mem_00AD9750 = 0.0f;
+    mem_00AD9754 = 0.0f;
+    mem_00AD9758 = 0.0f;
+    mem_00AD975C = 0.0f;
+    mem_00AD9764 = 0.0f;
+    mem_00AD9768 = 0.0f;
+    mem_00AD976C = 0.0f;
+    mem_00AD9770 = 0.0f;
+    mem_00AD974C = 1.0f;
+    mem_00AD9760 = 1.0f;
+    mem_00AD9774 = 1.0f;
+    ext_006A6C87(0x917090);
+    return &mem_00AD9738;
+}
