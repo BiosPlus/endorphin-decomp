@@ -1457,3 +1457,43 @@ extern "C" __declspec(naked) void __fastcall fn_00497720(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00495A20] sub_00495A20 (60 bytes)
+extern "C" void ext_00596660();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00495A20(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x18]
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe skip_a
+        call ebp
+    skip_a:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe skip_b
+        call ebp
+    skip_b:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_00596660
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
