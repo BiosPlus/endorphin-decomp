@@ -3069,3 +3069,53 @@ extern "C" __declspec(naked) bool __cdecl fn_00481E60(void* a, void* b) {
         ret
     }
 }
+
+// [0x00486CB0] sub_00486CB0 (143 bytes)
+extern "C" void ext_004765B0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FB0;
+extern "C" int mem_00924FE4;
+// Naked: the target is a esp-relative EH frame with a 0x90-byte local area, so the
+// frame is written out directly instead of relying on the C++ EH lowering.
+extern "C" __declspec(naked) void __fastcall fn_00486CB0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x88490c
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x90
+        push esi
+        mov esi, dword ptr [esp + 0xa8]
+        push edi
+        mov edi, dword ptr [esp + 0xa8]
+        push esi
+        push edi
+        call dword ptr [mem_00924FB0]
+        add esp, 0x8
+        test al, al
+        je no_throw
+        mov eax, dword ptr [esp + 0xb0]
+        push eax
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x8]
+        push ecx
+        push esi
+        push edi
+        lea ecx, [esp + 0x30]
+        mov dword ptr [esp + 0xac], 0x0
+        call ext_004765B0
+        push 0x9dfd38
+        lea edx, [esp + 0x28]
+        push edx
+        call ext_006A6DD2
+    no_throw:
+        mov ecx, dword ptr [esp + 0x98]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x9c
+        ret 0xc
+    }
+}
