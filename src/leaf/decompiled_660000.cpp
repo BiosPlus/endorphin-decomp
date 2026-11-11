@@ -3285,3 +3285,52 @@ extern "C" __declspec(naked) void __fastcall fn_00662120(void* self) {
         ret
     }
 }
+
+// [0x00661F10] sub_00661F10 (91 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00661F10(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x8], 0x0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_661F22
+        call edi
+L_661F22:
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0xc]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne L_661F2F
+        call edi
+L_661F2F:
+        mov edx, dword ptr [esi + 0xc]
+        cmp dword ptr [edx + 0x8], 0x1
+        jle L_661F66
+        cmp dword ptr [esi + 0x8], 0x0
+        jne L_661F40
+        call edi
+L_661F40:
+        mov eax, dword ptr [esi + 0xc]
+        mov eax, dword ptr [eax + 0x4]
+        mov ecx, dword ptr [esi + 0x8]
+        mov dword ptr [esi + 0xc], eax
+        cmp eax, dword ptr [ecx + 0x4]
+        jne L_661F53
+        call edi
+L_661F53:
+        push 0x0
+        push esi
+        lea ecx, [esi + 0x38]
+        mov byte ptr [esi], 0x1
+        call ext_00466BA0
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret
+L_661F66:
+        pop edi
+        xor al, al
+        pop esi
+        ret
+    }
+}
