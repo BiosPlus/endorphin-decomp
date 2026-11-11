@@ -3779,3 +3779,58 @@ done:
         ret 4
     }
 }
+
+// [0x0043B560] sub_0043B560 (103 bytes)
+extern "C" void ext_004410C0();
+
+extern "C" __declspec(naked) void __cdecl fn_0043B560(void* first, int hole, int top, int value) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        lea eax, [edi - 1]
+        cdq
+        sub eax, edx
+        mov esi, eax
+        sar esi, 1
+        cmp dword ptr [esp + 0x14], edi
+        jge L_store_top
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        mov ebp, dword ptr [esp + 0x20]
+L_loop:
+        mov ecx, dword ptr [ebx + 4*esi]
+        call ext_004410C0
+        cmp eax, 1
+        jle L_done
+        mov ecx, ebp
+        call ext_004410C0
+        cmp eax, 1
+        jg L_done
+        mov eax, dword ptr [ebx + 4*esi]
+        mov dword ptr [ebx + 4*edi], eax
+        lea eax, [esi - 1]
+        cdq
+        sub eax, edx
+        mov edi, esi
+        sar eax, 1
+        cmp dword ptr [esp + 0x1c], edi
+        mov esi, eax
+        jl L_loop
+L_done:
+        mov dword ptr [ebx + 4*edi], ebp
+        pop ebp
+        pop ebx
+        pop edi
+        pop esi
+        ret
+L_store_top:
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [edx + 4*edi], ecx
+        pop edi
+        pop esi
+        ret
+    }
+}
