@@ -1135,3 +1135,85 @@ extern "C" __declspec(naked) void __fastcall fn_004ED6B0(void* self) {
         ret
     }
 }
+
+// [0x004EF5E0] sub_004EF5E0 (148 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) bool __fastcall fn_004EF5E0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov ebp, ecx
+        mov ecx, dword ptr [edi + 0x4]
+        test ecx, ecx
+        jne L_calc_size
+        xor eax, eax
+        jmp L_check_size
+    L_calc_size:
+        mov eax, dword ptr [edi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+    L_check_size:
+        cmp eax, dword ptr [ebp + 0x30]
+        je L_check_first
+        pop edi
+        xor al, al
+        pop ebp
+        ret 0x4
+    L_check_first:
+        test ecx, ecx
+        je L_invalid_1
+        mov eax, dword ptr [edi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        jne L_first_valid
+    L_invalid_1:
+        call dword ptr [mem_00925134]
+    L_first_valid:
+        mov ecx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x40]
+        push ebx
+        mov ebx, dword ptr [eax]
+        push esi
+        mov esi, 0x1
+        cmp dword ptr [ebp + 0x30], esi
+        jle L_ret_true
+    L_loop_check:
+        test ecx, ecx
+        je L_invalid_2
+        mov eax, dword ptr [edi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp esi, eax
+        jb L_elem_valid
+    L_invalid_2:
+        call dword ptr [mem_00925134]
+    L_elem_valid:
+        mov ecx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [ecx + 4*esi]
+        mov eax, dword ptr [edx + 0x40]
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [ebx + 0x48]
+        cmp eax, dword ptr [edx + 0x48]
+        jne L_ret_false
+        add esi, 0x1
+        cmp esi, dword ptr [ebp + 0x30]
+        jl L_loop_check
+    L_ret_true:
+        pop esi
+        pop ebx
+        pop edi
+        mov al, 0x1
+        pop ebp
+        ret 0x4
+    L_ret_false:
+        pop esi
+        pop ebx
+        pop edi
+        xor al, al
+        pop ebp
+        ret 0x4
+    }
+}
