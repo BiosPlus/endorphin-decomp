@@ -3376,3 +3376,62 @@ extern "C" __declspec(naked) void __fastcall fn_007C79E0(void* self) {
         ret
     }
 }
+
+// [0x007CC3F0] sub_007CC3F0 (143 bytes)
+extern "C" void ext_007D48A0();
+extern "C" int mem_0099DCA0;
+extern "C" int mem_0092C180;
+
+extern "C" __declspec(naked) void __cdecl fn_007CC3F0(void* a0, int a1, float* a2) {
+    __asm {
+        sub esp, 0xc
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        call ext_007D48A0
+        mov edx, dword ptr [esp + 0x18]
+        mov ecx, eax
+        fld dword ptr [ecx + 0x24]
+        add esp, 0x4
+        fmul dword ptr [edx + 0x4]
+        fld dword ptr [edx]
+        fmul dword ptr [ecx + 0x20]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x28]
+        fmul dword ptr [edx + 0x8]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fcomp qword ptr [mem_0099DCA0]
+        fnstsw ax
+        test ah, 0x1
+        mov eax, dword ptr [esp + 0x18]
+        jne scale_path
+        fld dword ptr [ecx + 0x30]
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 0x34]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [ecx + 0x38]
+        fstp dword ptr [eax + 0x8]
+        add esp, 0xc
+        ret
+    scale_path:
+        fld dword ptr [edx]
+        fld qword ptr [mem_0092C180]
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [esp]
+        fld dword ptr [edx + 0x4]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x4]
+        fmul dword ptr [edx + 0x8]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0x8]
+        add esp, 0xc
+        ret
+    }
+}
