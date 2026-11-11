@@ -1256,3 +1256,23 @@ extern "C" int __cdecl fn_007D8680(int a0) {
     ((FnC)ext_007D83B0)(esi, a0);
     return esi;
 }
+
+// [0x007D87D0] sub_007D87D0 (99 bytes)
+extern "C" int mem_0099E0B0;
+
+extern "C" void __cdecl fn_007D87D0(char* self, char* node) {
+    if (*(char**)(self + 0x168) == node) {
+        *(int*)(self + 0x168) = *(int*)(node + 0x5c);
+    } else {
+        *(int*)(*(char**)(node + 0x60) + 0x5c) = *(int*)(node + 0x5c);
+    }
+    if (*(char**)(self + 0x16c) == node) {
+        *(int*)(self + 0x16c) = *(int*)(node + 0x60);
+    } else {
+        *(int*)(*(char**)(node + 0x5c) + 0x60) = *(int*)(node + 0x60);
+    }
+    *(int*)(node + 0x60) = mem_0099E0B0;
+    *(int*)(node + 0x5c) = mem_0099E0B0;
+    *(int*)(node + 0x68) = 0;
+    *(int*)(self + 0x164) -= 1;
+}
