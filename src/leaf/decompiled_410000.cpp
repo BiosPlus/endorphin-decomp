@@ -1897,3 +1897,29 @@ ret_zero:
         ret
     }
 }
+
+// [0x00410420] sub_00410420 (36 bytes)
+extern "C" void ext_00410390();
+
+extern "C" __declspec(naked) void __fastcall fn_00410420(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x28]
+        call edx
+        test al, al
+        jne short L_fail
+        mov ecx, esi
+        call ext_00410390
+        test al, al
+        jne short L_fail
+        mov eax, 0x1
+        pop esi
+        ret
+    L_fail:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
