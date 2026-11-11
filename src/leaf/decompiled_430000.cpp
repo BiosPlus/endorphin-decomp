@@ -4110,3 +4110,39 @@ done_4360C0:
         ret
     }
 }
+
+// [0x0043CA30] sub_0043CA30 (106 bytes)
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __fastcall fn_0043CA30(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx + 0x1a4]
+        fld qword ptr [ecx + 0xf0]
+        fsub qword ptr [ecx + 0xe8]
+        mov edx, dword ptr [ecx + 0xfc]
+        push esi
+        mov esi, eax
+        fst qword ptr [ecx + 0x100]
+        sub esi, edx
+        mov dword ptr [esp + 0x4], esi
+        fild dword ptr [esp + 0x4]
+        add edx, eax
+        mov dword ptr [esp + 0x4], edx
+        pop esi
+        fst qword ptr [ecx + 0x108]
+        fld qword ptr [ecx + 0xf0]
+        fadd qword ptr [ecx + 0xe8]
+        fld qword ptr [mem_00993828]
+        fmul st(1), st
+        fxch st(1)
+        fstp qword ptr [ecx + 0x110]
+        fild dword ptr [esp]
+        fmulp st(1), st
+        fstp qword ptr [ecx + 0x118]
+        __asm _emit 0xDE __asm _emit 0xF1
+        fstp qword ptr [ecx + 0x120]
+        pop ecx
+        ret
+    }
+}
