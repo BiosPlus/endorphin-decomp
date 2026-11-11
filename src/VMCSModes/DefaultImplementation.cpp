@@ -528,3 +528,24 @@ extern "C" __declspec(naked) bool __fastcall fn_004F9E60(void* self) {
         ret
     }
 }
+
+// [0x004F9C10] VMCSModes::DefaultImplementation::vfunc_53 (33 bytes)
+extern "C" void ext_00530290();
+
+extern "C" __declspec(naked) void __fastcall fn_004F9C10(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8]
+        mov eax, dword ptr [eax + 0x14]
+        mov ecx, dword ptr [eax + 0x30]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xb4]
+        call eax
+        test eax, eax
+        je done
+        push 0x1
+        mov ecx, eax
+        call ext_00530290
+    done:
+        ret
+    }
+}
