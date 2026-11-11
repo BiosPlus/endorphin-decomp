@@ -2101,3 +2101,57 @@ extern "C" void __fastcall fn_0045C240(void* self) {
     int r = ((SendFn)mem_00925694)(*(void**)((char*)self + 0x20), 0x110a, 0, 0);
     ((ThisFn)ext_0045C090)(self, r);
 }
+
+// [0x0045C1C0] sub_0045C1C0 (93 bytes)
+extern "C" void ext_006A6442();
+
+extern "C" __declspec(naked) void __fastcall fn_0045C1C0(void* self) {
+    __asm {
+        push esi
+        push edi
+        push 0
+        push 0
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x20]
+        push 0x110a
+        push eax
+        call dword ptr [mem_00925694]
+        mov esi, eax
+        test esi, esi
+        je done
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    loop_top:
+        push 0
+        push 2
+        push 0
+        push 0
+        push 0
+        push 0
+        push 8
+        push esi
+        mov ecx, edi
+        call ext_006A6442
+        push 0
+        push 0x10
+        push 0
+        push 0
+        push 0
+        push 0
+        push 8
+        push esi
+        mov ecx, edi
+        call ext_006A6442
+        push esi
+        mov ecx, edi
+        call ext_0045BF30
+        mov esi, eax
+        test esi, esi
+        jne loop_top
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
