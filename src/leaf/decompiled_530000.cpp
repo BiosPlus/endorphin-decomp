@@ -2116,3 +2116,21 @@ extern "C" void* __fastcall fn_0053D280(void* self) {
     p[0x9c / 4] = 0;
     return self;
 }
+
+// [0x0053C4C0] sub_0053C4C0 (36 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0053C4C0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0053B240
+        fldz
+        mov dword ptr [esi], 0x955aec
+        mov dword ptr [esi + 0x14], 0x955ae4
+        fst dword ptr [esi + 0x44]
+        fst dword ptr [esi + 0x40]
+        mov eax, esi
+        fstp dword ptr [esi + 0x3c]
+        pop esi
+        ret
+    }
+}
