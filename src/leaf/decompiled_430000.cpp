@@ -4915,3 +4915,43 @@ L_ret:
         ret
     }
 }
+
+// [0x00436E50] sub_00436E50 (95 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00436E50(void* self) {
+    __asm {
+        push ecx
+        call ext_00436070
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x8c]
+        call eax
+        mov dword ptr [esp], 0
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x6c]
+        lea ecx, [esp]
+        push ecx
+        mov ecx, eax
+        call edx
+        test al, al
+        je L_436E9A
+        add dword ptr [esp], 1
+        call ext_00465B40
+        mov ecx, dword ptr [esp]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x70]
+        push ecx
+        mov ecx, eax
+        call edx
+L_436E9A:
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x98]
+        push 5
+        call eax
+        pop ecx
+        ret
+    }
+}
