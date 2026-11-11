@@ -422,3 +422,63 @@ extern "C" __declspec(naked) void __cdecl fn_008044A0(void* p) {
         ret
     }
 }
+
+extern "C" void ext_007E46B0();
+extern "C" int mem_009324A4;
+extern "C" int mem_00955680;
+
+// [0x00803BB0] sub_00803BB0 (137 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00803BB0(void) {
+    __asm {
+        sub esp, 0xc
+        fld dword ptr [eax]
+        push esi
+        fstp dword ptr [esp + 0x4]
+        lea esi, [esp + 0x4]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0xc]
+        call ext_007E46B0
+        fstp st(0)
+        fld dword ptr [mem_009324A4]
+        fld dword ptr [esp + 0xc]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jp neg_path
+        fld dword ptr [mem_00955680]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp neg_path
+        fstp st(0)
+        mov esi, edi
+        fld dword ptr [esp + 0x8]
+        fchs
+        fstp dword ptr [edi]
+        fld dword ptr [esp + 0x4]
+        fstp dword ptr [edi + 0x4]
+        fldz
+        fstp dword ptr [edi + 0x8]
+        call ext_007E46B0
+        fstp st(0)
+        pop esi
+        add esp, 0xc
+        ret
+neg_path:
+        fchs
+        mov esi, edi
+        fstp dword ptr [edi]
+        fldz
+        fstp dword ptr [edi + 0x4]
+        fld dword ptr [esp + 0x4]
+        fstp dword ptr [edi + 0x8]
+        call ext_007E46B0
+        fstp st(0)
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
