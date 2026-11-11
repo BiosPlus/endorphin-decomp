@@ -1871,3 +1871,39 @@ extern "C" __declspec(naked) void __fastcall fn_004CAEE0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004CB1D0] ExprParser::ReadWriteMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, NM::Vector3 const &, {public: void __thiscall NMData::MetaBodyConstraintData::setPositionStrengthFromFSM(class NM::Vector3 const &), 0}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00AE44BC;
+extern "C" int mem_00AE44B8;
+
+extern "C" __declspec(naked) void __fastcall fn_004CB1D0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x88c0ee
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00AE44BC], al
+        jne L_guarded
+        or dword ptr [mem_00AE44BC], eax
+        mov ecx, offset mem_00AE44B8
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00AE44B8], 0x00946ab4
+        mov dword ptr [eax + 0x4], offset mem_00AE44B8
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00AE44B8
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
