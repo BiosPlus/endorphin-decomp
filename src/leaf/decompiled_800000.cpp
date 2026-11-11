@@ -193,3 +193,54 @@ extern "C" __declspec(naked) void __cdecl fn_00803F20(float* out, int a, int fla
         jmp ext_00803DF0
     }
 }
+
+// [0x008039C0] sub_008039C0 (93 bytes)
+extern "C" __declspec(naked) int __cdecl fn_008039C0(void* self, int value) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        mov eax, dword ptr [ebx + 8]
+        cmp eax, dword ptr [ebx + 4]
+        jl short L_008039D1
+        xor eax, eax
+        pop ebx
+        ret
+    L_008039D1:
+        mov ecx, dword ptr [esp + 0Ch]
+        push esi
+        push edi
+        lea edi, [eax + 1]
+        mov eax, dword ptr [ebx]
+        mov esi, edi
+        sar esi, 1
+        mov dword ptr [ebx + 8], edi
+        mov dword ptr [eax + 4*edi], ecx
+        je short L_00803A14
+    L_008039E8:
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 4*esi]
+        mov eax, dword ptr [eax + 4*edi]
+        mov ecx, dword ptr [ebx + 0Ch]
+        push edx
+        push eax
+        call ecx
+        add esp, 8
+        test eax, eax
+        je short L_00803A14
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 4*esi]
+        mov ecx, dword ptr [eax + 4*edi]
+        mov dword ptr [eax + 4*edi], edx
+        mov eax, dword ptr [ebx]
+        mov dword ptr [eax + 4*esi], ecx
+        mov edi, esi
+        sar esi, 1
+        jne short L_008039E8
+    L_00803A14:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret
+    }
+}
