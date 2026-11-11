@@ -1429,3 +1429,20 @@ extern "C" __declspec(naked) void __fastcall fn_006886D0(void* self) {
         ret
     }
 }
+
+// [0x00687760] sub_00687760 (77 bytes)
+extern "C" void ext_004275E0();
+extern "C" int mem_00B53A34;
+extern "C" int mem_00B53B30;
+extern "C" int mem_00B53AB0;
+extern "C" int mem_00B53A70;
+extern "C" int mem_00B53AF0;
+extern "C" void __fastcall fn_00687760(void* self, int edx_unused, int a1, int a2, int a3) {
+    typedef void (__cdecl *Fn)(int, int);
+    ((Fn)ext_004275E0)(a1, a2);
+    if (a2 == (int)&mem_00B53A34 || a2 == (int)&mem_00B53B30 || a2 == (int)&mem_00B53AB0 ||
+        a2 == (int)&mem_00B53A70 || a2 == (int)&mem_00B53AF0) {
+        return;
+    }
+    *(int*)((char*)self + 0x150) |= a3;
+}
