@@ -2771,3 +2771,26 @@ extern "C" __declspec(naked) void __fastcall fn_00667030(void* self) {
         ret
     }
 }
+
+// [0x006602F0] sub_006602F0 (76 bytes)
+extern "C" void ext_004EC3F0();
+
+typedef void* (__thiscall *Fn006602F0_VF0)(void* self);
+typedef void* (__thiscall *Fn006602F0_VF1)(void* self, int arg);
+typedef int (__thiscall *Fn006602F0_Search)(void* self, void* a1);
+
+extern "C" unsigned char __stdcall fn_006602F0(void* node, void** out) {
+    void* cur = node;
+    while (cur != 0) {
+        void* match = ((Fn006602F0_VF0)(*(void***)cur)[11])(cur);
+        if (match != 0) {
+            void* r = (void*)((Fn006602F0_Search)ext_004EC3F0)(match, *out);
+            if (r != 0) {
+                *out = r;
+                return 1;
+            }
+        }
+        cur = ((Fn006602F0_VF1)(*(void***)cur)[4])(cur, 0);
+    }
+    return 0;
+}
