@@ -49,3 +49,74 @@ extern "C" __declspec(naked) void __fastcall fn_004EC9B0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+extern "C" void ext_0046F7D0();
+extern "C" void ext_004C1BF0();
+extern "C" void ext_0055DA20();
+
+// [0x004ED400] CharacterSelection::vfunc_14 (140 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004ED400(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x54]
+        mov dword ptr [esp + 0x4], 0x0
+        call edx
+        cmp dword ptr [esp + 0x10], eax
+        jne L_mismatch_4ED400
+        mov eax, dword ptr [esi + 0x40]
+        test eax, eax
+        push edi
+        lea edi, [esi + 0x3c]
+        je L_skip1_4ED400
+        mov ecx, dword ptr [edi + 0x8]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+L_skip1_4ED400:
+        mov edx, dword ptr [esi + 0xc]
+        test edx, edx
+        jne L_nz_4ED400
+        xor ecx, ecx
+        jmp L_cmp_4ED400
+L_nz_4ED400:
+        mov ecx, dword ptr [esi + 0x10]
+        sub ecx, edx
+        sar ecx, 0x3
+L_cmp_4ED400:
+        cmp eax, ecx
+        je L_call_4ED400
+        mov eax, dword ptr [esi + 0x18]
+        mov edx, dword ptr [eax + 0x8]
+        lea ecx, [esi + 0x18]
+        call edx
+L_call_4ED400:
+        push edi
+        call ext_004C1BF0
+        mov esi, dword ptr [esp + 0x14]
+        push eax
+        mov ecx, esi
+        call ext_0055DA20
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+L_mismatch_4ED400:
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_0046F7D0
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
