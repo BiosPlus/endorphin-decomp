@@ -2772,3 +2772,35 @@ extern "C" __declspec(naked) void* __cdecl fn_007CAF70(void* self, float a1, flo
         ret
     }
 }
+
+// [0x007C9280] sub_007C9280 (115 bytes)
+extern "C" void* __cdecl ext_007D8710(void* p);
+extern "C" int __cdecl ext_007C58E0(void* p);
+extern "C" int __cdecl ext_007D3490(int v);
+
+extern "C" int __cdecl fn_007C9280(void* p) {
+    int cnt = 0;
+    void* a = ext_007D8710(p);
+    int b = ext_007C58E0(p);
+    if (a) {
+        char* node = *(char**)((char*)a + 0x168);
+        if (node) {
+            do {
+                int t = *(int*)(node + 0x84);
+                if (t == 0) {
+                    cnt += 1;
+                } else if (t == 1) {
+                    cnt += 2;
+                } else {
+                    cnt += 3;
+                }
+                node = *(char**)(node + 0x5c);
+            } while (node);
+        }
+        return cnt;
+    }
+    if (b) {
+        return ext_007D3490(b);
+    }
+    return *(int*)((char*)p + 0xa4);
+}
