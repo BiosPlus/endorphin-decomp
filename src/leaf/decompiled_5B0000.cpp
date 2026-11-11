@@ -1149,3 +1149,45 @@ extern "C" __declspec(naked) void __cdecl fn_005B8EA0() {
         ret
     }
 }
+
+// [0x005BE990] sub_005BE990 (82 bytes)
+extern "C" void ext_005B8EA0();
+extern "C" void ext_005CF3E0();
+extern "C" void fn_005B6600();
+
+extern "C" __declspec(naked) void __fastcall fn_005BE990(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        mov edi, dword ptr [esi + 0x160]
+        xor edx, edx
+        push edx
+        lea eax, [esi + 0x15c]
+        mov ecx, offset fn_005B6600
+        push ecx
+        push edi
+        push eax
+        mov ebx, edi
+        mov ebx, dword ptr [ebx]
+        push ebx
+        push eax
+        lea eax, [esp + 0x24]
+        push eax
+        call ext_005B8EA0
+        mov ecx, dword ptr [esi + 0x158]
+        add esp, 0x1c
+        test ecx, ecx
+        je skip_cf3e0
+        call ext_005CF3E0
+skip_cf3e0:
+        pop edi
+        mov dword ptr [esi + 0x184], 0
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
