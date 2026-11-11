@@ -18,5 +18,7 @@
     "0x0066E220",
     "0x0066E228"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T02:30:26Z"
 }
