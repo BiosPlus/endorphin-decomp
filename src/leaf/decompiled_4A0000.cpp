@@ -798,3 +798,12 @@ extern "C" void __cdecl fn_004AB230(unsigned int* first, int holeIndex, int len,
     }
     ext_0059DE60(first, holeIndex, topIndex, value, comp);
 }
+
+// [0x004AB990] sub_004AB990 (63 bytes)
+extern "C" void __cdecl fn_004AB990(unsigned int* first, unsigned int* last, int comp) {
+    int len = last - first;
+    for (int hole = len / 2; hole > 0; ) {
+        --hole;
+        fn_004AB230(first, hole, len, first[hole], comp);
+    }
+}
