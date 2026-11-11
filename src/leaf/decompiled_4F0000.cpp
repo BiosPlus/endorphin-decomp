@@ -1179,3 +1179,74 @@ extern "C" __declspec(naked) void* __fastcall fn_004FDE10(void* self, int edx_un
         ret 0x10
     }
 }
+
+// [0x004FDB40] sub_004FDB40 (129 bytes)
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void __cdecl fn_004FDB40(void* a1, void* a2, void* a3) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        cmp ebx, dword ptr [esp + 0x10]
+        je done_4FDB40
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        lea edi, [ebp + 0x1c]
+        lea esi, [ebx + 0x20]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+loop_4FDB40:
+        push ebp
+        mov ecx, ebx
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi - 0x4]
+        cmp eax, edi
+        je skip_4FDB40
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je null1_4FDB40
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esi - 0x4]
+        push eax
+        call edx
+null1_4FDB40:
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [esi], eax
+        cmp dword ptr [edi + 0x4], 0
+        je zero_4FDB40
+        mov ecx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push edi
+        lea eax, [esp + 0x14]
+        push eax
+        call edx
+        jmp store_4FDB40
+zero_4FDB40:
+        mov dword ptr [esp + 0x18], 0
+        lea eax, [esp + 0x18]
+store_4FDB40:
+        mov eax, dword ptr [eax]
+        mov dword ptr [esi - 0x4], eax
+skip_4FDB40:
+        add ebx, 0x24
+        add esi, 0x24
+        cmp ebx, dword ptr [esp + 0x1c]
+        jne loop_4FDB40
+        pop edi
+        pop esi
+        pop ebp
+done_4FDB40:
+        pop ebx
+        pop ecx
+        ret
+    }
+}
