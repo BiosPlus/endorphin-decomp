@@ -1242,3 +1242,56 @@ skip_call:
         ret
     }
 }
+
+// [0x00596660] sub_00596660 (92 bytes)
+// __thiscall ret 0x14: erase-style range shift. out[0] = a2, out[1] = a3; this->end = a3 + 4*n where
+// n = (this->end - a5) / 4 and [a5, end) is memmove_s'd down to a3. Debug iterator guards call
+// the _invalid_parameter_noinfo pointer (kept for byte parity).
+extern "C" int mem_00925134;
+extern "C" int mem_009251EC;
+
+extern "C" __declspec(naked) void __fastcall fn_00596660(void* self, int edx_unused, void* out, unsigned int a2, unsigned int a3, unsigned int a4, unsigned int a5) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        test ebp, ebp
+        push esi
+        push edi
+        mov edi, ecx
+        je guard_fail
+        cmp ebp, dword ptr [esp + 0x1c]
+        je guard_ok
+    guard_fail:
+        call dword ptr [mem_00925134]
+    guard_ok:
+        mov esi, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x20]
+        cmp esi, edx
+        je tail
+        mov eax, dword ptr [edi + 8]
+        sub eax, edx
+        sar eax, 2
+        test eax, eax
+        lea ecx, [4*eax]
+        push ebx
+        lea ebx, [ecx + esi]
+        jle no_move
+        push ecx
+        push edx
+        push ecx
+        push esi
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+    no_move:
+        mov dword ptr [edi + 8], ebx
+        pop ebx
+    tail:
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        mov dword ptr [eax + 4], esi
+        pop esi
+        mov dword ptr [eax], ebp
+        pop ebp
+        ret 0x14
+    }
+}
