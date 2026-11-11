@@ -33,3 +33,36 @@ extern "C" __declspec(naked) void __fastcall fn_0053C1A0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0053C150] Primitives::RPRO::vfunc_29 (75 bytes)
+extern "C" void ext_0053AD10();
+
+extern "C" __declspec(naked) void __fastcall fn_0053C150(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0053AD10
+        fld1
+        fst dword ptr [esi + 0x3c]
+        fst dword ptr [esi + 0x44]
+        fldz
+        fst dword ptr [esi + 0x48]
+        fst dword ptr [esi + 0x4c]
+        fst dword ptr [esi + 0x50]
+        fst dword ptr [esi + 0x54]
+        fst dword ptr [esi + 0x5c]
+        fst dword ptr [esi + 0x60]
+        fst dword ptr [esi + 0x64]
+        fst dword ptr [esi + 0x68]
+        fst dword ptr [esi + 0x70]
+        fst dword ptr [esi + 0x74]
+        fst dword ptr [esi + 0x78]
+        fstp dword ptr [esi + 0x7c]
+        fst dword ptr [esi + 0x58]
+        fst dword ptr [esi + 0x6c]
+        fstp dword ptr [esi + 0x80]
+        mov dword ptr [esi + 0x40], 0x0
+        pop esi
+        ret
+    }
+}
