@@ -439,3 +439,54 @@ extern "C" __declspec(naked) void __fastcall fn_005DC4F0(void* self) {
         ret
     }
 }
+
+// [0x005DF6B0] sub_005DF6B0 (105 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005DF6B0(void* self, int edx_unused, void** out, int* key) {
+    __asm {
+        mov edx, dword ptr [ecx + 4]
+        mov eax, dword ptr [edx + 4]
+        sub esp, 10h
+        cmp byte ptr [eax + 15h], 0
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 20h]
+        jne L_after
+        mov esi, dword ptr [edi]
+    L_loop:
+        cmp dword ptr [eax + 0ch], esi
+        jge L_left
+        mov eax, dword ptr [eax + 8]
+        jmp L_join
+    L_left:
+        mov edx, eax
+        mov eax, dword ptr [eax]
+    L_join:
+        cmp byte ptr [eax + 15h], 0
+        je L_loop
+    L_after:
+        mov eax, dword ptr [ecx + 4]
+        cmp edx, eax
+        mov dword ptr [esp + 0ch], edx
+        mov dword ptr [esp + 8], ecx
+        je L_pb
+        mov esi, dword ptr [edi]
+        cmp esi, dword ptr [edx + 0ch]
+        jl L_pb
+        lea ecx, [esp + 8]
+        jmp L_out
+    L_pb:
+        mov dword ptr [esp + 10h], ecx
+        mov dword ptr [esp + 14h], eax
+        lea ecx, [esp + 10h]
+    L_out:
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 1ch]
+        mov ecx, dword ptr [ecx + 4]
+        pop edi
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 4], ecx
+        pop esi
+        add esp, 10h
+        ret 8
+    }
+}
