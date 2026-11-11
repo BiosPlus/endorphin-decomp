@@ -1808,3 +1808,45 @@ extern "C" void __cdecl fn_00510010(unsigned int* first, unsigned int* last, int
         ((void (__cdecl*)(unsigned int*, int, int, unsigned int, int))ext_0050FE00)(first, hole, len, first[hole], comp);
     }
 }
+
+// [0x00510880] sub_00510880 (74 bytes)
+extern "C" void ext_0050FD30();
+
+extern "C" __declspec(naked) void __cdecl fn_00510880(unsigned int* first, unsigned int* last, int comp) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        sub esi, edi
+        mov eax, esi
+        sar eax, 0x2
+        cmp eax, 0x1
+        jle done
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+    loop_top:
+        mov eax, dword ptr [edi + esi - 0x4]
+        mov ecx, dword ptr [edi]
+        push ebx
+        push eax
+        lea edx, [esi - 0x4]
+        sar edx, 0x2
+        push edx
+        push 0x0
+        push edi
+        mov dword ptr [edi + esi - 0x4], ecx
+        call ext_0050FD30
+        sub esi, 0x4
+        mov eax, esi
+        sar eax, 0x2
+        add esp, 0x14
+        cmp eax, 0x1
+        jg loop_top
+        pop ebx
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
