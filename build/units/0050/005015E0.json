@@ -13,5 +13,7 @@
     "0x005015E7",
     "0x0050160F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T14:16:47Z"
 }
