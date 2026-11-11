@@ -875,3 +875,49 @@ extern "C" __declspec(naked) void __fastcall fn_00565120(void* self) {
         ret 0x4
     }
 }
+
+// [0x0056B690] sub_0056B690 (123 bytes)
+extern "C" int __cdecl ext_0056B670(double, double, double);
+
+extern "C" __declspec(naked) bool __fastcall fn_0056B690(float* self, int edx_unused, float a1, float a2, float a3, double a4) {
+    __asm {
+        fld qword ptr [esp + 0x10]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x1c]
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ecx]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je RET_FALSE
+        fld qword ptr [esp + 0x10]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x20]
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x4]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je RET_FALSE
+        fld qword ptr [esp + 0x10]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x24]
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x8]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je RET_FALSE
+        mov eax, 0x1
+        ret 0x14
+    RET_FALSE:
+        xor eax, eax
+        ret 0x14
+    }
+}
