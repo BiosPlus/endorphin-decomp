@@ -4204,3 +4204,53 @@ extern "C" __declspec(naked) void __fastcall fn_0043E5D0(void* self, int edx_unu
         ret 0x14
     }
 }
+
+// [0x0043CDD0] sub_0043CDD0 (109 bytes)
+extern "C" int mem_0092566C;
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) double __fastcall fn_0043CDD0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x20]
+        lea eax, [esp + 0x4]
+        push eax
+        push ecx
+        call dword ptr [mem_0092566C]
+        fild dword ptr [esi + 0xfc]
+        fild dword ptr [esp + 0xc]
+        fld qword ptr [esi + 0xe8]
+        fld qword ptr [esi + 0xf0]
+        pop esi
+        fld st(0)
+        fsub st, st(2)
+        fld st(3)
+        fsub st, st(5)
+        fdivp st(1), st
+        fild dword ptr [esp + 0x14]
+        fxch st(5)
+        faddp st(4), st
+        fld qword ptr [mem_00993828]
+        fmul st(4), st
+        fxch st(5)
+        fsubrp st(4), st
+        fmulp st(3), st
+        faddp st(1), st
+        fmulp st(2), st
+        faddp st(1), st
+        fldz
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne L_small
+        fstp st(1)
+        add esp, 0x10
+        ret 0x4
+    L_small:
+        fstp st(0)
+        add esp, 0x10
+        ret 0x4
+    }
+}
