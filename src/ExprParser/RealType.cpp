@@ -118,3 +118,26 @@ extern "C" __declspec(naked) void __fastcall fn_0066CE30(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0066ADE0] ExprParser::RealType::vfunc_4 (40 bytes)
+extern "C" void ext_0046C390();
+
+extern "C" __declspec(naked) void __fastcall fn_0066ADE0(void* self, int edx_unused, void* a1, float* value) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        fld dword ptr [eax]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_0046C390
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
