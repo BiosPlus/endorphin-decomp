@@ -1314,3 +1314,46 @@ extern "C" __declspec(naked) void __fastcall fn_0069C1C0(void* self) {
         ret
     }
 }
+
+// [0x00699870] sub_00699870 (91 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00699870(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [eax]
+        mov dword ptr [esi], ecx
+        mov edx, dword ptr [eax + 0x4]
+        push edi
+        lea edi, [eax + 0x8]
+        mov dword ptr [esi + 0x4], edx
+        cmp dword ptr [edi + 0x4], 0x0
+        je null_branch_00699870
+        mov ecx, dword ptr [edi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x70]
+        push edi
+        lea edx, [esp + 0x10]
+        push edx
+        call eax
+        mov ecx, dword ptr [eax]
+        mov dword ptr [esi + 0x8], ecx
+        mov edx, dword ptr [edi + 0x4]
+        pop edi
+        mov dword ptr [esi + 0xc], edx
+        mov eax, esi
+        pop esi
+        ret 0x4
+null_branch_00699870:
+        lea eax, [esp + 0xc]
+        mov dword ptr [esp + 0xc], 0x0
+        mov ecx, dword ptr [eax]
+        mov dword ptr [esi + 0x8], ecx
+        mov edx, dword ptr [edi + 0x4]
+        pop edi
+        mov dword ptr [esi + 0xc], edx
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
