@@ -3985,3 +3985,73 @@ extern "C" __declspec(naked) void* __cdecl fn_00664E40(std::string::iterator* re
         ret
     }
 }
+
+// [0x00661E80] sub_00661E80 (138 bytes)
+extern "C" void ext_00466BA0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) bool __fastcall fn_00661E80(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x8], 0x0
+        push edi
+        jne L_661E90
+        call dword ptr [mem_00925134]
+L_661E90:
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0xc]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne L_661EA1
+        call dword ptr [mem_00925134]
+L_661EA1:
+        mov edi, dword ptr [esi + 0x4]
+        mov eax, dword ptr [edi + 0x64]
+        push ebx
+        mov ebx, dword ptr [esi + 0xc]
+        add edi, 0x60
+        push ebp
+        mov ebp, dword ptr [eax + 0x4]
+        add ebx, 0x8
+        cmp ebp, eax
+        jne L_661EBF
+        call dword ptr [mem_00925134]
+L_661EBF:
+        cmp ebp, dword ptr [edi + 0x4]
+        mov edi, dword ptr [mem_00925134]
+        jne L_661ECC
+        call edi
+L_661ECC:
+        add ebp, 0x8
+        cmp ebx, ebp
+        pop ebp
+        pop ebx
+        je L_661F05
+        cmp dword ptr [esi + 0x8], 0x0
+        jne L_661EDD
+        call edi
+L_661EDD:
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [esi + 0xc]
+        cmp eax, dword ptr [edx + 0x4]
+        jne L_661EEA
+        call edi
+L_661EEA:
+        mov ecx, dword ptr [esi + 0xc]
+        mov edx, dword ptr [ecx]
+        push 0x0
+        mov dword ptr [esi + 0xc], edx
+        push esi
+        lea ecx, [esi + 0x38]
+        mov byte ptr [esi], 0x1
+        call ext_00466BA0
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret
+L_661F05:
+        pop edi
+        xor al, al
+        pop esi
+        ret
+    }
+}
