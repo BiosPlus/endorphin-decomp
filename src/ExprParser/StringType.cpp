@@ -279,3 +279,49 @@ extern "C" __declspec(naked) void __fastcall fn_0066B410(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0066EEE0] ExprParser::StringType::vfunc_50 (135 bytes)
+extern "C" void ext_0041CEB0();
+extern "C" void ext_00486CB0();
+extern "C" int mem_00924FF4;
+
+// Naked: SEH-framed (fs:[0] chain) with two stack-local std::string temporaries,
+// so the frame is emitted directly to match the original prologue/epilogue.
+extern "C" __declspec(naked) void __fastcall fn_0066EEE0(void* self) {
+    __asm {
+        push -1
+        push 0x8b2ae2
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x38
+        mov ecx, dword ptr [esp + 0x4c]
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        call ext_0041CEB0
+        mov esi, eax
+        lea ecx, [esp + 0x4]
+        push ecx
+        mov ecx, dword ptr [esp + 0x50]
+        mov dword ptr [esp + 0x48], 0
+        call ext_0041CEB0
+        push 0x98b7d8
+        push esi
+        push eax
+        lea ecx, [esp + 0x60]
+        mov byte ptr [esp + 0x50], 1
+        call ext_00486CB0
+        lea ecx, [esp + 0x4]
+        mov byte ptr [esp + 0x44], 0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x20]
+        mov dword ptr [esp + 0x44], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x3c]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x44
+        ret 0x10
+    }
+}
