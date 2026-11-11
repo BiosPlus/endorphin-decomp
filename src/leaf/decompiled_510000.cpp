@@ -1423,3 +1423,10 @@ extern "C" double __fastcall fn_005112B0(void* self, int edx_unused, double e) {
     return ext_005FF080(*(float*)(p + 0x30), *(float*)(p + 0x34),
                         *(float*)(p + 0x28), *(float*)(p + 0x2c), e);
 }
+
+// [0x005112F0] sub_005112F0 (49 bytes)
+extern "C" double __fastcall fn_005112F0(void* self, int edx_unused, double e) {
+    char* p = (char*)self;
+    return ext_005FF080(*(float*)(p + 0x30), *(float*)(p + 0x34),
+                        *(float*)(p + 0x38), *(float*)(p + 0x3c), e);
+}
