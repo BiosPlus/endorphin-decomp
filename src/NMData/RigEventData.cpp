@@ -83,3 +83,46 @@ extern "C" __declspec(naked) void __fastcall fn_004D3D50(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x004D3C60] NMData::RigEventData::vfunc_13 (80 bytes)
+// Stack args: p1 (returned in eax), name (const std::string&).
+// Compares name against a literal via imported operator==(string, const char*)
+// (cdecl, add esp,8). On match: p1->ext_00661650(this+0x398) (ecx = p1).
+// Otherwise: ext_0046F7D0(p1) (cdecl, add esp,4). Both return p1 with ret 8.
+extern "C" void ext_0046F7D0();
+extern "C" void ext_00661650();
+extern "C" int mem_00924FC0;
+
+extern "C" __declspec(naked) void* __fastcall fn_004D3C60(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        push 0x948360
+        push eax
+        mov esi, ecx
+        mov dword ptr [esp + 0xc], 0
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        je second
+        add esi, 0x398
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, esi
+        call ext_00661650
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    second:
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_0046F7D0
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
