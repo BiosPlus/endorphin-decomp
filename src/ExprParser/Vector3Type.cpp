@@ -197,3 +197,49 @@ extern "C" void __fastcall fn_0066B770(void* self, int edx_unused, void* a1) {
     void** obj2 = *(void***)((char*)a1 + 0x4);
     ((Sink2Fn)(*(void***)obj2)[7])(obj2, a1, len);
 }
+
+// [0x0066B620] ExprParser::Vector3Type::vfunc_42 (93 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0066B620(void* self, int edx_unused, void** a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push esi
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        call eax
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        call eax
+        mov ecx, eax
+        fld dword ptr [ecx]
+        fld dword ptr [esi]
+        fucompp
+        fnstsw ax
+        test ah, 0x44
+        jp short L_fail
+        fld dword ptr [ecx + 0x4]
+        fld dword ptr [esi + 0x4]
+        fucompp
+        fnstsw ax
+        test ah, 0x44
+        jp short L_fail
+        fld dword ptr [ecx + 0x8]
+        fld dword ptr [esi + 0x8]
+        fucompp
+        fnstsw ax
+        test ah, 0x44
+        jp short L_fail
+        mov eax, 0x1
+        pop esi
+        ret 0x8
+L_fail:
+        xor eax, eax
+        pop esi
+        ret 0x8
+    }
+}
