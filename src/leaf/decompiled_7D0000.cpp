@@ -1427,3 +1427,54 @@ extern "C" __declspec(naked) void __cdecl fn_007D9680(unsigned int* self, unsign
         ret
     }
 }
+
+// [0x007DCA30] sub_007DCA30 (106 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_007DCA30(int a1, int n, void* alloc) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov eax, dword ptr [edi]
+        push 0xc
+        call eax
+        mov ecx, dword ptr [esp + 0x10]
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x14]
+        add esp, 4
+        cmp eax, 1
+        mov dword ptr [esi + 4], ecx
+        mov dword ptr [esi + 8], 1
+        jle done_cap
+        mov ecx, 1
+        __asm _emit 0x8d __asm _emit 0x49 __asm _emit 0x00 // lea ecx, [ecx]
+    cap_loop:
+        sar eax, 1
+        add ecx, ecx
+        cmp eax, 1
+        jg cap_loop
+        mov dword ptr [esi + 8], ecx
+    done_cap:
+        mov edx, dword ptr [esi + 8]
+        mov eax, dword ptr [edi]
+        add edx, edx
+        add edx, edx
+        push edx
+        call eax
+        mov dword ptr [esi], eax
+        xor eax, eax
+        add esp, 4
+        cmp dword ptr [esi + 8], eax
+        jle done_zero
+    zero_loop:
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 4*eax], 0
+        add eax, 1
+        cmp eax, dword ptr [esi + 8]
+        jl zero_loop
+    done_zero:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
