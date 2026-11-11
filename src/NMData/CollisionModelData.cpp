@@ -162,3 +162,57 @@ extern "C" void __fastcall fn_005C8860(void* self) {
         *(unsigned char*)(s + 0x168) = 0;
     }
 }
+
+// [0x005C3E20] NMData::CollisionModelData::vfunc_14 (114 bytes)
+extern "C" void ext_0058F6B0();
+extern "C" void ext_00661650();
+
+extern "C" __declspec(naked) void* __fastcall fn_005C3E20(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, 0x9c
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0
+        je L_9c
+        cmp eax, 0x199
+        je L_199
+        push eax
+        push esi
+        call ext_0058F6B0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_199:
+        cmp dword ptr [ecx + 0x15c], 0
+        je L_zero
+        push 0x199
+        push esi
+        call ext_0058F6B0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_9c:
+        mov ecx, dword ptr [ecx + 0x15c]
+        test ecx, ecx
+        je L_zero
+        push ecx
+        mov ecx, esi
+        call ext_00661650
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_zero:
+        push 0
+        mov ecx, esi
+        call ext_00661650
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
