@@ -1747,3 +1747,36 @@ done_0052F280:
         ret
     }
 }
+
+// [0x0052F770] sub_0052F770 (87 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0052F770(void* self) {
+    __asm {
+        push -1
+        push 0x008a7a5b
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push 0x3c
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [esp + 0x4], esi
+        xor eax, eax
+        cmp esi, eax
+        mov dword ptr [esp + 0x10], eax
+        je done_0052F770
+        mov ecx, esi
+        call ext_0053B240
+        mov dword ptr [esi], 0x00953a84
+        mov dword ptr [esi + 0x14], 0x00953a7c
+        mov eax, esi
+    done_0052F770:
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
