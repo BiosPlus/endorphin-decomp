@@ -3071,3 +3071,44 @@ extern "C" __declspec(naked) void __cdecl fn_00672690(void** first, int hole, in
         ret
     }
 }
+
+// [0x0067B1F0] sub_0067B1F0 (110 bytes)
+extern "C" void ext_0067B050();
+extern "C" void ext_0065C620();
+
+extern "C" __declspec(naked) void __fastcall fn_0067B1F0(void* self) {
+    __asm {
+        push -1
+        push 0x008b4a86
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 8], esi
+        mov dword ptr [esi], 0x0098c5c8
+        mov dword ptr [esp + 0x14], 1
+        call ext_0067B050
+        mov edi, dword ptr [esi + 0xc]
+        test edi, edi
+        mov byte ptr [esp + 0x14], 0
+        je L_skip
+        mov ecx, edi
+        call ext_0067B090
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+    L_skip:
+        lea ecx, [esi + 8]
+        mov dword ptr [esp + 0x14], -1
+        call ext_0065C620
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
