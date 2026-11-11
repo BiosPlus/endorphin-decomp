@@ -313,3 +313,87 @@ extern "C" __declspec(naked) void __fastcall fn_006EA340(void* self) {
         ret
     }
 }
+
+// [0x006E9C30] sub_006E9C30 (112 bytes)
+// Three-thunk layout: body 1 at +0x00 returns this->[+0x1c][arg]; jmp at +0x20 -> body 2 at +0x30 copies the double at *_HUGE into mem_00B5DF30/34;
+// jmp at +0x50 -> body 3 at +0x60 stores -(*_HUGE) into mem_00B5DF28.
+extern "C" void ext_006E7460();
+extern "C" int mem_00925284;
+extern "C" int mem_00B5DF30;
+extern "C" int mem_00B5DF34;
+extern "C" int mem_00B5DF28;
+extern "C" __declspec(naked) void __fastcall fn_006E9C30(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x1c]
+        mov ecx, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 4*ecx]
+        call ext_006E7460
+        ret 4
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5DF30], ecx
+        mov dword ptr [mem_00B5DF34], edx
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5DF28]
+        ret
+    }
+}
