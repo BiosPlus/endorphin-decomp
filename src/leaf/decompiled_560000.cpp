@@ -1127,3 +1127,46 @@ L_notfound:
         ret 0x4
     }
 }
+
+// [0x005633A0] sub_005633A0 (130 bytes)
+extern "C" void ext_007C5622();
+extern "C" void ext_007C5628();
+extern "C" __declspec(naked) void __fastcall fn_005633A0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov ecx, dword ptr [esp + 0x30]
+        push esi
+        push edi
+        call ext_00584BD0
+        push eax
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x2c], 0
+        call dword ptr [mem_00924FF0]
+        mov edi, dword ptr [esp + 0x34]
+        mov esi, eax
+        push esi
+        mov ecx, edi
+        call ext_007C5628
+        mov ecx, edi
+        call ext_007C5622
+        push esi
+        mov ecx, eax
+        call ext_007C5628
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x2c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 8
+    }
+}
