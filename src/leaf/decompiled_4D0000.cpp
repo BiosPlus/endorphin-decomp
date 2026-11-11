@@ -498,3 +498,55 @@ extern "C" __declspec(naked) void* __fastcall fn_004DE720(void* self) {
         ret
     }
 }
+
+// [0x004DE370] sub_004DE370 (95 bytes)
+extern "C" __declspec(naked) void __cdecl fn_004DE370(void* a1, void* a2, void* a3) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebp
+        je done_004DE370
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_004DE370:
+        cmp esi, edi
+        je next_004DE370
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je skip_004DE370
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x78]
+        push esi
+        call edx
+    skip_004DE370:
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [esi + 0x4], eax
+        cmp dword ptr [edi + 0x4], 0
+        je null_004DE370
+        mov ecx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push edi
+        lea eax, [esp + 0x18]
+        push eax
+        call edx
+        jmp store_004DE370
+    null_004DE370:
+        mov dword ptr [esp + 0x10], 0
+        lea eax, [esp + 0x10]
+    store_004DE370:
+        mov eax, dword ptr [eax]
+        mov dword ptr [esi], eax
+    next_004DE370:
+        add esi, 0x8
+        cmp esi, ebp
+        jne loop_004DE370
+        pop edi
+    done_004DE370:
+        pop esi
+        pop ebp
+        ret
+    }
+}
