@@ -2494,3 +2494,59 @@ extern "C" int mem_0099D228;
 extern "C" int mem_009548E8;
 extern "C" void ext_007CC9C0();
 extern "C" void ext_007CC970();
+
+// [0x007C8690] sub_007C8690 (102 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C8690(int* a0) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [ebp + 0xc]
+        xor ebx, ebx
+        test esi, esi
+        je done
+        push edi
+    loop_:
+        mov edi, dword ptr [esi + 0x8]
+        push esi
+        call ext_007CC9C0
+        add esp, 0x4
+        test eax, eax
+        jne skip
+        push esi
+        call ext_007CC970
+        add esp, 0x4
+    skip:
+        mov eax, dword ptr [ebp + 0xc]
+        cmp edi, eax
+        jne notEq
+        mov ecx, ebx
+        add ebx, 1
+        cmp ecx, 0x64
+        jg report
+    notEq:
+        test eax, eax
+        mov esi, edi
+        jne loop_
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    report:
+        mov edx, dword ptr [ebp + 0xb0]
+        push offset mem_0099D228
+        push offset mem_009548E8
+        push edx
+        push 1
+        call ext_007D58E0
+        add esp, 0x10
+        pop edi
+    done:
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
