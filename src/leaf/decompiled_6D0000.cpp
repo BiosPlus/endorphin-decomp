@@ -344,3 +344,68 @@ done:
         ret 0x8
     }
 }
+
+// [0x006D2280] sub_006D2280 (127 bytes)
+// Grow-by-n with zero fill: used += n; reallocs data to ceil((used+n)/blk) blocks when capacity is exceeded.
+extern "C" int mem_00925290;
+extern "C" __declspec(naked) void __fastcall fn_006D2280(void* self, int edx_unused, int n) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        test eax, eax
+        mov esi, ecx
+        je done_early
+        mov ecx, dword ptr [esi + 0x8]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esi]
+        push edi
+        lea edx, [ecx + ebp]
+        lea eax, [edx + eax - 0x1]
+        xor edx, edx
+        div ecx
+        cmp eax, 0x1
+        mov edi, eax
+        ja have_blocks
+        mov edi, 0x1
+have_blocks:
+        mov eax, dword ptr [esi + 0xc]
+        mov ebx, eax
+        imul eax, ecx
+        imul eax, edi
+        imul ebx, ebp
+        mov ebp, eax
+        mov eax, dword ptr [esi + 0x4]
+        cmp edi, eax
+        jbe no_realloc
+        mov eax, dword ptr [esi + 0x10]
+        push ebp
+        push eax
+        call dword ptr [mem_00925290]
+        add esp, 0x8
+        mov dword ptr [esi + 0x10], eax
+        mov dword ptr [esi + 0x4], edi
+no_realloc:
+        mov edi, dword ptr [esi + 0x10]
+        mov ecx, ebp
+        sub ecx, ebx
+        xor eax, eax
+        mov edx, ecx
+        add edi, ebx
+        shr ecx, 0x2
+        rep stosd
+        mov ecx, edx
+        and ecx, 0x3
+        rep stosb
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esi]
+        add ecx, eax
+        pop edi
+        pop ebp
+        mov dword ptr [esi], ecx
+        pop ebx
+done_early:
+        pop esi
+        ret 0x4
+    }
+}
