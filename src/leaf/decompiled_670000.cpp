@@ -3240,3 +3240,58 @@ extern "C" __declspec(naked) bool __cdecl fn_00676860(void* a, void* b) {
         ret
     }
 }
+
+// [0x0067B4A0] sub_0067B4A0 (141 bytes)
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" void ext_0067B410();
+extern "C" int mem_00924290;
+extern "C" int mem_00924288;
+extern "C" __declspec(naked) void __stdcall fn_0067B4A0(int a0, void* self, int a2, int a3, int a4) {
+    __asm {
+        sub esp, 0x18
+        push esi
+        mov esi, dword ptr [esp + 0x28]
+        push edi
+        lea edi, [esi + 0x18]
+        mov ecx, edi
+        call ext_0065C640
+        cmp byte ptr [esi + 0xc], 0x0
+        jne skip_init_0067B4A0
+        mov dword ptr [esp + 0x8], 0x0
+        mov dword ptr [esp + 0xc], 0x2
+        mov dword ptr [esp + 0x10], 0x1
+        mov dword ptr [esp + 0x14], 0x0
+        mov dword ptr [esp + 0x18], 0xffffffff
+        mov dword ptr [esp + 0x1c], 0xfffffffe
+        call dword ptr [mem_00924290]
+        mov ecx, dword ptr [esi + 0x10]
+        test ecx, ecx
+        je skip_prio_0067B4A0
+        mov ecx, dword ptr [esp + 4*ecx + 0x8]
+        push ecx
+        push eax
+        call dword ptr [mem_00924288]
+    skip_prio_0067B4A0:
+        mov byte ptr [esi + 0xc], 0x1
+    skip_init_0067B4A0:
+        mov ecx, dword ptr [esi + 0x14]
+        test ecx, ecx
+        je call_0067B410_0067B4A0
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+        test al, al
+        jne done_0067B4A0
+    call_0067B410_0067B4A0:
+        mov ecx, esi
+        call ext_0067B410
+    done_0067B4A0:
+        mov ecx, edi
+        call ext_0065C650
+        pop edi
+        pop esi
+        add esp, 0x18
+        ret 0x14
+    }
+}
