@@ -34,3 +34,50 @@ extern "C" void __fastcall fn_00460C50(void* self, int edx_unused, int a1) {
     ddx(a1, 0x43f, p + 0x1d0);
     ddx(a1, 0x440, p + 0x224);
 }
+
+// [0x00460FB0] UndoHistoryDialog::vfunc_0_off_78 (141 bytes)
+extern "C" void ext_00404F00();
+extern "C" void ext_006A5F50();
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_0092568C;
+
+extern "C" __declspec(naked) void __fastcall fn_00460FB0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        cmp dword ptr [esp + 0x2c], 0x43e
+        push esi
+        mov esi, ecx
+        jne skip_update
+        add dword ptr [esi + 0x200], 1
+        mov eax, dword ptr [esi + 0x200]
+        push eax
+        lea eax, [esp + 8]
+        push eax
+        call ext_00404F00
+        add esp, 8
+        mov ecx, eax
+        mov dword ptr [esp + 0x28], 0
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esi + 0xb0]
+        call ext_006A5F50
+        lea ecx, [esp + 4]
+        mov dword ptr [esp + 0x28], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esi + 0xd0]
+        push ecx
+        call dword ptr [mem_0092568C]
+    skip_update:
+        mov ecx, dword ptr [esp + 0x20]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 4
+    }
+}
