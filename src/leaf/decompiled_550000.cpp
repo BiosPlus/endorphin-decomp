@@ -1442,3 +1442,46 @@ extern "C" __declspec(naked) int __fastcall fn_00556640(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x00555100] sub_00555100 (95 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00555100(void* first, void* last, const void* value) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je short done
+        mov ecx, dword ptr [esp + 0x14]
+        lea eax, [esi + 0xc]
+    loop_top:
+        fld dword ptr [ecx + 0x4]
+        mov edx, dword ptr [ecx]
+        fstp dword ptr [eax - 0x8]
+        mov dword ptr [esi], edx
+        fld dword ptr [ecx + 0x8]
+        add esi, 0x20
+        fstp dword ptr [eax - 0x4]
+        add eax, 0x20
+        cmp esi, edi
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax - 0x20]
+        mov edx, dword ptr [ecx + 0x10]
+        mov dword ptr [eax - 0x1c], edx
+        mov edx, dword ptr [ecx + 0x14]
+        mov dword ptr [eax - 0x18], edx
+        mov edx, dword ptr [ecx + 0x18]
+        mov dword ptr [eax - 0x14], edx
+        movzx edx, byte ptr [ecx + 0x1c]
+        mov byte ptr [eax - 0x10], dl
+        movzx edx, byte ptr [ecx + 0x1d]
+        mov byte ptr [eax - 0xf], dl
+        movzx edx, byte ptr [ecx + 0x1e]
+        mov byte ptr [eax - 0xe], dl
+        jne short loop_top
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
