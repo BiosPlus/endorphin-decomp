@@ -1970,3 +1970,27 @@ extern "C" __declspec(naked) void __fastcall fn_006B6320(void* self) {
         ret
     }
 }
+
+// [0x006B5140] sub_006B5140 (143 bytes)
+extern "C" void ext_006A6184();
+extern "C" int mem_00925694;
+
+extern "C" int __fastcall fn_006B5140(void* self, int edx_unused, int a1) {
+    int r = ((int (__fastcall*)(void*))ext_006A5EA8)(self);
+    if (r == -1) {
+        return r;
+    }
+    if (*((unsigned char*)self + 0xdc) == 0) {
+        return 0;
+    }
+    int buf[4] = {0, 0, 0, 0};
+    ((int (__thiscall*)(void*, int, int*, void*, int))ext_006A6184)((char*)self + 0x68, 0x50000080, buf, self, 1);
+    int* p = (int*)((char*)self + 0x5c);
+    int wparam = (p == 0) ? 0 : p[1];
+    int (__stdcall *send)(int, int, int, int) = (int (__stdcall*)(int, int, int, int))mem_00925694;
+    send(*(int*)((char*)self + 0x88), 0x30, wparam, 0);
+    if (*((unsigned char*)self + 0xdd) != 0) {
+        send(*(int*)((char*)self + 0x88), 0xcf, 1, 0);
+    }
+    return 0;
+}
