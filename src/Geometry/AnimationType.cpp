@@ -120,3 +120,37 @@ extern "C" __declspec(naked) void __fastcall fn_005B4920(void* self) {
         ret
     }
 }
+
+// [0x005B5320] Geometry::AnimationType::vfunc_15 (89 bytes)
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B435B0;
+extern "C" int mem_00B435B4;
+extern "C" int mem_00B435B8;
+extern "C" int mem_00B435BC;
+extern "C" int mem_00B435C0;
+extern "C" __declspec(naked) void __fastcall fn_005B5320(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x008A366E
+        push eax
+        mov eax, 0x1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B435C0], al
+        jne L_done_005B5320
+        or dword ptr [mem_00B435C0], eax
+        xor eax, eax
+        push 0x0091DDC0
+        mov dword ptr [mem_00B435B4], eax
+        mov dword ptr [mem_00B435B8], eax
+        mov dword ptr [mem_00B435BC], eax
+        call ext_006A6C87
+        add esp, 0x4
+    L_done_005B5320:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00B435B0
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret
+    }
+}
