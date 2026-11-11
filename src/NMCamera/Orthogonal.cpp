@@ -100,3 +100,42 @@ extern "C" __declspec(naked) void __fastcall fn_00551CB0(void* self) {
         ret 8
     }
 }
+
+// [0x00551A80] NMCamera::Orthogonal::vfunc_4 (106 bytes)
+extern "C" int mem_00925410;
+
+extern "C" __declspec(naked) void __fastcall fn_00551A80(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x40
+        sub esp, 0x3c
+        push esi
+        mov esi, ecx
+        call ext_005480D0
+        fmul qword ptr [mem_00993828]
+        sub esp, 0x30
+        fstp dword ptr [esp + 0x6c]
+        fld dword ptr [esp + 0x6c]
+        fld st(0)
+        fchs
+        fstp dword ptr [esp + 0x6c]
+        fld qword ptr [esi + 0xc8]
+        fstp qword ptr [esp + 0x28]
+        fld qword ptr [esi + 0xd0]
+        fstp qword ptr [esp + 0x20]
+        fst qword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x6c]
+        fst qword ptr [esp + 0x10]
+        fxch st(1)
+        fmul qword ptr [esi + 0xc0]
+        fstp qword ptr [esp + 0x8]
+        fmul qword ptr [esi + 0xc0]
+        fstp qword ptr [esp]
+        call dword ptr [mem_00925410]
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
