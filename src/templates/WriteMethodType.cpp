@@ -2493,3 +2493,55 @@ extern "C" __declspec(naked) void __fastcall fn_0064F7C0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0064F870] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector4 const &, {public: void __thiscall SkeletalJoint::setDriveQuaternion(class NM::Vector4 const &), 0}>::vfunc_48 (110 bytes)
+extern "C" void ext_00402040();
+
+extern "C" __declspec(naked) void __fastcall fn_0064F870(void* self, int edx_unused, void** a1, void** a2, void* a3) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        push edi
+        mov edi, dword ptr [eax]
+        mov eax, dword ptr [edx + 0x18]
+        push esi
+        mov dword ptr [esp + 0xc], 0
+        call eax
+        push eax
+        mov ecx, edi
+        call ext_00402040
+        cmp dword ptr [esi + 0x4], 0
+        lea eax, [esp + 0x14]
+        je L_else_0064F870
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push esi
+        push eax
+        call edx
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x4]
+        pop edi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0xc
+    L_else_0064F870:
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x14], 0
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
