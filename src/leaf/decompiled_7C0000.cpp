@@ -3003,3 +3003,64 @@ extern "C" void __cdecl fn_007C6330(void* self, float v) {
     }
     *reinterpret_cast<float*>(p + 0x8) = 1.0f / *reinterpret_cast<float*>(p + 0x1c8);
 }
+
+// [0x007C7010] sub_007C7010 (129 bytes)
+extern "C" void ext_007D48A0();
+extern "C" void ext_007D5BA0();
+
+extern "C" __declspec(naked) void __cdecl fn_007C7010(void* self, int a1, int a2, int a3, int a4) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test byte ptr [esi + 0x40], 0x1
+        je skip_flag
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [eax + 0xb0]
+        mov edx, dword ptr [esi + 0x34]
+        mov eax, dword ptr [ecx + 0x10]
+        push edi
+        push edx
+        call eax
+        mov ecx, dword ptr [esi]
+        mov edi, dword ptr [ecx + 0xb0]
+        lea edx, [esi + 0x44]
+        push edx
+        call ext_007D48A0
+        push eax
+        mov eax, dword ptr [edi + 0x10]
+        call eax
+        add esp, 0xc
+        and dword ptr [esi + 0x40], -0x2
+        pop edi
+    skip_flag:
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x34], eax
+        mov dword ptr [esi + 0x38], ecx
+        je zero_path
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        lea edx, [esi + 0x44]
+        push edx
+        call ext_007D5BA0
+        add esp, 0x8
+        cmp dword ptr [esp + 0x18], 0x0
+        je clear_flag
+        or dword ptr [esi + 0x40], 0x1
+        pop esi
+        ret
+    clear_flag:
+        and dword ptr [esi + 0x40], -0x2
+        pop esi
+        ret
+    zero_path:
+        push ecx
+        add esi, 0x44
+        push esi
+        call ext_007D5BA0
+        add esp, 0x8
+        pop esi
+        ret
+    }
+}
