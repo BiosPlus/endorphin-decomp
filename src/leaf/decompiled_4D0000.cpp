@@ -688,3 +688,61 @@ L_ok:
         ret 0x8
     }
 }
+
+// [0x004DE3D0] sub_004DE3D0 (107 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_004DE3D0(void* first_, void* last_, void* dest_) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebp, esi
+        je done_empty
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_top:
+        sub esi, 0x8
+        sub edi, 0x8
+        cmp edi, esi
+        je skip_elem
+        mov ecx, dword ptr [edi + 0x4]
+        test ecx, ecx
+        je no_release
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x78]
+        push edi
+        call edx
+    no_release:
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [edi + 0x4], eax
+        cmp dword ptr [esi + 0x4], 0x0
+        je null_src
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push esi
+        lea eax, [esp + 0x14]
+        push eax
+        call edx
+        jmp store_val
+    null_src:
+        mov dword ptr [esp + 0x18], 0x0
+        lea eax, [esp + 0x18]
+    store_val:
+        mov eax, dword ptr [eax]
+        mov dword ptr [edi], eax
+    skip_elem:
+        cmp esi, ebp
+        jne loop_top
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        ret
+    done_empty:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebp
+        ret
+    }
+}
