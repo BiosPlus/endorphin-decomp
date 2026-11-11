@@ -165,3 +165,64 @@ extern "C" __declspec(naked) int __fastcall fn_0061FDB0(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x00611E00] NMData::PrimaryTwistAndSwingConstraint::vfunc_9_off_C (145 bytes)
+extern "C" void ext_00528C30();
+
+extern "C" __declspec(naked) void __fastcall fn_00611E00(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_00528C30
+        cmp dword ptr [esi + 0x4], 0
+        je done
+        cmp dword ptr [esi + 0x324], 0
+        je skip324
+        mov ecx, dword ptr [esi + 0x324]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x20]
+        push edi
+        call edx
+skip324:
+        cmp dword ptr [esi + 0x328], 0
+        je skip328
+        mov ecx, dword ptr [esi + 0x328]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x20]
+        push edi
+        call edx
+skip328:
+        cmp dword ptr [esi + 0x320], 0
+        je skip320
+        mov ecx, dword ptr [esi + 0x320]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x20]
+        push edi
+        call edx
+        mov ecx, dword ptr [esi + 0x320]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        push edi
+        call edx
+skip320:
+        cmp dword ptr [esi + 0x32c], 0
+        je done
+        mov ecx, dword ptr [esi + 0x32c]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x20]
+        push edi
+        call edx
+        mov ecx, dword ptr [esi + 0x32c]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        push edi
+        call edx
+done:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
