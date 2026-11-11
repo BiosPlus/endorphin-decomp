@@ -1823,3 +1823,14 @@ L_7D8670:
         ret
     }
 }
+
+// [0x007DB0B0] sub_007DB0B0 (123 bytes)
+extern "C" void __cdecl fn_007DB0B0(char* self, void* (__cdecl** alloc)(unsigned int)) {
+    *(void* (__cdecl***)(unsigned int))(self + 0x24) = alloc;
+    *(void**)(self + 0x00) = (*alloc)(*(unsigned int*)(self + 0x18) * 12);
+    *(void**)(self + 0x04) = (*alloc)(4 * *(unsigned int*)(self + 0x18) + 4);
+    *(void**)(self + 0x08) = (*alloc)(*(unsigned int*)(self + 0x1C) * 12);
+    *(void**)(self + 0x0C) = (*alloc)(4 * *(unsigned int*)(self + 0x1C) + 4);
+    *(void**)(self + 0x10) = (*alloc)(*(unsigned int*)(self + 0x20) * 20);
+    *(void**)(self + 0x14) = (*alloc)(*(unsigned int*)(self + 0x20) * 4);
+}
