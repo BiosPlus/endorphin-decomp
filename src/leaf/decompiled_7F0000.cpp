@@ -887,3 +887,59 @@ extern "C" __declspec(naked) bool __cdecl fn_007F66D0(const float* a1, const flo
         ret
     }
 }
+
+// [0x007F9DB0] sub_007F9DB0 (116 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007F9DB0(int count, float* dst, const float* src) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        lea edi, [ecx + 4*eax]
+        mov eax, edi
+        sub eax, ecx
+        add eax, 0x3
+        cdq
+        and edx, 0x3
+        add eax, edx
+        sar eax, 0x2
+        cmp eax, 0x4
+        jl tail_loop
+        lea eax, [edi - 0xc]
+        __asm _emit 0x8d __asm _emit 0xa4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea esp, [esp]
+    unroll_loop:
+        fld dword ptr [esi]
+        add ecx, 0x10
+        fchs
+        add esi, 0x10
+        cmp ecx, eax
+        fstp dword ptr [ecx - 0x10]
+        fld dword ptr [esi - 0xc]
+        fchs
+        fstp dword ptr [ecx - 0xc]
+        fld dword ptr [esi - 0x8]
+        fchs
+        fstp dword ptr [ecx - 0x8]
+        fld dword ptr [esi - 0x4]
+        fchs
+        fstp dword ptr [ecx - 0x4]
+        jl unroll_loop
+    tail_loop:
+        cmp ecx, edi
+        jae done
+        __asm _emit 0x8d __asm _emit 0x49 __asm _emit 0x00 // lea ecx, [ecx]
+    single_loop:
+        fld dword ptr [esi]
+        add ecx, 0x4
+        fchs
+        add esi, 0x4
+        cmp ecx, edi
+        fstp dword ptr [ecx - 0x4]
+        jb single_loop
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
