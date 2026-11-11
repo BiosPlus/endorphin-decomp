@@ -62,3 +62,56 @@ extern "C" __declspec(naked) void __fastcall fn_00458990(void* self) {
         ret 0x8
     }
 }
+
+// [0x004585B0] SpinButtonStates::DragSpinState::vfunc_8 (113 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004585B0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x14], 0x0
+        je L_cmp
+        mov byte ptr [esi + 0x14], 0x0
+        pop esi
+        ret 0x8
+    L_cmp:
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esi + 0xc]
+        mov eax, dword ptr [eax + 0x4]
+        mov ecx, dword ptr [ecx + 0x18]
+        cmp eax, ecx
+        push edi
+        jle L_less
+        mov edx, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi + 0x8]
+        mov edi, dword ptr [edx]
+        call ext_006A5EC0
+        mov ecx, dword ptr [esi + 0x4]
+        push eax
+        mov eax, dword ptr [edi + 0x4]
+        call eax
+        jmp L_pos
+    L_less:
+        jge L_pos
+        mov ecx, dword ptr [esi + 0x4]
+        mov edi, dword ptr [ecx]
+        mov ecx, dword ptr [esi + 0x8]
+        call ext_006A5EC0
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [edi]
+        push eax
+        call edx
+    L_pos:
+        mov eax, dword ptr [esi + 0x10]
+        mov ecx, eax
+        shr ecx, 0x10
+        movsx edx, cx
+        movsx eax, ax
+        push edx
+        push eax
+        call dword ptr [mem_009256DC]
+        pop edi
+        mov byte ptr [esi + 0x14], 0x1
+        pop esi
+        ret 0x8
+    }
+}
