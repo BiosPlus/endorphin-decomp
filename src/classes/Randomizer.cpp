@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/classes/Randomizer.cpp
 
 extern "C" void ext_006A6E9E();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0053F5F0();
 
 // [0x0068BBC0] Randomizer::vfunc_10 (44 bytes)
 extern "C" void __fastcall fn_0068BBC0(void* self, int edx_unused, void* a1) {
@@ -9,4 +11,11 @@ extern "C" void __fastcall fn_0068BBC0(void* self, int edx_unused, void* a1) {
     if (p) {
         *(void**)((char*)self + 8) = *(void**)((char*)p + 8);
     }
+}
+
+// [0x0068BD60] Randomizer::vfunc_1_off_4 (42 bytes)
+extern "C" void __fastcall fn_0068BD60(void* self, int edx_unused, void* a1) {
+    void* r = ((void* (__fastcall*)(void*, int, void*))ext_0063EFE0)(a1, edx_unused, (void*)0x00985004);
+    a1 = r;
+    ((void (__cdecl*)(void*, void*))ext_0053F5F0)((char*)self + 4, &a1);
 }
