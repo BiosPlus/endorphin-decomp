@@ -6650,3 +6650,73 @@ extern "C" __declspec(naked) void __fastcall fn_004331D0(void* self) {
         ret
     }
 }
+
+// [0x004343C0] sub_004343C0 (141 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_0046F880();
+extern "C" void ext_0046F890();
+extern "C" void ext_0046F8A0();
+extern "C" void ext_00430370();
+
+extern "C" __declspec(naked) void __fastcall fn_004343C0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_00465B30
+        mov ecx, dword ptr [eax + 0x14]
+        call ext_0046F890
+        mov bl, al
+        call ext_00465B30
+        mov ecx, dword ptr [eax + 0x14]
+        call ext_0046F880
+        mov byte ptr [esp + 0x12], al
+        call ext_00465B30
+        mov ecx, dword ptr [eax + 0x14]
+        call ext_0046F8A0
+        mov esi, dword ptr [esp + 0x18]
+        mov ebp, dword ptr [esi]
+        mov ecx, edi
+        mov byte ptr [esp + 0x13], al
+        call ext_00430370
+        mov edx, dword ptr [ebp]
+        movzx eax, al
+        push eax
+        mov ecx, esi
+        call edx
+        test bl, bl
+        je L_4343C0_false
+        cmp byte ptr [esp + 0x12], 0x0
+        je L_4343C0_false
+        cmp byte ptr [esp + 0x13], 0x0
+        jne L_4343C0_false
+        mov edx, dword ptr [esi]
+        mov eax, 0x1
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        mov ecx, esi
+        call eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x4
+L_4343C0_false:
+        mov edx, dword ptr [esi]
+        xor eax, eax
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        mov ecx, esi
+        call eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x4
+    }
+}
