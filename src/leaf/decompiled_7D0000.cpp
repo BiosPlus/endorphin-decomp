@@ -1361,3 +1361,34 @@ extern "C" __declspec(naked) void __cdecl fn_007DADA0(void* self) {
         ret
     }
 }
+
+// [0x007D7190] sub_007D7190 (55 bytes)
+extern "C" void ext_007D5950();
+
+extern "C" __declspec(naked) void __cdecl fn_007D7190(int* p, int a2, int a3, int a4, int a5) {
+    __asm {
+        mov edx, dword ptr [esp + 4]
+        mov eax, dword ptr [edx]
+        mov ecx, dword ptr [esp + 0x10]
+        push esi
+        add ecx, eax
+        xor esi, esi
+        cmp ecx, dword ptr [esp + 0x10]
+        jg slow
+        mov esi, dword ptr [esp + 0xc]
+        add eax, esi
+        mov dword ptr [edx], ecx
+        pop esi
+        ret
+    slow:
+        mov edx, dword ptr [esp + 0x1c]
+        push 0x99df2c
+        push edx
+        push 0
+        call ext_007D5950
+        add esp, 0xc
+        mov eax, esi
+        pop esi
+        ret
+    }
+}

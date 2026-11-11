@@ -13,5 +13,7 @@
     "0x007D71B4",
     "0x007D71BC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T07:51:31Z"
 }
