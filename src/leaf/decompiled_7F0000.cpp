@@ -1533,3 +1533,62 @@ L_7F0E13:
         ret
     }
 }
+
+// [0x007F13F0] sub_007F13F0 (141 bytes)
+extern "C" int mem_00AA7E40;
+extern "C" __declspec(naked) void __fastcall fn_007F13F0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -2
+        push 0xa253b8
+        push 0x6a743b
+        mov eax, dword ptr fs:[0]
+        push eax
+        sub esp, 8
+        push ebx
+        push esi
+        push edi
+        mov eax, dword ptr [mem_00AA7E40]
+        xor dword ptr [ebp - 8], eax
+        xor eax, ebp
+        push eax
+        lea eax, [ebp - 10h]
+        mov dword ptr fs:[0], eax
+        mov dword ptr [ebp - 18h], esp
+        mov dword ptr [ebp - 4], 0
+        mov eax, 0
+        push ebx
+        cpuid
+        mov eax, dword ptr [ebp + 8]
+        mov dword ptr [eax], ebx
+        pop ebx
+        mov dword ptr [eax + 4], edx
+        mov dword ptr [eax + 8], ecx
+        mov dword ptr [ebp - 4], -2
+        mov al, 1
+        mov ecx, dword ptr [ebp - 10h]
+        mov dword ptr fs:[0], ecx
+        pop ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+        mov eax, 1
+        ret
+        mov esp, dword ptr [ebp - 18h]
+        mov dword ptr [ebp - 4], 0fffffffeh
+        xor al, al
+        mov ecx, dword ptr [ebp - 10h]
+        mov dword ptr fs:[0], ecx
+        pop ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
