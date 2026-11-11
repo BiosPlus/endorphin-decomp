@@ -1564,3 +1564,51 @@ extern "C" __declspec(naked) void __fastcall fn_005FFAE0(void* self) {
         ret
     }
 }
+
+// [0x005FC090] sub_005FC090 (118 bytes)
+// Allocates 0x40 bytes via ext_006A5C62 (operator new), wraps the body in an MSVC SEH frame
+// (state -1, __ehhandler 0x8A7A5B), copies 4 stack args into a 16-byte block and calls the
+// thiscall ctor fn_006271A0 (ret 0x10) on the new object. Returns the ctor's eax (this),
+// or NULL if the allocation failed.
+extern "C" void ext_006A5C62();
+extern "C" void ext_006271A0();
+
+extern "C" __declspec(naked) void __fastcall fn_005FC090(void* self) {
+    __asm {
+        push -1
+        push 8A7A5Bh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push 40h
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp], eax
+        test eax, eax
+        mov dword ptr [esp + 0ch], 0
+        je null_path_5FC090
+        mov ecx, dword ptr [esp + 14h]
+        sub esp, 10h
+        mov edx, esp
+        mov dword ptr [edx], ecx
+        mov ecx, dword ptr [esp + 28h]
+        mov dword ptr [edx + 4], ecx
+        mov ecx, dword ptr [esp + 2ch]
+        mov dword ptr [edx + 8], ecx
+        mov ecx, dword ptr [esp + 30h]
+        mov dword ptr [edx + 0ch], ecx
+        mov ecx, eax
+        call ext_006271A0
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret
+    null_path_5FC090:
+        mov ecx, dword ptr [esp + 4]
+        xor eax, eax
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
