@@ -2829,3 +2829,63 @@ extern "C" __declspec(naked) void __fastcall fn_006246B0(void* self) {
         ret
     }
 }
+
+// [0x00621AC0] sub_00621AC0 (98 bytes)
+extern "C" void ext_00406510();
+extern "C" void ext_00621740();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00621AC0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe m621ac0_ok1
+        call ebp
+    m621ac0_ok1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe m621ac0_ok2
+        call ebp
+    m621ac0_ok2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_00406510
+        mov edi, dword ptr [esi + 0x18]
+        add esi, 0x10
+        cmp dword ptr [esi + 0x4], edi
+        jbe m621ac0_ok3
+        call ebp
+    m621ac0_ok3:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe m621ac0_ok4
+        call ebp
+    m621ac0_ok4:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, esi
+        call ext_00621740
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
