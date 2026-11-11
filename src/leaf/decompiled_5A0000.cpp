@@ -524,3 +524,32 @@ extern "C" __declspec(naked) void __fastcall fn_005A9E70(void* self) {
         ret
     }
 }
+
+// [0x005A9F50] sub_005A9F50 (89 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005A9F50(void* self) {
+    __asm {
+        push -1
+        push 0x008a2184
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        call ext_00678520
+        lea ecx, [esi + 0x2c]
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esi], 0x0095ee74
+        call dword ptr [mem_00924FE8]
+        lea ecx, [esi + 0x48]
+        mov byte ptr [esp + 0x10], 1
+        call dword ptr [mem_00924FE8]
+        mov ecx, dword ptr [esp + 8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
