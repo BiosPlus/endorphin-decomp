@@ -1955,3 +1955,58 @@ extern "C" __declspec(naked) void __cdecl fn_007D62D0(void* self, int n) {
         ret
     }
 }
+
+// [0x007DA850] sub_007DA850 (114 bytes)
+extern "C" void* __cdecl ext_007D62D0(void* a0, int n);
+
+extern "C" __declspec(naked) void* __cdecl fn_007DA850(void* a1, int n, int m) {
+    __asm {
+        push ebx
+        mov ecx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        lea ebx, [edi + 2*edi]
+        lea esi, [4*edi]
+        add ebx, ebx
+        add ebx, ebx
+        lea eax, [ebx + 4*ebp + 0x40]
+        add eax, esi
+        add eax, esi
+        add eax, esi
+        add eax, esi
+        add eax, esi
+        push eax
+        push ecx
+        call ext_007D62D0
+        lea ecx, [eax + 0x40]
+        mov dword ptr [eax + 0x18], ecx
+        add ecx, esi
+        mov dword ptr [eax + 0x1c], ecx
+        add ecx, esi
+        mov dword ptr [eax + 0x14], ecx
+        add ecx, esi
+        mov dword ptr [eax + 0x4], ecx
+        add ecx, esi
+        add esp, 0x8
+        mov dword ptr [eax + 0x8], ecx
+        add ecx, esi
+        mov dword ptr [eax + 0x28], ecx
+        add ecx, ebx
+        mov dword ptr [eax + 0x30], edi
+        mov dword ptr [eax + 0x24], edi
+        pop edi
+        pop esi
+        mov dword ptr [eax], ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0x10], ebp
+        pop ebp
+        mov dword ptr [eax + 0x2c], ecx
+        mov dword ptr [eax + 0x20], ecx
+        mov dword ptr [eax + 0xc], ecx
+        pop ebx
+        ret
+    }
+}
