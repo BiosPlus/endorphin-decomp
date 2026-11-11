@@ -2794,3 +2794,46 @@ extern "C" unsigned char __stdcall fn_006602F0(void* node, void** out) {
     }
     return 0;
 }
+
+// [0x006678A0] sub_006678A0 (81 bytes)
+extern "C" void ext_00667F10();
+extern "C" void ext_00668D80();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_006678A0(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [esp + 0x8]
+        shl edx, 0x4
+        push eax
+        lea ecx, [edx + ecx + 0x8]
+        call ext_00668D80
+        test eax, eax
+        je L_ret0_006678A0
+        mov ecx, dword ptr [esp + 0xc]
+        cmp dword ptr [ecx + 0x14], 0x0
+        je L_d4_006678A0
+        push ecx
+        mov ecx, eax
+        call ext_00667F10
+        test eax, eax
+        jne L_ret_006678A0
+    L_ret0_006678A0:
+        xor eax, eax
+    L_ret_006678A0:
+        ret 0xc
+    L_d4_006678A0:
+        cmp dword ptr [eax + 0xc], 0x0
+        je L_ret0_006678A0
+        mov ecx, dword ptr [eax + 0x8]
+        push esi
+        mov esi, dword ptr [ecx]
+        cmp esi, ecx
+        jne L_skip_006678A0
+        call dword ptr [mem_00925134]
+    L_skip_006678A0:
+        lea eax, [esi + 0x28]
+        pop esi
+        ret 0xc
+    }
+}
