@@ -2340,3 +2340,66 @@ extern "C" __declspec(naked) void __fastcall fn_006497C0(void* self, int edx_unu
         __asm _emit 0xc2 __asm _emit 0x08 __asm _emit 0x00                  // ret 8
     }
 }
+
+// [0x00645A00] sub_00645A00 (119 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00645A00(void* self) {
+    __asm {
+        fldz
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, ecx
+        xor ebx, ebx
+    L_top:
+        mov eax, dword ptr [esi + 0x10]
+        test eax, eax
+        je L_exit
+        mov ecx, dword ptr [esi + 0x14]
+        sub ecx, eax
+        mov eax, 0x2aaaaaab
+        imul ecx
+        sar edx, 0x2
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jae L_exit
+        mov eax, dword ptr [esi + 0x10]
+        test eax, eax
+        je L_fail
+        mov ecx, dword ptr [esi + 0x14]
+        sub ecx, eax
+        mov eax, 0x2aaaaaab
+        imul ecx
+        sar edx, 0x2
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb L_ok
+    L_fail:
+        fstp st(0)
+        call ebp
+        fldz
+    L_ok:
+        mov eax, dword ptr [esi + 0x10]
+        fst qword ptr [eax + ebx + 0x10]
+        add eax, ebx
+        fst qword ptr [eax + 0x8]
+        add edi, 1
+        fst qword ptr [eax]
+        add ebx, 0x18
+        jmp L_top
+    L_exit:
+        pop edi
+        fstp st(0)
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
