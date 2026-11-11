@@ -1641,3 +1641,47 @@ extern "C" __declspec(naked) void __fastcall fn_00540F80(void* self) {
         ret
     }
 }
+
+// [0x00547820] sub_00547820 (118 bytes)
+extern "C" __declspec(naked) float* __fastcall fn_00547820(float* self, int edx_unused, float* out, const float* b) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        fldz
+        mov edx, dword ptr [esp + 8]
+        fst dword ptr [eax + 0Ch]
+        fst dword ptr [eax + 8]
+        fst dword ptr [eax + 4]
+        fstp dword ptr [eax]
+        fld dword ptr [edx + 8]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [edx + 4]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [ecx + 4]
+        fmul dword ptr [esp + 4]
+        fld dword ptr [ecx + 8]
+        fmul dword ptr [esp + 8]
+        fsubp st(1), st
+        fstp dword ptr [eax]
+        fld dword ptr [edx]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [edx + 8]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [ecx + 8]
+        fmul dword ptr [esp + 4]
+        fld dword ptr [ecx]
+        fmul dword ptr [esp + 8]
+        fsubp st(1), st
+        fstp dword ptr [eax + 4]
+        fld dword ptr [edx + 4]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [edx]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [ecx]
+        fmul dword ptr [esp + 4]
+        fld dword ptr [ecx + 4]
+        fmul dword ptr [esp + 8]
+        fsubp st(1), st
+        fstp dword ptr [eax + 8]
+        ret 8
+    }
+}
