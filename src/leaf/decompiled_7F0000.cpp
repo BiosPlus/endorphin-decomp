@@ -1148,3 +1148,69 @@ extern "C" __declspec(naked) void __cdecl fn_007F36C0(float* out, float* base, f
         ret
     }
 }
+
+// [0x007FB7E0] sub_007FB7E0 (123 bytes)
+// Uses eax, ecx, edx, esi as pointers to float triples and one float stack argument
+// (visible at [esp+8] after the push ecx). Hand-written to keep the exact x87 sequence.
+extern "C" __declspec(naked) int __fastcall fn_007FB7E0(void* self) {
+    __asm {
+        push    ecx
+        fld     dword ptr [eax + 8]
+        fstp    dword ptr [esp]
+        fld     dword ptr [ecx + 8]
+        fchs
+        fmul    dword ptr [esp + 8]
+        fstp    dword ptr [esp + 8]
+        fldz
+        fld     dword ptr [esp]
+        fcom    st(1)
+        fnstsw  ax
+        test    ah, 41h
+        jne     L_7FB819
+        fstp    st(1)
+        fstp    st(0)
+        fld     dword ptr [esp + 8]
+        fld     dword ptr [edx]
+        fcomp   st(1)
+        fnstsw  ax
+        test    ah, 41h
+        jne     L_7FB845
+        fstp    dword ptr [edx]
+        jmp     L_7FB847
+L_7FB819:
+        fcomp   st(1)
+        fnstsw  ax
+        test    ah, 5
+        jp      L_7FB837
+        fstp    st(0)
+        fld     dword ptr [esp + 8]
+        fld     dword ptr [esi]
+        fcomp   st(1)
+        fnstsw  ax
+        test    ah, 5
+        jp      L_7FB845
+        fstp    dword ptr [esi]
+        jmp     L_7FB847
+L_7FB837:
+        fcomp   dword ptr [ecx + 8]
+        fnstsw  ax
+        test    ah, 5
+        jp      L_7FB847
+L_7FB841:
+        xor     eax, eax
+        pop     ecx
+        ret
+L_7FB845:
+        fstp    st(0)
+L_7FB847:
+        fld     dword ptr [edx]
+        fld     dword ptr [esi]
+        fcompp
+        fnstsw  ax
+        test    ah, 41h
+        jp      L_7FB841
+        mov     eax, 1
+        pop     ecx
+        ret
+    }
+}
