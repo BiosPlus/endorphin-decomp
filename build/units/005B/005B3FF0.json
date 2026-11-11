@@ -12,5 +12,7 @@
   "relocations": [
     "0x005B3FF9"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5",
+  "matched_at": "2026-11-11T02:17:49Z"
 }
