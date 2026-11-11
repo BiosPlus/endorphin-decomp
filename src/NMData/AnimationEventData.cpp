@@ -178,3 +178,50 @@ extern "C" __declspec(naked) void __fastcall fn_004DE0F0(void* self, int edx_unu
         jmp ext_0047C480
     }
 }
+
+// [0x004E2700] NMData::AnimationEventData::vfunc_77 (93 bytes)
+extern "C" void ext_00596660();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004E2700(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push esi
+        mov ebx, ecx
+        lea esi, [ebx + 9B0h]
+        push edi
+        mov edi, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], edi
+        jbe chk1_ok
+        call dword ptr [mem_00925134]
+    chk1_ok:
+        push ebp
+        mov ebp, dword ptr [esi + 4]
+        cmp ebp, dword ptr [esi + 8]
+        jbe chk2_ok
+        call dword ptr [mem_00925134]
+    chk2_ok:
+        push edi
+        push esi
+        push ebp
+        push esi
+        lea eax, [esp + 20h]
+        push eax
+        mov ecx, esi
+        call ext_00596660
+        mov edi, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], edi
+        pop ebp
+        jbe chk3_ok
+        call dword ptr [mem_00925134]
+    chk3_ok:
+        mov dword ptr [ebx + 9C4h], edi
+        pop edi
+        mov dword ptr [ebx + 9C0h], esi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
