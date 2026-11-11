@@ -2941,3 +2941,38 @@ extern "C" __declspec(naked) void __fastcall fn_004EA2B0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004EA450] ExprParser::ReadWriteMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, bool, &public: void __thiscall NMData::PoseToolOptions::setProjectRootEnabled(bool)>::vfunc_40 (122 bytes)
+extern "C" int mem_00AE7138;
+extern "C" int mem_00AE7134;
+
+extern "C" __declspec(naked) void __fastcall fn_004EA450(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x88e9ce
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00AE7138], al
+        jne L_guarded
+        or dword ptr [mem_00AE7138], eax
+        mov ecx, offset mem_00AE7134
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00AE7134], 0x0094b76c
+        mov dword ptr [eax + 0x4], offset mem_00AE7134
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00AE7134
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
