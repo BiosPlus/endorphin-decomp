@@ -2104,3 +2104,15 @@ extern "C" __declspec(naked) void __fastcall fn_0053B240(void* self) {
         ret
     }
 }
+
+// [0x0053D280] sub_0053D280 (35 bytes)
+extern "C" void ext_0053B240();
+
+extern "C" void* __fastcall fn_0053D280(void* self) {
+    unsigned int* p = (unsigned int*)self;
+    ext_0053B240();
+    p[0] = 0x955c94;
+    p[0x14 / 4] = 0x955c8c;
+    p[0x9c / 4] = 0;
+    return self;
+}
