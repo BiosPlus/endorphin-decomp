@@ -216,3 +216,62 @@ extern "C" __declspec(naked) void* __fastcall fn_005C3E20(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x005C3AB0] NMData::CollisionModelData::vfunc_36 (141 bytes)
+extern "C" void ext_005B11F0();
+
+extern "C" __declspec(naked) void __fastcall fn_005C3AB0(void* self, int edx_unused, const float* a1) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x15c], 0
+        je done
+        fldz
+        mov eax, dword ptr [esi + 0xc]
+        mov edx, dword ptr [eax + 0x18]
+        fst dword ptr [esp + 0x10]
+        push edi
+        fst dword ptr [esp + 0x10]
+        lea edi, [esi + 0xc]
+        fst dword ptr [esp + 0xc]
+        lea ecx, [esp + 0x8]
+        fstp dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, edi
+        call edx
+        mov eax, dword ptr [esp + 0x1c]
+        fld dword ptr [eax]
+        lea ecx, [esp + 0x8]
+        fmul dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax]
+        fmul dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [eax]
+        mov eax, dword ptr [edi]
+        fmul dword ptr [esp + 0x14]
+        mov edx, dword ptr [eax + 0x14]
+        fstp dword ptr [esp + 0x14]
+        call edx
+        cmp dword ptr [esi + 0x10], 0
+        je cleanup
+        mov eax, dword ptr [esi + 0x10]
+        mov edi, dword ptr [eax]
+        mov ecx, dword ptr [esi + 0x15c]
+        add edi, 0x34
+        call ext_005B11F0
+        mov ecx, dword ptr [esi + 0x10]
+        mov edx, dword ptr [edi]
+        push eax
+        call edx
+cleanup:
+        pop edi
+done:
+        pop esi
+        add esp, 0x10
+        ret 0x4
+    }
+}
