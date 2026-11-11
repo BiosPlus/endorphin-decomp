@@ -63,3 +63,31 @@ extern "C" __declspec(naked) void __fastcall fn_004C1B20(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004C5350] NMData::ForceEventData::vfunc_6_off_C (53 bytes)
+extern "C" void ext_004C50C0();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_004C5350(void* self, int edx_unused, void* out) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx - 0x8]
+        mov edx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [eax + 0x8]
+        add ecx, -0x8
+        push edx
+        call eax
+        mov ecx, eax
+        call ext_004C50C0
+        fstp dword ptr [esp]
+        mov eax, dword ptr [esp + 0x8]
+        fld dword ptr [esp]
+        fst dword ptr [eax]
+        fst dword ptr [eax + 0x4]
+        fstp dword ptr [eax + 0x8]
+        fldz
+        fstp dword ptr [eax + 0xc]
+        pop ecx
+        ret 0x4
+    }
+}
