@@ -734,3 +734,44 @@ extern "C" __declspec(naked) void __fastcall fn_00497A60(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00497780] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_42 (105 bytes)
+extern "C" void ext_00497650();
+extern "C" int mem_00924FC4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00497780(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -0x1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x30]
+        push ebx
+        push eax
+        lea edx, [esp + 0x8]
+        push edx
+        call ext_00497650
+        push eax
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        push ecx
+        mov dword ptr [esp + 0x30], 0x0
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        lea ecx, [esp + 0x4]
+        __asm _emit 0x8a
+        __asm _emit 0xd8
+        mov dword ptr [esp + 0x28], -0x1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        __asm _emit 0x8a
+        __asm _emit 0xc3
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x8
+    }
+}
