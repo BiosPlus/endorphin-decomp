@@ -2397,3 +2397,45 @@ extern "C" __declspec(naked) void __fastcall fn_0040CAC0(void* self) {
         jmp edx
     }
 }
+
+// [0x00404D70] sub_00404D70 (111 bytes)
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void* __fastcall fn_00404D70(void* self, int edx_unused, const void* src) {
+    __asm {
+        push -1
+        push 0x8734e8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [edi]
+        mov esi, ecx
+        lea ecx, [edi + 0x4]
+        push ecx
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0xc], esi
+        mov dword ptr [esi], eax
+        call dword ptr [mem_00924FE0]
+        lea edx, [edi + 0x20]
+        push edx
+        lea ecx, [esi + 0x20]
+        mov dword ptr [esp + 0x18], 0x0
+        call dword ptr [mem_00924FE0]
+        add edi, 0x3c
+        push edi
+        lea ecx, [esi + 0x3c]
+        mov byte ptr [esp + 0x18], 0x1
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
