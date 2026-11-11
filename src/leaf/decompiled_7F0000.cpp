@@ -1091,3 +1091,60 @@ extern "C" __declspec(naked) void __cdecl fn_007FA1B0(float v) {
         ret
     }
 }
+
+// [0x007F36C0] sub_007F36C0 (119 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007F36C0(float* out, float* base, float* m, int idx) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        shl edi, 0x5
+        add edi, dword ptr [esp + 0x1c]
+        sub ebp, eax
+        mov dword ptr [esp + 0x10], 0x4
+    L_outer:
+        lea ebx, [eax + ebp]
+        mov edx, edi
+        mov ecx, ebx
+        mov esi, 0x3
+        _emit 0x8b
+        _emit 0xff
+    L_loop1:
+        fld dword ptr [edx]
+        add ecx, 0x10
+        fmul dword ptr [ecx - 0x10]
+        add edx, 0x4
+        sub esi, 0x1
+        fadd dword ptr [eax]
+        fstp dword ptr [eax]
+        jne L_loop1
+        lea edx, [edi + 0x10]
+        lea ecx, [ebx + 0x30]
+        mov esi, 0x3
+        nop
+    L_loop2:
+        fld dword ptr [edx]
+        add ecx, 0x10
+        fmul dword ptr [ecx - 0x10]
+        add edx, 0x4
+        sub esi, 0x1
+        fadd dword ptr [eax]
+        fstp dword ptr [eax]
+        jne L_loop2
+        add eax, 0x4
+        add edi, 0x40
+        sub dword ptr [esp + 0x10], 0x1
+        jne L_outer
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
