@@ -2040,3 +2040,60 @@ extern "C" __declspec(naked) void __fastcall fn_0067DBF0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0067F960] sub_0067F960 (104 bytes)
+extern "C" int mem_00B5A120;
+extern "C" int mem_00B5A124;
+extern "C" int mem_00B5A11C;
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0067F960(void* self) {
+    __asm {
+        mov edx, dword ptr [mem_00B5A120]
+        sub esp, 0x8
+        test edx, edx
+        je L_empty
+        mov eax, dword ptr [mem_00B5A124]
+        mov ecx, eax
+        sub ecx, edx
+        sar ecx, 0x2
+        jne L_nonempty
+    L_empty:
+        xor eax, eax
+        add esp, 0x8
+        ret
+    L_nonempty:
+        cmp edx, eax
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, eax
+        jbe L_skip1
+        call ebx
+        mov eax, dword ptr [mem_00B5A124]
+        mov edx, dword ptr [mem_00B5A120]
+    L_skip1:
+        mov ecx, offset mem_00B5A11C
+        push edi
+        mov edi, ecx
+        lea ecx, [esi - 0x4]
+        cmp ecx, eax
+        mov dword ptr [esp + 0x10], esi
+        ja L_call2
+        cmp ecx, edx
+        jae L_skip2
+    L_call2:
+        call ebx
+    L_skip2:
+        add esi, -0x4
+        cmp esi, dword ptr [edi + 0x8]
+        pop edi
+        jb L_skip3
+        call ebx
+    L_skip3:
+        mov eax, dword ptr [esi]
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
