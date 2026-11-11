@@ -2162,3 +2162,45 @@ L_fail_0052FFD0:
         ret
     }
 }
+
+// [0x0052EC80] sub_0052EC80 (117 bytes)
+extern "C" void ext_0052A410();
+extern "C" int mem_00AED9D0;
+
+extern "C" __declspec(naked) void __fastcall fn_0052EC80(void* self) {
+    __asm {
+        push -1
+        push 0x008B4838
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, ecx
+        mov dword ptr [esp + 0x8], edi
+        lea esi, [edi + 0x8]
+        mov dword ptr [edi], 0x00953938
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0
+        mov dword ptr [edi + 0x4], 0x00953930
+        call ext_0052A410
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x4], eax
+        mov byte ptr [eax + 0x61], 1
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x4], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x8], eax
+        mov dword ptr [esi + 0x8], 0
+        mov dword ptr [mem_00AED9D0], edi
+        mov eax, edi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
