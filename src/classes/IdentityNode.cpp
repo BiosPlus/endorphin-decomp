@@ -118,3 +118,55 @@ extern "C" __declspec(naked) void* __cdecl fn_00593D90(void) {
         ret
     }
 }
+
+// [0x00593E20] IdentityNode::vfunc_9_off_4 (138 bytes)
+extern "C" int mem_00B40D00;
+extern "C" int mem_00B40CC0;
+extern "C" int mem_00B40CC4;
+extern "C" int mem_00B40CC8;
+extern "C" int mem_00B40CCC;
+extern "C" int mem_00B40CD0;
+extern "C" int mem_00B40CD4;
+extern "C" int mem_00B40CD8;
+extern "C" int mem_00B40CDC;
+extern "C" int mem_00B40CE0;
+extern "C" int mem_00B40CE4;
+extern "C" int mem_00B40CE8;
+extern "C" int mem_00B40CEC;
+extern "C" int mem_00B40CF0;
+extern "C" int mem_00B40CF4;
+extern "C" int mem_00B40CF8;
+extern "C" int mem_00B40CFC;
+
+extern "C" __declspec(naked) void* __cdecl fn_00593E20(void) {
+    __asm {
+        mov eax, 1
+        test byte ptr [mem_00B40D00], al
+        jne early_out
+        fld1
+        or dword ptr [mem_00B40D00], eax
+        fst dword ptr [mem_00B40CC0]
+        push 0x91d550
+        fldz
+        fst dword ptr [mem_00B40CC4]
+        fst dword ptr [mem_00B40CC8]
+        fst dword ptr [mem_00B40CCC]
+        fst dword ptr [mem_00B40CD0]
+        fst dword ptr [mem_00B40CD8]
+        fst dword ptr [mem_00B40CDC]
+        fst dword ptr [mem_00B40CE0]
+        fst dword ptr [mem_00B40CE4]
+        fst dword ptr [mem_00B40CEC]
+        fst dword ptr [mem_00B40CF0]
+        fst dword ptr [mem_00B40CF4]
+        fstp dword ptr [mem_00B40CF8]
+        fst dword ptr [mem_00B40CD4]
+        fst dword ptr [mem_00B40CE8]
+        fstp dword ptr [mem_00B40CFC]
+        call ext_006A6C87
+        add esp, 4
+    early_out:
+        mov eax, offset mem_00B40CC0
+        ret
+    }
+}
