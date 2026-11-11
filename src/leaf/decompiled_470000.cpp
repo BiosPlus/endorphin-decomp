@@ -1437,3 +1437,80 @@ extern "C" __declspec(naked) void* __fastcall fn_004767E0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00470090] sub_00470090 (132 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00470090(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_004700A1
+        call edi
+    L_004700A1:
+        mov eax, dword ptr [esi + 4]
+        cmp byte ptr [eax + 45h], 0
+        je L_004700BB
+        mov eax, dword ptr [eax + 8]
+        mov dword ptr [esi + 4], eax
+        cmp byte ptr [eax + 45h], 0
+        je L_00470111
+    L_004700B6:
+        call edi
+        pop edi
+        pop esi
+        ret
+    L_004700BB:
+        mov ecx, dword ptr [eax]
+        cmp byte ptr [ecx + 45h], 0
+        jne L_004700E1
+        mov eax, dword ptr [ecx + 8]
+        cmp byte ptr [eax + 45h], 0
+        jne L_004700DB
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    L_004700D0:
+        mov ecx, eax
+        mov eax, dword ptr [ecx + 8]
+        cmp byte ptr [eax + 45h], 0
+        je L_004700D0
+    L_004700DB:
+        pop edi
+        mov dword ptr [esi + 4], ecx
+        pop esi
+        ret
+    L_004700E1:
+        mov eax, dword ptr [eax + 4]
+        cmp byte ptr [eax + 45h], 0
+        jne L_00470105
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_004700F0:
+        mov ecx, dword ptr [esi + 4]
+        cmp ecx, dword ptr [eax]
+        jne L_00470105
+        mov dword ptr [esi + 4], eax
+        mov edx, eax
+        mov eax, dword ptr [edx + 4]
+        cmp byte ptr [eax + 45h], 0
+        je L_004700F0
+    L_00470105:
+        mov ecx, dword ptr [esi + 4]
+        cmp byte ptr [ecx + 45h], 0
+        jne L_004700B6
+        mov dword ptr [esi + 4], eax
+    L_00470111:
+        pop edi
+        pop esi
+        ret
+    }
+}
