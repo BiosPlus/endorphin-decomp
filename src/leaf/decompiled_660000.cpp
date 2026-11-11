@@ -2448,3 +2448,60 @@ extern "C" __declspec(naked) void* __cdecl fn_00664D40() {
         ret
     }
 }
+
+// [0x00660280] sub_00660280 (104 bytes)
+extern "C" int mem_00B5907C;
+extern "C" int mem_00B59080;
+extern "C" int mem_00B59084;
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_00660280(void* self) {
+    __asm {
+        mov edx, dword ptr [mem_00B59080]
+        sub esp, 0x8
+        test edx, edx
+        je empty_00660280
+        mov eax, dword ptr [mem_00B59084]
+        mov ecx, eax
+        sub ecx, edx
+        sar ecx, 0x2
+        je empty_00660280
+        cmp edx, eax
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, eax
+        jbe chk_00660280
+        call ebx
+        mov eax, dword ptr [mem_00B59084]
+        mov edx, dword ptr [mem_00B59080]
+chk_00660280:
+        mov ecx, offset mem_00B5907C
+        push edi
+        mov edi, ecx
+        lea ecx, [esi - 0x4]
+        cmp ecx, eax
+        mov dword ptr [esp + 0x10], esi
+        ja bad1_00660280
+        cmp ecx, edx
+        jae ok1_00660280
+bad1_00660280:
+        call ebx
+ok1_00660280:
+        add esi, -0x4
+        cmp esi, dword ptr [edi + 0x8]
+        pop edi
+        jb ok2_00660280
+        call ebx
+ok2_00660280:
+        mov eax, dword ptr [esi]
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret
+empty_00660280:
+        xor eax, eax
+        add esp, 0x8
+        ret
+    }
+}
