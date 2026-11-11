@@ -53,3 +53,37 @@ extern "C" __declspec(naked) void __fastcall fn_0060BA80(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_00486CB0();
+extern "C" int mem_0093F7BC;
+extern "C" int mem_009722A8;
+
+// [0x0060C530] NMData::EffectorBaseData::vfunc_21 (63 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0060C530(void* self, int edx_unused, void* a1, int a2, int a3) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x24]
+        mov esi, ecx
+        mov ecx, edi
+        call edx
+        push offset mem_0093F7BC
+        push eax
+        lea eax, [esi + 4]
+        push eax
+        lea ecx, [esp + 0x1c]
+        call ext_00486CB0
+        push offset mem_009722A8
+        add edi, 0x20
+        push edi
+        add esi, 0x20
+        push esi
+        lea ecx, [esp + 0x1c]
+        call ext_00486CB0
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
