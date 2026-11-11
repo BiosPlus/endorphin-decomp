@@ -2773,3 +2773,60 @@ call_path:
         ret
     }
 }
+
+// [0x004906D0] sub_004906D0 (129 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_004906D0(void* out, const void* src_first, const void* src_last, void* buf, void* dest) {
+    __asm {
+        sub esp, 0x8
+        push ebp
+        mov ebp, dword ptr [esp + 0x20]
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        sub esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        sar esi, 0x2
+        test edi, edi
+        mov dword ptr [esp + 0x10], ebp
+        jne L_004906F7
+        call dword ptr [mem_00925134]
+    L_004906F7:
+        push ebx
+        lea ebx, [4*esi]
+        mov dword ptr [esp + 0x24], ebx
+        add ebx, ebp
+        cmp ebx, dword ptr [edi + 0x8]
+        ja L_0049070F
+        cmp ebx, dword ptr [edi + 0x4]
+        jae L_00490715
+    L_0049070F:
+        call dword ptr [mem_00925134]
+    L_00490715:
+        test esi, esi
+        mov ebp, dword ptr [esp + 0x1c]
+        mov dword ptr [ebp + 0x4], ebx
+        mov dword ptr [ebp], edi
+        pop ebx
+        jle L_00490748
+        mov esi, dword ptr [esp + 0x28]
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_00490733
+        call dword ptr [mem_00925134]
+    L_00490733:
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+        push eax
+        push ecx
+        push eax
+        push esi
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+    L_00490748:
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        add esp, 0x8
+        ret
+    }
+}
