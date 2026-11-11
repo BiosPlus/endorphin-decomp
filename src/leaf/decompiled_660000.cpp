@@ -2992,3 +2992,53 @@ tail_call:
         jmp ext_00665B80
     }
 }
+
+// [0x00665DC0] sub_00665DC0 (119 bytes)
+// MacroCommand-style ctor: Command base ctor (thiscall, 1 stack arg), vtable 0x987A1C,
+// std::string copy-ctor from arg1 at this+0x10, list-like head at this+0x2c, zeroed tail fields.
+extern "C" void ext_006657F0();
+extern "C" void ext_006658D0();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_00665DC0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x008B2DEF
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x18]
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 0x10], esi
+        call ext_006657F0
+        mov ecx, dword ptr [esp + 0x20]
+        push ecx
+        xor ebx, ebx
+        lea ecx, [esi + 0x10]
+        mov dword ptr [esp + 0x1c], ebx
+        mov dword ptr [esi], 0x00987A1C
+        call dword ptr [mem_00924FE0]
+        lea edi, [esi + 0x2c]
+        mov ecx, edi
+        mov byte ptr [esp + 0x18], 0x1
+        call ext_006658D0
+        mov dword ptr [edi + 0x4], eax
+        mov dword ptr [edi + 0x8], ebx
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x3c], ebx
+        mov dword ptr [esi + 0x40], ebx
+        mov dword ptr [esi + 0x44], ebx
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x8
+    }
+}
