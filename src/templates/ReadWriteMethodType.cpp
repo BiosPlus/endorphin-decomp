@@ -4149,3 +4149,38 @@ extern "C" __declspec(naked) void __fastcall fn_0058CB10(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0058F9E0] ExprParser::ReadWriteMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: void __thiscall TransformNode::setUserRefFrame(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>), 0}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00B3F970;
+extern "C" int mem_00B3F96C;
+extern "C" __declspec(naked) void __fastcall fn_0058F9E0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x89ffae
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B3F970], al
+        jne init_done
+        or dword ptr [mem_00B3F970], eax
+        mov ecx, offset mem_00B3F96C
+        mov dword ptr [esp+8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp+0x10]
+        mov dword ptr [mem_00B3F96C], 0x95c1e4
+        mov dword ptr [eax+4], offset mem_00B3F96C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+    init_done:
+        mov ecx, dword ptr [esp+0x10]
+        mov dword ptr [ecx+4], offset mem_00B3F96C
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+    }
+}
