@@ -1165,3 +1165,67 @@ L_006AA890_tail:
         jmp ext_006A60EE
     }
 }
+
+// [0x006AD440] sub_006AD440 (131 bytes)
+extern "C" void ext_006A5E00();
+extern "C" void ext_006A7C00();
+extern "C" void ext_006A7D10();
+extern "C" void ext_006A7D30();
+extern "C" void ext_006A7D50();
+extern "C" void ext_006A7D70();
+extern "C" int mem_00925654;
+extern "C" int mem_009256BC;
+
+extern "C" __declspec(naked) void __fastcall fn_006AD440(void* self, int edx_unused, int* a1, int* a2, int* a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x14]
+        call ext_006A7C00
+        cmp eax, esi
+        jne else_branch_6AD440
+        call dword ptr [mem_00925654]
+        push eax
+        call ext_006A5E00
+        mov ecx, dword ptr [esi + 0x14]
+        cmp eax, ecx
+        je inside_6AD440
+        test eax, eax
+        je null_focus_6AD440
+        mov eax, dword ptr [eax + 0x20]
+null_focus_6AD440:
+        push eax
+        mov eax, dword ptr [ecx + 0x20]
+        push eax
+        call dword ptr [mem_009256BC]
+        test eax, eax
+        jne inside_6AD440
+        mov ecx, dword ptr [esi + 0x14]
+        call ext_006A7D50
+        jmp store_a2_6AD440
+inside_6AD440:
+        mov ecx, dword ptr [esi + 0x14]
+        call ext_006A7D70
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [ecx], eax
+        mov ecx, dword ptr [esi + 0x14]
+        call ext_006A7D10
+        jmp store_a1_6AD440
+else_branch_6AD440:
+        mov eax, dword ptr [esi + 0x48]
+store_a2_6AD440:
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [ecx], eax
+        mov ecx, dword ptr [esi + 0x14]
+        call ext_006A7D30
+store_a1_6AD440:
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [edx], eax
+        mov ecx, dword ptr [esi + 0x14]
+        call ext_006A7D50
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx], eax
+        pop esi
+        ret 0xc
+    }
+}
