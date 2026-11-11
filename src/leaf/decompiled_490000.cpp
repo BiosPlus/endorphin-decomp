@@ -2320,3 +2320,67 @@ extern "C" __declspec(naked) void __cdecl fn_0049ECB0(void* first, void* last) {
         ret
     }
 }
+
+// [0x0049EFC0] sub_0049EFC0 (120 bytes)
+extern "C" void ext_004970A0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0049EFC0(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov ebx, dword ptr [edi + 0xd4]
+        mov eax, ebx
+        mov esi, dword ptr [eax]
+    L_loop1:
+        cmp esi, ebx
+        je short L_loop1_done
+        lea ecx, [esi + 8]
+        call ext_004970A0
+        mov esi, dword ptr [esi]
+        jmp short L_loop1
+    L_loop1_done:
+        mov ecx, dword ptr [edi + 0xe0]
+        mov ebx, dword ptr [ecx]
+        lea ebp, [edi + 0xdc]
+        __asm _emit 0x8b
+        __asm _emit 0xff
+    L_outer:
+        cmp ebp, ebp
+        mov esi, dword ptr [ebp + 4]
+        je short L_outer_ok
+        call dword ptr [mem_00925134]
+    L_outer_ok:
+        cmp ebx, esi
+        je short L_done
+        cmp ebx, dword ptr [ebp + 4]
+        jne short L_inner_setup
+        call dword ptr [mem_00925134]
+    L_inner_setup:
+        mov edi, dword ptr [ebx + 0xd0]
+        mov esi, dword ptr [edi]
+    L_loop2:
+        cmp esi, edi
+        je short L_loop2_done
+        lea ecx, [esi + 8]
+        call ext_004970A0
+        mov esi, dword ptr [esi]
+        jmp short L_loop2
+    L_loop2_done:
+        cmp ebx, dword ptr [ebp + 4]
+        jne short L_next
+        call dword ptr [mem_00925134]
+    L_next:
+        mov ebx, dword ptr [ebx]
+        jmp short L_outer
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
