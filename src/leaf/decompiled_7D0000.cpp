@@ -1240,3 +1240,19 @@ extern "C" __declspec(naked) void* __cdecl fn_007D83B0(void* self, void* arg2) {
         ret
     }
 }
+
+// [0x007D8680] sub_007D8680 (51 bytes)
+extern "C" void ext_007D83B0();
+extern "C" int mem_00AB28C4;
+
+extern "C" int __cdecl fn_007D8680(int a0) {
+    typedef int (__cdecl *FnB)(int);
+    typedef void (__cdecl *FnC)(int, int);
+    int r = (int)ext_007C9270((void*)a0) + 0x15c;
+    int esi = ((FnB)mem_00AB28C4)(r);
+    if (esi == 0) {
+        return 0;
+    }
+    ((FnC)ext_007D83B0)(esi, a0);
+    return esi;
+}
