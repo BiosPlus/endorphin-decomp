@@ -2837,3 +2837,31 @@ extern "C" __declspec(naked) void __fastcall fn_006678A0(void* self) {
         ret 0xc
     }
 }
+
+// [0x00665C20] sub_00665C20 (117 bytes)
+struct Lst00665C20Val { virtual ~Lst00665C20Val(); };
+struct Lst00665C20Node { Lst00665C20Node* _Next; Lst00665C20Node* _Prev; Lst00665C20Val* _Myval; };
+struct Lst00665C20Head { int _Pad; Lst00665C20Node* _Myhead; unsigned _Mysize; };
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+extern "C" void __fastcall fn_00665C20(void* self, int edx_unused, Lst00665C20Head* a1) {
+    typedef void (__cdecl *InvFn)();
+    if (a1->_Mysize == 0) return;
+    InvFn inv = reinterpret_cast<InvFn>(mem_00925134);
+    do {
+        Lst00665C20Node* t = a1->_Myhead->_Prev;
+        if (t == a1->_Myhead) inv();
+        if (t == a1->_Myhead) inv();
+        if (t->_Myval) delete t->_Myval;
+        t = a1->_Myhead->_Prev;
+        if (t == a1->_Myhead) inv();
+        if (t == a1->_Myhead) {
+            inv();
+            if (t == a1->_Myhead) continue;
+        }
+        t->_Prev->_Next = t->_Next;
+        t->_Next->_Prev = t->_Prev;
+        reinterpret_cast<void (__cdecl *)(void*)>(ext_006A5C5C)(t);
+        a1->_Mysize = a1->_Mysize - 1;
+    } while (a1->_Mysize != 0);
+}
