@@ -56,3 +56,34 @@ extern "C" __declspec(naked) int __fastcall fn_0061F990(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x00611830] NMData::SecondaryTwistAndSwingConstraint::vfunc_14 (54 bytes)
+extern "C" void ext_0058F6B0();
+extern "C" void ext_00661650();
+
+extern "C" __declspec(naked) void* __fastcall fn_00611830(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, 0x159
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0x0
+        je special
+        push eax
+        push esi
+        call ext_0058F6B0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    special:
+        push ecx
+        mov ecx, esi
+        call ext_00661650
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
