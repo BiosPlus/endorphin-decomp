@@ -2506,3 +2506,34 @@ extern "C" void ext_004275C0();
 extern "C" int mem_00924FF0;
 extern "C" int mem_009251F0;
 extern "C" int mem_00924FF4;
+
+// [0x0046C0A0] sub_0046C0A0 (101 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0046C0A0() {
+    __asm {
+        __asm _emit 0x6A __asm _emit 0xFF                         // push -1
+        __asm _emit 0x68 __asm _emit 0xF9 __asm _emit 0x56 __asm _emit 0x8B __asm _emit 0x00 // push 0x8b56f9
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, fs:[0]
+        __asm _emit 0x50                                          // push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov fs:[0], esp
+        __asm _emit 0x83 __asm _emit 0xEC __asm _emit 0x1C        // sub esp, 0x1c
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x30 // mov ecx, [esp+0x30]
+        __asm _emit 0x8D __asm _emit 0x04 __asm _emit 0x24        // lea eax, [esp]
+        __asm _emit 0x50                                          // push eax
+        __asm call ext_004275C0                                   // call 0x4275c0
+        __asm _emit 0x8B __asm _emit 0xC8                         // mov ecx, eax
+        __asm _emit 0xC7 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [esp+0x24], 0
+        __asm call dword ptr [mem_00924FF0]                       // c_str
+        __asm _emit 0x50                                          // push eax
+        __asm call dword ptr [mem_009251F0]                       // atof
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x30 // mov ecx, [esp+0x30]
+        __asm _emit 0xD9 __asm _emit 0x19                         // fstp dword ptr [ecx]
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04        // add esp, 4
+        __asm _emit 0x8D __asm _emit 0x0C __asm _emit 0x24        // lea ecx, [esp]
+        __asm _emit 0xC7 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x24 __asm _emit 0xFF __asm _emit 0xFF __asm _emit 0xFF __asm _emit 0xFF // mov dword ptr [esp+0x24], -1
+        __asm call dword ptr [mem_00924FF4]                       // ~basic_string
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x1C // mov ecx, [esp+0x1c]
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov fs:[0], ecx
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x28        // add esp, 0x28
+        __asm _emit 0xC3                                          // ret
+    }
+}
