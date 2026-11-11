@@ -130,3 +130,62 @@ extern "C" __declspec(naked) void __fastcall fn_00552340(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x005522B0] NMCamera::Perspective::vfunc_20 (134 bytes)
+extern "C" int mem_00993828;
+extern "C" int mem_0092C510;
+
+extern "C" __declspec(naked) void __fastcall fn_005522B0(void* self, int edx_unused, int* a1, float* a2, float* a3) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x14]
+        push edi
+        call edx
+        fmul qword ptr [mem_00993828]
+        mov eax, dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        fild dword ptr [eax + 0x4]
+        fld qword ptr [mem_0092C510]
+        __asm _emit 0xdc
+        __asm _emit 0xc9
+        fxch st(1)
+        fdiv qword ptr [esi + 0xb8]
+        fld1
+        fld st(0)
+        __asm _emit 0xde
+        __asm _emit 0xe2
+        fld dword ptr [esp + 0x14]
+        fld st(0)
+        fmulp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [edi]
+        pop edi
+        fstp dword ptr [esp + 0x4]
+        fild dword ptr [eax]
+        mov eax, dword ptr [esp + 0x14]
+        fmulp st(3), st
+        fxch st(2)
+        fdiv qword ptr [esi + 0xb0]
+        __asm _emit 0xde
+        __asm _emit 0xe2
+        fmul qword ptr [esi + 0xc0]
+        pop esi
+        fstp dword ptr [esp + 0xc]
+        fmul dword ptr [esp + 0xc]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp]
+        fstp dword ptr [eax + 0x8]
+        fld1
+        fstp dword ptr [eax + 0xc]
+        pop ecx
+        ret 0xc
+    }
+}
