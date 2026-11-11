@@ -2077,3 +2077,79 @@ extern "C" __declspec(naked) void* __fastcall fn_006B43F0(void* self) {
         ret 0xc
     }
 }
+
+// [0x006B7380] sub_006B7380 (145 bytes)
+extern "C" void ext_006A663A();
+extern "C" int mem_00925650;
+
+extern "C" __declspec(naked) void __fastcall fn_006B7380(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_006A663A
+        cmp byte ptr [esi + 0x60], 0
+        je L_end
+        test edi, edi
+        jne L_edi_set
+        xor ecx, ecx
+        jmp L_have_ecx
+    L_edi_set:
+        mov ecx, dword ptr [edi + 0x20]
+    L_have_ecx:
+        push ebx
+        lea ebx, [esi + 0x70]
+        test ebx, ebx
+        jne L_ebx_set
+        xor eax, eax
+        jmp L_have_eax
+    L_ebx_set:
+        mov eax, dword ptr [ebx + 0x20]
+    L_have_eax:
+        cmp ecx, eax
+        jne L_else
+        mov eax, dword ptr [esi + 0x20]
+        push eax
+        call dword ptr [mem_00925650]
+        push eax
+        call ext_006A5E00
+        mov ecx, eax
+        call ext_006A60D0
+        pop ebx
+        pop edi
+        pop esi
+        ret 4
+    L_else:
+        test edi, edi
+        je L_edi_skip
+        mov edi, dword ptr [edi + 0x20]
+    L_edi_skip:
+        mov ecx, dword ptr [esi + 0x20]
+        push ecx
+        call dword ptr [mem_00925650]
+        push eax
+        call ext_006A5E00
+        test eax, eax
+        je L_eax_skip
+        mov eax, dword ptr [eax + 0x20]
+    L_eax_skip:
+        cmp edi, eax
+        jne L_restore
+        mov eax, dword ptr [esi + 0x68]
+        test eax, eax
+        je L_restore
+        cmp eax, 0xd
+        je L_restore
+        mov ecx, ebx
+        call ext_006A60D0
+        mov dword ptr [esi + 0x68], 0
+    L_restore:
+        pop ebx
+    L_end:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
