@@ -1381,3 +1381,72 @@ skip_dd40:
         ret
     }
 }
+
+// [0x004CC610] sub_004CC610 (137 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004CC610(void* self, int edx_unused, const float* v) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        fstp dword ptr [esi + 0x18]
+        lea ebp, [esi + 0x18]
+        fld dword ptr [eax + 0x4]
+        push edi
+        fstp dword ptr [ebp + 0x4]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ebp + 0x8]
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        mov byte ptr [esi + 0x15], 0x1
+        jbe chk_begin_004CC610
+        call dword ptr [mem_00925134]
+    chk_begin_004CC610:
+    loop_004CC610:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe chk_this_004CC610
+        call dword ptr [mem_00925134]
+    chk_this_004CC610:
+        test esi, esi
+        je chk_bad_004CC610
+        cmp esi, esi
+        je chk_end_004CC610
+    chk_bad_004CC610:
+        call dword ptr [mem_00925134]
+    chk_end_004CC610:
+        cmp edi, ebx
+        je done_004CC610
+        test esi, esi
+        mov ebx, dword ptr [mem_00925134]
+        jne chk_it_004CC610
+        call ebx
+    chk_it_004CC610:
+        cmp edi, dword ptr [esi + 0x8]
+        jb body_004CC610
+        call ebx
+    body_004CC610:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [eax + 0x234]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xa4]
+        push ebp
+        call eax
+        cmp edi, dword ptr [esi + 0x8]
+        jb next_004CC610
+        call ebx
+    next_004CC610:
+        add edi, 0x4
+        jmp loop_004CC610
+    done_004CC610:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
