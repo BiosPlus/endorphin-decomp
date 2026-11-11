@@ -100,3 +100,45 @@ extern "C" __declspec(naked) void* __fastcall fn_005B4190(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x005B1680] Geometry::CuboidType::vfunc_5 (121 bytes)
+extern "C" __declspec(naked) float __fastcall fn_005B1680(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push 0x2
+        call ext_005B11E0
+        push 0x1
+        call ext_005B11E0
+        fmulp st(1), st
+        mov edx, dword ptr [esp + 0x8]
+        push 0x2
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fmul dword ptr [edx]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fabs
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        call ext_005B11E0
+        push 0x0
+        call ext_005B11E0
+        fmulp st(1), st
+        push 0x1
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fmul dword ptr [edx + 0x4]
+        faddp st(1), st
+        call ext_005B11E0
+        push 0x0
+        call ext_005B11E0
+        fmulp st(1), st
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fmul dword ptr [edx + 0x8]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret 0x8
+    }
+}
