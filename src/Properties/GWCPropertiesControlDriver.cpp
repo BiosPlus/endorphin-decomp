@@ -43,3 +43,43 @@ extern "C" void __fastcall fn_0041D390(void* self) {
         *(int*)(p + 0x18) = 0;
     }
 }
+
+// [0x0041DED0] Properties::GWCPropertiesControlDriver::vfunc_5 (60 bytes)
+extern "C" void ext_0048EF80();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0041DED0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x1c]
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_skip1
+        call ebp
+    L_skip1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L_skip2
+        call ebp
+    L_skip2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_0048EF80
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
