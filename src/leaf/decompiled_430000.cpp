@@ -4842,3 +4842,20 @@ extern "C" __declspec(naked) void __fastcall fn_00436AF0(void* self) {
         jmp eax
     }
 }
+
+// [0x00436CC0] sub_00436CC0 (56 bytes)
+extern "C" void ext_00436070();
+extern "C" void ext_00465B40();
+extern "C" void __fastcall fn_00436CC0(void* self) {
+    typedef void* (__cdecl *GetFn)();
+    typedef void (__thiscall *Fn0)(void*);
+    typedef void (__thiscall *Fn1)(void*, int);
+
+    ext_00436070();
+    void* a = ((GetFn)ext_00465B40)();
+    ((Fn0)(*(void***)a)[0x8c / 4])(a);
+    void* b = ((GetFn)ext_00465B40)();
+    ((Fn0)(*(void***)b)[0x64 / 4])(b);
+    void* c = ((GetFn)ext_00465B40)();
+    ((Fn1)(*(void***)c)[0x98 / 4])(c, 5);
+}
