@@ -2619,3 +2619,66 @@ extern "C" __declspec(naked) void __fastcall fn_00414E00(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x0041A530] sub_0041A530 (110 bytes)
+extern "C" void ext_0041A190();
+
+extern "C" __declspec(naked) int __fastcall fn_0041A530(void* self, int edx_unused, unsigned int key) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x8], 0x0
+        jne L_0041A545
+        xor eax, eax
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    L_0041A545:
+        push ebx
+        push ebp
+        push edi
+        lea eax, [esp + 0x1c]
+        push eax
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        call ext_0041A190
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        mov ebx, dword ptr [esi + 0x4]
+        mov ebp, dword ptr [mem_00925134]
+        je L_0041A56E
+        cmp edi, esi
+        je L_0041A570
+    L_0041A56E:
+        call ebp
+    L_0041A570:
+        mov esi, dword ptr [esp + 0x14]
+        cmp esi, ebx
+        je L_0041A592
+        test edi, edi
+        jne L_0041A57E
+        call ebp
+    L_0041A57E:
+        cmp esi, dword ptr [edi + 0x4]
+        jne L_0041A585
+        call ebp
+    L_0041A585:
+        mov eax, dword ptr [esi + 0x10]
+        pop edi
+        pop ebp
+        pop ebx
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    L_0041A592:
+        pop edi
+        pop ebp
+        pop ebx
+        xor eax, eax
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    }
+}
