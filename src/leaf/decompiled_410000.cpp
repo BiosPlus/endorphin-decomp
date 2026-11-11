@@ -2397,3 +2397,68 @@ extern "C" __declspec(naked) int __fastcall fn_00416C30(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x00419F50] sub_00419F50 (108 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00419F50(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi], 0x0
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_skip_call_00419F50
+        call edi
+    L_skip_call_00419F50:
+        mov eax, dword ptr [esi + 0x4]
+        cmp byte ptr [eax + 0x15], 0x0
+        je L_not_nil_00419F50
+        call edi
+        pop edi
+        pop esi
+        ret
+    L_not_nil_00419F50:
+        mov ecx, dword ptr [eax + 0x8]
+        cmp byte ptr [ecx + 0x15], 0x0
+        jne L_right_nil_00419F50
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 0x15], 0x0
+        jne L_store_left_00419F50
+    L_leftmost_loop_00419F50:
+        mov ecx, eax
+        mov eax, dword ptr [ecx]
+        cmp byte ptr [eax + 0x15], 0x0
+        je L_leftmost_loop_00419F50
+    L_store_left_00419F50:
+        pop edi
+        mov dword ptr [esi + 0x4], ecx
+        pop esi
+        ret
+    L_right_nil_00419F50:
+        mov eax, dword ptr [eax + 0x4]
+        cmp byte ptr [eax + 0x15], 0x0
+        jne L_store_parent_00419F50
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_up_loop_00419F50:
+        mov ecx, dword ptr [esi + 0x4]
+        cmp ecx, dword ptr [eax + 0x8]
+        jne L_store_parent_00419F50
+        mov dword ptr [esi + 0x4], eax
+        mov edx, eax
+        mov eax, dword ptr [edx + 0x4]
+        cmp byte ptr [eax + 0x15], 0x0
+        je L_up_loop_00419F50
+    L_store_parent_00419F50:
+        pop edi
+        mov dword ptr [esi + 0x4], eax
+        pop esi
+        ret
+    }
+}
