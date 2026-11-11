@@ -1361,3 +1361,54 @@ extern "C" __declspec(naked) void __fastcall fn_00455EB0(void* self) {
         ret
     }
 }
+
+// [0x0045E510] sub_0045E510 (94 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0045E510(void* self, int edx_unused, void* out, const unsigned int* key) {
+    __asm {
+        mov edx, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [edx + 0x4]
+        cmp byte ptr [eax + 0x15], 0x0
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        jne L_part2
+        mov esi, dword ptr [edi]
+    L_loop1:
+        cmp esi, dword ptr [eax + 0xc]
+        jae L_right1
+        mov edx, eax
+        mov eax, dword ptr [eax]
+        jmp L_chk1
+    L_right1:
+        mov eax, dword ptr [eax + 0x8]
+    L_chk1:
+        cmp byte ptr [eax + 0x15], 0x0
+        je L_loop1
+    L_part2:
+        mov esi, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [esi + 0x4]
+        cmp byte ptr [eax + 0x15], 0x0
+        jne L_done
+        mov edi, dword ptr [edi]
+    L_loop2:
+        cmp dword ptr [eax + 0xc], edi
+        jae L_left2
+        mov eax, dword ptr [eax + 0x8]
+        jmp L_chk2
+    L_left2:
+        mov esi, eax
+        mov eax, dword ptr [eax]
+    L_chk2:
+        cmp byte ptr [eax + 0x15], 0x0
+        je L_loop2
+    L_done:
+        mov eax, dword ptr [esp + 0xc]
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], edx
+        pop esi
+        ret 0x8
+    }
+}
