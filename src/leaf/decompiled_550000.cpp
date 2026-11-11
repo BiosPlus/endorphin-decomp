@@ -1942,3 +1942,68 @@ extern "C" __declspec(naked) void __fastcall fn_0055B720(void* self) {
         ret
     }
 }
+
+// [0x00550420] sub_00550420 (121 bytes)
+extern "C" int mem_009252C4;
+extern "C" int mem_009252C0;
+
+extern "C" __declspec(naked) void __stdcall fn_00550420(void* stream, int* counts, char* buf) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push edi
+        push 0x0
+        push 0x0
+        push ebx
+        call dword ptr [mem_009252C4]
+        mov edi, dword ptr [esp + 0x20]
+        push ebx
+        push 0x800
+        push edi
+        call dword ptr [mem_009252C0]
+        add esp, 0x18
+        test eax, eax
+        je done
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        mov ebp, 0x1
+    loop_top:
+        mov al, byte ptr [edi]
+        cmp al, 0x66
+        je inc_f
+        cmp al, 0x76
+        jne next
+        mov al, byte ptr [edi + 0x1]
+        cmp al, 0x20
+        jne check_n
+        add dword ptr [esi], ebp
+        jmp next
+    check_n:
+        cmp al, 0x6e
+        jne check_t
+        add dword ptr [esi + 0x4], ebp
+        jmp next
+    check_t:
+        cmp al, 0x74
+        jne next
+        add dword ptr [esi + 0x8], ebp
+        jmp next
+    inc_f:
+        add dword ptr [esi + 0xc], ebp
+    next:
+        push ebx
+        push 0x800
+        push edi
+        call dword ptr [mem_009252C0]
+        add esp, 0xc
+        test eax, eax
+        jne loop_top
+        pop esi
+        pop ebp
+    done:
+        pop edi
+        pop ebx
+        ret 0xc
+    }
+}
