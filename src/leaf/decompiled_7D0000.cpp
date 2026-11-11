@@ -1208,3 +1208,35 @@ extern "C" void __cdecl fn_007D8760(void* a, void* b) {
         ++*reinterpret_cast<int*>(p + 0x164);
     }
 }
+
+// [0x007D83B0] sub_007D83B0 (68 bytes)
+extern "C" void __cdecl ext_006A6E8C(void* dst, int value, unsigned int count);
+extern "C" void __cdecl ext_007CCAB0(char* self);
+extern "C" void __cdecl ext_007D8760(void* a, void* b);
+
+extern "C" __declspec(naked) void* __cdecl fn_007D83B0(void* self, void* arg2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push 0xd8
+        push 0x0
+        push esi
+        call ext_006A6E8C
+        fld1
+        fst dword ptr [esi + 0x6c]
+        lea eax, [esi + 0x84]
+        fstp dword ptr [esi + 0x50]
+        push eax
+        fld dword ptr [mem_0099D148]
+        fstp dword ptr [esi + 0xd0]
+        call ext_007CCAB0
+        mov ecx, dword ptr [esp + 0x1c]
+        push esi
+        push ecx
+        call ext_007D8760
+        add esp, 0x18
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
