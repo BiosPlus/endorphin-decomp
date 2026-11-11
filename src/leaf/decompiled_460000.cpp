@@ -2364,3 +2364,50 @@ extern "C" __declspec(naked) void* __fastcall fn_0046C500(void* self) {
         ret
     }
 }
+
+// [0x004638E0] sub_004638E0 (98 bytes)
+extern "C" int mem_00925694;
+extern "C" __declspec(naked) void __fastcall fn_004638E0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0x2
+        push -0x1
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x2e4]
+        push 0x100c
+        push eax
+        call edi
+        add eax, 0x1
+        je done_4638E0
+        push ebx
+    loop_4638E0:
+        mov ecx, dword ptr [esi + 0x2e4]
+        push 0x2
+        lea ebx, [eax - 0x1]
+        push ebx
+        push 0x100c
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0x2e4]
+        push 0x0
+        push ebx
+        push 0x1008
+        push edx
+        call edi
+        mov eax, dword ptr [esi + 0x2e4]
+        push 0x2
+        push -0x1
+        push 0x100c
+        push eax
+        call edi
+        add eax, 0x1
+        jne loop_4638E0
+        pop ebx
+    done_4638E0:
+        pop edi
+        pop esi
+        ret
+    }
+}
