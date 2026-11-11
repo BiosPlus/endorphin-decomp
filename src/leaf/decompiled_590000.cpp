@@ -2410,3 +2410,61 @@ extern "C" void* __fastcall fn_0059DCD0(void* self, int edx_unused, void* a1) {
     void* p = fn_00586140((char*)self + 4, edx_unused, a1);
     return ((RTDynCast)ext_006A6E9E)(p, 0, (void*)0xA2E2BC, (void*)0xA30158, 0);
 }
+
+// [0x0059DD00] sub_0059DD00 (104 bytes)
+// Stack args: a1, a2 (ret 8). Compares the std::string at a2 against the char* in mem_00A34650
+// via the imported operator==(const string&, const char*) (cdecl). On match returns sub_0059DCD0(this, a1).
+// Otherwise r = sub_0059DCD0(this, a1); if r is null returns 0, else dynamic_casts
+// sub_00586140(r, a2) to NMData::Characterization* via __RTDynamicCast.
+extern "C" void ext_00586140();
+extern "C" void ext_0059DCD0();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00A34650;
+extern "C" int mem_00924FC0;
+extern "C" __declspec(naked) void* __fastcall fn_0059DD00(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [mem_00A34650]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push eax
+        push edi
+        mov esi, ecx
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        je not_match
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_0059DCD0
+        pop edi
+        pop esi
+        ret 0x8
+    not_match:
+        mov edx, dword ptr [esp + 0xc]
+        push edx
+        mov ecx, esi
+        call ext_0059DCD0
+        test eax, eax
+        je zero
+        push edi
+        mov ecx, eax
+        call ext_00586140
+        push 0x0
+        push 0xa30158
+        push 0xa2e2bc
+        push 0x0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        pop edi
+        pop esi
+        ret 0x8
+    zero:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x8
+    }
+}
