@@ -837,3 +837,53 @@ extern "C" __declspec(naked) void __cdecl fn_007F4C50(float* dst, unsigned char*
         ret
     }
 }
+
+// [0x007F66D0] sub_007F66D0 (116 bytes)
+extern "C" double mem_009453D8;
+
+extern "C" __declspec(naked) bool __cdecl fn_007F66D0(const float* a1, const float* a2, float a3) {
+    __asm {
+        sub esp, 0xc
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x14]
+        fld dword ptr [eax]
+        fsub dword ptr [ecx]
+        fstp dword ptr [esp]
+        fld dword ptr [eax + 0x4]
+        fsub dword ptr [ecx + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x8]
+        fsub dword ptr [ecx + 0x8]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x4]
+        fld dword ptr [esp]
+        fld dword ptr [esp + 0x8]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x18]
+        fld qword ptr [mem_009453D8]
+        fmul st, st(1)
+        fmulp st(1), st
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne short fn_007F66D0_false
+        mov al, 1
+        add esp, 0xc
+        ret
+    fn_007F66D0_false:
+        xor al, al
+        add esp, 0xc
+        ret
+    }
+}
