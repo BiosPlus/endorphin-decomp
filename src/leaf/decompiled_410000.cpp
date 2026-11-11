@@ -2462,3 +2462,52 @@ extern "C" __declspec(naked) void __fastcall fn_00419F50(void* self) {
         ret
     }
 }
+
+// [0x0041A200] sub_0041A200 (87 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0041A200(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov edi, edi
+    L_top_0041A200:
+        mov esi, dword ptr [esp + 0x14]
+        test esi, esi
+        je L_inv1_0041A200
+        cmp esi, dword ptr [esp + 0x1c]
+        je L_ok1_0041A200
+    L_inv1_0041A200:
+        call ebx
+    L_ok1_0041A200:
+        mov edi, dword ptr [esp + 0x18]
+        cmp edi, ebp
+        je L_done_0041A200
+        lea ecx, [esp + 0x14]
+        call fn_00419F50
+        test esi, esi
+        jne L_s1_0041A200
+        call ebx
+    L_s1_0041A200:
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_s2_0041A200
+        call ebx
+    L_s2_0041A200:
+        mov ecx, dword ptr [edi + 0x10]
+        test ecx, ecx
+        je L_top_0041A200
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x4]
+        push 1
+        call edx
+        jmp L_top_0041A200
+    L_done_0041A200:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
