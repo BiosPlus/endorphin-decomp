@@ -1684,3 +1684,62 @@ extern "C" __declspec(naked) void __cdecl fn_0050FAA0(void* arr, int hi, int lo,
         ret
     }
 }
+
+// [0x00500340] sub_00500340 (92 bytes)
+extern "C" int mem_00924EF4;
+
+extern "C" __declspec(naked) void** __cdecl fn_00500340(void** first, void** last, const void* value) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        sub edi, ebx
+        sar edi, 0x2
+        test edi, edi
+        jle done
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    loop_top:
+        mov eax, edi
+        cdq
+        sub eax, edx
+        mov esi, eax
+        sar esi, 1
+        mov ecx, dword ptr [ebx + 4 * esi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        push ebp
+        call edx
+        push eax
+        call dword ptr [mem_00924EF4]
+        add esp, 8
+        test al, al
+        je not_less
+        or eax, -1
+        sub eax, esi
+        lea ebx, [ebx + 4 * esi + 4]
+        add edi, eax
+        jmp next
+    not_less:
+        mov edi, esi
+    next:
+        test edi, edi
+        jg loop_top
+        pop esi
+        pop ebp
+    done:
+        pop edi
+        mov eax, ebx
+        pop ebx
+        ret
+    }
+}
