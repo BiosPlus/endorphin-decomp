@@ -28,3 +28,41 @@ extern "C" void __fastcall fn_0052F450(void* self, int edx_unused, float* out) {
     out[1] = t1;
     out[2] = t0;
 }
+
+// [0x0053C1F0] Primitives::Arrow::vfunc_28 (95 bytes)
+extern "C" int mem_00925418;
+extern "C" int mem_00925414;
+extern "C" int mem_0093F7B8;
+extern "C" int mem_00955A30;
+extern "C" int mem_009254CC;
+extern "C" int mem_00925404;
+extern "C" int mem_00925438;
+
+extern "C" __declspec(naked) void __fastcall fn_0053C1F0(void* self) {
+    __asm {
+        push esi
+        push 0803ah
+        mov esi, ecx
+        call dword ptr [mem_00925418]
+        call dword ptr [mem_00925414]
+        fldz
+        sub esp, 0x10
+        fst dword ptr [esp + 0xc]
+        fld dword ptr [mem_0093F7B8]
+        fstp dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [mem_00955A30]
+        fstp dword ptr [esp]
+        call dword ptr [mem_009254CC]
+        mov eax, dword ptr [esi + 0x3c]
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [eax + 0x58]
+        lea ecx, [esi + 0x3c]
+        push edx
+        call eax
+        call dword ptr [mem_00925404]
+        pop esi
+        mov dword ptr [esp + 0x4], 0803ah
+        jmp dword ptr [mem_00925438]
+    }
+}
