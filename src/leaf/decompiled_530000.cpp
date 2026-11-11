@@ -1536,3 +1536,43 @@ done:
         ret
     }
 }
+
+// [0x00539660] sub_00539660 (88 bytes)
+extern "C" void ext_00532B60();
+extern "C" void ext_00538D10();
+extern "C" void* __cdecl ext_0063E000();
+extern "C" void ext_0063E00C();
+extern "C" void ext_0063E012();
+extern "C" int mem_00955260;
+extern "C" int mem_0093F8EC;
+extern "C" int mem_0095509c;
+extern "C" __declspec(naked) void __fastcall fn_00539660(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00532B60
+        fld dword ptr [mem_00955260]
+        push 0xc
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        mov ecx, esi
+        fld dword ptr [mem_0093F8EC]
+        mov dword ptr [esi], offset mem_0095509c
+        fstp dword ptr [esp + 0x4]
+        fld1
+        fstp dword ptr [esp]
+        call ext_00538D10
+        call ext_0063E000
+        push 0x186ac
+        push eax
+        mov dword ptr [esi + 0x14], eax
+        call ext_0063E012
+        mov eax, dword ptr [esi + 0x14]
+        push 0x186a0
+        push eax
+        call ext_0063E00C
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
