@@ -443,3 +443,39 @@ extern "C" __declspec(naked) void __fastcall fn_004882C0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00488510] ExprParser::ReadWriteMethodType<NMData::DesiredPoseEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DesiredPoseEventData::getCharacterName(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::DesiredPoseEventData::`vcall'{324, {flat}}, 0}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00AD9E38;
+extern "C" int mem_00AD9E34;
+
+extern "C" __declspec(naked) void __fastcall fn_00488510(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x884b1e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00AD9E38], al
+        jne init_done
+        or dword ptr [mem_00AD9E38], eax
+        mov ecx, offset mem_00AD9E34
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00AD9E34], 0x0093de44
+        mov dword ptr [eax + 0x4], offset mem_00AD9E34
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    init_done:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00AD9E34
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
