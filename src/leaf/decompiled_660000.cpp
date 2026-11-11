@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_660000.cpp
 
+#include <string>
+
 // [0x0066B060] sub_0066B060 (19 bytes)
 extern "C" void ext_0065F440();
 
@@ -2307,5 +2309,45 @@ extern "C" __declspec(naked) void __fastcall fn_00665990(void* self) {
         pop ebx
         add esp, 0x8
         ret 0xc
+    }
+}
+
+// [0x00662AB0] sub_00662AB0 (97 bytes)
+// Returns a std::string by value (hidden return buffer is the stack arg, ret 0).
+// Builds a temp file name: GetTempPathA, then GetTempFileNameA with the prefix
+// taken from the global std::string at 0x00B5925C, then constructs the result.
+extern "C" int mem_0092424C;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924250;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00B5925C;
+
+extern "C" __declspec(naked) std::string* __cdecl fn_00662AB0() {
+    __asm {
+        sub esp, 0x20c
+        push esi
+        lea eax, [esp + 0x8]
+        push eax
+        push 0x104
+        mov dword ptr [esp + 0xc], 0x0
+        call dword ptr [mem_0092424C]
+        lea ecx, [esp + 0x10c]
+        push ecx
+        push 0x0
+        mov ecx, offset mem_00B5925C
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea edx, [esp + 0x14]
+        push edx
+        call dword ptr [mem_00924250]
+        mov esi, dword ptr [esp + 0x214]
+        lea eax, [esp + 0x10c]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        add esp, 0x20c
+        ret
     }
 }
