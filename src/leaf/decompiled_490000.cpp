@@ -2830,3 +2830,32 @@ extern "C" __declspec(naked) void* __cdecl fn_004906D0(void* out, const void* sr
         ret
     }
 }
+
+// [0x00490860] sub_00490860 (53 bytes)
+extern "C" void ext_004906D0();
+extern "C" __declspec(naked) void* __cdecl fn_00490860(void* a0, void* a1, void* a2, void* a3, void* a4, void* a5, void* a6) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push eax
+        mov eax, dword ptr [esp + 0x24]
+        push ecx
+        mov ecx, dword ptr [esp + 0x24]
+        push edx
+        mov edx, dword ptr [esp + 0x24]
+        push eax
+        mov eax, dword ptr [esp + 0x20]
+        push ecx
+        push edx
+        push eax
+        push esi
+        call ext_004906D0
+        add esp, 0x20
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
