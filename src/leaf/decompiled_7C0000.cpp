@@ -2804,3 +2804,17 @@ extern "C" int __cdecl fn_007C9280(void* p) {
     }
     return *(int*)((char*)p + 0xa4);
 }
+
+// [0x007C93E0] sub_007C93E0 (119 bytes)
+extern "C" void ext_007CA110();
+
+extern "C" void __cdecl fn_007C93E0(void* a0, int a1, int a2, int a3) {
+    char* self = (char*)a0;
+    if (a1 == 0) {
+        ((void (__cdecl*)(int, int, int, int))ext_007CA110)(*(int*)(self + 0x94), (int)(self + 0xbc), 0, a2);
+        ((void (__cdecl*)(int, int, int, int))ext_007CA110)(*(int*)(self + 0x94), (int)(self + 0xcc), 0, a3);
+    } else {
+        ((void (__cdecl*)(int, int, int, int))ext_007CA110)(*(int*)(self + 0x98), (int)(self + 0xfc), 0, a2);
+        ((void (__cdecl*)(int, int, int, int))ext_007CA110)(*(int*)(self + 0x98), (int)(self + 0x10c), 0, a3);
+    }
+}
