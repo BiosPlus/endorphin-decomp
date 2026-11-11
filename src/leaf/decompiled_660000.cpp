@@ -2884,3 +2884,44 @@ extern "C" void __fastcall fn_00666120(void* self) {
     *(int*)(p + 0xc) = 0;
     fn_00665B80(self);
 }
+
+// [0x00668150] sub_00668150 (117 bytes)
+extern "C" void ext_00667F80();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B594A4;
+extern "C" int mem_00B594B4;
+
+extern "C" __declspec(naked) void* __fastcall fn_00668150(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        mov edx, dword ptr [esp + 0x4]
+        push -0x1
+        push 0x8b307e
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        shl edx, 0x4
+        mov dword ptr fs:[0x0], esp
+        push eax
+        lea ecx, [edx + ecx + 0x8]
+        call ext_00668D80
+        test eax, eax
+        jne L_ret_fn_00668150
+        mov eax, 0x1
+        test byte ptr [mem_00B594B4], al
+        jne L_guarded_fn_00668150
+        or dword ptr [mem_00B594B4], eax
+        mov ecx, offset mem_00B594A4
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_00667F80
+        push 0x921650
+        call ext_006A6C87
+        add esp, 0x4
+    L_guarded_fn_00668150:
+        mov eax, offset mem_00B594A4
+    L_ret_fn_00668150:
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret 0x8
+    }
+}
