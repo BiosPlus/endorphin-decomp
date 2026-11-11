@@ -2871,3 +2871,58 @@ L_no_xf:
         ret
     }
 }
+
+// [0x007CD880] sub_007CD880 (124 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007CD880(void* self) {
+    __asm {
+        fld dword ptr [ecx]
+        fmul dword ptr [eax]
+        fld dword ptr [ecx + 0x4]
+        fmul dword ptr [eax + 0x4]
+        fsubp st(1), st
+        fld dword ptr [ecx + 0x8]
+        fmul dword ptr [eax + 0x8]
+        fsubp st(1), st
+        fld dword ptr [ecx + 0xc]
+        fmul dword ptr [eax + 0xc]
+        fsubp st(1), st
+        fstp dword ptr [edx]
+        fld dword ptr [eax + 0x4]
+        fmul dword ptr [ecx]
+        fld dword ptr [ecx + 0x4]
+        fmul dword ptr [eax]
+        faddp st(1), st
+        fld dword ptr [eax + 0xc]
+        fmul dword ptr [ecx + 0x8]
+        faddp st(1), st
+        fld dword ptr [ecx + 0xc]
+        fmul dword ptr [eax + 0x8]
+        fsubp st(1), st
+        fstp dword ptr [edx + 0x4]
+        fld dword ptr [eax + 0x8]
+        fmul dword ptr [ecx]
+        fld dword ptr [ecx + 0x8]
+        fmul dword ptr [eax]
+        faddp st(1), st
+        fld dword ptr [ecx + 0xc]
+        fmul dword ptr [eax + 0x4]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x4]
+        fmul dword ptr [eax + 0xc]
+        fsubp st(1), st
+        fstp dword ptr [edx + 0x8]
+        fld dword ptr [eax + 0xc]
+        fmul dword ptr [ecx]
+        fld dword ptr [ecx + 0xc]
+        fmul dword ptr [eax]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x4]
+        fmul dword ptr [eax + 0x8]
+        faddp st(1), st
+        fld dword ptr [eax + 0x4]
+        fmul dword ptr [ecx + 0x8]
+        fsubp st(1), st
+        fstp dword ptr [edx + 0xc]
+        ret
+    }
+}
