@@ -1728,3 +1728,45 @@ extern "C" char* __cdecl fn_00685260(char* first, char* last, const int* value) 
     }
     return cur;
 }
+
+// [0x006877B0] sub_006877B0 (99 bytes)
+extern "C" void ext_00427640();
+extern "C" __declspec(naked) void __fastcall fn_006877B0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        lea eax, [esp + 0x14]
+        push eax
+        push ebx
+        mov edi, ecx
+        mov dword ptr [esp + 0x1c], esi
+        call ext_00427640
+        add esp, 0x8
+        cmp esi, 0xb53a34
+        je L_match
+        cmp esi, 0xb53b30
+        je L_match
+        cmp esi, 0xb53ab0
+        je L_match
+        cmp esi, 0xb53a70
+        je L_match
+        cmp esi, 0xb53af0
+        je L_match
+        mov ecx, dword ptr [esp + 0x18]
+        or dword ptr [edi + 0x150], ecx
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x10
+    L_match:
+        mov dl, byte ptr [esp + 0x1c]
+        pop edi
+        pop esi
+        mov byte ptr [ebx], dl
+        pop ebx
+        ret 0x10
+    }
+}
