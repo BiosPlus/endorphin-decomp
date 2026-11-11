@@ -115,3 +115,23 @@ extern "C" void __fastcall fn_0051C7E0(void* self) {
         *reinterpret_cast<void**>(p + 0x34) = r;
     }
 }
+
+extern "C" void ext_0051AE40();
+
+// [0x0051D8C0] NMData::QuatChannel::vfunc_8 (31 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0051D8C0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        push esi
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_0051AE40
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
