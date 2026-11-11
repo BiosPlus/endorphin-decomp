@@ -1558,3 +1558,38 @@ extern "C" __declspec(naked) void __fastcall fn_0054C640(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0054C890] sub_0054C890 (114 bytes)
+extern "C" void ext_0065C660();
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_0054C890(void* self) {
+    __asm {
+        push -1
+        push 0x8991f0
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x956e2c
+        lea ecx, [esi + 0x9c]
+        mov dword ptr [esp + 0x10], 0x2
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 0x60]
+        mov byte ptr [esp + 0x10], 0x1
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 0x18]
+        mov byte ptr [esp + 0x10], 0x0
+        call dword ptr [mem_00924FF4]
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_0065C660
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
