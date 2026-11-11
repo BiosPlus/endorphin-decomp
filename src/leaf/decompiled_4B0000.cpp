@@ -1008,3 +1008,40 @@ extern "C" __declspec(naked) void __fastcall fn_004B6680(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x004BA170] sub_004BA170 (94 bytes)
+extern "C" void ext_00665810();
+
+extern "C" __declspec(naked) void __fastcall fn_004BA170(void* self) {
+    __asm {
+        push -1
+        push 0x88a1e8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, ecx
+        mov dword ptr [esp + 0x8], edi
+        mov esi, dword ptr [edi + 0x18]
+        test esi, esi
+        mov dword ptr [esp + 0x14], 0
+        je L_base
+        mov ecx, esi
+        call dword ptr [mem_00924FF4]
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    L_base:
+        mov ecx, edi
+        mov dword ptr [esp + 0x14], -1
+        call ext_00665810
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
