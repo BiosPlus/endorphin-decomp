@@ -2626,3 +2626,28 @@ extern "C" __declspec(naked) void* __fastcall fn_00494FF0(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0049FB70] sub_0049FB70 (126 bytes)
+extern "C" void ext_0049D3F0();
+extern "C" void ext_0049E4A0();
+extern "C" void ext_0049E4C0();
+extern "C" void ext_00671F30();
+extern "C" void* __cdecl fn_0049FB70(void* a, void* obj, int code) {
+    volatile int tmp = 0;
+    switch (code) {
+    case 0x257:
+        if (((char*)obj)[0x64] != 0) {
+            ((void (__cdecl*)(void*, void*))ext_0049E4C0)(a, obj);
+            return a;
+        }
+        break;
+    case 0x2d4:
+        ((void (__cdecl*)(void*, void*))ext_0049E4A0)(a, obj);
+        return a;
+    case 0x386:
+        ((void (__cdecl*)(void*, void*))ext_0049D3F0)(a, obj);
+        return a;
+    }
+    ((void (__cdecl*)(void*))ext_00671F30)(a);
+    return a;
+}
