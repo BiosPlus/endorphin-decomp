@@ -1911,3 +1911,34 @@ extern "C" void __cdecl fn_007C5FD0(char* self, float* out) {
     out[7] = *(float*)(self + 0x134);
     out[8] = *(float*)(self + 0x138);
 }
+
+// [0x007C6250] sub_007C6250 (89 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C6250(void* self, const void* in) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        fld dword ptr [ecx]
+        mov edx, dword ptr [esp + 0x4]
+        fstp dword ptr [edx + 0x110]
+        lea eax, [edx + 0x110]
+        fld dword ptr [ecx + 0x4]
+        add edx, 0xd0
+        fstp dword ptr [eax + 0x4]
+        mov dword ptr [esp + 0x8], eax
+        fld dword ptr [ecx + 0x8]
+        mov dword ptr [esp + 0x4], edx
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax + 0x10]
+        fld dword ptr [ecx + 0x10]
+        fstp dword ptr [eax + 0x14]
+        fld dword ptr [ecx + 0x14]
+        fstp dword ptr [eax + 0x18]
+        fld dword ptr [ecx + 0x18]
+        fstp dword ptr [eax + 0x20]
+        fld dword ptr [ecx + 0x1c]
+        fstp dword ptr [eax + 0x24]
+        fld dword ptr [ecx + 0x20]
+        fstp dword ptr [eax + 0x28]
+        jmp ext_007D5170
+    }
+}
