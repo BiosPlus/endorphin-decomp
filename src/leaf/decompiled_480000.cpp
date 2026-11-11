@@ -2995,3 +2995,77 @@ extern "C" void* __cdecl fn_00480920() {
     ext_006A6C87(0x917090);
     return &mem_00AD9738;
 }
+
+// [0x00481E60] sub_00481E60 (139 bytes)
+extern "C" void ext_00481B50();
+extern "C" __declspec(naked) bool __cdecl fn_00481E60(void* a, void* b) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [edi + 0x4]
+        test eax, eax
+        jne L_a_nonnull
+        xor ecx, ecx
+        jmp L_a_size_done
+    L_a_nonnull:
+        mov ecx, dword ptr [edi + 0x8]
+        sub ecx, eax
+        sar ecx, 0x2
+    L_a_size_done:
+        mov ebx, dword ptr [esp + 0x14]
+        mov esi, dword ptr [ebx + 0x4]
+        test esi, esi
+        jne L_b_nonnull
+        xor eax, eax
+        jmp L_b_size_done
+    L_b_nonnull:
+        mov eax, dword ptr [ebx + 0x8]
+        sub eax, esi
+        sar eax, 0x2
+    L_b_size_done:
+        cmp ecx, eax
+        jne L_not_equal
+        cmp esi, dword ptr [ebx + 0x8]
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+    L_chk1:
+        push ebp
+        mov ebp, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebp
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+    L_chk2:
+        mov edi, dword ptr [edi + 0x4]
+        mov eax, dword ptr [esp + 0x14]
+        cmp edi, dword ptr [eax + 0x8]
+        jbe L_chk3
+        call dword ptr [mem_00925134]
+    L_chk3:
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x14]
+        push ecx
+        push edx
+        push esi
+        push ebx
+        push ebp
+        push edi
+        call ext_00481B50
+        add esp, 0x18
+        test al, al
+        pop ebp
+        je L_not_equal
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+    L_not_equal:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
