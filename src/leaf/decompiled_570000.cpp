@@ -1228,3 +1228,47 @@ extern "C" __declspec(naked) void __fastcall fn_0057CA60(void* self) {
         ret
     }
 }
+
+// [0x00575CE0] sub_00575CE0 (98 bytes)
+extern "C" int mem_00924FD4;
+
+extern "C" __declspec(naked) bool __fastcall fn_00575CE0(void* self, int edx_unused, void* s, void* str, int* flag) {
+    __asm {
+        sub esp, 0x34
+        push esi
+        mov esi, dword ptr [esp + 0x3c]
+        push edi
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_0092508C]
+        mov edi, dword ptr [esp + 0x48]
+        push 0x4
+        push edi
+        mov ecx, esi
+        call dword ptr [mem_00925090]
+        push 0x1c
+        lea ecx, [esp + 0x24]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00925090]
+        mov ecx, dword ptr [esp + 0x44]
+        lea edx, [esp + 0x20]
+        push edx
+        call dword ptr [mem_00924FD4]
+        cmp dword ptr [edi], 0x1
+        jge keep_flag
+        mov dword ptr [edi], 0x0
+        pop edi
+        mov al, 0x1
+        pop esi
+        add esp, 0x34
+        ret 0xc
+    keep_flag:
+        pop edi
+        xor al, al
+        pop esi
+        add esp, 0x34
+        ret 0xc
+    }
+}
