@@ -1330,3 +1330,34 @@ L_0045BEFE:
         ret 0x4
     }
 }
+
+// [0x00455EB0] sub_00455EB0 (91 bytes)
+extern "C" void ext_006A5FF2();
+extern "C" void ext_006A679C();
+
+extern "C" __declspec(naked) void __fastcall fn_00455EB0(void* self) {
+    __asm {
+        push -1
+        push 0x0087EB38
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x00936D5C
+        lea ecx, [esi + 0xFC]
+        mov dword ptr [esp + 0x10], 0x0
+        mov dword ptr [ecx], 0x0092A23C
+        call ext_006A5FF2
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_006A679C
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
