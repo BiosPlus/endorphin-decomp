@@ -1194,3 +1194,21 @@ extern "C" __declspec(naked) void __fastcall fn_005AC930(void* self) {
         ret
     }
 }
+
+// [0x005A0BB0] sub_005A0BB0 (49 bytes)
+extern "C" void ext_0059E220();
+extern "C" void ext_00673C20();
+extern "C" void __cdecl fn_005A0BB0(int a, int b) {
+    int c = a;
+    if (b > 0) {
+        do {
+            ((void (__fastcall*)(int))ext_00673C20)(c);
+        } while (--b > 0);
+    }
+    if (b < 0) {
+        b = -b;
+        do {
+            ((void (__fastcall*)(int))ext_0059E220)(c);
+        } while (--b != 0);
+    }
+}
