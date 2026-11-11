@@ -883,3 +883,41 @@ extern "C" __declspec(naked) void* __fastcall fn_004B71C0(void* self) {
         ret 0x8
     }
 }
+
+// [0x00497980] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_7 (105 bytes)
+// SEH-framed. Passes the float a2 (twice: as bits and as a float) to sub_00497800
+// with a hidden string return slot, assigns the result into **a1 via
+// std::string::operator= (mem_00924FDC), then destroys the temp (mem_00924FF4). ret 8.
+extern "C" void ext_00497800();
+
+extern "C" __declspec(naked) void __fastcall fn_00497980(void* self, int edx_unused, void* a1, float a2) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x30]
+        fld dword ptr [esp + 0x30]
+        push eax
+        push ecx
+        lea ecx, [esp + 0x8]
+        fstp dword ptr [esp]
+        push ecx
+        call ext_00497800
+        add esp, 0xc
+        mov edx, dword ptr [esp + 0x2c]
+        mov ecx, dword ptr [edx]
+        push eax
+        mov dword ptr [esp + 0x28], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp]
+        mov dword ptr [esp + 0x24], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x8
+    }
+}
