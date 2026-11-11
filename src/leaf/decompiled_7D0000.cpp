@@ -1892,3 +1892,66 @@ extern "C" __declspec(naked) void __fastcall fn_007DEC00(void* unused, void* sel
         ret
     }
 }
+
+// [0x007D62D0] sub_007D62D0 (131 bytes)
+extern "C" int mem_0099DEF8;
+extern "C" void ext_007D58E0();
+
+extern "C" __declspec(naked) void __cdecl fn_007D62D0(void* self, int n) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp edi, dword ptr [esi + 0x4]
+        jle L_7D6347
+        cmp dword ptr [esi + 0x18], 0x0
+        jne L_7D62F8
+        mov eax, dword ptr [esi + 0x1c]
+        push offset mem_0099DEF8
+        push eax
+        push 0x0
+        call ext_007D58E0
+        add esp, 0xc
+    L_7D62F8:
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je L_7D6317
+        mov ecx, dword ptr [esi + 0x1c]
+        mov edx, dword ptr [ecx + 0x10]
+        push eax
+        call edx
+        add esp, 0x4
+        mov dword ptr [esi], 0x0
+        mov dword ptr [esi + 0x4], 0x0
+    L_7D6317:
+        mov ecx, dword ptr [esi + 0xc]
+        mov eax, dword ptr [esi + 0x1c]
+        mov edx, dword ptr [eax + 0x8]
+        push ecx
+        push edi
+        call edx
+        add esp, 0x8
+        test eax, eax
+        mov dword ptr [esi], eax
+        je L_7D6330
+        mov dword ptr [esi + 0x4], edi
+    L_7D6330:
+        mov eax, dword ptr [esi + 0x4]
+        cmp eax, dword ptr [esi + 0x8]
+        mov dword ptr [esi + 0x14], 0x1
+        jle L_7D634E
+        mov dword ptr [esi + 0x8], eax
+        mov eax, dword ptr [esi]
+        pop edi
+        pop esi
+        ret
+    L_7D6347:
+        mov dword ptr [esi + 0x14], 0x1
+    L_7D634E:
+        mov eax, dword ptr [esi]
+        pop edi
+        pop esi
+        ret
+    }
+}
