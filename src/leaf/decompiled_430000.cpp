@@ -4366,3 +4366,50 @@ extern "C" __declspec(naked) void __cdecl fn_0043E690() {
         ret
     }
 }
+
+// [0x00434DB0] sub_00434DB0 (121 bytes)
+extern "C" int mem_00924E7C;
+extern "C" int mem_00924E80;
+extern "C" int mem_00924EA0;
+extern "C" int mem_00924E9C;
+extern "C" __declspec(naked) void __fastcall fn_00434DB0(void* self) {
+    __asm {
+        push -1
+        push 0x87a638
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        mov dword ptr [esp + 0x10], 0
+        call dword ptr [mem_00924E7C]
+        test al, al
+        jne L_skip_osfx
+        mov ecx, dword ptr [esi]
+        call dword ptr [mem_00924E80]
+L_skip_osfx:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [eax]
+        mov ecx, dword ptr [ecx + 4]
+        add ecx, eax
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call dword ptr [mem_00924EA0]
+        test eax, eax
+        je L_skip_unlock
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        mov ecx, dword ptr [edx + 4]
+        add ecx, eax
+        call dword ptr [mem_00924EA0]
+        mov ecx, eax
+        call dword ptr [mem_00924E9C]
+L_skip_unlock:
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
