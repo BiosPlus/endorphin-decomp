@@ -1266,3 +1266,64 @@ extern "C" __declspec(naked) bool __fastcall fn_007F14B0(void* self) {
         ret
     }
 }
+
+// [0x007F9EB0] sub_007F9EB0 (126 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007F9EB0(int n, float* dst, float* a, float* b) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        lea ebx, [ecx + 4*eax]
+        mov eax, ebx
+        sub eax, ecx
+        add eax, 0x3
+        cdq
+        and edx, 0x3
+        add eax, edx
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        sar eax, 0x2
+        cmp eax, 0x4
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        jl tail_7F9EB0
+        mov eax, edi
+        lea edx, [ebx - 0xc]
+        sub eax, esi
+    loop4_7F9EB0:
+        fld dword ptr [edi]
+        add ecx, 0x10
+        fadd dword ptr [esi]
+        add esi, 0x10
+        add edi, 0x10
+        cmp ecx, edx
+        fstp dword ptr [ecx - 0x10]
+        fld dword ptr [eax + esi - 0xc]
+        fadd dword ptr [esi - 0xc]
+        fstp dword ptr [ecx - 0xc]
+        fld dword ptr [edi - 0x8]
+        fadd dword ptr [esi - 0x8]
+        fstp dword ptr [ecx - 0x8]
+        fld dword ptr [edi - 0x4]
+        fadd dword ptr [esi - 0x4]
+        fstp dword ptr [ecx - 0x4]
+        jl loop4_7F9EB0
+    tail_7F9EB0:
+        cmp ecx, ebx
+        jae done_7F9EB0
+    loop1_7F9EB0:
+        fld dword ptr [edi]
+        add ecx, 0x4
+        fadd dword ptr [esi]
+        add esi, 0x4
+        add edi, 0x4
+        cmp ecx, ebx
+        fstp dword ptr [ecx - 0x4]
+        jb loop1_7F9EB0
+    done_7F9EB0:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
