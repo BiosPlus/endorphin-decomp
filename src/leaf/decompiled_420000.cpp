@@ -1379,3 +1379,63 @@ STORE_PARENT:
         ret
     }
 }
+
+// [0x004274E0] sub_004274E0 (108 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_004274E0(void* first, void* last, void* dlast) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        cmp dword ptr [esp + 0x8], ebx
+        je EQUAL_RANGE
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        lea edi, [ebp + 0x5]
+        lea esi, [ebx + 0x5]
+        jmp LOOP_TOP
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+LOOP_TOP:
+        mov eax, dword ptr [ebx - 0x24]
+        sub esi, 0x24
+        sub edi, 0x24
+        sub ebx, 0x24
+        sub ebp, 0x24
+        lea ecx, [esi - 0x1]
+        lea edx, [edi - 0x1]
+        cmp edx, ecx
+        mov dword ptr [ebp], eax
+        je SKIP_ASSIGN
+        mov al, byte ptr [esi - 0x1]
+        mov byte ptr [edi - 0x1], al
+        mov cl, byte ptr [esi + 0x1]
+        mov byte ptr [edi + 0x1], cl
+        mov dl, byte ptr [esi]
+        lea eax, [esi + 0x3]
+        push eax
+        lea ecx, [edi + 0x3]
+        mov byte ptr [edi], dl
+        call dword ptr [mem_00924FDC]
+SKIP_ASSIGN:
+        cmp ebx, dword ptr [esp + 0x14]
+        jne LOOP_TOP
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+EQUAL_RANGE:
+        mov eax, dword ptr [esp + 0x10]
+        pop ebx
+        ret
+    }
+}
+
