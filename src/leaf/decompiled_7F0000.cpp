@@ -1592,3 +1592,18 @@ extern "C" __declspec(naked) void __fastcall fn_007F13F0(void* self) {
         ret
     }
 }
+
+// [0x007FB140] sub_007FB140 (59 bytes)
+extern "C" void ext_007C8960();
+
+extern "C" int __cdecl fn_007FB140(int* self) {
+    typedef void (__cdecl *F)(int*, int, int, const int*);
+    int d[6];
+    d[0] = 0;
+    d[4] = 0;
+    d[5] = 0;
+    d[1] = 0x7faf80;
+    d[2] = 0x7fadc0;
+    ((F)ext_007C8960)(self, 1, 3, d);
+    return 1;
+}
