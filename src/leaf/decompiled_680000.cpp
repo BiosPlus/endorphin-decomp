@@ -1707,3 +1707,24 @@ extern "C" __declspec(naked) void __fastcall fn_006895A0(void* self) {
         ret
     }
 }
+
+// [0x00685260] sub_00685260 (96 bytes)
+// lower_bound over 148-byte records keyed by an unsigned dword at offset 0.
+extern "C" char* __cdecl fn_00685260(char* first, char* last, const int* value) {
+    char* cur = first;
+    int count = (int)(last - first) / 148;
+    if (count > 0) {
+        int key = *value;
+        do {
+            int half = count / 2;
+            char* mid = cur + half * 148;
+            if (*(int*)mid < key) {
+                cur = mid + 148;
+                count = count - half - 1;
+            } else {
+                count = half;
+            }
+        } while (count > 0);
+    }
+    return cur;
+}
