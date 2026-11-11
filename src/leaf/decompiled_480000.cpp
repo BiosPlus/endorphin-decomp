@@ -3146,3 +3146,12 @@ extern "C" void __cdecl fn_00480880(void** first, int hole, int bottom, void* va
     }
     ((void (__cdecl*)(void**, int, int, void*, int))ext_00480370)(first, hole, top, val, pred);
 }
+
+// [0x00480D90] sub_00480D90 (63 bytes)
+extern "C" void __cdecl fn_00480D90(void** first, void** last, int comp) {
+    int len = last - first;
+    for (int hole = len / 2; hole > 0; ) {
+        --hole;
+        fn_00480880(first, hole, len, first[hole], comp);
+    }
+}
