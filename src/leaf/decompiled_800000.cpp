@@ -296,3 +296,17 @@ extern "C" __declspec(naked) void __fastcall fn_00802D90(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00803AE0] sub_00803AE0 (122 bytes)
+#include <math.h>
+#pragma intrinsic(fabs)
+extern "C" int __cdecl fn_00803AE0(const float* v) {
+    float m[3];
+    m[0] = (float)fabs(v[0]);
+    m[1] = (float)fabs(v[1]);
+    m[2] = (float)fabs(v[2]);
+    if (m[0] > m[1]) {
+        return (m[2] < m[0]) ? 0 : 2;
+    }
+    return (m[2] < m[1]) ? 1 : 2;
+}
