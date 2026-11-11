@@ -1494,3 +1494,45 @@ extern "C" __declspec(naked) void __fastcall fn_00532770(void* self) {
         ret
     }
 }
+
+// [0x0053AD70] sub_0053AD70 (88 bytes)
+extern "C" double mem_00A44840;
+extern "C" __declspec(naked) void __fastcall fn_0053AD70(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x24]
+        test eax, eax
+        je done
+        fld dword ptr [eax + 0x14]
+        fld1
+        fsub qword ptr [mem_00A44840]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        mov eax, dword ptr [ecx + 0x1c]
+        jne pathb
+        test eax, 0x100000
+        jne pa_chk
+        xor eax, 0x100000
+        mov dword ptr [ecx + 0x1c], eax
+pa_chk:
+        mov eax, dword ptr [ecx + 0x1c]
+        test al, 0x1
+        je done
+        xor eax, 0x1
+        mov dword ptr [ecx + 0x1c], eax
+        ret
+pathb:
+        test eax, 0x100000
+        je pb_chk
+        xor eax, 0x100000
+        mov dword ptr [ecx + 0x1c], eax
+pb_chk:
+        mov eax, dword ptr [ecx + 0x1c]
+        test al, 0x1
+        jne done
+        xor eax, 0x1
+        mov dword ptr [ecx + 0x1c], eax
+done:
+        ret
+    }
+}
