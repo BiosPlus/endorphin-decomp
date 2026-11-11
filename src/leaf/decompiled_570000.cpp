@@ -1403,3 +1403,43 @@ extern "C" __declspec(naked) void* __fastcall fn_0057CEE0(void* self, int edx_un
         ret 14h
     }
 }
+
+// [0x0057CF80] sub_0057CF80 (59 bytes)
+extern "C" void ext_0057CEE0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0057CF80(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe m57cf80_ok1
+        call ebp
+    m57cf80_ok1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe m57cf80_ok2
+        call ebp
+    m57cf80_ok2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_0057CEE0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
