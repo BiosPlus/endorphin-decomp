@@ -2396,3 +2396,75 @@ extern "C" void* __fastcall fn_00459210(void* self, int edx_unused, int a1, int 
     *(int*)((char*)self + 0x28) = 0x18;
     return self;
 }
+
+// [0x0045BE30] sub_0045BE30 (145 bytes)
+extern "C" void ext_006A6442();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_0045BE30(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0
+        push 0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x20]
+        push 0x110a
+        push eax
+        call edi
+        mov ecx, dword ptr [esi + 0x20]
+        push eax
+        push 9
+        push 0x110b
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0x20]
+        push 0
+        push 0
+        push 0x110a
+        push edx
+        call edi
+        push 0
+        push 2
+        push 2
+        push 0
+        push 0
+        push 0
+        push 8
+        push eax
+        mov ecx, esi
+        call ext_006A6442
+        mov eax, dword ptr [esi + 0x20]
+        push 0
+        push 0
+        push 0x110a
+        push eax
+        call edi
+        push 0
+        push 0x10
+        push 0x10
+        push 0
+        push 0
+        push 0
+        push 8
+        push eax
+        mov ecx, esi
+        call ext_006A6442
+        mov ecx, dword ptr [esi + 0x20]
+        push 0
+        push 0
+        push 0x110a
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0x20]
+        push eax
+        push 0
+        push 0x1114
+        push edx
+        call edi
+        pop edi
+        pop esi
+        ret
+    }
+}
