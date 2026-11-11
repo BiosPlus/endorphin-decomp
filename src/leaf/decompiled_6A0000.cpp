@@ -1229,3 +1229,58 @@ store_a1_6AD440:
         ret 0xc
     }
 }
+
+// [0x006A02B0] sub_006A02B0 (138 bytes)
+extern "C" void ext_00665810();
+
+extern "C" __declspec(naked) void __fastcall fn_006A02B0(void* self) {
+    __asm {
+        push -1
+        push 8b6b4eh
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        cmp dword ptr [esi + 24h], 0
+        lea eax, [esi + 20h]
+        mov dword ptr [esp + 10h], 2
+        je SHORT skip_a_6A02B0
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 78h]
+        call eax
+skip_a_6A02B0:
+        cmp dword ptr [esi + 1ch], 0
+        lea eax, [esi + 18h]
+        mov byte ptr [esp + 10h], 1
+        je SHORT skip_b_6A02B0
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 78h]
+        call eax
+skip_b_6A02B0:
+        cmp dword ptr [esi + 14h], 0
+        lea eax, [esi + 10h]
+        mov byte ptr [esp + 10h], 0
+        je SHORT skip_c_6A02B0
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 78h]
+        call eax
+skip_c_6A02B0:
+        mov ecx, esi
+        mov dword ptr [esp + 10h], 0ffffffffh
+        call ext_00665810
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
