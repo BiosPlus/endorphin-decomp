@@ -108,3 +108,60 @@ other:
         ret 0x8
     }
 }
+
+// [0x0061FDB0] NMData::PrimaryTwistAndSwingConstraint::vfunc_15 (104 bytes)
+extern "C" void ext_0061F030();
+extern "C" void ext_0061F050();
+extern "C" void ext_0061F070();
+extern "C" void ext_0061F990();
+
+extern "C" __declspec(naked) int __fastcall fn_0061FDB0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, edx
+        sub eax, 0x2a4
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0x0
+        je L_2a4
+        sub eax, 0x9e
+        je L_9e
+        sub eax, 0x16
+        je L_16
+        push edx
+        push esi
+        call ext_0061F990
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_16:
+        push ecx
+        push esi
+        call ext_0061F030
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_9e:
+        push ecx
+        push esi
+        call ext_0061F050
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_2a4:
+        push ecx
+        push esi
+        call ext_0061F070
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
