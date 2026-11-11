@@ -1816,3 +1816,70 @@ extern "C" __declspec(naked) void* __cdecl fn_006B0490(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x006B6C60] sub_006B6C60 (138 bytes)
+extern "C" int mem_009256C0;
+extern "C" int mem_00925694;
+extern "C" void* __stdcall ext_006A5E00(void* hwnd);
+
+extern "C" __declspec(naked) void __fastcall fn_006B6C60(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x6c]
+        mov ecx, dword ptr [esi + 0x20]
+        mov dword ptr [eax + 0x38], ecx
+        mov eax, dword ptr [esi + 0x6c]
+        test eax, eax
+        je L_6B6C79
+        cmp dword ptr [eax + 0x20], 0x0
+        jne L_6B6CBC
+    L_6B6C79:
+        mov eax, dword ptr [esi + 0x20]
+        mov ecx, dword ptr [esi + 0x6c]
+        mov edx, dword ptr [ecx]
+        push 0x0
+        push 0x1e240
+        push eax
+        mov eax, dword ptr [edx + 0x64]
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x40b00000
+        push 0x0
+        push 0x992778
+        push 0x88
+        call eax
+        mov eax, dword ptr [esi + 0x6c]
+        mov ecx, dword ptr [eax + 0x20]
+        push 0x0
+        push ecx
+        call dword ptr [mem_009256C0]
+        push eax
+        call ext_006A5E00
+    L_6B6CBC:
+        lea eax, [esi + 0x58]
+        test eax, eax
+        mov esi, dword ptr [esi + 0x6c]
+        jne L_6B6CD6
+        mov edx, dword ptr [esi + 0x20]
+        push eax
+        push eax
+        push 0x30
+        push edx
+        call dword ptr [mem_00925694]
+        pop esi
+        ret
+    L_6B6CD6:
+        mov eax, dword ptr [eax + 0x4]
+        mov edx, dword ptr [esi + 0x20]
+        push 0x0
+        push eax
+        push 0x30
+        push edx
+        call dword ptr [mem_00925694]
+        pop esi
+        ret
+    }
+}
