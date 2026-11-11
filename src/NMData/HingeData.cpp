@@ -99,3 +99,23 @@ L_22f_05EE3B0:
         ret 0x8
     }
 }
+
+// [0x005E2A90] NMData::HingeData::vfunc_14 (32 bytes)
+extern "C" void ext_005E29F0();
+
+extern "C" __declspec(naked) void __fastcall fn_005E2A90(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push esi
+        mov dword ptr [esp + 0xc], 0
+        call ext_005E29F0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
