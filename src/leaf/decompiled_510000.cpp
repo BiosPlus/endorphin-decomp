@@ -2151,3 +2151,66 @@ L_zero:
         ret
     }
 }
+
+// [0x00518550] sub_00518550 (125 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) bool __fastcall fn_00518550(void* self, int edx_unused, unsigned a, unsigned b) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je L_call1_518550
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp ebx, eax
+        jb L_ok1_518550
+L_call1_518550:
+        call ebp
+L_ok1_518550:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 4*ebx]
+        mov esi, dword ptr [edi]
+        fld qword ptr [ecx + 0x20]
+        mov ecx, dword ptr [esi + 0x4]
+        fstp qword ptr [esp + 0x10]
+        test ecx, ecx
+        mov edi, dword ptr [esp + 0x20]
+        je L_call2_518550
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb L_ok2_518550
+L_call2_518550:
+        call ebp
+L_ok2_518550:
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [edx + 4*edi]
+        fld qword ptr [eax + 0x20]
+        pop edi
+        fcomp qword ptr [esp + 0xc]
+        pop esi
+        pop ebp
+        pop ebx
+        fnstsw ax
+        test ah, 0x41
+        jne L_false_518550
+        mov eax, 0x1
+        add esp, 0x8
+        ret 0x8
+L_false_518550:
+        xor eax, eax
+        add esp, 0x8
+        ret 0x8
+    }
+}
