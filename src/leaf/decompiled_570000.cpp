@@ -1055,3 +1055,61 @@ extern "C" LB20Entry_0057BE60* __cdecl fn_0057BE60(LB20Entry_0057BE60* first, LB
     }
     return it;
 }
+
+// [0x0057BF20] sub_0057BF20 (95 bytes)
+// __cdecl lower_bound over 44-byte elements (std::string key at +0): returns the first element
+// e in [first, last) with !(e.key < *value), comparing through the imported std::operator< (mem_00924EF4).
+extern "C" int mem_00924EF4;
+
+extern "C" __declspec(naked) void* __cdecl fn_0057BF20(void* first, void* last, const void* value) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        sub ecx, ebp
+        mov eax, 0x2e8ba2e9
+        imul ecx
+        sar edx, 0x3
+        mov ebx, edx
+        shr ebx, 0x1f
+        add ebx, edx
+        test ebx, ebx
+        jle done_empty
+        push esi
+        push edi
+    loop_top:
+        mov eax, ebx
+        cdq
+        sub eax, edx
+        mov edi, eax
+        mov eax, dword ptr [esp + 0x1c]
+        sar edi, 0x1
+        mov esi, edi
+        imul esi, esi, 0x2c
+        push eax
+        add esi, ebp
+        push esi
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        je go_zero
+        or ecx, -0x1
+        sub ecx, edi
+        lea ebp, [esi + 0x2c]
+        add ebx, ecx
+        jmp loop_check
+    go_zero:
+        mov ebx, edi
+    loop_check:
+        test ebx, ebx
+        jg loop_top
+        pop edi
+        pop esi
+    done_empty:
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+    }
+}
