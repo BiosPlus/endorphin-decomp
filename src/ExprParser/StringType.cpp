@@ -160,3 +160,38 @@ extern "C" __declspec(naked) void __stdcall fn_0066B290(void* a1) {
         ret 0x4
     }
 }
+
+// [0x006718C0] ExprParser::StringType::vfunc_41 (102 bytes)
+extern "C" void ext_0041CEB0();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_006718C0(void* self, int edx_unused, void** a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        mov esi, dword ptr [esp + 0x30]
+        push esi
+        call ext_00671840
+        mov ecx, dword ptr [esp + 0x34]
+        lea eax, [esp + 0x4]
+        push eax
+        call ext_0041CEB0
+        mov ecx, dword ptr [esi]
+        push eax
+        mov dword ptr [esp + 0x2c], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 8
+    }
+}
