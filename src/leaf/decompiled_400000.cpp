@@ -1939,3 +1939,46 @@ extern "C" __declspec(naked) void __fastcall fn_0040AB60(void* self) {
         ret 8
     }
 }
+
+// [0x0040ABC0] sub_0040ABC0 (91 bytes)
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void __fastcall fn_0040ABC0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0ch]
+        test eax, eax
+        push esi
+        mov esi, dword ptr [esp + 0ch]
+        mov dword ptr [esp + 4], 0
+        jne L_mode_nz
+        add ecx, 2ECh
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    L_mode_nz:
+        cmp eax, 1
+        jne L_other
+        add ecx, 324h
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    L_other:
+        push 928B5Dh
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
