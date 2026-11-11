@@ -2611,3 +2611,41 @@ extern "C" __declspec(naked) void __fastcall fn_0046C3C0(void* self) {
         ret
     }
 }
+
+// [0x0046A4D0] sub_0046A4D0 (61 bytes)
+extern "C" void ext_00474FF0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0046A4D0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x20]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+    L_loop_0046A4D0:
+        mov eax, dword ptr [esp + 0x14]
+        test eax, eax
+        je L_call_0046A4D0
+        cmp eax, edi
+        je L_check_0046A4D0
+    L_call_0046A4D0:
+        call ebp
+    L_check_0046A4D0:
+        cmp dword ptr [esp + 0x18], ebx
+        je L_done_0046A4D0
+        add dword ptr [esi], 1
+        lea ecx, [esp + 0x14]
+        call ext_00474FF0
+        jmp L_loop_0046A4D0
+    L_done_0046A4D0:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
