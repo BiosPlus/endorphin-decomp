@@ -827,3 +827,58 @@ extern "C" __declspec(naked) void* __fastcall fn_004ED750(void* self) {
         ret
     }
 }
+
+// [0x004E1980] sub_004E1980 (116 bytes)
+extern "C" void ext_00661A40();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) float __fastcall fn_004E1980(void* self) {
+    __asm {
+        push ecx
+        cmp dword ptr [ecx + 0xb78], 0
+        jne L_retval
+        cmp dword ptr [ecx + 0xb74], 0
+        jne L_retval
+        cmp dword ptr [ecx + 0x86c], 0
+        push esi
+        lea esi, [ecx + 0x864]
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jne L_chk2
+        call edi
+L_chk2:
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0xc]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne L_load
+        call edi
+L_load:
+        mov edx, dword ptr [esi + 0xc]
+        mov edi, dword ptr [edx + 0x8]
+        test edi, edi
+        jne L_call
+        fldz
+        pop edi
+        fstp dword ptr [esp + 0x4]
+        pop esi
+        fld dword ptr [esp]
+        pop ecx
+        ret
+L_call:
+        mov ecx, esi
+        call ext_00661A40
+        add edi, -0x1
+        mov dword ptr [esp + 0x8], edi
+        fimul dword ptr [esp + 0x8]
+        pop edi
+        pop esi
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        pop ecx
+        ret
+L_retval:
+        fld dword ptr [ecx + 0x9d8]
+        pop ecx
+        ret
+    }
+}
