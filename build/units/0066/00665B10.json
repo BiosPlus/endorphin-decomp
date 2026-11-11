@@ -13,5 +13,7 @@
     "0x00665B3F",
     "0x00665B4B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T07:19:52Z"
 }

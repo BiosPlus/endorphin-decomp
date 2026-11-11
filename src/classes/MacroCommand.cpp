@@ -70,3 +70,64 @@ extern "C" __declspec(naked) void __fastcall fn_00665A50(void* self) {
         ret
     }
 }
+
+// [0x00665B10] MacroCommand::vfunc_4 (104 bytes)
+// Iterates the debug-checked vector of sub-command pointers stored at this+0x3c..this+0x40
+// (container proxy at this+0x38) and calls virtual slot 1 (+0x4) on each element, passing
+// the argument at [esp+0x4] (this+0xc). The _invalid_parameter guards are kept for byte parity.
+extern "C" __declspec(naked) void __fastcall fn_00665B10(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov ebp, ecx
+        mov esi, dword ptr [ebp + 0x3c]
+        cmp esi, dword ptr [ebp + 0x40]
+        push edi
+        lea edi, [ebp + 0x38]
+        jbe mv_chk1
+        call dword ptr [mem_00925134]
+    mv_chk1:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe mv_chk2
+        call dword ptr [mem_00925134]
+    mv_chk2:
+        test edi, edi
+        je mv_bad
+        cmp edi, edi
+        je mv_chk3
+    mv_bad:
+        call dword ptr [mem_00925134]
+    mv_chk3:
+        cmp esi, ebx
+        je mv_done
+        test edi, edi
+        mov ebx, dword ptr [mem_00925134]
+        jne mv_chk4
+        call ebx
+    mv_chk4:
+        cmp esi, dword ptr [edi + 0x8]
+        jb mv_call
+        call ebx
+    mv_call:
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [ebp + 0xc]
+        mov eax, dword ptr [eax + 0x4]
+        push edx
+        call eax
+        cmp esi, dword ptr [edi + 0x8]
+        jb mv_next
+        call ebx
+    mv_next:
+        add esi, 0x4
+        jmp mv_chk1
+    mv_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
