@@ -310,3 +310,61 @@ extern "C" int __cdecl fn_00803AE0(const float* v) {
     }
     return (m[2] < m[1]) ? 1 : 2;
 }
+
+// [0x00802E10] sub_00802E10 (123 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00802E10(void* self, int edx_unused, int* a1, int* a2, int* a3, int* a4, int* a5, int* a6) {
+    __asm {
+        push ecx
+        xor eax, eax
+        cmp dword ptr [ecx + 0x4], eax
+        jle fn_00802E10_end
+        push ebx
+        mov ebx, dword ptr [esp + 0x1c]
+        sub ebx, dword ptr [esp + 0x20]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        mov dword ptr [esp + 0x10], ebx
+    fn_00802E10_loop:
+        mov edx, dword ptr [esp + 0x2c]
+        lea edx, [edx + 4*eax]
+        cmp dword ptr [ebx + edx], 0
+        jne fn_00802E10_nz
+        mov edx, dword ptr [edi]
+        mov ebp, dword ptr [esp + 0x1c]
+        mov dword ptr [ebp + 4*edx], eax
+        add dword ptr [edi], 1
+        jmp fn_00802E10_inc
+    fn_00802E10_nz:
+        mov ebx, dword ptr [esi]
+        mov ebp, dword ptr [esp + 0x18]
+        mov dword ptr [ebp + 4*ebx], eax
+        add dword ptr [esi], 1
+        cmp dword ptr [edx], 0
+        jne fn_00802E10_t38
+        mov edx, dword ptr [ecx + 0x3c]
+        jmp fn_00802E10_src
+    fn_00802E10_t38:
+        mov edx, dword ptr [ecx + 0x38]
+    fn_00802E10_src:
+        fld dword ptr [edx + 4*eax]
+        mov edx, dword ptr [ecx + 0x44]
+        mov ebx, dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [esp + 0x28]
+        fstp dword ptr [edx + 4*eax]
+    fn_00802E10_inc:
+        add eax, 1
+        cmp eax, dword ptr [ecx + 0x4]
+        jl fn_00802E10_loop
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+    fn_00802E10_end:
+        pop ecx
+        ret 0x18
+    }
+}
