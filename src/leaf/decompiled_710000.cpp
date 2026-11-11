@@ -191,3 +191,80 @@ extern "C" __declspec(naked) double __fastcall fn_0071C210(void* self, int edx_u
         ret 0x18
     }
 }
+
+// [0x00710520] sub_00710520 (96 bytes)
+// Two-thunk layout: body 1 at +0x00 returns mem_00B5EEB8; body 2 at +0x20 copies the double at *_HUGE into mem_00B5F070/74 via jmp over nop padding;
+// body 3 at +0x40 stores -(*_HUGE) into mem_00B5F068.
+extern "C" int mem_00B5EEB8;
+extern "C" int mem_00925284;
+extern "C" int mem_00B5F070;
+extern "C" int mem_00B5F074;
+extern "C" int mem_00B5F068;
+extern "C" __declspec(naked) void __fastcall fn_00710520(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00B5EEB8]
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F070], ecx
+        mov dword ptr [mem_00B5F074], edx
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5F068]
+        ret
+    }
+}
