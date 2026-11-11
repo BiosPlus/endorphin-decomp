@@ -243,3 +243,44 @@ L_fail:
         ret 0x8
     }
 }
+
+// [0x0066D120] ExprParser::Vector3Type::vfunc_46 (98 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0066D120(void* self, int edx_unused, void** a1, void* a2) {
+    __asm {
+        sub esp, 0xc
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        call eax
+        mov ecx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [ecx]
+        fld dword ptr [ecx + 0x4]
+        fmul dword ptr [eax + 0x8]
+        fld dword ptr [ecx + 0x8]
+        fmul dword ptr [eax + 0x4]
+        fsubp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [eax]
+        fmul dword ptr [ecx + 0x8]
+        fld dword ptr [ecx]
+        fmul dword ptr [eax + 0x8]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [ecx]
+        fmul dword ptr [eax + 0x4]
+        fld dword ptr [ecx + 0x4]
+        fmul dword ptr [eax]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp]
+        fstp dword ptr [ecx]
+        fld dword ptr [esp + 0x4]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [ecx + 0x8]
+        add esp, 0xc
+        ret 0x8
+    }
+}
