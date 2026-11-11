@@ -195,3 +195,56 @@ extern "C" __declspec(naked) bool __fastcall fn_0049AF70(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0049E860] NMData::State::vfunc_2_off_10 (112 bytes)
+extern "C" void ext_0049E2F0();
+extern "C" void ext_0041CF00();
+extern "C" void ext_00671F30();
+
+extern "C" __declspec(naked) void* __fastcall fn_0049E860(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        cmp dword ptr [ecx + 0x11c], 0x0
+        mov edx, dword ptr [esp + 0xc]
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        push edx
+        je zero_path
+        mov ecx, dword ptr [ecx + 0x11c]
+        mov eax, dword ptr [ecx]
+        mov esi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [eax + 0x8]
+        push esi
+        call eax
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    zero_path:
+        add ecx, 0x10c
+        call ext_0049E2F0
+        test eax, eax
+        je fail_path
+        lea ecx, [eax + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        call edx
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call ext_0041CF00
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    fail_path:
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
