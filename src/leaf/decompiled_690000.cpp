@@ -1627,3 +1627,70 @@ skip2:
         ret 0xc
     }
 }
+
+// [0x00693C30] sub_00693C30 (130 bytes)
+extern "C" int mem_0092C510;
+
+extern "C" __declspec(naked) void __fastcall fn_00693C30(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fld dword ptr [eax + 0x8]
+        fld st(1)
+        fmulp st(2), st
+        fld1
+        fadd st(2), st
+        fld st(1)
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fld qword ptr [mem_0092C510]
+        fld st(0)
+        __asm _emit 0xde
+        __asm _emit 0xf2
+        fxch st(1)
+        fstp dword ptr [esp]
+        fld dword ptr [eax]
+        fmul st(0), st
+        fadd st, st(2)
+        __asm _emit 0xde
+        __asm _emit 0xf9
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fld st(0)
+        fsub st, st(2)
+        fld dword ptr [esp]
+        fld st(0)
+        __asm _emit 0xde
+        __asm _emit 0xe4
+        fld st(3)
+        fmul st, st(2)
+        fstp dword ptr [ecx]
+        fld dword ptr [eax]
+        fmulp st(4), st
+        fld st(2)
+        fmulp st(4), st
+        fxch st(3)
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [eax]
+        fmul st, st(2)
+        fmul dword ptr [eax + 0x4]
+        fld dword ptr [eax + 0x8]
+        fmul st, st(2)
+        faddp st(1), st
+        fmul st, st(3)
+        fstp dword ptr [ecx + 0x8]
+        fld dword ptr [eax]
+        fmulp st(2), st
+        fld dword ptr [eax + 0x8]
+        fmulp st(2), st
+        fmul dword ptr [eax + 0x4]
+        __asm _emit 0xde
+        __asm _emit 0xe9
+        fmulp st(1), st
+        fstp dword ptr [ecx + 0xc]
+        pop ecx
+        ret 4
+    }
+}
