@@ -2456,3 +2456,47 @@ done:
         ret
     }
 }
+
+// [0x00658880] sub_00658880 (107 bytes)
+extern "C" void ext_006A6EAA();
+extern "C" void ext_006A6EB0();
+extern "C" __declspec(naked) void __fastcall fn_00658880(void* self, int edx_unused, float a1) {
+    __asm {
+        push ecx
+        fld dword ptr [esp+8]
+        push esi
+        fchs
+        mov esi, ecx
+        fstp dword ptr [esp+0xc]
+        fld dword ptr [esp+0xc]
+        call ext_006A6EB0
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+0xc]
+        call ext_006A6EAA
+        fstp dword ptr [esp+0xc]
+        fld dword ptr [esp+0xc]
+        fstp dword ptr [esp+0xc]
+        fld1
+        fstp dword ptr [esi]
+        fldz
+        fst dword ptr [esi+4]
+        fst dword ptr [esi+8]
+        fst dword ptr [esi+0xc]
+        fld dword ptr [esp+0xc]
+        fst dword ptr [esi+0x10]
+        fld dword ptr [esp+4]
+        fld st(0)
+        fchs
+        fstp dword ptr [esi+0x14]
+        fxch st(2)
+        fstp dword ptr [esi+0x18]
+        fxch st(1)
+        fstp dword ptr [esi+0x1c]
+        fstp dword ptr [esi+0x20]
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
