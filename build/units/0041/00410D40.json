@@ -12,5 +12,7 @@
     "0x00410D95",
     "0x00410DAC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-11T13:18:43Z"
 }
