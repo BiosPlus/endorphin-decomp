@@ -2577,3 +2577,69 @@ STORE_PARENT:
         ret
     }
 }
+
+// [0x004486A0] sub_004486A0 (129 bytes)
+extern "C" void ext_006A5FF2();
+extern "C" void ext_006A5FFE();
+extern "C" void ext_006A7D30();
+extern "C" void ext_006A7D50();
+extern "C" void ext_006AD1C0();
+extern "C" int mem_0092407C;
+
+extern "C" __declspec(naked) void* __fastcall fn_004486A0(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0xc8]
+        push edi
+        call ext_006AD1C0
+        mov ecx, eax
+        call ext_006A7D30
+        mov ecx, dword ptr [esi + 0xc8]
+        mov ebx, eax
+        call ext_006AD1C0
+        mov ecx, eax
+        call ext_006A7D50
+        mov edi, dword ptr [esp + 0x14]
+        mov ebp, eax
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x34]
+        push ebx
+        mov ecx, edi
+        call edx
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x38]
+        push ebp
+        mov ecx, edi
+        call edx
+        add esi, 0xd0
+        je skip_wait_86a0
+        cmp dword ptr [esi + 0x4], 0x0
+        je skip_wait_86a0
+        mov ecx, esi
+        call ext_006A5FF2
+    skip_wait_86a0:
+        push ebx
+        call dword ptr [mem_0092407C]
+        push eax
+        mov ecx, esi
+        call ext_006A5FFE
+        test esi, esi
+        jne has_obj_86a0
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0xc
+    has_obj_86a0:
+        mov eax, dword ptr [esi + 0x4]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0xc
+    }
+}
