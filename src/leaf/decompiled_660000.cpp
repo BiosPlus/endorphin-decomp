@@ -3920,3 +3920,68 @@ extern "C" __declspec(naked) void __fastcall fn_00666C00(void* self) {
         ret
     }
 }
+
+// [0x00664E40] sub_00664E40 (135 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_00924E44;
+
+extern "C" __declspec(naked) void* __cdecl fn_00664E40(std::string::iterator* ret, const char* first, const char* last, std::string::iterator out, char value) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        cmp ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        je L_END
+        push ebp
+    L_LOOP:
+        mov al, byte ptr [esp + 0x28]
+        cmp byte ptr [ebx], al
+        je L_SKIP
+        cmp esi, -2
+        mov ebp, edi
+        je L_NOCHK1
+        test esi, esi
+        jne L_OK1
+        call dword ptr [mem_00925134]
+    L_OK1:
+        mov ecx, esi
+        call dword ptr [mem_00924E44]
+        add eax, dword ptr [esi + 0x14]
+        cmp edi, eax
+        jb L_NOCHK1
+        call dword ptr [mem_00925134]
+    L_NOCHK1:
+        add edi, 1
+        cmp esi, -2
+        je L_NOCHK2
+        test esi, esi
+        jne L_OK2
+        call dword ptr [mem_00925134]
+    L_OK2:
+        mov ecx, esi
+        call dword ptr [mem_00924E44]
+        add eax, dword ptr [esi + 0x14]
+        cmp ebp, eax
+        jb L_NOCHK2
+        call dword ptr [mem_00925134]
+    L_NOCHK2:
+        mov cl, byte ptr [ebx]
+        mov byte ptr [ebp], cl
+    L_SKIP:
+        add ebx, 1
+        cmp ebx, dword ptr [esp + 0x1c]
+        jne L_LOOP
+        pop ebp
+    L_END:
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 4], edi
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        pop ebx
+        ret
+    }
+}
