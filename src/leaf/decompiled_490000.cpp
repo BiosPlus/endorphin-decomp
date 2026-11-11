@@ -1,4 +1,6 @@
 // Decompiled translation unit: src/leaf/decompiled_490000.cpp
+#include <string>
+#include <stdlib.h>
 
 // [0x00493E10] sub_00493E10 (20 bytes)
 // Tail-call thunk: stores the byte argument at self+8, forwards self->inner's vfunc[5] with the arg.
@@ -2721,5 +2723,53 @@ extern "C" __declspec(naked) int __fastcall fn_004948C0(void* self, int edx_unus
         mov eax, ebx
         pop ebx
         ret 4
+    }
+}
+
+// [0x0049BF70] sub_0049BF70 (128 bytes)
+extern "C" int ext_006A6DE0();
+extern "C" int mem_00924FF0;
+extern "C" int mem_009251F0;
+extern "C" int mem_00993828;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) int __cdecl fn_0049BF70(void) {
+    __asm {
+        push -1
+        push 0x881709
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0xc], 0
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 4]
+        fldz
+        add esp, 4
+        fld dword ptr [esp]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 1
+        jne neg_path
+        fadd qword ptr [mem_00993828]
+        jmp call_path
+neg_path:
+        fsub qword ptr [mem_00993828]
+call_path:
+        push esi
+        call ext_006A6DE0
+        lea ecx, [esp + 0x18]
+        mov esi, eax
+        mov dword ptr [esp + 0x10], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
     }
 }
