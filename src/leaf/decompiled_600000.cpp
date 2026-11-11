@@ -846,3 +846,34 @@ extern "C" __declspec(naked) void __fastcall fn_0060BA10(void* self) {
         ret
     }
 }
+
+// [0x0060B910] sub_0060B910 (98 bytes)
+extern "C" int mem_00924FE8;
+extern "C" __declspec(naked) void* __fastcall fn_0060B910(void* self) {
+    __asm {
+        push -1
+        push 0x008a8684
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        lea ecx, [esi + 0x04]
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esi], 0x009720f4
+        call dword ptr [mem_00924FE8]
+        lea ecx, [esi + 0x20]
+        mov byte ptr [esp + 0x10], 1
+        call dword ptr [mem_00924FE8]
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr [esi + 0x40], 0
+        mov dword ptr [esi + 0x3c], 0
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
