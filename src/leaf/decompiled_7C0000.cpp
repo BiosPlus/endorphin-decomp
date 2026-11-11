@@ -2431,3 +2431,26 @@ L_b8_z_ecx:
         ret
     }
 }
+
+// [0x007C7150] sub_007C7150 (105 bytes)
+extern "C" void ext_007C70A0(void* self);
+extern "C" void ext_007D5AF0(void* a, int b, int c);
+
+extern "C" void __cdecl fn_007C7150(void* self) {
+    char* p = (char*)self;
+    typedef void (__cdecl *fn_t)(void*);
+    fn_t f = *(fn_t*)(p + 0x30);
+    if (f) {
+        f(self);
+    }
+    if (*(void**)(p + 0x34)) {
+        ext_007C70A0(self);
+    }
+    ext_007D5AF0(p + 0x44, 0, 0);
+    *(float*)(p + 0x4c) = *(float*)(p + 0x4c) - *(float*)(p + 0x1c);
+    *(float*)(p + 0x50) = *(float*)(p + 0x50) - *(float*)(p + 0x1c);
+    *(float*)(p + 0x54) = *(float*)(p + 0x54) - *(float*)(p + 0x1c);
+    *(float*)(p + 0x58) = *(float*)(p + 0x58) + *(float*)(p + 0x1c);
+    *(float*)(p + 0x5c) = *(float*)(p + 0x5c) + *(float*)(p + 0x1c);
+    *(float*)(p + 0x60) = *(float*)(p + 0x60) + *(float*)(p + 0x1c);
+}
