@@ -900,3 +900,54 @@ extern "C" __declspec(naked) void __fastcall fn_005A0200(void* self) {
         ret
     }
 }
+
+// [0x005A0910] sub_005A0910 (86 bytes)
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_005A0910(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov edi, edi
+    L_top_005A0910:
+        mov esi, dword ptr [esp + 0x14]
+        test esi, esi
+        je L_inv1_005A0910
+        cmp esi, dword ptr [esp + 0x1c]
+        je L_ok1_005A0910
+    L_inv1_005A0910:
+        call ebx
+    L_ok1_005A0910:
+        mov edi, dword ptr [esp + 0x18]
+        cmp edi, ebp
+        je L_done_005A0910
+        lea ecx, [esp + 0x14]
+        call ext_00673C20
+        test esi, esi
+        jne L_s1_005A0910
+        call ebx
+    L_s1_005A0910:
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_s2_005A0910
+        call ebx
+    L_s2_005A0910:
+        mov ecx, dword ptr [edi + 0x28]
+        test ecx, ecx
+        je L_top_005A0910
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+        jmp L_top_005A0910
+    L_done_005A0910:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
