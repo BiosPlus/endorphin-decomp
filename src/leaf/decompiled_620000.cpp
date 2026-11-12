@@ -3627,3 +3627,70 @@ extern "C" __declspec(naked) void* __cdecl fn_0062BD30(void* first, void* last, 
         ret
     }
 }
+
+// [0x0062BF80] sub_0062BF80 (141 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0062BF80(void* first, unsigned int count, const void* val) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x008AD711
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push edi
+        mov edi, dword ptr [ebp + 0xc]
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], ebx
+        nop
+    loop_0062BF80:
+        cmp edi, ebx
+        jbe exit_0062BF80
+        mov dword ptr [ebp + 0xc], esi
+        mov dword ptr [ebp - 0x18], esi
+        cmp esi, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je skip_0062BF80
+        mov eax, dword ptr [ebp + 0x10]
+        push eax
+        mov ecx, esi
+        call ext_0062B800
+    skip_0062BF80:
+        sub edi, 0x1
+        add esi, 0x10
+        mov byte ptr [ebp - 0x4], bl
+        mov dword ptr [ebp + 0x8], esi
+        jmp loop_0062BF80
+    handler_0062BF80:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x8]
+        cmp esi, edi
+        je rethrow_0062BF80
+    dtor_0062BF80:
+        mov ecx, esi
+        call ext_0062B6F0
+        add esi, 0x10
+        cmp esi, edi
+        jne dtor_0062BF80
+    rethrow_0062BF80:
+        xor ebx, ebx
+        push ebx
+        push ebx
+        call ext_006A6DD2
+    exit_0062BF80:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
