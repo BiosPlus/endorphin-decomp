@@ -1524,3 +1524,14 @@ extern "C" __declspec(naked) void __fastcall fn_004EFBA0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004E7670] sub_004E7670 (63 bytes)
+extern "C" void ext_004E7540();
+
+extern "C" void __cdecl fn_004E7670(unsigned int* first, unsigned int* last, int comp) {
+    int len = last - first;
+    for (int hole = len / 2; hole > 0; ) {
+        --hole;
+        ((void (__cdecl*)(unsigned int*, int, int, unsigned int, int))ext_004E7540)(first, hole, len, first[hole], comp);
+    }
+}
