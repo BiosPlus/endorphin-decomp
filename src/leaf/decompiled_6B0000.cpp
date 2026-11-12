@@ -4239,3 +4239,30 @@ L_fail:
         ret 8
     }
 }
+
+// [0x006B3240] sub_006B3240 (53 bytes)
+extern "C" void ext_006B3120();
+extern "C" void ext_006B3170();
+extern "C" int mem_00925670;
+
+extern "C" __declspec(naked) void __fastcall fn_006B3240(void* self) {
+    __asm {
+        sub esp, 0x28
+        mov eax, dword ptr [esp + 0x2c]
+        push 0x2
+        push eax
+        call ext_006B3120
+        lea ecx, [esp]
+        push ecx
+        push eax
+        mov dword ptr [esp + 0x8], 0x28
+        call ext_006B3170
+        mov eax, dword ptr [esp + 0x30]
+        lea edx, [esp + 0x14]
+        push edx
+        push eax
+        call dword ptr [mem_00925670]
+        add esp, 0x28
+        ret
+    }
+}
