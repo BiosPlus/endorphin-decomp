@@ -4968,8 +4968,23 @@ extern "C" __declspec(naked) void __fastcall fn_007CE060(void* self) {
 }
 
 // [0x007C71D0] sub_007C71D0 (36 bytes)
-extern "C" void ext_007D4970();
+extern "C" void __cdecl ext_007D4970(void*, void*, int);
 extern "C" int __cdecl fn_007C71D0(void* a, char* b) {
     ((void (__cdecl *)(void*, char*, int))ext_007D4970)(a, b + 0x184, *(int*)(b + 0x180));
     return 1;
+}
+
+// [0x007C6710] sub_007C6710 (108 bytes)
+extern "C" void __cdecl ext_007D4970(void*, void*, int);
+struct S6710Inner { char p0[0x70]; char p70[0xa0]; int c110; char p114[0x138]; void (__cdecl *cb)(void*); };
+struct S6710 { char p0[0x17c]; S6710Inner* inner; int v180; char p184[0x18]; char b19c[0x28]; unsigned flags; char p1c8[0x44]; float f20c; };
+extern "C" void __cdecl fn_007C6710(S6710* s) {
+    if (!(s->flags & 1)) {
+        ext_007D4970((char*)s->inner + 0x70, s->b19c, s->v180);
+        s->flags |= 1;
+        s->inner->c110++;
+        if (s->inner->cb) s->inner->cb(s);
+    }
+    s->flags &= ~0x100u;
+    s->f20c = 0.0f;
 }
