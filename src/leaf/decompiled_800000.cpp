@@ -547,3 +547,80 @@ extern "C" __declspec(naked) void __cdecl fn_00802320(void) {
         ret
     }
 }
+
+extern "C" void ext_007C6F20();
+extern "C" void ext_007C89F0();
+extern "C" void ext_007F56E0();
+
+// [0x00803C40] sub_00803C40 (170 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00803C40(void* out, void* in) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [edi]
+        fld dword ptr [eax + 0x1c]
+        mov ecx, dword ptr [edi + 4]
+        fadd dword ptr [ecx + 0x1c]
+        fstp dword ptr [esi + 0x2c]
+        mov edx, dword ptr [edi + 4]
+        push edx
+        call ext_007C6F20
+        mov ecx, dword ptr [edi]
+        movsx eax, ax
+        add esp, 4
+        push eax
+        push ecx
+        call ext_007C6F20
+        movsx edx, ax
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [eax]
+        add esp, 4
+        push edx
+        push ecx
+        call ext_007C89F0
+        add esp, 0xc
+        cmp dword ptr [eax + 0xc], 0
+        jne short L_else
+        mov edx, dword ptr [edi]
+        add edx, 0x44
+        mov dword ptr [esi + 0x34], edx
+        mov eax, dword ptr [edi + 4]
+        add eax, 0x44
+        mov dword ptr [esi + 0x38], eax
+        jmp short L_join
+    L_else:
+        mov ecx, dword ptr [edi]
+        add ecx, 0x44
+        mov dword ptr [esi + 0x38], ecx
+        mov edx, dword ptr [edi + 4]
+        add edx, 0x44
+        mov dword ptr [esi + 0x34], edx
+    L_join:
+        mov eax, dword ptr [esi + 0x34]
+        mov ecx, dword ptr [eax]
+        push ecx
+        call ext_007F56E0
+        fstp dword ptr [esi + 0x24]
+        mov edx, dword ptr [esi + 0x38]
+        mov eax, dword ptr [edx]
+        push eax
+        call ext_007F56E0
+        fstp dword ptr [esi + 0x28]
+        fld1
+        add esp, 8
+        fst dword ptr [esi + 0x30]
+        pop edi
+        fldz
+        fst dword ptr [esi]
+        fst dword ptr [esi + 8]
+        fxch st(1)
+        fstp dword ptr [esi + 4]
+        fst dword ptr [esi + 0xc]
+        fst dword ptr [esi + 0x10]
+        fstp dword ptr [esi + 0x14]
+        pop esi
+        ret
+    }
+}
