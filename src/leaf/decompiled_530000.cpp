@@ -3183,3 +3183,74 @@ extern "C" __declspec(naked) void __fastcall fn_00530940(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0053B130] sub_0053B130 (178 bytes)
+// Switch on arg0 (GL enum): 0x40 -> glColor4fv(&global+8); 1/0x40000/0x100000 -> glColor4fv(vfunc+0x78(this, arg2));
+// 4 -> glColor4f(vfunc color floats + constant alpha); 8 -> glColor4fv(sub_0053AC50()); returns 0xc.
+extern "C" void ext_0053AC50();
+extern "C" int mem_009254A8;
+extern "C" int mem_00954350;
+extern "C" int mem_009254D0;
+extern "C" int mem_00AEFEF8;
+extern "C" __declspec(naked) void __fastcall fn_0053B130(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        cmp eax, 0x40
+        jg L_big
+        je L_40
+        sub eax, 1
+        je L_vf
+        sub eax, 3
+        je L_4
+        sub eax, 4
+        jne L_out
+        call ext_0053AC50
+        push eax
+        call dword ptr [mem_009254A8]
+        ret 0xc
+    L_4:
+        mov edx, dword ptr [esp + 0xc]
+        sub esp, 8
+        mov eax, esp
+        mov dword ptr [eax + 4], edx
+        mov dword ptr [eax], 0x009553B0
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x78]
+        call edx
+        fld dword ptr [mem_00954350]
+        sub esp, 0x10
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 8]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [eax + 4]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [eax]
+        fstp dword ptr [esp]
+        call dword ptr [mem_009254D0]
+        ret 0xc
+    L_40:
+        mov eax, dword ptr [mem_00AEFEF8]
+        add eax, 8
+        push eax
+        call dword ptr [mem_009254A8]
+        ret 0xc
+    L_big:
+        cmp eax, 0x40000
+        je L_vf
+        cmp eax, 0x100000
+        jne L_out
+    L_vf:
+        mov edx, dword ptr [esp + 0xc]
+        sub esp, 8
+        mov eax, esp
+        mov dword ptr [eax + 4], edx
+        mov dword ptr [eax], 0x009553B0
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x78]
+        call edx
+        push eax
+        call dword ptr [mem_009254A8]
+    L_out:
+        ret 0xc
+    }
+}
