@@ -4325,3 +4325,78 @@ extern "C" void* __fastcall fn_004581C0(void* self) {
     *(void**)p = (void*)0x93712c;
     return self;
 }
+
+// [0x0045C130] sub_0045C130 (129 bytes)
+extern "C" void ext_00422E00();
+extern "C" void ext_0045BC30();
+extern "C" void ext_0045C0C0();
+extern "C" void ext_006A60D0();
+extern "C" void ext_006A6820();
+extern "C" void ext_006A6832();
+
+extern "C" __declspec(naked) void __fastcall fn_0045C130(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_006A60D0
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x14]
+        lea eax, [esp + 0x8]
+        push eax
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_006A6832
+        mov edi, eax
+        test edi, edi
+        je L_end_0045C130
+        mov al, byte ptr [esp + 0x8]
+        test al, 0x42
+        jne L_branch2_0045C130
+        test al, 0x4
+        je L_not4_0045C130
+        push edi
+        mov ecx, esi
+        call ext_0045BC30
+        pop edi
+        pop esi
+        pop ecx
+        ret 0xc
+L_not4_0045C130:
+        test al, 0x10
+        je L_end_0045C130
+        push 3
+        push edi
+        mov ecx, esi
+        call ext_00422E00
+        pop edi
+        pop esi
+        pop ecx
+        ret 0xc
+L_branch2_0045C130:
+        cmp dword ptr [esi + 0x54], 0
+        je L_end_0045C130
+        mov eax, dword ptr [esi + 0x54]
+        push ebx
+        mov ebx, dword ptr [eax]
+        push edi
+        mov ecx, esi
+        call ext_006A6820
+        mov ecx, dword ptr [esi + 0x54]
+        mov edx, dword ptr [ebx + 0x4]
+        push eax
+        call edx
+        mov ecx, esi
+        push eax
+        push edi
+        call ext_0045C0C0
+        pop ebx
+L_end_0045C130:
+        pop edi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
