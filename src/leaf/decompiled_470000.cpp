@@ -3425,3 +3425,74 @@ loc_47A862:
         ret 0x8
     }
 }
+
+// [0x00472EB0] sub_00472EB0 (190 bytes)
+extern "C" void ext_0046F920();
+extern "C" void ext_00472350();
+extern "C" void ext_00472BA0();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" int mem_00AD89B1;
+
+extern "C" __declspec(naked) void __fastcall fn_00472EB0(void* self) {
+    __asm {
+        push -1
+        push 0x8a56c8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x30]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        push edi
+        call edx
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp + 0xc], edi
+        call ext_0065C640
+        mov eax, dword ptr [esi + 0x248]
+        mov edx, dword ptr [eax]
+        lea ecx, [esi + 0x248]
+        mov dword ptr [esp + 0x18], 0
+        call edx
+        cmp byte ptr [esi + 0x294], 0
+        mov ecx, dword ptr [esi + 0x30]
+        mov bl, al
+        mov eax, dword ptr [ecx]
+        je loc_472f17
+        mov edx, dword ptr [eax + 0x154]
+        call edx
+        jmp loc_472f27
+    loc_472f17:
+        movzx edx, byte ptr [mem_00AD89B1]
+        mov eax, dword ptr [eax + 0x158]
+        push edx
+        call eax
+    loc_472f27:
+        mov ecx, edi
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call ext_0065C650
+        mov ecx, esi
+        call ext_00472BA0
+        mov ecx, esi
+        mov byte ptr [esi + 0x290], bl
+        call ext_0046F920
+        cmp byte ptr [esi + 0x290], 0
+        jne loc_472f5a
+        mov ecx, esi
+        call ext_00472350
+    loc_472f5a:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
