@@ -1729,3 +1729,18 @@ extern "C" __declspec(naked) void __cdecl fn_007F9FB0(int count, float* dst, con
         ret
     }
 }
+
+// [0x007FC540] sub_007FC540 (151 bytes)
+#include <math.h>
+#pragma intrinsic(fabs)
+extern "C" void __cdecl fn_007FC540(const float* src, float* dst) {
+    dst[0] = (float)fabs(src[0]);
+    dst[1] = (float)fabs(src[1]);
+    dst[2] = (float)fabs(src[2]);
+    dst[4] = (float)fabs(src[4]);
+    dst[5] = (float)fabs(src[5]);
+    dst[6] = (float)fabs(src[6]);
+    dst[8] = (float)fabs(src[8]);
+    dst[9] = (float)fabs(src[9]);
+    dst[10] = (float)fabs(src[10]);
+}
