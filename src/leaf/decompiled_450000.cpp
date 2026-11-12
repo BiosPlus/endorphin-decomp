@@ -2904,3 +2904,95 @@ done:
         ret 0x4
     }
 }
+
+// [0x00452D30] sub_00452D30 (182 bytes)
+extern "C" void ext_004512C0();
+extern "C" void ext_00452830();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_00452D30(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925694]
+        push esi
+        push 0x0
+        push 0x0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x61c]
+        push 0x188
+        push eax
+        call ebx
+        mov ecx, dword ptr [esi + 0x61c]
+        push 0x0
+        push eax
+        push 0x199
+        push ecx
+        call ebx
+        test eax, eax
+        je exit_nopop
+        push ebp
+        push eax
+        mov ecx, esi
+        call ext_004512C0
+        mov ebp, eax
+        test ebp, ebp
+        je exit_pop_ebp
+        mov edx, dword ptr [esi + 0x5b8]
+        push edi
+        xor edi, edi
+        push edi
+        push edi
+        push 0x18b
+        push edx
+        call ebx
+        sub eax, 0x1
+        js exit_pop_edi
+        jmp loop_body
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+loop_body:
+        mov eax, dword ptr [esi + 0x5b8]
+        push 0x0
+        push edi
+        push 0x199
+        push eax
+        call ebx
+        cmp eax, ebp
+        push 0x0
+        je found
+        mov ecx, dword ptr [esi + 0x5b8]
+        push 0x0
+        push 0x18b
+        push ecx
+        add edi, 0x1
+        call ebx
+        sub eax, 0x1
+        cmp edi, eax
+        jle loop_body
+        pop edi
+        pop ebp
+        mov ecx, esi
+        pop esi
+        pop ebx
+        jmp ext_00452830
+found:
+        mov edx, dword ptr [esi + 0x5b8]
+        push edi
+        push 0x186
+        push edx
+        call ebx
+exit_pop_edi:
+        pop edi
+exit_pop_ebp:
+        pop ebp
+exit_nopop:
+        mov ecx, esi
+        pop esi
+        pop ebx
+        jmp ext_00452830
+    }
+}
