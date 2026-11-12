@@ -2768,3 +2768,69 @@ extern "C" __declspec(naked) void __fastcall fn_0054F300(void* self) {
         ret
     }
 }
+
+// [0x005442D0] sub_005442D0 (164 bytes)
+extern "C" void ext_00480430();
+extern "C" void ext_006A7250();
+extern "C" int mem_0092C508;
+extern "C" int mem_0093F8EC;
+
+extern "C" __declspec(naked) void __fastcall fn_005442D0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x80]
+        push edi
+        call edx
+        fld dword ptr [esi + 0x8]
+        fld dword ptr [esi + 0x4]
+        lea edi, [esi + 0x4]
+        fld dword ptr [edi + 0x8]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fdiv dword ptr [esi + 0xa0]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        call ext_006A7250
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [esi + 0xc4]
+        fld dword ptr [esi + 0xc4]
+        fcomp qword ptr [mem_0092C508]
+        fnstsw ax
+        test ah, 5
+        jp short loc_54434A
+        fld dword ptr [mem_0093F8EC]
+    loc_544342:
+        fstp dword ptr [esi + 0xc4]
+        jmp short loc_54435B
+    loc_54434A:
+        fld1
+        fcom dword ptr [esi + 0xc4]
+        fnstsw ax
+        test ah, 5
+        jnp short loc_544342
+        fstp st(0)
+    loc_54435B:
+        mov ecx, edi
+        call ext_00480430
+        mov ecx, dword ptr [esi + 0xa8]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x68]
+        pop edi
+        pop esi
+        add esp, 4
+        jmp edx
+    }
+}
