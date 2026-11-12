@@ -3185,3 +3185,64 @@ skip_cc:
         ret
     }
 }
+
+// [0x0044D840] sub_0044D840 (157 bytes)
+extern "C" int mem_00925694;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0044D840(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x008b56f9
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push ebx
+        mov ebx, dword ptr [mem_00925694]
+        push esi
+        push edi
+        push 0
+        push 0
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x9e0]
+        push 0x14b
+        push eax
+        call ebx
+        mov esi, 0x00ad2590
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    loop_top:
+        push esi
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], 0
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [edi + 0x9e0]
+        push eax
+        push 0
+        push 0x143
+        push ecx
+        call ebx
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], -1
+        call dword ptr [mem_00924FF4]
+        add esi, 0x1c
+        cmp esi, 0x00ad2654
+        jl loop_top
+        mov ecx, dword ptr [esp + 0x28]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret
+    }
+}
