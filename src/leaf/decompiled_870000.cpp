@@ -548,3 +548,78 @@ extern "C" __declspec(naked) bool __fastcall fn_00870FE0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x008711F0] sub_008711F0 (171 bytes)
+extern "C" void ext_0063E050();
+
+extern "C" __declspec(naked) bool __fastcall fn_008711F0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        sub esp, 0x10
+        mov ecx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [ecx + 0x8]
+        mov edx, dword ptr [ecx + 0x10]
+        mov dword ptr [esp + 0x4], eax
+        mov eax, dword ptr [ecx + 0x14]
+        mov dword ptr [esp], ecx
+        mov dword ptr [esp + 0x8], edx
+        mov dword ptr [esp + 0xc], eax
+        call ext_00870E90
+        cmp al, 0x61
+        jl first_upper_008711F0
+        cmp al, 0x7a
+        jle loop_008711F0
+    first_upper_008711F0:
+        mov dl, al
+        sub dl, 0x41
+        cmp dl, 0x19
+        jbe loop_008711F0
+        mov dl, al
+        sub dl, 0x30
+        cmp dl, 0x9
+        jbe loop_008711F0
+        cmp al, 0x5f
+        je loop_008711F0
+        cmp al, 0x2e
+        je loop_008711F0
+        cmp al, 0x3a
+        je loop_008711F0
+        cmp al, 0x2d
+        je loop_008711F0
+        call ext_00870EF0
+        xor al, al
+        add esp, 0x10
+        ret 8
+    loop_008711F0:
+        call ext_00870E90
+        cmp al, 0x61
+        jl check_upper_008711F0
+        cmp al, 0x7a
+        jle loop_008711F0
+    check_upper_008711F0:
+        mov dl, al
+        sub dl, 0x41
+        cmp dl, 0x19
+        jbe loop_008711F0
+        mov dl, al
+        sub dl, 0x30
+        cmp dl, 0x9
+        jbe loop_008711F0
+        cmp al, 0x5f
+        je loop_008711F0
+        cmp al, 0x2e
+        je loop_008711F0
+        cmp al, 0x3a
+        je loop_008711F0
+        cmp al, 0x2d
+        je loop_008711F0
+        call ext_00870EF0
+        mov eax, dword ptr [esp + 0x18]
+        push 0
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_0063E050
+        mov al, 0x1
+        add esp, 0x10
+        ret 8
+    }
+}
