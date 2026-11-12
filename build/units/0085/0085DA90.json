@@ -16,5 +16,7 @@
     "0x0085DACC",
     "0x0085DAFF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash",
+  "matched_at": "2026-11-12T10:47:43Z"
 }

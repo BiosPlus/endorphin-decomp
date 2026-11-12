@@ -480,3 +480,104 @@ found:
         ret
     }
 }
+
+// [0x0085DA90] sub_0085DA90 (175 bytes)
+extern "C" void ext_0081743A();
+extern "C" void ext_0081D9A4();
+extern "C" void ext_00843D46();
+
+extern "C" __declspec(naked) void __cdecl fn_0085DA90(void) {
+    __asm {
+        sub esp, 8
+        lea eax, [esp + 4]
+        push ebx
+        mov ecx, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        push ebp
+        push eax
+        push ecx
+        call ext_0081743A
+        add esp, 8
+        test eax, eax
+        jne short L_0085DAB7
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    L_0085DAB7:
+        xor esi, esi
+        xor ebp, ebp
+        xor ebx, ebx
+    L_0085DABD:
+        xor edi, edi
+    L_0085DABF:
+        lea eax, [esp + 0x13]
+        push 1
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        call ext_0081D9A4
+        add esp, 0xc
+        test eax, eax
+        je short L_0085DAF9
+        xor eax, eax
+        mov al, byte ptr [esp + 0x13]
+        cmp eax, 0xa
+        je short L_0085DAE9
+        cmp eax, 0xd
+        je short L_0085DAF1
+        jmp short L_0085DABD
+    L_0085DAE9:
+        inc ebp
+        test edi, edi
+        je short L_0085DABF
+        inc ebx
+        jmp short L_0085DABD
+    L_0085DAF1:
+        inc esi
+        mov edi, 1
+        jmp short L_0085DABF
+    L_0085DAF9:
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        call ext_00843D46
+        add esp, 4
+        test ebx, ebx
+        jle short L_0085DB1B
+        cmp ebx, esi
+        jne short L_0085DB1B
+        mov eax, 1
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    L_0085DB1B:
+        cmp ebp, esi
+        jle short L_0085DB2C
+        mov eax, 3
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    L_0085DB2C:
+        mov eax, 2
+        test esi, esi
+        jg short L_0085DB37
+        xor eax, eax
+    L_0085DB37:
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
