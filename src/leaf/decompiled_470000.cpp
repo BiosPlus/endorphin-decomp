@@ -2788,3 +2788,58 @@ L_early_476CA0:
         ret
     }
 }
+
+// [0x00477120] sub_00477120 (100 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00477120(unsigned* x, unsigned* y) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esi]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, dword ptr [edi]
+        push eax
+        push ecx
+        lea ecx, [esp + 0x20]
+        call ext_00476860
+        test al, al
+        je L_skip1_120
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi], edx
+        mov dword ptr [edi], eax
+    L_skip1_120:
+        mov eax, dword ptr [esi]
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [ebx]
+        push eax
+        push ecx
+        lea ecx, [esp + 0x24]
+        call ext_00476860
+        test al, al
+        je L_skip2_120
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [ebx]
+        mov dword ptr [ebx], edx
+        mov dword ptr [esi], eax
+    L_skip2_120:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [esi]
+        push eax
+        push ecx
+        lea ecx, [esp + 0x24]
+        call ext_00476860
+        test al, al
+        pop ebx
+        je L_skip3_120
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi], edx
+        mov dword ptr [edi], eax
+    L_skip3_120:
+        pop edi
+        pop esi
+        ret
+    }
+}
