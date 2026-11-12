@@ -1309,3 +1309,62 @@ L564530_fail:
         ret 8
     }
 }
+
+// [0x00564E60] sub_00564E60 (165 bytes)
+extern "C" void ext_007C56CA();
+extern "C" void ext_007C56D0();
+extern "C" int mem_00924FE0;
+extern "C" int mem_009250F4;
+extern "C" int mem_00924FD4;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00564E60(void* self) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        push edi
+        mov edi, ecx
+        lea eax, [edi + 0xac]
+        push eax
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FE0]
+        push 0xb39b5c
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], 0
+        call dword ptr [mem_009250F4]
+        test eax, eax
+        jne short L_00564EB7
+        push 0x928b5d
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FD4]
+    L_00564EB7:
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [edi + 0x494]
+        push eax
+        call ext_007C56D0
+        mov esi, eax
+        test esi, esi
+        jne short L_00564EE0
+        mov ecx, dword ptr [edi + 0x494]
+        call ext_007C56CA
+        mov esi, eax
+    L_00564EE0:
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x2c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret
+    }
+}
