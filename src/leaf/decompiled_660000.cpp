@@ -5487,3 +5487,47 @@ extern "C" __declspec(naked) void __fastcall fn_0066A9D0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0066A980] sub_0066A980 (77 bytes)
+extern "C" __declspec(naked) char* __fastcall fn_0066A980(void* self, int edx_unused, const char* src) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov eax, ebx
+        push edi
+        mov esi, ecx
+        lea edx, [eax + 0x1]
+        mov edi, edi
+    L66A980_len:
+        mov cl, byte ptr [eax]
+        add eax, 0x1
+        test cl, cl
+        jne L66A980_len
+        mov edi, dword ptr [esi + 0x4]
+        sub eax, edx
+        add edi, eax
+        cmp edi, dword ptr [esi + 0x8]
+        jb L66A980_skip
+        push edi
+        mov ecx, esi
+        call ext_0066A770
+    L66A980_skip:
+        mov eax, dword ptr [esi]
+        add eax, dword ptr [esi + 0x4]
+        mov edx, ebx
+    L66A980_copy:
+        mov cl, byte ptr [edx]
+        mov byte ptr [eax], cl
+        add edx, 0x1
+        add eax, 0x1
+        test cl, cl
+        jne L66A980_copy
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi + 0x4], edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
