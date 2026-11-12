@@ -202,3 +202,24 @@ hinge_6115f0_zero:
         ret 0x8
     }
 }
+
+// [0x0061E9A0] NMData::HingeConstraint::vfunc_70 (38 bytes)
+extern "C" void ext_0061E780();
+
+extern "C" __declspec(naked) int __fastcall fn_0061E9A0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push esi
+        add ecx, 0x164
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_0061E780
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
