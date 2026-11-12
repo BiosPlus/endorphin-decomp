@@ -152,3 +152,18 @@ L_tail:
         jmp edx
     }
 }
+
+extern "C" void ext_00603130();
+
+// [0x006031E0] Effector::vfunc_18 (71 bytes)
+extern "C" void __fastcall fn_006031E0(void* self) {
+    char* s = (char*)self;
+    struct S20 { int d[5]; };
+    *(S20*)(s + 0x4c) = *(S20*)(s + 0x38);
+    void* obj = *(void**)(s + 4);
+    typedef float (__thiscall *VFunc)(void*, int);
+    typedef void (__thiscall *Callee)(void*, float);
+    ((Callee)ext_00603130)(self, ((VFunc)(*(void***)obj)[8])(obj, *(int*)(s + 0x34)));
+    typedef void (__thiscall *TailFunc)(void*);
+    ((TailFunc)(*(void***)self)[33])(self);
+}
