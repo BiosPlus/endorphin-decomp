@@ -7828,3 +7828,30 @@ L_skip_erase:
         ret
     }
 }
+
+// [0x00662610] sub_00662610 (51 bytes)
+extern "C" void ext_00662440();
+extern "C" void ext_006624F0();
+extern "C" __declspec(naked) void* __cdecl fn_00662610(void* a1, void* a2) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push esi
+        sub esp, 0x1c
+        mov eax, esp
+        mov dword ptr [esp + 0x20], 0x0
+        mov dword ptr [esp + 0x20], esp
+        push ecx
+        push eax
+        call ext_00662440
+        mov esi, dword ptr [esp + 0x30]
+        add esp, 0x8
+        push esi
+        call ext_006624F0
+        add esp, 0x20
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
