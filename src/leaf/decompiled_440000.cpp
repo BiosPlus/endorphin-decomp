@@ -3922,3 +3922,8 @@ struct Target_0044C9B0 {
 extern "C" void __fastcall fn_0044C9B0(void* self, int edx_unused, Target_0044C9B0* target) {
     target->func1(((bool (__thiscall *)(void*, int))ext_0044C830)(self, 0));
 }
+
+// [0x0044C9D0] sub_0044C9D0 (31 bytes)
+extern "C" void __fastcall fn_0044C9D0(void* self, int edx_unused, Target_0044C9B0* target) {
+    target->func1(((bool (__thiscall *)(void*, int))ext_0044C830)(self, 1));
+}
