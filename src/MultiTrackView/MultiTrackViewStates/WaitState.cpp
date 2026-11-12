@@ -1,6 +1,9 @@
 // Decompiled translation unit: src/MultiTrackView/MultiTrackViewStates/WaitState.cpp
 
 extern "C" void ext_0043CD80();
+extern "C" void ext_0043C980();
+extern "C" void ext_0043D900();
+extern "C" void ext_0043E0F0();
 extern "C" void ext_004429C0();
 extern "C" void ext_0043C9D0();
 extern "C" void ext_0043D620();
@@ -41,5 +44,24 @@ extern "C" unsigned char __fastcall fn_004429F0(void* self, int edx_unused, int 
     }
 done:
     ((void (__thiscall*)(void*))ext_006A60D0)(*(void**)(s + 0x8));
+    return 1;
+}
+
+// [0x00443180] MultiTrackView::MultiTrackViewStates::WaitState::vfunc_5 (119 bytes)
+extern "C" unsigned char __fastcall fn_00443180(void* self, int edx_unused, int a1, int a2, int a3) {
+    unsigned char* s = (unsigned char*)self;
+    ((void (__fastcall*)(void*))ext_004429C0)(self);
+    void* r = ((void* (__thiscall*)(void*, int*))ext_0043D900)(*(void**)(s + 0x8), &a2);
+    if (r) {
+        ((void (__thiscall*)(void*, void*, int, int, int))ext_0043C980)(*(void**)(s + 0x8), r, a1, a2, a3);
+        void* c = *(void**)(s + 0x8);
+        void* wnd = *(void**)((unsigned char*)c + 0x20);
+        ((void (__stdcall*)(void*, int, int))mem_00925688)(wnd, 0, 1);
+    } else {
+        r = ((void* (__thiscall*)(void*, int*))ext_0043D620)(*(void**)(s + 0x8), &a2);
+        if (r) {
+            ((void (__thiscall*)(void*, void*, int, int, int))ext_0043E0F0)(*(void**)(s + 0x8), r, a1, a2, a3);
+        }
+    }
     return 1;
 }
