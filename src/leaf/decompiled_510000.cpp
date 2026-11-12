@@ -2882,3 +2882,84 @@ L_ret:
         ret
     }
 }
+
+// [0x005107A0] sub_005107A0 (136 bytes)
+extern "C" __declspec(naked) void __cdecl fn_005107A0(unsigned int* first, unsigned int* last) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [esp + 8]
+        cmp ecx, eax
+        je L_ret
+        push esi
+        lea esi, [ecx + 4]
+        cmp esi, eax
+        je L_pop_esi
+        push ebx
+        push edi
+        lea ebx, [esi + 4]
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+L_loop:
+        mov eax, dword ptr [ecx]
+        fld qword ptr [eax + 20h]
+        mov edi, dword ptr [esi]
+        fcomp qword ptr [edi + 20h]
+        fnstsw ax
+        test ah, 41h
+        jne L_back
+        cmp ecx, esi
+        je L_next
+        cmp esi, ebx
+        je L_next
+        push 0
+        push 0
+        push ebx
+        push esi
+        push ecx
+        jmp L_call
+L_back:
+        mov edx, esi
+        mov ecx, esi
+L_back_loop:
+        mov eax, dword ptr [ecx - 4]
+        fld qword ptr [eax + 20h]
+        sub ecx, 4
+        fcomp qword ptr [edi + 20h]
+        fnstsw ax
+        test ah, 41h
+        jne L_back_done
+        mov edx, ecx
+        jmp L_back_loop
+L_back_done:
+        cmp edx, esi
+        je L_reload
+        cmp esi, ebx
+        je L_reload
+        push 0
+        push 0
+        push ebx
+        push esi
+        push edx
+L_call:
+        call ext_00609850
+        add esp, 14h
+L_reload:
+        mov ecx, dword ptr [esp + 10h]
+L_next:
+        add esi, 4
+        add ebx, 4
+        cmp esi, dword ptr [esp + 14h]
+        jne L_loop
+        pop edi
+        pop ebx
+L_pop_esi:
+        pop esi
+L_ret:
+        ret
+    }
+}
