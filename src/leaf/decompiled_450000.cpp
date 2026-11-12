@@ -2748,3 +2748,97 @@ extern "C" __declspec(naked) void __fastcall fn_00455720(void* self) {
         ret
     }
 }
+
+// [0x004512C0] sub_004512C0 (207 bytes)
+// Stack arg a1 (ret 4). Returns 0 if a1 is null. Otherwise fetches a container from this+0x78 via
+// sub_00495320(this+0x78, [this+0xa4]); scans its pointer vector (begin @+0x80, end @+0x84) with
+// STL checks, RTDynamicCast'ing each element to the target type, and matching the vfunc+0x24 result
+// against the std::string at +0x170. Returns the first matching element or 0.
+extern "C" void ext_00495320();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) void* __fastcall fn_004512C0(void* self, int edx_unused, int a1) {
+    __asm {
+        cmp dword ptr [esp + 0x4], 0x0
+        jne L_nonzero
+        xor eax, eax
+        ret 0x4
+    L_nonzero:
+        mov eax, dword ptr [ecx + 0xa4]
+        push edi
+        push eax
+        add ecx, 0x78
+        call ext_00495320
+        mov edi, eax
+        test edi, edi
+        jne L_have
+        pop edi
+        ret 0x4
+    L_have:
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [edi + 0x80]
+        xor ebp, ebp
+        cmp esi, dword ptr [edi + 0x84]
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+    L_chk1:
+        mov ebx, esi
+    L_head:
+        mov esi, dword ptr [edi + 0x84]
+        cmp dword ptr [edi + 0x80], esi
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+    L_chk2:
+        cmp ebx, esi
+        je L_done
+        test ebp, ebp
+        jne L_inc
+        cmp ebx, dword ptr [edi + 0x84]
+        jb L_elem
+        call dword ptr [mem_00925134]
+    L_elem:
+        mov eax, dword ptr [ebx]
+        test eax, eax
+        je L_inc
+        push 0x0
+        push 0xa30138
+        push 0xa2e2bc
+        push 0x0
+        push eax
+        call ext_006A6E9E
+        mov esi, eax
+        add esp, 0x14
+        test esi, esi
+        je L_inc
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        push eax
+        lea ecx, [esi + 0x170]
+        push ecx
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je L_inc
+        mov ebp, esi
+    L_inc:
+        cmp ebx, dword ptr [edi + 0x84]
+        jb L_adv
+        call dword ptr [mem_00925134]
+    L_adv:
+        add ebx, 0x4
+        jmp L_head
+    L_done:
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        pop edi
+        ret 0x4
+    }
+}
