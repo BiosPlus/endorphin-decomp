@@ -1341,3 +1341,76 @@ extern "C" __declspec(naked) void* __fastcall fn_005A7060(void* self) {
         ret
     }
 }
+
+// [0x005A1710] sub_005A1710 (177 bytes)
+extern "C" void ext_00647F30();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_005A1710(void* self) {
+    __asm {
+        sub esp, 0xc
+        cmp dword ptr [ecx + 0x5ec], 0x0
+        fldz
+        fstp dword ptr [ecx + 0x4f4]
+        mov dword ptr [esp], ecx
+        je L_ret_005A1710
+        mov eax, dword ptr [ecx + 0x59c]
+        push ebp
+        push esi
+        lea ebp, [ecx + 0x598]
+        push edi
+        mov edi, dword ptr [eax]
+        mov esi, ebp
+        mov dword ptr [esp + 0x10], esi
+        mov dword ptr [esp + 0x14], edi
+        push ebx
+    L_loop_005A1710:
+        test esi, esi
+        mov ebx, dword ptr [ebp + 0x4]
+        je L_inv1_005A1710
+        cmp esi, ebp
+        je L_ok1_005A1710
+    L_inv1_005A1710:
+        call dword ptr [mem_00925134]
+    L_ok1_005A1710:
+        cmp edi, ebx
+        je L_done_005A1710
+        test esi, esi
+        mov ebx, dword ptr [mem_00925134]
+        jne L_ok2_005A1710
+        call ebx
+    L_ok2_005A1710:
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_ok3_005A1710
+        call ebx
+    L_ok3_005A1710:
+        mov ecx, dword ptr [edi + 0x28]
+        cmp dword ptr [ecx + 0x158], 0x0
+        je L_advance_005A1710
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_ok4_005A1710
+        call ebx
+    L_ok4_005A1710:
+        mov edx, dword ptr [edi + 0x28]
+        mov eax, dword ptr [edx + 0x158]
+        mov ecx, dword ptr [eax + 0xac]
+        call ext_00647F30
+        mov eax, dword ptr [esp + 0x10]
+        fadd dword ptr [eax + 0x4f4]
+        fstp dword ptr [eax + 0x4f4]
+    L_advance_005A1710:
+        lea ecx, [esp + 0x14]
+        call ext_00673C20
+        mov edi, dword ptr [esp + 0x18]
+        mov esi, dword ptr [esp + 0x14]
+        jmp L_loop_005A1710
+    L_done_005A1710:
+        pop ebx
+        pop edi
+        pop esi
+        pop ebp
+    L_ret_005A1710:
+        add esp, 0xc
+        ret
+    }
+}
