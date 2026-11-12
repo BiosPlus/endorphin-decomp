@@ -3565,3 +3565,99 @@ extern "C" __declspec(naked) void __fastcall fn_00449B40(void* self) {
         ret
     }
 }
+
+// [0x00443A10] sub_00443A10 (208 bytes)
+extern "C" void ext_0043CDD0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00443A10(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x14
+        mov eax, dword ptr [ebp + 0x8]
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        mov edi, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi + 0x8]
+        push eax
+        add edi, 0xc
+        call ext_0043CDD0
+        fstp qword ptr [esp + 0x18]
+        mov ecx, dword ptr [edi]
+        push ecx
+        mov ecx, dword ptr [esi + 0x8]
+        call ext_0043CDD0
+        fsubr qword ptr [esp + 0x18]
+        mov edi, dword ptr [esi + 0x10]
+        add esi, 0xc
+        cmp edi, dword ptr [esi + 0x8]
+        fstp qword ptr [esp + 0x18]
+        fldz
+        fstp qword ptr [esp + 0x10]
+        jbe short L_443A60
+        call dword ptr [mem_00925134]
+        mov edi, edi
+    L_443A60:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe short L_443A6E
+        call dword ptr [mem_00925134]
+    L_443A6E:
+        cmp esi, esi
+        je short L_443A78
+        call dword ptr [mem_00925134]
+    L_443A78:
+        cmp edi, ebx
+        je short L_443AB3
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_443A87
+        call dword ptr [mem_00925134]
+    L_443A87:
+        mov edx, dword ptr [edi]
+        fld qword ptr [edx + 0x50]
+        fadd qword ptr [esp + 0x18]
+        fcom qword ptr [esp + 0x10]
+        fnstsw ax
+        test ah, 0x41
+        je short L_443AA1
+        fstp qword ptr [esp + 0x10]
+        jmp short L_443AA3
+    L_443AA1:
+        fstp st(0)
+    L_443AA3:
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_443AAE
+        call dword ptr [mem_00925134]
+    L_443AAE:
+        add edi, 0x4
+        jmp short L_443A60
+    L_443AB3:
+        fldz
+        fld qword ptr [esp + 0x10]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jp short L_443AD1
+        fsubr qword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    L_443AD1:
+        pop edi
+        fstp st(0)
+        fld qword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}

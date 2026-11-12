@@ -18,5 +18,7 @@
     "0x00443A83",
     "0x00443AAA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash",
+  "matched_at": "2026-11-12T11:44:55Z"
 }
