@@ -2996,3 +2996,90 @@ exit_nopop:
         jmp ext_00452830
     }
 }
+
+// [0x00458E30] sub_00458E30 (208 bytes)
+extern "C" void ext_00458E10();
+extern "C" int mem_00AD3E30;
+extern "C" int mem_009255C4;
+extern "C" __declspec(naked) int __stdcall fn_00458E30(void* self, unsigned int msg, unsigned int wp, void* lp) {
+    __asm {
+        sub esp, 0x1c
+        mov ecx, dword ptr [esp + 0x28]
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x28]
+        mov eax, dword ptr [esi + 0x1c]
+        xor ebx, ebx
+        mov dword ptr [esp + 0x8], eax
+        mov eax, dword ptr [esp + 0x2c]
+        cmp eax, dword ptr [mem_00AD3E30]
+        push edi
+        mov edi, dword ptr [esp + 0x38]
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esp + 0x14], ecx
+        mov dword ptr [esp + 0x18], edi
+        mov dword ptr [esp + 0x1c], ebx
+        mov dword ptr [esp + 0x20], ebx
+        mov dword ptr [esp + 0x24], ebx
+        jne L_skip_copy
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [edi + 0x8]
+        mov ebx, edi
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esp + 0x14], ecx
+        mov dword ptr [esp + 0x18], edx
+L_skip_copy:
+        mov edx, dword ptr [esi + 0x18]
+        push ebp
+        lea ebp, [esp + 0x30]
+        push ebp
+        mov ebp, dword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x40], edx
+        push ebp
+        lea edx, [esp + 0x18]
+        push ecx
+        mov dword ptr [esi + 0x18], edx
+        mov edx, dword ptr [esi]
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        mov ecx, esi
+        call eax
+        test ebx, ebx
+        pop ebp
+        je L_skip_store
+        mov dword ptr [ebx + 0xc], eax
+L_skip_store:
+        test eax, eax
+        mov ecx, dword ptr [esp + 0x38]
+        mov dword ptr [esi + 0x18], ecx
+        jne L_skip_wndproc
+        mov edx, dword ptr [esp + 0x34]
+        mov eax, dword ptr [esp + 0x30]
+        mov ecx, dword ptr [esi + 0x1c]
+        push edi
+        push edx
+        mov edx, dword ptr [esi + 0x14]
+        push eax
+        push ecx
+        push edx
+        call dword ptr [mem_009255C4]
+        mov dword ptr [esp + 0x2c], eax
+L_skip_wndproc:
+        cmp dword ptr [esp + 0x30], 0x82
+        jne L_exit
+        mov ecx, esi
+        call ext_00458E10
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x8]
+        mov ecx, esi
+        call edx
+L_exit:
+        mov eax, dword ptr [esp + 0x2c]
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x1c
+        ret 0x10
+    }
+}
