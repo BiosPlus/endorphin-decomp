@@ -135,3 +135,105 @@ extern "C" __declspec(naked) void __fastcall fn_0051D8C0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0051C300] NMData::QuatChannel::vfunc_6 (212 bytes)
+extern "C" void ext_00489080();
+
+// Erases every 0x14-byte element whose leading float lies in [lo, hi].
+extern "C" __declspec(naked) void __fastcall fn_0051C300(void* self, int edx_unused, float lo, float hi) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        lea esi, [ecx + 0x2c]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_chk0
+        call dword ptr [mem_00925134]
+    L_chk0:
+        xor ebx, ebx
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_loop:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebp
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+    L_chk1:
+        cmp esi, ebx
+        je L_chk2
+        cmp esi, esi
+        je L_chk3
+    L_chk2:
+        call dword ptr [mem_00925134]
+    L_chk3:
+        cmp edi, ebp
+        je L_exit
+        cmp esi, ebx
+        mov ebp, dword ptr [mem_00925134]
+        jne L_chk4
+        call ebp
+    L_chk4:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_chk5
+        call ebp
+    L_chk5:
+        fld dword ptr [edi]
+        fld dword ptr [esp + 0x1c]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp L_keep
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_chk6
+        call ebp
+    L_chk6:
+        fld dword ptr [edi]
+        fld dword ptr [esp + 0x20]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        jne L_keep
+        mov edx, dword ptr [esp + 0x1c]
+        mov byte ptr [esp + 0x10], bl
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        mov eax, dword ptr [esi + 0x8]
+        mov byte ptr [esp + 0x18], bl
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        push edx
+        push edi
+        push eax
+        add edi, 0x14
+        push edi
+        call ext_00489080
+        add dword ptr [esi + 0x8], -0x14
+        mov edi, dword ptr [esi + 0x4]
+        add esp, 0x18
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_loop
+        call ebp
+        jmp L_loop
+    L_keep:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_chk7
+        call ebp
+    L_chk7:
+        add edi, 0x14
+        jmp L_loop
+    L_exit:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x8
+    }
+}
