@@ -2155,3 +2155,74 @@ extern "C" void __fastcall fn_0063DB80(TargetClass_63DB80* self) {
     double diff = (item1->vfunc_44() - item2->vfunc_44() - 0.03) * self->rate;
     self->result = (float)(item0->vfunc_60() + diff);
 }
+
+// [0x0063DA00] sub_0063DA00 (163 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0063DA00(void* self) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x2c]
+        test ecx, ecx
+        push edi
+        je L_call1
+        mov eax, dword ptr [esi + 0x30]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp eax, 0x1
+        ja L_chk2
+    L_call1:
+        call ebx
+    L_chk2:
+        mov eax, dword ptr [esi + 0x2c]
+        test eax, eax
+        mov edi, dword ptr [eax + 0x4]
+        je L_call2
+        mov ecx, dword ptr [esi + 0x30]
+        sub ecx, eax
+        sar ecx, 0x2
+        jne L_main
+    L_call2:
+        call ebx
+    L_main:
+        mov edx, dword ptr [esi + 0x2c]
+        mov eax, dword ptr [edi]
+        mov ebx, dword ptr [edx]
+        mov edx, dword ptr [eax + 0x38]
+        mov ecx, edi
+        call edx
+        mov edi, eax
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0x38]
+        mov ecx, ebx
+        call edx
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x10]
+        fsub dword ptr [edi]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x14]
+        fsub dword ptr [edi + 0x4]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x18]
+        fsub dword ptr [edi + 0x8]
+        pop edi
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [esi + 0x3c]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [esi + 0x40]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [esi + 0x44]
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
