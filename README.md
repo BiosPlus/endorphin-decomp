@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `10339 / 24049` (**42.99%**) — `7247` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `632687 / 4496005 bytes` (**14.07%** of 4.29 MB)
+- **In-Scope Functions Matched:** `10340 / 24049` (**43.00%**) — `7248` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `632947 / 4496005 bytes` (**14.08%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -21,19 +21,19 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P50-60 (91-122B)** | 1085 / 2405 | 45.11% | 118119 / 256906 | 45.98% | 1320 fn |
 | **P60-70 (122-159B)** | 901 / 2405 | 37.46% | 121050 / 339038 | 35.70% | 1504 fn |
 | **P70-80 (159-178B)** | 202 / 2405 | 8.40% | 34029 / 400567 | 8.50% | 2203 fn |
-| **P80-90 (178-335B)** | 428 / 2405 | 17.80% | 90914 / 583211 | 15.59% | 1977 fn |
+| **P80-90 (178-335B)** | 429 / 2405 | 17.84% | 91174 / 583211 | 15.63% | 1976 fn |
 | **P90-100 (335-36100B)** | 0 / 2404 | 0.00% | 0 / 2392860 | 0.00% | 2404 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6742 | 514670 | 93.03% |
+| `claude-haiku-5.5@medium` | 6742 | 514670 | 93.02% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 6.17% |
 | `claude-sonnet-5.5@medium` | 24 | 1340 | 0.33% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.14% |
 | `claude-sonnet-5.5@low` | 10 | 2144 | 0.14% |
-| `claude-haiku-5.5@low` | 8 | 1981 | 0.11% |
+| `claude-haiku-5.5@low` | 9 | 2241 | 0.12% |
 | `gemini-3.8-flash@low` | 4 | 383 | 0.06% |
 | `claude-opus-5.5@medium` | 1 | 49 | 0.01% |
 | `gemini-4-argon@high` | 1 | 10 | 0.01% |

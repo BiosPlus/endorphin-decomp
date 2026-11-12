@@ -3701,3 +3701,91 @@ extern "C" __declspec(naked) void __cdecl fn_007D4970(void* head, void* node, in
         ret
     }
 }
+
+// [0x007DFA40] sub_007DFA40 (260 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_007DFA40(char* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [edi + 0xb0]
+        mov ecx, dword ptr [eax]
+        push 0x50
+        call ecx
+        mov esi, eax
+        mov dword ptr [esi + 0x8], edi
+        mov edx, dword ptr [edi]
+        mov dword ptr [esi + 0xc], edx
+        mov eax, dword ptr [edi + 0xb0]
+        mov ecx, dword ptr [eax + 0x8]
+        push 0x10
+        push 0xfa00
+        call ecx
+        mov dword ptr [esi + 0x10], eax
+        mov edx, dword ptr [edi + 0xb0]
+        mov eax, dword ptr [edx]
+        push 0xfa0
+        call eax
+        mov dword ptr [esi + 0x14], eax
+        mov eax, dword ptr [esi + 0xc]
+        mov edx, eax
+        imul edx, eax
+        mov ebx, 0x3e8
+        mov dword ptr [esi + 0x18], ebx
+        mov ecx, dword ptr [edi + 0xb0]
+        mov eax, dword ptr [ecx]
+        add edx, edx
+        add edx, edx
+        push edx
+        call eax
+        mov dword ptr [esi + 0x4], eax
+        mov ecx, dword ptr [edi + 0xb0]
+        mov edx, dword ptr [ecx]
+        push 0x17700
+        call edx
+        mov dword ptr [esi + 0x20], eax
+        mov dword ptr [esi + 0x24], ebx
+        mov eax, dword ptr [edi + 0xb0]
+        mov ecx, dword ptr [eax]
+        push 0x4e20
+        call ecx
+        mov dword ptr [esi + 0x2c], eax
+        mov dword ptr [esi + 0x30], ebx
+        mov edx, dword ptr [edi + 0xb0]
+        mov eax, dword ptr [edx]
+        push 0x60c
+        call eax
+        mov dword ptr [esi + 0x38], eax
+        mov dword ptr [esi + 0x40], 0x81
+        mov ecx, dword ptr [edi + 0xb0]
+        mov edx, dword ptr [ecx]
+        push 0xa000
+        call edx
+        mov ecx, dword ptr [esi + 0x38]
+        mov dword ptr [ecx], eax
+        mov edx, dword ptr [esi + 0x38]
+        add esp, 0x24
+        mov dword ptr [edx + 0x8], 0x400
+        mov ebx, 0xc
+        nop
+    loop_top_7DFA40:
+        mov eax, dword ptr [edi + 0xb0]
+        mov ecx, dword ptr [eax]
+        push 0x1400
+        call ecx
+        mov edx, dword ptr [esi + 0x38]
+        mov dword ptr [ebx + edx], eax
+        mov eax, dword ptr [esi + 0x38]
+        mov dword ptr [eax + ebx + 0x8], 0x80
+        add ebx, 0xc
+        add esp, 0x4
+        cmp ebx, 0x600
+        jle loop_top_7DFA40
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret
+    }
+}
