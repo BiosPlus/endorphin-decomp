@@ -4419,3 +4419,70 @@ extern "C" __declspec(naked) void __fastcall fn_00413350(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00415E30] sub_00415E30 (156 bytes)
+extern "C" void ext_006A6DE0();
+
+extern "C" __declspec(naked) unsigned int __cdecl fn_00415E30(unsigned int packed, float scale) {
+    __asm {
+        push ecx
+        fld1
+        fld dword ptr [esp + 0xc]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        je short scale_gt_one
+        fstp st(0)
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        jmp short scale_done
+scale_gt_one:
+        fstp st(1)
+scale_done:
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        mov ebx, eax
+        movzx eax, al
+        mov dword ptr [esp + 0x10], eax
+        shr ebx, 0x10
+        fild dword ptr [esp + 0x10]
+        fmul st, st(1)
+        call ext_006A6DE0
+        cmp eax, 0xff
+        mov byte ptr [esp + 0x10], al
+        jl short r_done
+        mov byte ptr [esp + 0x10], -1
+r_done:
+        movzx ecx, bl
+        mov dword ptr [esp + 0x4], ecx
+        fild dword ptr [esp + 0x4]
+        fmul st, st(1)
+        call ext_006A6DE0
+        cmp eax, 0xff
+        jge short b_sat
+        mov bl, al
+        jmp short b_done
+b_sat:
+        or bl, -1
+b_done:
+        movzx edx, byte ptr [esp + 0xd]
+        mov dword ptr [esp + 0xc], edx
+        fild dword ptr [esp + 0xc]
+        fmulp st(1), st
+        call ext_006A6DE0
+        cmp eax, 0xff
+        jl short g_done
+        or al, -1
+g_done:
+        movzx edx, byte ptr [esp + 0x10]
+        xor ecx, ecx
+        mov ch, bl
+        pop ebx
+        mov cl, al
+        shl ecx, 0x8
+        or ecx, edx
+        mov eax, ecx
+        pop ecx
+        ret
+    }
+}
