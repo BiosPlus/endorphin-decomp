@@ -2999,3 +2999,24 @@ extern "C" __declspec(naked) void* __fastcall fn_00688C10(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x00688060] sub_00688060 (169 bytes)
+extern "C" void ext_006879E0();
+
+extern "C" void __cdecl fn_00688060(int a, int b, int c) {
+    typedef void (__cdecl *Leaf3)(int, int, int);
+    int q = (c - a) / 56;
+    if (q > 40) {
+        int m = (q + 1) / 8;
+        int B2 = m * 112;
+        int B = m * 56;
+        ((Leaf3)ext_006879E0)(a, a + B, a + B2);
+        a += B;
+        ((Leaf3)ext_006879E0)(b - B, b, b + B);
+        ((Leaf3)ext_006879E0)(c - B2, c - B, c);
+        c -= B;
+        ((Leaf3)ext_006879E0)(a, b, c);
+    } else {
+        ((Leaf3)ext_006879E0)(a, b, c);
+    }
+}
