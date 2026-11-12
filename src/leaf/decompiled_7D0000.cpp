@@ -3240,3 +3240,114 @@ L_done:
         ret
     }
 }
+
+// [0x007DB8E0] sub_007DB8E0 (245 bytes)
+extern "C" void ext_007CCA20();
+extern "C" void ext_007F56E0();
+extern "C" int mem_0093C1A8;
+extern "C" __declspec(naked) void __cdecl fn_007DB8E0(void* a0, void* a1) {
+    __asm {
+        sub esp, 0x14
+        mov eax, dword ptr [esp + 0x18]
+        fld dword ptr [mem_0093C1A8]
+        push ebx
+        fstp dword ptr [esp + 0x1c]
+        push edi
+        mov edi, dword ptr [eax]
+        xor ebx, ebx
+        cmp dword ptr [edi + 0x18], ebx
+        jle fn7db8e0_epilogue
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x2c]
+        xor ebp, ebp
+        jmp fn7db8e0_loop
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+fn7db8e0_loop:
+        mov edx, dword ptr [edi + 0x10]
+        mov eax, dword ptr [edi + 0x14]
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [eax + 4*ebx]
+        push esi
+        add edx, ebp
+        push edx
+        push ecx
+        call ext_007CCA20
+        mov edx, dword ptr [edi + 0x14]
+        mov eax, dword ptr [edx + 4*ebx]
+        push eax
+        call ext_007F56E0
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [esi + 4]
+        add esp, 0x14
+        fld dword ptr [esp + 0x1c]
+        fld st(0)
+        fmulp st(2), st
+        fld dword ptr [esi]
+        fld dword ptr [esp + 0x18]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(3)
+        faddp st(1), st
+        fld dword ptr [esi + 8]
+        fld dword ptr [esp + 0x20]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x14]
+        fld st(0)
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x28]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 5
+        jp fn7db8e0_skip
+        mov eax, dword ptr [esp + 0x30]
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [esi]
+        fmul st, st(1)
+        faddp st(4), st
+        fxch st(3)
+        fstp dword ptr [eax]
+        fld dword ptr [esi + 4]
+        fmul st, st(3)
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [eax + 4]
+        fld dword ptr [esi + 8]
+        fmulp st(2), st
+        faddp st(1), st
+        fstp dword ptr [eax + 8]
+        jmp fn7db8e0_next
+fn7db8e0_skip:
+        fstp st(1)
+        fstp st(2)
+        fstp st(2)
+        fstp st(1)
+        fstp st(0)
+fn7db8e0_next:
+        add ebx, 1
+        add ebp, 0x40
+        cmp ebx, dword ptr [edi + 0x18]
+        jl fn7db8e0_loop
+        pop esi
+        pop ebp
+fn7db8e0_epilogue:
+        pop edi
+        pop ebx
+        add esp, 0x14
+        ret
+    }
+}
