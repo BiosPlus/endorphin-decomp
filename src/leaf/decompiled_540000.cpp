@@ -2508,3 +2508,32 @@ extern "C" Struct_54F030* __fastcall fn_0054F030(Struct_54F030* self, int edx_un
     self->f[23] = other->f[23];
     return self;
 }
+
+// [0x0054F1B0] sub_0054F1B0 (38 bytes)
+// Stack args: arg1 = first, arg2 = last, arg3 = value. For p = first; p != last; p += 0x68: push value, ecx = p, call sub_0054F030 (callee cleans the pushed arg). Plain ret.
+extern "C" void ext_0054F030();
+
+extern "C" __declspec(naked) void __cdecl fn_0054F1B0(void* first, void* last, const void* value) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+    loop_top:
+        push ebx
+        mov ecx, esi
+        call ext_0054F030
+        add esi, 0x68
+        cmp esi, edi
+        jne loop_top
+        pop ebx
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
