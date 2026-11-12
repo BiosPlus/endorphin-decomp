@@ -4904,3 +4904,176 @@ extern "C" __declspec(naked) void* __fastcall fn_0050E3B0(void* self) {
         ret
     }
 }
+
+// [0x0050A800] sub_0050A800 (297 bytes)
+extern "C" void ext_00508790();
+extern "C" void ext_00509C90();
+extern "C" int mem_00892010;
+extern "C" int mem_00924EF4;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void __fastcall fn_0050A800(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push offset mem_00892010
+        push eax
+        mov dword ptr fs:[0], esp
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        mov ebx, dword ptr [esp + 0x28]
+        mov ebp, dword ptr [esp + 0x20]
+       
+        _emit 0x8d
+        _emit 0x74
+        _emit 0x3f
+        _emit 0x02
+        cmp esi, ebx
+        mov dword ptr [esp + 0x18], 0x0
+        mov dword ptr [esp + 0x24], edi
+        jge after_first
+       
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+loop_top:
+       
+        _emit 0x8d
+        _emit 0x04
+        _emit 0xf6
+       
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x85
+        _emit 0x00
+       
+        _emit 0x8d
+        _emit 0x48
+        _emit 0xe0
+        push ecx
+        add eax, 0x4
+        push eax
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        je skip_dec
+        sub esi, 0x1
+skip_dec:
+       
+        _emit 0x8d
+        _emit 0x14
+        _emit 0xf6
+       
+        _emit 0x8d
+        _emit 0x5c
+        _emit 0x95
+        _emit 0x00
+       
+        _emit 0x8d
+        _emit 0x04
+        _emit 0xff
+       
+        _emit 0x8d
+        _emit 0x4b
+        _emit 0x04
+       
+        _emit 0x8d
+        _emit 0x7c
+        _emit 0x85
+        _emit 0x00
+        push ecx
+       
+        _emit 0x8d
+        _emit 0x4f
+        _emit 0x04
+        call dword ptr [mem_00924FDC]
+        fld dword ptr [ebx + 0x20]
+        fstp dword ptr [edi + 0x20]
+        mov edi, esi
+       
+        _emit 0x8d
+        _emit 0x74
+        _emit 0x36
+        _emit 0x02
+        cmp esi, dword ptr [esp + 0x28]
+        jl loop_top
+        mov ebx, dword ptr [esp + 0x28]
+        cmp esi, ebx
+after_first:
+        jne after_second
+       
+        _emit 0x8d
+        _emit 0x14
+        _emit 0xdb
+       
+        _emit 0x8d
+        _emit 0x74
+        _emit 0x95
+        _emit 0xdc
+       
+        _emit 0x8d
+        _emit 0x04
+        _emit 0xff
+       
+        _emit 0x8d
+        _emit 0x4e
+        _emit 0x04
+       
+        _emit 0x8d
+        _emit 0x7c
+        _emit 0x85
+        _emit 0x00
+        push ecx
+       
+        _emit 0x8d
+        _emit 0x4f
+        _emit 0x04
+        call dword ptr [mem_00924FDC]
+        fld dword ptr [esi + 0x20]
+        fstp dword ptr [edi + 0x20]
+       
+        _emit 0x8d
+        _emit 0x7b
+        _emit 0xff
+after_second:
+        sub esp, 0x24
+        mov esi, esp
+        mov dword ptr [esp + 0x4c], esp
+        mov dword ptr [esi], 0x93bf24
+        mov dword ptr [esp + 0x4c], esi
+        mov dword ptr [esi], 0x93bfb4
+        lea edx, [esp + 0x54]
+        push edx
+        lea ecx, [esi + 0x4]
+        mov byte ptr [esp + 0x40], 0x1
+        mov dword ptr [esi], 0x94f92c
+        call dword ptr [mem_00924FE0]
+        fld dword ptr [esp + 0x70]
+        mov eax, dword ptr [esp + 0x48]
+        fstp dword ptr [esi + 0x20]
+        push eax
+        push edi
+        push ebp
+        mov byte ptr [esp + 0x48], 0x0
+        call ext_00509C90
+        add esp, 0x30
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call ext_00508790
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
