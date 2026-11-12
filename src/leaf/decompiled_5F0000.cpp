@@ -2492,3 +2492,21 @@ extern "C" __declspec(naked) void __fastcall fn_005FC190(void* self) {
         ret
     }
 }
+
+// [0x005F5BC0] sub_005F5BC0 (79 bytes)
+extern "C" void ext_00480430();
+extern "C" void ext_004C5010();
+extern "C" int mem_00B40640;
+
+typedef void (__thiscall *Sub5F5BC0_TargetFn1)(void* self);
+typedef void (__thiscall *Sub5F5BC0_TargetFn2)(void* self, float val);
+typedef void* (__thiscall *Sub5F5BC0_SubFn)(void* self, int key);
+
+extern "C" void __fastcall fn_005F5BC0(void* self, int edx_unused, float val) {
+    (void)edx_unused;
+    char* p = (char*)self;
+    *(float*)(p + 0x164) = val;
+    void* sub = p + 4;
+    ((Sub5F5BC0_TargetFn1)ext_00480430)(((Sub5F5BC0_SubFn)(*(void***)sub)[3])(sub, mem_00B40640));
+    ((Sub5F5BC0_TargetFn2)ext_004C5010)(((Sub5F5BC0_SubFn)(*(void***)sub)[3])(sub, mem_00B40640), *(float*)(p + 0x164));
+}
