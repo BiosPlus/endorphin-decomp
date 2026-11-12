@@ -2022,3 +2022,80 @@ extern "C" __declspec(naked) void __fastcall fn_004C49C0(void* self) {
         ret 0x4
     }
 }
+
+// [0x004C5120] sub_004C5120 (182 bytes)
+extern "C" void ext_0067B7F0();
+extern "C" void ext_0067DE10();
+extern "C" void ext_004C5010();
+extern "C" void ext_006A7250();
+extern "C" int mem_00B40640;
+extern "C" double sqrt(double);
+
+extern "C" __declspec(naked) void __fastcall fn_004C5120(void* self, int edx_unused, const float* a1) {
+    __asm {
+        sub esp, 0xc
+        mov eax, dword ptr [esp + 0x10]
+        fld dword ptr [eax]
+        push esi
+        fstp dword ptr [esp + 0x4]
+        push edi
+        fld dword ptr [eax + 0x4]
+        mov edi, ecx
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [eax + 0x4]
+        fld dword ptr [eax]
+        fld dword ptr [eax + 0x8]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp + 0x18]
+        lea ecx, [esp + 0x8]
+        call ext_0067B7F0
+        mov ecx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [edi + 0x4]
+        mov edx, dword ptr [eax + 0xc]
+        lea esi, [edi + 0x4]
+        push ecx
+        mov ecx, esi
+        call edx
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [eax + 0x8]
+        mov ecx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        mov ecx, esi
+        call edx
+        mov ecx, eax
+        call ext_0067DE10
+        fld dword ptr [esp + 0x18]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        mov ecx, dword ptr [mem_00B40640]
+        fstp dword ptr [esp]
+        push ecx
+        mov ecx, esi
+        call edx
+        mov ecx, eax
+        call ext_004C5010
+        mov ecx, edi
+        call ext_004C0340
+        pop edi
+        pop esi
+        add esp, 0xc
+        ret 0x4
+    }
+}
