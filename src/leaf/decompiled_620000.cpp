@@ -4321,3 +4321,36 @@ extern "C" __declspec(naked) void __fastcall fn_006202F0(void* self) {
         ret
     }
 }
+
+// [0x00622BA0] sub_00622BA0 (95 bytes)
+extern "C" void ext_00662610();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B4AAE8;
+extern "C" int mem_00B4AACC;
+
+extern "C" __declspec(naked) void __fastcall fn_00622BA0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8aa40e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00B4AAE8], al
+        jne skip_init
+        or dword ptr [mem_00B4AAE8], eax
+        push 0xa43218
+        push offset mem_00B4AACC
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_00662610
+        push 0x91ef70
+        call ext_006A6C87
+        add esp, 0xc
+    skip_init:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00B4AACC
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
