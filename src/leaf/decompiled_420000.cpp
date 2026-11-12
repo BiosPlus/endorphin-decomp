@@ -3110,3 +3110,103 @@ extern "C" __declspec(naked) void __fastcall fn_004242A0(void* self) {
         ret
     }
 }
+
+// [0x004247C0] sub_004247C0 (271 bytes)
+extern "C" void ext_00404F00();
+extern "C" void ext_006A5F50();
+extern "C" void ext_006A5FDA();
+extern "C" int mem_00925694;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_004247C0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925694]
+        push esi
+        push 0x0
+        push 0x0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x690]
+        push 0xf0
+        push eax
+        call ebp
+        mov ecx, dword ptr [esi + 0x74]
+        mov edx, dword ptr [ecx]
+        cmp eax, 0x1
+        mov eax, dword ptr [edx + 0xcc]
+        sete bl
+        call eax
+        test al, al
+        je L_end
+        test bl, bl
+        push edi
+        je L_else
+        lea edi, [esi + 0x5c8]
+        push 0x92a0d0
+        mov ecx, edi
+        call ext_006A5F50
+        push 0x0
+        mov ecx, edi
+        call ext_006A5FDA
+        mov ecx, dword ptr [esi + 0x63c]
+        push 0x0
+        push 0x1
+        push 0xf1
+        push ecx
+        call ebp
+        push 0x0
+        jmp L_tail
+    L_else:
+        mov edx, dword ptr [esi + 0x78]
+        mov eax, dword ptr [edx + 0xc]
+        push eax
+        lea eax, [esp + 0x14]
+        push eax
+        call ext_00404F00
+        add esp, 0x8
+        mov ecx, eax
+        mov dword ptr [esp + 0x34], 0x0
+        lea edi, [esi + 0x5c8]
+        call dword ptr [mem_00924FF0]
+        push eax
+        mov ecx, edi
+        call ext_006A5F50
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x34], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        push 0x1
+        mov ecx, edi
+        call ext_006A5FDA
+        mov ecx, dword ptr [esi + 0x78]
+        mov eax, dword ptr [esi + 0x63c]
+        xor edx, edx
+        cmp byte ptr [ecx + 0x16], dl
+        push 0x0
+        setne dl
+        push edx
+        push 0xf1
+        push eax
+        call ebp
+        push 0x1
+    L_tail:
+        lea ecx, [esi + 0x61c]
+        call ext_006A5FDA
+        pop edi
+    L_end:
+        mov ecx, dword ptr [esp + 0x28]
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret
+    }
+}

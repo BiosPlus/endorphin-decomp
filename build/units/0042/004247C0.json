@@ -24,5 +24,7 @@
     "0x0042488F",
     "0x004248B8"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-12T13:37:31Z"
 }
