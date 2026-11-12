@@ -3120,3 +3120,74 @@ L_006B52A8:
         ret 0x4
     }
 }
+
+// [0x006B2AF0] sub_006B2AF0 (197 bytes)
+extern "C" void ext_006AD290();
+extern "C" int mem_009244D4;
+
+extern "C" __declspec(naked) void __fastcall fn_006B2AF0(void* self) {
+    __asm {
+        push -1
+        push 0x8b78f3
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        call ext_006AD290
+        xor ebx, ebx
+        mov dword ptr [esi], 0x991878
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esi + 0x54], ebx
+        mov dword ptr [esi + 0x50], 0x92a5d4
+        mov edi, dword ptr [esp + 0x20]
+        mov eax, dword ptr [edi + 0x48]
+        mov dword ptr [esi + 0x48], eax
+        mov eax, dword ptr [edi + 0x4]
+        mov ecx, 0x1
+        mov byte ptr [esp + 0x18], cl
+        mov dword ptr [esi + 0x4], eax
+        add dword ptr [eax + 0x8], ecx
+        lea ecx, [edi + 0x8]
+        push ecx
+        lea ecx, [esi + 0x8]
+        call dword ptr [mem_009244D4]
+        lea edx, [edi + 0xc]
+        push edx
+        lea ecx, [esi + 0xc]
+        call dword ptr [mem_009244D4]
+        mov eax, dword ptr [edi + 0x10]
+        mov dword ptr [esi + 0x10], eax
+        mov ecx, dword ptr [edi + 0x14]
+        mov dword ptr [esi + 0x14], ecx
+        mov edx, dword ptr [edi + 0x18]
+        mov dword ptr [esi + 0x18], edx
+        mov eax, dword ptr [edi + 0x1c]
+        mov dword ptr [esi + 0x1c], eax
+        mov dword ptr [esi + 0x20], ebx
+        mov dword ptr [esi + 0x24], ebx
+        mov dword ptr [esi + 0x28], ebx
+        mov dword ptr [esi + 0x2c], ebx
+        mov dword ptr [esi + 0x34], ebx
+        mov dword ptr [esi + 0x30], ebx
+        mov cl, byte ptr [edi + 0x38]
+        mov byte ptr [esi + 0x38], cl
+        mov edx, dword ptr [edi + 0x3c]
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esi + 0x40], bl
+        mov byte ptr [esi + 0x41], bl
+        mov byte ptr [esi + 0x58], bl
+        pop edi
+        mov dword ptr [esi + 0x3c], edx
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
