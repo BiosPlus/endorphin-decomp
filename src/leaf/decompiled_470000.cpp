@@ -2418,3 +2418,63 @@ extern "C" __declspec(naked) void __fastcall fn_004769F0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x004766A0] sub_004766A0 (196 bytes)
+// Builds "[" + "%ld"(a1) + "]" as a std::string into the hidden return buffer a0 (returned in eax), SEH-guarded.
+extern "C" int mem_00924FD0;
+extern "C" int mem_00924ECC;
+extern "C" int mem_00924FF4;
+extern "C" void ext_00476630();
+extern "C" void ext_00476660();
+extern "C" __declspec(naked) void* __cdecl fn_004766A0(void* a0, int a1) {
+    __asm {
+        push -0x1
+        push 0x8b4d95
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x58
+        mov eax, dword ptr [esp + 0x6c]
+        push esi
+        push eax
+        lea ecx, [esp + 0x44]
+        push ecx
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_00476660
+        mov esi, eax
+        lea edx, [esp + 0x2c]
+        push 0x92f144
+        push edx
+        mov dword ptr [esp + 0x74], 0x1
+        call ext_00476630
+        push esi
+        push eax
+        lea eax, [esp + 0x20]
+        push eax
+        mov byte ptr [esp + 0x80], 0x2
+        call dword ptr [mem_00924FD0]
+        mov esi, dword ptr [esp + 0x88]
+        push 0x92f140
+        push eax
+        push esi
+        mov byte ptr [esp + 0x8c], 0x3
+        call dword ptr [mem_00924ECC]
+        add esp, 0x28
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x4], 0x1
+        mov byte ptr [esp + 0x64], 0x2
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x24]
+        mov byte ptr [esp + 0x64], 0x1
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x40]
+        mov byte ptr [esp + 0x64], 0x0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x5c]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x64
+        ret
+    }
+}
