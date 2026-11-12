@@ -3664,3 +3664,106 @@ extern "C" __declspec(naked) void __fastcall fn_006B6510(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006B48B0] sub_006B48B0 (238 bytes)
+// CMemDC(CDC* pDC): off-screen memory DC constructor (MFC style, SEH frame).
+extern "C" void ext_006A5FFE();
+extern "C" void ext_006A6190();
+extern "C" void ext_006A6196();
+extern "C" void ext_006A61A2();
+extern "C" void ext_006A6334();
+extern "C" int mem_009240AC;
+extern "C" int mem_0092408C;
+
+extern "C" __declspec(naked) void* __fastcall fn_006B48B0(void* self, int edx_unused, void* pDC) {
+    __asm {
+        push -1
+        push 0x8b7a53
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0xc], esi
+        call ext_006A61A2
+        xor ecx, ecx
+        lea ebp, [esi + 0x10]
+        mov dword ptr [esi], 0x92d814
+        mov dword ptr [esp + 0x20], ecx
+        mov dword ptr [ebp + 0x4], ecx
+        mov dword ptr [ebp], 0x92c4ac
+        mov ebx, dword ptr [esp + 0x28]
+        xor eax, eax
+        mov dword ptr [esi + 0x1c], ebx
+        mov dword ptr [esi + 0x18], ecx
+        cmp dword ptr [ebx + 0xc], ecx
+        mov byte ptr [esp + 0x20], 0x1
+        sete al
+        cmp eax, ecx
+        mov dword ptr [esi + 0x30], eax
+        je L_006B4976
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0x58]
+        push edi
+        lea edi, [esi + 0x20]
+        push edi
+        mov ecx, ebx
+        call edx
+        mov eax, dword ptr [ebx + 0x4]
+        push eax
+        call dword ptr [mem_009240AC]
+        push eax
+        mov ecx, esi
+        call ext_006A6190
+        mov eax, dword ptr [edi + 0xc]
+        sub eax, dword ptr [edi + 0x4]
+        mov ecx, dword ptr [edi + 0x8]
+        sub ecx, dword ptr [edi]
+        push eax
+        mov eax, dword ptr [ebx + 0x4]
+        push ecx
+        push eax
+        call dword ptr [mem_0092408C]
+        push eax
+        mov ecx, ebp
+        call ext_006A5FFE
+        test ebp, ebp
+        je L_006B4953
+        mov ebp, dword ptr [ebp + 0x4]
+L_006B4953:
+        mov ecx, dword ptr [esi + 0x4]
+        push ebp
+        push ecx
+        call ext_006A6196
+        mov edx, dword ptr [esi + 0x24]
+        mov dword ptr [esi + 0x18], eax
+        mov eax, dword ptr [edi]
+        push edx
+        push eax
+        lea ecx, [esp + 0x1c]
+        push ecx
+        mov ecx, esi
+        call ext_006A6334
+        pop edi
+        jmp L_006B4988
+L_006B4976:
+        mov edx, dword ptr [ebx + 0xc]
+        mov dword ptr [esi + 0xc], edx
+        mov eax, dword ptr [ebx + 0x4]
+        mov dword ptr [esi + 0x4], eax
+        mov ecx, dword ptr [ebx + 0x8]
+        mov dword ptr [esi + 0x8], ecx
+L_006B4988:
+        mov ecx, dword ptr [esp + 0x18]
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x18
+        ret 0x4
+    }
+}
