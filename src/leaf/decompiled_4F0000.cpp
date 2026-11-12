@@ -2602,3 +2602,32 @@ extern "C" __declspec(naked) void __fastcall fn_004F7110(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004F7160] sub_004F7160 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004F7160(void* self, int edx_unused, float a1) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        call ext_004F4EA0
+        fstp dword ptr [esp + 0x8]
+        mov ecx, esi
+        call ext_004F4ED0
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x10]
+        sub esp, 0xc
+        fmul qword ptr [mem_0094DDB8]
+        mov ecx, esi
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [esp]
+        call ext_004F5040
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    }
+}
