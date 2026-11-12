@@ -5458,3 +5458,32 @@ copy_loop:
         ret 0x4
     }
 }
+
+// [0x0066A9D0] sub_0066A9D0 (49 bytes)
+extern "C" void ext_0066A770();
+
+extern "C" __declspec(naked) void __fastcall fn_0066A9D0(void* self, int edx_unused, unsigned char ch) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        add edi, 0x1
+        cmp edi, dword ptr [esi + 0x8]
+        jb skip_grow
+        push edi
+        call ext_0066A770
+    skip_grow:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esi + 0x4]
+        mov dl, byte ptr [esp + 0xc]
+        mov byte ptr [eax + ecx], dl
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi + 0x4], edi
+        mov byte ptr [edi + eax], 0
+        mov eax, dword ptr [esi]
+        pop edi
+        pop esi
+        ret 4
+    }
+}
