@@ -1,8 +1,12 @@
 // Decompiled translation unit: src/classes/AcclaimIO.cpp
 
 extern "C" int mem_00924FDC;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
 extern "C" void ext_00521350();
 extern "C" void ext_00553750();
+extern "C" void ext_005576F0();
+extern "C" void ext_00558A10();
 extern "C" void ext_00558A20();
 extern "C" void ext_00559180();
 
@@ -146,6 +150,81 @@ extern "C" __declspec(naked) void __fastcall fn_00584730(void* self, int edx_unu
         pop edi
         pop esi
         pop ebx
+        ret 0x4
+    }
+}
+
+// [0x00584510] AcclaimIO::vfunc_11 (247 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00584510(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        lea eax, [esi + 0x5c]
+        lea edi, [esi + 0x964]
+        push eax
+        mov ecx, edi
+        call ext_00558A10
+        mov ecx, dword ptr [esi + 0x418]
+        push ecx
+        mov ecx, edi
+        call ext_00559180
+        mov eax, dword ptr [esi + 0x414]
+        mov ecx, dword ptr [esi + 0x424]
+        test ecx, ecx
+        mov dword ptr [esi + 0xd78], eax
+        mov eax, dword ptr [esi + 0x420]
+        lea edx, [esi + 0x42c]
+        mov dword ptr [esi + 0xd84], eax
+        mov dword ptr [esi + 0xd9c], edx
+        je short L_skip
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x4]
+        push 0
+        call edx
+        push 0x928b5d
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FE4]
+        mov ecx, dword ptr [esi + 0x424]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xc]
+        lea edx, [esp + 0xc]
+        push edx
+        mov dword ptr [esp + 0x34], 0
+        call eax
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esi + 0x424]
+        mov dword ptr [esi + 0xd88], ecx
+    L_skip:
+        mov edx, dword ptr [edi]
+        mov ebx, dword ptr [esp + 0x38]
+        mov eax, dword ptr [edx + 0x38]
+        push ebx
+        mov ecx, edi
+        call eax
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [edx + 0x2c]
+        push ebx
+        mov ecx, edi
+        call eax
+        mov ecx, esi
+        call ext_005576F0
+        mov ecx, dword ptr [esp + 0x28]
+        pop edi
+        mov dword ptr [esi + 0xd9c], 0
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
         ret 0x4
     }
 }
