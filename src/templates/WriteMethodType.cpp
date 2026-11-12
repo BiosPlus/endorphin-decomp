@@ -9612,3 +9612,25 @@ extern "C" __declspec(naked) void __fastcall fn_0064ED60(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0064EA80] ExprParser::WriteMethodType<SkeletalJoint, NM::Vector3 const &, {public: void __thiscall SkeletalJoint::setDesiredTwistAndSwingAngles(class NM::Vector3 const &), 0}>::vfunc_41 (34 bytes)
+extern "C" void ext_0064DEE0();
+
+extern "C" __declspec(naked) void __stdcall fn_0064EA80(void** self, void** a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_0064DEE0
+        pop esi
+        ret 0x8
+    }
+}
