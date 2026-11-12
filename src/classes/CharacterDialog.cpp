@@ -31,3 +31,34 @@ extern "C" void __fastcall fn_0040CD90(void* self, int edx_unused, int a1) {
     ddx(a1, 0x1, p + 0x1b0);
     ddx(a1, 0x2, p + 0x224);
 }
+
+// [0x0040DA50] CharacterDialog::vfunc_84 (57 bytes)
+extern "C" void ext_0040AE10();
+extern "C" void ext_0040B5B0();
+extern "C" void ext_0040C300();
+extern "C" void ext_006A5FC8();
+
+extern "C" __declspec(naked) void __fastcall fn_0040DA50(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006A5FC8
+        mov ecx, esi
+        call ext_0040C300
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x164]
+        mov ecx, esi
+        call edx
+        mov ecx, esi
+        call ext_0040AE10
+        mov ecx, esi
+        call ext_0040B5B0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x16c]
+        mov ecx, esi
+        call edx
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
