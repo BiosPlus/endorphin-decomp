@@ -29,5 +29,7 @@
     "0x004F513A",
     "0x004F5149"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-12T13:56:17Z"
 }
