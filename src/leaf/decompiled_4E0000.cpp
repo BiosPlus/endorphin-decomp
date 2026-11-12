@@ -1816,3 +1816,90 @@ extern "C" __declspec(naked) void __fastcall fn_004E3AB0(void* self) {
         ret
     }
 }
+
+// [0x004EF7E0] sub_004EF7E0 (168 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_004EF7E0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x24]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        je inv_a
+        mov eax, dword ptr [esi + 0x28]
+        sub eax, ecx
+        sar eax, 2
+        cmp edi, eax
+        jb ok_a
+    inv_a:
+        mov ebx, dword ptr [mem_00925134]
+        call ebx
+        jmp after_a
+    ok_a:
+        mov ebx, dword ptr [mem_00925134]
+    after_a:
+        mov eax, dword ptr [esi + 0x24]
+        mov esi, dword ptr [eax + 4*edi]
+        mov ebp, dword ptr [esp + 0x18]
+        xor edi, edi
+        cmp dword ptr [esi + 0x24], edi
+        jle skip_b
+        mov edi, edi
+    loop_b:
+        mov ecx, dword ptr [esi + 0xc]
+        test ecx, ecx
+        je inv_b
+        mov eax, dword ptr [esi + 0x10]
+        sub eax, ecx
+        sar eax, 2
+        cmp edi, eax
+        jb ok_b
+    inv_b:
+        call ebx
+    ok_b:
+        mov ecx, dword ptr [esi + 0xc]
+        cmp dword ptr [ecx + 4*edi], ebp
+        je skip_b
+        add edi, 1
+        cmp edi, dword ptr [esi + 0x24]
+        jl loop_b
+    skip_b:
+        add edi, 1
+        xor ebx, ebx
+        cmp edi, dword ptr [esi + 0x24]
+        jge done
+        nop
+    loop_c:
+        mov ecx, dword ptr [esi + 0xc]
+        test ecx, ecx
+        je inv_c
+        mov eax, dword ptr [esi + 0x10]
+        sub eax, ecx
+        sar eax, 2
+        cmp edi, eax
+        jb ok_c
+    inv_c:
+        call dword ptr [mem_00925134]
+    ok_c:
+        mov edx, dword ptr [esi + 0xc]
+        mov eax, dword ptr [edx + 4*edi]
+        cmp dword ptr [eax + 0x38], ebp
+        jne done
+        add edi, 1
+        add ebx, 1
+        cmp edi, dword ptr [esi + 0x24]
+        jl loop_c
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        ret 8
+    }
+}
