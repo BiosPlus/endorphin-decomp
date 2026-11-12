@@ -2719,3 +2719,65 @@ extern "C" void* __fastcall fn_0053AC50(void* self) {
     int res = (flags & 0x8008) == 0x8008 ? mem_00AEFEE8 : mem_00AEFED0;
     return (void*)(res + 8);
 }
+
+// [0x005302D0] sub_005302D0 (156 bytes)
+extern "C" void ext_005434F0();
+extern "C" void ext_0065C650();
+
+extern "C" __declspec(naked) void __fastcall fn_005302D0(void* self) {
+    __asm {
+        push -1
+        push 0x8a56c8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebp
+        push esi
+        mov esi, ecx
+        lea ebp, [esi + 0x98]
+        mov ecx, ebp
+        mov dword ptr [esp + 0x8], ebp
+        call ext_0065C640
+        xor eax, eax
+        cmp byte ptr [esi + 0xa8], al
+        mov dword ptr [esp + 0x14], eax
+        je short L_unlock
+        mov ecx, dword ptr [esi + 0x4c]
+        push ebx
+        push edi
+        mov byte ptr [esi + 0xa8], al
+        mov eax, dword ptr [esi + 0x9c]
+        push eax
+        lea edi, [esi + 0xa0]
+        push edi
+        lea ebx, [esi + 0x14]
+        push ebx
+        call ext_005434F0
+        test eax, eax
+        jne short L_copy
+        mov ecx, dword ptr [esi + 0x9c]
+        push ecx
+        mov ecx, dword ptr [esi + 0x68]
+        push edi
+        push ebx
+        call ext_005434F0
+L_copy:
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [edi + 0x4]
+        pop edi
+        mov dword ptr [ebx], edx
+        mov dword ptr [ebx + 0x4], eax
+        pop ebx
+L_unlock:
+        mov ecx, ebp
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_0065C650
+        mov ecx, dword ptr [esp + 0xc]
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
