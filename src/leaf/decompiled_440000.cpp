@@ -3962,3 +3962,8 @@ extern "C" void __fastcall fn_0044CA90(void* self, int edx_unused, Target_0044C9
 extern "C" void __stdcall fn_0044CAB0(Target_0044C9B0* target) {
     target->func1(((bool (__stdcall *)(int))ext_0044C830)(8));
 }
+
+// [0x0044CAD0] sub_0044CAD0 (31 bytes)
+extern "C" void __stdcall fn_0044CAD0(Target_0044C9B0* target) {
+    target->func1(((bool (__stdcall *)(int))ext_0044C830)(9));
+}
