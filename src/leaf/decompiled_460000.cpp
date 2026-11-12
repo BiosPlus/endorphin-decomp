@@ -4047,3 +4047,29 @@ L_469FC7:
         ret
     }
 }
+
+// [0x00469FD0] sub_00469FD0 (43 bytes)
+extern "C" void ext_00469130();
+extern "C" void ext_00469530();
+extern "C" void ext_00472350();
+extern "C" void ext_00469F80();
+extern "C" __declspec(naked) void __fastcall fn_00469FD0(void* self) {
+    __asm {
+        push esi
+        push 0
+        mov esi, ecx
+        push 3
+        mov byte ptr [esi + 0x11], 1
+        call ext_00469530
+        mov ecx, esi
+        call ext_00469130
+        mov ecx, dword ptr [esi + 0x14]
+        test ecx, ecx
+        je L_469FF3
+        call ext_00472350
+    L_469FF3:
+        mov ecx, esi
+        pop esi
+        jmp ext_00469F80
+    }
+}
