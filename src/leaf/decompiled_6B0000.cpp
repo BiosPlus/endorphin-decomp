@@ -4154,3 +4154,88 @@ L_fail:
         ret 0Ch
     }
 }
+
+// [0x006B3170] sub_006B3170 (194 bytes)
+extern "C" void ext_006B2FB0();
+extern "C" int mem_00B5D23C;
+extern "C" int mem_009256B8;
+extern "C" int mem_0092563C;
+extern "C" int mem_00991934;
+extern "C" int mem_0092526C;
+
+extern "C" __declspec(naked) void __fastcall fn_006B3170(void* self) {
+    __asm {
+        sub esp, 10h
+        call ext_006B2FB0
+        test eax, eax
+        je L_check_msg
+        mov eax, dword ptr [esp + 18h]
+        mov ecx, dword ptr [esp + 14h]
+        push eax
+        push ecx
+        call dword ptr [mem_00B5D23C]
+        add esp, 10h
+        ret 8
+
+L_check_msg:
+        cmp dword ptr [esp + 14h], 12340042h
+        push esi
+        push edi
+        jne L_fail
+        mov esi, dword ptr [esp + 20h]
+        xor edi, edi
+        cmp esi, edi
+        je L_fail
+        cmp dword ptr [esi], 28h
+        jb L_fail
+        push edi
+        lea edx, [esp + 0Ch]
+        push edx
+        push edi
+        push 30h
+        call dword ptr [mem_009256B8]
+        test eax, eax
+        je L_fail
+        mov dword ptr [esi + 4], edi
+        mov dword ptr [esi + 8], edi
+        push edi
+        mov edi, dword ptr [mem_0092563C]
+        call edi
+        push 1
+        mov dword ptr [esi + 0Ch], eax
+        call edi
+        cmp dword ptr [esi], 48h
+        mov ecx, dword ptr [esp + 0Ch]
+        mov edx, dword ptr [esp + 10h]
+        mov dword ptr [esi + 10h], eax
+        mov eax, dword ptr [esp + 8]
+        mov dword ptr [esi + 14h], eax
+        mov eax, dword ptr [esp + 14h]
+        mov dword ptr [esi + 18h], ecx
+        mov dword ptr [esi + 1Ch], edx
+        mov dword ptr [esi + 20h], eax
+        mov dword ptr [esi + 24h], 1
+        jb L_success
+        push 1Fh
+        push offset mem_00991934
+        push 20h
+        add esi, 28h
+        push esi
+        call dword ptr [mem_0092526C]
+        add esp, 10h
+
+L_success:
+        pop edi
+        mov eax, 1
+        pop esi
+        add esp, 10h
+        ret 8
+
+L_fail:
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 10h
+        ret 8
+    }
+}
