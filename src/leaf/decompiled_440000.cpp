@@ -3426,3 +3426,89 @@ skip_vf:
         ret
     }
 }
+
+// [0x0044FF40] sub_0044FF40 (191 bytes)
+extern "C" void ext_006A617E();
+extern "C" void ext_006A5F3E();
+extern "C" void ext_004046E0();
+extern "C" void ext_00404700();
+extern "C" void ext_00404720();
+extern "C" void ext_00404770();
+extern "C" void ext_004160A0();
+extern "C" void ext_0044F780();
+extern "C" int mem_0093A0BC;
+extern "C" int mem_0093A0B0;
+extern "C" int mem_0093A0C0;
+extern "C" int mem_0093A0CC;
+extern "C" int mem_0093A0C8;
+extern "C" int mem_00924300;
+
+extern "C" __declspec(naked) void __fastcall fn_0044FF40(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_0093A0BC]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [mem_0093A0B0]
+        push 0
+        push eax
+        lea ebx, [edi + 0xd6c]
+        push ecx
+        mov ecx, ebx
+        call ext_006A617E
+        mov edx, dword ptr [mem_0093A0C0]
+        mov eax, dword ptr [mem_0093A0B0]
+        push 0
+        push edx
+        lea ebp, [edi + 0xd74]
+        push eax
+        mov ecx, ebp
+        call ext_006A617E
+        push ebp
+        lea esi, [edi + 0xcf4]
+        push ebx
+        mov ecx, esi
+        call ext_00404770
+        push 2
+        mov ecx, esi
+        call ext_00404720
+        push 0x13
+        push 1
+        call ext_004160A0
+        mov ecx, dword ptr [mem_0093A0CC]
+        add esp, 8
+        push ecx
+        mov ecx, esi
+        call ext_00404700
+        mov edx, dword ptr [mem_0093A0C8]
+        push edx
+        mov ecx, esi
+        call ext_004046E0
+        mov ecx, 0xad29a8
+        call dword ptr [mem_00924300]
+        push 0
+        push 0
+        push eax
+        push 0
+        push 1
+        mov ecx, esi
+        call ext_006A5F3E
+        mov ecx, 0xad29ac
+        call dword ptr [mem_00924300]
+        push 0
+        push 0
+        push eax
+        push 1
+        push 1
+        mov ecx, esi
+        call ext_006A5F3E
+        mov ecx, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        jmp ext_0044F780
+    }
+}
