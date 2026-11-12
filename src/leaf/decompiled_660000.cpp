@@ -1,5 +1,6 @@
 // Decompiled translation unit: src/leaf/decompiled_660000.cpp
 
+#include <new>
 #include <string>
 
 // [0x0066B060] sub_0066B060 (19 bytes)
@@ -8167,6 +8168,127 @@ L_exit:
         pop ebx
         mov dword ptr fs:[0], ecx
         add esp, 0x68
+        ret
+    }
+}
+
+// [0x00662D00] sub_00662D00 (323 bytes)
+// std::string fn(const void* arg2, const std::string& s): hidden return slot is the first stack arg (cdecl ret 0).
+// If s is absolute (drive "X:" or UNC "\\\\"), result = s; otherwise result = fn_00662B70(arg2) + s.
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924EAC;
+extern "C" int mem_00924FFC;
+extern "C" int mem_00925120;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FD0;
+extern "C" void ext_00662B70();
+
+extern "C" __declspec(naked) void* __cdecl fn_00662D00(void) {
+    __asm {
+        push -1
+        push 0x8b2a36
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x40
+        push ebx
+        push ebp
+        push esi
+        xor ebp, ebp
+        push edi
+        mov dword ptr [esp + 0x14], ebp
+        mov edi, dword ptr [esp + 0x60]
+        mov ecx, edi
+        mov dword ptr [esp + 0x58], ebp
+        call dword ptr [mem_00924FE8]
+        mov esi, dword ptr [esp + 0x68]
+        mov ebx, 0x1
+        mov ecx, esi
+        mov dword ptr [esp + 0x58], ebp
+        mov dword ptr [esp + 0x14], ebx
+        call dword ptr [mem_00924EAC]
+        cmp eax, 0x2
+        jb short sub_substr
+        push ebx
+        mov ecx, esi
+        call dword ptr [mem_00924FFC]
+        cmp byte ptr [eax], 0x3a
+        je short set_flag
+sub_substr:
+        push 0x2
+        push ebp
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00925120]
+        push 0x9877ac
+        mov ebx, 0x3
+        push eax
+        mov dword ptr [esp + 0x60], 0x1
+        mov dword ptr [esp + 0x1c], ebx
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        mov byte ptr [esp + 0x13], 0x0
+        je short after_flag
+set_flag:
+        mov byte ptr [esp + 0x13], 0x1
+after_flag:
+        test bl, 0x2
+        mov dword ptr [esp + 0x58], ebp
+        je short no_dtor
+        and ebx, -0x3
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x14], ebx
+        call dword ptr [mem_00924FF4]
+no_dtor:
+        cmp byte ptr [esp + 0x13], 0x0
+        je short else_branch
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov ecx, dword ptr [esp + 0x40]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x4c
+        ret
+else_branch:
+        mov ecx, dword ptr [esp + 0x64]
+        push ecx
+        lea edx, [esp + 0x38]
+        push edx
+        call ext_00662B70
+        push esi
+        push eax
+        lea eax, [esp + 0x28]
+        push eax
+        mov dword ptr [esp + 0x6c], 0x2
+        call dword ptr [mem_00924FD0]
+        add esp, 0x14
+        push eax
+        mov ecx, edi
+        mov byte ptr [esp + 0x5c], 0x3
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x18]
+        mov byte ptr [esp + 0x58], 0x2
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x34]
+        mov byte ptr [esp + 0x58], 0x0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x50]
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x4c
         ret
     }
 }
