@@ -7326,3 +7326,98 @@ L_zero:
         ret
     }
 }
+
+// [0x00662140] sub_00662140 (207 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00662140(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x8], 0x0
+        push edi
+        jne L_a
+        call dword ptr [mem_00925134]
+L_a:
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0xc]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne L_b
+        call dword ptr [mem_00925134]
+L_b:
+        mov edi, dword ptr [esi + 0x4]
+        mov eax, dword ptr [edi + 0x64]
+        push ebx
+        mov ebx, dword ptr [esi + 0xc]
+        add edi, 0x60
+        push ebp
+        mov ebp, dword ptr [eax + 0x4]
+        add ebx, 0x8
+        cmp ebp, eax
+        jne L_c
+        call dword ptr [mem_00925134]
+L_c:
+        cmp ebp, dword ptr [edi + 0x4]
+        mov edi, dword ptr [mem_00925134]
+        jne L_d
+        call edi
+L_d:
+        add ebp, 0x8
+        cmp ebx, ebp
+        pop ebp
+        pop ebx
+        je L_eb
+        cmp dword ptr [esi + 0x8], 0x0
+        jne L_e
+        call edi
+L_e:
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [esi + 0xc]
+        cmp eax, dword ptr [edx + 0x4]
+        jne L_f
+        call edi
+L_f:
+        mov ecx, dword ptr [esi + 0xc]
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx + 0x8]
+        cmp eax, dword ptr [edx + 0x134]
+        jge L_eb
+        cmp dword ptr [esi + 0x8], 0x0
+        jne L_g
+        call edi
+L_g:
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [esi + 0xc]
+        cmp edx, dword ptr [ecx + 0x4]
+        jne L_h
+        call edi
+L_h:
+        mov eax, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [eax]
+        mov dword ptr [esi + 0xc], ecx
+        push 0x0
+        push esi
+        lea ecx, [esi + 0x38]
+        mov byte ptr [esi], 0x1
+        call ext_00466BA0
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret
+L_eb:
+        mov eax, dword ptr [esi + 0x4]
+        cmp byte ptr [eax + 0x12c], 0x0
+        je L_zero
+        mov edx, dword ptr [eax + 0x130]
+        push edx
+        mov ecx, esi
+        call ext_00661F70
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret
+L_zero:
+        pop edi
+        xor al, al
+        pop esi
+        ret
+    }
+}
