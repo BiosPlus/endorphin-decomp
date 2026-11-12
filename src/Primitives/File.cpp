@@ -50,3 +50,34 @@ extern "C" __declspec(naked) void __fastcall fn_0053BD50(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0053BD10] Primitives::File::vfunc_29 (58 bytes)
+extern "C" void ext_0053AD10();
+extern "C" void ext_0054FD10();
+
+extern "C" __declspec(naked) void __fastcall fn_0053BD10(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_0053AD10
+        lea esi, [edi + 86Ch]
+        push esi
+        lea ecx, [edi + 3Ch]
+        call ext_0054FD10
+        xor eax, eax
+        mov dword ptr [esi], eax
+        mov dword ptr [esi + 4], eax
+        mov dword ptr [esi + 8], eax
+        mov dword ptr [esi + 0Ch], eax
+        mov dword ptr [esi + 10h], eax
+        mov dword ptr [esi + 14h], eax
+        mov dword ptr [esi + 18h], eax
+        mov dword ptr [esi + 1Ch], eax
+        mov dword ptr [esi + 20h], eax
+        pop edi
+        mov dword ptr [esi + 24h], eax
+        pop esi
+        ret
+    }
+}
