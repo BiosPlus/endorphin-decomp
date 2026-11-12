@@ -3639,3 +3639,57 @@ extern "C" __declspec(naked) void* __fastcall fn_00675B70(void* self, int edx_un
         ret 0x10
     }
 }
+
+// [0x006782E0] sub_006782E0 (159 bytes)
+// Two by-value std::string args (0x1c each, ret 0x38): a at +4, b at +0x20.
+// Copies b into self+4 via a temporary, then calls the vtable slot 8 with a.c_str().
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00924FF0;
+extern "C" __declspec(naked) void __fastcall fn_006782E0(void* self, int edx_unused, void* a, void* b) {
+    __asm {
+        push -0x1
+        push 0x8b47eb
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push esi
+        push edi
+        mov esi, ecx
+        lea eax, [esp + 0x50]
+        push eax
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], 0x1
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esp + 0x8]
+        push ecx
+        lea ecx, [esi + 0x4]
+        mov byte ptr [esp + 0x30], 0x2
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x8]
+        mov byte ptr [esp + 0x2c], 0x1
+        call dword ptr [mem_00924FF4]
+        mov edi, dword ptr [esi]
+        push 0x0
+        lea ecx, [esp + 0x38]
+        call dword ptr [mem_00924FF0]
+        mov edx, dword ptr [edi + 0x20]
+        push eax
+        mov ecx, esi
+        call edx
+        lea ecx, [esp + 0x34]
+        mov byte ptr [esp + 0x2c], 0x0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x50]
+        mov dword ptr [esp + 0x2c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x38
+    }
+}
