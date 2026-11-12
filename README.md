@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `10167 / 24049` (**42.28%**) — `7075` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `599311 / 4496005 bytes` (**13.33%** of 4.29 MB)
+- **In-Scope Functions Matched:** `10168 / 24049` (**42.28%**) — `7076` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `599376 / 4496005 bytes` (**13.33%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -16,7 +16,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P0-10 (1-16B)** | 2379 / 2405 | 98.92% | 24669 / 25001 | 98.67% | 26 fn |
 | **P10-20 (16-32B)** | 2198 / 2405 | 91.39% | 55655 / 61769 | 90.10% | 207 fn |
 | **P20-30 (32-48B)** | 1174 / 2405 | 48.81% | 45844 / 97731 | 46.91% | 1231 fn |
-| **P30-40 (48-71B)** | 908 / 2405 | 37.75% | 54139 / 144549 | 37.45% | 1497 fn |
+| **P30-40 (48-71B)** | 909 / 2405 | 37.80% | 54204 / 144549 | 37.50% | 1496 fn |
 | **P40-50 (71-91B)** | 1045 / 2405 | 43.45% | 87292 / 194373 | 44.91% | 1360 fn |
 | **P50-60 (91-122B)** | 1060 / 2405 | 44.07% | 115560 / 256906 | 44.98% | 1345 fn |
 | **P60-70 (122-159B)** | 893 / 2405 | 37.13% | 119903 / 339038 | 35.37% | 1512 fn |
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5` | 6640 | 495334 | 93.85% |
-| `gemini-3.8-flash` | 409 | 56093 | 5.78% |
+| `claude-haiku-5.5` | 6640 | 495334 | 93.84% |
+| `gemini-3.8-flash` | 410 | 56158 | 5.79% |
 | `claude-sonnet-5.5` | 24 | 1340 | 0.34% |
 | `claude-opus-5.5` | 1 | 49 | 0.01% |
 | `gemini-4-argon` | 1 | 10 | 0.01% |

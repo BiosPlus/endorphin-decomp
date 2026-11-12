@@ -3356,3 +3356,24 @@ extern "C" void __fastcall fn_00473620(void* self, int edx_unused, const int* pt
 
     ((fn2_t)ext_00472BA0)(self);
 }
+
+// [0x00473BE0] sub_00473BE0 (65 bytes)
+extern "C" void ext_0046FC10();
+extern "C" void ext_00473620();
+extern "C" void ext_0065D0A0();
+
+extern "C" void __fastcall fn_00473BE0(void* self, int edx_unused, char* arg) {
+    typedef void (__thiscall *fn_float_t)(void*, float);
+    typedef void (__thiscall *fn_ptr_t)(void*, void*);
+
+    float f1 = *(float*)(arg + 0x1c);
+    void* obj = *(void**)((char*)self + 0xf8);
+    ((fn_float_t)ext_0065D0A0)(obj, f1);
+
+    if (*(unsigned char*)(arg + 0x82) != 0) {
+        float f2 = *(float*)(arg + 0x20);
+        ((fn_float_t)ext_0046FC10)(self, f2);
+    }
+
+    ((fn_ptr_t)ext_00473620)(self, arg + 0x38);
+}
