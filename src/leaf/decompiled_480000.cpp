@@ -3580,3 +3580,71 @@ loc_0048D3E7:
         ret
     }
 }
+
+// [0x004874D0] sub_004874D0 (195 bytes)
+extern "C" __declspec(naked) void __cdecl fn_004874D0() {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x884b59
+        push eax
+        mov dword ptr fs:[0], esp
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        mov ebp, dword ptr [esp + 0x20]
+        lea eax, [edi - 1]
+        cdq
+        sub eax, edx
+        mov esi, eax
+        sar esi, 1
+        cmp dword ptr [esp + 0x28], edi
+        mov dword ptr [esp + 0x18], 0
+        jge short loc_00487556
+        __asm _emit 0x8d __asm _emit 0xa4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+    loc_00487510:
+        lea eax, [8*esi]
+        sub eax, esi
+        lea ecx, [esp + 0x2c]
+        lea ebx, [ebp + 4*eax]
+        push ecx
+        push ebx
+        call dword ptr [mem_00924EF4]
+        add esp, 8
+        test al, al
+        je short loc_00487556
+        lea edx, [8*edi]
+        sub edx, edi
+        push ebx
+        lea ecx, [ebp + 4*edx]
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi - 1]
+        cdq
+        sub eax, edx
+        mov edi, esi
+        sar eax, 1
+        cmp dword ptr [esp + 0x28], edi
+        mov esi, eax
+        jl short loc_00487510
+    loc_00487556:
+        lea ecx, [8*edi]
+        lea eax, [esp + 0x2c]
+        sub ecx, edi
+        push eax
+        lea ecx, [ebp + 4*ecx]
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
