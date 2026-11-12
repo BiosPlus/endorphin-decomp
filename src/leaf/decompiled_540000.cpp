@@ -2471,3 +2471,40 @@ L_544EB1:
         ret 0x8
     }
 }
+
+// [0x0054F030] sub_0054F030 (159 bytes)
+struct Struct_54F030 {
+    int pad0;
+    char byte4;
+    char pad5[3];
+    float f[24];
+};
+
+extern "C" Struct_54F030* __fastcall fn_0054F030(Struct_54F030* self, int edx_unused, const Struct_54F030* other) {
+    self->byte4 = other->byte4;
+    self->f[0] = other->f[0];
+    self->f[1] = other->f[1];
+    self->f[2] = other->f[2];
+    self->f[3] = other->f[3];
+    self->f[4] = other->f[4];
+    self->f[5] = other->f[5];
+    self->f[6] = other->f[6];
+    self->f[7] = other->f[7];
+    self->f[8] = other->f[8];
+    self->f[9] = other->f[9];
+    self->f[10] = other->f[10];
+    self->f[11] = other->f[11];
+    self->f[12] = other->f[12];
+    self->f[13] = other->f[13];
+    self->f[14] = other->f[14];
+    self->f[15] = other->f[15];
+    self->f[16] = other->f[16];
+    self->f[17] = other->f[17];
+    self->f[18] = other->f[18];
+    self->f[19] = other->f[19];
+    self->f[20] = other->f[20];
+    self->f[21] = other->f[21];
+    self->f[22] = other->f[22];
+    self->f[23] = other->f[23];
+    return self;
+}
