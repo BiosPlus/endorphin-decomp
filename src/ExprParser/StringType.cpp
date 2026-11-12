@@ -325,3 +325,63 @@ extern "C" __declspec(naked) void __fastcall fn_0066EEE0(void* self) {
         ret 0x10
     }
 }
+
+// [0x0066B350] ExprParser::StringType::vfunc_25 (188 bytes)
+// Stack-argument thiscall (ret 8). Builds "\"" + sub_0041CEB0(a2) + "\"" with the
+// result constructed directly into the a2 return slot; EH frame + temporaries follow the original.
+extern "C" void ext_0041CEB0();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FD0;
+extern "C" int mem_00924ECC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void* __fastcall fn_0066B350(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b4d95
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x58
+        mov ecx, dword ptr [esp + 0x6c]
+        push esi
+        lea eax, [esp + 0x40]
+        push eax
+        mov dword ptr [esp + 0x8], 0
+        call ext_0041CEB0
+        mov esi, eax
+        push 0x92b4a0
+        lea ecx, [esp + 0x28]
+        mov dword ptr [esp + 0x68], 1
+        call dword ptr [mem_00924FE4]
+        push esi
+        push eax
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov byte ptr [esp + 0x70], 2
+        call dword ptr [mem_00924FD0]
+        mov esi, dword ptr [esp + 0x78]
+        push 0x92b4a0
+        push eax
+        push esi
+        mov byte ptr [esp + 0x7c], 3
+        call dword ptr [mem_00924ECC]
+        add esp, 0x18
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x4], 1
+        mov byte ptr [esp + 0x64], 2
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x24]
+        mov byte ptr [esp + 0x64], 1
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x40]
+        mov byte ptr [esp + 0x64], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x5c]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x64
+        ret 0x8
+    }
+}
