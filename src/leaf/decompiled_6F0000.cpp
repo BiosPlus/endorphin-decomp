@@ -352,3 +352,99 @@ extern "C" __declspec(naked) int __fastcall fn_006FB550(Dec6FB550Owner* self, in
         ret 0x4
     }
 }
+
+
+// [0x006FAB40] sub_006FAB40 (207 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006FAB40(void* self, int edx_unused, void* other, int limit) {
+    __asm {
+        sub     esp, 0ch
+        or      eax, -1
+        push    ebx
+        push    ebp
+        push    esi
+        mov     esi, dword ptr [esp + 20h]
+        test    esi, esi
+        push    edi
+        jl      L_neg
+        mov     edx, dword ptr [esp + 20h]
+        mov     eax, dword ptr [edx + 18h]
+        cmp     esi, eax
+        mov     eax, dword ptr [ecx + 18h]
+        jge     L_neg
+        test    eax, eax
+        mov     dword ptr [esp + 18h], eax
+        je      L_neg
+        mov     edi, dword ptr [ecx + 14h]
+        mov     ecx, dword ptr [ecx + 10h]
+        mov     ebx, dword ptr [edx + 10h]
+        xor     esi, esi
+        mov     dword ptr [esp + 10h], edi
+        mov     edi, dword ptr [edx + 14h]
+        xor     eax, eax
+        mov     dword ptr [esp + 14h], ecx
+L_outer:
+        mov     edx, dword ptr [esp + 10h]
+        lea     ecx, [edx + eax]
+        mov     edx, dword ptr [esp + 14h]
+        lea     ecx, [ecx + 2*ecx]
+        lea     edx, [edx + 4*ecx]
+        mov     ecx, dword ptr [edx + 4]
+        test    ecx, ecx
+        je      L_s0
+        mov     ebp, dword ptr [ecx]
+        cmp     ebp, dword ptr [edx]
+        jne     L_s0
+        mov     ecx, dword ptr [ecx + 4]
+        mov     dword ptr [esp + 20h], ecx
+        jmp     L_s1
+L_s0:
+        mov     dword ptr [esp + 20h], 0
+L_s1:
+L_inner:
+        lea     ecx, [edi + esi]
+        lea     edx, [ecx + 2*ecx]
+        mov     ecx, dword ptr [ebx + 4*edx + 4]
+        test    ecx, ecx
+        lea     edx, [ebx + 4*edx]
+        je      L_t0
+        mov     ebp, dword ptr [ecx]
+        cmp     ebp, dword ptr [edx]
+        jne     L_t0
+        mov     ecx, dword ptr [ecx + 4]
+        jmp     L_t1
+L_t0:
+        xor     ecx, ecx
+L_t1:
+        cmp     dword ptr [esp + 20h], ecx
+        je      L_found
+        inc     esi
+        jmp     L_inner
+L_found:
+        mov     ecx, dword ptr [esp + 24h]
+        inc     eax
+        inc     esi
+        cmp     esi, ecx
+        jg      L_dec
+        mov     edx, dword ptr [esp + 18h]
+        cmp     eax, edx
+        jl      L_outer
+        cmp     esi, ecx
+        jg      L_dec
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     eax, edx
+        pop     ebx
+        add     esp, 0ch
+        ret     8
+L_dec:
+        dec     eax
+L_neg:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0ch
+        ret     8
+    }
+}
