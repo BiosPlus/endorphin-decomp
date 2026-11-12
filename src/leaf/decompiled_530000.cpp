@@ -3320,3 +3320,49 @@ extern "C" void __fastcall fn_00532CC0(WindowContext_00532CC0* self) {
         self->hInstance = 0;
     }
 }
+
+// [0x005306A0] sub_005306A0 (126 bytes)
+extern "C" void ext_005426F0();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+
+extern "C" __declspec(naked) void __fastcall fn_005306A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x8a56c8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x10]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        push edi
+        call edx
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x8], edi
+        call ext_0065C640
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esi + 0x10]
+        push eax
+        add ecx, 0x9c
+        mov dword ptr [esp + 0x18], 0x0
+        call ext_005426F0
+        mov ecx, dword ptr [esi + 0x10]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x154]
+        call eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_0065C650
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
