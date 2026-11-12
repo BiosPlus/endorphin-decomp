@@ -2944,3 +2944,41 @@ extern "C" __declspec(naked) int __fastcall fn_006A8020(void* self, int edx_unus
         ret
     }
 }
+
+// [0x006A9540] sub_006A9540 (79 bytes)
+extern "C" int __fastcall ext_006A8020(void* self);
+
+extern "C" __declspec(naked) void __fastcall fn_006A9540(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x17c]
+        test eax, eax
+        jne L_body_6A9540
+        xor al, al
+        ret 0x10
+    L_body_6A9540:
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        je L_skip_6A9540
+        mov ecx, dword ptr [ecx + 0x4]
+    L_skip_6A9540:
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [eax + 0x4]
+        push 0x0
+        push edx
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        push eax
+        call ext_006A5EDE
+        mov edx, dword ptr [eax + 0x94]
+        mov ecx, dword ptr [edx]
+        call ext_006A8020
+        sub eax, 0x1
+        neg eax
+        sbb eax, eax
+        add eax, 0x1
+        ret 0x10
+    }
+}
