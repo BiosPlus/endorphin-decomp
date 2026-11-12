@@ -85,3 +85,85 @@ L_505BEA:
         ret 0x8
     }
 }
+
+// [0x0050AD30] Properties::SequenceType<std::vector<NMData::TaskParam, std::allocator<NMData::TaskParam>>, Properties::GetPropertySource, DeRefValue>::vfunc_3 (206 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0050AD30(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        push -0x1
+        push 0x008b40d8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x18
+        mov eax, dword ptr [ebp + 0x8]
+        push ebx
+        mov ebx, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [ebx + 0x4]
+        cmp esi, dword ptr [ebx + 0x8]
+        push edi
+        mov dword ptr [esp + 0x14], ebx
+        jbe L_AD68
+        call dword ptr [mem_00925134]
+    L_AD68:
+        mov edi, dword ptr [ebp + 0xc]
+        jmp L_AD70
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_AD70:
+        mov ebx, dword ptr [ebx + 0x8]
+        mov ecx, dword ptr [esp + 0x14]
+        cmp dword ptr [ecx + 0x4], ebx
+        jbe L_AD82
+        call dword ptr [mem_00925134]
+    L_AD82:
+        cmp esi, ebx
+        je L_ADEA
+        mov edx, dword ptr [esp + 0x14]
+        cmp esi, dword ptr [edx + 0x8]
+        jb L_AD95
+        call dword ptr [mem_00925134]
+    L_AD95:
+        push esi
+        lea eax, [esp + 0x1c]
+        push eax
+        lea ecx, [esp + 0x1b]
+        call ext_00494FF0
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [eax]
+        mov edx, dword ptr [edx]
+        push ecx
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x34], 0x0
+        call edx
+        lea ecx, [esp + 0x18]
+        mov bl, al
+        mov dword ptr [esp + 0x2c], -0x1
+        call ext_00493D90
+        test bl, bl
+        je L_ADEA
+        mov eax, dword ptr [esp + 0x14]
+        cmp esi, dword ptr [eax + 0x8]
+        jb L_ADE1
+        call dword ptr [mem_00925134]
+    L_ADE1:
+        mov ebx, dword ptr [esp + 0x14]
+        add esi, 0x24
+        jmp L_AD70
+    L_ADEA:
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
