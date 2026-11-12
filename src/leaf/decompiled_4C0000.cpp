@@ -1746,3 +1746,78 @@ L_after_table:
         ret
     }
 }
+
+// [0x004C4440] sub_004C4440 (185 bytes)
+extern "C" void ext_004275E0();
+extern "C" void ext_00427640();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0063F530();
+
+extern "C" __declspec(naked) void __fastcall fn_004C4440(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push 0x1
+        push 0x0
+        mov ebx, ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push 0x945338
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je sel_004C4440
+        cmp eax, 0xb53b30
+        je sel_004C4440
+        cmp eax, 0xb53ab0
+        je sel_004C4440
+        cmp eax, 0xb53a70
+        je sel_004C4440
+        cmp eax, 0xb53af0
+        jne keep_004C4440
+    sel_004C4440:
+        mov esi, 0xb53b30
+        jmp chk_004C4440
+    keep_004C4440:
+        mov esi, eax
+    chk_004C4440:
+        cmp esi, 0xb53a34
+        je clr_004C4440
+        cmp esi, 0xb53b30
+        je clr_004C4440
+        cmp esi, 0xb53ab0
+        je clr_004C4440
+        cmp esi, 0xb53a70
+        je clr_004C4440
+        cmp esi, 0xb53af0
+        je clr_004C4440
+        push edi
+        push 0x945330
+        mov ecx, esi
+        call ext_0063EFE0
+        mov dword ptr [esp + 0x10], eax
+        lea eax, [esp + 0x10]
+        push eax
+        lea edi, [ebx + 0x1c]
+        push edi
+        call ext_00427640
+        add esp, 0x8
+        cmp byte ptr [edi], 0x0
+        push 0x945328
+        sete cl
+        mov byte ptr [edi], cl
+        mov ecx, esi
+        call ext_0063EFE0
+        push eax
+        push ebx
+        call ext_004275E0
+        add esp, 0x8
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    clr_004C4440:
+        pop esi
+        mov byte ptr [ebx + 0x1c], 0x0
+        pop ebx
+        ret 0x4
+    }
+}
