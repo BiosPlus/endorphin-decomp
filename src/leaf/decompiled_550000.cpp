@@ -4218,3 +4218,26 @@ extern "C" __declspec(naked) void __fastcall fn_00556DD0(void* self) {
         ret 0x14
     }
 }
+
+// [0x00556EB0] sub_00556EB0 (53 bytes)
+extern "C" void ext_00556DD0();
+
+struct Vec3_556EB0 {
+    float x, y, z;
+    Vec3_556EB0(const Vec3_556EB0& o) : x(o.x), y(o.y), z(o.z) {}
+};
+
+struct Inner_556EB0 {
+    void* sub_00556DD0(void* a1, int a2, Vec3_556EB0 v);
+};
+
+struct Outer_556EB0 {
+    char pad[0x43c];
+    Inner_556EB0 inner;
+    void* fn_00556EB0(void* a1, int a2, Vec3_556EB0 v);
+};
+
+extern "C" void* __fastcall fn_00556EB0(Outer_556EB0* self, int edx_unused, void* a1, int a2, Vec3_556EB0 v) {
+    self->inner.sub_00556DD0(a1, a2, v);
+    return a1;
+}
