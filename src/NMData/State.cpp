@@ -388,3 +388,53 @@ extern "C" __declspec(naked) void __fastcall fn_0049AFD0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" void ext_00498B60();
+
+// [0x0049E000] NMData::State::vfunc_21_off_8 (112 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_0049E000(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        lea edx, [esp + 0x4]
+        push edx
+        add ecx, 0xe0
+        call ext_00498B60
+        mov ecx, eax
+        fld dword ptr [ecx + 0x8]
+        fsub dword ptr [ecx]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fldz
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        je L_0049E05A
+        fld dword ptr [ecx + 0xc]
+        fsub dword ptr [ecx + 0x4]
+        fstp dword ptr [esp + 0x14]
+        fcomp dword ptr [esp + 0x14]
+        fnstsw ax
+        test ah, 0x1
+        je L_0049E05C
+        xor eax, eax
+        xor ecx, ecx
+        test al, al
+        sete cl
+        mov al, cl
+        add esp, 0x10
+        ret 0x4
+    L_0049E05A:
+        fstp st(0)
+    L_0049E05C:
+        mov eax, 0x1
+        xor ecx, ecx
+        test al, al
+        sete cl
+        mov al, cl
+        add esp, 0x10
+        ret 0x4
+    }
+}
