@@ -2889,3 +2889,23 @@ extern "C" __declspec(naked) void __fastcall fn_005231F0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00526180] sub_00526180 (83 bytes)
+extern "C" void ext_00501140();
+extern "C" void* __cdecl ext_00671F30(void* out);
+extern "C" void* __cdecl ext_006721F0(void* out, void* val);
+
+extern "C" void* __fastcall fn_00526180(void* self, int edx_unused, void* out, void* key) {
+    typedef void* (__thiscall *FindFn)(void* self, void* key);
+    volatile int dummy = 0;
+    void* res = ((FindFn)ext_00501140)(self, key);
+    if (!res) {
+        res = ((FindFn)ext_00501140)((char*)self + 0x10, key);
+    }
+    if (res) {
+        ext_006721F0(out, res);
+    } else {
+        ext_00671F30(out);
+    }
+    return out;
+}
