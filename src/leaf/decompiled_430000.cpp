@@ -7650,3 +7650,89 @@ extern "C" __declspec(naked) void __fastcall fn_00434500(void* self) {
         ret 4
     }
 }
+
+// [0x00435EF0] sub_00435EF0 (168 bytes)
+extern "C" int mem_00924FE0;
+extern "C" void ext_0046FAD0();
+extern "C" void ext_006A6DD2();
+
+// try { for (p = begin; count; --count, p += 0x38) { ctor(p, a); ctor(p + 0x1c, a + 0x1c); } }
+// catch (...) { destroy [begin, p); throw; }
+// Naked: MSVC /EHsc treats extern "C" callees as nothrow, which drops the try block,
+// so the SEH frame is written out by hand.
+extern "C" __declspec(naked) void __cdecl fn_00435EF0(void* begin, unsigned int count, const void* a) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -0x1
+        push 0x0087a6ca
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push edi
+        mov edi, dword ptr [ebp + 0xc]
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], ebx
+        nop
+    loop_top:
+        cmp edi, ebx
+        jbe epilogue
+        mov dword ptr [ebp + 0xc], esi
+        mov dword ptr [ebp - 0x18], esi
+        cmp esi, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je skip_ctor
+        mov eax, dword ptr [ebp + 0x10]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [ebp + 0x10]
+        add ecx, 0x1c
+        push ecx
+        lea ecx, [esi + 0x1c]
+        mov byte ptr [ebp - 0x4], 0x2
+        call dword ptr [mem_00924FE0]
+    skip_ctor:
+        sub edi, 0x1
+        add esi, 0x38
+        mov byte ptr [ebp - 0x4], bl
+        mov dword ptr [ebp + 0x8], esi
+        jmp loop_top
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x8]
+        cmp esi, edi
+        je rethrow
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    dtor_loop:
+        mov ecx, esi
+        call ext_0046FAD0
+        add esi, 0x38
+        cmp esi, edi
+        jne dtor_loop
+    rethrow:
+        xor ebx, ebx
+        push ebx
+        push ebx
+        call ext_006A6DD2
+    epilogue:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
