@@ -3824,3 +3824,23 @@ extern "C" __declspec(naked) void __cdecl fn_007CBC50() {
         ret
     }
 }
+
+// [0x007C6880] sub_007C6880 (187 bytes)
+extern "C" void __cdecl fn_007C6880(void* a0, float a1, float a2, float a3, float a4, float a5, float a6) {
+    float* s = (float*)a0;
+    float t[3];
+    float d[3];
+    fn_007C6150(a0, t);
+    d[0] = a4 - t[0];
+    d[1] = a5 - t[1];
+    d[2] = a6 - t[2];
+    s[4] += a1;
+    s[5] += a2;
+    s[6] += a3;
+    t[0] = d[1] * a3 - d[2] * a2;
+    t[1] = d[2] * a1 - d[0] * a3;
+    t[2] = d[0] * a2 - d[1] * a1;
+    s[8] += t[0];
+    s[9] += t[1];
+    s[10] += t[2];
+}
