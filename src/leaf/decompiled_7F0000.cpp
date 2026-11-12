@@ -1815,3 +1815,70 @@ extern "C" __declspec(naked) void __fastcall fn_007F1530(void* self) {
         ret
     }
 }
+
+// [0x007FA050] sub_007FA050 (158 bytes)
+extern "C" __declspec(naked) float __cdecl fn_007FA050(int count, const float* a, const float* b) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        fldz
+        mov eax, dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        lea edi, [ecx + 4*eax]
+        mov eax, edi
+        sub eax, ecx
+        add eax, 0x3
+        cdq
+        and edx, 0x3
+        add eax, edx
+        sar eax, 0x2
+        cmp eax, 0x4
+        jl L_tail_check
+        mov eax, esi
+        lea edx, [edi - 0xc]
+        sub eax, ecx
+    L_unroll_loop:
+        fld dword ptr [eax + ecx + 0x4]
+        add ecx, 0x10
+        fmul dword ptr [ecx - 0xc]
+        add esi, 0x10
+        cmp ecx, edx
+        fld dword ptr [esi - 0x10]
+        fmul dword ptr [ecx - 0x10]
+        fadd dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+        fadd dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [esi - 0x8]
+        fmul dword ptr [ecx - 0x8]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [esi - 0x4]
+        fmul dword ptr [ecx - 0x4]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x10]
+        jl L_unroll_loop
+    L_tail_check:
+        cmp ecx, edi
+        jae L_done
+        mov edi, edi
+    L_tail_loop:
+        fld dword ptr [esi]
+        add ecx, 0x4
+        fmul dword ptr [ecx - 0x4]
+        add esi, 0x4
+        cmp ecx, edi
+        fadd dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+        jb L_tail_loop
+    L_done:
+        fld dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        ret
+    }
+}
