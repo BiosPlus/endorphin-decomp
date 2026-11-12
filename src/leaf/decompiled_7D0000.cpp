@@ -4626,3 +4626,132 @@ extern "C" __declspec(naked) void __cdecl fn_007DCC90(void) {
         ret
     }
 }
+
+// [0x007DD1D0] sub_007DD1D0 (303 bytes)
+extern "C" void ext_007DCC90();
+extern "C" void ext_007DCDD0();
+
+extern "C" __declspec(naked) void __fastcall fn_007DD1D0(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        cmp edx, ebx
+        push edi
+        mov edi, ecx
+        jne L_diff
+        pop edi
+        xor al, al
+        pop ebx
+        ret 0xc
+    L_diff:
+        mov eax, ebx
+        sub eax, edx
+        sar eax, 0x1f
+        mov ecx, eax
+        not ecx
+        push ebp
+        mov ebp, eax
+        and eax, edx
+        push esi
+        mov esi, ecx
+        and ecx, ebx
+        or eax, ecx
+        and esi, edx
+        mov ecx, eax
+        and ebp, ebx
+        or esi, ebp
+        lea eax, [esi + 0x1]
+        lea edx, [esi + 0x2]
+        imul edx, eax
+        mov eax, dword ptr [edi + 0xc]
+        imul eax, esi
+        sar edx, 1
+        sub eax, edx
+        mov edx, dword ptr [edi + 0x20]
+        add eax, ecx
+        mov dword ptr [esp + 0x14], ecx
+        mov ecx, eax
+        sar ecx, 1
+        lea ebp, [ecx + edx]
+        mov dl, byte ptr [ebp]
+        mov cl, al
+        and cl, 0x1
+        add cl, cl
+        add cl, cl
+        shr dl, cl
+        and dl, 0x0f
+        cmp byte ptr [esp + 0x1c], 0
+        je L_zero
+        test dl, 0x4
+        je L_end
+        and al, 0x1
+        add al, al
+        add al, al
+        movzx ecx, al
+        and dl, 0xfb
+        mov eax, 0xf0
+        sar eax, cl
+        mov bl, dl
+        shl bl, cl
+        and al, byte ptr [ebp]
+        or al, bl
+        mov byte ptr [ebp], al
+        cmp dl, byte ptr [edi + 0x4]
+        jne L_end
+        mov eax, dword ptr [esp + 0x14]
+        imul esi, esi, 0x9c
+        mov ecx, dword ptr [edi + 0x10]
+        imul eax, eax, 0x9c
+        mov edx, dword ptr [eax + ecx + 0xc]
+        mov eax, dword ptr [esi + ecx + 0xc]
+        mov ecx, dword ptr [edi + 0x2c]
+        push edx
+        push eax
+        push ecx
+        call ext_007DCC90
+        add esp, 0xc
+        pop esi
+        pop ebp
+        pop edi
+        mov al, 0x1
+        pop ebx
+        ret 0xc
+    L_zero:
+        test dl, 0x4
+        jne L_end
+        and al, 0x1
+        add al, al
+        add al, al
+        movzx ecx, al
+        mov eax, 0xf0
+        sar eax, cl
+        mov bl, dl
+        or bl, 0x4
+        shl bl, cl
+        and al, byte ptr [ebp]
+        or al, bl
+        mov byte ptr [ebp], al
+        cmp dl, byte ptr [edi + 0x4]
+        jne L_end
+        mov eax, dword ptr [esp + 0x14]
+        imul esi, esi, 0x9c
+        mov ecx, dword ptr [edi + 0x10]
+        imul eax, eax, 0x9c
+        mov edx, dword ptr [eax + ecx + 0xc]
+        mov eax, dword ptr [esi + ecx + 0xc]
+        mov ecx, dword ptr [edi + 0x2c]
+        push edx
+        push eax
+        push ecx
+        call ext_007DCDD0
+        add esp, 0xc
+    L_end:
+        pop esi
+        pop ebp
+        pop edi
+        mov al, 0x1
+        pop ebx
+        ret 0xc
+    }
+}
