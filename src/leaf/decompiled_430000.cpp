@@ -8070,3 +8070,80 @@ extern "C" __declspec(naked) void __fastcall fn_0043CFA0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0043DAD0] sub_0043DAD0 (177 bytes)
+// Sums elem->+0x4c over a deque-like container at this+0xb0 (4 elements per block) into this+0xf8
+// for elements whose byte at +0x34 is nonzero. Debug-style invalid_parameter checks are kept.
+extern "C" __declspec(naked) void __fastcall fn_0043DAD0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        lea esi, [ecx + 0xb0]
+        mov dword ptr [ecx + 0xf8], 0x0
+        mov ebp, dword ptr [esi + 0xc]
+        mov eax, dword ptr [esi + 0x10]
+        add eax, ebp
+        cmp ebp, eax
+        push edi
+        mov dword ptr [esp + 0x10], ecx
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+L_chk1:
+        mov eax, dword ptr [esi + 0xc]
+        mov edi, dword ptr [esi + 0x10]
+        add edi, eax
+        cmp eax, edi
+        mov dword ptr [esp + 0x14], edi
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+L_chk2:
+        cmp esi, esi
+        je L_chk3
+        call dword ptr [mem_00925134]
+L_chk3:
+        cmp ebp, edi
+        je L_done
+        mov ecx, dword ptr [esi + 0xc]
+        add ecx, dword ptr [esi + 0x10]
+        mov edi, ebp
+        mov ebx, ebp
+        shr edi, 0x2
+        and ebx, 0x3
+        cmp ebp, ecx
+        jb L_body
+        call dword ptr [mem_00925134]
+L_body:
+        mov eax, dword ptr [esi + 0x8]
+        cmp eax, edi
+        ja L_idx
+        sub edi, eax
+L_idx:
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [edx + 4*edi]
+        mov ebx, dword ptr [eax + 4*ebx]
+        cmp byte ptr [ebx + 0x34], 0x0
+        je L_next
+        mov ecx, dword ptr [ebx + 0x4c]
+        mov eax, dword ptr [esp + 0x10]
+        add dword ptr [eax + 0xf8], ecx
+L_next:
+        mov edx, dword ptr [esi + 0xc]
+        add edx, dword ptr [esi + 0x10]
+        cmp ebp, edx
+        jb L_inc
+        call dword ptr [mem_00925134]
+L_inc:
+        mov edi, dword ptr [esp + 0x14]
+        add ebp, 0x1
+        jmp L_chk2
+L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
