@@ -2797,3 +2797,61 @@ L_4E78A6:
         ret
     }
 }
+
+// [0x004E7EC0] sub_004E7EC0 (104 bytes)
+extern "C" void ext_004E77E0();
+extern "C" void ext_00596660();
+extern "C" void ext_004E7490();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004E7EC0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        push edi
+        mov edi, ecx
+        lea esi, [edi + 0x4]
+        mov byte ptr [edi + 0x20], 0x0
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je L_004E7F22
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        sar ecx, 0x2
+        je L_004E7F22
+        push ebx
+        push ebp
+        mov ecx, edi
+        call ext_004E77E0
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_004E7EF6
+        call dword ptr [mem_00925134]
+    L_004E7EF6:
+        mov ebp, dword ptr [esi + 0x4]
+        cmp ebp, dword ptr [esi + 0x8]
+        jbe L_004E7F04
+        call dword ptr [mem_00925134]
+    L_004E7F04:
+        push ebx
+        push esi
+        push ebp
+        push esi
+        lea edx, [esp + 0x20]
+        push edx
+        mov ecx, esi
+        call ext_00596660
+        pop ebp
+        pop ebx
+        mov ecx, edi
+        pop edi
+        pop esi
+        add esp, 0x8
+        jmp ext_004E7490
+    L_004E7F22:
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret
+    }
+}
