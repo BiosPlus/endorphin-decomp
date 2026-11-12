@@ -4349,3 +4349,159 @@ extern "C" __declspec(naked) void __fastcall fn_00472910(void* self) {
         ret
     }
 }
+
+// [0x00478760] sub_00478760 (308 bytes)
+extern "C" void ext_00477C60();
+extern "C" __declspec(naked) void __fastcall fn_00478760(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov eax, ebp
+        sub eax, edi
+        sar eax, 2
+        cdq
+        sub eax, edx
+        sar eax, 1
+        lea esi, [edi + 4*eax]
+        lea eax, [ebp - 4]
+        push eax
+        push esi
+        push edi
+        call ext_00477C60
+        add esp, 0xc
+        cmp edi, esi
+        mov ecx, esi
+        lea ebx, [esi + 4]
+        jae loc_4787a5
+loc_478793:
+        mov eax, dword ptr [ecx - 4]
+        mov edx, dword ptr [ecx]
+        cmp edx, eax
+        jg loc_4787a5
+        jl loc_4787a5
+        add ecx, -4
+        cmp edi, ecx
+        jb loc_478793
+loc_4787a5:
+        cmp ebx, ebp
+        jae loc_4787bf
+        mov edx, dword ptr [ecx]
+        jmp loc_4787b0
+        __asm _emit 0x8d __asm _emit 0x49 __asm _emit 0x00
+loc_4787b0:
+        mov eax, dword ptr [ebx]
+        cmp edx, eax
+        jg loc_4787bf
+        jl loc_4787bf
+        add ebx, 4
+        cmp ebx, ebp
+        jb loc_4787b0
+loc_4787bf:
+        mov eax, ebx
+        mov edx, ecx
+loc_4787c3:
+        cmp eax, ebp
+        jae loc_4787e7
+loc_4787c7:
+        mov edi, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edi, esi
+        jg loc_4787e0
+        jl loc_4787e7
+        mov esi, ebx
+        mov ebp, dword ptr [esi]
+        mov dword ptr [esi], edi
+        mov dword ptr [eax], ebp
+        mov ebp, dword ptr [esp + 0x20]
+        add ebx, 4
+loc_4787e0:
+        add eax, 4
+        cmp eax, ebp
+        jb loc_4787c7
+loc_4787e7:
+        cmp edx, dword ptr [esp + 0x1c]
+        jbe loc_478816
+        __asm _emit 0x8d __asm _emit 0x49 __asm _emit 0x00
+loc_4787f0:
+        mov esi, dword ptr [edx - 4]
+        mov edi, dword ptr [ecx]
+        cmp edi, esi
+        jg loc_478809
+        jl loc_478812
+        mov edi, dword ptr [edx - 4]
+        mov esi, dword ptr [ecx - 4]
+        sub ecx, 4
+        mov dword ptr [ecx], edi
+        mov dword ptr [edx - 4], esi
+loc_478809:
+        add edx, -4
+        cmp dword ptr [esp + 0x1c], edx
+        jb loc_4787f0
+loc_478812:
+        cmp edx, dword ptr [esp + 0x1c]
+loc_478816:
+        jne loc_47884e
+        cmp eax, ebp
+        je loc_478885
+        cmp ebx, eax
+        je loc_478828
+        mov edi, dword ptr [ebx]
+        mov esi, dword ptr [ecx]
+        mov dword ptr [ecx], edi
+        mov dword ptr [ebx], esi
+loc_478828:
+        mov edi, ecx
+        mov ebp, dword ptr [edi]
+        mov esi, eax
+        mov dword ptr [esp + 0x10], ebp
+        mov ebp, dword ptr [esi]
+        mov dword ptr [edi], ebp
+        mov edi, dword ptr [esp + 0x10]
+        mov ebp, dword ptr [esp + 0x20]
+        add ebx, 4
+        add ecx, 4
+        add eax, 4
+        mov dword ptr [esi], edi
+        __asm _emit 0xe9 __asm _emit 0x75 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff
+loc_47884e:
+        sub edx, 4
+        cmp eax, ebp
+        jne loc_478875
+        sub ecx, 4
+        cmp edx, ecx
+        je loc_478864
+        mov edi, dword ptr [ecx]
+        mov esi, dword ptr [edx]
+        mov dword ptr [edx], edi
+        mov dword ptr [ecx], esi
+loc_478864:
+        mov edi, dword ptr [ebx - 4]
+        mov esi, dword ptr [ecx]
+        sub ebx, 4
+        mov dword ptr [ecx], edi
+        mov dword ptr [ebx], esi
+        __asm _emit 0xe9 __asm _emit 0x4e __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff
+loc_478875:
+        mov esi, dword ptr [eax]
+        mov edi, dword ptr [edx]
+        mov dword ptr [eax], edi
+        mov dword ptr [edx], esi
+        add eax, 4
+        __asm _emit 0xe9 __asm _emit 0x3e __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff
+loc_478885:
+        mov eax, dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 4], ebx
+        mov dword ptr [eax], ecx
+        pop ebx
+        pop ecx
+        ret
+    }
+}
