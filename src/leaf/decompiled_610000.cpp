@@ -2141,3 +2141,41 @@ extern "C" __declspec(naked) void __fastcall fn_0061D990(void* self) {
         ret
     }
 }
+
+// [0x0061D380] sub_0061D380 (107 bytes)
+extern "C" void ext_005B1870();
+extern "C" void ext_0065F440();
+extern "C" void ext_00401D20();
+
+extern "C" __declspec(naked) void __fastcall fn_0061D380(void* self) {
+    __asm {
+        push -1
+        push 0x8a9340
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x8], esi
+        lea edi, [esi + 0x164]
+        mov dword ptr [esp + 0x18], 0
+        mov dword ptr [esp + 0xc], edi
+        lea ecx, [edi + 0x20]
+        mov byte ptr [esp + 0x18], 1
+        call ext_005B1870
+        mov ecx, edi
+        mov byte ptr [esp + 0x18], 0
+        call ext_0065F440
+        mov ecx, esi
+        mov dword ptr [esp + 0x18], -1
+        call ext_00401D20
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x14
+        ret
+    }
+}
