@@ -2674,3 +2674,85 @@ extern "C" __declspec(naked) void __fastcall fn_00577B10(void* self, int edx_unu
         ret 14h
     }
 }
+
+// [0x005771F0] sub_005771F0 (184 bytes)
+extern "C" void ext_00427A60();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) int __fastcall fn_005771F0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x1c
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x2c]
+        add esi, 0x24
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x10], 0x0
+        jbe short L_a
+        call ebp
+L_a:
+        mov dword ptr [esp + 0x14], esi
+        mov dword ptr [esp + 0x18], esi
+L_loop:
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0x1c], edi
+        call ext_00427A60
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe short L_b
+        call ebp
+L_b:
+        lea ecx, [esp + 0x20]
+        mov dword ptr [esp + 0x20], esi
+        mov dword ptr [esp + 0x24], esi
+        mov dword ptr [esp + 0x28], edi
+        call ext_00427A60
+        mov ebx, dword ptr [esp + 0x18]
+        test ebx, ebx
+        je short L_c
+        cmp ebx, dword ptr [esp + 0x24]
+        je short L_d
+L_c:
+        call ebp
+L_d:
+        mov edi, dword ptr [esp + 0x1c]
+        cmp edi, dword ptr [esp + 0x28]
+        jae short L_end
+        test ebx, ebx
+        jne short L_e
+        call ebp
+L_e:
+        cmp edi, dword ptr [ebx + 0x8]
+        jb short L_f
+        call ebp
+L_f:
+        mov eax, dword ptr [edi]
+        add eax, 0x4
+        push 0xb3d4ac
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je short L_g
+        add dword ptr [esp + 0x10], 0x1
+L_g:
+        cmp edi, dword ptr [ebx + 0x8]
+        jb short L_h
+        call ebp
+L_h:
+        add edi, 0x4
+        jmp short L_loop
+L_end:
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x1c
+        ret 0x4
+    }
+}
