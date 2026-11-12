@@ -4100,3 +4100,36 @@ extern "C" __declspec(naked) void __fastcall fn_0051AC30(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0051AE90] sub_0051AE90 (57 bytes)
+extern "C" void ext_0051AC30();
+extern "C" int mem_00AECC08;
+extern "C" __declspec(naked) void __fastcall fn_0051AE90(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, [esi+0x24]
+        test eax, eax
+        je L1
+        mov ecx, [eax+4]
+        push eax
+        jmp L2
+    L1:
+        mov ecx, [mem_00AECC08]
+        push offset mem_00AECC08-4
+    L2:
+        mov edx, [ecx]
+        mov eax, [edx+4]
+        call eax
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_0051AC30
+        pop esi
+        pop ecx
+        ret
+    }
+}
