@@ -438,3 +438,124 @@ extern "C" __declspec(naked) bool __fastcall fn_0049E000(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0049F140] NMData::State::vfunc_14_off_8 (252 bytes)
+extern "C" void ext_0049BEE0();
+extern "C" void ext_0049F040();
+extern "C" void ext_0049F0C0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_0049F140(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x14
+        push ebp
+        mov ebp, dword ptr [esp + 0x1c]
+        push edi
+        mov edi, ecx
+        lea ecx, [edi - 0x8]
+        push ebp
+        mov dword ptr [esp + 0xc], ecx
+        call ext_0049F040
+        test eax, eax
+        je L_140_a
+        pop edi
+        add eax, 0x8
+        pop ebp
+        add esp, 0x14
+        ret 0x4
+    L_140_a:
+        mov ecx, dword ptr [edi + 0xcc]
+        push ebx
+        push esi
+        lea esi, [edi + 0xc8]
+        push ebp
+        push ecx
+        mov eax, ecx
+        mov eax, dword ptr [eax]
+        push esi
+        push eax
+        lea ecx, [esp + 0x2c]
+        push esi
+        push ecx
+        mov dword ptr [esp + 0x30], eax
+        call ext_0049BEE0
+        mov ecx, dword ptr [eax]
+        mov ebx, dword ptr [eax + 0x4]
+        add esp, 0x18
+        cmp esi, ecx
+        je L_140_b
+        call dword ptr [mem_00925134]
+    L_140_b:
+        test esi, esi
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x18], edx
+        je L_140_c
+        cmp esi, esi
+        je L_140_d
+    L_140_c:
+        call dword ptr [mem_00925134]
+    L_140_d:
+        cmp ebx, dword ptr [esp + 0x18]
+        je L_140_e
+        test esi, esi
+        jne L_140_f
+        call dword ptr [mem_00925134]
+    L_140_f:
+        cmp ebx, dword ptr [esi + 0x4]
+        jne L_140_g
+        call dword ptr [mem_00925134]
+    L_140_g:
+        pop esi
+        lea eax, [ebx + 0x8]
+        pop ebx
+        pop edi
+        pop ebp
+        add esp, 0x14
+        ret 0x4
+    L_140_e:
+        mov eax, dword ptr [edi + 0xd8]
+        mov esi, dword ptr [eax]
+        add edi, 0xd4
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_140_h:
+        cmp edi, edi
+        mov ebx, dword ptr [edi + 0x4]
+        je L_140_i
+        call dword ptr [mem_00925134]
+    L_140_i:
+        cmp esi, ebx
+        je L_140_j
+        cmp esi, dword ptr [edi + 0x4]
+        jne L_140_k
+        call dword ptr [mem_00925134]
+    L_140_k:
+        push ebp
+        lea ecx, [esi + 0x8]
+        call ext_0049F0C0
+        test eax, eax
+        jne L_140_l
+        cmp esi, dword ptr [edi + 0x4]
+        jne L_140_m
+        call dword ptr [mem_00925134]
+    L_140_m:
+        mov esi, dword ptr [esi]
+        jmp L_140_h
+    L_140_j:
+        mov ecx, dword ptr [esp + 0x10]
+        push ebp
+        call ext_0049F0C0
+    L_140_l:
+        pop esi
+        pop ebx
+        pop edi
+        pop ebp
+        add esp, 0x14
+        ret 0x4
+    }
+}
