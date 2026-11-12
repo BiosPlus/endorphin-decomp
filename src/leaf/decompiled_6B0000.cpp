@@ -2742,3 +2742,99 @@ extern "C" void* __fastcall fn_006B3320(void* self, int edx_unused, void* a1, vo
     *(int*)self = 0x991974;
     return self;
 }
+
+// [0x006B63B0] sub_006B63B0 (194 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" void ext_006A6184();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_006B63B0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        call ext_006A5EA8
+        cmp eax, -1
+        jne L_6B63C9
+        or eax, eax
+        pop esi
+        add esp, 0x10
+        ret 4
+
+    L_6B63C9:
+        push ebx
+        push ebp
+        push edi
+        push 1
+        push esi
+        lea eax, [esp + 0x18]
+        xor edi, edi
+        push eax
+        lea ebx, [esi + 0xa8]
+        push 0x50000000
+        mov ecx, ebx
+        mov dword ptr [esp + 0x20], edi
+        mov dword ptr [esp + 0x24], edi
+        mov dword ptr [esp + 0x28], edi
+        mov dword ptr [esp + 0x2c], edi
+        call ext_006A6184
+
+        lea eax, [esi + 0x120]
+        cmp eax, edi
+        jne L_6B6406
+        xor eax, eax
+        jmp L_6B6409
+
+    L_6B6406:
+        mov eax, dword ptr [eax + 0x4]
+
+    L_6B6409:
+        mov ecx, dword ptr [esi + 0xc8]
+        mov ebp, dword ptr [mem_00925694]
+        push 1
+        push eax
+        push 0x30
+        push ecx
+        call ebp
+
+        mov edx, dword ptr [esi + 0x54]
+        mov edx, dword ptr [edx + 0x13c]
+        push 2
+        push esi
+        lea ecx, [esi + 0x54]
+        lea eax, [esp + 0x18]
+        push eax
+        push 0x50000022
+        mov dword ptr [esp + 0x20], edi
+        mov dword ptr [esp + 0x24], edi
+        mov dword ptr [esp + 0x28], edi
+        mov dword ptr [esp + 0x2c], edi
+        call edx
+
+        cmp ebx, edi
+        jne L_6B6450
+        xor ebx, ebx
+        jmp L_6B6453
+
+    L_6B6450:
+        mov ebx, dword ptr [ebx + 0x20]
+
+    L_6B6453:
+        mov eax, dword ptr [esi + 0x74]
+        push edi
+        push ebx
+        push 0x469
+        push eax
+        call ebp
+        push eax
+        call ext_006A5E00
+
+        pop edi
+        pop ebp
+        pop ebx
+        xor eax, eax
+        pop esi
+        add esp, 0x10
+        ret 4
+    }
+}
