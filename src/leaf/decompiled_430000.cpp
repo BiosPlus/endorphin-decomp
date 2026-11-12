@@ -9190,3 +9190,22 @@ extern "C" __declspec(naked) void __fastcall fn_00431050(void* self) {
         ret
     }
 }
+
+// [0x00431430] sub_00431430 (41 bytes)
+extern "C" void ext_00430310();
+extern "C" void ext_004444B0();
+extern "C" void ext_00465B30();
+extern "C" void ext_00469500();
+
+extern "C" void __fastcall fn_00431430(void* self) {
+    typedef void* (*FnGet)();
+    typedef void (__thiscall *FnMethod)(void*);
+    typedef void (__thiscall *FnMethodInt)(void*, int);
+
+    ((FnMethod)ext_00469500)(((FnGet)ext_00465B30)());
+    void* child = *(void**)((char*)self + 0x114);
+    if (child) {
+        ((FnMethod)ext_004444B0)(child);
+    }
+    ((FnMethodInt)ext_00430310)(self, 10);
+}
