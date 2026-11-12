@@ -7577,3 +7577,76 @@ extern "C" __declspec(naked) void __fastcall fn_00434450(void* self) {
         ret 4
     }
 }
+
+// [0x00434500] sub_00434500 (167 bytes)
+// __thiscall with one stack arg (ret 4). Queries four byte flags via sub_00465B30()->+0x14 objects,
+// calls sub_00430370 on this, then conditionally calls vtbl[1] of arg with 1 or 0.
+extern "C" void ext_0046F8D0();
+extern "C" __declspec(naked) void __fastcall fn_00434500(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00465B30
+        mov ecx, dword ptr [eax + 0x14]
+        call ext_0046F890
+        mov bl, al
+        call ext_00465B30
+        mov ecx, dword ptr [eax + 0x14]
+        call ext_0046F880
+        mov byte ptr [esp + 0x11], al
+        call ext_00465B30
+        mov ecx, dword ptr [eax + 0x14]
+        call ext_0046F8A0
+        mov byte ptr [esp + 0x12], al
+        call ext_00465B30
+        mov ecx, dword ptr [eax + 0x14]
+        call ext_0046F8D0
+        mov ebp, dword ptr [esp + 0x18]
+        mov edi, dword ptr [ebp]
+        mov ecx, esi
+        mov byte ptr [esp + 0x13], al
+        call ext_00430370
+        mov edx, dword ptr [edi]
+        movzx eax, al
+        push eax
+        mov ecx, ebp
+        call edx
+        test bl, bl
+        je fail
+        cmp byte ptr [esp + 0x11], 0
+        jne fail
+        cmp byte ptr [esp + 0x12], 0
+        je fail
+        cmp byte ptr [esp + 0x13], 0
+        je fail
+        mov edx, dword ptr [ebp]
+        mov eax, 1
+        push eax
+        mov eax, dword ptr [edx + 4]
+        mov ecx, ebp
+        call eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 4
+    fail:
+        mov edx, dword ptr [ebp]
+        xor eax, eax
+        push eax
+        mov eax, dword ptr [edx + 4]
+        mov ecx, ebp
+        call eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 4
+    }
+}
