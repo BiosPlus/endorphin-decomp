@@ -2463,3 +2463,16 @@ extern "C" __declspec(naked) void* __cdecl fn_00575280(void* first, void* last, 
         ret
     }
 }
+
+// [0x00575310] sub_00575310 (56 bytes)
+extern "C" void* __cdecl fn_00575310(const char* first, const char* last, char* dest) {
+    if (first != last) {
+        typedef void (__thiscall *Fn)(void* self, const void* src);
+        do {
+            ((Fn)ext_00575170)(dest, first);
+            first += 0xa0;
+            dest += 0xa0;
+        } while (first != last);
+    }
+    return dest;
+}
