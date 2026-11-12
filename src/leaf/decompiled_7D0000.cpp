@@ -2891,3 +2891,28 @@ fe90_L4:
         ret
     }
 }
+
+// [0x007D84A0] sub_007D84A0 (202 bytes)
+extern "C" void ext_007C6CF0(void* a, void* b, float* c);
+
+extern "C" void __cdecl fn_007D84A0(char* self, void* a1, void* a2, float* out) {
+    float v1[3] = { 0.0f, 0.0f, 0.0f };
+    float v2[3] = { 0.0f, 0.0f, 0.0f };
+    if (a1) {
+        ext_007C6CF0(a1, self + 0x40, v1);
+    } else if (*(int*)(self + 0x90) & 0x100) {
+        v1[0] = *(float*)(self + 0x78);
+        v1[1] = *(float*)(self + 0x7c);
+        v1[2] = *(float*)(self + 0x80);
+    }
+    if (a2) {
+        ext_007C6CF0(a2, self + 0x40, v2);
+    } else if (*(int*)(self + 0x90) & 0x100) {
+        v2[0] = *(float*)(self + 0x78);
+        v2[1] = *(float*)(self + 0x7c);
+        v2[2] = *(float*)(self + 0x80);
+    }
+    out[0] = v1[0] - v2[0];
+    out[1] = v1[1] - v2[1];
+    out[2] = v1[2] - v2[2];
+}
