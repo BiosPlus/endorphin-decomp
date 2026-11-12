@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `10391 / 24049` (**43.21%**) — `7299` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `641753 / 4496005 bytes` (**14.27%** of 4.29 MB)
+- **In-Scope Functions Matched:** `10392 / 24049` (**43.21%**) — `7300` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `642019 / 4496005 bytes` (**14.28%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -21,19 +21,19 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P50-60 (91-122B)** | 1087 / 2405 | 45.20% | 118339 / 256906 | 46.06% | 1318 fn |
 | **P60-70 (122-159B)** | 904 / 2405 | 37.59% | 121457 / 339038 | 35.82% | 1501 fn |
 | **P70-80 (159-178B)** | 203 / 2405 | 8.44% | 34192 / 400567 | 8.54% | 2202 fn |
-| **P80-90 (178-335B)** | 456 / 2405 | 18.96% | 98075 / 583211 | 16.82% | 1949 fn |
+| **P80-90 (178-335B)** | 457 / 2405 | 19.00% | 98341 / 583211 | 16.86% | 1948 fn |
 | **P90-100 (335-36100B)** | 0 / 2404 | 0.00% | 0 / 2392860 | 0.00% | 2404 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6743 | 514752 | 92.38% |
+| `claude-haiku-5.5@medium` | 6743 | 514752 | 92.37% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 6.12% |
 | `claude-sonnet-5.5@low` | 29 | 5269 | 0.40% |
 | `claude-haiku-5.5@low` | 27 | 5793 | 0.37% |
 | `claude-sonnet-5.5@medium` | 24 | 1340 | 0.33% |
-| `gemini-3.8-flash@low` | 16 | 2174 | 0.22% |
+| `gemini-3.8-flash@low` | 17 | 2440 | 0.23% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.14% |
 | `gemini-3.8-flash@medium` | 1 | 256 | 0.01% |
 | `claude-opus-5.5@medium` | 1 | 49 | 0.01% |
