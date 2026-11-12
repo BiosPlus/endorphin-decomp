@@ -50,3 +50,53 @@ L_skip3:
         ret
     }
 }
+
+// [0x00501620] PointainerWithUndo<PointainerSet<NMData::MaterialPair>>::RemoveElementCommand::vfunc_1 (92 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00501620(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x18]
+        push edi
+        mov edi, dword ptr [esi + 0x1c]
+        cmp edi, ecx
+        je L_skip1
+        test ecx, ecx
+        je L_skip1
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+L_skip1:
+        mov dword ptr [esi + 0x18], edi
+        mov eax, dword ptr [esi + 0x1c]
+        mov ecx, dword ptr [esi + 0x10]
+        lea edx, [esp + 8]
+        push edx
+        mov dword ptr [esp + 0xc], eax
+        call ext_00527EC0
+        mov ecx, dword ptr [esi + 0x24]
+        test ecx, ecx
+        mov dword ptr [esi + 0x20], eax
+        je L_skip2
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 4]
+        push eax
+        mov eax, dword ptr [esi + 0x1c]
+        push eax
+        call edx
+L_skip2:
+        mov ecx, dword ptr [esi + 0x14]
+        test ecx, ecx
+        je L_skip3
+        mov eax, dword ptr [esi + 0x1c]
+        push eax
+        call ext_00517510
+L_skip3:
+        pop edi
+        pop esi
+        pop ecx
+        ret
+    }
+}
