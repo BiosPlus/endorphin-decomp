@@ -2582,3 +2582,68 @@ extern "C" __declspec(naked) void __cdecl fn_007DC7D0(void) {
         ret
     }
 }
+
+// [0x007D8EB0] sub_007D8EB0 (172 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D8EB0(char** objs, float* mats, int unused_a3, int unused_a4, int count) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        xor edx, edx
+        test edi, edi
+        je done
+        mov ecx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x8
+        jmp loop_head
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    loop_head:
+        mov eax, dword ptr [esi + 4*edx]
+        fld dword ptr [eax + 0x30]
+        add edx, 0x1
+        fmul dword ptr [eax + 0x8]
+        add ecx, 0x30
+        cmp edx, edi
+        fstp dword ptr [eax + 0xe0]
+        fld dword ptr [eax + 0x34]
+        fmul dword ptr [eax + 0x8]
+        fstp dword ptr [eax + 0xe4]
+        fld dword ptr [eax + 0x38]
+        fmul dword ptr [eax + 0x8]
+        fstp dword ptr [eax + 0xe8]
+        fld dword ptr [ecx - 0x38]
+        fmul dword ptr [eax + 0x40]
+        fld dword ptr [ecx - 0x34]
+        fmul dword ptr [eax + 0x44]
+        faddp st(1), st
+        fld dword ptr [eax + 0x48]
+        fmul dword ptr [ecx - 0x30]
+        faddp st(1), st
+        fstp dword ptr [eax + 0xf0]
+        fld dword ptr [ecx - 0x28]
+        fmul dword ptr [eax + 0x40]
+        fld dword ptr [ecx - 0x24]
+        fmul dword ptr [eax + 0x44]
+        faddp st(1), st
+        fld dword ptr [ecx - 0x20]
+        fmul dword ptr [eax + 0x48]
+        faddp st(1), st
+        fstp dword ptr [eax + 0xf4]
+        fld dword ptr [ecx - 0x18]
+        fmul dword ptr [eax + 0x40]
+        fld dword ptr [ecx - 0x14]
+        fmul dword ptr [eax + 0x44]
+        faddp st(1), st
+        fld dword ptr [ecx - 0x10]
+        fmul dword ptr [eax + 0x48]
+        faddp st(1), st
+        fstp dword ptr [eax + 0xf8]
+        jne loop_head
+        pop esi
+    done:
+        pop edi
+        ret
+    }
+}
