@@ -9996,3 +9996,39 @@ extern "C" __declspec(naked) void __fastcall fn_006924C0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00695660] ExprParser::ReadWriteMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, float, &public: void __thiscall DoubleWithProperties::setValue(float)>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00B5C798;
+extern "C" int mem_00B5C794;
+
+extern "C" __declspec(naked) void __fastcall fn_00695660(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b601e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B5C798], al
+        jne L_guarded
+        or dword ptr [mem_00B5C798], eax
+        mov ecx, offset mem_00B5C794
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00B5C794], 0x0098f4f4
+        mov dword ptr [eax + 0x4], offset mem_00B5C794
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00B5C794
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
