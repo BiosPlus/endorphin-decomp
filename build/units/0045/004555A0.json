@@ -29,5 +29,7 @@
     "0x0045565A",
     "0x00455665"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T12:01:19Z"
 }
