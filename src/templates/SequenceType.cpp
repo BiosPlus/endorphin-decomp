@@ -1,0 +1,87 @@
+// Decompiled translation unit: src/templates/SequenceType.cpp
+
+extern "C" void ext_00493D90();
+extern "C" void ext_00494FF0();
+extern "C" int mem_00925134;
+
+// [0x00505B30] Properties::SequenceType<std::vector<Chromosome, std::allocator<Chromosome>>, Properties::GetPropertySource, DeRefValue>::vfunc_3 (206 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00505B30(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        push -0x1
+        push 0x008b40d8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x18
+        mov eax, dword ptr [ebp + 0x8]
+        push ebx
+        mov ebx, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [ebx + 0x4]
+        cmp esi, dword ptr [ebx + 0x8]
+        push edi
+        mov dword ptr [esp + 0x14], ebx
+        jbe L_505B68
+        call dword ptr [mem_00925134]
+L_505B68:
+        mov edi, dword ptr [ebp + 0xc]
+        jmp L_505B70
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+L_505B70:
+        mov ebx, dword ptr [ebx + 0x8]
+        mov ecx, dword ptr [esp + 0x14]
+        cmp dword ptr [ecx + 0x4], ebx
+        jbe L_505B82
+        call dword ptr [mem_00925134]
+L_505B82:
+        cmp esi, ebx
+        je L_505BEA
+        mov edx, dword ptr [esp + 0x14]
+        cmp esi, dword ptr [edx + 0x8]
+        jb L_505B95
+        call dword ptr [mem_00925134]
+L_505B95:
+        push esi
+        lea eax, [esp + 0x1c]
+        push eax
+        lea ecx, [esp + 0x1b]
+        call ext_00494FF0
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [eax]
+        mov edx, dword ptr [edx]
+        push ecx
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x34], 0x0
+        call edx
+        lea ecx, [esp + 0x18]
+        mov bl, al
+        mov dword ptr [esp + 0x2c], -0x1
+        call ext_00493D90
+        test bl, bl
+        je L_505BEA
+        mov eax, dword ptr [esp + 0x14]
+        cmp esi, dword ptr [eax + 0x8]
+        jb L_505BE1
+        call dword ptr [mem_00925134]
+L_505BE1:
+        mov ebx, dword ptr [esp + 0x14]
+        add esi, 0x68
+        jmp L_505B70
+L_505BEA:
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
