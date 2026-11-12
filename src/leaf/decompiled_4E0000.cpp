@@ -2551,3 +2551,80 @@ L_4E1F43:
         ret
     }
 }
+
+// [0x004E1DC0] sub_004E1DC0 (193 bytes)
+extern "C" void ext_00493EE0();
+
+extern "C" __declspec(naked) void __fastcall fn_004E1DC0(void* self, int edx_unused, unsigned char a1) {
+    __asm {
+        mov al, byte ptr [esp + 4]
+        push ebx
+        mov ebx, ecx
+        cmp dword ptr [ebx + 0x10], 0
+        mov byte ptr [ebx + 0x990], al
+        je L_tail_4E1DC0
+        push ebp
+        push esi
+        mov esi, dword ptr [ebx + 0x984]
+        cmp esi, dword ptr [ebx + 0x988]
+        push edi
+        lea edi, [ebx + 0x980]
+        jbe L_head_4E1DC0
+        call dword ptr [mem_00925134]
+L_head_4E1DC0:
+        mov ebp, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebp
+        jbe L_chk2_4E1DC0
+        call dword ptr [mem_00925134]
+L_chk2_4E1DC0:
+        cmp edi, edi
+        je L_chk3_4E1DC0
+        call dword ptr [mem_00925134]
+L_chk3_4E1DC0:
+        cmp esi, ebp
+        je L_exit_4E1DC0
+        cmp esi, dword ptr [edi + 0x8]
+        mov ebp, dword ptr [mem_00925134]
+        jb L_nb1_4E1DC0
+        call ebp
+L_nb1_4E1DC0:
+        movzx eax, byte ptr [ebx + 0x990]
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x2c]
+        push eax
+        push 0x80000
+        call edx
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_nb2_4E1DC0
+        call ebp
+L_nb2_4E1DC0:
+        mov eax, dword ptr [esi]
+        mov byte ptr [eax + 0x4], 1
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_nb3_4E1DC0
+        call ebp
+L_nb3_4E1DC0:
+        add esi, 0x4
+        jmp L_head_4E1DC0
+L_exit_4E1DC0:
+        movzx eax, byte ptr [ebx + 0x990]
+        mov ecx, dword ptr [ebx + 0x10]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x2c]
+        push eax
+        push 0x2000000
+        call edx
+        mov eax, dword ptr [ebx + 0x10]
+        pop edi
+        pop esi
+        mov byte ptr [eax + 0x4], 1
+        pop ebp
+L_tail_4E1DC0:
+        call ext_00594000
+        lea ecx, [eax + 0x258]
+        call ext_00493EE0
+        pop ebx
+        ret 4
+    }
+}
