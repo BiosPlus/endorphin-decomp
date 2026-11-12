@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `9063 / 24049` (**37.69%**) — `5971` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `445783 / 4496005 bytes` (**9.92%** of 4.29 MB)
+- **In-Scope Functions Matched:** `9064 / 24049` (**37.69%**) — `5972` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `445838 / 4496005 bytes` (**9.92%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -16,7 +16,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P0-10 (1-16B)** | 2379 / 2405 | 98.92% | 24669 / 25001 | 98.67% | 26 fn |
 | **P10-20 (16-32B)** | 2164 / 2405 | 89.98% | 54622 / 61769 | 88.43% | 241 fn |
 | **P20-30 (32-48B)** | 1086 / 2405 | 45.16% | 42241 / 97731 | 43.22% | 1319 fn |
-| **P30-40 (48-71B)** | 824 / 2405 | 34.26% | 49306 / 144549 | 34.11% | 1581 fn |
+| **P30-40 (48-71B)** | 825 / 2405 | 34.30% | 49361 / 144549 | 34.15% | 1580 fn |
 | **P40-50 (71-91B)** | 988 / 2405 | 41.08% | 82648 / 194373 | 42.52% | 1417 fn |
 | **P50-60 (91-122B)** | 967 / 2405 | 40.21% | 105696 / 256906 | 41.14% | 1438 fn |
 | **P60-70 (122-159B)** | 655 / 2405 | 27.23% | 86601 / 339038 | 25.54% | 1750 fn |
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5` | 5848 | 385693 | 97.94% |
-| `gemini-3.8-flash` | 97 | 12206 | 1.62% |
+| `claude-haiku-5.5` | 5848 | 385693 | 97.92% |
+| `gemini-3.8-flash` | 98 | 12261 | 1.64% |
 | `claude-sonnet-5.5` | 24 | 1340 | 0.40% |
 | `claude-opus-5.5` | 1 | 49 | 0.02% |
 | `gemini-4-argon` | 1 | 10 | 0.02% |
