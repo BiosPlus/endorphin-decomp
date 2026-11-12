@@ -103,3 +103,70 @@ skip_0044C3A0:
         ret 0x4
     }
 }
+
+// [0x0044BE60] RenderView::vfunc_27 (158 bytes)
+extern "C" int mem_00934DA0;
+extern "C" int mem_009256C4;
+extern "C" void ext_006A672A();
+extern "C" void ext_006A5EDE();
+extern "C" void ext_006A6724();
+extern "C" void ext_006A631C();
+
+extern "C" __declspec(naked) void __fastcall fn_0044BE60(void* self) {
+    __asm {
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [esp + 0x30]
+        mov eax, dword ptr [esi + 0x20]
+        or dword ptr [esi + 0x2c], 0x200
+        and eax, 0xff7fffff
+        or eax, 0x6000000
+        push esi
+        mov dword ptr [esi + 0x20], eax
+        call ext_006A672A
+        test eax, eax
+        jne be90_0044BE60
+        pop esi
+        add esp, 0x28
+        ret 0x4
+    be90_0044BE60:
+        push ebx
+        push edi
+        call ext_006A5EDE
+        mov edi, dword ptr [eax + 0x8]
+        mov ebx, dword ptr [mem_009256C4]
+        lea ecx, [esp + 0xc]
+        push ecx
+        push offset mem_00934DA0
+        push edi
+        call ebx
+        test eax, eax
+        jne bee9_0044BE60
+        mov eax, dword ptr [esi + 0x28]
+        lea edx, [esp + 0xc]
+        push edx
+        push eax
+        push edi
+        call ebx
+        test eax, eax
+        je bee4_0044BE60
+        or dword ptr [esp + 0xc], 0x23
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov dword ptr [esp + 0x34], offset mem_00934DA0
+        mov dword ptr [esp + 0x2c], 0x0
+        call ext_006A6724
+        test eax, eax
+        jne bee9_0044BE60
+    bee4_0044BE60:
+        call ext_006A631C
+    bee9_0044BE60:
+        pop edi
+        pop ebx
+        mov dword ptr [esi + 0x28], offset mem_00934DA0
+        mov eax, 0x1
+        pop esi
+        add esp, 0x28
+        ret 0x4
+    }
+}
