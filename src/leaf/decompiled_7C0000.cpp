@@ -4192,3 +4192,92 @@ extern "C" __declspec(naked) void __fastcall fn_007C8EB0(void* self) {
         ret
     }
 }
+
+// [0x007CBB80] sub_007CBB80 (208 bytes)
+extern "C" int mem_009453D8;
+extern "C" int mem_0099D8B8;
+
+extern "C" __declspec(naked) void __cdecl fn_007CBB80(void* a1, float* a2, float* out) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        push esi
+        call ext_007D5AE0
+        push esi
+        mov edi, eax
+        call ext_007D48A0
+        mov esi, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov edx, eax
+        fld dword ptr [edx + 0x24]
+        add esp, 0x8
+        fmul dword ptr [esi + 0x4]
+        fld dword ptr [esi]
+        fmul dword ptr [edx + 0x20]
+        faddp st(1), st
+        fld dword ptr [edx + 0x28]
+        fmul dword ptr [esi + 0x8]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [edx + 0x30]
+        fstp dword ptr [ecx]
+        fld dword ptr [edx + 0x34]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [edx + 0x38]
+        fstp dword ptr [ecx + 0x8]
+        fld dword ptr [esp + 0x10]
+        fcom qword ptr [mem_009453D8]
+        fnstsw ax
+        test ah, 0x41
+        jne L_le_c1
+        fstp st(0)
+        fld dword ptr [edi + 0x14]
+        jmp L_have_s
+L_le_c1:
+        fcomp qword ptr [mem_0099D8B8]
+        fnstsw ax
+        test ah, 0x5
+        jp L_skip_block1
+        fld dword ptr [edi + 0x14]
+        fchs
+L_have_s:
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [edx + 0x20]
+        fld dword ptr [esp + 0x10]
+        fld st(0)
+        fmulp st(2), st
+        fld dword ptr [ecx]
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [ecx]
+        fld dword ptr [edx + 0x24]
+        fmul st, st(1)
+        fadd dword ptr [ecx + 0x4]
+        fstp dword ptr [ecx + 0x4]
+        fmul dword ptr [edx + 0x28]
+        fadd dword ptr [ecx + 0x8]
+        fstp dword ptr [ecx + 0x8]
+L_skip_block1:
+        fld dword ptr [edi + 0x10]
+        pop edi
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esi]
+        fld dword ptr [esp + 0xc]
+        fld st(0)
+        fmulp st(2), st
+        fld dword ptr [ecx]
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [ecx]
+        fld dword ptr [esi + 0x4]
+        fmul st, st(1)
+        fadd dword ptr [ecx + 0x4]
+        fstp dword ptr [ecx + 0x4]
+        fmul dword ptr [esi + 0x8]
+        pop esi
+        fadd dword ptr [ecx + 0x8]
+        fstp dword ptr [ecx + 0x8]
+        ret
+    }
+}
