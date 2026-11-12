@@ -3096,3 +3096,88 @@ done:
         ret
     }
 }
+
+// [0x00687F10] sub_00687F10 (172 bytes)
+// try { for (p = first; p != last; ++p, ++dest) { if (dest) { dest->i0..i3 = p->i0..i3; ctor(&dest->s, &p->s); } } }
+// catch (...) { destroy [begin, dest) strings; throw; }
+// return dest;
+// Naked: EH frame written out by hand (same pattern as fn_00687FC0; 0x2c stride, string at +0x10).
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void* __cdecl fn_00687F10(void* first, void* last, void* dest) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x008b5771
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        push edi
+        mov edi, dword ptr [ebp + 0x8]
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], ebx
+        nop
+    loop_top:
+        cmp edi, dword ptr [ebp + 0xc]
+        je exit_path
+        mov dword ptr [ebp + 0x8], esi
+        mov dword ptr [ebp - 0x18], esi
+        cmp esi, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je skip_ctor
+        mov eax, dword ptr [edi]
+        mov dword ptr [esi], eax
+        mov ecx, dword ptr [edi + 0x4]
+        mov dword ptr [esi + 0x4], ecx
+        mov edx, dword ptr [edi + 0x8]
+        lea ecx, [edi + 0x10]
+        mov dword ptr [esi + 0x8], edx
+        mov eax, dword ptr [edi + 0xc]
+        push ecx
+        lea ecx, [esi + 0x10]
+        mov dword ptr [esi + 0xc], eax
+        call dword ptr [mem_00924FE0]
+    skip_ctor:
+        add esi, 0x2c
+        mov byte ptr [ebp - 0x4], bl
+        mov dword ptr [ebp + 0x10], esi
+        add edi, 0x2c
+        jmp loop_top
+    handler:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je handler_rethrow
+        mov edi, edi
+    destroy_loop:
+        lea ecx, [esi + 0x10]
+        call dword ptr [mem_00924FF4]
+        add esi, 0x2c
+        cmp esi, edi
+        jne destroy_loop
+    handler_rethrow:
+        xor ebx, ebx
+        push ebx
+        push ebx
+        call ext_006A6DD2
+    exit_path:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
