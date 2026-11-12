@@ -8,6 +8,7 @@ MAX_WAVES="${1:-50}"                    # Number of parallel waves to run before
 WAVE_SIZE="${2:-5}"                     # Parallel functions per wave (1 dedicated agent per function try)
 PUSH_EVERY="${3:-5}"                    # Run git push every N waves
 AGENT_TIMEOUT="${AGENT_TIMEOUT:-360}"   # Per-function agent timeout in seconds
+AGENT_EFFORT="${AGENT_EFFORT:-medium}"  # Reasoning effort across all models (low|medium|high)
 COOLDOWN_BASE_SECS="${COOLDOWN_BASE_SECS:-180}" # Initial rate-limit cooldown (3m -> 9m -> 27m)
 PREFER_AGY_CLAUDE="${PREFER_AGY_CLAUDE:-0}"     # Set to 1 to prefer AGY for Sonnet/Opus before native claude CLI
 DEPS_FIRST="${DEPS_FIRST:-1}"                  # 1 = prefer functions whose callees are already matched
@@ -83,9 +84,11 @@ fi
 
 # Verify CLIs are genuinely runnable (not broken wrapper shims)
 HAS_CLAUDE=0
+HAS_CLAUDE_EFFORT=0
 HAS_AGY=0
 if command -v claude >/dev/null 2>&1 && claude --version >/dev/null 2>&1; then
   HAS_CLAUDE=1
+  claude --help 2>&1 | grep -q -- '--effort' && HAS_CLAUDE_EFFORT=1
 fi
 if command -v agy >/dev/null 2>&1 && agy --help >/dev/null 2>&1; then
   HAS_AGY=1
@@ -93,13 +96,13 @@ fi
 
 if [[ "${GRIND_VERBOSE:-0}" == 1 ]]; then
 echo "=== Endorphin Autonomous Parallel Grinder (1 Agent / Function Try) ==="
-echo "Verified CLIs : claude=$HAS_CLAUDE | agy=$HAS_AGY"
+echo "Verified CLIs : claude=$HAS_CLAUDE | agy=$HAS_AGY | effort=$AGENT_EFFORT"
 echo "Pipeline      : tier0 runners=$WAVE_SIZE (tries every function) | escalation cap=${ESC_CAP}/model | total_pulls=$((MAX_WAVES*WAVE_SIZE)) | push_every=$((PUSH_EVERY*WAVE_SIZE)) | timeout=${AGENT_TIMEOUT}s"
 echo "Model Tiers   : ${MODEL_TIERS//|/  ->  }"
 echo "Policy        : every model in a tier tries a function (least-loaded first) before it moves up; rate-limited pools are waited out, never counted as failures"
 echo "Security Mode : Scoped Allowlist + Sandbox + PreToolUse Guard [NO skip-dangerously]"
 else
-  echo "Endorphin grinder: tier0 x$WAVE_SIZE, escalation cap ${ESC_CAP}/model, ${MAX_WAVES} waves, timeout ${AGENT_TIMEOUT}s  (claude=$HAS_CLAUDE agy=$HAS_AGY; GRIND_VERBOSE=1 for details)"
+  echo "Endorphin grinder: tier0 x$WAVE_SIZE, escalation cap ${ESC_CAP}/model, ${MAX_WAVES} waves, effort $AGENT_EFFORT, timeout ${AGENT_TIMEOUT}s  (claude=$HAS_CLAUDE agy=$HAS_AGY; GRIND_VERBOSE=1 for details)"
 fi
 
 if [[ $HAS_CLAUDE -eq 0 && $HAS_AGY -eq 0 ]]; then
@@ -299,7 +302,7 @@ run_agy_first_valid_slug() {
   local cached="" slug rc=0
   [[ -f "$STATE_DIR/slug.$key" ]] && cached="$(cat "$STATE_DIR/slug.$key" 2>/dev/null || true)"
   if [[ -n "$cached" ]]; then
-    run_agy_with_model "$cached" "high" "$prompt" "$log_file" || rc=$?
+    run_agy_with_model "$cached" "$AGENT_EFFORT" "$prompt" "$log_file" || rc=$?
     if ! is_invalid_model_log "$log_file"; then
       return $rc
     fi
@@ -308,7 +311,7 @@ run_agy_first_valid_slug() {
   for slug in "$@"; do
     [[ "$slug" == "$cached" ]] && continue
     rc=0
-    run_agy_with_model "$slug" "high" "$prompt" "$log_file" || rc=$?
+    run_agy_with_model "$slug" "$AGENT_EFFORT" "$prompt" "$log_file" || rc=$?
     if ! is_invalid_model_log "$log_file"; then
       echo "$slug" > "$STATE_DIR/slug.$key"
       return $rc
@@ -336,9 +339,13 @@ run_single_function_agent() {
       claude-sonnet-5.5) claude_alias="sonnet" ;;
       claude-opus-5.5)   claude_alias="opus" ;;
     esac
+    local -a claude_effort_args=()
+    [[ $HAS_CLAUDE_EFFORT -eq 1 ]] && claude_effort_args=(--effort "$AGENT_EFFORT")
+    export CLAUDE_CODE_EFFORT_LEVEL="$AGENT_EFFORT"
 
     launch_tracked timeout --kill-after=20s "${AGENT_TIMEOUT_EFF:-$AGENT_TIMEOUT}s" \
       claude --model "$claude_alias" \
+      "${claude_effort_args[@]}" \
       --permission-mode acceptEdits \
       --output-format stream-json --verbose \
       --allowedTools \
@@ -354,21 +361,21 @@ run_single_function_agent() {
   else
     case "$model_choice" in
       gemini-3.8-flash)
-        run_agy_with_model "gemini-3.8-flash" "high" "$prompt" "$log_file" || exit_code=$?
+        run_agy_with_model "gemini-3.8-flash" "$AGENT_EFFORT" "$prompt" "$log_file" || exit_code=$?
         ;;
       claude-sonnet-5.5)
         run_agy_first_valid_slug "sonnet" "$prompt" "$log_file" \
-          "claude-sonnet-5-5" "claude-sonnet-5-5-high" "claude-sonnet-5.5" "claude-sonnet-5-5@default" "claude-sonnet-4-6@default" || exit_code=$?
+          "claude-sonnet-5-5" "claude-sonnet-5-5-${AGENT_EFFORT}" "claude-sonnet-5.5" "claude-sonnet-5-5@default" "claude-sonnet-4-6@default" || exit_code=$?
         ;;
       claude-opus-5.5)
         run_agy_first_valid_slug "opus" "$prompt" "$log_file" \
-          "claude-opus-5-5" "claude-opus-5-5-high" "claude-opus-5.5" "claude-opus-5-5@default" "claude-opus-4-6@default" || exit_code=$?
+          "claude-opus-5-5" "claude-opus-5-5-${AGENT_EFFORT}" "claude-opus-5.5" "claude-opus-5-5@default" "claude-opus-4-6@default" || exit_code=$?
         ;;
       gemini-4-argon)
-        run_agy_with_model "gemini-4-argon" "high" "$prompt" "$log_file" || exit_code=$?
+        run_agy_with_model "gemini-4-argon" "$AGENT_EFFORT" "$prompt" "$log_file" || exit_code=$?
         ;;
       gemini-4-carbon)
-        run_agy_with_model "gemini-4-carbon" "high" "$prompt" "$log_file" || exit_code=$?
+        run_agy_with_model "gemini-4-carbon" "$AGENT_EFFORT" "$prompt" "$log_file" || exit_code=$?
         ;;
     esac
   fi
