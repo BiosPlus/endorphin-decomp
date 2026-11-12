@@ -3164,3 +3164,56 @@ extern "C" __declspec(naked) void* __fastcall fn_0065F020(void* self, int edx_un
         ret 0x14
     }
 }
+
+// [0x0065F1F0] sub_0065F1F0 (98 bytes)
+extern "C" void ext_0065D570();
+extern "C" void ext_0065F020();
+extern "C" void ext_0065D130();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0065F1F0(void* self) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        call ext_0065D570
+        cmp eax, 1
+        jle done
+        mov eax, dword ptr [esi + 0x64]
+        push ebx
+        mov ebx, dword ptr [esi + 0x74]
+        test ebx, ebx
+        push ebp
+        mov ebp, dword ptr [esi + 0x78]
+        push edi
+        lea edi, [esi + 0x60]
+        mov dword ptr [esp + 0x14], eax
+        jne nonnull
+        call dword ptr [mem_00925134]
+nonnull:
+        cmp ebp, dword ptr [ebx + 0x4]
+        jne nonequal
+        call dword ptr [mem_00925134]
+nonequal:
+        mov ecx, dword ptr [esp + 0x14]
+        mov ebp, dword ptr [ebp]
+        push ecx
+        push edi
+        push ebp
+        push ebx
+        lea edx, [esp + 0x20]
+        push edx
+        mov ecx, edi
+        call ext_0065F020
+        pop edi
+        pop ebp
+        pop ebx
+        mov ecx, esi
+        pop esi
+        add esp, 8
+        jmp ext_0065D130
+done:
+        pop esi
+        add esp, 8
+        ret
+    }
+}
