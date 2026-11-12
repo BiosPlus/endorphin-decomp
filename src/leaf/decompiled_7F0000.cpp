@@ -2481,3 +2481,110 @@ extern "C" __declspec(naked) void __fastcall fn_007FC2D0(void* self) {
         ret
     }
 }
+
+// [0x007F2330] sub_007F2330 (271 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007F2330() {
+    __asm {
+        sub esp, 8
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x1c]
+        push ebx
+        mov ebx, dword ptr [esp + 0x38]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        xor edi, edi
+        test ebx, ebx
+        mov dword ptr [edx], edi
+        mov eax, dword ptr [esi]
+        lea eax, [ecx + 8*eax]
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [eax + 0x4]
+        mov dword ptr [esp + 0xc], ecx
+        mov ecx, dword ptr [esp + 0x24]
+        mov dword ptr [esp + 0x10], eax
+        mov eax, dword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x1c], eax
+        mov dword ptr [esp + 0x18], ecx
+        je done
+        mov dword ptr [esp + 0x20], ebx
+        push ebp
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+loop_top:
+        add dword ptr [edx], 0x2
+        mov ebx, dword ptr [esp + 0x10]
+        mov ebp, dword ptr [esp + 0x38]
+        mov dword ptr [eax], ebx
+        mov ebx, dword ptr [esp + 0x14]
+        mov dword ptr [eax + 0x4], ebx
+        mov ebx, dword ptr [esi]
+        add eax, 0x4
+        add ebx, ebx
+        mov dword ptr [ecx], ebx
+        mov ebx, dword ptr [esi]
+        add ecx, 0x4
+        lea ebx, [ebx + ebx + 0x1]
+        mov dword ptr [ecx], ebx
+        mov ebx, dword ptr [esi]
+        mov ebp, dword ptr [ebp + 4*ebx]
+        add ebp, edi
+        add eax, 0x4
+        add ecx, 0x4
+        cmp ebp, 0x4
+        jle short_a
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+        add edx, 0x4
+        add eax, 0x20
+        sub edi, 0x4
+        add ecx, 0x20
+        mov dword ptr [edx], 0x0
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [esp + 0x1c], ecx
+        jmp tail
+short_a:
+        jne short_b
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+        xor edi, edi
+        add edx, 0x4
+        add eax, 0x20
+        add ecx, 0x20
+        mov dword ptr [edx], edi
+        mov ebx, dword ptr [esi]
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [esp + 0x1c], ecx
+        jmp tail2
+short_b:
+        mov edi, ebp
+tail2:
+        mov ebp, dword ptr [esp + 0x4c]
+        add ebp, -0x1
+        cmp ebx, ebp
+        jge tail
+        mov ebp, dword ptr [esp + 0x2c]
+        add ebx, 0x1
+        mov dword ptr [esi], ebx
+        mov ebp, dword ptr [ebp + 8*ebx]
+        mov dword ptr [esp + 0x10], ebp
+        mov ebp, dword ptr [esp + 0x2c]
+        mov ebx, dword ptr [ebp + 8*ebx + 0x4]
+        mov dword ptr [esp + 0x14], ebx
+tail:
+        sub dword ptr [esp + 0x24], 0x1
+        jne loop_top
+        pop ebp
+done:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
