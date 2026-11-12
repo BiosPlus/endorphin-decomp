@@ -4152,3 +4152,36 @@ extern "C" V4_51AD40* __fastcall fn_0051AD40(char* self, int edx_unused, float v
     }
     return (V4_51AD40*)(self + 0x40);
 }
+
+// [0x0051AEF0] sub_0051AEF0 (57 bytes)
+extern "C" void ext_0051AD40();
+extern "C" int mem_00AECC08;
+extern "C" __declspec(naked) void __fastcall fn_0051AEF0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, [esi+0x24]
+        test eax, eax
+        je L1
+        mov ecx, [eax+4]
+        push eax
+        jmp L2
+    L1:
+        mov ecx, [mem_00AECC08]
+        push offset mem_00AECC08-4
+    L2:
+        mov edx, [ecx]
+        mov eax, [edx+4]
+        call eax
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_0051AD40
+        pop esi
+        pop ecx
+        ret
+    }
+}
