@@ -454,3 +454,111 @@ extern "C" __declspec(naked) void __fastcall fn_005F40C0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005F41B0] EffectorGroup::vfunc_23 (236 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005F41B0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push ebp
+        push esi
+        lea esi, [ecx + 0x2c]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x10], esi
+        jbe L_5F41CE
+        call ebx
+    L_5F41CE:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebp
+        mov dword ptr [esp + 0x1c], edi
+        mov dword ptr [esp + 0x14], ebp
+        jbe L_5F41E0
+        call ebx
+    L_5F41E0:
+        test esi, esi
+        je L_5F41E8
+        cmp esi, esi
+        je L_5F41EA
+    L_5F41E8:
+        call ebx
+    L_5F41EA:
+        cmp edi, ebp
+        je L_5F4292
+        mov eax, dword ptr [mem_00B46790]
+        test eax, eax
+        je L_5F425D
+        test esi, esi
+        jne L_5F4206
+        call ebx
+        mov eax, dword ptr [mem_00B46790]
+    L_5F4206:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_5F4212
+        call ebx
+        mov eax, dword ptr [mem_00B46790]
+    L_5F4212:
+        mov ebx, dword ptr [eax + 0x8]
+        cmp dword ptr [eax + 0x4], ebx
+        lea edi, [eax + 0x8]
+        lea ebp, [eax + 0x4]
+        mov esi, eax
+        jbe L_5F4228
+        call dword ptr [mem_00925134]
+    L_5F4228:
+        mov ebp, dword ptr [ebp]
+        cmp ebp, dword ptr [edi]
+        jbe L_5F4235
+        call dword ptr [mem_00925134]
+    L_5F4235:
+        mov eax, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [esp + 0x1c]
+        push eax
+        push ecx
+        push ebx
+        push esi
+        push ebp
+        push esi
+        call ext_005F3E70
+        mov esi, dword ptr [esp + 0x28]
+        mov edi, dword ptr [esp + 0x34]
+        mov ebx, dword ptr [mem_00925134]
+        add esp, 0x18
+        test al, al
+        je L_5F427B
+    L_5F425D:
+        test esi, esi
+        jne L_5F4263
+        call ebx
+    L_5F4263:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_5F426A
+        call ebx
+    L_5F426A:
+        mov ecx, dword ptr [edi]
+        fld dword ptr [esp + 0x24]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x5c]
+        push ecx
+        fstp dword ptr [esp]
+        call eax
+    L_5F427B:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_5F4282
+        call ebx
+    L_5F4282:
+        mov ebp, dword ptr [esp + 0x14]
+        add edi, 4
+        mov dword ptr [esp + 0x1c], edi
+        jmp L_5F41E0
+    L_5F4292:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret 4
+    }
+}
