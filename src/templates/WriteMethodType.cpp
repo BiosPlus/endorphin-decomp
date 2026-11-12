@@ -10056,3 +10056,59 @@ extern "C" __declspec(naked) void __fastcall fn_004CA940(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00604A40] ExprParser::WriteMethodType<EffectorBase, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &[thunk]: __thiscall EffectorBase::`vcall'{64, {flat}}>::vfunc_48 (162 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00604A40(void* self, int edx_unused, void** a1, void** a2, void* a3) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x20
+        mov edx, dword ptr [esp + 0x34]
+        mov eax, dword ptr [esp + 0x34]
+        push esi
+        mov esi, dword ptr [esp + 0x3c]
+        mov ecx, dword ptr [esi + 0x4]
+        push edi
+        mov edi, dword ptr [eax]
+        push edx
+        push esi
+        lea eax, [esp + 0x14]
+        push eax
+        mov dword ptr [esp + 0x14], 0
+        call ext_0046E780
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x34], 0
+        call ext_00603690
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        cmp dword ptr [esi + 0x4], 0
+        lea eax, [esp + 0x3c]
+        je L_else_00604A40
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push esi
+        push eax
+        call edx
+        jmp L_store_00604A40
+    L_else_00604A40:
+        mov dword ptr [esp + 0x3c], 0
+    L_store_00604A40:
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x38]
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x28]
+        pop edi
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret 0xc
+    }
+}
