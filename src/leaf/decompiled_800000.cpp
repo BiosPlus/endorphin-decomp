@@ -823,3 +823,124 @@ L_hit:
         ret
     }
 }
+
+// [0x00803DF0] sub_00803DF0 (289 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00803DF0(float* out, int n, char* obj) {
+    __asm {
+        sub esp, 0xc
+        fldz
+        mov ecx, dword ptr [esp + 0x10]
+        push ebp
+        fst dword ptr [esp + 4]
+        mov ebp, dword ptr [esp + 0x20]
+        fst dword ptr [esp + 0xc]
+        push esi
+        fst dword ptr [esp + 0xc]
+        mov esi, dword ptr [esp + 0x1c]
+        fst dword ptr [ecx]
+        push edi
+        fst dword ptr [ecx + 4]
+        mov edx, 1
+        fst dword ptr [ecx + 8]
+        xor edi, edi
+        cmp esi, edx
+        jl L_end2
+        push ebx
+        mov ebx, ebp
+    L_loop:
+        test edx, esi
+        je L_next
+        lea eax, [edi + 4*esi]
+        fld dword ptr [ebp + 4*eax + 0xb8]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x20]
+        fld st(0)
+        fld dword ptr [esp + 0x14]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne L1
+        fxch st(1)
+        fst dword ptr [esp + 0x14]
+        fxch st(1)
+    L1:
+        fld dword ptr [esp + 0x18]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 5
+        jp L2
+        fxch st(1)
+        fstp dword ptr [esp + 0x18]
+        jmp L3
+    L2:
+        fstp st(1)
+    L3:
+        cmp dword ptr [esp + 0x28], 0
+        fld dword ptr [esp + 0x10]
+        fadd st, st(1)
+        lea eax, [ebx + 0xc]
+        fstp dword ptr [esp + 0x10]
+        jne L4
+        mov eax, ebx
+    L4:
+        fld dword ptr [eax]
+        fmul st, st(1)
+        fadd dword ptr [ecx]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 4]
+        fmul st, st(1)
+        fadd dword ptr [ecx + 4]
+        fstp dword ptr [ecx + 4]
+        fmul dword ptr [eax + 8]
+        fadd dword ptr [ecx + 8]
+        fstp dword ptr [ecx + 8]
+    L_next:
+        add edx, edx
+        add edi, 1
+        add ebx, 0x18
+        cmp edx, esi
+        jle L_loop
+        fld dword ptr [esp + 0x10]
+        pop ebx
+        fucom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x44
+        jnp L_end2
+        fld1
+        fdivrp st(1), st
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x1c]
+        fld dword ptr [ecx]
+        fmul st, st(1)
+        fstp dword ptr [ecx]
+        fld dword ptr [ecx + 4]
+        fmul st, st(1)
+        fstp dword ptr [ecx + 4]
+        fmul dword ptr [ecx + 8]
+        fstp dword ptr [ecx + 8]
+        jmp L_end
+    L_end2:
+        fstp st(0)
+    L_end:
+        fld dword ptr [esp + 0x10]
+        pop edi
+        fld dword ptr [ebp + 0x1b8]
+        pop esi
+        fld dword ptr [esp + 0xc]
+        pop ebp
+        fchs
+        fmulp st(1), st
+        fcompp
+        fnstsw ax
+        test ah, 1
+        je L_zero
+        mov eax, 1
+        add esp, 0xc
+        ret
+    L_zero:
+        xor eax, eax
+        add esp, 0xc
+        ret
+    }
+}
