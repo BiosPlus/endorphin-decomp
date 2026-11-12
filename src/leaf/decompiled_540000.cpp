@@ -2848,3 +2848,18 @@ extern "C" void __cdecl fn_0054F1E0(char* dst, unsigned int count, const void* s
         dst += 0x68;
     } while (count > 0);
 }
+
+// [0x0054F170] sub_0054F170 (54 bytes)
+extern "C" char* __cdecl fn_0054F170(const char* first, const char* last, char* dest) {
+    if (first != last) {
+        typedef void (__thiscall *Ctor)(void*, const void*);
+        do {
+            if (dest) {
+                ((Ctor)ext_00534590)(dest, first);
+            }
+            first += 0x68;
+            dest += 0x68;
+        } while (first != last);
+    }
+    return dest;
+}
