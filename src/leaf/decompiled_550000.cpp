@@ -3927,3 +3927,72 @@ extern "C" __declspec(naked) void __fastcall fn_005568E0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00553450] sub_00553450 (197 bytes)
+extern "C" void ext_0066A720();
+extern "C" void ext_0066A760();
+extern "C" void ext_0066A8B0();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00987B44;
+extern "C" int mem_009576F8;
+extern "C" int mem_00924FF0;
+
+extern "C" __declspec(naked) void __fastcall fn_00553450(void* self) {
+    __asm {
+        push -1
+        push 0x89a03d
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x14
+        push esi
+        push edi
+        mov esi, ecx
+        push 0x957704
+        mov dword ptr [esp + 0xc], esi
+        call dword ptr [mem_00924FE4]
+        lea edi, [esi + 0x20]
+        push 0x957700
+        mov ecx, edi
+        mov dword ptr [esp + 0x28], 0x0
+        call dword ptr [mem_00924FE4]
+        mov eax, dword ptr [mem_00987B44]
+        push eax
+        lea ecx, [esp + 0x10]
+        mov byte ptr [esp + 0x28], 0x1
+        call ext_0066A720
+        fld qword ptr [mem_009576F8]
+        sub esp, 0x8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        mov byte ptr [esp + 0x2c], 0x2
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x18]
+        push ecx
+        call ext_0066A8B0
+        mov edx, dword ptr [esp + 0x20]
+        add esp, 0x10
+        push 0x1
+        mov ecx, edi
+        mov dword ptr [esi + 0x1c], edx
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea eax, [esp + 0x14]
+        push eax
+        call ext_0066A8B0
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr [esi + 0x3c], ecx
+        add esp, 0xc
+        lea ecx, [esp + 0xc]
+        mov byte ptr [esp + 0x24], 0x1
+        call ext_0066A760
+        mov ecx, dword ptr [esp + 0x1c]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x20
+        ret
+    }
+}
