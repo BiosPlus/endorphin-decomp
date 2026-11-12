@@ -3518,3 +3518,59 @@ extern "C" __declspec(naked) void __cdecl fn_007C6150(void* self, void* out) {
         ret
     }
 }
+
+// [0x007C3CB0] sub_007C3CB0 (160 bytes)
+// Bit-writer step: appends 3 bits of the value argument (stack slot +0x10 at entry) into the
+// 16-bit accumulator at self+0x16B0 (bit count at self+0x16B4, output index at self+0x14,
+// buffer base at self+0x8). Flushes two bytes when the accumulator would overflow, then
+// tail-jumps to ext_007C5570 with the same stack arguments.
+extern "C" void ext_007C5570();
+
+extern "C" __declspec(naked) void __cdecl fn_007C3CB0(void* self, int a1, int a2, int value) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax + 0x16b4]
+        cmp ecx, 0xd
+        jle short L_else_007C3CB0
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        mov dword ptr [esp + 0x18], 0x1
+        mov edx, esi
+        mov dword ptr [esp + 0xc], eax
+        shl edx, cl
+        mov ecx, dword ptr [eax + 0x8]
+        or word ptr [eax + 0x16b0], dx
+        mov edx, dword ptr [eax + 0x14]
+        mov bl, byte ptr [eax + 0x16b0]
+        mov byte ptr [ecx + edx], bl
+        mov ecx, dword ptr [eax + 0x14]
+        mov edx, dword ptr [eax + 0x8]
+        mov bl, byte ptr [eax + 0x16b1]
+        inc ecx
+        mov dword ptr [eax + 0x14], ecx
+        mov byte ptr [ecx + edx], bl
+        mov edx, dword ptr [eax + 0x16b4]
+        mov ebx, dword ptr [eax + 0x14]
+        mov cl, 0x10
+        sub cl, dl
+        inc ebx
+        shr si, cl
+        add edx, -0xd
+        mov dword ptr [eax + 0x14], ebx
+        mov dword ptr [eax + 0x16b4], edx
+        mov word ptr [eax + 0x16b0], si
+        pop esi
+        pop ebx
+        jmp ext_007C5570
+    L_else_007C3CB0:
+        mov edx, dword ptr [esp + 0x10]
+        mov dword ptr [esp + 0x10], 0x1
+        shl edx, cl
+        mov dword ptr [esp + 0x4], eax
+        or word ptr [eax + 0x16b0], dx
+        add ecx, 0x3
+        mov dword ptr [eax + 0x16b4], ecx
+        jmp ext_007C5570
+    }
+}
