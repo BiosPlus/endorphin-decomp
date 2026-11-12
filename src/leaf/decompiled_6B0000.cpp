@@ -4610,3 +4610,90 @@ L_14BE:
         ret
     }
 }
+
+// [0x006B84A0] sub_006B84A0 (289 bytes)
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00924FD4;
+extern "C" int mem_00877622;
+extern "C" int mem_00928B5D;
+extern "C" __declspec(naked) void __fastcall fn_006B84A0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push offset mem_00877622
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x38
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x50]
+        test edi, edi
+        mov esi, ecx
+        je null_case
+        mov dword ptr [esi + 0x58], edi
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 4]
+        lea ecx, [esp + 8]
+        push ecx
+        mov ecx, edi
+        call edx
+        push eax
+        lea ecx, [esi + 0xbc]
+        mov dword ptr [esp + 0x4c], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 0x48], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x10]
+        lea ecx, [esp + 0x24]
+        push ecx
+        mov ecx, edi
+        call edx
+        push eax
+        lea ecx, [esi + 0xf4]
+        mov dword ptr [esp + 0x4c], 1
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x24]
+        mov dword ptr [esp + 0x48], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x14]
+        mov ecx, edi
+        call edx
+        mov dword ptr [esi + 0x114], eax
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x18]
+        mov ecx, edi
+        call edx
+        mov dword ptr [esi + 0x110], eax
+        mov eax, dword ptr [esp + 0x54]
+        pop edi
+        mov dword ptr [esi + 0x54], eax
+        pop esi
+        mov ecx, dword ptr [esp + 0x38]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x44
+        ret 8
+    null_case:
+        push offset mem_00928B5D
+        lea ecx, [esi + 0xbc]
+        mov dword ptr [esi + 0x58], 0
+        call dword ptr [mem_00924FD4]
+        push offset mem_00928B5D
+        lea ecx, [esi + 0xf4]
+        call dword ptr [mem_00924FD4]
+        mov ecx, dword ptr [esp + 0x54]
+        mov dword ptr [esi + 0x54], ecx
+        mov ecx, dword ptr [esp + 0x40]
+        mov eax, 0xa
+        mov dword ptr [esi + 0x114], eax
+        mov dword ptr [esi + 0x110], eax
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x44
+        ret 8
+    }
+}
