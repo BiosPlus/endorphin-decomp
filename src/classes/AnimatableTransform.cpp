@@ -461,3 +461,25 @@ extern "C" __declspec(naked) void __fastcall fn_0058F3C0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0065F5B0] AnimatableTransform::vfunc_8 (37 bytes)
+extern "C" void ext_00662610();
+extern "C" void ext_006A724A();
+extern "C" __declspec(naked) void* __fastcall fn_0065F5B0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        push esi
+        push ecx
+        mov dword ptr [esp + 8], 0
+        call ext_006A724A
+        mov esi, dword ptr [esp + 0x10]
+        push eax
+        push esi
+        call ext_00662610
+        add esp, 0xc
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
