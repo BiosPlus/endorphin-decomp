@@ -14,5 +14,7 @@
     "0x0044C034",
     "0x0044C05D"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-12T13:56:34Z"
 }

@@ -5760,3 +5760,33 @@ extern "C" __declspec(naked) void __fastcall fn_0044B3C0(void* self) {
         ret 4
     }
 }
+
+// [0x0044C030] sub_0044C030 (53 bytes)
+extern "C" void ext_0044BCF0();
+extern "C" void ext_00530820();
+
+extern "C" __declspec(naked) void __fastcall fn_0044C030(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0044BCF0
+        cmp byte ptr [esi + 0x76], 0
+        jne do_call
+        cmp byte ptr [esi + 0x77], 0
+        jne do_call
+        cmp byte ptr [esi + 0x78], 0
+        je done
+    do_call:
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, dword ptr [esi + 0x68]
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        call ext_00530820
+    done:
+        pop esi
+        ret 0xc
+    }
+}
