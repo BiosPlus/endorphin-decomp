@@ -3932,3 +3932,8 @@ extern "C" void __fastcall fn_0044C9D0(void* self, int edx_unused, Target_0044C9
 extern "C" void __fastcall fn_0044C9F0(void* self, int edx_unused, Target_0044C9B0* target) {
     target->func1(((bool (__thiscall *)(void*, int))ext_0044C830)(self, 2));
 }
+
+// [0x0044CA10] sub_0044CA10 (31 bytes)
+extern "C" void __fastcall fn_0044CA10(void* self, int edx_unused, Target_0044C9B0* target) {
+    target->func1(((bool (__thiscall *)(void*, int))ext_0044C830)(self, 3));
+}
