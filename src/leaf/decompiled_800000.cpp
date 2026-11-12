@@ -713,3 +713,14 @@ extern "C" __declspec(naked) void* __cdecl fn_00803A20(void* heap) {
         ret
     }
 }
+
+// [0x008028B0] sub_008028B0 (237 bytes)
+extern "C" void __fastcall fn_008028B0(void* self, int edx_unused, float* a1, const float* a2, const int* a3, const int* a4, int a5, int a6) {
+    int i;
+    for (i = 0; i < a5; ++i) {
+        a1[a3[i]] = a2[i];
+    }
+    for (i = 0; i < a6; ++i) {
+        a1[a4[i]] = 0.0f;
+    }
+}
