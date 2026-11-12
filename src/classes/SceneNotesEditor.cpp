@@ -130,3 +130,63 @@ L_nonzero:
         ret 0xc
     }
 }
+
+// [0x004552F0] SceneNotesEditor::vfunc_66 (209 bytes)
+struct Msg_004552F0 {
+    void* hwnd;
+    unsigned int message;
+    unsigned int wParam;
+    long lParam;
+};
+
+struct CharFormat_004552F0 {
+    unsigned int cbSize;
+    unsigned int dwMask;
+    unsigned int dwEffects;
+    int rest[12];
+};
+
+struct RichEdit_004552F0 {
+    int GetSelectionCharFormat(CharFormat_004552F0* cf);
+    int SetSelectionCharFormat(CharFormat_004552F0* cf);
+};
+
+struct Dialog_004552F0 {
+    int PreTranslateMessage(Msg_004552F0* msg);
+};
+
+extern "C" void ext_006A5F7A();
+extern "C" void ext_006A674E();
+extern "C" void ext_006A6754();
+typedef short (__stdcall *FnGetKeyState)(int);
+extern "C" FnGetKeyState mem_009255F4;
+
+extern "C" int __fastcall fn_004552F0(void* self, int edx_unused, Msg_004552F0* msg) {
+    if (msg->message == 0x100) {
+        switch (msg->wParam) {
+        case 0x42:
+            if (mem_009255F4(0x11) & 0x8000) {
+                CharFormat_004552F0 cf;
+                cf.cbSize = 0x3c;
+                cf.dwMask = 0x3;
+                ((RichEdit_004552F0*)((char*)self + 0x74))->GetSelectionCharFormat(&cf);
+                cf.dwEffects ^= 0x1;
+                ((RichEdit_004552F0*)((char*)self + 0x74))->SetSelectionCharFormat(&cf);
+                return 1;
+            }
+            break;
+        case 0x49:
+            if (mem_009255F4(0x11) & 0x8000) {
+                CharFormat_004552F0 cf;
+                cf.cbSize = 0x3c;
+                cf.dwMask = 0x3;
+                ((RichEdit_004552F0*)((char*)self + 0x74))->GetSelectionCharFormat(&cf);
+                cf.dwEffects ^= 0x2;
+                ((RichEdit_004552F0*)((char*)self + 0x74))->SetSelectionCharFormat(&cf);
+                return 1;
+            }
+            break;
+        }
+    }
+    return ((Dialog_004552F0*)self)->PreTranslateMessage(msg);
+}
