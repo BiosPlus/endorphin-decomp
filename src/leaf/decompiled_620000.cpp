@@ -4116,3 +4116,102 @@ done:
         ret
     }
 }
+
+// [0x0062B930] sub_0062B930 (204 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_0062B930(void* first, void* last, void* dest) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        cmp dword ptr [esp + 0x10], esi
+        je early_ret_0062B930
+        push ebx
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+loop_top_0062B930:
+        sub esi, 0x10
+        sub edi, 0x10
+        cmp edi, esi
+        je skip_first_0062B930
+        mov ecx, dword ptr [edi + 4]
+        test ecx, ecx
+        je skip_cleanup1_0062B930
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x78]
+        push edi
+        call edx
+skip_cleanup1_0062B930:
+        mov eax, dword ptr [esi + 4]
+        mov dword ptr [edi + 4], eax
+        cmp dword ptr [esi + 4], 0
+        je zero_init1_0062B930
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push esi
+        lea eax, [esp + 0x14]
+        push eax
+        call edx
+        jmp store1_0062B930
+zero_init1_0062B930:
+        mov dword ptr [esp + 0x24], 0
+        lea eax, [esp + 0x24]
+store1_0062B930:
+        mov eax, dword ptr [eax]
+        mov dword ptr [edi], eax
+skip_first_0062B930:
+        lea ebp, [edi + 8]
+        lea ebx, [esi + 8]
+        cmp ebp, ebx
+        je check_loop_0062B930
+        mov ecx, dword ptr [edi + 0xc]
+        test ecx, ecx
+        je skip_cleanup2_0062B930
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x78]
+        push ebp
+        call eax
+skip_cleanup2_0062B930:
+        mov ecx, dword ptr [esi + 0xc]
+        mov dword ptr [edi + 0xc], ecx
+        cmp dword ptr [esi + 0xc], 0
+        je zero_init2_0062B930
+        mov ecx, dword ptr [esi + 0xc]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push ebx
+        lea eax, [esp + 0x18]
+        push eax
+        call edx
+        jmp store2_0062B930
+zero_init2_0062B930:
+        mov dword ptr [esp + 0x20], 0
+        lea eax, [esp + 0x20]
+store2_0062B930:
+        mov eax, dword ptr [eax]
+        mov dword ptr [ebp], eax
+check_loop_0062B930:
+        cmp esi, dword ptr [esp + 0x1c]
+        jne loop_top_0062B930
+        mov eax, edi
+        pop edi
+        pop ebp
+        pop ebx
+        pop esi
+        add esp, 8
+        ret
+early_ret_0062B930:
+        mov eax, dword ptr [esp + 0x18]
+        pop esi
+        add esp, 8
+        ret
+    }
+}
