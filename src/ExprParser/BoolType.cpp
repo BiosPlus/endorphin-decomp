@@ -405,3 +405,82 @@ epilogue:
         ret 0x8
     }
 }
+
+// [0x0067A870] ExprParser::BoolType::vfunc_45 (181 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0067A870(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0xc
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x3c]
+        push edi
+        push esi
+        call edx
+        test al, al
+        mov edi, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [edi + 0x4]
+        push edi
+        je else_0067A870
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x4]
+        call edx
+        fstp dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x14]
+        push esi
+        call edx
+        fldz
+        fst dword ptr [esp + 0x10]
+        mov ecx, dword ptr [edi + 0x4]
+        fst dword ptr [esp + 0xc]
+        lea edx, [esp + 0x8]
+        fstp dword ptr [esp + 0x8]
+        push edx
+        fld dword ptr [eax]
+        push edi
+        fld dword ptr [esp + 0x20]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [eax + 0x4]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x14]
+        fmul dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x18]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x2c]
+        call eax
+        pop edi
+        pop esi
+        add esp, 0xc
+        ret 0x8
+    else_0067A870:
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x4]
+        call eax
+        fstp dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x4]
+        push esi
+        call eax
+        fmul dword ptr [esp + 0x18]
+        mov ecx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x1c]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x18]
+        push ecx
+        fstp dword ptr [esp]
+        push edi
+        call eax
+        pop edi
+        pop esi
+        add esp, 0xc
+        ret 0x8
+    }
+}
