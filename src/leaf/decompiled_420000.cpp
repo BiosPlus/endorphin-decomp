@@ -3672,3 +3672,33 @@ L_427FA8:
         ret 0x4
     }
 }
+
+// [0x004207B0] sub_004207B0 (56 bytes)
+extern "C" void ext_0041FF30();
+extern "C" void ext_00420600();
+extern "C" void ext_0042E7B0();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) void __fastcall fn_004207B0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x44
+        push esi
+        mov esi, dword ptr [esp + 0x4c]
+        push esi
+        call ext_0042E7B0
+        test eax, eax
+        jne L_004207E1
+        push esi
+        call ext_00420600
+        push eax
+        lea ecx, [esp + 0xc]
+        call ext_0041FF30
+        push 0x9d3748
+        lea eax, [esp + 0x8]
+        push eax
+        call ext_006A6DD2
+    L_004207E1:
+        pop esi
+        add esp, 0x44
+        ret 0x4
+    }
+}
