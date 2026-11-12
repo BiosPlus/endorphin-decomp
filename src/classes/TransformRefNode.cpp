@@ -157,3 +157,65 @@ extern "C" __declspec(naked) void* __fastcall fn_006265C0(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x00626510] TransformRefNode::vfunc_29 (170 bytes)
+extern "C" int mem_00924ED0;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00925014;
+extern "C" int mem_00925100;
+extern "C" int mem_00924FD8;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00626510(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x94]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x34]
+        je skip_vcall
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x74]
+        push edi
+        call edx
+        push 0x92ab70
+        mov ecx, edi
+        call dword ptr [mem_00924ED0]
+    skip_vcall:
+        add esi, 0x14
+        push esi
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FE0]
+        push 0x0
+        push 0x968ec8
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x34], 0x0
+        call dword ptr [mem_00925014]
+        mov ecx, dword ptr [esp + 0x1c]
+        sub ecx, eax
+        push ecx
+        push eax
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00925100]
+        lea edx, [esp + 0x8]
+        push edx
+        mov ecx, edi
+        call dword ptr [mem_00924FD8]
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x2c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
