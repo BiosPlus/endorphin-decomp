@@ -2733,3 +2733,82 @@ extern "C" __declspec(naked) void __cdecl fn_007D6B00(void) {
         ret
     }
 }
+
+// [0x007DFB60] sub_007DFB60 (186 bytes)
+// Body reads its single argument from the stack ([esp+4] at entry), so declared __cdecl.
+extern "C" __declspec(naked) void __cdecl fn_007DFB60(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [eax + 0xb0]
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx + 0xc]
+        push edi
+        push edx
+        call eax
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [ecx + 0xb0]
+        mov eax, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [edx + 0x10]
+        push eax
+        call ecx
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [edx + 0xb0]
+        mov ecx, dword ptr [esi + 0x14]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        call edx
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [eax + 0xb0]
+        mov edx, dword ptr [esi + 0x20]
+        mov eax, dword ptr [ecx + 0xc]
+        push edx
+        call eax
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [ecx + 0xb0]
+        mov eax, dword ptr [esi + 0x2c]
+        mov ecx, dword ptr [edx + 0xc]
+        push eax
+        call ecx
+        add esp, 0x14
+        xor edi, edi
+        jmp loop_body
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8b
+        _emit 0xff
+loop_body:
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [edx + 0xb0]
+        mov ecx, dword ptr [esi + 0x38]
+        mov edx, dword ptr [edi + ecx]
+        mov eax, dword ptr [eax + 0xc]
+        push edx
+        call eax
+        add edi, 0xc
+        add esp, 0x4
+        cmp edi, 0x600
+        jle loop_body
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [ecx + 0xb0]
+        mov eax, dword ptr [esi + 0x38]
+        mov ecx, dword ptr [edx + 0xc]
+        push eax
+        call ecx
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [edx + 0xb0]
+        mov ecx, dword ptr [eax + 0xc]
+        push esi
+        call ecx
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret
+    }
+}
