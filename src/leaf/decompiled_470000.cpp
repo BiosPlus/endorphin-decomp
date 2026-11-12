@@ -4078,3 +4078,153 @@ extern "C" __declspec(naked) void* __fastcall fn_00477030(void* self) {
         ret
     }
 }
+
+// [0x00477C60] sub_00477C60 (290 bytes)
+// MSVC std::_Median(first, mid, last) on int ranges (operator<).
+extern "C" __declspec(naked) void __cdecl fn_00477C60(int* first, int* mid, int* last) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [ecx]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov eax, edi
+        sub eax, ecx
+        sar eax, 0x2
+        cmp eax, 0x28
+        jle NEAR PTR SMALL_00477C60
+        add eax, 0x1
+        cdq
+        and edx, 0x7
+        add eax, edx
+        sar eax, 0x3
+        push ebx
+        push ebp
+        lea ebp, [eax*8]
+        add eax, eax
+        add eax, eax
+        mov edx, dword ptr [eax + ecx]
+        cmp edx, esi
+        jge SHORT L1_00477C60
+        mov dword ptr [eax + ecx], esi
+        mov dword ptr [ecx], edx
+L1_00477C60:
+        mov edx, dword ptr [ecx + ebp]
+        mov esi, dword ptr [eax + ecx]
+        cmp edx, esi
+        jge SHORT L2_00477C60
+        mov dword ptr [ecx + ebp], esi
+        mov dword ptr [eax + ecx], edx
+L2_00477C60:
+        mov edx, dword ptr [eax + ecx]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jge SHORT L3_00477C60
+        mov dword ptr [eax + ecx], esi
+        mov dword ptr [ecx], edx
+L3_00477C60:
+        mov edx, dword ptr [esp + 0x18]
+        mov ebx, dword ptr [edx]
+        mov esi, edx
+        sub esi, eax
+        mov edi, dword ptr [esi]
+        cmp ebx, edi
+        jge SHORT L4_00477C60
+        mov dword ptr [edx], edi
+        mov dword ptr [esi], ebx
+L4_00477C60:
+        mov edi, dword ptr [eax + edx]
+        mov ebx, dword ptr [edx]
+        cmp edi, ebx
+        jge SHORT L5_00477C60
+        mov dword ptr [eax + edx], ebx
+        mov dword ptr [edx], edi
+L5_00477C60:
+        mov edi, dword ptr [edx]
+        mov ebx, dword ptr [esi]
+        cmp edi, ebx
+        jge SHORT L6_00477C60
+        mov dword ptr [edx], ebx
+        mov dword ptr [esi], edi
+L6_00477C60:
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, edi
+        sub esi, eax
+        mov ebx, dword ptr [esi]
+        sub edi, ebp
+        mov ebp, dword ptr [edi]
+        cmp ebx, ebp
+        jge SHORT L7_00477C60
+        mov dword ptr [esi], ebp
+        mov dword ptr [edi], ebx
+L7_00477C60:
+        mov ebx, dword ptr [esp + 0x1c]
+        mov ebp, dword ptr [ebx]
+        mov ebx, dword ptr [esi]
+        cmp ebp, ebx
+        mov dword ptr [esp + 0x14], ebp
+        jge SHORT L8_00477C60
+        mov ebp, dword ptr [esp + 0x1c]
+        mov dword ptr [ebp], ebx
+        mov ebx, dword ptr [esp + 0x14]
+        mov dword ptr [esi], ebx
+L8_00477C60:
+        mov ebx, dword ptr [esi]
+        mov ebp, dword ptr [edi]
+        cmp ebx, ebp
+        jge SHORT L9_00477C60
+        mov dword ptr [esi], ebp
+        mov dword ptr [edi], ebx
+L9_00477C60:
+        mov edi, dword ptr [edx]
+        mov ebx, dword ptr [eax + ecx]
+        cmp edi, ebx
+        jge SHORT L10_00477C60
+        mov dword ptr [edx], ebx
+        mov dword ptr [eax + ecx], edi
+L10_00477C60:
+        mov edi, dword ptr [esi]
+        mov ebx, dword ptr [edx]
+        cmp edi, ebx
+        jge SHORT L11_00477C60
+        mov dword ptr [esi], ebx
+        mov dword ptr [edx], edi
+L11_00477C60:
+        mov esi, dword ptr [edx]
+        mov edi, dword ptr [eax + ecx]
+        cmp esi, edi
+        pop ebp
+        pop ebx
+        jge NEAR PTR FINAL_00477C60
+        mov dword ptr [edx], edi
+        pop edi
+        mov dword ptr [eax + ecx], esi
+        pop esi
+        ret
+SMALL_00477C60:
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [eax]
+        cmp edx, esi
+        jge SHORT S1_00477C60
+        mov dword ptr [eax], esi
+        mov dword ptr [ecx], edx
+S1_00477C60:
+        mov edx, dword ptr [edi]
+        mov esi, dword ptr [eax]
+        cmp edx, esi
+        jge SHORT S2_00477C60
+        mov dword ptr [edi], esi
+        mov dword ptr [eax], edx
+S2_00477C60:
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jge SHORT FINAL_00477C60
+        mov dword ptr [eax], esi
+        mov dword ptr [ecx], edx
+FINAL_00477C60:
+        pop edi
+        pop esi
+        ret
+    }
+}
