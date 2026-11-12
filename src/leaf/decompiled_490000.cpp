@@ -3587,3 +3587,79 @@ L_ret:
         ret
     }
 }
+
+// [0x00495140] sub_00495140 (172 bytes)
+// __thiscall (ret 4): idx = sub_004948C0(self, a1). If 0 <= idx < sub_00494830(self), builds a
+// std::string via sub_004950B0(self, &buf, idx) (SEH-guarded), passes it through
+// sub_00586140(self->[0x28] + 4, buf) and __RTDynamicCast's the result. Returns the cast
+// pointer, or 0 when idx is out of range.
+extern "C" void ext_004948C0();
+extern "C" void ext_00494830();
+extern "C" void ext_004950B0();
+extern "C" void ext_00586140();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void* __fastcall fn_00495140(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push ebx
+        push esi
+        push edi
+        push eax
+        mov esi, ecx
+        xor ebx, ebx
+        call ext_004948C0
+        mov edi, eax
+        cmp edi, ebx
+        jl fail_495140
+        mov ecx, esi
+        call ext_00494830
+        cmp edi, eax
+        jge fail_495140
+        push edi
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, esi
+        call ext_004950B0
+        mov ecx, dword ptr [esi + 0x28]
+        push ebx
+        push 0xa30158
+        push 0xa2e2bc
+        push ebx
+        push eax
+        add ecx, 0x4
+        mov dword ptr [esp + 0x44], ebx
+        call ext_00586140
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        lea ecx, [esp + 0xc]
+        mov esi, eax
+        mov dword ptr [esp + 0x30], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x4
+fail_495140:
+        mov ecx, dword ptr [esp + 0x28]
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
