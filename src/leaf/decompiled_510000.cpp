@@ -3497,3 +3497,28 @@ extern "C" __declspec(naked) void __fastcall fn_0051EC40(void* self) {
         ret
     }
 }
+
+// [0x0051F670] sub_0051F670 (38 bytes)
+extern "C" void ext_0051EC40();
+
+extern "C" __declspec(naked) void __fastcall fn_0051F670(void* self, int edx_unused, void* begin, void* end) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done_51F670
+        __asm _emit 0x8B __asm _emit 0xFF // mov edi, edi
+    loop_51F670:
+        mov ecx, esi
+        call ext_0051EC40
+        add esi, 0xc0
+        cmp esi, edi
+        jne loop_51F670
+    done_51F670:
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
