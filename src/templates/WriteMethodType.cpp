@@ -10360,3 +10360,55 @@ extern "C" __declspec(naked) void __fastcall fn_005F49E0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x005F4960] ExprParser::WriteMethodType<EffectorGroup, float, &public: void __thiscall EffectorGroup::setForceCaps(float)>::vfunc_48 (113 bytes)
+extern "C" void ext_005F4480();
+extern "C" __declspec(naked) void __fastcall fn_005F4960(void* self, int edx_unused, void** a1, void** a2, void* a3) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        push edi
+        mov edi, dword ptr [eax]
+        mov eax, dword ptr [edx + 0x4]
+        push esi
+        mov dword ptr [esp + 0xc], 0
+        call eax
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        call ext_005F4480
+        cmp dword ptr [esi + 0x4], 0
+        lea eax, [esp + 0x14]
+        je L_else_005F4960
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push esi
+        push eax
+        call edx
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x4]
+        pop edi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0xc
+    L_else_005F4960:
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x14], 0
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
