@@ -5813,3 +5813,80 @@ extern "C" __declspec(naked) int __fastcall fn_0041FDA0(void* self, int edx_unus
         ret
     }
 }
+
+// [0x00415D50] sub_00415D50 (224 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00415D50(void) {
+    __asm {
+        fld1
+        fld dword ptr [esp + 0x8]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x5
+        jnp L_00415D6B
+        fstp st(0)
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        jmp L_00415D86
+    L_00415D6B:
+        fstp st(1)
+        fldz
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x5
+        jnp L_00415D84
+        fstp st(1)
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        jmp L_00415D86
+    L_00415D84:
+        fstp st(0)
+    L_00415D86:
+        mov ecx, dword ptr [esp + 0x4]
+        mov eax, ecx
+        shr eax, 0x10
+        movzx edx, al
+        mov dword ptr [esp + 0x8], edx
+        xor edx, edx
+        fild dword ptr [esp + 0x8]
+        fnstcw word ptr [esp + 0x8]
+        movzx eax, word ptr [esp + 0x8]
+        fmul st, st(1)
+        or eax, 0xc00
+        mov dword ptr [esp + 0x4], eax
+        fldcw word ptr [esp + 0x4]
+        fistp dword ptr [esp + 0x4]
+        movzx eax, byte ptr [esp + 0x4]
+        mov dh, al
+        movzx eax, ch
+        fldcw word ptr [esp + 0x8]
+        mov dword ptr [esp + 0x8], eax
+        movzx ecx, cl
+        fild dword ptr [esp + 0x8]
+        fnstcw word ptr [esp + 0x8]
+        fmul st, st(1)
+        movzx eax, word ptr [esp + 0x8]
+        or eax, 0xc00
+        mov dword ptr [esp + 0x4], eax
+        fldcw word ptr [esp + 0x4]
+        fistp dword ptr [esp + 0x4]
+        movzx eax, byte ptr [esp + 0x4]
+        mov dl, al
+        fldcw word ptr [esp + 0x8]
+        mov dword ptr [esp + 0x8], ecx
+        fild dword ptr [esp + 0x8]
+        shl edx, 0x8
+        fnstcw word ptr [esp + 0x8]
+        fmulp st(1), st
+        movzx eax, word ptr [esp + 0x8]
+        or eax, 0xc00
+        mov dword ptr [esp + 0x4], eax
+        fldcw word ptr [esp + 0x4]
+        fistp dword ptr [esp + 0x4]
+        movzx eax, byte ptr [esp + 0x4]
+        movzx ecx, al
+        fldcw word ptr [esp + 0x8]
+        or edx, ecx
+        mov eax, edx
+        ret
+    }
+}
