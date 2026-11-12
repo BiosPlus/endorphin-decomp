@@ -68,3 +68,62 @@ extern "C" __declspec(naked) void __fastcall fn_006AD810(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_006ACE20();
+extern "C" void ext_006A5EDE();
+extern "C" void ext_006A63D6();
+extern "C" void ext_006B2D70();
+extern "C" int mem_00925628;
+extern "C" int mem_0092571C;
+extern "C" int mem_00925704;
+
+// [0x006B2EE0] GWCHotLinkItem::vfunc_9 (129 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006B2EE0(void* self, int edx_unused, void* pt) {
+    __asm {
+        sub esp, 0x20
+        push esi
+        mov esi, ecx
+        lea eax, [esi + 0x50]
+        test eax, eax
+        je fail
+        cmp dword ptr [eax + 0x4], 0x0
+        je fail
+        lea eax, [esp + 0x4]
+        push eax
+        call ext_006ACE20
+        lea ecx, [esp + 0x4]
+        push ecx
+        lea edx, [esp + 0x18]
+        push edx
+        mov ecx, esi
+        call ext_006B2D70
+        mov eax, dword ptr [esp + 0x28]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [eax]
+        push ecx
+        push edx
+        lea eax, [esp + 0x1c]
+        push eax
+        call dword ptr [mem_00925628]
+        test eax, eax
+        je fail
+        call ext_006A5EDE
+        push 0x2af8
+        push 0xc
+        push 0x2af8
+        call ext_006A63D6
+        push eax
+        call dword ptr [mem_0092571C]
+        push eax
+        call dword ptr [mem_00925704]
+        mov eax, 0x1
+        pop esi
+        add esp, 0x20
+        ret 0x4
+    fail:
+        xor eax, eax
+        pop esi
+        add esp, 0x20
+        ret 0x4
+    }
+}
