@@ -4118,3 +4118,60 @@ extern "C" __declspec(naked) void __cdecl fn_00489290(std::string* first, int un
         ret
     }
 }
+
+// [0x0048A150] sub_0048A150 (117 bytes)
+extern "C" void ext_00489290();
+extern "C" __declspec(naked) void __cdecl fn_0048A150(std::string* first, std::string* last) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, esi
+        sub ecx, ebx
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp eax, 0x1
+        push edi
+        jle L_done
+        mov edi, 0x1c
+        add esi, -0x1c
+        sub edi, ebx
+        cmp eax, 0x1
+        jle L_skip
+    L_top:
+        push 0x0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x34], esp
+        push esi
+        call dword ptr [mem_00924FE0]
+        push esi
+        push esi
+        push ebx
+        call ext_00489290
+        add esp, 0x2c
+    L_skip:
+        sub esi, 0x1c
+        lea ecx, [edi + esi]
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp eax, 0x1
+        jg L_top
+    L_done:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
