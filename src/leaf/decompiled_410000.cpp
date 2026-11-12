@@ -5618,3 +5618,91 @@ extern "C" __declspec(naked) void __fastcall fn_00413F90(void* self) {
         ret
     }
 }
+
+// [0x004199B0] sub_004199B0 (222 bytes)
+extern "C" void ext_006A62FE();
+extern "C" int mem_00925540;
+extern "C" int mem_00925544;
+extern "C" int mem_00925548;
+extern "C" int mem_009242F8;
+
+extern "C" __declspec(naked) void __fastcall fn_004199B0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x128
+        push esi
+        push edi
+        lea eax, [esp + 0x8]
+        push eax
+        mov edi, ecx
+        call dword ptr [mem_00925540]
+        test eax, eax
+        jne L_fail_004199B0
+        call ext_006A62FE
+        test eax, eax
+        je L_null_004199B0
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x7c]
+        call eax
+        test eax, eax
+        jne L_have_004199B0
+L_null_004199B0:
+        mov dword ptr [esp + 0xc], 0x0
+        jmp L_setup_004199B0
+L_have_004199B0:
+        mov ecx, dword ptr [eax + 0x20]
+        mov dword ptr [esp + 0xc], ecx
+L_setup_004199B0:
+        mov eax, dword ptr [esp + 0x134]
+        lea ecx, [esp + 0xc]
+        lea edx, [esp + 0x2c]
+        push ecx
+        mov dword ptr [esp + 0x14], 0x0
+        mov dword ptr [esp + 0x18], edx
+        mov dword ptr [esp + 0x1c], eax
+        mov dword ptr [esp + 0x20], 0x41
+        mov dword ptr [esp + 0x24], 0x419990
+        mov dword ptr [esp + 0x28], edi
+        call dword ptr [mem_00925544]
+        mov esi, eax
+        test esi, esi
+        je L_done_004199B0
+        lea edx, [esp + 0x2c]
+        push edx
+        push esi
+        call dword ptr [mem_00925548]
+        test eax, eax
+        je L_nopath_004199B0
+        lea eax, [esp + 0x2c]
+        push eax
+        mov ecx, edi
+        call dword ptr [mem_009242F8]
+L_nopath_004199B0:
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [ecx + 0x14]
+        push esi
+        push eax
+        call edx
+L_done_004199B0:
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [ecx + 0x8]
+        push eax
+        call edx
+        test esi, esi
+        pop edi
+        setne al
+        pop esi
+        add esp, 0x128
+        ret 0x4
+L_fail_004199B0:
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        pop edi
+        setne al
+        pop esi
+        add esp, 0x128
+        ret 0x4
+    }
+}
