@@ -3712,3 +3712,90 @@ extern "C" __declspec(naked) void __fastcall fn_004951F0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00490760] sub_00490760 (175 bytes)
+extern "C" void ext_00489880();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void* __cdecl fn_00490760(void* first, void* last, void* dest, void* alloc) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -0x1
+        push 0x885771
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x14
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push edi
+        mov edi, dword ptr [ebp + 0x10]
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], edi
+        mov dword ptr [ebp - 0x4], ebx
+        nop
+    L_loop_00490760:
+        cmp esi, dword ptr [ebp + 0xc]
+        je L_end_00490760
+        mov dword ptr [ebp - 0x18], edi
+        mov dword ptr [ebp - 0x1c], edi
+        cmp edi, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je L_next_00490760
+        cmp dword ptr [esi + 0x4], ebx
+        je L_null_00490760
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x70]
+        push esi
+        lea edx, [ebp - 0x20]
+        push edx
+        call eax
+        jmp L_store_00490760
+        // exception landing pad: destroy already-constructed elements, rethrow
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je L_rethrow_00490760
+        mov ebx, dword ptr [ebp + 0x14]
+    L_destroy_00490760:
+        push esi
+        mov ecx, ebx
+        call ext_00489880
+        add esi, 0x8
+        cmp esi, edi
+        jne L_destroy_00490760
+    L_rethrow_00490760:
+        xor ebx, ebx
+        push ebx
+        push ebx
+        call ext_006A6DD2
+    L_null_00490760:
+        mov dword ptr [ebp + 0x8], ebx
+        lea eax, [ebp + 0x8]
+    L_store_00490760:
+        mov ecx, dword ptr [eax]
+        mov dword ptr [edi], ecx
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [edi + 0x4], edx
+    L_next_00490760:
+        add edi, 0x8
+        mov byte ptr [ebp - 0x4], bl
+        mov dword ptr [ebp + 0x10], edi
+        add esi, 0x8
+        jmp L_loop_00490760
+    L_end_00490760:
+        mov ecx, dword ptr [ebp - 0xc]
+        mov eax, edi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
