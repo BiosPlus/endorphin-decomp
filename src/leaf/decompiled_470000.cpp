@@ -3920,3 +3920,35 @@ l_end:
         ret 0x4
     }
 }
+
+// [0x00476F10] sub_00476F10 (95 bytes)
+extern "C" void ext_00662610();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00AD9078;
+extern "C" int mem_00AD905C;
+extern "C" __declspec(naked) void* __fastcall fn_00476F10(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x88379e
+        push eax
+        mov eax, 0x1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00AD9078], al
+        jne done_476F10
+        or dword ptr [mem_00AD9078], eax
+        push 0xa32860
+        push offset mem_00AD905C
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_00662610
+        push 0x916ee0
+        call ext_006A6C87
+        add esp, 0xc
+done_476F10:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00AD905C
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
