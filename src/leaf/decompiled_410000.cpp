@@ -6128,3 +6128,73 @@ extern "C" __declspec(naked) void __fastcall fn_00419A90(void* self) {
         ret 0x10
     }
 }
+
+// [0x00414410] sub_00414410 (248 bytes)
+extern "C" void ext_00403560();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FD0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void* __fastcall fn_00414410(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8758cc
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x74
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        push 0x92c4e0
+        lea ecx, [esp + 0x68]
+        mov dword ptr [esp + 0x10], esi
+        call dword ptr [mem_00924FE4]
+        mov edi, eax
+        push 0x92c4f4
+        lea ecx, [esp + 0x4c]
+        mov dword ptr [esp + 0x8c], 0
+        call dword ptr [mem_00924FE4]
+        mov ebx, dword ptr [mem_00924FD0]
+        push eax
+        mov eax, dword ptr [esp + 0x94]
+        push eax
+        lea ecx, [esp + 0x34]
+        push ecx
+        mov byte ptr [esp + 0x94], 1
+        call ebx
+        push edi
+        push eax
+        lea edx, [esp + 0x24]
+        push edx
+        mov byte ptr [esp + 0xa0], 2
+        call ebx
+        add esp, 0x18
+        push eax
+        mov ecx, esi
+        mov byte ptr [esp + 0x8c], 3
+        call ext_00403560
+        lea ecx, [esp + 0x10]
+        mov byte ptr [esp + 0x88], 5
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x2c]
+        mov byte ptr [esp + 0x88], 6
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x48]
+        mov byte ptr [esp + 0x88], 7
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x64]
+        mov byte ptr [esp + 0x88], 8
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x80]
+        pop edi
+        mov dword ptr [esi], 0x92c4c4
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x80
+        ret 8
+    }
+}
