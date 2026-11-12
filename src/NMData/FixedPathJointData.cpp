@@ -424,3 +424,113 @@ extern "C" __declspec(naked) void __fastcall fn_005EB920(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x005ECE20] NMData::FixedPathJointData::vfunc_35 (274 bytes)
+extern "C" void ext_005ECDC0();
+extern "C" void ext_00584AE0();
+extern "C" void ext_005E0EB0();
+extern "C" int mem_00925134;
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_005ECE20(void* self) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_005ECDC0
+        mov edi, dword ptr [esi + 0x1d4]
+        cmp edi, dword ptr [esi + 0x1d8]
+        lea ebp, [esi + 0x1d0]
+        mov dword ptr [esp + 0x10], 0x0
+        jbe fp35_L1
+        call dword ptr [mem_00925134]
+fp35_L1:
+        mov ebx, dword ptr [ebp + 0x8]
+        cmp dword ptr [ebp + 0x4], ebx
+        jbe fp35_L2
+        call dword ptr [mem_00925134]
+fp35_L2:
+        cmp ebp, ebp
+        je fp35_L3
+        call dword ptr [mem_00925134]
+fp35_L3:
+        cmp edi, ebx
+        je fp35_end
+        cmp edi, dword ptr [ebp + 0x8]
+        mov ebx, dword ptr [mem_00925134]
+        jb fp35_L4
+        call ebx
+fp35_L4:
+        mov ecx, dword ptr [edi]
+        call ext_00584AE0
+        test al, al
+        jne fp35_skip
+        cmp edi, dword ptr [ebp + 0x8]
+        jb fp35_L5
+        call ebx
+fp35_L5:
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [eax + 0xc]
+        add ecx, 0x4
+        push edx
+        call eax
+        fldz
+        fst dword ptr [esp + 0x20]
+        add eax, 0x30
+        fst dword ptr [esp + 0x1c]
+        push eax
+        fst dword ptr [esp + 0x1c]
+        mov ecx, esi
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x20]
+        call ext_005E0EB0
+        fstp dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esi + 0x204]
+        test ecx, ecx
+        je fp35_L6
+        mov eax, dword ptr [esi + 0x208]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp dword ptr [esp + 0x10], eax
+        jb fp35_L7
+fp35_L6:
+        call ebx
+fp35_L7:
+        mov ecx, dword ptr [esi + 0x204]
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [ecx + 4*edx]
+        test ecx, ecx
+        je fp35_L8
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x34]
+        lea edx, [esp + 0x14]
+        push edx
+        call eax
+fp35_L8:
+        add dword ptr [esp + 0x10], 0x1
+fp35_skip:
+        cmp edi, dword ptr [ebp + 0x8]
+        jb fp35_L9
+        call ebx
+fp35_L9:
+        add edi, 0x4
+        jmp fp35_L1
+fp35_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x14
+        ret
+    }
+}
