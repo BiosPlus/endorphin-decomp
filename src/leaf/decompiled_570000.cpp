@@ -3878,3 +3878,35 @@ extern "C" __declspec(naked) void __fastcall fn_0057AD10(void* self) {
         ret
     }
 }
+
+// [0x00571E20] sub_00571E20 (95 bytes)
+extern "C" void ext_00662610();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B3C178;
+extern "C" int mem_00B3C15C;
+extern "C" __declspec(naked) void __fastcall fn_00571E20(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x89d31e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00B3C178], al
+        jne skip_init
+        or dword ptr [mem_00B3C178], eax
+        push 0xa856f8
+        push offset mem_00B3C15C
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_00662610
+        push 0x91c8f0
+        call ext_006A6C87
+        add esp, 0xc
+    skip_init:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00B3C15C
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
