@@ -3327,3 +3327,32 @@ L_6485D8:
         ret 10h
     }
 }
+
+// [0x00647D60] sub_00647D60 (70 bytes)
+extern "C" void ext_007C69B0();
+
+extern "C" __declspec(naked) void __fastcall fn_00647D60(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x8]
+        sub esp, 0x18
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [eax]
+        mov eax, dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        mov eax, dword ptr [ecx + 0xa4]
+        mov ecx, dword ptr [eax]
+        fstp dword ptr [esp]
+        push ecx
+        call ext_007C69B0
+        add esp, 0x1c
+        ret 0x8
+    }
+}
