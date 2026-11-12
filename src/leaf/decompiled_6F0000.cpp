@@ -448,3 +448,98 @@ L_neg:
         ret     8
     }
 }
+
+// [0x006FCFB0] sub_006FCFB0 (208 bytes)
+extern "C" void ext_006D2170();
+extern "C" void ext_006D80A0();
+extern "C" int mem_00925284;
+extern "C" int mem_00B5E448;
+extern "C" int mem_00B5E44C;
+extern "C" double mem_00B5E440;
+
+extern "C" __declspec(naked) void __fastcall fn_006FCFB0(void* self) {
+    __asm {
+        push -1
+        push 0x008BB4F0
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x20
+        push esi
+        push edi
+        mov eax, ecx
+        mov ecx, 0x8
+        lea esi, [esp + 0x38]
+        lea edi, [esp + 0x8]
+        mov dword ptr [esp + 0x30], 0x0
+        rep movsd
+        mov ecx, dword ptr [eax]
+        lea edx, [esp + 0x8]
+        mov byte ptr [esp + 0x30], 0x1
+        push edx
+        push ecx
+        mov ecx, eax
+        call ext_006D2170
+        lea ecx, [esp + 0x8]
+        mov esi, eax
+        mov byte ptr [esp + 0x30], 0x0
+        call ext_006D80A0
+        lea ecx, [esp + 0x38]
+        mov dword ptr [esp + 0x30], 0xffffffff
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, esi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret 0x20
+        __asm _emit 0x90 // nop
+        __asm _emit 0x90 // nop
+        __asm _emit 0x90 // nop
+        __asm _emit 0xe9 __asm _emit 0x0b __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // jmp +0x0b -> block at +0x90
+        __asm _emit 0x90 // nop x11
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5E448], ecx
+        mov dword ptr [mem_00B5E44C], edx
+        ret
+        __asm _emit 0x90 // nop x9
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0xe9 __asm _emit 0x0b __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // jmp +0x0b -> block at +0xC0
+        __asm _emit 0x90 // nop x11
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5E440]
+        ret
+    }
+}
