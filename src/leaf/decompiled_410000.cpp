@@ -5890,3 +5890,40 @@ extern "C" __declspec(naked) void __cdecl fn_00415D50(void) {
         ret
     }
 }
+
+// [0x00415FB3] sub_00415FB3 (67 bytes)
+extern "C" int mem_0092C8BC;
+extern "C" void ext_00415D50();
+
+// Body is a shared tail: the self-loop jne (0x415FE4 -> 0x415FB3) and the je out to
+// 0x415FF6 are emitted as fixed rel8 encodings so the bytes match exactly.
+extern "C" __declspec(naked) void __fastcall fn_00415FB3(void* self, int edx_unused, int a1) {
+    __asm {
+        pop esi
+        mov eax, ecx
+        pop ebx
+        ret 0x4
+        fld dword ptr [mem_0092C8BC]
+        push ecx
+        fstp dword ptr [esp]
+        push 0xf
+        call dword ptr [mem_00925680]
+        push eax
+        call ext_00415D50
+        add esp, 0x8
+        pop esi
+        pop ebx
+        ret 0x4
+        test eax, eax
+        _emit 0x74
+        _emit 0x18
+        mov ecx, dword ptr [ecx + 0x54]
+        cmp ecx, -1
+        _emit 0x75
+        _emit 0xcd
+        pop esi
+        pop ebx
+        mov dword ptr [esp + 4], 0xf
+        jmp dword ptr [mem_00925680]
+    }
+}
