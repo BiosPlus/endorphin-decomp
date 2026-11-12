@@ -4289,3 +4289,24 @@ loc_45C109:
         ret     8
     }
 }
+
+// [0x00455020] sub_00455020 (49 bytes)
+extern "C" void ext_00454E70();
+extern "C" void ext_00455D80();
+extern "C" int mem_0093652C;
+
+extern "C" __declspec(naked) void* __fastcall fn_00455020(void* self) {
+    __asm {
+        push    esi
+        mov     esi, ecx
+        call    ext_00455D80
+        lea     ecx, [esi + 0x10c]
+        mov     dword ptr [esi], offset mem_0093652C
+        call    ext_00454E70
+        mov     dword ptr [esi + 0x108], 0xe
+        mov     dword ptr [esi + 0x120], 0x0
+        mov     eax, esi
+        pop     esi
+        ret
+    }
+}
