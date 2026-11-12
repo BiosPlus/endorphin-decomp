@@ -4104,3 +4104,53 @@ L_fail:
         ret 8
     }
 }
+
+// [0x006B30B0] sub_006B30B0 (97 bytes)
+extern "C" void ext_006B2FB0();
+extern "C" int mem_00B5D238;
+extern "C" int mem_0092563C;
+extern "C" __declspec(naked) int __fastcall fn_006B30B0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        call ext_006B2FB0
+        test eax, eax
+        je L_check
+        mov eax, dword ptr [esp + 0Ch]
+        mov ecx, dword ptr [esp + 8]
+        mov edx, dword ptr [esp + 4]
+        push eax
+        push ecx
+        push edx
+        call dword ptr [mem_00B5D238]
+        ret 0Ch
+L_check:
+        test byte ptr [esp + 0Ch], 3
+        push esi
+        push edi
+        jne L_fail
+        mov esi, dword ptr [esp + 0Ch]
+        test esi, esi
+        jl L_ok
+        mov edi, dword ptr [mem_0092563C]
+        push 0
+        call edi
+        cmp esi, eax
+        jge L_ok
+        mov esi, dword ptr [esp + 10h]
+        test esi, esi
+        jl L_ok
+        push 1
+        call edi
+        cmp esi, eax
+        jl L_fail
+L_ok:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0Ch
+L_fail:
+        pop edi
+        mov eax, 12340042h
+        pop esi
+        ret 0Ch
+    }
+}
