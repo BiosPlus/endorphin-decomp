@@ -2805,3 +2805,32 @@ extern "C" void __fastcall fn_00649080(TargetClass_00649080* self, int edx_unuse
     ((void (__thiscall *)(void*, void*))ext_00645730)(self, &self->field_78);
     self->vfunc0();
 }
+
+// [0x00647CE0] sub_00647CE0 (70 bytes)
+extern "C" void ext_007C6880();
+
+extern "C" __declspec(naked) void __fastcall fn_00647CE0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x8]
+        sub esp, 0x18
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [eax]
+        mov eax, dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        mov eax, dword ptr [ecx + 0xa4]
+        mov ecx, dword ptr [eax]
+        fstp dword ptr [esp]
+        push ecx
+        call ext_007C6880
+        add esp, 0x1c
+        ret 0x8
+    }
+}
