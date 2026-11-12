@@ -18,5 +18,7 @@
     "0x007CAC05",
     "0x007CAC18"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-12T13:35:25Z"
 }
