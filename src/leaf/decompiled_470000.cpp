@@ -3952,3 +3952,35 @@ done_476F10:
         ret
     }
 }
+
+// [0x004722F0] sub_004722F0 (95 bytes)
+extern "C" void ext_0066AD10();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00AD9030;
+extern "C" int mem_00AD9014;
+extern "C" __declspec(naked) void __fastcall fn_004722F0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x882e2e
+        push eax
+        mov eax, 0x1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00AD9030], al
+        jne done_4722F0
+        or dword ptr [mem_00AD9030], eax
+        push 0xa32430
+        push offset mem_00AD9014
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_0066AD10
+        push 0x916de0
+        call ext_006A6C87
+        add esp, 0xc
+    done_4722F0:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00AD9014
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
