@@ -4072,3 +4072,49 @@ extern "C" __declspec(naked) void __cdecl fn_00489A10(std::string* first, std::s
         ret
     }
 }
+
+// [0x00489290] sub_00489290 (136 bytes)
+// pop_heap-style helper over std::string elements: save *last into a temp, *last = *first, then adjust_heap(first, 0, (last-first)/28, temp).
+extern "C" __declspec(naked) void __cdecl fn_00489290(std::string* first, int unused, std::string* last) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x884b59
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x1c]
+        push esi
+        mov dword ptr [esp + 0x10], 0x0
+        call dword ptr [mem_00924FDC]
+        sub esp, 0x1c
+        lea eax, [esp + 0x3c]
+        mov ecx, esp
+        mov dword ptr [esp + 0x30], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x34]
+        sub ecx, esi
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov ecx, edx
+        shr ecx, 0x1f
+        add ecx, edx
+        push ecx
+        push 0x0
+        push esi
+        call fn_00489130
+        add esp, 0x28
+        lea ecx, [esp + 0x20]
+        mov dword ptr [esp + 0xc], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
