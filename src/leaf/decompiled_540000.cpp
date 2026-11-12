@@ -2280,3 +2280,54 @@ extern "C" __declspec(naked) void __fastcall fn_00544920(void* self) {
         ret
     }
 }
+
+// [0x00543350] sub_00543350 (152 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00543350(void* self) {
+    __asm {
+        fld1
+        xor eax, eax
+        mov dword ptr [ecx + 0x88], eax
+        fst dword ptr [ecx + 0x4]
+        fldz
+        fst dword ptr [ecx + 0x8]
+        fst dword ptr [ecx + 0xc]
+        fst dword ptr [ecx + 0x10]
+        fst dword ptr [ecx + 0x14]
+        fst dword ptr [ecx + 0x1c]
+        fst dword ptr [ecx + 0x20]
+        fst dword ptr [ecx + 0x24]
+        fst dword ptr [ecx + 0x28]
+        fst dword ptr [ecx + 0x30]
+        fst dword ptr [ecx + 0x34]
+        fst dword ptr [ecx + 0x38]
+        fst dword ptr [ecx + 0x3c]
+        fxch st(1)
+        fst dword ptr [ecx + 0x18]
+        fst dword ptr [ecx + 0x2c]
+        fst dword ptr [ecx + 0x40]
+        fst dword ptr [ecx + 0x44]
+        fxch st(1)
+        fst dword ptr [ecx + 0x48]
+        fst dword ptr [ecx + 0x4c]
+        fst dword ptr [ecx + 0x50]
+        fst dword ptr [ecx + 0x54]
+        fst dword ptr [ecx + 0x5c]
+        fst dword ptr [ecx + 0x60]
+        fst dword ptr [ecx + 0x64]
+        fst dword ptr [ecx + 0x68]
+        fst dword ptr [ecx + 0x70]
+        fst dword ptr [ecx + 0x74]
+        fst dword ptr [ecx + 0x78]
+        fstp dword ptr [ecx + 0x7c]
+        fst dword ptr [ecx + 0x58]
+        fst dword ptr [ecx + 0x6c]
+        fstp dword ptr [ecx + 0x80]
+        mov byte ptr [ecx + 0x90], al
+        mov byte ptr [ecx + 0x91], al
+        mov byte ptr [ecx + 0x92], al
+        mov byte ptr [ecx + 0x93], al
+        mov byte ptr [ecx + 0x94], al
+        mov byte ptr [ecx + 0x95], al
+        ret
+    }
+}
