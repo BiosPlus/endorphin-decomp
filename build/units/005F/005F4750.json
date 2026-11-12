@@ -20,5 +20,7 @@
     "0x005F47F2",
     "0x005F482E"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash",
+  "matched_at": "2026-11-12T12:23:15Z"
 }
