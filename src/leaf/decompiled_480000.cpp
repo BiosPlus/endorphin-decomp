@@ -4175,3 +4175,114 @@ extern "C" __declspec(naked) void __cdecl fn_0048A150(std::string* first, std::s
         ret
     }
 }
+
+// [0x00489CA0] sub_00489CA0 (279 bytes)
+extern "C" void ext_00489230();
+extern "C" int mem_00924EF4;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __cdecl fn_00489CA0() {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push 0xffffffff
+        push 0x8b56f9
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x24
+        push esi
+        mov esi, dword ptr [esp + 0x38]
+        cmp esi, eax
+        je loc_00489DA7
+        push edi
+        lea edi, [esi + 0x1c]
+        cmp edi, eax
+        je loc_00489DA6
+        push ebx
+        mov ebx, dword ptr [mem_00924EF4]
+        lea eax, [edi - 0x1c]
+        push ebp
+        mov dword ptr [esp + 0x10], eax
+    loc_00489CE4:
+        push edi
+        lea ecx, [esp + 0x1c]
+        mov ebp, edi
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esp + 0x18]
+        push esi
+        push ecx
+        mov dword ptr [esp + 0x44], 0x0
+        call ebx
+        add esp, 0x8
+        test al, al
+        je loc_00489D3D
+        mov eax, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [esp + 0x44]
+        mov byte ptr [esp + 0x14], 0x0
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x14]
+        push eax
+        push ecx
+        add edx, 0x38
+        push edx
+        push edi
+        push esi
+        call ext_00489230
+        add esp, 0x18
+        lea eax, [esp + 0x18]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        jmp loc_00489D80
+    loc_00489D3D:
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, esi
+        push ecx
+        lea edx, [esp + 0x1c]
+        push edx
+        call ebx
+        add esp, 0x8
+        test al, al
+        je loc_00489D6F
+    loc_00489D52:
+        push esi
+        mov ecx, ebp
+        call dword ptr [mem_00924FDC]
+        mov ebp, esi
+        sub esi, 0x1c
+        lea eax, [esp + 0x18]
+        push esi
+        push eax
+        call ebx
+        add esp, 0x8
+        test al, al
+        jne loc_00489D52
+    loc_00489D6F:
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, ebp
+        call dword ptr [mem_00924FDC]
+        mov esi, dword ptr [esp + 0x44]
+    loc_00489D80:
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        add dword ptr [esp + 0x10], 0x1c
+        add edi, 0x1c
+        cmp edi, dword ptr [esp + 0x48]
+        jne loc_00489CE4
+        pop ebp
+        pop ebx
+    loc_00489DA6:
+        pop edi
+    loc_00489DA7:
+        mov ecx, dword ptr [esp + 0x28]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x30
+        ret
+    }
+}
