@@ -2607,3 +2607,41 @@ extern "C" __declspec(naked) int __fastcall fn_00527EC0(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x005285A0] sub_005285A0 (157 bytes)
+extern "C" int mem_00AED340;
+extern "C" float mem_00AED330;
+extern "C" float mem_00AED32C;
+extern "C" int mem_00AED320;
+extern "C" float mem_00AED328;
+extern "C" float mem_00AED324;
+extern "C" float mem_00AED33C;
+extern "C" float mem_00AED338;
+extern "C" float mem_00AED334;
+extern "C" int mem_00AED31C;
+extern "C" void* __cdecl fn_005285A0(int a) {
+    switch (a) {
+    case 0:
+        if (!(mem_00AED340 & 1)) {
+            mem_00AED340 |= 1;
+            mem_00AED31C = 0x953400;
+            ((void (__cdecl*)(int))ext_006A6C87)(0x91a200);
+        }
+        return &mem_00AED31C;
+    case 1:
+        if (!(mem_00AED340 & 2)) {
+            mem_00AED340 |= 2;
+            mem_00AED330 = 0.0f;
+            mem_00AED32C = 0.0f;
+            mem_00AED320 = 0x953414;
+            mem_00AED328 = 0.0f;
+            mem_00AED324 = 0.0f;
+            mem_00AED33C = 0.0f;
+            mem_00AED338 = 0.0f;
+            mem_00AED334 = 0.0f;
+            ((void (__cdecl*)(int))ext_006A6C87)(0x91a1f0);
+        }
+        return &mem_00AED320;
+    }
+    return 0;
+}
