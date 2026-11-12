@@ -2248,3 +2248,41 @@ loc_574ac0:
         ret 0x8
     }
 }
+
+// [0x00570570] sub_00570570 (101 bytes)
+extern "C" void ext_00554EB0();
+extern "C" __declspec(naked) void __fastcall fn_00570570(void* self, int edx_unused, void* p, float x, float y, float z) {
+    __asm {
+        fld dword ptr [esp + 0x8]
+        sub esp, 0xc
+        sub esp, 0xc
+        mov eax, esp
+        fstp dword ptr [eax]
+        add ecx, 0x5c
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x28]
+        fstp dword ptr [eax + 0x8]
+        lea eax, [esp + 0xc]
+        push eax
+        call ext_00554EB0
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [eax + 0x8]
+        mov eax, dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [eax + 0x30]
+        fadd dword ptr [esp + 0x14]
+        fstp dword ptr [eax + 0x30]
+        fld dword ptr [eax + 0x34]
+        fadd dword ptr [esp + 0x18]
+        fstp dword ptr [eax + 0x34]
+        fld dword ptr [eax + 0x38]
+        fadd dword ptr [esp + 0x1c]
+        fstp dword ptr [eax + 0x38]
+        add esp, 0xc
+        ret 0x10
+    }
+}
