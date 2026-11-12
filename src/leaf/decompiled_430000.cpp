@@ -7831,3 +7831,106 @@ loc_0043CCCE:
         ret 4
     }
 }
+
+// [0x0043D900] sub_0043D900 (173 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_00925628;
+
+extern "C" __declspec(naked) void __fastcall fn_0043D900(void* self) {
+    __asm {
+        sub esp, 0Ch
+        push ebx
+        push ebp
+        push esi
+        lea esi, [ecx + 90h]
+        push edi
+        mov edi, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], edi
+        jbe short loc_0043D91B
+        call dword ptr [mem_00925134]
+
+loc_0043D91B:
+        mov ebp, esi
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+
+loc_0043D920:
+        mov ebx, dword ptr [esi + 4]
+        cmp ebx, dword ptr [esi + 8]
+        jbe short loc_0043D92E
+        call dword ptr [mem_00925134]
+
+loc_0043D92E:
+        test ebp, ebp
+        je short loc_0043D936
+        cmp ebp, esi
+        je short loc_0043D940
+
+loc_0043D936:
+        mov esi, dword ptr [mem_00925134]
+        call esi
+        jmp short loc_0043D946
+
+loc_0043D940:
+        mov esi, dword ptr [mem_00925134]
+
+loc_0043D946:
+        cmp edi, ebx
+        je short loc_0043D9A1
+        test ebp, ebp
+        mov dword ptr [esp + 18h], edi
+        jne short loc_0043D954
+        call esi
+
+loc_0043D954:
+        cmp edi, dword ptr [ebp + 4]
+        ja short loc_0043D95B
+        call esi
+
+loc_0043D95B:
+        lea esi, [edi - 4]
+        cmp esi, dword ptr [ebp + 8]
+        jb short loc_0043D969
+        call dword ptr [mem_00925134]
+
+loc_0043D969:
+        mov eax, dword ptr [esp + 20h]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [eax]
+        mov ebx, dword ptr [esi]
+        push ecx
+        push edx
+        lea eax, [ebx + 60h]
+        push eax
+        call dword ptr [mem_00925628]
+        test eax, eax
+        jne short loc_0043D995
+        cmp edi, dword ptr [ebp + 4]
+        ja short loc_0043D98F
+        call dword ptr [mem_00925134]
+
+loc_0043D98F:
+        mov edi, esi
+        mov esi, ebp
+        jmp short loc_0043D920
+
+loc_0043D995:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        add esp, 0Ch
+        ret 4
+
+loc_0043D9A1:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0Ch
+        ret 4
+    }
+}
