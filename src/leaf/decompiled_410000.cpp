@@ -4486,3 +4486,81 @@ g_done:
         ret
     }
 }
+
+// [0x0041C8E0] sub_0041C8E0 (157 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0041C8E0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ebp, dword ptr [esi + 0x4]
+        mov dword ptr [esi], 0x92db90
+        mov ebx, dword ptr [ebp + 0x4]
+        cmp ebx, dword ptr [ebp + 0x8]
+        push edi
+        mov dword ptr [esp + 0x10], esi
+        jbe short loop_top
+        call dword ptr [mem_00925134]
+loop_top:
+        mov esi, dword ptr [esi + 0x4]
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe short chk_end
+        call dword ptr [mem_00925134]
+chk_end:
+        cmp ebp, esi
+        mov esi, dword ptr [mem_00925134]
+        je short ptr_ok
+        call esi
+ptr_ok:
+        cmp ebx, edi
+        je short clear_part
+        cmp ebx, dword ptr [ebp + 0x8]
+        jb short elem_ok
+        call esi
+elem_ok:
+        mov ecx, dword ptr [ebx]
+        test ecx, ecx
+        je short elem_null
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+elem_null:
+        cmp ebx, dword ptr [ebp + 0x8]
+        jb short next_ok
+        call esi
+next_ok:
+        mov esi, dword ptr [esp + 0x10]
+        add ebx, 0x4
+        jmp loop_top
+clear_part:
+        mov eax, dword ptr [esp + 0x10]
+        mov esi, dword ptr [eax + 0x4]
+        xor edi, edi
+        cmp esi, edi
+        je short done
+        mov eax, dword ptr [esi + 0x4]
+        cmp eax, edi
+        je short free_node
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+free_node:
+        push esi
+        mov dword ptr [esi + 0x4], edi
+        mov dword ptr [esi + 0x8], edi
+        mov dword ptr [esi + 0xc], edi
+        call ext_006A5C5C
+        add esp, 0x4
+done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}

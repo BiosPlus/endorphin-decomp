@@ -17,5 +17,7 @@
     "0x0041C95E",
     "0x0041C970"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T03:40:00Z"
 }
