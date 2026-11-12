@@ -130,3 +130,47 @@ extern "C" __declspec(naked) void __fastcall fn_004BAF90(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004BBD60] Properties::SetType<PointainerWithUndo<PointainerSet<NMData::MaterialPair>>, Properties::GetPropertySource>::vfunc_12 (78 bytes)
+extern "C" void ext_004BB230();
+extern "C" __declspec(naked) int __fastcall fn_004BBD60(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [eax]
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        push edi
+        jbe L_004BBD7D
+        call ebp
+    L_004BBD7D:
+        mov ecx, dword ptr [esp + 0x20]
+        push ecx
+        lea edx, [esp + 0x14]
+        push edx
+        mov ecx, esi
+        call ext_004BB230
+        mov edi, eax
+        mov eax, dword ptr [edi]
+        test eax, eax
+        je L_004BBD9A
+        cmp eax, esi
+        je L_004BBD9C
+    L_004BBD9A:
+        call ebp
+    L_004BBD9C:
+        xor eax, eax
+        cmp dword ptr [edi + 0x4], ebx
+        pop edi
+        pop esi
+        pop ebp
+        sete al
+        pop ebx
+        add esp, 0x8
+        ret 0x8
+    }
+}
