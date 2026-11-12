@@ -3552,3 +3552,78 @@ L_0062B881:
         ret 4
     }
 }
+
+// [0x0062BD30] sub_0062BD30 (141 bytes)
+extern "C" void ext_0062B6F0();
+extern "C" void ext_0062B800();
+extern "C" void ext_006A6DD2();
+
+// try { for (p = first; p != last; ++p, ++dest) { if (dest) ctor(dest, p); } }
+// catch (...) { destroy [saved, dest); throw; }
+// return dest;
+// Naked: MSVC /EHsc drops the try block around extern "C" callees, so the SEH frame is written out by hand.
+extern "C" __declspec(naked) void* __cdecl fn_0062BD30(void* first, void* last, void* dest) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x8ad6f1
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        push edi
+        mov edi, dword ptr [ebp + 0x8]
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], ebx
+        nop
+    loop_top:
+        cmp edi, dword ptr [ebp + 0xc]
+        je exit_path
+        mov dword ptr [ebp + 0x8], esi
+        mov dword ptr [ebp - 0x18], esi
+        cmp esi, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je skip_ctor
+        push edi
+        mov ecx, esi
+        call ext_0062B800
+    skip_ctor:
+        add esi, 0x10
+        mov byte ptr [ebp - 0x4], bl
+        mov dword ptr [ebp + 0x10], esi
+        add edi, 0x10
+        jmp loop_top
+    handler:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je rethrow
+    dtor_loop:
+        mov ecx, esi
+        call ext_0062B6F0
+        add esi, 0x10
+        cmp esi, edi
+        jne dtor_loop
+    rethrow:
+        xor ebx, ebx
+        push ebx
+        push ebx
+        call ext_006A6DD2
+    exit_path:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
