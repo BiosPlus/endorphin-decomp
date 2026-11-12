@@ -18,5 +18,7 @@
     "0x0040E18A",
     "0x0040E191"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T11:12:48Z"
 }
