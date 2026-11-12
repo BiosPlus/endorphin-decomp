@@ -2070,3 +2070,97 @@ extern "C" int __fastcall fn_0042FED0(void* self) {
     }
     return 0;
 }
+
+// [0x00427900] sub_00427900 (172 bytes)
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __cdecl fn_00427900(void* dst, int count, const void* src) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x878da1
+        _emit 0x64
+        _emit 0xA1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push eax
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [ebp + 0xc]
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push edi
+        mov edi, dword ptr [ebp + 0x10]
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], 0
+    L_loop_00427900:
+        test ebx, ebx
+        jbe L_done_00427900
+        mov dword ptr [ebp + 0xc], esi
+        mov dword ptr [ebp - 0x18], esi
+        test esi, esi
+        mov byte ptr [ebp - 0x4], 1
+        je L_skip_00427900
+        mov eax, dword ptr [edi]
+        mov dword ptr [esi], eax
+        mov cl, byte ptr [edi + 0x4]
+        mov byte ptr [esi + 0x4], cl
+        mov dl, byte ptr [edi + 0x5]
+        lea ecx, [edi + 0x8]
+        mov byte ptr [esi + 0x5], dl
+        mov al, byte ptr [edi + 0x6]
+        push ecx
+        lea ecx, [esi + 0x8]
+        mov byte ptr [esi + 0x6], al
+        call dword ptr [mem_00924FE0]
+    L_skip_00427900:
+        sub ebx, 1
+        add esi, 0x24
+        mov byte ptr [ebp - 0x4], 0
+        mov dword ptr [ebp + 0x8], esi
+        jmp L_loop_00427900
+    L_unwind_00427900:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x8]
+        cmp esi, edi
+        je L_throw_00427900
+    L_dtor_00427900:
+        lea ecx, [esi + 0x8]
+        call dword ptr [mem_00924FF4]
+        add esi, 0x24
+        cmp esi, edi
+        jne L_dtor_00427900
+    L_throw_00427900:
+        push 0
+        push 0
+        call ext_006A6DD2
+    L_done_00427900:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0D
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
