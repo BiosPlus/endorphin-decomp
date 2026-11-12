@@ -3910,3 +3910,15 @@ extern "C" __declspec(naked) void* __fastcall fn_004473F0(void* self) {
         ret
     }
 }
+
+// [0x0044C9B0] sub_0044C9B0 (31 bytes)
+extern "C" void ext_0044C830();
+
+struct Target_0044C9B0 {
+    virtual void func0();
+    virtual void func1(unsigned int);
+};
+
+extern "C" void __fastcall fn_0044C9B0(void* self, int edx_unused, Target_0044C9B0* target) {
+    target->func1(((bool (__thiscall *)(void*, int))ext_0044C830)(self, 0));
+}
