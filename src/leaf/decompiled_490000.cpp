@@ -3195,3 +3195,57 @@ extern "C" __declspec(naked) void __fastcall fn_004973B0(void* self) {
         ret 0x4
     }
 }
+
+// [0x00494310] sub_00494310 (153 bytes)
+// Copies arg1, runs sub_00664ED0 on the copy, then returns copy.find("." + arg2, 0).
+extern "C" void ext_00664ED0();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FCC;
+extern "C" int mem_00924FB4;
+extern "C" int mem_00924FF4;
+extern "C" int mem_0092AB70;
+
+extern "C" __declspec(naked) std::string::size_type __cdecl fn_00494310(const std::string& a, const std::string& b) {
+    __asm {
+        push -1
+        push 0x8848f2
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x38
+        mov eax, dword ptr [esp + 0x48]
+        push esi
+        push eax
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esp + 0x4]
+        push ecx
+        mov dword ptr [esp + 0x48], 0x0
+        call ext_00664ED0
+        mov edx, dword ptr [esp + 0x54]
+        push edx
+        lea eax, [esp + 0x28]
+        push offset mem_0092AB70
+        push eax
+        call dword ptr [mem_00924FCC]
+        add esp, 0x10
+        push 0x0
+        push eax
+        lea ecx, [esp + 0xc]
+        mov byte ptr [esp + 0x4c], 0x1
+        call dword ptr [mem_00924FB4]
+        lea ecx, [esp + 0x20]
+        mov esi, eax
+        mov byte ptr [esp + 0x44], 0x0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x44], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x3c]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x44
+        ret
+    }
+}
