@@ -4026,3 +4026,93 @@ extern "C" __declspec(naked) void* __fastcall fn_006216E0(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x0062BA60] sub_0062BA60 (186 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0062BA60(void* first, void* last) {
+    __asm {
+        sub esp, 0Ch
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        cmp esi, dword ptr [esp + 0x18]
+        je done
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x24]
+        push edi
+        lea ebx, [ebp + 8]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+loop_top:
+        cmp esi, ebp
+        je second
+        mov ecx, dword ptr [esi + 4]
+        test ecx, ecx
+        je skip1
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x78]
+        push esi
+        call edx
+skip1:
+        mov eax, dword ptr [ebp + 4]
+        mov dword ptr [esi + 4], eax
+        cmp dword ptr [ebp + 4], 0
+        je zero1
+        mov ecx, dword ptr [ebp + 4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push ebp
+        lea eax, [esp + 0x18]
+        push eax
+        call edx
+        jmp store1
+zero1:
+        mov dword ptr [esp + 0x20], 0
+        lea eax, [esp + 0x20]
+store1:
+        mov eax, dword ptr [eax]
+        mov dword ptr [esi], eax
+second:
+        lea edi, [esi + 8]
+        cmp edi, ebx
+        je next
+        mov ecx, dword ptr [esi + 0xc]
+        test ecx, ecx
+        je skip2
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x78]
+        push edi
+        call eax
+skip2:
+        mov ecx, dword ptr [ebx + 4]
+        mov dword ptr [esi + 0xc], ecx
+        cmp dword ptr [ebx + 4], 0
+        je zero2
+        mov ecx, dword ptr [ebx + 4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push ebx
+        lea eax, [esp + 0x1c]
+        push eax
+        call edx
+        jmp store2
+zero2:
+        mov dword ptr [esp + 0x10], 0
+        lea eax, [esp + 0x10]
+store2:
+        mov eax, dword ptr [eax]
+        mov dword ptr [edi], eax
+next:
+        add esi, 0x10
+        cmp esi, dword ptr [esp + 0x24]
+        jne loop_top
+        pop edi
+        pop ebp
+        pop ebx
+done:
+        pop esi
+        add esp, 0Ch
+        ret
+    }
+}
