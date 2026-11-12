@@ -3004,3 +3004,60 @@ extern "C" __declspec(naked) void __fastcall fn_007DB560(void* self) {
         ret
     }
 }
+
+extern "C" void ext_007DB560();
+
+// [0x007DBA20] sub_007DBA20 (166 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007DBA20(void) {
+    __asm {
+        sub esp, 48h
+        fld dword ptr [ebx]
+        push esi
+        fstp dword ptr [esp + 4h]
+        push edi
+        fld dword ptr [ebx + 4h]
+        mov ecx, 9h
+        fstp dword ptr [esp + 0Ch]
+        lea esi, [esp + 8h]
+        fld dword ptr [ebx + 8h]
+        lea edi, [esp + 2Ch]
+        fstp dword ptr [esp + 10h]
+        lea eax, [esp + 8h]
+        fld dword ptr [ebx + 0Ch]
+        lea edx, [esp + 2Ch]
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [ebx + 10h]
+        fstp dword ptr [esp + 18h]
+        fld dword ptr [ebx + 14h]
+        fstp dword ptr [esp + 1Ch]
+        fld dword ptr [ebx + 18h]
+        fstp dword ptr [esp + 20h]
+        fld dword ptr [ebx + 1Ch]
+        fstp dword ptr [esp + 24h]
+        fld dword ptr [ebx + 20h]
+        fstp dword ptr [esp + 28h]
+        rep movsd
+        fld dword ptr [esp + 14h]
+        fstp dword ptr [esp + 0Ch]
+        fld dword ptr [esp + 44h]
+        fstp dword ptr [esp + 10h]
+        fld dword ptr [esp + 30h]
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [esp + 48h]
+        fstp dword ptr [esp + 1Ch]
+        fld dword ptr [esp + 34h]
+        fstp dword ptr [esp + 20h]
+        fld dword ptr [esp + 40h]
+        mov ecx, dword ptr [esp + 54h]
+        fstp dword ptr [esp + 24h]
+        call ext_007DB560
+        mov eax, edx
+        mov edx, dword ptr [esp + 58h]
+        mov ecx, ebx
+        call ext_007DB560
+        pop edi
+        pop esi
+        add esp, 48h
+        ret
+    }
+}
