@@ -2571,3 +2571,34 @@ extern "C" __declspec(naked) void __fastcall fn_004F5040(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x004F7110] sub_004F7110 (68 bytes)
+extern "C" void ext_004F4EA0();
+extern "C" void ext_004F4D90();
+extern "C" void ext_004F5040();
+extern "C" double mem_0094DDB8;
+extern "C" __declspec(naked) void __fastcall fn_004F7110(void* self, int edx_unused, float a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_004F4EA0
+        fstp dword ptr [esp + 0x4]
+        mov ecx, esi
+        call ext_004F4D90
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        mov ecx, esi
+        fld dword ptr [esp + 0x18]
+        fmul qword ptr [mem_0094DDB8]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [esp]
+        call ext_004F5040
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
