@@ -358,3 +358,101 @@ extern "C" __declspec(naked) void __fastcall fn_0078C3B0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00782F70] sub_00782F70 (175 bytes)
+extern "C" int mem_00925298;
+extern "C" int mem_009251D0;
+extern "C" void ext_00782FC0();
+extern "C" void ext_00782FE0();
+extern "C" __declspec(naked) void __fastcall fn_00782F70(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov al, byte ptr [esi+10h]
+        test al, al
+        je ret_label
+        mov al, byte ptr [esi+11h]
+        test al, al
+        je strcmp_path
+        mov eax, dword ptr [esi+4]
+        mov ecx, dword ptr [esi]
+        push offset ext_00782FE0
+        push 8
+        push eax
+        push ecx
+        call dword ptr [mem_00925298]
+        add esp, 10h
+        mov byte ptr [esi+10h], 0
+        pop esi
+        ret
+    strcmp_path:
+        mov edx, dword ptr [esi+4]
+        mov eax, dword ptr [esi]
+        push offset ext_00782FC0
+        push 8
+        push edx
+        push eax
+        call dword ptr [mem_00925298]
+        add esp, 10h
+        mov byte ptr [esi+10h], 0
+    ret_label:
+        pop esi
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp+8]
+        mov edx, dword ptr [esp+4]
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [edx]
+        push ecx
+        push eax
+        call dword ptr [mem_009251D0]
+        add esp, 8
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp+8]
+        mov ecx, dword ptr [esp+4]
+        push ebx
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [ecx]
+    cmp_loop:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne cmp_ne
+        test cl, cl
+        je cmp_eq
+        mov dl, byte ptr [eax+1]
+        mov bl, byte ptr [esi+1]
+        mov cl, dl
+        cmp dl, bl
+        jne cmp_ne
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne cmp_loop
+    cmp_eq:
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    cmp_ne:
+        sbb eax, eax
+        pop esi
+        sbb eax, -1
+        pop ebx
+        ret
+    }
+}
