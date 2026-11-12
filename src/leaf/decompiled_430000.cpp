@@ -8358,3 +8358,89 @@ L_43BA20_ret_bx:
         ret
     }
 }
+
+// [0x0043D4B0] sub_0043D4B0 (194 bytes)
+// Deque range copy (4-byte elements, 4 per block) into a deque iterator out-struct at [arg1].
+// Guard calls go through _invalid_parameter_noinfo held at mem_00925134.
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0043D4B0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x2c]
+        push ebp
+        mov ebp, dword ptr [esp + 0x2c]
+        push esi
+        push edi
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    dc_loop:
+        mov edi, dword ptr [esp + 0x20]
+        cmp edi, dword ptr [esp + 0x2c]
+        je dc_done
+        mov eax, dword ptr [esp + 0x1c]
+        mov esi, edi
+        shr esi, 0x2
+        and edi, 0x3
+        test eax, eax
+        jne dc_chk1
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x1c]
+    dc_chk1:
+        mov ecx, dword ptr [eax + 0x10]
+        add ecx, dword ptr [eax + 0xc]
+        cmp dword ptr [esp + 0x20], ecx
+        jb dc_chk2
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x1c]
+    dc_chk2:
+        mov ecx, dword ptr [eax + 0x8]
+        cmp ecx, esi
+        ja dc_nowrap1
+        sub esi, ecx
+    dc_nowrap1:
+        mov edx, dword ptr [eax + 0x4]
+        mov eax, dword ptr [edx + 4*esi]
+        lea ecx, [eax + 4*edi]
+        mov esi, ebx
+        mov edi, ebx
+        shr esi, 0x2
+        and edi, 0x3
+        test ebp, ebp
+        mov dword ptr [esp + 0x30], ecx
+        jne dc_chk3
+        call dword ptr [mem_00925134]
+    dc_chk3:
+        mov edx, dword ptr [ebp + 0x10]
+        add edx, dword ptr [ebp + 0xc]
+        cmp ebx, edx
+        jb dc_chk4
+        call dword ptr [mem_00925134]
+    dc_chk4:
+        mov eax, dword ptr [ebp + 0x8]
+        cmp eax, esi
+        ja dc_nowrap2
+        sub esi, eax
+    dc_nowrap2:
+        mov eax, dword ptr [ebp + 0x4]
+        mov ecx, dword ptr [eax + 4*esi]
+        mov edx, dword ptr [esp + 0x30]
+        mov eax, dword ptr [edx]
+        add ebx, 0x1
+        add dword ptr [esp + 0x20], 0x1
+        mov dword ptr [ecx + 4*edi], eax
+        jmp dc_loop
+    dc_done:
+        mov eax, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        mov dword ptr [eax + 0x4], ebp
+        pop ebp
+        mov dword ptr [eax + 0x8], ebx
+        mov dword ptr [eax], 0x0
+        pop ebx
+        ret
+    }
+}
