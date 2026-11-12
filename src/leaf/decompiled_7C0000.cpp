@@ -3931,3 +3931,81 @@ extern "C" __declspec(naked) void __cdecl fn_007C6CF0(void* self, float* a, floa
         ret
     }
 }
+
+// [0x007CAC90] sub_007CAC90 (190 bytes)
+// Stack args (__cdecl): src (point at +0x10..+0x18), out 4x4 (identity), out 3x3 diagonal
+// inertia-like matrix from the point, and a scalar out = 8*x*y*z.
+extern "C" int mem_00987B28;
+extern "C" int mem_0099D590;
+extern "C" __declspec(naked) int __cdecl fn_007CAC90(int a0, float* a1, float* a2, float* a3) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x10]
+        xor ecx, ecx
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x14]
+        fstp dword ptr [esp]
+        fld dword ptr [eax + 0x18]
+        mov eax, dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x4], ecx
+        fld dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x8], ecx
+        fld st(0)
+        mov dword ptr [eax + 0xc], ecx
+        fmul st, st(1)
+        mov dword ptr [eax + 0x14], ecx
+        fld dword ptr [esp]
+        mov dword ptr [eax + 0x18], ecx
+        fld st(0)
+        mov dword ptr [eax + 0x1c], ecx
+        fmul st, st(1)
+        fld st(0)
+        fadd st, st(3)
+        fld qword ptr [mem_00987B28]
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x4]
+        fld st(0)
+        fmul st, st(1)
+        fld st(0)
+        faddp st(6), st
+        fxch st(5)
+        fmul st, st(2)
+        fstp dword ptr [eax + 0x10]
+        fxch st(4)
+        faddp st(2), st
+        fmulp st(1), st
+        fstp dword ptr [eax + 0x20]
+        mov eax, dword ptr [esp + 0x10]
+        fld1
+        fst dword ptr [eax]
+        fldz
+        fst dword ptr [eax + 0x4]
+        fst dword ptr [eax + 0x8]
+        fst dword ptr [eax + 0xc]
+        fst dword ptr [eax + 0x10]
+        fst dword ptr [eax + 0x18]
+        fst dword ptr [eax + 0x1c]
+        fst dword ptr [eax + 0x20]
+        fst dword ptr [eax + 0x24]
+        fst dword ptr [eax + 0x2c]
+        fst dword ptr [eax + 0x30]
+        fst dword ptr [eax + 0x34]
+        fstp dword ptr [eax + 0x38]
+        fst dword ptr [eax + 0x14]
+        fst dword ptr [eax + 0x28]
+        fstp dword ptr [eax + 0x3c]
+        mov eax, dword ptr [esp + 0x18]
+        fxch st(1)
+        fmul qword ptr [mem_0099D590]
+        fmulp st(1), st
+        fmulp st(1), st
+        fstp dword ptr [eax]
+        xor ax, ax
+        add esp, 0x8
+        ret
+    }
+}
