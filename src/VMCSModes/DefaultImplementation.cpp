@@ -839,3 +839,20 @@ extern "C" void __fastcall fn_004FB400(void* self) {
     void** vt = *(void***)c;
     ((VFn)vt[119])(c);
 }
+
+// [0x004FB420] VMCSModes::DefaultImplementation::vfunc_114 (30 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004FB420(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        push 1
+        call ext_004667A0
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 0xc]
+        mov edx, dword ptr [ecx]
+        pop esi
+        mov edx, dword ptr [edx + 0x1c8]
+        jmp edx
+    }
+}
