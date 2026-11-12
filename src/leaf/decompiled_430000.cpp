@@ -8267,3 +8267,94 @@ extern "C" void __fastcall fn_0043E0F0(void* self, int edx_unused, Interface_004
     (*(PFN_UpdateWindow*)&mem_0092568C)(hwnd2);
     ((PFN_Sub43DC90)&ext_0043DC90)(self, -1);
 }
+
+// [0x0043BA20] sub_0043BA20 (193 bytes)
+extern "C" void ext_00609850();
+
+extern "C" __declspec(naked) void __cdecl fn_0043BA20(void* first, void* last) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        cmp ebx, eax
+        je L_43BA20_ret_bx
+        push esi
+        lea esi, [ebx + 0x4]
+        cmp esi, eax
+        je L_43BA20_pop_esi
+        push ebp
+        lea ebp, [esi + 0x4]
+        push edi
+        mov dword ptr [esp + 0x10], ebp
+L_43BA20_loop:
+        mov ecx, dword ptr [esi]
+        mov edi, dword ptr [ebx]
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_43BA20_inner
+        mov ecx, edi
+        call ext_004410C0
+        cmp eax, 0x1
+        jg L_43BA20_inner
+        cmp ebx, esi
+        je L_43BA20_next
+        cmp esi, ebp
+        je L_43BA20_next
+        push 0x0
+        push 0x0
+        push ebp
+        push esi
+        push ebx
+        call ext_00609850
+        add esp, 0x14
+        jmp L_43BA20_next
+L_43BA20_inner:
+        mov ebp, esi
+        mov edi, esi
+        mov edi, edi
+L_43BA20_back:
+        mov ecx, dword ptr [esi]
+        mov ebx, dword ptr [edi - 0x4]
+        sub edi, 0x4
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_43BA20_back_done
+        mov ecx, ebx
+        call ext_004410C0
+        cmp eax, 0x1
+        jg L_43BA20_back_done
+        mov ebp, edi
+        jmp L_43BA20_back
+L_43BA20_back_done:
+        cmp ebp, esi
+        je L_43BA20_after_move
+        cmp esi, dword ptr [esp + 0x10]
+        je L_43BA20_after_move
+        mov eax, dword ptr [esp + 0x10]
+        push 0x0
+        push 0x0
+        push eax
+        push esi
+        push ebp
+        call ext_00609850
+        add esp, 0x14
+L_43BA20_after_move:
+        mov ebx, dword ptr [esp + 0x18]
+L_43BA20_next:
+        mov ebp, dword ptr [esp + 0x10]
+        add esi, 0x4
+        add ebp, 0x4
+        cmp esi, dword ptr [esp + 0x1c]
+        mov dword ptr [esp + 0x10], ebp
+        jne L_43BA20_loop
+        pop edi
+        pop ebp
+L_43BA20_pop_esi:
+        pop esi
+L_43BA20_ret_bx:
+        pop ebx
+        pop ecx
+        ret
+    }
+}
