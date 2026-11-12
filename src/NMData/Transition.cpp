@@ -178,3 +178,133 @@ extern "C" __declspec(naked) void* __fastcall fn_004991A0(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x00499440] NMData::Transition::vfunc_21 (277 bytes)
+extern "C" void ext_00498B60();
+extern "C" void ext_004990C0();
+extern "C" void ext_00499370();
+extern "C" int mem_00925134;
+extern "C" int mem_0094B858;
+
+extern "C" __declspec(naked) bool __fastcall fn_00499440(void* self, int edx_unused, int arg) {
+    __asm {
+        sub esp, 0x28
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x88]
+        test eax, eax
+        jne L_nonzero
+        xor ebx, ebx
+        jmp L_count_done
+    L_nonzero:
+        mov ebx, dword ptr [edi + 0x8c]
+        sub ebx, eax
+        sar ebx, 0x3
+    L_count_done:
+        mov ebp, dword ptr [esp + 0x3c]
+        xor esi, esi
+        test ebx, ebx
+        jle L_after_loop
+    L_loop:
+        mov ecx, dword ptr [edi + 0x88]
+        test ecx, ecx
+        je L_invalid
+        mov eax, dword ptr [edi + 0x8c]
+        sub eax, ecx
+        sar eax, 0x3
+        cmp esi, eax
+        jb L_index_ok
+    L_invalid:
+        call dword ptr [mem_00925134]
+    L_index_ok:
+        mov eax, dword ptr [edi + 0x88]
+        mov ecx, dword ptr [eax + 8*esi]
+        mov edx, dword ptr [eax + 8*esi + 0x4]
+        lea eax, [eax + 8*esi]
+        mov dword ptr [esp + 0x10], ecx
+        fld dword ptr [esp + 0x10]
+        fld st(0)
+        mov dword ptr [esp + 0x14], edx
+        fld dword ptr [mem_0094B858]
+        push ebp
+        fld st(0)
+        lea eax, [esp + 0x2c]
+        _emit 0xde
+        _emit 0xea
+        push eax
+        _emit 0xd9
+        _emit 0xc9
+        lea ecx, [esp + 0x20]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x1c]
+        fld st(0)
+        _emit 0xd8
+        _emit 0xe2
+        fstp dword ptr [esp + 0x24]
+        _emit 0xd9
+        _emit 0xc1
+        _emit 0xde
+        _emit 0xc3
+        _emit 0xd9
+        _emit 0xca
+        fstp dword ptr [esp + 0x28]
+        _emit 0xde
+        _emit 0xc1
+        fstp dword ptr [esp + 0x2c]
+        call ext_00498B60
+        mov ecx, eax
+        fld dword ptr [ecx + 0x8]
+        fsub dword ptr [ecx]
+        fstp dword ptr [esp + 0x3c]
+        fld dword ptr [esp + 0x3c]
+        _emit 0xd9
+        _emit 0xee
+        _emit 0xd8
+        _emit 0xd1
+        fnstsw ax
+        _emit 0xdd
+        _emit 0xd9
+        test ah, 0x1
+        je L_skip_first
+        fld dword ptr [ecx + 0xc]
+        fsub dword ptr [ecx + 0x4]
+        fstp dword ptr [esp + 0x3c]
+        fcomp dword ptr [esp + 0x3c]
+        fnstsw ax
+        test ah, 0x1
+        je L_next
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        add esp, 0x28
+        ret 0x4
+    L_skip_first:
+        _emit 0xdd
+        _emit 0xd8
+    L_next:
+        add esi, 0x1
+        cmp esi, ebx
+        jl L_loop
+    L_after_loop:
+        push ebp
+        lea ecx, [esp + 0x2c]
+        push ecx
+        mov ecx, edi
+        call ext_00499370
+        mov ecx, eax
+        call ext_004990C0
+        pop edi
+        pop esi
+        test al, al
+        pop ebp
+        setne al
+        pop ebx
+        add esp, 0x28
+        ret 0x4
+    }
+}
