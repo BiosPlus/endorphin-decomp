@@ -21,12 +21,12 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
    - **Pro Tip for Fast Byte Parity:** If standard C++03 has a register/instruction mismatch after 3–4 tries, switch to `extern "C" __declspec(naked) void __fastcall fn_XXXXXXXX(void* self) { __asm { ... } }` using `ext_XXXXXXXX` for `call`/`jmp` targets, `[mem_XXXXXXXX]` or `offset mem_XXXXXXXX` for relocated globals, and `__asm _emit 0x..` for any instruction where MASM picks a different encoding.
 3. **Compile & verify (iterate max 10 tries):**
    ```bash
-   ./.local/bin/work check 0xXXXXXXXX --model <model>
+   ./.local/bin/work check 0xXXXXXXXX --model <model@effort>
    ```
-   - Always pass your model identifier via `--model <name>` (e.g., `claude-haiku-5.5`, `gemini-3.8-flash`, `claude-sonnet-5.5`, `claude-opus-5.5`, `gemini-4-argon`, `gemini-4-carbon`) or `DECOMP_MODEL`.
+   - Always pass your model + effort identifier via `--model <name@effort>` (e.g., `claude-haiku-5.5@low`, `gemini-3.8-flash@low`, `claude-sonnet-5.5@medium`, `claude-opus-5.5@low`, `gemini-4-argon@medium`, `gemini-4-carbon@low`) or `DECOMP_MODEL`.
    - `EXACT MATCH (100%)` acquires an atomic lock, marks `"status": "matched"`, `"matched_by"`, and `"matched_at"` in the per-function ledger `build/units/<shard>/<VA>.json`, and commits `Match 0xXXXXXXXX (<symbol>) [model: <matched_by>]`.
 4. **If stuck after 10 tries:**
-   - In `tools/grind.sh` parallel wave mode, simply stop after 10 tries — the orchestrator will clean the attempt and escalate `0xXXXXXXXX` through the model tiers (`claude-haiku-5.5, gemini-3.8-flash, agy/claude-sonnet-5.5` -> `gemini-4-argon, claude-opus-5.5` -> `gemini-4-carbon`; every model in a tier tries it before it moves up), and only call `work skip` if all 6 fail. Hitting a usage/rate limit is not a failure: just stop, and the orchestrator waits for that quota pool to reset.
+   - In `tools/grind.sh` parallel wave mode, simply stop after 10 tries — the orchestrator will clean the attempt, step that model from `low` up to `medium` if `low` failed, then try the remaining models in the tier (`claude-haiku-5.5, gemini-3.8-flash, agy/claude-sonnet-5.5` -> `gemini-4-argon, claude-opus-5.5` -> `gemini-4-carbon`, each doing `low` -> `medium`), and only call `work skip` if every eligible model and effort fails. Hitting a usage/rate limit is not a failure: just stop, and the orchestrator waits for that quota pool to reset.
    - If running standalone/manually, skip cleanly (automatically strips the stub from `src/`):
      ```bash
      ./.local/bin/work skip 0xXXXXXXXX "brief reason"

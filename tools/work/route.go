@@ -189,13 +189,13 @@ func cmdRoute(args []string) {
 
 	fmt.Printf("Model yield by function size (win = matched on that model; trial = a win or a recorded failure)\n")
 	fmt.Printf("Skip rule: yield < %.0f%% with >= %d trials (band first, else all sizes)\n\n", minYield*100, minTrials)
-	fmt.Printf("%-20s", "model")
+	fmt.Printf("%-26s", "model")
 	for b := 0; b <= len(routeBandBounds); b++ {
 		fmt.Printf(" %-14s", routeBandLabel(b))
 	}
 	fmt.Println()
 	for _, m := range models {
-		fmt.Printf("%-20s", m)
+		fmt.Printf("%-26s", m)
 		for b := range stats[m] {
 			skip, w, t, scope := routeSkip(stats[m], b, minTrials, minYield)
 			cell := "-"

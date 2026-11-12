@@ -258,6 +258,38 @@ func isCompleted(status string) bool {
 	return status == "decompiled" || status == "matched" || status == "solved"
 }
 
+// backfillMatchedByEffort normalizes legacy model names that were recorded before @<effort> suffixes were added:
+//   - agy runs (gemini-* and 2026-11-12 agy/claude-sonnet-5.5 runs) explicitly ran with --effort high -> @high
+//   - native claude CLI runs (claude-haiku-5.5, pre-2026-11-12 claude-sonnet-5.5, claude-opus-5.5) -> @medium
+func backfillMatchedByEffort(matchedBy, matchedAt string) (string, bool) {
+	m := strings.TrimSpace(matchedBy)
+	if m == "" || m == "script:auto_solve" || m == "unknown" || strings.Contains(m, "@") {
+		return matchedBy, false
+	}
+	if m == "claude-haiku" {
+		m = "claude-haiku-5.5"
+	}
+	ts := strings.TrimSpace(matchedAt)
+	// f80352520 (2026-11-12T12:41:53Z) switched all bare-model runs to medium effort; earlier agy runs used high.
+	preMediumSwitch := ts == "" || ts < "2026-11-12T12:41:53Z"
+	switch {
+	case strings.HasPrefix(m, "gemini-"):
+		if preMediumSwitch {
+			return m + "@high", true
+		}
+		return m + "@medium", true
+	case m == "claude-sonnet-5.5":
+		if strings.HasPrefix(ts, "2026-11-12") && preMediumSwitch {
+			return m + "@high", true
+		}
+		return m + "@medium", true
+	case strings.HasPrefix(m, "claude-"):
+		return m + "@medium", true
+	default:
+		return matchedBy, false
+	}
+}
+
 func pct(part, total uint64) float64 {
 	if total == 0 {
 		return 0.0
@@ -1513,9 +1545,8 @@ func main() {
 				u.MatchedBy = "script:auto_solve"
 				unitsUpdated = true
 			}
-			if u.MatchedBy == "claude-haiku" {
-				// Early matches were recorded without the version suffix.
-				u.MatchedBy = "claude-haiku-5.5"
+			if normModel, changed := backfillMatchedByEffort(u.MatchedBy, u.MatchedAt); changed {
+				u.MatchedBy = normModel
 				unitsUpdated = true
 			}
 			inScopeMatchedFuncs++

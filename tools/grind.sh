@@ -7,8 +7,8 @@ cd "$REPO_ROOT"
 MAX_WAVES="${1:-50}"                    # Number of parallel waves to run before stopping
 WAVE_SIZE="${2:-5}"                     # Parallel functions per wave (1 dedicated agent per function try)
 PUSH_EVERY="${3:-5}"                    # Run git push every N waves
-AGENT_TIMEOUT="${AGENT_TIMEOUT:-360}"   # Per-function agent timeout in seconds
-AGENT_EFFORT="${AGENT_EFFORT:-medium}"  # Reasoning effort across all models (low|medium|high)
+AGENT_TIMEOUT="${AGENT_TIMEOUT:-360}"   # Per-function agent timeout in seconds (per effort attempt)
+AGENT_EFFORTS="${AGENT_EFFORTS:-${AGENT_EFFORT:-low medium}}" # Per-model effort cadence (low -> medium before next model)
 COOLDOWN_BASE_SECS="${COOLDOWN_BASE_SECS:-180}" # Initial rate-limit cooldown (3m -> 9m -> 27m)
 PREFER_AGY_CLAUDE="${PREFER_AGY_CLAUDE:-0}"     # Set to 1 to prefer AGY for Sonnet/Opus before native claude CLI
 DEPS_FIRST="${DEPS_FIRST:-1}"                  # 1 = prefer functions whose callees are already matched
@@ -96,13 +96,13 @@ fi
 
 if [[ "${GRIND_VERBOSE:-0}" == 1 ]]; then
 echo "=== Endorphin Autonomous Parallel Grinder (1 Agent / Function Try) ==="
-echo "Verified CLIs : claude=$HAS_CLAUDE | agy=$HAS_AGY | effort=$AGENT_EFFORT"
+echo "Verified CLIs : claude=$HAS_CLAUDE | agy=$HAS_AGY | efforts=${AGENT_EFFORTS// /->}"
 echo "Pipeline      : tier0 runners=$WAVE_SIZE (tries every function) | escalation cap=${ESC_CAP}/model | total_pulls=$((MAX_WAVES*WAVE_SIZE)) | push_every=$((PUSH_EVERY*WAVE_SIZE)) | timeout=${AGENT_TIMEOUT}s"
 echo "Model Tiers   : ${MODEL_TIERS//|/  ->  }"
-echo "Policy        : every model in a tier tries a function (least-loaded first) before it moves up; rate-limited pools are waited out, never counted as failures"
+echo "Policy        : each model tries ${AGENT_EFFORTS// / -> } in order; if a model fails entirely, next model in tier tries; if tier fails, moves up a tier"
 echo "Security Mode : Scoped Allowlist + Sandbox + PreToolUse Guard [NO skip-dangerously]"
 else
-  echo "Endorphin grinder: tier0 x$WAVE_SIZE, escalation cap ${ESC_CAP}/model, ${MAX_WAVES} waves, effort $AGENT_EFFORT, timeout ${AGENT_TIMEOUT}s  (claude=$HAS_CLAUDE agy=$HAS_AGY; GRIND_VERBOSE=1 for details)"
+  echo "Endorphin grinder: tier0 x$WAVE_SIZE, escalation cap ${ESC_CAP}/model, ${MAX_WAVES} waves, efforts ${AGENT_EFFORTS// /->}, timeout ${AGENT_TIMEOUT}s  (claude=$HAS_CLAUDE agy=$HAS_AGY; GRIND_VERBOSE=1 for details)"
 fi
 
 if [[ $HAS_CLAUDE -eq 0 && $HAS_AGY -eq 0 ]]; then
@@ -296,13 +296,13 @@ run_agy_with_model() {
     -p "$prompt" >"$log_file" 2>&1
 }
 
-# Try candidate agy model slugs in order and cache the first accepted slug in $STATE_DIR/slug.<key>.
+# Try candidate agy model slugs in order for a given effort and cache the first accepted slug in $STATE_DIR/slug.<key>.
 run_agy_first_valid_slug() {
-  local key="$1" prompt="$2" log_file="$3"; shift 3
+  local key="$1" effort="$2" prompt="$3" log_file="$4"; shift 4
   local cached="" slug rc=0
   [[ -f "$STATE_DIR/slug.$key" ]] && cached="$(cat "$STATE_DIR/slug.$key" 2>/dev/null || true)"
   if [[ -n "$cached" ]]; then
-    run_agy_with_model "$cached" "$AGENT_EFFORT" "$prompt" "$log_file" || rc=$?
+    run_agy_with_model "$cached" "$effort" "$prompt" "$log_file" || rc=$?
     if ! is_invalid_model_log "$log_file"; then
       return $rc
     fi
@@ -311,7 +311,7 @@ run_agy_first_valid_slug() {
   for slug in "$@"; do
     [[ "$slug" == "$cached" ]] && continue
     rc=0
-    run_agy_with_model "$slug" "$AGENT_EFFORT" "$prompt" "$log_file" || rc=$?
+    run_agy_with_model "$slug" "$effort" "$prompt" "$log_file" || rc=$?
     if ! is_invalid_model_log "$log_file"; then
       echo "$slug" > "$STATE_DIR/slug.$key"
       return $rc
@@ -320,14 +320,16 @@ run_agy_first_valid_slug() {
   return $rc
 }
 
-# Run a single dedicated agent on a single function address using the chosen model and backend
+# Run a single dedicated agent on a single function address using the chosen base model, effort, and backend
 run_single_function_agent() {
   local model_choice="$1"
-  local backend="$2"
-  local addr="$3"
-  local log_file="$4"
+  local effort="$2"
+  local backend="$3"
+  local addr="$4"
+  local log_file="$5"
 
-  export DECOMP_MODEL="$model_choice"
+  export DECOMP_EFFORT="$effort"
+  export DECOMP_MODEL="${model_choice}@${effort}"
 
   local prompt="Read CLAUDE.md. You are assigned a single function: ${addr}. Run './.local/bin/work claim ${addr}' and match ${addr} using './.local/bin/work check ${addr} --model ${DECOMP_MODEL}'. Use HEADER_PREVIEW and SUGGESTED_EXTERNS from the claim output; if SIMILAR_MATCHED is present, treat those solved neighbors as a hint for the C++ idiom (identical-shape ones usually differ only in constants, offsets and call targets). If PRIOR_ATTEMPTS is present, it lists facts about earlier failed checks on this function (where the output diverged, what the compiler emitted); use it to avoid dead ends, but do not assume the earlier approach was close, and never go looking for the earlier source. Iterate up to 10 tries (switch to __declspec(naked) __asm after 3-4 failed C++03 tries). Stop immediately as soon as ${addr} matches or after 10 tries. Do NOT run work next, do NOT call work skip, and do NOT touch any other function, HTML files, or build/units.json."
 
@@ -340,8 +342,8 @@ run_single_function_agent() {
       claude-opus-5.5)   claude_alias="opus" ;;
     esac
     local -a claude_effort_args=()
-    [[ $HAS_CLAUDE_EFFORT -eq 1 ]] && claude_effort_args=(--effort "$AGENT_EFFORT")
-    export CLAUDE_CODE_EFFORT_LEVEL="$AGENT_EFFORT"
+    [[ $HAS_CLAUDE_EFFORT -eq 1 ]] && claude_effort_args=(--effort "$effort")
+    export CLAUDE_CODE_EFFORT_LEVEL="$effort"
 
     launch_tracked timeout --kill-after=20s "${AGENT_TIMEOUT_EFF:-$AGENT_TIMEOUT}s" \
       claude --model "$claude_alias" \
@@ -361,21 +363,21 @@ run_single_function_agent() {
   else
     case "$model_choice" in
       gemini-3.8-flash)
-        run_agy_with_model "gemini-3.8-flash" "$AGENT_EFFORT" "$prompt" "$log_file" || exit_code=$?
+        run_agy_with_model "gemini-3.8-flash" "$effort" "$prompt" "$log_file" || exit_code=$?
         ;;
       claude-sonnet-5.5)
-        run_agy_first_valid_slug "sonnet" "$prompt" "$log_file" \
-          "claude-sonnet-5-5" "claude-sonnet-5-5-${AGENT_EFFORT}" "claude-sonnet-5.5" "claude-sonnet-5-5@default" "claude-sonnet-4-6@default" || exit_code=$?
+        run_agy_first_valid_slug "sonnet.${effort}" "$effort" "$prompt" "$log_file" \
+          "claude-sonnet-5-5" "claude-sonnet-5-5-${effort}" "claude-sonnet-5.5" "claude-sonnet-5-5@default" "claude-sonnet-4-6@default" || exit_code=$?
         ;;
       claude-opus-5.5)
-        run_agy_first_valid_slug "opus" "$prompt" "$log_file" \
-          "claude-opus-5-5" "claude-opus-5-5-${AGENT_EFFORT}" "claude-opus-5.5" "claude-opus-5-5@default" "claude-opus-4-6@default" || exit_code=$?
+        run_agy_first_valid_slug "opus.${effort}" "$effort" "$prompt" "$log_file" \
+          "claude-opus-5-5" "claude-opus-5-5-${effort}" "claude-opus-5.5" "claude-opus-5-5@default" "claude-opus-4-6@default" || exit_code=$?
         ;;
       gemini-4-argon)
-        run_agy_with_model "gemini-4-argon" "$AGENT_EFFORT" "$prompt" "$log_file" || exit_code=$?
+        run_agy_with_model "gemini-4-argon" "$effort" "$prompt" "$log_file" || exit_code=$?
         ;;
       gemini-4-carbon)
-        run_agy_with_model "gemini-4-carbon" "$AGENT_EFFORT" "$prompt" "$log_file" || exit_code=$?
+        run_agy_with_model "gemini-4-carbon" "$effort" "$prompt" "$log_file" || exit_code=$?
         ;;
     esac
   fi
@@ -453,62 +455,76 @@ low_yield_stage() {   # $1=model $2=size_bytes ; true if that stage should be sk
   return 1
 }
 
-# One agent attempt: ONE function on ONE model (stage). Runs in a background subshell.
-# Writes "matched" | "failed" | "limited" | "unavailable" to $STATE_DIR/res.<addr>.
-# "failed" = the model really tried and did not match (recorded in the attempts file). "limited"/"unavailable" = the quota pool
-# stopped the run: nothing is recorded against the model, the function stays owed to it and the scheduler waits for the reset.
+# True if function $1 still needs an attempt on base model $3 at effort $4 (tier $2).
+effort_eligible() {
+  local addr="$1" tier="$2" base="$3" effort="$4" tag="${3}@${4}" size="${FUNC_SIZES[$1]:-0}"
+  if (( tier > 0 )) && low_yield_stage "$tag" "$size"; then return 1; fi
+  already_failed "$addr" "$tag" && return 1
+  return 0
+}
+
+# One model slot for ONE function: runs the configured effort cadence (low -> medium) on that model in a background subshell.
+# Writes "matched <model>@<effort>" | "failed" | "limited" | "unavailable" to $STATE_DIR/res.<addr>.
+# "failed" = every eligible effort on this model really tried and did not match (each recorded in the attempts file).
+# "limited"/"unavailable" = the quota pool stopped the run: the unfinished effort is NOT recorded against the model, so
+# the model stays owed (resuming directly at the unfinished effort once the pool resets).
 attempt_worker() {
   local addr="$1" model_idx="$2"
   local model_spec="${MODEL_CHAIN[$model_idx]}" total_steps="${#MODEL_CHAIN[@]}"
-  local model_choice="${model_spec#*/}"
-  local backend log_file rc next_backend rl_kind rl_reset
+  local model_choice="${model_spec#*/}" tier="${MODEL_TIER[$model_spec]}"
+  local effort model_tag backend log_file rc next_backend rl_kind rl_reset
 
-  # Larger functions get more time: +1s per 2 bytes, capped at 3x the base timeout
+  # Larger functions get more time per effort attempt: +1s per 2 bytes, capped at 3x the base timeout
   local extra=$(( ${FUNC_SIZES[$addr]:-0} / 2 )) cap=$(( AGENT_TIMEOUT * 2 ))
   (( extra > cap )) && extra=$cap
   AGENT_TIMEOUT_EFF=$(( AGENT_TIMEOUT + extra ))
 
-  # Retry the same model on an alternate backend (e.g. claude -> agy) if unpinned and the first one is rate-limited
-  while true; do
-    backend="$(resolve_backend_for_model "$model_spec")"
-    if [[ "$backend" == "none" ]]; then
-      emit "[!] $addr: $model_spec unavailable / cooling down on all allowed backends"
-      echo unavailable > "$STATE_DIR/res.$addr"
-      return 0
-    fi
+  for effort in $AGENT_EFFORTS; do
+    effort_eligible "$addr" "$tier" "$model_choice" "$effort" || continue
+    model_tag="${model_choice}@${effort}"
 
-    emit "[>] $addr (${FUNC_SIZES[$addr]}B): step $((model_idx + 1))/$total_steps $model_choice via $backend"
-    log_file="$(mktemp "/tmp/endorphin_${model_choice}_${addr}.XXXXXX.log")"
-    printf '%s %s %s %s\n' "$model_choice" "$backend" "$(date +%s)" "$log_file" > "$STATE_DIR/run.$addr"
-    rc=0
-    run_single_function_agent "$model_choice" "$backend" "$addr" "$log_file" || rc=$?
-    rm -f "$log_file"
-
-    if [[ $rc -ne 42 ]]; then rm -f "$STATE_DIR/st.$(_state_key "$(pool_of "$backend" "$model_choice")")"; fi   # pool is healthy again
-    if "$WORK_BIN" is-matched "$addr" >/dev/null 2>&1; then
-      emit "[+] MATCHED $addr via $model_choice ($backend) in $(fmt_dur $(( $(date +%s) - ${FN_START[$addr]:-$(date +%s)} )))"
-      echo matched > "$STATE_DIR/res.$addr"
-      return 0
-    fi
-
-    emit "[-] Unmatched on $model_choice ($backend): $addr"
-    # Give the next model a fresh stub rather than this model's half-finished attempt
-    "$WORK_BIN" clean "$addr" >/dev/null 2>&1 || true
-    if [[ $rc -eq 42 ]]; then
-      rl_kind=soft; rl_reset=0
-      read -r rl_kind rl_reset < "$STATE_DIR/rl.$addr" 2>/dev/null || true
-      rm -f "$STATE_DIR/rl.$addr"
-      mark_rate_limited "$(pool_of "$backend" "$model_choice")" "$rl_kind" "$rl_reset"
-      next_backend="$(resolve_backend_for_model "$model_spec")"
-      if [[ "$next_backend" != "none" && "$next_backend" != "$backend" ]]; then
-        emit "[*] $addr: switching $model_choice to alternate backend ($next_backend)"
-        continue
+    # Retry the same model+effort on an alternate backend (e.g. claude -> agy) if unpinned and the first one is rate-limited
+    while true; do
+      backend="$(resolve_backend_for_model "$model_spec")"
+      if [[ "$backend" == "none" ]]; then
+        emit "[!] $addr: $model_spec ($effort) unavailable / cooling down on all allowed backends"
+        echo unavailable > "$STATE_DIR/res.$addr"
+        return 0
       fi
-      echo limited > "$STATE_DIR/res.$addr"     # not a failure: do not record it, do not count it against the model
-      return 0
-    fi
-    record_failure "$addr" "$model_choice"
-    break
+
+      emit "[>] $addr (${FUNC_SIZES[$addr]}B): step $((model_idx + 1))/$total_steps $model_tag via $backend"
+      log_file="$(mktemp "/tmp/endorphin_${model_choice}_${effort}_${addr}.XXXXXX.log")"
+      printf '%s %s %s %s\n' "$model_tag" "$backend" "$(date +%s)" "$log_file" > "$STATE_DIR/run.$addr"
+      rc=0
+      run_single_function_agent "$model_choice" "$effort" "$backend" "$addr" "$log_file" || rc=$?
+      rm -f "$log_file"
+
+      if [[ $rc -ne 42 ]]; then rm -f "$STATE_DIR/st.$(_state_key "$(pool_of "$backend" "$model_choice")")"; fi   # pool is healthy again
+      if "$WORK_BIN" is-matched "$addr" >/dev/null 2>&1; then
+        emit "[+] MATCHED $addr via $model_tag ($backend) in $(fmt_dur $(( $(date +%s) - ${FN_START[$addr]:-$(date +%s)} )))"
+        echo "matched $model_tag" > "$STATE_DIR/res.$addr"
+        return 0
+      fi
+
+      emit "[-] Unmatched on $model_tag ($backend): $addr"
+      # Give the next effort / model a fresh stub rather than this run's half-finished attempt
+      "$WORK_BIN" clean "$addr" >/dev/null 2>&1 || true
+      if [[ $rc -eq 42 ]]; then
+        rl_kind=soft; rl_reset=0
+        read -r rl_kind rl_reset < "$STATE_DIR/rl.$addr" 2>/dev/null || true
+        rm -f "$STATE_DIR/rl.$addr"
+        mark_rate_limited "$(pool_of "$backend" "$model_choice")" "$rl_kind" "$rl_reset"
+        next_backend="$(resolve_backend_for_model "$model_spec")"
+        if [[ "$next_backend" != "none" && "$next_backend" != "$backend" ]]; then
+          emit "[*] $addr: switching $model_tag to alternate backend ($next_backend)"
+          continue
+        fi
+        echo limited > "$STATE_DIR/res.$addr"     # not a failure: do not record it, do not count it against the model
+        return 0
+      fi
+      record_failure "$addr" "$model_tag"
+      break
+    done
   done
   echo failed > "$STATE_DIR/res.$addr"
 }
@@ -576,17 +592,20 @@ pick_next_candidate() {
   return 1
 }
 
-# Models in tier $2 that may still attempt function $1: not size-gated, not low-yield (tier 0 models are never
-# skipped), and not already failed it in an earlier session. Availability is NOT considered here (that is dispatch's job).
+# Models in tier $2 that still have at least one eligible effort attempt for function $1: not size-gated, not skipped by
+# low-yield routing (tier 0 models are never skipped), and not already failed across every configured effort in an earlier
+# session. Availability is NOT considered here (that is dispatch's job).
 owed_models() {
-  local addr="$1" t="$2" spec base min_sz size="${FUNC_SIZES[$1]:-0}" out=""
+  local addr="$1" t="$2" spec base eff ok min_sz size="${FUNC_SIZES[$1]:-0}" out=""
   for spec in ${TIER_MODELS[$t]}; do
     base="${spec#*/}"
     min_sz="${MODEL_MIN[$spec]:-${MODEL_MIN[$base]:-0}}"
     (( size < min_sz )) && continue
-    if (( ${MODEL_TIER[$spec]} > 0 )) && low_yield_stage "$base" "$size"; then continue; fi
-    already_failed "$addr" "$base" && continue
-    out+="$spec "
+    ok=0
+    for eff in $AGENT_EFFORTS; do
+      effort_eligible "$addr" "$t" "$base" "$eff" && { ok=1; break; }
+    done
+    (( ok )) && out+="$spec "
   done
   echo "${out% }"
 }
@@ -665,18 +684,18 @@ dispatch_stages() {
 }
 
 reap_finished() {
-  local pid addr s res m rest
+  local pid addr s res win_model m rest
   for pid in "${!JOB_INFO[@]}"; do
     if ! kill -0 "$pid" 2>/dev/null; then
       read -r addr s <<< "${JOB_INFO[$pid]}"      # s = model index
       unset 'JOB_INFO[$pid]'
       rm -f "$STATE_DIR/run.$addr"
       ((STAGE_RUNNING[$s]--))
-      res=failed
-      [[ -f "$STATE_DIR/res.$addr" ]] && res="$(cat "$STATE_DIR/res.$addr")"
+      res=failed; win_model=""
+      [[ -f "$STATE_DIR/res.$addr" ]] && read -r res win_model < "$STATE_DIR/res.$addr"
       case "$res" in
         matched)
-          finish_function "$addr" matched "${MODEL_CHAIN[$s]#*/}" ;;
+          finish_function "$addr" matched "${win_model:-${MODEL_CHAIN[$s]#*/}}" ;;
         limited|unavailable)
           # Quota stopped the run, not the model: it stays owed, and the function waits for the pool to reset
           emit "[~] $addr: ${MODEL_CHAIN[$s]} $res; still owed, waiting"
@@ -816,7 +835,7 @@ render() {
       (( att * 100 >= tmo * 90 )) && tc="$C_RED"
       AGENT_TOK="-"; [[ "$backend" == claude ]] && agent_tokens "$addr" "${logf:-}"
       [[ "$AGENT_TOK" =~ ^[0-9]+$ ]] && AGENT_TOK="$(fmt_tok "$AGENT_TOK")"
-      rows+=("$(printf " * %s %5sB  %s%-20s%s %s%-9s%s %7s tok  (total %s)" \
+      rows+=("$(printf " * %s %5sB  %s%-27s%s %s%-9s%s %7s tok  (total %s)" \
         "$addr" "${FUNC_SIZES[$addr]:-?}" "$mc" "$backend/${model#claude-}" "$C_RST" \
         "$tc" "${att}s/${tmo}s" "$C_RST" "$AGENT_TOK" \
         "$(fmt_dur $(( now - ${FN_START[$addr]:-$now} )))")")

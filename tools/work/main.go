@@ -1211,11 +1211,20 @@ func parseCheckArgs(args []string) (string, string) {
 			addr = a
 		}
 	}
+	envModel := strings.TrimSpace(os.Getenv("DECOMP_MODEL"))
+	envEffort := strings.TrimSpace(os.Getenv("DECOMP_EFFORT"))
+	if envEffort == "" {
+		if _, eff, ok := strings.Cut(envModel, "@"); ok {
+			envEffort = eff
+		}
+	}
 	if model == "" {
-		model = strings.TrimSpace(os.Getenv("DECOMP_MODEL"))
+		model = envModel
 	}
 	if model == "" {
 		model = "unknown"
+	} else if envEffort != "" && model != "unknown" && model != "script:auto_solve" && !strings.Contains(model, "@") {
+		model = model + "@" + envEffort
 	}
 	return addr, model
 }
