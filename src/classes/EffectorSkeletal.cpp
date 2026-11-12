@@ -98,3 +98,37 @@ extern "C" __declspec(naked) void __fastcall fn_00630D00(void* self) {
         jmp eax
     }
 }
+
+// [0x00630D40] EffectorSkeletal::vfunc_12 (75 bytes)
+// Stack arg a1 (ret 4). p = __RTDynamicCast(a1, 0, EffectorBaseData, EffectorSkeletalData, 1).
+// r = sub_006035D0(this + 0x90, p + 0x44); sub_006035D0(this + 0x2c, r);
+// sub_00630CB0(this, *(float*)(this + 0xf0)).
+extern "C" void ext_006A6E9E();
+extern "C" __declspec(naked) void __fastcall fn_00630D40(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push 1
+        push 0A94E98h
+        push 0A93768h
+        push 0
+        push eax
+        mov esi, ecx
+        call ext_006A6E9E
+        add esp, 0x14
+        add eax, 0x44
+        push eax
+        lea ecx, [esi + 0x90]
+        call ext_006035D0
+        push eax
+        lea ecx, [esi + 0x2c]
+        call ext_006035D0
+        fld dword ptr [esi + 0xf0]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00630CB0
+        pop esi
+        ret 0x4
+    }
+}
