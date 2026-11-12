@@ -6208,3 +6208,77 @@ extern "C" __declspec(naked) void __fastcall fn_00679DB0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_005B28E0();
+extern "C" int mem_0098C788;
+
+// [0x0067EBB0] sub_0067EBB0 (167 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0067EBB0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov byte ptr [esp + 0x10], 0x0
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        push offset mem_0098C658
+        mov esi, ecx
+        lea ebp, [edi + 0x10]
+        push ebp
+        push edi
+        lea ebx, [esi + 0x10]
+        push ebx
+        push esi
+        lea ecx, [esp + 0x34]
+        call ext_005B28E0
+        mov byte ptr [esp + 0x18], 0x0
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        push offset mem_0098C648
+        lea edx, [ebp + 0x10]
+        push edx
+        push ebp
+        lea eax, [ebx + 0x10]
+        push eax
+        push ebx
+        lea ecx, [esp + 0x34]
+        call ext_005B28E0
+        mov byte ptr [esp + 0x18], 0x0
+        mov edx, dword ptr [esp + 0x18]
+        push edx
+        lea eax, [edi + 0x20]
+        push offset mem_0098C638
+        lea edx, [eax + 0x10]
+        push edx
+        lea ecx, [esi + 0x20]
+        push eax
+        lea eax, [ecx + 0x10]
+        push eax
+        push ecx
+        lea ecx, [esp + 0x34]
+        call ext_005B28E0
+        mov byte ptr [esp + 0x18], 0x0
+        mov edx, dword ptr [esp + 0x18]
+        push edx
+        lea eax, [edi + 0x30]
+        push offset mem_0098C788
+        lea edx, [eax + 0x10]
+        push edx
+        lea ecx, [esi + 0x30]
+        push eax
+        lea eax, [ecx + 0x10]
+        push eax
+        push ecx
+        lea ecx, [esp + 0x34]
+        call ext_005B28E0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0xc
+    }
+}
