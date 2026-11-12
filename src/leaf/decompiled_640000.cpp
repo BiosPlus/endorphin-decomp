@@ -2787,3 +2787,21 @@ store3:
         ret 0x4
     }
 }
+
+// [0x00649080] sub_00649080 (38 bytes)
+extern "C" void ext_00645670();
+extern "C" void ext_00645730();
+
+struct TargetClass_00649080 {
+    virtual void vfunc0();
+    char pad_04[0x74];
+    int field_78;
+    char pad_7c[0x8];
+    int field_84;
+};
+
+extern "C" void __fastcall fn_00649080(TargetClass_00649080* self, int edx_unused, void* a1) {
+    ((void (__thiscall *)(void*, void*))ext_00645670)(self, &self->field_84);
+    ((void (__thiscall *)(void*, void*))ext_00645730)(self, &self->field_78);
+    self->vfunc0();
+}
