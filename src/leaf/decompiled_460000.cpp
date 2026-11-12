@@ -4478,3 +4478,26 @@ extern "C" __declspec(naked) void __fastcall fn_004651F0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_006A69BE();
+extern "C" void ext_00439FD0();
+
+// [0x00465290] sub_00465290 (43 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00465290(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_004651F0
+        test al, al
+        je short L_ret_004652B9
+        mov ecx, esi
+        mov dword ptr [esi + 0xB4], 0x2
+        call ext_006A69BE
+        mov ecx, dword ptr [mem_00ACDB40]
+        pop esi
+        jmp ext_00439FD0
+    L_ret_004652B9:
+        pop esi
+        ret
+    }
+}
