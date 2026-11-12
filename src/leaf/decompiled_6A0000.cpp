@@ -2480,3 +2480,109 @@ extern "C" __declspec(naked) void* __fastcall fn_006AD2E0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006A3340] sub_006A3340 (233 bytes)
+extern "C" unsigned char mem_00990400[256];
+
+extern "C" __declspec(naked) void __cdecl fn_006A3340(const unsigned char* src, unsigned char* dst, unsigned int* len) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [ebx]
+        push edi
+        xor eax, eax
+        xor edi, edi
+        test edx, edx
+        jbe d6a_zero
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        jmp short d6a_top
+d6a_reload:
+        mov ebx, dword ptr [esp + 0x1c]
+d6a_top:
+        cmp eax, edx
+        jae short d6a_done
+d6a_read:
+        mov cl, byte ptr [eax + esi]
+        cmp cl, 0x0d
+        je short d6a_skip
+        cmp cl, 0x0a
+        jne short d6a_group
+d6a_skip:
+        add eax, 1
+        cmp eax, edx
+        jb short d6a_read
+d6a_done:
+        pop esi
+        pop ebp
+        mov dword ptr [ebx], edi
+        pop edi
+        pop ebx
+        ret
+d6a_group:
+        cmp eax, edx
+        jae short d6a_done
+        test ebp, ebp
+        je short d6a_g1
+        movzx ecx, byte ptr [eax + esi + 1]
+        movzx ebx, byte ptr [eax + esi]
+        mov cl, byte ptr [ecx + mem_00990400]
+        mov bl, byte ptr [ebx + mem_00990400]
+        sar cl, 4
+        add bl, bl
+        and cl, 3
+        add bl, bl
+        xor cl, bl
+        mov byte ptr [edi + ebp], cl
+d6a_g1:
+        mov cl, byte ptr [eax + esi + 2]
+        add edi, 1
+        cmp cl, 0x4f
+        je short d6a_g2
+        test ebp, ebp
+        je short d6a_g1b
+        movzx ebx, byte ptr [eax + esi + 1]
+        mov bl, byte ptr [ebx + mem_00990400]
+        movzx ecx, cl
+        mov cl, byte ptr [ecx + mem_00990400]
+        sar cl, 2
+        and cl, 0x0f
+        shl bl, 4
+        xor cl, bl
+        mov byte ptr [edi + ebp], cl
+d6a_g1b:
+        add edi, 1
+d6a_g2:
+        mov cl, byte ptr [eax + esi + 3]
+        cmp cl, 0x4f
+        je short d6a_g3
+        test ebp, ebp
+        je short d6a_g2b
+        movzx ebx, byte ptr [eax + esi + 2]
+        mov bl, byte ptr [ebx + mem_00990400]
+        movzx ecx, cl
+        shl bl, 6
+        add bl, byte ptr [ecx + mem_00990400]
+        mov byte ptr [edi + ebp], bl
+d6a_g2b:
+        add edi, 1
+d6a_g3:
+        add eax, 4
+        cmp eax, edx
+        jb d6a_reload
+        mov edx, dword ptr [esp + 0x1c]
+        pop esi
+        pop ebp
+        mov dword ptr [edx], edi
+        pop edi
+        pop ebx
+        ret
+d6a_zero:
+        mov dword ptr [ebx], edi
+        pop edi
+        pop ebx
+        ret
+    }
+}
