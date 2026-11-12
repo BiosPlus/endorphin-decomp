@@ -1835,3 +1835,49 @@ extern "C" __declspec(naked) void __fastcall fn_006AD4D0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006A88D0] sub_006A88D0 (168 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" int mem_00925694;
+extern "C" int mem_0092570C;
+extern "C" int mem_00925618;
+
+typedef int (__stdcall *FnSendMessageA_006A88D0)(void*, unsigned int, unsigned int, long);
+typedef int (__stdcall *FnScreenToClient_006A88D0)(void*, void*);
+typedef int (__stdcall *FnPostMessageA_006A88D0)(void*, unsigned int, unsigned int, long);
+typedef int (__fastcall *FnDefault_006A88D0)(void*);
+
+struct Point_006A88D0 {
+    int x;
+    int y;
+};
+
+extern "C" int __fastcall fn_006A88D0(void* self, int edx_unused, unsigned int nFlags, short zDelta, Point_006A88D0 pt) {
+    short d = zDelta;
+    void* s = self;
+    int count = d / 120;
+
+    if (d > 0) {
+        if (count > 0) {
+            FnSendMessageA_006A88D0 sendMsg = *(FnSendMessageA_006A88D0*)&mem_00925694;
+            int n = count;
+            do {
+                sendMsg(*(void**)((char*)s + 0x20), 0x115, 0, 0);
+            } while (--n);
+        }
+    } else if (d < 0) {
+        count = -count;
+        if (count > 0) {
+            FnSendMessageA_006A88D0 sendMsg = *(FnSendMessageA_006A88D0*)&mem_00925694;
+            int n = count;
+            do {
+                sendMsg(*(void**)((char*)s + 0x20), 0x115, 1, 0);
+            } while (--n);
+        }
+    }
+
+    ((FnScreenToClient_006A88D0)mem_0092570C)(*(void**)((char*)s + 0x20), &pt);
+    unsigned int lParam = ((unsigned short)pt.x) | (((unsigned int)(unsigned short)pt.y) << 16);
+    ((FnPostMessageA_006A88D0)mem_00925618)(*(void**)((char*)s + 0x20), 0x200, 0, lParam);
+    return ((FnDefault_006A88D0)ext_006A5EA8)(s);
+}
