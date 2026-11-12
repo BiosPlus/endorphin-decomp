@@ -3118,3 +3118,16 @@ extern "C" __declspec(naked) void __fastcall fn_0059DBA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005946D0] sub_005946D0 (40 bytes)
+extern "C" void ext_004C4880();
+extern "C" void* __fastcall fn_005946D0(char* self, int edx_unused, void* a1, void* a2) {
+    typedef void* (__thiscall *Finder)(void*, void*);
+    typedef void* (__thiscall *Method)(void*, void*);
+    char* sub = *(char**)(self + 0x26c);
+    void* obj = ((Finder)ext_004C4880)(sub + 8, a1);
+    if (obj) {
+        obj = (*(Method**)obj)[10](obj, a2);
+    }
+    return obj;
+}
