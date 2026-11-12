@@ -336,3 +336,91 @@ extern "C" __declspec(naked) void __fastcall fn_005EB890(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x005EB920] NMData::FixedPathJointData::vfunc_63 (184 bytes)
+extern "C" void ext_005C2BE0();
+extern "C" __declspec(naked) void __fastcall fn_005EB920(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        cmp ebp, dword ptr [esi + 0x194]
+        je L_ret
+        mov ecx, dword ptr [esi + 0x22c]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        je L_nocall
+        push edi
+        push ebp
+        call ext_005C2BE0
+    L_nocall:
+        cmp dword ptr [esi + 0x194], ebp
+        mov eax, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        push ebp
+        jge L_ge
+        mov edx, dword ptr [eax + 0x114]
+        jmp L_vcall
+    L_ge:
+        mov edx, dword ptr [eax + 0x110]
+    L_vcall:
+        call edx
+        lea edi, [esi + 0x1d0]
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe L_a
+        call dword ptr [mem_00925134]
+    L_a:
+        push ebx
+        _emit 0x8D
+        _emit 0x49
+        _emit 0x00
+    L_loop:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_b
+        call dword ptr [mem_00925134]
+    L_b:
+        test edi, edi
+        je L_b2
+        cmp edi, edi
+        je L_b3
+    L_b2:
+        call dword ptr [mem_00925134]
+    L_b3:
+        cmp esi, ebx
+        je L_done
+        test edi, edi
+        mov ebx, dword ptr [mem_00925134]
+        jne L_c0
+        call ebx
+    L_c0:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_c1
+        call ebx
+    L_c1:
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xfc]
+        push edx
+        push ebp
+        call eax
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_c2
+        call ebx
+    L_c2:
+        add esi, 0x4
+        jmp L_loop
+    L_done:
+        pop ebx
+        pop edi
+    L_ret:
+        pop esi
+        pop ebp
+        ret 0x8
+    }
+}
