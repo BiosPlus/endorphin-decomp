@@ -3344,3 +3344,22 @@ extern "C" __declspec(naked) void __fastcall fn_00451AF0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00451CE0] sub_00451CE0 (67 bytes)
+struct TargetClass_00451AF0 {
+    void* call_af0(const void* s);
+};
+
+typedef bool (__cdecl *StrNeqFn)(const void*, const char*);
+
+extern "C" void* __stdcall fn_00451CE0(TargetClass_00451AF0* a1, const char* a2) {
+    if (!a2) return 0;
+    void* result = 0;
+    if (a1) {
+        const void* s = a2 + 0x170;
+        if ((*(StrNeqFn*)&mem_00924FC8)(s, (const char*)&mem_00928B5D)) {
+            result = a1->call_af0(s);
+        }
+    }
+    return result;
+}
