@@ -9318,3 +9318,111 @@ extern "C" __declspec(naked) void __fastcall fn_0043D620(void* self) {
         ret 4
     }
 }
+
+// [0x00437E80] sub_00437E80 (241 bytes)
+extern "C" void ext_0046A4D0();
+extern "C" void ext_0046A8E0();
+extern "C" void ext_00474FF0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00437E80(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0Ch
+        mov edx, dword ptr [ebp + 18h]
+        push ebx
+        push esi
+        push edi
+        mov dword ptr [esp + 10h], 0
+        mov eax, dword ptr [esp + 10h]
+        push eax
+        mov eax, dword ptr [ebp + 14h]
+        lea ecx, [esp + 14h]
+        push ecx
+        mov ecx, dword ptr [ebp + 10h]
+        push edx
+        mov edx, dword ptr [ebp + 0Ch]
+        push eax
+        push ecx
+        push edx
+        call ext_0046A4D0
+        mov ebx, dword ptr [esp + 28h]
+        add esp, 18h
+        test ebx, ebx
+        jle L_end_00437E80
+    L_loop_00437E80:
+        mov ecx, dword ptr [ebp + 10h]
+        mov eax, ebx
+        cdq
+        sub eax, edx
+        mov esi, eax
+        mov eax, dword ptr [ebp + 0Ch]
+        sar esi, 1
+        test esi, esi
+        mov dword ptr [esp + 10h], eax
+        mov dword ptr [esp + 14h], ecx
+        mov edi, esi
+        jle L_neg_00437E80
+        nop
+    L_adv_00437E80:
+        lea ecx, [esp + 10h]
+        call ext_00474FF0
+        sub edi, 1
+        test edi, edi
+        jg L_adv_00437E80
+    L_neg_00437E80:
+        test edi, edi
+        jge L_chk_00437E80
+        neg edi
+    L_back_00437E80:
+        lea ecx, [esp + 10h]
+        call ext_0046A8E0
+        sub edi, 1
+        jne L_back_00437E80
+    L_chk_00437E80:
+        cmp dword ptr [esp + 10h], 0
+        jne L_ok1_00437E80
+        call dword ptr [mem_00925134]
+    L_ok1_00437E80:
+        mov edx, dword ptr [esp + 14h]
+        mov eax, dword ptr [esp + 10h]
+        cmp edx, dword ptr [eax + 4]
+        jne L_ok2_00437E80
+        call dword ptr [mem_00925134]
+    L_ok2_00437E80:
+        mov ecx, dword ptr [esp + 14h]
+        mov edx, dword ptr [ecx + 0Ch]
+        mov eax, dword ptr [ebp + 1Ch]
+        cmp edx, dword ptr [eax]
+        jae L_else_00437E80
+        lea ecx, [esp + 10h]
+        call ext_00474FF0
+        mov ecx, dword ptr [esp + 10h]
+        mov edx, dword ptr [esp + 14h]
+        or eax, -1
+        sub eax, esi
+        mov dword ptr [ebp + 0Ch], ecx
+        mov dword ptr [ebp + 10h], edx
+        add ebx, eax
+        jmp L_test_00437E80
+    L_else_00437E80:
+        mov ebx, esi
+    L_test_00437E80:
+        test ebx, ebx
+        jg L_loop_00437E80
+    L_end_00437E80:
+        mov eax, dword ptr [ebp + 08h]
+        mov ecx, dword ptr [ebp + 0Ch]
+        mov edx, dword ptr [ebp + 10h]
+        pop edi
+        pop esi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 4], edx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
