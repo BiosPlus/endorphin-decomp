@@ -49,3 +49,68 @@ extern "C" __declspec(naked) void __fastcall fn_006B3D40(void* self, int edx_unu
         ret 0x1c
     }
 }
+
+// [0x006B4140] GWCDateTimePropertyValue::vfunc_2 (162 bytes)
+extern "C" void ext_006B4090();
+extern "C" int mem_009253BC;
+extern "C" int mem_00924160;
+extern "C" int mem_0092415C;
+extern "C" int mem_009242F0;
+
+extern "C" __declspec(naked) void* __fastcall fn_006B4140(void* self, int edx_unused, void* out) {
+    __asm {
+        sub esp, 0x114
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        cmp eax, 0xc8
+        mov dword ptr [esp + 0x4], 0x0
+        je L_convert
+        cmp eax, 0xd2
+        jne L_format
+L_convert:
+        mov eax, dword ptr [esi + 0x40]
+        cmp dword ptr [eax + 0x8], 0x0
+        jne L_format
+        fld qword ptr [eax]
+        lea ecx, [esp + 0x8]
+        push ecx
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        call dword ptr [mem_009253BC]
+L_format:
+        mov ecx, esi
+        call ext_006B4090
+        test al, al
+        push 0x100
+        je L_date
+        lea edx, [esp + 0x1c]
+        push edx
+        push 0x0
+        lea eax, [esp + 0x14]
+        push eax
+        push 0x0
+        push 0x400
+        call dword ptr [mem_00924160]
+        jmp L_done
+L_date:
+        lea ecx, [esp + 0x1c]
+        push ecx
+        push 0x0
+        lea edx, [esp + 0x14]
+        push edx
+        push 0x1
+        push 0x400
+        call dword ptr [mem_0092415C]
+L_done:
+        mov esi, dword ptr [esp + 0x11c]
+        lea eax, [esp + 0x18]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_009242F0]
+        mov eax, esi
+        pop esi
+        add esp, 0x114
+        ret 0x4
+    }
+}
