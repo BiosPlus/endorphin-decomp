@@ -1401,3 +1401,34 @@ extern "C" __declspec(naked) void __fastcall fn_004FB080(void* self) {
         ret
     }
 }
+
+// [0x004FAD60] VMCSModes::DefaultImplementation::vfunc_13 (66 bytes)
+extern "C" void ext_004667A0();
+extern "C" void ext_00594000();
+extern "C" void ext_00493F60();
+extern "C" int mem_00AEA98C;
+
+extern "C" __declspec(naked) void __fastcall fn_004FAD60(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xf4]
+        call edx
+        mov ecx, dword ptr [esi + 0x4]
+        push 0x2
+        call ext_004667A0
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 0xc]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [edx + 0x34]
+        push eax
+        call edx
+        call ext_00594000
+        pop esi
+        mov dword ptr [esp + 0x4], offset mem_00AEA98C
+        lea ecx, [eax + 0x258]
+        jmp ext_00493F60
+    }
+}
