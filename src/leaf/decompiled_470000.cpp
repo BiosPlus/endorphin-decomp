@@ -2905,3 +2905,12 @@ L_call_00477190:
         ret
     }
 }
+
+// [0x00477B30] sub_00477B30 (63 bytes)
+extern "C" void __cdecl fn_00477B30(unsigned int* first, unsigned int* last, void* comp) {
+    int len = last - first;
+    for (int hole = len / 2; hole > 0; ) {
+        --hole;
+        fn_00477190(first, hole, len, first[hole], comp);
+    }
+}
