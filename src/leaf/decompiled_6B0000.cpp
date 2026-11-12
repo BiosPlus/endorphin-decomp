@@ -4508,3 +4508,105 @@ L_done:
         ret 8
     }
 }
+
+// [0x006B13F0] sub_006B13F0 (282 bytes)
+extern "C" void ext_006B12F0();
+extern "C" void ext_006B1340();
+extern "C" int mem_0092A270;
+extern "C" int mem_00991558;
+extern "C" int mem_0092C518;
+extern "C" __declspec(naked) int __cdecl fn_006B13F0(double a, double b, double c) {
+    __asm {
+        fldz
+        sub esp, 0x18
+        fld qword ptr [esp + 0x24]
+        fucom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x44
+        jp L_141B
+        fstp st(0)
+        fld qword ptr [esp + 0x2c]
+        fld st(0)
+        fxch st(1)
+        fst qword ptr [esp + 0x8]
+        fstp qword ptr [esp + 0x10]
+        jmp L_14BE
+L_141B:
+        fld qword ptr [mem_00993828]
+        fld qword ptr [esp + 0x2c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x41
+        jp L_143C
+        fxch st(1)
+        fadd qword ptr [mem_0092A270]
+        fmul st, st(1)
+        jmp L_1448
+L_143C:
+        fld st(1)
+        fadd st, st(1)
+        fxch st(2)
+        fmul st, st(1)
+        _emit 0xde
+        _emit 0xea
+        fxch st(1)
+L_1448:
+        fst qword ptr [esp + 0x24]
+        sub esp, 0x18
+        fxch st(1)
+        fadd st(0), st
+        fsub st, st(1)
+        fst qword ptr [esp + 0x18]
+        fld qword ptr [esp + 0x34]
+        fadd qword ptr [mem_00991558]
+        fstp qword ptr [esp + 0x10]
+        fxch st(1)
+        fstp qword ptr [esp + 0x8]
+        fstp qword ptr [esp]
+        call ext_006B1340
+        fstp qword ptr [esp + 0x28]
+        fld qword ptr [esp + 0x34]
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [esp + 0x3c]
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [esp + 0x18]
+        fstp qword ptr [esp]
+        call ext_006B1340
+        fstp qword ptr [esp + 0x20]
+        fld qword ptr [esp + 0x34]
+        fsub qword ptr [mem_00991558]
+        fstp qword ptr [esp + 0x10]
+        fld qword ptr [esp + 0x3c]
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [esp + 0x18]
+        fstp qword ptr [esp]
+        call ext_006B1340
+        add esp, 0x18
+L_14BE:
+        fmul qword ptr [mem_0092C518]
+        push ebx
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        call ext_006B12F0
+        fld qword ptr [esp + 0x14]
+        xor ebx, ebx
+        fmul qword ptr [mem_0092C518]
+        mov bh, al
+        fstp qword ptr [esp]
+        call ext_006B12F0
+        fld qword ptr [esp + 0x1c]
+        mov bl, al
+        fmul qword ptr [mem_0092C518]
+        fstp qword ptr [esp]
+        shl ebx, 0x8
+        call ext_006B12F0
+        movzx eax, al
+        add esp, 0x8
+        or eax, ebx
+        pop ebx
+        add esp, 0x18
+        ret
+    }
+}
