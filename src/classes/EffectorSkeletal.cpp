@@ -380,3 +380,103 @@ L_done:
         ret 0x4
     }
 }
+
+// [0x00630F80] EffectorSkeletal::vfunc_21 (306 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00630F80(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        push edi
+        mov edi, ecx
+        push offset mem_00979AF8
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FE4]
+        mov ecx, dword ptr [edi + 0x8]
+        lea eax, [esp + 0x8]
+        push eax
+        push ecx
+        mov ecx, dword ptr [edi + 0xc]
+        mov dword ptr [esp + 0x34], 0
+        call ext_005DFAD0
+        lea ecx, [esp + 0x8]
+        mov esi, eax
+        mov dword ptr [esp + 0x2c], -1
+        call dword ptr [mem_00924FF4]
+        test esi, esi
+        je L_done
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x1c]
+        mov ecx, esi
+        call eax
+        fmul dword ptr [esp + 0x34]
+        mov ecx, esi
+        fstp dword ptr [edi + 0xd0]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x38]
+        call eax
+        fmul dword ptr [esp + 0x34]
+        mov ecx, esi
+        fstp dword ptr [edi + 0xec]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x18]
+        call eax
+        fmul dword ptr [esp + 0x34]
+        mov ecx, esi
+        fstp dword ptr [edi + 0xcc]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x28]
+        call eax
+        fmul dword ptr [esp + 0x34]
+        mov ecx, esi
+        fstp dword ptr [edi + 0xdc]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x2c]
+        call eax
+        fmul dword ptr [esp + 0x34]
+        mov ecx, esi
+        fstp dword ptr [edi + 0xe0]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x34]
+        call eax
+        fmul dword ptr [esp + 0x34]
+        mov ecx, esi
+        fstp dword ptr [edi + 0xe8]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x30]
+        call eax
+        fmul dword ptr [esp + 0x34]
+        mov ecx, esi
+        fstp dword ptr [edi + 0xe4]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        fmul dword ptr [esp + 0x34]
+        mov ecx, esi
+        fstp dword ptr [edi + 0xd8]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x20]
+        call eax
+        fmul dword ptr [esp + 0x34]
+        mov ecx, esi
+        fstp dword ptr [edi + 0xd4]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x3c]
+        call eax
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        call ext_00630CB0
+L_done:
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
