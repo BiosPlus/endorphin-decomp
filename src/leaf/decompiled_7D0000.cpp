@@ -3467,3 +3467,115 @@ dd0_ret1:
         ret
     }
 }
+
+// [0x007D5E50] sub_007D5E50 (253 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007D5E50(void* a, void* b) {
+    __asm {
+        sub esp, 0x8
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [ebp + 0xa8]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        xor eax, eax
+        cmp ecx, dword ptr [edi + 0x8]
+        jl L_end
+        test ecx, ecx
+        push ebx
+        push esi
+        jle L_91
+        mov edx, dword ptr [ebp + 0x7c]
+        mov esi, ecx
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_80:
+        mov ecx, dword ptr [edx]
+        mov ebx, ecx
+        imul ebx, ecx
+        add eax, ebx
+        add edx, 0x4
+        sub esi, 0x1
+        jne L_80
+    L_91:
+        mov ecx, dword ptr [edi + 0x2d0]
+        imul ecx, dword ptr [edi + 0x8]
+        cdq
+        idiv ecx
+        cmp eax, 0x80
+        jge L_af
+        pop esi
+        pop ebx
+        pop edi
+        xor eax, eax
+        pop ebp
+        add esp, 0x8
+        ret
+    L_af:
+        xor edx, edx
+        lea ecx, [edi + 0x1d0]
+        mov dword ptr [ecx], edx
+        mov ebx, dword ptr [ebp + 0xa8]
+        test ebx, ebx
+        mov dword ptr [esp + 0x10], edx
+        jle L_27
+        mov dword ptr [esp + 0x14], ecx
+        jmp L_d0
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_d0:
+        xor ecx, ecx
+        xor edi, edi
+        test eax, eax
+        jle L_f6
+    L_d8:
+        cmp edx, ebx
+        jge L_f6
+        mov esi, dword ptr [ebp + 0x7c]
+        mov esi, dword ptr [esi + 4*edx]
+        mov ebp, esi
+        imul ebp, esi
+        mov edi, ecx
+        add ecx, ebp
+        mov ebp, dword ptr [esp + 0x20]
+        add edx, 0x1
+        cmp ecx, eax
+        jl L_d8
+    L_f6:
+        mov esi, eax
+        sub esi, edi
+        sub ecx, eax
+        cmp esi, ecx
+        jge L_07
+        test edi, edi
+        je L_07
+        sub edx, 0x1
+    L_07:
+        mov ecx, dword ptr [esp + 0x14]
+        add dword ptr [esp + 0x10], 0x1
+        add ecx, 0x4
+        mov dword ptr [ecx], edx
+        mov ebx, dword ptr [ebp + 0xa8]
+        cmp edx, ebx
+        mov dword ptr [esp + 0x14], ecx
+        jl L_d0
+        mov edi, dword ptr [esp + 0x1c]
+    L_27:
+        mov edx, dword ptr [esp + 0x10]
+        pop esi
+        mov dword ptr [edi + 4*edx + 0x1d4], 0xffffffff
+        mov dword ptr [edi + 0x2d4], 0x0
+        mov eax, 0x1
+        pop ebx
+    L_end:
+        pop edi
+        pop ebp
+        add esp, 0x8
+        ret
+    }
+}
