@@ -2111,3 +2111,162 @@ extern "C" void __fastcall fn_004C5FB0(void* self) {
     v[2] = *(float*)&mem_0093F7B8;
     ((void (__thiscall*)(void*, const float*))ext_004C5120)(self, v);
 }
+
+// [0x004C6130] sub_004C6130 (279 bytes)
+extern "C" void ext_005B68F0();
+extern "C" int mem_009453C8;
+extern "C" __declspec(naked) void __cdecl fn_004C6130(void* out, void* vec, int arg) {
+    __asm {
+        sub esp, 0x10
+        fldz
+        push ebx
+        mov ebx, dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 4]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x20]
+        fst dword ptr [esi + 8]
+        push edi
+        fst dword ptr [esi + 4]
+        fstp dword ptr [esi]
+        mov edi, dword ptr [ebx + 4]
+        cmp edi, dword ptr [ebx + 8]
+        jbe l1
+        call dword ptr [mem_00925134]
+        jmp l1
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    l1:
+        mov ebp, dword ptr [ebx + 8]
+        cmp dword ptr [ebx + 4], ebp
+        jbe l2
+        call dword ptr [mem_00925134]
+    l2:
+        cmp edi, ebp
+        _emit 0x0f
+        _emit 0x84
+        _emit 0x8a
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        cmp edi, dword ptr [ebx + 8]
+        mov ebp, dword ptr [mem_00925134]
+        jb l3
+        call ebp
+    l3:
+        mov ecx, dword ptr [edi]
+        call ext_005B68F0
+        fstp dword ptr [esp + 0x24]
+        cmp edi, dword ptr [ebx + 8]
+        jb l4
+        call ebp
+    l4:
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [ecx + 4]
+        mov edx, dword ptr [esp + 0x2c]
+        mov eax, dword ptr [eax + 0x14]
+        add ecx, 4
+        push edx
+        call eax
+        fld dword ptr [eax + 0x30]
+        fld dword ptr [esp + 0x24]
+        add eax, 0x30
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [eax + 4]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [eax + 8]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esi]
+        fadd dword ptr [esp + 0x14]
+        fstp dword ptr [esi]
+        fld dword ptr [esi + 4]
+        fadd dword ptr [esp + 0x18]
+        fstp dword ptr [esi + 4]
+        fld dword ptr [esp + 0x1c]
+        fadd dword ptr [esi + 8]
+        fstp dword ptr [esi + 8]
+        cmp edi, dword ptr [ebx + 8]
+        fadd dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+        jb l5
+        call ebp
+    l5:
+        add edi, 4
+        _emit 0xe9
+        _emit 0x60
+        _emit 0xff
+        _emit 0xff
+        _emit 0xff
+        fld dword ptr [esp + 0x10]
+        fcom qword ptr [mem_009453C8]
+        fnstsw ax
+        test ah, 0x41
+        jne l6
+        fld1
+        pop edi
+        fdivrp st(1), st
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esi]
+        fld dword ptr [esp + 0x20]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esi]
+        fld dword ptr [esi + 4]
+        fmul st, st(1)
+        fstp dword ptr [esi + 4]
+        fmul dword ptr [esi + 8]
+        fstp dword ptr [esi + 8]
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+    l6:
+        pop edi
+        fstp st(0)
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
+
+// [0x004C1740] sub_004C1740 (95 bytes)
+extern "C" void ext_0066AD10();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00AE3040;
+extern "C" int mem_00AE3024;
+extern "C" __declspec(naked) void __fastcall fn_004C1740(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x0088b09e
+        push eax
+        mov eax, 0x1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00AE3040], al
+        jne short L_done_004C1740
+        or dword ptr [mem_00AE3040], eax
+        push 0x00a3a080
+        push offset mem_00AE3024
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_0066AD10
+        push 0x009187d0
+        call ext_006A6C87
+        add esp, 0x0c
+    L_done_004C1740:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00AE3024
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x0c
+        ret
+    }
+}
