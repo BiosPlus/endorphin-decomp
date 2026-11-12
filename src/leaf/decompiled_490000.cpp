@@ -4176,3 +4176,102 @@ extern "C" __declspec(naked) void __fastcall fn_00495250(void* self) {
         ret
     }
 }
+
+// [0x00498A50] sub_00498A50 (229 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_0094B858;
+extern "C" __declspec(naked) int __fastcall fn_00498A50(void* self, int edx_unused, const float* p) {
+    __asm {
+        sub esp, 0x18
+        mov eax, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [eax + 0x4]
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [eax]
+        mov dword ptr [esp + 0x8], ecx
+        fld dword ptr [esp + 0x8]
+        fld st(0)
+        mov ebx, dword ptr [mem_00925134]
+        fld dword ptr [mem_0094B858]
+        mov dword ptr [esp + 0xc], edx
+        fld st(0)
+        push edi
+        fsubp st(2), st
+        xor edi, edi
+        fxch st(1)
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x10]
+        fld st(0)
+        fsub st, st(2)
+        fstp dword ptr [esp + 0x18]
+        fld st(1)
+        faddp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp + 0x1c]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x20]
+    L_loop:
+        mov ecx, dword ptr [esi + 0x88]
+        test ecx, ecx
+        je L_notfound
+        mov eax, dword ptr [esi + 0x8c]
+        sub eax, ecx
+        sar eax, 0x3
+        cmp edi, eax
+        jae L_notfound
+        test ecx, ecx
+        je L_bad
+        mov eax, dword ptr [esi + 0x8c]
+        sub eax, ecx
+        sar eax, 0x3
+        cmp edi, eax
+        jb L_ok
+    L_bad:
+        call ebx
+    L_ok:
+        mov eax, dword ptr [esi + 0x88]
+        fld dword ptr [eax + 8 * edi]
+        lea ecx, [eax + 8 * edi]
+        fld dword ptr [esp + 0x14]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp L_next
+        fld dword ptr [ecx]
+        fld dword ptr [esp + 0x1c]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        jne L_next
+        fld dword ptr [ecx + 0x4]
+        fld dword ptr [esp + 0x18]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp L_next
+        fld dword ptr [ecx + 0x4]
+        fld dword ptr [esp + 0x20]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        je L_found
+    L_next:
+        add edi, 0x1
+        jmp L_loop
+    L_found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x18
+        ret 0x4
+    L_notfound:
+        pop edi
+        pop esi
+        or eax, -0x1
+        pop ebx
+        add esp, 0x18
+        ret 0x4
+    }
+}
