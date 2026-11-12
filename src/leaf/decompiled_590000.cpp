@@ -2904,3 +2904,93 @@ extern "C" __declspec(naked) void __fastcall fn_00598FF0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00596B80] sub_00596B80 (194 bytes)
+extern "C" void ext_00595AF0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __cdecl fn_00596B80(void* a1, void* a2, void* a3, void* a4, void* a5) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 08a0d11h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 10h
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 18h]
+        push edi
+        mov dword ptr [ebp - 10h], esp
+        mov dword ptr [ebp - 14h], esi
+        mov dword ptr [ebp - 4], 0
+        _emit 08bh
+        _emit 0ffh
+    L_loop_00596B80:
+        mov ebx, dword ptr [ebp + 8]
+        test ebx, ebx
+        je L_bad1_00596B80
+        cmp ebx, dword ptr [ebp + 10h]
+        je L_ok1_00596B80
+    L_bad1_00596B80:
+        call dword ptr [mem_00925134]
+    L_ok1_00596B80:
+        mov edi, dword ptr [ebp + 0ch]
+        cmp edi, dword ptr [ebp + 14h]
+        je L_ret_00596B80
+        test ebx, ebx
+        jne L_ok2_00596B80
+        call dword ptr [mem_00925134]
+    L_ok2_00596B80:
+        cmp edi, dword ptr [ebx + 4]
+        jne L_ok3_00596B80
+        call dword ptr [mem_00925134]
+    L_ok3_00596B80:
+        lea eax, [edi + 0ch]
+        mov dword ptr [ebp - 18h], esi
+        mov dword ptr [ebp - 1ch], esi
+        test esi, esi
+        mov byte ptr [ebp - 4], 1
+        je L_skip_00596B80
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+    L_skip_00596B80:
+        add esi, 1ch
+        lea ecx, [ebp + 8]
+        mov byte ptr [ebp - 4], 0
+        mov dword ptr [ebp + 18h], esi
+        call ext_00595AF0
+        jmp L_loop_00596B80
+    L_unwind_00596B80:
+        mov esi, dword ptr [ebp - 14h]
+        mov edi, dword ptr [ebp + 18h]
+        cmp esi, edi
+        je L_throw_00596B80
+    L_dtor_00596B80:
+        mov ecx, esi
+        call dword ptr [mem_00924FF4]
+        add esi, 1ch
+        cmp esi, edi
+        jne L_dtor_00596B80
+    L_throw_00596B80:
+        push 0
+        push 0
+        call ext_006A6DD2
+    L_ret_00596B80:
+        mov ecx, dword ptr [ebp - 0ch]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
