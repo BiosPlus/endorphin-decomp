@@ -209,3 +209,88 @@ extern "C" __declspec(naked) void __fastcall fn_00544490(void* self) {
         ret 0x8
     }
 }
+
+// [0x005443A0] ForceApplicationTool::vfunc_6_off_98 (225 bytes)
+extern "C" void ext_006A6C87();
+extern "C" int mem_00AF2940;
+extern "C" int mem_00AF2900;
+extern "C" int mem_00AF2904;
+extern "C" int mem_00AF2908;
+extern "C" int mem_00AF290C;
+extern "C" int mem_00AF2910;
+extern "C" int mem_00AF2918;
+extern "C" int mem_00AF291C;
+extern "C" int mem_00AF2920;
+extern "C" int mem_00AF2924;
+extern "C" int mem_00AF292C;
+extern "C" int mem_00AF2930;
+extern "C" int mem_00AF2934;
+extern "C" int mem_00AF2938;
+extern "C" int mem_00AF2914;
+extern "C" int mem_00AF2928;
+extern "C" int mem_00AF293C;
+
+extern "C" __declspec(naked) void* __fastcall fn_005443A0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi - 0x10], 0x0
+        je loc_005443C1
+        mov ecx, dword ptr [esi - 0x10]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x2c]
+        call edx
+        test al, al
+        je loc_005443C1
+        lea eax, [esi - 0x94]
+        pop esi
+        ret 0x4
+    loc_005443C1:
+        mov ecx, dword ptr [esi + 0x10]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x38]
+        call edx
+        test al, al
+        je loc_005443D9
+        mov eax, dword ptr [esi + 0x10]
+        add eax, 0x4
+        pop esi
+        ret 0x4
+    loc_005443D9:
+        mov eax, 0x1
+        test byte ptr [mem_00AF2940], al
+        jne loc_0054445D
+        fld1
+        or dword ptr [mem_00AF2940], eax
+        fst dword ptr [mem_00AF2900]
+        push 0x91b000
+        fldz
+        fst dword ptr [mem_00AF2904]
+        fst dword ptr [mem_00AF2908]
+        fst dword ptr [mem_00AF290C]
+        fst dword ptr [mem_00AF2910]
+        fst dword ptr [mem_00AF2918]
+        fst dword ptr [mem_00AF291C]
+        fst dword ptr [mem_00AF2920]
+        fst dword ptr [mem_00AF2924]
+        fst dword ptr [mem_00AF292C]
+        fst dword ptr [mem_00AF2930]
+        fst dword ptr [mem_00AF2934]
+        fstp dword ptr [mem_00AF2938]
+        fst dword ptr [mem_00AF2914]
+        fst dword ptr [mem_00AF2928]
+        fstp dword ptr [mem_00AF293C]
+        call ext_006A6C87
+        add esp, 0x4
+    loc_0054445D:
+        fld dword ptr [esi - 0x64]
+        mov eax, offset mem_00AF2900
+        fstp dword ptr [mem_00AF2930]
+        fld dword ptr [esi - 0x60]
+        fstp dword ptr [mem_00AF2934]
+        fld dword ptr [esi - 0x5c]
+        pop esi
+        fstp dword ptr [mem_00AF2938]
+        ret 0x4
+    }
+}
