@@ -7206,3 +7206,39 @@ L_662062:
         ret 4
     }
 }
+
+// [0x006620A0] sub_006620A0 (56 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_006620A0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        push esi
+        mov esi, dword ptr [ebx + 0x4]
+        cmp dword ptr [esi + 0x68], 0x0
+        je done
+        mov eax, dword ptr [esi + 0x64]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push edi
+        mov edi, dword ptr [eax + 0x4]
+        cmp edi, eax
+        jne L1
+        call ebp
+L1:
+        cmp edi, dword ptr [esi + 0x64]
+        jne L2
+        call ebp
+L2:
+        mov eax, dword ptr [edi + 0x8]
+        push eax
+        mov ecx, ebx
+        call ext_00661F70
+        pop edi
+        pop ebp
+done:
+        pop esi
+        pop ebx
+        ret
+    }
+}
