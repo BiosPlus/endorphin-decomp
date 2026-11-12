@@ -3027,3 +3027,93 @@ extern "C" __declspec(naked) void __fastcall fn_00521B00(void* self) {
         ret
     }
 }
+
+// [0x00528D80] sub_00528D80 (264 bytes)
+extern "C" void ext_00403560();
+extern "C" void ext_00404F00();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FD8;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00924ED0;
+
+extern "C" __declspec(naked) void __fastcall fn_00528D80(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x893f92
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x64
+        push esi
+        mov esi, dword ptr [esp + 0x78]
+        movzx eax, word ptr [esi + 0xe]
+        cmp eax, 0x8
+        je L_8e6f
+        cmp eax, 0x18
+        je L_8e53
+        cmp eax, 0x20
+        je L_8e3c
+        push 0x9534e4
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FE4]
+        movzx eax, word ptr [esi + 0xe]
+        push eax
+        lea eax, [esp + 0x24]
+        push eax
+        mov dword ptr [esp + 0x78], 0x0
+        call ext_00404F00
+        add esp, 0x8
+        push eax
+        lea ecx, [esp + 0x8]
+        mov byte ptr [esp + 0x74], 0x1
+        call dword ptr [mem_00924FD8]
+        lea ecx, [esp + 0x20]
+        mov byte ptr [esp + 0x70], 0x0
+        call dword ptr [mem_00924FF4]
+        push 0x9534d4
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924ED0]
+        lea ecx, [esp + 0x4]
+        push ecx
+        lea ecx, [esp + 0x40]
+        call ext_00403560
+        push 0x9f2dd4
+        lea edx, [esp + 0x40]
+        push edx
+        mov dword ptr [esp + 0x44], 0x9534cc
+        mov dword ptr [esp + 0x6c], esi
+        call ext_006A6DD2
+
+    L_8e3c:
+        mov eax, dword ptr [esi + 0x4]
+        add eax, eax
+        add eax, eax
+        pop esi
+        mov ecx, dword ptr [esp + 0x64]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x70
+        ret
+
+    L_8e53:
+        mov esi, dword ptr [esi + 0x4]
+        add esi, 0x1
+        lea eax, [esi + 2*esi]
+        and eax, -0x4
+        pop esi
+        mov ecx, dword ptr [esp + 0x64]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x70
+        ret
+
+    L_8e6f:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esp + 0x68]
+        add eax, 0x3
+        and eax, -0x4
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x70
+        ret
+    }
+}
