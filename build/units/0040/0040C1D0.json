@@ -33,5 +33,7 @@
     "0x0040C2CE",
     "0x0040C2DD"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-12T13:56:04Z"
 }
