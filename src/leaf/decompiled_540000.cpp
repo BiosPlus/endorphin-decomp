@@ -3111,3 +3111,23 @@ extern "C" void __fastcall fn_00547C20(TargetClass_547C20* self) {
     mem_009254EC(0xde1, 0, 0x1908, 0x100, 0x100, 0, 0x1908, 0x1401, pixels);
     self->m_flag_ac = 0;
 }
+
+// [0x00543BC0] sub_00543BC0 (52 bytes)
+extern "C" void ext_005417E0();
+extern "C" __declspec(naked) int __fastcall fn_00543BC0(void* self, int edx_unused, short a1) {
+    __asm {
+        movsx eax, word ptr [esp + 4]
+        add eax, eax
+        mov dword ptr [esp + 4], eax
+        push ecx
+        fild dword ptr [esp + 8]
+        fmul dword ptr [ecx + 0xc0]
+        mov ecx, dword ptr [ecx + 0x84]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 8]
+        fstp dword ptr [esp]
+        call ext_005417E0
+        mov eax, 1
+        ret 4
+    }
+}
