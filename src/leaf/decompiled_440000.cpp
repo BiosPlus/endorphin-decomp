@@ -6099,3 +6099,33 @@ skip_call:
         ret 0xc
     }
 }
+
+// [0x0044C160] sub_0044C160 (43 bytes)
+extern "C" void ext_0044C0F0();
+extern "C" void ext_0044C130();
+extern "C" __declspec(naked) void __fastcall fn_0044C160(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0Ch]
+        push ebp
+        mov ebp, dword ptr [esp + 0Ch]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 1Ch]
+        push edi
+        push ebx
+        push ebp
+        mov esi, ecx
+        call ext_0044C0F0
+        push edi
+        push ebx
+        push ebp
+        mov ecx, esi
+        call ext_0044C130
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0Ch
+    }
+}
