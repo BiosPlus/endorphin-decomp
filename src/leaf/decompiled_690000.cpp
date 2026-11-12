@@ -3777,3 +3777,105 @@ extern "C" __declspec(naked) void __fastcall fn_0069C220(void* self, int edx_unu
         ret 0x3c
     }
 }
+
+// [0x00696980] sub_00696980 (267 bytes)
+extern "C" int mem_0092500C;
+extern "C" int mem_00924FF4;
+extern "C" void ext_006968D0();
+
+extern "C" __declspec(naked) bool __cdecl fn_00696980(void* in, void* token) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push ebx
+        push ebp
+        push esi
+        push edi
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FE8]
+        mov ebx, dword ptr [esp + 0x40]
+        mov ebp, dword ptr [mem_00924FB0]
+        lea eax, [esp + 0x10]
+        push ebx
+        push eax
+        mov dword ptr [esp + 0x3c], 0
+        call ebp
+        add esp, 8
+        test al, al
+        je L696980_exit_false_empty
+        mov esi, dword ptr [esp + 0x3c]
+        mov edi, dword ptr [mem_009250EC]
+    L696980_loop:
+        lea ecx, [esp + 0x10]
+        push ecx
+        push esi
+        call edi
+        mov edx, dword ptr [eax]
+        mov ecx, dword ptr [edx + 4]
+        add esp, 8
+        add ecx, eax
+        call dword ptr [mem_009250C0]
+        test al, al
+        lea ecx, [esp + 0x10]
+        jne L696980_exit_false
+        push 0
+        call dword ptr [mem_0092500C]
+        cmp byte ptr [eax], 0x23
+        jne L696980_next
+        push esi
+        call ext_006968D0
+        add esp, 4
+        test al, al
+        je L696980_exit_false_c
+    L696980_next:
+        lea eax, [esp + 0x10]
+        push ebx
+        push eax
+        call ebp
+        add esp, 8
+        test al, al
+        jne L696980_loop
+    L696980_exit_false_empty:
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x34], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret
+    L696980_exit_false:
+        mov dword ptr [esp + 0x34], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret
+    L696980_exit_false_c:
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x34], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x2c]
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret
+    }
+}
