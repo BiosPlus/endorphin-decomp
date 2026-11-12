@@ -4770,3 +4770,24 @@ extern "C" __declspec(naked) void* __fastcall fn_0049B340(void* self) {
         ret
     }
 }
+
+// [0x0049D190] sub_0049D190 (33 bytes)
+extern "C" void ext_0049B340();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_0049D190(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov dword ptr [esp + 4], 0
+        call ext_0049B340
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
