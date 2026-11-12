@@ -8444,3 +8444,79 @@ extern "C" __declspec(naked) void __fastcall fn_0043D4B0(void* self) {
         ret
     }
 }
+
+// [0x0043E490] sub_0043E490 (185 bytes)
+// Deque range copy wrapper: validates the source/dest deque iterators, calls sub_0043D4B0 with
+// two by-value iterator temporaries, writes the dest-end iterator into arg1 and returns arg1.
+extern "C" void ext_0043D4B0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0043E490(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x28]
+        push edi
+        mov edi, dword ptr [esp + 0x34]
+        sub esi, eax
+        test edi, edi
+        jne L_e490_ok1
+        call dword ptr [mem_00925134]
+    L_e490_ok1:
+        mov eax, dword ptr [edi + 0xc]
+        mov ebx, dword ptr [esp + 0x38]
+        mov ecx, dword ptr [edi + 0x10]
+        lea ebp, [ebx + esi]
+        add ecx, eax
+        cmp ebp, ecx
+        ja L_e490_bad2
+        cmp ebp, eax
+        jae L_e490_ok2
+    L_e490_bad2:
+        call dword ptr [mem_00925134]
+    L_e490_ok2:
+        mov esi, dword ptr [esp + 0x14]
+        mov byte ptr [esp + 0x14], 0
+        mov edx, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x2c]
+        mov byte ptr [esp + 0x34], 0
+        mov eax, dword ptr [esp + 0x34]
+        push eax
+        push ecx
+        mov ecx, dword ptr [esp + 0x38]
+        sub esp, 0xc
+        mov eax, esp
+        mov dword ptr [eax], 0
+        mov dword ptr [eax + 4], edi
+        mov dword ptr [eax + 8], ebx
+        sub esp, 0xc
+        mov eax, esp
+        mov dword ptr [eax + 4], edx
+        mov edx, dword ptr [esp + 0x40]
+        mov dword ptr [eax + 8], ecx
+        mov ecx, dword ptr [esp + 0x44]
+        mov dword ptr [eax], 0
+        sub esp, 0xc
+        mov eax, esp
+        mov dword ptr [eax + 4], edx
+        lea edx, [esp + 0x54]
+        push edx
+        mov dword ptr [esi], 0
+        mov dword ptr [esi + 4], edi
+        mov dword ptr [esi + 8], ebp
+        mov dword ptr [eax], 0
+        mov dword ptr [eax + 8], ecx
+        call ext_0043D4B0
+        add esp, 0x34
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
