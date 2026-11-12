@@ -4598,3 +4598,61 @@ extern "C" __declspec(naked) void __fastcall fn_00675110(void* self) {
         ret
     }
 }
+
+// [0x00675240] sub_00675240 (98 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00675240(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+    f675240_top:
+        test esi, esi
+        je f675240_call1
+        cmp esi, dword ptr [esp + 0x1c]
+        je f675240_after1
+    f675240_call1:
+        call ebp
+    f675240_after1:
+        cmp ebx, dword ptr [esp + 0x20]
+        je f675240_ret
+        test esi, esi
+        mov edi, ebx
+        jne f675240_a
+        call ebp
+    f675240_a:
+        cmp ebx, dword ptr [esi + 0x8]
+        jb f675240_b
+        call ebp
+    f675240_b:
+        add ebx, 0x4
+        test esi, esi
+        jne f675240_c
+        call ebp
+    f675240_c:
+        cmp edi, dword ptr [esi + 0x8]
+        jb f675240_d
+        call ebp
+    f675240_d:
+        mov edi, dword ptr [edi]
+        test edi, edi
+        je f675240_top
+        mov ecx, edi
+        call ext_00675110
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+        jmp f675240_top
+    f675240_ret:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
