@@ -4814,3 +4814,42 @@ extern "C" __declspec(naked) void __fastcall fn_0040C6F0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0040D790] sub_0040D790 (111 bytes)
+extern "C" void ext_0040BC40();
+extern "C" void ext_0040C6F0();
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_0040D790(void* self) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        lea eax, [esp+4]
+        push eax
+        mov esi, ecx
+        call ext_0040C6F0
+        push eax
+        lea ecx, [esi+0x340]
+        mov dword ptr [esp+0x2c], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp+4]
+        mov dword ptr [esp+0x28], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, esi
+        call ext_0040BC40
+        mov edx, [esi]
+        mov eax, [edx+0x168]
+        mov ecx, esi
+        call eax
+        mov ecx, [esp+0x20]
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x28
+        ret
+    }
+}
