@@ -4443,3 +4443,108 @@ extern "C" __declspec(naked) void __cdecl fn_007C69B0(void* a0, float a1, float 
         ret
     }
 }
+
+// [0x007CD690] sub_007CD690 (235 bytes)
+// Register-argument helper: esi = src float[3], edi/ebx = out float[3] each. Uses ecx as scratch via [esp].
+extern "C" __declspec(naked) void __fastcall fn_007CD690(void* self) {
+    __asm {
+        push ecx
+        fld dword ptr [esi]
+        fabs
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fld dword ptr [esi + 0x4]
+        fabs
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fcompp
+        fnstsw ax
+        fld dword ptr [esi + 0x8]
+        test ah, 0x5
+        jp short yb_007CD690
+        fld dword ptr [esi]
+        __asm _emit 0xdc
+        __asm _emit 0xc8
+        fld st(1)
+        fmulp st(2), st
+        faddp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        call ext_006A7250
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fld1
+        fdivrp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [esi + 0x8]
+        fld dword ptr [esp]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [edi]
+        fldz
+        fstp dword ptr [edi + 0x4]
+        fld dword ptr [esi]
+        fchs
+        fmulp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fst dword ptr [edi + 0x8]
+        fmul dword ptr [esi + 0x4]
+        fstp dword ptr [ebx]
+        fld dword ptr [esi + 0x8]
+        fmul dword ptr [edi]
+        fld dword ptr [edi + 0x8]
+        fmul dword ptr [esi]
+        fsubp st(1), st
+        fstp dword ptr [ebx + 0x4]
+        fld dword ptr [esi + 0x4]
+        fchs
+        fmul dword ptr [edi]
+        fstp dword ptr [ebx + 0x8]
+        pop ecx
+        ret
+yb_007CD690:
+        fld dword ptr [esi + 0x4]
+        __asm _emit 0xdc
+        __asm _emit 0xc8
+        fld st(1)
+        fmulp st(2), st
+        faddp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        call ext_006A7250
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fld1
+        fdivrp st(1), st
+        fstp dword ptr [esp]
+        fldz
+        fstp dword ptr [edi]
+        fld dword ptr [esi + 0x8]
+        fchs
+        fld dword ptr [esp]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [edi + 0x4]
+        fmul dword ptr [esi + 0x4]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fst dword ptr [edi + 0x8]
+        fmul dword ptr [esi + 0x4]
+        fld dword ptr [esi + 0x8]
+        fmul dword ptr [edi + 0x4]
+        fsubp st(1), st
+        fstp dword ptr [ebx]
+        fld dword ptr [esi]
+        fchs
+        fmul dword ptr [edi + 0x8]
+        fstp dword ptr [ebx + 0x4]
+        fld dword ptr [esi]
+        fmul dword ptr [edi + 0x4]
+        fstp dword ptr [ebx + 0x8]
+        pop ecx
+        ret
+    }
+}
