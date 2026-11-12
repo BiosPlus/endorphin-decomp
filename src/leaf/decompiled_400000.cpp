@@ -4017,3 +4017,88 @@ extern "C" __declspec(naked) void* __fastcall fn_0040B300(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x00401860] sub_00401860 (191 bytes)
+// Loads a library, resolves six procs into [self+0x00..0x14], flags [self+0x18]; frees on failure. Returns self.
+extern "C" int mem_009241D4;
+extern "C" int mem_009241D8;
+extern "C" int mem_009241DC;
+
+extern "C" __declspec(naked) void* __fastcall fn_00401860(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push 0x928e38
+        mov esi, ecx
+        call dword ptr [mem_009241D4]
+        xor ebx, ebx
+        cmp eax, ebx
+        mov dword ptr [esi + 0x1c], eax
+        je L_4018FD
+        push edi
+        mov edi, dword ptr [mem_009241D8]
+        push 0x928e2c
+        push eax
+        call edi
+        mov dword ptr [esi], eax
+        mov eax, dword ptr [esi + 0x1c]
+        push 0x928e20
+        push eax
+        call edi
+        mov ecx, dword ptr [esi + 0x1c]
+        push 0x928e14
+        push ecx
+        mov dword ptr [esi + 0x4], eax
+        call edi
+        mov edx, dword ptr [esi + 0x1c]
+        push 0x928e08
+        push edx
+        mov dword ptr [esi + 0x8], eax
+        call edi
+        mov dword ptr [esi + 0xc], eax
+        mov eax, dword ptr [esi + 0x1c]
+        push 0x928dfc
+        push eax
+        call edi
+        mov ecx, dword ptr [esi + 0x1c]
+        push 0x928df0
+        push ecx
+        mov dword ptr [esi + 0x10], eax
+        call edi
+        cmp dword ptr [esi], ebx
+        mov dword ptr [esi + 0x14], eax
+        pop edi
+        je L_4018F0
+        cmp dword ptr [esi + 0x4], ebx
+        je L_4018F0
+        cmp dword ptr [esi + 0x8], ebx
+        je L_4018F0
+        cmp dword ptr [esi + 0xc], ebx
+        je L_4018F0
+        cmp dword ptr [esi + 0x10], ebx
+        je L_4018F0
+        cmp eax, ebx
+        jne L_4018FD
+L_4018F0:
+        mov edx, dword ptr [esi + 0x1c]
+        push edx
+        call dword ptr [mem_009241DC]
+        mov dword ptr [esi + 0x1c], ebx
+L_4018FD:
+        cmp dword ptr [esi + 0x1c], ebx
+        mov byte ptr [esi + 0x18], 0x1
+        mov eax, esi
+        jne L_40191C
+        mov dword ptr [esi], ebx
+        mov dword ptr [esi + 0x4], ebx
+        mov dword ptr [esi + 0x8], ebx
+        mov dword ptr [esi + 0xc], ebx
+        mov dword ptr [esi + 0x10], ebx
+        mov dword ptr [esi + 0x14], ebx
+        mov byte ptr [esi + 0x18], bl
+L_40191C:
+        pop esi
+        pop ebx
+        ret
+    }
+}
