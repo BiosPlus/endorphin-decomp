@@ -500,3 +500,67 @@ done:
         ret 0x4
     }
 }
+
+// [0x005C87C0] NMData::CollisionModelData::vfunc_63 (160 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_00648530();
+extern "C" void ext_006486B0();
+
+extern "C" __declspec(naked) void __fastcall fn_005C87C0(void* self) {
+    __asm {
+        push -1
+        push 8A7A5Bh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebp
+        push esi
+        push edi
+        push 60h
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0Ch], eax
+        test eax, eax
+        mov dword ptr [esp + 18h], 0
+        je zero_ebp_5C87C0
+        mov ecx, eax
+        call ext_006486B0
+        mov ebp, eax
+        jmp after_ebp_5C87C0
+    zero_ebp_5C87C0:
+        xor ebp, ebp
+    after_ebp_5C87C0:
+        mov edi, dword ptr [esi + 16Ch]
+        cmp ebp, edi
+        mov dword ptr [esp + 18h], 0FFFFFFFFh
+        je skip_old_5C87C0
+        test edi, edi
+        je skip_old_5C87C0
+        mov ecx, edi
+        call ext_00648790
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+    skip_old_5C87C0:
+        mov eax, dword ptr [esp + 28h]
+        mov ecx, dword ptr [esp + 24h]
+        mov edx, dword ptr [esp + 20h]
+        push eax
+        push ecx
+        push edx
+        push esi
+        mov ecx, ebp
+        mov dword ptr [esi + 16Ch], ebp
+        call ext_00648530
+        mov ecx, dword ptr [esp + 10h]
+        pop edi
+        mov byte ptr [esi + 168h], 0
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret 0Ch
+    }
+}
