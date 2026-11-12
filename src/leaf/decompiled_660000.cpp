@@ -4183,3 +4183,24 @@ extern "C" __declspec(naked) std::string* __cdecl fn_00664910(std::string* out, 
         ret
     }
 }
+
+// [0x00664C30] sub_00664C30 (33 bytes)
+extern "C" void ext_00664910();
+
+extern "C" __declspec(naked) void* __fastcall fn_00664C30(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0Ch]
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        push eax
+        push esi
+        mov dword ptr [esp + 0Ch], 0
+        call ext_00664910
+        add esp, 8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
