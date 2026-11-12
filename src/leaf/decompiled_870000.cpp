@@ -797,3 +797,37 @@ L_done:
         jmp dword ptr [mem_00924E28]
     }
 }
+
+// [0x00870A50] sub_00870A50 (117 bytes)
+extern "C" void ext_00401D20();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00870A50(void* self) {
+    __asm {
+        push -1
+        push 0x008a2518
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x0095b204
+        mov dword ptr [esi + 0x4], 0x0095b1bc
+        mov dword ptr [esi + 0x8], 0x0095b17c
+        mov dword ptr [esi + 0xc], 0x0095b12c
+        mov dword ptr [esi + 0x150], 0x0095b114
+        lea ecx, [esi + 0x154]
+        mov dword ptr [esp + 0x10], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_00401D20
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
