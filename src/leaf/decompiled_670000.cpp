@@ -5418,3 +5418,25 @@ L_0067_457E:
         ret 0x4
     }
 }
+
+// [0x0067EFD0] sub_0067EFD0 (104 bytes)
+extern "C" unsigned int mem_00B5A094;
+extern "C" unsigned int mem_00B5A0A4;
+extern "C" float __cdecl ext_0067EE80(unsigned int a, unsigned int b, unsigned int c);
+
+extern "C" float* __cdecl fn_0067EFD0(float* out, unsigned int key) {
+    out[2] = 0.0f;
+    out[1] = 0.0f;
+    out[0] = 0.0f;
+    if (key == 0xB53A34u || key == 0xB53B30u || key == 0xB53AB0u ||
+        key == 0xB53A70u || key == 0xB53AF0u) {
+        return out;
+    }
+    for (int esi = 0; esi < 0xC; esi += 4) {
+        unsigned int a = *(unsigned int*)((char*)&mem_00B5A094 + esi);
+        unsigned int b = *(unsigned int*)((char*)&mem_00B5A0A4 + esi);
+        float r = ext_0067EE80(key, b, a);
+        *(float*)((char*)out + esi) = r;
+    }
+    return out;
+}

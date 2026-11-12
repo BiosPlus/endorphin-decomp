@@ -19,5 +19,7 @@
     "0x0067F018",
     "0x0067F020"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T11:59:53Z"
 }
