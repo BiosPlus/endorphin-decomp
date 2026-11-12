@@ -26,5 +26,7 @@
     "0x0067EDE4",
     "0x0067EDF3"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T11:38:15Z"
 }
