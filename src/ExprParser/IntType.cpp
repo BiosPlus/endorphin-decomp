@@ -86,3 +86,32 @@ extern "C" __declspec(naked) void __fastcall fn_0066AE60(void* self) {
         ret 0x8
     }
 }
+
+// [0x0066EE20] ExprParser::IntType::vfunc_50 (65 bytes)
+extern "C" void ext_004769F0();
+extern "C" __declspec(naked) void __fastcall fn_0066EE20(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x8]
+        call eax
+        mov dword ptr [esp + 0x8], eax
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x8]
+        call eax
+        push 0x98b7c0
+        lea ecx, [esp + 0xc]
+        push ecx
+        lea edx, [esp + 0xc]
+        push edx
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x10], eax
+        call ext_004769F0
+        ret 0x10
+    }
+}

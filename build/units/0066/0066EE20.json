@@ -13,5 +13,7 @@
     "0x0066EE43",
     "0x0066EE5A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T10:57:48Z"
 }
