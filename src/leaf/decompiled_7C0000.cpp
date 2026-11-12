@@ -3844,3 +3844,29 @@ extern "C" void __cdecl fn_007C6880(void* a0, float a1, float a2, float a3, floa
     s[9] += t[1];
     s[10] += t[2];
 }
+
+// [0x007CCDF0] sub_007CCDF0 (77 bytes)
+extern "C" void __cdecl ext_007DFDE0(int a0, int a1);
+extern "C" void __cdecl ext_007DFB60(int a0);
+
+extern "C" void __cdecl fn_007CCDF0(void* a0) {
+    unsigned char* p = (unsigned char*)a0;
+    ext_007DFDE0(*(int*)(p + 0x18), *(int*)(p + 0x20));
+    ext_007DFB60(*(int*)(p + 0x1c));
+    {
+        void** t = *(void***)(p + 0x20);
+        ((void (__cdecl*)(int))t[3])(*(int*)(p + 0x0c));
+    }
+    {
+        void** t = *(void***)(p + 0x20);
+        ((void (__cdecl*)(int))t[3])(*(int*)(p + 0x10));
+    }
+    {
+        void** t = *(void***)(p + 0x20);
+        ((void (__cdecl*)(int))t[3])(*(int*)(p + 0x08));
+    }
+    {
+        void** t = *(void***)(p + 0x20);
+        ((void (__cdecl*)(void*))t[3])(a0);
+    }
+}
