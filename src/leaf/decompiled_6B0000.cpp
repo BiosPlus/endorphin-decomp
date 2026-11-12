@@ -2346,3 +2346,64 @@ extern "C" __declspec(naked) void __fastcall fn_006B7280(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006B86E0] sub_006B86E0 (173 bytes)
+extern "C" void ext_006A5F38();
+extern "C" void ext_006B85F0();
+extern "C" int mem_0092561C;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_006B86E0(void* self) {
+    __asm {
+        push -0x1
+        push 0x8b7da0
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x8], esi
+        mov dword ptr [esi], 0x992e1c
+        lea edi, [esi + 0x5c]
+        test edi, edi
+        mov dword ptr [esp + 0x14], 0x4
+        jne L_nonnull
+        xor eax, eax
+        jmp L_have_hwnd
+    L_nonnull:
+        mov eax, dword ptr [edi + 0x20]
+    L_have_hwnd:
+        push eax
+        call dword ptr [mem_0092561C] // USER32!IsWindow
+        test eax, eax
+        je L_skip_close
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x68]
+        mov ecx, edi
+        call edx
+    L_skip_close:
+        lea ecx, [esi + 0xf4]
+        mov byte ptr [esp + 0x14], 0x3
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 0xd8]
+        mov byte ptr [esp + 0x14], 0x2
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 0xbc]
+        mov byte ptr [esp + 0x14], 0x1
+        call dword ptr [mem_00924FF4]
+        mov ecx, edi
+        mov byte ptr [esp + 0x14], 0x0
+        call ext_006B85F0
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_006A5F38
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
