@@ -5665,3 +5665,91 @@ extern "C" __declspec(naked) void __cdecl fn_00672AD0(void* first, void* last) {
         ret
     }
 }
+
+// [0x00679C80] sub_00679C80 (250 bytes)
+extern "C" void ext_0066A720();
+extern "C" void ext_0066A760();
+extern "C" void ext_00698810();
+extern "C" void ext_008B3308();
+extern "C" int mem_00B59F08;
+extern "C" int mem_00924000;
+extern "C" int mem_00924004;
+extern "C" int mem_00924008;
+extern "C" char mem_0098C4C4[];
+extern "C" char mem_0098C4B0[];
+extern "C" char mem_0098C4A0[];
+extern "C" char mem_0098C490[];
+
+extern "C" __declspec(naked) int __fastcall fn_00679C80(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push offset ext_008B3308
+        push eax
+        mov dword ptr fs:[0x0], esp
+        mov eax, dword ptr [mem_00B59F08]
+        sub esp, 0x1c
+        test eax, eax
+        jne done
+        push 0x100
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x4], eax
+        call ext_0066A720
+        lea eax, [esp]
+        push eax
+        push 1
+        push 0
+        push offset mem_0098C4C4
+        push 0x80000002
+        mov dword ptr [esp + 0x38], 0
+        call dword ptr [mem_00924000]
+        test eax, eax
+        jne after
+        mov ecx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0xc]
+        lea edx, [esp + 0x4]
+        push edx
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        mov dword ptr [esp + 0xc], ecx
+        lea ecx, [esp + 0x10]
+        push ecx
+        push 0
+        push offset mem_0098C4B0
+        push edx
+        mov dword ptr [esp + 0x20], 1
+        call dword ptr [mem_00924004]
+        test eax, eax
+        jne close
+        push offset mem_0098C4A0
+        lea ecx, [esp + 0x10]
+        call ext_00698810
+        test eax, eax
+        jne second
+        mov dword ptr [mem_00B59F08], 1
+        jmp close
+second:
+        push offset mem_0098C490
+        lea ecx, [esp + 0x10]
+        call ext_00698810
+        neg eax
+        sbb eax, eax
+        and eax, -2
+        add eax, 2
+        mov dword ptr [mem_00B59F08], eax
+close:
+        mov eax, dword ptr [esp]
+        push eax
+        call dword ptr [mem_00924008]
+after:
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x24], -1
+        call ext_0066A760
+        mov eax, dword ptr [mem_00B59F08]
+done:
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret
+    }
+}
