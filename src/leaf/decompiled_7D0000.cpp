@@ -3351,3 +3351,119 @@ fn7db8e0_epilogue:
         ret
     }
 }
+
+// [0x007DCDD0] sub_007DCDD0 (247 bytes)
+extern "C" void ext_007DCAC0();
+extern "C" int mem_00AB28C8;
+
+extern "C" __declspec(naked) int __cdecl fn_007DCDD0(void* a1, void* a2, void* a3) {
+    __asm {
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        push esi
+        mov esi, dword ptr [eax + 0x20]
+        push edi
+        mov edi, dword ptr [ecx + 0x20]
+        mov eax, edi
+        sub eax, esi
+        shr eax, 0x1f
+        sub eax, 0x1
+        mov edx, eax
+        not edx
+        mov ecx, edx
+        and edx, esi
+        mov ebx, eax
+        and ebx, esi
+        and ecx, edi
+        and eax, edi
+        mov edi, dword ptr [esp + 0x10]
+        or eax, edx
+        or ecx, ebx
+        shl ecx, 0x10
+        or ecx, eax
+        mov eax, dword ptr [edi + 0x28]
+        mov edx, ecx
+        sar edx, 0x10
+        mov esi, ecx
+        and esi, 0xffff
+        xor edx, esi
+        mov esi, dword ptr [eax + 0x8]
+        sub esi, 0x1
+        and edx, esi
+        mov esi, dword ptr [eax]
+        mov esi, dword ptr [esi + 4*edx]
+        test esi, esi
+        je dd0_ret1
+        nop
+dd0_chain:
+        cmp dword ptr [esi + 0x8], ecx
+        je dd0_found
+        mov esi, dword ptr [esi + 0x10]
+        test esi, esi
+        jne dd0_chain
+dd0_not_found:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret
+dd0_found:
+        mov edx, dword ptr [esi + 0xc]
+        mov edx, dword ptr [edx + 0x8]
+        cmp edx, 0x1
+        je dd0_state1
+        cmp edx, 0x2
+        je dd0_state2
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+dd0_state2:
+        cmp edx, 0x1
+        jne dd0_insert
+dd0_state1:
+        mov edx, ecx
+        call ext_007DCAC0
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x4], ecx
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [esi]
+        mov dword ptr [edx], eax
+        add dword ptr [edi + 0x3c], -0x1
+        mov ecx, dword ptr [esi + 0xc]
+        mov edx, dword ptr [edi + 0x2c]
+        push ecx
+        push edx
+        call dword ptr [mem_00AB28C8]
+        mov eax, dword ptr [edi + 0x30]
+        push esi
+        push eax
+        call dword ptr [mem_00AB28C8]
+        add esp, 0x10
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret
+dd0_insert:
+        mov ecx, dword ptr [edi + 0x14]
+        lea eax, [edi + 0x14]
+        mov dword ptr [esi], ecx
+        mov dword ptr [esi + 0x4], eax
+        mov edx, ecx
+        mov dword ptr [edx + 0x4], esi
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax], esi
+        mov ecx, dword ptr [esi + 0xc]
+        mov dword ptr [ecx + 0x8], 0x3
+dd0_ret1:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret
+    }
+}
