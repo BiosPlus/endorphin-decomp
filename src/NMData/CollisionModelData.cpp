@@ -428,3 +428,75 @@ done:
         ret 0x4
     }
 }
+
+// [0x005C3B40] NMData::CollisionModelData::vfunc_38 (181 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005C3B40(void* self, int edx_unused, const float* a1) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x15c], 0
+        je done
+        fldz
+        mov eax, dword ptr [esi + 0xc]
+        mov edx, dword ptr [eax + 0x18]
+        fst dword ptr [esp + 0x10]
+        push edi
+        fst dword ptr [esp + 0x10]
+        lea edi, [esi + 0xc]
+        fst dword ptr [esp + 0xc]
+        lea ecx, [esp + 0x8]
+        fstp dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, edi
+        call edx
+        mov eax, dword ptr [esi + 0x15c]
+        mov eax, dword ptr [eax + 0x8]
+        cmp eax, 0x5
+        jne chk4
+        mov ecx, dword ptr [esp + 0x1c]
+        fld dword ptr [ecx]
+        fmul dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0xc]
+        jmp after_scale
+chk4:
+        cmp eax, 0x4
+        jne chk2
+        mov edx, dword ptr [esp + 0x1c]
+        fld dword ptr [edx]
+        fmul dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0xc]
+        jmp after_scale
+chk2:
+        cmp eax, 0x2
+        jne after_scale
+        mov eax, dword ptr [esp + 0x1c]
+        fld dword ptr [eax]
+        fmul dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+after_scale:
+        mov edx, dword ptr [edi]
+        mov edx, dword ptr [edx + 0x14]
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, edi
+        call edx
+        cmp dword ptr [esi + 0x10], 0
+        je cleanup
+        mov eax, dword ptr [esi + 0x10]
+        mov edi, dword ptr [eax]
+        mov ecx, dword ptr [esi + 0x15c]
+        add edi, 0x34
+        call ext_005B11F0
+        mov ecx, dword ptr [esi + 0x10]
+        mov edx, dword ptr [edi]
+        push eax
+        call edx
+cleanup:
+        pop edi
+done:
+        pop esi
+        add esp, 0x10
+        ret 0x4
+    }
+}
