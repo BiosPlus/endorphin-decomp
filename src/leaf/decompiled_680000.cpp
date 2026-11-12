@@ -3435,3 +3435,27 @@ done:
         ret 0x4
     }
 }
+
+// [0x0068BEA0] sub_0068BEA0 (47 bytes)
+extern "C" void ext_00508680();
+extern "C" int mem_0093BD38;
+extern "C" int mem_0098E428;
+extern "C" __declspec(naked) float __fastcall fn_0068BEA0(void* self, int edx_unused, float a1) {
+    __asm {
+        push ecx
+        add ecx, 0x10
+        call ext_00508680
+        test eax, eax
+        mov dword ptr [esp], eax
+        fild dword ptr [esp]
+        jge done
+        fadd qword ptr [mem_0093BD38]
+    done:
+        fmul qword ptr [mem_0098E428]
+        fmul dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        pop ecx
+        ret 0x4
+    }
+}
