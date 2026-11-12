@@ -3399,3 +3399,143 @@ extern "C" __declspec(naked) void __fastcall fn_00421E00(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00425EE0] sub_00425EE0 (305 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) int __fastcall fn_00425EE0(void* self, int edx_unused, int a1, void* begin, void* end, int a3, void* key) {
+    __asm {
+        push -1
+        push 0x878918
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebp, dword ptr [esp + 0x28]
+        mov edi, dword ptr [esp + 0x2c]
+        mov esi, dword ptr [mem_00925134]
+        xor eax, eax
+        cmp ebp, edi
+        mov dword ptr [esp + 0x1c], eax
+        mov dword ptr [esp + 0x10], eax
+        jbe chk1
+        call esi
+    chk1:
+        mov ebx, ebp
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    loop_top:
+        cmp ebp, edi
+        jbe chk2
+        call esi
+    chk2:
+        cmp ebx, edi
+        je not_found
+        add dword ptr [esp + 0x10], 1
+        cmp ebx, edi
+        jb chk3
+        call esi
+    chk3:
+        mov ecx, dword ptr [esp + 0x34]
+        call dword ptr [mem_00924FF0]
+        mov ecx, ebx
+        mov esi, eax
+        call dword ptr [mem_00924FF0]
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    cmp_loop:
+        mov cl, byte ptr [eax]
+        cmp cl, byte ptr [esi]
+        jne cmp_diff
+        test cl, cl
+        je cmp_eq
+        mov cl, byte ptr [eax + 1]
+        cmp cl, byte ptr [esi + 1]
+        jne cmp_diff
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne cmp_loop
+    cmp_eq:
+        xor eax, eax
+        jmp cmp_done
+    cmp_diff:
+        sbb eax, eax
+        sbb eax, -1
+    cmp_done:
+        test eax, eax
+        je found
+        cmp ebx, edi
+        jb skip_call2
+        call dword ptr [mem_00925134]
+    skip_call2:
+        mov esi, dword ptr [mem_00925134]
+        add ebx, 0x1c
+        jmp loop_top
+    found:
+        test ebp, ebp
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        je found_ret
+        cmp ebp, edi
+        mov esi, ebp
+        je found_del
+    found_dtor:
+        mov ecx, esi
+        call dword ptr [mem_00924FF4]
+        add esi, 0x1c
+        cmp esi, edi
+        jne found_dtor
+    found_del:
+        push ebp
+        call ext_006A5C5C
+        add esp, 4
+    found_ret:
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    not_found:
+        test ebp, ebp
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        je nf_ret
+        cmp ebp, edi
+        mov esi, ebp
+        je nf_del
+    nf_dtor:
+        mov ecx, esi
+        call dword ptr [mem_00924FF4]
+        add esi, 0x1c
+        cmp esi, edi
+        jne nf_dtor
+    nf_del:
+        push ebp
+        call ext_006A5C5C
+        add esp, 4
+    nf_ret:
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 1
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
