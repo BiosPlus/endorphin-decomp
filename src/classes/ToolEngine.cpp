@@ -401,3 +401,80 @@ extern "C" __declspec(naked) void __fastcall fn_00480F60(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004810B0] ToolEngine::vfunc_22 (162 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004810B0(void* self, int edx_unused, int a1, int a2, float a3) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x10], esi
+        call ext_00594000
+        lea ecx, [eax + 0xfc]
+        call ext_0065D120
+        mov eax, dword ptr [esi + 0x10]
+        mov edx, dword ptr [eax + 0x10]
+        lea ecx, [esi + 0x10]
+        call edx
+        mov esi, eax
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_004810E6
+        call dword ptr [mem_00925134]
+    L_004810E6:
+        mov ebp, dword ptr [esp + 0x1c]
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_004810F0:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_004810FE
+        call dword ptr [mem_00925134]
+    L_004810FE:
+        cmp edi, ebx
+        je L_00481137
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_0048110D
+        call dword ptr [mem_00925134]
+    L_0048110D:
+        mov eax, dword ptr [edi]
+        fld dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x18]
+        lea ecx, [eax + 0xc]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xc]
+        push ecx
+        fstp dword ptr [esp]
+        push ebp
+        push edx
+        call eax
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_00481132
+        call dword ptr [mem_00925134]
+    L_00481132:
+        add edi, 0x4
+        jmp L_004810F0
+    L_00481137:
+        mov eax, dword ptr [esp + 0x10]
+        cmp dword ptr [eax + 0x4], 0x0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        je L_0048114E
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+    L_0048114E:
+        pop ecx
+        ret 0xc
+    }
+}
