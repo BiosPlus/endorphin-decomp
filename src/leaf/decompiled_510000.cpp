@@ -3560,3 +3560,99 @@ extern "C" __declspec(naked) void __fastcall fn_0051F6A0(void* self) {
         ret
     }
 }
+
+extern "C" int mem_00925134;
+extern "C" void ext_00665870();
+extern "C" void ext_00666120();
+
+// [0x00517530] sub_00517530 (194 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00517530(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x0c
+        push ebx
+        mov ebx, dword ptr [ecx + 0x18]
+        cmp dword ptr [ecx + 0x14], ebx
+        push ebp
+        push esi
+        push edi
+        lea edi, [ecx + 0x10]
+        mov dword ptr [esp + 0x10], ecx
+        jbe L_517530_a
+        call dword ptr [mem_00925134]
+    L_517530_a:
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe L_517530_b
+        call dword ptr [mem_00925134]
+    L_517530_b:
+        cmp esi, ebx
+        mov ebp, dword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x18], esi
+        je L_517530_c
+    L_517530_d:
+        cmp dword ptr [esi], ebp
+        je L_517530_c
+        add esi, 0x4
+        cmp esi, ebx
+        jne L_517530_d
+    L_517530_c:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_517530_e
+        call dword ptr [mem_00925134]
+    L_517530_e:
+        test edi, edi
+        je L_517530_f
+        cmp edi, edi
+        je L_517530_g
+    L_517530_f:
+        call dword ptr [mem_00925134]
+    L_517530_g:
+        cmp esi, ebx
+        je L_517530_h
+        test edi, edi
+        jne L_517530_i
+        call dword ptr [mem_00925134]
+    L_517530_i:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_517530_j
+        call dword ptr [mem_00925134]
+    L_517530_j:
+        test ebp, ebp
+        mov eax, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi], eax
+        mov dword ptr [eax + 0x30], ecx
+        je L_517530_k
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx]
+        push 0x1
+        mov ecx, ebp
+        call eax
+    L_517530_k:
+        call ext_00665870
+        mov ecx, eax
+        call ext_00666120
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x0c
+        ret 0x8
+    L_517530_h:
+        mov ecx, dword ptr [esp + 0x24]
+        test ecx, ecx
+        je L_517530_l
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        push 0x1
+        call eax
+    L_517530_l:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x0c
+        ret 0x8
+    }
+}
