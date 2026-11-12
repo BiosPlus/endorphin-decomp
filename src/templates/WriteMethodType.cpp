@@ -10612,3 +10612,25 @@ extern "C" __declspec(naked) void __fastcall fn_005F4B70(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0066CBC0] ExprParser::WriteMethodType<NM::Vector3, NM::Vector3 const &, &public: void __thiscall NM::Vector3::getOrthonormalVector(class NM::Vector3 const &)>::vfunc_41 (34 bytes)
+extern "C" void ext_0067C060();
+
+extern "C" __declspec(naked) void __fastcall fn_0066CBC0(void* self, void* edx_unused, void** a1, void** a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_0067C060
+        pop esi
+        ret 0x8
+    }
+}
