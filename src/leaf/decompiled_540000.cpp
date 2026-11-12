@@ -3502,3 +3502,92 @@ extern "C" __declspec(naked) void* __fastcall fn_00546FA0(void* self, int edx_un
         ret 8
     }
 }
+
+// [0x00540C30] sub_00540C30 (193 bytes)
+extern "C" int mem_00A44BC0;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00A44BCC;
+extern "C" int mem_00A44BC4;
+extern "C" int mem_00A44BD0;
+extern "C" int mem_0093F7B8;
+extern "C" int mem_00955A30;
+extern "C" int mem_009254CC;
+
+extern "C" __declspec(naked) void __fastcall fn_00540C30(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xfc]
+        mov ecx, eax
+        shl ecx, 0x4
+        sub ecx, eax
+        mov ecx, dword ptr [esi + ecx*4 + 0x8]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x20]
+        call eax
+        test al, al
+        je near done_esi
+        mov eax, dword ptr [esi + 0xfc]
+        mov ecx, eax
+        shl ecx, 0x4
+        sub ecx, eax
+        mov ecx, dword ptr [esi + ecx*4 + 0x8]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x1c]
+        push edi
+        call eax
+        mov ecx, dword ptr [mem_00A44BC0]
+        mov edi, dword ptr [mem_00924FC0]
+        mov esi, eax
+        push ecx
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short match_z
+        mov edx, dword ptr [mem_00A44BCC]
+        push edx
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short match_z
+        mov eax, dword ptr [mem_00A44BC4]
+        push eax
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short match_x
+        mov ecx, dword ptr [mem_00A44BD0]
+        push ecx
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je short done
+    match_x:
+        fldz
+        sub esp, 0x10
+        fst dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x8]
+        fld1
+        jmp short common
+    match_z:
+        fld dword ptr [mem_0093F7B8]
+        sub esp, 0x10
+        fstp dword ptr [esp + 0xc]
+        fldz
+        fst dword ptr [esp + 0x8]
+    common:
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [mem_00955A30]
+        fstp dword ptr [esp]
+        call dword ptr [mem_009254CC]
+    done:
+        pop edi
+    done_esi:
+        pop esi
+        ret
+    }
+}
