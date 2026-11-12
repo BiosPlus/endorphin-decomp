@@ -2155,3 +2155,88 @@ extern "C" __declspec(naked) int __cdecl fn_007F65D0(void* a1, float a2, void* a
         ret
     }
 }
+
+// [0x007F0720] sub_007F0720 (219 bytes)
+extern "C" int mem_00AA7E40;
+extern "C" int mem_00A25398;
+extern "C" void ext_006A743B();
+
+extern "C" __declspec(naked) int __fastcall fn_007F0720(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -0x2
+        push offset mem_00A25398
+        push offset ext_006A743B
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        sub esp, 0x1c
+        push ebx
+        push esi
+        push edi
+        mov eax, dword ptr [mem_00AA7E40]
+        xor dword ptr [ebp - 0x8], eax
+        xor eax, ebp
+        push eax
+        lea eax, [ebp - 0x10]
+        mov dword ptr fs:[0x0], eax
+        mov dword ptr [ebp - 0x18], esp
+        xor eax, eax
+        mov dword ptr [ebp - 0x20], eax
+        mov dword ptr [ebp - 0x1c], eax
+        mov dword ptr [ebp - 0x2c], eax
+        mov dword ptr [ebp - 0x28], eax
+        mov dword ptr [ebp - 0x24], eax
+        mov dword ptr [ebp - 0x4], eax
+        xor eax, eax
+        cpuid
+        mov dword ptr [ebp - 0x2c], ebx
+        mov dword ptr [ebp - 0x28], edx
+        mov dword ptr [ebp - 0x24], ecx
+        mov eax, 0x1
+        cpuid
+        mov dword ptr [ebp - 0x1c], eax
+        mov dword ptr [ebp - 0x20], edx
+        mov dword ptr [ebp - 0x4], 0xfffffffe
+        mov eax, dword ptr [ebp - 0x1c]
+        mov ecx, eax
+        and ecx, 0xf00
+        cmp ecx, 0xf00
+        je L_check_vendor
+        test eax, 0xf00000
+        je L_fail
+    L_check_vendor:
+        cmp dword ptr [ebp - 0x2c], 0x756e6547
+        jne L_fail
+        cmp dword ptr [ebp - 0x28], 0x49656e69
+        jne L_fail
+        cmp dword ptr [ebp - 0x24], 0x6c65746e
+        jne L_fail
+        mov eax, dword ptr [ebp - 0x20]
+        and eax, 0x10000000
+        mov ecx, dword ptr [ebp - 0x10]
+        mov dword ptr fs:[0x0], ecx
+        pop ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+        mov eax, 0x1
+        ret
+        mov esp, dword ptr [ebp - 0x18]
+        mov dword ptr [ebp - 0x4], 0xfffffffe
+    L_fail:
+        xor eax, eax
+        mov ecx, dword ptr [ebp - 0x10]
+        mov dword ptr fs:[0x0], ecx
+        pop ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
