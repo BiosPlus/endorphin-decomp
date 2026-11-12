@@ -5203,3 +5203,79 @@ extern "C" __declspec(naked) void* __fastcall fn_006667E0(void* self, int edx_un
         ret 0x18
     }
 }
+
+// [0x006647A0] sub_006647A0 (157 bytes)
+// std::string-returning double formatter: snprintf("%.6f"), strip trailing zeros
+// after the '.', then construct the hidden-return std::string from the buffer.
+extern "C" int mem_009251E0;
+extern "C" int mem_009252DC;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FE8;
+static const char kFmt_006647A0[] = "%.6f";
+extern "C" __declspec(naked) void __cdecl fn_006647A0(void) {
+    __asm {
+        sub esp, 0x38
+        fld qword ptr [esp + 0x40]
+        push esi
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        push offset kFmt_006647A0
+        lea eax, [esp + 0x14]
+        push 0x32
+        push eax
+        mov dword ptr [esp + 0x18], 0x0
+        call dword ptr [mem_009251E0]
+        add esp, 0x14
+        test eax, eax
+        jge fmt_ok
+        mov esi, dword ptr [esp + 0x40]
+        mov ecx, esi
+        call dword ptr [mem_00924FE8]
+        mov eax, esi
+        pop esi
+        add esp, 0x38
+        ret
+    fmt_ok:
+        lea ecx, [esp + 0x8]
+        push 0x2e
+        push ecx
+        call dword ptr [mem_009252DC]
+        lea ecx, [esp + 0x10]
+        add esp, 0x8
+        lea esi, [ecx + 0x1]
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    len_loop:
+        mov dl, byte ptr [ecx]
+        add ecx, 0x1
+        test dl, dl
+        jne len_loop
+        sub ecx, esi
+        lea ecx, [esp + ecx + 0x7]
+        add eax, 0x1
+        cmp ecx, eax
+        jbe done
+    strip_loop:
+        cmp byte ptr [ecx], 0x30
+        jne done
+        mov byte ptr [ecx], 0x0
+        sub ecx, 0x1
+        cmp ecx, eax
+        ja strip_loop
+    done:
+        mov esi, dword ptr [esp + 0x40]
+        lea edx, [esp + 0x8]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        add esp, 0x38
+        ret
+    }
+}
