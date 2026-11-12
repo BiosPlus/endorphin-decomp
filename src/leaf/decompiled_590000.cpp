@@ -2994,3 +2994,14 @@ extern "C" __declspec(naked) void __cdecl fn_00596B80(void* a1, void* a2, void* 
         ret
     }
 }
+
+// [0x00599F30] sub_00599F30 (31 bytes)
+extern "C" void ext_00598FF0();
+extern "C" int __fastcall fn_00599F30(void* self, int edx_unused, int a1) {
+    typedef int* (__thiscall *Callee)(void*, int*);
+    int* p = ((Callee)ext_00598FF0)((char*)self + 0x2cc, &a1);
+    if (!p) {
+        return -1;
+    }
+    return *p;
+}
