@@ -3437,3 +3437,19 @@ extern "C" __declspec(naked) void* __fastcall fn_0048F870(void* self, int edx_un
         ret 0x14
     }
 }
+
+// [0x00489950] sub_00489950 (177 bytes)
+extern "C" void ext_004890D0(std::string* a, std::string* b, std::string* c);
+
+extern "C" void __cdecl fn_00489950(std::string* first, std::string* mid, std::string* last) {
+    int count = last - first;
+    if (count > 40) {
+        int step = (count + 1) / 8;
+        ext_004890D0(first, first + step, first + step + step);
+        ext_004890D0(mid - step, mid, mid + step);
+        ext_004890D0(last - step - step, last - step, last);
+        ext_004890D0(first + step, mid, last - step);
+    } else {
+        ext_004890D0(first, mid, last);
+    }
+}
