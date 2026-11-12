@@ -2746,3 +2746,99 @@ extern "C" __declspec(naked) void __fastcall fn_00630740(void* self) {
         ret
     }
 }
+
+// [0x0063DF00] sub_0063DF00 (206 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_0092F678;
+extern "C" __declspec(naked) void __fastcall fn_0063DF00(void* self) {
+    __asm {
+        push ecx
+        fldz
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        fst dword ptr [esi + 0x40]
+        push edi
+        fst dword ptr [esi + 0x3c]
+        lea edi, [esi + 0x28]
+        fstp dword ptr [esi + 0x38]
+        mov ebx, dword ptr [edi + 0x4]
+    L_loop:
+        cmp ebx, dword ptr [edi + 0x8]
+        jbe L_c1
+        call dword ptr [mem_00925134]
+    L_c1:
+        mov ebp, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebp
+        jbe L_c2
+        call dword ptr [mem_00925134]
+    L_c2:
+        cmp edi, edi
+        je L_c3
+        call dword ptr [mem_00925134]
+    L_c3:
+        cmp ebx, ebp
+        je L_done
+        cmp ebx, dword ptr [edi + 0x8]
+        jb L_c4
+        call dword ptr [mem_00925134]
+    L_c4:
+        mov ecx, dword ptr [ebx]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x38]
+        call edx
+        fld dword ptr [eax]
+        fadd dword ptr [esi + 0x38]
+        fstp dword ptr [esi + 0x38]
+        fld dword ptr [eax + 0x4]
+        fadd dword ptr [esi + 0x3c]
+        fstp dword ptr [esi + 0x3c]
+        fld dword ptr [eax + 0x8]
+        fadd dword ptr [esi + 0x40]
+        fstp dword ptr [esi + 0x40]
+        cmp ebx, dword ptr [edi + 0x8]
+        jb L_c5
+        call dword ptr [mem_00925134]
+    L_c5:
+        add ebx, 0x4
+        jmp L_c1
+    L_done:
+        mov eax, dword ptr [edi + 0x4]
+        test eax, eax
+        jne L_nz
+        xor edi, edi
+        jmp L_cnt
+    L_nz:
+        mov edi, dword ptr [edi + 0x8]
+        sub edi, eax
+        sar edi, 0x2
+    L_cnt:
+        test edi, edi
+        mov dword ptr [esp + 0x10], edi
+        fild dword ptr [esp + 0x10]
+        jge L_pos
+        fadd dword ptr [mem_0092F678]
+    L_pos:
+        fld1
+        pop edi
+        fdivrp st(1), st
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esi + 0x38]
+        fld dword ptr [esp + 0xc]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esi + 0x38]
+        fld st(0)
+        fmul dword ptr [esi + 0x3c]
+        fstp dword ptr [esi + 0x3c]
+        fmul dword ptr [esi + 0x40]
+        fstp dword ptr [esi + 0x40]
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
