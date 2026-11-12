@@ -4873,3 +4873,10 @@ extern "C" __declspec(naked) void __cdecl fn_007DC8F0(void) {
         ret
     }
 }
+
+// [0x007DAE10] sub_007DAE10 (51 bytes)
+extern "C" void ext_007C8890();
+extern "C" void __cdecl fn_007DAE10(int a1) {
+    typedef void (__cdecl *FnT)(int, int, int, int, int, int, int, int, int);
+    ((FnT)ext_007C8890)(a1, 0, 0x9868f4, 0x7ca820, 0x528530, 0x528530, 0x7dad70, 0x7dada0, 0x7dadd0);
+}
