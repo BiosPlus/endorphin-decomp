@@ -4260,3 +4260,66 @@ skip_virt_call:
         ret
     }
 }
+
+extern "C" void ext_00419940();
+extern "C" void ext_004199B0();
+extern "C" void ext_006A5F4A();
+extern "C" void ext_006A5F50();
+extern "C" int mem_009242FC;
+extern "C" int mem_00924494;
+extern "C" int mem_00924300;
+extern "C" int mem_009242F4;
+
+// [0x00463340] sub_00463340 (184 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00463340(void* self) {
+    __asm {
+        push -1
+        __asm _emit 0x68 __asm _emit 0x4A __asm _emit 0x0C __asm _emit 0x88 __asm _emit 0x00 // push 0x880c4a
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, fs:[0]
+        push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov fs:[0], esp
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        lea ecx, [esp + 0x4]
+        call dword ptr [mem_009242FC]
+        lea eax, [esp + 0x4]
+        __asm _emit 0x81 __asm _emit 0xC6 __asm _emit 0xC8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // add esi, 0x1c8
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x20], 0x0
+        call ext_006A5F4A
+        lea ecx, [esp + 0x4]
+        push ecx
+        lea ecx, [esp + 0x10]
+        call ext_00419940
+        push 0x929f50
+        lea ecx, [esp + 0x10]
+        mov byte ptr [esp + 0x20], 0x1
+        call ext_004199B0
+        test al, al
+        je done
+        lea edx, [esp + 0xc]
+        push edx
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924494]
+        lea ecx, [esp + 0x8]
+        mov byte ptr [esp + 0x1c], 0x2
+        call dword ptr [mem_00924300]
+        push eax
+        mov ecx, esi
+        call ext_006A5F50
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_009242F4]
+done:
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_009242F4]
+        lea ecx, [esp + 0x4]
+        call dword ptr [mem_009242F4]
+        mov ecx, dword ptr [esp + 0x14]
+        pop esi
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov fs:[0], ecx
+        add esp, 0x1c
+        ret
+    }
+}
