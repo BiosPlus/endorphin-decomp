@@ -4075,3 +4075,75 @@ extern "C" __declspec(naked) float* __fastcall fn_00499370(void* self, int edx_u
         ret 0x4
     }
 }
+
+// [0x00491A90] sub_00491A90 (201 bytes)
+extern "C" void ext_00451670();
+
+extern "C" __declspec(naked) void __fastcall fn_00491A90(void* self) {
+    __asm {
+        push -1
+        push 0x885877
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, ecx
+        lea eax, [esi + 0x4]
+        lea ebx, [esi + 0x10]
+        push edi
+        mov dword ptr [esp + 0x14], esi
+        mov dword ptr [esi], 0x93e950
+        mov dword ptr [eax], 0x93e948
+        mov dword ptr [esi + 0x8], 0x93e940
+        mov dword ptr [esi + 0xc], 0x93e938
+        mov dword ptr [ebx], 0x93e904
+        mov dword ptr [esp + 0x10], eax
+        lea eax, [esp + 0x10]
+        xor edi, edi
+        push eax
+        mov ecx, 0xa34418
+        mov dword ptr [esp + 0x24], edi
+        call ext_00451670
+        mov eax, dword ptr [esi + 0x2c]
+        cmp eax, edi
+        je skip_a
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+skip_a:
+        mov dword ptr [esi + 0x2c], edi
+        mov dword ptr [esi + 0x30], edi
+        mov dword ptr [esi + 0x34], edi
+        mov eax, dword ptr [esi + 0x1c]
+        add esi, 0x18
+        cmp eax, edi
+        je skip_b
+        mov edx, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esi + 0x8]
+        push edx
+        push esi
+        push ecx
+        push eax
+        call ext_00491730
+        mov eax, dword ptr [esi + 0x4]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x14
+skip_b:
+        mov ecx, ebx
+        mov dword ptr [esi + 0x4], edi
+        mov dword ptr [esi + 0x8], edi
+        mov dword ptr [esi + 0xc], edi
+        mov dword ptr [esp + 0x20], 0xffffffff
+        call ext_0065F440
+        mov ecx, dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x18
+        ret
+    }
+}
