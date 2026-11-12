@@ -6972,3 +6972,53 @@ extern "C" __declspec(naked) unsigned int* __fastcall fn_0043E360(void* self, in
         ret 0xc
     }
 }
+
+// [0x00436760] sub_00436760 (148 bytes)
+extern "C" void ext_00401050();
+extern "C" void ext_00401690();
+extern "C" void ext_00436070();
+extern "C" void ext_00465B30();
+extern "C" void ext_00465B40();
+extern "C" void ext_006A5E00();
+extern "C" void ext_006A5E72();
+extern "C" void ext_00401730();
+extern "C" int mem_009256F8;
+
+extern "C" void __fastcall fn_00436760(void* self) {
+    if (!*(void**)((char*)self + 0x144))
+        return;
+
+    typedef void (*Fn_436070)();
+    typedef void* (*Fn_465B40)();
+    typedef void* (*Fn_465B30)();
+    typedef void (__thiscall *Fn_Vtable)(void*);
+    typedef void (__thiscall *Fn_401050)(void*, int, int, int, int);
+    typedef void (__thiscall *Fn_401690)(void*);
+    typedef void (__thiscall *Fn_ShowWindow)(void*, int);
+    typedef void* (__stdcall *Fn_SetActiveWindow)(void*);
+    typedef void* (__stdcall *Fn_6A5E00)(void*);
+    typedef void (__thiscall *Fn_401730)(void*);
+
+    ((Fn_436070)ext_00436070)();
+    void* obj = ((Fn_465B40)ext_00465B40)();
+    void** vt = *(void***)obj;
+    ((Fn_Vtable)vt[0xd4 / 4])(obj);
+
+    int edi = *(int*)((char*)self + 0x120);
+    int ebx = *(int*)((char*)self + 0x114);
+    int ebp = *(int*)((char*)self + 0x108);
+
+    void* a = ((Fn_465B30)ext_00465B30)();
+    char* ecx_val = *(char**)((char*)a + 0x14);
+    int edx_val = *(int*)(ecx_val + 0x30);
+
+    ((Fn_401050)ext_00401050)(*(void**)((char*)self + 0x144), edx_val, ebp, ebx, edi);
+    ((Fn_401690)ext_00401690)(*(void**)((char*)self + 0x144));
+    ((Fn_ShowWindow)ext_006A5E72)(*(void**)((char*)self + 0x144), 5);
+
+    void* t = *(void**)((char*)self + 0x144);
+    void* hwnd = *(void**)((char*)t + 0x20);
+    void* oldHwnd = ((Fn_SetActiveWindow)mem_009256F8)(hwnd);
+    ((Fn_6A5E00)ext_006A5E00)(oldHwnd);
+    ((Fn_401730)ext_00401730)(*(void**)((char*)self + 0x144));
+}
