@@ -320,3 +320,71 @@ extern "C" __declspec(naked) void __fastcall fn_0049E0D0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0049AFD0] NMData::State::vfunc_26_off_8 (188 bytes)
+extern "C" void ext_0049ACB0();
+extern "C" int mem_0094B858;
+
+extern "C" __declspec(naked) void __fastcall fn_0049AFD0(void* self, int edx_unused, const float* p, int unused) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xe8]
+        mov ecx, dword ptr [esi + 0xec]
+        mov ebx, dword ptr [esi + 0xe4]
+        mov dword ptr [esp + 0x10], eax
+        mov eax, dword ptr [esp + 0x1c]
+        fld dword ptr [eax]
+        push edi
+        mov edi, dword ptr [esi + 0xe0]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [eax + 0x4]
+        mov dword ptr [esp + 0x18], ecx
+        fstp dword ptr [esp + 0x18]
+        mov dword ptr [esp + 0xc], edi
+        fld dword ptr [esp + 0x14]
+        mov dword ptr [esp + 0x10], ebx
+        fsub dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x20]
+        fld dword ptr [mem_0094B858]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x41
+        je fail_fpu
+        fld dword ptr [esp + 0x18]
+        fsub dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x20]
+        fcompp
+        fnstsw ax
+        test ah, 0x5
+        jnp fail_clean
+        lea ecx, [esp + 0xc]
+        call ext_0049ACB0
+        test al, al
+        je fail_clean
+        mov edx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [esi + 0xe0], edi
+        mov dword ptr [esi + 0xe4], ebx
+        mov dword ptr [esi + 0xe8], edx
+        pop edi
+        mov dword ptr [esi + 0xec], eax
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret 0x8
+    fail_fpu:
+        fstp st(0)
+    fail_clean:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x10
+        ret 0x8
+    }
+}
