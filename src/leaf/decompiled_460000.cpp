@@ -4412,3 +4412,69 @@ L_end_00469500:
         ret
     }
 }
+
+extern "C" void ext_004658C0();
+extern "C" void ext_00465B40();
+extern "C" void ext_006679D0();
+
+// [0x004651F0] sub_004651F0 (148 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004651F0(void* self) {
+    __asm {
+        cmp byte ptr [mem_00AD6C6C], 0
+        je f4651_true
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x84]
+        call eax
+        test al, al
+        je f4651_skip1
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x8C]
+        call eax
+    f4651_skip1:
+        push esi
+        call ext_004658C0
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x60]
+        call eax
+        mov esi, eax
+        call ext_004658C0
+        mov ecx, dword ptr [eax + 0x54]
+        call ext_006679D0
+        test esi, esi
+        pop esi
+        jne f4651_go
+        test al, al
+        je f4651_true
+    f4651_go:
+        push 0
+        push 3
+        push 0x9399C8
+        call ext_006A5E60
+        sub eax, 2
+        je f4651_zero
+        sub eax, 4
+        je f4651_case4
+        sub eax, 1
+        je f4651_true
+    f4651_zero:
+        xor al, al
+        ret
+    f4651_case4:
+        call ext_004658C0
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0xA4]
+        call eax
+        test eax, eax
+        setne al
+        ret
+    f4651_true:
+        mov al, 1
+        ret
+    }
+}
