@@ -3809,3 +3809,108 @@ extern "C" __declspec(naked) void __fastcall fn_0048A810(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00609850();
+
+// [0x00481A60] sub_00481A60 (235 bytes)
+// cdecl(first, last): insertion sort over pointer array, key = (+0x98 asc, +0x9c desc), rotate via ext_00609850
+extern "C" __declspec(naked) void __cdecl fn_00481A60(void* first, void* last) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, eax
+        je L_ret_edi
+        push esi
+        lea esi, [edi + 0x4]
+        cmp esi, eax
+        je L_ret_esi
+        push ebx
+        push ebp
+        lea ebp, [esi + 0x4]
+        mov dword ptr [esp + 0x10], ebp
+        jmp L_outer
+        __asm _emit 0x8d __asm _emit 0xa4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea esp, [esp]
+    L_outer:
+        mov eax, dword ptr [edi]
+        mov ebx, dword ptr [esi]
+        mov ecx, dword ptr [ebx + 0x98]
+        mov edx, dword ptr [eax + 0x98]
+        cmp ecx, edx
+        jne L_c1
+        mov ecx, dword ptr [ebx + 0x9c]
+        cmp ecx, dword ptr [eax + 0x9c]
+        setg al
+        jmp L_c2
+    L_c1:
+        setl al
+    L_c2:
+        test al, al
+        je L_scan
+        cmp edi, esi
+        je L_next
+        cmp esi, ebp
+        je L_next
+        push 0x0
+        push 0x0
+        push ebp
+        push esi
+        push edi
+        call ext_00609850
+        add esp, 0x14
+        jmp L_next
+    L_scan:
+        mov edi, dword ptr [ebx + 0x98]
+        mov ebp, esi
+        mov edx, esi
+        nop
+    L_scanloop:
+        mov eax, dword ptr [edx - 0x4]
+        mov ecx, dword ptr [eax + 0x98]
+        sub edx, 0x4
+        cmp edi, ecx
+        jne L_s1
+        mov ecx, dword ptr [ebx + 0x9c]
+        cmp ecx, dword ptr [eax + 0x9c]
+        setg al
+        jmp L_s2
+    L_s1:
+        setl al
+    L_s2:
+        test al, al
+        je L_scanend
+        mov ebp, edx
+        jmp L_scanloop
+    L_scanend:
+        cmp ebp, esi
+        je L_post
+        cmp esi, dword ptr [esp + 0x10]
+        je L_post
+        mov edx, dword ptr [esp + 0x10]
+        push 0x0
+        push 0x0
+        push edx
+        push esi
+        push ebp
+        call ext_00609850
+        add esp, 0x14
+    L_post:
+        mov edi, dword ptr [esp + 0x18]
+    L_next:
+        mov ebp, dword ptr [esp + 0x10]
+        add esi, 0x4
+        add ebp, 0x4
+        cmp esi, dword ptr [esp + 0x1c]
+        mov dword ptr [esp + 0x10], ebp
+        jne L_outer
+        pop ebp
+        pop ebx
+    L_ret_esi:
+        pop esi
+    L_ret_edi:
+        pop edi
+        pop ecx
+        ret
+    }
+}
