@@ -3175,3 +3175,103 @@ skip_call_0059D740:
         ret 4
     }
 }
+
+// [0x00598D10] sub_00598D10 (241 bytes)
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) int __fastcall fn_00598D10(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 18h
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx+238h]
+        push edi
+        mov edi, dword ptr [esi+4]
+        cmp edi, dword ptr [esi+8]
+        mov dword ptr [esp+10h], 0
+        mov dword ptr [esp+14h], esi
+        jbe L598D3F
+        call ebp
+L598D3F:
+        mov dword ptr [esp+24h], edi
+L598D43:
+        mov ebx, dword ptr [esi+8]
+        cmp dword ptr [esi+4], ebx
+        jbe L598D4D
+        call ebp
+L598D4D:
+        cmp esi, esi
+        je L598D53
+        call ebp
+L598D53:
+        cmp edi, ebx
+        je L598DF5
+L598D5B:
+        cmp edi, dword ptr [esi+8]
+        jb L598D62
+        call ebp
+L598D62:
+        mov esi, dword ptr [edi]
+        mov eax, dword ptr [esi+59Ch]
+        mov eax, dword ptr [eax]
+        add esi, 598h
+        mov edi, esi
+        mov ebx, eax
+        mov dword ptr [esp+18h], edi
+        mov dword ptr [esp+1Ch], ebx
+        mov edi, edi
+L598D80:
+        test edi, edi
+        mov ebp, dword ptr [esi+4]
+        je L598D8B
+        cmp edi, esi
+        je L598D91
+L598D8B:
+        call dword ptr [mem_00925134]
+L598D91:
+        cmp ebx, ebp
+        je L598DCA
+        test edi, edi
+        jne L598D9F
+        call dword ptr [mem_00925134]
+L598D9F:
+        cmp ebx, dword ptr [edi+4]
+        jne L598DAA
+        call dword ptr [mem_00925134]
+L598DAA:
+        mov ecx, dword ptr [ebx+28h]
+        mov edx, dword ptr [ecx+164h]
+        add dword ptr [esp+10h], edx
+        lea ecx, [esp+18h]
+        call ext_00673C20
+        mov ebx, dword ptr [esp+1Ch]
+        mov edi, dword ptr [esp+18h]
+        jmp L598D80
+L598DCA:
+        mov eax, dword ptr [esp+14h]
+        mov ecx, dword ptr [esp+24h]
+        cmp ecx, dword ptr [eax+8]
+        jb L598DDD
+        call dword ptr [mem_00925134]
+L598DDD:
+        add dword ptr [esp+24h], 4
+        mov esi, dword ptr [esp+14h]
+        mov ebp, dword ptr [mem_00925134]
+        mov edi, dword ptr [esp+24h]
+        jmp L598D43
+L598DF5:
+        mov eax, dword ptr [esp+10h]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
