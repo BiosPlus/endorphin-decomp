@@ -1897,3 +1897,82 @@ extern "C" void __fastcall fn_00693F40(void* self, int edx_unused, const float* 
     temp[2] = tanf(temp[2]);
     ((void (__thiscall*)(void*, float*))ext_00693C30)(self, temp);
 }
+
+// [0x00697690] sub_00697690 (154 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00697690(void* self, int edx_unused, float val) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x10], 0
+        push edi
+        jne short L_006976A3
+        call ebx
+    L_006976A3:
+        mov eax, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [esi + 0x14]
+        cmp ecx, dword ptr [eax + 8]
+        jb short L_006976B0
+        call ebx
+    L_006976B0:
+        fld dword ptr [esi + 0x18]
+        mov edx, dword ptr [esi + 0x14]
+        fsub dword ptr [edx]
+        fstp dword ptr [esi + 0x18]
+        cmp dword ptr [esi + 0x10], 0
+        jne short L_006976C3
+        call ebx
+    L_006976C3:
+        mov eax, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [esi + 0x14]
+        cmp ecx, dword ptr [eax + 8]
+        jb short L_006976D0
+        call ebx
+    L_006976D0:
+        mov edx, dword ptr [esi + 0x14]
+        fld dword ptr [esp + 0x10]
+        fst dword ptr [edx]
+        mov edi, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], edi
+        fadd dword ptr [esi + 0x18]
+        fstp dword ptr [esi + 0x18]
+        jbe short L_006976E9
+        call ebx
+    L_006976E9:
+        cmp dword ptr [esi + 0x10], 0
+        jne short L_006976F1
+        call ebx
+    L_006976F1:
+        mov eax, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [esi + 0x14]
+        cmp ecx, dword ptr [eax + 8]
+        jb short L_006976FE
+        call ebx
+    L_006976FE:
+        mov eax, dword ptr [esi + 0x10]
+        add dword ptr [esi + 0x14], 4
+        test eax, eax
+        je short L_0069770D
+        cmp eax, esi
+        je short L_0069770F
+    L_0069770D:
+        call ebx
+    L_0069770F:
+        cmp dword ptr [esi + 0x14], edi
+        jne short L_00697724
+        mov edi, dword ptr [esi + 4]
+        cmp edi, dword ptr [esi + 8]
+        jbe short L_0069771E
+        call ebx
+    L_0069771E:
+        mov dword ptr [esi + 0x10], esi
+        mov dword ptr [esi + 0x14], edi
+    L_00697724:
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
