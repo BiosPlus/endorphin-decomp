@@ -324,3 +324,80 @@ extern "C" void __fastcall fn_00481FA0(void* self) {
     vtbl = *(void***)esi;
     ((VFn)vtbl[0xf8 / 4])(esi);
 }
+
+// [0x00480F60] ToolEngine::vfunc_19 (154 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_0065D120();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00480F60(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x10], esi
+        call ext_00594000
+        lea ecx, [eax + 0xfc]
+        call ext_0065D120
+        mov eax, dword ptr [esi + 0x10]
+        mov edx, dword ptr [eax + 0x10]
+        lea ecx, [esi + 0x10]
+        call edx
+        mov esi, eax
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_00480F96
+        call dword ptr [mem_00925134]
+    L_00480F96:
+        mov ebp, dword ptr [esp + 0x18]
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_00480FA0:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_00480FAE
+        call dword ptr [mem_00925134]
+    L_00480FAE:
+        cmp edi, ebx
+        je L_00480FDA
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_00480FBD
+        call dword ptr [mem_00925134]
+    L_00480FBD:
+        mov eax, dword ptr [edi]
+        lea ecx, [eax + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x8]
+        push ebp
+        call edx
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_00480FD5
+        call dword ptr [mem_00925134]
+    L_00480FD5:
+        add edi, 0x4
+        jmp L_00480FA0
+    L_00480FDA:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        pop edi
+        pop esi
+        pop ebp
+        mov byte ptr [eax + 0x108], 0x1
+        pop ebx
+        je L_00480FF6
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        call edx
+    L_00480FF6:
+        pop ecx
+        ret 0x4
+    }
+}
