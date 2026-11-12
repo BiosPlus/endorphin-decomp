@@ -13,5 +13,7 @@
     "0x0065D5B4",
     "0x0065D6AF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@medium",
+  "matched_at": "2026-11-12T13:36:52Z"
 }
