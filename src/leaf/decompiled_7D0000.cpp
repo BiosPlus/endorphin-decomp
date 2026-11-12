@@ -2444,3 +2444,85 @@ extern "C" __declspec(naked) void __fastcall fn_007DEB50(void* self) {
         ret
     }
 }
+
+// [0x007DCB00] sub_007DCB00 (164 bytes)
+extern "C" void ext_007D6220();
+extern "C" void ext_007D6290();
+extern "C" void ext_007DCA30();
+extern "C" int mem_00AB28B8;
+
+extern "C" __declspec(naked) void* __cdecl fn_007DCB00(void) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov eax, dword ptr [edi]
+        push 0x68
+        call eax
+        mov esi, eax
+        mov dword ptr [esi + 0x64], edi
+        mov ecx, dword ptr [edi]
+        push 0x20
+        call ecx
+        mov ebx, dword ptr [esp + 0x1c]
+        push edi
+        xor ebp, ebp
+        push ebp
+        push 0x14
+        push ebx
+        push eax
+        mov dword ptr [esi + 0x30], eax
+        call dword ptr [mem_00AB28B8]
+        mov edx, dword ptr [edi]
+        push 0x20
+        call edx
+        push edi
+        push ebp
+        push 0x20
+        push ebx
+        push eax
+        mov dword ptr [esi + 0x2c], eax
+        call dword ptr [mem_00AB28B8]
+        mov eax, 0x66666667
+        imul ebx
+        sar edx, 2
+        mov eax, edx
+        shr eax, 0x1f
+        push edi
+        add eax, edx
+        push eax
+        push ebx
+        mov dword ptr [esi + 0x3c], ebp
+        mov dword ptr [esi + 0x38], ebp
+        mov dword ptr [esi + 0x40], ebp
+        call ext_007DCA30
+        add esp, 0x40
+        push edi
+        mov dword ptr [esi + 0x28], eax
+        lea eax, [esi + 0x14]
+        lea ebp, [esi + 0x44]
+        push 0
+        push ebp
+        mov dword ptr [esi + 0x18], eax
+        mov dword ptr [eax], eax
+        mov dword ptr [esi + 4], esi
+        mov dword ptr [esi], esi
+        call ext_007D6220
+        push 1
+        push ebp
+        call ext_007D6290
+        lea ecx, [4 * ebx]
+        push ecx
+        push ebp
+        call ext_007D62D0
+        add esp, 0x1c
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
