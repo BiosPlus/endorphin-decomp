@@ -5753,3 +5753,26 @@ done:
         ret
     }
 }
+
+// [0x00679D80] sub_00679D80 (33 bytes)
+extern "C" void ext_00679C80();
+extern "C" char mem_0098C4F4;
+extern "C" char mem_0098C4FC;
+extern "C" char mem_0098C504;
+extern "C" __declspec(naked) void* __cdecl fn_00679D80() {
+    __asm {
+        call ext_00679C80
+        sub eax, 1
+        je l1
+        sub eax, 1
+        je l2
+        mov eax, offset mem_0098C504
+        ret
+    l2:
+        mov eax, offset mem_0098C4FC
+        ret
+    l1:
+        mov eax, offset mem_0098C4F4
+        ret
+    }
+}
