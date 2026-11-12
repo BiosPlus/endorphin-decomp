@@ -1494,3 +1494,70 @@ extern "C" void* __fastcall fn_006035D0(void* self, int edx_unused, const void* 
     dst->e[9] = s->e[9];
     return self;
 }
+
+// [0x00603090] sub_00603090 (158 bytes)
+extern "C" int mem_00A93710;
+extern "C" int mem_0093F7B8;
+extern "C" int mem_0092A270;
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __fastcall fn_00603090(void* self, int edx_unused, float out) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi + 0x34]
+        mov eax, dword ptr [eax + 0x9c]
+        push edx
+        call eax
+        fadd dword ptr [mem_00A93710]
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esi + 0x34]
+        fstp dword ptr [esp + 0x8]
+        mov edx, dword ptr [edx + 0x98]
+        push eax
+        call edx
+        fsub dword ptr [mem_00A93710]
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x2c]
+        fstp dword ptr [esp + 0x4]
+        fld1
+        sub esp, 0x8
+        fstp dword ptr [esp + 0x4]
+        lea edx, [esp + 0x18]
+        fld dword ptr [mem_0093F7B8]
+        fstp dword ptr [esp]
+        push edx
+        call eax
+        fld dword ptr [esp + 0x10]
+        fst dword ptr [esi + 0x58]
+        fld dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x8]
+        __asm _emit 0xd9
+        __asm _emit 0xc0
+        __asm _emit 0xde
+        __asm _emit 0xea
+        __asm _emit 0xd9
+        __asm _emit 0xc9
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        __asm _emit 0xd9
+        __asm _emit 0xca
+        fadd qword ptr [mem_0092A270]
+        fmul qword ptr [mem_00993828]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        __asm _emit 0xde
+        __asm _emit 0xca
+        __asm _emit 0xde
+        __asm _emit 0xc1
+        fstp dword ptr [esi + 0x2c]
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    }
+}
