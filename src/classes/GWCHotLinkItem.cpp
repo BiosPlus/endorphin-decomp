@@ -127,3 +127,65 @@ extern "C" __declspec(naked) int __fastcall fn_006B2EE0(void* self, int edx_unus
         ret 0x4
     }
 }
+
+extern "C" void ext_006ACFB0();
+extern "C" int mem_00925688;
+extern "C" int mem_0092568C;
+extern "C" int mem_00924248;
+extern "C" int mem_00B5D214;
+extern "C" int mem_00925618;
+
+// [0x006B2E30] GWCHotLinkItem::vfunc_10 (141 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006B2E30(void* self, int edx_unused, void* pt) {
+    __asm {
+        sub esp, 0x20
+        push esi
+        lea eax, [esp + 0x4]
+        push eax
+        mov esi, ecx
+        call ext_006ACE20
+        lea ecx, [esp + 0x4]
+        push ecx
+        lea edx, [esp + 0x18]
+        push edx
+        mov ecx, esi
+        call ext_006B2D70
+        mov eax, dword ptr [esp + 0x28]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [eax]
+        push ecx
+        push edx
+        lea eax, [esp + 0x1c]
+        push eax
+        call dword ptr [mem_00925628]
+        test eax, eax
+        je done
+        mov ecx, dword ptr [esi + 0x14]
+        push 0x1
+        mov byte ptr [esi + 0x58], 0x1
+        mov edx, dword ptr [ecx + 0x20]
+        push 0x0
+        push edx
+        call dword ptr [mem_00925688]
+        mov eax, dword ptr [esi + 0x14]
+        mov ecx, dword ptr [eax + 0x20]
+        push ecx
+        call dword ptr [mem_0092568C]
+        push 0xc8
+        call dword ptr [mem_00924248]
+        mov ecx, esi
+        call ext_006ACFB0
+        mov edx, dword ptr [mem_00B5D214]
+        push 0x0
+        push eax
+        mov eax, dword ptr [esi + 0x14]
+        mov ecx, dword ptr [eax + 0x20]
+        push edx
+        push ecx
+        call dword ptr [mem_00925618]
+    done:
+        pop esi
+        add esp, 0x20
+        ret 0x4
+    }
+}
