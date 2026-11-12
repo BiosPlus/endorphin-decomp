@@ -2580,3 +2580,40 @@ extern "C" __declspec(naked) void __fastcall fn_00695240(void* self) {
         ret
     }
 }
+
+// [0x00695390] sub_00695390 (92 bytes)
+extern "C" void ext_00695240();
+extern "C" __declspec(naked) void __fastcall fn_00695390(void* self, int edx_unused, unsigned int seed, unsigned char flag) {
+    __asm {
+        cmp byte ptr [esp + 8], 0
+        je short loc_695390_a
+        mov byte ptr [ecx + 0x9d4], 1
+    loc_695390_a:
+        fldz
+        push esi
+        mov esi, dword ptr [esp + 8]
+        fstp qword ptr [ecx + 0x9c8]
+        push edi
+        mov dword ptr [ecx + 0x9d0], 0
+        mov eax, ecx
+        mov edx, 1
+        mov dword ptr [ecx], esi
+        nop
+    loc_695390_b:
+        mov esi, dword ptr [eax]
+        mov edi, esi
+        shr edi, 0x1e
+        xor edi, esi
+        imul edi, edi, 0x6c078965
+        add edi, edx
+        mov dword ptr [eax + 4], edi
+        add edx, 1
+        add eax, 4
+        cmp edx, 0x270
+        jl short loc_695390_b
+        call ext_00695240
+        pop edi
+        pop esi
+        ret 8
+    }
+}
