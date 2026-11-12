@@ -2586,3 +2586,77 @@ d6a_zero:
         ret
     }
 }
+
+extern "C" int mem_00AA6D90;
+extern "C" int mem_00AA7190;
+extern "C" int mem_00AA7590;
+extern "C" int mem_00AA7990;
+
+// [0x006A4EC0] sub_006A4EC0 (237 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006A4EC0(void* self) {
+    __asm {
+        mov edx, 1
+        cmp dword ptr [ecx + 0x1c], edx
+        jbe loc_ret
+        push esi
+        lea eax, [ecx + 0x32]
+        push edi
+        jmp short loc_loop
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+loc_loop:
+        movzx esi, byte ptr [eax + 0x1]
+        mov esi, dword ptr [mem_00AA7990 + esi*4]
+        movzx edi, byte ptr [eax - 0x1]
+        xor esi, dword ptr [mem_00AA7190 + edi*4]
+        movzx edi, byte ptr [eax]
+        xor esi, dword ptr [mem_00AA7590 + edi*4]
+        movzx edi, byte ptr [eax - 0x2]
+        xor esi, dword ptr [mem_00AA6D90 + edi*4]
+        add edx, 1
+        mov dword ptr [eax - 0x2], esi
+        movzx esi, byte ptr [eax + 0x5]
+        mov esi, dword ptr [mem_00AA7990 + esi*4]
+        movzx edi, byte ptr [eax + 0x4]
+        xor esi, dword ptr [mem_00AA7590 + edi*4]
+        movzx edi, byte ptr [eax + 0x3]
+        xor esi, dword ptr [mem_00AA7190 + edi*4]
+        movzx edi, byte ptr [eax + 0x2]
+        xor esi, dword ptr [mem_00AA6D90 + edi*4]
+        add eax, 0x10
+        mov dword ptr [eax - 0xe], esi
+        movzx esi, byte ptr [eax - 0x7]
+        mov esi, dword ptr [mem_00AA7990 + esi*4]
+        movzx edi, byte ptr [eax - 0x8]
+        xor esi, dword ptr [mem_00AA7590 + edi*4]
+        movzx edi, byte ptr [eax - 0x9]
+        xor esi, dword ptr [mem_00AA7190 + edi*4]
+        movzx edi, byte ptr [eax - 0xa]
+        xor esi, dword ptr [mem_00AA6D90 + edi*4]
+        mov dword ptr [eax - 0xa], esi
+        movzx esi, byte ptr [eax - 0x3]
+        movzx edi, byte ptr [eax - 0x4]
+        mov esi, dword ptr [mem_00AA7990 + esi*4]
+        xor esi, dword ptr [mem_00AA7590 + edi*4]
+        movzx edi, byte ptr [eax - 0x5]
+        xor esi, dword ptr [mem_00AA7190 + edi*4]
+        movzx edi, byte ptr [eax - 0x6]
+        xor esi, dword ptr [mem_00AA6D90 + edi*4]
+        mov dword ptr [eax - 0x6], esi
+        cmp edx, dword ptr [ecx + 0x1c]
+        jb loc_loop
+        pop edi
+        pop esi
+loc_ret:
+        ret
+    }
+}
