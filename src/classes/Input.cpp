@@ -51,3 +51,27 @@ extern "C" __declspec(naked) void __fastcall fn_00530400(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005304B0] Input::vfunc_1_off_8 (37 bytes)
+extern "C" void __fastcall ext_005442D0(void* self);
+
+extern "C" __declspec(naked) void __fastcall fn_005304B0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x64]
+        test ecx, ecx
+        je done
+        cmp dword ptr [esi + 0x30], 0x7
+        jne done
+        call ext_005442D0
+        mov ecx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x154]
+        pop esi
+        jmp edx
+    done:
+        pop esi
+        ret
+    }
+}
