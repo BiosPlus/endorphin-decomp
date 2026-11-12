@@ -9127,3 +9127,66 @@ extern "C" __declspec(naked) void __fastcall fn_0043DFB0(void* self) {
         ret
     }
 }
+
+// [0x00431050] sub_00431050 (133 bytes)
+extern "C" void ext_004658C0();
+extern "C" void ext_00465B30();
+extern "C" void ext_00465B40();
+extern "C" void ext_00472350();
+extern "C" void ext_006679D0();
+extern "C" void __stdcall ext_006A5E60(int a, int b, int c);
+extern "C" void ext_006A64FC();
+extern "C" int mem_00924FF0;
+extern "C" int mem_00ACDF8C;
+
+extern "C" __declspec(naked) void __fastcall fn_00431050(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x84]
+        call eax
+        test al, al
+        je short loc_00431079
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x8c]
+        call eax
+    loc_00431079:
+        call ext_004658C0
+        mov ecx, dword ptr [eax + 0x54]
+        call ext_006679D0
+        test al, al
+        je short loc_004310BE
+        push 0
+        push 3
+        mov ecx, offset mem_00ACDF8C
+        call dword ptr [mem_00924FF0]
+        push eax
+        call ext_006A5E60
+        sub eax, 2
+        je short loc_004310D3
+        sub eax, 4
+        jne short loc_004310BE
+        call ext_004658C0
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0xa4]
+        call eax
+        test eax, eax
+        je short loc_004310D3
+    loc_004310BE:
+        call ext_00465B30
+        mov ecx, dword ptr [eax + 0x14]
+        call ext_00472350
+        mov ecx, esi
+        pop esi
+        jmp ext_006A64FC
+    loc_004310D3:
+        pop esi
+        ret
+    }
+}
