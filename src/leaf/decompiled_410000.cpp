@@ -5039,3 +5039,26 @@ extern "C" __declspec(naked) void* __fastcall fn_00416820(void* self) {
         ret
     }
 }
+
+// [0x00410540] sub_00410540 (168 bytes)
+extern "C" void ext_00468660();
+extern "C" void ext_00594000();
+extern "C" void ext_006A6DE0();
+extern "C" void ext_006A6E92();
+extern "C" int mem_00993828;
+
+extern "C" void __fastcall fn_00410540(void* self, int edx_unused, void* a1, void* a2) {
+    float f = *(float*)((char*)((void*(*)())ext_00594000)() + 0x234);
+    void* sub = (char*)a2 + 4;
+    typedef float (__thiscall *GetValFn)(void*);
+    double d = ((GetValFn)(*(void***)sub)[0xe0 / 4])(sub) * f;
+    float fl = (float)((double (*)(double))ext_006A6E92)((float)(d + *(double*)&mem_00993828));
+    int rounded = (int)fl;
+    void* obj1 = ((void* (__fastcall*)(void*))ext_00468660)(a1);
+    typedef void* (__thiscall *FuncE4)(void*, void*, int, int, int, int, int);
+    void* res1 = ((FuncE4)(*(void***)obj1)[0xe4 / 4])(obj1, a2, 0, 0, 0, 0, 0);
+    typedef void (__thiscall *Func138)(void*, int);
+    ((Func138)(*(void***)res1)[0x138 / 4])(res1, 0);
+    void* obj2 = ((void* (__fastcall*)(void*))ext_00468660)(a1);
+    ((FuncE4)(*(void***)obj2)[0xe4 / 4])(obj2, a2, 0, rounded, 0, 0, 0);
+}
