@@ -4103,3 +4103,35 @@ extern "C" __declspec(naked) void __fastcall fn_0050E3F0(void* self) {
         ret
     }
 }
+
+// [0x0050E990] sub_0050E990 (94 bytes)
+extern "C" void ext_004BE680();
+extern "C" void ext_0050E3F0();
+extern "C" void ext_0050E4E0();
+
+extern "C" __declspec(naked) void __fastcall fn_0050E990(void* self) {
+    __asm {
+        push -1
+        push 0x89234b
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x78
+        push esi
+        mov esi, ecx
+        lea ecx, [esp + 0x4]
+        call ext_0050E3F0
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x88], 0x0
+        call ext_0050E4E0
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x84], 0xffffffff
+        call ext_004BE680
+        mov ecx, dword ptr [esp + 0x7c]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x84
+        ret
+    }
+}
