@@ -5039,3 +5039,30 @@ extern "C" __declspec(naked) void __cdecl fn_007C97F0(void* self) {
         ret
     }
 }
+
+// [0x007CCD10] sub_007CCD10 (209 bytes)
+struct AllocT { void* (*alloc)(int); };
+struct CtxT { char pad[0xb0]; AllocT* a; };
+struct ObjT { int n; int one; void* p8; void* pc; void* p10; int p14; void* p18; void* p1c; AllocT* a20; };
+extern "C" void __cdecl ext_007CCAB0(void*);
+extern "C" void* __cdecl ext_007DFE00(int, AllocT*);
+extern "C" void* __cdecl ext_007DFA40(CtxT*);
+extern "C" ObjT* __cdecl fn_007CCD10(CtxT* c, int n, int m) {
+    ObjT* o = (ObjT*)c->a->alloc(0x24);
+    if (!o) return 0;
+    o->a20 = c->a; unsigned cnt; char* e;
+    o->pc = c->a->alloc(0x28000);
+    o->p10 = c->a->alloc(m << 5);
+    o->n = n;
+    cnt = (unsigned)(((n + 1) * n) >> 1);
+    e = (char*)c->a->alloc(cnt * 0x58); o->p8 = e; char* q = (char*)o->p8; e = q;
+    for (unsigned i = 0; i < cnt; i++, e += 0x58) {
+        ext_007CCAB0(e);
+        *(int*)(e + 0x50) = 0; *(int*)(e + 0x54) = 0; *(int*)(e + 0x4c) = 0;
+    }
+    o->one = 1;
+    o->p18 = ext_007DFE00(m, c->a);
+    o->p1c = ext_007DFA40(c);
+    o->p14 = 0;
+    return o;
+}
