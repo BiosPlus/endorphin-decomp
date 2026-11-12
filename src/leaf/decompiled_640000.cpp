@@ -3229,3 +3229,101 @@ extern "C" __declspec(naked) void __stdcall fn_0064F9B0(void* self, float* o0, f
         ret 0x18
     }
 }
+
+// [0x00648530] sub_00648530 (230 bytes)
+extern "C" void ext_00403560();
+extern "C" void ext_00648500();
+extern "C" void ext_0065ACD0();
+extern "C" void ext_006A6DD2();
+extern "C" void ext_00892ED9();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FEC;
+extern "C" int mem_00B40640;
+extern "C" int mem_0097E334;
+extern "C" int mem_00A11FF4;
+extern "C" int mem_0097E32C;
+extern "C" int mem_00B5516C;
+
+extern "C" __declspec(naked) void __fastcall fn_00648530(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push offset ext_00892ED9
+        push eax
+        mov fs:[0], esp
+        sub esp, 44h
+        push ebx
+        mov ebx, dword ptr [esp + 58h]
+        push esi
+        push edi
+        mov esi, ecx
+        xor edi, edi
+        mov dword ptr [esi + 58h], edi
+        mov eax, dword ptr [ebx + 15Ch]
+        cmp eax, edi
+        mov dword ptr [esi + 58h], eax
+        jne short L_648571
+        mov eax, dword ptr [esp + 64h]
+        cmp eax, edi
+        je short L_648571
+        add eax, 24h
+        mov dword ptr [esi + 58h], eax
+L_648571:
+        mov eax, dword ptr [esi + 58h]
+        cmp eax, edi
+        jne short L_6485B0
+        push offset mem_0097E334
+        lea ecx, [esp + 10h]
+        call dword ptr [mem_00924FE4]
+        lea eax, [esp + 0ch]
+        push eax
+        lea ecx, [esp + 2ch]
+        mov dword ptr [esp + 5ch], edi
+        call ext_00403560
+        push offset mem_00A11FF4
+        lea ecx, [esp + 2ch]
+        push ecx
+        mov dword ptr [esp + 30h], offset mem_0097E32C
+        call ext_006A6DD2
+L_6485B0:
+        mov ecx, dword ptr [eax + 0ch]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 8h]
+        push esi
+        call eax
+        lea edi, [ebx + 17Ch]
+        mov ecx, edi
+        call dword ptr [mem_00924FEC]
+        test al, al
+        mov ecx, esi
+        jne short L_6485D3
+        push edi
+        jmp short L_6485D8
+L_6485D3:
+        push offset mem_00B5516C
+L_6485D8:
+        call ext_00648500
+        mov edx, dword ptr [ebx + 4h]
+        mov eax, dword ptr [mem_00B40640]
+        mov edx, dword ptr [edx + 8h]
+        lea ecx, [ebx + 4h]
+        push eax
+        call edx
+        mov ecx, dword ptr [esp + 6ch]
+        mov edx, dword ptr [esp + 68h]
+        push ecx
+        mov ecx, dword ptr [esi + 5ch]
+        push esi
+        push eax
+        push edx
+        call ext_0065ACD0
+        mov ecx, dword ptr [esp + 50h]
+        pop edi
+        pop esi
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 50h
+        ret 10h
+    }
+}
