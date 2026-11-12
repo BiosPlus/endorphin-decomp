@@ -3790,3 +3790,61 @@ extern "C" __declspec(naked) void __stdcall fn_0041AD60(void* a1, void* a2, void
         ret 0x10
     }
 }
+
+// [0x0041AFF0] sub_0041AFF0 (121 bytes)
+extern "C" void ext_0041AD60();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0041AFF0(void* self) {
+    __asm {
+        push -1
+        push 0x8882e8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        mov edi, dword ptr [esi + 0x8]
+        xor ebp, ebp
+        cmp dword ptr [esi + 0x4], edi
+        mov dword ptr [esp + 0x18], ebp
+        jbe f41aff0_chk1
+        call dword ptr [mem_00925134]
+    f41aff0_chk1:
+        push ebx
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe f41aff0_chk2
+        call dword ptr [mem_00925134]
+    f41aff0_chk2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        mov ecx, esi
+        call ext_0041AD60
+        mov eax, dword ptr [esi + 0x4]
+        cmp eax, ebp
+        pop ebx
+        je f41aff0_nofree
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    f41aff0_nofree:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x4], ebp
+        mov dword ptr [esi + 0x8], ebp
+        mov dword ptr [esi + 0xc], ebp
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
