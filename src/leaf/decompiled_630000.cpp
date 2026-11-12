@@ -1922,3 +1922,70 @@ extern "C" __declspec(naked) void* __fastcall fn_0063E500(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x0063E890] sub_0063E890 (151 bytes)
+// SEH-framed (state -1, handler 0x8AED05). Allocates 0x40 bytes via ext_006A5C62 (operator new);
+// if non-null, calls vtbl slot 1 of self with a std::string sret temp at [esp+0x14], constructs
+// the new object via ext_0063E7F0(obj, a1, &tmp), then destroys tmp (flag bl). Returns the object
+// in eax, or NULL when the allocation failed.
+extern "C" void ext_0063E7F0();
+extern "C" void ext_006A5C62();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void* __fastcall fn_0063E890(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 8aed05h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 24h
+        push ebx
+        push esi
+        push edi
+        xor ebx, ebx
+        push 40h
+        mov esi, ecx
+        mov dword ptr [esp + 10h], ebx
+        call ext_006A5C62
+        mov edi, eax
+        add esp, 4
+        mov dword ptr [esp + 10h], edi
+        cmp edi, ebx
+        mov dword ptr [esp + 38h], ebx
+        je null_path_63E890
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 4]
+        lea ecx, [esp + 14h]
+        push ecx
+        mov ecx, esi
+        call edx
+        push eax
+        mov eax, dword ptr [esp + 44h]
+        mov ebx, 1
+        push eax
+        mov ecx, edi
+        mov byte ptr [esp + 40h], 1
+        mov dword ptr [esp + 14h], ebx
+        call ext_0063E7F0
+        mov esi, eax
+        jmp done_path_63E890
+    null_path_63E890:
+        xor esi, esi
+    done_path_63E890:
+        test bl, 1
+        mov dword ptr [esp + 38h], 0ffffffffh
+        je skip_dtor_63E890
+        lea ecx, [esp + 14h]
+        call dword ptr [mem_00924FF4]
+    skip_dtor_63E890:
+        mov ecx, dword ptr [esp + 30h]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 30h
+        ret 4
+    }
+}
