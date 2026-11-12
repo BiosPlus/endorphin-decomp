@@ -1904,3 +1904,96 @@ extern "C" __declspec(naked) void __fastcall fn_005DCA20(void* self) {
         ret
     }
 }
+
+// [0x005DF5C0] sub_005DF5C0 (228 bytes)
+extern "C" void ext_005A07A0();
+extern "C" int mem_00924FF4;
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_005DF5C0(void* self) {
+    __asm {
+        push -1
+        push 0x881709
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 8], 0
+        mov dword ptr [esp + 0x14], 0
+        jne short loc_005DF60F
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        xor eax, eax
+        pop esi
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 0x1c
+
+    loc_005DF60F:
+        push ebx
+        push ebp
+        push edi
+        lea eax, [esp + 0x28]
+        push eax
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        call ext_005A07A0
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        mov ebx, dword ptr [esi + 4]
+        mov ebp, dword ptr [mem_00925134]
+        je short loc_005DF638
+        cmp edi, esi
+        je short loc_005DF63A
+
+    loc_005DF638:
+        call ebp
+
+    loc_005DF63A:
+        mov esi, dword ptr [esp + 0x14]
+        cmp esi, ebx
+        je short loc_005DF67B
+        test edi, edi
+        jne short loc_005DF648
+        call ebp
+
+    loc_005DF648:
+        cmp esi, dword ptr [edi + 4]
+        jne short loc_005DF64F
+        call ebp
+
+    loc_005DF64F:
+        mov esi, dword ptr [esi + 0x28]
+        lea ecx, [esp + 0x28]
+        mov dword ptr [esp + 0x20], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        pop edi
+        pop ebp
+        pop ebx
+        mov eax, esi
+        pop esi
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 0x1c
+
+    loc_005DF67B:
+        lea ecx, [esp + 0x28]
+        mov dword ptr [esp + 0x20], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x18]
+        pop edi
+        pop ebp
+        pop ebx
+        xor eax, eax
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 0x1c
+    }
+}
