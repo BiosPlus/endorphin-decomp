@@ -1680,3 +1680,69 @@ fn_exit:
         ret
     }
 }
+
+// [0x004CA5E0] sub_004CA5E0 (189 bytes)
+extern "C" void ext_006A6C87();
+extern "C" void ext_006A6C99();
+extern "C" int mem_00AE447C;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00924FE8;
+extern "C" int mem_00AE43EC;
+extern "C" int mem_00924FD4;
+
+extern "C" __declspec(naked) void __fastcall fn_004CA5E0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x88bfee
+        push eax
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00AE447C], 1
+        push ebx
+        push esi
+        push edi
+        mov ebx, ecx
+        jne L_check_table
+        or dword ptr [mem_00AE447C], 1
+        mov eax, dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [mem_00924FE8]
+        push eax
+        push ecx
+        push 5
+        push 1ch
+        push 0xae43f0
+        mov dword ptr [esp + 0x28], 0
+        call ext_006A6C99
+        push 0x918be0
+        call ext_006A6C87
+        add esp, 4
+        mov dword ptr [esp + 0x14], 0xffffffff
+L_check_table:
+        cmp byte ptr [mem_00AE43EC], 0
+        jne L_after_table
+        mov edi, 0xae43f0
+        mov esi, 0x945f78
+L_loop:
+        mov edx, dword ptr [esi]
+        push edx
+        mov ecx, edi
+        call dword ptr [mem_00924FD4]
+        add esi, 4
+        add edi, 1ch
+        cmp esi, 0x945f8c
+        jl L_loop
+        mov byte ptr [mem_00AE43EC], 1
+L_after_table:
+        mov eax, dword ptr [ebx + 0x184]
+        lea ecx, [8 * eax]
+        sub ecx, eax
+        pop edi
+        lea eax, [ecx * 4 + 0xae43f0]
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0x0c
+        ret
+    }
+}
