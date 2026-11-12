@@ -4204,3 +4204,81 @@ extern "C" __declspec(naked) void* __fastcall fn_00664C30(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00664BF0();
+extern "C" void ext_00664DB0();
+extern "C" int mem_00925134;
+extern "C" int mem_00924E44;
+
+// [0x00665090] sub_00665090 (150 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00665090(void* self) {
+    __asm {
+        mov eax, dword ptr [esp+0Ch]
+        push ebx
+        mov ebx, dword ptr [esp+18h]
+        push ebp
+        mov ebp, dword ptr [esp+20h]
+        push esi
+        mov esi, dword ptr [esp+14h]
+        push edi
+        push ebp
+        push ebx
+        push eax
+        mov dword ptr [esp+28h], eax
+        call ext_00664BF0
+        add esp, 0Ch
+        cmp esi, -2
+        mov edi, eax
+        je L_665090_ok1
+        test esi, esi
+        je L_665090_bad1
+        cmp esi, dword ptr [esp+20h]
+        je L_665090_ok1
+L_665090_bad1:
+        call dword ptr [mem_00925134]
+L_665090_ok1:
+        cmp edi, ebx
+        jne L_665090_path2
+        mov eax, dword ptr [esp+14h]
+        mov dword ptr [eax+4], edi
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+L_665090_path2:
+        cmp esi, -2
+        je L_665090_skip
+        test esi, esi
+        jne L_665090_nz
+        call dword ptr [mem_00925134]
+L_665090_nz:
+        mov ecx, esi
+        call dword ptr [mem_00924E44]
+        add eax, dword ptr [esi+14h]
+        cmp edi, eax
+        jb L_665090_skip
+        call dword ptr [mem_00925134]
+L_665090_skip:
+        mov byte ptr [esp+18h], 0
+        mov ecx, dword ptr [esp+18h]
+        push ecx
+        push ebp
+        push edi
+        push esi
+        mov esi, dword ptr [esp+24h]
+        lea eax, [edi+1]
+        push ebx
+        push eax
+        push esi
+        call ext_00664DB0
+        add esp, 1Ch
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
