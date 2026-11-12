@@ -3302,3 +3302,39 @@ extern "C" void __fastcall fn_004736B0(void* self, int edx_unused, int a1) {
 
     ((fn2_t)ext_00472BA0)(self);
 }
+
+// [0x0047A4A0] sub_0047A4A0 (64 bytes)
+extern "C" void ext_005DF5C0();
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00934424;
+
+extern "C" __declspec(naked) void* __fastcall fn_0047A4A0(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push offset mem_00934424
+        push edi
+        mov esi, ecx
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        je is_not_background
+        mov eax, dword ptr [esi + 0x24]
+        pop edi
+        pop esi
+        ret 0x4
+    is_not_background:
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x28], esp
+        push edi
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esi + 0x18]
+        call ext_005DF5C0
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
