@@ -73,3 +73,37 @@ extern "C" void __fastcall fn_0040D960(void* self, int edx_unused, int a1) {
     ext_006A5F44(reinterpret_cast<void*>(a1), 0x3ef, static_cast<char*>(self) + 0x360);
     ext_006A5F44(reinterpret_cast<void*>(a1), 0x4c9, static_cast<char*>(self) + 0x3c4);
 }
+
+// [0x0040E100] SaveCharacterDialog::vfunc_84 (56 bytes)
+extern "C" void ext_0040AE10();
+extern "C" void ext_0040BC40();
+extern "C" void ext_0040BE90();
+extern "C" void ext_0040DA50();
+extern "C" void ext_006A5F50();
+extern "C" int mem_00924FF0;
+extern "C" int mem_00AC892C;
+
+extern "C" __declspec(naked) void* __fastcall fn_0040E100(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_0040DA50
+        mov ecx, offset mem_00AC892C
+        mov edi, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        mov ecx, esi
+        call ext_006A5F50
+        mov ecx, esi
+        call ext_0040BC40
+        mov ecx, esi
+        call ext_0040AE10
+        mov ecx, esi
+        call ext_0040BE90
+        mov eax, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
