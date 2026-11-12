@@ -2631,3 +2631,14 @@ extern "C" __declspec(naked) void __fastcall fn_00451B20(void* self) {
         ret
     }
 }
+
+// [0x0045DFB0] sub_0045DFB0 (57 bytes)
+extern "C" int __stdcall ext_0063F530(int a1, int a2, int a3);
+
+extern "C" int __stdcall fn_0045DFB0(int a1) {
+    int r = ext_0063F530(a1, 0, 1);
+    if (r == 0xB53A34 || r == 0xB53B30 || r == 0xB53AB0 || r == 0xB53A70 || r == 0xB53AF0) {
+        return 0xB53B30;
+    }
+    return r;
+}
