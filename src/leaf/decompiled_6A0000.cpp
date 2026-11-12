@@ -2660,3 +2660,45 @@ loc_ret:
         ret
     }
 }
+
+extern "C" void ext_004ECB40();
+extern "C" void ext_0041CF50();
+
+// [0x006A1490] sub_006A1490 (102 bytes)
+// SEH-guarded temp (same shape as fn_00699260): out-param call via ext_004ECB40 on arg1,
+// feed result into ext_0041CF50 on self, then dispatch vtable slot 0x78 on the returned object.
+extern "C" __declspec(naked) void __fastcall fn_006A1490(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x008b33b8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x8
+        push esi
+        lea eax, [esp + 0x4]
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        push eax
+        call ext_004ECB40
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x18], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esp + 0x14], 0xffffffff
+        pop esi
+        je done_006A1490
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp]
+        push eax
+        call edx
+done_006A1490:
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 0x4
+    }
+}
