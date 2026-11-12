@@ -7736,3 +7736,35 @@ extern "C" __declspec(naked) void __cdecl fn_00435EF0(void* begin, unsigned int 
         ret
     }
 }
+
+// [0x00436F60] sub_00436F60 (60 bytes)
+extern "C" void ext_00435EF0();
+
+extern "C" __declspec(naked) void* __fastcall fn_00436F60(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp+10h]
+        push esi
+        mov esi, dword ptr [esp+10h]
+        push edi
+        mov edi, dword ptr [esp+10h]
+        mov byte ptr [esp+8], 0
+        mov eax, dword ptr [esp+8]
+        push eax
+        mov eax, dword ptr [esp+1Ch]
+        push edx
+        push ecx
+        push eax
+        push esi
+        push edi
+        call ext_00435EF0
+        add esp, 18h
+        lea ecx, [8*esi]
+        sub ecx, esi
+        lea eax, [edi+8*ecx]
+        pop edi
+        pop esi
+        pop ecx
+        ret 0Ch
+    }
+}
