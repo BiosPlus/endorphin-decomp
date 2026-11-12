@@ -64,3 +64,53 @@ extern "C" __declspec(naked) void __fastcall fn_0053F6C0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0053FA10] SelectionTool::vfunc_15 (181 bytes)
+extern "C" void ext_00543630();
+
+extern "C" __declspec(naked) int __fastcall fn_0053FA10(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00543630
+        test byte ptr [esp + 0x10], 0x1
+        je ret_zero
+        test al, al
+        jne ret_zero
+        mov eax, dword ptr [esi + 0xd0]
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0xbc], eax
+        mov ecx, dword ptr [edx]
+        mov dword ptr [esi + 0xc4], ecx
+        mov ecx, dword ptr [esi + 0xb4]
+        mov eax, dword ptr [ecx + 0x1d4]
+        sub eax, dword ptr [esi + 0xd4]
+        mov dword ptr [esi + 0xc0], eax
+        mov ecx, dword ptr [ecx + 0x1d4]
+        sub ecx, dword ptr [edx + 0x4]
+        mov dword ptr [esi + 0xc8], ecx
+        mov ecx, dword ptr [esi + 0xbc]
+        cmp ecx, dword ptr [esi + 0xc4]
+        jle loc_53fa8a
+        mov edx, dword ptr [esi + 0xc4]
+        mov dword ptr [esi + 0xbc], edx
+        mov dword ptr [esi + 0xc4], ecx
+    loc_53fa8a:
+        mov eax, dword ptr [esi + 0xc0]
+        cmp eax, dword ptr [esi + 0xc8]
+        jle loc_53faac
+        mov edx, dword ptr [esi + 0xc8]
+        mov ecx, eax
+        mov dword ptr [esi + 0xc0], edx
+        mov dword ptr [esi + 0xc8], ecx
+    loc_53faac:
+        mov dword ptr [esi + 0xcc], 0x1
+        mov eax, 0x1
+        pop esi
+        ret 0xc
+    ret_zero:
+        xor eax, eax
+        pop esi
+        ret 0xc
+    }
+}
