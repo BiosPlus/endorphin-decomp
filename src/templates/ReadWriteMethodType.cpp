@@ -7683,3 +7683,38 @@ extern "C" __declspec(naked) void __fastcall fn_00617BA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00618050] ExprParser::ReadWriteMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getLowerStiffness(void) const, float, &public: void __thiscall NMData::HingeLimit::setLowerStiffness(float)>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00B48F88;
+extern "C" int mem_00B48F84;
+extern "C" __declspec(naked) void __fastcall fn_00618050(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a903e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B48F88], al
+        jne L_guarded
+        or dword ptr [mem_00B48F88], eax
+        mov ecx, offset mem_00B48F84
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00B48F84], 0x0097392c
+        mov dword ptr [eax + 0x4], offset mem_00B48F84
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00B48F84
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
