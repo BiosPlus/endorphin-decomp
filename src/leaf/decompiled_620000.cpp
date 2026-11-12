@@ -3384,3 +3384,23 @@ extern "C" __declspec(naked) void* __fastcall fn_00626E80(void* self, int edx_un
         ret 4
     }
 }
+
+#define _DLL
+#include <vector>
+
+struct TargetClass_0062B0A0 {
+    char pad_00[0x30];
+    std::vector<float> m_vec;
+    std::vector<float>::iterator m_it;
+    float m_sum;
+};
+
+// [0x0062B0A0] sub_0062B0A0 (159 bytes)
+extern "C" void __fastcall fn_0062B0A0(TargetClass_0062B0A0* self, int edx_unused, float val) {
+    self->m_sum -= *self->m_it;
+    *self->m_it = val;
+    self->m_sum += val;
+    if (++self->m_it == self->m_vec.end()) {
+        self->m_it = self->m_vec.begin();
+    }
+}
