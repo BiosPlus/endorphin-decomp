@@ -3477,3 +3477,29 @@ fail_path:
         ret 0x4
     }
 }
+
+// [0x00495420] sub_00495420 (54 bytes)
+extern "C" void ext_00495320();
+extern "C" __declspec(naked) void* __fastcall fn_00495420(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        push eax
+        call ext_00495320
+        test eax, eax
+        jne not_null
+        ret 0x4
+not_null:
+        mov ecx, dword ptr [esp + 0x4]
+        push 0x0
+        push 0xa30138
+        push 0xa2e2bc
+        push 0x0
+        push ecx
+        mov ecx, eax
+        call ext_00586140
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        ret 0x4
+    }
+}
