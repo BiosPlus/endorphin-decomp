@@ -4102,3 +4102,19 @@ L_40191C:
         ret
     }
 }
+
+// [0x00401980] sub_00401980 (48 bytes)
+extern "C" int mem_00AC624C;
+extern "C" int mem_00AC622C;
+extern "C" int mem_00913910;
+extern "C" void __fastcall ext_00401860(void* self);
+extern "C" void ext_006A6C87(void* arg);
+
+extern "C" void* __fastcall fn_00401980(void* self) {
+    if (!(mem_00AC624C & 1)) {
+        mem_00AC624C |= 1;
+        ext_00401860(&mem_00AC622C);
+        ext_006A6C87(&mem_00913910);
+    }
+    return &mem_00AC622C;
+}
