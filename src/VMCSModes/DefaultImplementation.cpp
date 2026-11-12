@@ -635,3 +635,73 @@ extern "C" __declspec(naked) void __fastcall fn_004FAAB0(void* self) {
         ret
     }
 }
+
+// [0x004FA9F0] VMCSModes::DefaultImplementation::vfunc_140 (186 bytes)
+extern "C" void ext_005B11F0();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00925134;
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __fastcall fn_004FA9F0(void* self) {
+    __asm {
+        push -1
+        push 0x8909aa
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x8
+        push ebx
+        push esi
+        mov dword ptr [esp + 0x8], 0
+        mov ebx, dword ptr [esp + 0x20]
+        push edi
+        mov esi, ecx
+        push 0x928b5d
+        mov ecx, ebx
+        mov dword ptr [esp + 0x20], 0
+        call dword ptr [mem_00924FE4]
+        mov eax, dword ptr [esi + 0x8]
+        mov eax, dword ptr [eax + 0x14]
+        mov ecx, dword ptr [eax + 0x34]
+        mov dword ptr [esp + 0x1c], 0
+        mov dword ptr [esp + 0xc], 1
+        call ext_005B11F0
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x1c]
+        call eax
+        mov edi, eax
+        mov esi, dword ptr [edi + 0x4]
+        test esi, esi
+        je short L_004FAA94
+        mov eax, dword ptr [edi + 0x8]
+        mov ecx, eax
+        sub ecx, esi
+        sar ecx, 2
+        je short L_004FAA94
+        cmp esi, eax
+        jbe short L_004FAA74
+        call dword ptr [mem_00925134]
+    L_004FAA74:
+        cmp esi, dword ptr [edi + 0x8]
+        jb short L_004FAA7F
+        call dword ptr [mem_00925134]
+    L_004FAA7F:
+        mov esi, dword ptr [esi]
+        test esi, esi
+        je short L_004FAA94
+        add esi, 0x490
+        push esi
+        mov ecx, ebx
+        call dword ptr [mem_00924FDC]
+    L_004FAA94:
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 4
+    }
+}
