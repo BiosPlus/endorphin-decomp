@@ -2025,3 +2025,66 @@ skip:
         ret 0x8
     }
 }
+
+// [0x006AD1D0] sub_006AD1D0 (184 bytes)
+extern "C" int mem_00925680;
+
+extern "C" __declspec(naked) void* __fastcall fn_006AD1D0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -0x1
+        push 0x8b73f8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        lea ecx, [esi + 0x8]
+        mov dword ptr [esp + 0x8], esi
+        mov dword ptr [esi], 0x99103c
+        call dword ptr [mem_009242FC]
+        xor ebx, ebx
+        lea ecx, [esi + 0xc]
+        mov dword ptr [esp + 0x14], ebx
+        call dword ptr [mem_009242FC]
+        mov eax, dword ptr [esp + 0x1c]
+        push 0xc
+        mov byte ptr [esp + 0x18], 0x1
+        mov dword ptr [esi + 0x10], eax
+        mov dword ptr [esi + 0x18], ebx
+        mov dword ptr [esi + 0x1c], ebx
+        mov dword ptr [esi + 0x20], ebx
+        mov dword ptr [esi + 0x24], ebx
+        mov dword ptr [esi + 0x28], ebx
+        mov dword ptr [esi + 0x2c], ebx
+        mov dword ptr [esi + 0x30], ebx
+        mov dword ptr [esi + 0x34], ebx
+        mov byte ptr [esi + 0x38], bl
+        mov dword ptr [esi + 0x3c], ebx
+        mov byte ptr [esi + 0x40], bl
+        mov byte ptr [esi + 0x41], bl
+        mov dword ptr [esi + 0x44], ebx
+        mov dword ptr [esi + 0x4c], ebx
+        call ext_006A5C62
+        mov dword ptr [esi + 0x4], eax
+        mov byte ptr [eax + 0x4], 0x1
+        mov ecx, dword ptr [esi + 0x4]
+        mov byte ptr [ecx + 0x5], bl
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [edx + 0x8], 0x1
+        mov eax, dword ptr [esi + 0x4]
+        add esp, 0x4
+        push 0x8
+        mov dword ptr [eax], ebx
+        call dword ptr [mem_00925680]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x48], eax
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
