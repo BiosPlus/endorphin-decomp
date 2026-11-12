@@ -4880,3 +4880,10 @@ extern "C" void __cdecl fn_007DAE10(int a1) {
     typedef void (__cdecl *FnT)(int, int, int, int, int, int, int, int, int);
     ((FnT)ext_007C8890)(a1, 0, 0x9868f4, 0x7ca820, 0x528530, 0x528530, 0x7dad70, 0x7dada0, 0x7dadd0);
 }
+
+// [0x007DB520] sub_007DB520 (51 bytes)
+extern "C" void ext_007C8890();
+extern "C" void __cdecl fn_007DB520(int a1) {
+    typedef void (__cdecl *FnT)(int, int, int, int, int, int, int, int, int);
+    ((FnT)ext_007C8890)(a1, 7, 0x99e284, 0x7db500, 0x7daff0, 0x7db060, 0x7db090, 0x7f6210, 0x7db390);
+}
