@@ -16,5 +16,7 @@
     "0x0049E524",
     "0x0049E52A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-12T13:51:27Z"
 }
