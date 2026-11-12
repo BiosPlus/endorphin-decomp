@@ -3264,3 +3264,25 @@ extern "C" void __fastcall fn_00440730(void* self) {
     typedef void (__thiscall *FnVirt)(void*, int);
     ((FnVirt)slot)(self, 1);
 }
+
+// [0x0044C0A0] sub_0044C0A0 (39 bytes)
+extern "C" void ext_00530370();
+extern "C" __declspec(naked) int __fastcall fn_0044C0A0(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        cmp dword ptr [ecx + 0x64], 0x0
+        je done
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [ecx + 0x68]
+        push edx
+        mov edx, dword ptr [esp + 0x8]
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        push edx
+        call ext_00530370
+    done:
+        xor eax, eax
+        ret 0x10
+    }
+}
