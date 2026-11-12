@@ -2232,3 +2232,76 @@ extern "C" __declspec(naked) void __cdecl fn_007D4680(void* self, int count, int
         ret
     }
 }
+
+// [0x007D5F50] sub_007D5F50 (158 bytes)
+extern "C" int mem_009241BC;
+extern "C" int mem_009242E0;
+
+extern "C" __declspec(naked) int __cdecl fn_007D5F50(void* s, void* arg2) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        jne L_7D5F6A
+        mov edi, dword ptr [esi + 0x8]
+        mov ebx, dword ptr [edi + 0xf4]
+        jmp L_7D5F88
+    L_7D5F6A:
+        cmp eax, 1
+        jne L_7D5F80
+        mov eax, dword ptr [esi + 0xc]
+        mov ebx, dword ptr [eax + 0x1fc]
+        lea edi, [eax + 0x234]
+        jmp L_7D5F88
+    L_7D5F80:
+        mov ebx, dword ptr [esp + 0x14]
+        mov edi, dword ptr [esp + 0x14]
+    L_7D5F88:
+        mov eax, dword ptr [esi + 0x34]
+        push eax
+        call dword ptr [mem_009242E0]
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi + 0x4]
+        add eax, eax
+        add eax, eax
+        mov ecx, dword ptr [eax + edx]
+        cmp ecx, dword ptr [ebx + 0xa8]
+        jge L_7D5FDC
+        mov eax, dword ptr [eax + edx]
+        mov dword ptr [edi], eax
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 4*edx + 0x4]
+        mov dword ptr [edi + 0x4], ecx
+        mov eax, dword ptr [esi]
+        add dword ptr [eax], 0x1
+        mov edx, dword ptr [edi + 0x4]
+        mov ecx, dword ptr [esi + 0x34]
+        xor eax, eax
+        cmp edx, dword ptr [edi]
+        push ecx
+        setne al
+        mov edi, eax
+        call dword ptr [mem_009241BC]
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_7D5FDC:
+        mov ecx, dword ptr [esi + 0x34]
+        push ecx
+        xor edi, edi
+        call dword ptr [mem_009241BC]
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
