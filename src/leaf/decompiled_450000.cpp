@@ -3138,3 +3138,100 @@ extern "C" __declspec(naked) void __fastcall fn_0045AD80(void* self) {
         ret
     }
 }
+
+// [0x0045BFB0] sub_0045BFB0 (218 bytes)
+// Loop over a chain of entries starting at arg0: look each up via sub_006A6820, and for each
+// hit read its name (falling back to a virtual getter when the name is empty), then forward
+// that name to sub_006A6442. Advances via sub_0045BF30 until it returns 0. ret 0x4.
+extern "C" void ext_0045BF30();
+extern "C" void ext_00584A10();
+extern "C" void ext_006A6442();
+extern "C" void ext_006A6820();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0045BFB0(void* self, int edx_unused, void* arg) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x34]
+        test esi, esi
+        mov ebx, ecx
+        je L_epilogue
+        push edi
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+L_loop:
+        push esi
+        mov ecx, ebx
+        call ext_006A6820
+        mov edi, eax
+        test edi, edi
+        je L_next
+        mov ecx, edi
+        call ext_00584A10
+        push eax
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FE0]
+        lea eax, [esp + 0xc]
+        push 0x928b5d
+        push eax
+        mov dword ptr [esp + 0x38], 0x0
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        je L_have_name
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [edx + 0x24]
+        mov ecx, edi
+        call eax
+        push eax
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FDC]
+L_have_name:
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FF0]
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push 0x0
+        push eax
+        push 0x1
+        push esi
+        mov ecx, ebx
+        call ext_006A6442
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], 0xffffffff
+        call dword ptr [mem_00924FF4]
+L_next:
+        push esi
+        mov ecx, ebx
+        call ext_0045BF30
+        mov esi, eax
+        test esi, esi
+        jne L_loop
+        pop edi
+L_epilogue:
+        mov ecx, dword ptr [esp + 0x24]
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
