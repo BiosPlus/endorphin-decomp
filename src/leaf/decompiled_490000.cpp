@@ -3414,3 +3414,66 @@ extern "C" void __fastcall fn_00497370(void* self, int edx_unused, void* arg) {
     Pfn pfn = (Pfn)(void*)ext_00661BF0;
     *((char*)self + 0xc0) = (pfn(arg, *(void**)((char*)self + 0xc8)) != 0);
 }
+
+// [0x00495320] sub_00495320 (162 bytes)
+extern "C" void ext_004950B0();
+extern "C" void ext_00586140();
+extern "C" __declspec(naked) void __fastcall fn_00495320(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x38]
+        xor ebx, ebx
+        cmp edi, ebx
+        mov esi, ecx
+        jl fail_path
+        call ext_00494830
+        cmp edi, eax
+        jge fail_path
+        push edi
+        lea eax, [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call ext_004950B0
+        mov ecx, dword ptr [esi + 0x28]
+        push ebx
+        push 0xa30158
+        push 0xa2e2bc
+        push ebx
+        push eax
+        add ecx, 0x4
+        mov dword ptr [esp + 0x44], ebx
+        call ext_00586140
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        lea ecx, [esp + 0xc]
+        mov esi, eax
+        mov dword ptr [esp + 0x30], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x4
+fail_path:
+        mov ecx, dword ptr [esp + 0x28]
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
