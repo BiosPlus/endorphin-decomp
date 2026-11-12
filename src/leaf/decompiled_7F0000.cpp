@@ -2744,3 +2744,92 @@ L_ret0_7F0860:
         ret
     }
 }
+
+// [0x007F0160] sub_007F0160 (302 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007F0160(void* self, int idx) {
+    __asm {
+        mov ecx, dword ptr [esp+4]
+        mov eax, dword ptr [ecx+0x228]
+        push ebx
+        mov ebx, dword ptr [ecx+0x1fc]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp+0x18]
+        mov edx, dword ptr [eax+4*edi+4]
+        mov dword ptr [ecx+0x110], edx
+        mov eax, dword ptr [ebx+0x88]
+        mov esi, dword ptr [eax+4*edi+4]
+        mov dword ptr [ecx+0xb8], esi
+        mov dword ptr [ecx+0xc8], esi
+        mov dword ptr [ecx+0xd4], esi
+        mov dword ptr [ecx+0xe0], esi
+        mov dword ptr [ecx+0xec], esi
+        mov dword ptr [ecx+0xf8], esi
+        mov edx, dword ptr [ebx+0x94]
+        mov eax, dword ptr [edx+4*edi+4]
+        mov edx, dword ptr [ecx+0x19c]
+        lea ebp, [edx+4*edi]
+        mov dword ptr [ecx+0xa8], eax
+        mov eax, dword ptr [ebp+4]
+        mov dword ptr [ecx+0xac], eax
+        mov eax, esi
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        mov dword ptr [ecx+0xb0], eax
+        mov edx, dword ptr [ebp+4]
+        mov dword ptr [ecx+0x58], edx
+        mov eax, dword ptr [ebx+0x94]
+        mov edx, dword ptr [eax+4*edi+4]
+        mov dword ptr [ecx+0x40], edx
+        mov dword ptr [ecx+0x18], esi
+        mov dword ptr [ecx+0x24], esi
+        mov dword ptr [ecx+0x30], esi
+        mov dword ptr [ecx+0x8], esi
+        mov eax, dword ptr [ebp]
+        lea eax, [eax+2*eax]
+        shl eax, 5
+        add dword ptr [ecx+0x38], eax
+        mov edx, dword ptr [ebp]
+        add edx, edx
+        add edx, edx
+        add dword ptr [ecx+0x54], edx
+        mov eax, dword ptr [ebx+0x94]
+        mov edx, dword ptr [eax+4*edi]
+        imul edx, dword ptr [ecx+0x1bc]
+        add edx, edx
+        add edx, edx
+        add dword ptr [ecx+0x6c], edx
+        mov eax, dword ptr [ebx+0x94]
+        mov edx, dword ptr [eax+4*edi]
+        add edx, edx
+        add edx, edx
+        add dword ptr [ecx+0x3c], edx
+        mov eax, dword ptr [ebx+0x88]
+        mov eax, dword ptr [eax+4*edi]
+        mov edx, eax
+        shl edx, 6
+        add dword ptr [ecx+0xb4], edx
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        shl eax, 4
+        add dword ptr [ecx+0xc4], eax
+        add dword ptr [ecx+0xd0], eax
+        add dword ptr [ecx+0xdc], eax
+        add dword ptr [ecx+0xe8], eax
+        add dword ptr [ecx+0xf4], eax
+        add dword ptr [ecx+0x14], eax
+        add dword ptr [ecx+0x20], eax
+        add dword ptr [ecx+0x2c], eax
+        add dword ptr [ecx+0x4], eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
