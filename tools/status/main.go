@@ -398,8 +398,8 @@ func renderVelocityGraphPanel(
 	}
 
 	// Build fallback static SVG points (Active Grind progression across up to 32 buckets)
-	const svgW = 900.0
-	const svgH = 260.0
+	const svgW = 1600.0
+	const svgH = 280.0
 	const padL = 56.0
 	const padR = 54.0
 	const padT = 20.0
@@ -518,7 +518,7 @@ func renderVelocityGraphPanel(
       </div>
 
       <div class="chart-wrap" id="velocity-chart-wrap">
-        <svg id="velocity-svg" viewBox="0 0 900 260" preserveAspectRatio="none" role="img" aria-label="Decompilation progress and velocity chart">
+        <svg id="velocity-svg" viewBox="0 0 1600 280" role="img" aria-label="Decompilation progress and velocity chart">
           <defs>
             <linearGradient id="cumAreaGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%%" stop-color="#3fb950" stop-opacity="0.32"/>
@@ -526,11 +526,11 @@ func renderVelocityGraphPanel(
             </linearGradient>
           </defs>
           <g id="chart-grid">
-            <line x1="56" y1="20" x2="846" y2="20" stroke="#21262d" stroke-dasharray="3,3"/>
-            <line x1="56" y1="71.5" x2="846" y2="71.5" stroke="#21262d" stroke-dasharray="3,3"/>
-            <line x1="56" y1="123" x2="846" y2="123" stroke="#21262d" stroke-dasharray="3,3"/>
-            <line x1="56" y1="174.5" x2="846" y2="174.5" stroke="#21262d" stroke-dasharray="3,3"/>
-            <line x1="56" y1="226" x2="846" y2="226" stroke="#30363d"/>
+            <line x1="56" y1="20" x2="1546" y2="20" stroke="#21262d" stroke-dasharray="3,3"/>
+            <line x1="56" y1="76.5" x2="1546" y2="76.5" stroke="#21262d" stroke-dasharray="3,3"/>
+            <line x1="56" y1="133" x2="1546" y2="133" stroke="#21262d" stroke-dasharray="3,3"/>
+            <line x1="56" y1="189.5" x2="1546" y2="189.5" stroke="#21262d" stroke-dasharray="3,3"/>
+            <line x1="56" y1="246" x2="1546" y2="246" stroke="#30363d"/>
           </g>
           <g id="chart-bars">%s</g>
           <polygon id="chart-area" points="%s" fill="url(#cumAreaGrad)"/>
@@ -539,7 +539,7 @@ func renderVelocityGraphPanel(
           <g id="chart-gaps"></g>
           <g id="chart-dots"></g>
           <g id="chart-axes"></g>
-          <line id="chart-hover-line" x1="0" y1="20" x2="0" y2="226" stroke="#8b949e" stroke-width="1" stroke-dasharray="4,3" visibility="hidden"/>
+          <line id="chart-hover-line" x1="0" y1="20" x2="0" y2="246" stroke="#8b949e" stroke-width="1" stroke-dasharray="4,3" visibility="hidden"/>
         </svg>
         <div id="chart-tooltip" class="chart-tooltip" hidden></div>
       </div>
@@ -548,7 +548,7 @@ func renderVelocityGraphPanel(
         <span><span class="legend-swatch" style="background:#3fb950;"></span> Cumulative Progress (left axis)</span>
         <span><span class="legend-swatch" style="background:rgba(88,166,255,0.65);"></span> Solves per Interval (right axis)</span>
         <span><span class="legend-swatch" style="background:#d29922;"></span> Projection at current run rate (%% to 100 view)</span>
-        <span id="chart-bucket-note" style="margin-left:auto;color:var(--muted);">Hover over chart for per-wave details</span>
+        <span id="chart-bucket-note" style="margin-inline-start:auto;color:var(--muted);">Hover over chart for per-wave details</span>
       </div>
       <script>
       (function() {
@@ -565,6 +565,7 @@ func renderVelocityGraphPanel(
         let curMetric = 'ai_funcs';
 
         const svg = document.getElementById('velocity-svg');
+        const gridLines = document.querySelectorAll('#chart-grid line');
         const gBars = document.getElementById('chart-bars');
         const polyArea = document.getElementById('chart-area');
         const polyLine = document.getElementById('chart-line');
@@ -576,8 +577,17 @@ func renderVelocityGraphPanel(
         const tooltip = document.getElementById('chart-tooltip');
         const bucketNote = document.getElementById('chart-bucket-note');
 
-        const W = 900, H = 260, PAD_L = 56, PAD_R = 54, PAD_T = 20, PAD_B = 34;
-        const PW = W - PAD_L - PAD_R, PH = H - PAD_T - PAD_B;
+        const H = 280, PAD_L = 56, PAD_R = 54, PAD_T = 20, PAD_B = 34;
+        const PH = H - PAD_T - PAD_B;
+        let W = 1600, PW = W - PAD_L - PAD_R;
+
+        function syncViewport() {
+          const cw = Math.round(svg.clientWidth || 1600);
+          W = Math.max(640, cw);
+          PW = W - PAD_L - PAD_R;
+          svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+          gridLines.forEach(line => line.setAttribute('x2', String(W - PAD_R)));
+        }
 
         function fmtInt(n) {
           return Math.round(n).toLocaleString();
@@ -646,7 +656,8 @@ func renderVelocityGraphPanel(
           const tMin = filtered[0].t;
           const tMax = Math.max(tMin + 60, filtered[filtered.length - 1].t);
           const span = tMax - tMin;
-          const numBuckets = Math.min(48, Math.max(12, Math.ceil(span / (mode === 'latest' ? 30 : 1800))));
+          const maxBuckets = W >= 1200 ? 72 : 48;
+          const numBuckets = Math.min(maxBuckets, Math.max(12, Math.ceil(span / (mode === 'latest' ? 30 : 1800))));
           const step = Math.max(1, Math.ceil(span / numBuckets));
 
           let baseFuncs = 0, baseBytes = 0;
@@ -743,7 +754,7 @@ func renderVelocityGraphPanel(
           }
           const nowLabelX = Math.min(xNow + 8, W - PAD_R - 60);
           axesHTML += '<text x="' + nowLabelX.toFixed(1) + '" y="' + Math.max(PAD_T + 30, yNow - 10).toFixed(1) + '" fill="#3fb950" font-size="11" font-weight="600">' + curPct.toFixed(1) + '%% now</text>';
-          const ticks = 5;
+          const ticks = W >= 1200 ? 7 : 5;
           for (let t = 0; t < ticks; t++) {
             const tt = t0 + (span * t) / (ticks - 1);
             const anchor = (t === 0) ? 'start' : (t === ticks - 1 ? 'end' : 'middle');
@@ -757,6 +768,7 @@ func renderVelocityGraphPanel(
         }
 
         function render() {
+          syncViewport();
           if (curMetric !== 'pct') polyProj.setAttribute('points', '');
           if (curMetric === 'pct') { renderProjection(); return; }
           renderedBuckets = buildBuckets();
@@ -785,7 +797,7 @@ func renderVelocityGraphPanel(
           let barsHTML = '';
           let gapsHTML = '';
           let dotsHTML = '';
-          const barW = Math.max(4, Math.min(26, (PW / Math.max(1, n)) * 0.62));
+          const barW = Math.max(4, Math.min(28, (PW / Math.max(1, n)) * 0.62));
 
           for (let i = 0; i < n; i++) {
             const b = renderedBuckets[i];
@@ -807,7 +819,7 @@ func renderVelocityGraphPanel(
               gapsHTML += '<line x1="' + gx.toFixed(1) + '" y1="' + PAD_T + '" x2="' + gx.toFixed(1) + '" y2="' + (PAD_T + PH) + '" stroke="#30363d" stroke-dasharray="2,4"/>';
               gapsHTML += '<text x="' + gx.toFixed(1) + '" y="' + (PAD_T + 11) + '" fill="#8b949e" font-size="9" text-anchor="middle">idle gap</text>';
             }
-            if (n <= 40 || i === n - 1 || i === 0 || b.gapBefore) {
+            if (n <= 48 || i === n - 1 || i === 0 || b.gapBefore) {
               dotsHTML += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3" fill="#3fb950"/>';
             }
           }
@@ -833,7 +845,7 @@ func renderVelocityGraphPanel(
           axesHTML += '<text x="' + (W - PAD_R + 6) + '" y="' + (PAD_T + PH) + '" fill="#58a6ff" font-size="10" text-anchor="start">0</text>';
 
           // X-axis time ticks
-          const tickCount = Math.min(6, n);
+          const tickCount = Math.min(W >= 1200 ? 9 : 6, n);
           for (let t = 0; t < tickCount; t++) {
             const idx = (tickCount === 1) ? 0 : Math.round((t * (n - 1)) / (tickCount - 1));
             const b = renderedBuckets[idx];
@@ -877,6 +889,10 @@ func renderVelocityGraphPanel(
             '<div style="font-size:11px;color:#e6edf3;margin-top:2px;">Models: <code>' + modelList + '</code></div>' +
             sampleHtml;
           tooltip.hidden = false;
+          const tipW = tooltip.offsetWidth || 320;
+          const pxX = (best._x / W) * rect.width;
+          const leftPx = (pxX + 20 + tipW > rect.width - 12) ? Math.max(12, pxX - tipW - 16) : (pxX + 20);
+          tooltip.style.insetInlineStart = Math.round(leftPx) + 'px';
         });
 
         svg.addEventListener('mouseleave', function() {
@@ -900,6 +916,12 @@ func renderVelocityGraphPanel(
             curMetric = btn.getAttribute('data-metric');
             render();
           });
+        });
+
+        let resizeRaf = 0;
+        window.addEventListener('resize', () => {
+          cancelAnimationFrame(resizeRaf);
+          resizeRaf = requestAnimationFrame(render);
         });
 
         render();
@@ -959,6 +981,7 @@ func renderHTMLDashboard(
     :root {
       --bg: #0d1117;
       --panel: #161b22;
+      --panel-hover: #1c2128;
       --border: #30363d;
       --text: #e6edf3;
       --muted: #8b949e;
@@ -969,15 +992,17 @@ func renderHTMLDashboard(
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 32px 20px;
+      padding-block: 28px;
+      padding-inline: clamp(16px, 2vw, 32px);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.5;
     }
     .container {
-      max-width: 980px;
-      margin: 0 auto;
+      inline-size: 100%;
+      max-inline-size: 1860px;
+      margin-inline: auto;
     }
     h1 {
       margin: 0 0 4px 0;
@@ -985,20 +1010,21 @@ func renderHTMLDashboard(
     }
     .subtitle {
       color: var(--muted);
-      margin-bottom: 24px;
+      margin-block-end: 24px;
       font-size: 14px;
     }
     .cards {
+      inline-size: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
-      margin-bottom: 24px;
+      margin-block-end: 24px;
     }
     .card {
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 16px;
+      padding: 16px 18px;
     }
     .card-label {
       color: var(--muted);
@@ -1009,50 +1035,130 @@ func renderHTMLDashboard(
     .card-value {
       font-size: 24px;
       font-weight: 700;
-      margin-top: 4px;
+      margin-block-start: 4px;
+      font-variant-numeric: tabular-nums;
     }
     .card-sub {
       color: var(--muted);
       font-size: 13px;
-      margin-top: 4px;
+      margin-block-start: 4px;
     }
     .panel {
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 24px;
+      padding: 20px 24px;
+      margin-block-end: 24px;
+    }
+    .panels-split {
+      inline-size: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-block-end: 24px;
+    }
+    .panels-split > .panel {
+      margin-block-end: 0;
+    }
+    @media (min-width: 1360px) {
+      .panels-split {
+        grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+        align-items: start;
+      }
     }
     .progress-bar {
-      width: 100%;
-      height: 12px;
+      inline-size: 100%;
+      block-size: 12px;
       background: #21262d;
       border-radius: 6px;
-      overflow: hidden;
+      overflow: clip;
       margin: 8px 0 4px 0;
     }
     .progress-fill {
-      height: 100%;
+      block-size: 100%;
       background: linear-gradient(90deg, var(--accent), var(--accent-bright));
     }
+    .table-wrapper {
+      inline-size: 100%;
+      max-inline-size: 100%;
+      overflow-x: auto;
+      scrollbar-gutter: stable;
+      overscroll-behavior-x: contain;
+      container-type: inline-size;
+    }
     table {
-      width: 100%;
-      border-collapse: collapse;
+      inline-size: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
       font-size: 14px;
     }
     th, td {
-      padding: 10px 12px;
+      padding: 10px 16px;
       text-align: left;
       border-bottom: 1px solid var(--border);
+      vertical-align: middle;
     }
-    th {
+    thead {
+      position: sticky;
+      inset-block-start: 0;
+      z-index: 2;
+    }
+    thead th {
+      background: var(--panel);
       color: var(--muted);
       font-weight: 600;
+      white-space: nowrap;
+    }
+    tbody th {
+      position: sticky;
+      inset-inline-start: 0;
+      z-index: 1;
+      background: var(--panel);
+      color: var(--text);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    tbody tr:hover th,
+    tbody tr:hover td {
+      background: var(--panel-hover);
+    }
+    tbody tr:last-child th,
+    tbody tr:last-child td {
+      border-bottom: none;
     }
     .num {
       text-align: right;
+      white-space: nowrap;
       font-variant-numeric: tabular-nums;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .model-badge {
+      display: inline-block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13.5px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #0d1117;
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .sub-row th {
+      padding-inline-start: 30px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .decile-strip {
+      display: flex;
+      gap: 3px;
+      min-inline-size: 240px;
+      inline-size: 100%;
+      max-inline-size: 380px;
+    }
+    .decile-cell {
+      flex: 1 1 22px;
+      block-size: 18px;
+      border-radius: 3px;
     }
     .chart-header {
       display: flex;
@@ -1060,7 +1166,7 @@ func renderHTMLDashboard(
       align-items: flex-start;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 16px;
+      margin-block-end: 16px;
     }
     .chart-controls {
       display: flex;
@@ -1072,7 +1178,7 @@ func renderHTMLDashboard(
       background: #0d1117;
       border: 1px solid var(--border);
       border-radius: 6px;
-      overflow: hidden;
+      overflow: clip;
     }
     .chart-btn {
       background: transparent;
@@ -1082,10 +1188,10 @@ func renderHTMLDashboard(
       font-size: 12px;
       font-weight: 600;
       cursor: pointer;
-      border-right: 1px solid var(--border);
+      border-inline-end: 1px solid var(--border);
     }
     .chart-btn:last-child {
-      border-right: none;
+      border-inline-end: none;
     }
     .chart-btn:hover {
       color: var(--text);
@@ -1096,16 +1202,17 @@ func renderHTMLDashboard(
       background: #238636;
     }
     .velocity-kpis {
+      inline-size: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 12px;
-      margin-bottom: 16px;
+      margin-block-end: 16px;
     }
     .vkpi {
       background: #0d1117;
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 10px 12px;
+      padding: 10px 14px;
       display: flex;
       flex-direction: column;
     }
@@ -1118,13 +1225,13 @@ func renderHTMLDashboard(
     .vkpi-val {
       font-size: 18px;
       font-weight: 700;
-      margin-top: 2px;
+      margin-block-start: 2px;
       font-variant-numeric: tabular-nums;
     }
     .vkpi-sub {
       color: var(--muted);
       font-size: 12px;
-      margin-top: 2px;
+      margin-block-start: 2px;
     }
     .chart-wrap {
       position: relative;
@@ -1134,15 +1241,15 @@ func renderHTMLDashboard(
       padding: 8px 4px 4px 4px;
     }
     #velocity-svg {
-      width: 100%;
-      height: 260px;
+      inline-size: 100%;
+      block-size: 280px;
       display: block;
       cursor: crosshair;
     }
     .chart-tooltip {
       position: absolute;
-      top: 14px;
-      left: 68px;
+      inset-block-start: 14px;
+      inset-inline-start: 68px;
       background: rgba(22, 27, 34, 0.96);
       border: 1px solid var(--border);
       border-radius: 6px;
@@ -1151,24 +1258,24 @@ func renderHTMLDashboard(
       line-height: 1.45;
       pointer-events: none;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
-      max-width: 360px;
+      max-inline-size: 380px;
       z-index: 10;
     }
     .chart-legend {
       display: flex;
-      align-items: center;
+      align-items: safe center;
       gap: 18px;
       flex-wrap: wrap;
       font-size: 12px;
       color: var(--muted);
-      margin-top: 10px;
+      margin-block-start: 10px;
     }
     .legend-swatch {
       display: inline-block;
-      width: 10px;
-      height: 10px;
+      inline-size: 10px;
+      block-size: 10px;
       border-radius: 2px;
-      margin-right: 5px;
+      margin-inline-end: 5px;
       vertical-align: middle;
     }
   </style>
@@ -1224,69 +1331,36 @@ func renderHTMLDashboard(
 	))
 
 	sb.WriteString(`    <div class="panel">
-      <h2 style="margin-top:0;font-size:18px;">In-Scope Progress by Size Decile</h2>
-      <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">In-scope functions ranked by size and split into ten equal-count percentile tiers (P0-10 = smallest 10%)</div>
-      <table>
-        <thead>
-          <tr>
-            <th>Size Tier</th>
-            <th class="num">Matched / Total Funcs</th>
-            <th class="num">Func %</th>
-            <th class="num">Matched / Total Bytes</th>
-            <th class="num">Byte %</th>
-            <th class="num">Remaining</th>
-          </tr>
-        </thead>
-        <tbody>
-`)
-
-	for _, t := range tiers {
-		fPct := pct(uint64(t.MatchedFuncs), uint64(t.TotalFuncs))
-		bPct := pct(t.MatchedBytes, t.TotalBytes)
-		sb.WriteString(fmt.Sprintf(`          <tr>
-            <td><strong>%s</strong></td>
-            <td class="num">%d / %d</td>
-            <td class="num">%.2f%%</td>
-            <td class="num">%d / %d</td>
-            <td class="num">%.2f%%</td>
-            <td class="num">%d fn</td>
-          </tr>
-`, t.ShortName, t.MatchedFuncs, t.TotalFuncs, fPct, t.MatchedBytes, t.TotalBytes, bPct, t.RemainFuncs))
-	}
-
-	sb.WriteString(`        </tbody>
-      </table>
-    </div>
-    <div class="panel">
       <h2 style="margin-top:0;font-size:18px;">Squad Leaderboard (AI Model Matches)</h2>
       <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Excludes ` + fmt.Sprintf("%d", autoSolveFuncs) + ` deterministic <code>script:auto_solve</code> baseline stubs</div>
-      <table>
-        <thead>
-          <tr>
-            <th>Model</th>
-            <th class="num">Matched Functions</th>
-            <th class="num">Matched Bytes</th>
-            <th class="num">Share of AI Matches</th>
-            <th class="num">Avg Size</th>
-            <th class="num">Median</th>
-            <th class="num">Largest</th>
-            <th>Matches by Size Decile (small &rarr; large)</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Model</th>
+              <th scope="col" class="num">Matched Functions</th>
+              <th scope="col" class="num">Matched Bytes</th>
+              <th scope="col" class="num">Share of AI Matches</th>
+              <th scope="col" class="num">Avg Size</th>
+              <th scope="col" class="num">Median</th>
+              <th scope="col" class="num">Largest</th>
+              <th scope="col">Matches by Size Decile (small &rarr; large)</th>
+            </tr>
+          </thead>
+          <tbody>
 `)
 
 	if len(leaderboard) == 0 {
-		sb.WriteString(`          <tr>
-            <td style="color:var(--muted);font-style:italic;">No AI matches yet</td>
-            <td class="num">0</td>
-            <td class="num">0</td>
-            <td class="num">0.00%</td>
-            <td class="num">-</td>
-            <td class="num">-</td>
-            <td class="num">-</td>
-            <td></td>
-          </tr>
+		sb.WriteString(`            <tr>
+              <th scope="row" style="color:var(--muted);font-style:italic;font-weight:400;">No AI matches yet</th>
+              <td class="num">0</td>
+              <td class="num">0</td>
+              <td class="num">0.00%</td>
+              <td class="num">-</td>
+              <td class="num">-</td>
+              <td class="num">-</td>
+              <td></td>
+            </tr>
 `)
 	} else {
 		for _, m := range leaderboard {
@@ -1300,43 +1374,96 @@ func renderHTMLDashboard(
 				}
 			}
 			var strip strings.Builder
-			strip.WriteString(`<div style="display:flex;gap:2px;">`)
+			strip.WriteString(`<div class="decile-strip">`)
 			for i, c := range m.TierCounts {
 				alpha := 0.06
 				if c > 0 {
 					alpha = 0.25 + 0.75*float64(c)/float64(maxCount)
 				}
-				strip.WriteString(fmt.Sprintf(`<div title="%s: %d funcs" style="width:22px;height:18px;border-radius:2px;background:rgba(63,185,80,%.2f);"></div>`,
+				strip.WriteString(fmt.Sprintf(`<div class="decile-cell" title="%s: %d funcs" style="background:rgba(63,185,80,%.2f);"></div>`,
 					tiers[i].ShortName, c, alpha))
 			}
 			strip.WriteString(`</div>`)
 
-			sb.WriteString(fmt.Sprintf(`          <tr>
-            <td><code>%s</code></td>
-            <td class="num">%d</td>
-            <td class="num">%d</td>
-            <td class="num">%.2f%%</td>
-            <td class="num">%.0f B</td>
-            <td class="num">%d B</td>
-            <td class="num">%d B</td>
-            <td>%s</td>
-          </tr>
+			sb.WriteString(fmt.Sprintf(`            <tr>
+              <th scope="row"><code class="model-badge">%s</code></th>
+              <td class="num">%d</td>
+              <td class="num">%d</td>
+              <td class="num">%.2f%%</td>
+              <td class="num">%.0f B</td>
+              <td class="num">%d B</td>
+              <td class="num">%d B</td>
+              <td>%s</td>
+            </tr>
 `, m.Model, m.MatchedFuncs, m.MatchedBytes, sharePct, avg, med, largest, strip.String()))
 		}
 	}
 
-	sb.WriteString(fmt.Sprintf(`        </tbody>
-      </table>
+	sb.WriteString(`          </tbody>
+        </table>
+      </div>
     </div>
-    <div class="panel">
-      <h2 style="margin-top:0;font-size:18px;">Binary Scope Breakdown</h2>
-      <table>
-        <tbody>
-          <tr><td>Total Functions in <code>.text</code></td><td class="num">%d funcs</td><td class="num">%d bytes (%.2f MB)</td></tr>
-          <tr><td>In-Scope Application &amp; Engine Code</td><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
-          <tr><td>Out-of-Scope (Thunks + CRT/MFC/SEH)</td><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
-        </tbody>
-      </table>
+    <div class="panels-split">
+      <div class="panel">
+        <h2 style="margin-top:0;font-size:18px;">In-Scope Progress by Size Decile</h2>
+        <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">In-scope functions ranked by size and split into ten equal-count percentile tiers (P0-10 = smallest 10%)</div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Size Tier</th>
+                <th scope="col" class="num">Matched / Total Funcs</th>
+                <th scope="col" class="num">Func %</th>
+                <th scope="col" class="num">Matched / Total Bytes</th>
+                <th scope="col" class="num">Byte %</th>
+                <th scope="col" class="num">Remaining</th>
+              </tr>
+            </thead>
+            <tbody>
+`)
+
+	for _, t := range tiers {
+		fPct := pct(uint64(t.MatchedFuncs), uint64(t.TotalFuncs))
+		bPct := pct(t.MatchedBytes, t.TotalBytes)
+		sb.WriteString(fmt.Sprintf(`              <tr>
+                <th scope="row">%s</th>
+                <td class="num">%d / %d</td>
+                <td class="num">%.2f%%</td>
+                <td class="num">%d / %d</td>
+                <td class="num">%.2f%%</td>
+                <td class="num">%d fn</td>
+              </tr>
+`, t.ShortName, t.MatchedFuncs, t.TotalFuncs, fPct, t.MatchedBytes, t.TotalBytes, bPct, t.RemainFuncs))
+	}
+
+	sb.WriteString(fmt.Sprintf(`            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel">
+        <h2 style="margin-top:0;font-size:18px;">Binary Scope Breakdown</h2>
+        <div style="color:var(--muted);font-size:13px;margin-bottom:12px;">Partition of <code>endorphin.exe</code> code bytes and RTTI class hierarchy</div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Segment / Category</th>
+                <th scope="col" class="num">Functions / Classes</th>
+                <th scope="col" class="num">Size / Share</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Total Functions in <code>.text</code></th><td class="num">%d funcs</td><td class="num">%d bytes (%.2f MB)</td></tr>
+              <tr><th scope="row">In-Scope Application &amp; Engine</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
+              <tr class="sub-row"><th scope="row">Matched In-Scope (AI + Baseline)</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
+              <tr><th scope="row">Out-of-Scope Total</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
+              <tr class="sub-row"><th scope="row">Jump &amp; Import Thunks</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
+              <tr class="sub-row"><th scope="row">CRT / MFC / SEH Boilerplate</th><td class="num">%d funcs (%.1f%%)</td><td class="num">%d bytes (%.1f%%)</td></tr>
+              <tr><th scope="row">RTTI Classes</th><td class="num">%d classes</td><td class="num">%d in-scope &bull; %d MFC/ATL/std</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -1344,7 +1471,11 @@ func renderHTMLDashboard(
 `,
 		totalFuncs, totalBytes, float64(totalBytes)/(1024.0*1024.0),
 		inScopeFuncs, pct(uint64(inScopeFuncs), uint64(totalFuncs)), inScopeBytes, pct(inScopeBytes, totalBytes),
+		inScopeMatchedFuncs, funcPct, inScopeMatchedBytes, bytePct,
 		outOfScopeFuncs, pct(uint64(outOfScopeFuncs), uint64(totalFuncs)), outOfScopeBytes, pct(outOfScopeBytes, totalBytes),
+		outThunkFuncs, pct(uint64(outThunkFuncs), uint64(totalFuncs)), outThunkBytes, pct(outThunkBytes, totalBytes),
+		outCRTMFCFuncs, pct(uint64(outCRTMFCFuncs), uint64(totalFuncs)), outCRTMFCBytes, pct(outCRTMFCBytes, totalBytes),
+		totalClasses, inScopeClasses, mfcClasses,
 	))
 
 	return sb.String()
