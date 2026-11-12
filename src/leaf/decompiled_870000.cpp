@@ -623,3 +623,92 @@ extern "C" __declspec(naked) bool __fastcall fn_008711F0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00871130] sub_00871130 (177 bytes)
+extern "C" void ext_00870E90();
+extern "C" void ext_00870EF0();
+extern "C" void ext_0063E050();
+
+extern "C" __declspec(naked) bool __fastcall fn_00871130(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [ecx + 0x8]
+        mov edx, dword ptr [ecx + 0x10]
+        mov dword ptr [esp + 0x4], eax
+        mov eax, dword ptr [ecx + 0x14]
+        mov dword ptr [esp], ecx
+        mov dword ptr [esp + 0x8], edx
+        mov dword ptr [esp + 0xc], eax
+        call ext_00870E90
+        cmp al, 0x61
+        jl first_upper_00871130
+        cmp al, 0x7a
+        jle loop_00871130
+    first_upper_00871130:
+        mov dl, al
+        sub dl, 0x41
+        cmp dl, 0x19
+        jbe loop_00871130
+        cmp al, 0x5f
+        je loop_00871130
+        cmp al, 0x3a
+        je loop_00871130
+        call ext_00870EF0
+        xor al, al
+        add esp, 0x10
+        ret 0x4
+    loop_00871130:
+        cmp al, 0x41
+        jb check_lower_00871130
+        cmp al, 0x5a
+        jbe next_00871130
+    check_lower_00871130:
+        cmp al, 0x61
+        jb check_hi_00871130
+        cmp al, 0x7a
+        jbe next_00871130
+    check_hi_00871130:
+        cmp al, 0xc0
+        jb check_hi2_00871130
+        cmp al, 0xd6
+        jbe next_00871130
+    check_hi2_00871130:
+        cmp al, 0xd8
+        jb check_hi3_00871130
+        cmp al, 0xf6
+        jbe next_00871130
+    check_hi3_00871130:
+        cmp al, 0xf8
+        jb check_digit_00871130
+        cmp al, 0xff
+        jbe next_00871130
+    check_digit_00871130:
+        mov dl, al
+        sub dl, 0x30
+        cmp dl, 0x9
+        jbe next_00871130
+        cmp al, 0x2e
+        je next_00871130
+        cmp al, 0x2d
+        je next_00871130
+        cmp al, 0x5f
+        je next_00871130
+        cmp al, 0x3a
+        je next_00871130
+        cmp al, 0xb7
+        jne fail_00871130
+    next_00871130:
+        call ext_00870E90
+        jmp loop_00871130
+    fail_00871130:
+        call ext_00870EF0
+        mov eax, dword ptr [esp + 0x14]
+        push 0x0
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_0063E050
+        mov al, 0x1
+        add esp, 0x10
+        ret 0x4
+    }
+}
