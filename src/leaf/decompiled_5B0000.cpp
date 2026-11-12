@@ -1770,3 +1770,106 @@ extern "C" __declspec(naked) void* __fastcall fn_005B0CA0(void* self) {
         ret
     }
 }
+
+// [0x005BEC50] sub_005BEC50 (253 bytes)
+extern "C" void ext_0059E220();
+extern "C" void ext_005C40C0();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005BEC50(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0x28
+        cmp dword ptr [ecx + 0x164], 1
+        push ebx
+        push ebp
+        push esi
+        push edi
+        jbe L_done
+        mov eax, dword ptr [ecx + 0x160]
+        mov eax, dword ptr [eax]
+        lea edi, [ecx + 0x15c]
+        mov ebp, eax
+        mov eax, dword ptr [edi + 4]
+        mov ebx, edi
+        lea ecx, [esp + 0x20]
+        mov dword ptr [esp + 0x14], edi
+        mov dword ptr [esp + 0x28], ebx
+        mov dword ptr [esp + 0x2c], ebp
+        mov dword ptr [esp + 0x34], eax
+        mov dword ptr [esp + 0x20], edi
+        mov dword ptr [esp + 0x24], eax
+        call ext_0059E220
+L_check_first:
+        test ebx, ebx
+        je L_inv_first
+        cmp ebx, dword ptr [esp + 0x20]
+        je L_cmp_last
+L_inv_first:
+        call dword ptr [mem_00925134]
+L_cmp_last:
+        cmp ebp, dword ptr [esp + 0x24]
+        je L_done
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esp + 0x1c], ebp
+        call ext_00673C20
+        jmp L_loop
+        __asm _emit 0x8D __asm _emit 0x49 __asm _emit 0x00 // lea ecx, [ecx + 0]
+L_loop:
+        mov esi, dword ptr [esp + 0x18]
+        test esi, esi
+        je L_inv_a
+        cmp esi, edi
+        je L_have_a
+L_inv_a:
+        call dword ptr [mem_00925134]
+L_have_a:
+        mov edi, dword ptr [esp + 0x1c]
+        cmp edi, dword ptr [esp + 0x34]
+        je L_pop_node
+        test esi, esi
+        jne L_chk_b
+        call dword ptr [mem_00925134]
+L_chk_b:
+        cmp edi, dword ptr [esi + 4]
+        mov esi, dword ptr [mem_00925134]
+        jne L_chk_c
+        call esi
+L_chk_c:
+        test ebx, ebx
+        jne L_chk_d
+        call esi
+L_chk_d:
+        cmp ebp, dword ptr [ebx + 4]
+        jne L_work
+        call esi
+L_work:
+        mov ecx, dword ptr [edi + 0x28]
+        push ecx
+        mov ecx, dword ptr [ebp + 0x28]
+        call ext_005C40C0
+        lea ecx, [esp + 0x18]
+        call ext_00673C20
+        mov edi, dword ptr [esp + 0x14]
+        jmp L_loop
+L_pop_node:
+        lea ecx, [esp + 0x28]
+        call ext_00673C20
+        mov ebp, dword ptr [esp + 0x2c]
+        mov ebx, dword ptr [esp + 0x28]
+        mov edi, dword ptr [esp + 0x14]
+        jmp L_check_first
+L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
