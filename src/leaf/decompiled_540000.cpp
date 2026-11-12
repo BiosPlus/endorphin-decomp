@@ -4055,3 +4055,100 @@ extern "C" __declspec(naked) void __fastcall fn_00548280(void* self, int edx_unu
         ret 8
     }
 }
+
+extern "C" void ext_005D0530();
+extern "C" void ext_006A6DE0();
+
+// [0x00548FC0] sub_00548FC0 (286 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00548FC0(void* self, int edx_unused) {
+    __asm {
+        sub esp, 0x50
+        fld1
+        push esi
+        fst dword ptr [esp + 0x14]
+        push edi
+        fldz
+        mov esi, ecx
+        fst dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0x20]
+        fst dword ptr [esp + 0x24]
+        fst dword ptr [esp + 0x28]
+        fst dword ptr [esp + 0x30]
+        fst dword ptr [esp + 0x34]
+        fst dword ptr [esp + 0x38]
+        fst dword ptr [esp + 0x3c]
+        fst dword ptr [esp + 0x44]
+        fst dword ptr [esp + 0x48]
+        fst dword ptr [esp + 0x4c]
+        fstp dword ptr [esp + 0x50]
+        fst dword ptr [esp + 0x2c]
+        fst dword ptr [esp + 0x40]
+        fstp dword ptr [esp + 0x54]
+        call ext_005480F0
+        fld dword ptr [eax]
+        mov edi, dword ptr [esi]
+        fstp dword ptr [esp + 0x48]
+        lea ecx, [esp + 0x18]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x4c]
+        fld dword ptr [eax + 0x8]
+        lea eax, [esp + 0x8]
+        fstp dword ptr [esp + 0x50]
+        push eax
+        fld1
+        push ecx
+        fstp dword ptr [esp + 0x5c]
+        fldz
+        fst dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0x18]
+        fst dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x68]
+        call ext_006A6DE0
+        fld dword ptr [esp + 0x64]
+        push eax
+        call ext_006A6DE0
+        mov edx, dword ptr [edi + 0x28]
+        push eax
+        mov ecx, esi
+        call edx
+        mov ecx, dword ptr [esi + 0xa0]
+        test ecx, ecx
+        je L_no_extra
+        lea eax, [esp + 0x8]
+        push eax
+        call ext_005D0530
+        pop edi
+        pop esi
+        add esp, 0x50
+        ret 0x8
+L_no_extra:
+        fld dword ptr [esi + 0x80]
+        mov ecx, dword ptr [esi + 0x24]
+        fsub dword ptr [esp + 0x8]
+        cmp byte ptr [ecx], 0
+        fstp dword ptr [esi + 0x80]
+        fld dword ptr [esi + 0x84]
+        je L_else
+        fsub dword ptr [esp + 0xc]
+        fstp dword ptr [esi + 0x84]
+        fld dword ptr [esi + 0x88]
+        fsub dword ptr [esp + 0x10]
+        jmp L_store
+L_else:
+        fsub dword ptr [esp + 0x10]
+        fstp dword ptr [esi + 0x84]
+        fld dword ptr [esi + 0x88]
+        fadd dword ptr [esp + 0xc]
+L_store:
+        fstp dword ptr [esi + 0x88]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x44]
+        mov ecx, esi
+        call eax
+        pop edi
+        pop esi
+        add esp, 0x50
+        ret 0x8
+    }
+}
