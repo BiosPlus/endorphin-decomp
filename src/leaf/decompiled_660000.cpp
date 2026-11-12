@@ -6750,3 +6750,123 @@ extern "C" __declspec(naked) void __fastcall fn_00666040(void* self) {
         ret
     }
 }
+
+// [0x006679D0] sub_006679D0 (222 bytes)
+extern "C" void ext_00666CC0();
+
+extern "C" __declspec(naked) void __fastcall fn_006679D0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x18
+        mov eax, dword ptr [ecx + 0x10]
+        push ebx
+        push ebp
+        add ecx, 0xc
+        push esi
+        push edi
+        mov edi, dword ptr [eax]
+        mov esi, ecx
+        mov dword ptr [esp + 0x14], ecx
+        mov dword ptr [esp + 0x20], esi
+        mov dword ptr [esp + 0x24], edi
+
+    L_006679F3:
+        test esi, esi
+        mov ebx, dword ptr [ecx + 0x4]
+        je L_006679FE
+        cmp esi, ecx
+        je L_00667A08
+
+    L_006679FE:
+        mov ebp, dword ptr [mem_00925134]
+        call ebp
+        jmp L_00667A0E
+
+    L_00667A08:
+        mov ebp, dword ptr [mem_00925134]
+
+    L_00667A0E:
+        cmp edi, ebx
+        je L_00667AA4
+        test esi, esi
+        jne L_00667A1C
+        call ebp
+
+    L_00667A1C:
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_00667A23
+        call ebp
+
+    L_00667A23:
+        mov ecx, dword ptr [edi + 0x30]
+        mov eax, dword ptr [ecx]
+        add edi, 0x2c
+        mov esi, edi
+        mov ebp, eax
+        mov dword ptr [esp + 0x18], esi
+        mov dword ptr [esp + 0x1c], ebp
+
+    L_00667A37:
+        test esi, esi
+        mov ebx, dword ptr [edi + 0x4]
+        je L_00667A42
+        cmp esi, edi
+        je L_00667A48
+
+    L_00667A42:
+        call dword ptr [mem_00925134]
+
+    L_00667A48:
+        cmp ebp, ebx
+        je L_00667A80
+        test esi, esi
+        jne L_00667A56
+        call dword ptr [mem_00925134]
+
+    L_00667A56:
+        cmp ebp, dword ptr [esi + 0x4]
+        jne L_00667A61
+        call dword ptr [mem_00925134]
+
+    L_00667A61:
+        lea ecx, [ebp + 0x28]
+        call ext_00666CC0
+        test al, al
+        jne L_00667A9A
+        lea ecx, [esp + 0x18]
+        call ext_004442E0
+        mov ebp, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [esp + 0x18]
+        jmp L_00667A37
+
+    L_00667A80:
+        lea ecx, [esp + 0x20]
+        call ext_00667030
+        mov edi, dword ptr [esp + 0x24]
+        mov esi, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x14]
+        jmp L_006679F3
+
+    L_00667A9A:
+        mov al, 1
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+
+    L_00667AA4:
+        pop edi
+        xor al, al
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
