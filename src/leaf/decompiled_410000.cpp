@@ -4216,3 +4216,77 @@ extern "C" __declspec(naked) void __fastcall fn_0041DDE0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x004132D0] sub_004132D0 (126 bytes)
+extern "C" void ext_00412C20();
+extern "C" void ext_00413230();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004132D0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        mov al, byte ptr [esp + 8]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 4]
+        mov byte ptr [ecx + 0x37], al
+        push edi
+        mov edi, dword ptr [esi + 4]
+        cmp edi, dword ptr [esi + 8]
+        mov dword ptr [esp + 0x10], ecx
+        jbe L_top_4132D0
+        call ebp
+    L_top_4132D0:
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        jbe L_chk1_4132D0
+        call ebp
+    L_chk1_4132D0:
+        test esi, esi
+        je L_call1_4132D0
+        cmp esi, esi
+        je L_chk2_4132D0
+    L_call1_4132D0:
+        call ebp
+    L_chk2_4132D0:
+        cmp edi, ebx
+        je L_done_4132D0
+        test esi, esi
+        jne L_chk3_4132D0
+        call ebp
+    L_chk3_4132D0:
+        cmp edi, dword ptr [esi + 8]
+        jb L_chk4_4132D0
+        call ebp
+    L_chk4_4132D0:
+        mov eax, dword ptr [esi + 4]
+        cmp eax, dword ptr [esi + 8]
+        jbe L_chk5_4132D0
+        call ebp
+    L_chk5_4132D0:
+        cmp esi, esi
+        je L_chk6_4132D0
+        call ebp
+    L_chk6_4132D0:
+        cmp edi, dword ptr [esi + 8]
+        jb L_inc_4132D0
+        call ebp
+    L_inc_4132D0:
+        add edi, 4
+        jmp L_top_4132D0
+    L_done_4132D0:
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, esi
+        call ext_00412C20
+        mov ecx, esi
+        call ext_00413230
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 4
+    }
+}
