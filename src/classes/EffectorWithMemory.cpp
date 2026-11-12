@@ -19,3 +19,26 @@ extern "C" void* __fastcall fn_00607ED0(void* self, int edx_unused, int a1) {
     }
     return self;
 }
+
+// [0x0063CB20] EffectorWithMemory::vfunc_33 (65 bytes)
+extern "C" void ext_0063CA70();
+
+extern "C" void __fastcall fn_0063CB20(void* self) {
+    unsigned char* p = static_cast<unsigned char*>(self);
+    reinterpret_cast<void (__fastcall*)(void*)>(ext_0063CA70)(self);
+    void* obj = *reinterpret_cast<void**>(p + 0x04);
+    if (p[0x5c] != 0) {
+        double d = static_cast<double>(*reinterpret_cast<float*>(p + 0x64));
+        int v = *reinterpret_cast<int*>(p + 0x34);
+        void** vt = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<void (__thiscall*)(void*, int, double)>(vt[3])(obj, v, d);
+    } else {
+        double d = 0.0;
+        int v = *reinterpret_cast<int*>(p + 0x34);
+        void** vt = *reinterpret_cast<void***>(obj);
+        reinterpret_cast<void (__thiscall*)(void*, int, double)>(vt[3])(obj, v, d);
+    }
+    obj = *reinterpret_cast<void**>(p + 0x04);
+    void** vt = *reinterpret_cast<void***>(obj);
+    reinterpret_cast<void (__fastcall*)(void*)>(vt[0])(obj);
+}
