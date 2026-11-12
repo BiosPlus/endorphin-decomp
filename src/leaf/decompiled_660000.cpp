@@ -7855,3 +7855,24 @@ extern "C" __declspec(naked) void* __cdecl fn_00662610(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x0066AD10] sub_0066AD10 (33 bytes)
+extern "C" void ext_00662610();
+
+extern "C" __declspec(naked) void* __fastcall fn_0066AD10(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0Ch]
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        push eax
+        push esi
+        mov dword ptr [esp + 0Ch], 0
+        call ext_00662610
+        add esp, 8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
