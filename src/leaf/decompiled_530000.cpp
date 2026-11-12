@@ -2883,3 +2883,43 @@ L_skip_virt:
         ret
     }
 }
+
+// [0x0053C9A0] sub_0053C9A0 (109 bytes)
+extern "C" void ext_00537E70();
+extern "C" void ext_0053A810();
+
+extern "C" __declspec(naked) void __fastcall fn_0053C9A0(void* self) {
+    __asm {
+        push -1
+        push 0x896453
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        __asm _emit 0x8B __asm _emit 0xF1 // mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x955bdc
+        mov dword ptr [esi + 0x14], 0x955bd4
+        mov ecx, dword ptr [esi + 0x5c]
+        test ecx, ecx
+        mov dword ptr [esp + 0x10], 1
+        je skip_vcall
+        __asm _emit 0x8B __asm _emit 0x01 // mov eax, [ecx]
+        __asm _emit 0x8B __asm _emit 0x10 // mov edx, [eax]
+        push 1
+        call edx
+    skip_vcall:
+        lea ecx, [esi + 0x40]
+        mov byte ptr [esp + 0x10], 0
+        call ext_00537E70
+        __asm _emit 0x8B __asm _emit 0xCE // mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_0053A810
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
