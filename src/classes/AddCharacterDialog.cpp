@@ -62,3 +62,44 @@ extern "C" __declspec(naked) void* __fastcall fn_0040DFE0(void* self) {
         ret
     }
 }
+
+// [0x0040CC60] AddCharacterDialog::vfunc_66 (85 bytes)
+extern "C" void ext_0040C380();
+extern "C" void ext_006A5E00();
+extern "C" void ext_006A5F7A();
+extern "C" int mem_00925654;
+extern "C" __declspec(naked) int __fastcall fn_0040CC60(void* self, int edx_unused, void* msg) {
+    __asm {
+        push esi
+        push edi
+        mov edi, [esp+0xc]
+        cmp dword ptr [edi+4], 0x203
+        mov esi, ecx
+        jne L1
+        call dword ptr [mem_00925654]
+        push eax
+        call ext_006A5E00
+        lea ecx, [esi+0x84]
+        cmp eax, ecx
+        jne L1
+        mov ecx, esi
+        call ext_0040C380
+        test al, al
+        je L1
+        mov edx, [esi]
+        mov eax, [edx+0x158]
+        mov ecx, esi
+        call eax
+        pop edi
+        mov eax, 1
+        pop esi
+        ret 4
+    L1:
+        push edi
+        mov ecx, esi
+        call ext_006A5F7A
+        pop edi
+        pop esi
+        ret 4
+    }
+}
