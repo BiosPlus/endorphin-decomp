@@ -125,3 +125,68 @@ extern "C" __declspec(naked) void __fastcall fn_00461040(void* self) {
         ret 4
     }
 }
+
+// [0x00460D40] UndoHistoryDialog::vfunc_84 (182 bytes)
+extern "C" void ext_006A5FC8();
+extern "C" void ext_00665870();
+extern "C" void ext_006A5F50();
+extern "C" void ext_00404F00();
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00925694;
+extern "C" int mem_00928B5D;
+
+extern "C" __declspec(naked) void __fastcall fn_00460D40(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        mov esi, ecx
+        call ext_006A5FC8
+        call ext_00665870
+        mov eax, dword ptr [eax + 0x8]
+        cmp eax, -1
+        jne not_equal
+        push offset mem_00928B5D
+        lea ecx, [esi + 0x128]
+        call ext_006A5F50
+        mov eax, dword ptr [esi + 0x19c]
+        push 0
+        push 0
+        push 0xf1
+        push eax
+        jmp send_msg
+    not_equal:
+        push eax
+        lea ecx, [esp + 8]
+        push ecx
+        call ext_00404F00
+        add esp, 8
+        mov ecx, eax
+        mov dword ptr [esp + 0x28], 0
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esi + 0x128]
+        call ext_006A5F50
+        lea ecx, [esp + 4]
+        mov dword ptr [esp + 0x28], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov edx, dword ptr [esi + 0x19c]
+        push 0
+        push 1
+        push 0xf1
+        push edx
+    send_msg:
+        call dword ptr [mem_00925694]
+        mov ecx, dword ptr [esp + 0x20]
+        mov eax, 1
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret
+    }
+}
