@@ -3040,3 +3040,40 @@ L_4E3548:
         ret
     }
 }
+
+// [0x004E5180] sub_004E5180 (62 bytes)
+extern "C" void ext_004E3480();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_004E5180(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x4]
+        mov esi, dword ptr [eax]
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [eax + 0x4], eax
+        cmp esi, dword ptr [edi + 0x4]
+        mov dword ptr [edi + 0x8], 0
+        je done_4E5180
+        push ebx
+        mov edi, edi
+    loop_4E5180:
+        mov ebx, dword ptr [esi]
+        lea ecx, [esi + 0x8]
+        call ext_004E3480
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+        cmp ebx, dword ptr [edi + 0x4]
+        mov esi, ebx
+        jne loop_4E5180
+        pop ebx
+    done_4E5180:
+        pop edi
+        pop esi
+        ret
+    }
+}
