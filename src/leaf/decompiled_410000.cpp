@@ -6034,3 +6034,97 @@ extern "C" __declspec(naked) void __fastcall fn_0041BE00(void* self) {
         ret
     }
 }
+
+extern "C" void ext_006A6304();
+extern "C" void ext_006A630A();
+extern "C" int mem_00924204;
+extern "C" int mem_009242F0;
+extern "C" int mem_009242F4;
+
+// [0x00419A90] sub_00419A90 (243 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00419A90(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x876869
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, dword ptr [esp + 0x20]
+        cmp dword ptr [esi + 0x20], 0x0
+        jne short L_419AE2
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        mov ecx, esi
+        call ext_006A630A
+        test eax, eax
+        jne short L_419AE2
+        mov esi, dword ptr [mem_00924204]
+        call esi
+        test eax, eax
+        jg short L_419AD0
+        call esi
+        jmp short L_419ADC
+    L_419AD0:
+        call esi
+        and eax, 0xffff
+        or eax, 0x80070000
+    L_419ADC:
+        push eax
+        call ext_006A6304
+    L_419AE2:
+        mov eax, dword ptr [esp + 0x18]
+        sub eax, 0x1
+        je short L_419B63
+        sub eax, 0x1
+        je short L_419B3E
+        sub eax, 0x1
+        jne short L_419B6F
+        mov ecx, dword ptr [esp + 0x1c]
+        push ecx
+        lea ecx, dword ptr [esp + 0x20]
+        call dword ptr [mem_009242F0]
+        mov edx, dword ptr [esi]
+        push eax
+        mov eax, dword ptr [edx + 0x144]
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0x0
+        call eax
+        lea ecx, dword ptr [esp + 0x1c]
+        mov esi, eax
+        call dword ptr [mem_009242F4]
+        xor eax, eax
+        test esi, esi
+        sete al
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x10
+    L_419B3E:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [edx + 0x140]
+        push eax
+        mov ecx, esi
+        call edx
+        xor eax, eax
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x10
+    L_419B63:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x13c]
+        mov ecx, esi
+        call edx
+    L_419B6F:
+        mov ecx, dword ptr [esp + 0x4]
+        xor eax, eax
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x10
+    }
+}
