@@ -2107,3 +2107,51 @@ extern "C" __declspec(naked) void* __fastcall fn_0063F6B0(void* self) {
         ret
     }
 }
+
+#define _DLL
+#include <vector>
+
+struct TargetItem_63DB80 {
+    virtual void vfunc_0() = 0;
+    virtual void vfunc_4() = 0;
+    virtual void vfunc_8() = 0;
+    virtual void vfunc_c() = 0;
+    virtual void vfunc_10() = 0;
+    virtual void vfunc_14() = 0;
+    virtual void vfunc_18() = 0;
+    virtual void vfunc_1c() = 0;
+    virtual void vfunc_20() = 0;
+    virtual void vfunc_24() = 0;
+    virtual void vfunc_28() = 0;
+    virtual void vfunc_2c() = 0;
+    virtual void vfunc_30() = 0;
+    virtual void vfunc_34() = 0;
+    virtual void vfunc_38() = 0;
+    virtual void vfunc_3c() = 0;
+    virtual void vfunc_40() = 0;
+    virtual double vfunc_44() = 0;
+    virtual void vfunc_48() = 0;
+    virtual void vfunc_4c() = 0;
+    virtual void vfunc_50() = 0;
+    virtual void vfunc_54() = 0;
+    virtual void vfunc_58() = 0;
+    virtual void vfunc_5c() = 0;
+    virtual double vfunc_60() = 0;
+};
+
+struct TargetClass_63DB80 {
+    char pad_00[0x28];
+    std::vector<TargetItem_63DB80*> items;
+    float result;
+    char pad_3c[0xc];
+    float rate;
+};
+
+// [0x0063DB80] sub_0063DB80 (157 bytes)
+extern "C" void __fastcall fn_0063DB80(TargetClass_63DB80* self) {
+    TargetItem_63DB80* item0 = self->items[0];
+    TargetItem_63DB80* item1 = self->items[1];
+    TargetItem_63DB80* item2 = self->items[2];
+    double diff = (item1->vfunc_44() - item2->vfunc_44() - 0.03) * self->rate;
+    self->result = (float)(item0->vfunc_60() + diff);
+}
