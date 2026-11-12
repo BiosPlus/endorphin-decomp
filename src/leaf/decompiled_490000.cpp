@@ -3348,3 +3348,60 @@ extern "C" __declspec(naked) void __fastcall fn_0049D0F0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00492480] sub_00492480 (157 bytes)
+extern "C" void ext_0056B670();
+
+extern "C" __declspec(naked) void __fastcall fn_00492480(void* self) {
+    __asm {
+        fld qword ptr [esp + 0x14]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x1c]
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ecx]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je fn_00492480_fail
+        fld qword ptr [esp + 0x14]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x20]
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x4]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je fn_00492480_fail
+        fld qword ptr [esp + 0x14]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x24]
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x8]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je fn_00492480_fail
+        fld qword ptr [esp + 0x14]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x28]
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0xc]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je fn_00492480_fail
+        mov al, 1
+        ret 0x18
+    fn_00492480_fail:
+        xor al, al
+        ret 0x18
+    }
+}
