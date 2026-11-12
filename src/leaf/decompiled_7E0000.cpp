@@ -1449,3 +1449,10 @@ extern "C" __declspec(naked) void __cdecl fn_007E9680(float* out, const float* i
         ret
     }
 }
+
+// [0x007EFF00] sub_007EFF00 (51 bytes)
+extern "C" void ext_007C8890();
+extern "C" void __cdecl fn_007EFF00(int a1) {
+    typedef void (__cdecl *FnT)(int, int, int, int, int, int, int, int, int);
+    ((FnT)ext_007C8890)(a1, 6, 0x99ecd0, 0x7ca820, 0x7efb70, 0x7efe60, 0x7efed0, 0x7efee0, 0x7efef0);
+}
