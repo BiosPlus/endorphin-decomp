@@ -641,3 +641,76 @@ extern "C" int __cdecl fn_007EF0D0(int* self) {
     ((F)ext_007C8960)(self, 2, 4, d);
     return 1;
 }
+
+// [0x007E8F00] sub_007E8F00 (179 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007E8F00(void* self, int edx_unused, const float* src) {
+    __asm {
+        sub esp, 0ch
+        mov eax, dword ptr [esp + 10h]
+        fld dword ptr [eax]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 10h]
+        fstp dword ptr [ecx + 4]
+        fld dword ptr [eax + 20h]
+        fstp dword ptr [ecx + 8]
+        fld dword ptr [eax + 4]
+        fstp dword ptr [ecx + 10h]
+        fld dword ptr [eax + 14h]
+        fstp dword ptr [ecx + 14h]
+        fld dword ptr [eax + 24h]
+        fstp dword ptr [ecx + 18h]
+        fld dword ptr [eax + 8]
+        fstp dword ptr [ecx + 20h]
+        fld dword ptr [eax + 18h]
+        fstp dword ptr [ecx + 24h]
+        fld dword ptr [eax + 28h]
+        fstp dword ptr [ecx + 28h]
+        fld dword ptr [eax + 30h]
+        fchs
+        fstp dword ptr [esp]
+        fld dword ptr [eax + 34h]
+        fchs
+        fstp dword ptr [esp + 4]
+        fld dword ptr [eax + 38h]
+        fchs
+        fstp dword ptr [esp + 8]
+        fld dword ptr [ecx + 10h]
+        fld dword ptr [esp + 4]
+        fld st(0)
+        fmulp st(2), st
+        fld dword ptr [ecx]
+        fld dword ptr [esp]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(3)
+        faddp st(1), st
+        fld dword ptr [ecx + 20h]
+        fld dword ptr [esp + 8]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fstp dword ptr [ecx + 30h]
+        fld dword ptr [ecx + 14h]
+        fmul st, st(2)
+        fld st(3)
+        fmul dword ptr [ecx + 4]
+        faddp st(1), st
+        fld dword ptr [ecx + 24h]
+        fmul st, st(2)
+        faddp st(1), st
+        fstp dword ptr [ecx + 34h]
+        fld dword ptr [ecx + 8]
+        fmulp st(3), st
+        fld dword ptr [ecx + 18h]
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fld dword ptr [ecx + 28h]
+        fmulp st(2), st
+        faddp st(1), st
+        fstp dword ptr [ecx + 38h]
+        add esp, 0ch
+        ret 4
+    }
+}
