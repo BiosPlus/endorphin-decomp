@@ -90,3 +90,80 @@ extern "C" __declspec(naked) void __fastcall fn_005B6E70(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005B6F00] NMData::MetaBodyData::vfunc_38 (182 bytes)
+extern "C" void ext_005B11F0();
+
+extern "C" __declspec(naked) void __fastcall fn_005B6F00(void* self, int edx_unused, float* scale) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x158], 0x0
+        je L_end
+        fldz
+        mov eax, dword ptr [esi + 0xc]
+        mov edx, dword ptr [eax + 0x18]
+        fst dword ptr [esp + 0x10]
+        push ebx
+        fst dword ptr [esp + 0x10]
+        push edi
+        fst dword ptr [esp + 0x10]
+        lea edi, [esi + 0xc]
+        fstp dword ptr [esp + 0xc]
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, edi
+        call edx
+        mov ebx, dword ptr [esi + 0x158]
+        mov eax, dword ptr [ebx + 0x2c]
+        add ebx, 0x24
+        cmp eax, 0x5
+        jne L_t4
+        mov eax, dword ptr [esp + 0x20]
+        fld dword ptr [eax]
+        fmul dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+        jmp L_set
+    L_t4:
+        cmp eax, 0x4
+        jne L_t2
+        mov ecx, dword ptr [esp + 0x20]
+        fld dword ptr [ecx]
+        fmul dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+        jmp L_set
+    L_t2:
+        cmp eax, 0x2
+        jne L_set
+        mov edx, dword ptr [esp + 0x20]
+        fld dword ptr [edx]
+        fmul dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x14]
+    L_set:
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x14]
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, edi
+        call edx
+        cmp dword ptr [esi + 0x10], 0x0
+        je L_pop
+        mov eax, dword ptr [esi + 0x10]
+        mov edi, dword ptr [eax]
+        mov ecx, ebx
+        add edi, 0x34
+        call ext_005B11F0
+        mov ecx, dword ptr [esi + 0x10]
+        mov edx, dword ptr [edi]
+        push eax
+        call edx
+    L_pop:
+        pop edi
+        pop ebx
+    L_end:
+        pop esi
+        add esp, 0x10
+        ret 0x4
+    }
+}
