@@ -4016,3 +4016,59 @@ extern "C" __declspec(naked) void __cdecl fn_00489130(std::string* first, int ho
         ret
     }
 }
+
+// [0x00489A10] sub_00489A10 (106 bytes)
+// make_heap over std::string elements: for (hole = n/2; hole > 0; ) { val = first[--hole]...; adjust(first, hole, n, val); }
+extern "C" __declspec(naked) void __cdecl fn_00489A10(std::string* first, std::string* last) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        sub ecx, ebp
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        push esi
+        sar edx, 0x4
+        push edi
+        mov edi, edx
+        shr edi, 0x1f
+        add edi, edx
+        mov eax, edi
+        cdq
+        sub eax, edx
+        mov esi, eax
+        sar esi, 0x1
+        test esi, esi
+        jle L_done
+        lea eax, [8 * esi]
+        sub eax, esi
+        lea ebx, [ebp + 4 * eax]
+        jmp L_top
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_top:
+        sub esp, 0x1c
+        sub ebx, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x34], esp
+        push ebx
+        sub esi, 0x1
+        call dword ptr [mem_00924FE0]
+        push edi
+        push esi
+        push ebp
+        call fn_00489130
+        add esp, 0x28
+        test esi, esi
+        jg L_top
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
