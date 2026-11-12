@@ -2417,3 +2417,57 @@ L_skip_546F00:
         ret
     }
 }
+
+// [0x00544E20] sub_00544E20 (157 bytes)
+extern "C" void ext_0053F690();
+extern "C" void ext_0053F6A0();
+
+extern "C" __declspec(naked) void __fastcall fn_00544E20(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push esi
+        mov al, 0x1
+        test byte ptr [esp + 0x10], al
+        push edi
+        mov esi, ecx
+        je L_544EB1
+        cmp dword ptr [esi + 0x144], 0x6
+        jne L_544EB1
+        mov bl, byte ptr [esi + 0x248]
+        mov byte ptr [esi + 0x261], al
+        mov byte ptr [esi + 0x249], al
+        mov byte ptr [esi + 0x248], al
+        sub esp, 0x8
+        mov eax, esp
+        lea edi, [esi + 0x164]
+        mov ecx, edi
+        mov dword ptr [eax], 0x93a444
+        mov dword ptr [eax + 0x4], 0xc
+        call ext_0053F6A0
+        mov ecx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [eax + 0x44]
+        push ecx
+        push edx
+        mov ecx, edi
+        call eax
+        mov ecx, edi
+        mov byte ptr [esi + 0x249], 0x0
+        mov byte ptr [esi + 0x248], bl
+        call ext_0053F690
+        cmp byte ptr [esi + 0x260], 0x0
+        mov byte ptr [esi + 0x261], 0x0
+        je L_544EB1
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x68]
+        mov ecx, esi
+        call eax
+L_544EB1:
+        mov al, byte ptr [esi + 0x260]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
