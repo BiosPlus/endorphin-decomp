@@ -5152,3 +5152,94 @@ extern "C" __declspec(naked) void __fastcall fn_0041B610(void* self) {
         ret
     }
 }
+
+// [0x00415720] sub_00415720 (174 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A611E();
+extern "C" void ext_006A6EC0();
+extern "C" int mem_009241FC;
+
+extern "C" __declspec(naked) void __fastcall fn_00415720(void* self, int edx_unused, const char* s, int a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        mov eax, dword ptr [ebp + 0x8]
+        test eax, eax
+        push ebx
+        push esi
+        push edi
+        mov ebx, ecx
+        je done
+        lea edx, [eax + 0x1]
+strlen_loop:
+        mov cl, byte ptr [eax]
+        add eax, 0x1
+        test cl, cl
+        jne strlen_loop
+        sub eax, edx
+        lea esi, [eax + 0x1]
+        cmp esi, 0x400
+        jg heap_path
+        lea eax, [esi + esi]
+        call ext_006A6EC0
+        mov eax, dword ptr [ebp + 0x8]
+        mov edi, esp
+        push esi
+        push edi
+        push esi
+        push eax
+        push 0x1
+        push 0x0
+        call dword ptr [mem_009241FC]
+        mov eax, dword ptr [ebp + 0xc]
+        mov edx, dword ptr [ebx]
+        mov edx, dword ptr [edx + 0xc]
+        push eax
+        push edi
+        mov ecx, ebx
+        call edx
+        lea esp, [ebp - 0xc]
+        pop edi
+        pop esi
+        pop ebx
+        pop ebp
+        ret 0x8
+heap_path:
+        xor ecx, ecx
+        mov eax, esi
+        mov edx, 0x2
+        mul edx
+        seto cl
+        neg ecx
+        or ecx, eax
+        push ecx
+        call ext_006A611E
+        add esp, 0x4
+        push esi
+        mov edi, eax
+        mov eax, dword ptr [ebp + 0x8]
+        push edi
+        push esi
+        push eax
+        push 0x1
+        push 0x0
+        call dword ptr [mem_009241FC]
+        mov eax, dword ptr [ebp + 0xc]
+        mov edx, dword ptr [ebx]
+        mov edx, dword ptr [edx + 0xc]
+        push eax
+        push edi
+        mov ecx, ebx
+        call edx
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+done:
+        lea esp, [ebp - 0xc]
+        pop edi
+        pop esi
+        pop ebx
+        pop ebp
+        ret 0x8
+    }
+}
