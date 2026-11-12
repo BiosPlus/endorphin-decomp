@@ -3181,3 +3181,82 @@ extern "C" __declspec(naked) void* __cdecl fn_00687F10(void* first, void* last, 
         ret
     }
 }
+
+// [0x00688730] sub_00688730 (172 bytes)
+// Uninitialized fill of count 0x2c-byte elements from *src (each: 4 dwords + std::string at +0x10),
+// with an EH frame whose catch path destroys the constructed prefix and rethrows.
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __cdecl fn_00688730(void* dst, int count, const void* src) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x8b5831
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [ebp + 0xc]
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push edi
+        mov edi, dword ptr [ebp + 0x10]
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], 0
+loop_top:
+        test ebx, ebx
+        jbe short exit_label
+        mov dword ptr [ebp + 0xc], esi
+        mov dword ptr [ebp - 0x18], esi
+        test esi, esi
+        mov byte ptr [ebp - 0x4], 1
+        je short skip_label
+        mov eax, dword ptr [edi]
+        mov dword ptr [esi], eax
+        mov ecx, dword ptr [edi + 0x4]
+        mov dword ptr [esi + 0x4], ecx
+        mov edx, dword ptr [edi + 0x8]
+        lea ecx, [edi + 0x10]
+        mov dword ptr [esi + 0x8], edx
+        mov eax, dword ptr [edi + 0xc]
+        push ecx
+        lea ecx, [esi + 0x10]
+        mov dword ptr [esi + 0xc], eax
+        call dword ptr [mem_00924FE0]
+skip_label:
+        sub ebx, 1
+        add esi, 0x2c
+        mov byte ptr [ebp - 0x4], 0
+        mov dword ptr [ebp + 0x8], esi
+        jmp short loop_top
+handler:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x8]
+        cmp esi, edi
+        je short hdone
+hloop:
+        lea ecx, [esi + 0x10]
+        call dword ptr [mem_00924FF4]
+        add esi, 0x2c
+        cmp esi, edi
+        jne short hloop
+hdone:
+        push 0
+        push 0
+        call ext_006A6DD2
+exit_label:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
