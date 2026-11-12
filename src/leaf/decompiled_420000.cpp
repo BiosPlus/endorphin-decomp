@@ -3539,3 +3539,136 @@ extern "C" __declspec(naked) int __fastcall fn_00425EE0(void* self, int edx_unus
         ret
     }
 }
+
+// [0x00427EA0] sub_00427EA0 (308 bytes)
+extern "C" int mem_00924FE8;
+extern "C" int mem_00925134;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FEC;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9D8[54];
+
+extern "C" __declspec(naked) int __fastcall fn_00427EA0(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FE8]
+        mov edi, dword ptr [esi + 0x8]
+        mov ebp, dword ptr [mem_00925134]
+        add esi, 0x4
+        cmp edi, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x34], 0
+        jbe L_427EE3
+        call ebp
+L_427EE3:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_427EED
+        call ebp
+L_427EED:
+        cmp esi, esi
+        je L_427EF3
+        call ebp
+L_427EF3:
+        cmp edi, ebx
+        je L_427F25
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_427EFE
+        call ebp
+L_427EFE:
+        mov eax, dword ptr [esp + 0x3c]
+        cmp dword ptr [edi + 0x1c], eax
+        je L_427F13
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_427F0E
+        call ebp
+L_427F0E:
+        add edi, 0x20
+        jmp L_427EE3
+L_427F13:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_427F1A
+        call ebp
+L_427F1A:
+        push edi
+        lea ecx, [esp + 0x14]
+        call dword ptr [mem_00924FDC]
+L_427F25:
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FEC]
+        test al, al
+        je L_427F3D
+        mov dword ptr [esp + 0x34], 0xffffffff
+        jmp L_427F87
+L_427F3D:
+        xor esi, esi
+        or edi, -1
+L_427F42:
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr mem_00ACD9D8[esi*4]
+L_427F53:
+        mov dl, byte ptr [ecx]
+        cmp dl, byte ptr [eax]
+        jne L_427F73
+        test dl, dl
+        je L_427F6F
+        mov dl, byte ptr [ecx + 0x1]
+        cmp dl, byte ptr [eax + 0x1]
+        jne L_427F73
+        add ecx, 0x2
+        add eax, 0x2
+        test dl, dl
+        jne L_427F53
+L_427F6F:
+        xor eax, eax
+        jmp L_427F77
+L_427F73:
+        sbb eax, eax
+        sbb eax, edi
+L_427F77:
+        test eax, eax
+        je L_427FA8
+        add esi, 0x1
+        cmp esi, 0x36
+        jl L_427F42
+        mov dword ptr [esp + 0x34], edi
+L_427F87:
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FF4]
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x4
+L_427FA8:
+        mov esi, dword ptr mem_00ACD9D8[esi*4]
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x34], edi
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x2c]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
