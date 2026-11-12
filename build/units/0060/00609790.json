@@ -12,5 +12,7 @@
     "0x006097DB",
     "0x006097F8"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T11:01:24Z"
 }

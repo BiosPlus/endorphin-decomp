@@ -1850,3 +1850,97 @@ extern "C" __declspec(naked) void __fastcall fn_0060C070(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00609790] sub_00609790 (185 bytes)
+// Heap sift-up (push_heap-style) over an array of element pointers; element+4 and
+// element+0x20 are std::string keys compared via the imported basic_string operators.
+extern "C" int mem_00924EF4;
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void __cdecl fn_00609790(void* first, int hole, int top, void* value) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        lea eax, [ebp - 0x1]
+        cdq
+        sub eax, edx
+        push esi
+        mov esi, eax
+        sar esi, 1
+        cmp dword ptr [esp + 0x14], ebp
+        jge L_end
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push ebx
+    L_loop:
+        mov ebx, dword ptr [edi + 4*esi]
+        mov eax, dword ptr [esp + 0x20]
+        add eax, 0x4
+        mov dword ptr [esp + 0x14], ebx
+        push eax
+        add ebx, 0x4
+        push ebx
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne L_move
+        mov eax, dword ptr [esp + 0x20]
+        add eax, 0x4
+        push eax
+        push ebx
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je L_store
+        mov ebx, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x14]
+        lea eax, [ebx + 0x20]
+        push eax
+        add ecx, 0x20
+        push ecx
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        je L_store_ebx
+    L_move:
+        mov edx, dword ptr [edi + 4*esi]
+        lea eax, [esi - 0x1]
+        mov dword ptr [edi + 4*ebp], edx
+        cdq
+        sub eax, edx
+        mov ebp, esi
+        sar eax, 1
+        cmp dword ptr [esp + 0x1c], ebp
+        mov esi, eax
+        jl L_loop
+    L_exit:
+        mov eax, dword ptr [esp + 0x20]
+        pop ebx
+        mov dword ptr [edi + 4*ebp], eax
+        pop edi
+        pop esi
+        pop ebp
+        ret
+    L_store:
+        mov ecx, dword ptr [esp + 0x20]
+        pop ebx
+        mov dword ptr [edi + 4*ebp], ecx
+        pop edi
+        pop esi
+        pop ebp
+        ret
+    L_store_ebx:
+        mov dword ptr [edi + 4*ebp], ebx
+        pop ebx
+        pop edi
+        pop esi
+        pop ebp
+        ret
+    L_end:
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [esp + 0xc]
+        pop esi
+        mov dword ptr [eax + 4*ebp], edx
+        pop ebp
+        ret
+    }
+}
