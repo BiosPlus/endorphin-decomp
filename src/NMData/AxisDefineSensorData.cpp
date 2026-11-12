@@ -80,3 +80,60 @@ extern "C" void __fastcall fn_0060EA00(char* self, int edx_unused, const char* o
     ((Fn2)ext_00487A30)(&ctx, *(float*)(self + 0x174), *(float*)(other + 0x174), (const void*)0x9724a8);
     ((Fn2)ext_00487A30)(&ctx, *(float*)(self + 0x178), *(float*)(other + 0x178), (const void*)0x972498);
 }
+
+// [0x0060F420] NMData::AxisDefineSensorData::vfunc_61 (122 bytes)
+extern "C" void ext_005DF5C0();
+extern "C" int mem_00924FC8;
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_0060F420(void* self, int edx_unused, int a1, void* a2) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00924FC8]
+        mov ebx, ecx
+        lea esi, [ebx + 0x154]
+        push 0x96f57c
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je body_
+        push 0x96f568
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je body_
+        push 0x96f554
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je body_
+        push 0x96f540
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne done_
+    body_:
+        sub esp, 0x1c
+        add ebx, 0x180
+        mov ecx, esp
+        mov dword ptr [esp + 0x28], esp
+        push ebx
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x34]
+        add ecx, 0x598
+        call ext_005DF5C0
+    done_:
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
