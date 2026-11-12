@@ -8599,3 +8599,45 @@ skip_menu:
         ret 0x8
     }
 }
+
+// [0x0043E760] sub_0043E760 (108 bytes)
+extern "C" void ext_0043E490();
+extern "C" __declspec(naked) void* __fastcall fn_0043E760(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        mov ecx, dword ptr [esp + 0x30]
+        push edx
+        mov edx, dword ptr [esp + 0x38]
+        sub esp, 0xc
+        mov eax, esp
+        mov dword ptr [eax + 0x4], ecx
+        mov ecx, dword ptr [esp + 0x34]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [esp + 0x38]
+        mov dword ptr [eax], 0x0
+        sub esp, 0xc
+        mov eax, esp
+        mov dword ptr [eax + 0x4], ecx
+        mov ecx, dword ptr [esp + 0x34]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [esp + 0x38]
+        mov dword ptr [eax], 0x0
+        sub esp, 0xc
+        mov eax, esp
+        push esi
+        mov dword ptr [eax], 0x0
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], edx
+        call ext_0043E490
+        add esp, 0x34
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
