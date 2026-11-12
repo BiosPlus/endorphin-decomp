@@ -28,9 +28,10 @@ ROUTE_MIN_TRIALS="${ROUTE_MIN_TRIALS:-20}"
 ROUTE_MIN_YIELD="${ROUTE_MIN_YIELD:-0.05}"
 
 # Model tiers, cheapest first. Every model in a tier gets one real attempt at a function before it moves up a tier, and
-# within a tier a function goes to whichever owed model is free and not rate-limited (spreads load across quota pools).
-# Override with MODEL_TIERS="modelA modelB|modelC|modelD modelE|modelF" ("|" separates tiers).
-MODEL_TIERS="${MODEL_TIERS:-claude-haiku-5.5 gemini-3.8-flash|claude-sonnet-5.5|gemini-4-argon claude-opus-5.5|gemini-4-carbon}"
+# within a tier a function goes to whichever owed model is free and not rate-limited (spreads load across all 3 quota pools
+# right from tier 0: claude, agy-gemini, and agy-other). Prefix an entry with "agy/" or "claude/" to pin it to one backend.
+# Override with MODEL_TIERS="modelA modelB|modelC modelD|modelE" ("|" separates tiers).
+MODEL_TIERS="${MODEL_TIERS:-claude-haiku-5.5 gemini-3.8-flash agy/claude-sonnet-5.5|gemini-4-argon claude-opus-5.5|gemini-4-carbon}"
 # Quota pools. Each has its own 5h usage window, so a limit hit cools down the whole pool, not just one model:
 #   claude     = native claude CLI (haiku/sonnet/opus)      agy-gemini = every gemini-* model on agy
 #   agy-other  = everything else on agy (claude models)
@@ -93,7 +94,7 @@ fi
 if [[ "${GRIND_VERBOSE:-0}" == 1 ]]; then
 echo "=== Endorphin Autonomous Parallel Grinder (1 Agent / Function Try) ==="
 echo "Verified CLIs : claude=$HAS_CLAUDE | agy=$HAS_AGY"
-echo "Pipeline      : haiku runners=$WAVE_SIZE (tries every function) | escalation cap=${ESC_CAP}/model | total_pulls=$((MAX_WAVES*WAVE_SIZE)) | push_every=$((PUSH_EVERY*WAVE_SIZE)) | timeout=${AGENT_TIMEOUT}s"
+echo "Pipeline      : tier0 runners=$WAVE_SIZE (tries every function) | escalation cap=${ESC_CAP}/model | total_pulls=$((MAX_WAVES*WAVE_SIZE)) | push_every=$((PUSH_EVERY*WAVE_SIZE)) | timeout=${AGENT_TIMEOUT}s"
 echo "Model Tiers   : ${MODEL_TIERS//|/  ->  }"
 echo "Policy        : every model in a tier tries a function (least-loaded first) before it moves up; rate-limited pools are waited out, never counted as failures"
 echo "Security Mode : Scoped Allowlist + Sandbox + PreToolUse Guard [NO skip-dangerously]"
@@ -202,44 +203,55 @@ classify_rate_limit() {
   echo "$kind ${reset:-0}"
 }
 
-# Resolve which CLI backend ("claude" or "agy") to use for a given model choice.
+# Check whether a specific backend ("claude" or "agy") can run a base model right now.
+backend_usable_for_model() {
+  local backend="$1" model_choice="$2"
+  case "$backend" in
+    claude)
+      [[ "$model_choice" == claude-* && $HAS_CLAUDE -eq 1 ]] && ! is_backend_cooling_down claude
+      ;;
+    agy)
+      [[ "$model_choice" != claude-haiku-5.5 && $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "$(pool_of agy "$model_choice")"
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+# Resolve which CLI backend ("claude" or "agy") to use for a tier entry ("<model>" or "<backend>/<model>").
 # Note: claude-sonnet-5.5 and claude-opus-5.5 are available on BOTH claude and agy; claude-haiku-5.5 is claude-only.
-# Availability is per quota pool (pool_of), not per model: one limit hit cools down everything on that pool.
+# An explicit "<backend>/" prefix (e.g. "agy/claude-sonnet-5.5") pins that entry strictly to that backend so it never
+# falls back to or drains another quota pool. Availability is per quota pool (pool_of), not per model.
 resolve_backend_for_model() {
-  local model_choice="$1"
+  local spec="$1" pin="" model_choice
+  [[ "$spec" == */* ]] && pin="${spec%%/*}"
+  model_choice="${spec#*/}"
+
+  if [[ -n "$pin" ]]; then
+    if backend_usable_for_model "$pin" "$model_choice"; then
+      echo "$pin"
+      return
+    fi
+    echo "none"
+    return
+  fi
+
   case "$model_choice" in
     claude-haiku-5.5)
-      if [[ $HAS_CLAUDE -eq 1 ]] && ! is_backend_cooling_down claude; then
-        echo "claude"
-        return
-      fi
+      backend_usable_for_model claude "$model_choice" && { echo "claude"; return; }
       ;;
     claude-sonnet-5.5|claude-opus-5.5)
       if [[ "$PREFER_AGY_CLAUDE" -eq 1 ]]; then
-        if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "$(pool_of agy "$model_choice")"; then
-          echo "agy"
-          return
-        fi
-        if [[ $HAS_CLAUDE -eq 1 ]] && ! is_backend_cooling_down claude; then
-          echo "claude"
-          return
-        fi
+        backend_usable_for_model agy "$model_choice" && { echo "agy"; return; }
+        backend_usable_for_model claude "$model_choice" && { echo "claude"; return; }
       else
-        if [[ $HAS_CLAUDE -eq 1 ]] && ! is_backend_cooling_down claude; then
-          echo "claude"
-          return
-        fi
-        if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "$(pool_of agy "$model_choice")"; then
-          echo "agy"
-          return
-        fi
+        backend_usable_for_model claude "$model_choice" && { echo "claude"; return; }
+        backend_usable_for_model agy "$model_choice" && { echo "agy"; return; }
       fi
       ;;
     gemini-3.8-flash|gemini-4-argon|gemini-4-carbon)
-      if [[ $HAS_AGY -eq 1 ]] && ! is_backend_cooling_down "$(pool_of agy "$model_choice")"; then
-        echo "agy"
-        return
-      fi
+      backend_usable_for_model agy "$model_choice" && { echo "agy"; return; }
       ;;
   esac
   echo "none"
@@ -279,6 +291,30 @@ run_agy_with_model() {
     --settings "$AGY_INLINE_SETTINGS" \
     --print-timeout "${AGENT_TIMEOUT_EFF:-$AGENT_TIMEOUT}s" \
     -p "$prompt" >"$log_file" 2>&1
+}
+
+# Try candidate agy model slugs in order and cache the first accepted slug in $STATE_DIR/slug.<key>.
+run_agy_first_valid_slug() {
+  local key="$1" prompt="$2" log_file="$3"; shift 3
+  local cached="" slug rc=0
+  [[ -f "$STATE_DIR/slug.$key" ]] && cached="$(cat "$STATE_DIR/slug.$key" 2>/dev/null || true)"
+  if [[ -n "$cached" ]]; then
+    run_agy_with_model "$cached" "high" "$prompt" "$log_file" || rc=$?
+    if ! is_invalid_model_log "$log_file"; then
+      return $rc
+    fi
+    rm -f "$STATE_DIR/slug.$key"
+  fi
+  for slug in "$@"; do
+    [[ "$slug" == "$cached" ]] && continue
+    rc=0
+    run_agy_with_model "$slug" "high" "$prompt" "$log_file" || rc=$?
+    if ! is_invalid_model_log "$log_file"; then
+      echo "$slug" > "$STATE_DIR/slug.$key"
+      return $rc
+    fi
+  done
+  return $rc
 }
 
 # Run a single dedicated agent on a single function address using the chosen model and backend
@@ -321,22 +357,12 @@ run_single_function_agent() {
         run_agy_with_model "gemini-3.8-flash" "high" "$prompt" "$log_file" || exit_code=$?
         ;;
       claude-sonnet-5.5)
-        for slug in "claude-sonnet-5-5@default" "claude-sonnet-5-5-high" "claude-sonnet-4-6@default"; do
-          exit_code=0
-          run_agy_with_model "$slug" "high" "$prompt" "$log_file" || exit_code=$?
-          if ! is_invalid_model_log "$log_file"; then
-            break
-          fi
-        done
+        run_agy_first_valid_slug "sonnet" "$prompt" "$log_file" \
+          "claude-sonnet-5-5" "claude-sonnet-5-5-high" "claude-sonnet-5.5" "claude-sonnet-5-5@default" "claude-sonnet-4-6@default" || exit_code=$?
         ;;
       claude-opus-5.5)
-        for slug in "claude-opus-5-5@default" "claude-opus-5-5-high" "claude-opus-4-6@default"; do
-          exit_code=0
-          run_agy_with_model "$slug" "high" "$prompt" "$log_file" || exit_code=$?
-          if ! is_invalid_model_log "$log_file"; then
-            break
-          fi
-        done
+        run_agy_first_valid_slug "opus" "$prompt" "$log_file" \
+          "claude-opus-5-5" "claude-opus-5-5-high" "claude-opus-5.5" "claude-opus-5-5@default" "claude-opus-4-6@default" || exit_code=$?
         ;;
       gemini-4-argon)
         run_agy_with_model "gemini-4-argon" "high" "$prompt" "$log_file" || exit_code=$?
@@ -376,9 +402,11 @@ for _c in "${_caps[@]}"; do
 done
 
 stage_cap() {
-  local idx="$1" model="${MODEL_CHAIN[$1]}" cap
-  if (( ${MODEL_TIER[$model]} == 0 )) && [[ -z "${MODEL_CAP[$model]:-}" ]]; then echo "$WAVE_SIZE"; return; fi
-  cap="${MODEL_CAP[$model]:-$ESC_CAP}"
+  local idx="$1" spec="${MODEL_CHAIN[$1]}" base cap
+  base="${spec#*/}"
+  cap="${MODEL_CAP[$spec]:-${MODEL_CAP[$base]:-}}"
+  if (( ${MODEL_TIER[$spec]} == 0 )) && [[ -z "$cap" ]]; then echo "$WAVE_SIZE"; return; fi
+  cap="${cap:-$ESC_CAP}"
   (( cap < 1 )) && cap=1
   echo "$cap"
 }
@@ -424,7 +452,8 @@ low_yield_stage() {   # $1=model $2=size_bytes ; true if that stage should be sk
 # stopped the run: nothing is recorded against the model, the function stays owed to it and the scheduler waits for the reset.
 attempt_worker() {
   local addr="$1" model_idx="$2"
-  local model_choice="${MODEL_CHAIN[$model_idx]}" total_steps="${#MODEL_CHAIN[@]}"
+  local model_spec="${MODEL_CHAIN[$model_idx]}" total_steps="${#MODEL_CHAIN[@]}"
+  local model_choice="${model_spec#*/}"
   local backend log_file rc next_backend rl_kind rl_reset
 
   # Larger functions get more time: +1s per 2 bytes, capped at 3x the base timeout
@@ -432,11 +461,11 @@ attempt_worker() {
   (( extra > cap )) && extra=$cap
   AGENT_TIMEOUT_EFF=$(( AGENT_TIMEOUT + extra ))
 
-  # Retry the same model on an alternate backend (e.g. claude -> agy) if the first one is rate-limited
+  # Retry the same model on an alternate backend (e.g. claude -> agy) if unpinned and the first one is rate-limited
   while true; do
-    backend="$(resolve_backend_for_model "$model_choice")"
+    backend="$(resolve_backend_for_model "$model_spec")"
     if [[ "$backend" == "none" ]]; then
-      emit "[!] $addr: $model_choice unavailable / cooling down on all backends"
+      emit "[!] $addr: $model_spec unavailable / cooling down on all allowed backends"
       echo unavailable > "$STATE_DIR/res.$addr"
       return 0
     fi
@@ -463,7 +492,7 @@ attempt_worker() {
       read -r rl_kind rl_reset < "$STATE_DIR/rl.$addr" 2>/dev/null || true
       rm -f "$STATE_DIR/rl.$addr"
       mark_rate_limited "$(pool_of "$backend" "$model_choice")" "$rl_kind" "$rl_reset"
-      next_backend="$(resolve_backend_for_model "$model_choice")"
+      next_backend="$(resolve_backend_for_model "$model_spec")"
       if [[ "$next_backend" != "none" && "$next_backend" != "$backend" ]]; then
         emit "[*] $addr: switching $model_choice to alternate backend ($next_backend)"
         continue
@@ -540,15 +569,17 @@ pick_next_candidate() {
   return 1
 }
 
-# Models in tier $2 that may still attempt function $1: not size-gated, not low-yield (the first chain model is never
+# Models in tier $2 that may still attempt function $1: not size-gated, not low-yield (tier 0 models are never
 # skipped), and not already failed it in an earlier session. Availability is NOT considered here (that is dispatch's job).
 owed_models() {
-  local addr="$1" t="$2" model size="${FUNC_SIZES[$1]:-0}" out=""
-  for model in ${TIER_MODELS[$t]}; do
-    (( size < ${MODEL_MIN[$model]:-0} )) && continue
-    if [[ "$model" != "${MODEL_CHAIN[0]}" ]] && low_yield_stage "$model" "$size"; then continue; fi
-    already_failed "$addr" "$model" && continue
-    out+="$model "
+  local addr="$1" t="$2" spec base min_sz size="${FUNC_SIZES[$1]:-0}" out=""
+  for spec in ${TIER_MODELS[$t]}; do
+    base="${spec#*/}"
+    min_sz="${MODEL_MIN[$spec]:-${MODEL_MIN[$base]:-0}}"
+    (( size < min_sz )) && continue
+    if (( ${MODEL_TIER[$spec]} > 0 )) && low_yield_stage "$base" "$size"; then continue; fi
+    already_failed "$addr" "$base" && continue
+    out+="$spec "
   done
   echo "${out% }"
 }
@@ -638,14 +669,14 @@ reap_finished() {
       [[ -f "$STATE_DIR/res.$addr" ]] && res="$(cat "$STATE_DIR/res.$addr")"
       case "$res" in
         matched)
-          finish_function "$addr" matched "${MODEL_CHAIN[$s]}" ;;
+          finish_function "$addr" matched "${MODEL_CHAIN[$s]#*/}" ;;
         limited|unavailable)
           # Quota stopped the run, not the model: it stays owed, and the function waits for the pool to reset
           emit "[~] $addr: ${MODEL_CHAIN[$s]} $res; still owed, waiting"
           PENDING[${FN_TIER[$addr]}]+="$addr " ;;
         *)
           rest=""
-          for m in ${FN_OWED[$addr]}; do [[ "$m" != "${MODEL_CHAIN[$s]}" ]] && rest+="$m "; done
+          for m in ${FN_OWED[$addr]}; do [[ "$m" != "${MODEL_CHAIN[$s]}" && "${m#*/}" != "${MODEL_CHAIN[$s]#*/}" ]] && rest+="$m "; done
           FN_OWED["$addr"]="${rest% }"
           if [[ -n "$rest" ]]; then PENDING[${FN_TIER[$addr]}]+="$addr "
           else advance_function "$addr" $(( ${FN_TIER[$addr]} + 1 )); fi ;;
@@ -745,7 +776,7 @@ render() {
     for w in ${PENDING[$t]}; do ((p++)); done
     for m in ${TIER_MODELS[$t]}; do
       i=${MODEL_IDX[$m]}; r="${STAGE_RUNNING[$i]}"; ((tr += r))
-      part+="${m#claude-} $r/$(stage_cap "$i") "
+      part+="${m/claude-/} $r/$(stage_cap "$i") "
     done
     (( tr + p == 0 )) && continue
     st+="T$t: ${part}"
@@ -763,14 +794,14 @@ render() {
 
   if (( ${#JOB_INFO[@]} > 0 )); then
     rows+=("${C_DIM}Working on:${C_RST}")
-    local pid addr stage model backend started logf att tmo mc tc
+    local pid addr stage spec model backend started logf att tmo mc tc
     for pid in $(printf '%s\n' "${!JOB_INFO[@]}" | sort -n); do
       read -r addr stage <<< "${JOB_INFO[$pid]}"
-      model="${MODEL_CHAIN[$stage]}"; backend="-"; started="$now"; logf=""
+      spec="${MODEL_CHAIN[$stage]}"; model="${spec#*/}"; backend="-"; started="$now"; logf=""
       [[ -f "$STATE_DIR/run.$addr" ]] && read -r model backend started logf < "$STATE_DIR/run.$addr"
       att=$(( now - started ))
       tmo=$(( ${FUNC_SIZES[$addr]:-0} / 2 )); (( tmo > AGENT_TIMEOUT * 2 )) && tmo=$(( AGENT_TIMEOUT * 2 )); tmo=$(( AGENT_TIMEOUT + tmo ))
-      case "${MODEL_TIER[$model]:-9}" in
+      case "${MODEL_TIER[$spec]:-9}" in
         0) mc="$C_GRN" ;; 1) mc="$C_CYN" ;; 2) mc="$C_BLU" ;; 3) mc="$C_YEL" ;; 4) mc="$C_MAG" ;; *) mc="$C_RED" ;;
       esac
       tc=""
@@ -778,7 +809,7 @@ render() {
       (( att * 100 >= tmo * 90 )) && tc="$C_RED"
       AGENT_TOK="-"; [[ "$backend" == claude ]] && agent_tokens "$addr" "${logf:-}"
       [[ "$AGENT_TOK" =~ ^[0-9]+$ ]] && AGENT_TOK="$(fmt_tok "$AGENT_TOK")"
-      rows+=("$(printf " * %s %5sB  %s%-19s%s %s%-9s%s %7s tok  (total %s)" \
+      rows+=("$(printf " * %s %5sB  %s%-20s%s %s%-9s%s %7s tok  (total %s)" \
         "$addr" "${FUNC_SIZES[$addr]:-?}" "$mc" "$backend/${model#claude-}" "$C_RST" \
         "$tc" "${att}s/${tmo}s" "$C_RST" "$AGENT_TOK" \
         "$(fmt_dur $(( now - ${FN_START[$addr]:-$now} )))")")

@@ -26,7 +26,7 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
    - Always pass your model identifier via `--model <name>` (e.g., `claude-haiku-5.5`, `gemini-3.8-flash`, `claude-sonnet-5.5`, `claude-opus-5.5`, `gemini-4-argon`, `gemini-4-carbon`) or `DECOMP_MODEL`.
    - `EXACT MATCH (100%)` acquires an atomic lock, marks `"status": "matched"`, `"matched_by"`, and `"matched_at"` in the per-function ledger `build/units/<shard>/<VA>.json`, and commits `Match 0xXXXXXXXX (<symbol>) [model: <matched_by>]`.
 4. **If stuck after 10 tries:**
-   - In `tools/grind.sh` parallel wave mode, simply stop after 10 tries — the orchestrator will clean the attempt and escalate `0xXXXXXXXX` through the model tiers (`claude-haiku-5.5, gemini-3.8-flash` -> `claude-sonnet-5.5` -> `gemini-4-argon, claude-opus-5.5` -> `gemini-4-carbon`; every model in a tier tries it before it moves up), and only call `work skip` if all 6 fail. Hitting a usage/rate limit is not a failure: just stop, and the orchestrator waits for that quota pool to reset.
+   - In `tools/grind.sh` parallel wave mode, simply stop after 10 tries — the orchestrator will clean the attempt and escalate `0xXXXXXXXX` through the model tiers (`claude-haiku-5.5, gemini-3.8-flash, agy/claude-sonnet-5.5` -> `gemini-4-argon, claude-opus-5.5` -> `gemini-4-carbon`; every model in a tier tries it before it moves up), and only call `work skip` if all 6 fail. Hitting a usage/rate limit is not a failure: just stop, and the orchestrator waits for that quota pool to reset.
    - If running standalone/manually, skip cleanly (automatically strips the stub from `src/`):
      ```bash
      ./.local/bin/work skip 0xXXXXXXXX "brief reason"
