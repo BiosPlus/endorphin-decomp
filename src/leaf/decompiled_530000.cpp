@@ -3037,3 +3037,63 @@ extern "C" __declspec(naked) void __fastcall fn_00530370(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00531BB0] sub_00531BB0 (173 bytes)
+extern "C" void ext_0065C620();
+extern "C" void ext_0065C660();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_00531AE0();
+extern "C" __declspec(naked) void __fastcall fn_00531BB0(void* self) {
+    __asm {
+        push -1
+        push 0x895129
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x8], esi
+        mov dword ptr [esi], 0x954328
+        mov dword ptr [esi + 0x4], 0x954320
+        mov dword ptr [esi + 0x8], 0x95430c
+        mov dword ptr [esi + 0xc], 0x954304
+        lea ecx, [esi + 0x98]
+        mov dword ptr [esp + 0x14], 0x3
+        call ext_0065C620
+        mov eax, dword ptr [esi + 0x58]
+        xor edi, edi
+        cmp eax, edi
+        je L_skip1
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    L_skip1:
+        lea ecx, [esi + 0x3c]
+        mov dword ptr [esi + 0x58], edi
+        mov dword ptr [esi + 0x5c], edi
+        mov dword ptr [esi + 0x60], edi
+        mov byte ptr [esp + 0x14], 0x1
+        call ext_00531AE0
+        mov eax, dword ptr [esi + 0x28]
+        cmp eax, edi
+        je L_skip2
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    L_skip2:
+        mov ecx, esi
+        mov dword ptr [esi + 0x28], edi
+        mov dword ptr [esi + 0x2c], edi
+        mov dword ptr [esi + 0x30], edi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_0065C660
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
