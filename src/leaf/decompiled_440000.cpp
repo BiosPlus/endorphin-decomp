@@ -4040,3 +4040,50 @@ extern "C" __declspec(naked) void __fastcall fn_0044A820(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00440A20] sub_00440A20 (219 bytes)
+extern "C" void* __fastcall fn_00440A20(void* self, int edx_unused, const void* src) {
+    struct Rec {
+        int d[8];
+        unsigned char c[2];
+        unsigned char pad[2];
+        float f[24];
+    };
+    Rec* dst = (Rec*)self;
+    const Rec* s = (const Rec*)src;
+    dst->d[0] = s->d[0];
+    dst->d[1] = s->d[1];
+    dst->d[2] = s->d[2];
+    dst->d[3] = s->d[3];
+    dst->d[4] = s->d[4];
+    dst->d[5] = s->d[5];
+    dst->d[6] = s->d[6];
+    dst->d[7] = s->d[7];
+    dst->c[0] = s->c[0];
+    dst->c[1] = s->c[1];
+    dst->f[0] = s->f[0];
+    dst->f[1] = s->f[1];
+    dst->f[2] = s->f[2];
+    dst->f[3] = s->f[3];
+    dst->f[4] = s->f[4];
+    dst->f[5] = s->f[5];
+    dst->f[6] = s->f[6];
+    dst->f[7] = s->f[7];
+    dst->f[8] = s->f[8];
+    dst->f[9] = s->f[9];
+    dst->f[10] = s->f[10];
+    dst->f[11] = s->f[11];
+    dst->f[12] = s->f[12];
+    dst->f[13] = s->f[13];
+    dst->f[14] = s->f[14];
+    dst->f[15] = s->f[15];
+    dst->f[16] = s->f[16];
+    dst->f[17] = s->f[17];
+    dst->f[18] = s->f[18];
+    dst->f[19] = s->f[19];
+    dst->f[20] = s->f[20];
+    dst->f[21] = s->f[21];
+    dst->f[22] = s->f[22];
+    dst->f[23] = s->f[23];
+    return self;
+}
