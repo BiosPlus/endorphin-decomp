@@ -7470,3 +7470,31 @@ extern "C" __declspec(naked) void __cdecl fn_0043B720(unsigned* first, unsigned*
         ret
     }
 }
+
+// [0x0043B420] sub_0043B420 (47 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0043B420(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x10], 0
+        je short no_match
+        mov ecx, dword ptr [esi + 0x10]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xc]
+        call edx
+        test al, al
+        jne short no_match
+        mov ecx, dword ptr [esi + 0x10]
+        push esi
+        call ext_00412D70
+        test eax, eax
+        jne short no_match
+        mov eax, 1
+        pop esi
+        ret
+    no_match:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
