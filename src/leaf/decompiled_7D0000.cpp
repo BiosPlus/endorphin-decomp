@@ -4261,3 +4261,123 @@ L_end:
         ret
     }
 }
+
+// [0x007D6BB0] sub_007D6BB0 (306 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D6BB0(void* self, float* src, float* scale) {
+    __asm {
+        sub esp, 8
+        mov eax, dword ptr [esp+0xc]
+        mov ecx, dword ptr [eax+0xb4]
+        mov edx, dword ptr [eax+0xb8]
+        push ebx
+        mov ebx, dword ptr [eax+0x168]
+        test ebx, ebx
+        mov dword ptr [esp+4], ecx
+        mov dword ptr [esp+8], edx
+        je L_end
+        fldz
+        mov ecx, dword ptr [esp+0x18]
+        push ebp
+        push esi
+        push edi
+L_node:
+        lea ebp, [ebx+0x20]
+        mov esi, ebx
+        xor edx, edx
+        lea eax, [ebp+0x10]
+        sub esi, ebp
+L_zero:
+        fst dword ptr [ebx+edx*4]
+        add edx, 1
+        fst dword ptr [esi+eax]
+        add eax, 4
+        cmp edx, 3
+        fst dword ptr [eax-0x14]
+        fst dword ptr [eax-4]
+        jne L_zero
+        mov eax, dword ptr [ebx+0x84]
+        cmp eax, 1
+        jne L_t2
+        mov eax, 2
+        jmp L_cnt
+L_t2:
+        xor edx, edx
+        cmp eax, 2
+        sete dl
+        lea edx, [edx+edx+1]
+        mov eax, edx
+L_cnt:
+        mov esi, dword ptr [esp+0x20]
+        mov edi, esi
+        sub edi, ebx
+        mov dword ptr [esp+0x1c], eax
+L_loop:
+        cmp dword ptr [esp+0x10], -1
+        je L_B
+        mov eax, ebx
+        mov edx, 3
+L_A1:
+        fld dword ptr [edi+eax]
+        add eax, 4
+        sub edx, 1
+        fmul dword ptr [ecx]
+        fadd dword ptr [eax-4]
+        fstp dword ptr [eax-4]
+        jne L_A1
+        lea eax, [ebx+0x10]
+        mov edx, 3
+L_A2:
+        fld dword ptr [edi+eax]
+        add eax, 4
+        sub edx, 1
+        fmul dword ptr [ecx]
+        fadd dword ptr [eax-4]
+        fstp dword ptr [eax-4]
+        jne L_A2
+L_B:
+        cmp dword ptr [esp+0x14], -1
+        je L_adv
+        xor eax, eax
+        lea edx, [esi+0x20]
+L_B1:
+        fld dword ptr [edx]
+        add eax, 1
+        fmul dword ptr [ecx]
+        add edx, 4
+        cmp eax, 3
+        fadd dword ptr [ebp+eax*4-4]
+        fstp dword ptr [ebp+eax*4-4]
+        jne L_B1
+        lea edx, [esi+0x30]
+        lea eax, [ebp+0x10]
+        mov esi, 3
+L_B2:
+        fld dword ptr [edx]
+        add edx, 4
+        fmul dword ptr [ecx]
+        add eax, 4
+        sub esi, 1
+        fadd dword ptr [eax-4]
+        fstp dword ptr [eax-4]
+        jne L_B2
+        mov esi, dword ptr [esp+0x20]
+L_adv:
+        add esi, 0x40
+        add edi, 0x40
+        add ecx, 4
+        sub dword ptr [esp+0x1c], 1
+        mov dword ptr [esp+0x20], esi
+        jne L_loop
+        mov ebx, dword ptr [ebx+0x5c]
+        test ebx, ebx
+        jne L_node
+        pop edi
+        fstp st(0)
+        pop esi
+        pop ebp
+L_end:
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
