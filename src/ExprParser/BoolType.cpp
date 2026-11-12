@@ -344,3 +344,64 @@ done_0066CF70:
         ret 4
     }
 }
+
+// [0x0067A980] ExprParser::BoolType::vfunc_17 (166 bytes)
+extern "C" void ext_0041CF00();
+extern "C" void ext_00671F30();
+
+extern "C" __declspec(naked) void* __fastcall fn_0067A980(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b33b8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x24]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x40]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call edx
+        test eax, eax
+        je not_found
+        mov dword ptr [esp + 0xc], esi
+        mov esi, dword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x8], eax
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x1c], 0x0
+        call ext_0041CF00
+        mov ecx, dword ptr [esp + 0xc]
+        test ecx, ecx
+        mov dword ptr [esp + 0x18], 0xffffffff
+        je epilogue
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x8]
+        push eax
+        call edx
+        mov eax, esi
+        pop esi
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x18
+        ret 0x8
+not_found:
+        mov esi, dword ptr [esp + 0x20]
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+epilogue:
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x18
+        ret 0x8
+    }
+}
