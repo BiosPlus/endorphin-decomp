@@ -388,3 +388,76 @@ done:
         ret 0x4
     }
 }
+
+// [0x0058F3C0] AnimatableTransform::vfunc_3_off_8 (141 bytes)
+extern "C" void ext_0058A200();
+extern "C" void ext_005DF5C0();
+extern "C" __declspec(naked) void __fastcall fn_0058F3C0(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        xor edi, edi
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    loop_top:
+        sub esp, 0x1c
+        mov eax, esp
+        mov dword ptr [esp + 0x30], esp
+        push edi
+        push eax
+        lea ecx, [ebp - 0x8]
+        call ext_0058A200
+        mov ecx, ebx
+        call ext_005DF5C0
+        mov esi, eax
+        test esi, esi
+        je next_iter
+        fldz
+        fcomp dword ptr [esp + 0x1c]
+        fnstsw ax
+        test ah, 0x1
+        jne skip_store
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x1c]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [esp + 0x1c]
+    skip_store:
+        fld dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x18]
+        sub esp, 0x8
+        fstp dword ptr [esp + 0x4]
+        mov ecx, esi
+        fld dword ptr [esp + 0x20]
+        fstp dword ptr [esp]
+        call eax
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x24]
+        mov ecx, esi
+        call eax
+        test eax, eax
+        jne next_iter
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx + 0x8]
+        push edi
+        push ebx
+        mov ecx, ebp
+        call eax
+    next_iter:
+        add edi, 0x1
+        cmp edi, 0x7
+        jl loop_top
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0xc
+    }
+}
