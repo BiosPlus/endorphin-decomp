@@ -10,7 +10,12 @@ extern "C" void ext_004429C0();
 extern "C" void ext_0043C9D0();
 extern "C" void ext_0043D620();
 extern "C" void ext_006A60D0();
+extern "C" void ext_0043CD60();
+extern "C" void ext_0043CDA0();
 extern "C" int mem_00925688;
+extern "C" int mem_00925718;
+extern "C" int mem_0092570C;
+extern "C" int mem_009256E4;
 
 // [0x004432A0] MultiTrackView::MultiTrackViewStates::WaitState::vfunc_19 (36 bytes)
 extern "C" unsigned char __fastcall fn_004432A0(void* self) {
@@ -125,5 +130,67 @@ L_end:
         mov al, 1
         pop esi
         ret 0Ch
+    }
+}
+
+// [0x00442DC0] MultiTrackView::MultiTrackViewStates::WaitState::vfunc_20 (167 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00442DC0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0Dh], 0
+        mov ecx, dword ptr [esi + 8]
+        je L_else
+        push 0
+        call ext_0043CDA0
+        mov ecx, dword ptr [esi + 8]
+        call ext_0043CD80
+        mov byte ptr [esi + 0Dh], 0
+        jmp L_after
+L_else:
+        call ext_0043CD80
+        mov ecx, dword ptr [esi + 8]
+        mov eax, dword ptr [ecx + 16Ch]
+        push eax
+        call ext_0043CD60
+        mov ecx, dword ptr [esi + 8]
+        push 1
+        call ext_0043CDA0
+        mov byte ptr [esi + 0Dh], 1
+L_after:
+        lea ecx, [esp + 4]
+        push ecx
+        call dword ptr [mem_00925718]
+        mov eax, dword ptr [esi + 8]
+        mov ecx, dword ptr [eax + 20h]
+        lea edx, [esp + 4]
+        push edx
+        push ecx
+        call dword ptr [mem_0092570C]
+        push 1
+        call dword ptr [mem_009256E4]
+        mov ecx, dword ptr [esi + 8]
+        mov edx, dword ptr [esp + 4]
+        test ax, ax
+        setl al
+        cmp edx, dword ptr [ecx + 0FCh]
+        jge L_ret
+        test al, al
+        je L_ret
+        lea eax, [esp + 4]
+        push eax
+        call ext_0043D620
+        test eax, eax
+        je L_ret
+        mov ecx, dword ptr [eax + 14h]
+        cmp ecx, dword ptr [esi + 10h]
+        jne L_ret
+        mov byte ptr [eax + 38h], 1
+L_ret:
+        mov al, 1
+        pop esi
+        add esp, 8
+        ret 4
     }
 }
