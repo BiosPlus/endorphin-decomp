@@ -1,5 +1,6 @@
 // Decompiled translation unit: src/classes/HasCustomBufferedTMPtr.cpp
 
+extern "C" void ext_004F9950();
 extern "C" void ext_00661B50();
 extern "C" int mem_009253C8;
 
@@ -29,5 +30,23 @@ extern "C" __declspec(naked) void __fastcall fn_00532590(void* self, int edx_unu
         mov dword ptr [esp + 0x4], eax
         mov eax, dword ptr [edx + 0x1c]
         jmp eax
+    }
+}
+
+// [0x00532700] HasCustomBufferedTMPtr::vfunc_1 (31 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00532700(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [ecx + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push esi
+        push eax
+        call ext_00661B50
+        mov ecx, eax
+        call ext_004F9950
+        mov eax, esi
+        pop esi
+        ret 0x4
     }
 }
