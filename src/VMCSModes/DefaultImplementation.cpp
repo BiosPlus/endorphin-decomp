@@ -1612,3 +1612,91 @@ epilog:
         ret
     }
 }
+
+// [0x004FA900] VMCSModes::DefaultImplementation::vfunc_139 (225 bytes)
+extern "C" void ext_00584A10();
+extern "C" void ext_005B11F0();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC8;
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __fastcall fn_004FA900(void* self) {
+    __asm {
+        push -1
+        push 0x8909aa
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x8
+        push ebx
+        push esi
+        mov dword ptr [esp + 0x8], 0
+        mov ebx, dword ptr [esp + 0x20]
+        push edi
+        mov esi, ecx
+        push 0x928b5d
+        mov ecx, ebx
+        mov dword ptr [esp + 0x20], 0
+        call dword ptr [mem_00924FE4]
+        mov eax, dword ptr [esi + 0x8]
+        mov eax, dword ptr [eax + 0x14]
+        mov ecx, dword ptr [eax + 0x34]
+        mov dword ptr [esp + 0x1c], 0
+        mov dword ptr [esp + 0xc], 1
+        call ext_005B11F0
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x1c]
+        call eax
+        mov edi, eax
+        mov esi, dword ptr [edi + 0x4]
+        test esi, esi
+        je short L_004FA9CB
+        mov eax, dword ptr [edi + 0x8]
+        mov ecx, eax
+        sub ecx, esi
+        sar ecx, 2
+        je short L_004FA9CB
+        cmp esi, eax
+        jbe short L_004FA984
+        call dword ptr [mem_00925134]
+    L_004FA984:
+        cmp esi, dword ptr [edi + 0x8]
+        jb short L_004FA98F
+        call dword ptr [mem_00925134]
+    L_004FA98F:
+        mov esi, dword ptr [esi]
+        test esi, esi
+        je short L_004FA9CB
+        add esi, 0x4
+        mov ecx, esi
+        call ext_00584A10
+        push 0x928b5d
+        push eax
+        call dword ptr [mem_00924FC8]
+        add esp, 0x8
+        test al, al
+        mov ecx, esi
+        je short L_004FA9BB
+        call ext_00584A10
+        jmp short L_004FA9C2
+    L_004FA9BB:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+    L_004FA9C2:
+        push eax
+        mov ecx, ebx
+        call dword ptr [mem_00924FDC]
+    L_004FA9CB:
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 4
+    }
+}
