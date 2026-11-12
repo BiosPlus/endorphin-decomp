@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `10350 / 24049` (**43.04%**) — `7258` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `634386 / 4496005 bytes` (**14.11%** of 4.29 MB)
+- **In-Scope Functions Matched:** `10351 / 24049` (**43.04%**) — `7259` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `634642 / 4496005 bytes` (**14.12%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -21,20 +21,21 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P50-60 (91-122B)** | 1086 / 2405 | 45.16% | 118227 / 256906 | 46.02% | 1319 fn |
 | **P60-70 (122-159B)** | 901 / 2405 | 37.46% | 121050 / 339038 | 35.70% | 1504 fn |
 | **P70-80 (159-178B)** | 202 / 2405 | 8.40% | 34029 / 400567 | 8.50% | 2203 fn |
-| **P80-90 (178-335B)** | 433 / 2405 | 18.00% | 92218 / 583211 | 15.81% | 1972 fn |
+| **P80-90 (178-335B)** | 434 / 2405 | 18.05% | 92474 / 583211 | 15.86% | 1971 fn |
 | **P90-100 (335-36100B)** | 0 / 2404 | 0.00% | 0 / 2392860 | 0.00% | 2404 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6742 | 514670 | 92.89% |
+| `claude-haiku-5.5@medium` | 6742 | 514670 | 92.88% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 6.16% |
 | `claude-sonnet-5.5@medium` | 24 | 1340 | 0.33% |
 | `claude-sonnet-5.5@low` | 15 | 2882 | 0.21% |
 | `claude-haiku-5.5@low` | 12 | 2825 | 0.17% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.14% |
 | `gemini-3.8-flash@low` | 6 | 500 | 0.08% |
+| `gemini-3.8-flash@medium` | 1 | 256 | 0.01% |
 | `claude-opus-5.5@medium` | 1 | 49 | 0.01% |
 | `gemini-4-argon@high` | 1 | 10 | 0.01% |
 

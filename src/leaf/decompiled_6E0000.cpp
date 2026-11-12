@@ -397,3 +397,164 @@ extern "C" __declspec(naked) void __fastcall fn_006E9C30(void* self) {
         ret
     }
 }
+
+// [0x006E3EA0] sub_006E3EA0 (256 bytes)
+extern "C" void ext_006CA6A0();
+extern "C" void ext_006E3F40();
+
+extern "C" __declspec(naked) void __fastcall fn_006E3EA0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0x14]
+        xor ecx, ecx
+        cmp eax, ecx
+        jne loc_6e3eb9
+        cmp dword ptr [esi + 0x38], ecx
+        je loc_6e3eb9
+        mov eax, 1
+
+    loc_6e3eb9:
+        mov esi, dword ptr [esi + 0x54]
+        cmp esi, 4
+        ja loc_6e3f27
+        _emit 0xff
+        _emit 0x24
+        _emit 0xb5
+        _emit 0x2c
+        _emit 0x3f
+        _emit 0x6e
+        _emit 0x00
+
+    loc_6e3ec8:
+        cmp eax, ecx
+        jle loc_6e3f27
+        mov edi, dword ptr [esp + 0xc]
+        mov ecx, eax
+        and ecx, 0x1fffffff
+        shl ecx, 1
+        xor eax, eax
+        rep stosd
+        pop edi
+        pop esi
+        ret 4
+
+    loc_6e3ee3:
+        cmp eax, ecx
+        jle loc_6e3f27
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esi], ecx
+        _emit 0x8d
+        _emit 0x0c
+        _emit 0xc5
+        _emit 0xfb
+        _emit 0xff
+        _emit 0xff
+        _emit 0xff
+        shr ecx, 2
+        lea edi, [esi + 8]
+        mov dword ptr [esi + 4], 0x3ff00000
+        rep movsd
+        pop edi
+        pop esi
+        ret 4
+
+    loc_6e3f08:
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 8], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax + 0x18], ecx
+        mov dword ptr [eax + 4], ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x14], ecx
+        mov dword ptr [eax + 0x1c], 0x3ff00000
+
+    loc_6e3f27:
+        pop edi
+        pop esi
+        ret 4
+
+        // Jump table at 0x6E3F2C
+        _emit 0xc8
+        _emit 0x3e
+        _emit 0x6e
+        _emit 0x00
+
+        _emit 0xc8
+        _emit 0x3e
+        _emit 0x6e
+        _emit 0x00
+
+        _emit 0xc8
+        _emit 0x3e
+        _emit 0x6e
+        _emit 0x00
+
+        _emit 0xe3
+        _emit 0x3e
+        _emit 0x6e
+        _emit 0x00
+
+        _emit 0x08
+        _emit 0x3f
+        _emit 0x6e
+        _emit 0x00
+
+        // Subroutine at 0x6E3F40
+        mov eax, dword ptr [esp + 4]
+        push ebx
+        xor ebx, ebx
+        push esi
+        test al, al
+        push edi
+        mov esi, ecx
+        je loc_6e3f5e
+        mov ecx, dword ptr [esi + 0x40]
+        test ecx, ecx
+        je loc_6e3f5e
+        push eax
+        call ext_006E3F40
+        mov ebx, eax
+
+    loc_6e3f5e:
+        mov ecx, dword ptr [esi + 0x38]
+        test ecx, ecx
+        je loc_6e3f6c
+        call ext_006CA6A0
+        add ebx, eax
+
+    loc_6e3f6c:
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        xor edi, edi
+        call dword ptr [eax + 0x14]
+        test eax, eax
+        jle loc_6e3f98
+
+    loc_6e3f79:
+        mov edx, dword ptr [esi]
+        push 0
+        push edi
+        mov ecx, esi
+        call dword ptr [edx + 0x18]
+        mov ecx, eax
+        call ext_006E3F40
+        add ebx, eax
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        inc edi
+        call dword ptr [eax + 0x14]
+        cmp edi, eax
+        jl loc_6e3f79
+
+    loc_6e3f98:
+        pop edi
+        mov eax, ebx
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
