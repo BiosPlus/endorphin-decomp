@@ -4400,3 +4400,57 @@ L_end_0045C130:
         ret 0xc
     }
 }
+
+extern "C" void ext_0045C130();
+extern "C" void ext_006A6820();
+extern "C" void ext_006A6832();
+
+// [0x0045C260] sub_0045C260 (95 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0045C260(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x54], 0
+        je L_exit_0045C260
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push edi
+        lea eax, [esp + 0x8]
+        push eax
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_006A6832
+        mov edi, eax
+        test edi, edi
+        je L_pop_edi_0045C260
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push ebx
+        push eax
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_0045C130
+        mov eax, dword ptr [esi + 0x54]
+        mov ebx, dword ptr [eax]
+        lea ecx, [esp + 0x18]
+        push ecx
+        push edi
+        mov ecx, esi
+        call ext_006A6820
+        mov ecx, dword ptr [esi + 0x54]
+        mov edx, dword ptr [ebx]
+        push eax
+        call edx
+        pop ebx
+L_pop_edi_0045C260:
+        pop edi
+L_exit_0045C260:
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
