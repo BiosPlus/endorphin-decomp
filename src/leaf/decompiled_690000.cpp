@@ -2050,3 +2050,81 @@ extern "C" __declspec(naked) void __fastcall fn_00698240(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00699AE0] sub_00699AE0 (157 bytes)
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void* __cdecl fn_00699AE0(char* first, char* last, char* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        cmp dword ptr [esp + 0x8], ebx
+        je near ptr ret_dest_
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        lea esi, [ebx + 0x28]
+        lea edi, [ebp + 0x28]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    loop_top_:
+        sub ebx, 0x2c
+        sub ebp, 0x2c
+        push ebx
+        mov ecx, ebp
+        sub esi, 0x2c
+        sub edi, 0x2c
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [esi - 0xc]
+        mov dword ptr [edi - 0xc], eax
+        mov ecx, dword ptr [esi - 0x8]
+        lea edx, [edi - 0x4]
+        lea eax, [esi - 0x4]
+        cmp edx, eax
+        mov dword ptr [edi - 0x8], ecx
+        je skip_body_
+        mov ecx, dword ptr [edi]
+        test ecx, ecx
+        je no_old_
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [edi - 0x4]
+        push eax
+        call edx
+    no_old_:
+        mov eax, dword ptr [esi]
+        mov dword ptr [edi], eax
+        cmp dword ptr [esi], 0x0
+        je null_new_
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        lea eax, [esi - 0x4]
+        push eax
+        lea eax, [esp + 0x1c]
+        push eax
+        call edx
+        jmp store_
+    null_new_:
+        mov dword ptr [esp + 0x1c], 0x0
+        lea eax, [esp + 0x1c]
+    store_:
+        mov eax, dword ptr [eax]
+        mov dword ptr [edi - 0x4], eax
+    skip_body_:
+        cmp ebx, dword ptr [esp + 0x14]
+        jne loop_top_
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+    ret_dest_:
+        mov eax, dword ptr [esp + 0x10]
+        pop ebx
+        ret
+    }
+}
