@@ -2078,3 +2078,97 @@ extern "C" __declspec(naked) void* __cdecl fn_00472870(void* first, void* last, 
         ret
     }
 }
+
+// [0x00477BB0] sub_00477BB0 (167 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00477BB0(float* first, float* last) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x8]
+        cmp edi, eax
+        je L_ret1
+        push esi
+        lea esi, [edi + 0x4]
+        cmp esi, eax
+        je L_ret2
+        push ebx
+        mov ebx, dword ptr [mem_009251EC]
+        push ebp
+        mov ebp, 0x4
+        sub ebp, edi
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+
+    L_loop:
+        fld dword ptr [esi]
+        mov edx, esi
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fld dword ptr [edi]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne L_else
+        lea eax, [esi + ebp - 0x4]
+        sar eax, 0x2
+        test eax, eax
+        jle L_skip_memmove
+        add eax, eax
+        fstp st(0)
+        add eax, eax
+        push eax
+        mov ecx, esi
+        push edi
+        sub ecx, eax
+        push eax
+        add ecx, 0x4
+        push ecx
+        call ebx
+        fld dword ptr [esp + 0x24]
+        add esp, 0x10
+
+    L_skip_memmove:
+        fstp dword ptr [edi]
+        jmp L_next
+
+    L_else:
+        lea ecx, [esi - 0x4]
+        fld st(0)
+        fld dword ptr [ecx]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne L_else_done
+
+    L_shift:
+        fld dword ptr [ecx]
+        fstp dword ptr [edx]
+        mov edx, ecx
+        fld dword ptr [ecx - 0x4]
+        sub ecx, 0x4
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_shift
+
+    L_else_done:
+        fstp st(0)
+        fstp dword ptr [edx]
+
+    L_next:
+        add esi, 0x4
+        cmp esi, dword ptr [esp + 0x18]
+        jne L_loop
+        pop ebp
+        pop ebx
+
+    L_ret2:
+        pop esi
+
+    L_ret1:
+        pop edi
+        ret
+    }
+}
