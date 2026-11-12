@@ -6755,3 +6755,109 @@ extern "C" __declspec(naked) void __fastcall fn_0041FF30(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004174F0] sub_004174F0 (319 bytes)
+extern "C" void ext_006629B0();
+extern "C" void ext_006A5FDA();
+
+extern "C" __declspec(naked) void __fastcall fn_004174F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x74]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x94]
+        call edx
+        test al, al
+        je L_fail_004174F0
+        mov eax, dword ptr [esi + 0x78]
+        cmp byte ptr [eax + 0x4e], 0
+        jne L_fail_004174F0
+        push ebx
+        push 1
+        lea ecx, [esi + 0x610]
+        call ext_006A5FDA
+        lea ecx, [esi + 0xac]
+        push ecx
+        call ext_006629B0
+        mov edx, dword ptr [esi + 0x78]
+        mov bl, al
+        movzx eax, byte ptr [edx + 0xb8]
+        add esp, 4
+        push eax
+        lea ecx, [esi + 0x664]
+        call ext_006A5FDA
+        mov ecx, dword ptr [esi + 0x78]
+        movzx edx, byte ptr [ecx + 0xb8]
+        push edx
+        lea ecx, [esi + 0x6b8]
+        call ext_006A5FDA
+        mov eax, dword ptr [esi + 0x78]
+        cmp byte ptr [eax + 0xb8], 0
+        je short L_a_004174F0
+        test bl, bl
+        je short L_a_004174F0
+        mov eax, 1
+        jmp short L_b_004174F0
+    L_a_004174F0:
+        xor eax, eax
+    L_b_004174F0:
+        push eax
+        lea ecx, [esi + 0x70c]
+        call ext_006A5FDA
+        mov ecx, dword ptr [esi + 0x78]
+        cmp byte ptr [ecx + 0xb8], 0
+        je short L_c_004174F0
+        test bl, bl
+        je short L_c_004174F0
+        mov eax, 1
+        jmp short L_d_004174F0
+    L_c_004174F0:
+        xor eax, eax
+    L_d_004174F0:
+        push eax
+        lea ecx, [esi + 0x760]
+        call ext_006A5FDA
+        mov edx, dword ptr [esi + 0x78]
+        cmp byte ptr [edx + 0xb8], 0
+        je short L_e_004174F0
+        test bl, bl
+        je short L_e_004174F0
+        mov eax, 1
+        push eax
+        lea ecx, [esi + 0x7b4]
+        call ext_006A5FDA
+        pop ebx
+        pop esi
+        ret
+    L_e_004174F0:
+        xor eax, eax
+        push eax
+        lea ecx, [esi + 0x7b4]
+        call ext_006A5FDA
+        pop ebx
+        pop esi
+        ret
+    L_fail_004174F0:
+        push 0
+        lea ecx, [esi + 0x610]
+        call ext_006A5FDA
+        push 0
+        lea ecx, [esi + 0x664]
+        call ext_006A5FDA
+        push 0
+        lea ecx, [esi + 0x6b8]
+        call ext_006A5FDA
+        push 0
+        lea ecx, [esi + 0x70c]
+        call ext_006A5FDA
+        push 0
+        lea ecx, [esi + 0x760]
+        call ext_006A5FDA
+        push 0
+        lea ecx, [esi + 0x7b4]
+        call ext_006A5FDA
+        pop esi
+        ret
+    }
+}
