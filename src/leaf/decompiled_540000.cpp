@@ -3131,3 +3131,82 @@ extern "C" __declspec(naked) int __fastcall fn_00543BC0(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x00541730] sub_00541730 (174 bytes)
+extern "C" void ext_00547AF0();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00541730(void* self, int edx_unused, int a1, int* a2) {
+    __asm {
+        sub esp, 8
+        cmp byte ptr [ecx + 0x13d], 0
+        je tail_path
+        mov eax, dword ptr [ecx + 0x110]
+        mov eax, dword ptr [eax]
+        push ebp
+        push esi
+        push edi
+        lea edi, [ecx + 0x10c]
+        mov esi, edi
+        mov ebp, eax
+        mov dword ptr [esp + 0xc], esi
+        mov dword ptr [esp + 0x10], ebp
+        push ebx
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+loop_top:
+        test esi, esi
+        mov ebx, dword ptr [edi + 0x4]
+        je chk_sentinel
+        cmp esi, edi
+        je chk_loop
+chk_sentinel:
+        call dword ptr [mem_00925134]
+chk_loop:
+        cmp ebp, ebx
+        je done
+        test esi, esi
+        jne chk_node
+        call dword ptr [mem_00925134]
+chk_node:
+        cmp ebp, dword ptr [esi + 0x4]
+        jne do_work
+        call dword ptr [mem_00925134]
+do_work:
+        mov ecx, dword ptr [esp + 0x20]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [ebp + 0x28]
+        push edx
+        push eax
+        call ext_00547AF0
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        mov ebp, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        jmp loop_top
+tail_path:
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [edx]
+        add esp, 8
+        mov dword ptr [esp + 0x8], eax
+        mov eax, dword ptr [ecx + 0xf8]
+        mov edx, eax
+        shl edx, 4
+        sub edx, eax
+        mov ecx, dword ptr [ecx + 4 * edx + 0x8]
+        jmp ext_00547AF0
+done:
+        pop ebx
+        pop edi
+        pop esi
+        pop ebp
+        add esp, 8
+        ret 8
+    }
+}
