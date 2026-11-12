@@ -1502,3 +1502,39 @@ extern "C" __declspec(naked) void __fastcall fn_0058F450(void* self, int edx_unu
         ret 0x1c
     }
 }
+
+// [0x0058F4F0] sub_0058F4F0 (96 bytes)
+extern "C" void ext_0058F450();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+// s: by-value std::string (28 bytes on the stack, callee-cleaned via ret 0x1c); declared raw because naked functions cannot take unwinding types.
+extern "C" __declspec(naked) void __fastcall fn_0058F4F0(void* self, int edx_unused, void* s) {
+    __asm {
+        push -1
+        push 0x881709
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        sub esp, 0x1c
+        lea eax, [esp + 0x34]
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push eax
+        mov dword ptr [esp + 0x30], 0
+        call dword ptr [mem_00924FE0]
+        mov ecx, esi
+        call ext_0058F450
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 0x10
+        ret 0x1c
+    }
+}
