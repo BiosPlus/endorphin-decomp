@@ -4779,3 +4779,35 @@ extern "C" __declspec(naked) void __fastcall fn_00509F40(void* self) {
         ret
     }
 }
+
+// [0x0050FC70] sub_0050FC70 (95 bytes)
+extern "C" void ext_0066AD10();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00AEBDA0;
+extern "C" int mem_00AEBD84;
+extern "C" __declspec(naked) void __fastcall fn_0050FC70(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x0089242e
+        push eax
+        mov eax, 0x1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00AEBDA0], al
+        jne short L_done_0050FC70
+        or dword ptr [mem_00AEBDA0], eax
+        push 0x00a41dd8
+        push offset mem_00AEBD84
+        mov dword ptr [esp + 0x10], 0
+        call ext_0066AD10
+        push 0x00919d90
+        call ext_006A6C87
+        add esp, 0x0c
+    L_done_0050FC70:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00AEBD84
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x0c
+        ret
+    }
+}
