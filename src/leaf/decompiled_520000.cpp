@@ -2754,3 +2754,83 @@ extern "C" __declspec(naked) void __fastcall fn_0052F920(void* self) {
         ret
     }
 }
+
+// [0x00523000] sub_00523000 (171 bytes)
+// Copy-constructs `count` 0x28-byte polymorphic elements at dst from *src (vptr, two dwords, std::string at +0xc).
+// Inline SEH frame: on exception, destroys the already-constructed elements via vtable[0] and rethrows.
+// Written as naked asm so the handler stays inline (a C++ try/catch emits separate __ehhandler/funclet symbols).
+extern "C" int mem_00924FE0;
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __cdecl fn_00523000(void* dst, unsigned int count, const void* src) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x893789
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [ebp + 0xc]
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push edi
+        mov edi, dword ptr [ebp + 0x10]
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], 0x0
+loop_top:
+        test ebx, ebx
+        jbe done
+        mov dword ptr [ebp + 0xc], esi
+        mov dword ptr [ebp - 0x18], esi
+        test esi, esi
+        je skip_ctor
+        mov dword ptr [esi], 0x94f484
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [esi + 0x4], eax
+        mov ecx, dword ptr [edi + 0x8]
+        lea edx, [edi + 0xc]
+        mov dword ptr [esi + 0x8], ecx
+        push edx
+        lea ecx, [esi + 0xc]
+        mov byte ptr [ebp - 0x4], 0x2
+        call dword ptr [mem_00924FE0]
+skip_ctor:
+        sub ebx, 0x1
+        add esi, 0x28
+        mov byte ptr [ebp - 0x4], 0x0
+        mov dword ptr [ebp + 0x8], esi
+        jmp loop_top
+handler:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x8]
+        cmp esi, edi
+        je rethrow
+        mov edi, edi
+dtor_loop:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        push 0x0
+        mov ecx, esi
+        call edx
+        add esi, 0x28
+        cmp esi, edi
+        jne dtor_loop
+rethrow:
+        push 0x0
+        push 0x0
+        call ext_006A6DD2
+done:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
