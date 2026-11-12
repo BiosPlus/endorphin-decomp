@@ -2431,3 +2431,35 @@ extern "C" __declspec(naked) void __cdecl fn_00576260(void* first, void* last, c
         ret
     }
 }
+
+// [0x00575280] sub_00575280 (56 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00575280(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je skip_00575280
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_00575280:
+        sub esi, 0xa0
+        sub edi, 0xa0
+        push esi
+        mov ecx, edi
+        call ext_00575170
+        cmp esi, ebx
+        jne loop_00575280
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    skip_00575280:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
