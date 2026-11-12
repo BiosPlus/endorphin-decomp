@@ -17,5 +17,7 @@
     "0x0060FC2A",
     "0x0060FC45"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T11:41:49Z"
 }
