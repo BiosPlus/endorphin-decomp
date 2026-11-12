@@ -4988,3 +4988,54 @@ extern "C" void __cdecl fn_007C6710(S6710* s) {
     s->flags &= ~0x100u;
     s->f20c = 0.0f;
 }
+
+// [0x007C97F0] sub_007C97F0 (112 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C97F0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov ecx, dword ptr [esi + 0x40]
+        push esi
+        call ext_007C9260
+        add esp, 4
+        test eax, eax
+        jne L_end
+        cmp dword ptr [esi + 0x94], eax
+        push ebx
+        lea ebx, [esi + 0x94]
+        jne L_a
+        cmp dword ptr [esi + 0x98], eax
+        je L_pop
+    L_a:
+        push ebp
+        mov eax, 1
+        or dword ptr [esi + 0x9c], eax
+        add dword ptr [ecx + 0x158], eax
+        push edi
+        lea edi, [esi + 0x60]
+        mov ebp, 2
+    L_loop:
+        mov eax, dword ptr [ebx]
+        test eax, eax
+        je L_next
+        mov ecx, dword ptr [esi + 0x44]
+        push ecx
+        add eax, 0x1d4
+        push edi
+        push eax
+        call ext_007D4970
+        add esp, 0xc
+    L_next:
+        add edi, 0x18
+        add ebx, 4
+        sub ebp, 1
+        jne L_loop
+        pop edi
+        pop ebp
+    L_pop:
+        pop ebx
+    L_end:
+        pop esi
+        ret
+    }
+}
