@@ -2647,3 +2647,89 @@ extern "C" __declspec(naked) void __cdecl fn_007D8EB0(char** objs, float* mats, 
         ret
     }
 }
+
+// [0x007D6B00] sub_007D6B00 (176 bytes)
+extern "C" void ext_007D8710();
+
+extern "C" __declspec(naked) void __cdecl fn_007D6B00(void) {
+    __asm {
+        mov edx, dword ptr [esp + 0x14]
+        sub esp, 8
+        push edi
+        xor edi, edi
+        test edx, edx
+        je loc_7d6bab
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x18]
+        push ebx
+        push ebp
+        sub ecx, eax
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        mov dword ptr [esp + 0x2c], eax
+        mov dword ptr [esp + 0x14], ecx
+        mov dword ptr [esp + 0x10], edx
+        nop
+
+    loc_7d6b30:
+        mov ebx, dword ptr [esp + 0x20]
+        mov edx, dword ptr [ecx + eax]
+        lea ebp, [ebx + edx*4]
+        xor ebx, ebx
+        cmp dword ptr [eax], ebx
+        je loc_7d6b9a
+
+    loc_7d6b40:
+        mov eax, dword ptr [ebp + ebx*4]
+        push eax
+        call ext_007D8710
+        add esp, 4
+        test eax, eax
+        je loc_7d6b79
+        cmp dword ptr [eax + 0x160], 0
+        jne loc_7d6b79
+        mov eax, dword ptr [eax + 0x168]
+        test eax, eax
+        je loc_7d6b89
+
+    loc_7d6b64:
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + edi*4], eax
+        add dword ptr [esi + 4], 1
+        mov eax, dword ptr [eax + 0x5c]
+        add edi, 1
+        test eax, eax
+        jne loc_7d6b64
+        jmp loc_7d6b89
+
+    loc_7d6b79:
+        mov eax, dword ptr [ebp + ebx*4]
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + edi*4], eax
+        add dword ptr [esi + 4], 1
+        add edi, 1
+
+    loc_7d6b89:
+        mov ecx, dword ptr [esp + 0x2c]
+        add ebx, 1
+        cmp ebx, dword ptr [ecx]
+        jne loc_7d6b40
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x14]
+
+    loc_7d6b9a:
+        add eax, 4
+        sub dword ptr [esp + 0x10], 1
+        mov dword ptr [esp + 0x2c], eax
+        jne loc_7d6b30
+
+        pop esi
+        pop ebp
+        pop ebx
+
+    loc_7d6bab:
+        pop edi
+        add esp, 8
+        ret
+    }
+}
