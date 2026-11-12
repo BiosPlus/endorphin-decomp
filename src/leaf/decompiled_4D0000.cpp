@@ -1075,3 +1075,68 @@ extern "C" __declspec(naked) void __fastcall fn_004DE180(void* self) {
         ret
     }
 }
+
+// [0x004D0050] sub_004D0050 (166 bytes)
+extern "C" int mem_00924EA8;
+
+extern "C" __declspec(naked) void __fastcall fn_004D0050(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        xor ebx, ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov byte ptr [esi + 0x8d], bl
+        mov dword ptr [esi], 0x1
+        mov dword ptr [esi + 0x4], ebx
+        mov byte ptr [esi + 0xc], 0x1
+        mov dword ptr [esi + 0x8], 0x1
+        mov dword ptr [esi + 0x10], 0x140
+        mov dword ptr [esi + 0x14], 0xf0
+        mov byte ptr [esi + 0x8c], bl
+        xor edi, edi
+        lea ebp, [esi + 0x18]
+        jmp short loop1_body
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+loop1_body:
+        mov ecx, ebp
+        mov byte ptr [esi + edi + 0x88], bl
+        call dword ptr [mem_00924EA8]
+        add edi, 0x1
+        add ebp, 0x1c
+loop1_cond:
+        cmp edi, 0x4
+        jl loop1_body
+        add esi, 0xb0
+        mov edi, 0x7
+loop2_body:
+        lea ecx, [esi - 0x20]
+        call dword ptr [mem_00924EA8]
+        fldz
+        fst dword ptr [esi + 0x4]
+        fst dword ptr [esi]
+        fst dword ptr [esi - 0x4]
+        fst dword ptr [esi + 0x14]
+        fst dword ptr [esi + 0x10]
+        fst dword ptr [esi + 0xc]
+        fst dword ptr [esi + 0x8]
+        fst dword ptr [esi + 0x24]
+        fst dword ptr [esi + 0x20]
+        fst dword ptr [esi + 0x1c]
+        fst dword ptr [esi + 0x18]
+        fst dword ptr [esi + 0x30]
+        fst dword ptr [esi + 0x2c]
+        fstp dword ptr [esi + 0x28]
+        add esi, 0x54
+        sub edi, 0x1
+        jne loop2_body
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
