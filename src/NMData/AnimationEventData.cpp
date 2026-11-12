@@ -323,3 +323,85 @@ extern "C" __declspec(naked) void __fastcall fn_004DE1E0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+extern "C" void ext_004C3410();
+extern "C" void ext_004E1B30();
+
+// [0x004E1C50] NMData::AnimationEventData::vfunc_15 (188 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004E1C50(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        sub esp, 0Ch
+        cmp dword ptr [esp + 14h], 280h
+        push esi
+        mov dword ptr [esp + 4], ecx
+        mov dword ptr [esp + 8], 0
+        jne L_cf0
+        mov eax, dword ptr [mem_00AE29D0]
+        test eax, eax
+        je L_cf0
+        push ebp
+        mov ebp, dword ptr [eax + 38h]
+        cmp dword ptr [eax + 34h], ebp
+        push edi
+        lea edi, [eax + 30h]
+        jbe L_c8a
+        call dword ptr [mem_00925134]
+    L_c8a:
+        push ebx
+        mov ebx, dword ptr [edi + 8]
+        cmp dword ptr [edi + 4], ebx
+        jbe L_c99
+        call dword ptr [mem_00925134]
+    L_c99:
+        mov esi, dword ptr [edi + 4]
+        cmp esi, dword ptr [edi + 8]
+        jbe L_ca7
+        call dword ptr [mem_00925134]
+    L_ca7:
+        cmp esi, ebx
+        mov eax, edi
+        mov dword ptr [esp + 18h], esi
+        je L_cc0
+    L_cb1:
+        mov ecx, dword ptr [esp + 10h]
+        cmp dword ptr [esi], ecx
+        je L_cc0
+        add esi, 4
+        cmp esi, ebx
+        jne L_cb1
+    L_cc0:
+        test eax, eax
+        pop ebx
+        je L_cc9
+        cmp eax, edi
+        je L_ccf
+    L_cc9:
+        call dword ptr [mem_00925134]
+    L_ccf:
+        pop edi
+        cmp esi, ebp
+        pop ebp
+        jne L_cf0
+        mov edx, dword ptr [esp + 4]
+        mov esi, dword ptr [esp + 14h]
+        push edx
+        push esi
+        call ext_004E1B30
+        add esp, 8
+        mov eax, esi
+        pop esi
+        add esp, 0Ch
+        ret 8
+    L_cf0:
+        mov eax, dword ptr [esp + 18h]
+        mov esi, dword ptr [esp + 14h]
+        mov ecx, dword ptr [esp + 4]
+        push eax
+        push esi
+        call ext_004C3410
+        mov eax, esi
+        pop esi
+        add esp, 0Ch
+        ret 8
+    }
+}
