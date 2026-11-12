@@ -4133,3 +4133,22 @@ extern "C" __declspec(naked) void __fastcall fn_0051AE90(void* self) {
         ret
     }
 }
+
+// [0x0051AD40] sub_0051AD40 (127 bytes)
+struct V4_51AD40 { float x, y, z, w; };
+struct Obj_51AD40 { void* p; };
+extern "C" void ext_0051A890();
+struct Iface_51AD40 { virtual void v0(); virtual void v1(); virtual V4_51AD40* v2(float* a, int b, int c, float d); };
+extern "C" void __cdecl ext_0051A890x(float* a, float* b, float c, float d);
+extern "C" V4_51AD40* __fastcall fn_0051AD40(char* self, int edx_unused, float v) {
+    if (*(float*)(self + 0x3c) != v) {
+        *(float*)(self + 0x3c) = v;
+        float* b = (float*)(self + 0x5c);
+        float* a = (float*)(self + 0x2c);
+        ((void (__cdecl*)(float*, float*, float, float))ext_0051A890)(a, b, v, *(float*)&mem_0094CE80);
+        Iface_51AD40* o = *(Iface_51AD40**)(self + 0x28);
+        V4_51AD40* r = o->v2(a, ((int*)b)[0], ((int*)b)[1], v);
+        float* d = (float*)(self + 0x40); d[0] = r->x; d[1] = r->y; d[2] = r->z; d[3] = r->w;
+    }
+    return (V4_51AD40*)(self + 0x40);
+}
