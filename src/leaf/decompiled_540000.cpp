@@ -2714,3 +2714,57 @@ extern "C" __declspec(naked) void __fastcall fn_0054F210(void* self) {
         ret 0x14
     }
 }
+
+// [0x0054F300] sub_0054F300 (104 bytes)
+extern "C" void ext_0054F210();
+extern "C" void ext_00669E40();
+
+extern "C" __declspec(naked) void __fastcall fn_0054F300(void* self) {
+    __asm {
+        fld1
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        sub esp, 0x10
+        fstp dword ptr [esp + 0xc]
+        mov esi, ecx
+        fldz
+        xor al, al
+        fst dword ptr [esp + 0x8]
+        lea ecx, [esi + 0x4]
+        fst dword ptr [esp + 0x4]
+        mov byte ptr [esi + 0x14], 0x1
+        fstp dword ptr [esp]
+        mov byte ptr [esi + 0x15], al
+        mov byte ptr [esi + 0x16], al
+        call ext_00669E40
+        mov edi, dword ptr [esi + 0x20]
+        mov ebp, dword ptr [mem_00925134]
+        add esi, 0x18
+        cmp dword ptr [esi + 0x4], edi
+        jbe loc_54f346
+        call ebp
+    loc_54f346:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe loc_54f350
+        call ebp
+    loc_54f350:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_0054F210
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
