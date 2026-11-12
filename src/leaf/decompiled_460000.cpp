@@ -5539,3 +5539,45 @@ L_end:
         ret
     }
 }
+
+// [0x00461190] sub_00461190 (81 bytes)
+extern "C" void ext_00460E00();
+extern "C" void ext_00666200();
+extern "C" __declspec(naked) void __fastcall fn_00461190(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0x0
+        push 0x0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x19c]
+        push 0xf0
+        push eax
+        call edi
+        test eax, eax
+        je L_461190_else
+        mov ecx, esi
+        call ext_00460E00
+        test al, al
+        jne L_461190_end
+        mov ecx, dword ptr [esi + 0x19c]
+        push 0x0
+        push 0x0
+        push 0xf1
+        push ecx
+        call edi
+        pop edi
+        pop esi
+        ret
+L_461190_else:
+        push -1
+        call ext_00665870
+        mov ecx, eax
+        call ext_00666200
+L_461190_end:
+        pop edi
+        pop esi
+        ret
+    }
+}
