@@ -1,5 +1,6 @@
 // Decompiled translation unit: src/leaf/decompiled_490000.cpp
 #include <string>
+#include <stdexcept>
 #include <stdlib.h>
 
 // [0x00493E10] sub_00493E10 (20 bytes)
@@ -3247,5 +3248,54 @@ extern "C" __declspec(naked) std::string::size_type __cdecl fn_00494310(const st
         mov dword ptr fs:[0], ecx
         add esp, 0x44
         ret
+    }
+}
+
+// [0x0049D050] sub_0049D050 (154 bytes)
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FE4;
+extern "C" int mem_009251C4;
+extern "C" __declspec(naked) void __fastcall fn_0049D050(void* self, int edx_unused, int n) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        mov edx, dword ptr [esp + 4]
+        push -1
+        push 0x88f4c2
+        push eax
+        mov dword ptr fs:[0], esp
+        mov eax, dword ptr [ecx + 8]
+        sub esp, 0x44
+        push esi
+        mov esi, 0x1414141
+        sub esi, eax
+        cmp esi, edx
+        pop esi
+        jae L_ok_0049D050
+        push 0x92fa58
+        lea ecx, [esp + 4]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x4c], 0
+        call dword ptr [mem_009251C4]
+        lea eax, [esp]
+        push eax
+        lea ecx, [esp + 0x2c]
+        mov byte ptr [esp + 0x50], 1
+        mov dword ptr [esp + 0x20], 0x928ecc
+        call dword ptr [mem_00924FE0]
+        push 0x9cdf20
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov byte ptr [esp + 0x54], 0
+        mov dword ptr [esp + 0x24], 0x928ed8
+        call ext_006A6DD2
+    L_ok_0049D050:
+        add eax, edx
+        mov dword ptr [ecx + 8], eax
+        mov ecx, dword ptr [esp + 0x44]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x50
+        ret 4
     }
 }
