@@ -1455,3 +1455,78 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_00560920(void* self, in
         ret 4
     }
 }
+
+// [0x00564F10] sub_00564F10 (198 bytes)
+extern "C" void ext_00553760();
+extern "C" void ext_00662120();
+extern "C" void ext_006629B0();
+extern "C" void ext_007C569A();
+extern "C" void ext_007C56D6();
+extern "C" void ext_007C56DC();
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF0;
+
+extern "C" __declspec(naked) void __fastcall fn_00564F10(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esi + 0x478]
+        call dword ptr [mem_00924FDC]
+        mov ecx, esi
+        call ext_00553760
+        mov ecx, dword ptr [esi + 0x420]
+        mov byte ptr [esi + 0x46c], al
+        call ext_00662120
+        mov ecx, dword ptr [esi + 0x424]
+        test ecx, ecx
+        je L_00564F6D
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xc]
+        push 0xb39d8c
+        call eax
+        mov eax, dword ptr [esi + 0x170]
+        mov ecx, dword ptr [esi + 0x424]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x8]
+        push eax
+        mov eax, dword ptr [esi + 0x16c]
+        push eax
+        call edx
+    L_00564F6D:
+        cmp byte ptr [esi + 0x214], 0
+        je L_00564FBE
+        lea eax, [esi + 0x1f8]
+        push eax
+        call ext_006629B0
+        add esp, 0x4
+        test al, al
+        je L_00564FBE
+        lea ecx, [esi + 0x1f8]
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [esi + 0x494]
+        push eax
+        call ext_007C569A
+        test eax, eax
+        sete al
+        test al, al
+        je L_00564FD2
+        mov ecx, dword ptr [esi + 0x494]
+        call ext_007C56DC
+        test eax, eax
+        sete al
+        pop esi
+        ret 0x4
+    L_00564FBE:
+        mov ecx, dword ptr [esi + 0x494]
+        push 0x3c
+        push 0x3
+        call ext_007C56D6
+        test eax, eax
+        sete al
+    L_00564FD2:
+        pop esi
+        ret 0x4
+    }
+}
