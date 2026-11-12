@@ -7080,3 +7080,129 @@ extern "C" __declspec(naked) void __cdecl fn_00660710() {
         ret
     }
 }
+
+// [0x00661F70] sub_00661F70 (262 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00661F70(void* self, int edx_unused, int arg1) {
+    __asm {
+        push ebp
+        mov ebp, [mem_00925134]
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 8], 0
+        push edi
+        jne L_661F83
+        call ebp
+L_661F83:
+        mov eax, [esi + 8]
+        mov ecx, [esi + 0xc]
+        cmp ecx, [eax + 4]
+        jne L_661F90
+        call ebp
+L_661F90:
+        mov edx, [esi + 0xc]
+        mov eax, [esp + 0x10]
+        cmp eax, [edx + 8]
+        jle L_662006
+        mov edi, [esi + 4]
+        mov eax, [edi + 0x64]
+        add edi, 0x60
+        push ebx
+        mov ebx, [eax + 4]
+        cmp ebx, eax
+        jne L_661FB0
+        call ebp
+        nop
+L_661FB0:
+        mov eax, [esi + 8]
+        test eax, eax
+        je L_661FBB
+        cmp eax, edi
+        je L_661FBD
+L_661FBB:
+        call ebp
+L_661FBD:
+        cmp [esi + 0xc], ebx
+        je L_662061
+        cmp dword ptr [esi + 8], 0
+        jne L_661FCE
+        call ebp
+L_661FCE:
+        mov ecx, [esi + 8]
+        mov edx, [esi + 0xc]
+        cmp edx, [ecx + 4]
+        jne L_661FDB
+        call ebp
+L_661FDB:
+        mov eax, [esi + 0xc]
+        mov ecx, [esp + 0x14]
+        cmp ecx, [eax + 8]
+        jle L_662061
+        cmp dword ptr [esi + 8], 0
+        jne L_661FEF
+        call ebp
+L_661FEF:
+        mov edx, [esi + 8]
+        mov eax, [esi + 0xc]
+        cmp eax, [edx + 4]
+        jne L_661FFC
+        call ebp
+L_661FFC:
+        mov ecx, [esi + 0xc]
+        mov edx, [ecx]
+        mov [esi + 0xc], edx
+        jmp L_661FB0
+L_662006:
+        mov eax, [esi + 4]
+        mov ecx, [eax + 0x64]
+        mov edi, [ecx]
+        mov ecx, [esi + 8]
+        add eax, 0x60
+        test ecx, ecx
+        je L_66201C
+        cmp ecx, eax
+        je L_66201E
+L_66201C:
+        call ebp
+L_66201E:
+        cmp [esi + 0xc], edi
+        je L_662062
+        cmp dword ptr [esi + 8], 0
+        jne L_66202B
+        call ebp
+L_66202B:
+        mov edx, [esi + 8]
+        mov eax, [esi + 0xc]
+        cmp eax, [edx + 4]
+        jne L_662038
+        call ebp
+L_662038:
+        mov ecx, [esi + 0xc]
+        mov edx, [esp + 0x10]
+        cmp edx, [ecx + 8]
+        jge L_662062
+        cmp dword ptr [esi + 8], 0
+        jne L_66204C
+        call ebp
+L_66204C:
+        mov eax, [esi + 0xc]
+        mov eax, [eax + 4]
+        mov ecx, [esi + 8]
+        mov [esi + 0xc], eax
+        cmp eax, [ecx + 4]
+        jne L_662006
+        call ebp
+        jmp L_662006
+L_662061:
+        pop ebx
+L_662062:
+        push 0
+        push esi
+        lea ecx, [esi + 0x38]
+        mov byte ptr [esi], 1
+        call ext_00466BA0
+        pop edi
+        pop esi
+        pop ebp
+        ret 4
+    }
+}
