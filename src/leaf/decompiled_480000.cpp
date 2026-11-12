@@ -3213,3 +3213,81 @@ extern "C" void __cdecl fn_004807D0(char** a1, char** a2, char** a3) {
     if (less_004807D0(*a3, *a2)) { p = *a2; q = *a3; *a3 = p; *a2 = q; }
     if (less_004807D0(*a2, *a1)) { p = *a1; q = *a2; *a2 = p; *a1 = q; }
 }
+
+// [0x00480CE0] sub_00480CE0 (162 bytes)
+extern "C" void ext_004807D0();
+
+extern "C" __declspec(naked) void __cdecl fn_00480CE0(unsigned* first, unsigned* mid, unsigned* last, void* pred) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov eax, esi
+        sub eax, ecx
+        sar eax, 0x2
+        cmp eax, 0x28
+        jle small_path
+        add eax, 1
+        cdq
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        and edx, 0x7
+        add eax, edx
+        push ebp
+        sar eax, 0x3
+        push edi
+        lea edx, [8*eax]
+        mov dword ptr [esp + 0x1c], edx
+        push ebx
+        lea edi, [4*eax]
+        add edx, ecx
+        lea eax, [edi + ecx]
+        push edx
+        push eax
+        push ecx
+        mov dword ptr [esp + 0x24], eax
+        call ext_004807D0
+        mov eax, ebx
+        mov ebx, dword ptr [esp + 0x28]
+        push eax
+        lea ecx, [edi + ebx]
+        push ecx
+        mov edx, ebx
+        sub edx, edi
+        push ebx
+        push edx
+        call ext_004807D0
+        mov ebp, esi
+        sub ebp, edi
+        mov edi, dword ptr [esp + 0x40]
+        push edi
+        push esi
+        sub esi, dword ptr [esp + 0x44]
+        push ebp
+        push esi
+        call ext_004807D0
+        mov eax, dword ptr [esp + 0x44]
+        push edi
+        push ebp
+        push ebx
+        push eax
+        call ext_004807D0
+        add esp, 0x40
+        pop edi
+        pop ebp
+        pop ebx
+        pop esi
+        ret
+    small_path:
+        mov edx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0xc]
+        push edx
+        push esi
+        push eax
+        push ecx
+        call ext_004807D0
+        add esp, 0x10
+        pop esi
+        ret
+    }
+}
