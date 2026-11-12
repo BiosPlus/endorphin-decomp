@@ -2979,3 +2979,83 @@ extern "C" __declspec(naked) void __fastcall fn_00694720(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006940C0] sub_006940C0 (212 bytes)
+extern "C" void ext_00693CC0();
+extern "C" void ext_006A7250();
+extern "C" void ext_006A7256();
+extern "C" float mem_0098F374;
+
+extern "C" __declspec(naked) void __fastcall fn_006940C0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x14
+        fld dword ptr [ecx]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [ecx + 0x4]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [esp + 0x10]
+        fld1
+        fcomp dword ptr [esp + 0x4]
+        fnstsw ax
+        test ah, 0x5
+        jp L_skip_call
+        lea ecx, [esp + 0x4]
+        call ext_00693CC0
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0xc]
+        fstp dword ptr [esp + 0x10]
+    L_skip_call:
+        fld dword ptr [esp + 0x4]
+        call ext_006A7256
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        mov eax, dword ptr [esp + 0x1c]
+        fadd st(0), st
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x4]
+        fmul st(0), st
+        fld1
+        fsubrp st(1), st
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x1c]
+        call ext_006A7250
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [mem_0098F374]
+        fld dword ptr [esp + 0x1c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        mov eax, dword ptr [esp + 0x18]
+        jp L_div
+        fstp st(0)
+        fld1
+        fstp dword ptr [eax]
+        fldz
+        fst dword ptr [eax + 0x4]
+        fstp dword ptr [eax + 0x8]
+        add esp, 0x14
+        ret 8
+    L_div:
+        fld dword ptr [esp + 0x8]
+        fdiv st, st(1)
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0xc]
+        fdiv st, st(1)
+        fstp dword ptr [eax + 0x4]
+        fdivr dword ptr [esp + 0x10]
+        fstp dword ptr [eax + 0x8]
+        add esp, 0x14
+        ret 8
+    }
+}
