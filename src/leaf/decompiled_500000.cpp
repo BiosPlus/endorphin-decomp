@@ -3554,3 +3554,21 @@ small_path:
         ret
     }
 }
+
+// [0x0050FF60] sub_0050FF60 (167 bytes)
+extern "C" void __cdecl ext_0050FDA0(int, int, int, int);
+
+extern "C" void __cdecl fn_0050FF60(int a1, int a2, int a3, int a4) {
+    int n = (a3 - a1) >> 2;
+    if (n > 40) {
+        int c = (n + 1) / 8;
+        int c8 = 8 * c;
+        int c4 = 4 * c;
+        ext_0050FDA0(a1, a1 + c4, a1 + c8, a4);
+        ext_0050FDA0(a2 - c4, a2, a2 + c4, a4);
+        ext_0050FDA0(a3 - c8, a3 - c4, a3, a4);
+        ext_0050FDA0(a1 + c4, a2, a3 - c4, a4);
+    } else {
+        ext_0050FDA0(a1, a2, a3, a4);
+    }
+}

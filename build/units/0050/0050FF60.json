@@ -16,5 +16,7 @@
     "0x0050FFE3",
     "0x0050FFFD"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T10:24:49Z"
 }
