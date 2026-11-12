@@ -3713,3 +3713,85 @@ extern "C" __declspec(naked) void* __fastcall fn_00508A50(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00505A80] sub_00505A80 (173 bytes)
+// EH-framed range copy: copies [src, src_end) elements (0x28 bytes each, std::string at +0xC)
+// into dst, returning the one-past-end destination; on exception destroys already-built elements.
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void* __cdecl fn_00505A80(void* src, void* src_end, void* dst) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x891c59
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        push edi
+        mov edi, dword ptr [ebp + 0x8]
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], 0x0
+        mov bl, 0x2
+    loop_top:
+        cmp edi, dword ptr [ebp + 0xc]
+        je done
+        mov dword ptr [ebp + 0x8], esi
+        mov dword ptr [ebp - 0x18], esi
+        test esi, esi
+        je skip_construct
+        mov dword ptr [esi], 0x94f484
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [esi + 0x4], eax
+        mov ecx, dword ptr [edi + 0x8]
+        lea edx, [edi + 0xc]
+        mov dword ptr [esi + 0x8], ecx
+        push edx
+        lea ecx, [esi + 0xc]
+        mov byte ptr [ebp - 0x4], bl
+        call dword ptr [mem_00924FE0]
+    skip_construct:
+        add esi, 0x28
+        mov byte ptr [ebp - 0x4], 0x0
+        mov dword ptr [ebp + 0x10], esi
+        add edi, 0x28
+        jmp loop_top
+    unwind_funclet:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je unwind_throw
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    unwind_loop:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        push 0x0
+        mov ecx, esi
+        call edx
+        add esi, 0x28
+        cmp esi, edi
+        jne unwind_loop
+    unwind_throw:
+        push 0x0
+        push 0x0
+        call ext_006A6DD2
+    done:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
