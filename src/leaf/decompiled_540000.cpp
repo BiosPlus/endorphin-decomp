@@ -3210,3 +3210,52 @@ done:
         ret 8
     }
 }
+
+extern "C" void ext_00480010();
+extern "C" void ext_00541730();
+
+// [0x00543640] sub_00543640 (107 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00543640(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x88]
+        test eax, eax
+        je short loc_5436a4
+        push edi
+        mov edi, dword ptr [eax]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x78]
+        call edx
+        mov ecx, dword ptr [esi + 0x88]
+        push eax
+        mov eax, dword ptr [edi + 0x18]
+        call eax
+        mov edi, eax
+        mov ecx, edi
+        call ext_00480010
+        test al, al
+        jne short loc_5436a3
+        fld dword ptr [edi + 0x30]
+        lea ecx, [esp + 0x1c]
+        fstp dword ptr [esp + 0x8]
+        push ecx
+        fld dword ptr [edi + 0x34]
+        mov ecx, dword ptr [esi + 0x84]
+        fstp dword ptr [esp + 0x10]
+        lea edx, [esp + 0xc]
+        fld dword ptr [edi + 0x38]
+        push edx
+        fstp dword ptr [esp + 0x18]
+        fld1
+        fstp dword ptr [esp + 0x1c]
+        call ext_00541730
+loc_5436a3:
+        pop edi
+loc_5436a4:
+        pop esi
+        add esp, 0x10
+        ret 4
+    }
+}
