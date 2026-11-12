@@ -2271,3 +2271,44 @@ L4:     push eax
         ret 4
     }
 }
+
+// [0x005DD020] sub_005DD020 (112 bytes)
+extern "C" void ext_004026E0();
+extern "C" void ext_00530720();
+extern "C" void ext_00662880();
+
+extern "C" __declspec(naked) void __fastcall fn_005DD020(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a1908
+        push eax
+        mov dword ptr fs:[0], esp
+        mov ecx, dword ptr [ecx + 0x158]
+        xor eax, eax
+        sub esp, 0x10
+        cmp ecx, eax
+        je L_005DD07F
+        mov dword ptr [esp + 0x4], eax
+        mov dword ptr [esp + 0x8], eax
+        mov dword ptr [esp + 0xc], eax
+        mov dword ptr [esp + 0x18], eax
+        lea eax, [esp]
+        push eax
+        call ext_00530720
+        mov ecx, dword ptr [esp + 0x20]
+        push ecx
+        lea edx, [esp + 0x4]
+        push edx
+        call ext_00662880
+        add esp, 0x8
+        lea ecx, [esp]
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call ext_004026E0
+    L_005DD07F:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x1c
+        ret 4
+    }
+}
