@@ -289,3 +289,91 @@ extern "C" __declspec(naked) void* __fastcall fn_00611BF0(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x00611CE0] NMData::PrimaryTwistAndSwingConstraint::vfunc_79 (277 bytes)
+extern "C" int mem_00B40644;
+
+extern "C" __declspec(naked) void __fastcall fn_00611CE0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x330], 0
+        je L1
+        mov edx, dword ptr [mem_00B40644]
+        mov ecx, dword ptr [esi + 0x330]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x30]
+        push edx
+        movzx edx, byte ptr [esi + 0x329]
+        push edx
+        push 0x1000
+        call eax
+        movzx eax, byte ptr [esi + 0x329]
+        mov ecx, dword ptr [esi + 0x330]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x2c]
+        push eax
+        push 0x1000
+        call edx
+L1:
+        cmp dword ptr [esi + 0x334], 0
+        je L2
+        mov edx, dword ptr [mem_00B40644]
+        mov ecx, dword ptr [esi + 0x334]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x30]
+        push edx
+        movzx edx, byte ptr [esi + 0x329]
+        push edx
+        push 0x1000
+        call eax
+        movzx eax, byte ptr [esi + 0x329]
+        mov ecx, dword ptr [esi + 0x334]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x2c]
+        push eax
+        push 0x1000
+        call edx
+L2:
+        cmp dword ptr [esi + 0x32c], 0
+        je L3
+        mov edx, dword ptr [mem_00B40644]
+        mov ecx, dword ptr [esi + 0x32c]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x30]
+        push edx
+        movzx edx, byte ptr [esi + 0x328]
+        push edx
+        push 0x1000
+        call eax
+        movzx eax, byte ptr [esi + 0x328]
+        mov ecx, dword ptr [esi + 0x32c]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x2c]
+        push eax
+        push 0x1000
+        call edx
+L3:
+        cmp dword ptr [esi + 0x338], 0
+        je L4
+        mov edx, dword ptr [mem_00B40644]
+        mov ecx, dword ptr [esi + 0x338]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x30]
+        push edx
+        movzx edx, byte ptr [esi + 0x328]
+        push edx
+        push 0x1000
+        call eax
+        movzx eax, byte ptr [esi + 0x328]
+        mov ecx, dword ptr [esi + 0x338]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x2c]
+        push eax
+        push 0x1000
+        call edx
+L4:
+        pop esi
+        ret
+    }
+}
