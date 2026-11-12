@@ -10244,3 +10244,25 @@ extern "C" __declspec(naked) void __fastcall fn_00603530(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006495F0] ExprParser::WriteMethodType<RelationshipRPROMagnet, bool, {public: void __thiscall RelationshipRPROMagnet::applyCachedSettings(bool), 0}>::vfunc_41 (34 bytes)
+extern "C" void ext_00649080();
+
+extern "C" __declspec(naked) void __stdcall fn_006495F0(void** self, void** a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        mov ecx, esi
+        push eax
+        call ext_00649080
+        pop esi
+        ret 0x8
+    }
+}
