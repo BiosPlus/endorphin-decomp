@@ -21,5 +21,7 @@
     "0x0065FE07",
     "0x0065FE20"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-12T15:47:47Z"
 }
