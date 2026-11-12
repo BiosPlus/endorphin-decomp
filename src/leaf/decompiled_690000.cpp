@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_690000.cpp
 
+#include <math.h>
+
 extern "C" void ext_0041A8B0();
 extern "C" void __fastcall ext_00680800(void* self);
 extern "C" void ext_006989B0();
@@ -3578,4 +3580,17 @@ L_small:
         pop ecx
         ret 0x4
     }
+}
+
+// [0x006946C0] sub_006946C0 (88 bytes)
+extern "C" void ext_00693FE0();
+extern "C" int mem_0093F7B0;
+extern "C" void __stdcall fn_006946C0(float* a1) {
+    ((void (__stdcall*)(float*))ext_00693FE0)(a1);
+    float t = (float)atan((double)a1[0]);
+    a1[0] = (float)(t * *(double*)&mem_0093F7B0);
+    t = (float)atan((double)a1[1]);
+    a1[1] = (float)(t * *(double*)&mem_0093F7B0);
+    t = (float)atan((double)a1[2]);
+    a1[2] = (float)(t * *(double*)&mem_0093F7B0);
 }
