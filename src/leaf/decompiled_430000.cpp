@@ -8520,3 +8520,82 @@ extern "C" __declspec(naked) void __fastcall fn_0043E490(void* self) {
         ret
     }
 }
+
+// [0x00433370] sub_00433370 (194 bytes)
+extern "C" int mem_00925634;
+extern "C" void ext_00430370();
+extern "C" __declspec(naked) void __fastcall fn_00433370(void* self, int edx_unused, int* a1, int* a2) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esi + 0x4]
+        push edi
+        mov edi, dword ptr [mem_00925634]
+        push 0x92f96c
+        push 0x8031
+        push 0x0
+        push eax
+        mov ebx, ecx
+        call edi
+        mov ecx, dword ptr [esi + 0x4]
+        push 0x92f964
+        push 0x815e
+        push 0x0
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0x4]
+        push 0x92f95c
+        push 0x802e
+        push 0x0
+        push edx
+        call edi
+        mov eax, dword ptr [esi + 0x4]
+        push 0x92f94c
+        push 0x815c
+        push 0x0
+        push eax
+        call edi
+        mov ecx, dword ptr [esi + 0x4]
+        push 0x92f93c
+        push 0x815d
+        push 0x0
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0x4]
+        push 0x92f934
+        push 0x802b
+        push 0x0
+        push edx
+        call edi
+        mov eax, dword ptr [esi + 0x4]
+        push 0x92f92c
+        push 0x6c
+        push 0x0
+        push eax
+        call edi
+        mov ecx, ebx
+        call ext_00430370
+        test al, al
+        je short skip_menu
+        mov ecx, dword ptr [esi + 0x4]
+        push 0x92f924
+        push 0x810f
+        push 0x0
+        push ecx
+        call edi
+skip_menu:
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [eax + 0x4]
+        push 0x92f91c
+        push edx
+        push 0x10
+        push ecx
+        call edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
