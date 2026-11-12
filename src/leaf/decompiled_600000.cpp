@@ -1561,3 +1561,61 @@ extern "C" __declspec(naked) void __fastcall fn_00603090(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00607D50] sub_00607D50 (161 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00607D50(void* self, int edx_unused, const void* src) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [eax], 0x0096F81C
+        mov edx, dword ptr [ecx + 0x4]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [ecx + 0x8]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [ecx + 0xC]
+        mov dword ptr [eax + 0xC], edx
+        mov edx, dword ptr [ecx + 0x10]
+        mov dword ptr [eax + 0x10], edx
+        fld dword ptr [ecx + 0x14]
+        fstp dword ptr [eax + 0x14]
+        add ecx, 0x4C
+        fld dword ptr [ecx - 0x34]
+        fstp dword ptr [eax + 0x18]
+        fld dword ptr [ecx - 0x30]
+        fstp dword ptr [eax + 0x1C]
+        fld dword ptr [ecx - 0x2C]
+        fstp dword ptr [eax + 0x20]
+        fld dword ptr [ecx - 0x28]
+        fstp dword ptr [eax + 0x24]
+        fld dword ptr [ecx - 0x24]
+        fstp dword ptr [eax + 0x28]
+        mov dword ptr [eax], 0x0096F8A4
+        fld dword ptr [ecx - 0x20]
+        fstp dword ptr [eax + 0x2C]
+        fld dword ptr [ecx - 0x1C]
+        fstp dword ptr [eax + 0x30]
+        mov edx, dword ptr [ecx - 0x18]
+        mov dword ptr [eax + 0x34], edx
+        mov edx, dword ptr [ecx - 0x14]
+        mov dword ptr [eax + 0x38], edx
+        mov edx, dword ptr [ecx - 0x10]
+        mov dword ptr [eax + 0x3C], edx
+        mov edx, dword ptr [ecx - 0xC]
+        mov dword ptr [eax + 0x40], edx
+        mov edx, dword ptr [ecx - 0x8]
+        mov dword ptr [eax + 0x44], edx
+        mov edx, dword ptr [ecx - 0x4]
+        mov dword ptr [eax + 0x48], edx
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax + 0x4C], edx
+        mov edx, dword ptr [ecx + 0x4]
+        mov dword ptr [eax + 0x50], edx
+        mov edx, dword ptr [ecx + 0x8]
+        mov dword ptr [eax + 0x54], edx
+        mov edx, dword ptr [ecx + 0xC]
+        mov dword ptr [eax + 0x58], edx
+        mov ecx, dword ptr [ecx + 0x10]
+        mov dword ptr [eax + 0x5C], ecx
+        ret 4
+    }
+}
