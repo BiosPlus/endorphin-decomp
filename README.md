@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `9201 / 24049` (**38.26%**) — `6109` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `463886 / 4496005 bytes` (**10.32%** of 4.29 MB)
+- **In-Scope Functions Matched:** `9202 / 24049` (**38.26%**) — `6110` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `463975 / 4496005 bytes` (**10.32%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -17,7 +17,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P10-20 (16-32B)** | 2164 / 2405 | 89.98% | 54622 / 61769 | 88.43% | 241 fn |
 | **P20-30 (32-48B)** | 1092 / 2405 | 45.41% | 42487 / 97731 | 43.47% | 1313 fn |
 | **P30-40 (48-71B)** | 832 / 2405 | 34.59% | 49746 / 144549 | 34.41% | 1573 fn |
-| **P40-50 (71-91B)** | 994 / 2405 | 41.33% | 83138 / 194373 | 42.77% | 1411 fn |
+| **P40-50 (71-91B)** | 995 / 2405 | 41.37% | 83227 / 194373 | 42.82% | 1410 fn |
 | **P50-60 (91-122B)** | 974 / 2405 | 40.50% | 106437 / 256906 | 41.43% | 1431 fn |
 | **P60-70 (122-159B)** | 766 / 2405 | 31.85% | 102787 / 339038 | 30.32% | 1639 fn |
 | **P70-80 (159-178B)** | 0 / 2405 | 0.00% | 0 / 400567 | 0.00% | 2405 fn |
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5` | 5943 | 397965 | 97.28% |
-| `gemini-3.8-flash` | 140 | 18037 | 2.29% |
+| `claude-haiku-5.5` | 5943 | 397965 | 97.27% |
+| `gemini-3.8-flash` | 141 | 18126 | 2.31% |
 | `claude-sonnet-5.5` | 24 | 1340 | 0.39% |
 | `claude-opus-5.5` | 1 | 49 | 0.02% |
 | `gemini-4-argon` | 1 | 10 | 0.02% |
