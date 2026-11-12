@@ -4429,3 +4429,21 @@ extern "C" __declspec(naked) void* __fastcall fn_005010D0(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x00508B00] sub_00508B00 (61 bytes)
+extern "C" void ext_004275E0();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0067EE80();
+extern "C" int mem_00A9FA04;
+extern "C" int mem_00A9FAC0;
+extern "C" int mem_00A9F478;
+
+extern "C" void __fastcall fn_00508B00(void* self, int edx_unused, void* a1) {
+    typedef void* (__fastcall *FnA)(void* self, int edx_unused, void* a1);
+    typedef void (__cdecl *FnB)(void* dst, void* src);
+    typedef float (__cdecl *FnC)(void* a1, int a2, int a3);
+
+    void* r = ((FnA)ext_0063EFE0)(a1, edx_unused, (void*)mem_00A9FA04);
+    ((FnB)ext_004275E0)((char*)self + 4, r);
+    *(float*)((char*)self + 0x20) = ((FnC)ext_0067EE80)(a1, mem_00A9F478, mem_00A9FAC0);
+}
