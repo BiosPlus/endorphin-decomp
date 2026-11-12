@@ -3661,3 +3661,82 @@ extern "C" __declspec(naked) void __fastcall fn_00443A10(void* self) {
         ret 0x8
     }
 }
+
+// [0x0044E020] sub_0044E020 (211 bytes)
+extern "C" void ext_006A6238();
+extern "C" int mem_00925694;
+extern "C" int mem_009242F0;
+extern "C" int mem_00A34654;
+extern "C" int mem_0092449C;
+extern "C" int mem_009242F4;
+
+extern "C" __declspec(naked) void __fastcall fn_0044E020(void* self) {
+    __asm {
+        push -0x1
+        push 0x87cc19
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0x0
+        push 0x0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xcc]
+        push 0x146
+        push eax
+        call edi
+        test eax, eax
+        je fn_0044E020_fail
+        mov ecx, dword ptr [esi + 0xcc]
+        push 0x0
+        push 0x0
+        push 0x147
+        push ecx
+        call edi
+        cmp eax, -0x1
+        je fn_0044E020_fail
+        push ebx
+        push 0x928b5d
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_009242F0]
+        mov eax, dword ptr [esi + 0xcc]
+        lea edx, [esp + 0xc]
+        push edx
+        push 0x0
+        push 0x0
+        push 0x147
+        push eax
+        mov dword ptr [esp + 0x2c], 0x0
+        call edi
+        push eax
+        lea ecx, [esi + 0xac]
+        call ext_006A6238
+        mov ecx, dword ptr [mem_00A34654]
+        push ecx
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_0092449C]
+        test eax, eax
+        lea ecx, [esp + 0xc]
+        setne bl
+        call dword ptr [mem_009242F4]
+        mov al, bl
+        pop ebx
+        pop edi
+        pop esi
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    fn_0044E020_fail:
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        xor al, al
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
