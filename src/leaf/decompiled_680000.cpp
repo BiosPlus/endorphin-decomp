@@ -3020,3 +3020,79 @@ extern "C" void __cdecl fn_00688060(int a, int b, int c) {
         ((Leaf3)ext_006879E0)(a, b, c);
     }
 }
+
+// [0x006824E0] sub_006824E0 (170 bytes)
+extern "C" void ext_004275E0();
+extern "C" void ext_0053F5F0();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_006821D0();
+extern "C" void ext_006823B0();
+extern "C" void ext_006824C0();
+extern "C" int mem_00AA23C4;
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void __fastcall fn_006824E0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        push edi
+        call ext_006823B0
+        mov edi, dword ptr [esp + 0x14]
+        mov esi, eax
+        test esi, esi
+        je fail
+        mov eax, dword ptr [mem_00AA23C4]
+        push eax
+        mov ecx, edi
+        call ext_0063EFE0
+        cmp eax, 0xB53A34
+        je fail
+        cmp eax, 0xB53B30
+        je fail
+        cmp eax, 0xB53AB0
+        je fail
+        cmp eax, 0xB53A70
+        je fail
+        cmp eax, 0xB53AF0
+        je fail
+        lea ecx, [esp + 0x8]
+        push ecx
+        lea edx, [esp + 0x10]
+        push edx
+        mov dword ptr [esp + 0x10], eax
+        call ext_0053F5F0
+        mov eax, dword ptr [esp + 0x14]
+        add esp, 0x8
+        push eax
+        mov ecx, esi
+        call ext_006821D0
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        call dword ptr [mem_00924FDC]
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret
+fail:
+        mov ecx, dword ptr [esp + 0x20]
+        push ecx
+        mov ecx, edi
+        call ext_0063EFE0
+        mov edi, dword ptr [esp + 0x18]
+        push eax
+        push edi
+        call ext_004275E0
+        add esp, 0x8
+        test esi, esi
+        je done
+        cmp byte ptr [esp + 0x1c], 0x0
+        je done
+        push edi
+        mov ecx, esi
+        call ext_006824C0
+done:
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret
+    }
+}
