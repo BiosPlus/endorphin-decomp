@@ -3967,3 +3967,19 @@ extern "C" void __stdcall fn_0044CAB0(Target_0044C9B0* target) {
 extern "C" void __stdcall fn_0044CAD0(Target_0044C9B0* target) {
     target->func1(((bool (__stdcall *)(int))ext_0044C830)(9));
 }
+
+// [0x00447550] sub_00447550 (48 bytes)
+extern "C" void __fastcall ext_004473F0(void* self);
+extern "C" void ext_006A6C87(void* arg);
+extern "C" int mem_00ACF5F8;
+extern "C" int mem_00ACF5D4;
+extern "C" int mem_00915500;
+
+extern "C" void* __fastcall fn_00447550(void* self) {
+    if (!(mem_00ACF5F8 & 1)) {
+        mem_00ACF5F8 |= 1;
+        ext_004473F0(&mem_00ACF5D4);
+        ext_006A6C87(&mem_00915500);
+    }
+    return &mem_00ACF5D4;
+}
