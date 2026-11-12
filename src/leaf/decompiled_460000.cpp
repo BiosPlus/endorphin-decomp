@@ -4000,3 +4000,50 @@ extern "C" __declspec(naked) void __fastcall fn_004667A0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00469F80] sub_00469F80 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00469F80(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x18]
+        xor ebx, ebx
+        cmp ecx, ebx
+        je L_469F93
+        push ebx
+        call ext_004667A0
+L_469F93:
+        mov ecx, dword ptr [esi + 0x2c]
+        cmp ecx, ebx
+        je L_469FA3
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_469FA3:
+        mov dword ptr [esi + 0x2c], ebx
+        mov ecx, dword ptr [esi + 0x14]
+        cmp ecx, ebx
+        je L_469FB5
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+L_469FB5:
+        mov dword ptr [esi + 0x14], ebx
+        mov ecx, dword ptr [esi + 0x1c]
+        cmp ecx, ebx
+        je L_469FC7
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+L_469FC7:
+        mov dword ptr [esi + 0x1c], ebx
+        mov byte ptr [esi + 0x10], bl
+        pop esi
+        pop ebx
+        ret
+    }
+}
