@@ -29,5 +29,7 @@
     "0x00448FBE",
     "0x00448FCC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-12T15:49:44Z"
 }
