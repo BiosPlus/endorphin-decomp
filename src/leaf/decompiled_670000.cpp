@@ -5334,3 +5334,87 @@ L_zero:
         ret
     }
 }
+
+// [0x006744B0] sub_006744B0 (223 bytes)
+extern "C" void ext_0041CF50();
+extern "C" void ext_004275E0();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_00671F30();
+extern "C" void ext_006720C0();
+extern "C" int mem_00A9FA04;
+extern "C" int mem_00A9F628;
+
+extern "C" __declspec(naked) void __fastcall fn_006744B0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x008B41E0
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x28]
+        mov byte ptr [esi + 0xa4], 0x0
+        mov eax, dword ptr [mem_00A9FA04]
+        push eax
+        mov ecx, edi
+        call ext_0063EFE0
+        push eax
+        push esi
+        call ext_004275E0
+        mov ecx, dword ptr [mem_00A9F628]
+        add esp, 0x8
+        push ecx
+        mov ecx, edi
+        call ext_0063EFE0
+        push eax
+        lea edx, [esi + 0x1c]
+        push edx
+        call ext_004275E0
+        lea eax, [esp + 0x18]
+        push eax
+        call ext_00671F30
+        add esp, 0xc
+        push eax
+        lea ecx, [esi + 0x94]
+        mov dword ptr [esp + 0x24], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x14]
+        or edi, -0x1
+        test ecx, ecx
+        mov dword ptr [esp + 0x20], edi
+        je short L_0067_4542
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x10]
+        push eax
+        call edx
+L_0067_4542:
+        push 0x0
+        lea ecx, [esp + 0xc]
+        call ext_006720C0
+        lea eax, [esp + 0x8]
+        push eax
+        lea ecx, [esi + 0x9c]
+        mov dword ptr [esp + 0x24], 0x1
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0xc]
+        test ecx, ecx
+        mov dword ptr [esp + 0x20], edi
+        pop edi
+        pop esi
+        je short L_0067_457E
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp]
+        push eax
+        call edx
+L_0067_457E:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x1c
+        ret 0x4
+    }
+}
