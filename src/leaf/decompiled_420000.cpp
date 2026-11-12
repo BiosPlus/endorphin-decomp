@@ -3821,3 +3821,61 @@ extern "C" __declspec(naked) void __fastcall fn_00427FE0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004289D0] sub_004289D0 (105 bytes)
+extern "C" void ext_00427270();
+extern "C" void ext_00427DE0();
+extern "C" void ext_00427FE0();
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __fastcall fn_004289D0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x0c]
+        push edi
+        push esi
+        mov edi, ecx
+        call ext_00427DE0
+        test al, al
+        jne loc_4289EC
+        pop edi
+        mov eax, 2
+        pop esi
+        ret 8
+
+    loc_4289EC:
+        push esi
+        mov ecx, edi
+        call ext_00427270
+        test al, al
+        jne loc_428A02
+        pop edi
+        mov eax, 1
+        pop esi
+        ret 8
+
+    loc_428A02:
+        lea eax, [esp + 0x0c]
+        push eax
+        lea ecx, [edi + 4]
+        call ext_00427FE0
+        cmp eax, esi
+        je loc_428A32
+        movzx ecx, byte ptr [esi]
+        mov byte ptr [eax], cl
+        mov dl, byte ptr [esi + 2]
+        mov byte ptr [eax + 2], dl
+        movzx ecx, byte ptr [esi + 1]
+        add esi, 4
+        mov byte ptr [eax + 1], cl
+        push esi
+        lea ecx, [eax + 4]
+        call dword ptr [mem_00924FDC]
+
+    loc_428A32:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 8
+    }
+}
