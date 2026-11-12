@@ -2478,3 +2478,70 @@ extern "C" __declspec(naked) void* __cdecl fn_004766A0(void* a0, int a1) {
         ret
     }
 }
+
+// [0x00476AB0] sub_00476AB0 (193 bytes)
+// Ctor-style check: if (a1 != a2) throw Exc(a1, a2, "[" + ToStr(a4) + "]" + a3), SEH-guarded. ret 0x10.
+extern "C" void ext_004765B0();
+extern "C" void ext_00476630();
+extern "C" void ext_004766A0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FB0;
+extern "C" int mem_00924FD0;
+extern "C" __declspec(naked) void __fastcall fn_00476AB0(void* self, int edx_unused, const void* a1, const void* a2, const char* a3, int a4) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x883764
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc8
+        push ebx
+        mov ebx, dword ptr [esp + 0xdc]
+        push edi
+        mov edi, dword ptr [esp + 0xe4]
+        push edi
+        push ebx
+        call dword ptr [mem_00924FB0]
+        add esp, 0x8
+        test al, al
+        je L_ret
+        mov eax, dword ptr [esp + 0xec]
+        push esi
+        push eax
+        lea ecx, [esp + 0x48]
+        push ecx
+        call ext_004766A0
+        mov esi, eax
+        mov edx, dword ptr [esp + 0xf4]
+        push edx
+        lea eax, [esp + 0x18]
+        push eax
+        mov dword ptr [esp + 0xec], 0x0
+        call ext_00476630
+        push esi
+        push eax
+        lea ecx, [esp + 0x40]
+        push ecx
+        mov byte ptr [esp + 0xf8], 0x1
+        call dword ptr [mem_00924FD0]
+        add esp, 0x1c
+        push eax
+        push edi
+        push ebx
+        lea ecx, [esp + 0x6c]
+        mov byte ptr [esp + 0xe8], 0x2
+        call ext_004765B0
+        push 0x9dfd38
+        lea edx, [esp + 0x64]
+        push edx
+        call ext_006A6DD2
+        pop esi
+L_ret:
+        mov ecx, dword ptr [esp + 0xd0]
+        pop edi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xd4
+        ret 0x10
+    }
+}
