@@ -3,6 +3,7 @@
 extern "C" void ext_00661B50();
 extern "C" int mem_00AEE8A8;
 extern "C" int mem_009253C8;
+extern "C" int mem_009253D0;
 
 struct BufferMgr {
     float* getMatrix(int id);
@@ -64,5 +65,41 @@ extern "C" __declspec(naked) void __fastcall fn_005323C0(void* self, int edx_unu
         pop edi
         pop esi
         ret 0x4
+    }
+}
+
+// [0x00532320] HasRelativeToBufferTMPtr::vfunc_13 (85 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00532320(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [mem_00AEE8A8]
+        push edi
+        push eax
+        call ext_00661B50
+        fld dword ptr [eax + 0x38]
+        mov edi, dword ptr [mem_009253D0]
+        add eax, 0x30
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fstp dword ptr [esp]
+        call edi
+        mov eax, dword ptr [esi + 0x8]
+        fld dword ptr [eax + 0x38]
+        add eax, 0x30
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fstp dword ptr [esp]
+        call edi
+        pop edi
+        pop esi
+        ret
     }
 }
