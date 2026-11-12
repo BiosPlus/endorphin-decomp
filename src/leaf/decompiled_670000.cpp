@@ -5020,3 +5020,18 @@ extern "C" __declspec(naked) void* __fastcall fn_00679FE0(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x0067A050] sub_0067A050 (35 bytes)
+struct SubObj_0067A050 {
+    void* find(void* a1);
+};
+
+extern "C" void* __fastcall fn_0067A050(void* self, int edx_unused, void* a1) {
+    SubObj_0067A050* obj1 = (SubObj_0067A050*)((char*)self + 0x24);
+    void* res = obj1->find(a1);
+    if (res) {
+        return res;
+    }
+    SubObj_0067A050* obj2 = (SubObj_0067A050*)((char*)self + 0x14);
+    return obj2->find(a1);
+}
