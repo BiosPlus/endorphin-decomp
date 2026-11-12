@@ -2370,3 +2370,50 @@ L_hi:
         ret
     }
 }
+
+// [0x00546F00] sub_00546F00 (150 bytes)
+extern "C" void ext_00543350();
+extern "C" void ext_006A6C87();
+extern "C" int mem_0093247C;
+extern "C" int mem_00AF4E74;
+extern "C" int mem_00AF4E64;
+extern "C" int mem_00AF4E68;
+extern "C" int mem_00AF4E6C;
+extern "C" int mem_00AF4E70;
+extern "C" __declspec(naked) void __fastcall fn_00546F00(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00543350
+        fld dword ptr [mem_0093247C]
+        xor al, al
+        fstp dword ptr [esi + 0xbc]
+        mov byte ptr [esi + 0xe4], al
+        mov byte ptr [esi + 0xe5], al
+        mov byte ptr [esi + 0xe6], al
+        mov eax, 1
+        test byte ptr [mem_00AF4E74], al
+        jne short L_skip_546F00
+        fldz
+        or dword ptr [mem_00AF4E74], eax
+        fst dword ptr [mem_00AF4E64]
+        push 0x91b5b0
+        fst dword ptr [mem_00AF4E68]
+        fstp dword ptr [mem_00AF4E6C]
+        fld1
+        fstp dword ptr [mem_00AF4E70]
+        call ext_006A6C87
+        add esp, 4
+L_skip_546F00:
+        fld dword ptr [mem_00AF4E64]
+        fstp dword ptr [esi + 0xd4]
+        fld dword ptr [mem_00AF4E68]
+        fstp dword ptr [esi + 0xd8]
+        fld dword ptr [mem_00AF4E6C]
+        fstp dword ptr [esi + 0xdc]
+        fld dword ptr [mem_00AF4E70]
+        fstp dword ptr [esi + 0xe0]
+        pop esi
+        ret
+    }
+}
