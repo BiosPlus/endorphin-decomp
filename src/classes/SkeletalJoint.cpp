@@ -282,3 +282,17 @@ extern "C" void __fastcall fn_0064E280(void* self, int edx_unused, float* out) {
     d[1] = tmp[1];
     d[2] = tmp[2];
 }
+
+extern "C" void ext_0064E6C0();
+extern "C" void ext_007C5BA0();
+
+// [0x00646360] SkeletalJoint::vfunc_33 (64 bytes)
+extern "C" void __fastcall fn_00646360(void* self, int edx_unused, float* a1) {
+    float tmp[3];
+    tmp[0] = a1[0];
+    tmp[1] = a1[1];
+    tmp[2] = a1[2];
+    ((void (__fastcall*)(void*, int, float*))ext_0064E6C0)(self, edx_unused, tmp);
+    int a = *(int*)((char*)self + 0x64);
+    ((void (__cdecl*)(int, float*))ext_007C5BA0)(a, tmp);
+}
