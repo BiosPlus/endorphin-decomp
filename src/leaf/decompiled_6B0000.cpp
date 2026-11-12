@@ -2212,3 +2212,13 @@ extern "C" void* __fastcall fn_006B6070(void* self) {
     p[0x54 / 4] = (int)&mem_009922B4;
     return self;
 }
+
+// [0x006B1340] sub_006B1340 (167 bytes)
+extern "C" double __cdecl fn_006B1340(double v1, double v2, double vH) {
+    if (vH < 0.0) vH += 1.0;
+    if (vH > 1.0) vH -= 1.0;
+    if (6.0 * vH < 1.0) return v1 + (v2 - v1) * vH * 6.0;
+    if (2.0 * vH < 1.0) return v2;
+    if (3.0 * vH < 2.0) return v1 + (v2 - v1) * (2.0 / 3.0 - vH) * 6.0;
+    return v1;
+}
