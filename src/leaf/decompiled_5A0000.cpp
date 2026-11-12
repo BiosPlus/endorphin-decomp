@@ -1529,3 +1529,90 @@ extern "C" __declspec(naked) void __fastcall fn_005A2CB0(void* self) {
         ret 0x14
     }
 }
+
+// [0x005A1900] sub_005A1900 (194 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_00673C20();
+extern "C" void ext_0059B5A0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005A1900(void* self) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [ecx + 0x5a8]
+        push ebx
+        push ebp
+        lea ebp, [ecx + 0x5a4]
+        push esi
+        push edi
+        mov edi, dword ptr [eax]
+        mov ebx, ebp
+        mov dword ptr [esp + 0x10], ebx
+        mov dword ptr [esp + 0x14], edi
+        nop
+    L_loop_005A1900:
+        test ebx, ebx
+        mov esi, dword ptr [ebp + 0x4]
+        je short L_inv1_005A1900
+        cmp ebx, ebp
+        je short L_check_end_005A1900
+    L_inv1_005A1900:
+        call dword ptr [mem_00925134]
+    L_check_end_005A1900:
+        cmp edi, esi
+        je short L_exit_005A1900
+        test ebx, ebx
+        mov esi, dword ptr [mem_00925134]
+        jne short L_skip1_005A1900
+        call esi
+    L_skip1_005A1900:
+        cmp edi, dword ptr [ebx + 0x4]
+        jne short L_skip2_005A1900
+        call esi
+    L_skip2_005A1900:
+        mov ecx, dword ptr [edi + 0x28]
+        cmp byte ptr [ecx + 0x179], 0x0
+        jne short L_advance_005A1900
+        cmp edi, dword ptr [ebx + 0x4]
+        jne short L_skip3_005A1900
+        call esi
+    L_skip3_005A1900:
+        mov eax, dword ptr [edi + 0x28]
+        mov edx, dword ptr [eax + 0x4]
+        lea ecx, [eax + 0x4]
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        cmp edi, dword ptr [ebx + 0x4]
+        mov esi, eax
+        jne short L_skip4_005A1900
+        call dword ptr [mem_00925134]
+    L_skip4_005A1900:
+        mov ecx, dword ptr [edi + 0x28]
+        mov edx, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [edx + 0x2c]
+        add ecx, 0x4
+        call eax
+        fld dword ptr [eax + 0x30]
+        add eax, 0x30
+        fstp dword ptr [esi + 0x30]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esi + 0x34]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esi + 0x38]
+    L_advance_005A1900:
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        mov edi, dword ptr [esp + 0x14]
+        mov ebx, dword ptr [esp + 0x10]
+        jmp L_loop_005A1900
+    L_exit_005A1900:
+        call ext_00594000
+        pop edi
+        pop esi
+        pop ebp
+        mov ecx, eax
+        pop ebx
+        add esp, 0x8
+        jmp ext_0059B5A0
+    }
+}
