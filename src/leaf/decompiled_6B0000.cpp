@@ -3191,3 +3191,91 @@ extern "C" __declspec(naked) void __fastcall fn_006B2AF0(void* self) {
         ret 0x4
     }
 }
+
+// [0x006B71B0] sub_006B71B0 (202 bytes)
+extern "C" void ext_006A5E5A();
+extern "C" void ext_006A5EA8();
+extern "C" void ext_006A6004();
+extern "C" int mem_00925658;
+extern "C" int mem_009242F0;
+extern "C" int mem_0092431C;
+extern "C" int mem_00924300;
+extern "C" int mem_00924080;
+extern "C" int mem_009242F4;
+extern "C" int mem_00925620;
+
+extern "C" __declspec(naked) void __fastcall fn_006B71B0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        sub esp, 0xc
+        push edi
+        mov edi, ecx
+        call ext_006A5EA8
+        cmp byte ptr [edi + 0x60], 0
+        je done_006B71B0
+        mov eax, dword ptr [edi + 0x90]
+        push ebx
+        push esi
+        push eax
+        call dword ptr [mem_00925658]
+        push eax
+        call ext_006A6004
+        mov esi, eax
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 0x30]
+        lea eax, [edi + 0x58]
+        push eax
+        mov ecx, esi
+        call edx
+        push 0x9334d0
+        lea ecx, [esp + 0x10]
+        mov ebx, eax
+        call dword ptr [mem_009242F0]
+        lea eax, [esp + 0x10]
+        push eax
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_0092431C]
+        push eax
+        lea ecx, [esp + 0x14]
+        call dword ptr [mem_00924300]
+        mov ecx, dword ptr [esi + 0x8]
+        push eax
+        push ecx
+        call dword ptr [mem_00924080]
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_009242F4]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x30]
+        push ebx
+        mov ecx, esi
+        call eax
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [edi + 0x90]
+        push ecx
+        push edx
+        call dword ptr [mem_00925620]
+        mov ecx, dword ptr [esp + 0x24]
+        mov eax, ecx
+        sub eax, dword ptr [esp + 0x14]
+        push 0
+        sub eax, 1
+        cdq
+        sub eax, edx
+        sar eax, 1
+        add eax, 1
+        sub ecx, eax
+        push ecx
+        mov ecx, dword ptr [esp + 0x28]
+        add ecx, -0x12
+        push ecx
+        push eax
+        push 1
+        lea ecx, [edi + 0x70]
+        call ext_006A5E5A
+        pop esi
+        pop ebx
+    done_006B71B0:
+        pop edi
+        add esp, 0xc
+        ret 0xc
+    }
+}
