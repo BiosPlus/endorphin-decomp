@@ -2266,3 +2266,29 @@ extern "C" __declspec(naked) void __fastcall fn_007F0800(void* self) {
         ret
     }
 }
+
+// [0x007F0830] sub_007F0830 (43 bytes)
+extern "C" void ext_007F0720();
+
+extern "C" __declspec(naked) int __fastcall fn_007F0830(void* self) {
+    __asm {
+        push ecx
+        mov dword ptr [esp], 0x0
+        call ext_007F0720
+        test eax, eax
+        jne L_cpuid
+        or al, -1
+        pop ecx
+        ret
+    L_cpuid:
+        push ebx
+        mov eax, 0x1
+        cpuid
+        mov dword ptr [esp + 0x4], ebx
+        mov eax, dword ptr [esp + 0x4]
+        shr eax, 0x18
+        pop ebx
+        pop ecx
+        ret
+    }
+}
