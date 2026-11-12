@@ -3275,3 +3275,37 @@ L598DF5:
         ret
     }
 }
+
+// [0x00595C90] sub_00595C90 (82 bytes)
+extern "C" void ext_0049BD50();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_00595C90(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push -1
+        push 0x872c79
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        call dword ptr [mem_00924FE0]
+        add edi, 0x1c
+        push edi
+        lea ecx, [esi + 0x1c]
+        mov dword ptr [esp + 0x18], 0x0
+        call ext_0049BD50
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
