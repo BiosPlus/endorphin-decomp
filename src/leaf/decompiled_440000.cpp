@@ -3818,3 +3818,95 @@ extern "C" __declspec(naked) void __fastcall fn_0044C830(void* self) {
         ret 0x4
     }
 }
+
+// [0x004473F0] sub_004473F0 (213 bytes)
+extern "C" int mem_009241D4;
+extern "C" int mem_009241D8;
+extern "C" int mem_009241DC;
+
+extern "C" __declspec(naked) void* __fastcall fn_004473F0(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push 0x932c14
+        mov esi, ecx
+        call dword ptr [mem_009241D4]
+        xor ebx, ebx
+        cmp eax, ebx
+        mov dword ptr [esi + 0x20], eax
+        je L_4474A0
+        push edi
+        mov edi, dword ptr [mem_009241D8]
+        push 0x932c0c
+        push eax
+        call edi
+        mov dword ptr [esi], eax
+        mov eax, dword ptr [esi + 0x20]
+        push 0x932c04
+        push eax
+        call edi
+        mov ecx, dword ptr [esi + 0x20]
+        push 0x932bf8
+        push ecx
+        mov dword ptr [esi + 0x4], eax
+        call edi
+        mov edx, dword ptr [esi + 0x20]
+        push 0x932bf0
+        push edx
+        mov dword ptr [esi + 0x8], eax
+        call edi
+        mov dword ptr [esi + 0xc], eax
+        mov eax, dword ptr [esi + 0x20]
+        push 0x932be4
+        push eax
+        call edi
+        mov ecx, dword ptr [esi + 0x20]
+        push 0x932bd4
+        push ecx
+        mov dword ptr [esi + 0x10], eax
+        call edi
+        mov edx, dword ptr [esi + 0x20]
+        push 0x932bc0
+        push edx
+        mov dword ptr [esi + 0x14], eax
+        call edi
+        cmp dword ptr [esi], ebx
+        mov dword ptr [esi + 0x18], eax
+        pop edi
+        je L_447493
+        cmp dword ptr [esi + 0x4], ebx
+        je L_447493
+        cmp dword ptr [esi + 0x8], ebx
+        je L_447493
+        cmp dword ptr [esi + 0xc], ebx
+        je L_447493
+        cmp dword ptr [esi + 0x10], ebx
+        je L_447493
+        cmp dword ptr [esi + 0x14], ebx
+        je L_447493
+        cmp eax, ebx
+        jne L_4474A0
+    L_447493:
+        mov eax, dword ptr [esi + 0x20]
+        push eax
+        call dword ptr [mem_009241DC]
+        mov dword ptr [esi + 0x20], ebx
+    L_4474A0:
+        cmp dword ptr [esi + 0x20], ebx
+        mov byte ptr [esi + 0x1c], 1
+        mov eax, esi
+        jne L_4474C2
+        mov dword ptr [esi], ebx
+        mov dword ptr [esi + 0x4], ebx
+        mov dword ptr [esi + 0x8], ebx
+        mov dword ptr [esi + 0xc], ebx
+        mov dword ptr [esi + 0x10], ebx
+        mov dword ptr [esi + 0x14], ebx
+        mov dword ptr [esi + 0x18], ebx
+        mov byte ptr [esi + 0x1c], bl
+    L_4474C2:
+        pop esi
+        pop ebx
+        ret
+    }
+}
