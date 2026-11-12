@@ -1744,3 +1744,74 @@ extern "C" void __cdecl fn_007FC540(const float* src, float* dst) {
     dst[9] = (float)fabs(src[9]);
     dst[10] = (float)fabs(src[10]);
 }
+
+// [0x007F1530] sub_007F1530 (151 bytes)
+extern "C" int mem_00AA7E40;
+extern "C" int mem_009252A0;
+extern "C" int mem_00B61F78;
+extern "C" void ext_006A745E();
+extern "C" void ext_007F13F0();
+extern "C" void ext_007F1480();
+extern "C" void ext_007F14B0();
+extern "C" __declspec(naked) void __fastcall fn_007F1530(void* self) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [mem_00AA7E40]
+        xor eax, esp
+        mov dword ptr [esp + 0xc], eax
+        push ebx
+        lea eax, [esp + 0x4]
+        push eax
+        mov bl, 0x1
+        call ext_007F13F0
+        add esp, 0x4
+        test al, al
+        je L_7F159A
+        push esi
+        mov esi, dword ptr [mem_009252A0]
+        push 0xc
+        lea ecx, [esp + 0xc]
+        push 0x98c490
+        push ecx
+        call esi
+        add esp, 0xc
+        test eax, eax
+        je L_7F1585
+        push 0xc
+        lea edx, [esp + 0xc]
+        push 0x98c4a0
+        push edx
+        call esi
+        add esp, 0xc
+        test eax, eax
+        je L_7F1585
+        xor bl, bl
+    L_7F1585:
+        call ext_007F1480
+        test eax, eax
+        pop esi
+        jne L_7F1591
+        xor bl, bl
+    L_7F1591:
+        call ext_007F14B0
+        test al, al
+        jne L_7F15B1
+    L_7F159A:
+        xor al, al
+        mov byte ptr [mem_00B61F78], al
+        pop ebx
+        mov ecx, dword ptr [esp + 0xc]
+        xor ecx, esp
+        call ext_006A745E
+        add esp, 0x10
+        ret
+    L_7F15B1:
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [mem_00B61F78], bl
+        pop ebx
+        xor ecx, esp
+        call ext_006A745E
+        add esp, 0x10
+        ret
+    }
+}
