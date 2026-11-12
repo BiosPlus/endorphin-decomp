@@ -3153,3 +3153,90 @@ L_skip_memset:
         ret 0xc
     }
 }
+
+// [0x007D70A0] sub_007D70A0 (230 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D70A0(void* self, int i) {
+    __asm {
+        fldz
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        mov eax, dword ptr [ebx + 18h]
+        mov edx, dword ptr [ebx + 1Ch]
+        push ebp
+        mov ebp, dword ptr [esp + 10h]
+        mov ecx, dword ptr [eax + 4*ebp]
+        push esi
+        lea esi, [eax + 4*ebp]
+        mov eax, dword ptr [edx + 4*ebp]
+        push edi
+        lea edi, [edx + 4*ebp]
+        add eax, ecx
+        cmp ecx, eax
+        jge short L_blk2
+        mov edx, dword ptr [ebx + 14h]
+        lea edx, [edx + 4*ecx]
+L_blk1:
+        mov eax, dword ptr [edx]
+        fst dword ptr [eax + 30h]
+        add ecx, 1
+        fst dword ptr [eax + 34h]
+        add edx, 4
+        fst dword ptr [eax + 38h]
+        fst dword ptr [eax + 40h]
+        fst dword ptr [eax + 44h]
+        fst dword ptr [eax + 48h]
+        fst dword ptr [eax + 0e0h]
+        fst dword ptr [eax + 0e4h]
+        fst dword ptr [eax + 0e8h]
+        fst dword ptr [eax + 0f0h]
+        fst dword ptr [eax + 0f4h]
+        fst dword ptr [eax + 0f8h]
+        fst dword ptr [eax + 0b0h]
+        fst dword ptr [eax + 0b4h]
+        fst dword ptr [eax + 0b8h]
+        fst dword ptr [eax + 0c0h]
+        fst dword ptr [eax + 0c4h]
+        fst dword ptr [eax + 0c8h]
+        mov eax, dword ptr [edi]
+        add eax, dword ptr [esi]
+        cmp ecx, eax
+        jl short L_blk1
+L_blk2:
+        mov ecx, dword ptr [ebx + 4]
+        mov edx, dword ptr [ebx + 8]
+        mov eax, dword ptr [edx + 4*ebp]
+        lea edi, [ecx + 4*ebp]
+        mov ecx, dword ptr [edi]
+        lea ebp, [edx + 4*ebp]
+        add eax, ecx
+        cmp ecx, eax
+        jge short L_done
+        mov edx, dword ptr [ebx]
+        lea esi, [edx + 4*ecx]
+L_outer:
+        mov eax, dword ptr [esi]
+        add eax, 20h
+        mov edx, 3
+L_kloop:
+        fst dword ptr [eax - 20h]
+        add eax, 4
+        sub edx, 1
+        fst dword ptr [eax - 14h]
+        fst dword ptr [eax - 4]
+        fst dword ptr [eax + 0ch]
+        jne short L_kloop
+        mov eax, dword ptr [edi]
+        add eax, dword ptr [ebp]
+        add ecx, 1
+        add esi, 4
+        cmp ecx, eax
+        jl short L_outer
+L_done:
+        pop edi
+        fstp st(0)
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
