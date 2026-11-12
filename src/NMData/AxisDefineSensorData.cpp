@@ -61,3 +61,22 @@ extern "C" __declspec(naked) void* __fastcall fn_0058F6B0(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0060EA00] NMData::AxisDefineSensorData::vfunc_64 (135 bytes)
+extern "C" void ext_00486CB0();
+extern "C" void ext_00487A30();
+
+struct DiffContext_0060EA00 {
+    int a;
+    int b;
+};
+
+extern "C" void __fastcall fn_0060EA00(char* self, int edx_unused, const char* other, DiffContext_0060EA00 ctx) {
+    typedef void (__thiscall *Fn1)(DiffContext_0060EA00*, const void*, const void*, const void*);
+    typedef void (__thiscall *Fn2)(DiffContext_0060EA00*, float, float, const void*);
+
+    ((Fn1)ext_00486CB0)(&ctx, self + 0x14, other + 0x14, (const void*)0x93f7bc);
+    ((Fn1)ext_00486CB0)(&ctx, self + 0x154, other + 0x154, (const void*)0x96084c);
+    ((Fn2)ext_00487A30)(&ctx, *(float*)(self + 0x174), *(float*)(other + 0x174), (const void*)0x9724a8);
+    ((Fn2)ext_00487A30)(&ctx, *(float*)(self + 0x178), *(float*)(other + 0x178), (const void*)0x972498);
+}
