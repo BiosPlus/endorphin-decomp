@@ -4342,3 +4342,112 @@ extern "C" __declspec(naked) int __fastcall fn_0040CCC0(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x004094D0] sub_004094D0 (211 bytes)
+extern "C" void ext_004080C0();
+extern "C" void ext_006A60C4();
+extern "C" int mem_00925134;
+extern "C" int mem_009251EC;
+
+extern "C" __declspec(naked) void __fastcall fn_004094D0(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov ebp, ecx
+        lea esi, [ebp + 0x12c]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L4094_a
+        call dword ptr [mem_00925134]
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L4094_a:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L4094_b
+        call dword ptr [mem_00925134]
+    L4094_b:
+        cmp esi, esi
+        je L4094_c
+        call dword ptr [mem_00925134]
+    L4094_c:
+        cmp edi, ebx
+        je L4094_end_loop
+    L4094_loop:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L4094_d
+        call dword ptr [mem_00925134]
+    L4094_d:
+        mov eax, dword ptr [edi]
+        test eax, eax
+        je L4094_e
+        push 0
+        push eax
+        lea ecx, [ebp + 0x13c]
+        call ext_006A60C4
+    L4094_e:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L4094_f
+        call dword ptr [mem_00925134]
+    L4094_f:
+        add edi, 4
+        jmp L4094_a
+    L4094_end_loop:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        mov ebp, dword ptr [mem_00925134]
+        jbe L4094_g
+        call ebp
+    L4094_g:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L4094_h
+        call ebp
+    L4094_h:
+        push ebx
+        push esi
+        push edi
+        push esi
+        mov ecx, esi
+        call ext_004080C0
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe L4094_i
+        call ebp
+    L4094_i:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L4094_j
+        call ebp
+    L4094_j:
+        cmp ebx, edi
+        je L4094_ret
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, edi
+        sar eax, 2
+        test eax, eax
+        lea ecx, [eax*4]
+        lea ebp, [ecx + ebx]
+        jle L4094_k
+        push ecx
+        push edi
+        push ecx
+        push ebx
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+    L4094_k:
+        mov dword ptr [esi + 0x8], ebp
+    L4094_ret:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
