@@ -7171,3 +7171,89 @@ L_bd34:
         ret 4
     }
 }
+
+// [0x0043D9B0] sub_0043D9B0 (161 bytes)
+// __thiscall ret 0x4: null-check arg, call sub_00440990 on it, find it in the pointer array at self+0x84..0x88
+// (range end at +0x88); if found, erase it via sub_004A6020 and return true, else return false.
+extern "C" int mem_00925134;
+extern "C" void ext_00440990();
+extern "C" void ext_004A6020();
+
+extern "C" __declspec(naked) bool __fastcall fn_0043D9B0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x8
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        test ebp, ebp
+        push esi
+        mov esi, ecx
+        jne L_nonnull
+        pop esi
+        xor al, al
+        pop ebp
+        add esp, 0x8
+        ret 0x4
+L_nonnull:
+        push ebx
+        push edi
+        mov ecx, ebp
+        call ext_00440990
+        mov ebx, dword ptr [esi + 0x88]
+        add esi, 0x80
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+L_chk1:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+L_chk2:
+        cmp edi, ebx
+        mov dword ptr [esp + 0x14], edi
+        je L_search_done
+        nop
+L_search_loop:
+        cmp dword ptr [edi], ebp
+        je L_search_done
+        add edi, 0x4
+        cmp edi, ebx
+        jne L_search_loop
+L_search_done:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_chk3
+        call dword ptr [mem_00925134]
+L_chk3:
+        test esi, esi
+        je L_chk4
+        cmp esi, esi
+        je L_chk5
+L_chk4:
+        call dword ptr [mem_00925134]
+L_chk5:
+        cmp edi, ebx
+        je L_not_found
+        push edi
+        push esi
+        lea eax, [esp + 0x18]
+        push eax
+        mov ecx, esi
+        call ext_004A6020
+        pop edi
+        pop ebx
+        pop esi
+        mov al, 0x1
+        pop ebp
+        add esp, 0x8
+        ret 0x4
+L_not_found:
+        pop edi
+        pop ebx
+        pop esi
+        xor al, al
+        pop ebp
+        add esp, 0x8
+        ret 0x4
+    }
+}
