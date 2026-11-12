@@ -5824,3 +5824,90 @@ extern "C" __declspec(naked) void __fastcall fn_00666BA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00661D30] sub_00661D30 (170 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_00661D30(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 0x64]
+        add eax, 0x60
+        push edi
+        mov edi, dword ptr [ecx]
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        je L_661D51
+        cmp ecx, eax
+        je L_661D53
+    L_661D51:
+        call ebx
+    L_661D53:
+        cmp dword ptr [esi + 0xc], edi
+        jne L_661D8A
+        mov esi, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi + 0x14]
+        mov edi, dword ptr [esp + 0x10]
+        add esi, 0x10
+        test ecx, ecx
+        je L_661D75
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb L_661D77
+    L_661D75:
+        call ebx
+    L_661D77:
+        mov edx, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [edx + edi*4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x4]
+        call edx
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    L_661D8A:
+        cmp dword ptr [esi + 0x8], 0x0
+        jne L_661D92
+        call ebx
+    L_661D92:
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0xc]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne L_661D9F
+        call ebx
+    L_661D9F:
+        mov esi, dword ptr [esi + 0xc]
+        mov eax, dword ptr [esi + 0x20]
+        mov edi, dword ptr [esp + 0x10]
+        add esi, 0x1c
+        test eax, eax
+        je L_661DC9
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        mov eax, 0x2aaaaaab
+        imul ecx
+        sar edx, 1
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb L_661DCB
+    L_661DC9:
+        call ebx
+    L_661DCB:
+        mov eax, dword ptr [esi + 0x4]
+        lea edx, [edi + 2*edi]
+        pop edi
+        pop esi
+        lea eax, [eax + 4*edx]
+        pop ebx
+        ret 0x4
+    }
+}
