@@ -5328,3 +5328,60 @@ extern "C" __declspec(naked) void* __fastcall fn_00662FB0(void* self) {
         ret 0x58
     }
 }
+
+// [0x00662440] sub_00662440 (163 bytes)
+extern "C" int mem_00925354;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924EAC;
+extern "C" int mem_00924EC4;
+extern "C" int mem_00925120;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __cdecl fn_00662440(void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x88afd3
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x20
+        mov ecx, dword ptr [esp + 0x34]
+        push esi
+        push 0xb5ce94
+        mov dword ptr [esp + 0x8], 0x0
+        call dword ptr [mem_00925354]
+        push eax
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x2c], 0x1
+        call dword ptr [mem_00924EAC]
+        cmp eax, 0x6
+        mov esi, dword ptr [esp + 0x34]
+        jbe short L_copy
+        mov eax, dword ptr [mem_00924EC4]
+        mov ecx, dword ptr [eax]
+        push ecx
+        push 0x6
+        push esi
+        lea ecx, [esp + 0x14]
+        call dword ptr [mem_00925120]
+        jmp short L_dtor
+    L_copy:
+        lea edx, [esp + 0x8]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+    L_dtor:
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x4], 0x1
+        mov byte ptr [esp + 0x2c], 0x0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x2c
+        ret
+    }
+}
