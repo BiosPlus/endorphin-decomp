@@ -1872,3 +1872,60 @@ extern "C" __declspec(naked) void __fastcall fn_0056AFE0(void* self) {
         ret
     }
 }
+
+// [0x0056B0C0] sub_0056B0C0 (90 bytes)
+extern "C" void ext_0056AC90();
+extern "C" void ext_00596660();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0056B0C0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe m56b0c0_ok1
+        call ebp
+    m56b0c0_ok1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe m56b0c0_ok2
+        call ebp
+    m56b0c0_ok2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        mov ecx, esi
+        call ext_0056AC90
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe m56b0c0_ok3
+        call ebp
+    m56b0c0_ok3:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe m56b0c0_ok4
+        call ebp
+    m56b0c0_ok4:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_00596660
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
