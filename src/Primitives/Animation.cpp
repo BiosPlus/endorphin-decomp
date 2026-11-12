@@ -243,3 +243,141 @@ extern "C" __declspec(naked) void __fastcall fn_0053B2B0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0053B320] Primitives::Animation::vfunc_22 (323 bytes)
+extern "C" void ext_0053B130();
+extern "C" void ext_00661C90();
+extern "C" int mem_00AEE8A8;
+extern "C" int mem_00AEED24;
+extern "C" int mem_009253CC;
+extern "C" int mem_0092546C;
+extern "C" int mem_0092551C;
+extern "C" int mem_00925438;
+extern "C" int mem_009253F8;
+extern "C" int mem_009253F4;
+extern "C" int mem_009253F0;
+extern "C" int mem_0092552C;
+extern "C" int mem_00925524;
+
+extern "C" __declspec(naked) void __fastcall fn_0053B320(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x30]
+        cmp eax, 0x7fffffff
+        mov ebx, dword ptr [esi + 0x1c]
+        push edi
+        je L_skip_call
+        mov ecx, dword ptr [mem_00AEE8A8]
+        push eax
+        call ext_00661C90
+        mov ebx, eax
+    L_skip_call:
+        mov edi, dword ptr [esp + 0x10]
+        mov eax, edi
+        and eax, dword ptr [esi + 0x1c]
+        cmp eax, edi
+        sete al
+        test ebx, 0x200
+        je L_flag200_clear
+        cmp edi, 0x100000
+        je L_direct
+        test al, al
+        je L_plain
+        cmp edi, 1
+        jne L_direct
+    L_plain:
+        mov ecx, dword ptr [esi + 0x38]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [mem_00AEED24]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr [esp + 0x4], eax
+        mov edx, dword ptr [edx + 0x28]
+        jmp edx
+    L_flag200_clear:
+        test al, al
+        je L_plain
+    L_direct:
+        test ebx, 0x1000
+        je L_plain
+        push esi
+        call dword ptr [mem_009253CC]
+        sub esp, 8
+        mov eax, esp
+        push edi
+        mov ecx, esi
+        mov dword ptr [eax], 0x9553b0
+        mov dword ptr [eax + 4], ebx
+        call ext_0053B130
+        cmp byte ptr [esi + 0xc], 0
+        je L_nodraw
+        mov ebx, 0x100
+        test dword ptr [esi + 0x1c], ebx
+        je L_nopush
+        push 8
+        call dword ptr [mem_0092546C]
+        push 0x1b01
+        push 0x408
+        call dword ptr [mem_0092551C]
+        push 0xb44
+        call dword ptr [mem_00925438]
+    L_nopush:
+        mov ecx, dword ptr [esi + 0x38]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [mem_00AEED24]
+        mov edx, dword ptr [edx + 0x28]
+        push eax
+        call edx
+        mov eax, dword ptr [esi + 0x34]
+        test eax, eax
+        je L_nolist
+        cmp byte ptr [esi + 0x4], 0
+        je L_calllist
+        push 0x1301
+        push eax
+        call dword ptr [mem_009253F8]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x70]
+        push edi
+        mov ecx, esi
+        call edx
+        call dword ptr [mem_009253F4]
+        mov byte ptr [esi + 0x4], 0
+        jmp L_after_list
+    L_calllist:
+        push eax
+        call dword ptr [mem_009253F0]
+        jmp L_after_list
+    L_nolist:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x70]
+        push edi
+        mov ecx, esi
+        call edx
+    L_after_list:
+        test dword ptr [esi + 0x1c], ebx
+        je L_popname
+        call dword ptr [mem_0092552C]
+        call dword ptr [mem_00925524]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    L_nodraw:
+        mov ecx, dword ptr [esi + 0x38]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [mem_00AEED24]
+        mov eax, dword ptr [eax + 0x28]
+        push edx
+        call eax
+    L_popname:
+        call dword ptr [mem_00925524]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
