@@ -2580,3 +2580,46 @@ extern "C" __declspec(naked) void* __cdecl fn_0054F0D0(void* first, void* last, 
         ret
     }
 }
+
+// [0x0054F120] sub_0054F120 (73 bytes)
+// Stack args: arg1 = first, arg2 = last, arg3 = out. Returns out - ((last - first) / 0x68) * 0x68 in eax.
+// Backward variant of sub_0054F0D0: for p = last; p != first; p -= 0x68: ecx = out + (p - last), push p-0x68, call sub_0054F030 (callee cleans the pushed arg).
+extern "C" __declspec(naked) void* __cdecl fn_0054F120(void* first, void* last, void* out) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ebp, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov ecx, esi
+        sub ecx, edi
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        imul eax, eax, 0x68
+        mov ebx, ebp
+        sub ebx, eax
+        cmp edi, esi
+        je done
+        sub ebp, esi
+    loop_top:
+        sub esi, 0x68
+        push esi
+        lea ecx, [esi + ebp]
+        call ext_0054F030
+        cmp esi, edi
+        jne loop_top
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        ret
+    }
+}
