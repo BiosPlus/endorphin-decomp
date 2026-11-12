@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/MultiTrackView/MultiTrackViewStates/WaitState.cpp
 
 extern "C" void ext_0043CD80();
+extern "C" void ext_0043CA00();
+extern "C" void ext_0043C900();
 extern "C" void ext_0043C980();
 extern "C" void ext_0043D900();
 extern "C" void ext_0043E0F0();
@@ -64,4 +66,64 @@ extern "C" unsigned char __fastcall fn_00443180(void* self, int edx_unused, int 
         }
     }
     return 1;
+}
+
+// [0x00443200] MultiTrackView::MultiTrackViewStates::WaitState::vfunc_12 (153 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00443200(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 8]
+        cmp byte ptr [eax + 190h], 0
+        je L_end
+        push edi
+        call ext_004429C0
+        mov ecx, dword ptr [esi + 8]
+        push 1
+        mov byte ptr [esi + 0Ch], 1
+        mov edx, dword ptr [ecx + 20h]
+        push 0
+        push edx
+        call dword ptr [mem_00925688]
+        mov ecx, dword ptr [esi + 8]
+        call ext_0043CA00
+        mov ecx, dword ptr [esi + 8]
+        lea eax, [esp + 10h]
+        push eax
+        xor edi, edi
+        call ext_0043D900
+        test eax, eax
+        je L_skip
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0Ch]
+        lea ecx, [esp + 10h]
+        push ecx
+        mov ecx, eax
+        call edx
+        mov edi, eax
+L_skip:
+        mov ecx, dword ptr [esi + 8]
+        push edi
+        call ext_0043C900
+        mov ecx, dword ptr [esi + 8]
+        mov eax, dword ptr [esp + 10h]
+        cmp eax, dword ptr [ecx + 0FCh]
+        pop edi
+        jge L_end
+        test byte ptr [esp + 8], 1
+        je L_end
+        lea edx, [esp + 0Ch]
+        push edx
+        call ext_0043D620
+        test eax, eax
+        je L_end
+        mov ecx, dword ptr [eax + 14h]
+        cmp ecx, dword ptr [esi + 10h]
+        jne L_end
+        mov byte ptr [eax + 38h], 1
+L_end:
+        mov al, 1
+        pop esi
+        ret 0Ch
+    }
 }
