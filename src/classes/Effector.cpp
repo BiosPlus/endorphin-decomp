@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/classes/Effector.cpp
 
 extern "C" void ext_00603090();
+extern "C" void ext_005DFAD0();
 extern "C" void ext_006A6E9E();
 extern "C" int mem_00A93710;
 extern "C" int mem_0092A270;
@@ -237,6 +238,43 @@ L_603770_b:
         fst dword ptr [eax+8]
         fstp dword ptr [eax+0ch]
         add esp, 0ch
+        ret 4
+    }
+}
+
+// [0x006032F0] Effector::vfunc_15 (67 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006032F0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [edi + 8]
+        push eax
+        push ecx
+        mov ecx, dword ptr [edi + 0Ch]
+        call ext_005DFAD0
+        mov esi, eax
+        test esi, esi
+        je L_done
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 8]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 54h]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 4Ch]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 4]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 50h]
+L_done:
+        pop edi
+        pop esi
         ret 4
     }
 }
