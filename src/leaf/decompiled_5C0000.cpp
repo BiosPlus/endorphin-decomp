@@ -1924,3 +1924,86 @@ extern "C" __declspec(naked) void __fastcall fn_005CFEC0(void* self) {
         ret 4
     }
 }
+
+// [0x005C2C30] sub_005C2C30 (178 bytes)
+extern "C" void ext_005C2BE0();
+extern "C" void ext_005C3740();
+extern "C" void ext_005C3760();
+extern "C" void ext_005CE8D0();
+extern "C" void ext_005CE920();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_005C2C30(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        push edi
+        push ebx
+        push 0x0
+        mov esi, ecx
+        call ext_005C2BE0
+        mov edi, dword ptr [esi + 0x158]
+        test edi, edi
+        je skip_a
+        mov eax, dword ptr [esi + 0x4]
+        mov edx, dword ptr [eax + 0x14]
+        lea ecx, [esi + 0x4]
+        push ebx
+        call edx
+        push eax
+        mov ecx, edi
+        call ext_005CE8D0
+        mov ecx, dword ptr [esi + 0x158]
+        call ext_005CE920
+skip_a:
+        mov eax, dword ptr [esi + 0x160]
+        mov edi, dword ptr [eax]
+        lea ebx, [esi + 0x15c]
+        mov esi, ebx
+        mov dword ptr [esp + 0x10], esi
+        mov dword ptr [esp + 0x14], edi
+loop_top:
+        test esi, esi
+        mov ebp, dword ptr [ebx + 0x4]
+        je chk_fail1
+        cmp esi, ebx
+        je chk_ok1
+chk_fail1:
+        call dword ptr [mem_00925134]
+chk_ok1:
+        cmp edi, ebp
+        je epilogue
+        test esi, esi
+        mov ebp, dword ptr [mem_00925134]
+        jne chk2
+        call ebp
+chk2:
+        cmp edi, dword ptr [esi + 0x4]
+        jne chk3
+        call ebp
+chk3:
+        mov ecx, dword ptr [edi + 0x28]
+        call ext_005C3740
+        cmp edi, dword ptr [esi + 0x4]
+        jne chk4
+        call ebp
+chk4:
+        mov ecx, dword ptr [edi + 0x28]
+        call ext_005C3760
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        mov edi, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        jmp loop_top
+epilogue:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
