@@ -9593,3 +9593,120 @@ L_done0043DB90:
         ret 4
     }
 }
+
+// [0x00431200] sub_00431200 (270 bytes)
+extern "C" void ext_006A5E4E();
+extern "C" void ext_006A5E72();
+extern "C" void ext_006A5EA2();
+extern "C" void ext_006A6502();
+extern "C" void ext_006A6514();
+extern "C" int mem_0092563C;
+extern "C" int mem_009256F4;
+extern "C" int mem_009247B0;
+extern "C" __declspec(naked) void __fastcall fn_00431200(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0f6h], 0
+        push edi
+        mov edi, dword ptr [mem_0092563C]
+        sete al
+        push 0
+        mov byte ptr [esi + 0f6h], al
+        call edi
+        push 1
+        mov ebx, eax
+        call edi
+        push 20h
+        mov ebp, eax
+        call edi
+        push 21h
+        mov dword ptr [esp + 14h], eax
+        call edi
+        mov edi, eax
+        mov eax, dword ptr [esi + 100h]
+        test eax, eax
+        je L_skip_a
+        mov cl, byte ptr [esi + 0f6h]
+        mov byte ptr [eax + 6ch], cl
+L_skip_a:
+        cmp byte ptr [esi + 0f6h], 0
+        mov ecx, esi
+        je L_zero
+        lea edx, [esi + 1b8h]
+        push edx
+        call ext_006A6502
+        push 0
+        push 0
+        push 0c00000h
+        mov ecx, esi
+        call ext_006A5EA2
+        push 0
+        push 0
+        push 40000h
+        mov ecx, esi
+        call ext_006A5EA2
+        mov eax, dword ptr [esi + 20h]
+        push 0
+        push eax
+        call dword ptr [mem_009256F4]
+        mov ecx, dword ptr [esp + 10h]
+        mov edx, dword ptr [mem_009247B0]
+        push 40h
+        add edi, ebp
+        push edi
+        add ecx, ebx
+        push ecx
+        push -1
+        push -1
+        push edx
+        mov ecx, esi
+        call ext_006A5E4E
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+L_zero:
+        push 0
+        push 0c00000h
+        push 0
+        call ext_006A5EA2
+        push 0
+        push 40000h
+        push 0
+        mov ecx, esi
+        call ext_006A5EA2
+        lea eax, [esi + 1a8h]
+        test eax, eax
+        je L_noMenu
+        cmp dword ptr [eax + 4], 0
+        je L_noMenu
+        test eax, eax
+        je L_noMenu2
+        mov eax, dword ptr [eax + 4]
+L_noMenu2:
+        push eax
+        mov eax, dword ptr [esi + 20h]
+        push eax
+        call dword ptr [mem_009256F4]
+L_noMenu:
+        lea ecx, [esi + 1b8h]
+        push ecx
+        mov ecx, esi
+        call ext_006A6514
+        push 5
+        mov ecx, esi
+        call ext_006A5E72
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
