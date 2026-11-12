@@ -86,3 +86,34 @@ extern "C" __declspec(naked) void* __fastcall fn_0062E3E0(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x0068BF40] ExprParser::FunctionType<Randomizer, int, int, {public: int __thiscall Randomizer::randIntExcN(int), 0}>::vfunc_48 (58 bytes)
+extern "C" void ext_0068BC00();
+extern "C" void ext_006720C0();
+
+extern "C" __declspec(naked) void* __fastcall fn_0068BF40(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x8]
+        mov dword ptr [esp + 0x8], 0x0
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_0068BC00
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call ext_006720C0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
