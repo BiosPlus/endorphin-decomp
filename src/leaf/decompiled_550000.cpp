@@ -278,6 +278,109 @@ extern "C" __declspec(naked) void __fastcall fn_00559C30(void* self, int edx_unu
     }
 }
 
+// [0x0055B780] sub_0055B780 (224 bytes)
+extern "C" void ext_00558B90();
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __cdecl fn_0055B780(void* begin, void* end) {
+    __asm {
+        push -1
+        push 0x89a6eb
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        cmp esi, dword ptr [esp + 0x1c]
+        je epilog
+        push ebx
+        push ebp
+        add esi, 0x30
+        push edi
+        jmp top
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    top:
+        lea ebx, [esi - 0x2c]
+        mov dword ptr [esp + 0x10], ebx
+        mov edi, dword ptr [esi]
+        xor eax, eax
+        cmp edi, eax
+        mov dword ptr [esp + 0x1c], eax
+        je clr1
+        mov ebp, dword ptr [esi + 0x4]
+        cmp edi, ebp
+        je free1
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    loop1:
+        mov ecx, edi
+        call dword ptr [mem_00924FF4]
+        add edi, 0x1c
+        cmp edi, ebp
+        jne loop1
+    free1:
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+        xor eax, eax
+    clr1:
+        mov dword ptr [esi], eax
+        mov dword ptr [esi + 0x4], eax
+        mov dword ptr [esi + 0x8], eax
+        mov edi, dword ptr [ebx + 0x1c]
+        cmp edi, eax
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        je clr2
+        mov ebp, dword ptr [ebx + 0x20]
+        cmp edi, ebp
+        je free2
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    loop2:
+        mov ecx, edi
+        call ext_00558B90
+        add edi, 0x2c
+        cmp edi, ebp
+        jne loop2
+    free2:
+        mov eax, dword ptr [ebx + 0x1c]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+        xor eax, eax
+    clr2:
+        mov dword ptr [ebx + 0x1c], eax
+        mov dword ptr [ebx + 0x20], eax
+        mov dword ptr [ebx + 0x24], eax
+        mov eax, dword ptr [esp + 0x24]
+        add eax, 0x3c
+        add esi, 0x3c
+        cmp eax, dword ptr [esp + 0x28]
+        mov dword ptr [esp + 0x24], eax
+        jne top
+        pop edi
+        pop ebp
+        pop ebx
+    epilog:
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
+
 // [0x0055B860] sub_0055B860 (27 bytes)
 extern "C" void ext_0055B780();
 
