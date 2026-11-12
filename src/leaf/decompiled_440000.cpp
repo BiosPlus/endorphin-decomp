@@ -4289,3 +4289,17 @@ extern "C" __declspec(naked) int __fastcall fn_00444390(void* self, int edx_unus
         ret
     }
 }
+
+// [0x0044A380] sub_0044A380 (227 bytes)
+extern "C" int mem_00925688;
+extern "C" void __fastcall fn_0044A380(void* self, int edx_unused, const float* color) {
+    unsigned int r = (unsigned int)(color[0] * 255.0);
+    unsigned int g = (unsigned int)(color[1] * 255.0);
+    unsigned int b = (unsigned int)(color[2] * 255.0);
+    *(unsigned int*)((char*)self + 0x54) = (r & 0xff) | ((g & 0xff) << 8) | ((b & 0xff) << 16);
+    unsigned int inv = (b < 0x7f ? 0xff : 0);
+    inv = (inv << 8) | (g < 0x7f ? 0xff : 0);
+    inv = (inv << 8) | (r < 0x7f ? 0xff : 0);
+    *(unsigned int*)((char*)self + 0x58) = inv;
+    ((void (__stdcall*)(void*, void*, int))mem_00925688)(*(void**)((char*)self + 0x20), 0, 1);
+}
