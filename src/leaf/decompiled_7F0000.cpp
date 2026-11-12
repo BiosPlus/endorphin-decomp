@@ -2066,3 +2066,92 @@ extern "C" __declspec(naked) float __cdecl fn_007FA0F0(int count, const float* d
         ret
     }
 }
+
+// [0x007F65D0] sub_007F65D0 (186 bytes)
+extern "C" void ext_007C6F20();
+extern "C" void ext_007C89F0();
+
+extern "C" __declspec(naked) int __cdecl fn_007F65D0(void* a1, float a2, void* a3) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi]
+        push edi
+        push eax
+        call ext_007C6F20
+        mov ecx, dword ptr [esi + 0x4]
+        push ecx
+        movsx edi, ax
+        call ext_007C6F20
+        mov edx, dword ptr [esi]
+        mov ecx, dword ptr [edx]
+        movsx eax, ax
+        push eax
+        push edi
+        push ecx
+        call ext_007C89F0
+        mov edi, eax
+        add esp, 0x14
+        cmp dword ptr [edi + 0x8], 0x0
+        je fail_7F65D0
+        mov ecx, dword ptr [esi]
+        cmp dword ptr [ecx + 0x10], 0x0
+        je fail_7F65D0
+        mov eax, dword ptr [esi + 0x4]
+        cmp dword ptr [eax + 0x10], 0x0
+        je fail_7F65D0
+        cmp dword ptr [ecx + 0x14], 0x0
+        je fail_7F65D0
+        cmp dword ptr [eax + 0x14], 0x0
+        je fail_7F65D0
+        cmp dword ptr [ecx + 0x18], 0x0
+        je fail_7F65D0
+        cmp dword ptr [eax + 0x18], 0x0
+        je fail_7F65D0
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        mov dword ptr [ebx], esi
+        cmp dword ptr [edi + 0xc], 0x0
+        je skip_swap_7F65D0
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esi + 0x4]
+        mov dword ptr [esi], ecx
+        mov dword ptr [esi + 0x4], eax
+    skip_swap_7F65D0:
+        fld dword ptr [esp + 0x14]
+        mov edx, dword ptr [edi + 0x8]
+        push ebx
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call edx
+        add esp, 0xc
+        cmp dword ptr [edi + 0xc], 0x0
+        je skip_swap2_7F65D0
+        mov ecx, dword ptr [ebx]
+        mov edx, dword ptr [ecx]
+        mov esi, dword ptr [ecx + 0x4]
+        mov dword ptr [ecx], esi
+        mov dword ptr [ecx + 0x4], edx
+    skip_swap2_7F65D0:
+        test eax, eax
+        pop ebx
+        je ok_7F65D0
+        cmp eax, 0x1
+        jne fail_ret_7F65D0
+    ok_7F65D0:
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+    fail_7F65D0:
+        fld dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x14]
+        fstp dword ptr [eax + 0x4]
+    fail_ret_7F65D0:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
