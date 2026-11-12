@@ -1127,3 +1127,112 @@ extern "C" __declspec(naked) void __fastcall fn_007E6580(void* self) {
         ret
     }
 }
+
+// [0x007E7FD0] sub_007E7FD0 (261 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007E7FD0(void* self) {
+    __asm {
+        sub esp, 0x1c
+        fld dword ptr [eax + 0x4]
+        fmul dword ptr [ecx + 0x4]
+        fld dword ptr [ecx]
+        fmul dword ptr [eax]
+        faddp st(1), st
+        fld dword ptr [eax + 0x8]
+        fmul dword ptr [ecx + 0x8]
+        faddp st(1), st
+        fstp dword ptr [esp]
+        fldz
+        fld dword ptr [esp]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x41
+        jp L_else
+        fstp st(0)
+        xor ax, ax
+        fld dword ptr [edx]
+        fstp dword ptr [esi]
+        fld dword ptr [edx + 0x4]
+        fstp dword ptr [esi + 0x4]
+        fld dword ptr [edx + 0x8]
+        fstp dword ptr [esi + 0x8]
+        add esp, 0x1c
+        ret
+L_else:
+        fld dword ptr [ecx + 0x4]
+        fld dword ptr [ecx]
+        fld dword ptr [ecx + 0x8]
+        fld st(1)
+        _emit 0xde
+        _emit 0xca
+        fld st(2)
+        _emit 0xde
+        _emit 0xcb
+        fxch st(1)
+        _emit 0xde
+        _emit 0xc2
+        fmul st(0), st
+        _emit 0xde
+        _emit 0xc1
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        jp L_else2
+        fstp st(0)
+        xor ax, ax
+        fstp st(0)
+        fld dword ptr [edx]
+        fadd dword ptr [ecx]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [edx + 0x4]
+        fadd dword ptr [ecx + 0x4]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [edx + 0x8]
+        fadd dword ptr [ecx + 0x8]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x4]
+        fstp dword ptr [esi]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [esi + 0x4]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [esi + 0x8]
+        add esp, 0x1c
+        ret
+L_else2:
+        _emit 0xde
+        _emit 0xf9
+        mov ax, 0x1
+        fstp dword ptr [esp]
+        fld dword ptr [ecx]
+        fld dword ptr [esp]
+        fld st(0)
+        _emit 0xde
+        _emit 0xca
+        fxch st(1)
+        fstp dword ptr [esp + 0x4]
+        fld st(0)
+        fmul dword ptr [ecx + 0x4]
+        fstp dword ptr [esp + 0x8]
+        fmul dword ptr [ecx + 0x8]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [edx]
+        fadd dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [edx + 0x4]
+        fadd dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [edx + 0x8]
+        fadd dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [esi]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [esi + 0x4]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [esi + 0x8]
+        add esp, 0x1c
+        ret
+    }
+}
