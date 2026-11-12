@@ -3985,3 +3985,73 @@ extern "C" __declspec(naked) void __fastcall fn_005430B0(void* self) {
         ret
     }
 }
+
+// [0x00548280] sub_00548280 (261 bytes)
+extern "C" int mem_00924FE8;
+extern "C" __declspec(naked) void __fastcall fn_00548280(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea ecx, [esi+0x8]
+        mov dword ptr [esi], 0x956c2c
+        call dword ptr [mem_00924FE8]
+        fldz
+        mov ecx, [esp+0xc]
+        mov [esi+0x28], ecx
+        mov eax, [esp+8]
+        mov [esi+0x24], eax
+        mov cl, 1
+        mov [esi+0x2c], cl
+        fst dword ptr [esi+0x38]
+        fst dword ptr [esi+0x34]
+        xor eax, eax
+        fst dword ptr [esi+0x30]
+        fst dword ptr [esi+0x44]
+        fst dword ptr [esi+0x40]
+        fst dword ptr [esi+0x3c]
+        fst dword ptr [esi+0x54]
+        fst dword ptr [esi+0x50]
+        fst dword ptr [esi+0x4c]
+        fst dword ptr [esi+0x48]
+        fst dword ptr [esi+0x64]
+        fst dword ptr [esi+0x60]
+        fst dword ptr [esi+0x5c]
+        fst dword ptr [esi+0x58]
+        fst dword ptr [esi+0x70]
+        fst dword ptr [esi+0x6c]
+        fst dword ptr [esi+0x68]
+        fst dword ptr [esi+0x7c]
+        fst dword ptr [esi+0x78]
+        fst dword ptr [esi+0x74]
+        fst dword ptr [esi+0x8c]
+        fst dword ptr [esi+0x88]
+        fst dword ptr [esi+0x84]
+        fst dword ptr [esi+0x80]
+        fst dword ptr [esi+0x9c]
+        fst dword ptr [esi+0x98]
+        fst dword ptr [esi+0x94]
+        fst dword ptr [esi+0x90]
+        mov [esi+0xa0], eax
+        fld1
+        mov [esi+0xa4], eax
+        fst qword ptr [esi+0xb0]
+        mov [esi+0xa8], eax
+        fst qword ptr [esi+0xb8]
+        mov [esi+0xac], cl
+        fstp qword ptr [esi+0xc0]
+        mov eax, esi
+        fldz
+        fst qword ptr [esi+0xc8]
+        fstp qword ptr [esi+0xd0]
+        fst dword ptr [esi+0xe4]
+        fst dword ptr [esi+0xe0]
+        fst dword ptr [esi+0xdc]
+        fst dword ptr [esi+0xd8]
+        fst dword ptr [esi+0xf4]
+        fst dword ptr [esi+0xf0]
+        fst dword ptr [esi+0xec]
+        fstp dword ptr [esi+0xe8]
+        pop esi
+        ret 8
+    }
+}
