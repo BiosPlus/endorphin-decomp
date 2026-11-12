@@ -624,3 +624,92 @@ extern "C" __declspec(naked) void __cdecl fn_00803C40(void* out, void* in) {
         ret
     }
 }
+
+// [0x00803A20] sub_00803A20 (177 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00803A20(void* heap) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov ecx, dword ptr [esi + 8]
+        cmp ecx, 1
+        jge short L_00803A31
+        xor eax, eax
+        pop esi
+        ret
+    L_00803A31:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 4]
+        mov ecx, dword ptr [eax + 4*ecx]
+        push ebx
+        mov dword ptr [eax + 4], ecx
+        add dword ptr [esi + 8], -1
+        mov eax, dword ptr [esi + 8]
+        push edi
+        mov edi, 2
+        cmp eax, edi
+        mov dword ptr [esp + 10h], edx
+        mov ebx, 1
+        jl short L_00803AC9
+        push ebp
+    L_00803A58:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 4*edi]
+        mov eax, dword ptr [eax + 4*ebx]
+        mov ecx, dword ptr [esi + 0Ch]
+        push edx
+        push eax
+        call ecx
+        add esp, 8
+        test eax, eax
+        lea ebp, [edi + 1]
+        je short L_00803A8F
+        cmp ebp, dword ptr [esi + 8]
+        jg short L_00803AC8
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 4*edi + 4]
+        mov eax, dword ptr [eax + 4*ebx]
+        mov ecx, dword ptr [esi + 0Ch]
+        push edx
+        push eax
+        call ecx
+        add esp, 8
+        test eax, eax
+        jne short L_00803AC8
+        jmp short L_00803AAD
+    L_00803A8F:
+        cmp ebp, dword ptr [esi + 8]
+        jg short L_00803AAF
+        mov edx, dword ptr [esi]
+        mov ecx, dword ptr [edx + 4*edi]
+        lea eax, [edx + 4*edi]
+        mov edx, dword ptr [eax + 4]
+        mov eax, dword ptr [esi + 0Ch]
+        push ecx
+        push edx
+        call eax
+        add esp, 8
+        test eax, eax
+        je short L_00803AAF
+    L_00803AAD:
+        mov edi, ebp
+    L_00803AAF:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 4*ebx]
+        mov ecx, dword ptr [eax + 4*edi]
+        mov dword ptr [eax + 4*edi], edx
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 4*ebx], ecx
+        mov ebx, edi
+        add edi, edi
+        cmp edi, dword ptr [esi + 8]
+        jle short L_00803A58
+    L_00803AC8:
+        pop ebp
+    L_00803AC9:
+        mov eax, dword ptr [esp + 10h]
+        pop edi
+        pop ebx
+        pop esi
+        ret
+    }
+}
