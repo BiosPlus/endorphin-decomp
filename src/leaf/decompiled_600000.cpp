@@ -1763,3 +1763,31 @@ extern "C" __declspec(naked) void __fastcall fn_00603130(void* self, int edx_unu
         jmp L_store
     }
 }
+
+// [0x006032B0] sub_006032B0 (55 bytes)
+extern "C" void ext_00603130();
+extern "C" __declspec(naked) void __fastcall fn_006032B0(void* self, int edx_unused, float v) {
+    __asm {
+        fld dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        fchs
+        fdiv dword ptr [esi + 0x4c]
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esi + 0x34]
+        push edx
+        fstp dword ptr [esi + 0x30]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x20]
+        call eax
+        fsub dword ptr [esi + 0x30]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [esp]
+        call ext_00603130
+        pop esi
+        ret 0x4
+    }
+}
