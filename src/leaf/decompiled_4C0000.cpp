@@ -2099,3 +2099,15 @@ extern "C" __declspec(naked) void __fastcall fn_004C5120(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004C5FB0] sub_004C5FB0 (35 bytes)
+extern "C" void ext_004C5120();
+extern "C" int mem_0093F7B8;
+
+extern "C" void __fastcall fn_004C5FB0(void* self) {
+    float v[3];
+    v[0] = 0.0f;
+    v[1] = 0.0f;
+    v[2] = *(float*)&mem_0093F7B8;
+    ((void (__thiscall*)(void*, const float*))ext_004C5120)(self, v);
+}
