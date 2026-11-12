@@ -468,3 +468,83 @@ extern "C" __declspec(naked) void __fastcall fn_008716C0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00870FE0] sub_00870FE0 (163 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00870FE0(void* self, int edx_unused, unsigned int* out) {
+    __asm {
+        call ext_00870E90
+        mov dl, al
+        sub dl, 0x30
+        cmp dl, 0x9
+        jbe hex_00871004
+        cmp al, 0x61
+        jl  chk_upper_00870FF7
+        cmp al, 0x66
+        jle hex_00871004
+    chk_upper_00870FF7:
+        cmp al, 0x41
+        jl  bad_00870FFF
+        cmp al, 0x46
+        jle hex_00871004
+    bad_00870FFF:
+        xor al, al
+        ret 4
+    hex_00871004:
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov dword ptr [esi], 0x0
+        nop
+    loop_00871010:
+        mov dl, al
+        sub dl, 0x30
+        cmp dl, 0x9
+        jbe digit_0087102F
+        cmp al, 0x61
+        jl  chk_upper_00871022
+        cmp al, 0x66
+        jle lower_0087102A
+    chk_upper_00871022:
+        cmp al, 0x41
+        jl  end_00871078
+        cmp al, 0x46
+        jg  end_00871078
+    lower_0087102A:
+        cmp dl, 0x9
+        ja  alpha_00871045
+    digit_0087102F:
+        mov edx, dword ptr [esi]
+        movsx eax, al
+        sub eax, 0x30
+        shl edx, 0x4
+        add edx, eax
+        mov dword ptr [esi], edx
+        call ext_00870E90
+        jmp loop_00871010
+    alpha_00871045:
+        mov dl, al
+        sub dl, 0x61
+        cmp dl, 0x5
+        movsx eax, al
+        ja  upper_00871065
+        mov edx, dword ptr [esi]
+        sub eax, 0x57
+        shl edx, 0x4
+        add edx, eax
+        mov dword ptr [esi], edx
+        call ext_00870E90
+        jmp loop_00871010
+    upper_00871065:
+        mov edx, dword ptr [esi]
+        sub eax, 0x37
+        shl edx, 0x4
+        add edx, eax
+        mov dword ptr [esi], edx
+        call ext_00870E90
+        jmp loop_00871010
+    end_00871078:
+        call ext_00870EF0
+        mov al, 0x1
+        pop esi
+        ret 4
+    }
+}
