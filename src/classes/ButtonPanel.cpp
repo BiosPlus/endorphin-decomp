@@ -57,3 +57,32 @@ extern "C" __declspec(naked) void __fastcall fn_00455C30(void* self) {
         ret 1Ch
     }
 }
+
+extern "C" void* ext_006A5EDE();
+extern "C" int __fastcall ext_006A5EC0(void*);
+extern "C" void ext_006A6328();
+extern "C" int mem_009256AC;
+extern "C" int mem_00936F44;
+extern "C" int mem_00936F38;
+extern "C" int mem_00936F2C;
+extern "C" int mem_00936F20;
+extern "C" int mem_00936F14;
+extern "C" int mem_00936F08;
+extern "C" int mem_00936EFC;
+
+// [0x00456B50] ButtonPanel::vfunc_96 (208 bytes)
+extern "C" void __fastcall fn_00456B50(void* self, int edx_unused, int a1) {
+    typedef int (__cdecl *WPrintfFn)(void*, const void*, ...);
+    typedef void (__thiscall *WriteProfileFn)(void*, const void*, const void*, int);
+    int buf[64];
+    void* app = ext_006A5EDE();
+    void* edi = *(void**)((char*)app + 4);
+    int res = ext_006A5EC0(self);
+    (*(WPrintfFn*)&mem_009256AC)(buf, &mem_00936F44, a1, res);
+    ((WriteProfileFn)ext_006A6328)(edi, buf, &mem_00936F38, *(int*)((char*)self + 0x9c));
+    ((WriteProfileFn)ext_006A6328)(edi, buf, &mem_00936F2C, *(int*)((char*)self + 0xa0));
+    ((WriteProfileFn)ext_006A6328)(edi, buf, &mem_00936F20, *(int*)((char*)self + 0xa4));
+    ((WriteProfileFn)ext_006A6328)(edi, buf, &mem_00936F14, *(int*)((char*)self + 0xa8));
+    ((WriteProfileFn)ext_006A6328)(edi, buf, &mem_00936F08, *(int*)((char*)self + 0xac));
+    ((WriteProfileFn)ext_006A6328)(edi, buf, &mem_00936EFC, *(int*)((char*)self + 0xb0));
+}
