@@ -3550,3 +3550,14 @@ rEarly:
         ret 4
     }
 }
+
+// [0x00648120] sub_00648120 (35 bytes)
+extern "C" void ext_007C6710();
+extern "C" void ext_007C6780();
+
+extern "C" void __fastcall fn_00648120(void* self) {
+    void** esi = *(void***)((char*)self + 0xa4);
+    if (!((int (__cdecl*)(void*))ext_007C6780)(*esi)) {
+        ((void (__cdecl*)(void*))ext_007C6710)(*esi);
+    }
+}
