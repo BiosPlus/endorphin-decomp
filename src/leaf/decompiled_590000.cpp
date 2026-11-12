@@ -3131,3 +3131,47 @@ extern "C" void* __fastcall fn_005946D0(char* self, int edx_unused, void* a1, vo
     }
     return obj;
 }
+
+// [0x0059D740] sub_0059D740 (128 bytes)
+extern "C" void ext_0058A200();
+extern "C" void ext_00594000();
+extern "C" void ext_005946D0();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0059D740(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 8b56f9h
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 1Ch
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 5F8h], 0
+        je skip_call_0059D740
+        call ext_00594000
+        cmp dword ptr [esi + 5F8h], eax
+        jne skip_call_0059D740
+        push 3
+        lea eax, [esp + 8]
+        push eax
+        lea ecx, [esi + 160h]
+        call ext_0058A200
+        mov ecx, dword ptr [esp + 30h]
+        push ecx
+        mov ecx, dword ptr [esi + 5F8h]
+        push eax
+        mov dword ptr [esp + 30h], 0
+        call ext_005946D0
+        lea ecx, [esp + 4]
+        mov dword ptr [esp + 28h], -1
+        call dword ptr [mem_00924FF4]
+skip_call_0059D740:
+        mov ecx, dword ptr [esp + 20h]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 28h
+        ret 4
+    }
+}
