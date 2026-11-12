@@ -2,6 +2,8 @@
 
 extern "C" void ext_00603090();
 extern "C" void ext_006A6E9E();
+extern "C" int mem_00A93710;
+extern "C" int mem_0092A270;
 
 // [0x006036D0] Effector::vfunc_19 (18 bytes)
 extern "C" void __fastcall fn_006036D0(void* self, int edx_unused, float* p) {
@@ -166,4 +168,75 @@ extern "C" void __fastcall fn_006031E0(void* self) {
     ((Callee)ext_00603130)(self, ((VFunc)(*(void***)obj)[8])(obj, *(int*)(s + 0x34)));
     typedef void (__thiscall *TailFunc)(void*);
     ((TailFunc)(*(void***)self)[33])(self);
+}
+
+// [0x00603770] Effector::vfunc_14 (181 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00603770(void* self) {
+    __asm {
+        sub esp, 0ch
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi+4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi+34h]
+        mov eax, dword ptr [eax+9Ch]
+        push edx
+        call eax
+        fadd dword ptr [mem_00A93710]
+        mov ecx, dword ptr [esi+4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esi+34h]
+        fstp dword ptr [esp+8]
+        mov edx, dword ptr [edx+98h]
+        push eax
+        call edx
+        fsub dword ptr [mem_00A93710]
+        mov ecx, dword ptr [esi+4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi+34h]
+        fstp dword ptr [esp+0ch]
+        mov eax, dword ptr [eax+20h]
+        push edx
+        call eax
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        pop esi
+        fld dword ptr [esp+4]
+        fcom st(1)
+        fnstsw ax
+        fld dword ptr [esp+8]
+        test ah, 41h
+        jne short L_603770_a
+        fstp st(2)
+        fst dword ptr [esp]
+        jmp short L_603770_b
+L_603770_a:
+        fcom st(2)
+        fnstsw ax
+        fstp st(2)
+        test ah, 5
+        jp short L_603770_b
+        fxch st(1)
+        fst dword ptr [esp]
+        fxch st(1)
+L_603770_b:
+        fld dword ptr [esp]
+        mov eax, dword ptr [esp+10h]
+        fsub st, st(1)
+        fxch st(2)
+        fsubrp st(1), st
+        fstp dword ptr [esp+8]
+        fdiv dword ptr [esp+8]
+        fstp dword ptr [esp+8]
+        fld dword ptr [esp+8]
+        fadd st(0), st
+        fsub qword ptr [mem_0092A270]
+        fstp dword ptr [eax]
+        fldz
+        fst dword ptr [eax+4]
+        fst dword ptr [eax+8]
+        fstp dword ptr [eax+0ch]
+        add esp, 0ch
+        ret 4
+    }
 }
