@@ -1976,3 +1976,82 @@ extern "C" bool __fastcall fn_00575D50(void* self, int edx_unused, void* stream,
     *pSize = size;
     return false;
 }
+
+extern "C" void ext_00573490();
+extern "C" void ext_006A6DD2();
+extern "C" void ext_006A729B();
+
+// [0x005734B0] sub_005734B0 (158 bytes)
+// Naked: the copy loop needs an EH frame with a per-element state byte that C++ try/catch
+// under /EHsc does not reproduce around extern "C" callees, so the frame is written out directly.
+extern "C" __declspec(naked) void* __cdecl fn_005734B0(void* first, void* last, void* dest, void* ctx) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x89d751
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        push edi
+        mov edi, dword ptr [ebp + 0x8]
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], ebx
+        nop
+loop_top:
+        cmp edi, dword ptr [ebp + 0xc]
+        je exit_path
+        mov dword ptr [ebp + 0x8], esi
+        mov dword ptr [ebp - 0x18], esi
+        cmp esi, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je skip_ctor
+        push 0x436f30
+        push 0x4a6970
+        push 0x3
+        push 0x10
+        push edi
+        push esi
+        call ext_006A729B
+skip_ctor:
+        add esi, 0x30
+        mov byte ptr [ebp - 0x4], bl
+        mov dword ptr [ebp + 0x10], esi
+        add edi, 0x30
+        jmp loop_top
+handler:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je rethrow
+        mov ebx, dword ptr [ebp + 0x14]
+destroy_loop:
+        push esi
+        mov ecx, ebx
+        call ext_00573490
+        add esi, 0x30
+        cmp esi, edi
+        jne destroy_loop
+rethrow:
+        xor ebx, ebx
+        push ebx
+        push ebx
+        call ext_006A6DD2
+exit_path:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
