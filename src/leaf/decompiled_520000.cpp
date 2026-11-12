@@ -2645,3 +2645,36 @@ extern "C" void* __cdecl fn_005285A0(int a) {
     }
     return 0;
 }
+
+// [0x0052F710] sub_0052F710 (83 bytes)
+extern "C" void ext_0053A810();
+extern "C" __declspec(naked) void __fastcall fn_0052F710(void* self) {
+    __asm {
+        push -1
+        push 0x894d68
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov ecx, dword ptr [esi + 0x3c]
+        test ecx, ecx
+        mov dword ptr [esp + 0x10], 0x0
+        je skip
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+    skip:
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_0053A810
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
