@@ -2310,3 +2310,94 @@ L_006AF341:
         ret 0x10
     }
 }
+
+// [0x006A7944] sub_006A7944 (205 bytes)
+extern "C" void ext_006A745E();
+extern "C" int mem_00AA7E40;
+extern "C" int mem_00924150;
+extern "C" int mem_00924154;
+extern "C" int mem_00924158;
+extern "C" int mem_0092414C;
+extern "C" int mem_00924220;
+extern "C" int mem_00AA7E58;
+
+extern "C" __declspec(naked) void __fastcall fn_006A7944(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        sub esp, 0xc
+        mov eax, dword ptr [mem_00AA7E40]
+        xor eax, ebp
+        mov dword ptr [ebp - 0x4], eax
+        push esi
+        xor esi, esi
+        call dword ptr [mem_00924150]
+        push 7
+        lea ecx, [ebp - 0xc]
+        push ecx
+        push 0x1004
+        push eax
+        call dword ptr [mem_00924154]
+        test eax, eax
+        je short loc_006A7992
+        mov cl, byte ptr [ebp - 0xc]
+        test cl, cl
+        lea eax, [ebp - 0xc]
+        je short loc_006A7992
+loc_006A797D:
+        imul esi, esi, 0xa
+        movsx ecx, cl
+        inc eax
+        lea esi, [esi + ecx - 0x30]
+        mov cl, byte ptr [eax]
+        test cl, cl
+        jne short loc_006A797D
+        test esi, esi
+        jne short loc_006A799A
+loc_006A7992:
+        call dword ptr [mem_00924158]
+        mov esi, eax
+loc_006A799A:
+        mov ecx, dword ptr [ebp - 0x4]
+        mov eax, esi
+        xor ecx, ebp
+        pop esi
+        call ext_006A745E
+        leave
+        ret
+
+loc_006A79A9:
+        push 3
+        pop eax
+        ret
+
+loc_006A79AD:
+        push ebp
+        mov ebp, esp
+        sub esp, 0x98
+        mov eax, dword ptr [mem_00AA7E40]
+        xor eax, ebp
+        mov dword ptr [ebp - 0x4], eax
+        lea eax, [ebp - 0x98]
+        push eax
+        mov dword ptr [ebp - 0x98], 0x94
+        call dword ptr [mem_0092414C]
+        cmp dword ptr [ebp - 0x88], 2
+        jne short loc_006A79EE
+        cmp dword ptr [ebp - 0x94], 5
+        mov eax, 0x006A79A9
+        jae short loc_006A79F3
+loc_006A79EE:
+        mov eax, 0x006A7944
+loc_006A79F3:
+        push eax
+        push offset mem_00AA7E58
+        call dword ptr [mem_00924220]
+        call dword ptr [mem_00AA7E58]
+        mov ecx, dword ptr [ebp - 0x4]
+        xor ecx, ebp
+        call ext_006A745E
+        leave
+        ret
+    }
+}
