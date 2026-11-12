@@ -4008,3 +4008,65 @@ skip_release:
         ret
     }
 }
+
+// [0x00673AB0] sub_00673AB0 (166 bytes)
+extern "C" void ext_00493D90();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00673AB0(void* self) {
+    __asm {
+        push -1
+        push 0x8b40b8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        cmp dword ptr [esi + 0x4c], 0
+        lea eax, [esi + 0x48]
+        mov dword ptr [esp + 0x10], 4
+        je skip_a_673AB0
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x78]
+        call eax
+    skip_a_673AB0:
+        cmp dword ptr [esi + 0x44], 0
+        lea eax, [esi + 0x40]
+        mov byte ptr [esp + 0x10], 3
+        je skip_b_673AB0
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x78]
+        call eax
+    skip_b_673AB0:
+        cmp dword ptr [esi + 0x38], 0
+        lea eax, [esi + 0x34]
+        mov byte ptr [esp + 0x10], 2
+        je skip_c_673AB0
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x78]
+        call eax
+    skip_c_673AB0:
+        lea ecx, [esi + 0x18]
+        mov byte ptr [esp + 0x10], 1
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 0x10]
+        mov byte ptr [esp + 0x10], 0
+        call ext_00493D90
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_00493D90
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
