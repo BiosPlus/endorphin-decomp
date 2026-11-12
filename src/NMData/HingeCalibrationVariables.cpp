@@ -122,3 +122,104 @@ extern "C" __declspec(naked) void __fastcall fn_00622940(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006227E0] NMData::HingeCalibrationVariables::vfunc_25 (247 bytes)
+// __thiscall ret 0x4: this in ecx, one stack arg (a1) that is used as the 'this' of three
+// callees (ecx=a1) and whose slot is overwritten and passed by address to sub_0046C0A0.
+// Each of the three results is clamped to 0xb53b30 when it is one of
+// {0xb53a34, 0xb53b30, 0xb53ab0, 0xb53a70, 0xb53af0}.
+extern "C" int mem_00A9ED5C;
+extern "C" int mem_00A9EF5C;
+extern "C" int mem_00A9EF60;
+extern "C" void ext_0046C0A0();
+extern "C" void ext_0063F530();
+
+extern "C" __declspec(naked) void __fastcall fn_006227E0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00A9ED5C]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        push 0x1
+        push 0x0
+        mov edi, ecx
+        push eax
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je hit1
+        cmp eax, 0xb53b30
+        je hit1
+        cmp eax, 0xb53ab0
+        je hit1
+        cmp eax, 0xb53a70
+        je hit1
+        cmp eax, 0xb53af0
+        jne skip1
+    hit1:
+        mov eax, 0xb53b30
+    skip1:
+        lea ecx, [esp + 0xc]
+        push ecx
+        lea edx, [edi + 0xc]
+        push edx
+        mov dword ptr [esp + 0x14], eax
+        call ext_0046C0A0
+        mov eax, dword ptr [mem_00A9EF5C]
+        add esp, 0x8
+        push 0x1
+        push 0x0
+        push eax
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je hit2
+        cmp eax, 0xb53b30
+        je hit2
+        cmp eax, 0xb53ab0
+        je hit2
+        cmp eax, 0xb53a70
+        je hit2
+        cmp eax, 0xb53af0
+        jne skip2
+    hit2:
+        mov eax, 0xb53b30
+    skip2:
+        lea ecx, [esp + 0xc]
+        push ecx
+        lea edx, [edi + 0x4]
+        push edx
+        mov dword ptr [esp + 0x14], eax
+        call ext_0046C0A0
+        mov eax, dword ptr [mem_00A9EF60]
+        add esp, 0x8
+        push 0x1
+        push 0x0
+        push eax
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je hit3
+        cmp eax, 0xb53b30
+        je hit3
+        cmp eax, 0xb53ab0
+        je hit3
+        cmp eax, 0xb53a70
+        je hit3
+        cmp eax, 0xb53af0
+        jne skip3
+    hit3:
+        mov eax, 0xb53b30
+    skip3:
+        lea ecx, [esp + 0xc]
+        push ecx
+        add edi, 0x8
+        push edi
+        mov dword ptr [esp + 0x14], eax
+        call ext_0046C0A0
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
