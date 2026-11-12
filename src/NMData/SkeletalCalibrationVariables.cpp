@@ -57,3 +57,41 @@ extern "C" void* __fastcall fn_006225E0(void* self) {
     *(float*)((char*)esi + 0x28) = *(float*)(edi + 0x28);
     return esi;
 }
+
+// [0x006223B0] NMData::SkeletalCalibrationVariables::vfunc_25 (239 bytes)
+extern "C" void ext_0067EE80();
+extern "C" int mem_00A9F780;
+extern "C" int mem_00A9F4AC;
+extern "C" int mem_00A9F770;
+extern "C" int mem_00A9F4A4;
+extern "C" int mem_00A9F9FC;
+extern "C" int mem_00A9F504;
+extern "C" int mem_00A9FA5C;
+extern "C" int mem_00A9F520;
+extern "C" int mem_00A9F9EC;
+extern "C" int mem_00A9F4F8;
+extern "C" int mem_00A9FA44;
+extern "C" int mem_00A9F510;
+extern "C" int mem_00A9F77C;
+extern "C" int mem_00A9F4A8;
+extern "C" int mem_00A9F9F4;
+extern "C" int mem_00A9F4FC;
+extern "C" int mem_00A9FA4C;
+extern "C" int mem_00A9F514;
+
+typedef float (__cdecl *CalibSampleFn)(int, int, int);
+
+extern "C" void __fastcall fn_006223B0(void* self, int edx_unused, int a1) {
+    float* out = (float*)self;
+    CalibSampleFn f = (CalibSampleFn)ext_0067EE80;
+    out[1] = f(a1, mem_00A9F4AC, mem_00A9F780);
+    out[2] = f(a1, mem_00A9F4A4, mem_00A9F770);
+    out[3] = f(a1, mem_00A9F504, mem_00A9F9FC);
+    out[4] = f(a1, mem_00A9F520, mem_00A9FA5C);
+    out[5] = f(a1, mem_00A9F4F8, mem_00A9F9EC);
+    out[6] = f(a1, mem_00A9F510, mem_00A9FA44);
+    out[9] = f(a1, mem_00A9F4A8, mem_00A9F77C);
+    out[7] = f(a1, mem_00A9F4FC, mem_00A9F9F4);
+    out[8] = f(a1, mem_00A9F514, mem_00A9FA4C);
+    out[10] = f(a1, 0x0097705C, 0x00977068);
+}
