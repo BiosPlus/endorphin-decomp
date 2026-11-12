@@ -1,5 +1,55 @@
 // Decompiled translation unit: src/classes/SnapTranslateTool.cpp
 
+// [0x00544EC0] SnapTranslateTool::vfunc_15 (97 bytes)
+extern "C" void ext_00544E20();
+extern "C" void ext_005434F0();
+
+extern "C" __declspec(naked) int __fastcall fn_00544EC0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        push edi
+        mov esi, ecx
+        push ebx
+        mov byte ptr [esi + 0x260], 0x0
+        call ext_00544E20
+        test al, al
+        jne flag_set
+        mov eax, dword ptr [esi + 0x9c]
+        mov edx, dword ptr [eax + 0x3c]
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push edi
+        lea ecx, [esi + 0x9c]
+        push ebx
+        push ebp
+        call edx
+        test eax, eax
+        jne skip_call
+        push edi
+        push ebx
+        push ebp
+        lea ecx, [esi + 0x164]
+        call ext_005434F0
+    skip_call:
+        pop ebp
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret 0xc
+    flag_set:
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret 0xc
+    }
+}
+
 // [0x00544D80] SnapTranslateTool::vfunc_26 (31 bytes)
 extern "C" __declspec(naked) void __fastcall fn_00544D80(void* self) {
     __asm {
@@ -130,3 +180,4 @@ extern "C" __declspec(naked) void __fastcall fn_00544C70(void* self, int edx_unu
         ret 0x8
     }
 }
+
