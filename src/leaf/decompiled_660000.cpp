@@ -7908,3 +7908,42 @@ extern "C" __declspec(naked) void __fastcall fn_00666D80(void* self) {
         ret
     }
 }
+
+// [0x0066AC90] sub_0066AC90 (115 bytes)
+extern "C" void ext_006624F0();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __cdecl fn_0066AC90() {
+    __asm {
+        push -1
+        push 008b3343h
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 8
+        push esi
+        mov dword ptr [esp + 4], 0
+        sub esp, 1Ch
+        lea eax, [esp + 3Ch]
+        mov ecx, esp
+        mov dword ptr [esp + 24h], esp
+        push eax
+        mov dword ptr [esp + 34h], 1
+        call dword ptr [mem_00924FE0]
+        mov esi, dword ptr [esp + 38h]
+        push esi
+        call ext_006624F0
+        add esp, 20h
+        lea ecx, [esp + 20h]
+        mov dword ptr [esp + 4], 1
+        mov byte ptr [esp + 14h], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0Ch]
+        mov eax, esi
+        mov fs:[0], ecx
+        pop esi
+        add esp, 14h
+        ret
+    }
+}
