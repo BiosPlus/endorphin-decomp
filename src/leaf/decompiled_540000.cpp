@@ -3783,3 +3783,42 @@ done_pop_esi:
         ret 0x4
     }
 }
+
+// [0x005426F0] sub_005426F0 (67 bytes)
+// Takes a const std::string& (ret 0x4). Copy-constructs it into a local std::string
+// via the imported basic_string copy ctor, then calls ext_005DF5C0 on this+0x10c.
+// If that returns non-zero, calls ext_00540E10 on the sub-object at this+8+60*[this+0xf8]
+// with the return value as its stack arg. Byte-parity naked asm (the local is not
+// destroyed and the stack is not re-balanced in the disassembly).
+extern "C" int mem_00924FE0;
+extern "C" void ext_005DF5C0();
+extern "C" void ext_00540E10();
+
+extern "C" __declspec(naked) void __fastcall fn_005426F0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        sub esp, 0x1c
+        mov esi, ecx
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esi + 0x10c]
+        call ext_005DF5C0
+        test eax, eax
+        je short done_5426F0
+        push eax
+        mov eax, dword ptr [esi + 0xf8]
+        mov ecx, eax
+        shl ecx, 0x4
+        sub ecx, eax
+        lea ecx, [esi + 4*ecx + 0x8]
+        call ext_00540E10
+done_5426F0:
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
