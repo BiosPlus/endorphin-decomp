@@ -3328,3 +3328,61 @@ extern "C" __declspec(naked) void __cdecl fn_0065FE50(void* first, int hole, int
         ret
     }
 }
+
+// [0x0065FF50] sub_0065FF50 (139 bytes)
+// std::_Pop_heap over 32-byte {std::string, int} records: *dest = *first, then sift the by-value
+// value down from the hole at first via sub_0065FE50 (_Adjust_heap).
+extern "C" void ext_0065FE50();
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+struct Elem32Image_0065FF50 {
+    int words[8];
+};
+
+extern "C" __declspec(naked) void __cdecl fn_0065FF50(void* first, void* last, void* dest, Elem32Image_0065FF50 val) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8b26b8
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        push edi
+        mov esi, dword ptr [esp + 0x18]
+        mov edi, dword ptr [esp + 0x20]
+        push esi
+        mov ecx, edi
+        mov dword ptr [esp + 0x14], 0x0
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [esi + 0x1c]
+        sub esp, 0x20
+        mov dword ptr [edi + 0x1c], eax
+        mov edi, esp
+        lea ecx, [esp + 0x44]
+        mov dword ptr [esp + 0x38], esp
+        push ecx
+        mov ecx, edi
+        call dword ptr [mem_00924FE0]
+        mov eax, dword ptr [esp + 0x3c]
+        mov edx, dword ptr [esp + 0x60]
+        sub eax, esi
+        sar eax, 0x5
+        push eax
+        push 0x0
+        push esi
+        mov dword ptr [edi + 0x1c], edx
+        call ext_0065FE50
+        add esp, 0x2c
+        lea ecx, [esp + 0x24]
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x8]
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
