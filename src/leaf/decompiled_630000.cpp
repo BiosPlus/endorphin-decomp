@@ -2855,3 +2855,15 @@ extern "C" void __fastcall fn_00630D90(void* self, int edx_unused, void* a1) {
     ((void (__thiscall *)(void*, float*))ext_006946C0)(a1, vec);
     ((void (__thiscall *)(void*, const float*))ext_00630480)(self, vec);
 }
+
+extern "C" void ext_006304B0();
+
+// [0x00630DD0] sub_00630DD0 (53 bytes)
+extern "C" void __fastcall fn_00630DD0(void* self, int edx_unused, void* a1) {
+    float vec[3];
+    vec[2] = 0.0f;
+    vec[1] = 0.0f;
+    vec[0] = 0.0f;
+    ((void (__thiscall *)(void*, float*))ext_006946C0)(a1, vec);
+    ((void (__thiscall *)(void*, const float*))ext_006304B0)(self, vec);
+}
