@@ -8233,3 +8233,37 @@ skip_call:
         ret 0x4
     }
 }
+
+// [0x0043E0F0] sub_0043E0F0 (70 bytes)
+extern "C" void ext_0043DC90();
+extern "C" int mem_00925688;
+extern "C" int mem_0092568C;
+
+struct Interface_0043E0F0 {
+    virtual void vfn0() = 0;
+    virtual void vfn1() = 0;
+    virtual void vfn2() = 0;
+    virtual void vfn3() = 0;
+    virtual void vfn4() = 0;
+    virtual void vfn5() = 0;
+    virtual void vfn6() = 0;
+    virtual void vfn7() = 0;
+    virtual void vfn8() = 0;
+    virtual void vfn9() = 0;
+    virtual void vfn10(int a2, int a3, int a4) = 0;
+};
+
+extern "C" void __fastcall fn_0043E0F0(void* self, int edx_unused, Interface_0043E0F0* a1, int a2, int a3, int a4) {
+    if (a1) {
+        a1->vfn10(a2, a3, a4);
+    }
+    typedef int (__stdcall *PFN_InvalidateRect)(void*, void*, int);
+    typedef int (__stdcall *PFN_UpdateWindow)(void*);
+    typedef void (__thiscall *PFN_Sub43DC90)(void*, int);
+
+    void* hwnd = *(void**)((char*)self + 0x20);
+    (*(PFN_InvalidateRect*)&mem_00925688)(hwnd, 0, 1);
+    void* hwnd2 = *(void**)((char*)self + 0x20);
+    (*(PFN_UpdateWindow*)&mem_0092568C)(hwnd2);
+    ((PFN_Sub43DC90)&ext_0043DC90)(self, -1);
+}
