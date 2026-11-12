@@ -1848,3 +1848,84 @@ extern "C" __declspec(naked) void __fastcall fn_00477520(void* self) {
         ret
     }
 }
+
+// [0x0047A4E0] sub_0047A4E0 (151 bytes)
+extern "C" void ext_00584A10();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) void* __fastcall fn_0047A4E0(void* self, int edx_unused, const void* a1) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [ecx + 0x1c]
+        mov eax, dword ptr [eax]
+        push ebx
+        lea ebx, [ecx + 0x18]
+        push ebp
+        push esi
+        mov esi, ebx
+        mov ebp, eax
+        push edi
+        mov dword ptr [esp + 0x10], esi
+        mov dword ptr [esp + 0x14], ebp
+        __asm _emit 0xeb
+        __asm _emit 0x03
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    loop_top:
+        test esi, esi
+        mov edi, dword ptr [ebx + 0x4]
+        je inv1
+        cmp esi, ebx
+        je ok1
+    inv1:
+        call dword ptr [mem_00925134]
+    ok1:
+        cmp ebp, edi
+        je ret_null
+        test esi, esi
+        jne ok2
+        call dword ptr [mem_00925134]
+    ok2:
+        cmp ebp, dword ptr [esi + 0x4]
+        jne ok3
+        call dword ptr [mem_00925134]
+    ok3:
+        mov esi, dword ptr [ebp + 0x28]
+        test esi, esi
+        je do_inc
+        lea ecx, [esi + 0x4]
+        call ext_00584A10
+        mov ecx, dword ptr [esp + 0x1c]
+        push ecx
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        jne found
+    do_inc:
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        mov ebp, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        jmp loop_top
+    found:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    ret_null:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
