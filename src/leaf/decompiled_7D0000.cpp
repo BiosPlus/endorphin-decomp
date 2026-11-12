@@ -4381,3 +4381,107 @@ L_end:
         ret
     }
 }
+
+extern "C" void ext_007D6BB0();
+
+// [0x007D6CF0] sub_007D6CF0 (224 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D6CF0(void) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 8]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        mov eax, dword ptr [ebp + 4]
+        mov eax, dword ptr [eax + ecx*4]
+        push esi
+        mov esi, dword ptr [ebp]
+        lea eax, [esi + eax*4]
+        mov esi, dword ptr [esp + 0x1c]
+        xor edx, edx
+        mov dword ptr [esp + 0x18], esi
+        mov esi, dword ptr [ebp + 8]
+        xor ebx, ebx
+        cmp dword ptr [esi + ecx*4], edx
+        mov dword ptr [esp + 0xc], edx
+        jle L_7D6DC9
+        mov esi, dword ptr [esp + 0x2c]
+        sub eax, esi
+        push edi
+        mov edi, dword ptr [esp + 0x3c]
+        mov dword ptr [esp + 0x20], eax
+        jmp short L_7D6D39
+
+L_7D6D35:
+        mov eax, dword ptr [esp + 0x20]
+
+L_7D6D39:
+        mov ecx, dword ptr [eax + esi]
+        push ecx
+        call ext_007D8710
+        add esp, 4
+        test eax, eax
+        je short L_7D6D96
+        cmp dword ptr [eax + 0xb4], -1
+        jne short L_7D6D80
+        xor ecx, ecx
+
+L_7D6D54:
+        fld dword ptr [eax + ecx*4 + 0x20]
+        add ecx, 1
+        cmp ecx, 3
+        fchs
+        fstp dword ptr [eax + ecx*4 - 4]
+        jne short L_7D6D54
+        lea ecx, [eax + 0x10]
+        mov edx, 3
+        mov edi, edi
+
+L_7D6D70:
+        fld dword ptr [ecx + 0x20]
+        add ecx, 4
+        sub edx, 1
+        fchs
+        fstp dword ptr [ecx - 4]
+        jne short L_7D6D70
+
+L_7D6D80:
+        cmp dword ptr [esp + 0x40], 0
+        je short L_7D6D96
+        mov edx, dword ptr [esp + 0x1c]
+        push edi
+        push edx
+        push eax
+        call ext_007D6BB0
+        add esp, 0xc
+
+L_7D6D96:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [ebp + 8]
+        add dword ptr [esp + 0x10], 1
+        mov ecx, eax
+        shl ecx, 6
+        add dword ptr [esp + 0x1c], ecx
+        lea edi, [edi + eax*4]
+        mov eax, dword ptr [esp + 0x18]
+        add ebx, 1
+        add esi, 4
+        cmp ebx, dword ptr [edx + eax*4]
+        jl L_7D6D35
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+
+L_7D6DC9:
+        pop esi
+        pop ebp
+        mov eax, edx
+        pop ebx
+        pop ecx
+        ret
+    }
+}
