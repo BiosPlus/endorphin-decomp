@@ -2588,3 +2588,159 @@ done:
         ret
     }
 }
+
+// [0x007F0860] sub_007F0860 (301 bytes)
+extern "C" void ext_007F0720();
+extern "C" void ext_007F0800();
+extern "C" void ext_007F0830();
+extern "C" int mem_00924284;
+extern "C" int mem_0092422C;
+extern "C" int mem_009241B4;
+extern "C" int mem_009241B0;
+extern "C" int mem_00924248;
+
+extern "C" __declspec(naked) void __cdecl fn_007F0860(void* a1, void* a2) {
+    __asm {
+        sub esp, 30h
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 40h]
+        push esi
+        mov esi, dword ptr [esp + 40h]
+        push edi
+        xor bl, bl
+        lea eax, [esp + 1ch]
+        mov byte ptr [ebp], bl
+        push eax
+        mov byte ptr [esi], bl
+        mov dword ptr [esp + 34h], 0
+        call dword ptr [mem_00924284]
+        mov cl, byte ptr [esp + 30h]
+        mov byte ptr [ebp], cl
+        call ext_007F0720
+        test eax, eax
+        je L_fail_7F0860
+        mov byte ptr [esp + 13h], bl
+        call ext_007F0800
+        cmp al, 1
+        mov byte ptr [esi], al
+        jb L_ret0_7F0860
+        mov cl, 1
+        or bl, -1
+        cmp al, cl
+        jbe L_mask_7F0860
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+L_shl_7F0860:
+        add cl, cl
+        add bl, bl
+        cmp cl, al
+        jb L_shl_7F0860
+L_mask_7F0860:
+        call dword ptr [mem_0092422C]
+        mov edi, eax
+        lea edx, [esp + 18h]
+        push edx
+        lea eax, [esp + 18h]
+        push eax
+        push edi
+        call dword ptr [mem_009241B4]
+        mov eax, dword ptr [esp + 14h]
+        cmp eax, dword ptr [esp + 18h]
+        je L_same_7F0860
+        pop edi
+        pop esi
+        mov byte ptr [ebp], -1
+        pop ebp
+        mov al, 4
+        pop ebx
+        add esp, 30h
+        ret
+L_same_7F0860:
+        mov ebp, dword ptr [mem_009241B0]
+        mov esi, 1
+L_cmp_7F0860:
+        cmp esi, eax
+        ja L_after_7F0860
+        __asm _emit 0x85
+        __asm _emit 0xf0
+        je L_next_7F0860
+        push esi
+        push edi
+        call ebp
+        test eax, eax
+        je L_reload_7F0860
+        push 0
+        call dword ptr [mem_00924248]
+        call ext_007F0830
+        mov cl, bl
+        not cl
+        __asm _emit 0x84
+        __asm _emit 0xc1
+        je L_reload_7F0860
+        mov byte ptr [esp + 13h], 1
+L_reload_7F0860:
+        mov eax, dword ptr [esp + 14h]
+L_next_7F0860:
+        add esi, esi
+        jne L_cmp_7F0860
+L_after_7F0860:
+        push eax
+        push edi
+        call ebp
+        mov edx, dword ptr [esp + 44h]
+        mov al, byte ptr [edx]
+        cmp al, 1
+        jne L_notone_7F0860
+        pop edi
+        pop esi
+        mov bl, 2
+        pop ebp
+        mov al, bl
+        pop ebx
+        add esp, 30h
+        ret
+L_notone_7F0860:
+        cmp byte ptr [esp + 13h], 0
+        je L_three_7F0860
+        mov ecx, dword ptr [esp + 48h]
+        movzx esi, al
+        movzx eax, byte ptr [ecx]
+        cdq
+        idiv esi
+        pop edi
+        pop esi
+        mov bl, 1
+        pop ebp
+        mov byte ptr [ecx], al
+        mov al, bl
+        pop ebx
+        add esp, 30h
+        ret
+L_three_7F0860:
+        pop edi
+        pop esi
+        mov bl, 3
+        pop ebp
+        mov al, bl
+        pop ebx
+        add esp, 30h
+        ret
+L_fail_7F0860:
+        xor bl, bl
+        mov byte ptr [esi], 1
+L_ret0_7F0860:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, bl
+        pop ebx
+        add esp, 30h
+        ret
+    }
+}
