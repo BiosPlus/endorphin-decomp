@@ -3459,3 +3459,29 @@ extern "C" __declspec(naked) float __fastcall fn_0068BEA0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0068BF00] sub_0068BF00 (51 bytes)
+extern "C" void ext_00508680();
+extern "C" int mem_0093BD38;
+extern "C" int mem_0098E430;
+extern "C" __declspec(naked) float __fastcall fn_0068BF00(void* self, int edx_unused, float a1) {
+    __asm {
+        push ecx
+        add ecx, 0x10
+        call ext_00508680
+        test eax, eax
+        mov dword ptr [esp], eax
+        fild dword ptr [esp]
+        jge short skip_0068BF00
+        fadd qword ptr [mem_0093BD38]
+skip_0068BF00:
+        fld qword ptr [mem_0098E430]
+        fmul st(1), st
+        faddp st(1), st
+        fmul dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        pop ecx
+        ret 0x4
+    }
+}
