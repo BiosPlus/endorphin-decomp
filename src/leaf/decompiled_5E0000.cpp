@@ -2062,3 +2062,45 @@ extern "C" __declspec(naked) void __fastcall fn_005E1610(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x005E4990] sub_005E4990 (97 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005E4990(void* self, int edx_unused, void* arg1) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x70]
+        call edx
+        test al, al
+        je loc_005E49EA
+        fldz
+        mov ecx, dword ptr [esp + 0x18]
+        lea eax, [esp + 0x4]
+        fst dword ptr [esp + 0x10]
+        push eax
+        fst dword ptr [esp + 0x10]
+        push ecx
+        fst dword ptr [esp + 0x10]
+        mov ecx, esi
+        fstp dword ptr [esp + 0xc]
+        call fn_005E1610
+        fldz
+        mov edx, dword ptr [esi + 0xc]
+        fst dword ptr [esp + 0x4]
+        mov edx, dword ptr [edx + 8]
+        fstp dword ptr [esp + 0xc]
+        lea ecx, [esi + 0xc]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x8c]
+        mov ecx, esi
+        call edx
+loc_005E49EA:
+        pop esi
+        add esp, 0x10
+        ret 4
+    }
+}
