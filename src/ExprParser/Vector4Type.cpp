@@ -190,3 +190,79 @@ extern "C" __declspec(naked) void __fastcall fn_0066B990(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0066B8E0] ExprParser::Vector4Type::vfunc_45 (167 bytes)
+extern "C" void ext_0053B470();
+
+extern "C" __declspec(naked) void __fastcall fn_0066B8E0(void* self, int edx_unused, float** dst, char* src) {
+    __asm {
+        sub esp, 10h
+        push esi
+        mov esi, dword ptr [esp + 1Ch]
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 3Ch]
+        push esi
+        call edx
+        test al, al
+        mov ecx, dword ptr [esi + 4]
+        je short L_else
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 18h]
+        push edi
+        push esi
+        call edx
+        mov esi, dword ptr [esp + 1Ch]
+        mov edx, dword ptr [esi]
+        fld dword ptr [edx + 4]
+        mov ecx, dword ptr [esi + 4]
+        fmul dword ptr [eax + 4]
+        mov edi, dword ptr [ecx]
+        fld dword ptr [edx]
+        push ecx
+        fmul dword ptr [eax]
+        faddp st(1), st
+        fld dword ptr [edx + 8]
+        fmul dword ptr [eax + 8]
+        faddp st(1), st
+        fld dword ptr [edx + 0Ch]
+        fmul dword ptr [eax + 0Ch]
+        mov eax, dword ptr [edi + 1Ch]
+        faddp st(1), st
+        fstp dword ptr [esp + 20h]
+        fld dword ptr [esp + 20h]
+        fstp dword ptr [esp]
+        push esi
+        call eax
+        pop edi
+        pop esi
+        add esp, 10h
+        ret 8
+    L_else:
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 4]
+        push esi
+        call eax
+        fstp dword ptr [esp + 1Ch]
+        mov ecx, dword ptr [esp + 18h]
+        fld dword ptr [esp + 1Ch]
+        mov esi, dword ptr [ecx]
+        push ecx
+        lea edx, [esp + 8]
+        fstp dword ptr [esp]
+        push edx
+        mov ecx, esi
+        call ext_0053B470
+        fld dword ptr [eax]
+        fstp dword ptr [esi]
+        fld dword ptr [eax + 4]
+        fstp dword ptr [esi + 4]
+        fld dword ptr [eax + 8]
+        fstp dword ptr [esi + 8]
+        fld dword ptr [eax + 0Ch]
+        fstp dword ptr [esi + 0Ch]
+        pop esi
+        add esp, 10h
+        ret 8
+    }
+}
