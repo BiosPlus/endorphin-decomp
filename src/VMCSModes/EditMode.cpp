@@ -219,3 +219,71 @@ L_004F44BC:
         ret
     }
 }
+
+// [0x004F4690] VMCSModes::EditMode::vfunc_20 (180 bytes)
+extern "C" void ext_0046F930();
+extern "C" void ext_00472350();
+extern "C" void ext_00472650();
+extern "C" int mem_00AD89B4;
+
+extern "C" __declspec(naked) void __fastcall fn_004F4690(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x88fe68
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x178]
+        call edx
+        test al, al
+        je L_end
+        mov eax, dword ptr [edi + 0x8]
+        push ebx
+        push esi
+        mov esi, dword ptr [eax + 0x14]
+        test esi, esi
+        mov ebx, 1
+        mov dword ptr [esp + 0xc], esi
+        mov byte ptr [esp + 0x10], bl
+        je L_skip_a
+        cmp dword ptr [mem_00AD89B4], 0
+        jne L_skip_b
+        mov ecx, esi
+        mov byte ptr [esi + 0x153], bl
+        call ext_00472350
+L_skip_b:
+        add dword ptr [mem_00AD89B4], ebx
+L_skip_a:
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [edx + 0xd4]
+        mov ecx, edi
+        mov dword ptr [esp + 0x1c], 0
+        call eax
+        mov ecx, dword ptr [edi + 0x8]
+        mov ecx, dword ptr [ecx + 0x14]
+        push 0
+        push ebx
+        call ext_00472650
+        test esi, esi
+        mov dword ptr [esp + 0x1c], -1
+        je L_pop
+        sub dword ptr [mem_00AD89B4], ebx
+        jne L_pop
+        mov ecx, esi
+        mov byte ptr [esi + 0x153], 0
+        call ext_0046F930
+L_pop:
+        pop esi
+        pop ebx
+L_end:
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret
+    }
+}
