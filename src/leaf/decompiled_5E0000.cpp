@@ -1713,3 +1713,67 @@ extern "C" __declspec(naked) void __fastcall fn_005E02F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005E0EB0] sub_005E0EB0 (149 bytes)
+#include <math.h>
+
+extern "C" void ext_006A7250();
+extern "C" double mem_00968EC0;
+extern "C" double mem_00968EB8;
+extern "C" double mem_0092C508;
+extern "C" double mem_00932470;
+extern "C" float mem_00968E74;
+extern "C" float mem_00968E70;
+
+extern "C" __declspec(naked) float __fastcall fn_005E0EB0(void* self, int edx_unused, float* v) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x4]
+        push esi
+        fld dword ptr [eax]
+        mov esi, ecx
+        fld dword ptr [eax + 0x8]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x18c]
+        test eax, eax
+        pop esi
+        je else_branch
+        cmp byte ptr [eax + 0x4e4], 0
+        je else_branch
+        fld dword ptr [esp + 0x4]
+        fmul qword ptr [mem_00968EC0]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fcomp qword ptr [mem_00968EB8]
+        fnstsw ax
+        test ah, 0x41
+        mov eax, offset mem_00968E74
+        jmp select_ptr
+else_branch:
+        fld dword ptr [esp + 0x4]
+        fmul qword ptr [mem_0092C508]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fcomp qword ptr [mem_00932470]
+        fnstsw ax
+        test ah, 0x41
+        mov eax, offset mem_00968E70
+select_ptr:
+        je store_result
+        lea eax, [esp + 0x4]
+store_result:
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        ret 0x4
+    }
+}
