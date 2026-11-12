@@ -2545,3 +2545,73 @@ L_ret:
         ret 0x10
     }
 }
+
+// [0x00472350] sub_00472350 (205 bytes)
+extern "C" void ext_0046F880();
+extern "C" void ext_0046F890();
+extern "C" void ext_0046F980();
+extern "C" void ext_00480130();
+extern "C" void ext_00493F80();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" void ext_0067B410();
+
+extern "C" __declspec(naked) void __fastcall fn_00472350(void* self) {
+    __asm {
+        push -1
+        push 0x8a56c8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        call ext_0046F880
+        test al, al
+        je fn472350_skip1
+        mov eax, dword ptr [esi + 0xcc]
+        lea ecx, [eax + 0x258]
+        call ext_00493F80
+fn472350_skip1:
+        mov ecx, esi
+        call ext_0046F980
+        xor ebx, ebx
+        mov ecx, esi
+        mov byte ptr [esi + 0x150], bl
+        call ext_0046F890
+        test al, al
+        je fn472350_done
+        push edi
+        lea edi, [esi + 0x170]
+        mov ecx, edi
+        mov byte ptr [esi + 0x290], bl
+        mov byte ptr [esi + 0x291], bl
+        mov byte ptr [esi + 0x292], bl
+        mov dword ptr [esp + 0xc], edi
+        call ext_0065C640
+        lea ecx, [esi + 0x10c]
+        mov dword ptr [esp + 0x18], ebx
+        call ext_0067B410
+        mov ecx, dword ptr [esi + 0x34]
+        mov byte ptr [esi + 0x290], bl
+        mov byte ptr [esi + 0x291], bl
+        mov byte ptr [esi + 0x292], bl
+        call ext_00480130
+        mov eax, dword ptr [esi + 0xa8]
+        mov edx, dword ptr [eax + 0x8]
+        lea ecx, [esi + 0xa8]
+        call edx
+        mov ecx, edi
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call ext_0065C650
+        pop edi
+fn472350_done:
+        mov ecx, dword ptr [esp + 0xc]
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
