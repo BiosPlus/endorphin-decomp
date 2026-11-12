@@ -27,5 +27,7 @@
     "0x00648BC1",
     "0x00648BC8"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T11:24:26Z"
 }
