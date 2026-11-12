@@ -2271,3 +2271,34 @@ extern "C" __declspec(naked) void __fastcall fn_0060EB90(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0060EB90();
+
+// [0x0060F5E0] sub_0060F5E0 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0060F5E0(void* self) {
+    __asm {
+        push -1
+        push 0x8a8b46
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        lea ecx, [esi + 0x190]
+        mov dword ptr [esp + 0x10], 0x1
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 0x180]
+        mov byte ptr [esp + 0x10], 0x0
+        call ext_004026E0
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_0060EB90
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
