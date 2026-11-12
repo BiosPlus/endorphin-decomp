@@ -712,3 +712,88 @@ extern "C" __declspec(naked) bool __fastcall fn_00871130(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00872830] sub_00872830 (184 bytes)
+extern "C" int mem_00924E28;
+extern "C" __declspec(naked) void __fastcall fn_00872830(void* self, int edx_unused, __int64 dividend, __int64 divisor) {
+    __asm {
+        push ebx
+        push edi
+        xor edi, edi
+        mov eax, dword ptr [esp + 0x10]
+        or eax, eax
+        jge short L_pos_dividend
+        inc edi
+        mov edx, dword ptr [esp + 0xc]
+        neg eax
+        neg edx
+        sbb eax, 0
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esp + 0xc], edx
+L_pos_dividend:
+        mov eax, dword ptr [esp + 0x18]
+        or eax, eax
+        jge short L_pos_divisor
+        mov edx, dword ptr [esp + 0x14]
+        neg eax
+        neg edx
+        sbb eax, 0
+        mov dword ptr [esp + 0x18], eax
+        mov dword ptr [esp + 0x14], edx
+L_pos_divisor:
+        or eax, eax
+        jne short L_big_divisor
+        mov ecx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0x10]
+        xor edx, edx
+        div ecx
+        mov eax, dword ptr [esp + 0xc]
+        div ecx
+        mov eax, edx
+        xor edx, edx
+        dec edi
+        jns short L_negate_result
+        jmp short L_done
+L_big_divisor:
+        mov ebx, eax
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0xc]
+L_shift_loop:
+        shr ebx, 1
+        rcr ecx, 1
+        shr edx, 1
+        rcr eax, 1
+        or ebx, ebx
+        jne short L_shift_loop
+        div ecx
+        mov ecx, eax
+        mul dword ptr [esp + 0x18]
+        xchg ecx, eax
+        mul dword ptr [esp + 0x14]
+        add edx, ecx
+        jb short L_adjust
+        cmp edx, dword ptr [esp + 0x10]
+        ja short L_adjust
+        jb short L_subtract
+        cmp eax, dword ptr [esp + 0xc]
+        jbe short L_subtract
+L_adjust:
+        sub eax, dword ptr [esp + 0x14]
+        sbb edx, dword ptr [esp + 0x18]
+L_subtract:
+        sub eax, dword ptr [esp + 0xc]
+        sbb edx, dword ptr [esp + 0x10]
+        dec edi
+        jns short L_done
+L_negate_result:
+        neg edx
+        neg eax
+        sbb edx, 0
+L_done:
+        pop edi
+        pop ebx
+        ret 0x10
+        jmp dword ptr [mem_00924E28]
+    }
+}
