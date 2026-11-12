@@ -3324,3 +3324,106 @@ extern "C" __declspec(naked) void __cdecl fn_00699D50(void* dst, unsigned int co
         ret
     }
 }
+
+// [0x00699C70] sub_00699C70 (218 bytes)
+// try { for (src = begin; src != end; ++src, ++dst) { ctor(dst, src); dst->i = src->i; dst->j = src->j;
+//       fetch src->obj virtual value into dst->k; dst->obj = src->obj; } } return dst_end;
+// catch (...) { destroy [dst_begin, dst) strings; throw; }
+// Naked: same SEH frame pattern as fn_00699D50 (MSVC /EHsc drops try for extern "C" callees).
+extern "C" int mem_00924FE0;
+extern "C" void ext_00672590();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void* __cdecl fn_00699C70(void* begin, const void* end, void* dst) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -0x1
+        push 0x008b64fa
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x14
+        push ebx
+        mov ebx, dword ptr [ebp + 0x8]
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], 0x0
+    loop_top:
+        cmp ebx, dword ptr [ebp + 0xc]
+        je epilogue
+        mov dword ptr [ebp - 0x18], esi
+        mov dword ptr [ebp - 0x1c], esi
+        test esi, esi
+        mov byte ptr [ebp - 0x4], 0x1
+        je skip_ctor
+        push ebx
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        mov eax, dword ptr [ebx + 0x1c]
+        mov dword ptr [esi + 0x1c], eax
+        mov ecx, dword ptr [ebx + 0x20]
+        lea edi, [ebx + 0x24]
+        mov dword ptr [esi + 0x20], ecx
+        cmp dword ptr [edi + 0x4], 0x0
+        mov byte ptr [ebp - 0x4], 0x2
+        je null_obj
+        mov ecx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push edi
+        lea eax, [ebp - 0x20]
+        push eax
+        call edx
+        jmp store_val
+    null_obj:
+        mov dword ptr [ebp + 0x8], 0x0
+        lea eax, [ebp + 0x8]
+    store_val:
+        mov eax, dword ptr [eax]
+        mov dword ptr [esi + 0x24], eax
+        mov ecx, dword ptr [edi + 0x4]
+        mov dword ptr [esi + 0x28], ecx
+    skip_ctor:
+        add esi, 0x2c
+        mov byte ptr [ebp - 0x4], 0x0
+        mov dword ptr [ebp + 0x10], esi
+        add ebx, 0x2c
+        jmp loop_top
+    catch_funclet:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je throw_now
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    dtor_loop:
+        mov ecx, esi
+        call ext_00672590
+        add esi, 0x2c
+        cmp esi, edi
+        jne dtor_loop
+    throw_now:
+        push 0x0
+        push 0x0
+        call ext_006A6DD2
+    epilogue:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
