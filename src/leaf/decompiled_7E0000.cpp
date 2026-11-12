@@ -714,3 +714,26 @@ extern "C" __declspec(naked) void __fastcall fn_007E8F00(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" float mem_00B61F50;
+extern "C" float mem_00B61F54;
+extern "C" float mem_00B61F58;
+extern "C" float mem_00B61F5C;
+extern "C" float mem_00B61F60;
+extern "C" float mem_00B61F64;
+extern "C" float mem_00B61F68;
+extern "C" float mem_00B61F6C;
+extern "C" float mem_00B61F70;
+extern "C" float mem_00B61F74;
+
+// [0x007E9580] sub_007E9580 (246 bytes)
+extern "C" float __cdecl fn_007E9580(const float* angles) {
+    float c0 = (float)cos(angles[0]);
+    float s0 = (float)sin(angles[0]);
+    float c1 = (float)cos(angles[1]);
+    float s1 = (float)sin(angles[1]);
+
+    return (mem_00B61F58 * c1 + mem_00B61F5C * s1) * mem_00B61F74
+         - (mem_00B61F50 * c0 + mem_00B61F54 * s0) * mem_00B61F70
+         - (c0 * c1 * mem_00B61F60 + c0 * s1 * mem_00B61F64 + s0 * c1 * mem_00B61F68 + s0 * s1 * mem_00B61F6C) * (mem_00B61F70 * mem_00B61F74);
+}
