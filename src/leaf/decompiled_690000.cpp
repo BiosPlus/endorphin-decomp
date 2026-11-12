@@ -2410,3 +2410,50 @@ extern "C" __declspec(naked) void __fastcall fn_0069A260(void* self) {
         ret
     }
 }
+
+extern "C" int mem_00B5BDB4;
+
+// [0x006952F0] sub_006952F0 (160 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006952F0() {
+    __asm {
+        movzx eax, byte ptr [esp + 0x8]
+        movzx ecx, byte ptr [esp + 0x9]
+        imul eax, eax, 0x101
+        movzx edx, byte ptr [esp + 0xa]
+        add eax, ecx
+        movzx ecx, byte ptr [esp + 0x4]
+        imul eax, eax, 0x101
+        add eax, edx
+        imul ecx, ecx, 0x23150701
+        movzx edx, byte ptr [esp + 0x5]
+        imul eax, eax, 0x101
+        imul edx, edx, 0x140f0601
+        add eax, ecx
+        movzx ecx, byte ptr [esp + 0x6]
+        add eax, edx
+        imul ecx, ecx, 0xa0a0501
+        movzx edx, byte ptr [esp + 0x7]
+        imul edx, edx, 0x4060401
+        add eax, ecx
+        movzx ecx, byte ptr [esp + 0xb]
+        add eax, edx
+        mov edx, dword ptr [esp + 0xc]
+        add eax, ecx
+        movzx ecx, dl
+        imul ecx, ecx, 0x101
+        movzx edx, dh
+        add ecx, edx
+        movzx edx, byte ptr [esp + 0xe]
+        imul ecx, ecx, 0x101
+        add ecx, edx
+        movzx edx, byte ptr [esp + 0xf]
+        imul ecx, ecx, 0x101
+        add ecx, edx
+        mov edx, dword ptr [mem_00B5BDB4]
+        add eax, edx
+        add edx, 0x1
+        xor eax, ecx
+        mov dword ptr [mem_00B5BDB4], edx
+        ret
+    }
+}
