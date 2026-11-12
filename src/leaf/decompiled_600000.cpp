@@ -2096,3 +2096,93 @@ extern "C" __declspec(naked) void* __fastcall fn_0060F3B0(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x0060A3A0] sub_0060A3A0 (200 bytes)
+// Heap adjust (sift-down to a leaf, then push_heap back up via fn_00609790).
+// Element pointers are compared by std::string keys at +4 and +0x20.
+extern "C" void ext_00609790();
+extern "C" int mem_00924EF4;
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void __cdecl fn_0060A3A0(void* first, int hole, int bottom, void* value, int extra) {
+    __asm {
+        sub esp, 0xc
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x18]
+        push esi
+        lea esi, [eax + eax + 0x2]
+        cmp esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov dword ptr [esp + 0x10], eax
+        jge L_437
+        push ebx
+        push ebp
+        nop
+    L_loop:
+        mov ebx, dword ptr [edi + 4*esi - 0x4]
+        mov ebp, dword ptr [edi + 4*esi]
+        mov dword ptr [esp + 0x10], ebx
+        add ebx, 0x4
+        mov dword ptr [esp + 0x14], ebp
+        add ebp, 0x4
+        push ebx
+        push ebp
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne L_dec
+        push ebx
+        push ebp
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je L_keep
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x14]
+        add eax, 0x20
+        push eax
+        add ecx, 0x20
+        push ecx
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        je L_keep
+    L_dec:
+        sub esi, 0x1
+    L_keep:
+        mov eax, dword ptr [esp + 0x24]
+        mov edx, dword ptr [edi + 4*esi]
+        mov dword ptr [esp + 0x24], esi
+        lea esi, [esi + esi + 0x2]
+        cmp esi, dword ptr [esp + 0x28]
+        mov dword ptr [edi + 4*eax], edx
+        jl L_loop
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, dword ptr [esp + 0x24]
+        pop ebp
+        pop ebx
+        cmp esi, ecx
+    L_437:
+        jne L_449
+        mov edx, dword ptr [edi + 4*ecx - 0x4]
+        add ecx, -0x1
+        mov dword ptr [edi + 4*eax], edx
+        mov dword ptr [esp + 0x1c], ecx
+        mov eax, ecx
+    L_449:
+        mov ecx, dword ptr [esp + 0x28]
+        mov edx, dword ptr [esp + 0x24]
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push edx
+        push ecx
+        push eax
+        push edi
+        call ext_00609790
+        add esp, 0x14
+        pop edi
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
