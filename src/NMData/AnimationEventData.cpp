@@ -405,3 +405,48 @@ extern "C" __declspec(naked) void* __fastcall fn_004E1C50(void* self, int edx_un
         ret 8
     }
 }
+
+extern "C" void ext_004DE160();
+extern "C" void ext_00661F70();
+extern "C" int mem_00925134;
+
+// [0x004E1A70] NMData::AnimationEventData::vfunc_0_off_184 (91 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004E1A70(void* self, int edx_unused, void* a1) {
+    __asm {
+        push edi
+        mov edi, ecx
+        cmp dword ptr [edi - 0x174], 0
+        je L_exit
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp dword ptr [esi + 8], 0
+        jne L_valid1
+        call ebx
+    L_valid1:
+        mov eax, dword ptr [esi + 8]
+        mov ecx, dword ptr [esi + 0x0C]
+        cmp ecx, dword ptr [eax + 4]
+        jne L_valid2
+        call ebx
+    L_valid2:
+        lea ecx, [edi - 0x184]
+        call ext_004DE160
+        mov edx, dword ptr [esi + 0x0C]
+        mov ecx, dword ptr [edx + 8]
+        sub ecx, eax
+        test ecx, ecx
+        pop esi
+        pop ebx
+        jg L_jg
+        mov ecx, 1
+    L_jg:
+        push ecx
+        lea ecx, [edi + 0x740]
+        call ext_00661F70
+    L_exit:
+        pop edi
+        ret 4
+    }
+}
