@@ -123,3 +123,25 @@ L_else:
         ret 4
     }
 }
+
+// [0x00407890] BottomPanel::vfunc_63 (247 bytes)
+extern "C" void ext_006A5F44();
+
+extern "C" void __fastcall fn_00407890(void* self, int edx_unused, int a1) {
+    typedef void (__stdcall *DdxFn)(int, int, void*);
+    char* p = (char*)self;
+    DdxFn ddx = (DdxFn)ext_006A5F44;
+    ddx(a1, 0x417, p + 0x198);
+    ddx(a1, 0x443, (void*)*(int*)(p + 0x2e8));
+    ddx(a1, 0x419, p + 0x294);
+    ddx(a1, 0x444, (void*)*(int*)(p + 0x2f4));
+    ddx(a1, 0x41c, p + 0x1ec);
+    ddx(a1, 0x441, (void*)*(int*)(p + 0x2ec));
+    ddx(a1, 0x41d, p + 0x240);
+    ddx(a1, 0x442, (void*)*(int*)(p + 0x2f0));
+    ddx(a1, 0x49d, p + 0x2f8);
+    ddx(a1, 0x4a3, p + 0x34c);
+    ddx(a1, 0x4a8, p + 0x3a0);
+    ddx(a1, 0x4a5, p + 0x3f4);
+    ddx(a1, 0x4a4, p + 0x448);
+}
