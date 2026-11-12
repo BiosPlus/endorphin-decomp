@@ -5062,3 +5062,58 @@ extern "C" void __fastcall fn_00410540(void* self, int edx_unused, void* a1, voi
     void* obj2 = ((void* (__fastcall*)(void*))ext_00468660)(a1);
     ((FuncE4)(*(void***)obj2)[0xe4 / 4])(obj2, a2, 0, rounded, 0, 0, 0);
 }
+
+// [0x0041B3D0] sub_0041B3D0 (170 bytes)
+extern "C" void ext_0040FDC0();
+extern "C" void ext_006A6250();
+extern "C" int mem_0093A0E8;
+extern "C" int mem_0092407C;
+
+extern "C" __declspec(naked) void __fastcall fn_0041B3D0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x876a52
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        push eax
+        push 0x9e
+        mov esi, ecx
+        push 0x320
+        mov dword ptr [esp + 0x14], esi
+        call ext_006A6250
+        xor eax, eax
+        lea edi, [esi + 0x114]
+        mov dword ptr [esi], 0x92d5c4
+        mov dword ptr [esi + 0x74], 0x92d594
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [edi + 0x4], eax
+        mov dword ptr [edi], 0x92a254
+        mov al, 0x1
+        lea ecx, [esi + 0x120]
+        mov byte ptr [esp + 0x14], al
+        mov byte ptr [esi + 0x11c], al
+        call ext_0040FDC0
+        lea ecx, [esi + 0x194]
+        mov byte ptr [esp + 0x14], 0x2
+        call ext_0040F0B0
+        mov ecx, dword ptr [mem_0093A0E8]
+        push ecx
+        mov byte ptr [esp + 0x18], 0x3
+        call dword ptr [mem_0092407C]
+        push eax
+        mov ecx, edi
+        call ext_006A5FFE
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
