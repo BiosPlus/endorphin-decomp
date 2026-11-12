@@ -2,6 +2,7 @@
 
 extern "C" float mem_0099D148;
 extern "C" int mem_009552D0;
+extern "C" int mem_0095FFC0;
 extern "C" void ext_007DD130();
 extern "C" void ext_007C7900();
 extern "C" void ext_007C7970();
@@ -3572,5 +3573,69 @@ extern "C" __declspec(naked) void __cdecl fn_007C3CB0(void* self, int a1, int a2
         add ecx, 0x3
         mov dword ptr [eax + 0x16b4], ecx
         jmp ext_007C5570
+    }
+}
+
+// [0x007CA4F0] sub_007CA4F0 (161 bytes)
+extern "C" __declspec(naked) short __cdecl fn_007CA4F0(float* a, float* b, float* c, float* d) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        xor ecx, ecx
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax + 0x14], ecx
+        mov dword ptr [eax + 0x18], ecx
+        mov dword ptr [eax + 0x1c], ecx
+        mov dword ptr [eax + 0x20], ecx
+        mov ecx, dword ptr [esp + 0x4]
+        fld dword ptr [ecx + 0x10]
+        fld st(0)
+        fld qword ptr [mem_009552D0]
+        fmul st(1), st
+        fxch st(1)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [eax]
+        fld dword ptr [ecx + 0x10]
+        fld st(0)
+        fmul st, st(2)
+        fmulp st(1), st
+        fstp dword ptr [eax + 0x10]
+        fld dword ptr [ecx + 0x10]
+        fld st(0)
+        fmulp st(2), st
+        fmulp st(1), st
+        fstp dword ptr [eax + 0x20]
+        mov eax, dword ptr [esp + 0x8]
+        fld1
+        fst dword ptr [eax]
+        fldz
+        fst dword ptr [eax + 0x4]
+        fst dword ptr [eax + 0x8]
+        fst dword ptr [eax + 0xc]
+        fst dword ptr [eax + 0x10]
+        fst dword ptr [eax + 0x18]
+        fst dword ptr [eax + 0x1c]
+        fst dword ptr [eax + 0x20]
+        fst dword ptr [eax + 0x24]
+        fst dword ptr [eax + 0x2c]
+        fst dword ptr [eax + 0x30]
+        fst dword ptr [eax + 0x34]
+        fstp dword ptr [eax + 0x38]
+        fst dword ptr [eax + 0x14]
+        fst dword ptr [eax + 0x28]
+        fstp dword ptr [eax + 0x3c]
+        mov eax, dword ptr [esp + 0x10]
+        fld dword ptr [ecx + 0x10]
+        fld qword ptr [mem_0095FFC0]
+        fmul st, st(1)
+        fmul st, st(1)
+        fmulp st(1), st
+        fstp dword ptr [eax]
+        xor ax, ax
+        ret
     }
 }
