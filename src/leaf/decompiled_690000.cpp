@@ -2617,3 +2617,36 @@ extern "C" __declspec(naked) void __fastcall fn_00695390(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x006920D0] sub_006920D0 (176 bytes)
+extern "C" void ext_00692010();
+extern "C" void ext_00692070();
+
+struct Pair006920D0 {
+    int* first;
+    int* second;
+    Pair006920D0() {}
+    Pair006920D0(int* f, int* s) : first(f), second(s) {}
+};
+
+extern "C" Pair006920D0 __cdecl fn_006920D0(int* first, int* last, const int* value, bool (__cdecl* pred)(int, int)) {
+    typedef void* (__cdecl *FnLower)(int*, int*, const int*, bool (__cdecl*)(int, int), int);
+    typedef int* (__cdecl *FnUpper)(int*, int*, const int*, bool (__cdecl*)(int, int), int);
+
+    int count = last - first;
+    while (count > 0) {
+        int half = count / 2;
+        int* mid = first + half;
+        if (pred(*mid, *value)) {
+            first = mid + 1;
+            count -= half + 1;
+        } else if (pred(*value, *mid)) {
+            count = half;
+        } else {
+            int* f = (int*)((FnLower)ext_00692010)(first, mid, value, pred, 0);
+            int* s = ((FnUpper)ext_00692070)(mid + 1, first + count, value, pred, 0);
+            return Pair006920D0(f, s);
+        }
+    }
+    return Pair006920D0(first, first);
+}
