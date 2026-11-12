@@ -6977,3 +6977,55 @@ extern "C" __declspec(naked) void __cdecl fn_006632B0() {
         ret
     }
 }
+
+// [0x00660180] sub_00660180 (91 bytes)
+extern "C" void ext_0065FE50();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __cdecl fn_00660180() {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        sub ebp, ecx
+        sar ebp, 0x5
+        mov eax, ebp
+        cdq
+        push esi
+        sub eax, edx
+        mov esi, eax
+        sar esi, 1
+        test esi, esi
+        push edi
+        jle loc_006601D6
+        mov edi, esi
+        shl edi, 0x5
+        add edi, ecx
+    loc_006601A5:
+        sub esp, 0x20
+        mov ebx, esp
+        sub edi, 0x20
+        mov dword ptr [esp + 0x38], esp
+        push edi
+        mov ecx, ebx
+        sub esi, 1
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x34]
+        mov eax, dword ptr [edi + 0x1c]
+        push ebp
+        push esi
+        push ecx
+        mov dword ptr [ebx + 0x1c], eax
+        call ext_0065FE50
+        add esp, 0x2c
+        test esi, esi
+        jg loc_006601A5
+    loc_006601D6:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
