@@ -2457,3 +2457,27 @@ extern "C" __declspec(naked) void __cdecl fn_006952F0() {
         ret
     }
 }
+
+// [0x006953F0] sub_006953F0 (34 bytes)
+extern "C" void ext_006952F0();
+extern "C" int mem_00925310;
+extern "C" int mem_00925314;
+extern "C" __declspec(naked) void __cdecl fn_006953F0() {
+    __asm {
+        push esi
+        push edi
+        push 0x0
+        call dword ptr [mem_00925310]
+        mov esi, eax
+        mov edi, edx
+        call dword ptr [mem_00925314]
+        push eax
+        push edi
+        push esi
+        call ext_006952F0
+        add esp, 0x10
+        pop edi
+        pop esi
+        ret
+    }
+}
