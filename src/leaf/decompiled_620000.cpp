@@ -4215,3 +4215,42 @@ early_ret_0062B930:
         ret
     }
 }
+
+// [0x0062BF30] sub_0062BF30 (73 bytes)
+extern "C" void ext_0062B930();
+
+extern "C" __declspec(naked) void __fastcall fn_0062BF30(void* self) {
+    __asm {
+        sub esp, 8
+        mov edx, dword ptr [esp + 0x14]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        xor al, al
+        mov byte ptr [esp + 0x10], al
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0xc], al
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        push edi
+        push esi
+        push ebx
+        call ext_0062B930
+        sub esi, ebx
+        add esp, 0x18
+        sar esi, 4
+        shl esi, 4
+        mov eax, edi
+        pop edi
+        sub eax, esi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
