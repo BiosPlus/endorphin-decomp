@@ -1731,3 +1731,84 @@ L_4A6CE4:
         ret
     }
 }
+
+// [0x004A60C0] sub_004A60C0 (181 bytes)
+extern "C" void ext_00492550();
+extern "C" void ext_00594000();
+extern "C" void ext_006AD940();
+extern "C" void ext_00493370();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004A60C0(void* self) {
+    __asm {
+        push ecx
+        mov dword ptr [esp], ecx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        call ext_00492550
+        test al, al
+        je L_slow_60C0
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        add esp, 4
+        jmp ext_00493370
+    L_slow_60C0:
+        push ebp
+        push esi
+        push edi
+        call ext_00594000
+        mov ebp, dword ptr [mem_00925134]
+        mov edi, eax
+        mov esi, dword ptr [edi + 0x23c]
+        add edi, 0x238
+        cmp esi, dword ptr [edi + 0x8]
+        jbe L_chk1_60C0
+        call ebp
+    L_chk1_60C0:
+        push ebx
+        __asm _emit 0x8D __asm _emit 0x49 __asm _emit 0x00 // lea ecx, [ecx]
+    L_loop_60C0:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_chk2_60C0
+        call ebp
+    L_chk2_60C0:
+        cmp esi, ebx
+        je L_done_60C0
+        mov eax, dword ptr [esp + 0x10]
+        cmp byte ptr [eax + 0x2d1], 0
+        jne L_flag_60C0
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_chk3_60C0
+        call ebp
+    L_chk3_60C0:
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 0x5f0], 1
+        jmp L_adv_60C0
+    L_flag_60C0:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_chk4_60C0
+        call ebp
+    L_chk4_60C0:
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 0x5f0], 3
+    L_adv_60C0:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_chk5_60C0
+        call ebp
+    L_chk5_60C0:
+        add esi, 4
+        jmp L_loop_60C0
+    L_done_60C0:
+        pop ebx
+        pop edi
+        pop esi
+        pop ebp
+        pop ecx
+        ret
+    }
+}
