@@ -2608,3 +2608,114 @@ extern "C" __declspec(naked) void __fastcall fn_00566EB0(void* self) {
         __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00        // ret 4
     }
 }
+
+// [0x005654A0] sub_005654A0 (278 bytes)
+extern "C" void ext_00563260();
+extern "C" void ext_005651A0();
+extern "C" void ext_007C5664();
+extern "C" void ext_007C572A();
+extern "C" void ext_007C5730();
+extern "C" void ext_007C5736();
+extern "C" __declspec(naked) void __fastcall fn_005654A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, [esp+0xc]
+        mov ebx, ecx
+        push edi
+        mov ecx, ebp
+        call ext_007C5664
+        mov edi, eax
+        test edi, edi
+        je L_end2
+        push esi
+        mov ecx, edi
+        call ext_007C5736
+        mov esi, [ebx+0x170]
+        sub esi, [ebx+0x16c]
+        add esi, 1
+        cmp esi, 1
+        jle L_end1
+        cmp byte ptr [ebx+0x46c], 0
+        je L_end1
+        push ebp
+        mov ecx, ebx
+        call ext_00563260
+        test al, al
+        jne L_b
+        push 1
+        push 0x27
+        mov ecx, edi
+        call ext_007C5730
+        push 1
+        push 0x28
+        mov ecx, edi
+        mov ebx, eax
+        call ext_007C5730
+        push 1
+        push 0x29
+        mov ecx, edi
+        mov ebp, eax
+        call ext_007C5730
+        mov ecx, ebx
+        mov [esp+0x14], eax
+        call ext_007C572A
+        mov ecx, ebp
+        mov ebx, eax
+        call ext_007C572A
+        mov ecx, [esp+0x14]
+        mov ebp, eax
+        call ext_007C572A
+        push esi
+        mov ecx, ebx
+        mov [esp+0x18], eax
+        call ext_005651A0
+        push esi
+        mov ecx, ebp
+        call ext_005651A0
+        mov ecx, [esp+0x14]
+        push esi
+        call ext_005651A0
+    L_b:
+        push 1
+        push 0x24
+        mov ecx, edi
+        call ext_007C5730
+        push 1
+        push 0x25
+        mov ecx, edi
+        mov ebx, eax
+        call ext_007C5730
+        push 1
+        push 0x26
+        mov ecx, edi
+        mov ebp, eax
+        call ext_007C5730
+        mov ecx, ebx
+        mov edi, eax
+        call ext_007C572A
+        mov ecx, ebp
+        mov ebx, eax
+        call ext_007C572A
+        mov ecx, edi
+        mov ebp, eax
+        call ext_007C572A
+        push esi
+        mov ecx, ebx
+        mov edi, eax
+        call ext_005651A0
+        push esi
+        mov ecx, ebp
+        call ext_005651A0
+        push esi
+        mov ecx, edi
+        call ext_005651A0
+    L_end1:
+        pop esi
+    L_end2:
+        pop edi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
