@@ -1690,3 +1690,81 @@ extern "C" __declspec(naked) int __fastcall fn_006AA1B0(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x006AF3E0] sub_006AF3E0 (167 bytes)
+extern "C" void ext_006AD150();
+extern "C" void ext_00626440();
+extern "C" int mem_00925678;
+extern "C" int mem_0092564C;
+extern "C" __declspec(naked) void* __fastcall fn_006AF3E0(void* self, int edx_unused, int* a1, int a2, int a3, int a4, int a5) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_006AD150
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esp + 0x20]
+        mov ebp, eax
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [esi], eax
+        mov eax, dword ptr [esp + 0x24]
+        mov dword ptr [esi + 0x4], ecx
+        mov dword ptr [esi + 0x8], edx
+        mov dword ptr [esi + 0xc], eax
+        mov ecx, dword ptr [edi + 0x14]
+        call ext_00626440
+        mov ebx, dword ptr [mem_00925678]
+        push -4
+        push -4
+        push esi
+        mov dword ptr [esi + 0x8], eax
+        call ebx
+        push -1
+        push 0
+        push esi
+        call dword ptr [mem_0092564C]
+        mov eax, 1
+        add dword ptr [esi + 0x8], eax
+        add dword ptr [esi + 0xc], eax
+        mov eax, dword ptr [esi]
+        sub eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [esi + 0xc]
+        sub eax, ecx
+        add eax, edx
+        cdq
+        sub eax, edx
+        sar eax, 1
+        je skip_offset_a
+        neg eax
+        push eax
+        push 0
+        push esi
+        call ebx
+skip_offset_a:
+        test ebp, ebp
+        jle done_b
+        mov ebx, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [edi + 0x14]
+        sub ebx, dword ptr [esi]
+        call ext_00626440
+        add ebx, 3
+        add ebp, -1
+        imul ebx, ebp
+        push 0
+        add eax, ebx
+        push eax
+        push esi
+        call dword ptr [mem_0092564C]
+done_b:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x14
+    }
+}
