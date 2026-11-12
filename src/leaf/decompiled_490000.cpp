@@ -3405,3 +3405,12 @@ extern "C" __declspec(naked) void __fastcall fn_00492480(void* self) {
         ret 0x18
     }
 }
+
+// [0x00497370] sub_00497370 (34 bytes)
+extern "C" void ext_00661BF0();
+
+extern "C" void __fastcall fn_00497370(void* self, int edx_unused, void* arg) {
+    typedef char (__thiscall *Pfn)(void*, void*);
+    Pfn pfn = (Pfn)(void*)ext_00661BF0;
+    *((char*)self + 0xc0) = (pfn(arg, *(void**)((char*)self + 0xc8)) != 0);
+}
