@@ -1363,3 +1363,94 @@ extern "C" __declspec(naked) void __fastcall fn_00609970(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00609850] sub_00609850 (151 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00609850(int* first, int* mid, int* last) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        sub esi, ebx
+        mov ecx, ebp
+        sub ecx, ebx
+        sar esi, 0x2
+        sar ecx, 0x2
+        test esi, esi
+        push edi
+        mov eax, ecx
+        mov edi, esi
+        je gcd_done
+gcd_loop:
+        cdq
+        idiv edi
+        mov eax, edi
+        test edx, edx
+        mov edi, edx
+        jne gcd_loop
+gcd_done:
+        cmp eax, ecx
+        jge fn_end
+        test eax, eax
+        jle fn_end
+        lea ebx, [ebx + 4 * eax]
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+outer_loop:
+        mov ecx, dword ptr [ebx]
+        lea edx, [ebx + 4 * esi]
+        cmp edx, ebp
+        mov edi, ebx
+        mov dword ptr [esp + 0x18], ecx
+        jne check_next
+        mov edx, dword ptr [esp + 0x14]
+check_next:
+        cmp edx, ebx
+        je cycle_end
+inner_loop:
+        mov ecx, dword ptr [edx]
+        mov dword ptr [edi], ecx
+        mov ecx, ebp
+        sub ecx, edx
+        sar ecx, 0x2
+        cmp esi, ecx
+        mov edi, edx
+        jge wrap_case
+        _emit 0x8d
+        _emit 0x0c
+        _emit 0xb5
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add edx, ecx
+        jmp next_done
+wrap_case:
+        mov edx, esi
+        sub edx, ecx
+        mov ecx, dword ptr [esp + 0x14]
+        lea edx, [ecx + 4 * edx]
+next_done:
+        cmp edx, ebx
+        jne inner_loop
+cycle_end:
+        mov edx, dword ptr [esp + 0x18]
+        sub eax, 0x1
+        sub ebx, 0x4
+        test eax, eax
+        mov dword ptr [edi], edx
+        jg outer_loop
+fn_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
