@@ -2,6 +2,7 @@
 #include <string>
 #include <stdexcept>
 #include <stdlib.h>
+#include <vector>
 
 // [0x00493E10] sub_00493E10 (20 bytes)
 // Tail-call thunk: stores the byte argument at self+8, forwards self->inner's vfunc[5] with the arg.
@@ -3501,5 +3502,88 @@ not_null:
         call ext_006A6E9E
         add esp, 0x14
         ret 0x4
+    }
+}
+
+// [0x004931C0] sub_004931C0 (165 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004931C0(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov ebx, ecx
+        lea esi, [ebx + 0x30]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_top1
+        call dword ptr [mem_00925134]
+L_top1:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebp
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+L_chk1:
+        cmp esi, esi
+        je L_chk2
+        call dword ptr [mem_00925134]
+L_chk2:
+        cmp edi, ebp
+        je L_second
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_el1
+        call dword ptr [mem_00925134]
+L_el1:
+        mov eax, dword ptr [edi]
+        mov byte ptr [eax + 0x8d], 0x0
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_adv1
+        call dword ptr [mem_00925134]
+L_adv1:
+        add edi, 0x4
+        jmp L_top1
+L_second:
+        mov edi, dword ptr [ebx + 0x44]
+        cmp edi, dword ptr [ebx + 0x48]
+        lea esi, [ebx + 0x40]
+        mov ebx, dword ptr [mem_00925134]
+        jbe L_top2
+        call ebx
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+L_top2:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebp
+        jbe L_chk3
+        call ebx
+L_chk3:
+        cmp esi, esi
+        je L_chk4
+        call ebx
+L_chk4:
+        cmp edi, ebp
+        je L_ret
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_el2
+        call ebx
+L_el2:
+        mov ecx, dword ptr [edi]
+        mov byte ptr [ecx + 0x8d], 0x0
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_adv2
+        call ebx
+L_adv2:
+        add edi, 0x4
+        jmp L_top2
+L_ret:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
     }
 }
