@@ -4770,3 +4770,72 @@ extern "C" __declspec(naked) void __fastcall fn_00675430(void* self) {
         ret
     }
 }
+
+extern "C" void ext_004EF890();
+extern "C" void ext_0067ADA0();
+extern "C" int mem_00B59DB8;
+
+// [0x006775F0] sub_006775F0 (199 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006775F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8b4724
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        mov eax, dword ptr [esp + 0x18]
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x24]
+        mov dword ptr [esi + 0x4], 0x93b424
+        push edi
+        mov dword ptr [esi + 0xc], ecx
+        lea ebx, [esi + 0x14]
+        xor edi, edi
+        mov ecx, ebx
+        mov dword ptr [esp + 0x10], esi
+        mov dword ptr [esi], 0x98c194
+        mov dword ptr [esi + 0x4], 0x98c18c
+        mov dword ptr [esi + 0x8], eax
+        mov dword ptr [esi + 0x10], edi
+        call ext_004EF890
+        mov dword ptr [ebx + 0x4], eax
+        mov dword ptr [ebx + 0x8], edi
+        mov dword ptr [esp + 0x1c], edi
+        mov dword ptr [esi + 0x24], edi
+        mov dword ptr [esi + 0x28], edi
+        mov dword ptr [esi + 0x2c], edi
+        mov dword ptr [esi + 0x34], edi
+        mov dword ptr [esi + 0x38], edi
+        mov dword ptr [esi + 0x3c], edi
+        mov dword ptr [esi + 0x40], edi
+        mov dword ptr [esi + 0x4c], edi
+        mov dword ptr [esi + 0x50], edi
+        mov dword ptr [esi + 0x54], edi
+        mov dword ptr [esi + 0x44], 0x98c178
+        mov dword ptr [esi + 0x5c], edi
+        mov dword ptr [esi + 0x60], edi
+        mov dword ptr [esi + 0x64], edi
+        mov dword ptr [esi + 0x68], edi
+        mov byte ptr [esp + 0x1c], 4
+        mov dword ptr [esi + 0x6c], edi
+        mov dword ptr [esi + 0x70], edi
+        call ext_0067ADA0
+        mov dword ptr [esi + 0x74], eax
+        mov dword ptr [esi + 0x78], edi
+        cmp dword ptr [mem_00B59DB8], edi
+        mov eax, esi
+        jne short L_skip_set
+        mov dword ptr [mem_00B59DB8], esi
+    L_skip_set:
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 8
+    }
+}
