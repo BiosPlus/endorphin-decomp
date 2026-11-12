@@ -3898,3 +3898,58 @@ skip_free:
         ret
     }
 }
+
+// [0x00491730] sub_00491730 (122 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00491730(void* begin, void* end) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 8857EBh
+        push eax
+        mov dword ptr fs:[0], esp
+        push ebx
+        mov ebx, dword ptr [esp + 18h]
+        push esi
+        mov esi, dword ptr [esp + 18h]
+        cmp esi, ebx
+        push edi
+        je done
+        xor edi, edi
+        jmp loop_top
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+loop_top:
+        lea ecx, [esi + 18h]
+        mov dword ptr [esp + 14h], edi
+        call ext_0048B4C0
+        mov eax, dword ptr [esi + 0ch]
+        cmp eax, edi
+        mov dword ptr [esp + 14h], -1
+        je skip_free
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+skip_free:
+        mov dword ptr [esi + 0ch], edi
+        mov dword ptr [esi + 10h], edi
+        mov dword ptr [esi + 14h], edi
+        add esi, 7Ch
+        cmp esi, ebx
+        mov dword ptr [esp + 1ch], esi
+        jne loop_top
+done:
+        mov ecx, dword ptr [esp + 0ch]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0ch
+        ret
+    }
+}
