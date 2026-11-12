@@ -3121,3 +3121,80 @@ extern "C" __declspec(naked) void __cdecl fn_004786B0(void* first, void* last, v
         ret
     }
 }
+
+// [0x00473790] sub_00473790 (223 bytes)
+extern "C" void ext_0046FE90();
+extern "C" void ext_004736F0();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" __declspec(naked) void __fastcall fn_00473790(void* self) {
+    __asm {
+        push -1
+        push 0x882e50
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x28]
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        cmp eax, dword ptr [edi + 0x4]
+        mov eax, dword ptr [edi]
+        mov dword ptr [esi + 0x24], eax
+        mov ecx, dword ptr [edi + 0x4]
+        mov dword ptr [esi + 0x28], ecx
+        mov edx, dword ptr [edi + 0x8]
+        lea ebp, [esi + 0x154]
+        mov ecx, ebp
+        setb byte ptr [esp + 0x20]
+        mov dword ptr [esi + 0x2c], edx
+        mov dword ptr [esp + 0xc], ebp
+        call ext_0065C640
+        mov ecx, esi
+        mov dword ptr [esp + 0x18], 0x0
+        call ext_004736F0
+        mov ecx, ebp
+        mov dword ptr [esi + 0x15c], eax
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call ext_0065C650
+        mov ecx, dword ptr [esi + 0x30]
+        test ecx, ecx
+        je skip_block
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        call edx
+        mov ebp, eax
+        mov ecx, ebp
+        mov dword ptr [esp + 0xc], ebp
+        call ext_0065C640
+        mov ecx, dword ptr [esi + 0x30]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x10]
+        push edi
+        mov dword ptr [esp + 0x1c], 0x1
+        call edx
+        mov ecx, dword ptr [esi + 0x30]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x154]
+        call edx
+        mov ecx, ebp
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call ext_0065C650
+    skip_block:
+        cmp byte ptr [esp + 0x20], 0x0
+        je skip_unwind
+        mov ecx, esi
+        call ext_0046FE90
+    skip_unwind:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
