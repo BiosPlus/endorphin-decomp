@@ -4841,3 +4841,82 @@ extern "C" __declspec(naked) void __fastcall fn_0049E4E0(void* self) {
         ret 0xc
     }
 }
+
+// [0x0049EB50] sub_0049EB50 (152 bytes)
+extern "C" void ext_00499BA0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0049EB50(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        push ebp
+        mov ebp, ecx
+        mov eax, [ebp+4]
+        push esi
+        mov esi, [eax]
+        push edi
+        mov [esp+0x10], eax
+        mov edi, ebp
+    top:
+        test edi, edi
+        je l1
+        cmp edi, ebp
+        je l2
+    l1:
+        mov ebx, [mem_00925134]
+        call ebx
+        jmp l3
+    l2:
+        mov ebx, [mem_00925134]
+    l3:
+        cmp esi, [esp+0x10]
+        je done
+        test edi, edi
+        jne l4
+        call ebx
+    l4:
+        cmp esi, [edi+4]
+        jne l5
+        call ebx
+    l5:
+        mov eax, [esp+0x20]
+        cmp [esi+0xc4], eax
+        jne l6
+        cmp esi, [edi+4]
+        mov [esp+0x18], esi
+        jne l7
+        call ebx
+    l7:
+        cmp esi, [ebp+4]
+        mov ebx, [esi]
+        je l8
+        mov ecx, [esi+4]
+        mov [ecx], ebx
+        mov edx, [esi]
+        mov eax, [esi+4]
+        lea ecx, [esi+8]
+        mov [edx+4], eax
+        call ext_00499BA0
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+        add dword ptr [ebp+8], -1
+    l8:
+        mov esi, ebx
+        jmp top
+    l6:
+        cmp esi, [edi+4]
+        jne l9
+        call ebx
+    l9:
+        mov esi, [esi]
+        jmp top
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret 4
+    }
+}
