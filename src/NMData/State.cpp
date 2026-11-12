@@ -559,3 +559,128 @@ extern "C" __declspec(naked) void* __fastcall fn_0049F140(void* self, int edx_un
         ret 0x4
     }
 }
+
+extern "C" void ext_00499130();
+extern "C" void ext_0049D390();
+extern "C" void ext_0049E440();
+extern "C" void ext_0049FB70();
+extern "C" void ext_00671F30();
+
+// [0x004A0150] NMData::State::vfunc_15_off_10 (280 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004A0150(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        cmp byte ptr [ecx + 0x54], 0x0
+        mov eax, dword ptr [esp + 0xc]
+        lea edx, [ecx + 0x54]
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        je L_1AD
+        cmp eax, 0x2d4
+        je L_194
+        cmp eax, 0x257
+        je L_194
+        cmp eax, 0x256
+        mov esi, dword ptr [esp + 0xc]
+        je L_257
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_194:
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        add ecx, -0x10
+        push ecx
+        push esi
+        call ext_0049FB70
+        add esp, 0xc
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_1AD:
+        cmp eax, 0x232
+        jg L_228
+        je L_210
+        cmp eax, 0x5e
+        je L_1F8
+        cmp eax, 0x69
+        je L_1E0
+        cmp eax, 0x70
+        jne L_194
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x98
+        push ecx
+        push esi
+        call ext_00499130
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_1E0:
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x60
+        push ecx
+        push esi
+        call ext_00499130
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_1F8:
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x7c
+        push ecx
+        push esi
+        call ext_00499130
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_210:
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x58
+        push ecx
+        push esi
+        call ext_0049E440
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_228:
+        mov esi, eax
+        sub esi, 0x256
+        je L_253
+        sub esi, 0x1e
+        jne L_194
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x5c
+        push ecx
+        push esi
+        call ext_0049D390
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_253:
+        mov esi, dword ptr [esp + 0xc]
+    L_257:
+        push edx
+        push esi
+        call ext_0049D390
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
