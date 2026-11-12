@@ -156,3 +156,60 @@ L_skip3:
         ret
     }
 }
+
+// [0x004BC240] PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::RemoveElementCommand::vfunc_1 (103 bytes)
+extern "C" void ext_004BBEB0();
+extern "C" void ext_00517510();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_004BC240(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x18]
+        push edi
+        mov edi, dword ptr [esi + 0x1c]
+        cmp edi, ebx
+        je L_skip1
+        test ebx, ebx
+        je L_skip1
+        mov ecx, ebx
+        call dword ptr [mem_00924FF4]
+        push ebx
+        call ext_006A5C5C
+        add esp, 4
+L_skip1:
+        mov dword ptr [esi + 0x18], edi
+        mov eax, dword ptr [esi + 0x1c]
+        mov ecx, dword ptr [esi + 0x10]
+        lea edx, [esp + 0xc]
+        push edx
+        mov dword ptr [esp + 0x10], eax
+        call ext_004BBEB0
+        mov ecx, dword ptr [esi + 0x24]
+        test ecx, ecx
+        mov dword ptr [esi + 0x20], eax
+        je L_skip2
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x4]
+        push eax
+        mov eax, dword ptr [esi + 0x1c]
+        push eax
+        call edx
+L_skip2:
+        mov ecx, dword ptr [esi + 0x14]
+        test ecx, ecx
+        je L_skip3
+        mov eax, dword ptr [esi + 0x1c]
+        push eax
+        call ext_00517510
+L_skip3:
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
