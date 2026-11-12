@@ -4548,3 +4548,29 @@ done:
         ret
     }
 }
+
+// [0x00465380] sub_00465380 (48 bytes)
+extern "C" void ext_004651F0();
+extern "C" void ext_004658C0();
+extern "C" void ext_00467330();
+extern "C" void ext_00439FD0();
+extern "C" int mem_00ACDB40;
+extern "C" __declspec(naked) void __fastcall fn_00465380(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_004651F0
+        test al, al
+        je done
+        mov dword ptr [esi + 0xb4], 6
+        call ext_004658C0
+        mov ecx, eax
+        call ext_00467330
+        mov ecx, dword ptr [mem_00ACDB40]
+        pop esi
+        jmp ext_00439FD0
+    done:
+        pop esi
+        ret
+    }
+}
