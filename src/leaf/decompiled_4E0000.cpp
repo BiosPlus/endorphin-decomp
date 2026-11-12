@@ -3182,3 +3182,105 @@ L_done:
         ret
     }
 }
+
+// [0x004ECB40] sub_004ECB40 (247 bytes)
+extern "C" int mem_00B599BC;
+
+// thiscall (ret 4): self in ecx, one stack arg (out ptr at [esp+4] on entry), returns out ptr.
+// Installs an SEH frame (handler 0x88eefb), picks a source via self->+0x4, calls vfuncs, copies result to *out.
+extern "C" __declspec(naked) void* __fastcall fn_004ECB40(void* self, int edx_unused, void* out) {
+    __asm {
+        push -1
+        push 0x88eefb
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x18
+        push ebx
+        push ebp
+        xor ebp, ebp
+        mov eax, ecx
+        push esi
+        mov dword ptr [esp + 0xc], ebp
+        cmp dword ptr [eax + 0x4], ebp
+        push edi
+        je L_004ECB40_else
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx]
+        push eax
+        lea eax, [esp + 0x24]
+        push eax
+        call edx
+        mov esi, eax
+        mov ecx, dword ptr [esp + 0x1c]
+        mov ebx, 0x1
+        jmp L_004ECB40_join
+    L_004ECB40_else:
+        mov ecx, dword ptr [mem_00B599BC]
+        mov dword ptr [esp + 0x18], ebp
+        mov dword ptr [esp + 0x1c], ecx
+        lea esi, [esp + 0x18]
+        mov ebx, 0x2
+    L_004ECB40_join:
+        cmp dword ptr [esi + 0x4], ebp
+        mov dword ptr [esp + 0x10], ebx
+        mov dword ptr [esp + 0x30], ebx
+        je L_004ECB40_nosrc
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x70]
+        push esi
+        lea edx, [esp + 0x18]
+        push edx
+        call eax
+        mov ecx, dword ptr [esp + 0x1c]
+        jmp L_004ECB40_copy
+    L_004ECB40_nosrc:
+        mov dword ptr [esp + 0x10], ebp
+        lea eax, [esp + 0x10]
+    L_004ECB40_copy:
+        mov edx, dword ptr [eax]
+        mov edi, dword ptr [esp + 0x38]
+        mov dword ptr [edi], edx
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [edi + 0x4], eax
+        or ebx, 0x4
+        test bl, 0x2
+        mov dword ptr [esp + 0x30], 0x1
+        je L_004ECB40_t1
+        and ebx, -0x3
+        cmp ecx, ebp
+        mov dword ptr [esp + 0x10], ebx
+        je L_004ECB40_t1
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x18]
+        push eax
+        call edx
+    L_004ECB40_t1:
+        test bl, 0x1
+        mov dword ptr [esp + 0x30], ebp
+        je L_004ECB40_t2
+        mov ecx, dword ptr [esp + 0x24]
+        and ebx, -0x2
+        cmp ecx, ebp
+        mov dword ptr [esp + 0x10], ebx
+        je L_004ECB40_t2
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x20]
+        push edx
+        call eax
+    L_004ECB40_t2:
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x4
+    }
+}
