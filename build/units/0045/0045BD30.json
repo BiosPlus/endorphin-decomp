@@ -19,5 +19,7 @@
     "0x0045BE09",
     "0x0045BE12"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-12T13:29:21Z"
 }
