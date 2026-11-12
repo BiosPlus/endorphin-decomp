@@ -18,5 +18,7 @@
     "0x0060AC72",
     "0x0060ACA3"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-12T14:03:33Z"
 }
