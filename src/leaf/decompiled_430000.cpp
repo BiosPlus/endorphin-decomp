@@ -8147,3 +8147,25 @@ L_done:
         ret
     }
 }
+
+// [0x0043DC90] sub_0043DC90 (38 bytes)
+extern "C" void ext_0043DAD0();
+extern "C" void ext_0043CC60();
+
+extern "C" __declspec(naked) void __fastcall fn_0043DC90(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        test eax, eax
+        push esi
+        mov esi, ecx
+        jge short skip_call
+        call ext_0043DAD0
+        mov eax, dword ptr [esi + 0xf8]
+skip_call:
+        mov ecx, dword ptr [esi + 0x18c]
+        push eax
+        call ext_0043CC60
+        pop esi
+        ret 4
+    }
+}
