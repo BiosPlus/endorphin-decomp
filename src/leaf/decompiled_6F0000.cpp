@@ -543,3 +543,175 @@ extern "C" __declspec(naked) void __fastcall fn_006FCFB0(void* self) {
         ret
     }
 }
+
+// [0x006FFD60] sub_006FFD60 (288 bytes)
+// fgets-like: reads up to n-1 chars from stream into buf, handling CR/LF; returns buf or NULL (cdecl, 3 stack args).
+// Includes two trailing _HUGE tail blocks (jmp-thunked) that share the unit's 288-byte range.
+extern "C" int mem_0092517C;
+extern "C" int mem_00925178;
+extern "C" int mem_00925284;
+extern "C" int mem_00B5E5E0;
+extern "C" int mem_00B5E5E4;
+extern "C" int mem_00B5E5D8;
+extern "C" __declspec(naked) char* __cdecl fn_006FFD60(char* buf, int n, void* stream) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        test eax, eax
+        mov dword ptr [esp + 0x4], edi
+        jg body
+        xor eax, eax
+        pop edi
+        pop ecx
+        ret
+body:
+        mov eax, dword ptr [esp + 0x10]
+        push ebx
+        dec eax
+        push ebp
+        push esi
+        mov dword ptr [esp + 0x1c], eax
+        je ret_buf
+        mov esi, dword ptr [esp + 0x20]
+        mov ebx, dword ptr [mem_0092517C]
+        mov ebp, dword ptr [mem_00925178]
+loop_top:
+        push esi
+        call ebx
+        add esp, 0x4
+        cmp eax, -1
+        je eof
+        mov byte ptr [edi], al
+        mov al, byte ptr [edi]
+        inc edi
+        cmp al, 0xd
+        jne not_cr
+        push esi
+        call ebx
+        add esp, 0x4
+        cmp eax, -1
+        je ret_buf
+        cmp eax, 0xa
+        jne unget_c
+        cmp dword ptr [esp + 0x1c], 0x1
+        jg crlf_store
+        push esi
+        push 0xa
+        call ebp
+        add esp, 0x8
+        jmp dec_count
+not_cr:
+        cmp al, 0xa
+        je ret_buf
+dec_count:
+        mov eax, dword ptr [esp + 0x1c]
+        dec eax
+        mov dword ptr [esp + 0x1c], eax
+        jne loop_top
+        mov eax, dword ptr [esp + 0x10]
+        pop esi
+        pop ebp
+        mov byte ptr [edi], 0x0
+        pop ebx
+        pop edi
+        pop ecx
+        ret
+eof:
+        cmp edi, dword ptr [esp + 0x18]
+        jne ret_buf
+        pop esi
+        mov dword ptr [esp + 0xc], 0x0
+        mov eax, dword ptr [esp + 0xc]
+        pop ebp
+        mov byte ptr [edi], 0x0
+        pop ebx
+        pop edi
+        pop ecx
+        ret
+crlf_store:
+        mov eax, dword ptr [esp + 0x10]
+        mov byte ptr [edi], 0xa
+        inc edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov byte ptr [edi], 0x0
+        pop edi
+        pop ecx
+        ret
+unget_c:
+        push esi
+        push eax
+        call ebp
+        add esp, 0x8
+ret_buf:
+        mov eax, dword ptr [esp + 0x10]
+        pop esi
+        pop ebp
+        mov byte ptr [edi], 0x0
+        pop ebx
+        pop edi
+        pop ecx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5E5E0], ecx
+        mov dword ptr [mem_00B5E5E4], edx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5E5D8]
+        ret
+    }
+}
