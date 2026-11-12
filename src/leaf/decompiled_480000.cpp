@@ -3648,3 +3648,75 @@ extern "C" __declspec(naked) void __cdecl fn_004874D0() {
         ret
     }
 }
+
+// [0x00487A30] sub_00487A30 (207 bytes)
+// Naked: EH frame (0x884944) with a 0x130+ local area, plus raw thiscall-style
+// constructor calls and a CxxThrowException on the failure path.
+extern "C" void ext_004765B0();
+extern "C" void ext_00486880();
+extern "C" void ext_004868F0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void __fastcall fn_00487A30(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x40
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x884944
+        push eax
+        mov dword ptr fs:[0x0], esp
+        fld qword ptr [ecx]
+        sub esp, 0x130
+        push esi
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld dword ptr [ebp + 0xc]
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [ebp + 0x8]
+        fstp qword ptr [esp]
+        call ext_004868F0
+        test al, al
+        jne L_done
+        mov eax, dword ptr [ebp + 0x10]
+        push eax
+        lea ecx, [esp + 0x3c]
+        call dword ptr [mem_00924FE4]
+        fld dword ptr [ebp + 0xc]
+        sub esp, 0x8
+        lea ecx, [esp + 0x5c]
+        fstp qword ptr [esp]
+        push ecx
+        mov dword ptr [esp + 0x148], 0x0
+        call ext_00486880
+        mov esi, eax
+        fld dword ptr [ebp + 0x8]
+        add esp, 0x4
+        lea edx, [esp + 0x78]
+        fstp qword ptr [esp]
+        push edx
+        mov byte ptr [esp + 0x148], 0x1
+        call ext_00486880
+        add esp, 0xc
+        lea ecx, [esp + 0x38]
+        push ecx
+        push esi
+        push eax
+        lea ecx, [esp + 0x98]
+        mov byte ptr [esp + 0x148], 0x2
+        call ext_004765B0
+        push 0x9dfd38
+        lea edx, [esp + 0x90]
+        push edx
+        call ext_006A6DD2
+    L_done:
+        mov ecx, dword ptr [esp + 0x134]
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0xc
+    }
+}
