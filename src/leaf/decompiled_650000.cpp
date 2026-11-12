@@ -2991,3 +2991,77 @@ ok:
         ret 0x4
     }
 }
+
+// [0x0065FBC0] sub_0065FBC0 (191 bytes)
+extern "C" int mem_008B26B8;
+
+extern "C" __declspec(naked) void __fastcall fn_0065FBC0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push offset mem_008B26B8
+        push eax
+        mov dword ptr fs:[0], esp
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, dword ptr [esp + 0x24]
+        mov ebp, dword ptr [esp + 0x20]
+        lea eax, [esi - 1]
+        cdq
+        sub eax, edx
+        mov edi, eax
+        sar edi, 1
+        cmp dword ptr [esp + 0x28], esi
+        mov dword ptr [esp + 0x18], 0
+        jge L_65FC41
+        __asm _emit 0x8d __asm _emit 0xa4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+    L_65FC00:
+        mov eax, edi
+        shl eax, 5
+        lea ecx, [esp + 0x2c]
+        lea ebx, [eax + ebp]
+        push ecx
+        push ebx
+        call dword ptr [mem_00924EF4]
+        add esp, 8
+        test al, al
+        je L_65FC41
+        shl esi, 5
+        add esi, ebp
+        push ebx
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        mov edx, dword ptr [ebx + 0x1c]
+        lea eax, [edi - 1]
+        mov dword ptr [esi + 0x1c], edx
+        cdq
+        sub eax, edx
+        mov esi, edi
+        sar eax, 1
+        cmp dword ptr [esp + 0x28], esi
+        mov edi, eax
+        jl L_65FC00
+    L_65FC41:
+        shl esi, 5
+        lea eax, [esp + 0x2c]
+        add esi, ebp
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        mov ecx, dword ptr [esp + 0x48]
+        mov dword ptr [esi + 0x1c], ecx
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
