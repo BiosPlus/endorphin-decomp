@@ -3246,3 +3246,21 @@ extern "C" __declspec(naked) void __fastcall fn_0044D840(void* self) {
         ret
     }
 }
+
+// [0x00440730] sub_00440730 (49 bytes)
+extern "C" void ext_0043BCA0();
+extern "C" void __fastcall fn_00440730(void* self) {
+    char* s = (char*)self;
+    typedef void (__thiscall *FnCallee)(void*, void*);
+    if (*(void**)(s + 0x44)) {
+        ((FnCallee)ext_0043BCA0)(*(void**)(s + 0x44), self);
+    }
+    char* owner = *(char**)(s + 0x48);
+    if (*(void**)(owner + 0xa0) == self) {
+        *(void**)(owner + 0xa0) = 0;
+    }
+    void* vtbl = *(void**)self;
+    void* slot = *(void**)vtbl;
+    typedef void (__thiscall *FnVirt)(void*, int);
+    ((FnVirt)slot)(self, 1);
+}
