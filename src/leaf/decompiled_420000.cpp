@@ -2885,3 +2885,85 @@ loc_004246cf:
         ret
     }
 }
+
+// [0x004246E0] sub_004246E0 (209 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004246E0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x74]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xdc]
+        call edx
+        test al, al
+        je loc_004247af
+        cmp byte ptr [esi + 0x7c], 0
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        jne loc_0042476b
+        mov eax, dword ptr [esi + 0x498]
+        push 0
+        push 0
+        push 0xf0
+        push eax
+        call edi
+        test eax, eax
+        je loc_0042476b
+        mov ecx, dword ptr [esi + 0x4ec]
+        push 0
+        push 0
+        push 0xf0
+        push ecx
+        call edi
+        cmp eax, 1
+        jne loc_00424745
+        push 0x92eca0
+        lea ecx, [esi + 0x37c]
+        call ext_006A5F50
+        pop edi
+        pop esi
+        ret
+
+loc_00424745:
+        lea ecx, [esi + 0xd0]
+        lea edi, [esi + 0x37c]
+        call dword ptr [mem_00924300]
+        push eax
+        mov ecx, edi
+        call ext_006A5F50
+        push 1
+        mov ecx, edi
+        call ext_006A5FDA
+        pop edi
+        pop esi
+        ret
+
+loc_0042476b:
+        mov edx, dword ptr [esi + 0x4ec]
+        push 0
+        push 0
+        push 0xf0
+        push edx
+        call edi
+        test eax, eax
+        jne loc_00424793
+        lea eax, [esi + 0xd0]
+        push eax
+        lea ecx, [esi + 0x37c]
+        call ext_006A5F4A
+
+loc_00424793:
+        add esi, 0x37c
+        push 0x92eca8
+        mov ecx, esi
+        call ext_006A5F50
+        push 0
+        mov ecx, esi
+        call ext_006A5FDA
+        pop edi
+
+loc_004247af:
+        pop esi
+        ret
+    }
+}
