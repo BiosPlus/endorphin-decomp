@@ -1680,3 +1680,61 @@ extern "C" __declspec(naked) void __fastcall fn_00569D10(void* self) {
         ret
     }
 }
+
+// [0x0056AC20] sub_0056AC20 (98 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0056AC20(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+    f56ac20_top:
+        test esi, esi
+        je f56ac20_call1
+        cmp esi, dword ptr [esp + 0x1c]
+        je f56ac20_after1
+    f56ac20_call1:
+        call ebp
+    f56ac20_after1:
+        cmp ebx, dword ptr [esp + 0x20]
+        je f56ac20_ret
+        test esi, esi
+        mov edi, ebx
+        jne f56ac20_a
+        call ebp
+    f56ac20_a:
+        cmp ebx, dword ptr [esi + 0x8]
+        jb f56ac20_b
+        call ebp
+    f56ac20_b:
+        add ebx, 0x4
+        test esi, esi
+        jne f56ac20_c
+        call ebp
+    f56ac20_c:
+        cmp edi, dword ptr [esi + 0x8]
+        jb f56ac20_d
+        call ebp
+    f56ac20_d:
+        mov edi, dword ptr [edi]
+        test edi, edi
+        je f56ac20_top
+        mov ecx, edi
+        call ext_00569D10
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+        jmp f56ac20_top
+    f56ac20_ret:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
