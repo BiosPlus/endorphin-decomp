@@ -6525,3 +6525,35 @@ L_p:
         ret
     }
 }
+
+// [0x0041D980] sub_0041D980 (95 bytes)
+extern "C" void ext_0066AD10();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00ACC540;
+extern "C" int mem_00ACC524;
+extern "C" __declspec(naked) void* __fastcall fn_0041D980(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x87763e
+        push eax
+        mov eax, 0x1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00ACC540], al
+        jne done_41D980
+        or dword ptr [mem_00ACC540], eax
+        push 0xa2f0cc
+        push offset mem_00ACC524
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_0066AD10
+        push 0x914bb0
+        call ext_006A6C87
+        add esp, 0xc
+done_41D980:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00ACC524
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
