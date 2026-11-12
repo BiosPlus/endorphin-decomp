@@ -1882,3 +1882,42 @@ extern "C" __declspec(naked) float __cdecl fn_007FA050(int count, const float* a
         ret
     }
 }
+
+// [0x007FA200] sub_007FA200 (96 bytes)
+extern "C" void ext_007FA050();
+extern "C" int mem_00B61FA4;
+extern "C" __declspec(naked) void __fastcall fn_007FA200(void* self) {
+    __asm {
+        fld dword ptr [esp + 4]
+        sub esp, 20h
+        push esi
+        mov esi, dword ptr [mem_00B61F9C]
+        push ecx
+        fstp dword ptr [esp]
+        push offset mem_00B61F8C
+        lea eax, [esp + 0ch]
+        push eax
+        push esi
+        call ext_007F9F30
+        push offset mem_00B61F7C
+        lea ecx, [esp + 18h]
+        push ecx
+        push esi
+        call ext_007F9E30
+        lea edx, [esp + 20h]
+        push edx
+        lea eax, [esp + 34h]
+        push eax
+        call dword ptr [mem_00B61FA4]
+        mov edx, dword ptr [mem_00B61F9C]
+        push offset mem_00B61F8C
+        lea ecx, [esp + 3ch]
+        push ecx
+        push edx
+        call ext_007FA050
+        add esp, 30h
+        pop esi
+        add esp, 20h
+        ret
+    }
+}
