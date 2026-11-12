@@ -4463,3 +4463,86 @@ extern "C" __declspec(naked) void __fastcall fn_00671040(void* self) {
         __asm _emit 0xC3                                                    // ret
     }
 }
+
+// [0x0067C550] sub_0067C550 (194 bytes)
+extern "C" void ext_006A6EA4();
+extern "C" void ext_006A73C0();
+extern "C" int mem_00957788;
+extern "C" int mem_00957754;
+extern "C" int mem_0098C634;
+extern "C" int mem_0098C5F8;
+
+extern "C" __declspec(naked) float __fastcall fn_0067C550(void* self) {
+    __asm {
+        sub esp, 0x8
+        fld dword ptr [ecx]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [ecx + 0x8]
+        fstp dword ptr [esp]
+        fldz
+        fld dword ptr [esp + 0x4]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne le0_0067C550
+        fld dword ptr [esp]
+        fcom st(2)
+        fnstsw ax
+        fstp st(2)
+        test ah, 0x1
+        jne ylt0_0067C550
+        call ext_006A6EA4
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        add esp, 0x8
+        ret
+ylt0_0067C550:
+        call ext_006A6EA4
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fadd qword ptr [mem_00957788]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        add esp, 0x8
+        ret
+le0_0067C550:
+        fld st(1)
+        fucomp st(1)
+        fnstsw ax
+        test ah, 0x44
+        jp ne_0067C550
+        fstp st(0)
+        fcomp dword ptr [esp]
+        fnstsw ax
+        test ah, 0x5
+        jp else_0067C550
+        fld dword ptr [mem_00957754]
+        add esp, 0x8
+        ret
+else_0067C550:
+        fld dword ptr [mem_0098C634]
+        add esp, 0x8
+        ret
+ne_0067C550:
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp ret0_0067C550
+        fstp st(1)
+        fdivr dword ptr [esp]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        call ext_006A73C0
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fadd qword ptr [mem_0098C5F8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        add esp, 0x8
+        ret
+ret0_0067C550:
+        fstp st(0)
+        add esp, 0x8
+        ret
+    }
+}
