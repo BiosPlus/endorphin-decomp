@@ -9684,3 +9684,26 @@ extern "C" __declspec(naked) void __fastcall fn_0064EAB0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0062B140] ExprParser::WriteMethodType<Sensors::SensorIntegral, float, &public: void __thiscall Sensors::SensorIntegral::insert(float)>::vfunc_41 (37 bytes)
+extern "C" void ext_0062B0A0();
+
+extern "C" __declspec(naked) void __stdcall fn_0062B140(void* self, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_0062B0A0
+        pop esi
+        ret 8
+    }
+}
