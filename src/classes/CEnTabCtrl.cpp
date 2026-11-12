@@ -7,6 +7,9 @@ extern "C" int mem_00925680;
 extern "C" void ext_0041604C();
 extern "C" void ext_0041603E();
 extern "C" void ext_00416095();
+extern "C" void ext_00415E30();
+extern "C" void ext_00415FDA();
+extern "C" int mem_0092C8C0;
 
 // [0x004160C0] CEnTabCtrl::vfunc_22 (35 bytes)
 extern "C" void __fastcall fn_004160C0(void* self) {
@@ -30,6 +33,69 @@ extern "C" __declspec(naked) void __fastcall fn_00416010(void* self) {
         mov eax, dword ptr [ecx + 0x58]
         cmp eax, -0x1
         __asm _emit 0x75 __asm _emit 0x65 // jne 0x416095
+        mov dword ptr [esp + 0x4], 0xf
+        jmp dword ptr [mem_00925680]
+    }
+}
+
+// [0x00415F00] CEnTabCtrl::vfunc_84 (151 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00415F00(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00AC9CD8]
+        push esi
+        mov eax, ebx
+        mov edx, ebx
+        mov esi, ebx
+        and eax, 0x2
+        and edx, 0x10
+        and esi, 0x1
+        cmp dword ptr [esp + 0xc], 0x0
+        je L_415F77
+        test bl, 0x4
+        je ext_00415FDA
+        test eax, eax
+        je L_415F57
+        mov ecx, dword ptr [ecx + 0x54]
+        cmp ecx, -1
+        jne L_415F3D
+        push 0xf
+        call dword ptr [mem_00925680]
+        jmp L_415F3F
+L_415F3D:
+        mov eax, ecx
+L_415F3F:
+        fld dword ptr [mem_0092C8C0]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00415E30
+        add esp, 0x8
+        pop esi
+        pop ebx
+        ret 0x4
+L_415F57:
+        fld dword ptr [mem_0092C8C0]
+        push ecx
+        fstp dword ptr [esp]
+        push 0xf
+        call dword ptr [mem_00925680]
+        push eax
+        call ext_00415E30
+        add esp, 0x8
+        pop esi
+        pop ebx
+        ret 0x4
+L_415F77:
+        test edx, edx
+        __asm _emit 0x75 __asm _emit 0x1c // jne 0x415f97
+        test esi, esi
+        __asm _emit 0x74 __asm _emit 0x18 // je 0x415f97
+        mov ecx, dword ptr [ecx + 0x54]
+        cmp ecx, -1
+        __asm _emit 0x75 __asm _emit 0x2c // jne 0x415fb3
+        pop esi
+        pop ebx
         mov dword ptr [esp + 0x4], 0xf
         jmp dword ptr [mem_00925680]
     }
