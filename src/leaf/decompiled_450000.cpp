@@ -3543,3 +3543,97 @@ extern "C" __declspec(naked) void __fastcall fn_0045BD30(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" void ext_0044DAE0();
+extern "C" void ext_0044DCF0();
+extern "C" void ext_004951F0();
+extern "C" void ext_00586140();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_x1;
+// [0x00450120] sub_00450120 (246 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00450120(void* self) {
+    __asm {
+        push -1
+        mov eax, fs:[0]
+        push offset mem_x1
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x38
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        xor ebx, ebx
+        cmp [esi+0x74], ebx
+        push edi
+        je L_fail
+        mov ebp, [esp+0x58]
+        push offset mem_x1
+        push ebp
+        call [mem_00924FC0]
+        add esp, 8
+        test al, al
+        jne L_fail
+        mov edi, [esp+0x5c]
+        test edi, edi
+        jl L_fail
+        lea eax, [esp+0x2c]
+        push eax
+        mov ecx, esi
+        call ext_0044DAE0
+        push edi
+        lea ecx, [esp+0x14]
+        push ecx
+        mov ecx, esi
+        mov [esp+0x58], ebx
+        call ext_0044DCF0
+        push ebp
+        lea edx, [esp+0x30]
+        push edx
+        lea ecx, [esi+0x78]
+        mov byte ptr [esp+0x58], 1
+        call ext_004951F0
+        test eax, eax
+        je L_skip
+        push ebx
+        push offset mem_x1
+        push offset mem_x1
+        push ebx
+        lea ecx, [esp+0x20]
+        push ecx
+        mov ecx, eax
+        call ext_00586140
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        mov ebx, eax
+    L_skip:
+        lea ecx, [esp+0x10]
+        mov byte ptr [esp+0x50], 0
+        call [mem_00924FF4]
+        lea ecx, [esp+0x2c]
+        mov dword ptr [esp+0x50], 0xffffffff
+        call [mem_00924FF4]
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        mov ecx, [esp+0x38]
+        mov fs:[0], ecx
+        add esp, 0x44
+        ret 8
+    L_fail:
+        mov ecx, [esp+0x48]
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 0x44
+        ret 8
+    }
+}
