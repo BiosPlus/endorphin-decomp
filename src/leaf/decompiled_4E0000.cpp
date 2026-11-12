@@ -2062,3 +2062,99 @@ L_004E3641:
         ret
     }
 }
+
+// [0x004EF680] sub_004EF680 (173 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_00924FB0;
+
+extern "C" __declspec(naked) void __fastcall fn_004EF680(void* self) {
+    __asm {
+        push ecx
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov ebp, ecx
+        mov ecx, dword ptr [edi + 0x4]
+        test ecx, ecx
+        mov dword ptr [esp + 0x8], ebp
+        jne L_nonempty
+        xor eax, eax
+        jmp L_cmp
+L_nonempty:
+        mov eax, dword ptr [edi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+L_cmp:
+        cmp eax, dword ptr [ebp + 0x30]
+        je L_sizeok
+        pop edi
+        xor al, al
+        pop ebp
+        pop ecx
+        ret 0x4
+L_sizeok:
+        test ecx, ecx
+        je L_inv1
+        mov eax, dword ptr [edi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        jne L_chk1
+L_inv1:
+        call dword ptr [mem_00925134]
+L_chk1:
+        mov ecx, dword ptr [edi + 0x4]
+        push ebx
+        mov ebx, dword ptr [ecx]
+        push esi
+        mov esi, 0x1
+        add ebx, 0x1c
+        cmp dword ptr [ebp + 0x30], esi
+        jle L_true
+        mov ebp, dword ptr [mem_00924FB0]
+        jmp L_loop
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+L_loop:
+        mov ecx, dword ptr [edi + 0x4]
+        test ecx, ecx
+        je L_inv2
+        mov eax, dword ptr [edi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp esi, eax
+        jb L_ok
+L_inv2:
+        call dword ptr [mem_00925134]
+L_ok:
+        mov edx, dword ptr [edi + 0x4]
+        mov eax, dword ptr [edx + 4 * esi]
+        add eax, 0x1c
+        push eax
+        push ebx
+        call ebp
+        add esp, 0x8
+        test al, al
+        jne L_false
+        mov eax, dword ptr [esp + 0x10]
+        add esi, 0x1
+        cmp esi, dword ptr [eax + 0x30]
+        jl L_loop
+L_true:
+        pop esi
+        pop ebx
+        pop edi
+        mov al, 0x1
+        pop ebp
+        pop ecx
+        ret 0x4
+L_false:
+        pop esi
+        pop ebx
+        pop edi
+        xor al, al
+        pop ebp
+        pop ecx
+        ret 0x4
+    }
+}
