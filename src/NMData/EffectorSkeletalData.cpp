@@ -82,3 +82,103 @@ extern "C" __declspec(naked) void* __fastcall fn_00626850(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x00626900] NMData::EffectorSkeletalData::vfunc_17 (253 bytes)
+extern "C" void ext_00622290();
+extern "C" void ext_006A5C62();
+extern "C" int mem_0093E990;
+extern "C" int mem_009777B8;
+
+extern "C" __declspec(naked) void __fastcall fn_00626900(void* self) {
+    __asm {
+        push -1
+        push 0x008A7A5B
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push 0x2c
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x4], eax
+        xor esi, esi
+        cmp eax, esi
+        mov dword ptr [esp + 0x10], esi
+        je skip_ctor
+        mov ecx, eax
+        call ext_00622290
+        mov esi, eax
+    skip_ctor:
+        mov eax, dword ptr [esi]
+        fld dword ptr [mem_0093E990]
+        mov edx, dword ptr [eax + 0x44]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call edx
+        fld dword ptr [mem_0093E990]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x60]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call edx
+        fld dword ptr [mem_0093E990]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x40]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call edx
+        fld dword ptr [mem_0093E990]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x50]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call edx
+        fld dword ptr [mem_0093E990]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x58]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call edx
+        fld dword ptr [mem_009777B8]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x48]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call edx
+        fld dword ptr [mem_0093E990]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x54]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call edx
+        fld dword ptr [mem_0093E990]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x5c]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call edx
+        fld dword ptr [mem_009777B8]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x4c]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call edx
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
