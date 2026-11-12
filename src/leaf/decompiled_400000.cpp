@@ -4634,3 +4634,104 @@ loc_4021F4:
         ret
     }
 }
+
+// [0x0040C380] sub_0040C380 (272 bytes)
+extern "C" void ext_0042ECC0();
+extern "C" void ext_006A60E8();
+extern "C" int mem_00925694;
+extern "C" int mem_009242FC;
+extern "C" int mem_0092449C;
+extern "C" int mem_009242F4;
+
+extern "C" __declspec(naked) void __fastcall fn_0040C380(void* self) {
+    __asm {
+        push -1
+        push 0x87cc19
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0x0
+        push 0x0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xa4]
+        push 0x188
+        push eax
+        call edi
+        test eax, eax
+        jl fail_c47c
+        mov ecx, dword ptr [esi + 0xa4]
+        push 0x0
+        push 0x0
+        push 0x188
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0xa4]
+        push 0x0
+        push 0x0
+        push 0x18b
+        push edx
+        mov ebx, eax
+        call edi
+        sub eax, 0x1
+        cmp ebx, eax
+        jg fail_c47c
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_009242FC]
+        mov ecx, dword ptr [esi + 0xa4]
+        lea eax, [esp + 0xc]
+        push eax
+        push 0x0
+        push 0x0
+        push 0x188
+        push ecx
+        mov dword ptr [esp + 0x2c], 0x0
+        lea ebx, [esi + 0x84]
+        call edi
+        push eax
+        mov ecx, ebx
+        call ext_006A60E8
+        push 0x928b5d
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_0092449C]
+        test eax, eax
+        je fail_c472
+        mov edx, dword ptr [esi + 0xa4]
+        push 0x0
+        push 0x0
+        push 0x188
+        push edx
+        call edi
+        push eax
+        mov ecx, ebx
+        call ext_0042ECC0
+        test al, al
+        jne fail_c472
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_009242F4]
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    fail_c472:
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_009242F4]
+    fail_c47c:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
