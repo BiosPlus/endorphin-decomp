@@ -5469,3 +5469,10 @@ do_store:
         ret
     }
 }
+
+// [0x007CA710] sub_007CA710 (51 bytes)
+extern "C" void ext_007C8890();
+extern "C" void __cdecl fn_007CA710(int a1) {
+    typedef void (__cdecl *FnT)(int, int, int, int, int, int, int, int, int);
+    ((FnT)ext_007C8890)(a1, 1, 0x99d580, 0x7ca820, 0x7ca360, 0x7ca430, 0x7ca460, 0x7ca4f0, 0x7ca5a0);
+}
