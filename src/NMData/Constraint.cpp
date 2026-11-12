@@ -68,3 +68,85 @@ extern "C" __declspec(naked) void __fastcall fn_005EBFF0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00612650] NMData::Constraint::vfunc_21 (219 bytes)
+extern "C" void ext_0063F530();
+extern "C" void ext_0067EFD0();
+extern "C" int mem_00A9EDEC;
+
+extern "C" __declspec(naked) void __fastcall fn_00612650(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0ch
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 84h]
+        push edi
+        call edx
+        mov eax, dword ptr [mem_00A9EDEC]
+        mov edi, dword ptr [esp + 18h]
+        push 1
+        push 0
+        push eax
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0b53a34h
+        je fixup
+        cmp eax, 0b53b30h
+        je fixup
+        cmp eax, 0b53ab0h
+        je fixup
+        cmp eax, 0b53a70h
+        je fixup
+        cmp eax, 0b53af0h
+        jne chk2
+fixup:
+        mov eax, 0b53b30h
+chk2:
+        cmp eax, 0b53a34h
+        je done
+        cmp eax, 0b53b30h
+        je done
+        cmp eax, 0b53ab0h
+        je done
+        cmp eax, 0b53a70h
+        je done
+        cmp eax, 0b53af0h
+        je done
+        mov ecx, dword ptr [mem_00A9EDEC]
+        push 1
+        push 0
+        push ecx
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0b53a34h
+        je fixup2
+        cmp eax, 0b53b30h
+        je fixup2
+        cmp eax, 0b53ab0h
+        je fixup2
+        cmp eax, 0b53a70h
+        je fixup2
+        cmp eax, 0b53af0h
+        jne call_out
+fixup2:
+        mov eax, 0b53b30h
+call_out:
+        push eax
+        lea edx, [esp + 0ch]
+        push edx
+        call ext_0067EFD0
+        fld dword ptr [eax]
+        fstp dword ptr [esi + 154h]
+        add esp, 8
+        fld dword ptr [eax + 4]
+        fstp dword ptr [esi + 158h]
+        fld dword ptr [eax + 8]
+        fstp dword ptr [esi + 15ch]
+done:
+        pop edi
+        pop esi
+        add esp, 0ch
+        ret 4
+    }
+}
