@@ -2843,3 +2843,65 @@ extern "C" __declspec(naked) void __cdecl fn_00477120(unsigned* x, unsigned* y) 
         ret
     }
 }
+
+// [0x00477190] sub_00477190 (115 bytes)
+extern "C" void ext_00476860();
+extern "C" void ext_00476CA0();
+
+extern "C" __declspec(naked) void __cdecl fn_00477190(void* first, int hole, int len, unsigned val, void* pred) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        lea esi, [edi + edi + 0x2]
+        cmp esi, ebp
+        mov dword ptr [esp + 0x18], edi
+        jge L_after_loop_00477190
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+L_loop_00477190:
+        mov eax, dword ptr [ebx + 4*esi - 0x4]
+        mov ecx, dword ptr [ebx + 4*esi]
+        push eax
+        push ecx
+        lea ecx, [esp + 0x2c]
+        call ext_00476860
+        test al, al
+        je L_skip_00477190
+        sub esi, 0x1
+L_skip_00477190:
+        mov edx, dword ptr [ebx + 4*esi]
+        mov dword ptr [ebx + 4*edi], edx
+        mov edi, esi
+        lea esi, [esi + esi + 0x2]
+        cmp esi, ebp
+        jl L_loop_00477190
+L_after_loop_00477190:
+        jne L_call_00477190
+        mov eax, dword ptr [ebx + 4*ebp - 0x4]
+        mov dword ptr [ebx + 4*edi], eax
+        lea edi, [ebp - 0x1]
+L_call_00477190:
+        mov ecx, dword ptr [esp + 0x24]
+        mov edx, dword ptr [esp + 0x20]
+        mov eax, dword ptr [esp + 0x18]
+        push ecx
+        push edx
+        push eax
+        push edi
+        push ebx
+        call ext_00476CA0
+        add esp, 0x14
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
