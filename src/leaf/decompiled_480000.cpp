@@ -3197,3 +3197,19 @@ extern "C" __declspec(naked) void __cdecl fn_00481C90(unsigned int* first, unsig
         ret
     }
 }
+
+// [0x004807D0] sub_004807D0 (169 bytes)
+static inline bool less_004807D0(char* x, char* y) {
+    int xa = *(int*)(x + 0x98);
+    int ya = *(int*)(y + 0x98);
+    if (xa == ya) return *(int*)(x + 0x9c) > *(int*)(y + 0x9c);
+    return xa < ya;
+}
+
+extern "C" void __cdecl fn_004807D0(char** a1, char** a2, char** a3) {
+    char* p;
+    char* q;
+    if (less_004807D0(*a2, *a1)) { p = *a1; q = *a2; *a2 = p; *a1 = q; }
+    if (less_004807D0(*a3, *a2)) { p = *a2; q = *a3; *a3 = p; *a2 = q; }
+    if (less_004807D0(*a2, *a1)) { p = *a1; q = *a2; *a2 = p; *a1 = q; }
+}
