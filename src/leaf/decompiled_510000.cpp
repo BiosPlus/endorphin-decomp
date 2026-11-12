@@ -3091,3 +3091,21 @@ extern "C" void __cdecl fn_005188A0(int a1, int a2, int a3, int a4) {
         ext_00518700(a1, a2, a3, a4);
     }
 }
+
+// [0x00518950] sub_00518950 (167 bytes)
+extern "C" void __cdecl ext_00518770(int, int, int, int);
+
+extern "C" void __cdecl fn_00518950(int a1, int a2, int a3, int a4) {
+    int n = (a3 - a1) >> 2;
+    if (n > 40) {
+        int c = (n + 1) / 8;
+        int c8 = 8 * c;
+        int c4 = 4 * c;
+        ext_00518770(a1, a1 + c4, a1 + c8, a4);
+        ext_00518770(a2 - c4, a2, a2 + c4, a4);
+        ext_00518770(a3 - c8, a3 - c4, a3, a4);
+        ext_00518770(a1 + c4, a2, a3 - c4, a4);
+    } else {
+        ext_00518770(a1, a2, a3, a4);
+    }
+}
