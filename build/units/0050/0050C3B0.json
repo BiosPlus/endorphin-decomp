@@ -17,5 +17,7 @@
     "0x0050C42C",
     "0x0050C442"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-12T15:44:08Z"
 }
