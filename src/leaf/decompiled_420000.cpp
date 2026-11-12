@@ -2388,3 +2388,101 @@ L_h:
         ret 0x8
     }
 }
+
+// [0x00427DE0] sub_00427DE0 (191 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_00924FB0;
+
+extern "C" __declspec(naked) bool __fastcall fn_00427DE0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        lea ebx, [ecx + 0x4]
+        push esi
+        mov esi, dword ptr [ebx + 0x4]
+        cmp esi, dword ptr [ebx + 0x8]
+        push edi
+        jbe L_427DF6
+        call dword ptr [mem_00925134]
+L_427DF6:
+        mov ebp, dword ptr [esp + 0x18]
+        mov edi, esi
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+L_427E00:
+        mov eax, ebx
+        mov esi, dword ptr [eax + 0x8]
+        cmp dword ptr [eax + 0x4], esi
+        jbe L_427E12
+        call dword ptr [mem_00925134]
+        mov eax, ebx
+L_427E12:
+        test ebx, ebx
+        je L_427E1A
+        cmp ebx, eax
+        je L_427E20
+L_427E1A:
+        call dword ptr [mem_00925134]
+L_427E20:
+        cmp edi, esi
+        je L_427E95
+        test ebx, ebx
+        jne L_427E2E
+        call dword ptr [mem_00925134]
+L_427E2E:
+        cmp edi, dword ptr [ebx + 0x8]
+        jb L_427E39
+        call dword ptr [mem_00925134]
+L_427E39:
+        mov al, byte ptr [edi + 0x4]
+        cmp al, byte ptr [ebp]
+        lea esi, [edi + 0x4]
+        jne L_427E78
+        mov cl, byte ptr [esi + 0x2]
+        cmp cl, byte ptr [ebp + 0x2]
+        jne L_427E78
+        mov dl, byte ptr [esi + 0x1]
+        cmp dl, byte ptr [ebp + 0x1]
+        jne L_427E78
+        lea eax, [ebp + 0x4]
+        push eax
+        lea ecx, [esi + 0x4]
+        push ecx
+        call dword ptr [mem_00924FB0]
+        add esp, 0x8
+        test al, al
+        jne L_427E78
+        cmp edi, dword ptr [ebx + 0x8]
+        jb L_427E74
+        call dword ptr [mem_00925134]
+L_427E74:
+        cmp esi, ebp
+        jne L_427E8B
+L_427E78:
+        cmp edi, dword ptr [ebx + 0x8]
+        jb L_427E83
+        call dword ptr [mem_00925134]
+L_427E83:
+        add edi, 0x24
+        jmp L_427E00
+L_427E8B:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        pop ecx
+        ret 0x4
+L_427E95:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        pop ecx
+        ret 0x4
+    }
+}
