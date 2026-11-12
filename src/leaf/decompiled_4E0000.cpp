@@ -2628,3 +2628,77 @@ L_tail_4E1DC0:
         ret 4
     }
 }
+
+// [0x004EF510] sub_004EF510 (194 bytes)
+extern "C" void ext_004EF2B0();
+extern "C" void ext_006616C0();
+extern "C" void ext_00493D90();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004EF510(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x88f358
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esi + 4]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        je L_4EF545
+        mov eax, dword ptr [esi + 8]
+        sub eax, ecx
+        sar eax, 2
+        cmp edi, eax
+        jb L_4EF54B
+    L_4EF545:
+        call dword ptr [mem_00925134]
+    L_4EF54B:
+        mov eax, dword ptr [esi + 4]
+        mov esi, dword ptr [eax + 4*edi]
+        lea ecx, [esp + 8]
+        push ecx
+        mov ecx, dword ptr [esi + 0x40]
+        call ext_004EF2B0
+        mov ecx, eax
+        mov dword ptr [esp + 0x18], 0
+        call ext_006616C0
+        lea ecx, [esp + 8]
+        mov edi, eax
+        mov dword ptr [esp + 0x18], -1
+        call ext_00493D90
+        push 0
+        push 0xa2efec
+        push 0xa2e2d8
+        push 0
+        push edi
+        call ext_006A6E9E
+        mov ecx, dword ptr [esi + 0x40]
+        add esp, 0x14
+        add ecx, 0x10
+        mov edi, eax
+        call ext_006616C0
+        push 0
+        push 0xa2efec
+        push 0xa2e2d8
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        test eax, eax
+        jne L_4EF5C1
+        mov eax, edi
+    L_4EF5C1:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret
+    }
+}
