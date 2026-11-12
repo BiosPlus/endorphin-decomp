@@ -35,5 +35,7 @@
     "0x0045B829",
     "0x0045B831"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-12T13:56:30Z"
 }
