@@ -116,3 +116,96 @@ extern "C" __declspec(naked) void __fastcall fn_0045D8B0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0045DEB0] MultiTrackView::TriggeredEventView::vfunc_81 (242 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_00468180();
+extern "C" void ext_00468660();
+extern "C" void ext_00477F30();
+extern "C" void ext_0043DD60();
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00937FC0;
+extern "C" int mem_00925688;
+extern "C" __declspec(naked) void __fastcall fn_0045DEB0(void* self) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        call ext_00594000
+        mov eax, dword ptr [eax + 0x26c]
+        mov ebx, dword ptr [eax + 0x1ec]
+        mov dword ptr [esp + 0x1c], ebx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        mov edi, dword ptr [ecx + 0x1e4]
+        mov dword ptr [esp + 0x18], edi
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_00477F30
+        mov esi, eax
+        mov dword ptr [esp + 0x14], esi
+        call ext_00468180
+        mov ecx, eax
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0xa0]
+        call eax
+        sub eax, 0x1
+        mov dword ptr [esp + 0x10], eax
+        cmp esi, eax
+        lea eax, [esp + 0x10]
+        jl short L_45DF24
+        lea eax, [esp + 0x14]
+L_45DF24:
+        cmp edi, dword ptr [eax]
+        jl short L_45DF2C
+        lea eax, [esp + 0x18]
+L_45DF2C:
+        cmp ebx, dword ptr [eax]
+        jl short L_45DF34
+        lea eax, [esp + 0x1c]
+L_45DF34:
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp + 0x10], eax
+        jne short L_45DF45
+        mov eax, 0x12c
+        jmp short L_45DF54
+L_45DF45:
+        fild dword ptr [esp + 0x10]
+        fmul qword ptr [mem_00937FC0]
+        call ext_006A6DE0
+L_45DF54:
+        mov dword ptr [esp + 0x10], eax
+        cmp eax, 0x12c
+        mov dword ptr [esp + 0x1c], 0x12c
+        lea eax, [esp + 0x1c]
+        jl short L_45DF6F
+        lea eax, [esp + 0x10]
+L_45DF6F:
+        mov ecx, dword ptr [eax]
+        mov dword ptr [esp + 0x10], ecx
+        fild dword ptr [esp + 0x10]
+        sub esp, 0x10
+        mov ecx, ebp
+        fstp qword ptr [esp + 0x8]
+        fldz
+        fstp qword ptr [esp]
+        call ext_0043DD60
+        mov edx, dword ptr [ebp + 0x20]
+        push 0x1
+        push 0x0
+        push edx
+        call dword ptr [mem_00925688]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
