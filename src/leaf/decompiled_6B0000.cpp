@@ -2200,3 +2200,15 @@ extern "C" __declspec(naked) void __fastcall fn_006B4FF0(void* self) {
         ret 0xc
     }
 }
+
+// [0x006B6070] sub_006B6070 (31 bytes)
+extern "C" void ext_006B4FF0();
+extern "C" int mem_009922B4;
+extern "C" int mem_009922BC;
+extern "C" void* __fastcall fn_006B6070(void* self) {
+    int* p = (int*)self;
+    ((void (__stdcall*)(int, int, int))ext_006B4FF0)(0, 0, 0);
+    p[0] = (int)&mem_009922BC;
+    p[0x54 / 4] = (int)&mem_009922B4;
+    return self;
+}
