@@ -2512,3 +2512,114 @@ extern "C" __declspec(naked) void __fastcall fn_006B4E70(void* self) {
         ret 4
     }
 }
+
+// [0x006BE890] sub_006BE890 (176 bytes)
+extern "C" void ext_006B9D70();
+extern "C" __declspec(naked) void __fastcall fn_006BE890(void* self) {
+    __asm {
+        push -1
+        push 0x8bb3e3
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        lea ecx, [esi + 0x98]
+        mov dword ptr [esp + 0x10], 0x1
+        call ext_006B9D70
+        lea ecx, [esi + 0x4c]
+        mov byte ptr [esp + 0x10], 0x0
+        call ext_006B9D70
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0xe9
+        __asm _emit 0x0b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0xa1
+        __asm _emit 0x84
+        __asm _emit 0x52
+        __asm _emit 0x92
+        __asm _emit 0x00
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        __asm _emit 0x89
+        __asm _emit 0x0d
+        __asm _emit 0x68
+        __asm _emit 0xd4
+        __asm _emit 0xb5
+        __asm _emit 0x00
+        __asm _emit 0x89
+        __asm _emit 0x15
+        __asm _emit 0x6c
+        __asm _emit 0xd4
+        __asm _emit 0xb5
+        __asm _emit 0x00
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0xe9
+        __asm _emit 0x0b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0xa1
+        __asm _emit 0x84
+        __asm _emit 0x52
+        __asm _emit 0x92
+        __asm _emit 0x00
+        __asm _emit 0xdd
+        __asm _emit 0x00
+        __asm _emit 0xd9
+        __asm _emit 0xe0
+        __asm _emit 0xdd
+        __asm _emit 0x1d
+        __asm _emit 0x60
+        __asm _emit 0xd4
+        __asm _emit 0xb5
+        __asm _emit 0x00
+        ret
+    }
+}
