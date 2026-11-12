@@ -944,3 +944,127 @@ extern "C" __declspec(naked) int __cdecl fn_00803DF0(float* out, int n, char* ob
         ret
     }
 }
+
+// [0x00802E90] sub_00802E90 (305 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00802E90(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
+    __asm {
+        sub esp, 0xc
+        push ebp
+        or eax, -1
+        xor ebp, ebp
+        cmp dword ptr [ecx + 4], ebp
+        mov dword ptr [esp + 8], ecx
+        mov dword ptr [esp + 4], eax
+        jle fn_00802E90_exit
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x20]
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x20]
+        sub eax, esi
+        mov dword ptr [esp + 0x20], eax
+        mov eax, dword ptr [esp + 0x2c]
+        sub ecx, esi
+        sub eax, esi
+        push edi
+        mov dword ptr [esp + 0x18], ecx
+        mov dword ptr [esp + 0x28], eax
+        nop
+    fn_00802E90_loop:
+        mov ebx, dword ptr [esp + 0x20]
+        mov edx, dword ptr [ecx + esi]
+        xor edi, edi
+        xor eax, eax
+        test ebx, ebx
+        je fn_00802E90_test_done
+        nop
+    fn_00802E90_shift_loop:
+        mov ecx, edx
+        and ecx, 1
+        add edi, ecx
+        add eax, 1
+        sar edx, 1
+        sar ebx, 1
+        jne fn_00802E90_shift_loop
+    fn_00802E90_test_done:
+        cdq
+        sub eax, edx
+        mov edx, dword ptr [esp + 0x14]
+        sar eax, 1
+        cmp edi, eax
+        jle fn_00802E90_set_zero
+        mov dword ptr [esi], 0xffffffff
+        mov eax, dword ptr [edx + 0x30]
+        fld dword ptr [eax + 4*ebp]
+        mov ecx, dword ptr [edx + 0x3c]
+        fld dword ptr [ecx + 4*ebp]
+        mov eax, dword ptr [edx + 0x38]
+        fsubr st, st(1)
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        fabs
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        fld dword ptr [eax + 4*ebp]
+        fsubp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        fabs
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne fn_00802E90_set_neg1
+        mov ecx, dword ptr [esp + 0x24]
+        xor eax, eax
+        mov dword ptr [ecx + esi], eax
+        jmp fn_00802E90_after_set
+    fn_00802E90_set_neg1:
+        mov ecx, dword ptr [esp + 0x24]
+        or eax, -1
+        mov dword ptr [ecx + esi], eax
+        jmp fn_00802E90_after_set
+    fn_00802E90_set_zero:
+        mov dword ptr [esi], 0
+    fn_00802E90_after_set:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 0x18]
+        mov edi, dword ptr [esp + 0x10]
+        mov ebx, eax
+        not ebx
+        xor ebx, dword ptr [ecx + esi]
+        and edi, ebx
+        _emit 0x85
+        _emit 0xc7
+        mov dword ptr [esp + 0x10], edi
+        je fn_00802E90_next_iter
+        mov edx, dword ptr [esp + 0x24]
+        mov edx, dword ptr [edx + esi]
+        mov eax, dword ptr [esp + 0x28]
+        mov eax, dword ptr [eax + esi]
+        mov edi, eax
+        mov ebx, edx
+        not edi
+        not ebx
+        and eax, edx
+        mov edx, dword ptr [esp + 0x14]
+        and edi, ebx
+        or edi, eax
+        and dword ptr [esp + 0x10], edi
+    fn_00802E90_next_iter:
+        add ebp, 1
+        add esi, 4
+        cmp ebp, dword ptr [edx + 4]
+        jl fn_00802E90_loop
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebx
+    fn_00802E90_exit:
+        pop ebp
+        add esp, 0xc
+        ret 0x14
+    }
+}
