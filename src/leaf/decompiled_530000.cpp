@@ -2991,3 +2991,49 @@ skip_err2:
         ret 0x4
     }
 }
+
+// [0x00530370] sub_00530370 (120 bytes)
+extern "C" int mem_008A56C8;
+extern "C" void ext_0065C640();
+extern "C" void ext_00543BC0();
+extern "C" void ext_0065C650();
+
+extern "C" __declspec(naked) void __fastcall fn_00530370(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push -1
+        push offset mem_008A56C8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x10]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        push edi
+        call edx
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x8], edi
+        call ext_0065C640
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esi + 0x64]
+        push eax
+        mov dword ptr [esp + 0x18], 0
+        call ext_00543BC0
+        mov ecx, dword ptr [esi + 0x10]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x154]
+        call eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x14], -1
+        call ext_0065C650
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x10
+    }
+}
