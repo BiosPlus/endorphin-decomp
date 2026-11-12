@@ -4073,3 +4073,28 @@ extern "C" __declspec(naked) void __fastcall fn_00469FD0(void* self) {
         jmp ext_00469F80
     }
 }
+
+// [0x004685F0] sub_004685F0 (56 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004685F0(void* self, int edx_unused, int a1, unsigned char a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        push esi
+        mov esi, ecx
+        mov cl, byte ptr [esp + 0xc]
+        mov dword ptr [esi], eax
+        mov byte ptr [esi + 0x4], cl
+        je L_468622
+        cmp dword ptr [mem_00AD89B4], 0
+        jne L_46861B
+        mov byte ptr [eax + 0x153], 1
+        mov ecx, dword ptr [esi]
+        call ext_00472350
+    L_46861B:
+        add dword ptr [mem_00AD89B4], 1
+    L_468622:
+        mov eax, esi
+        pop esi
+        ret 0x8
+    }
+}
