@@ -5448,3 +5448,94 @@ extern "C" __declspec(naked) void __fastcall fn_00460E00(void* self) {
         ret
     }
 }
+
+// [0x004664A0] sub_004664A0 (298 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004664A0(void* self) {
+    __asm {
+        push -1
+        push 0x8817a3
+        mov eax, dword ptr fs:[0]
+        push eax
+        __asm _emit 0x64
+        __asm _emit 0x89
+        __asm _emit 0x25
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        sub esp, 0x20
+        push esi
+        mov esi, ecx
+        call ext_00466360
+        push 0x120
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x2c], 0
+        je short L_null
+        push 0
+        mov ecx, eax
+        call ext_004481F0
+        jmp short L_store
+L_null:
+        xor eax, eax
+L_store:
+        mov dword ptr [esi + 0xd8], eax
+        mov ecx, dword ptr [mem_00ACDB40]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x13c]
+        push ecx
+        push 0x16a
+        mov ecx, eax
+        mov dword ptr [esp + 0x34], 0xffffffff
+        call edx
+        mov ecx, dword ptr [esi + 0xd8]
+        push 0x939cc8
+        call ext_006A5F50
+        push 0x939cac
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FE4]
+        mov eax, dword ptr [esi + 0xd8]
+        lea ecx, [eax + 0x74]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xc]
+        lea edx, [esp + 8]
+        push edx
+        mov dword ptr [esp + 0x30], 1
+        call eax
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 0x2c], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esi + 0xd8]
+        mov edx, dword ptr [ecx + 0x20]
+        push edx
+        call dword ptr [mem_009255E4]
+        mov ecx, dword ptr [esi + 0xd8]
+        push 0
+        call ext_006A6454
+        mov ecx, dword ptr [esi + 0xd8]
+        push 5
+        call ext_006A5E72
+        mov eax, dword ptr [esi + 0xd8]
+        mov ecx, dword ptr [eax + 0x20]
+        push ecx
+        call dword ptr [mem_0092568C]
+        mov esi, dword ptr [esi + 0xd8]
+        test esi, esi
+        je short L_zero
+        add esi, 0x74
+        jmp short L_end
+L_zero:
+        xor esi, esi
+L_end:
+        call ext_00594000
+        mov edx, dword ptr [eax + 0x26c]
+        mov ecx, dword ptr [esp + 0x24]
+        mov dword ptr [edx + 0x558], esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret
+    }
+}
