@@ -2009,3 +2009,41 @@ extern "C" __declspec(naked) void __fastcall fn_00425E60(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00421CE0] sub_00421CE0 (150 bytes)
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924ED0;
+extern "C" int mem_00924FEC;
+extern "C" int mem_00924FD8;
+extern "C" int mem_0092E75C;
+extern "C" int mem_0092E754;
+extern "C" int mem_0092E748;
+
+extern "C" void __fastcall fn_00421CE0(void* self, int edx_unused, const char* b) {
+    typedef void* (__thiscall *AssignStrFn)(void*, const void*);
+    typedef void* (__thiscall *AppendStrFn)(void*, const void*);
+    typedef void* (__thiscall *AppendCStrFn)(void*, const char*);
+    typedef bool (__thiscall *EmptyFn)(const void*);
+
+    char* selfPtr = (char*)self;
+    char* dst = selfPtr + 0x1c4;
+    if (dst != b) {
+        dst[0] = b[0];
+        dst[2] = b[2];
+        dst[1] = b[1];
+        ((AssignStrFn)mem_00924FDC)(dst + 4, b + 4);
+    }
+    if (b[0]) {
+        ((AppendCStrFn)mem_00924ED0)(selfPtr + 0xe4, (const char*)&mem_0092E75C);
+    }
+    if (b[2]) {
+        ((AppendCStrFn)mem_00924ED0)(selfPtr + 0xe4, (const char*)&mem_0092E754);
+    }
+    if (b[1]) {
+        ((AppendCStrFn)mem_00924ED0)(selfPtr + 0xe4, (const char*)&mem_0092E748);
+    }
+    const void* keyStr = b + 4;
+    if (!((EmptyFn)mem_00924FEC)(keyStr)) {
+        ((AppendStrFn)mem_00924FD8)(selfPtr + 0xe4, keyStr);
+    }
+}
