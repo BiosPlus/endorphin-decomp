@@ -1991,3 +1991,34 @@ extern "C" __declspec(naked) void __fastcall fn_004C4880(void* self) {
         ret 0x4
     }
 }
+
+// [0x004C49C0] sub_004C49C0 (56 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004C49C0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        sub esp, 0x1c
+        mov esi, ecx
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        mov ecx, esi
+        call ext_005DF5C0
+        test eax, eax
+        jne loc_004C49EA
+        fldz
+        pop esi
+        pop ecx
+        ret 0x4
+    loc_004C49EA:
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x1c]
+        call eax
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
