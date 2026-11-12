@@ -1414,3 +1414,91 @@ extern "C" __declspec(naked) void __fastcall fn_005A1710(void* self) {
         ret
     }
 }
+
+// [0x005A03C0] sub_005A03C0 (194 bytes)
+extern "C" void ext_00673C20();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_005A03C0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x8a16e1
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x10
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x18]
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], 0x0
+        mov edi, edi
+    L_loop_005A03C0:
+        mov ebx, dword ptr [ebp + 0x8]
+        test ebx, ebx
+        je L_inv1_005A03C0
+        cmp ebx, dword ptr [ebp + 0x10]
+        je L_ok1_005A03C0
+    L_inv1_005A03C0:
+        call dword ptr [mem_00925134]
+    L_ok1_005A03C0:
+        mov edi, dword ptr [ebp + 0xc]
+        cmp edi, dword ptr [ebp + 0x14]
+        je L_done_005A03C0
+        test ebx, ebx
+        jne L_skip2_005A03C0
+        call dword ptr [mem_00925134]
+    L_skip2_005A03C0:
+        cmp edi, dword ptr [ebx + 0x4]
+        jne L_skip3_005A03C0
+        call dword ptr [mem_00925134]
+    L_skip3_005A03C0:
+        lea eax, [edi + 0xc]
+        mov dword ptr [ebp - 0x18], esi
+        mov dword ptr [ebp - 0x1c], esi
+        test esi, esi
+        mov byte ptr [ebp - 0x4], 0x1
+        je L_skip4_005A03C0
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+    L_skip4_005A03C0:
+        add esi, 0x1c
+        lea ecx, [ebp + 0x8]
+        mov byte ptr [ebp - 0x4], 0x0
+        mov dword ptr [ebp + 0x18], esi
+        call ext_00673C20
+        jmp L_loop_005A03C0
+    L_unwind_005A03C0:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x18]
+        cmp esi, edi
+        je L_throw_005A03C0
+    L_dtor_005A03C0:
+        mov ecx, esi
+        call dword ptr [mem_00924FF4]
+        add esi, 0x1c
+        cmp esi, edi
+        jne L_dtor_005A03C0
+    L_throw_005A03C0:
+        push 0x0
+        push 0x0
+        call ext_006A6DD2
+    L_done_005A03C0:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
