@@ -19,5 +19,7 @@
     "0x006192EB",
     "0x00619306"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T03:38:24Z"
 }
