@@ -4372,3 +4372,74 @@ extern "C" __declspec(naked) void __fastcall fn_007C63B0(void* self) {
         ret
     }
 }
+
+// [0x007C69B0] sub_007C69B0 (233 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C69B0(void* a0, float a1, float a2, float a3, float a4, float a5, float a6) {
+    __asm {
+        sub esp, 0x18
+        mov edx, dword ptr [esp + 0x1c]
+        lea eax, [esp]
+        push eax
+        push edx
+        call ext_007C6150
+        fld dword ptr [esp + 0x34]
+        fsub dword ptr [esp + 0x8]
+        or dword ptr [edx + 0x1c4], 0x400
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x38]
+        fsub dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x3c]
+        fsub dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x28]
+        fld st(0)
+        fadd dword ptr [edx + 0x150]
+        fstp dword ptr [edx + 0x150]
+        fld dword ptr [edx + 0x154]
+        fld dword ptr [esp + 0x2c]
+        fld st(0)
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [edx + 0x154]
+        fld dword ptr [edx + 0x158]
+        fld dword ptr [esp + 0x30]
+        fld st(0)
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [edx + 0x158]
+        fld dword ptr [esp + 0x18]
+        fld st(0)
+        fmul st, st(2)
+        fld dword ptr [esp + 0x1c]
+        fld st(0)
+        fmul st, st(5)
+        fsubp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x8]
+        fmul st, st(4)
+        fld dword ptr [esp + 0x14]
+        fld st(0)
+        fmulp st(4), st
+        fxch st(1)
+        fsubrp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp + 0xc]
+        fxch st(1)
+        fmulp st(2), st
+        fmulp st(2), st
+        fsubrp st(1), st
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [edx + 0x160]
+        fadd dword ptr [esp + 0x8]
+        fstp dword ptr [edx + 0x160]
+        fld dword ptr [edx + 0x164]
+        fadd dword ptr [esp + 0xc]
+        fstp dword ptr [edx + 0x164]
+        fld dword ptr [edx + 0x168]
+        fadd dword ptr [esp + 0x10]
+        fstp dword ptr [edx + 0x168]
+        add esp, 0x20
+        ret
+    }
+}
