@@ -1369,3 +1369,63 @@ extern "C" __declspec(naked) void __fastcall fn_005BEDD0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005B1AB0] sub_005B1AB0 (165 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005B1AB0(void* self, int edx_unused, const float* v) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8]
+        cmp eax, 0x4
+        je branch2
+        cmp eax, 0x5
+        je branch2
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fabs
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fmul dword ptr [ecx + 0x10]
+        fstp dword ptr [ecx + 0x10]
+        fld dword ptr [eax + 0x4]
+        fabs
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fmul dword ptr [ecx + 0x14]
+        fstp dword ptr [ecx + 0x14]
+        fld dword ptr [eax + 0x8]
+        fabs
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fmul dword ptr [ecx + 0x18]
+        fstp dword ptr [ecx + 0x18]
+        fld dword ptr [eax]
+        mov byte ptr [ecx + 0x4], 0x1
+        fabs
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fmul dword ptr [ecx + 0x1c]
+        fstp dword ptr [ecx + 0x1c]
+        ret 0x4
+    branch2:
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fabs
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fmul dword ptr [ecx + 0x10]
+        fstp dword ptr [ecx + 0x10]
+        fld dword ptr [eax + 0x8]
+        fabs
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fmul dword ptr [ecx + 0x14]
+        fstp dword ptr [ecx + 0x14]
+        fld dword ptr [eax + 0x4]
+        mov byte ptr [ecx + 0x4], 0x1
+        fabs
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fmul dword ptr [ecx + 0x18]
+        fstp dword ptr [ecx + 0x18]
+        ret 0x4
+    }
+}
