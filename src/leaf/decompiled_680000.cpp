@@ -3385,3 +3385,29 @@ extern "C" __declspec(naked) void __fastcall fn_0068BE70(void* self) {
         ret
     }
 }
+
+// [0x0068BED0] sub_0068BED0 (43 bytes)
+extern "C" void ext_00508680();
+extern "C" int mem_0093BD38;
+extern "C" int mem_0098E430;
+
+extern "C" __declspec(naked) void __fastcall fn_0068BED0(void* self) {
+    __asm {
+        push ecx
+        add ecx, 0x10
+        call ext_00508680
+        test eax, eax
+        mov dword ptr [esp], eax
+        fild dword ptr [esp]
+        jge short L_0068BEE9
+        fadd qword ptr [mem_0093BD38]
+    L_0068BEE9:
+        fld qword ptr [mem_0098E430]
+        fmul st(1), st
+        faddp st(1), st
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        pop ecx
+        ret
+    }
+}
