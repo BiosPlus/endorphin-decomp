@@ -4700,3 +4700,39 @@ loc_499c38:
         ret
     }
 }
+
+// [0x0049E8D0] sub_0049E8D0 (62 bytes)
+extern "C" void ext_00499BA0();
+
+extern "C" __declspec(naked) void __fastcall fn_0049E8D0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x4]
+        mov esi, dword ptr [eax]
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [eax + 0x4], eax
+        cmp esi, dword ptr [edi + 0x4]
+        mov dword ptr [edi + 0x8], 0
+        je done_49E8D0
+        push ebx
+        mov edi, edi
+    loop_49E8D0:
+        mov ebx, dword ptr [esi]
+        lea ecx, [esi + 0x8]
+        call ext_00499BA0
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+        cmp ebx, dword ptr [edi + 0x4]
+        mov esi, ebx
+        jne loop_49E8D0
+        pop ebx
+    done_49E8D0:
+        pop edi
+        pop esi
+        ret
+    }
+}
