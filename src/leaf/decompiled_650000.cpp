@@ -2872,3 +2872,72 @@ L_small:
         ret
     }
 }
+
+// [0x00658A60] sub_00658A60 (149 bytes)
+extern "C" int ext_007C9C50(int);
+extern "C" int ext_007C9DD0(int);
+extern "C" int ext_007C9DE0(int);
+extern "C" void ext_007C9CC0(int, float);
+extern "C" void ext_007C9CD0(int, float);
+extern "C" void ext_007C9D00(int, float);
+extern "C" void ext_007C9D30(int, float);
+extern "C" void __fastcall ext_0065F440(void* self, int edx_unused);
+
+extern "C" __declspec(naked) void __fastcall fn_00658A60(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x64]
+        sub esp, 0x18
+        push esi
+        push edi
+        push eax
+        call ext_007C9C50
+        mov edi, dword ptr [esp + 0x2c]
+        add esp, 0x4
+        test edi, edi
+        push eax
+        je L_zero_00658A60
+        call ext_007C9DD0
+        jmp L_join_00658A60
+L_zero_00658A60:
+        call ext_007C9DE0
+L_join_00658A60:
+        mov ecx, dword ptr [esp + 0x28]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x118]
+        add esp, 0x4
+        push edi
+        mov esi, eax
+        push 0x0
+        lea eax, [esp + 0x10]
+        push eax
+        call edx
+        fld dword ptr [esp + 0x10]
+        push ecx
+        fchs
+        fstp dword ptr [esp]
+        push esi
+        call ext_007C9CC0
+        fld dword ptr [esp + 0x20]
+        add esp, 0x4
+        fstp dword ptr [esp]
+        push esi
+        call ext_007C9D30
+        fld dword ptr [esp + 0x1c]
+        add esp, 0x4
+        fstp dword ptr [esp]
+        push esi
+        call ext_007C9CD0
+        fld dword ptr [esp + 0x24]
+        add esp, 0x4
+        fstp dword ptr [esp]
+        push esi
+        call ext_007C9D00
+        add esp, 0x8
+        lea ecx, [esp + 0x8]
+        call ext_0065F440
+        pop edi
+        pop esi
+        add esp, 0x18
+        ret 0x8
+    }
+}
