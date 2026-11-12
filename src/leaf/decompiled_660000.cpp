@@ -6370,3 +6370,113 @@ extern "C" __declspec(naked) void __fastcall fn_00662C30(void* self) {
         ret
     }
 }
+
+// [0x00667900] sub_00667900 (206 bytes)
+extern "C" void ext_004442E0();
+extern "C" void ext_00666CB0();
+extern "C" void ext_00667030();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00667900(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x18
+        push ebx
+        lea eax, [ecx + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [ecx]
+        mov esi, eax
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [esp + 0x20], esi
+        mov dword ptr [esp + 0x24], edi
+
+    L_00667923:
+        test esi, esi
+        mov ebx, dword ptr [eax + 0x4]
+        je L_0066792E
+        cmp esi, eax
+        je L_00667938
+
+    L_0066792E:
+        mov ebp, dword ptr [mem_00925134]
+        call ebp
+        jmp L_0066793E
+
+    L_00667938:
+        mov ebp, dword ptr [mem_00925134]
+
+    L_0066793E:
+        cmp edi, ebx
+        je L_006679C6
+        test esi, esi
+        jne L_0066794C
+        call ebp
+
+    L_0066794C:
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_00667953
+        call ebp
+
+    L_00667953:
+        mov edx, dword ptr [edi + 0x30]
+        mov eax, dword ptr [edx]
+        add edi, 0x2c
+        mov esi, edi
+        mov ebp, eax
+        mov dword ptr [esp + 0x18], esi
+        mov dword ptr [esp + 0x1c], ebp
+
+    L_00667967:
+        test esi, esi
+        mov ebx, dword ptr [edi + 0x4]
+        je L_00667972
+        cmp esi, edi
+        je L_00667978
+
+    L_00667972:
+        call dword ptr [mem_00925134]
+
+    L_00667978:
+        cmp ebp, ebx
+        je L_006679AC
+        test esi, esi
+        jne L_00667986
+        call dword ptr [mem_00925134]
+
+    L_00667986:
+        cmp ebp, dword ptr [esi + 0x4]
+        jne L_00667991
+        call dword ptr [mem_00925134]
+
+    L_00667991:
+        lea ecx, [ebp + 0x28]
+        call ext_00666CB0
+        lea ecx, [esp + 0x18]
+        call ext_004442E0
+        mov ebp, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [esp + 0x18]
+        jmp L_00667967
+
+    L_006679AC:
+        lea ecx, [esp + 0x20]
+        call ext_00667030
+        mov edi, dword ptr [esp + 0x24]
+        mov esi, dword ptr [esp + 0x20]
+        mov eax, dword ptr [esp + 0x14]
+        jmp L_00667923
+
+    L_006679C6:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
