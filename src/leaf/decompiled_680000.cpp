@@ -4230,3 +4230,93 @@ extern "C" __declspec(naked) void __cdecl fn_00687A40() {
         ret
     }
 }
+
+// [0x00687660] sub_00687660 (245 bytes)
+extern "C" void ext_0041CD10();
+extern "C" void ext_004275E0();
+extern "C" void ext_0063EFE0();
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00687660(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x34]
+        push edi
+        mov ebx, ecx
+        push 0x928ce0
+        mov ecx, esi
+        call ext_0063EFE0
+        cmp eax, 0xb53a34
+        je L687660_special
+        cmp eax, 0xb53b30
+        je L687660_special
+        cmp eax, 0xb53ab0
+        je L687660_special
+        cmp eax, 0xb53a70
+        je L687660_special
+        cmp eax, 0xb53af0
+        je L687660_special
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x8]
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, eax
+        call edx
+        mov edi, dword ptr [esp + 0x3c]
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x34], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], -1
+        call dword ptr [mem_00924FF4]
+        jmp L687660_tail
+L687660_special:
+        push 0x98d8b4
+        mov ecx, esi
+        call ext_0063EFE0
+        mov edi, dword ptr [esp + 0x3c]
+        push eax
+        push edi
+        call ext_004275E0
+        add esp, 8
+L687660_tail:
+        cmp dword ptr [edi + 0x14], 0
+        jne L687660_end
+        mov eax, dword ptr [ebx + 0x11c]
+        test eax, eax
+        lea ecx, [ebx + 0x118]
+        je L687660_end
+        mov esi, dword ptr [ecx + 8]
+        sub esi, eax
+        mov eax, 0x92492493
+        imul esi
+        add edx, esi
+        sar edx, 5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        je L687660_end
+        push 0
+        call ext_0041CD10
+        push eax
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+L687660_end:
+        mov ecx, dword ptr [esp + 0x28]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 8
+    }
+}
