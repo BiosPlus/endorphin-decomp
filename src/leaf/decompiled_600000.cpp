@@ -2035,3 +2035,64 @@ extern "C" __declspec(naked) void* __fastcall fn_0060F190(void* self, int edx_un
         ret 8
     }
 }
+
+// [0x0060F3B0] sub_0060F3B0 (102 bytes)
+extern "C" void ext_0060F190();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_0060F3B0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 14h]
+        push ecx
+        mov ecx, esi
+        call ext_0060F190
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        mov ebp, dword ptr [mem_00925134]
+        jbe L_0060F3DA
+        call ebp
+    L_0060F3DA:
+        mov edi, dword ptr [esp + 10h]
+        test edi, edi
+        je L_0060F3E6
+        cmp edi, esi
+        je L_0060F3E8
+    L_0060F3E6:
+        call ebp
+    L_0060F3E8:
+        mov esi, dword ptr [esp + 14h]
+        cmp esi, ebx
+        je L_0060F40A
+        test edi, edi
+        jne L_0060F3F6
+        call ebp
+    L_0060F3F6:
+        cmp esi, dword ptr [edi + 8]
+        jb L_0060F3FD
+        call ebp
+    L_0060F3FD:
+        pop edi
+        lea eax, [esi + 1ch]
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 4
+    L_0060F40A:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 8
+        ret 4
+    }
+}
