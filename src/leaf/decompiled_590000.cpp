@@ -3668,3 +3668,46 @@ L_0059D901:
         ret 0x8
     }
 }
+
+// [0x00599060] sub_00599060 (112 bytes)
+extern "C" void ext_0041FF30();
+extern "C" void ext_005947B0();
+extern "C" void ext_00664C30();
+extern "C" __declspec(naked) void __fastcall fn_00599060(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x008b4989
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x60
+        push esi
+        mov esi, dword ptr [esp + 0x74]
+        push esi
+        call ext_00598FF0
+        test eax, eax
+        jne L_done_00599060
+        mov eax, dword ptr [esi]
+        push eax
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_00664C30
+        add esp, 0x8
+        push eax
+        mov dword ptr [esp + 0x70], 0
+        call ext_005947B0
+        push eax
+        lea ecx, [esp + 0x28]
+        call ext_0041FF30
+        push 0x009d3748
+        lea edx, [esp + 0x24]
+        push edx
+        call ext_006A6DD2
+    L_done_00599060:
+        mov ecx, dword ptr [esp + 0x64]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x6c
+        ret 0x4
+    }
+}
