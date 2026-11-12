@@ -2,6 +2,7 @@
 
 extern "C" void ext_004F9950();
 extern "C" void ext_00661B50();
+extern "C" void ext_0067DAD0();
 extern "C" int mem_009253C8;
 extern "C" int mem_009253D0;
 
@@ -110,5 +111,37 @@ extern "C" __declspec(naked) void __fastcall fn_00532530(void* self) {
         fstp dword ptr [esp]
         call dword ptr [mem_009253D0]
         ret
+    }
+}
+
+// [0x00532720] HasCustomBufferedTMPtr::vfunc_3 (69 bytes)
+extern "C" __declspec(naked) float* __fastcall fn_00532720(void* self, int edx_unused, float* a1) {
+    __asm {
+        fldz
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        fst dword ptr [esi + 0x8]
+        fst dword ptr [esi + 0x4]
+        push esi
+        fst dword ptr [esi]
+        fst dword ptr [esi + 0x14]
+        fst dword ptr [esi + 0x10]
+        fst dword ptr [esi + 0xc]
+        fst dword ptr [esi + 0x20]
+        fst dword ptr [esi + 0x1c]
+        fstp dword ptr [esi + 0x18]
+        fld1
+        fst dword ptr [esi]
+        fst dword ptr [esi + 0x10]
+        fstp dword ptr [esi + 0x20]
+        mov eax, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [ecx + 0x8]
+        push eax
+        call ext_00661B50
+        mov ecx, eax
+        call ext_0067DAD0
+        mov eax, esi
+        pop esi
+        ret 0x4
     }
 }
