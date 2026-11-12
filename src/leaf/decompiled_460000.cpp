@@ -3598,3 +3598,70 @@ extern "C" __declspec(naked) void __fastcall fn_00462B10(void* self) {
         ret
     }
 }
+
+// [0x00465D00] sub_00465D00 (181 bytes)
+extern "C" void ext_006A6A18();
+extern "C" void ext_006A6D5C();
+extern "C" int mem_00924FF4;
+extern "C" int mem_00AD6C80;
+extern "C" __declspec(naked) void __fastcall fn_00465D00(void* self) {
+    __asm {
+        push -1
+        push 0x8816f5
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        mov dword ptr [esi], 0x939bb4
+        mov eax, dword ptr [mem_00924FF4]
+        push eax
+        push 3
+        push 0x1c
+        lea ecx, [esi + 0x84]
+        push ecx
+        mov dword ptr [esp + 0x20], 4
+        mov dword ptr [mem_00AD6C80], 0
+        call ext_006A6D5C
+        lea ecx, [esi + 0x68]
+        mov byte ptr [esp + 0x10], 3
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esi + 0x5c]
+        test ecx, ecx
+        mov byte ptr [esp + 0x10], 2
+        je L_skip1
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        push 1
+        call eax
+    L_skip1:
+        mov ecx, dword ptr [esi + 0x58]
+        test ecx, ecx
+        mov byte ptr [esp + 0x10], 1
+        je L_skip2
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 8]
+        push 1
+        call eax
+    L_skip2:
+        mov ecx, dword ptr [esi + 0x54]
+        test ecx, ecx
+        mov byte ptr [esp + 0x10], 0
+        je L_skip3
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        push 1
+        call eax
+    L_skip3:
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_006A6A18
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
