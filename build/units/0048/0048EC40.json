@@ -23,5 +23,7 @@
     "0x0048ECF1",
     "0x0048ECF6"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T12:04:32Z"
 }

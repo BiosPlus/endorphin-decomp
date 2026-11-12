@@ -19,3 +19,106 @@ extern "C" void* __fastcall fn_0048F820(void* self, int edx_unused, int a1) {
     }
     return self;
 }
+
+// [0x0048EC40] Commands::SetTriggeredEventStartFrameCommand::vfunc_2 (225 bytes)
+extern "C" void ext_00468180();
+extern "C" void ext_00528BF0();
+extern "C" void ext_00594000();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0048EC40(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00594000
+        lea ebp, [eax + 1C8h]
+        push ebp
+        add eax, 0Ch
+        push 0
+        push 1000h
+        mov ecx, eax
+        mov dword ptr [esp + 1Ch], eax
+        call ext_00528BF0
+        mov ecx, dword ptr [esi + 10h]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi + 18h]
+        mov eax, dword ptr [eax + 114h]
+        push edx
+        call eax
+        mov edi, dword ptr [esi + 20h]
+        add esi, 1Ch
+    L_loop:
+        cmp edi, dword ptr [esi + 8]
+        jbe short L_chk1
+        call dword ptr [mem_00925134]
+        _emit 0x8D
+        _emit 0x9B
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_chk1:
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        jbe short L_chk2
+        call dword ptr [mem_00925134]
+    L_chk2:
+        cmp esi, esi
+        je short L_chk3
+        call dword ptr [mem_00925134]
+    L_chk3:
+        cmp edi, ebx
+        je short L_done
+        cmp edi, dword ptr [esi + 8]
+        jb short L_chk4
+        call dword ptr [mem_00925134]
+    L_chk4:
+        cmp edi, dword ptr [esi + 8]
+        mov ebx, dword ptr [edi]
+        jb short L_chk5
+        call dword ptr [mem_00925134]
+    L_chk5:
+        mov edx, dword ptr [ebx]
+        mov edx, dword ptr [edx + 124h]
+        lea eax, [edi + 4]
+        push eax
+        mov ecx, ebx
+        call edx
+        cmp edi, dword ptr [esi + 8]
+        jb short L_chk6
+        call dword ptr [mem_00925134]
+    L_chk6:
+        add edi, 0Ch
+        jmp short L_chk1
+    L_done:
+        mov ecx, dword ptr [esp + 10h]
+        push ebp
+        push 1
+        push 1000h
+        call ext_00528BF0
+        call ext_00468180
+        mov eax, dword ptr [eax + 14h]
+        mov ecx, dword ptr [eax + 30h]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0B4h]
+        call edx
+        test eax, eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        je short L_ret
+        lea ecx, [eax + 8]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        add esp, 4
+        jmp edx
+    L_ret:
+        pop ecx
+        ret
+    }
+}
