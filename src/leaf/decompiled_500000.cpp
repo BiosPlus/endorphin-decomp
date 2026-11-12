@@ -3266,3 +3266,80 @@ extern "C" __declspec(naked) void __cdecl fn_0050BF30(void* a, void* b, void* c)
         ret
     }
 }
+
+// [0x0050BE80] sub_0050BE80 (163 bytes)
+// Stack-arg fill: copy-constructs `count` 0x24-byte elements (vtable 0x94F92C,
+// std::string at +0x4, float at +0x20) from *src into first[..]; on exception
+// destroys the already-built prefix and rethrows.
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __cdecl fn_0050BE80(void* first, unsigned int count, void* src) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x8920a9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [ebp + 0x10]
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push edi
+        mov edi, dword ptr [ebp + 0xc]
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], 0x0
+    L_loop_0050BEB4:
+        test edi, edi
+        jbe L_done_0050BF12
+        mov dword ptr [ebp + 0xc], esi
+        mov dword ptr [ebp - 0x18], esi
+        test esi, esi
+        je L_skip_0050BEDF
+        lea eax, [ebx + 0x4]
+        push eax
+        lea ecx, [esi + 0x4]
+        mov byte ptr [ebp - 0x4], 0x2
+        mov dword ptr [esi], 0x94f92c
+        call dword ptr [mem_00924FE0]
+        fld dword ptr [ebx + 0x20]
+        fstp dword ptr [esi + 0x20]
+    L_skip_0050BEDF:
+        sub edi, 0x1
+        add esi, 0x24
+        mov byte ptr [ebp - 0x4], 0x0
+        mov dword ptr [ebp + 0x8], esi
+        jmp L_loop_0050BEB4
+    L_handler_0050BEEE:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x8]
+        cmp esi, edi
+        je L_rethrow_0050BF09
+    L_dtor_0050BEF8:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx]
+        push 0x0
+        mov ecx, esi
+        call eax
+        add esi, 0x24
+        cmp esi, edi
+        jne L_dtor_0050BEF8
+    L_rethrow_0050BF09:
+        push 0x0
+        push 0x0
+        call ext_006A6DD2
+    L_done_0050BF12:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
