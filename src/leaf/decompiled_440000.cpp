@@ -4768,3 +4768,32 @@ extern "C" __declspec(naked) void __fastcall fn_0044A1E0(void* self) {
         ret 0x8
     }
 }
+
+// [0x0044AB90] sub_0044AB90 (57 bytes)
+extern "C" void ext_0044A1E0();
+extern "C" void ext_0044AAA0();
+extern "C" void* (__stdcall *mem_00925654)();
+
+struct Class_0044AB90 {
+    char pad_0[0xf4];
+    int m_f4;
+    char pad_f8[0x114 - 0xf8];
+    void* m_114;
+    char pad_118[0x148 - 0x118];
+    int m_148;
+
+    void test() {
+        typedef void (__thiscall *fn1_t)(Class_0044AB90*, void*, void*);
+        ((fn1_t)ext_0044A1E0)(this, &m_f4, &m_148);
+        typedef void* (__stdcall *pfnFromHandle)(void*);
+        void* wnd = ((pfnFromHandle)ext_006A5E00)(mem_00925654());
+        if (*(void**)((char*)wnd + 0x20) == m_114) {
+            typedef void (__thiscall *fn2_t)(Class_0044AB90*);
+            ((fn2_t)ext_0044AAA0)(this);
+        }
+    }
+};
+
+extern "C" void __fastcall fn_0044AB90(void* self) {
+    reinterpret_cast<Class_0044AB90*>(self)->test();
+}
