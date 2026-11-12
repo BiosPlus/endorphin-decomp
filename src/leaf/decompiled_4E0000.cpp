@@ -1577,3 +1577,31 @@ extern "C" __declspec(naked) void __cdecl fn_004E7DF0(unsigned int* first, unsig
         ret
     }
 }
+
+// [0x004ED5D0] sub_004ED5D0 (111 bytes)
+extern "C" void __cdecl ext_00609850(unsigned int* a, unsigned int* b, unsigned int* c, int d, int e);
+
+extern "C" void __cdecl fn_004ED5D0(unsigned int* first, unsigned int* last) {
+    if (first == last) return;
+    unsigned int* esi = first + 1;
+    if (esi == last) return;
+    unsigned int* edi = esi + 1;
+    for (; esi != last; esi++, edi++) {
+        unsigned int ecx = *esi;
+        if (ecx < *first) {
+            if (first != esi && esi != edi) {
+                ext_00609850(first, esi, edi, 0, 0);
+            }
+        } else if (ecx < *(edi - 2)) {
+            unsigned int* eax = edi - 2;
+            unsigned int* edx;
+            do {
+                edx = eax;
+                eax -= 1;
+            } while (ecx < *eax);
+            if (edx != esi && esi != edi) {
+                ext_00609850(edx, esi, edi, 0, 0);
+            }
+        }
+    }
+}
