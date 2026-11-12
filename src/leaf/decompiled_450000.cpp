@@ -2642,3 +2642,29 @@ extern "C" int __stdcall fn_0045DFB0(int a1) {
     }
     return r;
 }
+
+// [0x0045DB90] sub_0045DB90 (60 bytes)
+extern "C" __declspec(naked) int __stdcall fn_0045DB90(int a, int b) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push 0x1
+        push eax
+        push edx
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je L_0045DBC4
+        cmp eax, 0xb53b30
+        je L_0045DBC4
+        cmp eax, 0xb53ab0
+        je L_0045DBC4
+        cmp eax, 0xb53a70
+        je L_0045DBC4
+        cmp eax, 0xb53af0
+        jne L_0045DBC9
+    L_0045DBC4:
+        mov eax, 0xb53b30
+    L_0045DBC9:
+        ret 0x8
+    }
+}
