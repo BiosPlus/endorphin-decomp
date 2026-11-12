@@ -1140,3 +1140,86 @@ loop2_body:
         ret
     }
 }
+
+// [0x004D1F00] sub_004D1F00 (186 bytes)
+extern "C" void __fastcall ext_0059DCA0(void* self, float v);
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_004D1F00(void* self) {
+    __asm {
+        sub esp, 0x40
+        push ebx
+        mov ebx, ecx
+        fld dword ptr [ebx + 0x1c]
+        fadd dword ptr [ebx + 0x18]
+        fstp dword ptr [ebx + 0x18]
+        fldz
+        fcom dword ptr [ebx + 0x18]
+        fnstsw ax
+        test ah, 0x41
+        jne L_4D1F20
+        fstp dword ptr [ebx + 0x18]
+        jmp L_4D1F35
+L_4D1F20:
+        fstp st(0)
+        fld1
+        fcom dword ptr [ebx + 0x18]
+        fnstsw ax
+        test ah, 0x5
+        jp L_4D1F33
+        fstp dword ptr [ebx + 0x18]
+        jmp L_4D1F35
+L_4D1F33:
+        fstp st(0)
+L_4D1F35:
+        fld dword ptr [ebx + 0x18]
+        push esi
+        push edi
+        push ecx
+        mov ecx, dword ptr [ebx]
+        fstp dword ptr [esp]
+        call ext_0059DCA0
+        mov eax, dword ptr [ebx]
+        mov eax, dword ptr [eax + 0x38c]
+        mov edx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [edx + 0x14]
+        lea ecx, [eax + 0x4]
+        mov eax, dword ptr [mem_00B40640]
+        push eax
+        call edx
+        mov esi, eax
+        mov eax, dword ptr [ebx + 0x1d0]
+        test eax, eax
+        mov ecx, 0x10
+        lea edi, [esp + 0xc]
+        rep movsd
+        pop edi
+        pop esi
+        je L_4D1F92
+        mov eax, dword ptr [eax + 0x234]
+        test eax, eax
+        je L_4D1F92
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0xac]
+        lea ecx, [esp + 0x4]
+        push ecx
+        mov ecx, eax
+        call edx
+L_4D1F92:
+        mov ebx, dword ptr [ebx + 0x1cc]
+        test ebx, ebx
+        je L_4D1FB5
+        mov ecx, dword ptr [ebx + 0x234]
+        test ecx, ecx
+        je L_4D1FB5
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xac]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+L_4D1FB5:
+        pop ebx
+        add esp, 0x40
+        ret
+    }
+}
