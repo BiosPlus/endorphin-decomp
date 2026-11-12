@@ -93,3 +93,25 @@ extern "C" __declspec(naked) void __fastcall fn_00532400(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" int mem_009253D0;
+
+// [0x00532450] HasBufferedTMPtr::vfunc_13 (47 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00532450(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [mem_00AEE8A8]
+        push eax
+        call ext_00661B50
+        fld dword ptr [eax + 0x38]
+        add eax, 0x30
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax]
+        fstp dword ptr [esp]
+        call dword ptr [mem_009253D0]
+        ret
+    }
+}
