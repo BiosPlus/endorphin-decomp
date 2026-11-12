@@ -2305,3 +2305,73 @@ extern "C" __declspec(naked) int __cdecl fn_007D5F50(void* s, void* arg2) {
         ret
     }
 }
+
+// [0x007D5A40] sub_007D5A40 (159 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D5A40(void* a1, void* a2, int a3) {
+    __asm {
+        sub esp, 0xc
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [ecx + 0xc]
+        mov edx, dword ptr [edx + 0x20]
+        __asm _emit 0x25 __asm _emit 0xff __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        lea eax, [eax + 4*eax]
+        mov eax, dword ptr [edx + 8*eax + 0x8]
+        mov edx, dword ptr [esp + 0x1c]
+        push edx
+        lea edx, [esp + 0x8]
+        push edx
+        push ecx
+        call eax
+        add esp, 0xc
+        test eax, eax
+        je short L_done
+        mov ecx, dword ptr [esi + 0x4]
+        fld dword ptr [ecx + 0x10]
+        mov edx, dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x8]
+        fld st(0)
+        fmulp st(2), st
+        fld dword ptr [ecx]
+        fld dword ptr [esp + 0x4]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(3)
+        faddp st(1), st
+        fld dword ptr [ecx + 0x20]
+        fld dword ptr [esp + 0xc]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fadd dword ptr [ecx + 0x30]
+        fstp dword ptr [edx]
+        fld dword ptr [ecx + 0x4]
+        fmul st, st(3)
+        fld dword ptr [ecx + 0x14]
+        fmul st, st(3)
+        faddp st(1), st
+        fld dword ptr [ecx + 0x24]
+        fmul st, st(2)
+        faddp st(1), st
+        fadd dword ptr [ecx + 0x34]
+        fstp dword ptr [edx + 0x4]
+        fld dword ptr [ecx + 0x8]
+        fmulp st(3), st
+        fld dword ptr [ecx + 0x18]
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fld dword ptr [ecx + 0x28]
+        fmulp st(2), st
+        faddp st(1), st
+        fadd dword ptr [ecx + 0x38]
+        fstp dword ptr [edx + 0x8]
+    L_done:
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
