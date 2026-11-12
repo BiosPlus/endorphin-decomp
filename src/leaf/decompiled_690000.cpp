@@ -2518,3 +2518,65 @@ extern "C" __declspec(naked) void __fastcall fn_0069A7B0(void* self) {
         ret
     }
 }
+
+// [0x00695240] sub_00695240 (172 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00695240(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov eax, ecx
+        mov esi, 0E3h
+        __asm _emit 0x8D __asm _emit 0xA4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+    L695250_a:
+        mov edx, dword ptr [eax + 4]
+        mov edi, dword ptr [eax]
+        xor edi, edx
+        and edi, 7FFFFFFEh
+        xor edi, dword ptr [eax]
+        and edx, 1
+        neg edx
+        shr edi, 1
+        and edx, 9908B0DFh
+        xor edi, edx
+        xor edi, dword ptr [eax + 634h]
+        sub esi, 1
+        mov dword ptr [eax], edi
+        add eax, 4
+        test esi, esi
+        jne L695250_a
+        mov esi, 18Ch
+    L695285_b:
+        mov edx, dword ptr [eax + 4]
+        mov edi, dword ptr [eax]
+        xor edi, edx
+        and edi, 7FFFFFFEh
+        xor edi, dword ptr [eax]
+        and edx, 1
+        neg edx
+        shr edi, 1
+        and edx, 9908B0DFh
+        xor edi, edx
+        xor edi, dword ptr [eax - 38Ch]
+        add eax, 4
+        sub esi, 1
+        mov dword ptr [eax - 4], edi
+        jne L695285_b
+        mov esi, dword ptr [eax]
+        mov edx, dword ptr [ecx]
+        xor esi, edx
+        and esi, 7FFFFFFEh
+        xor esi, dword ptr [eax]
+        and edx, 1
+        shr esi, 1
+        neg edx
+        and edx, 9908B0DFh
+        xor esi, edx
+        xor esi, dword ptr [eax - 38Ch]
+        pop edi
+        mov dword ptr [eax], esi
+        mov dword ptr [ecx + 9C4h], 270h
+        mov dword ptr [ecx + 9C0h], ecx
+        pop esi
+        ret
+    }
+}
