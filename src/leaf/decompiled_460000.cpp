@@ -3439,3 +3439,63 @@ extern "C" __declspec(naked) void __fastcall fn_00460490(void* self) {
         ret
     }
 }
+
+// [0x00467F60] sub_00467F60 (170 bytes)
+extern "C" void ext_006A5EDE();
+extern "C" void ext_006A5F68();
+extern "C" void ext_006A6B08();
+extern "C" __declspec(naked) void __fastcall fn_00467F60(void* self) {
+    __asm {
+        push -1
+        push 0x881cb8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esp + 0x24]
+        push esi
+        push edi
+        push eax
+        mov eax, dword ptr [esp + 0x2c]
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x34]
+        push ecx
+        mov ecx, dword ptr [esp + 0x2c]
+        push edx
+        mov edx, dword ptr [esp + 0x2c]
+        push eax
+        mov eax, dword ptr [esp + 0x2c]
+        push ecx
+        push edx
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x24], esi
+        call ext_006A5F68
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x0
+        mov dword ptr [esi], 0x939ddc
+        call ext_006A6B08
+        or dword ptr [eax + 0x34], 0x40
+        add eax, 0x34
+        mov ecx, esi
+        call ext_006A6B08
+        or dword ptr [eax + 0x34], 0x80000
+        add eax, 0x34
+        call ext_006A5EDE
+        mov edi, dword ptr [eax + 0x8]
+        mov ecx, esi
+        call ext_006A6B08
+        mov ecx, esi
+        mov dword ptr [eax + 0x8], edi
+        call ext_006A6B08
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x48], 0x163
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x1c
+    }
+}
