@@ -224,3 +224,32 @@ extern "C" __declspec(naked) void __fastcall fn_004C5390(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_004C2330();
+extern "C" void ext_006A5C5C();
+
+struct ForceEventSub_004C6850 {
+    int unk0;
+    void* ptr4;
+    int unk8;
+    int unkC;
+};
+
+// [0x004C6850] NMData::ForceEventData::vfunc_0 (90 bytes)
+extern "C" void* __fastcall fn_004C6850(char* self, int edx_unused, unsigned int flags) {
+    ForceEventSub_004C6850* esi = *(ForceEventSub_004C6850**)(self + 0x184);
+    if (esi) {
+        if (esi->ptr4) {
+            ((void (*)(void*))ext_006A5C5C)(esi->ptr4);
+        }
+        esi->ptr4 = 0;
+        esi->unk8 = 0;
+        esi->unkC = 0;
+        ((void (*)(void*))ext_006A5C5C)(esi);
+    }
+    ((void (__fastcall*)(void*))ext_004C2330)(self);
+    if (flags & 1) {
+        ((void (*)(void*))ext_006A5C5C)(self);
+    }
+    return self;
+}
