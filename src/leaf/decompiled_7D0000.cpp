@@ -2812,3 +2812,82 @@ loop_body:
         ret
     }
 }
+
+// [0x007DFE90] sub_007DFE90 (190 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007DFE90(float* b, float* c, float t, float* a, float* out) {
+    __asm {
+        sub esp, 0ch
+        mov eax, dword ptr [esp + 1ch]
+        mov ecx, dword ptr [esp + 10h]
+        fld dword ptr [eax]
+        fsub dword ptr [ecx]
+        mov edx, dword ptr [esp + 14h]
+        fstp dword ptr [esp]
+        fld dword ptr [eax + 4]
+        fsub dword ptr [ecx + 4]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [eax + 8]
+        fsub dword ptr [ecx + 8]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [edx]
+        fmul dword ptr [esp]
+        fld dword ptr [esp + 4]
+        fmul dword ptr [edx + 4]
+        faddp st(1), st
+        fld dword ptr [esp + 8]
+        fmul dword ptr [edx + 8]
+        faddp st(1), st
+        fstp dword ptr [esp + 1ch]
+        fld dword ptr [esp + 1ch]
+        fld dword ptr [esp + 18h]
+        fcom st(1)
+        fnstsw ax
+        test ah, 41h
+        jne SHORT fe90_L1
+        fxch st(1)
+        fst dword ptr [esp + 1ch]
+        jmp SHORT fe90_L2
+fe90_L1:
+        fst dword ptr [esp + 1ch]
+        fxch st(1)
+fe90_L2:
+        fld st(1)
+        fchs
+        fstp dword ptr [esp + 10h]
+        fld dword ptr [esp + 1ch]
+        fld dword ptr [esp + 10h]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 41h
+        jne SHORT fe90_L3
+        fstp st(2)
+fe90_L5:
+        fstp st(0)
+        fstp dword ptr [esp + 1ch]
+        fld dword ptr [esp + 1ch]
+        jmp SHORT fe90_L4
+fe90_L3:
+        fstp st(0)
+        fcom st(1)
+        fnstsw ax
+        test ah, 5
+        jp SHORT fe90_L5
+        fstp st(1)
+fe90_L4:
+        fld dword ptr [edx]
+        mov eax, dword ptr [esp + 20h]
+        fmul st, st(1)
+        fadd dword ptr [ecx]
+        fstp dword ptr [eax]
+        fld st(0)
+        fmul dword ptr [edx + 4]
+        fadd dword ptr [ecx + 4]
+        fstp dword ptr [eax + 4]
+        fmul dword ptr [edx + 8]
+        fadd dword ptr [ecx + 8]
+        fstp dword ptr [eax + 8]
+        add esp, 0ch
+        ret
+    }
+}
