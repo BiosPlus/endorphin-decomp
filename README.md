@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `9362 / 24049` (**38.93%**) — `6270` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `484825 / 4496005 bytes` (**10.78%** of 4.29 MB)
+- **In-Scope Functions Matched:** `9363 / 24049` (**38.93%**) — `6271` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `484947 / 4496005 bytes` (**10.79%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -19,7 +19,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P30-40 (48-71B)** | 843 / 2405 | 35.05% | 50354 / 144549 | 34.84% | 1562 fn |
 | **P40-50 (71-91B)** | 1001 / 2405 | 41.62% | 83714 / 194373 | 43.07% | 1404 fn |
 | **P50-60 (91-122B)** | 981 / 2405 | 40.79% | 107140 / 256906 | 41.70% | 1424 fn |
-| **P60-70 (122-159B)** | 824 / 2405 | 34.26% | 110651 / 339038 | 32.64% | 1581 fn |
+| **P60-70 (122-159B)** | 825 / 2405 | 34.30% | 110773 / 339038 | 32.67% | 1580 fn |
 | **P70-80 (159-178B)** | 66 / 2405 | 2.74% | 10711 / 400567 | 2.67% | 2339 fn |
 | **P80-90 (178-335B)** | 0 / 2405 | 0.00% | 0 / 583211 | 0.00% | 2405 fn |
 | **P90-100 (335-36100B)** | 0 / 2404 | 0.00% | 0 / 2392860 | 0.00% | 2404 fn |
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5` | 6058 | 412637 | 96.62% |
-| `gemini-3.8-flash` | 186 | 24304 | 2.97% |
+| `claude-haiku-5.5` | 6058 | 412637 | 96.60% |
+| `gemini-3.8-flash` | 187 | 24426 | 2.98% |
 | `claude-sonnet-5.5` | 24 | 1340 | 0.38% |
 | `claude-opus-5.5` | 1 | 49 | 0.02% |
 | `gemini-4-argon` | 1 | 10 | 0.02% |
