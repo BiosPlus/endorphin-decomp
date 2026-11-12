@@ -1777,3 +1777,42 @@ store_result:
         ret 0x4
     }
 }
+
+// [0x005E0570] sub_005E0570 (68 bytes)
+// __thiscall, ret 0: calls virtual slot +0x70 on this; if false and this+0x190 is non-null,
+// calls slot +0x70 on that object; if also false, returns (0x005863A0(obj) == 1). Otherwise returns false.
+extern "C" void ext_005863A0();
+
+extern "C" __declspec(naked) void __fastcall fn_005E0570(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x70]
+        xor bl, bl
+        call edx
+        test al, al
+        jne short l_false_005E0570
+        cmp dword ptr [esi + 0x190], 0x0
+        je short l_false_005E0570
+        mov ecx, dword ptr [esi + 0x190]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x70]
+        call edx
+        test al, al
+        jne short l_false_005E0570
+        mov ecx, dword ptr [esi + 0x190]
+        call ext_005863A0
+        cmp eax, 0x1
+        pop esi
+        sete al
+        pop ebx
+        ret
+l_false_005E0570:
+        pop esi
+        mov al, bl
+        pop ebx
+        ret
+    }
+}
