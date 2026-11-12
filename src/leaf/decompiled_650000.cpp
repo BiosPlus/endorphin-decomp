@@ -3217,3 +3217,114 @@ done:
         ret
     }
 }
+
+// [0x0065FE50] sub_0065FE50 (252 bytes)
+// std::_Adjust_heap over 32-byte elements {std::string, int}: sift the hole down, then push value back up via ext_0065FBC0.
+// The by-value element is passed as its 32-byte POD image (naked functions cannot take objects needing unwind).
+extern "C" void ext_0065FBC0();
+extern "C" int mem_00924EF4;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+struct Elem32Image_0065FE50 {
+    int words[8];
+};
+
+extern "C" __declspec(naked) void __cdecl fn_0065FE50(void* first, int hole, int bottom, Elem32Image_0065FE50 val) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8b26b8
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebx, dword ptr [esp + 0x24]
+        mov edi, dword ptr [esp + 0x28]
+        mov ebp, dword ptr [esp + 0x20]
+        lea esi, [ebx + ebx + 0x2]
+        cmp esi, edi
+        mov dword ptr [esp + 0x18], 0x0
+        mov dword ptr [esp + 0x24], ebx
+        jge L_check_push
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_loop:
+        mov eax, esi
+        shl eax, 0x5
+        add eax, ebp
+        lea ecx, [eax - 0x20]
+        push ecx
+        push eax
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        je L_noadj
+        sub esi, 0x1
+    L_noadj:
+        mov edi, esi
+        shl edi, 0x5
+        shl ebx, 0x5
+        add edi, ebp
+        add ebx, ebp
+        push edi
+        mov ecx, ebx
+        call dword ptr [mem_00924FDC]
+        mov edx, dword ptr [edi + 0x1c]
+        mov dword ptr [ebx + 0x1c], edx
+        mov ebx, esi
+        lea esi, [esi + esi + 0x2]
+        cmp esi, dword ptr [esp + 0x28]
+        jl L_loop
+        mov edi, dword ptr [esp + 0x28]
+        cmp esi, edi
+    L_check_push:
+        jne L_push
+        mov eax, edi
+        shl eax, 0x5
+        shl ebx, 0x5
+        lea esi, [eax + ebp - 0x20]
+        add ebx, ebp
+        push esi
+        mov ecx, ebx
+        call dword ptr [mem_00924FDC]
+        mov ecx, dword ptr [esi + 0x1c]
+        mov dword ptr [ebx + 0x1c], ecx
+        lea ebx, [edi - 0x1]
+    L_push:
+        sub esp, 0x20
+        mov esi, esp
+        lea edx, [esp + 0x4c]
+        mov dword ptr [esp + 0x48], esp
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x44]
+        mov eax, dword ptr [esp + 0x68]
+        push ecx
+        push ebx
+        push ebp
+        mov dword ptr [esi + 0x1c], eax
+        call ext_0065FBC0
+        add esp, 0x2c
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
