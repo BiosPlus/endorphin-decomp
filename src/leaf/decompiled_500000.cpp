@@ -3374,3 +3374,78 @@ extern "C" __declspec(naked) void* __fastcall fn_0050C6C0(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x0050B3E0] sub_0050B3E0 (164 bytes)
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void* __cdecl fn_0050B3E0(void* first, void* last, void* dest) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x892039
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0ch
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 10h]
+        push edi
+        mov edi, dword ptr [ebp + 8]
+        mov dword ptr [ebp - 10h], esp
+        mov dword ptr [ebp - 14h], esi
+        mov dword ptr [ebp - 4], 0
+        mov bl, 2
+    loop_top:
+        cmp edi, dword ptr [ebp + 0ch]
+        je SHORT done
+        mov dword ptr [ebp + 8], esi
+        mov dword ptr [ebp - 18h], esi
+        test esi, esi
+        je SHORT skip_construct
+        lea eax, [edi + 4]
+        push eax
+        lea ecx, [esi + 4]
+        mov byte ptr [ebp - 4], bl
+        mov dword ptr [esi], 0x94f92c
+        call dword ptr [mem_00924FE0]
+        fld dword ptr [edi + 20h]
+        fstp dword ptr [esi + 20h]
+    skip_construct:
+        add esi, 24h
+        mov byte ptr [ebp - 4], 0
+        mov dword ptr [ebp + 10h], esi
+        add edi, 24h
+        jmp SHORT loop_top
+    handler:
+        mov esi, dword ptr [ebp - 14h]
+        mov edi, dword ptr [ebp + 10h]
+        cmp esi, edi
+        je SHORT rethrow
+    destroy_top:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx]
+        push 0
+        mov ecx, esi
+        call eax
+        add esi, 24h
+        cmp esi, edi
+        jne SHORT destroy_top
+    rethrow:
+        push 0
+        push 0
+        call ext_006A6DD2
+    done:
+        mov ecx, dword ptr [ebp - 0ch]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
