@@ -130,3 +130,83 @@ extern "C" __declspec(naked) void* __fastcall fn_0063EE20(void* self, int edx_un
         ret 0x4
     }
 }
+
+extern "C" void ext_00641E90();
+
+// [0x0063ED40] AdvXMLParser::Attribute::vfunc_2 (214 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0063ED40(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x8b2653
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x20
+        push ebx
+        push ebp
+        push esi
+        push edi
+        xor edi, edi
+        mov dword ptr [esp + 0x10], edi
+        mov ebx, dword ptr [esp + 0x40]
+        mov esi, ecx
+        mov ecx, ebx
+        mov dword ptr [esp + 0x38], edi
+        call dword ptr [mem_00924FE8]
+        add esi, 0x24
+        mov dword ptr [esp + 0x38], edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x10], 0x1
+        jbe chk1
+        call dword ptr [mem_00925134]
+    chk1:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebp
+        jbe chk2
+        call dword ptr [mem_00925134]
+    chk2:
+        cmp esi, esi
+        je chk3
+        call dword ptr [mem_00925134]
+    chk3:
+        cmp edi, ebp
+        jae done
+        cmp edi, dword ptr [esi + 0x8]
+        jb body
+        call dword ptr [mem_00925134]
+    body:
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x8]
+        lea edx, [esp + 0x14]
+        push edx
+        call eax
+        push eax
+        mov ecx, ebx
+        mov dword ptr [esp + 0x3c], 0x1
+        call dword ptr [mem_00924FD8]
+        lea ecx, [esp + 0x14]
+        mov byte ptr [esp + 0x38], 0x0
+        call dword ptr [mem_00924FF4]
+        cmp edi, dword ptr [esi + 0x8]
+        jb next
+        call dword ptr [mem_00925134]
+    next:
+        add edi, 0x4
+        jmp chk1
+    done:
+        push ebx
+        call ext_00641E90
+        mov ecx, dword ptr [esp + 0x34]
+        add esp, 0x4
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret 0x4
+    }
+}

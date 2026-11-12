@@ -21,5 +21,7 @@
     "0x0063EDED",
     "0x0063EDF8"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash",
+  "matched_at": "2026-11-12T11:55:16Z"
 }
