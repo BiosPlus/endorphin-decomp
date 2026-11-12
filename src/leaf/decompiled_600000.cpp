@@ -2186,3 +2186,14 @@ extern "C" __declspec(naked) void __cdecl fn_0060A3A0(void* first, int hole, int
         ret
     }
 }
+
+// [0x0060A600] sub_0060A600 (63 bytes)
+extern "C" void ext_0060A3A0();
+
+extern "C" void __cdecl fn_0060A600(unsigned int* first, unsigned int* last, int comp) {
+    int len = last - first;
+    for (int hole = len / 2; hole > 0; ) {
+        --hole;
+        ((void (__cdecl*)(unsigned int*, int, int, unsigned int, int))ext_0060A3A0)(first, hole, len, first[hole], comp);
+    }
+}
