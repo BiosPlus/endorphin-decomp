@@ -2623,3 +2623,28 @@ extern "C" __declspec(naked) void* __cdecl fn_0054F120(void* first, void* last, 
         ret
     }
 }
+
+// [0x0054F290] sub_0054F290 (43 bytes)
+extern "C" void ext_0054F120();
+
+extern "C" __declspec(naked) void __fastcall fn_0054F290(void* self) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x10]
+        mov byte ptr [esp], 0x0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x14]
+        push eax
+        push ecx
+        push edx
+        call ext_0054F120
+        add esp, 0x1c
+        ret
+    }
+}
