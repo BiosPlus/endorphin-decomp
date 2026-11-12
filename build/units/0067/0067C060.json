@@ -13,5 +13,7 @@
     "0x0067C0EE",
     "0x0067C161"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-12T13:37:51Z"
 }
