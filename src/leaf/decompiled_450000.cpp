@@ -3363,3 +3363,85 @@ extern "C" void* __stdcall fn_00451CE0(TargetClass_00451AF0* a1, const char* a2)
     }
     return result;
 }
+
+// [0x00450220] sub_00450220 (179 bytes)
+extern "C" void ext_0044DBF0();
+extern "C" int mem_00925694;
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void* __fastcall fn_00450220(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [mem_00925694]
+        push esi
+        push edi
+        push 0
+        push 0
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x768]
+        push 0x18b
+        push eax
+        mov dword ptr [esp + 0x1c], 0
+        call ebx
+        test eax, eax
+        jle short L_fail
+        mov ecx, dword ptr [edi + 0x768]
+        push 0
+        push 0
+        push 0x190
+        push ecx
+        call ebx
+        cmp eax, 1
+        jne short L_fail
+        mov edx, dword ptr [edi + 0x768]
+        xor esi, esi
+        push esi
+        push esi
+        push 0x18b
+        push edx
+        call ebx
+        test eax, eax
+        jle short L_fail
+L_loop:
+        mov eax, dword ptr [edi + 0x768]
+        push 0
+        push esi
+        push 0x187
+        push eax
+        call ebx
+        test eax, eax
+        jne short L_found
+        mov ecx, dword ptr [edi + 0x768]
+        push eax
+        push eax
+        push 0x18b
+        push ecx
+        add esi, 1
+        call ebx
+        cmp esi, eax
+        jl short L_loop
+L_fail:
+        mov esi, dword ptr [esp + 0x14]
+        push 0x928b5d
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x4
+L_found:
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push esi
+        mov ecx, edi
+        call ext_0044DBF0
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x4
+    }
+}
