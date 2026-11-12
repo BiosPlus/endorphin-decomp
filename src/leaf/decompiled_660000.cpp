@@ -7242,3 +7242,87 @@ done:
         ret
     }
 }
+
+// [0x00662210] sub_00662210 (163 bytes)
+extern "C" int mem_00925134;
+extern "C" void ext_00466BA0();
+
+extern "C" __declspec(naked) unsigned char __fastcall fn_00662210(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 0x64]
+        add eax, 0x60
+        push edi
+        mov edi, dword ptr [ecx]
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        je L_chk1
+        cmp ecx, eax
+        je L_chk2
+L_chk1:
+        call ebx
+L_chk2:
+        cmp dword ptr [esi + 0xc], edi
+        je L_false
+        cmp dword ptr [esi + 0x8], 0x0
+        jne L_b
+        call ebx
+L_b:
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [esi + 0xc]
+        cmp eax, dword ptr [edx + 0x4]
+        jne L_c
+        call ebx
+L_c:
+        mov ecx, dword ptr [esi + 0xc]
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx + 0x8]
+        cmp eax, dword ptr [edx + 0x130]
+        jle L_false
+        cmp dword ptr [esi + 0x8], 0x0
+        jne L_d
+        call ebx
+L_d:
+        mov ecx, dword ptr [esi + 0xc]
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [esi + 0x8]
+        mov dword ptr [esi + 0xc], eax
+        cmp eax, dword ptr [edx + 0x4]
+        jne L_e
+        call ebx
+L_e:
+        push 0x0
+        push esi
+        lea ecx, [esi + 0x38]
+        mov byte ptr [esi], 0x1
+        call ext_00466BA0
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret
+L_false:
+        mov eax, dword ptr [esi + 0x4]
+        cmp byte ptr [eax + 0x12c], 0x0
+        je L_zero
+        mov eax, dword ptr [eax + 0x134]
+        push eax
+        mov ecx, esi
+        call ext_00661F70
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret
+L_zero:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret
+    }
+}
