@@ -3639,3 +3639,73 @@ extern "C" __declspec(naked) short __cdecl fn_007CA4F0(float* a, float* b, float
         ret
     }
 }
+
+// [0x007CB3B0] sub_007CB3B0 (177 bytes)
+extern "C" int mem_0099D6C0;
+extern "C" int mem_00993CA0;
+extern "C" int mem_00993828;
+extern "C" int mem_009576E8;
+extern "C" __declspec(naked) void __cdecl fn_007CB3B0() {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 8]
+        fld dword ptr [eax + 10h]
+        xor ecx, ecx
+        fstp dword ptr [esp]
+        fld dword ptr [eax + 14h]
+        mov eax, dword ptr [esp + 10h]
+        fadd st(0), st
+        mov dword ptr [eax + 4], ecx
+        mov dword ptr [eax + 8], ecx
+        mov dword ptr [eax + 0Ch], ecx
+        fstp dword ptr [esp + 8]
+        mov dword ptr [eax + 14h], ecx
+        fld dword ptr [esp + 8]
+        mov dword ptr [eax + 18h], ecx
+        fld dword ptr [esp]
+        mov dword ptr [eax + 1Ch], ecx
+        fld st(1)
+        fmul qword ptr [mem_0099D6C0]
+        fmul st, st(2)
+        fld st(1)
+        fmul qword ptr [mem_00993CA0]
+        fmul st, st(2)
+        faddp st(1), st
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 8]
+        fst dword ptr [eax]
+        fstp dword ptr [eax + 10h]
+        fld qword ptr [mem_00993828]
+        fmul st, st(1)
+        fmul st, st(1)
+        fstp dword ptr [eax + 20h]
+        mov eax, dword ptr [esp + 0Ch]
+        fld1
+        fst dword ptr [eax]
+        fldz
+        fst dword ptr [eax + 4]
+        fst dword ptr [eax + 8]
+        fst dword ptr [eax + 0Ch]
+        fst dword ptr [eax + 10h]
+        fst dword ptr [eax + 18h]
+        fst dword ptr [eax + 1Ch]
+        fst dword ptr [eax + 20h]
+        fst dword ptr [eax + 24h]
+        fst dword ptr [eax + 2Ch]
+        fst dword ptr [eax + 30h]
+        fst dword ptr [eax + 34h]
+        fstp dword ptr [eax + 38h]
+        fst dword ptr [eax + 14h]
+        fst dword ptr [eax + 28h]
+        fstp dword ptr [eax + 3Ch]
+        mov eax, dword ptr [esp + 14h]
+        fld qword ptr [mem_009576E8]
+        fmul st, st(1)
+        fmulp st(1), st
+        fmulp st(1), st
+        fstp dword ptr [eax]
+        xor ax, ax
+        pop ecx
+        ret
+    }
+}
