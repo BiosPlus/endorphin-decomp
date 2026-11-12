@@ -5637,3 +5637,38 @@ vsn_ok:
         ret
     }
 }
+
+// [0x0066AA70] sub_0066AA70 (53 bytes)
+extern "C" void ext_0066A720();
+extern "C" void ext_0066AA10();
+
+extern "C" __declspec(naked) void* __fastcall fn_0066AA70(void* self, int edx_unused, const char* s) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, edi
+        mov esi, ecx
+        lea edx, [eax + 0x1]
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+strlen_loop:
+        mov cl, byte ptr [eax]
+        add eax, 0x1
+        test cl, cl
+        jne strlen_loop
+        sub eax, edx
+        add eax, 0x1
+        push eax
+        mov ecx, esi
+        call ext_0066A720
+        push edi
+        mov ecx, esi
+        call ext_0066AA10
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
