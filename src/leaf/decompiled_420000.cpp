@@ -2486,3 +2486,63 @@ L_427E95:
         ret 0x4
     }
 }
+
+// [0x00420850] sub_00420850 (102 bytes)
+extern "C" void ext_004206F0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00420850(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 14h]
+        push ecx
+        mov ecx, esi
+        call ext_004206F0
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        mov ebp, dword ptr [mem_00925134]
+        jbe L_0042087A
+        call ebp
+    L_0042087A:
+        mov edi, dword ptr [esp + 10h]
+        test edi, edi
+        je L_00420886
+        cmp edi, esi
+        je L_00420888
+    L_00420886:
+        call ebp
+    L_00420888:
+        mov esi, dword ptr [esp + 14h]
+        cmp esi, ebx
+        je L_004208AA
+        test edi, edi
+        jne L_00420896
+        call ebp
+    L_00420896:
+        cmp esi, dword ptr [edi + 8]
+        jb L_0042089D
+        call ebp
+    L_0042089D:
+        pop edi
+        lea eax, [esi + 4]
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 4
+    L_004208AA:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 8
+        ret 4
+    }
+}
