@@ -27,3 +27,24 @@ extern "C" void __fastcall fn_004F2D80(void* self) {
     void** vtbl = *(void***)inner;
     ((Fn3)vtbl[20])(inner);
 }
+
+// [0x004F2DB0] VMCSModes::SimulationMode::vfunc_21 (39 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004F2DB0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        push 0
+        push 5
+        call ext_00469530
+        mov ecx, dword ptr [esi + 0x4]
+        push 1
+        call ext_004667A0
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 0xc]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x54]
+        pop esi
+        jmp eax
+    }
+}
