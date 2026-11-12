@@ -3591,3 +3591,79 @@ extern "C" __declspec(naked) void __fastcall fn_00540C30(void* self) {
         ret
     }
 }
+
+// [0x0054CC60] sub_0054CC60 (199 bytes)
+// Enumerates display devices via EnumDisplayDevicesA (IAT slot) and returns true if any
+// DeviceString, after ext_00665010 processing, contains the literal at 0x956e80 (find != npos).
+extern "C" void ext_00665010();
+extern "C" int mem_00925588;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00925014;
+extern "C" int mem_00924EC4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) bool __fastcall fn_0054CC60(void* self) {
+    __asm {
+        push -0x1
+        push 0x8991bc
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c4
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925588]
+        push 0x0
+        lea eax, [esp + 0x2c]
+        push eax
+        push 0x0
+        push 0x0
+        mov dword ptr [esp + 0x38], 0x1a8
+        xor esi, esi
+        xor bl, bl
+        call edi
+        test eax, eax
+        je loc_done_0054CC60
+    loc_loop_0054CC60:
+        lea ecx, [esp + 0x4c]
+        push ecx
+        lea ecx, [esp + 0x10]
+        add esi, 0x1
+        call dword ptr [mem_00924FE4]
+        lea edx, [esp + 0xc]
+        push edx
+        mov dword ptr [esp + 0x1dc], 0x0
+        call ext_00665010
+        add esp, 0x4
+        push 0x0
+        push 0x956e80
+        lea ecx, [esp + 0x14]
+        call dword ptr [mem_00925014]
+        mov ecx, dword ptr [mem_00924EC4]
+        cmp eax, dword ptr [ecx]
+        je loc_skip_0054CC60
+        mov bl, 0x1
+    loc_skip_0054CC60:
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x1d8], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        push 0x0
+        lea edx, [esp + 0x2c]
+        push edx
+        push esi
+        push 0x0
+        call edi
+        test eax, eax
+        jne loc_loop_0054CC60
+    loc_done_0054CC60:
+        mov ecx, dword ptr [esp + 0x1d0]
+        pop edi
+        pop esi
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x1d0
+        ret
+    }
+}
