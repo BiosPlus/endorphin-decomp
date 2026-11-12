@@ -2781,3 +2781,40 @@ L_unlock:
         ret
     }
 }
+
+struct Light_00534590 {
+    void* vptr;
+    unsigned char m_byte;
+    float m_floats[24];
+};
+
+// [0x00534590] sub_00534590 (165 bytes)
+extern "C" void* __fastcall fn_00534590(Light_00534590* self, int edx_unused, const Light_00534590* other) {
+    self->vptr = (void*)0x009548FC;
+    self->m_byte = other->m_byte;
+    self->m_floats[0] = other->m_floats[0];
+    self->m_floats[1] = other->m_floats[1];
+    self->m_floats[2] = other->m_floats[2];
+    self->m_floats[3] = other->m_floats[3];
+    self->m_floats[4] = other->m_floats[4];
+    self->m_floats[5] = other->m_floats[5];
+    self->m_floats[6] = other->m_floats[6];
+    self->m_floats[7] = other->m_floats[7];
+    self->m_floats[8] = other->m_floats[8];
+    self->m_floats[9] = other->m_floats[9];
+    self->m_floats[10] = other->m_floats[10];
+    self->m_floats[11] = other->m_floats[11];
+    self->m_floats[12] = other->m_floats[12];
+    self->m_floats[13] = other->m_floats[13];
+    self->m_floats[14] = other->m_floats[14];
+    self->m_floats[15] = other->m_floats[15];
+    self->m_floats[16] = other->m_floats[16];
+    self->m_floats[17] = other->m_floats[17];
+    self->m_floats[18] = other->m_floats[18];
+    self->m_floats[19] = other->m_floats[19];
+    self->m_floats[20] = other->m_floats[20];
+    self->m_floats[21] = other->m_floats[21];
+    self->m_floats[22] = other->m_floats[22];
+    self->m_floats[23] = other->m_floats[23];
+    return self;
+}
