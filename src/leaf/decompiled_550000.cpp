@@ -4376,3 +4376,75 @@ extern "C" __declspec(naked) void __fastcall fn_0055B880(void* self) {
         ret
     }
 }
+
+// [0x00552F90] sub_00552F90 (235 bytes)
+extern "C" int mem_0092944C;
+extern "C" int mem_009576E4;
+extern "C" int mem_00A3464C;
+extern "C" int mem_00924FD4;
+
+extern "C" __declspec(naked) void __fastcall fn_00552F90(void* self) {
+    __asm {
+        fld dword ptr [mem_0092944C]
+        push ebx
+        xor ebx, ebx
+        push esi
+        mov esi, ecx
+        fstp dword ptr [esi + 0x8]
+        mov dword ptr [esi], ebx
+        fld1
+        mov dword ptr [esi + 0x4], 0x3c
+        mov dword ptr [esi + 0xc], ebx
+        fst dword ptr [esi + 0x20]
+        fst dword ptr [esi + 0x24]
+        mov dword ptr [esi + 0x28], ebx
+        fst dword ptr [esi + 0x1c]
+        mov dword ptr [esi + 0x2c], ebx
+        mov dword ptr [esi + 0x30], ebx
+        fstp dword ptr [esi + 0x10]
+        fld dword ptr [mem_009576E4]
+        mov eax, 0x1
+        fst dword ptr [esi + 0x7c]
+        mov byte ptr [esi + 0x14], al
+        fst dword ptr [esi + 0x80]
+        mov dword ptr [esi + 0x70], ebx
+        fstp dword ptr [esi + 0x84]
+        mov dword ptr [esi + 0x48], ebx
+        mov dword ptr [esi + 0xac], 0xc
+        mov dword ptr [esi + 0xb0], 0x8
+        mov dword ptr [esi + 0xb4], eax
+        mov byte ptr [esi + 0x88], bl
+        mov byte ptr [esi + 0x4c], al
+        mov byte ptr [esi + 0x4d], bl
+        mov byte ptr [esi + 0x4e], bl
+        mov byte ptr [esi + 0x34], bl
+        mov byte ptr [esi + 0x6d], al
+        mov byte ptr [esi + 0x15], bl
+        mov byte ptr [esi + 0x6c], al
+        mov byte ptr [esi + 0x16], al
+        mov byte ptr [esi + 0x76], bl
+        mov byte ptr [esi + 0x77], bl
+        mov byte ptr [esi + 0x78], bl
+        mov byte ptr [esi + 0x79], bl
+        mov byte ptr [esi + 0xb8], bl
+        mov byte ptr [esi + 0x74], bl
+        mov byte ptr [esi + 0x17], al
+        mov byte ptr [esi + 0x18], al
+        mov byte ptr [esi + 0x75], bl
+        mov eax, dword ptr [mem_00A3464C]
+        push eax
+        lea ecx, [esi + 0xd8]
+        call dword ptr [mem_00924FD4]
+        push 0x928b5d
+        lea ecx, [esi + 0xf4]
+        call dword ptr [mem_00924FD4]
+        push 0x928b5d
+        lea ecx, [esi + 0x8c]
+        mov byte ptr [esi + 0x19], bl
+        call dword ptr [mem_00924FD4]
+        mov byte ptr [esi + 0xa8], bl
+        pop esi
+        pop ebx
+        ret
+    }
+}
