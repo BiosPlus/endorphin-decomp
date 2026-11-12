@@ -7029,3 +7029,54 @@ extern "C" __declspec(naked) void __cdecl fn_00660180() {
         ret
     }
 }
+
+// [0x00660710] sub_00660710 (95 bytes)
+extern "C" void ext_0065FF50();
+
+extern "C" __declspec(naked) void __cdecl fn_00660710() {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        mov eax, ecx
+        sub eax, ebp
+        sar eax, 0x5
+        cmp eax, 0x1
+        push esi
+        push edi
+        jle loc_0066076a
+        mov ebx, 0x20
+        sub ebx, ebp
+        cmp eax, 0x1
+        lea esi, [ecx - 0x20]
+        jle loc_0066075c
+    loc_00660737:
+        push 0
+        sub esp, 0x20
+        mov edi, esp
+        mov dword ptr [esp + 0x3c], esp
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FE0]
+        mov eax, dword ptr [esi + 0x1c]
+        push esi
+        push esi
+        push ebp
+        mov dword ptr [edi + 0x1c], eax
+        call ext_0065FF50
+        add esp, 0x30
+    loc_0066075c:
+        sub esi, 0x20
+        lea eax, [ebx + esi]
+        sar eax, 0x5
+        cmp eax, 0x1
+        jg loc_00660737
+    loc_0066076a:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
