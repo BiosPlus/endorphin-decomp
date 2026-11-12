@@ -1969,3 +1969,25 @@ extern "C" __declspec(naked) void __fastcall fn_004C80A0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_005DF5C0();
+
+// [0x004C4880] sub_004C4880 (36 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004C4880(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        sub esp, 0x1c
+        mov esi, ecx
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        mov ecx, esi
+        call ext_005DF5C0
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
