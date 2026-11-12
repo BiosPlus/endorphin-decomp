@@ -2469,3 +2469,85 @@ L_4E795E:
         ret
     }
 }
+
+// [0x004E1E90] sub_004E1E90 (183 bytes)
+extern "C" void ext_006721D0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004E1E90(void* self) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        push ebp
+        mov ebp, ecx
+        push esi
+        lea esi, [ebp + 0x10]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x10], ebp
+        jbe short L_4E1EAE
+        call dword ptr [mem_00925134]
+L_4E1EAE:
+        mov dword ptr [esp + 0x14], esi
+        lea esi, [ebp + 0x20]
+        mov ebx, edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe short L_4E1EC5
+        call dword ptr [mem_00925134]
+L_4E1EC5:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebp
+        jbe short L_4E1ED3
+        call dword ptr [mem_00925134]
+L_4E1ED3:
+        cmp esi, esi
+        je short L_4E1EDD
+        call dword ptr [mem_00925134]
+L_4E1EDD:
+        cmp edi, ebp
+        je short L_4E1F2B
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_4E1EEC
+        call dword ptr [mem_00925134]
+L_4E1EEC:
+        mov ebp, dword ptr [esp + 0x14]
+        test ebp, ebp
+        jne short L_4E1EFA
+        call dword ptr [mem_00925134]
+L_4E1EFA:
+        cmp ebx, dword ptr [ebp + 0x8]
+        jb short L_4E1F05
+        call dword ptr [mem_00925134]
+L_4E1F05:
+        push ebx
+        mov ecx, edi
+        call ext_006721D0
+        cmp ebx, dword ptr [ebp + 0x8]
+        jb short L_4E1F18
+        call dword ptr [mem_00925134]
+L_4E1F18:
+        add ebx, 0x8
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_4E1F26
+        call dword ptr [mem_00925134]
+L_4E1F26:
+        add edi, 0x8
+        jmp short L_4E1EC5
+L_4E1F2B:
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [ecx + 0x34]
+        test eax, eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        je short L_4E1F43
+        add ecx, 0x38
+        mov dword ptr [eax + 0x298], ecx
+L_4E1F43:
+        add esp, 0xc
+        ret
+    }
+}
