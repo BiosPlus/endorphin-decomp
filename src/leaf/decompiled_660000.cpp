@@ -4503,3 +4503,82 @@ extern "C" __declspec(naked) void* __fastcall fn_00661C90(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00661DE0] sub_00661DE0 (153 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00661DE0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 0x64]
+        add eax, 0x60
+        push edi
+        mov edi, dword ptr [ecx]
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        je L_661DFD
+        cmp ecx, eax
+        je L_661DFF
+    L_661DFD:
+        call ebx
+    L_661DFF:
+        cmp dword ptr [esi + 0xc], edi
+        jne L_661E39
+        mov esi, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi + 0x54]
+        mov edi, dword ptr [esp + 0x10]
+        add esi, 0x50
+        test ecx, ecx
+        je L_661E25
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb L_661E27
+    L_661E25:
+        call ebx
+    L_661E27:
+        mov edx, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [edx + edi*4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        call edx
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    L_661E39:
+        cmp dword ptr [esi + 0x8], 0x0
+        jne L_661E41
+        call ebx
+    L_661E41:
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0xc]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne L_661E4E
+        call ebx
+    L_661E4E:
+        mov esi, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [esi + 0x60]
+        mov edi, dword ptr [esp + 0x10]
+        add esi, 0x5c
+        test ecx, ecx
+        je L_661E6B
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x3
+        cmp edi, eax
+        jb L_661E6D
+    L_661E6B:
+        call ebx
+    L_661E6D:
+        mov edx, dword ptr [esi + 0x4]
+        lea eax, [edx + edi*8]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
