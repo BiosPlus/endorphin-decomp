@@ -9426,3 +9426,71 @@ extern "C" __declspec(naked) void __fastcall fn_00437E80(void* self) {
         ret
     }
 }
+
+// [0x00437F80] sub_00437F80 (118 bytes)
+extern "C" void ext_00437E80();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00437F80(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 14h]
+        mov ecx, dword ptr [esp + 8]
+        mov edx, dword ptr [esp + 4]
+        push ebx
+        mov ebx, dword ptr [esp + 10h]
+        push ebp
+        mov ebp, dword ptr [esp + 18h]
+        push esi
+        push edi
+        push 0
+        push eax
+        push ebp
+        push ebx
+        push ecx
+        push edx
+        lea eax, [esp + 34h]
+        push eax
+        call ext_00437E80
+        mov esi, dword ptr [eax]
+        mov edi, dword ptr [eax + 4]
+        add esp, 1Ch
+        test esi, esi
+        je L_inv1_00437F80
+        cmp esi, ebx
+        je L_ok0_00437F80
+    L_inv1_00437F80:
+        mov ebx, dword ptr [mem_00925134]
+        call ebx
+        jmp L_after0_00437F80
+    L_ok0_00437F80:
+        mov ebx, dword ptr [mem_00925134]
+    L_after0_00437F80:
+        cmp edi, ebp
+        je L_ret0_00437F80
+        test esi, esi
+        jne L_skip1_00437F80
+        call ebx
+    L_skip1_00437F80:
+        cmp edi, dword ptr [esi + 4]
+        jne L_skip2_00437F80
+        call ebx
+    L_skip2_00437F80:
+        mov ecx, dword ptr [esp + 24h]
+        mov edx, dword ptr [ecx]
+        cmp edx, dword ptr [edi + 0Ch]
+        jb L_ret0_00437F80
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 1
+        pop ebx
+        ret
+    L_ret0_00437F80:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
