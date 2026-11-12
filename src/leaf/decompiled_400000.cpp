@@ -3630,3 +3630,58 @@ extern "C" __declspec(naked) void __fastcall fn_0040B7B0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_004090C0();
+
+// [0x00409120] sub_00409120 (172 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00409120(void* self) {
+    __asm {
+        call ext_004090C0
+        test al, al
+        mov edx, dword ptr [ecx + 0x130]
+        jne loc_40915b
+        test edx, edx
+        jne loc_409137
+        xor eax, eax
+        jmp loc_409142
+    loc_409137:
+        mov eax, dword ptr [ecx + 0x134]
+        sub eax, edx
+        sar eax, 2
+    loc_409142:
+        shl eax, 5
+        add eax, 2
+        mov edx, eax
+        mov eax, 0x2a
+        mov dword ptr [ecx + 0xec], 0
+        jmp loc_409183
+    loc_40915b:
+        test edx, edx
+        jne loc_409163
+        xor eax, eax
+        jmp loc_40916e
+    loc_409163:
+        mov eax, dword ptr [ecx + 0x134]
+        sub eax, edx
+        sar eax, 2
+    loc_40916e:
+        shl eax, 5
+        add eax, 2
+        mov edx, 0x2a
+        mov dword ptr [ecx + 0xf0], 0
+    loc_409183:
+        mov dword ptr [ecx + 0xc4], edx
+        mov dword ptr [ecx + 0xc8], eax
+        mov dword ptr [ecx + 0xac], edx
+        mov dword ptr [ecx + 0xb0], eax
+        mov dword ptr [ecx + 0xb4], edx
+        mov dword ptr [ecx + 0xb8], eax
+        mov dword ptr [ecx + 0x9c], edx
+        mov dword ptr [ecx + 0xa0], eax
+        mov dword ptr [ecx + 0xbc], edx
+        mov dword ptr [ecx + 0xc0], eax
+        mov dword ptr [ecx + 0xa4], edx
+        mov dword ptr [ecx + 0xa8], eax
+        ret
+    }
+}
