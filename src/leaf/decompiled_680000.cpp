@@ -4139,3 +4139,94 @@ extern "C" __declspec(naked) void __fastcall fn_00686780(void* self) {
         ret
     }
 }
+
+// [0x00687A40] sub_00687A40 (244 bytes)
+extern "C" int mem_00924EF4;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __cdecl fn_00687A40() {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8b5811
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        mov ebp, dword ptr [esp + 0x20]
+        lea eax, [edi - 0x1]
+        cdq
+        sub eax, edx
+        mov esi, eax
+        sar esi, 1
+        cmp dword ptr [esp + 0x28], edi
+        mov dword ptr [esp + 0x18], 0x0
+        jge L_00687AD5
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_00687A80:
+        lea eax, [8*esi]
+        sub eax, esi
+        lea ecx, [esp + 0x2c]
+        lea ebx, [ebp + 8*eax]
+        push ecx
+        push ebx
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        je L_00687AD5
+        lea edx, [8*edi]
+        sub edx, edi
+        lea edi, [ebp + 8*edx]
+        push ebx
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        add ebx, 0x1c
+        push ebx
+        lea ecx, [edi + 0x1c]
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi - 0x1]
+        cdq
+        sub eax, edx
+        mov edi, esi
+        sar eax, 1
+        cmp dword ptr [esp + 0x28], edi
+        mov esi, eax
+        jl L_00687A80
+    L_00687AD5:
+        lea eax, [8*edi]
+        sub eax, edi
+        lea ecx, [esp + 0x2c]
+        lea esi, [ebp + 8*eax]
+        push ecx
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        lea edx, [esp + 0x48]
+        push edx
+        lea ecx, [esi + 0x1c]
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x48]
+        mov dword ptr [esp + 0x18], 0x1
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x18], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
