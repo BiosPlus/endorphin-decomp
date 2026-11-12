@@ -3291,3 +3291,53 @@ extern "C" __declspec(naked) void __cdecl fn_00480CE0(unsigned* first, unsigned*
         ret
     }
 }
+
+// [0x0048D4C0] sub_0048D4C0 (70 bytes)
+extern "C" void ext_0067FA00();
+extern "C" __declspec(naked) void* __fastcall fn_0048D4C0(void* self) {
+    __asm {
+        push -1
+        _emit 0x68
+        _emit 0x98
+        _emit 0x4f
+        _emit 0x88
+        _emit 0x00
+        _emit 0x64
+        _emit 0xa1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push eax
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push ecx
+        xor eax, eax
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi + 0x4], eax
+        mov dword ptr [esi + 0x8], eax
+        mov dword ptr [esi + 0xc], eax
+        lea ecx, [esi + 0x10]
+        mov dword ptr [esp + 0x10], eax
+        call ext_0067FA00
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add esp, 0x10
+        ret
+    }
+}
