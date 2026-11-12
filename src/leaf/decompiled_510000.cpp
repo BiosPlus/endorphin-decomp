@@ -3109,3 +3109,37 @@ extern "C" void __cdecl fn_00518950(int a1, int a2, int a3, int a4) {
         ext_00518770(a1, a2, a3, a4);
     }
 }
+
+// [0x005111E0] sub_005111E0 (139 bytes)
+extern "C" void __fastcall ext_00695240(void* self);
+
+struct MTRandContext_5111E0 {
+    char pad[0x9c0];
+    unsigned int* next;
+    int left;
+};
+
+extern "C" unsigned int __fastcall fn_005111E0(MTRandContext_5111E0* self, int edx_unused, const unsigned int* limit) {
+    unsigned int mask = *limit;
+    mask |= mask >> 1;
+    mask |= mask >> 2;
+    mask |= mask >> 4;
+    mask |= mask >> 8;
+    mask |= mask >> 16;
+
+    unsigned int y;
+    do {
+        if (self->left == 0) {
+            ext_00695240(self);
+        }
+        self->left--;
+        y = *self->next++;
+        y ^= (y >> 11);
+        y ^= (y & 0xff3a58ad) << 7;
+        y ^= (y & 0xffffdf8c) << 15;
+        y ^= (y >> 18);
+        y &= mask;
+    } while (y > *limit);
+
+    return y;
+}
