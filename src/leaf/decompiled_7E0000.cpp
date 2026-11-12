@@ -737,3 +737,122 @@ extern "C" float __cdecl fn_007E9580(const float* angles) {
          - (mem_00B61F50 * c0 + mem_00B61F54 * s0) * mem_00B61F70
          - (c0 * c1 * mem_00B61F60 + c0 * s1 * mem_00B61F64 + s0 * c1 * mem_00B61F68 + s0 * s1 * mem_00B61F6C) * (mem_00B61F70 * mem_00B61F74);
 }
+
+// [0x007E6480] sub_007E6480 (250 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007E6480(void* self) {
+    __asm {
+        fld dword ptr [esp + 0x10]
+        sub esp, 8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        mov esi, dword ptr [esp + 0x20]
+        mov ebx, eax
+        push edi
+        xor edi, edi
+        sub ebx, ecx
+        sub esi, ecx
+        sub edx, ecx
+
+    loc_7E649D:
+        fld dword ptr [ebx + ecx]
+        fabs
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fcomp st(1)
+        fnstsw ax
+        fld dword ptr [esi + ecx]
+        test ah, 5
+        jp loc_7E64DB
+        fabs
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [ecx]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp loc_7E655C
+
+    loc_7E64CF:
+        pop edi
+        fstp st(0)
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 8
+        ret
+
+    loc_7E64DB:
+        fmul dword ptr [edx + ecx]
+        fchs
+        fld dword ptr [edx + ecx]
+        fabs
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fmul dword ptr [ecx]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [edx + ecx]
+        fabs
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fmul dword ptr [ecx]
+        fld dword ptr [esi + ecx]
+        fmul dword ptr [edx + ecx]
+        fchs
+        faddp st(1), st
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x14]
+        fld dword ptr [ebp]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 5
+        jp loc_7E6527
+        fstp dword ptr [ebp]
+        jmp loc_7E6529
+
+    loc_7E6527:
+        fstp st(0)
+
+    loc_7E6529:
+        mov eax, dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [eax]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne loc_7E6544
+        mov eax, dword ptr [esp + 0x20]
+        fstp dword ptr [eax]
+        jmp loc_7E6546
+
+    loc_7E6544:
+        fstp st(0)
+
+    loc_7E6546:
+        mov eax, dword ptr [esp + 0x20]
+        fld dword ptr [eax]
+        fld dword ptr [ebp]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        je loc_7E64CF
+
+    loc_7E655C:
+        add edi, 1
+        add ecx, 4
+        cmp edi, 3
+        jl loc_7E649D
+
+        pop edi
+        fstp st(0)
+        pop esi
+        pop ebp
+        mov eax, 1
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
