@@ -3254,3 +3254,69 @@ extern "C" __declspec(naked) void __fastcall fn_0053B130(void* self, int edx_unu
         ret 0xc
     }
 }
+
+extern "C" int (__stdcall * const mem_009255AC)(void*, unsigned int);
+extern "C" int (__stdcall * const mem_009256A0)(int);
+extern "C" int (__stdcall * const mem_009255E0)(void*, const void*, const void*, unsigned int);
+extern "C" int (__stdcall * const mem_009253E0)(void*, void*);
+extern "C" int (__stdcall * const mem_009253DC)(void*);
+extern "C" int (__stdcall * const mem_00925620)(void*, void*);
+extern "C" int (__stdcall * const mem_009255B0)(void*);
+extern "C" int (__stdcall * const mem_009255B4)(const void*, void*);
+
+extern "C" int mem_0095477C;
+extern "C" int mem_0095475C;
+extern "C" int mem_00954738;
+extern "C" int mem_00954718;
+extern "C" int mem_009546FC;
+extern "C" int mem_009546F4;
+extern "C" int mem_009546D8;
+
+struct WindowContext_00532CC0 {
+    char pad0[0x1c];
+    void* hWnd;
+    void* hInstance;
+    void* hDC;
+    void* hRC;
+    char pad1[0x374 - 0x2c];
+    char fullscreen;
+    char pad2[0x492 - 0x375];
+    char initialized;
+};
+
+// [0x00532CC0] sub_00532CC0 (230 bytes)
+extern "C" void __fastcall fn_00532CC0(WindowContext_00532CC0* self) {
+    if (!self->initialized) {
+        return;
+    }
+    if (self->fullscreen) {
+        mem_009255AC(0, 0);
+        mem_009256A0(1);
+    }
+    int (__stdcall *msgBox)(void*, const void*, const void*, unsigned int) = mem_009255E0;
+    if (self->hRC != 0) {
+        if (!mem_009253E0(0, 0)) {
+            msgBox(0, &mem_0095475C, &mem_0095477C, 0x40);
+        }
+        if (!mem_009253DC(self->hRC)) {
+            msgBox(0, &mem_00954738, &mem_0095477C, 0x40);
+        }
+        self->hRC = 0;
+    }
+    if (self->hDC != 0) {
+        if (!mem_00925620(self->hWnd, self->hDC)) {
+            msgBox(0, &mem_00954718, &mem_0095477C, 0x40);
+            self->hDC = 0;
+        }
+    }
+    if (self->hWnd != 0) {
+        if (!mem_009255B0(self->hWnd)) {
+            msgBox(0, &mem_009546FC, &mem_0095477C, 0x40);
+            self->hWnd = 0;
+        }
+    }
+    if (!mem_009255B4(&mem_009546F4, self->hInstance)) {
+        msgBox(0, &mem_009546D8, &mem_0095477C, 0x40);
+        self->hInstance = 0;
+    }
+}
