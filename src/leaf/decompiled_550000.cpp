@@ -3996,3 +3996,62 @@ extern "C" __declspec(naked) void __fastcall fn_00553450(void* self) {
         ret
     }
 }
+
+// [0x00554040] sub_00554040 (202 bytes)
+// SEH-guarded copy: calls base-part helper 0x00553F00 on (this, src), copy-constructs the
+// std::string at +0x54 from src+0x54, copies 12 floats from +0x70..+0x9c, returns this in eax.
+extern "C" void ext_00553F00();
+extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void __fastcall fn_00554040(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x89a0d8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        call ext_00553F00
+        lea eax, [edi + 0x54]
+        push eax
+        lea ecx, [esi + 0x54]
+        mov dword ptr [esp + 0x18], 0
+        call dword ptr [mem_00924FE0]
+        fld dword ptr [edi + 0x70]
+        fstp dword ptr [esi + 0x70]
+        mov ecx, dword ptr [esp + 0xc]
+        fld dword ptr [edi + 0x74]
+        mov eax, esi
+        fstp dword ptr [esi + 0x74]
+        fld dword ptr [edi + 0x78]
+        fstp dword ptr [esi + 0x78]
+        fld dword ptr [edi + 0x7c]
+        fstp dword ptr [esi + 0x7c]
+        fld dword ptr [edi + 0x80]
+        fstp dword ptr [esi + 0x80]
+        fld dword ptr [edi + 0x84]
+        fstp dword ptr [esi + 0x84]
+        fld dword ptr [edi + 0x88]
+        fstp dword ptr [esi + 0x88]
+        fld dword ptr [edi + 0x8c]
+        fstp dword ptr [esi + 0x8c]
+        fld dword ptr [edi + 0x90]
+        fstp dword ptr [esi + 0x90]
+        fld dword ptr [edi + 0x94]
+        fstp dword ptr [esi + 0x94]
+        fld dword ptr [edi + 0x98]
+        fstp dword ptr [esi + 0x98]
+        fld dword ptr [edi + 0x9c]
+        pop edi
+        fstp dword ptr [esi + 0x9c]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
