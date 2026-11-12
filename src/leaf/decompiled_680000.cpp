@@ -4535,3 +4535,27 @@ extern "C" __declspec(naked) char* __cdecl fn_00685DA0(char* first, char* last, 
         ret
     }
 }
+
+// [0x00686800] sub_00686800 (41 bytes)
+extern "C" void ext_00685DA0();
+
+extern "C" __declspec(naked) void __fastcall fn_00686800(void* self) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x10]
+        mov byte ptr [esp], 0x0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        push edx
+        call ext_00685DA0
+        add esp, 0x1c
+        ret 0xc
+    }
+}
