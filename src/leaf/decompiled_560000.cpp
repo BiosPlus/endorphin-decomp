@@ -1229,3 +1229,83 @@ epilogue:
         ret 8
     }
 }
+
+// [0x00564530] sub_00564530 (164 bytes)
+extern "C" int mem_00925818;
+extern "C" int mem_0092581C;
+
+extern "C" __declspec(naked) int __fastcall fn_00564530(void* self, int edx_unused, int n, int m) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp+0xc]
+        mov esi, ecx
+        cmp dword ptr [esi+4], edi
+        jl L564530_alloc
+        mov ecx, dword ptr [esi+8]
+        mov dword ptr [esi], edi
+        lea eax, [edi+edi]
+        mov dword ptr [ecx+8], eax
+        mov eax, dword ptr [esi]
+        pop edi
+        pop esi
+        ret 8
+L564530_alloc:
+        push ebx
+        push ebp
+        mov ebp, edi
+        imul ebp, dword ptr [esp+0x18]
+        lea edx, [ebp+ebp]
+        push edx
+        push 4
+        mov dword ptr [esp+0x20], ebp
+        call dword ptr [mem_00925818]
+        mov ebx, eax
+        add esp, 8
+        test ebx, ebx
+        je L564530_fail
+        mov eax, dword ptr [esi+8]
+        mov ecx, dword ptr [eax+0x10]
+        xor edx, edx
+        cmp dword ptr [esi], edx
+        mov dword ptr [esp+0x14], ecx
+        jle L564530_nocopy
+        mov eax, ebx
+        sub ecx, ebx
+L564530_loop:
+        mov ebp, dword ptr [ecx+eax]
+        mov dword ptr [eax], ebp
+        mov ebp, dword ptr [ecx+eax+4]
+        mov dword ptr [eax+4], ebp
+        add edx, 1
+        add eax, 8
+        cmp edx, dword ptr [esi]
+        jl L564530_loop
+        mov ecx, dword ptr [esp+0x14]
+        mov ebp, dword ptr [esp+0x18]
+L564530_nocopy:
+        push ecx
+        call dword ptr [mem_0092581C]
+        mov ecx, dword ptr [esi+8]
+        mov dword ptr [ecx+0x10], ebx
+        mov eax, dword ptr [esi+8]
+        add esp, 4
+        lea edx, [edi+edi]
+        mov dword ptr [eax+8], edx
+        mov dword ptr [esi+4], ebp
+        pop ebp
+        pop ebx
+        mov dword ptr [esi], edi
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 8
+L564530_fail:
+        mov eax, dword ptr [esi]
+        pop ebp
+        pop ebx
+        pop edi
+        pop esi
+        ret 8
+    }
+}
