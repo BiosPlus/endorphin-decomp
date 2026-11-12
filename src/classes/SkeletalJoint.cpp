@@ -296,3 +296,73 @@ extern "C" void __fastcall fn_00646360(void* self, int edx_unused, float* a1) {
     int a = *(int*)((char*)self + 0x64);
     ((void (__cdecl*)(int, float*))ext_007C5BA0)(a, tmp);
 }
+
+extern "C" void ext_0064E7C0();
+extern "C" void ext_00693F40();
+extern "C" void ext_007C5BD0();
+extern "C" double mem_00993830;
+
+// [0x00650980] SkeletalJoint::vfunc_31 (168 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00650980(void* self, int edx_unused, float* p, unsigned char flag) {
+    __asm {
+        sub esp, 1Ch
+        mov eax, dword ptr [esp + 20h]
+        fld dword ptr [eax]
+        push ebx
+        mov bl, byte ptr [esp + 28h]
+        fstp dword ptr [esp + 4]
+        test bl, bl
+        fld dword ptr [eax + 4]
+        fstp dword ptr [esp + 8]
+        push esi
+        fld dword ptr [eax + 8]
+        mov esi, ecx
+        fstp dword ptr [esp + 10h]
+        jne skip_virt_650980
+        mov eax, dword ptr [esi]
+        mov eax, dword ptr [eax + 90h]
+        lea ecx, [esp + 8]
+        push ecx
+        mov edx, ecx
+        push edx
+        mov ecx, esi
+        call eax
+skip_virt_650980:
+        lea ecx, [esp + 8]
+        push ecx
+        mov ecx, esi
+        call ext_0064E7C0
+        fldz
+        fst dword ptr [esp + 20h]
+        lea edx, [esp + 8]
+        fst dword ptr [esp + 1Ch]
+        push edx
+        fst dword ptr [esp + 1Ch]
+        lea ecx, [esp + 18h]
+        fstp dword ptr [esp + 18h]
+        call ext_00693F40
+        test bl, bl
+        jne skip_scale_650980
+        fld dword ptr [esp + 14h]
+        fld qword ptr [mem_00993830]
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [esp + 18h]
+        fmul st, st(1)
+        fstp dword ptr [esp + 18h]
+        fmul dword ptr [esp + 1Ch]
+        fstp dword ptr [esp + 1Ch]
+skip_scale_650980:
+        mov ecx, dword ptr [esi + 64h]
+        lea eax, [esp + 14h]
+        push eax
+        push ecx
+        call ext_007C5BD0
+        add esp, 8
+        pop esi
+        pop ebx
+        add esp, 1Ch
+        ret 8
+    }
+}
