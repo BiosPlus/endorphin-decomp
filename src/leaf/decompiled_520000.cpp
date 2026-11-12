@@ -3181,3 +3181,59 @@ done:
         ret
     }
 }
+
+// [0x005290A0] sub_005290A0 (117 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_005290A0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [esi + 0x4]
+        xor ebp, ebp
+        test ecx, ecx
+        mov dword ptr [esp + 0x8], ecx
+        mov dword ptr [esp + 0xc], eax
+        jle L_ret
+        push ebx
+        mov bl, byte ptr [esp + 0x1c]
+        push edi
+    L_outer_test:
+        test eax, eax
+        jle L_outer_inc
+        lea ecx, [esi + 0x29]
+        xor edi, edi
+        mov dword ptr [esp + 0x1c], eax
+    L_inner_push:
+        push esi
+        call ext_00528D80
+        imul eax, ebp
+        add eax, edi
+        mov cl, byte ptr [eax + esi + 0x28]
+        mov dl, byte ptr [esi + eax + 0x2a]
+        add esp, 0x4
+        test bl, bl
+        jne L_skip_swap
+        mov byte ptr [eax + esi + 0x28], dl
+        mov byte ptr [esi + eax + 0x2a], cl
+    L_skip_swap:
+        add edi, 0x3
+        sub dword ptr [esp + 0x1c], 0x1
+        jne L_inner_push
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x14]
+    L_outer_inc:
+        add ebp, 0x1
+        cmp ebp, ecx
+        jl L_outer_test
+        pop edi
+        pop ebx
+    L_ret:
+        mov eax, esi
+        pop esi
+        pop ebp
+        add esp, 0x8
+        ret
+    }
+}
