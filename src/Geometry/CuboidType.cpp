@@ -142,3 +142,85 @@ extern "C" __declspec(naked) float __fastcall fn_005B1680(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x005B12B0] Geometry::CuboidType::vfunc_4 (184 bytes)
+extern "C" void ext_0047FFA0();
+extern "C" void ext_006A7250();
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) float __fastcall fn_005B12B0(void* self, int edx_unused, float* a1, void* a2, float* a3) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        fld qword ptr [mem_00993828]
+        sub esp, 0x10
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        mov ebp, dword ptr [esp + 0x24]
+        push esi
+        push edi
+        mov edi, ebp
+        xor esi, esi
+        mov edx, ebx
+        sub edi, ebx
+    L_loop:
+        push esi
+        call ext_005B11E0
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [edi + edx]
+        fld dword ptr [esp + 0x24]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jnp L_store
+        fchs
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [edi + edx]
+        fld dword ptr [esp + 0x24]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x41
+        je L_store
+        fstp st(0)
+        fld dword ptr [edi + edx]
+    L_store:
+        fstp dword ptr [edx]
+        add esi, 0x1
+        add edx, 0x4
+        cmp esi, 0x3
+        jl L_loop
+        fstp st(0)
+        push ebx
+        fld1
+        lea eax, [esp + 0x14]
+        push eax
+        fstp dword ptr [ebx + 0xc]
+        mov ecx, ebp
+        call ext_0047FFA0
+        fld dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x18]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [esp + 0x24]
+        call ext_006A7250
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret 0xc
+    }
+}
