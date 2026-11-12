@@ -8201,3 +8201,35 @@ skip_call:
         ret 0x4
     }
 }
+
+// [0x0043DEA0] sub_0043DEA0 (55 bytes)
+extern "C" void ext_004132D0();
+extern "C" void ext_0043DC90();
+extern "C" int mem_00925688;
+extern "C" int mem_0092568C;
+
+extern "C" __declspec(naked) void __fastcall fn_0043DEA0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        je short skip_call
+        push 0x1
+        call ext_004132D0
+skip_call:
+        mov eax, dword ptr [esi + 0x20]
+        push 0x1
+        push 0x0
+        push eax
+        call dword ptr [mem_00925688]
+        mov ecx, dword ptr [esi + 0x20]
+        push ecx
+        call dword ptr [mem_0092568C]
+        push -0x1
+        mov ecx, esi
+        call ext_0043DC90
+        pop esi
+        ret 0x4
+    }
+}
