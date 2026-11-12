@@ -3961,3 +3961,104 @@ EPILOGUE:
         ret 0x10
     }
 }
+
+// [0x006B2FB0] sub_006B2FB0 (254 bytes)
+extern "C" void ext_006B2F70();
+extern "C" int mem_00B5D248;
+extern "C" int mem_00B5D23C;
+extern "C" int mem_00B5D24C;
+extern "C" int mem_00924208;
+extern "C" int mem_009241D8;
+extern "C" int mem_00B5D22C;
+extern "C" int mem_00B5D230;
+extern "C" int mem_00B5D234;
+extern "C" int mem_00B5D238;
+extern "C" int mem_00B5D240;
+extern "C" int mem_00B5D244;
+
+extern "C" __declspec(naked) int __cdecl fn_006B2FB0(void) {
+    __asm {
+        push ebx
+        xor ebx, ebx
+        cmp dword ptr [mem_00B5D248], ebx
+        je L_init
+        xor eax, eax
+        cmp dword ptr [mem_00B5D23C], ebx
+        pop ebx
+        setne al
+        ret
+L_init:
+        push esi
+        push edi
+        call ext_006B2F70
+        push 0x99192c
+        mov dword ptr [mem_00B5D24C], eax
+        call dword ptr [mem_00924208]
+        mov esi, eax
+        cmp esi, ebx
+        je L_fail
+        mov edi, dword ptr [mem_009241D8]
+        push 0x991918
+        push esi
+        call edi
+        cmp eax, ebx
+        mov dword ptr [mem_00B5D22C], eax
+        je L_fail
+        push 0x991904
+        push esi
+        call edi
+        cmp eax, ebx
+        mov dword ptr [mem_00B5D230], eax
+        je L_fail
+        push 0x9918f4
+        push esi
+        call edi
+        cmp eax, ebx
+        mov dword ptr [mem_00B5D234], eax
+        je L_fail
+        push 0x9918e0
+        push esi
+        call edi
+        cmp eax, ebx
+        mov dword ptr [mem_00B5D238], eax
+        je L_fail
+        push 0x9918cc
+        push esi
+        call edi
+        cmp eax, ebx
+        mov dword ptr [mem_00B5D240], eax
+        je L_fail
+        push 0x9918bc
+        push esi
+        call edi
+        cmp eax, ebx
+        mov dword ptr [mem_00B5D23C], eax
+        je L_fail
+        push 0x9918a8
+        push esi
+        call edi
+        cmp eax, ebx
+        mov dword ptr [mem_00B5D244], eax
+        je L_fail
+        pop edi
+        mov eax, 0x1
+        pop esi
+        mov dword ptr [mem_00B5D248], eax
+        pop ebx
+        ret
+L_fail:
+        pop edi
+        pop esi
+        mov dword ptr [mem_00B5D22C], ebx
+        mov dword ptr [mem_00B5D230], ebx
+        mov dword ptr [mem_00B5D234], ebx
+        mov dword ptr [mem_00B5D238], ebx
+        mov dword ptr [mem_00B5D23C], ebx
+        mov dword ptr [mem_00B5D240], ebx
+        mov dword ptr [mem_00B5D244], ebx
+        mov dword ptr [mem_00B5D248], 0x1
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
