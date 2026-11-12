@@ -3572,3 +3572,25 @@ extern "C" void __cdecl fn_0050FF60(int a1, int a2, int a3, int a4) {
         ext_0050FDA0(a1, a2, a3, a4);
     }
 }
+
+// [0x00508680] sub_00508680 (82 bytes)
+extern "C" void __fastcall ext_00695240(void* self);
+
+struct MT_00508680 {
+    unsigned int state[624];
+    unsigned int* next;
+    int left;
+};
+
+extern "C" unsigned int __fastcall fn_00508680(MT_00508680* self) {
+    if (self->left == 0) {
+        ext_00695240(self);
+    }
+    self->left--;
+    unsigned int y = *self->next++;
+    y ^= (y >> 11);
+    y ^= (y << 7) & 0x9d2c5680;
+    y ^= (y << 15) & 0xefc60000;
+    y ^= (y >> 18);
+    return y;
+}

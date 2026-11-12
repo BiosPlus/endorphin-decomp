@@ -12,5 +12,7 @@
   "relocations": [
     "0x0050868D"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash",
+  "matched_at": "2026-11-12T10:38:30Z"
 }
