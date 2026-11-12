@@ -2402,3 +2402,32 @@ extern "C" __declspec(naked) void __fastcall fn_00575170(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00576260] sub_00576260 (41 bytes)
+// Stack args: arg1 = first, arg2 = last, arg3 = value. For p = first; p != last; p += 0xa0: push value, ecx = p, call sub_00575170 (callee cleans the pushed arg). Plain ret.
+extern "C" void ext_00575170();
+
+extern "C" __declspec(naked) void __cdecl fn_00576260(void* first, void* last, const void* value) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+    loop_top:
+        push ebx
+        mov ecx, esi
+        call ext_00575170
+        add esi, 0xa0
+        cmp esi, edi
+        jne loop_top
+        pop ebx
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
