@@ -2409,3 +2409,33 @@ epilogue:
         ret 8
     }
 }
+
+// [0x0056B710] sub_0056B710 (92 bytes)
+extern "C" void ext_00558920();
+extern "C" void ext_0056B2E0();
+extern "C" __declspec(naked) void __fastcall fn_0056B710(void* self) {
+    __asm {
+        push -1
+        push 0x89a648
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x9577dc
+        mov dword ptr [esi + 0x4], 0x9577d0
+        lea ecx, [esi + 0x46c]
+        mov dword ptr [esp + 0x10], 0
+        call ext_0056B2E0
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_00558920
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
