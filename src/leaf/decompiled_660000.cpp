@@ -5156,3 +5156,50 @@ extern "C" __declspec(naked) int __fastcall fn_00661BF0(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x006667E0] sub_006667E0 (156 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006667E0(void* self, int edx_unused, const std::string& a1, const std::string& a2, const std::string& a3, const std::string& a4, bool a5, const std::string& a6) {
+    __asm {
+        push -0x1
+        push 0x8b2f2d
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 0x8], esi
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x1c]
+        push ecx
+        lea ecx, [esi + 0x1c]
+        mov dword ptr [esp + 0x14], 0x0
+        call dword ptr [mem_00924FE0]
+        mov edx, dword ptr [esp + 0x2c]
+        push edx
+        lea ecx, [esi + 0x38]
+        mov byte ptr [esp + 0x14], 0x1
+        call dword ptr [mem_00924FE0]
+        mov eax, dword ptr [esp + 0x24]
+        push eax
+        lea ecx, [esi + 0x54]
+        mov byte ptr [esp + 0x14], 0x2
+        call dword ptr [mem_00924FE0]
+        mov cl, byte ptr [esp + 0x28]
+        mov edx, dword ptr [esp + 0x20]
+        mov byte ptr [esi + 0x70], cl
+        push edx
+        lea ecx, [esi + 0x74]
+        mov byte ptr [esp + 0x14], 0x3
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi + 0x94], 0x0
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x18
+    }
+}
