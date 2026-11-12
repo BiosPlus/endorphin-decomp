@@ -3,6 +3,8 @@
 extern "C" void ext_0043CD80();
 extern "C" void ext_004429C0();
 extern "C" void ext_0043C9D0();
+extern "C" void ext_0043D620();
+extern "C" void ext_006A60D0();
 extern "C" int mem_00925688;
 
 // [0x004432A0] MultiTrackView::MultiTrackViewStates::WaitState::vfunc_19 (36 bytes)
@@ -22,5 +24,22 @@ extern "C" unsigned char __fastcall fn_00442AF0(void* self, int edx_unused, int 
     unsigned char* s = (unsigned char*)self;
     ((void (__fastcall*)(void*))ext_004429C0)(self);
     ((void (__fastcall*)(void*, int, int, int, int, int))ext_0043C9D0)(*(void**)(s + 0x8), a2, a1, a2, a3, a4);
+    return 1;
+}
+
+// [0x004429F0] MultiTrackView::MultiTrackViewStates::WaitState::vfunc_4 (77 bytes)
+extern "C" unsigned char __fastcall fn_004429F0(void* self, int edx_unused, int a1, int a2, int a3) {
+    unsigned char* s = (unsigned char*)self;
+    if (a2 >= *(int*)(*(unsigned char**)(s + 0x8) + 0xfc)) goto done;
+    {
+        void* r = ((void* (__thiscall*)(void*, int*))ext_0043D620)(*(void**)(s + 0x8), &a2);
+        if (!r) goto done;
+        if (*(int*)((unsigned char*)r + 0x14) != *(int*)(s + 0x10)) goto done;
+        void* c = *(void**)(s + 0x8);
+        void** vt = *(void***)c;
+        ((void (__thiscall*)(void*, int*, int))(*(void**)((unsigned char*)vt + 0x14c)))(c, &a2, a1);
+    }
+done:
+    ((void (__thiscall*)(void*))ext_006A60D0)(*(void**)(s + 0x8));
     return 1;
 }
