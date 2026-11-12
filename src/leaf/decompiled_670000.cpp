@@ -4181,3 +4181,74 @@ extern "C" __declspec(naked) void __fastcall fn_006751B0(void* self) {
         ret
     }
 }
+
+// [0x0067D840] sub_0067D840 (179 bytes)
+extern "C" void ext_0067B7F0();
+extern "C" __declspec(naked) void __fastcall fn_0067D840(void* self) {
+    __asm {
+        sub esp, 0ch
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_0067B7F0
+        fld dword ptr [esi + 4]
+        fmul dword ptr [esi + 14h]
+        lea edi, [esi + 0ch]
+        fld dword ptr [edi + 4]
+        lea ebx, [esi + 18h]
+        fmul dword ptr [esi + 8]
+        mov ecx, ebx
+        fsubp st(1), st
+        fstp dword ptr [esp + 0ch]
+        fld dword ptr [edi]
+        fmul dword ptr [esi + 8]
+        fld dword ptr [edi + 8]
+        fmul dword ptr [esi]
+        fsubp st(1), st
+        fstp dword ptr [esp + 10h]
+        fld dword ptr [edi + 4]
+        fmul dword ptr [esi]
+        fld dword ptr [edi]
+        fmul dword ptr [esi + 4]
+        fsubp st(1), st
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [esp + 0ch]
+        fstp dword ptr [ebx]
+        fld dword ptr [esp + 10h]
+        fstp dword ptr [ebx + 4]
+        fld dword ptr [esp + 14h]
+        fstp dword ptr [ebx + 8]
+        call ext_0067B7F0
+        fld dword ptr [esi + 8]
+        mov ecx, edi
+        fmul dword ptr [ebx + 4]
+        fld dword ptr [esi + 4]
+        fmul dword ptr [ebx + 8]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0ch]
+        fld dword ptr [ebx + 8]
+        fmul dword ptr [esi]
+        fld dword ptr [ebx]
+        fmul dword ptr [esi + 8]
+        fsubp st(1), st
+        fstp dword ptr [esp + 10h]
+        fld dword ptr [esi + 4]
+        fmul dword ptr [ebx]
+        fld dword ptr [esi]
+        fmul dword ptr [ebx + 4]
+        fsubp st(1), st
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [esp + 0ch]
+        fstp dword ptr [edi]
+        fld dword ptr [esp + 10h]
+        fstp dword ptr [edi + 4]
+        fld dword ptr [esp + 14h]
+        fstp dword ptr [edi + 8]
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0ch
+        jmp ext_0067B7F0
+    }
+}
