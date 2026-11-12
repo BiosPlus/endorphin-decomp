@@ -305,3 +305,78 @@ L_done:
         ret 0x4
     }
 }
+
+// [0x00630EA0] EffectorSkeletal::vfunc_15 (191 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00630EA0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [edi + 0x8]
+        push eax
+        push ecx
+        mov ecx, dword ptr [edi + 0xc]
+        call ext_005DFAD0
+        mov esi, eax
+        test esi, esi
+        je L_done
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x1c]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 0xd0]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x38]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 0xec]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x18]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 0xcc]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x28]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 0xdc]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x2c]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 0xe0]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x34]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 0xe8]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x30]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 0xe4]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x24]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 0xd8]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x20]
+        mov ecx, esi
+        call eax
+        fstp dword ptr [edi + 0xd4]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x3c]
+        mov ecx, esi
+        call eax
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        call ext_00630CB0
+L_done:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
