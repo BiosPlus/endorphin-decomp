@@ -7421,3 +7421,90 @@ L_zero:
         ret
     }
 }
+
+// [0x00662310] sub_00662310 (230 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00662310(void* self, int edx_unused, int arg1, int arg2) {
+    __asm {
+        push -1
+        push 0x8b28e6
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0ch
+        mov eax, dword ptr [esp + 1ch]
+        push ebx
+        push esi
+        mov esi, ecx
+        mov byte ptr [esi], 1
+        mov dword ptr [esi + 4], eax
+        push edi
+        xor edi, edi
+        mov dword ptr [esi + 8], edi
+        mov dword ptr [esi + 0ch], edi
+        mov dword ptr [esp + 14h], esi
+        mov dword ptr [esi + 18h], edi
+        mov dword ptr [esi + 1ch], edi
+        mov dword ptr [esi + 20h], edi
+        mov dword ptr [esi + 10h], 0x94436c
+        mov dword ptr [esi + 28h], edi
+        mov dword ptr [esi + 2ch], edi
+        mov dword ptr [esi + 30h], edi
+        mov dword ptr [esi + 34h], edi
+        mov dword ptr [esp + 20h], 1
+        mov dword ptr [esi + 40h], edi
+        mov dword ptr [esi + 44h], edi
+        mov dword ptr [esi + 48h], edi
+        mov dword ptr [esi + 38h], 0x944380
+        mov dword ptr [esi + 50h], edi
+        mov dword ptr [esi + 54h], edi
+        mov dword ptr [esi + 58h], edi
+        mov dword ptr [esi + 5ch], edi
+        mov ebx, dword ptr [esp + 2ch]
+        cmp ebx, edi
+        mov eax, dword ptr [esi + 4]
+        mov byte ptr [esp + 20h], 3
+        je short L_else_00662310
+        mov edx, dword ptr [eax + 64h]
+        mov edx, dword ptr [edx]
+        lea ecx, [eax + 60h]
+        mov dword ptr [esi + 8], ecx
+        mov dword ptr [esi + 0ch], edx
+        cmp dword ptr [eax + 68h], edi
+        je short L_end_00662310
+        cmp dword ptr [ebx], edi
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        jne short L_skip1_00662310
+        call ebp
+L_skip1_00662310:
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [ebx + 4]
+        cmp ecx, dword ptr [eax + 4]
+        jne short L_skip2_00662310
+        call ebp
+L_skip2_00662310:
+        mov edx, dword ptr [ebx + 4]
+        mov eax, dword ptr [edx + 8]
+        cmp eax, edi
+        pop ebp
+        je short L_end_00662310
+        push eax
+        mov ecx, esi
+        call ext_00661F70
+        jmp short L_end_00662310
+L_else_00662310:
+        mov ecx, dword ptr [eax + 74h]
+        mov dword ptr [esi + 8], ecx
+        mov edx, dword ptr [eax + 78h]
+        mov dword ptr [esi + 0ch], edx
+L_end_00662310:
+        mov ecx, dword ptr [esp + 18h]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 18h
+        ret 8
+    }
+}
