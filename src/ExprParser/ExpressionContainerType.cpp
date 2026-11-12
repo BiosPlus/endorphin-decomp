@@ -293,3 +293,42 @@ L_null_0066C0B0:
         ret 0x8
     }
 }
+
+extern "C" void ext_004ECB40();
+extern "C" void ext_0041CF50();
+
+// [0x00699260] ExprParser::ExpressionContainerType::vfunc_34 (99 bytes)
+// SEH-guarded temp: out-param call via ext_004ECB40 on arg2, feed result into ext_0041CF50 on arg1,
+// then if the returned object is non-null dispatch its vtable slot 0x78 with &temp.
+extern "C" __declspec(naked) void __fastcall fn_00699260(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x008b33b8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x8
+        mov ecx, dword ptr [esp + 0x1c]
+        lea eax, [esp]
+        push eax
+        call ext_004ECB40
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        mov dword ptr [esp + 0x14], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x4]
+        test ecx, ecx
+        mov dword ptr [esp + 0x10], 0xffffffff
+        je done_00699260
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp]
+        push eax
+        call edx
+done_00699260:
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 0x8
+    }
+}
