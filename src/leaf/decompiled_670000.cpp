@@ -3947,3 +3947,64 @@ extern "C" __declspec(naked) void __cdecl fn_00672720(unsigned* first, unsigned*
         ret
     }
 }
+
+// [0x0067B140] sub_0067B140 (162 bytes)
+extern "C" void ext_0067B070();
+
+extern "C" __declspec(naked) void __fastcall fn_0067B140(void* self) {
+    __asm {
+        push -1
+        push 0x8b4a61
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x8
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        lea ecx, [esi + 0x8]
+        mov dword ptr [esp + 0xc], esi
+        mov dword ptr [esi], 0x98c5c8
+        call ext_0065C5F0
+        mov dword ptr [esp + 0x1c], 0
+        mov dword ptr [esi + 0xc], 0
+        push 0x18
+        mov byte ptr [esp + 0x20], 1
+        mov byte ptr [esi + 0x4], 0
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x10], eax
+        test eax, eax
+        mov byte ptr [esp + 0x1c], 2
+        je no_obj
+        mov ecx, eax
+        call ext_0067B070
+        mov ebp, eax
+        jmp after_obj
+no_obj:
+        xor ebp, ebp
+after_obj:
+        mov edi, dword ptr [esi + 0xc]
+        cmp ebp, edi
+        mov byte ptr [esp + 0x1c], 1
+        je skip_release
+        test edi, edi
+        je skip_release
+        mov ecx, edi
+        call ext_0067B090
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+skip_release:
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [esi + 0xc], ebp
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret
+    }
+}
