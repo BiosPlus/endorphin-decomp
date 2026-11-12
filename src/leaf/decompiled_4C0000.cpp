@@ -1524,3 +1524,62 @@ extern "C" __declspec(naked) void __fastcall fn_004C46D0(void* self) {
         ret
     }
 }
+
+// [0x004C5010] sub_004C5010 (167 bytes)
+extern "C" void ext_0067DAD0();
+extern "C" void ext_0067DB10();
+extern "C" __declspec(naked) void __fastcall fn_004C5010(void* self, int edx_unused, float s) {
+    __asm {
+        sub esp, 24h
+        fldz
+        push esi
+        fst dword ptr [esp + 0ch]
+        lea eax, [esp + 4]
+        fst dword ptr [esp + 8]
+        push eax
+        fst dword ptr [esp + 1ch]
+        mov esi, ecx
+        fst dword ptr [esp + 14h]
+        fst dword ptr [esp + 24h]
+        fstp dword ptr [esp + 20h]
+        fld1
+        fst dword ptr [esp + 8]
+        fst dword ptr [esp + 18h]
+        fstp dword ptr [esp + 28h]
+        call ext_0067DAD0
+        fld dword ptr [esp + 2ch]
+        fld dword ptr [esp + 4]
+        lea ecx, [esp + 4]
+        fmul st, st(1)
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 0ch]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0ch]
+        fld dword ptr [esp + 10h]
+        fmul st, st(1)
+        fstp dword ptr [esp + 10h]
+        fld dword ptr [esp + 14h]
+        fmul st, st(1)
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [esp + 18h]
+        fmul st, st(1)
+        fstp dword ptr [esp + 18h]
+        fld dword ptr [esp + 1ch]
+        fmul st, st(1)
+        fstp dword ptr [esp + 1ch]
+        fld dword ptr [esp + 20h]
+        fmul st, st(1)
+        fstp dword ptr [esp + 20h]
+        fld dword ptr [esp + 24h]
+        fmul st, st(1)
+        fstp dword ptr [esp + 24h]
+        fmul dword ptr [esp + 28h]
+        fstp dword ptr [esp + 28h]
+        call ext_0067DB10
+        pop esi
+        add esp, 24h
+        ret 4
+    }
+}
