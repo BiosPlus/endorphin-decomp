@@ -19,5 +19,7 @@
     "0x005148BA",
     "0x005148CD"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash",
+  "matched_at": "2026-11-12T11:41:19Z"
 }
