@@ -52,3 +52,92 @@ extern "C" void __fastcall fn_00449C10(void* self, int edx_unused, int a1) {
     ddx(a1, 1, p + 0x1fc);
     ddx(a1, 2, p + 0x270);
 }
+
+// [0x004498A0] RegistrationDialog::vfunc_86 (257 bytes)
+extern "C" void ext_00665010();
+extern "C" void ext_006A5E60();
+extern "C" void ext_006A5F4A();
+extern "C" void ext_006A5FB0();
+extern "C" int mem_009242F0;
+extern "C" int mem_00924300;
+extern "C" int mem_00924FD4;
+extern "C" int mem_00924FC0;
+extern "C" int mem_009242F4;
+
+extern "C" __declspec(naked) void __fastcall fn_004498A0(void* self) {
+    __asm {
+        push -1
+        push 0x87cd22
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        push 0x928b5d
+        lea ecx, [esp + 0x14]
+        call dword ptr [mem_009242F0]
+        push 0x928b5d
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x20], 0
+        call dword ptr [mem_009242F0]
+        lea eax, [esp + 0x10]
+        push eax
+        lea ecx, [esi + 0x11c]
+        mov byte ptr [esp + 0x20], 1
+        call ext_006A5F4A
+        lea ecx, [esp + 0xc]
+        push ecx
+        lea ecx, [esi + 0x170]
+        call ext_006A5F4A
+        lea ecx, [esp + 0x10]
+        lea edi, [esi + 0x1c4]
+        call dword ptr [mem_00924300]
+        push eax
+        mov ecx, edi
+        call dword ptr [mem_00924FD4]
+        lea ecx, [esp + 0xc]
+        lea ebx, [esi + 0x1e0]
+        call dword ptr [mem_00924300]
+        push eax
+        mov ecx, ebx
+        call dword ptr [mem_00924FD4]
+        push edi
+        call ext_00665010
+        push 0x928b5d
+        push edi
+        mov edi, dword ptr [mem_00924FC0]
+        call edi
+        add esp, 0xc
+        test al, al
+        jne short fail_004498A0
+        push 0x928b5d
+        push ebx
+        call edi
+        add esp, 8
+        test al, al
+        jne short fail_004498A0
+        mov ecx, esi
+        call ext_006A5FB0
+        jmp short epilogue_004498A0
+    fail_004498A0:
+        push 0
+        push 0
+        push 0x9337d8
+        call ext_006A5E60
+    epilogue_004498A0:
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_009242F4]
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_009242F4]
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret
+    }
+}
