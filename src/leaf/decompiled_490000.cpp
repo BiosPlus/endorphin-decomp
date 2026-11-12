@@ -4377,3 +4377,54 @@ extern "C" __declspec(naked) void* __fastcall fn_00498B60(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x004990C0] sub_004990C0 (106 bytes)
+// __thiscall with ret 4: calls sub_00498B60(this, buf, arg) and returns true iff
+// both r[2]-r[0] > 0 and r[3]-r[1] > 0 for the returned float quad r.
+extern "C" void ext_00498B60();
+
+extern "C" __declspec(naked) bool __fastcall fn_004990C0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        lea edx, [esp + 0x4]
+        push edx
+        call ext_00498B60
+        mov ecx, eax
+        fld dword ptr [ecx + 0x8]
+        fsub dword ptr [ecx]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fldz
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        je L_zero_pop
+        fld dword ptr [ecx + 0xc]
+        fsub dword ptr [ecx + 0x4]
+        fstp dword ptr [esp + 0x14]
+        fcomp dword ptr [esp + 0x14]
+        fnstsw ax
+        test ah, 0x1
+        je L_one
+        xor eax, eax
+        xor ecx, ecx
+        test al, al
+        sete cl
+        mov al, cl
+        add esp, 0x10
+        ret 0x4
+    L_zero_pop:
+        fstp st(0)
+    L_one:
+        mov eax, 0x1
+        xor ecx, ecx
+        test al, al
+        sete cl
+        mov al, cl
+        add esp, 0x10
+        ret 0x4
+    }
+}
