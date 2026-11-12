@@ -3663,3 +3663,52 @@ fail_495140:
         ret 0x4
     }
 }
+
+// [0x004951F0] sub_004951F0 (86 bytes)
+// __thiscall (ret 8): self in ecx, two stack args (a1 at [esp+4], a2 at [esp+8]).
+extern "C" void ext_00495140();
+extern "C" void ext_00586140();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00A34650;
+extern "C" int mem_00924FC8;
+extern "C" int mem_00A30158;
+extern "C" int mem_00A2E2BC;
+
+extern "C" __declspec(naked) void __fastcall fn_004951F0(void* self, int edx_unused) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push edi
+        push eax
+        call ext_00495140
+        mov esi, eax
+        test esi, esi
+        je L_fail
+        mov ecx, dword ptr [mem_00A34650]
+        mov edi, dword ptr [esp + 0x10]
+        push ecx
+        push edi
+        call dword ptr [mem_00924FC8]
+        add esp, 0x8
+        test al, al
+        je L_fail
+        push 0x0
+        push offset mem_00A30158
+        push offset mem_00A2E2BC
+        push 0x0
+        push edi
+        mov ecx, esi
+        call ext_00586140
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        pop edi
+        pop esi
+        ret 0x8
+    L_fail:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 0x8
+    }
+}
