@@ -2468,3 +2468,58 @@ extern "C" __declspec(naked) void __fastcall fn_0045BE30(void* self) {
         ret
     }
 }
+
+// [0x0045F4B0] sub_0045F4B0 (150 bytes)
+// SEH-guarded constructor-style init: pushes an EH frame (handler mem_0087FD98), builds two
+// sub-objects via ext_0043D780, then restores the frame and returns with ret 8.
+extern "C" void ext_0043D780();
+extern "C" int mem_0087FD98;
+
+extern "C" __declspec(naked) void __fastcall fn_0045F4B0(void* self) {
+    __asm {
+        push -1
+        push offset mem_0087FD98
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x8], esi
+        call ext_0043D780
+        mov dword ptr [esi + 0x4], eax
+        mov byte ptr [eax + 0x15], 0x1
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x4], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x8], eax
+        mov dword ptr [esi + 0x8], 0x0
+        lea edi, [esi + 0xc]
+        mov ecx, edi
+        mov dword ptr [esp + 0x14], 0x0
+        call ext_0043D780
+        mov ecx, dword ptr [esp + 0x20]
+        mov dword ptr [edi + 0x4], eax
+        mov byte ptr [eax + 0x15], 0x1
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [eax + 0x4], eax
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [edi + 0x4]
+        mov dword ptr [eax + 0x8], eax
+        mov eax, dword ptr [esp + 0x1c]
+        mov dword ptr [edi + 0x8], 0x0
+        mov dword ptr [esi + 0x1c], ecx
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x18], eax
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x8
+    }
+}
