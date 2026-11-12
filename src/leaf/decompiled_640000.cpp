@@ -3443,3 +3443,110 @@ extern "C" __declspec(naked) void __fastcall fn_0064E6C0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0064E7C0] sub_0064E7C0 (248 bytes)
+extern "C" void ext_006A7250();
+extern "C" double mem_009802F0;
+
+extern "C" __declspec(naked) void __fastcall fn_0064E7C0(void* self, int edx_unused, float* v) {
+    __asm {
+        sub esp, 10h
+        fldz
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 48h]
+        fst dword ptr [esp + 0Ch]
+        push esi
+        fst dword ptr [esp + 0Ch]
+        lea edx, [esp + 8]
+        fstp dword ptr [esp + 8]
+        push edx
+        call eax
+        fld dword ptr [esp + 8]
+        fld qword ptr [mem_009802F0]
+        mov esi, dword ptr [esp + 18h]
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 0Ch]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0Ch]
+        fmul dword ptr [esp + 10h]
+        fstp dword ptr [esp + 10h]
+        fld dword ptr [esp + 8]
+        fld st(0)
+        fchs
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esi]
+        fld dword ptr [esp + 4]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 41h
+        jne clampB
+        fstp st(1)
+        fstp dword ptr [esi]
+        jmp clampEnd
+clampB:
+        fstp st(0)
+        fld dword ptr [esi]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 41h
+        jne clampC
+        fstp dword ptr [esi]
+        jmp clampEnd
+clampC:
+        fstp st(0)
+clampEnd:
+        fld dword ptr [esi + 4]
+        fld dword ptr [esp + 0Ch]
+        fld dword ptr [esi + 8]
+        fld dword ptr [esp + 10h]
+        fld st(1)
+        fmulp st(2), st
+        fmul st(0), st
+        _emit 0xDE
+        _emit 0xF9
+        fld st(2)
+        fmulp st(3), st
+        fld st(1)
+        fmulp st(2), st
+        fxch st(2)
+        _emit 0xDE
+        _emit 0xF1
+        faddp st(1), st
+        fstp dword ptr [esp + 18h]
+        fld1
+        fld dword ptr [esp + 18h]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 41h
+        jne rEarly
+        fld1
+        _emit 0xDE
+        _emit 0xF1
+        fstp dword ptr [esp + 18h]
+        fld dword ptr [esp + 18h]
+        call ext_006A7250
+        fstp dword ptr [esp + 18h]
+        fld dword ptr [esp + 18h]
+        fstp dword ptr [esp + 18h]
+        fld dword ptr [esi + 4]
+        fld dword ptr [esp + 18h]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esi + 4]
+        fmul dword ptr [esi + 8]
+        fstp dword ptr [esi + 8]
+        pop esi
+        add esp, 10h
+        ret 4
+rEarly:
+        fstp st(0)
+        pop esi
+        add esp, 10h
+        ret 4
+    }
+}
