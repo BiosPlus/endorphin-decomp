@@ -5385,3 +5385,76 @@ extern "C" __declspec(naked) void __cdecl fn_00662440(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x0066A770] sub_0066A770 (163 bytes)
+extern "C" void ext_006A6118();
+extern "C" void ext_006A611E();
+extern "C" int mem_0092C510;
+extern "C" int mem_0092F678;
+
+extern "C" __declspec(naked) void __fastcall fn_0066A770(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x8], 0x0
+        push edi
+        jne short skip_init
+        mov dword ptr [esi + 0x8], 0x80
+skip_init:
+        mov ecx, dword ptr [esp + 0x14]
+        cmp dword ptr [esi + 0x8], ecx
+        ja short done_grow
+        fld qword ptr [mem_0092C510]
+grow_loop:
+        mov eax, dword ptr [esi + 0x8]
+        fild dword ptr [esi + 0x8]
+        test eax, eax
+        jge short grow_pos
+        fadd dword ptr [mem_0092F678]
+grow_pos:
+        fnstcw word ptr [esp + 0x14]
+        movzx eax, word ptr [esp + 0x14]
+        fmul st, st(1)
+        or eax, 0xc00
+        mov dword ptr [esp + 0x8], eax
+        fldcw word ptr [esp + 0x8]
+        fistp qword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x8]
+        cmp edx, ecx
+        mov dword ptr [esi + 0x8], edx
+        fldcw word ptr [esp + 0x14]
+        jbe short grow_loop
+        fstp st(0)
+done_grow:
+        mov eax, dword ptr [esi + 0x8]
+        push eax
+        call ext_006A611E
+        mov edi, eax
+        mov byte ptr [edi], 0x0
+        mov ecx, dword ptr [esi + 0x8]
+        mov byte ptr [edi + ecx - 0x1], 0x0
+        mov ecx, dword ptr [esi]
+        add esp, 0x4
+        mov edx, edi
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+copy_loop:
+        mov al, byte ptr [ecx]
+        mov byte ptr [edx], al
+        add ecx, 0x1
+        add edx, 0x1
+        test al, al
+        jne short copy_loop
+        mov edx, dword ptr [esi]
+        push edx
+        call ext_006A6118
+        add esp, 0x4
+        mov dword ptr [esi], edi
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    }
+}
