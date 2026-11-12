@@ -3913,3 +3913,109 @@ L_7DCED0_end:
         ret
     }
 }
+
+// [0x007D6980] sub_007D6980 (287 bytes)
+extern "C" void ext_007CA240();
+
+extern "C" __declspec(naked) void __cdecl fn_007D6980(void* a1, int idx, void* s) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        sub esp, 4Ch
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 60h]
+        mov ecx, dword ptr [ebp + 18h]
+        mov edx, dword ptr [ecx + 4*eax]
+        mov ecx, dword ptr [ebp + 14h]
+        push esi
+        lea ebx, [ecx + 4*edx]
+        mov edx, dword ptr [ebp + 1Ch]
+        xor esi, esi
+        cmp dword ptr [edx + 4*eax], esi
+        jle done
+        push edi
+        mov edi, dword ptr [esp + 60h]
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    loop_top:
+        mov eax, dword ptr [ebx + 4*esi]
+        add eax, 110h
+        push edi
+        push eax
+        call ext_007CA240
+        mov eax, dword ptr [ebx + 4*esi]
+        add esp, 8
+        test dword ptr [eax + 1C4h], 200h
+        je skip
+        fld dword ptr [eax + 170h]
+        lea ecx, [esp + 1Ch]
+        fld qword ptr [mem_00993830]
+        push edi
+        fmul st(1), st
+        push ecx
+        fxch st(1)
+        fstp dword ptr [esp + 18h]
+        fld dword ptr [eax + 174h]
+        fmul st, st(1)
+        fstp dword ptr [esp + 1Ch]
+        fmul dword ptr [eax + 178h]
+        fstp dword ptr [esp + 20h]
+        call ext_007CA240
+        fld dword ptr [esp + 24h]
+        mov eax, dword ptr [ebx + 4*esi]
+        fld dword ptr [esp + 18h]
+        add esp, 8
+        fld st(0)
+        add eax, 140h
+        fmulp st(2), st
+        fld dword ptr [esp + 2Ch]
+        fld dword ptr [esp + 14h]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(3)
+        faddp st(1), st
+        fld dword ptr [esp + 3Ch]
+        fld dword ptr [esp + 18h]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fadd dword ptr [esp + 4Ch]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 20h]
+        fmul st, st(2)
+        fld dword ptr [esp + 30h]
+        fmul st, st(4)
+        faddp st(1), st
+        fld dword ptr [esp + 40h]
+        fmul st, st(2)
+        faddp st(1), st
+        fadd dword ptr [esp + 50h]
+        fstp dword ptr [eax + 4]
+        fld dword ptr [esp + 24h]
+        fmulp st(2), st
+        fld dword ptr [esp + 34h]
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul dword ptr [esp + 44h]
+        faddp st(1), st
+        fadd dword ptr [esp + 54h]
+        fstp dword ptr [eax + 8]
+    skip:
+        mov edx, dword ptr [ebp + 1Ch]
+        mov eax, dword ptr [esp + 64h]
+        add esi, 1
+        add edi, 40h
+        cmp esi, dword ptr [edx + 4*eax]
+        jl loop_top
+        pop edi
+    done:
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 4Ch
+        ret
+    }
+}
