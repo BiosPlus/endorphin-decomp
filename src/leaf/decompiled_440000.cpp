@@ -6077,3 +6077,25 @@ extern "C" __declspec(naked) void __fastcall fn_00448C90(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0044C130] sub_0044C130 (42 bytes)
+extern "C" void ext_00530C40();
+extern "C" int mem_009256E0;
+extern "C" __declspec(naked) void __fastcall fn_0044C130(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        cmp dword ptr [ecx + 0x64], 0x0
+        mov byte ptr [ecx + 0x77], 0x0
+        je skip_call
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [ecx + 0x68]
+        push edx
+        push eax
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        call ext_00530C40
+skip_call:
+        call dword ptr [mem_009256E0]
+        ret 0xc
+    }
+}
