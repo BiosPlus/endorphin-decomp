@@ -3822,3 +3822,90 @@ done_5426F0:
         ret 0x4
     }
 }
+
+// [0x005427E0] sub_005427E0 (249 bytes)
+// s: by-value std::string (28 bytes on the stack, callee-cleaned via ret 0x1c); declared raw because naked functions cannot take unwinding types.
+extern "C" void ext_005426F0();
+extern "C" void ext_00664B20();
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_005427E0(void* self, int edx_unused, void* s) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x881709
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x44]
+        mov edx, dword ptr [ecx]
+        lea eax, [esp + 0x14]
+        push eax
+        mov eax, dword ptr [edx + 0x1c]
+        mov dword ptr [esp + 0x10], 0x0
+        call eax
+        push eax
+        call ext_00664B20
+        add esp, 0x8
+        test al, al
+        je short L_check1
+        mov dword ptr [esi + 0xf8], 0x1
+        jmp L_end
+    L_check1:
+        mov ecx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [ecx]
+        lea edx, [esp + 0x14]
+        push edx
+        mov edx, dword ptr [eax + 0x1c]
+        call edx
+        push eax
+        call ext_00664B20
+        add esp, 0x8
+        test al, al
+        je short L_check2
+        mov dword ptr [esi + 0xf8], 0x0
+        jmp short L_end
+    L_check2:
+        mov ecx, dword ptr [esi + 0xbc]
+        mov edx, dword ptr [ecx]
+        lea eax, [esp + 0x14]
+        push eax
+        mov eax, dword ptr [edx + 0x1c]
+        call eax
+        push eax
+        call ext_00664B20
+        add esp, 0x8
+        test al, al
+        je short L_check3
+        mov dword ptr [esi + 0xf8], 0x3
+        jmp short L_end
+    L_check3:
+        mov ecx, dword ptr [esi + 0x80]
+        mov eax, dword ptr [ecx]
+        lea edx, [esp + 0x14]
+        push edx
+        mov edx, dword ptr [eax + 0x1c]
+        call edx
+        push eax
+        call ext_00664B20
+        add esp, 0x8
+        test al, al
+        je short L_fallback
+        mov dword ptr [esi + 0xf8], 0x2
+        jmp short L_end
+    L_fallback:
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, esi
+        call ext_005426F0
+    L_end:
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0xc], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x1c
+    }
+}
