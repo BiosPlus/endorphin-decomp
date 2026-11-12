@@ -3705,3 +3705,75 @@ extern "C" __declspec(naked) void __fastcall fn_00699FA0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0069C220] sub_0069C220 (262 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0069C220(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15) {
+    __asm {
+        push -1
+        push 0x008B6857
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov edx, dword ptr [esp + 0x30]
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x34]
+        mov dword ptr [eax + 4], edx
+        mov edx, dword ptr [esp + 0x38]
+        mov dword ptr [eax + 8], ecx
+        mov ecx, dword ptr [esp + 0x3c]
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [esp + 0x40]
+        mov dword ptr [eax + 0x10], ecx
+        mov ecx, dword ptr [esp + 0x44]
+        mov dword ptr [eax + 0x14], edx
+        mov edx, dword ptr [esp + 0x48]
+        mov dword ptr [eax + 0x18], ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0x1c], edx
+        mov dword ptr [eax + 0x24], ecx
+        mov dword ptr [eax + 0x28], ecx
+        mov dword ptr [eax + 0x2c], ecx
+        mov dword ptr [eax + 0x34], ecx
+        mov dword ptr [eax + 0x38], ecx
+        mov dword ptr [eax + 0x3c], ecx
+        mov dword ptr [eax + 0x44], ecx
+        mov dword ptr [eax + 0x48], ecx
+        mov dword ptr [eax + 0x4c], ecx
+        mov dword ptr [eax + 0x54], ecx
+        mov dword ptr [eax + 0x58], ecx
+        mov dword ptr [eax + 0x5c], ecx
+        mov dword ptr [eax + 0x64], ecx
+        mov dword ptr [eax + 0x68], ecx
+        mov dword ptr [eax + 0x6c], ecx
+        mov edx, dword ptr [esp + 0x18]
+        mov dword ptr [eax + 0x74], ecx
+        mov dword ptr [eax + 0x78], ecx
+        mov dword ptr [eax + 0x7c], ecx
+        mov dword ptr [eax + 0x80], edx
+        mov edx, dword ptr [esp + 0x4c]
+        mov dword ptr [eax + 0x84], edx
+        mov edx, dword ptr [esp + 0x1c]
+        mov dword ptr [eax + 0x88], edx
+        mov edx, dword ptr [esp + 0x28]
+        mov dword ptr [eax + 0x8c], edx
+        mov dl, byte ptr [esp + 0x20]
+        mov byte ptr [eax + 0x90], dl
+        mov dl, byte ptr [esp + 0x24]
+        mov byte ptr [eax + 0x91], dl
+        mov dl, byte ptr [esp + 0x2c]
+        mov byte ptr [eax + 0x93], cl
+        mov dword ptr [eax + 0x98], ecx
+        mov dword ptr [eax + 0x9c], ecx
+        mov dword ptr [eax + 0xa0], ecx
+        mov dword ptr [eax + 0xa4], ecx
+        mov ecx, dword ptr [esp + 4]
+        mov byte ptr [eax + 0x92], dl
+        mov dword ptr [eax + 0x94], 0xffffffff
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x3c
+    }
+}
