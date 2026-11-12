@@ -10168,3 +10168,26 @@ extern "C" __declspec(naked) void __fastcall fn_00604AF0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00603500] ExprParser::WriteMethodType<Effector, float, &public: void __thiscall Effector::setDesiredVelocity(float)>::vfunc_41 (37 bytes)
+extern "C" void ext_006032B0();
+
+extern "C" __declspec(naked) void __stdcall fn_00603500(void** self, void** a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_006032B0
+        pop esi
+        ret 8
+    }
+}
