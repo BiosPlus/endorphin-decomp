@@ -724,3 +724,102 @@ extern "C" void __fastcall fn_008028B0(void* self, int edx_unused, float* a1, co
         a1[a4[i]] = 0.0f;
     }
 }
+
+// [0x00803CF0] sub_00803CF0 (256 bytes)
+extern "C" void ext_00803B60();
+extern "C" int mem_0094CE80;
+extern "C" __declspec(naked) void __fastcall fn_00803CF0(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 4]
+        fld dword ptr [mem_0094CE80]
+        cmp dword ptr [edx + 0x1c8], 0
+        push esi
+        jne L_scan
+        mov eax, dword ptr [edx + 0x1c4]
+        cmp eax, dword ptr [edx + 0x1bc]
+        jge L_scan
+        mov eax, dword ptr [edx + 0x1c0]
+        fstp st(0)
+        lea ecx, [eax + 2*eax]
+        lea esi, [edx + 8*ecx]
+        lea eax, [edx + 0x60]
+        mov ecx, esi
+        call ext_00803B60
+        fcomp dword ptr [mem_0094CE80]
+        fnstsw ax
+        test ah, 0x5
+        jnp L_ret1
+        lea eax, [edx + 0x6c]
+        mov ecx, esi
+        call ext_00803B60
+        fld dword ptr [mem_0094CE80]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x41
+        jne L_scan
+        fstp st(0)
+L_ret1:
+        mov eax, 1
+        pop esi
+        ret
+L_scan:
+        push edi
+        mov edi, dword ptr [edx + 0x1bc]
+        mov esi, 1
+        cmp edi, esi
+        jl L_none
+        lea ecx, [edx + 8]
+L_loop:
+        __asm _emit 0x85
+        __asm _emit 0xfe
+        je L_next
+        mov eax, dword ptr [edx + 0x1c0]
+        lea eax, [eax + 2*eax]
+        fld dword ptr [edx + 8*eax + 4]
+        lea eax, [edx + 8*eax]
+        fsub dword ptr [ecx - 4]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fabs
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fld dword ptr [eax]
+        fsub dword ptr [ecx - 8]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fabs
+        fstp dword ptr [esp + 0xc]
+        fadd dword ptr [esp + 0xc]
+        fld dword ptr [eax + 8]
+        fsub dword ptr [ecx]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fabs
+        fstp dword ptr [esp + 0xc]
+        fadd dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jnp L_hit
+L_next:
+        add esi, esi
+        add ecx, 0x18
+        cmp esi, edi
+        jle L_loop
+L_none:
+        pop edi
+        fstp st(0)
+        xor eax, eax
+        pop esi
+        ret
+L_hit:
+        pop edi
+        fstp st(0)
+        mov eax, 1
+        pop esi
+        ret
+    }
+}
