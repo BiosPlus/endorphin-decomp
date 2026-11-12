@@ -2941,3 +2941,53 @@ L_join_00658A60:
         ret 0x8
     }
 }
+
+// [0x0065D460] sub_0065D460 (154 bytes)
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE4;
+extern "C" int mem_009251C4;
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_0065D460(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        mov edx, dword ptr [esp + 0x4]
+        push -0x1
+        push 0x88f4c2
+        push eax
+        mov dword ptr fs:[0x0], esp
+        mov eax, dword ptr [ecx + 0x8]
+        sub esp, 0x44
+        push esi
+        mov esi, 0x28f5c28
+        sub esi, eax
+        cmp esi, edx
+        pop esi
+        jae ok
+        push 0x92fa58
+        lea ecx, [esp + 0x4]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x4c], 0x0
+        call dword ptr [mem_009251C4]
+        lea eax, [esp]
+        push eax
+        lea ecx, [esp + 0x2c]
+        mov byte ptr [esp + 0x50], 0x1
+        mov dword ptr [esp + 0x20], 0x928ecc
+        call dword ptr [mem_00924FE0]
+        push 0x9cdf20
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov byte ptr [esp + 0x54], 0x0
+        mov dword ptr [esp + 0x24], 0x928ed8
+        call ext_006A6DD2
+ok:
+        add eax, edx
+        mov dword ptr [ecx + 0x8], eax
+        mov ecx, dword ptr [esp + 0x44]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x50
+        ret 0x4
+    }
+}
