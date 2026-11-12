@@ -1,4 +1,5 @@
 // Decompiled translation unit: src/leaf/decompiled_5D0000.cpp
+#include <string>
 
 // [0x005D07E0] sub_005D07E0 (12 bytes)
 extern "C" void ext_005CFCB0();
@@ -1995,5 +1996,30 @@ extern "C" __declspec(naked) void* __fastcall fn_005DF5C0(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 0x14
         ret 0x1c
+    }
+}
+
+// [0x005DF910] sub_005DF910 (42 bytes)
+extern "C" void ext_005DF5C0();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) bool __fastcall fn_005DF910(void* self, int edx_unused, const std::string& a1) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        sub esp, 0x1c
+        mov esi, ecx
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esi + 0x4]
+        call ext_005DF5C0
+        test eax, eax
+        setne al
+        pop esi
+        pop ecx
+        ret 0x4
     }
 }
