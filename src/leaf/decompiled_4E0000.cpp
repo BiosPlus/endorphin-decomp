@@ -3403,3 +3403,21 @@ extern "C" __declspec(naked) void __fastcall fn_004E1AD0(void* self) {
         ret
     }
 }
+
+// [0x004E1D10] sub_004E1D10 (43 bytes)
+extern "C" void ext_00493EE0();
+extern "C" void ext_004E1AD0();
+extern "C" void ext_00594000();
+extern "C" __declspec(naked) void __fastcall fn_004E1D10(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, [ecx+0x15c]
+        sub eax, [esp+4]
+        add eax, 1
+        mov [ecx+0x9a0], eax
+        call ext_004E1AD0
+        call ext_00594000
+        lea ecx, [eax+0x258]
+        call ext_00493EE0
+        ret 4
+    }
+}
