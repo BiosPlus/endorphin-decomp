@@ -2534,3 +2534,76 @@ extern "C" __declspec(naked) void __fastcall fn_00527310(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00527EC0] sub_00527EC0 (150 bytes)
+extern "C" void ext_00527D60();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) int __fastcall fn_00527EC0(void* self, int edx_unused, const int* a1) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push esi
+        mov ebx, ecx
+        push edi
+        mov edi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], edi
+        jbe L_ok1
+        call dword ptr [mem_00925134]
+    L_ok1:
+        mov esi, dword ptr [ebx + 0x4]
+        cmp esi, dword ptr [ebx + 0x8]
+        jbe L_ok2
+        call dword ptr [mem_00925134]
+    L_ok2:
+        cmp esi, edi
+        mov dword ptr [esp + 0x10], esi
+        je L_found
+        mov eax, dword ptr [esp + 0x18]
+        mov eax, dword ptr [eax]
+    L_loop:
+        cmp dword ptr [esi], eax
+        je L_found
+        add esi, 0x4
+        cmp esi, edi
+        jne L_loop
+    L_found:
+        push ebp
+        mov ebp, dword ptr [ebx + 0x4]
+        cmp ebp, dword ptr [ebx + 0x8]
+        jbe L_ok3
+        call dword ptr [mem_00925134]
+    L_ok3:
+        test ebx, ebx
+        je L_bad4
+        cmp ebx, ebx
+        je L_ok4
+    L_bad4:
+        call dword ptr [mem_00925134]
+    L_ok4:
+        mov edi, esi
+        sub edi, ebp
+        sar edi, 0x2
+        test ebx, ebx
+        pop ebp
+        jne L_ok5
+        call dword ptr [mem_00925134]
+    L_ok5:
+        cmp esi, dword ptr [ebx + 0x8]
+        jb L_ok6
+        call dword ptr [mem_00925134]
+    L_ok6:
+        push esi
+        push ebx
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, ebx
+        mov dword ptr [esi], 0x0
+        call ext_00527D60
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
