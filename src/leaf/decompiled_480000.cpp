@@ -3341,3 +3341,39 @@ extern "C" __declspec(naked) void* __fastcall fn_0048D4C0(void* self) {
         ret
     }
 }
+
+// [0x004804A0] sub_004804A0 (144 bytes)
+extern "C" void ext_004A6C70();
+extern "C" void ext_004E81C0();
+extern "C" __declspec(naked) void __fastcall fn_004804A0(void* self) {
+    __asm {
+        fld1
+        push esi
+        mov esi, ecx
+        mov byte ptr [esi + 0x36c], 0
+        fst dword ptr [esi + 0x370]
+        fldz
+        fst dword ptr [esi + 0x374]
+        fst dword ptr [esi + 0x378]
+        fst dword ptr [esi + 0x37c]
+        fst dword ptr [esi + 0x380]
+        fst dword ptr [esi + 0x388]
+        fst dword ptr [esi + 0x38c]
+        fst dword ptr [esi + 0x390]
+        fst dword ptr [esi + 0x394]
+        fst dword ptr [esi + 0x39c]
+        fst dword ptr [esi + 0x3a0]
+        fst dword ptr [esi + 0x3a4]
+        fstp dword ptr [esi + 0x3a8]
+        fst dword ptr [esi + 0x384]
+        fst dword ptr [esi + 0x398]
+        fstp dword ptr [esi + 0x3ac]
+        mov ecx, dword ptr [esi + 0x3b4]
+        call ext_004A6C70
+        lea ecx, [esi + 0x3f8]
+        call ext_004E81C0
+        lea ecx, [esi + 0x4f4]
+        pop esi
+        jmp ext_004E81C0
+    }
+}
