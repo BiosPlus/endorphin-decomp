@@ -3015,3 +3015,61 @@ extern "C" __declspec(naked) void* __fastcall fn_00515A80(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x00518650] sub_00518650 (161 bytes)
+extern "C" void ext_005184D0();
+
+extern "C" __declspec(naked) int __fastcall fn_00518650(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 0x40
+        mov eax, 1
+        xor edx, edx
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [esp + 0x2c], eax
+        mov dword ptr [esp + 0x34], eax
+        mov dword ptr [esp + 0x38], eax
+        mov dword ptr [esp + 0x3c], eax
+        mov eax, dword ptr [esp + 0x44]
+        push esi
+        mov esi, ecx
+        or ecx, -1
+        mov dword ptr [esp + 0x4], ecx
+        mov dword ptr [esp + 0x8], ecx
+        mov dword ptr [esp + 0xc], edx
+        mov dword ptr [esp + 0x10], ecx
+        mov dword ptr [esp + 0x18], ecx
+        mov dword ptr [esp + 0x1c], ecx
+        mov dword ptr [esp + 0x20], edx
+        mov dword ptr [esp + 0x28], edx
+        mov dword ptr [esp + 0x2c], ecx
+        mov ecx, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x34], edx
+        cdq
+        idiv ecx
+        mov ecx, dword ptr [esp + 0x4c]
+        push edi
+        mov edi, dword ptr [esp + ecx*8 + 0x8]
+        mov ecx, dword ptr [esp + ecx*8 + 0xc]
+        add edi, edx
+        add ecx, eax
+        lea edx, [esp + 0x50]
+        mov dword ptr [esp + 0x4c], ecx
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp + 0x54], edi
+        call ext_005184D0
+        lea eax, [esp + 0x4c]
+        push eax
+        mov ecx, esi
+        call ext_005184D0
+        mov eax, dword ptr [esi + 0x4]
+        imul eax, dword ptr [esp + 0x4c]
+        add eax, dword ptr [esi]
+        pop edi
+        add eax, dword ptr [esp + 0x4c]
+        pop esi
+        add esp, 0x40
+        ret 8
+    }
+}
