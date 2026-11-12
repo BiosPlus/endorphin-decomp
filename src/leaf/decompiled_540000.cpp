@@ -2895,3 +2895,27 @@ extern "C" __declspec(naked) int __fastcall fn_0054F2C0(void* self, int edx_unus
         ret 0xc
     }
 }
+
+extern "C" void ext_0054F170();
+
+// [0x0054F370] sub_0054F370 (41 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0054F370(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x10]
+        mov byte ptr [esp], 0x0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        push edx
+        call ext_0054F170
+        add esp, 0x1c
+        ret 0xc
+    }
+}
