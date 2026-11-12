@@ -10,6 +10,9 @@ extern "C" int mem_00925134;
 extern "C" void ext_00539740();
 extern "C" void ext_0053AD10();
 extern "C" void ext_00543640();
+extern "C" void ext_00532CC0();
+extern "C" int mem_009240C0;
+extern "C" int mem_009240C4;
 
 // [0x00532C30] sub_00532C30 (30 bytes)
 extern "C" __declspec(naked) void __fastcall fn_00532C30(void* self) {
@@ -3451,5 +3454,92 @@ extern "C" __declspec(naked) void __fastcall fn_00530B00(void* self) {
         mov dword ptr fs:[0x0], ecx
         add esp, 0x10
         ret 0xc
+    }
+}
+
+// [0x00532F80] sub_00532F80 (251 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00532F80(void* self, int edx_unused, void* hdc, unsigned char depth) {
+    __asm {
+        sub esp, 0x28
+        mov al, byte ptr [esp + 0x30]
+        push ebx
+        xor ebx, ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x38]
+        mov esi, ecx
+        lea ecx, [esp + 0xc]
+        push ecx
+        push edi
+        mov word ptr [esp + 0x14], 0x28
+        mov word ptr [esp + 0x16], 0x1
+        mov dword ptr [esp + 0x18], 0x25
+        mov byte ptr [esp + 0x1c], bl
+        mov byte ptr [esp + 0x1d], al
+        mov byte ptr [esp + 0x1e], bl
+        mov byte ptr [esp + 0x1f], bl
+        mov byte ptr [esp + 0x20], bl
+        mov byte ptr [esp + 0x21], bl
+        mov byte ptr [esp + 0x22], bl
+        mov byte ptr [esp + 0x23], bl
+        mov byte ptr [esp + 0x24], bl
+        mov byte ptr [esp + 0x25], bl
+        mov byte ptr [esp + 0x26], bl
+        mov byte ptr [esp + 0x27], bl
+        mov byte ptr [esp + 0x28], bl
+        mov byte ptr [esp + 0x29], bl
+        mov byte ptr [esp + 0x2a], bl
+        mov byte ptr [esp + 0x2b], 0x10
+        mov byte ptr [esp + 0x2c], bl
+        mov byte ptr [esp + 0x2d], bl
+        mov byte ptr [esp + 0x2e], bl
+        mov byte ptr [esp + 0x2f], bl
+        mov dword ptr [esp + 0x30], ebx
+        mov dword ptr [esp + 0x34], ebx
+        mov dword ptr [esp + 0x38], ebx
+        call dword ptr [mem_009240C0]
+        cmp eax, ebx
+        jne short set_fmt
+        mov ecx, esi
+        call ext_00532CC0
+        push 0x30
+        push 0x9547cc
+        push 0x9547a8
+        push ebx
+        call dword ptr [mem_009255E0]
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        add esp, 0x28
+        ret 8
+set_fmt:
+        lea edx, [esp + 0xc]
+        push edx
+        push eax
+        push edi
+        call dword ptr [mem_009240C4]
+        test eax, eax
+        jne short fmt_ok
+        mov ecx, esi
+        call ext_00532CC0
+        push 0x30
+        push 0x9547cc
+        push 0x95478c
+        push ebx
+        call dword ptr [mem_009255E0]
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        add esp, 0x28
+        ret 8
+fmt_ok:
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        add esp, 0x28
+        ret 8
     }
 }
