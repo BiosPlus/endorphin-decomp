@@ -2244,3 +2244,88 @@ extern "C" __declspec(naked) void fn_004E1BA0() {
         ret
     }
 }
+
+// [0x004E7D40] sub_004E7D40 (174 bytes)
+extern "C" __declspec(naked) void __cdecl fn_004E7D40(void* first, void* last, void* pred) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        cmp ebx, eax
+        je L_ret_ebx
+        push esi
+        lea esi, [ebx + 0x4]
+        cmp esi, eax
+        je L_ret_esi
+        push ebp
+        push edi
+        lea ebp, [esi + 0x4]
+L_loop:
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [esi]
+        push eax
+        push ecx
+        lea ecx, [esp + 0x24]
+        call ext_004E7390
+        test al, al
+        je L_else
+        cmp ebx, esi
+        je L_adv
+        cmp esi, ebp
+        je L_adv
+        push 0
+        push 0
+        push ebp
+        push esi
+        push ebx
+        call ext_00609850
+        add esp, 0x14
+        jmp L_adv
+L_else:
+        mov edx, dword ptr [ebp - 0x8]
+        mov eax, dword ptr [esi]
+        lea edi, [ebp - 0x8]
+        push edx
+        push eax
+        lea ecx, [esp + 0x24]
+        call ext_004E7390
+        test al, al
+        je L_adv
+L_shift:
+        mov ecx, dword ptr [edi - 0x4]
+        mov edx, dword ptr [esi]
+        mov ebx, edi
+        sub edi, 0x4
+        push ecx
+        push edx
+        lea ecx, [esp + 0x24]
+        call ext_004E7390
+        test al, al
+        jne L_shift
+        cmp ebx, esi
+        je L_restore
+        cmp esi, ebp
+        je L_restore
+        push 0
+        push 0
+        push ebp
+        push esi
+        push ebx
+        call ext_00609850
+        add esp, 0x14
+L_restore:
+        mov ebx, dword ptr [esp + 0x14]
+L_adv:
+        add esi, 0x4
+        add ebp, 0x4
+        cmp esi, dword ptr [esp + 0x18]
+        jne L_loop
+        pop edi
+        pop ebp
+L_ret_esi:
+        pop esi
+L_ret_ebx:
+        pop ebx
+        ret
+    }
+}
