@@ -3479,3 +3479,42 @@ extern "C" int __cdecl fn_007CD5D0(void* a0) {
     ext_007E4690(a0);
     return 1;
 }
+
+// [0x007C6150] sub_007C6150 (155 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C6150(void* self, void* out) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x120]
+        mov ecx, dword ptr [esp + 0x8]
+        fmul dword ptr [eax + 0x174]
+        fld dword ptr [eax + 0x110]
+        fmul dword ptr [eax + 0x170]
+        faddp st(1), st
+        fld dword ptr [eax + 0x130]
+        fmul dword ptr [eax + 0x178]
+        faddp st(1), st
+        fadd dword ptr [eax + 0x140]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 0x114]
+        fmul dword ptr [eax + 0x170]
+        fld dword ptr [eax + 0x124]
+        fmul dword ptr [eax + 0x174]
+        faddp st(1), st
+        fld dword ptr [eax + 0x134]
+        fmul dword ptr [eax + 0x178]
+        faddp st(1), st
+        fadd dword ptr [eax + 0x144]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [eax + 0x118]
+        fmul dword ptr [eax + 0x170]
+        fld dword ptr [eax + 0x128]
+        fmul dword ptr [eax + 0x174]
+        faddp st(1), st
+        fld dword ptr [eax + 0x138]
+        fmul dword ptr [eax + 0x178]
+        faddp st(1), st
+        fadd dword ptr [eax + 0x148]
+        fstp dword ptr [ecx + 0x8]
+        ret
+    }
+}
