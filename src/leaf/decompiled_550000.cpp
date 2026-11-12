@@ -3124,3 +3124,75 @@ extern "C" __declspec(naked) char* __cdecl fn_00555980(char* first, char* last, 
         ret
     }
 }
+
+// [0x0055DE80] sub_0055DE80 (151 bytes)
+extern "C" void ext_006A6DE0();
+extern "C" void ext_006A6E92();
+extern "C" void ext_006BB750();
+extern "C" void ext_006BC7F0();
+extern "C" int mem_00993828;
+extern "C" int mem_00958790;
+extern "C" __declspec(naked) void __fastcall fn_0055DE80(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        fld dword ptr [esi + 0x174]
+        sub esp, 8
+        fadd qword ptr [mem_00993828]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fstp qword ptr [esp]
+        call ext_006A6E92
+        fstp dword ptr [esp + 0xc]
+        add esp, 8
+        fld dword ptr [esp + 4]
+        call ext_006A6DE0
+        mov ecx, eax
+        cmp ecx, 0x18
+        mov dword ptr [esp + 4], ecx
+        jne L_not18
+        push 0xb
+        jmp L_call
+L_not18:
+        cmp ecx, 0x19
+        jne L_not19
+        push 0xa
+        jmp L_call
+L_not19:
+        fild dword ptr [esp + 4]
+        fcomp qword ptr [mem_00958790]
+        fnstsw ax
+        test ah, 0x44
+        jp L_notEq
+        push 0x9
+        jmp L_call
+L_notEq:
+        cmp ecx, 0x1e
+        je L_push6
+        cmp ecx, 0x32
+        jne L_not32
+        push 0x4
+        jmp L_call
+L_not32:
+        cmp ecx, 0x3c
+        jne L_not3c
+        push 0x3
+        jmp L_call
+L_not3c:
+        cmp ecx, 0x78
+        jne L_push6
+        push 0x1
+        jmp L_call
+L_push6:
+        push 0x6
+L_call:
+        mov ecx, dword ptr [esi + 0x470]
+        call ext_006BC7F0
+        mov ecx, eax
+        call ext_006BB750
+        pop esi
+        pop ecx
+        ret
+    }
+}
