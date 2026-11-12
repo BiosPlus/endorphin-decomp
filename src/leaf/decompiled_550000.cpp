@@ -4126,3 +4126,95 @@ extern "C" __declspec(naked) char* __cdecl fn_00555A10(char* first, char* last, 
         ret
     }
 }
+
+// [0x00556DD0] sub_00556DD0 (216 bytes)
+extern "C" void ext_005539B0();
+extern "C" void ext_005539D0();
+extern "C" void ext_005539F0();
+extern "C" void ext_00553A10();
+extern "C" void ext_00553A30();
+extern "C" void ext_005568E0();
+extern "C" double mem_00957788;
+extern "C" double mem_00957588;
+extern "C" double mem_00955090;
+extern "C" double mem_00957780;
+extern "C" __declspec(naked) void __fastcall fn_00556DD0(void* self) {
+    __asm {
+        fld dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x8]
+        fstp dword ptr [edi]
+        lea edx, [esp + 0x8]
+        fld dword ptr [esp + 0x14]
+        push edx
+        fstp dword ptr [edi + 0x4]
+        mov dword ptr [esp + 0xc], eax
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [edi + 0x8]
+        call ext_005568E0
+        mov ecx, eax
+        test ecx, ecx
+        je L_END
+        push esi
+        xor esi, esi
+    L_LOOP:
+        push esi
+        call ext_005539B0
+        test al, al
+        je L_TAIL
+        push esi
+        call ext_005539D0
+        push esi
+        call ext_005539F0
+        mov edx, eax
+        mov dword ptr [esp + 0xc], edx
+        fild dword ptr [esp + 0xc]
+        fmul qword ptr [mem_00957788]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fadd dword ptr [edi + esi * 4]
+        fstp dword ptr [edi + esi * 4]
+        fsubr dword ptr [edi + esi * 4]
+        fld qword ptr [mem_00957588]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jp L_ABOVE
+        add edx, -1
+        fstp st(0)
+        push edx
+        push esi
+        call ext_00553A30
+        fld dword ptr [edi + esi * 4]
+        fsub qword ptr [mem_00955090]
+        jmp L_STORE
+    L_ABOVE:
+        fcomp qword ptr [mem_00957780]
+        fnstsw ax
+        test ah, 0x5
+        jp L_TAIL
+        add edx, 0x1
+        push edx
+        push esi
+        call ext_00553A30
+        fld dword ptr [edi + esi * 4]
+        fadd qword ptr [mem_00955090]
+    L_STORE:
+        fstp dword ptr [edi + esi * 4]
+    L_TAIL:
+        fld dword ptr [edi + esi * 4]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_00553A10
+        add esi, 0x1
+        cmp esi, 0x2
+        jle L_LOOP
+        pop esi
+    L_END:
+        mov eax, edi
+        pop edi
+        ret 0x14
+    }
+}
