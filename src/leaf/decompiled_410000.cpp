@@ -5243,3 +5243,90 @@ done:
         ret 0x8
     }
 }
+
+// [0x0041A430] sub_0041A430 (181 bytes)
+extern "C" void ext_0048EF80();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0041A430(void* self) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        push ebp
+        lea ebp, [ecx + 0x44]
+        push esi
+        mov esi, dword ptr [ebp + 0x4]
+        cmp esi, dword ptr [ebp + 0x8]
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jbe a430_l1
+        call edi
+a430_l1:
+        mov ebx, dword ptr [ebp + 0x8]
+        cmp dword ptr [ebp + 0x4], ebx
+        mov dword ptr [esp + 0x18], ebx
+        jbe a430_l2
+        call edi
+a430_l2:
+        cmp ebp, ebp
+        je a430_l3
+        call edi
+a430_l3:
+        cmp esi, ebx
+        je a430_end
+        cmp esi, dword ptr [ebp + 0x8]
+        jb a430_l4
+        call edi
+a430_l4:
+        mov ebx, dword ptr [esi]
+        mov eax, dword ptr [ebx + 0x10]
+        add ebx, 0x8
+        cmp dword ptr [ebx + 0x4], eax
+        mov dword ptr [esp + 0x10], eax
+        jbe a430_l5
+        call edi
+a430_l5:
+        cmp esi, dword ptr [ebp + 0x8]
+        jb a430_l6
+        call edi
+a430_l6:
+        mov edi, dword ptr [esi]
+        mov eax, dword ptr [edi + 0xc]
+        add edi, 0x8
+        cmp eax, dword ptr [edi + 0x8]
+        mov dword ptr [esp + 0x14], eax
+        jbe a430_l7
+        call dword ptr [mem_00925134]
+a430_l7:
+        cmp esi, dword ptr [ebp + 0x8]
+        jb a430_l8
+        call dword ptr [mem_00925134]
+a430_l8:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        push ebx
+        push ecx
+        mov ecx, dword ptr [esi]
+        push edi
+        lea edx, [esp + 0x2c]
+        push edx
+        add ecx, 0x8
+        call ext_0048EF80
+        cmp esi, dword ptr [ebp + 0x8]
+        jb a430_l9
+        call dword ptr [mem_00925134]
+a430_l9:
+        mov edi, dword ptr [mem_00925134]
+        mov ebx, dword ptr [esp + 0x18]
+        add esi, 0x4
+        jmp a430_l2
+a430_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x14
+        ret
+    }
+}
