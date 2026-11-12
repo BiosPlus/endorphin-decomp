@@ -3579,3 +3579,125 @@ extern "C" __declspec(naked) int __cdecl fn_007D5E50(void* a, void* b) {
         ret
     }
 }
+
+// [0x007D4970] sub_007D4970 (254 bytes)
+extern "C" void ext_007D48C0();
+extern "C" void ext_007D48F0();
+extern "C" __declspec(naked) void __cdecl fn_007D4970(void* head, void* node, int key) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [ebp]
+        cmp edi, ebp
+        mov esi, ebp
+        mov dword ptr [ebx + 0x10], eax
+        je short L_empty
+    L_loop:
+        mov ecx, dword ptr [edi + 0x10]
+        mov edx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [ebp + 0x20]
+        push ecx
+        push edx
+        mov esi, edi
+        call eax
+        xor edx, edx
+        add esp, 0x8
+        cmp eax, edx
+        jge short L_right
+        mov edi, dword ptr [edi]
+        jmp short L_next
+    L_right:
+        mov edi, dword ptr [edi + 0x4]
+    L_next:
+        cmp edi, ebp
+        jne short L_loop
+        cmp eax, edx
+        jl short L_setleft
+        mov dword ptr [esi + 0x4], ebx
+    L_link:
+        mov dword ptr [ebx + 0x8], esi
+        mov dword ptr [ebx], ebp
+        mov dword ptr [ebx + 0x4], ebp
+        mov ecx, 0x1
+        add dword ptr [ebp + 0x18], ecx
+        mov dword ptr [ebx + 0xc], edx
+        cmp dword ptr [esi + 0xc], edx
+        jne short L_done
+    L_top:
+        mov edi, dword ptr [esi + 0x8]
+        mov eax, dword ptr [edi]
+        cmp esi, eax
+        jne short L_rcase
+        mov eax, dword ptr [edi + 0x4]
+        cmp dword ptr [eax + 0xc], edx
+        je short L_recolor
+        cmp ebx, dword ptr [esi + 0x4]
+        jne short L_lrot
+        mov eax, esi
+        call ext_007D48C0
+        mov esi, ebx
+        mov ecx, 0x1
+        xor edx, edx
+    L_lrot:
+        mov dword ptr [esi + 0xc], ecx
+        mov eax, edi
+        mov dword ptr [edi + 0xc], edx
+        call ext_007D48F0
+        mov eax, dword ptr [ebp]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0xc], 0x1
+        pop ebx
+        ret
+    L_empty:
+        xor edx, edx
+    L_setleft:
+        mov dword ptr [esi], ebx
+        jmp short L_link
+    L_rcase:
+        cmp dword ptr [eax + 0xc], edx
+        jne short L_rnr
+    L_recolor:
+        mov dword ptr [esi + 0xc], ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov esi, dword ptr [edi + 0x8]
+        mov dword ptr [edi + 0xc], edx
+        cmp dword ptr [esi + 0xc], edx
+        mov ebx, edi
+        je short L_top
+    L_done:
+        mov edx, dword ptr [ebp]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [edx + 0xc], ecx
+        pop ebx
+        ret
+    L_rnr:
+        cmp ebx, dword ptr [esi]
+        jne short L_rrot
+        mov eax, esi
+        call ext_007D48F0
+        mov esi, ebx
+        mov ecx, 0x1
+        xor edx, edx
+    L_rrot:
+        mov dword ptr [esi + 0xc], ecx
+        mov eax, edi
+        mov dword ptr [edi + 0xc], edx
+        call ext_007D48C0
+        mov ecx, dword ptr [ebp]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [ecx + 0xc], 0x1
+        pop ebx
+        ret
+    }
+}
