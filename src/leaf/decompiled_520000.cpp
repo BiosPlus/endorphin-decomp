@@ -3117,3 +3117,67 @@ extern "C" __declspec(naked) void __fastcall fn_00528D80(void* self) {
         ret
     }
 }
+
+// [0x00529120] sub_00529120 (111 bytes)
+extern "C" int ext_00528D80(void* self);
+
+extern "C" __declspec(naked) void __cdecl fn_00529120(void* self, unsigned char flag) {
+    __asm {
+        push ecx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0x4]
+        xor ebp, ebp
+        test eax, eax
+        mov dword ptr [esp + 0x8], eax
+        mov dword ptr [esp + 0x10], ecx
+        jle done
+        push ebx
+        mov bl, byte ptr [esp + 0x18]
+        push edi
+outer:
+        xor edi, edi
+        cmp dword ptr [esp + 0x18], edi
+        jle next
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+inner:
+        push esi
+        call ext_00528D80
+        imul eax, ebp
+        _emit 0x8d
+        _emit 0x04
+        _emit 0xb8
+        mov cl, byte ptr [esi + eax + 0x29]
+        mov dl, byte ptr [esi + eax + 0x2b]
+        add esp, 4
+        test bl, bl
+        jne skip
+        mov byte ptr [esi + eax + 0x29], dl
+        mov byte ptr [esi + eax + 0x2b], cl
+skip:
+        add edi, 1
+        cmp edi, dword ptr [esp + 0x18]
+        jl inner
+        mov eax, dword ptr [esp + 0x10]
+next:
+        add ebp, 1
+        cmp ebp, eax
+        jl outer
+        pop edi
+        pop ebx
+done:
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ecx
+        ret
+    }
+}
