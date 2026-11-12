@@ -1816,3 +1816,54 @@ l_false_005E0570:
         ret
     }
 }
+
+// [0x005E09D0] sub_005E09D0 (160 bytes)
+extern "C" void ext_00552130();
+extern "C" int mem_00B40640;
+
+struct Sub5E09D0_VecHelper {
+    float* get_vector(float* out, int idx);
+};
+
+struct Sub5E09D0_Sub1 {
+    virtual void d0();
+    virtual void d1();
+    virtual void d2();
+    virtual void d3();
+    virtual void d4();
+    virtual Sub5E09D0_VecHelper* get_helper(int key);
+};
+
+struct Sub5E09D0_Sub2 {
+    virtual void d0();
+    virtual void d1();
+    virtual void apply(float* v);
+};
+
+struct Sub5E09D0_Node {
+    char pad[4];
+    Sub5E09D0_Sub1 sub1;
+};
+
+extern "C" void __fastcall fn_005E09D0(void* self) {
+    if (!*(unsigned char*)((char*)self + 0x179)) return;
+    void* a = *(void**)((char*)self + 0x22c);
+    if (!a) return;
+
+    float buf1[4];
+    float buf2[4];
+
+    Sub5E09D0_Node* node = *(Sub5E09D0_Node**)((char*)a + 0x20c);
+    node->sub1.get_helper(mem_00B40640)->get_vector(buf1, 3);
+
+    Sub5E09D0_Sub1* sub1_self = (Sub5E09D0_Sub1*)((char*)self + 4);
+    float* p = sub1_self->get_helper(mem_00B40640)->get_vector(buf2, 3);
+
+    buf1[0] -= p[0];
+    buf1[1] -= p[1];
+    buf1[2] -= p[2];
+    buf1[3] -= p[3];
+
+    Sub5E09D0_Sub2* sub2 = (Sub5E09D0_Sub2*)((char*)self + 0xc);
+    sub2->apply(buf1);
+}
