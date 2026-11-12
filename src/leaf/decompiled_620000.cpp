@@ -3490,3 +3490,65 @@ L_0062B7E0:
         ret 0x8
     }
 }
+
+// [0x0062B800] sub_0062B800 (161 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0062B800(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x8ad6c8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        cmp dword ptr [esi + 4], 0
+        push edi
+        mov edi, ecx
+        mov dword ptr [esp + 8], edi
+        je L_0062B83C
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x70]
+        push esi
+        lea edx, [esp + 0x24]
+        push edx
+        call eax
+        jmp L_0062B848
+L_0062B83C:
+        mov dword ptr [esp + 0x20], 0
+        lea eax, [esp + 0x20]
+L_0062B848:
+        mov ecx, dword ptr [eax]
+        mov dword ptr [edi], ecx
+        mov edx, dword ptr [esi + 4]
+        mov dword ptr [edi + 4], edx
+        add esi, 8
+        cmp dword ptr [esi + 4], 0
+        mov dword ptr [esp + 0x18], 0
+        je L_0062B875
+        mov ecx, dword ptr [esi + 4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x70]
+        push esi
+        lea edx, [esp + 0x10]
+        push edx
+        call eax
+        jmp L_0062B881
+L_0062B875:
+        mov dword ptr [esp + 0x20], 0
+        lea eax, [esp + 0x20]
+L_0062B881:
+        mov ecx, dword ptr [eax]
+        mov dword ptr [edi + 8], ecx
+        mov edx, dword ptr [esi + 4]
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [edi + 0xc], edx
+        mov eax, edi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 4
+    }
+}
