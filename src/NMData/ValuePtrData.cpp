@@ -174,3 +174,48 @@ extern "C" __declspec(naked) void* __fastcall fn_00685F80(void* self, int edx_un
         ret 8
     }
 }
+
+// [0x00682CE0] NMData::ValuePtrData::vfunc_17 (85 bytes)
+extern "C" void ext_0067A050();
+
+extern "C" __declspec(naked) int __fastcall fn_00682CE0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        cmp ebx, 0x280
+        push esi
+        mov esi, ecx
+        jne ret_arg
+        cmp dword ptr [esi + 0x28], 0x0
+        je check_64
+        mov ecx, dword ptr [esi + 0x28]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x30]
+        call edx
+        cmp eax, 0x5
+        jne check_64
+        pop esi
+        mov eax, 0x46
+        pop ebx
+        ret 0xc
+check_64:
+        cmp dword ptr [esi + 0x64], 0x0
+        je ret_arg
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        test edi, edi
+        je pop_edi
+        mov ecx, dword ptr [esp + 0x14]
+        add esi, 0x50
+        push esi
+        call ext_0067A050
+        mov dword ptr [edi], eax
+pop_edi:
+        pop edi
+ret_arg:
+        pop esi
+        mov eax, ebx
+        pop ebx
+        ret 0xc
+    }
+}
