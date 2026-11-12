@@ -9,6 +9,13 @@ extern "C" void ext_0041603E();
 extern "C" void ext_00416095();
 extern "C" void ext_00415E30();
 extern "C" void ext_00415FDA();
+extern "C" void ext_00415D50();
+extern "C" void ext_006A6004();
+extern "C" void ext_006A6172();
+extern "C" void ext_006A61C6();
+extern "C" int mem_00925670;
+extern "C" int mem_0092C8C4;
+extern "C" int mem_0092C8CC;
 extern "C" int mem_0092C8C0;
 
 // [0x004160C0] CEnTabCtrl::vfunc_22 (35 bytes)
@@ -98,5 +105,58 @@ L_415F77:
         pop ebx
         mov dword ptr [esp + 0x4], 0xf
         jmp dword ptr [mem_00925680]
+    }
+}
+
+// [0x00416680] CEnTabCtrl::vfunc_82 (126 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00416680(void* self, int edx_unused, void* src) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        lea eax, [edi + 0x1c]
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 0xc]
+        push ecx
+        call dword ptr [mem_00925670]
+        mov edx, dword ptr [edi + 0x18]
+        push edx
+        call ext_006A6004
+        mov edi, eax
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x150]
+        push 0x0
+        mov ecx, esi
+        call edx
+        mov esi, eax
+        push esi
+        lea eax, [esp + 0xc]
+        push eax
+        mov ecx, edi
+        call ext_006A6172
+        fld dword ptr [mem_0092C8C4]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_00415D50
+        fld dword ptr [mem_0092C8CC]
+        add esp, 0x8
+        push eax
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_00415E30
+        add esp, 0x8
+        push eax
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, edi
+        call ext_006A61C6
+        pop edi
+        pop esi
+        add esp, 0x10
+        ret 0x4
     }
 }
