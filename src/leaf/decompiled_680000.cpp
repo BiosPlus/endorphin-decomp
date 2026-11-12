@@ -3485,3 +3485,37 @@ skip_0068BF00:
         ret 0x4
     }
 }
+
+// [0x0068BDF0] sub_0068BDF0 (73 bytes)
+// thiscall with self in ecx (ecx+0x10 passed to ext_00508680), two float stack args, ret 8.
+extern "C" void ext_00508680();
+extern "C" int mem_0093BD38;
+extern "C" int mem_0094FF78;
+
+extern "C" __declspec(naked) void __fastcall fn_0068BDF0(void* self, int edx_unused, float a1, float a2) {
+    __asm {
+        sub esp, 0x8
+        fld dword ptr [esp + 0xc]
+        add ecx, 0x10
+        fstp qword ptr [esp]
+        call ext_00508680
+        test eax, eax
+        mov dword ptr [esp + 0xc], eax
+        fild dword ptr [esp + 0xc]
+        jge L_0068BE14
+        fadd qword ptr [mem_0093BD38]
+    L_0068BE14:
+        fmul qword ptr [mem_0094FF78]
+        fld dword ptr [esp + 0x10]
+        fld qword ptr [esp]
+        fsub st(1), st
+        fxch st(1)
+        fabs
+        fmulp st(2), st
+        faddp st(1), st
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        add esp, 0x8
+        ret 0x8
+    }
+}
