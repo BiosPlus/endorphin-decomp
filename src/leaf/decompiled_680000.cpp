@@ -1,5 +1,6 @@
 // Decompiled translation unit: src/leaf/decompiled_680000.cpp
 
+#include <string>
 
 // [0x0068BC50] sub_0068BC50 (15 bytes)
 extern "C" void ext_00695390();
@@ -3898,5 +3899,101 @@ extern "C" __declspec(naked) void __fastcall fn_00686630(void* self, int edx_unu
         pop ebx
         add esp, 8
         ret 4
+    }
+}
+
+// [0x00685CB0] sub_00685CB0 (231 bytes)
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_00685CB0(char* first, char* last, char* dest_end) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        cmp dword ptr [esp + 0x8], ebx
+        je ret_dest
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        lea esi, [ebx + 0x50]
+        lea edi, [ebp + 0x50]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+loop_top:
+        mov eax, dword ptr [ebx - 0x94]
+        sub esi, 0x94
+        lea ecx, [esi - 0x40]
+        sub ebx, 0x94
+        sub edi, 0x94
+        push ecx
+        sub ebp, 0x94
+        lea ecx, [edi - 0x40]
+        mov dword ptr [ebp], eax
+        call dword ptr [mem_00924FDC]
+        mov edx, dword ptr [esi - 0x24]
+        lea eax, [esi - 0x20]
+        push eax
+        lea ecx, [edi - 0x20]
+        mov dword ptr [edi - 0x24], edx
+        call dword ptr [mem_00924FDC]
+        lea ecx, [edi - 0x4]
+        lea edx, [esi - 0x4]
+        cmp ecx, edx
+        je skip_ptr
+        mov ecx, dword ptr [edi]
+        test ecx, ecx
+        je no_old
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [edi - 0x4]
+        push edx
+        call eax
+no_old:
+        mov ecx, dword ptr [esi]
+        mov dword ptr [edi], ecx
+        cmp dword ptr [esi], 0x0
+        je null_src
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        lea eax, [esi - 0x4]
+        push eax
+        lea eax, [esp + 0x1c]
+        push eax
+        call edx
+        jmp store_tmp
+null_src:
+        mov dword ptr [esp + 0x1c], 0x0
+        lea eax, [esp + 0x1c]
+store_tmp:
+        mov eax, dword ptr [eax]
+        mov dword ptr [edi - 0x4], eax
+skip_ptr:
+        lea ecx, [esi + 0x4]
+        push ecx
+        lea ecx, [edi + 0x4]
+        call dword ptr [mem_00924FDC]
+        lea edx, [esi + 0x20]
+        push edx
+        lea ecx, [edi + 0x20]
+        call dword ptr [mem_00924FDC]
+        cmp ebx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esi + 0x3c]
+        mov dword ptr [edi + 0x3c], eax
+        mov ecx, dword ptr [esi + 0x40]
+        mov dword ptr [edi + 0x40], ecx
+        jne loop_top
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+ret_dest:
+        mov eax, dword ptr [esp + 0x10]
+        pop ebx
+        ret
     }
 }
