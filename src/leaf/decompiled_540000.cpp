@@ -2834,3 +2834,17 @@ extern "C" __declspec(naked) void __fastcall fn_005442D0(void* self) {
         jmp edx
     }
 }
+
+// [0x0054F1E0] sub_0054F1E0 (45 bytes)
+extern "C" void ext_00534590();
+extern "C" void __cdecl fn_0054F1E0(char* dst, unsigned int count, const void* src) {
+    if (count <= 0) return;
+    typedef void (__thiscall *Ctor)(void*, const void*);
+    do {
+        if (dst) {
+            ((Ctor)ext_00534590)(dst, src);
+        }
+        --count;
+        dst += 0x68;
+    } while (count > 0);
+}
