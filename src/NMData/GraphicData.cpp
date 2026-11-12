@@ -165,3 +165,36 @@ after_this:
         ret 0x4
     }
 }
+
+// [0x0061FE60] NMData::GraphicData::vfunc_4_off_C (56 bytes)
+extern "C" void ext_005B1AB0();
+extern "C" void ext_005B11F0();
+
+extern "C" __declspec(naked) void __fastcall fn_0061FE60(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi + 0x148]
+        push eax
+        mov ecx, edi
+        call ext_005B1AB0
+        cmp dword ptr [esi + 0x4], 0x0
+        je skip_call
+        mov ecx, dword ptr [esi + 0x4]
+        push ebx
+        mov ebx, dword ptr [ecx]
+        mov ecx, edi
+        call ext_005B11F0
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ebx + 0x34]
+        push eax
+        call edx
+        pop ebx
+skip_call:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
