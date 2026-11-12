@@ -1051,3 +1051,22 @@ extern "C" __declspec(naked) void __fastcall fn_004FB640(void* self) {
         jmp eax
     }
 }
+
+// [0x004FB3C0] VMCSModes::DefaultImplementation::vfunc_58 (30 bytes)
+extern "C" void ext_004667A0();
+extern "C" void ext_00468F90();
+extern "C" __declspec(naked) void __fastcall fn_004FB3C0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        push 1
+        call ext_004667A0
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esi + 0x8]
+        push eax
+        call ext_00468F90
+        pop esi
+        ret 0x4
+    }
+}
