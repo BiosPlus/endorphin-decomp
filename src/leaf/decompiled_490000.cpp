@@ -5005,3 +5005,24 @@ extern "C" __declspec(naked) void __fastcall fn_0049EBF0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_0049EBF0();
+
+// [0x0049ED40] sub_0049ED40 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0049ED40(void* self, int edx_unused, void* arg0) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push edi
+        lea ecx, [esi + 0xd0]
+        call ext_0049EBF0
+        push edi
+        lea ecx, [esi + 0xc4]
+        call ext_0049EBF0
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
