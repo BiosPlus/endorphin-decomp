@@ -4062,3 +4062,41 @@ extern "C" __declspec(naked) void __cdecl fn_0051A890(void* a, void* b, float c,
         ret
     }
 }
+
+// [0x0051AC30] sub_0051AC30 (73 bytes)
+extern "C" void ext_0051A780();
+extern "C" int mem_0094CE80;
+extern "C" __declspec(naked) void __fastcall fn_0051AC30(void* self, int edx_unused, float a1) {
+    __asm {
+        fld dword ptr [mem_0094CE80]
+        push ebx
+        push esi
+        push edi
+        sub esp, 8
+        fstp dword ptr [esp+4]
+        mov esi, ecx
+        fld dword ptr [esp+0x18]
+        lea edi, [esi+0x3c]
+        fstp dword ptr [esp]
+        lea ebx, [esi+0x2c]
+        push edi
+        push ebx
+        call ext_0051A780
+        fld dword ptr [esp+0x20]
+        mov edx, [edi+4]
+        fstp dword ptr [esp+0xc]
+        mov ecx, [esi+0x28]
+        mov eax, [ecx]
+        mov eax, [eax+0xc]
+        add esp, 0xc
+        push edx
+        mov edx, [edi]
+        push edx
+        push ebx
+        call eax
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
