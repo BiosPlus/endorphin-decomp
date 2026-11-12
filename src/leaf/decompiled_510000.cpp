@@ -3143,3 +3143,61 @@ extern "C" unsigned int __fastcall fn_005111E0(MTRandContext_5111E0* self, int e
 
     return y;
 }
+
+// [0x005184F0] sub_005184F0 (95 bytes)
+extern "C" void ext_006955D0();
+extern "C" void ext_005111E0();
+extern "C" __declspec(naked) void __fastcall fn_005184F0(void* self) {
+    __asm {
+        push ecx
+        push ebp
+        push esi
+        call ext_006955D0
+        xor esi, esi
+        cmp dword ptr [esp + 0x14], esi
+        mov ebp, eax
+        jle L_end
+        push ebx
+        mov ebx, dword ptr [esp + 0x1c]
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+L_outer:
+        test ebx, ebx
+        jbe L_zero
+        lea ecx, [esp + 0x10]
+        lea eax, [ebx - 1]
+        push ecx
+        mov ecx, ebp
+        mov dword ptr [esp + 0x14], eax
+        call ext_005111E0
+        jmp L_store
+L_zero:
+        xor eax, eax
+L_store:
+        xor ecx, ecx
+        test esi, esi
+        mov dword ptr [edi + 4 * esi], eax
+        jle L_next
+L_inner:
+        cmp dword ptr [edi + 4 * ecx], eax
+        je L_outer
+        add ecx, 1
+        cmp ecx, esi
+        jl L_inner
+L_next:
+        add esi, 1
+        cmp esi, dword ptr [esp + 0x1c]
+        jl L_outer
+        pop edi
+        pop ebx
+L_end:
+        pop esi
+        pop ebp
+        pop ecx
+        ret
+    }
+}
