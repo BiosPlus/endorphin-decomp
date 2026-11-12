@@ -3083,3 +3083,31 @@ L_exit:
         ret 4
     }
 }
+
+// [0x00547C20] sub_00547C20 (172 bytes)
+extern "C" void* ext_00552940();
+extern "C" void (__stdcall *mem_009254F4)(int, unsigned int*);
+extern "C" void (__stdcall *mem_009254F0)(unsigned int, unsigned int);
+extern "C" void (__stdcall *mem_009254E8)(unsigned int, unsigned int, int);
+extern "C" void (__stdcall *mem_009254EC)(unsigned int, int, int, int, int, int, unsigned int, unsigned int, const void*);
+
+struct TargetClass_547C20 {
+    char pad[0xa8];
+    unsigned int m_textureId;
+    char m_flag_ac;
+};
+
+extern "C" void __fastcall fn_00547C20(TargetClass_547C20* self) {
+    if (self->m_textureId == 0) {
+        mem_009254F4(1, &self->m_textureId);
+    }
+    mem_009254F0(0xde1, self->m_textureId);
+    void (__stdcall *pTexParam)(unsigned int, unsigned int, int) = mem_009254E8;
+    pTexParam(0xde1, 0x2802, 0x2900);
+    pTexParam(0xde1, 0x2803, 0x2900);
+    pTexParam(0xde1, 0x2800, 0x2601);
+    pTexParam(0xde1, 0x2801, 0x2600);
+    void* pixels = ext_00552940();
+    mem_009254EC(0xde1, 0, 0x1908, 0x100, 0x100, 0, 0x1908, 0x1401, pixels);
+    self->m_flag_ac = 0;
+}
