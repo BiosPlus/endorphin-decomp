@@ -5672,3 +5672,68 @@ strlen_loop:
         ret 0x4
     }
 }
+
+// [0x0066A8B0] sub_0066A8B0 (148 bytes)
+extern "C" __declspec(naked) char* __cdecl fn_0066A8B0(void* self, const char* fmt, ...) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [mem_009252FC]
+        mov dword ptr [esi + 0x4], 0x0
+        jmp short vsn_loop
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+vsn_loop:
+        mov eax, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esp + 0x18]
+        lea ecx, [esp + 0x1c]
+        push ecx
+        mov ecx, dword ptr [esi + 0x8]
+        push edx
+        mov edx, dword ptr [esi]
+        sub ecx, eax
+        sub ecx, 0x1
+        push ecx
+        add edx, eax
+        push edx
+        call edi
+        add esp, 0x10
+        cmp eax, -1
+        jne short vsn_ok
+        mov eax, dword ptr [esi + 0x8]
+        fild dword ptr [esi + 0x8]
+        test eax, eax
+        jge short grow_pos
+        fadd dword ptr [mem_0092F678]
+grow_pos:
+        fnstcw word ptr [esp + 0x14]
+        movzx eax, word ptr [esp + 0x14]
+        fadd st(0), st
+        or eax, 0xc00
+        mov dword ptr [esp + 0x8], eax
+        fsub qword ptr [mem_0092A270]
+        fldcw word ptr [esp + 0x8]
+        fistp qword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        fldcw word ptr [esp + 0x18]
+        call ext_0066A770
+        jmp short vsn_loop
+vsn_ok:
+        add dword ptr [esi + 0x4], eax
+        mov eax, dword ptr [esi]
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret
+    }
+}
