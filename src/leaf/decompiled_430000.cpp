@@ -8731,3 +8731,93 @@ extern "C" __declspec(naked) void __fastcall fn_0043BBD0(void* self) {
         ret
     }
 }
+
+// [0x0043D3E0] sub_0043D3E0 (205 bytes)
+// Deque reverse copy (copy_backward) implementation.
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0043D3E0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0x30]
+        push ebp
+        mov ebp, dword ptr [esp + 0x24]
+        push esi
+        push edi
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    dcb_loop:
+        mov eax, dword ptr [esp + 0x30]
+        cmp dword ptr [esp + 0x24], eax
+        je dcb_done
+        sub eax, 1
+        mov esi, eax
+        mov edi, eax
+        shr esi, 2
+        and edi, 3
+        test ebp, ebp
+        mov dword ptr [esp + 0x30], eax
+        jne dcb_chk1
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x30]
+    dcb_chk1:
+        mov ecx, dword ptr [ebp + 0x10]
+        add ecx, dword ptr [ebp + 0xc]
+        cmp eax, ecx
+        jb dcb_chk2
+        call dword ptr [mem_00925134]
+    dcb_chk2:
+        mov eax, dword ptr [ebp + 0x8]
+        cmp eax, esi
+        ja dcb_nowrap1
+        sub esi, eax
+    dcb_nowrap1:
+        mov edx, dword ptr [ebp + 0x4]
+        mov eax, dword ptr [edx + 4*esi]
+        lea ecx, [eax + 4*edi]
+        mov eax, dword ptr [esp + 0x38]
+        sub ebx, 1
+        mov esi, ebx
+        mov edi, ebx
+        shr esi, 2
+        and edi, 3
+        test eax, eax
+        mov dword ptr [esp + 0x10], ecx
+        jne dcb_chk3
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x38]
+    dcb_chk3:
+        mov edx, dword ptr [eax + 0x10]
+        add edx, dword ptr [eax + 0xc]
+        cmp ebx, edx
+        jb dcb_chk4
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x38]
+    dcb_chk4:
+        mov ecx, dword ptr [eax + 0x8]
+        cmp ecx, esi
+        ja dcb_nowrap2
+        sub esi, ecx
+    dcb_nowrap2:
+        mov eax, dword ptr [eax + 0x4]
+        mov ecx, dword ptr [eax + 4*esi]
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [edx]
+        mov dword ptr [ecx + 4*edi], eax
+        jmp dcb_loop
+    dcb_done:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x38]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x8], ebx
+        mov dword ptr [eax], 0
+        mov dword ptr [eax + 0x4], ecx
+        pop ebx
+        pop ecx
+        ret
+    }
+}
