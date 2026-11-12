@@ -1881,3 +1881,74 @@ extern "C" int __fastcall fn_006A88D0(void* self, int edx_unused, unsigned int n
     ((FnPostMessageA_006A88D0)mem_00925618)(*(void**)((char*)s + 0x20), 0x200, 0, lParam);
     return ((FnDefault_006A88D0)ext_006A5EA8)(s);
 }
+
+// [0x006ADC80] sub_006ADC80 (168 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006A6796();
+extern "C" void ext_006ADBF0();
+extern "C" __declspec(naked) void __fastcall fn_006ADC80(void* self) {
+    __asm {
+        push -0x1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x8
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        test edi, edi
+        mov dword ptr [esp + 0x4], 0x0
+        je short loc_6ADD18
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x24]
+        push esi
+        add ebp, 0x18
+        lea ebx, [esp + 0x30]
+loc_6ADCB7:
+        push 0x40
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x14], eax
+        xor esi, esi
+        cmp eax, esi
+        mov dword ptr [esp + 0x20], esi
+        je short loc_6ADCE7
+        mov ecx, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esp + 0x10]
+        push ecx
+        push edx
+        mov ecx, eax
+        call ext_006ADBF0
+        add dword ptr [esp + 0x10], 0x1
+        mov esi, eax
+loc_6ADCE7:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x14]
+        test edi, edi
+        sete cl
+        mov dword ptr [esp + 0x20], 0xffffffff
+        push ecx
+        push edi
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [ebp + 0x8]
+        push esi
+        push eax
+        mov ecx, ebp
+        call ext_006A6796
+        mov edi, dword ptr [ebx + 0x4]
+        add ebx, 0x4
+        test edi, edi
+        jne short loc_6ADCB7
+        pop esi
+        pop ebp
+        pop ebx
+loc_6ADD18:
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x14
+        ret
+    }
+}
