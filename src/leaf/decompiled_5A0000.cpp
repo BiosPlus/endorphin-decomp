@@ -1212,3 +1212,65 @@ extern "C" void __cdecl fn_005A0BB0(int a, int b) {
         } while (--b != 0);
     }
 }
+
+// [0x005AC4D0] sub_005AC4D0 (125 bytes)
+extern "C" void ext_00664A80();
+extern "C" int mem_00A88884;
+extern "C" int mem_00A88880;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void* __cdecl fn_005AC4D0() {
+    __asm {
+        push -0x1
+        push offset ext_00664A80
+        _emit 0x64
+        _emit 0xa1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push eax
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push ecx
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        mov eax, dword ptr [mem_00A88884]
+        mov ecx, dword ptr [mem_00A88880]
+        push 0x0
+        push eax
+        push ecx
+        lea edx, [esp + 0x28]
+        push edx
+        mov dword ptr [esp + 0x20], 0x1
+        call ext_00664A80
+        mov esi, dword ptr [esp + 0x28]
+        add esp, 0x10
+        lea eax, [esp + 0x1c]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x4], 0x1
+        mov byte ptr [esp + 0x10], 0x0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add esp, 0x10
+        ret
+    }
+}
