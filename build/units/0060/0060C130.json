@@ -16,5 +16,7 @@
     "0x0060C156",
     "0x0060C160"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-12T13:54:01Z"
 }
