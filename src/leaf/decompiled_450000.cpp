@@ -4127,3 +4127,17 @@ extern "C" int __stdcall fn_0045B850(void* a1) {
     if (dc(a1, 0, (void*)0xA2E2BC, (void*)0xA2FB9C, 0)) return 15;
     return dc(a1, 0, (void*)0xA2E2BC, (void*)0xA2FC74, 0) ? 23 : 0;
 }
+
+// [0x0045B980] sub_0045B980 (291 bytes)
+extern "C" int __stdcall fn_0045B980(void* a1) {
+    typedef void* (__cdecl *D)(void*, int, void*, void*, int);
+    D dc = (D)ext_006A6E9E;
+    if (dc(a1, 0, (void*)0xA2E2BC, (void*)0xA2FB54, 0)) return 25;
+    if (dc(a1, 0, (void*)0xA2E2BC, (void*)0xA2FBBC, 0)) return 26;
+    if (dc(a1, 0, (void*)0xA2E2BC, (void*)0xA2FB78, 0)) return 29;
+    if (dc(a1, 0, (void*)0xA2E2BC, (void*)0xA2FC0C, 0)) return 30;
+    if (dc(a1, 0, (void*)0xA2E2BC, (void*)0xA2FBE4, 0)) return 31;
+    if (dc(a1, 0, (void*)0xA2E2BC, (void*)0xA2FC50, 0)) return 32;
+    if (dc(a1, 0, (void*)0xA2E2BC, (void*)0xA2FB9C, 0)) return 27;
+    return dc(a1, 0, (void*)0xA2E2BC, (void*)0xA2FC74, 0) ? 35 : 0;
+}
