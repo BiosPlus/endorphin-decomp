@@ -4781,3 +4781,89 @@ extern "C" __declspec(naked) void __fastcall fn_00666CE0(void* self) {
         ret
     }
 }
+
+// [0x00665130] sub_00665130 (154 bytes)
+extern "C" void ext_00664E40();
+extern "C" int mem_00925134;
+extern "C" int mem_00924E44;
+
+extern "C" __declspec(naked) void* __cdecl fn_00665130(void* ret, int edi_arg, const char* first, int guard, const char* last, char c) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        cmp esi, ebx
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov dword ptr [esp + 0x1c], esi
+        je L_skip_scan
+        mov al, byte ptr [esp + 0x28]
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    L_scan:
+        cmp byte ptr [esi], al
+        je L_skip_scan
+        add esi, 1
+        cmp esi, ebx
+        jne L_scan
+    L_skip_scan:
+        cmp edi, -2
+        mov ebp, dword ptr [mem_00925134]
+        je L_check2
+        test edi, edi
+        je L_call1
+        cmp edi, dword ptr [esp + 0x20]
+        je L_check2
+    L_call1:
+        call ebp
+    L_check2:
+        cmp esi, ebx
+        jne L_found
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr [eax], edi
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_found:
+        cmp edi, -2
+        je L_tail
+        test edi, edi
+        jne L_myptr
+        call ebp
+    L_myptr:
+        mov ecx, edi
+        call dword ptr [mem_00924E44]
+        add eax, dword ptr [edi + 0x14]
+        cmp esi, eax
+        jb L_tail
+        call ebp
+    L_tail:
+        mov edx, dword ptr [esp + 0x28]
+        mov byte ptr [esp + 0x18], 0
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        push edx
+        push esi
+        push edi
+        lea eax, [esi + 1]
+        mov esi, dword ptr [esp + 0x24]
+        push ebx
+        push eax
+        push esi
+        call ext_00664E40
+        add esp, 0x1c
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
