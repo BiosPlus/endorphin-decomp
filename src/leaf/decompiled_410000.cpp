@@ -5706,3 +5706,110 @@ L_fail_004199B0:
         ret 0x4
     }
 }
+
+// [0x0041FDA0] sub_0041FDA0 (223 bytes)
+extern "C" void ext_0041FD70();
+extern "C" void ext_0041FE49();
+extern "C" void ext_006A5EDE();
+extern "C" void ext_006A60EE();
+extern "C" void ext_006A63CA();
+extern "C" void ext_006A63D0();
+extern "C" int mem_00924204;
+extern "C" int mem_0092420C;
+
+// [0x0041FDA0] sub_0041FDA0 (223 bytes)
+// SEH-framed (fs:[0] chain, scope 0x9d3588, handler 0x6a6ef2). Calls thunk ord_1084(&local),
+// reads [ret+0x9c] -> ord_6752; if non-zero, calls [self+0x2c] (lazily resolved via sub_0041FD70)
+// with three stack args and then runs a local cleanup block (GetLastError/SetLastError bracketing ord_6754).
+extern "C" __declspec(naked) int __fastcall fn_0041FDA0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x9d3588
+        push 0x6a6ef2
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x18
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        xor ebx, ebx
+        mov dword ptr [ebp-0x20], ebx
+        lea eax, [ebp-0x20]
+        push eax
+        call ext_006A5EDE
+        mov ecx, dword ptr [eax+0x9c]
+        push ecx
+        call ext_006A63D0
+        mov edi, eax
+        mov dword ptr [ebp-0x24], edi
+        or eax, -1
+        mov dword ptr [ebp-0x1c], eax
+        cmp edi, ebx
+        je L_epilog
+        mov dword ptr [ebp-0x4], ebx
+        lea edx, [ebp-0x28]
+        push edx
+        mov ecx, esi
+        call ext_0041FD70
+        mov esi, dword ptr [esi+0x2c]
+        xor eax, eax
+        cmp esi, ebx
+        setne al
+        cmp eax, ebx
+        jne L_have_fn
+        call ext_006A60EE
+    L_have_fn:
+        mov eax, dword ptr [ebp+0x10]
+        push eax
+        mov ecx, dword ptr [ebp+0xc]
+        push ecx
+        mov edx, dword ptr [ebp+0x8]
+        push edx
+        call esi
+        mov ebx, eax
+        mov dword ptr [ebp-0x1c], ebx
+        mov dword ptr [ebp-0x4], -1
+        call L_cleanup
+        mov eax, ebx
+    L_epilog:
+        mov ecx, dword ptr [ebp-0x10]
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0xc
+    L_cleanup:
+        mov edi, dword ptr [ebp-0x24]
+        mov ebx, dword ptr [ebp-0x1c]
+        cmp edi, 2
+        je L_cleanup_ret
+        xor eax, eax
+        cmp ebx, -1
+        sete al
+        mov esi, eax
+        test esi, esi
+        je L_no_gle
+        call dword ptr [mem_00924204]
+        mov edi, eax
+        jmp L_cleanup_call
+    L_no_gle:
+        xor edi, edi
+    L_cleanup_call:
+        mov ecx, dword ptr [ebp-0x20]
+        push ecx
+        push 0
+        call ext_006A63CA
+        test esi, esi
+        je L_cleanup_ret
+        push edi
+        call dword ptr [mem_0092420C]
+    L_cleanup_ret:
+        ret
+    }
+}
