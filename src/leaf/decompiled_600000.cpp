@@ -1454,3 +1454,43 @@ fn_end:
         ret
     }
 }
+
+// [0x006035D0] sub_006035D0 (157 bytes)
+struct Rec006035D0 {
+    float a[12];
+    int b;
+    int c;
+    unsigned char d;
+    float e[10];
+};
+
+extern "C" void* __fastcall fn_006035D0(void* self, int edx_unused, const void* src) {
+    Rec006035D0* dst = static_cast<Rec006035D0*>(self);
+    const Rec006035D0* s = static_cast<const Rec006035D0*>(src);
+    dst->a[0] = s->a[0];
+    dst->a[1] = s->a[1];
+    dst->a[2] = s->a[2];
+    dst->a[3] = s->a[3];
+    dst->a[4] = s->a[4];
+    dst->a[5] = s->a[5];
+    dst->a[6] = s->a[6];
+    dst->a[7] = s->a[7];
+    dst->a[8] = s->a[8];
+    dst->a[9] = s->a[9];
+    dst->a[10] = s->a[10];
+    dst->a[11] = s->a[11];
+    dst->b = s->b;
+    dst->c = s->c;
+    dst->d = s->d;
+    dst->e[0] = s->e[0];
+    dst->e[1] = s->e[1];
+    dst->e[2] = s->e[2];
+    dst->e[3] = s->e[3];
+    dst->e[4] = s->e[4];
+    dst->e[5] = s->e[5];
+    dst->e[6] = s->e[6];
+    dst->e[7] = s->e[7];
+    dst->e[8] = s->e[8];
+    dst->e[9] = s->e[9];
+    return self;
+}
