@@ -20,5 +20,7 @@
     "0x00462C12",
     "0x00462C25"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-12T13:44:43Z"
 }
