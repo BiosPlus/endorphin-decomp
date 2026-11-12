@@ -222,3 +222,115 @@ L_ok2:
         ret
     }
 }
+
+// [0x00659090] RelationshipHinge::vfunc_51 (274 bytes)
+extern "C" void ext_00658A60();
+extern "C" void ext_0065F440();
+extern "C" void ext_007C9E10();
+extern "C" void ext_007C9E20();
+extern "C" void ext_007C9E50();
+extern "C" __declspec(naked) void __fastcall fn_00659090(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x18
+        push esi
+        mov esi, [esp+0x20]
+        mov eax, [esi]
+        mov edx, [eax+0xf4]
+        push edi
+        mov edi, ecx
+        push 0
+        mov ecx, esi
+        call edx
+        mov eax, [edi+0x64]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_007C9C50
+        add esp, 4
+        push eax
+        call ext_007C9E10
+        mov ecx, [edi+0x64]
+        add esp, 8
+        push 0
+        push ecx
+        call ext_007C9C50
+        add esp, 4
+        push eax
+        call ext_007C9E20
+        mov esi, [esi+0x17c]
+        mov edx, [esi]
+        mov eax, [edx+0x130]
+        add esp, 8
+        push 0
+        mov ecx, esi
+        call eax
+        test al, al
+        je L183
+        mov edx, [esi]
+        mov edx, [edx+0x118]
+        push ebx
+        push 0
+        push 0
+        lea eax, [esp+0x14]
+        push eax
+        mov ecx, esi
+        call edx
+        mov bl, [eax+4]
+        lea ecx, [esp+0xc]
+        call ext_0065F440
+        test bl, bl
+        je L13c
+        push 0
+        push esi
+        mov ecx, edi
+        call ext_00658A60
+        mov eax, [edi+0x64]
+        push 1
+        push eax
+        call ext_007C9C50
+        add esp, 4
+        push eax
+        call ext_007C9E20
+        add esp, 8
+    L13c:
+        mov edx, [esi]
+        mov edx, [edx+0x118]
+        push 1
+        push 0
+        lea eax, [esp+0x14]
+        push eax
+        mov ecx, esi
+        call edx
+        mov bl, [eax+4]
+        lea ecx, [esp+0xc]
+        call ext_0065F440
+        test bl, bl
+        pop ebx
+        je L183
+        push 1
+        push esi
+        mov ecx, edi
+        call ext_00658A60
+        mov eax, [edi+0x64]
+        push 1
+        push eax
+        call ext_007C9C50
+        add esp, 4
+        push eax
+        call ext_007C9E20
+        add esp, 8
+    L183:
+        mov ecx, [edi+0x64]
+        push 1
+        push ecx
+        call ext_007C9C50
+        add esp, 4
+        push eax
+        call ext_007C9E50
+        add esp, 8
+        pop edi
+        pop esi
+        add esp, 0x18
+        ret 4
+    }
+}
