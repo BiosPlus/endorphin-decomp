@@ -181,3 +181,91 @@ extern "C" __declspec(naked) void __fastcall fn_0051BF10(void* self) {
         ret
     }
 }
+
+// [0x0051BA70] NMData::RealChannel::vfunc_6 (160 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0051BA70(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        push edi
+        lea esi, [ecx + 0x2c]
+    L_51ba7e:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe short L_51ba88
+        call ebp
+    L_51ba88:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe short L_51ba92
+        call ebp
+    L_51ba92:
+        test esi, esi
+        je short L_51ba9a
+        cmp esi, esi
+        je short L_51ba9c
+    L_51ba9a:
+        call ebp
+    L_51ba9c:
+        cmp edi, ebx
+        je short L_51bb08
+        test esi, esi
+        jne short L_51baa6
+        call ebp
+    L_51baa6:
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_51baad
+        call ebp
+    L_51baad:
+        fld dword ptr [edi]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x18]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jp short L_51bafa
+        fld dword ptr [esp + 0x1c]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        jne short L_51bafc
+        mov edx, dword ptr [esi + 0x8]
+        lea eax, [edi + 0x8]
+        cmp eax, edx
+        je short L_51baf4
+        lea ecx, [eax - 0x8]
+        mov edi, edi
+    L_51bae0:
+        mov edi, dword ptr [eax]
+        mov dword ptr [ecx], edi
+        mov edi, dword ptr [eax + 0x4]
+        mov dword ptr [ecx + 0x4], edi
+        add eax, 0x8
+        add ecx, 0x8
+        cmp eax, edx
+        jne short L_51bae0
+    L_51baf4:
+        add dword ptr [esi + 0x8], -0x8
+        jmp short L_51ba7e
+    L_51bafa:
+        fstp st(0)
+    L_51bafc:
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_51bb03
+        call ebp
+    L_51bb03:
+        add edi, 0x8
+        jmp short L_51ba88
+    L_51bb08:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
