@@ -1967,3 +1967,92 @@ extern "C" __declspec(naked) void __fastcall fn_004F71B0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004F01A0] sub_004F01A0 (176 bytes)
+extern "C" void ext_004EFB20();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) int __cdecl fn_004F01A0(int* a1, int* a2) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        mov eax, dword ptr [ebp + 0x4]
+        test eax, eax
+        push esi
+        push edi
+        jne L_cnt1
+        xor esi, esi
+        jmp L_cnt2
+L_cnt1:
+        mov ecx, dword ptr [ebp + 0x8]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov esi, edx
+        shr esi, 0x1f
+        add esi, edx
+L_cnt2:
+        mov ebx, dword ptr [esp + 0x18]
+        mov edi, dword ptr [ebx + 0x4]
+        test edi, edi
+        jne L_cnt3
+        xor eax, eax
+        jmp L_cmp
+L_cnt3:
+        mov ecx, dword ptr [ebx + 0x8]
+        sub ecx, edi
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+L_cmp:
+        cmp esi, eax
+        jne L_fail
+        cmp edi, dword ptr [ebx + 0x8]
+        jbe L_ok1
+        call dword ptr [mem_00925134]
+L_ok1:
+        mov eax, dword ptr [ebp + 0x8]
+        cmp dword ptr [ebp + 0x4], eax
+        mov dword ptr [esp + 0x14], eax
+        jbe L_ok2
+        call dword ptr [mem_00925134]
+L_ok2:
+        mov esi, dword ptr [ebp + 0x4]
+        cmp esi, dword ptr [ebp + 0x8]
+        jbe L_ok3
+        call dword ptr [mem_00925134]
+L_ok3:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x14]
+        push eax
+        push ecx
+        push edi
+        push ebx
+        push edx
+        push esi
+        call ext_004EFB20
+        add esp, 0x18
+        test al, al
+        je L_fail
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        ret
+L_fail:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
