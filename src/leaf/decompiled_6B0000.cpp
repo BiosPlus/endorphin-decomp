@@ -4062,3 +4062,45 @@ L_fail:
         ret
     }
 }
+
+// [0x006B3120] sub_006B3120 (80 bytes)
+extern "C" void ext_006B2FB0();
+extern "C" int mem_00B5D234;
+extern "C" int mem_0092563C;
+extern "C" __declspec(naked) int __stdcall fn_006B3120(int a1, int a2) {
+    __asm {
+        call ext_006B2FB0
+        test eax, eax
+        je L_check
+        jmp dword ptr [mem_00B5D234]
+L_check:
+        test byte ptr [esp + 8], 3
+        push esi
+        push edi
+        jne L_fail
+        mov esi, dword ptr [esp + 0Ch]
+        cmp dword ptr [esi + 8], 0
+        jle L_ok
+        cmp dword ptr [esi + 0Ch], 0
+        jle L_ok
+        mov edi, dword ptr [mem_0092563C]
+        push 0
+        call edi
+        cmp dword ptr [esi], eax
+        jge L_ok
+        push 1
+        call edi
+        cmp dword ptr [esi + 4], eax
+        jl L_fail
+L_ok:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 8
+L_fail:
+        pop edi
+        mov eax, 12340042h
+        pop esi
+        ret 8
+    }
+}
