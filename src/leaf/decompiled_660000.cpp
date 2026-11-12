@@ -6480,3 +6480,98 @@ extern "C" __declspec(naked) void __fastcall fn_00667900(void* self) {
         ret
     }
 }
+
+// [0x00669E80] sub_00669E80 (211 bytes)
+extern "C" int mem_00999B40;
+extern "C" int mem_009357C0;
+extern "C" int mem_00987B20;
+
+extern "C" __declspec(naked) float __stdcall fn_00669E80(float a, float b, float c) {
+    __asm {
+        fldz
+        fld dword ptr [esp + 0xc]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        fld1
+        jp short L_neg_done
+        fadd st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fxch st(1)
+    L_neg_done:
+        fld1
+        fcomp st(2)
+        fnstsw ax
+        test ah, 0x5
+        jp short L_gt1_done
+        fsub st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        fxch st(1)
+    L_gt1_done:
+        fld st(1)
+        fld qword ptr [mem_00999B40]
+        fmul st(1), st
+        fxch st(1)
+        fcomp st(2)
+        fnstsw ax
+        test ah, 0x5
+        jp short L_case_hi
+        fstp st(1)
+        fld dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x4]
+        fld st(0)
+        fsubp st(2), st
+        fxch st(1)
+        fmulp st(2), st
+        fxch st(1)
+        fmulp st(2), st
+        faddp st(1), st
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        ret 0xc
+    L_case_hi:
+        fld st(2)
+        fadd st(0), st
+        fcomp st(2)
+        fnstsw ax
+        test ah, 0x5
+        jp short L_case_mid
+        fstp st(2)
+        fstp st(0)
+        fstp st(0)
+        fld dword ptr [esp + 0x8]
+        ret 0xc
+    L_case_mid:
+        fld st(2)
+        fmul qword ptr [mem_009357C0]
+        fcomp st(2)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jp short L_ret_a
+        fld dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x4]
+        fld st(0)
+        fsubp st(2), st
+        fxch st(1)
+        fmulp st(2), st
+        fld qword ptr [mem_00987B20]
+        fsubrp st(3), st
+        fxch st(1)
+        fmulp st(2), st
+        faddp st(1), st
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        ret 0xc
+    L_ret_a:
+        fstp st(1)
+        fstp st(0)
+        fld dword ptr [esp + 0x4]
+        ret 0xc
+    }
+}
