@@ -1,4 +1,5 @@
 // Decompiled translation unit: src/leaf/decompiled_4D0000.cpp
+#include <string>
 
 extern "C" int mem_00924FF0;
 
@@ -1013,5 +1014,41 @@ extern "C" __declspec(naked) void __fastcall fn_004D01C0(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 0x10
         ret
+    }
+}
+
+// [0x004D3940] sub_004D3940 (103 bytes)
+extern "C" void ext_00593710();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_004D3940(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x881709
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        sub esp, 0x1c
+        lea eax, [esp + 0x34]
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push eax
+        mov dword ptr [esp + 0x30], 0x0
+        call dword ptr [mem_00924FE0]
+        call ext_00593710
+        add esp, 0x1c
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esi + 0x394], eax
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 0x10
+        ret 0x1c
     }
 }
