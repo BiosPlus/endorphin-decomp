@@ -465,3 +465,38 @@ extern "C" __declspec(naked) void __fastcall fn_005332A0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0052EEB0] OglRenderer::vfunc_103 (95 bytes)
+extern "C" void ext_0053A3E0();
+extern "C" void ext_006A5C62();
+extern "C" __declspec(naked) void __fastcall fn_0052EEB0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push 0x18
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp], eax
+        test eax, eax
+        mov dword ptr [esp + 0xc], 0
+        je no_alloc
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, eax
+        call ext_0053A3E0
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+no_alloc:
+        mov ecx, dword ptr [esp + 0x4]
+        xor eax, eax
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
