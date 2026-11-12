@@ -2510,3 +2510,47 @@ extern "C" void __fastcall fn_005F5BC0(void* self, int edx_unused, float val) {
     ((Sub5F5BC0_TargetFn1)ext_00480430)(((Sub5F5BC0_SubFn)(*(void***)sub)[3])(sub, mem_00B40640));
     ((Sub5F5BC0_TargetFn2)ext_004C5010)(((Sub5F5BC0_SubFn)(*(void***)sub)[3])(sub, mem_00B40640), *(float*)(p + 0x164));
 }
+
+// [0x005FC210] sub_005FC210 (121 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_00627970();
+
+extern "C" __declspec(naked) void __fastcall fn_005FC210(void* self) {
+    __asm {
+        push -1
+        push 8A7A5Bh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push 88h
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp], eax
+        test eax, eax
+        mov dword ptr [esp + 0ch], 0
+        je null_path_5FC210
+        mov ecx, dword ptr [esp + 14h]
+        sub esp, 10h
+        mov edx, esp
+        mov dword ptr [edx], ecx
+        mov ecx, dword ptr [esp + 28h]
+        mov dword ptr [edx + 4], ecx
+        mov ecx, dword ptr [esp + 2ch]
+        mov dword ptr [edx + 8], ecx
+        mov ecx, dword ptr [esp + 30h]
+        mov dword ptr [edx + 0ch], ecx
+        mov ecx, eax
+        call ext_00627970
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret
+    null_path_5FC210:
+        mov ecx, dword ptr [esp + 4]
+        xor eax, eax
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
