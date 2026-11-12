@@ -20,5 +20,7 @@
     "0x00492879",
     "0x00492888"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-12T13:37:36Z"
 }
