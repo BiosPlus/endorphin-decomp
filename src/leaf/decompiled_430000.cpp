@@ -7087,3 +7087,87 @@ loc_004372B4:
         ret 0x18
     }
 }
+
+// [0x0043BCA0] sub_0043BCA0 (160 bytes)
+// Removes obj from the pointer vector at this+0x14 (first at +0x18, last at +0x1c) and clears obj+0x44.
+// Returns true if found and removed.
+extern "C" int mem_00925134;
+extern "C" int mem_009251EC;
+
+extern "C" __declspec(naked) bool __fastcall fn_0043BCA0(void* self, int edx_unused, void* obj) {
+    __asm {
+        sub esp, 8
+        push ebx
+        mov ebx, dword ptr [ecx + 0x1c]
+        cmp dword ptr [ecx + 0x18], ebx
+        push ebp
+        push esi
+        push edi
+        lea edi, [ecx + 0x14]
+        jbe L_bca8
+        call dword ptr [mem_00925134]
+L_bca8:
+        mov esi, dword ptr [edi + 4]
+        cmp esi, dword ptr [edi + 8]
+        jbe L_bcc6
+        call dword ptr [mem_00925134]
+L_bcc6:
+        cmp esi, ebx
+        mov ebp, dword ptr [esp + 0x1c]
+        mov dword ptr [esp + 0x14], esi
+        je L_bcdd
+L_bcd2:
+        cmp dword ptr [esi], ebp
+        je L_bcdd
+        add esi, 4
+        cmp esi, ebx
+        jne L_bcd2
+L_bcdd:
+        mov ebx, dword ptr [edi + 8]
+        cmp dword ptr [edi + 4], ebx
+        jbe L_bceb
+        call dword ptr [mem_00925134]
+L_bceb:
+        test edi, edi
+        je L_bcf3
+        cmp edi, edi
+        je L_bcf9
+L_bcf3:
+        call dword ptr [mem_00925134]
+L_bcf9:
+        cmp esi, ebx
+        je L_bd34
+        mov eax, dword ptr [edi + 8]
+        lea ecx, [esi + 4]
+        sub eax, ecx
+        sar eax, 2
+        test eax, eax
+        jle L_bd1d
+        add eax, eax
+        add eax, eax
+        push eax
+        push ecx
+        push eax
+        push esi
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+L_bd1d:
+        add dword ptr [edi + 8], -4
+        pop edi
+        pop esi
+        mov dword ptr [ebp + 0x44], 0
+        pop ebp
+        mov al, 1
+        pop ebx
+        add esp, 8
+        ret 4
+L_bd34:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        add esp, 8
+        ret 4
+    }
+}
