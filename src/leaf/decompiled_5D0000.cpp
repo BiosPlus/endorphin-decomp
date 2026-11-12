@@ -2058,3 +2058,82 @@ extern "C" __declspec(naked) int __fastcall fn_005DFAD0(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x005D12A0] sub_005D12A0 (264 bytes)
+extern "C" void ext_005B11E0();
+extern "C" void ext_005D0670();
+extern "C" void ext_005D0710();
+extern "C" void ext_006A73C0();
+extern "C" int mem_00955AD8;
+extern "C" int mem_00965CE8;
+extern "C" __declspec(naked) float __fastcall fn_005D12A0(void* self) {
+    __asm {
+        sub esp, 0xc
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x154], 0x0
+        je fail_5d12a0
+        cmp dword ptr [esi + 0x260], 0x0
+        jne fail_5d12a0
+        call ext_005D0710
+        fmul dword ptr [esi + 0x204]
+        mov ecx, dword ptr [esi + 0x154]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fcomp qword ptr [ecx + 0xc0]
+        fnstsw ax
+        test ah, 0x41
+        jne fail_5d12a0
+        fld qword ptr [ecx + 0xc0]
+        push 0x2
+        lea ecx, [esi + 0x210]
+        fstp qword ptr [esp + 0xc]
+        call ext_005B11E0
+        fmul dword ptr [esi + 0x204]
+        fld dword ptr [esp + 0x4]
+        mov ecx, esi
+        fld qword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fdiv dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x4]
+        fmul dword ptr [esp + 0x4]
+        fmul qword ptr [mem_00955AD8]
+        fstp qword ptr [esp + 0x8]
+        call ext_005D0670
+        fdivr qword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        call ext_006A73C0
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        pop esi
+        fadd st(0), st
+        fmul qword ptr [mem_00965CE8]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        add esp, 0xc
+        ret
+    fail_5d12a0:
+        push 0x2
+        lea ecx, [esi + 0x210]
+        call ext_005B11E0
+        fmul dword ptr [esi + 0x204]
+        mov ecx, esi
+        fmul qword ptr [mem_00955AD8]
+        fstp qword ptr [esp + 0x8]
+        call ext_005D0670
+        fdivr qword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        call ext_006A73C0
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        pop esi
+        fadd st(0), st
+        fmul qword ptr [mem_00965CE8]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        add esp, 0xc
+        ret
+    }
+}
