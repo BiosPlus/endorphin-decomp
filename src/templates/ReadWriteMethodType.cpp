@@ -9354,3 +9354,39 @@ extern "C" __declspec(naked) void __fastcall fn_00642090(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00642110] ExprParser::ReadWriteMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactsEnabled(void) const, 0}, bool, {public: void __thiscall MainPhysicsAdapter::setIsDrawContactsEnabled(bool), 0}>::vfunc_40 (122 bytes)
+extern "C" void ext_0067A670();
+extern "C" int mem_00B53BB0;
+extern "C" int mem_00B53BAC;
+
+extern "C" __declspec(naked) void __fastcall fn_00642110(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8af06e
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B53BB0], al
+        jne L_guarded
+        or dword ptr [mem_00B53BB0], eax
+        mov ecx, offset mem_00B53BAC
+        mov dword ptr [esp + 0x8], 0
+        call ext_0067A670
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [mem_00B53BAC], 0x0097d084
+        mov dword ptr [eax + 0x4], offset mem_00B53BAC
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    L_guarded:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x4], offset mem_00B53BAC
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x4
+    }
+}
