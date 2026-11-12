@@ -27,5 +27,7 @@
     "0x00461F5B",
     "0x00461F65"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T11:29:14Z"
 }
