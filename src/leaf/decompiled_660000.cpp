@@ -6870,3 +6870,24 @@ extern "C" __declspec(naked) void __fastcall fn_006679D0(void* self) {
         ret
     }
 }
+
+// [0x0066A3F0] sub_0066A3F0 (230 bytes)
+// HSL -> RGB: stores (r, g, b) through `self`; args are (hue, saturation, lightness).
+extern "C" void __fastcall fn_0066A3F0(float* self, int edx_unused, float h, float s, float l) {
+    if (s == 0.0f) {
+        self[0] = l;
+        self[1] = l;
+        self[2] = l;
+        return;
+    }
+    float q;
+    if (l < 0.5f) {
+        q = (s + 1.0) * l;
+    } else {
+        q = (s + l) - s * l;
+    }
+    float p = 2.0f * l - q;
+    self[0] = fn_00669E80(p, q, (float)((double)h + 0.33333333333333392545));
+    self[1] = fn_00669E80(p, q, h);
+    self[2] = fn_00669E80(p, q, (float)((double)h - 0.33333333333333392545));
+}
