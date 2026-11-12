@@ -2818,3 +2818,68 @@ extern "C" void* __fastcall fn_00534590(Light_00534590* self, int edx_unused, co
     self->m_floats[23] = other->m_floats[23];
     return self;
 }
+
+// [0x0053A810] sub_0053A810 (169 bytes)
+extern "C" void ext_00528B90();
+extern "C" void ext_00532B40();
+extern "C" void ext_00661AB0();
+extern "C" int mem_009253E8;
+extern "C" int mem_00AEE8A8;
+extern "C" __declspec(naked) void __fastcall fn_0053A810(void* self) {
+    __asm {
+        push -1
+        push 0x896153
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x9554ec
+        mov dword ptr [esi + 0x14], 0x9554e4
+        mov eax, dword ptr [esi + 0x34]
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0x1
+        je L_skip_list
+        push 0x1
+        push eax
+        call dword ptr [mem_009253E8]
+L_skip_list:
+        mov eax, dword ptr [esi + 0x30]
+        cmp eax, 0x7fffffff
+        je L_skip_tiny
+        mov ecx, dword ptr [mem_00AEE8A8]
+        test ecx, ecx
+        je L_skip_tiny
+        push eax
+        call ext_00661AB0
+        mov dword ptr [esi + 0x30], 0x7fffffff
+L_skip_tiny:
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        je L_skip_link
+        cmp dword ptr [ecx + 0x4], esi
+        jne L_skip_link
+        push 0x0
+        call ext_00528B90
+L_skip_link:
+        mov ecx, dword ptr [esi + 0x38]
+        test ecx, ecx
+        mov byte ptr [esp + 0x10], 0x0
+        je L_skip_virt
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+L_skip_virt:
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_00532B40
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
