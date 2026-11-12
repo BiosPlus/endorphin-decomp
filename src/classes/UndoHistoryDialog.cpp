@@ -190,3 +190,29 @@ extern "C" __declspec(naked) void __fastcall fn_00460D40(void* self) {
         ret
     }
 }
+
+// [0x00460F30] UndoHistoryDialog::vfunc_61 (125 bytes)
+extern "C" void ext_00460E00();
+extern "C" void ext_006A5D94();
+extern "C" void ext_006A614E();
+extern "C" int mem_00925234;
+extern "C" int mem_00925694;
+
+typedef int (__thiscall *BaseVFunc61Fn)(void*, int, int, int);
+typedef void (__thiscall *GetWindowTextFn)(void*, char*, int);
+typedef int (__cdecl *AtolFn)(const char*);
+typedef bool (__thiscall *Sub460E00Fn)(void*);
+typedef int (__stdcall *SendMessageFn)(void*, unsigned int, unsigned int, long);
+
+extern "C" int __fastcall fn_00460F30(void* self, int edx_unused, int a1, int a2, int a3) {
+    if (a1 != 0x42e) {
+        return ((BaseVFunc61Fn)ext_006A5D94)(self, a1, a2, a3);
+    }
+    int buf[16];
+    ((GetWindowTextFn)ext_006A614E)((char*)self + 0x128, (char*)buf, 64);
+    *(int*)((char*)self + 0x278) = ((AtolFn)mem_00925234)((char*)buf);
+    if (!((Sub460E00Fn)ext_00460E00)(self)) {
+        ((SendMessageFn)mem_00925694)(*(void**)((char*)self + 0x148), 0xC7, 0, 0);
+    }
+    return 1;
+}
