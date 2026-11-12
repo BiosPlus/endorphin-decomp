@@ -2526,3 +2526,59 @@ extern "C" __declspec(naked) void* __cdecl fn_007DCB00(void) {
         ret
     }
 }
+
+// [0x007DC7D0] sub_007DC7D0 (97 bytes)
+extern "C" void ext_007CCA80();
+extern "C" void ext_007DB720();
+extern "C" void ext_007DB740();
+extern "C" void ext_007DB760();
+extern "C" void ext_007DEB50();
+
+extern "C" __declspec(naked) void __cdecl fn_007DC7D0(void) {
+    __asm {
+        sub esp, 0x40
+        push edi
+        mov edi, dword ptr [esp + 0x48]
+        cmp byte ptr [edi], 8
+        jne done_pop_edi
+        push esi
+        push edi
+        xor esi, esi
+        call ext_007DB720
+        add esp, 4
+        test eax, eax
+        jle done_pop_esi
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x58]
+    loop_top:
+        push esi
+        push edi
+        call ext_007DB740
+        push esi
+        push edi
+        mov ebx, eax
+        call ext_007DB760
+        mov ecx, ebp
+        lea edx, [esp + 0x20]
+        call ext_007DEB50
+        lea eax, [esp + 0x20]
+        push eax
+        push ebx
+        call ext_007CCA80
+        push edi
+        add esi, 1
+        call ext_007DB720
+        add esp, 0x1c
+        cmp esi, eax
+        jl loop_top
+        pop ebp
+        pop ebx
+    done_pop_esi:
+        pop esi
+    done_pop_edi:
+        pop edi
+        add esp, 0x40
+        ret
+    }
+}
