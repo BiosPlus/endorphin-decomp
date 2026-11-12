@@ -1583,3 +1583,100 @@ extern "C" __declspec(naked) void __fastcall fn_004C5010(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004CC9E0] sub_004CC9E0 (185 bytes)
+extern "C" void ext_00528BB0();
+extern "C" void ext_005E12F0();
+extern "C" void ext_006622D0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004CC9E0(void* self) {
+    __asm {
+        push edi
+        mov edi, ecx
+        cmp byte ptr [edi + 0x14], 0
+        je fn_exit
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe L1
+        call ebp
+L1:
+        push ebx
+loop_top:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L2
+        call ebp
+L2:
+        test edi, edi
+        je L3
+        cmp edi, edi
+        je L4
+L3:
+        call ebp
+L4:
+        cmp esi, ebx
+        je done
+        cmp dword ptr [edi + 0x10], 3
+        jne L_notype3
+        test edi, edi
+        jne L5
+        call ebp
+L5:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L6
+        call ebp
+L6:
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je L7
+        lea ebp, [eax + 0x154]
+        jmp L8
+L7:
+        xor ebp, ebp
+L8:
+        call ext_00594000
+        push ebp
+        lea ecx, [eax + 0x168]
+        call ext_006622D0
+        mov ebp, dword ptr [mem_00925134]
+L_notype3:
+        test edi, edi
+        jne L9
+        call ebp
+L9:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L10
+        call ebp
+L10:
+        mov ecx, dword ptr [esi]
+        call ext_005E12F0
+        cmp esi, dword ptr [edi + 0x8]
+        jb L11
+        call ebp
+L11:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [eax + 0x22c]
+        push 0
+        push 0x20
+        add ecx, 0xc
+        call ext_00528BB0
+        mov byte ptr [edi + 0x14], 0
+        cmp esi, dword ptr [edi + 0x8]
+        jb L12
+        call ebp
+L12:
+        add esi, 4
+        jmp loop_top
+done:
+        pop ebx
+        pop esi
+        pop ebp
+fn_exit:
+        pop edi
+        ret
+    }
+}
