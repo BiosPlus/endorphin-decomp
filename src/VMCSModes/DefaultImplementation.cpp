@@ -1261,3 +1261,30 @@ L_done_0FB0C0:
         ret
     }
 }
+
+// [0x004FB0F0] VMCSModes::DefaultImplementation::vfunc_50 (47 bytes)
+extern "C" void ext_004667A0();
+extern "C" void ext_00530290();
+extern "C" __declspec(naked) void __fastcall fn_004FB0F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        push 1
+        call ext_004667A0
+        mov eax, dword ptr [esi + 0x8]
+        mov eax, dword ptr [eax + 0x14]
+        mov ecx, dword ptr [eax + 0x30]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xb4]
+        call eax
+        test eax, eax
+        pop esi
+        je L_done_0FB0F0
+        push 3
+        mov ecx, eax
+        call ext_00530290
+    L_done_0FB0F0:
+        ret
+    }
+}
