@@ -288,3 +288,54 @@ extern "C" __declspec(naked) void __fastcall fn_005A1AA0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0058A200();
+extern "C" void ext_00594000();
+extern "C" void ext_005946C0();
+extern "C" int mem_00924FF4;
+
+// [0x0059D6A0] NMData::BackGroundData::vfunc_56_off_4 (147 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0059D6A0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x20
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x5f4], 0
+        je label_ret_zero
+        call ext_00594000
+        cmp dword ptr [esi + 0x5f4], eax
+        jne label_ret_zero
+        push 3
+        lea eax, [esp + 0xc]
+        push eax
+        lea ecx, [esi + 0x15c]
+        call ext_0058A200
+        mov ecx, dword ptr [esi + 0x5f4]
+        push eax
+        mov dword ptr [esp + 0x30], 0
+        call ext_005946C0
+        fstp dword ptr [esp + 4]
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 0x2c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        fld dword ptr [esp + 4]
+        pop esi
+        mov ecx, dword ptr [esp + 0x20]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret
+
+    label_ret_zero:
+        mov ecx, dword ptr [esp + 0x24]
+        fldz
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret
+    }
+}
