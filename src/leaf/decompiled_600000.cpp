@@ -2478,3 +2478,116 @@ extern "C" __declspec(naked) void __fastcall fn_0060C820(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0060A240] sub_0060A240 (245 bytes)
+// unique-style compaction over a range of pointers to structs (std::string at +4 and +0x20).
+extern "C" int mem_00924EF4;
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void* __cdecl fn_0060A240(void* a1, void* a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        cmp esi, eax
+        push edi
+        mov dword ptr [esp + 0x18], esi
+        je done
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    advance:
+        add esi, 0x4
+        cmp esi, eax
+        je done
+        mov eax, dword ptr [esp + 0x18]
+        mov ebp, dword ptr [esi]
+        mov ebx, dword ptr [eax]
+        lea edi, [ebp + 0x4]
+        mov dword ptr [esp + 0x10], ebx
+        add ebx, 0x4
+        push edi
+        push ebx
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne dup_path
+        push edi
+        push ebx
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je keep_b
+        mov ecx, dword ptr [esp + 0x10]
+        add ebp, 0x20
+        add ecx, 0x20
+        push ebp
+        push ecx
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne dup_path
+    keep_b:
+        mov eax, dword ptr [esp + 0x1c]
+        mov dword ptr [esp + 0x18], esi
+        jmp advance
+    dup_path:
+        add esi, 0x4
+        cmp esi, dword ptr [esp + 0x1c]
+        je finish
+    scan:
+        mov edx, dword ptr [esp + 0x18]
+        mov ebp, dword ptr [esi]
+        mov ebx, dword ptr [edx]
+        lea edi, [ebp + 0x4]
+        mov dword ptr [esp + 0x10], ebx
+        add ebx, 0x4
+        push edi
+        push ebx
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne scan_next
+        push edi
+        push ebx
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je scan_copy
+        mov eax, dword ptr [esp + 0x10]
+        add ebp, 0x20
+        add eax, 0x20
+        push ebp
+        push eax
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne scan_next
+    scan_copy:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esi]
+        add eax, 0x4
+        mov dword ptr [esp + 0x18], eax
+        mov dword ptr [eax], ecx
+    scan_next:
+        add esi, 0x4
+        cmp esi, dword ptr [esp + 0x1c]
+        jne scan
+    finish:
+        mov eax, dword ptr [esp + 0x18]
+        add eax, 0x4
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
