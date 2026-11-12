@@ -16,5 +16,7 @@
     "0x0043DE86",
     "0x0043DE8F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T10:52:19Z"
 }
