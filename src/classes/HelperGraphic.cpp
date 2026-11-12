@@ -72,3 +72,34 @@ extern "C" __declspec(naked) void __fastcall fn_005F57B0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005F5770] HelperGraphic::vfunc_0_off_15C (56 bytes)
+extern "C" void ext_00661B10();
+extern "C" void ext_00661D30();
+extern "C" void ext_005F53E0();
+extern "C" __declspec(naked) void __fastcall fn_005F5770(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x44], 0x7fffffff
+        je short L_done
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov ecx, edi
+        call ext_00661B10
+        test al, al
+        jne short L_pop_edi
+        mov eax, dword ptr [esi + 0x44]
+        push eax
+        mov ecx, edi
+        call ext_00661D30
+        push eax
+        lea ecx, [esi - 0x15c]
+        call ext_005F53E0
+L_pop_edi:
+        pop edi
+L_done:
+        pop esi
+        ret 0x4
+    }
+}
