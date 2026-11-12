@@ -5110,3 +5110,45 @@ alt_path:
         ret 4
     }
 }
+
+// [0x0067C640] sub_0067C640 (101 bytes)
+extern "C" void ext_00487A30();
+extern "C" int mem_0098C638;
+extern "C" int mem_0098C648;
+extern "C" int mem_0098C658;
+
+extern "C" __declspec(naked) void __fastcall fn_0067C640(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        fld dword ptr [edi]
+        push offset mem_0098C658
+        sub esp, 0x8
+        mov esi, ecx
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esi]
+        lea ecx, [esp + 0x1c]
+        fstp dword ptr [esp]
+        call ext_00487A30
+        fld dword ptr [edi + 0x4]
+        push offset mem_0098C648
+        sub esp, 0x8
+        fstp dword ptr [esp + 0x4]
+        lea ecx, [esp + 0x1c]
+        fld dword ptr [esi + 0x4]
+        fstp dword ptr [esp]
+        call ext_00487A30
+        fld dword ptr [edi + 0x8]
+        push offset mem_0098C638
+        sub esp, 0x8
+        fstp dword ptr [esp + 0x4]
+        lea ecx, [esp + 0x1c]
+        fld dword ptr [esi + 0x8]
+        fstp dword ptr [esp]
+        call ext_00487A30
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
