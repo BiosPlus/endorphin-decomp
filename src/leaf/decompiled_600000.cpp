@@ -1697,3 +1697,69 @@ extern "C" __declspec(naked) void __cdecl fn_0060A550(unsigned* first, unsigned*
         ret
     }
 }
+
+// [0x00603130] sub_00603130 (167 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00603130(void* self, int edx_unused, float out) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi + 0x34]
+        mov eax, dword ptr [eax + 0x9c]
+        push edx
+        call eax
+        fadd dword ptr [mem_00A93710]
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esi + 0x34]
+        fstp dword ptr [esp + 0x4]
+        mov edx, dword ptr [edx + 0x98]
+        push eax
+        call edx
+        fsub dword ptr [mem_00A93710]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x4]
+        fcom st(1)
+        fnstsw ax
+        fld dword ptr [esp + 0x8]
+        test ah, 0x41
+        jne L_le
+        fstp st(2)
+        fst dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        jmp L_store
+    L_le:
+        fcom st(2)
+        fnstsw ax
+        test ah, 0x5
+        jp L_gt
+        fstp st(2)
+        fxch st(1)
+        fst dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fxch st(1)
+        fxch st(2)
+        fxch st(1)
+    L_store:
+        fst dword ptr [esi + 0x2c]
+        fsub st, st(1)
+        fxch st(2)
+        fsubrp st(1), st
+        fstp dword ptr [esp + 0x10]
+        fdiv dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fadd st(0), st
+        fsub qword ptr [mem_0092A270]
+        fstp dword ptr [esi + 0x58]
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    L_gt:
+        fxch st(2)
+        jmp L_store
+    }
+}
