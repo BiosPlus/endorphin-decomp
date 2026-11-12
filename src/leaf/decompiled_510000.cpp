@@ -3723,3 +3723,37 @@ extern "C" __declspec(naked) void* __fastcall fn_005127D0(void* self) {
         ret
     }
 }
+
+// [0x00514B20] sub_00514B20 (86 bytes)
+extern "C" void ext_005127D0();
+extern "C" void ext_00661980();
+extern "C" int mem_0094F5DC;
+extern "C" __declspec(naked) void __fastcall fn_00514B20(void* self) {
+    __asm {
+        push -1
+        push 0x8926d3
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        call ext_00661980
+        xor eax, eax
+        mov dword ptr [esi], offset mem_0094F5DC
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esi + 0x8], eax
+        mov dword ptr [esi + 0xc], eax
+        mov dword ptr [esi + 0x10], eax
+        lea ecx, [esi + 0x14]
+        mov byte ptr [esp + 0x10], 0x1
+        call ext_005127D0
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
