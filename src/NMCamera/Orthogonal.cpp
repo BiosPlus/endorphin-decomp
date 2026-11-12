@@ -189,3 +189,66 @@ extern "C" __declspec(naked) void __fastcall fn_00551C30(void* self) {
         ret 0xc
     }
 }
+
+// [0x00551B50] NMCamera::Orthogonal::vfunc_7 (182 bytes)
+extern "C" void ext_00547AB0();
+extern "C" int mem_00924FCC;
+extern "C" int mem_00924ECC;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00551B50(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b2ae2
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x38
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x20]
+        call edx
+        test al, al
+        mov ecx, esi
+        je fail
+        call ext_00547AB0
+        pop esi
+        mov ecx, dword ptr [esp + 0x38]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x44
+        ret
+    fail:
+        call ext_00547AB0
+        push eax
+        lea eax, [esp + 0x24]
+        push 0x957430
+        push eax
+        call dword ptr [mem_00924FCC]
+        push 0x93bf0c
+        push eax
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov dword ptr [esp + 0x5c], 0
+        call dword ptr [mem_00924ECC]
+        add esp, 0x18
+        add esi, 0xf8
+        push eax
+        mov ecx, esi
+        mov byte ptr [esp + 0x48], 1
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x4]
+        mov byte ptr [esp + 0x44], 0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x20]
+        mov dword ptr [esp + 0x44], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x3c]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x44
+        ret
+    }
+}
