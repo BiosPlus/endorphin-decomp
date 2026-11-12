@@ -2261,3 +2261,82 @@ extern "C" __declspec(naked) void* __fastcall fn_0056D960(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00563520] sub_00563520 (210 bytes)
+extern "C" int mem_00925754;
+extern "C" int mem_00925750;
+extern "C" int mem_0092574C;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924EC4;
+extern "C" int mem_009250F8;
+extern "C" int mem_00925120;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00563520(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b2653
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x20
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x3c]
+        xor ebx, ebx
+        add esi, 4
+        push 0x928b5d
+        mov ecx, esi
+        mov dword ptr [esp + 0x34], ebx
+        mov dword ptr [esp + 0xc], ebx
+        call dword ptr [mem_00925754]
+        test al, al
+        je short skip_assign
+        push 0xb39fd8
+        mov ecx, esi
+        call dword ptr [mem_00925750]
+    skip_assign:
+        mov ecx, esi
+        call dword ptr [mem_0092574C]
+        mov esi, dword ptr [esp + 0x38]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, dword ptr [mem_00924EC4]
+        mov ecx, dword ptr [eax]
+        push ecx
+        push 0xb39fbc
+        mov ecx, esi
+        mov dword ptr [esp + 0x38], ebx
+        mov dword ptr [esp + 0x10], 1
+        call dword ptr [mem_009250F8]
+        cmp eax, -1
+        je short done
+        mov ecx, dword ptr [esi + 0x14]
+        sub ecx, eax
+        sub ecx, 1
+        push ecx
+        add eax, 1
+        push eax
+        lea edx, [esp + 0x14]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00925120]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x34], 1
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0xc]
+        mov byte ptr [esp + 0x30], bl
+        call dword ptr [mem_00924FF4]
+    done:
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret 8
+    }
+}
