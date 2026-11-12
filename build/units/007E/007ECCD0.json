@@ -14,5 +14,7 @@
     "0x007ECCFE",
     "0x007ECD0F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-12T13:54:05Z"
 }
