@@ -5152,3 +5152,107 @@ extern "C" __declspec(naked) void __fastcall fn_0067C640(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00670DE0] sub_00670DE0 (212 bytes)
+extern "C" void ext_00670C50();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00670DE0(void* self, int edx_unused, void* retVal, void* val) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        push edi
+        mov byte ptr [esp + 0x10], 0x0
+        jbe L_00670DFE
+        call ebp
+    L_00670DFE:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_00670E08
+        call ebp
+    L_00670E08:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x24]
+        push 0x0
+        push eax
+        push ecx
+        push ebx
+        push edi
+        mov dword ptr [esp + 0x2c], edi
+        call ext_00670C50
+        mov edi, dword ptr [esi + 0x8]
+        add esp, 0x14
+        cmp dword ptr [esi + 0x4], edi
+        mov ebx, eax
+        jbe L_00670E34
+        call ebp
+        mov ebp, dword ptr [mem_00925134]
+    L_00670E34:
+        test esi, esi
+        je L_00670E3C
+        cmp esi, esi
+        je L_00670E44
+    L_00670E3C:
+        call ebp
+        mov ebp, dword ptr [mem_00925134]
+    L_00670E44:
+        cmp ebx, edi
+        je L_00670E8F
+        test esi, esi
+        jne L_00670E4E
+        call ebp
+    L_00670E4E:
+        cmp ebx, dword ptr [esi + 0x8]
+        jb L_00670E55
+        call ebp
+    L_00670E55:
+        mov edx, dword ptr [esp + 0x24]
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [edx]
+        mov edx, dword ptr [ecx + 0x4]
+        mov edi, dword ptr [eax + 0x4]
+        cmp edx, edi
+        jb L_00670E89
+        jne L_00670E76
+        mov ecx, dword ptr [ecx + 0x8]
+        cmp ecx, dword ptr [eax + 0x8]
+        setb al
+        test al, al
+        jne L_00670E89
+    L_00670E76:
+        mov eax, dword ptr [esp + 0x20]
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x4], ebx
+        pop ebx
+        add esp, 0xc
+        ret 0x8
+    L_00670E89:
+        mov ebp, dword ptr [mem_00925134]
+    L_00670E8F:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        mov edi, dword ptr [esp + 0x20]
+        mov dword ptr [edi], 0x0
+        jbe L_00670EA3
+        call ebp
+    L_00670EA3:
+        mov dword ptr [edi], esi
+        mov dword ptr [edi + 0x4], ebx
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret 0x8
+    }
+}
