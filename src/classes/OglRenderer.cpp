@@ -500,3 +500,68 @@ no_alloc:
         ret 0x4
     }
 }
+
+// [0x00533100] OglRenderer::vfunc_87 (174 bytes)
+extern "C" void ext_00532C90();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" void ext_0067ADD0();
+
+extern "C" __declspec(naked) void __fastcall fn_00533100(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 08a56c8h
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 1d8h]
+        push edi
+        call edx
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp + 8], edi
+        call ext_0065C640
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 1dch]
+        mov ecx, esi
+        mov dword ptr [esp + 14h], 0
+        call edx
+        cmp byte ptr [esi + 493h], 0
+        je L_0533100_after_loop
+        mov edi, edi
+    L_0533100_loop:
+        push 5
+        call ext_0067ADD0
+        add esp, 4
+        cmp byte ptr [esi + 493h], 0
+        jne L_0533100_loop
+    L_0533100_after_loop:
+        mov eax, dword ptr [esp + 20h]
+        mov ecx, dword ptr [esp + 1ch]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_00532C90
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 1e0h]
+        mov ecx, esi
+        call eax
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 154h]
+        mov ecx, esi
+        call eax
+        mov ecx, edi
+        mov dword ptr [esp + 14h], -1
+        call ext_0065C650
+        mov ecx, dword ptr [esp + 0ch]
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 10h
+        ret 8
+    }
+}
