@@ -3463,3 +3463,63 @@ extern "C" __declspec(naked) void __fastcall fn_004BB410(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x004B01F0] sub_004B01F0 (245 bytes)
+extern "C" void ext_004E7F30();
+extern "C" __declspec(naked) void __fastcall fn_004B01F0(void* self) {
+    __asm {
+        push -1
+        push 0x889433
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0ch
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi + 8]
+        xor ebx, ebx
+        mov ecx, edi
+        mov dword ptr [esp + 14h], esi
+        mov dword ptr [esi], 0941fdch
+        mov dword ptr [esi + 4], ebx
+        call ext_004E7F30
+        lea ecx, [esi + 104h]
+        mov dword ptr [esp + 20h], ebx
+        call ext_004E7F30
+        mov dword ptr [esi + 204h], ebx
+        mov dword ptr [esi + 208h], ebx
+        mov dword ptr [esi + 20Ch], ebx
+        mov dword ptr [esi + 218h], ebx
+        mov dword ptr [esi + 21Ch], ebx
+        mov dword ptr [esi + 220h], ebx
+        mov dword ptr [esi + 210h], 093c4f8h
+        mov dword ptr [esi + 228h], ebx
+        mov dword ptr [esi + 22Ch], ebx
+        mov dword ptr [esi + 230h], ebx
+        mov dword ptr [esi + 234h], edi
+        mov dword ptr [esi + 238h], ebx
+        mov dword ptr [esi + 244h], ebx
+        mov dword ptr [esi + 248h], ebx
+        mov dword ptr [esi + 24Ch], ebx
+        mov dword ptr [esi + 23Ch], 0941fc8h
+        mov dword ptr [esi + 254h], ebx
+        mov dword ptr [esi + 258h], ebx
+        mov dword ptr [esi + 25Ch], ebx
+        mov dword ptr [esi + 260h], ebx
+        lea ecx, [esi + 264h]
+        mov byte ptr [esp + 20h], 6
+        call ext_004E7F30
+        mov ecx, dword ptr [esp + 18h]
+        mov byte ptr [esi + 360h], bl
+        mov byte ptr [esi + 361h], bl
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 18h
+        ret
+    }
+}
