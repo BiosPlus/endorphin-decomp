@@ -30,3 +30,28 @@ extern "C" __declspec(naked) void __fastcall fn_004CD090(void* self) {
         ret
     }
 }
+
+// [0x004CC5B0] NMData::MetaBodyConstraintData::vfunc_15 (88 bytes)
+extern "C" void ext_004C3410();
+extern "C" void ext_004CBBB0();
+extern "C" void ext_00671F30();
+
+extern "C" void* __fastcall fn_004CC5B0(void* self, int edx_unused, void* a1, int a2) {
+    volatile int dummy = 0;
+    switch (a2) {
+    case 0x2d4:
+        ((void (__cdecl*)(void*))ext_00671F30)(a1);
+        break;
+    case 0x2f1:
+        if (*(int*)((char*)self + 0x184) == 3) {
+            ((void (__cdecl*)(void*, void*))ext_004CBBB0)(a1, self);
+        } else {
+            ((void (__cdecl*)(void*))ext_00671F30)(a1);
+        }
+        break;
+    default:
+        ((void (__thiscall*)(void*, void*, int))ext_004C3410)(self, a1, a2);
+        break;
+    }
+    return a1;
+}
