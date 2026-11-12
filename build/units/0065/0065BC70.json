@@ -32,5 +32,7 @@
     "0x0065BD22",
     "0x0065BD36"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5",
+  "matched_at": "2026-11-12T11:48:55Z"
 }
