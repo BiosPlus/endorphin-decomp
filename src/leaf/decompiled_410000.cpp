@@ -5927,3 +5927,37 @@ extern "C" __declspec(naked) void __fastcall fn_00415FB3(void* self, int edx_unu
         jmp dword ptr [mem_00925680]
     }
 }
+
+extern "C" int mem_0092C8C4;
+// [0x0041604C] sub_0041604C (76 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0041604C(void* self, int edx_unused, int a1) {
+    __asm {
+        test edx, edx
+        jne short L_416072
+        test eax, eax
+        jne short L_416072
+        fld dword ptr [mem_0092C8C4]
+        push ecx
+        fstp dword ptr [esp]
+        push 0xf
+        call dword ptr [mem_00925680]
+        push eax
+        call ext_00415D50
+        add esp, 0x8
+        ret 0x4
+    L_416072:
+        mov eax, dword ptr [ecx + 0x58]
+        cmp eax, -0x1
+        jne short L_416082
+        push 0xf
+        call dword ptr [mem_00925680]
+    L_416082:
+        fld dword ptr [mem_0092C8C4]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00415D50
+        add esp, 0x8
+        ret 0x4
+    }
+}
