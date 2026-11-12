@@ -2383,3 +2383,89 @@ extern "C" __declspec(naked) void __fastcall fn_004E31A0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x004E78B0] sub_004E78B0 (179 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_004E78B0(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, ecx
+        mov eax, dword ptr [ebp]
+        mov edx, dword ptr [eax + 0xc]
+        push esi
+        push edi
+        call edx
+        mov esi, eax
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe short L_4E78D0
+        call dword ptr [mem_00925134]
+        mov edi, edi
+L_4E78D0:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe short L_4E78DE
+        call dword ptr [mem_00925134]
+L_4E78DE:
+        cmp edi, ebx
+        je short L_4E790F
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_4E78ED
+        call dword ptr [mem_00925134]
+L_4E78ED:
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [ebp + 0x1c]
+        lea ecx, [eax + 0xc]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x28]
+        push 1
+        push edx
+        call eax
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_4E790A
+        call dword ptr [mem_00925134]
+L_4E790A:
+        add edi, 4
+        jmp short L_4E78D0
+L_4E790F:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe short L_4E7920
+        call dword ptr [mem_00925134]
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+L_4E7920:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe short L_4E792E
+        call dword ptr [mem_00925134]
+L_4E792E:
+        cmp edi, ebx
+        je short L_4E795E
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_4E793D
+        call dword ptr [mem_00925134]
+L_4E793D:
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0xc]
+        mov edx, dword ptr [edx + 0x24]
+        lea ecx, [eax + 0xc]
+        mov eax, dword ptr [ebp + 0x18]
+        push eax
+        call edx
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_4E7959
+        call dword ptr [mem_00925134]
+L_4E7959:
+        add edi, 4
+        jmp short L_4E7920
+L_4E795E:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
