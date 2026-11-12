@@ -4517,3 +4517,97 @@ L_501cb0:
         ret
     }
 }
+
+// [0x00501B40] sub_00501B40 (271 bytes)
+extern "C" void ext_004FDC60();
+extern "C" void ext_00507E40();
+extern "C" void ext_0050D1E0();
+extern "C" void ext_0050E3F0();
+extern "C" void ext_005157F0();
+extern "C" void ext_00661980();
+extern "C" void ext_006A5C62();
+extern "C" int mem_00924FE8;
+extern "C" __declspec(naked) void __fastcall fn_00501B40(void* self) {
+    __asm {
+        push -1
+        _emit 0x68
+        _emit 0x79
+        _emit 0x14
+        _emit 0x89
+        _emit 0x00
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 8
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov [esp+0xc], esi
+        mov byte ptr [esi+4], 1
+        mov dword ptr [esi], 0x93c08c
+        lea edi, [esi+8]
+        xor ebp, ebp
+        mov ecx, edi
+        mov [esp+0x1c], ebp
+        call ext_00661980
+        lea ecx, [esi+0xc]
+        mov byte ptr [esp+0x1c], 1
+        mov dword ptr [esi], 0x944314
+        mov dword ptr [edi], 0x9442bc
+        call ext_004FDC60
+        lea ecx, [esi+0x2c]
+        mov byte ptr [esp+0x1c], 2
+        call ext_0050E3F0
+        lea ecx, [esi+0xa4]
+        mov byte ptr [esp+0x1c], 3
+        call ext_0050D1E0
+        lea ecx, [esi+0xe0]
+        mov byte ptr [esp+0x1c], 4
+        call ext_00507E40
+        lea ecx, [esi+0x110]
+        mov byte ptr [esp+0x1c], 5
+        call dword ptr [mem_00924FE8]
+        mov [esi+0x130], ebp
+        mov [esi+0x134], ebp
+        mov [esi+0x138], ebp
+        mov [esi+0x13c], ebp
+        mov [esi+0x140], ebp
+        push 0x14
+        mov byte ptr [esp+0x20], 9
+        call ext_006A5C62
+        add esp, 4
+        mov [esp+0x10], eax
+        cmp eax, ebp
+        mov byte ptr [esp+0x1c], 0xa
+        je L1
+        push esi
+        mov ecx, eax
+        call ext_005157F0
+        mov edi, eax
+        jmp L2
+    L1:
+        xor edi, edi
+    L2:
+        mov ecx, [esi+0x13c]
+        cmp edi, ecx
+        mov byte ptr [esp+0x1c], 9
+        je L3
+        cmp ecx, ebp
+        je L3
+        mov eax, [ecx]
+        mov edx, [eax]
+        push 1
+        call edx
+    L3:
+        mov ecx, [esp+0x14]
+        mov [esi+0x13c], edi
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        mov fs:[0], ecx
+        add esp, 0x14
+        ret
+    }
+}
