@@ -3491,3 +3491,74 @@ extern "C" __declspec(naked) void __fastcall fn_00554DC0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x005533A0] sub_005533A0 (163 bytes)
+extern "C" int mem_0092A280;
+extern "C" int mem_0092C528;
+extern "C" int mem_009575B0;
+extern "C" int mem_009575C0;
+extern "C" int mem_009575D0;
+extern "C" __declspec(naked) void __fastcall fn_005533A0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x2c]
+        cmp eax, 1
+        jne loc_5533cc
+        fld dword ptr [esp + 0x8]
+        fld qword ptr [mem_0092A280]
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0xc]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0xc]
+        fmul dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+
+    loc_5533cc:
+        cmp eax, 2
+        jne loc_5533dd
+        fld dword ptr [esp + 0x8]
+        fld qword ptr [mem_0092C528]
+        jmp loc_55340e
+
+    loc_5533dd:
+        cmp eax, 3
+        jne loc_5533ee
+        fld dword ptr [esp + 0x8]
+        fld qword ptr [mem_009575B0]
+        jmp loc_55340e
+
+    loc_5533ee:
+        cmp eax, 4
+        jne loc_5533ff
+        fld dword ptr [esp + 0x8]
+        fld qword ptr [mem_009575C0]
+        jmp loc_55340e
+
+    loc_5533ff:
+        cmp eax, 5
+        jne loc_553428
+        fld dword ptr [esp + 0x8]
+        fld qword ptr [mem_009575D0]
+
+    loc_55340e:
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0xc]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0xc]
+        fmul dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+
+    loc_553428:
+        mov eax, dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [eax + 0x8]
+        ret 0x10
+    }
+}
