@@ -3842,3 +3842,122 @@ extern "C" __declspec(naked) void __fastcall fn_006B49C0(void* self) {
         ret
     }
 }
+
+// [0x006B8290] sub_006B8290 (247 bytes)
+// Wheel-style listbox step: q = delta / 120 (signed); LB_GETCURSEL(0x188)/LB_SETCURSEL(0x186)/LB_GETCOUNT(0x18b) on hwnd at self+0x20.
+// C++03 attempt 1 (12% match, compiler hoisted SendMessage ptr / different reg allocation) -> switched to naked asm.
+extern "C" void ext_006A5EA8();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_006B8290(void* self, int edx_unused, int a0, short delta, int a2, int a3) {
+    __asm {
+        push ebx
+        mov bx, word ptr [esp + 0xc]
+        push esi
+        mov esi, ecx
+        movsx ecx, bx
+        mov eax, 0x88888889
+        imul ecx
+        add edx, ecx
+        sar edx, 0x6
+        push edi
+        mov edi, edx
+        shr edi, 0x1f
+        add edi, edx
+        test bx, bx
+        jle NEG_OR_ZERO
+        mov eax, dword ptr [esi + 0x20]
+        mov ebx, dword ptr [mem_00925694]
+        push 0
+        push 0
+        push 0x188
+        push eax
+        call ebx
+        sub eax, edi
+        test eax, eax
+        jle SET_ZERO
+        mov ecx, dword ptr [esi + 0x20]
+        push 0
+        push 0
+        push 0x188
+        push ecx
+        call ebx
+        mov edx, dword ptr [esi + 0x20]
+        push 0
+        sub eax, edi
+        push eax
+        push 0x186
+        push edx
+        call ebx
+        mov ecx, esi
+        call ext_006A5EA8
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x10
+SET_ZERO:
+        mov edx, dword ptr [esi + 0x20]
+        xor eax, eax
+        push eax
+        push eax
+        push 0x186
+        push edx
+        call ebx
+        mov ecx, esi
+        call ext_006A5EA8
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x10
+NEG_OR_ZERO:
+        jge EPILOGUE
+        mov eax, dword ptr [esi + 0x20]
+        mov ebx, dword ptr [mem_00925694]
+        push ebp
+        push 0
+        push 0
+        push 0x188
+        push eax
+        call ebx
+        mov ecx, dword ptr [esi + 0x20]
+        push 0
+        push 0
+        push 0x18b
+        push ecx
+        mov ebp, eax
+        call ebx
+        sub ebp, edi
+        sub eax, 0x1
+        cmp ebp, eax
+        pop ebp
+        push 0
+        push 0
+        jge CLAMP_TO_LAST
+        mov edx, dword ptr [esi + 0x20]
+        push 0x188
+        push edx
+        call ebx
+        sub eax, edi
+        jmp SEND_TARGET
+CLAMP_TO_LAST:
+        mov eax, dword ptr [esi + 0x20]
+        push 0x18b
+        push eax
+        call ebx
+        sub eax, 0x1
+SEND_TARGET:
+        mov ecx, dword ptr [esi + 0x20]
+        push 0
+        push eax
+        push 0x186
+        push ecx
+        call ebx
+EPILOGUE:
+        mov ecx, esi
+        call ext_006A5EA8
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x10
+    }
+}
