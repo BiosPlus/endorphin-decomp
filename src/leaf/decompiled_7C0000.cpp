@@ -4548,3 +4548,115 @@ yb_007CD690:
         ret
     }
 }
+// [0x007CE390] sub_007CE390 (249 bytes)
+extern "C" int mem_0094CE80;
+extern "C" int mem_009576E8;
+extern "C" int mem_00955090;
+
+extern "C" __declspec(naked) void __fastcall fn_007CE390(void* self) {
+    __asm {
+        push ecx
+        cmp dword ptr [ecx + 0x8], 0
+        jne short L_7ce3ad
+        fld dword ptr [ecx + 0x24]
+        mov dword ptr [ecx + 0x8], 1
+        fsub dword ptr [ecx + 0x14]
+        fstp dword ptr [ecx + 0x24]
+        fld dword ptr [ecx + 0x14]
+        fstp dword ptr [ecx + 0x20]
+    L_7ce3ad:
+        fld dword ptr [ecx + 0x28]
+        fabs
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fcomp dword ptr [mem_0094CE80]
+        fnstsw ax
+        test ah, 0x41
+        jp short L_7ce3cd
+        fld dword ptr [ecx + 0x20]
+        fstp dword ptr [ecx + 0x14]
+        jmp short L_7ce43a
+    L_7ce3cd:
+        cmp dword ptr [esp + 0x8], 0
+        je short L_7ce43a
+        fld dword ptr [ecx + 0x14]
+        fld dword ptr [ecx + 0x20]
+        fld qword ptr [mem_009576E8]
+        fadd st(1), st
+        fxch st(2)
+        fcompp
+        fnstsw ax
+        fld qword ptr [mem_00955090]
+        test ah, 0x41
+        jne short L_7ce40c
+    L_7ce3f3:
+        fld dword ptr [ecx + 0x14]
+        fsub st, st(1)
+        fstp dword ptr [ecx + 0x14]
+        fld dword ptr [ecx + 0x14]
+        fld dword ptr [ecx + 0x20]
+        fadd st, st(3)
+        fcompp
+        fnstsw ax
+        test ah, 0x5
+        jnp short L_7ce3f3
+    L_7ce40c:
+        fld dword ptr [ecx + 0x14]
+        fadd st, st(2)
+        fld dword ptr [ecx + 0x20]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne short L_7ce436
+    L_7ce41d:
+        fld dword ptr [ecx + 0x14]
+        fadd st, st(1)
+        fstp dword ptr [ecx + 0x14]
+        fld dword ptr [ecx + 0x14]
+        fadd st, st(2)
+        fld dword ptr [ecx + 0x20]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        je short L_7ce41d
+    L_7ce436:
+        fstp st(1)
+        fstp st(0)
+    L_7ce43a:
+        cmp dword ptr [ecx], 0
+        fld dword ptr [ecx + 0x14]
+        fstp dword ptr [ecx + 0x20]
+        fldz
+        fstp dword ptr [ecx + 0x10]
+        je short L_7ce487
+        fld dword ptr [ecx + 0x24]
+        fadd dword ptr [ecx + 0x14]
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fld dword ptr [ecx + 0x30]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne short L_7ce46a
+        fsub dword ptr [ecx + 0x30]
+        fstp dword ptr [ecx + 0x10]
+        pop ecx
+        ret
+    L_7ce46a:
+        fld dword ptr [ecx + 0x40]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp short L_7ce47e
+        fsub dword ptr [ecx + 0x40]
+        fstp dword ptr [ecx + 0x10]
+        pop ecx
+        ret
+    L_7ce47e:
+        fstp st(0)
+        mov dword ptr [ecx + 0xc], 0
+    L_7ce487:
+        pop ecx
+        ret
+    }
+}

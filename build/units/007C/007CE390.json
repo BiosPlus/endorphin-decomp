@@ -12,5 +12,7 @@
     "0x007CE3DC",
     "0x007CE3EA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash",
+  "matched_at": "2026-11-12T12:35:56Z"
 }
