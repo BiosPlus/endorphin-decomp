@@ -6557,3 +6557,32 @@ done_41D980:
         ret
     }
 }
+
+// [0x0041CDA0] sub_0041CDA0 (60 bytes)
+extern "C" void ext_0066AC90();
+extern "C" int mem_00925354;
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void __fastcall fn_0041CDA0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push 0xb5ce94
+        mov ecx, 0xa2e2f8
+        mov dword ptr [esp + 0x8], 0x0
+        call dword ptr [mem_00925354]
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push eax
+        call dword ptr [mem_00924FE4]
+        mov esi, dword ptr [esp + 0x28]
+        push esi
+        call ext_0066AC90
+        add esp, 0x20
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
