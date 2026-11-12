@@ -17,5 +17,7 @@
     "0x006A03DA",
     "0x006A03EC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@high",
+  "matched_at": "2026-11-12T12:40:35Z"
 }

@@ -27,6 +27,6 @@
     "0x004634A6"
   ],
   "status": "matched",
-  "matched_by": "claude-haiku-5.5",
+  "matched_by": "claude-haiku-5.5@medium",
   "matched_at": "2026-11-12T12:00:41Z"
 }

@@ -36,6 +36,6 @@
     "0x004FD98F"
   ],
   "status": "matched",
-  "matched_by": "claude-haiku-5.5",
+  "matched_by": "claude-haiku-5.5@medium",
   "matched_at": "2026-11-12T12:33:45Z"
 }

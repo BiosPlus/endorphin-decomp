@@ -12,6 +12,6 @@
     "0x00587F8D"
   ],
   "status": "matched",
-  "matched_by": "gemini-3.8-flash",
+  "matched_by": "gemini-3.8-flash@high",
   "matched_at": "2026-11-08T15:32:35Z"
 }

@@ -15,6 +15,6 @@
     "0x007ED51B"
   ],
   "status": "matched",
-  "matched_by": "claude-sonnet-5.5",
+  "matched_by": "claude-sonnet-5.5@high",
   "matched_at": "2026-11-12T12:38:20Z"
 }

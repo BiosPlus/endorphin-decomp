@@ -15,6 +15,6 @@
     "0x0068BF1B"
   ],
   "status": "matched",
-  "matched_by": "claude-haiku-5.5",
+  "matched_by": "claude-haiku-5.5@medium",
   "matched_at": "2026-11-12T10:43:58Z"
 }

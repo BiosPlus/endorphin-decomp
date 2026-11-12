@@ -20,6 +20,6 @@
     "0x006921C6"
   ],
   "status": "matched",
-  "matched_by": "gemini-3.8-flash",
+  "matched_by": "gemini-3.8-flash@high",
   "matched_at": "2026-11-12T10:53:42Z"
 }

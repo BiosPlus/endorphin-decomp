@@ -38,6 +38,6 @@
     "0x0044FFFB"
   ],
   "status": "matched",
-  "matched_by": "claude-haiku-5.5",
+  "matched_by": "claude-haiku-5.5@medium",
   "matched_at": "2026-11-12T11:11:47Z"
 }

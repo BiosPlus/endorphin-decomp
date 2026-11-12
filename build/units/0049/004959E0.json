@@ -11,6 +11,6 @@
     "0x00495A04"
   ],
   "status": "matched",
-  "matched_by": "claude-opus-5.5",
+  "matched_by": "claude-opus-5.5@medium",
   "matched_at": "2026-11-10T03:31:32Z"
 }

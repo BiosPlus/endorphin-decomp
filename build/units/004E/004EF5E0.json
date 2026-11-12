@@ -12,6 +12,6 @@
     "0x004EF643"
   ],
   "status": "matched",
-  "matched_by": "gemini-3.8-flash",
+  "matched_by": "gemini-3.8-flash@high",
   "matched_at": "2026-11-11T14:41:11Z"
 }

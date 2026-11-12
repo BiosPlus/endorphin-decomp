@@ -15,6 +15,6 @@
     "0x004115C2"
   ],
   "status": "matched",
-  "matched_by": "claude-haiku-5.5",
+  "matched_by": "claude-haiku-5.5@medium",
   "matched_at": "2026-11-10T05:17:36Z"
 }

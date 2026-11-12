@@ -40,6 +40,6 @@
     "0x006228CB"
   ],
   "status": "matched",
-  "matched_by": "claude-haiku-5.5",
+  "matched_by": "claude-haiku-5.5@medium",
   "matched_at": "2026-11-12T12:29:17Z"
 }

@@ -26,6 +26,6 @@
     "0x0044A8CF"
   ],
   "status": "matched",
-  "matched_by": "claude-haiku-5.5",
+  "matched_by": "claude-haiku-5.5@medium",
   "matched_at": "2026-11-12T12:07:53Z"
 }

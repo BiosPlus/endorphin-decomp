@@ -25,6 +25,6 @@
     "0x00626ADA"
   ],
   "status": "matched",
-  "matched_by": "claude-sonnet-5.5",
+  "matched_by": "claude-sonnet-5.5@high",
   "matched_at": "2026-11-12T12:39:14Z"
 }

@@ -15,6 +15,6 @@
     "0x004C50AC"
   ],
   "status": "matched",
-  "matched_by": "claude-haiku-5.5",
+  "matched_by": "claude-haiku-5.5@medium",
   "matched_at": "2026-11-12T10:24:14Z"
 }

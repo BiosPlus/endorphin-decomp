@@ -14,6 +14,6 @@
     "0x0048A19C"
   ],
   "status": "matched",
-  "matched_by": "claude-sonnet-5.5",
+  "matched_by": "claude-sonnet-5.5@high",
   "matched_at": "2026-11-12T12:37:51Z"
 }

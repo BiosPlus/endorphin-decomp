@@ -12,6 +12,6 @@
     "0x004545C0"
   ],
   "status": "matched",
-  "matched_by": "claude-haiku-5.5",
+  "matched_by": "claude-haiku-5.5@medium",
   "matched_at": "2026-11-09T14:02:56Z"
 }

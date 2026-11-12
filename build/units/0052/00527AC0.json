@@ -15,6 +15,6 @@
     "0x00527AD9"
   ],
   "status": "matched",
-  "matched_by": "claude-haiku-5.5",
+  "matched_by": "claude-haiku-5.5@medium",
   "matched_at": "2026-11-11T08:29:46Z"
 }
