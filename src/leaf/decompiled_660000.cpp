@@ -5073,3 +5073,86 @@ extern "C" __declspec(naked) void __fastcall fn_00665E40(void* self) {
         ret
     }
 }
+
+// [0x00661BF0] sub_00661BF0 (156 bytes)
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_00661BF0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 0x64]
+        add eax, 0x60
+        push edi
+        mov edi, dword ptr [ecx]
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        je L_661C11
+        cmp ecx, eax
+        je L_661C13
+    L_661C11:
+        call ebx
+    L_661C13:
+        cmp dword ptr [esi + 0xc], edi
+        jne L_661C4F
+        mov esi, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi + 0x44]
+        mov edi, dword ptr [esp + 0x10]
+        add esi, 0x40
+        test ecx, ecx
+        je L_661C35
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb L_661C37
+    L_661C35:
+        call ebx
+    L_661C37:
+        mov edx, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [edx + edi*4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        call edx
+        neg al
+        pop edi
+        pop esi
+        pop ebx
+        sbb eax, eax
+        neg eax
+        ret 0x4
+    L_661C4F:
+        cmp dword ptr [esi + 0x8], 0x0
+        jne L_661C57
+        call ebx
+    L_661C57:
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esi + 0xc]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne L_661C64
+        call ebx
+    L_661C64:
+        mov esi, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [esi + 0x40]
+        mov edi, dword ptr [esp + 0x10]
+        add esi, 0x3c
+        test ecx, ecx
+        je L_661C7E
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        cmp edi, eax
+        jb L_661C80
+    L_661C7E:
+        call ebx
+    L_661C80:
+        mov edx, dword ptr [esi + 0x4]
+        mov al, byte ptr [edi + edx]
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
