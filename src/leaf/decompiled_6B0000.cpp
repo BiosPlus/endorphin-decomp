@@ -2732,3 +2732,13 @@ extern "C" __declspec(naked) void* __fastcall fn_006B2AC0(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x006B3320] sub_006B3320 (34 bytes)
+extern "C" void ext_006AECD0();
+
+extern "C" void* __fastcall fn_006B3320(void* self, int edx_unused, void* a1, void* a2) {
+    typedef void* (__fastcall *Fn)(void*, int, void*, void*, int);
+    ((Fn)ext_006AECD0)(self, edx_unused, a1, a2, -1);
+    *(int*)self = 0x991974;
+    return self;
+}
