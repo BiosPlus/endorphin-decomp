@@ -3286,3 +3286,19 @@ extern "C" void __fastcall fn_00473670(void* self, int edx_unused, int a1) {
 
     ((fn2_t)ext_00472BA0)(self);
 }
+
+// [0x004736B0] sub_004736B0 (53 bytes)
+extern "C" void ext_0065D0E0();
+extern "C" void __fastcall fn_004736B0(void* self, int edx_unused, int a1) {
+    typedef void (__thiscall *fn1_t)(void*, int);
+    typedef void (__thiscall *fn2_t)(void*);
+
+    void* f8 = *(void**)((char*)self + 0xf8);
+    ((fn1_t)ext_0065D0E0)(f8, a1 + 1);
+
+    void* cc = *(void**)((char*)self + 0xcc);
+    void* edx = *(void**)((char*)cc + 0x26c);
+    *(int*)((char*)edx + 0x1ec) = a1;
+
+    ((fn2_t)ext_00472BA0)(self);
+}
