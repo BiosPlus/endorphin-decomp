@@ -76,3 +76,23 @@ extern "C" __declspec(naked) void __fastcall fn_004EBA60(void* self) {
         ret 0x8
     }
 }
+
+// [0x0049E550] GuiBaseElement::vfunc_21 (33 bytes)
+extern "C" void ext_004990C0();
+
+extern "C" __declspec(naked) void __fastcall fn_0049E550(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x8]
+        sub esp, 0x10
+        push eax
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+        mov ecx, eax
+        call ext_004990C0
+        add esp, 0x10
+        ret 0x4
+    }
+}
