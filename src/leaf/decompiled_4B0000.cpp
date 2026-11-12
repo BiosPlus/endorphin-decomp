@@ -2921,3 +2921,97 @@ extern "C" __declspec(naked) void* __fastcall fn_004BEC60(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x004BB230] sub_004BB230 (207 bytes)
+extern "C" void ext_00500340();
+
+extern "C" __declspec(naked) void* __fastcall fn_004BB230(void* self, int edx_unused, void* out, void* val) {
+    __asm {
+        sub esp, 0x0c
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        push edi
+        mov byte ptr [esp + 0x10], 0x0
+        jbe L_004BB24C
+        call dword ptr [mem_00925134]
+    L_004BB24C:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_004BB25A
+        call dword ptr [mem_00925134]
+    L_004BB25A:
+        mov eax, dword ptr [esp + 0x10]
+        mov ebp, dword ptr [esp + 0x24]
+        push 0x0
+        push eax
+        push ebp
+        push ebx
+        push edi
+        mov dword ptr [esp + 0x2c], edi
+        call ext_00500340
+        mov edi, dword ptr [esi + 0x8]
+        add esp, 0x14
+        cmp dword ptr [esi + 0x4], edi
+        mov ebx, eax
+        jbe L_004BB284
+        call dword ptr [mem_00925134]
+    L_004BB284:
+        test esi, esi
+        je L_004BB28C
+        cmp esi, esi
+        je L_004BB292
+    L_004BB28C:
+        call dword ptr [mem_00925134]
+    L_004BB292:
+        cmp ebx, edi
+        je L_004BB2D6
+        test esi, esi
+        jne L_004BB2A0
+        call dword ptr [mem_00925134]
+    L_004BB2A0:
+        cmp ebx, dword ptr [esi + 0x8]
+        jb L_004BB2AB
+        call dword ptr [mem_00925134]
+    L_004BB2AB:
+        mov ecx, dword ptr [ebx]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        push eax
+        push ebp
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne L_004BB2D6
+        mov eax, dword ptr [esp + 0x20]
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x4], ebx
+        pop ebx
+        add esp, 0x0c
+        ret 0x8
+    L_004BB2D6:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        mov edi, dword ptr [esp + 0x20]
+        mov dword ptr [edi], 0x0
+        jbe L_004BB2EE
+        call dword ptr [mem_00925134]
+    L_004BB2EE:
+        mov dword ptr [edi], esi
+        mov dword ptr [edi + 0x4], ebx
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x0c
+        ret 0x8
+    }
+}
