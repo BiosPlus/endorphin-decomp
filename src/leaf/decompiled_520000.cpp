@@ -2678,3 +2678,39 @@ extern "C" __declspec(naked) void __fastcall fn_0052F710(void* self) {
         ret
     }
 }
+
+// [0x0052FB80] sub_0052FB80 (111 bytes)
+extern "C" void ext_00532B40();
+extern "C" void ext_00538CD0();
+extern "C" void ext_0053A810();
+
+extern "C" __declspec(naked) void __fastcall fn_0052FB80(void* self) {
+    __asm {
+        push -1
+        push 0x894d34
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        lea ecx, [esi + 0x108]
+        mov dword ptr [esp + 0x10], 0x2
+        call ext_00532B40
+        lea ecx, [esi + 0xec]
+        mov byte ptr [esp + 0x10], 0x1
+        call ext_00532B40
+        lea ecx, [esi + 0xc4]
+        mov byte ptr [esp + 0x10], 0x0
+        call ext_00538CD0
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_0053A810
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
