@@ -4,6 +4,10 @@ extern "C" void ext_00630370();
 extern "C" void ext_00630DD0();
 extern "C" void ext_006944D0();
 extern "C" float* __fastcall ext_00630E60(void* self);
+extern "C" void ext_006035D0();
+extern "C" void ext_006304B0();
+extern "C" void ext_006305A0();
+extern "C" void ext_00630CB0();
 
 // [0x006310F0] EffectorSkeletal::vfunc_19 (12 bytes)
 extern "C" __declspec(naked) void __cdecl fn_006310F0() {
@@ -66,5 +70,31 @@ extern "C" __declspec(naked) void __fastcall fn_006309E0(void* self) {
         fmul dword ptr [ecx + 0xd8]
         fstp dword ptr [ecx + 0xd8]
         ret 0x4
+    }
+}
+
+// [0x00630D00] EffectorSkeletal::vfunc_18 (58 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00630D00(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea eax, [esi + 0x2c]
+        push eax
+        lea ecx, [esi + 0x90]
+        call ext_006035D0
+        fld dword ptr [esi + 0xf0]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00630CB0
+        mov ecx, esi
+        call ext_006305A0
+        push eax
+        mov ecx, esi
+        call ext_006304B0
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x74]
+        pop esi
+        jmp eax
     }
 }
