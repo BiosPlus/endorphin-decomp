@@ -2170,3 +2170,104 @@ extern "C" __declspec(naked) void __fastcall fn_005DF210(void* self) {
         ret
     }
 }
+
+extern "C" void ext_004275E0(); extern "C" void ext_00427640(); extern "C" void ext_0046C0A0(); extern "C" void ext_004974E0(); extern "C" void ext_004B7060(); extern "C" void ext_0053F5F0(); extern "C" void ext_0063EFE0(); extern "C" void ext_0063F530();
+extern "C" int mem_00A9F644; extern "C" int mem_00A9F684; extern "C" int mem_00A9F688; extern "C" int mem_00A9FA20; extern "C" int mem_00A9F238; extern "C" int mem_00A9F148;
+extern "C" int mem_00B53A34; extern "C" int mem_00B53B30; extern "C" int mem_00B53AB0; extern "C" int mem_00B53A70; extern "C" int mem_00B53AF0;
+// [0x005D0860] sub_005D0860 (286 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005D0860(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, [mem_00A9F644]
+        push esi
+        mov esi, [esp+8]
+        push edi
+        mov edi, ecx
+        push eax
+        mov ecx, esi
+        call ext_0063EFE0
+        push eax
+        lea ecx, [edi+4]
+        push ecx
+        call ext_004275E0
+        mov edx, [mem_00A9F684]
+        add esp, 8
+        push edx
+        mov ecx, esi
+        call ext_0063EFE0
+        mov [esp+0xc], eax
+        lea eax, [esp+0xc]
+        push eax
+        lea ecx, [edi+0x28]
+        push ecx
+        call ext_0053F5F0
+        mov edx, [mem_00A9F688]
+        add esp, 8
+        push edx
+        mov ecx, esi
+        call ext_0063EFE0
+        mov [esp+0xc], eax
+        lea eax, [esp+0xc]
+        push eax
+        lea ecx, [edi+0x2c]
+        push ecx
+        call ext_0046C0A0
+        mov edx, [mem_00A9FA20]
+        add esp, 8
+        push edx
+        mov ecx, esi
+        call ext_0063EFE0
+        mov [esp+0xc], eax
+        lea eax, [esp+0xc]
+        push eax
+        lea ecx, [edi+0x30]
+        push ecx
+        call ext_00427640
+        add esp, 8
+        push esi
+        lea ecx, [edi+0x20]
+        call ext_004B7060
+        mov edx, [mem_00A9F238]
+        push 1
+        push 0
+        push edx
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, offset mem_00B53A34
+        je L1
+        cmp eax, offset mem_00B53B30
+        je L1
+        cmp eax, offset mem_00B53AB0
+        je L1
+        cmp eax, offset mem_00B53A70
+        je L1
+        cmp eax, offset mem_00B53AF0
+        jne L2
+L1:     mov eax, offset mem_00B53B30
+L2:     push eax
+        lea ecx, [edi+0x34]
+        call ext_004974E0
+        mov eax, [mem_00A9F148]
+        push 1
+        push 0
+        push eax
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, offset mem_00B53A34
+        je L3
+        cmp eax, offset mem_00B53B30
+        je L3
+        cmp eax, offset mem_00B53AB0
+        je L3
+        cmp eax, offset mem_00B53A70
+        je L3
+        cmp eax, offset mem_00B53AF0
+        jne L4
+L3:     mov eax, offset mem_00B53B30
+L4:     push eax
+        lea ecx, [edi+0x3c]
+        call ext_004974E0
+        pop edi
+        pop esi
+        ret 4
+    }
+}
