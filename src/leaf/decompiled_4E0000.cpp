@@ -3641,3 +3641,161 @@ extern "C" __declspec(naked) void __cdecl fn_004E76B0(void* p1, void* p2, void* 
         ret
     }
 }
+
+// [0x004ED490] sub_004ED490 (308 bytes)
+extern "C" void ext_004E76B0();
+
+extern "C" __declspec(naked) void __fastcall fn_004ED490(void* self) {
+    __asm {
+        push    ecx
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [esp + 0x18]
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x1c]
+        mov     eax, ebp
+        sub     eax, edi
+        sar     eax, 2
+        cdq
+        sub     eax, edx
+        sar     eax, 1
+        lea     esi, [edi + 4*eax]
+        mov     eax, dword ptr [esp + 0x24]
+        push    eax
+        lea     ecx, [ebp - 4]
+        push    ecx
+        push    esi
+        push    edi
+        call    ext_004E76B0
+        add     esp, 0x10
+        cmp     edi, esi
+        mov     ecx, esi
+        lea     ebx, [esi + 4]
+        jae     loc_4ed4da
+loc_4ed4c8:
+        mov     eax, dword ptr [ecx - 4]
+        mov     edx, dword ptr [ecx]
+        cmp     edx, eax
+        ja      loc_4ed4da
+        jb      loc_4ed4da
+        add     ecx, -4
+        cmp     edi, ecx
+        jb      loc_4ed4c8
+loc_4ed4da:
+        cmp     ebx, ebp
+        jae     loc_4ed4ef
+        mov     edx, dword ptr [ecx]
+loc_4ed4e0:
+        mov     eax, dword ptr [ebx]
+        cmp     edx, eax
+        ja      loc_4ed4ef
+        jb      loc_4ed4ef
+        add     ebx, 4
+        cmp     ebx, ebp
+        jb      loc_4ed4e0
+loc_4ed4ef:
+        mov     eax, ebx
+        mov     edx, ecx
+        cmp     eax, ebp
+        jae     loc_4ed517
+loc_4ed4f7:
+        mov     esi, dword ptr [ecx]
+        mov     edi, dword ptr [eax]
+        cmp     edi, esi
+        ja      loc_4ed510
+        jb      loc_4ed517
+        mov     esi, ebx
+        mov     ebp, dword ptr [esi]
+        mov     dword ptr [esi], edi
+        mov     dword ptr [eax], ebp
+        mov     ebp, dword ptr [esp + 0x20]
+        add     ebx, 4
+loc_4ed510:
+        add     eax, 4
+        cmp     eax, ebp
+        jb      loc_4ed4f7
+loc_4ed517:
+        cmp     edx, dword ptr [esp + 0x1c]
+        jbe     loc_4ed546
+        _emit   0x8d
+        _emit   0x49
+        _emit   0x00
+loc_4ed520:
+        mov     esi, dword ptr [edx - 4]
+        mov     edi, dword ptr [ecx]
+        cmp     edi, esi
+        ja      loc_4ed539
+        jb      loc_4ed542
+        mov     edi, dword ptr [edx - 4]
+        mov     esi, dword ptr [ecx - 4]
+        sub     ecx, 4
+        mov     dword ptr [ecx], edi
+        mov     dword ptr [edx - 4], esi
+loc_4ed539:
+        add     edx, -4
+        cmp     dword ptr [esp + 0x1c], edx
+        jb      loc_4ed520
+loc_4ed542:
+        cmp     edx, dword ptr [esp + 0x1c]
+loc_4ed546:
+        jne     loc_4ed57e
+        cmp     eax, ebp
+        je      loc_4ed5b5
+        cmp     ebx, eax
+        je      loc_4ed558
+        mov     edi, dword ptr [ebx]
+        mov     esi, dword ptr [ecx]
+        mov     dword ptr [ecx], edi
+        mov     dword ptr [ebx], esi
+loc_4ed558:
+        mov     edi, ecx
+        mov     ebp, dword ptr [edi]
+        mov     esi, eax
+        mov     dword ptr [esp + 0x10], ebp
+        mov     ebp, dword ptr [esi]
+        mov     dword ptr [edi], ebp
+        mov     edi, dword ptr [esp + 0x10]
+        mov     ebp, dword ptr [esp + 0x20]
+        add     ebx, 4
+        add     ecx, 4
+        add     eax, 4
+        mov     dword ptr [esi], edi
+        jmp     loc_4ed4ef
+loc_4ed57e:
+        sub     edx, 4
+        cmp     eax, ebp
+        jne     loc_4ed5a5
+        sub     ecx, 4
+        cmp     edx, ecx
+        je      loc_4ed594
+        mov     edi, dword ptr [ecx]
+        mov     esi, dword ptr [edx]
+        mov     dword ptr [edx], edi
+        mov     dword ptr [ecx], esi
+loc_4ed594:
+        mov     edi, dword ptr [ebx - 4]
+        mov     esi, dword ptr [ecx]
+        sub     ebx, 4
+        mov     dword ptr [ecx], edi
+        mov     dword ptr [ebx], esi
+        jmp     loc_4ed4ef
+loc_4ed5a5:
+        mov     esi, dword ptr [eax]
+        mov     edi, dword ptr [edx]
+        mov     dword ptr [eax], edi
+        mov     dword ptr [edx], esi
+        add     eax, 4
+        jmp     loc_4ed4ef
+loc_4ed5b5:
+        mov     eax, dword ptr [esp + 0x18]
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     dword ptr [eax + 4], ebx
+        mov     dword ptr [eax], ecx
+        pop     ebx
+        pop     ecx
+        ret
+    }
+}
