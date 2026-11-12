@@ -4130,3 +4130,56 @@ extern "C" unsigned int __fastcall fn_0066A180(float* self) {
     r |= (unsigned char)(int)(self[0] * 255.0);
     return r;
 }
+
+// [0x00664910] sub_00664910 (149 bytes)
+extern "C" int mem_00925230;
+extern "C" int mem_0092506C;
+extern "C" int mem_00924ED0;
+
+extern "C" __declspec(naked) std::string* __cdecl fn_00664910(std::string* out, int value) {
+    __asm {
+        push -1
+        push 0x8b2d3a
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x24
+        mov ecx, dword ptr [esp + 0x38]
+        push 0x10
+        lea eax, [esp + 0x8]
+        push eax
+        push ecx
+        mov dword ptr [esp + 0x38], 0
+        mov dword ptr [esp + 0xc], 0
+        call dword ptr [mem_00925230]
+        lea eax, [esp + 0x10]
+        add esp, 0xc
+        lea edx, [eax + 0x1]
+    scan_loop:
+        mov cl, byte ptr [eax]
+        add eax, 0x1
+        test cl, cl
+        jne scan_loop
+        push esi
+        mov esi, dword ptr [esp + 0x38]
+        sub eax, edx
+        mov edx, 0x8
+        push 0x30
+        sub edx, eax
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_0092506C]
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x34], 0
+        mov dword ptr [esp + 0x8], 0x1
+        call dword ptr [mem_00924ED0]
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x30
+        ret
+    }
+}
