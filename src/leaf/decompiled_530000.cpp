@@ -2923,3 +2923,71 @@ extern "C" __declspec(naked) void __fastcall fn_0053C9A0(void* self) {
         ret
     }
 }
+
+// [0x0053A3E0] sub_0053A3E0 (170 bytes)
+extern "C" void ext_00532B60();
+extern "C" void ext_00539AA0();
+extern "C" void ext_0053A360();
+extern "C" int mem_00896018;
+extern "C" int mem_009552DC;
+extern "C" int mem_00AEFEC4;
+extern "C" int mem_00AEFEC0;
+extern "C" int mem_00AEFEBC;
+extern "C" __declspec(naked) void __fastcall fn_0053A3E0(void* self) {
+    __asm {
+        push -1
+        push offset mem_00896018
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x10], esi
+        call ext_00532B60
+        mov ecx, dword ptr [esp + 0x28]
+        mov dword ptr [esi], offset mem_009552DC
+        mov dword ptr [esi + 0x14], ecx
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x4]
+        push offset ext_0053A360
+        mov dword ptr [esp + 0x24], 0x0
+        call edx
+        mov eax, dword ptr [mem_00AEFEC4]
+        mov ecx, dword ptr [mem_00AEFEC0]
+        cmp ecx, eax
+        mov ebp, eax
+        jbe skip_err1
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [mem_00AEFEC4]
+        mov ecx, dword ptr [mem_00AEFEC0]
+skip_err1:
+        cmp ecx, eax
+        mov edi, offset mem_00AEFEBC
+        mov ebx, ecx
+        jbe skip_err2
+        call dword ptr [mem_00925134]
+skip_err2:
+        push ebp
+        push edi
+        push ebx
+        mov eax, offset mem_00AEFEBC
+        push eax
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, offset mem_00AEFEBC
+        call ext_00539AA0
+        mov ecx, dword ptr [esp + 0x18]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 0x4
+    }
+}
