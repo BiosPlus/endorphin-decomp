@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/templates/AddElementCommand.cpp
 
 extern "C" void ext_004B53E0();
+extern "C" void ext_004BBEB0();
 extern "C" void ext_00517510();
 extern "C" void ext_00527EC0();
 extern "C" void ext_006A5C5C();
@@ -152,6 +153,59 @@ L_done:
         pop esi
         pop ebp
         pop ebx
+        ret
+    }
+}
+
+// [0x004BBFD0] PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand::vfunc_2 (105 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004BBFD0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x1c]
+        push edi
+        mov edi, dword ptr [esi + 0x18]
+        cmp ebx, edi
+        je L_store
+        test edi, edi
+        je L_store
+        mov ecx, edi
+        call dword ptr [mem_00924FF4]
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+L_store:
+        mov dword ptr [esi + 0x18], ebx
+        mov eax, dword ptr [esi + 0x1c]
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, dword ptr [esi + 0x10]
+        mov dword ptr [esp + 0x10], eax
+        call ext_004BBEB0
+        cmp dword ptr [esi + 0x24], 0
+        je L_p14
+        mov eax, dword ptr [esi + 0x20]
+        mov ecx, dword ptr [esi + 0x24]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 4]
+        push eax
+        mov eax, dword ptr [esi + 0x1c]
+        push eax
+        call edx
+L_p14:
+        mov ecx, dword ptr [esi + 0x14]
+        test ecx, ecx
+        je L_done
+        mov eax, dword ptr [esi + 0x1c]
+        push eax
+        call ext_00517510
+L_done:
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
         ret
     }
 }
