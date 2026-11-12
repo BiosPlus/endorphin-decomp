@@ -7257,3 +7257,75 @@ L_not_found:
         ret 0x4
     }
 }
+
+// [0x00435190] sub_00435190 (161 bytes)
+// try { sub_004332B0(this); sub_00465B40()->vfunc_0x1bc(); } catch (T& e) { AfxMessageBox(e.str.c_str(), 0, 0); }
+// sub_004332D0(this);
+// Naked: MSVC /EHsc drops the try block around extern "C" callees, so the SEH frame is written out by hand.
+extern "C" void ext_004332B0();
+extern "C" void ext_004332D0();
+extern "C" void ext_00465B40();
+extern "C" void ext_00435216();
+extern "C" void __stdcall ext_006A5E60(int a, int b, int c);
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00435190(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -0x1
+        push 0x0087a659
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x28
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        call ext_004332B0
+        mov dword ptr [ebp - 0x4], 0x0
+        call ext_00465B40
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x1bc]
+        call eax
+        mov dword ptr [ebp - 0x4], 0xffffffff
+        jmp exit_path
+    handler:
+        mov ecx, dword ptr [ebp - 0x18]
+        add ecx, 0xc
+        push ecx
+        lea ecx, [ebp - 0x34]
+        call dword ptr [mem_00924FE0]
+        push 0x0
+        push 0x0
+        lea ecx, [ebp - 0x34]
+        mov byte ptr [ebp - 0x4], 0x2
+        call dword ptr [mem_00924FF0]
+        push eax
+        call ext_006A5E60
+        lea ecx, [ebp - 0x34]
+        mov byte ptr [ebp - 0x4], 0x1
+        call dword ptr [mem_00924FF4]
+        mov eax, offset ext_00435216
+        ret
+    resume_:
+        mov esi, dword ptr [ebp - 0x14]
+    exit_path:
+        mov ecx, esi
+        call ext_004332D0
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
