@@ -4501,3 +4501,69 @@ extern "C" __declspec(naked) void* __fastcall fn_00557380(void* self) {
         ret
     }
 }
+
+// [0x00558920] sub_00558920 (238 bytes)
+extern "C" void ext_00401A10();
+extern "C" void ext_00401D20();
+extern "C" void ext_004026E0();
+extern "C" void ext_00402B60();
+extern "C" void ext_005581C0();
+extern "C" void ext_0055D2B0();
+extern "C" void ext_0065C660();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00558920(void* self) {
+    __asm {
+        push -1
+        push 0x89a4fb
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        mov dword ptr [esi], 0x929244
+        mov dword ptr [esi + 4], 0x929238
+        lea ecx, [esi + 0x45c]
+        mov dword ptr [esp + 0x10], 0xa
+        call ext_004026E0
+        lea ecx, [esi + 0x44c]
+        mov byte ptr [esp + 0x10], 9
+        call ext_004026E0
+        lea ecx, [esi + 0x43c]
+        call ext_005581C0
+        lea ecx, [esi + 0x42c]
+        mov byte ptr [esp + 0x10], 7
+        call ext_0055D2B0
+        lea ecx, [esi + 0x3d4]
+        mov byte ptr [esp + 0x10], 6
+        call ext_00401A10
+        lea ecx, [esi + 0x27c]
+        mov byte ptr [esp + 0x10], 5
+        call ext_00401D20
+        lea ecx, [esi + 0x16c]
+        mov byte ptr [esp + 0x10], 4
+        call ext_00402B60
+        lea ecx, [esi + 0x5c]
+        mov byte ptr [esp + 0x10], 3
+        call ext_00402B60
+        lea ecx, [esi + 0x40]
+        mov byte ptr [esp + 0x10], 2
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 0x24]
+        mov byte ptr [esp + 0x10], 1
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esi + 8]
+        mov byte ptr [esp + 0x10], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_0065C660
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
