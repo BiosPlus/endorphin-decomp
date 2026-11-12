@@ -4561,3 +4561,47 @@ done:
         ret
     }
 }
+
+// [0x0054FD10] sub_0054FD10 (307 bytes)
+extern "C" int mem_009251D8;
+
+extern "C" void __fastcall fn_0054FD10(void* self, int edx_unused, int* a1) {
+    typedef void (__cdecl* FreeFn)(void*);
+    FreeFn fr = (FreeFn)mem_009251D8;
+    if (a1[4] != 0) {
+        for (int i = 0; i < a1[0]; ++i) {
+            fr((void*)((int*)a1[4])[i]);
+        }
+        fr((void*)a1[4]);
+    }
+    if (a1[5] != 0) {
+        for (int i = 0; i < a1[3]; ++i) {
+            fr((void*)((int*)a1[5])[i]);
+        }
+        fr((void*)a1[5]);
+    }
+    if (a1[6] != 0) {
+        for (int i = 0; i < a1[1]; ++i) {
+            fr((void*)((int*)a1[6])[i]);
+        }
+        fr((void*)a1[6]);
+    }
+    if (a1[7] != 0) {
+        for (int i = 0; i < a1[3]; ++i) {
+            fr((void*)((int*)a1[7])[i]);
+        }
+        fr((void*)a1[7]);
+    }
+    if (a1[8] != 0) {
+        for (int i = 0; i < a1[2]; ++i) {
+            fr((void*)((int*)a1[8])[i]);
+        }
+        fr((void*)a1[8]);
+    }
+    if (a1[9] != 0) {
+        for (int i = 0; i < a1[3]; ++i) {
+            fr((void*)((int*)a1[9])[i]);
+        }
+        fr((void*)a1[9]);
+    }
+}
