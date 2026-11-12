@@ -9494,3 +9494,102 @@ extern "C" __declspec(naked) void __fastcall fn_00437F80(void* self) {
         ret
     }
 }
+
+// [0x0043DB90] sub_0043DB90 (246 bytes)
+extern "C" int mem_00924080;
+extern "C" __declspec(naked) void __fastcall fn_0043DB90(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 14h
+        push ebx
+        push ebp
+        lea eax, [ecx + 0fch]
+        push esi
+        mov dword ptr [eax], 0
+        lea esi, [ecx + 0b0h]
+        mov dword ptr [esp + 0ch], eax
+        mov eax, dword ptr [esi + 10h]
+        push edi
+        mov edi, dword ptr [esi + 0ch]
+        add eax, edi
+        cmp edi, eax
+        jbe L_a0043DB90
+        call dword ptr [mem_00925134]
+L_a0043DB90:
+        mov eax, dword ptr [esi + 0ch]
+        mov ebp, edi
+        mov edi, dword ptr [esi + 10h]
+        add edi, eax
+        cmp eax, edi
+        mov dword ptr [esp + 18h], edi
+        jbe L_b0043DB90
+        call dword ptr [mem_00925134]
+L_b0043DB90:
+        cmp esi, esi
+        je L_c0043DB90
+        call dword ptr [mem_00925134]
+L_c0043DB90:
+        cmp ebp, edi
+        je L_done0043DB90
+        mov ecx, dword ptr [esi + 0ch]
+        add ecx, dword ptr [esi + 10h]
+        mov edi, ebp
+        mov ebx, ebp
+        shr edi, 2
+        and ebx, 3
+        cmp ebp, ecx
+        jb L_d0043DB90
+        call dword ptr [mem_00925134]
+L_d0043DB90:
+        mov eax, dword ptr [esi + 8]
+        cmp eax, edi
+        ja L_e0043DB90
+        sub edi, eax
+L_e0043DB90:
+        mov edx, dword ptr [esi + 4]
+        mov eax, dword ptr [edx + edi*4]
+        mov eax, dword ptr [eax + ebx*4]
+        cmp byte ptr [eax + 34h], 0
+        je L_f0043DB90
+        lea ecx, [esp + 1ch]
+        lea edi, [eax + 1ch]
+        push ecx
+        mov ecx, edi
+        call dword ptr [mem_0092431C]
+        push eax
+        mov ecx, edi
+        call dword ptr [mem_00924300]
+        mov edx, dword ptr [esp + 30h]
+        push eax
+        mov eax, dword ptr [edx + 8]
+        push eax
+        call dword ptr [mem_00924080]
+        mov eax, dword ptr [esp + 1ch]
+        mov ecx, dword ptr [esp + 10h]
+        add eax, 18h
+        cmp dword ptr [ecx], eax
+        mov dword ptr [esp + 14h], eax
+        lea eax, [esp + 14h]
+        jl L_g0043DB90
+        mov eax, ecx
+L_g0043DB90:
+        mov edx, dword ptr [eax]
+        mov dword ptr [ecx], edx
+L_f0043DB90:
+        mov eax, dword ptr [esi + 0ch]
+        add eax, dword ptr [esi + 10h]
+        cmp ebp, eax
+        jb L_h0043DB90
+        call dword ptr [mem_00925134]
+L_h0043DB90:
+        mov edi, dword ptr [esp + 18h]
+        add ebp, 1
+        jmp L_b0043DB90
+L_done0043DB90:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 14h
+        ret 4
+    }
+}
