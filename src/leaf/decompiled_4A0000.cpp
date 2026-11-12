@@ -1551,3 +1551,78 @@ extern "C" __declspec(naked) void __fastcall fn_004A5D20(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00594000();
+extern "C" void ext_00593F20();
+extern "C" int mem_00B58DFC;
+
+// [0x004A9CE0] sub_004A9CE0 (156 bytes)
+extern "C" __declspec(naked) int __fastcall fn_004A9CE0(void* self) {
+    __asm {
+        push esi
+        xor esi, esi
+        cmp byte ptr [mem_00B58DFC], 0x0
+        push edi
+        mov edi, ecx
+        jne L_SKIP1
+        call ext_00594000
+        test eax, eax
+        je L_SKIP1
+        lea eax, [edi + 0x188]
+        cmp dword ptr [edi + 0x180], eax
+        je L_EQ
+        mov eax, dword ptr [edi + 0x304]
+        pop edi
+        pop esi
+        ret
+    L_EQ:
+        call ext_00594000
+        mov ecx, eax
+        call ext_00593F20
+        mov ecx, dword ptr [eax + 0x4]
+        test ecx, ecx
+        jne L_NZ
+        xor esi, esi
+        jmp L_SKIP1
+    L_NZ:
+        mov esi, dword ptr [eax + 0x8]
+        sub esi, ecx
+        sar esi, 0x2
+    L_SKIP1:
+        mov ecx, dword ptr [edi + 0x304]
+        test ecx, ecx
+        jge L_POS
+        mov eax, dword ptr [edi + 0x2f4]
+        test eax, eax
+        je L_POS
+        cmp dword ptr [edi + 0x308], 0x0
+        jl L_POS
+        mov edx, dword ptr [eax + 0x4]
+        test edx, edx
+        jne L_DIV
+        xor eax, eax
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    L_DIV:
+        mov ecx, dword ptr [eax + 0x8]
+        sub ecx, edx
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        pop edi
+        add eax, esi
+        pop esi
+        ret
+    L_POS:
+        pop edi
+        lea eax, [ecx + esi]
+        pop esi
+        ret
+    }
+}
