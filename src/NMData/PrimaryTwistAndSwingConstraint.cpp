@@ -226,3 +226,66 @@ done:
         ret 0x4
     }
 }
+
+// [0x00611BF0] NMData::PrimaryTwistAndSwingConstraint::vfunc_14 (157 bytes)
+extern "C" void ext_0046F7D0();
+extern "C" void ext_00661650();
+
+extern "C" __declspec(naked) void* __fastcall fn_00611BF0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        sub eax, 0xac
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        je L_ac
+        sub eax, 0x8c
+        je L_138
+        sub eax, 0x34
+        je L_16c
+    L_default:
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_0046F7D0
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_16c:
+        cmp byte ptr [ecx + 0x328], 0x0
+        jne L_16c_body
+        cmp byte ptr [ecx + 0x329], 0x0
+        jne L_16c_body
+        cmp byte ptr [ecx + 0x32a], 0x0
+        je L_default
+    L_16c_body:
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x164
+        push ecx
+        mov ecx, esi
+        call ext_00661650
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_ac:
+        cmp byte ptr [ecx + 0x328], 0x0
+        jne L_ac_body
+        cmp byte ptr [ecx + 0x329], 0x0
+        jne L_ac_body
+        cmp byte ptr [ecx + 0x32a], 0x0
+        je L_default
+    L_ac_body:
+        add ecx, 0x224
+    L_138:
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_00661650
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
