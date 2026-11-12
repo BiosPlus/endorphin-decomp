@@ -3709,3 +3709,45 @@ extern "C" __declspec(naked) void __cdecl fn_007CB3B0() {
         ret
     }
 }
+
+extern "C" void __cdecl ext_007C8730(void* p);
+extern "C" int mem_00AB28BC;
+
+// [0x007C8750] sub_007C8750 (180 bytes)
+extern "C" void __cdecl fn_007C8750(void* a1) {
+    typedef void (__cdecl *cdecl_fn)(void*);
+    char* s = (char*)a1;
+    ext_007C8730(s);
+    char* edi = *(char**)(s + 0x24);
+    while (edi != 0) {
+        ((cdecl_fn)(*(int*)edi))(s);
+        edi = *(char**)(edi + 0x4);
+    }
+    if (*(int*)(s + 0x2c) != 0) {
+        ((cdecl_fn)mem_00AB28BC)(s + 0x2c);
+    }
+    *(int*)s = 0;
+    *(int*)(s + 0x4) = 0;
+    ((cdecl_fn)mem_00AB28BC)(s + 0x4c);
+    ((cdecl_fn)mem_00AB28BC)(s + 0x6c);
+    {
+        char* obj = *(char**)(s + 0xb0);
+        ((cdecl_fn)(*(int*)(obj + 0xc)))(*(void**)(s + 0xa4));
+    }
+    {
+        char* obj = *(char**)(s + 0xb0);
+        ((cdecl_fn)(*(int*)(obj + 0xc)))(*(void**)(s + 0x20));
+    }
+    {
+        char* obj = *(char**)(s + 0xb0);
+        ((cdecl_fn)(*(int*)(obj + 0xc)))(*(void**)(s + 0x28));
+    }
+    if (*(int*)(s + 0x24) != 0) {
+        char* obj = *(char**)(s + 0xb0);
+        ((cdecl_fn)(*(int*)(obj + 0xc)))(*(void**)(s + 0x24));
+    }
+    {
+        char* obj = *(char**)(s + 0xb0);
+        ((cdecl_fn)(*(int*)(obj + 0xc)))(s);
+    }
+}
