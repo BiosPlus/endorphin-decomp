@@ -4662,3 +4662,26 @@ L_done:
         ret
     }
 }
+
+extern "C" void ext_00473790();
+
+// [0x00468A40] sub_00468A40 (49 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00468A40(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0Ch
+        mov ecx, dword ptr [ecx + 14h]
+        mov eax, dword ptr [ecx + 24h]
+        mov dword ptr [esp], eax
+        mov edx, dword ptr [ecx + 28h]
+        mov dword ptr [esp + 4], edx
+        mov eax, dword ptr [ecx + 2Ch]
+        mov edx, dword ptr [esp + 10h]
+        mov dword ptr [esp + 8], eax
+        lea eax, [esp]
+        push eax
+        mov dword ptr [esp + 8], edx
+        call ext_00473790
+        add esp, 0Ch
+        ret 4
+    }
+}
