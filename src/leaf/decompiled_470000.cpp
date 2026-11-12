@@ -3691,3 +3691,105 @@ extern "C" __declspec(naked) void __fastcall fn_00478B00(void* self) {
         ret
     }
 }
+
+// [0x00472420] sub_00472420 (280 bytes)
+extern "C" void ext_00472350();
+extern "C" void ext_004804A0();
+extern "C" void ext_00493E10();
+extern "C" void ext_0052EE10();
+extern "C" void ext_0052FF10();
+extern "C" void ext_00530610();
+extern "C" void ext_0059C770();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" int mem_00AD89B0;
+
+extern "C" __declspec(naked) void __fastcall fn_00472420(void* self) {
+    __asm {
+        push -0x1
+        push 0x882e50
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00472350
+        mov ecx, dword ptr [esi + 0x30]
+        test ecx, ecx
+        jne loc_004724d7
+        cmp byte ptr [mem_00AD89B0], cl
+        je loc_00472459
+        call ext_0052FF10
+        jmp loc_0047245e
+    loc_00472459:
+        call ext_0052EE10
+    loc_0047245e:
+        mov ecx, dword ptr [esi + 0x34]
+        mov dword ptr [esi + 0x30], eax
+        call ext_004804A0
+        mov eax, dword ptr [esi + 0x38]
+        test eax, eax
+        je loc_00472476
+        mov ecx, dword ptr [esi + 0x34]
+        mov dword ptr [ecx + 0x4], eax
+    loc_00472476:
+        mov eax, dword ptr [esi + 0xcc]
+        mov edx, dword ptr [esi + 0x30]
+        lea ecx, [eax + 0x258]
+        movzx eax, byte ptr [ecx + 0x8]
+        push eax
+        mov dword ptr [ecx], edx
+        call ext_00493E10
+        mov ecx, dword ptr [esi + 0x30]
+        mov dword ptr [esi + 0x1a0], ecx
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x1d8]
+        call eax
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x8], edi
+        call ext_0065C640
+        mov ecx, dword ptr [esi + 0x30]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xb4]
+        mov dword ptr [esp + 0x14], 0x0
+        call eax
+        test eax, eax
+        je loc_0047250b
+        mov ecx, dword ptr [esi + 0x34]
+        push ecx
+        mov ecx, eax
+        call ext_00530610
+        jmp loc_0047250b
+    loc_004724d7:
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x1d8]
+        call eax
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x8], edi
+        call ext_0065C640
+        mov ecx, dword ptr [esi + 0xcc]
+        push 0x1
+        mov dword ptr [esp + 0x18], 0x1
+        call ext_0059C770
+        mov ecx, dword ptr [esi + 0x34]
+        call ext_004804A0
+    loc_0047250b:
+        mov ecx, edi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_0065C650
+        mov ecx, dword ptr [esi + 0x30]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x154]
+        call eax
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
