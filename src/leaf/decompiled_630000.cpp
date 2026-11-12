@@ -2682,3 +2682,67 @@ extern "C" __declspec(naked) int __fastcall fn_0063F530(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x00630740] sub_00630740 (201 bytes)
+// [0x00630740] sub_00630740 (201 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00630740(void* self) {
+    __asm {
+        sub esp, 24h
+        fldz
+        push esi
+        fst dword ptr [esp + 24h]
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 4]
+        fst dword ptr [esp + 20h]
+        fstp dword ptr [esp + 1Ch]
+        lea edx, [esp + 1Ch]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 48h]
+        push edx
+        call eax
+        fldz
+        mov ecx, dword ptr [esi + 4]
+        fst dword ptr [esp + 18h]
+        fst dword ptr [esp + 14h]
+        lea eax, [esp + 10h]
+        fstp dword ptr [esp + 10h]
+        push eax
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 44h]
+        call edx
+        fld dword ptr [esi + 90h]
+        fstp dword ptr [esp + 4]
+        lea eax, [esi + 16Ch]
+        fld dword ptr [esi + 94h]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esi + 98h]
+        fstp dword ptr [esp + 0Ch]
+        fld dword ptr [esp + 4]
+        fadd dword ptr [esp + 10h]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 8]
+        fadd dword ptr [esp + 14h]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 0Ch]
+        fadd dword ptr [esp + 18h]
+        fstp dword ptr [esp + 0Ch]
+        fld dword ptr [esp + 4]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 8]
+        fstp dword ptr [eax + 4]
+        fld dword ptr [esp + 0Ch]
+        fstp dword ptr [eax + 8]
+        fld dword ptr [eax]
+        fdiv dword ptr [esp + 1Ch]
+        fstp dword ptr [eax]
+        fld dword ptr [esi + 170h]
+        fdiv dword ptr [esp + 20h]
+        fstp dword ptr [esi + 170h]
+        fld dword ptr [esi + 174h]
+        fdiv dword ptr [esp + 24h]
+        fstp dword ptr [esi + 174h]
+        pop esi
+        add esp, 24h
+        ret
+    }
+}
