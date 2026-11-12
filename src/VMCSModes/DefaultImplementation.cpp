@@ -1542,3 +1542,73 @@ epilog:
         ret
     }
 }
+
+// [0x004FB250] VMCSModes::DefaultImplementation::vfunc_48 (200 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004FB250(void* self) {
+    __asm {
+        push -1
+        push 0x88fe68
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xf4]
+        push edi
+        call edx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x8c]
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [esi + 0x8]
+        mov edi, dword ptr [eax + 0x14]
+        test edi, edi
+        mov dword ptr [esp + 0x8], edi
+        mov byte ptr [esp + 0xc], 0
+        je skip_guard
+        cmp dword ptr [mem_00AD89B4], 0
+        jne inc_count
+        mov ecx, edi
+        mov byte ptr [edi + 0x153], 1
+        call ext_00472350
+inc_count:
+        add dword ptr [mem_00AD89B4], 1
+skip_guard:
+        mov ecx, dword ptr [esi + 0x4]
+        push 1
+        mov dword ptr [esp + 0x1c], 0
+        call ext_004667A0
+        mov ecx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [ecx + 0x14]
+        mov ecx, dword ptr [eax + 0x30]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xb4]
+        call eax
+        mov esi, eax
+        test esi, esi
+        je no_obj
+        push 6
+        mov ecx, esi
+        call ext_00530290
+        mov ecx, dword ptr [esi + 0x4c]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x14]
+        push 0
+        call eax
+no_obj:
+        test edi, edi
+        je epilog
+        sub dword ptr [mem_00AD89B4], 1
+        jne epilog
+        mov byte ptr [edi + 0x153], 0
+epilog:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret
+    }
+}
