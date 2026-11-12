@@ -2650,3 +2650,67 @@ extern "C" Pair006920D0 __cdecl fn_006920D0(int* first, int* last, const int* va
     }
     return Pair006920D0(first, first);
 }
+
+extern "C" void ext_00692000();
+extern "C" void ext_00691FC0();
+extern "C" int mem_00B5AE98;
+extern "C" int mem_00B5BCA8;
+
+// [0x00692180] sub_00692180 (134 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00692180(const char* str) {
+    __asm {
+        sub esp, 8
+        push esi
+        push 0
+        push offset ext_00691FC0
+        lea eax, [esp + 0x18]
+        push eax
+        push offset mem_00B5BCA8
+        lea ecx, [esp + 0x14]
+        push offset mem_00B5AE98
+        push ecx
+        call fn_006920D0
+        mov eax, dword ptr [esp + 0x1c]
+        add esp, 0x18
+        cmp eax, offset mem_00B5BCA8
+        je short loc_6921fc
+        sub eax, offset mem_00B5AE98
+        sar eax, 2
+        mov esi, eax
+        cmp esi, 0x383
+        ja short loc_6921fc
+        push esi
+        call ext_00692000
+        mov ecx, dword ptr [esp + 0x14]
+        add esp, 4
+    loc_6921d1:
+        mov dl, byte ptr [ecx]
+        cmp dl, byte ptr [eax]
+        jne short loc_6921f1
+        test dl, dl
+        je short loc_6921ed
+        mov dl, byte ptr [ecx + 1]
+        cmp dl, byte ptr [eax + 1]
+        jne short loc_6921f1
+        add ecx, 2
+        add eax, 2
+        test dl, dl
+        jne short loc_6921d1
+    loc_6921ed:
+        xor eax, eax
+        jmp short loc_6921f6
+    loc_6921f1:
+        sbb eax, eax
+        sbb eax, -1
+    loc_6921f6:
+        test eax, eax
+        mov eax, esi
+        je short loc_692201
+    loc_6921fc:
+        mov eax, 0x384
+    loc_692201:
+        pop esi
+        add esp, 8
+        ret
+    }
+}
