@@ -86,3 +86,96 @@ extern "C" void __fastcall fn_00456B50(void* self, int edx_unused, int a1) {
     ((WriteProfileFn)ext_006A6328)(edi, buf, &mem_00936F08, *(int*)((char*)self + 0xac));
     ((WriteProfileFn)ext_006A6328)(edi, buf, &mem_00936EFC, *(int*)((char*)self + 0xb0));
 }
+
+extern "C" void ext_00455F10();
+extern "C" void ext_006A5CE6();
+extern "C" void ext_006A64AE();
+extern "C" int mem_0092571C;
+extern "C" int mem_009242F0;
+extern "C" int mem_00924300;
+extern "C" int mem_009242F4;
+
+// [0x00456CE0] ButtonPanel::vfunc_92 (248 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00456CE0(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x87eb59
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x10
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x38]
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x104]
+        mov eax, edi
+        and eax, 0x40ffff
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esi + 0x80], eax
+        call ext_00455F10
+        lea eax, [esi + 0xfc]
+        xor ebx, ebx
+        cmp eax, ebx
+        jne L_00456D2C
+        xor eax, eax
+        jmp L_00456D2F
+    L_00456D2C:
+        mov eax, dword ptr [eax + 0x4]
+    L_00456D2F:
+        push ebx
+        push eax
+        push 0x7f00
+        push ebx
+        call dword ptr [mem_0092571C]
+        push eax
+        push 0x8
+        call ext_006A64AE
+        push eax
+        lea ecx, [esp + 0x3c]
+        call dword ptr [mem_009242F0]
+        mov edx, dword ptr [esp + 0x34]
+        mov eax, dword ptr [esp + 0x30]
+        push ebx
+        push edx
+        mov edx, dword ptr [esp + 0x34]
+        push eax
+        lea ecx, [esp + 0x18]
+        push ecx
+        and edi, 0xffbf0000
+        or edi, 0x2000000
+        push edi
+        push edx
+        lea ecx, [esp + 0x50]
+        mov dword ptr [esp + 0x3c], ebx
+        mov dword ptr [esp + 0x24], ebx
+        mov dword ptr [esp + 0x28], ebx
+        mov dword ptr [esp + 0x2c], ebx
+        mov dword ptr [esp + 0x30], ebx
+        call dword ptr [mem_00924300]
+        push eax
+        mov ecx, esi
+        call ext_006A5CE6
+        test eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        lea ecx, [esp + 0x2c]
+        jne L_00456DBC
+        call dword ptr [mem_009242F4]
+        xor eax, eax
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x1c
+        ret 0x10
+    L_00456DBC:
+        call dword ptr [mem_009242F4]
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, 0x1
+        mov dword ptr fs:[0], ecx
+        add esp, 0x1c
+        ret 0x10
+    }
+}
