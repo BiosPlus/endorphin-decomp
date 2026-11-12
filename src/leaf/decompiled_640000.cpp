@@ -3129,3 +3129,103 @@ extern "C" __declspec(naked) void __fastcall fn_0064DE00(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0064F9B0] sub_0064F9B0 (229 bytes)
+extern "C" void ext_0065F440();
+extern "C" int mem_00993828;
+extern "C" int mem_00982740;
+extern "C" int mem_0098273C;
+
+extern "C" __declspec(naked) void __stdcall fn_0064F9B0(void* self, float* o0, float* o1, float* o2, int a4, int a5) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 0x18
+        push ebx
+        mov ebx, dword ptr [esp + 0x30]
+        push ebp
+        push esi
+        mov esi, dword ptr [eax + 0x17c]
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 0x118]
+        push edi
+        mov edi, dword ptr [esp + 0x40]
+        push edi
+        push ebx
+        lea eax, [esp + 0x18]
+        push eax
+        mov ecx, esi
+        call edx
+        fld dword ptr [eax + 8]
+        fmul qword ptr [mem_00993828]
+        mov ebp, dword ptr [esp + 0x30]
+        lea ecx, [esp + 0x10]
+        fstp dword ptr [ebp]
+        call ext_0065F440
+        fld dword ptr [mem_00982740]
+        fcom dword ptr [ebp]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_0064FA0A
+        fstp dword ptr [ebp]
+        jmp short L_0064FA0C
+    L_0064FA0A:
+        fstp st(0)
+    L_0064FA0C:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x118]
+        push edi
+        push ebx
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, esi
+        call edx
+        fld dword ptr [eax + 0xc]
+        mov ebp, dword ptr [esp + 0x34]
+        lea ecx, [esp + 0x10]
+        fstp dword ptr [ebp]
+        call ext_0065F440
+        fld dword ptr [mem_0098273C]
+        fcom dword ptr [ebp]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_0064FA47
+        fstp dword ptr [ebp]
+        jmp short L_0064FA49
+    L_0064FA47:
+        fstp st(0)
+    L_0064FA49:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x118]
+        push edi
+        push ebx
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, esi
+        call edx
+        fld dword ptr [eax + 0x14]
+        mov esi, dword ptr [esp + 0x38]
+        lea ecx, [esp + 0x10]
+        fstp dword ptr [esi]
+        call ext_0065F440
+        fld dword ptr [mem_0098273C]
+        fcom dword ptr [esi]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_0064FA89
+        pop edi
+        fstp dword ptr [esi]
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret 0x18
+    L_0064FA89:
+        pop edi
+        fstp st(0)
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret 0x18
+    }
+}
