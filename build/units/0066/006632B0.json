@@ -28,5 +28,7 @@
     "0x0066337B",
     "0x00663382"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash",
+  "matched_at": "2026-11-12T12:18:49Z"
 }
