@@ -2047,3 +2047,26 @@ extern "C" void __fastcall fn_00421CE0(void* self, int edx_unused, const char* b
         ((AppendStrFn)mem_00924FD8)(selfPtr + 0xe4, keyStr);
     }
 }
+
+// [0x0042FED0] sub_0042FED0 (151 bytes)
+extern "C" void ext_00465B30();
+extern "C" void ext_004694E0();
+
+extern "C" int __fastcall fn_0042FED0(void* self) {
+    typedef unsigned char (__thiscall *CheckFn)(void*, int);
+    typedef void* (__cdecl *GetFn)();
+    CheckFn check = (CheckFn)ext_004694E0;
+    GetFn get = (GetFn)ext_00465B30;
+
+    unsigned char b0 = check(get(), 0);
+    unsigned char b1 = check(get(), 1);
+    unsigned char b2 = check(get(), 2);
+    unsigned char b5 = check(get(), 5);
+    unsigned char b4 = check(get(), 4);
+    unsigned char b12 = check(get(), 12);
+
+    if (b4 && b12 && !b0 && !b1 && !b5 && !b2) {
+        return 1;
+    }
+    return 0;
+}
