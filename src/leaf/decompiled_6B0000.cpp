@@ -4266,3 +4266,33 @@ extern "C" __declspec(naked) void __fastcall fn_006B3240(void* self) {
         ret
     }
 }
+
+extern "C" void ext_006B30B0();
+extern "C" void ext_006B3170();
+extern "C" int mem_00925670;
+
+// [0x006B3280] sub_006B3280 (59 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006B3280(void* self) {
+    __asm {
+        sub esp, 0x28
+        mov eax, dword ptr [esp + 0x2c]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [eax]
+        push 0x2
+        push ecx
+        push edx
+        call ext_006B30B0
+        lea ecx, [esp]
+        push ecx
+        push eax
+        mov dword ptr [esp + 0x8], 0x28
+        call ext_006B3170
+        mov eax, dword ptr [esp + 0x30]
+        lea edx, [esp + 0x14]
+        push edx
+        push eax
+        call dword ptr [mem_00925670]
+        add esp, 0x28
+        ret
+    }
+}
