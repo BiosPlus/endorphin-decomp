@@ -1,4 +1,5 @@
 // Decompiled translation unit: src/NMData/RootRelationshipData.cpp
+#include <string>
 
 // [0x005EBEA0] NMData::RootRelationshipData::vfunc_22 (17 bytes)
 extern "C" void ext_005EB5A0();
@@ -94,6 +95,32 @@ extern "C" __declspec(naked) void* __fastcall fn_005E4AC0(void* self, int edx_un
         pop esi
         mov dword ptr fs:[0x0], ecx
         add esp, 0xac
+        ret 0x4
+    }
+}
+
+// [0x005F2F50] NMData::RootRelationshipData::vfunc_21 (45 bytes)
+extern "C" void ext_005F2970();
+extern "C" int mem_00924FEC;
+extern "C" int mem_00924FD4;
+extern "C" int mem_0093E1E4;
+extern "C" __declspec(naked) void __fastcall fn_005F2F50(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_005F2970
+        add esi, 0x14
+        mov ecx, esi
+        call dword ptr [mem_00924FEC]
+        test al, al
+        je done
+        push offset mem_0093E1E4
+        mov ecx, esi
+        call dword ptr [mem_00924FD4]
+    done:
+        pop esi
         ret 0x4
     }
 }
