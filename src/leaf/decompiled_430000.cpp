@@ -12575,3 +12575,135 @@ L_skip_0x43175c:
         ret
     }
 }
+
+// [0x0043F8B0] sub_0043F8B0 (296 bytes)
+extern "C" void ext_0043E690();
+extern "C" void ext_0043F7B0();
+extern "C" void ext_005DF300();
+extern "C" void ext_005DF6B0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) bool __fastcall fn_0043F8B0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [esp + 0x14]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [eax + 0x14]
+        lea edx, [esp + 0x10]
+        push edx
+        lea eax, [esp + 0x18]
+        mov dword ptr [esp + 0x14], ecx
+        lea esi, [edi + 0xa4]
+        push eax
+        mov ecx, esi
+        call ext_005DF6B0
+        mov ebx, dword ptr [esp + 0x14]
+        test ebx, ebx
+        mov ebp, dword ptr [esi + 0x4]
+        je f43_L1
+        cmp ebx, esi
+        je f43_L2
+f43_L1:
+        call dword ptr [mem_00925134]
+f43_L2:
+        mov eax, dword ptr [esp + 0x18]
+        cmp eax, ebp
+        je f43_ret0
+        push eax
+        push ebx
+        lea ecx, [esp + 0x1c]
+        push ecx
+        mov ecx, esi
+        call ext_005DF300
+        lea esi, [edi + 0xb0]
+        mov edi, dword ptr [esi + 0xc]
+        add edi, dword ptr [esi + 0x10]
+        lea edx, [esp + 0x24]
+        push edx
+        sub esp, 0xc
+        mov ebx, esp
+        mov dword ptr [ebx], 0
+        mov eax, dword ptr [esi + 0xc]
+        cmp eax, edi
+        ja f43_B1
+        mov ecx, dword ptr [esi + 0x10]
+        add ecx, eax
+        cmp edi, ecx
+        jbe f43_B2
+f43_B1:
+        mov ebp, dword ptr [mem_00925134]
+        call ebp
+        jmp f43_B3
+f43_B2:
+        mov ebp, dword ptr [mem_00925134]
+f43_B3:
+        mov dword ptr [ebx + 0x8], edi
+        sub esp, 0xc
+        mov dword ptr [ebx + 0x4], esi
+        mov ebx, dword ptr [esi + 0xc]
+        mov edi, esp
+        mov dword ptr [edi], 0
+        mov eax, dword ptr [esi + 0xc]
+        cmp eax, ebx
+        ja f43_B4
+        mov edx, dword ptr [esi + 0x10]
+        add edx, eax
+        cmp ebx, edx
+        jbe f43_B5
+f43_B4:
+        call ebp
+f43_B5:
+        lea eax, [esp + 0x30]
+        push eax
+        mov dword ptr [edi + 0x4], esi
+        mov dword ptr [edi + 0x8], ebx
+        call ext_0043E690
+        mov eax, dword ptr [esi + 0xc]
+        mov edi, dword ptr [esi + 0x10]
+        add edi, eax
+        add esp, 0x20
+        cmp eax, edi
+        jbe f43_B6
+        call ebp
+f43_B6:
+        mov ebx, dword ptr [esp + 0x18]
+        test ebx, ebx
+        je f43_B7
+        cmp ebx, esi
+        je f43_B8
+f43_B7:
+        call ebp
+f43_B8:
+        mov ecx, dword ptr [esp + 0x1c]
+        cmp ecx, edi
+        je f43_done
+        sub esp, 0xc
+        mov eax, esp
+        mov dword ptr [eax + 0x8], ecx
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [eax], 0
+        mov dword ptr [eax + 0x4], ebx
+        call ext_0043F7B0
+f43_done:
+        mov al, 1
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret 4
+f43_ret0:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        add esp, 0x10
+        ret 4
+    }
+}
