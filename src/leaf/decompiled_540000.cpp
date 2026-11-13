@@ -5555,3 +5555,68 @@ extern "C" __declspec(naked) void __fastcall fn_00549280(void* self) {
         ret 0x4
     }
 }
+
+// [0x00547DC0] sub_00547DC0 (136 bytes)
+extern "C" void ext_005D0460();
+extern "C" int mem_00956CA8;
+extern "C" int mem_00956CA0;
+extern "C" int mem_00956C98;
+extern "C" int mem_00956C90;
+
+extern "C" __declspec(naked) void __fastcall fn_00547DC0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x40]
+        call edx
+        cmp eax, 1
+        jne L_547DD7
+        mov eax, dword ptr [esi + 0x28]
+        cmp byte ptr [eax], 0
+        jne L_547E44
+    L_547DD7:
+        mov ecx, dword ptr [esi + 0xa0]
+        test ecx, ecx
+        je L_547DF2
+        fld dword ptr [esp + 8]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_005D0460
+        pop esi
+        ret 4
+    L_547DF2:
+        fld dword ptr [esi + 0x68]
+        fsub dword ptr [esp + 8]
+        fstp dword ptr [esi + 0x68]
+        fld dword ptr [esi + 0x68]
+        fcomp qword ptr [mem_00956CA8]
+        fnstsw ax
+        test ah, 5
+        jp L_547E22
+        fld dword ptr [mem_00956CA0]
+        mov ecx, esi
+        fstp dword ptr [esi + 0x68]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x44]
+        call eax
+        pop esi
+        ret 4
+    L_547E22:
+        fld dword ptr [esi + 0x68]
+        fcomp qword ptr [mem_00956C98]
+        fnstsw ax
+        test ah, 0x41
+        jne L_547E3B
+        fld dword ptr [mem_00956C90]
+        fstp dword ptr [esi + 0x68]
+    L_547E3B:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x44]
+        mov ecx, esi
+        call eax
+    L_547E44:
+        pop esi
+        ret 4
+    }
+}
