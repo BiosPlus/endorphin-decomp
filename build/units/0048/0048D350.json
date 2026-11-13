@@ -13,5 +13,7 @@
     "0x0048D357",
     "0x0048D37F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T15:58:07Z"
 }
