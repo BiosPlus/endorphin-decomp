@@ -39,3 +39,16 @@ extern "C" __declspec(naked) void* __fastcall fn_00584FD0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x005F3330] NMData::RPROJointData::vfunc_21 (63 bytes)
+extern "C" void ext_00427640();
+extern "C" void ext_005F2970();
+extern "C" void ext_0063EFE0();
+extern "C" int mem_00A9F718;
+
+extern "C" void __fastcall fn_005F3330(void* self, int edx_unused, void* a1) {
+    ((void (__thiscall*)(void*, void*))ext_005F2970)(self, a1);
+    int val = ((int (__thiscall*)(void*, int))ext_0063EFE0)(a1, mem_00A9F718);
+    ((void (__cdecl*)(void*, int*))ext_00427640)((char*)self + 0x2f8, &val);
+    *((unsigned char*)self + 0x178) = 1;
+}
