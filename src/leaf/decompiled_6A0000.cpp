@@ -5603,3 +5603,167 @@ L_a8c0:
         ret
     }
 }
+
+// [0x006A0AC0] sub_006A0AC0 (699 bytes)
+extern "C" int mem_00B5CDB0;
+extern "C" int mem_00B5CC48;
+extern "C" int mem_00B5CA88;
+extern "C" int mem_00B5CCC8;
+extern "C" int mem_00B5CCCC;
+extern "C" int mem_00B5CCD0;
+extern "C" int mem_00B5CCD4;
+extern "C" int mem_00B5CCD8;
+extern "C" int mem_00B5CCDC;
+extern "C" int mem_00B5CCE0;
+extern "C" int mem_00B5CCE4;
+extern "C" int mem_00B5CCE8;
+extern "C" int mem_00B5CCEC;
+extern "C" int mem_00B5CCF0;
+extern "C" int mem_00B5CCF4;
+extern "C" int mem_00B5CCF8;
+extern "C" int mem_00B5CCFC;
+extern "C" int mem_00B5CD00;
+extern "C" int mem_00B5CD04;
+extern "C" int mem_00B5CD08;
+extern "C" int mem_00B5CD0C;
+extern "C" int mem_00B5CD10;
+extern "C" int mem_00B5CD14;
+extern "C" int mem_00B5CD18;
+extern "C" int mem_00B5CD1C;
+extern "C" int mem_00B5CD20;
+extern "C" int mem_00B5CD24;
+extern "C" int mem_00B5CD28;
+extern "C" int mem_00B5CD2C;
+extern "C" int mem_00B5CD30;
+extern "C" int mem_00B5CD34;
+extern "C" int mem_00B5CD38;
+extern "C" int mem_00B5CD3C;
+extern "C" int mem_00B5CD40;
+extern "C" int mem_00B5CD44;
+extern "C" int mem_00B5CD48;
+extern "C" int mem_00B5CD4C;
+extern "C" int mem_00B5CD50;
+extern "C" int mem_00B5CD54;
+extern "C" int mem_00B5CD58;
+extern "C" int mem_00B5CD5C;
+extern "C" int mem_00B5CD60;
+extern "C" int mem_00B5CD64;
+extern "C" int mem_00B5CD68;
+extern "C" int mem_00B5CD6C;
+extern "C" int mem_00B5CD70;
+extern "C" int mem_00B5CD74;
+extern "C" int mem_00B5CD78;
+extern "C" int mem_00B5CD7C;
+extern "C" int mem_00B5CD80;
+extern "C" int mem_00B5CD84;
+extern "C" int mem_00B5CD88;
+extern "C" int mem_00B5CD8C;
+extern "C" int mem_00B5CD90;
+extern "C" int mem_00B5CD94;
+extern "C" int mem_00B5CD98;
+extern "C" int mem_00B5CD9C;
+extern "C" int mem_00B5CDA0;
+extern "C" int mem_00B5CDA4;
+extern "C" int mem_00B5CDA8;
+extern "C" int mem_00B5CDAC;
+extern "C" int mem_00B5CAF4;
+extern "C" int mem_00B5CAF8;
+extern "C" int mem_00B5CAD0;
+extern "C" int mem_00B5CAD4;
+
+extern "C" __declspec(naked) void __fastcall fn_006A0AC0(void* self) {
+    __asm {
+        cmp     byte ptr [mem_00B5CDB0], 0
+        jne     already_init
+        push    esi
+        mov     dword ptr [mem_00B5CCC8], 0xaa4A20
+        mov     dword ptr [mem_00B5CCCC], 0xaa4A24
+        mov     dword ptr [mem_00B5CCD0], 0xaa4A28
+        mov     dword ptr [mem_00B5CCD4], 0xaa4A2C
+        mov     dword ptr [mem_00B5CCD8], 0xaa4A30
+        mov     dword ptr [mem_00B5CCDC], 0xaa4A34
+        mov     dword ptr [mem_00B5CCE0], 0xaa4A38
+        mov     dword ptr [mem_00B5CCE4], 0xaa4A3C
+        mov     dword ptr [mem_00B5CCE8], 0xaa4A40
+        mov     dword ptr [mem_00B5CCEC], 0xaa4A44
+        mov     dword ptr [mem_00B5CCF0], 0xaa4A48
+        mov     dword ptr [mem_00B5CCF4], 0xaa4A4C
+        mov     dword ptr [mem_00B5CCF8], 0xaa4A50
+        mov     dword ptr [mem_00B5CD00], 0xaa4A5C
+        mov     dword ptr [mem_00B5CD04], 0xaa4A60
+        mov     dword ptr [mem_00B5CD08], 0xaa4A64
+        mov     dword ptr [mem_00B5CD0C], 0xaa4A68
+        mov     dword ptr [mem_00B5CD10], 0xaa4A6C
+        mov     dword ptr [mem_00B5CCFC], 0xaa4A70
+        mov     dword ptr [mem_00B5CD14], 0xaa4A74
+        mov     dword ptr [mem_00B5CD18], 0xaa4A78
+        mov     dword ptr [mem_00B5CD1C], 0xaa4A7C
+        mov     dword ptr [mem_00B5CD20], 0xaa4A80
+        mov     dword ptr [mem_00B5CD24], 0xaa4A84
+        mov     dword ptr [mem_00B5CD28], 0xaa4A88
+        mov     dword ptr [mem_00B5CD2C], 0xaa4A8C
+        mov     dword ptr [mem_00B5CD30], 0xaa4A90
+        mov     dword ptr [mem_00B5CD34], 0xaa4A94
+        mov     dword ptr [mem_00B5CD38], 0xaa4A98
+        mov     dword ptr [mem_00B5CD3C], 0xaa4A54
+        mov     dword ptr [mem_00B5CD40], 0xaa4A58
+        mov     dword ptr [mem_00B5CD44], 0xaa4A9C
+        mov     dword ptr [mem_00B5CD48], 0xaa4AA0
+        mov     dword ptr [mem_00B5CD4C], 0xaa4AA4
+        mov     dword ptr [mem_00B5CD50], 0xaa4AA8
+        mov     dword ptr [mem_00B5CD54], 0xaa4AAC
+        mov     dword ptr [mem_00B5CD5C], 0xaa4AB0
+        mov     dword ptr [mem_00B5CD60], 0xaa4AB4
+        mov     dword ptr [mem_00B5CD58], 0xaa4AB8
+        mov     dword ptr [mem_00B5CD64], 0xaa4ABC
+        mov     dword ptr [mem_00B5CD68], 0xaa4AC0
+        mov     dword ptr [mem_00B5CD6C], 0xaa4AC4
+        mov     dword ptr [mem_00B5CD70], 0xaa4AC8
+        mov     dword ptr [mem_00B5CD74], 0xaa4ACC
+        mov     dword ptr [mem_00B5CD78], 0xaa4AD0
+        mov     dword ptr [mem_00B5CD7C], 0xaa4AD4
+        mov     dword ptr [mem_00B5CD80], 0xaa4AD8
+        mov     dword ptr [mem_00B5CD84], 0xaa4ADC
+        mov     dword ptr [mem_00B5CD88], 0xaa4AE0
+        mov     dword ptr [mem_00B5CD8C], 0xaa4AE4
+        mov     dword ptr [mem_00B5CD90], 0xaa4AE8
+        mov     dword ptr [mem_00B5CD94], 0xaa4AEC
+        mov     dword ptr [mem_00B5CD98], 0xaa4AF0
+        mov     dword ptr [mem_00B5CD9C], 0xaa4AF4
+        mov     dword ptr [mem_00B5CDA0], 0xaa4AF8
+        mov     dword ptr [mem_00B5CDA4], 0xaa4AFC
+        mov     dword ptr [mem_00B5CDA8], 0xaa4B00
+        mov     dword ptr [mem_00B5CDAC], 0xaa4B04
+        xor     esi, esi
+    loop_top:
+        mov     ecx, dword ptr [esi*4 + mem_00B5CC48]
+        test    ecx, ecx
+        je      null_slot
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax]
+        call    edx
+        mov     dword ptr [esi*4 + mem_00B5CA88], eax
+        jmp     next_slot
+    null_slot:
+        mov     dword ptr [esi*4 + mem_00B5CA88], esi
+    next_slot:
+        add     esi, 1
+        cmp     esi, 0x5a
+        jl      loop_top
+        mov     eax, 0xf
+        mov     dword ptr [mem_00B5CAF4], eax
+        mov     dword ptr [mem_00B5CAF8], eax
+        mov     eax, 0x11
+        mov     dword ptr [mem_00B5CAD0], eax
+        mov     dword ptr [mem_00B5CAD4], eax
+        mov     eax, dword ptr [esp+8]
+        mov     eax, dword ptr [eax*4 + mem_00B5CC48]
+        mov     byte ptr [mem_00B5CDB0], 1
+        pop     esi
+        ret
+    already_init:
+        mov     ecx, dword ptr [esp+4]
+        mov     eax, dword ptr [ecx*4 + mem_00B5CC48]
+        ret
+    }
+}
