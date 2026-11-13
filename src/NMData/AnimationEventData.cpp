@@ -658,3 +658,76 @@ extern "C" __declspec(naked) void __fastcall fn_004E3570(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_004E35B0();
+extern "C" void ext_004E3AB0();
+extern "C" void ext_004E5990();
+extern "C" void ext_004E5AE0();
+extern "C" void ext_00594000();
+extern "C" void ext_006622D0();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+
+// [0x004E7280] NMData::AnimationEventData::vfunc_87 (197 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004E7280(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0xb74]
+        xor ebx, ebx
+        cmp ecx, ebx
+        push edi
+        je L1
+        call ext_004E3AB0
+        mov edi, dword ptr [esi + 0xb74]
+        cmp edi, ebx
+        je L2
+        mov ecx, edi
+        call ext_004E35B0
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+    L2:
+        mov dword ptr [esi + 0xb74], ebx
+    L1:
+        mov ecx, dword ptr [esi + 0xb78]
+        cmp ecx, ebx
+        je L3
+        call ext_004E5990
+        mov edi, dword ptr [esi + 0xb78]
+        cmp edi, ebx
+        je L4
+        mov ecx, edi
+        call ext_004E5AE0
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+    L4:
+        mov dword ptr [esi + 0xb78], ebx
+    L3:
+        fldz
+        fst dword ptr [esi + 0x9d8]
+        fstp dword ptr [esi + 0x9dc]
+        call ext_00594000
+        lea ecx, [esi + 0x180]
+        push ecx
+        lea ecx, [eax + 0x168]
+        call ext_006622D0
+        mov ebx, dword ptr [esi + 0x9b8]
+        cmp dword ptr [esi + 0x9b4], ebx
+        lea edi, [esi + 0x9b0]
+        jbe L5
+        call dword ptr [mem_00925134]
+    L5:
+        mov dword ptr [esi + 0x9c0], edi
+        mov eax, 0x7fffffff
+        pop edi
+        mov dword ptr [esi + 0x9c4], ebx
+        mov dword ptr [esi + 0x9c8], eax
+        mov dword ptr [esi + 0x9cc], eax
+        pop esi
+        pop ebx
+        ret
+    }
+}
