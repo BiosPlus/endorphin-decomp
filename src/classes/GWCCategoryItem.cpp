@@ -760,3 +760,30 @@ extern "C" __declspec(naked) void __fastcall fn_006AED70(void* self) {
         ret     0x18
     }
 }
+
+extern "C" void ext_006AF7E0();
+extern "C" void ext_006AEC70();
+
+// [0x006AF910] GWCCategoryItem::vfunc_11 (47 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006AF910(void* self, int edx_unused, int arg0) {
+    __asm {
+        push    esi
+        mov     esi, ecx
+        call    ext_006AEC90
+        test    al, al
+        sete    al
+        push    eax
+        call    ext_006AF7E0
+        cmp     dword ptr [esi + 0x10], 0
+        jne     done
+        mov     ecx, esi
+        call    ext_006AEC90
+        test    al, al
+        jne     done
+        push    1
+        call    ext_006AEC70
+    done:
+        pop     esi
+        ret     4
+    }
+}
