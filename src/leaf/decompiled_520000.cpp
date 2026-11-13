@@ -4173,3 +4173,294 @@ extern "C" __declspec(naked) void* __fastcall fn_00529D70(void* self, int edx_un
         ret 8
     }
 }
+
+// [0x0052A650] sub_0052A650 (739 bytes)
+extern "C" void ext_0052A070();
+extern "C" void ext_0052A090();
+extern "C" void ext_0052A0E0();
+extern "C" void ext_0052A1A0();
+extern "C" void ext_0052A1C0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE4;
+extern "C" int mem_009251C4;
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_0052A650(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8a0d5b
+        push eax
+        mov dword ptr fs:[0x0], esp
+        mov eax, dword ptr [esp + 0x18]
+        sub esp, 0x4c
+        cmp byte ptr [eax + 0x61], 0x0
+        push ebp
+        mov ebp, ecx
+        je L_52A6CE
+        push 0x929218
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x28]
+        mov dword ptr [esp + 0x58], 0x0
+        call dword ptr [mem_009251C4]
+        lea eax, [esp + 0xc]
+        push eax
+        lea ecx, [esp + 0x38]
+        mov byte ptr [esp + 0x5c], 0x1
+        mov dword ptr [esp + 0x2c], 0x928ecc
+        call dword ptr [mem_00924FE0]
+        push 0x9ce164
+        lea ecx, [esp + 0x2c]
+        push ecx
+        mov byte ptr [esp + 0x60], 0x0
+        mov dword ptr [esp + 0x30], 0x928ee4
+        call ext_006A6DD2
+    L_52A6CE:
+        push ebx
+        push esi
+        mov ebx, eax
+        push edi
+        lea ecx, [esp + 0x70]
+        mov dword ptr [esp + 0x10], ebx
+        call ext_0052A1C0
+        mov eax, dword ptr [ebx]
+        cmp byte ptr [eax + 0x61], 0x0
+        je L_52A6ED
+        mov edi, dword ptr [ebx + 0x8]
+        jmp L_52A705
+    L_52A6ED:
+        mov edx, dword ptr [ebx + 0x8]
+        cmp byte ptr [edx + 0x61], 0x0
+        je L_52A6FA
+        mov edi, eax
+        jmp L_52A705
+    L_52A6FA:
+        mov ecx, dword ptr [esp + 0x74]
+        cmp ecx, ebx
+        mov edi, dword ptr [ecx + 0x8]
+        jne L_52A770
+    L_52A705:
+        cmp byte ptr [edi + 0x61], 0x0
+        mov esi, dword ptr [ebx + 0x4]
+        jne L_52A711
+        mov dword ptr [edi + 0x4], esi
+    L_52A711:
+        mov eax, dword ptr [ebp + 0x4]
+        cmp dword ptr [eax + 0x4], ebx
+        jne L_52A71E
+        mov dword ptr [eax + 0x4], edi
+        jmp L_52A729
+    L_52A71E:
+        cmp dword ptr [esi], ebx
+        jne L_52A726
+        mov dword ptr [esi], edi
+        jmp L_52A729
+    L_52A726:
+        mov dword ptr [esi + 0x8], edi
+    L_52A729:
+        mov ebx, dword ptr [ebp + 0x4]
+        mov eax, dword ptr [ebx]
+        cmp eax, dword ptr [esp + 0x10]
+        jne L_52A749
+        cmp byte ptr [edi + 0x61], 0x0
+        je L_52A73E
+        mov eax, esi
+        jmp L_52A747
+    L_52A73E:
+        push edi
+        call ext_0052A070
+        add esp, 0x4
+    L_52A747:
+        mov dword ptr [ebx], eax
+    L_52A749:
+        mov ebx, dword ptr [ebp + 0x4]
+        mov ecx, dword ptr [esp + 0x10]
+        cmp dword ptr [ebx + 0x8], ecx
+        jne L_52A7C7
+        cmp byte ptr [edi + 0x61], 0x0
+        je L_52A762
+        mov eax, esi
+        mov dword ptr [ebx + 0x8], eax
+        jmp L_52A7C7
+    L_52A762:
+        push edi
+        call ext_0052A1A0
+        add esp, 0x4
+        mov dword ptr [ebx + 0x8], eax
+        jmp L_52A7C7
+    L_52A770:
+        mov dword ptr [eax + 0x4], ecx
+        mov edx, dword ptr [ebx]
+        mov dword ptr [ecx], edx
+        cmp ecx, dword ptr [ebx + 0x8]
+        jne L_52A780
+        mov esi, ecx
+        jmp L_52A79A
+    L_52A780:
+        cmp byte ptr [edi + 0x61], 0x0
+        mov esi, dword ptr [ecx + 0x4]
+        jne L_52A78C
+        mov dword ptr [edi + 0x4], esi
+    L_52A78C:
+        mov dword ptr [esi], edi
+        mov eax, dword ptr [ebx + 0x8]
+        mov dword ptr [ecx + 0x8], eax
+        mov edx, dword ptr [ebx + 0x8]
+        mov dword ptr [edx + 0x4], ecx
+    L_52A79A:
+        mov eax, dword ptr [ebp + 0x4]
+        cmp dword ptr [eax + 0x4], ebx
+        jne L_52A7A7
+        mov dword ptr [eax + 0x4], ecx
+        jmp L_52A7B5
+    L_52A7A7:
+        mov eax, dword ptr [ebx + 0x4]
+        cmp dword ptr [eax], ebx
+        jne L_52A7B2
+        mov dword ptr [eax], ecx
+        jmp L_52A7B5
+    L_52A7B2:
+        mov dword ptr [eax + 0x8], ecx
+    L_52A7B5:
+        mov eax, dword ptr [ebx + 0x4]
+        mov dword ptr [ecx + 0x4], eax
+        mov dl, byte ptr [ebx + 0x60]
+        mov al, byte ptr [ecx + 0x60]
+        mov byte ptr [ecx + 0x60], dl
+        mov byte ptr [ebx + 0x60], al
+    L_52A7C7:
+        mov eax, dword ptr [esp + 0x10]
+        mov bl, 0x1
+        cmp byte ptr [eax + 0x60], bl
+        jne L_52A8C8
+        mov ecx, dword ptr [ebp + 0x4]
+        cmp edi, dword ptr [ecx + 0x4]
+        je L_52A8C5
+    L_52A7E2:
+        cmp byte ptr [edi + 0x60], bl
+        jne L_52A8C5
+        mov eax, dword ptr [esi]
+        cmp edi, eax
+        jne L_52A854
+        mov eax, dword ptr [esi + 0x8]
+        cmp byte ptr [eax + 0x60], 0x0
+        jne L_52A80C
+        mov byte ptr [eax + 0x60], bl
+        push esi
+        mov ecx, ebp
+        mov byte ptr [esi + 0x60], 0x0
+        call ext_0052A090
+        mov eax, dword ptr [esi + 0x8]
+    L_52A80C:
+        cmp byte ptr [eax + 0x61], 0x0
+        jne L_52A884
+        mov edx, dword ptr [eax]
+        cmp byte ptr [edx + 0x60], bl
+        jne L_52A821
+        mov ecx, dword ptr [eax + 0x8]
+        cmp byte ptr [ecx + 0x60], bl
+        je L_52A880
+    L_52A821:
+        mov ecx, dword ptr [eax + 0x8]
+        cmp byte ptr [ecx + 0x60], bl
+        jne L_52A83B
+        mov byte ptr [edx + 0x60], bl
+        push eax
+        mov ecx, ebp
+        mov byte ptr [eax + 0x60], 0x0
+        call ext_0052A0E0
+        mov eax, dword ptr [esi + 0x8]
+    L_52A83B:
+        mov cl, byte ptr [esi + 0x60]
+        mov byte ptr [eax + 0x60], cl
+        mov byte ptr [esi + 0x60], bl
+        mov edx, dword ptr [eax + 0x8]
+        push esi
+        mov ecx, ebp
+        mov byte ptr [edx + 0x60], bl
+        call ext_0052A090
+        jmp L_52A8C5
+    L_52A854:
+        cmp byte ptr [eax + 0x60], 0x0
+        jne L_52A86B
+        mov byte ptr [eax + 0x60], bl
+        push esi
+        mov ecx, ebp
+        mov byte ptr [esi + 0x60], 0x0
+        call ext_0052A0E0
+        mov eax, dword ptr [esi]
+    L_52A86B:
+        cmp byte ptr [eax + 0x61], 0x0
+        jne L_52A884
+        mov edx, dword ptr [eax + 0x8]
+        cmp byte ptr [edx + 0x60], bl
+        jne L_52A897
+        mov ecx, dword ptr [eax]
+        cmp byte ptr [ecx + 0x60], bl
+        jne L_52A897
+    L_52A880:
+        mov byte ptr [eax + 0x60], 0x0
+    L_52A884:
+        mov edx, dword ptr [ebp + 0x4]
+        mov edi, esi
+        cmp edi, dword ptr [edx + 0x4]
+        mov esi, dword ptr [esi + 0x4]
+        jne L_52A7E2
+        jmp L_52A8C5
+    L_52A897:
+        mov ecx, dword ptr [eax]
+        cmp byte ptr [ecx + 0x60], bl
+        jne L_52A8AF
+        mov byte ptr [edx + 0x60], bl
+        push eax
+        mov ecx, ebp
+        mov byte ptr [eax + 0x60], 0x0
+        call ext_0052A090
+        mov eax, dword ptr [esi]
+    L_52A8AF:
+        mov cl, byte ptr [esi + 0x60]
+        mov byte ptr [eax + 0x60], cl
+        mov byte ptr [esi + 0x60], bl
+        mov edx, dword ptr [eax]
+        push esi
+        mov ecx, ebp
+        mov byte ptr [edx + 0x60], bl
+        call ext_0052A0E0
+    L_52A8C5:
+        mov byte ptr [edi + 0x60], bl
+    L_52A8C8:
+        mov esi, dword ptr [esp + 0x10]
+        add esi, 0xc
+        mov dword ptr [esp + 0x14], esi
+        lea ecx, [esi + 0x1c]
+        mov dword ptr [esp + 0x64], 0x2
+        call ext_00532770
+        mov ecx, esi
+        mov dword ptr [esp + 0x64], -0x1
+        call dword ptr [mem_00924FF4]
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        call ext_006A5C5C
+        mov eax, dword ptr [ebp + 0x8]
+        add esp, 0x4
+        test eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        jbe L_52A910
+        add eax, -0x1
+        mov dword ptr [ebp + 0x8], eax
+    L_52A910:
+        mov ecx, dword ptr [esp + 0x64]
+        mov eax, dword ptr [esp + 0x60]
+        mov edx, dword ptr [esp + 0x68]
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x50]
+        mov dword ptr [eax + 0x4], edx
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x58
+        ret 0xc
+    }
+}
