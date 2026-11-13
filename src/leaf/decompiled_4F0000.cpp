@@ -2901,3 +2901,36 @@ extern "C" __declspec(naked) void __fastcall fn_004FFEF0(void* self) {
         ret 4
     }
 }
+
+// [0x004F2B30] sub_004F2B30 (65 bytes)
+extern "C" void ext_00435D00();
+extern "C" void ext_00472F70();
+extern "C" int mem_00924E90;
+extern "C" int mem_00924FA0;
+extern "C" int mem_00924E94;
+extern "C" int mem_00924E98;
+extern "C" int mem_0094C91C;
+extern "C" int mem_004F2B1D;
+extern "C" __declspec(naked) void __fastcall fn_004F2B30(void* self) {
+    __asm {
+        mov ecx, dword ptr [ebp - 0x14]
+        call ext_00472F70
+        mov ecx, dword ptr [mem_00924E90]
+        mov edx, dword ptr [ebp - 0x18]
+        mov eax, dword ptr [mem_00924FA0]
+        push ecx
+        add edx, 0xc
+        push edx
+        push offset mem_0094C91C
+        push eax
+        call ext_00435D00
+        add esp, 0x8
+        push eax
+        call dword ptr [mem_00924E94]
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov eax, offset mem_004F2B1D
+        ret
+    }
+}
