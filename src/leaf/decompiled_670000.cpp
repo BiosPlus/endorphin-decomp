@@ -11215,3 +11215,17 @@ extern "C" void __fastcall fn_00672110(void** self, int edx_unused, const float*
     dst[1] = arg1[1];
     dst[2] = arg1[2];
 }
+
+// [0x00672150] sub_00672150 (58 bytes)
+extern "C" void __fastcall fn_00672150(void** self, int edx_unused, const float* arg1) {
+    void* obj = (void*)ext_00671100(8);
+    self[1] = obj;
+    typedef void (__thiscall *VFn)(void*, void*);
+    VFn* vtbl = *(VFn**)obj;
+    vtbl[0x74 / 4](obj, self);
+    float* dst = (float*)self[0];
+    dst[0] = arg1[0];
+    dst[1] = arg1[1];
+    dst[2] = arg1[2];
+    dst[3] = arg1[3];
+}
