@@ -3488,3 +3488,217 @@ extern "C" __declspec(naked) void __fastcall fn_005646D0(void* self) {
         ret 4
     }
 }
+
+// [0x00563A40] sub_00563A40 (604 bytes)
+extern "C" void ext_005637D0();
+extern "C" void ext_007C5658();
+extern "C" void ext_007C565E();
+extern "C" void ext_007C566A();
+extern "C" int mem_00958A48;
+
+extern "C" __declspec(naked) void __fastcall fn_00563A40(void* self, int edx_unused, void* a1, float* out) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x40
+        sub esp, 0x74
+        fld1
+        mov eax, dword ptr [ebp + 0xc]
+        push ebx
+        fst dword ptr [eax]
+        push esi
+        fst dword ptr [eax + 0x4]
+        push edi
+        fstp dword ptr [eax + 0x8]
+        mov edi, dword ptr [ebp + 0x8]
+        test edi, edi
+        mov dword ptr [esp + 0x1c], ecx
+        je L_end_00563A40
+        push edi
+        call ext_005637D0
+        test al, al
+        je L_noparent_00563A40
+        mov ecx, edi
+        call ext_007C566A
+        mov edi, eax
+L_noparent_00563A40:
+        test edi, edi
+        je L_end_00563A40
+L_loop_00563A40:
+        mov ecx, edi
+        mov byte ptr [esp + 0x1b], 0x0
+        call ext_007C5664
+        fldz
+        fst dword ptr [esp + 0x28]
+        mov esi, eax
+        test esi, esi
+        fst dword ptr [esp + 0x24]
+        fstp dword ptr [esp + 0x20]
+        je L_blk2_00563A40
+        lea eax, [esp + 0x38]
+        push eax
+        mov ecx, esi
+        call ext_007C565E
+        fld dword ptr [eax]
+        lea ecx, [esp + 0x44]
+        fstp dword ptr [esp + 0x20]
+        push ecx
+        mov ecx, esi
+        call ext_007C565E
+        fld dword ptr [eax + 0x4]
+        lea edx, [esp + 0x50]
+        fstp dword ptr [esp + 0x24]
+        push edx
+        mov ecx, esi
+        call ext_007C565E
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x28]
+        sub esp, 0x18
+        fld qword ptr [mem_00958A48]
+        fstp qword ptr [esp + 0x10]
+        fld1
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x38]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je L_setflag_00563A40
+        fld qword ptr [mem_00958A48]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld1
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je L_setflag_00563A40
+        fld qword ptr [mem_00958A48]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld1
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x40]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        mov byte ptr [esp + 0x1b], 0x0
+        jne L_blk2_00563A40
+L_setflag_00563A40:
+        mov byte ptr [esp + 0x1b], 0x1
+L_blk2_00563A40:
+        mov ecx, edi
+        xor bl, bl
+        call ext_007C5658
+        fldz
+        fst dword ptr [esp + 0x34]
+        mov esi, eax
+        test esi, esi
+        fst dword ptr [esp + 0x30]
+        fstp dword ptr [esp + 0x2c]
+        je L_mul_00563A40
+        lea eax, [esp + 0x5c]
+        push eax
+        mov ecx, esi
+        call ext_007C565E
+        fld dword ptr [eax]
+        lea ecx, [esp + 0x68]
+        fstp dword ptr [esp + 0x2c]
+        push ecx
+        mov ecx, esi
+        call ext_007C565E
+        fld dword ptr [eax + 0x4]
+        lea edx, [esp + 0x74]
+        fstp dword ptr [esp + 0x30]
+        push edx
+        mov ecx, esi
+        call ext_007C565E
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x34]
+        sub esp, 0x18
+        fld qword ptr [mem_00958A48]
+        fstp qword ptr [esp + 0x10]
+        fld1
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x44]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je L_setbl_00563A40
+        fld qword ptr [mem_00958A48]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld1
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x48]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je L_setbl_00563A40
+        fld qword ptr [mem_00958A48]
+        sub esp, 0x18
+        fstp qword ptr [esp + 0x10]
+        fld1
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x4c]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        jne L_mul_00563A40
+L_setbl_00563A40:
+        mov bl, 0x1
+L_mul_00563A40:
+        cmp byte ptr [esp + 0x1b], 0x0
+        je L_mulbl_00563A40
+        mov eax, dword ptr [ebp + 0xc]
+        fld dword ptr [eax]
+        fmul dword ptr [esp + 0x20]
+        fstp dword ptr [eax]
+        fld dword ptr [eax + 0x4]
+        fmul dword ptr [esp + 0x24]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [eax + 0x8]
+        fmul dword ptr [esp + 0x28]
+        jmp L_storez_00563A40
+L_mulbl_00563A40:
+        test bl, bl
+        je L_next_00563A40
+        mov eax, dword ptr [ebp + 0xc]
+        fld dword ptr [eax]
+        fmul dword ptr [esp + 0x2c]
+        fstp dword ptr [eax]
+        fld dword ptr [eax + 0x4]
+        fmul dword ptr [esp + 0x30]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [eax + 0x8]
+        fmul dword ptr [esp + 0x34]
+L_storez_00563A40:
+        fstp dword ptr [eax + 0x8]
+L_next_00563A40:
+        mov ecx, dword ptr [esp + 0x1c]
+        push edi
+        call ext_005637D0
+        test al, al
+        je L_end_00563A40
+        test bl, bl
+        jne L_end_00563A40
+        mov ecx, edi
+        call ext_007C566A
+        mov edi, eax
+        test edi, edi
+        jne L_loop_00563A40
+L_end_00563A40:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
