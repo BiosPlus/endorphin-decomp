@@ -6677,3 +6677,28 @@ extern "C" __declspec(naked) void __fastcall fn_0062D240(void* self) {
         ret
     }
 }
+
+// [0x0062CFA0] sub_0062CFA0 (51 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0062CFA0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_0062CD80
+        mov dword ptr [esi], 0x979444
+        fld dword ptr [edi + 0x38]
+        fstp dword ptr [esi + 0x38]
+        fld dword ptr [edi + 0x3c]
+        fstp dword ptr [esi + 0x3c]
+        fld dword ptr [edi + 0x40]
+        fstp dword ptr [esi + 0x40]
+        mov eax, dword ptr [edi + 0x44]
+        mov dword ptr [esi + 0x44], eax
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
