@@ -8608,3 +8608,31 @@ L_46A8C8:
         ret 0x14
     }
 }
+
+// [0x004652F0] sub_004652F0 (55 bytes)
+extern "C" void ext_004651F0();
+extern "C" void ext_00439FD0();
+extern "C" void ext_006A69CA();
+extern "C" int mem_00ACDB40;
+extern "C" __declspec(naked) void __fastcall fn_004652F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_004651F0
+        test al, al
+        jne short L_has_it
+        xor eax, eax
+        pop esi
+        ret 4
+L_has_it:
+        mov ecx, dword ptr [mem_00ACDB40]
+        call ext_00439FD0
+        mov eax, dword ptr [esp + 8]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esi + 0xb4], 2
+        call ext_006A69CA
+        pop esi
+        ret 4
+    }
+}
