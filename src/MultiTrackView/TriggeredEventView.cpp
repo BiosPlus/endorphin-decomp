@@ -610,3 +610,130 @@ extern "C" __declspec(naked) void __fastcall fn_0045F0A0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0045ECA0] MultiTrackView::TriggeredEventView::vfunc_3_off_248 (272 bytes)
+extern "C" void ext_00599F10();
+extern "C" void ext_0043F8B0();
+extern "C" void ext_0045EA60();
+extern "C" int mem_00925134;
+extern "C" int mem_00925688;
+
+extern "C" __declspec(naked) void __fastcall fn_0045ECA0(void* self) {
+    __asm {
+        sub     esp, 0Ch
+        mov     eax, dword ptr [esp + 10h]
+        push    esi
+        push    edi
+        mov     esi, ecx
+        push    eax
+        mov     dword ptr [esp + 0Ch], esi
+        call    ext_00594000
+        mov     ecx, eax
+        call    ext_00599F10
+        lea     ecx, [esi - 248h]
+        push    eax
+        call    ext_0043DCF0
+        mov     edi, eax
+        test    edi, edi
+        mov     dword ptr [esp + 18h], edi
+        je      L_end
+        mov     esi, dword ptr [edi + 8]
+        cmp     esi, dword ptr [edi + 0Ch]
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [mem_00925134]
+        jbe     L_outer_init
+        call    ebp
+    L_outer_init:
+        mov     dword ptr [esp + 18h], esi
+        _emit   0x8D
+        _emit   0x64
+        _emit   0x24
+        _emit   0x00
+    L_outer_loop:
+        mov     esi, dword ptr [edi + 0Ch]
+        cmp     dword ptr [edi + 8], esi
+        lea     ebx, [edi + 4]
+        jbe     L_1
+        call    ebp
+    L_1:
+        cmp     ebx, ebx
+        je      L_2
+        call    ebp
+    L_2:
+        mov     eax, dword ptr [esp + 18h]
+        cmp     eax, esi
+        je      L_outer_done
+        cmp     eax, dword ptr [ebx + 8]
+        jb      L_3
+        call    ebp
+    L_3:
+        mov     ecx, dword ptr [esp + 18h]
+        mov     eax, dword ptr [ecx]
+        mov     edi, dword ptr [eax + 18h]
+        cmp     edi, dword ptr [eax + 1Ch]
+        lea     esi, [eax + 14h]
+        jbe     L_inner_loop
+        call    ebp
+    L_inner_loop:
+        mov     ebx, dword ptr [esi + 8]
+        cmp     dword ptr [esi + 4], ebx
+        jbe     L_4
+        call    ebp
+    L_4:
+        cmp     esi, esi
+        je      L_5
+        call    ebp
+    L_5:
+        cmp     edi, ebx
+        je      L_inner_done
+        cmp     edi, dword ptr [esi + 8]
+        jb      L_6
+        call    ebp
+    L_6:
+        mov     edx, dword ptr [edi]
+        mov     ecx, dword ptr [esp + 10h]
+        push    edx
+        add     ecx, 10h
+        call    ext_0045EA60
+        cmp     edi, dword ptr [esi + 8]
+        jb      L_7
+        call    ebp
+    L_7:
+        add     edi, 4
+        jmp     L_inner_loop
+    L_inner_done:
+        mov     eax, dword ptr [esp + 20h]
+        mov     ecx, dword ptr [esp + 18h]
+        add     eax, 4
+        cmp     ecx, dword ptr [eax + 8]
+        jb      L_8
+        call    ebp
+    L_8:
+        add     dword ptr [esp + 18h], 4
+        mov     edi, dword ptr [esp + 20h]
+        jmp     L_outer_loop
+    L_outer_done:
+        mov     esi, dword ptr [esp + 10h]
+        push    edi
+        lea     ecx, [esi - 248h]
+        call    ext_0043F8B0
+        mov     edx, dword ptr [edi]
+        mov     eax, dword ptr [edx]
+        push    1
+        mov     ecx, edi
+        call    eax
+        mov     ecx, dword ptr [esi - 228h]
+        push    1
+        push    0
+        push    ecx
+        call    dword ptr [mem_00925688]
+        pop     ebp
+        pop     ebx
+    L_end:
+        pop     edi
+        pop     esi
+        add     esp, 0Ch
+        ret     4
+    }
+}

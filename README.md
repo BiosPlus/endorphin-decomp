@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `12577 / 24049` (**52.30%**) — `9485` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1343758 / 4496005 bytes` (**29.89%** of 4.29 MB)
+- **In-Scope Functions Matched:** `12578 / 24049` (**52.30%**) — `9486` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1344030 / 4496005 bytes` (**29.89%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -21,17 +21,17 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P50-60 (91-122B)** | 1301 / 2405 | 54.10% | 140239 / 256906 | 54.59% | 1104 fn |
 | **P60-70 (122-159B)** | 1012 / 2405 | 42.08% | 136374 / 339038 | 40.22% | 1393 fn |
 | **P70-80 (159-178B)** | 264 / 2405 | 10.98% | 44498 / 400567 | 11.11% | 2141 fn |
-| **P80-90 (178-335B)** | 943 / 2405 | 39.21% | 226196 / 583211 | 38.78% | 1462 fn |
+| **P80-90 (178-335B)** | 944 / 2405 | 39.25% | 226468 / 583211 | 38.83% | 1461 fn |
 | **P90-100 (335-36100B)** | 641 / 2404 | 26.66% | 492826 / 2392860 | 20.60% | 1763 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6753 | 526035 | 71.20% |
+| `claude-haiku-5.5@medium` | 6753 | 526035 | 71.19% |
 | `claude-haiku-5.5@low` | 966 | 261849 | 10.18% |
-| `gemini-3.8-flash@low` | 562 | 197914 | 5.93% |
-| `gemini-4-hydrogen@low` | 551 | 208391 | 5.81% |
+| `gemini-3.8-flash@low` | 562 | 197914 | 5.92% |
+| `gemini-4-hydrogen@low` | 552 | 208663 | 5.82% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.71% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.72% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.26% |
