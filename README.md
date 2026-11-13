@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `12653 / 24049` (**52.61%**) — `9561` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1351242 / 4496005 bytes` (**30.05%** of 4.29 MB)
+- **In-Scope Functions Matched:** `12654 / 24049` (**52.62%**) — `9562` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1351775 / 4496005 bytes` (**30.07%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -22,17 +22,17 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P60-70 (122-159B)** | 1015 / 2405 | 42.20% | 136798 / 339038 | 40.35% | 1390 fn |
 | **P70-80 (159-178B)** | 266 / 2405 | 11.06% | 44821 / 400567 | 11.19% | 2139 fn |
 | **P80-90 (178-335B)** | 951 / 2405 | 39.54% | 228255 / 583211 | 39.14% | 1454 fn |
-| **P90-100 (335-36100B)** | 643 / 2404 | 26.75% | 493548 / 2392860 | 20.63% | 1761 fn |
+| **P90-100 (335-36100B)** | 644 / 2404 | 26.79% | 494081 / 2392860 | 20.65% | 1760 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6753 | 526035 | 70.63% |
-| `claude-haiku-5.5@low` | 1002 | 264869 | 10.48% |
-| `gemini-3.8-flash@low` | 578 | 199700 | 6.05% |
+| `claude-haiku-5.5@medium` | 6753 | 526035 | 70.62% |
+| `claude-haiku-5.5@low` | 1003 | 265402 | 10.49% |
+| `gemini-3.8-flash@low` | 578 | 199700 | 6.04% |
 | `gemini-4-hydrogen@low` | 575 | 211069 | 6.01% |
-| `gemini-3.8-flash@high` | 447 | 63301 | 4.68% |
+| `gemini-3.8-flash@high` | 447 | 63301 | 4.67% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.70% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.26% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.10% |
