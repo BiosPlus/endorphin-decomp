@@ -883,3 +883,16 @@ q_done:
         ret
     }
 }
+
+// [0x006F9B00] sub_006F9B00 (32 bytes)
+extern "C" void ext_006BC0F0();
+extern "C" void ext_006BC460();
+extern "C" int mem_00AAB8D0;
+
+extern "C" void __fastcall fn_006F9B00(void* self) {
+    typedef void (__thiscall *Callee0)(void* self);
+    typedef void (__thiscall *Callee1)(void* self, void* a);
+    char* p = static_cast<char*>(self);
+    ((Callee0)ext_006BC0F0)(*(void**)(p + 0xB8));
+    ((Callee1)ext_006BC460)(*(void**)(p + 0xB8), &mem_00AAB8D0);
+}
