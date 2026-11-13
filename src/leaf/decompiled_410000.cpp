@@ -9441,3 +9441,9 @@ extern "C" int __cdecl ext_00414950(int a1, int a2, int a3, int a4, int a5, int 
 extern "C" int __cdecl fn_00414D90(int a1, int a2, int a3, int a4, int a5) {
     return ext_00414950(a1, a2, a3, a3, a4, a5);
 }
+
+// [0x00419EF0] sub_00419EF0 (36 bytes)
+extern "C" int __cdecl ext_00414D90(int, int, int, int, int);
+extern "C" int __fastcall fn_00419EF0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
+    return ext_00414D90(a1, a2, a3, a4, a5);
+}
