@@ -6672,3 +6672,63 @@ extern "C" __declspec(naked) void __fastcall fn_00569F20(void* self) {
         ret
     }
 }
+
+// [0x00569E60] sub_00569E60 (187 bytes)
+extern "C" void ext_00569A40();
+extern "C" void ext_00569DF0();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924FD4;
+
+// EH-frame constructor: two std::string members plus float fields; declared naked because of the fs:[0] SEH frame.
+extern "C" __declspec(naked) void __fastcall fn_00569E60(void* self) {
+    __asm {
+        push -1
+        push 0x89be20
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        call ext_00569DF0
+        lea edi, [esi + 0x54]
+        mov ecx, edi
+        mov dword ptr [esp + 0x18], 0
+        mov dword ptr [esi], 0x958f74
+        call dword ptr [mem_00924FE8]
+        lea ebx, [esi + 0x70]
+        mov ecx, ebx
+        mov byte ptr [esp + 0x18], 1
+        call dword ptr [mem_00924FE8]
+        fldz
+        fst dword ptr [esi + 0x94]
+        mov ecx, esi
+        fst dword ptr [esi + 0x90]
+        mov byte ptr [esp + 0x18], 2
+        fst dword ptr [esi + 0x8c]
+        fst dword ptr [esi + 0xa0]
+        fst dword ptr [esi + 0x9c]
+        fstp dword ptr [esi + 0x98]
+        call ext_00569A40
+        push 0x93e1e4
+        lea ecx, [esi + 0x8]
+        call dword ptr [mem_00924FD4]
+        push 0x928b5d
+        mov ecx, edi
+        call dword ptr [mem_00924FD4]
+        push 0x928b5d
+        mov ecx, ebx
+        call dword ptr [mem_00924FD4]
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
