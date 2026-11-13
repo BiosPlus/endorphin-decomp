@@ -65,3 +65,23 @@ extern "C" __declspec(naked) void __fastcall fn_0060EA90(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00610780] NMData::MetaBodySensorData::vfunc_8 (37 bytes)
+extern "C" void ext_006105E0();
+extern "C" __declspec(naked) void* __fastcall fn_00610780(void* self, int edx_unused, void* arg) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp+0Ch]
+        add ecx, 154h
+        push ecx
+        push esi
+        mov dword ptr [esp+0Ch], 0
+        call ext_006105E0
+        add esp, 8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
