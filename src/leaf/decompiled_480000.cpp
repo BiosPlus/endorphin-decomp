@@ -6022,3 +6022,46 @@ extern "C" Item_0048C9A0* __cdecl fn_0048C9A0(Item_0048C9A0* first, Item_0048C9A
     }
     return dst;
 }
+
+// [0x0048CBD0] sub_0048CBD0 (85 bytes)
+extern "C" void ext_0048C9A0();
+
+extern "C" __declspec(naked) void* __cdecl fn_0048CBD0(void* first, void* last, void* dest) {
+    __asm {
+        sub esp, 0x8
+        mov edx, dword ptr [esp + 0x14]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        xor al, al
+        mov byte ptr [esp + 0x10], al
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0xc], al
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        push edi
+        push esi
+        push ebx
+        call ext_0048C9A0
+        sub esi, ebx
+        mov eax, 0x4ec4ec4f
+        imul esi
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        imul eax, eax, 0x68
+        add esp, 0x18
+        add eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
