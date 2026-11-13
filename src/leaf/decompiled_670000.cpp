@@ -11617,3 +11617,17 @@ extern "C" __declspec(naked) void __cdecl fn_00678D40(void* self) {
         ret
     }
 }
+
+// [0x00672350] sub_00672350 (46 bytes)
+extern "C" void ext_00698ED0();
+
+extern "C" void __fastcall fn_00672350(void* self, int edx_unused, void* arg1) {
+    void* obj = *(void**)((char*)self + 4);
+    typedef int (__thiscall* VFn12)(void*);
+    int val = ((*(VFn12**)obj)[12])(obj);
+    typedef void (__thiscall* Fn698ED0)(void*, int);
+    ((Fn698ED0)ext_00698ED0)(arg1, val);
+    obj = *(void**)((char*)self + 4);
+    typedef void (__thiscall* VFn35)(void*, void*, void*);
+    ((*(VFn35**)obj)[35])(obj, self, arg1);
+}
