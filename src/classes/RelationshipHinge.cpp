@@ -587,3 +587,87 @@ extern "C" __declspec(naked) void __fastcall fn_006591F0(void* self) {
         ret 8
     }
 }
+
+// [0x00659470] RelationshipHinge::vfunc_54 (192 bytes)
+extern "C" void ext_00435D00();
+extern "C" int mem_00924FA0;
+extern "C" int mem_00925010;
+
+extern "C" __declspec(naked) bool __fastcall fn_00659470(void* self) {
+    __asm {
+        sub esp, 0x0c
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x20]
+        push 0
+        call edx
+        fstp dword ptr [esp + 4]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x98]
+        push 0
+        mov ecx, esi
+        call edx
+        fstp dword ptr [esp + 0x0c]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x9c]
+        push 0
+        mov ecx, esi
+        call edx
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 4]
+        pop esi
+        fld dword ptr [esp + 4]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        je loc_6594cc
+        fld dword ptr [esp + 8]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp loc_6594ce
+        mov al, 1
+        add esp, 0x0c
+        ret
+
+    loc_6594cc:
+        fstp st(0)
+
+    loc_6594ce:
+        mov eax, dword ptr [mem_00924FA0]
+        push 0x984794
+        push eax
+        call ext_00435D00
+        fld dword ptr [esp + 8]
+        fld dword ptr [esp + 0x0c]
+        add esp, 8
+        fcom st(1)
+        push 0x92f67c
+        push ecx
+        mov ecx, dword ptr [mem_00924FA0]
+        fnstsw ax
+        test ah, 0x41
+        jne loc_65950a
+        fsubrp st(1), st
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        jmp loc_659518
+
+    loc_65950a:
+        fstp st(0)
+        fsub dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+
+    loc_659518:
+        fstp dword ptr [esp]
+        call dword ptr [mem_00925010]
+        push eax
+        call ext_00435D00
+        add esp, 8
+        xor al, al
+        add esp, 0x0c
+        ret
+    }
+}
