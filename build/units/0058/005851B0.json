@@ -12,5 +12,7 @@
   "relocations": [
     "0x005851BF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-13T15:15:44Z"
 }

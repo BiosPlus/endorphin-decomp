@@ -968,3 +968,29 @@ extern "C" __declspec(naked) void __fastcall fn_0058B0E0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+extern "C" void ext_0052F540();
+
+// [0x005851B0] AnimatableTransform::vfunc_14_off_C (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005851B0(void* self) {
+    __asm {
+        cmp byte ptr [ecx + 0x5c], 0
+        je ret_false
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x2c]
+        call edx
+        push eax
+        call ext_0052F540
+        mov ecx, dword ptr [esp + 0xc]
+        and ecx, eax
+        xor edx, edx
+        add esp, 4
+        cmp ecx, eax
+        sete dl
+        mov al, dl
+        ret 8
+    ret_false:
+        xor al, al
+        ret 8
+    }
+}
