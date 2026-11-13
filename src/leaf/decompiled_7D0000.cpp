@@ -10597,3 +10597,36 @@ extern "C" S_007DAE80* __cdecl fn_007DAE80(S_007DAE80* self, void* a1, S_007DAE8
     self->f3c += a3;
     return self;
 }
+
+// [0x007DB4C0] sub_007DB4C0 (56 bytes)
+extern "C" void ext_007DAE80();
+
+extern "C" __declspec(naked) void* __cdecl fn_007DB4C0(void* self, int a2, float a3) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0xb0]
+        mov ecx, dword ptr [eax + 0x8]
+        push 0x10
+        push 0x4c
+        call ecx
+        add esp, 0x8
+        test eax, eax
+        je short loc_zero_007DB4C0
+        fld dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0xc]
+        push ecx
+        fstp dword ptr [esp]
+        push edx
+        push esi
+        push eax
+        call ext_007DAE80
+        add esp, 0x10
+        pop esi
+        ret
+    loc_zero_007DB4C0:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
