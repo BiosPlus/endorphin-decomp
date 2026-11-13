@@ -15,6 +15,7 @@ extern "C" void ext_007C5CE0();
 extern "C" void ext_007C5CF0();
 extern "C" void ext_007C93A0();
 extern "C" void ext_007D8700();
+extern "C" void ext_007C9930();
 extern "C" void ext_007C5900();
 extern "C" void ext_007C5910();
 extern "C" void ext_006501E0();
@@ -453,5 +454,19 @@ extern "C" void __fastcall fn_00650A30(void* self, int edx_unused, void* arg1, u
         ((void (__thiscall*)(Vec3_00650A30*, void*))ext_006946C0)(&vec, arg1);
         void** vtbl = *(void***)self;
         ((void (__thiscall*)(void*, void*, void*))vtbl[0x94 / 4])(self, arg1, arg1);
+    }
+}
+
+// [0x0064E320] SkeletalJoint::vfunc_50 (53 bytes)
+extern "C" void __fastcall fn_0064E320(void* self) {
+    char* p = (char*)self;
+    *(int*)(p + 0x88) = 0;
+    if (*(int*)(p + 0x64) != 0) {
+        void** vt = *(void***)self;
+        ((void (__fastcall*)(void*))vt[7])(self);
+        int a = *(int*)(p + 0x64);
+        int b = ((int (__cdecl*)(int))ext_007D8700)(a);
+        ((void (__cdecl*)(int))ext_007C9930)(b);
+        *(int*)(p + 0x64) = 0;
     }
 }
