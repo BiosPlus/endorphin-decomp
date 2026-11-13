@@ -7671,3 +7671,183 @@ skip_call:
         ret 0xc
     }
 }
+
+// [0x0044F780] sub_0044F780 (578 bytes)
+extern "C" void ext_0044F740();
+extern "C" void ext_006A5E72();
+extern "C" void ext_006A60D0();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_0044F780(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0
+        push 0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xd14]
+        push 0x130b
+        push eax
+        call edi
+        mov ecx, dword ptr [esi + 0xd14]
+        push 0
+        push 0
+        push 0x130b
+        test eax, eax
+        push ecx
+        sete bl
+        call edi
+        cmp eax, 1
+        sete al
+        neg bl
+        mov byte ptr [esp + 0x13], al
+        push 5
+        lea ecx, [esi + 0xcf4]
+        sbb ebx, ebx
+        and ebx, 5
+        neg al
+        mov ebp, ebx
+        sbb eax, eax
+        and eax, 5
+        mov edi, eax
+        call ext_006A5E72
+        push 5
+        lea ecx, [esi + 0xac]
+        call ext_006A5E72
+        push ebp
+        lea ecx, [esi + 0x100]
+        call ext_006A5E72
+        lea ebx, [esi + 0x598]
+        push ebp
+        mov ecx, ebx
+        call ext_006A5E72
+        push ebp
+        lea ecx, [esi + 0x154]
+        call ext_006A5E72
+        push ebp
+        lea ecx, [esi + 0x5fc]
+        call ext_006A5E72
+        push ebp
+        lea ecx, [esi + 0x660]
+        call ext_006A5E72
+        push ebp
+        lea ecx, [esi + 0x6d4]
+        call ext_006A5E72
+        test ebp, ebp
+        je L_44F84E
+        mov ecx, esi
+        call ext_0044F740
+        test al, al
+        je L_44F84E
+        mov eax, 1
+        jmp L_44F850
+    L_44F84E:
+        xor eax, eax
+    L_44F850:
+        push eax
+        lea ecx, [esi + 0xc80]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x1a8]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x1fc]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x250]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x2a4]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x2f8]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x34c]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x3a0]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x3f4]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x448]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x49c]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x4f0]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x544]
+        call ext_006A5E72
+        lea ecx, [esi + 0x748]
+        push edi
+        mov dword ptr [esp + 0x18], ecx
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x79c]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x810]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x884]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x8f8]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x96c]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0x9c0]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0xa14]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0xa68]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0xabc]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0xb10]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0xb64]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0xbb8]
+        call ext_006A5E72
+        push edi
+        lea ecx, [esi + 0xc0c]
+        call ext_006A5E72
+        pop edi
+        pop esi
+        test ebp, ebp
+        pop ebp
+        je L_44F9AA
+        mov ecx, ebx
+        pop ebx
+        add esp, 8
+        jmp ext_006A60D0
+    L_44F9AA:
+        cmp byte ptr [esp + 7], 0
+        pop ebx
+        je L_44F9BE
+        mov ecx, dword ptr [esp + 4]
+        add esp, 8
+        jmp ext_006A60D0
+    L_44F9BE:
+        add esp, 8
+        ret
+    }
+}
