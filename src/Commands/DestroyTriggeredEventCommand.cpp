@@ -66,3 +66,40 @@ extern "C" __declspec(naked) void __fastcall fn_0048E7B0(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_00479550();
+
+// [0x0048E370] Commands::DestroyTriggeredEventCommand::vfunc_1 (63 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0048E370(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x18], 0
+        je L_ret
+        mov ecx, dword ptr [esi + 0x10]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x15c]
+        push edi
+        call edx
+        mov edi, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [esi + 0x14]
+        cmp edi, ecx
+        je L_skip
+        test ecx, ecx
+        je L_skip
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+L_skip:
+        mov dword ptr [esi + 0x14], edi
+        mov eax, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [esi + 0x18]
+        push eax
+        call ext_00479550
+        pop edi
+L_ret:
+        pop esi
+        ret
+    }
+}
