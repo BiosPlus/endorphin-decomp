@@ -155,3 +155,86 @@ L_done:
         ret 0x4
     }
 }
+
+// [0x0059DEE0] NMData::CharacterData::vfunc_23_off_4 (208 bytes)
+extern "C" void ext_00599E40();
+extern "C" void ext_0059A8D0();
+extern "C" void ext_0059D7F0();
+extern "C" void ext_00664F50();
+extern "C" int mem_00924FB0;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0059DEE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 0xc]
+        push ecx
+        lea ecx, [esi - 0x4]
+        call ext_0059D7F0
+        lea edi, [esi + 0x14]
+        lea edx, [esp + 0x8]
+        push edi
+        push edx
+        mov dword ptr [esp + 0x34], 0
+        call dword ptr [mem_00924FB0]
+        add esp, 0x8
+        test al, al
+        je L_check_str2
+        mov ecx, dword ptr [esi + 0x5f4]
+        test ecx, ecx
+        je L_assign
+        push edi
+        call ext_00599E40
+L_assign:
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        mov ecx, dword ptr [esi + 0x5f4]
+        test ecx, ecx
+        je L_check_str2
+        lea eax, [esi - 0x4]
+        neg eax
+        sbb eax, eax
+        and eax, esi
+        push eax
+        push edi
+        call ext_0059A8D0
+L_check_str2:
+        add esi, 0x30
+        push 0x928b5d
+        push esi
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        je L_call_664f50
+        push edi
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+L_call_664f50:
+        push esi
+        call ext_00664F50
+        add esp, 0x4
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x2c], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
