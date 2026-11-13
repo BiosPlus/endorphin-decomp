@@ -10824,3 +10824,52 @@ extern "C" __declspec(naked) void __fastcall fn_0040DAB0(void* self) {
         ret
     }
 }
+
+// [0x004025B0] sub_004025B0 (121 bytes)
+extern "C" void ext_00402CE0();
+extern "C" void ext_005C06E0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_004025B0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x872d98
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        test edi, edi
+        jne L_skip1
+        call ebx
+    L_skip1:
+        mov esi, dword ptr [esp + 0x20]
+        cmp esi, dword ptr [edi + 0x4]
+        jne L_skip2
+        call ebx
+    L_skip2:
+        mov esi, dword ptr [esi + 0x28]
+        test esi, esi
+        mov dword ptr [esp + 0x1c], esi
+        je L_done
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0
+        call ext_00402CE0
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], -1
+        call ext_005C06E0
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+    L_done:
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        add esp, 0xc
+        ret 8
+    }
+}
