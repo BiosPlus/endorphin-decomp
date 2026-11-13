@@ -30,5 +30,7 @@
     "0x0040ADE6",
     "0x0040ADEE"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T10:21:18Z"
 }
