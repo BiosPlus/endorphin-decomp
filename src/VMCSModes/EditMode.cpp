@@ -836,3 +836,19 @@ extern "C" __declspec(naked) void __fastcall fn_004F3560(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00468660();
+extern "C" void ext_00594000();
+extern "C" void ext_0059B5A0();
+extern "C" void ext_00666120();
+
+// [0x004F2E40] VMCSModes::EditMode::vfunc_143 (47 bytes)
+extern "C" void __fastcall fn_004F2E40(void* self) {
+    void* m8 = *(void**)((char*)self + 8);
+    void* m38 = *(void**)((char*)m8 + 0x38);
+    ((void (__fastcall*)(void*))ext_00666120)(m38);
+    void* tmp = ((void* (__cdecl*)())ext_00594000)();
+    ((void (__fastcall*)(void*))ext_0059B5A0)(tmp);
+    void* obj = ((void* (__fastcall*)(void*))ext_00468660)(*(void**)((char*)self + 8));
+    (*(void (__fastcall**)(void*))(*(int*)obj + 0xd4))(obj);
+}
