@@ -195,3 +195,38 @@ extern "C" __declspec(naked) void __fastcall fn_004BC9C0(void* self) {
         ret
     }
 }
+
+// [0x00502130] PointainerWithUndo<PointainerSet<NMData::ValuePtrData>>::RenameElementCommand::vfunc_1 (56 bytes)
+extern "C" void ext_00501970();
+extern "C" void ext_00527EC0();
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __fastcall fn_00502130(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x10]
+        push edi
+        mov edi, dword ptr [esi + 0x14]
+        lea eax, [esp + 0xc]
+        push eax
+        mov ecx, ebx
+        mov dword ptr [esp + 0x10], edi
+        call ext_00527EC0
+        add esi, 0x34
+        push esi
+        lea ecx, [edi + 0xc]
+        call dword ptr [mem_00924FDC]
+        push 0
+        push edi
+        mov ecx, ebx
+        call ext_00501970
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
