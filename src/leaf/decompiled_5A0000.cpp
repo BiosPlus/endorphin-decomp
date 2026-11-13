@@ -4012,3 +4012,24 @@ extern "C" __declspec(naked) void __fastcall fn_005A1B20(void* self) {
         ret
     }
 }
+
+extern "C" void ext_005A12B0();
+extern "C" void ext_00624630();
+
+// [0x005A13C0] sub_005A13C0 (37 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005A13C0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x5ec], 0
+        je done
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        call ext_005A12B0
+        mov ecx, dword ptr [esi + 0x5ec]
+        call ext_00624630
+    done:
+        pop esi
+        ret 4
+    }
+}
