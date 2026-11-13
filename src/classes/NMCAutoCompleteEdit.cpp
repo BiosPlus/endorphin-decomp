@@ -113,3 +113,178 @@ extern "C" __declspec(naked) void __fastcall fn_006B8BE0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_006A5DA0();
+extern "C" void ext_006B87F0();
+extern "C" void ext_006B8B70();
+extern "C" void ext_006B8CE0();
+extern "C" int mem_00925660;
+extern "C" int mem_009255A0;
+extern "C" int mem_00925664;
+
+// [0x006B9350] NMCAutoCompleteEdit::vfunc_66 (385 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006B9350(void* self, int edx_unused, int* pMsg) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp dword ptr [edi + 0x4], 0x100
+        mov esi, ecx
+        jne loc_6b9440
+        mov eax, dword ptr [edi + 0x8]
+        cmp eax, 0x9
+        jne loc_6b93bb
+        mov eax, dword ptr [esi + 0x20]
+        push 0x1
+        push eax
+        call dword ptr [mem_00925660]
+        mov eax, dword ptr [esi + 0x20]
+        push 0x1
+        push 0x0
+        push 0x0
+        push eax
+        push edi
+        call dword ptr [mem_009255A0]
+        lea ecx, [esi + 0x5c]
+        call ext_006B8B70
+        test al, al
+        push 0x1
+        mov ecx, esi
+        je loc_6b93ab
+        call ext_006B87F0
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret 0x4
+
+    loc_6b93ab:
+        call ext_006B8CE0
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret 0x4
+
+    loc_6b93bb:
+        cmp eax, 0xd
+        je loc_6b9494
+        cmp eax, 0x27
+        je loc_6b9494
+        cmp eax, 0x26
+        je loc_6b944e
+        cmp eax, 0x28
+        je loc_6b944e
+        cmp eax, 0x21
+        je loc_6b944e
+        cmp eax, 0x22
+        je loc_6b944e
+        cmp eax, 0x24
+        je loc_6b944e
+        cmp eax, 0x23
+        je loc_6b944e
+        cmp eax, 0x1b
+        jne loc_6b942b
+        lea ecx, [esi + 0x5c]
+        call ext_006B8B70
+        test al, al
+        je loc_6b9440
+        mov ecx, dword ptr [esi + 0x20]
+        push 0x1
+        push ecx
+        call dword ptr [mem_00925660]
+        mov eax, dword ptr [esi + 0x20]
+        push 0x1
+        push 0x0
+        push 0x0
+        push eax
+        push edi
+        call dword ptr [mem_009255A0]
+        mov ecx, esi
+        call ext_006B87B0
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret 0x4
+
+    loc_6b942b:
+        mov edx, dword ptr [esi + 0x114]
+        mov eax, dword ptr [esi + 0x20]
+        push 0x0
+        push edx
+        push 0x1
+        push eax
+        call dword ptr [mem_00925664]
+
+    loc_6b9440:
+        push edi
+        mov ecx, esi
+        call ext_006A5DA0
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+
+    loc_6b944e:
+        mov ecx, dword ptr [esi + 0x20]
+        push 0x1
+        push ecx
+        call dword ptr [mem_00925660]
+        lea ebx, [esi + 0x5c]
+        mov ecx, ebx
+        call ext_006B8B70
+        test al, al
+        je loc_6b9440
+        mov esi, dword ptr [esi + 0x20]
+        push 0x1
+        push 0x0
+        push 0x0
+        push esi
+        push edi
+        call dword ptr [mem_009255A0]
+        test ebx, ebx
+        jne loc_6b9487
+        mov dword ptr [edi], ebx
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret 0x4
+
+    loc_6b9487:
+        mov ebx, dword ptr [ebx + 0x20]
+        mov dword ptr [edi], ebx
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret 0x4
+
+    loc_6b9494:
+        lea ecx, [esi + 0x5c]
+        call ext_006B8B70
+        test al, al
+        je loc_6b9440
+        mov edx, dword ptr [esi + 0x20]
+        push 0x1
+        push edx
+        call dword ptr [mem_00925660]
+        mov eax, dword ptr [esi + 0x20]
+        push 0x1
+        push 0x0
+        push 0x0
+        push eax
+        push edi
+        call dword ptr [mem_009255A0]
+        push 0x1
+        mov ecx, esi
+        call ext_006B87F0
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret 0x4
+    }
+}
