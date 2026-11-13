@@ -5019,3 +5019,50 @@ loc_5520bd:
         ret 8
     }
 }
+
+// [0x00552A90] sub_00552A90 (97 bytes)
+extern "C" void ext_0067BA20();
+extern "C" __declspec(naked) void __fastcall fn_00552A90(void* self, int edx_unused, int a, float b) {
+    __asm {
+        fld1
+        push ebx
+        mov ebx, [esp+8]
+        fst dword ptr [ecx]
+        fldz
+        push esi
+        fst dword ptr [ecx+4]
+        lea esi, [ecx+0xc]
+        fst dword ptr [ecx+8]
+        push edi
+        fst dword ptr [esi]
+        lea edi, [ecx+0x18]
+        fst dword ptr [ecx+0x14]
+        push ecx
+        fxch st(1)
+        fst dword ptr [ecx+0x10]
+        fxch st(1)
+        fst dword ptr [edi]
+        fstp dword ptr [ecx+0x1c]
+        fstp dword ptr [ecx+0x20]
+        fld dword ptr [esp+0x18]
+        fstp dword ptr [esp]
+        push ebx
+        call ext_0067BA20
+        fld dword ptr [esp+0x14]
+        push ecx
+        fstp dword ptr [esp]
+        push ebx
+        mov ecx, esi
+        call ext_0067BA20
+        fld dword ptr [esp+0x14]
+        push ecx
+        fstp dword ptr [esp]
+        push ebx
+        mov ecx, edi
+        call ext_0067BA20
+        pop edi
+        pop esi
+        pop ebx
+        ret 8
+    }
+}
