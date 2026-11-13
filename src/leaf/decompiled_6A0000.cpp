@@ -4720,3 +4720,25 @@ extern "C" __declspec(naked) void __fastcall fn_006AA2E0(void* self) {
         ret
     }
 }
+
+// [0x006AAC20] sub_006AAC20 (108 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" void ext_006AA2E0();
+extern "C" void ext_006A9190();
+extern "C" void __fastcall fn_006AAC20(void* self) {
+    ((void (__thiscall*)(void*))ext_006A5EA8)(self);
+    if (*((unsigned char*)self + 0x170) != 0) {
+        return;
+    }
+    void* p = (char*)self + 0x108;
+    *((unsigned char*)self + 0x170) = 1;
+    if (p != 0 && *((int*)((char*)p + 0x20)) != 0) {
+        return;
+    }
+    {
+        int buf[4] = { 0, 0, 0, 0 };
+        ((void (__thiscall*)(void*, int, int*, void*, int))(*(void***)p)[0x13c / 4])(p, 0x40000005, buf, self, 0x3e8);
+    }
+    ((void (__thiscall*)(void*))ext_006AA2E0)(self);
+    ((void (__thiscall*)(void*))ext_006A9190)(self);
+}
