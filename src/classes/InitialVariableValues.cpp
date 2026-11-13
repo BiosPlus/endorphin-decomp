@@ -269,3 +269,34 @@ extern "C" __declspec(naked) void __fastcall fn_00527410(void* self) {
         ret 4
     }
 }
+
+// [0x00527700] InitialVariableValues::vfunc_22 (49 bytes)
+extern "C" void ext_005058B0();
+extern "C" void ext_005275A0();
+extern "C" int mem_00A9F3B0;
+extern "C" int mem_00A9F3B4;
+
+extern "C" __declspec(naked) void __fastcall fn_00527700(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F3B0]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push 0
+        mov esi, ecx
+        mov ecx, dword ptr [mem_00A9F3B4]
+        push eax
+        push ecx
+        lea edx, [esi + 0x3c]
+        push edi
+        push edx
+        call ext_005275A0
+        add esp, 0x14
+        push edi
+        mov ecx, esi
+        call ext_005058B0
+        pop edi
+        pop esi
+        ret 4
+    }
+}
