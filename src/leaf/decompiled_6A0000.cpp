@@ -4204,3 +4204,216 @@ loc_6AB404:
         jmp     ext_006A60EE
     }
 }
+
+// [0x006AB4F0] sub_006AB4F0 (532 bytes)
+extern "C" void ext_006A63BE();
+extern "C" void ext_006AA1B0();
+extern "C" void ext_006AAA10();
+extern "C" void ext_006ACE40();
+extern "C" void ext_006ACE90();
+extern "C" void ext_006ACF00();
+extern "C" void ext_006AEC60();
+extern "C" void ext_006AF3E0();
+extern "C" void ext_006AF840();
+extern "C" void ext_006B2AB0();
+extern "C" int mem_00925628;
+extern "C" int mem_0092566C;
+
+extern "C" __declspec(naked) void __fastcall fn_006AB4F0(void* self) {
+    __asm {
+        sub     esp, 0x50
+        push    ebx
+        mov     ebx, dword ptr [esp + 0x58]
+        push    ebp
+        push    esi
+        push    edi
+        push    ebx
+        mov     esi, ecx
+        call    ext_006AA1B0
+        mov     edi, eax
+        test    edi, edi
+        je      loc_6AB6AD
+        push    edi
+        lea     eax, [esp + 0x14]
+        push    eax
+        mov     ecx, esi
+        call    ext_006AAA10
+        call    ext_006AEC60
+        push    eax
+        mov     ecx, edi
+        call    ext_006A63BE
+        test    eax, eax
+        je      loc_6AB572
+        mov     ecx, dword ptr [esp + 0x10]
+        mov     edx, dword ptr [esp + 0x14]
+        sub     esp, 0x10
+        mov     eax, esp
+        mov     dword ptr [eax], ecx
+        mov     ecx, dword ptr [esp + 0x28]
+        mov     dword ptr [eax + 0x4], edx
+        mov     edx, dword ptr [esp + 0x2c]
+        mov     dword ptr [eax + 0x8], ecx
+        mov     dword ptr [eax + 0xc], edx
+        lea     eax, [esp + 0x60]
+        push    eax
+        mov     ecx, edi
+        call    ext_006AF3E0
+        mov     ecx, dword ptr [eax]
+        mov     dword ptr [esp + 0x20], ecx
+        mov     edx, dword ptr [eax + 0x4]
+        mov     dword ptr [esp + 0x24], edx
+        mov     ecx, dword ptr [eax + 0x8]
+        mov     dword ptr [esp + 0x28], ecx
+        mov     edx, dword ptr [eax + 0xc]
+        mov     dword ptr [esp + 0x2c], edx
+loc_6AB572:
+        mov     ecx, dword ptr [esi + 0xe4]
+        mov     eax, dword ptr [esi + 0xec]
+        add     eax, ecx
+        mov     ecx, dword ptr [ebx]
+        cmp     ecx, eax
+        jl      loc_6AB5CF
+        add     eax, 0x2
+        cmp     ecx, eax
+        jg      loc_6AB5CF
+        cmp     byte ptr [esi + 0xf5], 0x0
+        jne     loc_6AB5AB
+        call    ext_006AEC60
+        push    eax
+        mov     ecx, edi
+        call    ext_006A63BE
+        test    eax, eax
+        jne     loc_6AB6F5
+loc_6AB5AB:
+        call    ext_006B2AB0
+        push    eax
+        mov     ecx, edi
+        call    ext_006A63BE
+        test    eax, eax
+        jne     loc_6AB6F5
+        mov     eax, 0x16
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x50
+        ret     0x4
+loc_6AB5CF:
+        call    ext_006AEC60
+        push    eax
+        mov     ecx, edi
+        call    ext_006A63BE
+        test    eax, eax
+        mov     ebp, dword ptr [mem_00925628]
+        je      loc_6AB616
+        mov     edx, dword ptr [ebx + 0x4]
+        mov     eax, dword ptr [ebx]
+        push    edx
+        push    eax
+        lea     ecx, [esp + 0x28]
+        push    ecx
+        call    ebp
+        test    eax, eax
+        je      loc_6AB616
+        mov     ecx, edi
+        call    ext_006AF840
+        test    al, al
+        je      loc_6AB6F5
+        mov     eax, 0x17
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x50
+        ret     0x4
+loc_6AB616:
+        mov     edx, dword ptr [esi + 0xec]
+        mov     eax, dword ptr [esi + 0xe4]
+        lea     ecx, [edx + eax + 0x2]
+        cmp     dword ptr [ebx], ecx
+        jle     loc_6AB64E
+        call    ext_006AEC60
+        push    eax
+        mov     ecx, edi
+        call    ext_006A63BE
+        test    eax, eax
+        jne     loc_6AB6F5
+        mov     eax, 0x18
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x50
+        ret     0x4
+loc_6AB64E:
+        mov     ecx, edi
+        call    ext_006ACF00
+        test    al, al
+        je      loc_6AB6F5
+        push    edi
+        lea     edx, [esp + 0x34]
+        push    edx
+        mov     ecx, esi
+        call    ext_006AAA10
+        lea     eax, [esp + 0x30]
+        push    eax
+        lea     ecx, [esp + 0x44]
+        push    ecx
+        mov     ecx, edi
+        call    ext_006ACE40
+        lea     edx, [esp + 0x40]
+        push    edx
+        lea     eax, [esp + 0x54]
+        push    eax
+        mov     ecx, edi
+        call    ext_006ACE90
+        mov     ecx, dword ptr [ebx + 0x4]
+        mov     edx, dword ptr [ebx]
+        push    ecx
+        push    edx
+        lea     eax, [esp + 0x58]
+        push    eax
+        call    ebp
+        test    eax, eax
+        je      loc_6AB6F5
+        mov     eax, 0x1a
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x50
+        ret     0x4
+loc_6AB6AD:
+        cmp     byte ptr [esi + 0xf6], 0x0
+        je      loc_6AB6F5
+        mov     edx, dword ptr [esi + 0x20]
+        lea     ecx, [esp + 0x20]
+        push    ecx
+        push    edx
+        call    dword ptr [mem_0092566C]
+        mov     eax, dword ptr [esp + 0x2c]
+        sub     eax, dword ptr [esi + 0xf8]
+        mov     ecx, dword ptr [ebx]
+        mov     dword ptr [esp + 0x24], eax
+        add     eax, 0x6
+        mov     dword ptr [esp + 0x2c], eax
+        mov     eax, dword ptr [ebx + 0x4]
+        push    eax
+        push    ecx
+        lea     edx, [esp + 0x28]
+        push    edx
+        call    dword ptr [mem_00925628]
+        test    eax, eax
+        mov     eax, 0x19
+        jne     loc_6AB6FA
+loc_6AB6F5:
+        mov     eax, 0x1
+loc_6AB6FA:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x50
+        ret     0x4
+    }
+}
