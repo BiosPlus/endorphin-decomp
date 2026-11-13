@@ -3097,3 +3097,26 @@ extern "C" void* __fastcall fn_0058F4C0(void* self, int edx_unused, void* out) {
     ext_005937B0(out, *(int*)((char*)self + 0xf0));
     return out;
 }
+
+// [0x005817F0] sub_005817F0 (41 bytes)
+extern "C" void ext_00581610();
+extern "C" __declspec(naked) void __fastcall fn_005817F0(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x10]
+        mov byte ptr [esp], 0x0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        push edx
+        call ext_00581610
+        add esp, 0x1c
+        ret 0xc
+    }
+}
