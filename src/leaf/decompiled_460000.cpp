@@ -8651,3 +8651,39 @@ extern "C" void __fastcall fn_00469080(void* self, int edx_unused, void* arg) {
         }
     }
 }
+
+extern "C" void ext_004AF4D0();
+extern "C" int mem_00925134;
+
+// [0x00469A80] sub_00469A80 (58 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00469A80(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x10], 0
+        je done
+        mov ecx, dword ptr [esi + 0x54]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x24]
+        je invalid_param
+        mov eax, dword ptr [esi + 0x58]
+        sub eax, ecx
+        sar eax, 2
+        cmp eax, 7
+        ja ok
+    invalid_param:
+        call dword ptr [mem_00925134]
+    ok:
+        mov eax, dword ptr [esi + 0x54]
+        mov ecx, dword ptr [eax + 0x1c]
+        push edi
+        push ecx
+        mov ecx, dword ptr [esi + 0x2c]
+        call ext_004AF4D0
+        pop edi
+    done:
+        pop esi
+        ret
+    }
+}
