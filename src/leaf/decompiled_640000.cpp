@@ -4044,3 +4044,25 @@ extern "C" __declspec(naked) void __fastcall fn_00648BE0(void* self) {
         ret
     }
 }
+
+struct Mat3_0064B890 {
+    float m[9];
+};
+
+extern "C" bool __fastcall ext_005E0C10(void* self, int edx_unused, float a1);
+extern "C" bool __fastcall ext_00694900(void* self);
+
+// [0x0064B890] sub_0064B890 (105 bytes)
+extern "C" bool __fastcall fn_0064B890(Mat3_0064B890* self, int edx_unused, float a1) {
+    if (ext_005E0C10(self, edx_unused, a1)) {
+        Mat3_0064B890 tmp = *self;
+        self->m[1] = tmp.m[3];
+        self->m[2] = tmp.m[6];
+        self->m[3] = tmp.m[1];
+        self->m[5] = tmp.m[7];
+        self->m[6] = tmp.m[2];
+        self->m[7] = tmp.m[5];
+        return true;
+    }
+    return ext_00694900(self);
+}
