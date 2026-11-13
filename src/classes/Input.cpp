@@ -362,3 +362,65 @@ extern "C" __declspec(naked) void __fastcall fn_005314D0(void* self) {
         ret 4
     }
 }
+
+extern "C" void ext_006404E0();
+extern "C" int mem_00A9F25C;
+extern "C" int mem_00A9ED80;
+extern "C" int mem_00A9EF34;
+extern "C" int mem_00925134;
+
+// [0x005307A0] Input::vfunc_3 (122 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_005307A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F25C]
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_006404E0
+        mov ecx, dword ptr [esi + 0x68]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        mov ecx, dword ptr [mem_00A9ED80]
+        push ecx
+        mov ecx, edi
+        call ext_006404E0
+        mov ecx, dword ptr [esi + 0x64]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        mov ecx, dword ptr [mem_00A9EF34]
+        push ecx
+        mov ecx, edi
+        call ext_006404E0
+        mov ebx, eax
+        mov eax, dword ptr [esi + 0x40]
+        test eax, eax
+        je L_invalid_05307A0
+        mov ecx, dword ptr [esi + 0x44]
+        sub ecx, eax
+        sar ecx, 2
+        cmp ecx, 7
+        ja L_ok_05307A0
+    L_invalid_05307A0:
+        call dword ptr [mem_00925134]
+    L_ok_05307A0:
+        mov edx, dword ptr [esi + 0x40]
+        mov ecx, dword ptr [edx + 0x1c]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xc]
+        push ebx
+        call edx
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
