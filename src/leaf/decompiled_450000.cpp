@@ -7199,3 +7199,113 @@ extern "C" __declspec(naked) void __fastcall fn_00452EA0(void* self) {
         jmp ext_00452830
     }
 }
+
+// [0x00452C40] sub_00452C40 (234 bytes)
+extern "C" void ext_00450B00();
+extern "C" void ext_00452100();
+extern "C" void ext_00452830();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_00452C40(void* self) {
+    __asm {
+        push    esi
+        mov     esi, ecx
+        call    ext_00450B00
+        mov     ecx, esi
+        pop     esi
+        jmp     ext_00452830
+
+        push    ebx
+        push    esi
+        push    edi
+        mov     edi, dword ptr [mem_00925694]
+        push    0
+        push    0
+        mov     esi, ecx
+        mov     eax, dword ptr [esi + 0x5b8]
+        push    0x188
+        push    eax
+        call    edi
+        mov     ebx, eax
+        test    ebx, ebx
+        jl      L_ret
+        mov     ecx, dword ptr [esi + 0x5b8]
+        push    0
+        push    0
+        push    0x18b
+        push    ecx
+        call    edi
+        sub     eax, 1
+        cmp     ebx, eax
+        jg      L_ret
+        mov     edx, dword ptr [esi + 0x5b8]
+        push    0
+        push    ebx
+        push    0x199
+        push    edx
+        call    edi
+        test    eax, eax
+        je      L_pop_edi
+        push    ebp
+        push    eax
+        mov     ecx, esi
+        call    ext_00452100
+        mov     ebp, eax
+        test    ebp, ebp
+        je      L_pop_ebp
+        mov     eax, dword ptr [esi + 0x61c]
+        xor     ebx, ebx
+        push    ebx
+        push    ebx
+        push    0x18b
+        push    eax
+        call    edi
+        sub     eax, 1
+        js      L_pop_ebp
+        nop
+    L_loop:
+        mov     ecx, dword ptr [esi + 0x61c]
+        push    0
+        push    ebx
+        push    0x199
+        push    ecx
+        call    edi
+        cmp     eax, ebp
+        push    0
+        je      L_found
+        mov     edx, dword ptr [esi + 0x61c]
+        push    0
+        push    0x18b
+        push    edx
+        add     ebx, 1
+        call    edi
+        sub     eax, 1
+        cmp     ebx, eax
+        jle     L_loop
+        pop     ebp
+        pop     edi
+        mov     ecx, esi
+        pop     esi
+        pop     ebx
+        jmp     ext_00452830
+    L_found:
+        mov     eax, dword ptr [esi + 0x61c]
+        push    ebx
+        push    0x186
+        push    eax
+        call    edi
+    L_pop_ebp:
+        pop     ebp
+    L_pop_edi:
+        pop     edi
+        mov     ecx, esi
+        pop     esi
+        pop     ebx
+        jmp     ext_00452830
+    L_ret:
+        pop     edi
+        pop     esi
+        pop     ebx
+        ret
+    }
+}
