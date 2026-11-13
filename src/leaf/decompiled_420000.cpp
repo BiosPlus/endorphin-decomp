@@ -6617,3 +6617,40 @@ L_fail_424CCA:
         ret
     }
 }
+
+// [0x00427550] sub_00427550 (105 bytes)
+extern "C" void ext_0063F8D0();
+extern "C" void ext_00640270();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_00427550(void* self, int edx_unused, const char* s) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi]
+        call ext_0063F8D0
+        mov eax, dword ptr [esp + 0x30]
+        push eax
+        lea ecx, [esp + 8]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 4]
+        push ecx
+        mov ecx, dword ptr [esi]
+        mov dword ptr [esp + 0x2c], 0
+        call ext_00640270
+        lea ecx, [esp + 4]
+        mov dword ptr [esp + 0x28], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 4
+    }
+}
