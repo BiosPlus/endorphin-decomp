@@ -5295,3 +5295,25 @@ extern "C" void* __fastcall fn_004E9B30(void* self) {
     }
     return esi;
 }
+
+// [0x004EDC60] sub_004EDC60 (42 bytes)
+extern "C" int mem_00B599BC;
+extern "C" void ext_004ED7D0();
+
+extern "C" __declspec(naked) void __fastcall fn_004EDC60(void* self, int edx_unused, int a1) {
+    __asm {
+        push    ecx
+        sub     esp, 8
+        mov     eax, esp
+        mov     dword ptr [eax], 0
+        mov     edx, dword ptr [mem_00B599BC]
+        mov     dword ptr [eax+4], edx
+        mov     eax, dword ptr [esp+10h]
+        mov     dword ptr [esp+8], esp
+        push    eax
+        add     ecx, 8
+        call    ext_004ED7D0
+        pop     ecx
+        ret     4
+    }
+}
