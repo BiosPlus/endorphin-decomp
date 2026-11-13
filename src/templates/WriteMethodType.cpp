@@ -11338,3 +11338,16 @@ extern "C" __declspec(naked) void __fastcall fn_0066CB30(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x005A2C10] ExprParser::WriteMethodType<NMData::CharacterData, int, {public: void __thiscall NMData::CharacterData::setPhysicsLevelFromFSM(int), 0}>::vfunc_41 (34 bytes)
+extern "C" void ext_005A1A30();
+
+typedef int (__thiscall *VCallFn_005A2C10)(void* self, void* a1);
+typedef void (__thiscall *CallFn_005A2C10)(void* self, int a1);
+
+extern "C" void __stdcall fn_005A2C10(void** self, void** a1) {
+    void* obj = *self;
+    void* sub = a1[1];
+    int r = ((VCallFn_005A2C10)((*(void***)sub)[2]))(sub, a1);
+    ((CallFn_005A2C10)ext_005A1A30)(obj, r);
+}
