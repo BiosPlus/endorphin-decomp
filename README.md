@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `12522 / 24049` (**52.07%**) — `9430` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1337549 / 4496005 bytes` (**29.75%** of 4.29 MB)
+- **In-Scope Functions Matched:** `12523 / 24049` (**52.07%**) — `9431` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1337726 / 4496005 bytes` (**29.75%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -20,7 +20,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P40-50 (71-91B)** | 1152 / 2405 | 47.90% | 95994 / 194373 | 49.39% | 1253 fn |
 | **P50-60 (91-122B)** | 1299 / 2405 | 54.01% | 140021 / 256906 | 54.50% | 1106 fn |
 | **P60-70 (122-159B)** | 1003 / 2405 | 41.70% | 135136 / 339038 | 39.86% | 1402 fn |
-| **P70-80 (159-178B)** | 262 / 2405 | 10.89% | 44145 / 400567 | 11.02% | 2143 fn |
+| **P70-80 (159-178B)** | 263 / 2405 | 10.94% | 44322 / 400567 | 11.06% | 2142 fn |
 | **P80-90 (178-335B)** | 931 / 2405 | 38.71% | 223761 / 583211 | 38.37% | 1474 fn |
 | **P90-100 (335-36100B)** | 640 / 2404 | 26.62% | 492483 / 2392860 | 20.58% | 1764 fn |
 
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6753 | 526035 | 71.61% |
-| `claude-haiku-5.5@low` | 941 | 259044 | 9.98% |
+| `claude-haiku-5.5@medium` | 6753 | 526035 | 71.60% |
+| `claude-haiku-5.5@low` | 942 | 259221 | 9.99% |
 | `gemini-3.8-flash@low` | 547 | 196091 | 5.80% |
 | `gemini-4-hydrogen@low` | 536 | 206810 | 5.68% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.74% |
