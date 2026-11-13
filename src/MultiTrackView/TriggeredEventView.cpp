@@ -504,3 +504,28 @@ L_45E36C:
         ret 0x4
     }
 }
+
+// [0x0045DAC0] MultiTrackView::TriggeredEventView::vfunc_85 (51 bytes)
+extern "C" void ext_004686A0();
+
+extern "C" __declspec(naked) void __fastcall fn_0045DAC0(void* self) {
+    __asm {
+        call ext_00468180
+        mov ecx, eax
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x9c]
+        call eax
+        movsx ecx, word ptr [esp + 0x8]
+        add eax, ecx
+        jns short L_45DAE3
+        xor eax, eax
+L_45DAE3:
+        push eax
+        call ext_00468180
+        mov ecx, eax
+        call ext_004686A0
+        ret 0x10
+    }
+}
