@@ -11337,3 +11337,110 @@ extern "C" __declspec(naked) void __fastcall fn_007F2F80(void* self) {
         ret
     }
 }
+
+// [0x007FBDB0] sub_007FBDB0 (248 bytes)
+extern "C" void ext_007FB960();
+extern "C" __declspec(naked) void __fastcall fn_007FBDB0(void* self) {
+    __asm {
+        sub     esp, 10h
+        push    esi
+        mov     esi, eax
+        fld     dword ptr [esi + 8h]
+        fabs
+        fstp    dword ptr [esp + 4h]
+        fld     dword ptr [esp + 4h]
+        fstp    dword ptr [esp + 8h]
+        fld     dword ptr [esi + 18h]
+        fabs
+        fstp    dword ptr [esp + 4h]
+        fld     dword ptr [esp + 4h]
+        fstp    dword ptr [esp + 0ch]
+        fld     dword ptr [esi + 28h]
+        fabs
+        fstp    dword ptr [esp + 4h]
+        fld     dword ptr [esp + 4h]
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esi + 38h]
+        fld     dword ptr [ecx + 4h]
+        fld     dword ptr [esp + 0ch]
+        fld     st(0)
+        fmulp   st(2), st(0)
+        fld     dword ptr [ecx]
+        fld     dword ptr [esp + 8h]
+        fld     st(0)
+        fmulp   st(2), st(0)
+        fxch    st(3)
+        faddp   st(1), st(0)
+        fld     dword ptr [ecx + 8h]
+        fld     dword ptr [esp + 10h]
+        fld     st(0)
+        fmulp   st(2), st(0)
+        fxch    st(2)
+        faddp   st(1), st(0)
+        fsubp   st(4), st(0)
+        fxch    st(3)
+        fstp    dword ptr [esp + 4h]
+        fld     dword ptr [esp + 4h]
+        fld     dword ptr [esp + 24h]
+        fcomp   st(1)
+        fnstsw  ax
+        test    ah, 5h
+        jp      L_7FBE3C
+        fstp    st(2)
+        xor     al, al
+        fstp    st(1)
+        pop     esi
+        fstp    st(0)
+        fstp    st(0)
+        add     esp, 10h
+        ret
+    L_7FBE3C:
+        mov     eax, dword ptr [esp + 18h]
+        fstp    dword ptr [eax]
+        push    edi
+        fld     qword ptr [mem_009453D8]
+        fcom    st(2)
+        fnstsw  ax
+        fstp    st(2)
+        test    ah, 41h
+        jne     L_7FBE5B
+        mov     edi, 1
+        jmp     L_7FBE5D
+    L_7FBE5B:
+        xor     edi, edi
+    L_7FBE5D:
+        fcomp   st(1)
+        fnstsw  ax
+        test    ah, 5h
+        jp      L_7FBE6D
+        mov     edx, 1
+        jmp     L_7FBE6F
+    L_7FBE6D:
+        xor     edx, edx
+    L_7FBE6F:
+        fcompp
+        fnstsw  ax
+        test    ah, 41h
+        jne     L_7FBE7F
+        mov     eax, 1
+        jmp     L_7FBE81
+    L_7FBE7F:
+        xor     eax, eax
+    L_7FBE81:
+        add     eax, edx
+        mov     edx, dword ptr [esp + 24h]
+        add     eax, edi
+        or      eax, 200h
+        mov     word ptr [edx], ax
+        mov     eax, dword ptr [esp + 20h]
+        push    eax
+        mov     eax, ecx
+        call    ext_007FB960
+        add     esp, 4
+        pop     edi
+        mov     al, 1
+        pop     esi
+        add     esp, 10h
+        ret
+    }
+}
