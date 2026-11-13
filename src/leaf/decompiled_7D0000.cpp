@@ -15774,3 +15774,100 @@ L_7DE8A9:
         ret 0x14
     }
 }
+
+// [0x007D5FF0] sub_007D5FF0 (185 bytes)
+extern "C" void ext_006A6EC0();
+extern "C" void ext_007D5DA0();
+extern "C" void ext_007D5F50();
+extern "C" void ext_007F0290();
+extern "C" void ext_007F0370();
+extern "C" int mem_00AA7E40;
+extern "C" int mem_00924274;
+extern "C" int mem_00924260;
+
+extern "C" __declspec(naked) void __cdecl fn_007D5FF0(...) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        push    ecx
+        mov     eax, dword ptr [mem_00AA7E40]
+        xor     eax, ebp
+        mov     dword ptr [ebp - 0x4], eax
+        push    ebx
+        push    esi
+        mov     esi, dword ptr [ebp + 0x8]
+        mov     eax, dword ptr [esi + 0x18]
+        add     eax, 0x1
+        push    edi
+        shl     eax, 0xc
+        call    ext_006A6EC0
+        push    0x0
+        call    ext_007D5DA0
+        mov     edi, dword ptr [ebp + 0xc]
+        mov     ebx, dword ptr [mem_00924274]
+        add     esp, 0x4
+    loc_7D6025:
+        mov     eax, dword ptr [esi + 0x2c]
+        push    -0x1
+        push    eax
+        call    ebx
+        mov     eax, dword ptr [esi + 0x10]
+        test    eax, eax
+        jne     loc_7D6069
+        push    eax
+        push    esi
+        call    ext_007D5F50
+        add     esp, 0x8
+        test    eax, eax
+        je      loc_7D6098
+    loc_7D6042:
+        mov     ecx, dword ptr [esi + 0x8]
+        push    edi
+        push    ecx
+        call    ext_007F0370
+        push    0x0
+        push    esi
+        call    ext_007D5F50
+        add     esp, 0x10
+        test    eax, eax
+        jne     loc_7D6042
+        mov     eax, dword ptr [esi + 0x30]
+        mov     ecx, dword ptr [eax]
+        push    ecx
+        call    dword ptr [mem_00924260]
+        jmp     loc_7D6025
+    loc_7D6069:
+        cmp     eax, 0x1
+        jne     loc_7D6098
+        push    eax
+        push    esi
+        call    ext_007D5F50
+        add     esp, 0x8
+        test    eax, eax
+        je      loc_7D6098
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    loc_7D6080:
+        mov     edx, dword ptr [esi + 0xc]
+        push    edx
+        call    ext_007F0290
+        push    0x1
+        push    esi
+        call    ext_007D5F50
+        add     esp, 0xc
+        test    eax, eax
+        jne     loc_7D6080
+    loc_7D6098:
+        mov     eax, dword ptr [esi + 0x30]
+        mov     ecx, dword ptr [eax]
+        push    ecx
+        call    dword ptr [mem_00924260]
+        _emit 0xe9
+        _emit 0x7c
+        _emit 0xff
+        _emit 0xff
+        _emit 0xff
+    }
+}
