@@ -375,3 +375,28 @@ extern "C" void __fastcall fn_00658BC0(void* self) {
         *p = 0;
     }
 }
+
+extern "C" void ext_00552130();
+extern "C" void __cdecl ext_007C9550(int, int, float, float, float, float, float, float);
+extern "C" void __cdecl ext_007C9490(int, int, float, float, float);
+
+struct Dummy552130 {
+    float* get(float* out, int idx);
+};
+
+// [0x00658930] RelationshipHinge::vfunc_43 (294 bytes)
+extern "C" void __fastcall fn_00658930(void* self, int edx_unused, Dummy552130* a1) {
+    int target = ext_007D8700(*(int*)((char*)self + 0x64));
+    float b[8][4];
+    float* p1 = a1->get(b[6], 1);
+    float* p2 = a1->get(b[3], 1);
+    float* p3 = a1->get(b[1], 1);
+    float* p4 = a1->get(b[4], 0);
+    float* p5 = a1->get(b[2], 0);
+    float* p6 = a1->get(b[0], 0);
+    ext_007C9550(target, 0, p6[0], p5[1], p4[2], p3[0], p2[1], p1[2]);
+    float* q1 = a1->get(b[0], 3);
+    float* q2 = a1->get(b[5], 3);
+    float* q3 = a1->get(b[7], 3);
+    ext_007C9490(target, 0, q3[0], q2[1], q1[2]);
+}
