@@ -3720,3 +3720,173 @@ extern "C" __declspec(naked) void __cdecl fn_007F4AB0() {
         ret
     }
 }
+
+// [0x007FAF80] sub_007FAF80 (434 bytes)
+extern "C" void ext_007C6F30();
+extern "C" void ext_007C6F70();
+extern "C" void ext_007C7000();
+extern "C" void ext_007CB970();
+
+extern "C" __declspec(naked) void __fastcall fn_007FAF80(void* self) {
+    __asm {
+        sub esp, 20h
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp+30h]
+        mov eax, dword ptr [esi]
+        push edi
+        push eax
+        call ext_007C6F70
+        mov ecx, dword ptr [esi+4]
+        push ecx
+        mov ebx, eax
+        call ext_007C6F70
+        mov edx, dword ptr [esi+4]
+        push edx
+        mov edi, eax
+        call ext_007C6F30
+        fstp qword ptr [esp+1Ch]
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_007C6F30
+        fadd qword ptr [esp+20h]
+        mov ecx, dword ptr [esi]
+        push ecx
+        fstp dword ptr [esp+24h]
+        call ext_007C7000
+        mov edx, dword ptr [esi+4]
+        push edx
+        mov ebp, eax
+        call ext_007C7000
+        mov esi, dword ptr [esp+50h]
+        xor eax, eax
+        push ebp
+        mov dword ptr [esi+0Ch], eax
+        mov dword ptr [esi+1Ch], eax
+        call ext_007CB970
+        fstp dword ptr [esp+54h]
+        fld dword ptr [ebx+30h]
+        add esp, 1Ch
+        fsub dword ptr [edi+30h]
+        fstp dword ptr [esp+24h]
+        fld dword ptr [ebx+34h]
+        fsub dword ptr [edi+34h]
+        fstp dword ptr [esp+28h]
+        fld dword ptr [ebx+38h]
+        fsub dword ptr [edi+38h]
+        fstp dword ptr [esp+2Ch]
+        fld dword ptr [edi+20h]
+        fstp dword ptr [esp+18h]
+        fld dword ptr [edi+24h]
+        fstp dword ptr [esp+1Ch]
+        fld dword ptr [edi+28h]
+        fstp dword ptr [esp+20h]
+        fld dword ptr [esp+28h]
+        fld dword ptr [esp+1Ch]
+        fld st(0)
+        fmulp st(2), st(0)
+        fld dword ptr [esp+24h]
+        fld dword ptr [esp+18h]
+        fld st(0)
+        fmulp st(2), st(0)
+        fxch st(3)
+        faddp st(1), st(0)
+        fld dword ptr [esp+20h]
+        fld st(0)
+        fmul dword ptr [esp+2Ch]
+        faddp st(2), st(0)
+        fxch st(1)
+        fstp dword ptr [esp+34h]
+        fld dword ptr [esp+34h]
+        fld dword ptr [esp+38h]
+        fld st(0)
+        fsubp st(2), st(0)
+        fxch st(1)
+        fstp dword ptr [esp+34h]
+        fld dword ptr [esp+34h]
+        fld dword ptr [esp+10h]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 5
+        jp L_7FB081
+        fstp st(3)
+        pop edi
+        fstp st(3)
+        pop esi
+        fstp st(0)
+        pop ebp
+        fstp st(1)
+        xor eax, eax
+        fstp st(0)
+        pop ebx
+        add esp, 20h
+        ret
+    L_7FB081:
+        cmp dword ptr [esi+8], 0
+        mov eax, 1
+        jle L_7FB11D
+        mov ecx, dword ptr [esi+4]
+        fxch st(4)
+        mov word ptr [ecx+1Ch], 203h
+        mov ecx, dword ptr [esi+4]
+        fst dword ptr [ecx+0Ch]
+        add ecx, 0Ch
+        fxch st(3)
+        fst dword ptr [ecx+4]
+        pop edi
+        fxch st(2)
+        fst dword ptr [ecx+8]
+        mov edx, dword ptr [esi+4]
+        fxch st(4)
+        fstp dword ptr [edx+18h]
+        mov ecx, dword ptr [esi+4]
+        fld st(2)
+        fmul st(0), st(1)
+        fstp dword ptr [esp+20h]
+        fld st(1)
+        fmul st(0), st(1)
+        fstp dword ptr [esp+24h]
+        fmul st(0), st(3)
+        fstp dword ptr [esp+28h]
+        fld dword ptr [ebx+30h]
+        fsub dword ptr [esp+20h]
+        fstp dword ptr [esp+14h]
+        fld dword ptr [ebx+34h]
+        fsub dword ptr [esp+24h]
+        fstp dword ptr [esp+18h]
+        fld dword ptr [ebx+38h]
+        fsub dword ptr [esp+28h]
+        fstp dword ptr [esp+1Ch]
+        fld dword ptr [esp+14h]
+        fstp dword ptr [ecx]
+        fld dword ptr [esp+18h]
+        fstp dword ptr [ecx+4]
+        fld dword ptr [esp+1Ch]
+        fstp dword ptr [ecx+8]
+        fxch st(1)
+        fstp dword ptr [esi+10h]
+        fstp dword ptr [esi+14h]
+        fstp dword ptr [esi+18h]
+        mov dword ptr [esi+0Ch], eax
+        mov dword ptr [esi+1Ch], eax
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 20h
+        ret
+    L_7FB11D:
+        fstp st(3)
+        pop edi
+        fstp st(3)
+        mov dword ptr [esi+1Ch], eax
+        fstp st(0)
+        pop esi
+        fstp st(1)
+        pop ebp
+        fstp st(0)
+        pop ebx
+        add esp, 20h
+        ret
+    }
+}

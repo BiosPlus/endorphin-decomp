@@ -21,5 +21,7 @@
     "0x007FAFCC",
     "0x007FAFDE"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-13T11:06:10Z"
 }
