@@ -7760,3 +7760,58 @@ L_493770_d:
         ret
     }
 }
+
+// [0x00493C90] sub_00493C90 (152 bytes)
+extern "C" void ext_00493770();
+extern "C" void ext_006A6C99();
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void __fastcall fn_00493C90(void* self) {
+    __asm {
+        push -1
+        push 0x885c28
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        mov eax, [esp + 0x14]
+        push esi
+        mov esi, ecx
+        push edi
+        xor edi, edi
+        push 0x928b5d
+        lea ecx, [esi + 0x14]
+        mov [esp + 0xc], esi
+        mov [esi], edi
+        mov [esi + 0x4], eax
+        mov [esi + 0x8], edi
+        mov [esi + 0xc], edi
+        mov [esi + 0x10], edi
+        call dword ptr [mem_00924FE4]
+        push 0x436f30
+        push 0x6a0670
+        push 2
+        push 0x10
+        lea ecx, [esi + 0x30]
+        push ecx
+        mov [esp + 0x28], edi
+        call ext_006A6C99
+        push 0x493970
+        push 0x493c60
+        push 2
+        push 0xc
+        lea edx, [esi + 0x50]
+        push edx
+        mov byte ptr [esp + 0x28], 1
+        call ext_006A6C99
+        mov ecx, esi
+        mov byte ptr [esp + 0x14], 2
+        call ext_00493770
+        mov ecx, [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
