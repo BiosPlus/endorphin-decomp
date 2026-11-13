@@ -994,3 +994,18 @@ extern "C" __declspec(naked) void __fastcall fn_005851B0(void* self) {
         ret 8
     }
 }
+
+// [0x0058A1C0] AnimatableTransform::vfunc_22 (51 bytes)
+extern "C" void ext_00593AE0();
+extern "C" void ext_00640110();
+extern "C" void ext_00640A80();
+extern "C" int mem_00A9F448;
+
+extern "C" void* __fastcall fn_0058A1C0(void* self, int edx_unused, void* a1) {
+    void* edi = a1;
+    ((void (__thiscall*)(void*, void*))ext_00593AE0)(self, edi);
+    int r = ((int (__thiscall*)(void*, int))ext_00640110)(edi, mem_00A9F448);
+    unsigned char b = *((unsigned char*)self + 0x148);
+    ((void (__cdecl*)(int, int))ext_00640A80)(r, (int)b);
+    return edi;
+}
