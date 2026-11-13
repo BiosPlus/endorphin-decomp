@@ -125,3 +125,70 @@ extern "C" __declspec(naked) void* __fastcall fn_005CFC20(void* self) {
         ret 0x8
     }
 }
+
+// [0x005DCB00] NMData::CameraData::vfunc_14_off_8 (179 bytes)
+extern "C" void ext_005DC4D0();
+extern "C" void ext_0041CF50();
+extern "C" void ext_005DC4F0();
+extern "C" void ext_0058F030();
+
+extern "C" __declspec(naked) void __fastcall fn_005DCB00(void* self) {
+    __asm {
+        push -1
+        push 0x008B6C40
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x10
+        push esi
+        push edi
+        mov esi, ecx
+        lea edi, [esi - 0x8]
+        lea eax, [esp + 0x8]
+        push edi
+        push eax
+        call ext_005DC4D0
+        add esp, 0x8
+        push eax
+        lea ecx, [esi + 0x264]
+        mov dword ptr [esp + 0x24], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0xc]
+        test ecx, ecx
+        mov dword ptr [esp + 0x20], 0xffffffff
+        je L_skip1
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x8]
+        push eax
+        call edx
+    L_skip1:
+        lea eax, [esp + 0x10]
+        push edi
+        push eax
+        call ext_005DC4F0
+        add esp, 0x8
+        push eax
+        lea ecx, [esi + 0x25c]
+        mov dword ptr [esp + 0x24], 0x1
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x14]
+        test ecx, ecx
+        mov dword ptr [esp + 0x20], 0xffffffff
+        je L_skip2
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x10]
+        push eax
+        call edx
+    L_skip2:
+        mov ecx, esi
+        call ext_0058F030
+        mov ecx, dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x1c
+        ret
+    }
+}
