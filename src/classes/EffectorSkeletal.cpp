@@ -636,3 +636,24 @@ L_9B9:
         ret
     }
 }
+
+// [0x00630F60] EffectorSkeletal::vfunc_16 (32 bytes)
+extern "C" void ext_005DFBC0();
+extern "C" void ext_00630D90();
+extern "C" __declspec(naked) void __fastcall fn_00630F60(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        push eax
+        push ecx
+        mov ecx, dword ptr [esi + 0x10]
+        call ext_005DFBC0
+        push eax
+        mov ecx, esi
+        call ext_00630D90
+        pop esi
+        ret 0x4
+    }
+}
