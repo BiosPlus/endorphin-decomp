@@ -5618,3 +5618,44 @@ extern "C" void* __fastcall fn_0055D6B0(void* self) {
     p[0x46c / 4] = 0;
     return self;
 }
+
+extern "C" void ext_00558C10();
+extern "C" int mem_00924FE8;
+
+// [0x0055F6B0] sub_0055F6B0 (133 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0055F6B0(void* self, int edx_unused, int arg0) {
+    __asm {
+        push -1
+        push 0x89b254
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov [esp + 0x8], esi
+        call ext_00558C10
+        xor edi, edi
+        mov dword ptr [esi], 0x95884c
+        mov dword ptr [esi + 0x4], 0x958844
+        mov [esp + 0x14], edi
+        mov [esi + 0x474], edi
+        lea ecx, [esi + 0x47c]
+        mov byte ptr [esp + 0x14], 1
+        call dword ptr [mem_00924FE8]
+        lea ecx, [esi + 0x498]
+        mov byte ptr [esp + 0x14], 2
+        call dword ptr [mem_00924FE8]
+        mov ecx, [esp + 0xc]
+        mov [esi + 0x4c4], edi
+        mov [esi + 0x4c8], edi
+        mov [esi + 0x4cc], edi
+        pop edi
+        mov eax, esi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
