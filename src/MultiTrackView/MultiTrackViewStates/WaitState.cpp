@@ -12,6 +12,8 @@ extern "C" void ext_0043D620();
 extern "C" void ext_006A60D0();
 extern "C" void ext_0043CD60();
 extern "C" void ext_0043CDA0();
+extern "C" void ext_0043CDD0();
+extern "C" void ext_0043E140();
 extern "C" int mem_00925688;
 extern "C" int mem_00925718;
 extern "C" int mem_0092570C;
@@ -191,6 +193,32 @@ L_ret:
         mov al, 1
         pop esi
         add esp, 8
+        ret 4
+    }
+}
+
+// [0x00442B20] MultiTrackView::MultiTrackViewStates::WaitState::vfunc_18 (51 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_00442B20(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0Ch], 0
+        je L_ret
+        mov eax, dword ptr [esi + 4]
+        mov ecx, dword ptr [esi + 8]
+        add eax, 14h
+        mov eax, dword ptr [eax]
+        push eax
+        call ext_0043CDD0
+        mov ecx, dword ptr [esp + 8]
+        sub esp, 8
+        fstp qword ptr [esp]
+        push ecx
+        mov ecx, dword ptr [esi + 8]
+        call ext_0043E140
+L_ret:
+        xor al, al
+        pop esi
         ret 4
     }
 }
