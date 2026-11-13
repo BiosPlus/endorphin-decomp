@@ -3264,3 +3264,17 @@ extern "C" void __fastcall fn_00567890(void* self, int edx_unused, void* os, flo
         ((OstreamManipFn)mem_00924E98)(os, mem_00924E90);
     }
 }
+
+extern "C" void ext_00567890();
+
+// [0x00567B30] sub_00567B30 (88 bytes)
+extern "C" void __fastcall fn_00567B30(void* self, int edx_unused, void* os, const float* v, bool newline) {
+    typedef void (__thiscall *PrintFloatFn)(void* self, void* os, float val, bool newline);
+    typedef void* (__thiscall *OstreamManipFn)(void* os, int manip);
+    ((PrintFloatFn)ext_00567890)(self, os, v[0], false);
+    ((PrintFloatFn)ext_00567890)(self, os, v[1], false);
+    ((PrintFloatFn)ext_00567890)(self, os, v[2], false);
+    if (newline) {
+        ((OstreamManipFn)mem_00924E98)(os, mem_00924E90);
+    }
+}
