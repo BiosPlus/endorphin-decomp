@@ -624,3 +624,171 @@ extern "C" __declspec(naked) void __fastcall fn_0058EE90(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0058F030] AnimatableTransform::vfunc_14_off_8 (459 bytes)
+extern "C" void ext_0041CF50();
+extern "C" void ext_0058D850();
+extern "C" void ext_0058D870();
+extern "C" void ext_0058D890();
+extern "C" void ext_0058D8B0();
+extern "C" void ext_0058D8D0();
+extern "C" void ext_0058D8F0();
+extern "C" void ext_0058D910();
+
+extern "C" __declspec(naked) void __fastcall fn_0058F030(void* self) {
+    __asm {
+        push -0x1
+        push 0x89fc78
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x10
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        lea edi, [esi - 0x8]
+
+        lea eax, [esp + 0xc]
+        push edi
+        push eax
+        call ext_0058D870
+        add esp, 0x8
+        push eax
+        lea ecx, [esi + 0xec]
+        mov dword ptr [esp + 0x28], 0x0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x10]
+        or ebx, -0x1
+        test ecx, ecx
+        mov dword ptr [esp + 0x24], ebx
+        je short L_0058F08D
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0xc]
+        push eax
+        call edx
+    L_0058F08D:
+        lea eax, [esp + 0xc]
+        push edi
+        push eax
+        call ext_0058D890
+        add esp, 0x8
+        push eax
+        lea ecx, [esi + 0xf4]
+        mov dword ptr [esp + 0x28], 0x1
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x10]
+        test ecx, ecx
+        mov dword ptr [esp + 0x24], ebx
+        je short L_0058F0C7
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0xc]
+        push eax
+        call edx
+    L_0058F0C7:
+        lea eax, [esp + 0xc]
+        push edi
+        push eax
+        call ext_0058D8B0
+        add esp, 0x8
+        push eax
+        lea ecx, [esi + 0xfc]
+        mov dword ptr [esp + 0x28], 0x2
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x10]
+        test ecx, ecx
+        mov dword ptr [esp + 0x24], ebx
+        je short L_0058F101
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0xc]
+        push eax
+        call edx
+    L_0058F101:
+        lea eax, [esp + 0xc]
+        push edi
+        push eax
+        call ext_0058D8D0
+        add esp, 0x8
+        push eax
+        lea ecx, [esi + 0x104]
+        mov dword ptr [esp + 0x28], 0x3
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x10]
+        test ecx, ecx
+        mov dword ptr [esp + 0x24], ebx
+        je short L_0058F13B
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0xc]
+        push eax
+        call edx
+    L_0058F13B:
+        lea eax, [esp + 0xc]
+        push edi
+        push eax
+        call ext_0058D8F0
+        add esp, 0x8
+        push eax
+        lea ecx, [esi + 0x10c]
+        mov dword ptr [esp + 0x28], 0x4
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x10]
+        test ecx, ecx
+        mov dword ptr [esp + 0x24], ebx
+        je short L_0058F175
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0xc]
+        push eax
+        call edx
+    L_0058F175:
+        lea eax, [esp + 0xc]
+        push edi
+        push eax
+        call ext_0058D910
+        add esp, 0x8
+        push eax
+        lea ecx, [esi + 0x114]
+        mov dword ptr [esp + 0x28], 0x5
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x10]
+        test ecx, ecx
+        mov dword ptr [esp + 0x24], ebx
+        je short L_0058F1AF
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0xc]
+        push eax
+        call edx
+    L_0058F1AF:
+        lea eax, [esp + 0x14]
+        push edi
+        push eax
+        call ext_0058D850
+        add esp, 0x8
+        push eax
+        lea ecx, [esi + 0x11c]
+        mov dword ptr [esp + 0x28], 0x6
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x18]
+        test ecx, ecx
+        pop edi
+        pop esi
+        mov dword ptr [esp + 0x1c], ebx
+        pop ebx
+        je short L_0058F1EC
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x8]
+        push eax
+        call edx
+    L_0058F1EC:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x1c
+        ret
+    }
+}
