@@ -33,5 +33,7 @@
     "0x004781DA",
     "0x004781E6"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T11:23:18Z"
 }
