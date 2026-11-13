@@ -5050,3 +5050,108 @@ extern "C" __declspec(naked) void __fastcall fn_00625A30(void* self) {
         ret 0x10
     }
 }
+
+extern "C" void ext_00624D30();
+extern "C" void ext_00625A30();
+
+// [0x00625C30] sub_00625C30 (218 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00625C30(void* self) {
+    __asm {
+        sub esp, 0xc
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [edi + 0x4]
+        mov eax, dword ptr [ecx + 0x4]
+        cmp byte ptr [eax + 0x19], 0x0
+        mov esi, ecx
+        mov cl, 0x1
+        mov byte ptr [esp + 0xc], cl
+        jne L_00625C75
+        mov edx, dword ptr [ebp]
+    L_00625C53:
+        mov ecx, dword ptr [eax + 0xc]
+        cmp ecx, edx
+        mov esi, eax
+        ja L_00625CB7
+        jb L_00625C66
+        mov ecx, dword ptr [ebp + 0x4]
+        cmp ecx, dword ptr [eax + 0x10]
+        jb L_00625CB7
+    L_00625C66:
+        mov eax, dword ptr [eax + 0x8]
+        xor cl, cl
+        mov byte ptr [esp + 0xc], cl
+    L_00625C6F:
+        cmp byte ptr [eax + 0x19], 0x0
+        je L_00625C53
+    L_00625C75:
+        test cl, cl
+        mov edx, esi
+        mov dword ptr [esp + 0x14], edx
+        mov dword ptr [esp + 0x10], edi
+        je L_00625CCE
+        mov edx, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edx]
+        jne L_00625CC1
+        push ebp
+        push esi
+        push 0x1
+        lea eax, [esp + 0x1c]
+        push eax
+    L_00625C93:
+        mov ecx, edi
+        call ext_00625A30
+        mov ecx, eax
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [ecx + 0x4]
+        pop edi
+        pop esi
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ecx
+        mov byte ptr [eax + 0x8], 0x1
+        pop ebp
+        add esp, 0xc
+        ret 0x8
+    L_00625CB7:
+        mov eax, dword ptr [eax]
+        mov cl, 0x1
+        mov byte ptr [esp + 0xc], cl
+        jmp L_00625C6F
+    L_00625CC1:
+        lea ecx, [esp + 0x10]
+        call ext_00624D30
+        mov edx, dword ptr [esp + 0x14]
+    L_00625CCE:
+        mov eax, dword ptr [edx + 0xc]
+        mov ecx, dword ptr [ebp]
+        cmp ecx, eax
+        ja L_00625CE2
+        jb L_00625CF0
+        mov eax, dword ptr [edx + 0x10]
+        cmp eax, dword ptr [ebp + 0x4]
+        jae L_00625CF0
+    L_00625CE2:
+        mov ecx, dword ptr [esp + 0xc]
+        push ebp
+        push esi
+        push ecx
+        lea edx, [esp + 0x1c]
+        push edx
+        jmp L_00625C93
+    L_00625CF0:
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        mov byte ptr [eax + 0x8], 0x0
+        pop ebp
+        add esp, 0xc
+        ret 0x8
+    }
+}
