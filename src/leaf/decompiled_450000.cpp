@@ -8022,3 +8022,12 @@ extern "C" __declspec(naked) void __fastcall fn_0045C5F0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0045D240] sub_0045D240 (39 bytes)
+extern "C" void __fastcall ext_0045CC30(void* self, int edx_unused, int a1, int a2, int a3);
+extern "C" int (__stdcall *mem_0092568C)(void*);
+
+extern "C" int __fastcall fn_0045D240(void* self, int edx_unused, int a1, int a2) {
+    ext_0045CC30(self, edx_unused, a1, a2, 0xffff0001);
+    return mem_0092568C(*(void**)((char*)self + 0x20));
+}
