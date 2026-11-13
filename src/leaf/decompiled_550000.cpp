@@ -7322,3 +7322,18 @@ L_done:
         ret 0xc
     }
 }
+
+extern "C" void ext_0067E820();
+
+// [0x0055C450] sub_0055C450 (55 bytes)
+extern "C" void __fastcall fn_0055C450(void* self, int edx_unused, void* a1) {
+    char* p = (char*)self;
+    ((void (__thiscall*)(void*, void*))ext_0067E820)(a1, p + 0x10);
+    p = *(char**)(p + 0xc);
+    if (p != 0) {
+        do {
+            ((void (__thiscall*)(void*, void*))ext_0067E820)(a1, p + 0x10);
+            p = *(char**)(p + 0xc);
+        } while (p != 0);
+    }
+}
