@@ -91,3 +91,67 @@ extern "C" __declspec(naked) int __fastcall fn_0059F370(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x0059DFB0] NMData::CharacterData::vfunc_24_off_4 (164 bytes)
+extern "C" void ext_0059D930();
+extern "C" void ext_00594600();
+extern "C" int mem_00924FC8;
+extern "C" int mem_00924FB0;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0059DFB0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x34]
+        push 0x928b5d
+        push edi
+        mov esi, ecx
+        call dword ptr [mem_00924FC8]
+        add esp, 0x8
+        test al, al
+        je L_done
+        push edi
+        lea eax, [esp + 0xc]
+        push eax
+        lea ecx, [esi - 0x4]
+        call ext_0059D930
+        lea edi, [esi + 0x30]
+        lea ecx, [esp + 0x8]
+        push edi
+        push ecx
+        mov dword ptr [esp + 0x34], 0
+        call dword ptr [mem_00924FB0]
+        add esp, 0x8
+        test al, al
+        je L_skip
+        lea edx, [esp + 0x8]
+        push edx
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        mov ecx, dword ptr [esi + 0x5f4]
+        test ecx, ecx
+        je L_skip
+        add esi, 0x14
+        push esi
+        call ext_00594600
+L_skip:
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x2c], -1
+        call dword ptr [mem_00924FF4]
+L_done:
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
