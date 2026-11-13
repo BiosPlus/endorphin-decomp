@@ -8588,3 +8588,111 @@ extern "C" __declspec(naked) void __fastcall fn_007FCF50(void* self) {
         ret
     }
 }
+
+// [0x007F82D0] sub_007F82D0 (221 bytes)
+extern "C" void ext_007C7000();
+extern "C" void ext_007D4D40();
+extern "C" void ext_007F7FA0();
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __cdecl fn_007F82D0(void) {
+    __asm {
+        sub     esp, 18h
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [esp + 24h]
+        mov     ebx, eax
+        mov     eax, dword ptr [ebp + 4]
+        push    edi
+        push    eax
+        call    ext_007C7000
+        mov     edi, eax
+        mov     eax, dword ptr [edi + 34h]
+        add     esp, 4
+        test    eax, eax
+        je      L82D0_fallback
+        fld     dword ptr [esp + 2Ch]
+        push    ecx
+        fstp    dword ptr [esp]
+        push    ebx
+        push    esi
+        push    ebp
+        call    eax
+        add     esp, 10h
+        pop     edi
+        pop     ebp
+        pop     ebx
+        add     esp, 18h
+        ret
+L82D0_fallback:
+        fld     dword ptr [ebx]
+        mov     eax, ebx
+        fsub    dword ptr [esi]
+        mov     ecx, esi
+        fld     qword ptr [mem_00993828]
+        fmul    st(1), st
+        fld     dword ptr [esi]
+        faddp   st(2), st
+        fxch    st(1)
+        fstp    dword ptr [esp + 0Ch]
+        fld     dword ptr [ebx + 4]
+        fsub    dword ptr [esi + 4]
+        fmul    st, st(1)
+        fadd    dword ptr [esi + 4]
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [ebx + 8]
+        fsub    dword ptr [esi + 8]
+        fmulp   st(1), st
+        fadd    dword ptr [esi + 8]
+        fstp    dword ptr [esp + 14h]
+        call    ext_007F7FA0
+        fmul    qword ptr [mem_00993828]
+        mov     ecx, dword ptr [edi + 28h]
+        mov     eax, dword ptr [edi + 38h]
+        push    ecx
+        fadd    dword ptr [esp + 30h]
+        push    ecx
+        mov     ecx, dword ptr [edi + 30h]
+        lea     edx, [esp + 14h]
+        fstp    dword ptr [esp + 30h]
+        fld     dword ptr [esp + 30h]
+        fstp    dword ptr [esp]
+        push    edx
+        push    eax
+        push    ebp
+        call    ecx
+        mov     edi, dword ptr [edi + 38h]
+        mov     ebp, eax
+        add     esp, 14h
+        test    ebp, ebp
+        jle     L82D0_done
+        mov     ebx, ebp
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+L82D0_loop:
+        mov     edx, dword ptr [edi + 8]
+        mov     eax, dword ptr [edi + 4]
+        mov     ecx, dword ptr [edi]
+        push    edx
+        push    eax
+        push    ecx
+        lea     edx, [esp + 24h]
+        push    esi
+        push    edx
+        call    ext_007D4D40
+        fstp    dword ptr [edi + 10h]
+        add     esp, 14h
+        add     edi, 1Ch
+        sub     ebx, 1
+        jne     L82D0_loop
+L82D0_done:
+        pop     edi
+        mov     eax, ebp
+        pop     ebp
+        pop     ebx
+        add     esp, 18h
+        ret
+    }
+}
