@@ -340,3 +340,33 @@ extern "C" __declspec(naked) int __cdecl fn_00799010(void* a0, void* a1, void* a
         ret
     }
 }
+
+// [0x0079E900] sub_0079E900 (56 bytes)
+extern "C" void ext_0079E800();
+extern "C" void ext_0079E5E0();
+extern "C" __declspec(naked) void __fastcall fn_0079E900(void* self) {
+    __asm {
+        call ext_0079E800
+        test eax, eax
+        je done
+        call ext_0079E800
+        mov edx, dword ptr [eax]
+        push 0
+        push 3
+        mov ecx, eax
+        call dword ptr [edx]
+        mov ecx, dword ptr [esp + 8]
+        mov edx, dword ptr [eax]
+        push ecx
+        mov ecx, dword ptr [esp + 8]
+        push ecx
+        push 0x34538402
+        mov ecx, eax
+        call dword ptr [edx + 0xc]
+    done:
+        ret
+        __asm _emit 0x90
+        sub ecx, 4
+        jmp ext_0079E5E0
+    }
+}
