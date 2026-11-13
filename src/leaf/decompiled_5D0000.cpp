@@ -2804,3 +2804,86 @@ extern "C" void __fastcall fn_005D03D0(void* self, int edx_unused, float angle) 
     ((void (__thiscall*)(void*, int, Mat16_5D03D0*, int))(*(void***)obj)[0])(obj, 0, &mat, mem_00B40644);
     ((void (__thiscall*)(void*, Vec4_5D03D0*))ext_005CFFE0)(self, &vec);
 }
+
+extern "C" void ext_005CFF60();
+extern "C" void ext_005CFFE0();
+extern "C" void ext_005D00C0();
+extern "C" void ext_0067E020();
+extern "C" int mem_0093F8F0;
+
+// [0x005D0460] sub_005D0460 (197 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005D0460(void* self) {
+    __asm {
+        sub esp, 0x50
+        push ebx
+        mov ebx, ecx
+        cmp byte ptr [ebx + 0x1f1], 0x0
+        jne exit_early
+        push ebp
+        push esi
+        push edi
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_005D00C0
+        mov edx, dword ptr [ebx + 0x4]
+        mov eax, dword ptr [mem_00B40644]
+        mov edx, dword ptr [edx + 0x14]
+        lea ebp, [ebx + 0x4]
+        push eax
+        mov ecx, ebp
+        call edx
+        fld dword ptr [esp + 0x64]
+        mov esi, eax
+        fchs
+        mov ecx, 0x10
+        lea edi, [esp + 0x20]
+        rep movsd
+        push ecx
+        mov ecx, ebx
+        fstp dword ptr [esp]
+        call ext_005CFF60
+        push eax
+        lea eax, [esp + 0x28]
+        push eax
+        mov ecx, eax
+        call ext_0067E020
+        fld dword ptr [esp + 0x34]
+        fmul dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x30]
+        fmul dword ptr [esp + 0x10]
+        faddp st(1), st
+        fld dword ptr [esp + 0x38]
+        fmul dword ptr [esp + 0x18]
+        faddp st(1), st
+        fld dword ptr [esp + 0x3c]
+        fmul dword ptr [esp + 0x1c]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x64]
+        fld dword ptr [esp + 0x64]
+        fcomp dword ptr [mem_0093F8F0]
+        fnstsw ax
+        test ah, 0x1
+        jne exit_pop
+        mov eax, dword ptr [mem_00B40644]
+        mov edx, dword ptr [ebp]
+        mov edx, dword ptr [edx]
+        push eax
+        lea ecx, [esp + 0x24]
+        push ecx
+        push 0x0
+        mov ecx, ebp
+        call edx
+        lea eax, [esp + 0x10]
+        push eax
+        mov ecx, ebx
+        call ext_005CFFE0
+    exit_pop:
+        pop edi
+        pop esi
+        pop ebp
+    exit_early:
+        pop ebx
+        add esp, 0x50
+        ret 0x4
+    }
+}
