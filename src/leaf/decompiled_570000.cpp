@@ -6951,3 +6951,38 @@ extern "C" __declspec(naked) void __fastcall fn_0057E810(void* self) {
         ret
     }
 }
+
+// [0x0057E020] sub_0057E020 (53 bytes)
+extern "C" void ext_0057D650();
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __cdecl fn_0057E020(void* first, void* last, const void* src) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebp
+        je done
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        lea ebx, [edi + 0x1c]
+    loop_top:
+        push edi
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        push ebx
+        lea ecx, [esi + 0x1c]
+        call ext_0057D650
+        add esi, 0x2c
+        cmp esi, ebp
+        jne loop_top
+        pop edi
+        pop ebx
+    done:
+        pop esi
+        pop ebp
+        ret
+    }
+}
