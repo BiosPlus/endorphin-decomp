@@ -495,3 +495,29 @@ extern "C" __declspec(naked) void __fastcall fn_0071CA10(void* self) {
         jmp dword ptr [edx + 7Ch]
     }
 }
+
+// [0x0071CA40] sub_0071CA40 (48 bytes)
+extern "C" void ext_006C9530();
+extern "C" void ext_006DC460();
+extern "C" void ext_00708000();
+extern "C" void ext_006C9F70();
+extern "C" __declspec(naked) void __fastcall fn_0071CA40(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 4]
+        test ecx, ecx
+        je short L_NULL_0071CA40
+        call ext_006DC460
+        mov ecx, eax
+        call ext_006C9530
+        mov ecx, eax
+        jmp ext_006C9F70
+    L_NULL_0071CA40:
+        mov ecx, dword ptr [eax + 0Ch]
+        push 0AA8D1Ch
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        jmp dword ptr [edx + 7Ch]
+    }
+}
