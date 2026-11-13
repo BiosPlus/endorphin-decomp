@@ -23,10 +23,10 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
    ```bash
    ./.local/bin/work check 0xXXXXXXXX --model <model@effort>
    ```
-   - Always pass your model + effort identifier via `--model <name@effort>` (e.g., `claude-haiku-5.5@low`, `gemini-3.8-flash@low`, `claude-sonnet-5.5@medium`, `claude-opus-5.5@low`, `gemini-4-argon@medium`, `gemini-4-carbon@low`) or `DECOMP_MODEL`.
+   - Always pass your model + effort identifier via `--model <name@effort>` (e.g., `claude-haiku-5.5@low`, `gemini-3.8-flash@low`, `gemini-4-hydrogen@low`, `claude-sonnet-5.5@medium`, `claude-opus-5.5@low`, `gemini-4-argon@medium`, `gemini-4-carbon@low`) or `DECOMP_MODEL`.
    - `EXACT MATCH (100%)` acquires an atomic lock, marks `"status": "matched"`, `"matched_by"`, and `"matched_at"` in the per-function ledger `build/units/<shard>/<VA>.json`, and commits `Match 0xXXXXXXXX (<symbol>) [model: <matched_by>]`.
 4. **If stuck after 10 tries:**
-   - In `tools/grind.sh` parallel wave mode, simply stop after 10 tries — the orchestrator will clean the attempt, step that model from `low` up to `medium` if `low` failed, then try the remaining models in the tier (`claude-haiku-5.5, gemini-3.8-flash, agy/claude-sonnet-5.5` -> `gemini-4-argon, claude-opus-5.5` -> `gemini-4-carbon`, each doing `low` -> `medium`), and only call `work skip` if every eligible model and effort fails. Hitting a usage/rate limit is not a failure: just stop, and the orchestrator waits for that quota pool to reset.
+   - In `tools/grind.sh` parallel wave mode, simply stop after 10 tries — the orchestrator will clean the attempt, step that model from `low` up to `medium` if `low` failed, then try the remaining models in the tier (`claude-haiku-5.5, gemini-3.8-flash, gemini-4-hydrogen, agy/claude-sonnet-5.5` -> `gemini-4-argon, claude-opus-5.5` -> `gemini-4-carbon`, each doing `low` -> `medium`), and only call `work skip` if every eligible model and effort fails. Hitting a usage/rate limit is not a failure: just stop, and the orchestrator waits for that quota pool to reset.
    - If running standalone/manually, skip cleanly (automatically strips the stub from `src/`):
      ```bash
      ./.local/bin/work skip 0xXXXXXXXX "brief reason"

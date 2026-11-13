@@ -32,7 +32,7 @@ ROUTE_MIN_YIELD="${ROUTE_MIN_YIELD:-0.05}"
 # within a tier a function goes to whichever owed model is free and not rate-limited (spreads load across all 3 quota pools
 # right from tier 0: claude, agy-gemini, and agy-other). Prefix an entry with "agy/" or "claude/" to pin it to one backend.
 # Override with MODEL_TIERS="modelA modelB|modelC modelD|modelE" ("|" separates tiers).
-MODEL_TIERS="${MODEL_TIERS:-claude-haiku-5.5 gemini-3.8-flash agy/claude-sonnet-5.5|gemini-4-argon claude-opus-5.5|gemini-4-carbon}"
+MODEL_TIERS="${MODEL_TIERS:-claude-haiku-5.5 gemini-3.8-flash gemini-4-hydrogen agy/claude-sonnet-5.5|gemini-4-argon claude-opus-5.5|gemini-4-carbon}"
 # Quota pools. Each has its own 5h usage window, so a limit hit cools down the whole pool, not just one model:
 #   claude     = native claude CLI (haiku/sonnet/opus)      agy-gemini = every gemini-* model on agy
 #   agy-other  = everything else on agy (claude models)
@@ -253,7 +253,7 @@ resolve_backend_for_model() {
         backend_usable_for_model agy "$model_choice" && { echo "agy"; return; }
       fi
       ;;
-    gemini-3.8-flash|gemini-4-argon|gemini-4-carbon)
+    gemini-3.8-flash|gemini-4-hydrogen|gemini-4-argon|gemini-4-carbon)
       backend_usable_for_model agy "$model_choice" && { echo "agy"; return; }
       ;;
   esac
@@ -364,6 +364,9 @@ run_single_function_agent() {
     case "$model_choice" in
       gemini-3.8-flash)
         run_agy_with_model "gemini-3.8-flash" "$effort" "$prompt" "$log_file" || exit_code=$?
+        ;;
+      gemini-4-hydrogen)
+        run_agy_with_model "gemini-4-hydrogen" "$effort" "$prompt" "$log_file" || exit_code=$?
         ;;
       claude-sonnet-5.5)
         run_agy_first_valid_slug "sonnet.${effort}" "$effort" "$prompt" "$log_file" \
