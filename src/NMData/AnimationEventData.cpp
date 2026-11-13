@@ -618,3 +618,16 @@ extern "C" __declspec(naked) void __fastcall fn_0048AF30(void* self) {
         ret 0x4
     }
 }
+
+extern "C" void ext_0047C480();
+extern "C" void ext_004E1DC0();
+
+// [0x004E26C0] NMData::AnimationEventData::vfunc_68 (50 bytes)
+extern "C" void __fastcall fn_004E26C0(void* self, int edx_unused, bool a1) {
+    int v = *(int*)((char*)self + 0x168);
+    *(bool*)((char*)self + 0x17c) = a1;
+    ((void (__thiscall*)(int, int))ext_0047C480)(mem_00AE29D0, v);
+    if (!a1) {
+        ((void (__thiscall*)(void*, int))ext_004E1DC0)(self, 0);
+    }
+}
