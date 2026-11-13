@@ -3541,3 +3541,21 @@ extern "C" __declspec(naked) void __fastcall fn_005E1E10(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005E1EE0] sub_005E1EE0 (33 bytes)
+extern "C" void ext_005E1E10();
+extern "C" __declspec(naked) float __cdecl fn_005E1EE0() {
+    __asm {
+        sub esp, 0x0c
+        fldz
+        lea eax, [esp]
+        fst dword ptr [esp + 0x8]
+        push eax
+        fst dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        call ext_005E1E10
+        fld dword ptr [esp]
+        add esp, 0x0c
+        ret
+    }
+}

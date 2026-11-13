@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11958 / 24049` (**49.72%**) — `8866` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1135788 / 4496005 bytes` (**25.26%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11959 / 24049` (**49.73%**) — `8867` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1135821 / 4496005 bytes` (**25.26%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -15,7 +15,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | **P0-10 (1-16B)** | 2379 / 2405 | 98.92% | 24669 / 25001 | 98.67% | 26 fn |
 | **P10-20 (16-32B)** | 2210 / 2405 | 91.89% | 56034 / 61769 | 90.72% | 195 fn |
-| **P20-30 (32-48B)** | 1257 / 2405 | 52.27% | 48996 / 97731 | 50.13% | 1148 fn |
+| **P20-30 (32-48B)** | 1258 / 2405 | 52.31% | 49029 / 97731 | 50.17% | 1147 fn |
 | **P30-40 (48-71B)** | 1039 / 2405 | 43.20% | 61796 / 144549 | 42.75% | 1366 fn |
 | **P40-50 (71-91B)** | 1139 / 2405 | 47.36% | 94904 / 194373 | 48.83% | 1266 fn |
 | **P50-60 (91-122B)** | 1278 / 2405 | 53.14% | 137757 / 256906 | 53.62% | 1127 fn |
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6748 | 515897 | 76.11% |
-| `claude-haiku-5.5@low` | 717 | 208440 | 8.09% |
+| `claude-haiku-5.5@medium` | 6748 | 515897 | 76.10% |
+| `claude-haiku-5.5@low` | 718 | 208473 | 8.10% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.04% |
 | `gemini-3.8-flash@low` | 414 | 120364 | 4.67% |
 | `gemini-4-hydrogen@low` | 334 | 141518 | 3.77% |
