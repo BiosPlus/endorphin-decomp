@@ -2214,3 +2214,38 @@ extern "C" __declspec(naked) void __fastcall fn_005CC2F0(void* self) {
         ret
     }
 }
+
+// [0x005CC520] sub_005CC520 (124 bytes)
+extern "C" void ext_005C44A0();
+extern "C" void ext_005CC100();
+
+extern "C" __declspec(naked) void __fastcall fn_005CC520(void* self) {
+    __asm {
+        push -1
+        push 0x8a4a38
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        call ext_005CC100
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esi], 0x96590c
+        mov dword ptr [esi + 0x4], 0x9658c4
+        mov dword ptr [esi + 0x8], 0x965884
+        mov dword ptr [esi + 0xc], 0x965834
+        mov dword ptr [esi + 0x150], 0x965820
+        mov dword ptr [esi + 0x154], 0x965818
+        mov dword ptr [esi + 0x158], 0x96580c
+        call ext_005C44A0
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
