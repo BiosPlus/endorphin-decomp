@@ -4340,3 +4340,182 @@ L_004237D0_nz:
         ret
     }
 }
+
+// [0x00424320] sub_00424320 (502 bytes)
+extern "C" void ext_006A5F4A();
+extern "C" void ext_006A5F50();
+extern "C" void ext_006A5FDA();
+extern "C" int mem_00925694;
+extern "C" int mem_00924300;
+
+extern "C" __declspec(naked) void __fastcall fn_00424320(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x7c], 0
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        jne loc_0042442c
+        mov eax, dword ptr [esi + 0x4ec]
+        push 0
+        push 0
+        push 0xf0
+        push eax
+        call edi
+        cmp eax, 1
+        je loc_0042442c
+        mov ecx, dword ptr [esi + 0x74]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xd8]
+        call eax
+        test al, al
+        je loc_0042439b
+        mov ecx, dword ptr [esi + 0x3f0]
+        push 0
+        push 0
+        push 0xf0
+        push ecx
+        call edi
+        cmp eax, 1
+        jne loc_0042439b
+        lea ecx, [esi + 0xc8]
+        lea ebx, [esi + 0x2d4]
+        call dword ptr [mem_00924300]
+        push eax
+        mov ecx, ebx
+        call ext_006A5F50
+        push 1
+        mov ecx, ebx
+        call ext_006A5FDA
+
+loc_0042439b:
+        mov ecx, dword ptr [esi + 0x74]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xdc]
+        call eax
+        test al, al
+        je loc_00424512
+        mov ecx, dword ptr [esi + 0x444]
+        push 0
+        push 0
+        push 0xf0
+        push ecx
+        call edi
+        cmp eax, 1
+        jne loc_004243ea
+        lea ecx, [esi + 0xcc]
+        lea ebx, [esi + 0x328]
+        call dword ptr [mem_00924300]
+        push eax
+        mov ecx, ebx
+        call ext_006A5F50
+        push 1
+        mov ecx, ebx
+        call ext_006A5FDA
+
+loc_004243ea:
+        mov edx, dword ptr [esi + 0x498]
+        push 0
+        push 0
+        push 0xf0
+        push edx
+        call edi
+        cmp eax, 1
+        jne loc_00424512
+        lea ecx, [esi + 0xd0]
+        lea edi, [esi + 0x37c]
+        call dword ptr [mem_00924300]
+        push eax
+        mov ecx, edi
+        call ext_006A5F50
+        push 1
+        mov ecx, edi
+        call ext_006A5FDA
+        pop edi
+        pop esi
+        pop ebx
+        ret
+
+loc_0042442c:
+        mov ecx, dword ptr [esi + 0x74]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xd8]
+        call edx
+        test al, al
+        je loc_0042447d
+        mov eax, dword ptr [esi + 0x3f0]
+        push 0
+        push 0
+        push 0xf0
+        push eax
+        call edi
+        cmp eax, 1
+        jne loc_0042447d
+        lea ecx, [esi + 0xc8]
+        lea ebx, [esi + 0x2d4]
+        push ecx
+        mov ecx, ebx
+        call ext_006A5F4A
+        push 0x92eca0
+        mov ecx, ebx
+        call ext_006A5F50
+        push 0
+        mov ecx, ebx
+        call ext_006A5FDA
+
+loc_0042447d:
+        mov ecx, dword ptr [esi + 0x74]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xdc]
+        call eax
+        test al, al
+        je loc_00424512
+        mov ecx, dword ptr [esi + 0x444]
+        push 0
+        push 0
+        push 0xf0
+        push ecx
+        call edi
+        cmp eax, 1
+        jne loc_004244d2
+        lea edx, [esi + 0xcc]
+        lea ebx, [esi + 0x328]
+        push edx
+        mov ecx, ebx
+        call ext_006A5F4A
+        push 0x92eca0
+        mov ecx, ebx
+        call ext_006A5F50
+        push 0
+        mov ecx, ebx
+        call ext_006A5FDA
+
+loc_004244d2:
+        mov eax, dword ptr [esi + 0x498]
+        push 0
+        push 0
+        push 0xf0
+        push eax
+        call edi
+        cmp eax, 1
+        jne loc_00424512
+        lea edi, [esi + 0x37c]
+        add esi, 0xd0
+        push esi
+        mov ecx, edi
+        call ext_006A5F4A
+        push 0x92eca0
+        mov ecx, edi
+        call ext_006A5F50
+        push 0
+        mov ecx, edi
+        call ext_006A5FDA
+
+loc_00424512:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
