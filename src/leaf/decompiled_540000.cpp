@@ -5401,3 +5401,42 @@ extern "C" __declspec(naked) void __fastcall fn_00541220(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00547BA0] sub_00547BA0 (123 bytes)
+extern "C" void ext_005CFBE0();
+extern "C" void ext_0063E042();
+extern "C" int mem_009253C8;
+extern "C" __declspec(naked) void __fastcall fn_00547BA0(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0xa0]
+        test ecx, ecx
+        je short L_no_matrix
+        call ext_005CFBE0
+        push eax
+        call dword ptr [mem_009253C8]
+        ret
+L_no_matrix:
+        fld dword ptr [eax + 0x98]
+        sub esp, 0x48
+        fstp qword ptr [esp + 0x40]
+        fld dword ptr [eax + 0x94]
+        fstp qword ptr [esp + 0x38]
+        fld dword ptr [eax + 0x90]
+        fstp qword ptr [esp + 0x30]
+        fld dword ptr [eax + 0x88]
+        fstp qword ptr [esp + 0x28]
+        fld dword ptr [eax + 0x84]
+        fstp qword ptr [esp + 0x20]
+        fld dword ptr [eax + 0x80]
+        fstp qword ptr [esp + 0x18]
+        fld dword ptr [eax + 0xf0]
+        fstp qword ptr [esp + 0x10]
+        fld dword ptr [eax + 0xec]
+        fstp qword ptr [esp + 0x8]
+        fld dword ptr [eax + 0xe8]
+        fstp qword ptr [esp]
+        call ext_0063E042
+        ret
+    }
+}
