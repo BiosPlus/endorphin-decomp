@@ -3229,3 +3229,16 @@ extern "C" void __fastcall fn_0056DC40(void* self, int edx_unused, void* obj, vo
         ((EndlFn)mem_00924E98)(((CStrOutFn)ext_00435D00)(os, (const char*)0x00959200), mem_00924E90);
     }
 }
+
+extern "C" int mem_00925218;
+
+// [0x00567280] sub_00567280 (118 bytes)
+extern "C" void __fastcall fn_00567280(void* self, int edx_unused, void* os) {
+    typedef void* (__cdecl *OstreamStrFn)(void* os, const char* s);
+    typedef void* (__thiscall *OstreamManipFn)(void* os, int manip);
+    typedef int (__cdecl *SprintfFn)(char* buf, const char* fmt, ...);
+    int buf[5];
+    ((OstreamManipFn)mem_00924E98)(((OstreamStrFn)ext_00435D00)(os, (const char*)0x00958C74), mem_00924E90);
+    ((SprintfFn)mem_00925218)((char*)buf, (const char*)0x00958C6C, (double)**(float**)self);
+    ((OstreamManipFn)mem_00924E98)(((OstreamStrFn)ext_00435D00)(((OstreamStrFn)ext_00435D00)(os, (const char*)0x00958C60), (const char*)buf), mem_00924E90);
+}
