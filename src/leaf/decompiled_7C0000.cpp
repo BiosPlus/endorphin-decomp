@@ -9870,3 +9870,39 @@ L_done_7CA8E0:
         ret
     }
 }
+
+extern "C" void ext_007DE8C0();
+
+// [0x007C8BC0] sub_007C8BC0 (70 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007C8BC0(int* s) {
+    __asm {
+        push    esi
+        mov     esi, dword ptr [esp + 0x8]
+        mov     ecx, dword ptr [esi + 0xc]
+        test    ecx, ecx
+        jne     L_nonnull
+    L_ret0:
+        xor     eax, eax
+        pop     esi
+        ret
+    L_nonnull:
+        mov     eax, dword ptr [esi + 0x20]
+        push    edi
+        push    eax
+        call    ext_007DE8C0
+        mov     ecx, dword ptr [esi + 0xc]
+        mov     edx, dword ptr [ecx + 0x2c]
+        push    edx
+        movzx   edi, al
+        call    ext_007DCED0
+        add     esp, 0x4
+        test    edi, edi
+        pop     edi
+        je      L_ret0
+        mov     dword ptr [esi + 0xc], 0x0
+        mov     dword ptr [esi + 0x20], 0xffffffff
+        mov     eax, 0x1
+        pop     esi
+        ret
+    }
+}
