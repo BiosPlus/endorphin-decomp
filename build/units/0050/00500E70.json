@@ -22,5 +22,7 @@
     "0x00500F24",
     "0x00500F4B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T10:03:52Z"
 }
