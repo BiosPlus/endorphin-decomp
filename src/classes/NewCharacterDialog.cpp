@@ -255,3 +255,28 @@ extern "C" __declspec(naked) void __fastcall fn_0040D290(void* self) {
         ret
     }
 }
+
+// [0x0040B780] NewCharacterDialog::vfunc_91 (42 bytes)
+extern "C" void ext_0040A940();
+extern "C" void ext_0040F230();
+extern "C" int mem_0093A0C8;
+extern "C" int mem_0093A0D0;
+extern "C" int mem_0093A0CC;
+extern "C" __declspec(naked) void __fastcall fn_0040B780(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0040A940
+        mov eax, dword ptr [mem_0093A0C8]
+        mov ecx, dword ptr [mem_0093A0D0]
+        mov edx, dword ptr [mem_0093A0CC]
+        push eax
+        push ecx
+        push eax
+        push edx
+        lea ecx, [esi + 0x49c]
+        call ext_0040F230
+        pop esi
+        ret
+    }
+}
