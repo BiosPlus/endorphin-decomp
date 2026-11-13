@@ -4867,3 +4867,24 @@ extern "C" __declspec(naked) void __fastcall fn_00648370(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00640CD0] sub_00640CD0 (36 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00640CD0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        test byte ptr [esi], 1
+        jne short L_00640CF2
+        cmp byte ptr [esi + 0x10], 0
+        je short L_00640CEA
+        call ext_00640940
+        mov ecx, esi
+        call ext_006408F0
+    L_00640CEA:
+        add dword ptr [esi + 0xc], -1
+        mov byte ptr [esi + 0x10], 1
+    L_00640CF2:
+        pop esi
+        ret
+    }
+}
