@@ -5627,3 +5627,192 @@ L_zero:
         ret
     }
 }
+
+extern "C" void ext_007D48C0();
+extern "C" void ext_007D48F0();
+extern "C" void ext_007D4AA0();
+
+// [0x007D4B90] sub_007D4B90 (426 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D4B90(void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        push esi
+        mov esi, dword ptr [ebx + 8]
+        push edi
+        mov edi, dword ptr [ebx]
+        cmp edi, eax
+        je r4b90_l1
+        cmp dword ptr [ebx + 4], eax
+        je r4b90_l2
+        push ebx
+        push eax
+        call ext_007D4AA0
+        mov ecx, dword ptr [eax + 8]
+        mov edi, dword ptr [eax + 4]
+        mov edx, dword ptr [eax + 0xc]
+        add esp, 8
+        mov dword ptr [edi + 8], ecx
+        cmp dword ptr [ecx], eax
+        jne r4b90_a
+        mov dword ptr [ecx], edi
+        jmp r4b90_b
+    r4b90_a:
+        mov dword ptr [ecx + 4], edi
+    r4b90_b:
+        mov dword ptr [eax + 8], esi
+        mov ecx, dword ptr [ebx]
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [ebx + 4]
+        mov dword ptr [eax + 4], ecx
+        mov ecx, dword ptr [eax]
+        mov dword ptr [ecx + 8], eax
+        mov ecx, dword ptr [eax + 4]
+        mov dword ptr [ecx + 8], eax
+        mov ecx, dword ptr [ebx + 0xc]
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [ebx + 0xc], edx
+        cmp dword ptr [esi], ebx
+        jne r4b90_c
+        mov dword ptr [esi], eax
+        jmp r4b90_d
+    r4b90_c:
+        mov dword ptr [esi + 4], eax
+        jmp r4b90_d
+    r4b90_l1:
+        mov edi, dword ptr [ebx + 4]
+    r4b90_l2:
+        mov dword ptr [edi + 8], esi
+        cmp ebx, dword ptr [esi]
+        jne r4b90_e
+        mov dword ptr [esi], edi
+        jmp r4b90_d
+    r4b90_e:
+        mov dword ptr [esi + 4], edi
+    r4b90_d:
+        mov eax, dword ptr [esp + 0x14]
+        xor ebp, ebp
+        mov dword ptr [ebx + 8], ebp
+        mov dword ptr [ebx + 4], ebp
+        mov dword ptr [ebx], ebp
+        add dword ptr [eax + 0x18], -1
+        mov eax, dword ptr [esp + 0x18]
+        mov ebx, 1
+        cmp dword ptr [eax + 0xc], ebx
+        jne r4b90_bail
+        mov edx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [edx]
+        mov dword ptr [eax + 0xc], ebp
+        cmp dword ptr [edi + 0xc], ebx
+        jne r4b90_tail
+    r4b90_loop:
+        mov esi, dword ptr [edi + 8]
+        mov eax, dword ptr [esi]
+        cmp edi, eax
+        jne r4b90_mirror
+        mov eax, dword ptr [esi + 4]
+        cmp dword ptr [eax + 0xc], ebp
+        jne r4b90_s1
+        mov dword ptr [eax + 0xc], ebx
+        mov eax, esi
+        mov dword ptr [esi + 0xc], ebp
+        call ext_007D48C0
+        mov eax, dword ptr [esi + 4]
+    r4b90_s1:
+        mov ecx, dword ptr [eax]
+        cmp dword ptr [ecx + 0xc], ebx
+        jne r4b90_s2
+        mov edx, dword ptr [eax + 4]
+        cmp dword ptr [edx + 0xc], ebx
+        je r4b90_s4
+    r4b90_s2:
+        mov ecx, dword ptr [eax + 4]
+        cmp dword ptr [ecx + 0xc], ebx
+        jne r4b90_s3
+        mov edx, dword ptr [eax]
+        mov dword ptr [edx + 0xc], ebx
+        mov dword ptr [eax + 0xc], ebp
+        call ext_007D48F0
+        mov eax, dword ptr [esi + 4]
+    r4b90_s3:
+        mov ecx, dword ptr [esi + 0xc]
+        mov edx, dword ptr [eax + 4]
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [edx + 0xc], ebx
+        mov eax, esi
+        mov dword ptr [esi + 0xc], ebx
+        call ext_007D48C0
+    r4b90_done:
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr [edi + 0xc], ebx
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [ecx + 0xc], ebx
+        pop ebx
+        ret
+    r4b90_mirror:
+        cmp dword ptr [eax + 0xc], ebp
+        jne r4b90_m1
+        mov dword ptr [eax + 0xc], ebx
+        mov eax, esi
+        mov dword ptr [esi + 0xc], ebp
+        call ext_007D48F0
+        mov eax, dword ptr [esi]
+    r4b90_m1:
+        mov ecx, dword ptr [eax + 4]
+        cmp dword ptr [ecx + 0xc], ebx
+        jne r4b90_m2
+        mov edx, dword ptr [eax]
+        cmp dword ptr [edx + 0xc], ebx
+        jne r4b90_m2
+    r4b90_s4:
+        mov dword ptr [eax + 0xc], ebp
+        cmp dword ptr [esi + 0xc], ebx
+        mov edi, esi
+        je r4b90_loop
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr [edi + 0xc], ebx
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [ecx + 0xc], ebx
+        pop ebx
+        ret
+    r4b90_m2:
+        mov ecx, dword ptr [eax]
+        cmp dword ptr [ecx + 0xc], ebx
+        jne r4b90_m3
+        mov edx, dword ptr [eax + 4]
+        mov dword ptr [edx + 0xc], ebx
+        mov dword ptr [eax + 0xc], ebp
+        call ext_007D48C0
+        mov eax, dword ptr [esi]
+    r4b90_m3:
+        mov ecx, dword ptr [esi + 0xc]
+        mov edx, dword ptr [eax]
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [edx + 0xc], ebx
+        mov eax, esi
+        mov dword ptr [esi + 0xc], ebx
+        call ext_007D48F0
+    r4b90_tail:
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr [edi + 0xc], ebx
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [ecx + 0xc], ebx
+    r4b90_bail:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
