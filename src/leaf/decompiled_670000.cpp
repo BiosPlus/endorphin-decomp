@@ -7999,3 +7999,47 @@ extern "C" __declspec(naked) void __fastcall fn_0067B5F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0067E7B0] sub_0067E7B0 (105 bytes)
+extern "C" void ext_005E0C10();
+extern "C" void ext_0067D840();
+extern "C" void ext_0067DAD0();
+extern "C" void ext_0067DB10();
+extern "C" __declspec(naked) void __fastcall fn_0067E7B0(void* self, int edx_unused, float a1) {
+    __asm {
+        sub esp, 24h
+        fldz
+        push esi
+        fst dword ptr [esp + 0ch]
+        lea eax, [esp + 4]
+        fst dword ptr [esp + 8]
+        push eax
+        fst dword ptr [esp + 1ch]
+        mov esi, ecx
+        fst dword ptr [esp + 14h]
+        fst dword ptr [esp + 24h]
+        fstp dword ptr [esp + 20h]
+        fld1
+        fst dword ptr [esp + 8]
+        fst dword ptr [esp + 18h]
+        fstp dword ptr [esp + 28h]
+        call ext_0067DAD0
+        fld dword ptr [esp + 2ch]
+        push ecx
+        fstp dword ptr [esp]
+        lea ecx, [esp + 8]
+        call ext_005E0C10
+        test al, al
+        jne label_67e806
+        lea ecx, [esp + 4]
+        call ext_0067D840
+    label_67e806:
+        lea ecx, [esp + 4]
+        push ecx
+        mov ecx, esi
+        call ext_0067DB10
+        pop esi
+        add esp, 24h
+        ret 4
+    }
+}
