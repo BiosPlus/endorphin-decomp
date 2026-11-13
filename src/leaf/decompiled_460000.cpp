@@ -8132,3 +8132,87 @@ extern "C" __declspec(naked) void __fastcall fn_00466450(void* self) {
         jmp ext_00465950
     }
 }
+
+// [0x00466970] sub_00466970 (188 bytes)
+extern "C" void ext_0040BF20();
+extern "C" void ext_00465940();
+extern "C" void ext_00465B00();
+extern "C" void ext_00465DE0();
+extern "C" void ext_00465ED0();
+extern "C" void ext_00465F10();
+extern "C" void ext_00465FB0();
+extern "C" void ext_00466450();
+extern "C" void ext_00466900();
+extern "C" void ext_006A5EDE();
+extern "C" void ext_006A60D6();
+extern "C" void ext_006A6A96();
+extern "C" __declspec(naked) void __fastcall fn_00466970(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x8817d8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x10
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x18], esi
+        mov dword ptr [ebp - 0x4], ebx
+        call ext_006A6A96
+        cmp eax, ebx
+        je L_cont
+        call ext_006A5EDE
+        mov ecx, dword ptr [eax + 0x4]
+        call ext_006A60D6
+        mov ecx, esi
+        mov byte ptr [ebp - 0x4], 0x1
+        call ext_00466450
+        mov ecx, esi
+        call ext_00465F10
+        mov ecx, esi
+        call ext_00466900
+        mov ecx, esi
+        call ext_00465940
+        mov ecx, esi
+        call ext_00465ED0
+        mov ecx, esi
+        call ext_00465B00
+        mov ecx, esi
+        call ext_00465DE0
+        lea ecx, [ebp - 0x11]
+        mov byte ptr [ebp - 0x4], bl
+        call ext_0040BF20
+        mov eax, 0x1
+        mov ecx, dword ptr [ebp - 0xc]
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    handler_0046A07:
+        mov eax, dword ptr [ebp - 0x1c]
+        mov ecx, dword ptr [ebp - 0x18]
+        push eax
+        call ext_00465FB0
+        mov eax, 0x466a19
+        ret
+    L_cont:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        xor eax, eax
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
