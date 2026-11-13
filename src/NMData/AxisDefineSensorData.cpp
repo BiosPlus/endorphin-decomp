@@ -137,3 +137,29 @@ extern "C" __declspec(naked) void __fastcall fn_0060F420(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0060E7B0] NMData::AxisDefineSensorData::vfunc_2 (47 bytes)
+extern "C" void ext_00679030();
+extern "C" void ext_006798D0();
+
+extern "C" __declspec(naked) void* __fastcall fn_0060E7B0(void* self, int edx_unused, void* out, void* arg2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, dword ptr [ecx + 0x170]
+        push eax
+        push ecx
+        push esi
+        mov dword ptr [esp + 0x14], 0x0
+        call ext_006798D0
+        mov ecx, eax
+        call ext_00679030
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
