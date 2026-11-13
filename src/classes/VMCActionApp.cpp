@@ -71,3 +71,32 @@ skip_init_00465010:
         ret 4
     }
 }
+
+extern "C" void ext_004650B0();
+extern "C" void ext_00464710();
+extern "C" void ext_006A6A00();
+extern "C" int mem_00ACDB40;
+
+// [0x00465850] VMCActionApp::vfunc_24 (44 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00465850(void* self) {
+    __asm {
+        cmp     dword ptr [mem_00ACDB40], 0
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0Ch]
+        mov     esi, ecx
+        je      short L_done
+        push    edi
+        call    ext_004650B0
+        push    edi
+        mov     ecx, esi
+        call    ext_00464710
+    L_done:
+        push    edi
+        mov     ecx, esi
+        call    ext_006A6A00
+        pop     edi
+        pop     esi
+        ret     4
+    }
+}
