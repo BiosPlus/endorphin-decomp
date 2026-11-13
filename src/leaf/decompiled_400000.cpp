@@ -10453,3 +10453,11 @@ extern "C" __declspec(naked) void __fastcall fn_00401520(void* self) {
         ret
     }
 }
+
+extern "C" int (__cdecl *mem_009251F8)(void*, unsigned int, const void*, unsigned int);
+extern "C" void __cdecl ext_0040EFF0(int);
+
+// [0x0040F080] sub_0040F080 (36 bytes)
+extern "C" void __cdecl fn_0040F080(void* dst, unsigned int dstSize, const void* src, unsigned int srcSize) {
+    ext_0040EFF0(mem_009251F8(dst, dstSize, src, srcSize));
+}
