@@ -27,5 +27,7 @@
     "0x007FC0FC",
     "0x007FC135"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-13T13:53:43Z"
 }
