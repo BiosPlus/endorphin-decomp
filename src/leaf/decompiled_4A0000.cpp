@@ -3233,3 +3233,43 @@ L_done_4AEEA0:
         ret
     }
 }
+
+// [0x004AF870] sub_004AF870 (85 bytes)
+extern "C" void ext_004E7970();
+extern "C" void ext_004E8340();
+extern "C" __declspec(naked) void __fastcall fn_004AF870(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov     eax, dword ptr [esp + 4]
+        push    esi
+        mov     esi, ecx
+        push    edi
+        lea     edi, [esi + 8]
+        push    eax
+        mov     ecx, edi
+        call    ext_004E8340
+        mov     edx, dword ptr [edi]
+        mov     eax, dword ptr [edx + 8]
+        mov     ecx, edi
+        call    eax
+        mov     ecx, dword ptr [esp + 0x10]
+        mov     edx, dword ptr [esp + 0x14]
+        mov     dword ptr [esi + 4], ecx
+        lea     edi, [esi + 0x104]
+        push    edx
+        mov     ecx, edi
+        call    ext_004E8340
+        mov     ecx, dword ptr [esi + 4]
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax + 4]
+        push    edi
+        call    edx
+        mov     eax, dword ptr [esi + 0x120]
+        push    0
+        push    eax
+        mov     ecx, edi
+        call    ext_004E7970
+        pop     edi
+        pop     esi
+        ret     0xc
+    }
+}
