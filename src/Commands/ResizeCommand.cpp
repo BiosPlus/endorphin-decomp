@@ -38,3 +38,19 @@ extern "C" __declspec(naked) void __fastcall fn_00480220(void* self) {
         ret 0x4
     }
 }
+
+// [0x00485EB0] Commands::ResizeCommand::vfunc_1 (31 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00485EB0(void* self) {
+    __asm {
+        lea eax, [ecx + 0xb4]
+        push eax
+        lea edx, [ecx + 0xa0]
+        push edx
+        lea eax, [ecx + 0x80]
+        push eax
+        lea edx, [ecx + 0x60]
+        push edx
+        call ext_00484A70
+        ret
+    }
+}
