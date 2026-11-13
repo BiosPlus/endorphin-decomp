@@ -3691,3 +3691,92 @@ extern "C" __declspec(naked) void __fastcall fn_005E2700(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0067E820();
+extern "C" void ext_0067E990();
+extern "C" int mem_00B40640;
+
+// [0x005E1760] sub_005E1760 (204 bytes)
+// __thiscall, ret 0: if this->sub(+4) virtual slot +0x1c on &this->field4 returns true, copies a
+// 64-byte value from virtual slot +0x24 into a local, then (if this+0x17c is set) calls helper
+// 0x0067E820 and 0x0067E990; finally copies the local result out via virtual slot +0x2c.
+extern "C" __declspec(naked) void __fastcall fn_005E1760(void* self) {
+    __asm {
+        sub esp, 0x44
+        push ebx
+        push ebp
+        mov ebp, ecx
+        mov eax, dword ptr [ebp + 0x4]
+        mov edx, dword ptr [eax + 0x1c]
+        lea ebx, [ebp + 0x4]
+        mov ecx, ebx
+        call edx
+        test al, al
+        je done
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0x24]
+        push esi
+        push edi
+        mov ecx, ebx
+        call edx
+        mov ecx, dword ptr [ebp + 0x17c]
+        test ecx, ecx
+        mov dword ptr [esp + 0x10], eax
+        je skip_helpers
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [eax + 0xc]
+        add ecx, 0x4
+        push edx
+        call eax
+        mov edx, dword ptr [ebx]
+        mov esi, eax
+        mov eax, dword ptr [edx + 0x2c]
+        mov ecx, 0x10
+        lea edi, [esp + 0x14]
+        rep movsd
+        mov ecx, ebx
+        call eax
+        push eax
+        lea ecx, [esp + 0x18]
+        call ext_0067E820
+        mov ecx, dword ptr [ebp + 0x17c]
+        mov edx, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [mem_00B40640]
+        mov edx, dword ptr [edx + 0xc]
+        add ecx, 0x4
+        push eax
+        call edx
+        mov edi, eax
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, 0x10
+        lea esi, [esp + 0x14]
+        rep movsd
+        mov ebp, dword ptr [ebp + 0x17c]
+        mov edx, dword ptr [ebp + 0x4]
+        mov edx, dword ptr [edx + 0xc]
+        lea ecx, [ebp + 0x4]
+        push eax
+        mov eax, dword ptr [mem_00B40640]
+        push eax
+        call edx
+        mov ecx, eax
+        call ext_0067E990
+    skip_helpers:
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0x2c]
+        mov ecx, ebx
+        call edx
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, 0x10
+        mov edi, eax
+        rep movsd
+        pop edi
+        pop esi
+    done:
+        pop ebp
+        pop ebx
+        add esp, 0x44
+        ret
+    }
+}

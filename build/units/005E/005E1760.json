@@ -17,5 +17,7 @@
     "0x005E1800",
     "0x005E180A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T13:40:30Z"
 }
