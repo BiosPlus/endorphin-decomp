@@ -4949,3 +4949,25 @@ extern "C" __declspec(naked) void __cdecl fn_00640A50(int unused, int a1) {
         ret
     }
 }
+
+// [0x00640AA0] sub_00640AA0 (44 bytes)
+extern "C" void ext_00427550();
+extern "C" int mem_00925218;
+extern "C" __declspec(naked) void __cdecl fn_00640AA0(int unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        sub esp, 0x10
+        push eax
+        lea ecx, [esp + 4]
+        push 0x9720e8
+        push ecx
+        call dword ptr [mem_00925218]
+        add esp, 0xc
+        lea edx, [esp]
+        push edx
+        lea ecx, [esp + 0x18]
+        call ext_00427550
+        add esp, 0x10
+        ret
+    }
+}
