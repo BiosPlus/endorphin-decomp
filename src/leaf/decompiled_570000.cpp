@@ -7838,3 +7838,35 @@ extern "C" void __cdecl fn_0057DE50(Elem_57DE50* first, Elem_57DE50* last, const
         first->sub = val.sub;
     }
 }
+
+// [0x0057E920] sub_0057E920 (60 bytes)
+extern "C" void ext_0057E690();
+
+extern "C" __declspec(naked) void* __fastcall fn_0057E920(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp+10h]
+        push esi
+        mov esi, dword ptr [esp+10h]
+        push edi
+        mov edi, dword ptr [esp+10h]
+        mov byte ptr [esp+8], 0
+        mov eax, dword ptr [esp+8]
+        push eax
+        mov eax, dword ptr [esp+1Ch]
+        push edx
+        push ecx
+        push eax
+        push esi
+        push edi
+        call ext_0057E690
+        add esp, 18h
+        lea ecx, [8*esi]
+        sub ecx, esi
+        lea eax, [edi+4*ecx]
+        pop edi
+        pop esi
+        pop ecx
+        ret 0Ch
+    }
+}
