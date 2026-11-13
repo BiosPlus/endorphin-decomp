@@ -944,3 +944,23 @@ extern "C" __declspec(naked) void __fastcall fn_0049C0F0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00497900] ExprParser::PrimitiveProxyType<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>::vfunc_0 (35 bytes)
+extern "C" void ext_006720E0();
+extern "C" __declspec(naked) void* __fastcall fn_00497900(void* self, int edx_unused, void* a1, void** a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0
+        call ext_006720E0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
