@@ -278,3 +278,342 @@ extern "C" __declspec(naked) void __fastcall fn_005228A0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00522AE0] ThreeLayerNet::vfunc_24 (1043 bytes)
+extern "C" void ext_005049B0();
+extern "C" void ext_0066A820();
+extern "C" void ext_0066A980();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FF0;
+extern "C" __declspec(naked) void __fastcall fn_00522AE0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x40
+        sub esp, 0x34
+        push ebx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x24]
+        test eax, eax
+        push edi
+        lea edi, [esi + 0x20]
+        je loc_522EEA
+        mov ecx, dword ptr [edi + 0x8]
+        sub ecx, eax
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        je loc_522EEA
+        mov eax, dword ptr [edi + 0x4]
+        test eax, eax
+        je loc_522B37
+        mov ecx, dword ptr [edi + 0x8]
+        sub ecx, eax
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov ecx, edx
+        shr ecx, 0x1f
+        add ecx, edx
+        jne loc_522B3D
+    loc_522B37:
+        call dword ptr [mem_00925134]
+    loc_522B3D:
+        mov eax, dword ptr [edi + 0x4]
+        mov ecx, dword ptr [eax + 0x8]
+        add eax, 0x4
+        test ecx, ecx
+        je loc_522EEA
+        mov edx, dword ptr [eax + 0x8]
+        sub edx, ecx
+        sar edx, 0x3
+        je loc_522EEA
+        push 0x0
+        mov ecx, edi
+        call ext_005049B0
+        mov edi, eax
+        mov ebx, dword ptr [edi + 0x8]
+        add edi, 0x4
+        cmp ebx, dword ptr [edi + 0x8]
+        jbe loc_522B7B
+        call dword ptr [mem_00925134]
+        cmp ebx, dword ptr [edi + 0x8]
+    loc_522B7B:
+        jb loc_522B83
+        call dword ptr [mem_00925134]
+    loc_522B83:
+        mov edi, dword ptr [ebp + 0x8]
+        push 0x952bd0
+        mov ecx, edi
+        call ext_0066A980
+        cmp dword ptr [esi + 0xc0], 0x0
+        mov dword ptr [esp + 0x20], 0x0
+        jle loc_522BC2
+    loc_522BA3:
+        push 0x92f67c
+        mov ecx, edi
+        call ext_0066A980
+        mov eax, dword ptr [esp + 0x20]
+        add eax, 0x1
+        cmp eax, dword ptr [esi + 0xc0]
+        mov dword ptr [esp + 0x20], eax
+        jl loc_522BA3
+    loc_522BC2:
+        push 0x952bc0
+        mov ecx, edi
+        call ext_0066A980
+        push 0x952bac
+        mov ecx, edi
+        call ext_0066A980
+        mov eax, dword ptr [esi + 0x40]
+        cmp eax, dword ptr [esi + 0x44]
+        mov dword ptr [esp + 0x2c], eax
+        jbe loc_522BF0
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x2c]
+    loc_522BF0:
+        mov dword ptr [esp + 0x34], eax
+    loc_522BF4:
+        mov eax, dword ptr [esi + 0x44]
+        cmp dword ptr [esi + 0x40], eax
+        mov dword ptr [esp + 0x2c], eax
+        jbe loc_522C0A
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x2c]
+    loc_522C0A:
+        mov ecx, dword ptr [esp + 0x34]
+        cmp ecx, eax
+        je loc_522C57
+        cmp ecx, dword ptr [esi + 0x44]
+        jb loc_522C1D
+        call dword ptr [mem_00925134]
+    loc_522C1D:
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        mov ecx, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        push 0x952ba4
+        push edi
+        call ext_0066A820
+        mov ecx, dword ptr [esp + 0x40]
+        add esp, 0xc
+        cmp ecx, dword ptr [esi + 0x44]
+        jb loc_522C50
+        call dword ptr [mem_00925134]
+    loc_522C50:
+        add dword ptr [esp + 0x34], 0x4
+        jmp loc_522BF4
+    loc_522C57:
+        cmp dword ptr [esi + 0xc4], 0x0
+        mov dword ptr [esp + 0x20], 0x0
+        jle loc_522C8E
+    loc_522C68:
+        mov edx, dword ptr [esp + 0x20]
+        push edx
+        push 0x952b9c
+        push edi
+        call ext_0066A820
+        mov eax, dword ptr [esp + 0x2c]
+        add eax, 0x1
+        add esp, 0xc
+        cmp eax, dword ptr [esi + 0xc4]
+        mov dword ptr [esp + 0x20], eax
+        jl loc_522C68
+    loc_522C8E:
+        push 0x93f198
+        mov ecx, edi
+        call ext_0066A980
+        cmp dword ptr [esi + 0xc4], 0x0
+        mov dword ptr [esp + 0x28], 0x0
+        jle loc_522D89
+    loc_522CAF:
+        fld qword ptr [ebx]
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        fstp qword ptr [esp + 0x3c]
+        fld qword ptr [ebx + 0x8]
+        add ebx, 0x8
+        push 0x952b94
+        fstp qword ptr [esp + 0x28]
+        push edi
+        add ebx, 0x8
+        call ext_0066A820
+        fld qword ptr [esp + 0x2c]
+        push ecx
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [esp + 0x48]
+        fstp qword ptr [esp]
+        push 0x952b84
+        push edi
+        call ext_0066A820
+        add esp, 0x18
+        cmp dword ptr [esi + 0xc0], 0x0
+        mov dword ptr [esp + 0x20], 0x0
+        jle loc_522D2D
+    loc_522D01:
+        fld qword ptr [ebx]
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        push 0x952b7c
+        push edi
+        call ext_0066A820
+        mov eax, dword ptr [esp + 0x30]
+        add eax, 0x1
+        add esp, 0x10
+        add ebx, 0x8
+        cmp eax, dword ptr [esi + 0xc0]
+        mov dword ptr [esp + 0x20], eax
+        jl loc_522D01
+    loc_522D2D:
+        cmp dword ptr [esi + 0xc4], 0x0
+        mov dword ptr [esp + 0x20], 0x0
+        jle loc_522D5F
+        mov edi, edi
+    loc_522D40:
+        push 0x92f67c
+        mov ecx, edi
+        call ext_0066A980
+        mov eax, dword ptr [esp + 0x20]
+        add eax, 0x1
+        cmp eax, dword ptr [esi + 0xc4]
+        mov dword ptr [esp + 0x20], eax
+        jl loc_522D40
+    loc_522D5F:
+        mov ecx, dword ptr [esp + 0x28]
+        push ecx
+        push 0x952b6c
+        push edi
+        call ext_0066A820
+        mov eax, dword ptr [esp + 0x34]
+        add eax, 0x1
+        add esp, 0xc
+        cmp eax, dword ptr [esi + 0xc4]
+        mov dword ptr [esp + 0x28], eax
+        jl loc_522CAF
+    loc_522D89:
+        mov eax, dword ptr [esi + 0x54]
+        cmp eax, dword ptr [esi + 0x58]
+        mov dword ptr [esp + 0x2c], eax
+        jbe loc_522D9F
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x2c]
+    loc_522D9F:
+        cmp dword ptr [esi + 0xc8], 0x0
+        mov dword ptr [esp + 0x34], eax
+        mov dword ptr [esp + 0x2c], 0x0
+        jle loc_522EEA
+    loc_522DB8:
+        fld qword ptr [ebx]
+        mov edx, dword ptr [esp + 0x34]
+        add ebx, 0x8
+        fstp qword ptr [esp + 0x38]
+        fld qword ptr [ebx]
+        add ebx, 0x8
+        cmp edx, dword ptr [esi + 0x58]
+        fstp qword ptr [esp + 0x20]
+        jb loc_522DD9
+        call dword ptr [mem_00925134]
+    loc_522DD9:
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        mov ecx, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        push 0x952b64
+        push edi
+        call ext_0066A820
+        fld qword ptr [esp + 0x2c]
+        push ecx
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [esp + 0x48]
+        fstp qword ptr [esp]
+        push 0x952b84
+        push edi
+        call ext_0066A820
+        add esp, 0x18
+        cmp dword ptr [esi + 0xc0], 0x0
+        mov dword ptr [esp + 0x20], 0x0
+        jle loc_522E4F
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    loc_522E30:
+        push 0x92f67c
+        mov ecx, edi
+        call ext_0066A980
+        mov eax, dword ptr [esp + 0x20]
+        add eax, 0x1
+        cmp eax, dword ptr [esi + 0xc0]
+        mov dword ptr [esp + 0x20], eax
+        jl loc_522E30
+    loc_522E4F:
+        cmp dword ptr [esi + 0xc4], 0x0
+        mov dword ptr [esp + 0x28], 0x0
+        jle loc_522E8C
+    loc_522E60:
+        fld qword ptr [ebx]
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        push 0x952b7c
+        push edi
+        call ext_0066A820
+        mov eax, dword ptr [esp + 0x38]
+        add eax, 0x1
+        add esp, 0x10
+        add ebx, 0x8
+        cmp eax, dword ptr [esi + 0xc4]
+        mov dword ptr [esp + 0x28], eax
+        jl loc_522E60
+    loc_522E8C:
+        mov ecx, dword ptr [esp + 0x34]
+        cmp ecx, dword ptr [esi + 0x58]
+        jb loc_522E9B
+        call dword ptr [mem_00925134]
+    loc_522E9B:
+        mov edx, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [edx]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        call edx
+        mov ecx, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        push 0x952b54
+        push edi
+        call ext_0066A820
+        mov eax, dword ptr [esp + 0x40]
+        add esp, 0xc
+        cmp eax, dword ptr [esi + 0x58]
+        jb loc_522ECE
+        call dword ptr [mem_00925134]
+    loc_522ECE:
+        mov eax, dword ptr [esp + 0x2c]
+        add dword ptr [esp + 0x34], 0x4
+        add eax, 0x1
+        cmp eax, dword ptr [esi + 0xc8]
+        mov dword ptr [esp + 0x2c], eax
+        jl loc_522DB8
+    loc_522EEA:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+    }
+}
