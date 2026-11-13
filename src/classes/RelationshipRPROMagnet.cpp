@@ -12,6 +12,12 @@ extern "C" void ext_007C9860();
 extern "C" void ext_007C9930();
 extern "C" void ext_007C9A60();
 extern "C" void ext_007D8700();
+extern "C" void ext_00480920();
+extern "C" void ext_00647F00();
+extern "C" void ext_007C9480();
+extern "C" void ext_007C9BC0();
+extern "C" void ext_007C97A0();
+extern "C" int mem_00B55748;
 extern "C" int mem_00A9BEB0;
 extern "C" int mem_00968ED8;
 
@@ -259,5 +265,106 @@ extern "C" __declspec(naked) void __fastcall fn_00648FD0(void* self) {
         call eax
         pop esi
         ret 0x8
+    }
+}
+
+// [0x0064B970] RelationshipRPROMagnet::vfunc_48 (293 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0064B970(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [ebx + 0x228]
+        test eax, eax
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        je loc_64B99B
+        mov eax, dword ptr [eax + 0x158]
+        mov ecx, dword ptr [eax + 0xac]
+        mov edx, dword ptr [ecx + 0xa4]
+        mov ebp, dword ptr [edx]
+        jmp loc_64B99D
+loc_64B99B:
+        xor ebp, ebp
+loc_64B99D:
+        mov eax, dword ptr [ebx + 0x22c]
+        test eax, eax
+        je loc_64B9C1
+        mov eax, dword ptr [eax + 0x158]
+        mov ecx, dword ptr [eax + 0xac]
+        mov edx, dword ptr [ecx + 0xa4]
+        mov eax, dword ptr [edx]
+        mov dword ptr [esp + 0x18], eax
+        jmp loc_64B9C9
+loc_64B9C1:
+        mov dword ptr [esp + 0x18], 0
+loc_64B9C9:
+        mov ecx, dword ptr [mem_00B55748]
+        mov edi, dword ptr [ecx + 0x28]
+        mov eax, dword ptr [edi + 0x40]
+        push eax
+        call ext_007C9BC0
+        push eax
+        mov dword ptr [esi + 0x94], eax
+        call ext_007D8700
+        mov edx, dword ptr [ebx + 0x22c]
+        mov dword ptr [esp + 0x18], eax
+        mov eax, dword ptr [edx + 0x158]
+        mov ecx, dword ptr [eax + 0xac]
+        add esp, 8
+        call ext_00647F00
+        test ebp, ebp
+        mov dword ptr [esi + 0x90], eax
+        je loc_64BA2C
+        mov ecx, dword ptr [ebx + 0x228]
+        mov edx, dword ptr [ecx + 0x158]
+        mov ecx, dword ptr [edx + 0xac]
+        call ext_00647F00
+        mov byte ptr [esi + 0x64], 1
+        jmp loc_64BA35
+loc_64BA2C:
+        call ext_00480920
+        mov byte ptr [esi + 0x64], 0
+loc_64BA35:
+        mov ecx, dword ptr [esi + 0x94]
+        mov dword ptr [esi + 0x68], eax
+        mov eax, dword ptr [esp + 0x18]
+        push ebp
+        push eax
+        push ecx
+        call ext_007D8700
+        add esp, 4
+        push eax
+        call ext_007C9480
+        mov edx, dword ptr [ebx + 4]
+        mov eax, dword ptr [esp + 0x28]
+        mov edx, dword ptr [edx + 0x14]
+        lea ecx, [ebx + 4]
+        add esp, 0xc
+        push eax
+        call edx
+        push eax
+        mov ecx, esi
+        call ext_006457F0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [edi + 0x38]
+        mov edx, dword ptr [esp + 0x10]
+        push eax
+        lea ecx, [eax + 1]
+        push edx
+        mov dword ptr [edi + 0x38], ecx
+        call ext_007C97A0
+        add esp, 8
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 8
     }
 }
