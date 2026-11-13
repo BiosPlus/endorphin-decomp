@@ -6027,3 +6027,15 @@ extern "C" __declspec(naked) void __fastcall fn_0065A9B0(void* self) {
         ret
     }
 }
+
+// [0x0065BD50] sub_0065BD50 (39 bytes)
+extern "C" void ext_007C8D00(void* p);
+
+extern "C" void __fastcall fn_0065BD50(void* self, int edx_unused, void* arg1) {
+    char* s = (char*)self;
+    typedef void (__cdecl *Fn)(void*);
+    Fn fn = *(Fn*)((char*)arg1 + 0x0C);
+    fn(*(void**)(s + 0x1C));
+    ext_007C8D00(*(void**)(s + 0x18));
+    *(int*)(s + 0x18) = 0;
+}
