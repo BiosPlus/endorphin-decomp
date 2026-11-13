@@ -2359,3 +2359,144 @@ done_005DFB10:
         ret 0x4
     }
 }
+
+// [0x005D9F90] sub_005D9F90 (379 bytes)
+// Inline SEH frame (try/catch) with four local std::string temporaries; written as naked asm so the
+// catch funnel and state numbers stay byte-identical (a C++ try/catch emits separate funclets).
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00924E90;
+extern "C" int mem_00925074;
+extern "C" int mem_00924E94;
+extern "C" int mem_00924E98;
+extern "C" void ext_00559770();
+extern "C" void ext_005D0790();
+extern "C" void ext_00663580();
+extern "C" void ext_00664ED0();
+
+extern "C" __declspec(naked) void __fastcall fn_005D9F90(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x8a5667
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x7c
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        lea ecx, [ebp - 0x34]
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        call dword ptr [mem_00924FE8]
+        lea ecx, [ebp - 0x88]
+        mov dword ptr [ebp - 0x4], 0x0
+        call dword ptr [mem_00924FE8]
+        lea ecx, [ebp - 0x6c]
+        mov byte ptr [ebp - 0x4], 0x1
+        call dword ptr [mem_00924FE8]
+        lea ecx, [ebp - 0x50]
+        mov byte ptr [ebp - 0x4], 0x2
+        call dword ptr [mem_00924FE8]
+        mov edi, dword ptr [ebp + 0x8]
+        lea eax, [ebp - 0x34]
+        push eax
+        lea ecx, [ebp - 0x50]
+        push ecx
+        lea edx, [ebp - 0x6c]
+        push edx
+        lea eax, [ebp - 0x88]
+        add edi, 0x4
+        push eax
+        mov ecx, edi
+        mov byte ptr [ebp - 0x4], 0x3
+        call dword ptr [mem_00924FF0]
+        push eax
+        call ext_00663580
+        lea ecx, [ebp - 0x34]
+        push ecx
+        call ext_00664ED0
+        lea edx, [ebp - 0x34]
+        push edx
+        mov byte ptr [ebp - 0x4], 0x4
+        call ext_00559770
+        mov ecx, dword ptr [esi + 0x4]
+        mov ebx, eax
+        add esp, 0x1c
+        cmp ebx, ecx
+        je L_after_release
+        test ecx, ecx
+        je L_after_release
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+L_after_release:
+        mov ecx, ebx
+        test ecx, ecx
+        mov dword ptr [esi + 0x4], ebx
+        je L_skip_vcall
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x54]
+        push 0x100
+        call edx
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x58]
+        push 0x100
+        call edx
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi]
+        mov dword ptr [eax + 0x420], ecx
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x2c]
+        push edi
+        call edx
+L_skip_vcall:
+        mov dword ptr [ebp - 0x4], 0x3
+L_resume:
+        lea ecx, [ebp - 0x50]
+        mov byte ptr [ebp - 0x4], 0x2
+        call dword ptr [mem_00924FF4]
+        lea ecx, [ebp - 0x6c]
+        mov byte ptr [ebp - 0x4], 0x1
+        call dword ptr [mem_00924FF4]
+        lea ecx, [ebp - 0x88]
+        mov byte ptr [ebp - 0x4], 0x0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [ebp - 0x34]
+        mov dword ptr [ebp - 0x4], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+catch_funnel:
+        mov ecx, dword ptr [ebp - 0x14]
+        push 0x0
+        add ecx, 0x4
+        call ext_005D0790
+        mov eax, dword ptr [mem_00924E90]
+        mov ecx, dword ptr [ebp - 0x18]
+        mov edx, dword ptr [mem_00925074]
+        push eax
+        add ecx, 0xc
+        push ecx
+        push edx
+        call dword ptr [mem_00924E94]
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov eax, 0x5da086
+        ret
+    }
+}
