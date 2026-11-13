@@ -6,7 +6,6 @@ extern "C" void ext_007D59C0();
 
 extern "C" __declspec(naked) void __cdecl fn_007D5C60(void) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 4]
         add eax, 0x6c
         push eax
@@ -34,7 +33,6 @@ extern "C" void ext_007D8420();
 
 extern "C" __declspec(naked) void __cdecl fn_007D8850(int a0, int a1) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 8]
         push eax
         call ext_007D8420
@@ -159,7 +157,6 @@ extern "C" void* __cdecl fn_007D4A70(void* self) {
 // [0x007DC8C0] sub_007DC8C0 (37 bytes)
 extern "C" __declspec(naked) void fn_007DC8C0() {
     __asm {
-        sub esp, 0x28
         movzx ecx, word ptr [eax]
         cmp cx, 0x24
         je done
@@ -181,7 +178,6 @@ done:
 // [0x007D48C0] sub_007D48C0 (38 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D48C0(void) {
     __asm {
-        sub esp, 0x28
         mov ecx, dword ptr [eax + 0x4]
         mov edx, dword ptr [ecx]
         mov dword ptr [eax + 0x4], edx
@@ -205,7 +201,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D48C0(void) {
 // [0x007D6260] sub_007D6260 (38 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D6260(void* self) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, dword ptr [esp + 8]
         mov eax, dword ptr [esi]
@@ -227,7 +222,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D6260(void* self) {
 // [0x007D5DA0] sub_007D5DA0 (39 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D5DA0(void) {
     __asm {
-        sub esp, 0x28
         push ecx
         mov dword ptr [esp], 0x0
         fnstcw word ptr [esp]
@@ -248,7 +242,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D5DA0(void) {
 // [0x007DEC80] sub_007DEC80 (39 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007DEC80(void* self) {
     __asm {
-        sub esp, 0x28
         mov dx, word ptr [esp + 4]
         fld dword ptr [esp + 8]
         mov word ptr [eax + 14h], dx
@@ -268,7 +261,6 @@ extern "C" __declspec(naked) void __fastcall fn_007DEC80(void* self) {
 // [0x007D48F0] sub_007D48F0 (40 bytes)
 extern "C" __declspec(naked) void fn_007D48F0() {
     __asm {
-        sub esp, 0x28
         mov ecx, dword ptr [eax]
         mov edx, dword ptr [ecx + 0x4]
         mov dword ptr [eax], edx
@@ -294,7 +286,6 @@ extern "C" void ext_007D5950();
 
 extern "C" __declspec(naked) void __cdecl fn_007DAD70(void) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 4]
         mov ecx, dword ptr [eax]
         mov edx, dword ptr [ecx + 0xc]
@@ -327,7 +318,6 @@ extern "C" int __cdecl fn_007DB8B0(float* src, float* out_xyz, float* out_w) {
 // [0x007DFD80] sub_007DFD80 (42 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007DFD80(void** out, int n, void* obj) {
     __asm {
-        sub esp, 0x28
         mov ecx, dword ptr [esp + 0xc]
         mov edx, dword ptr [ecx]
         push esi
@@ -361,7 +351,6 @@ extern "C" void ext_007DAD50();
 
 extern "C" __declspec(naked) void __cdecl fn_007DAE50(void* self) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, dword ptr [esp + 8]
         mov eax, dword ptr [esi + 0xb0]
@@ -411,7 +400,6 @@ extern "C" void __cdecl fn_007D86C0(void* self) {
 // [0x007D5B30] sub_007D5B30 (45 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D5B30(void* a1, void* a2, int a3) {
     __asm {
-        sub esp, 0x28
         mov edx, dword ptr [esp + 0x4]
         mov ecx, dword ptr [edx]
         mov eax, dword ptr [ecx]
@@ -436,7 +424,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D5B30(void* a1, void* a2, int a3
 // [0x007DD130] sub_007DD130 (45 bytes)
 extern "C" __declspec(naked) unsigned char __fastcall fn_007DD130(void* self, int edx_unused, int index) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 4]
         test eax, eax
         jl fail
@@ -461,7 +448,6 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_007DD130(void* self, in
 // [0x007D47D0] sub_007D47D0 (46 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D47D0(void) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 0x4]
         mov ecx, dword ptr [esp + 0x14]
         mov edx, dword ptr [esp + 0x8]
@@ -483,7 +469,6 @@ extern "C" void ext_007D8700();
 
 extern "C" __declspec(naked) void __cdecl fn_007D8860(void) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, dword ptr [esp + 8]
         push esi
@@ -509,7 +494,6 @@ extern "C" void ext_007D8860();
 
 extern "C" __declspec(naked) void __cdecl fn_007D8890(void) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 0x4]
         mov ecx, dword ptr [eax + 0x40]
         mov edx, dword ptr [ecx + 0x5f0]
@@ -531,7 +515,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D8890(void) {
 // [0x007DB9E0] sub_007DB9E0 (51 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007DB9E0(void* self) {
     __asm {
-        sub esp, 0x28
         fldz
         fst dword ptr [eax + 0x20]
         fst dword ptr [eax + 0x10]
@@ -558,7 +541,6 @@ extern "C" __declspec(naked) void __fastcall fn_007DB9E0(void* self) {
 // [0x007D6290] sub_007D6290 (52 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D6290(void* self, int state) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, dword ptr [esp + 8]
         mov eax, dword ptr [esi + 0x10]
@@ -603,7 +585,6 @@ extern "C" void __cdecl fn_007D6220(void* self, unsigned int a1, int a2) {
 // [0x007D4860] sub_007D4860 (54 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D4860(void) {
     __asm {
-        sub esp, 0x28
         mov ecx, dword ptr [esp + 0x8]
         test ecx, ecx
         push esi
@@ -635,7 +616,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D4860(void) {
 // [0x007D4720] sub_007D4720 (55 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D4720(void* self) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, dword ptr [esp + 8]
         cmp dword ptr [esi + 0x14], 0
@@ -716,7 +696,6 @@ extern "C" void __cdecl fn_007D5AF0(void* a1, void* a2, void* a3) {
 // [0x007D4820] sub_007D4820 (60 bytes)
 extern "C" __declspec(naked) int __cdecl fn_007D4820(void* self) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, dword ptr [esp + 8]
         mov eax, dword ptr [esi + 4]
@@ -757,7 +736,6 @@ extern "C" int mem_0099D148;
 extern "C" int mem_0093C1A8;
 extern "C" __declspec(naked) void __cdecl fn_007D59C0(void* self) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 4]
         fld dword ptr [mem_0099D148]
         xor ecx, ecx
@@ -801,7 +779,6 @@ extern "C" int __cdecl fn_007D5B60(void* self, void* out_a, void* out_b) {
 // [0x007DCAC0] sub_007DCAC0 (61 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007DCAC0(void* self) {
     __asm {
-        sub esp, 0x28
         push esi
         mov ecx, edx
         sar ecx, 0x10
@@ -836,7 +813,6 @@ found:
 // [0x007D4AA0] sub_007D4AA0 (64 bytes)
 extern "C" __declspec(naked) void* __cdecl fn_007D4AA0(void* a1, void* a2) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 8]
         mov ecx, dword ptr [eax + 4]
         mov edx, dword ptr [esp + 4]
@@ -878,7 +854,6 @@ extern "C" __declspec(naked) void* __cdecl fn_007D4AA0(void* a1, void* a2) {
 extern "C" void ext_007D4AA0();
 extern "C" __declspec(naked) void* __cdecl fn_007DA820(void* a1, void* a2) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 8]
         test eax, eax
         push esi
@@ -929,7 +904,6 @@ extern "C" void __cdecl fn_007DFD30(void* self) {
 extern "C" void ext_007C8880();
 extern "C" __declspec(naked) void __cdecl fn_007DFCE0(void* self, void* a, void* b) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp+8]
         mov ecx, dword ptr [esp+0xc]
         push esi
@@ -963,7 +937,6 @@ fn_007DFCE0_done:
 // [0x007D9630] sub_007D9630 (78 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007D9630(void* ecx_unused, int edx_unused, int* out, int a2, int a3, int a4) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 0xc]
         push esi
         mov esi, dword ptr [esp + 0x14]
@@ -1000,7 +973,6 @@ fn_007D9630_done:
 // [0x007D6660] sub_007D6660 (79 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007D6660(void* self) {
     __asm {
-        sub esp, 0x28
         mov ecx, eax
         and ecx, 0x80000003
         jns no_neg_fix
@@ -1045,7 +1017,6 @@ index_ok:
 // [0x007DB130] sub_007DB130 (83 bytes)
 extern "C" __declspec(naked) void __stdcall fn_007DB130(void* a1) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, dword ptr [esp + 0x8]
         mov eax, dword ptr [esi + 0x24]
@@ -1114,7 +1085,6 @@ extern "C" int __fastcall fn_007DFE30(float* self) {
 // [0x007DB6C0] sub_007DB6C0 (96 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007DB6C0(void* self) {
     __asm {
-        sub esp, 0x28
         push edi
         mov edi, dword ptr [esp + 0x8]
         test edi, edi
@@ -1183,7 +1153,6 @@ extern "C" void ext_007DCBB0(int a);
 
 extern "C" __declspec(naked) void __fastcall fn_007DD040(void* self) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, ecx
         mov eax, dword ptr [esi + 0x8]
@@ -1247,7 +1216,6 @@ extern "C" void __cdecl ext_007D8760(void* a, void* b);
 
 extern "C" __declspec(naked) void* __cdecl fn_007D83B0(void* self, void* arg2) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, dword ptr [esp + 0x8]
         push 0xd8
@@ -1362,7 +1330,6 @@ extern "C" void ext_007D5950();
 
 extern "C" __declspec(naked) void __cdecl fn_007D4800(void* self) {
     __asm {
-        sub esp, 0x28
         mov ecx, dword ptr [esp + 4]
         mov eax, dword ptr [ecx + 4]
         test eax, eax
@@ -1382,7 +1349,6 @@ done:
 // [0x007DADA0] sub_007DADA0 (33 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007DADA0(void* self) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 4]
         mov ecx, dword ptr [eax + 0xc]
         mov edx, dword ptr [ecx + 0xb0]
@@ -1401,7 +1367,6 @@ extern "C" void ext_007D5950();
 
 extern "C" __declspec(naked) void __cdecl fn_007D7190(int* p, int a2, int a3, int a4, int a5) {
     __asm {
-        sub esp, 0x28
         mov edx, dword ptr [esp + 4]
         mov eax, dword ptr [edx]
         mov ecx, dword ptr [esp + 0x10]
@@ -1433,7 +1398,6 @@ extern "C" void ext_007D5950();
 
 extern "C" __declspec(naked) void __cdecl fn_007D9680(unsigned int* self, unsigned int n, int a3, int a4) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, dword ptr [esp + 8]
         mov eax, dword ptr [esi]
@@ -1467,7 +1431,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D9680(unsigned int* self, unsign
 // [0x007DCA30] sub_007DCA30 (106 bytes)
 extern "C" __declspec(naked) void* __cdecl fn_007DCA30(int a1, int n, void* alloc) {
     __asm {
-        sub esp, 0x28
         push esi
         push edi
         mov edi, dword ptr [esp + 0x14]
@@ -1519,7 +1482,6 @@ extern "C" __declspec(naked) void* __cdecl fn_007DCA30(int a1, int n, void* allo
 // [0x007DD160] sub_007DD160 (109 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007DD160(void* self, int edx_unused, int a1, int a2) {
     __asm {
-        sub esp, 0x28
         push ebx
         mov ebx, dword ptr [esp + 0Ch]
         push ebp
@@ -1578,7 +1540,6 @@ L_007DD179:
 // [0x007DCC20] sub_007DCC20 (110 bytes)
 extern "C" __declspec(naked) int __cdecl fn_007DCC20(void* a1, void* a2, void* a3) {
     __asm {
-        sub esp, 0x28
         mov ecx, dword ptr [esp + 0x8]
         push ebx
         push ebp
@@ -1638,7 +1599,6 @@ extern "C" void ext_007C9280();
 
 extern "C" __declspec(naked) void __cdecl fn_007DA8E0(void) {
     __asm {
-        sub esp, 0x28
         push esi
         push edi
         mov edi, dword ptr [esp + 0x10]
@@ -1670,7 +1630,6 @@ extern "C" int mem_009241A0;
 extern "C" int mem_0092419C;
 extern "C" __declspec(naked) void __cdecl fn_007D5DD0(void* self) {
     __asm {
-        sub esp, 0x28
         push ebx
         push edi
         mov edi, dword ptr [esp + 0xc]
@@ -1719,7 +1678,6 @@ epilogue:
 // [0x007D5BD0] sub_007D5BD0 (118 bytes)
 extern "C" __declspec(naked) int __cdecl fn_007D5BD0(const char* a, const char* b) {
     __asm {
-        sub esp, 0x28
         mov ecx, dword ptr [esp + 0x4]
         mov eax, dword ptr [ecx + 0x24]
         mov edx, dword ptr [esp + 0x8]
@@ -1773,7 +1731,6 @@ reject_007D5BD0:
 // [0x007DB640] sub_007DB640 (120 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007DB640(void* self) {
     __asm {
-        sub esp, 0x28
         sub esp, 0ch
         fld dword ptr [ecx]
         fsub dword ptr [eax + 30h]
@@ -1829,7 +1786,6 @@ extern "C" int mem_0092A278;
 extern "C" int mem_0099E0B4;
 extern "C" __declspec(naked) void __cdecl fn_007D8600(void* self, float x, float y, float z) {
     __asm {
-        sub esp, 0x28
         mov ecx, dword ptr [esp + 0x4]
         fld dword ptr [esp + 0x8]
         fstp dword ptr [ecx + 0x78]
@@ -1884,7 +1840,6 @@ extern "C" double mem_00993830;
 
 extern "C" __declspec(naked) void __fastcall fn_007DEC00(void* unused, void* self) {
     __asm {
-        sub esp, 0x28
         fld dword ptr [edx + 0x10]
         push esi
         fld qword ptr [mem_00993830]
@@ -1944,7 +1899,6 @@ extern "C" void ext_007D58E0();
 
 extern "C" __declspec(naked) void __cdecl fn_007D62D0(void* self, int n) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, dword ptr [esp + 0x8]
         push edi
@@ -2007,7 +1961,6 @@ extern "C" void* __cdecl ext_007D62D0(void* a0, int n);
 
 extern "C" __declspec(naked) void* __cdecl fn_007DA850(void* a1, int n, int m) {
     __asm {
-        sub esp, 0x28
         push ebx
         mov ecx, dword ptr [esp + 0x8]
         push ebp
@@ -2063,7 +2016,6 @@ extern "C" void ext_007D5950();
 
 extern "C" __declspec(naked) void __cdecl fn_007D7990(void) {
     __asm {
-        sub esp, 0x28
         push ebx
         mov ebx, dword ptr [esp + 0x14]
         mov eax, dword ptr [ebx + 0x10]
@@ -2153,7 +2105,6 @@ extern "C" int __cdecl fn_007DC770(int* self) {
 // [0x007DD0A0] sub_007DD0A0 (144 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007DD0A0(void* self) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 0x4]
         test eax, eax
         push esi
@@ -2218,7 +2169,6 @@ extern "C" void ext_007D4650();
 
 extern "C" __declspec(naked) void __cdecl fn_007D4680(void* self, int count, int start, int div, void** ops) {
     __asm {
-        sub esp, 0x28
         push ebx
         mov ebx, dword ptr [esp+0ch]
         push ebp
@@ -2289,7 +2239,6 @@ extern "C" int mem_009242E0;
 
 extern "C" __declspec(naked) int __cdecl fn_007D5F50(void* s, void* arg2) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 8]
         test eax, eax
         push ebx
@@ -2360,7 +2309,6 @@ extern "C" __declspec(naked) int __cdecl fn_007D5F50(void* s, void* arg2) {
 // [0x007D5A40] sub_007D5A40 (159 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D5A40(void* a1, void* a2, int a3) {
     __asm {
-        sub esp, 0x28
         sub esp, 0xc
         push esi
         mov esi, dword ptr [esp + 0x14]
@@ -2431,7 +2379,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D5A40(void* a1, void* a2, int a3
 // [0x007DEB50] sub_007DEB50 (164 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007DEB50(void* self) {
     __asm {
-        sub esp, 0x28
         push esi
         add edx, 8
         add eax, 8
@@ -2506,7 +2453,6 @@ extern "C" int mem_00AB28B8;
 
 extern "C" __declspec(naked) void* __cdecl fn_007DCB00(void) {
     __asm {
-        sub esp, 0x28
         push ebx
         push ebp
         push esi
@@ -2590,7 +2536,6 @@ extern "C" void ext_007DEB50();
 
 extern "C" __declspec(naked) void __cdecl fn_007DC7D0(void) {
     __asm {
-        sub esp, 0x28
         sub esp, 0x40
         push edi
         mov edi, dword ptr [esp + 0x48]
@@ -2641,7 +2586,6 @@ extern "C" __declspec(naked) void __cdecl fn_007DC7D0(void) {
 // [0x007D8EB0] sub_007D8EB0 (172 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D8EB0(char** objs, float* mats, int unused_a3, int unused_a4, int count) {
     __asm {
-        sub esp, 0x28
         push edi
         mov edi, dword ptr [esp + 0x18]
         xor edx, edx
@@ -2709,7 +2653,6 @@ extern "C" void ext_007D8710();
 
 extern "C" __declspec(naked) void __cdecl fn_007D6B00(void) {
     __asm {
-        sub esp, 0x28
         mov edx, dword ptr [esp + 0x14]
         sub esp, 8
         push edi
@@ -2795,7 +2738,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D6B00(void) {
 // Body reads its single argument from the stack ([esp+4] at entry), so declared __cdecl.
 extern "C" __declspec(naked) void __cdecl fn_007DFB60(void* self) {
     __asm {
-        sub esp, 0x28
         push esi
         mov esi, dword ptr [esp + 0x8]
         mov eax, dword ptr [esi + 0x8]
@@ -2874,7 +2816,6 @@ loop_body:
 // [0x007DFE90] sub_007DFE90 (190 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007DFE90(float* b, float* c, float t, float* a, float* out) {
     __asm {
-        sub esp, 0x28
         sub esp, 0ch
         mov eax, dword ptr [esp + 1ch]
         mov ecx, dword ptr [esp + 10h]
@@ -2979,7 +2920,6 @@ extern "C" void __cdecl fn_007D84A0(char* self, void* a1, void* a2, float* out) 
 // [0x007DB560] sub_007DB560 (219 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007DB560(void* self) {
     __asm {
-        sub esp, 0x28
         fld dword ptr [ecx]
         fmul dword ptr [eax]
         fld dword ptr [ecx + 0x4]
@@ -3070,7 +3010,6 @@ extern "C" void ext_007DB560();
 // [0x007DBA20] sub_007DBA20 (166 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007DBA20(void) {
     __asm {
-        sub esp, 0x28
         sub esp, 48h
         fld dword ptr [ebx]
         push esi
@@ -3127,7 +3066,6 @@ extern "C" __declspec(naked) void __cdecl fn_007DBA20(void) {
 extern "C" int mem_0099EBF0;
 extern "C" __declspec(naked) void* __fastcall fn_007DDF30(void* self, int edx_unused, unsigned int a1, unsigned int a2, unsigned int a3) {
     __asm {
-        sub esp, 0x28
         push ebx
         push esi
         mov esi, ecx
@@ -3219,7 +3157,6 @@ L_skip_memset:
 // [0x007D70A0] sub_007D70A0 (230 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D70A0(void* self, int i) {
     __asm {
-        sub esp, 0x28
         fldz
         push ebx
         mov ebx, dword ptr [esp + 8]
@@ -3310,7 +3247,6 @@ extern "C" void ext_007F56E0();
 extern "C" int mem_0093C1A8;
 extern "C" __declspec(naked) void __cdecl fn_007DB8E0(void* a0, void* a1) {
     __asm {
-        sub esp, 0x28
         sub esp, 0x14
         mov eax, dword ptr [esp + 0x18]
         fld dword ptr [mem_0093C1A8]
@@ -3422,7 +3358,6 @@ extern "C" int mem_00AB28C8;
 
 extern "C" __declspec(naked) int __cdecl fn_007DCDD0(void* a1, void* a2, void* a3) {
     __asm {
-        sub esp, 0x28
         mov ecx, dword ptr [esp + 0xc]
         mov eax, dword ptr [esp + 0x8]
         push ebx
@@ -3536,7 +3471,6 @@ dd0_ret1:
 // [0x007D5E50] sub_007D5E50 (253 bytes)
 extern "C" __declspec(naked) int __cdecl fn_007D5E50(void* a, void* b) {
     __asm {
-        sub esp, 0x28
         sub esp, 0x8
         push ebp
         mov ebp, dword ptr [esp + 0x14]
@@ -3651,7 +3585,6 @@ extern "C" void ext_007D48C0();
 extern "C" void ext_007D48F0();
 extern "C" __declspec(naked) void __cdecl fn_007D4970(void* head, void* node, int key) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 0xc]
         push ebx
         mov ebx, dword ptr [esp + 0xc]
@@ -3772,7 +3705,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D4970(void* head, void* node, in
 // [0x007DFA40] sub_007DFA40 (260 bytes)
 extern "C" __declspec(naked) void* __cdecl fn_007DFA40(char* self) {
     __asm {
-        sub esp, 0x28
         push ebx
         push esi
         push edi
@@ -3866,7 +3798,6 @@ extern "C" void ext_007F63D0();
 extern "C" int mem_00AB28C8;
 extern "C" __declspec(naked) void __cdecl fn_007DCED0(void* self) {
     __asm {
-        sub esp, 0x28
         push ebx
         push ebp
         push esi
@@ -3988,7 +3919,6 @@ extern "C" void ext_007CA240();
 
 extern "C" __declspec(naked) void __cdecl fn_007D6980(void* a1, int idx, void* s) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 8]
         sub esp, 4Ch
         push ebx
@@ -4093,7 +4023,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D6980(void* a1, int idx, void* s
 // [0x007DB390] sub_007DB390 (295 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007DB390(void* a1, void* a2) {
     __asm {
-        sub esp, 0x28
         sub     esp, 0x18
         push    edi
         mov     edi, dword ptr [esp + 0x20]
@@ -4224,7 +4153,6 @@ extern "C" int mem_0099D148;
 extern "C" int mem_0093C1A8;
 extern "C" __declspec(naked) int __cdecl fn_007DB780(void* self, int flag, int x) {
     __asm {
-        sub esp, 0x28
         push ebp
         mov ebp, esp
         sub esp, 0x18
@@ -4337,7 +4265,6 @@ L_end:
 // [0x007D6BB0] sub_007D6BB0 (306 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D6BB0(void* self, float* src, float* scale) {
     __asm {
-        sub esp, 0x28
         sub esp, 8
         mov eax, dword ptr [esp+0xc]
         mov ecx, dword ptr [eax+0xb4]
@@ -4460,7 +4387,6 @@ extern "C" void ext_007D6BB0();
 // [0x007D6CF0] sub_007D6CF0 (224 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D6CF0(void) {
     __asm {
-        sub esp, 0x28
         push ecx
         mov ecx, dword ptr [esp + 8]
         push ebx
@@ -4566,7 +4492,6 @@ extern "C" int mem_00AB28C4;
 
 extern "C" __declspec(naked) void __cdecl fn_007DCC90(void) {
     __asm {
-        sub esp, 0x28
         mov     eax, dword ptr [esp + 0x0c]
         push    ebx
         push    ebp
@@ -4708,7 +4633,6 @@ extern "C" void ext_007DCDD0();
 
 extern "C" __declspec(naked) void __fastcall fn_007DD1D0(void* self) {
     __asm {
-        sub esp, 0x28
         mov edx, dword ptr [esp + 0x4]
         push ebx
         mov ebx, dword ptr [esp + 0xc]
@@ -4843,7 +4767,6 @@ extern "C" int mem_0099EB74;
 
 extern "C" __declspec(naked) void __cdecl fn_007DC8F0(void) {
     __asm {
-        sub esp, 0x28
         sub esp, 0x20c
         mov eax, dword ptr [mem_00AA7E40]
         xor eax, esp
@@ -5005,7 +4928,6 @@ extern "C" int mem_0092C180;
 
 extern "C" __declspec(naked) void fn_007DC600() {
     __asm {
-        sub esp, 0x28
         push    ebp
         lea     ebp, [esp - 0x68]
         sub     esp, 0xb8
@@ -5150,7 +5072,6 @@ extern "C" int mem_009241C0;
 
 extern "C" __declspec(naked) void __cdecl fn_007D60B0(void* self) {
     __asm {
-        sub esp, 0x28
         push ecx
         push ebx
         push ebp
@@ -5282,7 +5203,6 @@ extern "C" int mem_0099DEB8;
 
 extern "C" __declspec(naked) void __fastcall fn_007D5170(void* self) {
     __asm {
-        sub esp, 0x28
         sub esp, 0x10
         push esi
         mov esi, dword ptr [esp + 0x1c]
@@ -5426,7 +5346,6 @@ extern "C" int mem_0099DEC8;
 extern "C" int mem_00993828;
 extern "C" __declspec(naked) void __cdecl fn_007D52F0() {
     __asm {
-        sub esp, 0x28
         sub esp, 0x24
         push esi
         mov esi, dword ptr [esp+0x30]
@@ -5577,7 +5496,6 @@ extern "C" __declspec(naked) void __cdecl fn_007D52F0() {
 extern "C" int mem_00993840;
 extern "C" __declspec(naked) void __cdecl fn_007D64B0(void* self, float t, float* v) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp+4]
         cmp dword ptr [eax+0x1ec], 0
         je L_clear
@@ -5717,7 +5635,6 @@ extern "C" void ext_007D4AA0();
 // [0x007D4B90] sub_007D4B90 (426 bytes)
 extern "C" __declspec(naked) void __cdecl fn_007D4B90(void* a1, void* a2) {
     __asm {
-        sub esp, 0x28
         mov eax, dword ptr [esp + 4]
         push ebx
         mov ebx, dword ptr [esp + 0xc]
@@ -5905,7 +5822,6 @@ extern "C" void ext_007FC440();
 
 extern "C" __declspec(naked) void __cdecl fn_007DFF50(void) {
     __asm {
-        sub esp, 0x28
         mov ecx, dword ptr [esp + 8]
         xor eax, eax
         mov ah, byte ptr [esp + 0x14]
@@ -6118,7 +6034,6 @@ extern "C" int mem_00AA7E40;
 
 extern "C" __declspec(naked) void fn_007DC440() {
     __asm {
-        sub esp, 0x28
         push    ebp
         lea     ebp, [esp - 0x6c]
         sub     esp, 0xe0
@@ -6289,7 +6204,6 @@ extern "C" int mem_0099D148;
 
 extern "C" __declspec(naked) void __cdecl fn_007DE040(void* self, int a1, int n, int m) {
     __asm {
-        sub esp, 0x28
         push -1
         push 0x8c1cf1
         mov eax, dword ptr fs:[0]
@@ -6452,7 +6366,6 @@ extern "C" __declspec(naked) void __cdecl fn_007DE040(void* self, int a1, int n,
 // [0x007DD4E0] sub_007DD4E0 (465 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007DD4E0(void* self, int edx_unused, void* a1) {
     __asm {
-        sub esp, 0x28
         sub esp, 24h
         mov edx, dword ptr [esp + 28h]
         fld dword ptr [edx + 8h]
@@ -6631,7 +6544,6 @@ a_6AD:
 // [0x007DD6C0] sub_007DD6C0 (472 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007DD6C0(void* self, int edx_unused, void* a1) {
     __asm {
-        sub esp, 0x28
         sub esp, 24h
         push ebx
         mov ebx, ecx
@@ -6820,7 +6732,6 @@ loc_7DD894:
 // [0x007DD8A0] sub_007DD8A0 (473 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007DD8A0(void* self, int edx_unused, void* a1) {
     __asm {
-        sub esp, 0x28
         sub esp, 24h
         mov edx, dword ptr [esp + 28h]
         fld dword ptr [edx + 8h]
@@ -7003,7 +6914,6 @@ extern "C" void ext_007DCDD0();
 
 extern "C" __declspec(naked) void __fastcall fn_007DD300(void* self, int edx_unused, void* a1) {
     __asm {
-        sub esp, 0x28
         sub esp, 24h
         push ebx
         mov ebx, ecx
@@ -7188,7 +7098,6 @@ L7DD4DB:
 extern "C" void ext_007E46B0();
 extern "C" __declspec(naked) void __fastcall fn_007DB190(void* self) {
     __asm {
-        sub esp, 0x28
         sub esp, 0x18
         mov ecx, dword ptr [esp + 0x20]
         fld dword ptr [ecx]
@@ -7377,7 +7286,6 @@ extern "C" void ext_007D58E0();
 extern "C" void ext_007DAD40();
 extern "C" __declspec(naked) void fn_007DF3A0() {
     __asm {
-        sub esp, 0x28
         sub esp, 0x148
         push ebp
         mov ebp, dword ptr [esp + 0x150]
@@ -7597,7 +7505,6 @@ extern "C" void ext_007DD0A0();
 extern "C" void ext_007DCDD0();
 extern "C" __declspec(naked) bool __fastcall fn_007DE8C0(void* self, int edx_unused, int idx) {
     __asm {
-        sub esp, 0x28
         sub esp, 0x14
         push ebp
         mov ebp, dword ptr [esp + 0x1c]
@@ -7837,7 +7744,6 @@ extern "C" void ext_007DF3A0();
 
 extern "C" __declspec(naked) void __fastcall fn_007DF610(void* self) {
     __asm {
-        sub esp, 0x28
         push ebx
         mov ebx, eax
         mov eax, dword ptr [ebx + 0x38]
@@ -7896,7 +7802,6 @@ extern "C" void ext_007D7190();
 
 extern "C" __declspec(naked) void __fastcall fn_007D7700(void* self) {
     __asm {
-        sub esp, 0x28
         mov ecx, dword ptr [esp + 0x14]
         sub esp, 0x1c
         push ebx
@@ -8149,7 +8054,6 @@ extern "C" void ext_007FC4E0();
 
 extern "C" __declspec(naked) void __cdecl fn_007D5490(void* self, float b, float a, const float* p, const float* v, const float* s) {
     __asm {
-        sub esp, 0x28
         push ebp
         mov ebp, esp
         and esp, -8
@@ -8399,7 +8303,6 @@ extern "C" void ext_007D6660();
 
 extern "C" __declspec(naked) int __fastcall fn_007D66B0(void* self) {
     __asm {
-        sub esp, 0x28
         sub esp, 0x24
         mov eax, dword ptr [esp + 0x3c]
         fld dword ptr [esp + 0x34]
@@ -8620,7 +8523,6 @@ extern "C" __declspec(naked) int __fastcall fn_007D66B0(void* self) {
 // [0x007D6DD0] sub_007D6DD0 (718 bytes)
 extern "C" __declspec(naked) void __fastcall fn_007D6DD0(void* self) {
     __asm {
-        sub esp, 0x28
         mov edx, dword ptr [esp + 0x10]
         sub esp, 0x24
         push ebx
@@ -8863,7 +8765,6 @@ extern "C" int mem_0099D148;
 extern "C" double mem_00993830;
 extern "C" __declspec(naked) void __fastcall fn_007DAED0(void* self) {
     __asm {
-        sub esp, 0x28
         sub esp, 0x14
         mov eax, dword ptr [esp + 0x24]
         push ebx
@@ -8972,7 +8873,6 @@ extern "C" void ext_007D5AE0();
 extern "C" void ext_007DAED0();
 extern "C" __declspec(naked) void __fastcall fn_007DAFF0(void* self) {
     __asm {
-        sub esp, 0x28
         sub esp, 0x18
         push ebx
         push esi
@@ -9029,7 +8929,6 @@ extern "C" void ext_007DA8D0();
 extern "C" void ext_007DA8E0();
 extern "C" __declspec(naked) void __fastcall fn_007DA920(void* self) {
     __asm {
-        sub esp, 0x28
         push	ebp // 7DA920: 55
         mov	ebp, esp // 7DA921: 8b ec
         sub	esp, 0x28 // 7DA923: 83 ec 28
