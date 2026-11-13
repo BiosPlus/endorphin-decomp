@@ -4431,3 +4431,13 @@ extern "C" void __fastcall fn_006ABDF0(void* self, int edx_unused, int a1, int a
     }
     ((void (__thiscall*)(void*))ext_006A5EA8)(self);
 }
+
+// [0x006AB7C0] sub_006AB7C0 (63 bytes)
+extern "C" void __fastcall fn_006AB7C0(void* self, int edx_unused, int a1, int a2, int a3) {
+    ((void (__thiscall*)(void*, int*))ext_006AB4F0)(self, &a2);
+    void* obj = ((void* (__thiscall*)(void*, int*))ext_006AA1B0)(self, &a2);
+    if (obj) {
+        (*(void (__thiscall**)(void*, void*, int, int))(*(int*)self + 0x168))(self, obj, a2, a3);
+    }
+    ((void (__thiscall*)(void*))ext_006A5EA8)(self);
+}
