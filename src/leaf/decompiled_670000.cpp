@@ -11202,3 +11202,16 @@ extern "C" void __fastcall fn_006720E0(void** self, int edx_unused, void* arg1) 
     typedef void (__thiscall *AssignFn)(void*, void*);
     ((AssignFn)mem_00924FDC)(self[0], arg1);
 }
+
+// [0x00672110] sub_00672110 (52 bytes)
+extern "C" void __fastcall fn_00672110(void** self, int edx_unused, const float* arg1) {
+    void* obj = (void*)ext_00671100(4);
+    self[1] = obj;
+    typedef void (__thiscall *VFn)(void*, void*);
+    VFn* vtbl = *(VFn**)obj;
+    vtbl[0x74 / 4](obj, self);
+    float* dst = (float*)self[0];
+    dst[0] = arg1[0];
+    dst[1] = arg1[1];
+    dst[2] = arg1[2];
+}
