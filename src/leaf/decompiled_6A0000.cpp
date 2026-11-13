@@ -9073,3 +9073,97 @@ extern "C" __declspec(naked) void __fastcall fn_006A43D0(void* self) {
         ret
     }
 }
+
+// [0x006A4B50] sub_006A4B50 (202 bytes)
+extern "C" void ext_006A43D0();
+extern "C" void ext_006A6EF8();
+
+extern "C" __declspec(naked) void __fastcall fn_006A4B50(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [esi]
+        shr edi, 3
+        and edi, 0x3f
+        test ebx, ebx
+        lea eax, [ebx * 8]
+        jle loc_6A4C15
+        add dword ptr [esi], eax
+        mov ecx, ebx
+        sar ecx, 0x1d
+        add dword ptr [esi + 4], ecx
+        cmp dword ptr [esi], eax
+        mov ecx, dword ptr [esi + 4]
+        jae loc_6A4B8E
+        add ecx, 1
+        mov dword ptr [esi + 4], ecx
+loc_6A4B8E:
+        test edi, edi
+        je loc_6A4BDD
+        lea edx, [edi + ebx]
+        cmp edx, 0x40
+        jle loc_6A4BA3
+        mov ebp, 0x40
+        sub ebp, edi
+        jmp loc_6A4BA5
+loc_6A4BA3:
+        mov ebp, ebx
+loc_6A4BA5:
+        mov eax, dword ptr [esp + 0x18]
+        push ebp
+        push eax
+        lea ecx, [edi + esi + 0x18]
+        push ecx
+        call ext_006A6EF8
+        lea edx, [edi + ebp]
+        add esp, 0xc
+        cmp edx, 0x40
+        jl loc_6A4C15
+        mov eax, dword ptr [esp + 0x18]
+        lea ecx, [eax + ebp]
+        lea eax, [esi + 0x18]
+        push esi
+        mov dword ptr [esp + 0x1c], ecx
+        sub ebx, ebp
+        call ext_006A43D0
+        mov ebp, dword ptr [esp + 0x1c]
+        add esp, 4
+loc_6A4BDD:
+        cmp ebx, 0x40
+        jl loc_6A4C03
+        mov edi, ebx
+        shr edi, 6
+        mov edx, edi
+        neg edx
+        shl edx, 6
+        add ebx, edx
+loc_6A4BF0:
+        push esi
+        mov eax, ebp
+        call ext_006A43D0
+        add esp, 4
+        add ebp, 0x40
+        sub edi, 1
+        jne loc_6A4BF0
+loc_6A4C03:
+        test ebx, ebx
+        je loc_6A4C15
+        push ebx
+        push ebp
+        add esi, 0x18
+        push esi
+        call ext_006A6EF8
+        add esp, 0xc
+loc_6A4C15:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
