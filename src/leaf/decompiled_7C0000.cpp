@@ -7876,3 +7876,29 @@ extern "C" void __cdecl fn_007C6C60(void* self) {
     char* p = *(char**)(ebp + 0x17c);
     *(int*)(p + 0x10c) -= 1;
 }
+
+// [0x007C9BF0] sub_007C9BF0 (85 bytes)
+extern "C" void ext_007C8F80();
+extern "C" void ext_007C9D80();
+extern "C" __declspec(naked) void __fastcall fn_007C9BF0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push eax
+        push esi
+        call ext_007C8F80
+        lea ecx, [esi + 160h]
+        push ecx
+        mov dword ptr [esi + 0b0h], 1
+        mov dword ptr [esi + 0a0h], 7CF820h
+        mov dword ptr [esi + 0a4h], 6
+        mov dword ptr [esi + 0a8h], 7C97C0h
+        mov dword ptr [esi + 0ach], 7C9130h
+        call ext_007C9D80
+        add esp, 0ch
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
