@@ -6564,3 +6564,46 @@ L_6966e9:
         ret
     }
 }
+
+// [0x0069B220] sub_0069B220 (100 bytes)
+extern "C" void ext_006A2B20();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00A1A86C;
+
+extern "C" __declspec(naked) void* __fastcall fn_0069B220(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        sub esp, 0x28
+        cmp byte ptr [ecx + 0x90], 0
+        jne L_69b247
+        push ecx
+        push 8
+        lea ecx, [esp + 8]
+        call ext_006A2B20
+        push offset mem_00A1A86C
+        lea eax, [esp + 4]
+        push eax
+        call ext_006A6DD2
+L_69b247:
+        mov eax, dword ptr [esp + 0x30]
+        cmp eax, 0x3c
+        je L_69b27a
+        cmp eax, 0x50
+        je L_69b27a
+        cmp eax, 0x12
+        je L_69b27a
+        cmp eax, 0x13
+        je L_69b27a
+        push ecx
+        push 9
+        lea ecx, [esp + 8]
+        call ext_006A2B20
+        push offset mem_00A1A86C
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+L_69b27a:
+        mov eax, dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 0xc
+    }
+}
