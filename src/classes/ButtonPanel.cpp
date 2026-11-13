@@ -726,3 +726,28 @@ extern "C" __declspec(naked) void __fastcall fn_00455F80(void* self) {
     }
 }
 
+
+// [0x004582F0] ButtonPanel::vfunc_81 (35 bytes)
+extern "C" void ext_00454DB0();
+extern "C" void ext_006A5FE0();
+extern "C" __declspec(naked) void __fastcall fn_004582F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push edi
+        push ebx
+        mov esi, ecx
+        call ext_00454DB0
+        push edi
+        push ebx
+        mov ecx, esi
+        call ext_006A5FE0
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
