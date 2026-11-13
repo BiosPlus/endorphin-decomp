@@ -3800,3 +3800,32 @@ extern "C" __declspec(naked) void __fastcall fn_00649840(void* self) {
         ret
     }
 }
+
+// [0x0064F950] sub_0064F950 (93 bytes)
+extern "C" void ext_0064E320();
+extern "C" __declspec(naked) void __fastcall fn_0064F950(void* self) {
+    __asm {
+        push -1
+        push 0x8b1828
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x97e0bc
+        mov dword ptr [esi + 0x4], 0x97e0a4
+        mov dword ptr [esi + 0x8], 0x97e070
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_0064E320
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_00645EB0
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
