@@ -631,3 +631,30 @@ extern "C" void __fastcall fn_004E26C0(void* self, int edx_unused, bool a1) {
         ((void (__thiscall*)(void*, int))ext_004E1DC0)(self, 0);
     }
 }
+
+// [0x004E3570] NMData::AnimationEventData::vfunc_76 (55 bytes)
+extern "C" void ext_0041A920();
+extern "C" __declspec(naked) void __fastcall fn_004E3570(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        lea eax, [esp + 0x10]
+        lea esi, [edi + 0x9b0]
+        push eax
+        mov ecx, esi
+        call ext_0041A920
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe short L_ok_004E3570
+        call dword ptr [mem_00925134]
+    L_ok_004E3570:
+        mov dword ptr [edi + 0x9c0], esi
+        mov dword ptr [edi + 0x9c4], ebx
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
