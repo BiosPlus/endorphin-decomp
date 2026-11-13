@@ -11276,3 +11276,18 @@ extern "C" __declspec(naked) int __cdecl fn_00671490(const void* arg0) {
         ret
     }
 }
+
+// [0x0067E990] sub_0067E990 (78 bytes)
+struct Mat64_67E990 {
+    int d[16];
+};
+extern "C" void __fastcall ext_0067E880(void* self);
+extern "C" void ext_004875A0();
+typedef Mat64_67E990* (__thiscall *Fn004875A0_t)(void*, Mat64_67E990*, Mat64_67E990*);
+
+extern "C" void __fastcall fn_0067E990(Mat64_67E990* self, int edx_unused, const Mat64_67E990* arg) {
+    Mat64_67E990 tmp = *arg;
+    ext_0067E880(&tmp);
+    Mat64_67E990 out;
+    *self = *((Fn004875A0_t)ext_004875A0)(self, &out, &tmp);
+}
