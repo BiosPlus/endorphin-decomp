@@ -5966,3 +5966,113 @@ loc_4749f5:
         ret 0x4
     }
 }
+
+// [0x00478A10] sub_00478A10 (228 bytes)
+extern "C" void ext_006404E0();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void* __cdecl fn_00478A10(void* a1, void* a2, void* a3, void* a4, void* a5) {
+    __asm {
+        sub esp, 0Ch
+        push esi
+        mov esi, dword ptr [esp + 14h]
+        cmp dword ptr [esi + 8], 0
+        jne L_478A28
+        mov eax, 0B53B30h
+        pop esi
+        add esp, 0Ch
+        ret
+L_478A28:
+        mov eax, dword ptr [esp + 1Ch]
+        test eax, eax
+        push ebx
+        push ebp
+        push edi
+        je L_478A41
+        mov ecx, dword ptr [esp + 24h]
+        push eax
+        call ext_006404E0
+        mov ebx, eax
+        jmp L_478A45
+L_478A41:
+        mov ebx, dword ptr [esp + 24h]
+L_478A45:
+        mov eax, dword ptr [esi + 4]
+        mov edi, dword ptr [eax]
+        mov ebp, dword ptr [esp + 2Ch]
+        mov dword ptr [esp + 10h], eax
+        mov dword ptr [esp + 14h], esi
+        mov dword ptr [esp + 18h], edi
+        _emit 0x8D
+        _emit 0x9B
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+L_478A60:
+        test esi, esi
+        je L_478A6A
+        cmp esi, dword ptr [esp + 20h]
+        je L_478A70
+L_478A6A:
+        call dword ptr [mem_00925134]
+L_478A70:
+        cmp edi, dword ptr [esp + 10h]
+        je L_478AEA
+        test ebp, ebp
+        je L_478AA6
+        test esi, esi
+        jne L_478A84
+        call dword ptr [mem_00925134]
+L_478A84:
+        cmp edi, dword ptr [esi + 4]
+        jne L_478A8F
+        call dword ptr [mem_00925134]
+L_478A8F:
+        mov edi, dword ptr [edi + 28h]
+        mov esi, dword ptr [edi]
+        push ebp
+        mov ecx, ebx
+        add esi, 0Ch
+        call ext_006404E0
+        push eax
+        mov eax, dword ptr [esi]
+        mov ecx, edi
+        jmp L_478AC4
+L_478AA6:
+        test esi, esi
+        jne L_478AB0
+        call dword ptr [mem_00925134]
+L_478AB0:
+        cmp edi, dword ptr [esi + 4]
+        jne L_478ABB
+        call dword ptr [mem_00925134]
+L_478ABB:
+        mov ecx, dword ptr [edi + 28h]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0Ch]
+        push ebx
+L_478AC4:
+        call eax
+        mov ecx, dword ptr [esp + 30h]
+        test ecx, ecx
+        je L_478AD4
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+L_478AD4:
+        lea ecx, [esp + 14h]
+        call ext_00673C20
+        mov edi, dword ptr [esp + 18h]
+        mov esi, dword ptr [esp + 14h]
+        jmp L_478A60
+L_478AEA:
+        pop edi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        pop esi
+        add esp, 0Ch
+        ret
+    }
+}
