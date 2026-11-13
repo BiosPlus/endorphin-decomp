@@ -5522,3 +5522,396 @@ loc_0047514A:
         ret 0x8
     }
 }
+
+extern "C" void ext_00477090();
+
+// [0x00477660] sub_00477660 (841 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00477660() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        mov eax, ebp
+        sub eax, ebx
+        sar eax, 2
+        cdq
+        push esi
+        sub eax, edx
+        push edi
+        sar eax, 1
+        lea edi, [ebx + 4*eax]
+        lea eax, [ebp - 4]
+        push eax
+        push edi
+        push ebx
+        call ext_00477090
+        add esp, 0xc
+        cmp ebx, edi
+        lea esi, [edi + 4]
+        jae L_4776b4
+    L_477690:
+        fld dword ptr [edi - 4]
+        fld dword ptr [edi]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_4776b0
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp L_4776b4
+        add edi, -4
+        cmp ebx, edi
+        jb L_477690
+        jmp L_4776b4
+    L_4776b0:
+        fstp st(1)
+        fstp st(0)
+    L_4776b4:
+        mov eax, ebp
+        sub eax, esi
+        add eax, 3
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        cmp eax, 4
+        jl L_477732
+        fld dword ptr [edi]
+    L_4776cb:
+        fld dword ptr [esi]
+        fcom st(1)
+        fnstsw ax
+        test ah, 5
+        jnp L_47776a
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_477770
+        fld dword ptr [esi + 4]
+        fcom st(1)
+        fnstsw ax
+        test ah, 5
+        jnp L_477755
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_477757
+        fld dword ptr [esi + 8]
+        fcom st(1)
+        fnstsw ax
+        test ah, 5
+        jnp L_47775c
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_47775e
+        fld dword ptr [esi + 0xc]
+        fcom st(1)
+        fnstsw ax
+        test ah, 5
+        jnp L_477763
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_477765
+        add esi, 0x10
+        lea ecx, [ebp - 0xc]
+        cmp esi, ecx
+        jl L_4776cb
+        fstp st(0)
+    L_477732:
+        cmp esi, ebp
+        jae L_477772
+        fld dword ptr [edi]
+    L_477738:
+        fld dword ptr [esi]
+        fcom st(1)
+        fnstsw ax
+        test ah, 5
+        jnp L_47776e
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_477770
+        add esi, 4
+        cmp esi, ebp
+        jb L_477738
+        jmp L_477770
+    L_477755:
+        fstp st(1)
+    L_477757:
+        add esi, 4
+        jmp L_477770
+    L_47775c:
+        fstp st(1)
+    L_47775e:
+        add esi, 8
+        jmp L_477770
+    L_477763:
+        fstp st(1)
+    L_477765:
+        add esi, 0xc
+        jmp L_477770
+    L_47776a:
+        fstp st(1)
+        jmp L_477770
+    L_47776e:
+        fstp st(0)
+    L_477770:
+        fstp st(0)
+    L_477772:
+        mov ecx, esi
+        mov ebx, edi
+    L_477776:
+        mov eax, ebp
+        sub eax, ecx
+        add eax, 3
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        cmp eax, 4
+        jl L_477877
+        nop
+    L_477790:
+        fld dword ptr [edi]
+        fld dword ptr [ecx]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_4777c1
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp L_4778c7
+        mov eax, esi
+        fld dword ptr [eax]
+        add esi, 4
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [ecx]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [ecx]
+        jmp L_4777c5
+    L_4777c1:
+        fstp st(1)
+        fstp st(0)
+    L_4777c5:
+        fld dword ptr [edi]
+        fld dword ptr [ecx + 4]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_4777f9
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp L_4778ba
+        mov eax, esi
+        fld dword ptr [eax]
+        add esi, 4
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [ecx + 4]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [ecx + 4]
+        jmp L_4777fd
+    L_4777f9:
+        fstp st(1)
+        fstp st(0)
+    L_4777fd:
+        fld dword ptr [edi]
+        fld dword ptr [ecx + 8]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_477831
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp L_4778bf
+        mov eax, esi
+        fld dword ptr [eax]
+        add esi, 4
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [ecx + 8]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [ecx + 8]
+        jmp L_477835
+    L_477831:
+        fstp st(1)
+        fstp st(0)
+    L_477835:
+        fld dword ptr [edi]
+        fld dword ptr [ecx + 0xc]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_477865
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp L_4778c4
+        mov eax, esi
+        fld dword ptr [eax]
+        add esi, 4
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [ecx + 0xc]
+        jmp L_477869
+    L_477865:
+        fstp st(1)
+        fstp st(0)
+    L_477869:
+        add ecx, 0x10
+        lea edx, [ebp - 0xc]
+        cmp ecx, edx
+        jl L_477790
+    L_477877:
+        cmp ecx, ebp
+        jae L_4778c7
+        jmp L_477880
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_477880:
+        fld dword ptr [edi]
+        fld dword ptr [ecx]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_4778ad
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp L_4778c7
+        mov eax, esi
+        fld dword ptr [eax]
+        add esi, 4
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [ecx]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [ecx]
+        jmp L_4778b1
+    L_4778ad:
+        fstp st(1)
+        fstp st(0)
+    L_4778b1:
+        add ecx, 4
+        cmp ecx, ebp
+        jb L_477880
+        jmp L_4778c7
+    L_4778ba:
+        add ecx, 4
+        jmp L_4778c7
+    L_4778bf:
+        add ecx, 8
+        jmp L_4778c7
+    L_4778c4:
+        add ecx, 0xc
+    L_4778c7:
+        mov edx, dword ptr [esp + 0x18]
+        cmp ebx, edx
+        jbe L_47790c
+        nop
+    L_4778d0:
+        fld dword ptr [ebx - 4]
+        fld dword ptr [edi]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L_4778ff
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp L_47790a
+        fld dword ptr [edi - 4]
+        sub edi, 4
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [ebx - 4]
+        fstp dword ptr [edi]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [ebx - 4]
+        jmp L_477903
+    L_4778ff:
+        fstp st(1)
+        fstp st(0)
+    L_477903:
+        add ebx, -4
+        cmp edx, ebx
+        jb L_4778d0
+    L_47790a:
+        cmp ebx, edx
+    L_47790c:
+        jne L_47794c
+        cmp ecx, ebp
+        je L_47799b
+        cmp esi, ecx
+        je L_47792a
+        fld dword ptr [edi]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esi]
+        fstp dword ptr [edi]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esi]
+    L_47792a:
+        mov edx, edi
+        fld dword ptr [edx]
+        mov eax, ecx
+        fstp dword ptr [esp + 0x1c]
+        add esi, 4
+        fld dword ptr [eax]
+        add edi, 4
+        fstp dword ptr [edx]
+        add ecx, 4
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [eax]
+        jmp L_477776
+    L_47794c:
+        sub ebx, 4
+        cmp ecx, ebp
+        jne L_477982
+        sub edi, 4
+        cmp ebx, edi
+        je L_47796a
+        fld dword ptr [ebx]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [edi]
+        fstp dword ptr [ebx]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [edi]
+    L_47796a:
+        fld dword ptr [edi]
+        sub esi, 4
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esi]
+        fstp dword ptr [edi]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esi]
+        jmp L_477776
+    L_477982:
+        fld dword ptr [ecx]
+        add ecx, 4
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [ebx]
+        fstp dword ptr [ecx - 4]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [ebx]
+        jmp L_477776
+    L_47799b:
+        mov eax, dword ptr [esp + 0x14]
+        mov dword ptr [eax], edi
+        pop edi
+        mov dword ptr [eax + 4], esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
