@@ -6245,3 +6245,38 @@ extern "C" __declspec(naked) void __fastcall fn_0065C3F0(void* self, int edx_unu
         ret     0x4
     }
 }
+
+extern "C" void ext_0065C3F0();
+
+// [0x0065C590] sub_0065C590 (69 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0065C590(void* self, int edx_unused, int a1, int a2, void* a3) {
+    __asm {
+        mov     eax, dword ptr [esp + 0x4]
+        push    ebx
+        push    esi
+        push    edi
+        mov     ebx, ecx
+        mov     ecx, dword ptr [esp + 0x14]
+        mov     edx, dword ptr [ebx + 0x8c]
+        push    eax
+        push    ecx
+        push    edx
+        call    ext_007D8700
+        add     esp, 0x4
+        push    eax
+        call    ext_007C9480
+        mov     eax, dword ptr [esp + 0x24]
+        mov     esi, eax
+        add     esp, 0xc
+        lea     edi, [ebx + 0x4c]
+        mov     ecx, 0x10
+        rep movsd
+        push    eax
+        mov     ecx, ebx
+        call    ext_0065C3F0
+        pop     edi
+        pop     esi
+        pop     ebx
+        ret     0xc
+    }
+}
