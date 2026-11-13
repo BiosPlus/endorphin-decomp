@@ -176,3 +176,94 @@ extern "C" void __fastcall fn_0065A160(void* self) {
         *(int*)(p + 0x6c) = 0;
     }
 }
+
+// [0x0065A260] MagnetJoint::vfunc_48 (250 bytes)
+extern "C" int mem_00B55748;
+extern "C" void ext_007C9BC0();
+extern "C" void ext_007C9480();
+extern "C" void ext_007C97A0();
+extern "C" void ext_00647F00();
+
+extern "C" __declspec(naked) void __fastcall fn_0065A260(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push ebp
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi + 74h], 1
+        mov eax, dword ptr [ebx + 228h]
+        test eax, eax
+        push edi
+        je L_a
+        mov eax, dword ptr [eax + 158h]
+        mov ecx, dword ptr [eax + 0ACh]
+        mov edx, dword ptr [ecx + 0A4h]
+        mov eax, dword ptr [edx]
+        jmp L_b
+    L_a:
+        xor eax, eax
+    L_b:
+        mov dword ptr [esi + 70h], eax
+        mov eax, dword ptr [ebx + 22Ch]
+        test eax, eax
+        je L_c
+        mov eax, dword ptr [eax + 158h]
+        mov ecx, dword ptr [eax + 0ACh]
+        mov edx, dword ptr [ecx + 0A4h]
+        mov eax, dword ptr [edx]
+        mov dword ptr [esp + 14h], eax
+        jmp L_d
+    L_c:
+        mov dword ptr [esp + 14h], 0
+    L_d:
+        mov ecx, dword ptr [mem_00B55748]
+        mov edi, dword ptr [ecx + 28h]
+        mov eax, dword ptr [edi + 40h]
+        push eax
+        call ext_007C9BC0
+        push eax
+        mov dword ptr [esi + 6Ch], eax
+        call ext_007D8700
+        mov edx, dword ptr [ebx + 22Ch]
+        mov ebp, eax
+        mov eax, dword ptr [edx + 158h]
+        mov ecx, dword ptr [eax + 0ACh]
+        add esp, 8
+        call ext_00647F00
+        cmp dword ptr [esi + 70h], 0
+        mov dword ptr [esi + 68h], eax
+        je L_e
+        mov ecx, dword ptr [ebx + 22Ch]
+        mov edx, dword ptr [ecx + 158h]
+        mov ecx, dword ptr [edx + 0ACh]
+        call ext_00647F00
+        mov dword ptr [esi + 64h], eax
+        jmp L_f
+    L_e:
+        mov dword ptr [esi + 64h], 0
+    L_f:
+        mov eax, dword ptr [esi + 70h]
+        mov ecx, dword ptr [esp + 14h]
+        mov edx, dword ptr [esi + 6Ch]
+        push eax
+        push ecx
+        push edx
+        call ext_007D8700
+        add esp, 4
+        push eax
+        call ext_007C9480
+        mov eax, dword ptr [edi + 38h]
+        push eax
+        lea ecx, [eax + 1]
+        push ebp
+        mov dword ptr [edi + 38h], ecx
+        call ext_007C97A0
+        add esp, 14h
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 8
+    }
+}
