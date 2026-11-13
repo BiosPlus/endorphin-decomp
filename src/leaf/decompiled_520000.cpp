@@ -5076,3 +5076,36 @@ extern "C" __declspec(naked) void __cdecl fn_005275A0() {
         ret
     }
 }
+
+// [0x00520B90] sub_00520B90 (56 bytes)
+extern "C" void ext_00520AE0();
+extern "C" __declspec(naked) void* __cdecl fn_00520B90(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je skip_00520B90
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_00520B90:
+        sub esi, 0x168
+        sub edi, 0x168
+        push esi
+        mov ecx, edi
+        call ext_00520AE0
+        cmp esi, ebx
+        jne loop_00520B90
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    skip_00520B90:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
