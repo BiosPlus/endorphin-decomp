@@ -44,3 +44,27 @@ extern "C" __declspec(naked) void __fastcall fn_0041D010(void* self, int edx_unu
         ret 8
     }
 }
+
+extern "C" void ext_0041D090();
+
+// [0x0041DAA0] Properties::PropertiesControl::vfunc_81 (39 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_0041DAA0(void* self, int edx_unused, void* arg) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_006A89B0
+        test eax, eax
+        je _ret_false
+        mov ecx, dword ptr [esi + 0x1a0]
+        push eax
+        call ext_0041D090
+        pop esi
+        ret 4
+    _ret_false:
+        xor al, al
+        pop esi
+        ret 4
+    }
+}
