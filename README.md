@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11548 / 24049` (**48.02%**) — `8456` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `931597 / 4496005 bytes` (**20.72%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11549 / 24049` (**48.02%**) — `8457` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `932187 / 4496005 bytes` (**20.73%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -22,13 +22,13 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P60-70 (122-159B)** | 973 / 2405 | 40.46% | 130995 / 339038 | 38.64% | 1432 fn |
 | **P70-80 (159-178B)** | 246 / 2405 | 10.23% | 41435 / 400567 | 10.34% | 2159 fn |
 | **P80-90 (178-335B)** | 813 / 2405 | 33.80% | 194589 / 583211 | 33.37% | 1592 fn |
-| **P90-100 (335-36100B)** | 326 / 2404 | 13.56% | 148527 / 2392860 | 6.21% | 2078 fn |
+| **P90-100 (335-36100B)** | 327 / 2404 | 13.60% | 149117 / 2392860 | 6.23% | 2077 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6748 | 515897 | 79.80% |
+| `claude-haiku-5.5@medium` | 6748 | 515897 | 79.79% |
 | `claude-haiku-5.5@low` | 561 | 135275 | 6.63% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.29% |
 | `gemini-3.8-flash@low` | 311 | 77423 | 3.68% |
@@ -37,6 +37,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.30% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.12% |
 | `gemini-3.8-flash@medium` | 4 | 1334 | 0.05% |
+| `gemini-4-hydrogen@medium` | 1 | 590 | 0.01% |
 | `claude-opus-5.5@medium` | 1 | 49 | 0.01% |
 | `gemini-4-argon@high` | 1 | 10 | 0.01% |
 
