@@ -7014,3 +7014,15 @@ extern "C" __declspec(naked) void __fastcall fn_0044A900(void* self) {
         ret
     }
 }
+
+// [0x0044AF00] sub_0044AF00 (38 bytes)
+extern "C" void ext_0044A900();
+extern "C" int mem_00925694;
+
+extern "C" void __fastcall fn_0044AF00(void* self) {
+    ext_0044A900();
+    unsigned char* p = (unsigned char*)self;
+    int hwnd = *(int*)(p + 0xa8);
+    int r = ((int (__stdcall*)(int, unsigned int, unsigned int, int))mem_00925694)(hwnd, 0x188, 0, 0);
+    *(int*)(p + 0xdc) = r;
+}
