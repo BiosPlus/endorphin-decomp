@@ -5440,3 +5440,31 @@ L_no_matrix:
         ret
     }
 }
+
+// [0x00548150] sub_00548150 (55 bytes)
+extern "C" void ext_00547B70();
+extern "C" void ext_00547BA0();
+extern "C" int mem_00925414;
+extern "C" int mem_009253D4;
+extern "C" int mem_009254B8;
+extern "C" int mem_00925404;
+
+extern "C" __declspec(naked) void __fastcall fn_00548150(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call dword ptr [mem_00925414]
+        call dword ptr [mem_009253D4]
+        mov ecx, esi
+        call ext_00547BA0
+        mov ecx, esi
+        call ext_00547B70
+        mov eax, dword ptr [esp + 8]
+        push eax
+        push 0xba6
+        call dword ptr [mem_009254B8]
+        call dword ptr [mem_00925404]
+        pop esi
+        ret 4
+    }
+}
