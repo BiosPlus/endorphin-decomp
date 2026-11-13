@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11022 / 24049` (**45.83%**) — `7930` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `784848 / 4496005 bytes` (**17.46%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11023 / 24049` (**45.84%**) — `7931` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `785289 / 4496005 bytes` (**17.47%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -22,19 +22,19 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P60-70 (122-159B)** | 934 / 2405 | 38.84% | 125707 / 339038 | 37.08% | 1471 fn |
 | **P70-80 (159-178B)** | 222 / 2405 | 9.23% | 37405 / 400567 | 9.34% | 2183 fn |
 | **P80-90 (178-335B)** | 699 / 2405 | 29.06% | 168431 / 583211 | 28.88% | 1706 fn |
-| **P90-100 (335-36100B)** | 126 / 2404 | 5.24% | 48007 / 2392860 | 2.01% | 2278 fn |
+| **P90-100 (335-36100B)** | 127 / 2404 | 5.28% | 48448 / 2392860 | 2.02% | 2277 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6746 | 515189 | 85.07% |
+| `claude-haiku-5.5@medium` | 6746 | 515189 | 85.06% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.64% |
 | `claude-haiku-5.5@low` | 327 | 74660 | 4.12% |
 | `gemini-3.8-flash@low` | 193 | 42917 | 2.43% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 2.06% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.32% |
-| `gemini-4-hydrogen@low` | 14 | 4177 | 0.18% |
+| `gemini-4-hydrogen@low` | 15 | 4618 | 0.19% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.13% |
 | `gemini-3.8-flash@medium` | 3 | 839 | 0.04% |
 | `claude-opus-5.5@medium` | 1 | 49 | 0.01% |
