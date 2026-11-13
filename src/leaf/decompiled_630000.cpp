@@ -3100,3 +3100,203 @@ extern "C" __declspec(naked) void __fastcall fn_006301E0(void* self) {
     }
 }
 
+
+// [0x0063DC20] sub_0063DC20 (453 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0063DC20(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x2c]
+        test eax, eax
+        push edi
+        je L_invalid1
+        mov ecx, dword ptr [esi + 0x30]
+        sub ecx, eax
+        sar ecx, 2
+        jne L_valid1
+    L_invalid1:
+        mov edi, dword ptr [mem_00925134]
+        call edi
+        jmp L_after1
+    L_valid1:
+        mov edi, dword ptr [mem_00925134]
+    L_after1:
+        mov edx, dword ptr [esi + 0x2c]
+        mov ebp, dword ptr [edx]
+        mov ecx, edx
+        test ecx, ecx
+        je L_invalid2
+        mov eax, dword ptr [esi + 0x30]
+        sub eax, ecx
+        sar eax, 2
+        cmp eax, 1
+        ja L_valid2
+    L_invalid2:
+        call edi
+    L_valid2:
+        mov eax, dword ptr [esi + 0x2c]
+        mov ebx, dword ptr [eax + 0x4]
+        mov ecx, eax
+        test ecx, ecx
+        je L_invalid3
+        mov eax, dword ptr [esi + 0x30]
+        sub eax, ecx
+        sar eax, 2
+        cmp eax, 2
+        ja L_valid3
+    L_invalid3:
+        call edi
+    L_valid3:
+        mov ecx, dword ptr [esi + 0x2c]
+        mov edx, dword ptr [ebx]
+        mov edi, dword ptr [ecx + 0x8]
+        mov eax, dword ptr [edx + 0x44]
+        mov ecx, ebx
+        call eax
+        fstp qword ptr [esp + 0x10]
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [edx + 0x44]
+        mov ecx, edi
+        call eax
+        fsubr qword ptr [esp + 0x10]
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx + 0x60]
+        fmul dword ptr [esi + 0x48]
+        mov ecx, ebp
+        fstp qword ptr [esp + 0x10]
+        call eax
+        fadd qword ptr [esp + 0x10]
+        fstp dword ptr [esi + 0x3c]
+        mov eax, dword ptr [esi + 0x2c]
+        test eax, eax
+        je L_invalid4
+        mov ecx, dword ptr [esi + 0x30]
+        sub ecx, eax
+        sar ecx, 2
+        jne L_valid4
+    L_invalid4:
+        call dword ptr [mem_00925134]
+    L_valid4:
+        mov edx, dword ptr [esi + 0x2c]
+        mov ebp, dword ptr [edx]
+        mov ecx, edx
+        test ecx, ecx
+        je L_invalid5
+        mov eax, dword ptr [esi + 0x30]
+        sub eax, ecx
+        sar eax, 2
+        cmp eax, 1
+        ja L_valid5
+    L_invalid5:
+        call dword ptr [mem_00925134]
+    L_valid5:
+        mov eax, dword ptr [esi + 0x2c]
+        mov ebx, dword ptr [eax + 0x4]
+        mov ecx, eax
+        test ecx, ecx
+        je L_invalid6
+        mov eax, dword ptr [esi + 0x30]
+        sub eax, ecx
+        sar eax, 2
+        cmp eax, 2
+        ja L_valid6
+    L_invalid6:
+        call dword ptr [mem_00925134]
+    L_valid6:
+        mov ecx, dword ptr [esi + 0x2c]
+        mov edx, dword ptr [ebx]
+        mov edi, dword ptr [ecx + 0x8]
+        mov eax, dword ptr [edx + 0x40]
+        push 1
+        mov ecx, ebx
+        call eax
+        fstp qword ptr [esp + 0x10]
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [edx + 0x40]
+        push 1
+        mov ecx, edi
+        call eax
+        fsubr qword ptr [esp + 0x10]
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx + 0x5c]
+        fmul dword ptr [esi + 0x48]
+        push 1
+        mov ecx, ebp
+        fstp qword ptr [esp + 0x14]
+        call eax
+        fadd qword ptr [esp + 0x10]
+        fstp dword ptr [esi + 0x40]
+        mov eax, dword ptr [esi + 0x2c]
+        test eax, eax
+        je L_invalid7
+        mov ecx, dword ptr [esi + 0x30]
+        sub ecx, eax
+        sar ecx, 2
+        jne L_valid7
+    L_invalid7:
+        mov edi, dword ptr [mem_00925134]
+        call edi
+        jmp L_after7
+    L_valid7:
+        mov edi, dword ptr [mem_00925134]
+    L_after7:
+        mov edx, dword ptr [esi + 0x2c]
+        mov ebp, dword ptr [edx]
+        mov ecx, edx
+        test ecx, ecx
+        je L_invalid8
+        mov eax, dword ptr [esi + 0x30]
+        sub eax, ecx
+        sar eax, 2
+        cmp eax, 1
+        ja L_valid8
+    L_invalid8:
+        call edi
+    L_valid8:
+        mov eax, dword ptr [esi + 0x2c]
+        mov ebx, dword ptr [eax + 0x4]
+        mov ecx, eax
+        test ecx, ecx
+        je L_invalid9
+        mov eax, dword ptr [esi + 0x30]
+        sub eax, ecx
+        sar eax, 2
+        cmp eax, 2
+        ja L_valid9
+    L_invalid9:
+        call edi
+    L_valid9:
+        mov ecx, dword ptr [esi + 0x2c]
+        mov edx, dword ptr [ebx]
+        mov edi, dword ptr [ecx + 0x8]
+        mov eax, dword ptr [edx + 0x40]
+        push 2
+        mov ecx, ebx
+        call eax
+        fstp qword ptr [esp + 0x10]
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [edx + 0x40]
+        push 2
+        mov ecx, edi
+        call eax
+        fsubr qword ptr [esp + 0x10]
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx + 0x5c]
+        fmul dword ptr [esi + 0x48]
+        push 2
+        mov ecx, ebp
+        fstp qword ptr [esp + 0x14]
+        call eax
+        fadd qword ptr [esp + 0x10]
+        pop edi
+        fstp dword ptr [esi + 0x44]
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
