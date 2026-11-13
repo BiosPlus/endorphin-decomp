@@ -4365,3 +4365,18 @@ extern "C" void __fastcall fn_005EDFB0(void* self, int edx_unused, int a1) {
     f((char*)self + 0x1b4, a1);
     ((void (__thiscall *)(void*))ext_005ED750)(self);
 }
+
+extern "C" void ext_00412690();
+
+struct Pair_005EEB90 {
+    int a;
+    float b;
+};
+
+// [0x005EEB90] sub_005EEB90 (38 bytes)
+extern "C" void __fastcall fn_005EEB90(void* self, int edx_unused, int a1) {
+    Pair_005EEB90 p;
+    p.a = a1;
+    p.b = 0.0f;
+    ((void (__thiscall *)(void*, Pair_005EEB90*))ext_00412690)((char*)self + 0x168, &p);
+}
