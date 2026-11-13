@@ -5918,3 +5918,41 @@ extern "C" void* __fastcall fn_004952A0(void* self) {
     p[0x150 / 4] = 0x93ed38;
     return self;
 }
+
+extern "C" void ext_00435D00();
+extern "C" int mem_00924FEC;
+extern "C" int mem_00924E94;
+
+// [0x0049CCE0] sub_0049CCE0 (77 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0049CCE0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov ecx, esi
+        call dword ptr [mem_00924FEC]
+        test al, al
+        jne done
+        mov eax, dword ptr [esp + 8]
+        mov ecx, dword ptr [esp + 0x10]
+        push 0x93f198
+        push esi
+        mov esi, dword ptr [mem_00924E94]
+        push 0x93f198
+        push eax
+        push ecx
+        call esi
+        add esp, 8
+        push eax
+        call ext_00435D00
+        add esp, 8
+        push eax
+        call esi
+        add esp, 8
+        push eax
+        call ext_00435D00
+        add esp, 8
+    done:
+        pop esi
+        ret 0xc
+    }
+}
