@@ -6401,3 +6401,142 @@ extern "C" __declspec(naked) void __fastcall fn_00441AC0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00443AE0] sub_00443AE0 (331 bytes)
+extern "C" void ext_00412CC0();
+extern "C" void ext_00412EC0();
+extern "C" void ext_0043B400();
+extern "C" void ext_0043D620();
+extern "C" void ext_004407B0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_00443AE0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 4]
+        mov ecx, dword ptr [esi + 8]
+        push edi
+        add eax, 0xc
+        push eax
+        xor ebp, ebp
+        call ext_0043D620
+        mov ecx, dword ptr [esi + 8]
+        mov edi, eax
+        lea eax, [esp + 0x1c]
+        push eax
+        call ext_0043D620
+        test edi, edi
+        mov ebx, eax
+        je L_443C1F
+        test ebx, ebx
+        je L_443C1F
+        cmp edi, ebx
+        jne L_443C1F
+        mov eax, dword ptr [esi + 4]
+        add eax, 0xc
+        push eax
+        mov ecx, edi
+        call ext_00412EC0
+        lea ecx, [esp + 0x1c]
+        push ecx
+        mov ecx, ebx
+        mov edi, eax
+        call ext_00412EC0
+        test edi, edi
+        je L_443C1F
+        test eax, eax
+        je L_443C1F
+        cmp edi, eax
+        je L_443C1F
+        mov ecx, eax
+        call ext_0043B400
+        mov ecx, edi
+        mov ebx, eax
+        call ext_0043B400
+        sub ebx, eax
+        je L_443C13
+        lea ebp, [esi + 0xc]
+        mov esi, dword ptr [ebp + 4]
+        cmp esi, dword ptr [ebp + 8]
+        jbe short L_443B80
+        call dword ptr [mem_00925134]
+    L_443B80:
+        mov edi, esi
+    L_443B82:
+        mov esi, dword ptr [ebp + 8]
+        cmp dword ptr [ebp + 4], esi
+        mov dword ptr [esp + 0x14], edi
+        jbe short L_443B94
+        call dword ptr [mem_00925134]
+    L_443B94:
+        cmp ebp, ebp
+        je short L_443B9E
+        call dword ptr [mem_00925134]
+    L_443B9E:
+        cmp edi, esi
+        je short L_443C13
+        cmp edi, dword ptr [ebp + 8]
+        jb short L_443BAD
+        call dword ptr [mem_00925134]
+    L_443BAD:
+        mov esi, dword ptr [edi]
+        cmp byte ptr [esi + 0x8f], 0
+        je short L_443C00
+        mov ecx, esi
+        call ext_004407B0
+        mov esi, dword ptr [esi + 0x44]
+        mov edi, eax
+        test edi, edi
+        je short L_443BFC
+        test esi, esi
+        je short L_443BFC
+        mov ecx, esi
+        call ext_0043B400
+        mov esi, eax
+        add esi, ebx
+        jns short L_443BDD
+        sub ebx, esi
+        jmp short L_443BFC
+    L_443BDD:
+        mov ecx, edi
+        call ext_00412CC0
+        sub eax, 1
+        cmp esi, eax
+        jle short L_443BFC
+        mov ecx, edi
+        call ext_00412CC0
+        or edx, -1
+        sub edx, esi
+        add edx, ebx
+        lea ebx, [edx + eax]
+    L_443BFC:
+        mov edi, dword ptr [esp + 0x14]
+    L_443C00:
+        cmp edi, dword ptr [ebp + 8]
+        jb short L_443C0B
+        call dword ptr [mem_00925134]
+    L_443C0B:
+        add edi, 4
+        jmp L_443B82
+    L_443C13:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        add esp, 8
+        ret 8
+    L_443C1F:
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 8
+    }
+}
