@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/classes/HasRelativeTMPtr.cpp
 
 extern "C" void ext_004875A0();
+extern "C" void ext_004F9950();
 extern "C" int mem_009253D0;
 
 // [0x0053A7A0] HasRelativeTMPtr::vfunc_2 (24 bytes)
@@ -63,5 +64,27 @@ extern "C" __declspec(naked) void __fastcall fn_00532240(void* self) {
         pop edi
         pop esi
         ret
+    }
+}
+
+// [0x0053A770] HasRelativeTMPtr::vfunc_1 (42 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0053A770(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [ecx + 0x8]
+        sub esp, 0x40
+        push esi
+        mov esi, dword ptr [esp + 0x48]
+        push esi
+        push eax
+        lea edx, [esp + 0xc]
+        push edx
+        call ext_004875A0
+        mov ecx, eax
+        call ext_004F9950
+        mov eax, esi
+        pop esi
+        add esp, 0x40
+        ret 0x4
     }
 }
