@@ -588,3 +588,24 @@ extern "C" __declspec(naked) void __fastcall fn_00612D70(void* self) {
         ret
     }
 }
+
+// [0x00612E80] NMData::PrimaryTwistAndSwingConstraint::vfunc_59 (45 bytes)
+extern "C" void ext_00612310();
+
+extern "C" __declspec(naked) void __fastcall fn_00612E80(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        cmp dword ptr [esp + 0xc], 0
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push edx
+        jne is_ne
+        add ecx, 0x164
+        call ext_00612310
+        ret 0xc
+is_ne:
+        add ecx, 0x224
+        call ext_00612310
+        ret 0xc
+    }
+}
