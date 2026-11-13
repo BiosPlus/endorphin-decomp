@@ -52,5 +52,7 @@
     "0x0060CAEA",
     "0x0060CAFC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-13T11:35:25Z"
 }
