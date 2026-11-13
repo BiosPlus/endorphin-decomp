@@ -740,3 +740,193 @@ loc_549897:
         ret 0x10
     }
 }
+
+// [0x005493F0] Camera::vfunc_13 (523 bytes)
+extern "C" void ext_005481C0();
+extern "C" void ext_005481A0();
+
+extern "C" __declspec(naked) void __fastcall fn_005493F0(void* self) {
+    __asm {
+        sub esp, 0x44
+        fldz
+        push esi
+        fst dword ptr [esp + 0x14]
+        push edi
+        fst dword ptr [esp + 0x14]
+        mov esi, ecx
+        fst dword ptr [esp + 0x10]
+        fst dword ptr [esp + 0xc]
+        fst dword ptr [esp + 0x48]
+        fst dword ptr [esp + 0x44]
+        fst dword ptr [esp + 0x40]
+        fstp dword ptr [esp + 0x3c]
+        call ext_005481C0
+        fchs
+        mov eax, dword ptr [esi]
+        fstp dword ptr [esp + 0x8]
+        mov edi, dword ptr [esp + 0x50]
+        mov eax, dword ptr [eax + 0x50]
+        lea ecx, [esp + 0xc]
+        push ecx
+        lea edx, [esp + 0xc]
+        push edx
+        push edi
+        mov ecx, esi
+        call eax
+        mov ecx, esi
+        call ext_005481A0
+        fchs
+        mov edx, dword ptr [esi]
+        fstp dword ptr [esp + 0x50]
+        mov edx, dword ptr [edx + 0x50]
+        lea eax, [esp + 0x3c]
+        push eax
+        lea ecx, [esp + 0x54]
+        push ecx
+        push edi
+        mov ecx, esi
+        call edx
+        lea eax, [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call ext_005491F0
+        lea ecx, [esp + 0x3c]
+        push ecx
+        mov ecx, esi
+        call ext_005491F0
+        lea edx, [esp + 0xc]
+        push edx
+        lea eax, [esp + 0x20]
+        push eax
+        lea ecx, [esp + 0x44]
+        call ext_0047FFA0
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x2c]
+        lea ecx, [esp + 0x2c]
+        fld dword ptr [esp + 0x20]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x28]
+        fstp dword ptr [esp + 0x38]
+        call ext_00540D60
+        mov ecx, dword ptr [esp + 0x58]
+        fld dword ptr [ecx]
+        fmul dword ptr [esp + 0x2c]
+        fld dword ptr [ecx + 0x4]
+        fmul dword ptr [esp + 0x30]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x8]
+        fmul dword ptr [esp + 0x34]
+        faddp st(1), st
+        fld dword ptr [ecx + 0xc]
+        fmul dword ptr [esp + 0x38]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [esp + 0x50]
+        fabs
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [esp + 0x50]
+        fld dword ptr [esp + 0x60]
+        fcompp
+        fnstsw ax
+        pop edi
+        pop esi
+        test ah, 0x41
+        je loc_549533
+        fld dword ptr [ecx]
+        fmul dword ptr [esp + 0x14]
+        fld dword ptr [ecx + 0x4]
+        fmul dword ptr [esp + 0x18]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x8]
+        fmul dword ptr [esp + 0x1c]
+        faddp st(1), st
+        fld dword ptr [ecx + 0xc]
+        fmul dword ptr [esp + 0x20]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x48]
+        fldz
+        fld st(0)
+        fld dword ptr [esp + 0x48]
+        fucom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x44
+        jp loc_54953B
+        fstp st(0)
+loc_549531:
+        fstp st(0)
+loc_549533:
+        xor al, al
+        add esp, 0x44
+        ret 0x14
+
+loc_54953B:
+        fld dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x4c]
+        fmul dword ptr [esp + 0x4]
+        fld dword ptr [ecx + 0x4]
+        fmul dword ptr [esp + 0x8]
+        faddp st(1), st
+        fld dword ptr [ecx + 0x8]
+        fmul dword ptr [esp + 0xc]
+        faddp st(1), st
+        fld dword ptr [ecx + 0xc]
+        fmul dword ptr [esp + 0x10]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x48]
+        fld dword ptr [esp + 0x48]
+        fld dword ptr [eax + 0x4]
+        fmul dword ptr [ecx + 0x4]
+        fld dword ptr [eax]
+        fmul dword ptr [ecx]
+        faddp st(1), st
+        fld dword ptr [eax + 0x8]
+        fmul dword ptr [ecx + 0x8]
+        faddp st(1), st
+        fld dword ptr [eax + 0xc]
+        fmul dword ptr [ecx + 0xc]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x48]
+        fsub dword ptr [esp + 0x48]
+        fchs
+        fstp dword ptr [esp + 0x48]
+        fdivr dword ptr [esp + 0x48]
+        fstp dword ptr [esp + 0x48]
+        fld dword ptr [esp + 0x48]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jnp loc_549531
+        fld1
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jnp loc_549531
+        push ecx
+        lea ecx, [esp + 0x28]
+        fstp dword ptr [esp]
+        push ecx
+        lea ecx, [esp + 0x1c]
+        call ext_0053B470
+        push eax
+        lea edx, [esp + 0x18]
+        push edx
+        lea ecx, [esp + 0xc]
+        call ext_00547080
+        fld dword ptr [eax]
+        mov ecx, dword ptr [esp + 0x54]
+        fstp dword ptr [ecx]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ecx + 0x8]
+        fld dword ptr [eax + 0xc]
+        mov al, 0x1
+        fstp dword ptr [ecx + 0xc]
+        add esp, 0x44
+        ret 0x14
+    }
+}
