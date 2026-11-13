@@ -259,3 +259,94 @@ extern "C" __declspec(naked) void __fastcall fn_0054EBB0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0054EA80] NMMatrixStackManager::vfunc_4 (196 bytes)
+extern "C" void ext_004875A0();
+
+extern "C" __declspec(naked) void __fastcall fn_0054EA80(void* self, int edx_unused, const void* m) {
+    __asm {
+        sub esp, 0x48
+        push ebx
+        push ebp
+        lea ebx, [ecx + 0x4]
+        push esi
+        mov esi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], esi
+        push edi
+        jbe L_54EA98
+        call dword ptr [mem_00925134]
+    L_54EA98:
+        lea eax, [esi - 0x40]
+        cmp eax, dword ptr [ebx + 0x8]
+        mov edi, ebx
+        mov dword ptr [esp + 0x14], esi
+        ja L_54EAAB
+        cmp eax, dword ptr [ebx + 0x4]
+        jae L_54EAB1
+    L_54EAAB:
+        call dword ptr [mem_00925134]
+    L_54EAB1:
+        lea ebp, [esi - 0x40]
+        cmp ebp, dword ptr [edi + 0x8]
+        mov edi, dword ptr [mem_00925134]
+        jb L_54EAC1
+        call edi
+    L_54EAC1:
+        mov esi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], esi
+        jbe L_54EACB
+        call edi
+    L_54EACB:
+        lea eax, [esi - 0x40]
+        cmp eax, dword ptr [ebx + 0x8]
+        mov dword ptr [esp + 0x14], esi
+        ja L_54EADC
+        cmp eax, dword ptr [ebx + 0x4]
+        jae L_54EADE
+    L_54EADC:
+        call edi
+    L_54EADE:
+        lea edi, [esi - 0x40]
+        cmp edi, dword ptr [ebx + 0x8]
+        jb L_54EAEC
+        call dword ptr [mem_00925134]
+    L_54EAEC:
+        mov ecx, dword ptr [esp + 0x5c]
+        push ebp
+        lea eax, [esp + 0x1c]
+        push eax
+        call ext_004875A0
+        mov ebp, dword ptr [mem_00925134]
+        mov ecx, 0x10
+        mov esi, eax
+        rep movsd
+        mov esi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], esi
+        jbe L_54EB14
+        call ebp
+    L_54EB14:
+        lea eax, [esi - 0x40]
+        cmp eax, dword ptr [ebx + 0x8]
+        mov edi, ebx
+        mov dword ptr [esp + 0x14], esi
+        ja L_54EB27
+        cmp eax, dword ptr [ebx + 0x4]
+        jae L_54EB29
+    L_54EB27:
+        call ebp
+    L_54EB29:
+        add esi, -0x40
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_54EB33
+        call ebp
+    L_54EB33:
+        push esi
+        call dword ptr [mem_009254B4]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x48
+        ret 0x4
+    }
+}
