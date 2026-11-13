@@ -8344,3 +8344,21 @@ extern "C" __declspec(naked) void __fastcall fn_0046AC40(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00462E10();
+extern "C" void ext_00462E50();
+extern "C" void ext_004695B0();
+extern "C" int mem_00924FF0;
+
+// [0x00465F30] sub_00465F30 (52 bytes)
+extern "C" void __fastcall fn_00465F30(void* self, int edx_unused, void* a1) {
+    char* s = (char*)self;
+    typedef void (__thiscall* fn1_t)(void*, void*);
+    typedef const char* (__thiscall* cstr_t)(void*);
+    typedef void (__thiscall* fn2_t)(void*, const char*);
+    ((fn1_t)ext_00462E10)(*(void**)(s + 0x5c), a1);
+    void* obj = *(void**)(s + 0x58);
+    const char* str = (*(cstr_t*)&mem_00924FF0)(a1);
+    ((fn2_t)ext_004695B0)(obj, str);
+    ((fn1_t)ext_00462E50)(*(void**)(s + 0x5c), a1);
+}
