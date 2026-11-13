@@ -6327,3 +6327,22 @@ extern "C" void* __fastcall fn_005379A0(void* self) {
     }
     return obj;
 }
+
+// [0x005379C0] sub_005379C0 (33 bytes)
+extern "C" void ext_005371F0();
+extern "C" __declspec(naked) void* __cdecl fn_005379C0(int value) {
+    __asm {
+        push esi
+        call ext_005371F0
+        mov esi, eax
+        mov eax, dword ptr [esp + 8]
+        mov ecx, esi
+        mov dword ptr [esi + 0x2c], eax
+        call ext_00537870
+        mov ecx, esi
+        call ext_00534F30
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
