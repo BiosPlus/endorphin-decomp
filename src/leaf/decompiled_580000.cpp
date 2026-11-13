@@ -3252,3 +3252,39 @@ L_D9:
         ret
     }
 }
+
+// [0x00585FF0] sub_00585FF0 (62 bytes)
+extern "C" void ext_00585C10();
+extern "C" int mem_00A9EDAC;
+
+extern "C" __declspec(naked) void __fastcall fn_00585FF0(void* self) {
+    __asm {
+        push ecx
+        lea eax, [ecx + 6Ch]
+        mov ecx, dword ptr [eax + 4]
+        test ecx, ecx
+        je L_ret_esp8
+        mov edx, dword ptr [eax + 8]
+        sub edx, ecx
+        sar edx, 2
+        je L_ret_esp8
+        mov ecx, dword ptr [mem_00A9EDAC]
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        push 0
+        push 0
+        push ecx
+        push esi
+        push eax
+        call ext_00585C10
+        add esp, 14h
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 4
+    L_ret_esp8:
+        mov eax, dword ptr [esp + 8]
+        pop ecx
+        ret 4
+    }
+}
