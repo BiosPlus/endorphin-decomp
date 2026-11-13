@@ -11600,3 +11600,522 @@ extern "C" __declspec(naked) void __fastcall fn_007DBF50(void* self) {
         ret
     }
 }
+
+// [0x007D71D0] sub_007D71D0 (1323 bytes)
+extern "C" void ext_007D7190();
+extern "C" int mem_0099DF60;
+extern "C" int mem_0099DF6C;
+extern "C" int mem_0099DF74;
+extern "C" int mem_0099DF7C;
+extern "C" int mem_0099DF80;
+extern "C" int mem_0099DF84;
+extern "C" int mem_0099DF8C;
+extern "C" int mem_0099DF94;
+extern "C" int mem_0099DF9C;
+extern "C" int mem_0099DFA4;
+extern "C" int mem_0099DFAC;
+extern "C" int mem_0099DFB4;
+extern "C" int mem_0099DFBC;
+extern "C" int mem_0099DFC4;
+
+extern "C" __declspec(naked) void __cdecl fn_007D71D0(void) {
+    __asm {
+        sub esp, 40h
+        mov eax, dword ptr [esp + 50h]
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        mov edx, eax
+        shl edx, 4
+        push esi
+        mov esi, edx
+        and esi, 3fh
+        lea ecx, [eax + eax]
+        mov dword ptr [esp + 3ch], eax
+        mov dword ptr [esp + 4], ecx
+        je L_7D7200
+        lea edx, [eax + 4]
+        shl edx, 4
+        sub edx, esi
+    L_7D7200:
+        push ebx
+        push ebp
+        push edi
+        mov edi, ecx
+        neg edi
+        lea esi, [ecx + ecx*2]
+        shl edi, 5
+        shl esi, 5
+        and edi, 3fh
+        je L_7D721A
+        sub esi, edi
+        add esi, 40h
+    L_7D721A:
+        lea ebp, [ecx*4]
+        mov edi, ebp
+        and edi, 3fh
+        jne L_7D722E
+        mov dword ptr [esp + 14h], ebp
+        jmp L_7D723B
+    L_7D722E:
+        lea ebx, [ecx*4 + 40h]
+        sub ebx, edi
+        mov dword ptr [esp + 14h], ebx
+    L_7D723B:
+        test edi, edi
+        jne L_7D7245
+        mov dword ptr [esp + 18h], ebp
+        jmp L_7D7252
+    L_7D7245:
+        lea ecx, [ecx*4 + 40h]
+        sub ecx, edi
+        mov dword ptr [esp + 18h], ecx
+    L_7D7252:
+        mov ecx, dword ptr [esp + 64h]
+        imul eax, ecx
+        lea ebx, [eax*4]
+        mov edi, ebx
+        and edi, 3fh
+        mov dword ptr [esp + 4ch], eax
+        jne L_7D7271
+        mov dword ptr [esp + 1ch], ebx
+        jmp L_7D727E
+    L_7D7271:
+        lea eax, [eax*4 + 40h]
+        sub eax, edi
+        mov dword ptr [esp + 1ch], eax
+    L_7D727E:
+        lea ebx, [ecx*4]
+        mov eax, ebx
+        and eax, 3fh
+        jne L_7D7292
+        mov dword ptr [esp + 20h], ebx
+        jmp L_7D729F
+    L_7D7292:
+        lea edi, [ecx*4 + 40h]
+        sub edi, eax
+        mov dword ptr [esp + 20h], edi
+    L_7D729F:
+        test eax, eax
+        jne L_7D72A9
+        mov dword ptr [esp + 24h], ebx
+        jmp L_7D72B6
+    L_7D72A9:
+        lea edi, [ecx*4 + 40h]
+        sub edi, eax
+        mov dword ptr [esp + 24h], edi
+    L_7D72B6:
+        test eax, eax
+        jne L_7D72C0
+        mov dword ptr [esp + 28h], ebx
+        jmp L_7D72CD
+    L_7D72C0:
+        lea edi, [ecx*4 + 40h]
+        sub edi, eax
+        mov dword ptr [esp + 28h], edi
+    L_7D72CD:
+        test eax, eax
+        jne L_7D72D7
+        mov dword ptr [esp + 2ch], ebx
+        jmp L_7D72E4
+    L_7D72D7:
+        lea ecx, [ecx*4 + 40h]
+        sub ecx, eax
+        mov dword ptr [esp + 2ch], ecx
+    L_7D72E4:
+        mov edi, dword ptr [esp + 68h]
+        lea eax, [edi*4]
+        mov ecx, eax
+        and ecx, 3fh
+        je L_7D72FF
+        lea eax, [edi*4 + 40h]
+        sub eax, ecx
+    L_7D72FF:
+        mov dword ptr [esp + 30h], eax
+        mov eax, edx
+        and eax, 8000003fh
+        jns L_7D7311
+        dec eax
+        or eax, -40h
+        inc eax
+    L_7D7311:
+        jne L_7D7319
+        mov dword ptr [esp + 34h], edx
+        jmp L_7D7324
+    L_7D7319:
+        mov ecx, edx
+        sub ecx, eax
+        add ecx, 40h
+        mov dword ptr [esp + 34h], ecx
+    L_7D7324:
+        test eax, eax
+        jne L_7D732E
+        mov dword ptr [esp + 38h], edx
+        jmp L_7D7339
+    L_7D732E:
+        mov ecx, edx
+        sub ecx, eax
+        add ecx, 40h
+        mov dword ptr [esp + 38h], ecx
+    L_7D7339:
+        test eax, eax
+        jne L_7D7343
+        mov dword ptr [esp + 3ch], edx
+        jmp L_7D734E
+    L_7D7343:
+        mov ecx, edx
+        sub ecx, eax
+        add ecx, 40h
+        mov dword ptr [esp + 3ch], ecx
+    L_7D734E:
+        test eax, eax
+        jne L_7D7358
+        mov dword ptr [esp + 40h], edx
+        jmp L_7D7363
+    L_7D7358:
+        mov ecx, edx
+        sub ecx, eax
+        add ecx, 40h
+        mov dword ptr [esp + 40h], ecx
+    L_7D7363:
+        test eax, eax
+        je L_7D736C
+        sub edx, eax
+        add edx, 40h
+    L_7D736C:
+        mov ecx, dword ptr [esp + 40h]
+        mov eax, edx
+        lea edi, [eax + ecx]
+        add edi, dword ptr [esp + 3ch]
+        mov dword ptr [esp + 44h], edx
+        add edi, dword ptr [esp + 38h]
+        mov edx, dword ptr [esp + 5ch]
+        add edi, dword ptr [esp + 34h]
+        add edi, dword ptr [esp + 30h]
+        add edi, dword ptr [esp + 2ch]
+        add edi, dword ptr [esp + 28h]
+        add edi, dword ptr [esp + 24h]
+        add edi, dword ptr [esp + 20h]
+        add edi, dword ptr [esp + 1ch]
+        add edi, dword ptr [esp + 18h]
+        add edi, dword ptr [esp + 14h]
+        add edi, esi
+        push edi
+        push edx
+        call ext_007D62D0
+        mov ebp, dword ptr [esp + 74h]
+        mov ebx, dword ptr [esp + 60h]
+        push ebp
+        push offset mem_0099DFC4
+        push esi
+        push edi
+        push eax
+        mov dword ptr [ebx], eax
+        lea eax, [esp + 74h]
+        push eax
+        mov dword ptr [esp + 78h], 0
+        call ext_007D7190
+        mov ecx, dword ptr [esp + 34h]
+        mov esi, dword ptr [esp + 74h]
+        push ebp
+        push offset mem_0099DFBC
+        push ecx
+        mov dword ptr [esi], eax
+        mov edx, dword ptr [ebx]
+        push edi
+        push edx
+        lea eax, [esp + 8ch]
+        push eax
+        call ext_007D7190
+        mov ecx, dword ptr [esp + 50h]
+        push ebp
+        push offset mem_0099DFB4
+        push ecx
+        mov dword ptr [esi + 1ch], eax
+        mov edx, dword ptr [ebx]
+        push edi
+        push edx
+        lea eax, [esp + 0a4h]
+        push eax
+        call ext_007D7190
+        mov ecx, dword ptr [esp + 6ch]
+        add esp, 50h
+        push ebp
+        push offset mem_0099DFAC
+        push ecx
+        mov dword ptr [esi + 28h], eax
+        mov edx, dword ptr [ebx]
+        push edi
+        push edx
+        lea eax, [esp + 6ch]
+        push eax
+        call ext_007D7190
+        mov ecx, dword ptr [esp + 38h]
+        push ebp
+        push offset mem_0099DFA4
+        push ecx
+        mov dword ptr [esi + 34h], eax
+        mov edx, dword ptr [ebx]
+        push edi
+        push edx
+        lea eax, [esp + 84h]
+        push eax
+        call ext_007D7190
+        push ebp
+        mov dword ptr [esi + 40h], eax
+        push offset mem_0099DF9C
+        mov ecx, dword ptr [esp + 5ch]
+        mov edx, dword ptr [ebx]
+        push ecx
+        push edi
+        push edx
+        lea eax, [esp + 9ch]
+        push eax
+        call ext_007D7190
+        mov ecx, dword ptr [esp + 70h]
+        add esp, 48h
+        push ebp
+        push offset mem_0099DF94
+        push ecx
+        mov dword ptr [esi + 10h], eax
+        mov edx, dword ptr [ebx]
+        push edi
+        push edx
+        lea eax, [esp + 6ch]
+        push eax
+        call ext_007D7190
+        mov ecx, dword ptr [esp + 44h]
+        push ebp
+        push offset mem_0099DF8C
+        push ecx
+        mov dword ptr [esi + 4ch], eax
+        mov edx, dword ptr [ebx]
+        push edi
+        push edx
+        lea eax, [esp + 84h]
+        push eax
+        call ext_007D7190
+        mov ecx, dword ptr [esp + 60h]
+        push ebp
+        push offset mem_0099DF84
+        push ecx
+        mov dword ptr [esi + 4], eax
+        mov edx, dword ptr [ebx]
+        push edi
+        push edx
+        lea eax, [esp + 9ch]
+        push eax
+        call ext_007D7190
+        mov ecx, dword ptr [esp + 0ach]
+        mov edx, dword ptr [esp + 58h]
+        add esp, 48h
+        push ebp
+        mov dword ptr [esi + 58h], eax
+        mov eax, dword ptr [esp + 4ch]
+        mov dword ptr [esi + 70h], ecx
+        mov ecx, dword ptr [esp + 38h]
+        push offset mem_0099DF80
+        push ecx
+        mov dword ptr [esi + 78h], eax
+        mov dword ptr [esi + 74h], edx
+        mov edx, dword ptr [ebx]
+        push edi
+        push edx
+        lea eax, [esp + 6ch]
+        push eax
+        call ext_007D7190
+        mov edx, dword ptr [esp + 78h]
+        xor ecx, ecx
+        mov dword ptr [esi + 80h], edx
+        mov edx, dword ptr [esp + 28h]
+        mov dword ptr [esi + 7ch], eax
+        mov eax, edx
+        add esp, 18h
+        and eax, 8000000fh
+        mov dword ptr [esi + 20h], ecx
+        mov dword ptr [esi + 2ch], ecx
+        mov dword ptr [esi + 38h], ecx
+        mov dword ptr [esi + 44h], ecx
+        mov dword ptr [esi + 14h], ecx
+        mov dword ptr [esi + 50h], ecx
+        mov dword ptr [esi + 8], ecx
+        mov dword ptr [esi + 5ch], ecx
+        jns L_7D7545
+        dec eax
+        or eax, -10h
+        inc eax
+    L_7D7545:
+        je L_7D754C
+        sub edx, eax
+        add edx, 10h
+    L_7D754C:
+        cmp eax, ecx
+        mov dword ptr [esi + 24h], edx
+        mov edx, dword ptr [esp + 10h]
+        je L_7D755C
+        sub edx, eax
+        add edx, 10h
+    L_7D755C:
+        mov eax, dword ptr [esp + 4ch]
+        mov dword ptr [esi + 30h], edx
+        mov edx, eax
+        and edx, 8000000fh
+        jns L_7D7572
+        dec edx
+        or edx, -10h
+        inc edx
+    L_7D7572:
+        je L_7D7579
+        sub eax, edx
+        add eax, 10h
+    L_7D7579:
+        mov edx, dword ptr [esp + 64h]
+        mov dword ptr [esi + 3ch], eax
+        mov eax, edx
+        and eax, 8000000fh
+        jns L_7D758E
+        dec eax
+        or eax, -10h
+        inc eax
+    L_7D758E:
+        je L_7D7595
+        sub edx, eax
+        add edx, 10h
+    L_7D7595:
+        cmp eax, ecx
+        mov dword ptr [esi + 48h], edx
+        mov edx, dword ptr [esp + 64h]
+        je L_7D75A5
+        sub edx, eax
+        add edx, 10h
+    L_7D75A5:
+        cmp eax, ecx
+        mov dword ptr [esi + 18h], edx
+        mov edx, dword ptr [esp + 64h]
+        je L_7D75B5
+        sub edx, eax
+        add edx, 10h
+    L_7D75B5:
+        cmp eax, ecx
+        mov ecx, dword ptr [esp + 64h]
+        mov dword ptr [esi + 54h], edx
+        je L_7D75C5
+        sub ecx, eax
+        add ecx, 10h
+    L_7D75C5:
+        mov eax, dword ptr [esp + 68h]
+        mov dword ptr [esi + 0ch], ecx
+        mov ecx, eax
+        and ecx, 8000000fh
+        jns L_7D75DB
+        dec ecx
+        or ecx, -10h
+        inc ecx
+    L_7D75DB:
+        je L_7D75E2
+        sub eax, ecx
+        add eax, 10h
+    L_7D75E2:
+        mov dword ptr [esi + 60h], eax
+        mov eax, dword ptr [esp + 60h]
+        mov ecx, eax
+        and ecx, 8000000fh
+        jns L_7D75F8
+        dec ecx
+        or ecx, -10h
+        inc ecx
+    L_7D75F8:
+        mov dword ptr [esp + 64h], ecx
+        je L_7D7603
+        sub eax, ecx
+        add eax, 10h
+    L_7D7603:
+        push ebp
+        mov dword ptr [esi + 84h], eax
+        mov eax, dword ptr [esp + 3ch]
+        mov ecx, dword ptr [ebx]
+        push offset mem_0099DF7C
+        push eax
+        push edi
+        push ecx
+        lea edx, [esp + 6ch]
+        push edx
+        call ext_007D7190
+        push ebp
+        mov dword ptr [esi + 88h], eax
+        mov eax, dword ptr [esp + 58h]
+        mov ecx, dword ptr [ebx]
+        push offset mem_0099DF74
+        push eax
+        push edi
+        push ecx
+        lea edx, [esp + 84h]
+        push edx
+        call ext_007D7190
+        push ebp
+        mov dword ptr [esi + 0a0h], eax
+        mov eax, dword ptr [esp + 74h]
+        mov ecx, dword ptr [ebx]
+        push offset mem_0099DF6C
+        push eax
+        push edi
+        push ecx
+        lea edx, [esp + 9ch]
+        push edx
+        call ext_007D7190
+        add esp, 48h
+        push ebp
+        mov dword ptr [esi + 0ach], eax
+        mov eax, dword ptr [esp + 48h]
+        mov ecx, dword ptr [ebx]
+        push offset mem_0099DF60
+        push eax
+        push edi
+        push ecx
+        lea edx, [esp + 6ch]
+        push edx
+        call ext_007D7190
+        mov ecx, dword ptr [esp + 7ch]
+        add esp, 18h
+        test ecx, ecx
+        pop edi
+        mov dword ptr [esi + 94h], eax
+        mov eax, dword ptr [esp + 5ch]
+        pop ebp
+        mov dword ptr [esi + 8ch], eax
+        mov dword ptr [esi + 0a4h], eax
+        mov dword ptr [esi + 0b0h], eax
+        mov dword ptr [esi + 98h], eax
+        pop ebx
+        mov edx, eax
+        je L_7D76BF
+        sub edx, ecx
+        add edx, 10h
+    L_7D76BF:
+        test ecx, ecx
+        mov dword ptr [esi + 90h], edx
+        mov edx, eax
+        je L_7D76D0
+        sub edx, ecx
+        add edx, 10h
+    L_7D76D0:
+        test ecx, ecx
+        mov dword ptr [esi + 0a8h], edx
+        mov edx, eax
+        je L_7D76E1
+        sub edx, ecx
+        add edx, 10h
+    L_7D76E1:
+        test ecx, ecx
+        mov dword ptr [esi + 0b4h], edx
+        je L_7D76F0
+        sub eax, ecx
+        add eax, 10h
+    L_7D76F0:
+        mov dword ptr [esi + 9ch], eax
+        pop esi
+        add esp, 40h
+        ret
+    }
+}
