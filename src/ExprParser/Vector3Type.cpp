@@ -396,3 +396,43 @@ extern "C" __declspec(naked) void* __fastcall fn_0066B530(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x0066D040] ExprParser::Vector3Type::vfunc_18 (113 bytes)
+extern "C" void ext_00672110();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B59684;
+extern "C" int mem_00B5967C;
+extern "C" int mem_009217B0;
+
+extern "C" __declspec(naked) void __fastcall fn_0066D040(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8b345e
+        push eax
+        mov dword ptr fs:[0x0], esp
+        mov eax, 0x1
+        sub esp, 0xc
+        test byte ptr [mem_00B59684], al
+        jne L_done_0066D040
+        or dword ptr [mem_00B59684], eax
+        fldz
+        fst dword ptr [esp]
+        lea eax, [esp]
+        fst dword ptr [esp + 0x4]
+        push eax
+        mov ecx, offset mem_00B5967C
+        fstp dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x18], 0x0
+        call ext_00672110
+        push offset mem_009217B0
+        call ext_006A6C87
+        add esp, 0x4
+    L_done_0066D040:
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, offset mem_00B5967C
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x18
+        ret 0x4
+    }
+}
