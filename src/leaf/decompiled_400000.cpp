@@ -5746,3 +5746,45 @@ L_end:
         ret 8
     }
 }
+
+// [0x0040B250] sub_0040B250 (89 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0040B250(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        jne L_nonzero
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push esi
+        call fn_0040ACB0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_nonzero:
+        cmp eax, 0x1
+        je L_one
+        cmp eax, 0x2
+        je L_one
+        mov esi, dword ptr [esp + 0xc]
+        push 0x92ab7c
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_one:
+        mov esi, dword ptr [esp + 0xc]
+        push 0x1
+        push esi
+        call fn_0040ACB0
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
