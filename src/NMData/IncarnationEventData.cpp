@@ -109,3 +109,23 @@ extern "C" __declspec(naked) void __fastcall fn_004CFE20(void* self) {
         ret 0x8
     }
 }
+
+extern "C" void ext_004C2070();
+
+// [0x004CE830] NMData::IncarnationEventData::vfunc_14 (32 bytes)
+extern "C" __declspec(naked) int __fastcall fn_004CE830(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push esi
+        mov dword ptr [esp + 0xc], 0
+        call ext_004C2070
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
