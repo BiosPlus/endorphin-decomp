@@ -10301,3 +10301,13 @@ L_6677E4:
         ret 0xc
     }
 }
+
+// [0x00662850] sub_00662850 (35 bytes)
+extern "C" void ext_00640110();
+extern "C" void __cdecl ext_00640A50(int a1, int a2);
+extern "C" void __cdecl fn_00662850(void* a1, int a2, int a3) {
+    if (a3) {
+        int r = ((int (__thiscall*)(void*, int))ext_00640110)(a1, a2);
+        ext_00640A50(r, a3);
+    }
+}
