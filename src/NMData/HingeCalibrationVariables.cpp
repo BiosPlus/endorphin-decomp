@@ -223,3 +223,62 @@ extern "C" __declspec(naked) void __fastcall fn_006227E0(void* self) {
         ret 0x4
     }
 }
+
+// [0x00622210] NMData::HingeCalibrationVariables::vfunc_26 (123 bytes)
+extern "C" void ext_006404E0();
+extern "C" void ext_00640390();
+extern "C" void ext_00640BC0();
+extern "C" int mem_00A9EE6C;
+extern "C" int mem_00A9ED5C;
+extern "C" int mem_00A9EF5C;
+extern "C" int mem_00A9EF60;
+
+extern "C" __declspec(naked) void* __fastcall fn_00622210(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9EE6C]
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push eax
+        call ext_006404E0
+        mov ecx, dword ptr [mem_00A9ED5C]
+        push 0x0
+        mov esi, eax
+        push ecx
+        mov ecx, esi
+        call ext_00640390
+        fld dword ptr [edi + 0xc]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00640BC0
+        mov edx, dword ptr [mem_00A9EF5C]
+        add esp, 0x8
+        push 0x0
+        push edx
+        mov ecx, esi
+        call ext_00640390
+        fld dword ptr [edi + 0x4]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00640BC0
+        mov eax, dword ptr [mem_00A9EF60]
+        add esp, 0x8
+        push 0x0
+        push eax
+        mov ecx, esi
+        call ext_00640390
+        fld dword ptr [edi + 0x8]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00640BC0
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
