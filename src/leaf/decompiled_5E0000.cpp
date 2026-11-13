@@ -4346,3 +4346,14 @@ extern "C" void __fastcall fn_005E2730(void* self, int edx_unused, float a1) {
     float v = ((FloatThisFloatFn005E2730)ext_006781B0)(reinterpret_cast<char*>(r) + 0x2e0, a1);
     ((VoidThisFloatFn005E2730)ext_005E2280)(self, v);
 }
+
+// [0x005EDF90] sub_005EDF90 (31 bytes)
+extern "C" int mem_00924FDC;
+extern "C" void ext_005ED750();
+
+extern "C" void __fastcall fn_005EDF90(void* self, int edx_unused, int a1) {
+    typedef void (__thiscall *MfcFn)(void*, int);
+    MfcFn f = (MfcFn)mem_00924FDC;
+    f((char*)self + 0x198, a1);
+    ((void (__thiscall *)(void*))ext_005ED750)(self);
+}
