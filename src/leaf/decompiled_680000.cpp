@@ -6179,3 +6179,79 @@ extern "C" __declspec(naked) void __fastcall fn_00685900(void* self) {
         ret     0xc
     }
 }
+
+extern "C" void ext_0041CF50();
+extern "C" void ext_00671100();
+extern "C" void ext_00685900();
+extern "C" int mem_00924FB0;
+extern "C" int mem_00924FDC;
+
+// [0x00685AE0] sub_00685AE0 (186 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00685AE0(void* self, int edx_unused, void* arg) {
+    __asm {
+        mov     eax, dword ptr fs:[0]
+        push    -1
+        push    0x8b33b8
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 8
+        push    ebx
+        push    esi
+        push    edi
+        push    5
+        mov     esi, ecx
+        call    ext_00671100
+        mov     ebx, dword ptr [esp + 0x28]
+        add     esp, 4
+        cmp     dword ptr [esi + 0x28], eax
+        jne     loc_685b7c
+        lea     edi, [esi + 0x2c]
+        push    ebx
+        push    edi
+        call    dword ptr [mem_00924FB0]
+        add     esp, 8
+        test    al, al
+        je      loc_685b7c
+        push    ebx
+        mov     ecx, edi
+        call    dword ptr [mem_00924FDC]
+        push    0
+        push    0
+        lea     eax, [esp + 0x14]
+        push    eax
+        mov     ecx, esi
+        call    ext_00685900
+        push    eax
+        lea     ecx, [esi + 0x48]
+        mov     dword ptr [esp + 0x20], 0
+        call    ext_0041CF50
+        mov     ecx, dword ptr [esp + 0x10]
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x1c], -1
+        je      loc_685b86
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx + 0x78]
+        lea     eax, [esp + 0xc]
+        push    eax
+        call    edx
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     ecx, dword ptr [esp + 8]
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x14
+        ret     4
+    loc_685b7c:
+        push    ebx
+        lea     ecx, [esi + 0x2c]
+        call    dword ptr [mem_00924FDC]
+    loc_685b86:
+        mov     ecx, dword ptr [esp + 0x14]
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x14
+        ret     4
+    }
+}
