@@ -14,5 +14,7 @@
     "0x0067BD18",
     "0x0067BD22"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T12:10:25Z"
 }
