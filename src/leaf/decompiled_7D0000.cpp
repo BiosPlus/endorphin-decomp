@@ -6540,3 +6540,191 @@ a_6AD:
         jmp a_638
     }
 }
+
+// [0x007DD6C0] sub_007DD6C0 (472 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007DD6C0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 24h
+        push ebx
+        mov ebx, ecx
+        mov ecx, dword ptr [esp + 2Ch]
+        fld dword ptr [ecx + 8h]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [ecx + 0Ch]
+        fstp dword ptr [esp + 0Ch]
+        fld dword ptr [esp + 0Ch]
+        push edi
+        mov edi, dword ptr [eax + 8h]
+        fst qword ptr [esp + 24h]
+        fld dword ptr [edx + 8h]
+        mov dword ptr [esp + 18h], eax
+        fcomp st(1)
+        mov dword ptr [esp + 0Ch], ebx
+        mov dword ptr [esp + 8h], edx
+        mov dword ptr [esp + 14h], edi
+        fnstsw ax
+        test ah, 41h
+        jp loc_7DD868
+        push ebp
+        push esi
+        jmp loc_7DD70E
+
+loc_7DD706:
+        mov edi, dword ptr [esp + 1Ch]
+        mov ebx, dword ptr [esp + 14h]
+
+loc_7DD70E:
+        mov edx, dword ptr [esp + 10h]
+        mov al, byte ptr [edx + 10h]
+        cmp al, -1
+        je loc_7DD866
+        test al, al
+        jne loc_7DD84C
+        mov eax, dword ptr [edx + 0Ch]
+        mov edx, dword ptr [eax + 8h]
+        mov dword ptr [esp + 18h], eax
+        mov eax, edx
+        sub eax, edi
+        sar eax, 1Fh
+        mov ecx, eax
+        mov esi, eax
+        and eax, edi
+        not ecx
+        and esi, edx
+        mov ebp, ecx
+        and ecx, edx
+        or ecx, eax
+        and ebp, edi
+        or esi, ebp
+        lea eax, [esi + 1]
+        lea edx, [esi + 2]
+        imul edx, eax
+        mov eax, dword ptr [ebx + 0Ch]
+        imul eax, esi
+        sar edx, 1
+        sub eax, edx
+        mov edx, dword ptr [ebx + 20h]
+        add eax, ecx
+        mov dword ptr [esp + 28h], ecx
+        mov ecx, eax
+        and al, 1
+        add al, al
+        add al, al
+        sar ecx, 1
+        lea edi, [ecx + edx]
+        mov dl, byte ptr [edi]
+        mov cl, al
+        shr dl, cl
+        movzx ebp, al
+        and dl, 0Fh
+        mov ecx, ebp
+        add dl, 1
+        mov eax, 0F0h
+        sar eax, cl
+        mov bl, dl
+        shl bl, cl
+        and al, byte ptr [edi]
+        or al, bl
+        mov byte ptr [edi], al
+        mov eax, dword ptr [esp + 14h]
+        cmp dl, byte ptr [eax + 4h]
+        jne loc_7DD848
+        mov edx, dword ptr [esp + 20h]
+        mov edi, dword ptr [edx + 18h]
+        test edi, edi
+        mov dword ptr [esp + 24h], edi
+        je loc_7DD894
+        mov ecx, dword ptr [esp + 18h]
+        cmp edi, dword ptr [ecx + 18h]
+        jne loc_7DD894
+        mov edi, dword ptr [edx + 1Ch]
+        cmp edi, dword ptr [ecx + 1Ch]
+        jne loc_7DD894
+        mov edi, dword ptr [ecx + 20h]
+        mov ebx, dword ptr [edx + 20h]
+        mov eax, edi
+        sub eax, ebx
+        shr eax, 1Fh
+        sub eax, 1
+        mov ecx, eax
+        not ecx
+        mov edx, eax
+        mov ebp, ecx
+        and eax, edi
+        and ecx, ebx
+        or ecx, eax
+        lea eax, [ecx + 1]
+        imul eax, ecx
+        and edx, ebx
+        and ebp, edi
+        or edx, ebp
+        shr eax, 1
+        add eax, edx
+        mov ecx, eax
+        and ecx, 1Fh
+        mov edx, 1
+        shl edx, cl
+        mov ecx, dword ptr [esp + 24h]
+        shr eax, 5
+        test dword ptr [ecx + eax*4 + 8h], edx
+        jne loc_7DD848
+        mov eax, dword ptr [esp + 14h]
+        fstp st(0)
+
+loc_7DD81B:
+        mov ecx, dword ptr [esp + 28h]
+        imul esi, esi, 9Ch
+        mov edx, dword ptr [eax + 10h]
+        imul ecx, ecx, 9Ch
+        mov ecx, dword ptr [ecx + edx + 0Ch]
+        mov edx, dword ptr [esi + edx + 0Ch]
+        mov eax, dword ptr [eax + 2Ch]
+        push ecx
+        push edx
+        push eax
+        call ext_007DCC90
+        add esp, 0Ch
+        fld qword ptr [esp + 2Ch]
+
+loc_7DD848:
+        mov ecx, dword ptr [esp + 38h]
+
+loc_7DD84C:
+        mov edx, dword ptr [esp + 10h]
+        mov eax, dword ptr [edx]
+        fld dword ptr [eax + 8h]
+        mov dword ptr [esp + 10h], eax
+        fcomp st(1)
+        fnstsw ax
+        test ah, 41h
+        jnp loc_7DD706
+
+loc_7DD866:
+        pop esi
+        pop ebp
+
+loc_7DD868:
+        mov eax, dword ptr [ecx]
+        fstp st(0)
+        mov edx, dword ptr [ecx + 4h]
+        mov dword ptr [eax + 4h], edx
+        mov eax, dword ptr [ecx + 4h]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax], edx
+        mov eax, dword ptr [esp + 8h]
+        mov dword ptr [ecx], eax
+        mov eax, dword ptr [eax + 4h]
+        mov dword ptr [ecx + 4h], eax
+        mov dword ptr [eax], ecx
+        mov eax, dword ptr [ecx]
+        pop edi
+        mov dword ptr [eax + 4h], ecx
+        pop ebx
+        add esp, 24h
+        ret 4
+
+loc_7DD894:
+        fstp st(0)
+        jmp loc_7DD81B
+    }
+}
