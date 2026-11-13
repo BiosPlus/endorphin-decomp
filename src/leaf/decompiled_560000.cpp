@@ -2819,3 +2819,163 @@ L_RET:
         ret 0ch
     }
 }
+
+// [0x0056DA60] sub_0056DA60 (383 bytes)
+extern "C" int mem_00924FC0;
+
+extern "C" __declspec(naked) int __stdcall fn_0056DA60(void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [mem_00924FC0]
+        push 0x9591f4
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je short c1
+    r0:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x4
+    c1:
+        push 0x9591e8
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je short c2
+    r1:
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret 0x4
+    c2:
+        push 0x9591dc
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je short c3
+    r2:
+        pop edi
+        mov eax, 0x2
+        pop esi
+        ret 0x4
+    c3:
+        push 0x9591d0
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je short c4
+    r3:
+        pop edi
+        mov eax, 0x3
+        pop esi
+        ret 0x4
+    c4:
+        push 0x9591c4
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je short c5
+    r4:
+        pop edi
+        mov eax, 0x4
+        pop esi
+        ret 0x4
+    c5:
+        push 0x9591b8
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je short c6
+    r5:
+        pop edi
+        mov eax, 0x5
+        pop esi
+        ret 0x4
+    c6:
+        push 0x9591b4
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr r0
+        push 0x9591b0
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr r1
+        push 0x9591ac
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr r2
+        push 0x9591a8
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr r3
+        push 0x9591a4
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr r4
+        push 0x9591a0
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr r5
+        push 0x95919c
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr r0
+        push 0x959198
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr r1
+        push 0x959194
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr r2
+        push 0x959190
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr r3
+        push 0x95918c
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr r4
+        push 0x959188
+        push esi
+        call edi
+        add esp, 0x8
+        neg al
+        pop edi
+        pop esi
+        sbb eax, eax
+        and eax, 0x5
+        ret 0x4
+    }
+}
