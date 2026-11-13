@@ -6521,3 +6521,138 @@ extern "C" __declspec(naked) void __fastcall fn_006B7A30(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006B7460] sub_006B7460 (364 bytes)
+extern "C" void ext_00407850();
+extern "C" void ext_0040BEE0();
+extern "C" void ext_006A67CC();
+extern "C" void ext_006B6CF0();
+extern "C" int mem_0092560C;
+extern "C" int mem_0092566C;
+extern "C" int mem_00925628;
+extern "C" int mem_00925650;
+extern "C" int mem_00925564;
+extern "C" int mem_00B5D254;
+extern "C" int mem_00B5D260;
+
+extern "C" __declspec(naked) void __fastcall fn_006B7460(void* self) {
+    __asm {
+        mov edx, dword ptr [mem_00B5D258]
+        sub esp, 0x2c
+        push esi
+        mov esi, dword ptr [esp + 0x3c]
+        push edi
+        mov edi, dword ptr [esp + 0x3c]
+        cmp edi, 0x201
+        jne L_notdown
+        mov eax, dword ptr [edx + 0x6c]
+        test eax, eax
+        je L_down_nochild
+        mov eax, dword ptr [eax + 0x20]
+L_down_nochild:
+        cmp dword ptr [esi + 0x8], eax
+        jne L_general_entry
+        mov byte ptr [mem_00B5D260], 1
+L_general_entry:
+        mov eax, dword ptr [edx + 0x6c]
+        test eax, eax
+        jne L_general_child
+        xor ecx, ecx
+        jmp L_general
+L_notdown:
+        cmp edi, 0xa1
+        je L_general_entry
+        cmp edi, 0x204
+        je L_general_entry
+        cmp edi, 0xa4
+        je L_general_entry
+        cmp edi, 0x202
+        jne L_pass
+        mov eax, dword ptr [mem_00B5D258]
+        mov eax, dword ptr [eax + 0x6c]
+        test eax, eax
+        jne L_up_child
+        xor ecx, ecx
+        jmp L_up_cmp
+L_up_child:
+        mov ecx, dword ptr [eax + 0x20]
+L_up_cmp:
+        mov eax, dword ptr [esi + 0x8]
+        cmp eax, ecx
+        jne L_pass
+        lea ecx, [esp + 0x18]
+        push ecx
+        push 1
+        push eax
+        mov dword ptr [esp + 0x24], 0x1c
+        mov dword ptr [esp + 0x28], 0x7
+        call dword ptr [mem_0092560C]
+        mov edx, dword ptr [mem_00B5D258]
+        mov ecx, dword ptr [edx + 0x6c]
+        call ext_0040BEE0
+        cmp dword ptr [esp + 0x28], eax
+        mov ecx, dword ptr [mem_00B5D258]
+        je L_756e
+        mov edx, dword ptr [ecx + 0x6c]
+        lea eax, [esp + 0x8]
+        push eax
+        mov eax, dword ptr [edx + 0x20]
+        push eax
+        call dword ptr [mem_0092566C]
+        mov edx, dword ptr [mem_00B5D258]
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, dword ptr [edx + 0x6c]
+        call ext_006A67CC
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi]
+        push eax
+        push ecx
+        lea edx, [esp + 0x10]
+        push edx
+        call dword ptr [mem_00925628]
+        test eax, eax
+        je L_pass
+        cmp byte ptr [mem_00B5D260], 0
+        je L_pass
+        mov ecx, dword ptr [mem_00B5D258]
+        mov byte ptr [mem_00B5D260], 0
+L_756e:
+        call ext_00407850
+        mov ecx, eax
+        call ext_006A60D0
+        push 1
+        jmp L_75a5
+L_general_child:
+        mov ecx, dword ptr [eax + 0x20]
+L_general:
+        mov eax, dword ptr [esi + 0x8]
+        cmp eax, ecx
+        je L_pass
+        mov ecx, dword ptr [edx + 0x20]
+        cmp eax, ecx
+        je L_pass
+        push ecx
+        call dword ptr [mem_00925650]
+        push eax
+        call ext_006A5E00
+        mov ecx, eax
+        call ext_006A60D0
+        push 0
+L_75a5:
+        mov ecx, dword ptr [mem_00B5D258]
+        call ext_006B6CF0
+L_pass:
+        mov eax, dword ptr [esp + 0x38]
+        mov ecx, dword ptr [mem_00B5D254]
+        push esi
+        push edi
+        push eax
+        push ecx
+        call dword ptr [mem_00925564]
+        pop edi
+        pop esi
+        add esp, 0x2c
+        ret 0xc
+    }
+}
