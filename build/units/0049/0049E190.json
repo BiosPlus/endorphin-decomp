@@ -12,5 +12,7 @@
   "relocations": [
     "0x0049E270"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T10:13:49Z"
 }

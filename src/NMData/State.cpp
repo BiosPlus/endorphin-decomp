@@ -684,3 +684,142 @@ extern "C" __declspec(naked) void* __fastcall fn_004A0150(void* self, int edx_un
         ret 0x8
     }
 }
+
+extern "C" void ext_0049CE90();
+
+// [0x0049E190] NMData::State::vfunc_32_off_8 (334 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0049E190(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x18
+        mov eax, dword ptr [esp + 0x1c]
+        fldz
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [eax + 0x4]
+        mov dword ptr [esp], edx
+        fld dword ptr [esp]
+        fcom st(1)
+        mov dword ptr [esp + 0x4], eax
+        fnstsw ax
+        fldz
+        test ah, 0x41
+        fld1
+        jne short L_1D5
+        fld dword ptr [ecx + 0xe8]
+        fadd st, st(3)
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne short L_1D5
+        fstp st(2)
+        fld dword ptr [ecx + 0xe8]
+        fsubr st, st(2)
+        fstp dword ptr [esp]
+        jmp short L_1FE
+    L_1D5:
+        fxch st(2)
+        fcom st(3)
+        fnstsw ax
+        test ah, 0x5
+        jp short L_1FC
+        fadd dword ptr [ecx + 0xe0]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp short L_1FE
+        fld dword ptr [ecx + 0xe0]
+        fchs
+        fstp dword ptr [esp]
+        jmp short L_1FE
+    L_1FC:
+        fstp st(0)
+    L_1FE:
+        fld dword ptr [esp + 0x4]
+        fcom st(3)
+        fnstsw ax
+        test ah, 0x41
+        jne short L_22E
+        fld st(0)
+        fadd dword ptr [ecx + 0xec]
+        fcomp st(3)
+        fnstsw ax
+        test ah, 0x41
+        jne short L_22E
+        fstp st(0)
+        fstp st(2)
+        fstp st(1)
+        fsub dword ptr [ecx + 0xec]
+        fstp dword ptr [esp + 0x4]
+        jmp short L_25C
+    L_22E:
+        fstp st(2)
+        fxch st(2)
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne short L_258
+        fadd dword ptr [ecx + 0xe4]
+        fcompp
+        fnstsw ax
+        test ah, 0x5
+        jp short L_25C
+        fld dword ptr [ecx + 0xe4]
+        fchs
+        fstp dword ptr [esp + 0x4]
+        jmp short L_25C
+    L_258:
+        fstp st(0)
+        fstp st(0)
+    L_25C:
+        push esi
+        lea esi, [ecx + 0xe0]
+        lea ecx, [esp + 0x4]
+        push ecx
+        lea edx, [esp + 0x10]
+        push edx
+        mov ecx, esi
+        call ext_0049CE90
+        fldz
+        fcom dword ptr [esp + 0xc]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_285
+        fst dword ptr [esp + 0xc]
+    L_285:
+        fcom dword ptr [esp + 0x10]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_296
+        fstp dword ptr [esp + 0x10]
+        jmp short L_298
+    L_296:
+        fstp st(0)
+    L_298:
+        fld1
+        fcom dword ptr [esp + 0x14]
+        fnstsw ax
+        test ah, 0x5
+        jp short L_2A9
+        fst dword ptr [esp + 0x14]
+    L_2A9:
+        fcom dword ptr [esp + 0x18]
+        fnstsw ax
+        test ah, 0x5
+        jp short L_2BA
+        fstp dword ptr [esp + 0x18]
+        jmp short L_2BC
+    L_2BA:
+        fstp st(0)
+    L_2BC:
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x14]
+        mov dword ptr [esi], eax
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [esi + 0x4], ecx
+        mov dword ptr [esi + 0x8], edx
+        mov dword ptr [esi + 0xc], eax
+        pop esi
+        add esp, 0x18
+        ret 0x4
+    }
+}
