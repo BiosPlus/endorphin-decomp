@@ -6459,3 +6459,12 @@ loc_50c399:
         ret
     }
 }
+
+// [0x0050AA50] sub_0050AA50 (32 bytes)
+extern "C" int mem_00A9F178;
+extern "C" void __cdecl ext_0050A060(void* a, void* b, int c, int d);
+
+extern "C" void* __fastcall fn_0050AA50(char* self, int edx_unused, void* arg) {
+    ext_0050A060(self + 4, arg, 0, mem_00A9F178);
+    return arg;
+}
