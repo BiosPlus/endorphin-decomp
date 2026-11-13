@@ -4249,3 +4249,18 @@ extern "C" __declspec(naked) void __fastcall fn_005E2200(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005E2650] sub_005E2650 (50 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_005E2200();
+extern "C" void ext_006781B0();
+
+typedef void*  (__cdecl    *GetPtrFn005E2650)();
+typedef float  (__thiscall *FloatThisFloatFn005E2650)(void* ecx_this, float a);
+typedef void   (__thiscall *VoidThisFloatFn005E2650)(void* ecx_this, float a);
+
+extern "C" void __fastcall fn_005E2650(void* self, int edx_unused, float a1) {
+    void* r = ((GetPtrFn005E2650)ext_00594000)();
+    float v = ((FloatThisFloatFn005E2650)ext_006781B0)(reinterpret_cast<char*>(r) + 0x2e0, a1);
+    ((VoidThisFloatFn005E2650)ext_005E2200)(self, v);
+}
