@@ -6201,3 +6201,28 @@ extern "C" __declspec(naked) void __fastcall fn_0062A520(void* self) {
         ret
     }
 }
+
+// [0x00623970] sub_00623970 (44 bytes)
+extern "C" void ext_006233F0();
+extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void __fastcall fn_00623970(void* self) {
+    __asm {
+        mov     eax, dword ptr [esp + 0x8]
+        test    eax, eax
+        push    esi
+        mov     esi, ecx
+        je      loc_623998
+        push    eax
+        mov     eax, dword ptr [esp + 0xc]
+        sub     esp, 0x1c
+        mov     ecx, esp
+        mov     dword ptr [esp + 0x2c], esp
+        push    eax
+        call    dword ptr [mem_00924FE0]
+        lea     ecx, [esi + 0x20]
+        call    ext_006233F0
+loc_623998:
+        pop     esi
+        ret     0x8
+    }
+}
