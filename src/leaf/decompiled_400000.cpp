@@ -10764,3 +10764,39 @@ extern "C" __declspec(naked) void __fastcall fn_0040F550(void* self, int edx_dum
         ret 8
     }
 }
+
+// [0x0040F700] sub_0040F700 (94 bytes)
+extern "C" void ext_0040F550();
+extern "C" __declspec(naked) void __fastcall fn_0040F700(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x87cee9
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push edi
+        mov esi, ecx
+        mov edi, dword ptr [esi + 0x8]
+        push ecx
+        lea eax, [esp + 0x20]
+        mov ecx, esp
+        mov dword ptr [esp + 0xc], esp
+        push eax
+        mov dword ptr [esp + 0x1c], 0x0
+        call dword ptr [mem_00924494]
+        push edi
+        mov ecx, esi
+        call ext_0040F550
+        lea ecx, [esp + 0x1c]
+        call dword ptr [mem_009242F4]
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, edi
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0x10
+        ret 0x4
+    }
+}
