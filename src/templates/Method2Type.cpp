@@ -994,3 +994,41 @@ extern "C" __declspec(naked) void __fastcall fn_0066C100(void* self) {
         ret 0x10
     }
 }
+
+// [0x0066C250] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, NM::Vector3 const &, &public: void __thiscall NM::Vector3::orientationTwistSwingAnglesAtoB(class NM::Vector3 const &, NM::Vector3 const &)>::vfunc_49 (75 bytes)
+extern "C" void ext_00671F30();
+extern "C" void ext_0067CA30();
+
+extern "C" __declspec(naked) void __fastcall fn_0066C250(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        mov dword ptr [esp + 0x8], 0x0
+        call eax
+        mov edx, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [edx + 0x4]
+        push eax
+        mov eax, dword ptr [ecx]
+        push edx
+        mov edx, dword ptr [eax + 0x14]
+        call edx
+        push eax
+        mov ecx, esi
+        call ext_0067CA30
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x10
+    }
+}
