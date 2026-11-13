@@ -7738,3 +7738,61 @@ L_exit:
         ret 4
     }
 }
+
+// [0x007DF610] sub_007DF610 (96 bytes)
+extern "C" void ext_007DF3A0();
+
+extern "C" __declspec(naked) void __fastcall fn_007DF610(void* self) {
+    __asm {
+        push ebx
+        mov ebx, eax
+        mov eax, dword ptr [ebx + 0x38]
+        push esi
+        mov dword ptr [eax + 0x4], 0x0
+        mov eax, dword ptr [ebx + 0xc]
+        push edi
+        xor edi, edi
+        test eax, eax
+        jbe L_done
+    L_outer:
+        xor esi, esi
+        test eax, eax
+        jbe L_outer_next
+        __asm _emit 0x8b
+        __asm _emit 0xff
+    L_inner:
+        mov ecx, dword ptr [ebx + 0x4]
+        imul eax, edi
+        add eax, esi
+        cmp dword ptr [ecx + 4*eax], 0x0
+        je L_inner_next
+        push edi
+        mov eax, esi
+        call ext_007DF3A0
+        add esp, 0x4
+        test eax, eax
+        je L_fail
+    L_inner_next:
+        mov eax, dword ptr [ebx + 0xc]
+        add esi, 0x1
+        cmp esi, eax
+        jb L_inner
+    L_outer_next:
+        mov eax, dword ptr [ebx + 0xc]
+        add edi, 0x1
+        cmp edi, eax
+        jb L_outer
+    L_done:
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+    L_fail:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
