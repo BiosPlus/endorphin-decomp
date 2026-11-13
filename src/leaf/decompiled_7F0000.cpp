@@ -6026,3 +6026,254 @@ extern "C" __declspec(naked) void __fastcall fn_007FE360(void* self) {
         ret
     }
 }
+
+// [0x007F2660] sub_007F2660 (652 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007F2660(void* self) {
+    __asm {
+        sub esp, 1Ch
+        mov eax, dword ptr [esp+38h]
+        push ebx
+        mov ebx, dword ptr [esp+40h]
+        push ebp
+        push esi
+        xor esi, esi
+        mov dword ptr [eax], esi
+        mov eax, dword ptr [esp+74h]
+        xor ebp, ebp
+        cmp eax, esi
+        mov dword ptr [esp+0Ch], ebp
+        mov dword ptr [esp+10h], esi
+        mov dword ptr [esp+14h], esi
+        je L_28E5
+        mov ecx, dword ptr [esp+38h]
+        fldz
+        push edi
+        mov edi, dword ptr [esp+74h]
+        sub edi, ecx
+        mov edx, ecx
+        mov dword ptr [esp+24h], edi
+        mov edi, dword ptr [esp+30h]
+        mov dword ptr [esp+4Ch], edx
+        mov dword ptr [esp+28h], eax
+L_26AB:
+        mov ecx, dword ptr [esp+24h]
+        mov dword ptr [edx], 0
+        cmp dword ptr [ecx+edx], 0
+        mov dword ptr [esp+20h], 0
+        je L_2873
+        mov eax, dword ptr [esp+68h]
+        mov ecx, dword ptr [esp+18h]
+        lea eax, [eax+4*ecx]
+        mov dword ptr [esp+74h], eax
+L_26D6:
+        mov ecx, dword ptr [esp+74h]
+        cmp dword ptr [ecx], 0
+        mov dword ptr [esp+1Ch], 0
+        je L_27AE
+L_26EB:
+        mov eax, ebp
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        lea edx, [eax+2*eax]
+        mov eax, ebp
+        xor ecx, ecx
+        shl edx, 4
+        and eax, 80000003h
+        jns short L_270C
+        dec eax
+        or eax, -4
+        inc eax
+L_270C:
+        lea esi, [edx+eax]
+        lea eax, [edi+4*esi]
+L_2712:
+        fld dword ptr [ebx+4*ecx]
+        add ecx, 1
+        fstp dword ptr [eax]
+        add eax, 10h
+        cmp ecx, 3
+        jne short L_2712
+        lea ecx, [ebx+10h]
+        lea eax, [edi+4*esi+30h]
+        mov edx, 3
+L_272E:
+        fld dword ptr [ecx]
+        add eax, 10h
+        fstp dword ptr [eax-10h]
+        add ecx, 4
+        sub edx, 1
+        jne short L_272E
+        lea ecx, [ebx+20h]
+        lea eax, [edi+4*esi+60h]
+        mov edx, 3
+L_274A:
+        fld dword ptr [ecx]
+        add eax, 10h
+        fstp dword ptr [eax-10h]
+        add ecx, 4
+        sub edx, 1
+        jne short L_274A
+        lea ecx, [ebx+30h]
+        lea eax, [edi+4*esi+90h]
+        mov edx, 3
+L_2769:
+        fld dword ptr [ecx]
+        add eax, 10h
+        fstp dword ptr [eax-10h]
+        add ecx, 4
+        sub edx, 1
+        jne short L_2769
+        mov eax, dword ptr [esp+4Ch]
+        add dword ptr [eax], 1
+        mov eax, dword ptr [esp+1Ch]
+        mov ecx, dword ptr [esp+74h]
+        add dword ptr [esp+14h], 1
+        add eax, 1
+        add ebx, 40h
+        add ebp, 1
+        cmp eax, dword ptr [ecx]
+        mov dword ptr [esp+1Ch], eax
+        jne L_26EB
+        mov esi, dword ptr [esp+14h]
+        mov edx, dword ptr [esp+4Ch]
+        mov dword ptr [esp+10h], ebp
+L_27AE:
+        mov ecx, esi
+        and ecx, 80000003h
+        jns short L_27BD
+        dec ecx
+        or ecx, -4
+        inc ecx
+L_27BD:
+        mov eax, esi
+        je short L_27C6
+        sub eax, ecx
+        add eax, 4
+L_27C6:
+        sub eax, esi
+        shl eax, 6
+        add ebx, eax
+        test ecx, ecx
+        je short L_27DE
+        mov eax, 4
+        sub eax, ecx
+        add esi, eax
+        mov dword ptr [esp+14h], esi
+L_27DE:
+        mov ecx, ebp
+        and ecx, 80000003h
+        jns short L_27ED
+        dec ecx
+        or ecx, -4
+        inc ecx
+L_27ED:
+        je short L_2851
+        mov esi, ebp
+        mov ebp, 4
+L_27F6:
+        mov eax, esi
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        lea edx, [eax+2*eax]
+        mov eax, esi
+        shl edx, 4
+        and eax, 80000003h
+        jns short L_2815
+        dec eax
+        or eax, -4
+        inc eax
+L_2815:
+        lea ecx, [edx+eax]
+        lea eax, [edi+4*ecx]
+        lea ecx, [edi+4*ecx+60h]
+        mov edx, 6
+L_2824:
+        fst dword ptr [eax]
+        add eax, 10h
+        fst dword ptr [ecx]
+        add ecx, 10h
+        sub edx, 1
+        jne short L_2824
+        add esi, 1
+        sub ebp, 1
+        jne short L_27F6
+        add dword ptr [esp+10h], 4
+        mov eax, dword ptr [esp+4Ch]
+        add dword ptr [eax], 4
+        mov ebp, dword ptr [esp+10h]
+        mov esi, dword ptr [esp+14h]
+        mov edx, eax
+L_2851:
+        mov eax, dword ptr [esp+20h]
+        mov ecx, dword ptr [esp+24h]
+        add dword ptr [esp+18h], 1
+        add dword ptr [esp+74h], 4
+        add eax, 1
+        cmp eax, dword ptr [ecx+edx]
+        mov dword ptr [esp+20h], eax
+        jne L_26D6
+L_2873:
+        mov eax, ebp
+        and eax, 80000003h
+        jns short L_2881
+        dec eax
+        or eax, -4
+        inc eax
+L_2881:
+        je short L_28C8
+        lea ecx, [ebp-4]
+        mov eax, ecx
+        and eax, 80000003h
+        jns short L_2894
+        dec eax
+        or eax, -4
+        inc eax
+L_2894:
+        jne short L_289E
+        mov dword ptr [esp+10h], ecx
+        mov ebp, ecx
+        jmp short L_28A4
+L_289E:
+        sub ebp, eax
+        mov dword ptr [esp+10h], ebp
+L_28A4:
+        mov eax, dword ptr [edx]
+        lea edx, [eax-4]
+        mov ecx, edx
+        and ecx, 80000003h
+        jns short L_28B8
+        dec ecx
+        or ecx, -4
+        inc ecx
+L_28B8:
+        jne short L_28BE
+        mov eax, edx
+        jmp short L_28C0
+L_28BE:
+        sub eax, ecx
+L_28C0:
+        mov ecx, dword ptr [esp+4Ch]
+        mov dword ptr [ecx], eax
+        mov edx, ecx
+L_28C8:
+        mov ecx, dword ptr [edx]
+        mov eax, dword ptr [esp+48h]
+        add dword ptr [eax], ecx
+        add edx, 4
+        sub dword ptr [esp+28h], 1
+        mov dword ptr [esp+4Ch], edx
+        jne L_26AB
+        fstp st(0)
+        pop edi
+L_28E5:
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 1Ch
+        ret
+    }
+}
