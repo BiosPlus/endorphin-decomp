@@ -1935,3 +1935,17 @@ extern "C" __declspec(naked) void __fastcall fn_004F9970(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_004925B0();
+extern "C" void ext_004938E0();
+
+// [0x004F9AE0] VMCSModes::DefaultImplementation::vfunc_60 (65 bytes)
+extern "C" void __fastcall fn_004F9AE0(void* self, int edx_unused, int a1) {
+    char* base = ((char* (__cdecl*)())ext_00594000)();
+    void* obj = ((void* (__thiscall*)(void*))ext_006AD940)(*(void**)(base + 0x26c));
+    if (!((bool (__thiscall*)(void*, int))ext_004925B0)(obj, a1)) {
+        typedef void (__thiscall *VFunc)(void*);
+        (*(VFunc*)(*(char**)self + 0x90))(self);
+        ((void (__thiscall*)(void*, int))ext_004938E0)(obj, a1);
+    }
+}
