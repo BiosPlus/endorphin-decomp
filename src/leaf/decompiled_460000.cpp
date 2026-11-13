@@ -6836,3 +6836,93 @@ extern "C" __declspec(naked) void __fastcall fn_0046A970(void* self) {
         ret 0x10
     }
 }
+
+extern "C" void ext_0046A8E0();
+extern "C" void ext_0046A970();
+
+// [0x0046AB70] sub_0046AB70 (185 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0046AB70(void* self) {
+    __asm {
+        sub     esp, 0Ch
+        push    ebp
+        mov     ebp, dword ptr [esp + 18h]
+        push    esi
+        push    edi
+        mov     edi, ecx
+        mov     esi, dword ptr [edi + 4]
+        mov     eax, dword ptr [esi + 4]
+        cmp     byte ptr [eax + 11h], 0
+        mov     cl, 1
+        mov     byte ptr [esp + 0Ch], cl
+        jne     loc_46ABAE
+        mov     edx, dword ptr [ebp]
+    loc_46AB91:
+        cmp     edx, dword ptr [eax + 0Ch]
+        mov     esi, eax
+        setb    cl
+        test    cl, cl
+        mov     byte ptr [esp + 0Ch], cl
+        je      loc_46ABA5
+        mov     eax, dword ptr [eax]
+        jmp     loc_46ABA8
+    loc_46ABA5:
+        mov     eax, dword ptr [eax + 8]
+    loc_46ABA8:
+        cmp     byte ptr [eax + 11h], 0
+        je      loc_46AB91
+    loc_46ABAE:
+        test    cl, cl
+        mov     edx, esi
+        mov     dword ptr [esp + 14h], edx
+        mov     dword ptr [esp + 10h], edi
+        je      loc_46ABF9
+        mov     eax, dword ptr [edi + 4]
+        cmp     esi, dword ptr [eax]
+        lea     ecx, [esp + 10h]
+        jne     loc_46ABF0
+        push    ebp
+        push    esi
+        push    1
+        push    ecx
+    loc_46ABCC:
+        mov     ecx, edi
+        call    ext_0046A970
+        mov     ecx, eax
+        mov     edx, dword ptr [ecx]
+        mov     eax, dword ptr [esp + 1Ch]
+        mov     ecx, dword ptr [ecx + 4]
+        pop     edi
+        pop     esi
+        mov     dword ptr [eax], edx
+        mov     dword ptr [eax + 4], ecx
+        mov     byte ptr [eax + 8], 1
+        pop     ebp
+        add     esp, 0Ch
+        ret     8
+    loc_46ABF0:
+        call    ext_0046A8E0
+        mov     edx, dword ptr [esp + 14h]
+    loc_46ABF9:
+        mov     eax, dword ptr [edx + 0Ch]
+        cmp     eax, dword ptr [ebp]
+        jae     loc_46AC0F
+        mov     ecx, dword ptr [esp + 0Ch]
+        push    ebp
+        push    esi
+        push    ecx
+        lea     edx, [esp + 1Ch]
+        push    edx
+        jmp     loc_46ABCC
+    loc_46AC0F:
+        mov     eax, dword ptr [esp + 1Ch]
+        mov     ecx, dword ptr [esp + 10h]
+        pop     edi
+        pop     esi
+        mov     dword ptr [eax], ecx
+        mov     dword ptr [eax + 4], edx
+        mov     byte ptr [eax + 8], 0
+        pop     ebp
+        add     esp, 0Ch
+        ret     8
+    }
+}
