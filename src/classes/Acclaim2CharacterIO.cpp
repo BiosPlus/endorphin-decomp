@@ -24,3 +24,61 @@ ret_zero:
         ret
     }
 }
+
+// [0x0056B770] Acclaim2CharacterIO::vfunc_3 (131 bytes)
+extern "C" void ext_00553720();
+extern "C" void ext_0063F530();
+extern "C" void ext_00640390();
+extern "C" int mem_00A9ECE8;
+
+extern "C" __declspec(naked) void __fastcall fn_0056B770(void* self, int edx_unused, void* arg) {
+    __asm {
+        mov eax, dword ptr [mem_00A9ECE8]
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        push 1
+        push 0
+        mov edi, ecx
+        push eax
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je loc_56b7ac
+        cmp eax, 0xb53b30
+        je loc_56b7ac
+        cmp eax, 0xb53ab0
+        je loc_56b7ac
+        cmp eax, 0xb53a70
+        je loc_56b7ac
+        cmp eax, 0xb53af0
+        jne loc_56b7b1
+loc_56b7ac:
+        mov eax, 0xb53b30
+loc_56b7b1:
+        cmp eax, 0xb53a34
+        je loc_56b7d4
+        cmp eax, 0xb53b30
+        je loc_56b7d4
+        cmp eax, 0xb53ab0
+        je loc_56b7d4
+        cmp eax, 0xb53a70
+        je loc_56b7d4
+        cmp eax, 0xb53af0
+        jne loc_56b7ec
+loc_56b7d4:
+        mov ecx, dword ptr [mem_00A9ECE8]
+        push 0
+        push ecx
+        mov ecx, esi
+        call ext_00640390
+        push eax
+        mov ecx, edi
+        call ext_00553720
+loc_56b7ec:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
