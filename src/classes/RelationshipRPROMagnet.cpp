@@ -695,3 +695,133 @@ extern "C" __declspec(naked) void __fastcall fn_0064BAA0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0067DAD0();
+extern "C" void ext_0067E990();
+extern "C" void ext_00694330();
+extern "C" void ext_006944D0();
+extern "C" void ext_007C9AA0();
+extern "C" void ext_007C9AE0();
+
+// [0x006498A0] RelationshipRPROMagnet::vfunc_43 (417 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006498A0(void* self, int edx_unused, void* arg0) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0xd8
+        push ebx
+        push esi
+        mov ebx, ecx
+        push edi
+        mov esi, eax
+        mov ecx, 0x10
+        lea edi, [esp + 0xa4]
+        rep movsd
+        mov esi, eax
+        mov eax, dword ptr [ebx + 0x68]
+        test eax, eax
+        mov ecx, 0x10
+        lea edi, [esp + 0x64]
+        rep movsd
+        je loc_6498DD
+        push eax
+        lea ecx, [esp + 0x68]
+        call ext_0067E990
+    loc_6498DD:
+        mov eax, dword ptr [ebx + 0x90]
+        push eax
+        lea ecx, [esp + 0xa8]
+        call ext_0067E990
+        fld dword ptr [esp + 0x9c]
+        mov ecx, dword ptr [ebx + 0x94]
+        push 0x1
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0xa8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0xa4]
+        fstp dword ptr [esp]
+        push ecx
+        call ext_007C9AA0
+        fldz
+        fst dword ptr [esp + 0x2c]
+        add esp, 0x14
+        cmp byte ptr [ebx + 0x64], 0x0
+        fst dword ptr [esp + 0x14]
+        fst dword ptr [esp + 0x10]
+        lea ecx, [esp + 0x64]
+        fst dword ptr [esp + 0xc]
+        jne loc_6499BF
+        fst dword ptr [esp + 0x24]
+        lea edx, [esp + 0x1c]
+        fst dword ptr [esp + 0x20]
+        push edx
+        fst dword ptr [esp + 0x34]
+        fst dword ptr [esp + 0x2c]
+        fst dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x38]
+        fld1
+        fst dword ptr [esp + 0x20]
+        fst dword ptr [esp + 0x30]
+        fstp dword ptr [esp + 0x40]
+        call ext_0067DAD0
+        fld dword ptr [esp + 0x28]
+        mov ecx, 0x9
+        lea esi, [esp + 0x1c]
+        lea edi, [esp + 0x40]
+        rep movsd
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [esp + 0x44]
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [esp + 0x48]
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x38]
+        lea eax, [esp + 0x1c]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00694330
+        jmp loc_6499FF
+    loc_6499BF:
+        push ecx
+        fstp st(0)
+        lea ecx, [esp + 0x10]
+        call ext_006944D0
+        fld dword ptr [esp + 0xdc]
+        mov edx, dword ptr [ebx + 0x94]
+        push 0x0
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0xe8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0xe4]
+        fstp dword ptr [esp]
+        push edx
+        call ext_007C9AA0
+        add esp, 0x14
+    loc_6499FF:
+        movzx eax, byte ptr [ebx + 0x64]
+        fld dword ptr [esp + 0x18]
+        mov ecx, dword ptr [ebx + 0x94]
+        push eax
+        sub esp, 0x10
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x28]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x20]
+        fstp dword ptr [esp]
+        push ecx
+        call ext_007C9AE0
+        add esp, 0x18
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0xd8
+        ret 0x4
+    }
+}
