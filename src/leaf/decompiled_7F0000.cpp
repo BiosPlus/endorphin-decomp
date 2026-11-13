@@ -203,7 +203,7 @@ extern "C" __declspec(naked) int __cdecl fn_007F8500(void* a, void* b) {
         fld dword ptr [ecx + 0x10]
         fstp dword ptr [esp + 0x8]
         fld dword ptr [esp + 0x4]
-        
+        fld dword ptr [esp + 0x8]
         _emit 0xd8
         _emit 0xd1
         fnstsw ax
@@ -440,7 +440,7 @@ extern "C" __declspec(naked) void __fastcall fn_007F7FA0(void* self) {
         fld dword ptr [ecx + 0x8]
         fsub dword ptr [eax + 0x8]
         fstp dword ptr [esp + 0xc]
-        
+        fld dword ptr [esp + 0x8]
         fld dword ptr [esp + 0x4]
         fld dword ptr [esp + 0xc]
         fld st(1)
@@ -492,7 +492,7 @@ extern "C" __declspec(naked) int __cdecl fn_007F7190(float* out, float a, float 
         fmulp st(2), st
         fxch st(1)
         fstp dword ptr [esp + 0x8]
-        
+        fld dword ptr [esp + 0x8]
         fcomp st(3)
         fnstsw ax
         test ah, 0x41
@@ -667,7 +667,7 @@ extern "C" __declspec(naked) float __cdecl fn_007F6750(const float* a, const flo
         _emit 0xde
         _emit 0xc1
         fstp dword ptr [esp + 0x8]
-        
+        fld dword ptr [esp + 0x8]
         ret
     }
 }
@@ -857,7 +857,7 @@ extern "C" __declspec(naked) bool __cdecl fn_007F66D0(const float* a1, const flo
         fstp dword ptr [esp + 0x8]
         fld dword ptr [esp + 0x4]
         fld dword ptr [esp]
-        
+        fld dword ptr [esp + 0x8]
         fld st(1)
         fmulp st(2), st
         fld st(2)
@@ -907,7 +907,7 @@ extern "C" __declspec(naked) void __cdecl fn_007F9DB0(int count, float* dst, con
         cmp eax, 0x4
         jl tail_loop
         lea eax, [edi - 0xc]
-        __asm _emit 0x8d __asm _emit 0xa4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // _emit 0x8d
+        _emit 0x8d
         _emit 0xa4
         _emit 0x24
         _emit 0x00
@@ -1027,7 +1027,7 @@ extern "C" __declspec(naked) void __cdecl fn_007F9E30(int count, float* dst, con
         cmp eax, 0x4
         jl tail_loop
         lea eax, [edi - 0xc]
-        __asm _emit 0x8d __asm _emit 0xa4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // _emit 0x8d
+        _emit 0x8d
         _emit 0xa4
         _emit 0x24
         _emit 0x00
@@ -2035,25 +2035,25 @@ extern "C" __declspec(naked) float __cdecl fn_007FA0F0(int count, const float* d
         add ecx, 0x10
         cmp ecx, eax
         fstp dword ptr [esp + 0x8]
-        
+        fld dword ptr [esp + 0x8]
         fmul st(0), st
         fadd dword ptr [esp + 0xc]
         fstp dword ptr [esp + 0xc]
         fld dword ptr [ecx - 0xc]
         fstp dword ptr [esp + 0x8]
-        
+        fld dword ptr [esp + 0x8]
         fmul st(0), st
         fadd dword ptr [esp + 0xc]
         fstp dword ptr [esp + 0xc]
         fld dword ptr [ecx - 0x8]
         fstp dword ptr [esp + 0x8]
-        
+        fld dword ptr [esp + 0x8]
         fmul st(0), st
         fadd dword ptr [esp + 0xc]
         fstp dword ptr [esp + 0xc]
         fld dword ptr [ecx - 0x4]
         fstp dword ptr [esp + 0x8]
-        
+        fld dword ptr [esp + 0x8]
         fmul st(0), st
         fadd dword ptr [esp + 0xc]
         fstp dword ptr [esp + 0xc]
@@ -2067,7 +2067,7 @@ extern "C" __declspec(naked) float __cdecl fn_007FA0F0(int count, const float* d
         add ecx, 0x4
         cmp ecx, esi
         fstp dword ptr [esp + 0x8]
-        
+        fld dword ptr [esp + 0x8]
         fmul st(0), st
         fadd dword ptr [esp + 0xc]
         fstp dword ptr [esp + 0xc]
@@ -2443,7 +2443,7 @@ extern "C" __declspec(naked) void __fastcall fn_007FC2D0(void* self) {
         fmul dword ptr [eax + 0x8]
         fmul dword ptr [eax + 0xc]
         fstp dword ptr [esp + 0x20]
-        
+        fld dword ptr [esp + 0x8]
         fld st(0)
         fld dword ptr [esp + 0xc]
         fld st(0)
@@ -4110,7 +4110,7 @@ extern "C" __declspec(naked) void __cdecl fn_007F7A30() {
         pop esi
         fstp st(0)
         pop ebx
-        
+        fld dword ptr [esp + 0x8]
         ret
 
     loc_7F7BE0:
@@ -4793,7 +4793,7 @@ extern "C" __declspec(naked) int __cdecl fn_007FE5F0(void* p, float t, void* out
         fld dword ptr [esp + 0x3c]
         fld st(0)
         fmulp st(2), st
-        
+        fld dword ptr [esp + 0x8]
         fld dword ptr [esp + 0x38]
         fld st(0)
         fmulp st(2), st
@@ -8110,7 +8110,7 @@ extern "C" __declspec(naked) int __cdecl fn_007F7660(...) {
         fld dword ptr [esp + 0x4]
         fld st(0)
         fmulp st(2), st
-        
+        fld dword ptr [esp + 0x8]
         fld st(0)
         fmul dword ptr [eax + 0x4]
         faddp st(3), st
