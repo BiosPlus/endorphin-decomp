@@ -84,3 +84,14 @@ extern "C" __declspec(naked) void __fastcall fn_00442C90(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00443680] MultiTrackView::MultiTrackViewStates::MoveState::vfunc_18 (37 bytes)
+extern "C" void ext_00442CF0();
+
+extern "C" bool __fastcall fn_00443680(void* self, int edx_unused, int a1) {
+    unsigned char* eax = *reinterpret_cast<unsigned char**>(static_cast<unsigned char*>(self) + 0x8);
+    unsigned char* ecx = *reinterpret_cast<unsigned char**>(eax + 0xa0);
+    double d = *reinterpret_cast<double*>(ecx + 0x50);
+    reinterpret_cast<void (__cdecl*)(int, void*, double)>(ext_00442CF0)(a1, eax, d);
+    return false;
+}
