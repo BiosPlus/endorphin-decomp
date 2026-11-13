@@ -22,5 +22,7 @@
     "0x005000E2",
     "0x005000FC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T11:42:37Z"
 }
