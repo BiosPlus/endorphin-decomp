@@ -2881,3 +2881,55 @@ extern "C" __declspec(naked) void __fastcall fn_005B6D90(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_005CE8B0();
+extern "C" void ext_00694480();
+extern "C" int mem_00B40640;
+extern "C" float mem_0096091C;
+
+// [0x005B7060] sub_005B7060 (124 bytes)
+extern "C" __declspec(naked) float __fastcall fn_005B7060(void* self, int edx_unused, const float* arg) {
+    __asm {
+        sub esp, 0x20
+        fldz
+        mov eax, dword ptr [esp + 0x24]
+        mov edx, dword ptr [mem_00B40640]
+        fst dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0x18]
+        push esi
+        fst dword ptr [esp + 0x18]
+        mov esi, ecx
+        fstp dword ptr [esp + 0x14]
+        lea ecx, [esi + 0x4]
+        fld dword ptr [eax]
+        push edx
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x8]
+        mov eax, dword ptr [ecx]
+        fstp dword ptr [esp + 0x10]
+        fld1
+        mov eax, dword ptr [eax + 0x14]
+        fstp dword ptr [esp + 0x14]
+        call eax
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_00694480
+        mov ecx, dword ptr [esi + 0x158]
+        test ecx, ecx
+        pop esi
+        je L_null
+        lea edx, [esp]
+        push edx
+        lea eax, [esp + 0x14]
+        push eax
+        call ext_005CE8B0
+        add esp, 0x20
+        ret 4
+    L_null:
+        fld dword ptr [mem_0096091C]
+        add esp, 0x20
+        ret 4
+    }
+}
