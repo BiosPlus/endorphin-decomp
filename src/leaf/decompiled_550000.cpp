@@ -5521,3 +5521,88 @@ extern "C" __declspec(naked) void __stdcall fn_005500C0(void* self) {
         ret 4
     }
 }
+
+extern "C" void ext_00553450();
+extern "C" void ext_00557380();
+extern "C" void ext_0055D280();
+extern "C" void ext_0058F200();
+extern "C" void ext_006A0670();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924FE4;
+
+// [0x00558C10] sub_00558C10 (340 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00558C10(void* self) {
+    __asm {
+        push -1
+        push 0x0089a4fb
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov [esp + 0xc], esi
+        mov dword ptr [esi + 4], 0x00928e84
+        xor ebp, ebp
+        lea ecx, [esi + 8]
+        mov [esp + 0x18], ebp
+        mov dword ptr [esi], 0x00929244
+        mov dword ptr [esi + 4], 0x00929238
+        call dword ptr [mem_00924FE8]
+        lea ecx, [esi + 0x24]
+        mov byte ptr [esp + 0x18], 1
+        call dword ptr [mem_00924FE8]
+        push 0x00928b5d
+        lea ecx, [esi + 0x40]
+        mov byte ptr [esp + 0x1c], 2
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esi + 0x5c]
+        mov byte ptr [esp + 0x18], 3
+        call ext_00557380
+        lea ecx, [esi + 0x16c]
+        mov byte ptr [esp + 0x18], 4
+        call ext_00557380
+        lea edi, [esi + 0x27c]
+        mov ecx, edi
+        mov byte ptr [esp + 0x18], 5
+        call ext_0058F200
+        mov dword ptr [edi + 0x150], 0x00928eac
+        mov dword ptr [edi], 0x0092912c
+        mov dword ptr [edi + 4], 0x009290e4
+        mov dword ptr [edi + 8], 0x009290a4
+        mov dword ptr [edi + 0xc], 0x00929054
+        mov dword ptr [edi + 0x150], 0x00929040
+        lea ecx, [esi + 0x3d4]
+        mov byte ptr [esp + 0x18], 6
+        call ext_00553450
+        lea ecx, [esi + 0x42c]
+        mov byte ptr [esp + 0x18], 7
+        mov [esi + 0x414], ebp
+        mov [esi + 0x418], ebp
+        mov [esi + 0x41c], ebp
+        mov [esi + 0x420], ebp
+        mov [esi + 0x424], ebp
+        mov byte ptr [esi + 0x428], 1
+        call ext_0055D280
+        lea ecx, [esi + 0x43c]
+        mov byte ptr [esp + 0x18], 8
+        mov [esi + 0x438], ebp
+        call ext_006A0670
+        mov [esi + 0x450], ebp
+        mov [esi + 0x454], ebp
+        mov [esi + 0x458], ebp
+        mov ecx, [esp + 0x10]
+        mov [esi + 0x460], ebp
+        mov [esi + 0x464], ebp
+        mov [esi + 0x468], ebp
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
