@@ -9020,3 +9020,19 @@ loc_415B9F:
         ret 4
     }
 }
+
+// [0x00415C70] sub_00415C70 (48 bytes)
+extern "C" void ext_00415820();
+extern "C" int mem_00925660;
+
+extern "C" void __fastcall fn_00415C70(void* self, int edx_unused, int a1) {
+    char* p = (char*)self;
+    if (a1 != *(int*)(p + 0x20)) {
+        return;
+    }
+    if (((char (__stdcall*)(int))ext_00415820)(1) == 0) {
+        return;
+    }
+    (*(int (__stdcall**)(int, int))&mem_00925660)(*(int*)(p + 0x1c), *(int*)(p + 0x20));
+    *(int*)(p + 0x20) = 0;
+}
