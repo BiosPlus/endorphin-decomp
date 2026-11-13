@@ -9669,3 +9669,204 @@ extern "C" __declspec(naked) void __cdecl fn_007C6C30(char* p) {
         ret
     }
 }
+
+extern "C" void ext_007CA280();
+extern "C" void ext_007CB8D0();
+extern "C" void ext_007D48A0();
+extern "C" void ext_007D5AE0();
+
+// [0x007CA8E0] sub_007CA8E0 (559 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007CA8E0(void* a0, void* a1) {
+    __asm {
+        sub esp, 18h
+        push ebx
+        push esi
+        mov esi, dword ptr [esp+24h]
+        push edi
+        push esi
+        call ext_007D5AE0
+        push esi
+        mov edi, eax
+        call ext_007D48A0
+        fld dword ptr [eax+10h]
+        fabs
+        lea edx, [esi+8]
+        fstp dword ptr [esp+30h]
+        add esp, 8
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+14h]
+        fld dword ptr [eax]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+10h]
+        faddp st(1), st
+        fld dword ptr [eax+20h]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+18h]
+        faddp st(1), st
+        fstp dword ptr [esp+0ch]
+        fld dword ptr [eax+14h]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+14h]
+        fld dword ptr [eax+4]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+10h]
+        faddp st(1), st
+        fld dword ptr [eax+24h]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+18h]
+        faddp st(1), st
+        fstp dword ptr [esp+10h]
+        fld dword ptr [eax+18h]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+14h]
+        fld dword ptr [eax+8]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+10h]
+        faddp st(1), st
+        fld dword ptr [eax+28h]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+18h]
+        faddp st(1), st
+        fstp dword ptr [esp+14h]
+        fld dword ptr [eax+30h]
+        fld dword ptr [esp+0ch]
+        fld st(0)
+        fsubp st(2), st
+        fxch st(1)
+        fstp dword ptr [edx]
+        fld dword ptr [eax+34h]
+        fld dword ptr [esp+10h]
+        fld st(0)
+        fsubp st(2), st
+        fxch st(1)
+        fstp dword ptr [edx+4]
+        fld dword ptr [eax+38h]
+        fld dword ptr [esp+14h]
+        fld st(0)
+        fsubp st(2), st
+        fxch st(1)
+        lea ebx, [esi+14h]
+        fstp dword ptr [edx+8]
+        fld dword ptr [eax+30h]
+        faddp st(3), st
+        fxch st(2)
+        fstp dword ptr [ebx]
+        fadd dword ptr [eax+34h]
+        fstp dword ptr [ebx+4]
+        fadd dword ptr [eax+38h]
+        mov eax, dword ptr [esp+2ch]
+        test eax, eax
+        fstp dword ptr [ebx+8]
+        je L_done_7CA8E0
+        fld dword ptr [eax+10h]
+        lea ecx, [esp+18h]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+14h]
+        fld dword ptr [eax]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+10h]
+        faddp st(1), st
+        fld dword ptr [eax+20h]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+18h]
+        faddp st(1), st
+        fstp dword ptr [esp+0ch]
+        fld dword ptr [eax+14h]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+14h]
+        fld dword ptr [eax+4]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+10h]
+        faddp st(1), st
+        fld dword ptr [eax+24h]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+18h]
+        faddp st(1), st
+        fstp dword ptr [esp+10h]
+        fld dword ptr [eax+18h]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+14h]
+        fld dword ptr [eax+8]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+10h]
+        faddp st(1), st
+        fld dword ptr [eax+28h]
+        fabs
+        fstp dword ptr [esp+28h]
+        fld dword ptr [esp+28h]
+        fmul dword ptr [edi+18h]
+        faddp st(1), st
+        fstp dword ptr [esp+14h]
+        fld dword ptr [eax+30h]
+        fld dword ptr [esp+0ch]
+        fld st(0)
+        fsubp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp+18h]
+        fld dword ptr [eax+34h]
+        fld dword ptr [esp+10h]
+        fld st(0)
+        fsubp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp+1ch]
+        fld dword ptr [eax+38h]
+        fld dword ptr [esp+14h]
+        fld st(0)
+        fsubp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp+20h]
+        fld dword ptr [eax+30h]
+        faddp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp+0ch]
+        fadd dword ptr [eax+34h]
+        fstp dword ptr [esp+10h]
+        fadd dword ptr [eax+38h]
+        fstp dword ptr [esp+14h]
+        mov esi, edx
+        call ext_007CA280
+        lea ecx, [esp+0ch]
+        mov edx, ebx
+        mov esi, ebx
+        call ext_007CB8D0
+L_done_7CA8E0:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        add esp, 18h
+        ret
+    }
+}

@@ -18,5 +18,7 @@
     "0x007CAAF2",
     "0x007CAAFF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T12:19:51Z"
 }
