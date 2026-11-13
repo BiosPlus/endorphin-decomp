@@ -2126,3 +2126,215 @@ extern "C" __declspec(naked) void* __fastcall fn_005EBFA0(void* self) {
         ret
     }
 }
+
+extern "C" int mem_00924FF0;
+extern "C" int mem_0092510C;
+extern "C" int mem_00B465D0;
+extern "C" int mem_00B465EC;
+extern "C" int mem_00B46608;
+extern "C" int mem_00B46624;
+extern "C" int mem_00B46640;
+extern "C" int mem_00B4665C;
+extern "C" int mem_00B46678;
+extern "C" int mem_00B46694;
+extern "C" int mem_00B466B0;
+extern "C" int mem_00B466CC;
+extern "C" int mem_00B466E8;
+extern "C" int mem_00B46704;
+extern "C" int mem_00B46720;
+extern "C" int mem_00B4673C;
+extern "C" int mem_00B46758;
+
+// [0x005E0770] sub_005E0770 (507 bytes)
+// __thiscall, ret 4: compares the std::string argument against a table of 15 static std::string keys
+// (via MSVCP80 operator==) and returns the matching code (0,1,2,4,0x100,0x200,0x400,6,7,0x700,0x701,0x702,0x704,0x706);
+// the final key returns 0x707 on match and 0x700 otherwise.
+extern "C" __declspec(naked) unsigned int __stdcall fn_005E0770(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        push offset mem_00B465D0
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        mov edi, dword ptr [mem_0092510C]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L1
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x4
+L1:     push offset mem_00B465EC
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L2
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret 0x4
+L2:     push offset mem_00B46608
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L3
+        pop edi
+        mov eax, 0x2
+        pop esi
+        ret 0x4
+L3:     push offset mem_00B46624
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L4
+        pop edi
+        mov eax, 0x4
+        pop esi
+        ret 0x4
+L4:     push offset mem_00B46640
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L5
+        pop edi
+        mov eax, 0x100
+        pop esi
+        ret 0x4
+L5:     push offset mem_00B4665C
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L6
+        pop edi
+        mov eax, 0x200
+        pop esi
+        ret 0x4
+L6:     push offset mem_00B46678
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L7
+        pop edi
+        mov eax, 0x400
+        pop esi
+        ret 0x4
+L7:     push offset mem_00B46694
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L8
+        pop edi
+        mov eax, 0x6
+        pop esi
+        ret 0x4
+L8:     push offset mem_00B466B0
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L9
+        pop edi
+        mov eax, 0x7
+        pop esi
+        ret 0x4
+L9:     push offset mem_00B466CC
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L10
+        pop edi
+        mov eax, 0x700
+        pop esi
+        ret 0x4
+L10:    push offset mem_00B466E8
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L11
+        pop edi
+        mov eax, 0x701
+        pop esi
+        ret 0x4
+L11:    push offset mem_00B46704
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L12
+        pop edi
+        mov eax, 0x702
+        pop esi
+        ret 0x4
+L12:    push offset mem_00B46720
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L13
+        pop edi
+        mov eax, 0x704
+        pop esi
+        ret 0x4
+L13:    push offset mem_00B4673C
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        je L14
+        pop edi
+        mov eax, 0x706
+        pop esi
+        ret 0x4
+L14:    push offset mem_00B46758
+        mov ecx, esi
+        call dword ptr [mem_00924FF0]
+        push eax
+        call edi
+        add esp, 0x8
+        neg al
+        pop edi
+        pop esi
+        sbb eax, eax
+        and eax, 0x7
+        add eax, 0x700
+        ret 0x4
+    }
+}
