@@ -400,3 +400,16 @@ extern "C" void __fastcall fn_00658930(void* self, int edx_unused, Dummy552130* 
     float* q3 = a1->get(b[7], 3);
     ext_007C9490(target, 0, q3[0], q2[1], q1[2]);
 }
+
+extern "C" void __fastcall ext_00658D50(void*);
+extern "C" void __cdecl ext_007C97F0(int);
+
+// [0x006591B0] RelationshipHinge::vfunc_6 (52 bytes)
+extern "C" void __fastcall fn_006591B0(void* self) {
+    int a = ext_007D8700(*(int*)((char*)self + 0x64));
+    if (!ext_007C9260(a)) {
+        ext_00658D50(self);
+        int b = ext_007D8700(*(int*)((char*)self + 0x64));
+        ext_007C97F0(b);
+    }
+}
