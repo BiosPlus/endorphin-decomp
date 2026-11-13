@@ -799,3 +799,24 @@ L_005E258F:
         ret 8
     }
 }
+
+extern "C" void ext_005ED960();
+extern "C" void ext_005EBDD0();
+extern "C" void ext_005EDA00();
+
+// [0x005EE290] NMData::FixedPathJointData::vfunc_39 (31 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005EE290(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_005ED960
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        mov ecx, esi
+        call ext_005EBDD0
+        mov ecx, esi
+        call ext_005EDA00
+        pop esi
+        ret 0x4
+    }
+}
