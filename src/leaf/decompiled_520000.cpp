@@ -4747,3 +4747,24 @@ L_6157:
         ret 0x4
     }
 }
+
+// [0x00520BD0] sub_00520BD0 (30 bytes)
+extern "C" void ext_0051E2C0();
+extern "C" void ext_0051E800();
+extern "C" void ext_0051E940();
+extern "C" void ext_00520910();
+
+extern "C" __declspec(naked) void __fastcall fn_00520BD0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0051E800
+        mov ecx, esi
+        call ext_0051E940
+        mov ecx, esi
+        call ext_0051E2C0
+        mov ecx, esi
+        pop esi
+        jmp ext_00520910
+    }
+}
