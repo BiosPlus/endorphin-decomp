@@ -18,5 +18,7 @@
     "0x007DE16D",
     "0x007DE1D3"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T11:19:32Z"
 }
