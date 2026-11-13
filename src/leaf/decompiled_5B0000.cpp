@@ -4276,3 +4276,56 @@ extern "C" __declspec(naked) void __fastcall fn_005BF5B0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005B0780] sub_005B0780 (150 bytes)
+extern "C" void ext_0048A0E0();
+extern "C" int mem_00924EA8;
+extern "C" void __fastcall fn_005B0780(void* self) {
+    unsigned char* s = (unsigned char*)self;
+    unsigned char* p = *(unsigned char**)(s + 0xc);
+    int v = *(int*)(p + 0x4);
+    typedef void (__thiscall *sub_fn)(void*, int);
+    sub_fn sub = (sub_fn)ext_0048A0E0;
+
+    unsigned char* h = s + 0x8;
+    sub(h, v);
+    unsigned char* n = *(unsigned char**)(h + 0x4);
+    *(unsigned char**)(n + 0x4) = n;
+    n = *(unsigned char**)(h + 0x4);
+    *(int*)(h + 0x8) = 0;
+    *(unsigned char**)n = n;
+    n = *(unsigned char**)(h + 0x4);
+    *(unsigned char**)(n + 0x8) = n;
+
+    unsigned char* q = *(unsigned char**)(s + 0x1c);
+    int w = *(int*)(q + 0x4);
+    h = s + 0x18;
+    sub(h, w);
+    n = *(unsigned char**)(h + 0x4);
+    *(unsigned char**)(n + 0x4) = n;
+    n = *(unsigned char**)(h + 0x4);
+    *(int*)(h + 0x8) = 0;
+    *(unsigned char**)n = n;
+    n = *(unsigned char**)(h + 0x4);
+    *(unsigned char**)(n + 0x8) = n;
+
+    typedef void (__thiscall *clear_fn)(void*);
+    (*(clear_fn*)&mem_00924EA8)(s + 0x64);
+
+    *(float*)(s + 0x24) = 1.0f;
+    *(float*)(s + 0x28) = 0.0f;
+    *(float*)(s + 0x2c) = 0.0f;
+    *(float*)(s + 0x30) = 0.0f;
+    *(float*)(s + 0x34) = 0.0f;
+    *(float*)(s + 0x38) = 1.0f;
+    *(float*)(s + 0x3c) = 0.0f;
+    *(float*)(s + 0x40) = 0.0f;
+    *(float*)(s + 0x44) = 0.0f;
+    *(float*)(s + 0x48) = 0.0f;
+    *(float*)(s + 0x4c) = 1.0f;
+    *(float*)(s + 0x50) = 0.0f;
+    *(float*)(s + 0x54) = 0.0f;
+    *(float*)(s + 0x58) = 0.0f;
+    *(float*)(s + 0x5c) = 0.0f;
+    *(float*)(s + 0x60) = 1.0f;
+}
