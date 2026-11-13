@@ -2706,3 +2706,70 @@ loc_5dc9ed:
         ret 4
     }
 }
+
+// [0x005DCBC0] sub_005DCBC0 (184 bytes)
+extern "C" void ext_00493EE0();
+extern "C" void ext_00547CD0();
+extern "C" void ext_00594000();
+extern "C" void ext_005DC7D0();
+extern "C" void ext_005DC930();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+
+extern "C" __declspec(naked) void __fastcall fn_005DCBC0(void* self, int edx_unused, unsigned char arg1) {
+    __asm {
+        push -1
+        push 0x8a56c8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x258]
+        lea edi, [eax + 0x258]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        call edx
+        mov ebx, eax
+        mov ecx, ebx
+        mov dword ptr [esp + 0xc], ebx
+        call ext_0065C640
+        mov al, byte ptr [esp + 0x20]
+        test al, al
+        mov dword ptr [esp + 0x18], 0
+        mov byte ptr [esi + 0x1f0], al
+        je loc_5dcc36
+        push ebp
+        lea ebp, [esi + 0x1a8]
+        mov ecx, ebp
+        call ext_005DC7D0
+        mov ecx, dword ptr [esi + 0x154]
+        push ebp
+        call ext_00547CD0
+        pop ebp
+        jmp loc_5dcc4e
+loc_5dcc36:
+        mov ecx, dword ptr [esi + 0x154]
+        push 0
+        call ext_00547CD0
+        lea ecx, [esi + 0x1a8]
+        call ext_005DC930
+loc_5dcc4e:
+        mov ecx, edi
+        call ext_00493EE0
+        mov ecx, ebx
+        mov dword ptr [esp + 0x18], -1
+        call ext_0065C650
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
