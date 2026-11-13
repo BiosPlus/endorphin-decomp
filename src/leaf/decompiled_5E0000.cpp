@@ -2104,3 +2104,25 @@ loc_005E49EA:
         ret 4
     }
 }
+
+extern "C" void ext_0061E840();
+// [0x005EBFA0] sub_005EBFA0 (69 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_005EBFA0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0061E840
+        fldz
+        mov dword ptr [esi], 0x96ae94
+        mov dword ptr [esi + 0x4], 0x96ae4c
+        mov dword ptr [esi + 0x8], 0x96ae0c
+        mov dword ptr [esi + 0xc], 0x96adbc
+        mov dword ptr [esi + 0x150], 0x96ada4
+        fst dword ptr [esi + 0x168]
+        fst dword ptr [esi + 0x164]
+        mov eax, esi
+        fstp dword ptr [esi + 0x160]
+        pop esi
+        ret
+    }
+}
