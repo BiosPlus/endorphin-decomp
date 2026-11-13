@@ -6,6 +6,7 @@ extern "C" void ext_00547820();
 extern "C" void ext_00540D60();
 extern "C" void ext_006936A0();
 extern "C" void ext_0047FFA0();
+extern "C" void ext_00549280();
 
 extern "C" __declspec(naked) void __fastcall fn_005490E0(void* self) {
     __asm {
@@ -541,5 +542,55 @@ L_end:
         pop ebx
         add esp, 0x38
         ret 4
+    }
+}
+
+// [0x00549370] Camera::vfunc_15 (119 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00549370(void* self) {
+    __asm {
+        sub esp, 0x20
+        mov eax, dword ptr [esp + 0x28]
+        fld dword ptr [eax]
+        push esi
+        fstp dword ptr [esp + 0x4]
+        push edi
+        fld dword ptr [eax + 0x4]
+        mov edi, ecx
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [eax + 0xc]
+        lea eax, [esp + 0x8]
+        push eax
+        fstp dword ptr [esp + 0x18]
+        call ext_00549280
+        mov esi, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [edi]
+        mov edx, dword ptr [edx + 0x50]
+        push esi
+        lea eax, [esp + 0x14]
+        push eax
+        push ecx
+        mov ecx, edi
+        call edx
+        lea eax, [esp + 0x8]
+        push eax
+        lea ecx, [esp + 0x1c]
+        push ecx
+        mov ecx, esi
+        call ext_0047FFA0
+        fld dword ptr [eax]
+        fstp dword ptr [esi]
+        pop edi
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esi + 0x4]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esi + 0x8]
+        fld dword ptr [eax + 0xc]
+        fstp dword ptr [esi + 0xc]
+        pop esi
+        add esp, 0x20
+        ret 0xc
     }
 }
