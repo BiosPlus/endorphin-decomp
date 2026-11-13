@@ -6268,3 +6268,38 @@ extern "C" __declspec(naked) void __fastcall fn_0048BB60(void* self) {
         ret
     }
 }
+
+extern "C" int mem_00924FF4;
+
+// [0x0048A0E0] sub_0048A0E0 (62 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0048A0E0(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp byte ptr [edi + 0x69], 0
+        mov ebx, ecx
+        mov esi, edi
+        jne done
+    loop_start:
+        mov eax, dword ptr [esi + 8]
+        push eax
+        mov ecx, ebx
+        call fn_0048A0E0
+        mov esi, dword ptr [esi]
+        lea ecx, [edi + 0xc]
+        call dword ptr [mem_00924FF4]
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+        cmp byte ptr [esi + 0x69], 0
+        mov edi, esi
+        je loop_start
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
