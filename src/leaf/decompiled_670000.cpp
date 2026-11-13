@@ -9089,3 +9089,239 @@ extern "C" __declspec(naked) void __fastcall fn_006764D0(void* self, int edx_unu
         ret 0x14
     }
 }
+
+extern "C" void ext_0056B690();
+extern "C" void ext_0067BF50();
+extern "C" void ext_006A73BA();
+extern "C" int mem_00993830;
+extern "C" int mem_00AA2070;
+extern "C" int mem_00996B98;
+extern "C" int mem_0098C630;
+extern "C" int mem_00957754;
+extern "C" int mem_0092C510;
+
+// [0x0067C170] sub_0067C170 (604 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0067C170(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x2c]
+        fld dword ptr [esi]
+        push edi
+        fstp dword ptr [esp + 0x18]
+        sub esp, 0x14
+        fld dword ptr [esi + 0x4]
+        mov eax, esp
+        fstp dword ptr [esp + 0x30]
+        mov edi, ecx
+        fld dword ptr [esi + 0x8]
+        xor bl, bl
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x2c]
+        fld qword ptr [mem_00993830]
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x30]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x30]
+        fmul dword ptr [esp + 0x34]
+        fstp dword ptr [esp + 0x34]
+        fld qword ptr [mem_00AA2070]
+        fmul qword ptr [mem_00996B98]
+        fst qword ptr [esp + 0x24]
+        fstp qword ptr [esp + 0xc]
+        fld dword ptr [esi]
+        fstp dword ptr [eax]
+        fld dword ptr [esi + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esi + 0x8]
+        fstp dword ptr [eax + 0x8]
+        call ext_0056B690
+        test al, al
+        je L170_20B
+        mov ecx, dword ptr [esp + 0x28]
+        fldz
+        mov eax, dword ptr [esp + 0x2c]
+        fstp dword ptr [eax]
+        push ecx
+        mov ecx, esi
+        mov bl, 0x1
+        call ext_0067BF50
+        mov al, bl
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x14
+        ret 0xc
+L170_20B:
+        fld qword ptr [esp + 0x10]
+        sub esp, 0x14
+        fstp qword ptr [esp + 0xc]
+        mov eax, esp
+        fld dword ptr [esp + 0x2c]
+        mov ecx, edi
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x30]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x34]
+        fstp dword ptr [eax + 0x8]
+        call ext_0056B690
+        test al, al
+        je L170_25D
+        mov eax, dword ptr [esp + 0x28]
+        fld dword ptr [mem_0098C630]
+        mov edx, dword ptr [esp + 0x2c]
+        push eax
+        fstp dword ptr [edx]
+        mov ecx, esi
+        mov bl, 0x1
+        call ext_0067BF50
+        mov al, bl
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x14
+        ret 0xc
+L170_25D:
+        fld dword ptr [edi + 0x4]
+        mov ebp, dword ptr [esp + 0x28]
+        fmul dword ptr [esi + 0x8]
+        fld dword ptr [esi + 0x4]
+        fmul dword ptr [edi + 0x8]
+        _emit 0xde
+        _emit 0xe9
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esi]
+        fmul dword ptr [edi + 0x8]
+        fld dword ptr [esi + 0x8]
+        fmul dword ptr [edi]
+        _emit 0xde
+        _emit 0xe9
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esi + 0x4]
+        fmul dword ptr [edi]
+        fld dword ptr [edi + 0x4]
+        fmul dword ptr [esi]
+        _emit 0xde
+        _emit 0xe9
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x18]
+        fst dword ptr [ebp]
+        fld dword ptr [esp + 0x1c]
+        fst dword ptr [ebp + 0x4]
+        fld dword ptr [esp + 0x20]
+        fst dword ptr [ebp + 0x8]
+        fld st(2)
+        fmulp st(3), st
+        fld st(1)
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fld st(1)
+        fmulp st(2), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [esp + 0x28]
+        fst qword ptr [esp + 0x10]
+        fld st(0)
+        fabs
+        fld qword ptr [mem_00AA2070]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jp L170_31B
+        fstp st(0)
+        mov ecx, ebp
+        fstp st(0)
+        call ext_0067B7F0
+        fld qword ptr [mem_00AA2070]
+        fld qword ptr [esp + 0x10]
+        fxch st(1)
+L170_2F7:
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        je L170_328
+        fld1
+        _emit 0xde
+        _emit 0xe1
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jnp L170_32A
+        call ext_006A73BA
+        mov ebp, dword ptr [esp + 0x2c]
+        fstp dword ptr [ebp]
+        jmp L170_339
+L170_31B:
+        fldz
+        fst dword ptr [ebp + 0x8]
+        fst dword ptr [ebp + 0x4]
+        fstp dword ptr [ebp]
+        jmp L170_2F7
+L170_328:
+        fstp st(0)
+L170_32A:
+        mov ebp, dword ptr [esp + 0x2c]
+        fstp st(0)
+        fld dword ptr [mem_00957754]
+        fstp dword ptr [ebp]
+L170_339:
+        fld dword ptr [esi]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esi + 0x4]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esi + 0x8]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x18]
+        fsub dword ptr [edi]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x1c]
+        fsub dword ptr [edi + 0x4]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x20]
+        fsub dword ptr [edi + 0x8]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x20]
+        fld st(2)
+        fmulp st(3), st
+        fld st(1)
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fld st(1)
+        fmulp st(2), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        fstp dword ptr [esp + 0x2c]
+        fld qword ptr [mem_0092C510]
+        call ext_006A7250
+        fld dword ptr [esp + 0x2c]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L170_3C0
+        fld dword ptr [ebp]
+        fsubr qword ptr [mem_009576E8]
+        fstp dword ptr [ebp]
+L170_3C0:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, bl
+        pop ebx
+        add esp, 0x14
+        ret 0xc
+    }
+}
