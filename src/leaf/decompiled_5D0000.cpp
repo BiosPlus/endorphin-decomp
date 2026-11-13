@@ -2773,3 +2773,34 @@ loc_5dcc4e:
         ret 4
     }
 }
+
+extern "C" void ext_005CFF60();
+extern "C" void ext_005CFFE0();
+extern "C" void ext_005D00C0();
+extern "C" void ext_0067E020();
+extern "C" int mem_00B40644;
+
+struct Mat16_5D03D0 {
+    int d[16];
+};
+
+struct Vec4_5D03D0 {
+    int d[4];
+};
+
+// [0x005D03D0] sub_005D03D0 (135 bytes)
+extern "C" void __fastcall fn_005D03D0(void* self, int edx_unused, float angle) {
+    if (*((unsigned char*)self + 0x1f1) != 0) {
+        return;
+    }
+    Vec4_5D03D0 vec;
+    Mat16_5D03D0 mat;
+    ((void (__stdcall*)(Vec4_5D03D0*))ext_005D00C0)(&vec);
+    void* obj = (char*)self + 4;
+    void* src = ((void* (__thiscall*)(void*, int))(*(void***)obj)[5])(obj, mem_00B40644);
+    mat = *(Mat16_5D03D0*)src;
+    void* r = ((void* (__thiscall*)(void*, float))ext_005CFF60)(self, -angle);
+    ((void (__thiscall*)(int*, int*, void*))ext_0067E020)(&mat.d[1], &vec.d[1], r);
+    ((void (__thiscall*)(void*, int, Mat16_5D03D0*, int))(*(void***)obj)[0])(obj, 0, &mat, mem_00B40644);
+    ((void (__thiscall*)(void*, Vec4_5D03D0*))ext_005CFFE0)(self, &vec);
+}
