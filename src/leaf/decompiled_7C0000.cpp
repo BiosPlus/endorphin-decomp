@@ -8185,3 +8185,147 @@ extern "C" __declspec(naked) void* __cdecl fn_007C9950(void* self, int a2) {
         ret
     }
 }
+
+// [0x007CC610] sub_007CC610 (345 bytes)
+extern "C" void ext_007C8C50();
+extern "C" void ext_007C97F0();
+extern "C" void ext_007D5950();
+extern "C" void ext_007D8740();
+
+extern "C" __declspec(naked) void __cdecl fn_007CC610(int a0, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push edi
+        push eax
+        call ext_007D8710
+        mov edi, eax
+        add esp, 0x4
+        test edi, edi
+        je L_done
+        push edi
+        call ext_007D8740
+        add esp, 0x4
+        test eax, eax
+        je L_done
+        push ebx
+        mov ebx, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esi + 0x8]
+        cmp ebx, ecx
+        je L_chk
+        cmp dword ptr [eax + 0x4], ecx
+        jne L_pop
+    L_chk:
+        cmp dword ptr [esi + 0x4], 0x0
+        je L_else
+        cmp dword ptr [esi + 0xc], 0x0
+        je L_else
+        cmp ebx, ecx
+        jne L_p1
+        mov ebx, dword ptr [eax + 0x4]
+    L_p1:
+        push ebx
+        call ext_007CC9F0
+        add esp, 0x4
+        cmp eax, dword ptr [esi + 0xc]
+        jne L_else
+        push ebx
+        call ext_007CC600
+        add esp, 0x4
+        cmp eax, dword ptr [esi + 0x4]
+        jne L_p2
+        mov ecx, dword ptr [esi + 0x8]
+        push ebx
+        push ecx
+        call ext_007C8C50
+        add esp, 0x8
+        test eax, eax
+        je L_else
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [edx]
+        mov ecx, dword ptr [eax + 0xb0]
+        push 0x0099dcc0
+        push ecx
+        push 0x1
+        call ext_007D5950
+        add esp, 0xc
+    L_p2:
+        push ebp
+        push 0x0
+        push edi
+        call ext_007D8700
+        add esp, 0x4
+        push eax
+        call ext_007C9300
+        add esp, 0x8
+        push 0x1
+        push edi
+        mov ebx, eax
+        call ext_007D8700
+        add esp, 0x4
+        push eax
+        call ext_007C9300
+        push edi
+        mov ebp, eax
+        call ext_007D8700
+        push eax
+        call ext_007C9860
+        add esp, 0x10
+        push 0x0
+        push edi
+        call ext_007D8700
+        add esp, 0x4
+        push eax
+        call ext_007C9300
+        add esp, 0x8
+        cmp eax, dword ptr [esi]
+        jne L_alt
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [edx]
+        mov ecx, dword ptr [eax + 0xb0]
+        mov edx, dword ptr [esi + 0x4]
+        push ecx
+        push ebp
+        push edx
+        jmp L_common
+    L_else:
+        push edi
+        call ext_007D8700
+        push eax
+        call ext_007C9860
+        push edi
+        call ext_007D8700
+        push eax
+        call ext_007C9930
+        add esp, 0x10
+        pop esi
+        pop ebx
+        pop edi
+        ret
+    L_alt:
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [ecx + 0xb0]
+        mov eax, dword ptr [esi + 0x4]
+        push edx
+        push eax
+        push ebx
+    L_common:
+        push edi
+        call ext_007D8860
+        add esp, 0x10
+        push edi
+        call ext_007D8700
+        push eax
+        call ext_007C97F0
+        add esp, 0x8
+        pop ebp
+    L_pop:
+        pop esi
+        pop ebx
+    L_done:
+        pop edi
+        ret
+    }
+}
