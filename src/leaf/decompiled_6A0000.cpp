@@ -6060,3 +6060,266 @@ extern "C" __declspec(naked) void __fastcall fn_006A8A60(void* self) {
         ret     0x14
     }
 }
+
+// [0x006A5390] sub_006A5390 (942 bytes)
+extern "C" int mem_00AA5C90;
+extern "C" int mem_00AA6090;
+extern "C" int mem_00AA6490;
+extern "C" int mem_00AA6890;
+extern "C" int mem_00AA6C90;
+
+extern "C" __declspec(naked) void __fastcall fn_006A5390(void* self) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x1c]
+        lea ecx, [eax + 0x2]
+        shl eax, 0x4
+        mov edi, dword ptr [eax + esi + 0x2c]
+        xor edi, dword ptr [ebx + 0xc]
+        mov ebp, dword ptr [eax + esi + 0x28]
+        xor ebp, dword ptr [ebx + 0x8]
+        mov edx, dword ptr [eax + esi + 0x24]
+        xor edx, dword ptr [ebx + 0x4]
+        add eax, esi
+        mov eax, edi
+        shl ecx, 0x4
+        mov ecx, dword ptr [ecx + esi]
+        xor ecx, dword ptr [ebx]
+        shr eax, 0x8
+        mov ebx, ebp
+        shr ebx, 0x10
+        movzx ebx, bl
+        movzx eax, al
+        mov dword ptr [esp + 0x18], ebp
+        mov ebp, dword ptr [4*eax + mem_00AA6090]
+        xor ebp, dword ptr [4*ebx + mem_00AA6490]
+        mov ebx, edi
+        mov dword ptr [esp + 0x1c], edi
+        shr ebx, 0x10
+        movzx edi, bl
+        mov ebx, dword ptr [esp + 0x18]
+        mov eax, edx
+        shr eax, 0x18
+        xor ebp, dword ptr [4*eax + mem_00AA6890]
+        movzx eax, cl
+        xor ebp, dword ptr [4*eax + mem_00AA5C90]
+        mov eax, dword ptr [esp + 0x28]
+        mov dword ptr [eax], ebp
+        mov edi, dword ptr [4*edi + mem_00AA6490]
+        shr ebx, 0x18
+        xor edi, dword ptr [4*ebx + mem_00AA6890]
+        mov ebx, ecx
+        shr ebx, 0x8
+        movzx ebx, bl
+        xor edi, dword ptr [4*ebx + mem_00AA6090]
+        movzx ebx, dl
+        xor edi, dword ptr [4*ebx + mem_00AA5C90]
+        mov ebx, edx
+        mov dword ptr [eax + 0x4], edi
+        mov edi, dword ptr [esp + 0x1c]
+        shr edi, 0x18
+        mov edi, dword ptr [4*edi + mem_00AA6890]
+        shr ebx, 0x8
+        movzx ebx, bl
+        xor edi, dword ptr [4*ebx + mem_00AA6090]
+        mov ebx, ecx
+        shr ebx, 0x10
+        movzx ebx, bl
+        xor edi, dword ptr [4*ebx + mem_00AA6490]
+        mov ebx, dword ptr [esp + 0x18]
+        movzx ebp, bl
+        xor edi, dword ptr [4*ebp + mem_00AA5C90]
+        shr ebx, 0x8
+        mov dword ptr [eax + 0x8], edi
+        shr edx, 0x10
+        movzx edi, bl
+        mov edi, dword ptr [4*edi + mem_00AA6090]
+        movzx edx, dl
+        xor edi, dword ptr [4*edx + mem_00AA6490]
+        shr ecx, 0x18
+        xor edi, dword ptr [4*ecx + mem_00AA6890]
+        movzx ecx, byte ptr [esp + 0x1c]
+        xor edi, dword ptr [4*ecx + mem_00AA5C90]
+        mov dword ptr [eax + 0xc], edi
+        mov ecx, dword ptr [esi + 0x1c]
+        sub ecx, 0x1
+        cmp ecx, 0x1
+        jle loc_006A55F5
+        mov edx, ecx
+        shl edx, 0x4
+        add ecx, -0x1
+        lea edi, [edx + esi + 0x24]
+        mov dword ptr [esp + 0x24], ecx
+        nop
+loc_006A54D0:
+        mov ebp, dword ptr [edi + 0x4]
+        xor ebp, dword ptr [eax + 0x8]
+        mov edx, dword ptr [edi - 0x4]
+        xor edx, dword ptr [eax]
+        mov ecx, dword ptr [eax + 0x4]
+        xor ecx, dword ptr [edi]
+        mov dword ptr [esp + 0x18], ebp
+        mov ebp, dword ptr [edi + 0x8]
+        xor ebp, dword ptr [eax + 0xc]
+        mov dword ptr [esp + 0x28], eax
+        mov eax, dword ptr [esp + 0x18]
+        mov ebx, ebp
+        shr ebx, 0x8
+        movzx ebx, bl
+        mov ebx, dword ptr [4*ebx + mem_00AA6090]
+        mov dword ptr [esp + 0x1c], ebp
+        shr eax, 0x10
+        movzx ebp, al
+        xor ebx, dword ptr [4*ebp + mem_00AA6490]
+        mov eax, dword ptr [esp + 0x28]
+        mov ebp, ecx
+        shr ebp, 0x18
+        xor ebx, dword ptr [4*ebp + mem_00AA6890]
+        movzx ebp, dl
+        xor ebx, dword ptr [4*ebp + mem_00AA5C90]
+        mov ebp, dword ptr [esp + 0x18]
+        mov dword ptr [eax], ebx
+        mov ebx, dword ptr [esp + 0x1c]
+        shr ebx, 0x10
+        movzx ebx, bl
+        mov ebx, dword ptr [4*ebx + mem_00AA6490]
+        mov dword ptr [esp + 0x28], edx
+        shr edx, 0x8
+        shr ebp, 0x18
+        xor ebx, dword ptr [4*ebp + mem_00AA6890]
+        movzx ebp, dl
+        xor ebx, dword ptr [4*ebp + mem_00AA6090]
+        movzx ebp, cl
+        xor ebx, dword ptr [4*ebp + mem_00AA5C90]
+        mov edx, ecx
+        mov dword ptr [eax + 0x4], ebx
+        mov ebx, dword ptr [esp + 0x1c]
+        shr ebx, 0x18
+        mov ebx, dword ptr [4*ebx + mem_00AA6890]
+        shr edx, 0x8
+        movzx ebp, dl
+        xor ebx, dword ptr [4*ebp + mem_00AA6090]
+        mov edx, dword ptr [esp + 0x28]
+        mov dword ptr [esp + 0x28], edx
+        shr edx, 0x10
+        movzx ebp, dl
+        xor ebx, dword ptr [4*ebp + mem_00AA6490]
+        movzx ebp, byte ptr [esp + 0x18]
+        xor ebx, dword ptr [4*ebp + mem_00AA5C90]
+        mov edx, dword ptr [esp + 0x28]
+        mov dword ptr [eax + 0x8], ebx
+        mov ebx, dword ptr [esp + 0x18]
+        shr ebx, 0x8
+        movzx ebx, bl
+        mov ebx, dword ptr [4*ebx + mem_00AA6090]
+        shr ecx, 0x10
+        movzx ecx, cl
+        xor ebx, dword ptr [4*ecx + mem_00AA6490]
+        shr edx, 0x18
+        xor ebx, dword ptr [4*edx + mem_00AA6890]
+        movzx edx, byte ptr [esp + 0x1c]
+        xor ebx, dword ptr [4*edx + mem_00AA5C90]
+        sub edi, 0x10
+        sub dword ptr [esp + 0x24], 0x1
+        mov dword ptr [eax + 0xc], ebx
+        jne loc_006A54D0
+loc_006A55F5:
+        mov edi, dword ptr [esi + 0x38]
+        xor edi, dword ptr [eax + 0x8]
+        mov ecx, dword ptr [esi + 0x30]
+        xor ecx, dword ptr [eax]
+        mov edx, dword ptr [esi + 0x34]
+        mov dword ptr [esp + 0x18], edi
+        mov edi, dword ptr [esi + 0x3c]
+        xor edi, dword ptr [eax + 0xc]
+        xor edx, dword ptr [eax + 0x4]
+        mov dword ptr [esp + 0x1c], edi
+        movzx edi, cl
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        mov byte ptr [eax], bl
+        mov ebx, dword ptr [esp + 0x1c]
+        shr ebx, 0x8
+        movzx edi, bl
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        mov byte ptr [eax + 0x1], bl
+        mov ebx, dword ptr [esp + 0x18]
+        shr ebx, 0x10
+        movzx edi, bl
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        mov byte ptr [eax + 0x2], bl
+        mov edi, edx
+        shr edi, 0x18
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        mov byte ptr [eax + 0x3], bl
+        movzx edi, dl
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        mov byte ptr [eax + 0x4], bl
+        mov ebx, ecx
+        shr ebx, 0x8
+        movzx edi, bl
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        mov byte ptr [eax + 0x5], bl
+        mov ebx, dword ptr [esp + 0x1c]
+        shr ebx, 0x10
+        movzx edi, bl
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        mov edi, dword ptr [esp + 0x18]
+        mov byte ptr [eax + 0x6], bl
+        shr edi, 0x18
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        movzx edi, byte ptr [esp + 0x18]
+        mov byte ptr [eax + 0x7], bl
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        mov byte ptr [eax + 0x8], bl
+        mov ebx, edx
+        shr ebx, 0x8
+        movzx edi, bl
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        mov byte ptr [eax + 0x9], bl
+        mov ebx, ecx
+        shr ebx, 0x10
+        movzx edi, bl
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        mov edi, dword ptr [esp + 0x1c]
+        mov byte ptr [eax + 0xa], bl
+        shr edi, 0x18
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        movzx edi, byte ptr [esp + 0x1c]
+        mov byte ptr [eax + 0xb], bl
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        mov byte ptr [eax + 0xc], bl
+        mov ebx, dword ptr [esp + 0x18]
+        shr ebx, 0x8
+        shr edx, 0x10
+        movzx edi, bl
+        movzx ebx, byte ptr [edi + mem_00AA6C90]
+        movzx edx, dl
+        mov byte ptr [eax + 0xd], bl
+        mov dl, byte ptr [edx + mem_00AA6C90]
+        mov byte ptr [eax + 0xe], dl
+        shr ecx, 0x18
+        mov cl, byte ptr [ecx + mem_00AA6C90]
+        mov byte ptr [eax + 0xf], cl
+        mov edx, dword ptr [esi + 0x20]
+        xor dword ptr [eax], edx
+        mov ecx, dword ptr [esi + 0x24]
+        xor dword ptr [eax + 0x4], ecx
+        mov edx, dword ptr [esi + 0x28]
+        xor dword ptr [eax + 0x8], edx
+        mov ecx, dword ptr [esi + 0x2c]
+        xor dword ptr [eax + 0xc], ecx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret 0x8
+    }
+}
+
