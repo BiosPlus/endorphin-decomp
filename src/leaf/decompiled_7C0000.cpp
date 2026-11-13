@@ -6930,3 +6930,111 @@ extern "C" __declspec(naked) void __fastcall fn_007CDDE0(void* self) {
         ret
     }
 }
+
+// [0x007CDF70] sub_007CDF70 (228 bytes)
+extern "C" void ext_007CDDE0();
+extern "C" float mem_0093C1A8;
+extern "C" __declspec(naked) void __fastcall fn_007CDF70(void* self) {
+    __asm {
+        fldz
+        push ebx
+        mov ebx, eax
+        fcom dword ptr [ebx+0x10]
+        push ebp
+        mov ebp, dword ptr [esp+0xc]
+        push edi
+        fnstsw ax
+        test ah, 0x41
+        jne L_007CDF70_hi
+        fcomp dword ptr [ebx+0x34]
+        lea edi, [ebx+0x30]
+        fnstsw ax
+        test ah, 0x5
+        jp L_007CDF70_ret1
+        push ecx
+        mov edx, ebp
+        mov ecx, esi
+        call ext_007CDDE0
+        add esp, 4
+        test al, al
+        jne L_007CDF70_lo_ok
+    L_007CDF70_ret0:
+        pop edi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret
+    L_007CDF70_lo_ok:
+        mov eax, dword ptr [esi+0x38]
+        fldz
+        add eax, ebp
+        mov ecx, eax
+        and eax, 0x3
+        shr ecx, 2
+        lea edx, [eax+4*ecx]
+        mov eax, dword ptr [esi+0x34]
+        fstp dword ptr [eax+4*edx]
+        mov ecx, dword ptr [esi+0x44]
+        fld dword ptr [mem_0099D148]
+        lea eax, [ecx+ebp]
+        mov ecx, dword ptr [esi+0x40]
+        mov edx, eax
+        shr edx, 2
+        and eax, 0x3
+        pop edi
+        lea eax, [eax+4*edx]
+        pop ebp
+        fstp dword ptr [ecx+4*eax]
+        mov al, 1
+        pop ebx
+        ret
+    L_007CDF70_hi:
+        fcom dword ptr [ebx+0x10]
+        fnstsw ax
+        test ah, 0x5
+        jp L_007CDF70_fpop
+        fcomp dword ptr [ebx+0x44]
+        lea edi, [ebx+0x40]
+        fnstsw ax
+        test ah, 0x5
+        jp L_007CDF70_ret1
+        push ecx
+        mov edx, ebp
+        mov ecx, esi
+        call ext_007CDDE0
+        add esp, 4
+        test al, al
+        je L_007CDF70_ret0
+        mov edx, dword ptr [esi+0x38]
+        fld dword ptr [mem_0093C1A8]
+        lea eax, [edx+ebp]
+        mov ecx, eax
+        and eax, 0x3
+        shr ecx, 2
+        lea edx, [eax+4*ecx]
+        mov eax, dword ptr [esi+0x34]
+        fstp dword ptr [eax+4*edx]
+        mov ecx, dword ptr [esi+0x44]
+        fldz
+        lea eax, [ecx+ebp]
+        mov ecx, dword ptr [esi+0x40]
+        mov edx, eax
+        shr edx, 2
+        and eax, 0x3
+        pop edi
+        lea eax, [eax+4*edx]
+        pop ebp
+        fstp dword ptr [ecx+4*eax]
+        mov al, 1
+        pop ebx
+        ret
+    L_007CDF70_fpop:
+        fstp st(0)
+    L_007CDF70_ret1:
+        pop edi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret
+    }
+}
