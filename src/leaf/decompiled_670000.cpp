@@ -6581,3 +6581,43 @@ extern "C" __declspec(naked) void __fastcall fn_0067DE70(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0067DF30] sub_0067DF30 (97 bytes)
+extern "C" void ext_00554420();
+extern "C" void ext_0067DAD0();
+extern "C" void ext_0067DB10();
+extern "C" __declspec(naked) void __fastcall fn_0067DF30(void* self, int edx_unused, int a1, int a2, int a3, float a4) {
+    __asm {
+        sub esp, 24h
+        fldz
+        push esi
+        fst dword ptr [esp + 0ch]
+        lea eax, [esp + 4]
+        fst dword ptr [esp + 8]
+        push eax
+        fst dword ptr [esp + 1ch]
+        mov esi, ecx
+        fst dword ptr [esp + 14h]
+        fst dword ptr [esp + 24h]
+        fstp dword ptr [esp + 20h]
+        fld1
+        fst dword ptr [esp + 8]
+        fst dword ptr [esp + 18h]
+        fstp dword ptr [esp + 28h]
+        call ext_0067DAD0
+        fld dword ptr [esp + 38h]
+        push ecx
+        fstp dword ptr [esp]
+        lea ecx, [esp + 30h]
+        push ecx
+        lea ecx, [esp + 0ch]
+        call ext_00554420
+        lea edx, [esp + 4]
+        push edx
+        mov ecx, esi
+        call ext_0067DB10
+        pop esi
+        add esp, 24h
+        ret 10h
+    }
+}
