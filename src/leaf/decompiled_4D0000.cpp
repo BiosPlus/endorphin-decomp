@@ -2082,3 +2082,34 @@ L_done:
         ret 4
     }
 }
+
+// [0x004DE330] sub_004DE330 (55 bytes)
+extern "C" void ext_0067E990();
+extern "C" int mem_00B40640;
+extern "C" __declspec(naked) void __fastcall fn_004DE330(void* self, int edx_unused, const int* src) {
+    __asm {
+        push ebx
+        mov eax, ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        lea ebx, [eax + 0x38]
+        push edi
+        mov ecx, 0x10
+        mov edi, ebx
+        rep movsd
+        mov eax, dword ptr [eax + 0x30]
+        mov edx, dword ptr [mem_00B40640]
+        lea ecx, [eax + 0x8]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x14]
+        push edx
+        call eax
+        push eax
+        mov ecx, ebx
+        call ext_0067E990
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
