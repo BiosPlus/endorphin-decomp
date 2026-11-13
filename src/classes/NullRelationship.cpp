@@ -194,3 +194,64 @@ store3:
         ret 0x4
     }
 }
+
+// [0x00645AD0] NullRelationship::vfunc_47 (128 bytes)
+extern "C" void ext_00647F00();
+extern "C" void ext_004875A0();
+
+extern "C" __declspec(naked) void __fastcall fn_00645AD0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x40
+        push ebx
+        push ebp
+        mov ebp, ecx
+        mov ecx, dword ptr [ebp + 0x68]
+        test ecx, ecx
+        push esi
+        push edi
+        je null_path
+        call ext_00647F00
+        mov ebx, dword ptr [esp + 0x54]
+        mov ecx, 0x10
+        mov esi, eax
+        mov edi, ebx
+        rep movsd
+        jmp tail
+null_path:
+        mov ebx, dword ptr [esp + 0x54]
+        fld1
+        fst dword ptr [ebx]
+        fldz
+        fst dword ptr [ebx + 0x4]
+        fst dword ptr [ebx + 0x8]
+        fst dword ptr [ebx + 0xc]
+        fst dword ptr [ebx + 0x10]
+        fst dword ptr [ebx + 0x18]
+        fst dword ptr [ebx + 0x1c]
+        fst dword ptr [ebx + 0x20]
+        fst dword ptr [ebx + 0x24]
+        fst dword ptr [ebx + 0x2c]
+        fst dword ptr [ebx + 0x30]
+        fst dword ptr [ebx + 0x34]
+        fstp dword ptr [ebx + 0x38]
+        fst dword ptr [ebx + 0x14]
+        fst dword ptr [ebx + 0x28]
+        fstp dword ptr [ebx + 0x3c]
+tail:
+        push ebx
+        lea eax, [esp + 0x14]
+        push eax
+        lea ecx, [ebp + 0x6c]
+        call ext_004875A0
+        mov edi, ebx
+        mov ecx, 0x10
+        mov esi, eax
+        rep movsd
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x40
+        ret 0x4
+    }
+}
