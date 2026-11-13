@@ -5738,3 +5738,409 @@ extern "C" __declspec(naked) void __cdecl fn_0051E6B0() {
         ret
     }
 }
+
+extern "C" void ext_0050FE70();
+
+// [0x00510050] sub_00510050 (849 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00510050() {
+    __asm {
+        push    ecx
+        push    ebx
+        mov     ebx, dword ptr [esp + 0x14]
+        push    ebp
+        mov     ebp, dword ptr [esp + 0x14]
+        mov     eax, ebx
+        sub     eax, ebp
+        sar     eax, 2
+        cdq
+        push    esi
+        sub     eax, edx
+        push    edi
+        sar     eax, 1
+        lea     edi, [ebp + eax*4]
+        mov     eax, dword ptr [esp + 0x24]
+        push    eax
+        lea     ecx, [ebx - 4]
+        push    ecx
+        push    edi
+        push    ebp
+        call    ext_0050FE70
+        add     esp, 0x10
+        cmp     ebp, edi
+        lea     esi, [edi + 4]
+        jae     L_5100AD
+
+    L_510087:
+        mov     edx, dword ptr [edi]
+        mov     ecx, dword ptr [edi - 4]
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ecx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_5100AD
+        fld     qword ptr [ecx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_5100AD
+        add     edi, -4
+        cmp     ebp, edi
+        jb      L_510087
+
+    L_5100AD:
+        mov     eax, ebx
+        sub     eax, esi
+        add     eax, 3
+        cdq
+        and     edx, 3
+        add     eax, edx
+        sar     eax, 2
+        cmp     eax, 4
+        jl      L_510155
+        mov     ecx, dword ptr [edi]
+
+    L_5100C8:
+        mov     edx, dword ptr [esi]
+        fld     qword ptr [ecx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_510192
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ecx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_510192
+        mov     edx, dword ptr [esi + 4]
+        fld     qword ptr [ecx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_510185
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ecx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_510185
+        mov     edx, dword ptr [esi + 8]
+        fld     qword ptr [ecx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_51018A
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ecx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_51018A
+        mov     edx, dword ptr [esi + 0xC]
+        fld     qword ptr [ecx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_51018F
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ecx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_51018F
+        add     esi, 0x10
+        lea     edx, [ebx - 0xC]
+        cmp     esi, edx
+        jl      L_5100C8
+
+    L_510155:
+        cmp     esi, ebx
+        jae     L_510192
+        mov     edx, dword ptr [edi]
+        jmp     short L_510160
+        _emit   0x8D
+        _emit   0x49
+        _emit   0x00
+
+    L_510160:
+        mov     ecx, dword ptr [esi]
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ecx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_510192
+        fld     qword ptr [ecx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_510192
+        add     esi, 4
+        cmp     esi, ebx
+        jb      L_510160
+        jmp     short L_510192
+
+    L_510185:
+        add     esi, 4
+        jmp     short L_510192
+
+    L_51018A:
+        add     esi, 8
+        jmp     short L_510192
+
+    L_51018F:
+        add     esi, 0xC
+
+    L_510192:
+        mov     ebp, edi
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x10], ebp
+        _emit   0x8D
+        _emit   0x9B
+        _emit   0x00
+        _emit   0x00
+        _emit   0x00
+        _emit   0x00
+
+    L_5101A0:
+        mov     eax, ebx
+        sub     eax, ecx
+        add     eax, 3
+        cdq
+        and     edx, 3
+        add     eax, edx
+        sar     eax, 2
+        cmp     eax, 4
+        jl      L_51028C
+        _emit   0x8D
+        _emit   0xA4
+        _emit   0x24
+        _emit   0x00
+        _emit   0x00
+        _emit   0x00
+        _emit   0x00
+
+    L_5101C0:
+        mov     edx, dword ptr [ecx]
+        mov     ebx, dword ptr [edi]
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ebx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_5101ED
+        fld     qword ptr [ebx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_5102D1
+        mov     eax, esi
+        mov     ebx, dword ptr [eax]
+        mov     dword ptr [eax], edx
+        add     esi, 4
+        mov     dword ptr [ecx], ebx
+
+    L_5101ED:
+        mov     edx, dword ptr [ecx + 4]
+        mov     ebx, dword ptr [edi]
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ebx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_51021C
+        fld     qword ptr [ebx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_5102C4
+        mov     eax, esi
+        mov     ebx, dword ptr [eax]
+        mov     dword ptr [eax], edx
+        add     esi, 4
+        mov     dword ptr [ecx + 4], ebx
+
+    L_51021C:
+        mov     edx, dword ptr [ecx + 8]
+        mov     ebx, dword ptr [edi]
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ebx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_51024B
+        fld     qword ptr [ebx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_5102C9
+        mov     eax, esi
+        mov     ebx, dword ptr [eax]
+        mov     dword ptr [eax], edx
+        add     esi, 4
+        mov     dword ptr [ecx + 8], ebx
+
+    L_51024B:
+        mov     edx, dword ptr [ecx + 0xC]
+        mov     ebx, dword ptr [edi]
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ebx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_510276
+        fld     qword ptr [ebx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_5102CE
+        mov     eax, esi
+        mov     ebx, dword ptr [eax]
+        mov     dword ptr [eax], edx
+        add     esi, 4
+        mov     dword ptr [ecx + 0xC], ebx
+
+    L_510276:
+        mov     eax, dword ptr [esp + 0x20]
+        add     ecx, 0x10
+        add     eax, -0xC
+        cmp     ecx, eax
+        jl      L_5101C0
+        mov     ebx, dword ptr [esp + 0x20]
+
+    L_51028C:
+        cmp     ecx, ebx
+        jae     L_5102D5
+
+    L_510290:
+        mov     edx, dword ptr [ecx]
+        mov     ebx, dword ptr [edi]
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ebx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_5102B9
+        fld     qword ptr [ebx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_5102D1
+        mov     eax, esi
+        mov     ebx, dword ptr [eax]
+        mov     dword ptr [eax], edx
+        add     esi, 4
+        mov     dword ptr [ecx], ebx
+
+    L_5102B9:
+        add     ecx, 4
+        cmp     ecx, dword ptr [esp + 0x20]
+        jb      L_510290
+        jmp     short L_5102D1
+
+    L_5102C4:
+        add     ecx, 4
+        jmp     short L_5102D1
+
+    L_5102C9:
+        add     ecx, 8
+        jmp     short L_5102D1
+
+    L_5102CE:
+        add     ecx, 0xC
+
+    L_5102D1:
+        mov     ebx, dword ptr [esp + 0x20]
+
+    L_5102D5:
+        cmp     ebp, dword ptr [esp + 0x1C]
+        jbe     L_51031F
+        jmp     short L_5102E0
+        _emit   0x8D
+        _emit   0x49
+        _emit   0x00
+
+    L_5102E0:
+        mov     ebx, dword ptr [edi]
+        mov     edx, dword ptr [ebp - 4]
+        fld     qword ptr [ebx + 0x20]
+        fcomp   qword ptr [edx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_51030A
+        fld     qword ptr [edx + 0x20]
+        fcomp   qword ptr [ebx + 0x20]
+        fnstsw  ax
+        test    ah, 5
+        jnp     L_510313
+        mov     eax, dword ptr [edi - 4]
+        sub     edi, 4
+        mov     dword ptr [edi], edx
+        mov     dword ptr [ebp - 4], eax
+
+    L_51030A:
+        add     ebp, -4
+        cmp     dword ptr [esp + 0x1C], ebp
+        jb      L_5102E0
+
+    L_510313:
+        mov     ebx, dword ptr [esp + 0x20]
+        cmp     ebp, dword ptr [esp + 0x1C]
+        mov     dword ptr [esp + 0x10], ebp
+
+    L_51031F:
+        jne     L_510353
+        cmp     ecx, ebx
+        je      L_510392
+        cmp     esi, ecx
+        je      L_510331
+        mov     edx, dword ptr [esi]
+        mov     eax, dword ptr [edi]
+        mov     dword ptr [edi], edx
+        mov     dword ptr [esi], eax
+
+    L_510331:
+        mov     eax, ecx
+        mov     ebp, dword ptr [eax]
+        mov     edx, edi
+        mov     ebx, dword ptr [edx]
+        mov     dword ptr [edx], ebp
+        mov     ebp, dword ptr [esp + 0x10]
+        add     esi, 4
+        add     edi, 4
+        mov     dword ptr [eax], ebx
+        mov     ebx, dword ptr [esp + 0x20]
+        add     ecx, 4
+        jmp     L_5101A0
+
+    L_510353:
+        sub     ebp, 4
+        cmp     ecx, ebx
+        mov     dword ptr [esp + 0x10], ebp
+        jne     L_510380
+        sub     edi, 4
+        cmp     ebp, edi
+        je      L_51036F
+        mov     edx, dword ptr [edi]
+        mov     eax, dword ptr [ebp]
+        mov     dword ptr [ebp], edx
+        mov     dword ptr [edi], eax
+
+    L_51036F:
+        mov     edx, dword ptr [esi - 4]
+        mov     eax, dword ptr [edi]
+        sub     esi, 4
+        mov     dword ptr [edi], edx
+        mov     dword ptr [esi], eax
+        jmp     L_5101A0
+
+    L_510380:
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [ebp]
+        mov     dword ptr [ecx], edx
+        mov     dword ptr [ebp], eax
+        add     ecx, 4
+        jmp     L_5101A0
+
+    L_510392:
+        mov     eax, dword ptr [esp + 0x18]
+        mov     dword ptr [eax], edi
+        pop     edi
+        mov     dword ptr [eax + 4], esi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        pop     ecx
+        ret
+    }
+}
