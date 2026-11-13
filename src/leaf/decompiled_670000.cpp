@@ -11229,3 +11229,50 @@ extern "C" void __fastcall fn_00672150(void** self, int edx_unused, const float*
     dst[2] = arg1[2];
     dst[3] = arg1[3];
 }
+
+extern "C" int mem_00924FC4;
+struct FakeStr28_00671490 { char pad[0x1c]; };
+
+// [0x00671490] sub_00671490 (76 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00671490(const void* arg0) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        push esi
+        push edi
+        xor edi, edi
+        mov dword ptr [esp + 0x10], edi
+        mov esi, 0xb599c0
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    loop_start:
+        push esi
+        push ebx
+        call ebp
+        add esp, 8
+        test al, al
+        jne done
+        add esi, 0x1c
+        add edi, 1
+        cmp esi, 0xb59c60
+        jl loop_start
+        mov edi, dword ptr [esp + 0x10]
+    done:
+        push edi
+        call ext_00671100
+        add esp, 4
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
