@@ -6562,3 +6562,14 @@ extern "C" void __cdecl fn_00503970(int a1) {
     ((void (__cdecl*)(int))ext_00507E00)(a1);
     ((void (__cdecl*)(int))ext_00516D20)(a1);
 }
+
+// [0x00508280] sub_00508280 (47 bytes)
+extern "C" void ext_00508210(void*, const void*);
+extern "C" void* __fastcall fn_00508280(void* self, int edx_unused, const void* other) {
+    if (self != other) {
+        ext_00508210((char*)self + 0x10, (const char*)other + 0x10);
+        *(double*)((char*)self + 0x20) = *(const double*)((const char*)other + 0x20);
+        *((char*)self + 0x28) = *((const char*)other + 0x28);
+    }
+    return self;
+}
