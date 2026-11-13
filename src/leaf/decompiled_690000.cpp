@@ -5056,3 +5056,212 @@ extern "C" __declspec(naked) void __fastcall fn_006944D0(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" int mem_00924EAC;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00A9F420;
+extern "C" int mem_00A9F428;
+extern "C" int mem_00A9F430;
+
+// [0x00696260] sub_00696260 (477 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00696260(void* self) {
+    __asm {
+        push	esi
+        mov	esi, dword ptr [esp + 0x8]
+        push	edi
+        mov	ecx, esi
+        call	dword ptr [mem_00924EAC]
+        mov	ecx, dword ptr [esp + 0x10]
+        mov	edi, dword ptr [mem_00924FC0]
+        push	0x98f644
+        push	esi
+        mov	dword ptr [ecx], eax
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne near ptr loc_696438
+        push	0x98f640
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne near ptr loc_696438
+        mov	edx, dword ptr [mem_00A9F420]
+        push	edx
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne near ptr loc_696438
+        push	0x98f63c
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        je short loc_6962cc
+        pop	edi
+        mov	eax, 0x1
+        pop	esi
+        ret
+loc_6962cc:
+        push	0x98f638
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne near ptr loc_696430
+        push	0x98f634
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne near ptr loc_696430
+        push	0x98f630
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        je short loc_696309
+        pop	edi
+        mov	eax, 0x3
+        pop	esi
+        ret
+loc_696309:
+        push	0x98f62c
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne near ptr loc_696428
+        push	0x98f628
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne near ptr loc_696428
+        mov	eax, dword ptr [mem_00A9F428]
+        push	eax
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne near ptr loc_696428
+        push	0x98f624
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        je short loc_69635a
+        pop	edi
+        mov	eax, 0x5
+        pop	esi
+        ret
+loc_69635a:
+        push	0x98f620
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne near ptr loc_696420
+        push	0x98f61c
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne near ptr loc_696420
+        push	0x98f618
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        je short loc_696397
+        pop	edi
+        mov	eax, 0x7
+        pop	esi
+        ret
+loc_696397:
+        push	0x98f614
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne short loc_696418
+        push	0x98f610
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne short loc_696418
+        mov	ecx, dword ptr [mem_00A9F430]
+        push	ecx
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne short loc_696418
+        push	0x98f60c
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        je short loc_6963dd
+        pop	edi
+        mov	eax, 0x9
+        pop	esi
+        ret
+loc_6963dd:
+        push	0x98f608
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne short loc_696410
+        push	0x98f604
+        push	esi
+        call	edi
+        add	esp, 0x8
+        test	al, al
+        jne short loc_696410
+        push	0x98f600
+        push	esi
+        call	edi
+        add	esp, 0x8
+        neg	al
+        pop	edi
+        pop	esi
+        sbb	eax, eax
+        and	eax, 0xb
+        ret
+loc_696410:
+        pop	edi
+        mov	eax, 0xa
+        pop	esi
+        ret
+loc_696418:
+        pop	edi
+        mov	eax, 0x8
+        pop	esi
+        ret
+loc_696420:
+        pop	edi
+        mov	eax, 0x6
+        pop	esi
+        ret
+loc_696428:
+        pop	edi
+        mov	eax, 0x4
+        pop	esi
+        ret
+loc_696430:
+        pop	edi
+        mov	eax, 0x2
+        pop	esi
+        ret
+loc_696438:
+        pop	edi
+        xor	eax, eax
+        pop	esi
+        ret
+    }
+}
+
