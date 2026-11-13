@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `12001 / 24049` (**49.90%**) — `8909` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1149465 / 4496005 bytes` (**25.57%** of 4.29 MB)
+- **In-Scope Functions Matched:** `12002 / 24049` (**49.91%**) — `8910` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1149515 / 4496005 bytes` (**25.57%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -16,7 +16,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P0-10 (1-16B)** | 2379 / 2405 | 98.92% | 24669 / 25001 | 98.67% | 26 fn |
 | **P10-20 (16-32B)** | 2210 / 2405 | 91.89% | 56034 / 61769 | 90.72% | 195 fn |
 | **P20-30 (32-48B)** | 1265 / 2405 | 52.60% | 49276 / 97731 | 50.42% | 1140 fn |
-| **P30-40 (48-71B)** | 1050 / 2405 | 43.66% | 62432 / 144549 | 43.19% | 1355 fn |
+| **P30-40 (48-71B)** | 1051 / 2405 | 43.70% | 62482 / 144549 | 43.23% | 1354 fn |
 | **P40-50 (71-91B)** | 1140 / 2405 | 47.40% | 94984 / 194373 | 48.87% | 1265 fn |
 | **P50-60 (91-122B)** | 1279 / 2405 | 53.18% | 137858 / 256906 | 53.66% | 1126 fn |
 | **P60-70 (122-159B)** | 989 / 2405 | 41.12% | 133250 / 339038 | 39.30% | 1416 fn |
@@ -29,7 +29,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6749 | 516049 | 75.75% |
-| `claude-haiku-5.5@low` | 734 | 210456 | 8.24% |
+| `claude-haiku-5.5@low` | 735 | 210506 | 8.25% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.02% |
 | `gemini-3.8-flash@low` | 426 | 124804 | 4.78% |
 | `gemini-4-hydrogen@low` | 347 | 148587 | 3.89% |

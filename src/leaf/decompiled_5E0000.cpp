@@ -4331,3 +4331,18 @@ extern "C" void __fastcall fn_005E26C0(void* self, int edx_unused, float a1) {
     float v = ((FloatThisFloatFn005E26C0)ext_006781B0)(reinterpret_cast<char*>(r) + 0x2e0, a1);
     ((VoidThisFloatFn005E26C0)ext_005E2240)(self, v);
 }
+
+// [0x005E2730] sub_005E2730 (50 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_005E2280();
+extern "C" void ext_006781B0();
+
+typedef void*  (__cdecl    *GetPtrFn005E2730)();
+typedef float  (__thiscall *FloatThisFloatFn005E2730)(void* ecx_this, float a);
+typedef void   (__thiscall *VoidThisFloatFn005E2730)(void* ecx_this, float a);
+
+extern "C" void __fastcall fn_005E2730(void* self, int edx_unused, float a1) {
+    void* r = ((GetPtrFn005E2730)ext_00594000)();
+    float v = ((FloatThisFloatFn005E2730)ext_006781B0)(reinterpret_cast<char*>(r) + 0x2e0, a1);
+    ((VoidThisFloatFn005E2730)ext_005E2280)(self, v);
+}
