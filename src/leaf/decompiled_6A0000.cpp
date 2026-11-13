@@ -4947,3 +4947,80 @@ extern "C" __declspec(naked) void __fastcall fn_006AC2E0(void* self) {
         ret
     }
 }
+
+// [0x006AC230] sub_006AC230 (163 bytes)
+extern "C" int mem_0092566C;
+extern "C" int mem_00925688;
+extern "C" void ext_006AB410();
+
+typedef int (__stdcall *GetClientRectFn006AC230)(void* hwnd, void* rect);
+typedef int (__stdcall *InvalidateRectFn006AC230)(void* hwnd, void* rect, int erase);
+
+struct Rect006AC230 { int left, top, right, bottom; };
+
+extern "C" __declspec(naked) void __fastcall fn_006AC230(void* self) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        cmp edi, 0x14
+        mov esi, ecx
+        jge L_006AC230_a
+        mov edi, 0x14
+    L_006AC230_a:
+        mov eax, dword ptr [esi + 0x20]
+        test eax, eax
+        jne L_006AC230_b
+    L_006AC230_store:
+        mov dword ptr [esi + 0xf8], edi
+        mov eax, edi
+        pop edi
+        pop esi
+        add esp, 0x10
+        ret 0x4
+    L_006AC230_b:
+        lea ecx, [esp + 0x8]
+        push ecx
+        push eax
+        call dword ptr [mem_0092566C]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, eax
+        sub edx, ecx
+        je L_006AC230_store
+        mov dl, byte ptr [esi + 0xfc]
+        neg dl
+        sbb edx, edx
+        and edx, 0x1c
+        sub eax, edx
+        sub eax, ecx
+        add eax, -0x14
+        cmp edi, eax
+        jle L_006AC230_c
+        mov edi, eax
+    L_006AC230_c:
+        cmp dword ptr [esi + 0xf8], edi
+        je L_006AC230_end
+        mov eax, dword ptr [esi + 0x20]
+        push 0x1
+        push 0x0
+        push eax
+        mov dword ptr [esi + 0xf8], edi
+        call dword ptr [mem_00925688]
+        mov ecx, dword ptr [esp + 0x14]
+        sub ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x10]
+        sub edx, dword ptr [esp + 0x8]
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_006AB410
+    L_006AC230_end:
+        mov eax, dword ptr [esi + 0xf8]
+        pop edi
+        pop esi
+        add esp, 0x10
+        ret 0x4
+    }
+}
