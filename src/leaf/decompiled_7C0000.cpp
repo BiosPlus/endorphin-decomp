@@ -9094,3 +9094,41 @@ L_007CE335:
         ret
     }
 }
+
+// [0x007CE340] sub_007CE340 (65 bytes)
+extern "C" void ext_007CDF70();
+extern "C" void ext_007CE160();
+extern "C" __declspec(naked) void __fastcall fn_007CE340(void* self) {
+    __asm {
+        push esi
+        mov esi, eax
+        push edi
+        mov eax, ebx
+        call ext_007CDF70
+        add esp, 4
+        test al, al
+        je fail
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x8]
+        push edi
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push edx
+        push ebx
+        mov edx, esi
+        call ext_007CE160
+        add esp, 0x14
+        test al, al
+        je fail
+        mov al, 1
+        pop esi
+        ret
+    fail:
+        xor al, al
+        pop esi
+        ret
+    }
+}
