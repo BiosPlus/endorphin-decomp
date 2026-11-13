@@ -2238,3 +2238,49 @@ extern "C" __declspec(naked) void __fastcall fn_0058AF80(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_0067DAD0();
+extern "C" void ext_00694B60();
+extern "C" int mem_00A85D54;
+// [0x0058B230] sub_0058B230 (108 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0058B230(void* self) {
+    __asm {
+        sub esp, 0x24
+        cmp byte ptr [mem_00A85D54], 0
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 4]
+        lea ecx, [esi + 4]
+        je short L1
+        mov edx, dword ptr [eax + 0x30]
+        jmp short L2
+    L1:
+        mov edx, dword ptr [eax + 0x28]
+    L2:
+        call edx
+        fldz
+        fst dword ptr [esp + 0xc]
+        lea ecx, [esp + 4]
+        fst dword ptr [esp + 8]
+        push ecx
+        fst dword ptr [esp + 0x1c]
+        mov ecx, eax
+        fst dword ptr [esp + 0x14]
+        fst dword ptr [esp + 0x24]
+        fstp dword ptr [esp + 0x20]
+        fld1
+        fst dword ptr [esp + 8]
+        fst dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0x28]
+        call ext_0067DAD0
+        add esi, 0x12c
+        push esi
+        push 0
+        lea ecx, [esp + 0xc]
+        call ext_00694B60
+        mov eax, esi
+        pop esi
+        add esp, 0x24
+        ret
+    }
+}
