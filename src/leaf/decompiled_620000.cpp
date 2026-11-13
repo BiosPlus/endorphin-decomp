@@ -7304,3 +7304,31 @@ extern "C" __declspec(naked) void __fastcall fn_0062D4E0(void* self) {
         ret
     }
 }
+
+// [0x0062CF60] sub_0062CF60 (63 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0062CF60(void* self, int edx_unused, const void* other) {
+    __asm {
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0xc]
+        push    edi
+        mov     esi, ecx
+        call    ext_0062CD80
+        mov     dword ptr [esi], 0x009793d4
+        fld     dword ptr [edi + 0x38]
+        fstp    dword ptr [esi + 0x38]
+        mov     eax, esi
+        fld     dword ptr [edi + 0x3c]
+        fstp    dword ptr [esi + 0x3c]
+        fld     dword ptr [edi + 0x40]
+        fstp    dword ptr [esi + 0x40]
+        fld     dword ptr [edi + 0x44]
+        fstp    dword ptr [esi + 0x44]
+        fld     dword ptr [edi + 0x48]
+        pop     edi
+        fstp    dword ptr [esi + 0x48]
+        mov     dword ptr [esi], 0x00979214
+        pop     esi
+        ret     4
+    }
+}
