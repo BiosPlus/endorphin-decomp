@@ -6753,3 +6753,56 @@ extern "C" __declspec(naked) void __fastcall fn_0051E360(void* self) {
         ret
     }
 }
+
+// [0x0051E3D0] sub_0051E3D0 (108 bytes)
+extern "C" void ext_0051E1A0();
+extern "C" void ext_0051E360();
+extern "C" void ext_00680800();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0051E3D0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, ecx
+        mov eax, 1
+        cmp dword ptr [ebx + 4], eax
+        mov byte ptr [ebx + 9], al
+        jne L_else
+        call ext_0051E360
+        lea ecx, [ebx + 0Ch]
+        pop ebx
+        add esp, 4
+        jmp ext_00680800
+L_else:
+        push ebp
+        push esi
+        lea esi, [ebx + 140h]
+        push edi
+        mov edi, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], edi
+        jbe L_ok1
+        call dword ptr [mem_00925134]
+L_ok1:
+        mov ebp, dword ptr [esi + 4]
+        cmp ebp, dword ptr [esi + 8]
+        jbe L_ok2
+        call dword ptr [mem_00925134]
+L_ok2:
+        push offset fn_0051E3D0
+        push edi
+        push esi
+        push ebp
+        lea eax, [esp + 20h]
+        push esi
+        push eax
+        call ext_0051E1A0
+        add esp, 18h
+        pop edi
+        pop esi
+        pop ebp
+        lea ecx, [ebx + 0Ch]
+        pop ebx
+        add esp, 4
+        jmp ext_00680800
+    }
+}
