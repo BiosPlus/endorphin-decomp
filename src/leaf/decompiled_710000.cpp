@@ -440,3 +440,32 @@ extern "C" __declspec(naked) void* __fastcall fn_0071B050(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00710FB0] sub_00710FB0 (48 bytes)
+extern "C" void ext_00710FE0();
+extern "C" int mem_009251D8;
+
+extern "C" __declspec(naked) void __fastcall fn_00710FB0(void* self, int edx_unused, void* arg) {
+    __asm {
+        push esi
+        mov esi, ecx
+        test byte ptr [esi], 0x20
+        je L_00710FC9
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je L_00710FC9
+        push eax
+        call dword ptr [mem_009251D8]
+        add esp, 0x4
+L_00710FC9:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [esp + 0x8]
+        or edx, 0x20
+        push eax
+        mov ecx, esi
+        mov dword ptr [esi], edx
+        call ext_00710FE0
+        pop esi
+        ret 0x4
+    }
+}
