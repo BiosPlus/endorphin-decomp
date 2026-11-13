@@ -7950,3 +7950,42 @@ done:
         ret 0x8
     }
 }
+
+// [0x004510E0] sub_004510E0 (88 bytes)
+extern "C" void ext_00450630();
+extern "C" void ext_0044E600();
+extern "C" int mem_0092566C;
+extern "C" __declspec(naked) void __fastcall fn_004510E0(void* self) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0xa8], 0x0
+        je done
+        mov ecx, dword ptr [esi + 0xd14]
+        lea eax, [esp + 0x4]
+        push eax
+        push ecx
+        call dword ptr [mem_0092566C]
+        mov edx, dword ptr [esp + 0x10]
+        sub edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0xc]
+        sub eax, dword ptr [esp + 0x4]
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_00450630
+        mov ecx, dword ptr [esp + 0x10]
+        sub ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        sub edx, dword ptr [esp + 0x4]
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_0044E600
+done:
+        pop esi
+        add esp, 0x10
+        ret
+    }
+}
