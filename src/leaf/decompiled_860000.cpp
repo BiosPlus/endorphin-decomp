@@ -1335,3 +1335,35 @@ extern "C" void __cdecl fn_0086CD00(void* self) {
     }
     ext_00859730(self);
 }
+
+// [0x0086F160] sub_0086F160 (58 bytes)
+extern "C" void ext_0086F020();
+extern "C" void ext_0086F0E0();
+extern "C" void ext_0086F120();
+extern "C" __declspec(naked) void __cdecl fn_0086F160(...) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        sub esp, 0x50
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        push eax
+        push ecx
+        call ext_0086F020
+        lea ecx, [esp + 0x8]
+        add esp, 0x8
+        push ecx
+        call ext_0086F0E0
+        mov ecx, dword ptr [esp + 0x60]
+        lea edx, [esp + 0x4]
+        mov eax, dword ptr [esp + 0x58]
+        add esp, 0x4
+        push ecx
+        push edx
+        push eax
+        call ext_0086F120
+        add esp, 0x5c
+        ret
+    }
+}
