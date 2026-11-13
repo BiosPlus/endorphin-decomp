@@ -7375,3 +7375,93 @@ extern "C" __declspec(naked) void __fastcall fn_0044ACE0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0044AD30] sub_0044AD30 (321 bytes)
+extern "C" void ext_0044A2D0();
+extern "C" void ext_0044AAA0();
+extern "C" void ext_006A5F6E();
+extern "C" void ext_006A665E();
+extern "C" void ext_006A666A();
+
+extern "C" __declspec(naked) void __fastcall fn_0044AD30(void* self) {
+    __asm {
+        push -1
+        push 0x87cf5b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xb0
+        fldz
+        push esi
+        fst dword ptr [esp + 0x14]
+        lea eax, [esp + 0xc]
+        fst dword ptr [esp + 0x10]
+        push eax
+        fstp dword ptr [esp + 0x10]
+        mov esi, ecx
+        call ext_0044A2D0
+        push 0
+        push 0
+        push 0
+        lea ecx, [esp + 0x28]
+        call ext_006A665E
+        mov dword ptr [esp + 0x1c], 0x93412c
+        fld dword ptr [esp + 0x14]
+        fld qword ptr [mem_0092C518]
+        xor edx, edx
+        fnstcw word ptr [esp + 0x6]
+        or dword ptr [esp + 0xa4], 3
+        movzx eax, word ptr [esp + 0x6]
+        fmul st(1), st
+        or eax, 0xc00
+        fxch st(1)
+        mov dword ptr [esp + 0x8], eax
+        mov dword ptr [esp + 0xbc], 0
+        fldcw word ptr [esp + 0x8]
+        fistp dword ptr [esp + 0x8]
+        movzx ecx, byte ptr [esp + 0x8]
+        mov dh, cl
+        fldcw word ptr [esp + 0x6]
+        fld dword ptr [esp + 0x10]
+        fnstcw word ptr [esp + 0x6]
+        fmul st, st(1)
+        movzx eax, word ptr [esp + 0x6]
+        or eax, 0xc00
+        mov dword ptr [esp + 0x8], eax
+        fldcw word ptr [esp + 0x8]
+        fistp dword ptr [esp + 0x8]
+        mov al, byte ptr [esp + 0x8]
+        mov dl, al
+        fldcw word ptr [esp + 0x6]
+        shl edx, 8
+        fmul dword ptr [esp + 0xc]
+        fnstcw word ptr [esp + 0x6]
+        movzx eax, word ptr [esp + 0x6]
+        or eax, 0xc00
+        mov dword ptr [esp + 0x8], eax
+        fldcw word ptr [esp + 0x8]
+        fistp dword ptr [esp + 0x8]
+        movzx ecx, byte ptr [esp + 0x8]
+        movzx eax, cl
+        fldcw word ptr [esp + 0x6]
+        or edx, eax
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x9c], edx
+        call ext_006A666A
+        cmp eax, 1
+        jne skip_store
+        mov ecx, dword ptr [esp + 0x9c]
+        mov dword ptr [esi + 0xf0], ecx
+        mov ecx, esi
+        call ext_0044AAA0
+    skip_store:
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0xbc], 0xffffffff
+        call ext_006A5F6E
+        mov ecx, dword ptr [esp + 0xb4]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0xbc
+        ret
+    }
+}
