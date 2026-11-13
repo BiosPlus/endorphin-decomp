@@ -6060,3 +6060,26 @@ L_chk4:
         ret 0x1c
     }
 }
+
+// [0x006239A0] sub_006239A0 (37 bytes)
+extern "C" void ext_00623500();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_006239A0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        sub esp, 0x1c
+        mov esi, ecx
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esi + 0x20]
+        call ext_00623500
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
