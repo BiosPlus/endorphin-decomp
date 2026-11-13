@@ -5525,3 +5525,40 @@ extern "C" void __fastcall fn_0065C280(void* self) {
         }
     }
 }
+
+// [0x0065C2C0] sub_0065C2C0 (86 bytes)
+extern "C" void ext_007C9930();
+
+extern "C" __declspec(naked) void __fastcall fn_0065C2C0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x8c]
+        test eax, eax
+        je loc_65c314
+        push eax
+        call ext_007D8700
+        push eax
+        call ext_007C9260
+        add esp, 0x8
+        test eax, eax
+        je loc_65c2f5
+        mov eax, dword ptr [esi + 0x8c]
+        push eax
+        call ext_007D8700
+        push eax
+        call ext_007C9860
+        add esp, 0x8
+    loc_65c2f5:
+        mov ecx, dword ptr [esi + 0x8c]
+        push ecx
+        call ext_007D8700
+        push eax
+        call ext_007C9930
+        add esp, 0x8
+        mov dword ptr [esi + 0x8c], 0
+    loc_65c314:
+        pop esi
+        ret
+    }
+}
