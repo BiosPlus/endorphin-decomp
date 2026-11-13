@@ -8691,3 +8691,10 @@ tail:
         ret
     }
 }
+
+// [0x007C9720] sub_007C9720 (126 bytes)
+extern "C" void __cdecl ext_007C9550(void* a0, int a1, float a2, float a3, float a4, float a5, float a6, float a7);
+extern "C" void __cdecl fn_007C9720(void* a0, float a1, float a2, float a3, float a4, float a5, float a6) {
+    ext_007C9550(a0, 0, a1, a2, a3, a4, a5, a6);
+    ext_007C9550(a0, 1, a1, a2, a3, a4, a5, a6);
+}
