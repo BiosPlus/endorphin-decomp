@@ -20,3 +20,39 @@ extern "C" __declspec(naked) void __fastcall fn_0048DF90(void* self) {
         ret 0x4
     }
 }
+
+// [0x0048DF10] Commands::BufferPoseCommand::vfunc_1 (62 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_005975A0();
+extern "C" void ext_0059B5A0();
+
+extern "C" __declspec(naked) void __fastcall fn_0048DF10(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00594000
+        mov edi, eax
+        lea eax, [esi + 0x24]
+        push eax
+        mov ecx, edi
+        call ext_005975A0
+        cmp dword ptr [esi + 0x34], 0
+        je L_else
+        mov ecx, dword ptr [esi + 0x34]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x128]
+        call eax
+        jmp L_done
+    L_else:
+        mov ecx, edi
+        call ext_0059B5A0
+    L_done:
+        mov ecx, dword ptr [esi + 0x10]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x8]
+        pop edi
+        pop esi
+        jmp eax
+    }
+}
