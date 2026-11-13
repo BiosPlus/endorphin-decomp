@@ -2634,3 +2634,185 @@ extern "C" __declspec(naked) void __fastcall fn_005ED200(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" void ext_0056B690();
+extern "C" void ext_005E0BB0();
+
+// [0x005E0C10] sub_005E0C10 (524 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005E0C10(void* self) {
+    __asm {
+        sub esp, 0x24
+        fld dword ptr [esp + 0x28]
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        sub esp, 0x14
+        fstp qword ptr [esp + 0xc]
+        lea ebx, [esi + 0x18]
+        fld dword ptr [ebx]
+        mov eax, esp
+        fstp dword ptr [eax]
+        lea edi, [esi + 0xc]
+        fld dword ptr [ebx + 0x4]
+        lea ecx, [esp + 0x38]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [ebx + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [edi + 0x4]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [edi]
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [edi]
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [edi + 0x8]
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [edi + 0x8]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [edi + 0x4]
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [esp + 0x20]
+        fmul dword ptr [esi + 0x4]
+        fld dword ptr [esi + 0x8]
+        fmul dword ptr [esp + 0x24]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [esi + 0x8]
+        fmul dword ptr [esp + 0x28]
+        fld dword ptr [esi]
+        fmul dword ptr [esp + 0x2c]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esi]
+        fmul dword ptr [esp + 0x30]
+        fld dword ptr [esp + 0x34]
+        fmul dword ptr [esi + 0x4]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp + 0x38]
+        fld dword ptr [esp + 0x2c]
+        fstp dword ptr [esp + 0x3c]
+        fld dword ptr [esp + 0x34]
+        fstp dword ptr [esp + 0x40]
+        call ext_0056B690
+        test al, al
+        je loc_5E0E11
+        fld dword ptr [esp + 0x34]
+        sub esp, 0x14
+        fstp qword ptr [esp + 0xc]
+        mov eax, esp
+        fld dword ptr [esi]
+        lea ecx, [esp + 0x38]
+        fstp dword ptr [eax]
+        fld dword ptr [esi + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esi + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [ebx + 0x4]
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [ebx]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [ebx]
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [ebx + 0x8]
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [ebx + 0x8]
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [ebx + 0x4]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [edi + 0x4]
+        fmul dword ptr [esp + 0x34]
+        fld dword ptr [edi + 0x8]
+        fmul dword ptr [esp + 0x30]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [edi + 0x8]
+        fmul dword ptr [esp + 0x2c]
+        fld dword ptr [edi]
+        fmul dword ptr [esp + 0x28]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [edi]
+        fmul dword ptr [esp + 0x24]
+        fld dword ptr [edi + 0x4]
+        fmul dword ptr [esp + 0x20]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x34]
+        fstp dword ptr [esp + 0x38]
+        fld dword ptr [esp + 0x30]
+        fstp dword ptr [esp + 0x3c]
+        fld dword ptr [esp + 0x2c]
+        fstp dword ptr [esp + 0x40]
+        call ext_0056B690
+        test al, al
+        je loc_5E0E11
+        fld dword ptr [esp + 0x34]
+        sub esp, 0x14
+        fstp qword ptr [esp + 0xc]
+        mov eax, esp
+        fld dword ptr [edi]
+        lea ecx, [esp + 0x38]
+        fstp dword ptr [eax]
+        fld dword ptr [edi + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [edi + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [esi + 0x8]
+        fmul dword ptr [ebx + 0x4]
+        fld dword ptr [ebx + 0x8]
+        fmul dword ptr [esi + 0x4]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x38]
+        fld dword ptr [ebx + 0x8]
+        fmul dword ptr [esi]
+        fld dword ptr [ebx]
+        fmul dword ptr [esi + 0x8]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x3c]
+        fld dword ptr [ebx]
+        fmul dword ptr [esi + 0x4]
+        fld dword ptr [ebx + 0x4]
+        fmul dword ptr [esi]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x40]
+        call ext_0056B690
+        test al, al
+        je loc_5E0E11
+        fld dword ptr [esp + 0x34]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_005E0BB0
+        test al, al
+        je loc_5E0E11
+        fld dword ptr [esp + 0x34]
+        push ecx
+        mov ecx, edi
+        fstp dword ptr [esp]
+        call ext_005E0BB0
+        test al, al
+        je loc_5E0E11
+        fld dword ptr [esp + 0x34]
+        push ecx
+        mov ecx, ebx
+        fstp dword ptr [esp]
+        call ext_005E0BB0
+        test al, al
+        je loc_5E0E11
+        mov eax, 1
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x24
+        ret 4
+    loc_5E0E11:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        add esp, 0x24
+        ret 4
+    }
+}
