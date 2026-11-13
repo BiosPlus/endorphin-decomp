@@ -248,3 +248,15 @@ extern "C" __declspec(naked) void __fastcall fn_005261F0(void* self, int edx_unu
         ret 8
     }
 }
+
+extern "C" void ext_0065F550();
+extern "C" void ext_008703F0();
+
+// [0x005245A0] NMData::NetworkConnectorData::vfunc_7 (39 bytes)
+extern "C" void __fastcall fn_005245A0(void* self, int edx_unused, void* a1) {
+    typedef void (__thiscall *t_sub_008703F0)(void*, void*);
+    typedef void (__thiscall *t_sub_0065F550)(void*, void*);
+    ((t_sub_008703F0)ext_008703F0)((char*)self + 0x38, a1);
+    ((t_sub_008703F0)ext_008703F0)((char*)self + 0x4c, a1);
+    ((t_sub_0065F550)ext_0065F550)(self, a1);
+}
