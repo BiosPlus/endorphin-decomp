@@ -3560,3 +3560,45 @@ extern "C" __declspec(naked) void* __cdecl fn_0060CFC0(void* p) {
         ret
     }
 }
+
+extern "C" void ext_0058F200();
+extern "C" int mem_00924FE8;
+extern "C" int mem_0093F7B8;
+
+// [0x0060EDE0] sub_0060EDE0 (169 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0060EDE0(void* self) {
+    __asm {
+        push -1
+        push 0x8a2518
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        call ext_0058F200
+        mov dword ptr [esi + 0x150], 0x928eac
+        lea ecx, [esi + 0x154]
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esi], 0x9725ac
+        mov dword ptr [esi + 4], 0x972564
+        mov dword ptr [esi + 8], 0x972524
+        mov dword ptr [esi + 0xc], 0x9724d4
+        mov dword ptr [esi + 0x150], 0x9724bc
+        call dword ptr [mem_00924FE8]
+        fld dword ptr [mem_0093F7B8]
+        mov ecx, dword ptr [esp + 8]
+        fstp dword ptr [esi + 0x174]
+        fld1
+        mov dword ptr [esi + 0x170], 0
+        fstp dword ptr [esi + 0x178]
+        mov dword ptr [esi + 0x17c], 0
+        mov dword ptr [esi + 0xe8], 0xffffffff
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
