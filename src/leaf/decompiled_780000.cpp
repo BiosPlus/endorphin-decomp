@@ -679,3 +679,22 @@ L8_child0:
         ret 0x8
     }
 }
+
+// [0x007865D0] sub_007865D0 (31 bytes)
+extern "C" void ext_00722170();
+extern "C" void ext_00722180();
+extern "C" void ext_007857F0();
+extern "C" __declspec(naked) void __fastcall fn_007865D0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00722170
+        fstp qword ptr [esi + 0x78]
+        call ext_00722180
+        mov ecx, esi
+        mov byte ptr [esi + 0x80], al
+        call ext_007857F0
+        pop esi
+        ret
+    }
+}
