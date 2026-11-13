@@ -8918,3 +8918,382 @@ done_7DAFF0:
         ret
     }
 }
+
+// [0x007DA920] sub_007DA920 (1047 bytes)
+extern "C" void ext_007C5F50();
+extern "C" void ext_007C6710();
+extern "C" void ext_007C6780();
+extern "C" void ext_007D4A70();
+extern "C" void ext_007DA820();
+extern "C" void ext_007DA8D0();
+extern "C" void ext_007DA8E0();
+extern "C" __declspec(naked) void __fastcall fn_007DA920(void* self) {
+    __asm {
+        push	ebp // 7DA920: 55
+        mov	ebp, esp // 7DA921: 8b ec
+        sub	esp, 0x28 // 7DA923: 83 ec 28
+        mov	eax, dword ptr [mem_00AA7E40] // 7DA926: a1 40 7e aa 00
+        xor	eax, ebp // 7DA92B: 33 c5
+        mov	dword ptr [ebp - 0x4], eax // 7DA92D: 89 45 fc
+        push	ebx // 7DA930: 53
+        push	esi // 7DA931: 56
+        mov	esi, dword ptr [ebp + 0xc] // 7DA932: 8b 75 0c
+        mov	eax, dword ptr [esi + 0x24] // 7DA935: 8b 46 24
+        add	eax, eax // 7DA938: 03 c0
+        push	edi // 7DA93A: 57
+        add	eax, eax // 7DA93B: 03 c0
+        call ext_006A6EC0 // 7DA93D: e8 7e c5 ec ff
+        mov	eax, dword ptr [esi + 0x10] // 7DA942: 8b 46 10
+        add	eax, eax // 7DA945: 03 c0
+        add	eax, eax // 7DA947: 03 c0
+        mov	dword ptr [ebp - 0x14], esp // 7DA949: 89 65 ec
+        xor	ebx, ebx // 7DA94C: 33 db
+        call ext_006A6EC0 // 7DA94E: e8 6d c5 ec ff
+        xor	eax, eax // 7DA953: 33 c0
+        mov	dword ptr [esi + 0x2c], eax // 7DA955: 89 46 2c
+        mov	dword ptr [esi + 0x20], eax // 7DA958: 89 46 20
+        mov	dword ptr [esi + 0xc], eax // 7DA95B: 89 46 0c
+        mov	dword ptr [esi + 0x38], eax // 7DA95E: 89 46 38
+        mov	dword ptr [esi + 0x3c], eax // 7DA961: 89 46 3c
+        mov	dword ptr [esi + 0x34], eax // 7DA964: 89 46 34
+        mov	eax, dword ptr [ebp + 0x8] // 7DA967: 8b 45 08
+        mov	dword ptr [ebp - 0x24], esp // 7DA96A: 89 65 dc
+        xor	edi, edi // 7DA96D: 33 ff
+        push	eax // 7DA96F: 50
+        mov	dword ptr [ebp - 0x1c], edi // 7DA970: 89 7d e4
+        call ext_007D4A70 // 7DA973: e8 f8 a0 ff ff
+        add	esp, 0x4 // 7DA978: 83 c4 04
+        test	eax, eax // 7DA97B: 85 c0
+        mov	dword ptr [ebp - 0x20], eax // 7DA97D: 89 45 e0
+        je loc_7DACE0 // 7DA980: 0f 84 5a 03 00 00
+        jmp loc_7DA993 // 7DA986: eb 0b
+        jmp loc_7DA990 // 7DA988: eb 06
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00 // 7DA98A: 8d 9b 00 00 00 00
+    loc_7DA990:
+        mov	eax, dword ptr [ebp - 0x20] // 7DA990: 8b 45 e0
+    loc_7DA993:
+        mov	edx, dword ptr [eax + 0x14] // 7DA993: 8b 50 14
+        mov	ecx, dword ptr [esi + 0x2c] // 7DA996: 8b 4e 2c
+        mov	eax, dword ptr [esi + 0x1c] // 7DA999: 8b 46 1c
+        mov	dword ptr [eax + 4*ecx], 0x0 // 7DA99C: c7 04 88 00 00 00 00
+        mov	ecx, dword ptr [esi + 0x2c] // 7DA9A3: 8b 4e 2c
+        mov	eax, dword ptr [esi + 0x8] // 7DA9A6: 8b 46 08
+        mov	dword ptr [eax + 4*ecx], 0x0 // 7DA9A9: c7 04 88 00 00 00 00
+        mov	eax, dword ptr [esi + 0x2c] // 7DA9B0: 8b 46 2c
+        lea	ecx, [eax + 2*eax] // 7DA9B3: 8d 0c 40
+        mov	eax, dword ptr [esi + 0x28] // 7DA9B6: 8b 46 28
+        lea	ecx, [eax + 4*ecx] // 7DA9B9: 8d 0c 88
+        push	ecx // 7DA9BC: 51
+        call ext_007DA8D0 // 7DA9BD: e8 0e ff ff ff
+        mov	edi, dword ptr [esi + 0x20] // 7DA9C2: 8b 7e 20
+        mov	eax, dword ptr [esi + 0x2c] // 7DA9C5: 8b 46 2c
+        mov	ecx, dword ptr [esi + 0x18] // 7DA9C8: 8b 4e 18
+        mov	dword ptr [ecx + 4*eax], edi // 7DA9CB: 89 3c 81
+        mov	eax, dword ptr [esi + 0x2c] // 7DA9CE: 8b 46 2c
+        mov	ecx, dword ptr [esi + 0x4] // 7DA9D1: 8b 4e 04
+        mov	edi, dword ptr [esi + 0xc] // 7DA9D4: 8b 7e 0c
+        mov	dword ptr [ecx + 4*eax], edi // 7DA9D7: 89 3c 81
+        mov	ecx, dword ptr [esi + 0x18] // 7DA9DA: 8b 4e 18
+        mov	eax, dword ptr [esi + 0x2c] // 7DA9DD: 8b 46 2c
+        mov	eax, dword ptr [ecx + 4*eax] // 7DA9E0: 8b 04 81
+        mov	ecx, dword ptr [esi + 0x14] // 7DA9E3: 8b 4e 14
+        mov	dword ptr [ecx + 4*eax], edx // 7DA9E6: 89 14 81
+        mov	ecx, dword ptr [esi + 0x2c] // 7DA9E9: 8b 4e 2c
+        mov	dword ptr [ebp - 0xc], eax // 7DA9EC: 89 45 f4
+        add	eax, 0x1 // 7DA9EF: 83 c0 01
+        mov	dword ptr [ebp - 0x10], eax // 7DA9F2: 89 45 f0
+        mov	eax, dword ptr [ebp - 0x14] // 7DA9F5: 8b 45 ec
+        mov	dword ptr [eax + 4*ebx], edx // 7DA9F8: 89 14 98
+        mov	eax, dword ptr [esi + 0x1c] // 7DA9FB: 8b 46 1c
+        mov	ecx, dword ptr [eax + 4*ecx] // 7DA9FE: 8b 0c 88
+        mov	dword ptr [edx + 0x1c0], ecx // 7DAA01: 89 8a c0 01 00 00
+        mov	eax, dword ptr [esi + 0x2c] // 7DAA07: 8b 46 2c
+        mov	ecx, dword ptr [esi + 0x1c] // 7DAA0A: 8b 4e 1c
+        mov	edi, dword ptr [esi + 0x18] // 7DAA0D: 8b 7e 18
+        add	eax, eax // 7DAA10: 03 c0
+        add	eax, eax // 7DAA12: 03 c0
+        mov	ecx, dword ptr [eax + ecx] // 7DAA14: 8b 0c 08
+        add	ecx, dword ptr [eax + edi] // 7DAA17: 03 0c 38
+        add	esp, 0x4 // 7DAA1A: 83 c4 04
+        mov	dword ptr [edx + 0x1bc], ecx // 7DAA1D: 89 8a bc 01 00 00
+        mov	eax, dword ptr [esi + 0x2c] // 7DAA23: 8b 46 2c
+        or	dword ptr [edx + 0x1c4], 0x2 // 7DAA26: 83 8a c4 01 00 00 02
+        mov	dword ptr [edx + 0x1b8], eax // 7DAA2D: 89 82 b8 01 00 00
+        mov	ecx, dword ptr [esi + 0x2c] // 7DAA33: 8b 4e 2c
+        mov	edx, dword ptr [esi + 0x1c] // 7DAA36: 8b 56 1c
+        add	dword ptr [esi + 0x20], 0x1 // 7DAA39: 83 46 20 01
+        add	dword ptr [edx + 4*ecx], 0x1 // 7DAA3D: 83 04 8a 01
+        lea	eax, [edx + 4*ecx] // 7DAA41: 8d 04 8a
+        mov	eax, dword ptr [esi + 0x2c] // 7DAA44: 8b 46 2c
+        mov	ecx, dword ptr [esi + 0x1c] // 7DAA47: 8b 4e 1c
+        mov	edx, dword ptr [esi + 0x18] // 7DAA4A: 8b 56 18
+        add	eax, eax // 7DAA4D: 03 c0
+        add	eax, eax // 7DAA4F: 03 c0
+        mov	ecx, dword ptr [eax + ecx] // 7DAA51: 8b 0c 08
+        add	ecx, dword ptr [eax + edx] // 7DAA54: 03 0c 10
+        add	ebx, 0x1 // 7DAA57: 83 c3 01
+        cmp	dword ptr [ebp - 0xc], ecx // 7DAA5A: 39 4d f4
+        jge loc_7DAC57 // 7DAA5D: 0f 8d f4 01 00 00
+    loc_7DAA63:
+        mov	eax, dword ptr [ebp - 0xc] // 7DAA63: 8b 45 f4
+        mov	edx, dword ptr [esi + 0x14] // 7DAA66: 8b 56 14
+        mov	edi, dword ptr [edx + 4*eax] // 7DAA69: 8b 3c 82
+        add	eax, 0x1 // 7DAA6C: 83 c0 01
+        mov	dword ptr [ebp - 0xc], eax // 7DAA6F: 89 45 f4
+        lea	eax, [edi + 0x1d4] // 7DAA72: 8d 87 d4 01 00 00
+        push	eax // 7DAA78: 50
+        mov	dword ptr [ebp - 0x8], edi // 7DAA79: 89 7d f8
+        call ext_007D4A70 // 7DAA7C: e8 ef 9f ff ff
+        add	esp, 0x4 // 7DAA81: 83 c4 04
+        test	eax, eax // 7DAA84: 85 c0
+        mov	dword ptr [ebp - 0x18], eax // 7DAA86: 89 45 e8
+        je loc_7DAC02 // 7DAA89: 0f 84 73 01 00 00
+    loc_7DAA8F:
+        mov	eax, dword ptr [ebp - 0x18] // 7DAA8F: 8b 45 e8
+        mov	edi, dword ptr [eax + 0x14] // 7DAA92: 8b 78 14
+        test	byte ptr [edi + 0x9c], 0x2 // 7DAA95: f6 87 9c 00 00 00 02
+        jne loc_7DABDF // 7DAA9C: 0f 85 3d 01 00 00
+        mov	ecx, dword ptr [esi + 0xc] // 7DAAA2: 8b 4e 0c
+        mov	edx, dword ptr [esi] // 7DAAA5: 8b 16
+        mov	eax, dword ptr [ebp - 0x1c] // 7DAAA7: 8b 45 e4
+        mov	dword ptr [edx + 4*ecx], edi // 7DAAAA: 89 3c 8a
+        mov	ecx, dword ptr [ebp - 0x24] // 7DAAAD: 8b 4d dc
+        mov	edx, dword ptr [esi + 0x2c] // 7DAAB0: 8b 56 2c
+        add	dword ptr [esi + 0xc], 0x1 // 7DAAB3: 83 46 0c 01
+        mov	dword ptr [ecx + 4*eax], edi // 7DAAB7: 89 3c 81
+        add	eax, 0x1 // 7DAABA: 83 c0 01
+        mov	dword ptr [ebp - 0x1c], eax // 7DAABD: 89 45 e4
+        mov	eax, dword ptr [esi + 0x8] // 7DAAC0: 8b 46 08
+        add	dword ptr [eax + 4*edx], 0x1 // 7DAAC3: 83 04 90 01
+        lea	eax, [eax + 4*edx] // 7DAAC7: 8d 04 90
+        mov	eax, dword ptr [esi + 0x2c] // 7DAACA: 8b 46 2c
+        mov	edx, dword ptr [esi + 0x28] // 7DAACD: 8b 56 28
+        lea	ecx, [eax + 2*eax] // 7DAAD0: 8d 0c 40
+        lea	eax, [edx + 4*ecx] // 7DAAD3: 8d 04 8a
+        push	edi // 7DAAD6: 57
+        push	eax // 7DAAD7: 50
+        call ext_007DA8E0 // 7DAAD8: e8 03 fe ff ff
+        or	dword ptr [edi + 0x9c], 0x2 // 7DAADD: 83 8f 9c 00 00 00 02
+        mov	eax, dword ptr [edi + 0x94] // 7DAAE4: 8b 87 94 00 00 00
+        add	esp, 0x8 // 7DAAEA: 83 c4 08
+        test	eax, eax // 7DAAED: 85 c0
+        je loc_7DAB66 // 7DAAEF: 74 75
+        cmp	eax, dword ptr [ebp - 0x8] // 7DAAF1: 3b 45 f8
+        je loc_7DAB66 // 7DAAF4: 74 70
+        test	byte ptr [eax + 0x1c4], 0x2 // 7DAAF6: f6 80 c4 01 00 00 02
+        jne loc_7DAB66 // 7DAAFD: 75 67
+        mov	edx, dword ptr [esi + 0x14] // 7DAAFF: 8b 56 14
+        mov	ecx, dword ptr [ebp - 0x10] // 7DAB02: 8b 4d f0
+        mov	dword ptr [edx + 4*ecx], eax // 7DAB05: 89 04 8a
+        mov	edx, dword ptr [esi + 0x2c] // 7DAB08: 8b 56 2c
+        add	ecx, 0x1 // 7DAB0B: 83 c1 01
+        mov	dword ptr [ebp - 0x10], ecx // 7DAB0E: 89 4d f0
+        mov	ecx, dword ptr [ebp - 0x14] // 7DAB11: 8b 4d ec
+        mov	dword ptr [ecx + 4*ebx], eax // 7DAB14: 89 04 99
+        mov	ecx, dword ptr [esi + 0x1c] // 7DAB17: 8b 4e 1c
+        mov	edx, dword ptr [ecx + 4*edx] // 7DAB1A: 8b 14 91
+        mov	dword ptr [eax + 0x1c0], edx // 7DAB1D: 89 90 c0 01 00 00
+        mov	ecx, dword ptr [esi + 0x2c] // 7DAB23: 8b 4e 2c
+        mov	edx, dword ptr [esi + 0x1c] // 7DAB26: 8b 56 1c
+        add	ebx, 0x1 // 7DAB29: 83 c3 01
+        add	ecx, ecx // 7DAB2C: 03 c9
+        add	ecx, ecx // 7DAB2E: 03 c9
+        mov	edx, dword ptr [ecx + edx] // 7DAB30: 8b 14 11
+        mov	dword ptr [ebp - 0x28], ebx // 7DAB33: 89 5d d8
+        mov	ebx, dword ptr [esi + 0x18] // 7DAB36: 8b 5e 18
+        add	edx, dword ptr [ecx + ebx] // 7DAB39: 03 14 19
+        mov	ebx, dword ptr [ebp - 0x28] // 7DAB3C: 8b 5d d8
+        mov	dword ptr [eax + 0x1bc], edx // 7DAB3F: 89 90 bc 01 00 00
+        mov	ecx, dword ptr [esi + 0x2c] // 7DAB45: 8b 4e 2c
+        or	dword ptr [eax + 0x1c4], 0x2 // 7DAB48: 83 88 c4 01 00 00 02
+        mov	dword ptr [eax + 0x1b8], ecx // 7DAB4F: 89 88 b8 01 00 00
+        mov	edx, dword ptr [esi + 0x2c] // 7DAB55: 8b 56 2c
+        mov	eax, dword ptr [esi + 0x1c] // 7DAB58: 8b 46 1c
+        add	dword ptr [esi + 0x20], 0x1 // 7DAB5B: 83 46 20 01
+        add	dword ptr [eax + 4*edx], 0x1 // 7DAB5F: 83 04 90 01
+        lea	eax, [eax + 4*edx] // 7DAB63: 8d 04 90
+    loc_7DAB66:
+        mov	eax, dword ptr [edi + 0x98] // 7DAB66: 8b 87 98 00 00 00
+        test	eax, eax // 7DAB6C: 85 c0
+        je loc_7DABDF // 7DAB6E: 74 6f
+        cmp	eax, dword ptr [ebp - 0x8] // 7DAB70: 3b 45 f8
+        je loc_7DABDF // 7DAB73: 74 6a
+        test	byte ptr [eax + 0x1c4], 0x2 // 7DAB75: f6 80 c4 01 00 00 02
+        jne loc_7DABDF // 7DAB7C: 75 61
+        mov	edx, dword ptr [esi + 0x14] // 7DAB7E: 8b 56 14
+        mov	ecx, dword ptr [ebp - 0x10] // 7DAB81: 8b 4d f0
+        mov	dword ptr [edx + 4*ecx], eax // 7DAB84: 89 04 8a
+        mov	edx, dword ptr [esi + 0x2c] // 7DAB87: 8b 56 2c
+        add	ecx, 0x1 // 7DAB8A: 83 c1 01
+        mov	dword ptr [ebp - 0x10], ecx // 7DAB8D: 89 4d f0
+        mov	ecx, dword ptr [ebp - 0x14] // 7DAB90: 8b 4d ec
+        mov	dword ptr [ecx + 4*ebx], eax // 7DAB93: 89 04 99
+        mov	ecx, dword ptr [esi + 0x1c] // 7DAB96: 8b 4e 1c
+        mov	edx, dword ptr [ecx + 4*edx] // 7DAB99: 8b 14 91
+        mov	dword ptr [eax + 0x1c0], edx // 7DAB9C: 89 90 c0 01 00 00
+        mov	ecx, dword ptr [esi + 0x2c] // 7DABA2: 8b 4e 2c
+        mov	edx, dword ptr [esi + 0x1c] // 7DABA5: 8b 56 1c
+        mov	edi, dword ptr [esi + 0x18] // 7DABA8: 8b 7e 18
+        add	ecx, ecx // 7DABAB: 03 c9
+        add	ecx, ecx // 7DABAD: 03 c9
+        mov	edx, dword ptr [ecx + edx] // 7DABAF: 8b 14 11
+        add	edx, dword ptr [ecx + edi] // 7DABB2: 03 14 39
+        add	ebx, 0x1 // 7DABB5: 83 c3 01
+        mov	dword ptr [eax + 0x1bc], edx // 7DABB8: 89 90 bc 01 00 00
+        mov	ecx, dword ptr [esi + 0x2c] // 7DABBE: 8b 4e 2c
+        mov	dword ptr [eax + 0x1b8], ecx // 7DABC1: 89 88 b8 01 00 00
+        or	dword ptr [eax + 0x1c4], 0x2 // 7DABC7: 83 88 c4 01 00 00 02
+        mov	edx, dword ptr [esi + 0x2c] // 7DABCE: 8b 56 2c
+        mov	eax, dword ptr [esi + 0x1c] // 7DABD1: 8b 46 1c
+        add	dword ptr [esi + 0x20], 0x1 // 7DABD4: 83 46 20 01
+        add	dword ptr [eax + 4*edx], 0x1 // 7DABD8: 83 04 90 01
+        lea	eax, [eax + 4*edx] // 7DABDC: 8d 04 90
+    loc_7DABDF:
+        mov	ecx, dword ptr [ebp - 0x18] // 7DABDF: 8b 4d e8
+        mov	eax, dword ptr [ebp - 0x8] // 7DABE2: 8b 45 f8
+        push	ecx // 7DABE5: 51
+        add	eax, 0x1d4 // 7DABE6: 05 d4 01 00 00
+        push	eax // 7DABEB: 50
+        call ext_007D4AA0 // 7DABEC: e8 af 9e ff ff
+        add	esp, 0x8 // 7DABF1: 83 c4 08
+        test	eax, eax // 7DABF4: 85 c0
+        mov	dword ptr [ebp - 0x18], eax // 7DABF6: 89 45 e8
+        jne loc_7DAA8F // 7DABF9: 0f 85 90 fe ff ff
+        mov	edi, dword ptr [ebp - 0x8] // 7DABFF: 8b 7d f8
+    loc_7DAC02:
+        push	edi // 7DAC02: 57
+        call ext_007C6780 // 7DAC03: e8 78 bb fe ff
+        add	esp, 0x4 // 7DAC08: 83 c4 04
+        test	eax, eax // 7DAC0B: 85 c0
+        jne loc_7DAC31 // 7DAC0D: 75 22
+        push	edi // 7DAC0F: 57
+        call ext_007C5F50 // 7DAC10: e8 3b b3 fe ff
+        add	esp, 0x4 // 7DAC15: 83 c4 04
+        test	eax, eax // 7DAC18: 85 c0
+        je loc_7DAC31 // 7DAC1A: 74 15
+        push	edi // 7DAC1C: 57
+        call ext_007C6710 // 7DAC1D: e8 ee ba fe ff
+        add	esp, 0x4 // 7DAC22: 83 c4 04
+        or	dword ptr [edi + 0x1c4], 0x100 // 7DAC25: 81 8f c4 01 00 00 00 01 00 00
+        jmp loc_7DAC3B // 7DAC2F: eb 0a
+    loc_7DAC31:
+        and	dword ptr [edi + 0x1c4], 0xfffffeff // 7DAC31: 81 a7 c4 01 00 00 ff fe ff ff
+    loc_7DAC3B:
+        mov	eax, dword ptr [esi + 0x2c] // 7DAC3B: 8b 46 2c
+        mov	edx, dword ptr [esi + 0x1c] // 7DAC3E: 8b 56 1c
+        mov	ecx, dword ptr [esi + 0x18] // 7DAC41: 8b 4e 18
+        add	eax, eax // 7DAC44: 03 c0
+        add	eax, eax // 7DAC46: 03 c0
+        mov	edx, dword ptr [eax + edx] // 7DAC48: 8b 14 10
+        add	edx, dword ptr [eax + ecx] // 7DAC4B: 03 14 08
+        cmp	dword ptr [ebp - 0xc], edx // 7DAC4E: 39 55 f4
+        jl loc_7DAA63 // 7DAC51: 0f 8c 0c fe ff ff
+    loc_7DAC57:
+        mov	eax, dword ptr [esi + 0x2c] // 7DAC57: 8b 46 2c
+        mov	ecx, dword ptr [esi + 0x28] // 7DAC5A: 8b 4e 28
+        lea	eax, [eax + 2*eax] // 7DAC5D: 8d 04 40
+        lea	ecx, [ecx + 4*eax] // 7DAC60: 8d 0c 81
+        mov	eax, dword ptr [ecx] // 7DAC63: 8b 01
+        mov	edx, eax // 7DAC65: 8b d0
+        and	edx, 0x80000003 // 7DAC67: 81 e2 03 00 00 80
+        jns loc_7DAC74 // 7DAC6D: 79 05
+        dec	edx // 7DAC6F: 4a
+        or	edx, -0x4 // 7DAC70: 83 ca fc
+        inc	edx // 7DAC73: 42
+    loc_7DAC74:
+        je loc_7DAC8A // 7DAC74: 74 14
+        mov	edx, eax // 7DAC76: 8b d0
+        and	edx, 0x80000003 // 7DAC78: 81 e2 03 00 00 80
+        jns loc_7DAC85 // 7DAC7E: 79 05
+        dec	edx // 7DAC80: 4a
+        or	edx, -0x4 // 7DAC81: 83 ca fc
+        inc	edx // 7DAC84: 42
+    loc_7DAC85:
+        sub	eax, edx // 7DAC85: 2b c2
+        add	eax, 0x4 // 7DAC87: 83 c0 04
+    loc_7DAC8A:
+        mov	dword ptr [ecx], eax // 7DAC8A: 89 01
+        mov	eax, dword ptr [esi + 0x2c] // 7DAC8C: 8b 46 2c
+        mov	edx, dword ptr [esi + 0x28] // 7DAC8F: 8b 56 28
+        lea	ecx, [eax + 2*eax] // 7DAC92: 8d 0c 40
+        lea	ecx, [edx + 4*ecx] // 7DAC95: 8d 0c 8a
+        mov	edx, dword ptr [ecx] // 7DAC98: 8b 11
+        add	dword ptr [esi + 0x34], edx // 7DAC9A: 01 56 34
+        mov	edx, dword ptr [ecx + 0x8] // 7DAC9D: 8b 51 08
+        add	dword ptr [esi + 0x3c], edx // 7DACA0: 01 56 3c
+        mov	ecx, dword ptr [ecx + 0x4] // 7DACA3: 8b 49 04
+        mov	edx, dword ptr [ebp - 0x20] // 7DACA6: 8b 55 e0
+        add	dword ptr [esi + 0x38], ecx // 7DACA9: 01 4e 38
+        add	eax, 0x1 // 7DACAC: 83 c0 01
+        mov	dword ptr [esi + 0x2c], eax // 7DACAF: 89 46 2c
+        mov	eax, dword ptr [ebp + 0x8] // 7DACB2: 8b 45 08
+        push	edx // 7DACB5: 52
+        push	eax // 7DACB6: 50
+        call ext_007DA820 // 7DACB7: e8 64 fb ff ff
+        mov	edi, eax // 7DACBC: 8b f8
+        mov	eax, dword ptr [ebp + 0x10] // 7DACBE: 8b 45 10
+        add	esp, 0x8 // 7DACC1: 83 c4 08
+        test	eax, eax // 7DACC4: 85 c0
+        mov	dword ptr [ebp - 0x20], edi // 7DACC6: 89 7d e0
+        je loc_7DACD5 // 7DACC9: 74 0a
+        mov	ecx, dword ptr [ebp + 0x14] // 7DACCB: 8b 4d 14
+        push	ecx // 7DACCE: 51
+        push	esi // 7DACCF: 56
+        call	eax // 7DACD0: ff d0
+        add	esp, 0x8 // 7DACD2: 83 c4 08
+    loc_7DACD5:
+        test	edi, edi // 7DACD5: 85 ff
+        jne loc_7DA990 // 7DACD7: 0f 85 b3 fc ff ff
+        mov	edi, dword ptr [ebp - 0x1c] // 7DACDD: 8b 7d e4
+    loc_7DACE0:
+        xor	eax, eax // 7DACE0: 33 c0
+        test	edi, edi // 7DACE2: 85 ff
+        mov	edx, 0xfffffffd // 7DACE4: ba fd ff ff ff
+        jle loc_7DAD03 // 7DACE9: 7e 18
+        jmp loc_7DACF0 // 7DACEB: eb 03
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00 // 7DACED: 8d 49 00
+    loc_7DACF0:
+        mov	ecx, dword ptr [ebp - 0x24] // 7DACF0: 8b 4d dc
+        mov	ecx, dword ptr [ecx + 4*eax] // 7DACF3: 8b 0c 81
+        and	dword ptr [ecx + 0x9c], edx // 7DACF6: 21 91 9c 00 00 00
+        add	eax, 0x1 // 7DACFC: 83 c0 01
+        cmp	eax, edi // 7DACFF: 3b c7
+        jl loc_7DACF0 // 7DAD01: 7c ed
+    loc_7DAD03:
+        xor	eax, eax // 7DAD03: 33 c0
+        test	ebx, ebx // 7DAD05: 85 db
+        jle loc_7DAD23 // 7DAD07: 7e 1a
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00 // 7DAD09: 8d a4 24 00 00 00 00
+    loc_7DAD10:
+        mov	ecx, dword ptr [ebp - 0x14] // 7DAD10: 8b 4d ec
+        mov	ecx, dword ptr [ecx + 4*eax] // 7DAD13: 8b 0c 81
+        and	dword ptr [ecx + 0x1c4], edx // 7DAD16: 21 91 c4 01 00 00
+        add	eax, 0x1 // 7DAD1C: 83 c0 01
+        cmp	eax, ebx // 7DAD1F: 3b c3
+        jl loc_7DAD10 // 7DAD21: 7c ed
+    loc_7DAD23:
+        lea	esp, [ebp - 0x34] // 7DAD23: 8d 65 cc
+        pop	edi // 7DAD26: 5f
+        pop	esi // 7DAD27: 5e
+        pop	ebx // 7DAD28: 5b
+        mov	ecx, dword ptr [ebp - 0x4] // 7DAD29: 8b 4d fc
+        xor	ecx, ebp // 7DAD2C: 33 cd
+        call ext_006A745E // 7DAD2E: e8 2b c7 ec ff
+        mov	esp, ebp // 7DAD33: 8b e5
+        pop	ebp // 7DAD35: 5d
+        ret // 7DAD36: c3
+    }
+}
