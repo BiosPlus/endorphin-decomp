@@ -3532,3 +3532,173 @@ extern "C" __declspec(naked) void __fastcall fn_00527B40(void* self) {
         ret 0x14
     }
 }
+
+// [0x00528EC0] sub_00528EC0 (466 bytes)
+extern "C" void ext_006A6EF8();
+extern "C" int mem_00925208;
+extern "C" int mem_00925260;
+extern "C" int mem_0092525C;
+extern "C" int mem_00925258;
+extern "C" int mem_009251D8;
+extern "C" int mem_00953534;
+extern "C" int mem_00953500;
+
+extern "C" __declspec(naked) void* __cdecl fn_00528EC0(void* src, unsigned char flag) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x24]
+        mov eax, dword ptr [esi + 0x4]
+        push edi
+        add eax, 0x1
+        lea edi, [eax + eax*2]
+        mov eax, dword ptr [esi + 0x20]
+        and edi, -4
+        imul edi, dword ptr [esi + 0x8]
+        xor ebp, ebp
+        add edi, 0x28
+        cmp eax, ebp
+        jne L_528ef1
+        mov cl, byte ptr [esi + 0xe]
+        mov eax, 0x1
+        shl eax, cl
+    L_528ef1:
+        add eax, eax
+        add eax, eax
+        push eax
+        call dword ptr [mem_00925208]
+        mov ebx, eax
+        add esp, 0x4
+        cmp ebx, ebp
+        jne L_528f25
+        push offset mem_00953534
+    L_528f0a:
+        call dword ptr [mem_00925260]
+        add eax, 0x40
+        push eax
+        call dword ptr [mem_0092525C]
+        add esp, 0x8
+        push 0x1
+        call dword ptr [mem_00925258]
+    L_528f25:
+        mov eax, dword ptr [esi + 0x20]
+        cmp eax, ebp
+        jne L_528f36
+        mov cl, byte ptr [esi + 0xe]
+        mov eax, 0x1
+        shl eax, cl
+    L_528f36:
+        lea ecx, [eax*4]
+        push ecx
+        lea edx, [esi + 0x28]
+        push edx
+        push ebx
+        call ext_006A6EF8
+        push edi
+        call dword ptr [mem_00925208]
+        mov edi, eax
+        add esp, 0x10
+        cmp edi, ebp
+        jne L_528f5f
+        push offset mem_00953500
+        jmp L_528f0a
+    L_528f5f:
+        mov dword ptr [edi], 0x28
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [edi + 0x4], eax
+        mov ecx, dword ptr [esi + 0x8]
+        mov dword ptr [edi + 0x8], ecx
+        mov word ptr [edi + 0xc], 0x1
+        mov word ptr [edi + 0xe], 0x18
+        mov dword ptr [edi + 0x10], ebp
+        mov dword ptr [edi + 0x14], ebp
+        mov dword ptr [edi + 0x18], ebp
+        mov dword ptr [edi + 0x1c], ebp
+        mov dword ptr [edi + 0x20], ebp
+        mov dword ptr [edi + 0x24], ebp
+        mov eax, dword ptr [esi + 0x20]
+        cmp eax, ebp
+        jne L_528fa0
+        mov cl, byte ptr [esi + 0xe]
+        mov eax, 0x1
+        shl eax, cl
+    L_528fa0:
+        mov edx, dword ptr [esi + 0x4]
+        lea ebp, [esi + eax*4 + 0x28]
+        mov eax, dword ptr [esi + 0x8]
+        xor ecx, ecx
+        cmp eax, ecx
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [esp + 0x1c], edx
+        mov dword ptr [esp + 0x10], ecx
+        jle L_529079
+    L_528fc0:
+        cmp dword ptr [esp + 0x1c], ecx
+        mov dword ptr [esp + 0x14], ecx
+        jle L_529066
+        mov dword ptr [esp + 0x18], ecx
+    L_528fd2:
+        push esi
+        call ext_00528D80
+        mov esi, eax
+        imul esi, dword ptr [esp + 0x14]
+        add esi, dword ptr [esp + 0x18]
+        push edi
+        call ext_00528D80
+        imul eax, dword ptr [esp + 0x18]
+        add eax, dword ptr [esp + 0x20]
+        movzx ecx, byte ptr [esi + ebp]
+        add esp, 0x8
+        cmp byte ptr [esp + 0x2c], 0x0
+        je L_529020
+        movzx edx, byte ptr [ebx + ecx*4]
+        mov byte ptr [eax + edi + 0x28], dl
+        movzx ecx, byte ptr [esi + ebp]
+        movzx edx, byte ptr [ebx + ecx*4 + 0x1]
+        mov byte ptr [edi + eax + 0x29], dl
+        movzx ecx, byte ptr [esi + ebp]
+        movzx edx, byte ptr [ebx + ecx*4 + 0x2]
+        jmp L_52903e
+    L_529020:
+        movzx edx, byte ptr [ebx + ecx*4 + 0x2]
+        mov byte ptr [eax + edi + 0x28], dl
+        movzx ecx, byte ptr [esi + ebp]
+        movzx edx, byte ptr [ebx + ecx*4 + 0x1]
+        mov byte ptr [edi + eax + 0x29], dl
+        movzx ecx, byte ptr [esi + ebp]
+        movzx edx, byte ptr [ebx + ecx*4]
+    L_52903e:
+        add dword ptr [esp + 0x18], 0x3
+        mov esi, dword ptr [esp + 0x28]
+        mov byte ptr [edi + eax + 0x2a], dl
+        mov eax, dword ptr [esp + 0x14]
+        add eax, 0x1
+        cmp eax, dword ptr [esp + 0x1c]
+        mov dword ptr [esp + 0x14], eax
+        jl L_528fd2
+        mov eax, dword ptr [esp + 0x20]
+        xor ecx, ecx
+    L_529066:
+        mov edx, dword ptr [esp + 0x10]
+        add edx, 0x1
+        cmp edx, eax
+        mov dword ptr [esp + 0x10], edx
+        jl L_528fc0
+    L_529079:
+        push ebx
+        mov ebx, dword ptr [mem_009251D8]
+        call ebx
+        push esi
+        call ebx
+        add esp, 0x8
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x14
+        ret
+    }
+}
