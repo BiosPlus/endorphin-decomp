@@ -322,3 +322,44 @@ extern "C" __declspec(naked) void __fastcall fn_004A9B70(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004C8440] NMData::BehaviourData::vfunc_1_off_154 (112 bytes)
+extern "C" void ext_004026E0();
+extern "C" void ext_004C28C0();
+extern "C" int mem_008A1908;
+
+extern "C" __declspec(naked) void __fastcall fn_004C8440(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push offset mem_008A1908
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x10
+        xor eax, eax
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x8], eax
+        mov dword ptr [esp + 0xc], eax
+        mov dword ptr [esp + 0x10], eax
+        mov ecx, dword ptr [esp + 0x24]
+        mov dword ptr [esp + 0x1c], eax
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x34]
+        lea edx, [esp + 0x4]
+        push edx
+        call eax
+        lea ecx, [esp + 0x4]
+        push ecx
+        lea ecx, [esi - 0x154]
+        call ext_004C28C0
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        call ext_004026E0
+        mov ecx, dword ptr [esp + 0x14]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x1c
+        ret 4
+    }
+}
