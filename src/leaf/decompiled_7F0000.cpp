@@ -9270,3 +9270,82 @@ extern "C" __declspec(naked) void __fastcall fn_007FD4D0(void* self) {
         ret
     }
 }
+
+// [0x007FDF50] sub_007FDF50 (235 bytes)
+extern "C" void ext_00401000();
+extern "C" void ext_007CA7C0();
+extern "C" void ext_007E5230();
+extern "C" void ext_007E8F00();
+extern "C" void ext_007FD4D0();
+
+extern "C" __declspec(naked) void __cdecl fn_007FDF50() {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        sub     esp, 0x17c
+        push    ecx
+        fld     dword ptr [ebp + 0x18]
+        fstp    dword ptr [esp]
+        mov     eax, dword ptr [ebp + 0x8]
+        push    eax
+        mov     eax, dword ptr [ebp + 0x14]
+        mov     ecx, dword ptr [ebp + 0x10]
+        mov     edx, dword ptr [ebp + 0xc]
+        call    ext_007FD4D0
+        add     esp, 0x8
+        lea     ecx, [ebp - 0x160]
+        call    ext_007E5230
+        mov     ecx, dword ptr [ebp + 0xc]
+        push    ecx
+        lea     ecx, [ebp - 0x160]
+        call    ext_007E8F00
+        push    offset ext_007E5230
+        push    0x18
+        push    0xc
+        lea     edx, [ebp - 0x120]
+        push    edx
+        call    ext_00401000
+        lea     eax, [ebp - 0x120]
+        mov     dword ptr [ebp - 0x168], eax
+        lea     ecx, [ebp - 0x120]
+        mov     dword ptr [ebp - 0x164], ecx
+        push    ecx
+        fld     dword ptr [ebp + 0x18]
+        fstp    dword ptr [esp]
+        lea     edx, [ebp - 0x168]
+        push    edx
+        mov     eax, dword ptr [ebp + 0x10]
+        mov     ecx, dword ptr [ebp + 0x14]
+        lea     edx, [ebp - 0x160]
+        call    ext_007FD4D0
+        add     esp, 0x8
+    loc_7FDFDE:
+        mov     eax, dword ptr [ebp - 0x164]
+        cmp     eax, dword ptr [ebp - 0x168]
+        je      loc_7FE037
+        mov     ecx, dword ptr [ebp + 0x8]
+        mov     edx, dword ptr [ecx]
+        mov     dword ptr [ebp - 0x178], edx
+        mov     eax, dword ptr [ebp - 0x164]
+        mov     dword ptr [ebp - 0x17c], eax
+        mov     ecx, dword ptr [ebp - 0x164]
+        add     ecx, 0xc
+        mov     dword ptr [ebp - 0x164], ecx
+        mov     edx, dword ptr [ebp + 0x8]
+        mov     eax, dword ptr [edx]
+        add     eax, 0xc
+        mov     ecx, dword ptr [ebp + 0x8]
+        mov     dword ptr [ecx], eax
+        mov     edx, dword ptr [ebp - 0x178]
+        push    edx
+        mov     eax, dword ptr [ebp - 0x17c]
+        push    eax
+        mov     ecx, dword ptr [ebp + 0xc]
+        call    ext_007CA7C0
+        jmp     loc_7FDFDE
+    loc_7FE037:
+        mov     esp, ebp
+        pop     ebp
+        ret
+    }
+}
