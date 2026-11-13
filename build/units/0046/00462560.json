@@ -34,5 +34,7 @@
     "0x004626CF",
     "0x004626E1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T10:47:50Z"
 }
