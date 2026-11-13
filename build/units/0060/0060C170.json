@@ -32,5 +32,7 @@
     "0x0060C273",
     "0x0060C28F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T10:15:18Z"
 }
