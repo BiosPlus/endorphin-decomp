@@ -8128,3 +8128,31 @@ extern "C" __declspec(naked) void __fastcall fn_00553A50(void* self) {
         ret
     }
 }
+
+// [0x0055E990] sub_0055E990 (51 bytes)
+extern "C" void ext_0055E180();
+extern "C" void ext_0055E750();
+extern "C" int mem_00924FF0;
+extern "C" __declspec(naked) void __fastcall fn_0055E990(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        push edi
+        lea edi, [esi + 0x46c]
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [edi]
+        push eax
+        mov eax, dword ptr [esi + 0x470]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_0055E750
+        push edi
+        mov ecx, esi
+        call ext_0055E180
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
