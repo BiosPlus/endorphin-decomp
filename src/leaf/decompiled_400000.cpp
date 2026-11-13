@@ -7987,3 +7987,14 @@ L_no_g:
         ret
     }
 }
+
+// [0x00406260] sub_00406260 (37 bytes)
+extern "C" void ext_00405730();
+extern "C" int mem_00925694;
+
+extern "C" void __fastcall fn_00406260(void* self, int edx_unused, int a1, int a2) {
+    typedef int (__stdcall *SendFn)(void*, unsigned int, unsigned int, unsigned int);
+    typedef void (__thiscall *ThisFn)(void*, int);
+    int r = ((SendFn)mem_00925694)(*(void**)((char*)self + 0x190), 0x130b, 0, 0);
+    ((ThisFn)ext_00405730)(self, r);
+}
