@@ -5409,3 +5409,78 @@ extern "C" __declspec(naked) void __cdecl fn_00688A40() {
         ret
     }
 }
+
+// [0x00688D60] sub_00688D60 (189 bytes)
+extern "C" void ext_006883E0(); extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void __cdecl fn_00688D60() {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push 0x8b5869
+        push eax
+        mov fs:[0], esp
+        push ebx
+        push ebp
+        mov ebp, [esp+0x18]
+        push esi
+        mov esi, [esp+0x20]
+        mov ecx, esi
+        sub ecx, ebp
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp eax, 1
+        push edi
+        jle done
+        mov ebx, 0x38
+        add esi, -0x38
+        sub ebx, ebp
+        cmp eax, 1
+        jle skip
+    top:
+        push 0
+        sub esp, 0x38
+        mov edi, esp
+        mov [esp+0x60], esp
+        push esi
+        mov ecx, edi
+        mov [esp+0x64], edi
+        call dword ptr [mem_00924FE0]
+        lea eax, [esi+0x1c]
+        push eax
+        lea ecx, [edi+0x1c]
+        mov dword ptr [esp+0x58], 0
+        call dword ptr [mem_00924FE0]
+        push esi
+        push esi
+        push ebp
+        mov dword ptr [esp+0x60], 0xffffffff
+        call ext_006883E0
+        add esp, 0x48
+    skip:
+        sub esi, 0x38
+        lea ecx, [ebx+esi]
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp eax, 1
+        jg top
+    done:
+        mov ecx, [esp+0x10]
+        pop edi
+        pop esi
+        pop ebp
+        mov fs:[0], ecx
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
