@@ -78,5 +78,7 @@
     "0x0065C20B",
     "0x0065C21D"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T12:21:56Z"
 }
