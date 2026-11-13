@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11026 / 24049` (**45.85%**) — `7934` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `786271 / 4496005 bytes` (**17.49%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11027 / 24049` (**45.85%**) — `7935` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `786713 / 4496005 bytes` (**17.50%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -22,19 +22,19 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P60-70 (122-159B)** | 934 / 2405 | 38.84% | 125707 / 339038 | 37.08% | 1471 fn |
 | **P70-80 (159-178B)** | 222 / 2405 | 9.23% | 37405 / 400567 | 9.34% | 2183 fn |
 | **P80-90 (178-335B)** | 699 / 2405 | 29.06% | 168431 / 583211 | 28.88% | 1706 fn |
-| **P90-100 (335-36100B)** | 129 / 2404 | 5.37% | 49328 / 2392860 | 2.06% | 2275 fn |
+| **P90-100 (335-36100B)** | 130 / 2404 | 5.41% | 49770 / 2392860 | 2.08% | 2274 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6746 | 515189 | 85.03% |
+| `claude-haiku-5.5@medium` | 6746 | 515189 | 85.02% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.63% |
 | `claude-haiku-5.5@low` | 329 | 75204 | 4.15% |
-| `gemini-3.8-flash@low` | 194 | 43355 | 2.45% |
+| `gemini-3.8-flash@low` | 194 | 43355 | 2.44% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 2.05% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.32% |
-| `gemini-4-hydrogen@low` | 15 | 4618 | 0.19% |
+| `gemini-4-hydrogen@low` | 16 | 5060 | 0.20% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.13% |
 | `gemini-3.8-flash@medium` | 3 | 839 | 0.04% |
 | `claude-opus-5.5@medium` | 1 | 49 | 0.01% |
