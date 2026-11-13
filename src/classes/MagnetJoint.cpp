@@ -611,3 +611,97 @@ extern "C" __declspec(naked) void __fastcall fn_0065A680(void* self) {
         ret 4
     }
 }
+
+// [0x0065A590] MagnetJoint::vfunc_47 (225 bytes)
+extern "C" void ext_004875A0();
+extern "C" void ext_0067B7F0();
+extern "C" void ext_0067E7B0();
+extern "C" void ext_0067E880();
+extern "C" void ext_007C93A0();
+extern "C" void ext_007C93E0();
+extern "C" int mem_00A9EC08;
+
+extern "C" __declspec(naked) void __fastcall fn_0065A590(void* self, int edx_unused, void* arg) {
+    __asm {
+        sub esp, 90h
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 6Ch]
+        push eax
+        call ext_007D8700
+        mov ebx, dword ptr [esp + 0A8h]
+        lea esi, [ebx + 10h]
+        push esi
+        push ebx
+        mov ebp, eax
+        push 0
+        push ebp
+        call ext_007C93E0
+        lea ecx, [ebx + 30h]
+        push ecx
+        push 0
+        push ebp
+        call ext_007C93A0
+        fld dword ptr [esi + 8]
+        fmul dword ptr [ebx + 4]
+        add esp, 20h
+        fld dword ptr [esi + 4]
+        lea ecx, [esp + 14h]
+        fmul dword ptr [ebx + 8]
+        fsubp st(1), st
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [esi]
+        fmul dword ptr [ebx + 8]
+        fld dword ptr [esi + 8]
+        fmul dword ptr [ebx]
+        fsubp st(1), st
+        fstp dword ptr [esp + 18h]
+        fld dword ptr [esi + 4]
+        fmul dword ptr [ebx]
+        fld dword ptr [esi]
+        fmul dword ptr [ebx + 4]
+        fsubp st(1), st
+        fstp dword ptr [esp + 1Ch]
+        call ext_0067B7F0
+        fld dword ptr [eax]
+        push ecx
+        fstp dword ptr [ebx + 20h]
+        mov ecx, ebx
+        fld dword ptr [eax + 4]
+        fstp dword ptr [ebx + 24h]
+        fld dword ptr [eax + 8]
+        fstp dword ptr [ebx + 28h]
+        fld qword ptr [mem_00A9EC08]
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [esp + 14h]
+        fstp dword ptr [esp]
+        call ext_0067E7B0
+        mov esi, dword ptr [edi + 78h]
+        test esi, esi
+        je L_done
+        mov ecx, 10h
+        lea edi, [esp + 20h]
+        rep movsd
+        lea ecx, [esp + 20h]
+        call ext_0067E880
+        push ebx
+        lea edx, [esp + 64h]
+        push edx
+        lea ecx, [esp + 28h]
+        call ext_004875A0
+        mov ecx, 10h
+        mov esi, eax
+        mov edi, ebx
+        rep movsd
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 90h
+        ret 4
+    }
+}
