@@ -6410,3 +6410,25 @@ extern "C" void __fastcall fn_0065BF70(void* self) {
     ((void (__cdecl *)(int, float))ext_007C8140)(*(int*)((char*)self + 0x40), *(float*)((char*)self + 0x8));
     *(float*)((char*)self + 0x4) += *(float*)((char*)self + 0x8);
 }
+
+// [0x0065AE90] sub_0065AE90 (35 bytes)
+extern "C" void ext_007C7100();
+extern "C" void ext_007CC5D0();
+
+extern "C" __declspec(naked) void __fastcall fn_0065AE90(void* self, int edx_unused, int arg1) {
+    __asm {
+        mov eax, dword ptr [mem_00B55748]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [eax + 0x2c]
+        mov eax, dword ptr [ecx + 0x10]
+        push eax
+        call ext_007CC5D0
+        push eax
+        call ext_007C7100
+        add esp, 0x8
+        mov dword ptr [esi], eax
+        pop esi
+        ret 0x4
+    }
+}
