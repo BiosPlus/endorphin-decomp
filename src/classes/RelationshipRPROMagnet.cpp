@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/classes/RelationshipRPROMagnet.cpp
 
+extern "C" void ext_006457F0();
+extern "C" void ext_00645A00();
 extern "C" void ext_0064B900();
 extern "C" void ext_0067E510();
 extern "C" void ext_0067E7B0();
@@ -231,5 +233,31 @@ extern "C" __declspec(naked) void __fastcall fn_00649A50(void* self) {
         pop esi
         add esp, 0x74
         ret 0x4
+    }
+}
+
+// [0x00648FD0] RelationshipRPROMagnet::vfunc_52 (54 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00648FD0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00645A00
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        add ecx, 0x4
+        mov byte ptr [esi + 0x98], 0x0
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x14]
+        push edx
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_006457F0
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx]
+        mov ecx, esi
+        call eax
+        pop esi
+        ret 0x8
     }
 }
