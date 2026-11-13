@@ -4603,3 +4603,66 @@ extern "C" __declspec(naked) void __fastcall fn_00625DE0(void* self) {
         ret
     }
 }
+
+// [0x00625F60] sub_00625F60 (136 bytes)
+extern "C" void ext_00625DE0();
+
+extern "C" __declspec(naked) void __fastcall fn_00625F60(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        mov ebx, ecx
+        mov esi, dword ptr [ebx + 0x38]
+        add esi, 0x598
+        mov byte ptr [ebx + 0x30], 0
+        mov eax, dword ptr [esi + 4]
+        mov eax, dword ptr [eax]
+        push edi
+        mov edi, esi
+        mov dword ptr [esp + 0x10], edi
+        mov dword ptr [esp + 0x14], eax
+    loc_625F85:
+        test edi, edi
+        mov ebp, dword ptr [esi + 4]
+        je short loc_625F90
+        cmp edi, esi
+        je short loc_625F96
+    loc_625F90:
+        call dword ptr [mem_00925134]
+    loc_625F96:
+        cmp dword ptr [esp + 0x14], ebp
+        je short loc_625FE0
+        test edi, edi
+        jne short loc_625FA6
+        call dword ptr [mem_00925134]
+    loc_625FA6:
+        mov ecx, dword ptr [esp + 0x14]
+        cmp ecx, dword ptr [edi + 4]
+        jne short loc_625FB5
+        call dword ptr [mem_00925134]
+    loc_625FB5:
+        mov edx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [edx + 0x28]
+        cmp dword ptr [ebx + 0x28], eax
+        mov dword ptr [ebx + 0x34], eax
+        je short loc_625FD1
+        mov ecx, ebx
+        call ext_00625DE0
+        cmp byte ptr [ebx + 0x30], 0
+        jne short loc_625FE0
+    loc_625FD1:
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        mov edi, dword ptr [esp + 0x10]
+        jmp short loc_625F85
+    loc_625FE0:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
