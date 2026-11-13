@@ -495,3 +495,39 @@ extern "C" __declspec(naked) void __fastcall fn_007F1D50(void* self) {
         ret 0x64
     }
 }
+
+// [0x007D9C00] keaFunctions_SSE::vfunc_3 (86 bytes)
+extern "C" void ext_007D96C0();
+extern "C" __declspec(naked) void __fastcall fn_007D9C00(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x2c]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x28]
+        push eax
+        mov eax, dword ptr [esp + 0x28]
+        push ecx
+        mov ecx, dword ptr [esp + 0x20]
+        push edx
+        mov edx, dword ptr [esp + 0x28]
+        push eax
+        sub esp, 0xc
+        mov eax, esp
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x3c]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [esp + 0x28]
+        mov dword ptr [eax + 0x8], ecx
+        mov ecx, dword ptr [esp + 0x2c]
+        sub esp, 0xc
+        mov eax, esp
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [esp + 0x3c]
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], edx
+        mov eax, dword ptr [esp + 0x2c]
+        push eax
+        call ext_007D96C0
+        add esp, 0x2c
+        ret 0x2c
+    }
+}
