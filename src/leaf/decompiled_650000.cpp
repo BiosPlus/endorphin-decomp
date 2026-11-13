@@ -4911,3 +4911,63 @@ extern "C" __declspec(naked) void __fastcall fn_0065AB40(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0065ABE0] sub_0065ABE0 (163 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0065ABE0(void* self, int edx_unused, void* a1, float a2) {
+    __asm {
+        sub esp, 0x2c
+        push esi
+        mov esi, dword ptr [esp + 0x34]
+        push edi
+        mov edi, ecx
+        push 0
+        mov ecx, esi
+        call ext_005B11E0
+        fstp dword ptr [esp + 0x8]
+        push 1
+        mov ecx, esi
+        call ext_005B11E0
+        fstp dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esi + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xc]
+        push esi
+        call edx
+        fmul dword ptr [esp + 0x3c]
+        mov eax, dword ptr [edi]
+        push ecx
+        fmul qword ptr [mem_00928E78]
+        fstp dword ptr [esp + 0x3c]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp]
+        push eax
+        call ext_007C6330
+        fld dword ptr [esp + 0x10]
+        fadd st(0), st
+        add esp, 8
+        lea ecx, [esp + 0x10]
+        push ecx
+        fst dword ptr [esp + 0xc]
+        sub esp, 0x10
+        fadd dword ptr [esp + 0x20]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4c]
+        fstp dword ptr [esp]
+        call ext_007CA1E0
+        mov eax, dword ptr [edi]
+        lea edx, [esp + 0x24]
+        push edx
+        push eax
+        call ext_007C6490
+        add esp, 0x1c
+        pop edi
+        pop esi
+        add esp, 0x2c
+        ret 8
+    }
+}
