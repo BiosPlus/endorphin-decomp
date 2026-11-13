@@ -2113,3 +2113,22 @@ extern "C" __declspec(naked) void __fastcall fn_004DE330(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004D9D70] sub_004D9D70 (36 bytes)
+extern "C" void ext_004D9780();
+
+extern "C" __declspec(naked) void __fastcall fn_004D9D70(void* self, int edx_unused, int a1) {
+    __asm {
+        cmp byte ptr [ecx + 0x210], 0x0
+        je done
+        mov eax, dword ptr [ecx + 0x214]
+        add eax, 0x160
+        je done
+        mov edx, dword ptr [esp + 0x4]
+        push edx
+        push eax
+        call ext_004D9780
+    done:
+        ret 0x4
+    }
+}
