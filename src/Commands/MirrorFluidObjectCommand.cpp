@@ -20,3 +20,31 @@ extern "C" __declspec(naked) void __fastcall fn_005AC7C0(void* self) {
         ret 0x4
     }
 }
+
+// [0x005AC780] Commands::MirrorFluidObjectCommand::vfunc_2 (50 bytes)
+extern "C" void ext_00468180();
+extern "C" void ext_00468F70();
+extern "C" void ext_005BF570();
+extern "C" __declspec(naked) void __fastcall fn_005AC780(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x14], 0
+        je done
+        mov eax, dword ptr [esi + 0x10]
+        test eax, eax
+        je done
+        push eax
+        call ext_00468180
+        mov ecx, eax
+        call ext_00468F70
+        mov eax, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [esi + 0x14]
+        push eax
+        call ext_005BF570
+        mov dword ptr [esi + 0x10], 0
+    done:
+        pop esi
+        ret
+    }
+}
