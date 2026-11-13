@@ -58,3 +58,62 @@ extern "C" __declspec(naked) void __fastcall fn_0052FD30(void* self) {
         ret 0x4
     }
 }
+
+// [0x0053BEF0] Primitives::HingeLimit::vfunc_28 (152 bytes)
+extern "C" void ext_005B11F0();
+extern "C" void ext_00537ED0();
+extern "C" int mem_00925414;
+extern "C" int mem_009254CC;
+extern "C" int mem_00925404;
+extern "C" float mem_00955A30;
+extern "C" double mem_00932470;
+
+extern "C" __declspec(naked) void __fastcall fn_0053BEF0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x14
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x20]
+        call ext_005B11F0
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0xc]
+        call dword ptr [mem_00925414]
+        fldz
+        sub esp, 0x10
+        fst dword ptr [esp + 0xc]
+        fld1
+        fstp dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [mem_00955A30]
+        fstp dword ptr [esp]
+        call dword ptr [mem_009254CC]
+        fld dword ptr [esp + 0xc]
+        mov eax, dword ptr [esi + 0x3c]
+        fld dword ptr [esp + 0x8]
+        push eax
+        fld st(0)
+        sub esp, 0x10
+        _emit 0xde
+        _emit 0xea
+        lea ecx, [esi + 0x44]
+        fxch st(1)
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esi + 0x40]
+        fmul qword ptr [mem_00932470]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esi + 0x40]
+        fstp dword ptr [esp]
+        call ext_00537ED0
+        call dword ptr [mem_00925404]
+        pop esi
+        add esp, 0x14
+        ret 0x4
+    }
+}
