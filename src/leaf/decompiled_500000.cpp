@@ -5955,3 +5955,127 @@ extern "C" __declspec(naked) void __fastcall fn_0050FB20(void* self) {
         ret
     }
 }
+
+// [0x0050B550] sub_0050B550 (332 bytes)
+extern "C" int mem_00924FE0; extern "C" int mem_00924EF4; extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void __cdecl fn_0050B550() {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x892080
+        push eax
+        mov eax, dword ptr [esp+0x14]
+        mov dword ptr fs:[0], esp
+        sub esp, 0x2c
+        push ebx
+        mov ebx, dword ptr [esp+0x40]
+        cmp ebx, eax
+        je L_ret
+        push esi
+        lea esi, [ebx+0x24]
+        cmp esi, eax
+        mov dword ptr [esp+8], esi
+        je L_pop1
+        push ebp
+        push edi
+        lea ebp, [esi-0x20]
+        jmp L_top
+    L_reload:
+        _emit 0x8b
+        _emit 0x5c
+        _emit 0x24
+        _emit 0x4c
+    L_top:
+        mov edi, esi
+        lea eax, [ebp+0x24]
+        push eax
+        lea ecx, [esp+0x20]
+        mov dword ptr [esp+0x48], 0
+        mov dword ptr [esp+0x1c], 0x94f92c
+        call dword ptr [mem_00924FE0]
+        fld dword ptr [ebp+0x40]
+        fstp dword ptr [esp+0x38]
+        add ebx, 4
+        lea ecx, [esp+0x1c]
+        push ebx
+        push ecx
+        mov dword ptr [esp+0x4c], 1
+        call dword ptr [mem_00924EF4]
+        add esp, 8
+        test al, al
+        je L_else
+        mov eax, dword ptr [esp+0x4c]
+        mov ecx, dword ptr [esp+0x4c]
+        mov edi, dword ptr [esp+0x4c]
+        mov byte ptr [esp+0x14], 0
+        mov edx, dword ptr [esp+0x14]
+        push edx
+        push eax
+        push ecx
+        lea edx, [ebp+0x44]
+        push edx
+        push esi
+        push edi
+        call ext_0050A720
+        add esp, 0x18
+        mov ecx, ebx
+        jmp L_fin
+    L_else:
+        lea ecx, [esp+0x1c]
+        push ebp
+        push ecx
+        lea ebx, [ebp-4]
+        call dword ptr [mem_00924EF4]
+        add esp, 8
+        test al, al
+        je L_done
+        mov esi, ebp
+        jmp L_loop
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_loop:
+        push esi
+        lea ecx, [edi+4]
+        call dword ptr [mem_00924FDC]
+        fld dword ptr [esi+0x1c]
+        sub esi, 0x24
+        fstp dword ptr [edi+0x20]
+        lea edx, [esp+0x1c]
+        push esi
+        mov edi, ebx
+        push edx
+        sub ebx, 0x24
+        call dword ptr [mem_00924EF4]
+        add esp, 8
+        test al, al
+        jne L_loop
+        mov esi, dword ptr [esp+0x10]
+    L_done:
+        lea ecx, [edi+4]
+    L_fin:
+        lea eax, [esp+0x1c]
+        push eax
+        call dword ptr [mem_00924FDC]
+        fld dword ptr [esp+0x38]
+        lea ecx, [esp+0x18]
+        fstp dword ptr [edi+0x20]
+        mov dword ptr [esp+0x44], 0xffffffff
+        call ext_00508790
+        add esi, 0x24
+        add ebp, 0x24
+        cmp esi, dword ptr [esp+0x50]
+        mov dword ptr [esp+0x10], esi
+        jne L_reload
+        pop edi
+        pop ebp
+    L_pop1:
+        pop esi
+    L_ret:
+        mov ecx, dword ptr [esp+0x30]
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x38
+        ret
+    }
+}
