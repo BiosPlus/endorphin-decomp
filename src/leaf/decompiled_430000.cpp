@@ -14163,3 +14163,70 @@ extern "C" __declspec(naked) void __fastcall fn_00434120(void* self, int edx_unu
         ret 0x1c
     }
 }
+
+// [0x00434930] sub_00434930 (150 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_006AD940();
+extern "C" void ext_00493940();
+extern "C" void ext_00493840();
+extern "C" void ext_004925D0();
+extern "C" void ext_004303F0();
+extern "C" void ext_00430410();
+extern "C" void ext_0044B700();
+extern "C" void ext_0044BC60();
+extern "C" void ext_0044B7C0();
+extern "C" void ext_00493D30();
+
+extern "C" __declspec(naked) void __fastcall fn_00434930(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 26Ch]
+        call ext_006AD940
+        mov edi, eax
+        lea eax, [esi + 18Ch]
+        push eax
+        mov ecx, edi
+        call ext_00493940
+        mov ecx, edi
+        call ext_00493840
+        test al, al
+        je L_no_match
+        push 0
+        mov ecx, edi
+        call ext_004925D0
+        test al, al
+        je L_try_one
+        mov ecx, esi
+        call ext_004303F0
+        jmp L_after
+    L_try_one:
+        push 1
+        mov ecx, edi
+        call ext_004925D0
+        test al, al
+        je L_after
+        mov ecx, esi
+        call ext_00430410
+    L_after:
+        mov ecx, dword ptr [esi + 100h]
+        call ext_0044B700
+        mov ecx, dword ptr [esi + 100h]
+        call ext_0044BC60
+        mov ecx, dword ptr [esi + 100h]
+        call ext_0044B7C0
+        call ext_00594000
+        mov ecx, dword ptr [eax + 26Ch]
+        call ext_006AD940
+        pop edi
+        mov ecx, eax
+        pop esi
+        jmp ext_00493D30
+    L_no_match:
+        pop edi
+        pop esi
+        ret
+    }
+}
