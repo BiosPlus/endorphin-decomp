@@ -5624,3 +5624,137 @@ done:
         ret
     }
 }
+
+// [0x007CE490] sub_007CE490 (330 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007CE490(int i, char* s, char* o) {
+    __asm {
+        mov ecx, dword ptr [esp+8]
+        fldz
+        push ebx
+        push esi
+        mov esi, dword ptr [esp+0Ch]
+        push edi
+        xor eax, eax
+loop_top:
+        mov edx, dword ptr [ecx+4]
+        mov edi, dword ptr [ecx]
+        add edx, esi
+        shl edx, 4
+        add edx, eax
+        fst dword ptr [edi+4*edx]
+        mov edx, dword ptr [ecx+4]
+        mov edi, dword ptr [ecx]
+        add edx, esi
+        shl edx, 4
+        add edx, eax
+        fst dword ptr [edi+4*edx+20h]
+        mov edx, dword ptr [ecx+4]
+        mov edi, dword ptr [ecx]
+        add edx, esi
+        shl edx, 4
+        add edx, eax
+        fst dword ptr [edi+4*edx+10h]
+        mov edx, dword ptr [ecx+4]
+        mov edi, dword ptr [ecx]
+        add edx, esi
+        shl edx, 4
+        add edx, eax
+        add eax, 1
+        fst dword ptr [edi+4*edx+30h]
+        cmp eax, 3
+        jne loop_top
+        mov eax, dword ptr [ecx+2Ch]
+        lea edi, [eax+esi]
+        mov eax, edi
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        and edi, 80000003h
+        jns skip1
+        dec edi
+        or edi, -4
+        inc edi
+skip1:
+        lea edx, [edi+4*eax]
+        mov eax, dword ptr [ecx+28h]
+        fst dword ptr [eax+4*edx]
+        mov edx, dword ptr [ecx+50h]
+        lea edi, [edx+esi]
+        mov eax, edi
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        and edi, 80000003h
+        jns skip2
+        dec edi
+        or edi, -4
+        inc edi
+skip2:
+        mov edx, dword ptr [ecx+4Ch]
+        lea eax, [edi+4*eax]
+        fst dword ptr [edx+4*eax]
+        mov eax, dword ptr [ecx+20h]
+        lea edi, [eax+esi]
+        mov eax, edi
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        and edi, 80000003h
+        jns skip3
+        dec edi
+        or edi, -4
+        inc edi
+skip3:
+        lea edx, [edi+4*eax]
+        mov eax, dword ptr [ecx+1Ch]
+        fst dword ptr [eax+4*edx]
+        mov edx, dword ptr [ecx+14h]
+        lea edi, [edx+esi]
+        mov eax, edi
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        and edi, 80000003h
+        jns skip4
+        dec edi
+        or edi, -4
+        inc edi
+skip4:
+        mov edx, dword ptr [ecx+10h]
+        lea eax, [edi+4*eax]
+        fstp dword ptr [edx+4*eax]
+        mov edx, dword ptr [ecx+4]
+        mov edi, dword ptr [ecx]
+        mov eax, dword ptr [esp+18h]
+        mov ebx, dword ptr [eax+0B4h]
+        add edx, esi
+        shl edx, 6
+        mov dword ptr [edx+edi+0Ch], ebx
+        mov edx, dword ptr [ecx+4]
+        mov edi, dword ptr [ecx]
+        mov ebx, dword ptr [ecx+0A4h]
+        add edx, esi
+        shl edx, 6
+        mov dword ptr [edx+edi+1Ch], ebx
+        mov edx, dword ptr [ecx+4]
+        mov edi, dword ptr [ecx]
+        mov eax, dword ptr [eax+0B8h]
+        add edx, esi
+        shl edx, 6
+        mov dword ptr [edx+edi+2Ch], eax
+        mov edx, dword ptr [ecx+4]
+        mov eax, dword ptr [ecx]
+        mov ecx, dword ptr [ecx+0A4h]
+        add edx, esi
+        pop edi
+        shl edx, 6
+        pop esi
+        mov dword ptr [edx+eax+3Ch], ecx
+        pop ebx
+        ret
+    }
+}
