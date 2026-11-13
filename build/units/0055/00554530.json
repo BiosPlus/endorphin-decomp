@@ -222,5 +222,7 @@
     "0x00554CBB",
     "0x00554CCA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-13T13:55:03Z"
 }
