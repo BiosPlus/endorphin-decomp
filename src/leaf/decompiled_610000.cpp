@@ -2401,3 +2401,18 @@ extern "C" void* __fastcall fn_0061E9D0(void* self) {
     p[0x160 / 4] = 0;
     return self;
 }
+
+// [0x0061EA70] sub_0061EA70 (59 bytes)
+extern "C" void ext_0061E840();
+
+extern "C" void* __fastcall fn_0061EA70(void* self) {
+    ext_0061E840();
+    unsigned int* p = (unsigned int*)self;
+    p[0] = 0x97662c;
+    p[1] = 0x9765e4;
+    p[2] = 0x9765a4;
+    p[3] = 0x976554;
+    p[0x150 / 4] = 0x97653c;
+    p[0x160 / 4] = 0;
+    return self;
+}
