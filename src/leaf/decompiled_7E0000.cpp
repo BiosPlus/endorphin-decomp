@@ -19371,3 +19371,218 @@ L_7E3D5D:
         ret
     }
 }
+
+extern "C" void ext_006A6EC0();
+extern "C" void ext_006A7250();
+extern "C" void ext_006A745E();
+extern "C" void ext_007C6F30();
+extern "C" void ext_007C6F70();
+extern "C" void ext_007C7000();
+extern "C" void ext_007DB640();
+extern "C" void ext_007E0110();
+extern "C" int mem_00AA7E40;
+extern "C" int mem_0099EC88;
+
+// [0x007E3DB0] sub_007E3DB0 (507 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007E3DB0(void* self) {
+    __asm {
+        __asm _emit 0x55 // 007E3DB0: push   ebp
+        __asm _emit 0x8b __asm _emit 0xec // 007E3DB1: mov    ebp,esp
+        __asm _emit 0x83 __asm _emit 0xec __asm _emit 0x30 // 007E3DB3: sub    esp,0x30
+        mov eax, dword ptr [mem_00AA7E40] // 007E3DB6: mov    eax,ds:0xaa7e40
+        __asm _emit 0x33 __asm _emit 0xc5 // 007E3DBB: xor    eax,ebp
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0xfc // 007E3DBD: mov    DWORD PTR [ebp-0x4],eax
+        __asm _emit 0x53 // 007E3DC0: push   ebx
+        __asm _emit 0x56 // 007E3DC1: push   esi
+        __asm _emit 0x57 // 007E3DC2: push   edi
+        __asm _emit 0x8b __asm _emit 0x7d __asm _emit 0x08 // 007E3DC3: mov    edi,DWORD PTR [ebp+0x8]
+        __asm _emit 0x8b __asm _emit 0x07 // 007E3DC6: mov    eax,DWORD PTR [edi]
+        __asm _emit 0x50 // 007E3DC8: push   eax
+        call ext_007C6F70 // 007E3DC9: call   0x7c6f70
+        __asm _emit 0x8b __asm _emit 0x4f __asm _emit 0x04 // 007E3DCE: mov    ecx,DWORD PTR [edi+0x4]
+        __asm _emit 0x51 // 007E3DD1: push   ecx
+        __asm _emit 0x8b __asm _emit 0xd8 // 007E3DD2: mov    ebx,eax
+        call ext_007C6F70 // 007E3DD4: call   0x7c6f70
+        __asm _emit 0x8b __asm _emit 0x57 __asm _emit 0x04 // 007E3DD9: mov    edx,DWORD PTR [edi+0x4]
+        __asm _emit 0x52 // 007E3DDC: push   edx
+        __asm _emit 0x8b __asm _emit 0xf0 // 007E3DDD: mov    esi,eax
+        call ext_007C6F30 // 007E3DDF: call   0x7c6f30
+        __asm _emit 0xdd __asm _emit 0x5d __asm _emit 0xf4 // 007E3DE4: fstp   QWORD PTR [ebp-0xc]
+        __asm _emit 0x8b __asm _emit 0x07 // 007E3DE7: mov    eax,DWORD PTR [edi]
+        __asm _emit 0x50 // 007E3DE9: push   eax
+        call ext_007C6F30 // 007E3DEA: call   0x7c6f30
+        __asm _emit 0xdc __asm _emit 0x45 __asm _emit 0xf4 // 007E3DEF: fadd   QWORD PTR [ebp-0xc]
+        __asm _emit 0x8b __asm _emit 0x0f // 007E3DF2: mov    ecx,DWORD PTR [edi]
+        __asm _emit 0x51 // 007E3DF4: push   ecx
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0xec // 007E3DF5: fstp   DWORD PTR [ebp-0x14]
+        call ext_007C7000 // 007E3DF8: call   0x7c7000
+        __asm _emit 0x8b __asm _emit 0x57 __asm _emit 0x04 // 007E3DFD: mov    edx,DWORD PTR [edi+0x4]
+        __asm _emit 0x52 // 007E3E00: push   edx
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0xe8 // 007E3E01: mov    DWORD PTR [ebp-0x18],eax
+        call ext_007C7000 // 007E3E04: call   0x7c7000
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0xf0 // 007E3E09: mov    DWORD PTR [ebp-0x10],eax
+        __asm _emit 0x8b __asm _emit 0x45 __asm _emit 0x0c // 007E3E0C: mov    eax,DWORD PTR [ebp+0xc]
+        __asm _emit 0x33 __asm _emit 0xc9 // 007E3E0F: xor    ecx,ecx
+        __asm _emit 0x89 __asm _emit 0x48 __asm _emit 0x0c // 007E3E11: mov    DWORD PTR [eax+0xc],ecx
+        __asm _emit 0x89 __asm _emit 0x48 __asm _emit 0x1c // 007E3E14: mov    DWORD PTR [eax+0x1c],ecx
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x04 // 007E3E17: fld    DWORD PTR [esi+0x4]
+        __asm _emit 0xd8 __asm _emit 0x4b __asm _emit 0x24 // 007E3E1A: fmul   DWORD PTR [ebx+0x24]
+        __asm _emit 0x83 __asm _emit 0xc4 __asm _emit 0x18 // 007E3E1D: add    esp,0x18
+        __asm _emit 0xd9 __asm _emit 0x06 // 007E3E20: fld    DWORD PTR [esi]
+        __asm _emit 0x8d __asm _emit 0x4b __asm _emit 0x30 // 007E3E22: lea    ecx,[ebx+0x30]
+        __asm _emit 0xd8 __asm _emit 0x4b __asm _emit 0x20 // 007E3E25: fmul   DWORD PTR [ebx+0x20]
+        __asm _emit 0x8b __asm _emit 0xc6 // 007E3E28: mov    eax,esi
+        __asm _emit 0x8d __asm _emit 0x55 __asm _emit 0xd0 // 007E3E2A: lea    edx,[ebp-0x30]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E3E2D: faddp  st(1),st
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x08 // 007E3E2F: fld    DWORD PTR [esi+0x8]
+        __asm _emit 0xd8 __asm _emit 0x4b __asm _emit 0x28 // 007E3E32: fmul   DWORD PTR [ebx+0x28]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E3E35: faddp  st(1),st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0xdc // 007E3E37: fstp   DWORD PTR [ebp-0x24]
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x14 // 007E3E3A: fld    DWORD PTR [esi+0x14]
+        __asm _emit 0xd8 __asm _emit 0x4b __asm _emit 0x24 // 007E3E3D: fmul   DWORD PTR [ebx+0x24]
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x10 // 007E3E40: fld    DWORD PTR [esi+0x10]
+        __asm _emit 0xd8 __asm _emit 0x4b __asm _emit 0x20 // 007E3E43: fmul   DWORD PTR [ebx+0x20]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E3E46: faddp  st(1),st
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x18 // 007E3E48: fld    DWORD PTR [esi+0x18]
+        __asm _emit 0xd8 __asm _emit 0x4b __asm _emit 0x28 // 007E3E4B: fmul   DWORD PTR [ebx+0x28]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E3E4E: faddp  st(1),st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0xe0 // 007E3E50: fstp   DWORD PTR [ebp-0x20]
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x24 // 007E3E53: fld    DWORD PTR [esi+0x24]
+        __asm _emit 0xd8 __asm _emit 0x4b __asm _emit 0x24 // 007E3E56: fmul   DWORD PTR [ebx+0x24]
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x20 // 007E3E59: fld    DWORD PTR [esi+0x20]
+        __asm _emit 0xd8 __asm _emit 0x4b __asm _emit 0x20 // 007E3E5C: fmul   DWORD PTR [ebx+0x20]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E3E5F: faddp  st(1),st
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x28 // 007E3E61: fld    DWORD PTR [esi+0x28]
+        __asm _emit 0xd8 __asm _emit 0x4b __asm _emit 0x28 // 007E3E64: fmul   DWORD PTR [ebx+0x28]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E3E67: faddp  st(1),st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0xe4 // 007E3E69: fstp   DWORD PTR [ebp-0x1c]
+        call ext_007DB640 // 007E3E6C: call   0x7db640
+        __asm _emit 0x8b __asm _emit 0x45 __asm _emit 0xf0 // 007E3E71: mov    eax,DWORD PTR [ebp-0x10]
+        __asm _emit 0x8b __asm _emit 0x58 __asm _emit 0x28 // 007E3E74: mov    ebx,DWORD PTR [eax+0x28]
+        __asm _emit 0x8d __asm _emit 0x04 __asm _emit 0xdd __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // 007E3E77: lea    eax,[ebx*8+0x0]
+        __asm _emit 0x2b __asm _emit 0xc3 // 007E3E7E: sub    eax,ebx
+        __asm _emit 0x03 __asm _emit 0xc0 // 007E3E80: add    eax,eax
+        __asm _emit 0x03 __asm _emit 0xc0 // 007E3E82: add    eax,eax
+        call ext_006A6EC0 // 007E3E84: call   0x6a6ec0
+        __asm _emit 0x8b __asm _emit 0x4d __asm _emit 0xf0 // 007E3E89: mov    ecx,DWORD PTR [ebp-0x10]
+        __asm _emit 0x8b __asm _emit 0xc4 // 007E3E8C: mov    eax,esp
+        __asm _emit 0x53 // 007E3E8E: push   ebx
+        __asm _emit 0x8b __asm _emit 0x5d __asm _emit 0xe8 // 007E3E8F: mov    ebx,DWORD PTR [ebp-0x18]
+        __asm _emit 0x89 __asm _emit 0x41 __asm _emit 0x38 // 007E3E92: mov    DWORD PTR [ecx+0x38],eax
+        __asm _emit 0xd9 __asm _emit 0x43 __asm _emit 0x10 // 007E3E95: fld    DWORD PTR [ebx+0x10]
+        __asm _emit 0xd8 __asm _emit 0x43 __asm _emit 0x14 // 007E3E98: fadd   DWORD PTR [ebx+0x14]
+        __asm _emit 0xd8 __asm _emit 0x45 __asm _emit 0xec // 007E3E9B: fadd   DWORD PTR [ebp-0x14]
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0xf8 // 007E3E9E: fstp   DWORD PTR [ebp-0x8]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0xf8 // 007E3EA1: fld    DWORD PTR [ebp-0x8]
+        __asm _emit 0x51 // 007E3EA4: push   ecx
+        __asm _emit 0xd9 __asm _emit 0x1c __asm _emit 0x24 // 007E3EA5: fstp   DWORD PTR [esp]
+        __asm _emit 0x8d __asm _emit 0x55 __asm _emit 0xd0 // 007E3EA8: lea    edx,[ebp-0x30]
+        __asm _emit 0x52 // 007E3EAB: push   edx
+        __asm _emit 0x50 // 007E3EAC: push   eax
+        __asm _emit 0x8b __asm _emit 0xc1 // 007E3EAD: mov    eax,ecx
+        __asm _emit 0x8b __asm _emit 0x48 __asm _emit 0x30 // 007E3EAF: mov    ecx,DWORD PTR [eax+0x30]
+        __asm _emit 0x57 // 007E3EB2: push   edi
+        __asm _emit 0xff __asm _emit 0xd1 // 007E3EB3: call   ecx
+        __asm _emit 0x83 __asm _emit 0xc4 __asm _emit 0x14 // 007E3EB5: add    esp,0x14
+        __asm _emit 0x85 __asm _emit 0xc0 // 007E3EB8: test   eax,eax
+        jne short L_007E3ED0 // 007E3EBA: jne    0x7e3ed0
+        __asm _emit 0x8d __asm _emit 0x65 __asm _emit 0xc4 // 007E3EBC: lea    esp,[ebp-0x3c]
+        __asm _emit 0x5f // 007E3EBF: pop    edi
+        __asm _emit 0x5e // 007E3EC0: pop    esi
+        __asm _emit 0x5b // 007E3EC1: pop    ebx
+        __asm _emit 0x8b __asm _emit 0x4d __asm _emit 0xfc // 007E3EC2: mov    ecx,DWORD PTR [ebp-0x4]
+        __asm _emit 0x33 __asm _emit 0xcd // 007E3EC5: xor    ecx,ebp
+        call ext_006A745E // 007E3EC7: call   0x6a745e
+        __asm _emit 0x8b __asm _emit 0xe5 // 007E3ECC: mov    esp,ebp
+        __asm _emit 0x5d // 007E3ECE: pop    ebp
+        __asm _emit 0xc3 // 007E3ECF: ret
+    L_007E3ED0:
+        __asm _emit 0x85 __asm _emit 0xc0 // 007E3ED0: test   eax,eax
+        __asm _emit 0xd9 __asm _emit 0xee // 007E3ED2: fldz
+        __asm _emit 0x8b __asm _emit 0x4d __asm _emit 0x0c // 007E3ED4: mov    ecx,DWORD PTR [ebp+0xc]
+        __asm _emit 0xd9 __asm _emit 0x51 __asm _emit 0x10 // 007E3ED7: fst    DWORD PTR [ecx+0x10]
+        __asm _emit 0xd9 __asm _emit 0x51 __asm _emit 0x14 // 007E3EDA: fst    DWORD PTR [ecx+0x14]
+        __asm _emit 0xd9 __asm _emit 0x59 __asm _emit 0x18 // 007E3EDD: fstp   DWORD PTR [ecx+0x18]
+        jle short L_007E3F2F // 007E3EE0: jle    0x7e3f2f
+        __asm _emit 0x33 __asm _emit 0xff // 007E3EE2: xor    edi,edi
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0xf8 // 007E3EE4: mov    DWORD PTR [ebp-0x8],eax
+        jmp short L_007E3EF3 // 007E3EE7: jmp    0x7e3ef3
+        __asm _emit 0x8d __asm _emit 0xa4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // 007E3EE9: lea    esp,[esp+0x0]
+    L_007E3EF0:
+        __asm _emit 0x8b __asm _emit 0x5d __asm _emit 0xe8 // 007E3EF0: mov    ebx,DWORD PTR [ebp-0x18]
+    L_007E3EF3:
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0xec // 007E3EF3: fld    DWORD PTR [ebp-0x14]
+        __asm _emit 0x8b __asm _emit 0x55 __asm _emit 0xf0 // 007E3EF6: mov    edx,DWORD PTR [ebp-0x10]
+        __asm _emit 0x8b __asm _emit 0x42 __asm _emit 0x38 // 007E3EF9: mov    eax,DWORD PTR [edx+0x38]
+        __asm _emit 0x51 // 007E3EFC: push   ecx
+        __asm _emit 0x51 // 007E3EFD: push   ecx
+        __asm _emit 0xd9 __asm _emit 0x1c __asm _emit 0x24 // 007E3EFE: fstp   DWORD PTR [esp]
+        __asm _emit 0x56 // 007E3F01: push   esi
+        __asm _emit 0xd9 __asm _emit 0x43 __asm _emit 0x10 // 007E3F02: fld    DWORD PTR [ebx+0x10]
+        __asm _emit 0x83 __asm _emit 0xec __asm _emit 0x08 // 007E3F05: sub    esp,0x8
+        __asm _emit 0xd9 __asm _emit 0x5c __asm _emit 0x24 __asm _emit 0x04 // 007E3F08: fstp   DWORD PTR [esp+0x4]
+        __asm _emit 0x03 __asm _emit 0xc7 // 007E3F0C: add    eax,edi
+        __asm _emit 0xd9 __asm _emit 0x43 __asm _emit 0x14 // 007E3F0E: fld    DWORD PTR [ebx+0x14]
+        __asm _emit 0x8d __asm _emit 0x5d __asm _emit 0xd0 // 007E3F11: lea    ebx,[ebp-0x30]
+        __asm _emit 0xd9 __asm _emit 0x1c __asm _emit 0x24 // 007E3F14: fstp   DWORD PTR [esp]
+        __asm _emit 0x50 // 007E3F17: push   eax
+        __asm _emit 0x8d __asm _emit 0x45 __asm _emit 0xdc // 007E3F18: lea    eax,[ebp-0x24]
+        call ext_007E0110 // 007E3F1B: call   0x7e0110
+        __asm _emit 0x8b __asm _emit 0x4d __asm _emit 0x0c // 007E3F20: mov    ecx,DWORD PTR [ebp+0xc]
+        __asm _emit 0x83 __asm _emit 0xc4 __asm _emit 0x18 // 007E3F23: add    esp,0x18
+        __asm _emit 0x83 __asm _emit 0xc7 __asm _emit 0x1c // 007E3F26: add    edi,0x1c
+        __asm _emit 0x83 __asm _emit 0x6d __asm _emit 0xf8 __asm _emit 0x01 // 007E3F29: sub    DWORD PTR [ebp-0x8],0x1
+        jne short L_007E3EF0 // 007E3F2D: jne    0x7e3ef0
+    L_007E3F2F:
+        __asm _emit 0xd9 __asm _emit 0x41 __asm _emit 0x14 // 007E3F2F: fld    DWORD PTR [ecx+0x14]
+        __asm _emit 0xd8 __asm _emit 0x49 __asm _emit 0x14 // 007E3F32: fmul   DWORD PTR [ecx+0x14]
+        __asm _emit 0xd9 __asm _emit 0x41 __asm _emit 0x10 // 007E3F35: fld    DWORD PTR [ecx+0x10]
+        __asm _emit 0xd8 __asm _emit 0x49 __asm _emit 0x10 // 007E3F38: fmul   DWORD PTR [ecx+0x10]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E3F3B: faddp  st(1),st
+        __asm _emit 0xd9 __asm _emit 0x41 __asm _emit 0x18 // 007E3F3D: fld    DWORD PTR [ecx+0x18]
+        __asm _emit 0xd8 __asm _emit 0x49 __asm _emit 0x18 // 007E3F40: fmul   DWORD PTR [ecx+0x18]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E3F43: faddp  st(1),st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0xf8 // 007E3F45: fstp   DWORD PTR [ebp-0x8]
+        fld dword ptr [mem_0099EC88] // 007E3F48: fld    DWORD PTR ds:0x99ec88
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0xf8 // 007E3F4E: fld    DWORD PTR [ebp-0x8]
+        __asm _emit 0xd8 __asm _emit 0xd1 // 007E3F51: fcom   st(1)
+        __asm _emit 0xdf __asm _emit 0xe0 // 007E3F53: fnstsw ax
+        __asm _emit 0xdd __asm _emit 0xd9 // 007E3F55: fstp   st(1)
+        __asm _emit 0xf6 __asm _emit 0xc4 __asm _emit 0x41 // 007E3F57: test   ah,0x41
+        jne short L_007E3F92 // 007E3F5A: jne    0x7e3f92
+        call ext_006A7250 // 007E3F5C: call   0x6a7250
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0xf8 // 007E3F61: fstp   DWORD PTR [ebp-0x8]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0xf8 // 007E3F64: fld    DWORD PTR [ebp-0x8]
+        __asm _emit 0x8b __asm _emit 0x45 __asm _emit 0x0c // 007E3F67: mov    eax,DWORD PTR [ebp+0xc]
+        __asm _emit 0xd9 __asm _emit 0xe8 // 007E3F6A: fld1
+        __asm _emit 0x8b __asm _emit 0xc8 // 007E3F6C: mov    ecx,eax
+        __asm _emit 0xde __asm _emit 0xf1 // 007E3F6E: fdivrp st(1),st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0xf8 // 007E3F70: fstp   DWORD PTR [ebp-0x8]
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x10 // 007E3F73: fld    DWORD PTR [eax+0x10]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0xf8 // 007E3F76: fld    DWORD PTR [ebp-0x8]
+        __asm _emit 0xd9 __asm _emit 0xc0 // 007E3F79: fld    st(0)
+        __asm _emit 0xde __asm _emit 0xca // 007E3F7B: fmulp  st(2),st
+        __asm _emit 0xd9 __asm _emit 0xc9 // 007E3F7D: fxch   st(1)
+        __asm _emit 0xd9 __asm _emit 0x58 __asm _emit 0x10 // 007E3F7F: fstp   DWORD PTR [eax+0x10]
+        __asm _emit 0xd9 __asm _emit 0xc0 // 007E3F82: fld    st(0)
+        __asm _emit 0xd8 __asm _emit 0x48 __asm _emit 0x14 // 007E3F84: fmul   DWORD PTR [eax+0x14]
+        __asm _emit 0xd9 __asm _emit 0x58 __asm _emit 0x14 // 007E3F87: fstp   DWORD PTR [eax+0x14]
+        __asm _emit 0xd8 __asm _emit 0x48 __asm _emit 0x18 // 007E3F8A: fmul   DWORD PTR [eax+0x18]
+        __asm _emit 0xd9 __asm _emit 0x58 __asm _emit 0x18 // 007E3F8D: fstp   DWORD PTR [eax+0x18]
+        jmp short L_007E3F94 // 007E3F90: jmp    0x7e3f94
+    L_007E3F92:
+        __asm _emit 0xdd __asm _emit 0xd8 // 007E3F92: fstp   st(0)
+    L_007E3F94:
+        __asm _emit 0x8b __asm _emit 0x41 __asm _emit 0x1c // 007E3F94: mov    eax,DWORD PTR [ecx+0x1c]
+        __asm _emit 0x8d __asm _emit 0x65 __asm _emit 0xc4 // 007E3F97: lea    esp,[ebp-0x3c]
+        __asm _emit 0x5f // 007E3F9A: pop    edi
+        __asm _emit 0x5e // 007E3F9B: pop    esi
+        __asm _emit 0x5b // 007E3F9C: pop    ebx
+        __asm _emit 0x8b __asm _emit 0x4d __asm _emit 0xfc // 007E3F9D: mov    ecx,DWORD PTR [ebp-0x4]
+        __asm _emit 0x33 __asm _emit 0xcd // 007E3FA0: xor    ecx,ebp
+        call ext_006A745E // 007E3FA2: call   0x6a745e
+        __asm _emit 0x8b __asm _emit 0xe5 // 007E3FA7: mov    esp,ebp
+        __asm _emit 0x5d // 007E3FA9: pop    ebp
+        __asm _emit 0xc3 // 007E3FAA: ret
+    }
+}
