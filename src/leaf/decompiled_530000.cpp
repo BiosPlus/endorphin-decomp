@@ -6439,3 +6439,31 @@ extern "C" __declspec(naked) bool __fastcall fn_0053FF80(void* self, int dummy, 
         ret 4
     }
 }
+
+// [0x00531B70] sub_00531B70 (57 bytes)
+extern "C" void ext_005319E0();
+extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void __fastcall fn_00531B70(void* self, int edx_unused, void* arg1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx + 0x10]
+        mov ecx, dword ptr [esp + 0x8]
+        add esi, 0x9c
+        test ecx, ecx
+        je done
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1c]
+        push ecx
+        call edx
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x28], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esi + 0x10c]
+        call ext_005319E0
+    done:
+        pop esi
+        ret 4
+    }
+}
