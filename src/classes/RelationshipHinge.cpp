@@ -361,3 +361,17 @@ extern "C" __declspec(naked) void __fastcall fn_00658B00(void* self) {
         ret
     }
 }
+
+extern "C" void __cdecl ext_007C9930(int);
+
+// [0x00658BC0] RelationshipHinge::vfunc_50 (43 bytes)
+extern "C" void __fastcall fn_00658BC0(void* self) {
+    int* p = (int*)((char*)self + 0x64);
+    if (*p != 0) {
+        typedef void (__thiscall *VFunc)(void*);
+        VFunc* vtbl = *(VFunc**)self;
+        vtbl[7](self);
+        ext_007C9930(ext_007D8700(*p));
+        *p = 0;
+    }
+}
