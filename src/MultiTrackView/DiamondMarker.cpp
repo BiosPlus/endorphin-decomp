@@ -149,3 +149,121 @@ extern "C" __declspec(naked) void __fastcall fn_004410E0(void* self) {
         ret 4
     }
 }
+
+// [0x00441220] MultiTrackView::DiamondMarker::vfunc_2 (258 bytes)
+extern "C" void ext_0041A790();
+extern "C" void ext_0041A830();
+extern "C" void ext_0066A180();
+extern "C" void ext_006A610C();
+extern "C" void ext_006A61A8();
+extern "C" int mem_00925640;
+extern "C" int mem_009240D8;
+
+extern "C" __declspec(naked) void __fastcall fn_00441220(void* self) {
+    __asm {
+        sub esp, 0x18
+        push ebx
+        push ebp
+        mov ebp, ecx
+        mov ecx, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [ecx + 0xc]
+        mov eax, edx
+        and eax, 0x80000001
+        push esi
+        push edi
+        jns L_44123e
+        dec eax
+        or eax, -2
+        inc eax
+    L_44123e:
+        mov esi, dword ptr [ecx + 4]
+        add eax, edx
+        cdq
+        sub eax, edx
+        mov edx, dword ptr [ecx]
+        sar eax, 1
+        cmp byte ptr [ebp + 0x89], 0
+        mov dword ptr [esp + 0x10], edx
+        mov dword ptr [esp + 0x20], edx
+        mov dword ptr [esp + 0x14], esi
+        je L_441279
+        mov edi, edx
+        sub edi, eax
+        add eax, esi
+        mov dword ptr [esp + 0x1c], eax
+        mov eax, dword ptr [ecx + 0xc]
+        mov ecx, dword ptr [ecx + 4]
+        add esi, eax
+        add eax, ecx
+        push eax
+        push edx
+        push ecx
+        push edi
+        jmp L_441290
+    L_441279:
+        lea edi, [edx + eax]
+        add eax, esi
+        mov dword ptr [esp + 0x1c], eax
+        mov eax, dword ptr [ecx + 0xc]
+        mov ecx, dword ptr [ecx + 4]
+        add esi, eax
+        add eax, ecx
+        push eax
+        push edi
+        push ecx
+        push edx
+    L_441290:
+        mov dword ptr [esp + 0x28], edi
+        mov edi, dword ptr [esp + 0x3c]
+        push edi
+        mov dword ptr [esp + 0x38], esi
+        call dword ptr [mem_00925640]
+        cmp byte ptr [ebp + 0x88], 0
+        mov eax, dword ptr [ebp + 0x48]
+        lea ebx, [eax + 0x1b4]
+        je L_4412ba
+        mov ecx, dword ptr [ebp + 0x74]
+        jmp L_4412bd
+    L_4412ba:
+        mov ecx, dword ptr [ebp + 0x70]
+    L_4412bd:
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [eax + 0xd8]
+        push 0
+        push 1
+        mov dword ptr [esp + 0x34], edx
+        call ext_0066A180
+        mov esi, dword ptr [esp + 0x38]
+        push eax
+        push esi
+        mov ecx, ebx
+        call ext_0041A790
+        mov ecx, dword ptr [esp + 0x2c]
+        mov ebp, eax
+        call ext_0066A180
+        push eax
+        push esi
+        mov ecx, ebx
+        call ext_0041A830
+        mov ecx, dword ptr [esi + 4]
+        mov ebx, eax
+        push 3
+        lea eax, [esp + 0x14]
+        push eax
+        push ecx
+        call dword ptr [mem_009240D8]
+        push ebx
+        mov ecx, esi
+        call ext_006A61A8
+        push ebp
+        mov ecx, esi
+        call ext_006A610C
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret 0xc
+    }
+}
