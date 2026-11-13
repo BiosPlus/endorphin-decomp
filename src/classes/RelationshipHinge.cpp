@@ -334,3 +334,30 @@ extern "C" __declspec(naked) void __fastcall fn_00659090(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00658B00] RelationshipHinge::vfunc_7 (45 bytes)
+extern "C" void ext_007C9860(int);
+
+extern "C" __declspec(naked) void __fastcall fn_00658B00(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x64]
+        push eax
+        call ext_007D8700
+        push eax
+        call ext_007C9260
+        add esp, 8
+        test eax, eax
+        je loc_658B2B
+        mov ecx, dword ptr [esi + 0x64]
+        push ecx
+        call ext_007D8700
+        push eax
+        call ext_007C9860
+        add esp, 8
+    loc_658B2B:
+        pop esi
+        ret
+    }
+}
