@@ -5343,3 +5343,105 @@ extern "C" __declspec(naked) void __fastcall fn_00472C90(void* self) {
         ret
     }
 }
+
+// [0x00472F70] sub_00472F70 (240 bytes)
+// try { sub_00472350(this); if (!this->f30) sub_00472420(this);
+//       this->f30->vfunc_0x1d8(); sub_0065C640(tmp); this->f0xcc(3); }
+// catch (...) { std::cout << "..." << ... << std::endl; }
+// Naked: the SEH frame (handler 0x882f18, try level -1) and the catch funclet are
+// written out by hand; the catch funclet returns the continuation 0x473014.
+extern "C" void ext_00435D00();
+extern "C" void ext_00472350();
+extern "C" void ext_00472420();
+extern "C" void ext_00472BA0();
+extern "C" void ext_0059C770();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" void ext_0065D120();
+extern "C" int mem_00924E90;
+extern "C" int mem_00924E94;
+extern "C" int mem_00924E98;
+extern "C" int mem_00924FA0;
+
+extern "C" __declspec(naked) void __fastcall fn_00472F70(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -0x1
+        push 0x00882f18
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x10
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        call ext_00472350
+        xor ebx, ebx
+        cmp dword ptr [esi + 0x30], ebx
+        jne have_obj
+        mov ecx, esi
+        call ext_00472420
+    have_obj:
+        mov ecx, dword ptr [esi + 0x30]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        call edx
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [ebp - 0x18], edi
+        call ext_0065C640
+        mov ecx, dword ptr [esi + 0xcc]
+        mov dword ptr [ebp - 0x4], ebx
+        push 0x3
+        mov byte ptr [ebp - 0x4], 0x1
+        call ext_0059C770
+        mov dword ptr [ebp - 0x4], ebx
+        jmp after_catch
+    catch_funclet:
+        mov eax, dword ptr [mem_00924E90]
+        mov ecx, dword ptr [ebp - 0x1c]
+        mov edx, dword ptr [mem_00924FA0]
+        push eax
+        add ecx, 0xc
+        push ecx
+        push 0x0093bd18
+        push edx
+        call ext_00435D00
+        add esp, 0x8
+        push eax
+        call dword ptr [mem_00924E94]
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov eax, 0x00473014
+        ret
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp - 0x18]
+        xor ebx, ebx
+    after_catch:
+        mov ecx, dword ptr [esi + 0xf8]
+        call ext_0065D120
+        mov ecx, esi
+        call ext_00472BA0
+        mov ecx, dword ptr [esi + 0x30]
+        mov byte ptr [esi + 0x293], bl
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x154]
+        call edx
+        mov ecx, edi
+        mov dword ptr [ebp - 0x4], -0x1
+        call ext_0065C650
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
