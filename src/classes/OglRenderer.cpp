@@ -573,3 +573,11 @@ extern "C" void __fastcall fn_00533CC0(void* self, int edx_unused, void* a1) {
     typedef unsigned char (__thiscall* VFunc49)(void*);
     *((unsigned char*)a1 + 0x8c) = (*(VFunc49**)self)[0xc4 / 4](self);
 }
+
+// [0x00533C90] OglRenderer::vfunc_83 (42 bytes)
+extern "C" void ext_00541C20();
+extern "C" void __fastcall fn_00533C90(void* self, int edx_unused, void* a1) {
+    ((void (__thiscall*)(void*, void*))ext_00541C20)((char*)self + 0x9c, a1);
+    typedef void (__thiscall* VFunc10)(void*, unsigned int);
+    (*(VFunc10**)self)[0x28 / 4](self, (unsigned int)*((unsigned char*)a1 + 0x8c));
+}
