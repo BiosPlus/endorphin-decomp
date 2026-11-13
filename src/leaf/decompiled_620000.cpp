@@ -6181,3 +6181,23 @@ extern "C" __declspec(naked) void __fastcall fn_0062A4F0(void* self) {
         ret
     }
 }
+
+// [0x0062A520] sub_0062A520 (35 bytes)
+extern "C" void ext_0062A460();
+extern "C" void ext_0062A350();
+extern "C" __declspec(naked) void __fastcall fn_0062A520(void* self) {
+    __asm {
+        push ecx
+        lea eax, [esp]
+        push 0
+        push eax
+        call ext_006798D0
+        mov ecx, eax
+        call ext_0062A460
+        push offset mem_00978A24
+        lea ecx, [esp + 4]
+        call ext_0062A350
+        pop ecx
+        ret
+    }
+}
