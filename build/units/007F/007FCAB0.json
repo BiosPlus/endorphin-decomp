@@ -49,5 +49,7 @@
     "0x007FCE73",
     "0x007FCF27"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T14:12:44Z"
 }
