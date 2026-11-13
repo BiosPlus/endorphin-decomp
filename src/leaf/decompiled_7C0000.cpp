@@ -7203,3 +7203,188 @@ extern "C" __declspec(naked) void __cdecl fn_007CAD50(unsigned char* a, float* m
         ret
     }
 }
+
+// [0x007CC220] sub_007CC220 (423 bytes)
+extern "C" void ext_007CA280();
+extern "C" void ext_007CB8D0();
+extern "C" void ext_007D48A0();
+extern "C" float mem_0093C1A8;
+extern "C" float mem_0099D148;
+extern "C" int mem_0099DCA0;
+extern "C" int mem_0099DC98;
+
+extern "C" __declspec(naked) int __cdecl fn_007CC220(void* a1, void* a2) {
+    __asm {
+        sub esp, 0x18
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        push edi
+        call ext_007D48A0
+        fld dword ptr [mem_0093C1A8]
+        fst dword ptr [edi + 0x8]
+        lea edx, [edi + 0x8]
+        fst dword ptr [edx + 0x4]
+        lea ebx, [edi + 0x14]
+        fst dword ptr [edx + 0x8]
+        mov ecx, eax
+        fld dword ptr [mem_0099D148]
+        add esp, 0x4
+        fst dword ptr [ebx]
+        fst dword ptr [ebx + 0x4]
+        fst dword ptr [ebx + 0x8]
+        fld dword ptr [ecx + 0x20]
+        fld qword ptr [mem_0099DCA0]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        fld qword ptr [mem_0099DC98]
+        jp c220_L278
+        fld dword ptr [ecx + 0x30]
+        fstp dword ptr [ebx]
+        jmp c220_L2D9
+c220_L278:
+        fld dword ptr [ecx + 0x20]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp c220_L28B
+        fld dword ptr [ecx + 0x30]
+        fstp dword ptr [edx]
+        jmp c220_L2D9
+c220_L28B:
+        fld dword ptr [ecx + 0x24]
+        fcomp st(2)
+        fnstsw ax
+        test ah, 0x41
+        jne c220_L29F
+        fld dword ptr [ecx + 0x34]
+        fstp dword ptr [edi + 0x18]
+        jmp c220_L2D9
+c220_L29F:
+        fld dword ptr [ecx + 0x24]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp c220_L2B3
+        fld dword ptr [ecx + 0x34]
+        fstp dword ptr [edi + 0xc]
+        jmp c220_L2D9
+c220_L2B3:
+        fld dword ptr [ecx + 0x28]
+        fcomp st(2)
+        fnstsw ax
+        test ah, 0x41
+        jne c220_L2C7
+        fld dword ptr [ecx + 0x38]
+        fstp dword ptr [edi + 0x1c]
+        jmp c220_L2D9
+c220_L2C7:
+        fld dword ptr [ecx + 0x28]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp c220_L2D9
+        fld dword ptr [ecx + 0x38]
+        fstp dword ptr [edi + 0x10]
+c220_L2D9:
+        mov ecx, dword ptr [esp + 0x28]
+        test ecx, ecx
+        je c220_L3B4
+        fxch st(3)
+        fst dword ptr [esp + 0x8]
+        fst dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x10]
+        fxch st(1)
+        fst dword ptr [esp + 0x14]
+        fst dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [ecx + 0x20]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne c220_L31A
+        fstp st(0)
+        fstp st(0)
+        fld dword ptr [ecx + 0x30]
+        fstp dword ptr [esp + 0x14]
+        jmp c220_L38F
+c220_L31A:
+        fld dword ptr [ecx + 0x20]
+        fcomp st(2)
+        fnstsw ax
+        test ah, 0x5
+        jp c220_L333
+        fstp st(0)
+        fstp st(0)
+        fld dword ptr [ecx + 0x30]
+        fstp dword ptr [esp + 0x8]
+        jmp c220_L38F
+c220_L333:
+        fld dword ptr [ecx + 0x24]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne c220_L34C
+        fstp st(0)
+        fstp st(0)
+        fld dword ptr [ecx + 0x34]
+        fstp dword ptr [esp + 0x18]
+        jmp c220_L38F
+c220_L34C:
+        fld dword ptr [ecx + 0x24]
+        fcomp st(2)
+        fnstsw ax
+        test ah, 0x5
+        jp c220_L365
+        fstp st(0)
+        fstp st(0)
+        fld dword ptr [ecx + 0x34]
+        fstp dword ptr [esp + 0xc]
+        jmp c220_L38F
+c220_L365:
+        fld dword ptr [ecx + 0x28]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne c220_L37C
+        fstp st(0)
+        fld dword ptr [ecx + 0x38]
+        fstp dword ptr [esp + 0x1c]
+        jmp c220_L38F
+c220_L37C:
+        fld dword ptr [ecx + 0x28]
+        fcompp
+        fnstsw ax
+        test ah, 0x5
+        jp c220_L38F
+        fld dword ptr [ecx + 0x38]
+        fstp dword ptr [esp + 0x10]
+c220_L38F:
+        push esi
+        lea ecx, [esp + 0xc]
+        mov esi, edx
+        call ext_007CA280
+        lea ecx, [esp + 0x18]
+        mov edx, ebx
+        mov esi, ebx
+        call ext_007CB8D0
+        pop esi
+        pop edi
+        mov eax, 1
+        pop ebx
+        add esp, 0x18
+        ret
+c220_L3B4:
+        fstp st(3)
+        pop edi
+        fstp st(1)
+        mov eax, 1
+        fstp st(0)
+        pop ebx
+        fstp st(0)
+        add esp, 0x18
+        ret
+    }
+}
