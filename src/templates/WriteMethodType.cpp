@@ -10910,3 +10910,53 @@ extern "C" void __fastcall fn_0066C920(void* self, void* edx_unused, void** a1, 
     int r = ((VFn)(*(void***)p)[5])(p, a2);
     ((ExtFn)ext_0067BD80)(obj, r);
 }
+
+// [0x0066C950] ExprParser::WriteMethodType<NM::Vector3, NM::Vector3 const &, &public: void __thiscall NM::Vector3::convertTSAtoTS(class NM::Vector3 const &)>::vfunc_48 (110 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0066C950(void* self, int edx_unused, void** a1, void** a2, void* a3) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        push edi
+        mov edi, dword ptr [eax]
+        mov eax, dword ptr [edx + 0x14]
+        push esi
+        mov dword ptr [esp + 0xc], 0
+        call eax
+        push eax
+        mov ecx, edi
+        call ext_0067BD80
+        cmp dword ptr [esi + 0x4], 0
+        lea eax, [esp + 0x14]
+        je L_else_0066C950
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push esi
+        push eax
+        call edx
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi + 0x4]
+        pop edi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0xc
+    L_else_0066C950:
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x14], 0
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
