@@ -192,3 +192,45 @@ extern "C" __declspec(naked) void __fastcall fn_005DCB00(void* self) {
         ret
     }
 }
+
+// [0x005CFE70] NMData::CameraData::vfunc_2 (78 bytes)
+extern "C" void ext_005CFD60();
+extern "C" void ext_006721F0();
+extern "C" void ext_0058A370();
+
+extern "C" __declspec(naked) void* __fastcall fn_005CFE70(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push edi
+        mov esi, ecx
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_005CFD60
+        cmp eax, 0x3
+        je L_fallback
+        lea eax, [esi + eax*8 + 0x264]
+        mov esi, dword ptr [esp + 0x10]
+        push eax
+        push esi
+        call ext_006721F0
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_fallback:
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push edi
+        mov ecx, esi
+        call ext_0058A370
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
