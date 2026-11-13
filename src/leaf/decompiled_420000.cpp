@@ -4998,3 +4998,254 @@ extern "C" __declspec(naked) void __fastcall fn_00420A90(void* self) {
         ret	0x4
     }
 }
+
+// [0x0042FFE0] sub_0042FFE0 (640 bytes)
+extern "C" void ext_006A6004();
+extern "C" int mem_00924100;
+extern "C" int mem_00924094;
+extern "C" int mem_00925658;
+extern "C" int mem_009240B8;
+extern "C" int mem_00924098;
+extern "C" int mem_009241F0;
+extern "C" int mem_00925620;
+extern "C" int mem_00924104;
+extern "C" int mem_009241F4;
+extern "C" int mem_009241E8;
+
+extern "C" __declspec(naked) void __fastcall fn_0042FFE0(void* self, int edx_unused, int a1, void* a2, void* a3) {
+    __asm {
+        sub esp, 0x4c
+        push ebx
+        mov ebx, dword ptr [esp + 0x58]
+        cmp ebx, 3
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x10], esi
+        jne L_entry_ok
+        pop esi
+        xor eax, eax
+        pop ebx
+        add esp, 0x4c
+        ret 0xc
+L_entry_ok:
+        mov eax, dword ptr [esp + 0x60]
+        push edi
+        xor edi, edi
+        cmp eax, edi
+        je L_stock
+        mov eax, dword ptr [eax + 0x4]
+        cmp eax, edi
+        mov dword ptr [esp + 0x64], eax
+        jne L_have_obj
+L_stock:
+        push 0xf
+        call dword ptr [mem_00924100]
+        mov dword ptr [esp + 0x64], eax
+L_have_obj:
+        mov ecx, dword ptr [esp + 0x5c]
+        mov edx, dword ptr [ecx + 0x4]
+        lea eax, [esp + 0x18]
+        push eax
+        push 0x18
+        push edx
+        call dword ptr [mem_00924094]
+        mov edx, dword ptr [esp + 0x2a]
+        imul edx, dword ptr [esp + 0x28]
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x34], eax
+        mov eax, 1
+        mov dword ptr [esp + 0x38], ecx
+        mov cl, dl
+        mov word ptr [esp + 0x3c], ax
+        shl eax, cl
+        mov dword ptr [esp + 0x30], 0x28
+        mov word ptr [esp + 0x3e], dx
+        mov dword ptr [esp + 0x40], ebx
+        cmp eax, 0x100
+        mov dword ptr [esp + 0x44], edi
+        mov dword ptr [esp + 0x48], edi
+        mov dword ptr [esp + 0x4c], edi
+        mov dword ptr [esp + 0x50], edi
+        mov dword ptr [esp + 0x54], edi
+        mov dword ptr [esp + 0xc], eax
+        jle L_size_ok
+        mov dword ptr [esp + 0xc], edi
+        mov eax, edi
+L_size_ok:
+        mov ebx, dword ptr [mem_00925658]
+        push ebp
+        lea ebp, [eax * 4 + 0x28]
+        mov eax, dword ptr [esi + 0x20]
+        push eax
+        call ebx
+        push eax
+        call ext_006A6004
+        mov ecx, dword ptr [esi + 0x20]
+        mov edi, eax
+        push ecx
+        mov dword ptr [esp + 0x18], edi
+        call ebx
+        push eax
+        call ext_006A6004
+        mov edx, dword ptr [esp + 0x68]
+        mov ebx, dword ptr [eax + 0x4]
+        push 0
+        push edx
+        push ebx
+        call dword ptr [mem_009240B8]
+        push ebx
+        mov dword ptr [esp + 0x6c], eax
+        call dword ptr [mem_00924098]
+        push ebp
+        push 0
+        call dword ptr [mem_009241F0]
+        mov ebp, eax
+        test ebp, ebp
+        push 0
+        jne L_alloc_ok
+        mov eax, dword ptr [esp + 0x6c]
+        push eax
+        push ebx
+        call dword ptr [mem_009240B8]
+        mov ecx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [esi + 0x20]
+        push ecx
+        push edx
+        call dword ptr [mem_00925620]
+        pop ebp
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        add esp, 0x4c
+        ret 0xc
+L_alloc_ok:
+        mov eax, dword ptr [esp + 0x64]
+        push ebp
+        push 0
+        mov ecx, 0xa
+        lea esi, [esp + 0x40]
+        mov edi, ebp
+        rep movsd
+        mov ecx, dword ptr [esp + 0x48]
+        mov eax, dword ptr [eax + 0x4]
+        push ecx
+        push 0
+        push eax
+        push ebx
+        call dword ptr [mem_00924104]
+        mov ecx, 0xa
+        mov esi, ebp
+        lea edi, [esp + 0x34]
+        rep movsd
+        mov eax, dword ptr [esp + 0x48]
+        test eax, eax
+        mov edi, dword ptr [esp + 0x3c]
+        jne L_pitch_done
+        mov eax, dword ptr [esp + 0x40]
+        shr eax, 0x10
+        imul eax, dword ptr [esp + 0x38]
+        add eax, 0x1f
+        and eax, -0x20
+        cdq
+        and edx, 0x7
+        add eax, edx
+        sar eax, 0x3
+        imul eax, edi
+        cmp dword ptr [esp + 0x64], 0
+        je L_pitch_done
+        lea edx, [eax + 2 * eax]
+        mov eax, edx
+        shr eax, 1
+L_pitch_done:
+        mov ecx, dword ptr [esp + 0x10]
+        lea ecx, [ecx * 4 + 0x28]
+        push 0x2
+        add ecx, eax
+        push ecx
+        push ebp
+        call dword ptr [mem_009241F4]
+        mov esi, eax
+        test esi, esi
+        je L_realloc_fail
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x60]
+        mov eax, dword ptr [eax + 0x4]
+        push 0
+        push esi
+        lea edx, [esi + ecx * 4]
+        add edx, dword ptr [esp + 0x3c]
+        push edx
+        push edi
+        push 0
+        push eax
+        push ebx
+        call dword ptr [mem_00924104]
+        test eax, eax
+        jne L_bits_ok
+        push esi
+        call dword ptr [mem_009241E8]
+        mov eax, dword ptr [esp + 0x68]
+        push 0
+        push eax
+        push ebx
+        call dword ptr [mem_009240B8]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [eax + 0x20]
+        push edx
+        push ecx
+        call dword ptr [mem_00925620]
+        pop ebp
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        add esp, 0x4c
+        ret 0xc
+L_bits_ok:
+        mov edx, dword ptr [esp + 0x68]
+        push 0
+        push edx
+        push ebx
+        call dword ptr [mem_009240B8]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [edx + 0x20]
+        push ecx
+        push eax
+        call dword ptr [mem_00925620]
+        pop ebp
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        add esp, 0x4c
+        ret 0xc
+L_realloc_fail:
+        push ebp
+        call dword ptr [mem_009241E8]
+        mov ecx, dword ptr [esp + 0x68]
+        push 0
+        push ecx
+        push ebx
+        call dword ptr [mem_009240B8]
+        mov edx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [edx + 0x4]
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [ecx + 0x20]
+        push eax
+        push edx
+        call dword ptr [mem_00925620]
+        pop ebp
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        add esp, 0x4c
+        ret 0xc
+    }
+}
