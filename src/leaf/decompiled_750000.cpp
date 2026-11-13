@@ -119,3 +119,26 @@ loc_75C835:
         ret
     }
 }
+
+// [0x0075B400] sub_0075B400 (47 bytes)
+extern "C" void ext_007275F0();
+extern "C" void ext_00727C80();
+extern "C" void ext_007283B0();
+extern "C" __declspec(naked) void __fastcall fn_0075B400(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx + 0xac]
+        add esi, 0x4
+        push 0xaacd0c
+        mov ecx, esi
+        call ext_007275F0
+        push 0xc2
+        mov ecx, esi
+        call ext_00727C80
+        mov ecx, esi
+        call ext_007283B0
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    }
+}
