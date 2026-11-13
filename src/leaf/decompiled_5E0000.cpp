@@ -4264,3 +4264,30 @@ extern "C" void __fastcall fn_005E2650(void* self, int edx_unused, float a1) {
     float v = ((FloatThisFloatFn005E2650)ext_006781B0)(reinterpret_cast<char*>(r) + 0x2e0, a1);
     ((VoidThisFloatFn005E2650)ext_005E2200)(self, v);
 }
+
+// [0x005E2240] sub_005E2240 (57 bytes)
+extern "C" void ext_005E1E10();
+extern "C" void ext_005E1F70();
+extern "C" __declspec(naked) void __fastcall fn_005E2240(void* self, int edx_unused, float a1) {
+    __asm {
+        sub esp, 0xc
+        fldz
+        push esi
+        fst dword ptr [esp + 0xc]
+        lea eax, [esp + 0x4]
+        fst dword ptr [esp + 0x8]
+        push eax
+        fstp dword ptr [esp + 0x8]
+        mov esi, ecx
+        call ext_005E1E10
+        fld dword ptr [esp + 0x14]
+        lea ecx, [esp + 0x4]
+        fstp dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        call ext_005E1F70
+        pop esi
+        add esp, 0xc
+        ret 4
+    }
+}
