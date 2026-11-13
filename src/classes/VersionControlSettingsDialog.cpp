@@ -32,3 +32,31 @@ extern "C" void __fastcall fn_004632B0(void* self) {
     *(int*)(*(char**)(p + 0x1c4) + 0x14) = r;
     ((void (__fastcall *)(void*))ext_006A5FB0)(self);
 }
+
+// [0x004630D0] VersionControlSettingsDialog::vfunc_84 (379 bytes)
+extern "C" void ext_006A5FC8();
+extern "C" int mem_00925694;
+
+extern "C" int __fastcall fn_004630D0(void* self) {
+    typedef int (__stdcall *SendMessageFn)(int, unsigned int, int, int);
+    char* p = (char*)self;
+    ((void (__fastcall *)(void*))ext_006A5FC8)(self);
+    SendMessageFn sendMsg = (SendMessageFn)mem_00925694;
+    sendMsg(*(int*)(p + 0x94), 0x143, 0, 0x9390b8);
+    sendMsg(*(int*)(p + 0x94), 0x143, 0, 0x93909c);
+    sendMsg(*(int*)(p + 0x94), 0x143, 0, 0x939088);
+    sendMsg(*(int*)(p + 0x94), 0x14e, *(int*)(*(char**)(p + 0x1c4) + 0x8), 0);
+    sendMsg(*(int*)(p + 0xe8), 0x143, 0, 0x939074);
+    sendMsg(*(int*)(p + 0xe8), 0x143, 0, 0x939058);
+    sendMsg(*(int*)(p + 0xe8), 0x143, 0, 0x939044);
+    sendMsg(*(int*)(p + 0xe8), 0x14e, *(int*)(*(char**)(p + 0x1c4) + 0xc), 0);
+    sendMsg(*(int*)(p + 0x13c), 0x143, 0, 0x939028);
+    sendMsg(*(int*)(p + 0x13c), 0x143, 0, 0x939004);
+    sendMsg(*(int*)(p + 0x13c), 0x143, 0, 0x938fe8);
+    sendMsg(*(int*)(p + 0x13c), 0x14e, *(int*)(*(char**)(p + 0x1c4) + 0x10), 0);
+    sendMsg(*(int*)(p + 0x190), 0x143, 0, 0x938fd4);
+    sendMsg(*(int*)(p + 0x190), 0x143, 0, 0x939058);
+    sendMsg(*(int*)(p + 0x190), 0x143, 0, 0x938fc0);
+    sendMsg(*(int*)(p + 0x190), 0x14e, *(int*)(*(char**)(p + 0x1c4) + 0x14), 0);
+    return 1;
+}
