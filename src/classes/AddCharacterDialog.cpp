@@ -103,3 +103,78 @@ extern "C" __declspec(naked) int __fastcall fn_0040CC60(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x0040D070] AddCharacterDialog::vfunc_90 (200 bytes)
+extern "C" void ext_0040C380();
+extern "C" void ext_0040C7F0();
+extern "C" void ext_0040CAA0();
+extern "C" void ext_006A5FDA();
+extern "C" int mem_00924FC8;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0040D070(void* self) {
+    __asm {
+        push -1
+        push 0x008B2AE2
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x38
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_0040CAA0
+        push 0
+        lea eax, [esp + 0x28]
+        push eax
+        mov ecx, esi
+        call ext_0040C7F0
+        push 1
+        lea ecx, [esp + 0x0C]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x50], 0
+        call ext_0040C7F0
+        mov ecx, esi
+        mov byte ptr [esp + 0x48], 1
+        call ext_0040C380
+        test al, al
+        je L_false
+        mov edi, dword ptr [mem_00924FC8]
+        lea edx, [esp + 0x24]
+        push 0x00928B5D
+        push edx
+        call edi
+        add esp, 8
+        test al, al
+        je L_false
+        lea eax, [esp + 8]
+        push 0x00928B5D
+        push eax
+        call edi
+        add esp, 8
+        test al, al
+        je L_false
+        mov al, 1
+        jmp L_done
+    L_false:
+        xor al, al
+    L_done:
+        movzx ecx, al
+        push ecx
+        lea ecx, [esi + 0x340]
+        call ext_006A5FDA
+        lea ecx, [esp + 8]
+        mov byte ptr [esp + 0x48], 0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x24]
+        mov dword ptr [esp + 0x48], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x40]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x44
+        ret
+    }
+}
