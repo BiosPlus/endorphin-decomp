@@ -49,3 +49,49 @@ extern "C" __declspec(naked) void __fastcall fn_005ACF80(void* self) {
         ret
     }
 }
+
+// [0x005ACF20] Commands::RemoveFluidObjectCommand::vfunc_1 (81 bytes)
+extern "C" void ext_00468180();
+extern "C" void ext_00468F70();
+extern "C" void ext_00528B60();
+extern "C" void ext_005BF5B0();
+
+extern "C" __declspec(naked) void __fastcall fn_005ACF20(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x14], 0
+        je done
+        mov eax, dword ptr [esi + 0x10]
+        test eax, eax
+        je done
+        push edi
+        push eax
+        call ext_00468180
+        mov ecx, eax
+        call ext_00468F70
+        mov edi, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [esi + 0x18]
+        cmp edi, ecx
+        je skip
+        test ecx, ecx
+        je skip
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+    skip:
+        mov dword ptr [esi + 0x18], edi
+        mov ecx, dword ptr [esi + 0x10]
+        add ecx, 0xc
+        call ext_00528B60
+        mov eax, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [esi + 0x14]
+        push eax
+        call ext_005BF5B0
+        pop edi
+    done:
+        pop esi
+        ret
+    }
+}
