@@ -5066,3 +5066,137 @@ extern "C" __declspec(naked) void __fastcall fn_00552A90(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x005542B0] sub_005542B0 (354 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005542B0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x68
+        mov eax, dword ptr [esp + 0x6c]
+        fldz
+        mov edx, ecx
+        push esi
+        mov esi, dword ptr [esp + 0x74]
+        push edi
+        mov ecx, 9
+        lea edi, [esp + 0x4c]
+        rep movsd
+        fst dword ptr [eax + 8]
+        fst dword ptr [eax + 4]
+        fst dword ptr [eax]
+        fst dword ptr [eax + 0x14]
+        fst dword ptr [eax + 0x10]
+        fst dword ptr [eax + 0xc]
+        fst dword ptr [eax + 0x20]
+        fst dword ptr [eax + 0x1c]
+        fstp dword ptr [eax + 0x18]
+        fld1
+        fst dword ptr [eax]
+        fst dword ptr [eax + 0x10]
+        mov ecx, 9
+        fstp dword ptr [eax + 0x20]
+        lea esi, [esp + 0x4c]
+        fld dword ptr [esp + 0x58]
+        lea edi, [esp + 0x28]
+        fld dword ptr [esp + 0x4c]
+        rep movsd
+        fld dword ptr [esp + 0x40]
+        fld dword ptr [edx + 4]
+        fmul st, st(3)
+        fld dword ptr [edx]
+        fmul st, st(3)
+        faddp st(1), st
+        fld dword ptr [edx + 8]
+        fmul st, st(2)
+        faddp st(1), st
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x5c]
+        fld dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x44]
+        fst qword ptr [esp + 0x10]
+        fld dword ptr [edx]
+        fmul st, st(2)
+        fld dword ptr [edx + 4]
+        fmul st, st(4)
+        faddp st(1), st
+        fld dword ptr [edx + 8]
+        fmulp st(2), st
+        faddp st(1), st
+        fstp dword ptr [eax + 4]
+        fld dword ptr [esp + 0x3c]
+        fst qword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x30]
+        fst qword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x6c]
+        fstp qword ptr [esp + 8]
+        fmul dword ptr [edx]
+        fld dword ptr [edx + 4]
+        fmulp st(2), st
+        faddp st(1), st
+        fld dword ptr [edx + 8]
+        fmul qword ptr [esp + 8]
+        faddp st(1), st
+        fstp dword ptr [eax + 8]
+        fld dword ptr [edx + 0x10]
+        fmul st, st(5)
+        fld dword ptr [edx + 0xc]
+        fmul st, st(5)
+        faddp st(1), st
+        fld dword ptr [edx + 0x14]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp dword ptr [eax + 0xc]
+        fld dword ptr [edx + 0x10]
+        fmul st, st(2)
+        fld dword ptr [edx + 0xc]
+        fmul st, st(2)
+        faddp st(1), st
+        fld dword ptr [edx + 0x14]
+        fmul qword ptr [esp + 0x10]
+        faddp st(1), st
+        pop edi
+        pop esi
+        fstp dword ptr [eax + 0x10]
+        fld dword ptr [edx + 0x10]
+        fmul qword ptr [esp + 0x10]
+        fld dword ptr [edx + 0xc]
+        fmul qword ptr [esp + 0x18]
+        faddp st(1), st
+        fld dword ptr [edx + 0x14]
+        fld qword ptr [esp]
+        fmul st(1), st
+        fxch st(2)
+        faddp st(1), st
+        fstp dword ptr [eax + 0x14]
+        fld dword ptr [edx + 0x1c]
+        fmulp st(6), st
+        fld dword ptr [edx + 0x18]
+        fmulp st(5), st
+        fxch st(5)
+        faddp st(4), st
+        fld dword ptr [edx + 0x20]
+        fmulp st(3), st
+        fxch st(3)
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [eax + 0x18]
+        fmul dword ptr [edx + 0x1c]
+        fld dword ptr [edx + 0x18]
+        fmulp st(2), st
+        faddp st(1), st
+        fld dword ptr [edx + 0x20]
+        fmul qword ptr [esp + 8]
+        faddp st(1), st
+        fstp dword ptr [eax + 0x1c]
+        fld dword ptr [edx + 0x1c]
+        fmul qword ptr [esp + 0x10]
+        fld dword ptr [edx + 0x18]
+        fmul qword ptr [esp + 0x18]
+        faddp st(1), st
+        fld dword ptr [edx + 0x20]
+        fmulp st(2), st
+        faddp st(1), st
+        fstp dword ptr [eax + 0x20]
+        add esp, 0x68
+        ret 8
+    }
+}

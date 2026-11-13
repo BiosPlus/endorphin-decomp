@@ -8,5 +8,7 @@
   "is_leaf": true,
   "is_thunk": false,
   "relocations": [],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-13T10:24:19Z"
 }
