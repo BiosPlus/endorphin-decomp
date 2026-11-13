@@ -7953,3 +7953,90 @@ L_has_result:
         ret
     }
 }
+
+// [0x007C7240] sub_007C7240 (203 bytes)
+extern "C" void* __cdecl ext_007D4A70(void*);
+extern "C" void* __cdecl ext_007D4AA0(void*, void*);
+extern "C" void __cdecl ext_007C9930(int);
+extern "C" void ext_007C6DB0();
+extern "C" void ext_007D6260();
+extern "C" void ext_007D5DD0();
+extern "C" int mem_00AB28BC;
+extern "C" __declspec(naked) void __cdecl fn_007C7240(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        lea ebp, [edi + 0x38]
+        push ebp
+        call ext_007D4A70
+        add esp, 0x4
+        test eax, eax
+        je L_second
+    L_loop1:
+        mov ebx, dword ptr [eax + 0x14]
+        push eax
+        push ebp
+        call ext_007D4AA0
+        push ebx
+        mov esi, eax
+        call ext_007C9930
+        add esp, 0xc
+        test esi, esi
+        mov eax, esi
+        jne L_loop1
+    L_second:
+        push edi
+        call ext_007D4A70
+        add esp, 0x4
+        test eax, eax
+        je L_rest
+    L_loop2:
+        mov ebx, dword ptr [eax + 0x14]
+        push eax
+        push edi
+        call ext_007D4AA0
+        push ebx
+        mov esi, eax
+        call ext_007C6DB0
+        add esp, 0xc
+        test esi, esi
+        mov eax, esi
+        jne L_loop2
+    L_rest:
+        lea eax, [edi + 0x134]
+        push eax
+        call ext_007D6260
+        lea ecx, [edi + 0x114]
+        push ecx
+        call dword ptr [mem_00AB28BC]
+        lea edx, [edi + 0x1bc]
+        push edx
+        call ext_007D6260
+        lea eax, [edi + 0x15c]
+        push eax
+        call dword ptr [mem_00AB28BC]
+        lea ecx, [edi + 0x19c]
+        push ecx
+        call ext_007D6260
+        lea edx, [edi + 0xa8]
+        push edx
+        call ext_007D6260
+        lea eax, [edi + 0xc8]
+        push eax
+        call ext_007D6260
+        lea ecx, [edi + 0xe8]
+        push ecx
+        call ext_007D6260
+        push edi
+        call ext_007D5DD0
+        add esp, 0x24
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
