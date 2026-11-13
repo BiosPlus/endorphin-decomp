@@ -3076,3 +3076,25 @@ extern "C" __declspec(naked) void __cdecl fn_004CA2B0(void* a1) {
         ret
     }
 }
+
+// [0x004CE540] sub_004CE540 (38 bytes)
+extern "C" void ext_004CD940();
+extern "C" void ext_004CE420();
+extern "C" int mem_0093E1B8;
+extern "C" int mem_00A9F788;
+extern "C" __declspec(naked) void __cdecl fn_004CE540(void* a1) {
+    __asm {
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x8]
+        push    offset mem_0093E1B8
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    ext_004CE420
+        mov     ecx, dword ptr [mem_00A9F788]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_004CD940
+        pop     ecx
+        ret
+    }
+}
