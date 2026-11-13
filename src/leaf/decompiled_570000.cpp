@@ -7902,3 +7902,43 @@ extern "C" __declspec(naked) void* __fastcall fn_0057E960(void* self, int edx_un
         ret 0Ch
     }
 }
+
+extern "C" void ext_004AFF30();
+// [0x00573390] sub_00573390 (63 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00573390(char* begin, char* end, const char* src) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0Ch]
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        cmp esi, ebp
+        je L_done
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 1Ch]
+        sub edi, esi
+    L_outer:
+        mov ebx, 3
+        jmp L_inner
+        _emit 0x8D
+        _emit 0x49
+        _emit 0x00
+    L_inner:
+        lea eax, [edi + esi]
+        push eax
+        mov ecx, esi
+        call ext_004AFF30
+        add esi, 10h
+        sub ebx, 1
+        jne L_inner
+        sub edi, 30h
+        cmp esi, ebp
+        jne L_outer
+        pop edi
+        pop ebx
+    L_done:
+        pop esi
+        pop ebp
+        ret
+    }
+}
