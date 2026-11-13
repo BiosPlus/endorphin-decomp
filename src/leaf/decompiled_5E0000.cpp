@@ -4208,3 +4208,18 @@ L_12C2:
         ret 0x4
     }
 }
+
+// [0x005E25E0] sub_005E25E0 (50 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_005E1B20();
+extern "C" void ext_006781B0();
+
+typedef void*  (__cdecl    *GetPtrFn005E25E0)();
+typedef float  (__thiscall *FloatThisFloatFn005E25E0)(void* ecx_this, float a);
+typedef void   (__thiscall *VoidThisFloatFn005E25E0)(void* ecx_this, float a);
+
+extern "C" void __fastcall fn_005E25E0(void* self, int edx_unused, float a1) {
+    void* r = ((GetPtrFn005E25E0)ext_00594000)();
+    float v = ((FloatThisFloatFn005E25E0)ext_006781B0)(reinterpret_cast<char*>(r) + 0x2e0, a1);
+    ((VoidThisFloatFn005E25E0)ext_005E1B20)(self, v);
+}
