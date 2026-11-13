@@ -176,3 +176,32 @@ extern "C" __declspec(naked) void __fastcall fn_004EC6B0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00692F10] CharacterSelection::vfunc_10 (50 bytes)
+// Stack arg a1 (ret 4). p = __RTDynamicCast(a1, 0, 0xA2E2F8, 0xA398D0, 0).
+// If p != null: sub_00490C80(this + 8, p + 8).
+extern "C" void ext_00490C80();
+extern "C" void ext_006A6E9E();
+extern "C" __declspec(naked) void __fastcall fn_00692F10(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push 0
+        push 0A398D0h
+        push 0A2E2F8h
+        push 0
+        push eax
+        mov esi, ecx
+        call ext_006A6E9E
+        add esp, 0x14
+        test eax, eax
+        je done_00692F10
+        add eax, 8
+        push eax
+        lea ecx, [esi + 8]
+        call ext_00490C80
+done_00692F10:
+        pop esi
+        ret 4
+    }
+}
