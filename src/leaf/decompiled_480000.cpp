@@ -4317,3 +4317,206 @@ extern "C" __declspec(naked) void* __fastcall fn_00487C50(void* self) {
         ret
     }
 }
+
+// [0x00489AE0] sub_00489AE0 (436 bytes)
+// MSVC 2005 std::_Unguarded_partition over std::string elements (28-byte stride).
+// Args: (pair* out, string* first, string* last), cdecl; pair returned via out.
+extern "C" void ext_00489950();
+extern "C" int mem_00924EF4;
+extern "C" int mem_00924FBC;
+
+extern "C" __declspec(naked) void __cdecl fn_00489AE0(void* out, void* first, void* last) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        mov ecx, edi
+        sub ecx, ebx
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cdq
+        sub eax, edx
+        sar eax, 1
+        lea ecx, [8*eax]
+        sub ecx, eax
+        lea edx, [edi - 0x1c]
+        push edx
+        lea esi, [ebx + 4*ecx]
+        push esi
+        push ebx
+        call ext_00489950
+        add esp, 0xc
+        cmp ebx, esi
+        lea ebp, [esi + 0x1c]
+        jae L_s2
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_s1:
+        lea edi, [esi - 0x1c]
+        push esi
+        push edi
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne L_s1x
+        push edi
+        push esi
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne L_s1x
+        mov esi, edi
+        cmp ebx, esi
+        jb L_s1
+    L_s1x:
+        mov edi, dword ptr [esp + 0x20]
+    L_s2:
+        cmp ebp, edi
+        jae L_p1
+        _emit 0x90
+    L_s2l:
+        mov ebx, dword ptr [mem_00924EF4]
+        push esi
+        push ebp
+        call ebx
+        add esp, 0x8
+        test al, al
+        jne L_p1
+        push ebp
+        push esi
+        call ebx
+        add esp, 0x8
+        test al, al
+        jne L_p1
+        add ebp, 0x1c
+        cmp ebp, edi
+        jb L_s2l
+    L_p1:
+        mov ebx, esi
+        mov edi, ebp
+        mov dword ptr [esp + 0x10], ebx
+        jmp L_top
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_top:
+        cmp edi, dword ptr [esp + 0x20]
+        jae L_after
+    L_body:
+        push edi
+        push esi
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne L_gnext
+        push esi
+        push edi
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne L_after
+        mov ecx, ebp
+        push edi
+        add ebp, 0x1c
+        call dword ptr [mem_00924FBC]
+    L_gnext:
+        add edi, 0x1c
+        cmp edi, dword ptr [esp + 0x20]
+        jb L_body
+    L_after:
+        cmp ebx, dword ptr [esp + 0x1c]
+        jbe L_jne
+        add ebx, -0x1c
+    L_gl:
+        push esi
+        push ebx
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne L_gldec
+        push ebx
+        push esi
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne L_glbrk
+        sub esi, 0x1c
+        push ebx
+        mov ecx, esi
+        call dword ptr [mem_00924FBC]
+    L_gldec:
+        mov eax, dword ptr [esp + 0x10]
+        sub eax, 0x1c
+        sub ebx, 0x1c
+        cmp dword ptr [esp + 0x1c], eax
+        mov dword ptr [esp + 0x10], eax
+        jb L_gl
+    L_glbrk:
+        mov ebx, dword ptr [esp + 0x10]
+        cmp ebx, dword ptr [esp + 0x1c]
+    L_jne:
+        jne L_notfirst
+        cmp edi, dword ptr [esp + 0x20]
+        je L_ret
+        cmp ebp, edi
+        je L_ns1
+        push ebp
+        mov ecx, esi
+        call dword ptr [mem_00924FBC]
+    L_ns1:
+        mov eax, edi
+        mov ecx, esi
+        push eax
+        add ebp, 0x1c
+        add esi, 0x1c
+        add edi, 0x1c
+        call dword ptr [mem_00924FBC]
+        jmp L_top
+    L_notfirst:
+        sub ebx, 0x1c
+        cmp edi, dword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x10], ebx
+        jne L_else
+        sub esi, 0x1c
+        cmp ebx, esi
+        je L_ns2
+        push esi
+        mov ecx, ebx
+        call dword ptr [mem_00924FBC]
+    L_ns2:
+        sub ebp, 0x1c
+        push ebp
+        mov ecx, esi
+        call dword ptr [mem_00924FBC]
+        jmp L_top
+    L_else:
+        push ebx
+        mov ecx, edi
+        call dword ptr [mem_00924FBC]
+        add edi, 0x1c
+        jmp L_top
+    L_ret:
+        mov eax, dword ptr [esp + 0x18]
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        mov dword ptr [eax + 0x4], ebp
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
