@@ -7553,3 +7553,36 @@ L_b86:
         ret
     }
 }
+
+// [0x0040D6A0] sub_0040D6A0 (58 bytes)
+extern "C" void ext_0040AE20();
+extern "C" void ext_0040B6B0();
+extern "C" void ext_0040BC70();
+extern "C" __declspec(naked) void __fastcall fn_0040D6A0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_0040B6B0
+        test al, al
+        je short L_0040D6B9
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
+L_0040D6B9:
+        push edi
+        lea ecx, [esi + 0x340]
+        call dword ptr [mem_00924FDC]
+        mov ecx, esi
+        call ext_0040BC70
+        push edi
+        mov ecx, esi
+        call ext_0040AE20
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
