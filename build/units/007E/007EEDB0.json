@@ -33,5 +33,7 @@
     "0x007EEF53",
     "0x007EF008"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T14:15:22Z"
 }
