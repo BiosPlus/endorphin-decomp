@@ -5750,3 +5750,168 @@ L_done_00658D50:
         ret
     }
 }
+
+// [0x00659EC0] sub_00659EC0 (432 bytes)
+extern "C" void ext_00401000();
+extern "C" void ext_0044CCC0();
+extern "C" void ext_007C6780();
+extern "C" void ext_007C9300();
+extern "C" void ext_007C93A0();
+extern "C" void ext_007C93E0();
+extern "C" void ext_007C9480();
+extern "C" void ext_007C9490();
+extern "C" void ext_007C9550();
+extern "C" void ext_007D8700();
+
+extern "C" __declspec(naked) void __fastcall fn_00659EC0(void* self) {
+    __asm {
+        sub esp, 0x48
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x70]
+        test eax, eax
+        je L_exit
+        push eax
+        call ext_007C6780
+        add esp, 4
+        cmp eax, dword ptr [edi + 0x74]
+        je L_exit
+        mov eax, dword ptr [edi + 0x6c]
+        push ebx
+        push esi
+        push eax
+        call ext_007D8700
+        mov esi, eax
+        push 0
+        push esi
+        call ext_007C9300
+        add esp, 0xc
+        push offset ext_0044CCC0
+        push 2
+        push 0xc
+        lea ecx, [esp + 0x30]
+        push ecx
+        mov ebx, eax
+        call ext_00401000
+        push offset ext_0044CCC0
+        push 2
+        push 0xc
+        lea edx, [esp + 0x48]
+        push edx
+        call ext_00401000
+        fldz
+        lea eax, [esp + 0x30]
+        fst dword ptr [esp + 0x14]
+        push eax
+        fst dword ptr [esp + 0x14]
+        lea ecx, [esp + 0x28]
+        fst dword ptr [esp + 0x10]
+        push ecx
+        fst dword ptr [esp + 0x28]
+        push 0
+        fst dword ptr [esp + 0x28]
+        push esi
+        fstp dword ptr [esp + 0x28]
+        call ext_007C93E0
+        lea edx, [esp + 0x1c]
+        push edx
+        push 0
+        push esi
+        call ext_007C93A0
+        lea eax, [esp + 0x64]
+        push eax
+        lea ecx, [esp + 0x5c]
+        push ecx
+        push 1
+        push esi
+        call ext_007C93E0
+        lea edx, [esp + 0x44]
+        push edx
+        push 1
+        push esi
+        call ext_007C93A0
+        mov eax, dword ptr [edi + 0x70]
+        push eax
+        call ext_007C6780
+        add esp, 0x3c
+        test eax, eax
+        mov dword ptr [edi + 0x74], eax
+        je L_zero
+        mov ecx, dword ptr [edi + 0x70]
+        mov edx, dword ptr [edi + 0x6c]
+        push ecx
+        push ebx
+        push edx
+        jmp L_call
+    L_zero:
+        mov eax, dword ptr [edi + 0x6c]
+        push 0
+        push ebx
+        push eax
+    L_call:
+        call ext_007D8700
+        add esp, 4
+        push eax
+        call ext_007C9480
+        fld dword ptr [esp + 0x44]
+        add esp, 0xc
+        sub esp, 0x18
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x4c]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x48]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x44]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 0x40]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp]
+        push 0
+        push esi
+        call ext_007C9550
+        fld dword ptr [esp + 0x34]
+        add esp, 0x14
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [esp]
+        push 0
+        push esi
+        call ext_007C9490
+        fld dword ptr [esp + 0x64]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x60]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 0x54]
+        fstp dword ptr [esp]
+        push ecx
+        fld dword ptr [esp + 0x54]
+        fstp dword ptr [esp]
+        push 1
+        push esi
+        call ext_007C9550
+        fld dword ptr [esp + 0x40]
+        add esp, 0x14
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 0x28]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        push 1
+        push esi
+        call ext_007C9490
+        add esp, 0x14
+        pop esi
+        pop ebx
+    L_exit:
+        pop edi
+        add esp, 0x48
+        ret
+    }
+}
