@@ -11376,3 +11376,93 @@ extern "C" __declspec(naked) void __fastcall fn_0067E820(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_004875A0();
+extern "C" int mem_0092C510;
+extern "C" int mem_009548F0;
+
+// [0x0067E6C0] sub_0067E6C0 (231 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0067E6C0(void* self, int edx_unused, const float* q) {
+    __asm {
+        sub esp, 0x80
+        mov eax, dword ptr [esp + 0x84]
+        fldz
+        fst dword ptr [esp + 0xc]
+        push esi
+        fst dword ptr [esp + 0x20]
+        push edi
+        fstp dword ptr [esp + 0x34]
+        mov edi, ecx
+        fld dword ptr [eax]
+        lea ecx, [esp + 0x48]
+        fld qword ptr [mem_0092C510]
+        fmul st(1), st
+        fld dword ptr [eax]
+        fmulp st(2), st
+        fld1
+        fld st(0)
+        fsubrp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fld qword ptr [mem_009548F0]
+        fmul st(1), st
+        fld dword ptr [eax]
+        fmul st, st(2)
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x8]
+        fmul st, st(1)
+        fld dword ptr [eax]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [eax]
+        fmulp st(2), st
+        fld dword ptr [eax + 0x4]
+        fmul st, st(2)
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [eax + 0x4]
+        fmul st, st(4)
+        fmul dword ptr [eax + 0x4]
+        fsubr st, st(5)
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [eax + 0x4]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [eax + 0x8]
+        fmul st, st(2)
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [eax + 0x8]
+        fmul st, st(3)
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [eax + 0x8]
+        fmulp st(4), st
+        fld dword ptr [eax + 0x8]
+        fmulp st(4), st
+        fxch st(4)
+        fsubrp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [eax + 0xc]
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x38]
+        fmul dword ptr [eax + 0xc]
+        fstp dword ptr [esp + 0x3c]
+        fmul dword ptr [eax + 0xc]
+        lea eax, [esp + 0x8]
+        push eax
+        push ecx
+        fstp dword ptr [esp + 0x48]
+        mov ecx, edi
+        fld1
+        fstp dword ptr [esp + 0x4c]
+        call ext_004875A0
+        mov ecx, 0x10
+        mov esi, eax
+        rep movsd
+        pop edi
+        pop esi
+        add esp, 0x80
+        ret 0x4
+    }
+}
