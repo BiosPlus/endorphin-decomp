@@ -2137,6 +2137,8 @@ extern "C" __declspec(naked) void* __fastcall fn_0058F200(void* self) {
 }
 
 // [0x00587DF0] sub_00587DF0 (59 bytes)
+#include <new>
+
 extern "C" void ext_0058F200();
 extern "C" void* __fastcall fn_00587DF0(void* self) {
     ((void(__fastcall*)(void*))ext_0058F200)(self);
@@ -2159,4 +2161,36 @@ extern "C" void* __fastcall fn_00587EA0(void* self) {
     *(unsigned int*)((char*)self + 0xc) = 0x95af4c;
     *(volatile unsigned int*)((char*)self + 0x150) = 0x95af34;
     return self;
+}
+
+// [0x00587EE0] sub_00587EE0 (129 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00587EE0(void* self) {
+    __asm {
+        push -1
+        push 0x8a2518
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        call ext_0058F200
+        mov dword ptr [esi + 0x150], 0x928eac
+        lea ecx, [esi + 0x154]
+        mov dword ptr [esp + 0x10], 0x0
+        mov dword ptr [esi], 0x95b204
+        mov dword ptr [esi + 0x4], 0x95b1bc
+        mov dword ptr [esi + 0x8], 0x95b17c
+        mov dword ptr [esi + 0xc], 0x95b12c
+        mov dword ptr [esi + 0x150], 0x95b114
+        call dword ptr [mem_00924FE8]
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [esi + 0x174], 0x0
+        mov eax, esi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
 }
