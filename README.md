@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11793 / 24049` (**49.04%**) — `8701` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1045350 / 4496005 bytes` (**23.25%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11794 / 24049` (**49.04%**) — `8702` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1045463 / 4496005 bytes` (**23.25%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -18,7 +18,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P20-30 (32-48B)** | 1244 / 2405 | 51.73% | 48485 / 97731 | 49.61% | 1161 fn |
 | **P30-40 (48-71B)** | 1027 / 2405 | 42.70% | 61099 / 144549 | 42.27% | 1378 fn |
 | **P40-50 (71-91B)** | 1127 / 2405 | 46.86% | 93967 / 194373 | 48.34% | 1278 fn |
-| **P50-60 (91-122B)** | 1266 / 2405 | 52.64% | 136484 / 256906 | 53.13% | 1139 fn |
+| **P50-60 (91-122B)** | 1267 / 2405 | 52.68% | 136597 / 256906 | 53.17% | 1138 fn |
 | **P60-70 (122-159B)** | 981 / 2405 | 40.79% | 132147 / 339038 | 38.98% | 1424 fn |
 | **P70-80 (159-178B)** | 252 / 2405 | 10.48% | 42446 / 400567 | 10.60% | 2153 fn |
 | **P80-90 (178-335B)** | 845 / 2405 | 35.14% | 202656 / 583211 | 34.75% | 1560 fn |
@@ -29,7 +29,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6748 | 515897 | 77.55% |
-| `claude-haiku-5.5@low` | 661 | 175274 | 7.60% |
+| `claude-haiku-5.5@low` | 662 | 175387 | 7.61% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.14% |
 | `gemini-3.8-flash@low` | 366 | 101828 | 4.21% |
 | `gemini-4-hydrogen@low` | 273 | 102782 | 3.14% |
