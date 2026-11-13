@@ -2727,3 +2727,16 @@ extern "C" __declspec(naked) void* __fastcall fn_00610B70(void* self, int edx_un
         ret 4
     }
 }
+
+extern "C" void ext_00594000();
+extern "C" void ext_005B5990();
+extern "C" void ext_00612370();
+extern "C" void ext_006781B0();
+
+// [0x006124D0] sub_006124D0 (62 bytes)
+extern "C" void __fastcall fn_006124D0(void* self, int edx_unused, float a1) {
+    char* r = ((char* (__cdecl*)())ext_00594000)();
+    a1 = ((float (__thiscall*)(void*, float))ext_006781B0)(r + 0x2e0, a1);
+    ((void (__thiscall*)(void*, float))ext_00612370)(self, a1);
+    ((void (__thiscall*)(void*, void*))ext_005B5990)((char*)self + 0x54, (char*)self + 0x8);
+}
