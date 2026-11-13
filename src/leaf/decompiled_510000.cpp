@@ -6853,3 +6853,35 @@ extern "C" void* __cdecl fn_0051DFC0(const char* first, const char* last, char* 
     }
     return dest;
 }
+
+// [0x0051F6F0] sub_0051F6F0 (56 bytes)
+extern "C" void ext_0051F570();
+
+extern "C" __declspec(naked) int __fastcall fn_0051F6F0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0x8], 0
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push edx
+        push ecx
+        push eax
+        push esi
+        push edi
+        call ext_0051F570
+        lea eax, [esi + 2*esi]
+        add esp, 0x18
+        shl eax, 0x6
+        add eax, edi
+        pop edi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
