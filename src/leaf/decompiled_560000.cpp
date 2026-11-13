@@ -3203,3 +3203,17 @@ extern "C" __declspec(naked) void __fastcall fn_00567300(void* self) {
         ret 4
     }
 }
+
+extern "C" void ext_00435D00();
+extern "C" int mem_00924E90;
+extern "C" int mem_00924E98;
+extern "C" int mem_00924E94;
+
+// [0x00567610] sub_00567610 (86 bytes)
+extern "C" void __fastcall fn_00567610(void* self, int edx_unused, void* os) {
+    typedef void* (__cdecl *CStrOutFn)(void*, const char*);
+    typedef void* (__thiscall *EndlFn)(void*, int);
+    typedef void* (__cdecl *StrOutFn)(void*, const void*);
+    ((EndlFn)mem_00924E98)(((CStrOutFn)ext_00435D00)(os, (const char*)0x00958D0C), mem_00924E90);
+    ((EndlFn)mem_00924E98)(((StrOutFn)mem_00924E94)(((CStrOutFn)ext_00435D00)(os, (const char*)0x00936128), (const char*)(*(int*)self) + 0x3C), mem_00924E90);
+}
