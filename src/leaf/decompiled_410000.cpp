@@ -9036,3 +9036,60 @@ extern "C" void __fastcall fn_00415C70(void* self, int edx_unused, int a1) {
     (*(int (__stdcall**)(int, int))&mem_00925660)(*(int*)(p + 0x1c), *(int*)(p + 0x20));
     *(int*)(p + 0x20) = 0;
 }
+
+// [0x0041CE40] sub_0041CE40 (100 bytes)
+extern "C" void ext_006720E0();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0041CE40(void* self) {
+    __asm {
+        push -1
+        _emit 0x68
+        _emit 0xf9
+        _emit 0x56
+        _emit 0x8b
+        _emit 0x00
+        _emit 0x64
+        _emit 0xa1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push eax
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x4]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x2c], 0
+        call ext_006720E0
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        mov eax, esi
+        pop esi
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add esp, 0x28
+        ret 4
+    }
+}
