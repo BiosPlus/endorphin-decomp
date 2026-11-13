@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11198 / 24049` (**46.56%**) — `8106` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `830565 / 4496005 bytes` (**18.47%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11199 / 24049` (**46.57%**) — `8107` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `830728 / 4496005 bytes` (**18.48%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -20,7 +20,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P40-50 (71-91B)** | 1083 / 2405 | 45.03% | 90401 / 194373 | 46.51% | 1322 fn |
 | **P50-60 (91-122B)** | 1220 / 2405 | 50.73% | 131618 / 256906 | 51.23% | 1185 fn |
 | **P60-70 (122-159B)** | 948 / 2405 | 39.42% | 127565 / 339038 | 37.63% | 1457 fn |
-| **P70-80 (159-178B)** | 229 / 2405 | 9.52% | 38585 / 400567 | 9.63% | 2176 fn |
+| **P70-80 (159-178B)** | 230 / 2405 | 9.56% | 38748 / 400567 | 9.67% | 2175 fn |
 | **P80-90 (178-335B)** | 721 / 2405 | 29.98% | 174027 / 583211 | 29.84% | 1684 fn |
 | **P90-100 (335-36100B)** | 199 / 2404 | 8.28% | 81082 / 2392860 | 3.39% | 2205 fn |
 
@@ -28,9 +28,9 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6746 | 515189 | 83.22% |
+| `claude-haiku-5.5@medium` | 6746 | 515189 | 83.21% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.51% |
-| `claude-haiku-5.5@low` | 409 | 93301 | 5.05% |
+| `claude-haiku-5.5@low` | 410 | 93464 | 5.06% |
 | `gemini-3.8-flash@low` | 231 | 53927 | 2.85% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 2.01% |
 | `gemini-4-hydrogen@low` | 70 | 20243 | 0.86% |
