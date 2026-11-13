@@ -170,3 +170,60 @@ extern "C" __declspec(naked) void __fastcall fn_0044BE60(void* self) {
         ret 0x4
     }
 }
+
+// [0x0044C1B0] RenderView::vfunc_0_off_58 (127 bytes)
+extern "C" void ext_0043A100();
+extern "C" int mem_0092566C;
+extern "C" int mem_00925630;
+
+extern "C" __declspec(naked) void __fastcall fn_0044C1B0(void* self) {
+    __asm {
+        sub esp, 0x18
+        mov eax, dword ptr [esp + 0x1c]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [eax]
+        cmp ecx, -0x1
+        mov eax, dword ptr [eax + 0x4]
+        mov dword ptr [esp + 0x4], ecx
+        mov dword ptr [esp + 0x8], eax
+        jne loc_0044C201
+        cmp eax, ecx
+        jne loc_0044C201
+        mov ecx, dword ptr [esi - 0x38]
+        lea eax, [esp + 0xc]
+        push eax
+        push ecx
+        call dword ptr [mem_0092566C]
+        mov eax, dword ptr [esp + 0x14]
+        sub eax, dword ptr [esp + 0xc]
+        cdq
+        sub eax, edx
+        sar eax, 1
+        mov dword ptr [esp + 0x4], eax
+        mov eax, dword ptr [esp + 0x18]
+        sub eax, dword ptr [esp + 0x10]
+        cdq
+        sub eax, edx
+        sar eax, 1
+        mov dword ptr [esp + 0x8], eax
+    loc_0044C201:
+        mov eax, dword ptr [esi - 0x38]
+        lea edx, [esp + 0x4]
+        push edx
+        push eax
+        call dword ptr [mem_00925630]
+        mov ecx, dword ptr [mem_00ACDB40]
+        test ecx, ecx
+        pop esi
+        je loc_0044C229
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [esp]
+        push edx
+        push eax
+        call ext_0043A100
+    loc_0044C229:
+        add esp, 0x18
+        ret 0x4
+    }
+}
