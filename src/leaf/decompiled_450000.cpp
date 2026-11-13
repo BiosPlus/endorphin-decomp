@@ -5813,7 +5813,6 @@ extern "C" __declspec(naked) void __fastcall fn_00451D30(void* self, int edx_unu
         push 0x180
         push ecx
         call ebx
-L450C55:
         mov edx, dword ptr [esi + 0x98c]
         push 0x0
         push 0x0
