@@ -905,3 +905,108 @@ extern "C" __declspec(naked) void __fastcall fn_005EEDB0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_005851B0();
+extern "C" int mem_00925134;
+
+// [0x005ECF40] NMData::FixedPathJointData::vfunc_14_off_C (233 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_005ECF40(void* self, int, int, int flags) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        sub esp, 0x8
+        mov eax, esp
+        mov esi, ecx
+        mov dword ptr [eax], 0x93a444
+        mov dword ptr [eax + 0x4], ebp
+        call ext_005851B0
+        mov edi, dword ptr [esi + 0x1f8]
+        add esi, 0x1f4
+        cmp edi, dword ptr [esi + 0x8]
+        mov byte ptr [esp + 0x18], al
+        jbe L_005ECF79
+        call dword ptr [mem_00925134]
+    L_005ECF79:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_005ECF87
+        call dword ptr [mem_00925134]
+    L_005ECF87:
+        cmp esi, esi
+        je L_005ECF91
+        call dword ptr [mem_00925134]
+    L_005ECF91:
+        cmp edi, ebx
+        je L_005ED01D
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_005ECFA4
+        call dword ptr [mem_00925134]
+    L_005ECFA4:
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x54]
+        and ebp, 0x800
+        cmp ebp, 0x800
+        sete bl
+        push 0x80000
+        mov byte ptr [esp + 0x14], bl
+        call edx
+        cmp bl, al
+        je L_005ED01D
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_005ECFD0:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebp
+        mov ebx, dword ptr [mem_00925134]
+        jbe L_005ECFE0
+        call ebx
+    L_005ECFE0:
+        cmp esi, esi
+        je L_005ECFE6
+        call ebx
+    L_005ECFE6:
+        cmp edi, ebp
+        je L_005ED01D
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_005ECFF1
+        call ebx
+    L_005ECFF1:
+        mov ecx, dword ptr [edi]
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x2c]
+        push edx
+        push 0x80000
+        call eax
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_005ED00B
+        call ebx
+    L_005ED00B:
+        mov ecx, dword ptr [edi]
+        mov byte ptr [ecx + 0x4], 0x1
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_005ED018
+        call ebx
+    L_005ED018:
+        add edi, 0x4
+        jmp L_005ECFD0
+    L_005ED01D:
+        mov al, byte ptr [esp + 0x18]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
