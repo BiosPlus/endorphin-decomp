@@ -37,3 +37,31 @@ extern "C" __declspec(naked) float* __fastcall fn_005EC070(void* self, int edx_u
         ret 0x4
     }
 }
+
+// [0x0061D1A0] NMData::DriveFrame::vfunc_60 (62 bytes)
+extern "C" void ext_00611200();
+
+extern "C" __declspec(naked) void __fastcall fn_0061D1A0(void* self, int edx_unused, int idx, float val) {
+    __asm {
+        sub esp, 0xc
+        push esi
+        mov esi, ecx
+        call ext_006125B0
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x4]
+        lea ecx, dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x4]
+        push ecx
+        fstp dword ptr [esp + 0xc]
+        mov ecx, esi
+        fld dword ptr [eax + 0x8]
+        mov eax, dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 4*eax + 0x8]
+        call ext_00611200
+        pop esi
+        add esp, 0xc
+        ret 0x8
+    }
+}
