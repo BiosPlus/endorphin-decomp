@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11693 / 24049` (**48.62%**) — `8601` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1002844 / 4496005 bytes` (**22.31%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11694 / 24049` (**48.63%**) — `8602` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1003653 / 4496005 bytes` (**22.32%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -22,18 +22,18 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P60-70 (122-159B)** | 978 / 2405 | 40.67% | 131720 / 339038 | 38.85% | 1427 fn |
 | **P70-80 (159-178B)** | 249 / 2405 | 10.35% | 41935 / 400567 | 10.47% | 2156 fn |
 | **P80-90 (178-335B)** | 832 / 2405 | 34.59% | 199537 / 583211 | 34.21% | 1573 fn |
-| **P90-100 (335-36100B)** | 421 / 2404 | 17.51% | 211684 / 2392860 | 8.85% | 1983 fn |
+| **P90-100 (335-36100B)** | 422 / 2404 | 17.55% | 212493 / 2392860 | 8.88% | 1982 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6748 | 515897 | 78.46% |
+| `claude-haiku-5.5@medium` | 6748 | 515897 | 78.45% |
 | `claude-haiku-5.5@low` | 620 | 162667 | 7.21% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.20% |
 | `gemini-3.8-flash@low` | 342 | 91626 | 3.98% |
-| `gemini-4-hydrogen@low` | 238 | 83085 | 2.77% |
-| `claude-sonnet-5.5@low` | 163 | 33291 | 1.90% |
+| `gemini-4-hydrogen@low` | 239 | 83894 | 2.78% |
+| `claude-sonnet-5.5@low` | 163 | 33291 | 1.89% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.29% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.12% |
 | `gemini-3.8-flash@medium` | 4 | 1334 | 0.05% |
