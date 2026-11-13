@@ -3246,3 +3246,34 @@ extern "C" __declspec(naked) void __fastcall fn_005DFEB0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x005DF270] sub_005DF270 (53 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005DF270(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp byte ptr [edi + 0x15], 0
+        mov ebx, ecx
+        mov esi, edi
+        jne done
+    loop_start:
+        mov eax, dword ptr [esi + 8]
+        push eax
+        mov ecx, ebx
+        call fn_005DF270
+        mov esi, dword ptr [esi]
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+        cmp byte ptr [esi + 0x15], 0
+        mov edi, esi
+        je loop_start
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
