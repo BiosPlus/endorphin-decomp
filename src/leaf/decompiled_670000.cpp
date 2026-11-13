@@ -11466,3 +11466,61 @@ extern "C" __declspec(naked) void __fastcall fn_0067E6C0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_006A4B20();
+extern "C" void ext_006A4B50();
+extern "C" void ext_006A4C20();
+extern "C" int mem_00924FF0;
+extern "C" int mem_00925218;
+extern "C" int mem_00924FF8;
+
+// [0x006781F0] sub_006781F0 (138 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006781F0(void* self, int edx_unused, void* arg1, void* arg2) {
+    __asm {
+        sub esp, 0x8c
+        push ebx
+        push esi
+        lea eax, [esp + 0x3c]
+        push edi
+        push eax
+        call ext_006A4B20
+        mov ecx, dword ptr [esp + 0xa0]
+        mov eax, dword ptr [ecx + 0x14]
+        add esp, 0x4
+        push eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x48]
+        push ecx
+        call ext_006A4B50
+        lea edx, [esp + 0x18]
+        push edx
+        lea eax, [esp + 0x50]
+        push eax
+        call ext_006A4C20
+        mov ebx, dword ptr [mem_00925218]
+        add esp, 0x14
+        xor esi, esi
+        lea edi, [esp + 0x1c]
+    loop_start:
+        movzx ecx, byte ptr [esp + esi + 0xc]
+        push ecx
+        push 0x98c1e8
+        push edi
+        call ebx
+        add esi, 0x1
+        add esp, 0xc
+        add edi, 0x2
+        cmp esi, 0x10
+        jl loop_start
+        mov ecx, dword ptr [esp + 0xa0]
+        lea edx, [esp + 0x1c]
+        push edx
+        call dword ptr [mem_00924FF8]
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x8c
+        ret 0x8
+    }
+}
