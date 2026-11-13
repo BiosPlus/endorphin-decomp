@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11837 / 24049` (**49.22%**) — `8745` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1068358 / 4496005 bytes` (**23.76%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11838 / 24049` (**49.22%**) — `8746` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1068468 / 4496005 bytes` (**23.76%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -18,7 +18,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P20-30 (32-48B)** | 1247 / 2405 | 51.85% | 48601 / 97731 | 49.73% | 1158 fn |
 | **P30-40 (48-71B)** | 1027 / 2405 | 42.70% | 61099 / 144549 | 42.27% | 1378 fn |
 | **P40-50 (71-91B)** | 1133 / 2405 | 47.11% | 94429 / 194373 | 48.58% | 1272 fn |
-| **P50-60 (91-122B)** | 1270 / 2405 | 52.81% | 136933 / 256906 | 53.30% | 1135 fn |
+| **P50-60 (91-122B)** | 1271 / 2405 | 52.85% | 137043 / 256906 | 53.34% | 1134 fn |
 | **P60-70 (122-159B)** | 983 / 2405 | 40.87% | 132436 / 339038 | 39.06% | 1422 fn |
 | **P70-80 (159-178B)** | 254 / 2405 | 10.56% | 42796 / 400567 | 10.68% | 2151 fn |
 | **P80-90 (178-335B)** | 851 / 2405 | 35.38% | 204221 / 583211 | 35.02% | 1554 fn |
@@ -31,7 +31,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | `claude-haiku-5.5@medium` | 6748 | 515897 | 77.16% |
 | `claude-haiku-5.5@low` | 677 | 183544 | 7.74% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.11% |
-| `gemini-3.8-flash@low` | 378 | 106203 | 4.32% |
+| `gemini-3.8-flash@low` | 379 | 106313 | 4.33% |
 | `gemini-4-hydrogen@low` | 289 | 113145 | 3.30% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.86% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.29% |
