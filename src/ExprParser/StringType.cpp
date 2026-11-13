@@ -406,3 +406,33 @@ extern "C" __declspec(naked) void __fastcall fn_0066B320(void* self) {
         ret     0x14
     }
 }
+
+extern "C" void ext_0041CE40();
+
+// [0x0066B200] ExprParser::StringType::vfunc_0 (56 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0066B200(void* self) {
+    __asm {
+        push    ecx
+        mov     eax, dword ptr [esp + 0xc]
+        mov     eax, dword ptr [eax]
+        test    eax, eax
+        push    esi
+        mov     esi, dword ptr [esp + 0xc]
+        mov     dword ptr [esp + 0x4], 0
+        mov     ecx, esi
+        je      short empty_str
+        push    eax
+        call    ext_006720E0
+        mov     eax, esi
+        pop     esi
+        pop     ecx
+        ret     8
+empty_str:
+        push    0x928b5d
+        call    ext_0041CE40
+        mov     eax, esi
+        pop     esi
+        pop     ecx
+        ret     8
+    }
+}
