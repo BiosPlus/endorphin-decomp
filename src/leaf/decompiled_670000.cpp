@@ -7717,3 +7717,59 @@ extern "C" __declspec(naked) void* __fastcall fn_00678E40(void* self, int edx_un
         ret 8
     }
 }
+
+// [0x00679030] sub_00679030 (133 bytes)
+extern "C" void ext_00671F30();
+extern "C" void ext_00678E40();
+
+struct Sub00679030_Obj {
+    virtual void v0() = 0;
+    virtual void v1() = 0;
+    virtual void v2() = 0;
+    virtual void v3() = 0;
+    virtual void v4() = 0;
+    virtual void v5() = 0;
+    virtual void v6() = 0;
+    virtual void v7() = 0;
+    virtual void v8() = 0;
+    virtual void v9() = 0;
+    virtual void v10() = 0;
+    virtual void v11() = 0;
+    virtual void v12() = 0;
+    virtual void* v13(int) = 0;
+    virtual void v14() = 0;
+    virtual void v15() = 0;
+    virtual void v16() = 0;
+    virtual void* v17(void*, void*) = 0;
+};
+
+struct Sub00679030_Out {
+    int a;
+    void* b;
+};
+
+extern "C" Sub00679030_Out* __fastcall fn_00679030(void* self, int edx_unused, Sub00679030_Out* a0, void* a1, void* a2, void* a3) {
+    volatile int dummy = 0;
+    if (a1) {
+        typedef Sub00679030_Obj* (__thiscall *Pfn8E40)(void*, void*, void*);
+        Sub00679030_Obj* obj = ((Pfn8E40)ext_00678E40)(self, a1, a2);
+        if (obj) {
+            obj->v17(a0, a1);
+            return a0;
+        }
+    } else if (a3) {
+        typedef Sub00679030_Obj* (__thiscall *Pfn8E40)(void*, void*, void*);
+        Sub00679030_Obj* obj = ((Pfn8E40)ext_00678E40)(self, a3, a2);
+        if (obj) {
+            void* res = obj->v13(0);
+            if (res) {
+                a0->a = 0;
+                a0->b = res;
+                return a0;
+            }
+        }
+    }
+    typedef void (__cdecl *Pfn1F30)(Sub00679030_Out*);
+    ((Pfn1F30)ext_00671F30)(a0);
+    return a0;
+}
