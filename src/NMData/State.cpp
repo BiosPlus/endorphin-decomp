@@ -823,3 +823,136 @@ extern "C" __declspec(naked) void __fastcall fn_0049E190(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0049CD30] NMData::State::vfunc_9_off_8 (347 bytes)
+extern "C" int mem_0094B858;
+extern "C" int mem_00993828;
+extern "C" int mem_00993840;
+extern "C" void ext_004976D0();
+
+extern "C" __declspec(naked) int __fastcall fn_0049CD30(void* self, int edx_unused, float* p) {
+    __asm {
+        sub esp, 0x1c
+        push esi
+        mov esi, ecx
+        fld dword ptr [esi + 0xe8]
+        lea ecx, [esi + 0xe0]
+        fstp dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x24]
+        fld dword ptr [ecx + 0xc]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [mem_0094B858]
+        fld st(0)
+        fadd st, st(1)
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x8]
+        fld st(0)
+        fld dword ptr [esp + 0x4]
+        fld st(0)
+        fsubp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0xc]
+        fld st(0)
+        fsub st, st(2)
+        fstp dword ptr [esp + 0x14]
+        fld st(1)
+        faddp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp + 0x18]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [edx]
+        fld dword ptr [esp + 0x10]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp short L_0049CDDB
+        fld dword ptr [edx]
+        fld dword ptr [esp + 0x18]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        jne short L_0049CDDB
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [esp + 0x14]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp short L_0049CDDB
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [esp + 0x1c]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        jne short L_0049CDDB
+        fstp st(0)
+        mov eax, 0x3
+        pop esi
+        add esp, 0x1c
+        ret 0x4
+L_0049CDDB:
+        fld dword ptr [ecx + 0x8]
+        fadd dword ptr [ecx]
+        fmul qword ptr [mem_00993828]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esi + 0xe4]
+        fstp dword ptr [esp + 0xc]
+        fmul qword ptr [mem_00993840]
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [esp + 0x8]
+        fld st(0)
+        fld dword ptr [esp + 0x24]
+        fld st(0)
+        fsubp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0xc]
+        fld st(0)
+        fsub st, st(2)
+        fstp dword ptr [esp + 0x14]
+        fld st(1)
+        faddp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp + 0x18]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [edx]
+        fld dword ptr [esp + 0x10]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp short L_0049CE78
+        fld dword ptr [edx]
+        fld dword ptr [esp + 0x18]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        jne short L_0049CE78
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [esp + 0x14]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp short L_0049CE78
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [esp + 0x1c]
+        fcompp
+        fnstsw ax
+        test ah, 0x1
+        jne short L_0049CE78
+        mov eax, 0x6
+        pop esi
+        add esp, 0x1c
+        ret 0x4
+L_0049CE78:
+        push edx
+        call ext_004976D0
+        neg al
+        pop esi
+        sbb eax, eax
+        neg eax
+        add esp, 0x1c
+        ret 0x4
+    }
+}
