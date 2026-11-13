@@ -2518,3 +2518,55 @@ L_005C3DC8:
         ret 4
     }
 }
+
+// [0x005C3C20] sub_005C3C20 (131 bytes)
+extern "C" void ext_005B2110();
+extern "C" void ext_00694480();
+extern "C" int mem_0096320C;
+extern "C" int mem_00B40640;
+extern "C" __declspec(naked) float __fastcall fn_005C3C20(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x20
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x15c], 0
+        jne nz_path
+        fld dword ptr [mem_0096320C]
+        pop esi
+        add esp, 0x20
+        ret 4
+nz_path:
+        fldz
+        mov eax, dword ptr [esp + 0x28]
+        mov edx, dword ptr [mem_00B40640]
+        fst dword ptr [esp + 0x20]
+        fst dword ptr [esp + 0x1c]
+        lea ecx, [esi + 4]
+        fst dword ptr [esp + 0x18]
+        push edx
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 4]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 8]
+        mov eax, dword ptr [ecx]
+        fstp dword ptr [esp + 0x10]
+        fld1
+        mov eax, dword ptr [eax + 0x14]
+        fstp dword ptr [esp + 0x14]
+        call eax
+        push eax
+        lea ecx, [esp + 8]
+        call ext_00694480
+        mov ecx, dword ptr [esi + 0x15c]
+        lea edx, [esp + 4]
+        push edx
+        lea eax, [esp + 0x18]
+        push eax
+        call ext_005B2110
+        pop esi
+        add esp, 0x20
+        ret 4
+    }
+}
