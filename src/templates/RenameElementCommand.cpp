@@ -94,3 +94,34 @@ extern "C" __declspec(naked) void __fastcall fn_004BC900(void* self) {
         ret
     }
 }
+
+// [0x004BC940] PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::RenameElementCommand::vfunc_2 (55 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004BC940(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x10]
+        push edi
+        mov edi, dword ptr [esi + 0x14]
+        lea eax, [esp + 0xc]
+        push eax
+        mov ecx, ebx
+        mov dword ptr [esp + 0x10], edi
+        call ext_004BBEB0
+        add esi, 0x18
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        push 0
+        push edi
+        mov ecx, ebx
+        call ext_004BC4B0
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
