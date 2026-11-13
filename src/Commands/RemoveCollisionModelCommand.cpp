@@ -3,6 +3,10 @@
 extern "C" int mem_00924FE4;
 extern "C" void ext_00587180();
 extern "C" void ext_005BF400();
+extern "C" void ext_00468180();
+extern "C" void ext_00468F70();
+extern "C" void ext_00528B60();
+extern "C" void ext_005BF4A0();
 
 // [0x005AC750] Commands::RemoveCollisionModelCommand::vfunc_3 (34 bytes)
 // Returns a std::string by value (hidden return buffer is the stack arg, ret 0x4).
@@ -43,6 +47,47 @@ extern "C" __declspec(naked) void __fastcall fn_005ACCF0(void* self) {
         mov ecx, dword ptr [esi + 0x14]
         push eax
         call ext_00587180
+    done:
+        pop esi
+        ret
+    }
+}
+
+// [0x005ACC90] Commands::RemoveCollisionModelCommand::vfunc_1 (81 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005ACC90(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x14], 0
+        je done
+        mov eax, dword ptr [esi + 0x10]
+        test eax, eax
+        je done
+        push edi
+        push eax
+        call ext_00468180
+        mov ecx, eax
+        call ext_00468F70
+        mov edi, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [esi + 0x18]
+        cmp edi, ecx
+        je skip
+        test ecx, ecx
+        je skip
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+    skip:
+        mov dword ptr [esi + 0x18], edi
+        mov ecx, dword ptr [esi + 0x10]
+        add ecx, 0xc
+        call ext_00528B60
+        mov eax, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [esi + 0x14]
+        push eax
+        call ext_005BF4A0
+        pop edi
     done:
         pop esi
         ret
