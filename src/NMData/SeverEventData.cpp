@@ -155,3 +155,35 @@ L_004C842A:
         ret
     }
 }
+
+extern "C" void ext_00427550();
+extern "C" void ext_004C1DE0();
+extern "C" void ext_00640110();
+extern "C" int mem_00A9F96C;
+extern "C" int mem_00924FF0;
+
+// [0x004C71C0] NMData::SeverEventData::vfunc_22 (60 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004C71C0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_004C1DE0
+        mov eax, dword ptr [mem_00A9F96C]
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        lea ecx, [esi + 0x180]
+        mov dword ptr [esp + 0xc], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
