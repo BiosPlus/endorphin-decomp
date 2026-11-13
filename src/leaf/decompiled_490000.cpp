@@ -7512,3 +7512,103 @@ extern "C" __declspec(naked) void __cdecl fn_0049A9C0(void* a1) {
         ret
     }
 }
+
+// [0x0049D1C0] sub_0049D1C0 (170 bytes)
+extern "C" void ext_006404E0();
+extern "C" int mem_00925134;
+extern "C" int mem_00B53B30;
+extern "C" __declspec(naked) void __cdecl fn_0049D1C0() {
+    __asm {
+        push    ecx
+        push    esi
+        mov     esi, dword ptr [esp + 0Ch]
+        cmp     dword ptr [esi + 8], 0
+        jne     loc_49D1D4
+        mov     eax, offset mem_00B53B30
+        pop     esi
+        pop     ecx
+        ret
+
+    loc_49D1D4:
+        mov     eax, dword ptr [esp + 14h]
+        test    eax, eax
+        push    ebx
+        push    ebp
+        push    edi
+        je      loc_49D1ED
+        mov     ecx, dword ptr [esp + 1Ch]
+        push    eax
+        call    ext_006404E0
+        mov     ebp, eax
+        jmp     loc_49D1F1
+
+    loc_49D1ED:
+        mov     ebp, dword ptr [esp + 1Ch]
+
+    loc_49D1F1:
+        mov     edi, dword ptr [esi + 4]
+        mov     ebx, dword ptr [edi]
+        mov     dword ptr [esp + 10h], edi
+        _emit   0x8D
+        _emit   0x9B
+        _emit   0x00
+        _emit   0x00
+        _emit   0x00
+        _emit   0x00
+
+    loc_49D200:
+        cmp     ebx, edi
+        je      loc_49D262
+        cmp     dword ptr [esp + 24h], 0
+        je      loc_49D23C
+        cmp     ebx, dword ptr [esi + 4]
+        jne     loc_49D216
+        call    dword ptr [mem_00925134]
+
+    loc_49D216:
+        mov     eax, dword ptr [esp + 24h]
+        mov     esi, dword ptr [ebx + 18h]
+        lea     edi, [ebx + 18h]
+        push    eax
+        mov     ecx, ebp
+        add     esi, 0Ch
+        call    ext_006404E0
+        mov     edx, dword ptr [esi]
+        push    eax
+        mov     ecx, edi
+        call    edx
+        mov     esi, dword ptr [esp + 18h]
+        mov     edi, dword ptr [esp + 10h]
+        jmp     loc_49D253
+
+    loc_49D23C:
+        cmp     ebx, dword ptr [esi + 4]
+        jne     loc_49D247
+        call    dword ptr [mem_00925134]
+
+    loc_49D247:
+        mov     eax, dword ptr [ebx + 18h]
+        mov     edx, dword ptr [eax + 0Ch]
+        lea     ecx, [ebx + 18h]
+        push    ebp
+        call    edx
+
+    loc_49D253:
+        cmp     ebx, dword ptr [esi + 4]
+        jne     loc_49D25E
+        call    dword ptr [mem_00925134]
+
+    loc_49D25E:
+        mov     ebx, dword ptr [ebx]
+        jmp     loc_49D200
+
+    loc_49D262:
+        pop     edi
+        mov     eax, ebp
+        pop     ebp
+        pop     ebx
+        pop     esi
+        pop     ecx
+        ret
+    }
+}
