@@ -101,3 +101,23 @@ extern "C" __declspec(naked) void __fastcall fn_004869A0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00486A70] NMData::DesiredPoseEventData::vfunc_74 (35 bytes)
+extern "C" void ext_005A3DF0();
+extern "C" void ext_004C0340();
+extern "C" int mem_00B40640;
+extern "C" __declspec(naked) void __fastcall fn_00486A70(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00B40640]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esi + 19Ch]
+        push ecx
+        mov ecx, dword ptr [esi + 168h]
+        call ext_005A3DF0
+        mov ecx, esi
+        pop esi
+        jmp ext_004C0340
+    }
+}
