@@ -112,3 +112,47 @@ L_deref:
         ret 0xc
     }
 }
+
+// [0x0044E2A0] RigEditor::vfunc_63 (628 bytes)
+extern "C" void ext_006A5F44();
+
+extern "C" void __fastcall fn_0044E2A0(void* self, int edx_unused, void* a1) {
+    typedef void (__stdcall *DdxFn)(void*, int, void*);
+    char* p = (char*)self;
+    DdxFn ddx = (DdxFn)ext_006A5F44;
+    ddx(a1, 0x4f8, p + 0xcf4);
+    ddx(a1, 0x4ef, p + 0xac);
+    ddx(a1, 0x4cc, p + 0x598);
+    ddx(a1, 0x4cd, p + 0x5fc);
+    ddx(a1, 0x7, p + 0x660);
+    ddx(a1, 0x8, p + 0x6d4);
+    ddx(a1, 0x4cb, p + 0x748);
+    ddx(a1, 0x4, p + 0x79c);
+    ddx(a1, 0x50a, p + 0x810);
+    ddx(a1, 0x5, p + 0x884);
+    ddx(a1, 0x6, p + 0x8f8);
+    ddx(a1, 0x4ce, p + 0x96c);
+    ddx(a1, 0x478, p + 0x9c0);
+    ddx(a1, 0x4ec, p + 0xa14);
+    ddx(a1, 0x4ed, p + 0xa68);
+    ddx(a1, 0x4ee, p + 0xabc);
+    ddx(a1, 0x434, p + 0xb10);
+    ddx(a1, 0x436, p + 0xb64);
+    ddx(a1, 0x435, p + 0xbb8);
+    ddx(a1, 0x81b7, p + 0xc0c);
+    ddx(a1, 0x507, p + 0xc80);
+    ddx(a1, 0x4f9, p + 0x100);
+    ddx(a1, 0x506, p + 0x154);
+    ddx(a1, 0x4fa, p + 0x1a8);
+    ddx(a1, 0x4fb, p + 0x1fc);
+    ddx(a1, 0x4fc, p + 0x250);
+    ddx(a1, 0x4fd, p + 0x2a4);
+    ddx(a1, 0x4fe, p + 0x2f8);
+    ddx(a1, 0x4ff, p + 0x34c);
+    ddx(a1, 0x500, p + 0x3a0);
+    ddx(a1, 0x501, p + 0x3f4);
+    ddx(a1, 0x502, p + 0x448);
+    ddx(a1, 0x503, p + 0x49c);
+    ddx(a1, 0x504, p + 0x4f0);
+    ddx(a1, 0x505, p + 0x544);
+}
