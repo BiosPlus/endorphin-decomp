@@ -171,3 +171,22 @@ extern "C" __declspec(naked) void __fastcall fn_004EFC40(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004EF2D0] Properties::MultiSelectProxy::vfunc_0 (31 bytes)
+extern "C" void ext_00675DD0();
+
+extern "C" __declspec(naked) void __fastcall fn_004EF2D0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        movzx eax, byte ptr [ecx + 0x5c]
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x8]
+        push eax
+        mov eax, dword ptr [esp + 0x8]
+        push ecx
+        push edx
+        push eax
+        call ext_00675DD0
+        add esp, 0x10
+        ret 0xc
+    }
+}

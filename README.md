@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11750 / 24049` (**48.86%**) — `8658` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1023250 / 4496005 bytes` (**22.76%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11751 / 24049` (**48.86%**) — `8659` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1023281 / 4496005 bytes` (**22.76%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -14,7 +14,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Size Tier | Matched / Total Funcs | Func % | Matched / Total Bytes | Byte % | Remaining |
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | **P0-10 (1-16B)** | 2379 / 2405 | 98.92% | 24669 / 25001 | 98.67% | 26 fn |
-| **P10-20 (16-32B)** | 2205 / 2405 | 91.68% | 55877 / 61769 | 90.46% | 200 fn |
+| **P10-20 (16-32B)** | 2206 / 2405 | 91.73% | 55908 / 61769 | 90.51% | 199 fn |
 | **P20-30 (32-48B)** | 1239 / 2405 | 51.52% | 48307 / 97731 | 49.43% | 1166 fn |
 | **P30-40 (48-71B)** | 1026 / 2405 | 42.66% | 61031 / 144549 | 42.22% | 1379 fn |
 | **P40-50 (71-91B)** | 1123 / 2405 | 46.69% | 93644 / 194373 | 48.18% | 1282 fn |
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6748 | 515897 | 77.94% |
-| `claude-haiku-5.5@low` | 639 | 167668 | 7.38% |
+| `claude-haiku-5.5@medium` | 6748 | 515897 | 77.93% |
+| `claude-haiku-5.5@low` | 640 | 167699 | 7.39% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.16% |
 | `gemini-3.8-flash@low` | 358 | 98101 | 4.13% |
 | `gemini-4-hydrogen@low` | 260 | 92015 | 3.00% |
