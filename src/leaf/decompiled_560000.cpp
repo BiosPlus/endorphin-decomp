@@ -3217,3 +3217,15 @@ extern "C" void __fastcall fn_00567610(void* self, int edx_unused, void* os) {
     ((EndlFn)mem_00924E98)(((CStrOutFn)ext_00435D00)(os, (const char*)0x00958D0C), mem_00924E90);
     ((EndlFn)mem_00924E98)(((StrOutFn)mem_00924E94)(((CStrOutFn)ext_00435D00)(os, (const char*)0x00936128), (const char*)(*(int*)self) + 0x3C), mem_00924E90);
 }
+
+// [0x0056DC40] sub_0056DC40 (86 bytes)
+extern "C" void __fastcall fn_0056DC40(void* self, int edx_unused, void* obj, void* os) {
+    typedef bool (__thiscall *Vfn70)(void*);
+    typedef void* (__cdecl *CStrOutFn)(void*, const char*);
+    typedef void* (__thiscall *EndlFn)(void*, int);
+    if (((*(Vfn70**)(obj))[0x70 / 4])(obj)) {
+        ((EndlFn)mem_00924E98)(((CStrOutFn)ext_00435D00)(os, (const char*)0x00959230), mem_00924E90);
+    } else {
+        ((EndlFn)mem_00924E98)(((CStrOutFn)ext_00435D00)(os, (const char*)0x00959200), mem_00924E90);
+    }
+}
