@@ -5511,3 +5511,17 @@ extern "C" __declspec(naked) void __fastcall fn_006508C0(void* self) {
         ret
     }
 }
+
+// [0x0065C280] sub_0065C280 (55 bytes)
+extern "C" int __cdecl ext_007C9260(void*);
+extern "C" void __cdecl ext_007C9860(void*);
+extern "C" void ext_007D8700();
+
+extern "C" void __fastcall fn_0065C280(void* self) {
+    void* p = *(void**)((char*)self + 0x8c);
+    if (p != 0) {
+        if (ext_007C9260(((void* (__cdecl*)(void*))ext_007D8700)(p))) {
+            ext_007C9860(((void* (__cdecl*)(void*))ext_007D8700)(*(void**)((char*)self + 0x8c)));
+        }
+    }
+}
