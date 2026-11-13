@@ -128,3 +128,100 @@ l_247:
         ret 0x8
     }
 }
+
+// [0x0046C190] ImageExporter::vfunc_0 (266 bytes)
+extern "C" void ext_00662650();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00924FF0;
+
+extern "C" __declspec(naked) void __fastcall fn_0046C190(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8828b2
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x38
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x8], 0
+        je l_fail
+        cmp dword ptr [esi + 0x20], 0
+        je l_fail
+        mov eax, dword ptr [esi + 0x48]
+        cmp eax, dword ptr [esi + 0xc]
+        jl l_done
+        cmp eax, dword ptr [esi + 0x10]
+        jg l_done
+        push edi
+        push 0x929650
+        lea ecx, [esp + 0x28]
+        call dword ptr [mem_00924FE4]
+        mov eax, dword ptr [esi + 0x48]
+        push 0x4
+        push eax
+        lea ecx, [esp + 0x2c]
+        push ecx
+        lea edx, [esi + 0x28]
+        push edx
+        lea eax, [esp + 0x18]
+        push eax
+        mov dword ptr [esp + 0x5c], 0
+        call ext_00662650
+        add esp, 0x14
+        lea ecx, [esp + 0x24]
+        mov byte ptr [esp + 0x48], 2
+        call dword ptr [mem_00924FF4]
+        cmp byte ptr [esi + 0x24], 0
+        je l_branch2
+        mov ecx, dword ptr [esi + 0x20]
+        mov edi, dword ptr [ecx]
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FF0]
+        mov edx, dword ptr [esi + 0x14]
+        mov ecx, dword ptr [esi + 0x20]
+        push eax
+        mov eax, dword ptr [esi + 0x18]
+        push edx
+        mov edx, dword ptr [edi + 0x1ac]
+        push eax
+        call edx
+        jmp l_cleanup
+
+l_branch2:
+        mov eax, dword ptr [esi + 0x44]
+        test eax, eax
+        je l_cleanup
+        mov edi, dword ptr [eax]
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [esi + 0x44]
+        push eax
+        mov eax, dword ptr [edi]
+        call eax
+
+l_cleanup:
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x48], -1
+        call dword ptr [mem_00924FF4]
+        pop edi
+
+l_done:
+        mov eax, 1
+        add dword ptr [esi + 0x48], eax
+        pop esi
+        mov ecx, dword ptr [esp + 0x38]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x44
+        ret
+
+l_fail:
+        mov ecx, dword ptr [esp + 0x3c]
+        xor al, al
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x44
+        ret
+    }
+}
