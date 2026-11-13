@@ -5408,3 +5408,133 @@ loc_409499:
         jmp dword ptr [mem_00925688]
     }
 }
+
+// [0x004013C0] sub_004013C0 (346 bytes)
+extern "C" void ext_006A5C68(); extern "C" void ext_006A5E00(); extern "C" void ext_006A5E4E(); extern "C" void ext_006A5E54(); extern "C" int mem_00925694; extern "C" int mem_00925690;
+extern "C" __declspec(naked) void __fastcall fn_004013C0(void* self) {
+    __asm {
+        sub esp, 0x30
+        push ebx
+        push esi
+        push edi
+        mov edi, [mem_00925694]
+        push 0
+        push 0
+        mov esi, ecx
+        mov eax, [esi+0x20]
+        push 0x474
+        push eax
+        call edi
+        push eax
+        call ext_006A5E00
+        mov edx, [eax+0x20]
+        mov ebx, [mem_00925690]
+        lea ecx, [esp+0x1c]
+        push ecx
+        push edx
+        call ebx
+        lea eax, [esp+0x1c]
+        push eax
+        mov ecx, esi
+        call ext_006A5E54
+        mov edx, [esi+0x20]
+        lea ecx, [esp+0x2c]
+        push ecx
+        push edx
+        call ebx
+        mov eax, [esp+0x30]
+        mov ecx, [esp+0x38]
+        mov edx, [esp+0x34]
+        push 0
+        sub ecx, eax
+        add ecx, 0x22
+        push ecx
+        mov ecx, [esp+0x34]
+        sub edx, ecx
+        push edx
+        push eax
+        push ecx
+        push 0
+        mov ecx, esi
+        call ext_006A5E4E
+        mov eax, [esp+0x24]
+        mov edx, [esi+0x110]
+        mov edx, [edx+0x13c]
+        lea ecx, [eax-0x3c]
+        mov [esp+0x14], eax
+        mov eax, [esp+0x28]
+        add eax, 7
+        mov [esp+0x10], eax
+        push 0x4b1
+        add eax, 0x14
+        push esi
+        mov [esp+0x20], eax
+        lea eax, [esp+0x14]
+        mov [esp+0x14], ecx
+        push eax
+        lea ecx, [esi+0x110]
+        push 0x50010000
+        push 0x928a80
+        call edx
+        mov eax, [esi+0x20]
+        push 0
+        push 0
+        push 0x31
+        push eax
+        call edi
+        push eax
+        call ext_006A5C68
+        test eax, eax
+        je l1
+        mov eax, [eax+4]
+    l1:
+        mov ecx, [esi+0x130]
+        push 1
+        push eax
+        push 0x30
+        push ecx
+        call edi
+        mov eax, [esp+0x1c]
+        mov edx, [esi+0xbc]
+        mov edx, [edx+0x13c]
+        mov [esp+0xc], eax
+        add eax, 0x3c
+        mov [esp+0x14], eax
+        mov eax, [esp+0x28]
+        add eax, 7
+        mov [esp+0x10], eax
+        push 0x493
+        add eax, 0x14
+        push esi
+        mov [esp+0x20], eax
+        lea eax, [esp+0x14]
+        push eax
+        lea ecx, [esi+0xbc]
+        push 0x50010000
+        push 0x928a78
+        call edx
+        mov eax, [esi+0x20]
+        push 0
+        push 0
+        push 0x31
+        push eax
+        call edi
+        push eax
+        call ext_006A5C68
+        test eax, eax
+        je l2
+        mov eax, [eax+4]
+    l2:
+        mov ecx, [esi+0xdc]
+        push 1
+        push eax
+        push 0x30
+        push ecx
+        call edi
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x30
+        ret
+    }
+}

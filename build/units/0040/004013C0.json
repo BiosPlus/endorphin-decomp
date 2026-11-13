@@ -23,5 +23,7 @@
     "0x004014E6",
     "0x004014FA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-13T10:19:48Z"
 }
