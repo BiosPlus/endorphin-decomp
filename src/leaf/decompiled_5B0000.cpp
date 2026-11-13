@@ -2723,3 +2723,41 @@ L_5B6A68:
         ret
     }
 }
+
+// [0x005B6A80] sub_005B6A80 (99 bytes)
+extern "C" void ext_00647F20();
+extern "C" void ext_00694880();
+extern "C" __declspec(naked) void __fastcall fn_005B6A80(void* self) {
+    __asm {
+        sub esp, 0x24
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x158]
+        test eax, eax
+        je short L_5B6A68
+        fldz
+        lea ecx, [esp + 0x4]
+        fst dword ptr [esp + 0xc]
+        push ecx
+        fst dword ptr [esp + 0xc]
+        fst dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0x14]
+        fst dword ptr [esp + 0x24]
+        fstp dword ptr [esp + 0x20]
+        fld1
+        fst dword ptr [esp + 0x8]
+        fst dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0x28]
+        mov ecx, dword ptr [eax + 0xac]
+        call ext_00647F20
+        lea edx, [esi + 0x1a0]
+        push edx
+        lea ecx, [esp + 0x8]
+        call ext_00694880
+    L_5B6A68:
+        lea eax, [esi + 0x1a0]
+        pop esi
+        add esp, 0x24
+        ret
+    }
+}
