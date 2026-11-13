@@ -6002,3 +6002,23 @@ extern "C" __declspec(naked) int __fastcall fn_0048CC30(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x0048C9A0] sub_0048C9A0 (58 bytes)
+extern "C" void ext_0048C8A0();
+
+struct Item_0048C9A0 {
+    int f0;
+    char f4[0x64];
+    Item_0048C9A0& operator=(const Item_0048C9A0& rhs) {
+        f0 = rhs.f0;
+        ((void (__thiscall*)(void*, const void*))ext_0048C8A0)(f4, rhs.f4);
+        return *this;
+    }
+};
+
+extern "C" Item_0048C9A0* __cdecl fn_0048C9A0(Item_0048C9A0* first, Item_0048C9A0* last, Item_0048C9A0* dst) {
+    for (; first != last; ++first, ++dst) {
+        *dst = *first;
+    }
+    return dst;
+}
