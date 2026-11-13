@@ -6317,3 +6317,152 @@ done_007CB9E0:
         ret
     }
 }
+
+extern "C" __declspec(naked) unsigned __cdecl fn_007C27C0(void* s, unsigned cur_match) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x28]
+        mov esi, dword ptr [edi + 0x24]
+        mov eax, dword ptr [edi + 0x74]
+        mov edx, dword ptr [edi + 0x64]
+        mov ecx, dword ptr [edi + 0x30]
+        mov ebp, dword ptr [edi + 0x70]
+        mov dword ptr [esp + 0x14], eax
+        mov eax, dword ptr [edi + 0x88]
+        lea ebx, [esi - 0x106]
+        add ecx, edx
+        cmp edx, ebx
+        mov dword ptr [esp + 0x18], eax
+        jbe L1
+        sub edx, esi
+        add edx, 0x106
+        mov dword ptr [esp + 0x1c], edx
+        jmp L2
+    L1:
+        mov dword ptr [esp + 0x1c], 0
+    L2:
+        mov dl, byte ptr [ecx + ebp - 1]
+        lea ebx, [ecx + 0x102]
+        mov byte ptr [esp + 0x28], dl
+        mov dl, byte ptr [ecx + ebp]
+        mov byte ptr [esp + 0x13], dl
+        mov edx, dword ptr [edi + 0x84]
+        cmp ebp, edx
+        jb L3
+        shr dword ptr [esp + 0x14], 2
+    L3:
+        mov edx, dword ptr [edi + 0x6c]
+        cmp eax, edx
+        mov dword ptr [esp + 0x20], edx
+        jbe L4
+        mov dword ptr [esp + 0x18], edx
+    L4:
+        mov esi, dword ptr [esp + 0x2c]
+    L5:
+        mov edx, dword ptr [edi + 0x30]
+        mov al, byte ptr [esp + 0x13]
+        add edx, esi
+        cmp byte ptr [edx + ebp], al
+        jne L9
+        mov al, byte ptr [esp + 0x28]
+        cmp byte ptr [edx + ebp - 1], al
+        jne L9
+        mov al, byte ptr [edx]
+        cmp al, byte ptr [ecx]
+        jne L9
+        mov al, byte ptr [edx + 1]
+        inc edx
+        cmp al, byte ptr [ecx + 1]
+        jne L9
+        add ecx, 2
+        inc edx
+    L6:
+        mov al, byte ptr [ecx + 1]
+        inc ecx
+        inc edx
+        cmp al, byte ptr [edx]
+        jne L7
+        mov al, byte ptr [ecx + 1]
+        inc ecx
+        inc edx
+        cmp al, byte ptr [edx]
+        jne L7
+        mov al, byte ptr [ecx + 1]
+        inc ecx
+        inc edx
+        cmp al, byte ptr [edx]
+        jne L7
+        mov al, byte ptr [ecx + 1]
+        inc ecx
+        inc edx
+        cmp al, byte ptr [edx]
+        jne L7
+        mov al, byte ptr [ecx + 1]
+        inc ecx
+        inc edx
+        cmp al, byte ptr [edx]
+        jne L7
+        mov al, byte ptr [ecx + 1]
+        inc ecx
+        inc edx
+        cmp al, byte ptr [edx]
+        jne L7
+        mov al, byte ptr [ecx + 1]
+        inc ecx
+        inc edx
+        cmp al, byte ptr [edx]
+        jne L7
+        mov al, byte ptr [ecx + 1]
+        inc ecx
+        inc edx
+        cmp al, byte ptr [edx]
+        jne L7
+        cmp ecx, ebx
+        jb L6
+    L7:
+        mov edx, ecx
+        lea ecx, [ebx - 0x102]
+        sub edx, ebx
+        add edx, 0x102
+        cmp edx, ebp
+        jle L9
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [edi + 0x68], esi
+        cmp edx, eax
+        mov ebp, edx
+        jge L10
+        mov al, byte ptr [edx + ecx - 1]
+        mov dl, byte ptr [edx + ecx]
+        mov byte ptr [esp + 0x28], al
+        mov byte ptr [esp + 0x13], dl
+    L9:
+        mov edx, dword ptr [edi + 0x2c]
+        mov eax, dword ptr [edi + 0x38]
+        and edx, esi
+        xor esi, esi
+        mov si, word ptr [eax + 2*edx]
+        mov eax, dword ptr [esp + 0x1c]
+        cmp esi, eax
+        jbe L10
+        mov eax, dword ptr [esp + 0x14]
+        dec eax
+        mov dword ptr [esp + 0x14], eax
+        jne L5
+    L10:
+        mov eax, dword ptr [esp + 0x20]
+        cmp ebp, eax
+        ja L11
+        mov eax, ebp
+    L11:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x14
+        ret
+    }
+}
