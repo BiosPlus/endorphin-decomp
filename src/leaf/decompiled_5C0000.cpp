@@ -2473,3 +2473,48 @@ extern "C" __declspec(naked) void* __fastcall fn_005CFBE0(void* self) {
         ret
     }
 }
+
+// [0x005C3DB0] sub_005C3DB0 (104 bytes)
+extern "C" void ext_005B2130();
+extern "C" void ext_00694480();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) float __fastcall fn_005C3DB0(void* self, int edx_unused, const float* v) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x15c], 0
+        jne L_005C3DC8
+        fldz
+        pop esi
+        add esp, 0x10
+        ret 4
+L_005C3DC8:
+        mov eax, dword ptr [esp + 0x18]
+        fld dword ptr [eax]
+        mov edx, dword ptr [mem_00B40640]
+        fstp dword ptr [esp + 4]
+        lea ecx, [esi + 4]
+        fld dword ptr [eax + 4]
+        push edx
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 8]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x14]
+        fstp dword ptr [esp + 0x10]
+        fld1
+        fstp dword ptr [esp + 0x14]
+        call eax
+        push eax
+        lea ecx, [esp + 8]
+        call ext_00694480
+        mov ecx, dword ptr [esi + 0x15c]
+        lea edx, [esp + 4]
+        push edx
+        call ext_005B2130
+        pop esi
+        add esp, 0x10
+        ret 4
+    }
+}
