@@ -1915,3 +1915,93 @@ extern "C" __declspec(naked) void __fastcall fn_0064FBD0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_0067E7B0();
+extern "C" void ext_0067E880();
+extern "C" void ext_004875A0();
+
+// [0x00650710] SkeletalJoint::vfunc_47 (228 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00650710(void* self) {
+    __asm {
+        sub esp, 0x90
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x64]
+        push eax
+        call ext_007D8700
+        mov ebx, dword ptr [esp + 0xa8]
+        lea esi, [ebx + 0x10]
+        push esi
+        push ebx
+        mov ebp, eax
+        push 0x0
+        push ebp
+        call ext_007C93E0
+        lea ecx, [ebx + 0x30]
+        push ecx
+        push 0x0
+        push ebp
+        call ext_007C93A0
+        fld dword ptr [esi + 0x8]
+        fmul dword ptr [ebx + 0x4]
+        add esp, 0x20
+        fld dword ptr [esi + 0x4]
+        lea ecx, [esp + 0x14]
+        fmul dword ptr [ebx + 0x8]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esi]
+        fmul dword ptr [ebx + 0x8]
+        fld dword ptr [esi + 0x8]
+        fmul dword ptr [ebx]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esi + 0x4]
+        fmul dword ptr [ebx]
+        fld dword ptr [esi]
+        fmul dword ptr [ebx + 0x4]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x1c]
+        call ext_0067B7F0
+        fld dword ptr [eax]
+        push ecx
+        fstp dword ptr [ebx + 0x20]
+        mov ecx, ebx
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ebx + 0x24]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ebx + 0x28]
+        fld qword ptr [mem_00A9CE00]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [esp]
+        call ext_0067E7B0
+        mov esi, dword ptr [edi + 0x88]
+        test esi, esi
+        je done
+        mov ecx, 0x10
+        lea edi, [esp + 0x20]
+        rep movsd
+        lea ecx, [esp + 0x20]
+        call ext_0067E880
+        push ebx
+        lea edx, [esp + 0x64]
+        push edx
+        lea ecx, [esp + 0x28]
+        call ext_004875A0
+        mov ecx, 0x10
+        mov esi, eax
+        mov edi, ebx
+        rep movsd
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x90
+        ret 0x4
+    }
+}
