@@ -6439,3 +6439,88 @@ extern "C" __declspec(naked) void __fastcall fn_00569830(void* self, int edx_unu
         ret 0x14
     }
 }
+
+extern "C" void ext_00569830();
+extern "C" void ext_00596660();
+extern "C" int mem_00924FD4;
+extern "C" int mem_00925134;
+extern "C" int mem_00928B5D;
+
+// [0x00569A40] sub_00569A40 (179 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00569A40(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        push offset mem_00928B5D
+        lea ecx, [edi + 8]
+        call dword ptr [mem_00924FD4]
+        lea esi, [edi + 0x24]
+        mov dword ptr [edi + 4], 0xffffffff
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        jbe loc_569a6e
+        call dword ptr [mem_00925134]
+    loc_569a6e:
+        push ebp
+        mov ebp, dword ptr [esi + 4]
+        cmp ebp, dword ptr [esi + 8]
+        jbe loc_569a7d
+        call dword ptr [mem_00925134]
+    loc_569a7d:
+        push ebx
+        push esi
+        push ebp
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_00596660
+        mov ebx, dword ptr [edi + 0x3c]
+        cmp dword ptr [edi + 0x38], ebx
+        lea esi, [edi + 0x34]
+        jbe loc_569a9e
+        call dword ptr [mem_00925134]
+    loc_569a9e:
+        mov ebp, dword ptr [esi + 4]
+        cmp ebp, dword ptr [esi + 8]
+        jbe loc_569aac
+        call dword ptr [mem_00925134]
+    loc_569aac:
+        push ebx
+        push esi
+        push ebp
+        push esi
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, esi
+        call ext_00569830
+        lea esi, [edi + 0x44]
+        mov edi, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], edi
+        pop ebp
+        jbe loc_569ace
+        call dword ptr [mem_00925134]
+    loc_569ace:
+        mov ebx, dword ptr [esi + 4]
+        cmp ebx, dword ptr [esi + 8]
+        jbe loc_569adc
+        call dword ptr [mem_00925134]
+    loc_569adc:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea edx, [esp + 0x1c]
+        push edx
+        mov ecx, esi
+        call ext_00569830
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
