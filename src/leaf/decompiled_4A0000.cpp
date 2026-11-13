@@ -3092,3 +3092,32 @@ extern "C" __declspec(naked) void __cdecl fn_004A1A10(void* a1) {
         ret
     }
 }
+
+// [0x004AFC20] sub_004AFC20 (53 bytes)
+extern "C" void ext_004AFA00();
+extern "C" void ext_004AFBF0();
+extern "C" void ext_004E8340();
+extern "C" void ext_004AFB60();
+extern "C" void ext_004AF860();
+extern "C" void ext_004AF8D0();
+extern "C" __declspec(naked) void __fastcall fn_004AFC20(void* self, int edx_unused, int arg0) {
+    __asm {
+        push    esi
+        mov     esi, ecx
+        call    ext_004AFA00
+        mov     ecx, esi
+        call    ext_004AFBF0
+        mov     eax, dword ptr [esp + 8]
+        push    eax
+        lea     ecx, [esi + 8]
+        call    ext_004E8340
+        mov     ecx, esi
+        call    ext_004AFB60
+        mov     ecx, esi
+        call    ext_004AF860
+        mov     ecx, esi
+        call    ext_004AF8D0
+        pop     esi
+        ret     4
+    }
+}
