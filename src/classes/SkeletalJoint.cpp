@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/classes/SkeletalJoint.cpp
 
+#include <math.h>
+
 extern "C" void ext_007C5C30();
 extern "C" void ext_007C5C50();
 extern "C" void ext_007C5C60();
@@ -570,6 +572,159 @@ extern "C" __declspec(naked) void __fastcall fn_0064FAA0(void* self, int edx_unu
         pop esi
         pop ebp
         pop ebx
+        ret 8
+    }
+}
+
+extern "C" void ext_0056B670();
+extern "C" void ext_0064E8C0();
+extern "C" void ext_0067B7F0();
+extern "C" void ext_006A6EB0();
+extern "C" void ext_006A7250();
+extern "C" void ext_006A7256();
+extern "C" void ext_007C5C00();
+extern "C" double mem_00A9CE00;
+extern "C" double mem_00993828;
+
+// [0x00650AF0] SkeletalJoint::vfunc_34 (465 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00650AF0(void* self, int edx_unused, const float* v, unsigned char flag) {
+    __asm {
+        sub esp, 34h
+        fldz
+        push esi
+        mov esi, dword ptr [esp + 3Ch]
+        fst dword ptr [esp + 24h]
+        fst dword ptr [esp + 20h]
+        push edi
+        fstp dword ptr [esp + 20h]
+        mov edi, ecx
+        fld dword ptr [esi + 4]
+        fld dword ptr [esi]
+        fld dword ptr [esi + 8]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp + 40h]
+        fld dword ptr [esp + 40h]
+        fld qword ptr [mem_00A9CE00]
+        fstp dword ptr [esp + 40h]
+        fld dword ptr [esp + 40h]
+        fcompp
+        fnstsw ax
+        test ah, 1
+        je loc_650ca8
+        cmp byte ptr [esp + 44h], 0
+        fld dword ptr [esi]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esi + 4]
+        fstp dword ptr [esp + 0Ch]
+        fld dword ptr [esi + 8]
+        fstp dword ptr [esp + 10h]
+        jne loc_650b97
+        fld dword ptr [edi + 7Ch]
+        lea eax, [esp + 8]
+        fmul dword ptr [esp + 8]
+        push eax
+        mov ecx, edi
+        fstp dword ptr [esp + 0Ch]
+        fld dword ptr [edi + 80h]
+        fmul dword ptr [esp + 10h]
+        fstp dword ptr [esp + 10h]
+        fld dword ptr [edi + 84h]
+        fmul dword ptr [esp + 14h]
+        fstp dword ptr [esp + 14h]
+        call ext_0064E8C0
+loc_650b97:
+        fldz
+        lea ecx, [esp + 8]
+        fst dword ptr [esp + 38h]
+        push ecx
+        fst dword ptr [esp + 38h]
+        lea ecx, [esp + 30h]
+        fst dword ptr [esp + 34h]
+        fstp dword ptr [esp + 30h]
+        call ext_00693F40
+        fld dword ptr [esp + 2Ch]
+        call ext_006A7256
+        fstp dword ptr [esp + 44h]
+        fld dword ptr [esp + 44h]
+        sub esp, 18h
+        fadd st(0), st
+        fstp dword ptr [esp + 5Ch]
+        fld dword ptr [esp + 48h]
+        fstp dword ptr [esp + 2Ch]
+        fld dword ptr [esp + 4Ch]
+        fstp dword ptr [esp + 30h]
+        fld dword ptr [esp + 50h]
+        fstp dword ptr [esp + 34h]
+        fld qword ptr [mem_00A9CE00]
+        fstp dword ptr [esp + 58h]
+        fld dword ptr [esp + 58h]
+        fstp qword ptr [esp + 10h]
+        fldz
+        fstp qword ptr [esp + 8]
+        fld dword ptr [esp + 5Ch]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 18h
+        test al, al
+        jne loc_650ca8
+        fld dword ptr [esp + 44h]
+        fmul qword ptr [mem_00993828]
+        fstp dword ptr [esp + 40h]
+        fld dword ptr [esp + 40h]
+        call ext_006A6EB0
+        fstp dword ptr [esp + 40h]
+        fld dword ptr [esp + 40h]
+        lea ecx, [esp + 14h]
+        fld1
+        fdivrp st(1), st
+        fstp dword ptr [esp + 40h]
+        fld dword ptr [esp + 30h]
+        fld dword ptr [esp + 40h]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [esp + 34h]
+        fmul st, st(1)
+        fstp dword ptr [esp + 18h]
+        fmul dword ptr [esp + 38h]
+        fstp dword ptr [esp + 1Ch]
+        call ext_0067B7F0
+        fld dword ptr [esp + 14h]
+        fld dword ptr [esp + 44h]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 18h]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0Ch]
+        fmul dword ptr [esp + 1Ch]
+        fstp dword ptr [esp + 10h]
+        fld dword ptr [esp + 8]
+        fstp dword ptr [esp + 20h]
+        fld dword ptr [esp + 0Ch]
+        fstp dword ptr [esp + 24h]
+        fld dword ptr [esp + 10h]
+        fstp dword ptr [esp + 28h]
+loc_650ca8:
+        mov eax, dword ptr [edi + 64h]
+        lea edx, [esp + 20h]
+        push edx
+        push eax
+        call ext_007C5C00
+        add esp, 8
+        pop edi
+        pop esi
+        add esp, 34h
         ret 8
     }
 }
