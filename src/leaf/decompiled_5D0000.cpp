@@ -3225,3 +3225,24 @@ done:
         ret 0x4
     }
 }
+
+// [0x005DFEB0] sub_005DFEB0 (40 bytes)
+extern "C" void ext_005DFD20();
+extern "C" __declspec(naked) void __fastcall fn_005DFEB0(void* self, int edx_unused, int a1, const std::string& a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        push esi
+        push eax
+        sub esp, 0x1c
+        mov esi, ecx
+        mov ecx, esp
+        mov dword ptr [esp + 0x28], esp
+        push edx
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esi + 0x4]
+        call ext_005DFD20
+        pop esi
+        ret 0x8
+    }
+}
