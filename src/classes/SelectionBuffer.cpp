@@ -162,3 +162,16 @@ extern "C" void* __fastcall fn_004E9AB0(void* self) {
     }
     return esi;
 }
+
+// [0x004E9B60] SelectionBuffer::vfunc_10 (31 bytes)
+extern "C" void ext_004E9040(void* a, void* b);
+
+extern "C" void* __fastcall fn_004E9B60(void* self) {
+    char* base = (char*)self;
+    char* esi = base + 0x60;
+    if (base[0x70] != 0) {
+        ext_004E9040(base + 4, esi);
+        esi[0x10] = 0;
+    }
+    return esi;
+}
