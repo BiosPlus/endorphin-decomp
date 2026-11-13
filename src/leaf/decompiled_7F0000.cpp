@@ -4620,3 +4620,40 @@ L_7f2ab6:
         ret
     }
 }
+
+extern "C" void ext_007EFF60(void* a, int b);
+extern "C" void ext_007F0160(void* a, int b);
+
+struct StructDC_007F0290 {
+    int d[0x37];
+};
+
+// [0x007F0290] sub_007F0290 (216 bytes)
+extern "C" void __cdecl fn_007F0290(void* self) {
+    char* p = (char*)self;
+    ext_007EFF60(p, *(int*)(p + 0x234));
+    int i = *(int*)(p + 0x234);
+    if (i < *(int*)(p + 0x238)) {
+        int next = i + 1;
+        do {
+            char* edx = *(char**)(p + 0x1fc);
+            int* eax = *(int**)(edx + 0x88);
+            if (eax[i] != 0) {
+                typedef void (__thiscall *VFn)(void*, void*, void*, StructDC_007F0290);
+                VFn fn = (*(VFn**)p)[2];
+                fn(p, p + 0x4, p + 0x14, *(StructDC_007F0290*)(p + 0x38));
+                int* arr = *(int**)(p + 0x138);
+                arr[i] = *(int*)(p + 0x10);
+            } else {
+                int* arr = *(int**)(p + 0x138);
+                arr[i] = 0;
+            }
+            if (next < *(int*)(p + 0x238)) {
+                ext_007F0160(p, i);
+            }
+            ++next;
+            ++i;
+        } while (i < *(int*)(p + 0x238));
+    }
+    *(int*)(p + 0x23c) = *(int*)(p + 0x238);
+}
