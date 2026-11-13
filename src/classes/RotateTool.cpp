@@ -329,3 +329,458 @@ extern "C" __declspec(naked) void __fastcall fn_00546610(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00546990] RotateTool::vfunc_15 (1388 bytes)
+extern "C" void ext_0047FFA0();
+extern "C" void ext_00540D60();
+extern "C" void ext_005465D0();
+extern "C" void ext_0067E020();
+extern "C" void ext_006936C0();
+extern "C" void ext_006943B0();
+extern "C" void ext_00694480();
+extern "C" int mem_00956054;
+
+extern "C" __declspec(naked) void __fastcall fn_00546990(void* self, int edx_unused, void* a1, void* a2, int a3) {
+    __asm {
+        sub esp, 0x90
+        test byte ptr [esp + 0x9c], 0x1
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x14], 0x0
+        je rt15_ret0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x38]
+        call edx
+        test al, al
+        je rt15_ret0
+        cmp byte ptr [esi + 0xe4], 0x0
+        fldz
+        mov eax, dword ptr [esi + 0x84]
+        push ebx
+        push ebp
+        push edi
+        je rt15_noflag
+        fst dword ptr [esp + 0x1c]
+        lea edi, [esi + 0x4]
+        fst dword ptr [esp + 0x18]
+        fst dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x10]
+        mov ecx, dword ptr [eax + 0xf8]
+        mov edx, ecx
+        shl edx, 0x4
+        sub edx, ecx
+        mov eax, dword ptr [eax + edx*4 + 0x8]
+        mov edx, dword ptr [esp + 0xa4]
+        mov ebx, dword ptr [eax]
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esp + 0xac]
+        mov ebp, dword ptr [ecx + 0x4]
+        sub ebp, dword ptr [edx + 0x4]
+        mov ecx, dword ptr [ecx]
+        sub ecx, dword ptr [edx]
+        mov edx, dword ptr [ebx + 0x28]
+        push edi
+        push ebp
+        push ecx
+        mov ecx, eax
+        call edx
+        fldz
+        test byte ptr [esp + 0xac], 0x8
+        mov eax, dword ptr [esi + 0xc8]
+        je short rt15_a51
+        test eax, eax
+        jne short rt15_a3d
+        fst dword ptr [esp + 0x10]
+rt15_a3d:
+        cmp eax, 0x1
+        jne short rt15_a46
+        fst dword ptr [esp + 0x14]
+rt15_a46:
+        cmp eax, 0x2
+        jne short rt15_a79
+        fstp dword ptr [esp + 0x18]
+        jmp short rt15_a7b
+rt15_a51:
+        test eax, eax
+        jne short rt15_a5d
+        fst dword ptr [esp + 0x18]
+        fst dword ptr [esp + 0x14]
+rt15_a5d:
+        cmp eax, 0x1
+        jne short rt15_a6a
+        fst dword ptr [esp + 0x18]
+        fst dword ptr [esp + 0x10]
+rt15_a6a:
+        cmp eax, 0x2
+        jne short rt15_a79
+        fst dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x10]
+        jmp short rt15_a7b
+rt15_a79:
+        fstp st(0)
+rt15_a7b:
+        push edi
+        lea eax, [esp + 0x74]
+        push eax
+        lea ecx, [esp + 0x18]
+        call ext_006943B0
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [eax + 0x8]
+        mov eax, 0x1
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [edi + 0x30]
+        fadd dword ptr [esp + 0x10]
+        fstp dword ptr [edi + 0x30]
+        fld dword ptr [esp + 0x14]
+        fadd dword ptr [edi + 0x34]
+        fstp dword ptr [edi + 0x34]
+        fld dword ptr [esp + 0x18]
+        fadd dword ptr [edi + 0x38]
+        fstp dword ptr [edi + 0x38]
+        fld dword ptr [edi + 0x30]
+        fstp dword ptr [esi + 0xd4]
+        fld dword ptr [edi + 0x34]
+        fstp dword ptr [esi + 0xd8]
+        fld dword ptr [edi + 0x38]
+        pop edi
+        fstp dword ptr [esi + 0xdc]
+        pop ebp
+        fld1
+        pop ebx
+        fstp dword ptr [esi + 0xe0]
+        pop esi
+        add esp, 0x90
+        ret 0xc
+rt15_noflag:
+        fst dword ptr [esp + 0x20]
+        mov edi, dword ptr [esp + 0xa4]
+        fld dword ptr [esi + 0xac]
+        mov ebx, dword ptr [esi + 0xa8]
+        fstp dword ptr [esp + 0x24]
+        fst dword ptr [esp + 0x44]
+        fst dword ptr [esp + 0x40]
+        fst dword ptr [esp + 0x3c]
+        fst dword ptr [esp + 0x38]
+        fst dword ptr [esp + 0x34]
+        fst dword ptr [esp + 0x30]
+        fst dword ptr [esp + 0x2c]
+        fst dword ptr [esp + 0x28]
+        fst dword ptr [esp + 0x5c]
+        fst dword ptr [esp + 0x58]
+        fst dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x50]
+        mov ecx, dword ptr [eax + 0xf8]
+        mov edx, ecx
+        shl edx, 0x4
+        sub edx, ecx
+        mov ecx, dword ptr [eax + edx*4 + 0x18]
+        sub ecx, dword ptr [eax + 0x138]
+        lea edx, [eax + edx*4]
+        add ecx, dword ptr [edi + 0x4]
+        mov edi, dword ptr [edi]
+        sub edi, dword ptr [edx + 0xc]
+        mov dword ptr [esp + 0x4c], ecx
+        mov dword ptr [esp + 0x48], edi
+        mov ecx, dword ptr [eax + 0xf8]
+        mov edx, ecx
+        shl edx, 0x4
+        sub edx, ecx
+        mov ecx, dword ptr [eax + edx*4 + 0x18]
+        sub ecx, dword ptr [eax + 0x138]
+        lea edx, [eax + edx*4]
+        mov eax, dword ptr [esp + 0xa8]
+        add ecx, dword ptr [eax + 0x4]
+        mov eax, dword ptr [eax]
+        sub eax, dword ptr [edx + 0xc]
+        cmp ebx, 0x4
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esp + 0x14], ecx
+        jne short rt15_c0d
+        mov eax, dword ptr [esi + 0x84]
+        fld dword ptr [esp + 0x24]
+        mov ecx, dword ptr [eax + 0xf8]
+        mov edx, ecx
+        shl edx, 0x4
+        sub edx, ecx
+        mov eax, dword ptr [eax + edx*4 + 0x8]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x30]
+        lea ecx, [esp + 0x38]
+        push ecx
+        lea edi, [esi + 0xd4]
+        push edi
+        push ecx
+        lea ecx, [esp + 0x54]
+        fstp dword ptr [esp]
+        push ecx
+        mov ecx, eax
+        call edx
+        fld dword ptr [esp + 0x24]
+        mov eax, dword ptr [esi + 0x84]
+        mov ecx, dword ptr [eax + 0xf8]
+        mov edx, ecx
+        shl edx, 0x4
+        sub edx, ecx
+        mov eax, dword ptr [eax + edx*4 + 0x8]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x30]
+        lea ecx, [esp + 0x28]
+        push ecx
+        push edi
+        push ecx
+        lea ecx, [esp + 0x1c]
+        fstp dword ptr [esp]
+        push ecx
+        mov ecx, eax
+        call edx
+        jmp rt15_end
+rt15_c0d:
+        cmp ebx, 0x3
+        jne short rt15_c73
+        mov eax, dword ptr [esi + 0x84]
+        mov ecx, dword ptr [eax + 0xf8]
+        mov edx, ecx
+        shl edx, 0x4
+        sub edx, ecx
+        mov eax, dword ptr [eax + edx*4 + 0x8]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x2c]
+        lea ecx, [esp + 0x38]
+        push ecx
+        lea edi, [esi + 0xd4]
+        push edi
+        lea ecx, [esp + 0x50]
+        push ecx
+        mov ecx, eax
+        call edx
+        mov eax, dword ptr [esi + 0x84]
+        mov ecx, dword ptr [eax + 0xf8]
+        mov edx, ecx
+        shl edx, 0x4
+        sub edx, ecx
+        mov eax, dword ptr [eax + edx*4 + 0x8]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x2c]
+        lea ecx, [esp + 0x28]
+        push ecx
+        push edi
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, eax
+        call edx
+        jmp rt15_end
+rt15_c73:
+        test ebx, ebx
+        jl rt15_end
+        mov eax, ebx
+        shl eax, 0x4
+        fld dword ptr [eax + esi + 0x4]
+        lea edi, [eax + esi + 0x4]
+        mov eax, dword ptr [esi + 0x84]
+        fstp dword ptr [esp + 0x80]
+        fld dword ptr [edi + 0x4]
+        lea ebp, [esi + 0xd4]
+        fstp dword ptr [esp + 0x84]
+        fld dword ptr [edi + 0x8]
+        fstp dword ptr [esp + 0x88]
+        fld dword ptr [edi + 0xc]
+        fstp dword ptr [esp + 0x8c]
+        mov ecx, dword ptr [eax + 0xf8]
+        fld dword ptr [mem_00956054]
+        mov edx, ecx
+        push ecx
+        shl edx, 0x4
+        fstp dword ptr [esp]
+        sub edx, ecx
+        mov eax, dword ptr [eax + edx*4 + 0x8]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x34]
+        lea ecx, [esp + 0x3c]
+        push ecx
+        lea ecx, [esp + 0x88]
+        push ecx
+        push ebp
+        lea ecx, [esp + 0x58]
+        push ecx
+        mov ecx, eax
+        call edx
+        test al, al
+        je short rt15_d51
+        fld dword ptr [edi]
+        mov eax, dword ptr [esi + 0x84]
+        fstp dword ptr [esp + 0x60]
+        fld dword ptr [edi + 0x4]
+        fstp dword ptr [esp + 0x64]
+        fld dword ptr [edi + 0x8]
+        fstp dword ptr [esp + 0x68]
+        fld dword ptr [edi + 0xc]
+        fstp dword ptr [esp + 0x6c]
+        mov ecx, dword ptr [eax + 0xf8]
+        fld dword ptr [mem_00956054]
+        mov edx, ecx
+        push ecx
+        shl edx, 0x4
+        fstp dword ptr [esp]
+        sub edx, ecx
+        mov eax, dword ptr [eax + edx*4 + 0x8]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x34]
+        lea ecx, [esp + 0x2c]
+        push ecx
+        lea ecx, [esp + 0x68]
+        push ecx
+        push ebp
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, eax
+        call edx
+        test al, al
+        jne rt15_end
+rt15_d51:
+        mov eax, dword ptr [esi + 0x84]
+        fld dword ptr [esp + 0x24]
+        mov ecx, dword ptr [eax + 0xf8]
+        mov edx, ecx
+        shl edx, 0x4
+        sub edx, ecx
+        mov eax, dword ptr [eax + edx*4 + 0x8]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x30]
+        lea ecx, [esp + 0x38]
+        push ecx
+        push ebp
+        push ecx
+        lea ecx, [esp + 0x54]
+        fstp dword ptr [esp]
+        push ecx
+        mov ecx, eax
+        call edx
+        fld dword ptr [esp + 0x24]
+        mov eax, dword ptr [esi + 0x84]
+        mov ecx, dword ptr [eax + 0xf8]
+        mov edx, ecx
+        shl edx, 0x4
+        sub edx, ecx
+        mov eax, dword ptr [eax + edx*4 + 0x8]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x30]
+        lea ecx, [esp + 0x28]
+        push ecx
+        push ebp
+        push ecx
+        lea ecx, [esp + 0x1c]
+        fstp dword ptr [esp]
+        push ecx
+        mov ecx, eax
+        call edx
+        lea edi, [esi + 0x4]
+        push edi
+        lea ecx, [esp + 0x3c]
+        call ext_00694480
+        push edi
+        lea ecx, [esp + 0x2c]
+        call ext_00694480
+        fldz
+        fst dword ptr [esp + ebx*4 + 0x38]
+        push edi
+        lea ecx, [esp + 0x3c]
+        fstp dword ptr [esp + ebx*4 + 0x2c]
+        call ext_005465D0
+        push edi
+        lea ecx, [esp + 0x2c]
+        call ext_005465D0
+rt15_end:
+        lea edi, [esi + 0xd4]
+        push edi
+        lea eax, [esp + 0x64]
+        push eax
+        lea ecx, [esp + 0x40]
+        call ext_0047FFA0
+        mov ecx, eax
+        call ext_00540D60
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x70]
+        push edi
+        fld dword ptr [eax + 0x4]
+        lea ecx, [esp + 0x64]
+        fstp dword ptr [esp + 0x78]
+        push ecx
+        fld dword ptr [eax + 0x8]
+        lea ecx, [esp + 0x30]
+        fstp dword ptr [esp + 0x80]
+        fld dword ptr [eax + 0xc]
+        fstp dword ptr [esp + 0x84]
+        call ext_0047FFA0
+        mov ecx, eax
+        call ext_00540D60
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x90]
+        lea edx, [esp + 0x90]
+        fld dword ptr [eax + 0x4]
+        push edx
+        fstp dword ptr [esp + 0x98]
+        lea ecx, [esp + 0x54]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x9c]
+        fld dword ptr [eax + 0xc]
+        lea eax, [esp + 0x24]
+        push eax
+        fstp dword ptr [esp + 0xa4]
+        push ecx
+        lea ecx, [esp + 0x7c]
+        call ext_006936C0
+        fld dword ptr [esp + 0x20]
+        push ecx
+        fstp dword ptr [esp]
+        push edi
+        lea edx, [esp + 0x58]
+        push edx
+        lea ecx, [esi + 0x4]
+        call ext_0067E020
+        cmp dword ptr [esi + 0x88], 0x0
+        je short rt15_ede
+        fldz
+        fld dword ptr [esp + 0x20]
+        fucom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x44
+        jnp short rt15_edc
+        mov esi, dword ptr [esi + 0x88]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x58]
+        push ecx
+        fstp dword ptr [esp]
+        push edi
+        lea ecx, [esp + 0x58]
+        push ecx
+        mov ecx, esi
+        call edx
+        pop edi
+        pop ebp
+        pop ebx
+        mov eax, 0x1
+        pop esi
+        add esp, 0x90
+        ret 0xc
+rt15_edc:
+        fstp st(0)
+rt15_ede:
+        pop edi
+        pop ebp
+        pop ebx
+        mov eax, 0x1
+        pop esi
+        add esp, 0x90
+        ret 0xc
+rt15_ret0:
+        xor eax, eax
+        pop esi
+        add esp, 0x90
+        ret 0xc
+    }
+}
