@@ -364,3 +364,34 @@ extern "C" __declspec(naked) void* __fastcall fn_005B80A0(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x005B7AE0] ExprParser::FunctionType<NMData::MetaBodyData, NM::Vector3 const &, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getVelocityAtPoint(class NM::Vector3 const &), 0}>::vfunc_48 (58 bytes)
+extern "C" void ext_005B6C80();
+extern "C" void ext_00672110();
+
+extern "C" __declspec(naked) void* __fastcall fn_005B7AE0(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        mov dword ptr [esp + 0x8], 0x0
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_005B6C80
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call ext_00672110
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
