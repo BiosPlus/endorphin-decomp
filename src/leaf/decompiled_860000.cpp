@@ -577,3 +577,189 @@ extern "C" __declspec(naked) void __cdecl fn_0086B700(void) {
         ret
     }
 }
+
+extern "C" int mem_00BC7390;
+extern "C" int mem_00BC760A;
+
+// [0x0086B510] sub_0086B510 (495 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086B510(void) {
+    __asm {
+        xor dx, dx
+        mov ecx, dword ptr [esp + 0xc]
+        sub esp, 0xc90
+        push ebx
+        push esi
+        push edi
+        push ebp
+    loc_86B521:
+        movsx eax, dx
+        inc dx
+        mov dword ptr [ecx + 4*eax], 0
+        movsx ebx, dx
+        cmp ebx, 5
+        jb loc_86B521
+        lea eax, [esp + 0x34]
+        mov edx, dword ptr [esp + 0xca8]
+        mov dword ptr [esp + 0x2c], eax
+        mov dword ptr [esp + 0x30], edx
+        mov ebx, dword ptr [esp + 0x30]
+        mov edx, dword ptr [esp + 0x2c]
+        mov eax, dword ptr [ebx]
+        mov dword ptr [edx], eax
+        mov eax, dword ptr [ebx + 0x4]
+        mov dword ptr [edx + 0x4], eax
+        mov eax, dword ptr [ebx + 0x8]
+        mov dword ptr [edx + 0x8], eax
+        mov eax, dword ptr [ebx + 0xc]
+        mov dword ptr [edx + 0xc], eax
+        mov eax, dword ptr [ebx + 0x10]
+        mov dword ptr [edx + 0x10], eax
+        lea eax, [esp + 0x48]
+        mov edx, dword ptr [esp + 0xca4]
+        mov dword ptr [esp + 0x24], eax
+        mov dword ptr [esp + 0x28], edx
+        mov ebx, dword ptr [esp + 0x28]
+        mov edx, dword ptr [esp + 0x24]
+        mov eax, dword ptr [ebx]
+        mov dword ptr [edx], eax
+        mov eax, dword ptr [ebx + 0x4]
+        mov dword ptr [edx + 0x4], eax
+        mov eax, dword ptr [ebx + 0x8]
+        mov dword ptr [edx + 0x8], eax
+        mov eax, dword ptr [ebx + 0xc]
+        mov dword ptr [edx + 0xc], eax
+        mov eax, dword ptr [ebx + 0x10]
+        mov dword ptr [edx + 0x10], eax
+        mov si, 1
+    loc_86B5A7:
+        movsx eax, si
+        shl eax, 2
+        lea eax, [eax + 4*eax]
+        lea edi, [esp + eax + 0x48]
+        lea edx, [esp + eax + 0x34]
+        mov dword ptr [esp + 0x1c], edi
+        mov dword ptr [esp + 0x20], edx
+        mov ebx, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [ebx]
+        mov dword ptr [edx], eax
+        mov eax, dword ptr [ebx + 0x4]
+        mov dword ptr [edx + 0x4], eax
+        mov eax, dword ptr [ebx + 0x8]
+        mov dword ptr [edx + 0x8], eax
+        mov eax, dword ptr [ebx + 0xc]
+        mov dword ptr [edx + 0xc], eax
+        mov eax, dword ptr [ebx + 0x10]
+        mov dword ptr [edx + 0x10], eax
+        mov dword ptr [esp + 0x18], edi
+        mov ebx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [ebx]
+        _emit 0xc1
+        _emit 0xe8
+        _emit 0x01
+        mov dword ptr [ebx], eax
+        mov eax, dword ptr [ebx + 0x4]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0x4], eax
+        mov eax, dword ptr [ebx + 0x8]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0x8], eax
+        mov eax, dword ptr [ebx + 0xc]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0xc], eax
+        mov eax, dword ptr [ebx + 0x10]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0x10], eax
+        jae loc_86B61F
+        or dword ptr [ebx], 0x20000000
+    loc_86B61F:
+        inc si
+        cmp si, 0x9e
+        jl loc_86B5A7
+        mov ax, word ptr [mem_00BC7390]
+        movsx eax, ax
+        xor dx, dx
+        lea edi, [eax + 4*eax]
+    loc_86B63B:
+        movsx esi, dx
+        inc dx
+        lea eax, [edi + esi]
+        movsx ebx, dx
+        mov eax, dword ptr [esp + 4*eax + 0x48]
+        and eax, dword ptr [esp + 4*esi + 0x34]
+        cmp ebx, 5
+        mov dword ptr [ecx + 4*esi], eax
+        jb loc_86B63B
+        mov word ptr [esp + 0x12], 1
+    loc_86B65D:
+        lea eax, [esp + 0x34]
+        mov dword ptr [esp + 0x14], eax
+        mov ebx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [ebx]
+        _emit 0xc1
+        _emit 0xe8
+        _emit 0x01
+        mov dword ptr [ebx], eax
+        mov eax, dword ptr [ebx + 0x4]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0x4], eax
+        mov eax, dword ptr [ebx + 0x8]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0x8], eax
+        mov eax, dword ptr [ebx + 0xc]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0xc], eax
+        mov eax, dword ptr [ebx + 0x10]
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0x01
+        mov dword ptr [ebx + 0x10], eax
+        jae loc_86B69C
+        or dword ptr [ebx], 0x20000000
+    loc_86B69C:
+        movsx eax, word ptr [esp + 0x12]
+        xor dx, dx
+        add eax, eax
+        mov di, word ptr mem_00BC7390[eax]
+        movsx ebx, di
+        mov ax, word ptr mem_00BC760A[eax]
+        lea edi, [ebx + 4*ebx]
+        movsx eax, ax
+        lea esi, [eax + 4*eax]
+    loc_86B6C0:
+        movsx ebx, dx
+        inc dx
+        lea eax, [esi + ebx]
+        lea ebp, [edi + ebx]
+        mov eax, dword ptr [esp + 4*eax + 0x48]
+        xor eax, dword ptr [esp + 4*ebp + 0x48]
+        and eax, dword ptr [esp + 4*ebx + 0x34]
+        xor dword ptr [ecx + 4*ebx], eax
+        movsx ebx, dx
+        cmp ebx, 5
+        jb loc_86B6C0
+        inc word ptr [esp + 0x12]
+        cmp word ptr [esp + 0x12], 0x9e
+        jl loc_86B65D
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0xc90
+        ret
+    }
+}
