@@ -5312,3 +5312,155 @@ extern "C" __declspec(naked) void __fastcall fn_0049E930(void* self) {
         ret 0x14
     }
 }
+
+// [0x00493370] sub_00493370 (367 bytes)
+extern "C" void ext_00492590();
+extern "C" void ext_004925D0();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00493370(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        cmp dword ptr [edi], 0x0
+        mov esi, dword ptr [edi + 0x4]
+        mov dword ptr [esp + 0x10], esi
+        jne PATHB
+        mov eax, dword ptr [esi + 0x4]
+        mov eax, dword ptr [eax]
+        mov ebx, eax
+        mov dword ptr [esp + 0x14], ebx
+    LOOPA:
+        test esi, esi
+        mov eax, dword ptr [edi + 0x4]
+        mov ebp, dword ptr [eax + 0x4]
+        je INVA1
+        cmp esi, eax
+        je OKA1
+    INVA1:
+        call dword ptr [mem_00925134]
+    OKA1:
+        cmp ebx, ebp
+        je EPI
+        test esi, esi
+        jne OKA2
+        call dword ptr [mem_00925134]
+    OKA2:
+        cmp ebx, dword ptr [esi + 0x4]
+        jne OKA3
+        call dword ptr [mem_00925134]
+    OKA3:
+        mov esi, dword ptr [ebx + 0x28]
+        test esi, esi
+        je ADVA
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x28]
+        mov ecx, esi
+        call eax
+        test al, al
+        jne ADVA
+        mov byte ptr [esi + 0x4e2], al
+        mov byte ptr [esi + 0x4e4], al
+        mov dword ptr [esi + 0x5f0], 0x6
+    ADVA:
+        lea ecx, dword ptr [esp + 0x10]
+        call ext_00673C20
+        mov ebx, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        jmp LOOPA
+
+    PATHB:
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov ebx, eax
+        mov dword ptr [esp + 0x14], ebx
+        nop
+    LOOPB:
+        test esi, esi
+        mov eax, dword ptr [edi + 0x4]
+        mov ebp, dword ptr [eax + 0x4]
+        je INVB1
+        cmp esi, eax
+        je OKB1
+    INVB1:
+        call dword ptr [mem_00925134]
+    OKB1:
+        cmp ebx, ebp
+        je PHASE2
+        test esi, esi
+        jne OKB2
+        call dword ptr [mem_00925134]
+    OKB2:
+        cmp ebx, dword ptr [esi + 0x4]
+        jne OKB3
+        call dword ptr [mem_00925134]
+    OKB3:
+        mov esi, dword ptr [ebx + 0x28]
+        test esi, esi
+        je ADVB
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x28]
+        mov ecx, esi
+        call eax
+        test al, al
+        jne ADVB
+        mov byte ptr [esi + 0x4e2], al
+        mov byte ptr [esi + 0x4e4], al
+        mov dword ptr [esi + 0x5f0], 0x0
+    ADVB:
+        lea ecx, dword ptr [esp + 0x10]
+        call ext_00673C20
+        mov ebx, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        jmp LOOPB
+
+    PHASE2:
+        cmp dword ptr [edi + 0x8], 0x0
+        mov ebx, 0x1
+        je P3
+        mov ecx, edi
+        call ext_00492590
+        test al, al
+        je P3
+        mov ecx, dword ptr [edi + 0x8]
+        mov byte ptr [ecx + 0x4e2], bl
+        mov edx, dword ptr [edi + 0x8]
+        mov dword ptr [edx + 0x5f0], ebx
+    P3:
+        mov esi, dword ptr [edi + 0xc]
+        test esi, esi
+        je P4
+        push 0x0
+        mov ecx, edi
+        call ext_004925D0
+        test al, al
+        sete al
+        mov byte ptr [esi + 0x4e4], al
+    P4:
+        mov esi, dword ptr [edi + 0x10]
+        test esi, esi
+        je EPI
+        push ebx
+        mov ecx, edi
+        call ext_004925D0
+        test al, al
+        sete cl
+        mov byte ptr [esi + 0x4e4], cl
+    EPI:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
