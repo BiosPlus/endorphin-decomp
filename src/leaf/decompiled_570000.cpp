@@ -6661,3 +6661,28 @@ L_57CA4D:
         ret 4
     }
 }
+
+// [0x00574AE0] sub_00574AE0 (38 bytes)
+extern "C" void ext_005A35D0();
+
+extern "C" __declspec(naked) void __fastcall fn_00574AE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x70]
+        push edi
+        mov edi, ecx
+        mov ecx, esi
+        call edx
+        test al, al
+        jne done
+        mov ecx, dword ptr [edi + 0x414]
+        push esi
+        call ext_005A35D0
+    done:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
