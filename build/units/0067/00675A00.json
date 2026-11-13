@@ -30,5 +30,7 @@
     "0x00675B3E",
     "0x00675B4F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-13T10:32:13Z"
 }
