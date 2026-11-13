@@ -1456,3 +1456,136 @@ extern "C" void __cdecl fn_007EFF00(int a1) {
     typedef void (__cdecl *FnT)(int, int, int, int, int, int, int, int, int);
     ((FnT)ext_007C8890)(a1, 6, 0x99ecd0, 0x7ca820, 0x7efb70, 0x7efe60, 0x7efed0, 0x7efee0, 0x7efef0);
 }
+
+// [0x007E48D0] sub_007E48D0 (344 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007E48D0(float* r, int edx_unused, const float* a, const float* b) {
+    __asm {
+        __asm sub esp, 0xc
+        __asm mov edx, dword ptr [esp + 0x10]
+        __asm mov eax, dword ptr [esp + 0x14]
+        __asm fld dword ptr [edx]
+        __asm fmul dword ptr [eax]
+        __asm fld dword ptr [edx + 0x4]
+        __asm fmul dword ptr [eax + 0x4]
+        __asm faddp st(1), st
+        __asm fld dword ptr [edx + 0x8]
+        __asm fmul dword ptr [eax + 0x8]
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx]
+        __asm fld dword ptr [eax + 0x14]
+        __asm fmul dword ptr [edx + 0x4]
+        __asm fld dword ptr [eax + 0x10]
+        __asm fmul dword ptr [edx]
+        __asm faddp st(1), st
+        __asm fld dword ptr [edx + 0x8]
+        __asm fmul dword ptr [eax + 0x18]
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx + 0x4]
+        __asm fld dword ptr [eax + 0x24]
+        __asm fmul dword ptr [edx + 0x4]
+        __asm fld dword ptr [eax + 0x20]
+        __asm fmul dword ptr [edx]
+        __asm faddp st(1), st
+        __asm fld dword ptr [edx + 0x8]
+        __asm fmul dword ptr [eax + 0x28]
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx + 0x8]
+        __asm fld dword ptr [edx + 0x14]
+        __asm fmul dword ptr [eax + 0x4]
+        __asm fld dword ptr [edx + 0x10]
+        __asm fmul dword ptr [eax]
+        __asm faddp st(1), st
+        __asm fld dword ptr [eax + 0x8]
+        __asm fmul dword ptr [edx + 0x18]
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx + 0x10]
+        __asm fld dword ptr [edx + 0x14]
+        __asm fmul dword ptr [eax + 0x14]
+        __asm fld dword ptr [edx + 0x10]
+        __asm fmul dword ptr [eax + 0x10]
+        __asm faddp st(1), st
+        __asm fld dword ptr [edx + 0x18]
+        __asm fmul dword ptr [eax + 0x18]
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx + 0x14]
+        __asm fld dword ptr [edx + 0x14]
+        __asm fmul dword ptr [eax + 0x24]
+        __asm fld dword ptr [edx + 0x10]
+        __asm fmul dword ptr [eax + 0x20]
+        __asm faddp st(1), st
+        __asm fld dword ptr [edx + 0x18]
+        __asm fmul dword ptr [eax + 0x28]
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx + 0x18]
+        __asm fld dword ptr [edx + 0x24]
+        __asm fmul dword ptr [eax + 0x4]
+        __asm fld dword ptr [edx + 0x20]
+        __asm fmul dword ptr [eax]
+        __asm faddp st(1), st
+        __asm fld dword ptr [eax + 0x8]
+        __asm fmul dword ptr [edx + 0x28]
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx + 0x20]
+        __asm fld dword ptr [edx + 0x24]
+        __asm fmul dword ptr [eax + 0x14]
+        __asm fld dword ptr [edx + 0x20]
+        __asm fmul dword ptr [eax + 0x10]
+        __asm faddp st(1), st
+        __asm fld dword ptr [edx + 0x28]
+        __asm fmul dword ptr [eax + 0x18]
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx + 0x24]
+        __asm fld dword ptr [edx + 0x24]
+        __asm fmul dword ptr [eax + 0x24]
+        __asm fld dword ptr [edx + 0x20]
+        __asm fmul dword ptr [eax + 0x20]
+        __asm faddp st(1), st
+        __asm fld dword ptr [edx + 0x28]
+        __asm fmul dword ptr [eax + 0x28]
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx + 0x28]
+        __asm fld dword ptr [edx + 0x30]
+        __asm fsub dword ptr [eax + 0x30]
+        __asm fstp dword ptr [esp]
+        __asm fld dword ptr [edx + 0x34]
+        __asm fsub dword ptr [eax + 0x34]
+        __asm fstp dword ptr [esp + 0x4]
+        __asm fld dword ptr [edx + 0x38]
+        __asm fsub dword ptr [eax + 0x38]
+        __asm fstp dword ptr [esp + 0x8]
+        __asm fld dword ptr [eax]
+        __asm fld dword ptr [esp]
+        __asm fld st(0)
+        __asm fmulp st(2), st
+        __asm fld dword ptr [esp + 0x4]
+        __asm fld st(0)
+        __asm fmul dword ptr [eax + 0x4]
+        __asm faddp st(3), st
+        __asm fld dword ptr [eax + 0x8]
+        __asm fld dword ptr [esp + 0x8]
+        __asm fld st(0)
+        __asm fmulp st(2), st
+        __asm fxch st(4)
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx + 0x30]
+        __asm fld dword ptr [eax + 0x10]
+        __asm fmul st, st(2)
+        __asm fld dword ptr [eax + 0x14]
+        __asm fmul st, st(2)
+        __asm faddp st(1), st
+        __asm fld st(3)
+        __asm fmul dword ptr [eax + 0x18]
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx + 0x34]
+        __asm fld dword ptr [eax + 0x20]
+        __asm fmulp st(2), st
+        __asm fmul dword ptr [eax + 0x24]
+        __asm faddp st(1), st
+        __asm fld dword ptr [eax + 0x28]
+        __asm fmulp st(2), st
+        __asm faddp st(1), st
+        __asm fstp dword ptr [ecx + 0x38]
+        __asm add esp, 0xc
+        __asm ret 8
+    }
+}
