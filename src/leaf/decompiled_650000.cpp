@@ -6039,3 +6039,77 @@ extern "C" void __fastcall fn_0065BD50(void* self, int edx_unused, void* arg1) {
     ext_007C8D00(*(void**)(s + 0x18));
     *(int*)(s + 0x18) = 0;
 }
+
+// [0x0065BE20] sub_0065BE20 (176 bytes)
+extern "C" void ext_007C76A0();
+extern "C" void ext_007C76B0();
+extern "C" void ext_007C76D0();
+extern "C" void ext_007C76E0();
+extern "C" void ext_007C8490();
+extern "C" int mem_0093F7B8;
+
+extern "C" __declspec(naked) void __fastcall fn_0065BE20(void* self, int edx_unused, int arg0) {
+    __asm {
+        mov     eax, dword ptr [esp + 0x4]
+        fldz
+        push    esi
+        mov     esi, ecx
+        mov     ecx, dword ptr [esi + 0x10]
+        fstp    dword ptr [esi + 0x4]
+        fld     dword ptr [esi + 0x30]
+        mov     edx, dword ptr [esi + 0xc]
+        push    eax
+        sub     esp, 0x8
+        fstp    dword ptr [esp + 0x4]
+        mov     dword ptr [esi + 0x34], 0x0
+        fld     dword ptr [esi + 0x2c]
+        mov     dword ptr [esi + 0x38], 0x0
+        fstp    dword ptr [esp]
+        push    ecx
+        push    edx
+        call    ext_007C8490
+        push    0x0
+        push    eax
+        mov     dword ptr [esi + 0x40], eax
+        call    ext_007C76D0
+        fld     dword ptr [esi + 0x28]
+        mov     eax, dword ptr [esi + 0x40]
+        fstp    dword ptr [esp + 0x18]
+        fld     dword ptr [esi + 0x24]
+        add     esp, 0x10
+        fstp    dword ptr [esp + 0x4]
+        fld     dword ptr [esi + 0x20]
+        fstp    dword ptr [esp]
+        push    eax
+        call    ext_007C76E0
+        fld     dword ptr [mem_0093F7B8]
+        fcomp   dword ptr [esi + 0x18]
+        add     esp, 0x10
+        fnstsw  ax
+        test    ah, 0x44
+        jnp     L_0065bea9
+        fld     dword ptr [esi + 0x18]
+        push    ecx
+        mov     ecx, dword ptr [esi + 0x40]
+        fstp    dword ptr [esp]
+        push    ecx
+        call    ext_007C76B0
+        add     esp, 0x8
+    L_0065bea9:
+        fld     dword ptr [mem_0093F7B8]
+        fcomp   dword ptr [esi + 0x14]
+        fnstsw  ax
+        test    ah, 0x44
+        jnp     L_0065becc
+        fld     dword ptr [esi + 0x14]
+        mov     edx, dword ptr [esi + 0x40]
+        push    ecx
+        fstp    dword ptr [esp]
+        push    edx
+        call    ext_007C76A0
+        add     esp, 0x8
+    L_0065becc:
+        pop     esi
+        ret     0x4
+    }
+}
