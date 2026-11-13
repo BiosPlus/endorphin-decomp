@@ -4835,3 +4835,21 @@ extern "C" void __fastcall fn_0065AA30(void* self, int edx_unused, void* a1, flo
     ((void (*)(float, float, void*))ext_007CA1A0)(f2, f1, &buf);
     ((void (*)(void*, void*))ext_007C6490)(*(void**)self, &buf);
 }
+
+// [0x0065AAB0] sub_0065AAB0 (138 bytes)
+extern "C" void ext_007CA1E0();
+
+extern "C" void __fastcall fn_0065AAB0(void* self, int edx_unused, void* a1, float a2) {
+    void* obj = *(void**)((char*)a1 + 0xc);
+    float f2 = (float)(((float (__thiscall *)(void*, void*))(*(void***)obj)[3])(obj, a1) * a2 * mem_00928E78);
+    ((void (*)(void*, float))ext_007C6330)(*(void**)self, f2);
+    Sub65AA30Struct buf;
+    ((void (*)(float, float, float, float, void*))ext_007CA1E0)(
+        f2,
+        ((float (__thiscall *)(void*, int))ext_005B11E0)(a1, 0),
+        ((float (__thiscall *)(void*, int))ext_005B11E0)(a1, 1),
+        ((float (__thiscall *)(void*, int))ext_005B11E0)(a1, 2),
+        &buf
+    );
+    ((void (*)(void*, void*))ext_007C6490)(*(void**)self, &buf);
+}
