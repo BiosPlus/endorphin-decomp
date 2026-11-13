@@ -2642,3 +2642,67 @@ loc_5dc842:
         ret
     }
 }
+
+// [0x005DC970] sub_005DC970 (161 bytes)
+extern "C" void ext_00493EE0();
+extern "C" void ext_00594000();
+extern "C" void ext_005DC890();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" int mem_00924FC4;
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __fastcall fn_005DC970(void* self, int edx_unused, void* arg1) {
+    __asm {
+        push -1
+        push 0x8a56c8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x258]
+        lea ebx, [eax + 0x258]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        call edx
+        mov esi, eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], esi
+        call ext_0065C640
+        mov eax, dword ptr [esp + 0x24]
+        push eax
+        lea ebp, [edi + 0x4]
+        push ebp
+        mov dword ptr [esp + 0x24], 0
+        call dword ptr [mem_00924FC4]
+        add esp, 8
+        test al, al
+        jne loc_5dc9ed
+        mov ecx, dword ptr [esp + 0x24]
+        push ecx
+        mov ecx, ebp
+        call dword ptr [mem_00924FDC]
+        mov ecx, edi
+        call ext_005DC890
+        mov ecx, ebx
+        call ext_00493EE0
+loc_5dc9ed:
+        mov ecx, esi
+        mov dword ptr [esp + 0x1c], -1
+        call ext_0065C650
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
