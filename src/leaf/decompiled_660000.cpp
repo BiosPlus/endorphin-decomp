@@ -9668,3 +9668,100 @@ L663F4C:
         ret
     }
 }
+
+// [0x00661740] sub_00661740 (245 bytes)
+extern "C" void ext_0041CF50();
+extern "C" void ext_006616C0();
+extern "C" void ext_00661710();
+extern "C" void ext_00675660();
+extern "C" void ext_00679030();
+extern "C" int mem_00B599BC;
+extern "C" __declspec(naked) void* __fastcall fn_00661740(void* self, int edx_unused, void* out, void* in) {
+    __asm {
+        push -1
+        push 0x8b28a9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0ch
+        push ebx
+        push ebp
+        push esi
+        xor ebx, ebx
+        mov dword ptr [esp + 0ch], ebx
+        mov esi, dword ptr [esp + 28h]
+        push edi
+        mov edi, dword ptr [esp + 30h]
+        mov eax, dword ptr [edi + 4ch]
+        mov ebp, ecx
+        mov dword ptr [esi], ebx
+        mov ecx, dword ptr [mem_00B599BC]
+        mov dword ptr [esi + 4], ecx
+        cmp eax, 384h
+        mov dword ptr [esp + 24h], ebx
+        mov dword ptr [esp + 10h], 1
+        je L_skip1
+        mov eax, dword ptr [edi + 4ch]
+        push eax
+        lea edx, [esp + 18h]
+        push edx
+        mov ecx, ebp
+        call ext_00661710
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 28h], 1
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 18h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 24h], bl
+        je L_skip1
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 78h]
+        lea edx, [esp + 14h]
+        push edx
+        call eax
+    L_skip1:
+        mov eax, dword ptr [esi + 4]
+        cmp eax, ebx
+        je L_call2
+        cmp eax, dword ptr [mem_00B599BC]
+        jne L_end
+    L_call2:
+        mov ecx, ebp
+        call ext_006616C0
+        cmp eax, ebx
+        je L_end
+        push ebx
+        add edi, 10h
+        push edi
+        push eax
+        lea ecx, [esp + 20h]
+        push ecx
+        call ext_00675660
+        mov ecx, eax
+        call ext_00679030
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 28h], 2
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 18h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 24h], bl
+        je L_end
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 14h]
+        push eax
+        call edx
+    L_end:
+        mov ecx, dword ptr [esp + 1ch]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 18h
+        ret 8
+    }
+}
