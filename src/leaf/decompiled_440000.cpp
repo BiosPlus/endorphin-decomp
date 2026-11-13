@@ -7342,3 +7342,36 @@ extern "C" __declspec(naked) void __fastcall fn_0044ABD0(void* self, int edx_unu
         ret 0ch
     }
 }
+
+// [0x0044ACE0] sub_0044ACE0 (66 bytes)
+extern "C" void* __cdecl ext_006A6E9E(void* p, int vf_delta, void* src_type, void* target_type, int is_reference);
+extern "C" void __fastcall fn_0044ABD0(void* self, int edx_unused, void* a1, int a2, int a3);
+extern "C" __declspec(naked) void __fastcall fn_0044ACE0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        push 0
+        push 0xa2ff24
+        push 0xa2ffb8
+        mov esi, ecx
+        push 0
+        push eax
+        lea edi, [esi + 0x148]
+        call ext_006A6E9E
+        add esp, 0x14
+        cmp edi, eax
+        jne done
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        lea edx, [esi + 0xf4]
+        push edx
+        push edi
+        mov ecx, esi
+        call fn_0044ABD0
+    done:
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
