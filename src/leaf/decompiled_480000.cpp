@@ -6236,3 +6236,35 @@ extern "C" __declspec(naked) int __cdecl fn_0048CA80(int a1, int a2, int a3) {
         ret
     }
 }
+
+// [0x0048BB60] sub_0048BB60 (59 bytes)
+extern "C" void ext_0048AC80();
+extern "C" void ext_006A5C5C();
+extern "C" __declspec(naked) void __fastcall fn_0048BB60(void* self) {
+    __asm {
+        sub esp, 8
+        push esi
+        lea esi, [ecx + 4]
+        mov dword ptr [ecx], 0x93e17c
+        mov eax, dword ptr [esi + 4]
+        mov ecx, dword ptr [eax]
+        push eax
+        push esi
+        push ecx
+        push esi
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, esi
+        call ext_0048AC80
+        mov ecx, dword ptr [esi + 4]
+        push ecx
+        call ext_006A5C5C
+        add esp, 4
+        xor eax, eax
+        mov dword ptr [esi + 4], eax
+        mov dword ptr [esi + 8], eax
+        pop esi
+        add esp, 8
+        ret
+    }
+}
