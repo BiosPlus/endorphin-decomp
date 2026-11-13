@@ -11351,3 +11351,16 @@ extern "C" void __stdcall fn_005A2C10(void** self, void** a1) {
     int r = ((VCallFn_005A2C10)((*(void***)sub)[2]))(sub, a1);
     ((CallFn_005A2C10)ext_005A1A30)(obj, r);
 }
+
+// [0x0062B350] ExprParser::WriteMethodType<Sensors::SensorIntegral, int, &public: void __thiscall Sensors::SensorIntegral::resize(int)>::vfunc_41 (34 bytes)
+extern "C" void ext_0062B2E0();
+
+typedef int (__thiscall *VCallFn_0062B350)(void* self, void* a1);
+typedef void (__thiscall *CallFn_0062B350)(void* self, int a1);
+
+extern "C" void __stdcall fn_0062B350(void** self, void** a1) {
+    void* obj = *self;
+    void* sub = a1[1];
+    int r = ((VCallFn_0062B350)((*(void***)sub)[2]))(sub, a1);
+    ((CallFn_0062B350)ext_0062B2E0)(obj, r);
+}
