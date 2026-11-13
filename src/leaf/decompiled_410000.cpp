@@ -7423,3 +7423,153 @@ extern "C" __declspec(naked) void __fastcall fn_00417340(void* self) {
         ret
     }
 }
+
+// [0x004145C0] sub_004145C0 (501 bytes)
+extern "C" int mem_0092C518;
+extern "C" int mem_00924E38;
+
+extern "C" __declspec(naked) void __cdecl fn_004145C0() {
+    __asm {
+        sub esp, 0x28
+        mov ecx, dword ptr [esp + 0x34]
+        fnstcw word ptr [esp + 0x34]
+        movzx eax, word ptr [esp + 0x34]
+        fld dword ptr [ecx]
+        fmul dword ptr [ecx + 0xc]
+        or eax, 0xc00
+        fld qword ptr [mem_0092C518]
+        mov dword ptr [esp], eax
+        fmul st(1), st(0)
+        xor edx, edx
+        fldcw word ptr [esp]
+        mov dword ptr [esp + 0x8], 0x0
+        mov dword ptr [esp + 0xc], 0x0
+        fxch st(1)
+        fistp dword ptr [esp]
+        movzx eax, word ptr [esp]
+        mov dh, al
+        fldcw word ptr [esp + 0x34]
+        mov word ptr [esp + 0x10], dx
+        fld dword ptr [ecx + 0x4]
+        xor edx, edx
+        fmul dword ptr [ecx + 0xc]
+        fnstcw word ptr [esp + 0x34]
+        fmul st(0), st(1)
+        movzx eax, word ptr [esp + 0x34]
+        or eax, 0xc00
+        mov dword ptr [esp], eax
+        fldcw word ptr [esp]
+        fistp dword ptr [esp]
+        movzx eax, word ptr [esp]
+        mov dh, al
+        fldcw word ptr [esp + 0x34]
+        mov word ptr [esp + 0x12], dx
+        fld dword ptr [ecx + 0x8]
+        xor edx, edx
+        fmul dword ptr [ecx + 0xc]
+        fnstcw word ptr [esp + 0x34]
+        fmul st(0), st(1)
+        movzx eax, word ptr [esp + 0x34]
+        or eax, 0xc00
+        mov dword ptr [esp], eax
+        fldcw word ptr [esp]
+        fistp dword ptr [esp]
+        movzx eax, word ptr [esp]
+        mov dh, al
+        fldcw word ptr [esp + 0x34]
+        mov word ptr [esp + 0x14], dx
+        fld dword ptr [ecx + 0xc]
+        fnstcw word ptr [esp + 0x34]
+        xor ecx, ecx
+        fmul st(0), st(1)
+        movzx eax, word ptr [esp + 0x34]
+        or eax, 0xc00
+        mov dword ptr [esp], eax
+        fldcw word ptr [esp]
+        fistp dword ptr [esp]
+        movzx eax, word ptr [esp]
+        mov ch, al
+        mov eax, dword ptr [esp + 0x30]
+        mov edx, dword ptr [eax + 0x8]
+        fldcw word ptr [esp + 0x34]
+        sub edx, dword ptr [eax]
+        mov dword ptr [esp + 0x18], edx
+        mov word ptr [esp + 0x16], cx
+        mov ecx, dword ptr [eax + 0xc]
+        fnstcw word ptr [esp + 0x34]
+        sub ecx, dword ptr [eax + 0x4]
+        movzx eax, word ptr [esp + 0x34]
+        mov dword ptr [esp + 0x1c], ecx
+        mov ecx, dword ptr [esp + 0x38]
+        or eax, 0xc00
+        mov dword ptr [esp + 0x30], eax
+        fld dword ptr [ecx + 0xc]
+        xor eax, eax
+        fmul dword ptr [ecx]
+        fmul st(0), st(1)
+        fldcw word ptr [esp + 0x30]
+        fistp dword ptr [esp + 0x30]
+        movzx edx, word ptr [esp + 0x30]
+        mov ah, dl
+        fldcw word ptr [esp + 0x34]
+        fld dword ptr [ecx + 0x4]
+        mov word ptr [esp + 0x20], ax
+        fmul dword ptr [ecx + 0xc]
+        mov dword ptr [esp], 0x0
+        fnstcw word ptr [esp + 0x34]
+        mov dword ptr [esp + 0x4], 0x1
+        movzx eax, word ptr [esp + 0x34]
+        fmul st(0), st(1)
+        or eax, 0xc00
+        mov dword ptr [esp + 0x30], eax
+        xor eax, eax
+        fldcw word ptr [esp + 0x30]
+        fistp dword ptr [esp + 0x30]
+        movzx edx, word ptr [esp + 0x30]
+        mov ah, dl
+        fldcw word ptr [esp + 0x34]
+        fld dword ptr [ecx + 0x8]
+        mov word ptr [esp + 0x22], ax
+        fmul dword ptr [ecx + 0xc]
+        fnstcw word ptr [esp + 0x34]
+        fmul st(0), st(1)
+        movzx eax, word ptr [esp + 0x34]
+        or eax, 0xc00
+        mov dword ptr [esp + 0x30], eax
+        xor eax, eax
+        fldcw word ptr [esp + 0x30]
+        fistp dword ptr [esp + 0x30]
+        movzx edx, word ptr [esp + 0x30]
+        mov ah, dl
+        xor edx, edx
+        fldcw word ptr [esp + 0x34]
+        fmul dword ptr [ecx + 0xc]
+        mov word ptr [esp + 0x24], ax
+        fnstcw word ptr [esp + 0x34]
+        movzx eax, word ptr [esp + 0x34]
+        or eax, 0xc00
+        mov dword ptr [esp + 0x30], eax
+        mov eax, dword ptr [esp + 0x2c]
+        test eax, eax
+        fldcw word ptr [esp + 0x30]
+        fistp dword ptr [esp + 0x30]
+        mov cx, word ptr [esp + 0x30]
+        mov dh, cl
+        fldcw word ptr [esp + 0x34]
+        mov word ptr [esp + 0x26], dx
+        je L_skip
+        mov eax, dword ptr [eax + 0x4]
+    L_skip:
+        push 0x0
+        push 0x1
+        lea ecx, [esp + 0x8]
+        push ecx
+        push 0x2
+        lea edx, [esp + 0x18]
+        push edx
+        push eax
+        call dword ptr [mem_00924E38]
+        add esp, 0x28
+        ret
+    }
+}
