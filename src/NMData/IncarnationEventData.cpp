@@ -153,3 +153,33 @@ extern "C" __declspec(naked) void __fastcall fn_004CE710(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004CFCA0] NMData::IncarnationEventData::vfunc_87 (58 bytes)
+extern "C" void ext_004CE8D0();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_004CFCA0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 184h]
+        test ecx, ecx
+        je short L_done
+        push edi
+        call ext_004CE8D0
+        mov edi, dword ptr [esi + 184h]
+        test edi, edi
+        je short L_clear
+        mov ecx, edi
+        call ext_004CE8D0
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+    L_clear:
+        mov dword ptr [esi + 184h], 0
+        pop edi
+    L_done:
+        pop esi
+        ret
+    }
+}
