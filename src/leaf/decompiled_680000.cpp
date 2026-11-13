@@ -10154,3 +10154,24 @@ extern "C" __declspec(naked) void __cdecl fn_0068ED60(void* a1) {
         ret
     }
 }
+
+// [0x0068F790] sub_0068F790 (35 bytes)
+extern "C" void ext_0068F650();
+extern "C" void ext_0068F700();
+extern "C" int mem_00A9F450;
+extern "C" __declspec(naked) void __cdecl fn_0068F790(void* a1) {
+    __asm {
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x8]
+        push    0x0
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    ext_0068F700
+        mov     ecx, dword ptr [mem_00A9F450]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_0068F650
+        pop     ecx
+        ret
+    }
+}
