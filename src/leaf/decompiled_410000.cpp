@@ -10050,3 +10050,39 @@ extern "C" __declspec(naked) void __fastcall fn_0041B140(void* self) {
         ret
     }
 }
+
+// [0x0041CB80] sub_0041CB80 (72 bytes)
+extern "C" void ext_006AD180();
+extern "C" void ext_006616C0();
+extern "C" void ext_006A6E9E();
+extern "C" void ext_00465B30();
+extern "C" void ext_00469080();
+extern "C" void ext_00469020();
+extern "C" int mem_00A2EFEC;
+extern "C" int mem_00A2E2D8;
+extern "C" __declspec(naked) void __stdcall fn_0041CB80(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        call ext_006AD180
+        lea ecx, [eax + 0x10]
+        call ext_006616C0
+        push 0
+        push offset mem_00A2EFEC
+        push offset mem_00A2E2D8
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        test eax, eax
+        je short done
+        push eax
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469080
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469020
+    done:
+        ret 4
+    }
+}
