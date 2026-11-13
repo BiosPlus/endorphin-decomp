@@ -2719,3 +2719,48 @@ loc_005CF3AB:
         ret 0x4
     }
 }
+
+// [0x005C8560] sub_005C8560 (83 bytes)
+extern "C" void ext_00480920();
+extern "C" void ext_00648420();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_005C8560(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x16c], 0
+        je done_early
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        test edi, edi
+        jne loc_5c8585
+        test ebx, ebx
+        jne loc_5c8585
+        call ext_00480920
+        mov edi, eax
+    loc_5c8585:
+        mov eax, dword ptr [esp + 0x18]
+        test eax, eax
+        jne loc_5c859f
+        mov eax, dword ptr [esi + 4]
+        mov edx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [eax + 0xc]
+        lea ecx, [esi + 4]
+        push edx
+        call eax
+    loc_5c859f:
+        mov ecx, dword ptr [esi + 0x16c]
+        push eax
+        push edi
+        push ebx
+        call ext_00648420
+        pop edi
+        pop ebx
+    done_early:
+        pop esi
+        ret 0xc
+    }
+}
