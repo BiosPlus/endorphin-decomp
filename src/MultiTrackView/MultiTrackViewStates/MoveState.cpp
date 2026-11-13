@@ -62,3 +62,25 @@ extern "C" void* __fastcall fn_004439C0(void* self, int edx_unused, int a1) {
     }
     return self;
 }
+
+// [0x00442C90] MultiTrackView::MultiTrackViewStates::MoveState::vfunc_4 (33 bytes)
+extern "C" void ext_0041C880();
+extern "C" void ext_0043F520();
+
+extern "C" __declspec(naked) void __fastcall fn_00442C90(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x8]
+        push 0x0
+        lea eax, [esi + 0xc]
+        push eax
+        call ext_0043F520
+        mov ecx, dword ptr [esi + 0x4]
+        push 0x0
+        call ext_0041C880
+        mov al, 0x1
+        pop esi
+        ret 0xc
+    }
+}
