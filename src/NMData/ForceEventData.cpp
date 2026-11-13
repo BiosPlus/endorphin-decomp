@@ -443,3 +443,98 @@ extern "C" __declspec(naked) void __fastcall fn_004C65C0(void* self) {
         ret
     }
 }
+
+// [0x004C6E60] NMData::ForceEventData::vfunc_88 (230 bytes)
+extern "C" void ext_004C6E30();
+extern "C" void ext_00528BB0();
+extern "C" void ext_00528BF0();
+extern "C" void ext_00594000();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5C62();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_004C6E60(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        push 1
+        lea esi, [edi + 0xc]
+        push 0x200
+        mov ecx, esi
+        call ext_00528BB0
+        call ext_00594000
+        add eax, 0x168
+        push eax
+        push 1
+        push 0x200
+        mov ecx, esi
+        call ext_00528BF0
+        xor ebx, ebx
+        push 0x18
+        mov byte ptr [edi + 0x188], bl
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [esp + 0x10], esi
+        cmp esi, ebx
+        mov dword ptr [esp + 0x1c], ebx
+        je L_null
+        mov eax, dword ptr [edi + 4]
+        mov edx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [eax + 0xc]
+        lea ecx, [edi + 4]
+        push edx
+        call eax
+        fldz
+        fstp dword ptr [esi + 0x14]
+        mov dword ptr [esi + 4], ebx
+        mov dword ptr [esi + 8], ebx
+        mov dword ptr [esi + 0xc], ebx
+        mov dword ptr [esi + 0x10], eax
+        jmp L_check_ebp
+    L_null:
+        xor esi, esi
+    L_check_ebp:
+        mov ebp, dword ptr [edi + 0x184]
+        cmp esi, ebp
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        je L_done
+        cmp ebp, ebx
+        je L_done
+        mov eax, dword ptr [ebp + 4]
+        cmp eax, ebx
+        je L_free_ebp
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    L_free_ebp:
+        push ebp
+        mov dword ptr [ebp + 4], ebx
+        mov dword ptr [ebp + 8], ebx
+        mov dword ptr [ebp + 0xc], ebx
+        call ext_006A5C5C
+        add esp, 4
+    L_done:
+        push edi
+        mov ecx, esi
+        mov dword ptr [edi + 0x184], esi
+        call ext_004C6E30
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
