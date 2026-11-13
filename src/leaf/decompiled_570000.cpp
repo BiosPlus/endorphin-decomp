@@ -7942,3 +7942,42 @@ extern "C" __declspec(naked) void __cdecl fn_00573390(char* begin, char* end, co
         ret
     }
 }
+
+// [0x0057DC60] sub_0057DC60 (63 bytes)
+extern "C" void ext_0057D650();
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __cdecl fn_0057DC60(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je done_0057DC60
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    copy_loop_0057DC60:
+        sub esi, 0x2c
+        sub edi, 0x2c
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi + 0x1c]
+        push eax
+        lea ecx, [edi + 0x1c]
+        call ext_0057D650
+        cmp esi, ebx
+        jne copy_loop_0057DC60
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    done_0057DC60:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
