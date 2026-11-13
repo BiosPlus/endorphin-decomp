@@ -9180,3 +9180,1321 @@ extern "C" __declspec(naked) void __fastcall fn_0044AE80(void* self) {
         jmp     ext_0044A900
     }
 }
+
+// [0x0044E600] sub_0044E600 (4414 bytes)
+extern "C" void ext_006A5E5A();
+extern "C" void ext_006A6DE0();
+extern "C" int mem_0092566C;
+extern "C" int mem_009357C0;
+extern "C" int mem_00993CA0;
+extern "C" int mem_00993828;
+extern "C" int mem_00925694;
+extern "C" int mem_00925640;
+extern "C" int mem_0092564C;
+
+extern "C" __declspec(naked) void __fastcall fn_0044E600(void* self) {
+    __asm {
+        __asm _emit 0x81 __asm _emit 0xEC __asm _emit 0xF0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub esp, 0x1f0
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0x55 // push ebp
+        __asm _emit 0x56 // push esi
+        mov esi, dword ptr [mem_0092566C]
+        __asm _emit 0x57 // push edi
+        __asm _emit 0x8B __asm _emit 0xF9 // mov edi, ecx
+        __asm _emit 0x8B __asm _emit 0x8F __asm _emit 0xCC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [edi + 0xcc]
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xA8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0xa8]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x87 __asm _emit 0x1C __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [edi + 0x21c]
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x88 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x88]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x97 __asm _emit 0x68 __asm _emit 0x07 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [edi + 0x768]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x18 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x118]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8F __asm _emit 0xBC __asm _emit 0x07 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [edi + 0x7bc]
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xC8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0xc8]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x87 __asm _emit 0x30 __asm _emit 0x08 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [edi + 0x830]
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x98 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x198]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x97 __asm _emit 0xA4 __asm _emit 0x08 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [edi + 0x8a4]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xB8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x1b8]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8F __asm _emit 0x18 __asm _emit 0x09 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [edi + 0x918]
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xA8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x1a8]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x87 __asm _emit 0xC8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [edi + 0x1c8]
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x98 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x98]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x97 __asm _emit 0x8C __asm _emit 0x09 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [edi + 0x98c]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xC8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x1c8]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8F __asm _emit 0x70 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [edi + 0x270]
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x74 // lea eax, [esp + 0x74]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x87 __asm _emit 0xC4 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [edi + 0x2c4]
+        __asm _emit 0x8D __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x34 // lea edx, [esp + 0x34]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x97 __asm _emit 0xE0 __asm _emit 0x09 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [edi + 0x9e0]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x68 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x168]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8F __asm _emit 0x18 __asm _emit 0x03 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [edi + 0x318]
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x44 // lea eax, [esp + 0x44]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x87 __asm _emit 0x6C __asm _emit 0x03 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [edi + 0x36c]
+        __asm _emit 0x8D __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x18 // lea edx, [esp + 0x18]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x97 __asm _emit 0xC0 __asm _emit 0x03 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [edi + 0x3c0]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x38 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x138]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8F __asm _emit 0x14 __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [edi + 0x414]
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x88 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x188]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x87 __asm _emit 0x68 __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [edi + 0x468]
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x58 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x158]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x97 __asm _emit 0xBC __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [edi + 0x4bc]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x78 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x178]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8F __asm _emit 0x10 __asm _emit 0x05 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [edi + 0x510]
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xE8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0xe8]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x87 __asm _emit 0x64 __asm _emit 0x05 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [edi + 0x564]
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xF8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0xf8]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x97 __asm _emit 0x34 __asm _emit 0x0A __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [edi + 0xa34]
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x64 // lea ecx, [esp + 0x64]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8F __asm _emit 0x88 __asm _emit 0x0A __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [edi + 0xa88]
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x54 // lea eax, [esp + 0x54]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x87 __asm _emit 0xDC __asm _emit 0x0A __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [edi + 0xadc]
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xB8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0xb8]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x97 __asm _emit 0x30 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [edi + 0xb30]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xD8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0xd8]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8F __asm _emit 0x84 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [edi + 0xb84]
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x08 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x108]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x87 __asm _emit 0xD8 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [edi + 0xbd8]
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x28 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x128]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x97 __asm _emit 0x2C __asm _emit 0x0C __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [edi + 0xc2c]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x48 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x148]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x5C __asm _emit 0x24 __asm _emit 0x70 // mov ebx, dword ptr [esp + 0x70]
+        __asm _emit 0x8B __asm _emit 0x6C __asm _emit 0x24 __asm _emit 0x60 // mov ebp, dword ptr [esp + 0x60]
+        __asm _emit 0x8B __asm _emit 0xB4 __asm _emit 0x24 __asm _emit 0xE4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov esi, dword ptr [esp + 0xe4]
+        __asm _emit 0xB8 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, 0x2
+        __asm _emit 0x01 __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xC4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // add dword ptr [esp + 0xc4], eax
+        __asm _emit 0x01 __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x14 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // add dword ptr [esp + 0x114], eax
+        __asm _emit 0x01 __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x34 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // add dword ptr [esp + 0x134], eax
+        __asm _emit 0x03 __asm _emit 0xD8 // add ebx, eax
+        __asm _emit 0x03 __asm _emit 0xE8 // add ebp, eax
+        __asm _emit 0x03 __asm _emit 0xF0 // add esi, eax
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xB4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0xb4]
+        __asm _emit 0x2B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xAC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub eax, dword ptr [esp + 0xac]
+        __asm _emit 0x89 __asm _emit 0x5C __asm _emit 0x24 __asm _emit 0x70 // mov dword ptr [esp + 0x70], ebx
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x30 // mov dword ptr [esp + 0x30], eax
+        __asm _emit 0xDB __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x30 // fild dword ptr [esp + 0x30]
+        __asm _emit 0x89 __asm _emit 0x6C __asm _emit 0x24 __asm _emit 0x60 // mov dword ptr [esp + 0x60], ebp
+        __asm _emit 0x89 __asm _emit 0xB4 __asm _emit 0x24 __asm _emit 0xE4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [esp + 0xe4], esi
+        fmul qword ptr [mem_009357C0]
+        call ext_006A6DE0
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x4C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x14c]
+        __asm _emit 0x89 __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xDC __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [esp + 0x1dc], eax
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x54 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0x154]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x08 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x208]
+        __asm _emit 0x2B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x40 // sub ecx, dword ptr [esp + 0x40]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xC4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0xc4]
+        __asm _emit 0x2B __asm _emit 0xCD // sub ecx, ebp
+        __asm _emit 0x2B __asm _emit 0xCB // sub ecx, ebx
+        __asm _emit 0x2B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x50 // sub ecx, dword ptr [esp + 0x50]
+        __asm _emit 0x8B __asm _emit 0x9C __asm _emit 0x24 __asm _emit 0x04 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // mov ebx, dword ptr [esp + 0x204]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x80 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0x80]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xA4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0xa4]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xD4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0xd4]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x94 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0x94]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xB4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0xb4]
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x03 __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x48 // add ecx, dword ptr [esp + 0x48]
+        __asm _emit 0x03 __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x38 // add ecx, dword ptr [esp + 0x38]
+        __asm _emit 0x03 __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x78 // add ecx, dword ptr [esp + 0x78]
+        __asm _emit 0x03 __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x9C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // add ecx, dword ptr [esp + 0x9c]
+        __asm _emit 0x03 __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xCC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // add ecx, dword ptr [esp + 0xcc]
+        __asm _emit 0x03 __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x8C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // add ecx, dword ptr [esp + 0x8c]
+        __asm _emit 0x03 __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xAC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // add ecx, dword ptr [esp + 0xac]
+        __asm _emit 0x03 __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xBC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // add ecx, dword ptr [esp + 0xbc]
+        __asm _emit 0x03 __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x58 // add ecx, dword ptr [esp + 0x58]
+        __asm _emit 0x03 __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x68 // add ecx, dword ptr [esp + 0x68]
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x11 __asm _emit 0xA4 // lea eax, [ecx + edx - 0x5c]
+        __asm _emit 0x8D __asm _emit 0x4B __asm _emit 0xEC // lea ecx, [ebx - 0x14]
+        __asm _emit 0x89 __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x14 // mov dword ptr [esp + 0x14], ecx
+        __asm _emit 0xDB __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x14 // fild dword ptr [esp + 0x14]
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x30 // mov dword ptr [esp + 0x30], eax
+        fmul qword ptr [mem_00993CA0]
+        call ext_006A6DE0
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x18 // mov edx, dword ptr [esp + 0x18]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // sub edx, dword ptr [esp + 0x20]
+        __asm _emit 0x8B __asm _emit 0xE8 // mov ebp, eax
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x53 __asm _emit 0xE8 // lea eax, [ebx + 2*edx - 0x18]
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x14 // mov dword ptr [esp + 0x14], eax
+        __asm _emit 0xDB __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x14 // fild dword ptr [esp + 0x14]
+        fmul qword ptr [mem_00993828]
+        call ext_006A6DE0
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x34 // mov ecx, dword ptr [esp + 0x34]
+        __asm _emit 0x2B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x3C // sub ecx, dword ptr [esp + 0x3c]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x04 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x204]
+        __asm _emit 0x2B __asm _emit 0xB4 __asm _emit 0x24 __asm _emit 0xDC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub esi, dword ptr [esp + 0xdc]
+        __asm _emit 0x8B __asm _emit 0xD8 // mov ebx, eax
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x11 __asm _emit 0xF0 // lea eax, [ecx + edx - 0x10]
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xE0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x1e0]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x89 __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xE0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [esp + 0x1e0], eax
+        __asm _emit 0x8B __asm _emit 0x87 __asm _emit 0x68 __asm _emit 0x07 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [edi + 0x768]
+        __asm _emit 0x8D __asm _emit 0x0C __asm _emit 0x76 // lea ecx, [esi + 2*esi]
+        mov esi, dword ptr [mem_00925694]
+        __asm _emit 0x68 __asm _emit 0x98 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // push 0x198
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x89 __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x3C // mov dword ptr [esp + 0x3c], ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x97 __asm _emit 0x8C __asm _emit 0x09 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [edi + 0x98c]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xF0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x1f0]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x68 __asm _emit 0x98 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // push 0x198
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xFC __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x1fc]
+        __asm _emit 0x2B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xF4 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub eax, dword ptr [esp + 0x1f4]
+        __asm _emit 0x8B __asm _emit 0xB4 __asm _emit 0x24 __asm _emit 0xEC __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov esi, dword ptr [esp + 0x1ec]
+        __asm _emit 0x2B __asm _emit 0xB4 __asm _emit 0x24 __asm _emit 0xE4 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub esi, dword ptr [esp + 0x1e4]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x83 __asm _emit 0xC0 __asm _emit 0x01 // add eax, 0x1
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x30 // mov dword ptr [esp + 0x30], eax
+        __asm _emit 0x8B __asm _emit 0x87 __asm _emit 0x68 __asm _emit 0x07 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [edi + 0x768]
+        __asm _emit 0x68 __asm _emit 0x8B __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // push 0x18b
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x83 __asm _emit 0xC6 __asm _emit 0x01 // add esi, 0x1
+        call dword ptr [mem_00925694]
+        __asm _emit 0x0F __asm _emit 0xAF __asm _emit 0xC6 // imul eax, esi
+        __asm _emit 0x8B __asm _emit 0x74 __asm _emit 0x24 __asm _emit 0x2C // mov esi, dword ptr [esp + 0x2c]
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x14 // mov dword ptr [esp + 0x14], eax
+        __asm _emit 0x3B __asm _emit 0xC6 // cmp eax, esi
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x2C // lea eax, [esp + 0x2c]
+        __asm _emit 0x7C __asm _emit 0x04 // jl 0x44e9ae
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x14 // lea eax, [esp + 0x14]
+        __asm _emit 0x8B __asm _emit 0x97 __asm _emit 0x8C __asm _emit 0x09 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [edi + 0x98c]
+        __asm _emit 0x8B __asm _emit 0x08 // mov ecx, dword ptr [eax]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x68 __asm _emit 0x8B __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // push 0x18b
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x89 __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x24 // mov dword ptr [esp + 0x24], ecx
+        call dword ptr [mem_00925694]
+        __asm _emit 0x0F __asm _emit 0xAF __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x28 // imul eax, dword ptr [esp + 0x28]
+        __asm _emit 0x3B __asm _emit 0xC6 // cmp eax, esi
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x10 // mov dword ptr [esp + 0x10], eax
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x2C // lea ecx, [esp + 0x2c]
+        __asm _emit 0x7C __asm _emit 0x04 // jl 0x44e9df
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x10 // lea ecx, [esp + 0x10]
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x14 // mov eax, dword ptr [esp + 0x14]
+        __asm _emit 0x8B __asm _emit 0x09 // mov ecx, dword ptr [ecx]
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x28 // mov dword ptr [esp + 0x28], eax
+        __asm _emit 0x03 __asm _emit 0xC1 // add eax, ecx
+        __asm _emit 0x85 __asm _emit 0xC0 // test eax, eax
+        __asm _emit 0x89 __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x10 // mov dword ptr [esp + 0x10], ecx
+        __asm _emit 0x89 __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x84 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [esp + 0x84], eax
+        __asm _emit 0x0F __asm _emit 0x8E __asm _emit 0x8F __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // jle 0x44ea8d
+        __asm _emit 0xDB __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x30 // fild dword ptr [esp + 0x30]
+        __asm _emit 0xDA __asm _emit 0xB4 __asm _emit 0x24 __asm _emit 0x84 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // fidiv dword ptr [esp + 0x84]
+        __asm _emit 0xD9 __asm _emit 0xE8 // fld1
+        __asm _emit 0xD8 __asm _emit 0xD1 // fcom st(1)
+        __asm _emit 0xDF __asm _emit 0xE0 // fnstsw ax
+        __asm _emit 0xF6 __asm _emit 0xC4 __asm _emit 0x41 // test ah, 0x41
+        __asm _emit 0x75 __asm _emit 0x29 // jne 0x44ea3d
+        __asm _emit 0xDB __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x14 // fild dword ptr [esp + 0x14]
+        __asm _emit 0xDE __asm _emit 0xCA // fmulp st(2), st
+        __asm _emit 0xD9 __asm _emit 0xC9 // fxch st(1)
+        call ext_006A6DE0
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x28 // mov dword ptr [esp + 0x28], eax
+        __asm _emit 0x3B __asm _emit 0xC6 // cmp eax, esi
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x2C // lea eax, [esp + 0x2c]
+        __asm _emit 0x7C __asm _emit 0x04 // jl 0x44ea31
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x28 // lea eax, [esp + 0x28]
+        __asm _emit 0x8B __asm _emit 0x00 // mov eax, dword ptr [eax]
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x10 // mov ecx, dword ptr [esp + 0x10]
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x28 // mov dword ptr [esp + 0x28], eax
+        __asm _emit 0xEB __asm _emit 0x02 // jmp 0x44ea3f
+        __asm _emit 0xDD __asm _emit 0xD9 // fstp st(1)
+        __asm _emit 0x85 __asm _emit 0xC9 // test ecx, ecx
+        __asm _emit 0x7E __asm _emit 0x48 // jle 0x44ea8b
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x30 // mov eax, dword ptr [esp + 0x30]
+        __asm _emit 0xDB __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x10 // fild dword ptr [esp + 0x10]
+        __asm _emit 0x2B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x28 // sub eax, dword ptr [esp + 0x28]
+        __asm _emit 0x89 __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x84 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr [esp + 0x84], eax
+        __asm _emit 0xDB __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x84 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // fild dword ptr [esp + 0x84]
+        __asm _emit 0xD8 __asm _emit 0xF1 // fdiv st, st(1)
+        __asm _emit 0xD8 __asm _emit 0xD2 // fcom st(2)
+        __asm _emit 0xDF __asm _emit 0xE0 // fnstsw ax
+        __asm _emit 0xDD __asm _emit 0xDA // fstp st(2)
+        __asm _emit 0xF6 __asm _emit 0xC4 __asm _emit 0x05 // test ah, 0x5
+        __asm _emit 0x7A __asm _emit 0x1F // jp 0x44ea89
+        __asm _emit 0xDE __asm _emit 0xC9 // fmulp st(1), st
+        call ext_006A6DE0
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x10 // mov dword ptr [esp + 0x10], eax
+        __asm _emit 0x3B __asm _emit 0xC6 // cmp eax, esi
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x2C // lea eax, [esp + 0x2c]
+        __asm _emit 0x7C __asm _emit 0x04 // jl 0x44ea81
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x10 // lea eax, [esp + 0x10]
+        __asm _emit 0x8B __asm _emit 0x08 // mov ecx, dword ptr [eax]
+        __asm _emit 0x89 __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x10 // mov dword ptr [esp + 0x10], ecx
+        __asm _emit 0xEB __asm _emit 0x04 // jmp 0x44ea8d
+        __asm _emit 0xDD __asm _emit 0xD8 // fstp st(0)
+        __asm _emit 0xDD __asm _emit 0xD8 // fstp st(0)
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xB4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xb4]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xAC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0xac]
+        mov esi, dword ptr [mem_00925640]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x8D __asm _emit 0x04 __asm _emit 0xAD __asm _emit 0x0C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [4*ebp + 0xc]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xB8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0xb8]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x94 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x94]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x8C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0x8c]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x90 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x90]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x88 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0x88]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x98 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x98]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x28 // mov ecx, dword ptr [esp + 0x28]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x04 __asm _emit 0xAD __asm _emit 0x0C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [4*ebp + 0xc]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x28 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x128]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xD4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0xd4]
+        __asm _emit 0x2B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xCC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub eax, dword ptr [esp + 0xcc]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xC8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0xc8]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x55 // push ebp
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xA4 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x1a4]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x9C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0x19c]
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x98 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x198]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x55 // push ebp
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xC4 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x1c4]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xBC __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0x1bc]
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xB8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x1b8]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x55 // push ebp
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xB4 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x1b4]
+        __asm _emit 0x2B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xAC __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub eax, dword ptr [esp + 0x1ac]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xA8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x1a8]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x55 // push ebp
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xA4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xa4]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x9C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0x9c]
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xA0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0xa0]
+        __asm _emit 0x2B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x98 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub eax, dword ptr [esp + 0x98]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xA8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0xa8]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x10 // mov edx, dword ptr [esp + 0x10]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x8D __asm _emit 0x04 __asm _emit 0xAD __asm _emit 0x0C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [4*ebp + 0xc]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xD8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x1d8]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x80 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x80]
+        __asm _emit 0x2B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x78 // sub ecx, dword ptr [esp + 0x78]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x7C // mov edx, dword ptr [esp + 0x7c]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x74 // sub edx, dword ptr [esp + 0x74]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x84 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x84]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x40 // mov ecx, dword ptr [esp + 0x40]
+        __asm _emit 0x2B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x38 // sub ecx, dword ptr [esp + 0x38]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x3C // mov edx, dword ptr [esp + 0x3c]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x34 // sub edx, dword ptr [esp + 0x34]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x44 // lea eax, [esp + 0x44]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x74 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x174]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x6C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0x16c]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xD8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x1d8]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x78 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x178]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x50 // mov ecx, dword ptr [esp + 0x50]
+        __asm _emit 0x2B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x48 // sub ecx, dword ptr [esp + 0x48]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x4C // mov edx, dword ptr [esp + 0x4c]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x44 // sub edx, dword ptr [esp + 0x44]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x54 // lea eax, [esp + 0x54]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x24 // mov ecx, dword ptr [esp + 0x24]
+        __asm _emit 0x2B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x1C // sub ecx, dword ptr [esp + 0x1c]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // mov edx, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x18 // sub edx, dword ptr [esp + 0x18]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x28 // lea eax, [esp + 0x28]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x44 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x144]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x3C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0x13c]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x40 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x140]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x38 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0x138]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x48 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x148]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x94 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x194]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x8C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0x18c]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x90 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x190]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x88 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0x188]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x98 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x198]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x64 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x164]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x5C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0x15c]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x60 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x160]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x58 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0x158]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x68 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x168]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x84 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x184]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x7C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0x17c]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x80 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x180]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x78 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0x178]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x88 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x188]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xF4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xf4]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xEC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0xec]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xF0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xf0]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xE8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0xe8]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xF8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0xf8]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x04 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x104]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xFC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0xfc]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x100]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xF8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0xf8]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x08 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x108]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x70 // mov ecx, dword ptr [esp + 0x70]
+        __asm _emit 0x2B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x68 // sub ecx, dword ptr [esp + 0x68]
+        __asm _emit 0x8D __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x64 // lea edx, [esp + 0x64]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x60 // mov eax, dword ptr [esp + 0x60]
+        __asm _emit 0x2B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x58 // sub eax, dword ptr [esp + 0x58]
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x54 // lea ecx, [esp + 0x54]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xC4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xc4]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xBC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0xbc]
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xB8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0xb8]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xE4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xe4]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xDC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0xdc]
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xD8 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0xd8]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x14 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x114]
+        __asm _emit 0x2B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x0C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub eax, dword ptr [esp + 0x10c]
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x08 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x108]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x34 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x134]
+        __asm _emit 0x2B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x2C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub edx, dword ptr [esp + 0x12c]
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x28 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x128]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x54 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x154]
+        __asm _emit 0x2B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x4C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // sub ecx, dword ptr [esp + 0x14c]
+        __asm _emit 0x8D __asm _emit 0x04 __asm _emit 0xAD __asm _emit 0x0C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [4*ebp + 0xc]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x58 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x158]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        mov esi, dword ptr [mem_0092564C]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xB0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0xb0]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x90 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x90]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x20 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x120]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xD0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0xd0]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x4D __asm _emit 0x08 // lea ecx, [ebp + 0x8]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xA0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x1a0]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x2D __asm _emit 0x0C // lea eax, [ebp + ebp + 0xc]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xB0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x1b0]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x54 __asm _emit 0x6D __asm _emit 0x10 // lea edx, [ebp + 2*ebp + 0x10]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xC0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x1c0]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xA0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0xa0]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xD0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x1d0]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x7C // lea eax, [esp + 0x7c]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x3C // lea ecx, [esp + 0x3c]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x3C // mov edx, dword ptr [esp + 0x3c]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x34 // sub edx, dword ptr [esp + 0x34]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x08 // add edx, 0x8
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x70 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x170]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x4C // lea ecx, [esp + 0x4c]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // lea edx, [esp + 0x20]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x40 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x140]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x90 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x190]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // mov edx, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x18 // sub edx, dword ptr [esp + 0x18]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x08 // add edx, 0x8
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x6C // lea eax, [esp + 0x6c]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x20 // mov ecx, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x18 // sub ecx, dword ptr [esp + 0x18]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x08 // add ecx, 0x8
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x5C // lea edx, [esp + 0x5c]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x20 // mov eax, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x18 // sub eax, dword ptr [esp + 0x18]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x83 __asm _emit 0xC0 __asm _emit 0x08 // add eax, 0x8
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xC0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0xc0]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // mov edx, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x18 // sub edx, dword ptr [esp + 0x18]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x1A __asm _emit 0x10 // lea eax, [edx + ebx + 0x10]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x60 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x160]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // mov edx, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x18 // sub edx, dword ptr [esp + 0x18]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x1A __asm _emit 0x10 // lea eax, [edx + ebx + 0x10]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x80 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x180]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // mov edx, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x18 // sub edx, dword ptr [esp + 0x18]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x1A __asm _emit 0x10 // lea eax, [edx + ebx + 0x10]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xF0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0xf0]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // mov edx, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x18 // sub edx, dword ptr [esp + 0x18]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x1A __asm _emit 0x10 // lea eax, [edx + ebx + 0x10]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x100]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // mov edx, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x18 // sub edx, dword ptr [esp + 0x18]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x53 __asm _emit 0x14 // lea eax, [ebx + 2*edx + 0x14]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xE0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0xe0]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // mov edx, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x18 // sub edx, dword ptr [esp + 0x18]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x53 __asm _emit 0x14 // lea eax, [ebx + 2*edx + 0x14]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x10 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x110]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // mov edx, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x18 // sub edx, dword ptr [esp + 0x18]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x53 __asm _emit 0x14 // lea eax, [ebx + 2*edx + 0x14]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x30 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x130]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x6A __asm _emit 0x04 // push 0x4
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x50 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x150]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xDC __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x1dc]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xB0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0xb0]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xB4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xb4]
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x08 // add edx, 0x8
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x90 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x90]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x94 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x94]
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x04 // add ecx, 0x4
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x20 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x120]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x24 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x124]
+        __asm _emit 0x83 __asm _emit 0xC0 __asm _emit 0x04 // add eax, 0x4
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xD0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0xd0]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x24 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x124]
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x04 // add edx, 0x4
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xA0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x1a0]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x24 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x124]
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x04 // add ecx, 0x4
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xC0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x1c0]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x24 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x124]
+        __asm _emit 0x83 __asm _emit 0xC0 __asm _emit 0x04 // add eax, 0x4
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xB0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x1b0]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xD4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xd4]
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x08 // add edx, 0x8
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xA0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0xa0]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xA4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xa4]
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x04 // add ecx, 0x4
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xD0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x1d0]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xD4 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x1d4]
+        __asm _emit 0x83 __asm _emit 0xC0 __asm _emit 0x08 // add eax, 0x8
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x7C // lea ecx, [esp + 0x7c]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x80 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x80]
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x0C // add edx, 0xc
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x3C // lea eax, [esp + 0x3c]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x80 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x80]
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x08 // add ecx, 0x8
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x70 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x170]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x74 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x174]
+        __asm _emit 0x83 __asm _emit 0xC0 __asm _emit 0x08 // add eax, 0x8
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x4C // lea ecx, [esp + 0x4c]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x74 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x174]
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x08 // add edx, 0x8
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x60 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x160]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x50 // mov ecx, dword ptr [esp + 0x50]
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x0C // add ecx, 0xc
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // lea edx, [esp + 0x20]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x50 // mov eax, dword ptr [esp + 0x50]
+        __asm _emit 0x83 __asm _emit 0xC0 __asm _emit 0x08 // add eax, 0x8
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x6C // lea ecx, [esp + 0x6c]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x50 // mov edx, dword ptr [esp + 0x50]
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x0C // add edx, 0xc
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x80 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x180]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x50 // mov ecx, dword ptr [esp + 0x50]
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x08 // add ecx, 0x8
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xE0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0xe0]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x70 // mov eax, dword ptr [esp + 0x70]
+        __asm _emit 0x83 __asm _emit 0xC0 __asm _emit 0x08 // add eax, 0x8
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x40 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x140]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x70 // mov edx, dword ptr [esp + 0x70]
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x04 // add edx, 0x4
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x5C // lea eax, [esp + 0x5c]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x70 // mov ecx, dword ptr [esp + 0x70]
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x08 // add ecx, 0x8
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xF0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0xf0]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x70 // mov eax, dword ptr [esp + 0x70]
+        __asm _emit 0x83 __asm _emit 0xC0 __asm _emit 0x04 // add eax, 0x4
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x10 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x110]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x60 // mov edx, dword ptr [esp + 0x60]
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x08 // add edx, 0x8
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x90 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x190]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x60 // mov ecx, dword ptr [esp + 0x60]
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x04 // add ecx, 0x4
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xC0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0xc0]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x60 // mov eax, dword ptr [esp + 0x60]
+        __asm _emit 0x83 __asm _emit 0xC0 __asm _emit 0x08 // add eax, 0x8
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [esp + 0x100]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x60 // mov edx, dword ptr [esp + 0x60]
+        __asm _emit 0x83 __asm _emit 0xC2 __asm _emit 0x04 // add edx, 0x4
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x30 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea eax, [esp + 0x130]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xC4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xc4]
+        __asm _emit 0x83 __asm _emit 0xC1 __asm _emit 0x0C // add ecx, 0xc
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x6A __asm _emit 0x00 // push 0x0
+        __asm _emit 0x8D __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x50 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea edx, [esp + 0x150]
+        __asm _emit 0x52 // push edx
+        __asm _emit 0xFF __asm _emit 0xD6 // call esi
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xAC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0xac]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xB4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xb4]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xB0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xb0]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xB0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xb0]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xAC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0xac]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x94 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x94]
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x8C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x8c]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x94 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x94]
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x90 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x90]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xFC __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x1fc]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x1C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x11c]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x24 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x124]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x20 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x120]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x20 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x120]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x48 __asm _emit 0x07 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x748]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xCC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0xcc]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xD4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xd4]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xD0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xd0]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xD0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xd0]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x9C __asm _emit 0x07 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x79c]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x9C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x19c]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xA4 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x1a4]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xA0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x1a0]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xA0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x1a0]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x10 __asm _emit 0x08 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x810]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xBC __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x1bc]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xC4 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x1c4]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xC0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x1c0]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xC0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x1c0]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x84 __asm _emit 0x08 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x884]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xAC __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x1ac]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xB4 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x1b4]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xB0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x1b0]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xB0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x1b0]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xF8 __asm _emit 0x08 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x8f8]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xA4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xa4]
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x9C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x9c]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xA0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xa0]
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xA0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xa0]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xA8 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x1a8]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xCC __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x1cc]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xD4 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x1d4]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xD0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x1d0]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xD0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x1d0]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x6C __asm _emit 0x09 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x96c]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x78 // mov eax, dword ptr [esp + 0x78]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x80 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x80]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x7C // mov edx, dword ptr [esp + 0x7c]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x7C // mov ecx, dword ptr [esp + 0x7c]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x50 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x250]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x38 // mov eax, dword ptr [esp + 0x38]
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x40 // mov ecx, dword ptr [esp + 0x40]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x3C // mov edx, dword ptr [esp + 0x3c]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x3C // mov ecx, dword ptr [esp + 0x3c]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xA4 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x2a4]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x6C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x16c]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x74 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x174]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x70 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x170]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x70 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x170]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xC0 __asm _emit 0x09 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x9c0]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x48 // mov eax, dword ptr [esp + 0x48]
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x50 // mov ecx, dword ptr [esp + 0x50]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x4C // mov edx, dword ptr [esp + 0x4c]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x4C // mov ecx, dword ptr [esp + 0x4c]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xF8 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x2f8]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x1C // mov eax, dword ptr [esp + 0x1c]
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x24 // mov ecx, dword ptr [esp + 0x24]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x20 // mov edx, dword ptr [esp + 0x20]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x20 // mov ecx, dword ptr [esp + 0x20]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x4C __asm _emit 0x03 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x34c]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x3C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x13c]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x44 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x144]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x40 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x140]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x40 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x140]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xA0 __asm _emit 0x03 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x3a0]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x8C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x18c]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x94 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x194]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x90 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x190]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x90 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x190]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xF4 __asm _emit 0x03 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x3f4]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x5C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x15c]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x64 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x164]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x60 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x160]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x60 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x160]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x48 __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x448]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x7C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x17c]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x84 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x184]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x80 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x180]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x80 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x180]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x9C __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x49c]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xEC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0xec]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xF4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xf4]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xF0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xf0]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xF0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xf0]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xF0 __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x4f0]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xFC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0xfc]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x04 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x104]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x100]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x100]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x44 __asm _emit 0x05 __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0x544]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x68 // mov eax, dword ptr [esp + 0x68]
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x70 // mov ecx, dword ptr [esp + 0x70]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x6C // mov edx, dword ptr [esp + 0x6c]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x6C // mov ecx, dword ptr [esp + 0x6c]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x14 __asm _emit 0x0A __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0xa14]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x58 // mov eax, dword ptr [esp + 0x58]
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x60 // mov ecx, dword ptr [esp + 0x60]
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x5C // mov edx, dword ptr [esp + 0x5c]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x5C // mov ecx, dword ptr [esp + 0x5c]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x68 __asm _emit 0x0A __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0xa68]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xBC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0xbc]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xC4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xc4]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xC0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xc0]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xC0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xc0]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xBC __asm _emit 0x0A __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0xabc]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0xDC __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0xdc]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xE4 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xe4]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0xE0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0xe0]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0xE0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0xe0]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x10 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0xb10]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x0C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x10c]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x14 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x114]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x10 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x110]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x10 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x110]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x64 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0xb64]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x2C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x12c]
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x34 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x134]
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x30 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x130]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x30 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x130]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0xB8 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0xbb8]
+        call ext_006A5E5A
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x54 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x154]
+        __asm _emit 0x8B __asm _emit 0x84 __asm _emit 0x24 __asm _emit 0x4C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr [esp + 0x14c]
+        __asm _emit 0x6A __asm _emit 0x01 // push 0x1
+        __asm _emit 0x8B __asm _emit 0x94 __asm _emit 0x24 __asm _emit 0x54 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov edx, dword ptr [esp + 0x154]
+        __asm _emit 0x2B __asm _emit 0xC8 // sub ecx, eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0x8C __asm _emit 0x24 __asm _emit 0x50 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // mov ecx, dword ptr [esp + 0x150]
+        __asm _emit 0x2B __asm _emit 0xD1 // sub edx, ecx
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8D __asm _emit 0x8F __asm _emit 0x0C __asm _emit 0x0C __asm _emit 0x00 __asm _emit 0x00 // lea ecx, [edi + 0xc0c]
+        call ext_006A5E5A
+        __asm _emit 0x5F // pop edi
+        __asm _emit 0x5E // pop esi
+        __asm _emit 0x5D // pop ebp
+        __asm _emit 0x5B // pop ebx
+        __asm _emit 0x81 __asm _emit 0xC4 __asm _emit 0xF0 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // add esp, 0x1f0
+        __asm _emit 0xC2 __asm _emit 0x08 __asm _emit 0x00 // ret 0x8
+    }
+}
