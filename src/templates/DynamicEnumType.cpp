@@ -842,3 +842,38 @@ extern "C" __declspec(naked) void* __fastcall fn_004AB2C0(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x0067AAA0] ExprParser::DynamicEnumType<NMData::BehaviourData, {public: int __thiscall NMData::BehaviourData::getBehaviourNameIndex(void) const, 0}, {public: void __thiscall NMData::BehaviourData::setBehaviourNameIndex(int), 0}, {public: int __thiscall NMData::BehaviourData::getNumCompatibleBehaviours(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::BehaviourData::getCompatibleBehaviourDescription(int) const, 0}>::vfunc_18 (104 bytes)
+extern "C" void ext_00671100();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B59F34;
+extern "C" int mem_00B59F2C;
+extern "C" int mem_00B59F30;
+
+extern "C" __declspec(naked) void* __fastcall fn_0067AAA0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b49ce
+        push eax
+        mov eax, 1
+        mov dword ptr fs:[0], esp
+        test byte ptr [mem_00B59F34], al
+        jne L_67AAF3
+        or dword ptr [mem_00B59F34], eax
+        push 7
+        mov dword ptr [esp + 0xc], 0
+        call ext_00671100
+        push 0x921a80
+        mov dword ptr [mem_00B59F2C], 0
+        mov dword ptr [mem_00B59F30], eax
+        call ext_006A6C87
+        add esp, 8
+    L_67AAF3:
+        mov ecx, dword ptr [esp]
+        mov eax, offset mem_00B59F2C
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 4
+    }
+}
