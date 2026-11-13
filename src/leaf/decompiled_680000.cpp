@@ -6499,3 +6499,3618 @@ extern "C" __declspec(naked) void* __fastcall fn_006862C0(void* self, int edx_un
         ret 0xc
     }
 }
+
+extern "C" int mem_00A9ECE8;
+extern "C" int mem_00A9ECEC;
+extern "C" int mem_00A9ECF0;
+extern "C" int mem_00B5AE98;
+extern "C" int mem_00A9ECF4;
+extern "C" int mem_00B5AE9C;
+extern "C" int mem_00A9ECF8;
+extern "C" int mem_00B5AEA0;
+extern "C" int mem_00A9ECFC;
+extern "C" int mem_00B5AEA4;
+extern "C" int mem_00A9ED00;
+extern "C" int mem_00B5AEA8;
+extern "C" int mem_00A9ED04;
+extern "C" int mem_00B5AEAC;
+extern "C" int mem_00A9ED08;
+extern "C" int mem_00B5AEB0;
+extern "C" int mem_00A9ED0C;
+extern "C" int mem_00B5AEB4;
+extern "C" int mem_00A9ED10;
+extern "C" int mem_00B5AEB8;
+extern "C" int mem_00A9ED14;
+extern "C" int mem_00B5AEBC;
+extern "C" int mem_00A9ED18;
+extern "C" int mem_00B5AEC0;
+extern "C" int mem_00A9ED1C;
+extern "C" int mem_00B5AEC4;
+extern "C" int mem_00A9ED20;
+extern "C" int mem_00B5AEC8;
+extern "C" int mem_00A9ED24;
+extern "C" int mem_00B5AECC;
+extern "C" int mem_00A9ED28;
+extern "C" int mem_00B5AED0;
+extern "C" int mem_00A9ED2C;
+extern "C" int mem_00B5AED4;
+extern "C" int mem_00A9ED30;
+extern "C" int mem_00B5AED8;
+extern "C" int mem_00A9ED34;
+extern "C" int mem_00B5AEDC;
+extern "C" int mem_00A9ED38;
+extern "C" int mem_00B5AEE0;
+extern "C" int mem_00A9ED3C;
+extern "C" int mem_00B5AEE4;
+extern "C" int mem_00A9ED40;
+extern "C" int mem_00B5AEE8;
+extern "C" int mem_00A9ED44;
+extern "C" int mem_00B5AEEC;
+extern "C" int mem_00A9ED48;
+extern "C" int mem_00B5AEF0;
+extern "C" int mem_00A9ED4C;
+extern "C" int mem_00B5AEF4;
+extern "C" int mem_00A9ED50;
+extern "C" int mem_00B5AEF8;
+extern "C" int mem_00A9ED54;
+extern "C" int mem_00B5AEFC;
+extern "C" int mem_00A9ED58;
+extern "C" int mem_00B5AF00;
+extern "C" int mem_00A9ED5C;
+extern "C" int mem_00B5AF04;
+extern "C" int mem_00A9ED60;
+extern "C" int mem_00B5AF08;
+extern "C" int mem_00A9ED64;
+extern "C" int mem_00B5AF0C;
+extern "C" int mem_00A9ED68;
+extern "C" int mem_00B5AF10;
+extern "C" int mem_00A9ED6C;
+extern "C" int mem_00B5AF14;
+extern "C" int mem_00A9ED70;
+extern "C" int mem_00B5AF18;
+extern "C" int mem_00A9ED74;
+extern "C" int mem_00B5AF1C;
+extern "C" int mem_00A9ED78;
+extern "C" int mem_00B5AF20;
+extern "C" int mem_00A9ED7C;
+extern "C" int mem_00B5AF24;
+extern "C" int mem_00A9ED80;
+extern "C" int mem_00B5AF28;
+extern "C" int mem_00A9ED84;
+extern "C" int mem_00B5AF2C;
+extern "C" int mem_00A9ED88;
+extern "C" int mem_00B5AF30;
+extern "C" int mem_00B5AF34;
+extern "C" int mem_00A9ED8C;
+extern "C" int mem_00A9ED90;
+extern "C" int mem_00B5AF38;
+extern "C" int mem_00A9ED94;
+extern "C" int mem_00B5AF3C;
+extern "C" int mem_00A9ED98;
+extern "C" int mem_00B5AF40;
+extern "C" int mem_00A9ED9C;
+extern "C" int mem_00B5AF44;
+extern "C" int mem_00A9EDA0;
+extern "C" int mem_00B5AF48;
+extern "C" int mem_00A9EDA4;
+extern "C" int mem_00B5AF4C;
+extern "C" int mem_00A9EDA8;
+extern "C" int mem_00B5AF50;
+extern "C" int mem_00A9EDAC;
+extern "C" int mem_00B5AF54;
+extern "C" int mem_00A9EDB0;
+extern "C" int mem_00B5AF58;
+extern "C" int mem_00A9EDB4;
+extern "C" int mem_00B5AF5C;
+extern "C" int mem_00A9EDB8;
+extern "C" int mem_00B5AF60;
+extern "C" int mem_00A9EDBC;
+extern "C" int mem_00B5AF64;
+extern "C" int mem_00A9EDC0;
+extern "C" int mem_00B5AF68;
+extern "C" int mem_00A9EDC4;
+extern "C" int mem_00B5AF6C;
+extern "C" int mem_00A9EDC8;
+extern "C" int mem_00B5AF70;
+extern "C" int mem_00A9EDCC;
+extern "C" int mem_00B5AF74;
+extern "C" int mem_00A9EDD0;
+extern "C" int mem_00B5AF78;
+extern "C" int mem_00A9EDD4;
+extern "C" int mem_00B5AF7C;
+extern "C" int mem_00A9EDD8;
+extern "C" int mem_00B5AF80;
+extern "C" int mem_00A9EDDC;
+extern "C" int mem_00B5AF84;
+extern "C" int mem_00A9EDE0;
+extern "C" int mem_00B5AF88;
+extern "C" int mem_00A9EDE4;
+extern "C" int mem_00B5AF8C;
+extern "C" int mem_00A9EDE8;
+extern "C" int mem_00B5AF90;
+extern "C" int mem_00A9EDEC;
+extern "C" int mem_00B5AF94;
+extern "C" int mem_00A9EDF0;
+extern "C" int mem_00B5AF98;
+extern "C" int mem_00A9EDF4;
+extern "C" int mem_00B5AF9C;
+extern "C" int mem_00A9EDF8;
+extern "C" int mem_00B5AFA0;
+extern "C" int mem_00A9EDFC;
+extern "C" int mem_00B5AFA4;
+extern "C" int mem_00A9EE00;
+extern "C" int mem_00B5AFA8;
+extern "C" int mem_00A9EE04;
+extern "C" int mem_00B5AFAC;
+extern "C" int mem_00A9EE08;
+extern "C" int mem_00B5AFB0;
+extern "C" int mem_00A9EE0C;
+extern "C" int mem_00B5AFB4;
+extern "C" int mem_00A9EE10;
+extern "C" int mem_00B5AFB8;
+extern "C" int mem_00A9EE14;
+extern "C" int mem_00B5AFBC;
+extern "C" int mem_00A9EE18;
+extern "C" int mem_00B5AFC0;
+extern "C" int mem_00A9EE1C;
+extern "C" int mem_00B5AFC4;
+extern "C" int mem_00A9EE20;
+extern "C" int mem_00B5AFC8;
+extern "C" int mem_00A9EE24;
+extern "C" int mem_00B5AFCC;
+extern "C" int mem_00A9EE28;
+extern "C" int mem_00B5AFD0;
+extern "C" int mem_00B5AFD4;
+extern "C" int mem_00B5AFD8;
+extern "C" int mem_00A9EE2C;
+extern "C" int mem_00A9EE30;
+extern "C" int mem_00A9EE34;
+extern "C" int mem_00B5AFDC;
+extern "C" int mem_00A9EE38;
+extern "C" int mem_00B5AFE0;
+extern "C" int mem_00A9EE3C;
+extern "C" int mem_00B5AFE4;
+extern "C" int mem_00A9EE40;
+extern "C" int mem_00B5AFE8;
+extern "C" int mem_00A9EE44;
+extern "C" int mem_00B5AFEC;
+extern "C" int mem_00A9EE48;
+extern "C" int mem_00B5AFF0;
+extern "C" int mem_00A9EE4C;
+extern "C" int mem_00B5AFF4;
+extern "C" int mem_00A9EE50;
+extern "C" int mem_00B5AFF8;
+extern "C" int mem_00A9EE54;
+extern "C" int mem_00B5AFFC;
+extern "C" int mem_00A9EE58;
+extern "C" int mem_00B5B000;
+extern "C" int mem_00A9EE5C;
+extern "C" int mem_00B5B004;
+extern "C" int mem_00A9EE60;
+extern "C" int mem_00B5B008;
+extern "C" int mem_00A9EE64;
+extern "C" int mem_00B5B00C;
+extern "C" int mem_00A9EE68;
+extern "C" int mem_00B5B010;
+extern "C" int mem_00A9EE6C;
+extern "C" int mem_00B5B014;
+extern "C" int mem_00A9EE70;
+extern "C" int mem_00B5B018;
+extern "C" int mem_00A9EE74;
+extern "C" int mem_00B5B01C;
+extern "C" int mem_00A9EE78;
+extern "C" int mem_00B5B020;
+extern "C" int mem_00A9EE7C;
+extern "C" int mem_00B5B024;
+extern "C" int mem_00A9EE80;
+extern "C" int mem_00B5B028;
+extern "C" int mem_00A9EE84;
+extern "C" int mem_00B5B02C;
+extern "C" int mem_00A9EE88;
+extern "C" int mem_00B5B030;
+extern "C" int mem_00A9EE8C;
+extern "C" int mem_00B5B034;
+extern "C" int mem_00A9EE90;
+extern "C" int mem_00B5B038;
+extern "C" int mem_00A9EE94;
+extern "C" int mem_00B5B03C;
+extern "C" int mem_00A9EE98;
+extern "C" int mem_00B5B040;
+extern "C" int mem_00A9EE9C;
+extern "C" int mem_00B5B044;
+extern "C" int mem_00A9EEA0;
+extern "C" int mem_00B5B048;
+extern "C" int mem_00A9EEA4;
+extern "C" int mem_00B5B04C;
+extern "C" int mem_00A9EEA8;
+extern "C" int mem_00B5B050;
+extern "C" int mem_00A9EEAC;
+extern "C" int mem_00B5B054;
+extern "C" int mem_00A9EEB0;
+extern "C" int mem_00B5B058;
+extern "C" int mem_00A9EEB4;
+extern "C" int mem_00B5B05C;
+extern "C" int mem_00A9EEB8;
+extern "C" int mem_00B5B060;
+extern "C" int mem_00A9EEBC;
+extern "C" int mem_00B5B064;
+extern "C" int mem_00A9EEC0;
+extern "C" int mem_00B5B068;
+extern "C" int mem_00A9EEC4;
+extern "C" int mem_00B5B06C;
+extern "C" int mem_00A9EEC8;
+extern "C" int mem_00B5B070;
+extern "C" int mem_00A9EECC;
+extern "C" int mem_00B5B074;
+extern "C" int mem_00B5B078;
+extern "C" int mem_00A9EED0;
+extern "C" int mem_00A9EED4;
+extern "C" int mem_00B5B07C;
+extern "C" int mem_00A9EED8;
+extern "C" int mem_00B5B080;
+extern "C" int mem_00A9EEDC;
+extern "C" int mem_00B5B084;
+extern "C" int mem_00A9EEE0;
+extern "C" int mem_00B5B088;
+extern "C" int mem_00A9EEE4;
+extern "C" int mem_00B5B08C;
+extern "C" int mem_00A9EEE8;
+extern "C" int mem_00B5B090;
+extern "C" int mem_00A9EEEC;
+extern "C" int mem_00B5B094;
+extern "C" int mem_00A9EEF0;
+extern "C" int mem_00B5B098;
+extern "C" int mem_00A9EEF4;
+extern "C" int mem_00B5B09C;
+extern "C" int mem_00A9EEF8;
+extern "C" int mem_00B5B0A0;
+extern "C" int mem_00A9EEFC;
+extern "C" int mem_00B5B0A4;
+extern "C" int mem_00A9EF00;
+extern "C" int mem_00B5B0A8;
+extern "C" int mem_00A9EF04;
+extern "C" int mem_00B5B0AC;
+extern "C" int mem_00A9EF08;
+extern "C" int mem_00B5B0B0;
+extern "C" int mem_00A9EF0C;
+extern "C" int mem_00B5B0B4;
+extern "C" int mem_00A9EF10;
+extern "C" int mem_00B5B0B8;
+extern "C" int mem_00A9EF14;
+extern "C" int mem_00B5B0BC;
+extern "C" int mem_00A9EF18;
+extern "C" int mem_00B5B0C0;
+extern "C" int mem_00A9EF1C;
+extern "C" int mem_00B5B0C4;
+extern "C" int mem_00A9EF20;
+extern "C" int mem_00B5B0C8;
+extern "C" int mem_00A9EF24;
+extern "C" int mem_00B5B0CC;
+extern "C" int mem_00A9EF28;
+extern "C" int mem_00B5B0D0;
+extern "C" int mem_00A9EF2C;
+extern "C" int mem_00B5B0D4;
+extern "C" int mem_00A9EF30;
+extern "C" int mem_00B5B0D8;
+extern "C" int mem_00A9EF34;
+extern "C" int mem_00B5B0DC;
+extern "C" int mem_00A9EF38;
+extern "C" int mem_00B5B0E0;
+extern "C" int mem_00A9EF3C;
+extern "C" int mem_00B5B0E4;
+extern "C" int mem_00A9EF40;
+extern "C" int mem_00B5B0E8;
+extern "C" int mem_00A9EF44;
+extern "C" int mem_00B5B0EC;
+extern "C" int mem_00A9EF48;
+extern "C" int mem_00B5B0F0;
+extern "C" int mem_00A9EF4C;
+extern "C" int mem_00B5B0F4;
+extern "C" int mem_00A9EF50;
+extern "C" int mem_00B5B0F8;
+extern "C" int mem_00A9EF54;
+extern "C" int mem_00B5B0FC;
+extern "C" int mem_00A9EF58;
+extern "C" int mem_00B5B100;
+extern "C" int mem_00A9EF5C;
+extern "C" int mem_00B5B104;
+extern "C" int mem_00A9EF60;
+extern "C" int mem_00B5B108;
+extern "C" int mem_00A9EF64;
+extern "C" int mem_00B5B10C;
+extern "C" int mem_00A9EF68;
+extern "C" int mem_00B5B110;
+extern "C" int mem_00A9EF6C;
+extern "C" int mem_00B5B114;
+extern "C" int mem_00B5B118;
+extern "C" int mem_00B5B11C;
+extern "C" int mem_00A9EF70;
+extern "C" int mem_00A9EF74;
+extern "C" int mem_00A9EF78;
+extern "C" int mem_00B5B120;
+extern "C" int mem_00A9EF7C;
+extern "C" int mem_00B5B124;
+extern "C" int mem_00A9EF80;
+extern "C" int mem_00B5B128;
+extern "C" int mem_00A9EF84;
+extern "C" int mem_00B5B12C;
+extern "C" int mem_00A9EF88;
+extern "C" int mem_00B5B130;
+extern "C" int mem_00A9EF8C;
+extern "C" int mem_00B5B134;
+extern "C" int mem_00A9EF90;
+extern "C" int mem_00B5B138;
+extern "C" int mem_00A9EF94;
+extern "C" int mem_00B5B13C;
+extern "C" int mem_00A9EF98;
+extern "C" int mem_00B5B140;
+extern "C" int mem_00A9EF9C;
+extern "C" int mem_00B5B144;
+extern "C" int mem_00A9EFA0;
+extern "C" int mem_00B5B148;
+extern "C" int mem_00A9EFA4;
+extern "C" int mem_00B5B14C;
+extern "C" int mem_00A9EFA8;
+extern "C" int mem_00B5B150;
+extern "C" int mem_00A9EFAC;
+extern "C" int mem_00B5B154;
+extern "C" int mem_00A9EFB0;
+extern "C" int mem_00B5B158;
+extern "C" int mem_00A9EFB4;
+extern "C" int mem_00B5B15C;
+extern "C" int mem_00A9EFB8;
+extern "C" int mem_00B5B160;
+extern "C" int mem_00A9EFBC;
+extern "C" int mem_00B5B164;
+extern "C" int mem_00A9EFC0;
+extern "C" int mem_00B5B168;
+extern "C" int mem_00A9EFC4;
+extern "C" int mem_00B5B16C;
+extern "C" int mem_00A9EFC8;
+extern "C" int mem_00B5B170;
+extern "C" int mem_00A9EFCC;
+extern "C" int mem_00B5B174;
+extern "C" int mem_00A9EFD0;
+extern "C" int mem_00B5B178;
+extern "C" int mem_00A9EFD4;
+extern "C" int mem_00B5B17C;
+extern "C" int mem_00A9EFD8;
+extern "C" int mem_00B5B180;
+extern "C" int mem_00A9EFDC;
+extern "C" int mem_00B5B184;
+extern "C" int mem_00A9EFE0;
+extern "C" int mem_00B5B188;
+extern "C" int mem_00A9EFE4;
+extern "C" int mem_00B5B18C;
+extern "C" int mem_00A9EFE8;
+extern "C" int mem_00B5B190;
+extern "C" int mem_00A9EFEC;
+extern "C" int mem_00B5B194;
+extern "C" int mem_00A9EFF0;
+extern "C" int mem_00B5B198;
+extern "C" int mem_00A9EFF4;
+extern "C" int mem_00B5B19C;
+extern "C" int mem_00A9EFF8;
+extern "C" int mem_00B5B1A0;
+extern "C" int mem_00A9EFFC;
+extern "C" int mem_00B5B1A4;
+extern "C" int mem_00A9F000;
+extern "C" int mem_00B5B1A8;
+extern "C" int mem_00A9F004;
+extern "C" int mem_00B5B1AC;
+extern "C" int mem_00A9F008;
+extern "C" int mem_00B5B1B0;
+extern "C" int mem_00A9F00C;
+extern "C" int mem_00B5B1B4;
+extern "C" int mem_00A9F010;
+extern "C" int mem_00B5B1B8;
+extern "C" int mem_00B5B1BC;
+extern "C" int mem_00A9F014;
+extern "C" int mem_00A9F018;
+extern "C" int mem_00B5B1C0;
+extern "C" int mem_00A9F01C;
+extern "C" int mem_00B5B1C4;
+extern "C" int mem_00A9F020;
+extern "C" int mem_00B5B1C8;
+extern "C" int mem_00A9F024;
+extern "C" int mem_00B5B1CC;
+extern "C" int mem_00A9F028;
+extern "C" int mem_00B5B1D0;
+extern "C" int mem_00A9F02C;
+extern "C" int mem_00B5B1D4;
+extern "C" int mem_00A9F030;
+extern "C" int mem_00B5B1D8;
+extern "C" int mem_00A9F034;
+extern "C" int mem_00B5B1DC;
+extern "C" int mem_00A9F038;
+extern "C" int mem_00B5B1E0;
+extern "C" int mem_00A9F03C;
+extern "C" int mem_00B5B1E4;
+extern "C" int mem_00A9F040;
+extern "C" int mem_00B5B1E8;
+extern "C" int mem_00A9F044;
+extern "C" int mem_00B5B1EC;
+extern "C" int mem_00A9F048;
+extern "C" int mem_00B5B1F0;
+extern "C" int mem_00A9F04C;
+extern "C" int mem_00B5B1F4;
+extern "C" int mem_00A9F050;
+extern "C" int mem_00B5B1F8;
+extern "C" int mem_00A9F054;
+extern "C" int mem_00B5B1FC;
+extern "C" int mem_00A9F058;
+extern "C" int mem_00B5B200;
+extern "C" int mem_00A9F05C;
+extern "C" int mem_00B5B204;
+extern "C" int mem_00A9F060;
+extern "C" int mem_00B5B208;
+extern "C" int mem_00A9F064;
+extern "C" int mem_00B5B20C;
+extern "C" int mem_00A9F068;
+extern "C" int mem_00B5B210;
+extern "C" int mem_00A9F06C;
+extern "C" int mem_00B5B214;
+extern "C" int mem_00A9F070;
+extern "C" int mem_00B5B218;
+extern "C" int mem_00A9F074;
+extern "C" int mem_00B5B21C;
+extern "C" int mem_00A9F078;
+extern "C" int mem_00B5B220;
+extern "C" int mem_00A9F07C;
+extern "C" int mem_00B5B224;
+extern "C" int mem_00A9F080;
+extern "C" int mem_00B5B228;
+extern "C" int mem_00A9F084;
+extern "C" int mem_00B5B22C;
+extern "C" int mem_00A9F088;
+extern "C" int mem_00B5B230;
+extern "C" int mem_00A9F08C;
+extern "C" int mem_00B5B234;
+extern "C" int mem_00A9F090;
+extern "C" int mem_00B5B238;
+extern "C" int mem_00A9F094;
+extern "C" int mem_00B5B23C;
+extern "C" int mem_00A9F098;
+extern "C" int mem_00B5B240;
+extern "C" int mem_00A9F09C;
+extern "C" int mem_00B5B244;
+extern "C" int mem_00A9F0A0;
+extern "C" int mem_00B5B248;
+extern "C" int mem_00A9F0A4;
+extern "C" int mem_00B5B24C;
+extern "C" int mem_00A9F0A8;
+extern "C" int mem_00B5B250;
+extern "C" int mem_00A9F0AC;
+extern "C" int mem_00B5B254;
+extern "C" int mem_00A9F0B0;
+extern "C" int mem_00B5B258;
+extern "C" int mem_00B5B25C;
+extern "C" int mem_00B5B260;
+extern "C" int mem_00A9F0B4;
+extern "C" int mem_00A9F0B8;
+extern "C" int mem_00A9F0BC;
+extern "C" int mem_00B5B264;
+extern "C" int mem_00A9F0C0;
+extern "C" int mem_00B5B268;
+extern "C" int mem_00A9F0C4;
+extern "C" int mem_00B5B26C;
+extern "C" int mem_00A9F0C8;
+extern "C" int mem_00B5B270;
+extern "C" int mem_00A9F0CC;
+extern "C" int mem_00B5B274;
+extern "C" int mem_00A9F0D0;
+extern "C" int mem_00B5B278;
+extern "C" int mem_00A9F0D4;
+extern "C" int mem_00B5B27C;
+extern "C" int mem_00A9F0D8;
+extern "C" int mem_00B5B280;
+extern "C" int mem_00A9F0DC;
+extern "C" int mem_00B5B284;
+extern "C" int mem_00A9F0E0;
+extern "C" int mem_00B5B288;
+extern "C" int mem_00A9F0E4;
+extern "C" int mem_00B5B28C;
+extern "C" int mem_00A9F0E8;
+extern "C" int mem_00B5B290;
+extern "C" int mem_00A9F0EC;
+extern "C" int mem_00B5B294;
+extern "C" int mem_00A9F0F0;
+extern "C" int mem_00B5B298;
+extern "C" int mem_00A9F0F4;
+extern "C" int mem_00B5B29C;
+extern "C" int mem_00A9F0F8;
+extern "C" int mem_00B5B2A0;
+extern "C" int mem_00A9F0FC;
+extern "C" int mem_00B5B2A4;
+extern "C" int mem_00A9F100;
+extern "C" int mem_00B5B2A8;
+extern "C" int mem_00A9F104;
+extern "C" int mem_00B5B2AC;
+extern "C" int mem_00A9F108;
+extern "C" int mem_00B5B2B0;
+extern "C" int mem_00A9F10C;
+extern "C" int mem_00B5B2B4;
+extern "C" int mem_00A9F110;
+extern "C" int mem_00B5B2B8;
+extern "C" int mem_00A9F114;
+extern "C" int mem_00B5B2BC;
+extern "C" int mem_00A9F118;
+extern "C" int mem_00B5B2C0;
+extern "C" int mem_00A9F11C;
+extern "C" int mem_00B5B2C4;
+extern "C" int mem_00A9F120;
+extern "C" int mem_00B5B2C8;
+extern "C" int mem_00A9F124;
+extern "C" int mem_00B5B2CC;
+extern "C" int mem_00A9F128;
+extern "C" int mem_00B5B2D0;
+extern "C" int mem_00A9F12C;
+extern "C" int mem_00B5B2D4;
+extern "C" int mem_00A9F130;
+extern "C" int mem_00B5B2D8;
+extern "C" int mem_00A9F134;
+extern "C" int mem_00B5B2DC;
+extern "C" int mem_00A9F138;
+extern "C" int mem_00B5B2E0;
+extern "C" int mem_00A9F13C;
+extern "C" int mem_00B5B2E4;
+extern "C" int mem_00A9F140;
+extern "C" int mem_00B5B2E8;
+extern "C" int mem_00A9F144;
+extern "C" int mem_00B5B2EC;
+extern "C" int mem_00A9F148;
+extern "C" int mem_00B5B2F0;
+extern "C" int mem_00A9F14C;
+extern "C" int mem_00B5B2F4;
+extern "C" int mem_00A9F150;
+extern "C" int mem_00B5B2F8;
+extern "C" int mem_00A9F154;
+extern "C" int mem_00B5B2FC;
+extern "C" int mem_00B5B300;
+extern "C" int mem_00A9F158;
+extern "C" int mem_00A9F15C;
+extern "C" int mem_00B5B304;
+extern "C" int mem_00A9F160;
+extern "C" int mem_00B5B308;
+extern "C" int mem_00A9F164;
+extern "C" int mem_00B5B30C;
+extern "C" int mem_00A9F168;
+extern "C" int mem_00B5B310;
+extern "C" int mem_00A9F16C;
+extern "C" int mem_00B5B314;
+extern "C" int mem_00A9F170;
+extern "C" int mem_00B5B318;
+extern "C" int mem_00A9F174;
+extern "C" int mem_00B5B31C;
+extern "C" int mem_00A9F178;
+extern "C" int mem_00B5B320;
+extern "C" int mem_00A9F17C;
+extern "C" int mem_00B5B324;
+extern "C" int mem_00A9F180;
+extern "C" int mem_00B5B328;
+extern "C" int mem_00A9F184;
+extern "C" int mem_00B5B32C;
+extern "C" int mem_00A9F188;
+extern "C" int mem_00B5B330;
+extern "C" int mem_00A9F18C;
+extern "C" int mem_00B5B334;
+extern "C" int mem_00A9F190;
+extern "C" int mem_00B5B338;
+extern "C" int mem_00A9F194;
+extern "C" int mem_00B5B33C;
+extern "C" int mem_00A9F198;
+extern "C" int mem_00B5B340;
+extern "C" int mem_00A9F19C;
+extern "C" int mem_00B5B344;
+extern "C" int mem_00A9F1A0;
+extern "C" int mem_00B5B348;
+extern "C" int mem_00A9F1A4;
+extern "C" int mem_00B5B34C;
+extern "C" int mem_00A9F1A8;
+extern "C" int mem_00B5B350;
+extern "C" int mem_00A9F1AC;
+extern "C" int mem_00B5B354;
+extern "C" int mem_00A9F1B0;
+extern "C" int mem_00B5B358;
+extern "C" int mem_00A9F1B4;
+extern "C" int mem_00B5B35C;
+extern "C" int mem_00A9F1B8;
+extern "C" int mem_00B5B360;
+extern "C" int mem_00A9F1BC;
+extern "C" int mem_00B5B364;
+extern "C" int mem_00A9F1C0;
+extern "C" int mem_00B5B368;
+extern "C" int mem_00A9F1C4;
+extern "C" int mem_00B5B36C;
+extern "C" int mem_00A9F1C8;
+extern "C" int mem_00B5B370;
+extern "C" int mem_00A9F1CC;
+extern "C" int mem_00B5B374;
+extern "C" int mem_00A9F1D0;
+extern "C" int mem_00B5B378;
+extern "C" int mem_00A9F1D4;
+extern "C" int mem_00B5B37C;
+extern "C" int mem_00A9F1D8;
+extern "C" int mem_00B5B380;
+extern "C" int mem_00A9F1DC;
+extern "C" int mem_00B5B384;
+extern "C" int mem_00A9F1E0;
+extern "C" int mem_00B5B388;
+extern "C" int mem_00A9F1E4;
+extern "C" int mem_00B5B38C;
+extern "C" int mem_00A9F1E8;
+extern "C" int mem_00B5B390;
+extern "C" int mem_00A9F1EC;
+extern "C" int mem_00B5B394;
+extern "C" int mem_00A9F1F0;
+extern "C" int mem_00B5B398;
+extern "C" int mem_00A9F1F4;
+extern "C" int mem_00B5B39C;
+extern "C" int mem_00B5B3A0;
+extern "C" int mem_00B5B3A4;
+extern "C" int mem_00A9F1F8;
+extern "C" int mem_00A9F1FC;
+extern "C" int mem_00A9F200;
+extern "C" int mem_00B5B3A8;
+extern "C" int mem_00A9F204;
+extern "C" int mem_00B5B3AC;
+extern "C" int mem_00A9F208;
+extern "C" int mem_00B5B3B0;
+extern "C" int mem_00A9F20C;
+extern "C" int mem_00B5B3B4;
+extern "C" int mem_00A9F210;
+extern "C" int mem_00B5B3B8;
+extern "C" int mem_00A9F214;
+extern "C" int mem_00B5B3BC;
+extern "C" int mem_00A9F218;
+extern "C" int mem_00B5B3C0;
+extern "C" int mem_00A9F21C;
+extern "C" int mem_00B5B3C4;
+extern "C" int mem_00A9F220;
+extern "C" int mem_00B5B3C8;
+extern "C" int mem_00A9F224;
+extern "C" int mem_00B5B3CC;
+extern "C" int mem_00A9F228;
+extern "C" int mem_00B5B3D0;
+extern "C" int mem_00A9F22C;
+extern "C" int mem_00B5B3D4;
+extern "C" int mem_00A9F230;
+extern "C" int mem_00B5B3D8;
+extern "C" int mem_00A9F234;
+extern "C" int mem_00B5B3DC;
+extern "C" int mem_00A9F238;
+extern "C" int mem_00B5B3E0;
+extern "C" int mem_00A9F23C;
+extern "C" int mem_00B5B3E4;
+extern "C" int mem_00A9F240;
+extern "C" int mem_00B5B3E8;
+extern "C" int mem_00A9F244;
+extern "C" int mem_00B5B3EC;
+extern "C" int mem_00A9F248;
+extern "C" int mem_00B5B3F0;
+extern "C" int mem_00A9F24C;
+extern "C" int mem_00B5B3F4;
+extern "C" int mem_00A9F250;
+extern "C" int mem_00B5B3F8;
+extern "C" int mem_00A9F254;
+extern "C" int mem_00B5B3FC;
+extern "C" int mem_00A9F258;
+extern "C" int mem_00B5B400;
+extern "C" int mem_00A9F25C;
+extern "C" int mem_00B5B404;
+extern "C" int mem_00A9F260;
+extern "C" int mem_00B5B408;
+extern "C" int mem_00A9F264;
+extern "C" int mem_00B5B40C;
+extern "C" int mem_00A9F268;
+extern "C" int mem_00B5B410;
+extern "C" int mem_00A9F26C;
+extern "C" int mem_00B5B414;
+extern "C" int mem_00A9F270;
+extern "C" int mem_00B5B418;
+extern "C" int mem_00A9F274;
+extern "C" int mem_00B5B41C;
+extern "C" int mem_00A9F278;
+extern "C" int mem_00B5B420;
+extern "C" int mem_00A9F27C;
+extern "C" int mem_00B5B424;
+extern "C" int mem_00A9F280;
+extern "C" int mem_00B5B428;
+extern "C" int mem_00A9F284;
+extern "C" int mem_00B5B42C;
+extern "C" int mem_00A9F288;
+extern "C" int mem_00B5B430;
+extern "C" int mem_00A9F28C;
+extern "C" int mem_00B5B434;
+extern "C" int mem_00A9F290;
+extern "C" int mem_00B5B438;
+extern "C" int mem_00A9F294;
+extern "C" int mem_00B5B43C;
+extern "C" int mem_00A9F298;
+extern "C" int mem_00B5B440;
+extern "C" int mem_00B5B444;
+extern "C" int mem_00A9F29C;
+extern "C" int mem_00A9F2A0;
+extern "C" int mem_00B5B448;
+extern "C" int mem_00A9F2A4;
+extern "C" int mem_00B5B44C;
+extern "C" int mem_00A9F2A8;
+extern "C" int mem_00B5B450;
+extern "C" int mem_00A9F2AC;
+extern "C" int mem_00B5B454;
+extern "C" int mem_00A9F2B0;
+extern "C" int mem_00B5B458;
+extern "C" int mem_00A9F2B4;
+extern "C" int mem_00B5B45C;
+extern "C" int mem_00A9F2B8;
+extern "C" int mem_00B5B460;
+extern "C" int mem_00A9F2BC;
+extern "C" int mem_00B5B464;
+extern "C" int mem_00A9F2C0;
+extern "C" int mem_00B5B468;
+extern "C" int mem_00A9F2C4;
+extern "C" int mem_00B5B46C;
+extern "C" int mem_00A9F2C8;
+extern "C" int mem_00B5B470;
+extern "C" int mem_00A9F2CC;
+extern "C" int mem_00B5B474;
+extern "C" int mem_00A9F2D0;
+extern "C" int mem_00B5B478;
+extern "C" int mem_00A9F2D4;
+extern "C" int mem_00B5B47C;
+extern "C" int mem_00A9F2D8;
+extern "C" int mem_00B5B480;
+extern "C" int mem_00A9F2DC;
+extern "C" int mem_00B5B484;
+extern "C" int mem_00A9F2E0;
+extern "C" int mem_00B5B488;
+extern "C" int mem_00A9F2E4;
+extern "C" int mem_00B5B48C;
+extern "C" int mem_00A9F2E8;
+extern "C" int mem_00B5B490;
+extern "C" int mem_00A9F2EC;
+extern "C" int mem_00B5B494;
+extern "C" int mem_00A9F2F0;
+extern "C" int mem_00B5B498;
+extern "C" int mem_00A9F2F4;
+extern "C" int mem_00B5B49C;
+extern "C" int mem_00A9F2F8;
+extern "C" int mem_00B5B4A0;
+extern "C" int mem_00A9F2FC;
+extern "C" int mem_00B5B4A4;
+extern "C" int mem_00A9F300;
+extern "C" int mem_00B5B4A8;
+extern "C" int mem_00A9F304;
+extern "C" int mem_00B5B4AC;
+extern "C" int mem_00A9F308;
+extern "C" int mem_00B5B4B0;
+extern "C" int mem_00A9F30C;
+extern "C" int mem_00B5B4B4;
+extern "C" int mem_00A9F310;
+extern "C" int mem_00B5B4B8;
+extern "C" int mem_00A9F314;
+extern "C" int mem_00B5B4BC;
+extern "C" int mem_00A9F318;
+extern "C" int mem_00B5B4C0;
+extern "C" int mem_00A9F31C;
+extern "C" int mem_00B5B4C4;
+extern "C" int mem_00A9F320;
+extern "C" int mem_00B5B4C8;
+extern "C" int mem_00A9F324;
+extern "C" int mem_00B5B4CC;
+extern "C" int mem_00A9F328;
+extern "C" int mem_00B5B4D0;
+extern "C" int mem_00A9F32C;
+extern "C" int mem_00B5B4D4;
+extern "C" int mem_00A9F330;
+extern "C" int mem_00B5B4D8;
+extern "C" int mem_00A9F334;
+extern "C" int mem_00B5B4DC;
+extern "C" int mem_00A9F338;
+extern "C" int mem_00B5B4E0;
+extern "C" int mem_00B5B4E4;
+extern "C" int mem_00B5B4E8;
+extern "C" int mem_00A9F33C;
+extern "C" int mem_00A9F340;
+extern "C" int mem_00A9F344;
+extern "C" int mem_00B5B4EC;
+extern "C" int mem_00A9F348;
+extern "C" int mem_00B5B4F0;
+extern "C" int mem_00A9F34C;
+extern "C" int mem_00B5B4F4;
+extern "C" int mem_00A9F350;
+extern "C" int mem_00B5B4F8;
+extern "C" int mem_00A9F354;
+extern "C" int mem_00B5B4FC;
+extern "C" int mem_00A9F358;
+extern "C" int mem_00B5B500;
+extern "C" int mem_00A9F35C;
+extern "C" int mem_00B5B504;
+extern "C" int mem_00A9F360;
+extern "C" int mem_00B5B508;
+extern "C" int mem_00A9F364;
+extern "C" int mem_00B5B50C;
+extern "C" int mem_00A9F368;
+extern "C" int mem_00B5B510;
+extern "C" int mem_00A9F36C;
+extern "C" int mem_00B5B514;
+extern "C" int mem_00A9F370;
+extern "C" int mem_00B5B518;
+extern "C" int mem_00A9F374;
+extern "C" int mem_00B5B51C;
+extern "C" int mem_00A9F378;
+extern "C" int mem_00B5B520;
+extern "C" int mem_00A9F37C;
+extern "C" int mem_00B5B524;
+extern "C" int mem_00A9F380;
+extern "C" int mem_00B5B528;
+extern "C" int mem_00A9F384;
+extern "C" int mem_00B5B52C;
+extern "C" int mem_00A9F388;
+extern "C" int mem_00B5B530;
+extern "C" int mem_00A9F38C;
+extern "C" int mem_00B5B534;
+extern "C" int mem_00A9F390;
+extern "C" int mem_00B5B538;
+extern "C" int mem_00A9F394;
+extern "C" int mem_00B5B53C;
+extern "C" int mem_00A9F398;
+extern "C" int mem_00B5B540;
+extern "C" int mem_00A9F39C;
+extern "C" int mem_00B5B544;
+extern "C" int mem_00A9F3A0;
+extern "C" int mem_00B5B548;
+extern "C" int mem_00A9F3A4;
+extern "C" int mem_00B5B54C;
+extern "C" int mem_00A9F3A8;
+extern "C" int mem_00B5B550;
+extern "C" int mem_00A9F3AC;
+extern "C" int mem_00B5B554;
+extern "C" int mem_00A9F3B0;
+extern "C" int mem_00B5B558;
+extern "C" int mem_00A9F3B4;
+extern "C" int mem_00B5B55C;
+extern "C" int mem_00A9F3B8;
+extern "C" int mem_00B5B560;
+extern "C" int mem_00A9F3BC;
+extern "C" int mem_00B5B564;
+extern "C" int mem_00A9F3C0;
+extern "C" int mem_00B5B568;
+extern "C" int mem_00A9F3C4;
+extern "C" int mem_00B5B56C;
+extern "C" int mem_00A9F3C8;
+extern "C" int mem_00B5B570;
+extern "C" int mem_00A9F3CC;
+extern "C" int mem_00B5B574;
+extern "C" int mem_00A9F3D0;
+extern "C" int mem_00B5B578;
+extern "C" int mem_00A9F3D4;
+extern "C" int mem_00B5B57C;
+extern "C" int mem_00A9F3D8;
+extern "C" int mem_00B5B580;
+extern "C" int mem_00A9F3DC;
+extern "C" int mem_00B5B584;
+extern "C" int mem_00B5B588;
+extern "C" int mem_00A9F3E0;
+extern "C" int mem_00A9F3E4;
+extern "C" int mem_00B5B58C;
+extern "C" int mem_00A9F3E8;
+extern "C" int mem_00B5B590;
+extern "C" int mem_00A9F3EC;
+extern "C" int mem_00B5B594;
+extern "C" int mem_00A9F3F0;
+extern "C" int mem_00B5B598;
+extern "C" int mem_00A9F3F4;
+extern "C" int mem_00B5B59C;
+extern "C" int mem_00A9F3F8;
+extern "C" int mem_00B5B5A0;
+extern "C" int mem_00A9F3FC;
+extern "C" int mem_00B5B5A4;
+extern "C" int mem_00A9F400;
+extern "C" int mem_00B5B5A8;
+extern "C" int mem_00A9F404;
+extern "C" int mem_00B5B5AC;
+extern "C" int mem_00A9F408;
+extern "C" int mem_00B5B5B0;
+extern "C" int mem_00A9F40C;
+extern "C" int mem_00B5B5B4;
+extern "C" int mem_00A9F410;
+extern "C" int mem_00B5B5B8;
+extern "C" int mem_00A9F414;
+extern "C" int mem_00B5B5BC;
+extern "C" int mem_00A9F418;
+extern "C" int mem_00B5B5C0;
+extern "C" int mem_00A9F41C;
+extern "C" int mem_00B5B5C4;
+extern "C" int mem_00A9F420;
+extern "C" int mem_00B5B5C8;
+extern "C" int mem_00A9F424;
+extern "C" int mem_00B5B5CC;
+extern "C" int mem_00A9F428;
+extern "C" int mem_00B5B5D0;
+extern "C" int mem_00A9F42C;
+extern "C" int mem_00B5B5D4;
+extern "C" int mem_00A9F430;
+extern "C" int mem_00B5B5D8;
+extern "C" int mem_00A9F434;
+extern "C" int mem_00B5B5DC;
+extern "C" int mem_00A9F438;
+extern "C" int mem_00B5B5E0;
+extern "C" int mem_00A9F43C;
+extern "C" int mem_00B5B5E4;
+extern "C" int mem_00A9F440;
+extern "C" int mem_00B5B5E8;
+extern "C" int mem_00A9F444;
+extern "C" int mem_00B5B5EC;
+extern "C" int mem_00A9F448;
+extern "C" int mem_00B5B5F0;
+extern "C" int mem_00A9F44C;
+extern "C" int mem_00B5B5F4;
+extern "C" int mem_00A9F450;
+extern "C" int mem_00B5B5F8;
+extern "C" int mem_00A9F454;
+extern "C" int mem_00B5B5FC;
+extern "C" int mem_00A9F458;
+extern "C" int mem_00B5B600;
+extern "C" int mem_00A9F45C;
+extern "C" int mem_00B5B604;
+extern "C" int mem_00A9F460;
+extern "C" int mem_00B5B608;
+extern "C" int mem_00A9F464;
+extern "C" int mem_00B5B60C;
+extern "C" int mem_00A9F468;
+extern "C" int mem_00B5B610;
+extern "C" int mem_00A9F46C;
+extern "C" int mem_00B5B614;
+extern "C" int mem_00A9F470;
+extern "C" int mem_00B5B618;
+extern "C" int mem_00A9F474;
+extern "C" int mem_00B5B61C;
+extern "C" int mem_00A9F478;
+extern "C" int mem_00B5B620;
+extern "C" int mem_00A9F47C;
+extern "C" int mem_00B5B624;
+extern "C" int mem_00B5B628;
+extern "C" int mem_00B5B62C;
+extern "C" int mem_00A9F480;
+extern "C" int mem_00A9F484;
+extern "C" int mem_00A9F488;
+extern "C" int mem_00B5B630;
+extern "C" int mem_00A9F48C;
+extern "C" int mem_00B5B634;
+extern "C" int mem_00A9F490;
+extern "C" int mem_00B5B638;
+extern "C" int mem_00A9F494;
+extern "C" int mem_00B5B63C;
+extern "C" int mem_00A9F498;
+extern "C" int mem_00B5B640;
+extern "C" int mem_00A9F49C;
+extern "C" int mem_00B5B644;
+extern "C" int mem_00A9F4A0;
+extern "C" int mem_00B5B648;
+extern "C" int mem_00A9F4A4;
+extern "C" int mem_00B5B64C;
+extern "C" int mem_00A9F4A8;
+extern "C" int mem_00B5B650;
+extern "C" int mem_00A9F4AC;
+extern "C" int mem_00B5B654;
+extern "C" int mem_00A9F4B0;
+extern "C" int mem_00B5B658;
+extern "C" int mem_00A9F4B4;
+extern "C" int mem_00B5B65C;
+extern "C" int mem_00A9F4B8;
+extern "C" int mem_00B5B660;
+extern "C" int mem_00A9F4BC;
+extern "C" int mem_00B5B664;
+extern "C" int mem_00A9F4C0;
+extern "C" int mem_00B5B668;
+extern "C" int mem_00A9F4C4;
+extern "C" int mem_00B5B66C;
+extern "C" int mem_00A9F4C8;
+extern "C" int mem_00B5B670;
+extern "C" int mem_00A9F4CC;
+extern "C" int mem_00B5B674;
+extern "C" int mem_00A9F4D0;
+extern "C" int mem_00B5B678;
+extern "C" int mem_00A9F4D4;
+extern "C" int mem_00B5B67C;
+extern "C" int mem_00A9F4D8;
+extern "C" int mem_00B5B680;
+extern "C" int mem_00A9F4DC;
+extern "C" int mem_00B5B684;
+extern "C" int mem_00A9F4E0;
+extern "C" int mem_00B5B688;
+extern "C" int mem_00A9F4E4;
+extern "C" int mem_00B5B68C;
+extern "C" int mem_00A9F4E8;
+extern "C" int mem_00B5B690;
+extern "C" int mem_00A9F4EC;
+extern "C" int mem_00B5B694;
+extern "C" int mem_00A9F4F0;
+extern "C" int mem_00B5B698;
+extern "C" int mem_00A9F4F4;
+extern "C" int mem_00B5B69C;
+extern "C" int mem_00A9F4F8;
+extern "C" int mem_00B5B6A0;
+extern "C" int mem_00A9F4FC;
+extern "C" int mem_00B5B6A4;
+extern "C" int mem_00A9F500;
+extern "C" int mem_00B5B6A8;
+extern "C" int mem_00A9F504;
+extern "C" int mem_00B5B6AC;
+extern "C" int mem_00A9F508;
+extern "C" int mem_00B5B6B0;
+extern "C" int mem_00A9F50C;
+extern "C" int mem_00B5B6B4;
+extern "C" int mem_00A9F510;
+extern "C" int mem_00B5B6B8;
+extern "C" int mem_00A9F514;
+extern "C" int mem_00B5B6BC;
+extern "C" int mem_00A9F518;
+extern "C" int mem_00B5B6C0;
+extern "C" int mem_00A9F51C;
+extern "C" int mem_00B5B6C4;
+extern "C" int mem_00A9F520;
+extern "C" int mem_00B5B6C8;
+extern "C" int mem_00B5B6CC;
+extern "C" int mem_00A9F524;
+extern "C" int mem_00A9F528;
+extern "C" int mem_00B5B6D0;
+extern "C" int mem_00A9F52C;
+extern "C" int mem_00B5B6D4;
+extern "C" int mem_00A9F530;
+extern "C" int mem_00B5B6D8;
+extern "C" int mem_00A9F534;
+extern "C" int mem_00B5B6DC;
+extern "C" int mem_00A9F538;
+extern "C" int mem_00B5B6E0;
+extern "C" int mem_00A9F53C;
+extern "C" int mem_00B5B6E4;
+extern "C" int mem_00A9F540;
+extern "C" int mem_00B5B6E8;
+extern "C" int mem_00A9F544;
+extern "C" int mem_00B5B6EC;
+extern "C" int mem_00A9F548;
+extern "C" int mem_00B5B6F0;
+extern "C" int mem_00A9F54C;
+extern "C" int mem_00B5B6F4;
+extern "C" int mem_00A9F550;
+extern "C" int mem_00B5B6F8;
+extern "C" int mem_00A9F554;
+extern "C" int mem_00B5B6FC;
+extern "C" int mem_00A9F558;
+extern "C" int mem_00B5B700;
+extern "C" int mem_00A9F55C;
+extern "C" int mem_00B5B704;
+extern "C" int mem_00A9F560;
+extern "C" int mem_00B5B708;
+extern "C" int mem_00A9F564;
+extern "C" int mem_00B5B70C;
+extern "C" int mem_00A9F568;
+extern "C" int mem_00B5B710;
+extern "C" int mem_00A9F56C;
+extern "C" int mem_00B5B714;
+extern "C" int mem_00A9F570;
+extern "C" int mem_00B5B718;
+extern "C" int mem_00A9F574;
+extern "C" int mem_00B5B71C;
+extern "C" int mem_00A9F578;
+extern "C" int mem_00B5B720;
+extern "C" int mem_00A9F57C;
+extern "C" int mem_00B5B724;
+extern "C" int mem_00A9F580;
+extern "C" int mem_00B5B728;
+extern "C" int mem_00A9F584;
+extern "C" int mem_00B5B72C;
+extern "C" int mem_00A9F588;
+extern "C" int mem_00B5B730;
+extern "C" int mem_00A9F58C;
+extern "C" int mem_00B5B734;
+extern "C" int mem_00A9F590;
+extern "C" int mem_00B5B738;
+extern "C" int mem_00A9F594;
+extern "C" int mem_00B5B73C;
+extern "C" int mem_00A9F598;
+extern "C" int mem_00B5B740;
+extern "C" int mem_00A9F59C;
+extern "C" int mem_00B5B744;
+extern "C" int mem_00A9F5A0;
+extern "C" int mem_00B5B748;
+extern "C" int mem_00A9F5A4;
+extern "C" int mem_00B5B74C;
+extern "C" int mem_00A9F5A8;
+extern "C" int mem_00B5B750;
+extern "C" int mem_00A9F5AC;
+extern "C" int mem_00B5B754;
+extern "C" int mem_00A9F5B0;
+extern "C" int mem_00B5B758;
+extern "C" int mem_00A9F5B4;
+extern "C" int mem_00B5B75C;
+extern "C" int mem_00A9F5B8;
+extern "C" int mem_00B5B760;
+extern "C" int mem_00A9F5BC;
+extern "C" int mem_00B5B764;
+extern "C" int mem_00A9F5C0;
+extern "C" int mem_00B5B768;
+extern "C" int mem_00B5B76C;
+extern "C" int mem_00B5B770;
+extern "C" int mem_00A9F5C4;
+extern "C" int mem_00A9F5C8;
+extern "C" int mem_00A9F5CC;
+extern "C" int mem_00B5B774;
+extern "C" int mem_00A9F5D0;
+extern "C" int mem_00B5B778;
+extern "C" int mem_00A9F5D4;
+extern "C" int mem_00B5B77C;
+extern "C" int mem_00A9F5D8;
+extern "C" int mem_00B5B780;
+extern "C" int mem_00A9F5DC;
+extern "C" int mem_00B5B784;
+extern "C" int mem_00A9F5E0;
+extern "C" int mem_00B5B788;
+extern "C" int mem_00A9F5E4;
+extern "C" int mem_00B5B78C;
+extern "C" int mem_00A9F5E8;
+extern "C" int mem_00B5B790;
+extern "C" int mem_00A9F5EC;
+extern "C" int mem_00B5B794;
+extern "C" int mem_00A9F5F0;
+extern "C" int mem_00B5B798;
+extern "C" int mem_00A9F5F4;
+extern "C" int mem_00B5B79C;
+extern "C" int mem_00A9F5F8;
+extern "C" int mem_00B5B7A0;
+extern "C" int mem_00A9F5FC;
+extern "C" int mem_00B5B7A4;
+extern "C" int mem_00A9F600;
+extern "C" int mem_00B5B7A8;
+extern "C" int mem_00A9F604;
+extern "C" int mem_00B5B7AC;
+extern "C" int mem_00A9F608;
+extern "C" int mem_00B5B7B0;
+extern "C" int mem_00A9F60C;
+extern "C" int mem_00B5B7B4;
+extern "C" int mem_00A9F610;
+extern "C" int mem_00B5B7B8;
+extern "C" int mem_00A9F614;
+extern "C" int mem_00B5B7BC;
+extern "C" int mem_00A9F618;
+extern "C" int mem_00B5B7C0;
+extern "C" int mem_00A9F61C;
+extern "C" int mem_00B5B7C4;
+extern "C" int mem_00A9F620;
+extern "C" int mem_00B5B7C8;
+extern "C" int mem_00A9F624;
+extern "C" int mem_00B5B7CC;
+extern "C" int mem_00A9F628;
+extern "C" int mem_00B5B7D0;
+extern "C" int mem_00A9F62C;
+extern "C" int mem_00B5B7D4;
+extern "C" int mem_00A9F630;
+extern "C" int mem_00B5B7D8;
+extern "C" int mem_00A9F634;
+extern "C" int mem_00B5B7DC;
+extern "C" int mem_00A9F638;
+extern "C" int mem_00B5B7E0;
+extern "C" int mem_00A9F63C;
+extern "C" int mem_00B5B7E4;
+extern "C" int mem_00A9F640;
+extern "C" int mem_00B5B7E8;
+extern "C" int mem_00A9F644;
+extern "C" int mem_00B5B7EC;
+extern "C" int mem_00A9F648;
+extern "C" int mem_00B5B7F0;
+extern "C" int mem_00A9F64C;
+extern "C" int mem_00B5B7F4;
+extern "C" int mem_00A9F650;
+extern "C" int mem_00B5B7F8;
+extern "C" int mem_00A9F654;
+extern "C" int mem_00B5B7FC;
+extern "C" int mem_00A9F658;
+extern "C" int mem_00B5B800;
+extern "C" int mem_00A9F65C;
+extern "C" int mem_00B5B804;
+extern "C" int mem_00A9F660;
+extern "C" int mem_00B5B808;
+extern "C" int mem_00A9F664;
+extern "C" int mem_00B5B80C;
+extern "C" int mem_00B5B810;
+extern "C" int mem_00A9F668;
+extern "C" int mem_00A9F66C;
+extern "C" int mem_00B5B814;
+extern "C" int mem_00A9F670;
+extern "C" int mem_00B5B818;
+extern "C" int mem_00A9F674;
+extern "C" int mem_00B5B81C;
+extern "C" int mem_00A9F678;
+extern "C" int mem_00B5B820;
+extern "C" int mem_00A9F67C;
+extern "C" int mem_00B5B824;
+extern "C" int mem_00A9F680;
+extern "C" int mem_00B5B828;
+extern "C" int mem_00A9F684;
+extern "C" int mem_00B5B82C;
+extern "C" int mem_00A9F688;
+extern "C" int mem_00B5B830;
+extern "C" int mem_00A9F68C;
+extern "C" int mem_00B5B834;
+extern "C" int mem_00A9F690;
+extern "C" int mem_00B5B838;
+extern "C" int mem_00A9F694;
+extern "C" int mem_00B5B83C;
+extern "C" int mem_00A9F698;
+extern "C" int mem_00B5B840;
+extern "C" int mem_00A9F69C;
+extern "C" int mem_00B5B844;
+extern "C" int mem_00A9F6A0;
+extern "C" int mem_00B5B848;
+extern "C" int mem_00A9F6A4;
+extern "C" int mem_00B5B84C;
+extern "C" int mem_00A9F6A8;
+extern "C" int mem_00B5B850;
+extern "C" int mem_00A9F6AC;
+extern "C" int mem_00B5B854;
+extern "C" int mem_00A9F6B0;
+extern "C" int mem_00B5B858;
+extern "C" int mem_00A9F6B4;
+extern "C" int mem_00B5B85C;
+extern "C" int mem_00A9F6B8;
+extern "C" int mem_00B5B860;
+extern "C" int mem_00A9F6BC;
+extern "C" int mem_00B5B864;
+extern "C" int mem_00A9F6C0;
+extern "C" int mem_00B5B868;
+extern "C" int mem_00A9F6C4;
+extern "C" int mem_00B5B86C;
+extern "C" int mem_00A9F6C8;
+extern "C" int mem_00B5B870;
+extern "C" int mem_00A9F6CC;
+extern "C" int mem_00B5B874;
+extern "C" int mem_00A9F6D0;
+extern "C" int mem_00B5B878;
+extern "C" int mem_00A9F6D4;
+extern "C" int mem_00B5B87C;
+extern "C" int mem_00A9F6D8;
+extern "C" int mem_00B5B880;
+extern "C" int mem_00A9F6DC;
+extern "C" int mem_00B5B884;
+extern "C" int mem_00A9F6E0;
+extern "C" int mem_00B5B888;
+extern "C" int mem_00A9F6E4;
+extern "C" int mem_00B5B88C;
+extern "C" int mem_00A9F6E8;
+extern "C" int mem_00B5B890;
+extern "C" int mem_00A9F6EC;
+extern "C" int mem_00B5B894;
+extern "C" int mem_00A9F6F0;
+extern "C" int mem_00B5B898;
+extern "C" int mem_00A9F6F4;
+extern "C" int mem_00B5B89C;
+extern "C" int mem_00A9F6F8;
+extern "C" int mem_00B5B8A0;
+extern "C" int mem_00A9F6FC;
+extern "C" int mem_00B5B8A4;
+extern "C" int mem_00A9F700;
+extern "C" int mem_00B5B8A8;
+extern "C" int mem_00A9F704;
+extern "C" int mem_00B5B8AC;
+extern "C" int mem_00B5B8B0;
+extern "C" int mem_00B5B8B4;
+extern "C" int mem_00A9F708;
+extern "C" int mem_00A9F70C;
+extern "C" int mem_00A9F710;
+extern "C" int mem_00B5B8B8;
+extern "C" int mem_00A9F714;
+extern "C" int mem_00B5B8BC;
+extern "C" int mem_00A9F718;
+extern "C" int mem_00B5B8C0;
+extern "C" int mem_00A9F71C;
+extern "C" int mem_00B5B8C4;
+extern "C" int mem_00A9F720;
+extern "C" int mem_00B5B8C8;
+extern "C" int mem_00A9F724;
+extern "C" int mem_00B5B8CC;
+extern "C" int mem_00A9F728;
+extern "C" int mem_00B5B8D0;
+extern "C" int mem_00A9F72C;
+extern "C" int mem_00B5B8D4;
+extern "C" int mem_00A9F730;
+extern "C" int mem_00B5B8D8;
+extern "C" int mem_00A9F734;
+extern "C" int mem_00B5B8DC;
+extern "C" int mem_00A9F738;
+extern "C" int mem_00B5B8E0;
+extern "C" int mem_00A9F73C;
+extern "C" int mem_00B5B8E4;
+extern "C" int mem_00A9F740;
+extern "C" int mem_00B5B8E8;
+extern "C" int mem_00A9F744;
+extern "C" int mem_00B5B8EC;
+extern "C" int mem_00A9F748;
+extern "C" int mem_00B5B8F0;
+extern "C" int mem_00A9F74C;
+extern "C" int mem_00B5B8F4;
+extern "C" int mem_00A9F750;
+extern "C" int mem_00B5B8F8;
+extern "C" int mem_00A9F754;
+extern "C" int mem_00B5B8FC;
+extern "C" int mem_00A9F758;
+extern "C" int mem_00B5B900;
+extern "C" int mem_00A9F75C;
+extern "C" int mem_00B5B904;
+extern "C" int mem_00A9F760;
+extern "C" int mem_00B5B908;
+extern "C" int mem_00A9F764;
+extern "C" int mem_00B5B90C;
+extern "C" int mem_00A9F768;
+extern "C" int mem_00B5B910;
+extern "C" int mem_00A9F76C;
+extern "C" int mem_00B5B914;
+extern "C" int mem_00A9F770;
+extern "C" int mem_00B5B918;
+extern "C" int mem_00A9F774;
+extern "C" int mem_00B5B91C;
+extern "C" int mem_00A9F778;
+extern "C" int mem_00B5B920;
+extern "C" int mem_00A9F77C;
+extern "C" int mem_00B5B924;
+extern "C" int mem_00A9F780;
+extern "C" int mem_00B5B928;
+extern "C" int mem_00A9F784;
+extern "C" int mem_00B5B92C;
+extern "C" int mem_00A9F788;
+extern "C" int mem_00B5B930;
+extern "C" int mem_00A9F78C;
+extern "C" int mem_00B5B934;
+extern "C" int mem_00A9F790;
+extern "C" int mem_00B5B938;
+extern "C" int mem_00A9F794;
+extern "C" int mem_00B5B93C;
+extern "C" int mem_00A9F798;
+extern "C" int mem_00B5B940;
+extern "C" int mem_00A9F79C;
+extern "C" int mem_00B5B944;
+extern "C" int mem_00A9F7A0;
+extern "C" int mem_00B5B948;
+extern "C" int mem_00A9F7A4;
+extern "C" int mem_00B5B94C;
+extern "C" int mem_00A9F7A8;
+extern "C" int mem_00B5B950;
+extern "C" int mem_00B5B954;
+extern "C" int mem_00A9F7AC;
+extern "C" int mem_00A9F7B0;
+extern "C" int mem_00B5B958;
+extern "C" int mem_00A9F7B4;
+extern "C" int mem_00B5B95C;
+extern "C" int mem_00A9F7B8;
+extern "C" int mem_00B5B960;
+extern "C" int mem_00A9F7BC;
+extern "C" int mem_00B5B964;
+extern "C" int mem_00A9F7C0;
+extern "C" int mem_00B5B968;
+extern "C" int mem_00A9F7C4;
+extern "C" int mem_00B5B96C;
+extern "C" int mem_00A9F7C8;
+extern "C" int mem_00B5B970;
+extern "C" int mem_00A9F7CC;
+extern "C" int mem_00B5B974;
+extern "C" int mem_00A9F7D0;
+extern "C" int mem_00B5B978;
+extern "C" int mem_00A9F7D4;
+extern "C" int mem_00B5B97C;
+extern "C" int mem_00A9F7D8;
+extern "C" int mem_00B5B980;
+extern "C" int mem_00A9F7DC;
+extern "C" int mem_00B5B984;
+extern "C" int mem_00A9F7E0;
+extern "C" int mem_00B5B988;
+extern "C" int mem_00A9F7E4;
+extern "C" int mem_00B5B98C;
+extern "C" int mem_00A9F7E8;
+extern "C" int mem_00B5B990;
+extern "C" int mem_00A9F7EC;
+extern "C" int mem_00B5B994;
+extern "C" int mem_00A9F7F0;
+extern "C" int mem_00B5B998;
+extern "C" int mem_00A9F7F4;
+extern "C" int mem_00B5B99C;
+extern "C" int mem_00A9F7F8;
+extern "C" int mem_00B5B9A0;
+extern "C" int mem_00A9F7FC;
+extern "C" int mem_00B5B9A4;
+extern "C" int mem_00A9F800;
+extern "C" int mem_00B5B9A8;
+extern "C" int mem_00A9F804;
+extern "C" int mem_00B5B9AC;
+extern "C" int mem_00A9F808;
+extern "C" int mem_00B5B9B0;
+extern "C" int mem_00A9F80C;
+extern "C" int mem_00B5B9B4;
+extern "C" int mem_00A9F810;
+extern "C" int mem_00B5B9B8;
+extern "C" int mem_00A9F814;
+extern "C" int mem_00B5B9BC;
+extern "C" int mem_00A9F818;
+extern "C" int mem_00B5B9C0;
+extern "C" int mem_00A9F81C;
+extern "C" int mem_00B5B9C4;
+extern "C" int mem_00A9F820;
+extern "C" int mem_00B5B9C8;
+extern "C" int mem_00A9F824;
+extern "C" int mem_00B5B9CC;
+extern "C" int mem_00A9F828;
+extern "C" int mem_00B5B9D0;
+extern "C" int mem_00A9F82C;
+extern "C" int mem_00B5B9D4;
+extern "C" int mem_00A9F830;
+extern "C" int mem_00B5B9D8;
+extern "C" int mem_00A9F834;
+extern "C" int mem_00B5B9DC;
+extern "C" int mem_00A9F838;
+extern "C" int mem_00B5B9E0;
+extern "C" int mem_00A9F83C;
+extern "C" int mem_00B5B9E4;
+extern "C" int mem_00A9F840;
+extern "C" int mem_00B5B9E8;
+extern "C" int mem_00A9F844;
+extern "C" int mem_00B5B9EC;
+extern "C" int mem_00A9F848;
+extern "C" int mem_00B5B9F0;
+extern "C" int mem_00B5B9F4;
+extern "C" int mem_00B5B9F8;
+extern "C" int mem_00A9F84C;
+extern "C" int mem_00A9F850;
+extern "C" int mem_00A9F854;
+extern "C" int mem_00B5B9FC;
+extern "C" int mem_00A9F858;
+extern "C" int mem_00B5BA00;
+extern "C" int mem_00A9F85C;
+extern "C" int mem_00B5BA04;
+extern "C" int mem_00A9F860;
+extern "C" int mem_00B5BA08;
+extern "C" int mem_00A9F864;
+extern "C" int mem_00B5BA0C;
+extern "C" int mem_00A9F868;
+extern "C" int mem_00B5BA10;
+extern "C" int mem_00A9F86C;
+extern "C" int mem_00B5BA14;
+extern "C" int mem_00A9F870;
+extern "C" int mem_00B5BA18;
+extern "C" int mem_00A9F874;
+extern "C" int mem_00B5BA1C;
+extern "C" int mem_00A9F878;
+extern "C" int mem_00B5BA20;
+extern "C" int mem_00A9F87C;
+extern "C" int mem_00B5BA24;
+extern "C" int mem_00A9F880;
+extern "C" int mem_00B5BA28;
+extern "C" int mem_00A9F884;
+extern "C" int mem_00B5BA2C;
+extern "C" int mem_00A9F888;
+extern "C" int mem_00B5BA30;
+extern "C" int mem_00A9F88C;
+extern "C" int mem_00B5BA34;
+extern "C" int mem_00A9F890;
+extern "C" int mem_00B5BA38;
+extern "C" int mem_00A9F894;
+extern "C" int mem_00B5BA3C;
+extern "C" int mem_00A9F898;
+extern "C" int mem_00B5BA40;
+extern "C" int mem_00A9F89C;
+extern "C" int mem_00B5BA44;
+extern "C" int mem_00A9F8A0;
+extern "C" int mem_00B5BA48;
+extern "C" int mem_00A9F8A4;
+extern "C" int mem_00B5BA4C;
+extern "C" int mem_00A9F8A8;
+extern "C" int mem_00B5BA50;
+extern "C" int mem_00A9F8AC;
+extern "C" int mem_00B5BA54;
+extern "C" int mem_00A9F8B0;
+extern "C" int mem_00B5BA58;
+extern "C" int mem_00A9F8B4;
+extern "C" int mem_00B5BA5C;
+extern "C" int mem_00A9F8B8;
+extern "C" int mem_00B5BA60;
+extern "C" int mem_00A9F8BC;
+extern "C" int mem_00B5BA64;
+extern "C" int mem_00A9F8C0;
+extern "C" int mem_00B5BA68;
+extern "C" int mem_00A9F8C4;
+extern "C" int mem_00B5BA6C;
+extern "C" int mem_00A9F8C8;
+extern "C" int mem_00B5BA70;
+extern "C" int mem_00A9F8CC;
+extern "C" int mem_00B5BA74;
+extern "C" int mem_00A9F8D0;
+extern "C" int mem_00B5BA78;
+extern "C" int mem_00A9F8D4;
+extern "C" int mem_00B5BA7C;
+extern "C" int mem_00A9F8D8;
+extern "C" int mem_00B5BA80;
+extern "C" int mem_00A9F8DC;
+extern "C" int mem_00B5BA84;
+extern "C" int mem_00A9F8E0;
+extern "C" int mem_00B5BA88;
+extern "C" int mem_00A9F8E4;
+extern "C" int mem_00B5BA8C;
+extern "C" int mem_00A9F8E8;
+extern "C" int mem_00B5BA90;
+extern "C" int mem_00A9F8EC;
+extern "C" int mem_00B5BA94;
+extern "C" int mem_00B5BA98;
+extern "C" int mem_00A9F8F0;
+extern "C" int mem_00A9F8F4;
+extern "C" int mem_00B5BA9C;
+extern "C" int mem_00A9F8F8;
+extern "C" int mem_00B5BAA0;
+extern "C" int mem_00A9F8FC;
+extern "C" int mem_00B5BAA4;
+extern "C" int mem_00A9F900;
+extern "C" int mem_00B5BAA8;
+extern "C" int mem_00A9F904;
+extern "C" int mem_00B5BAAC;
+extern "C" int mem_00A9F908;
+extern "C" int mem_00B5BAB0;
+extern "C" int mem_00A9F90C;
+extern "C" int mem_00B5BAB4;
+extern "C" int mem_00A9F910;
+extern "C" int mem_00B5BAB8;
+extern "C" int mem_00A9F914;
+extern "C" int mem_00B5BABC;
+extern "C" int mem_00A9F918;
+extern "C" int mem_00B5BAC0;
+extern "C" int mem_00A9F91C;
+extern "C" int mem_00B5BAC4;
+extern "C" int mem_00A9F920;
+extern "C" int mem_00B5BAC8;
+extern "C" int mem_00A9F924;
+extern "C" int mem_00B5BACC;
+extern "C" int mem_00A9F928;
+extern "C" int mem_00B5BAD0;
+extern "C" int mem_00A9F92C;
+extern "C" int mem_00B5BAD4;
+extern "C" int mem_00A9F930;
+extern "C" int mem_00B5BAD8;
+extern "C" int mem_00A9F934;
+extern "C" int mem_00B5BADC;
+extern "C" int mem_00A9F938;
+extern "C" int mem_00B5BAE0;
+extern "C" int mem_00A9F93C;
+extern "C" int mem_00B5BAE4;
+extern "C" int mem_00A9F940;
+extern "C" int mem_00B5BAE8;
+extern "C" int mem_00A9F944;
+extern "C" int mem_00B5BAEC;
+extern "C" int mem_00A9F948;
+extern "C" int mem_00B5BAF0;
+extern "C" int mem_00A9F94C;
+extern "C" int mem_00B5BAF4;
+extern "C" int mem_00A9F950;
+extern "C" int mem_00B5BAF8;
+extern "C" int mem_00A9F954;
+extern "C" int mem_00B5BAFC;
+extern "C" int mem_00A9F958;
+extern "C" int mem_00B5BB00;
+extern "C" int mem_00A9F95C;
+extern "C" int mem_00B5BB04;
+extern "C" int mem_00A9F960;
+extern "C" int mem_00B5BB08;
+extern "C" int mem_00A9F964;
+extern "C" int mem_00B5BB0C;
+extern "C" int mem_00A9F968;
+extern "C" int mem_00B5BB10;
+extern "C" int mem_00A9F96C;
+extern "C" int mem_00B5BB14;
+extern "C" int mem_00A9F970;
+extern "C" int mem_00B5BB18;
+extern "C" int mem_00A9F974;
+extern "C" int mem_00B5BB1C;
+extern "C" int mem_00A9F978;
+extern "C" int mem_00B5BB20;
+extern "C" int mem_00A9F97C;
+extern "C" int mem_00B5BB24;
+extern "C" int mem_00A9F980;
+extern "C" int mem_00B5BB28;
+extern "C" int mem_00A9F984;
+extern "C" int mem_00B5BB2C;
+extern "C" int mem_00A9F988;
+extern "C" int mem_00B5BB30;
+extern "C" int mem_00A9F98C;
+extern "C" int mem_00B5BB34;
+extern "C" int mem_00B5BB38;
+extern "C" int mem_00B5BB3C;
+extern "C" int mem_00A9F990;
+extern "C" int mem_00A9F994;
+extern "C" int mem_00A9F998;
+extern "C" int mem_00B5BB40;
+extern "C" int mem_00A9F99C;
+extern "C" int mem_00B5BB44;
+extern "C" int mem_00A9F9A0;
+extern "C" int mem_00B5BB48;
+extern "C" int mem_00A9F9A4;
+extern "C" int mem_00B5BB4C;
+extern "C" int mem_00A9F9A8;
+extern "C" int mem_00B5BB50;
+extern "C" int mem_00A9F9AC;
+extern "C" int mem_00B5BB54;
+extern "C" int mem_00A9F9B0;
+extern "C" int mem_00B5BB58;
+extern "C" int mem_00A9F9B4;
+extern "C" int mem_00B5BB5C;
+extern "C" int mem_00A9F9B8;
+extern "C" int mem_00B5BB60;
+extern "C" int mem_00A9F9BC;
+extern "C" int mem_00B5BB64;
+extern "C" int mem_00A9F9C0;
+extern "C" int mem_00B5BB68;
+extern "C" int mem_00A9F9C4;
+extern "C" int mem_00B5BB6C;
+extern "C" int mem_00A9F9C8;
+extern "C" int mem_00B5BB70;
+extern "C" int mem_00A9F9CC;
+extern "C" int mem_00B5BB74;
+extern "C" int mem_00A9F9D0;
+extern "C" int mem_00B5BB78;
+extern "C" int mem_00A9F9D4;
+extern "C" int mem_00B5BB7C;
+extern "C" int mem_00A9F9D8;
+extern "C" int mem_00B5BB80;
+extern "C" int mem_00A9F9DC;
+extern "C" int mem_00B5BB84;
+extern "C" int mem_00A9F9E0;
+extern "C" int mem_00B5BB88;
+extern "C" int mem_00A9F9E4;
+extern "C" int mem_00B5BB8C;
+extern "C" int mem_00A9F9E8;
+extern "C" int mem_00B5BB90;
+extern "C" int mem_00A9F9EC;
+extern "C" int mem_00B5BB94;
+extern "C" int mem_00A9F9F0;
+extern "C" int mem_00B5BB98;
+extern "C" int mem_00A9F9F4;
+extern "C" int mem_00B5BB9C;
+extern "C" int mem_00A9F9F8;
+extern "C" int mem_00B5BBA0;
+extern "C" int mem_00A9F9FC;
+extern "C" int mem_00B5BBA4;
+extern "C" int mem_00A9FA00;
+extern "C" int mem_00B5BBA8;
+extern "C" int mem_00A9FA04;
+extern "C" int mem_00B5BBAC;
+extern "C" int mem_00A9FA08;
+extern "C" int mem_00B5BBB0;
+extern "C" int mem_00A9FA0C;
+extern "C" int mem_00B5BBB4;
+extern "C" int mem_00A9FA10;
+extern "C" int mem_00B5BBB8;
+extern "C" int mem_00A9FA14;
+extern "C" int mem_00B5BBBC;
+extern "C" int mem_00A9FA18;
+extern "C" int mem_00B5BBC0;
+extern "C" int mem_00A9FA1C;
+extern "C" int mem_00B5BBC4;
+extern "C" int mem_00A9FA20;
+extern "C" int mem_00B5BBC8;
+extern "C" int mem_00A9FA24;
+extern "C" int mem_00B5BBCC;
+extern "C" int mem_00A9FA28;
+extern "C" int mem_00B5BBD0;
+extern "C" int mem_00A9FA2C;
+extern "C" int mem_00B5BBD4;
+extern "C" int mem_00A9FA30;
+extern "C" int mem_00B5BBD8;
+extern "C" int mem_00B5BBDC;
+extern "C" int mem_00A9FA34;
+extern "C" int mem_00A9FA38;
+extern "C" int mem_00B5BBE0;
+extern "C" int mem_00A9FA3C;
+extern "C" int mem_00B5BBE4;
+extern "C" int mem_00A9FA40;
+extern "C" int mem_00B5BBE8;
+extern "C" int mem_00A9FA44;
+extern "C" int mem_00B5BBEC;
+extern "C" int mem_00A9FA48;
+extern "C" int mem_00B5BBF0;
+extern "C" int mem_00A9FA4C;
+extern "C" int mem_00B5BBF4;
+extern "C" int mem_00A9FA50;
+extern "C" int mem_00B5BBF8;
+extern "C" int mem_00A9FA54;
+extern "C" int mem_00B5BBFC;
+extern "C" int mem_00A9FA58;
+extern "C" int mem_00B5BC00;
+extern "C" int mem_00A9FA5C;
+extern "C" int mem_00B5BC04;
+extern "C" int mem_00A9FA60;
+extern "C" int mem_00B5BC08;
+extern "C" int mem_00A9FA64;
+extern "C" int mem_00B5BC0C;
+extern "C" int mem_00A9FA68;
+extern "C" int mem_00B5BC10;
+extern "C" int mem_00A9FA6C;
+extern "C" int mem_00B5BC14;
+extern "C" int mem_00A9FA70;
+extern "C" int mem_00B5BC18;
+extern "C" int mem_00A9FA74;
+extern "C" int mem_00B5BC1C;
+extern "C" int mem_00A9FA78;
+extern "C" int mem_00B5BC20;
+extern "C" int mem_00A9FA7C;
+extern "C" int mem_00B5BC24;
+extern "C" int mem_00A9FA80;
+extern "C" int mem_00B5BC28;
+extern "C" int mem_00A9FA84;
+extern "C" int mem_00B5BC2C;
+extern "C" int mem_00A9FA88;
+extern "C" int mem_00B5BC30;
+extern "C" int mem_00A9FA8C;
+extern "C" int mem_00B5BC34;
+extern "C" int mem_00A9FA90;
+extern "C" int mem_00B5BC38;
+extern "C" int mem_00A9FA94;
+extern "C" int mem_00B5BC3C;
+extern "C" int mem_00A9FA98;
+extern "C" int mem_00B5BC40;
+extern "C" int mem_00A9FA9C;
+extern "C" int mem_00B5BC44;
+extern "C" int mem_00A9FAA0;
+extern "C" int mem_00B5BC48;
+extern "C" int mem_00A9FAA4;
+extern "C" int mem_00B5BC4C;
+extern "C" int mem_00A9FAA8;
+extern "C" int mem_00B5BC50;
+extern "C" int mem_00A9FAAC;
+extern "C" int mem_00B5BC54;
+extern "C" int mem_00A9FAB0;
+extern "C" int mem_00B5BC58;
+extern "C" int mem_00A9FAB4;
+extern "C" int mem_00B5BC5C;
+extern "C" int mem_00A9FAB8;
+extern "C" int mem_00B5BC60;
+extern "C" int mem_00A9FABC;
+extern "C" int mem_00B5BC64;
+extern "C" int mem_00A9FAC0;
+extern "C" int mem_00B5BC68;
+extern "C" int mem_00A9FAC4;
+extern "C" int mem_00B5BC6C;
+extern "C" int mem_00A9FAC8;
+extern "C" int mem_00B5BC70;
+extern "C" int mem_00A9FACC;
+extern "C" int mem_00B5BC74;
+extern "C" int mem_00A9FAD0;
+extern "C" int mem_00B5BC78;
+extern "C" int mem_00B5BC7C;
+extern "C" int mem_00B5BC80;
+extern "C" int mem_00A9FAD4;
+extern "C" int mem_00A9FAD8;
+extern "C" int mem_00A9FADC;
+extern "C" int mem_00B5BC84;
+extern "C" int mem_00A9FAE0;
+extern "C" int mem_00B5BC88;
+extern "C" int mem_00A9FAE4;
+extern "C" int mem_00B5BC8C;
+extern "C" int mem_00A9FAE8;
+extern "C" int mem_00B5BC90;
+extern "C" int mem_00A9FAEC;
+extern "C" int mem_00B5BC94;
+extern "C" int mem_00A9FAF0;
+extern "C" int mem_00B5BC98;
+extern "C" int mem_00A9FAF4;
+extern "C" int mem_00B5BC9C;
+extern "C" int mem_00B5BCA0;
+extern "C" int mem_00B5BCA4;
+extern "C" int mem_00B5BCA8;
+extern "C" int mem_00B5BCAC;
+extern "C" int mem_00B5BCBC;
+
+// [0x0068F7C0] sub_0068F7C0 (10228 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0068F7C0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00A9ECE8]
+        mov ecx, dword ptr [mem_00A9ECEC]
+        mov edx, dword ptr [mem_00A9ECF0]
+        mov dword ptr [mem_00B5AE98], eax
+        mov eax, dword ptr [mem_00A9ECF4]
+        mov dword ptr [mem_00B5AE9C], ecx
+        mov ecx, dword ptr [mem_00A9ECF8]
+        mov dword ptr [mem_00B5AEA0], edx
+        mov edx, dword ptr [mem_00A9ECFC]
+        mov dword ptr [mem_00B5AEA4], eax
+        mov eax, dword ptr [mem_00A9ED00]
+        mov dword ptr [mem_00B5AEA8], ecx
+        mov ecx, dword ptr [mem_00A9ED04]
+        mov dword ptr [mem_00B5AEAC], edx
+        mov edx, dword ptr [mem_00A9ED08]
+        mov dword ptr [mem_00B5AEB0], eax
+        mov eax, dword ptr [mem_00A9ED0C]
+        mov dword ptr [mem_00B5AEB4], ecx
+        mov ecx, dword ptr [mem_00A9ED10]
+        mov dword ptr [mem_00B5AEB8], edx
+        mov edx, dword ptr [mem_00A9ED14]
+        mov dword ptr [mem_00B5AEBC], eax
+        mov eax, dword ptr [mem_00A9ED18]
+        mov dword ptr [mem_00B5AEC0], ecx
+        mov ecx, dword ptr [mem_00A9ED1C]
+        mov dword ptr [mem_00B5AEC4], edx
+        mov edx, dword ptr [mem_00A9ED20]
+        mov dword ptr [mem_00B5AEC8], eax
+        mov eax, dword ptr [mem_00A9ED24]
+        mov dword ptr [mem_00B5AECC], ecx
+        mov ecx, dword ptr [mem_00A9ED28]
+        mov dword ptr [mem_00B5AED0], edx
+        mov edx, dword ptr [mem_00A9ED2C]
+        mov dword ptr [mem_00B5AED4], eax
+        mov eax, dword ptr [mem_00A9ED30]
+        mov dword ptr [mem_00B5AED8], ecx
+        mov ecx, dword ptr [mem_00A9ED34]
+        mov dword ptr [mem_00B5AEDC], edx
+        mov edx, dword ptr [mem_00A9ED38]
+        mov dword ptr [mem_00B5AEE0], eax
+        mov eax, dword ptr [mem_00A9ED3C]
+        mov dword ptr [mem_00B5AEE4], ecx
+        mov ecx, dword ptr [mem_00A9ED40]
+        mov dword ptr [mem_00B5AEE8], edx
+        mov edx, dword ptr [mem_00A9ED44]
+        mov dword ptr [mem_00B5AEEC], eax
+        mov eax, dword ptr [mem_00A9ED48]
+        mov dword ptr [mem_00B5AEF0], ecx
+        mov ecx, dword ptr [mem_00A9ED4C]
+        mov dword ptr [mem_00B5AEF4], edx
+        mov edx, dword ptr [mem_00A9ED50]
+        mov dword ptr [mem_00B5AEF8], eax
+        mov eax, dword ptr [mem_00A9ED54]
+        mov dword ptr [mem_00B5AEFC], ecx
+        mov ecx, dword ptr [mem_00A9ED58]
+        mov dword ptr [mem_00B5AF00], edx
+        mov edx, dword ptr [mem_00A9ED5C]
+        mov dword ptr [mem_00B5AF04], eax
+        mov eax, dword ptr [mem_00A9ED60]
+        mov dword ptr [mem_00B5AF08], ecx
+        mov ecx, dword ptr [mem_00A9ED64]
+        mov dword ptr [mem_00B5AF0C], edx
+        mov edx, dword ptr [mem_00A9ED68]
+        mov dword ptr [mem_00B5AF10], eax
+        mov eax, dword ptr [mem_00A9ED6C]
+        mov dword ptr [mem_00B5AF14], ecx
+        mov ecx, dword ptr [mem_00A9ED70]
+        mov dword ptr [mem_00B5AF18], edx
+        mov edx, dword ptr [mem_00A9ED74]
+        mov dword ptr [mem_00B5AF1C], eax
+        mov eax, dword ptr [mem_00A9ED78]
+        mov dword ptr [mem_00B5AF20], ecx
+        mov ecx, dword ptr [mem_00A9ED7C]
+        mov dword ptr [mem_00B5AF24], edx
+        mov edx, dword ptr [mem_00A9ED80]
+        mov dword ptr [mem_00B5AF28], eax
+        mov eax, dword ptr [mem_00A9ED84]
+        mov dword ptr [mem_00B5AF2C], ecx
+        mov ecx, dword ptr [mem_00A9ED88]
+        mov dword ptr [mem_00B5AF30], edx
+        mov dword ptr [mem_00B5AF34], eax
+        mov edx, dword ptr [mem_00A9ED8C]
+        mov eax, dword ptr [mem_00A9ED90]
+        mov dword ptr [mem_00B5AF38], ecx
+        mov ecx, dword ptr [mem_00A9ED94]
+        mov dword ptr [mem_00B5AF3C], edx
+        mov edx, dword ptr [mem_00A9ED98]
+        mov dword ptr [mem_00B5AF40], eax
+        mov eax, dword ptr [mem_00A9ED9C]
+        mov dword ptr [mem_00B5AF44], ecx
+        mov ecx, dword ptr [mem_00A9EDA0]
+        mov dword ptr [mem_00B5AF48], edx
+        mov edx, dword ptr [mem_00A9EDA4]
+        mov dword ptr [mem_00B5AF4C], eax
+        mov eax, dword ptr [mem_00A9EDA8]
+        mov dword ptr [mem_00B5AF50], ecx
+        mov ecx, dword ptr [mem_00A9EDAC]
+        mov dword ptr [mem_00B5AF54], edx
+        mov edx, dword ptr [mem_00A9EDB0]
+        mov dword ptr [mem_00B5AF58], eax
+        mov eax, dword ptr [mem_00A9EDB4]
+        mov dword ptr [mem_00B5AF5C], ecx
+        mov ecx, dword ptr [mem_00A9EDB8]
+        mov dword ptr [mem_00B5AF60], edx
+        mov edx, dword ptr [mem_00A9EDBC]
+        mov dword ptr [mem_00B5AF64], eax
+        mov eax, dword ptr [mem_00A9EDC0]
+        mov dword ptr [mem_00B5AF68], ecx
+        mov ecx, dword ptr [mem_00A9EDC4]
+        mov dword ptr [mem_00B5AF6C], edx
+        mov edx, dword ptr [mem_00A9EDC8]
+        mov dword ptr [mem_00B5AF70], eax
+        mov eax, dword ptr [mem_00A9EDCC]
+        mov dword ptr [mem_00B5AF74], ecx
+        mov ecx, dword ptr [mem_00A9EDD0]
+        mov dword ptr [mem_00B5AF78], edx
+        mov edx, dword ptr [mem_00A9EDD4]
+        mov dword ptr [mem_00B5AF7C], eax
+        mov eax, dword ptr [mem_00A9EDD8]
+        mov dword ptr [mem_00B5AF80], ecx
+        mov ecx, dword ptr [mem_00A9EDDC]
+        mov dword ptr [mem_00B5AF84], edx
+        mov edx, dword ptr [mem_00A9EDE0]
+        mov dword ptr [mem_00B5AF88], eax
+        mov eax, dword ptr [mem_00A9EDE4]
+        mov dword ptr [mem_00B5AF8C], ecx
+        mov ecx, dword ptr [mem_00A9EDE8]
+        mov dword ptr [mem_00B5AF90], edx
+        mov edx, dword ptr [mem_00A9EDEC]
+        mov dword ptr [mem_00B5AF94], eax
+        mov eax, dword ptr [mem_00A9EDF0]
+        mov dword ptr [mem_00B5AF98], ecx
+        mov ecx, dword ptr [mem_00A9EDF4]
+        mov dword ptr [mem_00B5AF9C], edx
+        mov edx, dword ptr [mem_00A9EDF8]
+        mov dword ptr [mem_00B5AFA0], eax
+        mov eax, dword ptr [mem_00A9EDFC]
+        mov dword ptr [mem_00B5AFA4], ecx
+        mov ecx, dword ptr [mem_00A9EE00]
+        mov dword ptr [mem_00B5AFA8], edx
+        mov edx, dword ptr [mem_00A9EE04]
+        mov dword ptr [mem_00B5AFAC], eax
+        mov eax, dword ptr [mem_00A9EE08]
+        mov dword ptr [mem_00B5AFB0], ecx
+        mov ecx, dword ptr [mem_00A9EE0C]
+        mov dword ptr [mem_00B5AFB4], edx
+        mov edx, dword ptr [mem_00A9EE10]
+        mov dword ptr [mem_00B5AFB8], eax
+        mov eax, dword ptr [mem_00A9EE14]
+        mov dword ptr [mem_00B5AFBC], ecx
+        mov ecx, dword ptr [mem_00A9EE18]
+        mov dword ptr [mem_00B5AFC0], edx
+        mov edx, dword ptr [mem_00A9EE1C]
+        mov dword ptr [mem_00B5AFC4], eax
+        mov eax, dword ptr [mem_00A9EE20]
+        mov dword ptr [mem_00B5AFC8], ecx
+        mov ecx, dword ptr [mem_00A9EE24]
+        mov dword ptr [mem_00B5AFCC], edx
+        mov edx, dword ptr [mem_00A9EE28]
+        mov dword ptr [mem_00B5AFD0], eax
+        mov dword ptr [mem_00B5AFD4], ecx
+        mov dword ptr [mem_00B5AFD8], edx
+        mov eax, dword ptr [mem_00A9EE2C]
+        mov ecx, dword ptr [mem_00A9EE30]
+        mov edx, dword ptr [mem_00A9EE34]
+        mov dword ptr [mem_00B5AFDC], eax
+        mov eax, dword ptr [mem_00A9EE38]
+        mov dword ptr [mem_00B5AFE0], ecx
+        mov ecx, dword ptr [mem_00A9EE3C]
+        mov dword ptr [mem_00B5AFE4], edx
+        mov edx, dword ptr [mem_00A9EE40]
+        mov dword ptr [mem_00B5AFE8], eax
+        mov eax, dword ptr [mem_00A9EE44]
+        mov dword ptr [mem_00B5AFEC], ecx
+        mov ecx, dword ptr [mem_00A9EE48]
+        mov dword ptr [mem_00B5AFF0], edx
+        mov edx, dword ptr [mem_00A9EE4C]
+        mov dword ptr [mem_00B5AFF4], eax
+        mov eax, dword ptr [mem_00A9EE50]
+        mov dword ptr [mem_00B5AFF8], ecx
+        mov ecx, dword ptr [mem_00A9EE54]
+        mov dword ptr [mem_00B5AFFC], edx
+        mov edx, dword ptr [mem_00A9EE58]
+        mov dword ptr [mem_00B5B000], eax
+        mov eax, dword ptr [mem_00A9EE5C]
+        mov dword ptr [mem_00B5B004], ecx
+        mov ecx, dword ptr [mem_00A9EE60]
+        mov dword ptr [mem_00B5B008], edx
+        mov edx, dword ptr [mem_00A9EE64]
+        mov dword ptr [mem_00B5B00C], eax
+        mov eax, dword ptr [mem_00A9EE68]
+        mov dword ptr [mem_00B5B010], ecx
+        mov ecx, dword ptr [mem_00A9EE6C]
+        mov dword ptr [mem_00B5B014], edx
+        mov edx, dword ptr [mem_00A9EE70]
+        mov dword ptr [mem_00B5B018], eax
+        mov eax, dword ptr [mem_00A9EE74]
+        mov dword ptr [mem_00B5B01C], ecx
+        mov ecx, dword ptr [mem_00A9EE78]
+        mov dword ptr [mem_00B5B020], edx
+        mov edx, dword ptr [mem_00A9EE7C]
+        mov dword ptr [mem_00B5B024], eax
+        mov eax, dword ptr [mem_00A9EE80]
+        mov dword ptr [mem_00B5B028], ecx
+        mov ecx, dword ptr [mem_00A9EE84]
+        mov dword ptr [mem_00B5B02C], edx
+        mov edx, dword ptr [mem_00A9EE88]
+        mov dword ptr [mem_00B5B030], eax
+        mov eax, dword ptr [mem_00A9EE8C]
+        mov dword ptr [mem_00B5B034], ecx
+        mov ecx, dword ptr [mem_00A9EE90]
+        mov dword ptr [mem_00B5B038], edx
+        mov edx, dword ptr [mem_00A9EE94]
+        mov dword ptr [mem_00B5B03C], eax
+        mov eax, dword ptr [mem_00A9EE98]
+        mov dword ptr [mem_00B5B040], ecx
+        mov ecx, dword ptr [mem_00A9EE9C]
+        mov dword ptr [mem_00B5B044], edx
+        mov edx, dword ptr [mem_00A9EEA0]
+        mov dword ptr [mem_00B5B048], eax
+        mov eax, dword ptr [mem_00A9EEA4]
+        mov dword ptr [mem_00B5B04C], ecx
+        mov ecx, dword ptr [mem_00A9EEA8]
+        mov dword ptr [mem_00B5B050], edx
+        mov edx, dword ptr [mem_00A9EEAC]
+        mov dword ptr [mem_00B5B054], eax
+        mov eax, dword ptr [mem_00A9EEB0]
+        mov dword ptr [mem_00B5B058], ecx
+        mov ecx, dword ptr [mem_00A9EEB4]
+        mov dword ptr [mem_00B5B05C], edx
+        mov edx, dword ptr [mem_00A9EEB8]
+        mov dword ptr [mem_00B5B060], eax
+        mov eax, dword ptr [mem_00A9EEBC]
+        mov dword ptr [mem_00B5B064], ecx
+        mov ecx, dword ptr [mem_00A9EEC0]
+        mov dword ptr [mem_00B5B068], edx
+        mov edx, dword ptr [mem_00A9EEC4]
+        mov dword ptr [mem_00B5B06C], eax
+        mov eax, dword ptr [mem_00A9EEC8]
+        mov dword ptr [mem_00B5B070], ecx
+        mov ecx, dword ptr [mem_00A9EECC]
+        mov dword ptr [mem_00B5B074], edx
+        mov dword ptr [mem_00B5B078], eax
+        mov edx, dword ptr [mem_00A9EED0]
+        mov eax, dword ptr [mem_00A9EED4]
+        mov dword ptr [mem_00B5B07C], ecx
+        mov ecx, dword ptr [mem_00A9EED8]
+        mov dword ptr [mem_00B5B080], edx
+        mov edx, dword ptr [mem_00A9EEDC]
+        mov dword ptr [mem_00B5B084], eax
+        mov eax, dword ptr [mem_00A9EEE0]
+        mov dword ptr [mem_00B5B088], ecx
+        mov ecx, dword ptr [mem_00A9EEE4]
+        mov dword ptr [mem_00B5B08C], edx
+        mov edx, dword ptr [mem_00A9EEE8]
+        mov dword ptr [mem_00B5B090], eax
+        mov eax, dword ptr [mem_00A9EEEC]
+        mov dword ptr [mem_00B5B094], ecx
+        mov ecx, dword ptr [mem_00A9EEF0]
+        mov dword ptr [mem_00B5B098], edx
+        mov edx, dword ptr [mem_00A9EEF4]
+        mov dword ptr [mem_00B5B09C], eax
+        mov eax, dword ptr [mem_00A9EEF8]
+        mov dword ptr [mem_00B5B0A0], ecx
+        mov ecx, dword ptr [mem_00A9EEFC]
+        mov dword ptr [mem_00B5B0A4], edx
+        mov edx, dword ptr [mem_00A9EF00]
+        mov dword ptr [mem_00B5B0A8], eax
+        mov eax, dword ptr [mem_00A9EF04]
+        mov dword ptr [mem_00B5B0AC], ecx
+        mov ecx, dword ptr [mem_00A9EF08]
+        mov dword ptr [mem_00B5B0B0], edx
+        mov edx, dword ptr [mem_00A9EF0C]
+        mov dword ptr [mem_00B5B0B4], eax
+        mov eax, dword ptr [mem_00A9EF10]
+        mov dword ptr [mem_00B5B0B8], ecx
+        mov ecx, dword ptr [mem_00A9EF14]
+        mov dword ptr [mem_00B5B0BC], edx
+        mov edx, dword ptr [mem_00A9EF18]
+        mov dword ptr [mem_00B5B0C0], eax
+        mov eax, dword ptr [mem_00A9EF1C]
+        mov dword ptr [mem_00B5B0C4], ecx
+        mov ecx, dword ptr [mem_00A9EF20]
+        mov dword ptr [mem_00B5B0C8], edx
+        mov edx, dword ptr [mem_00A9EF24]
+        mov dword ptr [mem_00B5B0CC], eax
+        mov eax, dword ptr [mem_00A9EF28]
+        mov dword ptr [mem_00B5B0D0], ecx
+        mov ecx, dword ptr [mem_00A9EF2C]
+        mov dword ptr [mem_00B5B0D4], edx
+        mov edx, dword ptr [mem_00A9EF30]
+        mov dword ptr [mem_00B5B0D8], eax
+        mov eax, dword ptr [mem_00A9EF34]
+        mov dword ptr [mem_00B5B0DC], ecx
+        mov ecx, dword ptr [mem_00A9EF38]
+        mov dword ptr [mem_00B5B0E0], edx
+        mov edx, dword ptr [mem_00A9EF3C]
+        mov dword ptr [mem_00B5B0E4], eax
+        mov eax, dword ptr [mem_00A9EF40]
+        mov dword ptr [mem_00B5B0E8], ecx
+        mov ecx, dword ptr [mem_00A9EF44]
+        mov dword ptr [mem_00B5B0EC], edx
+        mov edx, dword ptr [mem_00A9EF48]
+        mov dword ptr [mem_00B5B0F0], eax
+        mov eax, dword ptr [mem_00A9EF4C]
+        mov dword ptr [mem_00B5B0F4], ecx
+        mov ecx, dword ptr [mem_00A9EF50]
+        mov dword ptr [mem_00B5B0F8], edx
+        mov edx, dword ptr [mem_00A9EF54]
+        mov dword ptr [mem_00B5B0FC], eax
+        mov eax, dword ptr [mem_00A9EF58]
+        mov dword ptr [mem_00B5B100], ecx
+        mov ecx, dword ptr [mem_00A9EF5C]
+        mov dword ptr [mem_00B5B104], edx
+        mov edx, dword ptr [mem_00A9EF60]
+        mov dword ptr [mem_00B5B108], eax
+        mov eax, dword ptr [mem_00A9EF64]
+        mov dword ptr [mem_00B5B10C], ecx
+        mov ecx, dword ptr [mem_00A9EF68]
+        mov dword ptr [mem_00B5B110], edx
+        mov edx, dword ptr [mem_00A9EF6C]
+        mov dword ptr [mem_00B5B114], eax
+        mov dword ptr [mem_00B5B118], ecx
+        mov dword ptr [mem_00B5B11C], edx
+        mov eax, dword ptr [mem_00A9EF70]
+        mov ecx, dword ptr [mem_00A9EF74]
+        mov edx, dword ptr [mem_00A9EF78]
+        mov dword ptr [mem_00B5B120], eax
+        mov eax, dword ptr [mem_00A9EF7C]
+        mov dword ptr [mem_00B5B124], ecx
+        mov ecx, dword ptr [mem_00A9EF80]
+        mov dword ptr [mem_00B5B128], edx
+        mov edx, dword ptr [mem_00A9EF84]
+        mov dword ptr [mem_00B5B12C], eax
+        mov eax, dword ptr [mem_00A9EF88]
+        mov dword ptr [mem_00B5B130], ecx
+        mov ecx, dword ptr [mem_00A9EF8C]
+        mov dword ptr [mem_00B5B134], edx
+        mov edx, dword ptr [mem_00A9EF90]
+        mov dword ptr [mem_00B5B138], eax
+        mov eax, dword ptr [mem_00A9EF94]
+        mov dword ptr [mem_00B5B13C], ecx
+        mov ecx, dword ptr [mem_00A9EF98]
+        mov dword ptr [mem_00B5B140], edx
+        mov edx, dword ptr [mem_00A9EF9C]
+        mov dword ptr [mem_00B5B144], eax
+        mov eax, dword ptr [mem_00A9EFA0]
+        mov dword ptr [mem_00B5B148], ecx
+        mov ecx, dword ptr [mem_00A9EFA4]
+        mov dword ptr [mem_00B5B14C], edx
+        mov edx, dword ptr [mem_00A9EFA8]
+        mov dword ptr [mem_00B5B150], eax
+        mov eax, dword ptr [mem_00A9EFAC]
+        mov dword ptr [mem_00B5B154], ecx
+        mov ecx, dword ptr [mem_00A9EFB0]
+        mov dword ptr [mem_00B5B158], edx
+        mov edx, dword ptr [mem_00A9EFB4]
+        mov dword ptr [mem_00B5B15C], eax
+        mov eax, dword ptr [mem_00A9EFB8]
+        mov dword ptr [mem_00B5B160], ecx
+        mov ecx, dword ptr [mem_00A9EFBC]
+        mov dword ptr [mem_00B5B164], edx
+        mov edx, dword ptr [mem_00A9EFC0]
+        mov dword ptr [mem_00B5B168], eax
+        mov eax, dword ptr [mem_00A9EFC4]
+        mov dword ptr [mem_00B5B16C], ecx
+        mov ecx, dword ptr [mem_00A9EFC8]
+        mov dword ptr [mem_00B5B170], edx
+        mov edx, dword ptr [mem_00A9EFCC]
+        mov dword ptr [mem_00B5B174], eax
+        mov eax, dword ptr [mem_00A9EFD0]
+        mov dword ptr [mem_00B5B178], ecx
+        mov ecx, dword ptr [mem_00A9EFD4]
+        mov dword ptr [mem_00B5B17C], edx
+        mov edx, dword ptr [mem_00A9EFD8]
+        mov dword ptr [mem_00B5B180], eax
+        mov eax, dword ptr [mem_00A9EFDC]
+        mov dword ptr [mem_00B5B184], ecx
+        mov ecx, dword ptr [mem_00A9EFE0]
+        mov dword ptr [mem_00B5B188], edx
+        mov edx, dword ptr [mem_00A9EFE4]
+        mov dword ptr [mem_00B5B18C], eax
+        mov eax, dword ptr [mem_00A9EFE8]
+        mov dword ptr [mem_00B5B190], ecx
+        mov ecx, dword ptr [mem_00A9EFEC]
+        mov dword ptr [mem_00B5B194], edx
+        mov edx, dword ptr [mem_00A9EFF0]
+        mov dword ptr [mem_00B5B198], eax
+        mov eax, dword ptr [mem_00A9EFF4]
+        mov dword ptr [mem_00B5B19C], ecx
+        mov ecx, dword ptr [mem_00A9EFF8]
+        mov dword ptr [mem_00B5B1A0], edx
+        mov edx, dword ptr [mem_00A9EFFC]
+        mov dword ptr [mem_00B5B1A4], eax
+        mov eax, dword ptr [mem_00A9F000]
+        mov dword ptr [mem_00B5B1A8], ecx
+        mov ecx, dword ptr [mem_00A9F004]
+        mov dword ptr [mem_00B5B1AC], edx
+        mov edx, dword ptr [mem_00A9F008]
+        mov dword ptr [mem_00B5B1B0], eax
+        mov eax, dword ptr [mem_00A9F00C]
+        mov dword ptr [mem_00B5B1B4], ecx
+        mov ecx, dword ptr [mem_00A9F010]
+        mov dword ptr [mem_00B5B1B8], edx
+        mov dword ptr [mem_00B5B1BC], eax
+        mov edx, dword ptr [mem_00A9F014]
+        mov eax, dword ptr [mem_00A9F018]
+        mov dword ptr [mem_00B5B1C0], ecx
+        mov ecx, dword ptr [mem_00A9F01C]
+        mov dword ptr [mem_00B5B1C4], edx
+        mov edx, dword ptr [mem_00A9F020]
+        mov dword ptr [mem_00B5B1C8], eax
+        mov eax, dword ptr [mem_00A9F024]
+        mov dword ptr [mem_00B5B1CC], ecx
+        mov ecx, dword ptr [mem_00A9F028]
+        mov dword ptr [mem_00B5B1D0], edx
+        mov edx, dword ptr [mem_00A9F02C]
+        mov dword ptr [mem_00B5B1D4], eax
+        mov eax, dword ptr [mem_00A9F030]
+        mov dword ptr [mem_00B5B1D8], ecx
+        mov ecx, dword ptr [mem_00A9F034]
+        mov dword ptr [mem_00B5B1DC], edx
+        mov edx, dword ptr [mem_00A9F038]
+        mov dword ptr [mem_00B5B1E0], eax
+        mov eax, dword ptr [mem_00A9F03C]
+        mov dword ptr [mem_00B5B1E4], ecx
+        mov ecx, dword ptr [mem_00A9F040]
+        mov dword ptr [mem_00B5B1E8], edx
+        mov edx, dword ptr [mem_00A9F044]
+        mov dword ptr [mem_00B5B1EC], eax
+        mov eax, dword ptr [mem_00A9F048]
+        mov dword ptr [mem_00B5B1F0], ecx
+        mov ecx, dword ptr [mem_00A9F04C]
+        mov dword ptr [mem_00B5B1F4], edx
+        mov edx, dword ptr [mem_00A9F050]
+        mov dword ptr [mem_00B5B1F8], eax
+        mov eax, dword ptr [mem_00A9F054]
+        mov dword ptr [mem_00B5B1FC], ecx
+        mov ecx, dword ptr [mem_00A9F058]
+        mov dword ptr [mem_00B5B200], edx
+        mov edx, dword ptr [mem_00A9F05C]
+        mov dword ptr [mem_00B5B204], eax
+        mov eax, dword ptr [mem_00A9F060]
+        mov dword ptr [mem_00B5B208], ecx
+        mov ecx, dword ptr [mem_00A9F064]
+        mov dword ptr [mem_00B5B20C], edx
+        mov edx, dword ptr [mem_00A9F068]
+        mov dword ptr [mem_00B5B210], eax
+        mov eax, dword ptr [mem_00A9F06C]
+        mov dword ptr [mem_00B5B214], ecx
+        mov ecx, dword ptr [mem_00A9F070]
+        mov dword ptr [mem_00B5B218], edx
+        mov edx, dword ptr [mem_00A9F074]
+        mov dword ptr [mem_00B5B21C], eax
+        mov eax, dword ptr [mem_00A9F078]
+        mov dword ptr [mem_00B5B220], ecx
+        mov ecx, dword ptr [mem_00A9F07C]
+        mov dword ptr [mem_00B5B224], edx
+        mov edx, dword ptr [mem_00A9F080]
+        mov dword ptr [mem_00B5B228], eax
+        mov eax, dword ptr [mem_00A9F084]
+        mov dword ptr [mem_00B5B22C], ecx
+        mov ecx, dword ptr [mem_00A9F088]
+        mov dword ptr [mem_00B5B230], edx
+        mov edx, dword ptr [mem_00A9F08C]
+        mov dword ptr [mem_00B5B234], eax
+        mov eax, dword ptr [mem_00A9F090]
+        mov dword ptr [mem_00B5B238], ecx
+        mov ecx, dword ptr [mem_00A9F094]
+        mov dword ptr [mem_00B5B23C], edx
+        mov edx, dword ptr [mem_00A9F098]
+        mov dword ptr [mem_00B5B240], eax
+        mov eax, dword ptr [mem_00A9F09C]
+        mov dword ptr [mem_00B5B244], ecx
+        mov ecx, dword ptr [mem_00A9F0A0]
+        mov dword ptr [mem_00B5B248], edx
+        mov edx, dword ptr [mem_00A9F0A4]
+        mov dword ptr [mem_00B5B24C], eax
+        mov eax, dword ptr [mem_00A9F0A8]
+        mov dword ptr [mem_00B5B250], ecx
+        mov ecx, dword ptr [mem_00A9F0AC]
+        mov dword ptr [mem_00B5B254], edx
+        mov edx, dword ptr [mem_00A9F0B0]
+        mov dword ptr [mem_00B5B258], eax
+        mov dword ptr [mem_00B5B25C], ecx
+        mov dword ptr [mem_00B5B260], edx
+        mov eax, dword ptr [mem_00A9F0B4]
+        mov ecx, dword ptr [mem_00A9F0B8]
+        mov edx, dword ptr [mem_00A9F0BC]
+        mov dword ptr [mem_00B5B264], eax
+        mov eax, dword ptr [mem_00A9F0C0]
+        mov dword ptr [mem_00B5B268], ecx
+        mov ecx, dword ptr [mem_00A9F0C4]
+        mov dword ptr [mem_00B5B26C], edx
+        mov edx, dword ptr [mem_00A9F0C8]
+        mov dword ptr [mem_00B5B270], eax
+        mov eax, dword ptr [mem_00A9F0CC]
+        mov dword ptr [mem_00B5B274], ecx
+        mov ecx, dword ptr [mem_00A9F0D0]
+        mov dword ptr [mem_00B5B278], edx
+        mov edx, dword ptr [mem_00A9F0D4]
+        mov dword ptr [mem_00B5B27C], eax
+        mov eax, dword ptr [mem_00A9F0D8]
+        mov dword ptr [mem_00B5B280], ecx
+        mov ecx, dword ptr [mem_00A9F0DC]
+        mov dword ptr [mem_00B5B284], edx
+        mov edx, dword ptr [mem_00A9F0E0]
+        mov dword ptr [mem_00B5B288], eax
+        mov eax, dword ptr [mem_00A9F0E4]
+        mov dword ptr [mem_00B5B28C], ecx
+        mov ecx, dword ptr [mem_00A9F0E8]
+        mov dword ptr [mem_00B5B290], edx
+        mov edx, dword ptr [mem_00A9F0EC]
+        mov dword ptr [mem_00B5B294], eax
+        mov eax, dword ptr [mem_00A9F0F0]
+        mov dword ptr [mem_00B5B298], ecx
+        mov ecx, dword ptr [mem_00A9F0F4]
+        mov dword ptr [mem_00B5B29C], edx
+        mov edx, dword ptr [mem_00A9F0F8]
+        mov dword ptr [mem_00B5B2A0], eax
+        mov eax, dword ptr [mem_00A9F0FC]
+        mov dword ptr [mem_00B5B2A4], ecx
+        mov ecx, dword ptr [mem_00A9F100]
+        mov dword ptr [mem_00B5B2A8], edx
+        mov edx, dword ptr [mem_00A9F104]
+        mov dword ptr [mem_00B5B2AC], eax
+        mov eax, dword ptr [mem_00A9F108]
+        mov dword ptr [mem_00B5B2B0], ecx
+        mov ecx, dword ptr [mem_00A9F10C]
+        mov dword ptr [mem_00B5B2B4], edx
+        mov edx, dword ptr [mem_00A9F110]
+        mov dword ptr [mem_00B5B2B8], eax
+        mov eax, dword ptr [mem_00A9F114]
+        mov dword ptr [mem_00B5B2BC], ecx
+        mov ecx, dword ptr [mem_00A9F118]
+        mov dword ptr [mem_00B5B2C0], edx
+        mov edx, dword ptr [mem_00A9F11C]
+        mov dword ptr [mem_00B5B2C4], eax
+        mov eax, dword ptr [mem_00A9F120]
+        mov dword ptr [mem_00B5B2C8], ecx
+        mov ecx, dword ptr [mem_00A9F124]
+        mov dword ptr [mem_00B5B2CC], edx
+        mov edx, dword ptr [mem_00A9F128]
+        mov dword ptr [mem_00B5B2D0], eax
+        mov eax, dword ptr [mem_00A9F12C]
+        mov dword ptr [mem_00B5B2D4], ecx
+        mov ecx, dword ptr [mem_00A9F130]
+        mov dword ptr [mem_00B5B2D8], edx
+        mov edx, dword ptr [mem_00A9F134]
+        mov dword ptr [mem_00B5B2DC], eax
+        mov eax, dword ptr [mem_00A9F138]
+        mov dword ptr [mem_00B5B2E0], ecx
+        mov ecx, dword ptr [mem_00A9F13C]
+        mov dword ptr [mem_00B5B2E4], edx
+        mov edx, dword ptr [mem_00A9F140]
+        mov dword ptr [mem_00B5B2E8], eax
+        mov eax, dword ptr [mem_00A9F144]
+        mov dword ptr [mem_00B5B2EC], ecx
+        mov ecx, dword ptr [mem_00A9F148]
+        mov dword ptr [mem_00B5B2F0], edx
+        mov edx, dword ptr [mem_00A9F14C]
+        mov dword ptr [mem_00B5B2F4], eax
+        mov eax, dword ptr [mem_00A9F150]
+        mov dword ptr [mem_00B5B2F8], ecx
+        mov ecx, dword ptr [mem_00A9F154]
+        mov dword ptr [mem_00B5B2FC], edx
+        mov dword ptr [mem_00B5B300], eax
+        mov edx, dword ptr [mem_00A9F158]
+        mov eax, dword ptr [mem_00A9F15C]
+        mov dword ptr [mem_00B5B304], ecx
+        mov ecx, dword ptr [mem_00A9F160]
+        mov dword ptr [mem_00B5B308], edx
+        mov edx, dword ptr [mem_00A9F164]
+        mov dword ptr [mem_00B5B30C], eax
+        mov eax, dword ptr [mem_00A9F168]
+        mov dword ptr [mem_00B5B310], ecx
+        mov ecx, dword ptr [mem_00A9F16C]
+        mov dword ptr [mem_00B5B314], edx
+        mov edx, dword ptr [mem_00A9F170]
+        mov dword ptr [mem_00B5B318], eax
+        mov eax, dword ptr [mem_00A9F174]
+        mov dword ptr [mem_00B5B31C], ecx
+        mov ecx, dword ptr [mem_00A9F178]
+        mov dword ptr [mem_00B5B320], edx
+        mov edx, dword ptr [mem_00A9F17C]
+        mov dword ptr [mem_00B5B324], eax
+        mov eax, dword ptr [mem_00A9F180]
+        mov dword ptr [mem_00B5B328], ecx
+        mov ecx, dword ptr [mem_00A9F184]
+        mov dword ptr [mem_00B5B32C], edx
+        mov edx, dword ptr [mem_00A9F188]
+        mov dword ptr [mem_00B5B330], eax
+        mov eax, dword ptr [mem_00A9F18C]
+        mov dword ptr [mem_00B5B334], ecx
+        mov ecx, dword ptr [mem_00A9F190]
+        mov dword ptr [mem_00B5B338], edx
+        mov edx, dword ptr [mem_00A9F194]
+        mov dword ptr [mem_00B5B33C], eax
+        mov eax, dword ptr [mem_00A9F198]
+        mov dword ptr [mem_00B5B340], ecx
+        mov ecx, dword ptr [mem_00A9F19C]
+        mov dword ptr [mem_00B5B344], edx
+        mov edx, dword ptr [mem_00A9F1A0]
+        mov dword ptr [mem_00B5B348], eax
+        mov eax, dword ptr [mem_00A9F1A4]
+        mov dword ptr [mem_00B5B34C], ecx
+        mov ecx, dword ptr [mem_00A9F1A8]
+        mov dword ptr [mem_00B5B350], edx
+        mov edx, dword ptr [mem_00A9F1AC]
+        mov dword ptr [mem_00B5B354], eax
+        mov eax, dword ptr [mem_00A9F1B0]
+        mov dword ptr [mem_00B5B358], ecx
+        mov ecx, dword ptr [mem_00A9F1B4]
+        mov dword ptr [mem_00B5B35C], edx
+        mov edx, dword ptr [mem_00A9F1B8]
+        mov dword ptr [mem_00B5B360], eax
+        mov eax, dword ptr [mem_00A9F1BC]
+        mov dword ptr [mem_00B5B364], ecx
+        mov ecx, dword ptr [mem_00A9F1C0]
+        mov dword ptr [mem_00B5B368], edx
+        mov edx, dword ptr [mem_00A9F1C4]
+        mov dword ptr [mem_00B5B36C], eax
+        mov eax, dword ptr [mem_00A9F1C8]
+        mov dword ptr [mem_00B5B370], ecx
+        mov ecx, dword ptr [mem_00A9F1CC]
+        mov dword ptr [mem_00B5B374], edx
+        mov edx, dword ptr [mem_00A9F1D0]
+        mov dword ptr [mem_00B5B378], eax
+        mov eax, dword ptr [mem_00A9F1D4]
+        mov dword ptr [mem_00B5B37C], ecx
+        mov ecx, dword ptr [mem_00A9F1D8]
+        mov dword ptr [mem_00B5B380], edx
+        mov edx, dword ptr [mem_00A9F1DC]
+        mov dword ptr [mem_00B5B384], eax
+        mov eax, dword ptr [mem_00A9F1E0]
+        mov dword ptr [mem_00B5B388], ecx
+        mov ecx, dword ptr [mem_00A9F1E4]
+        mov dword ptr [mem_00B5B38C], edx
+        mov edx, dword ptr [mem_00A9F1E8]
+        mov dword ptr [mem_00B5B390], eax
+        mov eax, dword ptr [mem_00A9F1EC]
+        mov dword ptr [mem_00B5B394], ecx
+        mov ecx, dword ptr [mem_00A9F1F0]
+        mov dword ptr [mem_00B5B398], edx
+        mov edx, dword ptr [mem_00A9F1F4]
+        mov dword ptr [mem_00B5B39C], eax
+        mov dword ptr [mem_00B5B3A0], ecx
+        mov dword ptr [mem_00B5B3A4], edx
+        mov eax, dword ptr [mem_00A9F1F8]
+        mov ecx, dword ptr [mem_00A9F1FC]
+        mov edx, dword ptr [mem_00A9F200]
+        mov dword ptr [mem_00B5B3A8], eax
+        mov eax, dword ptr [mem_00A9F204]
+        mov dword ptr [mem_00B5B3AC], ecx
+        mov ecx, dword ptr [mem_00A9F208]
+        mov dword ptr [mem_00B5B3B0], edx
+        mov edx, dword ptr [mem_00A9F20C]
+        mov dword ptr [mem_00B5B3B4], eax
+        mov eax, dword ptr [mem_00A9F210]
+        mov dword ptr [mem_00B5B3B8], ecx
+        mov ecx, dword ptr [mem_00A9F214]
+        mov dword ptr [mem_00B5B3BC], edx
+        mov edx, dword ptr [mem_00A9F218]
+        mov dword ptr [mem_00B5B3C0], eax
+        mov eax, dword ptr [mem_00A9F21C]
+        mov dword ptr [mem_00B5B3C4], ecx
+        mov ecx, dword ptr [mem_00A9F220]
+        mov dword ptr [mem_00B5B3C8], edx
+        mov edx, dword ptr [mem_00A9F224]
+        mov dword ptr [mem_00B5B3CC], eax
+        mov eax, dword ptr [mem_00A9F228]
+        mov dword ptr [mem_00B5B3D0], ecx
+        mov ecx, dword ptr [mem_00A9F22C]
+        mov dword ptr [mem_00B5B3D4], edx
+        mov edx, dword ptr [mem_00A9F230]
+        mov dword ptr [mem_00B5B3D8], eax
+        mov eax, dword ptr [mem_00A9F234]
+        mov dword ptr [mem_00B5B3DC], ecx
+        mov ecx, dword ptr [mem_00A9F238]
+        mov dword ptr [mem_00B5B3E0], edx
+        mov edx, dword ptr [mem_00A9F23C]
+        mov dword ptr [mem_00B5B3E4], eax
+        mov eax, dword ptr [mem_00A9F240]
+        mov dword ptr [mem_00B5B3E8], ecx
+        mov ecx, dword ptr [mem_00A9F244]
+        mov dword ptr [mem_00B5B3EC], edx
+        mov edx, dword ptr [mem_00A9F248]
+        mov dword ptr [mem_00B5B3F0], eax
+        mov eax, dword ptr [mem_00A9F24C]
+        mov dword ptr [mem_00B5B3F4], ecx
+        mov ecx, dword ptr [mem_00A9F250]
+        mov dword ptr [mem_00B5B3F8], edx
+        mov edx, dword ptr [mem_00A9F254]
+        mov dword ptr [mem_00B5B3FC], eax
+        mov eax, dword ptr [mem_00A9F258]
+        mov dword ptr [mem_00B5B400], ecx
+        mov ecx, dword ptr [mem_00A9F25C]
+        mov dword ptr [mem_00B5B404], edx
+        mov edx, dword ptr [mem_00A9F260]
+        mov dword ptr [mem_00B5B408], eax
+        mov eax, dword ptr [mem_00A9F264]
+        mov dword ptr [mem_00B5B40C], ecx
+        mov ecx, dword ptr [mem_00A9F268]
+        mov dword ptr [mem_00B5B410], edx
+        mov edx, dword ptr [mem_00A9F26C]
+        mov dword ptr [mem_00B5B414], eax
+        mov eax, dword ptr [mem_00A9F270]
+        mov dword ptr [mem_00B5B418], ecx
+        mov ecx, dword ptr [mem_00A9F274]
+        mov dword ptr [mem_00B5B41C], edx
+        mov edx, dword ptr [mem_00A9F278]
+        mov dword ptr [mem_00B5B420], eax
+        mov eax, dword ptr [mem_00A9F27C]
+        mov dword ptr [mem_00B5B424], ecx
+        mov ecx, dword ptr [mem_00A9F280]
+        mov dword ptr [mem_00B5B428], edx
+        mov edx, dword ptr [mem_00A9F284]
+        mov dword ptr [mem_00B5B42C], eax
+        mov eax, dword ptr [mem_00A9F288]
+        mov dword ptr [mem_00B5B430], ecx
+        mov ecx, dword ptr [mem_00A9F28C]
+        mov dword ptr [mem_00B5B434], edx
+        mov edx, dword ptr [mem_00A9F290]
+        mov dword ptr [mem_00B5B438], eax
+        mov eax, dword ptr [mem_00A9F294]
+        mov dword ptr [mem_00B5B43C], ecx
+        mov ecx, dword ptr [mem_00A9F298]
+        mov dword ptr [mem_00B5B440], edx
+        mov dword ptr [mem_00B5B444], eax
+        mov edx, dword ptr [mem_00A9F29C]
+        mov eax, dword ptr [mem_00A9F2A0]
+        mov dword ptr [mem_00B5B448], ecx
+        mov ecx, dword ptr [mem_00A9F2A4]
+        mov dword ptr [mem_00B5B44C], edx
+        mov edx, dword ptr [mem_00A9F2A8]
+        mov dword ptr [mem_00B5B450], eax
+        mov eax, dword ptr [mem_00A9F2AC]
+        mov dword ptr [mem_00B5B454], ecx
+        mov ecx, dword ptr [mem_00A9F2B0]
+        mov dword ptr [mem_00B5B458], edx
+        mov edx, dword ptr [mem_00A9F2B4]
+        mov dword ptr [mem_00B5B45C], eax
+        mov eax, dword ptr [mem_00A9F2B8]
+        mov dword ptr [mem_00B5B460], ecx
+        mov ecx, dword ptr [mem_00A9F2BC]
+        mov dword ptr [mem_00B5B464], edx
+        mov edx, dword ptr [mem_00A9F2C0]
+        mov dword ptr [mem_00B5B468], eax
+        mov eax, dword ptr [mem_00A9F2C4]
+        mov dword ptr [mem_00B5B46C], ecx
+        mov ecx, dword ptr [mem_00A9F2C8]
+        mov dword ptr [mem_00B5B470], edx
+        mov edx, dword ptr [mem_00A9F2CC]
+        mov dword ptr [mem_00B5B474], eax
+        mov eax, dword ptr [mem_00A9F2D0]
+        mov dword ptr [mem_00B5B478], ecx
+        mov ecx, dword ptr [mem_00A9F2D4]
+        mov dword ptr [mem_00B5B47C], edx
+        mov edx, dword ptr [mem_00A9F2D8]
+        mov dword ptr [mem_00B5B480], eax
+        mov eax, dword ptr [mem_00A9F2DC]
+        mov dword ptr [mem_00B5B484], ecx
+        mov ecx, dword ptr [mem_00A9F2E0]
+        mov dword ptr [mem_00B5B488], edx
+        mov edx, dword ptr [mem_00A9F2E4]
+        mov dword ptr [mem_00B5B48C], eax
+        mov eax, dword ptr [mem_00A9F2E8]
+        mov dword ptr [mem_00B5B490], ecx
+        mov ecx, dword ptr [mem_00A9F2EC]
+        mov dword ptr [mem_00B5B494], edx
+        mov edx, dword ptr [mem_00A9F2F0]
+        mov dword ptr [mem_00B5B498], eax
+        mov eax, dword ptr [mem_00A9F2F4]
+        mov dword ptr [mem_00B5B49C], ecx
+        mov ecx, dword ptr [mem_00A9F2F8]
+        mov dword ptr [mem_00B5B4A0], edx
+        mov edx, dword ptr [mem_00A9F2FC]
+        mov dword ptr [mem_00B5B4A4], eax
+        mov eax, dword ptr [mem_00A9F300]
+        mov dword ptr [mem_00B5B4A8], ecx
+        mov ecx, dword ptr [mem_00A9F304]
+        mov dword ptr [mem_00B5B4AC], edx
+        mov edx, dword ptr [mem_00A9F308]
+        mov dword ptr [mem_00B5B4B0], eax
+        mov eax, dword ptr [mem_00A9F30C]
+        mov dword ptr [mem_00B5B4B4], ecx
+        mov ecx, dword ptr [mem_00A9F310]
+        mov dword ptr [mem_00B5B4B8], edx
+        mov edx, dword ptr [mem_00A9F314]
+        mov dword ptr [mem_00B5B4BC], eax
+        mov eax, dword ptr [mem_00A9F318]
+        mov dword ptr [mem_00B5B4C0], ecx
+        mov ecx, dword ptr [mem_00A9F31C]
+        mov dword ptr [mem_00B5B4C4], edx
+        mov edx, dword ptr [mem_00A9F320]
+        mov dword ptr [mem_00B5B4C8], eax
+        mov eax, dword ptr [mem_00A9F324]
+        mov dword ptr [mem_00B5B4CC], ecx
+        mov ecx, dword ptr [mem_00A9F328]
+        mov dword ptr [mem_00B5B4D0], edx
+        mov edx, dword ptr [mem_00A9F32C]
+        mov dword ptr [mem_00B5B4D4], eax
+        mov eax, dword ptr [mem_00A9F330]
+        mov dword ptr [mem_00B5B4D8], ecx
+        mov ecx, dword ptr [mem_00A9F334]
+        mov dword ptr [mem_00B5B4DC], edx
+        mov edx, dword ptr [mem_00A9F338]
+        mov dword ptr [mem_00B5B4E0], eax
+        mov dword ptr [mem_00B5B4E4], ecx
+        mov dword ptr [mem_00B5B4E8], edx
+        mov eax, dword ptr [mem_00A9F33C]
+        mov ecx, dword ptr [mem_00A9F340]
+        mov edx, dword ptr [mem_00A9F344]
+        mov dword ptr [mem_00B5B4EC], eax
+        mov eax, dword ptr [mem_00A9F348]
+        mov dword ptr [mem_00B5B4F0], ecx
+        mov ecx, dword ptr [mem_00A9F34C]
+        mov dword ptr [mem_00B5B4F4], edx
+        mov edx, dword ptr [mem_00A9F350]
+        mov dword ptr [mem_00B5B4F8], eax
+        mov eax, dword ptr [mem_00A9F354]
+        mov dword ptr [mem_00B5B4FC], ecx
+        mov ecx, dword ptr [mem_00A9F358]
+        mov dword ptr [mem_00B5B500], edx
+        mov edx, dword ptr [mem_00A9F35C]
+        mov dword ptr [mem_00B5B504], eax
+        mov eax, dword ptr [mem_00A9F360]
+        mov dword ptr [mem_00B5B508], ecx
+        mov ecx, dword ptr [mem_00A9F364]
+        mov dword ptr [mem_00B5B50C], edx
+        mov edx, dword ptr [mem_00A9F368]
+        mov dword ptr [mem_00B5B510], eax
+        mov eax, dword ptr [mem_00A9F36C]
+        mov dword ptr [mem_00B5B514], ecx
+        mov ecx, dword ptr [mem_00A9F370]
+        mov dword ptr [mem_00B5B518], edx
+        mov edx, dword ptr [mem_00A9F374]
+        mov dword ptr [mem_00B5B51C], eax
+        mov eax, dword ptr [mem_00A9F378]
+        mov dword ptr [mem_00B5B520], ecx
+        mov ecx, dword ptr [mem_00A9F37C]
+        mov dword ptr [mem_00B5B524], edx
+        mov edx, dword ptr [mem_00A9F380]
+        mov dword ptr [mem_00B5B528], eax
+        mov eax, dword ptr [mem_00A9F384]
+        mov dword ptr [mem_00B5B52C], ecx
+        mov ecx, dword ptr [mem_00A9F388]
+        mov dword ptr [mem_00B5B530], edx
+        mov edx, dword ptr [mem_00A9F38C]
+        mov dword ptr [mem_00B5B534], eax
+        mov eax, dword ptr [mem_00A9F390]
+        mov dword ptr [mem_00B5B538], ecx
+        mov ecx, dword ptr [mem_00A9F394]
+        mov dword ptr [mem_00B5B53C], edx
+        mov edx, dword ptr [mem_00A9F398]
+        mov dword ptr [mem_00B5B540], eax
+        mov eax, dword ptr [mem_00A9F39C]
+        mov dword ptr [mem_00B5B544], ecx
+        mov ecx, dword ptr [mem_00A9F3A0]
+        mov dword ptr [mem_00B5B548], edx
+        mov edx, dword ptr [mem_00A9F3A4]
+        mov dword ptr [mem_00B5B54C], eax
+        mov eax, dword ptr [mem_00A9F3A8]
+        mov dword ptr [mem_00B5B550], ecx
+        mov ecx, dword ptr [mem_00A9F3AC]
+        mov dword ptr [mem_00B5B554], edx
+        mov edx, dword ptr [mem_00A9F3B0]
+        mov dword ptr [mem_00B5B558], eax
+        mov eax, dword ptr [mem_00A9F3B4]
+        mov dword ptr [mem_00B5B55C], ecx
+        mov ecx, dword ptr [mem_00A9F3B8]
+        mov dword ptr [mem_00B5B560], edx
+        mov edx, dword ptr [mem_00A9F3BC]
+        mov dword ptr [mem_00B5B564], eax
+        mov eax, dword ptr [mem_00A9F3C0]
+        mov dword ptr [mem_00B5B568], ecx
+        mov ecx, dword ptr [mem_00A9F3C4]
+        mov dword ptr [mem_00B5B56C], edx
+        mov edx, dword ptr [mem_00A9F3C8]
+        mov dword ptr [mem_00B5B570], eax
+        mov eax, dword ptr [mem_00A9F3CC]
+        mov dword ptr [mem_00B5B574], ecx
+        mov ecx, dword ptr [mem_00A9F3D0]
+        mov dword ptr [mem_00B5B578], edx
+        mov edx, dword ptr [mem_00A9F3D4]
+        mov dword ptr [mem_00B5B57C], eax
+        mov eax, dword ptr [mem_00A9F3D8]
+        mov dword ptr [mem_00B5B580], ecx
+        mov ecx, dword ptr [mem_00A9F3DC]
+        mov dword ptr [mem_00B5B584], edx
+        mov dword ptr [mem_00B5B588], eax
+        mov edx, dword ptr [mem_00A9F3E0]
+        mov eax, dword ptr [mem_00A9F3E4]
+        mov dword ptr [mem_00B5B58C], ecx
+        mov ecx, dword ptr [mem_00A9F3E8]
+        mov dword ptr [mem_00B5B590], edx
+        mov edx, dword ptr [mem_00A9F3EC]
+        mov dword ptr [mem_00B5B594], eax
+        mov eax, dword ptr [mem_00A9F3F0]
+        mov dword ptr [mem_00B5B598], ecx
+        mov ecx, dword ptr [mem_00A9F3F4]
+        mov dword ptr [mem_00B5B59C], edx
+        mov edx, dword ptr [mem_00A9F3F8]
+        mov dword ptr [mem_00B5B5A0], eax
+        mov eax, dword ptr [mem_00A9F3FC]
+        mov dword ptr [mem_00B5B5A4], ecx
+        mov ecx, dword ptr [mem_00A9F400]
+        mov dword ptr [mem_00B5B5A8], edx
+        mov edx, dword ptr [mem_00A9F404]
+        mov dword ptr [mem_00B5B5AC], eax
+        mov eax, dword ptr [mem_00A9F408]
+        mov dword ptr [mem_00B5B5B0], ecx
+        mov ecx, dword ptr [mem_00A9F40C]
+        mov dword ptr [mem_00B5B5B4], edx
+        mov edx, dword ptr [mem_00A9F410]
+        mov dword ptr [mem_00B5B5B8], eax
+        mov eax, dword ptr [mem_00A9F414]
+        mov dword ptr [mem_00B5B5BC], ecx
+        mov ecx, dword ptr [mem_00A9F418]
+        mov dword ptr [mem_00B5B5C0], edx
+        mov edx, dword ptr [mem_00A9F41C]
+        mov dword ptr [mem_00B5B5C4], eax
+        mov eax, dword ptr [mem_00A9F420]
+        mov dword ptr [mem_00B5B5C8], ecx
+        mov ecx, dword ptr [mem_00A9F424]
+        mov dword ptr [mem_00B5B5CC], edx
+        mov edx, dword ptr [mem_00A9F428]
+        mov dword ptr [mem_00B5B5D0], eax
+        mov eax, dword ptr [mem_00A9F42C]
+        mov dword ptr [mem_00B5B5D4], ecx
+        mov ecx, dword ptr [mem_00A9F430]
+        mov dword ptr [mem_00B5B5D8], edx
+        mov edx, dword ptr [mem_00A9F434]
+        mov dword ptr [mem_00B5B5DC], eax
+        mov eax, dword ptr [mem_00A9F438]
+        mov dword ptr [mem_00B5B5E0], ecx
+        mov ecx, dword ptr [mem_00A9F43C]
+        mov dword ptr [mem_00B5B5E4], edx
+        mov edx, dword ptr [mem_00A9F440]
+        mov dword ptr [mem_00B5B5E8], eax
+        mov eax, dword ptr [mem_00A9F444]
+        mov dword ptr [mem_00B5B5EC], ecx
+        mov ecx, dword ptr [mem_00A9F448]
+        mov dword ptr [mem_00B5B5F0], edx
+        mov edx, dword ptr [mem_00A9F44C]
+        mov dword ptr [mem_00B5B5F4], eax
+        mov eax, dword ptr [mem_00A9F450]
+        mov dword ptr [mem_00B5B5F8], ecx
+        mov ecx, dword ptr [mem_00A9F454]
+        mov dword ptr [mem_00B5B5FC], edx
+        mov edx, dword ptr [mem_00A9F458]
+        mov dword ptr [mem_00B5B600], eax
+        mov eax, dword ptr [mem_00A9F45C]
+        mov dword ptr [mem_00B5B604], ecx
+        mov ecx, dword ptr [mem_00A9F460]
+        mov dword ptr [mem_00B5B608], edx
+        mov edx, dword ptr [mem_00A9F464]
+        mov dword ptr [mem_00B5B60C], eax
+        mov eax, dword ptr [mem_00A9F468]
+        mov dword ptr [mem_00B5B610], ecx
+        mov ecx, dword ptr [mem_00A9F46C]
+        mov dword ptr [mem_00B5B614], edx
+        mov edx, dword ptr [mem_00A9F470]
+        mov dword ptr [mem_00B5B618], eax
+        mov eax, dword ptr [mem_00A9F474]
+        mov dword ptr [mem_00B5B61C], ecx
+        mov ecx, dword ptr [mem_00A9F478]
+        mov dword ptr [mem_00B5B620], edx
+        mov edx, dword ptr [mem_00A9F47C]
+        mov dword ptr [mem_00B5B624], eax
+        mov dword ptr [mem_00B5B628], ecx
+        mov dword ptr [mem_00B5B62C], edx
+        mov eax, dword ptr [mem_00A9F480]
+        mov ecx, dword ptr [mem_00A9F484]
+        mov edx, dword ptr [mem_00A9F488]
+        mov dword ptr [mem_00B5B630], eax
+        mov eax, dword ptr [mem_00A9F48C]
+        mov dword ptr [mem_00B5B634], ecx
+        mov ecx, dword ptr [mem_00A9F490]
+        mov dword ptr [mem_00B5B638], edx
+        mov edx, dword ptr [mem_00A9F494]
+        mov dword ptr [mem_00B5B63C], eax
+        mov eax, dword ptr [mem_00A9F498]
+        mov dword ptr [mem_00B5B640], ecx
+        mov ecx, dword ptr [mem_00A9F49C]
+        mov dword ptr [mem_00B5B644], edx
+        mov edx, dword ptr [mem_00A9F4A0]
+        mov dword ptr [mem_00B5B648], eax
+        mov eax, dword ptr [mem_00A9F4A4]
+        mov dword ptr [mem_00B5B64C], ecx
+        mov ecx, dword ptr [mem_00A9F4A8]
+        mov dword ptr [mem_00B5B650], edx
+        mov edx, dword ptr [mem_00A9F4AC]
+        mov dword ptr [mem_00B5B654], eax
+        mov eax, dword ptr [mem_00A9F4B0]
+        mov dword ptr [mem_00B5B658], ecx
+        mov ecx, dword ptr [mem_00A9F4B4]
+        mov dword ptr [mem_00B5B65C], edx
+        mov edx, dword ptr [mem_00A9F4B8]
+        mov dword ptr [mem_00B5B660], eax
+        mov eax, dword ptr [mem_00A9F4BC]
+        mov dword ptr [mem_00B5B664], ecx
+        mov ecx, dword ptr [mem_00A9F4C0]
+        mov dword ptr [mem_00B5B668], edx
+        mov edx, dword ptr [mem_00A9F4C4]
+        mov dword ptr [mem_00B5B66C], eax
+        mov eax, dword ptr [mem_00A9F4C8]
+        mov dword ptr [mem_00B5B670], ecx
+        mov ecx, dword ptr [mem_00A9F4CC]
+        mov dword ptr [mem_00B5B674], edx
+        mov edx, dword ptr [mem_00A9F4D0]
+        mov dword ptr [mem_00B5B678], eax
+        mov eax, dword ptr [mem_00A9F4D4]
+        mov dword ptr [mem_00B5B67C], ecx
+        mov ecx, dword ptr [mem_00A9F4D8]
+        mov dword ptr [mem_00B5B680], edx
+        mov edx, dword ptr [mem_00A9F4DC]
+        mov dword ptr [mem_00B5B684], eax
+        mov eax, dword ptr [mem_00A9F4E0]
+        mov dword ptr [mem_00B5B688], ecx
+        mov ecx, dword ptr [mem_00A9F4E4]
+        mov dword ptr [mem_00B5B68C], edx
+        mov edx, dword ptr [mem_00A9F4E8]
+        mov dword ptr [mem_00B5B690], eax
+        mov eax, dword ptr [mem_00A9F4EC]
+        mov dword ptr [mem_00B5B694], ecx
+        mov ecx, dword ptr [mem_00A9F4F0]
+        mov dword ptr [mem_00B5B698], edx
+        mov edx, dword ptr [mem_00A9F4F4]
+        mov dword ptr [mem_00B5B69C], eax
+        mov eax, dword ptr [mem_00A9F4F8]
+        mov dword ptr [mem_00B5B6A0], ecx
+        mov ecx, dword ptr [mem_00A9F4FC]
+        mov dword ptr [mem_00B5B6A4], edx
+        mov edx, dword ptr [mem_00A9F500]
+        mov dword ptr [mem_00B5B6A8], eax
+        mov eax, dword ptr [mem_00A9F504]
+        mov dword ptr [mem_00B5B6AC], ecx
+        mov ecx, dword ptr [mem_00A9F508]
+        mov dword ptr [mem_00B5B6B0], edx
+        mov edx, dword ptr [mem_00A9F50C]
+        mov dword ptr [mem_00B5B6B4], eax
+        mov eax, dword ptr [mem_00A9F510]
+        mov dword ptr [mem_00B5B6B8], ecx
+        mov ecx, dword ptr [mem_00A9F514]
+        mov dword ptr [mem_00B5B6BC], edx
+        mov edx, dword ptr [mem_00A9F518]
+        mov dword ptr [mem_00B5B6C0], eax
+        mov eax, dword ptr [mem_00A9F51C]
+        mov dword ptr [mem_00B5B6C4], ecx
+        mov ecx, dword ptr [mem_00A9F520]
+        mov dword ptr [mem_00B5B6C8], edx
+        mov dword ptr [mem_00B5B6CC], eax
+        mov edx, dword ptr [mem_00A9F524]
+        mov eax, dword ptr [mem_00A9F528]
+        mov dword ptr [mem_00B5B6D0], ecx
+        mov ecx, dword ptr [mem_00A9F52C]
+        mov dword ptr [mem_00B5B6D4], edx
+        mov edx, dword ptr [mem_00A9F530]
+        mov dword ptr [mem_00B5B6D8], eax
+        mov eax, dword ptr [mem_00A9F534]
+        mov dword ptr [mem_00B5B6DC], ecx
+        mov ecx, dword ptr [mem_00A9F538]
+        mov dword ptr [mem_00B5B6E0], edx
+        mov edx, dword ptr [mem_00A9F53C]
+        mov dword ptr [mem_00B5B6E4], eax
+        mov eax, dword ptr [mem_00A9F540]
+        mov dword ptr [mem_00B5B6E8], ecx
+        mov ecx, dword ptr [mem_00A9F544]
+        mov dword ptr [mem_00B5B6EC], edx
+        mov edx, dword ptr [mem_00A9F548]
+        mov dword ptr [mem_00B5B6F0], eax
+        mov eax, dword ptr [mem_00A9F54C]
+        mov dword ptr [mem_00B5B6F4], ecx
+        mov ecx, dword ptr [mem_00A9F550]
+        mov dword ptr [mem_00B5B6F8], edx
+        mov edx, dword ptr [mem_00A9F554]
+        mov dword ptr [mem_00B5B6FC], eax
+        mov eax, dword ptr [mem_00A9F558]
+        mov dword ptr [mem_00B5B700], ecx
+        mov ecx, dword ptr [mem_00A9F55C]
+        mov dword ptr [mem_00B5B704], edx
+        mov edx, dword ptr [mem_00A9F560]
+        mov dword ptr [mem_00B5B708], eax
+        mov eax, dword ptr [mem_00A9F564]
+        mov dword ptr [mem_00B5B70C], ecx
+        mov ecx, dword ptr [mem_00A9F568]
+        mov dword ptr [mem_00B5B710], edx
+        mov edx, dword ptr [mem_00A9F56C]
+        mov dword ptr [mem_00B5B714], eax
+        mov eax, dword ptr [mem_00A9F570]
+        mov dword ptr [mem_00B5B718], ecx
+        mov ecx, dword ptr [mem_00A9F574]
+        mov dword ptr [mem_00B5B71C], edx
+        mov edx, dword ptr [mem_00A9F578]
+        mov dword ptr [mem_00B5B720], eax
+        mov eax, dword ptr [mem_00A9F57C]
+        mov dword ptr [mem_00B5B724], ecx
+        mov ecx, dword ptr [mem_00A9F580]
+        mov dword ptr [mem_00B5B728], edx
+        mov edx, dword ptr [mem_00A9F584]
+        mov dword ptr [mem_00B5B72C], eax
+        mov eax, dword ptr [mem_00A9F588]
+        mov dword ptr [mem_00B5B730], ecx
+        mov ecx, dword ptr [mem_00A9F58C]
+        mov dword ptr [mem_00B5B734], edx
+        mov edx, dword ptr [mem_00A9F590]
+        mov dword ptr [mem_00B5B738], eax
+        mov eax, dword ptr [mem_00A9F594]
+        mov dword ptr [mem_00B5B73C], ecx
+        mov ecx, dword ptr [mem_00A9F598]
+        mov dword ptr [mem_00B5B740], edx
+        mov edx, dword ptr [mem_00A9F59C]
+        mov dword ptr [mem_00B5B744], eax
+        mov eax, dword ptr [mem_00A9F5A0]
+        mov dword ptr [mem_00B5B748], ecx
+        mov ecx, dword ptr [mem_00A9F5A4]
+        mov dword ptr [mem_00B5B74C], edx
+        mov edx, dword ptr [mem_00A9F5A8]
+        mov dword ptr [mem_00B5B750], eax
+        mov eax, dword ptr [mem_00A9F5AC]
+        mov dword ptr [mem_00B5B754], ecx
+        mov ecx, dword ptr [mem_00A9F5B0]
+        mov dword ptr [mem_00B5B758], edx
+        mov edx, dword ptr [mem_00A9F5B4]
+        mov dword ptr [mem_00B5B75C], eax
+        mov eax, dword ptr [mem_00A9F5B8]
+        mov dword ptr [mem_00B5B760], ecx
+        mov ecx, dword ptr [mem_00A9F5BC]
+        mov dword ptr [mem_00B5B764], edx
+        mov edx, dword ptr [mem_00A9F5C0]
+        mov dword ptr [mem_00B5B768], eax
+        mov dword ptr [mem_00B5B76C], ecx
+        mov dword ptr [mem_00B5B770], edx
+        mov eax, dword ptr [mem_00A9F5C4]
+        mov ecx, dword ptr [mem_00A9F5C8]
+        mov edx, dword ptr [mem_00A9F5CC]
+        mov dword ptr [mem_00B5B774], eax
+        mov eax, dword ptr [mem_00A9F5D0]
+        mov dword ptr [mem_00B5B778], ecx
+        mov ecx, dword ptr [mem_00A9F5D4]
+        mov dword ptr [mem_00B5B77C], edx
+        mov edx, dword ptr [mem_00A9F5D8]
+        mov dword ptr [mem_00B5B780], eax
+        mov eax, dword ptr [mem_00A9F5DC]
+        mov dword ptr [mem_00B5B784], ecx
+        mov ecx, dword ptr [mem_00A9F5E0]
+        mov dword ptr [mem_00B5B788], edx
+        mov edx, dword ptr [mem_00A9F5E4]
+        mov dword ptr [mem_00B5B78C], eax
+        mov eax, dword ptr [mem_00A9F5E8]
+        mov dword ptr [mem_00B5B790], ecx
+        mov ecx, dword ptr [mem_00A9F5EC]
+        mov dword ptr [mem_00B5B794], edx
+        mov edx, dword ptr [mem_00A9F5F0]
+        mov dword ptr [mem_00B5B798], eax
+        mov eax, dword ptr [mem_00A9F5F4]
+        mov dword ptr [mem_00B5B79C], ecx
+        mov ecx, dword ptr [mem_00A9F5F8]
+        mov dword ptr [mem_00B5B7A0], edx
+        mov edx, dword ptr [mem_00A9F5FC]
+        mov dword ptr [mem_00B5B7A4], eax
+        mov eax, dword ptr [mem_00A9F600]
+        mov dword ptr [mem_00B5B7A8], ecx
+        mov ecx, dword ptr [mem_00A9F604]
+        mov dword ptr [mem_00B5B7AC], edx
+        mov edx, dword ptr [mem_00A9F608]
+        mov dword ptr [mem_00B5B7B0], eax
+        mov eax, dword ptr [mem_00A9F60C]
+        mov dword ptr [mem_00B5B7B4], ecx
+        mov ecx, dword ptr [mem_00A9F610]
+        mov dword ptr [mem_00B5B7B8], edx
+        mov edx, dword ptr [mem_00A9F614]
+        mov dword ptr [mem_00B5B7BC], eax
+        mov eax, dword ptr [mem_00A9F618]
+        mov dword ptr [mem_00B5B7C0], ecx
+        mov ecx, dword ptr [mem_00A9F61C]
+        mov dword ptr [mem_00B5B7C4], edx
+        mov edx, dword ptr [mem_00A9F620]
+        mov dword ptr [mem_00B5B7C8], eax
+        mov eax, dword ptr [mem_00A9F624]
+        mov dword ptr [mem_00B5B7CC], ecx
+        mov ecx, dword ptr [mem_00A9F628]
+        mov dword ptr [mem_00B5B7D0], edx
+        mov edx, dword ptr [mem_00A9F62C]
+        mov dword ptr [mem_00B5B7D4], eax
+        mov eax, dword ptr [mem_00A9F630]
+        mov dword ptr [mem_00B5B7D8], ecx
+        mov ecx, dword ptr [mem_00A9F634]
+        mov dword ptr [mem_00B5B7DC], edx
+        mov edx, dword ptr [mem_00A9F638]
+        mov dword ptr [mem_00B5B7E0], eax
+        mov eax, dword ptr [mem_00A9F63C]
+        mov dword ptr [mem_00B5B7E4], ecx
+        mov ecx, dword ptr [mem_00A9F640]
+        mov dword ptr [mem_00B5B7E8], edx
+        mov edx, dword ptr [mem_00A9F644]
+        mov dword ptr [mem_00B5B7EC], eax
+        mov eax, dword ptr [mem_00A9F648]
+        mov dword ptr [mem_00B5B7F0], ecx
+        mov ecx, dword ptr [mem_00A9F64C]
+        mov dword ptr [mem_00B5B7F4], edx
+        mov edx, dword ptr [mem_00A9F650]
+        mov dword ptr [mem_00B5B7F8], eax
+        mov eax, dword ptr [mem_00A9F654]
+        mov dword ptr [mem_00B5B7FC], ecx
+        mov ecx, dword ptr [mem_00A9F658]
+        mov dword ptr [mem_00B5B800], edx
+        mov edx, dword ptr [mem_00A9F65C]
+        mov dword ptr [mem_00B5B804], eax
+        mov eax, dword ptr [mem_00A9F660]
+        mov dword ptr [mem_00B5B808], ecx
+        mov ecx, dword ptr [mem_00A9F664]
+        mov dword ptr [mem_00B5B80C], edx
+        mov dword ptr [mem_00B5B810], eax
+        mov edx, dword ptr [mem_00A9F668]
+        mov eax, dword ptr [mem_00A9F66C]
+        mov dword ptr [mem_00B5B814], ecx
+        mov ecx, dword ptr [mem_00A9F670]
+        mov dword ptr [mem_00B5B818], edx
+        mov edx, dword ptr [mem_00A9F674]
+        mov dword ptr [mem_00B5B81C], eax
+        mov eax, dword ptr [mem_00A9F678]
+        mov dword ptr [mem_00B5B820], ecx
+        mov ecx, dword ptr [mem_00A9F67C]
+        mov dword ptr [mem_00B5B824], edx
+        mov edx, dword ptr [mem_00A9F680]
+        mov dword ptr [mem_00B5B828], eax
+        mov eax, dword ptr [mem_00A9F684]
+        mov dword ptr [mem_00B5B82C], ecx
+        mov ecx, dword ptr [mem_00A9F688]
+        mov dword ptr [mem_00B5B830], edx
+        mov edx, dword ptr [mem_00A9F68C]
+        mov dword ptr [mem_00B5B834], eax
+        mov eax, dword ptr [mem_00A9F690]
+        mov dword ptr [mem_00B5B838], ecx
+        mov ecx, dword ptr [mem_00A9F694]
+        mov dword ptr [mem_00B5B83C], edx
+        mov edx, dword ptr [mem_00A9F698]
+        mov dword ptr [mem_00B5B840], eax
+        mov eax, dword ptr [mem_00A9F69C]
+        mov dword ptr [mem_00B5B844], ecx
+        mov ecx, dword ptr [mem_00A9F6A0]
+        mov dword ptr [mem_00B5B848], edx
+        mov edx, dword ptr [mem_00A9F6A4]
+        mov dword ptr [mem_00B5B84C], eax
+        mov eax, dword ptr [mem_00A9F6A8]
+        mov dword ptr [mem_00B5B850], ecx
+        mov ecx, dword ptr [mem_00A9F6AC]
+        mov dword ptr [mem_00B5B854], edx
+        mov edx, dword ptr [mem_00A9F6B0]
+        mov dword ptr [mem_00B5B858], eax
+        mov eax, dword ptr [mem_00A9F6B4]
+        mov dword ptr [mem_00B5B85C], ecx
+        mov ecx, dword ptr [mem_00A9F6B8]
+        mov dword ptr [mem_00B5B860], edx
+        mov edx, dword ptr [mem_00A9F6BC]
+        mov dword ptr [mem_00B5B864], eax
+        mov eax, dword ptr [mem_00A9F6C0]
+        mov dword ptr [mem_00B5B868], ecx
+        mov ecx, dword ptr [mem_00A9F6C4]
+        mov dword ptr [mem_00B5B86C], edx
+        mov edx, dword ptr [mem_00A9F6C8]
+        mov dword ptr [mem_00B5B870], eax
+        mov eax, dword ptr [mem_00A9F6CC]
+        mov dword ptr [mem_00B5B874], ecx
+        mov ecx, dword ptr [mem_00A9F6D0]
+        mov dword ptr [mem_00B5B878], edx
+        mov edx, dword ptr [mem_00A9F6D4]
+        mov dword ptr [mem_00B5B87C], eax
+        mov eax, dword ptr [mem_00A9F6D8]
+        mov dword ptr [mem_00B5B880], ecx
+        mov ecx, dword ptr [mem_00A9F6DC]
+        mov dword ptr [mem_00B5B884], edx
+        mov edx, dword ptr [mem_00A9F6E0]
+        mov dword ptr [mem_00B5B888], eax
+        mov eax, dword ptr [mem_00A9F6E4]
+        mov dword ptr [mem_00B5B88C], ecx
+        mov ecx, dword ptr [mem_00A9F6E8]
+        mov dword ptr [mem_00B5B890], edx
+        mov edx, dword ptr [mem_00A9F6EC]
+        mov dword ptr [mem_00B5B894], eax
+        mov eax, dword ptr [mem_00A9F6F0]
+        mov dword ptr [mem_00B5B898], ecx
+        mov ecx, dword ptr [mem_00A9F6F4]
+        mov dword ptr [mem_00B5B89C], edx
+        mov edx, dword ptr [mem_00A9F6F8]
+        mov dword ptr [mem_00B5B8A0], eax
+        mov eax, dword ptr [mem_00A9F6FC]
+        mov dword ptr [mem_00B5B8A4], ecx
+        mov ecx, dword ptr [mem_00A9F700]
+        mov dword ptr [mem_00B5B8A8], edx
+        mov edx, dword ptr [mem_00A9F704]
+        mov dword ptr [mem_00B5B8AC], eax
+        mov dword ptr [mem_00B5B8B0], ecx
+        mov dword ptr [mem_00B5B8B4], edx
+        mov eax, dword ptr [mem_00A9F708]
+        mov ecx, dword ptr [mem_00A9F70C]
+        mov edx, dword ptr [mem_00A9F710]
+        mov dword ptr [mem_00B5B8B8], eax
+        mov eax, dword ptr [mem_00A9F714]
+        mov dword ptr [mem_00B5B8BC], ecx
+        mov ecx, dword ptr [mem_00A9F718]
+        mov dword ptr [mem_00B5B8C0], edx
+        mov edx, dword ptr [mem_00A9F71C]
+        mov dword ptr [mem_00B5B8C4], eax
+        mov eax, dword ptr [mem_00A9F720]
+        mov dword ptr [mem_00B5B8C8], ecx
+        mov ecx, dword ptr [mem_00A9F724]
+        mov dword ptr [mem_00B5B8CC], edx
+        mov edx, dword ptr [mem_00A9F728]
+        mov dword ptr [mem_00B5B8D0], eax
+        mov eax, dword ptr [mem_00A9F72C]
+        mov dword ptr [mem_00B5B8D4], ecx
+        mov ecx, dword ptr [mem_00A9F730]
+        mov dword ptr [mem_00B5B8D8], edx
+        mov edx, dword ptr [mem_00A9F734]
+        mov dword ptr [mem_00B5B8DC], eax
+        mov eax, dword ptr [mem_00A9F738]
+        mov dword ptr [mem_00B5B8E0], ecx
+        mov ecx, dword ptr [mem_00A9F73C]
+        mov dword ptr [mem_00B5B8E4], edx
+        mov edx, dword ptr [mem_00A9F740]
+        mov dword ptr [mem_00B5B8E8], eax
+        mov eax, dword ptr [mem_00A9F744]
+        mov dword ptr [mem_00B5B8EC], ecx
+        mov ecx, dword ptr [mem_00A9F748]
+        mov dword ptr [mem_00B5B8F0], edx
+        mov edx, dword ptr [mem_00A9F74C]
+        mov dword ptr [mem_00B5B8F4], eax
+        mov eax, dword ptr [mem_00A9F750]
+        mov dword ptr [mem_00B5B8F8], ecx
+        mov ecx, dword ptr [mem_00A9F754]
+        mov dword ptr [mem_00B5B8FC], edx
+        mov edx, dword ptr [mem_00A9F758]
+        mov dword ptr [mem_00B5B900], eax
+        mov eax, dword ptr [mem_00A9F75C]
+        mov dword ptr [mem_00B5B904], ecx
+        mov ecx, dword ptr [mem_00A9F760]
+        mov dword ptr [mem_00B5B908], edx
+        mov edx, dword ptr [mem_00A9F764]
+        mov dword ptr [mem_00B5B90C], eax
+        mov eax, dword ptr [mem_00A9F768]
+        mov dword ptr [mem_00B5B910], ecx
+        mov ecx, dword ptr [mem_00A9F76C]
+        mov dword ptr [mem_00B5B914], edx
+        mov edx, dword ptr [mem_00A9F770]
+        mov dword ptr [mem_00B5B918], eax
+        mov eax, dword ptr [mem_00A9F774]
+        mov dword ptr [mem_00B5B91C], ecx
+        mov ecx, dword ptr [mem_00A9F778]
+        mov dword ptr [mem_00B5B920], edx
+        mov edx, dword ptr [mem_00A9F77C]
+        mov dword ptr [mem_00B5B924], eax
+        mov eax, dword ptr [mem_00A9F780]
+        mov dword ptr [mem_00B5B928], ecx
+        mov ecx, dword ptr [mem_00A9F784]
+        mov dword ptr [mem_00B5B92C], edx
+        mov edx, dword ptr [mem_00A9F788]
+        mov dword ptr [mem_00B5B930], eax
+        mov eax, dword ptr [mem_00A9F78C]
+        mov dword ptr [mem_00B5B934], ecx
+        mov ecx, dword ptr [mem_00A9F790]
+        mov dword ptr [mem_00B5B938], edx
+        mov edx, dword ptr [mem_00A9F794]
+        mov dword ptr [mem_00B5B93C], eax
+        mov eax, dword ptr [mem_00A9F798]
+        mov dword ptr [mem_00B5B940], ecx
+        mov ecx, dword ptr [mem_00A9F79C]
+        mov dword ptr [mem_00B5B944], edx
+        mov edx, dword ptr [mem_00A9F7A0]
+        mov dword ptr [mem_00B5B948], eax
+        mov eax, dword ptr [mem_00A9F7A4]
+        mov dword ptr [mem_00B5B94C], ecx
+        mov ecx, dword ptr [mem_00A9F7A8]
+        mov dword ptr [mem_00B5B950], edx
+        mov dword ptr [mem_00B5B954], eax
+        mov edx, dword ptr [mem_00A9F7AC]
+        mov eax, dword ptr [mem_00A9F7B0]
+        mov dword ptr [mem_00B5B958], ecx
+        mov ecx, dword ptr [mem_00A9F7B4]
+        mov dword ptr [mem_00B5B95C], edx
+        mov edx, dword ptr [mem_00A9F7B8]
+        mov dword ptr [mem_00B5B960], eax
+        mov eax, dword ptr [mem_00A9F7BC]
+        mov dword ptr [mem_00B5B964], ecx
+        mov ecx, dword ptr [mem_00A9F7C0]
+        mov dword ptr [mem_00B5B968], edx
+        mov edx, dword ptr [mem_00A9F7C4]
+        mov dword ptr [mem_00B5B96C], eax
+        mov eax, dword ptr [mem_00A9F7C8]
+        mov dword ptr [mem_00B5B970], ecx
+        mov ecx, dword ptr [mem_00A9F7CC]
+        mov dword ptr [mem_00B5B974], edx
+        mov edx, dword ptr [mem_00A9F7D0]
+        mov dword ptr [mem_00B5B978], eax
+        mov eax, dword ptr [mem_00A9F7D4]
+        mov dword ptr [mem_00B5B97C], ecx
+        mov ecx, dword ptr [mem_00A9F7D8]
+        mov dword ptr [mem_00B5B980], edx
+        mov edx, dword ptr [mem_00A9F7DC]
+        mov dword ptr [mem_00B5B984], eax
+        mov eax, dword ptr [mem_00A9F7E0]
+        mov dword ptr [mem_00B5B988], ecx
+        mov ecx, dword ptr [mem_00A9F7E4]
+        mov dword ptr [mem_00B5B98C], edx
+        mov edx, dword ptr [mem_00A9F7E8]
+        mov dword ptr [mem_00B5B990], eax
+        mov eax, dword ptr [mem_00A9F7EC]
+        mov dword ptr [mem_00B5B994], ecx
+        mov ecx, dword ptr [mem_00A9F7F0]
+        mov dword ptr [mem_00B5B998], edx
+        mov edx, dword ptr [mem_00A9F7F4]
+        mov dword ptr [mem_00B5B99C], eax
+        mov eax, dword ptr [mem_00A9F7F8]
+        mov dword ptr [mem_00B5B9A0], ecx
+        mov ecx, dword ptr [mem_00A9F7FC]
+        mov dword ptr [mem_00B5B9A4], edx
+        mov edx, dword ptr [mem_00A9F800]
+        mov dword ptr [mem_00B5B9A8], eax
+        mov eax, dword ptr [mem_00A9F804]
+        mov dword ptr [mem_00B5B9AC], ecx
+        mov ecx, dword ptr [mem_00A9F808]
+        mov dword ptr [mem_00B5B9B0], edx
+        mov edx, dword ptr [mem_00A9F80C]
+        mov dword ptr [mem_00B5B9B4], eax
+        mov eax, dword ptr [mem_00A9F810]
+        mov dword ptr [mem_00B5B9B8], ecx
+        mov ecx, dword ptr [mem_00A9F814]
+        mov dword ptr [mem_00B5B9BC], edx
+        mov edx, dword ptr [mem_00A9F818]
+        mov dword ptr [mem_00B5B9C0], eax
+        mov eax, dword ptr [mem_00A9F81C]
+        mov dword ptr [mem_00B5B9C4], ecx
+        mov ecx, dword ptr [mem_00A9F820]
+        mov dword ptr [mem_00B5B9C8], edx
+        mov edx, dword ptr [mem_00A9F824]
+        mov dword ptr [mem_00B5B9CC], eax
+        mov eax, dword ptr [mem_00A9F828]
+        mov dword ptr [mem_00B5B9D0], ecx
+        mov ecx, dword ptr [mem_00A9F82C]
+        mov dword ptr [mem_00B5B9D4], edx
+        mov edx, dword ptr [mem_00A9F830]
+        mov dword ptr [mem_00B5B9D8], eax
+        mov eax, dword ptr [mem_00A9F834]
+        mov dword ptr [mem_00B5B9DC], ecx
+        mov ecx, dword ptr [mem_00A9F838]
+        mov dword ptr [mem_00B5B9E0], edx
+        mov edx, dword ptr [mem_00A9F83C]
+        mov dword ptr [mem_00B5B9E4], eax
+        mov eax, dword ptr [mem_00A9F840]
+        mov dword ptr [mem_00B5B9E8], ecx
+        mov ecx, dword ptr [mem_00A9F844]
+        mov dword ptr [mem_00B5B9EC], edx
+        mov edx, dword ptr [mem_00A9F848]
+        mov dword ptr [mem_00B5B9F0], eax
+        mov dword ptr [mem_00B5B9F4], ecx
+        mov dword ptr [mem_00B5B9F8], edx
+        mov eax, dword ptr [mem_00A9F84C]
+        mov ecx, dword ptr [mem_00A9F850]
+        mov edx, dword ptr [mem_00A9F854]
+        mov dword ptr [mem_00B5B9FC], eax
+        mov eax, dword ptr [mem_00A9F858]
+        mov dword ptr [mem_00B5BA00], ecx
+        mov ecx, dword ptr [mem_00A9F85C]
+        mov dword ptr [mem_00B5BA04], edx
+        mov edx, dword ptr [mem_00A9F860]
+        mov dword ptr [mem_00B5BA08], eax
+        mov eax, dword ptr [mem_00A9F864]
+        mov dword ptr [mem_00B5BA0C], ecx
+        mov ecx, dword ptr [mem_00A9F868]
+        mov dword ptr [mem_00B5BA10], edx
+        mov edx, dword ptr [mem_00A9F86C]
+        mov dword ptr [mem_00B5BA14], eax
+        mov eax, dword ptr [mem_00A9F870]
+        mov dword ptr [mem_00B5BA18], ecx
+        mov ecx, dword ptr [mem_00A9F874]
+        mov dword ptr [mem_00B5BA1C], edx
+        mov edx, dword ptr [mem_00A9F878]
+        mov dword ptr [mem_00B5BA20], eax
+        mov eax, dword ptr [mem_00A9F87C]
+        mov dword ptr [mem_00B5BA24], ecx
+        mov ecx, dword ptr [mem_00A9F880]
+        mov dword ptr [mem_00B5BA28], edx
+        mov edx, dword ptr [mem_00A9F884]
+        mov dword ptr [mem_00B5BA2C], eax
+        mov eax, dword ptr [mem_00A9F888]
+        mov dword ptr [mem_00B5BA30], ecx
+        mov ecx, dword ptr [mem_00A9F88C]
+        mov dword ptr [mem_00B5BA34], edx
+        mov edx, dword ptr [mem_00A9F890]
+        mov dword ptr [mem_00B5BA38], eax
+        mov eax, dword ptr [mem_00A9F894]
+        mov dword ptr [mem_00B5BA3C], ecx
+        mov ecx, dword ptr [mem_00A9F898]
+        mov dword ptr [mem_00B5BA40], edx
+        mov edx, dword ptr [mem_00A9F89C]
+        mov dword ptr [mem_00B5BA44], eax
+        mov eax, dword ptr [mem_00A9F8A0]
+        mov dword ptr [mem_00B5BA48], ecx
+        mov ecx, dword ptr [mem_00A9F8A4]
+        mov dword ptr [mem_00B5BA4C], edx
+        mov edx, dword ptr [mem_00A9F8A8]
+        mov dword ptr [mem_00B5BA50], eax
+        mov eax, dword ptr [mem_00A9F8AC]
+        mov dword ptr [mem_00B5BA54], ecx
+        mov ecx, dword ptr [mem_00A9F8B0]
+        mov dword ptr [mem_00B5BA58], edx
+        mov edx, dword ptr [mem_00A9F8B4]
+        mov dword ptr [mem_00B5BA5C], eax
+        mov eax, dword ptr [mem_00A9F8B8]
+        mov dword ptr [mem_00B5BA60], ecx
+        mov ecx, dword ptr [mem_00A9F8BC]
+        mov dword ptr [mem_00B5BA64], edx
+        mov edx, dword ptr [mem_00A9F8C0]
+        mov dword ptr [mem_00B5BA68], eax
+        mov eax, dword ptr [mem_00A9F8C4]
+        mov dword ptr [mem_00B5BA6C], ecx
+        mov ecx, dword ptr [mem_00A9F8C8]
+        mov dword ptr [mem_00B5BA70], edx
+        mov edx, dword ptr [mem_00A9F8CC]
+        mov dword ptr [mem_00B5BA74], eax
+        mov eax, dword ptr [mem_00A9F8D0]
+        mov dword ptr [mem_00B5BA78], ecx
+        mov ecx, dword ptr [mem_00A9F8D4]
+        mov dword ptr [mem_00B5BA7C], edx
+        mov edx, dword ptr [mem_00A9F8D8]
+        mov dword ptr [mem_00B5BA80], eax
+        mov eax, dword ptr [mem_00A9F8DC]
+        mov dword ptr [mem_00B5BA84], ecx
+        mov ecx, dword ptr [mem_00A9F8E0]
+        mov dword ptr [mem_00B5BA88], edx
+        mov edx, dword ptr [mem_00A9F8E4]
+        mov dword ptr [mem_00B5BA8C], eax
+        mov eax, dword ptr [mem_00A9F8E8]
+        mov dword ptr [mem_00B5BA90], ecx
+        mov ecx, dword ptr [mem_00A9F8EC]
+        mov dword ptr [mem_00B5BA94], edx
+        mov dword ptr [mem_00B5BA98], eax
+        mov edx, dword ptr [mem_00A9F8F0]
+        mov eax, dword ptr [mem_00A9F8F4]
+        mov dword ptr [mem_00B5BA9C], ecx
+        mov ecx, dword ptr [mem_00A9F8F8]
+        mov dword ptr [mem_00B5BAA0], edx
+        mov edx, dword ptr [mem_00A9F8FC]
+        mov dword ptr [mem_00B5BAA4], eax
+        mov eax, dword ptr [mem_00A9F900]
+        mov dword ptr [mem_00B5BAA8], ecx
+        mov ecx, dword ptr [mem_00A9F904]
+        mov dword ptr [mem_00B5BAAC], edx
+        mov edx, dword ptr [mem_00A9F908]
+        mov dword ptr [mem_00B5BAB0], eax
+        mov eax, dword ptr [mem_00A9F90C]
+        mov dword ptr [mem_00B5BAB4], ecx
+        mov ecx, dword ptr [mem_00A9F910]
+        mov dword ptr [mem_00B5BAB8], edx
+        mov edx, dword ptr [mem_00A9F914]
+        mov dword ptr [mem_00B5BABC], eax
+        mov eax, dword ptr [mem_00A9F918]
+        mov dword ptr [mem_00B5BAC0], ecx
+        mov ecx, dword ptr [mem_00A9F91C]
+        mov dword ptr [mem_00B5BAC4], edx
+        mov edx, dword ptr [mem_00A9F920]
+        mov dword ptr [mem_00B5BAC8], eax
+        mov eax, dword ptr [mem_00A9F924]
+        mov dword ptr [mem_00B5BACC], ecx
+        mov ecx, dword ptr [mem_00A9F928]
+        mov dword ptr [mem_00B5BAD0], edx
+        mov edx, dword ptr [mem_00A9F92C]
+        mov dword ptr [mem_00B5BAD4], eax
+        mov eax, dword ptr [mem_00A9F930]
+        mov dword ptr [mem_00B5BAD8], ecx
+        mov ecx, dword ptr [mem_00A9F934]
+        mov dword ptr [mem_00B5BADC], edx
+        mov edx, dword ptr [mem_00A9F938]
+        mov dword ptr [mem_00B5BAE0], eax
+        mov eax, dword ptr [mem_00A9F93C]
+        mov dword ptr [mem_00B5BAE4], ecx
+        mov ecx, dword ptr [mem_00A9F940]
+        mov dword ptr [mem_00B5BAE8], edx
+        mov edx, dword ptr [mem_00A9F944]
+        mov dword ptr [mem_00B5BAEC], eax
+        mov eax, dword ptr [mem_00A9F948]
+        mov dword ptr [mem_00B5BAF0], ecx
+        mov ecx, dword ptr [mem_00A9F94C]
+        mov dword ptr [mem_00B5BAF4], edx
+        mov edx, dword ptr [mem_00A9F950]
+        mov dword ptr [mem_00B5BAF8], eax
+        mov eax, dword ptr [mem_00A9F954]
+        mov dword ptr [mem_00B5BAFC], ecx
+        mov ecx, dword ptr [mem_00A9F958]
+        mov dword ptr [mem_00B5BB00], edx
+        mov edx, dword ptr [mem_00A9F95C]
+        mov dword ptr [mem_00B5BB04], eax
+        mov eax, dword ptr [mem_00A9F960]
+        mov dword ptr [mem_00B5BB08], ecx
+        mov ecx, dword ptr [mem_00A9F964]
+        mov dword ptr [mem_00B5BB0C], edx
+        mov edx, dword ptr [mem_00A9F968]
+        mov dword ptr [mem_00B5BB10], eax
+        mov eax, dword ptr [mem_00A9F96C]
+        mov dword ptr [mem_00B5BB14], ecx
+        mov ecx, dword ptr [mem_00A9F970]
+        mov dword ptr [mem_00B5BB18], edx
+        mov edx, dword ptr [mem_00A9F974]
+        mov dword ptr [mem_00B5BB1C], eax
+        mov eax, dword ptr [mem_00A9F978]
+        mov dword ptr [mem_00B5BB20], ecx
+        mov ecx, dword ptr [mem_00A9F97C]
+        mov dword ptr [mem_00B5BB24], edx
+        mov edx, dword ptr [mem_00A9F980]
+        mov dword ptr [mem_00B5BB28], eax
+        mov eax, dword ptr [mem_00A9F984]
+        mov dword ptr [mem_00B5BB2C], ecx
+        mov ecx, dword ptr [mem_00A9F988]
+        mov dword ptr [mem_00B5BB30], edx
+        mov edx, dword ptr [mem_00A9F98C]
+        mov dword ptr [mem_00B5BB34], eax
+        mov dword ptr [mem_00B5BB38], ecx
+        mov dword ptr [mem_00B5BB3C], edx
+        mov eax, dword ptr [mem_00A9F990]
+        mov ecx, dword ptr [mem_00A9F994]
+        mov edx, dword ptr [mem_00A9F998]
+        mov dword ptr [mem_00B5BB40], eax
+        mov eax, dword ptr [mem_00A9F99C]
+        mov dword ptr [mem_00B5BB44], ecx
+        mov ecx, dword ptr [mem_00A9F9A0]
+        mov dword ptr [mem_00B5BB48], edx
+        mov edx, dword ptr [mem_00A9F9A4]
+        mov dword ptr [mem_00B5BB4C], eax
+        mov eax, dword ptr [mem_00A9F9A8]
+        mov dword ptr [mem_00B5BB50], ecx
+        mov ecx, dword ptr [mem_00A9F9AC]
+        mov dword ptr [mem_00B5BB54], edx
+        mov edx, dword ptr [mem_00A9F9B0]
+        mov dword ptr [mem_00B5BB58], eax
+        mov eax, dword ptr [mem_00A9F9B4]
+        mov dword ptr [mem_00B5BB5C], ecx
+        mov ecx, dword ptr [mem_00A9F9B8]
+        mov dword ptr [mem_00B5BB60], edx
+        mov edx, dword ptr [mem_00A9F9BC]
+        mov dword ptr [mem_00B5BB64], eax
+        mov eax, dword ptr [mem_00A9F9C0]
+        mov dword ptr [mem_00B5BB68], ecx
+        mov ecx, dword ptr [mem_00A9F9C4]
+        mov dword ptr [mem_00B5BB6C], edx
+        mov edx, dword ptr [mem_00A9F9C8]
+        mov dword ptr [mem_00B5BB70], eax
+        mov eax, dword ptr [mem_00A9F9CC]
+        mov dword ptr [mem_00B5BB74], ecx
+        mov ecx, dword ptr [mem_00A9F9D0]
+        mov dword ptr [mem_00B5BB78], edx
+        mov edx, dword ptr [mem_00A9F9D4]
+        mov dword ptr [mem_00B5BB7C], eax
+        mov eax, dword ptr [mem_00A9F9D8]
+        mov dword ptr [mem_00B5BB80], ecx
+        mov ecx, dword ptr [mem_00A9F9DC]
+        mov dword ptr [mem_00B5BB84], edx
+        mov edx, dword ptr [mem_00A9F9E0]
+        mov dword ptr [mem_00B5BB88], eax
+        mov eax, dword ptr [mem_00A9F9E4]
+        mov dword ptr [mem_00B5BB8C], ecx
+        mov ecx, dword ptr [mem_00A9F9E8]
+        mov dword ptr [mem_00B5BB90], edx
+        mov edx, dword ptr [mem_00A9F9EC]
+        mov dword ptr [mem_00B5BB94], eax
+        mov eax, dword ptr [mem_00A9F9F0]
+        mov dword ptr [mem_00B5BB98], ecx
+        mov ecx, dword ptr [mem_00A9F9F4]
+        mov dword ptr [mem_00B5BB9C], edx
+        mov edx, dword ptr [mem_00A9F9F8]
+        mov dword ptr [mem_00B5BBA0], eax
+        mov eax, dword ptr [mem_00A9F9FC]
+        mov dword ptr [mem_00B5BBA4], ecx
+        mov ecx, dword ptr [mem_00A9FA00]
+        mov dword ptr [mem_00B5BBA8], edx
+        mov edx, dword ptr [mem_00A9FA04]
+        mov dword ptr [mem_00B5BBAC], eax
+        mov eax, dword ptr [mem_00A9FA08]
+        mov dword ptr [mem_00B5BBB0], ecx
+        mov ecx, dword ptr [mem_00A9FA0C]
+        mov dword ptr [mem_00B5BBB4], edx
+        mov edx, dword ptr [mem_00A9FA10]
+        mov dword ptr [mem_00B5BBB8], eax
+        mov eax, dword ptr [mem_00A9FA14]
+        mov dword ptr [mem_00B5BBBC], ecx
+        mov ecx, dword ptr [mem_00A9FA18]
+        mov dword ptr [mem_00B5BBC0], edx
+        mov edx, dword ptr [mem_00A9FA1C]
+        mov dword ptr [mem_00B5BBC4], eax
+        mov eax, dword ptr [mem_00A9FA20]
+        mov dword ptr [mem_00B5BBC8], ecx
+        mov ecx, dword ptr [mem_00A9FA24]
+        mov dword ptr [mem_00B5BBCC], edx
+        mov edx, dword ptr [mem_00A9FA28]
+        mov dword ptr [mem_00B5BBD0], eax
+        mov eax, dword ptr [mem_00A9FA2C]
+        mov dword ptr [mem_00B5BBD4], ecx
+        mov ecx, dword ptr [mem_00A9FA30]
+        mov dword ptr [mem_00B5BBD8], edx
+        mov dword ptr [mem_00B5BBDC], eax
+        mov edx, dword ptr [mem_00A9FA34]
+        mov eax, dword ptr [mem_00A9FA38]
+        mov dword ptr [mem_00B5BBE0], ecx
+        mov ecx, dword ptr [mem_00A9FA3C]
+        mov dword ptr [mem_00B5BBE4], edx
+        mov edx, dword ptr [mem_00A9FA40]
+        mov dword ptr [mem_00B5BBE8], eax
+        mov eax, dword ptr [mem_00A9FA44]
+        mov dword ptr [mem_00B5BBEC], ecx
+        mov ecx, dword ptr [mem_00A9FA48]
+        mov dword ptr [mem_00B5BBF0], edx
+        mov edx, dword ptr [mem_00A9FA4C]
+        mov dword ptr [mem_00B5BBF4], eax
+        mov eax, dword ptr [mem_00A9FA50]
+        mov dword ptr [mem_00B5BBF8], ecx
+        mov ecx, dword ptr [mem_00A9FA54]
+        mov dword ptr [mem_00B5BBFC], edx
+        mov edx, dword ptr [mem_00A9FA58]
+        mov dword ptr [mem_00B5BC00], eax
+        mov eax, dword ptr [mem_00A9FA5C]
+        mov dword ptr [mem_00B5BC04], ecx
+        mov ecx, dword ptr [mem_00A9FA60]
+        mov dword ptr [mem_00B5BC08], edx
+        mov edx, dword ptr [mem_00A9FA64]
+        mov dword ptr [mem_00B5BC0C], eax
+        mov eax, dword ptr [mem_00A9FA68]
+        mov dword ptr [mem_00B5BC10], ecx
+        mov ecx, dword ptr [mem_00A9FA6C]
+        mov dword ptr [mem_00B5BC14], edx
+        mov edx, dword ptr [mem_00A9FA70]
+        mov dword ptr [mem_00B5BC18], eax
+        mov eax, dword ptr [mem_00A9FA74]
+        mov dword ptr [mem_00B5BC1C], ecx
+        mov ecx, dword ptr [mem_00A9FA78]
+        mov dword ptr [mem_00B5BC20], edx
+        mov edx, dword ptr [mem_00A9FA7C]
+        mov dword ptr [mem_00B5BC24], eax
+        mov eax, dword ptr [mem_00A9FA80]
+        mov dword ptr [mem_00B5BC28], ecx
+        mov ecx, dword ptr [mem_00A9FA84]
+        mov dword ptr [mem_00B5BC2C], edx
+        mov edx, dword ptr [mem_00A9FA88]
+        mov dword ptr [mem_00B5BC30], eax
+        mov eax, dword ptr [mem_00A9FA8C]
+        mov dword ptr [mem_00B5BC34], ecx
+        mov ecx, dword ptr [mem_00A9FA90]
+        mov dword ptr [mem_00B5BC38], edx
+        mov edx, dword ptr [mem_00A9FA94]
+        mov dword ptr [mem_00B5BC3C], eax
+        mov eax, dword ptr [mem_00A9FA98]
+        mov dword ptr [mem_00B5BC40], ecx
+        mov ecx, dword ptr [mem_00A9FA9C]
+        mov dword ptr [mem_00B5BC44], edx
+        mov edx, dword ptr [mem_00A9FAA0]
+        mov dword ptr [mem_00B5BC48], eax
+        mov eax, dword ptr [mem_00A9FAA4]
+        mov dword ptr [mem_00B5BC4C], ecx
+        mov ecx, dword ptr [mem_00A9FAA8]
+        mov dword ptr [mem_00B5BC50], edx
+        mov edx, dword ptr [mem_00A9FAAC]
+        mov dword ptr [mem_00B5BC54], eax
+        mov eax, dword ptr [mem_00A9FAB0]
+        mov dword ptr [mem_00B5BC58], ecx
+        mov ecx, dword ptr [mem_00A9FAB4]
+        mov dword ptr [mem_00B5BC5C], edx
+        mov edx, dword ptr [mem_00A9FAB8]
+        mov dword ptr [mem_00B5BC60], eax
+        mov eax, dword ptr [mem_00A9FABC]
+        mov dword ptr [mem_00B5BC64], ecx
+        mov ecx, dword ptr [mem_00A9FAC0]
+        mov dword ptr [mem_00B5BC68], edx
+        mov edx, dword ptr [mem_00A9FAC4]
+        mov dword ptr [mem_00B5BC6C], eax
+        mov eax, dword ptr [mem_00A9FAC8]
+        mov dword ptr [mem_00B5BC70], ecx
+        mov ecx, dword ptr [mem_00A9FACC]
+        mov dword ptr [mem_00B5BC74], edx
+        mov edx, dword ptr [mem_00A9FAD0]
+        mov dword ptr [mem_00B5BC78], eax
+        mov dword ptr [mem_00B5BC7C], ecx
+        mov dword ptr [mem_00B5BC80], edx
+        mov eax, dword ptr [mem_00A9FAD4]
+        mov ecx, dword ptr [mem_00A9FAD8]
+        mov edx, dword ptr [mem_00A9FADC]
+        mov dword ptr [mem_00B5BC84], eax
+        mov eax, dword ptr [mem_00A9FAE0]
+        mov dword ptr [mem_00B5BC88], ecx
+        mov ecx, dword ptr [mem_00A9FAE4]
+        mov dword ptr [mem_00B5BC8C], edx
+        mov edx, dword ptr [mem_00A9FAE8]
+        mov dword ptr [mem_00B5BC90], eax
+        mov eax, dword ptr [mem_00A9FAEC]
+        mov dword ptr [mem_00B5BC94], ecx
+        mov ecx, dword ptr [mem_00A9FAF0]
+        mov dword ptr [mem_00B5BC98], edx
+        mov edx, dword ptr [mem_00A9FAF4]
+        mov dword ptr [mem_00B5BC9C], eax
+        mov dword ptr [mem_00B5BCA0], ecx
+        mov dword ptr [mem_00B5BCA4], edx
+        mov dword ptr [mem_00B5BCA8], 0x98ec70
+        mov dword ptr [mem_00B5BCAC], 0x98ec64
+        mov byte ptr [mem_00B5BCBC], 0x1
+        ret
+    }
+}
+
