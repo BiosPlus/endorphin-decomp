@@ -297,3 +297,22 @@ extern "C" __declspec(naked) void __fastcall fn_004B9D50(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00500030] Properties::SetType<PointainerWithUndo<PointainerSet<NMData::ValuePtrData>>, Properties::GetTerminalParent>::vfunc_11 (32 bytes)
+extern "C" void ext_004FE000();
+
+extern "C" __declspec(naked) void __fastcall fn_00500030(void* self, int edx_unused, void* a1, void* a2, void* a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [esp + 0xc]
+        push edx
+        push eax
+        call ext_004FE000
+        ret 0x10
+    }
+}
