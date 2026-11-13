@@ -581,3 +581,276 @@ extern "C" __declspec(naked) void __cdecl fn_0085DA90(void) {
         ret
     }
 }
+
+// [0x0085D5F0] sub_0085D5F0 (556 bytes)
+extern "C" int mem_009241D4;
+extern "C" int mem_009241D8;
+extern "C" int mem_00AB964C;
+extern "C" int mem_00BC70E4;
+extern "C" int mem_00BC70D8;
+extern "C" int mem_00BC70BC;
+extern "C" int mem_00BC70F4;
+extern "C" int mem_00BC6724;
+extern "C" int mem_00BC70EC;
+extern "C" int mem_00BC7100;
+extern "C" int mem_00BC70C0;
+extern "C" int mem_00BC672C;
+extern "C" int mem_00BC70B8;
+extern "C" int mem_00BC6718;
+extern "C" int mem_00BC671C;
+extern "C" int mem_00BC70FC;
+extern "C" int mem_00BC70E8;
+extern "C" int mem_00BC6658;
+extern "C" int mem_00BC6734;
+extern "C" int mem_00BC70F0;
+extern "C" int mem_00BC70F8;
+extern "C" int mem_00BC6730;
+extern "C" int mem_00BC6728;
+
+extern "C" __declspec(naked) int __cdecl fn_0085D5F0(void) {
+    __asm {
+        push esi
+        push edi
+        push 0xac01bc
+        call dword ptr [mem_009241D4]
+        mov esi, eax
+        test esi, esi
+        jne L_start
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_start:
+        push 0xac01c8
+        mov edi, dword ptr [mem_009241D8]
+        push esi
+        call edi
+        mov dword ptr [mem_00AB964C], eax
+        test eax, eax
+        jne L_1
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_1:
+        push 0xac01d4
+        push esi
+        call edi
+        mov dword ptr [mem_00BC70E4], eax
+        test eax, eax
+        jne L_2
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_2:
+        push 0xac01dc
+        push esi
+        call edi
+        mov dword ptr [mem_00BC70D8], eax
+        test eax, eax
+        jne L_3
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_3:
+        push 0xac01e4
+        push esi
+        call edi
+        mov dword ptr [mem_00BC70BC], eax
+        test eax, eax
+        jne L_4
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_4:
+        push 0xac01ec
+        push esi
+        call edi
+        mov dword ptr [mem_00BC70F4], eax
+        test eax, eax
+        jne L_5
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_5:
+        push 0xac01f8
+        push esi
+        call edi
+        mov dword ptr [mem_00BC6724], eax
+        test eax, eax
+        jne L_6
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_6:
+        push 0xac0200
+        push esi
+        call edi
+        mov dword ptr [mem_00BC70EC], eax
+        test eax, eax
+        jne L_7
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_7:
+        push 0xac020c
+        push esi
+        call edi
+        mov dword ptr [mem_00BC7100], eax
+        test eax, eax
+        jne L_8
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_8:
+        push 0xac0218
+        push esi
+        call edi
+        mov dword ptr [mem_00BC70C0], eax
+        test eax, eax
+        jne L_9
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_9:
+        push 0xac0224
+        push esi
+        call edi
+        mov dword ptr [mem_00BC672C], eax
+        test eax, eax
+        jne L_10
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_10:
+        push 0xac0230
+        push esi
+        call edi
+        mov dword ptr [mem_00BC70B8], eax
+        test eax, eax
+        jne L_11
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_11:
+        push 0xac0240
+        push esi
+        call edi
+        mov dword ptr [mem_00BC6718], eax
+        test eax, eax
+        jne L_12
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_12:
+        push 0xac024c
+        push esi
+        call edi
+        mov dword ptr [mem_00BC671C], eax
+        test eax, eax
+        jne L_13
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_13:
+        push 0xac025c
+        push esi
+        call edi
+        mov dword ptr [mem_00BC70FC], eax
+        test eax, eax
+        jne L_14
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_14:
+        push 0xac026c
+        push esi
+        call edi
+        mov dword ptr [mem_00BC70E8], eax
+        test eax, eax
+        jne L_15
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_15:
+        push 0xac027c
+        push esi
+        call edi
+        mov dword ptr [mem_00BC6658], eax
+        test eax, eax
+        jne L_16
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_16:
+        push 0xac0288
+        push esi
+        call edi
+        mov dword ptr [mem_00BC6734], eax
+        test eax, eax
+        jne L_17
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_17:
+        push 0xac0294
+        push esi
+        call edi
+        mov dword ptr [mem_00BC70F0], eax
+        test eax, eax
+        jne L_18
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_18:
+        push 0xac029c
+        push esi
+        call edi
+        mov dword ptr [mem_00BC70F8], eax
+        test eax, eax
+        jne L_19
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_19:
+        push 0xac02a4
+        push esi
+        call edi
+        mov dword ptr [mem_00BC6730], eax
+        test eax, eax
+        jne L_20
+        mov eax, 1
+        pop edi
+        pop esi
+        ret
+    L_20:
+        push 0xac02ac
+        push esi
+        call edi
+        pop edi
+        mov dword ptr [mem_00BC6728], eax
+        pop esi
+        cmp eax, 1
+        sbb eax, eax
+        neg eax
+        ret
+    }
+}
