@@ -2,6 +2,7 @@
 
 extern "C" int __cdecl ext_007D8700(int a1);
 extern "C" int __cdecl ext_007C9260(int a1);
+extern "C" void ext_007C9860();
 
 // [0x0065A070] MagnetJoint::vfunc_49 (25 bytes)
 extern "C" int __fastcall fn_0065A070(unsigned char* self) {
@@ -133,4 +134,29 @@ extern "C" void __fastcall fn_0065A100(unsigned char* self, int edx_unused, cons
     Mat16_0065A100 tmp = *src;
     ext_007D8700(*(int*)(self + 0x6C));
     ext_007C9AA0(*(int*)(self + 0x6C), tmp.m[12], tmp.m[13], tmp.m[14], 1);
+}
+
+// [0x0065A0D0] MagnetJoint::vfunc_7 (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0065A0D0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x6c]
+        push eax
+        call ext_007D8700
+        push eax
+        call ext_007C9260
+        add esp, 8
+        test eax, eax
+        je loc_65A0FB
+        mov ecx, dword ptr [esi + 0x6c]
+        push ecx
+        call ext_007D8700
+        push eax
+        call ext_007C9860
+        add esp, 8
+    loc_65A0FB:
+        pop esi
+        ret
+    }
 }
