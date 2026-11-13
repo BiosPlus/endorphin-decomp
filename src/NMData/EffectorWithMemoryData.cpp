@@ -119,3 +119,82 @@ extern "C" __declspec(naked) void __fastcall fn_0060CE80(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0060C910] NMData::EffectorWithMemoryData::vfunc_13 (175 bytes)
+extern "C" void ext_0046C0A0(void*, void*);
+extern "C" int __fastcall ext_0063F530(void*, int, int, int, int);
+extern "C" void __fastcall ext_0060C640(void*, int, void*);
+extern "C" void ext_0053F5F0(void*, void*);
+extern "C" int mem_00A9F0BC;
+extern "C" int mem_00A9EFEC;
+extern "C" int mem_00B53A34;
+extern "C" int mem_00B53B30;
+extern "C" int mem_00B53AB0;
+extern "C" int mem_00B53A70;
+extern "C" int mem_00B53AF0;
+
+extern "C" __declspec(naked) void __fastcall fn_0060C910(void* self, int, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        push esi
+        mov edi, ecx
+        call ext_0060C640
+        mov eax, dword ptr [mem_00A9F0BC]
+        push 1
+        push 0
+        push eax
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, offset mem_00B53A34
+        je L1
+        cmp eax, offset mem_00B53B30
+        je L1
+        cmp eax, offset mem_00B53AB0
+        je L1
+        cmp eax, offset mem_00B53A70
+        je L1
+        cmp eax, offset mem_00B53AF0
+        jne L2
+    L1:
+        mov eax, offset mem_00B53B30
+    L2:
+        lea ecx, [esp + 0xC]
+        push ecx
+        lea edx, [edi + 0x60]
+        push edx
+        mov dword ptr [esp + 0x14], eax
+        call ext_0053F5F0
+        mov eax, dword ptr [mem_00A9EFEC]
+        add esp, 8
+        push 1
+        push 0
+        push eax
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, offset mem_00B53A34
+        je L3
+        cmp eax, offset mem_00B53B30
+        je L3
+        cmp eax, offset mem_00B53AB0
+        je L3
+        cmp eax, offset mem_00B53A70
+        je L3
+        cmp eax, offset mem_00B53AF0
+        jne L4
+    L3:
+        mov eax, offset mem_00B53B30
+    L4:
+        lea ecx, [esp + 0xC]
+        push ecx
+        add edi, 0x5C
+        push edi
+        mov dword ptr [esp + 0x14], eax
+        call ext_0046C0A0
+        add esp, 8
+        pop edi
+        pop esi
+        ret 4
+    }
+}
