@@ -4291,3 +4291,28 @@ extern "C" __declspec(naked) void __fastcall fn_005E2240(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005E2280] sub_005E2280 (57 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005E2280(void* self, int edx_unused, float a1) {
+    __asm {
+        sub esp, 0xc
+        fldz
+        push esi
+        fst dword ptr [esp + 0xc]
+        lea eax, [esp + 0x4]
+        fst dword ptr [esp + 0x8]
+        push eax
+        fstp dword ptr [esp + 0x8]
+        mov esi, ecx
+        call ext_005E1E10
+        fld dword ptr [esp + 0x14]
+        lea ecx, [esp + 0x4]
+        fstp dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_005E1F70
+        pop esi
+        add esp, 0xc
+        ret 4
+    }
+}
