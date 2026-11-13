@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11383 / 24049` (**47.33%**) — `8291` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `884357 / 4496005 bytes` (**19.67%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11384 / 24049` (**47.34%**) — `8292` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `884732 / 4496005 bytes` (**19.68%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -22,18 +22,18 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P60-70 (122-159B)** | 954 / 2405 | 39.67% | 128410 / 339038 | 37.87% | 1451 fn |
 | **P70-80 (159-178B)** | 235 / 2405 | 9.77% | 39567 / 400567 | 9.88% | 2170 fn |
 | **P80-90 (178-335B)** | 793 / 2405 | 32.97% | 189937 / 583211 | 32.57% | 1612 fn |
-| **P90-100 (335-36100B)** | 266 / 2404 | 11.06% | 114539 / 2392860 | 4.79% | 2138 fn |
+| **P90-100 (335-36100B)** | 267 / 2404 | 11.11% | 114914 / 2392860 | 4.80% | 2137 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6748 | 515897 | 81.39% |
-| `claude-haiku-5.5@low` | 483 | 114041 | 5.83% |
+| `claude-haiku-5.5@medium` | 6748 | 515897 | 81.38% |
+| `claude-haiku-5.5@low` | 483 | 114041 | 5.82% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.39% |
 | `gemini-3.8-flash@low` | 273 | 65269 | 3.29% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.97% |
-| `gemini-4-hydrogen@low` | 136 | 40750 | 1.64% |
+| `gemini-4-hydrogen@low` | 137 | 41125 | 1.65% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.30% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.12% |
 | `gemini-3.8-flash@medium` | 4 | 1334 | 0.05% |
