@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11744 / 24049` (**48.83%**) — `8652` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1019371 / 4496005 bytes` (**22.67%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11745 / 24049` (**48.84%**) — `8653` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1019596 / 4496005 bytes` (**22.68%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -21,18 +21,18 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P50-60 (91-122B)** | 1262 / 2405 | 52.47% | 136058 / 256906 | 52.96% | 1143 fn |
 | **P60-70 (122-159B)** | 981 / 2405 | 40.79% | 132147 / 339038 | 38.98% | 1424 fn |
 | **P70-80 (159-178B)** | 250 / 2405 | 10.40% | 42111 / 400567 | 10.51% | 2155 fn |
-| **P80-90 (178-335B)** | 840 / 2405 | 34.93% | 201440 / 583211 | 34.54% | 1565 fn |
+| **P80-90 (178-335B)** | 841 / 2405 | 34.97% | 201665 / 583211 | 34.58% | 1564 fn |
 | **P90-100 (335-36100B)** | 439 / 2404 | 18.26% | 224087 / 2392860 | 9.36% | 1965 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6748 | 515897 | 77.99% |
+| `claude-haiku-5.5@medium` | 6748 | 515897 | 77.98% |
 | `claude-haiku-5.5@low` | 638 | 166827 | 7.37% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.17% |
 | `gemini-3.8-flash@low` | 357 | 97854 | 4.13% |
-| `gemini-4-hydrogen@low` | 256 | 89224 | 2.96% |
+| `gemini-4-hydrogen@low` | 257 | 89449 | 2.97% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.88% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.29% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.12% |
