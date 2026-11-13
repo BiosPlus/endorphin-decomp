@@ -446,3 +446,134 @@ L_no_wrap:
         ret
     }
 }
+
+// [0x0086B700] sub_0086B700 (333 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0086B700(void) {
+    __asm {
+        sub esp, 0x5c
+        push ebx
+        push esi
+        mov ebx, dword ptr [esp + 0x6c]
+        push edi
+        push ebp
+        cmp ebx, 0x13d
+        jne general
+        xor di, di
+        mov edx, dword ptr [esp + 0x70]
+        mov ecx, dword ptr [esp + 0x78]
+    copy_loop:
+        movsx eax, di
+        shl eax, 0x2
+        inc di
+        mov esi, dword ptr [eax + edx]
+        mov dword ptr [ecx + eax], esi
+        movsx eax, di
+        cmp eax, 0x9
+        jbe copy_loop
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x5c
+        ret
+    general:
+        xor ecx, ecx
+        xor edx, edx
+    zero_loop:
+        movsx eax, cx
+        inc cx
+        mov dword ptr [esp + 4*eax + 0x18], edx
+        movsx ebp, cx
+        cmp ebp, 0x14
+        jbe zero_loop
+        mov si, 0x14
+        mov eax, ebx
+        shr eax, 0x5
+        sub si, ax
+        and bx, 0x1f
+        mov word ptr [esp + 0x16], ax
+        je bx_zero
+        mov ax, 0x20
+        mov edx, dword ptr [esp + 0x70]
+        mov word ptr [esp + 0x14], 0x9
+        sub ax, bx
+        mov word ptr [esp + 0x12], ax
+    shl_loop:
+        movsx edi, si
+        movsx eax, word ptr [esp + 0x14]
+        dec si
+        mov cl, bl
+        mov eax, dword ptr [edx + 4*eax]
+        mov ebp, eax
+        shl ebp, cl
+        mov cl, byte ptr [esp + 0x12]
+        or dword ptr [esp + 4*edi + 0x18], ebp
+        movsx edi, si
+        shr eax, cl
+        or dword ptr [esp + 4*edi + 0x18], eax
+        dec word ptr [esp + 0x14]
+        jns shl_loop
+        jmp stage_c
+    bx_zero:
+        mov cx, 0x9
+        mov edx, dword ptr [esp + 0x70]
+    zero_shift_loop:
+        movsx edi, si
+        movsx eax, cx
+        dec si
+        mov ebx, dword ptr [edx + 4*eax]
+        or dword ptr [esp + 4*edi + 0x18], ebx
+        dec cx
+        jns zero_shift_loop
+    stage_c:
+        mov dx, 0xb
+        mov ecx, 0x14
+        movsx eax, word ptr [esp + 0x16]
+        mov si, 0x14
+        sub ecx, eax
+        cmp ecx, 0x14
+        ja finish
+    c_loop:
+        movsx eax, si
+        movsx ebp, dx
+        dec dx
+        lea edi, [esp + 4*eax + 0x18]
+        dec si
+        mov ebx, dword ptr [esp + 4*ebp + 0x18]
+        movsx eax, dx
+        shr ebx, 0x1d
+        or ebx, dword ptr [edi]
+        mov dword ptr [edi], ebx
+        mov eax, dword ptr [esp + 4*eax + 0x18]
+        shl eax, 0x3
+        or eax, ebx
+        movsx ebx, si
+        mov dword ptr [edi], eax
+        cmp ebx, ecx
+        jae c_loop
+    finish:
+        mov eax, dword ptr [esp + 0x44]
+        mov esi, 0x0
+        and eax, 0x10000000
+        mov ecx, dword ptr [esp + 0x78]
+        cmp eax, 0x1
+        adc esi, -0x1
+        xor di, di
+    out_loop:
+        movsx eax, di
+        inc di
+        mov edx, dword ptr [esp + 4*eax + 0x44]
+        xor edx, esi
+        mov dword ptr [ecx + 4*eax], edx
+        movsx eax, di
+        cmp eax, 0x9
+        jbe out_loop
+        pop ebp
+        and dword ptr [ecx], 0x0fffffff
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x5c
+        ret
+    }
+}
