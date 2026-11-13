@@ -5224,3 +5224,147 @@ extern "C" __declspec(naked) void* __fastcall fn_00409320(void* self) {
         ret
     }
 }
+
+// [0x004091D0] sub_004091D0 (324 bytes)
+extern "C" void ext_004090C0();
+extern "C" void ext_006A5E4E();
+extern "C" void ext_006A5E72();
+extern "C" void ext_006A5EC0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004091D0(void* self) {
+    __asm {
+        sub     esp, 0x10
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        call    ext_004090C0
+        mov     esi, dword ptr [ecx + 0x130]
+        mov     ebp, dword ptr [mem_00925134]
+        test    al, al
+        lea     edi, [ecx + 0x12c]
+        sete    byte ptr [esp + 0x13]
+        xor     eax, eax
+        cmp     esi, dword ptr [edi + 0x8]
+        mov     dword ptr [esp + 0x18], eax
+        mov     dword ptr [esp + 0x14], eax
+        mov     dword ptr [esp + 0x1c], edi
+        jbe     loc_409210
+        call    ebp
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+loc_409210:
+        mov     ebx, dword ptr [edi + 0x8]
+        cmp     dword ptr [edi + 0x4], ebx
+        jbe     loc_40921a
+        call    ebp
+loc_40921a:
+        cmp     edi, edi
+        je      loc_409220
+        call    ebp
+loc_409220:
+        cmp     esi, ebx
+        je      loc_40930c
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      loc_40922f
+        call    ebp
+loc_40922f:
+        mov     ecx, dword ptr [esi]
+        push    0x5
+        call    ext_006A5E72
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      loc_40923f
+        call    ebp
+loc_40923f:
+        mov     ecx, dword ptr [esi]
+        call    ext_006A5EC0
+        cmp     eax, 0x89
+        sete    bl
+        cmp     byte ptr [esp + 0x13], 0x0
+        je      loc_4092a1
+        test    bl, bl
+        mov     ebp, dword ptr [esp + 0x14]
+        je      loc_409260
+        add     ebp, 0x2
+loc_409260:
+        mov     ecx, dword ptr [esp + 0x1c]
+        mov     al, bl
+        neg     al
+        sbb     eax, eax
+        and     eax, -0x1e
+        add     eax, 0x20
+        cmp     esi, dword ptr [ecx + 0x8]
+        mov     edi, eax
+        jb      loc_40927d
+        call    dword ptr [mem_00925134]
+loc_40927d:
+        mov     edx, dword ptr [esp + 0x18]
+        mov     ecx, dword ptr [esi]
+        push    0x4
+        push    0x20
+        push    edi
+        push    edx
+        push    ebp
+        push    0x0
+        call    ext_006A5E4E
+        neg     bl
+        sbb     ebx, ebx
+        and     ebx, -0x1a
+        add     ebx, 0x22
+        add     dword ptr [esp + 0x14], ebx
+        jmp     loc_4092eb
+loc_4092a1:
+        test    bl, bl
+        mov     ebp, dword ptr [esp + 0x18]
+        je      loc_4092ac
+        add     ebp, 0x2
+loc_4092ac:
+        mov     ecx, dword ptr [esp + 0x1c]
+        mov     al, bl
+        neg     al
+        sbb     eax, eax
+        and     eax, -0x1f
+        add     eax, 0x20
+        cmp     esi, dword ptr [ecx + 0x8]
+        mov     edi, eax
+        jb      loc_4092c9
+        call    dword ptr [mem_00925134]
+loc_4092c9:
+        mov     edx, dword ptr [esp + 0x14]
+        mov     ecx, dword ptr [esi]
+        push    0x4
+        push    edi
+        push    0x20
+        push    ebp
+        push    edx
+        push    0x0
+        call    ext_006A5E4E
+        neg     bl
+        sbb     ebx, ebx
+        and     ebx, -0x1b
+        add     ebx, 0x22
+        add     dword ptr [esp + 0x18], ebx
+loc_4092eb:
+        mov     eax, dword ptr [esp + 0x1c]
+        cmp     esi, dword ptr [eax + 0x8]
+        jb      loc_4092fa
+        call    dword ptr [mem_00925134]
+loc_4092fa:
+        mov     ebp, dword ptr [mem_00925134]
+        mov     edi, dword ptr [esp + 0x1c]
+        add     esi, 0x4
+        jmp     loc_409210
+loc_40930c:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x10
+        ret
+    }
+}
