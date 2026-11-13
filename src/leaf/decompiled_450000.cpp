@@ -5855,3 +5855,390 @@ extern "C" __declspec(naked) void __fastcall fn_00451D30(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00452830] sub_00452830 (1027 bytes)
+extern "C" void ext_0044CF80();
+extern "C" void ext_0044E020();
+extern "C" void ext_0044E100();
+extern "C" void ext_0044DA40();
+extern "C" void ext_0044DA90();
+extern "C" void ext_004512C0();
+extern "C" void ext_00452100();
+extern "C" void ext_0044F740();
+extern "C" void ext_00430380();
+extern "C" void ext_006A5FDA();
+extern "C" void ext_006A5E00();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00925694;
+extern "C" int mem_00925654;
+extern "C" int mem_00ACDB40;
+
+extern "C" __declspec(naked) void __fastcall fn_00452830(void* self) {
+    __asm {
+        sub esp, 0ch
+        push ebx
+        xor bl, bl
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 74h], 0
+        push edi
+        mov byte ptr [esp + 0eh], bl
+        mov byte ptr [esp + 0fh], bl
+        mov byte ptr [esp + 10h], bl
+        mov byte ptr [esp + 11h], bl
+        mov byte ptr [esp + 13h], bl
+        mov byte ptr [esp + 12h], bl
+        je n_h
+        push ebp
+        call ext_0044CF80
+        mov bl, al
+        call ext_0044E020
+        mov ecx, esi
+        mov byte ptr [esp + 12h], al
+        call ext_0044E100
+        push 0
+        push 0
+        mov byte ptr [esp + 1bh], al
+        mov eax, dword ptr [esi + 768h]
+        push 190h
+        push eax
+        call dword ptr [mem_00925694]
+        cmp eax, 1
+        mov ecx, esi
+        sete byte ptr [esp + 16h]
+        call ext_0044DA40
+        mov ecx, esi
+        mov edi, eax
+        call ext_0044DA90
+        mov ebp, eax
+        push ebp
+        mov ecx, esi
+        call ext_004512C0
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp + 1ch], eax
+        call ext_00452100
+        test edi, edi
+        je n_a
+        test ebp, ebp
+        je n_a
+        cmp edi, dword ptr [esp + 18h]
+        je n_a
+        cmp ebp, eax
+        mov byte ptr [esp + 14h], 1
+        jne n_b
+    n_a:
+        mov byte ptr [esp + 14h], 0
+    n_b:
+        test edi, edi
+        pop ebp
+        je n_c
+        test eax, eax
+        mov byte ptr [esp + 11h], 1
+        jne n_d
+    n_c:
+        mov byte ptr [esp + 11h], 0
+    n_d:
+        mov ecx, esi
+        call ext_0044F740
+        test al, al
+        je n_e
+        cmp byte ptr [esi + 0a9h], 0
+        sete al
+        and byte ptr [esp + 10h], al
+        and byte ptr [esp + 11h], al
+    n_e:
+        test bl, bl
+        je n_f
+        cmp byte ptr [esp + 0eh], 0
+        je n_f
+        cmp byte ptr [esp + 0fh], 0
+        je n_f
+        mov ecx, dword ptr [mem_00ACDB40]
+        call ext_00430380
+        test al, al
+        mov byte ptr [esp + 13h], 1
+        je n_g
+    n_f:
+        mov byte ptr [esp + 13h], 0
+    n_g:
+        test bl, bl
+        je n_h
+        cmp byte ptr [esp + 0eh], 0
+        je n_h
+        mov eax, 1
+        jmp n_i
+    n_h:
+        xor eax, eax
+    n_i:
+        push eax
+        lea ecx, [esi + 0ach]
+        call ext_006A5FDA
+        test bl, bl
+        je n_j
+        cmp byte ptr [esp + 0eh], 0
+        je n_j
+        mov eax, 1
+        jmp n_k
+    n_j:
+        xor eax, eax
+    n_k:
+        push eax
+        lea ecx, [esi + 598h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_l
+        cmp byte ptr [esp + 0eh], 0
+        je n_l
+        mov eax, 1
+        jmp n_m
+    n_l:
+        xor eax, eax
+    n_m:
+        push eax
+        lea ecx, [esi + 5fch]
+        call ext_006A5FDA
+        test bl, bl
+        je n_n
+        cmp byte ptr [esp + 0eh], 0
+        je n_n
+        cmp byte ptr [esp + 10h], 0
+        je n_n
+        mov eax, 1
+        jmp n_o
+    n_n:
+        xor eax, eax
+    n_o:
+        push eax
+        lea ecx, [esi + 660h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_p
+        cmp byte ptr [esp + 0eh], 0
+        je n_p
+        cmp byte ptr [esp + 11h], 0
+        je n_p
+        mov eax, 1
+        jmp n_q
+    n_p:
+        xor eax, eax
+    n_q:
+        push eax
+        lea ecx, [esi + 6d4h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_r
+        cmp byte ptr [esp + 0eh], 0
+        je n_r
+        mov eax, 1
+        jmp n_s
+    n_r:
+        xor eax, eax
+    n_s:
+        push eax
+        lea ecx, [esi + 748h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_t
+        cmp byte ptr [esp + 0eh], 0
+        je n_t
+        mov eax, 1
+        jmp n_u
+    n_t:
+        xor eax, eax
+    n_u:
+        push eax
+        lea ecx, [esi + 79ch]
+        call ext_006A5FDA
+        test bl, bl
+        je n_v
+        cmp byte ptr [esp + 0eh], 0
+        je n_v
+        cmp byte ptr [esp + 12h], 0
+        je n_v
+        mov eax, 1
+        jmp n_w
+    n_v:
+        xor eax, eax
+    n_w:
+        push eax
+        lea ecx, [esi + 810h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_x
+        cmp byte ptr [esp + 0eh], 0
+        je n_x
+        cmp byte ptr [esp + 0fh], 0
+        je n_x
+        mov eax, 1
+        jmp n_y
+    n_x:
+        xor eax, eax
+    n_y:
+        push eax
+        lea ecx, [esi + 884h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_z
+        cmp byte ptr [esp + 0eh], 0
+        je n_z
+        cmp byte ptr [esp + 0fh], 0
+        je n_z
+        cmp byte ptr [esp + 12h], 0
+        je n_z
+        mov eax, 1
+        jmp n_aa
+    n_z:
+        xor eax, eax
+    n_aa:
+        push eax
+        lea ecx, [esi + 8f8h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_ab
+        cmp byte ptr [esp + 0eh], 0
+        je n_ab
+        mov eax, 1
+        jmp n_ac
+    n_ab:
+        xor eax, eax
+    n_ac:
+        push eax
+        lea ecx, [esi + 96ch]
+        call ext_006A5FDA
+        test bl, bl
+        je n_ad
+        cmp byte ptr [esp + 0eh], 0
+        je n_ad
+        cmp byte ptr [esp + 0fh], 0
+        je n_ad
+        mov eax, 1
+        jmp n_ae
+    n_ad:
+        xor eax, eax
+    n_ae:
+        push eax
+        lea ecx, [esi + 9c0h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_af
+        cmp byte ptr [esp + 0eh], 0
+        je n_af
+        cmp byte ptr [esp + 0fh], 0
+        je n_af
+        mov eax, 1
+        jmp n_ag
+    n_af:
+        xor eax, eax
+    n_ag:
+        push eax
+        lea ecx, [esi + 0a14h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_ah
+        cmp byte ptr [esp + 0eh], 0
+        je n_ah
+        cmp byte ptr [esp + 0fh], 0
+        je n_ah
+        mov eax, 1
+        jmp n_ai
+    n_ah:
+        xor eax, eax
+    n_ai:
+        push eax
+        lea ecx, [esi + 0a68h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_aj
+        cmp byte ptr [esp + 0eh], 0
+        je n_aj
+        cmp byte ptr [esp + 0fh], 0
+        je n_aj
+        mov eax, 1
+        jmp n_ak
+    n_aj:
+        xor eax, eax
+    n_ak:
+        push eax
+        lea ecx, [esi + 0abch]
+        call ext_006A5FDA
+        test bl, bl
+        je n_al
+        cmp byte ptr [esp + 0eh], 0
+        je n_al
+        cmp byte ptr [esp + 0fh], 0
+        je n_al
+        mov eax, 1
+        jmp n_am
+    n_al:
+        xor eax, eax
+    n_am:
+        push eax
+        lea ecx, [esi + 0b10h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_an
+        cmp byte ptr [esp + 0eh], 0
+        je n_an
+        cmp byte ptr [esp + 0fh], 0
+        je n_an
+        mov eax, 1
+        jmp n_ao
+    n_an:
+        xor eax, eax
+    n_ao:
+        push eax
+        lea ecx, [esi + 0b64h]
+        call ext_006A5FDA
+        test bl, bl
+        je n_ap
+        cmp byte ptr [esp + 0eh], 0
+        je n_ap
+        cmp byte ptr [esp + 0fh], 0
+        je n_ap
+        mov eax, 1
+        jmp n_aq
+    n_ap:
+        xor eax, eax
+    n_aq:
+        push eax
+        lea ecx, [esi + 0bb8h]
+        call ext_006A5FDA
+        movzx ecx, byte ptr [esp + 13h]
+        push ecx
+        lea ecx, [esi + 0c0ch]
+        call ext_006A5FDA
+        call dword ptr [mem_00925654]
+        push eax
+        call ext_006A5E00
+        push 0
+        push 0A2E4A4h
+        push 0A2E034h
+        push 0
+        push eax
+        call ext_006A6E9E
+        mov esi, eax
+        add esp, 14h
+        test esi, esi
+        je n_end
+        mov edx, dword ptr [esi + 20h]
+        mov edi, dword ptr [mem_00925694]
+        push -1
+        push 0
+        push 0b1h
+        push edx
+        call edi
+        mov eax, dword ptr [esi + 20h]
+        push 0
+        push 0
+        push 0b7h
+        push eax
+        call edi
+    n_end:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0ch
+        ret
+    }
+}
