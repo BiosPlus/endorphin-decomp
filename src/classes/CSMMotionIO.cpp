@@ -2,9 +2,11 @@
 
 extern "C" void ext_00403560();
 extern "C" void ext_00435D00();
+extern "C" void ext_00553720();
 extern "C" void ext_00553760();
 extern "C" void ext_00571E80();
 extern "C" void ext_005720D0();
+extern "C" void ext_00640390();
 extern "C" void ext_00661E80();
 extern "C" void ext_00661F70();
 extern "C" void ext_00663DB0();
@@ -207,5 +209,26 @@ extern "C" __declspec(naked) void __fastcall fn_005722F0(void* self, int edx_unu
         mov     dword ptr fs:[0], ecx
         add     esp, 0x12c
         ret     4
+    }
+}
+
+// [0x00571DF0] CSMMotionIO::vfunc_3 (37 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00571DF0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push 0x0
+        mov esi, ecx
+        push 0x92a0d4
+        mov ecx, edi
+        call ext_00640390
+        push eax
+        mov ecx, esi
+        call ext_00553720
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
     }
 }
