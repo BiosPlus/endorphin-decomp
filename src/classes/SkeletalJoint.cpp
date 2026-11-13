@@ -845,3 +845,159 @@ extern "C" void __fastcall fn_0064E1E0(void* self) {
         ((void (__cdecl*)(int))ext_007C97F0)(r2);
     }
 }
+
+// [0x00656D90] SkeletalJoint::vfunc_54 (378 bytes)
+extern "C" void ext_00435D00();
+extern "C" void ext_006A7250();
+extern "C" int mem_00924FA0;
+extern "C" int mem_00925010;
+extern "C" int mem_00924E90;
+extern "C" int mem_00924E98;
+extern "C" int mem_0092F67C;
+extern "C" int mem_0098432C;
+extern "C" int mem_0098431C;
+
+extern "C" __declspec(naked) void __fastcall fn_00656D90(void* self) {
+    __asm {
+        sub esp, 1Ch
+        fldz
+        push ebx
+        push esi
+        fst dword ptr [esp+20h]
+        mov esi, ecx
+        fst dword ptr [esp+1Ch]
+        mov eax, dword ptr [esi]
+        fstp dword ptr [esp+18h]
+        mov edx, dword ptr [eax+48h]
+        lea ecx, [esp+18h]
+        push ecx
+        mov ecx, esi
+        mov bl, 1
+        call edx
+        fldz
+        mov eax, dword ptr [esi]
+        fst dword ptr [esp+14h]
+        mov edx, dword ptr [eax+30h]
+        fst dword ptr [esp+10h]
+        push 1
+        fstp dword ptr [esp+10h]
+        lea ecx, [esp+10h]
+        push ecx
+        mov ecx, esi
+        call edx
+        fld dword ptr [esp+18h]
+        fld st(0)
+        fchs
+        fstp dword ptr [esp+8]
+        fld dword ptr [esp+0Ch]
+        fld dword ptr [esp+8]
+        fcom st(1)
+        fnstsw ax
+        test ah, 41h
+        je L_1
+        fxch st(1)
+        fcom st(2)
+        fnstsw ax
+        test ah, 41h
+        jne L_2
+        fxch st(1)
+    L_1:
+        fcomp st(1)
+        push offset mem_0092F67C
+        push ecx
+        fnstsw ax
+        test ah, 41h
+        jne L_3
+        mov eax, dword ptr [mem_00924FA0]
+        faddp st(1), st
+        fstp dword ptr [esp+10h]
+        fld dword ptr [esp+10h]
+        fstp dword ptr [esp]
+        push offset mem_0098432C
+        push eax
+        jmp L_4
+    L_3:
+        mov ecx, dword ptr [mem_00924FA0]
+        fsubrp st(1), st
+        fstp dword ptr [esp+10h]
+        fld dword ptr [esp+10h]
+        fstp dword ptr [esp]
+        push offset mem_0098432C
+        push ecx
+    L_4:
+        call ext_00435D00
+        add esp, 8
+        mov ecx, eax
+        call dword ptr [mem_00925010]
+        push eax
+        call ext_00435D00
+        add esp, 8
+        xor bl, bl
+        jmp L_5
+    L_2:
+        fstp st(0)
+        fstp st(1)
+        fstp st(0)
+    L_5:
+        fld dword ptr [esp+10h]
+        fld dword ptr [esp+1Ch]
+        fld dword ptr [esp+14h]
+        fld dword ptr [esp+20h]
+        fld st(1)
+        fmulp st(2), st
+        fmul st(0), st
+        fdivp st(1), st
+        fld st(2)
+        fmulp st(3), st
+        fld st(1)
+        fmulp st(2), st
+        fxch st(2)
+        fdivrp st(1), st
+        faddp st(1), st
+        fstp dword ptr [esp+8]
+        fld1
+        fcomp dword ptr [esp+8]
+        fnstsw ax
+        test ah, 5
+        jp L_6
+        test bl, bl
+        jne L_7
+        mov edx, dword ptr [mem_00924E90]
+        mov ecx, dword ptr [mem_00924FA0]
+        push edx
+        call dword ptr [mem_00924E98]
+    L_7:
+        fld dword ptr [esp+8]
+        push offset mem_0092F67C
+        fld1
+        fdivrp st(1), st
+        fstp dword ptr [esp+0Ch]
+        fld dword ptr [esp+0Ch]
+        call ext_006A7250
+        fstp dword ptr [esp+0Ch]
+        fld dword ptr [esp+0Ch]
+        mov eax, dword ptr [mem_00924FA0]
+        push ecx
+        fstp dword ptr [esp]
+        push offset mem_0098431C
+        push eax
+        call ext_00435D00
+        add esp, 8
+        mov ecx, eax
+        call dword ptr [mem_00925010]
+        push eax
+        call ext_00435D00
+        add esp, 8
+        pop esi
+        xor al, al
+        pop ebx
+        add esp, 1Ch
+        ret
+    L_6:
+        pop esi
+        mov al, bl
+        pop ebx
+        add esp, 1Ch
+        ret
+    }
+}
