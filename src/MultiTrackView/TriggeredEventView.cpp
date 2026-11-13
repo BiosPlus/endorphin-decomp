@@ -529,3 +529,84 @@ L_45DAE3:
         ret 0x10
     }
 }
+
+// [0x0045F0A0] MultiTrackView::TriggeredEventView::vfunc_3_off_24C (176 bytes)
+extern "C" void ext_00440730();
+extern "C" void ext_004407B0();
+extern "C" void ext_0045E920();
+extern "C" void ext_0045E9D0();
+extern "C" void ext_00596660();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00925134;
+extern "C" int mem_00A2E968;
+extern "C" int mem_00A2E99C;
+
+extern "C" __declspec(naked) void __fastcall fn_0045F0A0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0xfc]
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, ebx
+        call edx
+        push ebx
+        lea ecx, [edi - 0x24c]
+        call ext_0045E920
+        lea esi, [edi - 0x1bc]
+        mov ebp, eax
+        mov eax, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], eax
+        mov dword ptr [esp + 0x10], eax
+        jbe loc_45f0df
+        call dword ptr [mem_00925134]
+    loc_45f0df:
+        mov eax, dword ptr [esi + 0x4]
+        cmp eax, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x1c], eax
+        jbe loc_45f0f5
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x1c]
+    loc_45f0f5:
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        push esi
+        push eax
+        push esi
+        lea edx, [esp + 0x20]
+        push edx
+        mov ecx, esi
+        call ext_00596660
+        test ebp, ebp
+        je loc_45f13b
+        push 0
+        push offset mem_00A2E968
+        push offset mem_00A2E99C
+        push 0
+        mov ecx, ebp
+        call ext_004407B0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        mov ecx, ebp
+        call ext_00440730
+        push ebx
+        lea ecx, [edi + 0xc]
+        call ext_0045E9D0
+    loc_45f13b:
+        mov eax, dword ptr [edi - 0x4]
+        mov edx, dword ptr [eax + 0x4]
+        lea ecx, [edi - 0x4]
+        call edx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
