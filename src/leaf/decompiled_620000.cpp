@@ -6158,3 +6158,26 @@ extern "C" __declspec(naked) void* __fastcall fn_00627680(void* self) {
         ret
     }
 }
+
+extern "C" void ext_006798D0();
+extern "C" void ext_0062A3D0();
+extern "C" void ext_0062A2D0();
+extern "C" int mem_00978A24;
+
+// [0x0062A4F0] sub_0062A4F0 (35 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0062A4F0(void* self) {
+    __asm {
+        push ecx
+        lea eax, [esp]
+        push 0
+        push eax
+        call ext_006798D0
+        mov ecx, eax
+        call ext_0062A3D0
+        push offset mem_00978A24
+        lea ecx, [esp + 4]
+        call ext_0062A2D0
+        pop ecx
+        ret
+    }
+}
