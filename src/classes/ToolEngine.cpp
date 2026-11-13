@@ -1009,3 +1009,28 @@ extern "C" __declspec(naked) void __fastcall fn_00486740(void* self) {
         ret
     }
 }
+
+// [0x00486810] ToolEngine::vfunc_29 (49 bytes)
+extern "C" void ext_00486400();
+extern "C" void ext_00665870();
+extern "C" void ext_00666670();
+
+extern "C" __declspec(naked) void __fastcall fn_00486810(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x604]
+        test ecx, ecx
+        je done
+        call ext_00486400
+        mov eax, dword ptr [esi + 0x604]
+        push eax
+        mov dword ptr [esi + 0x604], 0
+        call ext_00665870
+        mov ecx, eax
+        call ext_00666670
+    done:
+        pop esi
+        ret
+    }
+}
