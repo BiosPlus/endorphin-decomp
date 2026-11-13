@@ -1071,3 +1071,67 @@ do_call:
         ret
     }
 }
+
+// [0x00481EF0] ToolEngine::vfunc_0 (161 bytes)
+extern "C" void ext_00494000();
+extern "C" void ext_004A5850();
+extern "C" void ext_004B07E0();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_00481EF0(void* self) {
+    __asm {
+        push -1
+        push 0x87ba98
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x28
+        push esi
+        push edi
+        xor esi, esi
+        push esi
+        push esi
+        mov edi, ecx
+        push -1
+        lea ecx, [esp + 0x14]
+        call ext_00494000
+        push esi
+        push esi
+        push esi
+        lea ecx, [esp + 0x20]
+        call ext_00494000
+        mov dword ptr [esp + 0x24], esi
+        mov dword ptr [esp + 0x28], esi
+        mov dword ptr [esp + 0x2c], esi
+        lea eax, [esp + 0x8]
+        push eax
+        lea ecx, [esp + 0x18]
+        push ecx
+        push esi
+        push esi
+        lea edx, [esp + 0x30]
+        push edx
+        lea ecx, [edi + 0x8]
+        mov dword ptr [esp + 0x4c], esi
+        call ext_004B07E0
+        mov eax, dword ptr [esp + 0x24]
+        cmp eax, esi
+        mov dword ptr [esp + 0x38], -1
+        je skip_free
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    skip_free:
+        mov ecx, dword ptr [edi + 0x3b4]
+        mov dword ptr [esp + 0x24], esi
+        mov dword ptr [esp + 0x28], esi
+        mov dword ptr [esp + 0x2c], esi
+        call ext_004A5850
+        mov ecx, dword ptr [esp + 0x30]
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x34
+        ret
+    }
+}
