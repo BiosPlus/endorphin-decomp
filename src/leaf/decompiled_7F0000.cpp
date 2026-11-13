@@ -5294,3 +5294,212 @@ extern "C" __declspec(naked) void __cdecl fn_007F6880() {
         ret
     }
 }
+
+// [0x007F3F00] sub_007F3F00 (600 bytes)
+extern "C" void ext_006A6DE0();
+extern "C" int mem_0099EDA0;
+extern "C" int mem_0099ED90;
+extern "C" __declspec(naked) void __cdecl fn_007F3F00(void) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, 0FFFFFFF0h
+        sub esp, 84h
+        push ebx
+        push esi
+        push edi
+        mov edx, DWORD PTR [ebp+18h]
+        fld DWORD PTR [ebp+58h]
+        mov DWORD PTR [esp+18h], edx
+        fst DWORD PTR [esp+0ch]
+        mov edx, DWORD PTR [ebp+20h]
+        mov DWORD PTR [esp+14h], edx
+        mov edx, DWORD PTR [ebp+24h]
+        mov DWORD PTR [esp+18h], edx
+        mov edx, DWORD PTR [ebp+2ch]
+        mov DWORD PTR [esp+14h], edx
+        mov edx, DWORD PTR [ebp+30h]
+        mov DWORD PTR [esp+18h], edx
+        mov edx, DWORD PTR [ebp+34h]
+        mov eax, DWORD PTR [ebp+8]
+        mov DWORD PTR [esp+40h], edx
+        mov edx, DWORD PTR [ebp+38h]
+        mov DWORD PTR [esp+44h], edx
+        mov edx, DWORD PTR [ebp+3ch]
+        mov ecx, DWORD PTR [ebp+0ch]
+        mov DWORD PTR [esp+48h], edx
+        mov edx, DWORD PTR [ebp+40h]
+        movaps xmm1, XMMWORD PTR mem_0099EDA0
+        movss xmm4, DWORD PTR [esp+0ch]
+        mov DWORD PTR [esp+50h], edx
+        mov edx, DWORD PTR [ebp+44h]
+        mov DWORD PTR [esp+54h], edx
+        mov edx, DWORD PTR [ebp+48h]
+        mov DWORD PTR [esp+58h], edx
+        mov edx, DWORD PTR [ebp+4ch]
+        mov DWORD PTR [esp+10h], edx
+        mov edx, DWORD PTR [ebp+50h]
+        mov DWORD PTR [esp+20h], eax
+        mov eax, DWORD PTR [ebp+14h]
+        mov DWORD PTR [esp+14h], edx
+        mov edx, DWORD PTR [ebp+54h]
+        mov DWORD PTR [esp+18h], edx
+        cdq
+        and edx, 3
+        mov ebx, DWORD PTR [ebp+28h]
+        add eax, edx
+        or esi, 0FFFFFFFFh
+        sar eax, 2
+        test eax, eax
+        xorps xmm7, xmm7
+        movaps xmm0, xmm7
+        movaps XMMWORD PTR [esp+80h], xmm1
+        movaps xmm1, XMMWORD PTR mem_0099ED90
+        mov edi, DWORD PTR [ebp+10h]
+        mov DWORD PTR [esp+24h], ecx
+        mov ecx, DWORD PTR [ebp+1ch]
+        mov DWORD PTR [esp+2ch], esi
+        shufps xmm4, xmm4, 0
+        movaps XMMWORD PTR [esp+70h], xmm0
+        movaps XMMWORD PTR [esp+60h], xmm1
+        movaps xmm5, xmm0
+        jle L4090
+        mov esi, ebx
+        mov ebx, DWORD PTR [esp+50h]
+        sub ebx, ecx
+        mov edx, edi
+        mov edi, DWORD PTR [esp+40h]
+        mov DWORD PTR [esp+30h], ebx
+        mov ebx, DWORD PTR [esp+10h]
+        sub edx, ecx
+        sub esi, ecx
+        sub edi, ecx
+        sub ebx, ecx
+        mov DWORD PTR [esp+28h], eax
+L3FFF:
+        movaps xmm0, XMMWORD PTR [ecx]
+        movaps xmm2, XMMWORD PTR [esi+ecx]
+        movaps xmm6, XMMWORD PTR [edi+ecx]
+        movaps xmm3, XMMWORD PTR [edx+ecx]
+        mov eax, DWORD PTR [esp+30h]
+        movaps xmm1, XMMWORD PTR [esp+80h]
+        cmpltps xmm2, xmm0
+        cmpltps xmm0, xmm6
+        movaps xmm6, xmm0
+        movaps XMMWORD PTR [eax+ecx], xmm2
+        movaps XMMWORD PTR [ebx+ecx], xmm6
+        andnps xmm1, xmm3
+        movaps xmm0, xmm3
+        cmpltps xmm0, xmm7
+        andps xmm0, xmm6
+        movaps xmm6, xmm7
+        cmpltps xmm6, xmm3
+        andps xmm6, xmm2
+        orps xmm0, xmm6
+        movaps xmm2, xmm4
+        cmpltps xmm2, xmm1
+        andps xmm0, xmm2
+        movaps xmm2, xmm0
+        andps xmm2, xmm1
+        movaps xmm1, xmm0
+        andnps xmm1, xmm4
+        orps xmm2, xmm1
+        movaps xmm1, xmm0
+        andnps xmm0, XMMWORD PTR [esp+70h]
+        andps xmm1, xmm5
+        addps xmm5, XMMWORD PTR [esp+60h]
+        orps xmm1, xmm0
+        add ecx, 10h
+        sub DWORD PTR [esp+28h], 1
+        movaps xmm0, xmm1
+        movaps xmm4, xmm2
+        movaps XMMWORD PTR [esp+70h], xmm0
+        jne L3FFF
+        mov esi, DWORD PTR [esp+2ch]
+L4090:
+        movaps XMMWORD PTR [esp+10h], xmm4
+        fld DWORD PTR [esp+10h]
+        fcom ST(1)
+        movaps XMMWORD PTR [esp+60h], xmm0
+        fnstsw ax
+        fstp ST(1)
+        test ah, 41h
+        jne L40B1
+        fstp DWORD PTR [esp+0ch]
+        xor esi, esi
+        jmp L40B3
+L40B1:
+        fstp ST(0)
+L40B3:
+        fld DWORD PTR [esp+14h]
+        fld DWORD PTR [esp+0ch]
+        fcomp ST(1)
+        fnstsw ax
+        test ah, 5
+        jp L40CF
+        fstp DWORD PTR [esp+0ch]
+        mov esi, 1
+        jmp L40D1
+L40CF:
+        fstp ST(0)
+L40D1:
+        fld DWORD PTR [esp+18h]
+        fld DWORD PTR [esp+0ch]
+        fcomp ST(1)
+        fnstsw ax
+        test ah, 5
+        jp L40ED
+        fstp DWORD PTR [esp+0ch]
+        mov esi, 2
+        jmp L40EF
+L40ED:
+        fstp ST(0)
+L40EF:
+        fld DWORD PTR [esp+1ch]
+        fld DWORD PTR [esp+0ch]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp L4121
+        mov esi, 3
+        fld DWORD PTR [esp+4*esi+60h]
+        call ext_006A6DE0
+        mov ecx, DWORD PTR [esp+20h]
+        mov edx, DWORD PTR [esp+24h]
+        mov DWORD PTR [ecx], eax
+        mov DWORD PTR [edx], esi
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+L4121:
+        cmp esi, 0FFFFFFFFh
+        je L4142
+        fld DWORD PTR [esp+4*esi+60h]
+        call ext_006A6DE0
+        mov ecx, DWORD PTR [esp+20h]
+        mov edx, DWORD PTR [esp+24h]
+        mov DWORD PTR [ecx], eax
+        mov DWORD PTR [edx], esi
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+L4142:
+        mov ecx, DWORD PTR [esp+20h]
+        mov edx, DWORD PTR [esp+24h]
+        or eax, 0FFFFFFFFh
+        pop edi
+        mov DWORD PTR [ecx], eax
+        mov DWORD PTR [edx], esi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
