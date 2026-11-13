@@ -178,3 +178,80 @@ extern "C" __declspec(naked) void __fastcall fn_006B0B60(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006B0AB0] GWCCategoryWithButtonsItem::vfunc_9 (163 bytes)
+extern "C" void ext_006A5EDE();
+extern "C" void ext_006A63D6();
+extern "C" void ext_006B0770();
+extern "C" int mem_00925628;
+extern "C" int mem_0092571C;
+extern "C" int mem_00925704;
+extern "C" __declspec(naked) int __fastcall fn_006B0AB0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x20
+        push esi
+        mov esi, ecx
+        lea eax, [esi + 0x90]
+        test eax, eax
+        je l1
+        cmp dword ptr [eax + 4], 0
+        jne l2
+    l1:
+        xor eax, eax
+        pop esi
+        add esp, 0x20
+        ret 4
+    l2:
+        push edi
+        lea eax, [esp + 0x18]
+        push eax
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_006B0770
+        cmp byte ptr [esi + 0x88], 0
+        mov esi, dword ptr [esp + 0x2c]
+        mov edi, dword ptr [mem_00925628]
+        je l3
+        mov edx, dword ptr [esi + 4]
+        mov eax, dword ptr [esi]
+        push edx
+        push eax
+        lea ecx, [esp + 0x10]
+        push ecx
+        call edi
+        test eax, eax
+        jne l4
+    l3:
+        mov edx, dword ptr [esi + 4]
+        mov eax, dword ptr [esi]
+        push edx
+        push eax
+        lea ecx, [esp + 0x20]
+        push ecx
+        call edi
+        test eax, eax
+        je l5
+    l4:
+        call ext_006A5EDE
+        push 0x2af8
+        push 0xc
+        push 0x2af8
+        call ext_006A63D6
+        push eax
+        call dword ptr [mem_0092571C]
+        push eax
+        call dword ptr [mem_00925704]
+        pop edi
+        mov eax, 1
+        pop esi
+        add esp, 0x20
+        ret 4
+    l5:
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 0x20
+        ret 4
+    }
+}
