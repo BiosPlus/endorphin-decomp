@@ -3366,3 +3366,14 @@ extern "C" __declspec(naked) void __fastcall fn_0063DE30(void* self) {
         ret
     }
 }
+
+// [0x0063D460] sub_0063D460 (31 bytes)
+extern "C" int mem_00924FDC;
+extern "C" void ext_0063CFD0();
+
+extern "C" void __fastcall fn_0063D460(void* self, int edx_unused, int a1) {
+    typedef void (__thiscall *MfcFn)(void*, int);
+    MfcFn f = (MfcFn)mem_00924FDC;
+    f((char*)self + 0x8c, a1);
+    ((void (__thiscall *)(void*))ext_0063CFD0)(self);
+}
