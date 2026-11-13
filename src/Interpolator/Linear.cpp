@@ -107,3 +107,114 @@ extern "C" __declspec(naked) float __fastcall fn_00528640(void* self, int edx_un
         ret 0x10
     }
 }
+
+// [0x00528730] Interpolator::Linear::vfunc_2 (234 bytes)
+extern "C" void ext_00693DB0();
+
+extern "C" __declspec(naked) void* __fastcall fn_00528730(void* self, int edx_unused, void* a1, void* a2, void* a3, float a4) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        test edi, edi
+        mov dword ptr [esp + 0x10], ecx
+        mov dword ptr [esp + 0x20], esi
+        jne L1
+        call ebp
+    L1:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L2
+        call ebp
+    L2:
+        cmp esi, dword ptr [edi + 0x8]
+        lea ebx, [esi + 0x14]
+        jb L3
+        call ebp
+    L3:
+        fld dword ptr [esi]
+        fadd qword ptr [mem_009533E0]
+        fld dword ptr [esp + 0x24]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jnp Lret
+        mov ebp, dword ptr [esp + 0x18]
+        mov eax, dword ptr [ebp + 0x8]
+        cmp dword ptr [ebp + 0x4], eax
+        mov dword ptr [esp + 0x18], eax
+        jbe L4
+        call dword ptr [mem_00925134]
+    L4:
+        mov eax, edi
+        cmp eax, ebp
+        je L5
+        call dword ptr [mem_00925134]
+    L5:
+        cmp ebx, dword ptr [esp + 0x18]
+        mov ebp, dword ptr [mem_00925134]
+        je Lret
+        cmp esi, dword ptr [edi + 0x8]
+        jb L6
+        call ebp
+    L6:
+        mov eax, edi
+        cmp ebx, dword ptr [eax + 0x8]
+        jb L7
+        call ebp
+    L7:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L8
+        call ebp
+    L8:
+        fld dword ptr [esp + 0x24]
+        mov eax, edi
+        cmp ebx, dword ptr [eax + 0x8]
+        fsub dword ptr [esi]
+        fld dword ptr [ebx]
+        fsub dword ptr [esi]
+        fdivp st(1), st
+        fstp dword ptr [esp + 0x24]
+        jb L9
+        call ebp
+    L9:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L10
+        call ebp
+    L10:
+        fld dword ptr [esp + 0x24]
+        mov edi, dword ptr [esp + 0x10]
+        push ecx
+        fstp dword ptr [esp]
+        add ebx, 4
+        add edi, 4
+        push ebx
+        add esi, 4
+        push esi
+        mov ecx, edi
+        call ext_00693DB0
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x10
+    Lret:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L11
+        call ebp
+    L11:
+        pop edi
+        lea eax, [esi + 4]
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x10
+    }
+}
