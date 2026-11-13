@@ -4593,3 +4593,88 @@ extern "C" __declspec(naked) void __fastcall fn_00517600(void* self) {
         ret 0x14
     }
 }
+
+// [0x00511870] sub_00511870 (177 bytes)
+extern "C" int mem_00925134;
+extern "C" int mem_00AEBE94;
+extern "C" void ext_00695460();
+extern "C" __declspec(naked) void __fastcall fn_00511870(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 8]
+        test ecx, ecx
+        push edi
+        mov edi, dword ptr [esp + 18h]
+        je L_bad1
+        mov eax, dword ptr [esi + 0Ch]
+        sub eax, ecx
+        sar eax, 3
+        cmp edi, eax
+        jb L_ok1
+    L_bad1:
+        call ebx
+    L_ok1:
+        mov eax, dword ptr [esi + 8]
+        fld qword ptr [eax + 8*edi]
+        fst qword ptr [esp + 0Ch]
+        fldz
+        fcomp qword ptr [esp + 1Ch]
+        fnstsw ax
+        test ah, 5
+        jp L_negst
+        mov ecx, dword ptr [mem_00AEBE94]
+        fstp st(0)
+        call ext_00695460
+        fmul qword ptr [esp + 1Ch]
+        fadd qword ptr [esp + 0Ch]
+        fst qword ptr [esp + 1Ch]
+        fld dword ptr [esi + 54h]
+        fld dword ptr [esi + 58h]
+        fxch st(2)
+        fcom st(1)
+        fnstsw ax
+        test ah, 5
+        jp L_ge
+        fstp st(0)
+        fstp st(1)
+        fst qword ptr [esp + 1Ch]
+        jmp L_store
+    L_ge:
+        fstp st(1)
+        fcom st(1)
+        fnstsw ax
+        test ah, 41h
+        jne L_le
+        fstp st(0)
+    L_negst:
+        fst qword ptr [esp + 1Ch]
+        jmp L_store
+    L_le:
+        fstp st(1)
+    L_store:
+        mov ecx, dword ptr [esi + 8]
+        test ecx, ecx
+        je L_bad2
+        mov eax, dword ptr [esi + 0Ch]
+        sub eax, ecx
+        sar eax, 3
+        cmp edi, eax
+        jb L_ok2
+    L_bad2:
+        fstp st(0)
+        call ebx
+        fld qword ptr [esp + 1Ch]
+    L_ok2:
+        mov ecx, dword ptr [esi + 8]
+        fstp qword ptr [ecx + 8*edi]
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret 0Ch
+    }
+}
