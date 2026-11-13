@@ -6392,3 +6392,14 @@ extern "C" __declspec(naked) void __fastcall fn_0065F420(void* self) {
         ret     0x4
     }
 }
+
+// [0x0065AEF0] sub_0065AEF0 (48 bytes)
+extern "C" void __cdecl ext_007C7150(void*);
+extern "C" void __cdecl ext_007C8AC0(int, void*, int, int, void*, int);
+extern "C" int mem_00B55748;
+
+extern "C" void __fastcall fn_0065AEF0(void** self) {
+    char* a = *(char**)((char*)mem_00B55748 + 0x2c);
+    ext_007C8AC0(*(int*)(a + 0x18), self[0], 0, *(int*)(a + 0x1c), self[2], 0);
+    ext_007C7150(self[0]);
+}
