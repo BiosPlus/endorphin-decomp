@@ -17748,3 +17748,53 @@ extern "C" __declspec(naked) void __fastcall fn_007CFF30(void* self) {
         ret
     }
 }
+
+extern "C" void ext_007DE210();
+
+// [0x007C8AC0] sub_007C8AC0 (97 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C8AC0() {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [eax + 0xc]
+        test ecx, ecx
+        je loc_7c8ad5
+        xor eax, eax
+        cmp ecx, dword ptr [esp + 0x4]
+        sete al
+        ret
+
+    loc_7c8ad5:
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x18]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        push edx
+        mov edx, dword ptr [esp + 0x1c]
+        push ecx
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_007DE210
+        test eax, eax
+        jl loc_7c8b1a
+        cmp eax, dword ptr [esi + 0xc]
+        jge loc_7c8b1a
+        mov edx, dword ptr [esi + 0x10]
+        mov ecx, eax
+        imul ecx, ecx, 0x9c
+        cmp dword ptr [ecx + edx + 0x8], eax
+        jne loc_7c8b1a
+        mov eax, 0x1
+        movzx eax, al
+        pop esi
+        ret
+
+    loc_7c8b1a:
+        xor eax, eax
+        movzx eax, al
+        pop esi
+        ret
+    }
+}
