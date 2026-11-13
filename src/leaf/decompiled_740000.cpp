@@ -152,3 +152,12 @@ extern "C" __declspec(naked) int __cdecl fn_007435A0(const char* s) {
         ret
     }
 }
+
+// [0x00743CB0] sub_00743CB0 (32 bytes)
+extern "C" void ext_0079EF70(void*);
+extern "C" bool __fastcall fn_00743CB0(void* self) {
+    void** p = (void**)((char*)self + 0xb8);
+    ext_0079EF70(*p);
+    *p = 0;
+    return true;
+}
