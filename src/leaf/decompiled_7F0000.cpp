@@ -8976,3 +8976,297 @@ extern "C" __declspec(naked) void __fastcall fn_007FD130(void* self) {
         ret
     }
 }
+
+// [0x007FD4D0] sub_007FD4D0 (960 bytes)
+extern "C" void ext_007FCF50();
+extern "C" void ext_007FD130();
+extern "C" __declspec(naked) void __fastcall fn_007FD4D0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0xcc
+        fld dword ptr [eax]
+        push ebx
+        fstp dword ptr [esp + 0x8]
+        push esi
+        fld dword ptr [esp + 0xc]
+        mov esi, edx
+        fld dword ptr [esi]
+        push edi
+        fmul st, st(1)
+        mov ebx, ecx
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [esi + 0x4]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x2c]
+        fmul dword ptr [esi + 0x8]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [esp + 0x28]
+        fstp dword ptr [esp + 0xac]
+        fld dword ptr [esp + 0x2c]
+        fstp dword ptr [esp + 0xb0]
+        fld dword ptr [esp + 0x30]
+        fstp dword ptr [esp + 0xb4]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [esi + 0x10]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esi + 0x14]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x1c]
+        fmul dword ptr [esi + 0x18]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x18]
+        fst dword ptr [esp + 0xb8]
+        fld dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0xbc]
+        fld dword ptr [esp + 0x20]
+        fst dword ptr [esp + 0xc0]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [esi + 0x20]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esi + 0x24]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x1c]
+        fmul dword ptr [esi + 0x28]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x18]
+        fst dword ptr [esp + 0xc4]
+        fld dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0xc8]
+        fld dword ptr [esp + 0x20]
+        fst dword ptr [esp + 0xcc]
+        fld dword ptr [esi + 0x30]
+        fst qword ptr [esp + 0x68]
+        fxch st(6)
+        fst qword ptr [esp + 0x78]
+        fld st(0)
+        faddp st(7), st
+        fxch st(6)
+        fst qword ptr [esp + 0x88]
+        fxch st(3)
+        fst qword ptr [esp + 0x98]
+        fld st(0)
+        faddp st(4), st
+        fxch st(3)
+        fstp dword ptr [esp + 0x38]
+        fld dword ptr [esi + 0x34]
+        fst qword ptr [esp + 0x70]
+        fxch st(5)
+        fst qword ptr [esp + 0x80]
+        fld st(0)
+        faddp st(6), st
+        fxch st(5)
+        fst qword ptr [esp + 0xa0]
+        fxch st(2)
+        fst qword ptr [esp + 0x90]
+        fld st(0)
+        faddp st(3), st
+        mov eax, dword ptr [ebp + 0x8]
+        fxch st(2)
+        push ecx
+        lea edi, [esp + 0xb0]
+        fstp dword ptr [esp + 0x40]
+        lea ecx, [esp + 0x3c]
+        fld dword ptr [esi + 0x38]
+        fst qword ptr [esp + 0x14]
+        fxch st(4)
+        fst qword ptr [esp + 0x1c]
+        fld st(0)
+        faddp st(5), st
+        fxch st(1)
+        fst qword ptr [esp + 0xd4]
+        fld st(0)
+        fadd st, st(5)
+        fstp dword ptr [esp + 0x44]
+        fld qword ptr [esp + 0x6c]
+        __asm _emit 0xde __asm _emit 0xe7
+        fld st(6)
+        fadd st, st(4)
+        fstp dword ptr [esp + 0x48]
+        fld qword ptr [esp + 0x74]
+        __asm _emit 0xde __asm _emit 0xe6
+        fld st(5)
+        fadd st, st(3)
+        fstp dword ptr [esp + 0x4c]
+        fld qword ptr [esp + 0x14]
+        __asm _emit 0xde __asm _emit 0xe2
+        fld st(1)
+        fadd st, st(1)
+        fstp dword ptr [esp + 0x50]
+        fld qword ptr [esp + 0x8c]
+        __asm _emit 0xd8 __asm _emit 0xe4
+        fstp dword ptr [esp + 0x54]
+        fld qword ptr [esp + 0xa4]
+        __asm _emit 0xd8 __asm _emit 0xe3
+        fstp dword ptr [esp + 0x58]
+        __asm _emit 0xdc __asm _emit 0xec
+        fxch st(4)
+        fstp dword ptr [esp + 0x5c]
+        fxch st(5)
+        __asm _emit 0xde __asm _emit 0xe2
+        fxch st(1)
+        fstp dword ptr [esp + 0x60]
+        __asm _emit 0xde __asm _emit 0xea
+        fxch st(1)
+        fstp dword ptr [esp + 0x64]
+        __asm _emit 0xde __asm _emit 0xe9
+        fstp dword ptr [esp + 0x68]
+        fld dword ptr [ebp + 0xc]
+        fstp dword ptr [esp]
+        push ebx
+        push eax
+        call ext_007FCF50
+        fld dword ptr [esi + 0x30]
+        fld dword ptr [esp + 0x34]
+        fst qword ptr [esp + 0x1c]
+        fld st(0)
+        fadd st, st(2)
+        fst qword ptr [esp + 0xac]
+        fld qword ptr [esp + 0xa4]
+        fadd st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x44]
+        fld dword ptr [esi + 0x34]
+        fst qword ptr [esp + 0xa4]
+        fld dword ptr [esp + 0x38]
+        fst qword ptr [esp + 0x7c]
+        fld st(0)
+        faddp st(2), st
+        fxch st(1)
+        fst qword ptr [esp + 0x94]
+        fld qword ptr [esp + 0x9c]
+        fadd st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x48]
+        fld dword ptr [esi + 0x38]
+        fst qword ptr [esp + 0x9c]
+        fld dword ptr [esp + 0x3c]
+        fst qword ptr [esp + 0x74]
+        mov ecx, dword ptr [ebp + 0x8]
+        fld st(0)
+        add esp, 0x8
+        faddp st(2), st
+        lea edi, [esp + 0xbc]
+        fxch st(1)
+        fst qword ptr [esp + 0x2c]
+        fld qword ptr [esp + 0xd4]
+        fadd st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x44]
+        fxch st(6)
+        __asm _emit 0xde __asm _emit 0xe5
+        fld st(4)
+        fadd st, st(4)
+        fstp dword ptr [esp + 0x48]
+        fld qword ptr [esp + 0x9c]
+        __asm _emit 0xde __asm _emit 0xe3
+        fld st(2)
+        fadd st, st(2)
+        fstp dword ptr [esp + 0x4c]
+        fsubr qword ptr [esp + 0x94]
+        fld st(0)
+        fadd st, st(6)
+        fstp dword ptr [esp + 0x50]
+        fld qword ptr [esp + 0xa4]
+        __asm _emit 0xd8 __asm _emit 0xe4
+        fstp dword ptr [esp + 0x54]
+        fld qword ptr [esp + 0x8c]
+        __asm _emit 0xd8 __asm _emit 0xe2
+        fstp dword ptr [esp + 0x58]
+        fld qword ptr [esp + 0x2c]
+        __asm _emit 0xd8 __asm _emit 0xe6
+        fstp dword ptr [esp + 0x5c]
+        fxch st(4)
+        __asm _emit 0xde __asm _emit 0xe3
+        fxch st(2)
+        fstp dword ptr [esp + 0x60]
+        __asm _emit 0xde __asm _emit 0xe1
+        fstp dword ptr [esp + 0x64]
+        __asm _emit 0xde __asm _emit 0xe1
+        fstp dword ptr [esp + 0x68]
+        fld dword ptr [ebp + 0xc]
+        fstp dword ptr [esp]
+        push ebx
+        push ecx
+        lea ecx, [esp + 0x44]
+        call ext_007FCF50
+        fld dword ptr [esi + 0x30]
+        fld qword ptr [esp + 0x1c]
+        fadd st, st(1)
+        fld st(0)
+        fld qword ptr [esp + 0x84]
+        fadd st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x44]
+        fld dword ptr [esi + 0x34]
+        fld qword ptr [esp + 0x7c]
+        fadd st, st(1)
+        fld st(0)
+        fld qword ptr [esp + 0x8c]
+        fadd st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x48]
+        fld dword ptr [esi + 0x38]
+        fst qword ptr [esp + 0x8c]
+        fadd qword ptr [esp + 0x74]
+        fst qword ptr [esp + 0x84]
+        fld qword ptr [esp + 0x24]
+        fadd st(1), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x4c]
+        fxch st(6)
+        fsub qword ptr [esp + 0x1c]
+        fld st(0)
+        fadd st, st(5)
+        fstp dword ptr [esp + 0x50]
+        fxch st(3)
+        fsub qword ptr [esp + 0x7c]
+        fld st(0)
+        fadd st, st(2)
+        add esp, 0x8
+        lea esi, [esp + 0xc8]
+        lea edi, [esp + 0x3c]
+        fstp dword ptr [esp + 0x4c]
+        fld qword ptr [esp + 0x84]
+        fsub qword ptr [esp + 0x6c]
+        fst qword ptr [esp + 0x1c]
+        fadd st, st(7)
+        fstp dword ptr [esp + 0x50]
+        fxch st(5)
+        __asm _emit 0xd8 __asm _emit 0xe4
+        fstp dword ptr [esp + 0x54]
+        __asm _emit 0xdc __asm _emit 0xe9
+        fxch st(1)
+        fstp dword ptr [esp + 0x58]
+        fld qword ptr [esp + 0x7c]
+        __asm _emit 0xd8 __asm _emit 0xe5
+        fstp dword ptr [esp + 0x5c]
+        fxch st(1)
+        __asm _emit 0xde __asm _emit 0xe2
+        fxch st(1)
+        fstp dword ptr [esp + 0x60]
+        __asm _emit 0xde __asm _emit 0xe9
+        fstp dword ptr [esp + 0x64]
+        fsubr qword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x68]
+        fld dword ptr [ebp + 0xc]
+        fstp dword ptr [esp]
+        push ebx
+        mov ebx, dword ptr [ebp + 0x8]
+        call ext_007FD130
+        add esp, 0x8
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
