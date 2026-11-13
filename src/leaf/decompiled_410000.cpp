@@ -9447,3 +9447,316 @@ extern "C" int __cdecl ext_00414D90(int, int, int, int, int);
 extern "C" int __fastcall fn_00419EF0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
     return ext_00414D90(a1, a2, a3, a4, a5);
 }
+
+// [0x00410DD0] sub_00410DD0 (997 bytes)
+extern "C" void ext_00419EF0();
+extern "C" void ext_00596660();
+extern "C" void ext_0059D740();
+extern "C" void ext_006A6DE0();
+extern "C" void ext_006A6E92();
+extern "C" int mem_00993828;
+extern "C" int mem_0092BD70;
+extern "C" int mem_00925134;
+extern "C" int mem_00993CA0;
+extern "C" __declspec(naked) void __fastcall fn_00410DD0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x40
+        sub esp, 0x74
+        push ebx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x50]
+        mov eax, dword ptr [eax + 0x188]
+        test eax, eax
+        push edi
+        jne L_410f21
+        mov ecx, dword ptr [ebp + 0xc]
+        fld dword ptr [ecx + 0x234]
+        mov ecx, dword ptr [ebp + 0x10]
+        mov edx, dword ptr [ecx + 0x4]
+        fstp dword ptr [esp + 0x44]
+        mov eax, dword ptr [edx + 0xe0]
+        add ecx, 0x4
+        call eax
+        fmul dword ptr [esp + 0x44]
+        sub esp, 0x8
+        fadd qword ptr [mem_00993828]
+        fstp dword ptr [esp + 0x4c]
+        fld dword ptr [esp + 0x4c]
+        fstp qword ptr [esp]
+        call ext_006A6E92
+        fstp dword ptr [esp + 0x4c]
+        add esp, 0x8
+        fld dword ptr [esp + 0x44]
+        call ext_006A6DE0
+        mov ecx, dword ptr [esi + 0x30]
+        mov dword ptr [esp + 0x44], eax
+        fild dword ptr [esp + 0x44]
+        fst qword ptr [esp + 0x60]
+        fcomp qword ptr [ecx + 0xe8]
+        fnstsw ax
+        test ah, 0x41
+        jne L_4111ac
+        mov edx, dword ptr [esi + 0x3c]
+        fldz
+        mov eax, dword ptr [esi + 0x40]
+        mov dword ptr [esp + 0x48], edx
+        mov edx, dword ptr [esi + 0x44]
+        mov dword ptr [esp + 0x4c], eax
+        mov eax, dword ptr [esi + 0x48]
+        mov dword ptr [esp + 0x50], edx
+        mov dword ptr [esp + 0x54], eax
+        fsub qword ptr [ecx + 0x110]
+        fmul qword ptr [ecx + 0x120]
+        fadd qword ptr [ecx + 0x118]
+        fadd qword ptr [mem_0092BD70]
+        fstp qword ptr [esp + 0x68]
+        fld qword ptr [esp + 0x68]
+        fistp dword ptr [esp + 0x3c]
+        mov edx, dword ptr [esp + 0x3c]
+        mov eax, dword ptr [esi + 0x30]
+        mov dword ptr [esp + 0x48], edx
+        mov ecx, dword ptr [eax + 0xfc]
+        cmp edx, ecx
+        jge L_410eb5
+        mov dword ptr [esp + 0x48], ecx
+    L_410eb5:
+        fld qword ptr [esp + 0x60]
+        fsub qword ptr [eax + 0x110]
+        fmul qword ptr [eax + 0x120]
+        fadd qword ptr [eax + 0x118]
+        fadd qword ptr [mem_0092BD70]
+        fstp qword ptr [esp + 0x68]
+        fld qword ptr [esp + 0x68]
+        fistp dword ptr [esp + 0x3c]
+        mov edx, dword ptr [ebp + 0x14]
+        mov ecx, dword ptr [esp + 0x3c]
+        mov eax, dword ptr [edx + 0x8]
+        cmp ecx, eax
+        mov dword ptr [esp + 0x50], ecx
+        jle L_410ef3
+        mov dword ptr [esp + 0x50], eax
+    L_410ef3:
+        mov eax, dword ptr [esi + 0x50]
+        mov ecx, dword ptr [eax + 0x28c]
+        mov eax, dword ptr [ebp + 0x8]
+        push 0x3
+        push 0x1
+        push ecx
+        mov ecx, dword ptr [esi + 0x30]
+        lea edx, [esp + 0x54]
+        push edx
+        push eax
+        add ecx, 0x1b4
+        call ext_00419EF0
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x10
+    L_410f21:
+        cmp eax, 0x1
+        jne L_4111ac
+        mov ebx, dword ptr [esi + 0x30]
+        mov edi, dword ptr [ebx + 0x240]
+        add ebx, 0x238
+        cmp dword ptr [ebx + 0x4], edi
+        jbe L_410f44
+        call dword ptr [mem_00925134]
+    L_410f44:
+        mov eax, dword ptr [ebx + 0x4]
+        cmp eax, dword ptr [ebx + 0x8]
+        mov dword ptr [esp + 0x44], eax
+        jbe L_410f5a
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x44]
+    L_410f5a:
+        push edi
+        push ebx
+        push eax
+        push ebx
+        lea ecx, [esp + 0x78]
+        push ecx
+        mov ecx, ebx
+        call ext_00596660
+        mov ecx, dword ptr [ebp + 0x10]
+        push ebx
+        call ext_0059D740
+        mov eax, dword ptr [ebx + 0x4]
+        test eax, eax
+        je L_4111ac
+        mov edx, dword ptr [ebx + 0x8]
+        sub edx, eax
+        sar edx, 0x2
+        je L_4111ac
+        mov eax, dword ptr [ebp + 0xc]
+        fld dword ptr [eax + 0x234]
+        mov eax, dword ptr [esi + 0x30]
+        fstp dword ptr [esp + 0x5c]
+        mov dword ptr [esp + 0x44], 0xffffffff
+        fld qword ptr [eax + 0xe8]
+        fst qword ptr [esp + 0x48]
+        fld qword ptr [eax + 0xf0]
+        fstp qword ptr [esp + 0x68]
+        fsub qword ptr [eax + 0x110]
+        fmul qword ptr [eax + 0x120]
+        fadd qword ptr [eax + 0x118]
+        fadd qword ptr [mem_0092BD70]
+        fstp qword ptr [esp + 0x60]
+        fld qword ptr [esp + 0x60]
+        fistp dword ptr [esp + 0x40]
+        mov eax, dword ptr [esi + 0x30]
+        fld qword ptr [esp + 0x68]
+        fsub qword ptr [eax + 0x110]
+        fmul qword ptr [eax + 0x120]
+        fadd qword ptr [eax + 0x118]
+        fadd qword ptr [mem_0092BD70]
+        fstp qword ptr [esp + 0x60]
+        fld qword ptr [esp + 0x60]
+        fistp dword ptr [esp + 0x3c]
+        mov ecx, dword ptr [esp + 0x3c]
+        fld1
+        sub ecx, dword ptr [esp + 0x40]
+        mov dword ptr [esp + 0x40], ecx
+        fild dword ptr [esp + 0x40]
+        fldz
+        fucomp st(1)
+        fnstsw ax
+        test ah, 0x44
+        jnp L_411032
+        fstp st(1)
+        fld qword ptr [esp + 0x68]
+        fsub qword ptr [esp + 0x48]
+        fdivp st(1), st(0)
+        jmp L_411034
+    L_411032:
+        fstp st(0)
+    L_411034:
+        fld qword ptr [mem_00993CA0]
+        fmul st(0), st(1)
+        fxch st(1)
+        fmul qword ptr [mem_00993828]
+        call ext_006A6DE0
+        mov dword ptr [esp + 0x40], eax
+        cmp eax, 0x2
+        mov dword ptr [esp + 0x3c], 0x2
+        lea eax, [esp + 0x40]
+        jg L_411062
+        lea eax, [esp + 0x3c]
+    L_411062:
+        mov edx, dword ptr [eax]
+        mov dword ptr [esp + 0x60], edx
+        call ext_006A6DE0
+        mov dword ptr [esp + 0x3c], eax
+        mov eax, dword ptr [ebx + 0x4]
+        cmp eax, dword ptr [ebx + 0x8]
+        mov dword ptr [esp + 0x40], eax
+        jbe L_411083
+        call dword ptr [mem_00925134]
+    L_411083:
+        mov eax, dword ptr [esp + 0x40]
+        mov edi, ebx
+        mov dword ptr [esp + 0x6c], eax
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_411090:
+        mov eax, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], eax
+        mov dword ptr [esp + 0x48], eax
+        jbe L_4110a2
+        call dword ptr [mem_00925134]
+    L_4110a2:
+        test edi, edi
+        je L_4110aa
+        cmp edi, ebx
+        je L_4110b0
+    L_4110aa:
+        call dword ptr [mem_00925134]
+    L_4110b0:
+        mov ecx, dword ptr [esp + 0x48]
+        cmp dword ptr [esp + 0x6c], ecx
+        je L_4111ac
+        test edi, edi
+        jne L_4110c8
+        call dword ptr [mem_00925134]
+    L_4110c8:
+        mov edx, dword ptr [esp + 0x6c]
+        cmp edx, dword ptr [edi + 0x8]
+        jb L_4110d7
+        call dword ptr [mem_00925134]
+    L_4110d7:
+        mov eax, dword ptr [esp + 0x6c]
+        fld dword ptr [eax]
+        mov ecx, dword ptr [esi + 0x30]
+        fmul dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x48]
+        fld dword ptr [esp + 0x48]
+        fcom qword ptr [ecx + 0xe8]
+        fnstsw ax
+        test ah, 0x5
+        jnp L_41118d
+        fcom qword ptr [ecx + 0xf0]
+        fnstsw ax
+        test ah, 0x41
+        je L_4111aa
+        fsub qword ptr [ecx + 0x110]
+        fmul qword ptr [ecx + 0x120]
+        fadd qword ptr [ecx + 0x118]
+        fadd qword ptr [mem_0092BD70]
+        fstp qword ptr [esp + 0x48]
+        fld qword ptr [esp + 0x48]
+        fistp dword ptr [esp + 0x40]
+        mov eax, dword ptr [esp + 0x40]
+        mov ecx, dword ptr [esp + 0x60]
+        mov edx, dword ptr [esi + 0x40]
+        add ecx, eax
+        sub eax, dword ptr [esp + 0x3c]
+        sub ecx, dword ptr [esp + 0x3c]
+        mov edi, eax
+        cmp dword ptr [esp + 0x44], edi
+        mov eax, dword ptr [esi + 0x48]
+        mov dword ptr [esp + 0x70], edi
+        mov dword ptr [esp + 0x74], edx
+        mov dword ptr [esp + 0x78], ecx
+        mov dword ptr [esp + 0x7c], eax
+        je L_41118f
+        mov ecx, dword ptr [esi + 0x50]
+        mov edx, dword ptr [ecx + 0x28c]
+        mov ecx, dword ptr [ebp + 0x8]
+        push 0x3
+        push 0x1
+        push edx
+        lea eax, [esp + 0x7c]
+        push eax
+        push ecx
+        mov ecx, dword ptr [esi + 0x30]
+        add ecx, 0x1b4
+        call ext_00419EF0
+        mov dword ptr [esp + 0x44], edi
+        jmp L_41118f
+    L_41118d:
+        fstp st(0)
+    L_41118f:
+        mov edx, dword ptr [esp + 0x6c]
+        mov edi, ebx
+        cmp edx, dword ptr [edi + 0x8]
+        jb L_4111a0
+        call dword ptr [mem_00925134]
+    L_4111a0:
+        add dword ptr [esp + 0x6c], 0x4
+        jmp L_411090
+    L_4111aa:
+        fstp st(0)
+    L_4111ac:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x10
+    }
+}
