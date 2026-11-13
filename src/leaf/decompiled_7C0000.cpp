@@ -7038,3 +7038,168 @@ extern "C" __declspec(naked) void __fastcall fn_007CDF70(void* self) {
         ret
     }
 }
+
+// [0x007CAD50] sub_007CAD50 (414 bytes)
+extern "C" int mem_00993828;
+extern "C" int mem_0099D5A0;
+extern "C" int mem_0099D6C0;
+
+extern "C" void ext_007CA8A0();
+
+extern "C" __declspec(naked) void __cdecl fn_007CAD50(unsigned char* a, float* m) {
+    __asm {
+        sub esp, 0x30
+        push ebx
+        mov ebx, dword ptr [esp + 0x38]
+        cmp byte ptr [ebx], 0x2
+        jne L_skip
+        push esi
+        push edi
+        lea eax, [esp + 0x14]
+        push eax
+        lea ecx, [esp + 0x14]
+        push ecx
+        lea edx, [esp + 0x14]
+        push edx
+        push ebx
+        call ext_007CA8A0
+        fld dword ptr [esp + 0x1c]
+        fld qword ptr [mem_00993828]
+        mov esi, dword ptr [esp + 0x54]
+        fmul st(1), st
+        add esp, 0x10
+        fxch st(1)
+        mov edi, offset mem_0099D5A0
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x10]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x10]
+        fmul dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x14]
+        jmp L_loop
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_loop:
+        fld dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [edi - 0x8]
+        fmul dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [edi - 0x4]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x1c]
+        fld st(1)
+        fmul dword ptr [edi]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esi + 0x10]
+        fld dword ptr [esp + 0x1c]
+        fld st(0)
+        fmulp st(2), st
+        fld dword ptr [esi]
+        fld dword ptr [esp + 0x18]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(3)
+        faddp st(1), st
+        fld dword ptr [esi + 0x20]
+        fld dword ptr [esp + 0x20]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fadd dword ptr [esi + 0x30]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [esi + 0x4]
+        fmul st, st(3)
+        fld dword ptr [esi + 0x14]
+        fmul st, st(3)
+        faddp st(1), st
+        fld dword ptr [esi + 0x24]
+        fmul st, st(2)
+        faddp st(1), st
+        fadd dword ptr [esi + 0x34]
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [esi + 0x8]
+        fmulp st(3), st
+        fld dword ptr [esi + 0x18]
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fld dword ptr [esi + 0x28]
+        fmulp st(2), st
+        faddp st(1), st
+        fadd dword ptr [esi + 0x38]
+        fstp dword ptr [esp + 0x38]
+        fld dword ptr [edi + 0x4]
+        fmul dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x18]
+        fmul dword ptr [edi + 0x8]
+        fstp dword ptr [esp + 0x1c]
+        fmul dword ptr [edi + 0xc]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esi + 0x10]
+        fld dword ptr [esp + 0x1c]
+        fld st(0)
+        fmulp st(2), st
+        fld dword ptr [esi]
+        fld dword ptr [esp + 0x18]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(3)
+        faddp st(1), st
+        fld dword ptr [esi + 0x20]
+        fld dword ptr [esp + 0x20]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fadd dword ptr [esi + 0x30]
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [esi + 0x4]
+        fmul st, st(3)
+        fld dword ptr [esi + 0x14]
+        fmul st, st(3)
+        faddp st(1), st
+        fld dword ptr [esi + 0x24]
+        fmul st, st(2)
+        mov eax, dword ptr [ebx + 0xc]
+        lea edx, [esp + 0x24]
+        faddp st(1), st
+        fadd dword ptr [esi + 0x34]
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [esi + 0x8]
+        fmulp st(3), st
+        fld dword ptr [esi + 0x18]
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fld dword ptr [esi + 0x28]
+        fmulp st(2), st
+        faddp st(1), st
+        fadd dword ptr [esi + 0x38]
+        fstp dword ptr [esp + 0x2c]
+        mov eax, dword ptr [eax + 0xb0]
+        mov ecx, dword ptr [eax + 0x24]
+        push ecx
+        push edx
+        mov edx, dword ptr [eax + 0x20]
+        lea ecx, [esp + 0x38]
+        push ecx
+        push 0x4
+        call edx
+        add edi, 0x18
+        add esp, 0x10
+        cmp edi, offset mem_0099D6C0
+        jl L_loop
+        pop edi
+        pop esi
+    L_skip:
+        pop ebx
+        add esp, 0x30
+        ret
+    }
+}
