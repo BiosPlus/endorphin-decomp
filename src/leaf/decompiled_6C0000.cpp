@@ -643,3 +643,31 @@ extern "C" __declspec(naked) void __fastcall fn_006CA6B0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006C3250] sub_006C3250 (48 bytes)
+extern "C" void ext_006BB1A0();
+extern "C" void ext_006E6C30();
+
+extern "C" __declspec(naked) void __stdcall fn_006C3250(void* a1) {
+    __asm {
+        push 0AA88ECh
+        call ext_006BB1A0
+        test eax, eax
+        je short L_neg
+        push esi
+        mov esi, dword ptr [esp + 8]
+        lea ecx, [esi + 10h]
+        lea edx, [esi + 8]
+        push ecx
+        push edx
+        push esi
+        mov ecx, eax
+        call ext_006E6C30
+        mov eax, esi
+        pop esi
+        ret 4
+L_neg:
+        mov eax, dword ptr [esp + 4]
+        ret 4
+    }
+}
