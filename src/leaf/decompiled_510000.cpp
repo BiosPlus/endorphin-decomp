@@ -6838,3 +6838,18 @@ extern "C" __declspec(naked) void __fastcall fn_005114D0(void* self) {
         ret 4
     }
 }
+
+// [0x0051DFC0] sub_0051DFC0 (56 bytes)
+extern "C" void ext_00520AE0();
+
+extern "C" void* __cdecl fn_0051DFC0(const char* first, const char* last, char* dest) {
+    if (first != last) {
+        typedef void (__thiscall *Fn)(void* self, const void* src);
+        do {
+            ((Fn)ext_00520AE0)(dest, first);
+            first += 0x168;
+            dest += 0x168;
+        } while (first != last);
+    }
+    return dest;
+}
