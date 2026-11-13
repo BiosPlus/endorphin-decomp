@@ -5968,3 +5968,95 @@ extern "C" __declspec(naked) void* __fastcall fn_00627530(void* self) {
         ret
     }
 }
+
+// [0x00623500] sub_00623500 (244 bytes)
+extern "C" void ext_0041FF30();
+extern "C" void ext_005A07A0();
+extern "C" void ext_005AE1B0();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00925134;
+extern "C" int mem_00A97D5C;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+// s: by-value std::string (28 bytes, callee-cleaned via ret 0x1c); SEH-framed, throws via CxxThrowException on a self-assignment guard.
+extern "C" __declspec(naked) void __fastcall fn_00623500(void* self, int edx_unused, void* s) {
+    __asm {
+        push -1
+        push 0x8a3e82
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x68
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        lea eax, [esp + 0x88]
+        push eax
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x88], 0x0
+        call ext_005A07A0
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        mov ebp, dword ptr [esi + 0x4]
+        je L_chk1
+        cmp edi, esi
+        je L_chk2
+L_chk1:
+        call dword ptr [mem_00925134]
+L_chk2:
+        mov ebx, dword ptr [esp + 0x14]
+        cmp ebx, ebp
+        jne L_main
+        mov edx, dword ptr [mem_00A97D5C]
+        push edx
+        lea ecx, [esp + 0x1c]
+        call dword ptr [mem_00924FE4]
+        lea eax, [esp + 0x88]
+        push eax
+        lea ecx, [esp + 0x1c]
+        push ecx
+        lea ecx, [esp + 0x3c]
+        mov byte ptr [esp + 0x88], 0x1
+        call ext_0041FF30
+        push 0x9d3748
+        lea edx, [esp + 0x38]
+        push edx
+        call ext_006A6DD2
+L_main:
+        test edi, edi
+        jne L_chk3
+        call dword ptr [mem_00925134]
+L_chk3:
+        cmp ebx, dword ptr [edi + 0x4]
+        jne L_chk4
+        call dword ptr [mem_00925134]
+L_chk4:
+        mov eax, dword ptr [ebx + 0x28]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+        push ebx
+        push edi
+        lea eax, [esp + 0x18]
+        push eax
+        mov ecx, esi
+        call ext_005AE1B0
+        lea ecx, [esp + 0x88]
+        mov dword ptr [esp + 0x80], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x78]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x74
+        ret 0x1c
+    }
+}
