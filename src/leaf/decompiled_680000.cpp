@@ -10175,3 +10175,12 @@ extern "C" __declspec(naked) void __cdecl fn_0068F790(void* a1) {
         ret
     }
 }
+
+// [0x00681110] sub_00681110 (38 bytes)
+extern "C" void ext_00505F00();
+extern "C" void __cdecl fn_00681110(char* first, char* last, const void* val) {
+    typedef void (__thiscall *CopyCtor)(void* self, const void* src);
+    for (; first != last; first += 0x10) {
+        ((CopyCtor)ext_00505F00)(first, val);
+    }
+}
