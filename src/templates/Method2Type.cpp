@@ -1032,3 +1032,43 @@ extern "C" __declspec(naked) void __fastcall fn_0066C250(void* self) {
         ret 0x10
     }
 }
+
+// [0x0066CD90] ExprParser::Method2Type<NM::Vector3, NM::Vector3 const &, float, &public: void __thiscall NM::Vector3::radArbitraryRotateTSA(class NM::Vector3 const &, float)>::vfunc_49 (86 bytes)
+extern "C" void ext_00671F30();
+extern "C" void ext_0067C810();
+extern "C" __declspec(naked) void __fastcall fn_0066CD90(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        mov dword ptr [esp + 0x8], 0x0
+        call eax
+        fstp dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x10]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_0067C810
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x10
+    }
+}
