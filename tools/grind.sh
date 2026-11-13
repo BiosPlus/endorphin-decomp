@@ -636,9 +636,36 @@ finish_function() {   # $1=addr $2=outcome(matched|deferred) $3=model
   "$WORK_BIN" commit-pending >/dev/null 2>&1 || true
   emit "[done] $addr ($outcome via $model) finished=$finished/$TOTAL_JOBS matched=$matched_count deferred=$deferred_count"
   if (( PUSH_EVERY_JOBS > 0 && finished % PUSH_EVERY_JOBS == 0 )); then
+    if ! verify_before_push; then
+      emit "[!] Push BLOCKED: committed sources fail byte verification (see $PREPUSH_LOG). Fix and push manually."
+      return
+    fi
     emit "[*] Pushing progress to GitHub (triggers Windows CI + HTML dashboard build)"
     if git push >/dev/null 2>&1; then emit "[*] Push ok"; else emit "[!] Push failed"; fi
   fi
+}
+
+# Re-verify the committed (HEAD) version of every .cpp changed since the upstream branch, so a
+# collateral-damage edit that slipped into a commit never reaches CI. Uses HEAD blobs, not the
+# working tree, so in-flight worker edits can't cause false failures.
+PREPUSH_LOG="$REPO_ROOT/.local/prepush.log"
+verify_before_push() {
+  local upstream tmp f
+  local -a files=() paths=()
+  upstream="$(git rev-parse -q --verify '@{u}' 2>/dev/null)" || { emit "[!] No upstream; skipping pre-push verify"; return 0; }
+  mapfile -t files < <(git diff --name-only "$upstream" HEAD -- 'src/*.cpp')
+  (( ${#files[@]} == 0 )) && return 0
+  tmp="$REPO_ROOT/.local/prepush"
+  rm -rf "$tmp"
+  for f in "${files[@]}"; do
+    git cat-file -e "HEAD:$f" 2>/dev/null || continue   # deleted file
+    mkdir -p "$tmp/$(dirname "$f")"
+    git show "HEAD:$f" > "$tmp/$f"
+    paths+=(".local/prepush/$f")
+  done
+  (( ${#paths[@]} == 0 )) && return 0
+  emit "[*] Pre-push verify: ${#paths[@]} changed .cpp file(s)"
+  "$BAM_BIN" -require-compiler "${paths[@]}" > "$PREPUSH_LOG" 2>&1
 }
 
 defer_function() {

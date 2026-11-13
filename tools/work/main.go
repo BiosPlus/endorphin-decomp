@@ -1534,6 +1534,33 @@ func autoCommitMatch(va, symbol, matchedBy, cppPath string) {
 	}
 }
 
+// findSiblingRegressions re-verifies every already-matched unit compiled into the same .obj
+// (other than skipVA) and returns a description of each one that no longer matches.
+func findSiblingRegressions(units []UnitEntry, fnMap map[string]ObjFunc, skipVA string) []string {
+	var broken []string
+	for _, su := range units {
+		if su.IsThunk || !isStatusCompleted(su.Status) {
+			continue
+		}
+		sva, sStart, err := normalizeVA(su.VA)
+		if err != nil || sva == skipVA {
+			continue
+		}
+		sFn, ok := findCompiledFunc(fnMap, sva)
+		if !ok {
+			continue
+		}
+		tgt, err := loadTargetBytesForUnit(su, sStart)
+		if err != nil || len(tgt) == 0 {
+			continue
+		}
+		if exact, pct, comp, want := maskAndCompare(sFn, tgt, su, sStart); !exact {
+			broken = append(broken, fmt.Sprintf("%s %s (%.1f%%, %dB vs target %dB)", sva, su.Symbol, pct, len(comp), len(want)))
+		}
+	}
+	return broken
+}
+
 func cmdCheck(args []string) {
 	addrArg, modelName := parseCheckArgs(args)
 	if addrArg == "" {
@@ -1587,6 +1614,16 @@ func cmdCheck(args []string) {
 
 	exact, pct, compMasked, tgtMasked := maskAndCompare(compFn, targetBytes, *u, startVA)
 	if exact {
+		// Guard against collateral damage: a bulk edit (e.g. replace-all on `__asm {`) can
+		// silently break every other matched function in the same translation unit.
+		if broken := findSiblingRegressions(units, fnMap, vaHex); len(broken) > 0 {
+			fmt.Printf("REJECTED: %s matches, but your edit broke %d previously matched function(s) in %s:\n", u.VA, len(broken), cppPath)
+			for _, b := range broken {
+				fmt.Printf("  - %s\n", b)
+			}
+			fmt.Printf("Only edit the body of fn_%s. Compare against HEAD with `git diff -- %s` and revert changes outside your function.\n", strings.TrimPrefix(vaHex, "0x"), cppPath)
+			os.Exit(1)
+		}
 		fmt.Printf("EXACT MATCH (100%%) | %s | %s (%d bytes)\n", u.VA, u.Symbol, len(tgtMasked))
 		clearDiagnosis(u.VA)
 		withWorkLock(func() {

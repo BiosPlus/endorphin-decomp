@@ -532,6 +532,22 @@ func main() {
 		totalMatched, totalChecked, totalBytesMatched, totalTUs, hasCompiler, hasTargetExe)
 
 	if len(failures) > 0 {
+		// Per-file summary first so a single badly broken file can't hide others behind the detail cap.
+		perFile := make(map[string]int)
+		for _, f := range failures {
+			if i := strings.Index(f, " ["); i > 0 {
+				perFile[f[:i]]++
+			}
+		}
+		files := make([]string, 0, len(perFile))
+		for f := range perFile {
+			files = append(files, f)
+		}
+		sort.Strings(files)
+		fmt.Fprintf(os.Stderr, "%d failure(s) in %d file(s):\n", len(failures), len(files))
+		for _, f := range files {
+			fmt.Fprintf(os.Stderr, "  %4d  %s\n", perFile[f], f)
+		}
 		for idx, f := range failures {
 			if idx >= 40 {
 				fmt.Fprintf(os.Stderr, "... and %d more failures\n", len(failures)-40)

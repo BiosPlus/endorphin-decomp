@@ -39,6 +39,7 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
 - **NEVER** edit, stage, or commit `README.md` yourself. Only the build workflow (`work check` → `tools/status -readme`) regenerates it; if it shows as modified, leave it alone.
 - **NEVER** touch, generate, or commit HTML files (`docs/`).
 - **NEVER** commit `.local/`, `.exe`, `.dll`, `.obj`, `.lib`, `.pdb`, or `.idb` files.
+- **NEVER** use replace-all / bulk find-and-replace (`replace_all`, `sed -i`, etc.) on `src/` files. Shard files hold 100+ matched functions; edit only the body of your target `fn_XXXXXXXX`. `work check` rejects a match if any other matched function in the same file regresses.
 - **C++03 only** (no `auto`, `nullptr`, or variadic templates).
 - **No Python** (Go/Bash tooling only).
 - Include `Co-authored-by: Claude <noreply@anthropic.com>` (for Claude models) or `Co-authored-by: Antigravity <noreply@google.com>` (for Antigravity / `agy` / Gemini models) on commits.
