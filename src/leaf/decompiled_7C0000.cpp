@@ -5514,3 +5514,113 @@ extern "C" void __cdecl fn_007CD660(int a1) {
     ((void (__cdecl *)(int))ext_007EFF00)(a1);
     ((void (__cdecl *)(int))ext_007CC140)(a1);
 }
+
+// [0x007CD9D0] sub_007CD9D0 (321 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007CD9D0(void) {
+    __asm {
+        sub     esp, 0x1c
+        test    eax, eax
+        jle     done
+        mov     edx, dword ptr [esp + 0x20]
+        fldz
+        push    ebx
+        push    ebp
+        push    esi
+        mov     esi, dword ptr [esp + 0x30]
+        mov     dword ptr [esp + 0x18], esi
+        mov     esi, dword ptr [esp + 0x38]
+        mov     dword ptr [esp + 0x14], 0
+        lea     ecx, [4*edi]
+        mov     dword ptr [esp + 0x10], esi
+        mov     dword ptr [esp + 0x24], eax
+outer_top:
+        test    edx, edx
+        jle     outer_next
+        mov     eax, dword ptr [esp + 0x10]
+        mov     ebp, dword ptr [esp + 0x34]
+        xor     ebx, ebx
+        mov     dword ptr [esp + 0x1c], eax
+        mov     dword ptr [esp + 0x20], edx
+middle_top:
+        xor     esi, esi
+        fst     dword ptr [esp + 0xc]
+        cmp     edi, 4
+        jl      rem_setup
+        mov     eax, dword ptr [esp + 0x18]
+        lea     edx, [edi - 4]
+        shr     edx, 2
+        add     edx, 1
+        mov     ecx, ebp
+        lea     esi, [4*edx]
+unroll_loop:
+        fld     dword ptr [eax + 4]
+        add     eax, 0x10
+        fmul    dword ptr [ecx + 4]
+        add     ecx, 0x10
+        sub     edx, 1
+        fld     dword ptr [ecx - 0x10]
+        fmul    dword ptr [eax - 0x10]
+        fadd    dword ptr [esp + 0xc]
+        fstp    dword ptr [esp + 0xc]
+        fadd    dword ptr [esp + 0xc]
+        fstp    dword ptr [esp + 0xc]
+        fld     dword ptr [esp + 0xc]
+        fld     dword ptr [eax - 8]
+        fmul    dword ptr [ecx - 8]
+        faddp   st(1), st
+        fstp    dword ptr [esp + 0xc]
+        fld     dword ptr [esp + 0xc]
+        fld     dword ptr [eax - 4]
+        fmul    dword ptr [ecx - 4]
+        faddp   st(1), st
+        fstp    dword ptr [esp + 0xc]
+        jne     unroll_loop
+rem_setup:
+        cmp     esi, edi
+        jge     rem_done
+        mov     edx, dword ptr [esp + 0x34]
+        mov     eax, dword ptr [esp + 0x14]
+        lea     ecx, [ebx + esi]
+        lea     edx, [edx + 4*ecx]
+        mov     ecx, dword ptr [esp + 0x30]
+        add     eax, esi
+        lea     ecx, [ecx + 4*eax]
+        mov     eax, edi
+        sub     eax, esi
+rem_loop:
+        fld     dword ptr [ecx]
+        add     ecx, 4
+        fmul    dword ptr [edx]
+        add     edx, 4
+        sub     eax, 1
+        fadd    dword ptr [esp + 0xc]
+        fstp    dword ptr [esp + 0xc]
+        jne     rem_loop
+rem_done:
+        mov     eax, dword ptr [esp + 0x1c]
+        fld     dword ptr [esp + 0xc]
+        lea     ecx, [4*edi]
+        fstp    dword ptr [eax]
+        add     eax, 4
+        add     ebx, edi
+        add     ebp, ecx
+        sub     dword ptr [esp + 0x20], 1
+        mov     dword ptr [esp + 0x1c], eax
+        jne     middle_top
+        mov     edx, dword ptr [esp + 0x2c]
+outer_next:
+        add     dword ptr [esp + 0x14], edi
+        add     dword ptr [esp + 0x18], ecx
+        lea     eax, [4*edx]
+        add     dword ptr [esp + 0x10], eax
+        sub     dword ptr [esp + 0x24], 1
+        jne     outer_top
+        pop     esi
+        fstp    st(0)
+        pop     ebp
+        pop     ebx
+done:
+        add     esp, 0x1c
+        ret
+    }
+}
