@@ -6550,3 +6550,14 @@ extern "C" __declspec(naked) void __cdecl fn_00510440() {
         ret
     }
 }
+
+// [0x0051E710] sub_0051E710 (32 bytes)
+extern "C" void __fastcall ext_0051E440(void* self);
+extern "C" void __fastcall ext_0051DDD0(void* self);
+extern "C" void __fastcall ext_0051E3D0(void* self);
+
+extern "C" void __fastcall fn_0051E710(void* self, int edx_unused, char* a1) {
+    ext_0051E440(self);
+    ext_0051DDD0(a1);
+    ext_0051E3D0(*(void**)(a1 + 0xb8));
+}
