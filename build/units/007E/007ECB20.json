@@ -32,5 +32,7 @@
     "0x007ECC32",
     "0x007ECC5B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-13T12:32:06Z"
 }
