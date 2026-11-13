@@ -18,5 +18,7 @@
     "0x007CD673",
     "0x007CD679"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-13T10:05:48Z"
 }
