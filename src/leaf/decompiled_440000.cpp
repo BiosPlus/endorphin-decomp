@@ -6294,3 +6294,110 @@ extern "C" __declspec(naked) void* __fastcall fn_00447680(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00441060();
+extern "C" void ext_00441090();
+
+// [0x00441AC0] sub_00441AC0 (331 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00441AC0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0x1c
+        push ebx
+        push esi
+        push edi
+        call ext_00441020
+        mov dword ptr [esp + 0x18], eax
+        fild dword ptr [esp + 0x18]
+        mov eax, dword ptr [ecx + 0x48]
+        fsub qword ptr [eax + 0x110]
+        fmul qword ptr [eax + 0x120]
+        fadd qword ptr [eax + 0x118]
+        fadd qword ptr [mem_0092BD70]
+        fstp qword ptr [esp + 0x18]
+        fld qword ptr [esp + 0x18]
+        fistp dword ptr [esp + 0xc]
+        call ext_00441040
+        mov dword ptr [esp + 0x18], eax
+        fild dword ptr [esp + 0x18]
+        mov eax, dword ptr [ecx + 0x48]
+        fsub qword ptr [eax + 0x110]
+        fmul qword ptr [eax + 0x120]
+        fadd qword ptr [eax + 0x118]
+        fadd qword ptr [mem_0092BD70]
+        fstp qword ptr [esp + 0x18]
+        fld qword ptr [esp + 0x18]
+        fistp dword ptr [esp + 0x10]
+        call ext_00441060
+        mov dword ptr [esp + 0x18], eax
+        fild dword ptr [esp + 0x18]
+        mov eax, dword ptr [ecx + 0x48]
+        fsub qword ptr [eax + 0x110]
+        fmul qword ptr [eax + 0x120]
+        fadd qword ptr [eax + 0x118]
+        fadd qword ptr [mem_0092BD70]
+        fstp qword ptr [esp + 0x18]
+        fld qword ptr [esp + 0x18]
+        fistp dword ptr [esp + 0x14]
+        call ext_00441090
+        mov dword ptr [esp + 0x18], eax
+        fild dword ptr [esp + 0x18]
+        mov eax, dword ptr [ecx + 0x48]
+        fsub qword ptr [eax + 0x110]
+        fmul qword ptr [eax + 0x120]
+        fadd qword ptr [eax + 0x118]
+        fadd qword ptr [mem_0092BD70]
+        fstp qword ptr [esp + 0x20]
+        fld qword ptr [esp + 0x20]
+        fistp dword ptr [esp + 0x18]
+        mov eax, dword ptr [ecx + 0x48]
+        mov ecx, dword ptr [eax + 0xfc]
+        mov edx, dword ptr [esp + 0xc]
+        cmp edx, ecx
+        mov eax, dword ptr [ebp + 0x8]
+        mov ebx, dword ptr [eax + 0x8]
+        mov esi, edx
+        jg short loc_441bb7
+        mov esi, ecx
+    loc_441bb7:
+        mov edi, dword ptr [esp + 0x10]
+        add dword ptr [eax + 0x4], 1
+        cmp ebx, edi
+        mov dword ptr [eax], esi
+        mov esi, ebx
+        jl short loc_441bc9
+        mov esi, edi
+    loc_441bc9:
+        add dword ptr [eax + 0xc], -1
+        cmp edx, ecx
+        mov dword ptr [eax + 0x8], esi
+        mov esi, edx
+        jg short loc_441bd8
+        mov esi, ecx
+    loc_441bd8:
+        mov dword ptr [eax + 0x10], esi
+        mov esi, dword ptr [esp + 0x14]
+        cmp esi, ecx
+        mov dword ptr [eax + 0x14], edi
+        jg short loc_441be8
+        mov esi, ecx
+    loc_441be8:
+        cmp edx, ecx
+        mov dword ptr [eax + 0x18], esi
+        mov esi, dword ptr [esp + 0x18]
+        setl cl
+        cmp edi, ebx
+        pop edi
+        mov dword ptr [eax + 0x1c], esi
+        setg dl
+        pop esi
+        mov byte ptr [eax + 0x20], cl
+        mov byte ptr [eax + 0x21], dl
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+    }
+}
