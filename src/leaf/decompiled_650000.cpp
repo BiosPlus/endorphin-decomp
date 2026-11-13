@@ -6403,3 +6403,10 @@ extern "C" void __fastcall fn_0065AEF0(void** self) {
     ext_007C8AC0(*(int*)(a + 0x18), self[0], 0, *(int*)(a + 0x1c), self[2], 0);
     ext_007C7150(self[0]);
 }
+
+// [0x0065BF70] sub_0065BF70 (33 bytes)
+extern "C" void ext_007C8140();
+extern "C" void __fastcall fn_0065BF70(void* self) {
+    ((void (__cdecl *)(int, float))ext_007C8140)(*(int*)((char*)self + 0x40), *(float*)((char*)self + 0x8));
+    *(float*)((char*)self + 0x4) += *(float*)((char*)self + 0x8);
+}
