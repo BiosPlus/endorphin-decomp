@@ -469,3 +469,29 @@ L_00710FC9:
         ret 0x4
     }
 }
+
+// [0x0071CA10] sub_0071CA10 (48 bytes)
+extern "C" void ext_006C9520();
+extern "C" void ext_006DC460();
+extern "C" void ext_006C9F70();
+extern "C" void ext_00708000();
+extern "C" __declspec(naked) void __fastcall fn_0071CA10(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 4]
+        test ecx, ecx
+        je short L_NULL_0071CA10
+        call ext_006DC460
+        mov ecx, eax
+        call ext_006C9520
+        mov ecx, eax
+        jmp ext_006C9F70
+    L_NULL_0071CA10:
+        mov ecx, dword ptr [eax + 0Ch]
+        push 0AA8D10h
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        jmp dword ptr [edx + 7Ch]
+    }
+}
