@@ -233,3 +233,34 @@ extern "C" __declspec(naked) void __fastcall fn_0041D610(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0041D3D0] Properties::GWCPropertiesControlDriver::vfunc_3 (52 bytes)
+extern "C" void ext_006A7BC0();
+extern "C" void ext_006A89B0();
+extern "C" void ext_006A93A0();
+extern "C" void ext_006AC2E0();
+
+extern "C" __declspec(naked) void __fastcall fn_0041D3D0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x18]
+        mov ecx, dword ptr [esi + 0xc]
+        push eax
+        mov byte ptr [esi + 0x2c], 0
+        call ext_006A89B0
+        test eax, eax
+        je L_skip
+        mov ecx, dword ptr [esi + 0xc]
+        push eax
+        call ext_006A7BC0
+    L_skip:
+        mov ecx, dword ptr [esi + 0xc]
+        call ext_006AC2E0
+        mov ecx, dword ptr [esi + 0xc]
+        push 1
+        call ext_006A93A0
+        pop esi
+        ret
+    }
+}
