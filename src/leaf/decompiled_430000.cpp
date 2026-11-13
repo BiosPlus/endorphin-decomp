@@ -14116,3 +14116,12 @@ extern "C" __declspec(naked) void __fastcall fn_004319D0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0043A8F0] sub_0043A8F0 (32 bytes)
+extern "C" void ext_0043A580();
+extern "C" void ext_00465B40();
+extern "C" void __fastcall fn_0043A8F0(void* self) {
+    void* obj = ((void* (__cdecl*)())ext_00465B40)();
+    int val = (*(int (__thiscall***)(void*, int))obj)[0x9c / 4](obj, 1);
+    ((void (__thiscall*)(void*, int))ext_0043A580)(self, val);
+}
