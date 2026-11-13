@@ -3382,3 +3382,22 @@ extern "C" __declspec(naked) void __fastcall fn_005FC290(void* self) {
         ret
     }
 }
+
+// [0x005F56E0] sub_005F56E0 (32 bytes)
+extern "C" void ext_0067E560();
+extern "C" int mem_00B40640;
+extern "C" __declspec(naked) void __fastcall fn_005F56E0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, [esp + 4]
+        mov edx, [ecx + 4]
+        mov edx, [edx + 0xc]
+        add ecx, 4
+        push eax
+        mov eax, [mem_00B40640]
+        push eax
+        call edx
+        mov ecx, eax
+        call ext_0067E560
+        ret 4
+    }
+}
