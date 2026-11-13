@@ -8636,3 +8636,18 @@ L_has_it:
         ret 4
     }
 }
+
+// [0x00469080] sub_00469080 (56 bytes)
+extern "C" void ext_004AFC60();
+extern "C" void __fastcall fn_00469080(void* self, int edx_unused, void* arg) {
+    if (*((unsigned char*)self + 0x10) != 0) {
+        void* obj = *(void**)((char*)self + 0x14);
+        if (obj != 0 && arg != 0) {
+            ((void (__thiscall*)(void*, void*))ext_004AFC60)((char*)*(void**)((char*)obj + 0x34) + 8, arg);
+            obj = *(void**)((char*)self + 0x14);
+            void* target = *(void**)((char*)obj + 0x30);
+            void** vtable = *(void***)target;
+            ((void (__thiscall*)(void*))vtable[0x154 / 4])(target);
+        }
+    }
+}
