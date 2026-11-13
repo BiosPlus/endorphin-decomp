@@ -4354,3 +4354,165 @@ L_6A:
         ret 0x4
     }
 }
+
+// [0x00694900] sub_00694900 (361 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00694900(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 68h
+        fld dword ptr [ecx]
+        fld dword ptr [ecx+4]
+        fld dword ptr [ecx+8]
+        fstp qword ptr [esp+30h]
+        fld dword ptr [ecx+0ch]
+        fld dword ptr [ecx+10h]
+        fst qword ptr [esp+40h]
+        fld dword ptr [ecx+14h]
+        fst qword ptr [esp+48h]
+        fld dword ptr [ecx+18h]
+        fld dword ptr [ecx+1ch]
+        fstp qword ptr [esp+58h]
+        fld dword ptr [ecx+20h]
+        fst qword ptr [esp+60h]
+        fld st(0)
+        fmulp st(4), st
+        fld qword ptr [esp+58h]
+        fmul st, st(3)
+        _emit 0xde
+        _emit 0xec
+        fxch st(3)
+        fstp qword ptr [esp]
+        fld qword ptr [esp+58h]
+        fld qword ptr [esp+30h]
+        fmul st(1), st
+        fxch st(1)
+        fstp qword ptr [esp+10h]
+        fxch st(3)
+        fmul st, st(5)
+        fstp qword ptr [esp+8]
+        fld st(1)
+        fmul st, st(5)
+        fld qword ptr [esp+40h]
+        fmulp st(4), st
+        _emit 0xde
+        _emit 0xe3
+        fxch st(2)
+        fst qword ptr [esp+18h]
+        fld qword ptr [esp+10h]
+        fsub qword ptr [esp+8]
+        fmul st, st(4)
+        fld qword ptr [esp]
+        fmul st, st(7)
+        faddp st(1), st
+        fxch st(1)
+        fmul st, st(3)
+        faddp st(1), st
+        fldz
+        fucomp st(1)
+        fnstsw ax
+        test ah, 44h
+        jp nonzero_path
+        fstp st(0)
+        xor al, al
+        fstp st(4)
+        fstp st(1)
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        fld1
+        fst dword ptr [ecx]
+        fldz
+        fst dword ptr [ecx+4]
+        fst dword ptr [ecx+8]
+        fst dword ptr [ecx+0ch]
+        fst dword ptr [ecx+14h]
+        fst dword ptr [ecx+18h]
+        fstp dword ptr [ecx+1ch]
+        fst dword ptr [ecx+10h]
+        fstp dword ptr [ecx+20h]
+        mov esp, ebp
+        pop ebp
+        ret
+nonzero_path:
+        fld1
+        mov al, 1
+        _emit 0xde
+        _emit 0xf1
+        fld qword ptr [esp]
+        fmul st, st(1)
+        fstp dword ptr [ecx]
+        fld qword ptr [esp+60h]
+        fmul st, st(4)
+        fld st(3)
+        fmulp st(3), st
+        _emit 0xde
+        _emit 0xe2
+        fmul st(1), st
+        fxch st(1)
+        fchs
+        fstp dword ptr [ecx+0ch]
+        fld qword ptr [esp+58h]
+        fmul st, st(3)
+        fld st(2)
+        fmul qword ptr [esp+40h]
+        _emit 0xde
+        _emit 0xe9
+        fmul st, st(1)
+        fstp dword ptr [ecx+18h]
+        fld qword ptr [esp+8]
+        _emit 0xdc
+        _emit 0x64
+        _emit 0x24
+        _emit 0x10
+        fmul st, st(1)
+        fchs
+        fstp dword ptr [ecx+4]
+        fld qword ptr [esp+60h]
+        fmul st, st(5)
+        fld st(2)
+        fld qword ptr [esp+30h]
+        fmul st(1), st
+        fxch st(2)
+        _emit 0xde
+        _emit 0xe1
+        fmul st, st(2)
+        fstp dword ptr [ecx+10h]
+        fld qword ptr [esp+58h]
+        fmul st, st(6)
+        fxch st(3)
+        fmul st, st(5)
+        _emit 0xde
+        _emit 0xeb
+        fxch st(2)
+        fmul st, st(1)
+        fchs
+        fstp dword ptr [ecx+1ch]
+        fld qword ptr [esp+18h]
+        fmul st, st(1)
+        fstp dword ptr [ecx+8]
+        fld qword ptr [esp+48h]
+        fmul st, st(5)
+        fld st(3)
+        fmulp st(3), st
+        _emit 0xde
+        _emit 0xe2
+        fmul st(1), st
+        fxch st(1)
+        fchs
+        fstp dword ptr [ecx+14h]
+        fld qword ptr [esp+40h]
+        fmulp st(4), st
+        fxch st(1)
+        fmulp st(2), st
+        fxch st(2)
+        _emit 0xde
+        _emit 0xe1
+        fmulp st(1), st
+        fstp dword ptr [ecx+20h]
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
