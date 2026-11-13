@@ -9131,3 +9131,52 @@ extern "C" __declspec(naked) void __fastcall fn_00441E30(void* self) {
         ret 8
     }
 }
+
+// [0x0044AE80] sub_0044AE80 (124 bytes)
+extern "C" void ext_0045D270();
+extern "C" __declspec(naked) void __fastcall fn_0044AE80(void* self) {
+    __asm {
+        push    ebx
+        push    esi
+        mov     esi, ecx
+        mov     ecx, dword ptr [esi + 0xe0]
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax + 0x1b4]
+        push    edi
+        call    edx
+        mov     ecx, dword ptr [esi + 0xe4]
+        call    ext_0045D270
+        mov     eax, dword ptr [esi + 0xe4]
+        mov     ecx, dword ptr [eax + 0x20]
+        mov     edi, dword ptr [mem_00925688]
+        push    1
+        push    0
+        push    ecx
+        call    edi
+        mov     edx, dword ptr [esi + 0xe4]
+        mov     eax, dword ptr [edx + 0x20]
+        mov     ebx, dword ptr [mem_0092568C]
+        push    eax
+        call    ebx
+        mov     ecx, dword ptr [esi + 0xe8]
+        mov     edx, dword ptr [ecx + 0x20]
+        push    1
+        push    0
+        push    edx
+        call    edi
+        mov     eax, dword ptr [esi + 0xe8]
+        mov     ecx, dword ptr [eax + 0x20]
+        push    ecx
+        call    ebx
+        call    ext_00468180
+        mov     edx, dword ptr [eax]
+        mov     ecx, eax
+        mov     eax, dword ptr [edx + 4]
+        call    eax
+        pop     edi
+        mov     ecx, esi
+        pop     esi
+        pop     ebx
+        jmp     ext_0044A900
+    }
+}
