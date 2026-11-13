@@ -203,3 +203,62 @@ extern "C" __declspec(naked) float __fastcall fn_005E1970(void* self, int edx_un
         ret 4
     }
 }
+
+extern "C" void ext_00528BB0();
+extern "C" void ext_00528BD0();
+extern "C" void ext_00528C70();
+extern "C" void ext_00584C00();
+extern "C" void ext_005ECF40();
+extern "C" int mem_0093A444;
+
+// [0x005ED550] NMData::HingeData::vfunc_14_off_C (123 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005ED550(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        sub esp, 0x8
+        mov eax, esp
+        mov esi, ecx
+        mov dword ptr [eax], offset mem_0093A444
+        mov dword ptr [eax + 0x4], edi
+        call ext_005ECF40
+        mov bl, al
+        test bl, bl
+        je L_done
+        push 0x20000
+        mov ecx, esi
+        call ext_00528BD0
+        test edi, 0x200
+        mov byte ptr [esp + 0x14], al
+        je L_false
+        mov ecx, dword ptr [esi + 0x174]
+        call ext_00584C00
+        test al, al
+        je L_false
+        mov al, 0x1
+        jmp L_cmp
+    L_false:
+        xor al, al
+    L_cmp:
+        cmp al, byte ptr [esp + 0x14]
+        mov byte ptr [esp + 0xc], al
+        je L_done
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push 0x20000
+        mov ecx, esi
+        call ext_00528BB0
+        mov ecx, esi
+        call ext_00528C70
+    L_done:
+        pop edi
+        pop esi
+        mov al, bl
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
