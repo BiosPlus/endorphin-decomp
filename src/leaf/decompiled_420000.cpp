@@ -6683,3 +6683,37 @@ extern "C" __declspec(naked) void __fastcall fn_0042E770(void* self) {
         jmp     ext_0042C840
     }
 }
+
+extern "C" void ext_0042C770();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_0092F330;
+
+// [0x0042E820] sub_0042E820 (59 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0042E820(void* self) {
+    __asm {
+        sub esp, 8
+        push esi
+        lea esi, [ecx + 4]
+        mov dword ptr [ecx], offset mem_0092F330
+        mov eax, dword ptr [esi + 4]
+        mov ecx, dword ptr [eax]
+        push eax
+        push esi
+        push ecx
+        push esi
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, esi
+        call ext_0042C770
+        mov ecx, dword ptr [esi + 4]
+        push ecx
+        call ext_006A5C5C
+        add esp, 4
+        xor eax, eax
+        mov dword ptr [esi + 4], eax
+        mov dword ptr [esi + 8], eax
+        pop esi
+        add esp, 8
+        ret
+    }
+}
