@@ -4653,3 +4653,211 @@ extern "C" __declspec(naked) void __fastcall fn_00482EB0(void* self, int edx_unu
     }
 }
 
+
+extern "C" void ext_0048FB00();
+extern "C" void ext_004B0ED0();
+extern "C" void ext_004B1100();
+extern "C" void ext_004B1130();
+extern "C" int mem_00925134;
+
+// [0x0048FC70] sub_0048FC70 (527 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0048FC70(void* self) {
+    __asm {
+        sub esp, 0x24
+        cmp byte ptr [esp + 0x28], 0x0
+        fldz
+        fst dword ptr [esp]
+        push esi
+        fld1
+        mov esi, ecx
+        fstp dword ptr [esp + 0x8]
+        je L_48FD1D
+        mov eax, dword ptr [esi + 0x40]
+        mov ecx, dword ptr [esi + 0x44]
+        mov dword ptr [esp + 0x2c], eax
+        mov dword ptr [esi + 0x38], eax
+        add eax, ecx
+        mov ecx, dword ptr [esi + 0x60]
+        test ecx, ecx
+        mov dword ptr [esp + 0xc], eax
+        mov dword ptr [esi + 0x3c], eax
+        je L_48FD1D
+        fld dword ptr [ecx + 0x28]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [ecx + 0x24]
+        fstp dword ptr [esp + 0x10]
+        fild dword ptr [esp + 0x2c]
+        fmul qword ptr [esi + 0x50]
+        fstp dword ptr [esp + 0x18]
+        fild dword ptr [esp + 0xc]
+        fmul qword ptr [esi + 0x50]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x24]
+        fcomp dword ptr [ecx + 0x2c]
+        fnstsw ax
+        test ah, 0x5
+        jp L_48FD11
+        fld dword ptr [esp + 0x1c]
+        fsub dword ptr [ecx + 0x2c]
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x18]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        lea eax, [esp + 0x18]
+        je L_48FD0B
+        lea eax, [esp + 0x2c]
+    L_48FD0B:
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x18]
+    L_48FD11:
+        lea edx, [esp + 0x18]
+        push edx
+        call ext_004B0ED0
+        jmp L_48FD1F
+    L_48FD1D:
+        fstp st(0)
+    L_48FD1F:
+        mov eax, dword ptr [esi + 0x60]
+        test eax, eax
+        je L_48FD34
+        fld dword ptr [eax + 0x24]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [eax + 0x28]
+        fstp dword ptr [esp + 0x8]
+    L_48FD34:
+        cmp byte ptr [esi + 0x48], 0x0
+        je L_48FE2E
+        push ebx
+        push ebp
+        push edi
+        xor bl, bl
+        xor edi, edi
+        xor ebp, ebp
+        jmp L_48FD50
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_48FD50:
+        mov eax, dword ptr [esi + 0x1c]
+        test eax, eax
+        je L_48FE07
+        mov ecx, dword ptr [esi + 0x20]
+        sub ecx, eax
+        mov eax, 0x84210843
+        imul ecx
+        add edx, ecx
+        sar edx, 0x6
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jae L_48FE07
+        mov eax, dword ptr [esi + 0x1c]
+        test eax, eax
+        je L_48FD9E
+        mov ecx, dword ptr [esi + 0x20]
+        sub ecx, eax
+        mov eax, 0x84210843
+        imul ecx
+        add edx, ecx
+        sar edx, 0x6
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb L_48FDA4
+    L_48FD9E:
+        call dword ptr [mem_00925134]
+    L_48FDA4:
+        mov ecx, dword ptr [esi + 0x1c]
+        add ecx, ebp
+        call ext_0048FB00
+        test al, al
+        je L_48FDFC
+        test bl, bl
+        jne L_48FDCE
+        fld dword ptr [ecx + 0x74]
+        add edi, 0x1
+        fstp dword ptr [esp + 0x10]
+        mov bl, 0x1
+        fld dword ptr [ecx + 0x78]
+        add ebp, 0x7c
+        fstp dword ptr [esp + 0x14]
+        jmp L_48FD50
+    L_48FDCE:
+        fld dword ptr [ecx + 0x74]
+        fld dword ptr [esp + 0x10]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L_48FDE5
+        fld dword ptr [ecx + 0x74]
+        fstp dword ptr [esp + 0x10]
+    L_48FDE5:
+        fld dword ptr [ecx + 0x78]
+        fld dword ptr [esp + 0x14]
+        fcompp
+        fnstsw ax
+        test ah, 0x5
+        jp L_48FDFC
+        fld dword ptr [ecx + 0x78]
+        fstp dword ptr [esp + 0x14]
+    L_48FDFC:
+        add edi, 0x1
+        add ebp, 0x7c
+        jmp L_48FD50
+    L_48FE07:
+        mov ecx, dword ptr [esi + 0x60]
+        test ecx, ecx
+        pop edi
+        pop ebp
+        pop ebx
+        je L_48FE2E
+        fld dword ptr [esp + 0x4]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_004B1100
+        fld dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, dword ptr [esi + 0x60]
+        fstp dword ptr [esp]
+        call ext_004B1130
+    L_48FE2E:
+        mov ecx, dword ptr [esi + 0x14]
+        test ecx, ecx
+        je L_48FE78
+        mov esi, dword ptr [esi + 0x60]
+        fld dword ptr [esi + 0x20]
+        lea edx, [esp + 0x18]
+        fstp dword ptr [esp + 0x2c]
+        push edx
+        fld dword ptr [esi + 0x24]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esi + 0x28]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esi + 0x1c]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x30]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x28]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x8]
+        call eax
+    L_48FE78:
+        pop esi
+        add esp, 0x24
+        ret 0x4
+    }
+}
