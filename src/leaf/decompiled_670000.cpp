@@ -11336,3 +11336,43 @@ have_val:
         ret 8
     }
 }
+
+// [0x0067E820] sub_0067E820 (96 bytes)
+extern "C" void ext_004875A0();
+extern "C" void ext_0067E7B0();
+extern "C" int mem_00AA2078;
+extern "C" __declspec(naked) void __fastcall fn_0067E820(void* self, int edx_unused, const void* a1) {
+    __asm {
+        sub esp, 84h
+        fld qword ptr [mem_00AA2078]
+        push ebx
+        push esi
+        fstp dword ptr [esp + 8]
+        mov esi, dword ptr [esp + 90h]
+        fld dword ptr [esp + 8]
+        push edi
+        mov ebx, ecx
+        mov ecx, 10h
+        lea edi, [esp + 10h]
+        rep movsd
+        push ecx
+        lea ecx, [esp + 14h]
+        fstp dword ptr [esp]
+        call ext_0067E7B0
+        lea eax, [esp + 10h]
+        push eax
+        lea ecx, [esp + 54h]
+        push ecx
+        mov ecx, ebx
+        call ext_004875A0
+        mov edi, ebx
+        mov ecx, 10h
+        mov esi, eax
+        rep movsd
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 84h
+        ret 4
+    }
+}
