@@ -10577,3 +10577,39 @@ extern "C" __declspec(naked) void __fastcall fn_00668740(void* self) {
         ret 4
     }
 }
+
+// [0x00668C90] sub_00668C90 (62 bytes)
+extern "C" void ext_00668740();
+extern "C" __declspec(naked) void __fastcall fn_00668C90(void* self) {
+    __asm {
+        push esi
+        push edi
+        lea esi, [ecx + 0x10]
+        mov edi, 0x4
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+loop_00668CA0:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [eax + 0x4]
+        push ecx
+        lea ecx, [esi - 0x4]
+        call ext_00668740
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 0x4], eax
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi + 0x4], 0x0
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [esi]
+        add esi, 0x10
+        sub edi, 0x1
+        mov dword ptr [eax + 0x8], eax
+        jne loop_00668CA0
+        pop edi
+        pop esi
+        ret
+    }
+}
