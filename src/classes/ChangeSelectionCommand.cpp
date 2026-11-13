@@ -45,3 +45,12 @@ extern "C" __declspec(naked) void* __fastcall fn_004E9820(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x004E97F0] ChangeSelectionCommand::vfunc_1 (32 bytes)
+extern "C" void __fastcall fn_004E97F0(void* self) {
+    char* p = (char*)self;
+    char* m = p + 0x34;
+    typedef void (__thiscall *FnT)(void*, void*);
+    FnT f = (FnT)ext_004E8340;
+    f(*(void**)(p + 0x10), m ? (void*)(p + 0x38) : 0);
+}
