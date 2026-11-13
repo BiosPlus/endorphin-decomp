@@ -4884,3 +4884,25 @@ extern "C" __declspec(naked) void __fastcall fn_006A30C0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006AC1D0] sub_006AC1D0 (81 bytes)
+extern "C" void ext_006AB410();
+extern "C" int mem_00925688;
+extern "C" int mem_0092566C;
+
+struct RECT_006AC1D0 {
+    int left;
+    int top;
+    int right;
+    int bottom;
+};
+
+extern "C" void __fastcall fn_006AC1D0(char* self, int edx_unused, unsigned char val) {
+    self[0xf6] = val;
+    if (*(void**)(self + 0x20)) {
+        ((int (__stdcall*)(void*, void*, int))mem_00925688)(*(void**)(self + 0x20), 0, 1);
+        RECT_006AC1D0 rc;
+        ((int (__stdcall*)(void*, RECT_006AC1D0*))mem_0092566C)(*(void**)(self + 0x20), &rc);
+        ((void (__thiscall*)(void*, int, int))ext_006AB410)(self, rc.right - rc.left, rc.bottom - rc.top);
+    }
+}
