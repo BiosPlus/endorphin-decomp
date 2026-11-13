@@ -14312,3 +14312,18 @@ extern "C" __declspec(naked) void __fastcall fn_0043E140(void* self) {
         ret 0xc
     }
 }
+
+extern "C" void ext_0043F3A0();
+extern "C" void ext_0043D9B0();
+
+// [0x0043F490] sub_0043F490 (42 bytes)
+extern "C" char __stdcall fn_0043F490(char* ptr) {
+    if (!ptr)
+        return 0;
+    if (ptr[0x88]) {
+        typedef char (__stdcall *fn_t)(char*);
+        return ((fn_t)ext_0043D9B0)(ptr);
+    }
+    typedef char (__stdcall *fn2_t)(char*, int);
+    return ((fn2_t)ext_0043F3A0)(ptr, 0);
+}
