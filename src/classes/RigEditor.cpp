@@ -156,3 +156,57 @@ extern "C" void __fastcall fn_0044E2A0(void* self, int edx_unused, void* a1) {
     ddx(a1, 0x504, p + 0x4f0);
     ddx(a1, 0x505, p + 0x544);
 }
+
+// [0x00453F50] RigEditor::vfunc_66 (101 bytes)
+extern "C" void ext_00453C80();
+extern "C" void ext_006A5F7A();
+extern "C" void ext_006A60D0();
+extern "C" int mem_00ACDB40;
+
+extern "C" __declspec(naked) int __fastcall fn_00453F50(void* self, int edx_unused, void* msg) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x4]
+        cmp eax, 0x100
+        push edi
+        mov edi, ecx
+        jne L_not_100
+        cmp dword ptr [esi + 0x8], 0xd
+        jne L_not_d
+        push 0x0
+        push 0x1
+        push 0xd
+        call ext_00453C80
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret 0x4
+
+    L_not_d:
+        mov ecx, dword ptr [mem_00ACDB40]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x108]
+        push esi
+        call edx
+        test eax, eax
+        je L_def
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret 0x4
+
+    L_not_100:
+        cmp eax, 0x201
+        jne L_def
+        call ext_006A60D0
+
+    L_def:
+        push esi
+        mov ecx, edi
+        call ext_006A5F7A
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
