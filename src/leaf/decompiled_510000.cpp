@@ -6806,3 +6806,35 @@ L_ok2:
         jmp ext_00680800
     }
 }
+
+extern "C" void ext_006404E0();
+extern "C" void ext_00695D40();
+extern "C" int mem_00A9EDB4;
+extern "C" int mem_00A9EE78;
+
+// [0x005114D0] sub_005114D0 (54 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005114D0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00A9EDB4]
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0Ch]
+        push eax
+        call ext_006404E0
+        mov ecx, dword ptr [mem_00A9EE78]
+        push ecx
+        mov edi, eax
+        push edi
+        lea ecx, [esi + 4]
+        call ext_00695D40
+        mov edx, dword ptr [esi + 14h]
+        mov eax, dword ptr [edx + 0Ch]
+        lea ecx, [esi + 14h]
+        push edi
+        call eax
+        pop edi
+        pop esi
+        ret 4
+    }
+}
