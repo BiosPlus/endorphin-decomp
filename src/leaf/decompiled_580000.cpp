@@ -2794,3 +2794,37 @@ extern "C" __declspec(naked) void __fastcall fn_0058B190(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0058B1E0] sub_0058B1E0 (78 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0058B1E0(void* self, int edx_unused, float a1) {
+    __asm {
+        sub esp, 0x24
+        push esi
+        push edi
+        mov esi, ecx
+        mov edx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [edx + 0xc]
+        lea edi, [esi + 0x12c]
+        push edi
+        push 0
+        lea eax, [esp + 0x10]
+        lea ecx, [esi + 0x4]
+        push eax
+        mov eax, dword ptr [mem_00B40640]
+        push eax
+        call edx
+        mov ecx, eax
+        call ext_0067E110
+        mov ecx, eax
+        call ext_00694B60
+        fld dword ptr [esp + 0x30]
+        push edi
+        fstp dword ptr [esi + 0x134]
+        mov ecx, esi
+        call ext_0058A8A0
+        pop edi
+        pop esi
+        add esp, 0x24
+        ret 4
+    }
+}
