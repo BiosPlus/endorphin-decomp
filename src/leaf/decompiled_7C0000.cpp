@@ -7703,3 +7703,24 @@ skip2:
         ret
     }
 }
+
+// [0x007C9930] sub_007C9930 (32 bytes)
+extern "C" void ext_007C98C0();
+extern "C" int mem_00AB28C8;
+
+extern "C" __declspec(naked) void __cdecl fn_007C9930(void* a0) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push esi
+        call ext_007C98C0
+        mov eax, dword ptr [esi + 0x40]
+        add eax, 0x15c
+        push esi
+        push eax
+        call dword ptr [mem_00AB28C8]
+        add esp, 0xc
+        pop esi
+        ret
+    }
+}
