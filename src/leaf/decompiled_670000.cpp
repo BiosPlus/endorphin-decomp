@@ -10895,3 +10895,84 @@ extern "C" __declspec(naked) void __fastcall fn_0067C6B0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0067CC10] sub_0067CC10 (243 bytes)
+extern "C" void ext_005542B0();
+extern "C" void ext_00554490();
+extern "C" void ext_00694A70();
+extern "C" void ext_00694B60();
+extern "C" __declspec(naked) void __fastcall fn_0067CC10(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 90h
+        fldz
+        push ebx
+        fst dword ptr [esp+0ch]
+        push esi
+        fst dword ptr [esp+0ch]
+        push edi
+        fst dword ptr [esp+20h]
+        mov ebx, ecx
+        fst dword ptr [esp+18h]
+        push ebx
+        fst dword ptr [esp+2ch]
+        push 0
+        fst dword ptr [esp+2ch]
+        lea ecx, [esp+14h]
+        fld1
+        fst dword ptr [esp+14h]
+        fst dword ptr [esp+24h]
+        fst dword ptr [esp+34h]
+        fst dword ptr [esp+38h]
+        fst dword ptr [esp+48h]
+        fst dword ptr [esp+58h]
+        fst dword ptr [esp+5ch]
+        fst dword ptr [esp+6ch]
+        fstp dword ptr [esp+7ch]
+        fst dword ptr [esp+40h]
+        fst dword ptr [esp+3ch]
+        fst dword ptr [esp+4ch]
+        fst dword ptr [esp+44h]
+        fst dword ptr [esp+54h]
+        fst dword ptr [esp+50h]
+        fst dword ptr [esp+64h]
+        fst dword ptr [esp+60h]
+        fst dword ptr [esp+70h]
+        fst dword ptr [esp+68h]
+        fst dword ptr [esp+78h]
+        fstp dword ptr [esp+74h]
+        call ext_00694A70
+        mov eax, dword ptr [esp+0a0h]
+        push eax
+        push 0
+        lea ecx, [esp+38h]
+        call ext_00694A70
+        mov ecx, dword ptr [esp+0a4h]
+        push ecx
+        push 0
+        lea ecx, [esp+5ch]
+        call ext_00694A70
+        lea edx, [esp+30h]
+        push edx
+        lea eax, [esp+7ch]
+        push eax
+        lea ecx, [esp+14h]
+        call ext_005542B0
+        mov esi, eax
+        mov ecx, 9
+        lea edi, [esp+0ch]
+        rep movsd
+        lea ecx, [esp+54h]
+        push ecx
+        lea ecx, [esp+10h]
+        call ext_00554490
+        push ebx
+        push 0
+        lea ecx, [esp+14h]
+        call ext_00694B60
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 90h
+        ret 8
+    }
+}
