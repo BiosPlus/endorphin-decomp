@@ -9313,3 +9313,124 @@ extern "C" __declspec(naked) void __fastcall fn_0041C9F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0041DBC0] sub_0041DBC0 (297 bytes)
+extern "C" void ext_0041C9F0();
+extern "C" void ext_0041D7B0();
+extern "C" void ext_00448280();
+extern "C" void ext_006A5C62();
+extern "C" void ext_006A617E();
+extern "C" void ext_006A63B8();
+extern "C" void ext_006A7BF0();
+extern "C" int mem_0093A0BC;
+extern "C" int mem_0093A0B0;
+extern "C" int mem_00877664;
+extern "C" int mem_0092DF48;
+extern "C" int mem_0092DF38;
+
+extern "C" __declspec(naked) void __fastcall fn_0041DBC0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push    -1
+        push    offset mem_00877664
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        push    ecx
+        push    esi
+        push    edi
+        push    0x1a4
+        mov     esi, ecx
+        call    ext_006A5C62
+        add     esp, 4
+        mov     dword ptr [esp + 8], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x14], 0
+        je      L_41DC03
+        push    esi
+        mov     ecx, eax
+        call    ext_0041C9F0
+        mov     edi, eax
+        jmp     L_41DC05
+    L_41DC03:
+        xor     edi, edi
+    L_41DC05:
+        mov     ecx, dword ptr [esi + 0xc]
+        cmp     edi, ecx
+        mov     dword ptr [esp + 0x14], -1
+        je      L_41DC21
+        test    ecx, ecx
+        je      L_41DC21
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax + 4]
+        push    1
+        call    edx
+    L_41DC21:
+        mov     edx, dword ptr [esp + 0x1c]
+        push    0
+        push    0x494
+        push    edx
+        mov     edx, dword ptr [esp + 0x2c]
+        push    edx
+        push    0x50000000
+        push    offset mem_0092DF48
+        mov     ecx, edi
+        mov     dword ptr [esi + 0xc], edi
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 0x60]
+        push    offset mem_0092DF38
+        push    0x200
+        call    eax
+        push    0x10
+        mov     dword ptr [esi + 0x10], 0
+        call    ext_006A5C62
+        add     esp, 4
+        mov     dword ptr [esp + 0x1c], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x14], 1
+        je      L_41DC82
+        mov     ecx, dword ptr [esi + 0xc]
+        push    ecx
+        mov     ecx, eax
+        call    ext_00448280
+        mov     edi, eax
+        jmp     L_41DC84
+    L_41DC82:
+        xor     edi, edi
+    L_41DC84:
+        mov     ecx, dword ptr [esi + 8]
+        cmp     edi, ecx
+        mov     dword ptr [esp + 0x14], -1
+        je      L_41DCA0
+        test    ecx, ecx
+        je      L_41DCA0
+        mov     edx, dword ptr [ecx]
+        mov     eax, dword ptr [edx + 4]
+        push    1
+        call    eax
+    L_41DCA0:
+        mov     dword ptr [esi + 8], edi
+        mov     ecx, dword ptr [esi + 0xc]
+        call    ext_006A7BF0
+        mov     edi, eax
+        test    edi, edi
+        je      L_41DCCF
+        mov     ecx, edi
+        call    ext_006A63B8
+        mov     ecx, dword ptr [mem_0093A0BC]
+        mov     edx, dword ptr [mem_0093A0B0]
+        push    0
+        push    ecx
+        push    edx
+        mov     ecx, edi
+        call    ext_006A617E
+    L_41DCCF:
+        mov     ecx, esi
+        call    ext_0041D7B0
+        mov     ecx, dword ptr [esp + 0xc]
+        pop     edi
+        pop     esi
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x10
+        ret     8
+    }
+}
