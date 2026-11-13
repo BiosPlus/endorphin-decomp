@@ -4343,3 +4343,290 @@ extern "C" __declspec(naked) void __fastcall fn_0064C970(void* self) {
         ret 0x8
     }
 }
+
+// [0x00641490] sub_00641490 (709 bytes)
+extern "C" void ext_00476B80();
+extern "C" void ext_00476EC0();
+extern "C" void ext_0055E8C0();
+extern "C" void ext_006244E0();
+extern "C" void ext_00673C20();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE4;
+extern "C" int mem_009251C4;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00641490(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x88f4c2
+        push eax
+        mov dword ptr fs:[0x0], esp
+        mov eax, dword ptr [esp + 0x18]
+        sub esp, 0x48
+        cmp byte ptr [eax + 0x2d], 0x0
+        push ebp
+        mov ebp, ecx
+        je L_64150e
+        push 0x929218
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x24]
+        mov dword ptr [esp + 0x54], 0x0
+        call dword ptr [mem_009251C4]
+        lea eax, [esp + 0x8]
+        push eax
+        lea ecx, [esp + 0x34]
+        mov byte ptr [esp + 0x58], 0x1
+        mov dword ptr [esp + 0x28], 0x928ecc
+        call dword ptr [mem_00924FE0]
+        push 0x9ce164
+        lea ecx, [esp + 0x28]
+        push ecx
+        mov byte ptr [esp + 0x5c], 0x0
+        mov dword ptr [esp + 0x2c], 0x928ee4
+        call ext_006A6DD2
+    L_64150e:
+        push ebx
+        push esi
+        mov ebx, eax
+        push edi
+        lea ecx, [esp + 0x6c]
+        mov dword ptr [esp + 0x10], ebx
+        call ext_00673C20
+        mov eax, dword ptr [ebx]
+        cmp byte ptr [eax + 0x2d], 0x0
+        je L_64152d
+        mov edi, dword ptr [ebx + 0x8]
+        jmp L_641545
+    L_64152d:
+        mov edx, dword ptr [ebx + 0x8]
+        cmp byte ptr [edx + 0x2d], 0x0
+        je L_64153a
+        mov edi, eax
+        jmp L_641545
+    L_64153a:
+        mov ecx, dword ptr [esp + 0x70]
+        cmp ecx, ebx
+        mov edi, dword ptr [ecx + 0x8]
+        jne L_6415b0
+    L_641545:
+        cmp byte ptr [edi + 0x2d], 0x0
+        mov esi, dword ptr [ebx + 0x4]
+        jne L_641551
+        mov dword ptr [edi + 0x4], esi
+    L_641551:
+        mov eax, dword ptr [ebp + 0x4]
+        cmp dword ptr [eax + 0x4], ebx
+        jne L_64155e
+        mov dword ptr [eax + 0x4], edi
+        jmp L_641569
+    L_64155e:
+        cmp dword ptr [esi], ebx
+        jne L_641566
+        mov dword ptr [esi], edi
+        jmp L_641569
+    L_641566:
+        mov dword ptr [esi + 0x8], edi
+    L_641569:
+        mov ebx, dword ptr [ebp + 0x4]
+        mov eax, dword ptr [ebx]
+        cmp eax, dword ptr [esp + 0x10]
+        jne L_641589
+        cmp byte ptr [edi + 0x2d], 0x0
+        je L_64157e
+        mov eax, esi
+        jmp L_641587
+    L_64157e:
+        push edi
+        call ext_0055E8C0
+        add esp, 0x4
+    L_641587:
+        mov dword ptr [ebx], eax
+    L_641589:
+        mov ebx, dword ptr [ebp + 0x4]
+        mov ecx, dword ptr [esp + 0x10]
+        cmp dword ptr [ebx + 0x8], ecx
+        jne L_641607
+        cmp byte ptr [edi + 0x2d], 0x0
+        je L_6415a2
+        mov eax, esi
+        mov dword ptr [ebx + 0x8], eax
+        jmp L_641607
+    L_6415a2:
+        push edi
+        call ext_00476B80
+        add esp, 0x4
+        mov dword ptr [ebx + 0x8], eax
+        jmp L_641607
+    L_6415b0:
+        mov dword ptr [eax + 0x4], ecx
+        mov edx, dword ptr [ebx]
+        mov dword ptr [ecx], edx
+        cmp ecx, dword ptr [ebx + 0x8]
+        jne L_6415c0
+        mov esi, ecx
+        jmp L_6415da
+    L_6415c0:
+        cmp byte ptr [edi + 0x2d], 0x0
+        mov esi, dword ptr [ecx + 0x4]
+        jne L_6415cc
+        mov dword ptr [edi + 0x4], esi
+    L_6415cc:
+        mov dword ptr [esi], edi
+        mov eax, dword ptr [ebx + 0x8]
+        mov dword ptr [ecx + 0x8], eax
+        mov edx, dword ptr [ebx + 0x8]
+        mov dword ptr [edx + 0x4], ecx
+    L_6415da:
+        mov eax, dword ptr [ebp + 0x4]
+        cmp dword ptr [eax + 0x4], ebx
+        jne L_6415e7
+        mov dword ptr [eax + 0x4], ecx
+        jmp L_6415f5
+    L_6415e7:
+        mov eax, dword ptr [ebx + 0x4]
+        cmp dword ptr [eax], ebx
+        jne L_6415f2
+        mov dword ptr [eax], ecx
+        jmp L_6415f5
+    L_6415f2:
+        mov dword ptr [eax + 0x8], ecx
+    L_6415f5:
+        mov eax, dword ptr [ebx + 0x4]
+        mov dword ptr [ecx + 0x4], eax
+        mov dl, byte ptr [ebx + 0x2c]
+        mov al, byte ptr [ecx + 0x2c]
+        mov byte ptr [ecx + 0x2c], dl
+        mov byte ptr [ebx + 0x2c], al
+    L_641607:
+        mov eax, dword ptr [esp + 0x10]
+        mov bl, 0x1
+        cmp byte ptr [eax + 0x2c], bl
+        jne L_641708
+        mov ecx, dword ptr [ebp + 0x4]
+        cmp edi, dword ptr [ecx + 0x4]
+        je L_641705
+    L_641622:
+        cmp byte ptr [edi + 0x2c], bl
+        jne L_641705
+        mov eax, dword ptr [esi]
+        cmp edi, eax
+        jne L_641694
+        mov eax, dword ptr [esi + 0x8]
+        cmp byte ptr [eax + 0x2c], 0x0
+        jne L_64164c
+        mov byte ptr [eax + 0x2c], bl
+        push esi
+        mov ecx, ebp
+        mov byte ptr [esi + 0x2c], 0x0
+        call ext_00476EC0
+        mov eax, dword ptr [esi + 0x8]
+    L_64164c:
+        cmp byte ptr [eax + 0x2d], 0x0
+        jne L_6416c4
+        mov edx, dword ptr [eax]
+        cmp byte ptr [edx + 0x2c], bl
+        jne L_641661
+        mov ecx, dword ptr [eax + 0x8]
+        cmp byte ptr [ecx + 0x2c], bl
+        je L_6416c0
+    L_641661:
+        mov ecx, dword ptr [eax + 0x8]
+        cmp byte ptr [ecx + 0x2c], bl
+        jne L_64167b
+        mov byte ptr [edx + 0x2c], bl
+        push eax
+        mov ecx, ebp
+        mov byte ptr [eax + 0x2c], 0x0
+        call ext_006244E0
+        mov eax, dword ptr [esi + 0x8]
+    L_64167b:
+        mov cl, byte ptr [esi + 0x2c]
+        mov byte ptr [eax + 0x2c], cl
+        mov byte ptr [esi + 0x2c], bl
+        mov edx, dword ptr [eax + 0x8]
+        push esi
+        mov ecx, ebp
+        mov byte ptr [edx + 0x2c], bl
+        call ext_00476EC0
+        jmp L_641705
+    L_641694:
+        cmp byte ptr [eax + 0x2c], 0x0
+        jne L_6416ab
+        mov byte ptr [eax + 0x2c], bl
+        push esi
+        mov ecx, ebp
+        mov byte ptr [esi + 0x2c], 0x0
+        call ext_006244E0
+        mov eax, dword ptr [esi]
+    L_6416ab:
+        cmp byte ptr [eax + 0x2d], 0x0
+        jne L_6416c4
+        mov edx, dword ptr [eax + 0x8]
+        cmp byte ptr [edx + 0x2c], bl
+        jne L_6416d7
+        mov ecx, dword ptr [eax]
+        cmp byte ptr [ecx + 0x2c], bl
+        jne L_6416d7
+    L_6416c0:
+        mov byte ptr [eax + 0x2c], 0x0
+    L_6416c4:
+        mov edx, dword ptr [ebp + 0x4]
+        mov edi, esi
+        cmp edi, dword ptr [edx + 0x4]
+        mov esi, dword ptr [esi + 0x4]
+        jne L_641622
+        jmp L_641705
+    L_6416d7:
+        mov ecx, dword ptr [eax]
+        cmp byte ptr [ecx + 0x2c], bl
+        jne L_6416ef
+        mov byte ptr [edx + 0x2c], bl
+        push eax
+        mov ecx, ebp
+        mov byte ptr [eax + 0x2c], 0x0
+        call ext_00476EC0
+        mov eax, dword ptr [esi]
+    L_6416ef:
+        mov cl, byte ptr [esi + 0x2c]
+        mov byte ptr [eax + 0x2c], cl
+        mov byte ptr [esi + 0x2c], bl
+        mov edx, dword ptr [eax]
+        push esi
+        mov ecx, ebp
+        mov byte ptr [edx + 0x2c], bl
+        call ext_006244E0
+    L_641705:
+        mov byte ptr [edi + 0x2c], bl
+    L_641708:
+        mov ecx, dword ptr [esp + 0x10]
+        add ecx, 0x10
+        call dword ptr [mem_00924FF4]
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        call ext_006A5C5C
+        mov eax, dword ptr [ebp + 0x8]
+        add esp, 0x4
+        test eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        jbe L_641732
+        add eax, -0x1
+        mov dword ptr [ebp + 0x8], eax
+    L_641732:
+        mov ecx, dword ptr [esp + 0x60]
+        mov eax, dword ptr [esp + 0x5c]
+        mov edx, dword ptr [esp + 0x64]
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x4c]
+        mov dword ptr [eax + 0x4], edx
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x54
+        ret 0xc
+    }
+}
