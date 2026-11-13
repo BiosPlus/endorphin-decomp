@@ -236,3 +236,248 @@ extern "C" __declspec(naked) void __fastcall fn_00543C60(void* self) {
         ret 0x4
     }
 }
+
+// [0x00543930] CameraTool::vfunc_15 (647 bytes)
+extern "C" void ext_005417E0();
+extern "C" void ext_00541890();
+extern "C" void ext_00541940();
+extern "C" void ext_005419F0();
+extern "C" void ext_00543630();
+extern "C" int mem_00956228;
+
+extern "C" __declspec(naked) void __fastcall fn_00543930(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        sub esp, 0x10
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x28]
+        push edi
+        xor eax, eax
+        mov edi, esi
+        mov ebx, esi
+        mov dword ptr [esp + 0x14], ecx
+        mov dword ptr [esp + 0x18], eax
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esp + 0x1c], eax
+        and edi, 0x8
+        and ebx, 0x4
+        call ext_00543630
+        mov ecx, esi
+        mov ebp, esi
+        and esi, 0x2
+        mov edx, esi
+        xor esi, esi
+        and ecx, 0x1
+        and ebp, 0x10
+        cmp edi, esi
+        jne L_543a1e
+        test al, al
+        jne L_5439c0
+        cmp ebx, esi
+        jne L_543a70
+        cmp ecx, esi
+        jne L_543997
+        cmp ebp, esi
+        je L_543997
+        cmp edx, esi
+        jne L_543997
+        mov dword ptr [esp + 0x18], 0x1
+        jmp L_5439a3
+    L_543997:
+        cmp ecx, esi
+        mov dword ptr [esp + 0x18], esi
+        jne L_543a6c
+    L_5439a3:
+        cmp ebp, esi
+        je L_543a6c
+        cmp edx, esi
+        je L_543a6c
+        mov dword ptr [esp + 0x10], 0x1
+        jmp L_543a70
+    L_5439c0:
+        cmp ebx, esi
+        jne L_543a70
+        cmp ecx, esi
+        je L_5439df
+        cmp ebp, esi
+        jne L_5439df
+        cmp edx, esi
+        jne L_5439df
+        mov eax, 0x1
+        mov dword ptr [esp + 0x18], eax
+        jmp L_5439e8
+    L_5439df:
+        mov dword ptr [esp + 0x18], esi
+        mov eax, 0x1
+    L_5439e8:
+        cmp ecx, esi
+        jne L_5439fa
+        cmp ebp, esi
+        je L_5439fa
+        cmp edx, esi
+        jne L_5439fa
+        mov dword ptr [esp + 0x10], eax
+        jmp L_543a02
+    L_5439fa:
+        cmp ecx, esi
+        mov dword ptr [esp + 0x10], esi
+        jne L_543a10
+    L_543a02:
+        cmp ebp, esi
+        jne L_543a42
+        cmp edx, esi
+        jne L_543a18
+        mov dword ptr [esp + 0x1c], esi
+        jmp L_543a70
+    L_543a10:
+        cmp ebp, esi
+        je L_543a42
+        cmp edx, esi
+        jne L_543a42
+    L_543a18:
+        mov dword ptr [esp + 0x1c], eax
+        jmp L_543a70
+    L_543a1e:
+        test al, al
+        je L_543a4c
+        cmp ebx, esi
+        jne L_543a48
+        cmp ecx, esi
+        je L_543a3a
+        cmp ebp, esi
+        jne L_543a3a
+        cmp edx, esi
+        mov dword ptr [esp + 0x10], 0x1
+        je L_543a3e
+    L_543a3a:
+        mov dword ptr [esp + 0x10], esi
+    L_543a3e:
+        mov dword ptr [esp + 0x18], esi
+    L_543a42:
+        mov dword ptr [esp + 0x1c], esi
+        jmp L_543a70
+    L_543a48:
+        test al, al
+        jne L_543a70
+    L_543a4c:
+        cmp ebx, esi
+        je L_543a70
+        cmp ecx, esi
+        jne L_543a64
+        cmp ebp, esi
+        jne L_543a64
+        cmp edx, esi
+        mov dword ptr [esp + 0x1c], 0x1
+        jne L_543a68
+    L_543a64:
+        mov dword ptr [esp + 0x1c], esi
+    L_543a68:
+        mov dword ptr [esp + 0x18], esi
+    L_543a6c:
+        mov dword ptr [esp + 0x10], esi
+    L_543a70:
+        mov eax, dword ptr [esp + 0x28]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [esp + 0x24]
+        mov eax, dword ptr [eax + 0x4]
+        sub ecx, dword ptr [edx]
+        sub eax, dword ptr [edx + 0x4]
+        mov ebx, dword ptr [esp + 0x18]
+        cmp ebx, esi
+        mov dword ptr [esp + 0x28], ecx
+        mov dword ptr [esp + 0x2c], eax
+        je L_543add
+        fild dword ptr [esp + 0x28]
+        mov edi, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, dword ptr [edi + 0x84]
+        fmul dword ptr [edi + 0xb4]
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        fstp dword ptr [esp]
+        call ext_00541890
+        fild dword ptr [esp + 0x2c]
+        push ecx
+        mov ecx, dword ptr [edi + 0x84]
+        fmul dword ptr [edi + 0xb4]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [esp + 0x30]
+        fstp dword ptr [esp]
+        call ext_00541940
+        jmp L_543b83
+    L_543add:
+        cmp dword ptr [esp + 0x10], esi
+        je L_543b22
+        fild dword ptr [esp + 0x2c]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 0x84]
+        sub esp, 0x8
+        fmul dword ptr [eax + 0xb8]
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x34]
+        fstp dword ptr [esp + 0x4]
+        fild dword ptr [esp + 0x30]
+        fmul dword ptr [eax + 0xb8]
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x34]
+        fstp dword ptr [esp]
+        call ext_005419F0
+        jmp L_543b7f
+    L_543b22:
+        cmp dword ptr [esp + 0x1c], esi
+        je L_543b7f
+        cdq
+        mov edi, eax
+        xor edi, edx
+        sub edi, edx
+        mov eax, ecx
+        cdq
+        xor eax, edx
+        sub eax, edx
+        cmp edi, eax
+        mov eax, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, dword ptr [eax + 0x84]
+        jl L_543b5f
+        fild dword ptr [esp + 0x30]
+        fmul qword ptr [mem_00956228]
+        fmul dword ptr [eax + 0xbc]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [esp + 0x30]
+        jmp L_543b77
+    L_543b5f:
+        fild dword ptr [esp + 0x2c]
+        fmul qword ptr [mem_00956228]
+        fmul dword ptr [eax + 0xbc]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [esp + 0x30]
+    L_543b77:
+        fstp dword ptr [esp]
+        call ext_005417E0
+    L_543b7f:
+        mov edi, dword ptr [esp + 0x14]
+    L_543b83:
+        cmp dword ptr [edi + 0x88], esi
+        je L_543ba8
+        cmp dword ptr [esp + 0x10], esi
+        jne L_543b9b
+        cmp ebx, esi
+        jne L_543b9b
+        cmp dword ptr [esp + 0x1c], esi
+        je L_543ba8
+    L_543b9b:
+        mov ecx, dword ptr [edi + 0x88]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x6c]
+        call edx
+    L_543ba8:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x1
+        pop ebx
+        add esp, 0x10
+        ret 0xc
+    }
+}
