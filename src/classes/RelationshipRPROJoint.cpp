@@ -111,3 +111,107 @@ loc_659764:
         ret 0x4
     }
 }
+
+// [0x00659770] RelationshipRPROJoint::vfunc_48 (285 bytes)
+extern "C" void ext_00480920();
+extern "C" void ext_00647F00();
+extern "C" void ext_0065C340();
+extern "C" void ext_0065C590();
+extern "C" void ext_007C97A0();
+extern "C" int mem_00B55748;
+
+extern "C" __declspec(naked) void __fastcall fn_00659770(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        mov eax, dword ptr [ebp + 0x228]
+        push esi
+        mov esi, ecx
+        xor ecx, ecx
+        cmp eax, ecx
+        push edi
+        je loc_6597a3
+        mov eax, dword ptr [eax + 0x158]
+        mov edx, dword ptr [eax + 0xac]
+        mov eax, dword ptr [edx + 0xa4]
+        mov edx, dword ptr [eax]
+        mov dword ptr [esp + 0x1c], edx
+        jmp loc_6597a7
+loc_6597a3:
+        mov dword ptr [esp + 0x1c], ecx
+loc_6597a7:
+        mov eax, dword ptr [ebp + 0x22c]
+        cmp eax, ecx
+        je loc_6597cb
+        mov eax, dword ptr [eax + 0x158]
+        mov ecx, dword ptr [eax + 0xac]
+        mov edx, dword ptr [ecx + 0xa4]
+        mov eax, dword ptr [edx]
+        mov dword ptr [esp + 0x10], eax
+        jmp loc_6597cf
+loc_6597cb:
+        mov dword ptr [esp + 0x10], ecx
+loc_6597cf:
+        mov ecx, dword ptr [mem_00B55748]
+        mov ebx, dword ptr [ecx + 0x28]
+        mov edx, dword ptr [ebx + 0x40]
+        lea edi, [esi + 0x68]
+        push edx
+        mov ecx, edi
+        call ext_0065C340
+        mov eax, dword ptr [esi + 0xf4]
+        push eax
+        call ext_007D8700
+        mov edx, dword ptr [esp + 0x24]
+        mov dword ptr [esp + 0x18], eax
+        mov eax, dword ptr [ebp + 0x4]
+        mov eax, dword ptr [eax + 0x14]
+        lea ecx, [ebp + 0x4]
+        add esp, 0x4
+        push edx
+        call eax
+        mov ecx, dword ptr [ebp + 0x22c]
+        mov edx, dword ptr [ecx + 0x158]
+        mov ecx, dword ptr [edx + 0xac]
+        mov dword ptr [esp + 0x20], eax
+        call ext_00647F00
+        cmp dword ptr [esp + 0x1c], 0x0
+        mov dword ptr [esi + 0x6c], eax
+        je loc_65984b
+        mov eax, dword ptr [ebp + 0x228]
+        mov ecx, dword ptr [eax + 0x158]
+        mov ecx, dword ptr [ecx + 0xac]
+        call ext_00647F00
+        mov byte ptr [esi + 0x70], 0x1
+        jmp loc_659854
+loc_65984b:
+        call ext_00480920
+        mov byte ptr [esi + 0x70], 0x0
+loc_659854:
+        mov edx, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr [edi], eax
+        mov eax, dword ptr [esp + 0x10]
+        push edx
+        push eax
+        push ecx
+        mov ecx, edi
+        call ext_0065C590
+        mov eax, dword ptr [ebx + 0x38]
+        lea edx, [eax + 0x1]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        mov dword ptr [ebx + 0x38], edx
+        call ext_007C97A0
+        add esp, 0x8
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x8
+    }
+}
