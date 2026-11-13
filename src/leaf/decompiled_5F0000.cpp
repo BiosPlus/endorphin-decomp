@@ -3401,3 +3401,32 @@ extern "C" __declspec(naked) void __fastcall fn_005F56E0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005F57F0] sub_005F57F0 (99 bytes)
+extern "C" void ext_0067DAD0();
+extern "C" void ext_00694840();
+extern "C" int mem_00B40640;
+
+struct Matrix3_005F57F0 {
+    float m[9];
+};
+
+extern "C" void* __fastcall fn_005F57F0(void* self) {
+    void* vtable_ptr = *(void**)((char*)self + 4);
+    void* (__thiscall *fn)(void*, int) = ((void* (__thiscall**)(void*, int))vtable_ptr)[2];
+    void* obj = fn((char*)self + 4, mem_00B40640);
+    Matrix3_005F57F0 m;
+    m.m[2] = 0.0f;
+    m.m[1] = 0.0f;
+    m.m[5] = 0.0f;
+    m.m[3] = 0.0f;
+    m.m[7] = 0.0f;
+    m.m[6] = 0.0f;
+    m.m[0] = 1.0f;
+    m.m[4] = 1.0f;
+    m.m[8] = 1.0f;
+    ((void (__thiscall*)(void*, Matrix3_005F57F0*))ext_0067DAD0)(obj, &m);
+    void* res = (char*)self + 0x214;
+    ((void (__thiscall*)(Matrix3_005F57F0*, void*))ext_00694840)(&m, res);
+    return res;
+}
