@@ -282,3 +282,72 @@ extern "C" __declspec(naked) void __fastcall fn_00552490(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005523E0] NMCamera::Perspective::vfunc_1 (166 bytes)
+extern "C" void ext_00517FC0();
+extern "C" void ext_00548390();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0063F530();
+extern "C" int mem_00A9EEE4;
+
+extern "C" __declspec(naked) void __fastcall fn_005523E0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        push esi
+        mov edi, ecx
+        call ext_00548390
+        push 0x9574e0
+        mov ecx, esi
+        call ext_0063EFE0
+        cmp eax, 0xb53a34
+        je L_0055241D
+        cmp eax, 0xb53b30
+        je L_0055241D
+        cmp eax, 0xb53ab0
+        je L_0055241D
+        cmp eax, 0xb53a70
+        je L_0055241D
+        cmp eax, 0xb53af0
+        jne L_0055245D
+    L_0055241D:
+        mov eax, dword ptr [mem_00A9EEE4]
+        push 0x1
+        push 0x0
+        push eax
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je L_00552451
+        cmp eax, 0xb53b30
+        je L_00552451
+        cmp eax, 0xb53ab0
+        je L_00552451
+        cmp eax, 0xb53a70
+        je L_00552451
+        cmp eax, 0xb53af0
+        jne L_00552456
+    L_00552451:
+        mov eax, 0xb53b30
+    L_00552456:
+        lea ecx, [esp + 0xc]
+        push ecx
+        jmp L_0055246E
+    L_0055245D:
+        push 0x9574e0
+        mov ecx, esi
+        call ext_0063EFE0
+        lea edx, [esp + 0xc]
+        push edx
+    L_0055246E:
+        add edi, 0xf8
+        push edi
+        mov dword ptr [esp + 0x14], eax
+        call ext_00517FC0
+        add esp, 0x8
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
