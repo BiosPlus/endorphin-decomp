@@ -19,5 +19,7 @@
     "0x0064E205",
     "0x0064E20B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T11:32:16Z"
 }

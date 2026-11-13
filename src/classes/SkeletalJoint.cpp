@@ -831,3 +831,17 @@ extern "C" __declspec(naked) void __fastcall fn_0064E430(void* self) {
         ret
     }
 }
+
+// [0x0064E1E0] SkeletalJoint::vfunc_6 (52 bytes)
+extern "C" void ext_0064DF60();
+extern "C" void ext_007C9260();
+extern "C" void ext_007C97F0();
+
+extern "C" void __fastcall fn_0064E1E0(void* self) {
+    int r = ((int (__cdecl*)(int))ext_007D8700)(*(int*)((char*)self + 0x64));
+    if (((int (__cdecl*)(int))ext_007C9260)(r) == 0) {
+        ((void (__fastcall*)(void*))ext_0064DF60)(self);
+        int r2 = ((int (__cdecl*)(int))ext_007D8700)(*(int*)((char*)self + 0x64));
+        ((void (__cdecl*)(int))ext_007C97F0)(r2);
+    }
+}
