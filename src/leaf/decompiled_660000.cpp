@@ -10311,3 +10311,31 @@ extern "C" void __cdecl fn_00662850(void* a1, int a2, int a3) {
         ext_00640A50(r, a3);
     }
 }
+
+// [0x00660D10] sub_00660D10 (46 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00660D10(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        push edi
+        mov edi, ecx
+        je L_call
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je L_zero
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        sar ecx, 0x2
+        jne L_call
+    L_zero:
+        xor esi, esi
+    L_call:
+        call ext_00660A50
+        mov dword ptr [eax + 0x8], esi
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
