@@ -5117,3 +5117,16 @@ L_done:
         ret 0x8
     }
 }
+
+// [0x00476DB0] sub_00476DB0 (59 bytes)
+extern "C" void ext_0058F200();
+extern "C" void* __fastcall fn_00476DB0(void* self) {
+    ((void(__fastcall*)(void*))ext_0058F200)(self);
+    *(volatile unsigned int*)((char*)self + 0x150) = 0x928eac;
+    *(unsigned int*)((char*)self + 0x0) = 0x92912c;
+    *(unsigned int*)((char*)self + 0x4) = 0x9290e4;
+    *(unsigned int*)((char*)self + 0x8) = 0x9290a4;
+    *(unsigned int*)((char*)self + 0xc) = 0x929054;
+    *(volatile unsigned int*)((char*)self + 0x150) = 0x929040;
+    return self;
+}
