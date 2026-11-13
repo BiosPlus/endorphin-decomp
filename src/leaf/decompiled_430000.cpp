@@ -10433,3 +10433,202 @@ extern "C" __declspec(naked) void __fastcall fn_004339D0(void* self) {
         ret
     }
 }
+
+// [0x0043EB40] sub_0043EB40 (478 bytes)
+extern "C" void ext_0043E6F0();
+extern "C" void ext_0043E760();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0043EB40(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x10]
+        push edi
+        mov edi, dword ptr [esi + 0xc]
+        add eax, edi
+        cmp edi, eax
+        jbe L_43EB5B
+        call dword ptr [mem_00925134]
+    L_43EB5B:
+        mov ebp, dword ptr [esp + 0x24]
+        test ebp, ebp
+        je L_43EB67
+        cmp ebp, esi
+        je L_43EB6D
+    L_43EB67:
+        call dword ptr [mem_00925134]
+    L_43EB6D:
+        mov ebx, dword ptr [esp + 0x28]
+        mov eax, ebx
+        sub eax, edi
+        mov dword ptr [esp + 0x14], eax
+        mov eax, dword ptr [esp + 0x30]
+        test eax, eax
+        je L_43EB85
+        cmp eax, ebp
+        je L_43EB8B
+    L_43EB85:
+        call dword ptr [mem_00925134]
+    L_43EB8B:
+        mov ebp, dword ptr [esp + 0x34]
+        mov edi, dword ptr [esi + 0x10]
+        mov eax, ebp
+        sub eax, ebx
+        mov dword ptr [esp + 0x10], eax
+        mov eax, dword ptr [esi + 0xc]
+        add edi, eax
+        cmp eax, edi
+        jbe L_43EBA9
+        call dword ptr [mem_00925134]
+    L_43EBA9:
+        cmp esi, dword ptr [esp + 0x30]
+        je L_43EBB5
+        call dword ptr [mem_00925134]
+    L_43EBB5:
+        sub esp, 0xc
+        mov eax, esp
+        sub edi, ebp
+        sub esp, 0xc
+        cmp dword ptr [esp + 0x2c], edi
+        mov dword ptr [eax], 0x0
+        jae L_43EC5B
+        mov ecx, dword ptr [esp + 0x48]
+        mov edx, dword ptr [esp + 0x3c]
+        mov dword ptr [eax + 0x8], ebp
+        mov dword ptr [eax + 0x4], ecx
+        mov eax, esp
+        sub esp, 0xc
+        mov dword ptr [eax], 0x0
+        mov dword ptr [eax + 0x4], edx
+        mov dword ptr [eax + 0x8], ebx
+        mov ebx, dword ptr [esi + 0xc]
+        xor ebp, ebp
+        mov edi, esp
+        mov dword ptr [edi], ebp
+        mov eax, dword ptr [esi + 0xc]
+        cmp eax, ebx
+        ja L_43EC07
+        mov ecx, dword ptr [esi + 0x10]
+        add ecx, eax
+        cmp ebx, ecx
+        jbe L_43EC0D
+    L_43EC07:
+        call dword ptr [mem_00925134]
+    L_43EC0D:
+        lea edx, [esp + 0x50]
+        push edx
+        mov dword ptr [edi + 0x4], esi
+        mov dword ptr [edi + 0x8], ebx
+        call ext_0043E6F0
+        mov edx, dword ptr [esp + 0x38]
+        add esp, 0x28
+        cmp edx, ebp
+        jbe L_43ECDA
+        mov ecx, dword ptr [esi + 0x10]
+        nop
+    L_43EC30:
+        cmp ecx, ebp
+        je L_43EC51
+        mov edi, dword ptr [esi + 0x8]
+        add dword ptr [esi + 0xc], 0x1
+        mov eax, dword ptr [esi + 0xc]
+        add edi, edi
+        add edi, edi
+        cmp edi, eax
+        ja L_43EC49
+        mov dword ptr [esi + 0xc], ebp
+    L_43EC49:
+        sub ecx, 0x1
+        jne L_43EC51
+        mov dword ptr [esi + 0xc], ebp
+    L_43EC51:
+        sub edx, 0x1
+        jne L_43EC30
+        mov dword ptr [esi + 0x10], ecx
+        jmp L_43ECDA
+    L_43EC5B:
+        mov ecx, dword ptr [esp + 0x3c]
+        mov dword ptr [eax + 0x8], ebx
+        mov dword ptr [eax + 0x4], ecx
+        mov edi, dword ptr [esi + 0x10]
+        add edi, dword ptr [esi + 0xc]
+        mov ebx, esp
+        mov dword ptr [ebx], 0x0
+        mov eax, dword ptr [esi + 0xc]
+        cmp eax, edi
+        ja L_43EC83
+        mov edx, dword ptr [esi + 0x10]
+        add edx, eax
+        cmp edi, edx
+        jbe L_43EC89
+    L_43EC83:
+        call dword ptr [mem_00925134]
+    L_43EC89:
+        mov ecx, dword ptr [esp + 0x48]
+        sub esp, 0xc
+        mov eax, esp
+        mov dword ptr [ebx + 0x4], esi
+        mov dword ptr [ebx + 0x8], edi
+        lea edx, [esp + 0x50]
+        push edx
+        mov dword ptr [eax], 0x0
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], ebp
+        call ext_0043E760
+        mov ecx, dword ptr [esp + 0x38]
+        add esp, 0x28
+        test ecx, ecx
+        jbe L_43ECD8
+        mov eax, dword ptr [esi + 0x10]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L_43ECC0:
+        test eax, eax
+        je L_43ECD0
+        sub eax, 0x1
+        jne L_43ECD0
+        mov dword ptr [esi + 0xc], 0x0
+    L_43ECD0:
+        sub ecx, 0x1
+        jne L_43ECC0
+        mov dword ptr [esi + 0x10], eax
+    L_43ECD8:
+        xor ebp, ebp
+    L_43ECDA:
+        mov edi, dword ptr [esi + 0xc]
+        mov eax, dword ptr [esi + 0x10]
+        add eax, edi
+        cmp edi, eax
+        jbe L_43ECEC
+        call dword ptr [mem_00925134]
+    L_43ECEC:
+        mov eax, dword ptr [esi + 0xc]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esi + 0x10]
+        add edi, ecx
+        add edx, eax
+        cmp edi, edx
+        ja L_43ED02
+        cmp edi, eax
+        jae L_43ED08
+    L_43ED02:
+        call dword ptr [mem_00925134]
+    L_43ED08:
+        mov eax, dword ptr [esp + 0x1c]
+        mov dword ptr [eax + 0x8], edi
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        pop esi
+        mov dword ptr [eax], ebp
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x1c
+    }
+}
