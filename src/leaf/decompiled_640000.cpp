@@ -4927,3 +4927,25 @@ extern "C" void __fastcall fn_00640240(void* self, int edx_unused, VObj_640240* 
         *(int*)((char*)self + 0x34) = 0;
     }
 }
+
+// [0x00640A50] sub_00640A50 (44 bytes)
+extern "C" void ext_00427550();
+extern "C" int mem_00925218;
+extern "C" __declspec(naked) void __cdecl fn_00640A50(int unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        sub esp, 0x10
+        push eax
+        lea ecx, [esp + 4]
+        push 0x97cd14
+        push ecx
+        call dword ptr [mem_00925218]
+        add esp, 0xc
+        lea edx, [esp]
+        push edx
+        lea ecx, [esp + 0x18]
+        call ext_00427550
+        add esp, 0x10
+        ret
+    }
+}
