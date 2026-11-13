@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11122 / 24049` (**46.25%**) — `8030` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `809955 / 4496005 bytes` (**18.01%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11123 / 24049` (**46.25%**) — `8031` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `810044 / 4496005 bytes` (**18.02%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -17,7 +17,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P10-20 (16-32B)** | 2200 / 2405 | 91.48% | 55717 / 61769 | 90.20% | 205 fn |
 | **P20-30 (32-48B)** | 1217 / 2405 | 50.60% | 47455 / 97731 | 48.56% | 1188 fn |
 | **P30-40 (48-71B)** | 990 / 2405 | 41.16% | 58836 / 144549 | 40.70% | 1415 fn |
-| **P40-50 (71-91B)** | 1078 / 2405 | 44.82% | 89971 / 194373 | 46.29% | 1327 fn |
+| **P40-50 (71-91B)** | 1079 / 2405 | 44.86% | 90060 / 194373 | 46.33% | 1326 fn |
 | **P50-60 (91-122B)** | 1212 / 2405 | 50.40% | 130771 / 256906 | 50.90% | 1193 fn |
 | **P60-70 (122-159B)** | 943 / 2405 | 39.21% | 126924 / 339038 | 37.44% | 1462 fn |
 | **P70-80 (159-178B)** | 225 / 2405 | 9.36% | 37916 / 400567 | 9.47% | 2180 fn |
@@ -28,9 +28,9 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6746 | 515189 | 84.01% |
+| `claude-haiku-5.5@medium` | 6746 | 515189 | 84.00% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.57% |
-| `claude-haiku-5.5@low` | 376 | 85307 | 4.68% |
+| `claude-haiku-5.5@low` | 377 | 85396 | 4.69% |
 | `gemini-3.8-flash@low` | 213 | 48803 | 2.65% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 2.03% |
 | `gemini-4-hydrogen@low` | 45 | 12751 | 0.56% |
