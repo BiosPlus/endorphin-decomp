@@ -215,3 +215,81 @@ extern "C" __declspec(naked) void __fastcall fn_005C01A0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005BFBD0] NMData::MetaBodyData::vfunc_5_off_C (188 bytes)
+extern "C" void ext_005B11F0();
+extern "C" void ext_005B1B60();
+extern "C" void ext_005BFA80();
+
+extern "C" __declspec(naked) void __fastcall fn_005BFBD0(void* self, int edx_unused, const float* arg) {
+    __asm {
+        sub esp, 0x20
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x14c]
+        test eax, eax
+        je L_end
+        push ebx
+        push esi
+        lea esi, [eax + 0x24]
+        mov ecx, esi
+        call ext_005B11F0
+        fld dword ptr [eax]
+        mov ebx, dword ptr [esp + 0x30]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 4]
+        push ebx
+        fstp dword ptr [esp + 0x14]
+        mov ecx, esi
+        fld dword ptr [eax + 8]
+        fstp dword ptr [esp + 0x18]
+        call ext_005B1B60
+        fldz
+        mov eax, dword ptr [esi + 8]
+        cmp eax, 4
+        fst dword ptr [esp + 0x28]
+        fstp dword ptr [esp + 0x20]
+        je L45
+        cmp eax, 5
+        je L45
+        fld dword ptr [ebx]
+        fdiv dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [ebx + 4]
+        fdiv dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [ebx + 8]
+        fdiv dword ptr [esp + 0x14]
+        jmp L56
+    L45:
+        fld dword ptr [ebx]
+        fdiv dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [ebx + 4]
+        fdiv dword ptr [esp + 0x10]
+    L56:
+        cmp dword ptr [edi + 4], 0
+        fstp dword ptr [esp + 0x24]
+        je L75
+        mov eax, dword ptr [edi + 4]
+        mov ebx, dword ptr [eax]
+        mov ecx, esi
+        call ext_005B11F0
+        mov ecx, dword ptr [edi + 4]
+        mov edx, dword ptr [ebx + 0x34]
+        push eax
+        call edx
+    L75:
+        lea eax, [esp + 0x1c]
+        push eax
+        push esi
+        lea ecx, [edi - 0xc]
+        call ext_005BFA80
+        pop esi
+        pop ebx
+    L_end:
+        pop edi
+        add esp, 0x20
+        ret 4
+    }
+}
