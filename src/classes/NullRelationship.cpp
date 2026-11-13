@@ -255,3 +255,34 @@ tail:
         ret 0x4
     }
 }
+
+// [0x00645570] NullRelationship::vfunc_43 (49 bytes)
+extern "C" void ext_00647F00();
+extern "C" void ext_0067E990();
+
+extern "C" __declspec(naked) void __fastcall fn_00645570(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push ebx
+        mov eax, ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        lea ebx, [eax + 0x6c]
+        push edi
+        mov ecx, 0x10
+        mov edi, ebx
+        rep movsd
+        mov eax, dword ptr [eax + 0x68]
+        test eax, eax
+        je done
+        mov ecx, eax
+        call ext_00647F00
+        push eax
+        mov ecx, ebx
+        call ext_0067E990
+done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
