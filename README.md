@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11471 / 24049` (**47.70%**) — `8379` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `903049 / 4496005 bytes` (**20.09%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11472 / 24049` (**47.70%**) — `8380` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `903118 / 4496005 bytes` (**20.09%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -16,7 +16,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P0-10 (1-16B)** | 2379 / 2405 | 98.92% | 24669 / 25001 | 98.67% | 26 fn |
 | **P10-20 (16-32B)** | 2204 / 2405 | 91.64% | 55845 / 61769 | 90.41% | 201 fn |
 | **P20-30 (32-48B)** | 1228 / 2405 | 51.06% | 47907 / 97731 | 49.02% | 1177 fn |
-| **P30-40 (48-71B)** | 1016 / 2405 | 42.25% | 60389 / 144549 | 41.78% | 1389 fn |
+| **P30-40 (48-71B)** | 1017 / 2405 | 42.29% | 60458 / 144549 | 41.83% | 1388 fn |
 | **P40-50 (71-91B)** | 1109 / 2405 | 46.11% | 92492 / 194373 | 47.58% | 1296 fn |
 | **P50-60 (91-122B)** | 1237 / 2405 | 51.43% | 133422 / 256906 | 51.93% | 1168 fn |
 | **P60-70 (122-159B)** | 967 / 2405 | 40.21% | 130181 / 339038 | 38.40% | 1438 fn |
@@ -29,7 +29,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6748 | 515897 | 80.53% |
-| `claude-haiku-5.5@low` | 525 | 121502 | 6.27% |
+| `claude-haiku-5.5@low` | 526 | 121571 | 6.28% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.33% |
 | `gemini-3.8-flash@low` | 292 | 70351 | 3.48% |
 | `gemini-4-hydrogen@low` | 163 | 46899 | 1.95% |
