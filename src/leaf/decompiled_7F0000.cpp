@@ -3537,3 +3537,186 @@ extern "C" __declspec(naked) void __cdecl fn_007F0C00(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x007F4AB0] sub_007F4AB0 (414 bytes)
+extern "C" void ext_007F48F0();
+extern "C" void ext_007F4A60();
+extern "C" __declspec(naked) void __cdecl fn_007F4AB0() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0Ch]
+        push ebp
+        mov ebp, dword ptr [esp + 34h]
+        push esi
+        xor ecx, ecx
+        test ebp, ebp
+        push edi
+        je L_AFD
+        fldz
+    L_OUT:
+        mov eax, 20h
+    L_ROW:
+        mov edx, dword ptr [ebx]
+        mov edx, dword ptr [edx + 4*ecx]
+        fst dword ptr [edx + eax - 20h]
+        mov edx, dword ptr [ebx]
+        mov edx, dword ptr [edx + 4*ecx]
+        fst dword ptr [edx + eax - 10h]
+        mov edx, dword ptr [ebx]
+        mov edx, dword ptr [edx + 4*ecx]
+        fst dword ptr [eax + edx]
+        mov edx, dword ptr [ebx]
+        mov edx, dword ptr [edx + 4*ecx]
+        fst dword ptr [edx + eax + 10h]
+        add eax, 4
+        cmp eax, 2Ch
+        jne L_ROW
+        add ecx, 1
+        cmp ecx, ebp
+        jne L_OUT
+        __asm _emit 0xdd
+        __asm _emit 0xd8
+    L_AFD:
+        mov eax, dword ptr [esp + 2Ch]
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        mov dword ptr [ebx + 4], ebp
+        je L_B77
+        mov esi, dword ptr [esp + 28h]
+        mov edi, dword ptr [esp + 44h]
+        add esi, 3Ch
+        mov dword ptr [esp + 18h], eax
+        __asm _emit 0x8b
+        __asm _emit 0xff
+    L_B20:
+        cmp dword ptr [esi - 30h], -1
+        mov eax, dword ptr [esi - 10h]
+        mov ebp, dword ptr [esi]
+        mov dword ptr [esp + 28h], eax
+        je L_B47
+        mov edx, dword ptr [esi - 20h]
+        mov eax, dword ptr [ebx]
+        push 0
+        push edi
+        lea ecx, [esi - 3Ch]
+        push ecx
+        mov ecx, dword ptr [eax + 4*edx]
+        push ecx
+        call ext_007F48F0
+        add esp, 10h
+    L_B47:
+        cmp dword ptr [esp + 28h], -1
+        je L_B63
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [eax + 4*ebp]
+        push 1
+        push edi
+        lea edx, [esi - 3Ch]
+        push edx
+        push ecx
+        call ext_007F48F0
+        add esp, 10h
+    L_B63:
+        add edi, 10h
+        add esi, 100h
+        sub dword ptr [esp + 18h], 1
+        jne L_B20
+        mov ebp, dword ptr [esp + 3Ch]
+    L_B77:
+        mov ecx, dword ptr [esp + 20h]
+        test ecx, ecx
+        mov esi, dword ptr [esp + 14h]
+        je L_BF1
+        mov edi, dword ptr [esp + 1Ch]
+        xor eax, eax
+        mov dword ptr [esp + 18h], ecx
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    L_B90:
+        mov edx, dword ptr [eax + edi]
+        xor ecx, ecx
+    L_B95:
+        mov ebp, dword ptr [esi]
+        fld dword ptr [edx + ecx]
+        mov ebp, dword ptr [eax + ebp]
+        fstp dword ptr [ecx + ebp]
+        add ecx, 4
+        cmp ecx, 0Ch
+        jne L_B95
+        mov edx, dword ptr [esi]
+        mov ecx, dword ptr [eax + edx]
+        mov dword ptr [ecx + 0Ch], 0
+        mov edx, dword ptr [eax + edi]
+        mov ecx, 10h
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    L_BC0:
+        mov ebp, dword ptr [esi]
+        fld dword ptr [edx + ecx]
+        mov ebp, dword ptr [eax + ebp]
+        fstp dword ptr [ecx + ebp]
+        add ecx, 4
+        cmp ecx, 1Ch
+        jne L_BC0
+        mov edx, dword ptr [esi]
+        mov ecx, dword ptr [eax + edx]
+        add eax, 4
+        sub dword ptr [esp + 18h], 1
+        mov dword ptr [ecx + 1Ch], 0
+        jne L_B90
+        mov ecx, dword ptr [esp + 20h]
+        mov ebp, dword ptr [esp + 3Ch]
+    L_BF1:
+        xor edi, edi
+        test ebp, ebp
+        mov dword ptr [esi + 4], ecx
+        je L_C49
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_C00:
+        mov ecx, dword ptr [esp + 38h]
+        mov eax, dword ptr [ecx + 8*edi]
+        cmp eax, -1
+        mov ebp, dword ptr [ecx + 8*edi + 4]
+        je L_C24
+        mov edx, dword ptr [ebx]
+        mov ecx, dword ptr [edx + 4*edi]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 4*eax]
+        push ecx
+        push eax
+        call ext_007F4A60
+        add esp, 8
+    L_C24:
+        cmp ebp, -1
+        je L_C40
+        mov ecx, dword ptr [ebx]
+        mov edx, dword ptr [ecx + 4*edi]
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [eax + 4*ebp]
+        add edx, 20h
+        push edx
+        push ecx
+        call ext_007F4A60
+        add esp, 8
+    L_C40:
+        add edi, 1
+        cmp edi, dword ptr [esp + 3Ch]
+        jne L_C00
+    L_C49:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
