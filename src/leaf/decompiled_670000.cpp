@@ -11631,3 +11631,15 @@ extern "C" void __fastcall fn_00672350(void* self, int edx_unused, void* arg1) {
     typedef void (__thiscall* VFn35)(void*, void*, void*);
     ((*(VFn35**)obj)[35])(obj, self, arg1);
 }
+
+// [0x0067F040] sub_0067F040 (58 bytes)
+extern "C" void __cdecl ext_0067EF60(int, float, unsigned int, unsigned int);
+
+extern "C" void __cdecl fn_0067F040(int a1, float* a2) {
+    for (int esi = 0; esi < 0xC; esi += 4) {
+        unsigned int a = *(unsigned int*)((char*)&mem_00B5A094 + esi);
+        unsigned int b = *(unsigned int*)((char*)&mem_00B5A0A4 + esi);
+        float val = *(float*)((char*)a2 + esi);
+        ext_0067EF60(a1, val, b, a);
+    }
+}
