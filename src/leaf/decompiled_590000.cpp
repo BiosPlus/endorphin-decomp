@@ -5018,3 +5018,27 @@ L_end:
         ret
     }
 }
+
+extern "C" void ext_00598E10();
+
+// [0x0059A9F0] sub_0059A9F0 (52 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0059A9F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea eax, [esp + 0x8]
+        push eax
+        lea ecx, [esi + 0x2bc]
+        call ext_0041A920
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0xc]
+        lea edx, [esp + 0x8]
+        push edx
+        mov dword ptr [esp + 0xc], ecx
+        push eax
+        lea ecx, [esi + 0x248]
+        call ext_00598E10
+        pop esi
+        ret 0x8
+    }
+}
