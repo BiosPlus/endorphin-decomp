@@ -12,5 +12,7 @@
     "0x007CDEE5",
     "0x007CDF04"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-13T10:43:49Z"
 }

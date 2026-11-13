@@ -6768,3 +6768,165 @@ L_done:
         ret
     }
 }
+
+// [0x007CDDE0] sub_007CDDE0 (396 bytes)
+extern "C" int mem_00993860; extern "C" int mem_0092A278;
+extern "C" __declspec(naked) void __fastcall fn_007CDDE0(void* self) {
+    __asm {
+        push ecx
+        fld dword ptr [edi+4]
+        push esi
+        fld dword ptr [ebx+0x2c]
+        mov esi, [esp+0xc]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L_b1
+        fld dword ptr [esi]
+        mov eax, [ecx+0x50]
+        fmul dword ptr [edi+4]
+        add eax, edx
+        push ebp
+        mov ebp, eax
+        fadd dword ptr [edi+8]
+        and eax, 3
+        fld1
+        shr ebp, 2
+        fld st(0)
+        lea eax, [eax+4*ebp]
+        fdivrp st(2), st
+        mov ebp, [ecx+0x4c]
+        fxch st(1)
+        fstp dword ptr [esp+8]
+        fld dword ptr [esp+8]
+        fld st(0)
+        fsub dword ptr [esi+4]
+        fstp dword ptr [esp+8]
+        fld dword ptr [esp+8]
+        fstp dword ptr [ebp+4*eax]
+        mov eax, [ecx+0x50]
+        fldz
+        add eax, edx
+        mov ebp, eax
+        shr ebp, 2
+        and eax, 3
+        lea eax, [eax+4*ebp]
+        mov ebp, [ecx+0x4c]
+        fcom dword ptr [ebp+4*eax]
+        fnstsw ax
+        test ah, 0x41
+        jne L_6d
+        mov eax, [ecx+0x50]
+        add eax, edx
+        mov ebp, eax
+        shr ebp, 2
+        and eax, 3
+        lea eax, [eax+4*ebp]
+        mov ebp, [ecx+0x4c]
+        fst dword ptr [ebp+4*eax]
+    L_6d:
+        fcomp dword ptr [edi+8]
+        pop ebp
+        fnstsw ax
+        test ah, 0x44
+        mov eax, [ecx+0x14]
+        jp L_8a
+        fstp st(0)
+        fsub dword ptr [esi+8]
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        jmp L_9c
+    L_8a:
+        fstp st(1)
+        fmul dword ptr [esi]
+        fmul dword ptr [edi+4]
+        fsub dword ptr [esi+8]
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+    L_9c:
+        add eax, edx
+        mov esi, eax
+        shr esi, 2
+        and eax, 3
+        lea eax, [eax+4*esi]
+        mov esi, [ecx+0x10]
+        jmp L_40
+    L_b1:
+        fld dword ptr [edi+0xc]
+        fchs
+        fmul dword ptr [ebx+0x28]
+        fstp dword ptr [esp+4]
+        fld dword ptr [esi]
+        fld dword ptr [esp+4]
+        fld st(0)
+        fmulp st(2), st
+        fld dword ptr [esi+8]
+        fmul dword ptr [ebx+0x10]
+        fdivp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        fabs
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        fcomp dword ptr [mem_00993860]
+        fnstsw ax
+        test ah, 5
+        jp L_f7
+        mov esi, 1
+        jmp L_f9
+    L_f7:
+        xor esi, esi
+    L_f9:
+        fld dword ptr [ebx+0x28]
+        mov [ebx+0xc], esi
+        fmul dword ptr [ebx+0x10]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 1
+        jne L_161
+        mov eax, [ecx+0x20]
+        add eax, edx
+        mov esi, eax
+        shr esi, 2
+        and eax, 3
+        lea eax, [eax+4*esi]
+        mov esi, [ecx+0x1c]
+        fstp dword ptr [esi+4*eax]
+    L_125:
+        cmp dword ptr [ebx+0xc], 0
+        je L_5c
+        mov eax, [ecx+0x20]
+        fldz
+        add eax, edx
+        mov esi, eax
+        shr esi, 2
+        and eax, 3
+        lea eax, [eax+4*esi]
+        mov esi, [ecx+0x1c]
+    L_40:
+        fstp dword ptr [esi+4*eax]
+        mov eax, [ecx+0x2c]
+        mov ecx, [ecx+0x28]
+        fld dword ptr [ebx+0x10]
+        add eax, edx
+        mov edx, eax
+        shr edx, 2
+        and eax, 3
+        lea eax, [eax+4*edx]
+        fstp dword ptr [ecx+4*eax]
+    L_5c:
+        mov al, 1
+        pop esi
+        pop ecx
+        ret
+    L_161:
+        test esi, esi
+        fstp st(0)
+        jne L_125
+        xor al, al
+        pop esi
+        pop ecx
+        ret
+    }
+}
