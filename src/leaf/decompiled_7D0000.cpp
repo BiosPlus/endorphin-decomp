@@ -5982,3 +5982,25 @@ extern "C" __declspec(naked) void __cdecl fn_007DFF50(void) {
         ret
     }
 }
+
+extern "C" void ext_007C8F80(void*, void*);
+extern "C" int mem_0099E0B0;
+
+// [0x007D88C0] sub_007D88C0 (127 bytes)
+extern "C" void* __cdecl fn_007D88C0(void* self, void* arg) {
+    char* p = (char*)self;
+    ext_007C8F80(self, arg);
+    *(int*)(p + 0xA4) = 0;
+    *(int*)(p + 0xB0) = 5;
+    *(int*)(p + 0xA0) = 0x007CEA00;
+    *(int*)(p + 0xA8) = 0x007D8890;
+    *(int*)(p + 0xAC) = 0x007C9130;
+    *(int*)(p + 0x168) = mem_0099E0B0;
+    *(int*)(p + 0x16C) = mem_0099E0B0;
+    *(float*)(p + 0x17C) = 0.0f;
+    *(int*)(p + 0x164) = 0;
+    *(float*)(p + 0x174) = 0.0f;
+    *(int*)(p + 0x170) = 0;
+    *(int*)(p + 0x178) = 0;
+    return self;
+}
