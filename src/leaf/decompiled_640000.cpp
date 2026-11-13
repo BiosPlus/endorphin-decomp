@@ -3758,3 +3758,14 @@ extern "C" __declspec(naked) void __fastcall fn_00645350(void* self) {
         ret 0xc
     }
 }
+
+// [0x00648150] sub_00648150 (35 bytes)
+extern "C" void ext_007C66A0();
+extern "C" void ext_007C6780();
+
+extern "C" void __fastcall fn_00648150(void* self) {
+    void** esi = *(void***)((char*)self + 0xa4);
+    if (((int (__cdecl*)(void*))ext_007C6780)(*esi)) {
+        ((void (__cdecl*)(void*))ext_007C66A0)(*esi);
+    }
+}
