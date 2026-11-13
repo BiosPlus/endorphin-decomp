@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11316 / 24049` (**47.05%**) — `8224` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `857980 / 4496005 bytes` (**19.08%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11317 / 24049` (**47.06%**) — `8225` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `858488 / 4496005 bytes` (**19.09%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -22,18 +22,18 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P60-70 (122-159B)** | 953 / 2405 | 39.63% | 128260 / 339038 | 37.83% | 1452 fn |
 | **P70-80 (159-178B)** | 235 / 2405 | 9.77% | 39567 / 400567 | 9.88% | 2170 fn |
 | **P80-90 (178-335B)** | 784 / 2405 | 32.60% | 188056 / 583211 | 32.24% | 1621 fn |
-| **P90-100 (335-36100B)** | 221 / 2404 | 9.19% | 91089 / 2392860 | 3.81% | 2183 fn |
+| **P90-100 (335-36100B)** | 222 / 2404 | 9.23% | 91597 / 2392860 | 3.83% | 2182 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6748 | 515897 | 82.05% |
+| `claude-haiku-5.5@medium` | 6748 | 515897 | 82.04% |
 | `claude-haiku-5.5@low` | 457 | 104417 | 5.56% |
-| `gemini-3.8-flash@high` | 447 | 63301 | 5.44% |
+| `gemini-3.8-flash@high` | 447 | 63301 | 5.43% |
 | `gemini-3.8-flash@low` | 261 | 59885 | 3.17% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.98% |
-| `gemini-4-hydrogen@low` | 108 | 29876 | 1.31% |
+| `gemini-4-hydrogen@low` | 109 | 30384 | 1.33% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.30% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.12% |
 | `gemini-3.8-flash@medium` | 3 | 839 | 0.04% |
