@@ -2,6 +2,7 @@
 
 extern "C" void ext_004875A0();
 extern "C" void ext_004F9950();
+extern "C" void ext_0067DAD0();
 extern "C" int mem_009253D0;
 
 // [0x0053A7A0] HasRelativeTMPtr::vfunc_2 (24 bytes)
@@ -82,6 +83,42 @@ extern "C" __declspec(naked) void* __fastcall fn_0053A770(void* self, int edx_un
         call ext_004875A0
         mov ecx, eax
         call ext_004F9950
+        mov eax, esi
+        pop esi
+        add esp, 0x40
+        ret 0x4
+    }
+}
+
+// [0x0053A7C0] HasRelativeTMPtr::vfunc_3 (80 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0053A7C0(void* self, int edx_unused, void* a1) {
+    __asm {
+        fldz
+        mov eax, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [ecx + 0x8]
+        sub esp, 0x40
+        push esi
+        mov esi, dword ptr [esp + 0x48]
+        fst dword ptr [esi + 0x8]
+        push esi
+        fst dword ptr [esi + 0x4]
+        push eax
+        fst dword ptr [esi]
+        lea edx, [esp + 0xc]
+        fst dword ptr [esi + 0x14]
+        push edx
+        fst dword ptr [esi + 0x10]
+        fst dword ptr [esi + 0xc]
+        fst dword ptr [esi + 0x20]
+        fst dword ptr [esi + 0x1c]
+        fstp dword ptr [esi + 0x18]
+        fld1
+        fst dword ptr [esi]
+        fst dword ptr [esi + 0x10]
+        fstp dword ptr [esi + 0x20]
+        call ext_004875A0
+        mov ecx, eax
+        call ext_0067DAD0
         mov eax, esi
         pop esi
         add esp, 0x40
