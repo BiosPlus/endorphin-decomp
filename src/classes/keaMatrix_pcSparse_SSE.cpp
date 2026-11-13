@@ -514,3 +514,276 @@ L_r:
         ret 0x24
     }
 }
+
+// [0x00801540] keaMatrix_pcSparse_SSE::vfunc_4 (765 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00801540(void* self, int edx_unused, float* a, float* b) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x10
+        sub esp, 0x34
+        mov edx, dword ptr [ebp+0x8]
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [ebp+0xc]
+        cmp edx, edi
+        mov eax, ecx
+        mov dword ptr [esp+0x1c], edx
+        je L_801577
+        xor esi, esi
+        cmp dword ptr [eax+0x8], esi
+        je L_801577
+        mov ecx, edx
+        sub edi, edx
+    L_801567:
+        fld dword ptr [edi+ecx]
+        add esi, 0x1
+        fstp dword ptr [ecx]
+        add ecx, 0x4
+        cmp esi, dword ptr [eax+0x8]
+        jne L_801567
+    L_801577:
+        mov ecx, dword ptr [eax+0x14]
+        xor edi, edi
+        test ecx, ecx
+        jle L_80169f
+        xorps xmm6, xmm6
+    L_801587:
+        imul ecx, edi
+        xor esi, esi
+        test edi, edi
+        movaps xmm3, xmm6
+        mov dword ptr [esp+0x18], esi
+        mov ebx, ecx
+        jle L_80161d
+        mov ecx, dword ptr [eax+0x20]
+        lea ecx, [ecx+4*ebx]
+        add ebx, edi
+        mov dword ptr [esp+0x18], edi
+        mov dword ptr [esp+0x20], ebx
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_8015b0:
+        mov edx, dword ptr [ecx]
+        test edx, edx
+        je L_801608
+        mov ebx, dword ptr [esp+0x1c]
+        movaps xmm0, xmmword ptr [ebx+4*esi]
+        movaps xmm2, xmmword ptr [edx]
+        mov ebx, dword ptr [esp+0x20]
+        movaps xmm1, xmm0
+        shufps xmm1, xmm0, 0x0
+        mulps xmm1, xmm2
+        addps xmm1, xmm3
+        movaps xmm3, xmmword ptr [edx+0x10]
+        movaps xmm2, xmm0
+        shufps xmm2, xmm0, 0x55
+        mulps xmm2, xmm3
+        movaps xmm3, xmmword ptr [edx+0x20]
+        addps xmm1, xmm2
+        movaps xmm2, xmm0
+        shufps xmm2, xmm0, 0xaa
+        mulps xmm2, xmm3
+        addps xmm1, xmm2
+        movaps xmm2, xmm0
+        shufps xmm2, xmm0, 0xff
+        movaps xmm0, xmmword ptr [edx+0x30]
+        mulps xmm2, xmm0
+        addps xmm1, xmm2
+        movaps xmm3, xmm1
+    L_801608:
+        add ecx, 0x4
+        add esi, 0x4
+        sub dword ptr [esp+0x18], 0x1
+        jne L_8015b0
+        mov edx, dword ptr [esp+0x1c]
+        mov dword ptr [esp+0x18], esi
+    L_80161d:
+        mov ecx, dword ptr [eax+0x20]
+        mov ecx, dword ptr [ecx+4*ebx]
+        movaps xmm0, xmmword ptr [edx+4*esi]
+        mov ebx, dword ptr [eax+0x18]
+        movaps xmm5, xmmword ptr [ebx+4*esi]
+        movaps xmm4, xmmword ptr [ecx]
+        movaps xmm7, xmmword ptr [ecx+0x10]
+        movaps xmm1, xmm0
+        subps xmm1, xmm3
+        mulps xmm1, xmm5
+        movaps xmm2, xmm1
+        shufps xmm2, xmm1, 0x0
+        mulps xmm2, xmm4
+        addps xmm2, xmm3
+        movaps xmm3, xmm0
+        subps xmm3, xmm2
+        mulps xmm3, xmm5
+        movaps xmm4, xmm3
+        shufps xmm4, xmm3, 0x55
+        mulps xmm4, xmm7
+        movaps xmm7, xmmword ptr [ecx+0x20]
+        addps xmm4, xmm2
+        movaps xmm2, xmm0
+        movlhps xmm1, xmm3
+        subps xmm2, xmm4
+        mulps xmm2, xmm5
+        movaps xmm3, xmm2
+        shufps xmm3, xmm2, 0xaa
+        mulps xmm3, xmm7
+        addps xmm3, xmm4
+        subps xmm0, xmm3
+        mulps xmm0, xmm5
+        movhlps xmm0, xmm2
+        shufps xmm1, xmm0, 0xcc
+        movaps xmmword ptr [edx+4*esi], xmm1
+        mov ecx, dword ptr [eax+0x14]
+        add edi, 0x1
+        cmp edi, ecx
+        jl L_801587
+        jmp L_8016a3
+    L_80169f:
+        mov esi, dword ptr [esp+0x18]
+    L_8016a3:
+        mov edi, dword ptr [eax+0x14]
+        lea ebx, [edi-0x1]
+        mov ecx, ebx
+        imul ecx, edi
+        test ebx, ebx
+        mov dword ptr [esp+0x28], ebx
+        jl L_80181d
+        add ecx, ebx
+        xorps xmm2, xmm2
+        movaps xmmword ptr [esp+0x30], xmm2
+        mov dword ptr [esp+0x24], ecx
+        jmp L_8016d5
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_8016d0:
+        movaps xmm2, xmmword ptr [esp+0x30]
+    L_8016d5:
+        mov edi, dword ptr [eax+0x14]
+        mov ebx, dword ptr [esp+0x24]
+        lea edx, [edi-0x1]
+        cmp edx, dword ptr [esp+0x28]
+        movaps xmm4, xmm2
+        movaps xmm6, xmm2
+        movaps xmm3, xmm2
+        mov ecx, esi
+        mov dword ptr [esp+0x20], ebx
+        jle L_80175e
+        sub edx, dword ptr [esp+0x28]
+        mov esi, dword ptr [eax+0x20]
+        lea ebx, [esi+4*ebx]
+        mov dword ptr [esp+0x2c], edx
+    L_801702:
+        mov esi, dword ptr [ebx]
+        test esi, esi
+        je L_801743
+        mov edx, dword ptr [esp+0x1c]
+        movaps xmm0, xmmword ptr [edx+4*ecx]
+        movaps xmm1, xmmword ptr [esi]
+        mulps xmm1, xmm0
+        addps xmm1, xmm4
+        movaps xmm4, xmm1
+        movaps xmm1, xmmword ptr [esi+0x10]
+        mulps xmm1, xmm0
+        addps xmm1, xmm2
+        movaps xmm2, xmm1
+        movaps xmm1, xmmword ptr [esi+0x20]
+        mulps xmm1, xmm0
+        addps xmm1, xmm6
+        movaps xmm6, xmm1
+        movaps xmm1, xmmword ptr [esi+0x30]
+        mulps xmm1, xmm0
+        addps xmm1, xmm3
+        movaps xmm3, xmm1
+    L_801743:
+        sub dword ptr [esp+0x20], edi
+        lea esi, [4*edi]
+        sub ebx, esi
+        sub ecx, 0x4
+        sub dword ptr [esp+0x2c], 0x1
+        jne L_801702
+        mov esi, dword ptr [esp+0x18]
+    L_80175e:
+        mov edx, dword ptr [eax+0x20]
+        mov edi, dword ptr [esp+0x20]
+        mov edx, dword ptr [edx+4*edi]
+        mov edi, dword ptr [esp+0x1c]
+        movaps xmm0, xmmword ptr [edi+4*ecx]
+        mov ebx, dword ptr [eax+0x18]
+        movaps xmm5, xmmword ptr [ebx+4*ecx]
+        movaps xmm1, xmm4
+        movlhps xmm1, xmm2
+        movhlps xmm2, xmm4
+        movaps xmm4, xmmword ptr [edx+0x30]
+        addps xmm1, xmm2
+        movaps xmm7, xmmword ptr [edx+0x10]
+        movaps xmm2, xmm6
+        movlhps xmm2, xmm3
+        movhlps xmm3, xmm6
+        movaps xmm6, xmmword ptr [edx+0x20]
+        addps xmm2, xmm3
+        sub dword ptr [esp+0x24], 0x1
+        movaps xmm3, xmm1
+        shufps xmm1, xmm2, 0x88
+        shufps xmm3, xmm2, 0xdd
+        addps xmm3, xmm1
+        lea edi, [edi+4*ecx]
+        mov ecx, dword ptr [esp+0x28]
+        movaps xmm1, xmm0
+        subps xmm1, xmm3
+        mulps xmm1, xmm5
+        movaps xmm2, xmm1
+        shufps xmm2, xmm1, 0xff
+        mulps xmm2, xmm4
+        addps xmm2, xmm3
+        movaps xmm3, xmm0
+        subps xmm3, xmm2
+        mulps xmm3, xmm5
+        movaps xmm4, xmm3
+        shufps xmm4, xmm3, 0xaa
+        mulps xmm4, xmm6
+        addps xmm4, xmm2
+        movaps xmm2, xmm0
+        subps xmm2, xmm4
+        mulps xmm2, xmm5
+        movaps xmm6, xmm2
+        shufps xmm6, xmm2, 0x55
+        mulps xmm6, xmm7
+        addps xmm6, xmm4
+        subps xmm0, xmm6
+        mulps xmm0, xmm5
+        sub ecx, 0x1
+        test ecx, ecx
+        movlhps xmm0, xmm2
+        movhlps xmm1, xmm3
+        shufps xmm0, xmm1, 0xcc
+        movaps xmmword ptr [edi], xmm0
+        mov dword ptr [esp+0x28], ecx
+        jge L_8016d0
+        mov edx, dword ptr [esp+0x1c]
+    L_80181d:
+        mov ecx, dword ptr [eax+0x4]
+        cmp ecx, dword ptr [eax+0x8]
+        je L_801834
+        fldz
+    L_801827:
+        fst dword ptr [edx+4*ecx]
+        add ecx, 0x1
+        cmp ecx, dword ptr [eax+0x8]
+        jne L_801827
+        fstp st(0)
+    L_801834:
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x8
+    }
+}
