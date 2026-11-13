@@ -5165,3 +5165,169 @@ extern "C" __declspec(naked) void __cdecl fn_0065FFE0() {
         ret
     }
 }
+
+// [0x0065F940] sub_0065F940 (417 bytes)
+extern "C" void ext_0041CF00();
+extern "C" void ext_0041CF50();
+extern "C" void ext_004ECB40();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_008B2698;
+extern "C" int mem_00A9FB04;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00B599BC;
+extern "C" int mem_00A9FB34;
+extern "C" int mem_00A31114;
+
+extern "C" __declspec(naked) void __fastcall fn_0065F940(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push offset mem_008B2698
+        push eax
+        mov dword ptr fs:[0x0], esp
+        mov eax, dword ptr [mem_00A9FB04]
+        sub esp, 0x18
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0x34]
+        push eax
+        push edi
+        mov ebp, ecx
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        je L_65F994
+        mov ecx, dword ptr [esp + 0x30]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x10]
+        push 0x0
+        call eax
+        pop edi
+        pop ebp
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x8
+    L_65F994:
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x38]
+        mov dword ptr [ebp + 0x54], esi
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x4]
+        push edi
+        mov ecx, esi
+        call eax
+        mov ebx, eax
+        test ebx, ebx
+        je L_65F9B5
+        mov dword ptr [ebp + 0x54], ebx
+        jmp L_65FACA
+    L_65F9B5:
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 0x8]
+        push edi
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, esi
+        call edx
+        mov ecx, dword ptr [esp + 0x14]
+        test ecx, ecx
+        mov dword ptr [esp + 0x30], 0x0
+        je L_65FAB2
+        cmp ecx, dword ptr [mem_00B599BC]
+        je L_65FAB2
+        lea eax, [esp + 0x10]
+        push eax
+        lea ecx, [esp + 0x1C]
+        call ext_0041CF00
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x90]
+        mov byte ptr [esp + 0x30], 0x1
+        call eax
+        test al, al
+        je L_65FA3F
+        lea ecx, [esp + 0x20]
+        push ecx
+        lea ecx, [esp + 0x14]
+        call ext_004ECB40
+        push eax
+        lea ecx, [esp + 0x1C]
+        mov byte ptr [esp + 0x34], 0x2
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x24]
+        test ecx, ecx
+        mov byte ptr [esp + 0x30], 0x1
+        je L_65FA3F
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x20]
+        push eax
+        call edx
+    L_65FA3F:
+        mov ecx, dword ptr [esp + 0x1C]
+        test ecx, ecx
+        je L_65FA99
+        cmp ecx, dword ptr [mem_00B599BC]
+        je L_65FA99
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x34]
+        lea edx, [esp + 0x10]
+        push edx
+        call eax
+        push 0x0
+        push offset mem_00A9FB34
+        push offset mem_00A31114
+        push 0x0
+        push eax
+        call ext_006A6E9E
+        mov esi, eax
+        add esp, 0x14
+        test esi, esi
+        je L_65FA95
+        lea ecx, [esp + 0x10]
+        push ecx
+        lea ecx, [ebp + 0x48]
+        call ext_0041CF50
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 0x60]
+        lea eax, [esp + 0x18]
+        push eax
+        mov ecx, esi
+        call edx
+        mov ebx, eax
+    L_65FA95:
+        mov ecx, dword ptr [esp + 0x1C]
+    L_65FA99:
+        test ecx, ecx
+        mov byte ptr [esp + 0x30], 0x0
+        je L_65FAAE
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x18]
+        push edx
+        call eax
+    L_65FAAE:
+        mov ecx, dword ptr [esp + 0x14]
+    L_65FAB2:
+        test ecx, ecx
+        mov dword ptr [esp + 0x30], 0xFFFFFFFF
+        je L_65FACA
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x10]
+        push eax
+        call edx
+    L_65FACA:
+        mov ecx, dword ptr [esp + 0x28]
+        pop esi
+        mov eax, ebx
+        pop ebx
+        pop edi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x8
+    }
+}
