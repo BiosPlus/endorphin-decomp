@@ -85,3 +85,24 @@ extern "C" __declspec(naked) void __fastcall fn_004BBBF0(void* self, int edx_unu
         ret 0Ch
     }
 }
+
+// [0x004C5560] Properties::TerminalParentType<MatrixWithProperties>::vfunc_0 (38 bytes)
+extern "C" void ext_004F9610();
+extern "C" __declspec(naked) void __fastcall fn_004C5560(void* self, int edx_unused, void* a1, void** a2, void* a3) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 10h]
+        mov ecx, dword ptr [esp + 0Ch]
+        mov ecx, dword ptr [ecx]
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        push eax
+        push esi
+        mov dword ptr [esp + 0Ch], 0
+        call ext_004F9610
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0Ch
+    }
+}
