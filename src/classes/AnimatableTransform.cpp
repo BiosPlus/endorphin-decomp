@@ -919,3 +919,25 @@ loc_0058A618:
         ret 4
     }
 }
+
+// [0x0058B110] AnimatableTransform::vfunc_7_off_8 (36 bytes)
+extern "C" void ext_0058A6D0();
+extern "C" __declspec(naked) void __fastcall fn_0058B110(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x4]
+        push 0x1
+        push ecx
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        lea ecx, [esi - 0x8]
+        call ext_0058A6D0
+        pop esi
+        ret 0x8
+    }
+}

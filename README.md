@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11922 / 24049` (**49.57%**) — `8830` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1116119 / 4496005 bytes` (**24.82%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11923 / 24049` (**49.58%**) — `8831` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1116155 / 4496005 bytes` (**24.83%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -15,7 +15,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | **P0-10 (1-16B)** | 2379 / 2405 | 98.92% | 24669 / 25001 | 98.67% | 26 fn |
 | **P10-20 (16-32B)** | 2209 / 2405 | 91.85% | 56004 / 61769 | 90.67% | 196 fn |
-| **P20-30 (32-48B)** | 1255 / 2405 | 52.18% | 48917 / 97731 | 50.05% | 1150 fn |
+| **P20-30 (32-48B)** | 1256 / 2405 | 52.22% | 48953 / 97731 | 50.09% | 1149 fn |
 | **P30-40 (48-71B)** | 1035 / 2405 | 43.04% | 61555 / 144549 | 42.58% | 1370 fn |
 | **P40-50 (71-91B)** | 1138 / 2405 | 47.32% | 94823 / 194373 | 48.78% | 1267 fn |
 | **P50-60 (91-122B)** | 1275 / 2405 | 53.01% | 137456 / 256906 | 53.50% | 1130 fn |
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6748 | 515897 | 76.42% |
-| `claude-haiku-5.5@low` | 701 | 202248 | 7.94% |
+| `claude-haiku-5.5@medium` | 6748 | 515897 | 76.41% |
+| `claude-haiku-5.5@low` | 702 | 202284 | 7.95% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.06% |
 | `gemini-3.8-flash@low` | 406 | 117813 | 4.60% |
 | `gemini-4-hydrogen@low` | 322 | 130592 | 3.65% |
