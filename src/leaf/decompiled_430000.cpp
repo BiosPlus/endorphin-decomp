@@ -11600,3 +11600,46 @@ L_962:
         ret 0x4
     }
 }
+
+extern "C" void ext_00437750();
+extern "C" void ext_00437970();
+extern "C" void ext_00492550();
+
+// [0x00437DF0] sub_00437DF0 (86 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00437DF0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        call ext_00492550
+        test al, al
+        je L_false
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        mov ecx, esi
+        call ext_00437750
+        pop esi
+        ret 0xc
+    L_false:
+        mov ecx, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push 0x1
+        push ecx
+        push edi
+        mov ecx, esi
+        call ext_00437970
+        mov edx, dword ptr [esp + 0x14]
+        push 0x0
+        push edx
+        push edi
+        mov ecx, esi
+        call ext_00437970
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
