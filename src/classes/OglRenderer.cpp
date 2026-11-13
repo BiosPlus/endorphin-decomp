@@ -581,3 +581,37 @@ extern "C" void __fastcall fn_00533C90(void* self, int edx_unused, void* a1) {
     typedef void (__thiscall* VFunc10)(void*, unsigned int);
     (*(VFunc10**)self)[0x28 / 4](self, (unsigned int)*((unsigned char*)a1 + 0x8c));
 }
+
+// [0x005360B0] OglRenderer::vfunc_0_off_18 (60 bytes)
+extern "C" float __fastcall ext_00679A50(void* self);
+extern "C" void __fastcall ext_00534F30(void* self);
+extern "C" int mem_0092F678;
+extern "C" __declspec(naked) bool __fastcall fn_005360B0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x358]
+        lea ecx, [esi + 0x24]
+        call ext_00679A50
+        test edi, edi
+        mov dword ptr [esp + 0x8], edi
+        fild dword ptr [esp + 0x8]
+        jge L_005360D5
+        fadd dword ptr [mem_0092F678]
+L_005360D5:
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jp L_005360E6
+        lea ecx, [esi - 0x18]
+        call ext_00534F30
+L_005360E6:
+        pop edi
+        mov al, 0x1
+        pop esi
+        pop ecx
+        ret
+    }
+}
