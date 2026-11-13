@@ -848,3 +848,74 @@ hinge_d:
         ret 0x8
     }
 }
+
+extern "C" void ext_0067B7F0();
+extern "C" void ext_0067E7B0();
+extern "C" void ext_007C93A0();
+extern "C" void ext_007C93E0();
+extern "C" int mem_00A9EBB8;
+
+// [0x00658C10] RelationshipHinge::vfunc_47 (159 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00658C10(void* self) {
+    __asm {
+        sub esp, 0xc
+        mov eax, dword ptr [ecx + 0x64]
+        push ebx
+        push esi
+        push edi
+        push eax
+        call ext_007D8700
+        mov esi, dword ptr [esp + 0x20]
+        lea edi, [esi + 0x10]
+        push edi
+        push esi
+        mov ebx, eax
+        push 0
+        push ebx
+        call ext_007C93E0
+        lea ecx, [esi + 0x30]
+        push ecx
+        push 0
+        push ebx
+        call ext_007C93A0
+        fld dword ptr [edi + 0x8]
+        fmul dword ptr [esi + 0x4]
+        add esp, 0x20
+        fld dword ptr [edi + 0x4]
+        lea ecx, [esp + 0xc]
+        fmul dword ptr [esi + 0x8]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [edi]
+        fmul dword ptr [esi + 0x8]
+        fld dword ptr [edi + 0x8]
+        fmul dword ptr [esi]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [edi + 0x4]
+        fmul dword ptr [esi]
+        fld dword ptr [edi]
+        fmul dword ptr [esi + 0x4]
+        fsubp st(1), st
+        fstp dword ptr [esp + 0x14]
+        call ext_0067B7F0
+        fld dword ptr [eax]
+        push ecx
+        fstp dword ptr [esi + 0x20]
+        mov ecx, esi
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esi + 0x24]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esi + 0x28]
+        fld qword ptr [mem_00A9EBB8]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x20]
+        fstp dword ptr [esp]
+        call ext_0067E7B0
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0xc
+        ret 0x4
+    }
+}
