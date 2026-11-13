@@ -3812,3 +3812,24 @@ extern "C" void* __fastcall fn_005F5940(void* self) {
     ((void (__thiscall*)(Matrix3_005F5940*, int, void*))ext_00694B60)(&m, 0, res);
     return res;
 }
+
+// [0x005F5700] sub_005F5700 (34 bytes)
+extern "C" void ext_0067E410();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_005F5700(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [ecx + 4]
+        mov edx, dword ptr [edx + 0xc]
+        push eax
+        mov eax, dword ptr [mem_00B40640]
+        add ecx, 4
+        push 0
+        push eax
+        call edx
+        mov ecx, eax
+        call ext_0067E410
+        ret 4
+    }
+}
