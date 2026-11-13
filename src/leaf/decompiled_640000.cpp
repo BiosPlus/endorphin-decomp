@@ -5752,3 +5752,19 @@ extern "C" void* __fastcall fn_00646150(void* self, int edx_unused, const void* 
     ((unsigned int*)self)[25] = ((const unsigned int*)other)[25];
     return self;
 }
+
+// [0x00648860] sub_00648860 (49 bytes)
+extern "C" void ext_0065BA80();
+extern "C" void ext_0065BBA0();
+extern "C" void ext_0065BDF0();
+extern "C" void ext_0065BE20();
+
+extern "C" void __fastcall fn_00648860(void* self, int edx_unused, int a1) {
+    typedef void (__thiscall* ThiscallIntFn)(void*, int);
+    typedef void (__thiscall* ThiscallPtrFn)(void*, void*);
+    void** fields = (void**)self;
+    ((ThiscallIntFn)ext_0065BDF0)(fields[10], a1);
+    ((ThiscallPtrFn)ext_0065BE20)(fields[10], self);
+    ((ThiscallPtrFn)ext_0065BBA0)(fields[11], self);
+    ((ThiscallIntFn)ext_0065BA80)(fields[12], a1);
+}
