@@ -519,3 +519,102 @@ extern "C" __declspec(naked) void __fastcall fn_004997E0(void* self) {
         ret 0x8
     }
 }
+
+extern "C" int mem_00925134;
+extern "C" void ext_004996E0();
+
+// [0x00499830] NMData::Transition::vfunc_32 (203 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00499830(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [ecx + 0x88]
+        cmp esi, dword ptr [ecx + 0x8c]
+        push edi
+        lea edi, [ecx + 0x84]
+        mov dword ptr [esp + 0x10], ecx
+        jbe L_499853
+        call dword ptr [mem_00925134]
+    L_499853:
+        mov ebp, dword ptr [esp + 0x18]
+    L_499857:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_499865
+        call dword ptr [mem_00925134]
+    L_499865:
+        cmp edi, edi
+        je L_49986f
+        call dword ptr [mem_00925134]
+    L_49986f:
+        cmp esi, ebx
+        je L_4998ea
+        cmp esi, dword ptr [edi + 0x8]
+        mov ebx, dword ptr [mem_00925134]
+        jb L_499880
+        call ebx
+    L_499880:
+        fld dword ptr [esi]
+        fadd dword ptr [ebp]
+        fstp dword ptr [esi]
+        fld dword ptr [ebp + 0x4]
+        fadd dword ptr [esi + 0x4]
+        fstp dword ptr [esi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_499897
+        call ebx
+    L_499897:
+        fldz
+        fcom dword ptr [esi]
+        fnstsw ax
+        test ah, 0x41
+        jne L_4998a8
+        fst dword ptr [esi]
+        fld1
+        jmp L_4998b5
+    L_4998a8:
+        fld1
+        fcom dword ptr [esi]
+        fnstsw ax
+        test ah, 0x5
+        jp L_4998b5
+        fst dword ptr [esi]
+    L_4998b5:
+        fxch st(1)
+        fcom dword ptr [esi + 0x4]
+        fnstsw ax
+        test ah, 0x41
+        jne L_4998c8
+        fstp st(1)
+        fstp dword ptr [esi + 0x4]
+        jmp L_4998db
+    L_4998c8:
+        fstp st(0)
+        fcom dword ptr [esi + 0x4]
+        fnstsw ax
+        test ah, 0x5
+        jp L_4998d9
+        fstp dword ptr [esi + 0x4]
+        jmp L_4998db
+    L_4998d9:
+        fstp st(0)
+    L_4998db:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_4998e2
+        call ebx
+    L_4998e2:
+        add esi, 0x8
+        jmp L_499857
+    L_4998ea:
+        mov ecx, dword ptr [esp + 0x10]
+        call ext_004996E0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x4
+    }
+}
