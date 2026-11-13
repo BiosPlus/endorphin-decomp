@@ -11841,3 +11841,92 @@ extern "C" __declspec(naked) void __fastcall fn_0044BD70(void* self) {
         ret
     }
 }
+
+// [0x00445EA0] sub_00445EA0 (209 bytes)
+extern "C" void ext_006AD940();
+extern "C" void ext_00492550();
+extern "C" void ext_0045D240();
+extern "C" int mem_00925134;
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_00445EA0(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        call ext_00594000
+        mov edi, eax
+        mov esi, dword ptr [edi + 80h]
+        add edi, 7Ch
+        cmp esi, dword ptr [edi + 8]
+        jbe L_top
+        call dword ptr [mem_00925134]
+L_top:
+        mov ebx, dword ptr [edi + 8]
+        cmp dword ptr [edi + 4], ebx
+        jbe L_ok1
+        call dword ptr [mem_00925134]
+L_ok1:
+        cmp esi, ebx
+        je L_done
+        cmp esi, dword ptr [edi + 8]
+        jb L_ok2
+        call dword ptr [mem_00925134]
+L_ok2:
+        mov eax, dword ptr [esi]
+        push 0
+        push 0A2FB54h
+        push 0A2E2BCh
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 14h
+        test eax, eax
+        je L_next
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 28h]
+        call eax
+        test al, al
+        je L_send
+        call ext_00594000
+        mov ecx, dword ptr [eax + 26Ch]
+        call ext_006AD940
+        mov ecx, eax
+        call ext_00492550
+        test al, al
+        jne L_next
+L_send:
+        mov ecx, dword ptr [ebp + 17Ch]
+        push 0
+        push 0
+        push 110Ah
+        push ecx
+        call dword ptr [mem_00925694]
+        cmp esi, dword ptr [edi + 8]
+        mov ebx, eax
+        jb L_ok3
+        call dword ptr [mem_00925134]
+L_ok3:
+        mov edx, dword ptr [esi]
+        push ebx
+        push edx
+        lea ecx, [ebp + 15Ch]
+        call ext_0045D240
+L_next:
+        cmp esi, dword ptr [edi + 8]
+        jb L_ok4
+        call dword ptr [mem_00925134]
+L_ok4:
+        add esi, 4
+        jmp L_top
+L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
