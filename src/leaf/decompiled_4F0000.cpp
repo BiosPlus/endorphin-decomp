@@ -3755,3 +3755,34 @@ extern "C" void __fastcall fn_004F1400(void* self) {
         ((Callee)ext_005A6300)(static_cast<char*>(inner) + 4, &slot);
     }
 }
+
+// [0x004F1D50] sub_004F1D50 (52 bytes)
+extern "C" void ext_004F15A0();
+extern "C" void ext_006A5C5C();
+extern "C" __declspec(naked) void __fastcall fn_004F1D50(void* self) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 4]
+        mov ecx, dword ptr [eax]
+        push eax
+        push esi
+        push ecx
+        push esi
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, esi
+        call ext_004F15A0
+        mov ecx, dword ptr [esi + 4]
+        push ecx
+        call ext_006A5C5C
+        add esp, 4
+        xor eax, eax
+        mov dword ptr [esi + 4], eax
+        mov dword ptr [esi + 8], eax
+        pop esi
+        add esp, 8
+        ret
+    }
+}
