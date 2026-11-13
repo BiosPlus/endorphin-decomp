@@ -7115,3 +7115,39 @@ loc_576523:
         ret 0x8
     }
 }
+
+// [0x00579080] sub_00579080 (58 bytes)
+extern "C" void ext_00578740();
+extern "C" __declspec(naked) void* __cdecl fn_00579080(void* first, void* last, void* out) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je empty
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_top:
+        mov eax, dword ptr [esi]
+        lea ecx, [esi + 4]
+        push ecx
+        lea ecx, [edi + 4]
+        mov dword ptr [edi], eax
+        call ext_00578740
+        add esi, 0x14
+        add edi, 0x14
+        cmp esi, ebx
+        jne loop_top
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    empty:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
