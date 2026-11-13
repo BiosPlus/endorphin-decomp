@@ -3363,3 +3363,38 @@ extern "C" __declspec(naked) void __fastcall fn_004F4E50(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" void ext_0067DAD0();
+extern "C" void ext_00694B60();
+
+// [0x004F4F20] sub_004F4F20 (87 bytes)
+extern "C" __declspec(naked) float __fastcall fn_004F4F20(void* self) {
+    __asm {
+        sub esp, 30h
+        fldz
+        lea eax, [esp + 0ch]
+        fst dword ptr [esp + 8]
+        push eax
+        fst dword ptr [esp + 8]
+        fst dword ptr [esp + 4]
+        fst dword ptr [esp + 18h]
+        fst dword ptr [esp + 14h]
+        fst dword ptr [esp + 24h]
+        fst dword ptr [esp + 1ch]
+        fst dword ptr [esp + 2ch]
+        fstp dword ptr [esp + 28h]
+        fld1
+        fst dword ptr [esp + 10h]
+        fst dword ptr [esp + 20h]
+        fstp dword ptr [esp + 30h]
+        call ext_0067DAD0
+        lea ecx, [esp]
+        push ecx
+        push 0
+        lea ecx, [esp + 14h]
+        call ext_00694B60
+        fld dword ptr [esp]
+        add esp, 30h
+        ret
+    }
+}
