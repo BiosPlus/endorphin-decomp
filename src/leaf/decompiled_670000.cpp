@@ -6432,3 +6432,32 @@ extern "C" __declspec(naked) void* __fastcall fn_00673960(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x0067BA20] sub_0067BA20 (63 bytes)
+extern "C" void ext_00575350();
+extern "C" void ext_006936D0();
+extern "C" __declspec(naked) void __fastcall fn_0067BA20(void* self) {
+    __asm {
+        sub esp, 0x10
+        fldz
+        mov eax, dword ptr [esp + 0x14]
+        fst dword ptr [esp + 0xc]
+        push esi
+        fst dword ptr [esp + 0xc]
+        push ecx
+        fst dword ptr [esp + 0xc]
+        mov esi, ecx
+        fstp dword ptr [esp + 0x8]
+        lea ecx, [esp + 0x8]
+        fld dword ptr [esp + 0x20]
+        fstp dword ptr [esp]
+        push eax
+        call ext_00575350
+        push esi
+        lea ecx, [esp + 0x8]
+        call ext_006936D0
+        pop esi
+        add esp, 0x10
+        ret 8
+    }
+}
