@@ -7813,3 +7813,28 @@ extern "C" __declspec(naked) void __fastcall fn_00572C80(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00406940();
+
+struct SubObj_57DE50 {
+    int a, b, c, d;
+    SubObj_57DE50& operator=(const SubObj_57DE50& o) {
+        ((void (__thiscall *)(SubObj_57DE50*, const SubObj_57DE50&))ext_00406940)(this, o);
+        return *this;
+    }
+};
+
+struct Elem_57DE50 {
+    float x, y, z;
+    SubObj_57DE50 sub;
+};
+
+// [0x0057DE50] sub_0057DE50 (60 bytes)
+extern "C" void __cdecl fn_0057DE50(Elem_57DE50* first, Elem_57DE50* last, const Elem_57DE50& val) {
+    for (; first != last; ++first) {
+        first->x = val.x;
+        first->y = val.y;
+        first->z = val.z;
+        first->sub = val.sub;
+    }
+}
