@@ -9906,3 +9906,58 @@ extern "C" __declspec(naked) int __cdecl fn_007C8BC0(int* s) {
         ret
     }
 }
+
+// [0x007C8D00] sub_007C8D00 (104 bytes)
+extern "C" void ext_007C8BC0();
+extern "C" void ext_007C8C70();
+extern "C" void ext_007C8C90();
+extern "C" void ext_007DD040();
+
+extern "C" __declspec(naked) void __cdecl fn_007C8D00(void* arg0) {
+    __asm {
+        sub     esp, 8
+        push    esi
+        mov     esi, dword ptr [esp + 0x10]
+        lea     eax, [esp + 4]
+        push    eax
+        push    esi
+        call    ext_007C8C70
+        lea     ecx, [esp + 0x18]
+        push    ecx
+        lea     edx, [esp + 0x10]
+        push    edx
+        push    esi
+        call    ext_007C8C90
+        add     esp, 0x14
+        test    eax, eax
+        je      short done_loop
+        _emit   0x8d
+        _emit   0x9b
+        _emit   0x00
+        _emit   0x00
+        _emit   0x00
+        _emit   0x00
+    loop_top:
+        mov     eax, dword ptr [esp + 0x10]
+        push    eax
+        call    ext_007C8BC0
+        lea     ecx, [esp + 0x14]
+        push    ecx
+        lea     edx, [esp + 0x0c]
+        push    edx
+        push    esi
+        call    ext_007C8C90
+        add     esp, 0x10
+        test    eax, eax
+        jne     short loop_top
+    done_loop:
+        mov     eax, dword ptr [esi + 0x2c]
+        push    eax
+        call    ext_007DCED0
+        add     esp, 4
+        mov     ecx, esi
+        pop     esi
+        add     esp, 8
+        jmp     ext_007DD040
+    }
+}
