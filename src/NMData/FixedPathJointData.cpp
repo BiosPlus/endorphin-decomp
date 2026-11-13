@@ -820,3 +820,28 @@ extern "C" __declspec(naked) void __fastcall fn_005EE290(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_005EB5A0();
+extern "C" void ext_006404E0();
+extern "C" int mem_00A9EF14;
+
+// [0x005EBF70] NMData::FixedPathJointData::vfunc_22 (36 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_005EBF70(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9EF14]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_006404E0
+        push eax
+        mov ecx, esi
+        call ext_005EB5A0
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
