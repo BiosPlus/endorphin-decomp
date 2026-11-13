@@ -7151,3 +7151,40 @@ extern "C" __declspec(naked) void* __cdecl fn_00579080(void* first, void* last, 
         ret
     }
 }
+
+// [0x0057DA80] sub_0057DA80 (58 bytes)
+extern "C" void ext_00406940();
+
+extern "C" __declspec(naked) void* __cdecl fn_0057DA80(void* first, void* last, void* out) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je empty
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_top:
+        fld dword ptr [esi]
+        lea eax, [esi + 4]
+        push eax
+        fstp dword ptr [edi]
+        lea ecx, [edi + 4]
+        call ext_00406940
+        add esi, 0x14
+        add edi, 0x14
+        cmp esi, ebx
+        jne loop_top
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    empty:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
