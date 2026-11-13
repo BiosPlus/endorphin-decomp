@@ -267,3 +267,16 @@ extern "C" __declspec(naked) void __fastcall fn_0065A260(void* self, int edx_unu
         ret 8
     }
 }
+
+extern "C" void ext_00659EC0();
+extern "C" void ext_007C97F0();
+
+// [0x0065A090] MagnetJoint::vfunc_6 (52 bytes)
+extern "C" void __fastcall fn_0065A090(void* self) {
+    int r = ((int (__cdecl*)(int))ext_007D8700)(*(int*)((char*)self + 0x6c));
+    if (((int (__cdecl*)(int))ext_007C9260)(r) == 0) {
+        ((void (__fastcall*)(void*))ext_00659EC0)(self);
+        int r2 = ((int (__cdecl*)(int))ext_007D8700)(*(int*)((char*)self + 0x6c));
+        ((void (__cdecl*)(int))ext_007C97F0)(r2);
+    }
+}
