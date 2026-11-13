@@ -8040,3 +8040,93 @@ extern "C" __declspec(naked) void __cdecl fn_007C7240(void* self) {
         ret
     }
 }
+
+// [0x007CD050] sub_007CD050 (180 bytes)
+extern "C" void ext_007C70E0();
+extern "C" void ext_007C97A0();
+extern "C" void ext_007CC600();
+extern "C" void ext_007D86F0();
+extern "C" void ext_007D8860();
+extern "C" void ext_007D8940();
+extern "C" __declspec(naked) void __fastcall fn_007CD050(void* self) {
+    __asm {
+        sub esp, 8
+        mov eax, dword ptr [esi]
+        push ebx
+        push ebp
+        push edi
+        push eax
+        call ext_007C70E0
+        mov ecx, dword ptr [esi + 4]
+        push ecx
+        movsx ebp, ax
+        call ext_007C70E0
+        movsx edx, ax
+        mov eax, dword ptr [esi]
+        push eax
+        mov dword ptr [esp + 0x1c], edx
+        call ext_007CC600
+        mov ecx, dword ptr [esi + 4]
+        push ecx
+        mov ebx, eax
+        call ext_007CC600
+        add esp, 0x10
+        xor edi, edi
+        test ebx, ebx
+        mov dword ptr [esp + 0xc], eax
+        jne short L_body
+        test eax, eax
+        je short L_ret
+    L_body:
+        mov edx, dword ptr [esp + 0x18]
+        push edx
+        call ext_007D8940
+        mov edi, eax
+        add esp, 4
+        test edi, edi
+        jne short L_found
+        pop edi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    L_found:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [eax + 0x5f0]
+        mov edx, dword ptr [esp + 0xc]
+        push ecx
+        push edx
+        push ebx
+        push edi
+        call ext_007D8860
+        mov ecx, dword ptr [esp + 0x20]
+        add esp, 0x10
+        cmp ebp, ecx
+        mov eax, ebp
+        jl short L_skip
+        mov eax, ecx
+        mov ecx, ebp
+    L_skip:
+        shl eax, 0xf
+        add eax, ecx
+        neg eax
+        push eax
+        push edi
+        call ext_007D8700
+        add esp, 4
+        push eax
+        call ext_007C97A0
+        push esi
+        push edi
+        call ext_007D86F0
+        add esp, 0x10
+        mov dword ptr [esi + 0x18], edi
+    L_ret:
+        mov eax, edi
+        pop edi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
