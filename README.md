@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11464 / 24049` (**47.67%**) — `8372` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `900463 / 4496005 bytes` (**20.03%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11465 / 24049` (**47.67%**) — `8373` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `901018 / 4496005 bytes` (**20.04%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -22,18 +22,18 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P60-70 (122-159B)** | 967 / 2405 | 40.21% | 130181 / 339038 | 38.40% | 1438 fn |
 | **P70-80 (159-178B)** | 241 / 2405 | 10.02% | 40580 / 400567 | 10.13% | 2164 fn |
 | **P80-90 (178-335B)** | 803 / 2405 | 33.39% | 192148 / 583211 | 32.95% | 1602 fn |
-| **P90-100 (335-36100B)** | 282 / 2404 | 11.73% | 122974 / 2392860 | 5.14% | 2122 fn |
+| **P90-100 (335-36100B)** | 283 / 2404 | 11.77% | 123529 / 2392860 | 5.16% | 2121 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6748 | 515897 | 80.60% |
-| `claude-haiku-5.5@low` | 522 | 121117 | 6.24% |
+| `claude-haiku-5.5@medium` | 6748 | 515897 | 80.59% |
+| `claude-haiku-5.5@low` | 522 | 121117 | 6.23% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.34% |
 | `gemini-3.8-flash@low` | 290 | 69264 | 3.46% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.95% |
-| `gemini-4-hydrogen@low` | 161 | 45785 | 1.92% |
+| `gemini-4-hydrogen@low` | 162 | 46340 | 1.93% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.30% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.12% |
 | `gemini-3.8-flash@medium` | 4 | 1334 | 0.05% |
