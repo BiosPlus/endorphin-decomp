@@ -227,3 +227,29 @@ extern "C" void* __fastcall fn_004E9B80(void* self) {
     }
     return esi;
 }
+
+// [0x004E8790] SelectionBuffer::vfunc_4 (50 bytes)
+extern "C" void ext_004E8380();
+
+// [0x004E8790]
+extern "C" __declspec(naked) void* __fastcall fn_004E8790(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0xe8], 0
+        je done
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xc]
+        call edx
+        push eax
+        lea eax, [esi + 0xd8]
+        push eax
+        call ext_004E8380
+        add esp, 8
+        mov byte ptr [esi + 0xe8], 0
+done:
+        lea eax, [esi + 0xd8]
+        pop esi
+        ret
+    }
+}
