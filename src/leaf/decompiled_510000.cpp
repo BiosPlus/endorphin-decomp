@@ -4678,3 +4678,80 @@ extern "C" __declspec(naked) void __fastcall fn_00511870(void* self) {
         ret 0Ch
     }
 }
+
+// [0x005128A0] sub_005128A0 (162 bytes)
+extern "C" void ext_005111E0();
+extern "C" void ext_00511870();
+extern "C" void ext_00695460();
+extern "C" int mem_00AEBE94;
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __fastcall fn_005128A0(void* self, int edx_unused, double a1, double a2) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        and     esp, -0x40
+        sub     esp, 0x34
+        push    ebx
+        mov     ebx, dword ptr [mem_00AEBE94]
+        push    esi
+        mov     esi, ecx
+        push    edi
+        mov     ecx, ebx
+        call    ext_00695460
+        fmul    qword ptr [ebp + 0x8]
+        fnstcw  word ptr [esp + 0x36]
+        movzx   eax, word ptr [esp + 0x36]
+        fabs
+        fadd    qword ptr [mem_00993828]
+        or      eax, 0xc00
+        mov     dword ptr [esp + 0x38], eax
+        fldcw   word ptr [esp + 0x38]
+        fistp   qword ptr [esp + 0x38]
+        mov     ecx, dword ptr [esp + 0x38]
+        test    ecx, ecx
+        fldcw   word ptr [esp + 0x36]
+        jne     loc_5128F1
+        mov     ecx, 1
+    loc_5128F1:
+        mov     edx, dword ptr [esi + 8]
+        test    edx, edx
+        jne     loc_5128FC
+        xor     eax, eax
+        jmp     loc_512904
+    loc_5128FC:
+        mov     eax, dword ptr [esi + 0xc]
+        sub     eax, edx
+        sar     eax, 3
+    loc_512904:
+        cmp     ecx, eax
+        jbe     loc_51290A
+        mov     ecx, eax
+    loc_51290A:
+        add     eax, -1
+        test    ecx, ecx
+        jbe     loc_512939
+        mov     dword ptr [esp + 0x38], eax
+        mov     edi, ecx
+    loc_512917:
+        lea     eax, [esp + 0x38]
+        push    eax
+        mov     ecx, ebx
+        call    ext_005111E0
+        fld     qword ptr [ebp + 0x10]
+        sub     esp, 8
+        fstp    qword ptr [esp]
+        push    eax
+        mov     ecx, esi
+        call    ext_00511870
+        sub     edi, 1
+        jne     loc_512917
+    loc_512939:
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret     0x10
+    }
+}
