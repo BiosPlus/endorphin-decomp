@@ -7164,3 +7164,76 @@ extern "C" __declspec(naked) void __fastcall fn_0044A630(void* self) {
         ret
     }
 }
+
+// [0x0044AAA0] sub_0044AAA0 (225 bytes)
+extern "C" void ext_00444660();
+extern "C" void ext_0044A2D0();
+extern "C" void ext_0044A380();
+extern "C" void ext_0044A630();
+extern "C" int mem_00925688;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_0044AAA0(void* self) {
+    __asm {
+        push -1
+        push 8B56F9h
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 2Ch
+        push esi
+        push 0
+        push 0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0A8h]
+        push 188h
+        push eax
+        call dword ptr [mem_00925694]
+        lea ecx, [eax*8]
+        sub ecx, eax
+        lea edx, [ecx*8 + 0AD0F34h]
+        push edx
+        lea ecx, [esp + 18h]
+        call dword ptr [mem_00924FE0]
+        fldz
+        fst dword ptr [esp + 10h]
+        lea eax, [esp + 4]
+        fst dword ptr [esp + 0Ch]
+        push eax
+        fst dword ptr [esp + 0Ch]
+        mov ecx, esi
+        fstp dword ptr [esp + 8]
+        mov dword ptr [esp + 3Ch], 0
+        call ext_0044A2D0
+        lea ecx, [esp + 4]
+        push ecx
+        lea ecx, [esi + 19Ch]
+        call ext_0044A380
+        mov ecx, dword ptr [esi + 0E0h]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 34h]
+        lea eax, [esp + 4]
+        push eax
+        lea eax, [esp + 18h]
+        push eax
+        call edx
+        mov eax, dword ptr [esi + 0E4h]
+        mov eax, dword ptr [eax + 20h]
+        push 1
+        push 0
+        push eax
+        call dword ptr [mem_00925688]
+        mov ecx, dword ptr [esi + 0E8h]
+        call ext_00444660
+        mov ecx, esi
+        call ext_0044A630
+        lea ecx, [esp + 14h]
+        mov dword ptr [esp + 38h], 0FFFFFFFFh
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 30h]
+        pop esi
+        mov fs:[0], ecx
+        add esp, 38h
+        ret
+    }
+}
