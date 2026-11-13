@@ -6974,3 +6974,39 @@ null_path:
         ret 0xc
     }
 }
+
+// [0x00493840] sub_00493840 (156 bytes)
+extern "C" bool __fastcall ext_00492900(void* self);
+extern "C" void __fastcall ext_0059DCC0(void* obj);
+extern "C" int mem_00ADB5BC;
+extern "C" int mem_00ADB62C;
+
+extern "C" bool __fastcall fn_00493840(void* self) {
+    int* s = (int*)self;
+    s[0] = 1;
+    s[2] = 0;
+    s[3] = 0;
+    s[4] = 0;
+    if (!ext_00492900(self)) {
+        ((void (__fastcall*)(void*))ext_004936C0)(self);
+        return false;
+    }
+    if (s[3]) ext_0059DCC0((void*)s[3]);
+    if (s[4]) ext_0059DCC0((void*)s[4]);
+    typedef void (__thiscall *VFn)(void*, void*);
+    if (s[3]) {
+        void* sub = (char*)s[3] + 4;
+        VFn* vt = *(VFn**)sub;
+        vt[0x60 / 4](sub, &mem_00ADB5BC);
+    }
+    if (s[4]) {
+        void* sub = (char*)s[4] + 4;
+        VFn* vt = *(VFn**)sub;
+        vt[0x60 / 4](sub, &mem_00ADB62C);
+    }
+    s[2] = s[3] ? s[3] : s[4];
+    ((void (__fastcall*)(void*))ext_00493370)(self);
+    ((void (__fastcall*)(void*))ext_00492830)(self);
+    ((void (__fastcall*)(void*))ext_00492610)(self);
+    return true;
+}
