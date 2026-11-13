@@ -4814,3 +4814,24 @@ extern "C" __declspec(naked) void __fastcall fn_0065A910(void* self) {
         ret
     }
 }
+
+// [0x0065AA30] sub_0065AA30 (120 bytes)
+extern "C" void ext_005B11E0();
+extern "C" void ext_007C6330();
+extern "C" void ext_007C6490();
+extern "C" void ext_007CA1A0();
+extern "C" double mem_00928E78;
+
+struct Sub65AA30Struct {
+    int w[9];
+};
+
+extern "C" void __fastcall fn_0065AA30(void* self, int edx_unused, void* a1, float a2) {
+    float f1 = ((float (__thiscall *)(void*, int))ext_005B11E0)(a1, 0);
+    void* obj = *(void**)((char*)a1 + 0xc);
+    float f2 = (float)(((float (__thiscall *)(void*, void*))(*(void***)obj)[3])(obj, a1) * a2 * mem_00928E78);
+    ((void (*)(void*, float))ext_007C6330)(*(void**)self, f2);
+    Sub65AA30Struct buf;
+    ((void (*)(float, float, void*))ext_007CA1A0)(f2, f1, &buf);
+    ((void (*)(void*, void*))ext_007C6490)(*(void**)self, &buf);
+}
