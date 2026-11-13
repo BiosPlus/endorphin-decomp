@@ -3426,3 +3426,36 @@ loc_00588FAF:
         ret
     }
 }
+
+// [0x00581710] sub_00581710 (58 bytes)
+extern "C" void ext_00581500();
+
+extern "C" __declspec(naked) void* __fastcall fn_00581710(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp+10h]
+        push esi
+        mov esi, dword ptr [esp+10h]
+        push edi
+        mov edi, dword ptr [esp+10h]
+        mov byte ptr [esp+8], 0
+        mov eax, dword ptr [esp+8]
+        push eax
+        mov eax, dword ptr [esp+1Ch]
+        push edx
+        push ecx
+        push eax
+        push esi
+        push edi
+        call ext_00581500
+        mov ecx, esi
+        add esp, 18h
+        shl ecx, 4
+        sub ecx, esi
+        lea eax, [edi+4*ecx]
+        pop edi
+        pop esi
+        pop ecx
+        ret 0Ch
+    }
+}
