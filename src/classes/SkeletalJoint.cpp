@@ -728,3 +728,106 @@ loc_650ca8:
         ret 8
     }
 }
+
+// [0x0064E430] SkeletalJoint::vfunc_53 (291 bytes)
+extern "C" void ext_007C5A20();
+extern "C" void ext_007C93A0();
+extern "C" void ext_007C93E0();
+extern "C" void ext_007C9490();
+extern "C" void ext_007C9550();
+extern "C" void ext_007D8700();
+extern "C" __declspec(naked) void __fastcall fn_0064E430(void* self) {
+    __asm {
+        sub esp, 24h
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 64h]
+        push eax
+        call ext_007D8700
+        fldz
+        fst dword ptr [esp + 20h]
+        lea ecx, [esp + 0ch]
+        push ecx
+        fst dword ptr [esp + 20h]
+        fst dword ptr [esp + 1ch]
+        lea edx, [esp + 1ch]
+        fst dword ptr [esp + 18h]
+        push edx
+        fst dword ptr [esp + 18h]
+        mov esi, eax
+        fst dword ptr [esp + 14h]
+        push 0
+        fst dword ptr [esp + 38h]
+        push esi
+        fst dword ptr [esp + 38h]
+        fstp dword ptr [esp + 34h]
+        call ext_007C93E0
+        lea eax, [esp + 34h]
+        push eax
+        push 0
+        push esi
+        call ext_007C93A0
+        fld dword ptr [esp + 30h]
+        fstp dword ptr [esp + 1ch]
+        add esp, 8
+        fld dword ptr [esp + 24h]
+        fstp dword ptr [esp + 10h]
+        fld dword ptr [esp + 20h]
+        fstp dword ptr [esp + 0ch]
+        fld dword ptr [esp + 34h]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 30h]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 2ch]
+        fstp dword ptr [esp]
+        push 0
+        push esi
+        call ext_007C9550
+        fld dword ptr [esp + 48h]
+        add esp, 14h
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 30h]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 2ch]
+        fstp dword ptr [esp]
+        push 1
+        push esi
+        call ext_007C9490
+        fld dword ptr [esp + 24h]
+        fstp dword ptr [esp + 10h]
+        fld dword ptr [esp + 20h]
+        fstp dword ptr [esp + 0ch]
+        fld dword ptr [esp + 1ch]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 30h]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 2ch]
+        fstp dword ptr [esp]
+        push ecx
+        fld dword ptr [esp + 2ch]
+        fstp dword ptr [esp]
+        push 1
+        push esi
+        call ext_007C9550
+        fld dword ptr [esp + 48h]
+        add esp, 14h
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 30h]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 2ch]
+        fstp dword ptr [esp]
+        push 1
+        push esi
+        call ext_007C9490
+        mov ecx, dword ptr [edi + 64h]
+        push 707h
+        push ecx
+        call ext_007C5A20
+        add esp, 1ch
+        pop edi
+        pop esi
+        add esp, 24h
+        ret
+    }
+}
