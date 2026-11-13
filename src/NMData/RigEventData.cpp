@@ -145,3 +145,27 @@ extern "C" __declspec(naked) void __fastcall fn_004DCD80(void* self) {
         ret
     }
 }
+
+// [0x004D3D00] NMData::RigEventData::vfunc_59 (34 bytes)
+extern "C" void ext_006404E0();
+extern "C" int mem_00A9F218;
+
+extern "C" __declspec(naked) void __fastcall fn_004D3D00(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F218]
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0Ch]
+        mov edi, dword ptr [esi]
+        push eax
+        call ext_006404E0
+        mov edx, dword ptr [edi + 58h]
+        push eax
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        ret 4
+    }
+}
