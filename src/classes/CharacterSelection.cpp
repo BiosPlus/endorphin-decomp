@@ -120,3 +120,29 @@ L_mismatch_4ED400:
         ret 0x8
     }
 }
+
+// [0x004EE050] CharacterSelection::vfunc_1_off_18 (45 bytes)
+extern "C" void ext_004EDC90();
+extern "C" __declspec(naked) void __fastcall fn_004EE050(void* self, int edx_unused, void* arg1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x3c]
+        lea edx, [esi + 0x24]
+        push edx
+        call eax
+        lea ecx, [esi - 0x18]
+        call ext_004EDC90
+        cmp dword ptr [esi + 0x34], 0x0
+        je L_done
+        mov ecx, dword ptr [esi + 0x34]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+    L_done:
+        pop esi
+        ret 0x4
+    }
+}
