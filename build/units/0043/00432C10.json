@@ -69,5 +69,7 @@
     "0x00432E2B",
     "0x00432E3B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-13T12:23:16Z"
 }
