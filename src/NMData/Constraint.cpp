@@ -150,3 +150,28 @@ done:
         ret 4
     }
 }
+
+// [0x00611270] NMData::Constraint::vfunc_22 (42 bytes)
+extern "C" void ext_00640390();
+extern "C" void ext_0067F040();
+extern "C" int mem_00A9EDEC;
+
+extern "C" __declspec(naked) void __fastcall fn_00611270(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9EDEC]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        add ecx, 0x154
+        push ecx
+        push 0
+        push eax
+        mov ecx, esi
+        call ext_00640390
+        push eax
+        call ext_0067F040
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
