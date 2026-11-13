@@ -5088,3 +5088,173 @@ extern "C" __declspec(naked) void __fastcall fn_006B0280(void* self, int edx_unu
         ret 10h
     }
 }
+
+// [0x006B1510] sub_006B1510 (390 bytes)
+extern "C" int mem_0092C510;
+extern "C" int mem_0093F7B0;
+extern "C" int mem_00999B40;
+extern "C" __declspec(naked) void __cdecl fn_006B1510(unsigned int rgb, double* h, double* s, double* l) {
+    __asm {
+        sub esp, 8
+        mov eax, dword ptr [esp+0xc]
+        movzx ecx, al
+        mov dword ptr [esp+0xc], ecx
+        movzx edx, ah
+        fild dword ptr [esp+0xc]
+        fld qword ptr [mem_0092C518]
+        shr eax, 0x10
+        mov dword ptr [esp+0xc], edx
+        fdiv st(1), st
+        movzx eax, al
+        fxch st(1)
+        fst qword ptr [esp]
+        fild dword ptr [esp+0xc]
+        mov dword ptr [esp+0xc], eax
+        fdiv st, st(2)
+        fild dword ptr [esp+0xc]
+        fdivrp st(3), st
+        fcom st(2)
+        fnstsw ax
+        test ah, 0x41
+        jne L1
+        fld st(0)
+        jmp L2
+    L1: fld st(2)
+    L2: fcomp st(2)
+        fnstsw ax
+        test ah, 5
+        jp L3
+        fld st(1)
+        jmp L5
+    L3: fcom st(2)
+        fnstsw ax
+        test ah, 0x41
+        jne L4
+        fld st(0)
+        jmp L5
+    L4: fld st(2)
+    L5: fxch st(1)
+        fcom st(3)
+        fnstsw ax
+        test ah, 5
+        jp L6
+        fld st(0)
+        jmp L7
+    L6: fld st(3)
+    L7: fcomp st(3)
+        fnstsw ax
+        test ah, 0x41
+        je L10
+        fstp st(2)
+        fxch st(1)
+        fcom st(2)
+        fnstsw ax
+        test ah, 5
+        jp L8
+        fld st(0)
+        jmp L9
+    L8: fld st(2)
+    L9: fxch st(2)
+        fxch st(1)
+    L10: mov ecx, dword ptr [esp+0x18]
+        fld st(2)
+        fadd st, st(2)
+        fld st(0)
+        fld qword ptr [mem_00993828]
+        fmul st(1), st
+        fxch st(1)
+        fst qword ptr [ecx]
+        fld st(5)
+        fucomp st(5)
+        fnstsw ax
+        test ah, 0x44
+        jp L11
+        mov edx, dword ptr [esp+0x14]
+        fstp st(5)
+        mov eax, dword ptr [esp+0x10]
+        fstp st(3)
+        fstp st(3)
+        fstp st(0)
+        fstp st(0)
+        fstp st(1)
+        fstp st(0)
+        fldz
+        fst qword ptr [edx]
+        fstp qword ptr [eax]
+        add esp, 8
+        ret
+    L11: fld st(4)
+        fsub st, st(6)
+        fxch st(1)
+        fcomp st(2)
+        fnstsw ax
+        fstp st(1)
+        test ah, 5
+        fld qword ptr [mem_0092C510]
+        jp L12
+        fstp st(5)
+        mov ecx, dword ptr [esp+0x14]
+        fld st(0)
+        fdivrp st(2), st
+        fxch st(1)
+        fstp qword ptr [ecx]
+        jmp L13
+    L12: fstp st(2)
+        mov edx, dword ptr [esp+0x14]
+        fld st(1)
+        fsub st, st(4)
+        fsubrp st(5), st
+        fld st(0)
+        fdivrp st(5), st
+        fxch st(4)
+        fstp qword ptr [edx]
+        fxch st(3)
+    L13: fld st(2)
+        fld qword ptr [esp]
+        fucom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x44
+        jp L14
+        fstp st(0)
+        fstp st(2)
+        fstp st(2)
+        fxch st(1)
+        fsubrp st(2), st
+        fdivp st(1), st
+        jmp L17
+    L14: fxch st(3)
+        fucomp st(2)
+        fnstsw ax
+        test ah, 0x44
+        jp L15
+        fstp st(1)
+        fxch st(3)
+        fsubrp st(1), st
+        fdivrp st(2), st
+        faddp st(1), st
+        jmp L17
+    L15: fstp st(3)
+        fstp st(3)
+        fsubrp st(2), st
+        fdivp st(1), st
+        fadd qword ptr [mem_0093F7B0]
+    L17: mov ecx, dword ptr [esp+0x10]
+        fstp qword ptr [ecx]
+        fld qword ptr [ecx]
+        fdiv qword ptr [mem_00999B40]
+        fst qword ptr [ecx]
+        fldz
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne L18
+        fadd qword ptr [mem_0092A270]
+        fstp qword ptr [ecx]
+        add esp, 8
+        ret
+    L18: fstp st(0)
+        add esp, 8
+        ret
+    }
+}
