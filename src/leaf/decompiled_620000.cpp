@@ -4445,3 +4445,17 @@ extern "C" __declspec(naked) void __fastcall fn_0062CC90(void* self) {
         ret
     }
 }
+
+// [0x00620E70] sub_00620E70 (49 bytes)
+extern "C" void ext_00587650();
+
+extern "C" void* __fastcall fn_00620E70(void* self) {
+    ext_00587650();
+    unsigned int* p = (unsigned int*)self;
+    p[0] = 0x976e9c;
+    p[1] = 0x976e54;
+    p[2] = 0x976e14;
+    p[3] = 0x976dc4;
+    p[0xe4 / 4] = 2;
+    return self;
+}
