@@ -49,5 +49,7 @@
     "0x00433B43",
     "0x00433B51"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-13T10:46:30Z"
 }
