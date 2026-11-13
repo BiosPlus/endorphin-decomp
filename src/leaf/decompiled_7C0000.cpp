@@ -10787,3 +10787,37 @@ extern "C" __declspec(naked) void __fastcall fn_007C7330(void* self) {
         ret
     }
 }
+
+// [0x007C8490] sub_007C8490 (68 bytes)
+extern "C" void ext_007C7330();
+
+extern "C" __declspec(naked) void __cdecl fn_007C8490(int a1, int a2, float a3, float a4, void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        mov eax, dword ptr [esi]
+        push 0x5f4
+        call eax
+        add esp, 4
+        test eax, eax
+        jne L_have
+        pop esi
+        ret
+    L_have:
+        fld dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 8]
+        sub esp, 8
+        fstp dword ptr [esp + 4]
+        mov dword ptr [eax + 0x5f0], esi
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [esp]
+        push ecx
+        push edx
+        push eax
+        call ext_007C7330
+        add esp, 0x14
+        pop esi
+        ret
+    }
+}
