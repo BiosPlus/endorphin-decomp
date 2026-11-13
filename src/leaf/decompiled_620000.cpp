@@ -6237,3 +6237,14 @@ extern "C" void* __fastcall fn_00620470(void* self, int edx_unused, const void* 
     *(float*)((char*)self + 0x30) = *(const float*)((const char*)other + 0x30);
     return self;
 }
+
+// [0x0062CFE0] sub_0062CFE0 (45 bytes)
+extern "C" void ext_0062CD80();
+extern "C" void* __fastcall fn_0062CFE0(void* self, int edx_unused, const void* other) {
+    ((void (__fastcall*)(void*, int, const void*))ext_0062CD80)(self, edx_unused, other);
+    *(int*)self = 0x009794b4;
+    *(float*)((char*)self + 0x38) = *(const float*)((const char*)other + 0x38);
+    *(float*)((char*)self + 0x3c) = *(const float*)((const char*)other + 0x3c);
+    *(float*)((char*)self + 0x40) = *(const float*)((const char*)other + 0x40);
+    return self;
+}
