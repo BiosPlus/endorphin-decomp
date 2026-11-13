@@ -3088,3 +3088,12 @@ L4:
         ret     4
     }
 }
+
+extern "C" void __cdecl ext_005937B0(void* out, int val);
+
+// [0x0058F4C0] sub_0058F4C0 (37 bytes)
+extern "C" void* __fastcall fn_0058F4C0(void* self, int edx_unused, void* out) {
+    volatile int flag = 0;
+    ext_005937B0(out, *(int*)((char*)self + 0xf0));
+    return out;
+}
