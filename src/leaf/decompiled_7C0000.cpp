@@ -18764,3 +18764,31 @@ L_skip4:
         ret
     }
 }
+
+// [0x007C7100] sub_007C7100 (42 bytes)
+extern "C" void ext_007C6DE0();
+extern "C" int mem_00AB28C4;
+
+extern "C" __declspec(naked) void __cdecl fn_007C7100(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push esi
+        call ext_007CC9F0
+        add eax, 0x4c
+        push eax
+        call dword ptr [mem_00AB28C4]
+        add esp, 8
+        test eax, eax
+        jne L_found
+        pop esi
+        ret
+    L_found:
+        push esi
+        push eax
+        call ext_007C6DE0
+        add esp, 8
+        pop esi
+        ret
+    }
+}
