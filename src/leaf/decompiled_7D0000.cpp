@@ -10573,3 +10573,27 @@ extern "C" __declspec(naked) void __fastcall fn_007DDA80(void* self) {
         ret     0x8
     }
 }
+
+// [0x007DAE80] sub_007DAE80 (80 bytes)
+extern "C" void ext_007F4FE0(int, int, float*, float*);
+
+struct S_007DAE80_Copy {
+    int data[10];
+};
+
+struct S_007DAE80 {
+    char pad0[0x10];
+    S_007DAE80_Copy copy;
+    float f38;
+    float f3c;
+    float f40;
+};
+
+extern "C" S_007DAE80* __cdecl fn_007DAE80(S_007DAE80* self, void* a1, S_007DAE80_Copy* a2, float a3) {
+    ((void(__cdecl*)(void*, void*, int))ext_007CC8E0)(self, a1, 7);
+    self->copy = *a2;
+    self->f38 = a3;
+    ext_007F4FE0(self->copy.data[0], self->copy.data[6], &self->f40, &self->f3c);
+    self->f3c += a3;
+    return self;
+}
