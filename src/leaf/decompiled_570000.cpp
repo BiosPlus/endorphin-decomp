@@ -6876,3 +6876,28 @@ extern "C" __declspec(naked) void __fastcall fn_0057E560(void* self) {
         ret
     }
 }
+
+// [0x0057E590] sub_0057E590 (43 bytes)
+extern "C" void ext_0057DF40();
+
+extern "C" __declspec(naked) void __fastcall fn_0057E590(void* self) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x10]
+        mov byte ptr [esp], 0x0
+        mov eax, dword ptr [esp]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x14]
+        push eax
+        push ecx
+        push edx
+        call ext_0057DF40
+        add esp, 0x1c
+        ret
+    }
+}
