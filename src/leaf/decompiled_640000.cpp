@@ -6087,3 +6087,39 @@ extern "C" void* __fastcall fn_00645F00(void* self, int edx_unused, const void* 
     ((unsigned int*)self)[27] = ((const unsigned int*)other)[27];
     return self;
 }
+
+// [0x00641760] sub_00641760 (62 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00641760(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp byte ptr [edi + 0x2d], 0
+        mov ebx, ecx
+        mov esi, edi
+        jne done
+    loop_start:
+        mov eax, dword ptr [esi + 8]
+        push eax
+        mov ecx, ebx
+        call fn_00641760
+        mov esi, dword ptr [esi]
+        lea ecx, [edi + 0x10]
+        call dword ptr [mem_00924FF4]
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+        cmp byte ptr [esi + 0x2d], 0
+        mov edi, esi
+        je loop_start
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
