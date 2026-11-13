@@ -7035,3 +7035,38 @@ extern "C" __declspec(naked) void __fastcall fn_0051EC00(void* self) {
         ret
     }
 }
+
+// [0x0051D2D0] sub_0051D2D0 (59 bytes)
+extern "C" void ext_0051D130();
+extern "C" int mem_00AECC08;
+extern "C" int mem_00AECC04;
+
+extern "C" __declspec(naked) void __fastcall fn_0051D2D0(void* self, int edx_unused, float a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x24]
+        test eax, eax
+        je short L_0051D2D0_global
+        mov edx, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [eax + 0x4]
+        push edx
+        push eax
+        jmp short L_0051D2D0_call
+    L_0051D2D0_global:
+        mov ecx, dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, dword ptr [mem_00AECC08]
+        push offset mem_00AECC04
+    L_0051D2D0_call:
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_0051D130
+        pop esi
+        ret 0x4
+    }
+}
