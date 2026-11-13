@@ -1366,3 +1366,559 @@ extern "C" __declspec(naked) void __fastcall fn_007FF8D0(void* self) {
         ret 0x14
     }
 }
+
+// [0x007FFED0] keaMatrix_pcSparse_vanilla::vfunc_1 (1615 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007FFED0(void* self) {
+    __asm {
+        sub esp, 0x50
+        mov eax, dword ptr [esp + 0x60]
+        mov edx, dword ptr [esp + 0x58]
+        push ebx
+        mov ebx, dword ptr [ecx + 0x24]
+        push ebp
+        mov ebp, dword ptr [ecx + 0x14]
+        push esi
+        push edi
+        mov dword ptr [esp + 0x38], eax
+        mov eax, dword ptr [ecx + 0x28]
+        xor edi, edi
+        xor esi, esi
+        test ebp, ebp
+        mov dword ptr [esp + 0x2c], ecx
+        mov dword ptr [esp + 0x34], edx
+        mov dword ptr [esp + 0x10], ebx
+        mov dword ptr [esp + 0x68], eax
+        mov dword ptr [esp + 0x44], edi
+        mov dword ptr [esp + 0x14], esi
+        jle L_8003d6
+
+        mov edx, dword ptr [esp + 0x6c]
+        fldz
+        mov dword ptr [esp + 0x18], edx
+    L_7fff1a:
+        mov edx, dword ptr [esp + 0x70]
+        mov eax, dword ptr [esp + 0x64]
+        mov dword ptr [esp + 0x20], edx
+        sub ebp, 0x1
+        xor edx, edx
+        test edi, edi
+        mov dword ptr [esp + 0x24], eax
+        mov dword ptr [esp + 0x4c], ebp
+        mov dword ptr [esp + 0x30], 0xfffffff
+        mov dword ptr [esp + 0x28], edx
+        jl L_80039a
+
+        mov ecx, dword ptr [esp + 0x68]
+        add ecx, 0x8
+    L_7fff4e:
+        mov eax, dword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x1c], eax
+        mov eax, dword ptr [esp + 0x6c]
+        mov eax, dword ptr [eax + 4*edx]
+        mov edx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [edx]
+        mov dword ptr [esp + 0x3c], edx
+        xor edx, edx
+        test eax, eax
+        jle L_800346
+
+        mov ebx, dword ptr [esp + 0x24]
+        add ebx, 0x20
+        mov dword ptr [esp + 0x40], eax
+    L_7fff7c:
+        mov eax, dword ptr [esp + 0x1c]
+        mov edi, dword ptr [eax]
+        cmp edi, -0x1
+        mov dword ptr [esp + 0x48], edi
+        je L_8002b0
+
+        xor ebp, ebp
+        cmp dword ptr [esp + 0x3c], ebp
+        jle L_8002b0
+
+        mov eax, dword ptr [esp + 0x34]
+        add eax, 0x8
+    L_7fffa2:
+        mov esi, dword ptr [esp + 0x38]
+        cmp edi, dword ptr [esi + 4*ebp]
+        jne L_80029c
+
+        test edx, edx
+        mov edi, 0x4
+        je L_800130
+
+        mov edx, ecx
+        mov esi, ebx
+    L_7fffc0:
+        fld dword ptr [esi - 0x20]
+        fld dword ptr [eax - 0x8]
+        fmul st, st(1)
+        fadd st, st(2)
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax - 0x4]
+        fmul st, st(1)
+        fadd st, st(2)
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax]
+        fmul st, st(1)
+        fadd st, st(2)
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x4]
+        fadd st, st(1)
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [esi - 0x10]
+        fld dword ptr [eax + 0x8]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax + 0xc]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax + 0x10]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x14]
+        fadd dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [esi]
+        fld dword ptr [eax + 0x18]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax + 0x1c]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax + 0x20]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x24]
+        fadd dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [esi + 0x10]
+        fld dword ptr [eax + 0x28]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax + 0x2c]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax + 0x30]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x34]
+        fadd dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [esi + 0x20]
+        fld dword ptr [eax + 0x38]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax + 0x3c]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax + 0x40]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x44]
+        fadd dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [esi + 0x30]
+        fld dword ptr [eax + 0x48]
+        add esi, 0x4
+        fmul st, st(1)
+        add edx, 0x10
+        sub edi, 0x1
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax + 0x4c]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax + 0x50]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x54]
+        fadd dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [edx - 0x18]
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [edx - 0x18]
+        fld dword ptr [esp + 0x54]
+        fadd dword ptr [edx - 0x14]
+        fstp dword ptr [edx - 0x14]
+        fld dword ptr [edx - 0x10]
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [edx - 0x10]
+        fld dword ptr [edx - 0xc]
+        fadd dword ptr [esp + 0x5c]
+        fstp dword ptr [edx - 0xc]
+        jne L_7fffc0
+        jmp L_800293
+
+    L_800130:
+        mov esi, ecx
+        mov edx, ebx
+    L_800134:
+        fld dword ptr [edx - 0x20]
+        fld dword ptr [eax - 0x8]
+        fmul st, st(1)
+        fadd st, st(2)
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax - 0x4]
+        fmul st, st(1)
+        fadd st, st(2)
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax]
+        fmul st, st(1)
+        fadd st, st(2)
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x4]
+        fadd st, st(1)
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [edx - 0x10]
+        fld dword ptr [eax + 0x8]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax + 0xc]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax + 0x10]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x14]
+        fadd dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [edx]
+        fld dword ptr [eax + 0x18]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax + 0x1c]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax + 0x20]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x24]
+        fadd dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [edx + 0x10]
+        fld dword ptr [eax + 0x28]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax + 0x2c]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax + 0x30]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x34]
+        fadd dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [edx + 0x20]
+        fld dword ptr [eax + 0x38]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax + 0x3c]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax + 0x40]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x44]
+        fadd dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [edx + 0x30]
+        fld dword ptr [eax + 0x48]
+        add edx, 0x4
+        fmul st, st(1)
+        add esi, 0x10
+        sub edi, 0x1
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax + 0x4c]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax + 0x50]
+        fmul st, st(1)
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x58]
+        fmul dword ptr [eax + 0x54]
+        fadd dword ptr [esp + 0x5c]
+        fstp dword ptr [esp + 0x5c]
+        fld dword ptr [esp + 0x50]
+        fstp dword ptr [esi - 0x18]
+        fld dword ptr [esp + 0x54]
+        fstp dword ptr [esi - 0x14]
+        fld dword ptr [esp + 0x58]
+        fstp dword ptr [esi - 0x10]
+        fld dword ptr [esp + 0x5c]
+        fstp dword ptr [esi - 0xc]
+        jne L_800134
+
+    L_800293:
+        mov edi, dword ptr [esp + 0x48]
+        mov edx, 0x1
+    L_80029c:
+        add ebp, 0x1
+        add eax, 0x60
+        cmp ebp, dword ptr [esp + 0x3c]
+        jl L_7fffa2
+
+        mov esi, dword ptr [esp + 0x14]
+    L_8002b0:
+        add dword ptr [esp + 0x1c], 0x4
+        add ebx, 0x60
+        sub dword ptr [esp + 0x40], 0x1
+        jne L_7fff7c
+
+        test edx, edx
+        mov ebx, dword ptr [esp + 0x10]
+        je L_800346
+
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [eax + 0x1c]
+        mov ebp, dword ptr [esp + 0x68]
+        mov dword ptr [edx + 4*esi], ebx
+        mov eax, dword ptr [eax + 0x20]
+        mov dword ptr [eax + 4*esi], ebp
+        mov esi, ebp
+        lea edx, [ecx + 0x4]
+        lea eax, [ebx + 0x4]
+        sub esi, ebx
+        mov edi, 0x4
+    L_8002ee:
+        fld dword ptr [edx - 0xc]
+        add eax, 0x10
+        fstp dword ptr [eax - 0x14]
+        add edx, 0x10
+        sub edi, 0x1
+        fld dword ptr [esi + eax - 0x10]
+        fstp dword ptr [eax - 0x10]
+        fld dword ptr [edx - 0x14]
+        fstp dword ptr [eax - 0xc]
+        fld dword ptr [edx - 0x10]
+        fstp dword ptr [eax - 0x8]
+        jne L_8002ee
+
+        mov esi, dword ptr [esp + 0x30]
+        mov edx, dword ptr [esp + 0x28]
+        mov eax, esi
+        sub eax, edx
+        sar eax, 0x1f
+        mov edi, eax
+        not edi
+        and eax, esi
+        mov esi, dword ptr [esp + 0x14]
+        add ebx, 0x40
+        add ebp, 0x40
+        and edi, edx
+        add ecx, 0x40
+        add edi, eax
+        mov dword ptr [esp + 0x10], ebx
+        mov dword ptr [esp + 0x68], ebp
+        mov dword ptr [esp + 0x30], edi
+        jmp L_80035e
+
+    L_800346:
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [eax + 0x1c]
+        mov dword ptr [edx + 4*esi], 0x0
+        mov eax, dword ptr [eax + 0x20]
+        mov dword ptr [eax + 4*esi], 0x0
+    L_80035e:
+        mov edx, dword ptr [esp + 0x28]
+        mov eax, dword ptr [esp + 0x6c]
+        mov eax, dword ptr [eax + 4*edx]
+        mov edi, dword ptr [esp + 0x44]
+        add dword ptr [esp + 0x20], 0x20
+        lea eax, [eax + 2*eax]
+        shl eax, 0x5
+        add dword ptr [esp + 0x24], eax
+        add edx, 0x1
+        add esi, 0x1
+        cmp edx, edi
+        mov dword ptr [esp + 0x28], edx
+        mov dword ptr [esp + 0x14], esi
+        jle L_7fff4e
+
+        mov ecx, dword ptr [esp + 0x2c]
+        mov ebp, dword ptr [esp + 0x4c]
+    L_80039a:
+        mov edx, dword ptr [ecx + 0x30]
+        mov eax, dword ptr [esp + 0x30]
+        add dword ptr [esp + 0x38], 0x20
+        mov dword ptr [edx + 4*edi], eax
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [edx]
+        add dword ptr [esp + 0x18], 0x4
+        lea eax, [eax + 2*eax]
+        shl eax, 0x5
+        add dword ptr [esp + 0x34], eax
+        add edi, 0x1
+        add esi, ebp
+        cmp edi, dword ptr [ecx + 0x14]
+        mov dword ptr [esp + 0x14], esi
+        mov dword ptr [esp + 0x44], edi
+        jl L_7fff1a
+
+        fstp st(0)
+    L_8003d6:
+        mov edx, dword ptr [esp + 0x68]
+        xor esi, esi
+        cmp dword ptr [ecx + 0x14], esi
+        mov dword ptr [ecx + 0x24], ebx
+        mov dword ptr [ecx + 0x28], edx
+        jle L_800492
+
+        mov eax, dword ptr [esp + 0x74]
+        fld dword ptr [esp + 0x7c]
+        fld dword ptr [esp + 0x78]
+        add eax, 0x8
+    L_8003fa:
+        mov edx, dword ptr [ecx + 0x14]
+        fld dword ptr [eax - 0x8]
+        fmul st, st(2)
+        mov edi, dword ptr [ecx + 0x1c]
+        mov ebx, dword ptr [ecx + 0x20]
+        add edx, 0x1
+        fadd st, st(1)
+        imul edx, esi
+        add edx, edx
+        add edx, edx
+        mov edi, dword ptr [edx + edi]
+        mov edx, dword ptr [edx + ebx]
+        add esi, 0x1
+        fadd dword ptr [edi]
+        add eax, 0x10
+        mov dword ptr [esp + 0x10], edi
+        mov dword ptr [esp + 0x68], edx
+        fstp dword ptr [edi]
+        fld dword ptr [eax - 0x18]
+        fmul st, st(2)
+        fadd st, st(1)
+        fadd dword ptr [edx]
+        fstp dword ptr [edx]
+        fld dword ptr [eax - 0x14]
+        fmul st, st(2)
+        fadd st, st(1)
+        fadd dword ptr [edi + 0x14]
+        fstp dword ptr [edi + 0x14]
+        fld dword ptr [eax - 0x14]
+        fmul st, st(2)
+        fadd st, st(1)
+        fadd dword ptr [edx + 0x14]
+        fstp dword ptr [edx + 0x14]
+        fld dword ptr [eax - 0x10]
+        fmul st, st(2)
+        fadd st, st(1)
+        fadd dword ptr [edi + 0x28]
+        fstp dword ptr [edi + 0x28]
+        fld dword ptr [eax - 0x10]
+        fmul st, st(2)
+        fadd st, st(1)
+        fadd dword ptr [edx + 0x28]
+        fstp dword ptr [edx + 0x28]
+        fld dword ptr [eax - 0xc]
+        fmul st, st(2)
+        fadd st, st(1)
+        fadd dword ptr [edi + 0x3c]
+        fstp dword ptr [edi + 0x3c]
+        fld dword ptr [eax - 0xc]
+        fmul st, st(2)
+        fadd st, st(1)
+        fadd dword ptr [edx + 0x3c]
+        fstp dword ptr [edx + 0x3c]
+        cmp esi, dword ptr [ecx + 0x14]
+        jl L_8003fa
+
+        fstp st(1)
+        fstp st(0)
+    L_800492:
+        mov eax, dword ptr [ecx + 0x4]
+        sub eax, 0x1
+        and eax, 0x3
+        add eax, 0x1
+        cmp eax, 0x4
+        lea edx, [eax + 4*eax]
+        jge L_8004cc
+
+        mov esi, dword ptr [esp + 0x68]
+        fld1
+        mov edi, dword ptr [esp + 0x10]
+        lea edx, [esi + 4*edx]
+        sub edi, esi
+        mov esi, 0x4
+        sub esi, eax
+    L_8004bc:
+        fst dword ptr [edi + edx]
+        add edx, 0x14
+        sub esi, 0x1
+        fst dword ptr [edx - 0x14]
+        jne L_8004bc
+        fstp st(0)
+    L_8004cc:
+        xor ebp, ebp
+        xor esi, esi
+        cmp dword ptr [ecx + 0x14], ebp
+        jle L_800515
+
+        mov ebx, dword ptr [ecx + 0x14]
+    L_8004d8:
+        mov eax, dword ptr [ecx + 0x14]
+        cmp esi, eax
+        mov edx, esi
+        jge L_800505
+
+        lea edi, [4*eax]
+        lea eax, [edi + 0x4]
+        imul eax, esi
+        add eax, dword ptr [ecx + 0x1c]
+    L_8004f1:
+        cmp dword ptr [eax], 0x0
+        je L_8004fc
+        cmp edx, ebp
+        jle L_8004fc
+        mov ebp, edx
+    L_8004fc:
+        add edx, 0x1
+        add eax, edi
+        cmp edx, ebx
+        jl L_8004f1
+    L_800505:
+        mov eax, dword ptr [ecx + 0x2c]
+        mov dword ptr [eax + 4*esi], ebp
+        mov ebx, dword ptr [ecx + 0x14]
+        add esi, 0x1
+        cmp esi, ebx
+        jl L_8004d8
+    L_800515:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x50
+        ret 0x1c
+    }
+}
