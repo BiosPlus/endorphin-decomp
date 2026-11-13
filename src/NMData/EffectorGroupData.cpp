@@ -151,3 +151,34 @@ extern "C" __declspec(naked) void __fastcall fn_0060D500(void* self) {
         ret 0x8
     }
 }
+
+// [0x0060D3A0] NMData::EffectorGroupData::vfunc_22 (53 bytes)
+extern "C" void ext_004C1B50();
+extern "C" void ext_0060C530();
+extern "C" int mem_009723D4;
+
+extern "C" __declspec(naked) void __fastcall fn_0060D3A0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x10]
+        push eax
+        push ecx
+        push edi
+        mov ecx, esi
+        call ext_0060C530
+        push offset mem_009723D4
+        add edi, 0x44
+        push edi
+        add esi, 0x44
+        push esi
+        lea ecx, [esp + 0x1c]
+        call ext_004C1B50
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
