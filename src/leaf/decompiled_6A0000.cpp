@@ -4417,3 +4417,17 @@ loc_6AB6FA:
         ret     0x4
     }
 }
+
+// [0x006ABDF0] sub_006ABDF0 (54 bytes)
+extern "C" void ext_006A5EA8();
+extern "C" void ext_006AA1B0();
+extern "C" void ext_006AB4F0();
+
+extern "C" void __fastcall fn_006ABDF0(void* self, int edx_unused, int a1, int a2, int a3) {
+    ((void (__thiscall*)(void*, int*))ext_006AB4F0)(self, &a2);
+    void* obj = ((void* (__thiscall*)(void*, int*))ext_006AA1B0)(self, &a2);
+    if (obj) {
+        (*(void (__thiscall**)(void*, int*))(*(int*)obj + 0x2c))(obj, &a2);
+    }
+    ((void (__thiscall*)(void*))ext_006A5EA8)(self);
+}
