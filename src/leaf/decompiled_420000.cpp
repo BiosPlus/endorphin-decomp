@@ -4577,3 +4577,32 @@ extern "C" void __cdecl fn_00426FD0(void) {
     mem_00ACD9D8[52] = 0x92eee0;
     mem_00ACD9D8[53] = 0x92eed8;
 }
+
+// [0x0042FF70] sub_0042FF70 (97 bytes)
+extern "C" void ext_00463970();
+extern "C" void ext_00463B70();
+extern "C" void ext_006A5FA4();
+
+extern "C" __declspec(naked) void __fastcall fn_0042FF70(void* self) {
+    __asm {
+        push -1
+        push 0x879e4b
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x61c
+        push 0x0
+        lea ecx, [esp + 0x4]
+        call ext_00463970
+        lea ecx, [esp]
+        mov dword ptr [esp + 0x624], 0x0
+        call ext_006A5FA4
+        lea ecx, [esp]
+        mov dword ptr [esp + 0x624], 0xffffffff
+        call ext_00463B70
+        mov ecx, dword ptr [esp + 0x61c]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x628
+        ret
+    }
+}
