@@ -204,3 +204,165 @@ extern "C" __declspec(naked) void __fastcall fn_00548390(void* self) {
         ret 4
     }
 }
+
+extern "C" void ext_006A7250();
+extern "C" int mem_00B40640;
+extern "C" int mem_0093F7B8;
+
+// [0x00549600] Camera::vfunc_14 (424 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00549600(void* self) {
+    __asm {
+        sub esp, 0x44
+        push ebx
+        mov ebx, ecx
+        cmp dword ptr [ebx + 0xa0], 0
+        push edi
+        mov dword ptr [esp + 0x8], 0
+        je L_549648
+        mov eax, dword ptr [ebx + 0xa0]
+        mov edx, dword ptr [mem_00B40640]
+        lea ecx, [eax + 0x4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xc]
+        push edx
+        call eax
+        fld dword ptr [mem_0093F7B8]
+        push ecx
+        lea ecx, [esp + 0x30]
+        fstp dword ptr [esp]
+        push ecx
+        lea ecx, [eax + 0x20]
+        call ext_0053B470
+        jmp L_54965F
+    L_549648:
+        lea edx, [ebx + 0xe8]
+        push edx
+        lea eax, [esp + 0x40]
+        push eax
+        lea ecx, [ebx + 0x80]
+        call ext_0047FFA0
+    L_54965F:
+        fld dword ptr [eax]
+        lea ecx, [esp + 0x1c]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [eax + 0xc]
+        fstp dword ptr [esp + 0x28]
+        call ext_00540D60
+        mov edi, dword ptr [esp + 0x58]
+        push edi
+        lea ecx, [esp + 0x10]
+        push ecx
+        lea ecx, [esp + 0x24]
+        call ext_00547820
+        fld dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x14]
+        fld st(1)
+        __asm _emit 0xde
+        __asm _emit 0xca
+        fld st(2)
+        __asm _emit 0xde
+        __asm _emit 0xcb
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        fstp dword ptr [esp + 0x58]
+        fld dword ptr [esp + 0x58]
+        call ext_006A7250
+        fstp dword ptr [esp + 0x58]
+        fld dword ptr [esp + 0x58]
+        fabs
+        fstp dword ptr [esp + 0x58]
+        fld dword ptr [esp + 0x58]
+        fld dword ptr [esp + 0x60]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L_5496E8
+        pop edi
+        xor al, al
+        pop ebx
+        add esp, 0x44
+        ret 0x14
+    L_5496E8:
+        push esi
+        push edi
+        lea edx, [esp + 0x44]
+        push edx
+        lea ecx, [esp + 0x18]
+        call ext_00547820
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x10]
+        lea ecx, [esp + 0x10]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [eax + 0xc]
+        fstp dword ptr [esp + 0x1c]
+        call ext_00540D60
+        fld dword ptr [esp + 0x64]
+        mov esi, dword ptr [esp + 0x60]
+        mov edx, dword ptr [esp + 0x58]
+        mov eax, dword ptr [ebx]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [esp + 0x60]
+        push edx
+        mov edx, dword ptr [eax + 0x34]
+        push ecx
+        mov ecx, ebx
+        call edx
+        test al, al
+        jne L_54974E
+        pop esi
+        pop edi
+        pop ebx
+        add esp, 0x44
+        ret 0x14
+    L_54974E:
+        fld dword ptr [edi + 0x4]
+        push ecx
+        fmul dword ptr [esi + 0x4]
+        lea eax, [esp + 0x44]
+        fld dword ptr [edi]
+        mov ecx, edi
+        fmul dword ptr [esi]
+        faddp st(1), st
+        fld dword ptr [edi + 0x8]
+        fmul dword ptr [esi + 0x8]
+        faddp st(1), st
+        fld dword ptr [edi + 0xc]
+        fmul dword ptr [esi + 0xc]
+        faddp st(1), st
+        fstp dword ptr [esp + 0x68]
+        fld dword ptr [esp + 0x68]
+        fstp dword ptr [esp]
+        push eax
+        call ext_0053B470
+        fld dword ptr [eax]
+        fstp dword ptr [esi]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esi + 0x4]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esi + 0x8]
+        fld dword ptr [eax + 0xc]
+        mov al, 1
+        fstp dword ptr [esi + 0xc]
+        fld1
+        fstp dword ptr [esi + 0xc]
+        pop esi
+        pop edi
+        pop ebx
+        add esp, 0x44
+        ret 0x14
+    }
+}
