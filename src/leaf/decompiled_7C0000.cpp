@@ -7629,3 +7629,28 @@ extern "C" int __cdecl fn_007C7200(void* self) {
     ((void (__cdecl*)(int, void*))ext_007D4B90)(*(int*)(p + 0x17c), p + 0x184);
     return 1;
 }
+
+// [0x007C98C0] sub_007C98C0 (101 bytes)
+extern "C" void __cdecl ext_007D86C0(void* a1);
+extern "C" void __cdecl ext_007C9860(void* a1);
+
+extern "C" void __cdecl fn_007C98C0(void* self) {
+    char* esi = (char*)self;
+    typedef int (__cdecl *fn_t)(void*);
+    typedef void (__cdecl *vfn_t)(void*);
+    typedef void (__cdecl *f2_t)(void*, void*);
+    if (((fn_t)&ext_007C9260)(esi) != 0) {
+        ((vfn_t)&ext_007C9860)(esi);
+    }
+    if (*(int*)(esi + 0xb0) == 5) {
+        void* r = ext_007D8710(esi);
+        ext_007D86C0(r);
+        void* p = *(void**)(*(char**)(esi + 0x40) + 0x258);
+        if (p != 0) {
+            ((vfn_t)p)(esi);
+        }
+    }
+    char* edx = *(char**)(esi + 0x40) + 0x38;
+    ((f2_t)&ext_007D4B90)(edx, esi + 0x48);
+    *(int*)(esi + 0xb0) = -1;
+}
