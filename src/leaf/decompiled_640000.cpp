@@ -4910,3 +4910,20 @@ extern "C" __declspec(naked) void __fastcall fn_00648420(void* self) {
         ret 0xc
     }
 }
+
+extern "C" void ext_0041A920();
+
+struct VObj_640240 {
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual bool vf3(int);
+};
+
+// [0x00640240] sub_00640240 (44 bytes)
+extern "C" void __fastcall fn_00640240(void* self, int edx_unused, VObj_640240* a1) {
+    ((void (__thiscall*)(void*, VObj_640240**))ext_0041A920)((char*)self + 0x24, &a1);
+    if (!a1->vf3(3)) {
+        *(int*)((char*)self + 0x34) = 0;
+    }
+}
