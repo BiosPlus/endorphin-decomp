@@ -4893,3 +4893,23 @@ extern "C" void __cdecl fn_007DC880(int a1) {
     typedef void (__cdecl *FnT)(int, int, int, int, int, int, int, int, int);
     ((FnT)ext_007C8890)(a1, 8, 0x99e294, 0x7db6c0, 0x7db780, 0x7db8b0, 0x7db8e0, 0x7dbf50, 0x7dc7d0);
 }
+
+// [0x007D5720] sub_007D5720 (330 bytes)
+extern "C" void __cdecl fn_007D5720(float* out, float* a, float* b) {
+    out[0] = a[0] * b[0] + a[1] * b[4] + a[2] * b[8];
+    out[1] = a[0] * b[1] + a[1] * b[5] + a[2] * b[9];
+    out[2] = a[0] * b[2] + a[1] * b[6] + a[2] * b[10];
+    out[3] = 0.0f;
+    out[4] = a[4] * b[0] + a[5] * b[4] + a[6] * b[8];
+    out[5] = a[4] * b[1] + a[5] * b[5] + a[6] * b[9];
+    out[6] = a[4] * b[2] + a[5] * b[6] + a[6] * b[10];
+    out[7] = 0.0f;
+    out[8] = a[8] * b[0] + a[9] * b[4] + a[10] * b[8];
+    out[9] = a[8] * b[1] + a[9] * b[5] + a[10] * b[9];
+    out[10] = a[8] * b[2] + a[9] * b[6] + a[10] * b[10];
+    out[11] = 0.0f;
+    out[12] = a[12] * b[0] + a[13] * b[4] + a[14] * b[8] + b[12];
+    out[13] = a[12] * b[1] + a[13] * b[5] + a[14] * b[9] + b[13];
+    out[14] = a[12] * b[2] + a[13] * b[6] + a[14] * b[10] + b[14];
+    out[15] = 1.0f;
+}
