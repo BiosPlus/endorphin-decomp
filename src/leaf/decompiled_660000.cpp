@@ -10613,3 +10613,37 @@ loop_00668CA0:
         ret
     }
 }
+
+// [0x00669140] sub_00669140 (63 bytes)
+extern "C" void ext_0041FF30();
+extern "C" void ext_00668F50();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) void __fastcall fn_00669140(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0x44
+        push esi
+        mov esi, dword ptr [esp + 0x54]
+        push edi
+        mov edi, dword ptr [esp + 0x54]
+        push esi
+        push edi
+        push eax
+        call ext_00668F50
+        test eax, eax
+        jne L_00669177
+        push esi
+        push edi
+        lea ecx, [esp + 0x10]
+        call ext_0041FF30
+        push 0x9d3748
+        lea ecx, [esp + 0xc]
+        push ecx
+        call ext_006A6DD2
+    L_00669177:
+        pop edi
+        pop esi
+        add esp, 0x44
+        ret 0xc
+    }
+}
