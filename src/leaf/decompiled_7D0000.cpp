@@ -10630,3 +10630,44 @@ extern "C" __declspec(naked) void* __cdecl fn_007DB4C0(void* self, int a2, float
         ret
     }
 }
+
+// [0x007DDEE0] sub_007DDEE0 (66 bytes)
+extern "C" void ext_007DDA80();
+
+extern "C" __declspec(naked) bool __fastcall fn_007DDEE0(void* self, int edx_unused, float a2) {
+    __asm {
+        push    ebx
+        mov     ebx, ecx
+        cmp     dword ptr [ebx + 0xC8], 0
+        jne     loc_7DDEF2
+        xor     al, al
+        pop     ebx
+        ret     4
+
+    loc_7DDEF2:
+        push    esi
+        mov     esi, dword ptr [ebx + 0xC0]
+        push    edi
+        lea     edi, [ebx + 0xC0]
+        cmp     esi, edi
+        je      loc_7DDF1A
+
+    loc_7DDF04:
+        fld     dword ptr [esp + 0x10]
+        push    ecx
+        fstp    dword ptr [esp]
+        push    esi
+        mov     ecx, ebx
+        call    ext_007DDA80
+        mov     esi, dword ptr [esi]
+        cmp     esi, edi
+        jne     loc_7DDF04
+
+    loc_7DDF1A:
+        pop     edi
+        pop     esi
+        mov     al, 1
+        pop     ebx
+        ret     4
+    }
+}
