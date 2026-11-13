@@ -6899,3 +6899,316 @@ extern "C" __declspec(naked) void __fastcall fn_00541630(void* self) {
         ret     0x1c
     }
 }
+
+// [0x00549B60] sub_00549B60 (986 bytes)
+extern "C" int mem_00925414;
+extern "C" int mem_009254B0;
+extern "C" int mem_00925490;
+extern "C" int mem_009254AC;
+extern "C" int mem_0092548C;
+extern "C" int mem_00925488;
+extern "C" int mem_0093F7B8;
+extern "C" int mem_00925404;
+
+extern "C" __declspec(naked) void __fastcall fn_00549B60(void* self, int edx_unused, float a1, float a2, float a3) {
+    __asm {
+        sub esp, 0x18
+        fld dword ptr [ecx + 0x18]
+        push ebx
+        fld1
+        push ebp
+        fld st(0)
+        push esi
+        _emit 0xde
+        _emit 0xf2
+        push edi
+        fxch st(1)
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [ecx + 0x1c]
+        fdivr st, st(1)
+        fstp dword ptr [esp + 0x20]
+        fdiv dword ptr [ecx + 0x20]
+        fstp dword ptr [esp + 0x24]
+        call dword ptr [mem_00925414]
+        fld dword ptr [esp + 0x24]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x2c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x28]
+        fstp dword ptr [esp]
+        call dword ptr [mem_009254B0]
+        mov edi, dword ptr [mem_00925490]
+        push 7
+        call edi
+        fld1
+        mov ebx, dword ptr [mem_009254AC]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fldz
+        fst dword ptr [esp + 0x4]
+        fstp dword ptr [esp]
+        call ebx
+        fld dword ptr [esp + 0x30]
+        mov esi, dword ptr [mem_0092548C]
+        fchs
+        fstp dword ptr [esp + 0x10]
+        sub esp, 0xc
+        fld dword ptr [esp + 0x38]
+        fchs
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [esp + 0x40]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        mov ebp, dword ptr [mem_00925488]
+        call ebp
+        push 7
+        call edi
+        fldz
+        sub esp, 0xc
+        fst dword ptr [esp + 0x8]
+        fld1
+        fstp dword ptr [esp + 0x4]
+        fstp dword ptr [esp]
+        call ebx
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fchs
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x20]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        call ebp
+        push 7
+        call edi
+        fld dword ptr [mem_0093F7B8]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fldz
+        fst dword ptr [esp + 0x4]
+        fstp dword ptr [esp]
+        call ebx
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        call ebp
+        push 7
+        call edi
+        fldz
+        sub esp, 0xc
+        fst dword ptr [esp + 0x8]
+        fld dword ptr [mem_0093F7B8]
+        fstp dword ptr [esp + 0x4]
+        fstp dword ptr [esp]
+        call ebx
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        call ebp
+        push 7
+        call edi
+        fldz
+        sub esp, 0xc
+        fst dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fld1
+        fstp dword ptr [esp]
+        call ebx
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fstp dword ptr [esp]
+        call esi
+        call ebp
+        push 7
+        call edi
+        fldz
+        sub esp, 0xc
+        fst dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [mem_0093F7B8]
+        fstp dword ptr [esp]
+        call ebx
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x34]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        fld dword ptr [esp + 0x14]
+        sub esp, 0xc
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [esp]
+        call esi
+        call ebp
+        call dword ptr [mem_00925404]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret 0xc
+    }
+}
