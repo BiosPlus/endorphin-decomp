@@ -10873,3 +10873,228 @@ L_end:
         ret
     }
 }
+
+extern "C" void ext_0043B720();
+extern "C" void ext_004410C0();
+
+// [0x0043B810] sub_0043B810 (513 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0043B810() {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov eax, ebx
+        sub eax, edi
+        sar eax, 0x2
+        cdq
+        sub eax, edx
+        sar eax, 1
+        lea esi, [edi + 4*eax]
+        mov eax, dword ptr [esp + 0x24]
+        push eax
+        lea ecx, [ebx - 0x4]
+        push ecx
+        push esi
+        push edi
+        call ext_0043B720
+        add esp, 0x10
+        cmp edi, esi
+        lea ebp, [esi + 0x4]
+        jae L_0043B887
+    L_0043B846:
+        mov ecx, dword ptr [esi - 0x4]
+        mov ebx, dword ptr [esi]
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B861
+        mov ecx, ebx
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B883
+    L_0043B861:
+        mov ecx, dword ptr [esi]
+        mov ebx, dword ptr [esi - 0x4]
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B87C
+        mov ecx, ebx
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B883
+    L_0043B87C:
+        add esi, -0x4
+        cmp edi, esi
+        jb L_0043B846
+    L_0043B883:
+        mov ebx, dword ptr [esp + 0x20]
+    L_0043B887:
+        cmp ebp, ebx
+        jae L_0043B8CD
+        jmp L_0043B890
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_0043B890:
+        mov ecx, dword ptr [ebp]
+        mov edi, dword ptr [esi]
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B8AB
+        mov ecx, edi
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B8CD
+    L_0043B8AB:
+        mov ecx, dword ptr [esi]
+        mov edi, dword ptr [ebp]
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B8C6
+        mov ecx, edi
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B8CD
+    L_0043B8C6:
+        add ebp, 0x4
+        cmp ebp, ebx
+        jb L_0043B890
+    L_0043B8CD:
+        mov edi, ebp
+        mov ebx, esi
+    L_0043B8D1:
+        cmp edi, dword ptr [esp + 0x20]
+        jae L_0043B92D
+    L_0043B8D7:
+        mov edx, dword ptr [edi]
+        mov ecx, dword ptr [esi]
+        mov dword ptr [esp + 0x10], edx
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B8F7
+        mov ecx, dword ptr [esp + 0x10]
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B924
+    L_0043B8F7:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [edi]
+        mov dword ptr [esp + 0x10], eax
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B917
+        mov ecx, dword ptr [esp + 0x10]
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B92D
+    L_0043B917:
+        mov edx, dword ptr [edi]
+        mov eax, ebp
+        mov ecx, dword ptr [eax]
+        mov dword ptr [eax], edx
+        add ebp, 0x4
+        mov dword ptr [edi], ecx
+    L_0043B924:
+        add edi, 0x4
+        cmp edi, dword ptr [esp + 0x20]
+        jb L_0043B8D7
+    L_0043B92D:
+        cmp ebx, dword ptr [esp + 0x1c]
+        jbe L_0043B990
+    L_0043B933:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [ebx - 0x4]
+        mov dword ptr [esp + 0x10], eax
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B954
+        mov ecx, dword ptr [esp + 0x10]
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B983
+    L_0043B954:
+        mov ecx, dword ptr [ebx - 0x4]
+        mov dword ptr [esp + 0x10], ecx
+        mov ecx, dword ptr [esi]
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B975
+        mov ecx, dword ptr [esp + 0x10]
+        call ext_004410C0
+        cmp eax, 0x1
+        jle L_0043B98C
+    L_0043B975:
+        mov edx, dword ptr [ebx - 0x4]
+        mov eax, dword ptr [esi - 0x4]
+        sub esi, 0x4
+        mov dword ptr [esi], edx
+        mov dword ptr [ebx - 0x4], eax
+    L_0043B983:
+        add ebx, -0x4
+        cmp dword ptr [esp + 0x1c], ebx
+        jb L_0043B933
+    L_0043B98C:
+        cmp ebx, dword ptr [esp + 0x1c]
+    L_0043B990:
+        jne L_0043B9C8
+        cmp edi, dword ptr [esp + 0x20]
+        je L_0043BA02
+        cmp ebp, edi
+        je L_0043B9A6
+        mov ecx, dword ptr [ebp]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi], ecx
+        mov dword ptr [ebp], eax
+    L_0043B9A6:
+        mov ecx, esi
+        mov edx, dword ptr [ecx]
+        mov eax, edi
+        mov dword ptr [esp + 0x10], edx
+        mov edx, dword ptr [eax]
+        mov dword ptr [ecx], edx
+        mov ecx, dword ptr [esp + 0x10]
+        add ebp, 0x4
+        add esi, 0x4
+        add edi, 0x4
+        mov dword ptr [eax], ecx
+        jmp L_0043B8D1
+    L_0043B9C8:
+        sub ebx, 0x4
+        cmp edi, dword ptr [esp + 0x20]
+        jne L_0043B9F2
+        sub esi, 0x4
+        cmp ebx, esi
+        je L_0043B9E0
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [ebx]
+        mov dword ptr [ebx], edx
+        mov dword ptr [esi], eax
+    L_0043B9E0:
+        mov ecx, dword ptr [ebp - 0x4]
+        mov eax, dword ptr [esi]
+        sub ebp, 0x4
+        mov dword ptr [esi], ecx
+        mov dword ptr [ebp], eax
+        jmp L_0043B8D1
+    L_0043B9F2:
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [ebx]
+        mov dword ptr [edi], edx
+        mov dword ptr [ebx], eax
+        add edi, 0x4
+        jmp L_0043B8D1
+    L_0043BA02:
+        mov eax, dword ptr [esp + 0x18]
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        mov dword ptr [eax + 0x4], ebp
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
