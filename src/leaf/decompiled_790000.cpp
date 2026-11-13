@@ -308,3 +308,35 @@ extern "C" __declspec(naked) int __cdecl fn_007994A0(void* self) {
         ret
     }
 }
+
+// [0x00799010] sub_00799010 (48 bytes)
+extern "C" int __cdecl ext_00799040(void* a0, void* a1);
+
+extern "C" __declspec(naked) int __cdecl fn_00799010(void* a0, void* a1, void* a2) {
+    __asm {
+        push    esi
+        mov     esi, dword ptr [esp + 0x8]
+        push    edi
+        mov     edi, dword ptr [esp + 0x10]
+        push    edi
+        push    esi
+        call    ext_00799040
+        add     esp, 0x8
+        test    eax, eax
+        je      ret_zero
+        mov     eax, dword ptr [esp + 0x14]
+        push    eax
+        push    edi
+        push    esi
+        call    dword ptr [esi + 0x21c]
+        add     esp, 0xc
+        pop     edi
+        pop     esi
+        ret
+    ret_zero:
+        pop     edi
+        xor     eax, eax
+        pop     esi
+        ret
+    }
+}
