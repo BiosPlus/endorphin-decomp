@@ -425,3 +425,33 @@ extern "C" __declspec(naked) void* __fastcall fn_005B80F0(void* self, int edx_un
         ret 0xc
     }
 }
+
+// [0x005C5E10] ExprParser::FunctionType<NMData::CollisionModelDataBase, NM::Vector3 const &, NM::Vector3 const &, {protected: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getVelocityAtPoint(class NM::Vector3 const &), 0}>::vfunc_48 (58 bytes)
+extern "C" void ext_005C39F0();
+
+extern "C" __declspec(naked) void* __fastcall fn_005C5E10(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        mov dword ptr [esp + 0x8], 0x0
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_005C39F0
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call ext_00672110
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
