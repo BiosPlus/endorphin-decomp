@@ -4272,3 +4272,110 @@ extern "C" void* __fastcall fn_00573150(void* self) {
     *(unsigned int*)(p + 0x04) = 0x00957CA8;
     return self;
 }
+
+// [0x00570A90] sub_00570A90 (284 bytes)
+extern "C" void ext_00435D00();
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924E90;
+extern "C" int mem_00924FA0;
+extern "C" int mem_00924E98;
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void* __fastcall fn_00570A90(void* self, int edx_unused, void* sret) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00924FC0]
+        lea esi, [ecx + 0x46c]
+        push 0x959570
+        push esi
+        mov dword ptr [esp + 0x10], 0x0
+        call edi
+        add esp, 0x8
+        test al, al
+        jne L_00570B57
+        push 0x959568
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne L_00570B93
+        push 0x959560
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne L_00570B0D
+        push 0x959558
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je L_00570B26
+        mov eax, dword ptr [mem_00924E90]
+        mov ecx, dword ptr [mem_00924FA0]
+        push eax
+        push 0x95952c
+        push ecx
+        call ext_00435D00
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+    L_00570B0D:
+        mov esi, dword ptr [esp + 0x10]
+        push 0x959524
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    L_00570B26:
+        push 0x959518
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je L_00570B70
+        mov edx, dword ptr [mem_00924E90]
+        mov eax, dword ptr [mem_00924FA0]
+        push edx
+        push 0x9594ec
+        push eax
+        call ext_00435D00
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+    L_00570B57:
+        mov esi, dword ptr [esp + 0x10]
+        push 0x9594e4
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    L_00570B70:
+        mov ecx, dword ptr [mem_00924E90]
+        mov edx, dword ptr [mem_00924FA0]
+        push ecx
+        push 0x9594b0
+        push edx
+        call ext_00435D00
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+    L_00570B93:
+        mov esi, dword ptr [esp + 0x10]
+        push 0x956e78
+        mov ecx, esi
+        call dword ptr [mem_00924FE4]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
