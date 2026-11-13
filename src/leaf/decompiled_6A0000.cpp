@@ -9167,3 +9167,76 @@ loc_6A4C15:
         ret
     }
 }
+
+// [0x006A4C20] sub_006A4C20 (168 bytes)
+extern "C" void ext_006A4B50();
+extern "C" unsigned char mem_00990890[1];
+
+extern "C" __declspec(naked) void __fastcall fn_006A4C20(void* self) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esi]
+        mov ecx, eax
+        shr ecx, 8
+        mov byte ptr [esp + 5], cl
+        mov ecx, eax
+        shr ecx, 0x18
+        mov byte ptr [esp + 7], cl
+        mov ecx, dword ptr [esi + 4]
+        mov edx, eax
+        shr edx, 0x10
+        mov byte ptr [esp + 6], dl
+        mov edx, ecx
+        shr edx, 8
+        mov byte ptr [esp + 8], cl
+        mov byte ptr [esp + 9], dl
+        mov edx, ecx
+        shr ecx, 0x18
+        mov byte ptr [esp + 0xb], cl
+        mov byte ptr [esp + 4], al
+        shr eax, 3
+        mov ecx, 0xfffffff7
+        sub ecx, eax
+        and ecx, 0x3f
+        push edi
+        add ecx, 1
+        push ecx
+        shr edx, 0x10
+        push 0x990890
+        push esi
+        mov byte ptr [esp + 0x1a], dl
+        call ext_006A4B50
+        push 8
+        lea edx, [esp + 0x18]
+        push edx
+        push esi
+        call ext_006A4B50
+        mov edi, dword ptr [esp + 0x30]
+        add esp, 0x18
+        xor eax, eax
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    loop_6a4ca0:
+        mov ecx, eax
+        and ecx, 3
+        add ecx, ecx
+        mov edx, eax
+        sar edx, 2
+        mov edx, dword ptr [esi + 4 * edx + 8]
+        add ecx, ecx
+        add ecx, ecx
+        shr edx, cl
+        add eax, 1
+        cmp eax, 0x10
+        mov byte ptr [eax + edi - 1], dl
+        jl loop_6a4ca0
+        pop edi
+        pop esi
+        add esp, 8
+        ret
+    }
+}
