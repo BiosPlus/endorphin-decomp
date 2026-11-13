@@ -3067,3 +3067,189 @@ L_8037CA:
     }
 }
 
+
+// [0x008037E0] sub_008037E0 (403 bytes)
+extern "C" void ext_008033C0();
+extern "C" void ext_008034D0();
+extern "C" __declspec(naked) void __fastcall fn_008037E0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        cmp ebx, ecx
+        push edi
+        jne L_8038CD
+        mov edx, dword ptr [esi + 0x44]
+        mov ecx, dword ptr [esi + 0x28]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x14]
+        push edx
+        mov edx, dword ptr [esi + 0x34]
+        push edx
+        call eax
+        mov ecx, dword ptr [esp + 0x20]
+        xor edi, edi
+        cmp ebx, 0x4
+        jl L_803881
+        lea edx, [ebx - 0x4]
+        shr edx, 0x2
+        add edx, 0x1
+        lea eax, [ecx + 0x8]
+        lea edi, [4*edx]
+L_803825:
+        mov ecx, dword ptr [eax - 0x8]
+        mov ebx, dword ptr [esi + 0x44]
+        mov ebp, dword ptr [esi + 0x30]
+        add ecx, ecx
+        add ecx, ecx
+        fld dword ptr [ecx + ebx]
+        add eax, 0x10
+        fstp dword ptr [ecx + ebp]
+        mov ecx, dword ptr [eax - 0x14]
+        mov ebx, dword ptr [esi + 0x44]
+        mov ebp, dword ptr [esi + 0x30]
+        add ecx, ecx
+        add ecx, ecx
+        fld dword ptr [ecx + ebx]
+        fstp dword ptr [ecx + ebp]
+        mov ecx, dword ptr [eax - 0x10]
+        mov ebx, dword ptr [esi + 0x44]
+        mov ebp, dword ptr [esi + 0x30]
+        add ecx, ecx
+        add ecx, ecx
+        fld dword ptr [ecx + ebx]
+        fstp dword ptr [ecx + ebp]
+        mov ecx, dword ptr [eax - 0xc]
+        mov ebx, dword ptr [esi + 0x44]
+        mov ebp, dword ptr [esi + 0x30]
+        add ecx, ecx
+        add ecx, ecx
+        sub edx, 0x1
+        fld dword ptr [ecx + ebx]
+        fstp dword ptr [ecx + ebp]
+        jne L_803825
+        mov ecx, dword ptr [esp + 0x20]
+        mov ebx, dword ptr [esp + 0x24]
+L_803881:
+        cmp edi, ebx
+        jge L_80389F
+L_803885:
+        mov eax, dword ptr [ecx + 4*edi]
+        mov edx, dword ptr [esi + 0x44]
+        mov ebp, dword ptr [esi + 0x30]
+        add eax, eax
+        add eax, eax
+        fld dword ptr [eax + edx]
+        add edi, 0x1
+        cmp edi, ebx
+        fstp dword ptr [eax + ebp]
+        jl L_803885
+L_80389F:
+        xor eax, eax
+        cmp dword ptr [esi + 0x4], eax
+        jle L_80396C
+        mov edx, dword ptr [esp + 0x14]
+        mov edi, edi
+L_8038B0:
+        mov ecx, dword ptr [esi + 0x34]
+        fld dword ptr [ecx + 4*eax]
+        lea ecx, [ecx + 4*eax]
+        fsub dword ptr [edx + 4*eax]
+        add eax, 0x1
+        fstp dword ptr [ecx]
+        cmp eax, dword ptr [esi + 0x4]
+        jl L_8038B0
+L_8038C6:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x18
+L_8038CD:
+        xor eax, eax
+        test ebx, ebx
+        jne L_80390B
+        test ecx, ecx
+        jle L_8038EB
+L_8038D7:
+        mov edx, dword ptr [esi + 0x40]
+        fld dword ptr [edx + 4*eax]
+        mov ecx, dword ptr [esi + 0x30]
+        fstp dword ptr [ecx + 4*eax]
+        add eax, 0x1
+        cmp eax, dword ptr [esi + 0x4]
+        jl L_8038D7
+L_8038EB:
+        xor eax, eax
+        cmp dword ptr [esi + 0x4], eax
+        jle L_80396C
+        fldz
+L_8038F4:
+        mov edx, dword ptr [esi + 0x34]
+        fst dword ptr [edx + 4*eax]
+        add eax, 0x1
+        cmp eax, dword ptr [esi + 0x4]
+        jl L_8038F4
+        pop edi
+        fstp st(0)
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x18
+L_80390B:
+        mov ecx, dword ptr [esp + 0x20]
+        xor edi, edi
+        test ebx, ebx
+        jle L_803933
+        mov edx, dword ptr [esi + 0x24]
+        jmp L_803920
+        __asm _emit 0x8D __asm _emit 0x9B __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+L_803920:
+        mov ebp, dword ptr [ecx + 4*eax]
+        cmp dword ptr [edx + 4*ebp], 0x0
+        jne L_80392C
+        add edi, 0x1
+L_80392C:
+        add eax, 0x1
+        cmp eax, ebx
+        jl L_803920
+L_803933:
+        mov eax, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esp + 0x28]
+        add edi, ebx
+        cmp edi, eax
+        push edx
+        jle L_80395D
+        mov edx, dword ptr [esp + 0x18]
+        push edx
+        push ebx
+        push ecx
+        push eax
+        mov eax, dword ptr [esp + 0x2c]
+        push eax
+        mov ecx, esi
+        call ext_008034D0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x18
+L_80395D:
+        push ebx
+        push ecx
+        push eax
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        mov ecx, esi
+        call ext_008033C0
+L_80396C:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x18
+    }
+}
