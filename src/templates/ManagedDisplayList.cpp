@@ -724,3 +724,37 @@ extern "C" __declspec(naked) bool __fastcall fn_0054C4E0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00533D80] ManagedDisplayList<UtilityGraphics::Grid>::vfunc_22 (65 bytes)
+extern "C" void ext_00538FC0();
+extern "C" int mem_009253F8;
+extern "C" int mem_009253F4;
+extern "C" int mem_009253F0;
+
+extern "C" __declspec(naked) void __fastcall fn_00533D80(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x30]
+        test eax, eax
+        __asm _emit 0x74
+        __asm _emit 0x37
+        cmp byte ptr [esi + 0x4], 0x0
+        je L_calllist
+        push 0x1301
+        push eax
+        call dword ptr [mem_009253F8]
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        mov ecx, esi
+        call ext_00538FC0
+        call dword ptr [mem_009253F4]
+        mov byte ptr [esi + 0x4], 0x0
+        pop esi
+        ret 0x4
+    L_calllist:
+        pop esi
+        mov dword ptr [esp + 0x4], eax
+        jmp dword ptr [mem_009253F0]
+    }
+}
