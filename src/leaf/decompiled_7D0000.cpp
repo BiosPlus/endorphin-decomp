@@ -8864,3 +8864,57 @@ loop_top_7DAED0:
         ret
     }
 }
+
+// [0x007DAFF0] sub_007DAFF0 (106 bytes)
+extern "C" void ext_007CA280();
+extern "C" void ext_007CB8D0();
+extern "C" void ext_007D48A0();
+extern "C" void ext_007D5AE0();
+extern "C" void ext_007DAED0();
+extern "C" __declspec(naked) void __fastcall fn_007DAFF0(void* self) {
+    __asm {
+        sub esp, 0x18
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x24]
+        push edi
+        push esi
+        call ext_007D5AE0
+        push esi
+        mov ebx, eax
+        call ext_007D48A0
+        lea edi, [esi + 0x14]
+        push edi
+        add esi, 0x8
+        push esi
+        push eax
+        push ebx
+        call ext_007DAED0
+        mov eax, dword ptr [esp + 0x44]
+        add esp, 0x18
+        test eax, eax
+        je done_7DAFF0
+        lea ecx, [esp + 0x18]
+        push ecx
+        lea edx, [esp + 0x10]
+        push edx
+        push eax
+        push ebx
+        call ext_007DAED0
+        add esp, 0x10
+        lea ecx, [esp + 0xc]
+        mov edx, esi
+        call ext_007CA280
+        lea ecx, [esp + 0x18]
+        mov edx, edi
+        mov esi, edi
+        call ext_007CB8D0
+done_7DAFF0:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        add esp, 0x18
+        ret
+    }
+}
