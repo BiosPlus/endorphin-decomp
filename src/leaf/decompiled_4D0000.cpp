@@ -2175,3 +2175,68 @@ done:
         ret
     }
 }
+
+// [0x004DA090] sub_004DA090 (226 bytes)
+extern "C" void ext_004DA060();
+extern "C" void ext_0050BE20();
+extern "C" void ext_00594000();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+
+extern "C" __declspec(naked) void __fastcall fn_004DA090(void* self) {
+    __asm {
+        push -1
+        push 0x8a56c8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_004DA060
+        mov ecx, esi
+        call ext_0050BE20
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x258]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        call edx
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x8], edi
+        call ext_0065C640
+        mov eax, dword ptr [esi + 0x10]
+        mov edx, dword ptr [eax + 0x84]
+        lea ecx, [esi + 0x10]
+        mov dword ptr [esp + 0x14], 0
+        call edx
+        fld1
+        fst dword ptr [esi + 0x1a4]
+        mov ecx, edi
+        fldz
+        mov dword ptr [esp + 0x14], -1
+        fst dword ptr [esi + 0x1a8]
+        fst dword ptr [esi + 0x1ac]
+        fst dword ptr [esi + 0x1b0]
+        fst dword ptr [esi + 0x1b4]
+        fst dword ptr [esi + 0x1bc]
+        fst dword ptr [esi + 0x1c0]
+        fst dword ptr [esi + 0x1c4]
+        fst dword ptr [esi + 0x1c8]
+        fst dword ptr [esi + 0x1d0]
+        fst dword ptr [esi + 0x1d4]
+        fst dword ptr [esi + 0x1d8]
+        fstp dword ptr [esi + 0x1dc]
+        fst dword ptr [esi + 0x1b8]
+        fst dword ptr [esi + 0x1cc]
+        fstp dword ptr [esi + 0x1e0]
+        call ext_0065C650
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
