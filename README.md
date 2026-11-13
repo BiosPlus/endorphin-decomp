@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11535 / 24049` (**47.96%**) — `8443` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `925299 / 4496005 bytes` (**20.58%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11536 / 24049` (**47.97%**) — `8444` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `925590 / 4496005 bytes` (**20.59%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -21,17 +21,17 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P50-60 (91-122B)** | 1242 / 2405 | 51.64% | 133975 / 256906 | 52.15% | 1163 fn |
 | **P60-70 (122-159B)** | 973 / 2405 | 40.46% | 130995 / 339038 | 38.64% | 1432 fn |
 | **P70-80 (159-178B)** | 246 / 2405 | 10.23% | 41435 / 400567 | 10.34% | 2159 fn |
-| **P80-90 (178-335B)** | 810 / 2405 | 33.68% | 193911 / 583211 | 33.25% | 1595 fn |
+| **P80-90 (178-335B)** | 811 / 2405 | 33.72% | 194202 / 583211 | 33.30% | 1594 fn |
 | **P90-100 (335-36100B)** | 317 / 2404 | 13.19% | 143015 / 2392860 | 5.98% | 2087 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6748 | 515897 | 79.92% |
-| `claude-haiku-5.5@low` | 556 | 132605 | 6.59% |
+| `claude-haiku-5.5@medium` | 6748 | 515897 | 79.91% |
+| `claude-haiku-5.5@low` | 556 | 132605 | 6.58% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.29% |
-| `gemini-3.8-flash@low` | 306 | 75148 | 3.62% |
+| `gemini-3.8-flash@low` | 307 | 75439 | 3.64% |
 | `gemini-4-hydrogen@low` | 182 | 53249 | 2.16% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.93% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.30% |
