@@ -7346,3 +7346,141 @@ extern "C" __declspec(naked) void __fastcall fn_00693820(void* self) {
         ret 0xc
     }
 }
+
+// [0x00694520] sub_00694520 (403 bytes)
+extern "C" void ext_00575350();
+extern "C" void ext_0067B7F0();
+extern "C" void ext_00693820();
+extern "C" void ext_006940C0();
+extern "C" void ext_006A7250();
+extern "C" __declspec(naked) void __fastcall fn_00694520(void* self) {
+    __asm {
+        sub esp, 0x40
+        fldz
+        push esi
+        fst dword ptr [esp + 0x10]
+        mov esi, ecx
+        fst dword ptr [esp + 0xc]
+        lea eax, [esp + 0x48]
+        fst dword ptr [esp + 0x8]
+        push eax
+        fst dword ptr [esp + 0x20]
+        lea ecx, [esp + 0xc]
+        fst dword ptr [esp + 0x1c]
+        push ecx
+        mov ecx, dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x58]
+        fld1
+        fsubrp st(1), st
+        fstp dword ptr [esp + 0xc]
+        call ext_006940C0
+        mov ecx, dword ptr [esp + 0x4c]
+        lea edx, [esp + 0x4c]
+        push edx
+        lea eax, [esp + 0x18]
+        push eax
+        call ext_006940C0
+        fld dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x48]
+        mov ecx, dword ptr [esp + 0x54]
+        fld st(0)
+        push ecx
+        fmulp st(2), st
+        lea edx, [esp + 0xc]
+        fxch st(1)
+        push edx
+        lea eax, [esp + 0x34]
+        fstp dword ptr [esp + 0x34]
+        push eax
+        fld dword ptr [esp + 0x18]
+        mov ecx, esi
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x3c]
+        fmul dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x40]
+        fld dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x58]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x44]
+        fld dword ptr [esp + 0x24]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x48]
+        fmul dword ptr [esp + 0x28]
+        fstp dword ptr [esp + 0x4c]
+        fldz
+        fst dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0x18]
+        fst dword ptr [esp + 0x14]
+        fst dword ptr [esp + 0x28]
+        fst dword ptr [esp + 0x24]
+        fstp dword ptr [esp + 0x20]
+        call ext_00693820
+        mov ecx, dword ptr [esp + 0x58]
+        push ecx
+        lea edx, [esp + 0x18]
+        push edx
+        lea eax, [esp + 0x40]
+        push eax
+        mov ecx, esi
+        call ext_00693820
+        fld dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x50]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x18]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x30]
+        fmul dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x4]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0xc]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x18]
+        fmul dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x14]
+        fadd dword ptr [esp + 0x2c]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x18]
+        fadd dword ptr [esp + 0x30]
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [esp + 0x1c]
+        fadd dword ptr [esp + 0x34]
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [esp + 0x24]
+        fld dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x28]
+        fld st(2)
+        fmulp st(3), st
+        fld st(1)
+        fmulp st(2), st
+        fxch st(2)
+        faddp st(1), st
+        fld st(1)
+        fmulp st(2), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [esp + 0x50]
+        push ecx
+        lea ecx, [esp + 0x24]
+        fstp dword ptr [esp]
+        call ext_0067B7F0
+        push eax
+        mov ecx, esi
+        call ext_00575350
+        pop esi
+        add esp, 0x40
+        ret 0x14
+    }
+}
