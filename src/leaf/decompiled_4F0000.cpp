@@ -2850,3 +2850,54 @@ done:
         ret
     }
 }
+
+// [0x004FFEF0] sub_004FFEF0 (107 bytes)
+extern "C" void ext_00435D00();
+extern "C" void ext_00508BA0();
+extern "C" void ext_00508BC0();
+extern "C" void ext_0050AD20();
+extern "C" int mem_00924E90;
+extern "C" int mem_00924FA0;
+extern "C" int mem_00924E5C;
+extern "C" int mem_00924E98;
+
+extern "C" __declspec(naked) void __fastcall fn_004FFEF0(void* self) {
+    __asm {
+        cmp byte ptr [esp + 4], 0
+        push ebx
+        mov ebx, ecx
+        je loc_4fff4c
+        push edi
+        lea edi, [ebx + 0xa4]
+        mov ecx, edi
+        call ext_00508BA0
+        test eax, eax
+        je loc_4fff4b
+        mov eax, dword ptr [ebx + 0x13c]
+        mov ecx, dword ptr [mem_00924E90]
+        mov edx, dword ptr [mem_00924FA0]
+        push esi
+        mov esi, dword ptr [eax + 8]
+        push ecx
+        push esi
+        push 0x94edac
+        push edx
+        call ext_00435D00
+        add esp, 8
+        mov ecx, eax
+        call dword ptr [mem_00924E5C]
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        push esi
+        mov ecx, edi
+        call ext_00508BC0
+        pop esi
+    loc_4fff4b:
+        pop edi
+    loc_4fff4c:
+        lea ecx, [ebx + 0xa4]
+        call ext_0050AD20
+        pop ebx
+        ret 4
+    }
+}
