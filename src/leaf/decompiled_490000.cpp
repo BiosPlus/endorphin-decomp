@@ -6762,3 +6762,103 @@ extern "C" __declspec(naked) void __fastcall fn_00492610(void* self) {
         ret
     }
 }
+
+// [0x004996E0] sub_004996E0 (253 bytes)
+extern "C" void ext_00498C50();
+extern "C" int mem_00925134;
+extern "C" int mem_0093F7B8;
+
+typedef int* (__thiscall *Sub00498C50Fn)(void* self, int* out, int idx);
+
+extern "C" __declspec(naked) void __fastcall fn_004996E0(void* self) {
+    __asm {
+        sub esp, 8
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [edi + 0x88]
+        test ecx, ecx
+        lea esi, [edi + 0x84]
+        je L_end
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 3
+        cmp eax, 2
+        jb L_end
+        cmp byte ptr [edi + 0xb4], 0
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        jne L_float
+        cmp dword ptr [edi + 0xb8], 0
+        je L_float
+        mov ebx, ecx
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L_c1
+        call ebp
+        cmp ebx, dword ptr [esi + 0x8]
+    L_c1:
+        jb L_c2
+        call ebp
+    L_c2:
+        mov ecx, dword ptr [edi + 0xb8]
+        push ebx
+        lea eax, [esp + 0x14]
+        push eax
+        add ecx, 0xe8
+        call ext_00498C50
+        mov ecx, dword ptr [eax]
+        mov dword ptr [edi + 0x94], ecx
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [edi + 0x98], edx
+        jmp L_tail
+    L_float:
+        fld dword ptr [mem_0093F7B8]
+        fst dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [edi + 0x94], eax
+        mov dword ptr [edi + 0x98], ecx
+    L_tail:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe T1
+        call ebp
+    T1:
+        lea eax, [ebx - 0x8]
+        cmp eax, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x14], ebx
+        ja T2
+        cmp eax, dword ptr [esi + 0x4]
+        jae T3
+    T2:
+        call ebp
+    T3:
+        add ebx, -0x8
+        cmp ebx, dword ptr [esi + 0x8]
+        jb T4
+        call ebp
+    T4:
+        mov eax, dword ptr [edi + 0xbc]
+        test eax, eax
+        je L_epi
+        push ebx
+        lea edx, [esp + 0x14]
+        push edx
+        lea ecx, [eax + 0xe8]
+        call ext_00498C50
+        mov ecx, dword ptr [eax]
+        mov dword ptr [edi + 0x9c], ecx
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [edi + 0xa0], edx
+    L_epi:
+        pop ebp
+        pop ebx
+    L_end:
+        pop edi
+        pop esi
+        add esp, 8
+        ret
+    }
+}
