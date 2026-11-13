@@ -9132,3 +9132,181 @@ extern "C" __declspec(naked) void __fastcall fn_007CE340(void* self) {
         ret
     }
 }
+
+// [0x007C4450] sub_007C4450 (528 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C4450(void) {
+    __asm {
+        sub esp, 18h
+        mov eax, dword ptr [esp+20h]
+        push ebx
+        push ebp
+        push esi
+        mov ebp, dword ptr [eax]
+        mov ecx, dword ptr [eax+4]
+        mov eax, dword ptr [eax+8]
+        mov dword ptr [esp+18h], ecx
+        push edi
+        xor ebx, ebx
+        mov edx, dword ptr [eax+4]
+        mov ecx, dword ptr [eax+8]
+        mov esi, dword ptr [eax]
+        mov dword ptr [esp+24h], edx
+        mov edx, dword ptr [eax+10h]
+        mov dword ptr [esp+20h], ecx
+        mov dword ptr [esp+10h], edx
+        mov edx, dword ptr [esp+2ch]
+        mov ecx, 8
+        xor eax, eax
+        lea edi, [edx+0b34h]
+        mov dword ptr [esp+30h], ebx
+        rep stosd
+        mov eax, dword ptr [edx+144ch]
+        mov ecx, dword ptr [edx+4*eax+0b54h]
+        mov word ptr [ebp+4*ecx+2], bx
+        mov eax, dword ptr [edx+144ch]
+        inc eax
+        cmp eax, 23dh
+        jge L_end
+        lea ecx, [edx+4*eax+0b54h]
+        mov dword ptr [esp+2ch], ecx
+        mov ecx, 23dh
+        sub ecx, eax
+        add eax, ecx
+        mov dword ptr [esp+18h], ecx
+        mov dword ptr [esp+14h], eax
+    L_loop1:
+        mov eax, dword ptr [esp+2ch]
+        xor edi, edi
+        mov ecx, dword ptr [eax]
+        xor eax, eax
+        mov ax, word ptr [ebp+4*ecx+2]
+        mov di, word ptr [ebp+4*eax+2]
+        mov eax, edi
+        mov edi, dword ptr [esp+10h]
+        inc eax
+        cmp eax, edi
+        jle L_skip1
+        inc ebx
+        mov eax, edi
+        mov dword ptr [esp+30h], ebx
+    L_skip1:
+        mov edi, dword ptr [esp+1ch]
+        mov word ptr [ebp+4*ecx+2], ax
+        cmp ecx, edi
+        jg L_after
+        mov edi, dword ptr [esp+20h]
+        inc word ptr [edx+2*eax+0b34h]
+        xor ebx, ebx
+        cmp ecx, edi
+        jl L_nt
+        mov ebx, ecx
+        sub ebx, edi
+        mov edi, dword ptr [esp+24h]
+        mov ebx, dword ptr [edi+4*ebx]
+    L_nt:
+        mov di, word ptr [ebp+4*ecx]
+        add eax, ebx
+        and edi, 0ffffh
+        imul eax, edi
+        add dword ptr [edx+16a0h], eax
+        test esi, esi
+        je L_noesi
+        xor eax, eax
+        mov ax, word ptr [esi+4*ecx+2]
+        mov ecx, dword ptr [edx+16a4h]
+        add eax, ebx
+        imul eax, edi
+        add ecx, eax
+        mov dword ptr [edx+16a4h], ecx
+    L_noesi:
+        mov ebx, dword ptr [esp+30h]
+    L_after:
+        mov ecx, dword ptr [esp+2ch]
+        mov eax, dword ptr [esp+18h]
+        add ecx, 4
+        dec eax
+        mov dword ptr [esp+2ch], ecx
+        mov dword ptr [esp+18h], eax
+        jne L_loop1
+        test ebx, ebx
+        je L_end
+        mov eax, dword ptr [esp+10h]
+        lea esi, [eax-1]
+        lea edi, [edx+2*eax+0b34h]
+    L_A:
+        mov eax, esi
+        cmp word ptr [edx+2*eax+0b34h], 0
+        lea ecx, [edx+2*eax+0b34h]
+        jne L_A2
+    L_A1:
+        sub ecx, 2
+        dec eax
+        cmp word ptr [ecx], 0
+        je L_A1
+    L_A2:
+        dec word ptr [edx+2*eax+0b34h]
+        add word ptr [edx+2*eax+0b36h], 2
+        dec word ptr [edi]
+        sub ebx, 2
+        test ebx, ebx
+        jg L_A
+        mov esi, dword ptr [esp+10h]
+        test esi, esi
+        je L_end
+        mov dword ptr [esp+2ch], edi
+    L_B:
+        xor eax, eax
+        mov ax, word ptr [edi]
+        test eax, eax
+        mov dword ptr [esp+30h], eax
+        je L_Bnext
+        mov ecx, dword ptr [esp+14h]
+        lea ebx, [edx+4*ecx+0b54h]
+    L_C0:
+        mov edi, dword ptr [esp+14h]
+        mov ecx, dword ptr [ebx-4]
+        dec edi
+        sub ebx, 4
+        mov dword ptr [esp+14h], edi
+        mov edi, dword ptr [esp+1ch]
+        cmp ecx, edi
+        mov dword ptr [esp+24h], ebx
+        jg L_Cskip
+        lea edi, [ebp+4*ecx+2]
+        xor eax, eax
+        mov ax, word ptr [edi]
+        cmp eax, esi
+        je L_Ceq
+        mov ebx, esi
+        sub ebx, eax
+        xor eax, eax
+        mov ax, word ptr [ebp+4*ecx]
+        imul ebx, eax
+        mov eax, dword ptr [edx+16a0h]
+        add eax, ebx
+        mov ebx, dword ptr [esp+24h]
+        mov dword ptr [edx+16a0h], eax
+        mov word ptr [edi], si
+    L_Ceq:
+        mov eax, dword ptr [esp+30h]
+        dec eax
+        mov dword ptr [esp+30h], eax
+    L_Cskip:
+        test eax, eax
+        jne L_C0
+    L_Bnext:
+        mov edi, dword ptr [esp+2ch]
+        dec esi
+        sub edi, 2
+        test esi, esi
+        mov dword ptr [esp+2ch], edi
+        jne L_B
+    L_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 18h
+        ret
+    }
+}
