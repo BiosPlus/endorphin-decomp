@@ -9325,3 +9325,286 @@ L170_3C0:
         ret 0xc
     }
 }
+
+// [0x00672860] sub_00672860 (617 bytes)
+extern "C" void ext_00672720();
+extern "C" int mem_00924EF4;
+extern "C" __declspec(naked) void __cdecl fn_00672860(void* a1, void* a2, void* a3, void* a4, void* a5) {
+    __asm {
+        sub esp, 8
+        mov ecx, dword ptr [esp + 0x14]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        mov eax, ecx
+        sub eax, edi
+        sar eax, 2
+        cdq
+        sub eax, edx
+        sar eax, 1
+        lea esi, [edi + 4*eax]
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        add ecx, -4
+        push ecx
+        push esi
+        push edi
+        call ext_00672720
+        add esp, 0x10
+        cmp edi, esi
+        lea ebp, [esi + 4]
+        mov dword ptr [esp + 0x10], ebp
+        jae L_6728F1
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+L_6728A0:
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x24]
+        mov edi, dword ptr [esi - 4]
+        call eax
+        mov edx, dword ptr [edi]
+        push eax
+        mov eax, dword ptr [edx + 0x24]
+        mov ecx, edi
+        call eax
+        mov edi, dword ptr [mem_00924EF4]
+        push eax
+        call edi
+        add esp, 8
+        test al, al
+        jne L_6728F7
+        mov ecx, dword ptr [esi - 4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x24]
+        mov ebx, dword ptr [esi]
+        call eax
+        mov edx, dword ptr [ebx]
+        push eax
+        mov eax, dword ptr [edx + 0x24]
+        mov ecx, ebx
+        call eax
+        push eax
+        call edi
+        add esp, 8
+        test al, al
+        jne L_6728F7
+        add esi, -4
+        cmp dword ptr [esp + 0x20], esi
+        jb L_6728A0
+        jmp L_6728F7
+L_6728F1:
+        mov edi, dword ptr [mem_00924EF4]
+L_6728F7:
+        cmp ebp, dword ptr [esp + 0x24]
+        jae L_67294D
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+L_672900:
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x24]
+        mov ebx, dword ptr [ebp]
+        call eax
+        mov edx, dword ptr [ebx]
+        push eax
+        mov eax, dword ptr [edx + 0x24]
+        mov ecx, ebx
+        call eax
+        push eax
+        call edi
+        add esp, 8
+        test al, al
+        jne L_672949
+        mov ecx, dword ptr [ebp]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x24]
+        mov ebx, dword ptr [esi]
+        call eax
+        mov edx, dword ptr [ebx]
+        push eax
+        mov eax, dword ptr [edx + 0x24]
+        mov ecx, ebx
+        call eax
+        push eax
+        call edi
+        add esp, 8
+        test al, al
+        jne L_672949
+        add ebp, 4
+        cmp ebp, dword ptr [esp + 0x24]
+        jb L_672900
+L_672949:
+        mov dword ptr [esp + 0x10], ebp
+L_67294D:
+        mov edi, ebp
+        mov ebx, esi
+L_672951:
+        cmp edi, dword ptr [esp + 0x24]
+        jae L_6729C3
+L_672957:
+        mov ecx, dword ptr [edi]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [ecx]
+        mov dword ptr [esp + 0x10], edx
+        mov edx, dword ptr [eax + 0x24]
+        call edx
+        mov ecx, dword ptr [esp + 0x10]
+        push eax
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        call edx
+        push eax
+        call dword ptr [mem_00924EF4]
+        add esp, 8
+        test al, al
+        jne L_6729B6
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [esp + 0x10], eax
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        push eax
+        call dword ptr [mem_00924EF4]
+        add esp, 8
+        test al, al
+        jne L_6729BF
+        mov edx, dword ptr [edi]
+        mov eax, ebp
+        mov ecx, dword ptr [eax]
+        mov dword ptr [eax], edx
+        add ebp, 4
+        mov dword ptr [edi], ecx
+L_6729B6:
+        add edi, 4
+        cmp edi, dword ptr [esp + 0x24]
+        jb L_672957
+L_6729BF:
+        mov dword ptr [esp + 0x10], ebp
+L_6729C3:
+        cmp ebx, dword ptr [esp + 0x20]
+        jbe L_672A3E
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+L_6729D0:
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ebx - 4]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [esp + 0x14], eax
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        push eax
+        call dword ptr [mem_00924EF4]
+        add esp, 8
+        test al, al
+        jne L_672A31
+        mov ecx, dword ptr [ebx - 4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x24]
+        mov ebp, dword ptr [esi]
+        call eax
+        mov edx, dword ptr [ebp]
+        push eax
+        mov eax, dword ptr [edx + 0x24]
+        mov ecx, ebp
+        call eax
+        push eax
+        call dword ptr [mem_00924EF4]
+        mov ebp, dword ptr [esp + 0x18]
+        add esp, 8
+        test al, al
+        jne L_672A3A
+        mov ecx, dword ptr [ebx - 4]
+        mov eax, dword ptr [esi - 4]
+        sub esi, 4
+        mov dword ptr [esi], ecx
+        mov dword ptr [ebx - 4], eax
+L_672A31:
+        add ebx, -4
+        cmp dword ptr [esp + 0x20], ebx
+        jb L_6729D0
+L_672A3A:
+        cmp ebx, dword ptr [esp + 0x20]
+L_672A3E:
+        jne L_672A7A
+        cmp edi, dword ptr [esp + 0x24]
+        je L_672AB8
+        cmp ebp, edi
+        je L_672A54
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esi], edx
+        mov dword ptr [ebp], eax
+L_672A54:
+        mov ecx, esi
+        mov edx, dword ptr [ecx]
+        mov eax, edi
+        mov dword ptr [esp + 0x14], edx
+        mov edx, dword ptr [eax]
+        mov dword ptr [ecx], edx
+        mov ecx, dword ptr [esp + 0x14]
+        add ebp, 4
+        add esi, 4
+        mov dword ptr [esp + 0x10], ebp
+        add edi, 4
+        mov dword ptr [eax], ecx
+        jmp L_672951
+L_672A7A:
+        sub ebx, 4
+        cmp edi, dword ptr [esp + 0x24]
+        jne L_672AA8
+        sub esi, 4
+        cmp ebx, esi
+        je L_672A92
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [ebx]
+        mov dword ptr [ebx], edx
+        mov dword ptr [esi], eax
+L_672A92:
+        mov ecx, dword ptr [ebp - 4]
+        mov eax, dword ptr [esi]
+        sub ebp, 4
+        mov dword ptr [esi], ecx
+        mov dword ptr [esp + 0x10], ebp
+        mov dword ptr [ebp], eax
+        jmp L_672951
+L_672AA8:
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [ebx]
+        mov dword ptr [edi], edx
+        mov dword ptr [ebx], eax
+        add edi, 4
+        jmp L_672951
+L_672AB8:
+        mov eax, dword ptr [esp + 0x1c]
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        mov dword ptr [eax + 4], ebp
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
