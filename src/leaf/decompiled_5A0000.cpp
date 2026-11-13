@@ -4033,3 +4033,30 @@ extern "C" __declspec(naked) void __fastcall fn_005A13C0(void* self) {
         ret 4
     }
 }
+
+extern "C" void ext_005AEF00();
+
+// [0x005AF8B0] sub_005AF8B0 (40 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005AF8B0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        cmp eax, 2
+        jne check_3
+        lea eax, [ecx + 0x10]
+        lea edx, [ecx + 0x04]
+        push eax
+        push edx
+        call ext_005AEF00
+        ret
+    check_3:
+        cmp eax, 3
+        jne done
+        lea eax, [ecx + 0x04]
+        lea edx, [ecx + 0x10]
+        push eax
+        push edx
+        call ext_005AEF00
+    done:
+        ret
+    }
+}
