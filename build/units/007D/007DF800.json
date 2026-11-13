@@ -25,5 +25,7 @@
     "0x007DFA29",
     "0x007DFA31"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-13T13:58:41Z"
 }
