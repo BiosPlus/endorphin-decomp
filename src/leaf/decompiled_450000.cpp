@@ -7527,3 +7527,24 @@ extern "C" __declspec(naked) void __fastcall fn_00452F90(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00452F90();
+extern "C" void ext_006A5E00();
+extern "C" void ext_006A5EA8();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00925654;
+extern "C" int mem_00A2E4A4;
+extern "C" int mem_00A2E034;
+
+// [0x00453C80] sub_00453C80 (71 bytes)
+extern "C" void __fastcall fn_00453C80(void* self, int edx_unused, int a1, int a2, int a3) {
+    if (a1 == 0xd) {
+        void* focus = ((void* (__stdcall*)())mem_00925654)();
+        void* wnd = ((void* (__stdcall*)(void*))ext_006A5E00)(focus);
+        if (((void* (__cdecl*)(void*, int, void*, void*, int))ext_006A6E9E)(wnd, 0, &mem_00A2E034, &mem_00A2E4A4, 0)) {
+            ((void (__thiscall*)(void*))ext_00452F90)(self);
+            return;
+        }
+    }
+    ((void (__thiscall*)(void*))ext_006A5EA8)(self);
+}
