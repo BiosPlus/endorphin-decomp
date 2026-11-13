@@ -5349,3 +5349,34 @@ extern "C" __declspec(naked) void __fastcall fn_004EC2C0(void* self) {
         ret
     }
 }
+
+// [0x004E8340] sub_004E8340 (58 bytes)
+extern "C" void ext_004AFF30();
+extern "C" void ext_004E7490();
+extern "C" void ext_004E7EC0();
+
+extern "C" __declspec(naked) void __fastcall fn_004E8340(void* self, int edx_unused, void* src) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_004E7EC0
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        lea ecx, [esi + 0x4]
+        call ext_004AFF30
+        mov al, byte ptr [edi + 0x1c]
+        mov byte ptr [esi + 0x20], al
+        mov ecx, dword ptr [edi + 0x10]
+        mov dword ptr [esi + 0x14], ecx
+        mov edx, dword ptr [edi + 0x14]
+        mov dword ptr [esi + 0x18], edx
+        mov eax, dword ptr [edi + 0x18]
+        mov ecx, esi
+        mov dword ptr [esi + 0x1c], eax
+        call ext_004E7490
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
