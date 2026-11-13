@@ -10708,3 +10708,25 @@ extern "C" __declspec(naked) void __fastcall fn_0066C560(void* self, void* edx_u
         ret 0x8
     }
 }
+
+// [0x0066C600] ExprParser::WriteMethodType<NM::Vector3, NM::Vector3 const &, &public: void __thiscall NM::Vector3::createCrossProductOrientationTSA(class NM::Vector3 const &)>::vfunc_41 (34 bytes)
+extern "C" void ext_0067BB00();
+
+extern "C" __declspec(naked) void __fastcall fn_0066C600(void* self, void* edx_unused, void** a1, void** a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x14]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_0067BB00
+        pop esi
+        ret 0x8
+    }
+}
