@@ -158,3 +158,243 @@ extern "C" __declspec(naked) void __fastcall fn_005E2340(void* self) {
         ret
     }
 }
+
+// [0x005ED030] NMData::SkeletalJointData::vfunc_2 (464 bytes)
+// Chain of string compares against constants at 0x0096B094..0x0096AFF4 (step -0x10).
+// Each hit calls a sibling sub_005EC9xx/sub_005ECAxx with (this, a1) and returns a1;
+// the final fallthrough forwards to FixedPathJointData::vfunc_2.
+extern "C" void ext_005EC9B0();
+extern "C" void ext_005EC9D0();
+extern "C" void ext_005EC9F0();
+extern "C" void ext_005ECA10();
+extern "C" void ext_005ECA30();
+extern "C" void ext_005ECA50();
+extern "C" void ext_005ECA70();
+extern "C" void ext_005ECA90();
+extern "C" void ext_005ECAB0();
+extern "C" void ext_005ECAD0();
+extern "C" void ext_005ECAF0();
+extern "C" void ext_005E24F0();
+extern "C" int mem_00924FC0;
+
+extern "C" __declspec(naked) void* __fastcall fn_005ED030(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [mem_00924FC0]
+        push 0x96b094
+        push esi
+        mov ebx, ecx
+        mov dword ptr [esp + 0x14], 0
+        call edi
+        add esp, 0x8
+        test al, al
+        je c1
+        mov esi, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        call ext_005EC9B0
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    c1:
+        push 0x96b084
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je c2
+        mov esi, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        call ext_005EC9D0
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    c2:
+        push 0x96b074
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je c3
+        mov esi, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        call ext_005EC9F0
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    c3:
+        push 0x96b064
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je c4
+        mov esi, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        call ext_005ECA10
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    c4:
+        push 0x96b054
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je c5
+        mov esi, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        call ext_005ECA30
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    c5:
+        push 0x96b044
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je c6
+        mov esi, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        call ext_005ECA50
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    c6:
+        push 0x96b034
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je c7
+        mov esi, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        call ext_005ECA70
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    c7:
+        push 0x96b024
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je c8
+        mov esi, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        call ext_005ECA90
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    c8:
+        push 0x96b014
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je c9
+        mov esi, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        call ext_005ECAB0
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    c9:
+        push 0x96b004
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je c10
+        mov esi, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        call ext_005ECAD0
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    c10:
+        push 0x96aff4
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je fallthrough
+        mov esi, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        call ext_005ECAF0
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    fallthrough:
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push esi
+        mov ecx, ebx
+        call ext_005E24F0
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
