@@ -5491,3 +5491,139 @@ extern "C" __declspec(naked) void __cdecl fn_007D52F0() {
         ret
     }
 }
+
+// [0x007D64B0] sub_007D64B0 (419 bytes)
+extern "C" int mem_00993840;
+extern "C" __declspec(naked) void __cdecl fn_007D64B0(void* self, float t, float* v) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        cmp dword ptr [eax+0x1ec], 0
+        je L_clear
+        or dword ptr [eax+0xc], 2
+        jmp L_after
+L_clear:
+        and dword ptr [eax+0xc], -3
+L_after:
+        test dword ptr [eax+0x1c4], 0x400
+        fld dword ptr [eax+0x94]
+        fadd dword ptr [eax+0x80]
+        mov ecx, dword ptr [esp+0xc]
+        fadd dword ptr [eax+0xa8]
+        fdiv qword ptr [mem_00993840]
+        fstp dword ptr [esp+4]
+        fld dword ptr [eax+0x1d0]
+        fld dword ptr [esp+4]
+        fld dword ptr [eax+0x20]
+        fld dword ptr [eax+0xc0]
+        fmul st, st(3)
+        fmul st, st(2)
+        _emit 0xde
+        _emit 0xe9
+        fstp dword ptr [eax+0x20]
+        fld dword ptr [eax+0x24]
+        fld dword ptr [eax+0xc4]
+        fmul st, st(3)
+        fmul st, st(2)
+        _emit 0xde
+        _emit 0xe9
+        fstp dword ptr [eax+0x24]
+        fld dword ptr [eax+0x28]
+        fld dword ptr [eax+0xc8]
+        _emit 0xde
+        _emit 0xcb
+        _emit 0xd9
+        _emit 0xca
+        _emit 0xde
+        _emit 0xc9
+        _emit 0xde
+        _emit 0xe9
+        fstp dword ptr [eax+0x28]
+        fld dword ptr [eax+0x1cc]
+        _emit 0xd9
+        _emit 0xe0
+        fld dword ptr [eax+0x1c8]
+        fld dword ptr [eax+0xb0]
+        fmul st, st(2)
+        fadd dword ptr [ecx]
+        fmul st, st(1)
+        fadd dword ptr [eax+0x10]
+        fstp dword ptr [eax+0x10]
+        fld dword ptr [eax+0xb4]
+        fmul st, st(2)
+        fadd dword ptr [ecx+4]
+        fmul st, st(1)
+        fadd dword ptr [eax+0x14]
+        fstp dword ptr [eax+0x14]
+        fld dword ptr [eax+0xb8]
+        _emit 0xde
+        _emit 0xca
+        fld dword ptr [ecx+8]
+        _emit 0xde
+        _emit 0xc2
+        _emit 0xde
+        _emit 0xc9
+        fadd dword ptr [eax+0x18]
+        fstp dword ptr [eax+0x18]
+        fld dword ptr [esp+8]
+        fld dword ptr [eax+0x20c]
+        fadd st, st(1)
+        fstp dword ptr [eax+0x20c]
+        je L_zero
+        fld1
+        _emit 0xde
+        _emit 0xf1
+        fstp dword ptr [esp+4]
+        fld dword ptr [esp+4]
+        fld dword ptr [eax+0x150]
+        fmul st, st(1)
+        fadd dword ptr [eax+0x10]
+        fstp dword ptr [eax+0x10]
+        fld dword ptr [eax+0x160]
+        fmul st, st(1)
+        fadd dword ptr [eax+0x20]
+        fstp dword ptr [eax+0x20]
+        fldz
+        fst dword ptr [eax+0x150]
+        fst dword ptr [eax+0x160]
+        fld dword ptr [eax+0x154]
+        fmul st, st(2)
+        fadd dword ptr [eax+0x14]
+        fstp dword ptr [eax+0x14]
+        fld dword ptr [eax+0x164]
+        fmul st, st(2)
+        fadd dword ptr [eax+0x24]
+        fstp dword ptr [eax+0x24]
+        fst dword ptr [eax+0x154]
+        fst dword ptr [eax+0x164]
+        fld dword ptr [eax+0x158]
+        fmul st, st(2)
+        fadd dword ptr [eax+0x18]
+        fstp dword ptr [eax+0x18]
+        fld dword ptr [eax+0x168]
+        fmul st, st(2)
+        fadd dword ptr [eax+0x28]
+        fstp dword ptr [eax+0x28]
+        fst dword ptr [eax+0x158]
+        fst dword ptr [eax+0x168]
+        fld dword ptr [eax+0x15c]
+        fmul st, st(2)
+        fadd dword ptr [eax+0x1c]
+        fstp dword ptr [eax+0x1c]
+        fld dword ptr [eax+0x16c]
+        _emit 0xde
+        _emit 0xca
+        fld dword ptr [eax+0x2c]
+        _emit 0xde
+        _emit 0xc2
+        _emit 0xd9
+        _emit 0xc9
+        fstp dword ptr [eax+0x2c]
+        fst dword ptr [eax+0x15c]
+        fstp dword ptr [eax+0x16c]
+        and dword ptr [eax+0x1c4], 0xfffffbff
+        ret
+L_zero:
+        fstp st(0)
+        ret
+    }
+}
