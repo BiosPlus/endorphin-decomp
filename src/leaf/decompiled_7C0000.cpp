@@ -9961,3 +9961,307 @@ extern "C" __declspec(naked) void __cdecl fn_007C8D00(void* arg0) {
         jmp     ext_007DD040
     }
 }
+
+// [0x007CE5E0] sub_007CE5E0 (799 bytes)
+extern "C" void ext_007CE490();
+extern "C" int mem_00993830;
+extern "C" __declspec(naked) void __cdecl fn_007CE5E0(void* self) {
+    __asm {
+        sub     esp, 0xc
+        push    ebx
+        push    esi
+        mov     esi, dword ptr [esp + 0x18]
+        push    edi
+        mov     edi, dword ptr [esp + 0x3c]
+        push    edi
+        push    esi
+        push    0x0
+        call    ext_007CE490
+        push    edi
+        push    esi
+        push    0x1
+        call    ext_007CE490
+        push    edi
+        push    esi
+        push    0x2
+        call    ext_007CE490
+        fld1
+        mov     eax, dword ptr [esi + 0x4]
+        mov     ecx, dword ptr [esi]
+        shl     eax, 0x6
+        fst     dword ptr [eax + ecx]
+        mov     edx, dword ptr [esi + 0x4]
+        mov     eax, dword ptr [esi]
+        shl     edx, 0x6
+        fst     dword ptr [edx + eax + 0x44]
+        mov     ecx, dword ptr [esi + 0x4]
+        mov     edx, dword ptr [esi]
+        mov     eax, dword ptr [esp + 0x44]
+        shl     ecx, 0x6
+        fstp    dword ptr [ecx + edx + 0x88]
+        mov     ecx, dword ptr [esp + 0x4c]
+        fld     dword ptr [ecx]
+        mov     edx, dword ptr [esi]
+        fsub    dword ptr [eax]
+        mov     edi, dword ptr [esp + 0x50]
+        add     esp, 0x24
+        fstp    dword ptr [esp + 0xc]
+        fld     dword ptr [ecx + 0x4]
+        fsub    dword ptr [eax + 0x4]
+        fstp    dword ptr [esp + 0x10]
+        fld     dword ptr [ecx + 0x8]
+        fsub    dword ptr [eax + 0x8]
+        mov     eax, dword ptr [esi + 0x4]
+        shl     eax, 0x6
+        add     eax, edx
+        fstp    dword ptr [esp + 0x14]
+        fldz
+        fst     dword ptr [eax + 0x10]
+        fld     dword ptr [esp + 0x14]
+        fst     dword ptr [eax + 0x14]
+        fld     dword ptr [esp + 0x10]
+        fld     st(0)
+        fchs
+        fstp    dword ptr [eax + 0x18]
+        fxch    st(1)
+        fchs
+        fstp    dword ptr [eax + 0x50]
+        fxch    st(1)
+        fst     dword ptr [eax + 0x54]
+        fld     dword ptr [esp + 0xc]
+        fst     dword ptr [eax + 0x58]
+        fxch    st(2)
+        fstp    dword ptr [eax + 0x90]
+        fxch    st(1)
+        fchs
+        fstp    dword ptr [eax + 0x94]
+        fst     dword ptr [eax + 0x98]
+        mov     ebx, dword ptr [esi + 0x2c]
+        fld     dword ptr [ecx]
+        mov     eax, ebx
+        fsub    dword ptr [edi]
+        cdq
+        and     edx, 0x3
+        add     eax, edx
+        fstp    dword ptr [esp + 0x1c]
+        sar     eax, 0x2
+        and     ebx, 0x80000003
+        fld     dword ptr [esp + 0x1c]
+        jns     L_7CE6CF
+        dec     ebx
+        or      ebx, -0x4
+        inc     ebx
+    L_7CE6CF:
+        mov     edx, dword ptr [esi + 0x28]
+        lea     eax, [ebx + 4*eax]
+        fstp    dword ptr [edx + 4*eax]
+        mov     eax, dword ptr [esi + 0x2c]
+        fld     dword ptr [ecx + 0x4]
+        lea     ebx, [eax + 0x1]
+        fsub    dword ptr [edi + 0x4]
+        mov     eax, ebx
+        cdq
+        and     edx, 0x3
+        add     eax, edx
+        fstp    dword ptr [esp + 0x1c]
+        fld     dword ptr [esp + 0x1c]
+        sar     eax, 0x2
+        and     ebx, 0x80000003
+        jns     L_7CE704
+        dec     ebx
+        or      ebx, -0x4
+        inc     ebx
+    L_7CE704:
+        mov     edx, dword ptr [esi + 0x28]
+        lea     eax, [ebx + 4*eax]
+        fstp    dword ptr [edx + 4*eax]
+        mov     eax, dword ptr [esi + 0x2c]
+        fld     dword ptr [ecx + 0x8]
+        lea     ebx, [eax + 0x2]
+        fsub    dword ptr [edi + 0x8]
+        mov     eax, ebx
+        cdq
+        and     edx, 0x3
+        add     eax, edx
+        fstp    dword ptr [esp + 0x1c]
+        fld     dword ptr [esp + 0x1c]
+        sar     eax, 0x2
+        and     ebx, 0x80000003
+        jns     L_7CE739
+        dec     ebx
+        or      ebx, -0x4
+        inc     ebx
+    L_7CE739:
+        cmp     dword ptr [esp + 0x30], 0x0
+        mov     ecx, dword ptr [esi + 0x28]
+        lea     eax, [ebx + 4*eax]
+        fstp    dword ptr [ecx + 4*eax]
+        je      L_7CE800
+        mov     edx, dword ptr [esi + 0x4]
+        fld     dword ptr [mem_0093F7B8]
+        mov     eax, dword ptr [esi]
+        shl     edx, 0x6
+        fst     dword ptr [edx + eax + 0x20]
+        mov     ecx, dword ptr [esi + 0x4]
+        mov     edx, dword ptr [esi]
+        shl     ecx, 0x6
+        fst     dword ptr [ecx + edx + 0x64]
+        mov     eax, dword ptr [esi + 0x4]
+        mov     ecx, dword ptr [esi]
+        shl     eax, 0x6
+        fstp    dword ptr [eax + ecx + 0xa8]
+        mov     eax, dword ptr [esp + 0x24]
+        fld     dword ptr [edi]
+        mov     edx, dword ptr [esi + 0x4]
+        fsub    dword ptr [eax]
+        shl     edx, 0x6
+        fstp    dword ptr [esp + 0xc]
+        fld     dword ptr [edi + 0x4]
+        fsub    dword ptr [eax + 0x4]
+        fstp    dword ptr [esp + 0x10]
+        fld     dword ptr [edi + 0x8]
+        fsub    dword ptr [eax + 0x8]
+        mov     eax, dword ptr [esi]
+        add     eax, edx
+        fstp    dword ptr [esp + 0x14]
+        fst     dword ptr [eax + 0x30]
+        fld     dword ptr [esp + 0x14]
+        fld     st(0)
+        fld     qword ptr [mem_00993830]
+        fmul    st(1), st
+        fxch    st(1)
+        fstp    dword ptr [eax + 0x34]
+        fld     dword ptr [esp + 0x10]
+        fld     st(0)
+        fchs
+        fmul    st, st(2)
+        fstp    dword ptr [eax + 0x38]
+        fxch    st(2)
+        fchs
+        fmul    st, st(1)
+        fstp    dword ptr [eax + 0x70]
+        fxch    st(2)
+        fst     dword ptr [eax + 0x74]
+        fld     dword ptr [esp + 0xc]
+        fld     st(0)
+        fmul    st, st(4)
+        fstp    dword ptr [eax + 0x78]
+        fxch    st(2)
+        fmul    st, st(3)
+        fstp    dword ptr [eax + 0xb0]
+        fxch    st(1)
+        fchs
+        fmulp   st(2), st
+        fxch    st(1)
+        fstp    dword ptr [eax + 0xb4]
+        fstp    dword ptr [eax + 0xb8]
+        jmp     L_7CE802
+    L_7CE800:
+        fstp    st(0)
+    L_7CE802:
+        mov     ecx, dword ptr [esi + 0x38]
+        mov     eax, ecx
+        cdq
+        and     edx, 0x3
+        add     eax, edx
+        sar     eax, 0x2
+        and     ecx, 0x80000003
+        jns     L_7CE81D
+        dec     ecx
+        or      ecx, -0x4
+        inc     ecx
+    L_7CE81D:
+        mov     edx, dword ptr [esi + 0x34]
+        fld     dword ptr [mem_0093C1A8]
+        lea     ecx, [ecx + 4*eax]
+        fst     dword ptr [edx + 4*ecx]
+        mov     ecx, dword ptr [esi + 0x44]
+        mov     eax, ecx
+        cdq
+        and     edx, 0x3
+        add     eax, edx
+        sar     eax, 0x2
+        and     ecx, 0x80000003
+        jns     L_7CE847
+        dec     ecx
+        or      ecx, -0x4
+        inc     ecx
+    L_7CE847:
+        fld     dword ptr [mem_0099D148]
+        lea     eax, [ecx + 4*eax]
+        mov     ecx, dword ptr [esi + 0x40]
+        fst     dword ptr [ecx + 4*eax]
+        mov     eax, dword ptr [esi + 0x38]
+        lea     ecx, [eax + 0x1]
+        mov     eax, ecx
+        cdq
+        and     edx, 0x3
+        add     eax, edx
+        sar     eax, 0x2
+        and     ecx, 0x80000003
+        jns     L_7CE874
+        dec     ecx
+        or      ecx, -0x4
+        inc     ecx
+    L_7CE874:
+        lea     edx, [ecx + 4*eax]
+        fxch    st(1)
+        mov     eax, dword ptr [esi + 0x34]
+        fst     dword ptr [eax + 4*edx]
+        mov     eax, dword ptr [esi + 0x44]
+        lea     ecx, [eax + 0x1]
+        mov     eax, ecx
+        cdq
+        and     edx, 0x3
+        add     eax, edx
+        sar     eax, 0x2
+        and     ecx, 0x80000003
+        jns     L_7CE89D
+        dec     ecx
+        or      ecx, -0x4
+        inc     ecx
+    L_7CE89D:
+        mov     edx, dword ptr [esi + 0x40]
+        fxch    st(1)
+        lea     ecx, [ecx + 4*eax]
+        fst     dword ptr [edx + 4*ecx]
+        mov     eax, dword ptr [esi + 0x38]
+        lea     ecx, [eax + 0x2]
+        mov     eax, ecx
+        cdq
+        and     edx, 0x3
+        add     eax, edx
+        sar     eax, 0x2
+        and     ecx, 0x80000003
+        jns     L_7CE8C6
+        dec     ecx
+        or      ecx, -0x4
+        inc     ecx
+    L_7CE8C6:
+        lea     eax, [ecx + 4*eax]
+        fxch    st(1)
+        mov     ecx, dword ptr [esi + 0x34]
+        fstp    dword ptr [ecx + 4*eax]
+        mov     eax, dword ptr [esi + 0x44]
+        lea     ecx, [eax + 0x2]
+        mov     eax, ecx
+        cdq
+        and     edx, 0x3
+        add     eax, edx
+        sar     eax, 0x2
+        and     ecx, 0x80000003
+        jns     L_7CE8EF
+        dec     ecx
+        or      ecx, -0x4
+        inc     ecx
+    L_7CE8EF:
+        lea     edx, [ecx + 4*eax]
+        mov     eax, dword ptr [esi + 0x40]
+        pop     edi
+        fstp    dword ptr [eax + 4*edx]
+        pop     esi
+        pop     ebx
+        add     esp, 0xc
+        ret
+    }
+}
