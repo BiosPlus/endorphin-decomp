@@ -146,3 +146,33 @@ extern "C" __declspec(naked) void __fastcall fn_004EE050(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004EC6B0] CharacterSelection::vfunc_3_off_4 (47 bytes)
+extern "C" void ext_00640110();
+extern "C" void ext_00640A50();
+extern "C" void ext_00692A80();
+extern "C" int mem_00A9F848;
+
+extern "C" __declspec(naked) void __fastcall fn_004EC6B0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F848]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        mov ecx, dword ptr [esi + 0x34]
+        push ecx
+        push eax
+        call ext_00640A50
+        add esp, 0x8
+        push edi
+        mov ecx, esi
+        call ext_00692A80
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
