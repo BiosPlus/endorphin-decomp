@@ -11544,3 +11544,11 @@ extern "C" __declspec(naked) void __fastcall fn_0067C620(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_0040ECB0();
+
+// [0x0067A230] sub_0067A230 (33 bytes)
+extern "C" void __fastcall fn_0067A230(void* self, int edx_unused, int a1, int a2) {
+    ((void (__thiscall*)(void*, int))ext_0040ECB0)((char*)self + 0x54, a1);
+    ((void (__thiscall*)(void*, int*))ext_0041A920)((char*)self + 0x64, &a2);
+}
