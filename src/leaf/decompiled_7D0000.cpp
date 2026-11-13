@@ -13684,3 +13684,500 @@ extern "C" __declspec(naked) void __cdecl fn_007DF800() {
         ret
     }
 }
+
+// [0x007D9C60] sub_007D9C60 (1462 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007D9C60(void* self) {
+    __asm {
+    L_007d9c60: mov	ecx, dword ptr [esp + 0x4]
+    L_007d9c64: mov	eax, ecx
+    L_007d9c66: sub	esp, 0x88
+    L_007d9c6c: and	eax, 0x80000003
+    L_007d9c71: jns	L_007d9c78
+    L_007d9c73: dec	eax
+    L_007d9c74: or	eax, -0x4
+    L_007d9c77: inc	eax
+    L_007d9c78: jne	L_007d9c80
+    L_007d9c7a: mov	dword ptr [esp + 0xc], ecx
+    L_007d9c7e: jmp	L_007d9c8b
+    L_007d9c80: mov	edx, ecx
+    L_007d9c82: sub	edx, eax
+    L_007d9c84: add	edx, 0x4
+    L_007d9c87: mov	dword ptr [esp + 0xc], edx
+    L_007d9c8b: mov	eax, 0x2aaaaaab
+    L_007d9c90: imul	ecx
+    L_007d9c92: sar	edx, 1
+    L_007d9c94: mov	eax, edx
+    L_007d9c96: shr	eax, 0x1f
+    L_007d9c99: add	eax, edx
+    L_007d9c9b: lea	eax, [eax + 2*eax]
+    L_007d9c9e: add	eax, eax
+    L_007d9ca0: add	eax, eax
+    L_007d9ca2: mov	edx, ecx
+    L_007d9ca4: sub	edx, eax
+    L_007d9ca6: mov	eax, ecx
+    L_007d9ca8: je	L_007d9caf
+    L_007d9caa: sub	eax, edx
+    L_007d9cac: add	eax, 0xc
+    L_007d9caf: and	eax, 0x8000000f
+    L_007d9cb4: jns	L_007d9cbb
+    L_007d9cb6: dec	eax
+    L_007d9cb7: or	eax, -0x10
+    L_007d9cba: inc	eax
+    L_007d9cbb: jne	L_007d9cd2
+    L_007d9cbd: test	edx, edx
+    L_007d9cbf: jne	L_007d9cc7
+    L_007d9cc1: mov	dword ptr [esp + 0x4], ecx
+    L_007d9cc5: jmp	L_007d9cfc
+    L_007d9cc7: sub	ecx, edx
+    L_007d9cc9: add	ecx, 0xc
+    L_007d9ccc: mov	dword ptr [esp + 0x4], ecx
+    L_007d9cd0: jmp	L_007d9cfc
+    L_007d9cd2: test	edx, edx
+    L_007d9cd4: mov	eax, ecx
+    L_007d9cd6: je	L_007d9ce6
+    L_007d9cd8: sub	eax, edx
+    L_007d9cda: add	eax, 0xc
+    L_007d9cdd: test	edx, edx
+    L_007d9cdf: je	L_007d9ce6
+    L_007d9ce1: sub	ecx, edx
+    L_007d9ce3: add	ecx, 0xc
+    L_007d9ce6: and	ecx, 0x8000000f
+    L_007d9cec: jns	L_007d9cf3
+    L_007d9cee: dec	ecx
+    L_007d9cef: or	ecx, -0x10
+    L_007d9cf2: inc	ecx
+    L_007d9cf3: sub	eax, ecx
+    L_007d9cf5: add	eax, 0x10
+    L_007d9cf8: mov	dword ptr [esp + 0x4], eax
+    L_007d9cfc: mov	ecx, dword ptr [esp + 0x98]
+    L_007d9d03: push	ebx
+    L_007d9d04: push	ebp
+    L_007d9d05: mov	eax, ecx
+    L_007d9d07: and	eax, 0x8000000f
+    L_007d9d0c: push	esi
+    L_007d9d0d: push	edi
+    L_007d9d0e: jns	L_007d9d15
+    L_007d9d10: dec	eax
+    L_007d9d11: or	eax, -0x10
+    L_007d9d14: inc	eax
+    L_007d9d15: mov	edi, ecx
+    L_007d9d17: je	L_007d9d1e
+    L_007d9d19: sub	edi, eax
+    L_007d9d1b: add	edi, 0x10
+    L_007d9d1e: mov	eax, dword ptr [esp + 0xac]
+    L_007d9d25: mov	edx, eax
+    L_007d9d27: and	edx, 0x8000000f
+    L_007d9d2d: jns	L_007d9d34
+    L_007d9d2f: dec	edx
+    L_007d9d30: or	edx, -0x10
+    L_007d9d33: inc	edx
+    L_007d9d34: mov	ebp, eax
+    L_007d9d36: je	L_007d9d3d
+    L_007d9d38: sub	ebp, edx
+    L_007d9d3a: add	ebp, 0x10
+    L_007d9d3d: lea	esi, [4*eax]
+    L_007d9d44: mov	edx, esi
+    L_007d9d46: and	edx, 0x8000000f
+    L_007d9d4c: jns	L_007d9d53
+    L_007d9d4e: dec	edx
+    L_007d9d4f: or	edx, -0x10
+    L_007d9d52: inc	edx
+    L_007d9d53: je	L_007d9d5e
+    L_007d9d55: lea	esi, [4*eax + 0x10]
+    L_007d9d5c: sub	esi, edx
+    L_007d9d5e: mov	edx, ecx
+    L_007d9d60: and	edx, 0x80000001
+    L_007d9d66: mov	dword ptr [esp + 0x10], esi
+    L_007d9d6a: jns	L_007d9d71
+    L_007d9d6c: dec	edx
+    L_007d9d6d: or	edx, -0x2
+    L_007d9d70: inc	edx
+    L_007d9d71: je	L_007d9d78
+    L_007d9d73: sub	ecx, edx
+    L_007d9d75: add	ecx, 0x2
+    L_007d9d78: mov	ebx, ecx
+    L_007d9d7a: mov	ecx, eax
+    L_007d9d7c: and	ecx, 0x80000001
+    L_007d9d82: jns	L_007d9d89
+    L_007d9d84: dec	ecx
+    L_007d9d85: or	ecx, -0x2
+    L_007d9d88: inc	ecx
+    L_007d9d89: mov	esi, eax
+    L_007d9d8b: je	L_007d9d92
+    L_007d9d8d: sub	esi, ecx
+    L_007d9d8f: add	esi, 0x2
+    L_007d9d92: mov	ecx, dword ptr [esp + 0xa4]
+    L_007d9d99: lea	eax, [eax + 4*eax]
+    L_007d9d9c: add	eax, eax
+    L_007d9d9e: cdq
+    L_007d9d9f: sub	eax, edx
+    L_007d9da1: mov	edx, ecx
+    L_007d9da3: sar	eax, 1
+    L_007d9da5: and	edx, 0x8000000f
+    L_007d9dab: jns	L_007d9db2
+    L_007d9dad: dec	edx
+    L_007d9dae: or	edx, -0x10
+    L_007d9db1: inc	edx
+    L_007d9db2: je	L_007d9db9
+    L_007d9db4: sub	ecx, edx
+    L_007d9db6: add	ecx, 0x10
+    L_007d9db9: mov	edx, dword ptr [esp + 0x10]
+    L_007d9dbd: mov	dword ptr [esp + 0x18], ecx
+    L_007d9dc1: lea	ecx, [eax + 2*eax]
+    L_007d9dc4: shl	ecx, 0x6
+    L_007d9dc7: add	ecx, 0x40
+    L_007d9dca: mov	dword ptr [esp + 0x94], ecx
+    L_007d9dd1: lea	eax, [4*edx]
+    L_007d9dd8: mov	ecx, eax
+    L_007d9dda: and	ecx, 0x3f
+    L_007d9ddd: je	L_007d9de8
+    L_007d9ddf: lea	eax, [4*edx + 0x40]
+    L_007d9de6: sub	eax, ecx
+    L_007d9de8: add	eax, 0x40
+    L_007d9deb: mov	dword ptr [esp + 0x8c], eax
+    L_007d9df2: lea	eax, [4*edi]
+    L_007d9df9: mov	ecx, eax
+    L_007d9dfb: and	ecx, 0x3f
+    L_007d9dfe: je	L_007d9e09
+    L_007d9e00: lea	eax, [4*edi + 0x40]
+    L_007d9e07: sub	eax, ecx
+    L_007d9e09: add	eax, 0x40
+    L_007d9e0c: mov	dword ptr [esp + 0x84], eax
+    L_007d9e13: lea	eax, [4*ebp]
+    L_007d9e1a: mov	ecx, eax
+    L_007d9e1c: and	ecx, 0x3f
+    L_007d9e1f: je	L_007d9e2a
+    L_007d9e21: lea	eax, [4*ebp + 0x40]
+    L_007d9e28: sub	eax, ecx
+    L_007d9e2a: add	eax, 0x40
+    L_007d9e2d: mov	dword ptr [esp + 0x7c], eax
+    L_007d9e31: mov	eax, esi
+    L_007d9e33: neg	eax
+    L_007d9e35: shl	eax, 0x5
+    L_007d9e38: and	eax, 0x3f
+    L_007d9e3b: jne	L_007d9e44
+    L_007d9e3d: mov	ecx, esi
+    L_007d9e3f: shl	ecx, 0x5
+    L_007d9e42: jmp	L_007d9e4c
+    L_007d9e44: lea	ecx, [esi + 0x2]
+    L_007d9e47: shl	ecx, 0x5
+    L_007d9e4a: sub	ecx, eax
+    L_007d9e4c: add	ecx, 0x40
+    L_007d9e4f: mov	dword ptr [esp + 0x74], ecx
+    L_007d9e53: mov	ecx, ebx
+    L_007d9e55: neg	ecx
+    L_007d9e57: shl	ecx, 0x5
+    L_007d9e5a: and	ecx, 0x3f
+    L_007d9e5d: jne	L_007d9e66
+    L_007d9e5f: shl	ebx, 0x5
+    L_007d9e62: mov	edx, ebx
+    L_007d9e64: jmp	L_007d9e6e
+    L_007d9e66: lea	edx, [ebx + 0x2]
+    L_007d9e69: shl	edx, 0x5
+    L_007d9e6c: sub	edx, ecx
+    L_007d9e6e: add	edx, 0x40
+    L_007d9e71: test	eax, eax
+    L_007d9e73: mov	dword ptr [esp + 0x6c], edx
+    L_007d9e77: jne	L_007d9e80
+    L_007d9e79: shl	esi, 0x5
+    L_007d9e7c: mov	ecx, esi
+    L_007d9e7e: jmp	L_007d9e88
+    L_007d9e80: lea	ecx, [esi + 0x2]
+    L_007d9e83: shl	ecx, 0x5
+    L_007d9e86: sub	ecx, eax
+    L_007d9e88: mov	edx, dword ptr [esp + 0x18]
+    L_007d9e8c: add	ecx, 0x40
+    L_007d9e8f: mov	dword ptr [esp + 0x64], ecx
+    L_007d9e93: lea	eax, [4*edx]
+    L_007d9e9a: mov	ecx, eax
+    L_007d9e9c: and	ecx, 0x3f
+    L_007d9e9f: je	L_007d9eaa
+    L_007d9ea1: lea	eax, [4*edx + 0x40]
+    L_007d9ea8: sub	eax, ecx
+    L_007d9eaa: mov	esi, dword ptr [esp + 0x10]
+    L_007d9eae: add	eax, 0x40
+    L_007d9eb1: mov	ecx, esi
+    L_007d9eb3: shl	ecx, 0x4
+    L_007d9eb6: mov	dword ptr [esp + 0x5c], eax
+    L_007d9eba: mov	eax, ecx
+    L_007d9ebc: and	eax, 0x3f
+    L_007d9ebf: jne	L_007d9ec5
+    L_007d9ec1: mov	edx, ecx
+    L_007d9ec3: jmp	L_007d9ecd
+    L_007d9ec5: lea	edx, [esi + 0x4]
+    L_007d9ec8: shl	edx, 0x4
+    L_007d9ecb: sub	edx, eax
+    L_007d9ecd: add	edx, 0x40
+    L_007d9ed0: test	eax, eax
+    L_007d9ed2: mov	dword ptr [esp + 0x54], edx
+    L_007d9ed6: jne	L_007d9edc
+    L_007d9ed8: mov	edx, ecx
+    L_007d9eda: jmp	L_007d9ee4
+    L_007d9edc: lea	edx, [esi + 0x4]
+    L_007d9edf: shl	edx, 0x4
+    L_007d9ee2: sub	edx, eax
+    L_007d9ee4: add	edx, 0x40
+    L_007d9ee7: test	eax, eax
+    L_007d9ee9: mov	dword ptr [esp + 0x4c], edx
+    L_007d9eed: jne	L_007d9ef3
+    L_007d9eef: mov	edx, ecx
+    L_007d9ef1: jmp	L_007d9efb
+    L_007d9ef3: lea	edx, [esi + 0x4]
+    L_007d9ef6: shl	edx, 0x4
+    L_007d9ef9: sub	edx, eax
+    L_007d9efb: add	edx, 0x40
+    L_007d9efe: test	eax, eax
+    L_007d9f00: mov	dword ptr [esp + 0x44], edx
+    L_007d9f04: jne	L_007d9f0a
+    L_007d9f06: mov	edx, ecx
+    L_007d9f08: jmp	L_007d9f12
+    L_007d9f0a: lea	edx, [esi + 0x4]
+    L_007d9f0d: shl	edx, 0x4
+    L_007d9f10: sub	edx, eax
+    L_007d9f12: add	edx, 0x40
+    L_007d9f15: test	eax, eax
+    L_007d9f17: mov	dword ptr [esp + 0x3c], edx
+    L_007d9f1b: jne	L_007d9f21
+    L_007d9f1d: mov	edx, ecx
+    L_007d9f1f: jmp	L_007d9f29
+    L_007d9f21: lea	edx, [esi + 0x4]
+    L_007d9f24: shl	edx, 0x4
+    L_007d9f27: sub	edx, eax
+    L_007d9f29: add	edx, 0x40
+    L_007d9f2c: test	eax, eax
+    L_007d9f2e: mov	dword ptr [esp + 0x34], edx
+    L_007d9f32: je	L_007d9f3c
+    L_007d9f34: lea	ecx, [esi + 0x4]
+    L_007d9f37: shl	ecx, 0x4
+    L_007d9f3a: sub	ecx, eax
+    L_007d9f3c: mov	esi, dword ptr [esp + 0x1c]
+    L_007d9f40: add	ecx, 0x40
+    L_007d9f43: lea	eax, [4*esi]
+    L_007d9f4a: mov	dword ptr [esp + 0x2c], ecx
+    L_007d9f4e: mov	ecx, eax
+    L_007d9f50: and	ecx, 0xf
+    L_007d9f53: mov	dword ptr [esp + 0x60], eax
+    L_007d9f57: mov	dword ptr [esp + 0x90], ecx
+    L_007d9f5e: je	L_007d9f69
+    L_007d9f60: lea	eax, [4*esi + 0x10]
+    L_007d9f67: sub	eax, ecx
+    L_007d9f69: add	eax, 0x10
+    L_007d9f6c: mov	dword ptr [esp + 0x28], eax
+    L_007d9f70: mov	eax, esi
+    L_007d9f72: imul	eax, esi
+    L_007d9f75: lea	edx, [4*esi + 0x10]
+    L_007d9f7c: mov	dword ptr [esp + 0x18], edx
+    L_007d9f80: lea	ecx, [4*eax + 0x10]
+    L_007d9f87: cdq
+    L_007d9f88: and	edx, 0xf
+    L_007d9f8b: add	eax, edx
+    L_007d9f8d: mov	ebp, eax
+    L_007d9f8f: sar	ebp, 0x4
+    L_007d9f92: mov	edx, ebp
+    L_007d9f94: and	edx, 0x8000000f
+    L_007d9f9a: jns	L_007d9fa1
+    L_007d9f9c: dec	edx
+    L_007d9f9d: or	edx, -0x10
+    L_007d9fa0: inc	edx
+    L_007d9fa1: mov	dword ptr [esp + 0x30], edx
+    L_007d9fa5: mov	eax, ebp
+    L_007d9fa7: je	L_007d9fae
+    L_007d9fa9: sub	eax, edx
+    L_007d9fab: add	eax, 0x10
+    L_007d9fae: add	eax, eax
+    L_007d9fb0: add	eax, eax
+    L_007d9fb2: test	edx, edx
+    L_007d9fb4: mov	dword ptr [esp + 0x78], eax
+    L_007d9fb8: mov	eax, ebp
+    L_007d9fba: je	L_007d9fc1
+    L_007d9fbc: sub	eax, edx
+    L_007d9fbe: add	eax, 0x10
+    L_007d9fc1: lea	edx, [4*eax]
+    L_007d9fc8: mov	eax, esi
+    L_007d9fca: mov	dword ptr [esp + 0x58], edx
+    L_007d9fce: cdq
+    L_007d9fcf: and	edx, 0x3
+    L_007d9fd2: add	eax, edx
+    L_007d9fd4: sar	eax, 0x2
+    L_007d9fd7: mov	esi, eax
+    L_007d9fd9: and	esi, 0x8000000f
+    L_007d9fdf: mov	dword ptr [esp + 0x10], eax
+    L_007d9fe3: jns	L_007d9fea
+    L_007d9fe5: dec	esi
+    L_007d9fe6: or	esi, -0x10
+    L_007d9fe9: inc	esi
+    L_007d9fea: mov	dword ptr [esp + 0x1c], esi
+    L_007d9fee: mov	edx, eax
+    L_007d9ff0: je	L_007d9ff7
+    L_007d9ff2: sub	edx, esi
+    L_007d9ff4: add	edx, 0x10
+    L_007d9ff7: add	edx, edx
+    L_007d9ff9: add	edx, edx
+    L_007d9ffb: test	esi, esi
+    L_007d9ffd: mov	dword ptr [esp + 0x24], edx
+    L_007da001: mov	edx, eax
+    L_007da003: je	L_007da00a
+    L_007da005: sub	edx, esi
+    L_007da007: add	edx, 0x10
+    L_007da00a: mov	edi, dword ptr [esp + 0x14]
+    L_007da00e: lea	eax, [4*edx]
+    L_007da015: mov	dword ptr [esp + 0x50], eax
+    L_007da019: lea	eax, [4*edi]
+    L_007da020: mov	edx, eax
+    L_007da022: and	edx, 0x3f
+    L_007da025: mov	dword ptr [esp + 0x20], eax
+    L_007da029: jne	L_007da02f
+    L_007da02b: mov	esi, eax
+    L_007da02d: jmp	L_007da038
+    L_007da02f: lea	esi, [4*edi + 0x40]
+    L_007da036: sub	esi, edx
+    L_007da038: add	esi, 0x40
+    L_007da03b: test	edx, edx
+    L_007da03d: mov	dword ptr [esp + 0x70], esi
+    L_007da041: jne	L_007da047
+    L_007da043: mov	esi, eax
+    L_007da045: jmp	L_007da050
+    L_007da047: lea	esi, [4*edi + 0x40]
+    L_007da04e: sub	esi, edx
+    L_007da050: add	esi, 0x40
+    L_007da053: test	edx, edx
+    L_007da055: mov	dword ptr [esp + 0x48], esi
+    L_007da059: jne	L_007da05f
+    L_007da05b: mov	esi, eax
+    L_007da05d: jmp	L_007da068
+    L_007da05f: lea	esi, [4*edi + 0x40]
+    L_007da066: sub	esi, edx
+    L_007da068: add	esi, 0x40
+    L_007da06b: test	edx, edx
+    L_007da06d: mov	dword ptr [esp + 0x80], esi
+    L_007da074: jne	L_007da07a
+    L_007da076: mov	esi, eax
+    L_007da078: jmp	L_007da083
+    L_007da07a: lea	esi, [4*edi + 0x40]
+    L_007da081: sub	esi, edx
+    L_007da083: add	esi, 0x40
+    L_007da086: test	edx, edx
+    L_007da088: mov	dword ptr [esp + 0x40], esi
+    L_007da08c: jne	L_007da092
+    L_007da08e: mov	esi, eax
+    L_007da090: jmp	L_007da09b
+    L_007da092: lea	esi, [4*edi + 0x40]
+    L_007da099: sub	esi, edx
+    L_007da09b: add	esi, 0x40
+    L_007da09e: test	edx, edx
+    L_007da0a0: mov	dword ptr [esp + 0x68], esi
+    L_007da0a4: jne	L_007da0aa
+    L_007da0a6: mov	esi, eax
+    L_007da0a8: jmp	L_007da0b3
+    L_007da0aa: lea	esi, [4*edi + 0x40]
+    L_007da0b1: sub	esi, edx
+    L_007da0b3: add	esi, 0x40
+    L_007da0b6: test	edx, edx
+    L_007da0b8: mov	dword ptr [esp + 0x38], esi
+    L_007da0bc: jne	L_007da0c2
+    L_007da0be: mov	esi, eax
+    L_007da0c0: jmp	L_007da0cb
+    L_007da0c2: lea	esi, [4*edi + 0x40]
+    L_007da0c9: sub	esi, edx
+    L_007da0cb: mov	eax, dword ptr [esp + 0x14]
+    L_007da0cf: add	esi, 0x40
+    L_007da0d2: mov	dword ptr [esp + 0x88], esi
+    L_007da0d9: mov	esi, eax
+    L_007da0db: imul	esi, eax
+    L_007da0de: lea	ebx, [4*esi]
+    L_007da0e5: mov	edi, ebx
+    L_007da0e7: and	edi, 0x3f
+    L_007da0ea: je	L_007da0f5
+    L_007da0ec: lea	ebx, [4*esi + 0x40]
+    L_007da0f3: sub	ebx, edi
+    L_007da0f5: add	ebx, 0x40
+    L_007da0f8: test	edx, edx
+    L_007da0fa: mov	dword ptr [esp + 0x14], ebx
+    L_007da0fe: jne	L_007da106
+    L_007da100: mov	esi, dword ptr [esp + 0x20]
+    L_007da104: jmp	L_007da10f
+    L_007da106: lea	esi, [4*eax + 0x40]
+    L_007da10d: sub	esi, edx
+    L_007da10f: mov	eax, dword ptr [esp + 0x90]
+    L_007da116: add	esi, 0x40
+    L_007da119: test	eax, eax
+    L_007da11b: mov	dword ptr [esp + 0x20], esi
+    L_007da11f: jne	L_007da127
+    L_007da121: mov	ebx, dword ptr [esp + 0x60]
+    L_007da125: jmp	L_007da12d
+    L_007da127: mov	ebx, dword ptr [esp + 0x18]
+    L_007da12b: sub	ebx, eax
+    L_007da12d: mov	esi, dword ptr [esp + 0x30]
+    L_007da131: add	ebx, 0x10
+    L_007da134: test	esi, esi
+    L_007da136: mov	edx, ebp
+    L_007da138: je	L_007da13f
+    L_007da13a: sub	edx, esi
+    L_007da13c: add	edx, 0x10
+    L_007da13f: test	esi, esi
+    L_007da141: lea	edi, [4*edx]
+    L_007da148: je	L_007da14f
+    L_007da14a: sub	ebp, esi
+    L_007da14c: add	ebp, 0x10
+    L_007da14f: mov	eax, dword ptr [esp + 0x1c]
+    L_007da153: test	eax, eax
+    L_007da155: mov	edx, ebp
+    L_007da157: lea	esi, [4*edx]
+    L_007da15e: mov	edx, dword ptr [esp + 0x10]
+    L_007da162: je	L_007da169
+    L_007da164: sub	edx, eax
+    L_007da166: add	edx, 0x10
+    L_007da169: add	edx, edx
+    L_007da16b: add	edx, edx
+    L_007da16d: test	eax, eax
+    L_007da16f: mov	eax, dword ptr [esp + 0x10]
+    L_007da173: je	L_007da17c
+    L_007da175: sub	eax, dword ptr [esp + 0x1c]
+    L_007da179: add	eax, 0x10
+    L_007da17c: lea	eax, [edx + 4*eax]
+    L_007da17f: add	eax, esi
+    L_007da181: add	eax, edi
+    L_007da183: add	eax, ecx
+    L_007da185: add	eax, ecx
+    L_007da187: add	eax, ebx
+    L_007da189: add	eax, dword ptr [esp + 0x20]
+    L_007da18d: pop	edi
+    L_007da18e: add	eax, dword ptr [esp + 0x10]
+    L_007da192: pop	esi
+    L_007da193: add	eax, dword ptr [esp + 0x80]
+    L_007da19a: pop	ebp
+    L_007da19b: add	eax, dword ptr [esp + 0x2c]
+    L_007da19f: pop	ebx
+    L_007da1a0: add	eax, dword ptr [esp + 0x58]
+    L_007da1a4: add	eax, dword ptr [esp + 0x30]
+    L_007da1a8: add	eax, dword ptr [esp + 0x70]
+    L_007da1ac: add	eax, dword ptr [esp + 0x38]
+    L_007da1b0: add	eax, dword ptr [esp + 0x60]
+    L_007da1b4: add	eax, dword ptr [esp + 0x40]
+    L_007da1b8: add	eax, dword ptr [esp + 0x14]
+    L_007da1bc: add	eax, dword ptr [esp + 0x48]
+    L_007da1c0: add	eax, dword ptr [esp + 0x68]
+    L_007da1c4: add	eax, ecx
+    L_007da1c6: add	eax, ecx
+    L_007da1c8: add	eax, dword ptr [esp + 0x8]
+    L_007da1cc: mov	ecx, dword ptr [esp + 0x84]
+    L_007da1d3: add	eax, dword ptr [esp + 0x18]
+    L_007da1d7: add	eax, dword ptr [esp + 0x1c]
+    L_007da1db: add	eax, dword ptr [esp + 0x24]
+    L_007da1df: add	eax, dword ptr [esp + 0x2c]
+    L_007da1e3: add	eax, dword ptr [esp + 0x34]
+    L_007da1e7: add	eax, dword ptr [esp + 0x3c]
+    L_007da1eb: add	eax, dword ptr [esp + 0x44]
+    L_007da1ef: add	eax, dword ptr [esp + 0x4c]
+    L_007da1f3: add	eax, dword ptr [esp + 0x54]
+    L_007da1f7: add	eax, dword ptr [esp + 0x5c]
+    L_007da1fb: add	eax, dword ptr [esp + 0x64]
+    L_007da1ff: add	eax, dword ptr [esp + 0x6c]
+    L_007da203: add	eax, dword ptr [esp + 0x74]
+    L_007da207: add	eax, dword ptr [esp + 0x7c]
+    L_007da20b: add	eax, ecx
+    L_007da20d: add	eax, ecx
+    L_007da20f: add	esp, 0x88
+    L_007da215: ret
+    }
+}
