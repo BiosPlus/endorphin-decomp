@@ -141,3 +141,17 @@ extern "C" __declspec(naked) void __stdcall fn_00444520(void* a1, void* a2) {
         ret 0x8
     }
 }
+
+// [0x00446760] NodeView::vfunc_0_off_144 (41 bytes)
+extern "C" void ext_00444480();
+extern "C" void ext_00446710();
+
+extern "C" void __fastcall fn_00446760(void* self, int edx_unused, int a1) {
+    if (a1 == 1) {
+        void* p = (char*)self - 0x144;
+        reinterpret_cast<void (__fastcall*)(void*)>(ext_00446710)(p);
+    } else if (a1 == 0) {
+        void* p = (char*)self - 0x144;
+        reinterpret_cast<void (__fastcall*)(void*)>(ext_00444480)(p);
+    }
+}

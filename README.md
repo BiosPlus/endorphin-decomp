@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `12310 / 24049` (**51.19%**) — `9218` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1317508 / 4496005 bytes` (**29.30%** of 4.29 MB)
+- **In-Scope Functions Matched:** `12311 / 24049` (**51.19%**) — `9219` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1317549 / 4496005 bytes` (**29.30%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -15,7 +15,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | **P0-10 (1-16B)** | 2379 / 2405 | 98.92% | 24669 / 25001 | 98.67% | 26 fn |
 | **P10-20 (16-32B)** | 2251 / 2405 | 93.60% | 57317 / 61769 | 92.79% | 154 fn |
-| **P20-30 (32-48B)** | 1401 / 2405 | 58.25% | 54234 / 97731 | 55.49% | 1004 fn |
+| **P20-30 (32-48B)** | 1402 / 2405 | 58.30% | 54275 / 97731 | 55.54% | 1003 fn |
 | **P30-40 (48-71B)** | 1055 / 2405 | 43.87% | 62698 / 144549 | 43.37% | 1350 fn |
 | **P40-50 (71-91B)** | 1148 / 2405 | 47.73% | 95662 / 194373 | 49.22% | 1257 fn |
 | **P50-60 (91-122B)** | 1285 / 2405 | 53.43% | 138502 / 256906 | 53.91% | 1120 fn |
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6752 | 525991 | 73.25% |
-| `claude-haiku-5.5@low` | 852 | 250811 | 9.24% |
+| `claude-haiku-5.5@medium` | 6752 | 525991 | 73.24% |
+| `claude-haiku-5.5@low` | 853 | 250852 | 9.25% |
 | `gemini-3.8-flash@low` | 494 | 190128 | 5.36% |
 | `gemini-4-hydrogen@low` | 467 | 201009 | 5.07% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.85% |
