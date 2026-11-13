@@ -28,5 +28,7 @@
     "0x006B21EF",
     "0x006B220F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-13T12:26:33Z"
 }
