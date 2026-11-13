@@ -398,3 +398,17 @@ extern "C" __declspec(naked) void* __fastcall fn_005ED030(void* self, int edx_un
         ret 0x8
     }
 }
+
+extern "C" void __fastcall ext_00588330(void* self, int edx_unused, void* a1, void* a2);
+extern "C" void* __cdecl ext_006A6E9E(void* ptr, int vfDelta, void* srcType, void* dstType, int isReference);
+extern "C" int mem_00A8F318;
+extern "C" int mem_00A2E2BC;
+
+// [0x005E0630] NMData::SkeletalJointData::vfunc_40 (52 bytes)
+extern "C" void __fastcall fn_005E0630(void* self, int edx_unused, void* a1, void* a2) {
+    if (*((unsigned char*)self + 0x179) != 0) {
+        return;
+    }
+    ext_00588330(self, edx_unused, a1, a2);
+    ext_006A6E9E(a1, 0, &mem_00A2E2BC, &mem_00A8F318, 0);
+}
