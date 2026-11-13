@@ -5885,3 +5885,22 @@ L_no_b:
         ret
     }
 }
+
+// [0x004953D0] sub_004953D0 (59 bytes)
+extern "C" void ext_0058F200();
+extern "C" __declspec(naked) void* __fastcall fn_004953D0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0058F200
+        mov dword ptr [esi + 0x150], 0x928eac
+        mov dword ptr [esi], 0x935afc
+        mov dword ptr [esi + 0x4], 0x935ab4
+        mov dword ptr [esi + 0x8], 0x935a74
+        mov dword ptr [esi + 0xc], 0x935a24
+        mov dword ptr [esi + 0x150], 0x935a10
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
