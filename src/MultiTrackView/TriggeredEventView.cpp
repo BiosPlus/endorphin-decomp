@@ -209,3 +209,298 @@ L_45DF6F:
         ret
     }
 }
+
+// [0x0045DFF0] MultiTrackView::TriggeredEventView::vfunc_1_off_254 (899 bytes)
+extern "C" void ext_00427640();
+extern "C" void ext_0053F5F0();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0063F530();
+extern "C" int mem_00A9F604;
+extern "C" int mem_00A9FAE0;
+extern "C" __declspec(naked) void __fastcall fn_0045DFF0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push 0x1
+        push 0x0
+        mov ebx, ecx
+        push 0x937f78
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je short L_45E02D
+        cmp eax, 0xb53b30
+        je short L_45E02D
+        cmp eax, 0xb53ab0
+        je short L_45E02D
+        cmp eax, 0xb53a70
+        je short L_45E02D
+        cmp eax, 0xb53af0
+        jne short L_45E034
+L_45E02D:
+        mov esi, 0xb53b30
+        jmp short L_45E036
+L_45E034:
+        mov esi, eax
+L_45E036:
+        mov eax, dword ptr [mem_00A9F604]
+        push eax
+        mov ecx, esi
+        call ext_0063EFE0
+        cmp eax, 0xb53a34
+        je short L_45E07E
+        cmp eax, 0xb53b30
+        je short L_45E07E
+        cmp eax, 0xb53ab0
+        je short L_45E07E
+        cmp eax, 0xb53a70
+        je short L_45E07E
+        cmp eax, 0xb53af0
+        je short L_45E07E
+        lea ecx, [esp + 0x14]
+        push ecx
+        lea edx, [ebx - 0xef]
+        push edx
+        mov dword ptr [esp + 0x1c], eax
+        call ext_00427640
+        add esp, 0x8
+L_45E07E:
+        push 0x937f70
+        mov ecx, esi
+        call ext_0063EFE0
+        cmp eax, 0xb53a34
+        je short L_45E0C5
+        cmp eax, 0xb53b30
+        je short L_45E0C5
+        cmp eax, 0xb53ab0
+        je short L_45E0C5
+        cmp eax, 0xb53a70
+        je short L_45E0C5
+        cmp eax, 0xb53af0
+        je short L_45E0C5
+        mov dword ptr [esp + 0x14], eax
+        lea eax, [esp + 0x14]
+        push eax
+        lea ecx, [ebx - 0xec]
+        push ecx
+        call ext_0053F5F0
+        add esp, 0x8
+L_45E0C5:
+        push 0x937f64
+        mov ecx, esi
+        call ext_0063EFE0
+        cmp eax, 0xb53a34
+        je short L_45E10C
+        cmp eax, 0xb53b30
+        je short L_45E10C
+        cmp eax, 0xb53ab0
+        je short L_45E10C
+        cmp eax, 0xb53a70
+        je short L_45E10C
+        cmp eax, 0xb53af0
+        je short L_45E10C
+        lea edx, [esp + 0x14]
+        mov dword ptr [esp + 0x14], eax
+        push edx
+        lea eax, [ebx - 0xe8]
+        push eax
+        call ext_0053F5F0
+        add esp, 0x8
+L_45E10C:
+        push 0x937f5c
+        mov ecx, esi
+        call ext_0063EFE0
+        cmp eax, 0xb53a34
+        je short L_45E153
+        cmp eax, 0xb53b30
+        je short L_45E153
+        cmp eax, 0xb53ab0
+        je short L_45E153
+        cmp eax, 0xb53a70
+        je short L_45E153
+        cmp eax, 0xb53af0
+        je short L_45E153
+        lea ecx, [esp + 0x14]
+        push ecx
+        lea edx, [ebx - 0xe0]
+        push edx
+        mov dword ptr [esp + 0x1c], eax
+        call ext_0053F5F0
+        add esp, 0x8
+L_45E153:
+        push 0x1
+        push 0x0
+        push 0x937f50
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je short L_45E186
+        cmp eax, 0xb53b30
+        je short L_45E186
+        cmp eax, 0xb53ab0
+        je short L_45E186
+        cmp eax, 0xb53a70
+        je short L_45E186
+        cmp eax, 0xb53af0
+        jne short L_45E18D
+L_45E186:
+        mov esi, 0xb53b30
+        jmp short L_45E18F
+L_45E18D:
+        mov esi, eax
+L_45E18F:
+        mov eax, dword ptr [mem_00A9F604]
+        push eax
+        mov ecx, esi
+        call ext_0063EFE0
+        cmp eax, 0xb53a34
+        je short L_45E1D7
+        cmp eax, 0xb53b30
+        je short L_45E1D7
+        cmp eax, 0xb53ab0
+        je short L_45E1D7
+        cmp eax, 0xb53a70
+        je short L_45E1D7
+        cmp eax, 0xb53af0
+        je short L_45E1D7
+        lea ecx, [esp + 0x14]
+        push ecx
+        lea edx, [ebx - 0xdc]
+        push edx
+        mov dword ptr [esp + 0x1c], eax
+        call ext_00427640
+        add esp, 0x8
+L_45E1D7:
+        mov eax, dword ptr [mem_00A9FAE0]
+        push eax
+        mov ecx, esi
+        call ext_0063EFE0
+        cmp eax, 0xb53a34
+        je short L_45E21F
+        cmp eax, 0xb53b30
+        je short L_45E21F
+        cmp eax, 0xb53ab0
+        je short L_45E21F
+        cmp eax, 0xb53a70
+        je short L_45E21F
+        cmp eax, 0xb53af0
+        je short L_45E21F
+        lea ecx, [esp + 0x14]
+        push ecx
+        lea edx, [ebx - 0xd8]
+        push edx
+        mov dword ptr [esp + 0x1c], eax
+        call ext_0053F5F0
+        add esp, 0x8
+L_45E21F:
+        push 0x937f48
+        mov ecx, esi
+        call ext_0063EFE0
+        cmp eax, 0xb53a34
+        je short L_45E266
+        cmp eax, 0xb53b30
+        je short L_45E266
+        cmp eax, 0xb53ab0
+        je short L_45E266
+        cmp eax, 0xb53a70
+        je short L_45E266
+        cmp eax, 0xb53af0
+        je short L_45E266
+        mov dword ptr [esp + 0x14], eax
+        lea eax, [esp + 0x14]
+        push eax
+        lea ecx, [ebx - 0xd4]
+        push ecx
+        call ext_0053F5F0
+        add esp, 0x8
+L_45E266:
+        push 0x1
+        push 0x0
+        push 0x937f3c
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je short L_45E299
+        cmp eax, 0xb53b30
+        je short L_45E299
+        cmp eax, 0xb53ab0
+        je short L_45E299
+        cmp eax, 0xb53a70
+        je short L_45E299
+        cmp eax, 0xb53af0
+        jne short L_45E29E
+L_45E299:
+        mov eax, 0xb53b30
+L_45E29E:
+        push 0x937f70
+        mov ecx, eax
+        call ext_0063EFE0
+        cmp eax, 0xb53a34
+        je short L_45E2E5
+        cmp eax, 0xb53b30
+        je short L_45E2E5
+        cmp eax, 0xb53ab0
+        je short L_45E2E5
+        cmp eax, 0xb53a70
+        je short L_45E2E5
+        cmp eax, 0xb53af0
+        je short L_45E2E5
+        lea edx, [esp + 0x14]
+        mov dword ptr [esp + 0x14], eax
+        push edx
+        lea eax, [ebx - 0xe4]
+        push eax
+        call ext_0053F5F0
+        add esp, 0x8
+L_45E2E5:
+        push 0x1
+        push 0x0
+        push 0x937f2c
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je short L_45E318
+        cmp eax, 0xb53b30
+        je short L_45E318
+        cmp eax, 0xb53ab0
+        je short L_45E318
+        cmp eax, 0xb53a70
+        je short L_45E318
+        cmp eax, 0xb53af0
+        jne short L_45E31D
+L_45E318:
+        mov eax, 0xb53b30
+L_45E31D:
+        push 0x937f48
+        mov ecx, eax
+        call ext_0063EFE0
+        cmp eax, 0xb53a34
+        je short L_45E36C
+        cmp eax, 0xb53b30
+        je short L_45E36C
+        cmp eax, 0xb53ab0
+        je short L_45E36C
+        cmp eax, 0xb53a70
+        je short L_45E36C
+        cmp eax, 0xb53af0
+        je short L_45E36C
+        lea ecx, [esp + 0x14]
+        push ecx
+        lea edx, [esp + 0x10]
+        push edx
+        mov dword ptr [esp + 0x1c], eax
+        call ext_0053F5F0
+        mov eax, dword ptr [esp + 0x14]
+        add esp, 0x8
+        mov dword ptr [ebx - 0xcc], eax
+L_45E36C:
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x4
+    }
+}
