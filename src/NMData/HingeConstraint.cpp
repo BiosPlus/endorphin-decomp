@@ -456,3 +456,41 @@ extern "C" __declspec(naked) float* __fastcall fn_00612980(void* self, int edx_u
         ret 0x4
     }
 }
+
+// [0x006116E0] NMData::HingeConstraint::vfunc_61 (81 bytes)
+extern "C" void ext_0067E410();
+extern "C" void ext_00594000();
+extern "C" void ext_00493EE0();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_006116E0(void* self, int edx_unused, float* a1) {
+    __asm {
+        sub esp, 0xc
+        mov eax, dword ptr [esp + 0x10]
+        fld dword ptr [eax]
+        mov eax, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [eax + 0xc]
+        fchs
+        lea edx, [esp]
+        fstp dword ptr [esp]
+        fldz
+        push edx
+        mov edx, dword ptr [mem_00B40640]
+        fst dword ptr [esp + 0x8]
+        add ecx, 0x4
+        fstp dword ptr [esp + 0xc]
+        push 0x0
+        push edx
+        call eax
+        mov ecx, eax
+        call ext_0067E410
+        call ext_00594000
+        test eax, eax
+        je done
+        lea ecx, [eax + 0x258]
+        call ext_00493EE0
+    done:
+        add esp, 0xc
+        ret 0x4
+    }
+}
