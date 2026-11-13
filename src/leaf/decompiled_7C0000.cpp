@@ -7902,3 +7902,24 @@ extern "C" __declspec(naked) void __fastcall fn_007C9BF0(void* self) {
         ret
     }
 }
+
+// [0x007C6DB0] sub_007C6DB0 (35 bytes)
+extern "C" void ext_007C6C60();
+extern "C" int mem_00AB28C8;
+
+extern "C" __declspec(naked) void __cdecl fn_007C6DB0(void* a0) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push esi
+        call ext_007C6C60
+        mov eax, dword ptr [esi + 0x17c]
+        add eax, 0x114
+        push esi
+        push eax
+        call dword ptr [mem_00AB28C8]
+        add esp, 0xc
+        pop esi
+        ret
+    }
+}
