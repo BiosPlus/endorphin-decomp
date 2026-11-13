@@ -6863,3 +6863,98 @@ extern "C" __declspec(naked) void __fastcall fn_00624990(void* self) {
         ret 8
     }
 }
+
+// [0x00625D10] sub_00625D10 (203 bytes)
+extern "C" void ext_005FD330();
+extern "C" void ext_00624DC0();
+extern "C" void ext_00625650();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00625D10(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4, void* a5) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        test edi, edi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov ebp, dword ptr [eax]
+        je L_625D2A
+        cmp edi, esi
+        je L_625D30
+    L_625D2A:
+        call dword ptr [mem_00925134]
+    L_625D30:
+        mov ebx, dword ptr [esp + 0x24]
+        cmp ebx, ebp
+        jne L_625D91
+        mov eax, dword ptr [esp + 0x28]
+        test eax, eax
+        mov ebp, dword ptr [esi + 0x4]
+        je L_625D47
+        cmp eax, esi
+        je L_625D4D
+    L_625D47:
+        call dword ptr [mem_00925134]
+    L_625D4D:
+        cmp dword ptr [esp + 0x2c], ebp
+        jne L_625D91
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx + 0x4]
+        push edx
+        mov ecx, esi
+        call ext_005FD330
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x4], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [esi + 0x8], 0
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x8], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x1c]
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x4], ecx
+        pop ebx
+        add esp, 8
+        ret 0x14
+    L_625D91:
+        test edi, edi
+        je L_625D9B
+        cmp edi, dword ptr [esp + 0x28]
+        je L_625DA1
+    L_625D9B:
+        call dword ptr [mem_00925134]
+    L_625DA1:
+        cmp ebx, dword ptr [esp + 0x2c]
+        je L_625DC8
+        lea ecx, [esp + 0x20]
+        call ext_00624DC0
+        push ebx
+        push edi
+        lea edx, [esp + 0x18]
+        push edx
+        mov ecx, esi
+        call ext_00625650
+        mov ebx, dword ptr [esp + 0x24]
+        mov edi, dword ptr [esp + 0x20]
+        jmp L_625D91
+    L_625DC8:
+        mov eax, dword ptr [esp + 0x1c]
+        mov dword ptr [eax], edi
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x4], ebx
+        pop ebx
+        add esp, 8
+        ret 0x14
+    }
+}
