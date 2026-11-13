@@ -6156,3 +6156,38 @@ extern "C" __declspec(naked) void __fastcall fn_0048D350(void* self) {
         ret
     }
 }
+
+// [0x0048C920] sub_0048C920 (59 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_0048C920(unsigned char* first, unsigned char* last, unsigned char* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je L_done_0048C920
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    L_loop_0048C920:
+        mov eax, dword ptr [esi - 0x68]
+        sub esi, 0x68
+        lea ecx, [esi + 0x4]
+        sub edi, 0x68
+        push ecx
+        lea ecx, [edi + 0x4]
+        mov dword ptr [edi], eax
+        call ext_0048C8A0
+        cmp esi, ebx
+        jne L_loop_0048C920
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_done_0048C920:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
