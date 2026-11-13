@@ -119,3 +119,64 @@ extern "C" __declspec(naked) void __fastcall fn_0048EB50(void* self) {
         ret
     }
 }
+
+// [0x0048E860] Commands::SetTriggeredEventEnabledCommand::vfunc_3 (182 bytes)
+extern "C" void ext_00435D00();
+extern "C" int mem_0088533C;
+extern "C" int mem_00924E4C;
+extern "C" int mem_00924E54;
+extern "C" int mem_00924E58;
+extern "C" int mem_00925000;
+extern "C" int mem_0093E6A4;
+extern "C" int mem_0093E6B4;
+
+extern "C" __declspec(naked) void __fastcall fn_0048E860(void* self, int edx_unused, void* out) {
+    __asm {
+        push -1
+        push offset mem_0088533C
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 84h
+        push esi
+        push 1
+        mov esi, ecx
+        push 2
+        lea ecx, [esp + 10h]
+        mov dword ptr [esp + 0Ch], 0
+        call dword ptr [mem_00924E4C]
+        movzx eax, byte ptr [esi + 14h]
+        test al, al
+        mov dword ptr [esp + 90h], 1
+        je short L_false
+        push eax
+        push offset mem_0093E6B4
+        lea eax, [esp + 10h]
+        push eax
+        jmp short L_call
+    L_false:
+        push 0
+        push offset mem_0093E6A4
+        lea ecx, [esp + 10h]
+        push ecx
+    L_call:
+        call ext_00435D00
+        add esp, 8
+        mov ecx, eax
+        call dword ptr [mem_00925000]
+        mov esi, dword ptr [esp + 98h]
+        push esi
+        lea ecx, [esp + 0Ch]
+        call dword ptr [mem_00924E54]
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 4], 1
+        mov byte ptr [esp + 90h], 0
+        call dword ptr [mem_00924E58]
+        mov ecx, dword ptr [esp + 88h]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 90h
+        ret 4
+    }
+}
