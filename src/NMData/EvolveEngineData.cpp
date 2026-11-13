@@ -206,3 +206,112 @@ loc_005005FB:
         ret 8
     }
 }
+
+// [0x005012A0] NMData::EvolveEngineData::vfunc_2_off_8 (245 bytes)
+extern "C" void ext_0041CF50();
+extern "C" void ext_005010D0();
+extern "C" void ext_00679030();
+extern "C" void ext_006798D0();
+extern "C" void ext_00685900();
+extern "C" int mem_00B599BC;
+
+extern "C" __declspec(naked) void* __fastcall fn_005012A0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8b28a9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push ebp
+        mov ebp, ecx
+        xor ebx, ebx
+        lea eax, [ebp - 0x8]
+        neg eax
+        sbb eax, eax
+        mov dword ptr [esp + 0x8], ebx
+        mov ecx, dword ptr [ebp + 0x138]
+        push esi
+        and eax, ebp
+        cmp ecx, ebx
+        push edi
+        mov dword ptr [esp + 0x24], ebx
+        je loc_005012E0
+        add ecx, 0x10
+        jmp loc_005012E2
+
+loc_005012E0:
+        xor ecx, ecx
+
+loc_005012E2:
+        mov edi, dword ptr [esp + 0x30]
+        mov esi, dword ptr [esp + 0x2c]
+        push eax
+        push edi
+        push ecx
+        push esi
+        call ext_006798D0
+        mov ecx, eax
+        call ext_00679030
+        mov eax, dword ptr [esi + 0x4]
+        cmp eax, ebx
+        mov dword ptr [esp + 0x24], ebx
+        mov dword ptr [esp + 0x10], 1
+        je loc_00501315
+        cmp eax, dword ptr [mem_00B599BC]
+        jne loc_0050137E
+
+loc_00501315:
+        mov eax, dword ptr [ebp + 0x138]
+        cmp eax, ebx
+        push edi
+        je loc_00501339
+        lea ecx, [eax + 0x10]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x8]
+        lea edx, [esp + 0x18]
+        push edx
+        call eax
+        mov dword ptr [esp + 0x24], 1
+        jmp loc_0050135E
+
+loc_00501339:
+        lea ecx, [ebp + 0x124]
+        call ext_005010D0
+        cmp eax, ebx
+        je loc_0050137E
+        push ebx
+        push ebx
+        lea ecx, [esp + 0x1c]
+        push ecx
+        mov ecx, eax
+        call ext_00685900
+        mov dword ptr [esp + 0x24], 2
+
+loc_0050135E:
+        push eax
+        mov ecx, esi
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x18]
+        cmp ecx, ebx
+        mov byte ptr [esp + 0x24], bl
+        je loc_0050137E
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x14]
+        push eax
+        call edx
+
+loc_0050137E:
+        mov ecx, dword ptr [esp + 0x1c]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x18
+        ret 8
+    }
+}
