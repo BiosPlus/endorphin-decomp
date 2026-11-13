@@ -4901,3 +4901,31 @@ extern "C" __declspec(naked) void __fastcall fn_00520AB0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00520D90] sub_00520D90 (41 bytes)
+extern "C" void ext_00520AE0();
+
+extern "C" __declspec(naked) void __cdecl fn_00520D90(void* first, void* last, const void* value) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp esi, edi
+        je done
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+    loop_top:
+        push ebx
+        mov ecx, esi
+        call ext_00520AE0
+        add esi, 0x168
+        cmp esi, edi
+        jne loop_top
+        pop ebx
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
