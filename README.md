@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `11308 / 24049` (**47.02%**) — `8216` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `855185 / 4496005 bytes` (**19.02%** of 4.29 MB)
+- **In-Scope Functions Matched:** `11309 / 24049` (**47.02%**) — `8217` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `855217 / 4496005 bytes` (**19.02%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -14,7 +14,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Size Tier | Matched / Total Funcs | Func % | Matched / Total Bytes | Byte % | Remaining |
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | **P0-10 (1-16B)** | 2379 / 2405 | 98.92% | 24669 / 25001 | 98.67% | 26 fn |
-| **P10-20 (16-32B)** | 2200 / 2405 | 91.48% | 55717 / 61769 | 90.20% | 205 fn |
+| **P10-20 (16-32B)** | 2201 / 2405 | 91.52% | 55749 / 61769 | 90.25% | 204 fn |
 | **P20-30 (32-48B)** | 1224 / 2405 | 50.89% | 47749 / 97731 | 48.86% | 1181 fn |
 | **P30-40 (48-71B)** | 1002 / 2405 | 41.66% | 59551 / 144549 | 41.20% | 1403 fn |
 | **P40-50 (71-91B)** | 1092 / 2405 | 45.41% | 91147 / 194373 | 46.89% | 1313 fn |
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6748 | 515897 | 82.13% |
-| `claude-haiku-5.5@low` | 453 | 103196 | 5.51% |
+| `claude-haiku-5.5@medium` | 6748 | 515897 | 82.12% |
+| `claude-haiku-5.5@low` | 454 | 103228 | 5.53% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.44% |
 | `gemini-3.8-flash@low` | 259 | 59305 | 3.15% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.98% |

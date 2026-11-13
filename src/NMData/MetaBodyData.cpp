@@ -514,3 +514,23 @@ extern "C" __declspec(naked) void __fastcall fn_005B8D90(void* self) {
         ret 0x4
     }
 }
+
+// [0x005B64A0] NMData::MetaBodyData::vfunc_2 (32 bytes)
+extern "C" void ext_0058A370();
+
+extern "C" __declspec(naked) int __fastcall fn_005B64A0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push esi
+        mov dword ptr [esp + 0xc], 0
+        call ext_0058A370
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
