@@ -1,5 +1,24 @@
 // Decompiled translation unit: src/templates/SetType.cpp
 
+// [0x004B9D30] Properties::SetType<PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>, Properties::GetTerminalParent>::vfunc_11 (32 bytes)
+extern "C" void ext_004B7620();
+
+extern "C" __declspec(naked) void __fastcall fn_004B9D30(void* self, int edx_unused, void* a1, void* a2, void* a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [esp + 0xc]
+        push edx
+        push eax
+        call ext_004B7620
+        ret 0x10
+    }
+}
+
 // [0x004BBD10] Properties::SetType<PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>, Properties::GetTerminalParent>::vfunc_12 (78 bytes)
 extern "C" void ext_004BB160();
 extern "C" void ext_004BA920();
@@ -258,3 +277,4 @@ extern "C" __declspec(naked) void __fastcall fn_00500C50(void* self, int edx_unu
         ret 0x8
     }
 }
+

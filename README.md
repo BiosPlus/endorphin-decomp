@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `12118 / 24049` (**50.39%**) — `9026` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1280567 / 4496005 bytes` (**28.48%** of 4.29 MB)
+- **In-Scope Functions Matched:** `12119 / 24049` (**50.39%**) — `9027` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1280599 / 4496005 bytes` (**28.48%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -14,7 +14,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Size Tier | Matched / Total Funcs | Func % | Matched / Total Bytes | Byte % | Remaining |
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | **P0-10 (1-16B)** | 2379 / 2405 | 98.92% | 24669 / 25001 | 98.67% | 26 fn |
-| **P10-20 (16-32B)** | 2234 / 2405 | 92.89% | 56773 / 61769 | 91.91% | 171 fn |
+| **P10-20 (16-32B)** | 2235 / 2405 | 92.93% | 56805 / 61769 | 91.96% | 170 fn |
 | **P20-30 (32-48B)** | 1266 / 2405 | 52.64% | 49320 / 97731 | 50.47% | 1139 fn |
 | **P30-40 (48-71B)** | 1052 / 2405 | 43.74% | 62535 / 144549 | 43.26% | 1353 fn |
 | **P40-50 (71-91B)** | 1144 / 2405 | 47.57% | 95332 / 194373 | 49.05% | 1261 fn |
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6751 | 521324 | 74.80% |
-| `claude-haiku-5.5@low` | 778 | 237355 | 8.62% |
+| `claude-haiku-5.5@medium` | 6751 | 521324 | 74.79% |
+| `claude-haiku-5.5@low` | 779 | 237387 | 8.63% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.95% |
 | `gemini-3.8-flash@low` | 445 | 175452 | 4.93% |
 | `gemini-4-hydrogen@low` | 399 | 196867 | 4.42% |
