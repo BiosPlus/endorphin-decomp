@@ -514,3 +514,36 @@ extern "C" __declspec(naked) void __fastcall fn_0053AE40(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0053ABF0] Primitives::Animation::vfunc_30 (85 bytes)
+extern "C" void ext_0053A930();
+extern "C" int mem_00AF053C;
+extern "C" int mem_00AF0540;
+extern "C" int mem_00AF0544;
+extern "C" int mem_009324A4;
+extern "C" int mem_00AF0548;
+extern "C" __declspec(naked) void __fastcall fn_0053ABF0(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        sub esp, 0x8
+        test edx, 0x200
+        mov eax, esp
+        mov dword ptr [eax], 0x9553b0
+        mov dword ptr [eax + 0x4], edx
+        jne L_0053AC12
+        call ext_0053A930
+        ret 0x8
+L_0053AC12:
+        call ext_0053A930
+        fld dword ptr [eax]
+        fstp dword ptr [mem_00AF053C]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [mem_00AF0540]
+        fld dword ptr [eax + 0x8]
+        mov eax, offset mem_00AF053C
+        fstp dword ptr [mem_00AF0544]
+        fld dword ptr [mem_009324A4]
+        fstp dword ptr [mem_00AF0548]
+        ret 0x8
+    }
+}
