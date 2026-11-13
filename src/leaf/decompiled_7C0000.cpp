@@ -11223,3 +11223,22 @@ L_done:
         ret
     }
 }
+
+extern "C" void ext_007DDEE0();
+
+// [0x007C8B90] sub_007C8B90 (31 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C8B90(void* arg1) {
+    __asm {
+        fldz
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_007DDEE0
+        mov eax, dword ptr [esi + 0x2c]
+        pop esi
+        mov dword ptr [esp + 0x4], eax
+        jmp ext_007DCED0
+    }
+}
