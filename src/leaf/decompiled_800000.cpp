@@ -2447,3 +2447,335 @@ loc_008048a6:
 
     }
 }
+
+// [0x00802FD0] sub_00802FD0 (995 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00802FD0(void* self) {
+    __asm {
+        mov	eax, dword ptr [esp + 0x18]
+        push	ebx
+        mov	ebx, dword ptr [esp + 0xc]
+        push	ebp
+        push	esi
+        mov	esi, dword ptr [esp + 0x10]
+        xor	edx, edx
+        xor	ebp, ebp
+        cmp	eax, 0x4
+        push	edi
+        jl loc_00803172
+        mov	ebp, dword ptr [esp + 0x20]
+        add	eax, -0x4
+        shr	eax, 0x2
+        add	eax, 0x1
+        mov	dword ptr [esp + 0x14], eax
+        add	eax, eax
+        add	ebp, 0x8
+        add	eax, eax
+        mov	dword ptr [esp + 0x18], eax
+        __asm _emit 0x8D __asm _emit 0xA4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+loc_00803010:
+        mov	edi, dword ptr [ebp - 0x8]
+        mov	eax, dword ptr [ecx + 0x30]
+        fld	dword ptr [eax + 4*edi]
+        mov	eax, dword ptr [ecx + 0x3c]
+        fld	dword ptr [eax + 4*edi]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x41
+        jne SHORT loc_0080303b
+        mov	dword ptr [esi + 4*edi], 0xffffffff
+        mov	dword ptr [ebx + 4*edi], 0x0
+        mov	edx, 0x1
+loc_0080303b:
+        mov	eax, dword ptr [ecx + 0x30]
+        fld	dword ptr [eax + 4*edi]
+        mov	eax, dword ptr [ecx + 0x38]
+        fld	dword ptr [eax + 4*edi]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x5
+        jp SHORT loc_00803063
+        mov	dword ptr [esi + 4*edi], 0xffffffff
+        mov	dword ptr [ebx + 4*edi], 0xffffffff
+        mov	edx, 0x1
+loc_00803063:
+        mov	edi, dword ptr [ebp - 0x4]
+        mov	eax, dword ptr [ecx + 0x30]
+        fld	dword ptr [eax + 4*edi]
+        mov	eax, dword ptr [ecx + 0x3c]
+        fld	dword ptr [eax + 4*edi]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x41
+        jne SHORT loc_0080308e
+        mov	dword ptr [esi + 4*edi], 0xffffffff
+        mov	dword ptr [ebx + 4*edi], 0x0
+        mov	edx, 0x1
+loc_0080308e:
+        mov	eax, dword ptr [ecx + 0x30]
+        fld	dword ptr [eax + 4*edi]
+        mov	eax, dword ptr [ecx + 0x38]
+        fld	dword ptr [eax + 4*edi]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x5
+        jp SHORT loc_008030b6
+        mov	dword ptr [esi + 4*edi], 0xffffffff
+        mov	dword ptr [ebx + 4*edi], 0xffffffff
+        mov	edx, 0x1
+loc_008030b6:
+        mov	edi, dword ptr [ebp]
+        mov	eax, dword ptr [ecx + 0x30]
+        fld	dword ptr [eax + 4*edi]
+        mov	eax, dword ptr [ecx + 0x3c]
+        fld	dword ptr [eax + 4*edi]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x41
+        jne SHORT loc_008030e1
+        mov	dword ptr [esi + 4*edi], 0xffffffff
+        mov	dword ptr [ebx + 4*edi], 0x0
+        mov	edx, 0x1
+loc_008030e1:
+        mov	eax, dword ptr [ecx + 0x30]
+        fld	dword ptr [eax + 4*edi]
+        mov	eax, dword ptr [ecx + 0x38]
+        fld	dword ptr [eax + 4*edi]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x5
+        jp SHORT loc_00803109
+        mov	dword ptr [esi + 4*edi], 0xffffffff
+        mov	dword ptr [ebx + 4*edi], 0xffffffff
+        mov	edx, 0x1
+loc_00803109:
+        mov	edi, dword ptr [ebp + 0x4]
+        mov	eax, dword ptr [ecx + 0x30]
+        fld	dword ptr [eax + 4*edi]
+        mov	eax, dword ptr [ecx + 0x3c]
+        fld	dword ptr [eax + 4*edi]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x41
+        jne SHORT loc_00803134
+        mov	dword ptr [esi + 4*edi], 0xffffffff
+        mov	dword ptr [ebx + 4*edi], 0x0
+        mov	edx, 0x1
+loc_00803134:
+        mov	eax, dword ptr [ecx + 0x30]
+        fld	dword ptr [eax + 4*edi]
+        mov	eax, dword ptr [ecx + 0x38]
+        fld	dword ptr [eax + 4*edi]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x5
+        jp SHORT loc_0080315c
+        mov	dword ptr [esi + 4*edi], 0xffffffff
+        mov	dword ptr [ebx + 4*edi], 0xffffffff
+        mov	edx, 0x1
+loc_0080315c:
+        add	ebp, 0x10
+        sub	dword ptr [esp + 0x14], 0x1
+        jne loc_00803010
+        mov	ebp, dword ptr [esp + 0x18]
+        mov	eax, dword ptr [esp + 0x28]
+loc_00803172:
+        cmp	ebp, eax
+        jge SHORT loc_008031d6
+loc_00803176:
+        mov	eax, dword ptr [esp + 0x20]
+        mov	edi, dword ptr [eax + 4*ebp]
+        mov	eax, dword ptr [ecx + 0x30]
+        fld	dword ptr [eax + 4*edi]
+        mov	eax, dword ptr [ecx + 0x3c]
+        fld	dword ptr [eax + 4*edi]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x41
+        jne SHORT loc_008031a5
+        mov	dword ptr [esi + 4*edi], 0xffffffff
+        mov	dword ptr [ebx + 4*edi], 0x0
+        mov	edx, 0x1
+loc_008031a5:
+        mov	eax, dword ptr [ecx + 0x30]
+        fld	dword ptr [eax + 4*edi]
+        mov	eax, dword ptr [ecx + 0x38]
+        fld	dword ptr [eax + 4*edi]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x5
+        jp SHORT loc_008031cd
+        mov	dword ptr [esi + 4*edi], 0xffffffff
+        mov	dword ptr [ebx + 4*edi], 0xffffffff
+        mov	edx, 0x1
+loc_008031cd:
+        add	ebp, 0x1
+        cmp	ebp, dword ptr [esp + 0x28]
+        jl SHORT loc_00803176
+loc_008031d6:
+        mov	eax, dword ptr [esp + 0x24]
+        xor	ebp, ebp
+        cmp	eax, 0x4
+        jl loc_0080334b
+        mov	ebp, dword ptr [esp + 0x1c]
+        add	eax, -0x4
+        shr	eax, 0x2
+        add	eax, 0x1
+        mov	dword ptr [esp + 0x28], eax
+        add	eax, eax
+        add	ebp, 0x8
+        add	eax, eax
+        mov	dword ptr [esp + 0x18], eax
+loc_00803201:
+        mov	edi, dword ptr [ebp - 0x8]
+        cmp	dword ptr [ebx + 4*edi], 0x0
+        jne SHORT loc_0080322a
+        mov	eax, dword ptr [ecx + 0x34]
+        fld	dword ptr [eax + 4*edi]
+        fld	dword ptr [ecx + 0x20]
+        fchs
+        fcompp
+        fnstsw	ax
+        test	ah, 0x41
+        jne SHORT loc_0080322a
+        mov	dword ptr [esi + 4*edi], 0x0
+        mov	edx, 0x1
+loc_0080322a:
+        cmp	dword ptr [ebx + 4*edi], -0x1
+        jne SHORT loc_0080324e
+        mov	eax, dword ptr [ecx + 0x34]
+        fld	dword ptr [eax + 4*edi]
+        fld	dword ptr [ecx + 0x20]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x5
+        jp SHORT loc_0080324e
+        mov	dword ptr [esi + 4*edi], 0x0
+        mov	edx, 0x1
+loc_0080324e:
+        mov	edi, dword ptr [ebp - 0x4]
+        cmp	dword ptr [ebx + 4*edi], 0x0
+        jne SHORT loc_00803277
+        mov	eax, dword ptr [ecx + 0x34]
+        fld	dword ptr [eax + 4*edi]
+        fld	dword ptr [ecx + 0x20]
+        fchs
+        fcompp
+        fnstsw	ax
+        test	ah, 0x41
+        jne SHORT loc_00803277
+        mov	dword ptr [esi + 4*edi], 0x0
+        mov	edx, 0x1
+loc_00803277:
+        cmp	dword ptr [ebx + 4*edi], -0x1
+        jne SHORT loc_0080329b
+        mov	eax, dword ptr [ecx + 0x34]
+        fld	dword ptr [eax + 4*edi]
+        fld	dword ptr [ecx + 0x20]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x5
+        jp SHORT loc_0080329b
+        mov	dword ptr [esi + 4*edi], 0x0
+        mov	edx, 0x1
+loc_0080329b:
+        mov	edi, dword ptr [ebp]
+        cmp	dword ptr [ebx + 4*edi], 0x0
+        jne SHORT loc_008032c4
+        mov	eax, dword ptr [ecx + 0x34]
+        fld	dword ptr [eax + 4*edi]
+        fld	dword ptr [ecx + 0x20]
+        fchs
+        fcompp
+        fnstsw	ax
+        test	ah, 0x41
+        jne SHORT loc_008032c4
+        mov	dword ptr [esi + 4*edi], 0x0
+        mov	edx, 0x1
+loc_008032c4:
+        cmp	dword ptr [ebx + 4*edi], -0x1
+        jne SHORT loc_008032e8
+        mov	eax, dword ptr [ecx + 0x34]
+        fld	dword ptr [eax + 4*edi]
+        fld	dword ptr [ecx + 0x20]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x5
+        jp SHORT loc_008032e8
+        mov	dword ptr [esi + 4*edi], 0x0
+        mov	edx, 0x1
+loc_008032e8:
+        mov	edi, dword ptr [ebp + 0x4]
+        cmp	dword ptr [ebx + 4*edi], 0x0
+        jne SHORT loc_00803311
+        mov	eax, dword ptr [ecx + 0x34]
+        fld	dword ptr [eax + 4*edi]
+        fld	dword ptr [ecx + 0x20]
+        fchs
+        fcompp
+        fnstsw	ax
+        test	ah, 0x41
+        jne SHORT loc_00803311
+        mov	dword ptr [esi + 4*edi], 0x0
+        mov	edx, 0x1
+loc_00803311:
+        cmp	dword ptr [ebx + 4*edi], -0x1
+        jne SHORT loc_00803335
+        mov	eax, dword ptr [ecx + 0x34]
+        fld	dword ptr [eax + 4*edi]
+        fld	dword ptr [ecx + 0x20]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x5
+        jp SHORT loc_00803335
+        mov	dword ptr [esi + 4*edi], 0x0
+        mov	edx, 0x1
+loc_00803335:
+        add	ebp, 0x10
+        sub	dword ptr [esp + 0x28], 0x1
+        jne loc_00803201
+        mov	ebp, dword ptr [esp + 0x18]
+        mov	eax, dword ptr [esp + 0x24]
+loc_0080334b:
+        cmp	ebp, eax
+        jge SHORT loc_008033aa
+        nop
+loc_00803350:
+        mov	eax, dword ptr [esp + 0x1c]
+        mov	edi, dword ptr [eax + 4*ebp]
+        cmp	dword ptr [ebx + 4*edi], 0x0
+        jne SHORT loc_0080337d
+        mov	eax, dword ptr [ecx + 0x34]
+        fld	dword ptr [eax + 4*edi]
+        fld	dword ptr [ecx + 0x20]
+        fchs
+        fcompp
+        fnstsw	ax
+        test	ah, 0x41
+        jne SHORT loc_0080337d
+        mov	dword ptr [esi + 4*edi], 0x0
+        mov	edx, 0x1
+loc_0080337d:
+        cmp	dword ptr [ebx + 4*edi], -0x1
+        jne SHORT loc_008033a1
+        mov	eax, dword ptr [ecx + 0x34]
+        fld	dword ptr [eax + 4*edi]
+        fld	dword ptr [ecx + 0x20]
+        fcompp
+        fnstsw	ax
+        test	ah, 0x5
+        jp SHORT loc_008033a1
+        mov	dword ptr [esi + 4*edi], 0x0
+        mov	edx, 0x1
+loc_008033a1:
+        add	ebp, 0x1
+        cmp	ebp, dword ptr [esp + 0x24]
+        jl SHORT loc_00803350
+loc_008033aa:
+        pop	edi
+        pop	esi
+        pop	ebp
+        mov	eax, edx
+        pop	ebx
+        ret	0x18
+    }
+}
