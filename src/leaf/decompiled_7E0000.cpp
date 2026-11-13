@@ -5384,3 +5384,349 @@ extern "C" __declspec(naked) void __fastcall fn_007ED290(void* self) {
         ret
     }
 }
+
+// [0x007E1A10] sub_007E1A10 (791 bytes)
+extern "C" void ext_007F7660();
+extern "C" int mem_0099EC70;
+extern "C" __declspec(naked) void __cdecl fn_007E1A10(void* a1, void* a2) {
+    __asm {
+        sub esp, 44h
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 54h]
+        mov eax, dword ptr [esi]
+        push edi
+        push eax
+        call ext_007C6F70
+        mov ecx, dword ptr [esi + 4]
+        mov ebp, eax
+        push ecx
+        mov dword ptr [esp + 24h], ebp
+        call ext_007C6F70
+        mov edx, dword ptr [esi + 4]
+        push edx
+        mov ebx, eax
+        call ext_007C6F30
+        fstp qword ptr [esp + 30h]
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_007C6F30
+        fadd qword ptr [esp + 34h]
+        mov ecx, dword ptr [esi]
+        push ecx
+        fstp dword ptr [esp + 38h]
+        call ext_007C7000
+        mov edx, dword ptr [esi + 4]
+        push edx
+        mov dword ptr [esp + 28h], eax
+        call ext_007C7000
+        mov ecx, dword ptr [esp + 74h]
+        add esp, 18h
+        xor edx, edx
+        mov dword ptr [ecx + 0ch], edx
+        mov dword ptr [ecx + 1ch], edx
+        fld dword ptr [eax + 14h]
+        lea ecx, [esp + 2ch]
+        push ecx
+        lea edx, [esp + 1ch]
+        push edx
+        lea ecx, [esp + 1ch]
+        push ecx
+        sub esp, 8
+        fstp dword ptr [esp + 4]
+        lea esi, [ebx + 20h]
+        fld dword ptr [eax + 14h]
+        mov dword ptr [esp + 34h], eax
+        mov eax, dword ptr [esp + 24h]
+        _emit 0xd9
+        _emit 0xe0
+        fstp dword ptr [esp]
+        push esi
+        fld dword ptr [eax + 14h]
+        add ebx, 30h
+        push ebx
+        sub esp, 8
+        fstp dword ptr [esp + 4]
+        lea edi, [ebp + 20h]
+        fld dword ptr [eax + 14h]
+        add ebp, 30h
+        _emit 0xd9
+        _emit 0xe0
+        fstp dword ptr [esp]
+        push edi
+        push ebp
+        call ext_007F7660
+        fld dword ptr [edi]
+        fld dword ptr [esp + 40h]
+        add esp, 2ch
+        _emit 0xd9
+        _emit 0xc0
+        mov ecx, eax
+        _emit 0xde
+        _emit 0xca
+        fld dword ptr [ebp]
+        _emit 0xde
+        _emit 0xc2
+        _emit 0xd9
+        _emit 0xc9
+        fstp dword ptr [esp + 3ch]
+        fld dword ptr [edi + 4]
+        _emit 0xd8
+        _emit 0xc9
+        fadd dword ptr [ebp + 4]
+        fstp dword ptr [esp + 40h]
+        fmul dword ptr [edi + 8]
+        fadd dword ptr [ebp + 8]
+        fstp dword ptr [esp + 44h]
+        fld dword ptr [esi]
+        fld dword ptr [esp + 18h]
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xca
+        fld dword ptr [ebx]
+        _emit 0xde
+        _emit 0xc2
+        _emit 0xd9
+        _emit 0xc9
+        fstp dword ptr [esp + 48h]
+        fld dword ptr [esi + 4]
+        _emit 0xd8
+        _emit 0xc9
+        fadd dword ptr [ebx + 4]
+        fstp dword ptr [esp + 4ch]
+        fmul dword ptr [esi + 8]
+        fadd dword ptr [ebx + 8]
+        fstp dword ptr [esp + 50h]
+        fld dword ptr [esp + 3ch]
+        fsub dword ptr [esp + 48h]
+        fstp dword ptr [esp + 30h]
+        fld dword ptr [esp + 40h]
+        fsub dword ptr [esp + 4ch]
+        fstp dword ptr [esp + 34h]
+        fld dword ptr [esp + 44h]
+        fsub dword ptr [esp + 50h]
+        fstp dword ptr [esp + 38h]
+        fld dword ptr [esp + 34h]
+        fld dword ptr [esp + 30h]
+        fld dword ptr [esp + 38h]
+        _emit 0xd9
+        _emit 0xc1
+        _emit 0xde
+        _emit 0xca
+        _emit 0xd9
+        _emit 0xc2
+        _emit 0xde
+        _emit 0xcb
+        _emit 0xd9
+        _emit 0xc9
+        _emit 0xde
+        _emit 0xc2
+        _emit 0xdc
+        _emit 0xc8
+        _emit 0xde
+        _emit 0xc1
+        fstp dword ptr [esp + 58h]
+        fld dword ptr [mem_0099EC70]
+        fld dword ptr [esp + 58h]
+        _emit 0xd8
+        _emit 0xd1
+        _emit 0xdf
+        _emit 0xe0
+        _emit 0xdd
+        _emit 0xd9
+        test ah, 41h
+        jne L_1BBC
+        call ext_006A7250
+        fstp dword ptr [esp + 1ch]
+        fld dword ptr [esp + 1ch]
+        _emit 0xd9
+        _emit 0xe8
+        _emit 0xde
+        _emit 0xf1
+        fstp dword ptr [esp + 1ch]
+        fld dword ptr [esp + 1ch]
+        _emit 0xd9
+        _emit 0xc0
+        fmul dword ptr [esp + 58h]
+        fstp dword ptr [esp + 58h]
+        fld dword ptr [esp + 30h]
+        _emit 0xd8
+        _emit 0xc9
+        fstp dword ptr [esp + 30h]
+        fld dword ptr [esp + 34h]
+        _emit 0xd8
+        _emit 0xc9
+        fstp dword ptr [esp + 34h]
+        fmul dword ptr [esp + 38h]
+        fstp dword ptr [esp + 38h]
+        jmp L_1C7A
+    L_1BBC:
+        test ecx, ecx
+        _emit 0xdd
+        _emit 0xd8
+        _emit 0xd9
+        _emit 0xee
+        fstp dword ptr [esp + 58h]
+        je L_1BF6
+        fld dword ptr [edi + 4]
+        fmul dword ptr [esi + 8]
+        fld dword ptr [edi + 8]
+        fmul dword ptr [esi + 4]
+        _emit 0xde
+        _emit 0xe9
+        fstp dword ptr [esp + 30h]
+        fld dword ptr [esi]
+        fmul dword ptr [edi + 8]
+        fld dword ptr [esi + 8]
+        fmul dword ptr [edi]
+        _emit 0xde
+        _emit 0xe9
+        fstp dword ptr [esp + 34h]
+        fld dword ptr [edi]
+        fmul dword ptr [esi + 4]
+        fld dword ptr [edi + 4]
+        fmul dword ptr [esi]
+        jmp L_1C69
+    L_1BF6:
+        fld dword ptr [edi]
+        mov eax, dword ptr [esp + 1ch]
+        _emit 0xdc
+        _emit 0xc8
+        lea ecx, [esp + 3ch]
+        fstp dword ptr [esp + 3ch]
+        fld dword ptr [eax + 24h]
+        _emit 0xdc
+        _emit 0xc8
+        fstp dword ptr [esp + 40h]
+        fld dword ptr [eax + 28h]
+        _emit 0xdc
+        _emit 0xc8
+        fstp dword ptr [esp + 44h]
+        call ext_007DFE30
+        _emit 0xd9
+        _emit 0xee
+        fst dword ptr [esp + 3ch]
+        fst dword ptr [esp + 40h]
+        fstp dword ptr [esp + 44h]
+        _emit 0xd9
+        _emit 0xe8
+        _emit 0xd9
+        _emit 0x5c
+        _emit 0x84
+        _emit 0x3c
+        fld dword ptr [edi + 4]
+        fld dword ptr [esp + 44h]
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xca
+        fld dword ptr [esp + 40h]
+        _emit 0xd9
+        _emit 0xc0
+        fmul dword ptr [edi + 8]
+        _emit 0xde
+        _emit 0xeb
+        _emit 0xd9
+        _emit 0xca
+        fstp dword ptr [esp + 30h]
+        fld dword ptr [esp + 3ch]
+        _emit 0xd9
+        _emit 0xc0
+        fmul dword ptr [edi + 8]
+        fld dword ptr [edi]
+        _emit 0xde
+        _emit 0xcb
+        _emit 0xde
+        _emit 0xe2
+        _emit 0xd9
+        _emit 0xc9
+        fstp dword ptr [esp + 34h]
+        fld dword ptr [edi]
+        _emit 0xde
+        _emit 0xca
+        fmul dword ptr [edi + 4]
+    L_1C69:
+        _emit 0xde
+        _emit 0xe9
+        lea esi, [esp + 30h]
+        fstp dword ptr [esp + 38h]
+        call ext_007E46B0
+        _emit 0xdd
+        _emit 0xd8
+    L_1C7A:
+        fld dword ptr [esp + 58h]
+        mov edx, dword ptr [esp + 10h]
+        fld dword ptr [edx + 10h]
+        mov ecx, dword ptr [esp + 20h]
+        fadd dword ptr [ecx + 10h]
+        _emit 0xde
+        _emit 0xe9
+        fstp dword ptr [esp + 58h]
+        fld dword ptr [esp + 58h]
+        fld dword ptr [esp + 24h]
+        _emit 0xd8
+        _emit 0xd9
+        _emit 0xdf
+        _emit 0xe0
+        test ah, 41h
+        jne L_1D16
+        fld dword ptr [ecx + 10h]
+        mov esi, dword ptr [esp + 5ch]
+        fstp dword ptr [esp + 58h]
+        push esi
+        fld dword ptr [esp + 5ch]
+        push 0
+        _emit 0xd9
+        _emit 0xc0
+        push ecx
+        fmul dword ptr [esp + 3ch]
+        lea eax, [esp + 3ch]
+        fadd dword ptr [esp + 54h]
+        fstp dword ptr [esp + 48h]
+        fld dword ptr [esp + 40h]
+        _emit 0xd8
+        _emit 0xc9
+        fadd dword ptr [esp + 58h]
+        fstp dword ptr [esp + 4ch]
+        fmul dword ptr [esp + 44h]
+        fadd dword ptr [esp + 5ch]
+        fstp dword ptr [esp + 50h]
+        _emit 0xd9
+        _emit 0xee
+        fst dword ptr [esi + 10h]
+        fst dword ptr [esi + 14h]
+        fstp dword ptr [esi + 18h]
+        fld dword ptr [esp + 38h]
+        fstp dword ptr [esp]
+        push edi
+        push 3
+        push 3
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        lea ecx, [esp + 5ch]
+        push ecx
+        call ext_007DFF50
+        mov eax, dword ptr [esi + 1ch]
+        add esp, 24h
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 44h
+        ret
+    L_1D16:
+        mov edx, dword ptr [esp + 5ch]
+        _emit 0xdd
+        _emit 0xd8
+        mov eax, dword ptr [edx + 1ch]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 44h
+        ret
+    }
+}
