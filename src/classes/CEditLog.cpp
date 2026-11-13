@@ -179,3 +179,39 @@ extern "C" __declspec(naked) int __fastcall fn_00415CA0(void* self, int edx_unus
         ret     0x10
     }
 }
+
+extern "C" void ext_00458E10();
+extern "C" void ext_00459100();
+extern "C" int mem_00925694;
+
+// [0x004157D0] CEditLog::vfunc_4 (59 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004157D0(void* self) {
+    __asm {
+        push    esi
+        mov     esi, ecx
+        mov     eax, dword ptr [esi + 1Ch]
+        push    edi
+        mov     edi, dword ptr [esp + 0Ch]
+        cmp     edi, eax
+        je      short L1
+        test    eax, eax
+        je      short L1
+        call    ext_00458E10
+    L1:
+        push    1
+        push    edi
+        mov     ecx, esi
+        call    ext_00459100
+        test    eax, eax
+        je      short L2
+        push    0
+        push    0
+        push    0C5h
+        push    edi
+        call    dword ptr [mem_00925694]
+    L2:
+        pop     edi
+        pop     esi
+        ret     4
+    }
+}
