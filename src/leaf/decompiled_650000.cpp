@@ -6560,3 +6560,46 @@ extern "C" __declspec(naked) void __fastcall fn_0065AE40(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0065AD90] sub_0065AD90 (82 bytes)
+extern "C" void ext_005B11E0();
+extern "C" void ext_007C7100();
+extern "C" void ext_007CAF70();
+extern "C" int mem_00B55748;
+extern "C" __declspec(naked) void __fastcall fn_0065AD90(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [mem_00B55748]
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [eax + 0x2c]
+        mov ebx, dword ptr [ecx + 0x10]
+        push 2
+        mov ecx, esi
+        call ext_005B11E0
+        push ecx
+        fstp dword ptr [esp]
+        push 1
+        mov ecx, esi
+        call ext_005B11E0
+        push ecx
+        fstp dword ptr [esp]
+        push 0
+        mov ecx, esi
+        call ext_005B11E0
+        push ecx
+        fstp dword ptr [esp]
+        push ebx
+        call ext_007CAF70
+        push eax
+        call ext_007C7100
+        add esp, 0x14
+        mov dword ptr [edi], eax
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
