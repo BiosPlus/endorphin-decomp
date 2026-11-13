@@ -2416,3 +2416,41 @@ extern "C" void* __fastcall fn_0061EA70(void* self) {
     p[0x160 / 4] = 0;
     return self;
 }
+
+extern "C" void ext_00493EE0();
+extern "C" void ext_00594000();
+extern "C" void ext_0067E600();
+extern "C" int mem_00B40640;
+
+// [0x00611200] sub_00611200 (98 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00611200(char* self, int edx_unused, float* arg) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        fld dword ptr [ecx + 0x154]
+        fmul dword ptr [edx]
+        lea eax, [ecx + 0x160]
+        push eax
+        add ecx, 0x4
+        fstp dword ptr [eax]
+        mov eax, dword ptr [ecx]
+        fld dword ptr [ecx + 0x154]
+        mov eax, dword ptr [eax + 0xc]
+        fmul dword ptr [edx + 0x4]
+        fstp dword ptr [ecx + 0x160]
+        fld dword ptr [ecx + 0x158]
+        fmul dword ptr [edx + 0x8]
+        fstp dword ptr [ecx + 0x164]
+        mov edx, dword ptr [mem_00B40640]
+        push edx
+        call eax
+        mov ecx, eax
+        call ext_0067E600
+        call ext_00594000
+        test eax, eax
+        je done
+        lea ecx, [eax + 0x258]
+        call ext_00493EE0
+    done:
+        ret 0x4
+    }
+}
