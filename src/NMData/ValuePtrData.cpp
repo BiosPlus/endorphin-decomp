@@ -219,3 +219,249 @@ ret_arg:
         ret 0xc
     }
 }
+
+// [0x006863A0] NMData::ValuePtrData::vfunc_1_off_8 (654 bytes)
+extern "C" void ext_0063EFE0();
+extern "C" void ext_004275E0();
+extern "C" void ext_0041CEB0();
+extern "C" void ext_0041CF00();
+extern "C" void ext_0041CF50();
+extern "C" void ext_00671100();
+extern "C" void ext_006722B0();
+extern "C" void ext_006824E0();
+extern "C" void ext_00685900();
+extern "C" void ext_00685E40();
+extern "C" void ext_0053F5F0();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924EA8;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00B599BC;
+extern "C" int mem_00A9FA6C;
+extern "C" int mem_00A9F838;
+extern "C" int mem_00A9F6E8;
+extern "C" int mem_00A9F8C0;
+extern "C" int mem_00A9F57C;
+extern "C" int mem_00AA2400;
+extern "C" int mem_00AA23DC;
+extern "C" int mem_00AA23D4;
+extern "C" int mem_00AA23E4;
+extern "C" int mem_00AA23A0;
+extern "C" int mem_00AA2404;
+
+extern "C" __declspec(naked) void __fastcall fn_006863A0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8b55c2
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x40
+        mov eax, dword ptr [mem_00A9FA6C]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x5c]
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_0063EFE0
+        lea ecx, [esp + 0x14]
+        mov ebp, eax
+        call dword ptr [mem_00924FE8]
+        cmp ebp, 0xb53a34
+        mov dword ptr [esp + 0x54], 0x0
+        je L472
+        cmp ebp, 0xb53b30
+        je L472
+        cmp ebp, 0xb53ab0
+        je L472
+        cmp ebp, 0xb53a70
+        je L472
+        cmp ebp, 0xb53af0
+        je L472
+        lea ecx, [esp + 0x14]
+        push ebp
+        push ecx
+        call ext_004275E0
+        mov edx, dword ptr [mem_00A9F838]
+        add esp, 0x8
+        push edx
+        mov ecx, edi
+        call ext_0063EFE0
+        push eax
+        lea eax, [esi + 0x4]
+        push eax
+        call ext_004275E0
+        mov ecx, dword ptr [mem_00A9F6E8]
+        add esp, 0x8
+        push ecx
+        mov ecx, edi
+        lea ebp, [esi + 0x24]
+        call ext_0063EFE0
+        push eax
+        push ebp
+        call ext_004275E0
+        mov edx, dword ptr [mem_00A9F8C0]
+        add esp, 0x8
+        push edx
+        mov ecx, edi
+        call ext_0063EFE0
+        push eax
+        lea eax, [esi + 0x48]
+        push eax
+        call ext_004275E0
+        mov ecx, dword ptr [mem_00A9F57C]
+        jmp L4DC
+L472:
+        mov eax, dword ptr [mem_00AA2400]
+        push eax
+        mov ecx, edi
+        call ext_0063EFE0
+        push eax
+        lea ecx, [esp + 0x18]
+        push ecx
+        call ext_004275E0
+        mov eax, dword ptr [mem_00AA23DC]
+        test eax, eax
+        setne dl
+        push eax
+        lea eax, [esi + 0x4]
+        push edx
+        push eax
+        push edi
+        call ext_006824E0
+        mov ecx, dword ptr [mem_00AA23D4]
+        add esp, 0x18
+        push ecx
+        mov ecx, edi
+        lea ebp, [esi + 0x24]
+        call ext_0063EFE0
+        push eax
+        push ebp
+        call ext_004275E0
+        mov edx, dword ptr [mem_00AA23E4]
+        add esp, 0x8
+        push edx
+        mov ecx, edi
+        call ext_0063EFE0
+        push eax
+        lea eax, [esi + 0x48]
+        push eax
+        call ext_004275E0
+        mov ecx, dword ptr [mem_00AA23A0]
+L4DC:
+        add esp, 0x8
+        push ecx
+        mov ecx, edi
+        call ext_0063EFE0
+        push eax
+        lea edx, [esi + 0x64]
+        push edx
+        call ext_004275E0
+        add esp, 0x8
+        cmp dword ptr [esp + 0x28], 0x0
+        je L50D
+        lea eax, [esp + 0x14]
+        push eax
+        lea ecx, [esi - 0x8]
+        call ext_00685E40
+        jmp L5FF
+L50D:
+        mov ecx, dword ptr [mem_00AA2404]
+        push ecx
+        mov ecx, edi
+        call ext_0063EFE0
+        lea edx, [esp + 0x5c]
+        mov dword ptr [esp + 0x5c], eax
+        push edx
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_0053F5F0
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        call ext_00671100
+        push 0x92a0d0
+        push ebp
+        mov dword ptr [esi + 0x20], eax
+        call dword ptr [mem_00924FC0]
+        add esp, 0x14
+        test al, al
+        je L5C7
+        mov ecx, dword ptr [esi + 0x20]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x48]
+        push 0x0
+        call eax
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_0041CF00
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        mov byte ptr [esp + 0x54], 0x1
+        je L579
+        cmp eax, dword ptr [mem_00B599BC]
+        jne L583
+L579:
+        mov ecx, ebp
+        call dword ptr [mem_00924EA8]
+        jmp L5AE
+L583:
+        lea ecx, [esp + 0x30]
+        push ecx
+        lea ecx, [esp + 0x10]
+        call ext_0041CEB0
+        push eax
+        mov ecx, ebp
+        mov byte ptr [esp + 0x58], 0x2
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x30]
+        mov byte ptr [esp + 0x54], 0x1
+        call dword ptr [mem_00924FF4]
+L5AE:
+        mov ecx, dword ptr [esp + 0x10]
+        test ecx, ecx
+        mov byte ptr [esp + 0x54], 0x0
+        je L5C7
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0xc]
+        push eax
+        call edx
+L5C7:
+        push 0x0
+        push 0x0
+        lea eax, [esp + 0x14]
+        push eax
+        lea ecx, [esi - 0x8]
+        call ext_00685900
+        push eax
+        lea ecx, [esi + 0x40]
+        mov byte ptr [esp + 0x58], 0x3
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x10]
+        test ecx, ecx
+        mov byte ptr [esp + 0x54], 0x0
+        je L5FF
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0xc]
+        push eax
+        call edx
+L5FF:
+        push edi
+        lea ecx, [esi + 0x40]
+        call ext_006722B0
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0x54], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x4c]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        add esp, 0x4c
+        ret 0x4
+    }
+}
