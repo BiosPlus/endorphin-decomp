@@ -6280,3 +6280,95 @@ extern "C" __declspec(naked) void __fastcall fn_0065C590(void* self, int edx_unu
         ret     0xc
     }
 }
+
+// [0x0065BBA0] sub_0065BBA0 (193 bytes)
+extern "C" void ext_007C84E0();
+extern "C" void ext_007CD660();
+extern "C" void ext_007CD5D0();
+extern "C" void ext_007C8A80();
+extern "C" int mem_00AB28B4;
+
+extern "C" __declspec(naked) void __fastcall fn_0065BBA0(void* self, int edx_unused, void* arg0) {
+    __asm {
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [esp + 0xc]
+        push    esi
+        push    edi
+        mov     esi, ecx
+        fld     dword ptr [esi + 0xc]
+        mov     eax, dword ptr [esi + 0x4]
+        push    ebp
+        push    ecx
+        fstp    dword ptr [esp]
+        push    0x0
+        push    eax
+        push    0x0
+        mov     word ptr [esi + 0x14], 0x0
+        call    ext_007C84E0
+        mov     ebx, dword ptr [esi + 0x4]
+        lea     edi, [ebx + 0x1]
+        imul    edi, ebx
+        sar     edi, 1
+        add     edi, 0x1f
+        sar     edi, 0x5
+        lea     ecx, [4*edi + 0x8]
+        mov     dword ptr [esi + 0x10], eax
+        mov     edx, dword ptr [ebp + 0x4]
+        push    ecx
+        call    edx
+        add     esp, 0x18
+        test    eax, eax
+        je      short L_skip_init
+        mov     dword ptr [eax], ebx
+        mov     dword ptr [eax + 0x4], edi
+    L_skip_init:
+        mov     dword ptr [esi + 0x1c], eax
+        mov     eax, dword ptr [esi + 0x10]
+        push    eax
+        call    ext_007CD660
+        mov     ecx, dword ptr [esi + 0x10]
+        push    ecx
+        call    ext_007CD5D0
+        mov     edx, dword ptr [esi + 0x8]
+        mov     eax, dword ptr [esi + 0x4]
+        mov     ecx, dword ptr [mem_00AB28B4]
+        push    edx
+        mov     edx, dword ptr [esi + 0x10]
+        push    eax
+        push    ecx
+        push    edx
+        call    ext_007C8A80
+        mov     dword ptr [esi + 0x18], eax
+        xor     eax, eax
+        add     esp, 0x18
+        cmp     dword ptr [esi + 0x4], eax
+        jbe     short L_done
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    L_loop:
+        mov     edx, dword ptr [esi + 0x1c]
+        lea     ecx, [eax + 0x1]
+        imul    ecx, eax
+        shr     ecx, 1
+        add     ecx, eax
+        mov     edi, ecx
+        shr     edi, 0x5
+        lea     edx, [edx + 4*edi + 0x8]
+        and     ecx, 0x1f
+        mov     edi, 0x1
+        shl     edi, cl
+        add     eax, 0x1
+        or      dword ptr [edx], edi
+        cmp     eax, dword ptr [esi + 0x4]
+        jb      short L_loop
+    L_done:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret     0x4
+    }
+}
