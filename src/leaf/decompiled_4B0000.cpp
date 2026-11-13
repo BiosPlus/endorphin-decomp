@@ -4571,3 +4571,19 @@ extern "C" __declspec(naked) void __fastcall fn_004B08A0(void* self) {
         ret 4
     }
 }
+
+// [0x004BF650] sub_004BF650 (37 bytes)
+extern "C" void ext_0068F7C0();
+extern "C" void ext_004BE6F0();
+extern "C" void ext_004BF600();
+extern "C" void ext_004BE740();
+extern "C" unsigned char mem_00AE1D6C;
+extern "C" void __cdecl fn_004BF650() {
+    if (mem_00AE1D6C == 0) {
+        mem_00AE1D6C = 1;
+        ext_0068F7C0();
+        ext_004BE6F0();
+        ext_004BF600();
+        ext_004BE740();
+    }
+}
