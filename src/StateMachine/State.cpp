@@ -32,3 +32,45 @@ extern "C" int __fastcall fn_0051DDE0(void* self, int edx_unused, unsigned char 
     }
     return *(int*)((char*)self + 0x150);
 }
+
+extern "C" void ext_00501140();
+extern "C" void ext_0065F450();
+extern "C" void ext_006721F0();
+
+// [0x0051EBB0] StateMachine::State::vfunc_2 (76 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0051EBB0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov esi, ecx
+        push edi
+        lea ecx, [esi + 0x158]
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_00501140
+        test eax, eax
+        je loc_51ebe7
+        mov esi, dword ptr [esp + 0x10]
+        push eax
+        push esi
+        call ext_006721F0
+        add esp, 0x8
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    loc_51ebe7:
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push edi
+        mov ecx, esi
+        call ext_0065F450
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
