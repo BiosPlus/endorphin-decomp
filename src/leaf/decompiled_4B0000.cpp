@@ -4690,3 +4690,32 @@ extern "C" __declspec(naked) void __fastcall fn_004BE950(void* self) {
         ret
     }
 }
+
+// [0x004B07E0] sub_004B07E0 (57 bytes)
+extern "C" void ext_004B05A0();
+extern "C" void ext_004B0630();
+extern "C" __declspec(naked) void __fastcall fn_004B07E0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        test eax, eax
+        jne L_have_arg2
+        mov eax, dword ptr [ecx + 0x238]
+    L_have_arg2:
+        cmp dword ptr [ecx + 0x4], 0
+        mov edx, dword ptr [esp + 0x10]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x10]
+        push eax
+        push edx
+        jne L_alt
+        call ext_004B05A0
+        ret 0x14
+    L_alt:
+        call ext_004B0630
+        ret 0x14
+    }
+}
