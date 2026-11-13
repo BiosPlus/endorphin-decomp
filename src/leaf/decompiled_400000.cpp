@@ -9362,3 +9362,150 @@ extern "C" void __fastcall fn_00406230(void* self, int edx_unused, int a1, int a
     int r = ((SendFn)mem_00925694)(*(void**)((char*)self + 0x190), 0x130b, 0, 0);
     ((ThisFn)ext_00405450)(self, r);
 }
+
+// [0x004067E0] sub_004067E0 (350 bytes)
+extern "C" void ext_00404E40();
+extern "C" void ext_00406380();
+extern "C" int mem_00925134;
+extern "C" int mem_00925668;
+
+extern "C" __declspec(naked) void __fastcall fn_004067E0(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [mem_00925694]
+        push edi
+        push 0
+        push 0
+        mov ebx, ecx
+        mov eax, dword ptr [ebx+190h]
+        push 130bh
+        push eax
+        call esi
+        mov ecx, dword ptr [ebx+190h]
+        push 0
+        mov edi, eax
+        push edi
+        push 1308h
+        push ecx
+        call esi
+        mov ebp, dword ptr [ebx+564h]
+        cmp ebp, dword ptr [ebx+568h]
+        lea esi, [ebx+560h]
+        jbe L_67E0_a
+        call dword ptr [mem_00925134]
+L_67E0_a:
+        test edi, edi
+        jle L_67E0_b
+        mov dword ptr [esp+10h], edi
+L_67E0_c:
+        cmp ebp, dword ptr [esi+8]
+        jb L_67E0_d
+        call dword ptr [mem_00925134]
+L_67E0_d:
+        add ebp, 58h
+        sub dword ptr [esp+10h], 1
+        jne L_67E0_c
+L_67E0_b:
+        mov byte ptr [esp+10h], 0
+        mov edx, dword ptr [esp+10h]
+        push edx
+        mov edx, dword ptr [esi+8]
+        mov byte ptr [esp+18h], 0
+        mov eax, dword ptr [esp+18h]
+        mov ecx, dword ptr [esp+18h]
+        push eax
+        push ecx
+        push ebp
+        push edx
+        add ebp, 58h
+        push ebp
+        call ext_00404E40
+        mov ecx, dword ptr [esp+2ch]
+        mov eax, dword ptr [esi+8]
+        push ecx
+        push esi
+        push eax
+        add eax, -58h
+        push eax
+        call ext_00406380
+        add dword ptr [esi+8], -58h
+        add esp, 28h
+        test edi, edi
+        jle L_67E0_e
+        mov eax, dword ptr [ebx+190h]
+        push 0
+        lea edx, [edi-1]
+        push edx
+        push 130ch
+        push eax
+        call dword ptr [mem_00925694]
+        add edi, -1
+        push edi
+        mov ecx, ebx
+        call ext_00405450
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+L_67E0_e:
+        mov eax, dword ptr [esi+4]
+        test eax, eax
+        je L_67E0_f
+        mov ecx, dword ptr [esi+8]
+        sub ecx, eax
+        mov eax, 2e8ba2e9h
+        imul ecx
+        sar edx, 4
+        mov ecx, edx
+        shr ecx, 1fh
+        add ecx, edx
+        je L_67E0_f
+        mov edx, dword ptr [ebx+190h]
+        push 0
+        push 0
+        push 130ch
+        push edx
+        call dword ptr [mem_00925694]
+        push 0
+        mov ecx, ebx
+        call ext_00405450
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+L_67E0_f:
+        mov eax, dword ptr [esi+4]
+        test eax, eax
+        je L_67E0_g
+        mov esi, dword ptr [esi+8]
+        sub esi, eax
+        mov eax, 2e8ba2e9h
+        imul esi
+        sar edx, 4
+        mov eax, edx
+        shr eax, 1fh
+        add eax, edx
+        jne L_67E0_h
+L_67E0_g:
+        mov ecx, dword ptr [ebx+190h]
+        push 105h
+        push 0
+        push 0
+        push ecx
+        call dword ptr [mem_00925668]
+L_67E0_h:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
