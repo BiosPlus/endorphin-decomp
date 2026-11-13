@@ -4248,3 +4248,183 @@ extern "C" __declspec(naked) void __fastcall fn_004BEE70(void* self) {
         ret
     }
 }
+
+// [0x004B0A80] sub_004B0A80 (433 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B0A80(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx + 0x10]
+        mov eax, esi
+        and al, 0x1
+        cmp al, 0x1
+        mov al, byte ptr [esp + 0x8]
+        sete dl
+        cmp dl, al
+        je loc_4b0a9b
+        xor esi, 0x1
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0a9b:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and dl, 0x2
+        cmp dl, 0x2
+        sete dl
+        cmp dl, al
+        je loc_4b0ab3
+        xor esi, 0x2
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0ab3:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and edx, 0x4000
+        cmp edx, 0x4000
+        sete dl
+        cmp dl, al
+        je loc_4b0ad4
+        xor esi, 0x4000
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0ad4:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and dl, 0x4
+        cmp dl, 0x4
+        sete dl
+        cmp dl, al
+        je loc_4b0aec
+        xor esi, 0x4
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0aec:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and dl, 0x8
+        cmp dl, 0x8
+        sete dl
+        cmp dl, al
+        je loc_4b0b04
+        xor esi, 0x8
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0b04:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and dl, 0x10
+        cmp dl, 0x10
+        sete dl
+        cmp dl, al
+        je loc_4b0b1c
+        xor esi, 0x10
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0b1c:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and dl, 0x20
+        cmp dl, 0x20
+        sete dl
+        cmp dl, al
+        je loc_4b0b34
+        xor esi, 0x20
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0b34:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and dl, 0x40
+        cmp dl, 0x40
+        sete dl
+        cmp dl, al
+        je loc_4b0b4c
+        xor esi, 0x40
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0b4c:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and dl, 0x80
+        cmp dl, 0x80
+        sete dl
+        cmp dl, al
+        je loc_4b0b67
+        __asm _emit 0x81
+        __asm _emit 0xf6
+        __asm _emit 0x80
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0b67:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and edx, 0x100
+        cmp edx, 0x100
+        sete dl
+        cmp dl, al
+        je loc_4b0b88
+        xor esi, 0x100
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0b88:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and edx, 0x400
+        cmp edx, 0x400
+        sete dl
+        cmp dl, al
+        je loc_4b0ba9
+        xor esi, 0x400
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0ba9:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and edx, 0x200
+        cmp edx, 0x200
+        sete dl
+        cmp dl, al
+        je loc_4b0bca
+        xor esi, 0x200
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0bca:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and edx, 0x800
+        cmp edx, 0x800
+        sete dl
+        cmp dl, al
+        je loc_4b0beb
+        xor esi, 0x800
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0beb:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and edx, 0x1000
+        cmp edx, 0x1000
+        sete dl
+        cmp dl, al
+        je loc_4b0c0c
+        xor esi, 0x1000
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0c0c:
+        mov esi, dword ptr [ecx + 0x10]
+        mov edx, esi
+        and edx, 0x2000
+        cmp edx, 0x2000
+        sete dl
+        cmp dl, al
+        je loc_4b0c2d
+        xor esi, 0x2000
+        mov dword ptr [ecx + 0x10], esi
+
+    loc_4b0c2d:
+        pop esi
+        ret 0x4
+    }
+}
