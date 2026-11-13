@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `10767 / 24049` (**44.77%**) — `7675` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `714425 / 4496005 bytes` (**15.89%** of 4.29 MB)
+- **In-Scope Functions Matched:** `10768 / 24049` (**44.78%**) — `7676` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `714586 / 4496005 bytes` (**15.89%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -20,7 +20,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P40-50 (71-91B)** | 1063 / 2405 | 44.20% | 88759 / 194373 | 45.66% | 1342 fn |
 | **P50-60 (91-122B)** | 1181 / 2405 | 49.11% | 127606 / 256906 | 49.67% | 1224 fn |
 | **P60-70 (122-159B)** | 918 / 2405 | 38.17% | 123468 / 339038 | 36.42% | 1487 fn |
-| **P70-80 (159-178B)** | 208 / 2405 | 8.65% | 35051 / 400567 | 8.75% | 2197 fn |
+| **P70-80 (159-178B)** | 209 / 2405 | 8.69% | 35212 / 400567 | 8.79% | 2196 fn |
 | **P80-90 (178-335B)** | 653 / 2405 | 27.15% | 154903 / 583211 | 26.56% | 1752 fn |
 | **P90-100 (335-36100B)** | 0 / 2404 | 0.00% | 0 / 2392860 | 0.00% | 2404 fn |
 
@@ -28,9 +28,9 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6744 | 514808 | 87.87% |
+| `claude-haiku-5.5@medium` | 6744 | 514808 | 87.86% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 5.82% |
-| `claude-haiku-5.5@low` | 215 | 41592 | 2.80% |
+| `claude-haiku-5.5@low` | 216 | 41753 | 2.81% |
 | `gemini-3.8-flash@low` | 122 | 24489 | 1.59% |
 | `claude-sonnet-5.5@low` | 108 | 19262 | 1.41% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.33% |
