@@ -36,3 +36,18 @@ extern "C" __declspec(naked) void* __fastcall fn_00419770(void* self) {
         ret
     }
 }
+
+extern "C" void __fastcall ext_006A6244(void* self);
+extern "C" void ext_0040F230();
+extern "C" int mem_0093A0C8;
+extern "C" int mem_0093A0CC;
+extern "C" int mem_0093A0D0;
+extern "C" int mem_0093A0E8;
+
+// [0x00419730] ExportUnavailableDialog::vfunc_84 (52 bytes)
+extern "C" int __fastcall fn_00419730(void* self) {
+    ext_006A6244(self);
+    ((void (__thiscall*)(void*, int, int, int, int))ext_0040F230)(
+        (char*)self + 0x11c, mem_0093A0CC, mem_0093A0E8, mem_0093A0D0, mem_0093A0C8);
+    return 1;
+}
