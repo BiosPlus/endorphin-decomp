@@ -4416,3 +4416,59 @@ extern "C" void __fastcall fn_005EBDD0(void* self, int edx_unused, int arg1) {
         ((void (__thiscall*)(void*, int))vtbl[2])(subobj, arg1);
     }
 }
+
+extern "C" void ext_00554510();
+extern "C" void ext_005EBDD0();
+
+// [0x005ECD40] sub_005ECD40 (122 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005ECD40(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x70
+        push ebx
+        push esi
+        push edi
+        lea eax, [esp + 0xc]
+        push eax
+        mov eax, dword ptr [mem_00B40640]
+        mov edi, ecx
+        mov edx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [edx + 0x10]
+        push eax
+        lea esi, [edi + 0x4]
+        push 0x0
+        lea ecx, [esp + 0x48]
+        push ecx
+        mov ecx, esi
+        call edx
+        mov ecx, eax
+        call ext_00554510
+        mov ebx, dword ptr [esp + 0x80]
+        lea eax, [esp + 0x1c]
+        push eax
+        mov ecx, ebx
+        call ext_00554510
+        lea ecx, [esp + 0xc]
+        push ecx
+        lea edx, [esp + 0x30]
+        push edx
+        lea ecx, [esp + 0x24]
+        call ext_0047FFA0
+        lea eax, [esp + 0x2c]
+        push eax
+        mov ecx, edi
+        call ext_005EBDD0
+        mov eax, dword ptr [mem_00B40640]
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx]
+        push eax
+        push ebx
+        push 0x0
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x70
+        ret 0x4
+    }
+}
