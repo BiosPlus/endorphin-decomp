@@ -5442,3 +5442,19 @@ extern "C" __declspec(naked) void __fastcall fn_00564090(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00565E20] sub_00565E20 (67 bytes)
+extern "C" void* __fastcall ext_007C573C(void*);
+extern "C" void ext_005633A0();
+extern "C" void ext_00563430();
+extern "C" void ext_00564090();
+extern "C" void ext_005654A0();
+
+extern "C" void* __fastcall fn_00565E20(void* self, int, void* a1, void* a2, void* a3) {
+    void* esi = ext_007C573C(a2);
+    ((void (__thiscall*)(void*, void*, void*))ext_005633A0)(self, esi, a1);
+    ((void (__thiscall*)(void*, void*, void*))ext_00563430)(self, esi, a3);
+    ((void (__thiscall*)(void*, void*, void*))ext_00564090)(self, esi, a1);
+    ((void (__thiscall*)(void*, void*))ext_005654A0)(self, esi);
+    return esi;
+}
