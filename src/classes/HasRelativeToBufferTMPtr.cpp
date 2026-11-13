@@ -127,3 +127,46 @@ extern "C" void* __fastcall fn_005325B0(void* self, int edx_unused, void* out) {
     ((Norm_t)ext_004F9950)(res);
     return out;
 }
+
+// [0x00532620] HasRelativeToBufferTMPtr::vfunc_3 (96 bytes)
+extern "C" void ext_0067DAD0();
+extern "C" __declspec(naked) void __fastcall fn_00532620(void* self, int edx_unused, void* out) {
+    __asm {
+        fldz
+        sub esp, 0x40
+        push esi
+        mov esi, dword ptr [esp+0x48]
+        fst dword ptr [esi+0x8]
+        push edi
+        fst dword ptr [esi+0x4]
+        mov edi, ecx
+        fst dword ptr [esi]
+        push esi
+        fst dword ptr [esi+0x14]
+        fst dword ptr [esi+0x10]
+        fst dword ptr [esi+0xc]
+        fst dword ptr [esi+0x20]
+        fst dword ptr [esi+0x1c]
+        fstp dword ptr [esi+0x18]
+        fld1
+        fst dword ptr [esi]
+        fst dword ptr [esi+0x10]
+        fstp dword ptr [esi+0x20]
+        mov eax, dword ptr [edi+0x4]
+        mov ecx, dword ptr [mem_00AEE8A8]
+        push eax
+        call ext_00661B50
+        push eax
+        lea ecx, [esp+0x10]
+        push ecx
+        mov ecx, dword ptr [edi+0x8]
+        call ext_004875A0
+        mov ecx, eax
+        call ext_0067DAD0
+        pop edi
+        mov eax, esi
+        pop esi
+        add esp, 0x40
+        ret 0x4
+    }
+}
