@@ -213,5 +213,7 @@
     "0x0057CA3F",
     "0x0057CA48"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-13T13:59:25Z"
 }
