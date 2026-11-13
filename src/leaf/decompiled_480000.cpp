@@ -6191,3 +6191,48 @@ extern "C" __declspec(naked) void* __cdecl fn_0048C920(unsigned char* first, uns
         ret
     }
 }
+
+// [0x0048CA80] sub_0048CA80 (89 bytes)
+extern "C" void ext_0048C920();
+
+extern "C" __declspec(naked) int __cdecl fn_0048CA80(int a1, int a2, int a3) {
+    __asm {
+        sub esp, 8
+        mov edx, dword ptr [esp + 0x14]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        xor al, al
+        mov byte ptr [esp + 0x10], al
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0xc], al
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        push edi
+        push esi
+        push ebx
+        call ext_0048C920
+        sub esi, ebx
+        mov eax, 0x4ec4ec4f
+        imul esi
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        mov ecx, eax
+        imul ecx, ecx, 0x68
+        add esp, 0x18
+        mov eax, edi
+        pop edi
+        pop esi
+        sub eax, ecx
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
