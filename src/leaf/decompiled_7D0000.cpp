@@ -6004,3 +6004,18 @@ extern "C" void* __cdecl fn_007D88C0(void* self, void* arg) {
     *(int*)(p + 0x178) = 0;
     return self;
 }
+
+// [0x007D8940] sub_007D8940 (46 bytes)
+extern "C" void ext_007D88C0();
+extern "C" int mem_00AB28C4;
+
+extern "C" void* __cdecl fn_007D8940(void* a0) {
+    typedef void* (__cdecl *FnB)(void*);
+    typedef void (__cdecl *FnC)(void*, void*);
+    void* esi = ((FnB)mem_00AB28C4)((char*)a0 + 0x15c);
+    if (esi == 0) {
+        return 0;
+    }
+    ((FnC)ext_007D88C0)(esi, a0);
+    return esi;
+}
