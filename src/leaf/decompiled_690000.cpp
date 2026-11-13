@@ -5590,3 +5590,17 @@ extern "C" __declspec(naked) void __fastcall fn_00694480(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006951E0] sub_006951E0 (81 bytes)
+extern "C" void ext_00693F40();
+
+extern "C" void __fastcall fn_006951E0(void* self, int edx_unused, const float* a1) {
+    float copy[3];
+    copy[0] = a1[0];
+    copy[1] = a1[1];
+    copy[2] = a1[2];
+    float v[4];
+    v[0] = v[1] = v[2] = v[3] = 0.0f;
+    ((void (__thiscall*)(void*, const float*))ext_00693F40)(v, copy);
+    ((void (__thiscall*)(void*, float*))ext_00695070)(self, v);
+}
