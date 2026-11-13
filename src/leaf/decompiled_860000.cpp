@@ -763,3 +763,46 @@ extern "C" __declspec(naked) void __cdecl fn_0086B510(void) {
         ret
     }
 }
+
+extern "C" void ext_0085D5F0();
+extern "C" int mem_00AB9878;
+extern "C" int mem_00AB964C;
+
+// [0x00868180] sub_00868180 (108 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00868180() {
+    __asm {
+        sub esp, 0x190
+        cmp dword ptr [mem_00AB9878], 0
+        je L_86819B
+        mov eax, 1
+        add esp, 0x190
+        ret
+L_86819B:
+        cmp dword ptr [mem_00AB964C], 0
+        jne L_8681B9
+        call ext_0085D5F0
+        test eax, eax
+        je L_8681B9
+        mov eax, 1
+        add esp, 0x190
+        ret
+L_8681B9:
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push eax
+        push 0x101
+        call dword ptr [mem_00AB964C]
+        test eax, eax
+        je L_8681D6
+        xor eax, eax
+        add esp, 0x190
+        ret
+L_8681D6:
+        mov eax, 1
+        add esp, 0x190
+        mov dword ptr [mem_00AB9878], 1
+        ret
+    }
+}
