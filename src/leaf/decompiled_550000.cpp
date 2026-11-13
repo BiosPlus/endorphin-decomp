@@ -7988,3 +7988,22 @@ extern "C" __declspec(naked) void __fastcall fn_00554530(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0055E180] sub_0055E180 (32 bytes)
+extern "C" void ext_0055E150();
+
+extern "C" __declspec(naked) void __fastcall fn_0055E180(void* self, int edx_unused, void** a1) {
+    __asm {
+        call ext_0055E150
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        je done
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        mov dword ptr [esp + 0x4], 0x1
+        jmp eax
+    done:
+        ret 0x4
+    }
+}
