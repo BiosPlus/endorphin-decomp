@@ -470,3 +470,106 @@ extern "C" void __fastcall fn_0064E320(void* self) {
         *(int*)(p + 0x64) = 0;
     }
 }
+
+extern "C" void ext_006A6E9E();
+extern "C" void ext_007C5A20();
+extern "C" void ext_007C5D00();
+extern "C" void ext_007C9480();
+extern "C" void ext_007C97A0();
+extern "C" int mem_00B55748;
+
+// [0x0064FAA0] SkeletalJoint::vfunc_48 (300 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0064FAA0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push ebp
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi + 6Ch], 1
+        mov eax, dword ptr [ebx + 228h]
+        test eax, eax
+        push edi
+        je L_1
+        mov eax, dword ptr [eax + 158h]
+        mov ecx, dword ptr [eax + 0ACh]
+        mov edx, dword ptr [ecx + 0A4h]
+        mov eax, dword ptr [edx]
+        jmp L_2
+    L_1:
+        xor eax, eax
+    L_2:
+        mov dword ptr [esi + 68h], eax
+        mov eax, dword ptr [ebx + 22Ch]
+        test eax, eax
+        je L_3
+        mov eax, dword ptr [eax + 158h]
+        mov ecx, dword ptr [eax + 0ACh]
+        mov edx, dword ptr [ecx + 0A4h]
+        mov eax, dword ptr [edx]
+        mov dword ptr [esp + 14h], eax
+        jmp L_4
+    L_3:
+        mov dword ptr [esp + 14h], 0
+    L_4:
+        mov ecx, dword ptr [mem_00B55748]
+        mov edi, dword ptr [ecx + 28h]
+        mov eax, dword ptr [edi + 40h]
+        push eax
+        call ext_007C5D00
+        push eax
+        mov dword ptr [esi + 64h], eax
+        call ext_007D8700
+        mov edx, dword ptr [esi + 68h]
+        mov ecx, dword ptr [esi + 64h]
+        add esp, 8
+        mov ebp, eax
+        mov eax, dword ptr [esp + 14h]
+        push edx
+        push eax
+        push ecx
+        call ext_007D8700
+        add esp, 4
+        push eax
+        call ext_007C9480
+        mov edx, dword ptr [ebx]
+        mov eax, dword ptr [edx + 0F8h]
+        add esp, 0Ch
+        mov ecx, ebx
+        call eax
+        mov ecx, dword ptr [esi + 64h]
+        push eax
+        push ecx
+        call ext_007C5A20
+        mov eax, dword ptr [edi + 38h]
+        push eax
+        lea edx, [eax + 1]
+        push ebp
+        mov dword ptr [edi + 38h], edx
+        call ext_007C97A0
+        push 1
+        push 0A8F318h
+        push 0A2FBBCh
+        push 0
+        push ebx
+        call ext_006A6E9E
+        fld dword ptr [eax + 30Ch]
+        fstp dword ptr [esi + 98h]
+        add esp, 24h
+        fld dword ptr [eax + 310h]
+        pop edi
+        fstp dword ptr [esi + 9Ch]
+        fld dword ptr [eax + 314h]
+        fstp dword ptr [esi + 0A0h]
+        fld dword ptr [eax + 318h]
+        fstp dword ptr [esi + 0A4h]
+        fld dword ptr [eax + 31Ch]
+        fstp dword ptr [esi + 0A8h]
+        fld dword ptr [eax + 320h]
+        fstp dword ptr [esi + 0ACh]
+        pop esi
+        pop ebp
+        pop ebx
+        ret 8
+    }
+}
