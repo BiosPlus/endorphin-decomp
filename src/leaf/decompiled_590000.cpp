@@ -4857,3 +4857,26 @@ extern "C" __declspec(naked) void __fastcall fn_00597980(void* self) {
         ret     0xc
     }
 }
+
+extern "C" void ext_005AE480();
+
+// [0x00599F50] sub_00599F50 (44 bytes)
+extern "C" void __fastcall fn_00599F50(void* self) {
+    struct Node {
+        Node* left;
+        Node* parent;
+        Node* right;
+    };
+    struct Tree {
+        void* pad;
+        Node* head;
+        int size;
+    };
+    typedef void (__thiscall *EraseFn)(void*, void*);
+    Tree* t = (Tree*)((char*)self + 4);
+    ((EraseFn)ext_005AE480)(t, t->head->parent);
+    t->head->parent = t->head;
+    t->size = 0;
+    t->head->left = t->head;
+    t->head->right = t->head;
+}
