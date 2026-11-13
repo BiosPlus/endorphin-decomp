@@ -6846,3 +6846,30 @@ L_1B0:
         ret
     }
 }
+
+// [0x0050E2B0] sub_0050E2B0 (51 bytes)
+extern "C" void ext_0050DE70();
+extern "C" void ext_0050DEF0();
+extern "C" void ext_0050E140();
+extern "C" int mem_00A9FA04;
+extern "C" int mem_00A9FAC0;
+extern "C" __declspec(naked) void __cdecl fn_0050E2B0(void* a1) {
+    __asm {
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x8]
+        push    0x0
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    ext_0050E140
+        mov     ecx, dword ptr [mem_00A9FA04]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_0050DE70
+        mov     edx, dword ptr [mem_00A9FAC0]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_0050DEF0
+        pop     ecx
+        ret
+    }
+}
