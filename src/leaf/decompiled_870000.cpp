@@ -909,3 +909,10 @@ extern "C" __declspec(naked) void* __fastcall fn_00870350(void* self, int edx_un
         ret     0x8
     }
 }
+
+// [0x00870300] sub_00870300 (32 bytes)
+extern "C" int __cdecl ext_005006E0(void*, int, int, int, int);
+
+extern "C" int __fastcall fn_00870300(void* self, int edx_unused, int a1, int a2, int a3) {
+    return ext_005006E0((char*)self + 4, a1, a2, a3, 0);
+}
