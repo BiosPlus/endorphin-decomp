@@ -1068,3 +1068,194 @@ extern "C" __declspec(naked) int __fastcall fn_00802E90(void* self, int edx_unus
         ret 0x14
     }
 }
+
+// [0x00802B90] sub_00802B90 (421 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00802B90(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x4]
+        sub esp, 0x10
+        push ebx
+        push ebp
+        push esi
+        xor esi, esi
+        cmp eax, 0x4
+        push edi
+        jl L_tail
+        mov eax, dword ptr [ecx + 0x30]
+        mov edi, dword ptr [ecx + 0x38]
+        lea ebp, [edi + 0xc]
+        sub edi, eax
+        mov dword ptr [esp + 0x14], edi
+        mov edi, 0x4
+        sub edi, eax
+        mov dword ptr [esp + 0x18], edi
+        mov edi, 0x8
+        sub edi, eax
+        mov dword ptr [esp + 0x1c], edi
+        mov edi, 0xfffffffc
+        sub edi, eax
+        lea edx, [eax + 0x4]
+        mov dword ptr [esp + 0x10], edi
+        jmp L_entry
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+L_loop:
+        mov edi, dword ptr [esp + 0x10]
+L_entry:
+        fld dword ptr [edx - 0x4]
+        fld dword ptr [ebp - 0xc]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jnp L_ce4
+        mov ebx, dword ptr [ecx + 0x3c]
+        add edi, edx
+        fld dword ptr [edi + ebx]
+        add edi, ebx
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        je L_ce6
+        mov eax, dword ptr [esp + 0x14]
+        fld dword ptr [edx]
+        fld dword ptr [eax + edx]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jnp L_ce1
+        fld dword ptr [edi + 0x4]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        je L_cf0
+        fld dword ptr [edx + 0x4]
+        fld dword ptr [ebp - 0x4]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jnp L_cfd
+        mov eax, dword ptr [esp + 0x18]
+        add eax, edx
+        fld dword ptr [eax + ebx]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        je L_d0c
+        fld dword ptr [edx + 0x8]
+        fld dword ptr [ebp]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jnp L_d19
+        mov eax, dword ptr [esp + 0x1c]
+        add eax, edx
+        fld dword ptr [eax + ebx]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        je L_d28
+        mov eax, dword ptr [ecx + 0x4]
+        add esi, 0x4
+        add eax, -3
+        add edx, 0x10
+        add ebp, 0x10
+        cmp esi, eax
+        jl L_loop
+L_tail:
+        mov edi, dword ptr [ecx + 0x4]
+        cmp esi, edi
+        jge L_ce6
+        mov eax, dword ptr [ecx + 0x30]
+        mov ebx, dword ptr [ecx + 0x38]
+        lea edx, [eax + 4 * esi]
+        sub ebx, eax
+        nop
+L_tloop:
+        fld dword ptr [edx]
+        fld dword ptr [edx + ebx]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x5
+        jnp L_ce4
+        mov eax, dword ptr [ecx + 0x3c]
+        fld dword ptr [eax + 4 * esi]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        je L_ce6
+        add esi, 0x1
+        add edx, 0x4
+        cmp esi, edi
+        jl L_tloop
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+L_ce1:
+        add esi, 0x1
+L_ce4:
+        fstp st(0)
+L_ce6:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+L_cf0:
+        add esi, 0x1
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+L_cfd:
+        add esi, 0x2
+        fstp st(0)
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+L_d0c:
+        add esi, 0x2
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+L_d19:
+        add esi, 0x3
+        fstp st(0)
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+L_d28:
+        add esi, 0x3
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
