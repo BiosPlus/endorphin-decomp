@@ -6314,3 +6314,16 @@ extern "C" __declspec(naked) void __fastcall fn_00537ED0(void* self) {
     ret 014h
     }
 }
+
+extern "C" void __fastcall ext_00537870(void* self);
+extern "C" void __fastcall ext_00534F30(void* self);
+
+// [0x005379A0] sub_005379A0 (32 bytes)
+extern "C" void* __fastcall fn_005379A0(void* self) {
+    unsigned char* obj = (unsigned char*)((void* (__cdecl *)())ext_005371F0)();
+    if (obj[0x34] == 0) {
+        ext_00537870(obj);
+        ext_00534F30(obj);
+    }
+    return obj;
+}
