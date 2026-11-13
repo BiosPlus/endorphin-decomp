@@ -705,3 +705,41 @@ extern "C" __declspec(naked) void __fastcall fn_0065A590(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00645520] MagnetJoint::vfunc_0_off_4 (68 bytes)
+extern "C" void ext_0067E990();
+
+extern "C" __declspec(naked) void __fastcall fn_00645520(void* self, int edx_unused, void* arg0) {
+    __asm {
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [esp + 0Ch]
+        mov     ebx, ecx
+        mov     eax, dword ptr [ebx - 4]
+        mov     edx, dword ptr [eax + 0BCh]
+        push    esi
+        lea     ecx, [ebx - 4]
+        push    edi
+        push    ebp
+        call    edx
+        lea     edi, [ebx + 18h]
+        mov     ecx, 10h
+        mov     esi, ebp
+        rep movsd
+        cmp     dword ptr [ebx + 58h], 0
+        je      L_skip
+        mov     ecx, dword ptr [ebx + 58h]
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax + 0Ch]
+        call    edx
+        push    eax
+        mov     ecx, ebp
+        call    ext_0067E990
+    L_skip:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret     4
+    }
+}
