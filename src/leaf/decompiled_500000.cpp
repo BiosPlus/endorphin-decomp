@@ -6468,3 +6468,11 @@ extern "C" void* __fastcall fn_0050AA50(char* self, int edx_unused, void* arg) {
     ext_0050A060(self + 4, arg, 0, mem_00A9F178);
     return arg;
 }
+
+// [0x0050A9D0] sub_0050A9D0 (34 bytes)
+extern "C" void __cdecl ext_00509F70(void* a, void* b, int c, int d, int e);
+
+extern "C" void* __fastcall fn_0050A9D0(char* self, int edx_unused, void* arg) {
+    ext_00509F70(self + 4, arg, 0, mem_00A9F178, 0);
+    return arg;
+}
