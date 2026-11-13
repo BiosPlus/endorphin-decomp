@@ -4403,3 +4403,16 @@ extern "C" __declspec(naked) void __fastcall fn_005E0130(void* self) {
         ret 0x8
     }
 }
+
+// [0x005EBDD0] sub_005EBDD0 (40 bytes)
+extern "C" void ext_005E0570();
+extern "C" void ext_005E4A00();
+extern "C" void __fastcall fn_005EBDD0(void* self, int edx_unused, int arg1) {
+    if (((bool (__thiscall*)(void*))ext_005E0570)(self)) {
+        ((void (__thiscall*)(void*, int))ext_005E4A00)(self, arg1);
+    } else {
+        void** subobj = (void**)((char*)self + 0xC);
+        void** vtbl = (void**)(*subobj);
+        ((void (__thiscall*)(void*, int))vtbl[2])(subobj, arg1);
+    }
+}
