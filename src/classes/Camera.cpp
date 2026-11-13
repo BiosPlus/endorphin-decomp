@@ -594,3 +594,45 @@ extern "C" __declspec(naked) void __fastcall fn_00549370(void* self) {
         ret 0xc
     }
 }
+
+// [0x00549310] Camera::vfunc_11 (88 bytes)
+extern "C" void ext_005491F0();
+extern "C" void ext_00549280();
+
+extern "C" __declspec(naked) void __fastcall fn_00549310(void* self) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [esp + 0x18]
+        fld dword ptr [eax]
+        push esi
+        fstp dword ptr [esp + 0x4]
+        push edi
+        fld dword ptr [eax + 0x4]
+        mov esi, ecx
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [eax + 0xc]
+        lea eax, [esp + 0x8]
+        push eax
+        fstp dword ptr [esp + 0x18]
+        call ext_00549280
+        mov edi, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 0x50]
+        push edi
+        lea eax, [esp + 0x14]
+        push eax
+        push ecx
+        mov ecx, esi
+        call edx
+        push edi
+        mov ecx, esi
+        call ext_005491F0
+        pop edi
+        pop esi
+        add esp, 0x10
+        ret 0xc
+    }
+}
