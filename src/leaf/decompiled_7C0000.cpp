@@ -8499,3 +8499,195 @@ L_has_result:
         ret
     }
 }
+
+// [0x007C9550] sub_007C9550 (463 bytes)
+extern "C" void ext_007C8E30();
+extern "C" void ext_007CA110();
+extern "C" int mem_0092A270;
+extern "C" __declspec(naked) void __fastcall fn_007C9550(void* self) {
+    __asm {
+        sub esp, 0x24
+        fld dword ptr [esp + 0x30]
+        push esi
+        fst dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x38]
+        fst dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x3c]
+        fst dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x40]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x44]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x48]
+        fstp dword ptr [esp + 0x18]
+        _emit 0xd9
+        _emit 0xc2
+        _emit 0xde
+        _emit 0xcb
+        _emit 0xd9
+        _emit 0xca
+        fadd qword ptr [mem_0092A278]
+        fstp dword ptr [esp + 0x34]
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xc9
+        fadd dword ptr [esp + 0x34]
+        fstp dword ptr [esp + 0x34]
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xc9
+        fadd dword ptr [esp + 0x34]
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x34]
+        fsub qword ptr [mem_0092A270]
+        _emit 0xd9
+        _emit 0xe1
+        fstp dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x34]
+        fcomp dword ptr [mem_00968ED8]
+        fnstsw ax
+        test ah, 0x41
+        jnp skip_a
+        lea esi, [esp + 0x4]
+        call ext_007C8E30
+        _emit 0xdd
+        _emit 0xd8
+skip_a:
+        fld dword ptr [esp + 0x40]
+        fld dword ptr [esp + 0x44]
+        fld dword ptr [esp + 0x48]
+        _emit 0xd9
+        _emit 0xc2
+        _emit 0xde
+        _emit 0xcb
+        _emit 0xd9
+        _emit 0xca
+        fadd qword ptr [mem_0092A278]
+        fstp dword ptr [esp + 0x40]
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xc9
+        fadd dword ptr [esp + 0x40]
+        fstp dword ptr [esp + 0x40]
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xc9
+        fadd dword ptr [esp + 0x40]
+        fstp dword ptr [esp + 0x40]
+        fld dword ptr [esp + 0x40]
+        fsub qword ptr [mem_0092A270]
+        _emit 0xd9
+        _emit 0xe1
+        fstp dword ptr [esp + 0x40]
+        fld dword ptr [esp + 0x40]
+        fcomp dword ptr [mem_00968ED8]
+        fnstsw ax
+        test ah, 0x41
+        jnp skip_b
+        lea esi, [esp + 0x10]
+        call ext_007C8E30
+        _emit 0xdd
+        _emit 0xd8
+skip_b:
+        cmp dword ptr [esp + 0x30], 0x0
+        fld dword ptr [esp + 0x18]
+        _emit 0xd9
+        _emit 0xc0
+        mov esi, dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x8]
+        lea edx, [esp + 0x4]
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xca
+        fld dword ptr [esp + 0x14]
+        _emit 0xd9
+        _emit 0xc0
+        fld dword ptr [esp + 0xc]
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xca
+        _emit 0xd9
+        _emit 0xcc
+        _emit 0xde
+        _emit 0xe1
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x10]
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xcc
+        fld dword ptr [esp + 0x4]
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xce
+        _emit 0xd9
+        _emit 0xcc
+        _emit 0xde
+        _emit 0xe5
+        _emit 0xd9
+        _emit 0xcc
+        fstp dword ptr [esp + 0x20]
+        _emit 0xde
+        _emit 0xca
+        _emit 0xde
+        _emit 0xca
+        _emit 0xde
+        _emit 0xe1
+        fstp dword ptr [esp + 0x24]
+        jne flag_nz
+        mov ecx, dword ptr [esi + 0x94]
+        lea eax, [esi + 0xbc]
+        push eax
+        push ecx
+        push edx
+        push 0x0
+        call ext_007CA110
+        mov ecx, dword ptr [esi + 0x94]
+        lea eax, [esi + 0xcc]
+        push eax
+        push ecx
+        lea edx, [esp + 0x28]
+        push edx
+        push 0x0
+        call ext_007CA110
+        mov ecx, dword ptr [esi + 0x94]
+        lea eax, [esi + 0xdc]
+        jmp tail
+flag_nz:
+        mov ecx, dword ptr [esi + 0x98]
+        lea eax, [esi + 0xfc]
+        push eax
+        push ecx
+        push edx
+        push 0x0
+        call ext_007CA110
+        mov ecx, dword ptr [esi + 0x98]
+        lea eax, [esi + 0x10c]
+        push eax
+        push ecx
+        lea edx, [esp + 0x28]
+        push edx
+        push 0x0
+        call ext_007CA110
+        mov ecx, dword ptr [esi + 0x98]
+        lea eax, [esi + 0x11c]
+tail:
+        push eax
+        push ecx
+        lea edx, [esp + 0x44]
+        push edx
+        push 0x0
+        call ext_007CA110
+        add esp, 0x30
+        pop esi
+        add esp, 0x24
+        ret
+    }
+}
