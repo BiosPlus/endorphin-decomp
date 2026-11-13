@@ -715,3 +715,171 @@ ret_buf:
         ret
     }
 }
+
+// [0x006FBDB0] sub_006FBDB0 (352 bytes)
+// cdecl, 6 stack args (plain ret). Walks two object trees (a1/a3 and a2/a4) and calls vfunc 0x10 on the roots and their children.
+extern "C" __declspec(naked) bool __cdecl fn_006FBDB0(void* a1, void* a2, void* a3, void* a4, int mode, int a6) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov edx, 0xc
+loop_top:
+        mov esi, dword ptr [esp + 0x24]
+        mov byte ptr [esp + 0x20], 0x0
+        cmp esi, edx
+        jne not_c
+        mov dword ptr [esp + 0x1c], 0xa
+        jmp after_map
+not_c:
+        cmp esi, 0xa
+        jne not_a
+        mov dword ptr [esp + 0x1c], edx
+        mov byte ptr [esp + 0x20], 0x1
+        jmp after_map
+not_a:
+        cmp esi, 0xb
+        jne not_b
+        mov dword ptr [esp + 0x1c], 0xd
+        mov byte ptr [esp + 0x20], 0x1
+        jmp after_map
+not_b:
+        cmp esi, 0xd
+        mov dword ptr [esp + 0x1c], 0xb
+        je after_map
+        mov dword ptr [esp + 0x1c], esi
+after_map:
+        test ecx, ecx
+        je zero_c
+        mov eax, dword ptr [ecx + 0x34]
+        and eax, 0x8
+        cmp al, 0x8
+        jne zero_c
+        mov ecx, dword ptr [ecx + 0x8]
+        jmp got_c
+zero_c:
+        xor ecx, ecx
+got_c:
+        test edi, edi
+        je zero_a
+        mov eax, dword ptr [edi + 0x34]
+        and eax, 0x8
+        cmp al, 0x8
+        jne zero_a
+        mov eax, dword ptr [edi + 0x8]
+        jmp got_a
+zero_a:
+        xor eax, eax
+got_a:
+        test ecx, ecx
+        jne have_c
+        test eax, eax
+        je finish
+        mov ecx, ebx
+have_c:
+        test eax, eax
+        mov edi, eax
+        jne loop_top
+        mov edi, ebp
+        jmp loop_top
+finish:
+        mov al, byte ptr [esp + 0x20]
+        test al, al
+        mov eax, dword ptr [esp + 0x1c]
+        jne fin_have_t
+        mov eax, esi
+fin_have_t:
+        mov edi, dword ptr [esp + 0x28]
+        mov edx, dword ptr [ebp]
+        push edi
+        push 0
+        push ebx
+        push -1
+        push ebp
+        push eax
+        push 0
+        mov ecx, ebp
+        call dword ptr [edx + 0x40]
+        mov al, byte ptr [esp + 0x20]
+        test al, al
+        mov eax, esi
+        jne q_have_mode
+        mov eax, dword ptr [esp + 0x1c]
+q_have_mode:
+        mov edx, dword ptr [ebx]
+        push edi
+        push 0
+        push ebp
+        push -1
+        push ebx
+        push eax
+        push 0
+        mov ecx, ebx
+        call dword ptr [edx + 0x40]
+        mov eax, dword ptr [ebp + 0x1c]
+        xor esi, esi
+        test eax, eax
+        jle p_done
+p_loop:
+        mov eax, dword ptr [ebp + 0x2c]
+        mov ecx, dword ptr [eax + 4 * esi]
+        mov al, byte ptr [esp + 0x20]
+        test al, al
+        mov eax, dword ptr [esp + 0x1c]
+        jne p_have_t
+        mov eax, dword ptr [esp + 0x24]
+p_have_t:
+        mov edx, dword ptr [ecx]
+        push edi
+        push 0
+        push ebx
+        push -1
+        push ebp
+        push eax
+        push 0
+        call dword ptr [edx + 0x40]
+        mov eax, dword ptr [ebp + 0x1c]
+        inc esi
+        cmp esi, eax
+        jl p_loop
+p_done:
+        mov eax, dword ptr [ebx + 0x1c]
+        xor esi, esi
+        test eax, eax
+        jle q_done
+q_loop:
+        mov eax, dword ptr [ebx + 0x2c]
+        mov ecx, dword ptr [eax + 4 * esi]
+        mov al, byte ptr [esp + 0x20]
+        test al, al
+        mov eax, dword ptr [esp + 0x24]
+        jne q_have_mode2
+        mov eax, dword ptr [esp + 0x1c]
+q_have_mode2:
+        mov edx, dword ptr [ecx]
+        push edi
+        push 0
+        push ebp
+        push -1
+        push ebx
+        push eax
+        push 0
+        call dword ptr [edx + 0x40]
+        mov eax, dword ptr [ebx + 0x1c]
+        inc esi
+        cmp esi, eax
+        jl q_loop
+q_done:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        ret
+    }
+}
