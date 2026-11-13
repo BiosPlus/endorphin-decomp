@@ -5011,3 +5011,39 @@ L_5AE598:
         ret 0x14
     }
 }
+
+// [0x005AE480] sub_005AE480 (62 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_005AE480(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp byte ptr [edi + 0x2d], 0
+        mov ebx, ecx
+        mov esi, edi
+        jne done
+    loop_start:
+        mov eax, dword ptr [esi + 8]
+        push eax
+        mov ecx, ebx
+        call fn_005AE480
+        mov esi, dword ptr [esi]
+        lea ecx, [edi + 0xc]
+        call dword ptr [mem_00924FF4]
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+        cmp byte ptr [esi + 0x2d], 0
+        mov edi, esi
+        je loop_start
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
