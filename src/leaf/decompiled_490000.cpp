@@ -7010,3 +7010,44 @@ extern "C" bool __fastcall fn_00493840(void* self) {
     ((void (__fastcall*)(void*))ext_00492610)(self);
     return true;
 }
+
+// [0x0049F710] sub_0049F710 (69 bytes)
+extern "C" void ext_0049ED70();
+extern "C" void ext_00499900();
+
+extern "C" __declspec(naked) void __cdecl fn_0049F710() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x24]
+        push ebp
+        mov ebp, dword ptr [esp + 0x24]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+    L_0049F720:
+        cmp esi, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [esp + 0x28]
+        je L_0049F744
+        lea edi, [esi + 0x8]
+        lea eax, [edi + 0x30]
+        push eax
+        call ext_0049ED70
+        push ebx
+        push eax
+        push ebp
+        mov ecx, edi
+        call ext_00499900
+        mov esi, dword ptr [esi]
+        jmp L_0049F720
+    L_0049F744:
+        mov eax, dword ptr [esp + 0x14]
+        pop edi
+        mov dword ptr [eax], ecx
+        pop esi
+        mov dword ptr [eax + 0x4], ebp
+        pop ebp
+        mov dword ptr [eax + 0x8], ebx
+        pop ebx
+        ret
+    }
+}
