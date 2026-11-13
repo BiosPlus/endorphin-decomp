@@ -12145,3 +12145,495 @@ extern "C" __declspec(naked) void __cdecl fn_007D8E80(void) {
         ret
     }
 }
+
+extern "C" void ext_007D9680();
+
+// [0x007D96C0] sub_007D96C0 (1333 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007D96C0(void* self) {
+    __asm {
+        push ecx
+        mov ecx, [esp+0x28]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        xor ebp, ebp
+        xor edi, edi
+        test ecx, ecx
+        mov [esp+0x10], ebp
+        je s_done
+        mov eax, [esp+0x1c]
+        mov ebx, [esp+0x28]
+        mov esi, eax
+        sub ebx, eax
+        mov [esp+0x10], ecx
+    s_loop:
+        cmp dword ptr [ebx+esi], 0
+        jle s_next
+        mov ecx, [esi]
+        mov eax, 0x2aaaaaab
+        imul ecx
+        sar edx, 1
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        lea eax, [eax+2*eax]
+        add eax, eax
+        add eax, eax
+        mov edx, ecx
+        sub edx, eax
+        mov eax, ecx
+        je s_a
+        sub eax, edx
+        add eax, 0xc
+    s_a:
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        add ebp, eax
+        mov eax, ecx
+        and eax, 0x80000003
+        jns s_b
+        dec eax
+        or eax, -4
+        inc eax
+    s_b:
+        je s_c
+        sub ecx, eax
+        add ecx, 4
+    s_c:
+        mov eax, ecx
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        add edi, eax
+    s_next:
+        add esi, 4
+        sub dword ptr [esp+0x10], 1
+        jne s_loop
+        mov [esp+0x10], ebp
+    s_done:
+        mov eax, ebp
+        and eax, 0x8000000f
+        jns s_d
+        dec eax
+        or eax, -0x10
+        inc eax
+    s_d:
+        je s_e
+        sub ebp, eax
+        add ebp, 0x10
+    s_e:
+        mov eax, edi
+        and eax, 0x8000000f
+        jns s_f
+        dec eax
+        or eax, -0x10
+        inc eax
+    s_f:
+        mov ebx, edi
+        je s_g
+        sub ebx, eax
+        add ebx, 0x10
+    s_g:
+        lea ecx, [4*edi]
+        mov eax, ecx
+        and eax, 0x8000000f
+        jns s_h
+        dec eax
+        or eax, -0x10
+        inc eax
+    s_h:
+        je s_i
+        lea ecx, [4*edi+0x10]
+        sub ecx, eax
+    s_i:
+        mov esi, [esp+0x18]
+        lea eax, [edi+4*edi]
+        add eax, eax
+        cdq
+        sub eax, edx
+        sar eax, 1
+        mov edx, edi
+        and edx, 0x80000001
+        mov [esi+0x14], eax
+        mov [esi+0x20], eax
+        mov [esi+0x2c], ecx
+        mov [esi+0x80], ebp
+        mov [esi+0x98], ebx
+        jns s_j
+        dec edx
+        or edx, -2
+        inc edx
+    s_j:
+        mov ebx, edi
+        je s_k
+        sub ebx, edx
+        add ebx, 2
+    s_k:
+        mov [esi+0xb0], ebx
+        mov ebx, [esp+0x10]
+        mov ebp, ebx
+        and ebp, 0x80000001
+        jns s_l
+        dec ebp
+        or ebp, -2
+        inc ebp
+    s_l:
+        je s_m
+        sub ebx, ebp
+        add ebx, 2
+    s_m:
+        xor ebp, ebp
+        cmp edx, ebp
+        mov [esi+0x8c], ebx
+        je s_n
+        sub edi, edx
+        add edi, 2
+    s_n:
+        mov edx, [esp+0x38]
+        mov [esi+0xa4], edi
+        mov edi, edx
+        and edi, 0x8000000f
+        jns s_o
+        dec edi
+        or edi, -0x10
+        inc edi
+    s_o:
+        je s_p
+        sub edx, edi
+        add edx, 0x10
+    s_p:
+        mov edi, [esp+0x40]
+        mov ebx, [esp+0x3c]
+        mov [esi+0x38], ecx
+        mov [esi+0x44], ecx
+        mov [esi+0x50], ecx
+        mov [esi+0x5c], ecx
+        mov [esi+0x68], ecx
+        mov [esi+0x74], ecx
+        lea ecx, [eax+2*eax]
+        push edi
+        shl ecx, 6
+        push 0x99e1dc
+        add ecx, 0x40
+        push ecx
+        push ebx
+        mov [esi+0x8], edx
+        call ext_007D9680
+        mov [esi+0xc], eax
+        mov eax, [esi+0x20]
+        lea edx, [eax+2*eax]
+        push edi
+        shl edx, 6
+        push 0x99e1d8
+        add edx, 0x40
+        push edx
+        push ebx
+        call ext_007D9680
+        mov [esi+0x18], eax
+        mov eax, [esi+0x2c]
+        lea edx, [4*eax]
+        mov ecx, edx
+        add esp, 0x20
+        and ecx, 0x3f
+        je s_q
+        lea edx, [4*eax+0x40]
+        sub edx, ecx
+    s_q:
+        push edi
+        push 0x99df80
+        add edx, 0x40
+        push edx
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0x80]
+        mov [esi+0x24], eax
+        lea eax, [4*ecx]
+        mov edx, eax
+        add esp, 0x10
+        and edx, 0x3f
+        je s_r
+        lea eax, [4*ecx+0x40]
+        sub eax, edx
+    s_r:
+        push edi
+        push 0x99e1c8
+        add eax, 0x40
+        push eax
+        push ebx
+        call ext_007D9680
+        mov [esi+0x78], eax
+        mov eax, [esi+0x98]
+        lea edx, [4*eax]
+        mov ecx, edx
+        add esp, 0x10
+        and ecx, 0x3f
+        jne s_t
+        mov eax, edx
+        jmp s_u
+    s_t:
+        lea eax, [4*eax+0x40]
+        sub eax, ecx
+    s_u:
+        push edi
+        push 0x99e1c0
+        add eax, 0x40
+        push eax
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0xb0]
+        mov [esi+0x90], eax
+        mov eax, ecx
+        neg eax
+        shl eax, 5
+        add esp, 0x10
+        and eax, 0x3f
+        jne s_v
+        shl ecx, 5
+        jmp s_w
+    s_v:
+        add ecx, 2
+        shl ecx, 5
+        sub ecx, eax
+    s_w:
+        push edi
+        push 0x99e1b4
+        add ecx, 0x40
+        push ecx
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0x8c]
+        mov [esi+0xa8], eax
+        mov eax, ecx
+        neg eax
+        shl eax, 5
+        add esp, 0x10
+        and eax, 0x3f
+        jne s_x
+        shl ecx, 5
+        jmp s_y
+    s_x:
+        add ecx, 2
+        shl ecx, 5
+        sub ecx, eax
+    s_y:
+        push edi
+        push 0x99e1a0
+        add ecx, 0x40
+        push ecx
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0xa4]
+        mov [esi+0x84], eax
+        mov eax, ecx
+        neg eax
+        shl eax, 5
+        add esp, 0x10
+        and eax, 0x3f
+        jne s_z
+        shl ecx, 5
+        jmp s_z2
+    s_z:
+        add ecx, 2
+        shl ecx, 5
+        sub ecx, eax
+    s_z2:
+        push edi
+        push 0x99e198
+        add ecx, 0x40
+        push ecx
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0x8]
+        mov [esi+0x9c], eax
+        lea eax, [4*ecx]
+        mov edx, eax
+        add esp, 0x10
+        and edx, 0x3f
+        je s_a2
+        lea eax, [4*ecx+0x40]
+        sub eax, edx
+    s_a2:
+        push edi
+        push 0x99e17c
+        add eax, 0x40
+        push eax
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0x38]
+        mov [esi], eax
+        lea eax, [4*ecx]
+        mov edx, eax
+        add esp, 0x10
+        and edx, 0x3f
+        je s_b2
+        lea eax, [4*ecx+0x40]
+        sub eax, edx
+    s_b2:
+        push edi
+        push 0x99e174
+        add eax, 0x40
+        push eax
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0x44]
+        mov [esi+0x30], eax
+        lea eax, [4*ecx]
+        mov edx, eax
+        add esp, 0x10
+        and edx, 0x3f
+        je s_c2
+        lea eax, [4*ecx+0x40]
+        sub eax, edx
+    s_c2:
+        push edi
+        push 0x99e170
+        add eax, 0x40
+        push eax
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0x50]
+        mov [esi+0x3c], eax
+        lea eax, [4*ecx]
+        mov edx, eax
+        add esp, 0x10
+        and edx, 0x3f
+        je s_d2
+        lea eax, [4*ecx+0x40]
+        sub eax, edx
+    s_d2:
+        push edi
+        push 0x99e16c
+        add eax, 0x40
+        push eax
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0x5c]
+        mov [esi+0x48], eax
+        lea eax, [4*ecx]
+        mov edx, eax
+        add esp, 0x10
+        and edx, 0x3f
+        je s_e2
+        lea eax, [4*ecx+0x40]
+        sub eax, edx
+    s_e2:
+        push edi
+        push 0x98ce1c
+        add eax, 0x40
+        push eax
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0x68]
+        mov [esi+0x54], eax
+        lea eax, [4*ecx]
+        mov edx, eax
+        add esp, 0x10
+        and edx, 0x3f
+        je s_f2
+        lea eax, [4*ecx+0x40]
+        sub eax, edx
+    s_f2:
+        push edi
+        push 0x98ce44
+        add eax, 0x40
+        push eax
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0x74]
+        mov [esi+0x60], eax
+        lea eax, [4*ecx]
+        mov edx, eax
+        add esp, 0x10
+        and edx, 0x3f
+        je s_g2
+        lea eax, [4*ecx+0x40]
+        sub eax, edx
+    s_g2:
+        push edi
+        push 0x99e160
+        add eax, 0x40
+        push eax
+        push ebx
+        call ext_007D9680
+        mov ecx, [esi+0xc]
+        mov edx, [esi+0x18]
+        add ecx, 0x3f
+        add edx, 0x3f
+        and ecx, -0x40
+        and edx, -0x40
+        mov [esi+0xc], ecx
+        mov ecx, [esi+0x24]
+        mov [esi+0x18], edx
+        mov edx, [esi+0x78]
+        add ecx, 0x3f
+        add edx, 0x3f
+        and ecx, -0x40
+        and edx, -0x40
+        mov [esi+0x24], ecx
+        mov ecx, [esi+0x90]
+        mov [esi+0x78], edx
+        mov edx, [esi+0xa8]
+        add ecx, 0x3f
+        add edx, 0x3f
+        and ecx, -0x40
+        and edx, -0x40
+        mov [esi+0x90], ecx
+        mov ecx, [esi+0x84]
+        mov [esi+0xa8], edx
+        mov edx, [esi+0x9c]
+        add ecx, 0x3f
+        add edx, 0x3f
+        and ecx, -0x40
+        and edx, -0x40
+        mov [esi+0x84], ecx
+        mov ecx, [esi]
+        mov [esi+0x9c], edx
+        mov edx, [esi+0x30]
+        add ecx, 0x3f
+        add edx, 0x3f
+        and ecx, -0x40
+        and edx, -0x40
+        mov [esi], ecx
+        mov ecx, [esi+0x3c]
+        mov [esi+0x30], edx
+        mov edx, [esi+0x48]
+        add ecx, 0x3f
+        add edx, 0x3f
+        and ecx, -0x40
+        and edx, -0x40
+        mov [esi+0x3c], ecx
+        mov ecx, [esi+0x54]
+        mov [esi+0x48], edx
+        mov edx, [esi+0x60]
+        add esp, 0x10
+        add ecx, 0x3f
+        add edx, 0x3f
+        and ecx, -0x40
+        and edx, -0x40
+        add eax, 0x3f
+        pop edi
+        and eax, -0x40
+        mov [esi+0x10], ebp
+        mov [esi+0x1c], ebp
+        mov [esi+0x4], ebp
+        mov [esi+0x28], ebp
+        mov [esi+0x34], ebp
+        mov [esi+0x40], ebp
+        mov [esi+0x4c], ebp
+        mov [esi+0x58], ebp
+        mov [esi+0x64], ebp
+        mov [esi+0x70], ebp
+        mov [esi+0x54], ecx
+        mov [esi+0x60], edx
+        mov [esi+0x6c], eax
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
