@@ -3242,3 +3242,25 @@ extern "C" void __fastcall fn_00567280(void* self, int edx_unused, void* os) {
     ((SprintfFn)mem_00925218)((char*)buf, (const char*)0x00958C6C, (double)**(float**)self);
     ((OstreamManipFn)mem_00924E98)(((OstreamStrFn)ext_00435D00)(((OstreamStrFn)ext_00435D00)(os, (const char*)0x00958C60), (const char*)buf), mem_00924E90);
 }
+
+extern "C" int mem_00958BD0;
+extern "C" double __cdecl fabs(double);
+
+// [0x00567890] sub_00567890 (126 bytes)
+extern "C" void __fastcall fn_00567890(void* self, int edx_unused, void* os, float val, bool newline) {
+    typedef void* (__cdecl *OstreamStrFn)(void* os, const char* s);
+    typedef void* (__thiscall *OstreamManipFn)(void* os, int manip);
+    typedef int (__cdecl *SprintfFn)(char* buf, const char* fmt, ...);
+    int buf[5];
+    double orig = val;
+    val = (float)fabs(val);
+    if (val < *(double*)&mem_00958BD0) {
+        ((SprintfFn)mem_00925218)((char*)buf, (const char*)0x00958D3C);
+    } else {
+        ((SprintfFn)mem_00925218)((char*)buf, (const char*)0x00958D34, orig);
+    }
+    ((OstreamStrFn)ext_00435D00)(os, (const char*)buf);
+    if (newline) {
+        ((OstreamManipFn)mem_00924E98)(os, mem_00924E90);
+    }
+}
