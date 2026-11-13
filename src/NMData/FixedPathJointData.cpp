@@ -845,3 +845,63 @@ extern "C" __declspec(naked) void* __fastcall fn_005EBF70(void* self, int edx_un
         ret 0x4
     }
 }
+
+extern "C" void ext_0048EF80();
+extern "C" void ext_005EEB90();
+extern "C" int mem_00925134;
+
+// [0x005EEDB0] NMData::FixedPathJointData::vfunc_67 (118 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005EEDB0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x170]
+        cmp dword ptr [esi + 0x16c], ebx
+        push edi
+        lea edi, [esi + 0x168]
+        jbe L1
+        call dword ptr [mem_00925134]
+    L1:
+        mov ebp, dword ptr [edi + 0x4]
+        cmp ebp, dword ptr [edi + 0x8]
+        jbe L2
+        call dword ptr [mem_00925134]
+    L2:
+        push ebx
+        push edi
+        push ebp
+        push edi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, edi
+        call ext_0048EF80
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0xf0]
+        mov ecx, esi
+        xor edi, edi
+        call eax
+        test eax, eax
+        jle L4
+    L3:
+        push edi
+        mov ecx, esi
+        call ext_005EEB90
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0xf0]
+        mov ecx, esi
+        add edi, 0x1
+        call eax
+        cmp edi, eax
+        jl L3
+    L4:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
