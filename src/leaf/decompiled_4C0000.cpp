@@ -3108,3 +3108,12 @@ extern "C" void __fastcall fn_004C2760(void* self, int edx_unused, int a1) {
     (*(void (__thiscall**)(void*))(*(int*)self + 0x16c))(self);
     ((void (__thiscall*)(void*))ext_004C0340)(self);
 }
+
+extern "C" void ext_00406940();
+
+// [0x004C28C0] sub_004C28C0 (42 bytes)
+extern "C" void __fastcall fn_004C28C0(void* self, int edx_unused, int a1) {
+    ((void (__thiscall*)(void*, int))ext_00406940)((char*)self + 0x16c, a1);
+    (*(void (__thiscall**)(void*))(*(int*)self + 0x16c))(self);
+    ((void (__thiscall*)(void*))ext_004C0340)(self);
+}
