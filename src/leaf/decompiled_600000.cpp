@@ -3712,3 +3712,417 @@ extern "C" __declspec(naked) void* __fastcall fn_0060FB70(void* self) {
         ret
     }
 }
+
+// [0x0060A770] sub_0060A770 (1048 bytes)
+// MSVC 3-way (equal-range) partition returning pair(pfirst, plast); naked to match MSVC codegen.
+extern "C" void ext_0060A550();
+extern "C" int mem_00924EF4;
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) void __cdecl fn_0060A770() {
+    __asm {
+        sub esp, 0x10
+        mov ecx, dword ptr [esp + 0x1c]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x28]
+        mov eax, ecx
+        sub eax, edi
+        sar eax, 0x2
+        cdq
+        sub eax, edx
+        sar eax, 1
+        lea esi, [edi + 4*eax]
+        mov eax, dword ptr [esp + 0x30]
+        push eax
+        add ecx, -0x4
+        push ecx
+        push esi
+        push edi
+        call ext_0060A550
+        add esp, 0x10
+        lea ebp, [esi + 0x4]
+        cmp edi, esi
+        mov edi, dword ptr [mem_00924EF4]
+        mov dword ptr [esp + 0x10], ebp
+        jae near ptr L_60A861
+L_60A7B6:
+        mov ebx, dword ptr [esi]
+        mov eax, dword ptr [esi - 0x4]
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esp + 0x14], eax
+        add ebx, 0x4
+        add eax, 0x4
+        push ebx
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr L_60A861
+        mov eax, dword ptr [esp + 0x14]
+        add eax, 0x4
+        push ebx
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je short L_60A807
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x14]
+        add ecx, 0x20
+        push ecx
+        add edx, 0x20
+        push edx
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60A861
+L_60A807:
+        mov ebx, dword ptr [esi - 0x4]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esp + 0x14], eax
+        add ebx, 0x4
+        add eax, 0x4
+        push ebx
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60A861
+        mov eax, dword ptr [esp + 0x14]
+        add eax, 0x4
+        push ebx
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je short L_60A854
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x14]
+        add eax, 0x20
+        push eax
+        add ecx, 0x20
+        push ecx
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60A861
+L_60A854:
+        add esi, -0x4
+        cmp dword ptr [esp + 0x28], esi
+        jb near ptr L_60A7B6
+L_60A861:
+        cmp ebp, dword ptr [esp + 0x2c]
+        jae near ptr L_60A91F
+        jmp short L_60A870
+        __asm _emit 0x8D __asm _emit 0x49 __asm _emit 0x00
+L_60A870:
+        mov ebx, dword ptr [esi]
+        mov eax, dword ptr [ebp]
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esp + 0x14], eax
+        add ebx, 0x4
+        add eax, 0x4
+        push ebx
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr L_60A91B
+        mov eax, dword ptr [esp + 0x14]
+        add eax, 0x4
+        push ebx
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je short L_60A8C1
+        mov edx, dword ptr [esp + 0x18]
+        mov eax, dword ptr [esp + 0x14]
+        add edx, 0x20
+        push edx
+        add eax, 0x20
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60A91B
+L_60A8C1:
+        mov ebx, dword ptr [ebp]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esp + 0x14], eax
+        add ebx, 0x4
+        add eax, 0x4
+        push ebx
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60A91B
+        mov eax, dword ptr [esp + 0x14]
+        add eax, 0x4
+        push ebx
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je short L_60A90E
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x14]
+        add ecx, 0x20
+        push ecx
+        add edx, 0x20
+        push edx
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60A91B
+L_60A90E:
+        add ebp, 0x4
+        cmp ebp, dword ptr [esp + 0x2c]
+        jb near ptr L_60A870
+L_60A91B:
+        mov dword ptr [esp + 0x10], ebp
+L_60A91F:
+        mov eax, esi
+        mov ebx, ebp
+        mov dword ptr [esp + 0x14], eax
+        jmp short L_60A930
+        __asm _emit 0x8D __asm _emit 0xA4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+L_60A930:
+        cmp ebx, dword ptr [esp + 0x2c]
+        jae near ptr L_60AA06
+        __asm _emit 0x8D __asm _emit 0x9B __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+L_60A940:
+        mov ebp, dword ptr [ebx]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esp + 0x1c], ebp
+        mov dword ptr [esp + 0x18], eax
+        add ebp, 0x4
+        add eax, 0x4
+        push ebp
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr L_60A9F1
+        mov eax, dword ptr [esp + 0x18]
+        add eax, 0x4
+        push ebp
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je short L_60A990
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x18]
+        add eax, 0x20
+        push eax
+        add ecx, 0x20
+        push ecx
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60A9F1
+L_60A990:
+        mov ebp, dword ptr [esi]
+        mov eax, dword ptr [ebx]
+        mov dword ptr [esp + 0x1c], ebp
+        mov dword ptr [esp + 0x18], eax
+        add ebp, 0x4
+        add eax, 0x4
+        push ebp
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60A9FE
+        mov eax, dword ptr [esp + 0x18]
+        add eax, 0x4
+        push ebp
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je short L_60A9DC
+        mov edx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [esp + 0x18]
+        add edx, 0x20
+        push edx
+        add eax, 0x20
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60A9FE
+L_60A9DC:
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [ebx]
+        mov ecx, eax
+        add eax, 0x4
+        mov dword ptr [esp + 0x10], eax
+        mov eax, dword ptr [ecx]
+        mov dword ptr [ecx], edx
+        mov dword ptr [ebx], eax
+L_60A9F1:
+        add ebx, 0x4
+        cmp ebx, dword ptr [esp + 0x2c]
+        jb near ptr L_60A940
+L_60A9FE:
+        mov ebp, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x14]
+L_60AA06:
+        cmp eax, dword ptr [esp + 0x28]
+        jbe near ptr L_60AAEB
+        jmp short L_60AA16
+L_60AA12:
+        mov eax, dword ptr [esp + 0x14]
+L_60AA16:
+        mov ebp, dword ptr [esi]
+        mov eax, dword ptr [eax - 0x4]
+        mov dword ptr [esp + 0x1c], ebp
+        mov dword ptr [esp + 0x18], eax
+        add ebp, 0x4
+        add eax, 0x4
+        push ebp
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        jne near ptr L_60AACA
+        mov eax, dword ptr [esp + 0x18]
+        add eax, 0x4
+        push ebp
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je short L_60AA67
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x18]
+        add eax, 0x20
+        push eax
+        add ecx, 0x20
+        push ecx
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60AACA
+L_60AA67:
+        mov edx, dword ptr [esp + 0x14]
+        mov ebp, dword ptr [edx - 0x4]
+        mov eax, dword ptr [esi]
+        mov dword ptr [esp + 0x1c], ebp
+        mov dword ptr [esp + 0x18], eax
+        add ebp, 0x4
+        add eax, 0x4
+        push ebp
+        push eax
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60AADF
+        mov eax, dword ptr [esp + 0x18]
+        add eax, 0x4
+        push ebp
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je short L_60AAB8
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x18]
+        add eax, 0x20
+        push eax
+        add ecx, 0x20
+        push ecx
+        call edi
+        add esp, 0x8
+        test al, al
+        jne short L_60AADF
+L_60AAB8:
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [eax - 0x4]
+        mov ecx, dword ptr [esi - 0x4]
+        sub esi, 0x4
+        mov dword ptr [esi], edx
+        mov dword ptr [eax - 0x4], ecx
+L_60AACA:
+        mov eax, dword ptr [esp + 0x14]
+        add eax, -0x4
+        cmp dword ptr [esp + 0x28], eax
+        mov dword ptr [esp + 0x14], eax
+        jb near ptr L_60AA12
+L_60AADF:
+        mov eax, dword ptr [esp + 0x14]
+        mov ebp, dword ptr [esp + 0x10]
+        cmp eax, dword ptr [esp + 0x28]
+L_60AAEB:
+        jne short L_60AB35
+        cmp ebx, dword ptr [esp + 0x2c]
+        je near ptr L_60AB77
+        cmp ebp, ebx
+        je short L_60AB05
+        mov edx, dword ptr [ebp]
+        mov ecx, dword ptr [esi]
+        mov dword ptr [esi], edx
+        mov dword ptr [ebp], ecx
+L_60AB05:
+        mov ecx, esi
+        mov edx, dword ptr [ecx]
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esp + 0x1c], edx
+        mov edx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [edx]
+        mov dword ptr [ecx], edx
+        mov ecx, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esp + 0x18]
+        add ebp, 0x4
+        add esi, 0x4
+        mov dword ptr [esp + 0x10], ebp
+        add ebx, 0x4
+        mov dword ptr [edx], ecx
+        jmp near ptr L_60A930
+L_60AB35:
+        sub eax, 0x4
+        cmp ebx, dword ptr [esp + 0x2c]
+        mov dword ptr [esp + 0x14], eax
+        jne short L_60AB67
+        sub esi, 0x4
+        cmp eax, esi
+        je short L_60AB51
+        mov edx, dword ptr [esi]
+        mov ecx, dword ptr [eax]
+        mov dword ptr [eax], edx
+        mov dword ptr [esi], ecx
+L_60AB51:
+        mov edx, dword ptr [ebp - 0x4]
+        mov ecx, dword ptr [esi]
+        sub ebp, 0x4
+        mov dword ptr [esi], edx
+        mov dword ptr [esp + 0x10], ebp
+        mov dword ptr [ebp], ecx
+        jmp near ptr L_60A930
+L_60AB67:
+        mov ecx, dword ptr [ebx]
+        mov edx, dword ptr [eax]
+        mov dword ptr [ebx], edx
+        mov dword ptr [eax], ecx
+        add ebx, 0x4
+        jmp near ptr L_60A930
+L_60AB77:
+        mov eax, dword ptr [esp + 0x24]
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        mov dword ptr [eax + 0x4], ebp
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
