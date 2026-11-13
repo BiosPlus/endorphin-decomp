@@ -6757,3 +6757,40 @@ extern "C" __declspec(naked) void __fastcall fn_0065B550(void* self) {
         ret
     }
 }
+
+// [0x0065EC70] sub_0065EC70 (59 bytes)
+extern "C" void __fastcall ext_0065E010(void* self, int edx_unused, int a1);
+extern "C" void __fastcall ext_0065E150(void* self, int edx_unused, int a1);
+extern "C" void __fastcall ext_0065E6C0(void* self, int edx_unused, int a1);
+extern "C" void __fastcall ext_0065E7B0(void* self, int edx_unused, int a1);
+extern "C" void __fastcall ext_0065E8A0(void* self, int edx_unused, int a1);
+extern "C" void __fastcall ext_0065E990(void* self, int edx_unused, int a1);
+
+extern "C" __declspec(naked) void __fastcall fn_0065EC70(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_0065E010
+        push edi
+        mov ecx, esi
+        call ext_0065E150
+        push edi
+        mov ecx, esi
+        call ext_0065E6C0
+        push edi
+        mov ecx, esi
+        call ext_0065E7B0
+        push edi
+        mov ecx, esi
+        call ext_0065E8A0
+        push edi
+        mov ecx, esi
+        call ext_0065E990
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
