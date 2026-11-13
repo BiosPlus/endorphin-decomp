@@ -2299,3 +2299,147 @@ L_5:
         ret
     }
 }
+
+// [0x007EFF60] sub_007EFF60 (509 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007EFF60(void* self, int idx) {
+    __asm {
+        mov ecx, [esp+4]
+        mov eax, [ecx+0x228]
+        push ebx
+        mov ebx, [esp+0xc]
+        mov edx, [eax+4*ebx]
+        mov [ecx+0x110], edx
+        push ebp
+        mov ebp, [ecx+0x19c]
+        push esi
+        push edi
+        mov edi, [ecx+0x1fc]
+        mov eax, [edi+0x88]
+        mov esi, [eax+4*ebx]
+        mov [ecx+0xb8], esi
+        mov [ecx+0xc8], esi
+        mov [ecx+0xd4], esi
+        mov [ecx+0xe0], esi
+        mov [ecx+0xec], esi
+        mov [ecx+0xf8], esi
+        mov edx, [edi+0x94]
+        mov eax, [edx+4*ebx]
+        mov [ecx+0xa8], eax
+        mov edx, [ebp+4*ebx]
+        mov [ecx+0xac], edx
+        mov eax, esi
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        mov [ecx+0xb0], eax
+        mov eax, [ebp+4*ebx]
+        mov [ecx+0x58], eax
+        mov edx, [edi+0x94]
+        mov eax, [edx+4*ebx]
+        mov edx, [ecx+0x144]
+        mov [ecx+0x40], eax
+        mov eax, [ecx+0x160]
+        mov [ecx+0x54], eax
+        mov eax, [ecx+0x148]
+        mov [ecx+0x3c], eax
+        mov [ecx+0x38], edx
+        mov edx, [ecx+0x178]
+        mov [ecx+0x6c], edx
+        mov [ecx+0x18], esi
+        mov [ecx+0x24], esi
+        mov [ecx+0x30], esi
+        mov [ecx+0x8], esi
+        mov edx, [edi]
+        mov [ecx+0xb4], edx
+        mov eax, [edi+0x34]
+        mov [ecx+0xc4], eax
+        mov edx, [edi+0x40]
+        mov [ecx+0xd0], edx
+        mov eax, [edi+0x4c]
+        mov [ecx+0xdc], eax
+        mov eax, [ecx+0x1c0]
+        mov [ecx+0xe8], eax
+        mov eax, [ecx+0x1d8]
+        mov [ecx+0xf4], eax
+        mov eax, [ecx+0x1cc]
+        mov [ecx+0x14], eax
+        mov eax, [ecx+0x1e4]
+        mov [ecx+0x20], eax
+        mov eax, [ecx+0x1f0]
+        mov [ecx+0x2c], eax
+        mov eax, [ecx+0x114]
+        mov [ecx+0x4], eax
+        xor eax, eax
+        xor edx, edx
+        test ebx, ebx
+        mov [esp+0x18], eax
+        jle L_end
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    L_loop:
+        mov eax, [ebp+4*edx]
+        lea eax, [eax+2*eax]
+        shl eax, 5
+        add [ecx+0x38], eax
+        mov eax, [ebp+4*edx]
+        add eax, eax
+        add eax, eax
+        add [ecx+0x54], eax
+        mov eax, [edi+0x94]
+        mov eax, [eax+4*edx]
+        imul eax, [ecx+0x1bc]
+        add eax, eax
+        add eax, eax
+        add [ecx+0x6c], eax
+        mov eax, [edi+0x94]
+        mov eax, [eax+4*edx]
+        add eax, eax
+        add eax, eax
+        add [ecx+0x3c], eax
+        mov eax, [esp+0x18]
+        mov esi, [edi+0x88]
+        add eax, [esi+4*edx]
+        add edx, 1
+        cmp edx, ebx
+        mov [esp+0x18], eax
+        jl L_loop
+    L_end:
+        mov edx, eax
+        shl edx, 6
+        add [ecx+0xb4], edx
+        cdq
+        and edx, 3
+        add eax, edx
+        mov edx, [ecx+0x1c0]
+        sar eax, 2
+        shl eax, 4
+        add edx, eax
+        add [ecx+0xc4], eax
+        add [ecx+0xd0], eax
+        add [ecx+0xdc], eax
+        mov [ecx+0xe8], edx
+        mov edx, [ecx+0x1d8]
+        add edx, eax
+        mov [ecx+0xf4], edx
+        mov edx, [ecx+0x1cc]
+        add edx, eax
+        mov [ecx+0x14], edx
+        mov edx, [ecx+0x1e4]
+        add edx, eax
+        mov [ecx+0x20], edx
+        mov edx, [ecx+0x1f0]
+        add edx, eax
+        pop edi
+        mov [ecx+0x2c], edx
+        mov edx, [ecx+0x114]
+        pop esi
+        add eax, edx
+        pop ebp
+        mov [ecx+0x4], eax
+        pop ebx
+        ret
+    }
+}
