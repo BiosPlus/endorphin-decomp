@@ -6156,3 +6156,40 @@ extern "C" __declspec(naked) void __fastcall fn_00565FF0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00563740();
+extern "C" void ext_00565260();
+extern "C" void ext_00565B60();
+
+// [0x00565B20] sub_00565B20 (52 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00565B20(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push    ebx
+        mov     ebx, dword ptr [esp + 0xc]
+        test    ebx, ebx
+        push    edi
+        mov     edi, ecx
+        je      short done_edi
+        push    esi
+        mov     esi, dword ptr [esp + 0x10]
+        test    esi, esi
+        je      short done_esi
+        push    ebx
+        push    esi
+        call    ext_00563740
+        push    ebx
+        push    esi
+        mov     ecx, edi
+        call    ext_00565260
+        push    ebx
+        push    esi
+        mov     ecx, edi
+        call    ext_00565B60
+    done_esi:
+        pop     esi
+    done_edi:
+        pop     edi
+        pop     ebx
+        ret     8
+    }
+}
