@@ -622,3 +622,24 @@ extern "C" __declspec(naked) void __fastcall fn_006C8520(void* self) {
         jmp	dword ptr [eax + 0x29c]
     }
 }
+
+extern "C" void ext_006CA060();
+
+// [0x006CA6B0] sub_006CA6B0 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006CA6B0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        push eax
+        call ext_006CA060
+        mov esi, eax
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, 0xa
+        mov edi, eax
+        rep movsd
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
