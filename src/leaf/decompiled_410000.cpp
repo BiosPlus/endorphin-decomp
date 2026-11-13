@@ -6958,3 +6958,155 @@ extern "C" __declspec(naked) void __fastcall fn_0041D890(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00414070] sub_00414070 (352 bytes)
+extern "C" void ext_00401080();
+extern "C" void ext_00454560();
+extern "C" void ext_00454BE0();
+extern "C" void ext_00455C80();
+extern "C" void ext_00455F10();
+extern "C" void ext_006A617E();
+extern "C" void ext_006A6184();
+extern "C" int mem_0093A0BC;
+extern "C" int mem_0093A0B0;
+extern "C" int mem_00925694;
+extern "C" int mem_00924FA0;
+extern "C" int mem_00924FA4;
+extern "C" int mem_00924FA8;
+extern "C" int mem_00924FAC;
+extern "C" int mem_0093A0C4;
+extern "C" int mem_0093A0CC;
+extern "C" int mem_0093A0D8;
+extern "C" int mem_0093A0D4;
+extern "C" int mem_0093A0E0;
+extern "C" int mem_0093A0DC;
+
+extern "C" __declspec(naked) int __fastcall fn_00414070(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 0x10
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_00455C80
+        cmp eax, -1
+        jne L414070_pos
+        or eax, eax
+        pop esi
+        add esp, 0x10
+        ret 4
+    L414070_pos:
+        mov ecx, dword ptr [esi + 0x94]
+        push ebp
+        push edi
+        push 0x7b
+        and ecx, -0x10
+        push esi
+        or ecx, 0x20
+        lea edx, [esp + 0x14]
+        xor ebp, ebp
+        push edx
+        mov dword ptr [esi + 0x94], ecx
+        lea edi, [esi + 0x144]
+        push 0x50201044
+        mov ecx, edi
+        mov dword ptr [esp + 0x1c], ebp
+        mov dword ptr [esp + 0x20], ebp
+        mov dword ptr [esp + 0x24], ebp
+        mov dword ptr [esp + 0x28], ebp
+        call ext_006A6184
+        test eax, eax
+        jne L414070_ok1
+        pop edi
+        pop ebp
+        or eax, -1
+        pop esi
+        add esp, 0x10
+        ret 4
+    L414070_ok1:
+        mov eax, dword ptr [mem_0093A0BC]
+        mov ecx, dword ptr [mem_0093A0B0]
+        push ebx
+        push ebp
+        push eax
+        lea ebx, [esi + 0x198]
+        push ecx
+        mov ecx, ebx
+        call ext_006A617E
+        test eax, eax
+        jne L414070_ok2
+        pop ebx
+        pop edi
+        pop ebp
+        or eax, -1
+        pop esi
+        add esp, 0x10
+        ret 4
+    L414070_ok2:
+        push 1
+        push ebx
+        mov ecx, edi
+        call ext_00401080
+        mov edx, dword ptr [esi + 0x164]
+        push ebp
+        push 1
+        push 0xcf
+        push edx
+        call dword ptr [mem_00925694]
+        cmp edi, ebp
+        mov ecx, dword ptr [esi + 0x1a0]
+        jne L414070_a
+        xor edi, edi
+        jmp L414070_b
+    L414070_a:
+        mov edi, dword ptr [edi + 0x20]
+    L414070_b:
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x10]
+        push edi
+        call edx
+        mov eax, dword ptr [esi + 0x1a4]
+        push eax
+        mov eax, dword ptr [mem_00924FA0]
+        mov ecx, dword ptr [eax]
+        mov ecx, dword ptr [ecx + 4]
+        add ecx, eax
+        call dword ptr [mem_00924FA4]
+        mov dword ptr [esi + 0x1ac], eax
+        mov eax, dword ptr [esi + 0x1a8]
+        push eax
+        mov eax, dword ptr [mem_00924FA8]
+        mov edx, dword ptr [eax]
+        mov ecx, dword ptr [edx + 4]
+        add ecx, eax
+        call dword ptr [mem_00924FAC]
+        mov dword ptr [esi + 0x1b0], eax
+        mov eax, dword ptr [mem_0093A0C4]
+        push eax
+        mov ecx, esi
+        call ext_00455F10
+        mov ecx, dword ptr [mem_0093A0CC]
+        push ecx
+        mov ecx, esi
+        call ext_00454BE0
+        mov edx, dword ptr [mem_0093A0C4]
+        mov eax, dword ptr [mem_0093A0D8]
+        mov ecx, dword ptr [mem_0093A0D4]
+        push edx
+        mov edx, dword ptr [mem_0093A0E0]
+        push eax
+        mov eax, dword ptr [mem_0093A0DC]
+        push ecx
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_00454560
+        pop ebx
+        pop edi
+        pop ebp
+        xor eax, eax
+        pop esi
+        add esp, 0x10
+        ret 4
+    }
+}
