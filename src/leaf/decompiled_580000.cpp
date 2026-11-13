@@ -2135,3 +2135,16 @@ extern "C" __declspec(naked) void* __fastcall fn_0058F200(void* self) {
         ret
     }
 }
+
+// [0x00587DF0] sub_00587DF0 (59 bytes)
+extern "C" void ext_0058F200();
+extern "C" void* __fastcall fn_00587DF0(void* self) {
+    ((void(__fastcall*)(void*))ext_0058F200)(self);
+    *(volatile unsigned int*)((char*)self + 0x150) = 0x928eac;
+    *(unsigned int*)((char*)self + 0x0) = 0x95ae44;
+    *(unsigned int*)((char*)self + 0x4) = 0x95adfc;
+    *(unsigned int*)((char*)self + 0x8) = 0x95adbc;
+    *(unsigned int*)((char*)self + 0xc) = 0x95ad6c;
+    *(volatile unsigned int*)((char*)self + 0x150) = 0x95ad54;
+    return self;
+}
