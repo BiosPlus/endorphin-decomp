@@ -4241,3 +4241,43 @@ L5A09D0_ret:
         ret
     }
 }
+
+// [0x005A19D0] sub_005A19D0 (83 bytes)
+extern "C" void ext_005BF4E0();
+extern "C" void ext_005DF5C0();
+extern "C" int mem_00924FE0;
+extern "C" __declspec(naked) void __fastcall fn_005A19D0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        sub esp, 0x1c
+        mov esi, ecx
+        mov ecx, esp
+        mov dword ptr [esp + 0x24], esp
+        push edi
+        call dword ptr [mem_00924FE0]
+        add esi, 0x598
+        mov ecx, esi
+        call ext_005DF5C0
+        test eax, eax
+        je done_5A19D0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x2c], esp
+        push edi
+        call dword ptr [mem_00924FE0]
+        mov ecx, esi
+        call ext_005DF5C0
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, eax
+        call ext_005BF4E0
+done_5A19D0:
+        pop edi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
