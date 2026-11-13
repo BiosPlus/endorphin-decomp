@@ -3098,3 +3098,13 @@ extern "C" __declspec(naked) void __cdecl fn_004CE540(void* a1) {
         ret
     }
 }
+
+extern "C" void ext_0040ECB0();
+extern "C" void ext_004C0340();
+
+// [0x004C2760] sub_004C2760 (42 bytes)
+extern "C" void __fastcall fn_004C2760(void* self, int edx_unused, int a1) {
+    ((void (__thiscall*)(void*, int))ext_0040ECB0)((char*)self + 0x16c, a1);
+    (*(void (__thiscall**)(void*))(*(int*)self + 0x16c))(self);
+    ((void (__thiscall*)(void*))ext_004C0340)(self);
+}
