@@ -7596,3 +7596,23 @@ extern "C" __declspec(naked) void __cdecl fn_007C9860(void* self) {
         ret
     }
 }
+
+// [0x007C66A0] sub_007C66A0 (102 bytes)
+extern "C" void ext_007D4B90();
+extern "C" void __cdecl fn_007C66A0(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    if (p[0x1c4] & 1) {
+        unsigned char* obj = *(unsigned char**)(p + 0x17c);
+        ((void (__cdecl*)(void*, void*))ext_007D4B90)(obj + 0x70, p + 0x19c);
+        *(unsigned int*)(p + 0x1c4) &= 0xfffffefeu;
+        *(float*)(p + 0x20c) = 0.0f;
+        obj = *(unsigned char**)(p + 0x17c);
+        *(int*)(p + 0x1b8) = -1;
+        *(int*)(obj + 0x110) += -1;
+        obj = *(unsigned char**)(p + 0x17c);
+        void (__cdecl* cb)(void*) = *(void (__cdecl**)(void*))(obj + 0x250);
+        if (cb) {
+            cb(p);
+        }
+    }
+}
