@@ -1323,3 +1323,15 @@ extern "C" __declspec(naked) void __cdecl fn_0086A2B0(void) {
         ret
     }
 }
+
+// [0x0086CD00] sub_0086CD00 (32 bytes)
+extern "C" void __cdecl ext_00859A90(void* p);
+extern "C" void __cdecl ext_00859730(void* p);
+
+extern "C" void __cdecl fn_0086CD00(void* self) {
+    void** s = static_cast<void**>(self);
+    if (s[1] != 0) {
+        ext_00859A90(s[1]);
+    }
+    ext_00859730(self);
+}
