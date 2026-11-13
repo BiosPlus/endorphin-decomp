@@ -122,3 +122,14 @@ extern "C" __declspec(naked) void* __fastcall fn_0070EA90(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0070EA70] sub_0070EA70 (32 bytes)
+extern "C" int __fastcall ext_006BADB0(void* obj);
+extern "C" void ext_006B9EC0();
+extern "C" void __fastcall fn_0070EA70(void* self, int edx_unused, void* a1) {
+    if (a1) {
+        *(void**)((char*)self + 8) = a1;
+        int v = ext_006BADB0(a1);
+        ((void (__thiscall *)(void*, int))ext_006B9EC0)((char*)self + 12, v);
+    }
+}
