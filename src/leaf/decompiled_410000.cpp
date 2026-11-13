@@ -9434,3 +9434,10 @@ extern "C" __declspec(naked) void __fastcall fn_0041DBC0(void* self, int edx_unu
         ret     8
     }
 }
+
+extern "C" int __cdecl ext_00414950(int a1, int a2, int a3, int a4, int a5, int a6);
+
+// [0x00414D90] sub_00414D90 (35 bytes)
+extern "C" int __cdecl fn_00414D90(int a1, int a2, int a3, int a4, int a5) {
+    return ext_00414950(a1, a2, a3, a3, a4, a5);
+}
