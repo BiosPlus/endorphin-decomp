@@ -5901,3 +5901,126 @@ L_done:
         ret
     }
 }
+
+// [0x007C6AA0] sub_007C6AA0 (357 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007C6AA0(void* self, float* bnd) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        fld dword ptr [ecx + 0xb4]
+        mov edx, dword ptr [esp + 8]
+        fld dword ptr [ecx + 0xb0]
+        fld dword ptr [ecx + 0xb8]
+        fld st(1)
+        fmulp st(2), st
+        fldz
+        fadd st(2), st
+        fxch st(2)
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 4]
+        fld st(3)
+        fmulp st(4), st
+        faddp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 4]
+        fld st(2)
+        fmulp st(3), st
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 4]
+        fld dword ptr [edx + 4]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp fail_pop
+        fld dword ptr [ecx + 0xc4]
+        fld dword ptr [ecx + 0xc0]
+        fld dword ptr [ecx + 0xc8]
+        fld st(1)
+        fmulp st(2), st
+        fxch st(1)
+        fadd st, st(3)
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 4]
+        fld st(2)
+        fmulp st(3), st
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 4]
+        fld st(0)
+        fmulp st(1), st
+        fadd dword ptr [esp + 4]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 4]
+        fld dword ptr [edx + 8]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp fail_pop
+        fld dword ptr [ecx + 0xe4]
+        fld dword ptr [ecx + 0xe0]
+        fld dword ptr [ecx + 0xe8]
+        fld st(1)
+        fmulp st(2), st
+        fxch st(1)
+        fadd st, st(3)
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 4]
+        fld st(2)
+        fmulp st(3), st
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 4]
+        fld st(0)
+        fmulp st(1), st
+        fadd dword ptr [esp + 4]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 4]
+        fld dword ptr [edx + 0xc]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp fail_pop
+        fld dword ptr [ecx + 0xf4]
+        fld dword ptr [ecx + 0xf0]
+        fld dword ptr [ecx + 0xf8]
+        fld st(1)
+        fmulp st(2), st
+        fxch st(1)
+        faddp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp + 4]
+        fld st(0)
+        fmulp st(1), st
+        fadd dword ptr [esp + 4]
+        fstp dword ptr [esp + 4]
+        fld st(0)
+        fmulp st(1), st
+        fadd dword ptr [esp + 4]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esp + 4]
+        fld dword ptr [edx + 0x10]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jnp fail_nopop
+        fld dword ptr [ecx + 0x20c]
+        fld dword ptr [edx + 0x14]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne ret0
+        test dword ptr [ecx + 0x1c4], 0x100
+        je ret1
+    ret0:
+        xor eax, eax
+        ret
+    fail_pop:
+        fstp st(0)
+    fail_nopop:
+    ret1:
+        mov eax, 1
+        ret
+    }
+}
