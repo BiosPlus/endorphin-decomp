@@ -265,3 +265,36 @@ extern "C" __declspec(naked) void __fastcall fn_00413020(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" void ext_0043CEB0();
+extern "C" void ext_00468180();
+extern "C" void ext_00468660();
+extern "C" void ext_004686A0();
+
+// [0x00410460] MultiTrackView::CompositeEventTrack::vfunc_11 (58 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00410460(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_00468180
+        mov ecx, dword ptr [edi + 0x30]
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        call ext_0043CEB0
+        push eax
+        mov ecx, esi
+        call ext_004686A0
+        mov ecx, esi
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x98]
+        push 5
+        call eax
+        pop edi
+        pop esi
+        ret 0x10
+    }
+}
