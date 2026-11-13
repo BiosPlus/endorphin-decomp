@@ -11291,3 +11291,48 @@ extern "C" void __fastcall fn_0067E990(Mat64_67E990* self, int edx_unused, const
     Mat64_67E990 out;
     *self = *((Fn004875A0_t)ext_004875A0)(self, &out, &tmp);
 }
+
+// [0x006722F0] sub_006722F0 (81 bytes)
+extern "C" void ext_00698A90();
+
+extern "C" __declspec(naked) void __fastcall fn_006722F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 4]
+        test ecx, ecx
+        push edi
+        je skip_child
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x78]
+        push esi
+        call edx
+skip_child:
+        mov edi, dword ptr [esp + 0x14]
+        mov ebx, dword ptr [esp + 0x10]
+        push edi
+        mov ecx, ebx
+        call ext_00698A90
+        cmp eax, 7
+        mov ecx, 1
+        ja have_val
+        mov ecx, eax
+have_val:
+        push ecx
+        call ext_00671100
+        add esp, 4
+        push edi
+        mov dword ptr [esi + 4], eax
+        mov edx, dword ptr [eax]
+        push ebx
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x84]
+        push esi
+        call eax
+        pop edi
+        pop esi
+        pop ebx
+        ret 8
+    }
+}
