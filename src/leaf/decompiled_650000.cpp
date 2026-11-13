@@ -5421,3 +5421,93 @@ extern "C" __declspec(naked) void __fastcall fn_00650800(void* self) {
         ret
     }
 }
+
+// [0x006508C0] sub_006508C0 (191 bytes)
+extern "C" void ext_00694880();
+extern "C" void ext_007C93E0();
+extern "C" void ext_007D8700();
+extern "C" __declspec(naked) void __fastcall fn_006508C0(void* self) {
+    __asm {
+        sub esp, 0x30
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x64]
+        push eax
+        call ext_007D8700
+        fldz
+        fst dword ptr [esp + 0x1c]
+        lea ecx, [esp + 0x20]
+        fst dword ptr [esp + 0x18]
+        push ecx
+        fst dword ptr [esp + 0x2c]
+        lea edx, [esp + 0x18]
+        fst dword ptr [esp + 0x24]
+        push edx
+        fst dword ptr [esp + 0x38]
+        push 0
+        fstp dword ptr [esp + 0x38]
+        push eax
+        _emit 0xd9
+        _emit 0xe8
+        fst dword ptr [esp + 0x24]
+        fst dword ptr [esp + 0x34]
+        fstp dword ptr [esp + 0x44]
+        call ext_007C93E0
+        fld dword ptr [esp + 0x38]
+        fld dword ptr [esp + 0x28]
+        add esp, 0x14
+        fld dword ptr [esp + 0x20]
+        add esi, 0x8c
+        fld dword ptr [esp + 0x18]
+        push esi
+        _emit 0xd9
+        _emit 0xc2
+        lea ecx, [esp + 0x14]
+        _emit 0xd8
+        _emit 0xcc
+        _emit 0xd9
+        _emit 0xc1
+        _emit 0xd8
+        _emit 0xcb
+        _emit 0xde
+        _emit 0xe9
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x14]
+        _emit 0xd9
+        _emit 0xc1
+        _emit 0xde
+        _emit 0xcb
+        _emit 0xd9
+        _emit 0xc0
+        _emit 0xde
+        _emit 0xce
+        _emit 0xd9
+        _emit 0xca
+        _emit 0xde
+        _emit 0xe5
+        _emit 0xd9
+        _emit 0xcc
+        fstp dword ptr [esp + 0xc]
+        _emit 0xde
+        _emit 0xc9
+        _emit 0xd9
+        _emit 0xca
+        _emit 0xde
+        _emit 0xc9
+        _emit 0xde
+        _emit 0xe9
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x34]
+        call ext_00694880
+        mov eax, esi
+        pop esi
+        add esp, 0x30
+        ret
+    }
+}
