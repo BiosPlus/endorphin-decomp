@@ -6366,3 +6366,28 @@ extern "C" __declspec(naked) int __fastcall fn_00403180(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x004032D0] sub_004032D0 (110 bytes)
+extern "C" void ext_00558C10();
+extern "C" void ext_006A6E8C();
+extern "C" int mem_009242FC;
+extern "C" int mem_0092944C;
+
+extern "C" void* __fastcall fn_004032D0(void* self, int edx_unused, int a1) {
+    char* p = (char*)self;
+    typedef void (__thiscall *ThisFn)(void*);
+    typedef void* (__cdecl *MemsetFn)(void*, int, unsigned int);
+
+    ((ThisFn)ext_00558C10)(self);
+    *(int*)(p + 0x0) = 0x92945c;
+    *(int*)(p + 0x4) = 0x929454;
+    ((ThisFn)mem_009242FC)(p + 0x504);
+    *(int*)(p + 0x470) = 0;
+    *(int*)(p + 0x500) = 0;
+    *(int*)(p + 0x46c) = 0;
+    *(int*)(p + 0x508) = a1;
+    ((MemsetFn)ext_006A6E8C)(p + 0x474, 0, 0x8c);
+    *(float*)(p + 0x174) = *(float*)&mem_0092944C;
+    *(int*)(p + 0x50c) = 0;
+    return self;
+}
