@@ -2240,3 +2240,34 @@ extern "C" __declspec(naked) void __fastcall fn_004DA090(void* self) {
         ret
     }
 }
+
+// [0x004DA2B0] sub_004DA2B0 (86 bytes)
+extern "C" void ext_00495250();
+extern "C" void ext_004DA090();
+extern "C" void ext_006246B0();
+extern "C" __declspec(naked) void __fastcall fn_004DA2B0(void* self) {
+    __asm {
+        push -1
+        push 0x88d203
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        mov dword ptr [esp + 0x10], 1
+        call ext_004DA090
+        lea ecx, [esi + 0x10]
+        mov byte ptr [esp + 0x10], 0
+        call ext_00495250
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_006246B0
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
