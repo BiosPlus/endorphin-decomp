@@ -2537,3 +2537,151 @@ extern "C" __declspec(naked) void __fastcall fn_005B6E00(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005BF5F0] sub_005BF5F0 (384 bytes)
+extern "C" void ext_005BED50();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005BF5F0(void* self) {
+    __asm {
+        sub esp, 0x18
+        push ebx
+        mov ebx, ecx
+        mov eax, dword ptr [ebx + 0x160]
+        mov eax, dword ptr [eax]
+        mov ecx, dword ptr [ebx + 0x160]
+        push esi
+        lea esi, [ebx + 0x15c]
+        push edi
+        mov edi, eax
+        mov eax, dword ptr [ebx + 0x20c]
+        test eax, eax
+        mov dword ptr [esp + 0xc], ebx
+        mov dword ptr [esp + 0x14], esi
+        mov dword ptr [esp + 0x18], edi
+        mov dword ptr [esp + 0x20], ecx
+        je near ptr L_exit
+        cmp dword ptr [eax + 0x22c], ebx
+        jne near ptr L_exit
+        mov eax, dword ptr [eax + 0x228]
+        test eax, eax
+        mov dword ptr [esp + 0x10], eax
+        je near ptr L_exit
+        push ebp
+        jmp L_loop
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    L_loop:
+        test esi, esi
+        je L_assert1
+        lea eax, [ebx + 0x15c]
+        cmp esi, eax
+        je L_noassert1
+    L_assert1:
+        mov ebp, dword ptr [mem_00925134]
+        call ebp
+        jmp L_chk2
+    L_noassert1:
+        mov ebp, dword ptr [mem_00925134]
+    L_chk2:
+        cmp edi, dword ptr [esp + 0x24]
+        je near ptr L_pop_exit
+        test esi, esi
+        jne L_chk3
+        call ebp
+    L_chk3:
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_body
+        call ebp
+    L_body:
+        mov ebp, dword ptr [edi + 0x28]
+        cmp byte ptr [ebp + 0x19c], 0
+        jne L_chk_19d
+        mov ecx, dword ptr [esp + 0x14]
+        push ebp
+        call ext_005BED50
+    L_chk_19d:
+        cmp byte ptr [ebp + 0x19d], 0
+        __asm _emit 0x0f
+        __asm _emit 0x85
+        __asm _emit 0x7d
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        mov edx, dword ptr [ebx + 0x20c]
+        mov ebx, dword ptr [edx + 0x190]
+        test ebx, ebx
+        je L_restore_ebx
+        mov esi, dword ptr [ebx + 0x1d4]
+        cmp esi, dword ptr [ebx + 0x1d8]
+        jbe L_inner_a
+        call dword ptr [mem_00925134]
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    L_inner_a:
+        mov edi, dword ptr [ebx + 0x1d8]
+        cmp dword ptr [ebx + 0x1d4], edi
+        jbe L_inner_b
+        call dword ptr [mem_00925134]
+    L_inner_b:
+        cmp esi, edi
+        je L_restore_ebx
+        cmp esi, dword ptr [ebx + 0x1d8]
+        jb L_inner_c
+        call dword ptr [mem_00925134]
+    L_inner_c:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [eax + 0x22c]
+        test ecx, ecx
+        je L_inner_d
+        cmp ecx, dword ptr [esp + 0x10]
+        je L_inner_d
+        push ebp
+        call ext_005BED50
+    L_inner_d:
+        cmp esi, dword ptr [ebx + 0x1d8]
+        jb L_inner_e
+        call dword ptr [mem_00925134]
+    L_inner_e:
+        add esi, 0x4
+        jmp L_inner_a
+    L_restore_ebx:
+        mov ebx, dword ptr [esp + 0x10]
+    L_chk_19e:
+        cmp byte ptr [ebp + 0x19e], 0
+        jne L_tail
+        mov esi, dword ptr [esp + 0x14]
+    L_walk:
+        push ebp
+        mov ecx, esi
+        call ext_005BED50
+        mov esi, dword ptr [esi + 0x20c]
+        test esi, esi
+        je L_walk_null
+        mov esi, dword ptr [esi + 0x228]
+        jmp L_walk_chk
+    L_walk_null:
+        xor esi, esi
+    L_walk_chk:
+        test esi, esi
+        jne L_walk
+    L_tail:
+        lea ecx, [esp + 0x18]
+        call ext_00673C20
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [esp + 0x18]
+        jmp L_loop
+    L_pop_exit:
+        pop ebp
+    L_exit:
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x18
+        ret
+    }
+}
