@@ -6644,3 +6644,96 @@ extern "C" __declspec(naked) void __fastcall fn_00508310(void* self) {
         ret
     }
 }
+
+// [0x0050AFA0] sub_0050AFA0 (184 bytes)
+extern "C" void ext_0050AA50();
+extern "C" void ext_006404E0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __cdecl fn_0050AFA0() {
+    __asm {
+        push    edi
+        mov     edi, dword ptr [esp + 0x8]
+        mov     eax, dword ptr [edi + 0x4]
+        test    eax, eax
+        je      loc_50AFB6
+        mov     ecx, dword ptr [edi + 0x8]
+        sub     ecx, eax
+        sar     ecx, 0x2
+        jne     loc_50AFBD
+    loc_50AFB6:
+        mov     eax, 0xb53b30
+        pop     edi
+        ret
+    loc_50AFBD:
+        mov     eax, dword ptr [esp + 0x10]
+        test    eax, eax
+        push    ebx
+        push    ebp
+        push    esi
+        je      loc_50AFD6
+        mov     ecx, dword ptr [esp + 0x18]
+        push    eax
+        call    ext_006404E0
+        mov     ebp, eax
+        jmp     loc_50AFDA
+    loc_50AFD6:
+        mov     ebp, dword ptr [esp + 0x18]
+    loc_50AFDA:
+        mov     esi, dword ptr [edi + 0x4]
+        cmp     esi, dword ptr [edi + 0x8]
+        jbe     loc_50AFE8
+        call    dword ptr [mem_00925134]
+    loc_50AFE8:
+        mov     eax, dword ptr [edi + 0x8]
+        cmp     dword ptr [edi + 0x4], eax
+        mov     dword ptr [esp + 0x14], eax
+        jbe     loc_50AFFA
+        call    dword ptr [mem_00925134]
+    loc_50AFFA:
+        mov     ebx, dword ptr [esp + 0x20]
+        mov     edi, edi
+    loc_50B000:
+        cmp     esi, dword ptr [esp + 0x14]
+        je      loc_50B051
+        test    ebx, ebx
+        je      loc_50B020
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      loc_50B015
+        call    dword ptr [mem_00925134]
+    loc_50B015:
+        push    ebx
+        mov     ecx, ebp
+        call    ext_006404E0
+        push    eax
+        jmp     loc_50B02C
+    loc_50B020:
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      loc_50B02B
+        call    dword ptr [mem_00925134]
+    loc_50B02B:
+        push    ebp
+    loc_50B02C:
+        mov     ecx, dword ptr [esi]
+        call    ext_0050AA50
+        mov     ecx, dword ptr [esp + 0x24]
+        test    ecx, ecx
+        je      loc_50B041
+        mov     edx, dword ptr [ecx]
+        mov     eax, dword ptr [edx]
+        call    eax
+    loc_50B041:
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      loc_50B04C
+        call    dword ptr [mem_00925134]
+    loc_50B04C:
+        add     esi, 0x4
+        jmp     loc_50B000
+    loc_50B051:
+        pop     esi
+        mov     eax, ebp
+        pop     ebp
+        pop     ebx
+        pop     edi
+        ret
+    }
+}
