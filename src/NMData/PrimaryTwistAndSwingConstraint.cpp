@@ -377,3 +377,62 @@ L4:
         ret
     }
 }
+
+extern "C" void ext_0067DAD0();
+extern "C" void ext_00694880();
+extern "C" void ext_00694900();
+extern "C" int mem_00B40640;
+
+// [0x00612C00] NMData::PrimaryTwistAndSwingConstraint::vfunc_68 (151 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00612C00(void* self, int edx_unused, void* out) {
+    __asm {
+        sub esp, 0x24
+        fldz
+        push esi
+        mov esi, dword ptr [esp + 0x2c]
+        fst dword ptr [esi + 0x8]
+        fst dword ptr [esi + 0x4]
+        push edi
+        fst dword ptr [esi]
+        mov edi, ecx
+        mov edx, dword ptr [edi + 0x4]
+        fst dword ptr [esp + 0x10]
+        mov edx, dword ptr [edx + 0x8]
+        fst dword ptr [esp + 0xc]
+        fst dword ptr [esp + 0x1c]
+        lea eax, [esp + 0x8]
+        fst dword ptr [esp + 0x14]
+        lea ecx, [edi + 0x4]
+        fst dword ptr [esp + 0x24]
+        push eax
+        mov eax, dword ptr [mem_00B40640]
+        fstp dword ptr [esp + 0x24]
+        fld1
+        push eax
+        fst dword ptr [esp + 0x10]
+        fst dword ptr [esp + 0x20]
+        fstp dword ptr [esp + 0x30]
+        call edx
+        mov ecx, eax
+        call ext_0067DAD0
+        lea ecx, [esp + 0x8]
+        call ext_00694900
+        push esi
+        lea ecx, [esp + 0xc]
+        call ext_00694880
+        fld dword ptr [esi]
+        fdiv dword ptr [edi + 0x154]
+        mov eax, esi
+        fstp dword ptr [esi]
+        fld dword ptr [esi + 0x4]
+        fdiv dword ptr [edi + 0x158]
+        fstp dword ptr [esi + 0x4]
+        fld dword ptr [esi + 0x8]
+        fdiv dword ptr [edi + 0x15c]
+        pop edi
+        fstp dword ptr [esi + 0x8]
+        pop esi
+        add esp, 0x24
+        ret 0x4
+    }
+}
