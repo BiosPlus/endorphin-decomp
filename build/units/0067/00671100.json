@@ -99,5 +99,7 @@
     "0x0067145E",
     "0x0067147A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T12:48:47Z"
 }
