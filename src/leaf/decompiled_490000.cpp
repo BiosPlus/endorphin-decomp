@@ -7675,3 +7675,88 @@ extern "C" __declspec(naked) void __fastcall fn_00493330(void* self) {
         ret 4
     }
 }
+
+// [0x00493770] sub_00493770 (193 bytes)
+extern "C" void ext_00493330();
+extern "C" void ext_00596660();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00493770(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x54]
+        mov ecx, dword ptr [eax + 0x4]
+        lea esi, [edi + 0x50]
+        push ecx
+        mov ecx, esi
+        call ext_00493330
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x4], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [esi + 0x8], 0x0
+        mov dword ptr [eax], eax
+        mov esi, dword ptr [esi + 0x4]
+        mov dword ptr [esi + 0x8], esi
+        mov ebx, dword ptr [edi + 0x38]
+        cmp dword ptr [edi + 0x34], ebx
+        lea esi, [edi + 0x30]
+        jbe L_493770_a
+        call dword ptr [mem_00925134]
+L_493770_a:
+        push ebp
+        mov ebp, dword ptr [esi + 0x4]
+        cmp ebp, dword ptr [esi + 0x8]
+        jbe L_493770_b
+        call dword ptr [mem_00925134]
+L_493770_b:
+        push ebx
+        push esi
+        push ebp
+        push esi
+        lea edx, [esp + 0x20]
+        push edx
+        mov ecx, esi
+        call ext_00596660
+        mov eax, dword ptr [edi + 0x60]
+        mov ecx, dword ptr [eax + 0x4]
+        lea esi, [edi + 0x5c]
+        push ecx
+        mov ecx, esi
+        call ext_00493330
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x4], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [esi + 0x8], 0x0
+        mov dword ptr [eax], eax
+        mov esi, dword ptr [esi + 0x4]
+        mov dword ptr [esi + 0x8], esi
+        lea esi, [edi + 0x40]
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        pop ebp
+        jbe L_493770_c
+        call dword ptr [mem_00925134]
+L_493770_c:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L_493770_d
+        call dword ptr [mem_00925134]
+L_493770_d:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea edx, [esp + 0x1c]
+        push edx
+        mov ecx, esi
+        call ext_00596660
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
