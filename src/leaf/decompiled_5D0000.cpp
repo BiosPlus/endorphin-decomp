@@ -3372,3 +3372,46 @@ L_5DF8F8:
         ret 0x14
     }
 }
+
+// [0x005DFC70] sub_005DFC70 (84 bytes)
+extern "C" void ext_005DF720();
+extern "C" void ext_005DF840();
+extern "C" __declspec(naked) void __fastcall fn_005DFC70(void* self) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, dword ptr [ecx]
+        test esi, esi
+        je done_005DFC70
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax]
+        push eax
+        push esi
+        push ecx
+        push esi
+        mov ecx, esi
+        call ext_005DF720
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax]
+        push eax
+        push esi
+        push ecx
+        push esi
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, esi
+        call ext_005DF840
+        mov ecx, dword ptr [esi + 0x4]
+        push ecx
+        call ext_006A5C5C
+        push esi
+        mov dword ptr [esi + 0x4], 0
+        mov dword ptr [esi + 0x8], 0
+        call ext_006A5C5C
+        add esp, 8
+done_005DFC70:
+        pop esi
+        add esp, 8
+        ret
+    }
+}
