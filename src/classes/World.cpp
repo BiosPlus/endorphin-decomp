@@ -68,3 +68,20 @@ extern "C" __declspec(naked) void* __fastcall fn_00594650(void* self, int edx_un
         ret 0x4
     }
 }
+
+extern "C" void ext_0065F450();
+extern "C" void ext_006721F0();
+
+// [0x00593F30] World::vfunc_2 (81 bytes)
+extern "C" void* __fastcall fn_00593F30(void* self, int edx_unused, void* a1, void* a2) {
+    volatile int dummy = 0;
+    typedef void* (__thiscall *VFunc0)(void*, void*);
+    void* obj = (char*)self + 0x288;
+    void* res = ((VFunc0)(*(void***)obj)[0])(obj, a2);
+    if (res != 0) {
+        ((void (__cdecl *)(void*, void*))ext_006721F0)(a1, res);
+        return a1;
+    }
+    ((void (__thiscall *)(void*, void*, void*))ext_0065F450)(self, a1, a2);
+    return a1;
+}
