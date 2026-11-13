@@ -253,3 +253,57 @@ extern "C" void* __fastcall fn_004C6850(char* self, int edx_unused, unsigned int
     }
     return self;
 }
+
+// [0x004C63F0] NMData::ForceEventData::vfunc_84 (147 bytes)
+extern "C" void ext_004C6250();
+extern "C" void ext_00528BB0();
+extern "C" void ext_00528BF0();
+extern "C" void ext_00594000();
+extern "C" __declspec(naked) void __fastcall fn_004C63F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp+8]
+        push esi
+        mov esi, ecx
+        cmp ebx, dword ptr [esi+0x15c]
+        jne L1
+        cmp byte ptr [esi+0x188], 0
+        jne L1
+        cmp byte ptr [esi+0x17c], 0
+        je L1
+        cmp dword ptr [esi+0x184], 0
+        je L1
+        push edi
+        call ext_00594000
+        add eax, 0x168
+        push eax
+        push 0
+        lea edi, [esi+0xc]
+        push 0x200
+        mov ecx, edi
+        call ext_00528BF0
+        push 0
+        push 0x200
+        mov ecx, edi
+        call ext_00528BB0
+        mov ecx, dword ptr [esi+0x184]
+        call ext_004C6250
+        mov byte ptr [esi+0x188], 1
+        pop edi
+    L1:
+        mov eax, dword ptr [esi+0x15c]
+        add eax, 3
+        cmp ebx, eax
+        jne L2
+        cmp byte ptr [esi+0x188], 0
+        je L2
+        push 1
+        push 0x200
+        lea ecx, [esi+0xc]
+        call ext_00528BB0
+    L2:
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
