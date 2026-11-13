@@ -404,3 +404,40 @@ extern "C" __declspec(naked) void __fastcall fn_00543F00(void* self) {
         ret 0x4
     }
 }
+
+// [0x005440A0] ForceApplicationTool::vfunc_22_off_98 (66 bytes)
+extern "C" void ext_0067E020();
+
+extern "C" __declspec(naked) void __fastcall fn_005440A0(void* self, int edx_unused, int a1, int a2, float a3) {
+    __asm {
+        fld dword ptr [esp + 0xc]
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push ecx
+        fstp dword ptr [esp]
+        mov esi, ecx
+        push edi
+        push ebx
+        lea ecx, [esi - 0x94]
+        call ext_0067E020
+        cmp dword ptr [esi - 0x10], 0x0
+        je done
+        mov ecx, dword ptr [esi - 0x10]
+        fld dword ptr [esp + 0x18]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x58]
+        push ecx
+        fstp dword ptr [esp]
+        push edi
+        push ebx
+        call edx
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0xc
+    }
+}
