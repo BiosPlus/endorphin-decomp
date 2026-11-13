@@ -8028,3 +8028,48 @@ done_label:
         ret 0x4
     }
 }
+
+// [0x00465E00] sub_00465E00 (125 bytes)
+extern "C" void ext_00434120();
+extern "C" int mem_00924FDC;
+extern "C" int mem_00ACDB40;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_00465E00(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
+    __asm {
+        push -1
+        push 0x881709
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        lea esi, [ecx + 0x68]
+        lea eax, [esp + 0x18]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [mem_00ACDB40]
+        test eax, eax
+        je done
+        cmp dword ptr [eax + 0x20], 0
+        je done
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push esi
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [mem_00ACDB40]
+        call ext_00434120
+    done:
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x10], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 0x10
+        ret 0x1c
+    }
+}
