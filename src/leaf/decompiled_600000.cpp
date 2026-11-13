@@ -3680,3 +3680,35 @@ extern "C" __declspec(naked) void __fastcall fn_0060F0D0(void* self) {
         ret
     }
 }
+
+extern "C" void __fastcall ext_0060F0D0(void* self);
+
+// [0x0060FB70] sub_0060FB70 (105 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0060FB70(void* self) {
+    __asm {
+        push    -1
+        push    0x8a8b68
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        push    ecx
+        push    esi
+        mov     esi, ecx
+        call    ext_0060F0D0
+        mov     ecx, dword ptr [esp + 8]
+        mov     dword ptr [esi], 0x972b9c
+        mov     dword ptr [esi + 4], 0x972b54
+        mov     dword ptr [esi + 8], 0x972b14
+        mov     dword ptr [esi + 0xc], 0x972ac4
+        mov     dword ptr [esi + 0x150], 0x972aac
+        xor     eax, eax
+        mov     dword ptr [esi + 0x1dc], eax
+        mov     dword ptr [esi + 0x1e0], eax
+        mov     dword ptr [esi + 0x1e4], eax
+        mov     eax, esi
+        pop     esi
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x10
+        ret
+    }
+}
