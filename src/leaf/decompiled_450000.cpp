@@ -7090,3 +7090,112 @@ L4510CA:
         ret
     }
 }
+
+// [0x00452EA0] sub_00452EA0 (233 bytes)
+extern "C" void ext_00450000();
+extern "C" void ext_00450B00();
+extern "C" void ext_005AA830();
+extern "C" void ext_00452830();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_00452EA0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [mem_00925694]
+        push ebp
+        push esi
+        push 0
+        push 0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x9e0]
+        push 0x147
+        push eax
+        call ebx
+        mov ecx, dword ptr [esi + 0x768]
+        xor ebp, ebp
+        push ebp
+        push ebp
+        push 0x18b
+        push ecx
+        mov dword ptr [esp + 0x1c], eax
+        call ebx
+        test eax, eax
+        jle tail_common
+        push edi
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    outer_loop:
+        mov edx, dword ptr [esi + 0x768]
+        push 0
+        push ebp
+        push 0x187
+        push edx
+        call ebx
+        test eax, eax
+        je outer_next
+        mov eax, dword ptr [esi + 0x98c]
+        xor edi, edi
+        push edi
+        push edi
+        push 0x18b
+        push eax
+        call ebx
+        test eax, eax
+        jle outer_next
+        jmp inner_loop
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    inner_loop:
+        mov ecx, dword ptr [esi + 0x98c]
+        push 0
+        push edi
+        push 0x187
+        push ecx
+        call ebx
+        test eax, eax
+        je inner_next
+        push edi
+        push ebp
+        mov ecx, esi
+        call ext_00450000
+        test eax, eax
+        je inner_next
+        mov edx, dword ptr [esp + 0x10]
+        push edx
+        mov ecx, eax
+        call ext_005AA830
+    inner_next:
+        mov eax, dword ptr [esi + 0x98c]
+        push 0
+        push 0
+        push 0x18b
+        push eax
+        add edi, 1
+        call ebx
+        cmp edi, eax
+        jl inner_loop
+    outer_next:
+        mov ecx, dword ptr [esi + 0x768]
+        push 0
+        push 0
+        push 0x18b
+        push ecx
+        add ebp, 1
+        call ebx
+        cmp ebp, eax
+        jl outer_loop
+        pop edi
+    tail_common:
+        mov ecx, esi
+        call ext_00450B00
+        mov ecx, esi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 4
+        jmp ext_00452830
+    }
+}
