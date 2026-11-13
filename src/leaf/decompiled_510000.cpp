@@ -6687,3 +6687,69 @@ extern "C" __declspec(naked) void __fastcall fn_0051E000(void* self) {
         ret
     }
 }
+
+// [0x0051E360] sub_0051E360 (112 bytes)
+extern "C" void ext_0051E000();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0051E360(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x130]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_a
+        call ebp
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_a:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_b
+        call ebp
+    L_b:
+        cmp esi, esi
+        je L_c
+        call ebp
+    L_c:
+        cmp edi, ebx
+        je L_done
+    L_loop:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_d
+        call ebp
+    L_d:
+        mov ecx, edi
+        call ext_0051E000
+        test al, al
+        jne L_found
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_e
+        call ebp
+    L_e:
+        add edi, 0xc0
+        jmp L_a
+    L_found:
+        mov ecx, edi
+        call ext_0051DDD0
+        mov ecx, dword ptr [edi + 0xb8]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        jmp ext_0051E3D0
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
