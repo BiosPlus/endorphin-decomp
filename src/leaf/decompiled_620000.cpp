@@ -6448,3 +6448,15 @@ extern "C" __declspec(naked) void __fastcall fn_0062D8D0(void* self) {
         ret
     }
 }
+
+// [0x0062CDE0] sub_0062CDE0 (51 bytes)
+extern "C" void ext_0062CD80();
+extern "C" void* __fastcall fn_0062CDE0(void* self, int edx_unused, const void* other) {
+    ((void (__fastcall*)(void*, int, const void*))ext_0062CD80)(self, edx_unused, other);
+    *(int*)self = 0x00979284;
+    *(float*)((char*)self + 0x38) = *(const float*)((const char*)other + 0x38);
+    *(float*)((char*)self + 0x3c) = *(const float*)((const char*)other + 0x3c);
+    *(float*)((char*)self + 0x40) = *(const float*)((const char*)other + 0x40);
+    *(float*)((char*)self + 0x44) = *(const float*)((const char*)other + 0x44);
+    return self;
+}
