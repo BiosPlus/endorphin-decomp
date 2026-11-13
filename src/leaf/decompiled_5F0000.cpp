@@ -3482,3 +3482,174 @@ extern "C" __declspec(naked) void* __fastcall fn_005F5160(void* self) {
         ret
     }
 }
+
+// [0x005F54A0] sub_005F54A0 (456 bytes)
+extern "C" void ext_005B11D0();
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00955998;
+extern "C" int mem_00993858;
+extern "C" int mem_0093C188;
+extern "C" int mem_00965D08;
+extern "C" int mem_0096CD10;
+extern "C" int mem_0096CCFC;
+extern "C" int mem_009518D8;
+extern "C" int mem_009518E0;
+extern "C" int mem_0096CCEC;
+
+extern "C" __declspec(naked) void __fastcall fn_005F54A0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi + 0x1a4]
+        push eax
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        mov ebx, dword ptr [mem_00924FC0]
+        push 0x96cd5c
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_5f54e1
+        push 0x1
+        lea ecx, [esi + 0x1c0]
+        call ext_005B11D0
+        fldz
+        jmp L_5f5655
+    L_5f54e1:
+        push 0x96cd4c
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_5f5504
+        push 0x1
+        lea ecx, [esi + 0x1c0]
+        call ext_005B11D0
+        fld1
+        jmp L_5f5655
+    L_5f5504:
+        push 0x96cd3c
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_5f552b
+        push 0x1
+        lea ecx, [esi + 0x1c0]
+        call ext_005B11D0
+        fld dword ptr [mem_00955998]
+        jmp L_5f5655
+    L_5f552b:
+        push 0x96cd2c
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_5f5552
+        push 0x1
+        lea ecx, [esi + 0x1c0]
+        call ext_005B11D0
+        fld dword ptr [mem_00993858]
+        jmp L_5f5655
+    L_5f5552:
+        push 0x96cd24
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_5f5579
+        push 0x1
+        lea ecx, [esi + 0x1c0]
+        call ext_005B11D0
+        fld dword ptr [mem_0093C188]
+        jmp L_5f5655
+    L_5f5579:
+        push 0x96cd14
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_5f55a0
+        push 0x1
+        lea ecx, [esi + 0x1c0]
+        call ext_005B11D0
+        fld dword ptr [mem_00965D08]
+        jmp L_5f5655
+    L_5f55a0:
+        push 0x960900
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_5f55c7
+        push 0x1
+        lea ecx, [esi + 0x1c0]
+        call ext_005B11D0
+        fld dword ptr [mem_0096CD10]
+        jmp L_5f5655
+    L_5f55c7:
+        push 0x96cd00
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_5f55eb
+        push 0x1
+        lea ecx, [esi + 0x1c0]
+        call ext_005B11D0
+        fld dword ptr [mem_0096CCFC]
+        jmp L_5f5655
+    L_5f55eb:
+        push 0x96ccf4
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_5f560f
+        push 0x1
+        lea ecx, [esi + 0x1c0]
+        call ext_005B11D0
+        fld dword ptr [mem_009518D8]
+        jmp L_5f5655
+    L_5f560f:
+        push 0x960910
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_5f5633
+        push 0x1
+        lea ecx, [esi + 0x1c0]
+        call ext_005B11D0
+        fld dword ptr [mem_009518E0]
+        jmp L_5f5655
+    L_5f5633:
+        push 0x96ccf0
+        push edi
+        call ebx
+        add esp, 0x8
+        test al, al
+        je L_5f5657
+        push 0x1
+        lea ecx, [esi + 0x1c0]
+        call ext_005B11D0
+        fld dword ptr [mem_0096CCEC]
+    L_5f5655:
+        fstp dword ptr [eax]
+    L_5f5657:
+        mov esi, dword ptr [esi + 0x10]
+        test esi, esi
+        je L_5f5662
+        mov byte ptr [esi + 0x4], 0x1
+    L_5f5662:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
