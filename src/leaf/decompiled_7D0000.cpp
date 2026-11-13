@@ -6362,3 +6362,181 @@ extern "C" __declspec(naked) void __cdecl fn_007DE040(void* self, int a1, int n,
         ret
     }
 }
+
+// [0x007DD4E0] sub_007DD4E0 (465 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007DD4E0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 24h
+        mov edx, dword ptr [esp + 28h]
+        fld dword ptr [edx + 8h]
+        mov eax, dword ptr [edx + 0Ch]
+        fstp dword ptr [esp + 8h]
+        push ebx
+        fld dword ptr [esp + 0Ch]
+        mov ebx, ecx
+        mov ecx, dword ptr [edx + 4h]
+        fst qword ptr [esp + 20h]
+        fld dword ptr [ecx + 8h]
+        push esi
+        fcomp st(1)
+        push edi
+        mov edi, dword ptr [eax + 8h]
+        mov dword ptr [esp + 1Ch], eax
+        mov dword ptr [esp + 10h], ebx
+        fnstsw ax
+        mov dword ptr [esp + 0Ch], ecx
+        mov dword ptr [esp + 18h], edi
+        test ah, 1
+        jne a_685
+        push ebp
+        jmp a_52F
+a_527:
+        mov ebx, dword ptr [esp + 14h]
+        mov edi, dword ptr [esp + 1Ch]
+a_52F:
+        mov al, byte ptr [ecx + 10h]
+        cmp al, -1
+        je a_684
+        cmp al, 1
+        jne a_66D
+        mov eax, dword ptr [ecx + 0Ch]
+        mov edx, dword ptr [eax + 8h]
+        mov dword ptr [esp + 18h], eax
+        mov eax, edx
+        sub eax, edi
+        sar eax, 1Fh
+        mov ecx, eax
+        mov esi, eax
+        and eax, edi
+        not ecx
+        and esi, edx
+        mov ebp, ecx
+        and ecx, edx
+        or ecx, eax
+        and ebp, edi
+        or esi, ebp
+        lea eax, [esi + 1]
+        lea edx, [esi + 2]
+        imul edx, eax
+        mov eax, dword ptr [ebx + 0Ch]
+        imul eax, esi
+        sar edx, 1
+        sub eax, edx
+        mov edx, dword ptr [ebx + 20h]
+        add eax, ecx
+        mov dword ptr [esp + 28h], ecx
+        mov ecx, eax
+        and al, 1
+        add al, al
+        add al, al
+        sar ecx, 1
+        lea edi, [ecx + edx]
+        mov dl, byte ptr [edi]
+        mov cl, al
+        shr dl, cl
+        movzx ebp, al
+        and dl, 0Fh
+        mov ecx, ebp
+        add dl, 1
+        mov eax, 0F0h
+        sar eax, cl
+        mov bl, dl
+        shl bl, cl
+        and al, byte ptr [edi]
+        or al, bl
+        mov byte ptr [edi], al
+        mov eax, dword ptr [esp + 14h]
+        cmp dl, byte ptr [eax + 4h]
+        jne a_665
+        mov edx, dword ptr [esp + 20h]
+        mov edi, dword ptr [edx + 18h]
+        test edi, edi
+        mov dword ptr [esp + 24h], edi
+        je a_6AD
+        mov ecx, dword ptr [esp + 18h]
+        cmp edi, dword ptr [ecx + 18h]
+        jne a_6AD
+        mov edi, dword ptr [edx + 1Ch]
+        cmp edi, dword ptr [ecx + 1Ch]
+        jne a_6AD
+        mov edi, dword ptr [ecx + 20h]
+        mov ebx, dword ptr [edx + 20h]
+        mov eax, edi
+        sub eax, ebx
+        shr eax, 1Fh
+        sub eax, 1
+        mov ecx, eax
+        not ecx
+        mov edx, eax
+        mov ebp, ecx
+        and eax, edi
+        and ecx, ebx
+        or ecx, eax
+        lea eax, [ecx + 1]
+        imul eax, ecx
+        and edx, ebx
+        and ebp, edi
+        or edx, ebp
+        shr eax, 1
+        add eax, edx
+        mov ecx, eax
+        and ecx, 1Fh
+        mov edx, 1
+        shl edx, cl
+        mov ecx, dword ptr [esp + 24h]
+        shr eax, 5
+        test dword ptr [ecx + eax*4 + 8h], edx
+        jne a_665
+        mov eax, dword ptr [esp + 14h]
+        fstp st(0)
+a_638:
+        mov ecx, dword ptr [esp + 28h]
+        imul esi, esi, 9Ch
+        mov edx, dword ptr [eax + 10h]
+        imul ecx, ecx, 9Ch
+        mov ecx, dword ptr [ecx + edx + 0Ch]
+        mov edx, dword ptr [esi + edx + 0Ch]
+        mov eax, dword ptr [eax + 2Ch]
+        push ecx
+        push edx
+        push eax
+        call ext_007DCC90
+        add esp, 0Ch
+        fld qword ptr [esp + 2Ch]
+a_665:
+        mov ecx, dword ptr [esp + 10h]
+        mov edx, dword ptr [esp + 38h]
+a_66D:
+        mov ecx, dword ptr [ecx + 4h]
+        fld dword ptr [ecx + 8h]
+        mov dword ptr [esp + 10h], ecx
+        fcomp st(1)
+        fnstsw ax
+        test ah, 1
+        je a_527
+a_684:
+        pop ebp
+a_685:
+        mov eax, dword ptr [edx]
+        fstp st(0)
+        mov esi, dword ptr [edx + 4h]
+        mov dword ptr [eax + 4h], esi
+        mov eax, dword ptr [edx + 4h]
+        mov esi, dword ptr [edx]
+        mov dword ptr [eax], esi
+        mov dword ptr [edx + 4h], ecx
+        mov eax, dword ptr [ecx]
+        mov dword ptr [edx], eax
+        pop edi
+        mov dword ptr [ecx], edx
+        mov ecx, dword ptr [edx]
+        pop esi
+        mov dword ptr [ecx + 4h], edx
+        pop ebx
+        add esp, 24h
+        ret 4
+a_6AD:
+        fstp st(0)
+        jmp a_638
+    }
+}
