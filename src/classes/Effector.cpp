@@ -376,3 +376,13 @@ extern "C" __declspec(naked) void __fastcall fn_00603830(void* self, int edx_unu
         ret 8
     }
 }
+
+extern "C" void ext_005DFB80();
+
+// [0x00603340] Effector::vfunc_16 (35 bytes)
+extern "C" void __fastcall fn_00603340(void* self, int edx_unused, int a1) {
+    char* s = (char*)self;
+    typedef float (__thiscall *Fn1)(void*, int, int);
+    typedef void (__thiscall *Fn2)(void*, float);
+    ((Fn2)ext_00603090)(self, ((Fn1)ext_005DFB80)(*(void**)(s + 0x10), *(int*)(s + 0x8), a1));
+}
