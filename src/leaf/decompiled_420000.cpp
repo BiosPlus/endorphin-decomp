@@ -3922,3 +3922,165 @@ extern "C" __declspec(naked) void __fastcall fn_00428BD0(void* self) {
         ret 0xc
     }
 }
+
+// [0x004208C0] sub_004208C0 (457 bytes)
+extern "C" void ext_004205B0();
+extern "C" int mem_00924EC4;
+extern "C" int mem_00924EC8;
+extern "C" int mem_00925120;
+extern "C" int mem_009251E0;
+extern "C" int mem_00924FC8;
+extern "C" int mem_00924ECC;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00925134;
+extern "C" int mem_00924EF4;
+
+extern "C" __declspec(naked) void __fastcall fn_004208C0(void* self) {
+    __asm {
+        push -0x1
+        push 0x8a3e5b
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x74
+        mov eax, dword ptr [mem_00924EC4]
+        mov ecx, dword ptr [eax]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x98]
+        push ecx
+        push 0x92e3bc
+        mov ecx, edi
+        call dword ptr [mem_00924EC8]
+        add eax, 0x1
+        push eax
+        push 0x0
+        lea edx, [esp + 0x34]
+        push edx
+        mov ecx, edi
+        call dword ptr [mem_00925120]
+        push 0x1
+        push 0x92e3b4
+        lea eax, [esp + 0x6c]
+        push 0x1e
+        push eax
+        mov dword ptr [esp + 0x9c], 0x0
+        mov dword ptr [esp + 0x20], 0x1
+        call dword ptr [mem_009251E0]
+        push 0x928b5d
+        push edi
+        call dword ptr [mem_00924FC8]
+        add esp, 0x18
+        test al, al
+        je L_420980
+        lea ecx, [esp + 0x64]
+        push ecx
+        lea edx, [esp + 0x30]
+        push edx
+        lea eax, [esp + 0x50]
+        push eax
+        call dword ptr [mem_00924ECC]
+        add esp, 0xc
+        mov byte ptr [esp + 0x8c], 0x1
+    L_420965:
+        push eax
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x48]
+        mov byte ptr [esp + 0x8c], 0x0
+        call dword ptr [mem_00924FF4]
+    L_420980:
+        mov esi, dword ptr [esp + 0x94]
+        cmp dword ptr [esi + 0xc], 0x0
+        je L_420A5B
+        add esi, 0x4
+        push edi
+        mov ecx, esi
+        call ext_004205B0
+        test esi, esi
+        mov ebp, eax
+        mov dword ptr [esp + 0x18], ebp
+        jne L_4209AC
+        call dword ptr [mem_00925134]
+    L_4209AC:
+        cmp ebp, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x14], esi
+        je L_4209CD
+        add ebp, 0xc
+        push ebp
+        push edi
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        jne L_4209CD
+        lea eax, [esp + 0x14]
+        jmp L_4209DC
+    L_4209CD:
+        mov ecx, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x20], ecx
+        mov dword ptr [esp + 0x1c], esi
+        lea eax, [esp + 0x1c]
+    L_4209DC:
+        mov ebp, dword ptr [eax]
+        test ebp, ebp
+        mov edx, dword ptr [esi + 0x4]
+        mov ebx, dword ptr [eax + 0x4]
+        mov dword ptr [esp + 0x28], edx
+        je L_4209F0
+        cmp ebp, esi
+        je L_4209FA
+    L_4209F0:
+        mov esi, dword ptr [mem_00925134]
+        call esi
+        jmp L_420A00
+    L_4209FA:
+        mov esi, dword ptr [mem_00925134]
+    L_420A00:
+        cmp ebx, dword ptr [esp + 0x28]
+        je L_420A5B
+        test ebp, ebp
+        jne L_420A0C
+        call esi
+    L_420A0C:
+        cmp ebx, dword ptr [ebp + 0x4]
+        jne L_420A13
+        call esi
+    L_420A13:
+        add ebx, 0x28
+        je L_420A5B
+        mov eax, dword ptr [esp + 0x10]
+        add eax, 0x1
+        push eax
+        push 0x92e3b4
+        mov dword ptr [esp + 0x18], eax
+        lea eax, [esp + 0x6c]
+        push 0x1e
+        push eax
+        call dword ptr [mem_009251E0]
+        lea ecx, [esp + 0x74]
+        push ecx
+        lea edx, [esp + 0x40]
+        push edx
+        lea eax, [esp + 0x60]
+        push eax
+        call dword ptr [mem_00924ECC]
+        add esp, 0x1c
+        mov byte ptr [esp + 0x8c], 0x2
+        jmp L_420965
+    L_420A5B:
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x8c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x84]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x80
+        ret
+    }
+}
