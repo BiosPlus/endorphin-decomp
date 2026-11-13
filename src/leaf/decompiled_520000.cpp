@@ -4831,3 +4831,25 @@ extern "C" __declspec(naked) void __fastcall fn_00527280(void* self) {
         ret
     }
 }
+
+// [0x00524510] sub_00524510 (36 bytes)
+extern "C" void ext_00524480();
+extern "C" void ext_00524130();
+extern "C" int mem_00952940;
+extern "C" int mem_00952C14;
+
+extern "C" __declspec(naked) void __cdecl fn_00524510(void* a1) {
+    __asm {
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x8]
+        push    offset mem_00952940
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    ext_00524480
+        push    offset mem_00952C14
+        lea     ecx, [esp + 0x4]
+        call    ext_00524130
+        pop     ecx
+        ret
+    }
+}
