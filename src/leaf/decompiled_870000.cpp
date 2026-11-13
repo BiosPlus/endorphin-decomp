@@ -916,3 +916,17 @@ extern "C" int __cdecl ext_005006E0(void*, int, int, int, int);
 extern "C" int __fastcall fn_00870300(void* self, int edx_unused, int a1, int a2, int a3) {
     return ext_005006E0((char*)self + 4, a1, a2, a3, 0);
 }
+
+// [0x008726F0] sub_008726F0 (49 bytes)
+extern "C" int __cdecl ext_00872650(void*);
+
+extern "C" int __fastcall fn_008726F0(void* self, int edx_unused, int a1, int a2) {
+    int* p = (int*)self;
+    p[1] = a1;
+    p[2] = a1;
+    p[3] = a1 + a2;
+    p[4] = 1;
+    p[5] = 1;
+    p[7] = 0;
+    return ext_00872650(self);
+}
