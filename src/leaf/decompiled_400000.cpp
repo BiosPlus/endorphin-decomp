@@ -10873,3 +10873,46 @@ extern "C" __declspec(naked) void __fastcall fn_004025B0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x004027B0] sub_004027B0 (79 bytes)
+extern "C" void ext_004025B0();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_004027B0(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov ebx, ecx
+        __asm _emit 0x8D __asm _emit 0x9B __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+    L_loop:
+        mov esi, dword ptr [esp + 0x14]
+        test esi, esi
+        je L_fail
+        cmp esi, dword ptr [esp + 0x1c]
+        je L_ok
+    L_fail:
+        call dword ptr [mem_00925134]
+    L_ok:
+        mov edi, dword ptr [esp + 0x18]
+        cmp edi, ebp
+        je L_done
+        lea ecx, [esp + 0x14]
+        call ext_00673C20
+        sub esp, 8
+        mov eax, esp
+        mov ecx, ebx
+        mov dword ptr [eax], esi
+        mov dword ptr [eax + 4], edi
+        call ext_004025B0
+        jmp L_loop
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
