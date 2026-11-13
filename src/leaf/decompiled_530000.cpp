@@ -4122,3 +4122,131 @@ loc_005305C2:
         ret 0x8
     }
 }
+
+extern "C" int mem_00924208;
+extern "C" int mem_0092565C;
+extern "C" int mem_0092571C;
+extern "C" int mem_0092558C;
+extern "C" int mem_00925590;
+extern "C" int mem_00925594;
+extern "C" int mem_00925598;
+
+// [0x00537430] sub_00537430 (349 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00537430(void* self) {
+    __asm {
+        sub esp, 0x38
+        mov eax, dword ptr [esp + 0x40]
+        push ebx
+        push esi
+        xor ebx, ebx
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x4c]
+        push ebx
+        mov dword ptr [esp + 0xc], ebx
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [esp + 0x10], ebx
+        mov dword ptr [esp + 0x18], ecx
+        call dword ptr [mem_00924208]
+        push 0x7f05
+        push ebx
+        mov dword ptr [esi + 0x20], eax
+        mov dword ptr [esp + 0x20], 0x23
+        mov dword ptr [esp + 0x24], 0x537290
+        mov dword ptr [esp + 0x28], ebx
+        mov dword ptr [esp + 0x2c], ebx
+        mov dword ptr [esp + 0x30], eax
+        call dword ptr [mem_0092565C]
+        push 0x7f00
+        push ebx
+        mov dword ptr [esp + 0x34], eax
+        call dword ptr [mem_0092571C]
+        lea edx, dword ptr [esp + 0x18]
+        push edx
+        mov dword ptr [esp + 0x34], eax
+        mov dword ptr [esp + 0x38], ebx
+        mov dword ptr [esp + 0x3c], ebx
+        mov dword ptr [esp + 0x40], 0x9546f4
+        call dword ptr [mem_0092558C]
+        test ax, ax
+        jne short L_registered
+        push 0x30
+        push 0x9547cc
+        push 0x954d98
+        push ebx
+        call dword ptr [mem_009255E0]
+        pop esi
+        xor eax, eax
+        pop ebx
+        add esp, 0x38
+        ret 0x10
+L_registered:
+        cmp byte ptr [esi + 0x374], bl
+        push ebp
+        push edi
+        je short L_windowed
+        push 1
+        mov ebp, 0x40000
+        mov edi, 0x80000000
+        call dword ptr [mem_009256A0]
+        jmp short L_adjust
+L_windowed:
+        mov ebp, 0x40100
+        mov edi, 0xcf0000
+L_adjust:
+        push ebp
+        push ebx
+        push edi
+        lea eax, dword ptr [esp + 0x1c]
+        push eax
+        call dword ptr [mem_00925590]
+        mov ecx, dword ptr [esi + 0x20]
+        mov edx, dword ptr [esp + 0x1c]
+        sub edx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0x18]
+        sub eax, dword ptr [esp + 0x10]
+        push ebx
+        push ecx
+        mov ecx, dword ptr [esp + 0x54]
+        push ebx
+        push ebx
+        push edx
+        push eax
+        push ebx
+        push ebx
+        or edi, 0x6000000
+        push edi
+        push ecx
+        push 0x9546f4
+        push ebp
+        call dword ptr [mem_00925594]
+        cmp eax, ebx
+        pop edi
+        mov dword ptr [esi + 0x1c], eax
+        pop ebp
+        jne short L_shown
+        mov ecx, esi
+        call ext_00532CC0
+        push 0x30
+        push 0x9547cc
+        push 0x954d80
+        push ebx
+        call dword ptr [mem_009255E0]
+        pop esi
+        xor eax, eax
+        pop ebx
+        add esp, 0x38
+        ret 0x10
+L_shown:
+        push 5
+        push eax
+        call dword ptr [mem_00925598]
+        mov edx, dword ptr [esi + 0x1c]
+        mov dword ptr [esi + 0x2c], edx
+        mov byte ptr [esi + 0x492], 1
+        pop esi
+        mov eax, 1
+        pop ebx
+        add esp, 0x38
+        ret 0x10
+    }
+}
