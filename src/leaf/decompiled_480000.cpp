@@ -4861,3 +4861,268 @@ extern "C" __declspec(naked) void __fastcall fn_0048FC70(void* self) {
         ret 0x4
     }
 }
+
+extern "C" void ext_00480CE0();
+
+// [0x004817E0] sub_004817E0 (631 bytes)
+extern "C" __declspec(naked) void __cdecl fn_004817E0() {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        mov eax, esi
+        sub eax, ebp
+        sar eax, 0x2
+        cdq
+        sub eax, edx
+        push edi
+        sar eax, 1
+        lea edi, [ebp + 4*eax]
+        mov eax, dword ptr [esp + 0x24]
+        push eax
+        lea ecx, [esi - 0x4]
+        push ecx
+        push edi
+        push ebp
+        call ext_00480CE0
+        add esp, 0x10
+        cmp ebp, edi
+        lea ebx, [edi + 0x4]
+        mov dword ptr [esp + 0x10], ebx
+        jae L_48187c
+        jmp L_481820
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L_481820:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [edi - 0x4]
+        mov edx, dword ptr [ecx + 0x98]
+        mov esi, dword ptr [eax + 0x98]
+        cmp edx, esi
+        jne L_481846
+        mov edx, dword ptr [ecx + 0x9c]
+        cmp edx, dword ptr [eax + 0x9c]
+        setg dl
+        jmp L_481849
+    L_481846:
+        setl dl
+    L_481849:
+        test dl, dl
+        jne L_481878
+        mov edx, esi
+        mov esi, dword ptr [ecx + 0x98]
+        cmp edx, esi
+        jne L_48186a
+        mov eax, dword ptr [eax + 0x9c]
+        cmp eax, dword ptr [ecx + 0x9c]
+        setg al
+        jmp L_48186d
+    L_48186a:
+        setl al
+    L_48186d:
+        test al, al
+        jne L_481878
+        add edi, -0x4
+        cmp ebp, edi
+        jb L_481820
+    L_481878:
+        mov esi, dword ptr [esp + 0x20]
+    L_48187c:
+        cmp ebx, esi
+        jae L_4818dd
+        mov esi, dword ptr [edi]
+    L_481882:
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [eax + 0x98]
+        mov edx, dword ptr [esi + 0x98]
+        cmp ecx, edx
+        jne L_4818a5
+        mov ecx, dword ptr [eax + 0x9c]
+        cmp ecx, dword ptr [esi + 0x9c]
+        setg cl
+        jmp L_4818a8
+    L_4818a5:
+        setl cl
+    L_4818a8:
+        test cl, cl
+        jne L_4818d9
+        mov ecx, edx
+        mov edx, dword ptr [eax + 0x98]
+        cmp ecx, edx
+        jne L_4818c9
+        mov edx, dword ptr [esi + 0x9c]
+        cmp edx, dword ptr [eax + 0x9c]
+        setg al
+        jmp L_4818cc
+    L_4818c9:
+        setl al
+    L_4818cc:
+        test al, al
+        jne L_4818d9
+        add ebx, 0x4
+        cmp ebx, dword ptr [esp + 0x20]
+        jb L_481882
+    L_4818d9:
+        mov dword ptr [esp + 0x10], ebx
+    L_4818dd:
+        mov ebp, edi
+        nop
+    L_4818e0:
+        cmp ebx, dword ptr [esp + 0x20]
+        jae L_481952
+    L_4818e6:
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [edi]
+        mov edx, dword ptr [ecx + 0x98]
+        mov esi, dword ptr [eax + 0x98]
+        cmp edx, esi
+        jne L_48190b
+        mov edx, dword ptr [ecx + 0x9c]
+        cmp edx, dword ptr [eax + 0x9c]
+        setg dl
+        jmp L_48190e
+    L_48190b:
+        setl dl
+    L_48190e:
+        test dl, dl
+        jne L_481949
+        mov edx, esi
+        mov esi, dword ptr [ecx + 0x98]
+        cmp edx, esi
+        jne L_48192f
+        mov edx, dword ptr [eax + 0x9c]
+        cmp edx, dword ptr [ecx + 0x9c]
+        setg cl
+        jmp L_481932
+    L_48192f:
+        setl cl
+    L_481932:
+        test cl, cl
+        jne L_481952
+        mov edx, dword ptr [esp + 0x10]
+        mov ecx, edx
+        add edx, 0x4
+        mov dword ptr [esp + 0x10], edx
+        mov edx, dword ptr [ecx]
+        mov dword ptr [ecx], eax
+        mov dword ptr [ebx], edx
+    L_481949:
+        add ebx, 0x4
+        cmp ebx, dword ptr [esp + 0x20]
+        jb L_4818e6
+    L_481952:
+        cmp ebp, dword ptr [esp + 0x1c]
+        jbe L_4819c9
+        jmp L_481960
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_481960:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [ebp - 0x4]
+        mov edx, dword ptr [ecx + 0x98]
+        mov esi, dword ptr [eax + 0x98]
+        cmp edx, esi
+        jne L_481986
+        mov edx, dword ptr [ecx + 0x9c]
+        cmp edx, dword ptr [eax + 0x9c]
+        setg dl
+        jmp L_481989
+    L_481986:
+        setl dl
+    L_481989:
+        test dl, dl
+        jne L_4819bc
+        mov edx, esi
+        mov esi, dword ptr [ecx + 0x98]
+        cmp edx, esi
+        jne L_4819aa
+        mov eax, dword ptr [eax + 0x9c]
+        cmp eax, dword ptr [ecx + 0x9c]
+        setg al
+        jmp L_4819ad
+    L_4819aa:
+        setl al
+    L_4819ad:
+        test al, al
+        jne L_4819c5
+        mov eax, dword ptr [edi - 0x4]
+        sub edi, 0x4
+        mov dword ptr [edi], ecx
+        mov dword ptr [ebp - 0x4], eax
+    L_4819bc:
+        add ebp, -0x4
+        cmp dword ptr [esp + 0x1c], ebp
+        jb L_481960
+    L_4819c5:
+        cmp ebp, dword ptr [esp + 0x1c]
+    L_4819c9:
+        jne L_4819ff
+        cmp ebx, dword ptr [esp + 0x20]
+        je L_481a44
+        mov ecx, dword ptr [esp + 0x10]
+        cmp ecx, ebx
+        je L_4819e1
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edi]
+        mov dword ptr [edi], edx
+        mov dword ptr [ecx], eax
+    L_4819e1:
+        add ecx, 0x4
+        mov eax, ebx
+        mov esi, dword ptr [eax]
+        mov dword ptr [esp + 0x10], ecx
+        mov ecx, edi
+        mov edx, dword ptr [ecx]
+        add edi, 0x4
+        mov dword ptr [ecx], esi
+        add ebx, 0x4
+        mov dword ptr [eax], edx
+        jmp L_4818e0
+    L_4819ff:
+        sub ebp, 0x4
+        cmp ebx, dword ptr [esp + 0x20]
+        jne L_481a32
+        sub edi, 0x4
+        cmp ebp, edi
+        je L_481a19
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [ebp]
+        mov dword ptr [ebp], ecx
+        mov dword ptr [edi], eax
+    L_481a19:
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [ecx - 0x4]
+        mov eax, dword ptr [edi]
+        sub ecx, 0x4
+        mov dword ptr [edi], edx
+        mov dword ptr [esp + 0x10], ecx
+        mov dword ptr [ecx], eax
+        jmp L_4818e0
+    L_481a32:
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [ebp]
+        mov dword ptr [ebx], ecx
+        mov dword ptr [ebp], eax
+        add ebx, 0x4
+        jmp L_4818e0
+    L_481a44:
+        mov eax, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x10]
+        mov dword ptr [eax], edi
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x4], edx
+        pop ebx
+        pop ecx
+        ret
+    }
+}
