@@ -3145,3 +3145,110 @@ extern "C" __declspec(naked) void __fastcall fn_00581750(void* self) {
         ret
     }
 }
+
+// [0x00585C10] sub_00585C10 (211 bytes)
+extern "C" void ext_006404E0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00585C10(void* self) {
+    __asm {
+        push ecx
+        push ebp
+        mov ebp, dword ptr [esp + 0Ch]
+        mov eax, dword ptr [ebp + 4]
+        test eax, eax
+        je L_27
+        mov ecx, dword ptr [ebp + 8]
+        sub ecx, eax
+        sar ecx, 2
+        jne L_2F
+L_27:
+        mov eax, 0B53B30h
+        pop ebp
+        pop ecx
+        ret
+L_2F:
+        mov eax, dword ptr [esp + 14h]
+        test eax, eax
+        je L_47
+        mov ecx, dword ptr [esp + 10h]
+        push eax
+        call ext_006404E0
+        mov dword ptr [esp + 0Ch], eax
+        jmp L_4F
+L_47:
+        mov edx, dword ptr [esp + 10h]
+        mov dword ptr [esp + 0Ch], edx
+L_4F:
+        push ebx
+        mov ebx, dword ptr [ebp + 4]
+        cmp ebx, dword ptr [ebp + 8]
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925134]
+        jbe L_62
+        call edi
+L_62:
+        mov esi, dword ptr [ebp + 8]
+        cmp dword ptr [ebp + 4], esi
+        mov dword ptr [esp + 10h], esi
+        jbe L_70
+        call edi
+L_70:
+        cmp ebx, esi
+        je L_D9
+        cmp dword ptr [esp + 24h], 0
+        je L_AA
+        cmp ebx, dword ptr [ebp + 8]
+        jb L_82
+        call edi
+L_82:
+        mov edi, dword ptr [ebx]
+        mov eax, dword ptr [esp + 24h]
+        mov esi, dword ptr [edi]
+        mov ecx, dword ptr [esp + 18h]
+        push eax
+        add esi, 58h
+        call ext_006404E0
+        mov edx, dword ptr [esi]
+        push eax
+        mov ecx, edi
+        call edx
+        mov esi, dword ptr [esp + 10h]
+        mov edi, dword ptr [mem_00925134]
+        jmp L_BF
+L_AA:
+        cmp ebx, dword ptr [ebp + 8]
+        jb L_B1
+        call edi
+L_B1:
+        mov ecx, dword ptr [ebx]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esp + 18h]
+        mov eax, dword ptr [eax + 58h]
+        push edx
+        call eax
+L_BF:
+        mov ecx, dword ptr [esp + 28h]
+        test ecx, ecx
+        je L_CD
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+L_CD:
+        cmp ebx, dword ptr [ebp + 8]
+        jb L_D4
+        call edi
+L_D4:
+        add ebx, 4
+        jmp L_70
+L_D9:
+        mov eax, dword ptr [esp + 18h]
+        pop edi
+        pop esi
+        pop ebx
+        pop ebp
+        pop ecx
+        ret
+    }
+}
