@@ -3117,3 +3117,28 @@ extern "C" void __fastcall fn_004C28C0(void* self, int edx_unused, int a1) {
     (*(void (__thiscall**)(void*))(*(int*)self + 0x16c))(self);
     ((void (__thiscall*)(void*))ext_004C0340)(self);
 }
+
+extern "C" void ext_004C6B10();
+extern "C" void ext_00660A50();
+
+// [0x004C6E30] sub_004C6E30 (44 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004C6E30(void* self) {
+    __asm {
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0xc]
+        mov     esi, ecx
+        push    0
+        lea     eax, [edi + 0x16c]
+        push    esi
+        push    eax
+        call    ext_00660A50
+        mov     ecx, eax
+        call    ext_004C6B10
+        fld     dword ptr [edi + 0x180]
+        pop     edi
+        fstp    dword ptr [esi + 0x14]
+        pop     esi
+        ret     4
+    }
+}
