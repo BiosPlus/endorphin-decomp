@@ -7809,3 +7809,16 @@ L932B:
         ret 0x4
     }
 }
+
+// [0x006B9580] sub_006B9580 (35 bytes)
+extern "C" void ext_006B8CE0();
+extern "C" int mem_00925660;
+
+extern "C" void __fastcall fn_006B9580(char* self, int edx_unused, unsigned int timerId) {
+    if (timerId == 1) {
+        typedef int (__stdcall *KillTimerFn)(void*, unsigned int);
+        (*(KillTimerFn*)&mem_00925660)(*(void**)(self + 0x20), 1);
+        typedef void (__thiscall *FnCE0)(void*, int);
+        ((FnCE0)&ext_006B8CE0)(self, 0);
+    }
+}
