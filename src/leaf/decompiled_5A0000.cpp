@@ -4134,3 +4134,110 @@ extern "C" __declspec(naked) void __fastcall fn_005A1490(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005A09D0] sub_005A09D0 (228 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_005A09D0(void* a1, void* a2, void* a3, void* a4, void* a5) {
+    __asm {
+        sub esp, 0ch
+        push esi
+        mov esi, dword ptr [esp + 14h]
+        cmp dword ptr [esi + 8], 0
+        jne L5A09D0_1
+        mov eax, 0b53b30h
+        pop esi
+        add esp, 0ch
+        ret
+L5A09D0_1:
+        mov eax, dword ptr [esp + 1ch]
+        test eax, eax
+        push ebx
+        push ebp
+        push edi
+        je L5A09D0_2
+        mov ecx, dword ptr [esp + 24h]
+        push eax
+        call ext_006404E0
+        mov ebx, eax
+        jmp L5A09D0_3
+L5A09D0_2:
+        mov ebx, dword ptr [esp + 24h]
+L5A09D0_3:
+        mov eax, dword ptr [esi + 4]
+        mov edi, dword ptr [eax]
+        mov ebp, dword ptr [esp + 2ch]
+        mov dword ptr [esp + 10h], eax
+        mov dword ptr [esp + 14h], esi
+        mov dword ptr [esp + 18h], edi
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0
+        _emit 0
+        _emit 0
+        _emit 0
+L5A09D0_4:
+        test esi, esi
+        je L5A09D0_5
+        cmp esi, dword ptr [esp + 20h]
+        je L5A09D0_6
+L5A09D0_5:
+        call dword ptr [mem_00925134]
+L5A09D0_6:
+        cmp edi, dword ptr [esp + 10h]
+        je L5A09D0_ret
+        test ebp, ebp
+        je L5A09D0_7
+        test esi, esi
+        jne L5A09D0_8
+        call dword ptr [mem_00925134]
+L5A09D0_8:
+        cmp edi, dword ptr [esi + 4]
+        jne L5A09D0_9
+        call dword ptr [mem_00925134]
+L5A09D0_9:
+        mov edi, dword ptr [edi + 28h]
+        mov esi, dword ptr [edi]
+        push ebp
+        mov ecx, ebx
+        add esi, 58h
+        call ext_006404E0
+        push eax
+        mov eax, dword ptr [esi]
+        mov ecx, edi
+        jmp L5A09D0_10
+L5A09D0_7:
+        test esi, esi
+        jne L5A09D0_11
+        call dword ptr [mem_00925134]
+L5A09D0_11:
+        cmp edi, dword ptr [esi + 4]
+        jne L5A09D0_12
+        call dword ptr [mem_00925134]
+L5A09D0_12:
+        mov ecx, dword ptr [edi + 28h]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 58h]
+        push ebx
+L5A09D0_10:
+        call eax
+        mov ecx, dword ptr [esp + 30h]
+        test ecx, ecx
+        je L5A09D0_13
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+L5A09D0_13:
+        lea ecx, [esp + 14h]
+        call ext_00673C20
+        mov edi, dword ptr [esp + 18h]
+        mov esi, dword ptr [esp + 14h]
+        jmp L5A09D0_4
+L5A09D0_ret:
+        pop edi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        pop esi
+        add esp, 0ch
+        ret
+    }
+}
