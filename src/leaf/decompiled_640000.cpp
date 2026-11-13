@@ -6075,3 +6075,15 @@ L_skip:
         ret
     }
 }
+
+// [0x00645F00] sub_00645F00 (59 bytes)
+extern "C" void* __fastcall fn_00645F00(void* self, int edx_unused, const void* other) {
+    ((void (__thiscall*)(void*, const void*))ext_00645CA0)(self, other);
+    ((unsigned int*)self)[0] = 0x97dacc;
+    ((unsigned int*)self)[1] = 0x97dab4;
+    ((unsigned int*)self)[2] = 0x97da80;
+    ((unsigned int*)self)[25] = ((const unsigned int*)other)[25];
+    ((unsigned int*)self)[26] = ((const unsigned int*)other)[26];
+    ((unsigned int*)self)[27] = ((const unsigned int*)other)[27];
+    return self;
+}
