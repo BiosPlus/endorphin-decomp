@@ -12260,3 +12260,535 @@ extern "C" __declspec(naked) void __fastcall fn_007E7A20(void* self) {
         __asm _emit 0xc3 // 007E7F86: ret
     }
 }
+
+// [0x007E5D10] sub_007E5D10 (1446 bytes)
+extern "C" void ext_006A6EC0();
+extern "C" void ext_006A745E();
+extern "C" void ext_007C6F30();
+extern "C" void ext_007C6F70();
+extern "C" void ext_007C7000();
+extern "C" void ext_007CAFC0();
+extern "C" void ext_007CB380();
+extern "C" void ext_007CB970();
+extern "C" void ext_007E46B0();
+extern "C" void ext_007E47E0();
+extern "C" void ext_007E48D0();
+extern "C" void ext_007E52C0();
+extern "C" int mem_00AA7E40;
+extern "C" int mem_00993838;
+extern "C" int mem_00993830;
+
+extern "C" __declspec(naked) void __fastcall fn_007E5D10(void* self) {
+    __asm {
+        __asm _emit 0x55 // 007E5D10: push	ebp
+        __asm _emit 0x8d __asm _emit 0x6c __asm _emit 0x24 __asm _emit 0x90 // 007E5D11: lea	ebp, [esp - 0x70]
+        __asm _emit 0x81 __asm _emit 0xec __asm _emit 0x24 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // 007E5D15: sub	esp, 0x224
+        mov	eax, dword ptr [mem_00AA7E40] // 007E5D1B: mov	eax, dword ptr [0xaa7e40]
+        __asm _emit 0x33 __asm _emit 0xc5 // 007E5D20: xor	eax, ebp
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0x6c // 007E5D22: mov	dword ptr [ebp + 0x6c], eax
+        __asm _emit 0x53 // 007E5D25: push	ebx
+        __asm _emit 0x56 // 007E5D26: push	esi
+        __asm _emit 0x57 // 007E5D27: push	edi
+        __asm _emit 0x8b __asm _emit 0x7d __asm _emit 0x78 // 007E5D28: mov	edi, dword ptr [ebp + 0x78]
+        __asm _emit 0x8b __asm _emit 0x07 // 007E5D2B: mov	eax, dword ptr [edi]
+        __asm _emit 0x50 // 007E5D2D: push	eax
+        call ext_007C7000 // 007E5D2E: call	0x7c7000 <.text+0x3c6000> ; sub_007C7000
+        __asm _emit 0x8b __asm _emit 0x4f __asm _emit 0x04 // 007E5D33: mov	ecx, dword ptr [edi + 0x4]
+        __asm _emit 0x8b __asm _emit 0xf0 // 007E5D36: mov	esi, eax
+        __asm _emit 0x51 // 007E5D38: push	ecx
+        __asm _emit 0x89 __asm _emit 0x75 __asm _emit 0x64 // 007E5D39: mov	dword ptr [ebp + 0x64], esi
+        call ext_007C7000 // 007E5D3C: call	0x7c7000 <.text+0x3c6000> ; sub_007C7000
+        __asm _emit 0x8b __asm _emit 0x17 // 007E5D41: mov	edx, dword ptr [edi]
+        __asm _emit 0x8b __asm _emit 0x4f __asm _emit 0x04 // 007E5D43: mov	ecx, dword ptr [edi + 0x4]
+        __asm _emit 0x8b __asm _emit 0xd8 // 007E5D46: mov	ebx, eax
+        __asm _emit 0x8b __asm _emit 0x02 // 007E5D48: mov	eax, dword ptr [edx]
+        __asm _emit 0x51 // 007E5D4A: push	ecx
+        __asm _emit 0x89 __asm _emit 0x5d __asm _emit 0xd8 // 007E5D4B: mov	dword ptr [ebp - 0x28], ebx
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0xc8 // 007E5D4E: mov	dword ptr [ebp - 0x38], eax
+        call ext_007C6F30 // 007E5D51: call	0x7c6f30 <.text+0x3c5f30> ; sub_007C6F30
+        __asm _emit 0xdd __asm _emit 0x5d __asm _emit 0x40 // 007E5D56: fstp	qword ptr [ebp + 0x40]
+        __asm _emit 0x8b __asm _emit 0x17 // 007E5D59: mov	edx, dword ptr [edi]
+        __asm _emit 0x52 // 007E5D5B: push	edx
+        call ext_007C6F30 // 007E5D5C: call	0x7c6f30 <.text+0x3c5f30> ; sub_007C6F30
+        __asm _emit 0xdc __asm _emit 0x45 __asm _emit 0x40 // 007E5D61: fadd	qword ptr [ebp + 0x40]
+        __asm _emit 0x8b __asm _emit 0x45 __asm _emit 0x7c // 007E5D64: mov	eax, dword ptr [ebp + 0x7c]
+        __asm _emit 0x33 __asm _emit 0xc9 // 007E5D67: xor	ecx, ecx
+        __asm _emit 0x56 // 007E5D69: push	esi
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x3c // 007E5D6A: fstp	dword ptr [ebp + 0x3c]
+        __asm _emit 0x89 __asm _emit 0x48 __asm _emit 0x0c // 007E5D6D: mov	dword ptr [eax + 0xc], ecx
+        __asm _emit 0x89 __asm _emit 0x48 __asm _emit 0x1c // 007E5D70: mov	dword ptr [eax + 0x1c], ecx
+        call ext_007CB970 // 007E5D73: call	0x7cb970 <.text+0x3ca970> ; sub_007CB970
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0xfc // 007E5D78: fstp	dword ptr [ebp - 0x4]
+        __asm _emit 0x56 // 007E5D7B: push	esi
+        call ext_007CAFC0 // 007E5D7C: call	0x7cafc0 <.text+0x3c9fc0> ; sub_007CAFC0
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0xdc // 007E5D81: fstp	dword ptr [ebp - 0x24]
+        __asm _emit 0x8b __asm _emit 0x07 // 007E5D84: mov	eax, dword ptr [edi]
+        __asm _emit 0x50 // 007E5D86: push	eax
+        call ext_007C6F70 // 007E5D87: call	0x7c6f70 <.text+0x3c5f70> ; sub_007C6F70
+        __asm _emit 0x8b __asm _emit 0x4f __asm _emit 0x04 // 007E5D8C: mov	ecx, dword ptr [edi + 0x4]
+        __asm _emit 0x51 // 007E5D8F: push	ecx
+        __asm _emit 0x8b __asm _emit 0xf0 // 007E5D90: mov	esi, eax
+        call ext_007C6F70 // 007E5D92: call	0x7c6f70 <.text+0x3c5f70> ; sub_007C6F70
+        __asm _emit 0x8b __asm _emit 0x4d __asm _emit 0x64 // 007E5D97: mov	ecx, dword ptr [ebp + 0x64]
+        __asm _emit 0x8d __asm _emit 0x55 __asm _emit 0x48 // 007E5D9A: lea	edx, [ebp + 0x48]
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0x68 // 007E5D9D: mov	dword ptr [ebp + 0x68], eax
+        __asm _emit 0x52 // 007E5DA0: push	edx
+        __asm _emit 0x8d __asm _emit 0x85 __asm _emit 0x24 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5DA1: lea	eax, [ebp - 0xdc]
+        __asm _emit 0x50 // 007E5DA7: push	eax
+        __asm _emit 0x51 // 007E5DA8: push	ecx
+        call ext_007CB380 // 007E5DA9: call	0x7cb380 <.text+0x3ca380> ; sub_007CB380
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x3c // 007E5DAE: fld	dword ptr [ebp + 0x3c]
+        __asm _emit 0x8b __asm _emit 0x4d __asm _emit 0x68 // 007E5DB1: mov	ecx, dword ptr [ebp + 0x68]
+        __asm _emit 0xdd __asm _emit 0x55 __asm _emit 0x40 // 007E5DB4: fst	qword ptr [ebp + 0x40]
+        __asm _emit 0xd8 __asm _emit 0x45 __asm _emit 0x48 // 007E5DB7: fadd	dword ptr [ebp + 0x48]
+        __asm _emit 0x83 __asm _emit 0xc4 __asm _emit 0x2c // 007E5DBA: add	esp, 0x2c
+        __asm _emit 0x8d __asm _emit 0x95 __asm _emit 0x30 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5DBD: lea	edx, [ebp - 0xd0]
+        __asm _emit 0x8d __asm _emit 0x46 __asm _emit 0x30 // 007E5DC3: lea	eax, [esi + 0x30]
+        __asm _emit 0x52 // 007E5DC6: push	edx
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x48 // 007E5DC7: fstp	dword ptr [ebp + 0x48]
+        __asm _emit 0x50 // 007E5DCA: push	eax
+        call ext_007E47E0 // 007E5DCB: call	0x7e47e0 <.text+0x3e37e0> ; sub_007E47E0
+        __asm _emit 0x8b __asm _emit 0x4b __asm _emit 0x28 // 007E5DD0: mov	ecx, dword ptr [ebx + 0x28]
+        __asm _emit 0x8d __asm _emit 0x04 __asm _emit 0xcd __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // 007E5DD3: lea	eax, [8*ecx]
+        __asm _emit 0x2b __asm _emit 0xc1 // 007E5DDA: sub	eax, ecx
+        __asm _emit 0x03 __asm _emit 0xc0 // 007E5DDC: add	eax, eax
+        __asm _emit 0x03 __asm _emit 0xc0 // 007E5DDE: add	eax, eax
+        call ext_006A6EC0 // 007E5DE0: call	0x6a6ec0 <.text+0x2a5ec0> ; sub_006A6EC0
+        __asm _emit 0x8b __asm _emit 0x4b __asm _emit 0x28 // 007E5DE5: mov	ecx, dword ptr [ebx + 0x28]
+        __asm _emit 0x8b __asm _emit 0xc4 // 007E5DE8: mov	eax, esp
+        __asm _emit 0x89 __asm _emit 0x43 __asm _emit 0x38 // 007E5DEA: mov	dword ptr [ebx + 0x38], eax
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x48 // 007E5DED: fld	dword ptr [ebp + 0x48]
+        __asm _emit 0xdc __asm _emit 0x45 __asm _emit 0x40 // 007E5DF0: fadd	qword ptr [ebp + 0x40]
+        __asm _emit 0x51 // 007E5DF3: push	ecx
+        __asm _emit 0x51 // 007E5DF4: push	ecx
+        __asm _emit 0x8d __asm _emit 0x8d __asm _emit 0x30 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5DF5: lea	ecx, [ebp - 0xd0]
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x64 // 007E5DFB: fstp	dword ptr [ebp + 0x64]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x64 // 007E5DFE: fld	dword ptr [ebp + 0x64]
+        __asm _emit 0xd9 __asm _emit 0x1c __asm _emit 0x24 // 007E5E01: fstp	dword ptr [esp]
+        __asm _emit 0x51 // 007E5E04: push	ecx
+        __asm _emit 0x50 // 007E5E05: push	eax
+        __asm _emit 0x8b __asm _emit 0x53 __asm _emit 0x30 // 007E5E06: mov	edx, dword ptr [ebx + 0x30]
+        __asm _emit 0x57 // 007E5E09: push	edi
+        __asm _emit 0xff __asm _emit 0xd2 // 007E5E0A: call	edx
+        __asm _emit 0xd9 __asm _emit 0xee // 007E5E0C: fldz
+        __asm _emit 0x8b __asm _emit 0xf8 // 007E5E0E: mov	edi, eax
+        __asm _emit 0x8b __asm _emit 0x45 __asm _emit 0x7c // 007E5E10: mov	eax, dword ptr [ebp + 0x7c]
+        __asm _emit 0x83 __asm _emit 0xc0 __asm _emit 0x10 // 007E5E13: add	eax, 0x10
+        __asm _emit 0xd9 __asm _emit 0x10 // 007E5E16: fst	dword ptr [eax]
+        __asm _emit 0x83 __asm _emit 0xc4 __asm _emit 0x14 // 007E5E18: add	esp, 0x14
+        __asm _emit 0x85 __asm _emit 0xff // 007E5E1B: test	edi, edi
+        __asm _emit 0xd9 __asm _emit 0x50 __asm _emit 0x04 // 007E5E1D: fst	dword ptr [eax + 0x4]
+        __asm _emit 0xd9 __asm _emit 0x58 __asm _emit 0x08 // 007E5E20: fstp	dword ptr [eax + 0x8]
+        __asm _emit 0x89 __asm _emit 0x7d __asm _emit 0xd4 // 007E5E23: mov	dword ptr [ebp - 0x2c], edi
+        __asm _emit 0x75 __asm _emit 0x07 // 007E5E26: jne	0x7e5e2f <.text+0x3e4e2f>
+        __asm _emit 0x33 __asm _emit 0xc0 // 007E5E28: xor	eax, eax
+        __asm _emit 0xe9 __asm _emit 0x64 __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 // 007E5E2A: jmp	0x7e6293 <.text+0x3e5293>
+        __asm _emit 0x8d __asm _emit 0x4d __asm _emit 0x14 // 007E5E2F: lea	ecx, [ebp + 0x14]
+        __asm _emit 0x89 __asm _emit 0x4d __asm _emit 0xa0 // 007E5E32: mov	dword ptr [ebp - 0x60], ecx
+        __asm _emit 0x8b __asm _emit 0x4d __asm _emit 0x68 // 007E5E35: mov	ecx, dword ptr [ebp + 0x68]
+        __asm _emit 0x8d __asm _emit 0x45 __asm _emit 0x08 // 007E5E38: lea	eax, [ebp + 0x8]
+        __asm _emit 0x56 // 007E5E3B: push	esi
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0xac // 007E5E3C: mov	dword ptr [ebp - 0x54], eax
+        __asm _emit 0x8d __asm _emit 0x55 __asm _emit 0x20 // 007E5E3F: lea	edx, [ebp + 0x20]
+        __asm _emit 0x8d __asm _emit 0x45 __asm _emit 0x2c // 007E5E42: lea	eax, [ebp + 0x2c]
+        __asm _emit 0x51 // 007E5E45: push	ecx
+        __asm _emit 0x8d __asm _emit 0x8d __asm _emit 0x3c __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5E46: lea	ecx, [ebp - 0xc4]
+        __asm _emit 0x89 __asm _emit 0x55 __asm _emit 0xa4 // 007E5E4C: mov	dword ptr [ebp - 0x5c], edx
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0xa8 // 007E5E4F: mov	dword ptr [ebp - 0x58], eax
+        call ext_007E48D0 // 007E5E52: call	0x7e48d0 <.text+0x3e38d0> ; sub_007E48D0
+        __asm _emit 0x33 __asm _emit 0xc0 // 007E5E57: xor	eax, eax
+        __asm _emit 0x3b __asm _emit 0xf8 // 007E5E59: cmp	edi, eax
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0x64 // 007E5E5B: mov	dword ptr [ebp + 0x64], eax
+        __asm _emit 0x0f __asm _emit 0x8e __asm _emit 0x17 __asm _emit 0x04 __asm _emit 0x00 __asm _emit 0x00 // 007E5E5E: jle	0x7e627b <.text+0x3e527b>
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0x68 // 007E5E64: mov	dword ptr [ebp + 0x68], eax
+        __asm _emit 0xeb __asm _emit 0x0a // 007E5E67: jmp	0x7e5e73 <.text+0x3e4e73>
+        __asm _emit 0x8d __asm _emit 0xa4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // 007E5E69: lea	esp, [esp]
+        __asm _emit 0x8b __asm _emit 0x5d __asm _emit 0xd8 // 007E5E70: mov	ebx, dword ptr [ebp - 0x28]
+        __asm _emit 0x8b __asm _emit 0x7d __asm _emit 0x7c // 007E5E73: mov	edi, dword ptr [ebp + 0x7c]
+        __asm _emit 0x81 __asm _emit 0x7f __asm _emit 0x0c __asm _emit 0x90 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // 007E5E76: cmp	dword ptr [edi + 0xc], 0x190
+        __asm _emit 0x0f __asm _emit 0x8d __asm _emit 0xfb __asm _emit 0x03 __asm _emit 0x00 __asm _emit 0x00 // 007E5E7D: jge	0x7e627e <.text+0x3e527e>
+        __asm _emit 0x8b __asm _emit 0x5b __asm _emit 0x38 // 007E5E83: mov	ebx, dword ptr [ebx + 0x38]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x4c __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5E86: fld	dword ptr [ebp - 0xb4]
+        __asm _emit 0x03 __asm _emit 0x5d __asm _emit 0x68 // 007E5E8C: add	ebx, dword ptr [ebp + 0x68]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x3c __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5E8F: fld	dword ptr [ebp - 0xc4]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x5c __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5E95: fld	dword ptr [ebp - 0xa4]
+        __asm _emit 0x8b __asm _emit 0x03 // 007E5E9B: mov	eax, dword ptr [ebx]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x6c __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5E9D: fld	dword ptr [ebp - 0x94]
+        __asm _emit 0xdd __asm _emit 0x55 __asm _emit 0x40 // 007E5EA3: fst	qword ptr [ebp + 0x40]
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x04 // 007E5EA6: fld	dword ptr [eax + 0x4]
+        __asm _emit 0xd8 __asm _emit 0xcc // 007E5EA9: fmul	st, st(4)
+        __asm _emit 0xd9 __asm _emit 0x00 // 007E5EAB: fld	dword ptr [eax]
+        __asm _emit 0xd8 __asm _emit 0xcc // 007E5EAD: fmul	st, st(4)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5EAF: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E5EB1: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xd8 __asm _emit 0xcb // 007E5EB4: fmul	st, st(3)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5EB6: faddp	st(1), st
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5EB8: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x14 // 007E5EBA: fstp	dword ptr [ebp + 0x14]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x50 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5EBD: fld	dword ptr [ebp - 0xb0]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x40 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5EC3: fld	dword ptr [ebp - 0xc0]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x60 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5EC9: fld	dword ptr [ebp - 0xa0]
+        __asm _emit 0xdd __asm _emit 0x55 __asm _emit 0xcc // 007E5ECF: fst	qword ptr [ebp - 0x34]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x70 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5ED2: fld	dword ptr [ebp - 0x90]
+        __asm _emit 0xdd __asm _emit 0x5d __asm _emit 0x50 // 007E5ED8: fstp	qword ptr [ebp + 0x50]
+        __asm _emit 0xd9 __asm _emit 0x00 // 007E5EDB: fld	dword ptr [eax]
+        __asm _emit 0xd8 __asm _emit 0xca // 007E5EDD: fmul	st, st(2)
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x04 // 007E5EDF: fld	dword ptr [eax + 0x4]
+        __asm _emit 0xd8 __asm _emit 0xcc // 007E5EE2: fmul	st, st(4)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5EE4: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E5EE6: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xde __asm _emit 0xca // 007E5EE9: fmulp	st(2), st
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5EEB: faddp	st(1), st
+        __asm _emit 0xdc __asm _emit 0x45 __asm _emit 0x50 // 007E5EED: fadd	qword ptr [ebp + 0x50]
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x18 // 007E5EF0: fstp	dword ptr [ebp + 0x18]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x54 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5EF3: fld	dword ptr [ebp - 0xac]
+        __asm _emit 0xdd __asm _emit 0x55 __asm _emit 0xe8 // 007E5EF9: fst	qword ptr [ebp - 0x18]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x44 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5EFC: fld	dword ptr [ebp - 0xbc]
+        __asm _emit 0xdd __asm _emit 0x55 __asm _emit 0xf0 // 007E5F02: fst	qword ptr [ebp - 0x10]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x64 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5F05: fld	dword ptr [ebp - 0x9c]
+        __asm _emit 0xdd __asm _emit 0x5d __asm _emit 0x00 // 007E5F0B: fstp	qword ptr [ebp]
+        __asm _emit 0xd9 __asm _emit 0x85 __asm _emit 0x74 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E5F0E: fld	dword ptr [ebp - 0x8c]
+        __asm _emit 0xdd __asm _emit 0x5d __asm _emit 0xe0 // 007E5F14: fstp	qword ptr [ebp - 0x20]
+        __asm _emit 0xd8 __asm _emit 0x08 // 007E5F17: fmul	dword ptr [eax]
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x04 // 007E5F19: fld	dword ptr [eax + 0x4]
+        __asm _emit 0xde __asm _emit 0xca // 007E5F1C: fmulp	st(2), st
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5F1E: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E5F20: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xdc __asm _emit 0x4d __asm _emit 0x00 // 007E5F23: fmul	qword ptr [ebp]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5F26: faddp	st(1), st
+        __asm _emit 0xdc __asm _emit 0x45 __asm _emit 0xe0 // 007E5F28: fadd	qword ptr [ebp - 0x20]
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x1c // 007E5F2B: fstp	dword ptr [ebp + 0x1c]
+        __asm _emit 0x8b __asm _emit 0x43 __asm _emit 0x04 // 007E5F2E: mov	eax, dword ptr [ebx + 0x4]
+        __asm _emit 0xd9 __asm _emit 0x00 // 007E5F31: fld	dword ptr [eax]
+        __asm _emit 0xd8 __asm _emit 0xcc // 007E5F33: fmul	st, st(4)
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x04 // 007E5F35: fld	dword ptr [eax + 0x4]
+        __asm _emit 0xd8 __asm _emit 0xce // 007E5F38: fmul	st, st(6)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5F3A: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E5F3C: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xd8 __asm _emit 0xcc // 007E5F3F: fmul	st, st(4)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5F41: faddp	st(1), st
+        __asm _emit 0xdc __asm _emit 0x45 __asm _emit 0x40 // 007E5F43: fadd	qword ptr [ebp + 0x40]
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x20 // 007E5F46: fstp	dword ptr [ebp + 0x20]
+        __asm _emit 0xd9 __asm _emit 0x00 // 007E5F49: fld	dword ptr [eax]
+        __asm _emit 0xd8 __asm _emit 0xc9 // 007E5F4B: fmul	st, st(1)
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x04 // 007E5F4D: fld	dword ptr [eax + 0x4]
+        __asm _emit 0xd8 __asm _emit 0xcb // 007E5F50: fmul	st, st(3)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5F52: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E5F54: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xdc __asm _emit 0x4d __asm _emit 0xcc // 007E5F57: fmul	qword ptr [ebp - 0x34]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5F5A: faddp	st(1), st
+        __asm _emit 0xdc __asm _emit 0x45 __asm _emit 0x50 // 007E5F5C: fadd	qword ptr [ebp + 0x50]
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x24 // 007E5F5F: fstp	dword ptr [ebp + 0x24]
+        __asm _emit 0xd9 __asm _emit 0x00 // 007E5F62: fld	dword ptr [eax]
+        __asm _emit 0xdc __asm _emit 0x4d __asm _emit 0xf0 // 007E5F64: fmul	qword ptr [ebp - 0x10]
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x04 // 007E5F67: fld	dword ptr [eax + 0x4]
+        __asm _emit 0xdc __asm _emit 0x4d __asm _emit 0xe8 // 007E5F6A: fmul	qword ptr [ebp - 0x18]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5F6D: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E5F6F: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xdc __asm _emit 0x4d __asm _emit 0x00 // 007E5F72: fmul	qword ptr [ebp]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5F75: faddp	st(1), st
+        __asm _emit 0xdc __asm _emit 0x45 __asm _emit 0xe0 // 007E5F77: fadd	qword ptr [ebp - 0x20]
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x28 // 007E5F7A: fstp	dword ptr [ebp + 0x28]
+        __asm _emit 0x8b __asm _emit 0x43 __asm _emit 0x08 // 007E5F7D: mov	eax, dword ptr [ebx + 0x8]
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x04 // 007E5F80: fld	dword ptr [eax + 0x4]
+        __asm _emit 0xd8 __asm _emit 0xcd // 007E5F83: fmul	st, st(5)
+        __asm _emit 0xd9 __asm _emit 0x00 // 007E5F85: fld	dword ptr [eax]
+        __asm _emit 0xd8 __asm _emit 0xcd // 007E5F87: fmul	st, st(5)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5F89: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E5F8B: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xd8 __asm _emit 0xcc // 007E5F8E: fmul	st, st(4)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5F90: faddp	st(1), st
+        __asm _emit 0xdc __asm _emit 0x45 __asm _emit 0x40 // 007E5F92: fadd	qword ptr [ebp + 0x40]
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x2c // 007E5F95: fstp	dword ptr [ebp + 0x2c]
+        __asm _emit 0xd9 __asm _emit 0x00 // 007E5F98: fld	dword ptr [eax]
+        __asm _emit 0xd8 __asm _emit 0xc9 // 007E5F9A: fmul	st, st(1)
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x04 // 007E5F9C: fld	dword ptr [eax + 0x4]
+        __asm _emit 0xd8 __asm _emit 0xcb // 007E5F9F: fmul	st, st(3)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5FA1: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E5FA3: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xdc __asm _emit 0x4d __asm _emit 0xcc // 007E5FA6: fmul	qword ptr [ebp - 0x34]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5FA9: faddp	st(1), st
+        __asm _emit 0xdc __asm _emit 0x45 __asm _emit 0x50 // 007E5FAB: fadd	qword ptr [ebp + 0x50]
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x30 // 007E5FAE: fstp	dword ptr [ebp + 0x30]
+        __asm _emit 0xd9 __asm _emit 0x00 // 007E5FB1: fld	dword ptr [eax]
+        __asm _emit 0xdc __asm _emit 0x4d __asm _emit 0xf0 // 007E5FB3: fmul	qword ptr [ebp - 0x10]
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x04 // 007E5FB6: fld	dword ptr [eax + 0x4]
+        __asm _emit 0xdc __asm _emit 0x4d __asm _emit 0xe8 // 007E5FB9: fmul	qword ptr [ebp - 0x18]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5FBC: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E5FBE: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xdd __asm _emit 0x45 __asm _emit 0x00 // 007E5FC1: fld	qword ptr [ebp]
+        __asm _emit 0xdc __asm _emit 0xc9 // 007E5FC4: fmul	st(1), st
+        __asm _emit 0xd9 __asm _emit 0xca // 007E5FC6: fxch	st(2)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5FC8: faddp	st(1), st
+        __asm _emit 0xdc __asm _emit 0x45 __asm _emit 0xe0 // 007E5FCA: fadd	qword ptr [ebp - 0x20]
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x34 // 007E5FCD: fstp	dword ptr [ebp + 0x34]
+        __asm _emit 0x8b __asm _emit 0x43 __asm _emit 0x0c // 007E5FD0: mov	eax, dword ptr [ebx + 0xc]
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x04 // 007E5FD3: fld	dword ptr [eax + 0x4]
+        __asm _emit 0xde __asm _emit 0xce // 007E5FD6: fmulp	st(6), st
+        __asm _emit 0xd9 __asm _emit 0x00 // 007E5FD8: fld	dword ptr [eax]
+        __asm _emit 0xde __asm _emit 0xcd // 007E5FDA: fmulp	st(5), st
+        __asm _emit 0xd9 __asm _emit 0xcd // 007E5FDC: fxch	st(5)
+        __asm _emit 0xde __asm _emit 0xc4 // 007E5FDE: faddp	st(4), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E5FE0: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xde __asm _emit 0xcb // 007E5FE3: fmulp	st(3), st
+        __asm _emit 0xd9 __asm _emit 0xcb // 007E5FE5: fxch	st(3)
+        __asm _emit 0xde __asm _emit 0xc2 // 007E5FE7: faddp	st(2), st
+        __asm _emit 0xd9 __asm _emit 0xc9 // 007E5FE9: fxch	st(1)
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x08 // 007E5FEB: fstp	dword ptr [ebp + 0x8]
+        __asm _emit 0xd9 __asm _emit 0x00 // 007E5FEE: fld	dword ptr [eax]
+        __asm _emit 0xde __asm _emit 0xca // 007E5FF0: fmulp	st(2), st
+        __asm _emit 0xd8 __asm _emit 0x48 __asm _emit 0x04 // 007E5FF2: fmul	dword ptr [eax + 0x4]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5FF5: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E5FF7: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xdc __asm _emit 0x4d __asm _emit 0xcc // 007E5FFA: fmul	qword ptr [ebp - 0x34]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E5FFD: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x0c // 007E5FFF: fstp	dword ptr [ebp + 0xc]
+        __asm _emit 0xd9 __asm _emit 0x00 // 007E6002: fld	dword ptr [eax]
+        __asm _emit 0xdc __asm _emit 0x4d __asm _emit 0xf0 // 007E6004: fmul	qword ptr [ebp - 0x10]
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x04 // 007E6007: fld	dword ptr [eax + 0x4]
+        __asm _emit 0xdc __asm _emit 0x4d __asm _emit 0xe8 // 007E600A: fmul	qword ptr [ebp - 0x18]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E600D: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0x08 // 007E600F: fld	dword ptr [eax + 0x8]
+        __asm _emit 0xde __asm _emit 0xca // 007E6012: fmulp	st(2), st
+        __asm _emit 0xde __asm _emit 0xc1 // 007E6014: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x10 // 007E6016: fstp	dword ptr [ebp + 0x10]
+        __asm _emit 0x8b __asm _emit 0x53 __asm _emit 0x18 // 007E6019: mov	edx, dword ptr [ebx + 0x18]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x20 // 007E601C: fld	dword ptr [ebp + 0x20]
+        __asm _emit 0x8b __asm _emit 0x43 __asm _emit 0x14 // 007E601F: mov	eax, dword ptr [ebx + 0x14]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x14 // 007E6022: fld	dword ptr [ebp + 0x14]
+        __asm _emit 0x89 __asm _emit 0x55 __asm _emit 0xb8 // 007E6025: mov	dword ptr [ebp - 0x48], edx
+        __asm _emit 0xd9 __asm _emit 0xc1 // 007E6028: fld	st(1)
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0xb4 // 007E602A: mov	dword ptr [ebp - 0x4c], eax
+        __asm _emit 0xd8 __asm _emit 0xe1 // 007E602D: fsub	st, st(1)
+        __asm _emit 0xd9 __asm _emit 0x9d __asm _emit 0x7c __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E602F: fstp	dword ptr [ebp - 0x84]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x24 // 007E6035: fld	dword ptr [ebp + 0x24]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x18 // 007E6038: fld	dword ptr [ebp + 0x18]
+        __asm _emit 0xd9 __asm _emit 0xc1 // 007E603B: fld	st(1)
+        __asm _emit 0xd8 __asm _emit 0xe1 // 007E603D: fsub	st, st(1)
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x80 // 007E603F: fstp	dword ptr [ebp - 0x80]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x28 // 007E6042: fld	dword ptr [ebp + 0x28]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x1c // 007E6045: fld	dword ptr [ebp + 0x1c]
+        __asm _emit 0xd9 __asm _emit 0xc1 // 007E6048: fld	st(1)
+        __asm _emit 0xd8 __asm _emit 0xe1 // 007E604A: fsub	st, st(1)
+        __asm _emit 0x8b __asm _emit 0x55 __asm _emit 0xc8 // 007E604C: mov	edx, dword ptr [ebp - 0x38]
+        __asm _emit 0x8d __asm _emit 0x8d __asm _emit 0x4c __asm _emit 0xfe __asm _emit 0xff __asm _emit 0xff // 007E604F: lea	ecx, [ebp - 0x1b4]
+        __asm _emit 0x51 // 007E6055: push	ecx
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x84 // 007E6056: fstp	dword ptr [ebp - 0x7c]
+        __asm _emit 0x8d __asm _emit 0x85 __asm _emit 0x7c __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E6059: lea	eax, [ebp - 0x84]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x2c // 007E605F: fld	dword ptr [ebp + 0x2c]
+        __asm _emit 0x89 __asm _emit 0x4d __asm _emit 0x54 // 007E6062: mov	dword ptr [ebp + 0x54], ecx
+        __asm _emit 0xd9 __asm _emit 0xc0 // 007E6065: fld	st(0)
+        __asm _emit 0x8d __asm _emit 0x4d __asm _emit 0x4c // 007E6067: lea	ecx, [ebp + 0x4c]
+        __asm _emit 0xde __asm _emit 0xe7 // 007E606A: fsubrp	st(7), st
+        __asm _emit 0x8d __asm _emit 0x7d __asm _emit 0xa0 // 007E606C: lea	edi, [ebp - 0x60]
+        __asm _emit 0xd9 __asm _emit 0xce // 007E606F: fxch	st(6)
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x88 // 007E6071: fstp	dword ptr [ebp - 0x78]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x30 // 007E6074: fld	dword ptr [ebp + 0x30]
+        __asm _emit 0xd9 __asm _emit 0xc0 // 007E6077: fld	st(0)
+        __asm _emit 0xde __asm _emit 0xe5 // 007E6079: fsubrp	st(5), st
+        __asm _emit 0xd9 __asm _emit 0xcc // 007E607B: fxch	st(4)
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x8c // 007E607D: fstp	dword ptr [ebp - 0x74]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x34 // 007E6080: fld	dword ptr [ebp + 0x34]
+        __asm _emit 0xd9 __asm _emit 0xc0 // 007E6083: fld	st(0)
+        __asm _emit 0xde __asm _emit 0xe3 // 007E6085: fsubrp	st(3), st
+        __asm _emit 0xd9 __asm _emit 0xca // 007E6087: fxch	st(2)
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x90 // 007E6089: fstp	dword ptr [ebp - 0x70]
+        __asm _emit 0xd9 __asm _emit 0xcc // 007E608C: fxch	st(4)
+        __asm _emit 0xde __asm _emit 0xe5 // 007E608E: fsubrp	st(5), st
+        __asm _emit 0xd9 __asm _emit 0xcc // 007E6090: fxch	st(4)
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x94 // 007E6092: fstp	dword ptr [ebp - 0x6c]
+        __asm _emit 0xde __asm _emit 0xe1 // 007E6095: fsubrp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x98 // 007E6097: fstp	dword ptr [ebp - 0x68]
+        __asm _emit 0xde __asm _emit 0xe1 // 007E609A: fsubrp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x9c // 007E609C: fstp	dword ptr [ebp - 0x64]
+        __asm _emit 0xd9 __asm _emit 0x82 __asm _emit 0xa0 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // 007E609F: fld	dword ptr [edx + 0xa0]
+        __asm _emit 0x8d __asm _emit 0x55 __asm _emit 0x54 // 007E60A5: lea	edx, [ebp + 0x54]
+        __asm _emit 0xd9 __asm _emit 0x1c __asm _emit 0x24 // 007E60A8: fstp	dword ptr [esp]
+        __asm _emit 0x50 // 007E60AB: push	eax
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0xdc // 007E60AC: fld	dword ptr [ebp - 0x24]
+        __asm _emit 0x83 __asm _emit 0xec __asm _emit 0x0c // 007E60AF: sub	esp, 0xc
+        __asm _emit 0xd9 __asm _emit 0x5c __asm _emit 0x24 __asm _emit 0x08 // 007E60B2: fstp	dword ptr [esp + 0x8]
+        __asm _emit 0x8d __asm _emit 0x45 __asm _emit 0x38 // 007E60B6: lea	eax, [ebp + 0x38]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0xfc // 007E60B9: fld	dword ptr [ebp - 0x4]
+        __asm _emit 0xd9 __asm _emit 0x5c __asm _emit 0x24 __asm _emit 0x04 // 007E60BC: fstp	dword ptr [esp + 0x4]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x3c // 007E60C0: fld	dword ptr [ebp + 0x3c]
+        __asm _emit 0xd9 __asm _emit 0x1c __asm _emit 0x24 // 007E60C3: fstp	dword ptr [esp]
+        __asm _emit 0x51 // 007E60C6: push	ecx
+        __asm _emit 0x52 // 007E60C7: push	edx
+        __asm _emit 0x50 // 007E60C8: push	eax
+        __asm _emit 0x8d __asm _emit 0x4d __asm _emit 0xbc // 007E60C9: lea	ecx, [ebp - 0x44]
+        __asm _emit 0x51 // 007E60CC: push	ecx
+        __asm _emit 0x8d __asm _emit 0x55 __asm _emit 0xf8 // 007E60CD: lea	edx, [ebp - 0x8]
+        __asm _emit 0x52 // 007E60D0: push	edx
+        call ext_007E52C0 // 007E60D1: call	0x7e52c0 <.text+0x3e42c0> ; sub_007E52C0
+        __asm _emit 0x83 __asm _emit 0xc4 __asm _emit 0x28 // 007E60D6: add	esp, 0x28
+        __asm _emit 0x84 __asm _emit 0xc0 // 007E60D9: test	al, al
+        __asm _emit 0x0f __asm _emit 0x84 __asm _emit 0x84 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // 007E60DB: je	0x7e6265 <.text+0x3e5265>
+        __asm _emit 0xf6 __asm _emit 0x45 __asm _emit 0xb8 __asm _emit 0x02 // 007E60E1: test	byte ptr [ebp - 0x48], 0x2
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0xc0 // 007E60E5: fld	dword ptr [ebp - 0x40]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0xbc // 007E60E8: fld	dword ptr [ebp - 0x44]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0xc4 // 007E60EB: fld	dword ptr [ebp - 0x3c]
+        __asm _emit 0xd9 __asm _emit 0x06 // 007E60EE: fld	dword ptr [esi]
+        __asm _emit 0xd8 __asm _emit 0xca // 007E60F0: fmul	st, st(2)
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x10 // 007E60F2: fld	dword ptr [esi + 0x10]
+        __asm _emit 0xd8 __asm _emit 0xcc // 007E60F5: fmul	st, st(4)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E60F7: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x20 // 007E60F9: fld	dword ptr [esi + 0x20]
+        __asm _emit 0xd8 __asm _emit 0xca // 007E60FC: fmul	st, st(2)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E60FE: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x58 // 007E6100: fstp	dword ptr [ebp + 0x58]
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x14 // 007E6103: fld	dword ptr [esi + 0x14]
+        __asm _emit 0xd8 __asm _emit 0xcb // 007E6106: fmul	st, st(3)
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x04 // 007E6108: fld	dword ptr [esi + 0x4]
+        __asm _emit 0xd8 __asm _emit 0xcb // 007E610B: fmul	st, st(3)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E610D: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x24 // 007E610F: fld	dword ptr [esi + 0x24]
+        __asm _emit 0xd8 __asm _emit 0xca // 007E6112: fmul	st, st(2)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E6114: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x5c // 007E6116: fstp	dword ptr [ebp + 0x5c]
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x18 // 007E6119: fld	dword ptr [esi + 0x18]
+        __asm _emit 0xd8 __asm _emit 0xcb // 007E611C: fmul	st, st(3)
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x08 // 007E611E: fld	dword ptr [esi + 0x8]
+        __asm _emit 0xd8 __asm _emit 0xcb // 007E6121: fmul	st, st(3)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E6123: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x28 // 007E6125: fld	dword ptr [esi + 0x28]
+        __asm _emit 0xd8 __asm _emit 0xca // 007E6128: fmul	st, st(2)
+        __asm _emit 0xde __asm _emit 0xc1 // 007E612A: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x60 // 007E612C: fstp	dword ptr [ebp + 0x60]
+        __asm _emit 0x75 __asm _emit 0x46 // 007E612F: jne	0x7e6177 <.text+0x3e5177>
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x08 // 007E6131: fld	dword ptr [ebp + 0x8]
+        __asm _emit 0xde __asm _emit 0xca // 007E6134: fmulp	st(2), st
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x0c // 007E6136: fld	dword ptr [ebp + 0xc]
+        __asm _emit 0xde __asm _emit 0xcb // 007E6139: fmulp	st(3), st
+        __asm _emit 0xd9 __asm _emit 0xc9 // 007E613B: fxch	st(1)
+        __asm _emit 0xde __asm _emit 0xc2 // 007E613D: faddp	st(2), st
+        __asm _emit 0xd8 __asm _emit 0x4d __asm _emit 0x10 // 007E613F: fmul	dword ptr [ebp + 0x10]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E6142: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x38 // 007E6144: fstp	dword ptr [ebp + 0x38]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x38 // 007E6147: fld	dword ptr [ebp + 0x38]
+        fcomp	dword ptr [mem_00993838] // 007E614A: fcomp	dword ptr [0x993838]
+        __asm _emit 0xdf __asm _emit 0xe0 // 007E6150: fnstsw	ax
+        __asm _emit 0xf6 __asm _emit 0xc4 __asm _emit 0x05 // 007E6152: test	ah, 0x5
+        __asm _emit 0x7a __asm _emit 0x26 // 007E6155: jp	0x7e617d <.text+0x3e517d>
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x58 // 007E6157: fld	dword ptr [ebp + 0x58]
+        fld	qword ptr [mem_00993830] // 007E615A: fld	qword ptr [0x993830]
+        __asm _emit 0xdc __asm _emit 0xc9 // 007E6160: fmul	st(1), st
+        __asm _emit 0xd9 __asm _emit 0xc9 // 007E6162: fxch	st(1)
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x58 // 007E6164: fstp	dword ptr [ebp + 0x58]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x5c // 007E6167: fld	dword ptr [ebp + 0x5c]
+        __asm _emit 0xd8 __asm _emit 0xc9 // 007E616A: fmul	st, st(1)
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x5c // 007E616C: fstp	dword ptr [ebp + 0x5c]
+        __asm _emit 0xd8 __asm _emit 0x4d __asm _emit 0x60 // 007E616F: fmul	dword ptr [ebp + 0x60]
+        __asm _emit 0xd9 __asm _emit 0x5d __asm _emit 0x60 // 007E6172: fstp	dword ptr [ebp + 0x60]
+        __asm _emit 0xeb __asm _emit 0x06 // 007E6175: jmp	0x7e617d <.text+0x3e517d>
+        __asm _emit 0xdd __asm _emit 0xda // 007E6177: fstp	st(2)
+        __asm _emit 0xdd __asm _emit 0xd8 // 007E6179: fstp	st(0)
+        __asm _emit 0xdd __asm _emit 0xd8 // 007E617B: fstp	st(0)
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x60 // 007E617D: fld	dword ptr [ebp + 0x60]
+        __asm _emit 0x8d __asm _emit 0x85 __asm _emit 0x4c __asm _emit 0xfe __asm _emit 0xff __asm _emit 0xff // 007E6180: lea	eax, [ebp - 0x1b4]
+        __asm _emit 0x3b __asm _emit 0x45 __asm _emit 0x54 // 007E6186: cmp	eax, dword ptr [ebp + 0x54]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x5c // 007E6189: fld	dword ptr [ebp + 0x5c]
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0x58 // 007E618C: fld	dword ptr [ebp + 0x58]
+        __asm _emit 0x0f __asm _emit 0x84 __asm _emit 0x18 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // 007E618F: je	0x7e62ad <.text+0x3e52ad>
+        __asm _emit 0xd9 __asm _emit 0x45 __asm _emit 0xf8 // 007E6195: fld	dword ptr [ebp - 0x8]
+        __asm _emit 0x8d __asm _emit 0x85 __asm _emit 0x54 __asm _emit 0xfe __asm _emit 0xff __asm _emit 0xff // 007E6198: lea	eax, [ebp - 0x1ac]
+        __asm _emit 0xeb __asm _emit 0x06 // 007E619E: jmp	0x7e61a6 <.text+0x3e51a6>
+        __asm _emit 0xd9 __asm _emit 0xcb // 007E61A0: fxch	st(3)
+        __asm _emit 0xd9 __asm _emit 0xca // 007E61A2: fxch	st(2)
+        __asm _emit 0xd9 __asm _emit 0xc9 // 007E61A4: fxch	st(1)
+        __asm _emit 0x8b __asm _emit 0x7d __asm _emit 0x7c // 007E61A6: mov	edi, dword ptr [ebp + 0x7c]
+        __asm _emit 0x8b __asm _emit 0x57 __asm _emit 0x0c // 007E61A9: mov	edx, dword ptr [edi + 0xc]
+        __asm _emit 0x81 __asm _emit 0xfa __asm _emit 0x90 __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 // 007E61AC: cmp	edx, 0x190
+        __asm _emit 0x0f __asm _emit 0x8d __asm _emit 0xfa __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // 007E61B2: jge	0x7e62b2 <.text+0x3e52b2>
+        __asm _emit 0x8b __asm _emit 0x7f __asm _emit 0x04 // 007E61B8: mov	edi, dword ptr [edi + 0x4]
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0xf8 // 007E61BB: fld	dword ptr [eax - 0x8]
+        __asm _emit 0x8d __asm _emit 0x0c __asm _emit 0x92 // 007E61BE: lea	ecx, [edx + 4*edx]
+        __asm _emit 0x8d __asm _emit 0x0c __asm _emit 0xcf // 007E61C1: lea	ecx, [edi + 8*ecx]
+        __asm _emit 0x8b __asm _emit 0x7d __asm _emit 0x7c // 007E61C4: mov	edi, dword ptr [ebp + 0x7c]
+        __asm _emit 0x83 __asm _emit 0xc2 __asm _emit 0x01 // 007E61C7: add	edx, 0x1
+        __asm _emit 0x89 __asm _emit 0x57 __asm _emit 0x0c // 007E61CA: mov	dword ptr [edi + 0xc], edx
+        __asm _emit 0xd8 __asm _emit 0x0e // 007E61CD: fmul	dword ptr [esi]
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0xfc // 007E61CF: fld	dword ptr [eax - 0x4]
+        __asm _emit 0x66 __asm _emit 0x8b __asm _emit 0x55 __asm _emit 0x4c // 007E61D2: mov	dx, word ptr [ebp + 0x4c]
+        __asm _emit 0xd8 __asm _emit 0x4e __asm _emit 0x10 // 007E61D6: fmul	dword ptr [esi + 0x10]
+        __asm _emit 0x83 __asm _emit 0xc0 __asm _emit 0x0c // 007E61D9: add	eax, 0xc
+        __asm _emit 0xde __asm _emit 0xc1 // 007E61DC: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0xf4 // 007E61DE: fld	dword ptr [eax - 0xc]
+        __asm _emit 0xd8 __asm _emit 0x4e __asm _emit 0x20 // 007E61E1: fmul	dword ptr [esi + 0x20]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E61E4: faddp	st(1), st
+        __asm _emit 0xd8 __asm _emit 0x46 __asm _emit 0x30 // 007E61E6: fadd	dword ptr [esi + 0x30]
+        __asm _emit 0xd9 __asm _emit 0x19 // 007E61E9: fstp	dword ptr [ecx]
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0xec // 007E61EB: fld	dword ptr [eax - 0x14]
+        __asm _emit 0xd8 __asm _emit 0x4e __asm _emit 0x04 // 007E61EE: fmul	dword ptr [esi + 0x4]
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x14 // 007E61F1: fld	dword ptr [esi + 0x14]
+        __asm _emit 0xd8 __asm _emit 0x48 __asm _emit 0xf0 // 007E61F4: fmul	dword ptr [eax - 0x10]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E61F7: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0xf4 // 007E61F9: fld	dword ptr [eax - 0xc]
+        __asm _emit 0xd8 __asm _emit 0x4e __asm _emit 0x24 // 007E61FC: fmul	dword ptr [esi + 0x24]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E61FF: faddp	st(1), st
+        __asm _emit 0xd8 __asm _emit 0x46 __asm _emit 0x34 // 007E6201: fadd	dword ptr [esi + 0x34]
+        __asm _emit 0xd9 __asm _emit 0x59 __asm _emit 0x04 // 007E6204: fstp	dword ptr [ecx + 0x4]
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x18 // 007E6207: fld	dword ptr [esi + 0x18]
+        __asm _emit 0xd8 __asm _emit 0x48 __asm _emit 0xf0 // 007E620A: fmul	dword ptr [eax - 0x10]
+        __asm _emit 0xd9 __asm _emit 0x46 __asm _emit 0x08 // 007E620D: fld	dword ptr [esi + 0x8]
+        __asm _emit 0xd8 __asm _emit 0x48 __asm _emit 0xec // 007E6210: fmul	dword ptr [eax - 0x14]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E6213: faddp	st(1), st
+        __asm _emit 0xd9 __asm _emit 0x40 __asm _emit 0xf4 // 007E6215: fld	dword ptr [eax - 0xc]
+        __asm _emit 0xd8 __asm _emit 0x4e __asm _emit 0x28 // 007E6218: fmul	dword ptr [esi + 0x28]
+        __asm _emit 0xde __asm _emit 0xc1 // 007E621B: faddp	st(1), st
+        __asm _emit 0xd8 __asm _emit 0x46 __asm _emit 0x38 // 007E621D: fadd	dword ptr [esi + 0x38]
+        __asm _emit 0x66 __asm _emit 0x89 __asm _emit 0x51 __asm _emit 0x1c // 007E6220: mov	word ptr [ecx + 0x1c], dx
+        __asm _emit 0xd9 __asm _emit 0x59 __asm _emit 0x08 // 007E6224: fstp	dword ptr [ecx + 0x8]
+        __asm _emit 0xd9 __asm _emit 0x51 __asm _emit 0x18 // 007E6227: fst	dword ptr [ecx + 0x18]
+        __asm _emit 0x8b __asm _emit 0x53 __asm _emit 0x14 // 007E622A: mov	edx, dword ptr [ebx + 0x14]
+        __asm _emit 0x89 __asm _emit 0x51 __asm _emit 0x24 // 007E622D: mov	dword ptr [ecx + 0x24], edx
+        __asm _emit 0xd9 __asm _emit 0xc9 // 007E6230: fxch	st(1)
+        __asm _emit 0xd9 __asm _emit 0x51 __asm _emit 0x0c // 007E6232: fst	dword ptr [ecx + 0xc]
+        __asm _emit 0xd9 __asm _emit 0xca // 007E6235: fxch	st(2)
+        __asm _emit 0xd9 __asm _emit 0x51 __asm _emit 0x10 // 007E6237: fst	dword ptr [ecx + 0x10]
+        __asm _emit 0xd9 __asm _emit 0xcb // 007E623A: fxch	st(3)
+        __asm _emit 0xd9 __asm _emit 0x51 __asm _emit 0x14 // 007E623C: fst	dword ptr [ecx + 0x14]
+        __asm _emit 0x8d __asm _emit 0x48 __asm _emit 0xf8 // 007E623F: lea	ecx, [eax - 0x8]
+        __asm _emit 0x3b __asm _emit 0x4d __asm _emit 0x54 // 007E6242: cmp	ecx, dword ptr [ebp + 0x54]
+        __asm _emit 0x0f __asm _emit 0x85 __asm _emit 0x55 __asm _emit 0xff __asm _emit 0xff __asm _emit 0xff // 007E6245: jne	0x7e61a0 <.text+0x3e51a0>
+        __asm _emit 0xdd __asm _emit 0xd9 // 007E624B: fstp	st(1)
+        __asm _emit 0xd9 __asm _emit 0xca // 007E624D: fxch	st(2)
+        __asm _emit 0xd9 __asm _emit 0xc9 // 007E624F: fxch	st(1)
+        __asm _emit 0xd8 __asm _emit 0x47 __asm _emit 0x10 // 007E6251: fadd	dword ptr [edi + 0x10]
+        __asm _emit 0x8d __asm _emit 0x47 __asm _emit 0x10 // 007E6254: lea	eax, [edi + 0x10]
+        __asm _emit 0xd9 __asm _emit 0x18 // 007E6257: fstp	dword ptr [eax]
+        __asm _emit 0xd8 __asm _emit 0x40 __asm _emit 0x04 // 007E6259: fadd	dword ptr [eax + 0x4]
+        __asm _emit 0xd9 __asm _emit 0x58 __asm _emit 0x04 // 007E625C: fstp	dword ptr [eax + 0x4]
+        __asm _emit 0xd8 __asm _emit 0x40 __asm _emit 0x08 // 007E625F: fadd	dword ptr [eax + 0x8]
+        __asm _emit 0xd9 __asm _emit 0x58 __asm _emit 0x08 // 007E6262: fstp	dword ptr [eax + 0x8]
+        __asm _emit 0x8b __asm _emit 0x45 __asm _emit 0x64 // 007E6265: mov	eax, dword ptr [ebp + 0x64]
+        __asm _emit 0x83 __asm _emit 0x45 __asm _emit 0x68 __asm _emit 0x1c // 007E6268: add	dword ptr [ebp + 0x68], 0x1c
+        __asm _emit 0x83 __asm _emit 0xc0 __asm _emit 0x01 // 007E626C: add	eax, 0x1
+        __asm _emit 0x3b __asm _emit 0x45 __asm _emit 0xd4 // 007E626F: cmp	eax, dword ptr [ebp - 0x2c]
+        __asm _emit 0x89 __asm _emit 0x45 __asm _emit 0x64 // 007E6272: mov	dword ptr [ebp + 0x64], eax
+        __asm _emit 0x0f __asm _emit 0x8c __asm _emit 0xf5 __asm _emit 0xfb __asm _emit 0xff __asm _emit 0xff // 007E6275: jl	0x7e5e70 <.text+0x3e4e70>
+        __asm _emit 0x8b __asm _emit 0x7d __asm _emit 0x7c // 007E627B: mov	edi, dword ptr [ebp + 0x7c]
+        __asm _emit 0x8d __asm _emit 0x77 __asm _emit 0x10 // 007E627E: lea	esi, [edi + 0x10]
+        call ext_007E46B0 // 007E6281: call	0x7e46b0 <.text+0x3e36b0> ; sub_007E46B0
+        __asm _emit 0xdd __asm _emit 0xd8 // 007E6286: fstp	st(0)
+        __asm _emit 0x33 __asm _emit 0xc0 // 007E6288: xor	eax, eax
+        __asm _emit 0x39 __asm _emit 0x47 __asm _emit 0x0c // 007E628A: cmp	dword ptr [edi + 0xc], eax
+        __asm _emit 0x0f __asm _emit 0x9f __asm _emit 0xc0 // 007E628D: setg	al
+        __asm _emit 0x89 __asm _emit 0x47 __asm _emit 0x1c // 007E6290: mov	dword ptr [edi + 0x1c], eax
+        __asm _emit 0x8d __asm _emit 0xa5 __asm _emit 0x40 __asm _emit 0xfe __asm _emit 0xff __asm _emit 0xff // 007E6293: lea	esp, [ebp - 0x1c0]
+        __asm _emit 0x5f // 007E6299: pop	edi
+        __asm _emit 0x5e // 007E629A: pop	esi
+        __asm _emit 0x5b // 007E629B: pop	ebx
+        __asm _emit 0x8b __asm _emit 0x4d __asm _emit 0x6c // 007E629C: mov	ecx, dword ptr [ebp + 0x6c]
+        __asm _emit 0x33 __asm _emit 0xcd // 007E629F: xor	ecx, ebp
+        call ext_006A745E // 007E62A1: call	0x6a745e <.text+0x2a645e> ; sub_006A745E
+        __asm _emit 0x83 __asm _emit 0xc5 __asm _emit 0x70 // 007E62A6: add	ebp, 0x70
+        __asm _emit 0x8b __asm _emit 0xe5 // 007E62A9: mov	esp, ebp
+        __asm _emit 0x5d // 007E62AB: pop	ebp
+        __asm _emit 0xc3 // 007E62AC: ret
+        __asm _emit 0x8b __asm _emit 0x7d __asm _emit 0x7c // 007E62AD: mov	edi, dword ptr [ebp + 0x7c]
+        __asm _emit 0xeb __asm _emit 0x9f // 007E62B0: jmp	0x7e6251 <.text+0x3e5251>
+        __asm _emit 0xdd __asm _emit 0xd8 // 007E62B2: fstp	st(0)
+        __asm _emit 0xeb __asm _emit 0x9b // 007E62B4: jmp	0x7e6251 <.text+0x3e5251>
+    }
+}
