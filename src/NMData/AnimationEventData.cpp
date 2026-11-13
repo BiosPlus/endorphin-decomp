@@ -484,3 +484,54 @@ extern "C" __declspec(naked) void __fastcall fn_004E1D60(void* self, int edx_unu
         jmp ext_0047C480
     }
 }
+
+extern "C" void ext_004DE330();
+extern "C" int mem_00925134;
+
+// [0x004E1A00] NMData::AnimationEventData::vfunc_0_off_180 (108 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004E1A00(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x9f4], 0
+        je done
+        cmp byte ptr [esi - 0x4], 0
+        je done
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp dword ptr [edi + 0x8], 0
+        jne skip1
+        call ebx
+    skip1:
+        mov eax, dword ptr [edi + 0x8]
+        mov ecx, dword ptr [edi + 0xc]
+        cmp ecx, dword ptr [eax + 0x4]
+        jne skip2
+        call ebx
+    skip2:
+        mov edx, dword ptr [edi + 0xc]
+        mov eax, dword ptr [edx + 0x8]
+        sub eax, 1
+        cmp eax, dword ptr [esi - 0x24]
+        jle restore
+        cmp eax, dword ptr [esi - 0x20]
+        jg restore
+        mov eax, dword ptr [esi - 0x17c]
+        mov edx, dword ptr [eax + 0x14]
+        mov ebx, dword ptr [esi + 0x9f4]
+        lea ecx, [esi - 0x17c]
+        push edi
+        call edx
+        push eax
+        mov ecx, ebx
+        call ext_004DE330
+    restore:
+        pop edi
+        pop ebx
+    done:
+        pop esi
+        ret 4
+    }
+}
