@@ -7015,3 +7015,43 @@ extern "C" void __cdecl fn_00507E00(void* self) {
     ((void (__cdecl*)(void*))ext_00527250)(self);
     ((void (__cdecl*)(void*))ext_00524510)(self);
 }
+
+// [0x00506CD0] sub_00506CD0 (59 bytes)
+extern "C" void ext_005067A0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00506CD0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe m506cd0_ok1
+        call ebp
+    m506cd0_ok1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe m506cd0_ok2
+        call ebp
+    m506cd0_ok2:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_005067A0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
