@@ -5059,3 +5059,138 @@ loc_7DC750:
         ret
     }
 }
+
+// [0x007D60B0] sub_007D60B0 (360 bytes)
+extern "C" void ext_007D5870();
+extern "C" void ext_007D5DA0();
+extern "C" void ext_007F0860();
+extern "C" void ext_007D5FF0();
+extern "C" int mem_0099DED0;
+extern "C" int mem_009241A8;
+extern "C" int mem_009241A4;
+extern "C" int mem_009241C0;
+
+extern "C" __declspec(naked) void __cdecl fn_007D60B0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 10h]
+        xor ebx, ebx
+        cmp dword ptr [ebp + 294h], ebx
+        mov byte ptr [esp + 0bh], 0
+        mov byte ptr [esp + 10h], 0
+        je short loc_7D60F3
+        mov eax, dword ptr [ebp + 5f0h]
+        push offset mem_0099DED0
+        push eax
+        push ebx
+        call ext_007D5870
+        add esp, 0ch
+        push ebx
+        call ext_007D5DA0
+        mov eax, dword ptr [ebp + 29ch]
+        add esp, 4
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+
+loc_7D60F3:
+        lea ecx, [esp + 10h]
+        push ecx
+        lea edx, [esp + 0fh]
+        push edx
+        call ext_007F0860
+        mov ecx, 1
+        add esp, 8
+        cmp dword ptr [esp + 14h], ecx
+        jne short loc_7D6129
+        cmp al, cl
+        jne short loc_7D6129
+        movzx eax, byte ptr [esp + 10h]
+        movzx edx, byte ptr [esp + 0bh]
+        imul eax, edx
+        mov dword ptr [ebp + 2a0h], ecx
+        jmp short loc_7D6134
+
+loc_7D6129:
+        movzx eax, byte ptr [esp + 10h]
+        mov dword ptr [ebp + 2a0h], ebx
+
+loc_7D6134:
+        mov dword ptr [ebp + 29ch], eax
+        mov eax, 8
+        cmp dword ptr [ebp + 29ch], eax
+        jle short loc_7D614D
+        mov dword ptr [ebp + 29ch], eax
+
+loc_7D614D:
+        mov ecx, dword ptr [ebp + 29ch]
+        lea eax, [ecx - 1]
+        cmp eax, ebx
+        mov dword ptr [ebp + 298h], eax
+        mov dword ptr [ebp + 564h], 2
+        je near ptr loc_7D6204
+        cmp ecx, ebx
+        jle short loc_7D61ED
+        push esi
+        push edi
+        lea edi, [ebp + 58ch]
+        lea esi, [ebp + 2d4h]
+
+loc_7D6180:
+        push 0
+        push 0
+        push 0
+        push 0
+        call dword ptr [mem_009241A8]
+        push 0
+        push 0
+        push 0
+        push 0
+        mov dword ptr [esi - 4], eax
+        mov dword ptr [esi], edi
+        call dword ptr [mem_009241A8]
+        mov dword ptr [edi], eax
+        push 0
+        lea eax, [ebp + 5ach]
+        push 0
+        mov dword ptr [esi + 4], eax
+        lea eax, [esi - 30h]
+        push eax
+        push offset ext_007D5FF0
+        lea ecx, [ebp + 568h]
+        mov dword ptr [eax], ecx
+        push 0
+        lea ecx, [ebp + 464h]
+        push 0
+        mov dword ptr [esi - 18h], ebx
+        mov dword ptr [esi - 2ch], ecx
+        call dword ptr [mem_009241A4]
+        mov dword ptr [edi - 20h], eax
+        add ebx, 1
+        add edi, 4
+        add esi, 38h
+        cmp ebx, dword ptr [ebp + 29ch]
+        jl short loc_7D6180
+        pop edi
+        pop esi
+
+loc_7D61ED:
+        lea ecx, [ebp + 5ach]
+        push ecx
+        call dword ptr [mem_009241C0]
+        mov dword ptr [ebp + 294h], 1
+
+loc_7D6204:
+        push 0
+        call ext_007D5DA0
+        mov eax, dword ptr [ebp + 29ch]
+        add esp, 4
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
