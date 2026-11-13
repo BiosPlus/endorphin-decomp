@@ -14637,3 +14637,91 @@ extern "C" __declspec(naked) void __fastcall fn_007D3490(void* self) {
     L_007D3A4A: jmp	L_007D37CC
     }
 }
+
+extern "C" int ext_007D9C60(int a, int b, int c, int d, int e);
+
+// [0x007DA220] sub_007DA220 (162 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007DA220(int* arr, unsigned int count, int unused, int a3, int a4, int a5) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        xor edi, edi
+        xor esi, esi
+        cmp ebx, edi
+        mov dword ptr [esp + 0x0c], edi
+        je done_loop
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    loop_start:
+        mov ecx, dword ptr [ebp + esi * 4]
+        mov eax, 0x2aaaaaab
+        imul ecx
+        sar edx, 1
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        lea eax, [eax + eax * 2]
+        add eax, eax
+        add eax, eax
+        mov edx, ecx
+        sub edx, eax
+        mov eax, ecx
+        je skip_round12
+        sub eax, edx
+        add eax, 0x0c
+    skip_round12:
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        add dword ptr [esp + 0x10], eax
+        mov eax, ecx
+        and eax, 0x80000003
+        jns skip_neg4
+        dec eax
+        or eax, -4
+        inc eax
+    skip_neg4:
+        je skip_round4
+        sub ecx, eax
+        add ecx, 4
+    skip_round4:
+        mov eax, ecx
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        add esi, 1
+        add edi, eax
+        cmp esi, ebx
+        jne loop_start
+        pop ebp
+    done_loop:
+        mov ecx, dword ptr [esp + 0x0c]
+        mov edx, dword ptr [esp + 0x24]
+        mov eax, dword ptr [esp + 0x20]
+        push edi
+        push ecx
+        push ebx
+        push edx
+        push eax
+        call ext_007D9C60
+        add esp, 0x14
+        imul eax, dword ptr [esp + 0x28]
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
