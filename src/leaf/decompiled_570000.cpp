@@ -4099,3 +4099,163 @@ extern "C" __declspec(naked) void __fastcall fn_0057CE30(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00574F70] sub_00574F70 (425 bytes)
+extern "C" int mem_00925098;
+extern "C" int mem_00925120;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00574F70(void* self) {
+    __asm {
+        push -1
+        push 0x8848f2
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x38
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x58]
+        xor ebx, ebx
+        push ebx
+        push 0x92b49c
+        mov ecx, edi
+        call dword ptr [mem_00925098]
+        mov esi, eax
+        push 1
+        add esi, 1
+        push esi
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, edi
+        call dword ptr [mem_00925120]
+        push esi
+        push 0x92f150
+        mov ecx, edi
+        mov dword ptr [esp + 0x54], ebx
+        call dword ptr [mem_00925098]
+        push 1
+        add eax, 1
+        push eax
+        lea ecx, [esp + 0x30]
+        push ecx
+        mov ecx, edi
+        call dword ptr [mem_00925120]
+        mov edi, dword ptr [mem_00924FC0]
+        lea edx, [esp + 0xc]
+        push 0x959968
+        push edx
+        mov byte ptr [esp + 0x54], 1
+        call edi
+        add esp, 8
+        test al, al
+        je L_575000
+        mov esi, dword ptr [esp + 0x54]
+        add esi, 0x7c
+        jmp L_57505C
+
+    L_575000:
+        lea eax, [esp + 0xc]
+        push 0x92f1e4
+        push eax
+        call edi
+        add esp, 8
+        test al, al
+        je L_57501F
+        mov esi, dword ptr [esp + 0x54]
+        add esi, 0x94
+        jmp L_57505C
+
+    L_57501F:
+        lea ecx, [esp + 0xc]
+        push 0x959964
+        push ecx
+        call edi
+        add esp, 8
+        test al, al
+        je L_57503B
+        mov esi, dword ptr [esp + 0x54]
+        add esi, 0x70
+        jmp L_57505C
+
+    L_57503B:
+        lea edx, [esp + 0xc]
+        push 0x92f198
+        push edx
+        call edi
+        add esp, 8
+        test al, al
+        je L_5750E3
+        mov esi, dword ptr [esp + 0x54]
+        add esi, 0x88
+
+    L_57505C:
+        lea eax, [esp + 0x28]
+        push 0x92f188
+        push eax
+        call edi
+        add esp, 8
+        test al, al
+        je L_575077
+        fld dword ptr [esp + 0x5c]
+        fstp dword ptr [esi]
+        jmp L_5750AD
+
+    L_575077:
+        lea ecx, [esp + 0x28]
+        push 0x92f184
+        push ecx
+        call edi
+        add esp, 8
+        test al, al
+        je L_575093
+        fld dword ptr [esp + 0x5c]
+        fstp dword ptr [esi + 4]
+        jmp L_5750AD
+
+    L_575093:
+        lea edx, [esp + 0x28]
+        push 0x92f180
+        push edx
+        call edi
+        add esp, 8
+        test al, al
+        je L_5750E3
+        fld dword ptr [esp + 0x5c]
+        fstp dword ptr [esi + 8]
+
+    L_5750AD:
+        lea ecx, [esp + 0x28]
+        mov byte ptr [esp + 0x4c], bl
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x4c], -1
+        call dword ptr [mem_00924FF4]
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        mov ecx, dword ptr [esp + 0x38]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x44
+        ret 0xc
+
+    L_5750E3:
+        lea ecx, [esp + 0x28]
+        mov byte ptr [esp + 0x4c], bl
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x4c], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x44]
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x44
+        ret 0xc
+    }
+}
