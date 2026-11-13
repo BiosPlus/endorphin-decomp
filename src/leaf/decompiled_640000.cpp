@@ -4237,3 +4237,46 @@ extern "C" __declspec(naked) void __fastcall fn_0064BDE0(void* self, int edx_unu
         ret 8
     }
 }
+
+extern "C" void ext_0064B890();
+extern "C" void ext_0067DAD0();
+extern "C" void ext_0067DB10();
+
+// [0x0064B900] sub_0064B900 (98 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_0064B900(void* self, int edx_unused, float a1) {
+    __asm {
+        sub esp, 0x24
+        fldz
+        push ebx
+        fst dword ptr [esp + 0xc]
+        push esi
+        fst dword ptr [esp + 0xc]
+        lea eax, [esp + 0x8]
+        fst dword ptr [esp + 0x1c]
+        push eax
+        fst dword ptr [esp + 0x18]
+        mov esi, ecx
+        fst dword ptr [esp + 0x28]
+        fstp dword ptr [esp + 0x24]
+        fld1
+        fst dword ptr [esp + 0xc]
+        fst dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x2c]
+        call ext_0067DAD0
+        fld dword ptr [esp + 0x30]
+        push ecx
+        fstp dword ptr [esp]
+        lea ecx, [esp + 0xc]
+        call ext_0064B890
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        mov bl, al
+        call ext_0067DB10
+        pop esi
+        mov al, bl
+        pop ebx
+        add esp, 0x24
+        ret 0x4
+    }
+}
