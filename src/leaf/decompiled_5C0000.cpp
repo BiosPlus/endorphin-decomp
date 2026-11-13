@@ -2822,3 +2822,29 @@ extern "C" __declspec(naked) void __fastcall fn_005C06E0(void* self) {
         ret
     }
 }
+
+// [0x005CE520] sub_005CE520 (55 bytes)
+extern "C" void ext_005B5A10();
+extern "C" void ext_005CE4F0();
+extern "C" int mem_00924EA8;
+extern "C" int mem_0092C8C4;
+
+extern "C" __declspec(naked) void __fastcall fn_005CE520(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea ecx, [esi + 0x8]
+        call dword ptr [mem_00924EA8]
+        lea ecx, [esi + 0x24]
+        call ext_005B5A10
+        fld dword ptr [mem_0092C8C4]
+        lea ecx, [esi + 0x74]
+        fstp dword ptr [esi + 0x70]
+        call ext_005CE4F0
+        lea eax, [esi + 0x4]
+        mov dword ptr [esi + 0xb0], 0
+        mov dword ptr [esi + 0x6c], eax
+        pop esi
+        ret
+    }
+}
