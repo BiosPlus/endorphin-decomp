@@ -7078,3 +7078,40 @@ extern "C" __declspec(naked) int __fastcall fn_0057E7D0(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x005764F0] sub_005764F0 (56 bytes)
+extern "C" void ext_00574A30();
+extern "C" void ext_00574AE0();
+extern "C" void ext_00575400();
+extern "C" void ext_00575FB0();
+extern "C" __declspec(naked) void __fastcall fn_005764F0(void* self, int edx_unused, void* arg1, void* arg2) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        test edi, edi
+        mov esi, ecx
+        je loc_576523
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        push ebx
+        push edi
+        call ext_00574A30
+        push edi
+        mov ecx, esi
+        call ext_00574AE0
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_00575400
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_00575FB0
+        pop ebx
+loc_576523:
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
