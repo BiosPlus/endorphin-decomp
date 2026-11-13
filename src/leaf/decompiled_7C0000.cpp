@@ -7654,3 +7654,52 @@ extern "C" void __cdecl fn_007C98C0(void* self) {
     ((f2_t)&ext_007D4B90)(edx, esi + 0x48);
     *(int*)(esi + 0xb0) = -1;
 }
+
+// [0x007C6610] sub_007C6610 (129 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C6610(void* self, int v) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esi + 0x17c]
+        push edi
+        lea ebp, [esi + 0x184]
+        push ebp
+        push eax
+        call ext_007D4B90
+        add esp, 8
+        test byte ptr [esi + 0x1c4], 1
+        je skip1
+        mov edx, dword ptr [esi + 0x17c]
+        lea ecx, [esi + 0x19c]
+        push ecx
+        add edx, 0x70
+        push edx
+        call ext_007D4B90
+        add esp, 8
+skip1:
+        mov edi, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esi + 0x17c]
+        push edi
+        push ebp
+        push eax
+        mov dword ptr [esi + 0x180], edi
+        call ext_007D4970
+        add esp, 0xc
+        test byte ptr [esi + 0x1c4], 1
+        je skip2
+        mov edx, dword ptr [esi + 0x17c]
+        push edi
+        lea ecx, [esi + 0x19c]
+        push ecx
+        add edx, 0x70
+        push edx
+        call ext_007D4970
+        add esp, 0xc
+skip2:
+        pop edi
+        pop esi
+        pop ebp
+        ret
+    }
+}
