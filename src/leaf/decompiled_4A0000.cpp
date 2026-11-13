@@ -3121,3 +3121,18 @@ extern "C" __declspec(naked) void __fastcall fn_004AFC20(void* self, int edx_unu
         ret     4
     }
 }
+
+// [0x004A66D0] sub_004A66D0 (55 bytes)
+extern "C" void ext_004A6180();
+extern "C" void ext_006A6E9E();
+
+extern "C" void* __fastcall fn_004A66D0(void* self, int edx_unused, void* a1) {
+    char* s = (char*)self;
+    if (*(void**)(s + 0x258) != a1) {
+        ext_004A6180();
+    }
+    typedef void* (__cdecl *rtdc_t)(void*, int, void*, void*, int);
+    void* eax = ((rtdc_t)ext_006A6E9E)(a1, 0, (void*)0xa2e914, (void*)0xa2e93c, 0);
+    *(void**)(s + 0x258) = eax;
+    return eax;
+}
