@@ -6123,3 +6123,98 @@ extern "C" __declspec(naked) void __fastcall fn_00641760(void* self) {
         ret 4
     }
 }
+
+// [0x00641A40] sub_00641A40 (203 bytes)
+extern "C" void ext_00641490();
+extern "C" void ext_00641760();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00641A40(void* self, int edx_unused, void* out, void* a2, void* a3, void* a4, void* a5) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        test edi, edi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov ebp, dword ptr [eax]
+        je L_641A5A
+        cmp edi, esi
+        je L_641A60
+    L_641A5A:
+        call dword ptr [mem_00925134]
+    L_641A60:
+        mov ebx, dword ptr [esp + 0x24]
+        cmp ebx, ebp
+        jne L_641AC1
+        mov eax, dword ptr [esp + 0x28]
+        test eax, eax
+        mov ebp, dword ptr [esi + 0x4]
+        je L_641A77
+        cmp eax, esi
+        je L_641A7D
+    L_641A77:
+        call dword ptr [mem_00925134]
+    L_641A7D:
+        cmp dword ptr [esp + 0x2c], ebp
+        jne L_641AC1
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx + 0x4]
+        push edx
+        mov ecx, esi
+        call ext_00641760
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x4], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [esi + 0x8], 0
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [eax + 0x8], eax
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x1c]
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x4], ecx
+        pop ebx
+        add esp, 8
+        ret 0x14
+    L_641AC1:
+        test edi, edi
+        je L_641ACB
+        cmp edi, dword ptr [esp + 0x28]
+        je L_641AD1
+    L_641ACB:
+        call dword ptr [mem_00925134]
+    L_641AD1:
+        cmp ebx, dword ptr [esp + 0x2c]
+        je L_641AF8
+        lea ecx, [esp + 0x20]
+        call ext_00673C20
+        push ebx
+        push edi
+        lea edx, [esp + 0x18]
+        push edx
+        mov ecx, esi
+        call ext_00641490
+        mov ebx, dword ptr [esp + 0x24]
+        mov edi, dword ptr [esp + 0x20]
+        jmp L_641AC1
+    L_641AF8:
+        mov eax, dword ptr [esp + 0x1c]
+        mov dword ptr [eax], edi
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x4], ebx
+        pop ebx
+        add esp, 8
+        ret 0x14
+    }
+}
