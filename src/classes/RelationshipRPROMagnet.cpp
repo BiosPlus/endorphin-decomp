@@ -153,3 +153,83 @@ extern "C" __declspec(naked) void __fastcall fn_0064C010(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_004F9950();
+extern "C" void ext_0067DAD0();
+extern "C" void ext_00694D80();
+
+// [0x00649A50] RelationshipRPROMagnet::vfunc_8 (226 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00649A50(void* self) {
+    __asm {
+        sub esp, 0x74
+        fld1
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xbc]
+        fst dword ptr [esp + 0x34]
+        fldz
+        push esi
+        fst dword ptr [esp + 0x3c]
+        lea edx, [esp + 0x38]
+        fst dword ptr [esp + 0x40]
+        push edx
+        fst dword ptr [esp + 0x48]
+        fst dword ptr [esp + 0x4c]
+        fst dword ptr [esp + 0x54]
+        fst dword ptr [esp + 0x58]
+        fst dword ptr [esp + 0x5c]
+        fst dword ptr [esp + 0x60]
+        fst dword ptr [esp + 0x68]
+        fst dword ptr [esp + 0x6c]
+        fst dword ptr [esp + 0x70]
+        fstp dword ptr [esp + 0x74]
+        fst dword ptr [esp + 0x50]
+        fst dword ptr [esp + 0x64]
+        fstp dword ptr [esp + 0x78]
+        call eax
+        mov esi, dword ptr [esp + 0x7c]
+        cmp esi, 0x3
+        jae lbl_649b0b
+        fldz
+        lea ecx, [esp + 0x14]
+        fst dword ptr [esp + 0xc]
+        push ecx
+        fst dword ptr [esp + 0xc]
+        lea ecx, [esp + 0x3c]
+        fst dword ptr [esp + 0x8]
+        fst dword ptr [esp + 0x20]
+        fst dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0x2c]
+        fst dword ptr [esp + 0x24]
+        fst dword ptr [esp + 0x34]
+        fstp dword ptr [esp + 0x30]
+        fld1
+        fst dword ptr [esp + 0x18]
+        fst dword ptr [esp + 0x28]
+        fstp dword ptr [esp + 0x38]
+        call ext_0067DAD0
+        lea edx, [esp + 0x4]
+        push edx
+        lea ecx, [esp + 0x18]
+        call ext_00694D80
+        fld dword ptr [esp + 4*esi + 0x4]
+        pop esi
+        add esp, 0x74
+        ret 0x4
+    lbl_649b0b:
+        cmp esi, 0x6
+        jae lbl_649b29
+        lea eax, [esp + 0x4]
+        push eax
+        lea ecx, [esp + 0x3c]
+        call ext_004F9950
+        fld dword ptr [esp + 4*esi - 0x8]
+        pop esi
+        add esp, 0x74
+        ret 0x4
+    lbl_649b29:
+        fldz
+        pop esi
+        add esp, 0x74
+        ret 0x4
+    }
+}
