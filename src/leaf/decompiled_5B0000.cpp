@@ -4051,3 +4051,97 @@ extern "C" __declspec(naked) void __fastcall fn_005B3E90(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005B4070] sub_005B4070 (186 bytes)
+extern "C" void ext_005B3E90();
+extern "C" void ext_006404E0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_005B4070(void* self) {
+    __asm {
+        push    edi
+        mov     edi, dword ptr [esp + 0x8]
+        mov     eax, dword ptr [edi + 0x4]
+        test    eax, eax
+        je      loc_5B4094
+        mov     ecx, dword ptr [edi + 0x8]
+        sub     ecx, eax
+        mov     eax, 0x2aaaaaab
+        imul    ecx
+        sar     edx, 0x3
+        mov     eax, edx
+        shr     eax, 0x1f
+        add     eax, edx
+        jne     loc_5B409B
+    loc_5B4094:
+        mov     eax, 0xb53b30
+        pop     edi
+        ret
+    loc_5B409B:
+        mov     eax, dword ptr [esp + 0x10]
+        test    eax, eax
+        push    ebx
+        push    ebp
+        push    esi
+        je      loc_5B40B4
+        mov     ecx, dword ptr [esp + 0x18]
+        push    eax
+        call    ext_006404E0
+        mov     ebp, eax
+        jmp     loc_5B40B8
+    loc_5B40B4:
+        mov     ebp, dword ptr [esp + 0x18]
+    loc_5B40B8:
+        mov     esi, dword ptr [edi + 0x4]
+        cmp     esi, dword ptr [edi + 0x8]
+        jbe     loc_5B40C6
+        call    dword ptr [mem_00925134]
+    loc_5B40C6:
+        mov     eax, dword ptr [edi + 0x8]
+        cmp     dword ptr [edi + 0x4], eax
+        mov     dword ptr [esp + 0x14], eax
+        jbe     loc_5B40D8
+        call    dword ptr [mem_00925134]
+    loc_5B40D8:
+        mov     ebx, dword ptr [esp + 0x20]
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    loc_5B40E0:
+        cmp     esi, dword ptr [esp + 0x14]
+        je      loc_5B4123
+        test    ebx, ebx
+        je      loc_5B4100
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      loc_5B40F5
+        call    dword ptr [mem_00925134]
+    loc_5B40F5:
+        push    ebx
+        mov     ecx, ebp
+        call    ext_006404E0
+        push    eax
+        jmp     loc_5B410C
+    loc_5B4100:
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      loc_5B410B
+        call    dword ptr [mem_00925134]
+    loc_5B410B:
+        push    ebp
+    loc_5B410C:
+        mov     ecx, esi
+        call    ext_005B3E90
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      loc_5B411E
+        call    dword ptr [mem_00925134]
+    loc_5B411E:
+        add     esi, 0x30
+        jmp     loc_5B40E0
+    loc_5B4123:
+        pop     esi
+        mov     eax, ebp
+        pop     ebp
+        pop     ebx
+        pop     edi
+        ret
+    }
+}
