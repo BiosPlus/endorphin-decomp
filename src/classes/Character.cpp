@@ -62,3 +62,28 @@ extern "C" __declspec(naked) void* __fastcall fn_006248E0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0065F450] Character::vfunc_2 (42 bytes)
+extern "C" void ext_006798D0();
+extern "C" void ext_00679030();
+
+extern "C" __declspec(naked) void* __fastcall fn_0065F450(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0x0
+        push eax
+        push ecx
+        push esi
+        mov dword ptr [esp + 0x14], 0x0
+        call ext_006798D0
+        mov ecx, eax
+        call ext_00679030
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
