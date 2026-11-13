@@ -3739,3 +3739,19 @@ L_skip_vfn:
         ret 0xc
     }
 }
+
+// [0x004F1400] sub_004F1400 (38 bytes)
+extern "C" void ext_005A6300();
+extern "C" void __fastcall fn_004F1400(void* self) {
+    typedef void (__thiscall *Callee)(void*, void*);
+    char* p = static_cast<char*>(self);
+    void* next = *(void**)(p + 0x4c);
+    if (next) {
+        *(void**)(static_cast<char*>(next) + 0x4) = p;
+    }
+    void* inner = *(void**)(p + 0x48);
+    if (inner) {
+        void* slot = p + 4;
+        ((Callee)ext_005A6300)(static_cast<char*>(inner) + 4, &slot);
+    }
+}
