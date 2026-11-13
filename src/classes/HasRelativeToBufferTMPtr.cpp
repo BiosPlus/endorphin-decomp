@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/classes/HasRelativeToBufferTMPtr.cpp
 
 extern "C" void ext_004875A0();
+extern "C" void ext_004F9950();
 extern "C" void ext_00661B50();
 extern "C" int mem_00AEE8A8;
 extern "C" int mem_009253C8;
@@ -111,5 +112,18 @@ extern "C" void* __fastcall fn_005325F0(void* self, int edx_unused, void* out) {
     float* m1 = mgr->getMatrix(*(int*)((char*)self + 4));
     typedef void (__thiscall *Mul_t)(void*, void*, const float*);
     ((Mul_t)ext_004875A0)(*(void**)((char*)self + 8), out, m1);
+    return out;
+}
+
+// [0x005325B0] HasRelativeToBufferTMPtr::vfunc_1 (58 bytes)
+extern "C" void* __fastcall fn_005325B0(void* self, int edx_unused, void* out) {
+    struct { int pad; float m[15]; } tmp;
+    typedef void* (__thiscall *GetMat_t)(void*, int, void*);
+    void* mgr = *(void**)&mem_00AEE8A8;
+    void* m1 = ((GetMat_t)ext_00661B50)(mgr, *(int*)((char*)self + 4), out);
+    typedef void* (__thiscall *Mul_t)(void*, void*, void*);
+    void* res = ((Mul_t)ext_004875A0)(*(void**)((char*)self + 8), tmp.m, m1);
+    typedef void (__thiscall *Norm_t)(void*);
+    ((Norm_t)ext_004F9950)(res);
     return out;
 }
