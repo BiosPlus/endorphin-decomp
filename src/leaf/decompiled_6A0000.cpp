@@ -4742,3 +4742,54 @@ extern "C" void __fastcall fn_006AAC20(void* self) {
     ((void (__thiscall*)(void*))ext_006AA2E0)(self);
     ((void (__thiscall*)(void*))ext_006A9190)(self);
 }
+
+// [0x006AB410] sub_006AB410 (220 bytes)
+extern "C" void ext_006A7C30();
+extern "C" void ext_006A9190();
+extern "C" void ext_006AA2E0();
+extern "C" void ext_006AA500();
+extern "C" void ext_006AAAD0();
+extern "C" int mem_0092564C;
+extern "C" int mem_00925580;
+extern "C" int mem_00925688;
+
+extern "C" void __fastcall fn_006AB410(void* self, int edx_unused, int x, int y) {
+    char* s = (char*)self;
+    void* p = *(void**)(s + 0x5c);
+    if (p) {
+        if (s[0xfc] != 0) {
+            y -= 0x1c;
+        }
+        if (s[0xf6] != 0) {
+            y -= *(int*)(s + 0xf8);
+        }
+        int idx = y / *(int*)(s + 0xe8);
+        int rc[4];
+        ((void (__thiscall*)(void*, int*, void*))ext_006AAAD0)(self, rc, p);
+        if (s[0xfc] != 0) {
+            ((void (__stdcall*)(int*, int, int))mem_0092564C)(rc, 0, -0x1c);
+        }
+        char* sb = s + 0x108;
+        if (sb != 0 && *(int*)(sb + 0x20) != 0) {
+            int n = ((int (__thiscall*)(void*))ext_006AA500)(self);
+            idx -= n;
+            ((int (__stdcall*)(int, int))mem_00925580)(*(int*)(s + 0x128), 2);
+            if (rc[3] < y && idx > 0) {
+                do {
+                    int next = ((int (__thiscall*)(void*, int))ext_006A7C30)(self, *(int*)(s + 0x68));
+                    if (!next) {
+                        break;
+                    }
+                    *(int*)(s + 0x68) = next;
+                    idx--;
+                } while (idx > 0);
+            }
+        }
+    }
+    ((void (__thiscall*)(void*))ext_006AA2E0)(self);
+    ((void (__thiscall*)(void*))ext_006A9190)(self);
+    char* w = *(char**)(s + 0x100);
+    if (w) {
+        ((void (__stdcall*)(int, int, int))mem_00925688)(*(int*)(w + 0x20), 0, 1);
+    }
+}
