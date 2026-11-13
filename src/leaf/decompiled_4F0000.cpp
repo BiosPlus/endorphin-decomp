@@ -2821,3 +2821,32 @@ extern "C" __declspec(naked) void __fastcall fn_004FFFA0(void* self) {
         jmp ext_0067AFB0
     }
 }
+
+// [0x004FFFE0] sub_004FFFE0 (70 bytes)
+extern "C" void ext_0067B050();
+extern "C" int mem_00AEB918;
+extern "C" __declspec(naked) void __fastcall fn_004FFFE0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x4], 0
+        je done
+        mov eax, dword ptr [mem_00924E90]
+        mov ecx, dword ptr [mem_00924FA0]
+        push eax
+        push 0x94ede4
+        push ecx
+        call ext_00435D00
+        add esp, 8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov byte ptr [mem_00AEB918], 1
+        mov ecx, esi
+        mov byte ptr [esi + 0x4], 0
+        call ext_0067B050
+        mov byte ptr [mem_00AEB918], 0
+done:
+        pop esi
+        ret
+    }
+}
