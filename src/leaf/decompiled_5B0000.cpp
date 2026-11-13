@@ -2799,3 +2799,47 @@ extern "C" __declspec(naked) void __fastcall fn_005B6D20(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_005CE8C0();
+extern "C" void ext_00694480();
+extern "C" int mem_00B40640;
+
+// [0x005B71E0] sub_005B71E0 (96 bytes)
+extern "C" __declspec(naked) float __fastcall fn_005B71E0(void* self, int edx_unused, const float* vec) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [esp + 0x14]
+        fld dword ptr [eax]
+        mov edx, dword ptr [mem_00B40640]
+        fstp dword ptr [esp]
+        push esi
+        fld dword ptr [eax + 4]
+        mov esi, ecx
+        fstp dword ptr [esp + 8]
+        lea ecx, [esi + 4]
+        fld dword ptr [eax + 8]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x14]
+        fstp dword ptr [esp + 0xC]
+        fld1
+        push edx
+        fstp dword ptr [esp + 0x14]
+        call eax
+        push eax
+        lea ecx, [esp + 8]
+        call ext_00694480
+        mov ecx, dword ptr [esi + 0x158]
+        test ecx, ecx
+        pop esi
+        je zero_ret
+        lea edx, [esp]
+        push edx
+        call ext_005CE8C0
+        add esp, 0x10
+        ret 4
+    zero_ret:
+        fldz
+        add esp, 0x10
+        ret 4
+    }
+}
