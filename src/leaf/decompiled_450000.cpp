@@ -8150,3 +8150,68 @@ extern "C" __declspec(naked) bool __fastcall fn_0045E9D0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0045EA60] sub_0045EA60 (140 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_0045EA60(void* self, int edx_unused, void* arg) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebx, ecx
+        lea eax, [esp + 0x1c]
+        push eax
+        lea ecx, [esp + 0x14]
+        lea esi, [ebx + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_0041A190
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        mov ebp, dword ptr [esi + 0x4]
+        je loc_45ea8c
+        cmp edi, esi
+        je loc_45ea92
+    loc_45ea8c:
+        call dword ptr [mem_00925134]
+    loc_45ea92:
+        cmp dword ptr [esp + 0x14], ebp
+        je loc_45eae0
+        test edi, edi
+        jne loc_45eaa2
+        call dword ptr [mem_00925134]
+    loc_45eaa2:
+        mov edx, dword ptr [esp + 0x14]
+        cmp edx, dword ptr [edi + 0x4]
+        jne loc_45eab1
+        call dword ptr [mem_00925134]
+    loc_45eab1:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 0x10]
+        lea edx, [esp + 0x10]
+        mov dword ptr [esp + 0x10], ecx
+        push edx
+        mov ecx, ebx
+        call ext_0045E830
+        lea eax, [esp + 0x1c]
+        push eax
+        mov ecx, esi
+        call ext_0045E830
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    loc_45eae0:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
