@@ -6153,3 +6153,93 @@ extern "C" __declspec(naked) void __fastcall fn_00550640(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x0055C8F0] sub_0055C8F0 (185 bytes)
+extern "C" void ext_0055C4E0();
+extern "C" void ext_0055C5D0();
+
+extern "C" __declspec(naked) void __fastcall fn_0055C8F0(void* self, int edx_unused, void* out_pair, void* key_ptr) {
+    __asm {
+        sub esp, 0ch
+        push ebp
+        mov ebp, dword ptr [esp + 18h]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 4]
+        mov eax, dword ptr [esi + 4]
+        cmp byte ptr [eax + 15h], 0
+        mov cl, 1
+        mov byte ptr [esp + 0ch], cl
+        jne L_AFTER_SEARCH
+        mov edx, dword ptr [ebp]
+    L_SEARCH:
+        cmp edx, dword ptr [eax + 0ch]
+        mov esi, eax
+        setl cl
+        test cl, cl
+        mov byte ptr [esp + 0ch], cl
+        je L_GO_RIGHT
+        mov eax, dword ptr [eax]
+        jmp L_CHECK_NIL
+    L_GO_RIGHT:
+        mov eax, dword ptr [eax + 8]
+    L_CHECK_NIL:
+        cmp byte ptr [eax + 15h], 0
+        je L_SEARCH
+    L_AFTER_SEARCH:
+        test cl, cl
+        mov edx, esi
+        mov dword ptr [esp + 14h], edx
+        mov dword ptr [esp + 10h], edi
+        je L_TAIL_CHECK
+        mov eax, dword ptr [edi + 4]
+        cmp esi, dword ptr [eax]
+        lea ecx, [esp + 10h]
+        jne L_CALL_C4E0
+        push ebp
+        push esi
+        push 1
+        push ecx
+    L_CALL_C5D0:
+        mov ecx, edi
+        call ext_0055C5D0
+        mov ecx, eax
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 1ch]
+        mov ecx, dword ptr [ecx + 4]
+        pop edi
+        pop esi
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 4], ecx
+        mov byte ptr [eax + 8], 1
+        pop ebp
+        add esp, 0ch
+        ret 8
+    L_CALL_C4E0:
+        call ext_0055C4E0
+        mov edx, dword ptr [esp + 14h]
+    L_TAIL_CHECK:
+        mov eax, dword ptr [edx + 0ch]
+        cmp eax, dword ptr [ebp]
+        jge L_RET_NOINSERT
+        mov ecx, dword ptr [esp + 0ch]
+        push ebp
+        push esi
+        push ecx
+        lea edx, [esp + 1ch]
+        push edx
+        jmp L_CALL_C5D0
+    L_RET_NOINSERT:
+        mov eax, dword ptr [esp + 1ch]
+        mov ecx, dword ptr [esp + 10h]
+        pop edi
+        pop esi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 4], edx
+        mov byte ptr [eax + 8], 0
+        pop ebp
+        add esp, 0ch
+        ret 8
+    }
+}
