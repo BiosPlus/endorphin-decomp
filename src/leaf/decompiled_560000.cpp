@@ -2979,3 +2979,173 @@ extern "C" __declspec(naked) int __stdcall fn_0056DA60(void* a1) {
         ret 0x4
     }
 }
+
+// [0x00566580] sub_00566580 (415 bytes)
+extern "C" void ext_00566380();
+extern "C" void ext_00594000();
+extern "C" void ext_00661E80();
+extern "C" void ext_00661F70();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00566580(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0x18
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x46c], 0
+        push edi
+        je near ptr loc_566717
+        call ext_00594000
+        mov edi, eax
+        mov eax, dword ptr [edi + 0x23c]
+        add edi, 0x238
+        test eax, eax
+        je short loc_5665bd
+        mov ecx, dword ptr [edi + 8]
+        sub ecx, eax
+        sar ecx, 2
+        jne short loc_5665c7
+
+    loc_5665bd:
+        mov ebp, dword ptr [mem_00925134]
+        call ebp
+        jmp short loc_5665cd
+
+    loc_5665c7:
+        mov ebp, dword ptr [mem_00925134]
+
+    loc_5665cd:
+        mov edx, dword ptr [edi + 4]
+        mov eax, dword ptr [esi + 0x16c]
+        mov ebx, dword ptr [edx]
+        mov ecx, dword ptr [esi + 0x420]
+        add eax, 1
+        add ebx, 0x160
+        push eax
+        mov dword ptr [esp + 0x18], ebx
+        call ext_00661F70
+        mov dword ptr [esi + 0x470], 0
+
+    loc_5665fb:
+        mov ecx, dword ptr [esi + 0x424]
+        test ecx, ecx
+        je short loc_56660b
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+
+    loc_56660b:
+        cmp byte ptr [esi + 0x1ba], 0
+        je near ptr loc_5666a2
+        call ext_00594000
+        mov edi, dword ptr [eax + 0x26c]
+        mov ecx, dword ptr [edi + 0x1c]
+        mov eax, dword ptr [ecx]
+        add edi, 0x18
+        mov ebx, edi
+        mov ebp, eax
+        mov dword ptr [esp + 0x18], ebx
+        mov dword ptr [esp + 0x1c], ebp
+
+    loc_566637:
+        test ebx, ebx
+        mov edx, dword ptr [edi + 4]
+        mov dword ptr [esp + 0x24], edx
+        je short loc_566646
+        cmp ebx, edi
+        je short loc_56664c
+
+    loc_566646:
+        call dword ptr [mem_00925134]
+
+    loc_56664c:
+        cmp ebp, dword ptr [esp + 0x24]
+        je short loc_56668a
+        test ebx, ebx
+        jne short loc_56665c
+        call dword ptr [mem_00925134]
+
+    loc_56665c:
+        cmp ebp, dword ptr [ebx + 4]
+        jne short loc_566667
+        call dword ptr [mem_00925134]
+
+    loc_566667:
+        mov eax, dword ptr [ebp + 0x28]
+        add eax, 0x160
+        push eax
+        mov ecx, esi
+        call ext_00566380
+        lea ecx, [esp + 0x18]
+        call ext_00673C20
+        mov ebp, dword ptr [esp + 0x1c]
+        mov ebx, dword ptr [esp + 0x18]
+        jmp short loc_566637
+
+    loc_56668a:
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        call ext_00566380
+        mov ebp, dword ptr [mem_00925134]
+        mov ebx, dword ptr [esp + 0x14]
+        jmp short loc_5666d0
+
+    loc_5666a2:
+        cmp byte ptr [esi + 0x1b8], 0
+        je short loc_5666bf
+        mov edx, dword ptr [esi + 0x414]
+        add edx, 0x160
+        push edx
+        mov ecx, esi
+        call ext_00566380
+
+    loc_5666bf:
+        cmp byte ptr [esi + 0x1b9], 0
+        je short loc_5666d0
+        push ebx
+        mov ecx, esi
+        call ext_00566380
+
+    loc_5666d0:
+        mov edi, dword ptr [esi + 0x420]
+        add dword ptr [esi + 0x470], 1
+        add edi, 8
+        cmp dword ptr [edi], 0
+        jne short loc_5666e7
+        call ebp
+
+    loc_5666e7:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [edi + 4]
+        cmp ecx, dword ptr [eax + 4]
+        jne short loc_5666f3
+        call ebp
+
+    loc_5666f3:
+        mov edx, dword ptr [esi + 0x170]
+        mov eax, dword ptr [edi + 4]
+        add edx, 1
+        cmp dword ptr [eax + 8], edx
+        jge short loc_566717
+        mov ecx, dword ptr [esi + 0x420]
+        call ext_00661E80
+        test al, al
+        jne near ptr loc_5665fb
+
+    loc_566717:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
