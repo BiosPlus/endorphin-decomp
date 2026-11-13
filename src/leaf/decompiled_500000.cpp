@@ -6546,3 +6546,19 @@ extern "C" __declspec(naked) void __fastcall fn_00506900(void* self) {
         ret
     }
 }
+
+// [0x00503970] sub_00503970 (46 bytes)
+extern "C" void ext_005038F0();
+extern "C" void ext_00507E00();
+extern "C" void ext_0050E2F0();
+extern "C" void ext_0050F900();
+extern "C" void ext_00515710();
+extern "C" void ext_00516D20();
+extern "C" void __cdecl fn_00503970(int a1) {
+    ((void (__cdecl*)(int))ext_005038F0)(a1);
+    ((void (__cdecl*)(int))ext_0050F900)(a1);
+    ((void (__cdecl*)(int))ext_0050E2F0)(a1);
+    ((void (__cdecl*)(int))ext_00515710)(a1);
+    ((void (__cdecl*)(int))ext_00507E00)(a1);
+    ((void (__cdecl*)(int))ext_00516D20)(a1);
+}
