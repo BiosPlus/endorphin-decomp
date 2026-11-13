@@ -278,3 +278,22 @@ extern "C" __declspec(naked) void __fastcall fn_00500C50(void* self, int edx_unu
     }
 }
 
+
+// [0x004B9D50] Properties::SetType<PointainerWithUndo<PointainerSet<NMData::MaterialPair>>, Properties::GetPropertySource>::vfunc_11 (32 bytes)
+extern "C" void ext_004B7860();
+
+extern "C" __declspec(naked) void __fastcall fn_004B9D50(void* self, int edx_unused, void* a1, void* a2, void* a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [esp + 0xc]
+        push edx
+        push eax
+        call ext_004B7860
+        ret 0x10
+    }
+}
