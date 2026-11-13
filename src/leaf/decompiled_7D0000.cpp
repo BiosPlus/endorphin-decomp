@@ -12119,3 +12119,29 @@ extern "C" __declspec(naked) void __cdecl fn_007D71D0(void) {
         ret
     }
 }
+
+extern "C" void ext_007D8970();
+
+// [0x007D8E80] sub_007D8E80 (44 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D8E80(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0Ch]
+        mov edx, dword ptr [esp + 4]
+        push esi
+        push edi
+        sub esp, 34h
+        mov edi, esp
+        mov ecx, 0Dh
+        lea esi, [esp + 4Ch]
+        rep movsd
+        mov ecx, dword ptr [esp + 44h]
+        push eax
+        push ecx
+        push edx
+        call ext_007D8970
+        add esp, 40h
+        pop edi
+        pop esi
+        ret
+    }
+}
