@@ -1589,3 +1589,156 @@ extern "C" __declspec(naked) void __fastcall fn_007E48D0(float* r, int edx_unuse
         __asm ret 8
     }
 }
+
+// [0x007E6300] sub_007E6300 (376 bytes)
+extern "C" int mem_0093C1A8;
+extern "C" int mem_0099D148;
+extern "C" int mem_00958CC8;
+extern "C" __declspec(naked) void __fastcall fn_007E6300(void* self) {
+    __asm {
+        sub esp, 0x10
+        mov eax, dword ptr [esp + 0x24]
+        fld dword ptr [mem_0093C1A8]
+        mov ecx, dword ptr [esp + 0x28]
+        fstp dword ptr [eax]
+        fld dword ptr [mem_0099D148]
+        mov edx, dword ptr [esp + 0x18]
+        push ebx
+        fstp dword ptr [ecx]
+        fld qword ptr [mem_00958CC8]
+        push ebp
+        mov ebp, dword ptr [esp + 0x28]
+        fldz
+        push esi
+        lea eax, [edx + 4*ebp]
+        push edi
+        xor edi, edi
+        mov dword ptr [esp + 0x18], eax
+    loop_top_7E6300:
+        mov eax, dword ptr [esp + 0x28]
+        mov ecx, edi
+        mov esi, 1
+        shl esi, cl
+        mov ecx, dword ptr [esp + 0x18]
+        fld dword ptr [ecx]
+        lea ecx, [edi + 2]
+        fstp dword ptr [esp + 0x1c]
+        and esi, 3
+        lea edx, [ebp + 2*esi]
+        add edx, esi
+        fld dword ptr [eax + 4*edx]
+        mov eax, dword ptr [esp + 0x24]
+        mov ebx, dword ptr [eax + 0x18]
+        fstp dword ptr [esp + 0x14]
+        mov edx, 1
+        shl edx, cl
+        mov ecx, dword ptr [eax + 4*esi]
+        fld dword ptr [ecx + 4*ebp]
+        mov ecx, dword ptr [esp + 0x2c]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x1c]
+        and edx, ebx
+        fld st(0)
+        neg edx
+        fmul st(0), st
+        sbb edx, edx
+        fld dword ptr [ecx + 4*edi]
+        neg edx
+        fmul st, st(4)
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp far_6428_7E6300
+        lea ecx, [esi + 2]
+        mov eax, 1
+        shl eax, cl
+        __asm _emit 0x85 __asm _emit 0xC3 // test ebx, eax
+        je far_6459_7E6300
+        mov ecx, dword ptr [esp + 0x2c]
+        fcomp st(1)
+        fnstsw ax
+        fld dword ptr [esp + 0x14]
+        fld st(0)
+        test ah, 0x41
+        fmul st(0), st
+        fld dword ptr [ecx + 4*esi]
+        fmul st, st(4)
+        fcompp
+        fnstsw ax
+        jne far_63FC_7E6300
+        test ah, 5
+        jp far_63EE_7E6300
+        fcomp st(1)
+        fnstsw ax
+        test ah, 5
+        jp far_645B_7E6300
+        test edx, edx
+        je far_645B_7E6300
+        fld dword ptr [esp + 0x10]
+    far_63E6_7E6300:
+        mov edx, dword ptr [esp + 0x38]
+        fstp dword ptr [edx]
+        jmp far_645B_7E6300
+    far_63EE_7E6300:
+        mov eax, dword ptr [esp + 0x38]
+        fstp st(0)
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [eax]
+        jmp far_645B_7E6300
+    far_63FC_7E6300:
+        test ah, 5
+        jp far_641A_7E6300
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne far_645B_7E6300
+        test edx, edx
+        je far_645B_7E6300
+        fld dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x34]
+        fstp dword ptr [edx]
+        jmp far_645B_7E6300
+    far_641A_7E6300:
+        mov eax, dword ptr [esp + 0x34]
+        fstp st(0)
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [eax]
+        jmp far_645B_7E6300
+    far_6428_7E6300:
+        test edx, edx
+        fstp st(0)
+        je far_645B_7E6300
+        fld dword ptr [esp + 0x14]
+        fld st(0)
+        fmul st(0), st
+        fld dword ptr [ecx + 4*esi]
+        fmul st, st(4)
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp far_6459_7E6300
+        fcomp st(1)
+        fnstsw ax
+        fld dword ptr [esp + 0x10]
+        test ah, 0x41
+        jne far_63E6_7E6300
+        mov ecx, dword ptr [esp + 0x34]
+        fstp dword ptr [ecx]
+        jmp far_645B_7E6300
+    far_6459_7E6300:
+        fstp st(0)
+    far_645B_7E6300:
+        add dword ptr [esp + 0x18], 0xc
+        add edi, 1
+        cmp edi, 3
+        jl loop_top_7E6300
+        pop edi
+        fstp st(1)
+        pop esi
+        fstp st(0)
+        pop ebp
+        pop ebx
+        add esp, 0x10
+        ret
+    }
+}
