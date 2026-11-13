@@ -10718,3 +10718,49 @@ extern "C" __declspec(naked) void __fastcall fn_0040F320(CArray40F320* self, int
         ret 8
     }
 }
+
+// [0x0040F550] sub_0040F550 (110 bytes)
+extern "C" void ext_0040F320();
+extern "C" void ext_006A60EE();
+extern "C" int mem_009244D4;
+extern "C" int mem_009242F4;
+
+extern "C" __declspec(naked) void __fastcall fn_0040F550(void* self, int edx_dummy, int arg1, int arg2) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b76a9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        push edi
+        mov esi, ecx
+        mov edi, dword ptr [esp + 0x18]
+        test edi, edi
+        mov dword ptr [esp + 0x10], 0
+        jge L_0040F57E
+        call ext_006A60EE
+    L_0040F57E:
+        cmp edi, dword ptr [esi + 8]
+        jl L_0040F590
+        push -1
+        lea eax, [edi + 1]
+        push eax
+        mov ecx, esi
+        call ext_0040F320
+    L_0040F590:
+        mov edx, dword ptr [esi + 4]
+        lea ecx, [esp + 0x1c]
+        push ecx
+        lea ecx, [edx + 4*edi]
+        call dword ptr [mem_009244D4]
+        lea ecx, [esp + 0x1c]
+        call dword ptr [mem_009242F4]
+        mov ecx, dword ptr [esp + 8]
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 8
+    }
+}
