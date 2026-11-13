@@ -11189,3 +11189,16 @@ L_fast:
         ret
     }
 }
+
+extern "C" int mem_00924FDC;
+
+// [0x006720E0] sub_006720E0 (43 bytes)
+extern "C" void __fastcall fn_006720E0(void** self, int edx_unused, void* arg1) {
+    void* obj = (void*)ext_00671100(3);
+    self[1] = obj;
+    typedef void (__thiscall *VFn)(void*, void*);
+    VFn* vtbl = *(VFn**)obj;
+    vtbl[0x74 / 4](obj, self);
+    typedef void (__thiscall *AssignFn)(void*, void*);
+    ((AssignFn)mem_00924FDC)(self[0], arg1);
+}
