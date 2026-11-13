@@ -19,6 +19,7 @@ extern "C" void ext_007C5900();
 extern "C" void ext_007C5910();
 extern "C" void ext_006501E0();
 extern "C" void ext_00694330();
+extern "C" void ext_00694880();
 
 // [0x00646520] SkeletalJoint::vfunc_1 (17 bytes)
 extern "C" void __fastcall fn_00646520(void* self) {
@@ -383,4 +384,36 @@ extern "C" void __fastcall fn_006552E0(void* self, int edx_unused, void* a1) {
     m[8] = 1.0f;
     ((void (__stdcall*)(float*))ext_006501E0)(m);
     ((void (__thiscall*)(void*, float*))ext_00694330)(a1, m);
+}
+
+extern "C" void ext_00694880();
+
+// [0x00650CD0] SkeletalJoint::vfunc_13 (168 bytes)
+extern "C" void __fastcall fn_00650CD0(void* self, int edx_unused, float* a1) {
+    float v[3];
+    v[2] = 0.0f;
+    v[1] = 0.0f;
+    v[0] = 0.0f;
+    ((void (__thiscall*)(void*, float*))(*(void***)self)[18])(self, v);
+
+    float m[9];
+    m[2] = 0.0f;
+    m[1] = 0.0f;
+    m[5] = 0.0f;
+    m[3] = 0.0f;
+    m[7] = 0.0f;
+    m[6] = 0.0f;
+    m[0] = 1.0f;
+    m[4] = 1.0f;
+    m[8] = 1.0f;
+    ((void (__thiscall*)(void*, float*))ext_006501E0)(self, m);
+    ((void (__thiscall*)(float*, float*))ext_00694880)(m, a1);
+
+    volatile float* p = a1;
+    p[0] /= v[0];
+    p[1] /= v[1];
+    p[2] /= v[2];
+    p[0] /= *(float*)((char*)self + 0x7c);
+    p[1] /= *(float*)((char*)self + 0x80);
+    p[2] /= *(float*)((char*)self + 0x84);
 }
