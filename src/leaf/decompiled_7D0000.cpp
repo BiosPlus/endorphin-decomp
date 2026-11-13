@@ -6908,3 +6908,188 @@ L7DDA75:
         jmp L7DDA00
     }
 }
+
+// [0x007DD300] sub_007DD300 (479 bytes)
+extern "C" void ext_007DCDD0();
+
+extern "C" __declspec(naked) void __fastcall fn_007DD300(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 24h
+        push ebx
+        mov ebx, ecx
+        mov ecx, dword ptr [esp + 2Ch]
+        fld dword ptr [ecx + 8h]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [ecx + 0Ch]
+        fstp dword ptr [esp + 0Ch]
+        fld dword ptr [esp + 0Ch]
+        push edi
+        mov edi, dword ptr [eax + 8h]
+        fst qword ptr [esp + 24h]
+        fld dword ptr [edx + 8h]
+        mov dword ptr [esp + 18h], eax
+        fcomp st(1)
+        mov dword ptr [esp + 0Ch], ebx
+        mov dword ptr [esp + 8h], edx
+        mov dword ptr [esp + 14h], edi
+        fnstsw ax
+        test ah, 5
+        jp L7DD4AF
+        push ebp
+        push esi
+        jmp L7DD34E
+L7DD346:
+        mov ebx, dword ptr [esp + 14h]
+        mov edi, dword ptr [esp + 1Ch]
+L7DD34E:
+        mov edx, dword ptr [esp + 10h]
+        mov al, byte ptr [edx + 10h]
+        cmp al, -1
+        je L7DD4AD
+        cmp al, 1
+        jne L7DD493
+        mov eax, dword ptr [edx + 0Ch]
+        mov edx, dword ptr [eax + 8h]
+        mov dword ptr [esp + 18h], eax
+        mov eax, edx
+        sub eax, edi
+        sar eax, 1Fh
+        mov ecx, eax
+        mov esi, eax
+        and eax, edi
+        not ecx
+        mov ebp, ecx
+        and ecx, edx
+        or ecx, eax
+        and esi, edx
+        and ebp, edi
+        or esi, ebp
+        lea eax, [esi + 1]
+        lea edx, [esi + 2]
+        imul edx, eax
+        mov eax, dword ptr [ebx + 0Ch]
+        imul eax, esi
+        sar edx, 1
+        sub eax, edx
+        mov edx, dword ptr [ebx + 20h]
+        add eax, ecx
+        mov dword ptr [esp + 28h], ecx
+        mov ecx, eax
+        sar ecx, 1
+        lea edi, [ecx + edx]
+        mov dl, byte ptr [edi]
+        mov cl, al
+        and al, 1
+        and cl, 1
+        add al, al
+        add cl, cl
+        add al, al
+        add cl, cl
+        movzx ebp, al
+        shr dl, cl
+        mov ecx, ebp
+        mov eax, 0F0h
+        sar eax, cl
+        and dl, 0Fh
+        mov bl, dl
+        sub bl, 1
+        and al, byte ptr [edi]
+        shl bl, cl
+        or al, bl
+        mov byte ptr [edi], al
+        mov eax, dword ptr [esp + 14h]
+        cmp dl, byte ptr [eax + 4h]
+        jne L7DD48F
+        mov edx, dword ptr [esp + 20h]
+        mov edi, dword ptr [edx + 18h]
+        test edi, edi
+        mov dword ptr [esp + 24h], edi
+        je L7DD4DB
+        mov ecx, dword ptr [esp + 18h]
+        cmp edi, dword ptr [ecx + 18h]
+        jne L7DD4DB
+        mov edi, dword ptr [edx + 1Ch]
+        cmp edi, dword ptr [ecx + 1Ch]
+        jne L7DD4DB
+        mov edi, dword ptr [ecx + 20h]
+        mov ebx, dword ptr [edx + 20h]
+        mov eax, edi
+        sub eax, ebx
+        shr eax, 1Fh
+        sub eax, 1
+        mov ecx, eax
+        not ecx
+        mov edx, eax
+        mov ebp, ecx
+        and eax, edi
+        and ecx, ebx
+        or ecx, eax
+        lea eax, [ecx + 1]
+        imul eax, ecx
+        and edx, ebx
+        and ebp, edi
+        or edx, ebp
+        shr eax, 1
+        add eax, edx
+        mov ecx, eax
+        and ecx, 1Fh
+        mov edx, 1
+        shl edx, cl
+        mov ecx, dword ptr [esp + 24h]
+        shr eax, 5
+        test dword ptr [ecx + eax * 4 + 8h], edx
+        jne L7DD48F
+        mov eax, dword ptr [esp + 14h]
+        fstp st(0)
+L7DD462:
+        mov ecx, dword ptr [esp + 28h]
+        imul esi, esi, 9Ch
+        mov edx, dword ptr [eax + 10h]
+        imul ecx, ecx, 9Ch
+        mov ecx, dword ptr [ecx + edx + 0Ch]
+        mov edx, dword ptr [esi + edx + 0Ch]
+        mov eax, dword ptr [eax + 2Ch]
+        push ecx
+        push edx
+        push eax
+        call ext_007DCDD0
+        add esp, 0Ch
+        fld qword ptr [esp + 2Ch]
+L7DD48F:
+        mov ecx, dword ptr [esp + 38h]
+L7DD493:
+        mov edx, dword ptr [esp + 10h]
+        mov eax, dword ptr [edx]
+        fld dword ptr [eax + 8h]
+        mov dword ptr [esp + 10h], eax
+        fcomp st(1)
+        fnstsw ax
+        test ah, 5
+        jnp L7DD346
+L7DD4AD:
+        pop esi
+        pop ebp
+L7DD4AF:
+        mov eax, dword ptr [ecx]
+        fstp st(0)
+        mov edx, dword ptr [ecx + 4h]
+        mov dword ptr [eax + 4h], edx
+        mov eax, dword ptr [ecx + 4h]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax], edx
+        mov eax, dword ptr [esp + 8h]
+        mov dword ptr [ecx], eax
+        mov eax, dword ptr [eax + 4h]
+        mov dword ptr [ecx + 4h], eax
+        mov dword ptr [eax], ecx
+        mov eax, dword ptr [ecx]
+        pop edi
+        mov dword ptr [eax + 4h], ecx
+        pop ebx
+        add esp, 24h
+        ret 4
+L7DD4DB:
+        fstp st(0)
+        jmp L7DD462
+    }
+}
