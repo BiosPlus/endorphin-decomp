@@ -417,3 +417,41 @@ extern "C" void __fastcall fn_00650CD0(void* self, int edx_unused, float* a1) {
     p[1] /= *(float*)((char*)self + 0x80);
     p[2] /= *(float*)((char*)self + 0x84);
 }
+
+extern "C" void ext_006501E0();
+extern "C" void ext_00694330();
+extern "C" void ext_006946C0();
+extern "C" void ext_00694880();
+
+struct Mat3_00650A30 {
+    float m[9];
+};
+
+struct Vec3_00650A30 {
+    float x, y, z, w;
+};
+
+// [0x00650A30] SkeletalJoint::vfunc_12 (189 bytes)
+extern "C" void __fastcall fn_00650A30(void* self, int edx_unused, void* arg1, unsigned char flag) {
+    Mat3_00650A30 mat;
+    mat.m[2] = 0.0f; mat.m[1] = 0.0f; mat.m[5] = 0.0f;
+    mat.m[3] = 0.0f; mat.m[7] = 0.0f; mat.m[6] = 0.0f;
+    mat.m[0] = 1.0f; mat.m[4] = 1.0f; mat.m[8] = 1.0f;
+    ((void (__thiscall*)(void*, Mat3_00650A30*))ext_006501E0)(self, &mat);
+    if (flag) {
+        ((void (__thiscall*)(Mat3_00650A30*, void*))ext_00694880)(&mat, arg1);
+    } else {
+        Vec3_00650A30 vec;
+        vec.w = 0.0f;
+        vec.z = 0.0f;
+        vec.y = 0.0f;
+        vec.x = 0.0f;
+        ((void (__thiscall*)(Vec3_00650A30*, Mat3_00650A30*))ext_00694330)(&vec, &mat);
+        vec.x *= *(double*)&mem_00993830;
+        vec.y *= *(double*)&mem_00993830;
+        vec.z *= *(double*)&mem_00993830;
+        ((void (__thiscall*)(Vec3_00650A30*, void*))ext_006946C0)(&vec, arg1);
+        void** vtbl = *(void***)self;
+        ((void (__thiscall*)(void*, void*, void*))vtbl[0x94 / 4])(self, arg1, arg1);
+    }
+}
