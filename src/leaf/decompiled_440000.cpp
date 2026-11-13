@@ -7649,3 +7649,25 @@ skip_0044C190:
         ret 0xc
     }
 }
+
+// [0x0044C070] sub_0044C070 (42 bytes)
+extern "C" void ext_00531400();
+extern "C" int mem_009256E0;
+extern "C" __declspec(naked) void __fastcall fn_0044C070(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        cmp dword ptr [ecx + 0x64], 0x0
+        mov byte ptr [ecx + 0x76], 0x0
+        je skip_call
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [ecx + 0x68]
+        push edx
+        push eax
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        call ext_00531400
+skip_call:
+        call dword ptr [mem_009256E0]
+        ret 0xc
+    }
+}
