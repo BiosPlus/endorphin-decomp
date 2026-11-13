@@ -1034,3 +1034,40 @@ extern "C" __declspec(naked) void __fastcall fn_00486810(void* self) {
         ret
     }
 }
+
+// [0x00480EA0] ToolEngine::vfunc_49 (61 bytes)
+extern "C" void ext_004A66D0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00480EA0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        mov eax, dword ptr [ebx + 0x10]
+        mov edx, dword ptr [eax + 0x2c]
+        push ebp
+        lea ecx, [ebx + 0x10]
+        push esi
+        push edi
+        call edx
+        mov ebp, dword ptr [mem_00925134]
+        mov esi, eax
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe chk_ok
+        call ebp
+        cmp edi, dword ptr [esi + 0x8]
+chk_ok:
+        jb do_call
+        call ebp
+do_call:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [ebx + 0x3b4]
+        push eax
+        call ext_004A66D0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
