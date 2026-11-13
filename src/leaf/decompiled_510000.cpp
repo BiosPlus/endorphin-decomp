@@ -6929,3 +6929,69 @@ extern "C" __declspec(naked) void* __cdecl fn_0051E070(void* first, void* last, 
         ret
     }
 }
+
+// [0x0051E740] sub_0051E740 (130 bytes)
+extern "C" void ext_0051E070();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0051E740(void* self) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        test esi, esi
+        mov ebp, ecx
+        je loc_invalid
+        cmp esi, dword ptr [esp + 0x18]
+        je loc_valid
+    loc_invalid:
+        call dword ptr [mem_00925134]
+    loc_valid:
+        mov edx, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x14]
+        cmp ecx, edx
+        je loc_done
+        mov eax, dword ptr [ebp + 0x8]
+        push ebx
+        push edi
+        mov byte ptr [esp + 0x20], 0x0
+        mov esi, dword ptr [esp + 0x20]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        push esi
+        push ecx
+        push eax
+        push edx
+        call ext_0051E070
+        mov edi, dword ptr [ebp + 0x8]
+        mov ebx, eax
+        add esp, 0x18
+        cmp ebx, edi
+        mov esi, ebx
+        je loc_after_loop
+    loc_loop:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        push 0x0
+        mov ecx, esi
+        call edx
+        add esi, 0x168
+        cmp esi, edi
+        jne loc_loop
+    loc_after_loop:
+        mov ecx, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [esp + 0x18]
+        pop edi
+        mov dword ptr [ebp + 0x8], ebx
+        pop ebx
+    loc_done:
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [eax], esi
+        pop esi
+        mov dword ptr [eax + 0x4], ecx
+        pop ebp
+        ret 0x14
+    }
+}
