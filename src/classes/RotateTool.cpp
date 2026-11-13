@@ -208,3 +208,124 @@ loc_54697d:
         ret
     }
 }
+
+// [0x00546610] RotateTool::vfunc_31 (335 bytes)
+extern "C" void ext_005434C0();
+extern "C" int mem_00925424;
+extern "C" int mem_00925438;
+extern "C" int mem_00925414;
+extern "C" int mem_009253C8;
+extern "C" int mem_009253CC;
+extern "C" int mem_00925524;
+extern "C" int mem_00940694;
+extern "C" int mem_009254D0;
+extern "C" int mem_00925404;
+extern "C" int mem_00925418;
+
+extern "C" __declspec(naked) void __fastcall fn_00546610(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 0x14
+        push esi
+        mov esi, ecx
+        call ext_005434C0
+        test al, al
+        jne done
+        push ebx
+        push ebp
+        push edi
+        push 0xb50
+        call dword ptr [mem_00925424]
+        movzx ebp, al
+        test ebp, ebp
+        je no_disable
+        push 0xb50
+        call dword ptr [mem_00925438]
+    no_disable:
+        call dword ptr [mem_00925414]
+        lea eax, [esi + 0x4]
+        push eax
+        call dword ptr [mem_009253C8]
+        fld dword ptr [esi + 0x34]
+        mov eax, dword ptr [esi + 0x84]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esi + 0x38]
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esi + 0x3c]
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esi + 0x40]
+        fstp dword ptr [esp + 0x20]
+        mov ecx, dword ptr [eax + 0xfc]
+        mov edx, ecx
+        shl edx, 0x4
+        sub edx, ecx
+        mov eax, dword ptr [eax + 4*edx + 0x8]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x18]
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, eax
+        call edx
+        fstp dword ptr [esp + 0x10]
+        cmp byte ptr [esi + 0xe4], 0x0
+        fld dword ptr [esp + 0x10]
+        fst dword ptr [esi + 0xa0]
+        je take_else
+        mov ebx, dword ptr [esp + 0x2c]
+        fstp dword ptr [esi + 0xc0]
+        mov eax, dword ptr [esi + 0xb8]
+        mov edi, dword ptr [esp + 0x28]
+        mov edx, dword ptr [eax + 0x10]
+        lea ecx, [esi + 0xb8]
+        push ebx
+        push edi
+        call edx
+        cmp edi, 0x1c02
+        jne not_select
+        push 0x5
+        call dword ptr [mem_009253CC]
+        call dword ptr [mem_00925524]
+        jmp tail
+    not_select:
+        fld dword ptr [mem_00940694]
+        sub esp, 0x10
+        fstp dword ptr [esp + 0xc]
+        fld1
+        fst dword ptr [esp + 0x8]
+        fldz
+        fstp dword ptr [esp + 0x4]
+        fstp dword ptr [esp]
+        call dword ptr [mem_009254D0]
+        cmp edi, 0x1c00
+        jne tail
+        mov eax, dword ptr [esi + 0x98]
+        mov edx, dword ptr [eax + 0x10]
+        lea ecx, [esi + 0x98]
+        push ebx
+        push edi
+        call edx
+        jmp tail
+    take_else:
+        mov edx, dword ptr [esp + 0x2c]
+        fstp st(0)
+        mov eax, dword ptr [esi + 0x98]
+        mov eax, dword ptr [eax + 0x10]
+        lea ecx, [esi + 0x98]
+        push edx
+        mov edx, dword ptr [esp + 0x2c]
+        push edx
+        call eax
+    tail:
+        call dword ptr [mem_00925404]
+        pop edi
+        test ebp, ebp
+        pop ebp
+        pop ebx
+        je done
+        push 0xb50
+        call dword ptr [mem_00925418]
+    done:
+        pop esi
+        add esp, 0x14
+        ret 0x8
+    }
+}
