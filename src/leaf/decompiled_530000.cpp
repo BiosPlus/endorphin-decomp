@@ -4250,3 +4250,84 @@ L_shown:
         ret 0x10
     }
 }
+
+// [0x00532A10] sub_00532A10 (191 bytes)
+extern "C" void ext_004275E0();
+extern "C" void ext_00427640();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0063F530();
+extern "C" void ext_0066A550();
+extern "C" int mem_00A9F324;
+extern "C" int mem_00A9EDD0;
+extern "C" int mem_00A9F5F4;
+
+extern "C" __declspec(naked) void __fastcall fn_00532A10(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F324]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0ch]
+        push 1
+        push 0
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0b53a34h
+        je L_00532A4C
+        cmp eax, 0b53b30h
+        je L_00532A4C
+        cmp eax, 0b53ab0h
+        je L_00532A4C
+        cmp eax, 0b53a70h
+        je L_00532A4C
+        cmp eax, 0b53af0h
+        jne L_00532A51
+    L_00532A4C:
+        mov eax, 0b53b30h
+    L_00532A51:
+        push eax
+        lea ecx, [esi + 18h]
+        push ecx
+        call ext_004275E0
+        mov edx, dword ptr [mem_00A9EDD0]
+        add esp, 8
+        push 1
+        push 0
+        push edx
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0b53a34h
+        je L_00532A93
+        cmp eax, 0b53b30h
+        je L_00532A93
+        cmp eax, 0b53ab0h
+        je L_00532A93
+        cmp eax, 0b53a70h
+        je L_00532A93
+        cmp eax, 0b53af0h
+        jne L_00532A98
+    L_00532A93:
+        mov eax, 0b53b30h
+    L_00532A98:
+        push eax
+        lea ecx, [esi + 8]
+        call ext_0066A550
+        mov eax, dword ptr [mem_00A9F5F4]
+        push eax
+        mov ecx, edi
+        call ext_0063EFE0
+        lea ecx, [esp + 0ch]
+        push ecx
+        lea edx, [esi + 34h]
+        push edx
+        mov dword ptr [esp + 14h], eax
+        call ext_00427640
+        mov al, byte ptr [esp + 18h]
+        add esp, 8
+        pop edi
+        mov byte ptr [esi + 4], al
+        pop esi
+        ret 8
+    }
+}
