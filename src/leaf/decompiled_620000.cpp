@@ -6226,3 +6226,14 @@ loc_623998:
         ret     0x8
     }
 }
+
+// [0x00620470] sub_00620470 (45 bytes)
+extern "C" void ext_00620350();
+extern "C" void* __fastcall fn_00620470(void* self, int edx_unused, const void* other) {
+    ((void (__fastcall*)(void*, int, const void*))ext_00620350)(self, edx_unused, other);
+    *(int*)self = 0x00976d1c;
+    *(float*)((char*)self + 0x28) = *(const float*)((const char*)other + 0x28);
+    *(float*)((char*)self + 0x2c) = *(const float*)((const char*)other + 0x2c);
+    *(float*)((char*)self + 0x30) = *(const float*)((const char*)other + 0x30);
+    return self;
+}
