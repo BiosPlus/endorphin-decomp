@@ -11592,3 +11592,28 @@ extern "C" void __fastcall fn_00677D10(void* self) {
         ((Callee)ext_005A6300)(static_cast<char*>(inner) + 4, &slot);
     }
 }
+
+// [0x00678D40] sub_00678D40 (42 bytes)
+extern "C" void ext_005B72F0();
+extern "C" void ext_00678C00();
+extern "C" void ext_00678CB0();
+
+extern "C" __declspec(naked) void __cdecl fn_00678D40(void* self) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 8]
+        push 0
+        lea eax, [esp + 4]
+        push eax
+        call ext_00678CB0
+        call ext_005B72F0
+        test al, al
+        je done
+        push 0x98C454
+        lea ecx, [esp + 4]
+        call ext_00678C00
+    done:
+        pop ecx
+        ret
+    }
+}
