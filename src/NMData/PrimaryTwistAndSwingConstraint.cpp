@@ -436,3 +436,61 @@ extern "C" __declspec(naked) void __fastcall fn_00612C00(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00612B60] NMData::PrimaryTwistAndSwingConstraint::vfunc_61 (150 bytes)
+extern "C" void ext_00493EE0();
+extern "C" void ext_00551D20();
+extern "C" void ext_00594000();
+extern "C" void ext_0067E600();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_00612B60(void* self, int edx_unused, float* v) {
+    __asm {
+        sub esp, 0xc
+        mov eax, dword ptr [esp + 0x10]
+        fld dword ptr [eax]
+        mov edx, dword ptr [ecx + 0x4]
+        fstp dword ptr [esp]
+        mov edx, dword ptr [edx + 0xc]
+        fld dword ptr [eax + 0x4]
+        push esi
+        fstp dword ptr [esp + 0x8]
+        lea esi, [ecx + 0x4]
+        fld dword ptr [eax + 0x8]
+        lea eax, [esp + 0x4]
+        fstp dword ptr [esp + 0xc]
+        push eax
+        fld dword ptr [ecx + 0x154]
+        mov eax, dword ptr [mem_00B40640]
+        fmul dword ptr [esp + 0x8]
+        push eax
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [ecx + 0x158]
+        fmul dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [ecx + 0x15c]
+        mov ecx, esi
+        fmul dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x14]
+        call edx
+        mov ecx, eax
+        call ext_0067E600
+        mov ecx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        mov ecx, esi
+        call edx
+        mov ecx, eax
+        call ext_00551D20
+        call ext_00594000
+        test eax, eax
+        pop esi
+        je done
+        lea ecx, [eax + 0x258]
+        call ext_00493EE0
+done:
+        add esp, 0xc
+        ret 0x4
+    }
+}
