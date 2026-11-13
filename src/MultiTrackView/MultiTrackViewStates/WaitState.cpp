@@ -222,3 +222,99 @@ L_ret:
         ret 4
     }
 }
+
+// [0x004430A0] MultiTrackView::MultiTrackViewStates::WaitState::vfunc_7 (221 bytes)
+extern "C" void ext_0043C9B0();
+extern "C" void ext_0043CEB0();
+extern "C" void ext_0043D620();
+extern "C" void ext_0043F460();
+extern "C" void ext_004407B0();
+extern "C" int mem_0092568C;
+
+extern "C" __declspec(naked) void __fastcall fn_004430A0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_004429C0
+        mov ecx, dword ptr [esi + 0x8]
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_0043D900
+        mov edi, eax
+        test edi, edi
+        je L_443140
+        test byte ptr [esp + 0xc], 0x8
+        jne L_443140
+        mov ecx, dword ptr [esi + 0x8]
+        mov dword ptr [ecx + 0xa0], edi
+        cmp byte ptr [edi + 0x88], 0
+        jne L_4430EB
+        cmp byte ptr [edi + 0x8e], 0
+        je L_4430EB
+        mov ecx, dword ptr [esi + 0x8]
+        push edi
+        call ext_0043F460
+L_4430EB:
+        mov ecx, dword ptr [esi + 0x8]
+        push 0
+        call ext_0043C9B0
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [edx + 0x20]
+        push 1
+        push 0
+        push eax
+        call dword ptr [mem_00925688]
+        mov ecx, dword ptr [esi + 0x8]
+        mov edx, dword ptr [ecx + 0x20]
+        push edx
+        call dword ptr [mem_0092568C]
+        mov ecx, edi
+        call ext_004407B0
+        test eax, eax
+        je L_443176
+        mov ecx, edi
+        call ext_004407B0
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x18]
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        push edi
+        mov ecx, eax
+        call edx
+        pop edi
+        mov al, 1
+        pop esi
+        ret 0x0c
+L_443140:
+        mov ecx, dword ptr [esi + 0x8]
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_0043D620
+        mov edi, eax
+        test edi, edi
+        je L_443176
+        mov ecx, dword ptr [esp + 0x10]
+        push ebx
+        mov ebx, dword ptr [edi]
+        push ecx
+        mov ecx, dword ptr [esi + 0x8]
+        call ext_0043CEB0
+        mov edx, dword ptr [esp + 0x18]
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        mov edx, dword ptr [ebx + 0x1c]
+        push eax
+        mov ecx, edi
+        call edx
+        pop ebx
+L_443176:
+        pop edi
+        mov al, 1
+        pop esi
+        ret 0x0c
+    }
+}
