@@ -18364,3 +18364,332 @@ L7C8117:
         ret
     }
 }
+
+// [0x007C8140] sub_007C8140 (842 bytes)
+extern "C" char mem_007D63A0;
+extern "C" char mem_0099D188;
+extern "C" void ext_007DA850();
+extern "C" void ext_007DA920();
+extern "C" void ext_007C9280();
+extern "C" void ext_007C93A0();
+extern "C" void ext_007C9460();
+extern "C" void ext_007C7A70();
+extern "C" void ext_007D6360();
+extern "C" void ext_007D5950();
+extern "C" __declspec(naked) void __cdecl fn_007C8140(void* self) {
+    __asm {
+        sub esp, 0x5c
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x68]
+        mov ecx, dword ptr [ebp + 0x158]
+        mov edx, dword ptr [ebp + 0x10c]
+        push esi
+        push edi
+        push ecx
+        lea eax, [ebp + 0x1bc]
+        push edx
+        push eax
+        call ext_007DA850
+        mov ecx, dword ptr [ebp + 0x5f0]
+        push ecx
+        lea edx, [ebp + 0x210]
+        push edx
+        mov esi, eax
+        push offset mem_007D63A0
+        lea eax, [ebp + 0x70]
+        push esi
+        push eax
+        call ext_007DA920
+        mov ecx, dword ptr [esi + 0x2c]
+        xor eax, eax
+        xor ebx, ebx
+        add esp, 0x20
+        cmp ecx, eax
+        mov dword ptr [esp + 0x18], ebx
+        jle near ptr L_8361
+        jmp L_81A6
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+L_81A0:
+        mov ebx, dword ptr [esp + 0x18]
+        xor eax, eax
+L_81A6:
+        cmp ebx, ecx
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esp + 0x1c], eax
+        mov dword ptr [esp + 0x20], eax
+        mov edi, ebx
+        jge near ptr L_831C
+        lea edx, [ebx + 2*ebx]
+        add edx, edx
+        add edx, edx
+        mov dword ptr [esp + 0x70], edx
+        mov dword ptr [esp + 0x24], 0
+        jmp L_81EC
+        jmp L_81E0
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        mov edi, edi
+L_81E0:
+        mov eax, dword ptr [esp + 0x28]
+        mov ebx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x70]
+L_81EC:
+        mov ecx, dword ptr [esp + 0x24]
+        cmp ecx, dword ptr [ebp + 0x5e4]
+        jg near ptr L_8318
+        mov ecx, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [ecx + 4*edi]
+        add dword ptr [esp + 0x14], ecx
+        mov dword ptr [esp + 0x2c], ecx
+        mov ecx, dword ptr [esi + 0x1c]
+        add eax, dword ptr [ecx + 4*edi]
+        mov dword ptr [esp + 0x28], eax
+        mov eax, dword ptr [esi + 0x28]
+        mov ecx, dword ptr [edx + eax]
+        mov eax, ecx
+        and eax, 0x80000003
+        jns L_8228
+        dec eax
+        or eax, -4
+        inc eax
+L_8228:
+        jne L_822E
+        mov eax, ecx
+        jmp L_8248
+L_822E:
+        mov eax, dword ptr [esi + 0x28]
+        mov eax, dword ptr [edx + eax]
+        mov edx, eax
+        and edx, 0x80000003
+        jns L_8243
+        dec edx
+        or edx, -4
+        inc edx
+L_8243:
+        sub eax, edx
+        add eax, 4
+L_8248:
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        add dword ptr [esp + 0x20], eax
+        mov eax, ecx
+        cdq
+        mov ebx, 0xc
+        idiv ebx
+        test edx, edx
+        je L_8276
+        mov eax, dword ptr [esi + 0x28]
+        mov ecx, dword ptr [esp + 0x70]
+        mov ecx, dword ptr [ecx + eax]
+        mov eax, ecx
+        cdq
+        idiv ebx
+        sub ecx, edx
+        add ecx, ebx
+L_8276:
+        mov eax, ecx
+        cdq
+        and edx, 3
+        add eax, edx
+        sar eax, 2
+        add dword ptr [esp + 0x1c], eax
+        xor ebx, ebx
+        cmp dword ptr [esp + 0x2c], ebx
+        jle L_82B5
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+L_8290:
+        mov edx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [edx + 4*edi]
+        mov ecx, dword ptr [esi]
+        add eax, ebx
+        mov edx, dword ptr [ecx + 4*eax]
+        push edx
+        call ext_007C9280
+        add dword ptr [esp + 0x14], eax
+        mov eax, dword ptr [esi + 0x8]
+        add ebx, 1
+        add esp, 4
+        cmp ebx, dword ptr [eax + 4*edi]
+        jl L_8290
+L_82B5:
+        mov ecx, dword ptr [esp + 0x28]
+        cmp ecx, dword ptr [ebp + 0x5d8]
+        jg L_8310
+        mov edx, dword ptr [esp + 0x14]
+        cmp edx, dword ptr [ebp + 0x5dc]
+        jg L_8310
+        mov eax, dword ptr [esp + 0x10]
+        cmp eax, dword ptr [ebp + 0x5e0]
+        jg L_8310
+        cmp dword ptr [ebp + 0x5d0], 0
+        jne L_82FA
+        mov ecx, dword ptr [esp + 0x1c]
+        cmp ecx, dword ptr [ebp + 0x5ec]
+        jg L_8310
+        mov edx, dword ptr [esp + 0x20]
+        cmp edx, dword ptr [ebp + 0x5e8]
+        jg L_8310
+L_82FA:
+        add dword ptr [esp + 0x24], 1
+        add dword ptr [esp + 0x70], 0xc
+        add edi, 1
+        cmp edi, dword ptr [esi + 0x2c]
+        jl near ptr L_81E0
+L_8310:
+        mov eax, dword ptr [esp + 0x28]
+        mov ebx, dword ptr [esp + 0x18]
+L_8318:
+        cmp edi, ebx
+        jne L_833D
+L_831C:
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x14]
+        push ecx
+        push edx
+        push eax
+        mov eax, dword ptr [ebp + 0x5f0]
+        push offset mem_0099D188
+        push eax
+        push 0
+        call ext_007D5950
+        add esp, 0x18
+L_833D:
+        fld dword ptr [esp + 0x74]
+        push ecx
+        fstp dword ptr [esp]
+        push edi
+        push ebx
+        push ebp
+        mov eax, esi
+        call ext_007C7A70
+        mov ecx, dword ptr [esi + 0x2c]
+        add esp, 0x10
+        cmp edi, ecx
+        mov dword ptr [esp + 0x18], edi
+        jl near ptr L_81A0
+L_8361:
+        lea eax, [ebp + 0x1bc]
+        push esi
+        push eax
+        call ext_007D6360
+        lea edi, [ebp + 0x70]
+        push edi
+        call ext_007D4A70
+        mov esi, eax
+        add esp, 0xc
+        test esi, esi
+        je L_8399
+L_8380:
+        mov ecx, dword ptr [esi + 0x14]
+        push ecx
+        call ext_007C6790
+        push esi
+        push edi
+        call ext_007D4AA0
+        mov esi, eax
+        add esp, 0xc
+        test esi, esi
+        jne L_8380
+L_8399:
+        test byte ptr [ebp + 0x248], 4
+        je near ptr L_8482
+        lea ebx, [ebp + 0x38]
+        push ebx
+        call ext_007D4A70
+        mov esi, eax
+        add esp, 4
+        test esi, esi
+        je near ptr L_8482
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+L_83C0:
+        mov edi, dword ptr [esi + 0x14]
+        lea edx, [esp + 0x30]
+        push edx
+        push 1
+        push edi
+        call ext_007C93A0
+        lea eax, [esp + 0x54]
+        push eax
+        lea ecx, [esp + 0x4c]
+        push ecx
+        push edi
+        call ext_007C9460
+        fld dword ptr [esp + 0x54]
+        fld dword ptr [esp + 0x48]
+        mov eax, dword ptr [ebp + 0x5f0]
+        fld st(0)
+        lea ecx, [esp + 0x6c]
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x6c]
+        fld dword ptr [esp + 0x58]
+        fld dword ptr [esp + 0x4c]
+        fld st(0)
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x70]
+        fld dword ptr [esp + 0x5c]
+        fld dword ptr [esp + 0x50]
+        fld st(0)
+        faddp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x74]
+        fld dword ptr [esp + 0x60]
+        faddp st(3), st
+        fxch st(2)
+        fstp dword ptr [esp + 0x78]
+        fadd dword ptr [esp + 0x64]
+        fstp dword ptr [esp + 0x7c]
+        fadd dword ptr [esp + 0x68]
+        fstp dword ptr [esp + 0x80]
+        mov edx, dword ptr [eax + 0x24]
+        mov eax, dword ptr [eax + 0x20]
+        push edx
+        push ecx
+        lea edx, [esp + 0x50]
+        push edx
+        push 2
+        call eax
+        mov eax, dword ptr [ebp + 0x5f0]
+        mov ecx, dword ptr [eax + 0x24]
+        push ecx
+        lea edx, [esp + 0x8c]
+        push edx
+        mov edx, dword ptr [eax + 0x20]
+        lea ecx, [esp + 0x60]
+        push ecx
+        push 2
+        call edx
+        push esi
+        push ebx
+        call ext_007D4AA0
+        mov esi, eax
+        add esp, 0x40
+        test esi, esi
+        jne near ptr L_83C0
+L_8482:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x5c
+        ret
+    }
+}
