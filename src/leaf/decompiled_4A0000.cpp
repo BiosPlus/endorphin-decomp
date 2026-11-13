@@ -2324,3 +2324,100 @@ extern "C" __declspec(naked) void __fastcall fn_004A1320(void* self) {
         ret 0xc
     }
 }
+
+extern "C" void ext_0049EB50();
+extern "C" void ext_0049ED30();
+extern "C" void ext_004A1320();
+extern "C" int mem_00925134;
+
+// [0x004A14D0] sub_004A14D0 (177 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004A14D0(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        mov ebx, ecx
+        mov eax, dword ptr [ebx + 0xe0]
+        push esi
+        lea esi, [ebx + 0xdc]
+        mov ecx, eax
+        push edi
+        mov edi, dword ptr [ecx]
+        mov dword ptr [esp + 0x14], edi
+        mov ecx, esi
+        nop
+
+    loc_4A14F0:
+        cmp edi, eax
+        je short loc_4A1501
+        lea edx, [edi + 8]
+        cmp dword ptr [esp + 0x1c], edx
+        je short loc_4A1501
+        mov edi, dword ptr [edi]
+        jmp short loc_4A14F0
+
+    loc_4A1501:
+        cmp esi, ecx
+        je short loc_4A150B
+        call dword ptr [mem_00925134]
+
+    loc_4A150B:
+        test esi, esi
+        mov ebp, dword ptr [esi + 4]
+        je short loc_4A1516
+        cmp esi, esi
+        je short loc_4A151C
+
+    loc_4A1516:
+        call dword ptr [mem_00925134]
+
+    loc_4A151C:
+        cmp edi, ebp
+        je short loc_4A1577
+        push edi
+        push esi
+        lea eax, [esp + 0x18]
+        push eax
+        mov ecx, esi
+        call ext_004A1320
+        mov ebp, dword ptr [esp + 0x1c]
+        push ebp
+        lea ecx, [ebx + 0xd0]
+        call ext_0049EB50
+        mov ecx, dword ptr [esi + 4]
+        mov edi, dword ptr [ecx]
+
+    loc_4A1543:
+        cmp esi, esi
+        mov ebx, dword ptr [esi + 4]
+        je short loc_4A1550
+        call dword ptr [mem_00925134]
+
+    loc_4A1550:
+        cmp edi, ebx
+        je short loc_4A1577
+        cmp edi, dword ptr [esi + 4]
+        jne short loc_4A155F
+        call dword ptr [mem_00925134]
+
+    loc_4A155F:
+        push ebp
+        lea ecx, [edi + 8]
+        call ext_0049ED30
+        cmp edi, dword ptr [esi + 4]
+        jne short loc_4A1573
+        call dword ptr [mem_00925134]
+
+    loc_4A1573:
+        mov edi, dword ptr [edi]
+        jmp short loc_4A1543
+
+    loc_4A1577:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 4
+    }
+}
