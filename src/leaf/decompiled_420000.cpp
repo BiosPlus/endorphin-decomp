@@ -4519,3 +4519,61 @@ loc_00424512:
         ret
     }
 }
+
+// [0x00426FD0] sub_00426FD0 (541 bytes)
+extern "C" void __cdecl fn_00426FD0(void) {
+    mem_00ACD9D8[0] = 0x92f0f8;
+    mem_00ACD9D8[1] = 0x92f0ec;
+    mem_00ACD9D8[2] = 0x92ab34;
+    mem_00ACD9D8[3] = 0x92ab2c;
+    mem_00ACD9D8[4] = 0x92ab24;
+    mem_00ACD9D8[5] = 0x92f0e0;
+    mem_00ACD9D8[6] = 0x92f0cc;
+    mem_00ACD9D8[7] = 0x92f0ac;
+    mem_00ACD9D8[8] = 0x92f098;
+    mem_00ACD9D8[9] = 0x92a95c;
+    mem_00ACD9D8[10] = 0x92f08c;
+    mem_00ACD9D8[11] = 0x92f07c;
+    mem_00ACD9D8[12] = 0x92f064;
+    mem_00ACD9D8[13] = 0x92f04c;
+    mem_00ACD9D8[14] = 0x9287a4;
+    mem_00ACD9D8[15] = 0x92f03c;
+    mem_00ACD9D8[16] = 0x92f02c;
+    mem_00ACD9D8[17] = 0x92f01c;
+    mem_00ACD9D8[18] = 0x92f00c;
+    mem_00ACD9D8[19] = 0x92effc;
+    mem_00ACD9D8[20] = 0x92efec;
+    mem_00ACD9D8[21] = 0x92efdc;
+    mem_00ACD9D8[22] = 0x92efd4;
+    mem_00ACD9D8[23] = 0x92efc8;
+    mem_00ACD9D8[24] = 0x92efb8;
+    mem_00ACD9D8[25] = 0x92efa8;
+    mem_00ACD9D8[26] = 0x92ef9c;
+    mem_00ACD9D8[27] = 0x92ef98;
+    mem_00ACD9D8[28] = 0x92ef90;
+    mem_00ACD9D8[29] = 0x92ef88;
+    mem_00ACD9D8[30] = 0x92ef80;
+    mem_00ACD9D8[31] = 0x92ab1c;
+    mem_00ACD9D8[32] = 0x92ab14;
+    mem_00ACD9D8[33] = 0x92ef64;
+    mem_00ACD9D8[34] = 0x92ef54;
+    mem_00ACD9D8[35] = 0x92ef48;
+    mem_00ACD9D8[36] = 0x92ef3c;
+    mem_00ACD9D8[37] = 0x92ef30;
+    mem_00ACD9D8[38] = 0x92aaf0;
+    mem_00ACD9D8[39] = 0x92aae4;
+    mem_00ACD9D8[40] = 0x92a870;
+    mem_00ACD9D8[41] = 0x92a858;
+    mem_00ACD9D8[42] = 0x92a838;
+    mem_00ACD9D8[43] = 0x92a818;
+    mem_00ACD9D8[44] = 0x92a4b8;
+    mem_00ACD9D8[45] = 0x92ef24;
+    mem_00ACD9D8[46] = 0x92a4c4;
+    mem_00ACD9D8[47] = 0x92ef10;
+    mem_00ACD9D8[48] = 0x92ef00;
+    mem_00ACD9D8[49] = 0x92a49c;
+    mem_00ACD9D8[50] = 0x92a4d4;
+    mem_00ACD9D8[51] = 0x92eeec;
+    mem_00ACD9D8[52] = 0x92eee0;
+    mem_00ACD9D8[53] = 0x92eed8;
+}
