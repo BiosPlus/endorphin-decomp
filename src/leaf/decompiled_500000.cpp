@@ -6476,3 +6476,24 @@ extern "C" void* __fastcall fn_0050A9D0(char* self, int edx_unused, void* arg) {
     ext_00509F70(self + 4, arg, 0, mem_00A9F178, 0);
     return arg;
 }
+
+// [0x00504900] sub_00504900 (37 bytes)
+extern "C" void ext_005047A0();
+extern "C" void ext_00504800();
+extern "C" int mem_00924FE4;
+extern "C" int mem_0094F0C0;
+extern "C" __declspec(naked) void __fastcall fn_00504900(void* self) {
+    __asm {
+        push ecx
+        call ext_005047A0
+        push 0x0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push offset mem_0094F0C0
+        call dword ptr [mem_00924FE4]
+        call ext_00504800
+        add esp, 0x24
+        ret
+    }
+}
