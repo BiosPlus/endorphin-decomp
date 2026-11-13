@@ -242,3 +242,16 @@ extern "C" __declspec(naked) void __fastcall fn_00620040(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_0058F650();
+extern "C" void ext_005B44B0();
+extern "C" void ext_006404E0();
+extern "C" int mem_00A9EF74;
+
+// [0x0061FE20] NMData::GraphicData::vfunc_22 (48 bytes)
+extern "C" int __fastcall fn_0061FE20(void* self, int edx_unused, void* arg0) {
+    int esi = ((int (__thiscall*)(void*, int))ext_006404E0)(arg0, mem_00A9EF74);
+    ((void (__thiscall*)(void*, int))ext_005B44B0)((char*)self + 0x154, esi);
+    ((void (__thiscall*)(void*, int))ext_0058F650)(self, esi);
+    return esi;
+}
