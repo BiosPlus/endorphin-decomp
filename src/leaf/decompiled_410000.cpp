@@ -9783,3 +9783,18 @@ extern "C" __declspec(naked) void __cdecl fn_00419F20() {
         ret 0x18
     }
 }
+
+// [0x00413710] sub_00413710 (49 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_00413230();
+extern "C" void ext_00412CE0();
+
+extern "C" bool __fastcall fn_00413710(void* self, int edx_unused, void* a1) {
+    if (!a1) {
+        return false;
+    }
+    ((void (__thiscall*)(void*, void*))ext_0041A920)((char*)self + 4, &a1);
+    ((void (__thiscall*)(void*))ext_00413230)(self);
+    ((void (__thiscall*)(void*))ext_00412CE0)(self);
+    return true;
+}
