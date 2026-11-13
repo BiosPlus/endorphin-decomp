@@ -95,3 +95,19 @@ extern "C" __declspec(naked) void* __fastcall fn_0072CB00(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0072BF40] sub_0072BF40 (47 bytes)
+extern "C" void ext_006B9D10();
+extern "C" void* __fastcall fn_0072BF40(void* self) {
+    unsigned char* esi = (unsigned char*)self;
+    *(int*)(esi + 0x00) = 0;
+    *(int*)(esi + 0x04) = 0;
+    *(int*)(esi + 0x08) = 0;
+    *(int*)(esi + 0x0C) = 3;
+    *(int*)(esi + 0x10) = 0;
+    *(unsigned char*)(esi + 0x14) = 1;
+    ((void (__fastcall*)(void*))ext_006B9D10)(esi + 0x18);
+    *(unsigned char*)(esi + 0x64) = 0;
+    *(unsigned char*)(esi + 0x65) = 0;
+    return esi;
+}
