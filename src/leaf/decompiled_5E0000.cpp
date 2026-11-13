@@ -2543,3 +2543,94 @@ extern "C" __declspec(naked) void __fastcall fn_005EC410(void* self) {
         ret 0x10
     }
 }
+
+extern "C" void ext_005E2BE0();
+extern "C" void ext_005EC410();
+
+// [0x005ED200] sub_005ED200 (185 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005ED200(void* self, int edx_unused, void* out_pair, void* key_ptr) {
+    __asm {
+        sub esp, 0xc
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x4]
+        mov eax, dword ptr [esi + 0x4]
+        cmp byte ptr [eax + 0x51], 0x0
+        mov cl, 0x1
+        mov byte ptr [esp + 0xc], cl
+        jne L_005ed23e
+    L_005ed21e:
+        mov edx, dword ptr [ebp]
+    L_005ed221:
+        cmp edx, dword ptr [eax + 0xc]
+        mov esi, eax
+        setb cl
+        test cl, cl
+        mov byte ptr [esp + 0xc], cl
+        je L_005ed235
+        mov eax, dword ptr [eax]
+        jmp L_005ed238
+    L_005ed235:
+        mov eax, dword ptr [eax + 0x8]
+    L_005ed238:
+        cmp byte ptr [eax + 0x51], 0x0
+        je L_005ed221
+    L_005ed23e:
+        test cl, cl
+        mov edx, esi
+        mov dword ptr [esp + 0x14], edx
+        mov dword ptr [esp + 0x10], edi
+        je L_005ed289
+        mov eax, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [eax]
+        lea ecx, [esp + 0x10]
+        jne L_005ed280
+        push ebp
+        push esi
+        push 0x1
+        push ecx
+    L_005ed25c:
+        mov ecx, edi
+        call ext_005EC410
+        mov ecx, eax
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [ecx + 0x4]
+        pop edi
+        pop esi
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x4], ecx
+        mov byte ptr [eax + 0x8], 0x1
+        pop ebp
+        add esp, 0xc
+        ret 0x8
+    L_005ed280:
+        call ext_005E2BE0
+        mov edx, dword ptr [esp + 0x14]
+    L_005ed289:
+        mov eax, dword ptr [edx + 0xc]
+        cmp eax, dword ptr [ebp]
+        jae L_005ed29f
+        mov ecx, dword ptr [esp + 0xc]
+        push ebp
+        push esi
+        push ecx
+        lea edx, [esp + 0x1c]
+        push edx
+        jmp L_005ed25c
+    L_005ed29f:
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        mov byte ptr [eax + 0x8], 0x0
+        pop ebp
+        add esp, 0xc
+        ret 0x8
+    }
+}
