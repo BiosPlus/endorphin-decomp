@@ -56,3 +56,22 @@ extern "C" __declspec(naked) void __cdecl fn_00725A90(int value, int* out_a, int
         ret
     }
 }
+
+extern "C" int __fastcall ext_00789C60(void* obj, int edx_unused, int arg);
+extern "C" int mem_00B5D2C0;
+
+// [0x007266F0] sub_007266F0 (31 bytes)
+extern "C" __declspec(naked) int __fastcall fn_007266F0(void* self, int edx_unused, int arg) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x250]
+        test ecx, ecx
+        je short L_null
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call ext_00789C60
+        ret 0x4
+    L_null:
+        mov eax, offset mem_00B5D2C0
+        ret 0x4
+    }
+}
