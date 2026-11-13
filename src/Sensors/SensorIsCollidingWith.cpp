@@ -60,3 +60,33 @@ extern "C" __declspec(naked) void* __fastcall fn_006259C0(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x00626290] Sensors::SensorIsCollidingWith::vfunc_26 (52 bytes)
+extern "C" void ext_00624E80();
+extern "C" void ext_00626210();
+extern "C" int mem_00B4B3EC;
+
+extern "C" __declspec(naked) void __fastcall fn_00626290(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        lea edx, [esp + 0x10]
+        push edx
+        call ext_00624E80
+        add esp, 0xc
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, offset mem_00B4B3EC
+        call ext_00626210
+        cmp dword ptr [eax], 0x0
+        jne done
+        mov dword ptr [eax], esi
+    done:
+        pop esi
+        ret 0x10
+    }
+}
