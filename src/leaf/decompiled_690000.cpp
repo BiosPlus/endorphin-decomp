@@ -5023,3 +5023,36 @@ extern "C" void __fastcall fn_006948C0(void* self, int edx_unused, void* a1, voi
     ((void (__thiscall*)(void*, void*))ext_00694330)(v, self);
     ((void (__thiscall*)(void*, void*, void*))ext_006940C0)(v, a1, a2);
 }
+
+// [0x006944D0] sub_006944D0 (79 bytes)
+extern "C" void ext_0067DAD0();
+extern "C" void ext_00694330();
+extern "C" __declspec(naked) void __fastcall fn_006944D0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 24h
+        fldz
+        push esi
+        fst dword ptr [esp + 0ch]
+        lea eax, [esp + 4]
+        fst dword ptr [esp + 8]
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 2ch]
+        fst dword ptr [esp + 18h]
+        fst dword ptr [esp + 10h]
+        push eax
+        fst dword ptr [esp + 24h]
+        fstp dword ptr [esp + 20h]
+        fld1
+        fst dword ptr [esp + 8]
+        fst dword ptr [esp + 18h]
+        fstp dword ptr [esp + 28h]
+        call ext_0067DAD0
+        lea ecx, [esp + 4]
+        push ecx
+        mov ecx, esi
+        call ext_00694330
+        pop esi
+        add esp, 24h
+        ret 4
+    }
+}
