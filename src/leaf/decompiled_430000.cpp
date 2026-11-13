@@ -14327,3 +14327,22 @@ extern "C" char __stdcall fn_0043F490(char* ptr) {
     typedef char (__stdcall *fn2_t)(char*, int);
     return ((fn2_t)ext_0043F3A0)(ptr, 0);
 }
+
+extern "C" void ext_0043DA60();
+extern "C" void ext_0043F3A0();
+
+// [0x0043F460] sub_0043F460 (45 bytes)
+struct Dummy43F460 {};
+extern "C" bool __fastcall fn_0043F460(void* self, int edx_unused, void* a1) {
+    if (!a1) {
+        return false;
+    }
+    *(void**)((char*)self + 0xa0) = a1;
+    ((void (__cdecl*)())ext_0043DA60)();
+    union {
+        void (*p)();
+        bool (__thiscall Dummy43F460::*m)(void*, int);
+    } u;
+    u.p = ext_0043F3A0;
+    return (((Dummy43F460*)self)->*u.m)(a1, 0);
+}
