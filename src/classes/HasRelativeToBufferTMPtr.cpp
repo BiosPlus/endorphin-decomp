@@ -1,5 +1,6 @@
 // Decompiled translation unit: src/classes/HasRelativeToBufferTMPtr.cpp
 
+extern "C" void ext_004875A0();
 extern "C" void ext_00661B50();
 extern "C" int mem_00AEE8A8;
 extern "C" int mem_009253C8;
@@ -102,4 +103,13 @@ extern "C" __declspec(naked) void __fastcall fn_00532320(void* self) {
         pop esi
         ret
     }
+}
+
+// [0x005325F0] HasRelativeToBufferTMPtr::vfunc_2 (40 bytes)
+extern "C" void* __fastcall fn_005325F0(void* self, int edx_unused, void* out) {
+    BufferMgr* mgr = *(BufferMgr**)&mem_00AEE8A8;
+    float* m1 = mgr->getMatrix(*(int*)((char*)self + 4));
+    typedef void (__thiscall *Mul_t)(void*, void*, const float*);
+    ((Mul_t)ext_004875A0)(*(void**)((char*)self + 8), out, m1);
+    return out;
 }
