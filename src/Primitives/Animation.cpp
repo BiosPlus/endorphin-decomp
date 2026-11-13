@@ -381,3 +381,136 @@ extern "C" __declspec(naked) void __fastcall fn_0053B320(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_0053ACF0();
+
+// [0x0053AE40] Primitives::Animation::vfunc_8 (343 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0053AE40(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        cmp esi, 8
+        je L_ret
+        mov eax, dword ptr [ecx + 0x1c]
+        add ecx, 0x18
+        mov edx, eax
+        and edx, 0x8008
+        cmp edx, 0x8008
+        jne short L1
+        xor eax, edx
+        mov dword ptr [ecx + 4], eax
+    L1:
+        mov eax, dword ptr [ecx + 4]
+        mov edx, eax
+        and edx, 0x4008
+        cmp edx, 0x4008
+        jne short L2
+        xor eax, edx
+        mov dword ptr [ecx + 4], eax
+    L2:
+        mov eax, dword ptr [ecx + 4]
+        mov edx, eax
+        and edx, 0x10008
+        cmp edx, 0x10008
+        jne short L3
+        xor eax, edx
+        mov dword ptr [ecx + 4], eax
+    L3:
+        mov eax, dword ptr [ecx + 4]
+        mov edx, eax
+        and edx, 0x18
+        cmp dl, 0x18
+        jne short L4
+        xor eax, 0x18
+        mov dword ptr [ecx + 4], eax
+    L4:
+        mov eax, dword ptr [ecx + 4]
+        mov edx, eax
+        and edx, 0x400008
+        cmp edx, 0x400008
+        jne short L5
+        xor eax, edx
+        mov dword ptr [ecx + 4], eax
+    L5:
+        mov eax, dword ptr [ecx + 4]
+        mov edx, eax
+        and edx, 0x800008
+        cmp edx, 0x800008
+        jne short L6
+        xor eax, edx
+        mov dword ptr [ecx + 4], eax
+    L6:
+        mov eax, dword ptr [ecx + 4]
+        test al, 8
+        je short L7
+        xor eax, 8
+        mov dword ptr [ecx + 4], eax
+    L7:
+        cmp esi, 1
+        jne short L_not1
+        mov eax, dword ptr [ecx + 4]
+        test al, 8
+        jne L_ret
+        xor eax, 8
+        mov dword ptr [ecx + 4], eax
+        pop esi
+        ret 4
+    L_not1:
+        cmp esi, 2
+        jne short L_not2
+        mov eax, dword ptr [ecx + 4]
+        mov edx, eax
+        and edx, 0x18
+        cmp dl, 0x18
+        je short L_ret
+        xor eax, 0x18
+        mov dword ptr [ecx + 4], eax
+        pop esi
+        ret 4
+    L_not2:
+        cmp esi, 3
+        jne short L_not3
+        mov eax, dword ptr [ecx + 4]
+        mov edx, eax
+        and edx, 0x400008
+        cmp edx, 0x400008
+        je short L_ret
+        xor eax, 0x400008
+        mov dword ptr [ecx + 4], eax
+        pop esi
+        ret 4
+    L_not3:
+        cmp esi, 4
+        jne short L_not4
+        push 1
+        push 0x800008
+        call ext_0053ACF0
+        pop esi
+        ret 4
+    L_not4:
+        cmp esi, 7
+        jne short L_not7
+        push 1
+        push 0x8008
+        call ext_0053ACF0
+        pop esi
+        ret 4
+    L_not7:
+        cmp esi, 5
+        jne short L_not5
+        push 1
+        push 0x4008
+        call ext_0053ACF0
+        pop esi
+        ret 4
+    L_not5:
+        cmp esi, 6
+        jne short L_ret
+        push 1
+        push 0x10008
+        call ext_0053ACF0
+    L_ret:
+        pop esi
+        ret 4
+    }
+}
