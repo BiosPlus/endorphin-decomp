@@ -5011,3 +5011,15 @@ extern "C" void __fastcall fn_00694880(void* self, int edx_unused, void* out) {
     ((void (__thiscall*)(void*, void*))ext_00694330)(v, self);
     ((void (__thiscall*)(void*, void*))ext_006946C0)(v, out);
 }
+
+// [0x006948C0] sub_006948C0 (56 bytes)
+extern "C" void ext_006940C0();
+extern "C" void __fastcall fn_006948C0(void* self, int edx_unused, void* a1, void* a2) {
+    float v[4];
+    v[3] = 0.0f;
+    v[2] = 0.0f;
+    v[1] = 0.0f;
+    v[0] = 0.0f;
+    ((void (__thiscall*)(void*, void*))ext_00694330)(v, self);
+    ((void (__thiscall*)(void*, void*, void*))ext_006940C0)(v, a1, a2);
+}
