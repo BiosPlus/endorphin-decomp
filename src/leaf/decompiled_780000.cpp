@@ -456,3 +456,226 @@ extern "C" __declspec(naked) void __fastcall fn_00782F70(void* self) {
         ret
     }
 }
+
+// [0x00789670] sub_00789670 (416 bytes)
+extern "C" void ext_006A7270();
+extern "C" int mem_009252B8;
+extern "C" __declspec(naked) void __fastcall fn_00789670(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        je short L1_child0
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx]
+        push edx
+        call dword ptr [eax + 0x28]
+        ret 0x4
+L1_child0:
+        mov ecx, dword ptr [eax + 0x14]
+        mov edx, dword ptr [esp + 0x4]
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x3c]
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        je short L2_child0
+        mov eax, dword ptr [ecx]
+        jmp dword ptr [eax + 0x2c]
+L2_child0:
+        mov ecx, dword ptr [eax + 0x14]
+        mov edx, dword ptr [ecx]
+        jmp dword ptr [edx + 0x40]
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        je short L3_child0
+        mov eax, dword ptr [ecx]
+        jmp dword ptr [eax + 0x30]
+L3_child0:
+        mov ecx, dword ptr [eax + 0x14]
+        mov edx, dword ptr [ecx]
+        jmp dword ptr [edx + 0x48]
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        je short L4_child0
+        mov eax, dword ptr [ecx]
+        jmp dword ptr [eax + 0x34]
+L4_child0:
+        mov ecx, dword ptr [eax + 0x14]
+        mov edx, dword ptr [ecx]
+        jmp dword ptr [edx + 0x4c]
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        je short L5_child0
+        mov eax, dword ptr [ecx]
+        jmp dword ptr [eax + 0x38]
+L5_child0:
+        mov ecx, dword ptr [eax + 0x14]
+        mov edx, dword ptr [ecx]
+        jmp dword ptr [edx + 0x50]
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, 0x4000
+        call ext_006A7270
+        mov ecx, dword ptr [esp + 0x4008]
+        push esi
+        lea eax, dword ptr [esp + 0x4010]
+        push edi
+        push eax
+        lea edx, dword ptr [esp + 0xc]
+        push ecx
+        push edx
+        call dword ptr [mem_009252B8]
+        mov eax, dword ptr [esp + 0x4018]
+        add esp, 0xc
+        mov edx, dword ptr [eax + 0x8]
+        test edx, edx
+        je short L6_fallback
+        lea edi, dword ptr [esp + 0x8]
+        or ecx, -1
+        xor eax, eax
+        mov esi, dword ptr [edx]
+        repne scasb
+        not ecx
+        dec ecx
+        lea eax, dword ptr [esp + 0x8]
+        push ecx
+        push eax
+        mov ecx, edx
+        call dword ptr [esi + 0x1c]
+        pop edi
+        pop esi
+        add esp, 0x4000
+        ret
+L6_fallback:
+        mov edx, dword ptr [eax + 0x14]
+        lea edi, dword ptr [esp + 0x8]
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        mov esi, dword ptr [edx]
+        not ecx
+        dec ecx
+        push ecx
+        lea ecx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, edx
+        call dword ptr [esi + 0x30]
+        pop edi
+        pop esi
+        add esp, 0x4000
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        je short L7_child0
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx]
+        push edx
+        call dword ptr [eax + 0x40]
+        ret 0x4
+L7_child0:
+        mov ecx, dword ptr [eax + 0x14]
+        mov edx, dword ptr [esp + 0x4]
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x58]
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        je short L8_child0
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx]
+        push edx
+        mov edx, dword ptr [esp + 0x8]
+        push edx
+        call dword ptr [eax + 0x18]
+        ret 0x8
+L8_child0:
+        mov edx, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [eax + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx]
+        push edx
+        call dword ptr [eax + 0x14]
+        ret 0x8
+    }
+}
