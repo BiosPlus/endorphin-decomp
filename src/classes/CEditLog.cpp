@@ -100,3 +100,82 @@ extern "C" __declspec(naked) void __fastcall fn_00415650(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" void __fastcall ext_00415810(void* self);
+extern "C" unsigned char __stdcall ext_00415820(int a1);
+extern "C" void __stdcall ext_00415C70(int a1);
+extern "C" int __fastcall ext_00458F00(void* self, int edx_unused, unsigned int a1, int a2, int a3, int* a4);
+extern "C" int (__stdcall *mem_00925664)(int, int, int, int);
+
+// [0x00415CA0] CEditLog::vfunc_1 (173 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00415CA0(void* self, int edx_unused, unsigned int msg, int wparam, int lparam, int* result) {
+    __asm {
+        mov     eax, dword ptr [esp + 0x4]
+        cmp     eax, 0x14
+        mov     edx, dword ptr [esp + 0x10]
+        push    esi
+        mov     esi, ecx
+        mov     dword ptr [edx], 0x0
+        ja      L_above_14
+        je      L_14_or_0f
+        mov     ecx, eax
+        sub     ecx, 0x2
+        je      L_02
+        sub     ecx, 0xd
+        jne     L_default
+    L_14_or_0f:
+        cmp     byte ptr [esi + 0x28], 0x0
+        je      L_default
+        mov     eax, 0x1
+        pop     esi
+        ret     0x10
+    L_02:
+        mov     ecx, esi
+        call    ext_00415810
+        mov     eax, 0x1
+        pop     esi
+        ret     0x10
+    L_above_14:
+        cmp     eax, 0x113
+        je      L_113
+        cmp     eax, 0x5f4
+        je      L_5f4
+    L_default:
+        mov     ecx, dword ptr [esp + 0x10]
+        push    edx
+        mov     edx, dword ptr [esp + 0x10]
+        push    ecx
+        push    edx
+        push    eax
+        mov     ecx, esi
+        call    ext_00458F00
+        pop     esi
+        ret     0x10
+    L_5f4:
+        push    0x0
+        call    ext_00415820
+        test    al, al
+        jne     L_ret_1
+        cmp     dword ptr [esi + 0x20], 0x0
+        jne     L_ret_1
+        mov     ecx, dword ptr [esi + 0x24]
+        mov     eax, dword ptr [esi + 0x1c]
+        push    0x0
+        push    ecx
+        push    0x1267
+        push    eax
+        call    dword ptr [mem_00925664]
+        mov     dword ptr [esi + 0x20], eax
+        mov     eax, 0x1
+        pop     esi
+        ret     0x10
+    L_113:
+        mov     edx, dword ptr [esp + 0xc]
+        push    edx
+        call    ext_00415C70
+    L_ret_1:
+        mov     eax, 0x1
+        pop     esi
+        ret     0x10
+    }
+}
