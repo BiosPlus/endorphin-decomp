@@ -8469,3 +8469,33 @@ extern "C" __declspec(naked) void __cdecl fn_007C8A80() {
         ret
     }
 }
+
+// [0x007C5D00] sub_007C5D00 (46 bytes)
+extern "C" void ext_007C5760();
+extern "C" int mem_00AB28C4;
+extern "C" __declspec(naked) int __cdecl fn_007C5D00(void* a0) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        lea eax, [edi + 0x15c]
+        push eax
+        call dword ptr [mem_00AB28C4]
+        mov esi, eax
+        add esp, 4
+        test esi, esi
+        jne short L_has_result
+        pop edi
+        pop esi
+        ret
+L_has_result:
+        push edi
+        push esi
+        call ext_007C5760
+        add esp, 8
+        pop edi
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
