@@ -14699,3 +14699,636 @@ L_7FADB8:
         ret
     }
 }
+
+extern "C" void ext_00803AE0();
+extern "C" int mem_00993840;
+extern "C" int mem_00993828;
+extern "C" int mem_0093F7B0;
+extern "C" int mem_0092C510;
+extern "C" int mem_00999B40;
+extern "C" int mem_009548E0;
+extern "C" int mem_00996628;
+extern "C" int mem_0099EDD8;
+extern "C" int mem_0099EDD0;
+extern "C" int mem_0099EDC8;
+extern "C" int mem_0099EDC0;
+extern "C" int mem_0099EDB8;
+extern "C" int mem_0099EDB0;
+
+// [0x007F5A40] sub_007F5A40 (1985 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007F5A40(void* self) {
+    __asm {
+    L_007F5A40: push ebp
+    L_007F5A41: mov ebp, esp
+    L_007F5A43: and esp, -0x8
+    L_007F5A46: sub esp, 0x9c
+    L_007F5A4C: fldz
+    L_007F5A4E: mov eax, dword ptr [ebp + 0x14]
+    L_007F5A51: mov ecx, dword ptr [ebp + 0x10]
+    L_007F5A54: fst dword ptr [eax + 0x8]
+    L_007F5A57: mov edx, dword ptr [ebp + 0xc]
+    L_007F5A5A: fst dword ptr [eax + 0x4]
+    L_007F5A5D: fst dword ptr [eax]
+    L_007F5A5F: push ebx
+    L_007F5A60: mov ebx, dword ptr [ebp + 0x8]
+    L_007F5A63: fst dword ptr [ecx + 0x8]
+    L_007F5A66: fst dword ptr [ecx + 0x4]
+    L_007F5A69: push esi
+    L_007F5A6A: fst dword ptr [ecx]
+    L_007F5A6C: xor esi, esi
+    L_007F5A6E: fst dword ptr [edx + 0x8]
+    L_007F5A71: push edi
+    L_007F5A72: fst dword ptr [edx + 0x4]
+    L_007F5A75: mov dword ptr [esp + 0x58], esi
+    L_007F5A79: fst dword ptr [edx]
+    L_007F5A7B: cmp dword ptr [ebx + 0x1c], esi
+    L_007F5A7E: fstp dword ptr [esp + 0x78]
+    L_007F5A82: fld qword ptr [mem_00993840]
+    L_007F5A88: fld qword ptr [mem_00993828]
+    L_007F5A8E: jle L_007F61B4
+    L_007F5A94: fstp st(0)
+    L_007F5A96: mov dword ptr [esp + 0x6c], esi
+    L_007F5A9A:
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_007F5AA0: mov eax, dword ptr [ebx + 0xc]
+    L_007F5AA3: fstp st(0)
+    L_007F5AA5: mov ecx, dword ptr [esp + 0x58]
+    L_007F5AA9: mov esi, dword ptr [ebx + 0x8]
+    L_007F5AAC: add esi, dword ptr [esp + 0x6c]
+    L_007F5AB0: lea ecx, [eax + 4*ecx]
+    L_007F5AB3: mov eax, dword ptr [ecx]
+    L_007F5AB5: mov ecx, dword ptr [ecx + 0x4]
+    L_007F5AB8: sub ecx, eax
+    L_007F5ABA: lea edx, [eax + 4*eax]
+    L_007F5ABD: mov eax, dword ptr [ebx + 0x10]
+    L_007F5AC0: mov eax, dword ptr [eax + 4*edx + 0x4]
+    L_007F5AC4: mov edx, dword ptr [ebx]
+    L_007F5AC6: mov dword ptr [esp + 0x40], ecx
+    L_007F5ACA: lea ecx, [eax + 2*eax]
+    L_007F5ACD: fld dword ptr [edx + 4*ecx + 0x4]
+    L_007F5AD1: lea eax, [edx + 4*ecx]
+    L_007F5AD4: fmul dword ptr [esi + 0x4]
+    L_007F5AD7: push esi
+    L_007F5AD8: fld dword ptr [eax]
+    L_007F5ADA: fmul dword ptr [esi]
+    L_007F5ADC: faddp st(1), st
+    L_007F5ADE: fld dword ptr [eax + 0x8]
+    L_007F5AE1: fmul dword ptr [esi + 0x8]
+    L_007F5AE4: faddp st(1), st
+    L_007F5AE6: fstp dword ptr [esp + 0x18]
+    L_007F5AEA: fld dword ptr [esp + 0x18]
+    L_007F5AEE: fchs
+    L_007F5AF0: fstp dword ptr [esp + 0x84]
+    L_007F5AF7: call ext_00803AE0
+    L_007F5AFC: fldz
+    L_007F5AFE: mov ecx, eax
+    L_007F5B00: mov edx, 0x1
+    L_007F5B05: fst dword ptr [esp + 0x28]
+    L_007F5B09: shl edx, cl
+    L_007F5B0B: fst dword ptr [esp + 0x30]
+    L_007F5B0F: fst dword ptr [esp + 0x20]
+    L_007F5B13: mov edi, 0x1
+    L_007F5B18: fst dword ptr [esp + 0x50]
+    L_007F5B1C: add esp, 0x4
+    L_007F5B1F: fst dword ptr [esp + 0x20]
+    L_007F5B23: and edx, 0x3
+    L_007F5B26: fst dword ptr [esp + 0x48]
+    L_007F5B2A: mov ecx, edx
+    L_007F5B2C: fst dword ptr [esp + 0x38]
+    L_007F5B30: shl edi, cl
+    L_007F5B32: fst dword ptr [esp + 0x30]
+    L_007F5B36: fst dword ptr [esp + 0x18]
+    L_007F5B3A: fstp dword ptr [esp + 0x50]
+    L_007F5B3E: fld qword ptr [mem_00993840]
+    L_007F5B44: and edi, 0x3
+    L_007F5B47: cmp dword ptr [esp + 0x40], 0x0
+    L_007F5B4C: jle L_007F5E6D
+    L_007F5B52: mov ecx, dword ptr [ebx]
+    L_007F5B54: mov dword ptr [esp + 0x10], ecx
+    L_007F5B58: mov ecx, dword ptr [ebx + 0xc]
+    L_007F5B5B: mov ebx, dword ptr [esp + 0x58]
+    L_007F5B5F: mov ecx, dword ptr [ecx + 4*ebx]
+    L_007F5B62: mov ebx, dword ptr [ebp + 0x8]
+    L_007F5B65: mov ebx, dword ptr [ebx + 0x10]
+    L_007F5B68: lea ecx, [ecx + 4*ecx]
+    L_007F5B6B: lea ecx, [ebx + 4*ecx + 0x8]
+    L_007F5B6F: mov dword ptr [esp + 0x5c], ecx
+    L_007F5B73: mov ecx, dword ptr [esp + 0x40]
+    L_007F5B77: mov dword ptr [esp + 0x14], ecx
+    L_007F5B7B: mov ecx, dword ptr [esp + 0x10]
+    L_007F5B7F: jmp L_007F5B83
+    L_007F5B81: fstp st(0)
+    L_007F5B83: mov ebx, dword ptr [esp + 0x5c]
+    L_007F5B87: mov ebx, dword ptr [ebx - 0x4]
+    L_007F5B8A: lea ebx, [ebx + 2*ebx]
+    L_007F5B8D: mov dword ptr [esp + 0x10], ebx
+    L_007F5B91: add ebx, edx
+    L_007F5B93: fld dword ptr [ecx + 4*ebx]
+    L_007F5B96: mov ebx, dword ptr [esp + 0x10]
+    L_007F5B9A: fstp dword ptr [esp + 0x60]
+    L_007F5B9E: add ebx, edi
+    L_007F5BA0: fld dword ptr [ecx + 4*ebx]
+    L_007F5BA3: mov ebx, dword ptr [esp + 0x5c]
+    L_007F5BA7: fstp dword ptr [esp + 0x34]
+    L_007F5BAB: mov ebx, dword ptr [ebx]
+    L_007F5BAD: lea ebx, [ebx + 2*ebx]
+    L_007F5BB0: mov dword ptr [esp + 0x10], ebx
+    L_007F5BB4: add ebx, edx
+    L_007F5BB6: fld dword ptr [ecx + 4*ebx]
+    L_007F5BB9: mov ebx, dword ptr [esp + 0x10]
+    L_007F5BBD: fstp dword ptr [esp + 0x3c]
+    L_007F5BC1: add ebx, edi
+    L_007F5BC3: fld dword ptr [ecx + 4*ebx]
+    L_007F5BC6: fstp dword ptr [esp + 0x10]
+    L_007F5BCA: fld dword ptr [esp + 0x3c]
+    L_007F5BCE: fld st(0)
+    L_007F5BD0: fld dword ptr [esp + 0x60]
+    L_007F5BD4: fld st(0)
+    L_007F5BD6: fsubp st(2), st
+    L_007F5BD8: fxch st(1)
+    L_007F5BDA: fstp dword ptr [esp + 0x40]
+    L_007F5BDE: fld dword ptr [esp + 0x10]
+    L_007F5BE2: fld st(0)
+    L_007F5BE4: fld dword ptr [esp + 0x34]
+    L_007F5BE8: fld st(0)
+    L_007F5BEA: fsubp st(2), st
+    L_007F5BEC: fxch st(1)
+    L_007F5BEE: fstp dword ptr [esp + 0x3c]
+    L_007F5BF2: fld st(2)
+    L_007F5BF4: fmul st(0), st
+    L_007F5BF6: fstp dword ptr [esp + 0x10]
+    L_007F5BFA: fld dword ptr [esp + 0x10]
+    L_007F5BFE: fld st(0)
+    L_007F5C00: fmul st, st(4)
+    L_007F5C02: fstp dword ptr [esp + 0x7c]
+    L_007F5C06: fld st(1)
+    L_007F5C08: fmul st(0), st
+    L_007F5C0A: fstp dword ptr [esp + 0x54]
+    L_007F5C0E: fld dword ptr [esp + 0x54]
+    L_007F5C12: fmul st, st(2)
+    L_007F5C14: fstp dword ptr [esp + 0x68]
+    L_007F5C18: fld st(4)
+    L_007F5C1A: fmul st(0), st
+    L_007F5C1C: fstp dword ptr [esp + 0x8c]
+    L_007F5C23: fld st(2)
+    L_007F5C25: fmul st(0), st
+    L_007F5C27: fstp dword ptr [esp + 0xa0]
+    L_007F5C2E: fld dword ptr [esp + 0xa0]
+    L_007F5C35: fmul st, st(3)
+    L_007F5C37: fstp dword ptr [esp + 0x10]
+    L_007F5C3B: fld st(4)
+    L_007F5C3D: fadd st, st(4)
+    L_007F5C3F: fstp dword ptr [esp + 0x90]
+    L_007F5C46: fld dword ptr [esp + 0x90]
+    L_007F5C4D: fmul st, st(5)
+    L_007F5C4F: fadd st, st(1)
+    L_007F5C51: fstp dword ptr [esp + 0x98]
+    L_007F5C58: fld dword ptr [esp + 0x98]
+    L_007F5C5F: fmul st, st(5)
+    L_007F5C61: fadd dword ptr [esp + 0x7c]
+    L_007F5C65: fstp dword ptr [esp + 0x28]
+    L_007F5C69: fld st(2)
+    L_007F5C6B: fadd st, st(2)
+    L_007F5C6D: fmul st, st(3)
+    L_007F5C6F: fadd dword ptr [esp + 0x54]
+    L_007F5C73: fstp dword ptr [esp + 0x70]
+    L_007F5C77: fld dword ptr [esp + 0x70]
+    L_007F5C7B: fmul st, st(3)
+    L_007F5C7D: fadd dword ptr [esp + 0x68]
+    L_007F5C81: fstp dword ptr [esp + 0xc]
+    L_007F5C85: fld st(4)
+    L_007F5C87: fadd st(0), st
+    L_007F5C89: fmul st, st(4)
+    L_007F5C8B: fst qword ptr [esp + 0x60]
+    L_007F5C8F: fld dword ptr [esp + 0x8c]
+    L_007F5C96: fmul st, st(7)
+    L_007F5C98: faddp st(1), st
+    L_007F5C9A: fadd st, st(1)
+    L_007F5C9C: fstp dword ptr [esp + 0x34]
+    L_007F5CA0: fld dword ptr [esp + 0x8c]
+    L_007F5CA7: fadd qword ptr [esp + 0x60]
+    L_007F5CAB: fxch st(1)
+    L_007F5CAD: fmulp st(6), st
+    L_007F5CAF: faddp st(5), st
+    L_007F5CB1: fxch st(4)
+    L_007F5CB3: fstp dword ptr [esp + 0x60]
+    L_007F5CB7: fld dword ptr [esp + 0x90]
+    L_007F5CBE: fld dword ptr [esp + 0x3c]
+    L_007F5CC2: fld st(0)
+    L_007F5CC4: fmulp st(2), st
+    L_007F5CC6: fld dword ptr [esp + 0x50]
+    L_007F5CCA: faddp st(2), st
+    L_007F5CCC: fxch st(1)
+    L_007F5CCE: fstp dword ptr [esp + 0x50]
+    L_007F5CD2: fld dword ptr [esp + 0x98]
+    L_007F5CD9: fmul st, st(1)
+    L_007F5CDB: fadd dword ptr [esp + 0x18]
+    L_007F5CDF: fstp dword ptr [esp + 0x18]
+    L_007F5CE3: fld dword ptr [esp + 0x28]
+    L_007F5CE7: fld st(0)
+    L_007F5CE9: fmul st, st(2)
+    L_007F5CEB: fadd dword ptr [esp + 0x38]
+    L_007F5CEF: fstp dword ptr [esp + 0x38]
+    L_007F5CF3: fld dword ptr [esp + 0x7c]
+    L_007F5CF7: fmul st, st(4)
+    L_007F5CF9: fstp dword ptr [esp + 0x28]
+    L_007F5CFD: fld st(4)
+    L_007F5CFF: fmulp st(1), st
+    L_007F5D01: fadd dword ptr [esp + 0x28]
+    L_007F5D05: fstp dword ptr [esp + 0x28]
+    L_007F5D09: fld dword ptr [esp + 0x28]
+    L_007F5D0D: fmul st, st(1)
+    L_007F5D0F: fadd dword ptr [esp + 0x4c]
+    L_007F5D13: fstp dword ptr [esp + 0x4c]
+    L_007F5D17: fld dword ptr [esp + 0x70]
+    L_007F5D1B: fld dword ptr [esp + 0x40]
+    L_007F5D1F: fld st(0)
+    L_007F5D21: fmulp st(2), st
+    L_007F5D23: fld dword ptr [esp + 0x30]
+    L_007F5D27: faddp st(2), st
+    L_007F5D29: fxch st(1)
+    L_007F5D2B: fstp dword ptr [esp + 0x30]
+    L_007F5D2F: fld dword ptr [esp + 0xc]
+    L_007F5D33: fld st(0)
+    L_007F5D35: fmulp st(2), st
+    L_007F5D37: fld dword ptr [esp + 0x20]
+    L_007F5D3B: faddp st(2), st
+    L_007F5D3D: fxch st(1)
+    L_007F5D3F: fstp dword ptr [esp + 0x20]
+    L_007F5D43: fld dword ptr [esp + 0x68]
+    L_007F5D47: fmul st, st(6)
+    L_007F5D49: fstp dword ptr [esp + 0xc]
+    L_007F5D4D: fld st(2)
+    L_007F5D4F: fmulp st(1), st
+    L_007F5D51: fadd dword ptr [esp + 0xc]
+    L_007F5D55: fstp dword ptr [esp + 0xc]
+    L_007F5D59: fld dword ptr [esp + 0xc]
+    L_007F5D5D: fmul dword ptr [esp + 0x40]
+    L_007F5D61: fadd dword ptr [esp + 0x24]
+    L_007F5D65: fstp dword ptr [esp + 0x24]
+    L_007F5D69: fld dword ptr [esp + 0x34]
+    L_007F5D6D: fmul st, st(2)
+    L_007F5D6F: fld dword ptr [esp + 0x60]
+    L_007F5D73: fmul st, st(6)
+    L_007F5D75: faddp st(1), st
+    L_007F5D77: fmulp st(1), st
+    L_007F5D79: fadd dword ptr [esp + 0x48]
+    L_007F5D7D: fstp dword ptr [esp + 0x48]
+    L_007F5D81: fld dword ptr [esp + 0x8c]
+    L_007F5D88: fmul st, st(3)
+    L_007F5D8A: fstp dword ptr [esp + 0xc]
+    L_007F5D8E: fld dword ptr [esp + 0xc]
+    L_007F5D92: fld qword ptr [mem_0093F7B0]
+    L_007F5D98: fmul st(1), st
+    L_007F5D9A: fld dword ptr [esp + 0x34]
+    L_007F5D9E: add dword ptr [esp + 0x5c], 0x14
+    L_007F5DA3: sub dword ptr [esp + 0x14], 0x1
+    L_007F5DA8: fmul st, st(4)
+    L_007F5DAA: faddp st(2), st
+    L_007F5DAC: fxch st(1)
+    L_007F5DAE: fstp dword ptr [esp + 0xc]
+    L_007F5DB2: fld dword ptr [esp + 0xc]
+    L_007F5DB6: fmul st, st(2)
+    L_007F5DB8: fld dword ptr [esp + 0x60]
+    L_007F5DBC: fmul st, st(5)
+    L_007F5DBE: fld dword ptr [esp + 0x7c]
+    L_007F5DC2: fmul st, st(3)
+    L_007F5DC4: faddp st(1), st
+    L_007F5DC6: fstp dword ptr [esp + 0xc]
+    L_007F5DCA: fld dword ptr [esp + 0xc]
+    L_007F5DCE: fmul st, st(6)
+    L_007F5DD0: faddp st(1), st
+    L_007F5DD2: fmul dword ptr [esp + 0x3c]
+    L_007F5DD6: fadd dword ptr [esp + 0x1c]
+    L_007F5DDA: fstp dword ptr [esp + 0x1c]
+    L_007F5DDE: fld dword ptr [esp + 0xa0]
+    L_007F5DE5: fld qword ptr [mem_00993840]
+    L_007F5DEB: fmul st(1), st
+    L_007F5DED: fld st(6)
+    L_007F5DEF: fmulp st(2), st
+    L_007F5DF1: fld dword ptr [esp + 0x10]
+    L_007F5DF5: fmulp st(3), st
+    L_007F5DF7: fxch st(1)
+    L_007F5DF9: faddp st(2), st
+    L_007F5DFB: fld st(2)
+    L_007F5DFD: fadd st(0), st
+    L_007F5DFF: fmul dword ptr [esp + 0x54]
+    L_007F5E03: faddp st(2), st
+    L_007F5E05: fld dword ptr [esp + 0x68]
+    L_007F5E09: fld st(0)
+    L_007F5E0B: faddp st(3), st
+    L_007F5E0D: fxch st(2)
+    L_007F5E0F: fstp dword ptr [esp + 0xc]
+    L_007F5E13: fld dword ptr [esp + 0xc]
+    L_007F5E17: fmulp st(5), st
+    L_007F5E19: fld dword ptr [esp + 0xa0]
+    L_007F5E20: fld qword ptr [mem_0092C510]
+    L_007F5E26: fmul st(1), st
+    L_007F5E28: fxch st(1)
+    L_007F5E2A: fmulp st(7), st
+    L_007F5E2C: fld dword ptr [esp + 0x10]
+    L_007F5E30: faddp st(7), st
+    L_007F5E32: fxch st(3)
+    L_007F5E34: fmul st, st(1)
+    L_007F5E36: fmul dword ptr [esp + 0x54]
+    L_007F5E3A: faddp st(6), st
+    L_007F5E3C: fxch st(1)
+    L_007F5E3E: fmul qword ptr [mem_0093F7B0]
+    L_007F5E44: faddp st(5), st
+    L_007F5E46: fxch st(4)
+    L_007F5E48: fstp dword ptr [esp + 0xc]
+    L_007F5E4C: fld dword ptr [esp + 0xc]
+    L_007F5E50: fmulp st(2), st
+    L_007F5E52: fxch st(2)
+    L_007F5E54: faddp st(1), st
+    L_007F5E56: fmul dword ptr [esp + 0x40]
+    L_007F5E5A: fadd dword ptr [esp + 0x2c]
+    L_007F5E5E: fstp dword ptr [esp + 0x2c]
+    L_007F5E62: jne L_007F5B81
+    L_007F5E68: mov ebx, dword ptr [ebp + 0x8]
+    L_007F5E6B: jmp L_007F5E73
+    L_007F5E6D: fld qword ptr [mem_0092C510]
+    L_007F5E73: fld dword ptr [esp + 0x50]
+    L_007F5E77: fmul qword ptr [mem_00993828]
+    L_007F5E7D: fstp dword ptr [esp + 0x50]
+    L_007F5E81: fld dword ptr [esp + 0x18]
+    L_007F5E85: fdiv qword ptr [mem_00999B40]
+    L_007F5E8B: fstp dword ptr [esp + 0x18]
+    L_007F5E8F: fld dword ptr [esp + 0x38]
+    L_007F5E93: fdiv qword ptr [mem_009548E0]
+    L_007F5E99: fstp dword ptr [esp + 0x38]
+    L_007F5E9D: fld dword ptr [esp + 0x4c]
+    L_007F5EA1: fdiv qword ptr [mem_00996628]
+    L_007F5EA7: fstp dword ptr [esp + 0x4c]
+    L_007F5EAB: fld dword ptr [esp + 0x30]
+    L_007F5EAF: fdiv qword ptr [mem_0099EDD8]
+    L_007F5EB5: fstp dword ptr [esp + 0x30]
+    L_007F5EB9: fld dword ptr [esp + 0x20]
+    L_007F5EBD: fdiv qword ptr [mem_0099EDD0]
+    L_007F5EC3: fstp dword ptr [esp + 0x20]
+    L_007F5EC7: fld dword ptr [esp + 0x24]
+    L_007F5ECB: fdiv qword ptr [mem_0099EDC8]
+    L_007F5ED1: fstp dword ptr [esp + 0x24]
+    L_007F5ED5: fld dword ptr [esp + 0x48]
+    L_007F5ED9: fdiv qword ptr [mem_0099EDC0]
+    L_007F5EDF: fstp dword ptr [esp + 0x48]
+    L_007F5EE3: fld dword ptr [esp + 0x1c]
+    L_007F5EE7: fdiv qword ptr [mem_0099EDB8]
+    L_007F5EED: fstp dword ptr [esp + 0x1c]
+    L_007F5EF1: fld dword ptr [esp + 0x2c]
+    L_007F5EF5: fdiv qword ptr [mem_0099EDB0]
+    L_007F5EFB: fstp dword ptr [esp + 0x2c]
+    L_007F5EFF: fld dword ptr [esi + 4*eax]
+    L_007F5F02: fld1
+    L_007F5F04: fdivrp st(1), st
+    L_007F5F06: fstp dword ptr [esp + 0xc]
+    L_007F5F0A: fld dword ptr [esp + 0xc]
+    L_007F5F0E: fld st(0)
+    L_007F5F10: fmul st(0), st
+    L_007F5F12: fstp dword ptr [esp + 0x10]
+    L_007F5F16: fld dword ptr [esp + 0x10]
+    L_007F5F1A: fmul st, st(1)
+    L_007F5F1C: fstp dword ptr [esp + 0x14]
+    L_007F5F20: fld st(0)
+    L_007F5F22: fld dword ptr [esp + 0x38]
+    L_007F5F26: fld st(0)
+    L_007F5F28: fmulp st(2), st
+    L_007F5F2A: fxch st(1)
+    L_007F5F2C: fstp dword ptr [esp + 0xc]
+    L_007F5F30: fld st(1)
+    L_007F5F32: fmul dword ptr [esp + 0x20]
+    L_007F5F36: fstp dword ptr [esp + 0x28]
+    L_007F5F3A: fld dword ptr [esi + 4*edx]
+    L_007F5F3D: fmul st, st(3)
+    L_007F5F3F: fmul dword ptr [esi + 4*edi]
+    L_007F5F42: fst qword ptr [esp + 0x98]
+    L_007F5F49: fld dword ptr [esi + 4*edx]
+    L_007F5F4C: fmul st(0), st
+    L_007F5F4E: fld dword ptr [esi + 4*edi]
+    L_007F5F51: fmul st(0), st
+    L_007F5F53: fst qword ptr [esp + 0xa0]
+    L_007F5F5A: fxch st(3)
+    L_007F5F5C: fmul st, st(1)
+    L_007F5F5E: fld dword ptr [esp + 0x48]
+    L_007F5F62: fmulp st(3), st
+    L_007F5F64: faddp st(2), st
+    L_007F5F66: fld dword ptr [esp + 0x20]
+    L_007F5F6A: fmul st, st(3)
+    L_007F5F6C: faddp st(2), st
+    L_007F5F6E: fxch st(1)
+    L_007F5F70: fstp qword ptr [esp + 0x70]
+    L_007F5F74: fld dword ptr [esi + 4*edi]
+    L_007F5F77: fmul dword ptr [esp + 0x30]
+    L_007F5F7B: fld dword ptr [esi + 4*edx]
+    L_007F5F7E: fmul dword ptr [esp + 0x18]
+    L_007F5F82: faddp st(1), st
+    L_007F5F84: fstp qword ptr [esp + 0x90]
+    L_007F5F8B: fld dword ptr [esp + 0x50]
+    L_007F5F8F: fld dword ptr [esp + 0x80]
+    L_007F5F96: fld st(0)
+    L_007F5F98: fmulp st(2), st
+    L_007F5F9A: fxch st(1)
+    L_007F5F9C: fst qword ptr [esp + 0x40]
+    L_007F5FA0: fld qword ptr [esp + 0x90]
+    L_007F5FA7: fmulp st(6), st
+    L_007F5FA9: faddp st(5), st
+    L_007F5FAB: fld st(0)
+    L_007F5FAD: fmulp st(5), st
+    L_007F5FAF: fxch st(4)
+    L_007F5FB1: fadd qword ptr [esp + 0x70]
+    L_007F5FB5: fmul dword ptr [esp + 0x14]
+    L_007F5FB9: fstp dword ptr [esp + 0x3c]
+    L_007F5FBD: fld st(2)
+    L_007F5FBF: fld dword ptr [esp + 0x4c]
+    L_007F5FC3: fld st(0)
+    L_007F5FC5: fmulp st(2), st
+    L_007F5FC7: fxch st(1)
+    L_007F5FC9: fstp dword ptr [esp + 0x60]
+    L_007F5FCD: fld st(3)
+    L_007F5FCF: fmul dword ptr [esp + 0x24]
+    L_007F5FD3: fstp dword ptr [esp + 0x34]
+    L_007F5FD7: fxch st(4)
+    L_007F5FD9: fst qword ptr [esp + 0x80]
+    L_007F5FE0: fld dword ptr [esi + 4*edx]
+    L_007F5FE3: fmul st, st(2)
+    L_007F5FE5: fmulp st(5), st
+    L_007F5FE7: fld st(1)
+    L_007F5FE9: fmul st, st(6)
+    L_007F5FEB: fmul dword ptr [esi + 4*edi]
+    L_007F5FEE: fmul dword ptr [esp + 0x1c]
+    L_007F5FF2: faddp st(5), st
+    L_007F5FF4: fld dword ptr [esi + 4*edx]
+    L_007F5FF7: fmul st, st(6)
+    L_007F5FF9: fmul st, st(3)
+    L_007F5FFB: fmul dword ptr [esp + 0x2c]
+    L_007F5FFF: faddp st(5), st
+    L_007F6001: fld dword ptr [esi + 4*edi]
+    L_007F6004: fmulp st(3), st
+    L_007F6006: fld dword ptr [esp + 0x24]
+    L_007F600A: fmulp st(3), st
+    L_007F600C: fxch st(4)
+    L_007F600E: faddp st(2), st
+    L_007F6010: fld st(3)
+    L_007F6012: fmul st, st(5)
+    L_007F6014: fmul qword ptr [esp + 0x70]
+    L_007F6018: faddp st(2), st
+    L_007F601A: fld qword ptr [esp + 0x90]
+    L_007F6021: fmul st, st(5)
+    L_007F6023: fadd qword ptr [esp + 0x40]
+    L_007F6027: fld qword ptr [esp + 0x80]
+    L_007F602E: fmul st(0), st
+    L_007F6030: fmulp st(1), st
+    L_007F6032: faddp st(2), st
+    L_007F6034: fld dword ptr [esp + 0x14]
+    L_007F6038: fld st(0)
+    L_007F603A: fmul st, st(4)
+    L_007F603C: fstp dword ptr [esp + 0x80]
+    L_007F6043: fld dword ptr [esp + 0x80]
+    L_007F604A: fchs
+    L_007F604C: fmulp st(3), st
+    L_007F604E: fxch st(2)
+    L_007F6050: fstp dword ptr [esp + 0x80]
+    L_007F6057: fld st(2)
+    L_007F6059: fmul dword ptr [esp + 0x1c]
+    L_007F605D: fstp dword ptr [esp + 0x70]
+    L_007F6061: fld dword ptr [esp + 0x10]
+    L_007F6065: fchs
+    L_007F6067: fstp dword ptr [esp + 0x14]
+    L_007F606B: fld dword ptr [esi + 4*edi]
+    L_007F606E: fmul dword ptr [esp + 0x24]
+    L_007F6072: fld dword ptr [esi + 4*edx]
+    L_007F6075: fmul dword ptr [esp + 0x2c]
+    L_007F6079: faddp st(1), st
+    L_007F607B: fld dword ptr [esp + 0x20]
+    L_007F607F: fmul st, st(5)
+    L_007F6081: faddp st(1), st
+    L_007F6083: fmul dword ptr [esp + 0x14]
+    L_007F6087: fstp dword ptr [esp + 0x10]
+    L_007F608B: fld dword ptr [esi + 4*edi]
+    L_007F608E: fmul dword ptr [esp + 0x48]
+    L_007F6092: fld dword ptr [esi + 4*edx]
+    L_007F6095: fmul dword ptr [esp + 0x38]
+    L_007F6099: faddp st(1), st
+    L_007F609B: fadd st(0), st
+    L_007F609D: test edx, edx
+    L_007F609F: fld dword ptr [esp + 0x18]
+    L_007F60A3: fmul st, st(5)
+    L_007F60A5: faddp st(1), st
+    L_007F60A7: fmulp st(4), st
+    L_007F60A9: fmul dword ptr [esp + 0x4c]
+    L_007F60AD: fld dword ptr [esp + 0x1c]
+    L_007F60B1: fmul qword ptr [esp + 0x98]
+    L_007F60B8: faddp st(1), st
+    L_007F60BA: fld dword ptr [esp + 0x2c]
+    L_007F60BE: fmul qword ptr [esp + 0xa0]
+    L_007F60C5: faddp st(1), st
+    L_007F60C7: faddp st(3), st
+    L_007F60C9: fmulp st(2), st
+    L_007F60CB: fxch st(1)
+    L_007F60CD: fstp dword ptr [esp + 0x98]
+    L_007F60D4: jne L_007F60DC
+    L_007F60D6: fmul dword ptr [esp + 0x18]
+    L_007F60DA: jmp L_007F60F7
+    L_007F60DC: test edi, edi
+    L_007F60DE: jne L_007F60E6
+    L_007F60E0: fmul dword ptr [esp + 0x30]
+    L_007F60E4: jmp L_007F60F7
+    L_007F60E6: fstp st(0)
+    L_007F60E8: fld qword ptr [esp + 0x40]
+    L_007F60EC: fadd qword ptr [esp + 0x90]
+    L_007F60F3: fmul dword ptr [esp + 0x14]
+    L_007F60F7: fstp dword ptr [esp + 0x40]
+    L_007F60FB: mov ecx, dword ptr [ebp + 0xc]
+    L_007F60FE: fld dword ptr [esp + 0x40]
+    L_007F6102: add dword ptr [esp + 0x6c], 0xc
+    L_007F6107: fmul dword ptr [esi]
+    L_007F6109: fadd dword ptr [esp + 0x78]
+    L_007F610D: fstp dword ptr [esp + 0x78]
+    L_007F6111: fld dword ptr [esi + 4*edx]
+    L_007F6114: fmul dword ptr [esp + 0xc]
+    L_007F6118: fadd dword ptr [ecx + 4*edx]
+    L_007F611B: fstp dword ptr [ecx + 4*edx]
+    L_007F611E: fld dword ptr [esi + 4*edi]
+    L_007F6121: fmul dword ptr [esp + 0x28]
+    L_007F6125: fadd dword ptr [ecx + 4*edi]
+    L_007F6128: fstp dword ptr [ecx + 4*edi]
+    L_007F612B: fld dword ptr [esp + 0x3c]
+    L_007F612F: fmul dword ptr [esi + 4*eax]
+    L_007F6132: fadd dword ptr [ecx + 4*eax]
+    L_007F6135: fstp dword ptr [ecx + 4*eax]
+    L_007F6138: mov ecx, dword ptr [ebp + 0x10]
+    L_007F613B: fld dword ptr [esp + 0x60]
+    L_007F613F: fmul dword ptr [esi + 4*edx]
+    L_007F6142: fadd dword ptr [ecx + 4*edx]
+    L_007F6145: fstp dword ptr [ecx + 4*edx]
+    L_007F6148: fld dword ptr [esi + 4*edi]
+    L_007F614B: fmul dword ptr [esp + 0x34]
+    L_007F614F: fadd dword ptr [ecx + 4*edi]
+    L_007F6152: fstp dword ptr [ecx + 4*edi]
+    L_007F6155: fld dword ptr [esp + 0x80]
+    L_007F615C: fmul dword ptr [esi + 4*eax]
+    L_007F615F: fadd dword ptr [ecx + 4*eax]
+    L_007F6162: fstp dword ptr [ecx + 4*eax]
+    L_007F6165: mov ecx, dword ptr [ebp + 0x14]
+    L_007F6168: fld dword ptr [esp + 0x70]
+    L_007F616C: fmul dword ptr [esi + 4*edx]
+    L_007F616F: fadd dword ptr [ecx + 4*edx]
+    L_007F6172: fstp dword ptr [ecx + 4*edx]
+    L_007F6175: fld dword ptr [esi + 4*edi]
+    L_007F6178: fmul dword ptr [esp + 0x10]
+    L_007F617C: fadd dword ptr [ecx + 4*edi]
+    L_007F617F: fstp dword ptr [ecx + 4*edi]
+    L_007F6182: fld dword ptr [esp + 0x98]
+    L_007F6189: fmul dword ptr [esi + 4*eax]
+    L_007F618C: fadd dword ptr [ecx + 4*eax]
+    L_007F618F: fstp dword ptr [ecx + 4*eax]
+    L_007F6192: mov eax, dword ptr [esp + 0x58]
+    L_007F6196: add eax, 0x1
+    L_007F6199: cmp eax, dword ptr [ebx + 0x1c]
+    L_007F619C: mov dword ptr [esp + 0x58], eax
+    L_007F61A0: jl L_007F5AA0
+    L_007F61A6: fld qword ptr [mem_00993828]
+    L_007F61AC: mov edx, dword ptr [ebp + 0xc]
+    L_007F61AF: mov eax, ecx
+    L_007F61B1: mov ecx, dword ptr [ebp + 0x10]
+    L_007F61B4: fld dword ptr [edx]
+    L_007F61B6: pop edi
+    L_007F61B7: fmul st, st(1)
+    L_007F61B9: pop esi
+    L_007F61BA: pop ebx
+    L_007F61BB: fstp dword ptr [edx]
+    L_007F61BD: fld dword ptr [edx + 0x4]
+    L_007F61C0: fmul st, st(1)
+    L_007F61C2: fstp dword ptr [edx + 0x4]
+    L_007F61C5: fld dword ptr [edx + 0x8]
+    L_007F61C8: fmul st, st(1)
+    L_007F61CA: fstp dword ptr [edx + 0x8]
+    L_007F61CD: fld dword ptr [ecx]
+    L_007F61CF: fdiv st, st(2)
+    L_007F61D1: fstp dword ptr [ecx]
+    L_007F61D3: fld dword ptr [ecx + 0x4]
+    L_007F61D6: fdiv st, st(2)
+    L_007F61D8: fstp dword ptr [ecx + 0x4]
+    L_007F61DB: fld dword ptr [ecx + 0x8]
+    L_007F61DE: fdivrp st(2), st
+    L_007F61E0: fxch st(1)
+    L_007F61E2: fstp dword ptr [ecx + 0x8]
+    L_007F61E5: fld dword ptr [eax]
+    L_007F61E7: fmul st, st(1)
+    L_007F61E9: fstp dword ptr [eax]
+    L_007F61EB: fld dword ptr [eax + 0x4]
+    L_007F61EE: fmul st, st(1)
+    L_007F61F0: fstp dword ptr [eax + 0x4]
+    L_007F61F3: fmul dword ptr [eax + 0x8]
+    L_007F61F6: fstp dword ptr [eax + 0x8]
+    L_007F61F9: fld dword ptr [esp + 0x6c]
+    L_007F61FD: mov esp, ebp
+    L_007F61FF: pop ebp
+    L_007F6200: ret
+    }
+}
