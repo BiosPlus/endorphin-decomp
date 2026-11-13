@@ -23,5 +23,7 @@
     "0x008705F9",
     "0x0087060E"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-13T10:22:44Z"
 }
