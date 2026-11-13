@@ -4807,3 +4807,23 @@ L_00648020_join:
         ret 0x10
     }
 }
+
+// [0x00640CB0] sub_00640CB0 (30 bytes)
+extern "C" void ext_006408F0();
+extern "C" void ext_00640940();
+extern "C" __declspec(naked) void __fastcall fn_00640CB0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        add dword ptr [esi + 0xc], 1
+        test byte ptr [esi], 1
+        jne short L_00640CCC
+        call ext_00640940
+        mov ecx, esi
+        call ext_006408F0
+        mov byte ptr [esi + 0x10], 0
+    L_00640CCC:
+        pop esi
+        ret
+    }
+}
