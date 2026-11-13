@@ -5827,3 +5827,70 @@ extern "C" __declspec(naked) void __fastcall fn_00541940(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00540E40] sub_00540E40 (181 bytes)
+extern "C" void ext_00548150();
+extern "C" int mem_00925414;
+extern "C" int mem_009253D4;
+extern "C" int mem_00956054;
+extern "C" int mem_009253C8;
+extern "C" int mem_0092546C;
+extern "C" int mem_00955998;
+extern "C" int mem_00925520;
+extern "C" int mem_0092552C;
+extern "C" int mem_00925404;
+
+extern "C" __declspec(naked) void __fastcall fn_00540E40(void* self) {
+    __asm {
+        sub esp, 0x40
+        push esi
+        mov esi, ecx
+        call dword ptr [mem_00925414]
+        call dword ptr [mem_009253D4]
+        fld1
+        mov ecx, dword ptr [esi]
+        fst dword ptr [esp + 0x4]
+        fldz
+        lea eax, [esp + 0x4]
+        fst dword ptr [esp + 0x8]
+        push eax
+        fst dword ptr [esp + 0x10]
+        fst dword ptr [esp + 0x14]
+        fst dword ptr [esp + 0x18]
+        fst dword ptr [esp + 0x20]
+        fst dword ptr [esp + 0x24]
+        fst dword ptr [esp + 0x28]
+        fst dword ptr [esp + 0x2c]
+        fst dword ptr [esp + 0x34]
+        fst dword ptr [esp + 0x38]
+        fst dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x40]
+        fst dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0x30]
+        fstp dword ptr [esp + 0x44]
+        call ext_00548150
+        fld dword ptr [mem_00956054]
+        lea ecx, [esp + 0x4]
+        fst dword ptr [esp + 0x34]
+        push ecx
+        fst dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x40]
+        call dword ptr [mem_009253C8]
+        push 4
+        call dword ptr [mem_0092546C]
+        fld dword ptr [mem_00955998]
+        push ecx
+        fstp dword ptr [esp]
+        call dword ptr [mem_00925520]
+        mov edx, dword ptr [esi + 0x18]
+        mov eax, dword ptr [edx + 0x58]
+        lea ecx, [esi + 0x18]
+        push 1
+        call eax
+        call dword ptr [mem_0092552C]
+        call dword ptr [mem_00925404]
+        pop esi
+        add esp, 0x40
+        ret
+    }
+}
