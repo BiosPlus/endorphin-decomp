@@ -2363,3 +2363,144 @@ extern "C" __declspec(naked) void __fastcall fn_004CA3E0(void* self) {
         ret
     }
 }
+
+// [0x004C53E0] sub_004C53E0 (372 bytes)
+extern "C" int mem_009453D8;
+extern "C" int mem_0092A270;
+extern "C" __declspec(naked) void __fastcall fn_004C53E0(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        sub esp, 0x1c
+        fld dword ptr [esp + 0x28]
+        push esi
+        fld dword ptr [esp + 0x28]
+        mov esi, ecx
+        fld dword ptr [esp + 0x30]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        _emit 0xde
+        _emit 0xc1
+        call ext_006A7250
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esp + 0x4]
+        fcomp qword ptr [mem_009453D8]
+        fnstsw ax
+        test ah, 0x41
+        mov eax, dword ptr [esi + 0x10]
+        fld dword ptr [eax]
+        jp L_4C543A
+        mov ecx, dword ptr [esp + 0x24]
+        fstp dword ptr [ecx]
+        pop esi
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [ecx + 0x4]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [ecx + 0x8]
+        add esp, 0x1c
+        ret 0x10
+    L_4C543A:
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [eax + 0x4]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x8]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x10]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp + 0x4]
+        lea ecx, [esp + 0x8]
+        call ext_0067B7F0
+        fld dword ptr [esp + 0x10]
+        fld st(0)
+        fld dword ptr [esp + 0x2c]
+        fld st(0)
+        fmulp st(2), st
+        fld dword ptr [esp + 0xc]
+        fld st(0)
+        fld dword ptr [esp + 0x30]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(4)
+        _emit 0xde
+        _emit 0xe1
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x8]
+        fld st(0)
+        fmulp st(4), st
+        fld dword ptr [esp + 0x28]
+        fld st(0)
+        fmulp st(6), st
+        fxch st(4)
+        _emit 0xde
+        _emit 0xe5
+        fxch st(4)
+        fstp dword ptr [esp + 0x18]
+        fmulp st(2), st
+        fmulp st(2), st
+        _emit 0xde
+        _emit 0xe1
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x1c]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [esp + 0x28]
+        fmul dword ptr [esi + 0x14]
+        fadd qword ptr [mem_0092A270]
+        fmul dword ptr [esp + 0x4]
+        fstp dword ptr [esp + 0x28]
+        fldz
+        fld dword ptr [esp + 0x28]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp L_4C5517
+        fstp st(0)
+        fstp dword ptr [esp + 0x28]
+        fld dword ptr [esp + 0x28]
+        jmp L_4C5519
+    L_4C5517:
+        fstp st(1)
+    L_4C5519:
+        fld dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x24]
+        fmul st, st(1)
+        pop esi
+        fstp dword ptr [esp + 0x24]
+        fld dword ptr [esp + 0x8]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x28]
+        fmul dword ptr [esp + 0xc]
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x24]
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x28]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x2c]
+        fstp dword ptr [eax + 0x8]
+        add esp, 0x1c
+        ret 0x10
+    }
+}
