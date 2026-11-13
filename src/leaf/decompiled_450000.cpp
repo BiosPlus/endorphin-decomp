@@ -7998,3 +7998,27 @@ extern "C" void __fastcall fn_0045C5C0(void* self, int edx_unused, int a1, int a
     ext_0045C2D0(self, edx_unused, a1, a2);
     mem_0092568C(*(void**)((char*)self + 0x20));
 }
+
+// [0x0045C5F0] sub_0045C5F0 (43 bytes)
+extern "C" void ext_0045C5C0();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_0045C5F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push 0xffff0000
+        push 0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x20]
+        push 0x1101
+        push eax
+        call dword ptr [mem_00925694]
+        mov ecx, dword ptr [esp + 0x8]
+        push 0
+        push ecx
+        mov ecx, esi
+        call ext_0045C5C0
+        pop esi
+        ret 4
+    }
+}
