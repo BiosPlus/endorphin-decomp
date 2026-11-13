@@ -16,5 +16,7 @@
     "0x007C7214",
     "0x007C722A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T11:09:37Z"
 }

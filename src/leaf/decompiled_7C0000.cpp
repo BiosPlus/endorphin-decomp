@@ -7616,3 +7616,16 @@ extern "C" void __cdecl fn_007C66A0(void* self) {
         }
     }
 }
+
+// [0x007C7200] sub_007C7200 (56 bytes)
+extern "C" void ext_007C66A0();
+extern "C" void ext_007C6780();
+extern "C" void ext_007D4B90();
+extern "C" int __cdecl fn_007C7200(void* self) {
+    char* p = (char*)self;
+    if (((int (__cdecl*)(void*))ext_007C6780)(p)) {
+        ((void (__cdecl*)(void*))ext_007C66A0)(p);
+    }
+    ((void (__cdecl*)(int, void*))ext_007D4B90)(*(int*)(p + 0x17c), p + 0x184);
+    return 1;
+}
