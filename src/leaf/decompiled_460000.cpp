@@ -8095,3 +8095,40 @@ extern "C" __declspec(naked) void __fastcall fn_00461470(void* self) {
         ret
     }
 }
+
+// [0x00466450] sub_00466450 (75 bytes)
+extern "C" void ext_004658E0();
+extern "C" void ext_00465DC0();
+extern "C" void ext_00465E00();
+extern "C" void ext_00465E80();
+extern "C" void ext_00465EA0();
+extern "C" void ext_00466220();
+extern "C" void ext_00465950();
+extern "C" int mem_00924FE4;
+extern "C" __declspec(naked) void __fastcall fn_00466450(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_00465DC0
+        mov ecx, esi
+        call ext_00466220
+        mov ecx, esi
+        call ext_004658E0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp+0x20], esp
+        push 0x928b5d
+        call dword ptr [mem_00924FE4]
+        mov ecx, esi
+        call ext_00465E00
+        mov ecx, esi
+        call ext_00465E80
+        mov ecx, esi
+        call ext_00465EA0
+        mov ecx, esi
+        pop esi
+        add esp, 4
+        jmp ext_00465950
+    }
+}
