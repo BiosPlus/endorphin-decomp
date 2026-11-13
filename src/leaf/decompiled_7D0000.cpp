@@ -17215,3 +17215,23 @@ extern "C" __declspec(naked) void __cdecl fn_007D5C80(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x007D5A00] sub_007D5A00 (54 bytes)
+extern "C" void __cdecl fn_007D5C80(void* a1, void* a2);
+
+extern "C" void __cdecl fn_007D5A00(void* a1, void* a2) {
+    char* b = (char*)a2;
+    void* cur = *(void**)(b + 0x34);
+    if (cur) {
+        void* next;
+        do {
+            next = *(void**)((char*)cur + 0x2c);
+            fn_007D5C80(a1, cur);
+            cur = next;
+        } while (cur);
+    }
+    void* p = *(void**)b;
+    if (p) {
+        ((void (__cdecl*)(void*))ext_007CC9E0)(p);
+    }
+}
