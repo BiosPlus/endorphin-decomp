@@ -4380,3 +4380,26 @@ extern "C" void __fastcall fn_005EEB90(void* self, int edx_unused, int a1) {
     p.b = 0.0f;
     ((void (__thiscall *)(void*, Pair_005EEB90*))ext_00412690)((char*)self + 0x168, &p);
 }
+
+extern "C" void ext_005DFF60();
+extern "C" int mem_00924FE0;
+
+// [0x005E0130] sub_005E0130 (40 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005E0130(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        push esi
+        push eax
+        sub esp, 0x1c
+        mov esi, ecx
+        mov ecx, esp
+        mov dword ptr [esp + 0x28], esp
+        push edx
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esi + 0x4]
+        call ext_005DFF60
+        pop esi
+        ret 0x8
+    }
+}
