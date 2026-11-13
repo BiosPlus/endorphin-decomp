@@ -6964,3 +6964,23 @@ extern "C" __declspec(naked) void __fastcall fn_004035D0(void* self) {
         ret 4
     }
 }
+
+// [0x004043B0] sub_004043B0 (186 bytes)
+extern "C" void ext_004035D0(); extern "C" void ext_006A3442(); extern "C" void ext_006A3460(); extern "C" void ext_006A3466(); extern "C" void ext_006A3484(); extern "C" void ext_006A3496(); extern "C" void ext_006A34A2(); extern "C" void ext_006A34A8(); extern "C" int mem_00924300;
+
+extern "C" int __fastcall fn_004043B0(void* self) {
+    char* p = (char*)self;
+    ((void (__stdcall*)())ext_006A3466)();
+    int hr = ((int (__stdcall*)(void*, const char*, unsigned int, void*))ext_006A3460)(p + 0x47c, (*(const char* (__thiscall**)(void*))(&mem_00924300))(p + 0x478), 2, 0);
+    ((void (__thiscall*)(void*, int))ext_004035D0)(self, hr);
+    hr = ((int (__stdcall*)(void*, void*, unsigned int, int))ext_006A34A8)(*(void**)(p + 0x47c), p + 0x480, 0x73646976, 0);
+    ((void (__thiscall*)(void*, int))ext_004035D0)(self, hr);
+    *(void**)(p + 0x57c) = ((void* (__stdcall*)(void*, void*))ext_006A3484)(*(void**)(p + 0x480), 0);
+    ((int (__stdcall*)(void*, void*, int))ext_006A34A2)(*(void**)(p + 0x47c), p + 0x484, 0x6c);
+    ((int (__stdcall*)(void*, void*, int))ext_006A3496)(*(void**)(p + 0x480), p + 0x4f0, 0x8c);
+    *(int*)(p + 0x46c) = *(int*)(p + 0x498);
+    *(int*)(p + 0x470) = *(int*)(p + 0x49c);
+    *(int*)(p + 0x474) = *(int*)(p + 0x4a8);
+    ((void* (__stdcall*)(void*, int))ext_006A3442)(*(void**)(p + 0x57c), 0);
+    return 0;
+}
