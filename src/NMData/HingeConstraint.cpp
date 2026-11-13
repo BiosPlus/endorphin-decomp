@@ -397,3 +397,62 @@ L_store:
         ret 4
     }
 }
+
+// [0x00612980] NMData::HingeConstraint::vfunc_68 (152 bytes)
+extern "C" void ext_0067DAD0();
+extern "C" void ext_00694B60();
+extern "C" int mem_00B40640;
+extern "C" double mem_00993830;
+
+extern "C" __declspec(naked) float* __fastcall fn_00612980(void* self, int edx_unused, float* out) {
+    __asm {
+        sub esp, 0x30
+        fldz
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [mem_00B40640]
+        fst dword ptr [esp + 0x8]
+        mov eax, dword ptr [eax + 0x8]
+        fst dword ptr [esp + 0x4]
+        add ecx, 0x4
+        fstp dword ptr [esp]
+        push edx
+        call eax
+        fldz
+        fst dword ptr [esp + 0x14]
+        lea ecx, [esp + 0xc]
+        fst dword ptr [esp + 0x10]
+        push ecx
+        fst dword ptr [esp + 0x24]
+        mov ecx, eax
+        fst dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0x2c]
+        fstp dword ptr [esp + 0x28]
+        fld1
+        fst dword ptr [esp + 0x10]
+        fst dword ptr [esp + 0x20]
+        fstp dword ptr [esp + 0x30]
+        call ext_0067DAD0
+        lea edx, [esp]
+        push edx
+        push 0x0
+        lea ecx, [esp + 0x14]
+        call ext_00694B60
+        fldz
+        mov eax, dword ptr [esp + 0x34]
+        fst dword ptr [eax + 0x8]
+        fst dword ptr [eax + 0x4]
+        fstp dword ptr [eax]
+        fld dword ptr [esp]
+        fld qword ptr [mem_00993830]
+        fmul st(1), st
+        fxch st(1)
+        fstp dword ptr [eax]
+        fld dword ptr [esp + 0x4]
+        fmul st, st(1)
+        fstp dword ptr [eax + 0x4]
+        fmul dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0x8]
+        add esp, 0x30
+        ret 0x4
+    }
+}
