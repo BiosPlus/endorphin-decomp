@@ -3136,3 +3136,39 @@ extern "C" void* __fastcall fn_004A66D0(void* self, int edx_unused, void* a1) {
     *(void**)(s + 0x258) = eax;
     return eax;
 }
+
+// [0x004AEC10] sub_004AEC10 (76 bytes)
+extern "C" void ext_00494000();
+extern "C" void ext_004B07E0();
+extern "C" __declspec(naked) void __fastcall fn_004AEC10(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        sub esp, 0x18
+        push esi
+        push 0
+        push 0
+        mov esi, ecx
+        push -1
+        lea ecx, [esp + 0x10]
+        call ext_00494000
+        push 0
+        push 0
+        push -1
+        lea ecx, [esp + 0x1c]
+        call ext_00494000
+        mov edx, dword ptr [esp + 0x28]
+        lea eax, [esp + 0x4]
+        push eax
+        mov eax, dword ptr [esp + 0x24]
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, dword ptr [esp + 0x2c]
+        push edx
+        push eax
+        push ecx
+        mov ecx, dword ptr [esi + 0x4]
+        call ext_004B07E0
+        pop esi
+        add esp, 0x18
+        ret 0xc
+    }
+}
