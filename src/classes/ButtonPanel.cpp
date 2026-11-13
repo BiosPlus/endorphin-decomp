@@ -344,3 +344,168 @@ extern "C" __declspec(naked) void __fastcall fn_00455070(void* self) {
         ret 0x14
     }
 }
+
+extern "C" void ext_006A6532();
+
+// [0x00456960] ButtonPanel::vfunc_95 (488 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00456960(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x100
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_006A5EDE
+        mov edi, dword ptr [eax + 0x4]
+        mov ecx, esi
+        call ext_006A5EC0
+        push eax
+        mov eax, dword ptr [esp + 0x114]
+        push eax
+        lea ecx, [esp + 0x14]
+        push 0x936f44
+        push ecx
+        call dword ptr [mem_009256AC]
+        mov edx, dword ptr [esi + 0x9c]
+        mov ebx, dword ptr [esi + 0xb4]
+        add esp, 0x10
+        push edx
+        push 0x936f38
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, edi
+        call ext_006A6532
+        cmp ebx, eax
+        jle L1
+        mov eax, ebx
+        jmp L2
+    L1:
+        mov ecx, dword ptr [esi + 0x9c]
+        push ecx
+        push 0x936f38
+        lea edx, [esp + 0x14]
+        push edx
+        mov ecx, edi
+        call ext_006A6532
+    L2:
+        mov ebx, dword ptr [esi + 0xb8]
+        mov dword ptr [esi + 0x9c], eax
+        mov eax, dword ptr [esi + 0xa0]
+        push eax
+        push 0x936f2c
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, edi
+        call ext_006A6532
+        cmp ebx, eax
+        jle L3
+        mov eax, ebx
+        jmp L4
+    L3:
+        mov edx, dword ptr [esi + 0xa0]
+        push edx
+        push 0x936f2c
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, edi
+        call ext_006A6532
+    L4:
+        mov ecx, dword ptr [esi + 0xa4]
+        mov ebx, dword ptr [esi + 0xbc]
+        push ecx
+        push 0x936f20
+        lea edx, [esp + 0x14]
+        push edx
+        mov ecx, edi
+        mov dword ptr [esi + 0xa0], eax
+        call ext_006A6532
+        cmp ebx, eax
+        jle L5
+        mov eax, ebx
+        jmp L6
+    L5:
+        mov eax, dword ptr [esi + 0xa4]
+        push eax
+        push 0x936f20
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, edi
+        call ext_006A6532
+    L6:
+        mov edx, dword ptr [esi + 0xa8]
+        mov ebx, dword ptr [esi + 0xc0]
+        push edx
+        mov dword ptr [esi + 0xa4], eax
+        push 0x936f14
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, edi
+        call ext_006A6532
+        cmp ebx, eax
+        jle L7
+        mov eax, ebx
+        jmp L8
+    L7:
+        mov ecx, dword ptr [esi + 0xa8]
+        push ecx
+        push 0x936f14
+        lea edx, [esp + 0x14]
+        push edx
+        mov ecx, edi
+        call ext_006A6532
+    L8:
+        mov ebx, dword ptr [esi + 0xc4]
+        mov dword ptr [esi + 0xa8], eax
+        mov eax, dword ptr [esi + 0xac]
+        push eax
+        push 0x936f08
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, edi
+        call ext_006A6532
+        cmp ebx, eax
+        jle L9
+        mov eax, ebx
+        jmp L10
+    L9:
+        mov edx, dword ptr [esi + 0xac]
+        push edx
+        push 0x936f08
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, edi
+        call ext_006A6532
+    L10:
+        mov ecx, dword ptr [esi + 0xb0]
+        mov ebx, dword ptr [esi + 0xc8]
+        push ecx
+        push 0x936efc
+        lea edx, [esp + 0x14]
+        push edx
+        mov ecx, edi
+        mov dword ptr [esi + 0xac], eax
+        call ext_006A6532
+        cmp ebx, eax
+        jle L11
+        pop edi
+        mov dword ptr [esi + 0xb0], ebx
+        pop esi
+        pop ebx
+        add esp, 0x100
+        ret 0x4
+    L11:
+        mov eax, dword ptr [esi + 0xb0]
+        push eax
+        push 0x936efc
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, edi
+        call ext_006A6532
+        pop edi
+        mov dword ptr [esi + 0xb0], eax
+        pop esi
+        pop ebx
+        add esp, 0x100
+        ret 0x4
+    }
+}
