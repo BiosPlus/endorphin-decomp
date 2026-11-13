@@ -281,3 +281,38 @@ extern "C" __declspec(naked) void __fastcall fn_00507ED0(void* self) {
         ret 4
     }
 }
+
+// [0x00507F10] EvolvedIndividual::vfunc_3 (60 bytes)
+extern "C" void ext_0067EF60();
+extern "C" void ext_00517140();
+extern "C" int mem_00A9F64C;
+extern "C" int mem_00A9F48C;
+
+extern "C" __declspec(naked) void __fastcall fn_00507F10(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [mem_00A9F64C]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, ecx
+        mov ecx, dword ptr [mem_00A9F48C]
+        fld qword ptr [esi + 0x20]
+        push eax
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0xc]
+        push ecx
+        push ecx
+        fstp dword ptr [esp]
+        push edi
+        call ext_0067EF60
+        add esp, 0x10
+        push edi
+        mov ecx, esi
+        call ext_00517140
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
