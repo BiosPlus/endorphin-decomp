@@ -10969,3 +10969,371 @@ L_007FBA63:
     }
 }
 
+
+// [0x007F2F80] sub_007F2F80 (1207 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007F2F80(void* self) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        and     esp, -8
+        sub     esp, 0ach
+        mov     eax, dword ptr [ebp + 0a4h]
+        mov     ecx, dword ptr [ebp + 90h]
+        shl     eax, 6
+        fld     dword ptr [eax + ecx]
+        add     eax, ecx
+        fld     dword ptr [ebp + 0a0h]
+        mov     edx, dword ptr [eax + 0ch]
+        cmp     edx, -1
+        fld     st(0)
+        fmulp   st(2), st
+        mov     ecx, dword ptr [eax + 2ch]
+        fxch    st(1)
+        push    ebx
+        push    esi
+        fstp    dword ptr [esp + 74h]
+        push    edi
+        fld     dword ptr [eax + 4]
+        mov     dword ptr [esp + 14h], ecx
+        fmul    st, st(1)
+        fstp    dword ptr [esp + 7ch]
+        fld     dword ptr [eax + 8]
+        fmul    st, st(1)
+        fstp    dword ptr [esp + 80h]
+        fld     dword ptr [eax + 10h]
+        fmul    st, st(1)
+        fstp    dword ptr [esp + 88h]
+        fld     dword ptr [eax + 14h]
+        fmul    st, st(1)
+        fstp    dword ptr [esp + 8ch]
+        fld     dword ptr [eax + 18h]
+        fmul    st, st(1)
+        fstp    dword ptr [esp + 90h]
+        fld     dword ptr [eax + 20h]
+        fmul    st, st(1)
+        fstp    dword ptr [esp + 98h]
+        fld     dword ptr [eax + 24h]
+        fmul    st, st(1)
+        fstp    dword ptr [esp + 9ch]
+        fld     dword ptr [eax + 28h]
+        fmul    st, st(1)
+        fstp    dword ptr [esp + 0a0h]
+        fld     dword ptr [eax + 30h]
+        fmul    st, st(1)
+        fstp    dword ptr [esp + 0a8h]
+        fld     dword ptr [eax + 34h]
+        fmul    st, st(1)
+        fstp    dword ptr [esp + 0ach]
+        fmul    dword ptr [eax + 38h]
+        fstp    dword ptr [esp + 0b0h]
+        je      L_7F322E
+        mov     eax, dword ptr [ebp + 60h]
+        xor     ebx, ebx
+        cmp     dword ptr [eax + 4*edx], ebx
+        je      L_7F322E
+        fld     dword ptr [esp + 90h]
+        fld     dword ptr [esp + 8ch]
+        fld     dword ptr [esp + 88h]
+        fld     dword ptr [esp + 80h]
+        fld     dword ptr [esp + 7ch]
+    L_7F3073:
+        mov     ecx, dword ptr [ebp + 24h]
+        mov     eax, dword ptr [ecx + 4*edx]
+        add     eax, ebx
+        lea     esi, [eax + 2*eax]
+        shl     esi, 5
+        add     esi, dword ptr [ebp + 14h]
+        mov     ecx, 18h
+        lea     edi, [esp + 18h]
+        rep     movsd
+        fld     dword ptr [esp + 18h]
+        fmul    dword ptr [esp + 78h]
+        mov     ecx, dword ptr [ebp + 30h]
+        mov     eax, dword ptr [ecx + 4*eax]
+        shl     eax, 4
+        add     eax, dword ptr [ebp + 8]
+        fadd    dword ptr [eax]
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 28h]
+        fmul    st, st(2)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 38h]
+        fmul    st, st(3)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 48h]
+        fmul    st, st(4)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 58h]
+        fmul    st, st(5)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 68h]
+        fmul    st, st(6)
+        faddp   st(1), st
+        fstp    dword ptr [eax]
+        fld     dword ptr [esp + 1ch]
+        fmul    dword ptr [esp + 78h]
+        fadd    dword ptr [eax + 4]
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 2ch]
+        fmul    st, st(2)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 3ch]
+        fmul    st, st(3)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 4ch]
+        fmul    st, st(4)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 5ch]
+        fmul    st, st(5)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 6ch]
+        fmul    st, st(6)
+        faddp   st(1), st
+        fstp    dword ptr [eax + 4]
+        fld     dword ptr [esp + 20h]
+        fmul    dword ptr [esp + 78h]
+        fadd    dword ptr [eax + 8]
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 30h]
+        fmul    st, st(2)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 40h]
+        add     ebx, 1
+        fmul    st, st(3)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 50h]
+        fmul    st, st(4)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 60h]
+        fmul    st, st(5)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 70h]
+        fmul    st, st(6)
+        faddp   st(1), st
+        fstp    dword ptr [eax + 8]
+        fld     dword ptr [esp + 24h]
+        fmul    dword ptr [esp + 78h]
+        fadd    dword ptr [eax + 0ch]
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 34h]
+        fmul    st, st(2)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 44h]
+        fmul    st, st(3)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 54h]
+        fmul    st, st(4)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 64h]
+        fmul    st, st(5)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 74h]
+        fmul    st, st(6)
+        faddp   st(1), st
+        fstp    dword ptr [eax + 0ch]
+        mov     eax, dword ptr [ebp + 60h]
+        cmp     ebx, dword ptr [eax + 4*edx]
+        jne     L_7F3073
+        mov     ecx, dword ptr [esp + 14h]
+        fstp    st(4)
+        fstp    st(2)
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+    L_7F322E:
+        cmp     ecx, -1
+        je      L_7F3430
+        mov     eax, dword ptr [ebp + 60h]
+        xor     edx, edx
+        cmp     dword ptr [eax + 4*ecx], edx
+        je      L_7F3430
+        fld     dword ptr [esp + 0b0h]
+        fld     dword ptr [esp + 0ach]
+        fld     dword ptr [esp + 0a8h]
+        fld     dword ptr [esp + 0a0h]
+        fld     dword ptr [esp + 9ch]
+    L_7F3268:
+        mov     eax, dword ptr [ebp + 24h]
+        mov     ecx, dword ptr [eax + 4*ecx]
+        lea     eax, [edx + ecx]
+        lea     esi, [eax + 2*eax]
+        shl     esi, 5
+        add     esi, dword ptr [ebp + 14h]
+        mov     ecx, 18h
+        lea     edi, [esp + 18h]
+        rep     movsd
+        fld     dword ptr [esp + 18h]
+        fmul    dword ptr [esp + 98h]
+        mov     ecx, dword ptr [ebp + 30h]
+        mov     eax, dword ptr [ecx + 4*eax]
+        shl     eax, 4
+        add     eax, dword ptr [ebp + 8]
+        fadd    dword ptr [eax]
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 28h]
+        fmul    st, st(2)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 38h]
+        fmul    st, st(3)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 48h]
+        fmul    st, st(4)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 58h]
+        fmul    st, st(5)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 68h]
+        fmul    st, st(6)
+        faddp   st(1), st
+        fstp    dword ptr [eax]
+        fld     dword ptr [esp + 1ch]
+        fmul    dword ptr [esp + 98h]
+        fadd    dword ptr [eax + 4]
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 2ch]
+        fmul    st, st(2)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 3ch]
+        fmul    st, st(3)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 4ch]
+        fmul    st, st(4)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 5ch]
+        fmul    st, st(5)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 6ch]
+        fmul    st, st(6)
+        faddp   st(1), st
+        fstp    dword ptr [eax + 4]
+        fld     dword ptr [esp + 20h]
+        fmul    dword ptr [esp + 98h]
+        fadd    dword ptr [eax + 8]
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 30h]
+        fmul    st, st(2)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 40h]
+        mov     ecx, dword ptr [esp + 14h]
+        fmul    st, st(3)
+        add     edx, 1
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 50h]
+        fmul    st, st(4)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 60h]
+        fmul    st, st(5)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 70h]
+        fmul    st, st(6)
+        faddp   st(1), st
+        fstp    dword ptr [eax + 8]
+        fld     dword ptr [esp + 24h]
+        fmul    dword ptr [esp + 98h]
+        fadd    dword ptr [eax + 0ch]
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 34h]
+        fmul    st, st(2)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 44h]
+        fmul    st, st(3)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 54h]
+        fmul    st, st(4)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 64h]
+        fmul    st, st(5)
+        faddp   st(1), st
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [esp + 10h]
+        fld     dword ptr [esp + 74h]
+        fmul    st, st(6)
+        faddp   st(1), st
+        fstp    dword ptr [eax + 0ch]
+        mov     eax, dword ptr [ebp + 60h]
+        cmp     edx, dword ptr [eax + 4*ecx]
+        jne     L_7F3268
+        fstp    st(4)
+        fstp    st(2)
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+    L_7F3430:
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+    }
+}
