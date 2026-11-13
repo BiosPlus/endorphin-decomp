@@ -10365,3 +10365,30 @@ done:
         ret
     }
 }
+
+// [0x00669A90] sub_00669A90 (50 bytes)
+extern "C" void ext_00669140();
+extern "C" void ext_00669370();
+extern "C" __declspec(naked) void __fastcall fn_00669A90(void* self) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        lea eax, [ecx + 0x48]
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        push edx
+        push eax
+        push 0x0
+        mov dword ptr [esp + 0x18], 0x0
+        call ext_00669140
+        mov ecx, eax
+        call ext_00669370
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
