@@ -123,3 +123,16 @@ extern "C" __declspec(naked) void __fastcall fn_004E88D0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004E9A70] SelectionBuffer::vfunc_5 (31 bytes)
+extern "C" void ext_004E8B60(void* a, void* b);
+
+extern "C" void* __fastcall fn_004E9A70(void* self) {
+    char* base = (char*)self;
+    char* esi = base + 0x24;
+    if (base[0x34] != 0) {
+        ext_004E8B60(base + 4, esi);
+        esi[0x10] = 0;
+    }
+    return esi;
+}
