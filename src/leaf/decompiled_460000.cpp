@@ -8216,3 +8216,23 @@ extern "C" __declspec(naked) void __fastcall fn_00466970(void* self) {
         ret
     }
 }
+
+// [0x0046BE90] sub_0046BE90 (39 bytes)
+extern "C" void ext_005A6300();
+
+extern "C" __declspec(naked) void __fastcall fn_0046BE90(void* self, int edx_unused, int a1) {
+    __asm {
+        cmp byte ptr [ecx + 0x10], 0
+        je done
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [esp + 0x4], eax
+        mov eax, dword ptr [ecx + 0x14]
+        mov ecx, dword ptr [eax + 0x34]
+        lea edx, [esp + 0x4]
+        push edx
+        add ecx, 0x22c
+        call ext_005A6300
+done:
+        ret 0x4
+    }
+}
