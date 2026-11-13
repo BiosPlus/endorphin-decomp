@@ -5368,3 +5368,43 @@ loc_40930c:
         ret
     }
 }
+
+// [0x00409470] sub_00409470 (94 bytes)
+extern "C" void ext_004564A0();
+extern "C" void ext_004091D0();
+extern "C" void ext_00409120();
+extern "C" void ext_006A5E00();
+extern "C" int mem_00925650;
+extern "C" int mem_00925688;
+extern "C" __declspec(naked) void __fastcall fn_00409470(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_004564A0
+        cmp byte ptr [esi + 0x1ac], 0x0
+        je short loc_409499
+        mov ecx, esi
+        call ext_004091D0
+loc_409499:
+        mov ecx, esi
+        call ext_00409120
+        mov eax, dword ptr [esi + 0x20]
+        push eax
+        call dword ptr [mem_00925650]
+        push eax
+        call ext_006A5E00
+        pop esi
+        mov dword ptr [esp + 0xc], 0x1
+        mov dword ptr [esp + 0x8], 0x0
+        mov ecx, dword ptr [eax + 0x20]
+        mov dword ptr [esp + 0x4], ecx
+        jmp dword ptr [mem_00925688]
+    }
+}
