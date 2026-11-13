@@ -618,3 +618,19 @@ extern "C" __declspec(naked) void __fastcall fn_00499830(void* self) {
         ret 0x4
     }
 }
+
+// [0x00499D00] NMData::Transition::vfunc_31 (30 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00499D00(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esi + 0x84]
+        call ext_00505F00
+        mov ecx, esi
+        call ext_004996E0
+        pop esi
+        ret 4
+    }
+}
