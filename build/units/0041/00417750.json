@@ -56,5 +56,7 @@
     "0x0041795E",
     "0x00417973"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-13T12:21:12Z"
 }
