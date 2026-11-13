@@ -251,3 +251,33 @@ L_notfound:
         ret 0x4
     }
 }
+
+// [0x00507ED0] EvolvedIndividual::vfunc_1 (50 bytes)
+extern "C" void ext_0067EE80();
+extern "C" void ext_00517C80();
+extern "C" int mem_00A9F64C;
+extern "C" int mem_00A9F48C;
+
+extern "C" __declspec(naked) void __fastcall fn_00507ED0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F64C]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        mov ecx, dword ptr [mem_00A9F48C]
+        push eax
+        push ecx
+        push edi
+        call ext_0067EE80
+        fstp qword ptr [esi + 0x20]
+        add esp, 0xc
+        push edi
+        mov ecx, esi
+        mov byte ptr [esi + 0x28], 0
+        call ext_00517C80
+        pop edi
+        pop esi
+        ret 4
+    }
+}
