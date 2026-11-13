@@ -5538,3 +5538,117 @@ extern "C" __declspec(naked) void __fastcall fn_004013C0(void* self) {
         ret
     }
 }
+
+// [0x0040D800] sub_0040D800 (346 bytes)
+extern "C" void ext_0040BC40(); extern "C" void ext_0040D6E0(); extern "C" void ext_00664A80(); extern "C" void ext_006A5F4A(); extern "C" int mem_009242FC; extern "C" int mem_00924300; extern "C" int mem_00924FD4; extern "C" int mem_009242F4;
+extern "C" __declspec(naked) void __fastcall fn_0040D800(void* self) {
+    __asm {
+        push -1
+        _emit 0x68
+        _emit 0x19
+        _emit 0xcc
+        _emit 0x87
+        _emit 0x00
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push ebx
+        mov ebx, ecx
+        cmp byte ptr [ebx+0x35c], 0
+        je done
+        push esi
+        push edi
+        lea ecx, [esp+0xc]
+        call dword ptr [mem_009242FC]
+        lea eax, [esp+0xc]
+        push eax
+        lea ecx, [ebx+0x428]
+        mov dword ptr [esp+0x1c], 0
+        call ext_006A5F4A
+        lea ecx, [esp+0xc]
+        lea esi, [ebx+0x340]
+        call dword ptr [mem_00924300]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FD4]
+        push 0
+        push 0x928b5d
+        push 0x92b4b0
+        push esi
+        call ext_00664A80
+        push 0
+        push 0x928b5d
+        push 0x92b4ac
+        push esi
+        mov edi, eax
+        call ext_00664A80
+        push 0
+        push 0x928b5d
+        push 0x92b4a8
+        push esi
+        add edi, eax
+        call ext_00664A80
+        push 0
+        push 0x928b5d
+        push 0x92ab74
+        push esi
+        add edi, eax
+        call ext_00664A80
+        add esp, 0x40
+        push 0
+        push 0x928b5d
+        push 0x92b4a4
+        push esi
+        add edi, eax
+        call ext_00664A80
+        push 0
+        push 0x928b5d
+        push 0x92b4a0
+        push esi
+        add edi, eax
+        call ext_00664A80
+        push 0
+        push 0x928b5d
+        push 0x92b49c
+        push esi
+        add edi, eax
+        call ext_00664A80
+        push 0
+        push 0x928b5d
+        push 0x92b498
+        push esi
+        add edi, eax
+        call ext_00664A80
+        add esp, 0x40
+        push 0
+        push 0x928b5d
+        push 0x92b494
+        push esi
+        add edi, eax
+        call ext_00664A80
+        add esp, 0x10
+        add eax, edi
+        test eax, eax
+        pop edi
+        pop esi
+        jle skip
+        mov ecx, ebx
+        call ext_0040BC40
+    skip:
+        mov ecx, ebx
+        call ext_0040D6E0
+        mov edx, [ebx]
+        mov eax, [edx+0x168]
+        mov ecx, ebx
+        call eax
+        lea ecx, [esp+4]
+        call dword ptr [mem_009242F4]
+    done:
+        mov ecx, [esp+8]
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}

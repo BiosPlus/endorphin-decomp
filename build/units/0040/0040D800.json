@@ -49,5 +49,7 @@
     "0x0040D930",
     "0x0040D946"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@low",
+  "matched_at": "2026-11-13T10:20:20Z"
 }
