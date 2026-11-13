@@ -11643,3 +11643,15 @@ extern "C" void __cdecl fn_0067F040(int a1, float* a2) {
         ext_0067EF60(a1, val, b, a);
     }
 }
+
+// [0x0067F0F0] sub_0067F0F0 (58 bytes)
+extern "C" void __cdecl ext_0067EF60(int, float, unsigned int, unsigned int);
+
+extern "C" void __cdecl fn_0067F0F0(int a1, float* a2) {
+    for (int esi = 0; esi < 0x10; esi += 4) {
+        unsigned int a = *(unsigned int*)((char*)&mem_00B5A094 + esi);
+        unsigned int b = *(unsigned int*)((char*)&mem_00B5A0A4 + esi);
+        float val = *(float*)((char*)a2 + esi);
+        ext_0067EF60(a1, val, b, a);
+    }
+}
