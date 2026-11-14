@@ -894,3 +894,88 @@ done:
         ret 4
     }
 }
+
+// [0x007ABB30] sub_007ABB30 (175 bytes)
+extern "C" void ext_006C9E80();
+extern "C" void ext_006C9F00();
+extern "C" void ext_006CA020();
+extern "C" void ext_006CD350();
+extern "C" int mem_0092A278;
+
+extern "C" __declspec(naked) double __fastcall fn_007ABB30(void* self, int edx_unused, void* a1, void* a2, int a3, int a4, void* a5) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        and     esp, -0x8
+        sub     esp, 0x1c
+        mov     eax, dword ptr [ebp + 0x14]
+        push    ebx
+        push    esi
+        mov     esi, dword ptr [ebp + 0x10]
+        cmp     esi, eax
+        push    edi
+        jl      loc_7abb55
+        fld     qword ptr [mem_0092A278]
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret     0x14
+
+    loc_7abb55:
+        mov     dword ptr [esp + 0x10], 0
+        mov     dword ptr [esp + 0x14], 0
+        mov     dword ptr [esp + 0xc], 0
+
+    loc_7abb6d:
+        mov     ecx, dword ptr [ebp + 0x8]
+        lea     eax, [esp + 0x20]
+        push    eax
+        push    esi
+        call    ext_006CA020
+        mov     ecx, eax
+        call    ext_006C9F00
+        mov     ecx, dword ptr [ebp + 0x8]
+        mov     edi, dword ptr [eax]
+        mov     ebx, dword ptr [eax + 0x4]
+        push    esi
+        call    ext_006CA020
+        mov     ecx, eax
+        call    ext_006C9E80
+        fstp    qword ptr [esp + 0x18]
+        lea     ecx, [esp + 0xc]
+        push    ecx
+        mov     ecx, dword ptr [ebp + 0xc]
+        push    ebx
+        push    edi
+        call    ext_006CD350
+        fsub    qword ptr [esp + 0x18]
+        fld     st(0)
+        fmulp   st(1), st
+        fcom    qword ptr [esp + 0x10]
+        fnstsw  ax
+        test    ah, 0x41
+        jne     loc_7abbc8
+        mov     edx, dword ptr [ebp + 0x18]
+        fstp    qword ptr [esp + 0x10]
+        mov     dword ptr [edx], esi
+        jmp     loc_7abbca
+
+    loc_7abbc8:
+        fstp    st(0)
+
+    loc_7abbca:
+        mov     eax, dword ptr [ebp + 0x14]
+        inc     esi
+        cmp     esi, eax
+        jl      loc_7abb6d
+        fld     qword ptr [esp + 0x10]
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret     0x14
+    }
+}
