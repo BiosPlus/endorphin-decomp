@@ -290,3 +290,161 @@ extern "C" __declspec(naked) void __fastcall fn_0060D280(void* self) {
         ret 0x4
     }
 }
+
+// [0x0060D780] NMData::EffectorGroupData::vfunc_15 (390 bytes)
+extern "C" void ext_00596660();
+extern "C" void ext_0059A140();
+extern "C" void ext_005DF5C0();
+extern "C" void ext_00602EC0();
+extern "C" void ext_006A5C62();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_0060D780(void* self) {
+    __asm {
+        push    -1
+        push    0x8a87db
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 0x1c
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        mov     ebx, ecx
+        xor     edi, edi
+        mov     dword ptr [esp + 0x20], ebx
+        mov     dword ptr [esp + 0x14], edi
+        push    0x3c
+        mov     dword ptr [esp + 0x38], edi
+        call    ext_006A5C62
+        mov     esi, eax
+        add     esp, 4
+        mov     dword ptr [esp + 0x18], esi
+        cmp     esi, edi
+        mov     byte ptr [esp + 0x34], 1
+        je      loc_60D7E1
+        mov     ecx, esi
+        call    ext_00602EC0
+        mov     dword ptr [esi], 0x97181c
+        mov     dword ptr [esi + 0x30], edi
+        mov     dword ptr [esi + 0x34], edi
+        mov     dword ptr [esi + 0x38], edi
+        mov     dword ptr [esp + 0x10], esi
+        jmp     loc_60D7E7
+    loc_60D7E1:
+        mov     dword ptr [esp + 0x10], edi
+        mov     esi, edi
+    loc_60D7E7:
+        mov     edi, dword ptr [esi + 0x34]
+        mov     dword ptr [esp + 0x14], esi
+        add     esi, 0x2c
+        cmp     dword ptr [esi + 4], edi
+        mov     byte ptr [esp + 0x34], 0
+        jbe     loc_60D801
+        call    dword ptr [mem_00925134]
+    loc_60D801:
+        mov     ebp, dword ptr [esi + 4]
+        cmp     ebp, dword ptr [esi + 8]
+        jbe     loc_60D80F
+        call    dword ptr [mem_00925134]
+    loc_60D80F:
+        push    edi
+        push    esi
+        push    ebp
+        push    esi
+        lea     eax, [esp + 0x28]
+        push    eax
+        mov     ecx, esi
+        call    ext_00596660
+        mov     edi, dword ptr [ebx + 0x48]
+        add     ebx, 0x44
+        cmp     edi, dword ptr [ebx + 8]
+        jbe     loc_60D830
+        call    dword ptr [mem_00925134]
+    loc_60D830:
+        mov     ebp, edi
+    loc_60D832:
+        mov     edi, dword ptr [ebx + 8]
+        cmp     dword ptr [ebx + 4], edi
+        jbe     loc_60D840
+        call    dword ptr [mem_00925134]
+    loc_60D840:
+        cmp     ebx, ebx
+        je      loc_60D84A
+        call    dword ptr [mem_00925134]
+    loc_60D84A:
+        cmp     ebp, edi
+        je      loc_60D8E6
+        cmp     ebp, dword ptr [ebx + 8]
+        jb      loc_60D85D
+        call    dword ptr [mem_00925134]
+    loc_60D85D:
+        sub     esp, 0x1c
+        mov     ecx, esp
+        mov     dword ptr [esp + 0x34], esp
+        push    ebp
+        call    dword ptr [mem_00924FE0]
+        mov     ecx, dword ptr [esp + 0x58]
+        add     ecx, 0x55c
+        call    ext_005DF5C0
+        mov     edi, dword ptr [eax + 0x40]
+        mov     eax, dword ptr [esi + 4]
+        test    eax, eax
+        mov     dword ptr [esp + 0x18], edi
+        jne     loc_60D88E
+        xor     edx, edx
+        jmp     loc_60D896
+    loc_60D88E:
+        mov     edx, dword ptr [esi + 8]
+        sub     edx, eax
+        sar     edx, 2
+    loc_60D896:
+        test    eax, eax
+        je      loc_60D8B3
+        mov     ecx, dword ptr [esi + 0xc]
+        sub     ecx, eax
+        sar     ecx, 2
+        cmp     edx, ecx
+        jae     loc_60D8B3
+        mov     eax, dword ptr [esi + 8]
+        mov     dword ptr [eax], edi
+        add     eax, 4
+        mov     dword ptr [esi + 8], eax
+        jmp     loc_60D8D3
+    loc_60D8B3:
+        mov     edi, dword ptr [esi + 8]
+        cmp     eax, edi
+        jbe     loc_60D8C0
+        call    dword ptr [mem_00925134]
+    loc_60D8C0:
+        lea     ecx, [esp + 0x18]
+        push    ecx
+        push    edi
+        push    esi
+        lea     edx, [esp + 0x30]
+        push    edx
+        mov     ecx, esi
+        call    ext_0059A140
+    loc_60D8D3:
+        cmp     ebp, dword ptr [ebx + 8]
+        jb      loc_60D8DE
+        call    dword ptr [mem_00925134]
+    loc_60D8DE:
+        add     ebp, 0x1c
+        jmp     loc_60D832
+    loc_60D8E6:
+        mov     ecx, dword ptr [esp + 0x20]
+        mov     eax, dword ptr [esp + 0x10]
+        pop     edi
+        pop     esi
+        mov     dword ptr [ecx + 0x40], eax
+        mov     ecx, dword ptr [esp + 0x24]
+        pop     ebp
+        mov     dword ptr fs:[0], ecx
+        pop     ebx
+        add     esp, 0x28
+        ret     0xc
+    }
+}
