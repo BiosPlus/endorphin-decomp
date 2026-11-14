@@ -10158,3 +10158,47 @@ extern "C" __declspec(naked) int __fastcall fn_0049EE60(void* self, int edx_unus
         ret 0x10
     }
 }
+
+// [0x00496E80] sub_00496E80 (127 bytes)
+extern "C" void ext_00496DF0();
+extern "C" void ext_004BE400();
+extern "C" void ext_0067A670();
+extern "C" int mem_00ADC4F0;
+extern "C" int mem_00ADC4EC;
+extern "C" int mem_0088672E;
+extern "C" int mem_0093EC64;
+extern "C" int mem_0093F154;
+
+extern "C" __declspec(naked) void __cdecl fn_00496E80() {
+    __asm {
+        push    -1
+        push    offset mem_0088672E
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x14]
+        push    0
+        lea     eax, [esp + 4]
+        push    eax
+        call    ext_00496DF0
+        mov     eax, 1
+        test    byte ptr [mem_00ADC4F0], al
+        jne     L_skip
+        or      dword ptr [mem_00ADC4F0], eax
+        mov     ecx, offset mem_00ADC4EC
+        mov     dword ptr [esp + 0xc], 0
+        call    ext_0067A670
+        mov     dword ptr [mem_00ADC4EC], offset mem_0093EC64
+        mov     dword ptr [esp + 0xc], -1
+    L_skip:
+        push    offset mem_00ADC4EC
+        push    offset mem_0093F154
+        lea     ecx, [esp + 8]
+        call    ext_004BE400
+        mov     ecx, dword ptr [esp + 4]
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x10
+        ret
+    }
+}
