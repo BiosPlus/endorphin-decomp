@@ -1,9 +1,12 @@
 // Decompiled translation unit: src/leaf/decompiled_6D0000.cpp
 
 #include <math.h>
+extern "C" void ext_006A5C62();
+extern "C" void ext_006BBCC0();
+extern "C" void ext_006D2170();
 
-// [0x006DBDF0] sub_006DBDF0 (32 bytes)
-// 64-bit add: *out = *this + *in, where out = arg0 and in = arg1 (ret 8).
+extern "C" void ext_006BBCC0();
+extern "C" void ext_006D2170();
 extern "C" __declspec(naked) void __fastcall fn_006DBDF0(void* self, int edx_unused, void* out, void* in) {
     __asm {
         mov eax, dword ptr [esp + 0x8]
@@ -2018,5 +2021,78 @@ extern "C" __declspec(naked) int __fastcall fn_006D2B30(void* self, int edx_unus
         mov dword ptr fs:[0], ecx
         add esp, 0x2c
         ret 0x24
+    }
+}
+
+// [0x006D3DF0] sub_006D3DF0 (160 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D3DF0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi]
+        call dword ptr [eax + 0x6c]
+        mov esi, eax
+        test esi, esi
+        je SKIP1
+        mov eax, dword ptr [edi + 0x19c]
+        lea ecx, [edi + 0x19c]
+        lea edx, [esp + 0x8]
+        mov dword ptr [esp + 0x8], esi
+        push edx
+        push eax
+        call ext_006D2170
+SKIP1:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ecx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        push -1
+        push 0x8b8fdb
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push 0x138
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je SKIP2
+        push esi
+        mov ecx, eax
+        call ext_006BBCC0
+        pop esi
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+SKIP2:
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
     }
 }
