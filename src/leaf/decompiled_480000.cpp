@@ -10422,3 +10422,94 @@ m84_end:
         ret
     }
 }
+
+// [0x00485080] sub_00485080 (194 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00485080(void* self) {
+    __asm {
+        sub     esp, 8
+        push    ebx
+        mov     ebx, dword ptr [mem_00925134]
+        push    ebp
+        mov     ebp, dword ptr [esp + 18h]
+        push    esi
+        mov     esi, dword ptr [ebp + 8]
+        cmp     dword ptr [ebp + 4], esi
+        push    edi
+        jbe     m85_a
+        call    ebx
+m85_a:
+        mov     edi, dword ptr [ebp + 4]
+        cmp     edi, dword ptr [ebp + 8]
+        jbe     m85_b
+        call    ebx
+m85_b:
+        push    esi
+        push    ebp
+        push    edi
+        push    ebp
+        lea     eax, [esp + 20h]
+        push    eax
+        mov     ecx, ebp
+        call    ext_00596660
+        mov     edi, dword ptr [esp + 1Ch]
+        mov     ecx, dword ptr [edi + 4]
+        test    ecx, ecx
+        jne     m85_c
+        xor     eax, eax
+        jmp     m85_d
+m85_c:
+        mov     eax, dword ptr [edi + 8]
+        sub     eax, ecx
+        sar     eax, 2
+m85_d:
+        push    eax
+        mov     ecx, ebp
+        call    ext_0050ED40
+        mov     esi, dword ptr [edi + 4]
+        cmp     esi, dword ptr [edi + 8]
+        jbe     m85_e
+        call    ebx
+        mov     edi, edi
+m85_e:
+        mov     ebx, dword ptr [edi + 8]
+        cmp     dword ptr [edi + 4], ebx
+        jbe     m85_f
+        call    dword ptr [mem_00925134]
+m85_f:
+        cmp     esi, ebx
+        je      m85_end
+        cmp     esi, dword ptr [edi + 8]
+        jb      m85_g
+        call    dword ptr [mem_00925134]
+m85_g:
+        mov     ecx, dword ptr [esi]
+        push    0
+        push    0A2FB78h
+        push    0A2E2BCh
+        push    0
+        push    ecx
+        call    ext_006A6E9E
+        add     esp, 14h
+        test    eax, eax
+        mov     dword ptr [esp + 20h], eax
+        je      m85_h
+        lea     edx, [esp + 20h]
+        push    edx
+        mov     ecx, ebp
+        call    ext_0041A920
+m85_h:
+        cmp     esi, dword ptr [edi + 8]
+        jb      m85_i
+        call    dword ptr [mem_00925134]
+m85_i:
+        add     esi, 4
+        jmp     m85_e
+m85_end:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 8
+        ret
+    }
+}
