@@ -253,3 +253,57 @@ done:
         ret
     }
 }
+
+extern "C" void ext_0041A920();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_0087BA98;
+
+// [0x004E8710] SelectionBuffer::vfunc_23 (127 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004E8710(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push offset mem_0087BA98
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x10
+        push esi
+        push edi
+        xor edi, edi
+        cmp dword ptr [esp + 0x28], edi
+        mov esi, ecx
+        je L_done
+        mov dword ptr [esp + 0xc], edi
+        mov dword ptr [esp + 0x10], edi
+        mov dword ptr [esp + 0x14], edi
+        lea eax, [esp + 0x28]
+        push eax
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x24], edi
+        call ext_0041A920
+        mov eax, dword ptr [esp + 0x30]
+        mov ecx, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 0x60]
+        push edi
+        push eax
+        push ecx
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, edi
+        je L_done
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    L_done:
+        mov ecx, dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x1c
+        ret 0xc
+    }
+}
