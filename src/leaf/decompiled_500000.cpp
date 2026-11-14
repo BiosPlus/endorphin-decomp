@@ -9334,3 +9334,40 @@ do_call:
         ret
     }
 }
+
+// [0x005060F0] sub_005060F0 (98 bytes)
+extern "C" void ext_0049EEE0();
+extern "C" void ext_00505770();
+extern "C" __declspec(naked) void* __fastcall fn_005060F0(void* self, int edx_unused, const void* src) {
+    __asm {
+        push    -1
+        push    0x8926D3
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        push    eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        push    ecx
+        push    esi
+        mov     esi, ecx
+        push    edi
+        mov     dword ptr [esp + 0x8], esi
+        mov     edi, dword ptr [esp + 0x1C]
+        lea     eax, [edi + 0x4]
+        lea     ecx, [esi + 0x4]
+        push    eax
+        mov     dword ptr [esp + 0x18], 0x0
+        mov     dword ptr [esi], 0x94F5DC
+        call    ext_0049EEE0
+        add     edi, 0x14
+        push    edi
+        lea     ecx, [esi + 0x14]
+        mov     byte ptr [esp + 0x18], 0x1
+        call    ext_00505770
+        mov     ecx, dword ptr [esp + 0xC]
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        add     esp, 0x10
+        ret     0x4
+    }
+}
