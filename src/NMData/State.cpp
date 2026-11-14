@@ -1017,3 +1017,29 @@ extern "C" __declspec(naked) void __fastcall fn_0049FCF0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004A0510] NMData::State::vfunc_30_off_8 (99 bytes)
+extern "C" void ext_00412690();
+extern "C" void ext_0048EF80();
+
+extern "C" void __fastcall fn_004A0510(void* self, int edx_unused, void* a1) {
+    typedef void (__cdecl *InvalidFn)(void);
+    typedef void (__thiscall *Fn1)(void* self, void* t, void* a, unsigned b, void* c, unsigned d);
+    typedef void (__thiscall *Fn2)(void* self, float* p);
+
+    unsigned* p = (unsigned*)a1;
+    unsigned ebx = p[2];
+    if (p[1] > ebx) {
+        (*(InvalidFn*)&mem_00925134)();
+    }
+    unsigned ebp = p[1];
+    if (ebp > p[2]) {
+        (*(InvalidFn*)&mem_00925134)();
+    }
+    float pair[2];
+    ((Fn1)ext_0048EF80)(a1, pair, a1, ebp, a1, ebx);
+
+    pair[0] = *(float*)((char*)self + 0xe0);
+    pair[1] = *(float*)((char*)self + 0xe4);
+    ((Fn2)ext_00412690)(a1, pair);
+}
