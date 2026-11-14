@@ -13489,3 +13489,83 @@ extern "C" __declspec(naked) void __fastcall fn_00577390(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x0057FF70] sub_0057FF70 (234 bytes)
+extern "C" void ext_004142E0();
+extern "C" void ext_004276B0();
+extern "C" void ext_00557960();
+extern "C" void ext_00558B90();
+extern "C" void ext_0057BC70();
+extern "C" void ext_0057FC60();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_009D1278;
+extern "C" __declspec(naked) unsigned char __fastcall fn_0057FF70(void* self, int edx_unused, void* a1, void* a2, int a3) {
+    __asm {
+        push -1
+        push 89E72Ah
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 70h
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 8Ch]
+        mov esi, ecx
+        push edi
+        lea ecx, [esp + 54h]
+        call dword ptr [mem_00924FE0]
+        mov eax, dword ptr [esp + 90h]
+        push eax
+        lea ecx, [esp + 70h]
+        mov dword ptr [esp + 88h], 0
+        call ext_00557960
+        lea ecx, [esp + 50h]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 88h], 1
+        call ext_0057FC60
+        lea ecx, [esp + 50h]
+        mov bl, al
+        mov dword ptr [esp + 84h], -1
+        call ext_00558B90
+        test bl, bl
+        je L_57FF70_fail
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        mov ecx, dword ptr [esp + 70h]
+        mov dword ptr fs:[0], ecx
+        add esp, 7Ch
+        ret 0Ch
+    L_57FF70_fail:
+        cmp byte ptr [esp + 94h], 0
+        je L_57FF70_ret0
+        lea edx, [esp + 0Ch]
+        push edi
+        push edx
+        call ext_004276B0
+        add esp, 8
+        push eax
+        mov dword ptr [esp + 88h], 2
+        call ext_0057BC70
+        push eax
+        lea ecx, [esp + 30h]
+        call ext_004142E0
+        push offset mem_009D1278
+        lea eax, [esp + 2Ch]
+        push eax
+        call ext_006A6DD2
+    L_57FF70_ret0:
+        mov ecx, dword ptr [esp + 7Ch]
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 7Ch
+        ret 0Ch
+    }
+}
