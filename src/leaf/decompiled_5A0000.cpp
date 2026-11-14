@@ -10,6 +10,12 @@ extern "C" int mem_00924FE8;
 extern "C" void ext_005BF5F0();
 extern "C" void ext_00673C20();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 // [0x005A3610] sub_005A3610 (8 bytes)
 extern "C" __declspec(naked) void __cdecl fn_005A3610() {
@@ -631,6 +637,12 @@ extern "C" __declspec(naked) void __fastcall fn_005A9FB0(void* self) {
 // [0x005A07A0] sub_005A07A0 (105 bytes)
 extern "C" void ext_0055C490();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_00924EF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005A07A0(void* self, int edx_unused, void** out, const void* key) {
@@ -683,6 +695,12 @@ extern "C" __declspec(naked) void __fastcall fn_005A07A0(void* self, int edx_unu
 // [0x005AE100] sub_005AE100 (105 bytes)
 extern "C" void ext_005AD010();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_00924EF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005AE100(void* self, int edx_unused, void** out, const void* key) {
@@ -798,6 +816,12 @@ extern "C" __declspec(naked) void __fastcall fn_005AC8C0(void* self) {
 // [0x005A0380] sub_005A0380 (61 bytes)
 extern "C" void ext_00673C20();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" __declspec(naked) void __fastcall fn_005A0380(void* self) {
     __asm {
         push ebx
@@ -836,6 +860,12 @@ extern "C" __declspec(naked) void __fastcall fn_005A0380(void* self) {
 extern "C" void ext_00673C20();
 extern "C" void ext_006A5C5C();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" __declspec(naked) void __fastcall fn_005A28A0(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
     __asm {
         push ebx
@@ -912,6 +942,12 @@ extern "C" __declspec(naked) void __fastcall fn_005A0200(void* self) {
 // [0x005A0910] sub_005A0910 (86 bytes)
 extern "C" void ext_00673C20();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" __declspec(naked) void __fastcall fn_005A0910(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4) {
     __asm {
         push ebx
@@ -1009,6 +1045,12 @@ extern "C" void ext_00621B70();
 extern "C" void ext_00673C20();
 extern "C" void ext_006A5C5C();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" __declspec(naked) void __fastcall fn_005A0970(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
     __asm {
         push ebx
@@ -1134,6 +1176,12 @@ extern "C" __declspec(naked) void __fastcall fn_005A1600(void* self) {
 
 // [0x005AC930] sub_005AC930 (132 bytes)
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005AC930(void* self) {
     __asm {
@@ -1352,6 +1400,12 @@ extern "C" __declspec(naked) void* __fastcall fn_005A7060(void* self) {
 extern "C" void ext_00647F30();
 extern "C" void ext_00673C20();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" __declspec(naked) void __fastcall fn_005A1710(void* self) {
     __asm {
         sub esp, 0xc
@@ -1425,6 +1479,12 @@ extern "C" __declspec(naked) void __fastcall fn_005A1710(void* self) {
 extern "C" void ext_00673C20();
 extern "C" void ext_006A6DD2();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_00924FE0;
 extern "C" int mem_00924FF4;
 extern "C" __declspec(naked) void __fastcall fn_005A03C0(void* self) {
@@ -1541,6 +1601,12 @@ extern "C" void ext_00594000();
 extern "C" void ext_00673C20();
 extern "C" void ext_0059B5A0();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005A1900(void* self) {
     __asm {
@@ -1686,6 +1752,12 @@ extern "C" void ext_005DF5C0();
 extern "C" void ext_00673C20();
 extern "C" int mem_00924FE0;
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" __declspec(naked) void __fastcall fn_005A3F20(void* self) {
     __asm {
         sub esp, 0x8
@@ -2193,6 +2265,12 @@ extern "C" __declspec(naked) void __fastcall fn_005A0240(void* self) {
 extern "C" void ext_00536230();
 extern "C" void ext_00586BE0();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_009251EC;
 
 extern "C" __declspec(naked) void __fastcall fn_005A2DC0(void* self) {
@@ -2707,6 +2785,12 @@ extern "C" void ext_00665010();
 extern "C" void ext_00673C20();
 extern "C" int mem_00924FE0;
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_00924FC4;
 extern "C" int mem_00924FF4;
 extern "C" int mem_00924FDC;
@@ -3808,6 +3892,12 @@ extern "C" void ext_005AE1B0();
 extern "C" void ext_006239A0();
 extern "C" void ext_00673C20();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_00924FC4;
 extern "C" __declspec(naked) void __fastcall fn_005A3FE0(void* self) {
     __asm {
@@ -3957,6 +4047,12 @@ extern "C" void ext_0059E060();
 extern "C" void ext_005E1760();
 extern "C" void ext_00673C20();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" __declspec(naked) void __fastcall fn_005A1B20(void* self) {
     __asm {
         sub esp, 8
@@ -4069,6 +4165,12 @@ extern "C" void ext_006404E0();
 extern "C" void ext_00673C20();
 extern "C" int mem_00A9EE30;
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005A1490(void* self, int edx_unused, void* arg1) {
     __asm {
@@ -4289,6 +4391,12 @@ done_5A19D0:
 extern "C" void ext_006404E0();
 extern "C" void ext_00673C20();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005A0AC0(void* self) {
     __asm {
@@ -4766,6 +4874,12 @@ extern "C" void ext_005A2900();
 extern "C" void ext_005A2BD0();
 extern "C" void ext_00667030();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005A5690(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4, void* a5) {
     __asm {
@@ -4925,6 +5039,12 @@ extern "C" void ext_005AC8C0();
 extern "C" void ext_005ADE30();
 extern "C" void ext_005AE170();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005AE4E0(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4, void* a5) {
     __asm {
@@ -5056,6 +5176,12 @@ extern "C" void ext_005AE1B0();
 extern "C" void ext_005AE480();
 extern "C" void ext_00673C20();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005AEC70(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4, void* a5) {
     __asm {
@@ -5493,6 +5619,12 @@ extern "C" void ext_005A3580();
 extern "C" void ext_005A3500();
 extern "C" void ext_0060E4A0();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005A4EB0(void* self, int edx_unused, unsigned int arg1) {
     __asm {
@@ -5723,6 +5855,12 @@ extern "C" void ext_005AE480();
 extern "C" void ext_00610400();
 extern "C" void ext_005A34C0();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005A5110(void* self, int edx_unused, unsigned int arg1) {
     __asm {
@@ -5840,6 +5978,12 @@ extern "C" void ext_006404E0();
 extern "C" void ext_00673C20();
 extern "C" int mem_00A9ED78;
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 // [0x005A13F0] sub_005A13F0 (148 bytes)
 extern "C" __declspec(naked) void __fastcall fn_005A13F0(void* self) {
@@ -5911,6 +6055,12 @@ extern "C" void ext_00640270();
 extern "C" void ext_006404E0();
 extern "C" void ext_00667030();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_00A9F838;
 extern "C" int mem_00924FF0;
 extern "C" int mem_00924FE4;
@@ -6065,6 +6215,12 @@ extern "C" void ext_006404E0();
 extern "C" void ext_00673C20();
 extern "C" int mem_00A9EDF8;
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_00A9F584;
 extern "C" int mem_00924FF0;
 
@@ -6368,6 +6524,12 @@ extern "C" void ext_006A5C62();
 extern "C" void ext_006A6DD2();
 extern "C" void ext_008709B0();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_00924FE8;
 extern "C" int mem_00A9F838;
 extern "C" int mem_00924FDC;
@@ -6570,6 +6732,12 @@ extern "C" void ext_00673C20();
 extern "C" void ext_006A5C62();
 extern "C" void ext_00870AD0();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_00924FC4;
 
 // [0x005A4220] sub_005A4220 (295 bytes)
@@ -6861,6 +7029,12 @@ extern "C" __declspec(naked) void __fastcall fn_005A0FF0(void* self) {
 // [0x005A6300] sub_005A6300 (119 bytes)
 extern "C" void ext_0059A140();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" __declspec(naked) void __fastcall fn_005A6300(void* self) {
     __asm {
         sub esp, 8
@@ -7955,6 +8129,12 @@ extern "C" int mem_00A9F0C0;
 extern "C" int mem_00A9F200;
 extern "C" int mem_00A9F288;
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_00924FDC;
 extern "C" int mem_00B40640;
 extern "C" int mem_00A9F224;
@@ -8395,6 +8575,12 @@ extern "C" void ext_00586300();
 extern "C" void ext_00673C20();
 extern "C" int mem_00B40640;
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 
 extern "C" __declspec(naked) void __fastcall fn_005A1070(void* self, int edx_unused, void* arg0) {
     __asm {
@@ -8496,6 +8682,12 @@ extern "C" void ext_005A1070();
 extern "C" void ext_00486E30();
 extern "C" int mem_0094CE80;
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" __declspec(naked) void __fastcall fn_005A17D0(void* self, int edx_unused, void* a1, int a2) {
     __asm {
         sub esp, 0Ch
@@ -8729,6 +8921,12 @@ extern "C" void ext_00673C20();
 extern "C" void ext_00675050();
 extern "C" void ext_00587110();
 extern "C" int mem_00925134;
+extern "C" void ext_005A0810();
+extern "C" void ext_004F9EA0();
+extern "C" void ext_004142E0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
 extern "C" int mem_0093F8EC;
 extern "C" __declspec(naked) void __fastcall fn_005A1640(void* self, int edx_unused, int a1) {
     __asm {
@@ -8965,5 +9163,72 @@ extern "C" __declspec(naked) void __cdecl fn_005A4740(void* first, void* last, i
         pop ebx
         add esp, 0x8
         ret
+    }
+}
+
+// [0x005A2640] sub_005A2640 (214 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_005A2640(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8a1758
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x90
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xa8]
+        push esi
+        push edi
+        mov ebx, ecx
+        push ebp
+        lea ecx, [esp + 0x48]
+        call dword ptr [mem_00924FE0]
+        mov esi, dword ptr [esp + 0xb4]
+        mov ecx, 0x10
+        lea edi, [esp + 0x60]
+        rep movsd
+        lea eax, [esp + 0x44]
+        push eax
+        lea ecx, [esp + 0x14]
+        push ecx
+        lea ecx, [ebx + 0x4]
+        mov dword ptr [esp + 0xb0], 0
+        call ext_005A0810
+        lea ecx, [esp + 0x44]
+        mov dword ptr [esp + 0xa8], -1
+        call dword ptr [mem_00924FF4]
+        cmp byte ptr [esp + 0x18], 0
+        jne L_5A2640_OK
+        push ebp
+        call ext_004F9EA0
+        push eax
+        lea ecx, [esp + 0x24]
+        call ext_004142E0
+        push 0x9d1278
+        lea edx, [esp + 0x20]
+        push edx
+        call ext_006A6DD2
+L_5A2640_OK:
+        mov esi, dword ptr [esp + 0x10]
+        test esi, esi
+        mov ebx, dword ptr [mem_00925134]
+        jne L_5A2640_NZ1
+        call ebx
+L_5A2640_NZ1:
+        mov edi, dword ptr [esp + 0x14]
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_5A2640_NZ2
+        call ebx
+L_5A2640_NZ2:
+        mov ecx, dword ptr [esp + 0xa0]
+        lea eax, [edi + 0x28]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x9c
+        ret 8
     }
 }
