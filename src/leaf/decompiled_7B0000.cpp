@@ -1106,3 +1106,95 @@ L_4E6:
         ret
     }
 }
+
+// [0x007B2E50] sub_007B2E50 (159 bytes)
+extern "C" void ext_007AA510();
+extern "C" void ext_007B7490();
+extern "C" bool mem_00B61219;
+extern "C" __declspec(naked) void __cdecl fn_007B2E50() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        test edi, edi
+        je L_call
+        test ebx, ebx
+        jne L_main
+    L_call:
+        push 2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 4
+        test al, al
+        je L_restore
+    L_main:
+        mov eax, dword ptr [ebx]
+        push eax
+        call ext_007B7490
+        mov esi, dword ptr [edi + 0x14]
+        add esp, 4
+        test esi, esi
+        mov ebp, eax
+        jne L_nonempty
+        mov dword ptr [edi + 0x14], ebx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_nonempty:
+        mov eax, dword ptr [esi + 0x10]
+        xor edi, edi
+        test eax, eax
+        je L_tail
+    L_loop:
+        mov ecx, dword ptr [esi]
+        push ecx
+        call ext_007B7490
+        add esp, 4
+        cmp ebp, eax
+        jg L_tail
+        mov edi, esi
+        mov esi, dword ptr [esi + 0x10]
+        mov eax, dword ptr [esi + 0x10]
+        test eax, eax
+        jne L_loop
+    L_tail:
+        mov edx, dword ptr [esi]
+        push edx
+        call ext_007B7490
+        add esp, 4
+        cmp ebp, eax
+        jle L_after
+        test edi, edi
+        mov dword ptr [ebx + 0x10], esi
+        je L_head
+        mov dword ptr [edi + 0x10], ebx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_head:
+        mov eax, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x14], ebx
+        pop ebx
+        ret
+    L_after:
+        mov ecx, dword ptr [esi + 0x10]
+        mov dword ptr [ebx + 0x10], ecx
+        mov dword ptr [esi + 0x10], ebx
+    L_restore:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
