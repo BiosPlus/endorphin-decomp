@@ -255,3 +255,59 @@ extern "C" __declspec(naked) void __fastcall fn_0060BF00(void* self) {
         ret 0x4
     }
 }
+
+extern "C" void ext_00607E70();
+extern "C" void ext_0060CDE0();
+extern "C" void ext_006A5C62();
+
+// [0x0060D3E0] NMData::EffectorWithMemoryData::vfunc_15 (140 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0060D3E0(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push -1
+        push 0x8a8823
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push ebx
+        xor ebx, ebx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 8], ebx
+        push 0x88
+        mov dword ptr [esp + 0x1c], ebx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0xc], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x18], 1
+        je loc_60D429
+        mov ecx, eax
+        call ext_00607E70
+        jmp loc_60D42B
+    loc_60D429:
+        xor eax, eax
+    loc_60D42B:
+        mov ecx, dword ptr [esi + 0x60]
+        mov dword ptr [eax + 0x68], ecx
+        fld dword ptr [esi + 0x5c]
+        mov ecx, dword ptr [esp + 0x20]
+        fstp dword ptr [esp + 8]
+        fld dword ptr [esp + 8]
+        push eax
+        fstp dword ptr [eax + 0x60]
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        push ecx
+        mov ecx, esi
+        mov byte ptr [esp + 0x24], bl
+        mov dword ptr [esp + 0x14], ebx
+        call ext_0060CDE0
+        mov ecx, dword ptr [esp + 0x10]
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 0xc
+    }
+}
