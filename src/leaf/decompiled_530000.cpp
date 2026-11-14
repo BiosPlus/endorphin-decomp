@@ -9360,3 +9360,111 @@ L_53792A:
         ret
     }
 }
+
+// [0x0053E570] sub_0053E570 (217 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0053E570(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        push edi
+        jne L_53e581
+        xor eax, eax
+        jmp L_53e596
+    L_53e581:
+        mov edx, dword ptr [esi + 0x8]
+        sub edx, ecx
+        mov eax, 0x2aaaaaab
+        imul edx
+        sar edx, 1
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+    L_53e596:
+        mov ebx, dword ptr [esp + 0x14]
+        cmp eax, ebx
+        jae L_53e5e0
+        test ecx, ecx
+        jne L_53e5a6
+        xor edi, edi
+        jmp L_53e5bb
+    L_53e5a6:
+        mov edx, dword ptr [esi + 0x8]
+        sub edx, ecx
+        mov eax, 0x2aaaaaab
+        imul edx
+        sar edx, 1
+        mov edi, edx
+        shr edi, 0x1f
+        add edi, edx
+    L_53e5bb:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp ecx, ebp
+        jbe L_53e5c8
+        call dword ptr [mem_00925134]
+    L_53e5c8:
+        lea eax, [esp + 0x18]
+        push eax
+        sub ebx, edi
+        push ebx
+        push ebp
+        push esi
+        mov ecx, esi
+        call ext_00539B50
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    L_53e5e0:
+        test ecx, ecx
+        je L_53e642
+        mov edi, dword ptr [esi + 0x8]
+        mov edx, edi
+        sub edx, ecx
+        mov eax, 0x2aaaaaab
+        imul edx
+        sar edx, 1
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp ebx, eax
+        jae L_53e642
+        cmp ecx, edi
+        jbe L_53e609
+        call dword ptr [mem_00925134]
+    L_53e609:
+        mov ebp, dword ptr [esi + 0x4]
+        cmp ebp, dword ptr [esi + 0x8]
+        jbe L_53e617
+        call dword ptr [mem_00925134]
+    L_53e617:
+        lea ecx, [ebx + 2*ebx]
+        lea ebx, [ebp + 4*ecx]
+        cmp ebx, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x1c], ebp
+        ja L_53e62c
+        cmp ebx, dword ptr [esi + 0x4]
+        jae L_53e632
+    L_53e62c:
+        call dword ptr [mem_00925134]
+    L_53e632:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea edx, [esp + 0x28]
+        push edx
+        mov ecx, esi
+        call ext_00539AA0
+    L_53e642:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
