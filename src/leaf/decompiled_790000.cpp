@@ -542,3 +542,141 @@ extern "C" __declspec(naked) void __fastcall fn_0079FDA0(void* self) {
         ret
     }
 }
+
+// [0x0079BAA0] sub_0079BAA0 (208 bytes)
+extern "C" void ext_006D80A0();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006A6C87();
+extern "C" void ext_006B9D70();
+extern "C" int mem_00B5D2C0;
+extern "C" int mem_00B60F60;
+extern "C" int mem_00925284;
+extern "C" int mem_00B60FC8;
+extern "C" int mem_00B60FCC;
+extern "C" int mem_00B60FC0;
+
+extern "C" __declspec(naked) void __fastcall fn_0079BAA0(void* self) {
+    __asm {
+        mov eax, offset fn_0079BAA0 + 0x30
+        mov dword ptr [ecx + 0xe0], offset ext_006D80A0
+        mov dword ptr [ecx + 0xe4], eax
+        mov dword ptr [ecx + 0xe8], eax
+        mov dword ptr [ecx + 0xec], eax
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp + 0x18]
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        _emit 0xe8
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0xe9
+        _emit 0x16
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        push offset mem_00B5D2C0
+        mov ecx, offset mem_00B60F60
+        call ext_006B9D80
+        ret
+        push offset fn_0079BAA0 + 0x70
+        call ext_006A6C87
+        pop ecx
+        ret
+        nop
+        nop
+        nop
+        nop
+        mov ecx, offset mem_00B60F60
+        jmp ext_006B9D70
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 4]
+        mov dword ptr [mem_00B60FC8], ecx
+        mov dword ptr [mem_00B60FCC], edx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B60FC0]
+        ret
+    }
+}
