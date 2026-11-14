@@ -1392,3 +1392,113 @@ extern "C" __declspec(naked) void __cdecl fn_006FE870() {
         ret
     }
 }
+
+// [0x006FE1C0] sub_006FE1C0 (223 bytes)
+extern "C" void ext_006BC380();
+extern "C" void ext_006D91C0();
+extern "C" void ext_006E8F70();
+extern "C" void ext_006E9150();
+extern "C" void ext_006FDF70();
+extern "C" void ext_00715550();
+
+extern "C" __declspec(naked) void __fastcall fn_006FE1C0(void* self) {
+    __asm {
+        sub     esp, 0xc
+        push    ebx
+        mov     ebx, ecx
+        mov     eax, dword ptr [ebx + 0xc]
+        test    eax, eax
+        je      L_6fe29a
+        push    esi
+        call    ext_006D91C0
+        xor     esi, esi
+        mov     dword ptr [esp + 0x10], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0xc], esi
+        jle     L_6fe292
+        push    ebp
+        push    edi
+    L_6fe1eb:
+        push    esi
+        mov     ecx, ebx
+        call    ext_006FDF70
+        mov     ecx, eax
+        call    ext_006BC380
+        push    esi
+        mov     ecx, ebx
+        mov     edi, eax
+        call    ext_006FDF70
+        mov     ecx, eax
+        call    ext_00715550
+        test    edi, edi
+        mov     dword ptr [esp + 0x10], eax
+        je      L_6fe244
+        mov     ecx, dword ptr [edi + 0x4]
+        test    ecx, ecx
+        je      L_6fe223
+        cmp     ecx, 0x2
+        je      L_6fe223
+        xor     ebp, ebp
+        jmp     L_6fe226
+    L_6fe223:
+        mov     ebp, dword ptr [edi + 0x8]
+    L_6fe226:
+        xor     esi, esi
+        test    ebp, ebp
+        jle     L_6fe244
+    L_6fe22c:
+        mov     eax, dword ptr [edi + 0x18]
+        mov     ecx, dword ptr [eax + 4*esi]
+        push    ecx
+        mov     ecx, dword ptr [ebx + 0xc]
+        call    ext_006E8F70
+        inc     esi
+        cmp     esi, ebp
+        jl      L_6fe22c
+        mov     eax, dword ptr [esp + 0x10]
+    L_6fe244:
+        test    eax, eax
+        je      L_6fe27b
+        mov     ecx, dword ptr [eax + 0x4]
+        test    ecx, ecx
+        je      L_6fe258
+        cmp     ecx, 0x2
+        je      L_6fe258
+        xor     edi, edi
+        jmp     L_6fe25b
+    L_6fe258:
+        mov     edi, dword ptr [eax + 0x8]
+    L_6fe25b:
+        xor     esi, esi
+        test    edi, edi
+        jle     L_6fe27b
+        jmp     L_6fe267
+    L_6fe263:
+        mov     eax, dword ptr [esp + 0x10]
+    L_6fe267:
+        mov     edx, dword ptr [eax + 0x18]
+        mov     ecx, dword ptr [ebx + 0xc]
+        mov     eax, dword ptr [edx + 4*esi]
+        push    eax
+        call    ext_006E9150
+        inc     esi
+        cmp     esi, edi
+        jl      L_6fe263
+    L_6fe27b:
+        mov     esi, dword ptr [esp + 0x14]
+        mov     eax, dword ptr [esp + 0x18]
+        inc     esi
+        cmp     esi, eax
+        mov     dword ptr [esp + 0x14], esi
+        jl      L_6fe1eb
+        pop     edi
+        pop     ebp
+    L_6fe292:
+        mov     dword ptr [ebx + 0xc], 0x0
+        pop     esi
+    L_6fe29a:
+        pop     ebx
+        add     esp, 0xc
+        ret
+    }
+}
