@@ -973,3 +973,44 @@ extern "C" __declspec(naked) void* __fastcall fn_004E7040(void* self) {
         ret
     }
 }
+
+extern "C" void ext_004C2790();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+// [0x004C28F0] NMData::AnimationEventData::vfunc_92 (112 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004C28F0(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push -1
+        push 008b56f9h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 1Ch
+        mov eax, dword ptr [esp + 2Ch]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 8]
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esp + 4]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 2Ch], 0
+        call ext_004C2790
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 5Ch]
+        lea eax, [esp + 4]
+        push eax
+        mov ecx, esi
+        call edx
+        lea ecx, [esp + 4]
+        mov dword ptr [esp + 28h], 0FFFFFFFFh
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 20h]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 28h
+        ret 4
+    }
+}
