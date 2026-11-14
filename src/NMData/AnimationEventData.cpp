@@ -731,3 +731,79 @@ extern "C" __declspec(naked) void __fastcall fn_004E7280(void* self) {
         ret
     }
 }
+
+extern "C" void ext_004769F0();
+extern "C" void ext_00486CB0();
+extern "C" void ext_0049AD90();
+extern "C" void ext_004C1B50();
+extern "C" void ext_0058D800();
+
+// [0x004C1F90] NMData::AnimationEventData::vfunc_94 (219 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004C1F90(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0Ch]
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 24h]
+        mov esi, ecx
+        mov ecx, edi
+        call edx
+        push 93F7BCh
+        push eax
+        lea eax, [esi + 14h]
+        push eax
+        lea ecx, [esp + 1Ch]
+        call ext_00486CB0
+        mov ecx, dword ptr [esp + 14h]
+        mov edx, dword ptr [esp + 10h]
+        push ecx
+        push edx
+        push edi
+        mov ecx, esi
+        call ext_0058D800
+        mov eax, dword ptr [edi + 15Ch]
+        mov ecx, dword ptr [esi + 15Ch]
+        push 944E30h
+        lea edx, [esp + 10h]
+        mov dword ptr [esp + 10h], eax
+        push edx
+        lea eax, [esp + 18h]
+        mov dword ptr [esp + 18h], ecx
+        push eax
+        lea ecx, [esp + 1Ch]
+        call ext_004769F0
+        mov ecx, dword ptr [edi + 160h]
+        mov edx, dword ptr [esi + 160h]
+        push 944E24h
+        mov dword ptr [esp + 10h], ecx
+        lea eax, [esp + 10h]
+        push eax
+        lea ecx, [esp + 18h]
+        push ecx
+        lea ecx, [esp + 1Ch]
+        mov dword ptr [esp + 1Ch], edx
+        call ext_004769F0
+        mov dl, byte ptr [edi + 17Ch]
+        mov al, byte ptr [esi + 17Ch]
+        push 944E18h
+        lea ecx, [esp + 10h]
+        mov byte ptr [esp + 10h], dl
+        push ecx
+        lea edx, [esp + 18h]
+        push edx
+        lea ecx, [esp + 1Ch]
+        mov byte ptr [esp + 1Ch], al
+        call ext_0049AD90
+        push 944E08h
+        add edi, 16Ch
+        push edi
+        add esi, 16Ch
+        push esi
+        lea ecx, [esp + 1Ch]
+        call ext_004C1B50
+        pop edi
+        pop esi
+        ret 0Ch
+    }
+}
