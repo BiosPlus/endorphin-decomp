@@ -15,6 +15,7 @@
     "0x0060C4A2",
     "0x0060C4B4"
   ],
-  "status": "deferred",
-  "skip_reason": "Unmatched after full escalation (claude-haiku-5.5 -\u003e gpt-oss-120b -\u003e gemini-3.8-flash -\u003e claude-sonnet-5.5 -\u003e claude-opus-5.5 -\u003e gemini-4-argon)"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-14T11:46:47Z"
 }

@@ -335,3 +335,26 @@ extern "C" __declspec(naked) void* __fastcall fn_0060BF80(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0060C490] NMData::EffectorWithModesData::vfunc_19 (48 bytes)
+extern "C" void ext_0060BDF0();
+extern "C" int mem_00924FD4;
+extern "C" int mem_009518E0;
+
+extern "C" __declspec(naked) void __fastcall fn_0060C490(void* self) {
+    __asm {
+        push    esi
+        mov     esi, ecx
+        call    ext_0060BDF0
+        push    0x9719c4
+        lea     ecx, [esi + 60h]
+        call    dword ptr [mem_00924FD4]
+        fldz
+        fstp    dword ptr [esi + 7ch]
+        mov     dword ptr [esi + 5ch], 14h
+        fld     dword ptr [mem_009518E0]
+        fstp    dword ptr [esi + 80h]
+        pop     esi
+        ret
+    }
+}
