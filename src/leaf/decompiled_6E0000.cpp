@@ -1,9 +1,12 @@
 // Decompiled translation unit: src/leaf/decompiled_6E0000.cpp
 
 #include <math.h>
+extern "C" void ext_006D2390();
+extern "C" void ext_006D80A0();
+extern "C" void ext_006E89B0();
 
-// [0x006E0900] sub_006E0900 (32 bytes)
-// Zero-initialise the object's 8 dwords, then store 1.0 (double) at offset 0x18.
+extern "C" void ext_006D80A0();
+extern "C" void ext_006E89B0();
 extern "C" __declspec(naked) void __fastcall fn_006E0900(void* self) {
     __asm {
         mov eax, ecx
@@ -988,5 +991,55 @@ extern "C" __declspec(naked) void __fastcall fn_006EA6D0(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 10h
         ret
+    }
+}
+
+// [0x006E8910] sub_006E8910 (159 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006E8910(void* self) {
+    __asm {
+        push -0x1
+        push 0x8b982b
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, ecx
+        mov al, byte ptr [esp + 0x1c]
+        sub esp, 0x48
+        mov esi, esp
+        lea ecx, [esp + 0x6c]
+        mov dword ptr [esp + 0x50], esp
+        push ecx
+        lea ecx, [esi + 0x8]
+        mov dword ptr [esp + 0x60], 0x0
+        mov dword ptr [esp + 0x54], esi
+        mov byte ptr [esi], al
+        call ext_006D2390
+        lea edx, [esp + 0x8c]
+        lea ecx, [esi + 0x28]
+        push edx
+        mov byte ptr [esp + 0x60], 0x1
+        call ext_006D2390
+        mov eax, dword ptr [edi]
+        mov ecx, edi
+        push eax
+        mov byte ptr [esp + 0x60], 0x0
+        call ext_006E89B0
+        mov esi, eax
+        lea ecx, [esp + 0x44]
+        mov dword ptr [esp + 0x14], 0x2
+        call ext_006D80A0
+        lea ecx, [esp + 0x24]
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, esi
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0x10
+        ret 0x48
     }
 }
