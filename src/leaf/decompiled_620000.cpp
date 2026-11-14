@@ -8044,3 +8044,34 @@ extern "C" __declspec(naked) void* __fastcall fn_006201B0(void* self) {
         ret
     }
 }
+
+// [0x00620860] sub_00620860 (90 bytes)
+extern "C" void ext_006203F0();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B49E68;
+
+extern "C" __declspec(naked) void __fastcall fn_00620860(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8a9d9e
+        push eax
+        mov eax, 0x1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00B49E68], al
+        jne done_00620860
+        or dword ptr [mem_00B49E68], eax
+        mov ecx, 0xb49e44
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_006203F0
+        push 0x91ed80
+        call ext_006A6C87
+        add esp, 0x4
+    done_00620860:
+        mov ecx, dword ptr [esp]
+        mov eax, 0xb49e44
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
