@@ -3422,3 +3422,35 @@ extern "C" void __fastcall fn_0063CE20(void* self, int edx_unused, const float* 
     rb->count += 1;
     *((AtFn)ext_0041C7C0)(self, rem) = *val;
 }
+
+extern "C" void ext_0062F660();
+extern "C" void ext_0062F710();
+extern "C" void ext_0062F790();
+extern "C" void ext_00630100();
+extern "C" void ext_006798D0();
+extern "C" int mem_00A9EDD8;
+
+// [0x00630190] sub_00630190 (68 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00630190(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [mem_00A9EDD8]
+        push eax
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006798D0
+        mov ecx, eax
+        call ext_00630100
+        push 0x979abc
+        lea ecx, [esp + 4]
+        call ext_0062F660
+        push 0x979ab0
+        lea ecx, [esp + 4]
+        call ext_0062F710
+        push 0x979aa4
+        lea ecx, [esp + 4]
+        call ext_0062F790
+        pop ecx
+        ret
+    }
+}
