@@ -198,3 +198,73 @@ L_skip2:
         ret 4
     }
 }
+
+// [0x0059AA30] World::vfunc_6 (178 bytes)
+extern "C" void ext_0040ECB0();
+extern "C" void ext_00479C80();
+extern "C" int mem_00925134;
+extern "C" int mem_00A9EFF8;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0059AA30(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x2c
+        push ebx
+        push ebp
+        push esi
+        mov ebx, ecx
+        mov eax, dword ptr [ebx + 0x250]
+        mov ecx, dword ptr [eax]
+        push edi
+        mov edi, dword ptr [esp + 0x4c]
+        mov ebp, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebp
+        lea esi, [ebx + 0x24c]
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [esp + 0x1c], ecx
+        jbe skip_invalid
+        call dword ptr [mem_00925134]
+skip_invalid:
+        mov edx, dword ptr [esp + 0x4c]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x1c]
+        push edx
+        push eax
+        push esi
+        push ecx
+        push esi
+        push ebp
+        push edi
+        mov ecx, edi
+        call ext_00479C80
+        mov ebx, dword ptr [ebx + 0x270]
+        test ebx, ebx
+        je done
+        mov edx, dword ptr [mem_00A9EFF8]
+        push edx
+        lea ecx, [esp + 0x24]
+        call dword ptr [mem_00924FE4]
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x48], 0
+        call ext_0040ECB0
+        lea ecx, [esp + 0x20]
+        mov dword ptr [esp + 0x44], -1
+        call dword ptr [mem_00924FF4]
+done:
+        mov ecx, dword ptr [esp + 0x3c]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x38
+        ret 0x4
+    }
+}
