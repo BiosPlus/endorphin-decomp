@@ -5493,3 +5493,59 @@ extern "C" char __fastcall fn_00582860(void* self, int edx_unused, int a1) {
     }
     return 1;
 }
+
+// [0x00587B90] sub_00587B90 (97 bytes)
+extern "C" void ext_0050BE20();
+extern "C" void ext_0050ED40();
+extern "C" void ext_00587AF0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00587B90(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        push edi
+        mov ecx, ebx
+        call ext_0050BE20
+        mov esi, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        jne short nonzero_len
+        xor eax, eax
+        jmp short have_count
+    nonzero_len:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+    have_count:
+        push eax
+        mov ecx, ebx
+        call ext_0050ED40
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe short chk_second
+        call dword ptr [mem_00925134]
+    chk_second:
+        mov ebp, dword ptr [esi + 0x4]
+        cmp ebp, dword ptr [esi + 0x8]
+        jbe short do_call
+        call dword ptr [mem_00925134]
+    do_call:
+        push ebx
+        push edi
+        push esi
+        push ebp
+        lea eax, [esp + 0x24]
+        push esi
+        push eax
+        call ext_00587AF0
+        add esp, 0x18
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
