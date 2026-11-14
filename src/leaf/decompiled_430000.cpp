@@ -14346,3 +14346,21 @@ extern "C" bool __fastcall fn_0043F460(void* self, int edx_unused, void* a1) {
     u.p = ext_0043F3A0;
     return (((Dummy43F460*)self)->*u.m)(a1, 0);
 }
+
+// [0x00434FF0] sub_00434FF0 (65 bytes)
+extern "C" void ext_00433B70();
+extern "C" void ext_00465B30();
+extern "C" void ext_00465B40();
+extern "C" void ext_00469410();
+extern "C" void ext_004694E0();
+extern "C" void __fastcall fn_00434FF0(void* self) {
+    void* obj = ((void* (__cdecl*)())ext_00465B40)();
+    void** vt = *(void***)obj;
+    ((void (__thiscall*)(void*, int))vt[0x1f4 / 4])(obj, 1);
+    void* p1 = ((void* (__stdcall*)(int))ext_00465B30)(2);
+    if (!((bool (__thiscall*)(void*))ext_004694E0)(p1)) {
+        void* p2 = ((void* (__stdcall*)(int))ext_00465B30)(2);
+        ((void (__thiscall*)(void*))ext_00469410)(p2);
+        ((void (__thiscall*)(void*, int))ext_00433B70)(self, 2);
+    }
+}
