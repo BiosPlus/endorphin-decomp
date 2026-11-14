@@ -181,3 +181,40 @@ extern "C" __declspec(naked) void __fastcall fn_00544C70(void* self, int edx_unu
     }
 }
 
+
+// [0x00544DA0] SnapTranslateTool::vfunc_31 (89 bytes)
+extern "C" void ext_005371F0();
+extern "C" void ext_0053F740();
+
+extern "C" __declspec(naked) void __fastcall fn_00544DA0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x9c]
+        mov eax, dword ptr [eax + 0x7c]
+        lea ecx, [esi + 0x9c]
+        push edx
+        push edi
+        call eax
+        cmp edi, 0x1c00
+        jne done
+        call ext_005371F0
+        mov ecx, dword ptr [eax + 0x194]
+        cmp ecx, dword ptr [eax + 0x198]
+        jne done
+        mov edx, ecx
+        shl edx, 4
+        sub edx, ecx
+        lea eax, [eax + 4*edx + 0xa4]
+        push eax
+        lea ecx, [esi + 0x164]
+        call ext_0053F740
+    done:
+        pop edi
+        pop esi
+        ret 8
+    }
+}
