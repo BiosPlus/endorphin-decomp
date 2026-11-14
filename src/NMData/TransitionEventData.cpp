@@ -229,3 +229,83 @@ extern "C" __declspec(naked) void __fastcall fn_004D3070(void* self) {
         ret
     }
 }
+
+// [0x004D0BB0] NMData::TransitionEventData::vfunc_22 (199 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_004C1DE0();
+extern "C" void ext_004D0B60();
+extern "C" void ext_00640110();
+extern "C" void ext_00640390();
+extern "C" void ext_00640BC0();
+extern "C" int mem_00A9FAE4;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9F8F8;
+extern "C" int mem_00A9EDE8;
+extern "C" int mem_00AE5C68;
+extern "C" int mem_009473C0;
+
+extern "C" __declspec(naked) void* __fastcall fn_004D0BB0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9FAE4]
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 10h]
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        mov ecx, dword ptr [esi + 188h]
+        push ecx
+        mov edx, eax
+        call ext_004D0B60
+        add esp, 4
+        mov ecx, eax
+        mov dword ptr [esp + 10h], edx
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 14h]
+        call ext_00427550
+        mov eax, dword ptr [esi + 190h]
+        mov edx, dword ptr [mem_00A9F8F8]
+        lea ebx, [eax*8]
+        sub ebx, eax
+        push edx
+        mov ecx, edi
+        lea ebx, [ebx*4 + mem_00AE5C68]
+        call ext_00640110
+        mov ecx, ebx
+        mov dword ptr [esp + 10h], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 14h]
+        call ext_00427550
+        push offset mem_009473C0
+        mov ecx, edi
+        call ext_00640110
+        fld dword ptr [esi + 194h]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00640BC0
+        mov eax, dword ptr [mem_00A9EDE8]
+        add esp, 8
+        push 0
+        push eax
+        mov ecx, edi
+        call ext_00640390
+        mov edx, dword ptr [esi + 198h]
+        lea ecx, [esi + 198h]
+        push eax
+        mov eax, dword ptr [edx + 58h]
+        call eax
+        push edi
+        mov ecx, esi
+        call ext_004C1DE0
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
