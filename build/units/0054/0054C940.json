@@ -100,5 +100,7 @@
     "0x0054CC3D",
     "0x0054CC4D"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T05:32:25Z"
 }
