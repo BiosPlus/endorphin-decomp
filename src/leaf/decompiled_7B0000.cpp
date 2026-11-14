@@ -502,8 +502,8 @@ extern "C" __declspec(naked) void* __cdecl fn_007B3380(int* s) {
 
 // [0x007B7E40] sub_007B7E40 (48 bytes)
 extern "C" void ext_007B78D0();
-extern "C" unsigned char mem_00B61218;
-extern "C" unsigned char mem_00B61219;
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
 extern "C" __declspec(naked) void __cdecl fn_007B7E40(void* self) {
     __asm {
         push esi
@@ -817,8 +817,8 @@ loc_7B2BCD:
 
 // [0x007B7EB0] sub_007B7EB0 (112 bytes)
 extern "C" void ext_007B7790(unsigned short);
-extern "C" unsigned char mem_00B61218;
-extern "C" unsigned char mem_00B61219;
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
 
 extern "C" __declspec(naked) void __cdecl fn_007B7EB0(const unsigned short* a1) {
     __asm {
@@ -862,6 +862,56 @@ extern "C" __declspec(naked) void __cdecl fn_007B7EB0(const unsigned short* a1) 
         call    ext_007B7790
         add     esp, 4
     loc_7B7F1E:
+        pop     esi
+        ret
+    }
+}
+
+extern "C" unsigned short ext_007B77D0();
+extern "C" int mem_00999750;
+extern "C" int mem_00999754;
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
+
+// [0x007B7F20] sub_007B7F20 (112 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007B7F20(unsigned short* out) {
+    __asm {
+        mov     eax, dword ptr [mem_00999750]
+        push    esi
+        mov     esi, dword ptr [esp + 8]
+        mov     dword ptr [esi], eax
+        mov     ecx, dword ptr [mem_00999754]
+        mov     dword ptr [esi + 4], ecx
+        call    ext_007B77D0
+        mov     word ptr [esi], ax
+        mov     al, byte ptr [mem_00B61218]
+        test    al, al
+        je      loc_7B7F4F
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7B7F8E
+    loc_7B7F4F:
+        call    ext_007B77D0
+        mov     word ptr [esi + 2], ax
+        mov     al, byte ptr [mem_00B61218]
+        test    al, al
+        je      loc_7B7F6A
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7B7F8E
+    loc_7B7F6A:
+        call    ext_007B77D0
+        mov     word ptr [esi + 4], ax
+        mov     al, byte ptr [mem_00B61218]
+        test    al, al
+        je      loc_7B7F85
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7B7F8E
+    loc_7B7F85:
+        call    ext_007B77D0
+        mov     word ptr [esi + 6], ax
+    loc_7B7F8E:
         pop     esi
         ret
     }
