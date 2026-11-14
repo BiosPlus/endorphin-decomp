@@ -4749,3 +4749,54 @@ skip_assign:
         ret
     }
 }
+
+extern "C" void ext_00405FB0();
+extern "C" void ext_004A59A0();
+
+// [0x00607F20] sub_00607F20 (108 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00607F20(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x0c]
+        test edi, edi
+        mov esi, ecx
+        mov dword ptr [esi + 0x04], 0
+        mov dword ptr [esi + 0x08], 0
+        mov dword ptr [esi + 0x0c], 0
+        je L_exit
+        cmp edi, 0x3fffffff
+        jbe L_alloc
+        call ext_00405FB0
+    L_alloc:
+        push 0
+        push edi
+        call ext_004A59A0
+        lea ecx, [eax + 4*edi]
+        add esp, 8
+        test edi, edi
+        mov dword ptr [esi + 0x0c], ecx
+        mov dword ptr [esi + 0x04], eax
+        mov dword ptr [esi + 0x08], eax
+        mov ecx, edi
+        mov edx, eax
+        jbe L_after_loop
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+    L_loop:
+        fld dword ptr [ebx]
+        sub ecx, 1
+        fstp dword ptr [edx]
+        add edx, 4
+        test ecx, ecx
+        ja L_loop
+        pop ebx
+    L_after_loop:
+        lea edx, [eax + 4*edi]
+        mov dword ptr [esi + 0x08], edx
+    L_exit:
+        pop edi
+        pop esi
+        ret 8
+    }
+}
