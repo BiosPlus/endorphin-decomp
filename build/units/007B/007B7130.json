@@ -43,5 +43,7 @@
     "0x007B7775",
     "0x007B777A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-14T14:20:08Z"
 }
