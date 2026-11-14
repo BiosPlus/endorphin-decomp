@@ -175,3 +175,67 @@ extern "C" __declspec(naked) void __fastcall fn_007577E0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0075D2E0] sub_0075D2E0 (128 bytes)
+extern "C" void ext_006BADB0();
+extern "C" void ext_006C2860();
+extern "C" void ext_006C28D0();
+extern "C" void ext_007275F0();
+extern "C" void ext_007279A0();
+extern "C" void ext_007283B0();
+extern "C" int mem_00AAD8F4;
+
+extern "C" __declspec(naked) bool __fastcall fn_0075D2E0(void* self, int, void* arg0) {
+    __asm {
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov ebx, ecx
+        push 0x0
+        mov ecx, edi
+        call ext_006C2860
+        test eax, eax
+        je L_ret
+        mov ecx, dword ptr [ebx + 0xac]
+        push esi
+        push offset mem_00AAD8F4
+        add ecx, 0x4
+        call ext_007275F0
+        xor esi, esi
+        mov ecx, edi
+        push esi
+        call ext_006C2860
+        test eax, eax
+        jle L_done_loop
+    L_loop:
+        push esi
+        mov ecx, edi
+        call ext_006C28D0
+        mov ecx, eax
+        call ext_006BADB0
+        mov ecx, dword ptr [ebx + 0xac]
+        push eax
+        add ecx, 0x4
+        call ext_007279A0
+        push 0x0
+        mov ecx, edi
+        inc esi
+        call ext_006C2860
+        cmp esi, eax
+        jl L_loop
+    L_done_loop:
+        mov ecx, dword ptr [ebx + 0xac]
+        add ecx, 0x4
+        call ext_007283B0
+        pop esi
+        pop edi
+        mov al, 0x1
+        pop ebx
+        ret 0x4
+    L_ret:
+        pop edi
+        mov al, 0x1
+        pop ebx
+        ret 0x4
+    }
+}
