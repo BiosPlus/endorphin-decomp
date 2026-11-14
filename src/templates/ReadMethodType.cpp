@@ -1145,3 +1145,43 @@ extern "C" __declspec(naked) void __fastcall fn_00512BA0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00513240] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_4 (115 bytes)
+extern "C" void ext_004276B0();
+extern "C" void ext_005119F0();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00513240(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x88afd3
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x20
+        mov eax, dword ptr [esp + 0x34]
+        push esi
+        mov dword ptr [esp + 0x4], 0
+        mov edx, dword ptr [eax]
+        push edx
+        lea eax, [esp + 0xc]
+        push eax
+        call ext_005119F0
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        push esi
+        mov dword ptr [esp + 0x34], 1
+        call ext_004276B0
+        add esp, 8
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 4], 1
+        mov byte ptr [esp + 0x2c], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret 8
+    }
+}
