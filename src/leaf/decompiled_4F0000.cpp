@@ -4447,3 +4447,48 @@ L_DONE_004FDF80:
         ret 0xc
     }
 }
+
+// [0x004FE000] sub_004FE000 (117 bytes)
+extern "C" void ext_004FDE10();
+extern "C" __declspec(naked) void __fastcall fn_004FE000(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push 0x50
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0x0
+        je L_NULL_004FE000
+        mov ecx, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x1c]
+        push ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        push edx
+        push ecx
+        push esi
+        mov ecx, eax
+        call ext_004FDE10
+        jmp L_DONE_004FE000
+L_NULL_004FE000:
+        xor eax, eax
+L_DONE_004FE000:
+        push eax
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_00665870
+        mov ecx, eax
+        call ext_00666670
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0xc
+    }
+}
