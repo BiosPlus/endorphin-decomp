@@ -16481,3 +16481,304 @@ extern "C" __declspec(naked) void __fastcall fn_00556EF0(void* self) {
         ret 0x10
     }
 }
+
+extern "C" void ext_00405FB0();
+extern "C" void ext_00480310();
+extern "C" void ext_0055E940();
+extern "C" void ext_0055F620();
+extern "C" void ext_0055F670();
+extern "C" void ext_0055F800();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A6DD2();
+
+// [0x0055F850] sub_0055F850 (664 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0055F850(void* self, void* edx_unused, void* arg1, void* where, unsigned int count, const float* val) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x89b290
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x14
+        mov eax, dword ptr [ebp + 0x14]
+        fld dword ptr [eax]
+        push ebx
+        fstp dword ptr [ebp - 0x20]
+        push esi
+        fld dword ptr [eax + 4]
+        mov esi, ecx
+        fstp dword ptr [ebp - 0x1c]
+        push edi
+        fld dword ptr [eax + 8]
+        mov dword ptr [ebp - 0x10], esp
+        fstp dword ptr [ebp - 0x18]
+        fld dword ptr [eax + 0xc]
+        mov eax, dword ptr [esi + 4]
+        test eax, eax
+        fstp dword ptr [ebp - 0x14]
+        jne L_55F898
+        xor edi, edi
+        jmp L_55F8A0
+    L_55F898:
+        mov edi, dword ptr [esi + 0xc]
+        sub edi, eax
+        sar edi, 4
+    L_55F8A0:
+        mov ebx, dword ptr [ebp + 0x10]
+        test ebx, ebx
+        je L_55FAD5
+        test eax, eax
+        jne L_55F8B3
+        xor ecx, ecx
+        jmp L_55F8BB
+    L_55F8B3:
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, eax
+        sar ecx, 4
+    L_55F8BB:
+        mov edx, 0xfffffff
+        sub edx, ecx
+        cmp edx, ebx
+        jae L_55F8CB
+        call ext_00405FB0
+    L_55F8CB:
+        test eax, eax
+        jne L_55F8D3
+        xor ecx, ecx
+        jmp L_55F8DB
+    L_55F8D3:
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, eax
+        sar ecx, 4
+    L_55F8DB:
+        add ecx, ebx
+        cmp edi, ecx
+        jae L_55F9DD
+        mov ecx, edi
+        shr ecx, 1
+        mov edx, 0xfffffff
+        sub edx, ecx
+        cmp edx, edi
+        jae L_55F8F8
+        xor edi, edi
+        jmp L_55F8FA
+    L_55F8F8:
+        add edi, ecx
+    L_55F8FA:
+        test eax, eax
+        jne L_55F902
+        xor ecx, ecx
+        jmp L_55F90A
+    L_55F902:
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, eax
+        sar ecx, 4
+    L_55F90A:
+        add ecx, ebx
+        cmp edi, ecx
+        jae L_55F922
+        test eax, eax
+        jne L_55F918
+        xor edi, edi
+        jmp L_55F920
+    L_55F918:
+        mov edi, dword ptr [esi + 8]
+        sub edi, eax
+        sar edi, 4
+    L_55F920:
+        add edi, ebx
+    L_55F922:
+        push 0
+        push edi
+        call ext_00480310
+        mov ecx, dword ptr [esi + 4]
+        mov byte ptr [ebp + 0x10], 0
+        mov edx, dword ptr [ebp + 0x10]
+        push edx
+        mov dword ptr [ebp + 0x14], eax
+        mov edx, dword ptr [ebp + 0x14]
+        push edx
+        push esi
+        push eax
+        mov eax, dword ptr [ebp + 0xc]
+        push eax
+        push ecx
+        mov dword ptr [ebp - 4], 0
+        call ext_0055E940
+        add esp, 0x20
+        lea ecx, [ebp - 0x20]
+        push ecx
+        push ebx
+        push eax
+        mov ecx, esi
+        call ext_0055F670
+        mov ecx, dword ptr [esi + 8]
+        mov byte ptr [ebp + 0x10], 0
+        mov edx, dword ptr [ebp + 0x10]
+        push edx
+        mov edx, dword ptr [ebp + 0x14]
+        push edx
+        push esi
+        push eax
+        mov eax, dword ptr [ebp + 0xc]
+        push ecx
+        push eax
+        call ext_0055E940
+        mov ecx, dword ptr [esi + 4]
+        add esp, 0x18
+        test ecx, ecx
+        jne L_55F988
+        xor eax, eax
+        jmp L_55F990
+    L_55F988:
+        mov eax, dword ptr [esi + 8]
+        sub eax, ecx
+        sar eax, 4
+    L_55F990:
+        add ebx, eax
+        test ecx, ecx
+        je L_55F99F
+        push ecx
+        call ext_006A5C5C
+        add esp, 4
+    L_55F99F:
+        mov eax, dword ptr [ebp + 0x14]
+        shl edi, 4
+        add edi, eax
+        shl ebx, 4
+        add ebx, eax
+        mov dword ptr [esi + 0xc], edi
+        mov dword ptr [esi + 8], ebx
+        mov dword ptr [esi + 4], eax
+        mov ecx, dword ptr [ebp - 0xc]
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x10
+        mov ecx, dword ptr [ebp + 0x14]
+        push ecx
+        call ext_006A5C5C
+        add esp, 4
+        push 0
+        push 0
+        call ext_006A6DD2
+    L_55F9DD:
+        mov eax, dword ptr [esi + 8]
+        mov edi, dword ptr [ebp + 0xc]
+        mov edx, eax
+        sub edx, edi
+        sar edx, 4
+        cmp edx, ebx
+        mov dword ptr [ebp + 0x10], eax
+        jae L_55FA6A
+        mov ecx, ebx
+        shl ecx, 4
+        mov dword ptr [ebp + 0x14], ecx
+        add ecx, edi
+        push ecx
+        push eax
+        push edi
+        mov ecx, esi
+        call ext_0055F800
+        mov eax, dword ptr [esi + 8]
+        mov edx, eax
+        sub edx, edi
+        lea ecx, [ebp - 0x20]
+        push ecx
+        sar edx, 4
+        sub ebx, edx
+        push ebx
+        push eax
+        mov ecx, esi
+        mov dword ptr [ebp - 4], 2
+        call ext_0055F670
+        mov eax, dword ptr [ebp + 0x14]
+        add dword ptr [esi + 8], eax
+        mov esi, dword ptr [esi + 8]
+        sub esi, eax
+        cmp edi, esi
+        je L_55FAD5
+    L_55FA38:
+        fld dword ptr [ebp - 0x20]
+        add edi, 0x10
+        cmp edi, esi
+        fstp dword ptr [edi - 0x10]
+        fld dword ptr [ebp - 0x1c]
+        fstp dword ptr [edi - 0xc]
+        fld dword ptr [ebp - 0x18]
+        fstp dword ptr [edi - 8]
+        fld dword ptr [ebp - 0x14]
+        fstp dword ptr [edi - 4]
+        jne L_55FA38
+        mov ecx, dword ptr [ebp - 0xc]
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x10
+    L_55FA6A:
+        shl ebx, 4
+        mov ecx, ebx
+        push eax
+        mov ebx, eax
+        sub ebx, ecx
+        push eax
+        mov dword ptr [ebp + 0x14], ecx
+        push ebx
+        mov ecx, esi
+        call ext_0055F800
+        mov dword ptr [esi + 8], eax
+        mov eax, dword ptr [ebp + 0x10]
+        push eax
+        push ebx
+        push edi
+        call ext_0055F620
+        mov ecx, dword ptr [ebp + 0x14]
+        add ecx, edi
+        add esp, 0xc
+        cmp edi, ecx
+        je L_55FAD5
+        fld dword ptr [ebp - 0x14]
+        lea eax, [edi + 0xc]
+        fld dword ptr [ebp - 0x18]
+        fld dword ptr [ebp - 0x1c]
+        fld dword ptr [ebp - 0x20]
+        jmp L_55FAB1
+    L_55FAAB:
+        fxch st(3)
+        fxch st(2)
+        fxch st(1)
+    L_55FAB1:
+        fst dword ptr [eax - 0xc]
+        add eax, 0x10
+        fxch st(1)
+        lea edx, [eax - 0xc]
+        cmp edx, ecx
+        fst dword ptr [eax - 0x18]
+        fxch st(2)
+        fst dword ptr [eax - 0x14]
+        fxch st(3)
+        fst dword ptr [eax - 0x10]
+        jne L_55FAAB
+        fstp st(0)
+        fstp st(2)
+        fstp st(0)
+        fstp st(0)
+    L_55FAD5:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x10
+    }
+}
