@@ -224,3 +224,70 @@ extern "C" __declspec(naked) float __fastcall fn_005B12B0(void* self, int edx_un
         ret 0xc
     }
 }
+
+extern "C" void ext_00539AA0();
+extern "C" void ext_00539FB0();
+extern "C" void ext_005B11E0();
+extern "C" int mem_00925134;
+
+// [0x005B4B10] Geometry::CuboidType::vfunc_16 (135 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005B4B10(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [ebx + 8]
+        cmp dword ptr [ebx + 4], esi
+        push edi
+        jbe L_5b4b2b
+        call ebp
+    L_5b4b2b:
+        mov edi, dword ptr [ebx + 4]
+        cmp edi, dword ptr [ebx + 8]
+        jbe L_5b4b35
+        call ebp
+    L_5b4b35:
+        push esi
+        push ebx
+        push edi
+        push ebx
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, ebx
+        call ext_00539AA0
+        mov edi, dword ptr [esp + 0x20]
+        mov esi, 0x95f6f0
+        mov edi, edi
+    L_5b4b50:
+        fldz
+        xor edx, edx
+        fst dword ptr [esp + 0x18]
+        fst dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x10]
+    L_5b4b60:
+        push edx
+        mov ecx, edi
+        call ext_005B11E0
+        fmul dword ptr [esi]
+        add edx, 1
+        add esi, 4
+        cmp edx, 3
+        fstp dword ptr [esp + 4*edx + 0xc]
+        jl L_5b4b60
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, ebx
+        call ext_00539FB0
+        cmp esi, 0x95f750
+        jl L_5b4b50
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret 0x10
+    }
+}
