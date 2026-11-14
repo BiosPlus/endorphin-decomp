@@ -6163,3 +6163,49 @@ extern "C" void __fastcall fn_004744F0(void* self) {
         ((void (__thiscall*)(void*))ext_0046F920)(s);
     } while (*(unsigned char*)(s + 0x12c) != 0);
 }
+
+extern "C" void ext_0047AA50();
+
+// [0x0047C0B0] sub_0047C0B0 (74 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0047C0B0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x30]
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        mov byte ptr [esp + 0x10], 0x0
+        jbe short lbl1
+        call ebp
+    lbl1:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe short lbl2
+        call ebp
+    lbl2:
+        cmp esi, esi
+        je short lbl3
+        call ebp
+    lbl3:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, edi
+        push eax
+        sub ecx, ebx
+        sar ecx, 0x2
+        push ecx
+        push edi
+        push ebx
+        call ext_0047AA50
+        add esp, 0x10
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
