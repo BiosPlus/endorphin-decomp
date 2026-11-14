@@ -1602,3 +1602,133 @@ L_006F5366:
         ret 0x4
     }
 }
+
+// [0x006F6BC0] sub_006F6BC0 (256 bytes)
+extern "C" void ext_006F76F0();
+extern "C" void ext_0077FEF0();
+extern "C" void ext_00782B60();
+
+extern "C" __declspec(naked) void __fastcall fn_006F6BC0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x5a48], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x4c
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x5b58], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x4d
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x5c68], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x4e
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x5d78], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x4f
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x5e88], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x50
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call ext_00782B60
+        add esp, 0x4
+        ret 0x4
+    }
+}
