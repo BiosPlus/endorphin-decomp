@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `12744 / 24049` (**52.99%**) — `9652` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1360206 / 4496005 bytes` (**30.25%** of 4.29 MB)
+- **In-Scope Functions Matched:** `12745 / 24049` (**53.00%**) — `9653` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1360269 / 4496005 bytes` (**30.26%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -16,7 +16,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P0-10 (1-16B)** | 2379 / 2405 | 98.92% | 24669 / 25001 | 98.67% | 26 fn |
 | **P10-20 (16-32B)** | 2251 / 2405 | 93.60% | 57317 / 61769 | 92.79% | 154 fn |
 | **P20-30 (32-48B)** | 1484 / 2405 | 61.70% | 57936 / 97731 | 59.28% | 921 fn |
-| **P30-40 (48-71B)** | 1258 / 2405 | 52.31% | 74025 / 144549 | 51.21% | 1147 fn |
+| **P30-40 (48-71B)** | 1259 / 2405 | 52.35% | 74088 / 144549 | 51.25% | 1146 fn |
 | **P40-50 (71-91B)** | 1170 / 2405 | 48.65% | 97522 / 194373 | 50.17% | 1235 fn |
 | **P50-60 (91-122B)** | 1308 / 2405 | 54.39% | 140966 / 256906 | 54.87% | 1097 fn |
 | **P60-70 (122-159B)** | 1018 / 2405 | 42.33% | 137239 / 339038 | 40.48% | 1387 fn |
@@ -29,7 +29,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6753 | 526035 | 69.96% |
-| `claude-haiku-5.5@low` | 1045 | 269394 | 10.83% |
+| `claude-haiku-5.5@low` | 1046 | 269457 | 10.84% |
 | `gemini-4-hydrogen@low` | 602 | 213637 | 6.24% |
 | `gemini-3.8-flash@low` | 599 | 201571 | 6.21% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.63% |
