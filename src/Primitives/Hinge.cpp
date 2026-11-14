@@ -425,3 +425,47 @@ extern "C" __declspec(naked) void __fastcall fn_0053CB60(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0053BE10] Primitives::Hinge::vfunc_13 (105 bytes)
+extern "C" void ext_00538550();
+extern "C" void ext_0053A050();
+extern "C" int mem_0092C508;
+extern "C" int mem_00932470;
+extern "C" int mem_009559A0;
+
+extern "C" __declspec(naked) void __fastcall fn_0053BE10(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        fld dword ptr [esi + 0x3c]
+        push 0
+        fmul qword ptr [mem_0092C508]
+        push 0
+        push ecx
+        lea ecx, [esi + 0xa0]
+        fstp dword ptr [esp + 0x10]
+        mov byte ptr [esi + 4], 1
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [esp]
+        call ext_00538550
+        fld dword ptr [esi + 0x3c]
+        push 0xa
+        fmul qword ptr [mem_00932470]
+        push 5
+        sub esp, 8
+        lea ecx, [esi + 0x5c]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [esi + 0x3c]
+        fmul qword ptr [mem_009559A0]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [esp]
+        call ext_0053A050
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
