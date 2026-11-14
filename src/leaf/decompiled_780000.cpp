@@ -899,3 +899,73 @@ extern "C" __declspec(naked) void __fastcall fn_00789CA0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0078BB40] sub_0078BB40 (176 bytes)
+// SEH-guarded __thiscall method (ret 0x54); sets self->[0x18..0x28] and returns bool in al.
+extern "C" void ext_006B9D70();
+extern "C" void ext_006E7460();
+extern "C" void ext_007892F0();
+extern "C" void ext_00789670();
+extern "C" void ext_0078C1D0();
+extern "C" __declspec(naked) void __fastcall fn_0078BB40(void* self, int edx_unused) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8bdc58
+        push eax
+        mov dword ptr fs:[0], esp
+        push esi
+        push edi
+        mov esi, ecx
+        xor eax, eax
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esp + 0x68]
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esi + 0x18], eax
+        mov eax, dword ptr [esp + 0x64]
+        or edi, -1
+        mov dword ptr [esi + 0x1c], ecx
+        neg eax
+        sbb eax, eax
+        push edx
+        and eax, 0x2
+        lea ecx, [esp + 0x1c]
+        push eax
+        mov dword ptr [esi + 0x20], edi
+        mov dword ptr [esi + 0x24], edi
+        call ext_006E7460
+        push eax
+        mov ecx, esi
+        call ext_007892F0
+        test al, al
+        je short L_fail
+        mov ecx, esi
+        call ext_0078C1D0
+        mov ecx, dword ptr [esi + 0x4]
+        push ecx
+        mov ecx, esi
+        call ext_00789670
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x10], edi
+        call ext_006B9D70
+        mov al, 1
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        add esp, 0xc
+        ret 0x54
+    L_fail:
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esi + 0x28], edi
+        mov dword ptr [esp + 0x10], edi
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x8]
+        pop edi
+        xor al, al
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x54
+    }
+}
