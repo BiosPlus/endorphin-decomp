@@ -4465,3 +4465,20 @@ extern "C" __declspec(naked) void __fastcall fn_0058D800(void* self) {
         ret 0xc
     }
 }
+
+// [0x0058A080] sub_0058A080 (78 bytes)
+extern "C" void ext_00588FD0();
+extern "C" void ext_00589080();
+extern "C" void ext_00589FF0();
+extern "C" void ext_00592E60();
+extern "C" int mem_00A9F838;
+extern "C" int mem_00A9FAD4;
+
+extern "C" void __cdecl fn_0058A080(void* arg) {
+    int local;
+    ((void (__thiscall*)(void*, int*, int))ext_00589FF0)(arg, &local, 0);
+    ((void (__thiscall*)(int*, int))ext_00588FD0)(&local, mem_00A9F838);
+    ((void (__thiscall*)(int*, int))ext_00588FD0)(&local, 0x0095B2F8);
+    ((void (__thiscall*)(int*, int))ext_00589080)(&local, mem_00A9FAD4);
+    ((void (__cdecl*)(void*))ext_00592E60)(arg);
+}
