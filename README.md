@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `14460 / 24049` (**60.13%**) — `11368` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1684054 / 4496005 bytes` (**37.46%** of 4.29 MB)
+- **In-Scope Functions Matched:** `14461 / 24049` (**60.13%**) — `11369` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1684190 / 4496005 bytes` (**37.46%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -19,7 +19,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P30-40 (48-71B)** | 1342 / 2405 | 55.80% | 79632 / 144549 | 55.09% | 1063 fn |
 | **P40-50 (71-91B)** | 1391 / 2405 | 57.84% | 115793 / 194373 | 59.57% | 1014 fn |
 | **P50-60 (91-122B)** | 1880 / 2405 | 78.17% | 203564 / 256906 | 79.24% | 525 fn |
-| **P60-70 (122-159B)** | 1312 / 2405 | 54.55% | 177133 / 339038 | 52.25% | 1093 fn |
+| **P60-70 (122-159B)** | 1313 / 2405 | 54.59% | 177269 / 339038 | 52.29% | 1092 fn |
 | **P70-80 (159-178B)** | 318 / 2405 | 13.22% | 53603 / 400567 | 13.38% | 2087 fn |
 | **P80-90 (178-335B)** | 1234 / 2405 | 51.31% | 297684 / 583211 | 51.04% | 1171 fn |
 | **P90-100 (335-36100B)** | 869 / 2404 | 36.15% | 616723 / 2392860 | 25.77% | 1535 fn |
@@ -31,7 +31,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | `claude-haiku-5.5@medium` | 6755 | 526244 | 59.42% |
 | `claude-haiku-5.5@low` | 1793 | 405467 | 15.77% |
 | `gemini-4-hydrogen@low` | 1153 | 320341 | 10.14% |
-| `gemini-3.8-flash@low` | 1010 | 281499 | 8.88% |
+| `gemini-3.8-flash@low` | 1011 | 281635 | 8.89% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 3.93% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.43% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.22% |
