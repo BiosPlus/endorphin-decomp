@@ -13408,3 +13408,147 @@ f467150_exit:
         ret
     }
 }
+
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" void ext_00468660();
+extern "C" void* ext_00594000();
+extern "C" void ext_0052F600();
+extern "C" void ext_006AD940();
+extern "C" void ext_00666320();
+extern "C" void ext_005AFB30();
+extern "C" void ext_005B0310();
+extern "C" void ext_005AE4C0();
+extern "C" void ext_005AF820();
+extern "C" void ext_005AFD70();
+extern "C" void ext_006667D0();
+extern "C" void ext_00493D30();
+extern "C" void ext_0059C7A0();
+extern "C" void ext_00493EE0();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+// [0x00469200] sub_00469200 (453 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00469200(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x88205d
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x23c
+        push ebp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x14]
+        mov ecx, dword ptr [eax + 0x30]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        call edx
+        mov ebp, eax
+        mov ecx, ebp
+        mov dword ptr [esp + 0xc], ebp
+        call ext_0065C640
+        cmp byte ptr [esi + 0x10], 0x0
+        mov dword ptr [esp + 0x24c], 0x0
+        jne L_main
+        mov ecx, ebp
+        mov dword ptr [esp + 0x24c], 0xffffffff
+        call ext_0065C650
+        xor al, al
+        jmp L_end
+L_main:
+        push edi
+        mov ecx, esi
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0xd4]
+        call eax
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        call ext_0052F600
+        mov edi, eax
+        test edi, edi
+        jne L_has
+        mov ecx, ebp
+        mov dword ptr [esp + 0x250], 0xffffffff
+        call ext_0065C650
+        xor al, al
+        jmp L_pop
+L_has:
+        push 0x93a4c0
+        lea ecx, [esp + 0x18]
+        call dword ptr [mem_00924FE4]
+        mov eax, dword ptr [esi + 0x38]
+        lea ecx, [esp + 0x14]
+        push ecx
+        push eax
+        lea ecx, [esp + 0x14]
+        mov byte ptr [esp + 0x258], 0x1
+        call ext_00666320
+        lea ecx, [esp + 0x14]
+        mov byte ptr [esp + 0x250], 0x3
+        call dword ptr [mem_00924FF4]
+        mov eax, dword ptr [esi + 0x14]
+        mov eax, dword ptr [eax + 0x34]
+        mov ecx, dword ptr [esi + 0x38]
+        mov edx, dword ptr [esi + 0x34]
+        add eax, 0x10
+        push eax
+        push ecx
+        push edx
+        mov edx, dword ptr [esp + 0x264]
+        push edx
+        lea ecx, [esp + 0x40]
+        call ext_005AFB30
+        push edi
+        lea ecx, [esp + 0x34]
+        mov byte ptr [esp + 0x254], 0x4
+        call ext_005B0310
+        lea ecx, [esp + 0x30]
+        call ext_005AE4C0
+        lea ecx, [esp + 0x30]
+        call ext_005AF820
+        lea ecx, [esp + 0x30]
+        mov byte ptr [esp + 0x250], 0x3
+        call ext_005AFD70
+        lea ecx, [esp + 0xc]
+        mov byte ptr [esp + 0x250], 0x0
+        call ext_006667D0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        mov ecx, esi
+        call edx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        call ext_00493D30
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        mov ecx, esi
+        call edx
+        call ext_00594000
+        mov ecx, eax
+        call ext_0059C7A0
+        call ext_00594000
+        lea ecx, [eax + 0x258]
+        call ext_00493EE0
+        mov ecx, ebp
+        mov dword ptr [esp + 0x250], 0xffffffff
+        call ext_0065C650
+        mov al, 0x1
+L_pop:
+        pop edi
+L_end:
+        mov ecx, dword ptr [esp + 0x244]
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x248
+        ret 0x4
+    }
+}
