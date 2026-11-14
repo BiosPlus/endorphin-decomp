@@ -3199,3 +3199,19 @@ extern "C" __declspec(naked) void __fastcall fn_00610390(void* self) {
         ret
     }
 }
+
+// [0x0061D1E0] sub_0061D1E0 (104 bytes)
+extern "C" void ext_0058F2F0();
+extern "C" void* __fastcall fn_0061D1E0(void* self, int edx_unused, const void* other) {
+    ((void (__thiscall*)(void*, const void*))ext_0058F2F0)(self, other);
+    *(volatile int*)((char*)self + 0x150) = 0x928eac;
+    *(int*)((char*)self + 0x0) = 0x9761bc;
+    *(int*)((char*)self + 0x4) = 0x976174;
+    *(int*)((char*)self + 0x8) = 0x976134;
+    *(int*)((char*)self + 0xc) = 0x9760e4;
+    *(int*)((char*)self + 0x150) = 0x9760d0;
+    *(float*)((char*)self + 0x154) = *(const float*)((const char*)other + 0x154);
+    *(float*)((char*)self + 0x158) = *(const float*)((const char*)other + 0x158);
+    *(float*)((char*)self + 0x15c) = *(const float*)((const char*)other + 0x15c);
+    return self;
+}
