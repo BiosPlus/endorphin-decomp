@@ -775,3 +775,43 @@ extern "C" __declspec(naked) void __fastcall fn_004C60D0(void* self) {
         ret 0x8
     }
 }
+
+// [0x004C6710] NMData::ForceEventData::vfunc_17_off_C (99 bytes)
+extern "C" void ext_004C6520();
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void __fastcall fn_004C6710(void* self) {
+    __asm {
+        push -1
+        push 08a7a5bh
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        push 18ch
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov [esp+4], eax
+        test eax, eax
+        mov dword ptr [esp+10h], 0
+        je fn_004C6710_null
+        add esi, -0ch
+        push esi
+        mov ecx, eax
+        call ext_004C6520
+        pop esi
+        mov ecx, [esp+4]
+        mov fs:[0], ecx
+        add esp, 10h
+        ret
+    fn_004C6710_null:
+        mov ecx, [esp+8]
+        xor eax, eax
+        pop esi
+        mov fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
