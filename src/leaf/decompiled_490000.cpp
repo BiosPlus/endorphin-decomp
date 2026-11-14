@@ -8226,3 +8226,106 @@ extern "C" __declspec(naked) void __fastcall fn_00491150(void* self) {
         ret 4
     }
 }
+
+// [0x00491290] sub_00491290 (236 bytes)
+extern "C" void ext_004AFF30();
+extern "C" void ext_00505F00();
+extern "C" void ext_00490C80();
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void* __cdecl fn_00491290(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        cmp ebx, dword ptr [esp + 0ch]
+        je L491290_empty
+        push ebp
+        mov ebp, dword ptr [esp + 14h]
+        push esi
+        push edi
+        lea edi, [ebx + 70h]
+        lea esi, [ebp + 70h]
+        __asm _emit 0x8D __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x00 // lea esp, [esp]
+L491290_loop:
+        mov al, byte ptr [ebx]
+        mov byte ptr [ebp], al
+        mov ecx, dword ptr [edi - 6ch]
+        lea edx, [edi - 68h]
+        mov dword ptr [esi - 6ch], ecx
+        push edx
+        lea ecx, [esi - 68h]
+        call ext_004AFF30
+        lea eax, [edi - 58h]
+        push eax
+        lea ecx, [esi - 58h]
+        call dword ptr [mem_00924FDC]
+        mov ecx, dword ptr [edi - 3ch]
+        mov dword ptr [esi - 3ch], ecx
+        mov dl, byte ptr [edi - 38h]
+        lea eax, [edi - 34h]
+        push eax
+        lea ecx, [esi - 34h]
+        mov byte ptr [esi - 38h], dl
+        call ext_00505F00
+        lea ecx, [edi - 24h]
+        push ecx
+        lea ecx, [esi - 24h]
+        call ext_00490C80
+        lea edx, [edi - 14h]
+        push edx
+        lea ecx, [esi - 14h]
+        call ext_004AFF30
+        lea eax, [esi - 4]
+        lea ecx, [edi - 4]
+        cmp eax, ecx
+        je L491290_skip
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L491290_nofree
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esi - 4]
+        push eax
+        call edx
+L491290_nofree:
+        mov eax, dword ptr [edi]
+        mov dword ptr [esi], eax
+        cmp dword ptr [edi], 0
+        je L491290_null
+        mov ecx, dword ptr [edi]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 70h]
+        lea eax, [edi - 4]
+        push eax
+        lea eax, [esp + 18h]
+        push eax
+        call edx
+        jmp L491290_join
+L491290_null:
+        mov dword ptr [esp + 1ch], 0
+        lea eax, [esp + 1ch]
+L491290_join:
+        mov eax, dword ptr [eax]
+        mov dword ptr [esi - 4], eax
+L491290_skip:
+        fld dword ptr [edi + 4]
+        add ebx, 7ch
+        fstp dword ptr [esi + 4]
+        add ebp, 7ch
+        fld dword ptr [edi + 8]
+        add esi, 7ch
+        fstp dword ptr [esi - 74h]
+        add edi, 7ch
+        cmp ebx, dword ptr [esp + 18h]
+        jne L491290_loop
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+L491290_empty:
+        mov eax, dword ptr [esp + 10h]
+        pop ebx
+        ret
+    }
+}
