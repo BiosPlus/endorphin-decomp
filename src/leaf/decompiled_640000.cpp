@@ -7641,3 +7641,24 @@ extern "C" __declspec(naked) void* __fastcall fn_00645FB0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00647AE0] sub_00647AE0 (209 bytes)
+extern "C" void ext_005B5990();
+extern "C" void ext_0065AA00();
+extern "C" void ext_007C61F0();
+extern "C" void ext_007C62B0();
+extern "C" void ext_007C62E0();
+
+extern "C" void __fastcall fn_00647AE0(void* self, int edx_unused, char* a1, void* a2) {
+    ((void (__thiscall*)(void*, void*))ext_005B5990)(self, a1 + 0x24);
+    *(float*)((char*)self + 0x68) = *(float*)(a1 + 0x70);
+    void* obj = *(void**)(a1 + 0x30);
+    void** vt = *(void***)obj;
+    ((void (__thiscall*)(void*, void*))vt[1])(obj, self);
+    ((void (__thiscall*)(void*))ext_0065AA00)(*(void**)((char*)self + 0xa4));
+    ((void (__cdecl*)(void*, float, float, float))ext_007C62B0)(**(void***)((char*)self + 0xa4), *(float*)(a1 + 0x74), *(float*)(a1 + 0x78), *(float*)(a1 + 0x7c));
+    ((void (__cdecl*)(void*, float, float, float))ext_007C62E0)(**(void***)((char*)self + 0xa4), *(float*)(a1 + 0x80), *(float*)(a1 + 0x84), *(float*)(a1 + 0x88));
+    ((void (__cdecl*)(void*, float))ext_007C6310)(**(void***)((char*)self + 0xa4), *(float*)(a1 + 0x8c));
+    ((void (__cdecl*)(void*, float))ext_007C6320)(**(void***)((char*)self + 0xa4), *(float*)(a1 + 0x90));
+    ((void (__cdecl*)(void*, void*))ext_007C61F0)(**(void***)((char*)self + 0xa4), a2);
+}
