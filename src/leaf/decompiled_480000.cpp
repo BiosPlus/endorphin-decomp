@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <new>
 #include <string>
+#include <vector>
 
 // [0x004806E0] sub_004806E0 (31 bytes)
 extern "C" void ext_004A57F0();
@@ -7122,5 +7123,63 @@ loc_0048BD3D:
         pop ebx
         add esp, 0x8
         ret 0xc
+    }
+}
+
+extern "C" void ext_00484E90();
+extern "C" int mem_00925134;
+extern "C" int mem_00B40640;
+
+// [0x00485E40] sub_00485E40 (110 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00485E40(void* self) {
+    __asm {
+        push    ebx
+        push    ebp
+        mov     ebp, ecx
+        mov     ecx, dword ptr [ebp + 0x10]
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax + 0x10]
+        push    esi
+        push    edi
+        call    edx
+        mov     edi, eax
+        mov     esi, dword ptr [edi + 4]
+        cmp     esi, dword ptr [edi + 8]
+        jbe     L_check_end
+        call    dword ptr [mem_00925134]
+    L_check_end:
+        mov     ebx, dword ptr [edi + 8]
+        cmp     dword ptr [edi + 4], ebx
+        jbe     L_loop_cmp
+        call    dword ptr [mem_00925134]
+    L_loop_cmp:
+        cmp     esi, ebx
+        je      L_done
+        cmp     esi, dword ptr [edi + 8]
+        jb      L_deref
+        call    dword ptr [mem_00925134]
+    L_deref:
+        mov     eax, dword ptr [esi]
+        mov     edx, dword ptr [mem_00B40640]
+        lea     ecx, [eax + 4]
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 0x0c]
+        push    edx
+        call    eax
+        push    eax
+        lea     ecx, [ebp + 0x50]
+        call    ext_00484E90
+        cmp     esi, dword ptr [edi + 8]
+        jb      L_next
+        call    dword ptr [mem_00925134]
+    L_next:
+        add     esi, 4
+        jmp     L_check_end
+    L_done:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret
     }
 }
