@@ -12203,3 +12203,37 @@ extern "C" void __fastcall fn_0044D030(void* self) {
     f((char*)self + 0x2cc, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
     f((char*)self + 0x340, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
 }
+
+// [0x00440620] sub_00440620 (90 bytes)
+extern "C" void ext_0043FA70();
+extern "C" void ext_006A61B4();
+extern "C" void ext_006A61BA();
+
+extern "C" __declspec(naked) void __fastcall fn_00440620(void* self) {
+    __asm {
+        push -1
+        push 0x0087B5E8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x14
+        push esi
+        mov esi, ecx
+        push esi
+        lea ecx, [esp + 0x8]
+        call ext_006A61BA
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x24], 0x0
+        call ext_0043FA70
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x20], -1
+        call ext_006A61B4
+        mov ecx, dword ptr [esp + 0x18]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x20
+        ret
+    }
+}
