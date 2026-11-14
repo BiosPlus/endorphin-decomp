@@ -9260,3 +9260,46 @@ extern "C" __declspec(naked) void __cdecl fn_0057E5F0(void* first, unsigned int 
         ret
     }
 }
+
+// [0x0057DB10] sub_0057DB10 (83 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_0057DB10(const void* begin, const void* end, void* dst) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je done_empty
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_top:
+        fld dword ptr [esi]
+        lea eax, [esi + 0xc]
+        fstp dword ptr [edi]
+        push eax
+        fld dword ptr [esi + 0x4]
+        lea ecx, [edi + 0xc]
+        fstp dword ptr [edi + 0x4]
+        fld dword ptr [esi + 0x8]
+        fstp dword ptr [edi + 0x8]
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esi + 0x28]
+        push ecx
+        lea ecx, [edi + 0x28]
+        call ext_00406940
+        add esi, 0x38
+        add edi, 0x38
+        cmp esi, ebx
+        jne loop_top
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    done_empty:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
