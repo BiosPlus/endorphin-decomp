@@ -1,4 +1,6 @@
 // Decompiled translation unit: src/NMData/Marker.cpp
+#include <vector>
+#include <string>
 
 extern "C" __declspec(dllimport) void __fastcall imp_00924ea8(void* str);
 extern "C" void __fastcall fn_0058A1A0(void* self);
@@ -457,5 +459,145 @@ extern "C" __declspec(naked) void* __fastcall fn_00870B70(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 0x10
         ret
+    }
+}
+
+// [0x00870C90] NMData::Marker::vfunc_12_off_C (353 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_00481BD0();
+extern "C" void ext_00587470();
+extern "C" void ext_0059A140();
+extern "C" void ext_005BFFE0();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_00870C90(void* self) {
+    __asm {
+        push -1
+        push 0x0087ba98
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push ebx
+        push ebp
+        mov ebx, ecx
+        mov ecx, dword ptr [esp + 0x38]
+        push esi
+        push edi
+        lea ebp, [ebx - 0xc]
+        push ebp
+        mov dword ptr [esp + 0x14], ebx
+        call ext_00481BD0
+        xor eax, eax
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [esp + 0x24], eax
+        mov dword ptr [esp + 0x28], eax
+        mov dword ptr [esp + 0x34], eax
+        lea eax, [esp + 0x40]
+        push eax
+        lea ecx, [esp + 0x20]
+        mov dword ptr [esp + 0x44], ebp
+        call ext_0041A920
+        mov esi, dword ptr [ebx + 0x74]
+        add ebx, 0x70
+        cmp esi, dword ptr [ebx + 0x8]
+        jbe L_1
+        call dword ptr [mem_00925134]
+    L_1:
+        mov edi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], edi
+        jbe L_2
+        call dword ptr [mem_00925134]
+    L_2:
+        cmp ebx, ebx
+        je L_3
+        call dword ptr [mem_00925134]
+    L_3:
+        cmp esi, edi
+        je L_done_loop
+        cmp esi, dword ptr [ebx + 0x8]
+        jb L_4
+        call dword ptr [mem_00925134]
+    L_4:
+        mov edx, dword ptr [esp + 0x20]
+        test edx, edx
+        mov edi, dword ptr [esp + 0x24]
+        je L_insert
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, edi
+        sub eax, edx
+        sub ecx, edx
+        sar eax, 2
+        sar ecx, 2
+        cmp eax, ecx
+        jae L_insert
+        mov ecx, dword ptr [esi]
+        mov eax, edi
+        add eax, 4
+        mov dword ptr [edi], ecx
+        mov dword ptr [esp + 0x24], eax
+        jmp L_next
+    L_insert:
+        cmp edx, dword ptr [esp + 0x24]
+        jbe L_5
+        call dword ptr [mem_00925134]
+    L_5:
+        push esi
+        lea eax, [esp + 0x20]
+        push edi
+        push eax
+        lea edx, [esp + 0x20]
+        push edx
+        mov ecx, eax
+        call ext_0059A140
+    L_next:
+        cmp esi, dword ptr [ebx + 0x8]
+        jb L_6
+        call dword ptr [mem_00925134]
+    L_6:
+        add esi, 4
+        jmp L_1
+    L_done_loop:
+        mov ecx, dword ptr [esp + 0x3c]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x44]
+        lea edx, [esp + 0x1c]
+        push edx
+        call eax
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x88]
+        push ebp
+        call ext_00587470
+        mov edx, dword ptr [ebp]
+        mov esi, dword ptr [esi + 0x168]
+        mov eax, dword ptr [edx + 0x24]
+        mov ecx, ebp
+        add esi, 0x5e0
+        call eax
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x5c], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        mov ecx, esi
+        call ext_005BFFE0
+        mov eax, dword ptr [esp + 0x20]
+        test eax, eax
+        je L_ret
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    L_ret:
+        mov ecx, dword ptr [esp + 0x2c]
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0x28
+        ret 8
     }
 }
