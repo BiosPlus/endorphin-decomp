@@ -8231,3 +8231,44 @@ extern "C" __declspec(naked) void __fastcall fn_005040E0(void* self) {
         ret
     }
 }
+
+// [0x00509DE0] sub_00509DE0 (75 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_004277B0();
+
+extern "C" __declspec(naked) bool __fastcall fn_00509DE0(void* self, int edx_unused, unsigned int n) {
+    __asm {
+        push esi
+        xor eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, eax
+        mov esi, ecx
+        mov dword ptr [esi + 0x4], eax
+        mov dword ptr [esi + 0x8], eax
+        mov dword ptr [esi + 0xc], eax
+        jne L_509DFE
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
+    L_509DFE:
+        cmp edi, 0x71c71c7
+        jbe L_509E0B
+        call ext_00405FB0
+    L_509E0B:
+        push eax
+        push edi
+        call ext_004277B0
+        lea ecx, [edi + 8*edi]
+        add esp, 0x8
+        lea edx, [eax + 4*ecx]
+        mov dword ptr [esi + 0x4], eax
+        mov dword ptr [esi + 0x8], eax
+        pop edi
+        mov dword ptr [esi + 0xc], edx
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    }
+}
