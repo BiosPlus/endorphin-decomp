@@ -162,3 +162,46 @@ extern "C" __declspec(naked) void __fastcall fn_005F0A20(void* self) {
         ret
     }
 }
+
+// [0x005E23F0] NMData::RPROJointData::vfunc_54 (128 bytes)
+extern "C" void ext_005B5780();
+extern "C" void ext_005E0380();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B45DBC;
+extern "C" int mem_00B45DB4;
+extern "C" __declspec(naked) void __fastcall fn_005E23F0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a618e
+        push eax
+        mov dword ptr fs:[0], esp
+        mov eax, 1
+        test byte ptr [mem_00B45DBC], al
+        push esi
+        mov esi, ecx
+        jne loc_5e2444
+        or dword ptr [mem_00B45DBC], eax
+        push 0xc
+        mov ecx, 0xb45d70
+        mov dword ptr [esp + 0x10], 0
+        call ext_005B5780
+        push 0x91e450
+        call ext_006A6C87
+        add esp, 4
+        mov dword ptr [esp + 0xc], -1
+
+    loc_5e2444:
+        push 0xb45d70
+        mov ecx, esi
+        call ext_005E0380
+        mov al, byte ptr [esi + 0x178]
+        mov ecx, dword ptr [esp + 4]
+        mov byte ptr [mem_00B45DB4], al
+        mov eax, 0xb45d70
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
