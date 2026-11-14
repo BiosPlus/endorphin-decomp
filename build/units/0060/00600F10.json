@@ -34,5 +34,7 @@
     "0x00600FDE",
     "0x00600FF0"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T13:50:04Z"
 }
