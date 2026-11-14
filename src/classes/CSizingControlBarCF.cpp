@@ -304,3 +304,57 @@ extern "C" __declspec(naked) void __fastcall fn_00454770(void* self) {
         ret 0x14
     }
 }
+
+// [0x00454700] CSizingControlBarCF::vfunc_81 (108 bytes)
+extern "C" void ext_00454DB0();
+extern "C" void ext_006A5E00();
+extern "C" int mem_00925654;
+extern "C" int mem_009256BC;
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_00454700(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_00454DB0
+        call dword ptr [mem_00925654]
+        push eax
+        call ext_006A5E00
+        test eax, eax
+        mov edi, dword ptr [esi + 0x124]
+        je loc_454748
+        mov eax, dword ptr [eax + 0x20]
+        test eax, eax
+        je loc_454748
+        mov edx, dword ptr [esi + 0x20]
+        push eax
+        push edx
+        call dword ptr [mem_009256BC]
+        test eax, eax
+        je loc_454748
+        mov eax, 1
+        jmp loc_45474A
+    loc_454748:
+        xor eax, eax
+    loc_45474A:
+        cmp eax, edi
+        mov dword ptr [esi + 0x124], eax
+        je loc_454767
+        mov eax, dword ptr [esi + 0x20]
+        push 0
+        push 0
+        push 0x85
+        push eax
+        call dword ptr [mem_00925694]
+    loc_454767:
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
