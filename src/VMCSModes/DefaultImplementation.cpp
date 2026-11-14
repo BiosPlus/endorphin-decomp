@@ -2308,3 +2308,87 @@ extern "C" __declspec(naked) void __fastcall fn_004F9D30(void* self, int edx_unu
         ret 0xc
     }
 }
+
+extern "C" void ext_00435D00();
+extern "C" void ext_00469530();
+extern "C" void ext_00472350();
+extern "C" void ext_00472F70();
+extern "C" void ext_00474430();
+extern "C" void ext_00493F80();
+extern "C" void ext_00594000();
+extern "C" int mem_00924E90;
+extern "C" int mem_00924FA0;
+extern "C" int mem_00924E94;
+extern "C" int mem_00924E98;
+
+// [0x004FA0A0] VMCSModes::DefaultImplementation::vfunc_36 (207 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004FA0A0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x890900
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [eax + 0x14]
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], 0
+        call ext_00472350
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0xd4]
+        mov ecx, esi
+        call eax
+        call ext_00594000
+        lea ecx, [eax + 0x258]
+        call ext_00493F80
+        mov ecx, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [ecx + 0x14]
+        call ext_00474430
+        mov dword ptr [ebp - 0x4], 0xffffffff
+        jmp cleanup
+    catch_handler:
+        mov edx, dword ptr [ebp - 0x14]
+        mov eax, dword ptr [edx + 0x8]
+        mov ecx, dword ptr [eax + 0x14]
+        call ext_00472F70
+        mov ecx, dword ptr [mem_00924E90]
+        mov edx, dword ptr [ebp - 0x18]
+        mov eax, dword ptr [mem_00924FA0]
+        push ecx
+        add edx, 0xc
+        push edx
+        push 0x94e02c
+        push eax
+        call ext_00435D00
+        add esp, 0x8
+        push eax
+        call dword ptr [mem_00924E94]
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov eax, 0x4fa14f
+        ret
+        mov esi, dword ptr [ebp - 0x14]
+    cleanup:
+        mov ecx, dword ptr [esi + 0x8]
+        push 0x0
+        push 0x5
+        call ext_00469530
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
