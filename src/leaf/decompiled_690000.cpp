@@ -12280,3 +12280,332 @@ extern "C" __declspec(naked) void __fastcall fn_0069AAA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_00405FB0();
+extern "C" void ext_00410D10();
+extern "C" void ext_0041A070();
+extern "C" void ext_0041A100();
+extern "C" void ext_0041A160();
+extern "C" void ext_0065D540();
+extern "C" void ext_0065F7F0();
+extern "C" void ext_008B63E0();
+extern "C" int mem_009251EC;
+
+// [0x00698BC0] sub_00698BC0 (663 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00698BC0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push offset ext_008B63E0
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        sub esp, 0x1c
+        mov eax, dword ptr [ebp + 0x18]
+        cmp eax, -2
+        push ebx
+        push esi
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        mov esi, ecx
+        je loc_698BFA
+        test eax, eax
+        je loc_698BF4
+        cmp eax, dword ptr [ebp + 0x10]
+        je loc_698BFA
+
+    loc_698BF4:
+        call dword ptr [mem_00925134]
+
+    loc_698BFA:
+        mov edi, dword ptr [ebp + 0x1c]
+        sub edi, dword ptr [ebp + 0x14]
+        mov eax, dword ptr [esi + 4]
+        test eax, eax
+        mov dword ptr [ebp - 0x1c], edi
+        jne loc_698C0E
+        xor edx, edx
+        jmp loc_698C15
+
+    loc_698C0E:
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, eax
+        mov edx, ecx
+
+    loc_698C15:
+        test edi, edi
+        je loc_698E44
+        test eax, eax
+        jne loc_698C25
+        xor ecx, ecx
+        jmp loc_698C2A
+
+    loc_698C25:
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, eax
+
+    loc_698C2A:
+        or ebx, -1
+        sub ebx, ecx
+        cmp ebx, edi
+        jae loc_698C38
+        call ext_00405FB0
+
+    loc_698C38:
+        test eax, eax
+        jne loc_698C40
+        xor ecx, ecx
+        jmp loc_698C45
+
+    loc_698C40:
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, eax
+
+    loc_698C45:
+        add ecx, edi
+        cmp edx, ecx
+        jae loc_698D56
+        mov ecx, edx
+        shr ecx, 1
+        or ebx, -1
+        sub ebx, ecx
+        cmp ebx, edx
+        jae loc_698C68
+        mov dword ptr [ebp - 0x14], 0
+        mov edx, dword ptr [ebp - 0x14]
+        jmp loc_698C6D
+
+    loc_698C68:
+        add edx, ecx
+        mov dword ptr [ebp - 0x14], edx
+
+    loc_698C6D:
+        test eax, eax
+        jne loc_698C75
+        xor ecx, ecx
+        jmp loc_698C7A
+
+    loc_698C75:
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, eax
+
+    loc_698C7A:
+        add ecx, edi
+        cmp edx, ecx
+        jae loc_698C94
+        test eax, eax
+        jne loc_698C88
+        xor ecx, ecx
+        jmp loc_698C8D
+
+    loc_698C88:
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, eax
+
+    loc_698C8D:
+        add ecx, edi
+        mov dword ptr [ebp - 0x14], ecx
+        mov edx, ecx
+
+    loc_698C94:
+        push 0
+        push edx
+        call ext_0041A100
+        mov ecx, dword ptr [esi + 4]
+        mov edi, eax
+        mov eax, dword ptr [ebp + 0xc]
+        add esp, 8
+        sub eax, ecx
+        mov dword ptr [ebp - 0x24], edi
+        mov dword ptr [ebp - 4], 0
+        lea ebx, [eax + edi]
+        je loc_698CC5
+        push eax
+        push ecx
+        push eax
+        push edi
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+
+    loc_698CC5:
+        mov ecx, dword ptr [ebp + 0x14]
+        mov edx, dword ptr [ebp + 0x1c]
+        mov byte ptr [ebp - 0x20], 0
+        mov eax, dword ptr [ebp - 0x20]
+        push eax
+        mov eax, dword ptr [ebp + 0x14]
+        push ecx
+        push esi
+        push ebx
+        push edx
+        push eax
+        call fn_006989B0
+        mov ecx, dword ptr [esi + 8]
+        mov edx, dword ptr [ebp + 0xc]
+        add esp, 0x18
+        sub ecx, edx
+        je loc_698CFA
+        push ecx
+        push edx
+        push ecx
+        push eax
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+
+    loc_698CFA:
+        mov ecx, dword ptr [esi + 4]
+        test ecx, ecx
+        jne loc_698D05
+        xor eax, eax
+        jmp loc_698D0A
+
+    loc_698D05:
+        mov eax, dword ptr [esi + 8]
+        sub eax, ecx
+
+    loc_698D0A:
+        mov ebx, dword ptr [ebp - 0x1c]
+        add ebx, eax
+        test ecx, ecx
+        je loc_698D1C
+        push ecx
+        call ext_006A5C5C
+        add esp, 4
+
+    loc_698D1C:
+        mov ecx, dword ptr [ebp - 0x14]
+        lea edx, [edi + ecx]
+        lea eax, [edi + ebx]
+        mov dword ptr [esi + 0xc], edx
+        mov dword ptr [esi + 8], eax
+        mov dword ptr [esi + 4], edi
+        mov ecx, dword ptr [ebp - 0xc]
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x1c
+
+    loc_698D41:
+        mov ecx, dword ptr [ebp - 0x24]
+        push ecx
+        call ext_006A5C5C
+        add esp, 4
+        push 0
+        push 0
+        call ext_006A6DD2
+
+    loc_698D56:
+        mov edi, dword ptr [esi + 8]
+        cmp eax, edi
+        jbe loc_698D63
+        call dword ptr [mem_00925134]
+
+    loc_698D63:
+        cmp esi, dword ptr [ebp + 8]
+        je loc_698D6E
+        call dword ptr [mem_00925134]
+
+    loc_698D6E:
+        mov ebx, dword ptr [ebp + 0xc]
+        mov eax, dword ptr [ebp - 0x1c]
+        sub edi, ebx
+        cmp edi, eax
+        mov ecx, esi
+        jae loc_698E0A
+        lea edx, [ebx + eax]
+        mov eax, dword ptr [esi + 8]
+        push edx
+        push eax
+        push ebx
+        call ext_0065D540
+        mov ecx, dword ptr [ebp + 0x10]
+        mov edx, dword ptr [ebp + 0x14]
+        mov dword ptr [ebp - 0x28], ecx
+        lea eax, [ebp + 8]
+        push eax
+        lea ecx, [ebp - 0x18]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [ebp - 0x24], edx
+        call ext_00410D10
+        mov ecx, eax
+        call ext_0041A070
+        push eax
+        lea ecx, [ebp - 0x28]
+        call ext_0065F7F0
+        mov edx, dword ptr [esi + 8]
+        mov eax, dword ptr [ebp + 0x1c]
+        mov ecx, dword ptr [ebp + 0x18]
+        mov edi, dword ptr [ebp - 0x24]
+        push edx
+        mov edx, dword ptr [ebp - 0x28]
+        push eax
+        push ecx
+        push edi
+        push edx
+        mov ecx, esi
+        mov dword ptr [ebp - 4], 2
+        call fn_00698B90
+        mov ecx, dword ptr [ebp - 0x28]
+        mov eax, dword ptr [ebp - 0x1c]
+        mov edx, dword ptr [ebp + 0x14]
+        add dword ptr [esi + 8], eax
+        mov eax, dword ptr [ebp + 0x10]
+        push ebx
+        push edi
+        push ecx
+        push edx
+        push eax
+        call fn_00698A40
+        add esp, 0x14
+        mov ecx, dword ptr [ebp - 0xc]
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x1c
+
+    loc_698E0A:
+        mov edi, dword ptr [esi + 8]
+        push edi
+        mov eax, edi
+        sub eax, dword ptr [ebp - 0x1c]
+        push edi
+        push eax
+        mov dword ptr [ebp + 0xc], eax
+        call ext_0065D540
+        mov ecx, dword ptr [ebp + 0xc]
+        push edi
+        push ecx
+        push ebx
+        mov dword ptr [esi + 8], eax
+        call ext_0041A160
+        mov edx, dword ptr [ebp + 0x1c]
+        mov eax, dword ptr [ebp + 0x18]
+        mov ecx, dword ptr [ebp + 0x14]
+        push ebx
+        push edx
+        mov edx, dword ptr [ebp + 0x10]
+        push eax
+        push ecx
+        push edx
+        call fn_00698A40
+        add esp, 0x20
+
+    loc_698E44:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x1c
+    }
+}
