@@ -14532,3 +14532,161 @@ extern "C" __declspec(naked) void __fastcall fn_00579100(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00573740] sub_00573740 (396 bytes)
+extern "C" void ext_0040ECB0();
+extern "C" int mem_00924FE8;
+extern "C" int mem_009250A8;
+extern "C" int mem_00925134;
+extern "C" int mem_009250AC;
+extern "C" int mem_00924E44;
+extern "C" int mem_009250B0;
+extern "C" int mem_00924EA8;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_00573740(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push 0FFFFFFFFh
+        push 008B56F9h
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 2Ch
+        push ebx
+        push ebp
+        push esi
+        push edi
+        lea ecx, [esp+20h]
+        call dword ptr [mem_00924FE8]
+        mov ebp, dword ptr [esp+4Ch]
+        lea eax, [esp+10h]
+        push eax
+        mov ecx, ebp
+        mov dword ptr [esp+48h], 0
+        call dword ptr [mem_009250A8]
+        mov ebx, dword ptr [esp+50h]
+        mov edi, dword ptr [mem_00925134]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+loop_head:
+        lea ecx, [esp+18h]
+        push ecx
+        mov ecx, ebp
+        call dword ptr [mem_009250AC]
+        mov ecx, dword ptr [esp+10h]
+        cmp ecx, -2
+        mov esi, eax
+        je chk_a
+        test ecx, ecx
+        je call_a
+        cmp ecx, dword ptr [esi]
+        je chk_a
+call_a:
+        call edi
+        mov ecx, dword ptr [esp+10h]
+chk_a:
+        mov edx, dword ptr [esp+14h]
+        cmp edx, dword ptr [esi+4]
+        je finish
+        cmp ecx, -2
+        je chk_b
+        test ecx, ecx
+        jne call_b
+        call edi
+        mov ecx, dword ptr [esp+10h]
+call_b:
+        call dword ptr [mem_00924E44]
+        mov ecx, dword ptr [esp+10h]
+        add eax, dword ptr [ecx+14h]
+        cmp dword ptr [esp+14h], eax
+        jb chk_b
+        call edi
+        mov ecx, dword ptr [esp+10h]
+chk_b:
+        mov eax, dword ptr [esp+14h]
+        cmp byte ptr [eax], 2Fh
+        je slash
+        cmp ecx, -2
+        je chk_c
+        test ecx, ecx
+        jne call_c
+        call edi
+        mov ecx, dword ptr [esp+10h]
+call_c:
+        call dword ptr [mem_00924E44]
+        mov ecx, dword ptr [esp+10h]
+        add eax, dword ptr [ecx+14h]
+        cmp dword ptr [esp+14h], eax
+        jb chk_c
+        call edi
+chk_c:
+        mov edx, dword ptr [esp+14h]
+        movzx eax, byte ptr [edx]
+        push eax
+        lea ecx, [esp+24h]
+        call dword ptr [mem_009250B0]
+        jmp after_slash
+slash:
+        lea ecx, [esp+20h]
+        push ecx
+        mov ecx, ebx
+        call ext_0040ECB0
+        lea ecx, [esp+20h]
+        call dword ptr [mem_00924EA8]
+after_slash:
+        mov ecx, dword ptr [esp+10h]
+        cmp ecx, -2
+        je inc_it
+        test ecx, ecx
+        jne call_d
+        call edi
+        mov ecx, dword ptr [esp+10h]
+call_d:
+        call dword ptr [mem_00924E44]
+        mov edx, dword ptr [esp+10h]
+        add eax, dword ptr [edx+14h]
+        cmp dword ptr [esp+14h], eax
+        jb inc_it
+        call edi
+inc_it:
+        add dword ptr [esp+14h], 1
+        jmp loop_head
+finish:
+        lea eax, [esp+20h]
+        push eax
+        mov ecx, ebx
+        call ext_0040ECB0
+        mov eax, dword ptr [ebx+4]
+        test eax, eax
+        jne nonempty
+        xor esi, esi
+        jmp dtor
+nonempty:
+        mov ecx, dword ptr [ebx+8]
+        sub ecx, eax
+        mov eax, 92492493h
+        imul ecx
+        add edx, ecx
+        sar edx, 4
+        mov esi, edx
+        shr esi, 1Fh
+        add esi, edx
+dtor:
+        lea ecx, [esp+20h]
+        mov dword ptr [esp+44h], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp+3Ch]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 38h
+        ret 8
+    }
+}
