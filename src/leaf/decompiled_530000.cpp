@@ -8728,3 +8728,61 @@ L70_u:
         ret 0xc
     }
 }
+
+// [0x0053A4B0] sub_0053A4B0 (145 bytes)
+extern "C" void ext_00532B60();
+extern "C" void ext_0053A050();
+extern "C" void* __cdecl ext_0063E000();
+extern "C" void ext_0063E00C();
+extern "C" void ext_0063E012();
+extern "C" int mem_00896043;
+extern "C" int mem_0095526C;
+
+extern "C" __declspec(naked) void* __fastcall fn_0053A4B0(void* self) {
+    __asm {
+        push -1
+        push offset mem_00896043
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        call ext_00532B60
+        fldz
+        mov dword ptr [esi], offset mem_0095526C
+        fst dword ptr [esi + 0x30]
+        xor eax, eax
+        fst dword ptr [esi + 0x2c]
+        fstp dword ptr [esi + 0x28]
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esi + 0x38], eax
+        mov dword ptr [esi + 0x3c], eax
+        mov dword ptr [esi + 0x40], eax
+        mov byte ptr [esp + 0x10], 1
+        call ext_0063E000
+        push 0x186ac
+        push eax
+        mov dword ptr [esi + 0x14], eax
+        call ext_0063E012
+        mov eax, dword ptr [esi + 0x14]
+        push 0x186a0
+        push eax
+        call ext_0063E00C
+        fld1
+        push 0xa
+        push 0xa
+        sub esp, 8
+        fst dword ptr [esp + 4]
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_0053A050
+        mov ecx, dword ptr [esp + 8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
