@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/leaf/decompiled_640000.cpp
 
 #include <math.h>
+#include <map>
+#include <string>
 extern "C" int mem_00924ED0; /* u32 0x0062A4E2 */
 
 // [0x00648480] sub_00648480 (15 bytes)
@@ -9180,5 +9182,98 @@ extern "C" __declspec(naked) void __fastcall fn_006413D0(void* self, int edx_unu
         pop ebp
         add esp, 0ch
         ret 8
+    }
+}
+
+// [0x00641960] sub_00641960 (220 bytes)
+extern "C" void ext_006417A0();
+extern "C" int mem_00924FE8; /* u32 0x006290D8 */
+extern "C" int mem_00924FE0; /* u32 0x0062916E */
+extern "C" int mem_00924FF4; /* u32 0x00628FF0 */
+extern "C" int mem_00925134; /* "P{b" */
+
+extern "C" __declspec(naked) void __fastcall fn_00641960(void* self, int, const char* key) {
+    __asm {
+        push -1
+        mov eax, dword ptr fs:[0x0]
+        push 0x8af011
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x44
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x5c]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx + 0x4]
+        xor ebx, ebx
+        cmp byte ptr [eax + 0x2d], bl
+        push edi
+        jne L_9a5
+        mov dl, byte ptr [ebp]
+    L_992:
+        cmp byte ptr [eax + 0xc], dl
+        jge L_99c
+        mov eax, dword ptr [eax + 0x8]
+        jmp L_9a0
+    L_99c:
+        mov ecx, eax
+        mov eax, dword ptr [eax]
+    L_9a0:
+        cmp byte ptr [eax + 0x2d], bl
+        je L_992
+    L_9a5:
+        cmp ecx, dword ptr [esi + 0x4]
+        mov edi, ecx
+        je L_9b4
+        mov al, byte ptr [ebp]
+        cmp al, byte ptr [ecx + 0xc]
+        jge L_a11
+    L_9b4:
+        lea ecx, [esp + 0x18]
+        call dword ptr [mem_00924FE8]
+        mov cl, byte ptr [ebp]
+        mov byte ptr [esp + 0x34], cl
+        push eax
+        lea ecx, [esp + 0x3c]
+        mov dword ptr [esp + 0x60], ebx
+        call dword ptr [mem_00924FE0]
+        lea edx, [esp + 0x34]
+        push edx
+        push edi
+        push esi
+        lea eax, [esp + 0x1c]
+        push eax
+        mov ecx, esi
+        mov byte ptr [esp + 0x6c], 1
+        call ext_006417A0
+        mov esi, dword ptr [eax]
+        mov edi, dword ptr [eax + 4]
+        lea ecx, [esp + 0x38]
+        mov byte ptr [esp + 0x5c], bl
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x5c], -1
+        call dword ptr [mem_00924FF4]
+    L_a11:
+        cmp esi, ebx
+        mov ebx, dword ptr [mem_00925134]
+        jne L_a1d
+        call ebx
+    L_a1d:
+        cmp edi, dword ptr [esi + 4]
+        jne L_a24
+        call ebx
+    L_a24:
+        mov ecx, dword ptr [esp + 0x54]
+        lea eax, [edi + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x50
+        ret 4
     }
 }
