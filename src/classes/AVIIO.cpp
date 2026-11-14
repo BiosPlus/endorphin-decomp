@@ -27,6 +27,12 @@ extern "C" void ext_00403420();
 extern "C" void ext_00553080();
 extern "C" void ext_00661A30();
 extern "C" void ext_006A6DE0();
+extern "C" void ext_006A6E92();
+extern "C" void ext_0047B170();
+extern "C" void ext_0056B670();
+extern "C" int mem_00993828;
+extern "C" int mem_0092520C;
+extern "C" int mem_009575A8;
 
 extern "C" __declspec(naked) void __fastcall fn_00402300(void* self, int edx_unused, int a1) {
     __asm {
@@ -186,6 +192,115 @@ L_c:
         mov ecx, dword ptr [esp+0xb0]
         mov dword ptr fs:[0], ecx
         add esp, 0xbc
+        ret 8
+    }
+}
+
+// [0x00558080] AVIIO::vfunc_33 (316 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00558080(void* self, int edx_unused, int a1, void* a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x40
+        sub esp, 0x34
+        fild dword ptr [ebp+8]
+        push ebx
+        push esi
+        push edi
+        fstp dword ptr [esp+0x38]
+        sub esp, 8
+        fld dword ptr [esp+0x40]
+        fld qword ptr [mem_00993828]
+        fmul st(1), st
+        faddp st(1), st
+        fstp dword ptr [esp+0x44]
+        fld dword ptr [esp+0x44]
+        fstp qword ptr [esp]
+        call ext_006A6E92
+        fstp dword ptr [esp+0x44]
+        add esp, 8
+        fld dword ptr [esp+0x3c]
+        call ext_006A6DE0
+        mov esi, 1
+        mov edi, eax
+        cmp edi, esi
+        mov dword ptr [esp+0x3c], esi
+        jl L_end
+        mov ebx, dword ptr [ebp+0xc]
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_loop:
+        fld dword ptr [esp+0x38]
+        sub esp, 8
+        fidiv dword ptr [esp+0x44]
+        fstp dword ptr [esp+0x3c]
+        fld dword ptr [esp+0x3c]
+        fstp qword ptr [esp]
+        call dword ptr [mem_0092520C]
+        fstp st(0)
+        fld qword ptr [mem_009575A8]
+        sub esp, 8
+        fstp qword ptr [esp+8]
+        fld dword ptr [esp+0x44]
+        fstp qword ptr [esp]
+        call dword ptr [mem_0092520C]
+        fstp dword ptr [esp+0x4c]
+        fld dword ptr [esp+0x4c]
+        sub esp, 8
+        fstp qword ptr [esp+8]
+        fld dword ptr [esp+0x4c]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        fld dword ptr [esp+0x4c]
+        add esp, 0x18
+        sub esp, 8
+        test al, al
+        fstp qword ptr [esp]
+        je L_else
+        call dword ptr [mem_0092520C]
+        fstp dword ptr [esp+0x44]
+        fld dword ptr [esp+0x44]
+        add esp, 8
+        lea eax, [esp+0x3c]
+        push eax
+        jmp L_call
+    L_else:
+        call ext_006A6E92
+        fstp dword ptr [esp+0x44]
+        fld qword ptr [mem_009575A8]
+        sub esp, 0x10
+        fstp qword ptr [esp+0x10]
+        fld dword ptr [esp+0x54]
+        fstp qword ptr [esp+8]
+        fld dword ptr [esp+0x4c]
+        fstp qword ptr [esp]
+        call ext_0056B670
+        add esp, 0x18
+        test al, al
+        je L_next
+        fld dword ptr [esp+0x3c]
+        lea ecx, [esp+0x3c]
+        push ecx
+    L_call:
+        mov ecx, ebx
+        fstp dword ptr [esp+0x40]
+        call ext_0047B170
+    L_next:
+        add esi, 1
+        cmp esi, edi
+        mov dword ptr [esp+0x3c], esi
+        jle L_loop
+    L_end:
+        pop edi
+        pop esi
+        or eax, -1
+        pop ebx
+        mov esp, ebp
+        pop ebp
         ret 8
     }
 }
