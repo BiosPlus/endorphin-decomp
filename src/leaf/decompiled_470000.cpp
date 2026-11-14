@@ -10220,3 +10220,76 @@ L_nz2_004797D0:
         ret 8
     }
 }
+
+// [0x00474430] sub_00474430 (189 bytes)
+extern "C" void ext_0046FDE0();
+extern "C" void ext_0046FE50();
+extern "C" void ext_0046FE70();
+extern "C" void ext_00473120();
+extern "C" void ext_00473620();
+extern "C" void ext_0065F260();
+extern "C" __declspec(naked) void __fastcall fn_00474430(void* self) {
+    __asm {
+        push -1
+        push 0x882f68
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x30]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1d8]
+        push edi
+        call edx
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp + 0xc], edi
+        call ext_0065C640
+        mov ecx, dword ptr [esi + 0xf8]
+        xor ebx, ebx
+        mov dword ptr [esp + 0x20], ebx
+        call ext_0065F260
+        mov ecx, esi
+        call ext_0046FE50
+        test al, al
+        jne short L_474497
+        lea eax, [esp + 0x10]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], ebx
+        mov dword ptr [esp + 0x18], ebx
+        call ext_00473620
+L_474497:
+        mov ecx, esi
+        call ext_0046FE70
+        test al, al
+        jne short L_4744B6
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], ebx
+        mov dword ptr [esp + 0x18], ebx
+        call ext_0046FDE0
+L_4744B6:
+        push 1
+        mov ecx, esi
+        call ext_00473120
+        mov ecx, dword ptr [esi + 0x30]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x154]
+        call eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x20], 0xffffffff
+        call ext_0065C650
+        mov ecx, dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x18
+        ret
+    }
+}
