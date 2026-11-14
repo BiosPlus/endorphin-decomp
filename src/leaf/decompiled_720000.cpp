@@ -440,3 +440,70 @@ extern "C" __declspec(naked) void __fastcall fn_00726D40(void* self) {
         ret 8
     }
 }
+
+// [0x0072BEC0] sub_0072BEC0 (128 bytes)
+extern "C" void ext_006BA780();
+extern "C" void ext_007146C0();
+
+extern "C" __declspec(naked) int __fastcall fn_0072BEC0(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov dword ptr [esp + 0x10], ecx
+        mov dword ptr [ebp], 0xffffffff
+        mov eax, dword ptr [ecx + 0x150]
+        test eax, eax
+        jne short loc_72bee8
+    loc_72bede:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        pop ecx
+        ret 0xc
+    loc_72bee8:
+        mov bl, 1
+        xor esi, esi
+        jmp short loc_72bef2
+    loc_72beee:
+        mov ecx, dword ptr [esp + 0x10]
+    loc_72bef2:
+        cmp esi, dword ptr [ecx + 0x150]
+        jge short loc_72bf30
+        mov eax, dword ptr [ecx + 0x160]
+        mov ecx, dword ptr [esp + 0x18]
+        mov edi, dword ptr [eax + esi * 4]
+        push edi
+        call ext_006BA780
+        test al, al
+        je short loc_72bf27
+        mov ecx, dword ptr [esp + 0x1c]
+        add edi, 0x50
+        push edi
+        xor bl, bl
+        mov dword ptr [ebp], esi
+        call ext_007146C0
+        test al, al
+        jne short loc_72bede
+    loc_72bf27:
+        mov eax, dword ptr [ebp]
+        inc esi
+        cmp eax, -1
+        je short loc_72beee
+    loc_72bf30:
+        xor eax, eax
+        pop edi
+        cmp bl, 1
+        pop esi
+        pop ebp
+        pop ebx
+        sete al
+        pop ecx
+        ret 0xc
+    }
+}
