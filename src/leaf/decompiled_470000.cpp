@@ -6449,3 +6449,116 @@ extern "C" __declspec(naked) void __fastcall fn_0047DBC0(void* self) {
         ret
     }
 }
+
+// [0x0047C7F0] sub_0047C7F0 (241 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_00596660();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0047C7F0(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp+0x14]
+        push esi
+        mov esi, dword ptr [ebp+8]
+        __asm _emit 0x39 __asm _emit 0x75 __asm _emit 0x04
+        push edi
+        __asm _emit 0x8b __asm _emit 0xd9
+        jbe L_47C80B
+        call dword ptr [mem_00925134]
+L_47C80B:
+        mov edi, dword ptr [ebp+4]
+        cmp edi, dword ptr [ebp+8]
+        jbe L_47C819
+        call dword ptr [mem_00925134]
+L_47C819:
+        push esi
+        push ebp
+        push edi
+        push ebp
+        lea eax, [esp+0x20]
+        push eax
+        mov ecx, ebp
+        call ext_00596660
+        mov esi, dword ptr [ebx+0x34]
+        cmp esi, dword ptr [ebx+0x38]
+        lea edi, [ebx+0x30]
+        jbe L_47C840
+        call dword ptr [mem_00925134]
+        __asm _emit 0x8d __asm _emit 0x9b __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+L_47C840:
+        mov ebx, dword ptr [edi+8]
+        __asm _emit 0x39 __asm _emit 0x5f __asm _emit 0x04
+        jbe L_47C852
+        call dword ptr [mem_00925134]
+        mov ebp, dword ptr [esp+0x1c]
+L_47C852:
+        test edi, edi
+        je L_47C85A
+        cmp edi, edi
+        je L_47C864
+L_47C85A:
+        call dword ptr [mem_00925134]
+        mov ebp, dword ptr [esp+0x1c]
+L_47C864:
+        cmp esi, ebx
+        je L_47C8D7
+        test edi, edi
+        mov ebx, dword ptr [mem_00925134]
+        jne L_47C874
+        call ebx
+L_47C874:
+        cmp esi, dword ptr [edi+8]
+        jb L_47C87B
+        call ebx
+L_47C87B:
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx+0xf8]
+        call eax
+        cmp eax, 6
+        je L_47C8A4
+        cmp esi, dword ptr [edi+8]
+        jb L_47C893
+        call ebx
+L_47C893:
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx+0xf8]
+        call eax
+        cmp eax, 2
+        jne L_47C8C8
+L_47C8A4:
+        cmp esi, dword ptr [edi+8]
+        jb L_47C8AB
+        call ebx
+L_47C8AB:
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx+0x168]
+        cmp edx, dword ptr [esp+0x20]
+        jne L_47C8C8
+        cmp esi, dword ptr [edi+8]
+        jb L_47C8C0
+        call ebx
+L_47C8C0:
+        push esi
+        mov ecx, ebp
+        call ext_0041A920
+L_47C8C8:
+        cmp esi, dword ptr [edi+8]
+        jb L_47C8CF
+        call ebx
+L_47C8CF:
+        add esi, 4
+        jmp L_47C840
+L_47C8D7:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 8
+    }
+}
