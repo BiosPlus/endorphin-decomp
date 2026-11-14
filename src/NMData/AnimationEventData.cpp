@@ -807,3 +807,21 @@ extern "C" __declspec(naked) void __fastcall fn_004C1F90(void* self, int edx_unu
         ret 0Ch
     }
 }
+
+extern "C" void ext_004C2070();
+extern "C" void ext_00661650();
+
+// [0x004DE2A0] NMData::AnimationEventData::vfunc_14 (90 bytes)
+extern "C" void* __fastcall fn_004DE2A0(void* self, int edx_unused, void* out, int a2) {
+    volatile int flag = 0;
+    if (a2 != 0x40) {
+        ((void (__thiscall*)(void*, void*, int))ext_004C2070)(self, out, a2);
+        return out;
+    }
+    if (*((unsigned char*)self + 0x9d5) != 0) {
+        ((void (__thiscall*)(void*, void*))ext_00661650)(out, (char*)self + 0x9e0);
+        return out;
+    }
+    ((void (__thiscall*)(void*, void*, int))ext_004C2070)(self, out, 0x40);
+    return out;
+}
