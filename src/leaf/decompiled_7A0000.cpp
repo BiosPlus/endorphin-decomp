@@ -979,3 +979,76 @@ extern "C" __declspec(naked) double __fastcall fn_007ABB30(void* self, int edx_u
         ret     0x14
     }
 }
+
+// [0x007AF240] sub_007AF240 (176 bytes)
+extern "C" void ext_007AF200();
+
+extern "C" __declspec(naked) void __cdecl fn_007AF240(void* self, unsigned int a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ebx + 0x34]
+        test eax, eax
+        je L_zero_007AF240
+        mov eax, dword ptr [ebx + 0x30]
+        test eax, eax
+        je L_zero_007AF240
+        mov ecx, dword ptr [ebx + 0x38]
+        test ecx, ecx
+        je L_zero_007AF240
+        cmp word ptr [ebx + 0x72], 0x1
+        jne L_slow_007AF240
+        cmp word ptr [ebx + 0x46], 0x6
+        jne L_slow_007AF240
+        mov ecx, dword ptr [ebx + 0xc]
+        test ch, 0x40
+        jne L_slow_007AF240
+        push esi
+        push edi
+        xor edi, edi
+        xor edx, edx
+        mov di, word ptr [ebx + 0xe4]
+        xor esi, esi
+        mov si, word ptr [ebx + 0xe6]
+        lea eax, [edi + eax - 0x1]
+        div edi
+        mov edx, dword ptr [esp + 0x14]
+        mov ecx, eax
+        xor eax, eax
+        mov ax, word ptr [ebx + 0x40]
+        imul ecx, eax
+        lea eax, [esi + edx - 0x1]
+        xor edx, edx
+        div esi
+        imul ecx, edi
+        add ecx, 0x7
+        xor edx, edx
+        shr ecx, 0x3
+        imul eax, esi
+        imul esi, edi
+        imul ecx, eax
+        mov eax, ecx
+        pop edi
+        div esi
+        pop esi
+        lea ecx, [ecx + 2 * eax]
+        mov eax, dword ptr [ebx + 0x38]
+        imul eax, ecx
+        pop ebx
+        ret
+    L_slow_007AF240:
+        push ebx
+        call ext_007AF200
+        mov ecx, eax
+        mov eax, dword ptr [ebx + 0x38]
+        imul ecx, dword ptr [esp + 0x10]
+        add esp, 0x4
+        imul eax, ecx
+        pop ebx
+        ret
+    L_zero_007AF240:
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
