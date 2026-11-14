@@ -8304,3 +8304,61 @@ extern "C" __declspec(naked) void* __cdecl fn_0057DD90(void* a1, void* a2, void*
         ret
     }
 }
+
+// [0x0057EA40] sub_0057EA40 (109 bytes)
+extern "C" void ext_00558F80();
+extern "C" void ext_0057DD90();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_0057EA40(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4, void* a5) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 10h]
+        test ebp, ebp
+        push esi
+        mov esi, ecx
+        je fail
+        cmp ebp, dword ptr [esp + 1Ch]
+        je ok
+    fail:
+        call dword ptr [mem_00925134]
+    ok:
+        mov ebx, dword ptr [esp + 18h]
+        mov ecx, dword ptr [esp + 20h]
+        cmp ebx, ecx
+        je done
+        mov eax, dword ptr [esi + 8]
+        push edi
+        mov byte ptr [esp + 18h], 0
+        mov edx, dword ptr [esp + 18h]
+        push edx
+        mov edx, dword ptr [esp + 18h]
+        push edx
+        mov edx, dword ptr [esp + 1Ch]
+        push edx
+        push ebx
+        push eax
+        push ecx
+        call ext_0057DD90
+        mov ecx, dword ptr [esi + 8]
+        mov edi, eax
+        mov eax, dword ptr [esp + 2Ch]
+        push eax
+        push esi
+        push ecx
+        push edi
+        call ext_00558F80
+        add esp, 28h
+        mov dword ptr [esi + 8], edi
+        pop edi
+    done:
+        mov eax, dword ptr [esp + 10h]
+        pop esi
+        mov dword ptr [eax], ebp
+        pop ebp
+        mov dword ptr [eax + 4], ebx
+        pop ebx
+        ret 14h
+    }
+}
