@@ -7368,3 +7368,59 @@ L_ok2_0056B120:
         ret
     }
 }
+
+// [0x0056B190] sub_0056B190 (97 bytes)
+extern "C" void ext_0050ED40();
+extern "C" void ext_0056AE60();
+extern "C" void ext_0056AFE0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0056B190(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        push edi
+        mov ecx, ebx
+        call ext_0056AFE0
+        mov esi, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        jne short L_nonzero_0056B190
+        xor eax, eax
+        jmp short L_size_0056B190
+    L_nonzero_0056B190:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+    L_size_0056B190:
+        push eax
+        mov ecx, ebx
+        call ext_0050ED40
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe short L_ok1_0056B190
+        call dword ptr [mem_00925134]
+    L_ok1_0056B190:
+        mov ebp, dword ptr [esi + 0x4]
+        cmp ebp, dword ptr [esi + 0x8]
+        jbe short L_ok2_0056B190
+        call dword ptr [mem_00925134]
+    L_ok2_0056B190:
+        push ebx
+        push edi
+        push esi
+        push ebp
+        lea eax, [esp + 0x24]
+        push esi
+        push eax
+        call ext_0056AE60
+        add esp, 0x18
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
