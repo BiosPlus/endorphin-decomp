@@ -1080,3 +1080,42 @@ extern "C" __declspec(naked) void __fastcall fn_00586EC0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_00586D00();
+extern "C" void ext_0067E820();
+
+struct Mat4x4_005875A0 {
+    int m[16];
+};
+
+// [0x005875A0] AnimatableTransform::vfunc_5_off_4 (166 bytes)
+extern "C" void* __fastcall fn_005875A0(char* self, int edx_unused, char* flag) {
+    if (*flag != 0) {
+        char* p = *(char**)(self + 0x90);
+        char* target = self - 4;
+        if (p != 0) {
+            do {
+                target = p;
+                p = *(char**)(p + 0x94);
+            } while (p != 0);
+        }
+        ((void (__thiscall*)(void*))ext_00586D00)(target);
+        *flag = 0;
+    }
+    if (self[0xdc] != 0) {
+        Mat4x4_005875A0* src = (*(Mat4x4_005875A0* (__thiscall**)(void*, char*))(*(char***)self + 2))(self, flag);
+        Mat4x4_005875A0* dst = (Mat4x4_005875A0*)(self + 0x9c);
+        *dst = *src;
+        *((char*)dst + 0x40) = 1;
+        if (*(void**)(self + 0x90) != 0) {
+            int* res = (*(int* (__thiscall**)(void*))(*(char***)self + 6))(self);
+            if (*res == 2) {
+                char* parent = *(char**)(self + 0x90);
+                void* arg = (*(void* (__thiscall**)(void*, char*))(*(char***)(parent + 4) + 5))(parent + 4, flag);
+                ((void (__thiscall*)(void*, void*))ext_0067E820)(dst, arg);
+            }
+        }
+        self[0xdc] = 0;
+    }
+    return self + 0x9c;
+}
