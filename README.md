@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `13378 / 24049` (**55.63%**) — `10286` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1452609 / 4496005 bytes` (**32.31%** of 4.29 MB)
+- **In-Scope Functions Matched:** `13379 / 24049` (**55.63%**) — `10287` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1452708 / 4496005 bytes` (**32.31%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -18,7 +18,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P20-30 (32-48B)** | 1484 / 2405 | 61.70% | 57936 / 97731 | 59.28% | 921 fn |
 | **P30-40 (48-71B)** | 1342 / 2405 | 55.80% | 79632 / 144549 | 55.09% | 1063 fn |
 | **P40-50 (71-91B)** | 1391 / 2405 | 57.84% | 115793 / 194373 | 59.57% | 1014 fn |
-| **P50-60 (91-122B)** | 1443 / 2405 | 60.00% | 154309 / 256906 | 60.06% | 962 fn |
+| **P50-60 (91-122B)** | 1444 / 2405 | 60.04% | 154408 / 256906 | 60.10% | 961 fn |
 | **P60-70 (122-159B)** | 1062 / 2405 | 44.16% | 143476 / 339038 | 42.32% | 1343 fn |
 | **P70-80 (159-178B)** | 290 / 2405 | 12.06% | 48865 / 400567 | 12.20% | 2115 fn |
 | **P80-90 (178-335B)** | 1027 / 2405 | 42.70% | 247068 / 583211 | 42.36% | 1378 fn |
@@ -31,7 +31,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 65.66% |
 | `claude-haiku-5.5@low` | 1325 | 309053 | 12.88% |
 | `gemini-4-hydrogen@low` | 802 | 243374 | 7.80% |
-| `gemini-3.8-flash@low` | 750 | 224364 | 7.29% |
+| `gemini-3.8-flash@low` | 751 | 224463 | 7.30% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.35% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.58% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.24% |

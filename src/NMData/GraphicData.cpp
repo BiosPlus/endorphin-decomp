@@ -255,3 +255,43 @@ extern "C" int __fastcall fn_0061FE20(void* self, int edx_unused, void* arg0) {
     ((void (__thiscall*)(void*, int))ext_0058F650)(self, esi);
     return esi;
 }
+
+extern "C" void ext_00587C80();
+extern "C" void ext_006A5C62();
+
+// [0x00620240] NMData::GraphicData::vfunc_17_off_C (99 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00620240(void* self) {
+    __asm {
+        push -1
+        push 08a7a5bh
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        push 1a0h
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov [esp+4], eax
+        test eax, eax
+        mov dword ptr [esp+10h], 0
+        je fn_00620240_null
+        add esi, -0ch
+        push esi
+        mov ecx, eax
+        call ext_00587C80
+        pop esi
+        mov ecx, [esp+4]
+        mov fs:[0], ecx
+        add esp, 10h
+        ret
+    fn_00620240_null:
+        mov ecx, [esp+8]
+        xor eax, eax
+        pop esi
+        mov fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
