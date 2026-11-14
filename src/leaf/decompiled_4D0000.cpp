@@ -2978,3 +2978,40 @@ L_check2:
         ret
     }
 }
+
+extern "C" void ext_00495F90();
+extern "C" void ext_004D4060();
+extern "C" int mem_00924FF4;
+
+// [0x004D42A0] sub_004D42A0 (102 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004D42A0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        lea eax, [esp + 0x4]
+        push eax
+        mov esi, ecx
+        call ext_004D4060
+        mov ecx, dword ptr [esp + 0x30]
+        push ecx
+        push eax
+        add esi, 0x454
+        push esi
+        mov dword ptr [esp + 0x34], 0
+        call ext_00495F90
+        add esp, 0xc
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 4
+    }
+}
