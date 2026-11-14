@@ -4978,3 +4978,32 @@ extern "C" void __cdecl fn_004BF600() {
     ext_004BFBD0();
     ext_004BF570();
 }
+
+// [0x004BF710] sub_004BF710 (77 bytes)
+extern "C" void ext_00466870();
+extern "C" void ext_006619D0();
+extern "C" __declspec(naked) void __fastcall fn_004BF710(void* self) {
+    __asm {
+        push -1
+        push 0x88ac0b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov dword ptr [esp + 4], ecx
+        lea esi, [ecx + 4]
+        mov ecx, dword ptr [ecx]
+        push esi
+        mov dword ptr [esp + 0x14], 0
+        call ext_006619D0
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_00466870
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
