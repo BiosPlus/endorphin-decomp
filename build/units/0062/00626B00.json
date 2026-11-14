@@ -66,5 +66,7 @@
     "0x00626CDC",
     "0x00626CE6"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-14T05:26:44Z"
 }
