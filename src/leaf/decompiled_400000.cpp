@@ -16173,3 +16173,68 @@ extern "C" __declspec(naked) void __fastcall fn_00407170(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00403040] sub_00403040 (173 bytes)
+extern "C" void ext_00402E50();
+extern "C" void ext_004032D0();
+extern "C" void ext_00403380();
+extern "C" void ext_006A5C62();
+extern "C" int mem_00872E7C;
+extern "C" int mem_00928F54;
+extern "C" int mem_00928F48;
+
+extern "C" __declspec(naked) void* __fastcall fn_00403040(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push offset mem_00872E7C
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 8], esi
+        call ext_00402E50
+        push 0x510
+        mov dword ptr [esp + 0x14], 0
+        mov dword ptr [esi], offset mem_00928F54
+        mov dword ptr [esi + 4], offset mem_00928F48
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0x18], eax
+        test eax, eax
+        mov byte ptr [esp + 0x10], 1
+        je short loc_4030A1
+        push 0
+        mov ecx, eax
+        call ext_004032D0
+        jmp short loc_4030A3
+loc_4030A1:
+        xor eax, eax
+loc_4030A3:
+        mov dword ptr [esi + 0x46c], eax
+        push 0xec
+        mov byte ptr [esp + 0x14], 2
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0x18], eax
+        test eax, eax
+        mov byte ptr [esp + 0x10], 3
+        je short loc_4030D1
+        mov ecx, eax
+        call ext_00403380
+        jmp short loc_4030D3
+loc_4030D1:
+        xor eax, eax
+loc_4030D3:
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr [esi + 0x470], eax
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
