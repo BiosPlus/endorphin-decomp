@@ -993,3 +993,52 @@ extern "C" __declspec(naked) void __fastcall fn_0045F6F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0045DBD0] MultiTrackView::TriggeredEventView::vfunc_3_off_254 (327 bytes)
+extern "C" void ext_00640110();
+extern "C" void ext_006404E0();
+extern "C" void ext_00640A50();
+extern "C" void ext_00640A80();
+extern "C" int mem_00A9F604;
+extern "C" int mem_00A9FAE0;
+
+extern "C" void* __fastcall fn_0045DBD0(void* self, int edx_unused, void* arg) {
+    typedef void* (__thiscall *Fn4E0)(void*, int);
+    typedef void* (__thiscall *Fn110)(void*, int);
+    typedef void (__cdecl *FnA50)(void*, int);
+    typedef void (__cdecl *FnA80)(void*, int);
+
+    Fn4E0 f4e0 = (Fn4E0)(void*)ext_006404E0;
+    Fn110 f110 = (Fn110)(void*)ext_00640110;
+    FnA50 fa50 = (FnA50)(void*)ext_00640A50;
+    FnA80 fa80 = (FnA80)(void*)ext_00640A80;
+
+    char* s = (char*)self;
+    void* node = f4e0(arg, 0x937f78);
+    void* a;
+    a = f110(node, mem_00A9F604);
+    fa80(a, (unsigned char)s[-0xef]);
+    a = f110(node, 0x937f70);
+    fa50(a, *(int*)(s - 0xec));
+    a = f110(node, 0x937f64);
+    fa50(a, *(int*)(s - 0xe8));
+    a = f110(node, 0x937f5c);
+    fa50(a, *(int*)(s - 0xe0));
+
+    node = f4e0(arg, 0x937f50);
+    a = f110(node, mem_00A9F604);
+    fa80(a, (unsigned char)s[-0xdc]);
+    a = f110(node, mem_00A9FAE0);
+    fa50(a, *(int*)(s - 0xd8));
+    a = f110(node, 0x937f48);
+    fa50(a, *(int*)(s - 0xd4));
+
+    node = f4e0(arg, 0x937f3c);
+    a = f110(node, 0x937f70);
+    fa50(a, *(int*)(s - 0xe4));
+    node = f4e0(arg, 0x937f2c);
+    a = f110(node, 0x937f48);
+    fa50(a, *(int*)(s - 0xe4));
+
+    return arg;
+}
