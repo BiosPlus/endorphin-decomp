@@ -4001,3 +4001,13 @@ extern "C" void __fastcall fn_0058B4E0(void* self, int edx_unused, float val) {
     ((void (__thiscall*)(void*))ext_00586D00)(self);
     ((void (__thiscall*)(void*, float*))ext_0058AA60)(self, edi);
 }
+
+// [0x0058B540] sub_0058B540 (83 bytes)
+extern "C" void __fastcall fn_0058B540(void* self, int edx_unused, float val) {
+    char* eax = ((char* (__cdecl*)())ext_00594000)();
+    val = ((float (__thiscall*)(void*, float))ext_006781B0)(eax + 0x2e0, val);
+    ((void (__thiscall*)(int, int))ext_006619D0)(mem_00B40640, mem_00B40644);
+    *(float*)((char*)self + 0x130) = val;
+    ((void (__thiscall*)(void*))ext_00586D00)(self);
+    ((void (__thiscall*)(void*, float*))ext_0058AA60)(self, (float*)((char*)self + 0x12c));
+}
