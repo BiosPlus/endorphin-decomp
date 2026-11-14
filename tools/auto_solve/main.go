@@ -1614,9 +1614,13 @@ func main() {
 	for i := range units {
 		u := &units[i]
 		origStatus := u.Status
+		if decomp.IsCompleted(origStatus) {
+			alreadySolved[u.VA] = true
+			continue
+		}
 		oos := decomp.IsOutOfScope(u.VA, u.Symbol, u.Status, u.IsThunk, mfcClasses)
 		if oos {
-			if !*dryRun {
+			if !*dryRun && u.Status != "out_of_scope" {
 				u.Status = "out_of_scope"
 			}
 			outOfScopeMarked++
@@ -1659,7 +1663,7 @@ func main() {
 		}
 
 		if oos {
-			solvedThunks = append(solvedThunks, sf)
+			continue
 		} else {
 			if !*dryRun {
 				u.Status = "todo" // build_and_match will verify and set to "matched"
@@ -1823,7 +1827,19 @@ func main() {
 			sb.WriteString("\n")
 		}
 
-		if err := os.WriteFile(tuPath, []byte(sb.String()), 0644); err != nil {
+		if _, statErr := os.Stat(tuPath); statErr == nil {
+			f, err := os.OpenFile(tuPath, os.O_APPEND|os.O_WRONLY, 0644)
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Error appending to %s: %v\n", tuPath, err)
+				os.Exit(1)
+			}
+			_, err = f.WriteString("\n" + sb.String())
+			_ = f.Close()
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Error appending to %s: %v\n", tuPath, err)
+				os.Exit(1)
+			}
+		} else if err := os.WriteFile(tuPath, []byte(sb.String()), 0644); err != nil {
 			fmt.Fprintf(os.Stderr, "Error writing %s: %v\n", tuPath, err)
 			os.Exit(1)
 		}
