@@ -1,5 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_7C0000.cpp
 
+extern "C" void ext_007C4150();
+extern "C" void ext_007C4750();
 extern "C" float mem_0099D148;
 extern "C" int mem_009552D0;
 extern "C" int mem_0095FFC0;
@@ -18788,6 +18790,47 @@ extern "C" __declspec(naked) void __cdecl fn_007C7100(void* self) {
         push eax
         call ext_007C6DE0
         add esp, 8
+        pop esi
+        ret
+    }
+}
+
+// [0x007C46E0] sub_007C46E0 (111 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C46E0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov eax, dword ptr [esi + 0xb14]
+        lea ecx, [esi + 0x8c]
+        push eax
+        push ecx
+        push esi
+        call ext_007C4750
+        mov edx, dword ptr [esi + 0xb20]
+        lea eax, [esi + 0x980]
+        push edx
+        push eax
+        push esi
+        call ext_007C4750
+        lea ecx, [esi + 0xb28]
+        push ecx
+        push esi
+        call ext_007C4150
+        add esp, 0x20
+        mov eax, 0x12
+    fn007C46E0_loop:
+        xor edx, edx
+        mov dl, byte ptr [eax + 0x99c84c]
+        cmp word ptr [esi + 4*edx + 0xa76], 0
+        jne fn007C46E0_done
+        dec eax
+        cmp eax, 3
+        jge fn007C46E0_loop
+    fn007C46E0_done:
+        mov edx, dword ptr [esi + 0x16a0]
+        lea ecx, [eax + 2*eax + 0x11]
+        add edx, ecx
+        mov dword ptr [esi + 0x16a0], edx
         pop esi
         ret
     }
