@@ -248,3 +248,77 @@ extern "C" __declspec(naked) void __fastcall fn_004CD020(void* self) {
         ret
     }
 }
+
+extern "C" void* ext_00427550(void* self, int edx, const char* s);
+extern "C" void ext_004C1DE0(void* self, int edx, void* a1);
+extern "C" void* ext_004CA5E0(void* self);
+extern "C" void* ext_00640110(void* self, int edx, int a1);
+extern "C" void* ext_00640390(void* self, int edx, int a1, int a2);
+extern "C" void ext_00640A80(void* a1, int a2);
+extern "C" void ext_0067F040(void* a1, void* a2);
+extern "C" int mem_00A9F74C;
+extern "C" int mem_00A9F788;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9F1B8;
+extern "C" int mem_00A9ED1C;
+
+// [0x004CA6A0] NMData::MetaBodyConstraintData::vfunc_22 (164 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004CA6A0(void* self, int edx, void* a1) {
+    __asm {
+        mov     eax, dword ptr [mem_00A9F74C]
+        push    ebx
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x10]
+        mov     esi, ecx
+        push    eax
+        mov     ecx, edi
+        call    ext_00640110
+        movzx   ecx, byte ptr [esi + 0x1A0]
+        push    ecx
+        push    eax
+        call    ext_00640A80
+        add     esp, 8
+        push    edi
+        mov     ecx, esi
+        call    ext_004C1DE0
+        mov     edx, dword ptr [mem_00A9F788]
+        push    edx
+        mov     ecx, edi
+        call    ext_00640110
+        mov     ecx, esi
+        mov     ebx, eax
+        call    ext_004CA5E0
+        mov     ecx, eax
+        mov     dword ptr [esp + 0x10], ebx
+        call    dword ptr [mem_00924FF0]
+        push    eax
+        lea     ecx, [esp + 0x14]
+        call    ext_00427550
+        mov     ecx, dword ptr [mem_00A9F1B8]
+        lea     eax, [esi + 0x188]
+        push    eax
+        push    0
+        push    ecx
+        mov     ecx, edi
+        call    ext_00640390
+        push    eax
+        call    ext_0067F040
+        mov     edx, dword ptr [mem_00A9ED1C]
+        add     esp, 8
+        add     esi, 0x194
+        push    esi
+        push    0
+        push    edx
+        mov     ecx, edi
+        call    ext_00640390
+        push    eax
+        call    ext_0067F040
+        add     esp, 8
+        mov     eax, edi
+        pop     edi
+        pop     esi
+        pop     ebx
+        ret     4
+    }
+}
