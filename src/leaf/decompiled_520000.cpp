@@ -7663,3 +7663,90 @@ extern "C" __declspec(naked) void __fastcall fn_00520440(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00521110] sub_00521110 (180 bytes)
+extern "C" void ext_00520DF0();
+
+extern "C" __declspec(naked) void __fastcall fn_00521110(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x4]
+        test esi, esi
+        je L_0052113e
+        mov ebx, dword ptr [edi + 0x8]
+        mov ecx, ebx
+        sub ecx, esi
+        mov eax, 0xb60b60b7
+        imul ecx
+        add edx, ecx
+        sar edx, 0x8
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        jne L_00521146
+    L_0052113e:
+        mov ebx, dword ptr [esp + 0x1c]
+        xor esi, esi
+        jmp L_00521179
+    L_00521146:
+        cmp esi, ebx
+        jbe L_00521150
+        call dword ptr [mem_00925134]
+    L_00521150:
+        mov ebx, dword ptr [esp + 0x1c]
+        test ebx, ebx
+        je L_0052115c
+        cmp ebx, edi
+        je L_00521162
+    L_0052115c:
+        call dword ptr [mem_00925134]
+    L_00521162:
+        mov ecx, ebp
+        sub ecx, esi
+        mov eax, 0xb60b60b7
+        imul ecx
+        add edx, ecx
+        sar edx, 0x8
+        mov esi, edx
+        shr esi, 0x1f
+        add esi, edx
+    L_00521179:
+        mov ecx, dword ptr [esp + 0x24]
+        push ecx
+        push 0x1
+        push ebp
+        push ebx
+        mov ecx, edi
+        call ext_00520DF0
+        mov ebx, dword ptr [edi + 0x4]
+        cmp ebx, dword ptr [edi + 0x8]
+        jbe L_00521197
+        call dword ptr [mem_00925134]
+    L_00521197:
+        imul esi, esi, 0x168
+        add esi, ebx
+        cmp esi, dword ptr [edi + 0x8]
+        mov dword ptr [esp + 0x20], ebx
+        ja L_005211ad
+        cmp esi, dword ptr [edi + 0x4]
+        jae L_005211b3
+    L_005211ad:
+        call dword ptr [mem_00925134]
+    L_005211b3:
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [eax], edi
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x10
+    }
+}
