@@ -9914,3 +9914,87 @@ loc_47D85C:
         ret     4
     }
 }
+
+// [0x0047C8F0] sub_0047C8F0 (168 bytes)
+extern "C" void ext_004779E0();
+extern "C" void ext_0047C000();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) unsigned char __fastcall fn_0047C8F0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 12
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        mov byte ptr [esp + 12], 0
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+    L_chk1:
+        push edi
+        mov edi, dword ptr [esi + 4]
+        cmp edi, dword ptr [esi + 8]
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+    L_chk2:
+        mov eax, dword ptr [esp + 16]
+        mov ebp, dword ptr [esp + 32]
+        push 0
+        push eax
+        push ebp
+        push ebx
+        push edi
+        mov dword ptr [esp + 44], edi
+        call ext_004779E0
+        mov edi, dword ptr [esi + 8]
+        add esp, 20
+        cmp dword ptr [esi + 4], edi
+        mov ebx, eax
+        jbe L_chk3
+        call dword ptr [mem_00925134]
+    L_chk3:
+        test esi, esi
+        je L_chk4
+        cmp esi, esi
+        je L_chk5
+    L_chk4:
+        call dword ptr [mem_00925134]
+    L_chk5:
+        cmp ebx, edi
+        pop edi
+        je L_insert
+        test esi, esi
+        jne L_chk6
+        call dword ptr [mem_00925134]
+    L_chk6:
+        cmp ebx, dword ptr [esi + 8]
+        jb L_chk7
+        call dword ptr [mem_00925134]
+    L_chk7:
+        mov ecx, dword ptr [ebp]
+        cmp ecx, dword ptr [ebx]
+        jb L_insert
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        add esp, 12
+        ret 4
+    L_insert:
+        push ebp
+        push ebx
+        push esi
+        lea edx, [esp + 28]
+        push edx
+        mov ecx, esi
+        call ext_0047C000
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        add esp, 12
+        ret 4
+    }
+}
