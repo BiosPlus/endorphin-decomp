@@ -1361,3 +1361,89 @@ L_end:
         ret 0x4
     }
 }
+
+// [0x005EEE30] NMData::FixedPathJointData::vfunc_13_off_C (190 bytes)
+extern "C" void ext_005EE9A0();
+extern "C" void ext_005BE710();
+extern "C" void ext_005A35D0();
+extern "C" void ext_00587470();
+extern "C" void ext_00587920();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005EEE30(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [eax+0x20c]
+        lea ebp, [esi-0xc]
+        push ebp
+        mov ecx, edi
+        call ext_005EE9A0
+        mov edx, dword ptr [edi+0x18c]
+        lea ecx, [esi+0x8]
+        push ecx
+        add edx, 0x5a4
+        push edx
+        call ext_005BE710
+        mov ecx, dword ptr [edi+0x18c]
+        add esp, 8
+        push ebp
+        call ext_005A35D0
+loop_top:
+        mov eax, dword ptr [esi+0x74]
+        test eax, eax
+        je empty_case
+        mov ecx, dword ptr [esi+0x78]
+        sub ecx, eax
+        sar ecx, 2
+        je empty_case
+        mov edi, eax
+        cmp edi, dword ptr [esi+0x78]
+        jbe chk2
+        call dword ptr [mem_00925134]
+        cmp edi, dword ptr [esi+0x78]
+chk2:
+        jb chk3
+        call dword ptr [mem_00925134]
+chk3:
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax+0xc]
+        lea ecx, [eax+0xc]
+        mov eax, dword ptr [edx+0x44]
+        call eax
+        cmp edi, dword ptr [esi+0x78]
+        mov ebx, eax
+        jb chk4
+        call dword ptr [mem_00925134]
+chk4:
+        mov ecx, dword ptr [edi]
+        push ecx
+        mov ecx, ebp
+        call ext_00587470
+        test ebx, ebx
+        je loop_top
+        mov edx, dword ptr [ebx+0xc]
+        mov eax, dword ptr [esi+0x220]
+        mov edx, dword ptr [edx+0x34]
+        lea ecx, [ebx+0xc]
+        push eax
+        call edx
+        jmp loop_top
+empty_case:
+        mov eax, dword ptr [esi+0x170]
+        push 0
+        push eax
+        mov ecx, ebp
+        call ext_00587920
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+    }
+}
