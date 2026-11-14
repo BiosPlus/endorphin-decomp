@@ -2392,3 +2392,94 @@ extern "C" __declspec(naked) void __fastcall fn_004FA0A0(void* self) {
         ret
     }
 }
+
+// [0x004FC160] VMCSModes::DefaultImplementation::vfunc_7 (286 bytes)
+extern "C" void ext_00466910();
+extern "C" void ext_00466F00();
+extern "C" void ext_00472350();
+extern "C" void ext_00594000();
+extern "C" void ext_00662120();
+extern "C" void ext_00663110();
+extern "C" void ext_00663DB0();
+extern "C" int mem_00AD89B4;
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_004FC160(void* self, int edx_unused, void* arg) {
+    __asm {
+        push -1
+        push 0x890a9f
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x88
+        mov eax, dword ptr [ecx + 0x8]
+        push ebx
+        push edi
+        mov edi, dword ptr [eax + 0x14]
+        test edi, edi
+        mov dword ptr [esp + 0x8], edi
+        mov byte ptr [esp + 0xc], 0
+        mov ebx, 1
+        je loc_004FC1B1
+        cmp dword ptr [mem_00AD89B4], 0
+        jne loc_004FC1AB
+        mov ecx, edi
+        mov byte ptr [edi + 0x153], bl
+        call ext_00472350
+loc_004FC1AB:
+        add dword ptr [mem_00AD89B4], ebx
+loc_004FC1B1:
+        push esi
+        mov dword ptr [esp + 0x9c], 0
+        call ext_00594000
+        lea esi, [eax + 0x168]
+        push esi
+        lea ecx, [esp + 0x38]
+        mov dword ptr [esp + 0x34], esi
+        call ext_00466F00
+        mov ecx, esi
+        mov byte ptr [esp + 0x9c], bl
+        call ext_00662120
+        mov esi, dword ptr [esp + 0xa4]
+        push esi
+        call ext_00663DB0
+        add esp, 4
+        lea ecx, [esp + 0x14]
+        call dword ptr [mem_00924FE8]
+        mov byte ptr [esp + 0x9c], 2
+        call ext_00594000
+        mov eax, dword ptr [eax + 0x26c]
+        mov ecx, dword ptr [eax + 0x24]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x10]
+        push ebx
+        lea eax, [esp + 0x18]
+        push eax
+        call edx
+        lea eax, [esp + 0x14]
+        push eax
+        push esi
+        call ext_00663110
+        add esp, 8
+        lea ecx, [esp + 0x14]
+        mov byte ptr [esp + 0x9c], bl
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x30]
+        mov byte ptr [esp + 0x9c], 0
+        call ext_00466910
+        test edi, edi
+        pop esi
+        je loc_004FC265
+        sub dword ptr [mem_00AD89B4], ebx
+        jne loc_004FC265
+        mov byte ptr [edi + 0x153], 0
+loc_004FC265:
+        mov ecx, dword ptr [esp + 0x90]
+        pop edi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x94
+        ret 4
+    }
+}
