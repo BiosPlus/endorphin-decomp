@@ -1930,3 +1930,112 @@ extern "C" __declspec(naked) void __fastcall fn_0086B2A0(void* self) {
         ret
     }
 }
+
+// [0x0086B3D0] sub_0086B3D0 (320 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0086B3D0(void* self) {
+    __asm {
+        mov dx, 0x1
+        sub esp, 0x8
+        push ebx
+        push esi
+        xor si, si
+        push edi
+        push ebp
+    loc_86B3DE:
+        movsx eax, dx
+        add eax, eax
+        mov ecx, 0x13d
+        cdq
+        mov word ptr [eax + mem_00BC7110], si
+        inc si
+        idiv ecx
+        cmp si, 0x9e
+        jl loc_86B3DE
+        cmp dx, 0x1
+        jne loc_86B427
+        mov dx, 0x13c
+        xor si, si
+    loc_86B408:
+        movsx eax, dx
+        add eax, eax
+        mov ecx, 0x13d
+        cdq
+        mov word ptr [eax + mem_00BC7110], si
+        inc si
+        idiv ecx
+        cmp si, 0x9e
+        jl loc_86B408
+        jmp loc_86B448
+    loc_86B427:
+        mov si, 0x9e
+    loc_86B42B:
+        movsx eax, dx
+        add eax, eax
+        mov ecx, 0x13d
+        cdq
+        mov word ptr [eax + mem_00BC7110], si
+        inc si
+        idiv ecx
+        cmp si, 0x13c
+        jl loc_86B42B
+    loc_86B448:
+        mov word ptr [mem_00BC760A], 0xffff
+        mov edx, 0x1
+        mov cx, dx
+        mov word ptr [mem_00BC7390], dx
+    loc_86B460:
+        movsx eax, dx
+        add eax, eax
+        mov esi, 0x13d
+        cdq
+        idiv esi
+        movsx eax, dx
+        lea esi, [2*eax]
+        mov eax, offset mem_00BC7390 - 4
+        sub eax, esi
+        mov ax, word ptr [eax]
+        mov bx, word ptr [esi + mem_00BC7110 - 2]
+        mov bp, word ptr [esi + mem_00BC7110 + 2]
+        mov word ptr [esp + 0x10], ax
+        mov eax, offset mem_00BC7390 - 8
+        mov word ptr [esp + 0x14], bx
+        sub eax, esi
+        mov ax, word ptr [eax]
+        xor edi, edi
+        xor bx, bx
+        mov word ptr [esp + 0x12], ax
+        mov word ptr [esp + 0x16], bp
+    loc_86B4B2:
+        movsx eax, di
+        mov ax, word ptr [esp + 2*eax + 0x10]
+        cmp ax, 0x9e
+        jge loc_86B4E0
+        movsx esi, bx
+        inc bx
+        mov ebp, esi
+        lea esi, [esi + 4*esi]
+        shl esi, 0x4
+        sub esi, ebp
+        lea esi, [ebp + 4*esi]
+        movsx ebp, cx
+        add esi, ebp
+        mov word ptr [2*esi + mem_00BC7390], ax
+    loc_86B4E0:
+        inc di
+        cmp bx, 0x2
+        jl loc_86B4B2
+        inc cx
+        cmp cx, 0x9e
+        jl loc_86B460
+        push 0x9d
+        call fn_0086B2A0
+        mov word ptr [mem_00BC7884], ax
+        add esp, 0x4
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
