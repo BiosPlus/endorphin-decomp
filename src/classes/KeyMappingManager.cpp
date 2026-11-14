@@ -126,3 +126,50 @@ L_428470_done:
         ret 0x4
     }
 }
+
+// [0x004272F0] KeyMappingManager::vfunc_9 (126 bytes)
+extern "C" void ext_00663DB0();
+extern "C" void ext_00663110();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_004272F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -0x1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x34]
+        push edi
+        mov esi, ecx
+        call ext_00663DB0
+        add esp, 0x4
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FE8]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x10]
+        push 0x1
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x34], 0x0
+        call edx
+        lea eax, [esp + 0x8]
+        push eax
+        push edi
+        call ext_00663110
+        add esp, 0x8
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x2c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x8
+    }
+}
