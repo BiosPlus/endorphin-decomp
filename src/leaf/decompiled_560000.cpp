@@ -7732,3 +7732,83 @@ extern "C" __declspec(naked) void* __fastcall fn_005651B0(void* self, int edx_un
         ret 8
     }
 }
+
+extern "C" void ext_005631F0();
+extern "C" void ext_00563220();
+extern "C" void ext_00563280();
+extern "C" void ext_005651B0();
+extern "C" void ext_007C5616();
+extern "C" void ext_007C561C();
+
+// [0x00565B60] sub_00565B60 (141 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00565B60(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub     esp, 8
+        push    ebx
+        mov     ebx, dword ptr [esp + 0x14]
+        push    ebp
+        push    edi
+        mov     edi, ecx
+        mov     ecx, ebx
+        call    ext_007C5616
+        mov     ecx, ebx
+        mov     dword ptr [esp + 0xc], eax
+        call    ext_007C561C
+        xor     ebp, ebp
+        test    eax, eax
+        mov     dword ptr [esp + 0x10], eax
+        jle     loc_565BE4
+        push    esi
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    loc_565B90:
+        mov     eax, dword ptr [esp + 0x10]
+        mov     esi, dword ptr [eax + ebp*4]
+        push    esi
+        push    ebx
+        mov     ecx, edi
+        call    ext_00563280
+        test    al, al
+        jnz     loc_565BDA
+        mov     ebx, dword ptr [esp + 0x1c]
+        push    esi
+        mov     ecx, edi
+        call    ext_005631F0
+        test    al, al
+        jnz     loc_565BC0
+        push    esi
+        mov     ecx, edi
+        call    ext_00563220
+        test    al, al
+        jz      loc_565BCD
+    loc_565BC0:
+        push    esi
+        mov     ecx, ebx
+        push    ecx
+        mov     ecx, edi
+        call    ext_005651B0
+        mov     ebx, eax
+    loc_565BCD:
+        push    esi
+        push    ebx
+        mov     ecx, edi
+        call    ext_00565B20
+        mov     ebx, dword ptr [esp + 0x20]
+    loc_565BDA:
+        add     ebp, 1
+        cmp     ebp, dword ptr [esp + 0x14]
+        jl      loc_565B90
+        pop     esi
+    loc_565BE4:
+        pop     edi
+        pop     ebp
+        pop     ebx
+        add     esp, 8
+        ret     8
+    }
+}
