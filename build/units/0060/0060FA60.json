@@ -18,5 +18,7 @@
     "0x0060FABB",
     "0x0060FACA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T07:32:04Z"
 }
