@@ -2131,3 +2131,221 @@ extern "C" __declspec(naked) void __fastcall fn_0085AE30(void* self) {
         ret
     }
 }
+
+// [0x0085E770] sub_0085E770 (617 bytes)
+extern "C" void ext_0085DA90();
+extern "C" void ext_0085E030();
+extern "C" void ext_0085E9E0();
+extern "C" void ext_0085EA10();
+extern "C" int mem_00AC02D8;
+extern "C" int mem_00AC02DC;
+extern "C" int mem_00ABAE50;
+extern "C" int mem_00ABAE54;
+
+extern "C" __declspec(naked) void __fastcall fn_0085E770(void* self) {
+    __asm {
+        sub esp, 0x42c
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x438]
+        push edi
+        push ebp
+        push esi
+        call ext_0085E1F0
+        add esp, 0x4
+        test eax, eax
+        jne t770_L1
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x42c
+        ret
+    t770_L1:
+        push esi
+        call ext_0085DA90
+        add esp, 0x4
+        mov ebx, eax
+        lea eax, [esp + 0x14]
+        push eax
+        push esi
+        call ext_0081743A
+        add esp, 0x8
+        test eax, eax
+        jne t770_L2
+        mov eax, 1
+        pop ebp
+        mov dword ptr [mem_00AB98EC], 0x14
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x42c
+        ret
+    t770_L2:
+        xor esi, esi
+        push 1
+        lea eax, [esp + 0x17]
+        mov ecx, dword ptr [esp + 0x18]
+        mov byte ptr [esp + 0x1c], 0x0
+        mov byte ptr [esp + 0x128], 0x0
+        mov dword ptr [mem_00ABB25C], 1
+        push eax
+        push ecx
+        call ext_0081D9A4
+        add esp, 0xc
+        test eax, eax
+        je t770_L9B7
+    t770_L807:
+        cmp byte ptr [esp + 0x13], 0xa
+        je t770_L84C
+        cmp byte ptr [esp + 0x13], 0xd
+        je t770_L84C
+        cmp byte ptr [esp + 0x13], 0x20
+        jae t770_L821
+        mov byte ptr [esp + 0x13], 0x20
+    t770_L821:
+        lea eax, [esp + 0x18]
+        push eax
+        call ext_0085E1F0
+        add esp, 0x4
+        cmp eax, 0x100
+        jae t770_L96C
+        mov al, byte ptr [esp + 0x13]
+        mov byte ptr [esp + esi + 0x18], al
+        inc esi
+        mov byte ptr [esp + esi + 0x18], 0x0
+        jmp t770_L96C
+    t770_L84C:
+        lea eax, [esp + 0x18]
+        push eax
+        call ext_0085E3A0
+        lea eax, [esp + 0x1c]
+        add esp, 0x4
+        push eax
+        call ext_0085E1F0
+        add esp, 0x4
+        mov edx, eax
+        cmp edx, 0x400
+        jge t770_L898
+        lea edi, [esp + 0x18]
+        mov ecx, 0xffffffff
+        sub eax, eax
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov eax, ecx
+        shr ecx, 0x2
+        mov esi, edi
+        mov edi, offset mem_00ABAE50
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+        jmp t770_L8C6
+    t770_L898:
+        mov eax, dword ptr [mem_00AC02D8]
+        mov ebp, dword ptr [mem_00AC02DC]
+        mov dword ptr [mem_00ABAE50], eax
+        mov esi, offset mem_00AC02D8
+        mov dword ptr [mem_00ABAE54], ebp
+        mov ecx, offset mem_00ABAE50
+        mov eax, dword ptr [esi + 0x8]
+        mov si, word ptr [esi + 0xc]
+        mov dword ptr [ecx + 0x8], eax
+        mov word ptr [ecx + 0xc], si
+    t770_L8C6:
+        test edx, edx
+        je t770_L965
+        cmp byte ptr [esp + 0x18], 0x5b
+        jne t770_L90A
+        lea eax, [esp + edx + 0x17]
+        cmp byte ptr [eax], 0x5d
+        jne t770_L90A
+        mov byte ptr [esp + 0x18], 0x20
+        mov byte ptr [eax], 0x20
+        lea eax, [esp + 0x18]
+        push eax
+        call ext_0085E3A0
+        lea eax, [esp + 0x1c]
+        lea ecx, [esp + 0x128]
+        add esp, 0x4
+        push eax
+        push ecx
+        call ext_0085E030
+        add esp, 0x8
+        jmp t770_L965
+    t770_L90A:
+        lea eax, [esp + 0x124]
+        lea ecx, [esp + 0x230]
+        push eax
+        push ecx
+        call ext_0085E030
+        lea ecx, [esp + 0x238]
+        add esp, 0x8
+        push 0x00ac02e8
+        push ecx
+        call ext_0085E9E0
+        lea ecx, [esp + 0x20]
+        lea edx, [esp + 0x238]
+        add esp, 0x8
+        push ecx
+        push edx
+        call ext_0085E9E0
+        lea ecx, [esp + 0x238]
+        add esp, 0x8
+        push ecx
+        call ext_0085EA10
+        add esp, 0x4
+        cmp dword ptr [mem_00AB98EC], 0x13
+        je t770_L9B7
+    t770_L965:
+        mov byte ptr [esp + 0x18], 0x0
+        xor esi, esi
+    t770_L96C:
+        xor eax, eax
+        mov al, byte ptr [esp + 0x13]
+        cmp eax, 0xa
+        je t770_L97E
+        cmp eax, 0xd
+        je t770_L990
+        jmp t770_L99B
+    t770_L97E:
+        cmp ebx, 0x3
+        jne t770_L989
+        inc dword ptr [mem_00ABB25C]
+    t770_L989:
+        cmp ebx, 0x1
+        jne t770_L99B
+        jmp t770_L995
+    t770_L990:
+        cmp ebx, 0x2
+        jne t770_L99B
+    t770_L995:
+        inc dword ptr [mem_00ABB25C]
+    t770_L99B:
+        lea eax, [esp + 0x13]
+        push 0x1
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        call ext_0081D9A4
+        add esp, 0xc
+        test eax, eax
+        jne t770_L807
+    t770_L9B7:
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        call ext_00843D46
+        add esp, 0x4
+        cmp dword ptr [mem_00AB98EC], 0x1
+        sbb eax, eax
+        pop ebp
+        inc eax
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x42c
+        ret
+    }
+}
