@@ -9367,3 +9367,40 @@ extern "C" __declspec(naked) void __fastcall fn_0054D420(void* self) {
         ret 4
     }
 }
+
+// [0x0054EF50] sub_0054EF50 (97 bytes)
+extern "C" void ext_0054EE80();
+extern "C" int mem_00925474;
+extern "C" __declspec(naked) void __fastcall fn_0054EF50(void* self) {
+    __asm {
+        push -1
+        push 008996a8h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 8], esi
+        xor eax, eax
+        lea ecx, [esi + 0ch]
+        mov dword ptr [esp + 14h], eax
+        mov dword ptr [esi], 00957000h
+        mov dword ptr [esi + 4], eax
+        call ext_0054EE80
+        lea edi, [esi + 8]
+        push edi
+        push 0d36h
+        mov dword ptr [esi + 20h], 00956fb8h
+        call dword ptr [mem_00925474]
+        add dword ptr [edi], -3
+        mov ecx, dword ptr [esp + 0ch]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
