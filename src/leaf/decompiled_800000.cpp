@@ -3502,3 +3502,39 @@ extern "C" __declspec(naked) void __fastcall fn_008023C0(void* self) {
         ret 0x20
     }
 }
+
+// [0x0080FB20] sub_0080FB20 (64 bytes)
+extern "C" void ext_0080FBB0();
+extern "C" void ext_0080FB60();
+
+extern "C" __declspec(naked) void __cdecl fn_0080FB20(void* self, unsigned char c) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push esi
+        call ext_0080FBB0
+        mov ecx, dword ptr [esi + 0x4]
+        add esp, 0x4
+        cmp ecx, eax
+        jl append
+        push 0x0
+        push esi
+        call ext_0080FB60
+        add esp, 0x8
+        test eax, eax
+        jne append
+        pop esi
+        ret
+    append:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esi + 0x4]
+        mov dl, byte ptr [esp + 0xc]
+        mov byte ptr [eax + ecx], dl
+        mov eax, dword ptr [esi + 0x4]
+        inc eax
+        mov dword ptr [esi + 0x4], eax
+        mov eax, 0x1
+        pop esi
+        ret
+    }
+}
