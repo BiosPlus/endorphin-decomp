@@ -7647,3 +7647,29 @@ extern "C" __declspec(naked) void* __fastcall fn_0062CD80(void* self, int edx_un
         ret     4
     }
 }
+
+// [0x0062F5D0] sub_0062F5D0 (141 bytes)
+extern "C" void ext_0062CD80();
+
+extern "C" void* __fastcall fn_0062F5D0(void* self, int edx_unused, void* src) {
+    char* d = (char*)self;
+    const char* s = (const char*)src;
+    ((void (__fastcall*)(void*, int, const void*))ext_0062CD80)(self, edx_unused, src);
+    *(void**)(d + 0x00) = (void*)0x9795a4;
+    *(int*)(d + 0x38) = *(const int*)(s + 0x38);
+    *(double*)(d + 0x40) = *(const double*)(s + 0x40);
+    *(float*)(d + 0x48) = *(const float*)(s + 0x48);
+    *(float*)(d + 0x4c) = *(const float*)(s + 0x4c);
+    *(float*)(d + 0x50) = *(const float*)(s + 0x50);
+    *(double*)(d + 0x58) = *(const double*)(s + 0x58);
+    *(double*)(d + 0x60) = *(const double*)(s + 0x60);
+    *(double*)(d + 0x68) = *(const double*)(s + 0x68);
+    *(double*)(d + 0x70) = *(const double*)(s + 0x70);
+    *(float*)(d + 0x78) = *(const float*)(s + 0x78);
+    *(float*)(d + 0x7c) = *(const float*)(s + 0x7c);
+    *(float*)(d + 0x80) = *(const float*)(s + 0x80);
+    *(float*)(d + 0x84) = *(const float*)(s + 0x84);
+    *(float*)(d + 0x88) = *(const float*)(s + 0x88);
+    *(float*)(d + 0x8c) = *(const float*)(s + 0x8c);
+    return self;
+}
