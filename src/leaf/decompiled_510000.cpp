@@ -12929,3 +12929,184 @@ extern "C" __declspec(naked) void __fastcall fn_00516980(void* self) {
         ret
     }
 }
+
+// [0x00510BD0] sub_00510BD0 (391 bytes)
+extern "C" void ext_0041CD60();
+extern "C" void ext_00504230();
+extern "C" void ext_0050FA20();
+extern "C" void ext_00510920();
+extern "C" void ext_00510A10();
+extern "C" int mem_00925134;
+extern "C" int mem_0093BD38;
+
+extern "C" __declspec(naked) void __fastcall fn_00510BD0(void* self) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        and     esp, -0x40
+        sub     esp, 0x30
+        fldz
+        push    ebx
+        mov     ebx, ecx
+        fstp    qword ptr [esp + 0x2c]
+        mov     eax, dword ptr [ebx + 0xc]
+        push    ebp
+        push    esi
+        lea     esi, [eax + 0x1c]
+        mov     eax, dword ptr [eax + 0x4]
+        push    edi
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x34], eax
+        xor     edi, edi
+        call    ext_0041CD60
+        test    eax, eax
+        jbe     L_510C5A
+    L_510BFF:
+        mov     ecx, dword ptr [esi + 0x4]
+        test    ecx, ecx
+        je      L_510C12
+        mov     eax, dword ptr [esi + 0x8]
+        sub     eax, ecx
+        sar     eax, 0x2
+        cmp     edi, eax
+        jb      L_510C18
+    L_510C12:
+        call    dword ptr [mem_00925134]
+    L_510C18:
+        mov     ecx, dword ptr [esi + 0x4]
+        mov     ebp, dword ptr [ecx + 4*edi]
+        cmp     byte ptr [ebp + 0x28], 0x0
+        jne     L_510C41
+        push    0x0
+        mov     ecx, ebx
+        mov     byte ptr [ebx + 0x28], 0x0
+        call    ext_0050FA20
+        mov     ecx, dword ptr [esp + 0x38]
+        sub     esp, 0x8
+        fstp    qword ptr [esp]
+        push    ebp
+        call    ext_00504230
+    L_510C41:
+        fld     qword ptr [ebp + 0x20]
+        mov     ecx, esi
+        fadd    qword ptr [esp + 0x38]
+        add     edi, 0x1
+        fstp    qword ptr [esp + 0x38]
+        call    ext_0041CD60
+        cmp     edi, eax
+        jb      L_510BFF
+    L_510C5A:
+        cmp     byte ptr [ebx + 0x28], 0x0
+        jne     L_510CC8
+        cmp     dword ptr [ebx + 0x8], 0x1
+        mov     ebp, dword ptr [esi + 0x8]
+        jne     L_510C96
+        cmp     dword ptr [esi + 0x4], ebp
+        jbe     L_510C74
+        call    dword ptr [mem_00925134]
+    L_510C74:
+        mov     edi, dword ptr [esi + 0x4]
+        cmp     edi, dword ptr [esi + 0x8]
+        jbe     L_510C82
+        call    dword ptr [mem_00925134]
+    L_510C82:
+        mov     edx, ebp
+        xor     eax, eax
+        push    eax
+        sub     edx, edi
+        sar     edx, 0x2
+        push    edx
+        push    ebp
+        push    edi
+        call    ext_00510920
+        jmp     L_510CC1
+    L_510C96:
+        cmp     dword ptr [esi + 0x4], ebp
+        jbe     L_510CA1
+        call    dword ptr [mem_00925134]
+    L_510CA1:
+        mov     edi, dword ptr [esi + 0x4]
+        cmp     edi, dword ptr [esi + 0x8]
+        jbe     L_510CAF
+        call    dword ptr [mem_00925134]
+    L_510CAF:
+        xor     eax, eax
+        push    eax
+        mov     eax, ebp
+        sub     eax, edi
+        sar     eax, 0x2
+        push    eax
+        push    ebp
+        push    edi
+        call    ext_00510A10
+    L_510CC1:
+        add     esp, 0x10
+        mov     byte ptr [ebx + 0x28], 0x1
+    L_510CC8:
+        mov     eax, dword ptr [esi + 0x4]
+        test    eax, eax
+        je      L_510CD9
+        mov     ecx, dword ptr [esi + 0x8]
+        sub     ecx, eax
+        sar     ecx, 0x2
+        jne     L_510CE3
+    L_510CD9:
+        mov     ebp, dword ptr [mem_00925134]
+        call    ebp
+        jmp     L_510CE9
+    L_510CE3:
+        mov     ebp, dword ptr [mem_00925134]
+    L_510CE9:
+        mov     edx, dword ptr [esi + 0x4]
+        mov     eax, dword ptr [edx]
+        fld     qword ptr [eax + 0x20]
+        fstp    qword ptr [ebx + 0x10]
+        mov     ecx, dword ptr [esi + 0x4]
+        test    ecx, ecx
+        jne     L_510CFF
+        xor     eax, eax
+        jmp     L_510D07
+    L_510CFF:
+        mov     eax, dword ptr [esi + 0x8]
+        sub     eax, ecx
+        sar     eax, 0x2
+    L_510D07:
+        test    eax, eax
+        mov     dword ptr [esp + 0x34], eax
+        fild    dword ptr [esp + 0x34]
+        jge     L_510D19
+        fadd    qword ptr [mem_0093BD38]
+    L_510D19:
+        fdivr   qword ptr [esp + 0x38]
+        fstp    qword ptr [ebx + 0x18]
+        mov     edi, dword ptr [esi + 0x8]
+        cmp     dword ptr [esi + 0x4], edi
+        jbe     L_510D2A
+        call    ebp
+    L_510D2A:
+        lea     eax, [edi - 0x4]
+        cmp     eax, dword ptr [esi + 0x8]
+        mov     dword ptr [esp + 0x3c], edi
+        ja      L_510D3B
+        cmp     eax, dword ptr [esi + 0x4]
+        jae     L_510D3D
+    L_510D3B:
+        call    ebp
+    L_510D3D:
+        add     edi, -0x4
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      L_510D47
+        call    ebp
+    L_510D47:
+        mov     ecx, dword ptr [edi]
+        fld     qword ptr [ecx + 0x20]
+        pop     edi
+        fstp    qword ptr [ebx + 0x20]
+        pop     esi
+        pop     ebp
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+    }
+}
