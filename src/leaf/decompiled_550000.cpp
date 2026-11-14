@@ -2218,6 +2218,11 @@ extern "C" __declspec(naked) void* __cdecl fn_005565C0(void* first, void* last, 
 // [0x005581C0] sub_005581C0 (85 bytes)
 extern "C" void ext_005565C0();
 extern "C" void ext_006A5C5C();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" __declspec(naked) void __fastcall fn_005581C0(void* self) {
     __asm {
@@ -2924,6 +2929,11 @@ done_ret:
 }
 
 // [0x0055C4E0] sub_0055C4E0 (132 bytes)
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 
 extern "C" __declspec(naked) void __fastcall fn_0055C4E0(void* self) {
@@ -3819,6 +3829,11 @@ extern "C" __declspec(naked) void __fastcall fn_005535B0(void* self) {
 }
 
 // [0x00556500] sub_00556500 (190 bytes)
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" void ext_00555420();
 
@@ -3975,6 +3990,11 @@ ELSE_BRANCH:
 
 // [0x005568E0] sub_005568E0 (102 bytes)
 extern "C" void ext_00556500();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" __declspec(naked) void __fastcall fn_005568E0(void* self, int edx_unused, void* a1) {
     __asm {
@@ -5665,6 +5685,11 @@ extern "C" __declspec(naked) void* __fastcall fn_0055F6B0(void* self, int edx_un
 // [0x005556D0] sub_005556D0 (197 bytes)
 extern "C" void ext_00696260();
 extern "C" int mem_00924FE8;
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" int mem_00924EC0;
 extern "C" int mem_00924FF4;
@@ -8395,6 +8420,11 @@ extern "C" __declspec(naked) bool __fastcall fn_00555680(void* self, int edx_unu
 // [0x00557960] sub_00557960 (176 bytes)
 extern "C" void ext_00555680();
 extern "C" void ext_0057BF80();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 
 extern "C" __declspec(naked) void __fastcall fn_00557960(void* self) {
@@ -8804,6 +8834,11 @@ extern "C" __declspec(naked) void __fastcall fn_00557200(void* self, int edx_unu
 // [0x00559A50] sub_00559A50 (176 bytes)
 extern "C" void ext_0057E4D0();
 extern "C" void ext_00687DC0();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 
 extern "C" __declspec(naked) void __fastcall fn_00559A50(void* self) {
@@ -8986,6 +9021,11 @@ extern "C" __declspec(naked) void __fastcall fn_00553BA0(void* self) {
 // [0x00559980] sub_00559980 (176 bytes)
 extern "C" void ext_00402480();
 extern "C" void ext_0057E420();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 
 extern "C" __declspec(naked) void __fastcall fn_00559980(void* self) {
@@ -9315,6 +9355,11 @@ extern "C" __declspec(naked) void __fastcall fn_0055A650(void* self) {
 // [0x0055C880] sub_0055C880 (106 bytes)
 extern "C" void ext_0055C880();
 extern "C" void __fastcall ext_00673C20(void* self);
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" __declspec(naked) void __fastcall fn_0055C880(void* self) {
     __asm {
@@ -9872,6 +9917,11 @@ extern "C" __declspec(naked) void* __fastcall fn_0055AEA0(void* self, int edx_un
 // [0x0055B8C0] sub_0055B8C0 (176 bytes)
 extern "C" void ext_00555680();
 extern "C" void ext_00581610();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 
 extern "C" __declspec(naked) void __fastcall fn_0055B8C0(void* self) {
@@ -10008,6 +10058,11 @@ extern "C" __declspec(naked) void __fastcall fn_0055E1A0(void* self) {
 // [0x00557A30] sub_00557A30 (234 bytes)
 extern "C" void ext_00412690();
 extern "C" void ext_0048EF80();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" __declspec(naked) void __fastcall fn_00557A30(void* self, int edx_unused, void* a1, int a2) {
     __asm {
@@ -10097,6 +10152,11 @@ L_557AC2:
 // [0x0055CF90] sub_0055CF90 (133 bytes)
 extern "C" void ext_0055CF10();
 extern "C" void ext_0055CF90();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" __declspec(naked) void __fastcall fn_0055CF90(void* self, int edx_unused, void* a1, void* a2) {
     __asm {
@@ -10553,6 +10613,11 @@ null_out:
 
 // [0x00557710] sub_00557710 (143 bytes)
 extern "C" void ext_00556EF0();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" __declspec(naked) void __fastcall fn_00557710(void* self) {
     __asm {
@@ -10628,6 +10693,11 @@ L_done:
 // [0x005585B0] sub_005585B0 (168 bytes)
 extern "C" void ext_00555420();
 extern "C" void ext_00557710();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 
 extern "C" __declspec(naked) unsigned char __fastcall fn_005585B0(void* self, int edx_unused, void* a1) {
@@ -10802,6 +10872,11 @@ extern "C" int mem_00993828;
 extern "C" int mem_00957570;
 extern "C" int mem_00924FE4;
 extern "C" int mem_00924FF4;
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" int mem_009349D8;
 extern "C" int mem_00934B60;
@@ -11522,6 +11597,11 @@ extern "C" void ext_00406510();
 extern "C" void ext_00468180();
 extern "C" void ext_00495F90();
 extern "C" void ext_005B11F0();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" __declspec(naked) void* __fastcall fn_00558420(void* self, int edx_unused, int a1) {
     __asm {
@@ -11667,6 +11747,11 @@ extern "C" void ext_00405FB0();
 extern "C" int mem_00925108;
 extern "C" int mem_00925110;
 extern "C" int mem_00925114;
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" int mem_009251EC;
 
@@ -11747,6 +11832,11 @@ extern "C" __declspec(naked) void* __fastcall fn_00556950(void* self, int edx_un
 
 // [0x0055C7D0] sub_0055C7D0 (167 bytes)
 extern "C" void __fastcall ext_00673C20(void* self);
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 extern "C" int mem_00924FC4;
 
@@ -12345,6 +12435,11 @@ extern "C" void ext_006D7C40();
 extern "C" void ext_006D7C80();
 extern "C" void ext_006D7CA0();
 extern "C" void ext_006DEEC0();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 
 extern "C" __declspec(naked) void __fastcall fn_0055E9D0(void* self) {
@@ -13424,6 +13519,11 @@ extern "C" void ext_0055C450();
 extern "C" void ext_0055C7D0();
 extern "C" void ext_0055CAC0();
 extern "C" int mem_00924FE0;
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 
 extern "C" __declspec(naked) void __fastcall fn_0055CC10(void* self) {
@@ -13694,6 +13794,11 @@ extern "C" void ext_00587920();
 extern "C" void ext_0058F200();
 extern "C" void ext_006A5C62();
 extern "C" void ext_006A6E9E();
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
 extern "C" int mem_00925134;
 
 // [0x005557A0] sub_005557A0 (310 bytes)
@@ -13800,5 +13905,118 @@ extern "C" __declspec(naked) void __fastcall fn_005557A0(void* self, int, void* 
         mov     dword ptr fs:[0], ecx
         add     esp, 0x10
         ret     8
+    }
+}
+
+extern "C" void ext_0055E490();
+extern "C" void ext_0055F2C0();
+extern "C" void ext_00594000();
+extern "C" void ext_00661F70();
+extern "C" void ext_00662120();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+// [0x0055F4E0] sub_0055F4E0 (318 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0055F4E0(void* self) {
+    __asm {
+        mov     eax, dword ptr fs:[0x0]
+        push    -0x1
+        push    0x8b56f9
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x20
+        push    ebx
+        push    esi
+        push    edi
+        mov     esi, ecx
+        call    ext_00594000
+        mov     edi, eax
+        mov     eax, dword ptr [edi + 0x23c]
+        test    eax, eax
+        je      L_invalid
+        mov     ecx, dword ptr [edi + 0x240]
+        sub     ecx, eax
+        sar     ecx, 0x2
+        jne     L_valid
+    L_invalid:
+        call    dword ptr [mem_00925134]
+    L_valid:
+        cmp     dword ptr [esi + 0x424], 0x0
+        mov     edx, dword ptr [edi + 0x23c]
+        mov     eax, dword ptr [edx]
+        mov     dword ptr [esi + 0x4bc], eax
+        je      L_no_obj
+        push    0x958828
+        lea     ecx, [esp + 0x14]
+        call    dword ptr [mem_00924FE4]
+        mov     ecx, dword ptr [esi + 0x424]
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 0xc]
+        lea     edx, [esp + 0x10]
+        push    edx
+        mov     dword ptr [esp + 0x38], 0x0
+        call    eax
+        lea     ecx, [esp + 0x10]
+        mov     dword ptr [esp + 0x34], -0x1
+        call    dword ptr [mem_00924FF4]
+    L_no_obj:
+        mov     ecx, dword ptr [esi + 0x420]
+        call    ext_00662120
+        mov     ecx, dword ptr [esi + 0x420]
+        push    0x1
+        call    ext_00661F70
+        lea     ecx, [esi + 0x470]
+        push    0x0
+        lea     eax, [esi + 0x46c]
+        push    ecx
+        mov     dword ptr [ecx], 0x0
+        push    eax
+        mov     ecx, esi
+        mov     dword ptr [eax], 0x0
+        call    ext_0055E490
+        cmp     byte ptr [esi + 0x214], 0x0
+        mov     bl, al
+        je      L_ret_bl
+        lea     ecx, [esi + 0x1f8]
+        push    ecx
+        call    ext_006629B0
+        add     esp, 0x4
+        test    al, al
+        je      L_ret_bl
+        test    bl, bl
+        je      L_ret_zero
+        lea     edx, [esi + 0x1f8]
+        push    edx
+        mov     ecx, esi
+        call    ext_0055F2C0
+        test    al, al
+        je      L_ret_zero
+        pop     edi
+        pop     esi
+        mov     al, 0x1
+        pop     ebx
+        mov     ecx, dword ptr [esp + 0x20]
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x2c
+        ret
+    L_ret_zero:
+        pop     edi
+        pop     esi
+        xor     al, al
+        pop     ebx
+        mov     ecx, dword ptr [esp + 0x20]
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x2c
+        ret
+    L_ret_bl:
+        mov     ecx, dword ptr [esp + 0x2c]
+        pop     edi
+        pop     esi
+        mov     al, bl
+        pop     ebx
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x2c
+        ret
     }
 }
