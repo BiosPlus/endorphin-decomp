@@ -1,5 +1,12 @@
 // Decompiled translation unit: src/classes/AddCharacterDialog.cpp
 
+extern "C" void ext_0040BF20();
+extern "C" void ext_0040CEF0();
+extern "C" void ext_0040CF60();
+extern "C" void ext_0040E2F0();
+extern "C" void ext_0040ED60();
+extern "C" void ext_006A5EDE();
+extern "C" void ext_006A60D6();
 extern "C" void ext_0040DA90();
 extern "C" void ext_0040E780();
 extern "C" void ext_0040E7C0();
@@ -175,6 +182,50 @@ extern "C" __declspec(naked) void __fastcall fn_0040D070(void* self) {
         pop esi
         mov dword ptr fs:[0], ecx
         add esp, 0x44
+        ret
+    }
+}
+
+// [0x0040EF10] AddCharacterDialog::vfunc_86 (126 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0040EF10(void* self) {
+    __asm {
+        push -1
+        push 0x874c58
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_006A5EDE
+        mov ecx, dword ptr [eax + 4]
+        call ext_006A60D6
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0
+        call ext_0040CEF0
+        test al, al
+        je L_40EF52
+        push 0
+        mov ecx, esi
+        call ext_0040ED60
+    L_40EF52:
+        mov ecx, esi
+        call ext_0040CF60
+        test al, al
+        je L_40EF66
+        push 1
+        mov ecx, esi
+        call ext_0040ED60
+    L_40EF66:
+        mov ecx, esi
+        call ext_0040E2F0
+        lea ecx, [esp + 7]
+        mov dword ptr [esp + 0x10], -1
+        call ext_0040BF20
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
         ret
     }
 }
