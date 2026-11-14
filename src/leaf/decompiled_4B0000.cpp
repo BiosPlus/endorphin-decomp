@@ -5078,3 +5078,41 @@ extern "C" __declspec(naked) void __fastcall fn_004BE620(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00475960();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+// [0x004BE400] sub_004BE400 (105 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004BE400(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FE4]
+        push 0x1
+        lea ecx, [esp + 0x38]
+        push ecx
+        mov ecx, dword ptr [esi]
+        lea edx, [esp + 0xc]
+        push edx
+        mov dword ptr [esp + 0x34], 0x0
+        call ext_00475960
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x8
+    }
+}
