@@ -269,3 +269,59 @@ extern "C" __declspec(naked) void __fastcall fn_0051BA70(void* self) {
         ret 0x8
     }
 }
+
+// [0x0051C2A0] NMData::RealChannel::vfunc_10 (89 bytes)
+extern "C" void ext_0047B170();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0051C2A0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [ecx + 0x30]
+        cmp esi, dword ptr [ecx + 0x34]
+        push edi
+        lea edi, [ecx + 0x2c]
+        jbe short L_ok1
+        call ebp
+    L_ok1:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe short L_ok2
+        call ebp
+    L_ok2:
+        test edi, edi
+        je short L_bad1
+        cmp edi, edi
+        je short L_ok3
+    L_bad1:
+        call ebp
+    L_ok3:
+        cmp esi, ebx
+        je short L_done
+        test edi, edi
+        jne short L_ok4
+        call ebp
+    L_ok4:
+        cmp esi, dword ptr [edi + 0x8]
+        jb short L_ok5
+        call ebp
+    L_ok5:
+        mov ecx, dword ptr [esp + 0x14]
+        push esi
+        call ext_0047B170
+        cmp esi, dword ptr [edi + 0x8]
+        jb short L_ok6
+        call ebp
+    L_ok6:
+        add esi, 0x8
+        jmp short L_ok2
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
