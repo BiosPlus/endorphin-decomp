@@ -1585,3 +1585,195 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_0085CE00(void* node) {
         ret
     }
 }
+
+// [0x0085EF70] sub_0085EF70 (448 bytes)
+extern "C" void ext_0085DA80();
+extern "C" int mem_00ABB25C;
+extern "C" int mem_00AB98F0;
+
+extern "C" __declspec(naked) void fn_0085EF70() {
+    __asm {
+        push esi
+        push 0x00ac04ec
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_1
+        xor eax, eax
+        pop esi
+        ret
+    lbl_1:
+        push 0x00ac04f0
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_2
+        xor eax, eax
+        pop esi
+        ret
+    lbl_2:
+        push 0x00ac04f4
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_3
+        xor eax, eax
+        pop esi
+        ret
+    lbl_3:
+        push 0x00ac04f8
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_4
+        xor eax, eax
+        pop esi
+        ret
+    lbl_4:
+        push 0x00ac0504
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_5
+        xor eax, eax
+        pop esi
+        ret
+    lbl_5:
+        push 0x00ac050c
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_6
+        xor eax, eax
+        pop esi
+        ret
+    lbl_6:
+        push 0x00ac0510
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_7
+        xor eax, eax
+        pop esi
+        ret
+    lbl_7:
+        push 0x00ac0518
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_8
+        xor eax, eax
+        pop esi
+        ret
+    lbl_8:
+        push 0x00ac051c
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_9
+        mov eax, 0x1
+        pop esi
+        ret
+    lbl_9:
+        push 0x00ac0520
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_10
+        mov eax, 0x1
+        pop esi
+        ret
+    lbl_10:
+        push 0x00ac0524
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_11
+        mov eax, 0x1
+        pop esi
+        ret
+    lbl_11:
+        push 0x00ac0528
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_12
+        mov eax, 0x1
+        pop esi
+        ret
+    lbl_12:
+        push 0x00ac0530
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_13
+        mov eax, 0x1
+        pop esi
+        ret
+    lbl_13:
+        push 0x00ac0538
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_14
+        mov eax, 0x1
+        pop esi
+        ret
+    lbl_14:
+        push 0x00ac053c
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_15
+        mov eax, 0x1
+        pop esi
+        ret
+    lbl_15:
+        push 0x00ac0540
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_16
+        mov eax, 0x1
+        pop esi
+        ret
+    lbl_16:
+        push 0x00ac0544
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        jne lbl_17
+        mov eax, 0x1
+        pop esi
+        ret
+    lbl_17:
+        push esi
+        push 0x00ac0548
+        call ext_0085DA80
+        mov eax, dword ptr [esp + 0x14]
+        add esp, 0x8
+        mov dword ptr [mem_00AB98EC], 0x13
+        mov ecx, dword ptr [mem_00ABB25C]
+        pop esi
+        mov dword ptr [mem_00AB98F0], ecx
+        ret
+    }
+}
