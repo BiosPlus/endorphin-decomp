@@ -562,6 +562,7 @@ extern "C" __declspec(naked) void* __fastcall fn_004205B0(void* self, int edx_un
 // [0x00428A60] sub_00428A60 (72 bytes)
 extern "C" void ext_006A5C5C();
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" __declspec(naked) void __fastcall fn_00428A60(void* self) {
     __asm {
         push ebx
@@ -599,6 +600,7 @@ extern "C" __declspec(naked) void __fastcall fn_00428A60(void* self) {
 // [0x00422C80] sub_00422C80 (77 bytes)
 extern "C" int mem_00924FDC;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 // s: by-value std::string (28 bytes on the stack, callee-cleaned via ret 0x1c); declared raw because naked functions cannot take unwinding types.
 extern "C" __declspec(naked) void __fastcall fn_00422C80(void* self, int edx_unused, void* s) {
     __asm {
@@ -653,6 +655,7 @@ extern "C" void __fastcall fn_00427760(void* self, int edx_unused, void* node) {
 // [0x00429100] sub_00429100 (78 bytes)
 extern "C" void ext_00428A60();
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_00429100(void* self) {
     __asm {
@@ -682,6 +685,7 @@ extern "C" __declspec(naked) void __fastcall fn_00429100(void* self) {
 // [0x004291A0] sub_004291A0 (77 bytes)
 extern "C" void ext_00429100();
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_004291A0(void* self) {
     __asm {
@@ -882,6 +886,7 @@ extern "C" __declspec(naked) void __fastcall fn_00422C00(void* self) {
 // [0x00420070] sub_00420070 (77 bytes)
 extern "C" void ext_00401BB0();
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_00420070(void* self) {
     __asm {
@@ -1018,6 +1023,7 @@ extern "C" void* __fastcall fn_004225E0(void* self) {
 // SEH-framed (state -1/0), operator= and ~basic_string via imports; vfunc_2 is a hidden-return std::string getter.
 extern "C" int mem_00924FDC;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __cdecl fn_004275E0(void* dst, void* src) {
     __asm {
@@ -1177,6 +1183,7 @@ extern "C" __declspec(naked) void __fastcall fn_0042EE50(void* self) {
 extern "C" void ext_004275C0();
 extern "C" int mem_00924FC0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_00427640(void* self) {
     __asm {
@@ -1582,6 +1589,7 @@ extern "C" int mem_00924FE4;
 extern "C" int mem_00924EB8;
 extern "C" int mem_00924EBC;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_00426980(void* self, int edx_unused, void* a1, void* a2) {
     __asm {
@@ -2076,6 +2084,7 @@ extern "C" int __fastcall fn_0042FED0(void* self) {
 extern "C" void ext_006A6DD2();
 extern "C" int mem_00924FE0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __cdecl fn_00427900(void* dst, int count, const void* src) {
     __asm {
@@ -2170,6 +2179,7 @@ extern "C" __declspec(naked) void __cdecl fn_00427900(void* dst, int count, cons
 extern "C" void ext_006A6DD2();
 extern "C" int mem_00924FE0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void* __cdecl fn_004279B0(void* first, void* last, void* dest) {
     __asm {
@@ -2669,6 +2679,7 @@ extern "C" void ext_006A5EFC();
 extern "C" void ext_006A5F6E();
 extern "C" void ext_006A641E();
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_00421C10(void* self) {
     __asm {
@@ -2978,6 +2989,7 @@ extern "C" void ext_006A5F50();
 extern "C" int mem_00924300;
 extern "C" int mem_00924FE4;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00924FF0;
 
 extern "C" __declspec(naked) void __fastcall fn_00422CF0(void* self, int edx_unused, bool a1) {
@@ -3119,6 +3131,7 @@ extern "C" void ext_006A5FDA();
 extern "C" int mem_00925694;
 extern "C" int mem_00924FF0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_004247C0(void* self) {
     __asm {
@@ -3327,6 +3340,7 @@ extern "C" int mem_00924FE8;
 extern "C" int mem_00924FE4;
 extern "C" int mem_00924FE0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_00421E00(void* self, int edx_unused, int a1) {
     __asm {
@@ -3405,6 +3419,7 @@ extern "C" __declspec(naked) void __fastcall fn_00421E00(void* self, int edx_unu
 extern "C" void ext_006A5C5C();
 extern "C" int mem_00924FF0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) int __fastcall fn_00425EE0(void* self, int edx_unused, int a1, void* begin, void* end, int a3, void* key) {
     __asm {
@@ -3548,6 +3563,7 @@ extern "C" int mem_00924FDC;
 extern "C" int mem_00924FEC;
 extern "C" int mem_00924FF0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00ACD9D8[54];
 
 extern "C" __declspec(naked) int __fastcall fn_00427EA0(void* self, int edx_unused, const void* a1) {
@@ -3934,6 +3950,7 @@ extern "C" int mem_00924FC8;
 extern "C" int mem_00924ECC;
 extern "C" int mem_00924FDC;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00925134;
 extern "C" int mem_00924EF4;
 
@@ -4128,6 +4145,7 @@ extern "C" int mem_00924EAC;
 extern "C" int mem_00925120;
 extern "C" int mem_00924FDC;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00924FD8;
 
 // [0x0042EA90] sub_0042EA90 (487 bytes)
@@ -4278,6 +4296,7 @@ extern "C" int mem_00925694;
 extern "C" int mem_00924300;
 extern "C" int mem_00924FD0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00924FF0;
 
 extern "C" __declspec(naked) void __fastcall fn_004237D0(void* self) {
@@ -4617,6 +4636,7 @@ extern "C" int mem_00924FE8;
 extern "C" int mem_00924300;
 extern "C" int mem_00924FD0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00924FF0;
 
 extern "C" __declspec(naked) void __fastcall fn_004238A0(void* self) {
@@ -5261,6 +5281,7 @@ extern "C" void ext_006A5F6E();
 extern "C" void ext_006A5FF2();
 extern "C" int mem_009242F4;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_00423260(void* self) {
     __asm {
@@ -5433,6 +5454,7 @@ extern "C" int mem_00924FE4;
 extern "C" int mem_009251C4;
 extern "C" int mem_00924FE0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_0042C1D0(void* self, int edx_unused, int a1, int a2, void* a3) {
     __asm {
@@ -6099,6 +6121,7 @@ extern "C" int mem_00924FE8;
 extern "C" int mem_00A9F838;
 extern "C" int mem_00924FDC;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00A9F44C;
 extern "C" int mem_00924FC0;
 extern "C" int mem_00A9F974;
@@ -6456,6 +6479,7 @@ extern "C" int mem_009242FC;
 extern "C" int mem_00924300;
 extern "C" int mem_00924FE4;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00925134;
 extern "C" int mem_00924FF0;
 extern "C" int mem_00925694;
@@ -6624,6 +6648,7 @@ extern "C" void ext_0063F8D0();
 extern "C" void ext_00640270();
 extern "C" int mem_00924FE4;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" __declspec(naked) void __fastcall fn_00427550(void* self, int edx_unused, const char* s) {
     __asm {
         push -1
@@ -6725,6 +6750,7 @@ extern "C" void ext_00669140();
 extern "C" int mem_00924FDC;
 extern "C" int mem_00924FF0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_0042F860(void* self) {
     __asm {
@@ -6922,6 +6948,7 @@ extern "C" int mem_00924FE8;
 extern "C" int mem_00924FE4;
 extern "C" int mem_00924FDC;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00879DB2;
 extern "C" int mem_00928B5D;
 
@@ -7015,6 +7042,7 @@ extern "C" int mem_00924FF0;
 extern "C" int mem_00925134;
 extern "C" int mem_00924FE4;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00A9F01C;
 extern "C" int mem_00A9F5A0;
 extern "C" int mem_00A9F974;
@@ -7264,6 +7292,7 @@ extern "C" int mem_00924FE4;
 extern "C" int mem_00924FCC;
 extern "C" int mem_00924ECC;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00924FF0;
 extern "C" int mem_009242F4;
 
@@ -7370,6 +7399,7 @@ extern "C" int mem_00925134;
 extern "C" int mem_00924300;
 extern "C" int mem_00924FE4;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_0092566C;
 extern "C" int mem_0092F678;
 
@@ -7478,6 +7508,7 @@ extern "C" __declspec(naked) void __fastcall fn_0042EF30(void* self, int edx_unu
 extern "C" int mem_00924FD4;
 extern "C" int mem_00924FE4;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 extern "C" int mem_00925134;
 extern "C" int mem_00924FB0;
 extern "C" int mem_00924FC8;
@@ -7720,6 +7751,7 @@ extern "C" void ext_005CD120();
 extern "C" void ext_006A6DD2();
 extern "C" int mem_00924FE0;
 extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
 
 extern "C" __declspec(naked) void __fastcall fn_00429350(void* self, int edx_unused, int a1, int a2, int a3) {
     __asm {
@@ -7786,5 +7818,2190 @@ extern "C" __declspec(naked) void __fastcall fn_00429350(void* self, int edx_unu
         mov dword ptr fs:[0x0], ecx
         add esp, 0x70
         ret 0xc
+    }
+}
+
+// [0x00429430] sub_00429430 (10447 bytes)
+extern "C" void ext_00429350();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00ACD9DC; extern "C" int mem_00ACD9E0; extern "C" int mem_00ACD9E4; extern "C" int mem_00ACD9E8; extern "C" int mem_00ACD9EC; extern "C" int mem_00ACD9F0; extern "C" int mem_00ACD9F4; extern "C" int mem_00ACD9F8; extern "C" int mem_00ACD9FC; extern "C" int mem_00ACDA00; extern "C" int mem_00ACDA04; extern "C" int mem_00ACDA08; extern "C" int mem_00ACDA0C; extern "C" int mem_00ACDA10; extern "C" int mem_00ACDA14; extern "C" int mem_00ACDA18; extern "C" int mem_00ACDA1C; extern "C" int mem_00ACDA20; extern "C" int mem_00ACDA24; extern "C" int mem_00ACDA28; extern "C" int mem_00ACDA2C; extern "C" int mem_00ACDA30; extern "C" int mem_00ACDA34; extern "C" int mem_00ACDA38; extern "C" int mem_00ACDA3C; extern "C" int mem_00ACDA40; extern "C" int mem_00ACDA44; extern "C" int mem_00ACDA48; extern "C" int mem_00ACDA4C; extern "C" int mem_00ACDA50; extern "C" int mem_00ACDA54; extern "C" int mem_00ACDA58; extern "C" int mem_00ACDA5C; extern "C" int mem_00ACDA60; extern "C" int mem_00ACDA64; extern "C" int mem_00ACDA68; extern "C" int mem_00ACDA6C; extern "C" int mem_00ACDA70; extern "C" int mem_00ACDA74; extern "C" int mem_00ACDA78; extern "C" int mem_00ACDA7C; extern "C" int mem_00ACDA80; extern "C" int mem_00ACDA84; extern "C" int mem_00ACDA88; extern "C" int mem_00ACDA8C; extern "C" int mem_00ACDA90; extern "C" int mem_00ACDA94; extern "C" int mem_00ACDA98; extern "C" int mem_00ACDA9C; extern "C" int mem_00ACDAA0; extern "C" int mem_00ACDAA4; extern "C" int mem_00ACDAA8; extern "C" int mem_00ACDAAC;
+extern "C" __declspec(naked) void __fastcall fn_00429430(void* self) {
+    __asm {
+        push -1
+        push	08795c4h
+        mov	eax, dword ptr fs:[00h]
+        push	eax
+        mov	dword ptr fs:[00h], esp
+        sub	esp, 06e8h
+        mov	eax, dword ptr [mem_00ACD9D8]
+        push	ebx
+        push	esi
+        push	edi
+        mov	ebx, ecx
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0e100h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        lea	esi, [ebx + 04h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 00h
+        call ext_00429350
+        or edi, -1
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACD9DC]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0e101h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 01h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACD9E0]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0e103h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 02h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACD9E4]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0123h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 03h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACD9E8]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 085h
+        call	dword ptr [mem_00924FE4]
+        mov	dword ptr [esp + 06fch], 04h
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACD9EC]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0b7h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 05h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACD9F0]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08109h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 06h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACD9F4]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 081d2h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 07h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACD9F8]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0816ah
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 08h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACD9FC]
+        mov	dword ptr [esp + 0ch], 069h
+        push	eax
+        lea	ecx, [esp + 014h]
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 09h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA00]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 06ch
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 0ah
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA04]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08151h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 0bh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA08]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08111h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 0ch
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA0C]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0829bh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 0dh
+        call ext_00429350
+        mov	dword ptr [esp + 06fch], edi
+        lea	ecx, [esp + 010h]
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA10]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 06fh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 0eh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA14]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 072h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 0fh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA18]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0816bh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 010h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA1C]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 070h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 011h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA20]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0816fh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        mov	dword ptr [esp + 0704h], 012h
+        push	edx
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA24]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08170h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 013h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA28]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08171h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 014h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA2C]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08172h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 015h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA30]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 074h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 016h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA34]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 075h
+        call	dword ptr [mem_00924FE4]
+        mov	dword ptr [esp + 06fch], 017h
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA38]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 06bh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 018h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA3C]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 06dh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 019h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA40]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0b9h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 01ah
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA44]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0e123h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 01bh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA48]
+        mov	dword ptr [esp + 0ch], 0e122h
+        push	eax
+        lea	ecx, [esp + 014h]
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 01ch
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA4C]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0e125h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 01dh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA50]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 010bh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 01eh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA54]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0e12bh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 01fh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA58]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0e12ch
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 020h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA5C]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 06ah
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 021h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA60]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08024h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 022h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA64]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08026h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 023h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA68]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08027h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 024h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA6C]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0809ah
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        mov	dword ptr [esp + 0704h], 025h
+        push	edx
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA70]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08108h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 026h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA74]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08105h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 027h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA78]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 081cah
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 028h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA7C]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 081cbh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 029h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA80]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 081cch
+        call	dword ptr [mem_00924FE4]
+        mov	dword ptr [esp + 06fch], 02ah
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA84]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 081cdh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 02bh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA88]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0800ah
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 02ch
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA8C]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08194h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 02dh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA90]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08195h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 02eh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA94]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08010h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 02fh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA98]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08011h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 030h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDA9C]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0814fh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 031h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDAA0]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08150h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 032h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDAA4]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08178h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 033h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	dword ptr [esp + 0ch], 08138h
+        mov	eax, dword ptr [mem_00ACDAA8]
+        push	eax
+        lea	ecx, [esp + 014h]
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 034h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	eax, dword ptr [mem_00ACDAAC]
+        push	eax
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 0e143h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 035h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f2ech
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 026h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 018h]
+        lea	esi, [ebx + 014h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 036h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f2e4h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 025h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 018h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 037h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f2dch
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 028h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 038h
+        call ext_00429350
+        mov	dword ptr [esp + 06fch], edi
+        lea	ecx, [esp + 010h]
+        call	dword ptr [mem_00924FF4]
+        push	092f2d4h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 027h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 018h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 039h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f2cch
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 02dh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 018h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 03ah
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f2c0h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 08h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 03bh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f2b8h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 024h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 018h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 03ch
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f2b4h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 023h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 018h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 03dh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092e8cch
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 020h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 03eh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f2ach
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 02eh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 018h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 03fh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f2a4h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 06bh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 018h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 040h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f29ch
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 06dh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 041h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f298h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 09h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 018h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 042h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	dword ptr [esp + 0ch], 06eh
+        push	092f28ch
+        lea	ecx, [esp + 014h]
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 018h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 043h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f280h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 06fh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 044h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f278h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 06ah
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 018h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 045h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f270h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 060h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 018h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 046h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f268h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 061h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 047h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	dword ptr [esp + 0ch], 062h
+        push	092f260h
+        lea	ecx, [esp + 014h]
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 018h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 048h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f258h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 063h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 018h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 049h
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f250h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 064h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 04ah
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f248h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 065h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 018h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 04bh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f240h
+        lea	ecx, [esp + 014h]
+        mov	dword ptr [esp + 010h], 066h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 018h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 04ch
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	dword ptr [esp + 0ch], 067h
+        push	092f238h
+        lea	ecx, [esp + 014h]
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 018h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 04dh
+        call ext_00429350
+        lea	ecx, [esp + 010h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f230h
+        lea	ecx, [esp + 0378h]
+        mov	dword ptr [esp + 010h], 068h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 037ch]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 04eh
+        call ext_00429350
+        lea	ecx, [esp + 0374h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f228h
+        lea	ecx, [esp + 068h]
+        mov	dword ptr [esp + 010h], 069h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 06ch]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 04fh
+        call ext_00429350
+        lea	ecx, [esp + 064h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f220h
+        lea	ecx, [esp + 03b0h]
+        mov	dword ptr [esp + 010h], 021h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 03b4h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 050h
+        call ext_00429350
+        lea	ecx, [esp + 03ach]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f218h
+        lea	ecx, [esp + 0a0h]
+        mov	dword ptr [esp + 010h], 022h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 0a4h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 051h
+        call ext_00429350
+        lea	ecx, [esp + 09ch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f214h
+        lea	ecx, [esp + 0618h]
+        mov	dword ptr [esp + 010h], 070h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 061ch]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 052h
+        call ext_00429350
+        lea	ecx, [esp + 0614h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f210h
+        lea	ecx, [esp + 0d8h]
+        mov	dword ptr [esp + 010h], 071h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 0dch]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 053h
+        call ext_00429350
+        lea	ecx, [esp + 0d4h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f20ch
+        lea	ecx, [esp + 03e8h]
+        mov	dword ptr [esp + 010h], 072h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 03ech]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 054h
+        call ext_00429350
+        lea	ecx, [esp + 03e4h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f208h
+        lea	ecx, [esp + 0110h]
+        mov	dword ptr [esp + 010h], 073h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 0114h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 055h
+        call ext_00429350
+        lea	ecx, [esp + 010ch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f204h
+        lea	ecx, [esp + 0570h]
+        mov	dword ptr [esp + 010h], 074h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 0574h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 056h
+        call ext_00429350
+        lea	ecx, [esp + 056ch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f200h
+        lea	ecx, [esp + 0148h]
+        mov	dword ptr [esp + 010h], 075h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 014ch]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 057h
+        call ext_00429350
+        lea	ecx, [esp + 0144h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1fch
+        lea	ecx, [esp + 0420h]
+        mov	dword ptr [esp + 010h], 076h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 0424h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 058h
+        call ext_00429350
+        lea	ecx, [esp + 041ch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1f8h
+        lea	ecx, [esp + 0180h]
+        mov	dword ptr [esp + 010h], 077h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 0184h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 059h
+        call ext_00429350
+        lea	ecx, [esp + 017ch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1f4h
+        lea	ecx, [esp + 0688h]
+        mov	dword ptr [esp + 010h], 078h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 068ch]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 05ah
+        call ext_00429350
+        lea	ecx, [esp + 0684h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1f0h
+        lea	ecx, [esp + 01b8h]
+        mov	dword ptr [esp + 010h], 079h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 01bch]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 05bh
+        call ext_00429350
+        lea	ecx, [esp + 01b4h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1ech
+        lea	ecx, [esp + 0458h]
+        mov	dword ptr [esp + 010h], 07ah
+        call	dword ptr [mem_00924FE4]
+        mov	dword ptr [esp + 06fch], 05ch
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 045ch]
+        push	edx
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 0454h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	ebx, 07bh
+        push	092f1e8h
+        lea	ecx, [esp + 01f0h]
+        mov	dword ptr [esp + 010h], ebx
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 01f4h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 05dh
+        call ext_00429350
+        lea	ecx, [esp + 01ech]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1e4h
+        lea	ecx, [esp + 05a8h]
+        mov	dword ptr [esp + 010h], 041h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 05ach]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 05eh
+        call ext_00429350
+        lea	ecx, [esp + 05a4h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1e0h
+        lea	ecx, [esp + 0228h]
+        mov	dword ptr [esp + 010h], 042h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 022ch]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 05fh
+        call ext_00429350
+        lea	ecx, [esp + 0224h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1dch
+        lea	ecx, [esp + 0490h]
+        mov	dword ptr [esp + 010h], 043h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 0494h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 060h
+        call ext_00429350
+        lea	ecx, [esp + 048ch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1d8h
+        lea	ecx, [esp + 0260h]
+        mov	dword ptr [esp + 010h], 044h
+        call	dword ptr [mem_00924FE4]
+        mov	dword ptr [esp + 06fch], 061h
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 0264h]
+        push	eax
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 025ch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1d4h
+        lea	ecx, [esp + 0650h]
+        mov	dword ptr [esp + 010h], 045h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 0654h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 062h
+        call ext_00429350
+        lea	ecx, [esp + 064ch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1d0h
+        lea	ecx, [esp + 0298h]
+        mov	dword ptr [esp + 010h], 046h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 029ch]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 063h
+        call ext_00429350
+        lea	ecx, [esp + 0294h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1cch
+        lea	ecx, [esp + 04c8h]
+        mov	dword ptr [esp + 010h], 047h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 04cch]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 064h
+        call ext_00429350
+        lea	ecx, [esp + 04c4h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1c8h
+        lea	ecx, [esp + 02d0h]
+        mov	dword ptr [esp + 010h], 048h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 02d4h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 065h
+        call ext_00429350
+        lea	ecx, [esp + 02cch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1c4h
+        lea	ecx, [esp + 05e0h]
+        mov	dword ptr [esp + 010h], 049h
+        call	dword ptr [mem_00924FE4]
+        mov	dword ptr [esp + 06fch], 066h
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 05e4h]
+        push	ecx
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 05dch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1c0h
+        lea	ecx, [esp + 0308h]
+        mov	dword ptr [esp + 010h], 04ah
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 030ch]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 067h
+        call ext_00429350
+        lea	ecx, [esp + 0304h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1bch
+        lea	ecx, [esp + 0500h]
+        mov	dword ptr [esp + 010h], 04bh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 0504h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 068h
+        call ext_00429350
+        lea	ecx, [esp + 04fch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1b8h
+        lea	ecx, [esp + 0340h]
+        mov	dword ptr [esp + 010h], 04ch
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 0344h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 069h
+        call ext_00429350
+        lea	ecx, [esp + 033ch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1b4h
+        lea	ecx, [esp + 06c0h]
+        mov	dword ptr [esp + 010h], 04dh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 06c4h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 06ah
+        call ext_00429350
+        lea	ecx, [esp + 06bch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1b0h
+        lea	ecx, [esp + 030h]
+        mov	dword ptr [esp + 010h], 04eh
+        call	dword ptr [mem_00924FE4]
+        mov	dword ptr [esp + 06fch], 06bh
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 034h]
+        push	edx
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 02ch]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1ach
+        lea	ecx, [esp + 0538h]
+        mov	dword ptr [esp + 010h], 04fh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 053ch]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 06ch
+        call ext_00429350
+        lea	ecx, [esp + 0534h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1a8h
+        lea	ecx, [esp + 04ch]
+        mov	dword ptr [esp + 010h], 050h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 050h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 06dh
+        call ext_00429350
+        lea	ecx, [esp + 048h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1a4h
+        lea	ecx, [esp + 084h]
+        mov	dword ptr [esp + 010h], 051h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 088h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 06eh
+        call ext_00429350
+        lea	ecx, [esp + 080h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f1a0h
+        lea	ecx, [esp + 0bch]
+        mov	dword ptr [esp + 010h], 052h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 0c0h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 06fh
+        call ext_00429350
+        lea	ecx, [esp + 0b8h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f19ch
+        lea	ecx, [esp + 0f4h]
+        mov	dword ptr [esp + 010h], 053h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        mov	dword ptr [esp + 0700h], 070h
+        push	edx
+        lea	eax, [esp + 0f8h]
+        push	eax
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 0f0h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f198h
+        lea	ecx, [esp + 012ch]
+        mov	dword ptr [esp + 010h], 054h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 0130h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 071h
+        call ext_00429350
+        lea	ecx, [esp + 0128h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f194h
+        lea	ecx, [esp + 0164h]
+        mov	dword ptr [esp + 010h], 055h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 0168h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 072h
+        call ext_00429350
+        lea	ecx, [esp + 0160h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f190h
+        lea	ecx, [esp + 019ch]
+        mov	dword ptr [esp + 010h], 056h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 01a0h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 073h
+        call ext_00429350
+        lea	ecx, [esp + 0198h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f18ch
+        lea	ecx, [esp + 01d4h]
+        mov	dword ptr [esp + 010h], 057h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 01d8h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 074h
+        call ext_00429350
+        lea	ecx, [esp + 01d0h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f188h
+        lea	ecx, [esp + 020ch]
+        mov	dword ptr [esp + 010h], 058h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        mov	dword ptr [esp + 0700h], 075h
+        push	eax
+        lea	ecx, [esp + 0210h]
+        push	ecx
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 0208h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f184h
+        lea	ecx, [esp + 0244h]
+        mov	dword ptr [esp + 010h], 059h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 0248h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 076h
+        call ext_00429350
+        lea	ecx, [esp + 0240h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f180h
+        lea	ecx, [esp + 027ch]
+        mov	dword ptr [esp + 010h], 05ah
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 0280h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 077h
+        call ext_00429350
+        lea	ecx, [esp + 0278h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092a0d0h
+        lea	ecx, [esp + 02b4h]
+        mov	dword ptr [esp + 010h], 030h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 02b8h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 078h
+        call ext_00429350
+        lea	ecx, [esp + 02b0h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f17ch
+        lea	ecx, [esp + 02ech]
+        mov	dword ptr [esp + 010h], 031h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 02f0h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 079h
+        call ext_00429350
+        lea	ecx, [esp + 02e8h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f178h
+        lea	ecx, [esp + 0324h]
+        mov	dword ptr [esp + 010h], 032h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 0328h]
+        mov	dword ptr [esp + 0704h], 07ah
+        push	edx
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 0320h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f174h
+        lea	ecx, [esp + 035ch]
+        mov	dword ptr [esp + 010h], 033h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 0360h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], ebx
+        call ext_00429350
+        lea	ecx, [esp + 0358h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f170h
+        lea	ecx, [esp + 0394h]
+        mov	dword ptr [esp + 010h], 034h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 0398h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 07ch
+        call ext_00429350
+        lea	ecx, [esp + 0390h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f16ch
+        lea	ecx, [esp + 03cch]
+        mov	dword ptr [esp + 010h], 035h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 03d0h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 07dh
+        call ext_00429350
+        lea	ecx, [esp + 03c8h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f168h
+        lea	ecx, [esp + 0404h]
+        mov	dword ptr [esp + 010h], 036h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 0408h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 07eh
+        call ext_00429350
+        lea	ecx, [esp + 0400h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f164h
+        lea	ecx, [esp + 043ch]
+        mov	dword ptr [esp + 010h], 037h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 0440h]
+        mov	dword ptr [esp + 0704h], 07fh
+        push	eax
+        mov	ecx, esi
+        call ext_00429350
+        lea	ecx, [esp + 0438h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f160h
+        lea	ecx, [esp + 0474h]
+        mov	dword ptr [esp + 010h], 038h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 0478h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 080h
+        call ext_00429350
+        lea	ecx, [esp + 0470h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f15ch
+        lea	ecx, [esp + 04ach]
+        mov	dword ptr [esp + 010h], 039h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 04b0h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 081h
+        call ext_00429350
+        lea	ecx, [esp + 04a8h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092ab70h
+        lea	ecx, [esp + 04e4h]
+        mov	dword ptr [esp + 010h], 0beh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 04e8h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 082h
+        call ext_00429350
+        lea	ecx, [esp + 04e0h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f158h
+        lea	ecx, [esp + 051ch]
+        mov	dword ptr [esp + 010h], 0bch
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 0520h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 083h
+        call ext_00429350
+        lea	ecx, [esp + 0518h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f154h
+        lea	ecx, [esp + 0554h]
+        mov	dword ptr [esp + 010h], 0bbh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 0558h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 084h
+        call ext_00429350
+        lea	ecx, [esp + 0550h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f150h
+        lea	ecx, [esp + 058ch]
+        mov	dword ptr [esp + 010h], 0bdh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 0590h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 085h
+        call ext_00429350
+        lea	ecx, [esp + 0588h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f14ch
+        lea	ecx, [esp + 05c4h]
+        mov	dword ptr [esp + 010h], 0bah
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 05c8h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 086h
+        call ext_00429350
+        lea	ecx, [esp + 05c0h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092b4ach
+        lea	ecx, [esp + 05fch]
+        mov	dword ptr [esp + 010h], 0bfh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 0600h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 087h
+        call ext_00429350
+        lea	ecx, [esp + 05f8h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f148h
+        lea	ecx, [esp + 0634h]
+        mov	dword ptr [esp + 010h], 0c0h
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 0638h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 088h
+        call ext_00429350
+        lea	ecx, [esp + 0630h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f144h
+        lea	ecx, [esp + 066ch]
+        mov	dword ptr [esp + 010h], 0dbh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	ecx, [esp + 010h]
+        push	ecx
+        lea	edx, [esp + 0670h]
+        push	edx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 089h
+        call ext_00429350
+        mov	dword ptr [esp + 06fch], edi
+        lea	ecx, [esp + 0668h]
+        call	dword ptr [mem_00924FF4]
+        push	092b4b0h
+        lea	ecx, [esp + 06a4h]
+        mov	dword ptr [esp + 010h], 0dch
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	eax, [esp + 010h]
+        push	eax
+        lea	ecx, [esp + 06a8h]
+        push	ecx
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 08ah
+        call ext_00429350
+        lea	ecx, [esp + 06a0h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        push	092f140h
+        lea	ecx, [esp + 06dch]
+        mov	dword ptr [esp + 010h], 0ddh
+        call	dword ptr [mem_00924FE4]
+        push	01h
+        lea	edx, [esp + 010h]
+        push	edx
+        lea	eax, [esp + 06e0h]
+        push	eax
+        mov	ecx, esi
+        mov	dword ptr [esp + 0708h], 08bh
+        call ext_00429350
+        lea	ecx, [esp + 06d8h]
+        mov	dword ptr [esp + 06fch], edi
+        call	dword ptr [mem_00924FF4]
+        mov	ecx, dword ptr [esp + 06f4h]
+        pop	edi
+        pop	esi
+        pop	ebx
+        mov	dword ptr fs:[00h], ecx
+        add	esp, 06f4h
+        ret
     }
 }
