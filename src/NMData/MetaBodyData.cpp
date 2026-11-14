@@ -668,3 +668,92 @@ extern "C" __declspec(naked) void __fastcall fn_005B8D00(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005C16C0] NMData::MetaBodyData::vfunc_0_off_154 (233 bytes)
+extern "C" void ext_005C1310();
+extern "C" void ext_00647F00();
+extern "C" void ext_00647FB0();
+extern "C" void ext_0067DAD0();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_005C16C0(void* self) {
+    __asm {
+        sub esp, 0x28
+        push ebx
+        mov ebx, ecx
+        cmp dword ptr [ebx + 0x4], 0x0
+        je L_end
+        fldz
+        mov eax, dword ptr [ebx - 0x150]
+        mov edx, dword ptr [mem_00B40640]
+        fst dword ptr [esp + 0x10]
+        mov eax, dword ptr [eax + 0x14]
+        fst dword ptr [esp + 0xc]
+        fst dword ptr [esp + 0x1c]
+        push esi
+        fst dword ptr [esp + 0x18]
+        lea ecx, [ebx - 0x150]
+        fst dword ptr [esp + 0x28]
+        push edi
+        fstp dword ptr [esp + 0x28]
+        push edx
+        fld1
+        fst dword ptr [esp + 0x14]
+        fst dword ptr [esp + 0x24]
+        fstp dword ptr [esp + 0x34]
+        call eax
+        lea ecx, [esp + 0x10]
+        mov esi, eax
+        push ecx
+        mov ecx, esi
+        call ext_0067DAD0
+        mov edx, dword ptr [ebx + 0x4]
+        mov ecx, dword ptr [edx + 0xac]
+        call ext_00647F00
+        mov edi, eax
+        mov ecx, 0x10
+        rep movsd
+        mov ecx, dword ptr [ebx + 0x4]
+        mov ecx, dword ptr [ecx + 0xac]
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_00647FB0
+        mov edx, dword ptr [ebx + 0xb8]
+        mov eax, dword ptr [edx + 0x18c]
+        pop edi
+        fld dword ptr [eax + 0x604]
+        pop esi
+        fstp dword ptr [esp + 0x4]
+        fldz
+        fld dword ptr [esp + 0x4]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x5
+        jp L_b
+        fstp st(0)
+    L_d:
+        fstp dword ptr [esp + 0x4]
+        jmp L_c
+    L_b:
+        fstp st(1)
+        fld1
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jnp L_d
+        fstp st(0)
+    L_c:
+        fld dword ptr [esp + 0x4]
+        push ecx
+        mov ecx, dword ptr [mem_00B40640]
+        fstp dword ptr [esp]
+        push ecx
+        lea ecx, [ebx - 0x154]
+        call ext_005C1310
+    L_end:
+        pop ebx
+        add esp, 0x28
+        ret
+    }
+}
