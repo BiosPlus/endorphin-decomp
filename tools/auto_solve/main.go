@@ -1754,7 +1754,7 @@ func main() {
 	for _, c := range verifiedClones {
 		sf := c.solved
 		sf.Unit.Status = "matched"
-		sf.Unit.MatchedBy = "script:auto_solve"
+		sf.Unit.MatchedBy = "auto-solved"
 		sf.Unit.MatchedAt = nowStr
 		va64, _ := strconv.ParseUint(strings.TrimPrefix(sf.Unit.VA, "0x"), 16, 32)
 		bucket := (uint32(va64) >> 16) & 0xFF

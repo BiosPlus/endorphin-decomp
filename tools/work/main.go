@@ -1136,7 +1136,7 @@ func parseCheckArgs(args []string) (string, string) {
 	}
 	if model == "" {
 		model = "unknown"
-	} else if envEffort != "" && model != "unknown" && model != "script:auto_solve" && !strings.Contains(model, "@") {
+	} else if envEffort != "" && model != "unknown" && model != "script:auto_solve" && model != "auto-solved" && !strings.Contains(model, "@") {
 		model = model + "@" + envEffort
 	}
 	return addr, model
@@ -1508,7 +1508,7 @@ func recordUnitMatchLocked(vaHex, modelName, cppPath string) {
 		return
 	}
 	if isStatusCompleted(fu.Status) && fu.MatchedBy == "" {
-		fu.MatchedBy = "script:auto_solve"
+		fu.MatchedBy = "auto-solved"
 	}
 	if fu.Status != "matched" && !fu.IsThunk && fu.Status != "out_of_scope" {
 		fu.Status = "matched"

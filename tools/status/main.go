@@ -301,7 +301,7 @@ func isOutOfScope(u decomp.UnitEntry, mfcClasses map[string]bool) (bool, string)
 //   - native claude CLI runs (claude-haiku-5.5, pre-2026-11-12 claude-sonnet-5.5, claude-opus-5.5) -> @medium
 func backfillMatchedByEffort(matchedBy, matchedAt string) (string, bool) {
 	m := strings.TrimSpace(matchedBy)
-	if m == "" || m == "script:auto_solve" || m == "unknown" || strings.Contains(m, "@") {
+	if m == "" || m == "script:auto_solve" || m == "auto-solved" || m == "unknown" || strings.Contains(m, "@") {
 		return matchedBy, false
 	}
 	if m == "claude-haiku" {
@@ -1711,7 +1711,7 @@ func main() {
 
 		if decomp.IsCompleted(u.Status) {
 			if u.MatchedBy == "" {
-				u.MatchedBy = "script:auto_solve"
+				u.MatchedBy = "auto-solved"
 				unitsUpdated = true
 			}
 			if normModel, changed := backfillMatchedByEffort(u.MatchedBy, u.MatchedAt); changed {
@@ -1723,7 +1723,7 @@ func main() {
 			tier.MatchedFuncs++
 			tier.MatchedBytes += uint64(u.Size)
 
-			if u.MatchedBy != "script:auto_solve" {
+			if u.MatchedBy != "script:auto_solve" && u.MatchedBy != "auto-solved" {
 				ms, ok := modelStatsMap[u.MatchedBy]
 				if !ok {
 					ms = &ModelStats{Model: u.MatchedBy}
