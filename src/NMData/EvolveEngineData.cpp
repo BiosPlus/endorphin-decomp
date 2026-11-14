@@ -315,3 +315,76 @@ loc_0050137E:
         ret 8
     }
 }
+
+// [0x00500BA0] NMData::EvolveEngineData::vfunc_3 (168 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_004FD9A0();
+extern "C" void ext_005006E0();
+extern "C" void ext_0050E680();
+extern "C" void ext_00640110();
+extern "C" void ext_00640390();
+extern "C" int mem_00A9EEA4;
+extern "C" int mem_00A9F1A0;
+extern "C" int mem_00A9F304;
+extern "C" int mem_00A9F3B0;
+extern "C" int mem_00A9F3B4;
+extern "C" int mem_0094EE4C;
+extern "C" int mem_00924FF0;
+
+extern "C" __declspec(naked) void* __fastcall fn_00500BA0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9EEA4]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push 0
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_00640390
+        push eax
+        lea ecx, [esi + 0xc]
+        call ext_004FD9A0
+        mov ecx, dword ptr [mem_00A9F1A0]
+        push 0
+        push ecx
+        mov ecx, edi
+        call ext_00640390
+        push eax
+        lea ecx, [esi + 0x2c]
+        call ext_0050E680
+        mov edx, dword ptr [mem_00A9F304]
+        push 0
+        push edx
+        mov ecx, edi
+        call ext_00640390
+        mov edx, dword ptr [esi + 0xa8]
+        lea ecx, [esi + 0xa8]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        mov ecx, dword ptr [mem_00A9F3B0]
+        mov edx, dword ptr [mem_00A9F3B4]
+        push 0
+        push ecx
+        push edx
+        lea eax, [esi + 0x12c]
+        push edi
+        push eax
+        call ext_005006E0
+        add esp, 0x14
+        push offset mem_0094EE4C
+        mov ecx, edi
+        call ext_00640110
+        lea ecx, [esi + 0x110]
+        mov dword ptr [esp + 0xc], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 4
+    }
+}
