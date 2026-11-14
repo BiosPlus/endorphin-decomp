@@ -16865,3 +16865,118 @@ extern "C" __declspec(naked) void __fastcall fn_004037C0(void* self) {
         ret 4
     }
 }
+
+// [0x00402E50] sub_00402E50 (457 bytes)
+extern "C" void ext_004019B0();
+extern "C" void ext_00402800();
+extern "C" void ext_004028E0();
+extern "C" void ext_00402970();
+extern "C" void ext_00402C00();
+extern "C" void ext_0058F2F0();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void* __fastcall fn_00402E50(void* self, int edx_unused, void* other) {
+    __asm {
+        push    -1
+        push    0x89a4fb
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        push    ecx
+        push    ebx
+        push    esi
+        mov     esi, ecx
+        push    edi
+        mov     dword ptr [esp + 0x0c], esi
+        mov     edi, dword ptr [esp + 0x20]
+        lea     eax, [edi + 0x8]
+        mov     dword ptr [esi + 0x4], 0x928e84
+        push    eax
+        lea     ecx, [esi + 0x8]
+        mov     dword ptr [esp + 0x1c], 0
+        mov     dword ptr [esi], 0x929244
+        mov     dword ptr [esi + 0x4], 0x929238
+        call    dword ptr [mem_00924FE0]
+        lea     ecx, [edi + 0x24]
+        push    ecx
+        lea     ecx, [esi + 0x24]
+        mov     byte ptr [esp + 0x1c], 1
+        call    dword ptr [mem_00924FE0]
+        lea     edx, [edi + 0x40]
+        push    edx
+        lea     ecx, [esi + 0x40]
+        mov     byte ptr [esp + 0x1c], 2
+        call    dword ptr [mem_00924FE0]
+        lea     eax, [edi + 0x5c]
+        push    eax
+        lea     ecx, [esi + 0x5c]
+        mov     byte ptr [esp + 0x1c], 3
+        call    ext_00402970
+        lea     ecx, [edi + 0x16c]
+        push    ecx
+        lea     ecx, [esi + 0x16c]
+        mov     byte ptr [esp + 0x1c], 4
+        call    ext_00402970
+        lea     eax, [edi + 0x27c]
+        lea     ebx, [esi + 0x27c]
+        push    eax
+        mov     ecx, ebx
+        mov     byte ptr [esp + 0x1c], 5
+        call    ext_0058F2F0
+        mov     dword ptr [ebx + 0x150], 0x928eac
+        mov     dword ptr [ebx], 0x92912c
+        mov     dword ptr [ebx + 0x4], 0x9290e4
+        mov     dword ptr [ebx + 0x8], 0x9290a4
+        mov     dword ptr [ebx + 0x0c], 0x929054
+        mov     dword ptr [ebx + 0x150], 0x929040
+        mov     edx, dword ptr [edi + 0x3d0]
+        lea     eax, [edi + 0x3d4]
+        push    eax
+        lea     ecx, [esi + 0x3d4]
+        mov     byte ptr [esp + 0x1c], 6
+        mov     dword ptr [esi + 0x3d0], edx
+        call    ext_004019B0
+        mov     ecx, dword ptr [edi + 0x414]
+        mov     dword ptr [esi + 0x414], ecx
+        mov     edx, dword ptr [edi + 0x418]
+        mov     dword ptr [esi + 0x418], edx
+        mov     eax, dword ptr [edi + 0x41c]
+        mov     dword ptr [esi + 0x41c], eax
+        mov     ecx, dword ptr [edi + 0x420]
+        mov     dword ptr [esi + 0x420], ecx
+        mov     edx, dword ptr [edi + 0x424]
+        mov     dword ptr [esi + 0x424], edx
+        mov     al, byte ptr [edi + 0x428]
+        lea     edx, [edi + 0x42c]
+        lea     ecx, [esi + 0x42c]
+        push    edx
+        mov     byte ptr [esp + 0x1c], 7
+        mov     byte ptr [esi + 0x428], al
+        call    ext_004028E0
+        mov     eax, dword ptr [edi + 0x438]
+        mov     byte ptr [esp + 0x18], 8
+        lea     edx, [edi + 0x43c]
+        lea     ecx, [esi + 0x43c]
+        push    edx
+        mov     dword ptr [esi + 0x438], eax
+        call    ext_00402C00
+        lea     eax, [edi + 0x44c]
+        push    eax
+        lea     ecx, [esi + 0x44c]
+        mov     byte ptr [esp + 0x1c], 9
+        call    ext_00402800
+        add     edi, 0x45c
+        push    edi
+        lea     ecx, [esi + 0x45c]
+        mov     byte ptr [esp + 0x1c], 0x0a
+        call    ext_00402800
+        mov     ecx, dword ptr [esp + 0x10]
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        pop     ebx
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x10
+        ret     4
+    }
+}
