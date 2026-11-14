@@ -7450,3 +7450,103 @@ extern "C" __declspec(naked) void __fastcall fn_004A6E20(void* self) {
         ret
     }
 }
+
+// [0x004A6180] sub_004A6180 (256 bytes)
+extern "C" void ext_0041FF30();
+extern "C" void ext_004A5DC0();
+extern "C" void ext_005A17D0();
+extern "C" void ext_006A6DD2();
+extern "C" void ext_00594000();
+extern "C" int mem_00B40640;
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_004A6180(void* self) {
+    __asm {
+        sub esp, 0x48
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [edi + 0x258]
+        test ecx, ecx
+        mov dword ptr [esp + 0x4], edi
+        je DONE_EARLY
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x128]
+        push ebx
+        push esi
+        call edx
+        call ext_00594000
+        mov ebx, eax
+        mov esi, dword ptr [ebx + 0x23c]
+        add ebx, 0x238
+        cmp esi, dword ptr [ebx + 0x8]
+        jbe CHK1_OK
+        call dword ptr [mem_00925134]
+CHK1_OK:
+        push ebp
+LOOP_HEAD:
+        mov ebp, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], ebp
+        jbe CHK2_OK
+        call dword ptr [mem_00925134]
+CHK2_OK:
+        cmp esi, ebp
+        je LOOP_DONE
+        cmp esi, dword ptr [ebx + 0x8]
+        jb CHK3_OK
+        call dword ptr [mem_00925134]
+CHK3_OK:
+        mov eax, dword ptr [esi]
+        lea ecx, [eax + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        call edx
+        mov ebp, eax
+        mov eax, dword ptr [edi + 0x2b8]
+        mov edx, dword ptr [eax]
+        lea ecx, [edi + 0x2b8]
+        push ebp
+        call edx
+        mov edi, eax
+        test edi, edi
+        je NOT_FOUND
+        cmp esi, dword ptr [ebx + 0x8]
+        jb CHK4_OK
+        call dword ptr [mem_00925134]
+CHK4_OK:
+        mov eax, dword ptr [mem_00B40640]
+        mov ecx, dword ptr [esi]
+        push eax
+        push edi
+        call ext_005A17D0
+        cmp esi, dword ptr [ebx + 0x8]
+        jb CHK5_OK
+        call dword ptr [mem_00925134]
+CHK5_OK:
+        mov edi, dword ptr [esp + 0x10]
+        add esi, 0x4
+        jmp LOOP_HEAD
+NOT_FOUND:
+        push ebp
+        call ext_004A5DC0
+        push eax
+        lea ecx, [esp + 0x1c]
+        call ext_0041FF30
+        push 0x9d3748
+        lea ecx, [esp + 0x18]
+        push ecx
+        call ext_006A6DD2
+LOOP_DONE:
+        lea ecx, [edi + 0x1fc]
+        mov dword ptr [edi + 0x258], 0
+        call ext_00494050
+        lea ecx, [edi + 0x208]
+        call ext_00494050
+        pop ebp
+        pop esi
+        mov byte ptr [edi + 0x2c8], 0
+        pop ebx
+DONE_EARLY:
+        pop edi
+        add esp, 0x48
+        ret
+    }
+}
