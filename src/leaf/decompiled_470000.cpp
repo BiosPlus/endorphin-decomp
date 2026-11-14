@@ -7110,3 +7110,32 @@ extern "C" __declspec(naked) void __cdecl fn_0047B370() {
         ret
     }
 }
+
+extern "C" void ext_0046C180();
+extern "C" void ext_0046FC50();
+extern "C" void ext_00473120();
+extern "C" void ext_006426F0();
+
+struct Vec3_00473280 {
+    float x, y, z;
+    Vec3_00473280(const Vec3_00473280& o) : x(o.x), y(o.y), z(o.z) {}
+};
+
+// [0x00473280] sub_00473280 (112 bytes)
+extern "C" void __fastcall fn_00473280(void* self, int edx_unused, int arg0) {
+    typedef void (__thiscall *Fn1)(void*, int);
+    typedef void (__thiscall *Fn0)(void*);
+    typedef void (__thiscall *FnVec3)(void*, Vec3_00473280);
+
+    ((Fn1)ext_00473120)(self, arg0);
+    ((Fn0)ext_0046FC50)(self);
+    ((Fn0)ext_0046C180)((char*)self + 0x180);
+
+    char* p1 = *(char**)((char*)self + 0xcc);
+    char* p2 = *(char**)(p1 + 0x26c);
+    ((FnVec3)ext_006426F0)((char*)self + 0xd4, *(Vec3_00473280*)(p2 + 0x1b4));
+
+    p1 = *(char**)((char*)self + 0xcc);
+    p2 = *(char**)(p1 + 0x26c);
+    *(int*)((char*)self + 0x174) = *(int*)(p2 + 0x1fc);
+}
