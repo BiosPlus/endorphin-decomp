@@ -17,5 +17,7 @@
     "0x0064DA2A",
     "0x0064DA3C"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T06:35:51Z"
 }
