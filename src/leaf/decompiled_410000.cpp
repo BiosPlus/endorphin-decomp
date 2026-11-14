@@ -10416,3 +10416,52 @@ extern "C" __declspec(naked) void __fastcall fn_0041C7C0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0041C880] sub_0041C880 (94 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0041C880(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx + 0x4]
+        test edx, edx
+        push edi
+        je fail_0041C880
+        mov eax, dword ptr [ecx + 0x8]
+        mov edi, dword ptr [esp + 0xc]
+        sub eax, edx
+        sar eax, 0x2
+        cmp edi, eax
+        jae fail_0041C880
+        push edi
+        call ext_0041C7C0
+        cmp dword ptr [eax], 0x0
+        je fail_0041C880
+        mov ecx, dword ptr [esi + 0x8]
+        test ecx, ecx
+        je skip_0041C880
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x8]
+        call edx
+skip_0041C880:
+        mov ecx, dword ptr [esi + 0x4]
+        push edi
+        call ext_0041C7C0
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esi + 0x8], ecx
+        je fail_0041C880
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x4]
+        call edx
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+fail_0041C880:
+        pop edi
+        xor al, al
+        pop esi
+        ret 4
+    }
+}
