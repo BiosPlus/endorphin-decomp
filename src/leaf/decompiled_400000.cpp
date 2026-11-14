@@ -12774,3 +12774,118 @@ extern "C" __declspec(naked) void __fastcall fn_0040D140(void* self) {
         ret
     }
 }
+
+// [0x00408950] sub_00408950 (412 bytes)
+extern "C" void ext_00408850();
+
+extern "C" __declspec(naked) void __fastcall fn_00408950(void* self) {
+    __asm {
+        push esi
+        push 0x92a500
+        push 0x15
+        push 0x19
+        push 0
+        push 0x280
+        push 0x26b
+        push 0x26c
+        push 0x280
+        push 0x26a
+        push 0
+        push 0x8004
+        mov esi, ecx
+        call ext_00408850
+        push 0x92a4ec
+        push 0x15
+        push 0x19
+        push 0
+        push 0x281
+        push 0x26e
+        push 0x26f
+        push 0x281
+        push 0x26d
+        push 0
+        push 0x8010
+        mov ecx, esi
+        call ext_00408850
+        push 0x92a4d4
+        push 0x15
+        push 0x19
+        push 0
+        push 0x282
+        push 0x271
+        push 0x272
+        push 0x282
+        push 0x270
+        push 0
+        push 0x8150
+        mov ecx, esi
+        call ext_00408850
+        push 0x92a4c4
+        push 0x15
+        push 0x19
+        push 0x1002
+        push 0x314
+        push 0x262
+        push 0x263
+        push 0x27d
+        push 0x261
+        push 0
+        push 0x8195
+        mov ecx, esi
+        call ext_00408850
+        push 0x92a4b8
+        push 0x15
+        push 0x19
+        push 0x1002
+        push 0x314
+        push 0x268
+        push 0x269
+        push 0x27f
+        push 0x267
+        push 0
+        push 0x8193
+        mov ecx, esi
+        call ext_00408850
+        push 0x92a4b0
+        push 0x15
+        push 0x19
+        push 0x1002
+        push 0x314
+        push 0x25f
+        push 0x260
+        push 0x27c
+        push 0x25e
+        push 0
+        push 0x8194
+        mov ecx, esi
+        call ext_00408850
+        push 0x92a49c
+        push 0x15
+        push 0x19
+        push 0
+        push 0x283
+        push 0x274
+        push 0x275
+        push 0x283
+        push 0x273
+        push 0
+        push 0x814f
+        mov ecx, esi
+        call ext_00408850
+        push 0x92a488
+        push 0x15
+        push 0x19
+        push 0
+        push 0x284
+        push 0x277
+        push 0x278
+        push 0x284
+        push 0x276
+        push 0
+        push 0x8011
+        mov ecx, esi
+        call ext_00408850
+        pop esi
+        ret
+    }
+}
