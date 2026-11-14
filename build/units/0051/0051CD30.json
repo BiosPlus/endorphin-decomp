@@ -17,5 +17,7 @@
     "0x0051CD8D",
     "0x0051CD93"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T12:13:08Z"
 }
