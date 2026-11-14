@@ -7611,3 +7611,24 @@ L_EPI_NOESI:
         ret
     }
 }
+
+// [0x0053A360] sub_0053A360 (118 bytes)
+extern "C" void ext_00539FB0();
+extern "C" int mem_00AEFEBC;
+extern "C" void __cdecl fn_0053A360(const float* a, const float* b, float x, float y, float z) {
+    typedef void (__thiscall *Fn)(void*, float*);
+    Fn f = (Fn)ext_00539FB0;
+    float v[3];
+    v[0] = x;
+    v[1] = y;
+    v[2] = z;
+    f(&mem_00AEFEBC, v);
+    v[0] = a[0];
+    v[1] = a[1];
+    v[2] = a[2];
+    f(&mem_00AEFEBC, v);
+    v[0] = b[0];
+    v[1] = b[1];
+    v[2] = b[2];
+    f(&mem_00AEFEBC, v);
+}
