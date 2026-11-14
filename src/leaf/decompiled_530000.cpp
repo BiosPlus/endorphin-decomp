@@ -9287,3 +9287,76 @@ L_00532F4A:
         ret 0x4
     }
 }
+
+// [0x00537870] sub_00537870 (213 bytes)
+extern "C" void ext_00537590();
+
+extern "C" __declspec(naked) void __fastcall fn_00537870(void* self) {
+    __asm {
+        push esi
+        push edi
+        push 0x954edc
+        mov esi, ecx
+        call ext_00679C60
+        call fn_005371F0
+        push 0x954ec0
+        mov edi, eax
+        call ext_00679C60
+        add esp, 0x8
+        mov ecx, edi
+        call fn_00534380
+        push 0x954ea4
+        call ext_00679C60
+        add esp, 0x4
+        cmp dword ptr [esi + 0x2c], 0
+        jne short L_53792A
+        cmp byte ptr [esi + 0x374], 0
+        mov eax, dword ptr [esi + 0x350]
+        push eax
+        je short L_5378F0
+        mov ecx, dword ptr [esi + 0x34c]
+        mov edx, dword ptr [esi + 0x348]
+        push ecx
+        push edx
+        lea ecx, [esi + 0x354]
+        call dword ptr [mem_00924FF0]
+        push eax
+        mov ecx, esi
+        call fn_00537430
+        test eax, eax
+        jne short L_53792A
+        push 0x40
+        push 0x95477c
+        push 0x954e80
+        jmp short L_537922
+L_5378F0:
+        mov ecx, dword ptr [esi + 0x344]
+        mov edx, dword ptr [esi + 0x340]
+        push ecx
+        push edx
+        lea ecx, [esi + 0x354]
+        call dword ptr [mem_00924FF0]
+        push eax
+        mov ecx, esi
+        call fn_00537430
+        test eax, eax
+        jne short L_53792A
+        push 0x40
+        push 0x95477c
+        push 0x954e68
+L_537922:
+        push 0
+        call dword ptr [mem_009255E0]
+L_53792A:
+        push 0x954e4c
+        call ext_00679C60
+        mov eax, dword ptr [esi + 0x2c]
+        add esp, 0x4
+        push eax
+        mov ecx, esi
+        call ext_00537590
+        pop edi
+        pop esi
+        ret
+    }
+}
