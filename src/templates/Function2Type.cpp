@@ -182,3 +182,52 @@ skip_virt:
         ret 10h
     }
 }
+
+extern "C" void ext_004EDE30();
+extern "C" void ext_006720A0();
+
+// [0x004EE390] ExprParser::Function2Type<SelectionVariable, bool, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, ValuePtr const &, {public: bool __thiscall SelectionVariable::getMethodForEachChild(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, ValuePtr const &), 0}>::vfunc_49 (145 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004EE390(void* self) {
+    __asm {
+        push -1
+        push 8B53F2h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 20h
+        mov dword ptr [esp], 0
+        mov eax, dword ptr [esp + 34h]
+        mov edx, dword ptr [esp + 34h]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 3ch]
+        mov ecx, dword ptr [eax + 4]
+        push edx
+        push eax
+        lea eax, [esp + 10h]
+        push eax
+        call ext_0046E780
+        mov ecx, dword ptr [esp + 40h]
+        push ecx
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 34h], 1
+        call ext_004EDE30
+        mov esi, dword ptr [esp + 34h]
+        mov byte ptr [esp + 38h], al
+        mov edx, dword ptr [esp + 38h]
+        push edx
+        mov ecx, esi
+        call ext_006720A0
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 4], 1
+        mov byte ptr [esp + 2ch], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 24h]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 2ch
+        ret 10h
+    }
+}
