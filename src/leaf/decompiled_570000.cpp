@@ -8220,3 +8220,42 @@ extern "C" __declspec(naked) void __fastcall fn_005797D0(void* self) {
         ret
     }
 }
+
+// [0x0057DAC0] sub_0057DAC0 (70 bytes)
+extern "C" __declspec(naked) float* __cdecl fn_0057DAC0(const float* begin, const float* end, float* dst) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        cmp esi, ebx
+        je done_empty
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_top:
+        fld dword ptr [esi]
+        lea eax, [esi + 0xc]
+        fstp dword ptr [edi]
+        push eax
+        fld dword ptr [esi + 0x4]
+        lea ecx, [edi + 0xc]
+        fstp dword ptr [edi + 0x4]
+        fld dword ptr [esi + 0x8]
+        fstp dword ptr [edi + 0x8]
+        call ext_00406940
+        add esi, 0x1c
+        add edi, 0x1c
+        cmp esi, ebx
+        jne loop_top
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    done_empty:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
