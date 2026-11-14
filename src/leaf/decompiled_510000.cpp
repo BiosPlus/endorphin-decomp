@@ -10871,3 +10871,100 @@ loc_51cee5:
         ret 0xc
     }
 }
+
+// [0x00514D30] sub_00514D30 (205 bytes)
+extern "C" void ext_00514A70();
+extern "C" void ext_00695460();
+extern "C" int mem_00AEBE94;
+extern "C" int mem_00993828;
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00514D30(void* self) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        and     esp, -0x8
+        sub     esp, 0x18
+        fldz
+        push    ebx
+        push    ebp
+        fstp    qword ptr [esp + 0x10]
+        mov     eax, dword ptr [esp + 0x14]
+        push    esi
+        push    edi
+        mov     ebx, ecx
+        mov     ecx, dword ptr [esp + 0x18]
+        mov     ebp, dword ptr [ebx + 0x38]
+        push    eax
+        push    ecx
+        lea     edi, [ebx + 0x4]
+        push    ebp
+        mov     ecx, edi
+        call    ext_00514A70
+        fld     dword ptr [ebx + 0x5c]
+        fadd    dword ptr [ebx + 0x60]
+        mov     edx, dword ptr [mem_00AEBE94]
+        xor     esi, esi
+        test    ebp, ebp
+        fmul    qword ptr [mem_00993828]
+        mov     dword ptr [esp + 0x14], edx
+        fstp    qword ptr [esp + 0x20]
+        jbe     loc_end_514D30
+loc_loop_514D30:
+        fld     dword ptr [ebx + 0x40]
+        mov     ecx, dword ptr [esp + 0x14]
+        fstp    dword ptr [esp + 0x18]
+        call    ext_00695460
+        fmul    dword ptr [esp + 0x18]
+        fadd    qword ptr [esp + 0x20]
+        fst     qword ptr [esp + 0x18]
+        fld     dword ptr [ebx + 0x5c]
+        fld     dword ptr [ebx + 0x60]
+        fxch    st(2)
+        fcom    st(1)
+        fnstsw  ax
+        test    ah, 0x5
+        jp      loc_nan_514D30
+        fstp    st(0)
+        fstp    st(1)
+        fst     qword ptr [esp + 0x18]
+        jmp     loc_store_514D30
+loc_nan_514D30:
+        fstp    st(1)
+        fcom    st(1)
+        fnstsw  ax
+        test    ah, 0x41
+        jne     loc_pop_514D30
+        fstp    st(0)
+        fst     qword ptr [esp + 0x18]
+        jmp     loc_store_514D30
+loc_pop_514D30:
+        fstp    st(1)
+loc_store_514D30:
+        mov     ecx, dword ptr [edi + 0x4]
+        test    ecx, ecx
+        je      loc_bad_514D30
+        mov     eax, dword ptr [edi + 0x8]
+        sub     eax, ecx
+        sar     eax, 0x3
+        cmp     esi, eax
+        jb      loc_ok_514D30
+loc_bad_514D30:
+        fstp    st(0)
+        call    dword ptr [mem_00925134]
+        fld     qword ptr [esp + 0x18]
+loc_ok_514D30:
+        mov     eax, dword ptr [edi + 0x4]
+        fstp    qword ptr [eax + 8*esi]
+        add     esi, 0x1
+        cmp     esi, ebp
+        jb      loc_loop_514D30
+loc_end_514D30:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+    }
+}
