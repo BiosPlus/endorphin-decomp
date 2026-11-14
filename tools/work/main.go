@@ -547,18 +547,18 @@ func cmdNext(args []string) {
 		if di != dj {
 			return !di && dj
 		}
-		if *depsFirst {
-			ri, rj := calleesReady[ready[i].VA], calleesReady[ready[j].VA]
-			if ri != rj {
-				return ri
-			}
-		}
 		ti, tj := sizeTier(ready[i].Size), sizeTier(ready[j].Size)
 		if ti != tj {
 			return ti < tj
 		}
 		if ready[i].Size != ready[j].Size {
 			return ready[i].Size < ready[j].Size
+		}
+		if *depsFirst {
+			ri, rj := calleesReady[ready[i].VA], calleesReady[ready[j].VA]
+			if ri != rj {
+				return ri
+			}
 		}
 		if ready[i].NumCallees != ready[j].NumCallees {
 			return ready[i].NumCallees < ready[j].NumCallees
