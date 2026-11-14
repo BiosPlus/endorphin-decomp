@@ -380,3 +380,54 @@ L_done:
         ret 0x4
     }
 }
+
+// [0x00592860] HelperGraphic::vfunc_17_off_C (153 bytes)
+extern "C" void ext_00586D00();
+extern "C" void ext_0058F2F0();
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void* __fastcall fn_00592860(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        push 0x154
+        mov edi, ecx
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [esp + 8], esi
+        test esi, esi
+        mov dword ptr [esp + 0x14], 0
+        je L_null
+        lea eax, [edi - 0xc]
+        push eax
+        mov ecx, esi
+        call ext_0058F2F0
+        mov dword ptr [esi + 0x150], 0x928eac
+        mov dword ptr [esi], 0x92912c
+        mov dword ptr [esi + 4], 0x9290e4
+        mov dword ptr [esi + 8], 0x9290a4
+        mov dword ptr [esi + 0xc], 0x929054
+        mov dword ptr [esi + 0x150], 0x929040
+        jmp L_done
+    L_null:
+        xor esi, esi
+    L_done:
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_00586D00
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
