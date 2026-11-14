@@ -9138,3 +9138,33 @@ extern "C" __declspec(naked) void __fastcall fn_005591A0(void* self) {
         ret
     }
 }
+
+// [0x0055DF20] sub_0055DF20 (96 bytes)
+extern "C" void ext_006BC370();
+extern "C" void ext_006C2860();
+extern "C" void ext_006C28D0();
+extern "C" void ext_006C3030();
+extern "C" int __fastcall fn_0055DF20(void* self) {
+    void* obj = ((void* (__thiscall*)(void*))ext_006BC370)(*(void**)((char*)self + 0x470));
+    int i = 0;
+    int n = ((int (__thiscall*)(void*, int))ext_006C2860)(obj, 0);
+    if (n <= 0) {
+        return 0;
+    }
+    for (;;) {
+        void* p = ((void* (__thiscall*)(void*, int))ext_006C28D0)(obj, i);
+        void* q = ((void* (__thiscall*)(void*))ext_006C3030)(p);
+        if (q != 0) {
+            void* vt = *(void**)q;
+            int r = ((int (__thiscall*)(void*))(*(void**)vt))(q);
+            if (r == 3) {
+                return (int)((void* (__thiscall*)(void*, int))ext_006C28D0)(obj, i);
+            }
+        }
+        i++;
+        n = ((int (__thiscall*)(void*, int))ext_006C2860)(obj, 0);
+        if (i >= n) {
+            return 0;
+        }
+    }
+}
