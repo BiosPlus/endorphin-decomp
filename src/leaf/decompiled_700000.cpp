@@ -762,3 +762,88 @@ extern "C" __declspec(naked) void* __fastcall fn_00709BF0(void* self, int /*edx*
         ret     0x4
     }
 }
+
+// [0x0070A1F0] sub_0070A1F0 (160 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_00711220();
+extern "C" int mem_00925284;
+extern "C" int mem_00B5EBC0;
+extern "C" int mem_00B5EBC4;
+extern "C" int mem_00B5EBB8;
+extern "C" __declspec(naked) void __fastcall fn_0070A1F0(void* self) {
+    __asm {
+        push -1
+        push 008bc298h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        lea ecx, [esi + 80h]
+        mov dword ptr [esp + 10h], 0
+        call ext_006B9D70
+        mov ecx, esi
+        mov dword ptr [esp + 10h], -1
+        call ext_00711220
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret
+        _emit 0x90
+        _emit 0xE9
+        _emit 0x0B
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 4]
+        mov dword ptr [mem_00B5EBC0], ecx
+        mov dword ptr [mem_00B5EBC4], edx
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xE9
+        _emit 0x0B
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5EBB8]
+        ret
+    }
+}
