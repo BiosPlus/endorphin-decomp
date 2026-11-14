@@ -14837,3 +14837,141 @@ __declspec(naked) void __fastcall fn_0050DBE0(void* self) {
         ret
     }
 }
+
+// [0x0050CF80] sub_0050CF80 (296 bytes)
+extern "C" void ext_0050B490();
+extern "C" void ext_0050B550();
+extern "C" void ext_0050C190();
+extern "C" void ext_0050C3B0();
+extern "C" void ext_0050CF80();
+
+extern "C" __declspec(naked) void __fastcall fn_0050CF80(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        mov ebx, dword ptr [esp+0x10]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp+0x20]
+        mov ecx, edi
+        sub ecx, ebx
+        mov eax, 0x38e38e39
+        imul ecx
+        sar edx, 3
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp eax, 0x20
+        jle L_0050D050
+        mov esi, dword ptr [esp+0x24]
+    L_0050CFB1:
+        test esi, esi
+        jle L_0050D069
+        push edi
+        lea eax, [esp+0x14]
+        push ebx
+        push eax
+        call ext_0050C190
+        mov ebp, dword ptr [esp+0x20]
+        mov eax, esi
+        cdq
+        sub eax, edx
+        sar eax, 1
+        mov esi, eax
+        cdq
+        sub eax, edx
+        sar eax, 1
+        add esi, eax
+        mov ecx, edi
+        sub ecx, ebp
+        mov eax, 0x38e38e39
+        imul ecx
+        mov ecx, dword ptr [esp+0x1c]
+        sar edx, 3
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        sub ecx, ebx
+        mov dword ptr [esp+0x2c], eax
+        mov eax, 0x38e38e39
+        imul ecx
+        mov eax, dword ptr [esp+0x2c]
+        sar edx, 3
+        mov ecx, edx
+        shr ecx, 0x1f
+        add esp, 0xc
+        add ecx, edx
+        cmp ecx, eax
+        push esi
+        jge L_0050D024
+        mov edx, dword ptr [esp+0x14]
+        push edx
+        push ebx
+        call ext_0050CF80
+        mov ebx, ebp
+        jmp L_0050D02F
+    L_0050D024:
+        push edi
+        push ebp
+        call ext_0050CF80
+        mov edi, dword ptr [esp+0x1c]
+    L_0050D02F:
+        mov ecx, edi
+        sub ecx, ebx
+        mov eax, 0x38e38e39
+        imul ecx
+        sar edx, 3
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        add esp, 0xc
+        cmp eax, 0x20
+        jg L_0050CFB1
+    L_0050D050:
+        cmp eax, 1
+        jle L_0050D061
+        push 0
+        push edi
+        push ebx
+        call ext_0050B550
+        add esp, 0xc
+    L_0050D061:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    L_0050D069:
+        cmp eax, 0x20
+        jle L_0050D050
+        mov ecx, edi
+        sub ecx, ebx
+        mov eax, 0x38e38e39
+        imul ecx
+        sar edx, 3
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp eax, 1
+        jle L_0050D096
+        push 0
+        push 0
+        push edi
+        push ebx
+        call ext_0050B490
+        add esp, 0x10
+    L_0050D096:
+        push edi
+        push ebx
+        call ext_0050C3B0
+        add esp, 8
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
