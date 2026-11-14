@@ -786,3 +786,42 @@ extern "C" __declspec(naked) void __fastcall fn_0060AE40(void* self) {
         ret 4
     }
 }
+
+extern "C" void ext_004BC4B0();
+extern "C" void ext_00527AC0();
+
+// [0x004BC6D0] PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>::AddElementCommand::vfunc_1 (69 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004BC6D0(void* self) {
+    __asm {
+        push    esi
+        mov     esi, ecx
+        mov     eax, dword ptr [esi + 0x18]
+        mov     dword ptr [esi + 0x18], 0
+        mov     ecx, dword ptr [esi + 0x20]
+        push    ecx
+        mov     ecx, dword ptr [esi + 0x10]
+        push    eax
+        call    ext_004BC4B0
+        cmp     dword ptr [esi + 0x24], 0
+        je      short L_skip_cb
+        mov     eax, dword ptr [esi + 0x20]
+        mov     ecx, dword ptr [esi + 0x24]
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx]
+        push    eax
+        mov     eax, dword ptr [esi + 0x1c]
+        push    eax
+        call    edx
+    L_skip_cb:
+        mov     ecx, dword ptr [esi + 0x14]
+        test    ecx, ecx
+        je      short L_done
+        mov     eax, dword ptr [esi + 0x1c]
+        push    0
+        push    eax
+        call    ext_00527AC0
+    L_done:
+        pop     esi
+        ret
+    }
+}
