@@ -14980,3 +14980,97 @@ L_0043C137:
         ret 4
     }
 }
+
+// [0x0043F3A0] sub_0043F3A0 (187 bytes)
+extern "C" void ext_00440970();
+extern "C" __declspec(naked) unsigned char __fastcall fn_0043F3A0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x0c
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        test ebp, ebp
+        mov dword ptr [esp + 0x04], ecx
+        jne loc_0043F3B9
+        xor al, al
+        pop ebp
+        add esp, 0x0c
+        ret 8
+
+    loc_0043F3B9:
+        push ebx
+        mov ebx, dword ptr [ecx + 0x88]
+        cmp dword ptr [ecx + 0x84], ebx
+        push esi
+        lea esi, [ecx + 0x80]
+        push edi
+        jbe loc_0043F3D6
+        call dword ptr [mem_00925134]
+
+    loc_0043F3D6:
+        mov edi, dword ptr [esi + 4]
+        cmp edi, dword ptr [esi + 8]
+        jbe loc_0043F3E4
+        call dword ptr [mem_00925134]
+
+    loc_0043F3E4:
+        cmp edi, ebx
+        mov dword ptr [esp + 0x18], edi
+        je loc_0043F3FB
+        __asm _emit 0x8d __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x00
+
+    loc_0043F3F0:
+        cmp dword ptr [edi], ebp
+        je loc_0043F3FB
+        add edi, 4
+        cmp edi, ebx
+        jne loc_0043F3F0
+
+    loc_0043F3FB:
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        jbe loc_0043F40D
+        call dword ptr [mem_00925134]
+        mov ebp, dword ptr [esp + 0x20]
+
+    loc_0043F40D:
+        test esi, esi
+        je loc_0043F415
+        cmp esi, esi
+        je loc_0043F41B
+
+    loc_0043F415:
+        call dword ptr [mem_00925134]
+
+    loc_0043F41B:
+        cmp edi, ebx
+        je loc_0043F42B
+        pop edi
+        pop esi
+        pop ebx
+        xor al, al
+        pop ebp
+        add esp, 0x0c
+        ret 8
+
+    loc_0043F42B:
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_0041A920
+        mov ecx, ebp
+        call ext_00440970
+        cmp byte ptr [esp + 0x24], 0
+        je loc_0043F44F
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0xa0], ebp
+
+    loc_0043F44F:
+        pop edi
+        pop esi
+        pop ebx
+        mov al, 1
+        pop ebp
+        add esp, 0x0c
+        ret 8
+    }
+}
