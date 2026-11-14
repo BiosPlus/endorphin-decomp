@@ -14540,3 +14540,46 @@ loc_438F08:
         ret
     }
 }
+
+// [0x004352D0] sub_004352D0 (130 bytes)
+extern "C" void ext_0040CE00();
+extern "C" void ext_0040CE60();
+extern "C" void ext_004332B0();
+extern "C" void ext_004332D0();
+extern "C" void ext_00465B30();
+extern "C" void ext_006A5FA4();
+
+extern "C" __declspec(naked) void __fastcall fn_004352D0(void* self) {
+    __asm {
+        push -1
+        push 0x0087A67B
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x3B4
+        push esi
+        mov esi, ecx
+        call ext_004332B0
+        call ext_00465B30
+        mov eax, dword ptr [eax + 0x14]
+        mov ecx, dword ptr [eax + 0x34]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        call edx
+        lea ecx, [esp + 0x4]
+        call ext_0040CE00
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x3C0], 0x0
+        call ext_006A5FA4
+        mov ecx, esi
+        call ext_004332D0
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x3C0], -1
+        call ext_0040CE60
+        mov ecx, dword ptr [esp + 0x3B8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x3C0
+        ret
+    }
+}
