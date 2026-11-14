@@ -15699,3 +15699,148 @@ extern "C" __declspec(naked) void __fastcall fn_00676D70(void* self) {
         ret 0x14
     }
 }
+
+// [0x00677FB0] sub_00677FB0 (334 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_00451670();
+extern "C" void ext_00466BA0();
+extern "C" void ext_004F0E70();
+extern "C" void ext_00596660();
+extern "C" void ext_005A6300();
+extern "C" void ext_006616C0();
+extern "C" void ext_00676860();
+extern "C" void ext_00677460();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00677FB0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        mov ebp, ecx
+        cmp esi, dword ptr [ebp + 0x40]
+        mov dword ptr [esp + 0xc], ebp
+        jne    L1_00677FB0
+        lea eax, [ebp + 0x20]
+        push eax
+        push ebx
+        call ext_00676860
+        add esp, 0x8
+        test al, al
+        jne    L_ret_00677FB0
+    L1_00677FB0:
+        mov eax, dword ptr [ebp + 0x40]
+        cmp esi, eax
+        je     L2_00677FB0
+        test eax, eax
+        je     L3_00677FB0
+        lea ecx, [ebp + 0x4]
+        lea edx, [esp + 0x1c]
+        mov dword ptr [esp + 0x1c], ecx
+        push edx
+        lea ecx, [eax + 0x4]
+        call ext_00451670
+    L3_00677FB0:
+        test esi, esi
+        mov dword ptr [ebp + 0x40], esi
+        je     L2_00677FB0
+        cmp byte ptr [esp + 0x24], 0x0
+        je     L2_00677FB0
+        lea ecx, [esp + 0x24]
+        lea eax, [ebp + 0x4]
+        push ecx
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0x28], eax
+        call ext_005A6300
+    L2_00677FB0:
+        push edi
+        lea edi, [ebp + 0x20]
+        push ebx
+        mov ecx, edi
+        call ext_004F0E70
+        mov esi, dword ptr [ebp + 0x38]
+        cmp dword ptr [ebp + 0x34], esi
+        lea ebx, [ebp + 0x30]
+        jbe    L4_00677FB0
+        call dword ptr [mem_00925134]
+    L4_00677FB0:
+        mov eax, dword ptr [ebx + 0x4]
+        cmp eax, dword ptr [ebx + 0x8]
+        mov dword ptr [esp + 0x28], eax
+        jbe    L5_00677FB0
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x28]
+    L5_00677FB0:
+        push esi
+        push ebx
+        push eax
+        push ebx
+        lea edx, [esp + 0x24]
+        push edx
+        mov ecx, ebx
+        call ext_00596660
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe    L6_00677FB0
+        call dword ptr [mem_00925134]
+    L6_00677FB0:
+        mov eax, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], eax
+        mov dword ptr [esp + 0x28], eax
+        jbe    L7_00677FB0
+        call dword ptr [mem_00925134]
+        mov ebp, dword ptr [esp + 0x10]
+    L7_00677FB0:
+        test edi, edi
+        je     L8_00677FB0
+        cmp edi, edi
+        je     L9_00677FB0
+    L8_00677FB0:
+        call dword ptr [mem_00925134]
+        mov ebp, dword ptr [esp + 0x10]
+    L9_00677FB0:
+        cmp esi, dword ptr [esp + 0x28]
+        je     L10_00677FB0
+        test edi, edi
+        jne    L11_00677FB0
+        call dword ptr [mem_00925134]
+    L11_00677FB0:
+        cmp esi, dword ptr [edi + 0x8]
+        jb     L12_00677FB0
+        call dword ptr [mem_00925134]
+    L12_00677FB0:
+        mov ecx, esi
+        call ext_006616C0
+        test eax, eax
+        mov dword ptr [esp + 0x28], eax
+        je     L13_00677FB0
+        lea eax, [esp + 0x28]
+        push eax
+        mov ecx, ebx
+        call ext_0041A920
+    L13_00677FB0:
+        cmp esi, dword ptr [edi + 0x8]
+        jb     L14_00677FB0
+        call dword ptr [mem_00925134]
+    L14_00677FB0:
+        mov ebp, dword ptr [esp + 0x10]
+        add esi, 0x8
+        jmp    L6_00677FB0
+    L10_00677FB0:
+        push 0x0
+        push ebx
+        lea ecx, [ebp + 0x44]
+        call ext_00466BA0
+        mov ecx, ebp
+        call ext_00677460
+        pop edi
+    L_ret_00677FB0:
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret 0xc
+    }
+}
