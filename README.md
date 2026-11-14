@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `14178 / 24049` (**58.95%**) — `11086` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1619136 / 4496005 bytes` (**36.01%** of 4.29 MB)
+- **In-Scope Functions Matched:** `14179 / 24049` (**58.96%**) — `11087` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1619250 / 4496005 bytes` (**36.02%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -18,7 +18,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P20-30 (32-48B)** | 1484 / 2405 | 61.70% | 57936 / 97731 | 59.28% | 921 fn |
 | **P30-40 (48-71B)** | 1342 / 2405 | 55.80% | 79632 / 144549 | 55.09% | 1063 fn |
 | **P40-50 (71-91B)** | 1391 / 2405 | 57.84% | 115793 / 194373 | 59.57% | 1014 fn |
-| **P50-60 (91-122B)** | 1865 / 2405 | 77.55% | 201756 / 256906 | 78.53% | 540 fn |
+| **P50-60 (91-122B)** | 1866 / 2405 | 77.59% | 201870 / 256906 | 78.58% | 539 fn |
 | **P60-70 (122-159B)** | 1149 / 2405 | 47.78% | 155615 / 339038 | 45.90% | 1256 fn |
 | **P70-80 (159-178B)** | 309 / 2405 | 12.85% | 52066 / 400567 | 13.00% | 2096 fn |
 | **P80-90 (178-335B)** | 1186 / 2405 | 49.31% | 285654 / 583211 | 48.98% | 1219 fn |
@@ -31,7 +31,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 60.92% |
 | `claude-haiku-5.5@low` | 1672 | 379213 | 15.08% |
 | `gemini-4-hydrogen@low` | 1052 | 297947 | 9.49% |
-| `gemini-3.8-flash@low` | 953 | 266158 | 8.60% |
+| `gemini-3.8-flash@low` | 954 | 266272 | 8.60% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.03% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.47% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.23% |
