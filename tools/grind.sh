@@ -15,6 +15,7 @@ PREFER_AGY_CLAUDE="${PREFER_AGY_CLAUDE:-0}"     # Set to 1 to prefer AGY for Son
 DEPS_FIRST="${DEPS_FIRST:-1}"                  # 1 = prefer functions whose callees are already matched
 RUN_AUTO_SOLVE="${RUN_AUTO_SOLVE:-1}"          # 1 = run auto_solve pre-pass before LLM waves
 RETRY_DEFERRED="${RETRY_DEFERRED:-0}"          # 1 = also queue previously deferred functions (skips models that already failed them)
+MAX_SIZE="${MAX_SIZE:-65535}"                  # Maximum function byte size to pull from work next
 IGNORE_ATTEMPTS="${IGNORE_ATTEMPTS:-0}"        # 1 = ignore .local/grind_attempts.tsv history
 # 0 = defer `status -readme` until right before `git push` and session end (exports WORK_SKIP_README=1 for `work`
 # so per-match `work commit-pending` skips regenerating README.md); 1 = regenerate README.md on every match.
@@ -611,7 +612,7 @@ trap 'echo; echo "[!] Interrupted — stopping workers."; cleanup_children; exit
 CANDIDATES=()
 CANDIDATE_REFRESH_AT=0
 refresh_candidates() {
-  mapfile -t CANDIDATES < <("$WORK_BIN" next -n 500 --peek --addrs-only --max-size 65535 $([[ "$DEPS_FIRST" == 1 ]] && echo --deps-first) $([[ "$RETRY_DEFERRED" == 1 ]] && echo --retry-deferred) 2>/dev/null || true)
+  mapfile -t CANDIDATES < <("$WORK_BIN" next -n 500 --peek --addrs-only --max-size "$MAX_SIZE" $([[ "$DEPS_FIRST" == 1 ]] && echo --deps-first) $([[ "$RETRY_DEFERRED" == 1 ]] && echo --retry-deferred) 2>/dev/null || true)
   CANDIDATE_REFRESH_AT=$(( finished + WAVE_SIZE ))
 }
 

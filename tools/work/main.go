@@ -542,17 +542,17 @@ func cmdNext(args []string) {
 	}
 
 	sort.Slice(ready, func(i, j int) bool {
-		// Always prioritize fresh todo functions ahead of deferred retries
-		di, dj := ready[i].Status == "deferred", ready[j].Status == "deferred"
-		if di != dj {
-			return !di && dj
-		}
 		ti, tj := sizeTier(ready[i].Size), sizeTier(ready[j].Size)
 		if ti != tj {
 			return ti < tj
 		}
 		if ready[i].Size != ready[j].Size {
 			return ready[i].Size < ready[j].Size
+		}
+		// At the same size, prioritize fresh todo functions ahead of deferred retries
+		di, dj := ready[i].Status == "deferred", ready[j].Status == "deferred"
+		if di != dj {
+			return !di && dj
 		}
 		if *depsFirst {
 			ri, rj := calleesReady[ready[i].VA], calleesReady[ready[j].VA]
