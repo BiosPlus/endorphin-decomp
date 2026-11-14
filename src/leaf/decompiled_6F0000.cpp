@@ -1959,3 +1959,189 @@ extern "C" __declspec(naked) void __fastcall fn_006F69F0(void* self) {
         ret 0x4
     }
 }
+
+// [0x006F6CC0] sub_006F6CC0 (384 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006F6CC0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x5f98], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x51
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x6130], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x53
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x6240], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x54
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x6350], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x55
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x6460], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x56
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x6570], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x57
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 0x4]
+        mov dword ptr [ecx + 0x6680], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        push eax
+        push 0x58
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        fild dword ptr [esp + 0x4]
+        mov eax, dword ptr [esp + 0x4]
+        push 0x0
+        sub esp, 0x8
+        mov dword ptr [ecx + 0x2390], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        fstp qword ptr [esp]
+        push 0xae
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FF90
+        ret 0x4
+    }
+}
