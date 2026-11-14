@@ -18,5 +18,7 @@
     "0x004913F1",
     "0x004913FD"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T03:27:31Z"
 }
