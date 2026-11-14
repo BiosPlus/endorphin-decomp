@@ -12165,3 +12165,86 @@ L_after_00409640:
         ret 0x20
     }
 }
+
+// [0x0040A9B0] sub_0040A9B0 (247 bytes)
+extern "C" void ext_00430FC0();
+extern "C" void ext_006690D0();
+extern "C" void ext_006629B0();
+extern "C" void ext_00669180();
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+extern "C" int mem_0093A094;
+extern "C" int mem_009242F0;
+extern "C" int mem_00ACDB40;
+extern "C" int mem_009242F4;
+extern "C" int mem_00924FC8;
+extern "C" int mem_00924FD4;
+extern "C" __declspec(naked) void __fastcall fn_0040A9B0(void* self) {
+    __asm {
+        push -1
+        push 08744EBh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 3Ch
+        push esi
+        lea eax, [esp+24h]
+        push 0AC8868h
+        push eax
+        mov esi, ecx
+        call ext_006690D0
+        mov ecx, eax
+        call ext_00669180
+        add esi, 298h
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp+4Ch], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp+24h]
+        mov dword ptr [esp+48h], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [mem_0093A094]
+        push ecx
+        lea ecx, [esp+8]
+        call dword ptr [mem_009242F0]
+        mov ecx, dword ptr [mem_00ACDB40]
+        lea edx, [esp+4]
+        push edx
+        lea eax, [esp+0Ch]
+        push eax
+        mov dword ptr [esp+50h], 1
+        call ext_00430FC0
+        lea ecx, [esp+4]
+        mov byte ptr [esp+48h], 3
+        call dword ptr [mem_009242F4]
+        lea ecx, [esp+8]
+        push 928B5Dh
+        push ecx
+        call dword ptr [mem_00924FC8]
+        add esp, 8
+        test al, al
+        je short L_SKIP1
+        lea edx, [esp+8]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+L_SKIP1:
+        push esi
+        call ext_006629B0
+        add esp, 4
+        test al, al
+        jne short L_SKIP2
+        push 928B5Dh
+        mov ecx, esi
+        call dword ptr [mem_00924FD4]
+L_SKIP2:
+        lea ecx, [esp+8]
+        mov dword ptr [esp+48h], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp+40h]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 48h
+        ret
+    }
+}
