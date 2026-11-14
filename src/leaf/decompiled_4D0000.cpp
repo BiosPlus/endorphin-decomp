@@ -5957,3 +5957,87 @@ extern "C" __declspec(naked) void __fastcall fn_004DCC80(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_00468180();
+extern "C" void ext_0046F930();
+extern "C" void ext_00472350();
+extern "C" void ext_004DA060();
+extern "C" void ext_004DB070();
+extern "C" void ext_00594000();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" int mem_00AD89B4;
+
+// [0x004DBD90] sub_004DBD90 (235 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004DBD90(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x88d5f0
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, ecx
+        mov ecx, dword ptr [ebp + 0x18c]
+        test ecx, ecx
+        push esi
+        je short L_4DBDBC
+        call ext_004DA060
+L_4DBDBC:
+        mov eax, dword ptr [esp + 0x24]
+        mov dword ptr [ebp + 0x440], eax
+        call ext_00468180
+        mov esi, dword ptr [eax + 0x14]
+        test esi, esi
+        mov ebx, 0x1
+        mov dword ptr [esp + 0xc], esi
+        mov byte ptr [esp + 0x10], bl
+        je short L_4DBDFB
+        cmp dword ptr [mem_00AD89B4], 0x0
+        jne short L_4DBDF5
+        mov ecx, esi
+        mov byte ptr [esi + 0x153], bl
+        call ext_00472350
+L_4DBDF5:
+        add dword ptr [mem_00AD89B4], ebx
+L_4DBDFB:
+        push edi
+        mov dword ptr [esp + 0x20], 0x0
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x258]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x1d8]
+        call eax
+        mov edi, eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x28], edi
+        call ext_0065C640
+        mov ecx, dword ptr [ebp + 0x168]
+        push ecx
+        mov ecx, ebp
+        mov byte ptr [esp + 0x24], bl
+        call ext_004DB070
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x0
+        call ext_0065C650
+        test esi, esi
+        mov dword ptr [esp + 0x20], 0xffffffff
+        pop edi
+        je short L_4DBE67
+        sub dword ptr [mem_00AD89B4], ebx
+        jne short L_4DBE67
+        mov ecx, esi
+        mov byte ptr [esi + 0x153], 0x0
+        call ext_0046F930
+L_4DBE67:
+        mov ecx, dword ptr [esp + 0x14]
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x14
+        ret 0x4
+    }
+}
