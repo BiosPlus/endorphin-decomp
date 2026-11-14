@@ -3574,3 +3574,45 @@ LB_9D6:
         jmp LB1
     }
 }
+
+// [0x004C45F0] sub_004C45F0 (84 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_004C4500();
+extern "C" void ext_00640110();
+extern "C" void ext_00640390();
+extern "C" int mem_00945380;
+extern "C" int mem_00A9ED2C;
+extern "C" int mem_00A9F8D8;
+
+extern "C" __declspec(naked) void* __fastcall fn_004C45F0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov edx, dword ptr [mem_00A9ED2C]
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push eax
+        push 0
+        push edx
+        push esi
+        push ecx
+        call ext_004C4500
+        mov eax, dword ptr [mem_00A9ED2C]
+        add esp, 14h
+        push 0
+        push eax
+        mov ecx, esi
+        call ext_00640390
+        mov ecx, dword ptr [mem_00A9F8D8]
+        mov esi, eax
+        push ecx
+        mov ecx, esi
+        call ext_00640110
+        push offset mem_00945380
+        lea ecx, [esp + 10h]
+        mov dword ptr [esp + 10h], eax
+        call ext_00427550
+        mov eax, esi
+        pop esi
+        ret 8
+    }
+}
