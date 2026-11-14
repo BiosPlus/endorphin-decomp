@@ -109,3 +109,57 @@ extern "C" __declspec(naked) int __fastcall fn_0044FE30(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x0044FCA0] RigEditorAddRenameDialog::vfunc_84 (226 bytes)
+extern "C" void ext_0044D030();
+extern "C" void* ext_00584A10();
+extern "C" void ext_006A5E5A();
+extern "C" void ext_006A5F50();
+extern "C" void ext_006A5FC8();
+extern "C" void ext_006A60D0();
+extern "C" int mem_00924FF0;
+extern "C" int mem_00925694;
+extern "C" int mem_00925690;
+
+struct WinRect {
+    int left, top, right, bottom;
+};
+
+extern "C" int __fastcall fn_0044FCA0(void* self) {
+    char* p = (char*)self;
+    typedef void (__thiscall *VoidThiscall)(void*);
+    typedef void (__thiscall *SetTextThiscall)(void*, const char*);
+    typedef const char* (__thiscall *CStrThiscall)(void*);
+    typedef void* (__thiscall *Sub584A10)(void*);
+    typedef int (__stdcall *SendMsgFn)(void*, unsigned int, unsigned int, int);
+    typedef int (__stdcall *GetWindowRectFn)(void*, WinRect*);
+    typedef void (__thiscall *MoveWinFn)(void*, int, int, int, int, int);
+
+    ((VoidThiscall)ext_006A5FC8)(self);
+
+    ((SetTextThiscall)ext_006A5F50)(self, (*(CStrThiscall*)&mem_00924FF0)(p + 0x78));
+
+    Sub584A10 sub584a10 = (Sub584A10)ext_00584A10;
+    char* eax = (char*)(*(void**)(p + 0x74));
+    void* s74 = sub584a10(&eax[4]);
+    ((SetTextThiscall)ext_006A5F50)(p + 0x1d0, (*(CStrThiscall*)&mem_00924FF0)(s74));
+
+    ((SetTextThiscall)ext_006A5F50)(p + 0x224, (*(CStrThiscall*)&mem_00924FF0)(p + 0x94));
+
+    void* edi = p + 0x278;
+    ((SetTextThiscall)ext_006A5F50)(edi, (*(CStrThiscall*)&mem_00924FF0)(p + 0xb0));
+
+    ((VoidThiscall)ext_006A60D0)(edi);
+
+    SendMsgFn sendMsg = *(SendMsgFn*)&mem_00925694;
+    sendMsg(*(void**)((char*)edi + 0x20), 0xb1, 0, -1);
+    sendMsg(*(void**)((char*)edi + 0x20), 0xb7, 0, 0);
+
+    WinRect rc;
+    (*(GetWindowRectFn*)&mem_00925690)(*(void**)(p + 0x20), &rc);
+
+    ((MoveWinFn)ext_006A5E5A)(self, *(int*)(p + 0xcc), *(int*)(p + 0xd0), rc.right - rc.left, rc.bottom - rc.top, 1);
+
+    ((VoidThiscall)ext_0044D030)(self);
+    return 0;
+}
