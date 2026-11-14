@@ -19513,3 +19513,34 @@ extern "C" __declspec(naked) void __fastcall fn_00435800(void* self) {
         ret
     }
 }
+
+// [0x00435920] sub_00435920 (281 bytes)
+extern "C" void __fastcall fn_00435920(void* self) {
+    if (*(void**)((char*)self + 0x100) && ((bool (__thiscall*)(void*))ext_0044B760)(*(void**)((char*)self + 0x100))) {
+        ((void (__thiscall*)(void*))ext_0044B730)(*(void**)((char*)self + 0x100));
+    }
+    if (((bool (__thiscall*)(void*))ext_004694E0)(((void* (__stdcall*)(int))ext_00465B30)(0))) {
+        ((void (__thiscall*)(void*))ext_00469410)(((void* (__stdcall*)(int))ext_00465B30)(0));
+        ((void (__thiscall*)(void*, int))ext_00433B70)(self, 0);
+    }
+    if (((bool (__thiscall*)(void*))ext_004694E0)(((void* (__stdcall*)(int))ext_00465B30)(1))) {
+        ((void (__thiscall*)(void*))ext_00469410)(((void* (__stdcall*)(int))ext_00465B30)(1));
+        ((void (__thiscall*)(void*, int))ext_00433B70)(self, 1);
+    }
+    if (((bool (__thiscall*)(void*))ext_004694E0)(((void* (__stdcall*)(int))ext_00465B30)(5))) {
+        ((void (__thiscall*)(void*))ext_00469410)(((void* (__stdcall*)(int))ext_00465B30)(5));
+        ((void (__thiscall*)(void*, int))ext_00433B70)(self, 5);
+    }
+    if (((bool (__thiscall*)(void*))ext_004694E0)(((void* (__stdcall*)(int))ext_00465B30)(2))) {
+        ((void (__thiscall*)(void*))ext_00469410)(((void* (__stdcall*)(int))ext_00465B30)(2));
+        ((void (__thiscall*)(void*, int))ext_00433B70)(self, 2);
+    }
+    if (!((bool (__thiscall*)(void*))ext_004694E0)(((void* (__stdcall*)(int))ext_00465B30)(4))) {
+        ((void (__thiscall*)(void*))ext_00469410)(((void* (__stdcall*)(int))ext_00465B30)(4));
+        ((void (__thiscall*)(void*, int))ext_00433B70)(self, 4);
+    }
+    if (!((bool (__thiscall*)(void*))ext_004694E0)(((void* (__stdcall*)(int))ext_00465B30)(12))) {
+        ((void (__thiscall*)(void*))ext_00469410)(((void* (__stdcall*)(int))ext_00465B30)(12));
+        ((void (__thiscall*)(void*, int))ext_00433B70)(self, 12);
+    }
+}
