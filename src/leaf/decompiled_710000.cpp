@@ -1942,3 +1942,151 @@ extern "C" __declspec(naked) void* __fastcall fn_007131E0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00718100] sub_00718100 (400 bytes)
+extern "C" void ext_006D7C80();
+extern "C" void ext_0070E3D0();
+extern "C" void ext_00717DE0();
+extern "C" void ext_00717EA0();
+extern "C" void ext_00717EC0();
+extern "C" void ext_00718010();
+extern "C" void ext_00718020();
+extern "C" void ext_00718030();
+extern "C" void ext_00718060();
+extern "C" void ext_00718090();
+extern "C" void ext_007180A0();
+extern "C" void ext_007180B0();
+extern "C" void ext_007180C0();
+extern "C" void ext_007180D0();
+extern "C" void ext_007180E0();
+extern "C" void ext_007180F0();
+extern "C" int mem_00925284;
+extern "C" int mem_00B5FCA8;
+extern "C" int mem_00B5FCAC;
+extern "C" int mem_00B5FCA0;
+extern "C" __declspec(naked) void __fastcall fn_00718100(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        call ext_00717DE0
+        mov ebx, dword ptr [esp + 0x14]
+        mov ecx, ebx
+        call ext_007180D0
+        push eax
+        mov ecx, ebp
+        call ext_007180C0
+        mov ecx, ebx
+        call ext_007180F0
+        push eax
+        mov ecx, ebp
+        call ext_007180E0
+        mov eax, dword ptr [ebx + 0x1d8]
+        mov ecx, ebp
+        push eax
+        call ext_00718090
+        mov ecx, dword ptr [ebx + 0x1ac]
+        mov edx, dword ptr [ebx + 0x1a8]
+        push ecx
+        push edx
+        mov ecx, ebp
+        call ext_00717EA0
+        mov eax, dword ptr [ebx + 0x1bc]
+        mov ecx, dword ptr [ebx + 0x1b8]
+        push eax
+        push ecx
+        mov ecx, ebp
+        call ext_006D7C80
+        mov edx, dword ptr [ebx + 0x1c4]
+        mov eax, dword ptr [ebx + 0x1b4]
+        mov ecx, dword ptr [ebx + 0x1c0]
+        push edx
+        mov edx, dword ptr [ebx + 0x1b0]
+        push eax
+        push ecx
+        push edx
+        mov ecx, ebp
+        call ext_00717EC0
+        mov ecx, ebx
+        call ext_00718030
+        mov edi, eax
+        mov ecx, ebx
+        shl edi, 0x3
+        call ext_00718010
+        mov dword ptr [esp + 0x14], edi
+        mov edi, dword ptr [ebp + 0x1c8]
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, eax
+        mov edx, ecx
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, edx
+        and ecx, 0x3
+        rep movsb
+        mov ecx, ebx
+        call ext_00718060
+        mov edi, eax
+        mov ecx, ebx
+        shl edi, 0x3
+        call ext_00718020
+        mov dword ptr [esp + 0x14], edi
+        mov edi, dword ptr [ebp + 0x1cc]
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, eax
+        mov edx, ecx
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, edx
+        and ecx, 0x3
+        rep movsb
+        mov eax, dword ptr [ebx + 0x1b0]
+        mov ecx, ebx
+        mov dword ptr [esp + 0x14], eax
+        call ext_007180A0
+        mov edi, dword ptr [ebp + 0x1d0]
+        mov ecx, dword ptr [esp + 0x14]
+        mov esi, eax
+        rep movsd
+        mov ecx, dword ptr [ebx + 0x1b4]
+        mov dword ptr [esp + 0x14], ecx
+        mov ecx, ebx
+        call ext_007180B0
+        mov edi, dword ptr [ebp + 0x1d4]
+        mov ecx, dword ptr [esp + 0x14]
+        mov esi, eax
+        push ebx
+        rep movsd
+        mov ecx, ebp
+        call ext_0070E3D0
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 // nop x3
+        __asm _emit 0xE9 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // jmp 0x718250
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 // nop x11
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5FCA8], ecx
+        mov dword ptr [mem_00B5FCAC], edx
+        ret
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 // nop x9
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        __asm _emit 0xE9 __asm _emit 0x0B __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // jmp 0x718280
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 // nop x11
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5FCA0]
+        ret
+    }
+}
