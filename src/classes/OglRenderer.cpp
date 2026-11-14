@@ -615,3 +615,41 @@ L_005360E6:
         ret
     }
 }
+
+// [0x00533250] OglRenderer::vfunc_51 (68 bytes)
+extern "C" void ext_0052AD00();
+extern "C" __declspec(naked) void __fastcall fn_00533250(void* self, int edx_unused, int a1, void* a2) {
+    __asm {
+        push    ebx
+        push    ebp
+        push    esi
+        mov     esi, dword ptr [esp + 0x14]
+        push    edi
+        mov     edi, 0x8
+        lea     ebp, [ecx + 0x300]
+        sub     edi, esi
+        mov     ebx, 0x4
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_loop:
+        mov     eax, dword ptr [esp + 0x14]
+        push    eax
+        mov     ecx, ebp
+        call    ext_0052AD00
+        lea     ecx, [edi + esi]
+        fld     dword ptr [ecx + eax]
+        add     esi, 0x4
+        sub     ebx, 0x1
+        fstp    dword ptr [esi - 0x4]
+        jne     L_loop
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret     0x8
+    }
+}
