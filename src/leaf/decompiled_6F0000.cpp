@@ -1502,3 +1502,103 @@ extern "C" __declspec(naked) void __fastcall fn_006FE1C0(void* self) {
         ret
     }
 }
+
+// [0x006F52F0] sub_006F52F0 (240 bytes)
+extern "C" void ext_006F76F0();
+extern "C" void ext_0077FF90();
+extern "C" void ext_00782B10();
+extern "C" int mem_0092A278;
+extern "C" int mem_00993BE0;
+extern "C" __declspec(naked) void __fastcall fn_006F52F0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov al, byte ptr [esp + 0x4]
+        mov byte ptr [ecx + 0x160], al
+        ret 0x4
+        nop
+        nop
+        nop
+        mov al, byte ptr [esp + 0x4]
+        mov byte ptr [ecx + 0x1e8], al
+        ret 0x4
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0x270], eax
+        mov dword ptr [ecx + 0x274], edx
+        ret 0x8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        fld qword ptr [mem_0092A278]
+        fcomp qword ptr [esp + 0x4]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_006F5349
+        fld qword ptr [mem_0092A278]
+        jmp short L_006F5366
+L_006F5349:
+        fld qword ptr [esp + 0x4]
+        fld qword ptr [mem_00993BE0]
+        fcomp qword ptr [esp + 0x4]
+        fnstsw ax
+        test ah, 0x1
+        je short L_006F5366
+        fstp st(0)
+        fld qword ptr [mem_00993BE0]
+L_006F5366:
+        fst qword ptr [esp + 0x4]
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        fstp qword ptr [ecx + 0x2f8]
+        mov ecx, dword ptr [ecx + 0x6958]
+        push 0x0
+        push eax
+        push edx
+        push 0x0
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FF90
+        ret 0x8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        fild dword ptr [esp + 0x4]
+        mov eax, dword ptr [esp + 0x4]
+        push 0x0
+        sub esp, 0x8
+        mov dword ptr [ecx + 0x380], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        fstp qword ptr [esp]
+        push 0x1
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FF90
+        ret 0x4
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call ext_00782B10
+        add esp, 0x4
+        ret 0x4
+    }
+}
