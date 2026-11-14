@@ -2528,3 +2528,276 @@ L_p3_common:
         ret 4
     }
 }
+
+// [0x0071B110] sub_0071B110 (944 bytes)
+extern "C" void __fastcall ext_0071B500(void* self, int edx, int, double, double);
+extern "C" void __fastcall ext_0071B6F0(void* self, int edx, double);
+extern "C" double __fastcall ext_0071B780(void* self, int edx, int, int, double);
+
+extern "C" __declspec(naked) void __fastcall fn_0071B110(void* self, int edx, int mode) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, ecx
+        dec eax
+        push edi
+        cmp eax, 9
+        mov ecx, dword ptr [esi + 0xc]
+        mov edi, dword ptr [ecx + 0x380]
+        ja L_default
+        _emit 0xff
+        _emit 0x24
+        _emit 0x85
+        _emit 0xc0
+        _emit 0xb4
+        _emit 0x71
+        _emit 0x00
+
+    L_case1:
+        push 0x407e0000
+        push 0
+        push 0x40840000
+        push 0
+        push 2
+        mov ecx, esi
+        call ext_0071B500
+        push 0x3ff55555
+        push 0x55530aed
+        push 0x1e0
+        push 0x280
+        mov ecx, esi
+        call ext_0071B780
+        sub esp, 8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        call ext_0071B6F0
+        mov ecx, dword ptr [esi + 0xc]
+        mov dword ptr [ecx + 0x490], 2
+    L_check_edi:
+        mov eax, edi
+        dec eax
+        je L_edi_1
+        sub eax, 2
+        je L_edi_3
+        dec eax
+        jne L_ret
+        mov eax, dword ptr [esi + 0xc]
+        pop edi
+        fld qword ptr [eax + 0x518]
+        fdiv qword ptr [eax + 0x5a0]
+        fstp qword ptr [eax + 0x518]
+        mov ecx, dword ptr [esi + 0xc]
+        pop esi
+        mov dword ptr [ecx + 0x380], 4
+        ret 4
+
+    L_case2:
+        push 0x407e6000
+        push 0
+        push 0x40868000
+        push 0
+        push 2
+        mov ecx, esi
+        call ext_0071B500
+        push 0x3ff55555
+        push 0x55530aed
+        push 0x1e6
+        push 0x2d0
+        mov ecx, esi
+        call ext_0071B780
+        sub esp, 8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        call ext_0071B6F0
+        mov edx, dword ptr [esi + 0xc]
+        mov dword ptr [edx + 0x490], 1
+        jmp L_check_edi
+
+    L_case3:
+        push 0x407e6000
+        push 0
+        push 0x4081d000
+        push 0
+        push 2
+        mov ecx, esi
+        call ext_0071B500
+        push 0x3ff55555
+        push 0x55530aed
+        push 0x1e6
+        push 0x23a
+        mov ecx, esi
+        call ext_0071B780
+        sub esp, 8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        call ext_0071B6F0
+        mov eax, dword ptr [esi + 0xc]
+        mov dword ptr [eax + 0x490], 3
+        jmp L_check_edi
+
+    L_case4:
+        push 0x40820000
+        push 0
+        push 0x40868000
+        push 0
+        push 2
+        mov ecx, esi
+        call ext_0071B500
+        push 0x3ff55555
+        push 0x55530aed
+        push 0x240
+        push 0x2d0
+        mov ecx, esi
+        call ext_0071B780
+        sub esp, 8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        call ext_0071B6F0
+        mov ecx, dword ptr [esi + 0xc]
+        mov dword ptr [ecx + 0x490], 4
+        jmp L_check_edi
+
+    L_case5:
+        push 0x4090e000
+        push 0
+        push 0x409e0000
+        push 0
+        push 2
+        mov ecx, esi
+        call ext_0071B500
+        push 0x3ffc71c7
+        push 0x1c6c6ed4
+        push 0x438
+        push 0x780
+        mov ecx, esi
+        call ext_0071B780
+        sub esp, 8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        call ext_0071B6F0
+        mov edx, dword ptr [esi + 0xc]
+        mov dword ptr [edx + 0x490], 5
+        jmp L_check_edi
+
+    L_case6:
+        push 0x407e0000
+        push 0
+        push 0x40840000
+        push 0
+        push 2
+        mov ecx, esi
+        call ext_0071B500
+        push 0x3ff55555
+        push 0x55530aed
+        push 0x1e0
+        push 0x280
+        mov ecx, esi
+        call ext_0071B780
+        sub esp, 8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        call ext_0071B6F0
+        mov eax, dword ptr [esi + 0xc]
+        mov dword ptr [eax + 0x490], 6
+        jmp L_check_edi
+
+    L_case7:
+        push 0x40690000
+        push 0
+        push 0x40740000
+        push 0
+        push 2
+        mov ecx, esi
+        call ext_0071B500
+        push 0x3ff55555
+        push 0x55530aed
+        push 0xc8
+        push 0x140
+        mov ecx, esi
+        call ext_0071B780
+        sub esp, 8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        call ext_0071B6F0
+        mov ecx, dword ptr [esi + 0xc]
+        mov dword ptr [ecx + 0x490], 7
+        jmp L_check_edi
+
+    L_case8:
+        push 0x406e0000
+        push 0
+        push 0x40740000
+        push 0
+        push 2
+        mov ecx, esi
+        call ext_0071B500
+        push 0x3ff55555
+        push 0x55530aed
+        push 0xf0
+        push 0x140
+        mov ecx, esi
+        call ext_0071B780
+        sub esp, 8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        call ext_0071B6F0
+        mov edx, dword ptr [esi + 0xc]
+        mov dword ptr [edx + 0x490], 8
+        jmp L_check_edi
+
+    L_case9:
+        push 0x40900000
+        push 0
+        push 0x40940000
+        push 0
+        push 2
+        mov ecx, esi
+        call ext_0071B500
+        push 0x3ff55555
+        push 0x55530aed
+        push 0x400
+        push 0x500
+        mov ecx, esi
+        call ext_0071B780
+        sub esp, 8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        call ext_0071B6F0
+        mov eax, dword ptr [esi + 0xc]
+        mov dword ptr [eax + 0x490], 0xa
+        jmp L_check_edi
+
+    L_default:
+        pop edi
+        mov dword ptr [ecx + 0x490], 0
+        pop esi
+        ret 4
+
+    L_edi_3:
+        mov eax, dword ptr [esi + 0xc]
+        pop edi
+        fld qword ptr [eax + 0x5a0]
+        fdiv qword ptr [eax + 0x518]
+        fstp qword ptr [eax + 0x5a0]
+        mov edx, dword ptr [esi + 0xc]
+        pop esi
+        mov dword ptr [edx + 0x380], 3
+        ret 4
+
+    L_edi_1:
+        mov eax, dword ptr [esi + 0xc]
+        fld qword ptr [eax + 0x518]
+        fdiv qword ptr [eax + 0x5a0]
+        fmul qword ptr [eax + 0x628]
+        fstp qword ptr [eax + 0x518]
+        mov eax, dword ptr [esi + 0xc]
+        mov dword ptr [eax + 0x5a0], 0
+        mov dword ptr [eax + 0x5a4], 0x3ff00000
+        mov ecx, dword ptr [esi + 0xc]
+        mov dword ptr [ecx + 0x380], 1
+    L_ret:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
