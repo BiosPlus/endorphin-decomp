@@ -9096,3 +9096,91 @@ extern "C" __declspec(naked) void __fastcall fn_0057D650(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0057E060] sub_0057E060 (168 bytes)
+// try { for (p = begin; count; --count, p += 0x2c) { ctor(p, a); ctor(p + 0x1c, a + 0x1c); } }
+// catch (...) { destroy [begin, p); throw; }
+// Naked: the SEH frame is written out by hand (same pattern as fn_00435EF0).
+extern "C" void ext_00557960();
+extern "C" void ext_00558B90();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __cdecl fn_0057E060(void* begin, unsigned int count, const void* a) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -0x1
+        push 0x0089e58a
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x8]
+        push edi
+        mov edi, dword ptr [ebp + 0xc]
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], ebx
+        nop
+    loop_0057E060:
+        cmp edi, ebx
+        jbe exit_0057E060
+        mov dword ptr [ebp + 0xc], esi
+        mov dword ptr [ebp - 0x18], esi
+        cmp esi, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je skip_0057E060
+        mov eax, dword ptr [ebp + 0x10]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [ebp + 0x10]
+        add ecx, 0x1c
+        push ecx
+        lea ecx, [esi + 0x1c]
+        mov byte ptr [ebp - 0x4], 0x2
+        call ext_00557960
+    skip_0057E060:
+        sub edi, 0x1
+        add esi, 0x2c
+        mov byte ptr [ebp - 0x4], bl
+        mov dword ptr [ebp + 0x8], esi
+        jmp loop_0057E060
+    handler_0057E060:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x8]
+        cmp esi, edi
+        je rethrow_0057E060
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    dtor_0057E060:
+        mov ecx, esi
+        call ext_00558B90
+        add esi, 0x2c
+        cmp esi, edi
+        jne dtor_0057E060
+    rethrow_0057E060:
+        xor ebx, ebx
+        push ebx
+        push ebx
+        call ext_006A6DD2
+    exit_0057E060:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
