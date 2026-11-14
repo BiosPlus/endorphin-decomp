@@ -167,3 +167,42 @@ L_d:
         ret
     }
 }
+
+// [0x004591B0] MultiTrackView::TimeRuler::vfunc_10 (76 bytes)
+extern "C" void ext_0043CEB0();
+extern "C" void ext_0043DC90();
+extern "C" void ext_00468180();
+extern "C" void ext_00468660();
+extern "C" void ext_004686A0();
+extern "C" __declspec(naked) void __fastcall fn_004591B0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x30]
+        mov eax, dword ptr [esp + 0x8]
+        cmp eax, dword ptr [ecx + 0xfc]
+        jge short L_body
+        push -1
+        call ext_0043DC90
+        ret 0xc
+    L_body:
+        push esi
+        push edi
+        push eax
+        call ext_0043CEB0
+        mov edi, eax
+        call ext_00468180
+        mov esi, eax
+        push edi
+        mov ecx, esi
+        call ext_004686A0
+        mov ecx, esi
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x98]
+        push 0x5
+        call eax
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
