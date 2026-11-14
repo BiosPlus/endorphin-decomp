@@ -1009,3 +1009,74 @@ extern "C" void* __fastcall fn_0058A1C0(void* self, int edx_unused, void* a1) {
     ((void (__cdecl*)(int, int))ext_00640A80)(r, (int)b);
     return edi;
 }
+
+// [0x00586EC0] AnimatableTransform::vfunc_2_off_C (165 bytes)
+extern "C" void ext_00586D00();
+extern "C" void ext_0067DDB0();
+extern "C" int mem_00B40640;
+extern "C" __declspec(naked) void __fastcall fn_00586EC0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x40
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [esi - 0x8]
+        mov eax, dword ptr [eax + 0x10]
+        push ecx
+        lea edi, [esi - 0x8]
+        push 0x0
+        lea edx, [esp + 0x10]
+        push edx
+        mov ecx, edi
+        call eax
+        mov eax, dword ptr [esp + 0x4c]
+        fld dword ptr [eax]
+        lea ecx, [esp + 0x8]
+        fadd dword ptr [esp + 0x38]
+        fstp dword ptr [esp + 0x38]
+        fld dword ptr [eax + 0x4]
+        fadd dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x3c]
+        fld dword ptr [eax + 0x8]
+        fadd dword ptr [esp + 0x40]
+        fstp dword ptr [esp + 0x40]
+        call ext_0067DDB0
+        mov eax, dword ptr [mem_00B40640]
+        mov edx, dword ptr [edi]
+        mov edx, dword ptr [edx]
+        push eax
+        lea ecx, [esp + 0xc]
+        push ecx
+        push 0x0
+        mov ecx, edi
+        call edx
+        lea ecx, [esi - 0xc]
+        call ext_00586D00
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x1c]
+        mov ecx, edi
+        call edx
+        test al, al
+        je fn_00586EC0_done
+        mov ecx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        mov ecx, edi
+        call edx
+        mov esi, eax
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x2c]
+        mov ecx, edi
+        call edx
+        mov ecx, 0x10
+        mov edi, eax
+        rep movsd
+    fn_00586EC0_done:
+        pop edi
+        pop esi
+        add esp, 0x40
+        ret 0x4
+    }
+}
