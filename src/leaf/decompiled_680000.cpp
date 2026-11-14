@@ -14277,3 +14277,138 @@ extern "C" __declspec(naked) void __fastcall fn_00686E60(void* self) {
         ret
     }
 }
+
+// [0x0068ACB0] sub_0068ACB0 (379 bytes)
+extern "C" void ext_00427A60();
+extern "C" void ext_00687BF0();
+extern "C" void ext_0068A0A0();
+extern "C" int mem_00925134; /* "P{b" */
+extern "C" int mem_00924FC0; /* u32 0x006294AC */
+extern "C" int mem_00924FF4; /* u32 0x00628FF0 */
+
+extern "C" __declspec(naked) void __fastcall fn_0068ACB0(void* self, void* dummy, void* a1) {
+    __asm {
+        push -1
+        push 0x8b5a98
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x4c
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x6c]
+        mov esi, dword ptr [edi + 0x28]
+        add edi, 0x24
+        cmp esi, dword ptr [edi + 0x8]
+        mov ebx, ecx
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esp + 0x6c], edi
+        jbe loc_68acef
+        call dword ptr [mem_00925134]
+    loc_68acef:
+        mov dword ptr [esp + 0x18], edi
+        mov dword ptr [esp + 0x1c], edi
+        mov dword ptr [esp + 0x20], esi
+    loc_68acfb:
+        lea ecx, [esp + 0x18]
+        call ext_00427A60
+        mov esi, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], esi
+        jbe loc_68ad12
+        call dword ptr [mem_00925134]
+    loc_68ad12:
+        lea ecx, [esp + 0x24]
+        mov dword ptr [esp + 0x24], edi
+        mov dword ptr [esp + 0x28], edi
+        mov dword ptr [esp + 0x2c], esi
+        call ext_00427A60
+        mov ebp, dword ptr [esp + 0x1c]
+        test ebp, ebp
+        je loc_68ad35
+        cmp ebp, dword ptr [esp + 0x28]
+        je loc_68ad3b
+    loc_68ad35:
+        call dword ptr [mem_00925134]
+    loc_68ad3b:
+        mov esi, dword ptr [esp + 0x20]
+        cmp esi, dword ptr [esp + 0x2c]
+        jae loc_68ae16
+        test ebp, ebp
+        jne loc_68ad53
+        call dword ptr [mem_00925134]
+    loc_68ad53:
+        cmp esi, dword ptr [ebp + 0x8]
+        jb loc_68ad5e
+        call dword ptr [mem_00925134]
+    loc_68ad5e:
+        mov esi, dword ptr [esi]
+        lea eax, [esi + 0x4]
+        push 0x98c530
+        push eax
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        je loc_68adfd
+        mov ecx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [ebx + 0x4]
+        push ecx
+        push ebx
+        lea edx, [ebx + 0x10]
+        push edx
+        push eax
+        push esi
+        lea ecx, [esp + 0x44]
+        call ext_00687BF0
+        lea esi, [ebx + 0x130]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x68], 0
+        call ext_0068A0A0
+        lea ecx, [esp + 0x40]
+        mov dword ptr [esp + 0x64], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe loc_68adc8
+        call dword ptr [mem_00925134]
+    loc_68adc8:
+        lea eax, [edi - 0x2c]
+        cmp eax, dword ptr [esi + 0x8]
+        mov ebp, esi
+        mov dword ptr [esp + 0x14], edi
+        ja loc_68addb
+        cmp eax, dword ptr [esi + 0x4]
+        jae loc_68ade1
+    loc_68addb:
+        call dword ptr [mem_00925134]
+    loc_68ade1:
+        lea esi, [edi - 0x2c]
+        cmp esi, dword ptr [ebp + 0x8]
+        jb loc_68adef
+        call dword ptr [mem_00925134]
+    loc_68adef:
+        mov ecx, dword ptr [esi]
+        mov ebp, dword ptr [esp + 0x1c]
+        mov edi, dword ptr [esp + 0x6c]
+        mov dword ptr [esp + 0x10], ecx
+    loc_68adfd:
+        mov edx, dword ptr [esp + 0x20]
+        cmp edx, dword ptr [ebp + 0x8]
+        jb loc_68ae0c
+        call dword ptr [mem_00925134]
+    loc_68ae0c:
+        add dword ptr [esp + 0x20], 0x4
+        jmp loc_68acfb
+    loc_68ae16:
+        mov ecx, dword ptr [esp + 0x5c]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x58
+        ret 0x4
+    }
+}
