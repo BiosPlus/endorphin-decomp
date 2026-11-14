@@ -471,3 +471,48 @@ extern "C" __declspec(naked) void __fastcall fn_004AA020(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004A9BA0] NMData::BehaviourData::vfunc_14 (97 bytes)
+extern "C" void ext_004C2070();
+extern "C" void ext_00661650();
+extern "C" __declspec(naked) void* __fastcall fn_004A9BA0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, 0x1b3
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0
+        jne L_004A9BD7
+        mov ecx, dword ptr [ecx + 0x180]
+        mov eax, dword ptr [ecx + 0x10]
+        mov edx, dword ptr [eax + 0x38]
+        add ecx, 0x10
+        push 0x1b3
+        push esi
+        call edx
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_004A9BD7:
+        cmp eax, 0x117
+        jne L_004A9BF3
+        add ecx, 0x364
+        push ecx
+        mov ecx, esi
+        call ext_00661650
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_004A9BF3:
+        push eax
+        push esi
+        call ext_004C2070
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
