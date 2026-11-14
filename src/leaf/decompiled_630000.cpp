@@ -3399,3 +3399,26 @@ extern "C" __declspec(naked) void __fastcall fn_0063CDF0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0041C7C0();
+
+// [0x0063CE20] sub_0063CE20 (64 bytes)
+extern "C" void __fastcall fn_0063CE20(void* self, int edx_unused, const float* val) {
+    struct RingBuf {
+        int pad0;
+        float* first;
+        int pad8;
+        float* last;
+        unsigned int count;
+    };
+    typedef float* (__thiscall *AtFn)(void*, unsigned int);
+    RingBuf* rb = (RingBuf*)self;
+    unsigned int cap = (rb->first == 0) ? 0 : (unsigned int)(rb->last - rb->first);
+    unsigned int cnt = rb->count;
+    unsigned int rem = cnt % cap;
+    if (rem == 0 && cnt != 0) {
+        rb->count = cap;
+    }
+    rb->count += 1;
+    *((AtFn)ext_0041C7C0)(self, rem) = *val;
+}
