@@ -463,3 +463,113 @@ extern "C" __declspec(naked) void* __fastcall fn_00410B50(void* self, int edx_un
         ret 8
     }
 }
+
+// [0x00412B20] MultiTrackView::CompositeEventTrack::vfunc_5 (227 bytes)
+extern "C" void ext_00410DD0();
+extern "C" void ext_00412720();
+extern "C" void ext_0041A4F0();
+extern "C" void ext_0041AB80();
+
+extern "C" __declspec(naked) void __fastcall fn_00412B20(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        call ext_00594000
+        mov ebx, eax
+        mov eax, dword ptr [esi + 0x14]
+        push eax
+        mov ecx, ebx
+        call ext_00597630
+        mov ebp, eax
+        test ebp, ebp
+        je done
+        mov ecx, dword ptr [esi + 0x30]
+        push edi
+        add ecx, 0x1b4
+        call ext_0041A4F0
+        mov ecx, dword ptr [esp + 0x18]
+        mov edi, dword ptr [esp + 0x14]
+        push 0x0
+        push 0x0
+        push ecx
+        push ebp
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_00412720
+        mov edx, dword ptr [esp + 0x18]
+        push 0x0
+        push 0x2
+        push edx
+        push ebp
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_00412720
+        mov eax, dword ptr [esp + 0x18]
+        push 0x0
+        push 0x4
+        push eax
+        push ebp
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_00412720
+        mov ecx, dword ptr [esp + 0x18]
+        push 0x0
+        push 0x6
+        push ecx
+        push ebp
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_00412720
+        mov edx, dword ptr [esp + 0x18]
+        push 0x1
+        push 0x0
+        push edx
+        push ebp
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_00412720
+        mov eax, dword ptr [esp + 0x18]
+        push 0x1
+        push 0x2
+        push eax
+        push ebp
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_00412720
+        mov ecx, dword ptr [esp + 0x18]
+        push 0x1
+        push 0x4
+        push ecx
+        push ebp
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_00412720
+        mov ecx, dword ptr [esi + 0x30]
+        push 0x453c3c
+        push edi
+        add ecx, 0x1b4
+        call ext_0041AB80
+        mov edx, dword ptr [esp + 0x18]
+        push edx
+        push ebp
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_00410DD0
+        pop edi
+    done:
+        pop esi
+        pop ebp
+        pop ebx
+        ret 8
+    }
+}
