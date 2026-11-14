@@ -6939,3 +6939,40 @@ extern "C" void __cdecl fn_0048CDE0(void* arg) {
     ((void (__thiscall*)(int*, int))ext_0048BFD0)(&local, 0x0093e1ac);
     ((void (__cdecl*)(void*))ext_004EB950)(arg);
 }
+
+// [0x00482990] sub_00482990 (105 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00482990(void* self, int edx_unused, void* arg) {
+    __asm {
+        push -1
+        push 0x881818
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        lea eax, [edi + 0x4]
+        lea ecx, [esi + 0x4]
+        push eax
+        mov dword ptr [esp + 0xc], esi
+        mov dword ptr [esi], 0x92fb68
+        call ext_004A6970
+        lea ecx, [edi + 0x14]
+        push ecx
+        lea ecx, [esi + 0x14]
+        mov dword ptr [esp + 0x18], 0x0
+        mov dword ptr [esi], 0x93c4f8
+        call ext_004A6970
+        mov edx, dword ptr [edi + 0x24]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x24], edx
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
