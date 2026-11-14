@@ -1013,3 +1013,67 @@ extern "C" __declspec(naked) void __fastcall fn_004C6BF0(void* self) {
         ret 4
     }
 }
+
+// [0x004C51E0] NMData::ForceEventData::vfunc_54 (204 bytes)
+extern "C" void ext_005B18E0();
+extern "C" void ext_005B5810();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00AE36F4;
+extern "C" int mem_00AE36A8;
+extern "C" int mem_00A3A108;
+extern "C" double mem_0092C508;
+extern "C" double mem_009453D0;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void* __fastcall fn_004C51E0(void* self) {
+    __asm {
+        push 0xffffffff
+        push 0x0088b7f7
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x2c
+        test byte ptr [mem_00AE36F4], 0x1
+        fld dword ptr [mem_00A3A108]
+        fld1
+        fdivrp st(1), st(0)
+        fstp dword ptr [esp]
+        fld dword ptr [esp]
+        fst dword ptr [esp + 0x4]
+        fld qword ptr [mem_0092C508]
+        fmul st(0), st(1)
+        fstp dword ptr [esp + 0x8]
+        fmul qword ptr [mem_009453D0]
+        fstp dword ptr [esp + 0xc]
+        jne loc_4c5260
+        or dword ptr [mem_00AE36F4], 0x1
+        lea eax, [esp + 0x4]
+        push eax
+        push 0xe
+        mov ecx, offset mem_00AE36A8
+        mov dword ptr [esp + 0x3c], 0x0
+        call ext_005B5810
+        push 0x009189d0
+        call ext_006A6C87
+        add esp, 0x4
+        mov dword ptr [esp + 0x34], 0xffffffff
+    loc_4c5260:
+        push 0x00934804
+        lea ecx, [esp + 0x14]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, offset mem_00AE36A8
+        mov dword ptr [esp + 0x38], 0x1
+        call ext_005B18E0
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x34], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x2c]
+        mov eax, offset mem_00AE36A8
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x38
+        ret
+    }
+}
