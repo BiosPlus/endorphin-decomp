@@ -10629,3 +10629,92 @@ L_42C828:
         ret 0x14
     }
 }
+
+// [0x0042E3D0] sub_0042E3D0 (218 bytes)
+extern "C" void ext_004278C0();
+extern "C" void ext_0042BD00();
+extern "C" void ext_0042C600();
+extern "C" __declspec(naked) void __fastcall fn_0042E3D0(void* self, int edx_unused, const void* a1, const void* a2) {
+    __asm {
+        push -1
+        mov eax, dword ptr fs:[0]
+        push 0x00879BB8
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x30
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x50]
+        push 0x00ACDAB0
+        push edi
+        mov ebp, ecx
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        jne L_42E493
+        mov eax, dword ptr [ebp + 0x24]
+        mov ebx, dword ptr [esp + 0x54]
+        mov edx, dword ptr [eax]
+        lea esi, [ebp + 0x24]
+        push ebx
+        mov ecx, esi
+        call edx
+        test eax, eax
+        jne L_42E493
+        push ebx
+        push edi
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        jne L_42E47C
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        push edi
+        mov ecx, esi
+        call edx
+        test eax, eax
+        je L_42E47C
+        push edi
+        mov ecx, esi
+        call ext_004278C0
+        push ebx
+        push eax
+        push ebp
+        lea ecx, [esp + 0x1c]
+        call ext_0042BD00
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp + 0x4c], 0
+        call ext_0042C700
+        lea eax, [esp + 0x10]
+        push eax
+        push ebx
+        mov ecx, esi
+        call ext_0042C600
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x48], -1
+        call ext_00429100
+    L_42E47C:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        mov ecx, dword ptr [esp + 0x30]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x3c
+        ret 8
+    L_42E493:
+        mov ecx, dword ptr [esp + 0x40]
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x3c
+        ret 8
+    }
+}
