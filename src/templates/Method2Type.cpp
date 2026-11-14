@@ -1225,3 +1225,35 @@ extern "C" __declspec(naked) void __fastcall fn_0066CCD0(void* self) {
         ret 0x10
     }
 }
+
+// [0x00692380] ExprParser::Method2Type<ValuePtrArrayObject, int, ValuePtr const &, {public: void __thiscall ValuePtrArrayObject::setElement(int, ValuePtr const &), 0}>::vfunc_49 (64 bytes)
+extern "C" void ext_004ECA90();
+
+extern "C" __declspec(naked) void __fastcall fn_00692380(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x14]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 0x4]
+        push edx
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x8]
+        mov dword ptr [esp + 0xc], 0x0
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_004ECA90
+        mov esi, dword ptr [esp + 0xc]
+        push esi
+        call ext_00671F30
+        add esp, 0x4
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x10
+    }
+}
