@@ -32,5 +32,7 @@
     "0x0050CF5B",
     "0x0050CF60"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T05:18:18Z"
 }
