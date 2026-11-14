@@ -6947,3 +6947,26 @@ extern "C" __declspec(naked) void __fastcall fn_0047D970(void* self, int edx_unu
         ret     0x4
     }
 }
+
+// [0x004764C0] sub_004764C0 (107 bytes)
+extern "C" void ext_00475AE0();
+extern "C" void ext_00475B90();
+extern "C" void ext_00475C40();
+extern "C" void ext_00475CF0();
+extern "C" void ext_00475DA0();
+extern "C" void ext_00476430();
+extern "C" void ext_00644E90();
+extern "C" int mem_00A9F67C;
+extern "C" int mem_00A9F980;
+extern "C" int mem_00A9F84C;
+
+extern "C" void __cdecl fn_004764C0(void* arg) {
+    int local;
+    ((void (__thiscall*)(void*, int*, int))ext_00476430)(arg, &local, 0);
+    ((void (__thiscall*)(int*, int))ext_00475AE0)(&local, mem_00A9F67C);
+    ((void (__thiscall*)(int*, int))ext_00475B90)(&local, 0x0093be8c);
+    ((void (__thiscall*)(int*, int))ext_00475C40)(&local, mem_00A9F980);
+    ((void (__thiscall*)(int*, int))ext_00475CF0)(&local, 0x0093be74);
+    ((void (__thiscall*)(int*, int))ext_00475DA0)(&local, mem_00A9F84C);
+    ((void (__cdecl*)(void*))ext_00644E90)(arg);
+}
