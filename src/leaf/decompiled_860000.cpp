@@ -4338,3 +4338,949 @@ L_861A79:
         ret
     }
 }
+
+extern "C" void ext_008147F9();
+extern "C" void ext_0085D510();
+extern "C" void ext_0085D530();
+extern "C" void ext_0085D560();
+extern "C" void ext_0085F7B0();
+extern "C" void ext_008665E0();
+extern "C" void ext_008669D0();
+extern "C" void ext_00866E50();
+extern "C" void ext_00866F20();
+extern "C" void ext_00867390();
+extern "C" void ext_00867870();
+extern "C" void ext_00867CA0();
+extern "C" void ext_00867E30();
+extern "C" void ext_00868180();
+extern "C" void ext_008681F0();
+extern "C" void ext_00868510();
+extern "C" int mem_00AB9648;
+extern "C" int mem_00AB9634;
+extern "C" int mem_00AB9618;
+extern "C" int mem_00BC6400;
+extern "C" int mem_00BC6658;
+extern "C" int mem_00BC6404;
+extern "C" int mem_00BC673A;
+extern "C" int mem_00BC70F8;
+extern "C" int mem_00BC6402;
+extern "C" int mem_00AB9614;
+extern "C" int mem_00924210;
+extern "C" int mem_00BC6660;
+extern "C" int mem_00BC666C;
+extern "C" int mem_00AB9610;
+extern "C" int mem_00924248;
+extern "C" int mem_00BC70E0;
+extern "C" int mem_00BC70D8;
+extern "C" int mem_00BC70BC;
+extern "C" int mem_00BC70F4;
+extern "C" int mem_00BC6578;
+extern "C" int mem_00BC657C;
+extern "C" int mem_00BC6580;
+extern "C" int mem_00AB9860;
+
+// [0x008665E0] sub_008665E0 (2156 bytes)
+extern "C" __declspec(naked) void __fastcall fn_008665E0(void* self) {
+    __asm {
+loc_8665E0:
+    push ebx
+    xor eax, eax
+    push esi
+    push edi
+    mov esi, dword ptr [esp + 0x10]
+    push ebp
+    mov ax, word ptr [esi + 0x18]
+    cmp eax, 0x29
+    je short loc_86660F
+    cmp eax, 0x44
+    jl short loc_8665FD
+    cmp eax, 0x45
+    jle short loc_86660F
+loc_8665FD:
+    lea ebp, [esi + 0x42]
+    cmp word ptr [ebp], 0x0
+    jne short loc_86661A
+    mov word ptr [ebp], 0xffff
+    jmp short loc_86661A
+loc_86660F:
+    mov ax, word ptr [esi + 0x53]
+    lea ebp, [esi + 0x42]
+    mov word ptr [ebp], ax
+loc_86661A:
+    cmp word ptr [ebp], 0x2
+    jne short loc_866631
+    mov eax, 0x7
+    pop ebp
+    mov word ptr [esi + 0x1a], 0x7
+    pop edi
+    pop esi
+    pop ebx
+    ret
+loc_866631:
+    call ext_00868180
+    test eax, eax
+    jne short loc_86664A
+    mov eax, 0x8
+    pop ebp
+    mov word ptr [esi + 0x1a], 0x8
+    pop edi
+    pop esi
+    pop ebx
+    ret
+loc_86664A:
+    call ext_00867E30
+    test eax, eax
+    je short loc_866663
+    mov eax, 0x8
+    pop ebp
+    mov word ptr [esi + 0x1a], 0x8
+    pop edi
+    pop esi
+    pop ebx
+    ret
+loc_866663:
+    cmp dword ptr [mem_00AB9648], 0x0
+    je short loc_86667A
+    push esi
+    call ext_008147F9
+    add esp, 0x4
+    pop ebp
+    pop edi
+    pop esi
+    pop ebx
+    ret
+loc_86667A:
+    test byte ptr [esi + 0x4f], -0x80
+    mov word ptr [esi + 0x1a], 0x7
+    mov edi, 0x7
+    je short loc_866695
+    mov dword ptr [mem_00AB9634], 0x1
+loc_866695:
+    cmp dword ptr [mem_00AB9634], 0x0
+    jne short loc_8666BE
+    test byte ptr [ebp], 0x1
+    je short loc_8666BE
+    cmp word ptr [esi + 0x18], 0x9
+    jne short loc_8666BE
+    push esi
+    call ext_00867870
+    add esp, 0x4
+    mov edi, eax
+    test edi, edi
+    je near ptr loc_86689A
+loc_8666BE:
+    xor ebx, ebx
+    cmp dword ptr [mem_00AB9618], ebx
+    je near ptr loc_86676A
+    test byte ptr [ebp], 0x8
+    je near ptr loc_86676A
+    call ext_00866F20
+    cmp dword ptr [mem_00AB9618], ebx
+    je near ptr loc_86676A
+    push esi
+    xor edi, edi
+    call ext_00867390
+    mov di, word ptr [esi + 0x1a]
+    add esp, 0x4
+    test edi, edi
+    jne short loc_8666FF
+    mov ebx, 0x1
+loc_8666FF:
+    xor ecx, ecx
+    mov cx, word ptr [esi + 0x18]
+    dec ecx
+    cmp ecx, 0x32
+    ja short loc_86676A
+    xor eax, eax
+    mov al, byte ptr [ecx + 0x8668b0]
+    jmp dword ptr [eax*4 + 0x8668a0]
+    lea eax, [esi + 0xee]
+    push 0x10
+    push 0x0
+    push eax
+    call ext_0085D510
+    add esp, 0xc
+    push 0x10
+    push 0x0
+    push offset mem_00BC6400
+    call ext_0085D510
+    add esp, 0xc
+    mov word ptr [mem_00BC6400], 0x2
+    push 0xbc68d8
+    call dword ptr [mem_00BC6658]
+    mov dword ptr [mem_00BC6404], eax
+    mov ax, word ptr [mem_00BC673A]
+    push eax
+    call dword ptr [mem_00BC70F8]
+    mov word ptr [mem_00BC6402], ax
+loc_86676A:
+    cmp dword ptr [mem_00AB9614], 0x0
+    je near ptr loc_866898
+    test ebx, ebx
+    jne near ptr loc_866898
+    test byte ptr [ebp], 0x1
+    je near ptr loc_866898
+    xor eax, eax
+    mov ax, word ptr [esi + 0x18]
+    cmp eax, 0x9
+    jg short loc_8667B4
+    je near ptr loc_86687B
+    test eax, eax
+    je short loc_8667CD
+loc_86679E:
+    push esi
+    xor edi, edi
+    call ext_008681F0
+    mov di, word ptr [esi + 0x1a]
+    add esp, 0x4
+    mov eax, edi
+    pop ebp
+    pop edi
+    pop esi
+    pop ebx
+    ret
+loc_8667B4:
+    sub eax, 0x28
+    cmp eax, 0xd8
+    ja short loc_86679E
+    xor ecx, ecx
+    mov cl, byte ptr [eax + 0x8668f4]
+    jmp dword ptr [ecx*4 + 0x8668e4]
+loc_8667CD:
+    push 0x100
+    call ext_0085D560
+    add esp, 0x4
+    mov ebp, eax
+    push 0x100
+    push esi
+    push ebp
+    call ext_0085D530
+    add esp, 0xc
+    lea eax, [esi + 0xee]
+    lea ebx, [esi + 0xf2]
+    push 0x4
+    push 0x0
+    push eax
+    call ext_0085D510
+    add esp, 0xc
+    push 0x6
+    push 0xff
+    push ebx
+    call ext_0085D510
+    add esp, 0xc
+    push esi
+    call ext_008669D0
+    add esp, 0x4
+    mov edi, eax
+    test edi, edi
+    je short loc_866860
+    push 0x100
+    push ebp
+    push esi
+    call ext_0085D530
+    add esp, 0xc
+    lea eax, [esi + 0xee]
+    push 0x4
+    push 0x0
+    push eax
+    call ext_0085D510
+    add esp, 0xc
+    push 0x6
+    push 0xff
+    push ebx
+    call ext_0085D510
+    add esp, 0xc
+    push esi
+    call ext_008681F0
+    add esp, 0x4
+    mov edi, eax
+loc_866860:
+    push ebp
+    call dword ptr [mem_00924210]
+    test edi, edi
+    je short loc_866870
+    mov edi, 0x7
+loc_866870:
+    mov word ptr [esi + 0x1a], di
+    mov eax, edi
+    pop ebp
+    pop edi
+    pop esi
+    pop ebx
+    ret
+loc_86687B:
+    push esi
+    call ext_00867870
+    add esp, 0x4
+    mov edi, eax
+    cmp word ptr [esi + 0x38], 0x0
+    jne short loc_866898
+    push esi
+    call ext_00867CA0
+    add esp, 0x4
+    mov edi, eax
+loc_866898:
+    mov eax, edi
+loc_86689A:
+    pop ebp
+    pop edi
+    pop esi
+    pop ebx
+    ret
+    nop
+loc_8668A0:
+    _emit 0x1a
+    _emit 0x67
+    _emit 0x86
+    _emit 0x00
+    _emit 0x1a
+    _emit 0x67
+    _emit 0x86
+    _emit 0x00
+    _emit 0x1a
+    _emit 0x67
+    _emit 0x86
+    _emit 0x00
+    _emit 0x6a
+    _emit 0x67
+    _emit 0x86
+    _emit 0x00
+    _emit 0x00
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x01
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x02
+    _emit 0x02
+    _emit 0x90
+    _emit 0xcd
+    _emit 0x67
+    _emit 0x86
+    _emit 0x00
+    _emit 0xcd
+    _emit 0x67
+    _emit 0x86
+    _emit 0x00
+    _emit 0xcd
+    _emit 0x67
+    _emit 0x86
+    _emit 0x00
+    _emit 0x9e
+    _emit 0x67
+    _emit 0x86
+    _emit 0x00
+    _emit 0x00
+    _emit 0x00
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x01
+    _emit 0x01
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x03
+    _emit 0x02
+    _emit 0x8d
+    _emit 0x49
+    _emit 0x00
+loc_8669D0:
+    mov ecx, dword ptr [esp + 0x4]
+    sub esp, 0x850
+    mov ax, word ptr [ecx + 0x18]
+    push ebx
+    mov word ptr [esp + 0x6], ax
+    push esi
+    mov dword ptr [esp + 0x28], 0x10
+    mov word ptr [ecx + 0x1a], 0x8
+    push edi
+    push ebp
+    call ext_00867E30
+    test eax, eax
+    je short loc_866A0E
+    mov eax, 0x8
+    pop ebp
+    pop edi
+    pop esi
+    pop ebx
+    add esp, 0x850
+    ret
+loc_866A0E:
+    mov dword ptr [esp + 0x2c], 0x7
+    push 0x4
+    push 0x0
+    push 0xbc6662
+    call ext_0085D510
+    add esp, 0xc
+    push 0x6
+    push 0xff
+    push 0xbc6666
+    call ext_0085D510
+    mov word ptr [mem_00BC6660], 0x6
+    add esp, 0xc
+    mov word ptr [mem_00BC666C], 0x5204
+    push 0x604
+    call ext_0085D560
+    mov dword ptr [esp + 0x1c], eax
+    add esp, 0x4
+    test eax, eax
+    jne short loc_866A72
+    mov eax, 0x1
+    pop ebp
+    pop edi
+    pop esi
+    pop ebx
+    add esp, 0x850
+    ret
+loc_866A72:
+    mov esi, 0x4
+    push esi
+    mov dword ptr [mem_00AB9610], esi
+    call ext_0085D560
+    mov word ptr [eax], 0x100
+    mov dword ptr [esp + 0x24], eax
+    lea ecx, [esp + 0x148]
+    add esp, 0x4
+    mov word ptr [eax + 0x2], 0x4201
+    mov dword ptr [esp + 0x14], 0x0
+    push 0x71c
+    push 0x0
+    push ecx
+    call ext_0085D510
+    add esp, 0xc
+    call ext_00868510
+    mov dword ptr [esp + 0x34], esi
+loc_866ABD:
+    push 0x0
+    call dword ptr [mem_00924248]
+    mov eax, dword ptr [esp + 0x20]
+    push 0x10
+    push offset mem_00BC6660
+    mov ecx, dword ptr [mem_00BC70E0]
+    push 0x0
+    push 0x4
+    push eax
+    push ecx
+    call dword ptr [mem_00BC70D8]
+    mov dword ptr [esp + 0x40], 0x0
+    mov dword ptr [esp + 0x38], 0x0
+    mov dword ptr [esp + 0x3c], 0x61a80
+    mov eax, dword ptr [mem_00BC70E0]
+    lea ecx, [esp + 0x40]
+    mov dword ptr [esp + 0x44], eax
+    lea eax, [esp + 0x38]
+    inc dword ptr [esp + 0x40]
+    push eax
+    push 0x0
+    mov eax, dword ptr [mem_00BC70E0]
+    push 0x0
+    inc eax
+    push ecx
+    push eax
+    call dword ptr [mem_00BC70BC]
+loc_866B22:
+    lea eax, [esp + 0x30]
+    mov ecx, dword ptr [esp + 0x18]
+    push eax
+    mov edx, dword ptr [mem_00BC70E0]
+    push offset mem_00BC6578
+    push 0x0
+    push 0x5fa
+    push ecx
+    push edx
+    call dword ptr [mem_00BC70F4]
+    mov esi, eax
+    and eax, 0xffff0000
+    cmp eax, 0x1
+    sbb eax, eax
+    neg eax
+    mov dword ptr [esp + 0x1c], eax
+    test eax, eax
+    je short loc_866B7D
+    mov eax, dword ptr [esp + 0x18]
+    push 0x8
+    push 0xab95a0
+    add eax, 0x4
+    push eax
+    call ext_0085F7B0
+    add esp, 0xc
+    cmp eax, 0x1
+    sbb eax, eax
+    neg eax
+    mov dword ptr [esp + 0x1c], eax
+loc_866B7D:
+    cmp dword ptr [esp + 0x1c], 0x0
+    je near ptr loc_866C9E
+    sub esi, 0x2
+    sar esi, 0x6
+    test esi, esi
+    je near ptr loc_866C93
+    mov eax, dword ptr [esp + 0x14]
+    mov ecx, dword ptr [esp + 0x18]
+    shl eax, 0x3
+    sub eax, dword ptr [esp + 0x14]
+    lea edi, [esp + eax*2 + 0x144]
+    mov eax, esi
+    shl eax, 0x6
+    lea ebx, [eax + ecx + 0x34]
+loc_866BB5:
+    sub ebx, 0x40
+    dec esi
+    push 0xc
+    push ebx
+    push 0xbc657a
+    call ext_0085D530
+    lea eax, [esp + 0x150]
+    add esp, 0xc
+    mov byte ptr [ebx - 0x1], 0x0
+    mov dword ptr [esp + 0x28], 0x0
+    mov dword ptr [esp + 0x24], 0x0
+    cmp edi, eax
+    jbe short loc_866C4C
+    lea ebp, [esp + 0x146]
+loc_866BEF:
+    push 0x4
+    push 0xbc657a
+    push ebp
+    call ext_0085F7B0
+    add esp, 0xc
+    test eax, eax
+    jne short loc_866C31
+    push 0x6
+    lea eax, [ebp + 0x4]
+    push 0xbc657e
+    push eax
+    call ext_0085F7B0
+    add esp, 0xc
+    test eax, eax
+    jne short loc_866C31
+    push 0x2
+    lea eax, [ebp + 0xa]
+    push 0xbc6584
+    push eax
+    call ext_0085F7B0
+    add esp, 0xc
+    test eax, eax
+    je short loc_866C44
+loc_866C31:
+    add ebp, 0xe
+    mov eax, dword ptr [esp + 0x14]
+    inc dword ptr [esp + 0x24]
+    cmp eax, dword ptr [esp + 0x24]
+    jg short loc_866BEF
+    jmp short loc_866C4C
+loc_866C44:
+    mov dword ptr [esp + 0x28], 0x1
+loc_866C4C:
+    cmp dword ptr [esp + 0x28], 0x0
+    jne short loc_866C8B
+    mov eax, dword ptr [mem_00BC6578]
+    mov edx, dword ptr [mem_00BC657C]
+    mov ebp, dword ptr [mem_00BC6580]
+    mov ecx, offset mem_00BC6578
+    mov dword ptr [edi], eax
+    mov ax, word ptr [ecx + 0xc]
+    mov dword ptr [edi + 0x4], edx
+    lea ecx, [esp + 0x2f6]
+    mov dword ptr [edi + 0x8], ebp
+    mov word ptr [edi + 0xc], ax
+    cmp edi, ecx
+    jae short loc_866C8B
+    add edi, 0xe
+    inc dword ptr [esp + 0x14]
+loc_866C8B:
+    test esi, esi
+    jne near ptr loc_866BB5
+loc_866C93:
+    cmp dword ptr [esp + 0x1c], 0x0
+    jne near ptr loc_866B22
+loc_866C9E:
+    dec dword ptr [esp + 0x34]
+    jne near ptr loc_866ABD
+    call ext_00866E50
+    lea ebx, [esp + 0x150]
+loc_866CB4:
+    cmp word ptr [ebx], 0x0
+    je short loc_866CED
+    xor esi, esi
+    cmp dword ptr [mem_00AB9860], esi
+    jle short loc_866CED
+    mov ebp, 0xab9658
+    lea edi, [ebx - 0xa]
+loc_866CCC:
+    push 0x4
+    push ebp
+    push edi
+    call ext_0085F7B0
+    add esp, 0xc
+    test eax, eax
+    jne short loc_866CE1
+    mov word ptr [ebx], 0x0
+loc_866CE1:
+    add ebp, 0x4
+    inc esi
+    cmp dword ptr [mem_00AB9860], esi
+    jg short loc_866CCC
+loc_866CED:
+    add ebx, 0xe
+    lea eax, [esp + 0x310]
+    cmp ebx, eax
+    jb short loc_866CB4
+    mov eax, dword ptr [esp + 0x20]
+    mov esi, dword ptr [mem_00924210]
+    push eax
+    xor edi, edi
+    call esi
+    mov ecx, dword ptr [esp + 0x18]
+    push ecx
+    call esi
+    cmp dword ptr [esp + 0x14], edi
+    je near ptr loc_866E03
+    jle near ptr loc_866E38
+    lea esi, [esp + 0x150]
+    xor ebx, ebx
+loc_866D2A:
+    cmp word ptr [esi], bx
+    je near ptr loc_866DE9
+    push 0xa
+    lea eax, [esi - 0xa]
+    push eax
+    mov eax, dword ptr [esp + 0x86c]
+    add eax, 0xee
+    push eax
+    call ext_0085D530
+    mov ecx, dword ptr [esp + 0x870]
+    add esp, 0xc
+    xor eax, eax
+    mov ax, word ptr [ecx + 0x18]
+    cmp eax, 0x28
+    jg short loc_866D68
+    je short loc_866D97
+    test eax, eax
+    je short loc_866D88
+    jmp short loc_866D79
+loc_866D68:
+    cmp eax, 0x44
+    jl short loc_866D79
+    cmp eax, 0x45
+    jle short loc_866DA6
+    cmp eax, 0x100
+    je short loc_866DB5
+loc_866D79:
+    mov ecx, dword ptr [esp + 0x864]
+    mov word ptr [ecx + 0x1a], 0x4
+    jmp short loc_866DCB
+loc_866D88:
+    mov ecx, dword ptr [esp + 0x864]
+    mov word ptr [ecx + 0x18], 0x41
+    jmp short loc_866DC2
+loc_866D97:
+    mov ecx, dword ptr [esp + 0x864]
+    mov word ptr [ecx + 0x18], 0x46
+    jmp short loc_866DC2
+loc_866DA6:
+    mov ecx, dword ptr [esp + 0x864]
+    push ecx
+    call ext_008681F0
+    jmp short loc_866DC8
+loc_866DB5:
+    mov ecx, dword ptr [esp + 0x864]
+    mov word ptr [ecx + 0x18], 0x11f
+loc_866DC2:
+    push ecx
+    call ext_008665E0
+loc_866DC8:
+    add esp, 0x4
+loc_866DCB:
+    mov ax, word ptr [esp + 0x12]
+    mov ecx, dword ptr [esp + 0x864]
+    mov word ptr [ecx + 0x18], ax
+    cmp word ptr [ecx + 0x1a], bx
+    jne short loc_866DE9
+    cmp byte ptr [ecx + 0xfe], bl
+    jne short loc_866DF9
+loc_866DE9:
+    add esi, 0xe
+    inc edi
+    cmp dword ptr [esp + 0x14], edi
+    jg near ptr loc_866D2A
+    jmp short loc_866E38
+loc_866DF9:
+    mov dword ptr [esp + 0x2c], 0x0
+    jmp short loc_866E38
+loc_866E03:
+    mov eax, dword ptr [esp + 0x864]
+    push 0x4
+    push 0x0
+    add eax, 0xee
+    push eax
+    call ext_0085D510
+    mov eax, dword ptr [esp + 0x870]
+    add esp, 0xc
+    add eax, 0xf2
+    push 0x6
+    push 0xff
+    push eax
+    call ext_0085D510
+    add esp, 0xc
+loc_866E38:
+    call ext_00868510
+    mov eax, dword ptr [esp + 0x2c]
+    pop ebp
+    pop edi
+    pop esi
+    pop ebx
+    add esp, 0x850
+    ret
+
+    }
+}
