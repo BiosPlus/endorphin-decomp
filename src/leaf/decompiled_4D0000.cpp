@@ -3282,3 +3282,125 @@ L_4D460A:
         ret 0x8
     }
 }
+
+extern "C" void ext_005E12F0();
+extern "C" void ext_006426A0();
+extern "C" void ext_006426C0();
+extern "C" void ext_005C1310();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+
+// [0x004D9F50] sub_004D9F50 (261 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004D9F50(void* self) {
+    __asm {
+        sub esp, 0ch
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 4]
+        cmp esi, dword ptr [edi + 8]
+        mov dword ptr [esp + 10h], edi
+        jbe q_4d9f70
+        call ebp
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+q_4d9f70:
+        mov ebx, dword ptr [edi + 8]
+        cmp dword ptr [edi + 4], ebx
+        jbe q_4d9f7a
+        call ebp
+q_4d9f7a:
+        test edi, edi
+        je q_4d9f82
+        cmp edi, edi
+        je q_4d9f84
+q_4d9f82:
+        call ebp
+q_4d9f84:
+        cmp esi, ebx
+        je q_4d9fac
+        test edi, edi
+        jne q_4d9f8e
+        call ebp
+q_4d9f8e:
+        cmp esi, dword ptr [edi + 8]
+        jb q_4d9f95
+        call ebp
+q_4d9f95:
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je q_4d9fa0
+        call ext_005E12F0
+q_4d9fa0:
+        cmp esi, dword ptr [edi + 8]
+        jb q_4d9fa7
+        call ebp
+q_4d9fa7:
+        add esi, 4
+        jmp q_4d9f70
+q_4d9fac:
+        call ext_00594000
+        cmp byte ptr [edi + 1f8h], 0
+        mov esi, dword ptr [eax + 0f8h]
+        jne q_4d9fc7
+        mov ecx, esi
+        call ext_006426A0
+q_4d9fc7:
+        cmp byte ptr [edi + 1f9h], 0
+        jne q_4d9fd7
+        mov ecx, esi
+        call ext_006426C0
+q_4d9fd7:
+        mov esi, dword ptr [edi + 214h]
+        mov eax, dword ptr [esi + 59ch]
+        mov eax, dword ptr [eax]
+        add esi, 598h
+        mov edi, esi
+        mov ebp, eax
+        mov dword ptr [esp + 14h], edi
+        mov dword ptr [esp + 18h], ebp
+q_4d9ff7:
+        test edi, edi
+        mov ebx, dword ptr [esi + 4]
+        je q_4da002
+        cmp edi, esi
+        je q_4da008
+q_4da002:
+        call dword ptr [mem_00925134]
+q_4da008:
+        cmp ebp, ebx
+        je q_4da04d
+        test edi, edi
+        jne q_4da016
+        call dword ptr [mem_00925134]
+q_4da016:
+        cmp ebp, dword ptr [edi + 4]
+        jne q_4da021
+        call dword ptr [mem_00925134]
+q_4da021:
+        fld1
+        push ecx
+        mov ecx, dword ptr [esp + 14h]
+        fstp dword ptr [esp]
+        mov edx, dword ptr [ecx + 204h]
+        mov ecx, dword ptr [ebp + 28h]
+        push edx
+        call ext_005C1310
+        lea ecx, [esp + 14h]
+        call ext_00673C20
+        mov ebp, dword ptr [esp + 18h]
+        mov edi, dword ptr [esp + 14h]
+        jmp q_4d9ff7
+q_4da04d:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0ch
+        ret
+    }
+}
