@@ -309,3 +309,59 @@ extern "C" __declspec(naked) void* __fastcall fn_004D0BB0(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x004D2A20] NMData::TransitionEventData::vfunc_84 (119 bytes)
+extern "C" void ext_004D1F00();
+extern "C" void ext_004D27D0();
+extern "C" void ext_004D2930();
+
+extern "C" __declspec(naked) void __fastcall fn_004D2A20(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x17c], 0
+        je L_ret_esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp dword ptr [esi + 0x184], edi
+        je L_ret_edi
+        mov eax, dword ptr [esi + 0x15c]
+        cmp edi, eax
+        jne L_check_le
+        mov ecx, dword ptr [esi + 0x18c]
+        call ext_004D27D0
+        mov dword ptr [esi + 0x184], edi
+        pop edi
+        pop esi
+        ret 0x4
+
+    L_check_le:
+        jle L_le
+        cmp edi, dword ptr [esi + 0x160]
+        jge L_ge
+        mov ecx, dword ptr [esi + 0x18c]
+        call ext_004D1F00
+        mov dword ptr [esi + 0x184], edi
+        pop edi
+        pop esi
+        ret 0x4
+
+    L_le:
+        cmp edi, dword ptr [esi + 0x160]
+
+    L_ge:
+        jne L_store_exit
+        mov ecx, dword ptr [esi + 0x18c]
+        call ext_004D2930
+
+    L_store_exit:
+        mov dword ptr [esi + 0x184], edi
+
+    L_ret_edi:
+        pop edi
+
+    L_ret_esi:
+        pop esi
+        ret 0x4
+    }
+}
