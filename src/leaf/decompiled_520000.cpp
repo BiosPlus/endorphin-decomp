@@ -5736,3 +5736,37 @@ extern "C" void __fastcall fn_00528310(void* self, int edx_unused, int val, int 
     }
     ((void (__thiscall*)(void*, int*, void*, int, int*))ext_0059A140)(self, local_iter, self, ptr, &v);
 }
+
+// [0x0052F160] sub_0052F160 (89 bytes)
+extern "C" void ext_0053CAA0();
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void __fastcall fn_0052F160(void* self) {
+    __asm {
+        push -1
+        push 0x008A7A5B
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push 0x894
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp], eax
+        test eax, eax
+        mov dword ptr [esp + 0xc], 0
+        je null_path
+        mov ecx, eax
+        call ext_0053CAA0
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    null_path:
+        mov ecx, dword ptr [esp + 0x4]
+        xor eax, eax
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
