@@ -173,3 +173,121 @@ extern "C" __declspec(naked) void* __fastcall fn_0060E6C0(void* self, int edx_un
         ret     4
     }
 }
+
+// [0x006107B0] NMData::MetaBodySensorData::vfunc_59 (313 bytes)
+extern "C" void ext_0040C010();
+extern "C" void ext_00594000();
+extern "C" void ext_00594620();
+extern "C" void ext_005DF5C0();
+extern "C" void ext_005ED5D0();
+extern "C" void ext_006104E0();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FEC;
+extern "C" __declspec(naked) void __fastcall fn_006107B0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        sub esp, 0x1c
+        lea eax, [esi + 0x180]
+        mov ecx, esp
+        mov dword ptr [esp + 0x30], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        mov ebx, dword ptr [esp + 0x38]
+        add ebx, 0x598
+        mov ecx, ebx
+        call ext_005ED5D0
+        mov edi, eax
+        lea ebp, [esi + 0x19c]
+        mov ecx, ebp
+        mov dword ptr [esp + 0x14], edi
+        call dword ptr [mem_00924FEC]
+        test al, al
+        jne L_610843
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x2c], esp
+        push ebp
+        call dword ptr [mem_00924FE0]
+        mov ecx, ebx
+        call ext_005DF5C0
+        mov ebx, eax
+        test ebx, ebx
+        jne L_610845
+        push eax
+        call ext_00594000
+        mov ecx, eax
+        call ext_0040C010
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x2c], esp
+        push ebp
+        mov ebx, eax
+        call dword ptr [mem_00924FE0]
+        lea ecx, [ebx + 0x598]
+        call ext_005ED5D0
+        mov ebx, eax
+        jmp L_610845
+L_610843:
+        mov ebx, edi
+L_610845:
+        lea ebp, [esi + 0x1bc]
+        mov ecx, ebp
+        call dword ptr [mem_00924FEC]
+        test al, al
+        jne L_61086E
+        push ebp
+        call ext_00594000
+        mov ecx, eax
+        call ext_00594620
+        mov ecx, eax
+        test ecx, ecx
+        mov dword ptr [esp + 0x10], ecx
+        jne L_610876
+L_61086E:
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr [esp + 0x10], ecx
+L_610876:
+        mov ebp, dword ptr [esi + 0x1b8]
+        sub esp, 0x10
+        mov eax, esp
+        mov dword ptr [eax], edi
+        mov dword ptr [eax + 4], ebx
+        lea edx, [esi + 0x154]
+        mov dword ptr [eax + 8], ecx
+        push edx
+        mov dword ptr [eax + 0xc], ebp
+        call ext_006104E0
+        mov ecx, dword ptr [esp + 0x28]
+        mov edi, eax
+        mov edx, dword ptr [edi]
+        mov edx, dword ptr [edx + 0x68]
+        add esp, 4
+        mov eax, esp
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x20]
+        mov dword ptr [eax + 4], ebx
+        mov dword ptr [eax + 8], ecx
+        mov ecx, edi
+        mov dword ptr [eax + 0xc], ebp
+        call edx
+        fld dword ptr [esi + 0x174]
+        mov eax, dword ptr [esp + 0x20]
+        fstp qword ptr [edi + 0x18]
+        fld dword ptr [esi + 0x178]
+        fstp qword ptr [edi + 0x20]
+        mov dword ptr [esi + 0x1b8], eax
+        mov dword ptr [esi + 0x170], edi
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 8
+    }
+}
