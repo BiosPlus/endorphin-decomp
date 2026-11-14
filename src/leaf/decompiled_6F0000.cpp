@@ -1230,3 +1230,82 @@ extern "C" __declspec(naked) void __fastcall fn_006F6B50(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006FF7E0] sub_006FF7E0 (143 bytes)
+extern "C" int __cdecl ext_006FF760(const wchar_t* src, const wchar_t* delim);
+extern "C" void* __cdecl ext_006A5C62(unsigned int size);
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+extern "C" unsigned int (__cdecl *mem_00925334)(const wchar_t*);
+extern "C" wchar_t* (__cdecl *mem_0092515C)(wchar_t*, const wchar_t*);
+extern "C" wchar_t* (__cdecl *mem_00925158)(wchar_t*, const wchar_t*);
+
+extern "C" __declspec(naked) bool __cdecl fn_006FF7E0(wchar_t* dst, int index, const wchar_t* src, const wchar_t* delim) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebp
+        push esi
+        push edi
+        test eax, eax
+        je L_ret_false
+        mov ebp, dword ptr [esp + 0x14]
+        mov word ptr [eax], 0x0
+        test ebp, ebp
+        jl L_ret_false
+        mov esi, dword ptr [esp + 0x1c]
+        mov edi, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        call ext_006FF760
+        add esp, 0x8
+        cmp ebp, eax
+        jge L_ret_false
+        push ebx
+        push edi
+        call dword ptr [mem_00925334]
+        lea eax, [eax + eax + 0x2]
+        push eax
+        call ext_006A5C62
+        mov ebx, eax
+        push edi
+        push ebx
+        call dword ptr [mem_0092515C]
+        mov edi, dword ptr [mem_00925158]
+        push esi
+        push ebx
+        call edi
+        add esp, 0x18
+        test ebp, ebp
+        jle L_after_loop
+    L_loop:
+        push esi
+        push 0x0
+        call edi
+        add esp, 0x8
+        dec ebp
+        jne L_loop
+    L_after_loop:
+        test eax, eax
+        je L_free
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        push ecx
+        call dword ptr [mem_0092515C]
+        add esp, 0x8
+    L_free:
+        push ebx
+        call ext_006A5C5C
+        add esp, 0x4
+        xor al, al
+        pop ebx
+        pop edi
+        pop esi
+        pop ebp
+        ret
+    L_ret_false:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebp
+        ret
+    }
+}
