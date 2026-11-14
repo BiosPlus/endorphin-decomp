@@ -228,3 +228,41 @@ extern "C" __declspec(naked) void __fastcall fn_00584510(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_005557A0();
+
+// [0x00584610] AcclaimIO::vfunc_14 (75 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00584610(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 4]
+        push ebx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x46c]
+        mov eax, dword ptr [eax + 0x38]
+        lea ecx, [esi + 0x46c]
+        push edi
+        push edx
+        call eax
+        lea edi, [esi + 0x27c]
+        push edi
+        lea ebx, [esi + 0x6e8]
+        push ebx
+        mov ecx, esi
+        call ext_005557A0
+        mov edx, dword ptr [ebx]
+        mov eax, dword ptr [edx + 0x24]
+        mov esi, dword ptr [edi]
+        mov ecx, ebx
+        call eax
+        mov edx, dword ptr [esi + 0x5c]
+        push eax
+        mov ecx, edi
+        call edx
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret 4
+    }
+}
