@@ -534,3 +534,74 @@ extern "C" __declspec(naked) int __fastcall fn_005B64A0(void* self, int edx_unus
         ret 8
     }
 }
+
+// [0x005C00E0] NMData::MetaBodyData::vfunc_33 (178 bytes)
+extern "C" void ext_0050BE20();
+extern "C" void ext_005A0910();
+extern "C" void ext_005AE480();
+extern "C" void ext_0058A1A0();
+
+extern "C" __declspec(naked) void __fastcall fn_005C00E0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [edi + 0x158]
+        test ecx, ecx
+        je loc_005C00F6
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+loc_005C00F6:
+        lea ecx, [edi + 0x174]
+        mov dword ptr [edi + 0x158], 0
+        call ext_0050BE20
+        mov eax, dword ptr [edi + 0x160]
+        mov ecx, dword ptr [eax]
+        lea esi, [edi + 0x15c]
+        push eax
+        push esi
+        push ecx
+        push esi
+        mov ecx, esi
+        call ext_005A0910
+        mov eax, dword ptr [esi + 4]
+        mov ecx, dword ptr [eax + 4]
+        push ecx
+        mov ecx, esi
+        call ext_005AE480
+        mov eax, dword ptr [esi + 4]
+        mov dword ptr [eax + 4], eax
+        mov eax, dword ptr [esi + 4]
+        mov dword ptr [esi + 8], 0
+        mov dword ptr [eax], eax
+        mov esi, dword ptr [esi + 4]
+        mov dword ptr [esi + 8], esi
+        mov eax, dword ptr [edi + 0x16c]
+        mov ecx, dword ptr [eax]
+        lea esi, [edi + 0x168]
+        push eax
+        push esi
+        push ecx
+        push esi
+        mov ecx, esi
+        call ext_005A0910
+        mov edx, dword ptr [esi + 4]
+        mov eax, dword ptr [edx + 4]
+        push eax
+        mov ecx, esi
+        call ext_005AE480
+        mov eax, dword ptr [esi + 4]
+        mov dword ptr [eax + 4], eax
+        mov eax, dword ptr [esi + 4]
+        mov dword ptr [esi + 8], 0
+        mov dword ptr [eax], eax
+        mov esi, dword ptr [esi + 4]
+        mov ecx, edi
+        pop edi
+        mov dword ptr [esi + 8], esi
+        pop esi
+        jmp ext_0058A1A0
+    }
+}
