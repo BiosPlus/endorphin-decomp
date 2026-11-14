@@ -10710,3 +10710,176 @@ extern "C" __declspec(naked) void __fastcall fn_0041B300(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00458C00();
+
+// [0x0041BBF0] sub_0041BBF0 (516 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0041BBF0(void* self) {
+    __asm {
+        push -1
+        push 0x877340
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        push 0x34
+        xor ebx, ebx
+        push ebx
+        mov esi, ecx
+        push 0x208
+        mov dword ptr [esp + 0x1c], esi
+        call ext_006A6220
+        lea ebp, [esi + 0x88]
+        mov dword ptr [ebp], 0x92a224
+        lea edi, [esi + 0x8c]
+        mov ecx, edi
+        mov dword ptr [esp + 0x20], ebx
+        mov dword ptr [esi], 0x92d904
+        mov dword ptr [ebp], 0x92d8f4
+        call ext_006A5C6E
+        mov dword ptr [edi], 0x929e0c
+        lea edi, [esi + 0xe0]
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 1
+        call ext_006A5C6E
+        mov dword ptr [edi], 0x929e0c
+        lea edi, [esi + 0x134]
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 2
+        call ext_006A5C6E
+        mov dword ptr [edi], 0x929e0c
+        lea edi, [esi + 0x188]
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 3
+        call ext_006A5C6E
+        mov dword ptr [edi], 0x929e0c
+        mov dword ptr [esi + 0x1dc], ebx
+        mov dword ptr [esi + 0x1e0], ebx
+        mov dword ptr [esi + 0x1e4], ebx
+        mov dword ptr [esi + 0x1e8], ebx
+        push 0x58
+        mov byte ptr [esp + 0x24], 8
+        mov dword ptr [esi + 0x1ec], ebx
+        mov dword ptr [esi + 0x1f0], ebx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0x14], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x20], 9
+        je short L_null_1
+        push ebp
+        mov ecx, eax
+        call ext_00458C00
+        mov edi, eax
+        jmp short L_assign_1
+    L_null_1:
+        xor edi, edi
+    L_assign_1:
+        mov ecx, dword ptr [esi + 0x1dc]
+        cmp edi, ecx
+        mov byte ptr [esp + 0x20], 8
+        je short L_skip_dtor_1
+        cmp ecx, ebx
+        je short L_skip_dtor_1
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+    L_skip_dtor_1:
+        push 0x58
+        mov dword ptr [esi + 0x1dc], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0x14], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x20], 0xa
+        je short L_null_2
+        push ebp
+        mov ecx, eax
+        call ext_00458C00
+        mov edi, eax
+        jmp short L_assign_2
+    L_null_2:
+        xor edi, edi
+    L_assign_2:
+        mov ecx, dword ptr [esi + 0x1e0]
+        cmp edi, ecx
+        mov byte ptr [esp + 0x20], 8
+        je short L_skip_dtor_2
+        cmp ecx, ebx
+        je short L_skip_dtor_2
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+    L_skip_dtor_2:
+        push 0x58
+        mov dword ptr [esi + 0x1e0], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0x14], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x20], 0xb
+        je short L_null_3
+        push ebp
+        mov ecx, eax
+        call ext_00458C00
+        mov edi, eax
+        jmp short L_assign_3
+    L_null_3:
+        xor edi, edi
+    L_assign_3:
+        mov ecx, dword ptr [esi + 0x1e4]
+        cmp edi, ecx
+        mov byte ptr [esp + 0x20], 8
+        je short L_skip_dtor_3
+        cmp ecx, ebx
+        je short L_skip_dtor_3
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+    L_skip_dtor_3:
+        push 0x58
+        mov dword ptr [esi + 0x1e4], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0x14], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x20], 0xc
+        je short L_null_4
+        push ebp
+        mov ecx, eax
+        call ext_00458C00
+        mov edi, eax
+        jmp short L_assign_4
+    L_null_4:
+        xor edi, edi
+    L_assign_4:
+        mov ecx, dword ptr [esi + 0x1e8]
+        cmp edi, ecx
+        mov byte ptr [esp + 0x20], 8
+        je short L_skip_dtor_4
+        cmp ecx, ebx
+        je short L_skip_dtor_4
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+    L_skip_dtor_4:
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr [esi + 0x1e8], edi
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret
+    }
+}
