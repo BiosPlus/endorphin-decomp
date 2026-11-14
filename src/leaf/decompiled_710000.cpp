@@ -1083,3 +1083,112 @@ extern "C" void* __fastcall fn_00715E10(void* self, int edx_unused, const void* 
     d[0x74/4] = s[0x74/4];
     return self;
 }
+
+// [0x00713F70] sub_00713F70 (160 bytes)
+extern "C" void ext_006A6C87();
+extern "C" void ext_007131E0();
+extern "C" void ext_00713F70();
+extern "C" void ext_00713FB0();
+extern "C" void ext_00714060();
+extern "C" int mem_00AAC08C;
+
+extern "C" __declspec(naked) void* __fastcall fn_00713F70(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        call ext_007131E0
+        mov dword ptr [esi], 0x996140
+        mov ecx, dword ptr [mem_00AAC08C]
+        mov dword ptr [esi + 0x10], ecx
+        mov eax, esi
+        pop esi
+        ret 0x4
+
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        call ext_00713FB0
+        _emit 0xe9
+        _emit 0x16
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+    L_713fb0:
+        push 0xaac234
+        mov ecx, 0xb5f4e0
+        call fn_00713F70
+        ret
+
+    L_713fc0:
+        push 0x713fd0
+        call ext_006A6C87
+        pop ecx
+        ret
+
+        nop
+        nop
+        nop
+        nop
+
+    L_713fd0:
+        mov ecx, 0xb5f4e0
+        jmp ext_00714060
+
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+    L_713fe0:
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x3
+        ja L_714008
+        _emit 0xff
+        _emit 0x24
+        _emit 0x85
+        _emit 0x10
+        _emit 0x40
+        _emit 0x71
+        _emit 0x00
+
+    L_case0:
+        mov eax, 0xaac23c
+        ret 0x4
+
+    L_case1:
+        mov eax, 0xaa8c98
+        ret 0x4
+
+    L_case2:
+        mov eax, 0xaac238
+        ret 0x4
+
+    L_714008:
+        mov eax, 0xaac03c
+        ret 0x4
+    }
+}
