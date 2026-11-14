@@ -184,3 +184,96 @@ extern "C" __declspec(naked) void __fastcall fn_007AC2B0(void* self) {
         ret
     }
 }
+
+// [0x007AE7D0] sub_007AE7D0 (95 bytes)
+extern "C" void ext_006A6C87();
+extern "C" void ext_006E73B0();
+extern "C" void ext_007641C0();
+
+extern "C" __declspec(naked) void __fastcall fn_007AE7D0(void* self) {
+    __asm {
+        _emit 0xe8
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0xe9
+        _emit 0x26
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x6a
+        _emit 0x05
+        _emit 0x68
+        _emit 0xe0
+        _emit 0x0b
+        _emit 0xab
+        _emit 0x00
+        _emit 0xb9
+        _emit 0xb8
+        _emit 0x1b
+        _emit 0xb6
+        _emit 0x00
+        call ext_006E73B0
+        _emit 0xc3
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x68
+        _emit 0x10
+        _emit 0xe8
+        _emit 0x7a
+        _emit 0x00
+        call ext_006A6C87
+        _emit 0x59
+        _emit 0xc3
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x8a
+        _emit 0x0d
+        _emit 0x10
+        _emit 0x1c
+        _emit 0xb6
+        _emit 0x00
+        _emit 0xb0
+        _emit 0x01
+        _emit 0x84
+        _emit 0xc8
+        _emit 0x75
+        _emit 0x12
+        _emit 0x0a
+        _emit 0xc8
+        _emit 0x88
+        _emit 0x0d
+        _emit 0x10
+        _emit 0x1c
+        _emit 0xb6
+        _emit 0x00
+        _emit 0xb9
+        _emit 0xb8
+        _emit 0x1b
+        _emit 0xb6
+        _emit 0x00
+        jmp ext_007641C0
+        _emit 0xc3
+    }
+}
