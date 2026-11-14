@@ -2193,3 +2193,118 @@ extern "C" void __fastcall fn_004F9C70(void* self, void* edx_unused, void* a1, i
         ((void (__thiscall*)(void*, void*, int, int, void*, int))vtbl[9])((char*)a1 + 8, esi_val, a2, 0, ebx_val, 0);
     }
 }
+
+// [0x004F9D30] VMCSModes::DefaultImplementation::vfunc_100 (274 bytes)
+extern "C" void ext_005864C0();
+extern "C" void ext_00586930();
+extern "C" void ext_005869C0();
+extern "C" void ext_00594000();
+extern "C" int mem_00A3FFD8;
+
+extern "C" __declspec(naked) void __fastcall fn_004F9D30(void* self, int edx_unused, void* a1, int a2, int a3) {
+    __asm {
+        sub esp, 8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        test ebx, ebx
+        je L_epilog1
+        push esi
+        call ext_00594000
+        mov eax, dword ptr [eax + 0x26c]
+        test eax, eax
+        je L_zero_esi
+        lea esi, [eax + 0x8]
+        jmp L_have_esi
+    L_zero_esi:
+        xor esi, esi
+    L_have_esi:
+        mov eax, dword ptr [esp + 0x18]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        jne L_a2_nonzero
+        cmp edi, -1
+        jne L_a2_nonzero
+        push esi
+        mov ecx, ebx
+        call ext_005864C0
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret 0xc
+    L_a2_nonzero:
+        cmp eax, edi
+        jne L_ne
+        call ext_00594000
+        fld dword ptr [eax + 0x234]
+        fld1
+        lea eax, [esp + 0xc]
+        __asm _emit 0xDE __asm _emit 0xF1
+        push eax
+        fimul dword ptr [esp + 0x20]
+        fstp dword ptr [esp + 0x24]
+        fld qword ptr [mem_00A3FFD8]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esp + 0x24]
+        fld st(0)
+        fld dword ptr [esp + 0x20]
+        fld st(0)
+        __asm _emit 0xDE __asm _emit 0xEA
+        fxch st(1)
+        fstp dword ptr [esp + 0x10]
+        faddp st(1), st
+        jmp L_common
+    L_ne:
+        call ext_00594000
+        fld dword ptr [eax + 0x234]
+        test edi, edi
+        fstp dword ptr [esp + 0x18]
+        fld dword ptr [esp + 0x18]
+        fld1
+        __asm _emit 0xDE __asm _emit 0xF1
+        fild dword ptr [esp + 0x1c]
+        fmul st, st(1)
+        fstp dword ptr [esp + 0x18]
+        jge L_pos
+        push ecx
+        fstp st(0)
+        fld dword ptr [esp + 0x1c]
+        mov ecx, ebx
+        fstp dword ptr [esp]
+        push esi
+        call ext_005869C0
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret 0xc
+    L_pos:
+        fld qword ptr [mem_00A3FFD8]
+        lea ecx, [esp + 0xc]
+        fstp dword ptr [esp + 0x1c]
+        push ecx
+        fld dword ptr [esp + 0x1c]
+        fld dword ptr [esp + 0x20]
+        fld st(0)
+        __asm _emit 0xDE __asm _emit 0xEA
+        fxch st(1)
+        fstp dword ptr [esp + 0x10]
+        fild dword ptr [esp + 0x24]
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 0x20]
+        fadd dword ptr [esp + 0x20]
+    L_common:
+        push esi
+        fstp dword ptr [esp + 0x18]
+        mov ecx, ebx
+        call ext_00586930
+        pop edi
+        pop esi
+    L_epilog1:
+        pop ebx
+        add esp, 8
+        ret 0xc
+    }
+}
