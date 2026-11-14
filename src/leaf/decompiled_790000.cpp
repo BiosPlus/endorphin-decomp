@@ -1033,3 +1033,124 @@ extern "C" __declspec(naked) double __cdecl fn_00796B60(double x, int i, unsigne
         ret
     }
 }
+
+// [0x00792900] sub_00792900 (352 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_0078D850();
+extern "C" unsigned char mem_008C17D8;
+extern "C" unsigned char mem_00997388;
+extern "C" unsigned char mem_00792A60;
+
+extern "C" __declspec(naked) void __fastcall fn_00792900(void* self) {
+    __asm {
+        push -1
+        push offset mem_008C17D8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x8], esi
+        mov dword ptr [esi], offset mem_00997388
+        mov eax, dword ptr [esi + 0x278]
+        xor edi, edi
+        cmp eax, edi
+        mov dword ptr [esp + 0x14], edi
+        mov dword ptr [esi + 0x250], edi
+        mov dword ptr [esi + 0x268], edi
+        mov dword ptr [esi + 0x264], edi
+        mov dword ptr [esi + 0x254], edi
+        mov dword ptr [esi + 0x25c], edi
+        mov dword ptr [esi + 0x260], edi
+        je short L_skip1
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+L_skip1:
+        mov eax, dword ptr [esi + 0x27c]
+        mov dword ptr [esi + 0x278], edi
+        cmp eax, edi
+        je short L_skip2
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+L_skip2:
+        mov eax, dword ptr [esi + 0x258]
+        mov dword ptr [esi + 0x27c], edi
+        cmp eax, edi
+        je short L_skip3
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+L_skip3:
+        mov ecx, esi
+        mov dword ptr [esi + 0x258], edi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_0078D850
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+L_case_entry:
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x5
+        ja L_default
+        jmp dword ptr [eax*4 + mem_00792A60]
+L_c0:
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0x250], eax
+        xor eax, eax
+        mov dword ptr [ecx + 0x28], eax
+        mov dword ptr [ecx + 0x2c], eax
+        ret 0x8
+L_c1:
+        mov edx, dword ptr [esp + 0x8]
+        xor eax, eax
+        mov dword ptr [ecx + 0x264], edx
+        mov dword ptr [ecx + 0x5c], 0x1
+        mov dword ptr [ecx + 0x28], eax
+        mov dword ptr [ecx + 0x2c], eax
+        ret 0x8
+L_c2:
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0x5c], 0x1
+        mov dword ptr [ecx + 0x268], eax
+        xor eax, eax
+        mov dword ptr [ecx + 0x28], eax
+        mov dword ptr [ecx + 0x2c], eax
+        ret 0x8
+L_c3:
+        mov edx, dword ptr [esp + 0x8]
+        xor eax, eax
+        mov dword ptr [ecx + 0x25c], edx
+        mov dword ptr [ecx + 0x28], eax
+        mov dword ptr [ecx + 0x2c], eax
+        ret 0x8
+L_c4:
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0x260], eax
+        xor eax, eax
+        mov dword ptr [ecx + 0x28], eax
+        mov dword ptr [ecx + 0x2c], eax
+        ret 0x8
+L_c5:
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0x254], edx
+L_default:
+        xor eax, eax
+        mov dword ptr [ecx + 0x28], eax
+        mov dword ptr [ecx + 0x2c], eax
+        ret 0x8
+    }
+}
