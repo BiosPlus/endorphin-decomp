@@ -12404,3 +12404,80 @@ loc_00466EE5:
         ret 8
     }
 }
+
+// [0x00466F70] sub_00466F70 (179 bytes)
+// Stack-argument juggling (sub esp,1Ch + string temp) and the indirect ctor call
+// are not expressible cleanly in C++03, so use naked asm.
+extern "C" void* ext_00594000();
+extern "C" void ext_0047A6C0();
+extern "C" void ext_00466D30();
+extern "C" void ext_00466E50();
+extern "C" void ext_00465E00();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_00466F70(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi                                            // 56
+        push edi                                            // 57
+        mov esi, ecx                                        // 8b f1
+        call ext_00594000                                   // e8 87 d0 12 00
+        mov eax, dword ptr [eax + 26Ch]              // 8b 80 6c 02 00 00
+        push 0B59208h                                       // 68 08 92 b5 00
+        mov ecx, eax                                        // 8b c8
+        call ext_0047A6C0                                   // e8 35 37 01 00
+        mov edi, eax                                        // 8b f8
+        xor al, al                                          // 32 c0
+        cmp byte ptr [esp + 0Ch], al                        // 38 44 24 0c
+        mov byte ptr [edi + 73h], al                        // 88 47 73
+        mov byte ptr [edi + 74h], al                        // 88 47 74
+        je short L_else_466F70                              // 74 20
+        lea eax, [esi + 0BCh]                               // 8d 86 bc 00 00 00
+        push eax                                            // 50
+        push edi                                            // 57
+        mov ecx, esi                                        // 8b ce
+        call ext_00466D30                                   // e8 86 fd ff ff
+        lea ecx, [esi + 0A0h]                               // 8d 8e a0 00 00 00
+        push ecx                                            // 51
+        push edi                                            // 57
+        mov ecx, esi                                        // 8b ce
+        call ext_00466D30                                   // e8 77 fd ff ff
+        jmp short L_end_466F70                              // eb 3b
+L_else_466F70:
+        lea ecx, [esi + 0BCh]                               // 8d 8e bc 00 00 00
+        push ecx                                            // 51
+        push edi                                            // 57
+        mov ecx, esi                                        // 8b ce
+        call ext_00466E50                                   // e8 86 fe ff ff
+        lea edx, [esi + 0A0h]                               // 8d 96 a0 00 00 00
+        push edx                                            // 52
+        push edi                                            // 57
+        mov ecx, esi                                        // 8b ce
+        call ext_00466E50                                   // e8 77 fe ff ff
+        sub esp, 1Ch                                        // 83 ec 1c
+        lea eax, [esi + 84h]                                // 8d 86 84 00 00 00
+        mov ecx, esp                                        // 8b cc
+        mov dword ptr [esp + 28h], esp                      // 89 64 24 28
+        push eax                                            // 50
+        call dword ptr [mem_00924FE0]                       // ff 15 e0 4f 92 00
+        mov ecx, esi                                        // 8b ce
+        call ext_00465E00                                   // e8 0a ee ff ff
+L_end_466F70:
+        call ext_00594000                                   // e8 05 d0 12 00
+        add eax, 258h                                       // 05 58 02 00 00
+        mov eax, dword ptr [eax]                            // 8b 00
+        mov edx, dword ptr [eax]                            // 8b 10
+        mov ecx, eax                                        // 8b c8
+        mov eax, dword ptr [edx + 1D8h]                     // 8b 82 d8 01 00 00
+        call eax                                            // ff d0
+        mov esi, eax                                        // 8b f0
+        mov ecx, esi                                        // 8b ce
+        call ext_0065C640                                   // e8 29 56 1f 00
+        mov ecx, esi                                        // 8b ce
+        call ext_0065C650                                   // e8 32 56 1f 00
+        pop edi                                             // 5f
+        pop esi                                             // 5e
+        ret 4                                               // c2 04 00
+    }
+}
