@@ -8458,3 +8458,171 @@ extern "C" __declspec(naked) void __fastcall fn_00523630(void* self) {
         ret 0x2c
     }
 }
+
+// [0x00520910] sub_00520910 (410 bytes)
+extern "C" void ext_0051DDB0();
+extern "C" void ext_0051E6B0();
+extern "C" void ext_00520650();
+extern "C" void ext_00520910();
+extern "C" __declspec(naked) void __fastcall fn_00520910(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x154]
+        push edi
+        lea ebp, [esi + 0x120]
+        push ebp
+        lea eax, [ebx + 0xc4]
+        push eax
+        call ext_00520650
+        lea edi, [esi + 0x130]
+        push edi
+        add ebx, 0xd0
+        push ebx
+        mov ecx, esi
+        call ext_00520650
+        mov ebx, dword ptr [esi + 0x150]
+        test ebx, ebx
+        je short SKIP1
+        mov eax, dword ptr [ebp + 0x8]
+        cmp dword ptr [ebp + 0x4], eax
+        mov dword ptr [esp + 0x14], eax
+        jbe short P1
+        call dword ptr [mem_00925134]
+    P1:
+        mov eax, dword ptr [ebp + 0x4]
+        cmp eax, dword ptr [ebp + 0x8]
+        mov dword ptr [esp + 0x10], eax
+        jbe short P2
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x10]
+    P2:
+        mov ecx, dword ptr [esp + 0x14]
+        push ebx
+        push ecx
+        push ebp
+        push eax
+        lea edx, [esp + 0x24]
+        push ebp
+        push edx
+        call ext_0051E6B0
+        add esp, 0x18
+    SKIP1:
+        mov eax, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], eax
+        mov dword ptr [esp + 0x14], eax
+        jbe short P3
+        call dword ptr [mem_00925134]
+    P3:
+        mov ebx, dword ptr [edi + 0x4]
+        cmp ebx, dword ptr [edi + 0x8]
+        jbe short P4
+        call dword ptr [mem_00925134]
+    P4:
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        push eax
+        push edi
+        push ebx
+        lea ecx, [esp + 0x24]
+        push edi
+        push ecx
+        call ext_0051E6B0
+        mov ebx, dword ptr [esi + 0x148]
+        add esp, 0x18
+        cmp dword ptr [esi + 0x144], ebx
+        jbe short P5
+        call dword ptr [mem_00925134]
+    P5:
+        mov eax, dword ptr [esi + 0x144]
+        cmp eax, dword ptr [esi + 0x148]
+        mov dword ptr [esp + 0x14], eax
+        jbe short P6
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x14]
+    P6:
+        cmp eax, ebx
+        mov esi, eax
+        je short LOOP1_END
+        jmp short LOOP1
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    LOOP1:
+        mov ecx, esi
+        call ext_00520910
+        add esi, 0x168
+        cmp esi, ebx
+        jne short LOOP1
+    LOOP1_END:
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe short P7
+        call dword ptr [mem_00925134]
+        nop
+    P7:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe short P8
+        call dword ptr [mem_00925134]
+    P8:
+        cmp edi, edi
+        je short P9
+        call dword ptr [mem_00925134]
+    P9:
+        cmp esi, ebx
+        je short RET_PATH
+        cmp esi, dword ptr [edi + 0x8]
+        jb short P10
+        call dword ptr [mem_00925134]
+    P10:
+        mov ecx, esi
+        call ext_0051DDB0
+        cmp esi, dword ptr [edi + 0x8]
+        jb short P11
+        call dword ptr [mem_00925134]
+    P11:
+        add esi, 0xc0
+        jmp short P7
+    RET_PATH:
+        mov esi, dword ptr [ebp + 0x4]
+        cmp esi, dword ptr [ebp + 0x8]
+        mov ebx, dword ptr [mem_00925134]
+        jbe short Q1
+        call ebx
+    Q1:
+        mov edi, dword ptr [ebp + 0x8]
+        cmp dword ptr [ebp + 0x4], edi
+        jbe short Q2
+        call ebx
+    Q2:
+        cmp ebp, ebp
+        je short Q3
+        call ebx
+    Q3:
+        cmp esi, edi
+        je short EPILOGUE
+        cmp esi, dword ptr [ebp + 0x8]
+        jb short Q4
+        call ebx
+    Q4:
+        mov ecx, esi
+        call ext_0051DDB0
+        cmp esi, dword ptr [ebp + 0x8]
+        jb short Q5
+        call ebx
+    Q5:
+        add esi, 0xc0
+        jmp short Q1
+    EPILOGUE:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
