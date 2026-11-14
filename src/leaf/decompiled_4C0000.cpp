@@ -5267,3 +5267,68 @@ extern "C" void __fastcall fn_004CE8D0(void* self) {
     *(void**)self = 0;
     *(float*)((char*)self + 8) = 1.0f;
 }
+
+// [0x004CE950] sub_004CE950 (150 bytes)
+extern "C" void ext_00586A50();
+extern "C" void ext_005A1150();
+extern "C" void ext_005A13C0();
+extern "C" int mem_00B40640;
+extern "C" __declspec(naked) void __fastcall fn_004CE950(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je done
+        mov eax, dword ptr [mem_00B40640]
+        push eax
+        call ext_005A13C0
+        mov ecx, dword ptr [mem_00B40640]
+        mov edx, dword ptr [esi + 4]
+        push ecx
+        mov ecx, dword ptr [esi]
+        push edx
+        call ext_005A1150
+        cmp dword ptr [esi + 4], 4
+        jne else_branch
+        mov eax, dword ptr [esi]
+        fld dword ptr [esi + 8]
+        fstp dword ptr [eax + 0x604]
+        jmp after_branch
+else_branch:
+        fld1
+        mov ecx, dword ptr [esi]
+        fstp dword ptr [ecx + 0x604]
+after_branch:
+        cmp dword ptr [esi + 4], 0
+        mov ecx, dword ptr [esi]
+        sete dl
+        add ecx, 4
+        push edx
+        push 0x200000
+        call ext_00586A50
+        mov eax, dword ptr [esi + 4]
+        cmp eax, 2
+        je special
+        cmp eax, 4
+        je special
+        mov ecx, dword ptr [esi]
+        xor al, al
+        add ecx, 4
+        push eax
+        push 0x1000000
+        call ext_00586A50
+        pop esi
+        ret
+special:
+        mov ecx, dword ptr [esi]
+        mov eax, 1
+        push eax
+        push 0x1000000
+        add ecx, 4
+        call ext_00586A50
+done:
+        pop esi
+        ret
+    }
+}
