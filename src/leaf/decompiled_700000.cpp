@@ -1,4 +1,5 @@
 // Decompiled translation unit: src/leaf/decompiled_700000.cpp
+extern "C" const char* __fastcall ext_00706380(void* self);
 
 // [0x007057B0] sub_007057B0 (16 bytes)
 extern "C" void __stdcall ext_00783FD0(void* a1);
@@ -675,5 +676,89 @@ extern "C" __declspec(naked) void __fastcall fn_007005B0(void* self) {
         mov dword ptr fs:[0x0], ecx
         add esp, 0x10
         ret
+    }
+}
+
+// [0x00709BF0] sub_00709BF0 (160 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00709BF0(void* self, int /*edx*/, const char* name) {
+    __asm {
+        push    ebx
+        push    ebp
+        mov     ebp, ecx
+        push    esi
+        push    edi
+        xor     edi, edi
+        mov     eax, dword ptr [ebp + 0xe0]
+        test    eax, eax
+        jle     L_not_found
+        mov     ebx, dword ptr [esp + 0x14]
+    L_loop:
+        mov     eax, dword ptr [ebp + 0xf0]
+        mov     ecx, dword ptr [eax + 8*edi + 0x4]
+        lea     eax, [eax + 8*edi]
+        test    ecx, ecx
+        je      L_next
+        mov     ecx, dword ptr [ecx]
+        mov     edx, dword ptr [eax]
+        cmp     ecx, edx
+        jne     L_next
+        mov     ecx, dword ptr [eax + 0x4]
+        test    ecx, ecx
+        je      L_zero
+        mov     edx, dword ptr [ecx]
+        mov     esi, dword ptr [eax]
+        cmp     edx, esi
+        jne     L_zero
+        mov     ecx, dword ptr [ecx + 0x4]
+        jmp     L_call
+    L_zero:
+        xor     ecx, ecx
+    L_call:
+        mov     esi, ebx
+        call    ext_00706380
+    L_strcmp:
+        mov     dl, byte ptr [eax]
+        mov     cl, dl
+        cmp     dl, byte ptr [esi]
+        jne     L_strcmp_diff
+        test    cl, cl
+        je      L_strcmp_eq
+        mov     dl, byte ptr [eax + 0x1]
+        mov     cl, dl
+        cmp     dl, byte ptr [esi + 0x1]
+        jne     L_strcmp_diff
+        add     eax, 0x2
+        add     esi, 0x2
+        test    cl, cl
+        jne     L_strcmp
+    L_strcmp_eq:
+        xor     eax, eax
+        jmp     L_strcmp_end
+    L_strcmp_diff:
+        sbb     eax, eax
+        sbb     eax, -0x1
+    L_strcmp_end:
+        test    eax, eax
+        je      L_found
+    L_next:
+        mov     eax, dword ptr [ebp + 0xe0]
+        inc     edi
+        cmp     edi, eax
+        jl      L_loop
+    L_not_found:
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     eax, 0xb5eb80
+        pop     ebx
+        ret     0x4
+    L_found:
+        mov     eax, dword ptr [ebp + 0xf0]
+        lea     eax, [eax + 8*edi]
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret     0x4
     }
 }
