@@ -22,5 +22,7 @@
     "0x0065DC85",
     "0x0065DC96"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@medium",
+  "matched_at": "2026-11-14T12:10:59Z"
 }
