@@ -316,6 +316,46 @@ func WriteAll(array []byte) error {
 	return nil
 }
 
+// ReadOne reads a single unit's JSON file directly from disk.
+func ReadOne(va string) ([]byte, error) {
+	return os.ReadFile(Path(va))
+}
+
+// WriteOne canonicalizes a single unit JSON object, writes it atomically to Path(va),
+// and updates the in-memory snapshot if ReadAll/WriteAll has already populated it.
+func WriteOne(va string, objBytes []byte) error {
+	var obj map[string]json.RawMessage
+	if err := json.Unmarshal(objBytes, &obj); err != nil {
+		return err
+	}
+	normVA := NormVA(va)
+	if strings.TrimSpace(va) == "" {
+		var err error
+		normVA, err = vaKey(obj)
+		if err != nil {
+			return err
+		}
+	}
+	file, err := canonical(obj)
+	if err != nil {
+		return err
+	}
+	p := Path(normVA)
+	if err := os.MkdirAll(filepath.Dir(p), 0755); err != nil {
+		return err
+	}
+	if err := writeAtomic(p, file); err != nil {
+		return err
+	}
+	sum := digest(file)
+	snapMu.Lock()
+	if snapped {
+		snap[normVA] = sum
+	}
+	snapMu.Unlock()
+	return nil
+}
+
 // writeAtomic replaces a file via rename so a reader never sees a half-written unit.
 func writeAtomic(path string, data []byte) error {
 	tmp := path + ".tmp"
@@ -329,6 +369,46 @@ func writeAtomic(path string, data []byte) error {
 func HeadHasStore() bool {
 	out, err := exec.Command("git", "ls-tree", "-d", "--name-only", "HEAD", Dir).Output()
 	return err == nil && strings.TrimSpace(string(out)) == Dir
+}
+
+// DiffVAsFromGit returns the normalized VAs of unit files on disk that differ from ref
+// (modified, added, deleted, or untracked). ok is false when ref has no split store.
+func DiffVAsFromGit(ref string) ([]string, bool, error) {
+	lsOut, err := exec.Command("git", "ls-tree", "-d", "--name-only", ref, Dir).Output()
+	if err != nil || strings.TrimSpace(string(lsOut)) != Dir {
+		return nil, false, nil
+	}
+
+	seen := map[string]bool{}
+	collect := func(out []byte) {
+		for _, line := range strings.Split(string(out), "\n") {
+			line = strings.TrimSpace(line)
+			if !strings.HasSuffix(line, ".json") {
+				continue
+			}
+			va := NormVA(strings.TrimSuffix(filepath.Base(line), ".json"))
+			seen[va] = true
+		}
+	}
+
+	diffOut, err := exec.Command("git", "diff-index", "--name-only", ref, "--", Dir+"/").Output()
+	if err != nil {
+		return nil, true, err
+	}
+	collect(diffOut)
+
+	untrackedOut, err := exec.Command("git", "ls-files", "--others", "--exclude-standard", "--", Dir+"/").Output()
+	if err != nil {
+		return nil, true, err
+	}
+	collect(untrackedOut)
+
+	vas := make([]string, 0, len(seen))
+	for va := range seen {
+		vas = append(vas, va)
+	}
+	sort.Slice(vas, func(a, b int) bool { return vaSortKey(vas[a]) < vaSortKey(vas[b]) })
+	return vas, true, nil
 }
 
 // ReadAllFromGit returns the unit array as committed at rev. ok is false when rev has no split store.

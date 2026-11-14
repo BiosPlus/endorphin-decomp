@@ -10,28 +10,12 @@ import (
 	"path/filepath"
 	"regexp"
 	"sort"
-	"strconv"
 	"strings"
 	"time"
 
+	"endorphin_decomp/internal/decomp"
 	"endorphin_decomp/internal/unitstore"
 )
-
-type UnitEntry struct {
-	VA          string   `json:"va"`
-	Size        uint32   `json:"size"`
-	SHA256      string   `json:"sha256"`
-	Symbol      string   `json:"symbol"`
-	Callees     []string `json:"callees"`
-	NumCallees  int      `json:"num_callees"`
-	IsLeaf      bool     `json:"is_leaf"`
-	IsThunk     bool     `json:"is_thunk"`
-	Relocations []string `json:"relocations"`
-	Status      string   `json:"status"`
-	SkipReason  string   `json:"skip_reason,omitempty"`
-	MatchedBy   string   `json:"matched_by,omitempty"`
-	MatchedAt   string   `json:"matched_at,omitempty"`
-}
 
 const numTiers = 10
 
@@ -53,15 +37,6 @@ func (m ModelStats) sizeStats() (avg float64, median, largest uint32) {
 	return float64(m.MatchedBytes) / float64(len(sorted)), sorted[len(sorted)/2], sorted[len(sorted)-1]
 }
 
-type ClassEntry struct {
-	DemangledName  string   `json:"demangled_name"`
-	Namespace      string   `json:"namespace"`
-	IsMFCOrStd     bool     `json:"is_mfc_or_std"`
-	IsTemplate     bool     `json:"is_template"`
-	VTableVA       string   `json:"vtable_va"`
-	VirtualMethods []string `json:"virtual_methods"`
-}
-
 type TierStats struct {
 	Name         string
 	ShortName    string
@@ -77,7 +52,7 @@ type TierStats struct {
 
 // buildDecileTiers ranks in-scope functions by size (ties broken by VA) and splits them into
 // ten equal-count percentile tiers. It returns the tiers and a unit-index -> tier-index map.
-func buildDecileTiers(units []UnitEntry, mfcClasses map[string]bool) ([]*TierStats, map[int]int) {
+func buildDecileTiers(units []decomp.UnitEntry, mfcClasses map[string]bool) ([]*TierStats, map[int]int) {
 	type ref struct {
 		idx  int
 		size uint32
@@ -181,14 +156,21 @@ type MatchEvent struct {
 
 var gitMatchVARe = regexp.MustCompile(`(?i)\b0x[0-9a-f]{8}\b`)
 
-func extractGitMatchTimestamps() (map[string]string, string) {
-	byVA := make(map[string]string)
-	var latestCommitISO string
-	out, err := exec.Command("git", "log", "--reverse", "--pretty=format:%cI|%s").Output()
-	if err != nil {
+type gitTimestampCache struct {
+	HeadSHA   string            `json:"head_sha"`
+	LatestISO string            `json:"latest_iso"`
+	ByVA      map[string]string `json:"by_va"`
+}
+
+func applyGitMatchLog(out []byte, byVA map[string]string, latestCommitISO string) (map[string]string, string) {
+	if byVA == nil {
+		byVA = make(map[string]string)
+	}
+	trimmed := strings.TrimSpace(string(out))
+	if trimmed == "" {
 		return byVA, latestCommitISO
 	}
-	for _, line := range strings.Split(strings.TrimSpace(string(out)), "\n") {
+	for _, line := range strings.Split(trimmed, "\n") {
 		parts := strings.SplitN(line, "|", 2)
 		if len(parts) != 2 {
 			continue
@@ -213,6 +195,83 @@ func extractGitMatchTimestamps() (map[string]string, string) {
 	return byVA, latestCommitISO
 }
 
+func writeGitTimestampCache(path string, cache gitTimestampCache) {
+	dir := filepath.Dir(path)
+	if err := os.MkdirAll(dir, 0o755); err != nil {
+		return
+	}
+	data, err := json.Marshal(cache)
+	if err != nil {
+		return
+	}
+	tmp, err := os.CreateTemp(dir, "git_timestamps-*.json.tmp")
+	if err != nil {
+		return
+	}
+	tmpPath := tmp.Name()
+	if _, err := tmp.Write(data); err != nil {
+		tmp.Close()
+		os.Remove(tmpPath)
+		return
+	}
+	if err := tmp.Close(); err != nil {
+		os.Remove(tmpPath)
+		return
+	}
+	if err := os.Rename(tmpPath, path); err != nil {
+		os.Remove(tmpPath)
+	}
+}
+
+func extractGitMatchTimestamps() (map[string]string, string) {
+	cachePath := filepath.Join(".local", "cache", "git_timestamps.json")
+
+	headOut, headErr := exec.Command("git", "rev-parse", "HEAD").Output()
+	headSHA := strings.TrimSpace(string(headOut))
+
+	var cache gitTimestampCache
+	var cacheLoaded bool
+	if data, err := os.ReadFile(cachePath); err == nil {
+		if err := json.Unmarshal(data, &cache); err == nil && cache.HeadSHA != "" {
+			if cache.ByVA == nil {
+				cache.ByVA = make(map[string]string)
+			}
+			cacheLoaded = true
+		}
+	}
+
+	if headErr == nil && headSHA != "" && cacheLoaded {
+		if headSHA == cache.HeadSHA {
+			return cache.ByVA, cache.LatestISO
+		}
+		if mbOut, err := exec.Command("git", "merge-base", cache.HeadSHA, "HEAD").Output(); err == nil && strings.TrimSpace(string(mbOut)) == cache.HeadSHA {
+			if out, err := exec.Command("git", "log", "--reverse", "--pretty=format:%cI|%s", cache.HeadSHA+"..HEAD").Output(); err == nil {
+				byVA, latestISO := applyGitMatchLog(out, cache.ByVA, cache.LatestISO)
+				writeGitTimestampCache(cachePath, gitTimestampCache{
+					HeadSHA:   headSHA,
+					LatestISO: latestISO,
+					ByVA:      byVA,
+				})
+				return byVA, latestISO
+			}
+		}
+	}
+
+	out, err := exec.Command("git", "log", "--reverse", "--pretty=format:%cI|%s").Output()
+	if err != nil {
+		return make(map[string]string), ""
+	}
+	byVA, latestISO := applyGitMatchLog(out, nil, "")
+	if headErr == nil && headSHA != "" {
+		writeGitTimestampCache(cachePath, gitTimestampCache{
+			HeadSHA:   headSHA,
+			LatestISO: latestISO,
+			ByVA:      byVA,
+		})
+	}
+	return byVA, latestISO
+}
+
 func parseFlexibleTimestamp(s string) (time.Time, bool) {
 	s = strings.TrimSpace(s)
 	if s == "" {
@@ -227,35 +286,14 @@ func parseFlexibleTimestamp(s string) (time.Time, bool) {
 	return time.Time{}, false
 }
 
-func isOutOfScope(u UnitEntry, mfcClasses map[string]bool) (bool, string) {
-	if u.Status == "out_of_scope" {
-		if u.IsThunk {
-			return true, "thunk"
-		}
-		return true, "crt_mfc"
+func isOutOfScope(u decomp.UnitEntry, mfcClasses map[string]bool) (bool, string) {
+	if !decomp.IsOutOfScope(u.VA, u.Symbol, u.Status, u.IsThunk, mfcClasses) {
+		return false, ""
 	}
 	if u.IsThunk {
 		return true, "thunk"
 	}
-	va64, err := strconv.ParseUint(strings.TrimPrefix(u.VA, "0x"), 16, 32)
-	if err == nil {
-		va := uint32(va64)
-		// MSVC 2005 CRT startup/import thunk block and compiler-generated SEH (.text$x) / atexit (.text$y) block
-		if (va >= 0x006A5C5C && va <= 0x006A7943) || (va >= 0x008728F0 && va <= 0x009221CA) {
-			return true, "crt_mfc"
-		}
-	}
-	if idx := strings.LastIndex(u.Symbol, "::vfunc_"); idx != -1 {
-		clsName := u.Symbol[:idx]
-		if mfcClasses[clsName] {
-			return true, "crt_mfc"
-		}
-	}
-	return false, ""
-}
-
-func isCompleted(status string) bool {
-	return status == "decompiled" || status == "matched" || status == "solved"
+	return true, "crt_mfc"
 }
 
 // backfillMatchedByEffort normalizes legacy model names that were recorded before @<effort> suffixes were added:
@@ -1599,7 +1637,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error reading unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
-	var units []UnitEntry
+	var units []decomp.UnitEntry
 	if err := json.Unmarshal(unitsBytes, &units); err != nil {
 		fmt.Fprintf(os.Stderr, "Error parsing unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
@@ -1610,7 +1648,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error reading build/classes.json: %v\n", err)
 		os.Exit(1)
 	}
-	var classes []ClassEntry
+	var classes []decomp.ClassEntry
 	if err := json.Unmarshal(classesBytes, &classes); err != nil {
 		fmt.Fprintf(os.Stderr, "Error parsing build/classes.json: %v\n", err)
 		os.Exit(1)
@@ -1671,7 +1709,7 @@ func main() {
 		tier.TotalFuncs++
 		tier.TotalBytes += uint64(u.Size)
 
-		if isCompleted(u.Status) {
+		if decomp.IsCompleted(u.Status) {
 			if u.MatchedBy == "" {
 				u.MatchedBy = "script:auto_solve"
 				unitsUpdated = true

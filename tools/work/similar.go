@@ -5,6 +5,8 @@ package main
 // targets are wildcarded, and prints their C++ source as a hint.
 
 import (
+	"bufio"
+	"encoding/gob"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -37,10 +39,61 @@ type shapeFn struct {
 	grams map[string]bool
 }
 
+type cachedShape struct {
+	VA     uint32
+	Size   uint32
+	Symbol string
+	Ins    []string
+	Key    string
+	Grams  map[string]bool
+}
+
 type shapeHit struct {
 	fn    *shapeFn
 	score float64
 	exact bool
+}
+
+func similarIndexCachePath() string {
+	return filepath.Join(".local", "cache", "similar_index.gob")
+}
+
+func loadSimilarIndex() map[string]cachedShape {
+	idx := make(map[string]cachedShape)
+	f, err := os.Open(similarIndexCachePath())
+	if err != nil {
+		return idx
+	}
+	defer f.Close()
+	if err := gob.NewDecoder(bufio.NewReader(f)).Decode(&idx); err != nil {
+		return make(map[string]cachedShape)
+	}
+	return idx
+}
+
+func saveSimilarIndex(idx map[string]cachedShape) {
+	cachePath := similarIndexCachePath()
+	if err := os.MkdirAll(filepath.Dir(cachePath), 0o755); err != nil {
+		return
+	}
+	tmpPath := cachePath + ".tmp"
+	f, err := os.Create(tmpPath)
+	if err != nil {
+		return
+	}
+	bw := bufio.NewWriter(f)
+	err = gob.NewEncoder(bw).Encode(idx)
+	if err == nil {
+		err = bw.Flush()
+	}
+	if closeErr := f.Close(); err == nil {
+		err = closeErr
+	}
+	if err != nil {
+		_ = os.Remove(tmpPath)
+		return
+	}
+	_ = os.Rename(tmpPath, cachePath)
 }
 
 // loadShape reads the cached disassembly for a unit and returns its normalized
@@ -110,14 +163,44 @@ func findSimilarMatched(target UnitEntry, units []UnitEntry) []shapeHit {
 	if t == nil || len(t.ins) < 3 {
 		return nil
 	}
+	cache := loadSimilarIndex()
+	dirty := false
 	var solved []*shapeFn
 	for _, u := range units {
 		if u.Status != "matched" || u.VA == target.VA {
 			continue
 		}
+		if cs, ok := cache[u.VA]; ok {
+			if cs.Symbol != u.Symbol || cs.Size != u.Size {
+				cs.Symbol = u.Symbol
+				cs.Size = u.Size
+				cache[u.VA] = cs
+				dirty = true
+			}
+			solved = append(solved, &shapeFn{
+				unit:  u,
+				va:    cs.VA,
+				ins:   cs.Ins,
+				key:   cs.Key,
+				grams: cs.Grams,
+			})
+			continue
+		}
 		if f := loadShape(u); f != nil {
 			solved = append(solved, f)
+			cache[u.VA] = cachedShape{
+				VA:     f.va,
+				Size:   u.Size,
+				Symbol: u.Symbol,
+				Ins:    f.ins,
+				Key:    f.key,
+				Grams:  f.grams,
+			}
+			dirty = true
 		}
+	}
+	if dirty {
+		saveSimilarIndex(cache)
 	}
 	inv := map[string][]int{}
 	for i, f := range solved {
@@ -183,7 +266,7 @@ func findSimilarMatched(target UnitEntry, units []UnitEntry) []shapeHit {
 
 // extractUnitSource returns the source block that follows the // [VA] marker.
 func extractUnitSource(vaHex string) string {
-	cpp := findCppFileForVA(vaHex)
+	cpp := lookupCppForVA(vaHex)
 	if cpp == "" {
 		return ""
 	}

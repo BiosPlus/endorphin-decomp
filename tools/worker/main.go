@@ -7,83 +7,11 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
-	"strconv"
 	"strings"
 
+	"endorphin_decomp/internal/decomp"
 	"endorphin_decomp/internal/unitstore"
 )
-
-type UnitEntry struct {
-	VA          string   `json:"va"`
-	Size        uint32   `json:"size"`
-	SHA256      string   `json:"sha256"`
-	Symbol      string   `json:"symbol"`
-	Callees     []string `json:"callees"`
-	NumCallees  int      `json:"num_callees"`
-	IsLeaf      bool     `json:"is_leaf"`
-	IsThunk     bool     `json:"is_thunk"`
-	Relocations []string `json:"relocations"`
-	Status      string   `json:"status"`
-}
-
-type ClassEntry struct {
-	DemangledName  string   `json:"demangled_name"`
-	Namespace      string   `json:"namespace"`
-	ShortName      string   `json:"short_name"`
-	HeaderPath     string   `json:"header_path"`
-	IsTemplate     bool     `json:"is_template"`
-	IsMFCOrStd     bool     `json:"is_mfc_or_std"`
-	VTableVA       string   `json:"vtable_va"`
-	VirtualMethods []string `json:"virtual_methods"`
-}
-
-func isOutOfScope(u UnitEntry, mfcClasses map[string]bool) bool {
-	if u.Status == "out_of_scope" || u.IsThunk {
-		return true
-	}
-	va64, err := strconv.ParseUint(strings.TrimPrefix(u.VA, "0x"), 16, 32)
-	if err == nil {
-		va := uint32(va64)
-		if (va >= 0x006A5C5C && va <= 0x006A7943) || (va >= 0x008728F0 && va <= 0x009221CA) {
-			return true
-		}
-	}
-	if idx := strings.LastIndex(u.Symbol, "::vfunc_"); idx != -1 {
-		clsName := u.Symbol[:idx]
-		if mfcClasses[clsName] {
-			return true
-		}
-	}
-	return false
-}
-
-func isCompleted(status string) bool {
-	return status == "decompiled" || status == "matched" || status == "solved"
-}
-
-func isValidCodeUnit(va string) bool {
-	cachePath := filepath.Join(".local", "cache", "funcs", va+".txt")
-	b, err := os.ReadFile(cachePath)
-	if err != nil {
-		return true
-	}
-	lines := strings.Split(strings.TrimSpace(string(b)), "\n")
-	lastInst := ""
-	for _, l := range lines {
-		l = strings.TrimSpace(l)
-		if l == "" || strings.HasPrefix(l, "//") {
-			continue
-		}
-		if strings.Contains(l, "<unknown>") || strings.Contains(l, "\tretf") || strings.Contains(l, "\tinto") || strings.Contains(l, "\tin\t") || strings.Contains(l, "\tout\t") {
-			return false
-		}
-		lastInst = l
-	}
-	if lastInst == "" {
-		return false
-	}
-	return strings.Contains(lastInst, "\tret") || strings.Contains(lastInst, "\tjmp")
-}
 
 func main() {
 	subcmd := "next"
@@ -107,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error reading unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
-	var units []UnitEntry
+	var units []decomp.UnitEntry
 	if err := json.Unmarshal(unitsBytes, &units); err != nil {
 		fmt.Fprintf(os.Stderr, "Error parsing unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
@@ -118,13 +46,13 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error reading build/classes.json: %v\n", err)
 		os.Exit(1)
 	}
-	var classes []ClassEntry
+	var classes []decomp.ClassEntry
 	if err := json.Unmarshal(classesBytes, &classes); err != nil {
 		fmt.Fprintf(os.Stderr, "Error parsing build/classes.json: %v\n", err)
 		os.Exit(1)
 	}
 
-	classByName := make(map[string]*ClassEntry, len(classes))
+	classByName := make(map[string]*decomp.ClassEntry, len(classes))
 	mfcClasses := make(map[string]bool)
 	for i := range classes {
 		c := &classes[i]
@@ -134,12 +62,12 @@ func main() {
 		}
 	}
 
-	var candidates []UnitEntry
+	var candidates []decomp.UnitEntry
 	for _, u := range units {
-		if isOutOfScope(u, mfcClasses) || isCompleted(u.Status) || u.Status == "deferred" || u.Status == "skipped" {
+		if decomp.IsOutOfScope(u.VA, u.Symbol, u.Status, u.IsThunk, mfcClasses) || decomp.IsCompleted(u.Status) || u.Status == "deferred" || u.Status == "skipped" {
 			continue
 		}
-		if isValidCodeUnit(u.VA) {
+		if decomp.IsValidCodeUnit(u.VA) {
 			candidates = append(candidates, u)
 		}
 	}

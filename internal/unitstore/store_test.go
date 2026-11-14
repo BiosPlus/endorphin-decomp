@@ -190,3 +190,53 @@ func TestRejectsDuplicatesAndMissingVA(t *testing.T) {
 		t.Fatal("missing va must be rejected")
 	}
 }
+
+func TestReadOneAndWriteOne(t *testing.T) {
+	inTempRepo(t)
+
+	// ReadOne on missing unit returns an error.
+	if _, err := ReadOne("0x00401000"); err == nil {
+		t.Fatal("expected error reading missing unit")
+	}
+
+	// WriteOne creates shard dir and writes canonical JSON.
+	raw := `{"status":"matched","va":"0x401000","size":50,"symbol":"sub_00401000","extra_key":42}`
+	if err := WriteOne("0x401000", []byte(raw)); err != nil {
+		t.Fatalf("WriteOne failed: %v", err)
+	}
+	snapMu.Lock()
+	wasSnapped := snapped
+	snapMu.Unlock()
+	if wasSnapped {
+		t.Fatal("WriteOne without prior ReadAll/WriteAll should not set snapped=true")
+	}
+
+	got, err := ReadOne("0x00401000")
+	if err != nil {
+		t.Fatalf("ReadOne failed: %v", err)
+	}
+	if !strings.HasPrefix(string(got), "{\n  \"va\": \"0x401000\",\n  \"size\": 50,") ||
+		!strings.Contains(string(got), "\"extra_key\": 42") ||
+		!strings.HasSuffix(string(got), "}\n") {
+		t.Fatalf("unexpected canonical output from WriteOne:\n%s", got)
+	}
+
+	// When snapped is true, WriteOne updates snap[NormVA(va)].
+	if _, err := ReadAll(); err != nil {
+		t.Fatalf("ReadAll failed: %v", err)
+	}
+	updated := `{"va":"0x00401000","size":50,"symbol":"sub_00401000_renamed","status":"matched","extra_key":42}`
+	if err := WriteOne("401000", []byte(updated)); err != nil {
+		t.Fatalf("WriteOne update failed: %v", err)
+	}
+	got2, err := ReadOne("0x00401000")
+	if err != nil {
+		t.Fatalf("ReadOne after update failed: %v", err)
+	}
+	snapMu.Lock()
+	gotSnap, ok := snap["0x00401000"]
+	snapMu.Unlock()
+	if !ok || gotSnap != digest(got2) {
+		t.Fatalf("snap[0x00401000] was not updated by WriteOne")
+	}
+}

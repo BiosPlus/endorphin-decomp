@@ -9,11 +9,20 @@ WAVE_SIZE="${2:-5}"                     # Parallel functions per wave (1 dedicat
 PUSH_EVERY="${3:-5}"                    # Run git push every N waves
 AGENT_TIMEOUT="${AGENT_TIMEOUT:-360}"   # Per-function agent timeout in seconds (per effort attempt)
 AGENT_EFFORTS="${AGENT_EFFORTS:-${AGENT_EFFORT:-low medium}}" # Per-model effort cadence (low -> medium before next model)
+SKIP_MED_BELOW_PCT="${SKIP_MED_BELOW_PCT:-50}" # Skip medium effort on same model if low-effort best match % is below this
 COOLDOWN_BASE_SECS="${COOLDOWN_BASE_SECS:-180}" # Initial rate-limit cooldown (3m -> 9m -> 27m)
 PREFER_AGY_CLAUDE="${PREFER_AGY_CLAUDE:-0}"     # Set to 1 to prefer AGY for Sonnet/Opus before native claude CLI
 DEPS_FIRST="${DEPS_FIRST:-1}"                  # 1 = prefer functions whose callees are already matched
+RUN_AUTO_SOLVE="${RUN_AUTO_SOLVE:-1}"          # 1 = run auto_solve pre-pass before LLM waves
 RETRY_DEFERRED="${RETRY_DEFERRED:-0}"          # 1 = also queue previously deferred functions (skips models that already failed them)
 IGNORE_ATTEMPTS="${IGNORE_ATTEMPTS:-0}"        # 1 = ignore .local/grind_attempts.tsv history
+# 0 = defer `status -readme` until right before `git push` and session end (exports WORK_SKIP_README=1 for `work`
+# so per-match `work commit-pending` skips regenerating README.md); 1 = regenerate README.md on every match.
+STATUS_ON_MATCH="${STATUS_ON_MATCH:-0}"
+if [[ "$STATUS_ON_MATCH" == 0 ]]; then
+  export WORK_SKIP_README=1
+fi
+export WORK_ISOLATED="${WORK_ISOLATED:-1}"
 # Pipeline: tier 0 runs on EVERY function with WAVE_SIZE concurrent runners. A function moves up a tier only once every model in its tier has failed it.
 # Each model has its own concurrency cap (tier 0: WAVE_SIZE; later tiers: ESC_CAP unless overridden below).
 ESC_CAP="${ESC_CAP:-2}"
@@ -331,7 +340,22 @@ run_single_function_agent() {
   export DECOMP_EFFORT="$effort"
   export DECOMP_MODEL="${model_choice}@${effort}"
 
-  local prompt="Read CLAUDE.md. You are assigned a single function: ${addr}. Run './.local/bin/work claim ${addr}' and match ${addr} using './.local/bin/work check ${addr} --model ${DECOMP_MODEL}'. Use HEADER_PREVIEW and SUGGESTED_EXTERNS from the claim output; if SIMILAR_MATCHED is present, treat those solved neighbors as a hint for the C++ idiom (identical-shape ones usually differ only in constants, offsets and call targets). If PRIOR_ATTEMPTS is present, it lists facts about earlier failed checks on this function (where the output diverged, what the compiler emitted); use it to avoid dead ends, but do not assume the earlier approach was close, and never go looking for the earlier source. Iterate up to 10 tries (switch to __declspec(naked) __asm after 3-4 failed C++03 tries). Stop immediately as soon as ${addr} matches or after 10 tries. Do NOT run work next, do NOT call work skip, and do NOT touch any other function, HTML files, or build/units.json."
+  local briefing prompt
+  briefing="$("$WORK_BIN" claim "$addr" 2>/dev/null || true)"
+  if [[ -n "$briefing" ]]; then
+    prompt="You are assigned a single function: ${addr} (already claimed below).
+Rules:
+- C++03 only. Edit only TARGET_CPP (and include/ if needed). Keep // [VA] and fn_XXXXXXXX intact.
+- Use HEADER_PREVIEW and SUGGESTED_EXTERNS; if SIMILAR_MATCHED is present, treat solved neighbors as hints for the C++ idiom; if PRIOR_ATTEMPTS is present, use it to avoid dead ends (never search for earlier source).
+- Switch to __declspec(naked) __asm after 3-4 failed C++03 tries.
+- Verify with: ./.local/bin/work check ${addr} --model ${DECOMP_MODEL}
+- Max 10 tries; stop immediately as soon as ${addr} matches or after 10 tries.
+- Do NOT run work next, work claim, or work skip, and do NOT touch any other function, HTML files, or build/units.json.
+
+${briefing}"
+  else
+    prompt="Read CLAUDE.md. You are assigned a single function: ${addr}. Run './.local/bin/work claim ${addr}' and match ${addr} using './.local/bin/work check ${addr} --model ${DECOMP_MODEL}'. Use HEADER_PREVIEW and SUGGESTED_EXTERNS from the claim output; if SIMILAR_MATCHED is present, treat those solved neighbors as a hint for the C++ idiom (identical-shape ones usually differ only in constants, offsets and call targets). If PRIOR_ATTEMPTS is present, it lists facts about earlier failed checks on this function (where the output diverged, what the compiler emitted); use it to avoid dead ends, but do not assume the earlier approach was close, and never go looking for the earlier source. Iterate up to 10 tries (switch to __declspec(naked) __asm after 3-4 failed C++03 tries). Stop immediately as soon as ${addr} matches or after 10 tries. Do NOT run work next, do NOT call work skip, and do NOT touch any other function, HTML files, or build/units.json."
+  fi
 
   local exit_code=0
   if [[ "$backend" == "claude" ]]; then
@@ -425,11 +449,20 @@ stage_cap() {
 
 # ---- Attempt history: (addr, model) pairs that already failed, so later sessions skip them ----
 ATTEMPTS_FILE="${GRIND_ATTEMPTS_FILE:-$REPO_ROOT/.local/grind_attempts.tsv}"
+declare -A FAILED_ATTEMPTS=()
+if [[ "$IGNORE_ATTEMPTS" != 1 && -f "$ATTEMPTS_FILE" ]]; then
+  while IFS=$'\t' read -r _fa_addr _fa_tag || [[ -n "$_fa_addr" ]]; do
+    [[ -n "$_fa_addr" && -n "$_fa_tag" ]] && FAILED_ATTEMPTS["${_fa_addr}"$'\t'"${_fa_tag}"]=1
+  done < "$ATTEMPTS_FILE"
+fi
 already_failed() {
-  [[ "$IGNORE_ATTEMPTS" == 1 || ! -f "$ATTEMPTS_FILE" ]] && return 1
-  grep -qxF "$1$(printf '\t')$2" "$ATTEMPTS_FILE" 2>/dev/null
+  [[ "$IGNORE_ATTEMPTS" == 1 ]] && return 1
+  [[ -n "${FAILED_ATTEMPTS[$1$'\t'$2]:-}" ]]
 }
-record_failure() { printf '%s\t%s\n' "$1" "$2" >> "$ATTEMPTS_FILE" 2>/dev/null || true; }
+record_failure() {
+  FAILED_ATTEMPTS["$1"$'\t'"$2"]=1
+  printf '%s\t%s\n' "$1" "$2" >> "$ATTEMPTS_FILE" 2>/dev/null || true
+}
 
 # Append one line per finished function: time, addr, size, outcome, winning model, seconds taken
 RESULTS_LOG="${GRIND_RESULTS_LOG:-$REPO_ROOT/.local/grind_results.log}"
@@ -526,6 +559,14 @@ attempt_worker() {
         return 0
       fi
       record_failure "$addr" "$model_tag"
+      if [[ "$effort" == "low" ]]; then
+        local best_pct
+        best_pct="$(diag_best_pct "$addr")"
+        if awk -v b="$best_pct" -v t="$SKIP_MED_BELOW_PCT" 'BEGIN { exit !(b < t) }'; then
+          emit "[~] $addr: skipping medium on $model_choice (best match ${best_pct}% < ${SKIP_MED_BELOW_PCT}%)"
+          break 2
+        fi
+      fi
       break
     done
   done
@@ -542,7 +583,6 @@ declare -A FUNC_CPP_OF=()
 declare -A FN_START=()
 declare -A JOB_INFO=()        # pid -> "addr stage"
 declare -A INFLIGHT_ADDR=()   # addr -> 1 while the function is anywhere in the pipeline
-declare -A INFLIGHT_CPP=()    # cpp  -> 1 (never two functions on the same .cpp at once)
 declare -A SEEN_ADDR=()       # addrs pulled this session (never re-pulled)
 declare -A PENDING=()         # tier -> space-separated FIFO of addrs waiting for a model in that tier
 declare -A STAGE_RUNNING=()   # model index -> running attempts
@@ -575,7 +615,7 @@ refresh_candidates() {
   CANDIDATE_REFRESH_AT=$(( finished + WAVE_SIZE ))
 }
 
-# First cached candidate not already pulled / in flight (by address or by target .cpp). Sets NEXT_ADDR/NEXT_CPP.
+# First cached candidate not already pulled / in flight (by address). Sets NEXT_ADDR/NEXT_CPP.
 pick_next_candidate() {
   NEXT_ADDR=""; NEXT_CPP=""
   local pass item addr size cpp
@@ -586,7 +626,6 @@ pick_next_candidate() {
       IFS='|' read -r addr size cpp <<< "$item"
       [[ -n "${SEEN_ADDR[$addr]:-}" ]] && continue
       [[ -n "${INFLIGHT_ADDR[$addr]:-}" ]] && continue
-      [[ -n "${INFLIGHT_CPP[$cpp]:-}" ]] && continue
       NEXT_ADDR="$addr"; NEXT_CPP="$cpp"; FUNC_SIZES["$addr"]="$size"
       return 0
     done
@@ -629,7 +668,6 @@ escalation_backlog() {   # functions that are past tier 0 (pending or running)
 finish_function() {   # $1=addr $2=outcome(matched|deferred) $3=model
   local addr="$1" outcome="$2" model="$3"
   unset "INFLIGHT_ADDR[$addr]"
-  unset "INFLIGHT_CPP[${FUNC_CPP_OF[$addr]}]"
   ((finished++))
   if [[ "$outcome" == matched ]]; then ((matched_count++)); else ((deferred_count++)); fi
   log_result "$addr" "${FUNC_SIZES[$addr]:-?}" "$outcome" "$model" "${FN_START[$addr]:-$(date +%s)}"
@@ -640,6 +678,12 @@ finish_function() {   # $1=addr $2=outcome(matched|deferred) $3=model
       emit "[!] Push BLOCKED: committed sources fail byte verification (see $PREPUSH_LOG). Fix and push manually."
       return
     fi
+    if [[ "$STATUS_ON_MATCH" == 0 ]]; then
+      "$STATUS_BIN" -readme >/dev/null 2>&1 || true
+      if ! git diff --quiet -- README.md 2>/dev/null; then
+        git add README.md >/dev/null 2>&1 && git commit -m "Update README.md status" >/dev/null 2>&1 || true
+      fi
+    fi
     emit "[*] Pushing progress to GitHub (triggers Windows CI + HTML dashboard build)"
     if git push >/dev/null 2>&1; then emit "[*] Push ok"; else emit "[!] Push failed"; fi
   fi
@@ -649,23 +693,34 @@ finish_function() {   # $1=addr $2=outcome(matched|deferred) $3=model
 # collateral-damage edit that slipped into a commit never reaches CI. Uses HEAD blobs, not the
 # working tree, so in-flight worker edits can't cause false failures.
 PREPUSH_LOG="$REPO_ROOT/.local/prepush.log"
+VERIFIED_BLOBS_CACHE="$REPO_ROOT/.local/cache/verified_blobs.txt"
 verify_before_push() {
-  local upstream tmp f
-  local -a files=() paths=()
+  local upstream tmp f blob_sha
+  local -a files=() paths=() new_blobs=()
   upstream="$(git rev-parse -q --verify '@{u}' 2>/dev/null)" || { emit "[!] No upstream; skipping pre-push verify"; return 0; }
   mapfile -t files < <(git diff --name-only "$upstream" HEAD -- 'src/*.cpp')
   (( ${#files[@]} == 0 )) && return 0
+  mkdir -p "$(dirname "$VERIFIED_BLOBS_CACHE")"
+  touch "$VERIFIED_BLOBS_CACHE"
   tmp="$REPO_ROOT/.local/prepush"
   rm -rf "$tmp"
   for f in "${files[@]}"; do
-    git cat-file -e "HEAD:$f" 2>/dev/null || continue   # deleted file
+    blob_sha="$(git rev-parse -q --verify "HEAD:$f" 2>/dev/null)" || continue   # deleted file
+    if grep -qxF "$blob_sha" "$VERIFIED_BLOBS_CACHE"; then
+      continue
+    fi
     mkdir -p "$tmp/$(dirname "$f")"
-    git show "HEAD:$f" > "$tmp/$f"
+    git show "$blob_sha" > "$tmp/$f"
     paths+=(".local/prepush/$f")
+    new_blobs+=("$blob_sha")
   done
   (( ${#paths[@]} == 0 )) && return 0
   emit "[*] Pre-push verify: ${#paths[@]} changed .cpp file(s)"
-  "$BAM_BIN" -require-compiler "${paths[@]}" > "$PREPUSH_LOG" 2>&1
+  if "$BAM_BIN" -require-compiler "${paths[@]}" > "$PREPUSH_LOG" 2>&1; then
+    printf '%s\n' "${new_blobs[@]}" >> "$VERIFIED_BLOBS_CACHE"
+    return 0
+  fi
+  return 1
 }
 
 defer_function() {
@@ -675,12 +730,35 @@ defer_function() {
   finish_function "$addr" deferred "all-eligible-models"
 }
 
+diag_best_pct() {   # $1=addr -> prints best match % from .local/diag/<VA>.tsv (0 if none)
+  local addr="$1" va_upper diag_file
+  va_upper="${addr#0x}"
+  va_upper="${va_upper^^}"
+  diag_file="$REPO_ROOT/.local/diag/${va_upper}.tsv"
+  if [[ -s "$diag_file" ]]; then
+    awk -F'\t' 'NF>=2 && $2+0 > max { max = $2+0 } END { printf "%.1f", max+0 }' "$diag_file" 2>/dev/null || echo 0
+  else
+    echo 0
+  fi
+}
+
+enqueue_pending() {   # $1=tier $2=addr ; prepends near-matches (>=90%) so they finish first
+  local t="$1" addr="$2" bp
+  bp="$(diag_best_pct "$addr")"
+  if awk -v b="$bp" 'BEGIN { exit !(b >= 90) }'; then
+    PENDING[$t]="$addr ${PENDING[$t]}"
+  else
+    PENDING[$t]+="$addr "
+  fi
+}
+
 advance_function() {   # put a function into the first tier >= $2 that still has owed models, or defer it
   local addr="$1" t="$2" owed
   for (( ; t<NUM_TIERS; t++ )); do
     owed="$(owed_models "$addr" "$t")"
     if [[ -n "$owed" ]]; then
-      FN_TIER["$addr"]=$t; FN_OWED["$addr"]="$owed"; PENDING[$t]+="$addr "
+      FN_TIER["$addr"]=$t; FN_OWED["$addr"]="$owed"
+      enqueue_pending "$t" "$addr"
       emit "[~] $addr: tier $t owes attempts from: $owed"
       return
     fi
@@ -689,18 +767,26 @@ advance_function() {   # put a function into the first tier >= $2 that still has
 }
 
 # Launch waiting functions on owed models that have a free slot and a usable quota pool. Among those, take the least loaded
-# model so work spreads across pools. A function whose owed models are all busy or rate-limited just keeps waiting.
+# model so work spreads across pools, breaking ties by function size (<128B -> smaller/faster, >=256B -> stronger).
+# A function whose owed models are all busy or rate-limited just keeps waiting.
 dispatch_stages() {
-  local t addr m idx best score bestscore newq cap
+  local t addr m idx best score bestscore newq cap fsize tie
   for (( t=0; t<NUM_TIERS; t++ )); do
     newq=""
     for addr in ${PENDING[$t]}; do
       best=-1; bestscore=0
+      fsize="${FUNC_SIZES[$addr]:-0}"
       for m in ${FN_OWED[$addr]}; do
         idx=${MODEL_IDX[$m]}; cap="$(stage_cap "$idx")"
         (( STAGE_RUNNING[$idx] >= cap )) && continue
         [[ "$(resolve_backend_for_model "$m")" == none ]] && continue
         score=$(( STAGE_RUNNING[$idx] * 1000 / cap ))
+        if (( fsize >= 256 )); then
+          tie=$(( NUM_STAGES - idx ))
+        else
+          tie=$idx
+        fi
+        score=$(( score * 100 + tie ))
         if (( best < 0 || score < bestscore )); then best=$idx; bestscore=$score; fi
       done
       if (( best < 0 )); then newq+="$addr "; continue; fi
@@ -714,12 +800,13 @@ dispatch_stages() {
 }
 
 reap_finished() {
-  local pid addr s res win_model m rest
+  local pid addr s res win_model m rest _eff
   for pid in "${!JOB_INFO[@]}"; do
     if ! kill -0 "$pid" 2>/dev/null; then
       read -r addr s <<< "${JOB_INFO[$pid]}"      # s = model index
       unset 'JOB_INFO[$pid]'
       rm -f "$STATE_DIR/run.$addr"
+      unset "TOK_SIZE[$addr]" "TOK_VAL[$addr]" "TOK_LAST_TS[$addr]" "TOK_OFFSET[$addr]"
       ((STAGE_RUNNING[$s]--))
       res=failed; win_model=""
       [[ -f "$STATE_DIR/res.$addr" ]] && read -r res win_model < "$STATE_DIR/res.$addr"
@@ -729,12 +816,15 @@ reap_finished() {
         limited|unavailable)
           # Quota stopped the run, not the model: it stays owed, and the function waits for the pool to reset
           emit "[~] $addr: ${MODEL_CHAIN[$s]} $res; still owed, waiting"
-          PENDING[${FN_TIER[$addr]}]+="$addr " ;;
+          enqueue_pending "${FN_TIER[$addr]}" "$addr" ;;
         *)
+          for _eff in $AGENT_EFFORTS; do
+            FAILED_ATTEMPTS["$addr"$'\t'"${MODEL_CHAIN[$s]#*/}"@"$_eff"]=1
+          done
           rest=""
           for m in ${FN_OWED[$addr]}; do [[ "$m" != "${MODEL_CHAIN[$s]}" && "${m#*/}" != "${MODEL_CHAIN[$s]#*/}" ]] && rest+="$m "; done
           FN_OWED["$addr"]="${rest% }"
-          if [[ -n "$rest" ]]; then PENDING[${FN_TIER[$addr]}]+="$addr "
+          if [[ -n "$rest" ]]; then enqueue_pending "${FN_TIER[$addr]}" "$addr"
           else advance_function "$addr" $(( ${FN_TIER[$addr]} + 1 )); fi ;;
       esac
     fi
@@ -769,18 +859,28 @@ fmt_tok() {   # 1234 -> 1.2k, 1500000 -> 1.5M
 
 # Tokens an agent has used so far, read live from its claude stream-json log: input + cache-creation + output per message
 # (cache reads are excluded: they only count the same context being re-read each turn). Streamed events carry partial
-# output counts, so this slightly undercounts until the agent finishes. Cached by log size so jq only reruns when the log
-# has grown. Prints "-" when the log has no usage data (e.g. the agy backend).
-declare -A TOK_SIZE=() TOK_VAL=()
+# output counts, so this slightly undercounts until the agent finishes. Cached by log size and throttled to at most once
+# every 5 seconds per active addr so 1s render ticks don't fork jq repeatedly. Prints "-" when the log has no usage data.
+declare -A TOK_SIZE=() TOK_VAL=() TOK_LAST_TS=() TOK_OFFSET=()
 agent_tokens() {   # $1=addr $2=log file ; sets AGENT_TOK (not a subshell, so the cache persists)
-  local f="$2" sz
+  local f="$2" sz now off delta
   AGENT_TOK="-"; [[ -f "$f" ]] || return
   sz="$(stat -c %s "$f" 2>/dev/null || echo 0)"
-  if [[ "${TOK_SIZE[$1]:-}" != "$sz" ]]; then
-    TOK_SIZE[$1]="$sz"
-    TOK_VAL[$1]="$(jq -nR '[inputs | fromjson? | select(.type=="assistant") | .message] | group_by(.id)
-      | map((map(.usage.input_tokens // 0) | max) + (map(.usage.cache_creation_input_tokens // 0) | max) + (map(.usage.output_tokens // 0) | max))
-      | add // empty' "$f" 2>/dev/null)"
+  off="${TOK_OFFSET[$1]:-0}"
+  (( sz < off )) && { off=0; TOK_OFFSET[$1]=0; TOK_VAL[$1]=""; }
+  if (( sz > off )) && [[ "${TOK_SIZE[$1]:-}" != "$sz" ]]; then
+    printf -v now '%(%s)T' -1
+    if (( now - ${TOK_LAST_TS[$1]:-0} >= 5 )); then
+      TOK_SIZE[$1]="$sz"
+      TOK_LAST_TS[$1]="$now"
+      delta="$(tail -c +$((off + 1)) "$f" 2>/dev/null | head -c $((sz - off)) | jq -nR '[inputs | fromjson? | select(.type=="assistant") | .message] | group_by(.id)
+        | map((map(.usage.input_tokens // 0) | max) + (map(.usage.cache_creation_input_tokens // 0) | max) + (map(.usage.output_tokens // 0) | max))
+        | add // empty' 2>/dev/null)"
+      TOK_OFFSET[$1]="$sz"
+      if [[ -n "$delta" ]]; then
+        TOK_VAL[$1]=$(( ${TOK_VAL[$1]:-0} + delta ))
+      fi
+    fi
   fi
   AGENT_TOK="${TOK_VAL[$1]:--}"
 }
@@ -886,6 +986,13 @@ render() {
 echo "Cleaning stale stubs and scanning the function queue (can take ~20s)..."
 "$WORK_BIN" clean >/dev/null 2>&1 || true
 
+if [[ "$RUN_AUTO_SOLVE" == 1 ]]; then
+  echo "Running auto_solve pre-pass..."
+  if build_tool_if_needed "auto_solve"; then
+    "$REPO_ROOT/.local/bin/auto_solve" || true
+  fi
+fi
+
 SESSION_START="$(date +%s)"
 queue_exhausted=0
 ESC_BACKLOG_MAX=$(( ESC_BACKLOG_FACTOR * WAVE_SIZE ))
@@ -903,7 +1010,7 @@ while true; do
       break
     fi
     addr="$NEXT_ADDR"
-    SEEN_ADDR["$addr"]=1; INFLIGHT_ADDR["$addr"]=1; INFLIGHT_CPP["$NEXT_CPP"]=1
+    SEEN_ADDR["$addr"]=1; INFLIGHT_ADDR["$addr"]=1
     FUNC_CPP_OF["$addr"]="$NEXT_CPP"; FN_START["$addr"]="$(date +%s)"
     ((launched++))
     emit "[pull] #$launched/$TOTAL_JOBS $addr (${FUNC_SIZES[$addr]}B) -> $NEXT_CPP"
@@ -934,4 +1041,7 @@ done
 "$WORK_BIN" clean >/dev/null 2>&1 || true
 render
 echo "=== Parallel grind session finished (pulled=$launched matched=$matched_count deferred=$deferred_count) ==="
+if [[ "$STATUS_ON_MATCH" == 0 ]]; then
+  "$STATUS_BIN" -readme >/dev/null 2>&1 || true
+fi
 "$STATUS_BIN" || true

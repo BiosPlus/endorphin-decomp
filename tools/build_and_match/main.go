@@ -20,37 +20,9 @@ import (
 	"strings"
 	"sync"
 
+	"endorphin_decomp/internal/decomp"
 	"endorphin_decomp/internal/unitstore"
 )
-
-type TargetConfig struct {
-	BinaryName string `json:"binary_name"`
-	Version    string `json:"version"`
-	SHA256     string `json:"sha256"`
-	ImageBase  string `json:"image_base"`
-	Sections   map[string]struct {
-		VA          string `json:"va"`
-		RVA         string `json:"rva"`
-		VirtualSize uint32 `json:"virtual_size"`
-		RawSize     uint32 `json:"raw_size"`
-	} `json:"sections"`
-}
-
-type UnitEntry struct {
-	VA          string   `json:"va"`
-	Size        uint32   `json:"size"`
-	SHA256      string   `json:"sha256"`
-	Symbol      string   `json:"symbol"`
-	Callees     []string `json:"callees"`
-	NumCallees  int      `json:"num_callees"`
-	IsLeaf      bool     `json:"is_leaf"`
-	IsThunk     bool     `json:"is_thunk"`
-	Relocations []string `json:"relocations"`
-	Status      string   `json:"status"`
-	SkipReason  string   `json:"skip_reason,omitempty"`
-	MatchedBy   string   `json:"matched_by,omitempty"`
-	MatchedAt   string   `json:"matched_at,omitempty"`
-}
 
 type ObjFunc struct {
 	Name   string
@@ -113,19 +85,6 @@ func extractUnitVAsFromCpp(path string) ([]string, error) {
 	return vas, scanner.Err()
 }
 
-func findMSVCClExe() string {
-	candidates := []string{
-		filepath.Join(".local", "msvc8", "bin", "cl.exe"),
-		filepath.Join(".local", "msvc8", "VC", "bin", "cl.exe"),
-	}
-	for _, c := range candidates {
-		if _, err := os.Stat(c); err == nil {
-			return c
-		}
-	}
-	return ""
-}
-
 func compileAndExtractObjFunctions(cppPath string) (map[string]ObjFunc, error) {
 	tmpDir, err := os.MkdirTemp("", "endorphin_obj_*")
 	if err != nil {
@@ -134,41 +93,15 @@ func compileAndExtractObjFunctions(cppPath string) (map[string]ObjFunc, error) {
 	defer os.RemoveAll(tmpDir)
 
 	objPath := filepath.Join(tmpDir, "unit.obj")
-	clExe := findMSVCClExe()
-	var cmd *exec.Cmd
-	if runtime.GOOS == "windows" && clExe != "" {
-		absCl, _ := filepath.Abs(clExe)
-		absBin := filepath.Dir(absCl)
-		absMSVC := filepath.Dir(absBin)
-		cmd = exec.Command(absCl,
-			"/nologo", "/c", "/O2", "/Ob2", "/Oy", "/Gy", "/EHsc", "/GR", "/Gd", "/W0",
-			"/Iinclude",
-			"/Fo"+objPath,
-			cppPath,
-		)
-		var env []string
-		for _, kv := range os.Environ() {
-			k := strings.SplitN(kv, "=", 2)[0]
-			switch strings.ToUpper(k) {
-			case "PATH", "INCLUDE", "LIB":
-				continue
-			default:
-				env = append(env, kv)
-			}
-		}
-		env = append(env,
-			fmt.Sprintf("INCLUDE=%s\\include;%s\\atlmfc\\include;%s\\PlatformSDK\\Include", absMSVC, absMSVC, absMSVC),
-			fmt.Sprintf("LIB=%s\\lib;%s\\atlmfc\\lib;%s\\PlatformSDK\\Lib", absMSVC, absMSVC, absMSVC),
-			fmt.Sprintf("PATH=%s;%s", absBin, os.Getenv("PATH")),
-		)
-		cmd.Env = env
-	} else {
-		cmd = exec.Command("./tools/cl_wine.sh",
-			"/c", "/O2", "/Ob2", "/Oy", "/Gy", "/EHsc", "/GR", "/Gd", "/W0",
-			"/Iinclude",
-			"/Fo"+objPath,
-			cppPath,
-		)
+	clExe := decomp.FindMSVCClExe()
+	cmd, err := decomp.DirectWineClArgs(clExe, []string{
+		"/c", "/O2", "/Ob2", "/Oy", "/Gy", "/EHsc", "/GR", "/Gd", "/W0",
+		"/Iinclude",
+		"/Fo" + objPath,
+		cppPath,
+	})
+	if err != nil {
+		return nil, err
 	}
 	out, err := cmd.CombinedOutput()
 	if err != nil {
@@ -256,7 +189,7 @@ func loadTargetTextSection() ([]byte, uint32, error) {
 		return nil, 0, err
 	}
 	if cfgBytes, err := os.ReadFile("build/target.json"); err == nil {
-		var cfg TargetConfig
+		var cfg decomp.TargetConfig
 		if json.Unmarshal(cfgBytes, &cfg) == nil && cfg.SHA256 != "" {
 			sum := sha256.Sum256(rawExe)
 			actualHex := hex.EncodeToString(sum[:])
@@ -323,7 +256,7 @@ func findCompiledFuncForVA(objMap map[string]ObjFunc, vaHex string) (ObjFunc, bo
 	return ObjFunc{}, false
 }
 
-func compareMaskedBytes(compiled ObjFunc, targetBytes []byte, unit UnitEntry, startVA uint32) (bool, string) {
+func compareMaskedBytes(compiled ObjFunc, targetBytes []byte, unit decomp.UnitEntry, startVA uint32) (bool, string) {
 	// Trim trailing alignment padding (0xCC int3 or 0x90 nop) if compiled section was padded by COFF alignment
 	compBytes := append([]byte(nil), compiled.Bytes...)
 	for len(compBytes) > len(targetBytes) {
@@ -382,7 +315,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error reading unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
 	}
-	var units []UnitEntry
+	var units []decomp.UnitEntry
 	if err := json.Unmarshal(unitsBytes, &units); err != nil {
 		fmt.Fprintf(os.Stderr, "Error parsing unit ledger (build/units/): %v\n", err)
 		os.Exit(1)
@@ -399,7 +332,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	hasCompiler := findMSVCClExe() != ""
+	hasCompiler := decomp.FindMSVCClExe() != ""
 	if *requireCompiler && !hasCompiler {
 		fmt.Fprintf(os.Stderr, "Error: MSVC8 compiler (.local/msvc8/bin/cl.exe) not found\n")
 		os.Exit(1)
