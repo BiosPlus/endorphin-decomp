@@ -4943,3 +4943,38 @@ extern "C" void __cdecl fn_004BE6F0() {
     ext_004C3F40();
     ext_005FBF40();
 }
+
+// [0x004BF600] sub_004BF600 (75 bytes)
+extern "C" void ext_00602D50();
+extern "C" void ext_00609370();
+extern "C" void ext_00647980();
+extern "C" void ext_00504900();
+extern "C" void ext_00507CC0();
+extern "C" void ext_00511190();
+extern "C" void ext_0055C220();
+extern "C" void ext_00589B90();
+extern "C" void ext_00610390();
+extern "C" void ext_005F27C0();
+extern "C" void ext_005CE210();
+extern "C" void ext_0060E400();
+extern "C" void ext_0051DC40();
+extern "C" void ext_004BFBD0();
+extern "C" void ext_004BF570();
+
+extern "C" void __cdecl fn_004BF600() {
+    ext_00602D50();
+    ext_00609370();
+    ext_00647980();
+    ext_00504900();
+    ext_00507CC0();
+    ext_00511190();
+    ext_0055C220();
+    ext_00589B90();
+    ext_00610390();
+    ext_005F27C0();
+    ext_005CE210();
+    ext_0060E400();
+    ext_0051DC40();
+    ext_004BFBD0();
+    ext_004BF570();
+}
