@@ -659,3 +659,38 @@ L_END_007B23E0:
         ret
     }
 }
+
+// [0x007B22B0] sub_007B22B0 (96 bytes)
+extern "C" void ext_006D2160();
+extern "C" void ext_0079E900();
+extern "C" void ext_007B23E0();
+
+extern "C" __declspec(naked) void __fastcall fn_007B22B0(void* self) {
+    __asm {
+        push -1
+        push 0x008C1CCB
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x009994E4
+        push 0x007B2320
+        push esi
+        mov dword ptr [esp + 0x18], 0x0
+        call ext_0079E900
+        add esp, 0x8
+        mov ecx, esi
+        call ext_007B23E0
+        lea ecx, [esi + 0x8]
+        mov dword ptr [esp + 0x10], 0xFFFFFFFF
+        call ext_006D2160
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
