@@ -4613,3 +4613,35 @@ loc_5B5A22:
         ret
     }
 }
+
+// [0x005B5AF0] sub_005B5AF0 (92 bytes)
+extern "C" void ext_005B5780();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B43614;
+
+extern "C" __declspec(naked) void __fastcall fn_005B5AF0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8a36ee
+        push eax
+        mov eax, 0x1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00B43614], al
+        jne done_005B5AF0
+        or dword ptr [mem_00B43614], eax
+        push 0x0
+        mov ecx, 0xb435c8
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_005B5780
+        push 0x91dcf0
+        call ext_006A6C87
+        add esp, 0x4
+    done_005B5AF0:
+        mov ecx, dword ptr [esp]
+        mov eax, 0xb435c8
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
