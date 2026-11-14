@@ -7940,3 +7940,71 @@ extern "C" __declspec(naked) void __fastcall fn_00485C90(void* self) {
         ret 0xc
     }
 }
+
+// [0x00484F20] sub_00484F20 (131 bytes)
+extern "C" void ext_004817A0();
+extern "C" void ext_004836C0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00484F20(void* self, int edx_unused, void* val) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        mov edx, dword ptr [esi + 0x4]
+        test edx, edx
+        push edi
+        jne L_484f32
+        xor ecx, ecx
+        jmp L_484f3a
+    L_484f32:
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, edx
+        sar ecx, 0x4
+    L_484f3a:
+        test edx, edx
+        je L_484f7b
+        mov eax, dword ptr [esi + 0xc]
+        sub eax, edx
+        sar eax, 0x4
+        cmp ecx, eax
+        jae L_484f7b
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x14]
+        mov edi, dword ptr [esi + 0x8]
+        mov byte ptr [esp + 0x8], 0x0
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        push esi
+        push edx
+        push 0x1
+        push edi
+        call ext_004817A0
+        add esp, 0x18
+        add edi, 0x10
+        mov dword ptr [esi + 0x8], edi
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    L_484f7b:
+        mov edi, dword ptr [esi + 0x8]
+        cmp edx, edi
+        jbe L_484f88
+        call dword ptr [mem_00925134]
+    L_484f88:
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        push edi
+        push esi
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        call ext_004836C0
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    }
+}
