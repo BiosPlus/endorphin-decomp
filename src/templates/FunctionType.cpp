@@ -604,3 +604,52 @@ extern "C" __declspec(naked) void __fastcall fn_005B7320(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00692310] ExprParser::FunctionType<ValuePtrArrayObject, ValuePtr const &, int, {public: class ValuePtr const & __thiscall ValuePtrArrayObject::getElement(int), 0}>::vfunc_48 (109 bytes)
+extern "C" void ext_00692230();
+extern "C" __declspec(naked) void __fastcall fn_00692310(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x8]
+        mov dword ptr [esp + 0x8], 0x0
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_00692230
+        mov esi, eax
+        cmp dword ptr [esi + 0x4], 0x0
+        lea eax, [esp + 0x10]
+        je L_00692310_else
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push esi
+        push eax
+        call edx
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0xc
+    L_00692310_else:
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x10], 0x0
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
