@@ -450,3 +450,70 @@ extern "C" __declspec(naked) void __fastcall fn_004BB0E0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x004BB060] Properties::SetType<PointainerWithUndo<PointainerSet<NMData::MaterialInteraction>>, Properties::GetTerminalParent>::vfunc_10 (126 bytes)
+extern "C" void ext_004BA440();
+extern "C" void ext_006616B0();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004BB060(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov edi, dword ptr [eax]
+        mov ecx, esi
+        call ext_006616B0
+        test al, al
+        jne L_004BB060_vec
+        mov esi, dword ptr [esi + 0x4]
+        jmp L_004BB060_cast
+    L_004BB060_vec:
+        mov eax, dword ptr [edi + 0x4]
+        test eax, eax
+        je L_004BB060_done
+        mov esi, dword ptr [edi + 0x8]
+        mov ecx, esi
+        sub ecx, eax
+        sar ecx, 0x2
+        je L_004BB060_done
+        cmp eax, esi
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        jbe L_004BB060_c1
+        call ebx
+    L_004BB060_c1:
+        cmp esi, dword ptr [edi + 0x4]
+        ja L_004BB060_c2
+        call ebx
+    L_004BB060_c2:
+        add esi, -0x4
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_004BB060_c3
+        call ebx
+    L_004BB060_c3:
+        mov esi, dword ptr [esi]
+        pop ebx
+    L_004BB060_cast:
+        mov edx, dword ptr [esp + 0x18]
+        push 0x0
+        push 0xa393e8
+        push 0xa2e2d8
+        push 0x0
+        push edx
+        call ext_006A6E9E
+        add esp, 0x14
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        push eax
+        mov ecx, edi
+        call ext_004BA440
+    L_004BB060_done:
+        pop edi
+        pop esi
+        ret 0x10
+    }
+}
