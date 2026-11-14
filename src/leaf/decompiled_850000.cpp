@@ -854,3 +854,37 @@ extern "C" __declspec(naked) int __cdecl fn_0085D5F0(void) {
         ret
     }
 }
+
+// [0x0085BF70] sub_0085BF70 (64 bytes)
+extern "C" void* ext_00859DA0();
+extern "C" unsigned int ext_0085BC20(void*);
+extern "C" __declspec(naked) void* __cdecl fn_0085BF70(void* a1) {
+    __asm {
+        push esi
+        call ext_00859DA0
+        mov esi, eax
+        test esi, esi
+        je done
+        mov eax, dword ptr [esp + 8]
+        test byte ptr [eax + 0x14], 4
+        je skip_deref
+        mov eax, dword ptr [eax]
+    skip_deref:
+        mov ecx, dword ptr [eax + 0x18]
+        push eax
+        inc ecx
+        mov dword ptr [eax + 0x18], ecx
+        mov dword ptr [esi], eax
+        call ext_0085BC20
+        mov dword ptr [esi + 8], eax
+        mov eax, dword ptr [esi + 0x14]
+        add esp, 4
+        or al, 6
+        mov dword ptr [esi + 0x14], eax
+        mov dword ptr [esi + 0x10], 0
+    done:
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
