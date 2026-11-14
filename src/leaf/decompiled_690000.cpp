@@ -8436,3 +8436,56 @@ extern "C" __declspec(naked) void __fastcall fn_00692C40(void* self) {
         ret
     }
 }
+
+// [0x0069B790] sub_0069B790 (99 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_004A59A0();
+extern "C" __declspec(naked) void __fastcall fn_0069B790(void* self, int edx_unused, unsigned int n, const int* value) {
+    __asm {
+        push ebx
+        push esi
+        xor ebx, ebx
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp edi, ebx
+        mov esi, ecx
+        mov dword ptr [esi + 0x4], ebx
+        mov dword ptr [esi + 0x8], ebx
+        mov dword ptr [esi + 0xc], ebx
+        je L_end_0069B790
+        cmp edi, 0x3fffffff
+        jbe L_alloc_0069B790
+        call ext_00405FB0
+L_alloc_0069B790:
+        push ebx
+        push edi
+        call ext_004A59A0
+        lea ecx, [eax + 4*edi]
+        add esp, 0x8
+        cmp edi, ebx
+        mov dword ptr [esi + 0xc], ecx
+        mov dword ptr [esi + 0x4], eax
+        mov dword ptr [esi + 0x8], eax
+        mov ecx, edi
+        mov edx, eax
+        jbe L_fill_end_0069B790
+        mov ebx, dword ptr [esp + 0x14]
+        push ebp
+L_loop_0069B790:
+        mov ebp, dword ptr [ebx]
+        mov dword ptr [edx], ebp
+        sub ecx, 0x1
+        add edx, 0x4
+        test ecx, ecx
+        ja L_loop_0069B790
+        pop ebp
+L_fill_end_0069B790:
+        lea edx, [eax + 4*edi]
+        mov dword ptr [esi + 0x8], edx
+L_end_0069B790:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
