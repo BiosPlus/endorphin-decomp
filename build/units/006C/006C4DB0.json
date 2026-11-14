@@ -150,5 +150,7 @@
     "0x006C55CE",
     "0x006C55DB"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-14T14:15:27Z"
 }
