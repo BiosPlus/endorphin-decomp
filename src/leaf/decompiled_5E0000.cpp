@@ -6680,3 +6680,100 @@ extern "C" __declspec(naked) void __fastcall fn_005EB9E0(void* self, int edx_unu
         ret     8
     }
 }
+
+// [0x005ED470] sub_005ED470 (216 bytes)
+extern "C" void ext_005ECD40();
+extern "C" void ext_005ED2C0();
+
+extern "C" __declspec(naked) void __fastcall fn_005ED470(void* self, int edx_unused, void* arg) {
+    __asm {
+        sub     esp, 0x48
+        push    ebp
+        mov     ebp, dword ptr [esp + 0x50]
+        test    ebp, ebp
+        mov     dword ptr [esp + 0x4], ecx
+        je      L_ret
+        cmp     byte ptr [ebp + 0x8d], 0
+        push    ebx
+        push    esi
+        push    edi
+        je      L_loop
+        lea     esi, [ecx + 0x2ec]
+        lea     eax, [esp + 0x5c]
+        push    eax
+        lea     ecx, [esp + 0x14]
+        push    ecx
+        mov     ecx, esi
+        call    ext_005ED2C0
+        mov     edi, dword ptr [esp + 0x10]
+        test    edi, edi
+        mov     ebx, dword ptr [esi + 0x4]
+        je      L_inv1
+        cmp     edi, esi
+        je      L_skip_inv1
+    L_inv1:
+        call    dword ptr [mem_00925134]
+    L_skip_inv1:
+        mov     esi, dword ptr [esp + 0x14]
+        cmp     esi, ebx
+        je      L_done
+        test    edi, edi
+        jne     L_skip_inv2
+        call    dword ptr [mem_00925134]
+    L_skip_inv2:
+        cmp     esi, dword ptr [edi + 0x4]
+        jne     L_skip_inv3
+        call    dword ptr [mem_00925134]
+    L_skip_inv3:
+        add     esi, 0x10
+        mov     ecx, 0x10
+        lea     edi, [esp + 0x18]
+        lea     edx, [esp + 0x18]
+        rep     movsd
+        push    edx
+        mov     ecx, ebp
+        call    ext_005ECD40
+    L_done:
+        pop     edi
+        pop     esi
+        pop     ebx
+    L_ret:
+        pop     ebp
+        add     esp, 0x48
+        ret     0x4
+
+    L_loop:
+        mov     edi, dword ptr [ebp + 0x1d4]
+        cmp     edi, dword ptr [ebp + 0x1d8]
+        lea     esi, [ebp + 0x1d0]
+        mov     ebp, dword ptr [mem_00925134]
+        jbe     L_check_end
+        call    ebp
+    L_check_end:
+        mov     ebx, dword ptr [esi + 0x8]
+        cmp     dword ptr [esi + 0x4], ebx
+        jbe     L_check_self
+        call    ebp
+    L_check_self:
+        cmp     esi, esi
+        je      L_check_iter
+        call    ebp
+    L_check_iter:
+        cmp     edi, ebx
+        je      L_done
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      L_deref
+        call    ebp
+    L_deref:
+        mov     eax, dword ptr [edi]
+        mov     ecx, dword ptr [esp + 0x10]
+        push    eax
+        call    ext_005ED470
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      L_inc
+        call    ebp
+    L_inc:
+        add     edi, 0x4
+        jmp     L_check_end
+    }
+}
