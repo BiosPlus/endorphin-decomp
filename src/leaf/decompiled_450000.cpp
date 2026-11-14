@@ -8889,3 +8889,57 @@ extern "C" void __fastcall fn_00455AF0(void* self) {
     ext_004553D0(p);
     send_msg(*(void**)(p + 0x94), 0x445, 0, 1);
 }
+
+// [0x0045D1D0] sub_0045D1D0 (101 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0045D1D0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        test ebx, ebx
+        mov dword ptr [esp + 0x4], ecx
+        je L_end_0045D1D0
+        cmp byte ptr [ebx + 0x179], 0
+        jne L_end_0045D1D0
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        mov edi, 1
+        add ebx, 0x180
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+L_loop_0045D1D0:
+        mov esi, dword ptr [ebx]
+        test esi, esi
+        je L_next_0045D1D0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x78]
+        mov ecx, esi
+        call edx
+        test al, al
+        je L_next_0045D1D0
+        mov ecx, dword ptr [esp + 0x10]
+        push 0xffff0001
+        push ebp
+        push esi
+        call ext_0045CC30
+L_next_0045D1D0:
+        sub edi, 1
+        sub ebx, 4
+        test edi, edi
+        jge L_loop_0045D1D0
+        pop edi
+        pop esi
+        pop ebp
+L_end_0045D1D0:
+        pop ebx
+        pop ecx
+        ret 8
+    }
+}
