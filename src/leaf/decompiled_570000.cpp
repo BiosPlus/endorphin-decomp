@@ -13407,3 +13407,85 @@ extern "C" __declspec(naked) void __fastcall fn_00572B90(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00577390] sub_00577390 (229 bytes)
+extern "C" void ext_00480920();
+extern "C" void ext_00576870();
+extern "C" int mem_00925094;
+
+extern "C" __declspec(naked) void __fastcall fn_00577390(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        sub esp, 0x48
+        mov eax, dword ptr [esp + 0x50]
+        mov edx, dword ptr [esp + 0x58]
+        push ebx
+        mov ebx, dword ptr [esp + 0x50]
+        push ebp
+        mov ebp, ecx
+        movzx ecx, ax
+        mov ax, word ptr [ebp + 2*eax + 0x49c]
+        add ax, ax
+        add ax, ax
+        add ax, ax
+        push esi
+        mov dword ptr [esp + 0xc], ecx
+        add ax, 0x6
+        movzx ecx, ax
+        push edi
+        mov dword ptr [esp + 0x14], edx
+        push 0x2
+        lea edx, [esp + 0x6c]
+        mov dword ptr [esp + 0x6c], ecx
+        push edx
+        mov ecx, ebx
+        call dword ptr [mem_00925094]
+        push 0x2
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, ebx
+        call dword ptr [mem_00925094]
+        push 0x4
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, ebx
+        call dword ptr [mem_00925094]
+        fld1
+        fst dword ptr [esp + 0x18]
+        fldz
+        fst dword ptr [esp + 0x1c]
+        fst dword ptr [esp + 0x20]
+        fst dword ptr [esp + 0x24]
+        fst dword ptr [esp + 0x28]
+        fst dword ptr [esp + 0x30]
+        fst dword ptr [esp + 0x34]
+        fst dword ptr [esp + 0x38]
+        fst dword ptr [esp + 0x3c]
+        fst dword ptr [esp + 0x44]
+        fst dword ptr [esp + 0x48]
+        fst dword ptr [esp + 0x4c]
+        fstp dword ptr [esp + 0x50]
+        fst dword ptr [esp + 0x2c]
+        fst dword ptr [esp + 0x40]
+        fstp dword ptr [esp + 0x54]
+        call ext_00480920
+        mov edx, dword ptr [esp + 0x64]
+        mov eax, dword ptr [esp + 0x60]
+        sub esp, 0x40
+        mov edi, esp
+        mov dword ptr [esp + 0x9c], esp
+        push edx
+        mov ecx, 0x10
+        lea esi, [esp + 0x5c]
+        push eax
+        rep movsd
+        push ebx
+        mov ecx, ebp
+        call ext_00576870
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x48
+        ret 0x10
+    }
+}
