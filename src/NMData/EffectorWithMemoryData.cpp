@@ -198,3 +198,60 @@ extern "C" __declspec(naked) void __fastcall fn_0060C910(void* self, int, void* 
         ret 4
     }
 }
+
+// [0x0060BF00] NMData::EffectorWithMemoryData::vfunc_14 (116 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_0060BCF0();
+extern "C" void ext_00640110();
+extern "C" void ext_00640390();
+extern "C" void ext_00640AA0();
+extern "C" void ext_00640BC0();
+extern "C" int mem_00A9FA6C;
+extern "C" int mem_00A9F0BC;
+extern "C" int mem_00A9EFEC;
+extern "C" __declspec(naked) void __fastcall fn_0060BF00(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        push ebx
+        mov esi, ecx
+        call ext_0060BCF0
+        mov edi, eax
+        mov eax, dword ptr [mem_00A9FA6C]
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        push 0x9719d8
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0x14], eax
+        call ext_00427550
+        mov ecx, dword ptr [mem_00A9F0BC]
+        push 0x0
+        push ecx
+        mov ecx, edi
+        call ext_00640390
+        mov edx, dword ptr [esi + 0x60]
+        push edx
+        push eax
+        call ext_00640AA0
+        mov eax, dword ptr [mem_00A9EFEC]
+        add esp, 0x8
+        push 0x0
+        push eax
+        mov ecx, edi
+        call ext_00640390
+        fld dword ptr [esi + 0x5c]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00640BC0
+        add esp, 0x8
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        ret 0x4
+    }
+}
