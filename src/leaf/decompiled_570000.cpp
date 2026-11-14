@@ -13672,3 +13672,128 @@ extern "C" __declspec(naked) void __fastcall fn_005778A0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00572A90] sub_00572A90 (243 bytes)
+struct TreeIter_572A90 {
+    void* cont;
+    void* ptr;
+    TreeIter_572A90() {}
+    TreeIter_572A90(void* c, void* p) : cont(c), ptr(p) {}
+};
+struct TreePair_572A90 {
+    TreeIter_572A90 first;
+    bool second;
+};
+extern "C" void ext_00572890();
+extern "C" void ext_00666C00();
+extern "C" int mem_00924EF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00572A90(void* self) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        push esi
+        mov ebp, ecx
+        push edi
+        mov edi, dword ptr [ebp + 0x4]
+        mov esi, dword ptr [edi + 0x4]
+        cmp byte ptr [esi + 0x39], 0x0
+        mov al, 0x1
+        mov byte ptr [esp + 0x10], al
+        jne L_572ad5
+        nop
+    L_572ab0:
+        lea eax, [esi + 0xc]
+        push eax
+        push ebx
+        mov edi, esi
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        mov byte ptr [esp + 0x10], al
+        je L_572acc
+        mov esi, dword ptr [esi]
+        jmp L_572acf
+    L_572acc:
+        mov esi, dword ptr [esi + 0x8]
+    L_572acf:
+        cmp byte ptr [esi + 0x39], 0x0
+        je L_572ab0
+    L_572ad5:
+        test al, al
+        mov esi, edi
+        mov dword ptr [esp + 0x18], esi
+        mov dword ptr [esp + 0x14], ebp
+        je L_572b25
+        mov ecx, dword ptr [ebp + 0x4]
+        cmp edi, dword ptr [ecx]
+        jne L_572b18
+        push ebx
+        push edi
+        push 0x1
+        lea edx, [esp + 0x20]
+        push edx
+        mov ecx, ebp
+        call ext_00572890
+        pop edi
+        mov ecx, eax
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [ecx + 0x4]
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x4], ecx
+        mov byte ptr [eax + 0x8], 0x1
+        mov dword ptr [eax], edx
+        pop ebx
+        add esp, 0xc
+        ret 0x8
+    L_572b18:
+        lea ecx, [esp + 0x14]
+        call ext_00666C00
+        mov esi, dword ptr [esp + 0x18]
+    L_572b25:
+        lea edx, [esi + 0xc]
+        push ebx
+        push edx
+        call dword ptr [mem_00924EF4]
+        add esp, 0x8
+        test al, al
+        je L_572b68
+        mov eax, dword ptr [esp + 0x10]
+        push ebx
+        push edi
+        push eax
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, ebp
+        call ext_00572890
+        pop edi
+        mov ecx, eax
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [ecx + 0x4]
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x4], ecx
+        mov byte ptr [eax + 0x8], 0x1
+        mov dword ptr [eax], edx
+        pop ebx
+        add esp, 0xc
+        ret 0x8
+    L_572b68:
+        mov eax, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x14]
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        pop esi
+        pop ebp
+        mov byte ptr [eax + 0x8], 0x0
+        mov dword ptr [eax], edx
+        pop ebx
+        add esp, 0xc
+        ret 0x8
+    }
+}
