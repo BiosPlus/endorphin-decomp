@@ -320,3 +320,39 @@ extern "C" __declspec(naked) void __fastcall fn_004CE740(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_0047A7F0();
+extern "C" void ext_004CE950();
+extern "C" int mem_00AE29D0;
+
+struct Base0_004CEA40 { virtual void b0(); };
+struct Base4_004CEA40 {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual int v9();
+};
+struct Obj_004CEA40 : Base0_004CEA40, Base4_004CEA40 {};
+
+// [0x004CEA40] NMData::IncarnationEventData::vfunc_84 (116 bytes)
+extern "C" void __fastcall fn_004CEA40(void* self, int edx_unused, int arg0) {
+    char* s = (char*)self;
+    if (s[0x17c] == 0) {
+        return;
+    }
+    if (arg0 != *(int*)(s + 0x15c)) {
+        return;
+    }
+    if (s[0x188] != 0) {
+        return;
+    }
+    char* obj = *(char**)(s + 0x168);
+    if (*(int*)(obj + 0x5f4) == *(int*)(s + 0x180)) {
+        return;
+    }
+    ((void (__thiscall*)(void*))ext_004CE950)(*(void**)(s + 0x184));
+    if (*(int*)(s + 0x180) == 6) {
+        int res = (*(Obj_004CEA40**)(s + 0x168))->v9();
+        ((void (__thiscall*)(int, int, int))ext_0047A7F0)(mem_00AE29D0, arg0, res);
+    }
+    s[0x188] = 1;
+}
