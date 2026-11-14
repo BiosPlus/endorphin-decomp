@@ -605,3 +605,66 @@ loc_005C00F6:
         jmp ext_0058A1A0
     }
 }
+
+// [0x005B8D00] NMData::MetaBodyData::vfunc_34 (144 bytes)
+extern "C" void ext_00493E40();
+extern "C" void ext_00528B90();
+extern "C" void ext_005B5AF0();
+
+extern "C" __declspec(naked) void __fastcall fn_005B8D00(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x88d648
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        xor eax, eax
+        push edi
+        mov esi, ecx
+        mov dword ptr [esp + 0xc], eax
+        mov ebx, dword ptr [esi + 0x158]
+        lea ecx, [esi + 0x4]
+        push eax
+        mov dword ptr [esp + 0x1c], eax
+        cmp ebx, eax
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x2c]
+        lea edi, [esi + 0xc]
+        push edi
+        je short L_else
+        call edx
+        mov ecx, dword ptr [esp + 0x28]
+        push eax
+        add ebx, 0x24
+        push ebx
+        call ext_00493E40
+        mov esi, dword ptr [esi + 0x158]
+        add esi, 0x24
+        mov dword ptr [eax + 0x20], esi
+        jmp short L_join
+    L_else:
+        call edx
+        push eax
+        call ext_005B5AF0
+        mov ecx, dword ptr [esp + 0x2c]
+        push eax
+        call ext_00493E40
+    L_join:
+        mov ebx, eax
+        push ebx
+        mov ecx, edi
+        mov dword ptr [esp + 0x10], ebx
+        call ext_00528B90
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
