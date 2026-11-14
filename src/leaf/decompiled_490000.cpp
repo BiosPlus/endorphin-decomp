@@ -3,9 +3,12 @@
 #include <stdexcept>
 #include <stdlib.h>
 #include <vector>
+extern "C" void ext_0048FC70();
+extern "C" void ext_00490DC0();
+extern "C" int mem_00925134; /* "P{b" */
 
-// [0x00493E10] sub_00493E10 (20 bytes)
-// Tail-call thunk: stores the byte argument at self+8, forwards self->inner's vfunc[5] with the arg.
+extern "C" void ext_00490DC0();
+extern "C" int mem_00925134; /* "P{b" */
 extern "C" __declspec(naked) void __fastcall fn_00493E10(void* self) {
     __asm {
         mov eax, dword ptr [esp + 4]
@@ -11002,5 +11005,86 @@ L_call_helper:
         pop ebx
         add esp, 8
         ret 4
+    }
+}
+
+// [0x00491030] sub_00491030 (174 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00491030(void* self) {
+    __asm {
+        push    ecx
+        push    ebx
+        mov     ebx, ecx
+        mov     eax, dword ptr [ebx + 0x60]
+        test    eax, eax
+        je      L_491044
+        mov     eax, dword ptr [eax + 0x34]
+        mov     dword ptr [esp + 0x4], eax
+        jmp     L_49104c
+    L_491044:
+        mov     dword ptr [esp + 0x4], 0x0
+    L_49104c:
+        push    ebp
+        push    esi
+        lea     esi, [ebx + 0x18]
+        push    edi
+        mov     edi, dword ptr [esi + 0x4]
+        cmp     edi, dword ptr [esi + 0x8]
+        jbe     L_491060
+        call    dword ptr [mem_00925134]
+    L_491060:
+        mov     ebp, dword ptr [esi + 0x8]
+        cmp     dword ptr [esi + 0x4], ebp
+        jbe     L_49106e
+        call    dword ptr [mem_00925134]
+    L_49106e:
+        cmp     esi, esi
+        je      L_491078
+        call    dword ptr [mem_00925134]
+    L_491078:
+        cmp     edi, ebp
+        je      L_4910a3
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      L_491087
+        call    dword ptr [mem_00925134]
+    L_491087:
+        mov     ecx, dword ptr [esp + 0x10]
+        push    ecx
+        mov     ecx, edi
+        call    ext_00490DC0
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      L_49109e
+        call    dword ptr [mem_00925134]
+    L_49109e:
+        add     edi, 0x7c
+        jmp     L_491060
+    L_4910a3:
+        add     dword ptr [ebx + 0x44], 0x1
+        mov     eax, dword ptr [esp + 0x10]
+        test    eax, eax
+        mov     ecx, dword ptr [ebx + 0x44]
+        pop     edi
+        pop     esi
+        pop     ebp
+        je      L_4910c2
+        lea     edx, [eax + eax]
+        cmp     ecx, edx
+        jb      L_4910c2
+        add     dword ptr [ebx + 0x40], eax
+        mov     dword ptr [ebx + 0x44], eax
+    L_4910c2:
+        push    0x1
+        mov     ecx, ebx
+        call    ext_0048FC70
+        mov     ecx, dword ptr [ebx + 0x14]
+        test    ecx, ecx
+        pop     ebx
+        je      L_4910dc
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax + 0x4]
+        push    0x0
+        call    edx
+    L_4910dc:
+        pop     ecx
+        ret
     }
 }
