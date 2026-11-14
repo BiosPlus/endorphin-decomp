@@ -6578,3 +6578,105 @@ extern "C" __declspec(naked) void __fastcall fn_005EDA00(void* self) {
         ret
     }
 }
+
+// [0x005EB9E0] sub_005EB9E0 (214 bytes)
+extern "C" void ext_00647A70();
+
+extern "C" __declspec(naked) void __fastcall fn_005EB9E0(void* self, int edx_unused, void* arg1, void* arg2) {
+    __asm {
+        push    ebx
+        push    ebp
+        push    esi
+        mov     ebx, ecx
+        push    edi
+        push    ebx
+        call    ext_00647A70
+        mov     esi, eax
+        mov     eax, dword ptr [ebx + 0x234]
+        add     esp, 0x4
+        cmp     esi, eax
+        je      L_5eba0a
+        test    eax, eax
+        je      L_5eba0a
+        lea     ecx, [eax + 0x8]
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax]
+        push    1
+        call    edx
+
+    L_5eba0a:
+        mov     edx, dword ptr [esp + 0x18]
+        mov     ecx, esi
+        mov     dword ptr [ebx + 0x234], esi
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 0xc0]
+        push    edx
+        push    ebx
+        call    eax
+        mov     eax, dword ptr [esp + 0x14]
+        test    eax, eax
+        je      L_5eba3f
+        mov     ecx, dword ptr [ebx + 0x234]
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx + 0xa0]
+        push    eax
+        lea     eax, [ebx + 0x14]
+        push    eax
+        call    edx
+
+    L_5eba3f:
+        mov     edi, dword ptr [ebx + 0x1d4]
+        cmp     edi, dword ptr [ebx + 0x1d8]
+        lea     esi, [ebx + 0x1d0]
+        jbe     L_5eba60
+        call    dword ptr [mem_00925134]
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+
+    L_5eba60:
+        mov     ebp, dword ptr [esi + 0x8]
+        cmp     dword ptr [esi + 0x4], ebp
+        jbe     L_5eba6e
+        call    dword ptr [mem_00925134]
+
+    L_5eba6e:
+        cmp     esi, esi
+        je      L_5eba78
+        call    dword ptr [mem_00925134]
+
+    L_5eba78:
+        cmp     edi, ebp
+        je      L_5ebaa8
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      L_5eba87
+        call    dword ptr [mem_00925134]
+
+    L_5eba87:
+        mov     eax, dword ptr [esp + 0x18]
+        mov     ecx, dword ptr [esp + 0x14]
+        push    eax
+        push    ecx
+        mov     ecx, dword ptr [edi]
+        call    fn_005EB9E0
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      L_5ebaa3
+        call    dword ptr [mem_00925134]
+
+    L_5ebaa3:
+        add     edi, 4
+        jmp     L_5eba60
+
+    L_5ebaa8:
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     byte ptr [ebx + 0x17a], 0
+        pop     ebx
+        ret     8
+    }
+}
