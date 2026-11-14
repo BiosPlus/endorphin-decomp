@@ -7550,3 +7550,80 @@ DONE_EARLY:
         ret
     }
 }
+
+extern "C" void ext_004A8030();
+extern "C" void ext_00644F50();
+extern "C" void ext_00645350();
+
+// [0x004A8C60] sub_004A8C60 (151 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004A8C60(void* self, int edx_unused, int a1, int a2, float a3) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [ecx + 0x218]
+        test eax, eax
+        push edi
+        lea edi, [ecx + 0x214]
+        mov dword ptr [esp + 0x4], ecx
+        je LOC_4A8CF0
+        mov ecx, dword ptr [edi + 0x8]
+        sub ecx, eax
+        sar ecx, 2
+        je LOC_4A8CF0
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, eax
+        cmp esi, dword ptr [edi + 0x8]
+        jbe LOC_4A8C94
+        call ebp
+    LOC_4A8C94:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe LOC_4A8C9E
+        call ebp
+    LOC_4A8C9E:
+        cmp edi, edi
+        je LOC_4A8CA4
+        call ebp
+    LOC_4A8CA4:
+        cmp esi, ebx
+        je LOC_4A8CE4
+        cmp esi, dword ptr [edi + 0x8]
+        jb LOC_4A8CAF
+        call ebp
+    LOC_4A8CAF:
+        mov ecx, dword ptr [esi]
+        push 2
+        call ext_00644F50
+        cmp esi, dword ptr [edi + 0x8]
+        jb LOC_4A8CBF
+        call ebp
+    LOC_4A8CBF:
+        fld dword ptr [esp + 0x24]
+        mov edx, dword ptr [esp + 0x20]
+        mov eax, dword ptr [esp + 0x1c]
+        push ecx
+        mov ecx, dword ptr [esi]
+        fstp dword ptr [esp]
+        push edx
+        push eax
+        call ext_00645350
+        cmp esi, dword ptr [edi + 0x8]
+        jb LOC_4A8CDF
+        call ebp
+    LOC_4A8CDF:
+        add esi, 4
+        jmp LOC_4A8C94
+    LOC_4A8CE4:
+        mov ecx, dword ptr [esp + 0x10]
+        call ext_004A8030
+        pop esi
+        pop ebp
+        pop ebx
+    LOC_4A8CF0:
+        pop edi
+        add esp, 8
+        ret 0xc
+    }
+}
