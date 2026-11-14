@@ -12071,3 +12071,207 @@ L_AEE0_5:
         ret     0xc
     }
 }
+
+// [0x004118A0] sub_004118A0 (473 bytes)
+extern "C" void ext_00410D40();
+extern "C" void ext_00413350();
+extern "C" void ext_0043DC90();
+extern "C" void ext_0043F520();
+extern "C" void ext_0059A140();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_0087BA98;
+extern "C" int mem_00925134;
+extern "C" int mem_00925688;
+extern "C" int mem_0092568C;
+
+extern "C" __declspec(naked) void __fastcall fn_004118A0(void* self) {
+    __asm {
+        push    -0x1
+        push    offset mem_0087BA98
+        mov     eax, dword ptr fs:[0x0]
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x34
+        push    ebx
+        mov     ebx, dword ptr [esp + 0x48]
+        push    ebp
+        push    esi
+        push    edi
+        mov     esi, ecx
+        push    ebx
+        mov     dword ptr [esp + 0x24], esi
+        call    ext_00413350
+        xor     eax, eax
+        mov     dword ptr [esp + 0x38], eax
+        mov     dword ptr [esp + 0x3c], eax
+        mov     dword ptr [esp + 0x40], eax
+        mov     edi, dword ptr [mem_00925134]
+        lea     ebp, [esi + 0x4]
+        mov     esi, dword ptr [ebp + 0x4]
+        cmp     esi, dword ptr [ebp + 0x8]
+        mov     dword ptr [esp + 0x4c], eax
+        mov     dword ptr [esp + 0x54], ebp
+        jbe     L_4118f5
+        call    edi
+    L_4118f5:
+        mov     dword ptr [esp + 0x28], esi
+        lea     esi, [esi + 4*ebx]
+        mov     ebx, ebp
+        cmp     esi, dword ptr [ebx + 0x8]
+        ja      L_411908
+        cmp     esi, dword ptr [ebx + 0x4]
+        jae     L_41190a
+    L_411908:
+        call    edi
+    L_41190a:
+        mov     ebx, dword ptr [ebx + 0x8]
+        mov     eax, ebp
+        cmp     dword ptr [eax + 0x4], ebx
+        mov     dword ptr [esp + 0x1c], ebx
+        jbe     L_41191a
+        call    edi
+    L_41191a:
+        mov     dword ptr [esp + 0x24], ebp
+        mov     dword ptr [esp + 0x28], esi
+    L_411922:
+        test    ebp, ebp
+        je      L_41192c
+        cmp     ebp, dword ptr [esp + 0x54]
+        je      L_41192e
+    L_41192c:
+        call    edi
+    L_41192e:
+        cmp     esi, ebx
+        je      L_411a11
+        test    ebp, ebp
+        jne     L_41193c
+        call    edi
+    L_41193c:
+        cmp     esi, dword ptr [ebp + 0x8]
+        jb      L_411943
+        call    edi
+    L_411943:
+        mov     eax, dword ptr [esi]
+        mov     esi, dword ptr [eax + 0x18]
+        cmp     esi, dword ptr [eax + 0x1c]
+        lea     ebp, [eax + 0x14]
+        mov     dword ptr [esp + 0x10], ebp
+        jbe     L_411956
+        call    edi
+    L_411956:
+        mov     eax, dword ptr [ebp + 0x8]
+        cmp     dword ptr [ebp + 0x4], eax
+        mov     dword ptr [esp + 0x14], eax
+        jbe     L_411964
+        call    edi
+    L_411964:
+        mov     ebx, esi
+    L_411966:
+        test    ebp, ebp
+        je      L_411970
+        cmp     ebp, dword ptr [esp + 0x10]
+        je      L_411972
+    L_411970:
+        call    edi
+    L_411972:
+        cmp     ebx, dword ptr [esp + 0x14]
+        je      L_4119ec
+        test    ebp, ebp
+        jne     L_41197e
+        call    edi
+    L_41197e:
+        cmp     ebx, dword ptr [ebp + 0x8]
+        jb      L_411985
+        call    edi
+    L_411985:
+        mov     ecx, dword ptr [esp + 0x38]
+        test    ecx, ecx
+        mov     edx, dword ptr [ebx]
+        mov     dword ptr [esp + 0x18], edx
+        je      L_4119ba
+        mov     eax, dword ptr [esp + 0x3c]
+        sub     eax, ecx
+        mov     ecx, dword ptr [esp + 0x40]
+        sub     ecx, dword ptr [esp + 0x38]
+        sar     eax, 0x2
+        sar     ecx, 0x2
+        cmp     eax, ecx
+        jae     L_4119ba
+        mov     eax, dword ptr [esp + 0x3c]
+        mov     dword ptr [eax], edx
+        add     eax, 0x4
+        mov     dword ptr [esp + 0x3c], eax
+        jmp     L_4119dd
+    L_4119ba:
+        mov     esi, dword ptr [esp + 0x3c]
+        cmp     dword ptr [esp + 0x38], esi
+        jbe     L_4119c6
+        call    edi
+    L_4119c6:
+        lea     ecx, [esp + 0x18]
+        push    ecx
+        lea     eax, [esp + 0x38]
+        push    esi
+        push    eax
+        lea     edx, [esp + 0x38]
+        push    edx
+        mov     ecx, eax
+        call    ext_0059A140
+    L_4119dd:
+        cmp     ebx, dword ptr [ebp + 0x8]
+        jb      L_4119e4
+        call    edi
+    L_4119e4:
+        add     ebx, 0x4
+        jmp     L_411966
+    L_4119ec:
+        mov     eax, dword ptr [esp + 0x24]
+        mov     ecx, dword ptr [esp + 0x28]
+        cmp     ecx, dword ptr [eax + 0x8]
+        jb      L_4119fb
+        call    edi
+    L_4119fb:
+        add     dword ptr [esp + 0x28], 0x4
+        mov     ebx, dword ptr [esp + 0x1c]
+        mov     esi, dword ptr [esp + 0x28]
+        mov     ebp, dword ptr [esp + 0x24]
+        jmp     L_411922
+    L_411a11:
+        mov     esi, dword ptr [esp + 0x20]
+        mov     ecx, dword ptr [esi + 0x30]
+        push    0x0
+        lea     edx, [esp + 0x38]
+        push    edx
+        call    ext_0043F520
+        mov     ecx, esi
+        call    ext_00410D40
+        mov     eax, dword ptr [esi + 0x30]
+        mov     ecx, dword ptr [eax + 0x20]
+        push    0x1
+        push    0x0
+        push    ecx
+        call    dword ptr [mem_00925688]
+        mov     edx, dword ptr [esi + 0x30]
+        mov     eax, dword ptr [edx + 0x20]
+        push    eax
+        call    dword ptr [mem_0092568C]
+        mov     ecx, dword ptr [esi + 0x30]
+        push    -0x1
+        call    ext_0043DC90
+        mov     eax, dword ptr [esp + 0x38]
+        test    eax, eax
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        je      L_411a68
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 0x4
+    L_411a68:
+        mov     ecx, dword ptr [esp + 0x34]
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x40
+        ret     0x4
+    }
+}
