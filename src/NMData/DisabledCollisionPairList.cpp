@@ -49,3 +49,64 @@ extern "C" __declspec(naked) void* __fastcall fn_0060A640(void* self) {
         ret 0x8
     }
 }
+
+// [0x0060B320] NMData::DisabledCollisionPairList::vfunc_0_off_4 (128 bytes)
+extern "C" void ext_0060A240();
+extern "C" void ext_0060B0F0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0060B320(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        push ebp
+        push esi
+        lea esi, [ecx + 0xc]
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        mov byte ptr [esp + 0xc], 0
+        jbe L1
+        call dword ptr [mem_00925134]
+    L1:
+        mov ebp, dword ptr [esi + 0x4]
+        cmp ebp, dword ptr [esi + 0x8]
+        jbe L2
+        call dword ptr [mem_00925134]
+    L2:
+        cmp esi, esi
+        je L3
+        call dword ptr [mem_00925134]
+    L3:
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, edi
+        push eax
+        sub ecx, ebp
+        sar ecx, 0x2
+        push ecx
+        push edi
+        push ebp
+        call ext_0060B0F0
+        mov edi, dword ptr [esi + 0x8]
+        add esp, 0x10
+        cmp dword ptr [esi + 0x4], edi
+        mov byte ptr [esp + 0xc], 0
+        jbe L4
+        call dword ptr [mem_00925134]
+    L4:
+        mov ebp, dword ptr [esi + 0x4]
+        cmp ebp, dword ptr [esi + 0x8]
+        jbe L5
+        call dword ptr [mem_00925134]
+    L5:
+        mov edx, dword ptr [esp + 0xc]
+        push edx
+        push edi
+        push ebp
+        call ext_0060A240
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ecx
+        ret 0x8
+    }
+}
