@@ -2189,3 +2189,2050 @@ loc_79FCBA:
         ret
     }
 }
+
+// [0x00796C60] sub_00796C60 (5359 bytes)
+extern "C" void ext_00796740();
+extern "C" void ext_00796B60();
+extern "C" __declspec(naked) void __fastcall fn_00796C60(void* self) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        and     esp, -0x8
+        sub     esp, 0x24
+        mov     ecx, dword ptr [ebp + 0x14]
+        push    ebx
+        push    esi
+        cmp     ecx, 0x1
+        push    edi
+        ja      loc_796CAF
+        mov     ecx, dword ptr [ebp + 0x18]
+        mov     edx, dword ptr [ebp + 0x10]
+        fld     qword ptr [ebp + 0x8]
+        fcomp   qword ptr [ecx + 8*edx]
+        fnstsw  ax
+        test    ah, 0x1
+        jne     loc_796CA2
+        fld     qword ptr [ebp + 0x8]
+        fcomp   qword ptr [ecx + 8*edx + 0x8]
+        fnstsw  ax
+        test    ah, 0x1
+        je      loc_796CA2
+        fld     qword ptr [mem_0092A270]
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+loc_796CA2:
+        fld     qword ptr [mem_0092A278]
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+loc_796CAF:
+        mov     edi, dword ptr [ebp + 0x10]
+        mov     esi, dword ptr [ebp + 0x18]
+        mov     ebx, dword ptr [ebp + 0xc]
+        lea     eax, [edi + ecx]
+        fld     qword ptr [esi + 8*eax - 0x8]
+        fsub    qword ptr [esi + 8*edi]
+        lea     edx, [esi + 8*eax]
+        mov     dword ptr [esp + 0x10], edx
+        fst     qword ptr [esp + 0x20]
+        fcomp   qword ptr [mem_00997100]
+        fnstsw  ax
+        test    ah, 0x41
+        jne     loc_796D21
+        lea     eax, [ecx - 0x1]
+        mov     ecx, dword ptr [ebp + 0x8]
+        push    esi
+        push    eax
+        push    edi
+        push    ebx
+        push    ecx
+        call    fn_00796C60
+        fld     qword ptr [ebp + 0x8]
+        fsub    qword ptr [esi + 8*edi]
+        mov     edx, dword ptr [ebp + 0x14]
+        push    esi
+        lea     eax, [edx - 0x1]
+        fmulp   st(1), st
+        push    eax
+        mov     eax, dword ptr [ebp + 0x8]
+        push    edi
+        push    ebx
+        fstp    qword ptr [esp + 0x3c]
+        push    eax
+        call    ext_00796B60
+        fadd    qword ptr [esp + 0x40]
+        mov     edx, dword ptr [esp + 0x38]
+        mov     ecx, dword ptr [ebp + 0x14]
+        add     esp, 0x28
+        fdiv    qword ptr [esp + 0x20]
+        fstp    qword ptr [esp + 0x20]
+        jmp     loc_796D31
+loc_796D21:
+        mov     dword ptr [esp + 0x20], 0x0
+        mov     dword ptr [esp + 0x24], 0x0
+loc_796D31:
+        fld     qword ptr [edx]
+        fsub    qword ptr [esi + 8*edi + 0x8]
+        inc     edi
+        fst     qword ptr [esp + 0x28]
+        fcomp   qword ptr [mem_00997100]
+        fnstsw  ax
+        test    ah, 0x41
+        jne     loc_796D93
+        lea     eax, [ecx - 0x1]
+        mov     ecx, dword ptr [ebp + 0x8]
+        push    esi
+        push    eax
+        push    edi
+        push    ebx
+        push    ecx
+        mov     dword ptr [esp + 0x2c], eax
+        call    fn_00796C60
+        mov     edx, dword ptr [esp + 0x24]
+        mov     eax, dword ptr [esp + 0x2c]
+        mov     ecx, dword ptr [ebp + 0x8]
+        push    esi
+        fld     qword ptr [edx]
+        fsub    qword ptr [ebp + 0x8]
+        push    eax
+        push    edi
+        push    ebx
+        push    ecx
+        fmulp   st(1), st
+        fstp    qword ptr [esp + 0x38]
+        call    ext_00796B60
+        fsubr   qword ptr [esp + 0x38]
+        add     esp, 0x28
+        fdiv    qword ptr [esp + 0x28]
+        fadd    qword ptr [esp + 0x20]
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+loc_796D93:
+        fld     qword ptr [mem_0092A278]
+        fadd    qword ptr [esp + 0x20]
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        push    ebp
+        mov     ebp, esp
+        and     esp, -0x8
+        sub     esp, 0x60
+        push    ebx
+        push    ebp
+        push    esi
+        mov     esi, ecx
+        push    edi
+        mov     eax, dword ptr [esi + 0x238]
+        test    eax, eax
+        je      loc_796DD2
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 0x4
+loc_796DD2:
+        mov     eax, dword ptr [esi + 0x240]
+        test    eax, eax
+        je      loc_796DE5
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 0x4
+loc_796DE5:
+        mov     eax, dword ptr [esi + 0x27c]
+        test    eax, eax
+        je      loc_796DF8
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 0x4
+loc_796DF8:
+        mov     eax, dword ptr [esi + 0xc]
+        mov     ecx, dword ptr [esi + 0x4c]
+        cmp     eax, 0x1
+        mov     eax, dword ptr [esi + 0x14]
+        push    eax
+        je      loc_796E2B
+        mov     edx, dword ptr [esi + 0x268]
+        add     ecx, eax
+        push    ecx
+        push    edx
+        mov     ecx, esi
+        call    ext_00796740
+        mov     dword ptr [esi + 0x270], eax
+        imul    eax, dword ptr [esi + 0x1c]
+        lea     eax, [4*eax + 0x4]
+        jmp     loc_796E4B
+loc_796E2B:
+        lea     edx, [ecx + 2*eax - 0x1]
+        mov     eax, dword ptr [esi + 0x268]
+        push    edx
+        push    eax
+        mov     ecx, esi
+        call    ext_00796740
+        mov     dword ptr [esi + 0x270], eax
+        imul    eax, dword ptr [esi + 0x1c]
+        shl     eax, 0x2
+loc_796E4B:
+        mov     ecx, eax
+        mov     dword ptr [esi + 0x22c], eax
+        shl     ecx, 0x3
+        push    ecx
+        call    ext_006A5C62
+        mov     edx, dword ptr [esi + 0x22c]
+        mov     dword ptr [esi + 0x238], eax
+        shl     edx, 0x3
+        push    edx
+        mov     edi, eax
+        call    ext_006A5C62
+        mov     dword ptr [esi + 0x240], eax
+        mov     ebx, eax
+        mov     eax, dword ptr [esi + 0x270]
+        shl     eax, 0x2
+        push    eax
+        call    ext_006A5C62
+        mov     edx, dword ptr [esi + 0x270]
+        add     esp, 0xc
+        xor     ecx, ecx
+        mov     dword ptr [esi + 0x27c], eax
+        test    edx, edx
+        mov     dword ptr [esp + 0x14], ecx
+        mov     dword ptr [esp + 0x1c], edx
+        je      loc_797173
+loc_796EAB:
+        mov     eax, dword ptr [esi + 0x270]
+        cmp     edx, eax
+        jne     loc_796EC7
+        mov     ebp, dword ptr [esi + 0x27c]
+        sub     eax, edx
+        mov     dword ptr [ebp + 4*eax], 0x0
+        jmp     loc_796ED7
+loc_796EC7:
+        mov     ebp, dword ptr [esi + 0x27c]
+        sub     eax, edx
+        mov     dword ptr [ebp + 4*eax], 0x1
+loc_796ED7:
+        mov     ebp, dword ptr [esi + 0x14]
+        mov     eax, ecx
+        add     eax, ebp
+        mov     ebp, dword ptr [esi + 0x268]
+        fld     qword ptr [ebp + 8*eax]
+        fsub    qword ptr [ebp + 8*eax - 0x8]
+        lea     eax, [ebp + 8*eax]
+        fcomp   qword ptr [mem_00997100]
+        fnstsw  ax
+        test    ah, 0x1
+        je      loc_796F3F
+loc_796EFD:
+        mov     eax, dword ptr [esi + 0x270]
+        mov     ebp, dword ptr [esi + 0x27c]
+        sub     eax, edx
+        lea     eax, [ebp + 4*eax]
+        mov     ebp, dword ptr [eax]
+        inc     ebp
+        inc     ecx
+        mov     dword ptr [eax], ebp
+        mov     ebp, dword ptr [esi + 0x14]
+        mov     eax, ecx
+        add     eax, ebp
+        mov     ebp, dword ptr [esi + 0x268]
+        fld     qword ptr [ebp + 8*eax]
+        fsub    qword ptr [ebp + 8*eax - 0x8]
+        lea     eax, [ebp + 8*eax]
+        fcomp   qword ptr [mem_00997100]
+        fnstsw  ax
+        test    ah, 0x1
+        jne     loc_796EFD
+        mov     dword ptr [esp + 0x14], ecx
+loc_796F3F:
+        mov     ebp, dword ptr [esi + 0x14]
+        mov     eax, ecx
+        add     eax, ebp
+        mov     ebp, dword ptr [esi + 0x268]
+        mov     dword ptr [esp + 0x2c], 0x0
+        cmp     edx, 0x1
+        lea     eax, [ebp + 8*eax]
+        mov     dword ptr [esp + 0x18], eax
+        mov     ebp, dword ptr [eax - 0x8]
+        mov     eax, dword ptr [eax - 0x4]
+        mov     dword ptr [esp + 0x20], ebp
+        mov     ebp, dword ptr [esp + 0x18]
+        mov     dword ptr [esp + 0x24], eax
+        mov     eax, dword ptr [esi + 0x1c]
+        fld     qword ptr [ebp]
+        fsub    qword ptr [esp + 0x20]
+        mov     dword ptr [esp + 0x28], eax
+        fild    qword ptr [esp + 0x28]
+        fadd    qword ptr [mem_00997100]
+        fdivp   st(1), st
+        fstp    qword ptr [esp + 0x68]
+        jne     loc_796F97
+        cmp     dword ptr [esi + 0xc], edx
+        je      loc_796F97
+        inc     eax
+loc_796F97:
+        test    eax, eax
+        je      loc_797163
+        mov     dword ptr [esp + 0x18], eax
+loc_796FA3:
+        mov     edx, dword ptr [esi + 0x268]
+        mov     eax, dword ptr [esi + 0x14]
+        mov     ebp, dword ptr [esp + 0x24]
+        push    edx
+        push    eax
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x2c]
+        push    ebp
+        push    ecx
+        call    ext_00796B60
+        mov     edx, dword ptr [esi + 0x268]
+        mov     eax, dword ptr [esi + 0x14]
+        mov     ecx, dword ptr [esp + 0x28]
+        push    edx
+        mov     edx, dword ptr [esp + 0x38]
+        push    eax
+        fstp    qword ptr [esp + 0x4c]
+        lea     eax, [ecx + 0x1]
+        push    eax
+        push    ebp
+        push    edx
+        call    ext_00796B60
+        mov     eax, dword ptr [esi + 0x268]
+        mov     edx, dword ptr [esp + 0x3c]
+        mov     ecx, dword ptr [esi + 0x14]
+        push    eax
+        fstp    qword ptr [esp + 0x64]
+        lea     eax, [edx + 0x2]
+        push    ecx
+        push    eax
+        mov     eax, dword ptr [esp + 0x54]
+        push    ebp
+        push    eax
+        call    ext_00796B60
+        mov     ecx, dword ptr [esi + 0x268]
+        mov     eax, dword ptr [esp + 0x50]
+        mov     edx, dword ptr [esi + 0x14]
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x60]
+        add     eax, 0x3
+        fstp    qword ptr [esp + 0x80]
+        push    edx
+        push    eax
+        push    ebp
+        push    ecx
+        call    ext_00796B60
+        mov     edx, dword ptr [esi + 0x268]
+        mov     eax, dword ptr [esi + 0x14]
+        mov     ecx, dword ptr [esp + 0x64]
+        add     esp, 0x50
+        fstp    qword ptr [esp + 0x48]
+        push    edx
+        mov     edx, dword ptr [esp + 0x24]
+        push    eax
+        push    ecx
+        push    ebp
+        push    edx
+        call    fn_00796C60
+        mov     eax, dword ptr [esi + 0x268]
+        mov     edx, dword ptr [esp + 0x28]
+        mov     ecx, dword ptr [esi + 0x14]
+        push    eax
+        fstp    qword ptr [esp + 0x68]
+        lea     eax, [edx + 0x1]
+        push    ecx
+        push    eax
+        mov     eax, dword ptr [esp + 0x40]
+        push    ebp
+        push    eax
+        call    fn_00796C60
+        mov     ecx, dword ptr [esi + 0x268]
+        mov     eax, dword ptr [esp + 0x3c]
+        mov     edx, dword ptr [esi + 0x14]
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x4c]
+        add     eax, 0x2
+        fstp    qword ptr [esp + 0x84]
+        push    edx
+        push    eax
+        push    ebp
+        push    ecx
+        call    fn_00796C60
+        mov     edx, dword ptr [esi + 0x268]
+        mov     eax, dword ptr [esi + 0x14]
+        mov     ecx, dword ptr [esp + 0x50]
+        push    edx
+        mov     edx, dword ptr [esp + 0x60]
+        push    eax
+        fstp    qword ptr [esp + 0xa4]
+        lea     eax, [ecx + 0x3]
+        push    eax
+        push    ebp
+        push    edx
+        call    fn_00796C60
+        mov     eax, dword ptr [esp + 0x80]
+        mov     ecx, dword ptr [esp + 0x84]
+        mov     edx, dword ptr [esp + 0x88]
+        mov     dword ptr [edi], eax
+        mov     eax, dword ptr [esp + 0x8c]
+        mov     dword ptr [edi + 0x4], ecx
+        mov     ecx, dword ptr [esp + 0x90]
+        add     edi, 0x8
+        add     ebx, 0x8
+        add     esp, 0x50
+        mov     dword ptr [edi], edx
+        mov     edx, dword ptr [esp + 0x44]
+        mov     dword ptr [edi + 0x4], eax
+        mov     eax, dword ptr [esp + 0x48]
+        add     edi, 0x8
+        add     ebx, 0x8
+        add     ebx, 0x8
+        mov     dword ptr [edi], ecx
+        mov     ecx, dword ptr [esp + 0x4c]
+        mov     dword ptr [edi + 0x4], edx
+        mov     edx, dword ptr [esp + 0x50]
+        add     edi, 0x8
+        add     ebx, 0x8
+        mov     dword ptr [edi], eax
+        mov     eax, dword ptr [esp + 0x54]
+        mov     dword ptr [edi + 0x4], ecx
+        mov     ecx, dword ptr [esp + 0x58]
+        mov     dword ptr [ebx - 0x20], edx
+        mov     edx, dword ptr [esp + 0x5c]
+        mov     dword ptr [ebx - 0x1c], eax
+        mov     eax, dword ptr [esp + 0x60]
+        mov     dword ptr [ebx - 0x18], ecx
+        mov     ecx, dword ptr [esp + 0x64]
+        mov     dword ptr [ebx - 0x14], edx
+        mov     dword ptr [ebx - 0x10], eax
+        mov     dword ptr [ebx - 0xc], ecx
+        mov     eax, dword ptr [esp + 0x18]
+        fstp    qword ptr [ebx - 0x8]
+        fld     qword ptr [esp + 0x68]
+        fadd    qword ptr [esp + 0x20]
+        mov     ecx, dword ptr [esp + 0x14]
+        add     edi, 0x8
+        dec     eax
+        mov     dword ptr [esp + 0x18], eax
+        fstp    qword ptr [esp + 0x20]
+        jne     loc_796FA3
+        mov     edx, dword ptr [esp + 0x1c]
+loc_797163:
+        inc     ecx
+        dec     edx
+        mov     dword ptr [esp + 0x14], ecx
+        mov     dword ptr [esp + 0x1c], edx
+        jne     loc_796EAB
+loc_797173:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        push    ebp
+        mov     ebp, esp
+        and     esp, -0x8
+        sub     esp, 0x28
+        push    ebx
+        push    ebp
+        push    esi
+        mov     esi, ecx
+        push    edi
+        mov     eax, dword ptr [esi + 0x244]
+        test    eax, eax
+        je      loc_7971A2
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 0x4
+loc_7971A2:
+        mov     ecx, dword ptr [esi + 0x18]
+        mov     eax, dword ptr [esi + 0x8]
+        imul    ecx, dword ptr [esi + 0x26c]
+        mov     ebx, 0x1
+        cmp     eax, ebx
+        je      loc_7971B9
+        inc     ecx
+loc_7971B9:
+        mov     eax, dword ptr [esi + 0x1c]
+        mov     edx, dword ptr [esi + 0xc]
+        dec     eax
+        imul    eax, ecx
+        add     eax, ecx
+        imul    eax, dword ptr [esi + 0x270]
+        cmp     edx, ebx
+        mov     dword ptr [esi + 0x274], eax
+        je      loc_7971DE
+        add     eax, ecx
+        mov     dword ptr [esi + 0x274], eax
+loc_7971DE:
+        mov     eax, dword ptr [esi + 0x274]
+        shl     eax, 0x4
+        mov     dword ptr [esi + 0x230], eax
+        shl     eax, 0x3
+        push    eax
+        call    ext_006A5C62
+        mov     ebp, dword ptr [esi + 0x270]
+        mov     edi, dword ptr [esi + 0x26c]
+        mov     edx, dword ptr [esi + 0x238]
+        add     esp, 0x4
+        test    ebp, ebp
+        mov     dword ptr [esi + 0x244], eax
+        mov     dword ptr [esp + 0x1c], edi
+        mov     dword ptr [esp + 0x18], ebp
+        jbe     loc_797392
+loc_797221:
+        mov     ecx, dword ptr [esi + 0x1c]
+        cmp     ebp, ebx
+        jne     loc_79722E
+        cmp     dword ptr [esi + 0xc], ebx
+        je      loc_79722E
+        inc     ecx
+loc_79722E:
+        test    ecx, ecx
+        jbe     loc_797387
+        mov     dword ptr [esp + 0x14], ecx
+loc_79723A:
+        fld     qword ptr [edx]
+        fld     qword ptr [edx + 0x8]
+        add     edx, 0x8
+        mov     ecx, dword ptr [esi + 0x234]
+        add     edx, 0x8
+        mov     dword ptr [esp + 0x10], edi
+        fld     qword ptr [edx]
+        fld     qword ptr [edx + 0x8]
+        add     edx, 0x8
+        add     edx, 0x8
+        test    edi, edi
+        jbe     loc_79739A
+loc_797262:
+        mov     ebp, dword ptr [esp + 0x10]
+        mov     edi, dword ptr [esi + 0x18]
+        cmp     ebp, ebx
+        jne     loc_797273
+        cmp     dword ptr [esi + 0x8], ebx
+        je      loc_797273
+        inc     edi
+loc_797273:
+        test    edi, edi
+        jbe     loc_797359
+loc_79727B:
+        fld     qword ptr [ecx]
+        fld     qword ptr [ecx + 0x8]
+        add     ecx, 0x8
+        add     eax, 0x8
+        fst     qword ptr [esp + 0x30]
+        fld     qword ptr [ecx + 0x8]
+        add     ecx, 0x8
+        add     eax, 0x8
+        fst     qword ptr [esp + 0x28]
+        mov     ebx, dword ptr [ecx + 0x8]
+        mov     ebp, dword ptr [ecx + 0xc]
+        fld     st(2)
+        fmul    st, st(7)
+        add     ecx, 0x8
+        mov     dword ptr [esp + 0x20], ebx
+        mov     dword ptr [esp + 0x24], ebp
+        add     eax, 0x8
+        add     ecx, 0x8
+        fstp    qword ptr [eax - 0x18]
+        fld     st(1)
+        fmul    st, st(7)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x20]
+        add     eax, 0x8
+        fld     st(0)
+        fmul    st, st(7)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x30]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(7)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x38]
+        fld     st(2)
+        fmul    st, st(6)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x40]
+        fld     st(1)
+        fmul    st, st(6)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x48]
+        add     eax, 0x8
+        fmul    st, st(5)
+        add     eax, 0x8
+        dec     edi
+        fstp    qword ptr [eax - 0x50]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(5)
+        fstp    qword ptr [eax - 0x48]
+        fld     st(1)
+        fmul    st, st(4)
+        fstp    qword ptr [eax - 0x40]
+        fmul    st, st(3)
+        fstp    qword ptr [eax - 0x38]
+        fld     qword ptr [esp + 0x28]
+        fmul    st, st(3)
+        fstp    qword ptr [eax - 0x30]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(3)
+        fstp    qword ptr [eax - 0x28]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x20]
+        fld     qword ptr [esp + 0x30]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x18]
+        fld     qword ptr [esp + 0x28]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x10]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x8]
+        jne     loc_79727B
+        mov     ebx, 0x1
+loc_797359:
+        mov     edi, dword ptr [esp + 0x10]
+        dec     edi
+        mov     dword ptr [esp + 0x10], edi
+        jne     loc_797262
+        mov     edi, dword ptr [esp + 0x1c]
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+loc_797374:
+        mov     ecx, dword ptr [esp + 0x14]
+        dec     ecx
+        mov     dword ptr [esp + 0x14], ecx
+        jne     loc_79723A
+        mov     ebp, dword ptr [esp + 0x18]
+loc_797387:
+        dec     ebp
+        mov     dword ptr [esp + 0x18], ebp
+        jne     loc_797221
+loc_797392:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+loc_79739A:
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+        jmp     loc_797374
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        push    ebp
+        mov     ebp, esp
+        and     esp, -0x8
+        sub     esp, 0x28
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        mov     edi, ecx
+        mov     eax, dword ptr [edi + 0x248]
+        test    eax, eax
+        je      loc_7973D2
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 0x4
+loc_7973D2:
+        mov     eax, dword ptr [edi + 0x230]
+        shl     eax, 0x3
+        push    eax
+        call    ext_006A5C62
+        mov     esi, dword ptr [edi + 0x270]
+        mov     edx, dword ptr [edi + 0x238]
+        add     esp, 0x4
+        mov     dword ptr [edi + 0x248], eax
+        test    esi, esi
+        mov     dword ptr [esp + 0x1c], esi
+        jbe     loc_797576
+        mov     ebp, 0x1
+loc_797407:
+        mov     ecx, dword ptr [edi + 0x1c]
+        cmp     esi, ebp
+        jne     loc_797414
+        cmp     dword ptr [edi + 0xc], ebp
+        je      loc_797414
+        inc     ecx
+loc_797414:
+        test    ecx, ecx
+        jbe     loc_79756B
+        mov     dword ptr [esp + 0x18], ecx
+loc_797420:
+        fld     qword ptr [edx]
+        fld     qword ptr [edx + 0x8]
+        add     edx, 0x8
+        mov     ebx, dword ptr [edi + 0x26c]
+        add     edx, 0x8
+        mov     ecx, dword ptr [edi + 0x23c]
+        mov     dword ptr [esp + 0x14], ebx
+        fld     qword ptr [edx]
+        fld     qword ptr [edx + 0x8]
+        add     edx, 0x8
+        add     edx, 0x8
+        test    ebx, ebx
+        jbe     loc_797550
+loc_79744E:
+        mov     esi, dword ptr [edi + 0x18]
+        cmp     ebx, ebp
+        jne     loc_79745B
+        cmp     dword ptr [edi + 0x8], ebp
+        je      loc_79745B
+        inc     esi
+loc_79745B:
+        test    esi, esi
+        jbe     loc_797545
+loc_797463:
+        fld     qword ptr [ecx]
+        fld     qword ptr [ecx + 0x8]
+        add     ecx, 0x8
+        add     eax, 0x8
+        fst     qword ptr [esp + 0x30]
+        fld     qword ptr [ecx + 0x8]
+        add     ecx, 0x8
+        add     eax, 0x8
+        fst     qword ptr [esp + 0x28]
+        mov     ebx, dword ptr [ecx + 0x8]
+        mov     ebp, dword ptr [ecx + 0xc]
+        fld     st(2)
+        fmul    st, st(7)
+        add     ecx, 0x8
+        mov     dword ptr [esp + 0x20], ebx
+        mov     dword ptr [esp + 0x24], ebp
+        add     eax, 0x8
+        add     ecx, 0x8
+        fstp    qword ptr [eax - 0x18]
+        fld     st(1)
+        fmul    st, st(7)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x20]
+        add     eax, 0x8
+        fld     st(0)
+        fmul    st, st(7)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x30]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(7)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x38]
+        fld     st(2)
+        fmul    st, st(6)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x40]
+        fld     st(1)
+        fmul    st, st(6)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x48]
+        add     eax, 0x8
+        fmul    st, st(5)
+        add     eax, 0x8
+        dec     esi
+        fstp    qword ptr [eax - 0x50]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(5)
+        fstp    qword ptr [eax - 0x48]
+        fld     st(1)
+        fmul    st, st(4)
+        fstp    qword ptr [eax - 0x40]
+        fmul    st, st(3)
+        fstp    qword ptr [eax - 0x38]
+        fld     qword ptr [esp + 0x28]
+        fmul    st, st(3)
+        fstp    qword ptr [eax - 0x30]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(3)
+        fstp    qword ptr [eax - 0x28]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x20]
+        fld     qword ptr [esp + 0x30]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x18]
+        fld     qword ptr [esp + 0x28]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x10]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x8]
+        jne     loc_797463
+        mov     ebx, dword ptr [esp + 0x14]
+        mov     ebp, 0x1
+loc_797545:
+        dec     ebx
+        mov     dword ptr [esp + 0x14], ebx
+        jne     loc_79744E
+loc_797550:
+        mov     ecx, dword ptr [esp + 0x18]
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+        dec     ecx
+        fstp    st(0)
+        mov     dword ptr [esp + 0x18], ecx
+        jne     loc_797420
+        mov     esi, dword ptr [esp + 0x1c]
+loc_79756B:
+        dec     esi
+        mov     dword ptr [esp + 0x1c], esi
+        jne     loc_797407
+loc_797576:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+        nop
+        nop
+        push    ebp
+        mov     ebp, esp
+        and     esp, -0x8
+        sub     esp, 0x28
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        mov     edi, ecx
+        mov     eax, dword ptr [edi + 0x24c]
+        test    eax, eax
+        je      loc_7975A2
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 0x4
+loc_7975A2:
+        mov     eax, dword ptr [edi + 0x230]
+        shl     eax, 0x3
+        push    eax
+        call    ext_006A5C62
+        mov     esi, dword ptr [edi + 0x270]
+        mov     edx, dword ptr [edi + 0x240]
+        add     esp, 0x4
+        mov     dword ptr [edi + 0x24c], eax
+        test    esi, esi
+        mov     dword ptr [esp + 0x1c], esi
+        jbe     loc_797746
+        mov     ebp, 0x1
+loc_7975D7:
+        mov     ecx, dword ptr [edi + 0x1c]
+        cmp     esi, ebp
+        jne     loc_7975E4
+        cmp     dword ptr [edi + 0xc], ebp
+        je      loc_7975E4
+        inc     ecx
+loc_7975E4:
+        test    ecx, ecx
+        jbe     loc_79773B
+        mov     dword ptr [esp + 0x18], ecx
+loc_7975F0:
+        fld     qword ptr [edx]
+        fld     qword ptr [edx + 0x8]
+        add     edx, 0x8
+        mov     ebx, dword ptr [edi + 0x26c]
+        add     edx, 0x8
+        mov     ecx, dword ptr [edi + 0x234]
+        mov     dword ptr [esp + 0x14], ebx
+        fld     qword ptr [edx]
+        fld     qword ptr [edx + 0x8]
+        add     edx, 0x8
+        add     edx, 0x8
+        test    ebx, ebx
+        jbe     loc_797720
+loc_79761E:
+        mov     esi, dword ptr [edi + 0x18]
+        cmp     ebx, ebp
+        jne     loc_79762B
+        cmp     dword ptr [edi + 0x8], ebp
+        je      loc_79762B
+        inc     esi
+loc_79762B:
+        test    esi, esi
+        jbe     loc_797715
+loc_797633:
+        fld     qword ptr [ecx]
+        fld     qword ptr [ecx + 0x8]
+        add     ecx, 0x8
+        add     eax, 0x8
+        fst     qword ptr [esp + 0x30]
+        fld     qword ptr [ecx + 0x8]
+        add     ecx, 0x8
+        add     eax, 0x8
+        fst     qword ptr [esp + 0x28]
+        mov     ebx, dword ptr [ecx + 0x8]
+        mov     ebp, dword ptr [ecx + 0xc]
+        fld     st(2)
+        fmul    st, st(7)
+        add     ecx, 0x8
+        mov     dword ptr [esp + 0x20], ebx
+        mov     dword ptr [esp + 0x24], ebp
+        add     eax, 0x8
+        add     ecx, 0x8
+        fstp    qword ptr [eax - 0x18]
+        fld     st(1)
+        fmul    st, st(7)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x20]
+        add     eax, 0x8
+        fld     st(0)
+        fmul    st, st(7)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x30]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(7)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x38]
+        fld     st(2)
+        fmul    st, st(6)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x40]
+        fld     st(1)
+        fmul    st, st(6)
+        add     eax, 0x8
+        add     eax, 0x8
+        fstp    qword ptr [eax - 0x48]
+        add     eax, 0x8
+        fmul    st, st(5)
+        add     eax, 0x8
+        dec     esi
+        fstp    qword ptr [eax - 0x50]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(5)
+        fstp    qword ptr [eax - 0x48]
+        fld     st(1)
+        fmul    st, st(4)
+        fstp    qword ptr [eax - 0x40]
+        fmul    st, st(3)
+        fstp    qword ptr [eax - 0x38]
+        fld     qword ptr [esp + 0x28]
+        fmul    st, st(3)
+        fstp    qword ptr [eax - 0x30]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(3)
+        fstp    qword ptr [eax - 0x28]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x20]
+        fld     qword ptr [esp + 0x30]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x18]
+        fld     qword ptr [esp + 0x28]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x10]
+        fld     qword ptr [esp + 0x20]
+        fmul    st, st(1)
+        fstp    qword ptr [eax - 0x8]
+        jne     loc_797633
+        mov     ebx, dword ptr [esp + 0x14]
+        mov     ebp, 0x1
+loc_797715:
+        dec     ebx
+        mov     dword ptr [esp + 0x14], ebx
+        jne     loc_79761E
+loc_797720:
+        mov     ecx, dword ptr [esp + 0x18]
+        fstp    st(0)
+        fstp    st(0)
+        fstp    st(0)
+        dec     ecx
+        fstp    st(0)
+        mov     dword ptr [esp + 0x18], ecx
+        jne     loc_7975F0
+        mov     esi, dword ptr [esp + 0x1c]
+loc_79773B:
+        dec     esi
+        mov     dword ptr [esp + 0x1c], esi
+        jne     loc_7975D7
+loc_797746:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+        nop
+        nop
+        push    ebp
+        mov     ebp, esp
+        and     esp, -0x8
+        sub     esp, 0xa0
+        push    ebx
+        push    ebp
+        push    esi
+        mov     esi, ecx
+        push    edi
+        mov     dword ptr [esp + 0x74], esi
+        mov     eax, dword ptr [esi + 0x258]
+        test    eax, eax
+        je      loc_797779
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 0x4
+loc_797779:
+        mov     eax, dword ptr [esi + 0x230]
+        lea     eax, [eax + 2*eax]
+        shr     eax, 0x4
+        shl     eax, 0x3
+        push    eax
+        call    ext_006A5C62
+        mov     dword ptr [esi + 0x258], eax
+        mov     dword ptr [esp + 0x58], eax
+        mov     eax, dword ptr [esi + 0x230]
+        add     esp, 0x4
+        lea     eax, [eax + 2*eax]
+        shr     eax, 0x4
+        je      loc_7977C2
+        mov     ecx, 0xc197d784
+loc_7977AE:
+        mov     edx, dword ptr [esi + 0x258]
+        dec     eax
+        mov     dword ptr [edx + 8*eax], 0x0
+        mov     dword ptr [edx + 8*eax + 0x4], ecx
+        jne     loc_7977AE
+loc_7977C2:
+        mov     eax, dword ptr [esi + 0x244]
+        mov     ecx, dword ptr [esi + 0x248]
+        mov     edx, dword ptr [esi + 0x24c]
+        mov     dword ptr [esp + 0x24], eax
+        mov     eax, dword ptr [esi + 0x270]
+        mov     dword ptr [esp + 0x98], ecx
+        mov     ecx, dword ptr [esi + 0x26c]
+        xor     ebx, ebx
+        test    eax, eax
+        mov     dword ptr [esp + 0x44], edx
+        mov     dword ptr [esp + 0xa4], ecx
+        mov     dword ptr [esp + 0x64], eax
+        jbe     loc_798147
+        mov     edi, 0x1
+loc_797809:
+        mov     edx, dword ptr [esi + 0x270]
+        mov     ebp, dword ptr [esi + 0x27c]
+        sub     edx, eax
+        add     ebx, dword ptr [ebp + 4*edx]
+        mov     edx, dword ptr [esi + 0x1c]
+        cmp     eax, edi
+        mov     dword ptr [esp + 0x28], edx
+        jne     loc_797830
+        cmp     dword ptr [esi + 0xc], edi
+        je      loc_797830
+        inc     edx
+        mov     dword ptr [esp + 0x28], edx
+loc_797830:
+        test    edx, edx
+        jbe     loc_79813C
+loc_797838:
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x10], 0x0
+        mov     dword ptr [esp + 0x2c], ecx
+        jbe     loc_79812D
+loc_79784C:
+        mov     edx, dword ptr [esi + 0x26c]
+        mov     ebp, dword ptr [esi + 0x278]
+        sub     edx, ecx
+        mov     eax, 0xaaaaaaab
+        mul     dword ptr [ebp + 4*edx]
+        mov     ebp, dword ptr [esp + 0x10]
+        mov     eax, dword ptr [esi + 0x18]
+        shr     edx, 1
+        add     ebp, edx
+        cmp     ecx, edi
+        mov     dword ptr [esp + 0x10], ebp
+        mov     dword ptr [esp + 0x20], eax
+        jne     loc_797884
+        cmp     dword ptr [esi + 0x8], edi
+        je      loc_797884
+        inc     eax
+        mov     dword ptr [esp + 0x20], eax
+loc_797884:
+        test    eax, eax
+        jbe     loc_798117
+        jmp     loc_797892
+loc_79788E:
+        mov     esi, dword ptr [esp + 0x74]
+loc_797892:
+        mov     ecx, dword ptr [esi + 0x4c]
+        mov     edi, ebx
+        cmp     ebx, ecx
+        jb      loc_79789D
+        sub     edi, ecx
+loc_79789D:
+        mov     eax, dword ptr [esi + 0x48]
+        mov     edx, dword ptr [esp + 0x10]
+        cmp     edx, eax
+        jb      loc_7978AA
+        sub     edx, eax
+loc_7978AA:
+        mov     ebp, eax
+        mov     esi, dword ptr [esi + 0x250]
+        imul    ebp, edi
+        add     ebp, edx
+        cmp     ebx, ecx
+        mov     edi, ebx
+        fld     qword ptr [esi + 8*ebp]
+        fstp    qword ptr [esp + 0x88]
+        jb      loc_7978C9
+        sub     edi, ecx
+loc_7978C9:
+        mov     edx, dword ptr [esp + 0x10]
+        inc     edx
+        cmp     edx, eax
+        jb      loc_7978D4
+        sub     edx, eax
+loc_7978D4:
+        mov     ebp, eax
+        imul    ebp, edi
+        add     ebp, edx
+        cmp     ebx, ecx
+        mov     edx, ebx
+        fld     qword ptr [esi + 8*ebp]
+        fstp    qword ptr [esp + 0x78]
+        jb      loc_7978EA
+        sub     edx, ecx
+loc_7978EA:
+        mov     ebp, dword ptr [esp + 0x10]
+        lea     edi, [ebp + 0x2]
+        cmp     edi, eax
+        mov     dword ptr [esp + 0x14], edi
+        jb      loc_7978FB
+        sub     edi, eax
+loc_7978FB:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebx, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebx
+        fstp    qword ptr [esp + 0x90]
+        jb      loc_797912
+        sub     edx, ecx
+loc_797912:
+        lea     edi, [ebp + 0x3]
+        cmp     edi, eax
+        mov     dword ptr [esp + 0x18], edi
+        jb      loc_79791F
+        sub     edi, eax
+loc_79791F:
+        imul    edx, eax
+        add     edx, edi
+        lea     ebp, [ebx + 0x1]
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        fstp    qword ptr [esp + 0x80]
+        jb      loc_797939
+        sub     edx, ecx
+loc_797939:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, eax
+        jb      loc_797943
+        sub     edi, eax
+loc_797943:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        fstp    qword ptr [esp + 0x58]
+        jb      loc_797957
+        sub     edx, ecx
+loc_797957:
+        mov     edi, dword ptr [esp + 0x10]
+        inc     edi
+        cmp     edi, eax
+        mov     dword ptr [esp + 0x1c], edi
+        jb      loc_797966
+        sub     edi, eax
+loc_797966:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        fstp    qword ptr [esp + 0x48]
+        jb      loc_79797A
+        sub     edx, ecx
+loc_79797A:
+        mov     edi, dword ptr [esp + 0x14]
+        cmp     edi, eax
+        jb      loc_797984
+        sub     edi, eax
+loc_797984:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        fstp    qword ptr [esp + 0x38]
+        jb      loc_797998
+        sub     edx, ecx
+loc_797998:
+        mov     edi, dword ptr [esp + 0x18]
+        cmp     edi, eax
+        jb      loc_7979A2
+        sub     edi, eax
+loc_7979A2:
+        imul    edx, eax
+        add     edx, edi
+        lea     ebp, [ebx + 0x2]
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        fstp    qword ptr [esp + 0x30]
+        jb      loc_7979B9
+        sub     edx, ecx
+loc_7979B9:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, eax
+        jb      loc_7979C3
+        sub     edi, eax
+loc_7979C3:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        fstp    qword ptr [esp + 0x68]
+        jb      loc_7979D7
+        sub     edx, ecx
+loc_7979D7:
+        mov     edi, dword ptr [esp + 0x1c]
+        cmp     edi, eax
+        jb      loc_7979E1
+        sub     edi, eax
+loc_7979E1:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        jb      loc_7979F1
+        sub     edx, ecx
+loc_7979F1:
+        mov     edi, dword ptr [esp + 0x14]
+        cmp     edi, eax
+        jb      loc_7979FB
+        sub     edi, eax
+loc_7979FB:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        jb      loc_797A0B
+        sub     edx, ecx
+loc_797A0B:
+        mov     edi, dword ptr [esp + 0x18]
+        cmp     edi, eax
+        jb      loc_797A15
+        sub     edi, eax
+loc_797A15:
+        imul    edx, eax
+        add     edx, edi
+        lea     ebp, [ebx + 0x3]
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        jb      loc_797A28
+        sub     edx, ecx
+loc_797A28:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, eax
+        jb      loc_797A32
+        sub     edi, eax
+loc_797A32:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        jb      loc_797A42
+        sub     edx, ecx
+loc_797A42:
+        mov     edi, dword ptr [esp + 0x1c]
+        cmp     edi, eax
+        jb      loc_797A4C
+        sub     edi, eax
+loc_797A4C:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        jb      loc_797A5C
+        sub     edx, ecx
+loc_797A5C:
+        mov     edi, dword ptr [esp + 0x14]
+        cmp     edi, eax
+        jb      loc_797A66
+        sub     edi, eax
+loc_797A66:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        jb      loc_797A76
+        sub     edx, ecx
+loc_797A76:
+        mov     edi, dword ptr [esp + 0x18]
+        cmp     edi, eax
+        jb      loc_797A80
+        sub     edi, eax
+loc_797A80:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebx, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, dword ptr [esp + 0x24]
+        fmul    qword ptr [edx + 0x78]
+        fxch    st(2)
+        fmul    qword ptr [edx + 0x68]
+        faddp   st(2), st
+        fxch    st(2)
+        fmul    qword ptr [edx + 0x60]
+        faddp   st(1), st
+        fxch    st(2)
+        fmul    qword ptr [edx + 0x58]
+        faddp   st(2), st
+        fxch    st(2)
+        fmul    qword ptr [edx + 0x50]
+        faddp   st(1), st
+        fxch    st(2)
+        fmul    qword ptr [edx + 0x48]
+        faddp   st(2), st
+        fld     qword ptr [esp + 0x68]
+        fmul    qword ptr [edx + 0x40]
+        faddp   st(2), st
+        fld     qword ptr [esp + 0x30]
+        fmul    qword ptr [edx + 0x38]
+        faddp   st(2), st
+        fld     qword ptr [esp + 0x38]
+        fmul    qword ptr [edx + 0x30]
+        faddp   st(2), st
+        fld     qword ptr [esp + 0x48]
+        fmul    qword ptr [edx + 0x28]
+        faddp   st(2), st
+        fld     qword ptr [esp + 0x58]
+        fmul    qword ptr [edx + 0x20]
+        faddp   st(2), st
+        fld     qword ptr [esp + 0x80]
+        fmul    qword ptr [edx + 0x18]
+        faddp   st(2), st
+        fld     qword ptr [esp + 0x90]
+        fmul    qword ptr [edx + 0x10]
+        faddp   st(2), st
+        fld     qword ptr [esp + 0x78]
+        fmul    qword ptr [edx + 0x8]
+        faddp   st(2), st
+        fmul    qword ptr [edx + 0x70]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x88]
+        fmul    qword ptr [edx]
+        mov     edx, ebx
+        faddp   st(1), st
+        jb      loc_797B18
+        sub     edx, ecx
+loc_797B18:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, eax
+        jb      loc_797B22
+        sub     edi, eax
+loc_797B22:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebx, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebx
+        fstp    qword ptr [esp + 0xa8]
+        jb      loc_797B39
+        sub     edx, ecx
+loc_797B39:
+        mov     edi, dword ptr [esp + 0x1c]
+        cmp     edi, eax
+        jb      loc_797B43
+        sub     edi, eax
+loc_797B43:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebx, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebx
+        fstp    qword ptr [esp + 0x68]
+        jb      loc_797B57
+        sub     edx, ecx
+loc_797B57:
+        mov     edi, dword ptr [esp + 0x14]
+        cmp     edi, eax
+        jb      loc_797B61
+        sub     edi, eax
+loc_797B61:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebx, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebx
+        fstp    qword ptr [esp + 0x30]
+        jb      loc_797B75
+        sub     edx, ecx
+loc_797B75:
+        mov     edi, dword ptr [esp + 0x18]
+        cmp     edi, eax
+        jb      loc_797B7F
+        sub     edi, eax
+loc_797B7F:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x1]
+        fstp    qword ptr [esp + 0x38]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x1]
+        jb      loc_797B97
+        sub     edx, ecx
+loc_797B97:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, eax
+        jb      loc_797BA1
+        sub     edi, eax
+loc_797BA1:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x1]
+        fstp    qword ptr [esp + 0x48]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x1]
+        jb      loc_797BB9
+        sub     edx, ecx
+loc_797BB9:
+        mov     edi, dword ptr [esp + 0x1c]
+        cmp     edi, eax
+        jb      loc_797BC3
+        sub     edi, eax
+loc_797BC3:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x1]
+        fstp    qword ptr [esp + 0x58]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x1]
+        jb      loc_797BDB
+        sub     edx, ecx
+loc_797BDB:
+        mov     edi, dword ptr [esp + 0x14]
+        cmp     edi, eax
+        jb      loc_797BE5
+        sub     edi, eax
+loc_797BE5:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x1]
+        fstp    qword ptr [esp + 0x80]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x1]
+        jb      loc_797C00
+        sub     edx, ecx
+loc_797C00:
+        mov     edi, dword ptr [esp + 0x18]
+        cmp     edi, eax
+        jb      loc_797C0A
+        sub     edi, eax
+loc_797C0A:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x2]
+        fstp    qword ptr [esp + 0x90]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x2]
+        jb      loc_797C25
+        sub     edx, ecx
+loc_797C25:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, eax
+        jb      loc_797C2F
+        sub     edi, eax
+loc_797C2F:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x2]
+        fstp    qword ptr [esp + 0x78]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x2]
+        jb      loc_797C47
+        sub     edx, ecx
+loc_797C47:
+        mov     edi, dword ptr [esp + 0x1c]
+        cmp     edi, eax
+        jb      loc_797C51
+        sub     edi, eax
+loc_797C51:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x2]
+        fstp    qword ptr [esp + 0x88]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x2]
+        jb      loc_797C6C
+        sub     edx, ecx
+loc_797C6C:
+        mov     edi, dword ptr [esp + 0x14]
+        cmp     edi, eax
+        jb      loc_797C76
+        sub     edi, eax
+loc_797C76:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x2]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x2]
+        jb      loc_797C8A
+        sub     edx, ecx
+loc_797C8A:
+        mov     edi, dword ptr [esp + 0x18]
+        cmp     edi, eax
+        jb      loc_797C94
+        sub     edi, eax
+loc_797C94:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        jb      loc_797CA4
+        sub     edx, ecx
+loc_797CA4:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, eax
+        jb      loc_797CAE
+        sub     edi, eax
+loc_797CAE:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        jb      loc_797CBE
+        sub     edx, ecx
+loc_797CBE:
+        mov     edi, dword ptr [esp + 0x1c]
+        cmp     edi, eax
+        jb      loc_797CC8
+        sub     edi, eax
+loc_797CC8:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        jb      loc_797CD8
+        sub     edx, ecx
+loc_797CD8:
+        mov     edi, dword ptr [esp + 0x14]
+        cmp     edi, eax
+        jb      loc_797CE2
+        sub     edi, eax
+loc_797CE2:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebp, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebp
+        jb      loc_797CF2
+        sub     edx, ecx
+loc_797CF2:
+        mov     edi, dword ptr [esp + 0x18]
+        cmp     edi, eax
+        jb      loc_797CFC
+        sub     edi, eax
+loc_797CFC:
+        imul    edx, eax
+        mov     ebp, dword ptr [esp + 0x98]
+        add     edx, edi
+        cmp     ebx, ecx
+        fld     qword ptr [esi + 8*edx]
+        fmul    qword ptr [ebp + 0x78]
+        fxch    st(1)
+        fmul    qword ptr [ebp + 0x70]
+        mov     edx, ebx
+        faddp   st(1), st
+        fxch    st(1)
+        fmul    qword ptr [ebp + 0x68]
+        faddp   st(1), st
+        fxch    st(1)
+        fmul    qword ptr [ebp + 0x60]
+        faddp   st(1), st
+        fxch    st(1)
+        fmul    qword ptr [ebp + 0x58]
+        faddp   st(1), st
+        fxch    st(1)
+        fmul    qword ptr [ebp + 0x50]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x88]
+        fmul    qword ptr [ebp + 0x48]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x78]
+        fmul    qword ptr [ebp + 0x40]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x90]
+        fmul    qword ptr [ebp + 0x38]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x80]
+        fmul    qword ptr [ebp + 0x30]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x58]
+        fmul    qword ptr [ebp + 0x28]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x48]
+        fmul    qword ptr [ebp + 0x20]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x38]
+        fmul    qword ptr [ebp + 0x18]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x30]
+        fmul    qword ptr [ebp + 0x10]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x68]
+        fmul    qword ptr [ebp + 0x8]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0xa8]
+        fmul    qword ptr [ebp]
+        faddp   st(1), st
+        jb      loc_797D9F
+        sub     edx, ecx
+loc_797D9F:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, eax
+        jb      loc_797DA9
+        sub     edi, eax
+loc_797DA9:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebx, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebx
+        fstp    qword ptr [esp + 0x98]
+        jb      loc_797DC0
+        sub     edx, ecx
+loc_797DC0:
+        mov     edi, dword ptr [esp + 0x10]
+        inc     edi
+        cmp     edi, eax
+        mov     edi, dword ptr [esp + 0x10]
+        inc     edi
+        jb      loc_797DD0
+        sub     edi, eax
+loc_797DD0:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebx, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebx
+        fstp    qword ptr [esp + 0x68]
+        jb      loc_797DE4
+        sub     edx, ecx
+loc_797DE4:
+        mov     edi, dword ptr [esp + 0x10]
+        add     edi, 0x2
+        cmp     edi, eax
+        mov     edi, dword ptr [esp + 0x10]
+        jb      loc_797DFA
+        add     edi, 0x2
+        sub     edi, eax
+        jmp     loc_797DFD
+loc_797DFA:
+        add     edi, 0x2
+loc_797DFD:
+        imul    edx, eax
+        add     edx, edi
+        cmp     ebx, ecx
+        fld     qword ptr [esi + 8*edx]
+        mov     edx, ebx
+        fstp    qword ptr [esp + 0x30]
+        jb      loc_797E11
+        sub     edx, ecx
+loc_797E11:
+        mov     edi, dword ptr [esp + 0x10]
+        add     edi, 0x3
+        cmp     edi, eax
+        mov     edi, dword ptr [esp + 0x10]
+        jb      loc_797E27
+        add     edi, 0x3
+        sub     edi, eax
+        jmp     loc_797E2A
+loc_797E27:
+        add     edi, 0x3
+loc_797E2A:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x1]
+        fstp    qword ptr [esp + 0x38]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x1]
+        jb      loc_797E42
+        sub     edx, ecx
+loc_797E42:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, eax
+        jb      loc_797E4C
+        sub     edi, eax
+loc_797E4C:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x1]
+        fstp    qword ptr [esp + 0x48]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x1]
+        jb      loc_797E64
+        sub     edx, ecx
+loc_797E64:
+        mov     edi, dword ptr [esp + 0x10]
+        inc     edi
+        cmp     edi, eax
+        mov     edi, dword ptr [esp + 0x10]
+        inc     edi
+        jb      loc_797E74
+        sub     edi, eax
+loc_797E74:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x1]
+        fstp    qword ptr [esp + 0x58]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x1]
+        jb      loc_797E8C
+        sub     edx, ecx
+loc_797E8C:
+        mov     edi, dword ptr [esp + 0x10]
+        add     edi, 0x2
+        cmp     edi, eax
+        mov     edi, dword ptr [esp + 0x10]
+        jb      loc_797EA2
+        add     edi, 0x2
+        sub     edi, eax
+        jmp     loc_797EA5
+loc_797EA2:
+        add     edi, 0x2
+loc_797EA5:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x1]
+        fstp    qword ptr [esp + 0x80]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x1]
+        jb      loc_797EC0
+        sub     edx, ecx
+loc_797EC0:
+        mov     edi, dword ptr [esp + 0x10]
+        add     edi, 0x3
+        cmp     edi, eax
+        mov     edi, dword ptr [esp + 0x10]
+        jb      loc_797ED6
+        add     edi, 0x3
+        sub     edi, eax
+        jmp     loc_797ED9
+loc_797ED6:
+        add     edi, 0x3
+loc_797ED9:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x2]
+        fstp    qword ptr [esp + 0x90]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x2]
+        jb      loc_797EF4
+        sub     edx, ecx
+loc_797EF4:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, eax
+        jb      loc_797EFE
+        sub     edi, eax
+loc_797EFE:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x2]
+        fstp    qword ptr [esp + 0x78]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x2]
+        jb      loc_797F16
+        sub     edx, ecx
+loc_797F16:
+        mov     edi, dword ptr [esp + 0x10]
+        inc     edi
+        cmp     edi, eax
+        mov     edi, dword ptr [esp + 0x10]
+        inc     edi
+        jb      loc_797F26
+        sub     edi, eax
+loc_797F26:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x2]
+        fstp    qword ptr [esp + 0x88]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x2]
+        jb      loc_797F41
+        sub     edx, ecx
+loc_797F41:
+        mov     edi, dword ptr [esp + 0x10]
+        add     edi, 0x2
+        cmp     edi, eax
+        mov     edi, dword ptr [esp + 0x10]
+        jb      loc_797F57
+        add     edi, 0x2
+        sub     edi, eax
+        jmp     loc_797F5A
+loc_797F57:
+        add     edi, 0x2
+loc_797F5A:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x2]
+        fstp    qword ptr [esp + 0xa8]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x2]
+        jb      loc_797F75
+        sub     edx, ecx
+loc_797F75:
+        mov     edi, dword ptr [esp + 0x10]
+        add     edi, 0x3
+        cmp     edi, eax
+        mov     edi, dword ptr [esp + 0x10]
+        jb      loc_797F8B
+        add     edi, 0x3
+        sub     edi, eax
+        jmp     loc_797F8E
+loc_797F8B:
+        add     edi, 0x3
+loc_797F8E:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x3]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x3]
+        jb      loc_797FA2
+        sub     edx, ecx
+loc_797FA2:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, eax
+        jb      loc_797FAC
+        sub     edi, eax
+loc_797FAC:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x3]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x3]
+        jb      loc_797FC0
+        sub     edx, ecx
+loc_797FC0:
+        mov     edi, dword ptr [esp + 0x10]
+        inc     edi
+        cmp     edi, eax
+        mov     edi, dword ptr [esp + 0x10]
+        inc     edi
+        jb      loc_797FD0
+        sub     edi, eax
+loc_797FD0:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x3]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x3]
+        jb      loc_797FE4
+        sub     edx, ecx
+loc_797FE4:
+        mov     edi, dword ptr [esp + 0x10]
+        add     edi, 0x2
+        cmp     edi, eax
+        mov     edi, dword ptr [esp + 0x10]
+        jb      loc_797FFA
+        add     edi, 0x2
+        sub     edi, eax
+        jmp     loc_797FFD
+loc_797FFA:
+        add     edi, 0x2
+loc_797FFD:
+        imul    edx, eax
+        add     edx, edi
+        fld     qword ptr [esi + 8*edx]
+        lea     edx, [ebx + 0x3]
+        cmp     edx, ecx
+        lea     edx, [ebx + 0x3]
+        jb      loc_798011
+        sub     edx, ecx
+loc_798011:
+        mov     ecx, dword ptr [esp + 0x10]
+        add     ecx, 0x3
+        cmp     ecx, eax
+        jb      loc_79801E
+        sub     ecx, eax
+loc_79801E:
+        imul    edx, eax
+        mov     eax, dword ptr [esp + 0x44]
+        add     edx, ecx
+        mov     ecx, dword ptr [esp + 0x54]
+        add     eax, 0x80
+        fld     qword ptr [esi + 8*edx]
+        fmul    qword ptr [eax - 0x8]
+        fxch    st(1)
+        fmul    qword ptr [eax - 0x10]
+        mov     esi, dword ptr [esp + 0x24]
+        add     ecx, 0x8
+        add     ecx, 0x8
+        mov     dword ptr [esp + 0x44], eax
+        faddp   st(1), st
+        fxch    st(1)
+        fmul    qword ptr [eax - 0x18]
+        add     ecx, 0x8
+        add     esi, 0x80
+        add     ebp, 0x80
+        mov     dword ptr [esp + 0x54], ecx
+        faddp   st(1), st
+        fxch    st(1)
+        fmul    qword ptr [eax - 0x20]
+        mov     dword ptr [esp + 0x24], esi
+        faddp   st(1), st
+        fxch    st(1)
+        fmul    qword ptr [eax - 0x28]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0xa8]
+        fmul    qword ptr [eax - 0x30]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x88]
+        fmul    qword ptr [eax - 0x38]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x78]
+        fmul    qword ptr [eax - 0x40]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x90]
+        fmul    qword ptr [eax - 0x48]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x80]
+        fmul    qword ptr [eax - 0x50]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x58]
+        fmul    qword ptr [eax - 0x58]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x48]
+        fmul    qword ptr [eax - 0x60]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x38]
+        fmul    qword ptr [eax - 0x68]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x30]
+        fmul    qword ptr [eax - 0x70]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x68]
+        fmul    qword ptr [eax - 0x78]
+        faddp   st(1), st
+        fld     qword ptr [esp + 0x98]
+        fmul    qword ptr [eax - 0x80]
+        mov     eax, dword ptr [esp + 0x20]
+        mov     dword ptr [esp + 0x98], ebp
+        dec     eax
+        faddp   st(1), st
+        fxch    st(2)
+        fstp    qword ptr [ecx - 0x18]
+        mov     dword ptr [esp + 0x20], eax
+        fstp    qword ptr [ecx - 0x10]
+        fstp    qword ptr [ecx - 0x8]
+        jne     loc_79788E
+        mov     ecx, dword ptr [esp + 0x2c]
+        mov     esi, dword ptr [esp + 0x74]
+        mov     edi, 0x1
+loc_798117:
+        dec     ecx
+        mov     dword ptr [esp + 0x2c], ecx
+        jne     loc_79784C
+        mov     eax, dword ptr [esp + 0x64]
+        mov     ecx, dword ptr [esp + 0xa4]
+loc_79812D:
+        mov     edx, dword ptr [esp + 0x28]
+        dec     edx
+        mov     dword ptr [esp + 0x28], edx
+        jne     loc_797838
+loc_79813C:
+        dec     eax
+        mov     dword ptr [esp + 0x64], eax
+        jne     loc_797809
+loc_798147:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+    }
+}
