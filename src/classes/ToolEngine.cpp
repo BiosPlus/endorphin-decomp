@@ -1226,3 +1226,75 @@ extern "C" __declspec(naked) void __fastcall fn_00480EE0(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_00493D30();
+extern "C" void ext_00594000();
+extern "C" void ext_0065D120();
+extern "C" void ext_006AD940();
+extern "C" int mem_00925134;
+
+// [0x00481000] ToolEngine::vfunc_31 (161 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00481000(void* self, int edx_unused, int arg1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        call ext_00594000
+        lea ecx, [eax + 0xfc]
+        call ext_0065D120
+        mov eax, dword ptr [ebp + 0x10]
+        mov edx, dword ptr [eax + 0x10]
+        lea ecx, [ebp + 0x10]
+        call edx
+        mov esi, eax
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe loc_00481031
+        call dword ptr [mem_00925134]
+    loc_00481031:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe loc_0048103f
+        call dword ptr [mem_00925134]
+    loc_0048103f:
+        cmp edi, ebx
+        je loc_0048106f
+        cmp edi, dword ptr [esi + 0x8]
+        jb loc_0048104e
+        call dword ptr [mem_00925134]
+    loc_0048104e:
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [eax + 0x9c]
+        push edx
+        call eax
+        cmp edi, dword ptr [esi + 0x8]
+        jb loc_0048106a
+        call dword ptr [mem_00925134]
+    loc_0048106a:
+        add edi, 4
+        jmp loc_00481031
+    loc_0048106f:
+        mov ecx, dword ptr [ebp + 0x4]
+        test ecx, ecx
+        pop edi
+        pop esi
+        mov byte ptr [ebp + 0x108], 1
+        pop ebp
+        pop ebx
+        je loc_00481087
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+    loc_00481087:
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        call ext_00493D30
+        ret 4
+    }
+}
