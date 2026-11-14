@@ -7605,3 +7605,44 @@ extern "C" __declspec(naked) int __fastcall fn_0069E810(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x00698F30] sub_00698F30 (68 bytes)
+extern "C" void __stdcall ext_00536600(unsigned int size, int zero);
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00698F30(void* self, int edx_unused, float a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        push edi
+        jne short L_nonzero
+        xor edi, edi
+        jmp short L_call
+L_nonzero:
+        mov edi, dword ptr [esi + 0x8]
+        sub edi, eax
+L_call:
+        push 0x0
+        lea eax, [edi + 0x4]
+        push eax
+        call ext_00536600
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je short L_invalid
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        cmp edi, eax
+        jb short L_store
+L_invalid:
+        call dword ptr [mem_00925134]
+L_store:
+        mov ecx, dword ptr [esi + 0x4]
+        fld dword ptr [esp + 0xc]
+        fstp dword ptr [edi + ecx]
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
