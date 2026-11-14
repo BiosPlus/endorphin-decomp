@@ -828,3 +828,156 @@ extern "C" __declspec(naked) void __fastcall fn_0051BF50(void* self) {
         ret 0x8
     }
 }
+
+extern "C" void ext_00492A50();
+extern "C" void ext_0051A780();
+extern "C" void ext_0051C820();
+extern "C" int mem_00A430F0;
+
+// [0x0051CB50] NMData::RealChannel::vfunc_5 (358 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0051CB50(void* self, int edx_unused, float a1, float a2) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x30]
+        sub esp, 0xc
+        test eax, eax
+        push esi
+        lea esi, [ecx + 0x2c]
+        je L_cb68
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        sar ecx, 0x3
+        jne L_cb82
+    L_cb68:
+        push 1
+        lea edx, [esp + 0x1c]
+        push edx
+        lea eax, [esp + 0x1c]
+        push eax
+        mov ecx, esi
+        call ext_0051C820
+        pop esi
+        add esp, 0xc
+        ret 0x8
+    L_cb82:
+        push ebx
+        mov ebx, eax
+        cmp ebx, dword ptr [esi + 0x8]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        jbe L_cb93
+        call ebp
+    L_cb93:
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_cb9e
+        call ebp
+    L_cb9e:
+        cmp edi, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x18], edi
+        ja L_cba9
+        call ebp
+    L_cba9:
+        add edi, -8
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_cbb3
+        call ebp
+    L_cbb3:
+        fld dword ptr [edi]
+        fld dword ptr [esp + 0x20]
+        fsub dword ptr [mem_00A430F0]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        je L_cc99
+        cmp ebx, dword ptr [esi + 0x8]
+        jb L_cbdb
+        call ebp
+    L_cbdb:
+        fld dword ptr [ebx]
+        fld dword ptr [mem_00A430F0]
+        fadd dword ptr [esp + 0x20]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fcompp
+        fnstsw ax
+        test ah, 0x5
+        jnp L_cc99
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_cc06
+        call ebp
+    L_cc06:
+        fld dword ptr [mem_00A430F0]
+        sub esp, 0x8
+        fstp dword ptr [esp + 0x4]
+        lea ecx, [esp + 0x1c]
+        fld dword ptr [esp + 0x28]
+        mov dword ptr [esp + 0x1c], esi
+        fstp dword ptr [esp]
+        push ecx
+        push esi
+        mov dword ptr [esp + 0x28], edi
+        call ext_0051A780
+        mov edi, dword ptr [esp + 0x24]
+        add esp, 0x10
+        test edi, edi
+        jne L_cc3a
+        call ebp
+    L_cc3a:
+        mov ebx, dword ptr [esp + 0x18]
+        cmp ebx, dword ptr [edi + 0x8]
+        jb L_cc45
+        call ebp
+    L_cc45:
+        fld dword ptr [ebx]
+        fld dword ptr [esp + 0x20]
+        fsub dword ptr [mem_00A430F0]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fcompp
+        fnstsw ax
+        test ah, 0x41
+        jne L_cc7f
+        push 1
+        lea edx, [esp + 0x28]
+        push edx
+        lea eax, [esp + 0x28]
+        push eax
+        mov ecx, esi
+        call ext_0051C820
+        pop edi
+        pop ebp
+        pop ebx
+        pop esi
+        add esp, 0xc
+        ret 0x8
+    L_cc7f:
+        lea ecx, [esp + 0x14]
+        call ext_00492A50
+        fld dword ptr [esp + 0x24]
+        pop edi
+        fstp dword ptr [eax + 0x4]
+        pop ebp
+        pop ebx
+        pop esi
+        add esp, 0xc
+        ret 0x8
+    L_cc99:
+        push 1
+        lea ecx, [esp + 0x28]
+        push ecx
+        lea edx, [esp + 0x28]
+        push edx
+        mov ecx, esi
+        call ext_0051C820
+        pop edi
+        pop ebp
+        pop ebx
+        pop esi
+        add esp, 0xc
+        ret 0x8
+    }
+}
