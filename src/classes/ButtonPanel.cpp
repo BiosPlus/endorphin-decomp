@@ -1447,3 +1447,277 @@ __declspec(naked) void __fastcall fn_00457F60(void* self) {
         ret 0xc
     }
 }
+
+extern "C" void ext_00455CB0();
+extern "C" void ext_00455CD0();
+extern "C" void ext_00456510();
+extern "C" void ext_004573A0();
+extern "C" void ext_006A5E00();
+extern "C" void ext_006A60EE();
+extern "C" void ext_006A6778();
+extern "C" void ext_006A6784();
+extern "C" void ext_006A67DE();
+extern "C" int mem_0087EBA8;
+extern "C" int mem_009256D8;
+extern "C" int mem_00925668;
+extern "C" int mem_00925690;
+extern "C" int mem_00936D44;
+
+// [0x004575A0] ButtonPanel::vfunc_97 (735 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004575A0(void* self) {
+    __asm {
+        push -0x1
+        mov eax, dword ptr fs:[0x0]
+        push offset mem_0087EBA8
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x44
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x20]
+        push edi
+        push eax
+        call dword ptr [mem_009256D8]
+        push eax
+        call ext_006A5E00
+        cmp dword ptr [esi + 0xe8], 0x0
+        jne L_4575ea
+        mov ecx, dword ptr [esi + 0x20]
+        push 0x180
+        push 0x0
+        push 0x0
+        push ecx
+        call dword ptr [mem_00925668]
+    L_4575ea:
+        mov edx, dword ptr [esp + 0x64]
+        mov ebp, 0x1
+        mov ecx, esi
+        mov dword ptr [esi + 0x98], edx
+        mov dword ptr [esi + 0xdc], ebp
+        call ext_00455CB0
+        cmp edx, 0xa
+        mov ebx, eax
+        mov dword ptr [esp + 0x64], ebx
+        je L_457674
+        cmp edx, 0xb
+        je L_457674
+        mov eax, dword ptr [esp + 0x6c]
+        xor edi, edi
+    L_45761c:
+        lea edx, [esp + 0x10]
+        mov dword ptr [esi + 0xd4], eax
+        mov eax, dword ptr [esi + 0x20]
+        push edx
+        push eax
+        call dword ptr [mem_00925690]
+        mov edx, dword ptr [esi + 0x98]
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x1c]
+        sub esp, 0x10
+        mov eax, esp
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x30]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [esp + 0x34]
+        mov dword ptr [eax + 0x8], ecx
+        mov ecx, esi
+        mov dword ptr [eax + 0xc], edx
+        call ext_00456510
+        test edi, edi
+        je L_45767c
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x28]
+        add eax, ecx
+        jmp L_457686
+    L_457674:
+        mov eax, dword ptr [esp + 0x68]
+        mov edi, ebp
+        jmp L_45761c
+    L_45767c:
+        mov edx, dword ptr [esp + 0x2c]
+        mov eax, dword ptr [esp + 0x24]
+        add eax, edx
+    L_457686:
+        mov ecx, dword ptr [esi + 0xd4]
+        cdq
+        sub eax, edx
+        sar eax, 1
+        sub ecx, eax
+        mov dword ptr [esi + 0xd8], ecx
+        lea ecx, [esp + 0x40]
+        call ext_006A6778
+        mov dword ptr [esp + 0x40], offset mem_00936D44
+        lea edx, [esp + 0x68]
+        push edx
+        lea eax, [esp + 0x44]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x64], 0x0
+        call ext_004573A0
+        mov eax, dword ptr [esi + 0xd4]
+        mov ecx, esi
+        mov dword ptr [esi + 0xd0], eax
+        mov dword ptr [esi + 0xcc], eax
+        call ext_00455CD0
+        test eax, eax
+        jne L_4577da
+        test ebx, ebx
+        je L_4576f0
+        mov edi, dword ptr [esi + 0xb8]
+        jmp L_4576f6
+    L_4576f0:
+        mov edi, dword ptr [esi + 0xbc]
+    L_4576f6:
+        mov ebp, dword ptr [esp + 0x48]
+        xor eax, eax
+        test ebp, ebp
+        jle L_457753
+        mov ebx, dword ptr [esp + 0x44]
+    L_457704:
+        cmp dword ptr [esp + 0x64], 0x0
+        je L_45771e
+        test eax, eax
+        jl L_45775f
+        cmp eax, ebp
+        jge L_45775f
+        mov ecx, dword ptr [ebx + 4*eax]
+        mov edx, dword ptr [ecx + 0xb8]
+        jmp L_45772f
+    L_45771e:
+        test eax, eax
+        jl L_45775f
+        cmp eax, ebp
+        jge L_45775f
+        mov ecx, dword ptr [ebx + 4*eax]
+        mov edx, dword ptr [ecx + 0xbc]
+    L_45772f:
+        cmp edi, edx
+        jg L_457748
+        cmp dword ptr [esp + 0x64], 0x0
+        je L_457742
+        mov edi, dword ptr [ecx + 0xb8]
+        jmp L_457748
+    L_457742:
+        mov edi, dword ptr [ecx + 0xbc]
+    L_457748:
+        add eax, 0x1
+        cmp eax, ebp
+        jl L_457704
+        mov ebx, dword ptr [esp + 0x64]
+    L_457753:
+        test ebx, ebx
+        je L_457764
+        mov eax, dword ptr [esi + 0xa0]
+        jmp L_45776a
+    L_45775f:
+        call ext_006A60EE
+    L_457764:
+        mov eax, dword ptr [esi + 0xa4]
+    L_45776a:
+        push 0x1
+        push 0x0
+        lea ecx, [esp + 0x38]
+        push ecx
+        mov ecx, dword ptr [esi + 0x88]
+        push 0x1
+        push 0xe900
+        push 0xffff
+        sub eax, edi
+        push 0x0
+        mov edi, eax
+        call ext_006A67DE
+        test ebx, ebx
+        je L_45779e
+        mov ecx, dword ptr [esp + 0x3c]
+        sub ecx, dword ptr [esp + 0x34]
+        jmp L_4577a6
+    L_45779e:
+        mov ecx, dword ptr [esp + 0x38]
+        sub ecx, dword ptr [esp + 0x30]
+    L_4577a6:
+        mov eax, dword ptr [esi + 0x98]
+        sub ecx, 0x2
+        cmp eax, 0xc
+        je L_4577d1
+        cmp eax, 0xa
+        je L_4577d1
+        xor edx, edx
+        mov eax, edi
+    L_4577bd:
+        sub dword ptr [esi + 0xcc], eax
+        test edx, edx
+        je L_4577c9
+        mov ecx, edi
+    L_4577c9:
+        add dword ptr [esi + 0xd0], ecx
+        jmp L_45784d
+    L_4577d1:
+        mov edx, 0x1
+        mov eax, ecx
+        jmp L_4577bd
+    L_4577da:
+        mov eax, dword ptr [esi + 0x98]
+        cmp eax, 0xf
+        je L_4577ea
+        cmp eax, 0xb
+        jne L_4577ee
+    L_4577ea:
+        add dword ptr [esp + 0x68], ebp
+    L_4577ee:
+        mov edi, dword ptr [esp + 0x48]
+        xor ecx, ecx
+        test edi, edi
+        jle L_45784d
+        mov ebp, dword ptr [esp + 0x44]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L_457800:
+        test ecx, ecx
+        jl L_45775f
+        cmp ecx, edi
+        jge L_45775f
+        test ebx, ebx
+        mov edx, dword ptr [ebp + 4*ecx]
+        je L_457826
+        mov eax, dword ptr [edx + 0x9c]
+        sub eax, dword ptr [edx + 0xb4]
+        jmp L_457832
+    L_457826:
+        mov eax, dword ptr [edx + 0xa8]
+        sub eax, dword ptr [edx + 0xc0]
+    L_457832:
+        cmp ecx, dword ptr [esp + 0x68]
+        jge L_457840
+        sub dword ptr [esi + 0xcc], eax
+        jmp L_457846
+    L_457840:
+        add dword ptr [esi + 0xd0], eax
+    L_457846:
+        add ecx, 0x1
+        cmp ecx, edi
+        jl L_457800
+    L_45784d:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x190]
+        mov ecx, esi
+        call eax
+        lea ecx, [esp + 0x40]
+        mov dword ptr [esp + 0x5c], 0xffffffff
+        call ext_006A6784
+        mov ecx, dword ptr [esp + 0x54]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        add esp, 0x50
+        ret 0xc
+    }
+}
