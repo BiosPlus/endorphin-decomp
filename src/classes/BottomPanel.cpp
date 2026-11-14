@@ -413,3 +413,14 @@ L_843A:
         ret 0x4
     }
 }
+
+// [0x004086A0] BottomPanel::vfunc_92 (19 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004086A0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        movzx edx, word ptr [esp + 8]
+        mov dword ptr [esp + 8], edx
+        mov eax, dword ptr [eax + 0x174]
+        jmp eax
+    }
+}
