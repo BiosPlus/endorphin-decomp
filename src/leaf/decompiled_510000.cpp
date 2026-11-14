@@ -8254,3 +8254,49 @@ extern "C" __declspec(naked) int __cdecl fn_0051DC90(int idx) {
         ret
     }
 }
+
+// [0x0051DD20] sub_0051DD20 (135 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_0051DD20(void* arg1, float arg2) {
+    __asm {
+        push -1
+        push 0x892f71
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x34]
+        lea eax, [edi + 4]
+        push eax
+        lea ecx, [esp + 0xc]
+        call dword ptr [mem_00924FE0]
+        push 1
+        lea ecx, [esp + 0xc]
+        push 0
+        push ecx
+        mov dword ptr [esp + 0x38], 0
+        call ext_0051D940
+        mov esi, eax
+        mov dword ptr [esp + 0x40], esi
+        fld dword ptr [esp + 0x44]
+        mov edx, dword ptr [esi]
+        fstp dword ptr [esp + 8]
+        mov eax, dword ptr [edx + 4]
+        add esp, 8
+        push edi
+        mov ecx, esi
+        mov byte ptr [esp + 0x34], 1
+        call eax
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 0x2c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret
+    }
+}
