@@ -190,3 +190,42 @@ extern "C" __declspec(naked) void __fastcall fn_00778030(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0077FA70] sub_0077FA70 (64 bytes)
+extern "C" void ext_006DC510();
+extern "C" void ext_006DC550();
+extern "C" __declspec(naked) void __fastcall fn_0077FA70(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je fa70_done
+        push edi
+        xor edi, edi
+        call ext_006DC550
+        test eax, eax
+        jle fa70_clear
+        push ebx
+    fa70_loop:
+        mov ecx, dword ptr [esi + 0x4]
+        mov ebx, dword ptr [esi]
+        push edi
+        call ext_006DC510
+        push eax
+        mov ecx, esi
+        call dword ptr [ebx + 0x14]
+        mov ecx, dword ptr [esi + 0x4]
+        inc edi
+        call ext_006DC550
+        cmp edi, eax
+        jl fa70_loop
+        pop ebx
+    fa70_clear:
+        mov dword ptr [esi + 0x4], 0
+        pop edi
+    fa70_done:
+        pop esi
+        ret
+    }
+}
