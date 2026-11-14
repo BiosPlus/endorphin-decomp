@@ -930,3 +930,48 @@ extern "C" int __fastcall fn_008726F0(void* self, int edx_unused, int a1, int a2
     p[7] = 0;
     return ext_00872650(self);
 }
+
+// [0x008718C0] sub_008718C0 (76 bytes)
+extern "C" void ext_00870E40();
+extern "C" void ext_00870F40();
+extern "C" void ext_008710F0();
+
+extern "C" __declspec(naked) void __fastcall fn_008718C0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [ecx + 0x14]
+        push esi
+        mov esi, dword ptr [ecx + 0x8]
+        push edi
+        mov edi, dword ptr [ecx + 0x10]
+        call ext_008710B0
+        test al, al
+        je fail_008718EC
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        call ext_00870F40
+        test al, al
+        jne match_008718F4
+        mov dword ptr [ecx + 0x8], esi
+        mov dword ptr [ecx + 0x10], edi
+        mov dword ptr [ecx + 0x14], ebx
+    fail_008718EC:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 4
+    match_008718F4:
+        call ext_008710F0
+        test al, al
+        jne success_00871904
+        push 3
+        call ext_00870E40
+    success_00871904:
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        ret 4
+    }
+}
