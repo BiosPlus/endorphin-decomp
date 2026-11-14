@@ -10772,3 +10772,85 @@ extern "C" __declspec(naked) void __fastcall fn_0065E260(void* self) {
         ret 0x4
     }
 }
+
+extern "C" void ext_0065D440();
+extern "C" void ext_0065ECB0();
+extern "C" void ext_00662310();
+
+// [0x0065F100] sub_0065F100 (232 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0065F100(void* self) {
+    __asm {
+        push -1
+        push 0x8b25c3
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x14
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        xor edi, edi
+        mov [esp + 0xc], esi
+        mov [esi + 0x4], edi
+        mov [esi + 0x8], edi
+        mov [esi + 0xc], edi
+        mov [esp + 0x28], edi
+        mov [esi + 0x14], edi
+        mov [esi + 0x18], edi
+        mov [esi + 0x1c], edi
+        mov [esi + 0x24], edi
+        mov [esi + 0x28], edi
+        mov [esi + 0x2c], edi
+        mov [esi + 0x34], edi
+        mov [esi + 0x38], edi
+        mov [esi + 0x3c], edi
+        mov [esi + 0x44], edi
+        mov [esi + 0x48], edi
+        mov [esi + 0x4c], edi
+        mov [esi + 0x54], edi
+        mov [esi + 0x58], edi
+        mov [esi + 0x5c], edi
+        lea ebx, [esi + 0x60]
+        mov ecx, ebx
+        mov byte ptr [esp + 0x28], 0x5
+        call ext_0065D440
+        mov [ebx + 0x4], eax
+        mov [ebx + 0x8], edi
+        mov eax, [eax]
+        lea ecx, [esp + 0x10]
+        push ecx
+        push esi
+        lea ecx, [esi + 0x6c]
+        mov byte ptr [esp + 0x30], 0x6
+        mov [esp + 0x1c], eax
+        mov [esp + 0x18], ebx
+        call ext_00662310
+        mov eax, [ebx + 0x4]
+        mov edx, [eax]
+        lea eax, [esp + 0x18]
+        push eax
+        push esi
+        lea ecx, [esi + 0xcc]
+        mov byte ptr [esp + 0x30], 0x7
+        mov [esp + 0x24], edx
+        mov [esp + 0x20], ebx
+        call ext_00662310
+        mov ecx, esi
+        mov byte ptr [esp + 0x28], 0x8
+        call ext_0065ECB0
+        mov ecx, esi
+        call ext_0065D130
+        fld1
+        mov ecx, [esp + 0x20]
+        fstp dword ptr [esi + 0x138]
+        pop edi
+        mov byte ptr [esi + 0x12c], 0x1
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 0x20
+        ret
+    }
+}
