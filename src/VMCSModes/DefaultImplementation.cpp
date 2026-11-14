@@ -1981,3 +1981,16 @@ extern "C" __declspec(naked) void __fastcall fn_004FA270(void* self) {
         ret
     }
 }
+
+extern "C" void ext_004667A0();
+extern "C" void ext_004FD750();
+
+// [0x004FB350] VMCSModes::DefaultImplementation::vfunc_57 (80 bytes)
+extern "C" int __fastcall fn_004FB350(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6) {
+    if (!a1) {
+        return 0;
+    }
+    ((void (__thiscall*)(void*, int))ext_004667A0)(*(void**)((char*)self + 4), 1);
+    ((void (__thiscall*)(void*))(*(void***)self)[0xd4 / 4])(self);
+    return ((int (__cdecl*)(int, int, int, int, int, int))ext_004FD750)(a2, a3, a4, a5, a1, a6);
+}
