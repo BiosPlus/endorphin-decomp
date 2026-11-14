@@ -386,3 +386,101 @@ L_4F2A6E:
         ret
     }
 }
+
+// [0x004F2B80] VMCSModes::SimulationMode::vfunc_15 (212 bytes)
+// try { inner = self->f8->f14; ext_00472350(inner-ish); sub_00594000()->f0xf4 check;
+//       for (i = 0; i < self->f8->f3c; ++i) sub_00472E30(inner); ... }
+// catch (...) { ... std::cout << ... << std::endl; }
+// Naked: the SEH frame (handler 0x88fb60, try level -1) and the catch funclet are
+// written out by hand, same pattern as fn_00472F70; MSVC /EHsc would drop the try
+// block around extern "C" callees otherwise.
+extern "C" void ext_00435D00();
+extern "C" void ext_00469530();
+extern "C" void ext_00472350();
+extern "C" void ext_00472E30();
+extern "C" void ext_00472F70();
+extern "C" void ext_00473280();
+extern "C" void ext_004734D0();
+extern "C" void ext_00594000();
+extern "C" int mem_00924E90;
+extern "C" int mem_00924E94;
+extern "C" int mem_00924E98;
+extern "C" int mem_00924FA0;
+
+extern "C" __declspec(naked) void __fastcall fn_004F2B80(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -0x1
+        push 0x0088fb60
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xc
+        push ebx
+        mov ebx, ecx
+        mov eax, dword ptr [ebx + 0x8]
+        push esi
+        push edi
+        mov edi, dword ptr [eax + 0x14]
+        xor esi, esi
+        mov ecx, edi
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], edi
+        mov dword ptr [ebp - 0x4], esi
+        call ext_00472350
+        call ext_00594000
+        cmp dword ptr [eax + 0xf4], 0x6
+        je loop_top
+        push 0x1
+        mov ecx, edi
+        call ext_00473280
+        nop
+    loop_top:
+        mov ecx, dword ptr [ebx + 0x8]
+        cmp esi, dword ptr [ecx + 0x3c]
+        mov ecx, edi
+        jge loop_done
+        call ext_00472E30
+        add esi, 0x1
+        jmp loop_top
+    loop_done:
+        call ext_004734D0
+        mov ecx, dword ptr [edi + 0x30]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x154]
+        call eax
+        mov ecx, dword ptr [ebx + 0x8]
+        push 0x0
+        push 0x5
+        call ext_00469530
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    catch_funclet:
+        mov ecx, dword ptr [ebp - 0x14]
+        call ext_00472F70
+        mov ecx, dword ptr [mem_00924E90]
+        mov edx, dword ptr [ebp - 0x18]
+        mov eax, dword ptr [mem_00924FA0]
+        push ecx
+        add edx, 0xc
+        push edx
+        push 0x0094c940
+        push eax
+        call ext_00435D00
+        add esp, 0x8
+        push eax
+        call dword ptr [mem_00924E94]
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov eax, 0x004F2C02
+        ret
+    }
+}
