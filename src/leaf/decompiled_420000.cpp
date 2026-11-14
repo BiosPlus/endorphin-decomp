@@ -10718,3 +10718,89 @@ extern "C" __declspec(naked) void __fastcall fn_0042E3D0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0042C510] sub_0042C510 (229 bytes)
+extern "C" void ext_0042C510();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0042C510(void* self, int edx_unused, void* a1) {
+    __asm {
+        push    -1
+        push    0x879664
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 8
+        push    ebx
+        mov     ebx, dword ptr [esp + 0x1c]
+        cmp     byte ptr [ebx + 0x59], 0
+        push    edi
+        mov     dword ptr [esp + 8], ecx
+        mov     edi, ebx
+        jne     exit_path
+        push    ebp
+        push    esi
+    loop_top:
+        mov     eax, dword ptr [edi + 8]
+        mov     ecx, dword ptr [esp + 0x10]
+        push    eax
+        call    ext_0042C510
+        mov     edi, dword ptr [edi]
+        lea     esi, [ebx + 0xc]
+        mov     dword ptr [esp + 0x14], esi
+        add     esi, 0x1c
+        mov     dword ptr [esp + 0x20], 0
+        mov     dword ptr [esp + 0x28], esi
+        lea     ecx, [esi + 0x14]
+        mov     byte ptr [esp + 0x20], 1
+        call    dword ptr [mem_00924FF4]
+        mov     ebp, dword ptr [esi + 8]
+        xor     eax, eax
+        cmp     ebp, eax
+        mov     byte ptr [esp + 0x20], 0
+        je      clear_vec
+        mov     eax, dword ptr [esi + 0xc]
+        cmp     ebp, eax
+        mov     dword ptr [esp + 0x28], eax
+        je      free_vec
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+    dtor_loop:
+        lea     ecx, [ebp + 8]
+        call    dword ptr [mem_00924FF4]
+        add     ebp, 0x24
+        cmp     ebp, dword ptr [esp + 0x28]
+        jne     dtor_loop
+    free_vec:
+        mov     eax, dword ptr [esi + 8]
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 4
+        xor     eax, eax
+    clear_vec:
+        mov     ecx, dword ptr [esp + 0x14]
+        mov     dword ptr [esi + 8], eax
+        mov     dword ptr [esi + 0xc], eax
+        mov     dword ptr [esi + 0x10], eax
+        mov     dword ptr [esp + 0x20], -1
+        call    dword ptr [mem_00924FF4]
+        push    ebx
+        call    ext_006A5C5C
+        add     esp, 4
+        cmp     byte ptr [edi + 0x59], 0
+        mov     ebx, edi
+        je      loop_top
+        pop     esi
+        pop     ebp
+    exit_path:
+        mov     ecx, dword ptr [esp + 0x10]
+        pop     edi
+        pop     ebx
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x14
+        ret     4
+    }
+}
