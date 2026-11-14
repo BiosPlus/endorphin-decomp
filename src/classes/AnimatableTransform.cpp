@@ -1256,3 +1256,141 @@ L_done:
         ret 0xc
     }
 }
+
+// [0x00586D50] AnimatableTransform::vfunc_0_off_4 (355 bytes)
+extern "C" void ext_00480920();
+extern "C" void ext_00586D00();
+extern "C" void ext_00593D40();
+extern "C" void ext_0067E990();
+extern "C" void ext_0067EB90();
+extern "C" __declspec(naked) void __fastcall fn_00586D50(void* self, int edx_unused, int a1, const int* src, int a3) {
+    __asm {
+        sub esp, 0xc4
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xd8]
+        push esi
+        mov ebx, ecx
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0xc]
+        push edi
+        push ebp
+        call edx
+        mov esi, dword ptr [esp + 0xdc]
+        mov edi, eax
+        mov ecx, 0x10
+        rep movsd
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0x18]
+        mov esi, dword ptr [ebx + 0x90]
+        mov ecx, ebx
+        call edx
+        mov ecx, dword ptr [esp + 0xd8]
+        cmp ecx, dword ptr [eax]
+        je DONE_586D50
+        test esi, esi
+        je DONE_586D50
+        cmp ecx, 1
+        jne L1_586D50
+        mov eax, dword ptr [ebx - 0x4]
+        mov edx, dword ptr [eax + 0x70]
+        lea ecx, [ebx - 0x4]
+        call edx
+        test al, al
+        jne DONE_586D50
+L1_586D50:
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0x18]
+        mov ecx, ebx
+        call edx
+        cmp dword ptr [eax], 0x2
+        jne L2_586D50
+        mov edx, dword ptr [esp + 0xd8]
+        mov eax, dword ptr [esi + 0x4]
+        mov eax, dword ptr [eax + 0x10]
+        push ebp
+        lea ecx, [esi + 0x4]
+        push edx
+        lea edx, [esp + 0x1c]
+        push edx
+        call eax
+        mov edx, dword ptr [ebx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        push ebp
+        mov ecx, ebx
+        call eax
+        mov ecx, eax
+        call ext_0067E990
+        jmp DONE_586D50
+L2_586D50:
+        call ext_00480920
+        mov edx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [edx + 0x10]
+        mov dword ptr [esp + 0x10], eax
+        mov eax, dword ptr [esp + 0xe0]
+        push eax
+        lea ebp, [esi + 0x4]
+        push 0x0
+        lea ecx, [esp + 0x1c]
+        push ecx
+        mov ecx, ebp
+        call edx
+        mov eax, dword ptr [ebp]
+        mov edx, dword ptr [eax + 0x10]
+        mov ecx, 0x10
+        lea esi, [esp + 0x14]
+        lea edi, [esp + 0x54]
+        rep movsd
+        mov edi, dword ptr [esp + 0xe0]
+        push edi
+        push 0x1
+        lea ecx, [esp + 0x9c]
+        push ecx
+        mov ecx, ebp
+        call edx
+        push eax
+        lea ecx, [esp + 0x58]
+        call ext_0067E990
+        mov esi, dword ptr [esp + 0x10]
+        mov edx, dword ptr [ebx]
+        push esi
+        lea eax, [esp + 0x58]
+        push eax
+        mov eax, dword ptr [edx + 0x18]
+        lea ecx, [esp + 0x1c]
+        push ecx
+        mov ecx, ebx
+        call eax
+        push eax
+        mov ecx, ebx
+        call ext_00593D40
+        push eax
+        push esi
+        lea ecx, [esp + 0x5c]
+        push ecx
+        lea edx, [esp + 0x20]
+        push edx
+        lea eax, [esp + 0xe8]
+        push eax
+        mov ecx, ebx
+        call ext_00593D40
+        mov edx, dword ptr [ebx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        push edi
+        mov ecx, ebx
+        call eax
+        mov ecx, eax
+        call ext_0067EB90
+DONE_586D50:
+        lea ecx, [ebx - 0x4]
+        call ext_00586D00
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc4
+        ret 0xc
+    }
+}
