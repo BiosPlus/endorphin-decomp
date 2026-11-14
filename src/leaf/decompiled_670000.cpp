@@ -15442,3 +15442,144 @@ L_done:
         ret     0x8
     }
 }
+
+// [0x00672F20] sub_00672F20 (303 bytes)
+extern "C" void ext_0050BE20();
+extern "C" void ext_00501970();
+extern "C" void ext_0050ED40();
+extern "C" void ext_00536230();
+extern "C" int mem_009251EC;
+extern "C" __declspec(naked) void __fastcall fn_00672F20(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov ecx, ebp
+        call ext_0050BE20
+        mov esi, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        jne L_f20_nonempty
+        xor eax, eax
+        jmp L_f20_push
+    L_f20_nonempty:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+    L_f20_push:
+        push eax
+        mov ecx, ebp
+        call ext_0050ED40
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_f20_ok1
+        call dword ptr [mem_00925134]
+    L_f20_ok1:
+        push ebx
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L_f20_loop:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_f20_ok2
+        call dword ptr [mem_00925134]
+    L_f20_ok2:
+        cmp edi, ebx
+        je L_f20_tail
+        cmp edi, dword ptr [esi + 0x8]
+        mov ebx, dword ptr [mem_00925134]
+        jb L_f20_ok3
+        call ebx
+    L_f20_ok3:
+        mov eax, dword ptr [edi]
+        push 0
+        push eax
+        mov ecx, ebp
+        call ext_00501970
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_f20_ok4
+        call ebx
+    L_f20_ok4:
+        mov dword ptr [edi], 0
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_f20_ok5
+        call ebx
+    L_f20_ok5:
+        add edi, 0x4
+        jmp L_f20_loop
+    L_f20_tail:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_f20_ok6
+        call dword ptr [mem_00925134]
+    L_f20_ok6:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_f20_ok7
+        call dword ptr [mem_00925134]
+    L_f20_ok7:
+        push ebx
+        push esi
+        push edi
+        push esi
+        mov ecx, esi
+        call ext_00536230
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_f20_ok8
+        call dword ptr [mem_00925134]
+    L_f20_ok8:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L_f20_ok9
+        call dword ptr [mem_00925134]
+    L_f20_ok9:
+        cmp ebx, edi
+        je L_f20_after_move
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, edi
+        sar eax, 0x2
+        test eax, eax
+        lea ecx, [4*eax]
+        lea ebp, [ecx + ebx]
+        jle L_f20_setend
+        push ecx
+        push edi
+        push ecx
+        push ebx
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+    L_f20_setend:
+        mov dword ptr [esi + 0x8], ebp
+        mov ebp, dword ptr [esp + 0x18]
+    L_f20_after_move:
+        mov edi, dword ptr [ebp + 0x8]
+        cmp dword ptr [ebp + 0x4], edi
+        pop ebx
+        jbe L_f20_ok10
+        call dword ptr [mem_00925134]
+    L_f20_ok10:
+        mov esi, dword ptr [ebp + 0x4]
+        cmp esi, dword ptr [ebp + 0x8]
+        jbe L_f20_ok11
+        call dword ptr [mem_00925134]
+    L_f20_ok11:
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, edi
+        push ecx
+        sub edx, esi
+        sar edx, 0x2
+        push edx
+        push edi
+        push esi
+        call fn_00672D60
+        add esp, 0x10
+        pop edi
+        pop esi
+        pop ebp
+        ret 0x8
+    }
+}
