@@ -5414,3 +5414,293 @@ extern "C" __declspec(naked) void __fastcall fn_0080FF10(void* self) {
         ret
     }
 }
+
+extern "C" void ext_008070E0();
+extern "C" void ext_0080B590();
+
+// [0x00806E30] sub_00806E30 (688 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00806E30(void* self) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [esp + 0x1c]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x28]
+        push edi
+        test ebx, ebx
+        je loc_8070d6
+        mov ebp, dword ptr [esp + 0x20]
+        test byte ptr [ebp + 0x4c], 0x1
+        je loc_806e63
+        mov dword ptr [esp + 0x20], 0x17
+        mov dword ptr [esp + 0x28], 0x18
+        jmp loc_806e73
+
+    loc_806e63:
+        mov dword ptr [esp + 0x20], 0x24
+        mov dword ptr [esp + 0x28], 0x25
+
+    loc_806e73:
+        mov eax, dword ptr [esp + 0x24]
+        test al, 0x1
+        je loc_806f18
+        mov ecx, dword ptr [esp + 0x20]
+        lea edi, [eax - 0x1]
+        lea eax, [esp + 0x14]
+        shr edi, 1
+        push eax
+        push 0x2
+        push edi
+        push ebp
+        push ecx
+        call ext_008070E0
+        mov esi, eax
+        add esp, 0x14
+        test si, si
+        je loc_806ec5
+        mov edx, esi
+        and edx, 0xffff
+        push edx
+        push 0xab4240
+        call ext_0080A800
+        push esi
+        call ext_0080B060
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret
+
+    loc_806ec5:
+        mov esi, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esp + 0x28]
+        lea ecx, [esp + 0x14]
+        mov al, byte ptr [esi]
+        push ecx
+        push 0x2
+        push edi
+        push ebp
+        push edx
+        mov byte ptr [esp + 0x29], al
+        call ext_008070E0
+        mov edi, eax
+        add esp, 0x14
+        test di, di
+        je loc_806f0d
+        and eax, 0xffff
+        push eax
+        push 0xab4270
+        call ext_0080A800
+        push edi
+        call ext_0080B060
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret
+
+    loc_806f0d:
+        mov ecx, dword ptr [esp + 0x24]
+        inc esi
+        inc ecx
+        dec ebx
+        mov dword ptr [esp + 0x24], ecx
+
+    loc_806f18:
+        cmp ebx, 0x1
+        jbe loc_80703f
+        mov eax, ebx
+        mov edi, ebx
+        and eax, 0x7
+        mov dword ptr [esp + 0x10], eax
+        je loc_806fe3
+        mov ecx, dword ptr [esp + 0x24]
+        mov edx, dword ptr [esp + 0x28]
+        and edi, -0x8
+        push esi
+        shr ecx, 1
+        push edi
+        push ecx
+        push ebp
+        push edx
+        call ext_008070E0
+        add esp, 0x14
+        mov dword ptr [esp + 0x2c], eax
+        test ax, ax
+        je loc_806f65
+        and eax, 0xffff
+        push eax
+        push 0xab42a0
+        jmp loc_807011
+
+    loc_806f65:
+        mov ecx, dword ptr [esp + 0x24]
+        and ebx, -0x8
+        add esi, ebx
+        mov ebx, dword ptr [esp + 0x10]
+        add ecx, edi
+        cmp ebx, 0x1
+        mov dword ptr [esp + 0x24], ecx
+        jbe loc_80703f
+        mov edi, ebx
+        lea ecx, [esp + 0x14]
+        and edi, -0x2
+        push edi
+        push esi
+        push ecx
+        call ext_0080B590
+        mov eax, dword ptr [esp + 0x30]
+        mov ecx, dword ptr [esp + 0x34]
+        lea edx, [esp + 0x20]
+        push edx
+        push edi
+        shr eax, 1
+        push eax
+        push ebp
+        push ecx
+        call ext_008070E0
+        add esp, 0x20
+        mov dword ptr [esp + 0x2c], eax
+        test ax, ax
+        je loc_806fdb
+        and eax, 0xffff
+        push eax
+        push 0xab42d0
+        call ext_0080A800
+        mov edx, dword ptr [esp + 0x34]
+        push edx
+        call ext_0080B060
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret
+
+    loc_806fdb:
+        mov eax, ebx
+        and al, -0x2
+        add esi, eax
+        jmp loc_807032
+
+    loc_806fe3:
+        mov ecx, dword ptr [esp + 0x24]
+        mov edx, dword ptr [esp + 0x28]
+        and edi, -0x2
+        push esi
+        shr ecx, 1
+        push edi
+        push ecx
+        push ebp
+        push edx
+        call ext_008070E0
+        add esp, 0x14
+        mov dword ptr [esp + 0x2c], eax
+        test ax, ax
+        je loc_80702b
+        and eax, 0xffff
+        push eax
+        push 0xab4300
+
+    loc_807011:
+        call ext_0080A800
+        mov eax, dword ptr [esp + 0x34]
+        push eax
+        call ext_0080B060
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret
+
+    loc_80702b:
+        mov ecx, ebx
+        and ecx, -0x2
+        add esi, ecx
+
+    loc_807032:
+        mov ecx, dword ptr [esp + 0x24]
+        add ecx, edi
+        and ebx, 0x1
+        mov dword ptr [esp + 0x24], ecx
+
+    loc_80703f:
+        test bl, 0x1
+        je loc_8070d6
+        mov edi, dword ptr [esp + 0x24]
+        mov eax, dword ptr [esp + 0x20]
+        lea edx, [esp + 0x14]
+        shr edi, 1
+        push edx
+        push 0x2
+        push edi
+        push ebp
+        push eax
+        call ext_008070E0
+        mov ebx, eax
+        add esp, 0x14
+        test bx, bx
+        je loc_80708f
+        mov ecx, ebx
+        and ecx, 0xffff
+        push ecx
+        push 0xab4330
+        call ext_0080A800
+        push ebx
+        call ext_0080B060
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret
+
+    loc_80708f:
+        mov ecx, dword ptr [esp + 0x28]
+        mov dl, byte ptr [esi]
+        lea eax, [esp + 0x14]
+        mov byte ptr [esp + 0x14], dl
+        push eax
+        push 0x2
+        push edi
+        push ebp
+        push ecx
+        call ext_008070E0
+        mov esi, eax
+        add esp, 0x14
+        test si, si
+        je loc_8070d6
+        mov edx, esi
+        and edx, 0xffff
+        push edx
+        push 0xab4360
+        call ext_0080A800
+        push esi
+        call ext_0080B060
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret
+
+    loc_8070d6:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
