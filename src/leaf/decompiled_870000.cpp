@@ -1264,3 +1264,62 @@ extern "C" __declspec(naked) void __fastcall fn_00870AD0(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_008718C0();
+extern "C" int mem_0099F178;
+extern "C" int mem_0099F174;
+extern "C" int mem_0099F170;
+
+// [0x008719F0] sub_008719F0 (121 bytes)
+extern "C" __declspec(naked) void __fastcall fn_008719F0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push offset mem_0099F178
+        mov ecx, esi
+        call ext_008718C0
+        test al, al
+        jne short L_ok
+        pop esi
+        ret 8
+    L_ok:
+        push ebx
+        mov ecx, esi
+        call ext_00870E90
+        mov bl, al
+        cmp bl, 0x27
+        je short L_quote_ok
+        cmp bl, 0x22
+        je short L_quote_ok
+        push 0x15
+        call ext_00870E40
+    L_quote_ok:
+        push offset mem_0099F174
+        call ext_00870F40
+        test al, al
+        je short L_check_no
+        mov eax, dword ptr [esp + 0x10]
+        mov byte ptr [eax], 1
+        jmp short L_end_quote
+    L_check_no:
+        push offset mem_0099F170
+        call ext_00870F40
+        test al, al
+        je short L_err_16
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [ecx], 0
+    L_end_quote:
+        mov ecx, esi
+        call ext_00870E90
+        cmp al, bl
+        je short L_done
+    L_err_16:
+        push 0x16
+        call ext_00870E40
+    L_done:
+        pop ebx
+        mov al, 1
+        pop esi
+        ret 8
+    }
+}
