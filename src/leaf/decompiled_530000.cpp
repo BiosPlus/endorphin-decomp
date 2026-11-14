@@ -6685,3 +6685,54 @@ extern "C" __declspec(naked) void* __fastcall fn_0053CAA0(void* self) {
         ret
     }
 }
+
+// [0x005329A0] sub_005329A0 (106 bytes)
+extern "C" int mem_00A9F324;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9EDD0;
+extern "C" int mem_00A9F5F4;
+extern "C" void ext_00427550();
+extern "C" void ext_00640110();
+extern "C" void ext_00640390();
+extern "C" void ext_00640A80();
+extern "C" void ext_0066A350();
+extern "C" __declspec(naked) void* __fastcall fn_005329A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F324]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push 0
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_00640390
+        lea ecx, [esi + 0x18]
+        mov dword ptr [esp + 0xc], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        mov ecx, dword ptr [mem_00A9EDD0]
+        push 0
+        push ecx
+        mov ecx, edi
+        call ext_00640390
+        push eax
+        lea ecx, [esi + 0x8]
+        call ext_0066A350
+        mov edx, dword ptr [mem_00A9F5F4]
+        push edx
+        mov ecx, edi
+        call ext_00640110
+        movzx ecx, byte ptr [esi + 0x34]
+        push ecx
+        push eax
+        call ext_00640A80
+        add esp, 0x8
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
