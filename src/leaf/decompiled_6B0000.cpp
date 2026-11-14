@@ -8103,3 +8103,39 @@ L_006B42F9:
         ret 0x4
     }
 }
+
+// [0x006BA260] sub_006BA260 (96 bytes)
+extern "C" void ext_006B9DA0();
+extern "C" void ext_006B9D70();
+extern "C" void ext_006BA1C0();
+
+extern "C" __declspec(naked) void* __fastcall fn_006BA260(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 08bcb18h
+        __asm _emit 0x64 __asm _emit 0xa1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        sub esp, 4ch
+        mov eax, dword ptr [esp + 5ch]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 8]
+        call ext_006B9DA0
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 5ch], 0
+        call ext_006BA1C0
+        lea ecx, [esp + 4]
+        mov esi, eax
+        mov dword ptr [esp + 58h], 0ffffffffh
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 50h]
+        mov eax, esi
+        pop esi
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0d __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        add esp, 58h
+        ret 4
+    }
+}
