@@ -10495,3 +10495,53 @@ extern "C" __declspec(naked) void __fastcall fn_0041E540(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0041CB40();
+extern "C" void ext_0041D040();
+extern "C" void ext_00465B30();
+extern "C" void ext_00468660();
+extern "C" void ext_00469080();
+extern "C" void ext_006A89B0();
+
+// [0x0041DB60] sub_0041DB60 (93 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0041DB60(void* self, int edx_unused, int arg0) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_0041CB40
+        test eax, eax
+        jne L_found
+        mov ecx, dword ptr [esi + 0xc]
+        push eax
+        call ext_006A89B0
+        push eax
+        mov ecx, esi
+        call ext_0041CB40
+        test eax, eax
+        jne L_found
+        push edi
+        mov ecx, esi
+        call ext_0041D040
+        test eax, eax
+        je L_done
+    L_found:
+        push eax
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469080
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0xd4]
+        call eax
+    L_done:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
