@@ -9527,3 +9527,48 @@ extern "C" __declspec(naked) void __fastcall fn_006AFA60(void* self, int edx, in
         ret 8
     }
 }
+
+extern "C" void ext_006A8760();
+extern "C" void ext_006AECD0();
+
+// [0x006AA260] sub_006AA260 (114 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006AA260(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push -1
+        push 0x876a9a
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push 0x88
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je L_null
+        mov ecx, dword ptr [esp + 0x20]
+        mov edx, dword ptr [esp + 0x1c]
+        push ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        push edx
+        push ecx
+        mov ecx, eax
+        call ext_006AECD0
+        jmp L_done
+    L_null:
+        xor eax, eax
+    L_done:
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], -1
+        call ext_006A8760
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0xc
+    }
+}
