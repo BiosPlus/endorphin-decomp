@@ -6274,3 +6274,70 @@ L_skip3:
         ret
     }
 }
+
+// [0x005EBAC0] sub_005EBAC0 (150 bytes)
+extern "C" void ext_005EBAC0();
+extern "C" __declspec(naked) void __fastcall fn_005EBAC0(void* self, int edx_unused, void* arg1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x234]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1c]
+        push edi
+        call edx
+        mov ecx, dword ptr [esi + 0x234]
+        mov ebp, dword ptr [esp + 0x14]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xd0]
+        push ebp
+        push esi
+        call edx
+        mov dword ptr [esi + 0x194], 0
+        mov edi, dword ptr [esi + 0x1d4]
+        add esi, 0x1d0
+    loc_5EBB02:
+        cmp edi, dword ptr [esi + 0x8]
+        jbe loc_5EBB10
+        call dword ptr [mem_00925134]
+        _emit 0x8D
+        _emit 0x9B
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    loc_5EBB10:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe loc_5EBB1E
+        call dword ptr [mem_00925134]
+    loc_5EBB1E:
+        cmp esi, esi
+        je loc_5EBB28
+        call dword ptr [mem_00925134]
+    loc_5EBB28:
+        cmp edi, ebx
+        je loc_5EBB4F
+        cmp edi, dword ptr [esi + 0x8]
+        jb loc_5EBB37
+        call dword ptr [mem_00925134]
+    loc_5EBB37:
+        mov ecx, dword ptr [edi]
+        push ebp
+        call ext_005EBAC0
+        cmp edi, dword ptr [esi + 0x8]
+        jb loc_5EBB4A
+        call dword ptr [mem_00925134]
+    loc_5EBB4A:
+        add edi, 0x4
+        jmp loc_5EBB10
+    loc_5EBB4F:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
