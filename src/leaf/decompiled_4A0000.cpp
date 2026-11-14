@@ -4689,3 +4689,41 @@ LA4A8013:
         ret
     }
 }
+
+extern "C" int mem_008890B6;
+extern "C" int mem_00941F44;
+extern "C" void ext_005A6300();
+
+// [0x004AF600] sub_004AF600 (99 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004AF600(void* self) {
+    __asm {
+        push -1
+        push offset mem_008890B6
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        xor ecx, ecx
+        mov dword ptr [esi], offset mem_00941F44
+        mov dword ptr [esi + 0x4], eax
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi + 0x8], ecx
+        mov dword ptr [esp + 0x10], ecx
+        mov dword ptr [esi + 0xc], ecx
+        lea ecx, [esp + 0x18]
+        push ecx
+        lea ecx, [eax + 0x224]
+        mov byte ptr [esp + 0x14], 1
+        mov dword ptr [esp + 0x1c], esi
+        call ext_005A6300
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
