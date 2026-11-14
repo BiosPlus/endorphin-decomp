@@ -5569,3 +5569,71 @@ extern "C" __declspec(naked) void __fastcall fn_004DA740(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x004DA510] sub_004DA510 (189 bytes)
+extern "C" void ext_0040ECB0();
+extern "C" void ext_00495CB0();
+extern "C" void ext_004D4550();
+extern "C" int mem_00A34654;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_004DA510(void* self) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x24
+        push esi
+        mov esi, ecx
+        lea eax, [esp + 0x4]
+        push eax
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esp + 0xc], 0
+        call ext_004D4550
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [esp + 0x8]
+        push edx
+        push eax
+        add esi, 0x444
+        push esi
+        call ext_00495CB0
+        mov eax, dword ptr [esi + 0x4]
+        add esp, 0xc
+        test eax, eax
+        je short L_4DA586
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov ecx, edx
+        shr ecx, 0x1f
+        add ecx, edx
+        jne short L_4DA5BD
+L_4DA586:
+        mov edx, dword ptr [mem_00A34654]
+        push edx
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FE4]
+        lea eax, [esp + 0xc]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x34], 0
+        call ext_0040ECB0
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], -1
+        call dword ptr [mem_00924FF4]
+L_4DA5BD:
+        mov ecx, dword ptr [esp + 0x28]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x30
+        ret
+    }
+}
