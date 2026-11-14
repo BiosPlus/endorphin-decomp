@@ -7784,3 +7784,73 @@ extern "C" __declspec(naked) void __fastcall fn_00587AF0(void* self) {
         ret
     }
 }
+
+// [0x005872C0] sub_005872C0 (143 bytes)
+extern "C" void ext_00587210();
+extern "C" void ext_005872C0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005872C0(void* self) {
+    __asm {
+        push    ebx
+        mov     ebx, dword ptr [ecx + 0x80]
+        cmp     ebx, dword ptr [ecx + 0x84]
+        push    ebp
+        push    esi
+        push    edi
+        lea     edi, [ecx + 0x7c]
+        jbe     L_5872db
+        call    dword ptr [mem_00925134]
+    L_5872db:
+        mov     ebp, dword ptr [esp + 0x14]
+        nop
+    L_5872e0:
+        mov     esi, dword ptr [edi + 0x8]
+        cmp     dword ptr [edi + 0x4], esi
+        jbe     L_5872ee
+        call    dword ptr [mem_00925134]
+    L_5872ee:
+        cmp     edi, edi
+        je      L_5872f8
+        call    dword ptr [mem_00925134]
+    L_5872f8:
+        cmp     ebx, esi
+        je      L_587348
+        cmp     ebx, dword ptr [edi + 0x8]
+        jb      L_587307
+        call    dword ptr [mem_00925134]
+    L_587307:
+        mov     esi, dword ptr [ebx]
+        mov     eax, dword ptr [esi]
+        mov     edx, dword ptr [eax + 0xb8]
+        mov     ecx, esi
+        call    edx
+        test    al, al
+        je      L_587338
+        mov     eax, dword ptr [esi]
+        mov     edx, dword ptr [eax + 0x90]
+        push    ebp
+        mov     ecx, esi
+        call    edx
+        push    0x2
+        push    ebp
+        mov     ecx, esi
+        call    ext_00587210
+        push    ebp
+        mov     ecx, esi
+        call    ext_005872C0
+    L_587338:
+        cmp     ebx, dword ptr [edi + 0x8]
+        jb      L_587343
+        call    dword ptr [mem_00925134]
+    L_587343:
+        add     ebx, 0x4
+        jmp     L_5872e0
+    L_587348:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret     0x4
+    }
+}
