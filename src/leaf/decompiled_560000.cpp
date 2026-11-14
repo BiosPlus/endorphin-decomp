@@ -11848,3 +11848,191 @@ extern "C" __declspec(naked) void __fastcall fn_0056AE60(void* self) {
         ret
     }
 }
+
+// [0x00568EA0] sub_00568EA0 (450 bytes)
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+extern "C" int mem_009250EC;
+extern "C" int mem_009250DC;
+extern "C" int mem_00924FC8;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00925134;
+extern "C" void ext_00567070();
+extern "C" void ext_00567100();
+extern "C" void ext_0059A140();
+extern "C" void ext_006968D0();
+extern "C" void ext_00696980();
+extern "C" void ext_00696B70();
+extern "C" __declspec(naked) void __fastcall fn_00568EA0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, 0FFFFFFF8h
+        push 0FFFFFFFFh
+        push 08a2a89h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 38h
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        push 0958f54h
+        lea ecx, [esp + 28h]
+        mov dword ptr [esp + 18h], esi
+        call dword ptr [mem_00924FE4]
+        mov edi, dword ptr [ebp + 8]
+        lea eax, [esp + 24h]
+        push eax
+        push edi
+        mov dword ptr [esp + 54h], 0
+        call ext_00696980
+        add esp, 8
+        test al, al
+        lea ecx, [esp + 24h]
+        sete bl
+        mov dword ptr [esp + 4Ch], 0FFFFFFFFh
+        call dword ptr [mem_00924FF4]
+        test bl, bl
+        je read_first
+ret_false:
+        xor al, al
+        mov ecx, dword ptr [esp + 44h]
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+read_first:
+        lea ebx, [esi + 4]
+        push ebx
+        push edi
+        call dword ptr [mem_009250EC]
+        mov ecx, dword ptr [eax]
+        mov ecx, dword ptr [ecx + 4]
+        add esp, 8
+        add ecx, eax
+        call dword ptr [mem_009250DC]
+        test eax, eax
+        je ret_true
+loop_top:
+        push 0958f50h
+        push ebx
+        call dword ptr [mem_00924FC8]
+        add esp, 8
+        test al, al
+        je ret_true
+        push 092f148h
+        push ebx
+        call dword ptr [mem_00924FC0]
+        add esp, 8
+        test al, al
+        je not_lit2
+        push edi
+        call ext_006968D0
+        add esp, 4
+        jmp read_next
+not_lit2:
+        mov ecx, dword ptr [esi]
+        push ebx
+        call ext_00567100
+        test eax, eax
+        mov dword ptr [esp + 10h], eax
+        jne have_r1
+        mov ecx, dword ptr [esi]
+        push ebx
+        call ext_00567070
+        test eax, eax
+        mov dword ptr [esp + 10h], eax
+        je ret_false
+have_r1:
+        push ebx
+        push edi
+        call ext_00696B70
+        add esp, 8
+        test al, al
+        je read_next
+        _emit 08Dh
+        _emit 049h
+        _emit 000h
+loop_inner:
+        mov ecx, dword ptr [esi]
+        push ebx
+        call ext_00567070
+        test eax, eax
+        mov dword ptr [esp + 18h], eax
+        je check_again
+        mov esi, dword ptr [esp + 10h]
+        mov edx, dword ptr [esi + 28h]
+        add esi, 24h
+        test edx, edx
+        jne nonzero_first
+        xor edi, edi
+        jmp have_size
+nonzero_first:
+        mov edi, dword ptr [esi + 8]
+        sub edi, edx
+        sar edi, 2
+have_size:
+        test edx, edx
+        je grow
+        mov ecx, dword ptr [esi + 0Ch]
+        sub ecx, edx
+        sar ecx, 2
+        cmp edi, ecx
+        jae grow
+        mov ecx, dword ptr [esi + 8]
+        mov dword ptr [ecx], eax
+        add ecx, 4
+        mov dword ptr [esi + 8], ecx
+        jmp after_push
+grow:
+        mov edi, dword ptr [esi + 8]
+        cmp edx, edi
+        jbe grow_ok
+        call dword ptr [mem_00925134]
+grow_ok:
+        lea edx, [esp + 18h]
+        push edx
+        push edi
+        push esi
+        lea eax, [esp + 28h]
+        push eax
+        mov ecx, esi
+        call ext_0059A140
+after_push:
+        mov esi, dword ptr [esp + 14h]
+        mov edi, dword ptr [ebp + 8]
+check_again:
+        push ebx
+        push edi
+        call ext_00696B70
+        add esp, 8
+        test al, al
+        jne loop_inner
+read_next:
+        push ebx
+        push edi
+        call dword ptr [mem_009250EC]
+        mov ecx, dword ptr [eax]
+        mov ecx, dword ptr [ecx + 4]
+        add esp, 8
+        add ecx, eax
+        call dword ptr [mem_009250DC]
+        test eax, eax
+        jne loop_top
+ret_true:
+        mov ecx, dword ptr [esp + 44h]
+        pop edi
+        pop esi
+        mov al, 1
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+    }
+}
