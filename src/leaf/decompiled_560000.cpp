@@ -11202,3 +11202,26 @@ extern "C" __declspec(naked) void __fastcall fn_0056A550(void* self) {
         jmp L_0056A9E1
     }
 }
+
+// [0x00566050] sub_00566050 (133 bytes)
+extern "C" void ext_00563280();
+extern "C" void ext_005632F0();
+extern "C" void ext_00565BF0();
+extern "C" void ext_00566020();
+extern "C" void ext_007C5616();
+extern "C" void ext_007C561C();
+
+extern "C" void __fastcall fn_00566050(void* self, int edx_unused, void* a1, void* a2) {
+    void** children = ((void** (__thiscall*)(void*))ext_007C5616)(a2);
+    int count = ((int (__thiscall*)(void*))ext_007C561C)(a2);
+    for (int i = 0; i < count; ++i) {
+        void* child = children[i];
+        if (!((bool (__thiscall*)(void*, void*, void*))ext_00563280)(self, a2, child)) {
+            void* cur = a1;
+            if (((bool (__thiscall*)(void*, void*))ext_005632F0)(self, child) && cur != 0) {
+                cur = ((void* (__thiscall*)(void*, void*, void*))ext_00565BF0)(self, cur, child);
+            }
+            ((void (__thiscall*)(void*, void*, void*))ext_00566020)(self, cur, child);
+        }
+    }
+}
