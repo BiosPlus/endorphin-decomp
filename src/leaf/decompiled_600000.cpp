@@ -6577,3 +6577,69 @@ extern "C" __declspec(naked) void __fastcall fn_006093C0(void* self) {
         ret     0x8
     }
 }
+
+extern "C" void ext_005FFCB0();
+extern "C" void ext_005FFD30();
+extern "C" void ext_005FFDB0();
+extern "C" void ext_005FFE30();
+extern "C" void ext_005FFEB0();
+extern "C" void ext_005FFF30();
+extern "C" void ext_00602D60();
+extern "C" void ext_00629170();
+extern "C" void ext_0062A4F0();
+extern "C" void ext_0062A520();
+extern "C" void ext_0062B680();
+extern "C" void ext_006798D0();
+extern "C" void ext_00630190();
+extern "C" int mem_00A9F420;
+extern "C" int mem_00A9F428;
+extern "C" int mem_00A9F430;
+
+// [0x00602DF0] sub_00602DF0 (178 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00602DF0(void* self) {
+    __asm {
+        push    ecx
+        lea     eax, [esp]
+        push    0x0
+        push    eax
+        call    ext_006798D0
+        mov     ecx, eax
+        call    ext_00602D60
+        push    0x960940
+        lea     ecx, [esp + 0x4]
+        call    ext_005FFCB0
+        push    0x95e77c
+        lea     ecx, [esp + 0x4]
+        call    ext_005FFD30
+        mov     ecx, dword ptr [mem_00A9F420]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_005FFDB0
+        push    0x96f7e4
+        lea     ecx, [esp + 0x4]
+        call    ext_005FFDB0
+        mov     edx, dword ptr [mem_00A9F428]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_005FFE30
+        push    0x96f7dc
+        lea     ecx, [esp + 0x4]
+        call    ext_005FFE30
+        mov     eax, dword ptr [mem_00A9F430]
+        push    eax
+        lea     ecx, [esp + 0x4]
+        call    ext_005FFEB0
+        push    0x96f7d4
+        lea     ecx, [esp + 0x4]
+        call    ext_005FFEB0
+        push    0x96e578
+        lea     ecx, [esp + 0x4]
+        call    ext_005FFF30
+        call    ext_0062A4F0
+        call    ext_0062A520
+        call    ext_0062B680
+        call    ext_00629170
+        add     esp, 0x4
+        jmp     ext_00630190
+    }
+}
