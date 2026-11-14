@@ -8864,3 +8864,82 @@ L_noinvalid:
         ret 4
     }
 }
+
+// [0x005343A0] sub_005343A0 (164 bytes)
+extern "C" void ext_0052AD00();
+extern "C" void ext_00532DB0();
+extern "C" void ext_00532DD0();
+extern "C" void ext_00532E00();
+
+extern "C" __declspec(naked) void __fastcall fn_005343A0(void* self, int edx_unused, void* a1, int a2, int a3) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        cmp byte ptr [ebx + 0x44], 0x0
+        push edi
+        mov edi, ecx
+        jne has_flag
+        pop edi
+        xor eax, eax
+        pop ebx
+        ret 0xc
+    has_flag:
+        mov ecx, dword ptr [ebx + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x18]
+        push ebp
+        push esi
+        call edx
+        mov esi, eax
+        lea eax, [ebx + 0x28]
+        push eax
+        lea ecx, [edi + 0x300]
+        call ext_0052AD00
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 0x64]
+        mov ebp, eax
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        lea ecx, [edi + 0x33c]
+        push ecx
+        push ebx
+        mov ecx, esi
+        mov dword ptr [esi + 0x24], ebp
+        call edx
+        cmp byte ptr [edi + 0x491], 0x0
+        push esi
+        mov ecx, edi
+        je no_flag
+        call ext_00532DD0
+        mov eax, esi
+        pop esi
+        pop ebp
+        mov dword ptr [edi + 0x40], 0x2
+        pop edi
+        pop ebx
+        ret 0xc
+    no_flag:
+        fld1
+        fcomp dword ptr [ebp + 0x14]
+        fnstsw ax
+        test ah, 0x41
+        jne use_db
+        call ext_00532E00
+        mov eax, esi
+        pop esi
+        pop ebp
+        mov dword ptr [edi + 0x40], 0x2
+        pop edi
+        pop ebx
+        ret 0xc
+    use_db:
+        call ext_00532DB0
+        mov eax, esi
+        pop esi
+        pop ebp
+        mov dword ptr [edi + 0x40], 0x2
+        pop edi
+        pop ebx
+        ret 0xc
+    }
+}
