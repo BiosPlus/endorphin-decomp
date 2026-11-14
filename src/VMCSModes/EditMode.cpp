@@ -1117,3 +1117,72 @@ L_exit:
         ret
     }
 }
+
+// [0x004F4810] VMCSModes::EditMode::vfunc_22 (182 bytes)
+extern "C" void ext_0046F930();
+extern "C" void ext_00472350();
+extern "C" void ext_00473570();
+extern "C" void ext_00666120();
+extern "C" int mem_00AD89B4;
+
+// The target carries an SEH frame (fs:[0] push/pop around the body), which
+// plain C++ in this toolchain does not reproduce, so this is __declspec(naked).
+extern "C" __declspec(naked) void __fastcall fn_004F4810(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x88fe68
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push ebp
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x9c]
+        call edx
+        mov ebp, dword ptr [esp + 0x20]
+        cmp eax, ebp
+        je L_004F48B3
+        mov eax, dword ptr [edi + 8]
+        push esi
+        mov esi, dword ptr [eax + 0x14]
+        test esi, esi
+        mov dword ptr [esp + 0xc], esi
+        mov byte ptr [esp + 0x10], 1
+        je L_004F4870
+        cmp dword ptr [mem_00AD89B4], 0
+        jne L_004F4869
+        mov ecx, esi
+        mov byte ptr [esi + 0x153], 1
+        call ext_00472350
+L_004F4869:
+        add dword ptr [mem_00AD89B4], 1
+L_004F4870:
+        mov ecx, dword ptr [edi + 8]
+        mov ecx, dword ptr [ecx + 0x38]
+        mov dword ptr [esp + 0x1c], 0
+        call ext_00666120
+        mov edx, dword ptr [edi + 8]
+        mov ecx, dword ptr [edx + 0x14]
+        push ebp
+        call ext_00473570
+        test esi, esi
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        je L_004F48B2
+        sub dword ptr [mem_00AD89B4], 1
+        jne L_004F48B2
+        mov ecx, esi
+        mov byte ptr [esi + 0x153], 0
+        call ext_0046F930
+L_004F48B2:
+        pop esi
+L_004F48B3:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 4
+    }
+}
