@@ -148,3 +148,18 @@ extern "C" __declspec(naked) void __fastcall fn_004CD0D0(void* self) {
         ret
     }
 }
+
+extern "C" void __fastcall ext_004CC720(void* self);
+extern "C" void __fastcall ext_004CC9E0(void* self);
+
+// [0x004CCAA0] NMData::MetaBodyConstraintData::vfunc_84 (74 bytes)
+extern "C" void __fastcall fn_004CCAA0(void* self, int edx_unused, int frame) {
+    void* obj = *(void**)((char*)self + 0x180);
+    if (obj && *((char*)self + 0x17c)) {
+        if (frame >= *(int*)((char*)self + 0x15c) && frame < *(int*)((char*)self + 0x160)) {
+            ext_004CC720(obj);
+        } else if (frame >= *(int*)((char*)self + 0x160) || frame < *(int*)((char*)self + 0x15c)) {
+            ext_004CC9E0(obj);
+        }
+    }
+}
