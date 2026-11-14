@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `13184 / 24049` (**54.82%**) — `10092` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1424096 / 4496005 bytes` (**31.67%** of 4.29 MB)
+- **In-Scope Functions Matched:** `13185 / 24049` (**54.83%**) — `10093` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1424651 / 4496005 bytes` (**31.69%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -22,18 +22,18 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P60-70 (122-159B)** | 1051 / 2405 | 43.70% | 141889 / 339038 | 41.85% | 1354 fn |
 | **P70-80 (159-178B)** | 286 / 2405 | 11.89% | 48210 / 400567 | 12.04% | 2119 fn |
 | **P80-90 (178-335B)** | 1003 / 2405 | 41.70% | 241175 / 583211 | 41.35% | 1402 fn |
-| **P90-100 (335-36100B)** | 694 / 2404 | 28.87% | 516520 / 2392860 | 21.59% | 1710 fn |
+| **P90-100 (335-36100B)** | 695 / 2404 | 28.91% | 517075 / 2392860 | 21.61% | 1709 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 66.92% |
-| `claude-haiku-5.5@low` | 1236 | 295156 | 12.25% |
+| `claude-haiku-5.5@low` | 1237 | 295711 | 12.26% |
 | `gemini-4-hydrogen@low` | 738 | 234657 | 7.31% |
-| `gemini-3.8-flash@low` | 709 | 218465 | 7.03% |
+| `gemini-3.8-flash@low` | 709 | 218465 | 7.02% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.43% |
-| `claude-sonnet-5.5@low` | 163 | 33291 | 1.62% |
+| `claude-sonnet-5.5@low` | 163 | 33291 | 1.61% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.25% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.10% |
 | `gemini-3.8-flash@medium` | 5 | 1402 | 0.05% |
