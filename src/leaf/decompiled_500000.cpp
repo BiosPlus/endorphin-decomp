@@ -14723,3 +14723,117 @@ fn_50_end:
         ret
     }
 }
+
+// [0x0050DBE0] sub_0050DBE0 (269 bytes)
+extern "C" void ext_0050C7D0();
+extern "C" void ext_0050D4B0();
+extern "C" void ext_0050D7C0();
+extern "C" void ext_0065F440();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+
+__declspec(naked) void __fastcall fn_0050DBE0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x892200
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push ebp
+        push edi
+        mov ebp, ecx
+        call ext_0050D7C0
+        mov ecx, dword ptr [ebp + 0x28]
+        xor edi, edi
+        cmp ecx, edi
+        jne L_50dc10
+        mov dword ptr [esp + 0x8], edi
+        jmp L_50dc1c
+    L_50dc10:
+        mov eax, dword ptr [ebp + 0x2c]
+        sub eax, ecx
+        sar eax, 0x2
+        mov dword ptr [esp + 0x8], eax
+    L_50dc1c:
+        cmp dword ptr [esp + 0x8], edi
+        jbe L_50dcdc
+        push ebx
+        push esi
+    L_50dc28:
+        push edi
+        lea eax, [ebp + 0x10]
+        push eax
+        lea ecx, [esp + 0x1c]
+        call ext_0050D4B0
+        mov ebx, eax
+        mov ecx, dword ptr [ebp + 0x28]
+        test ecx, ecx
+        mov dword ptr [esp + 0x34], 0x0
+        je L_50dc53
+        mov eax, dword ptr [ebp + 0x2c]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb L_50dc59
+    L_50dc53:
+        call dword ptr [mem_00925134]
+    L_50dc59:
+        mov eax, dword ptr [ebp + 0x28]
+        mov esi, dword ptr [eax + 4*edi]
+        lea ecx, [ebx + 0x4]
+        push ecx
+        lea ecx, [esi + 0x4]
+        call ext_0050C7D0
+        mov edx, dword ptr [ebx + 0x14]
+        mov dword ptr [esi + 0x14], edx
+        mov esi, dword ptr [esp + 0x1c]
+        test esi, esi
+        mov dword ptr [esp + 0x34], 0x1
+        je L_50dcae
+        mov ebx, dword ptr [esp + 0x20]
+        cmp esi, ebx
+        je L_50dca5
+        __emit 0x8d
+        __emit 0xa4
+        __emit 0x24
+        __emit 0x00
+        __emit 0x00
+        __emit 0x00
+        __emit 0x00
+    L_50dc90:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        push 0x0
+        mov ecx, esi
+        call edx
+        add esi, 0x24
+        cmp esi, ebx
+        jne L_50dc90
+        mov esi, dword ptr [esp + 0x1c]
+    L_50dca5:
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    L_50dcae:
+        xor eax, eax
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0x1c], eax
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [esp + 0x24], eax
+        mov dword ptr [esp + 0x34], 0xffffffff
+        call ext_0065F440
+        add edi, 0x1
+        cmp edi, dword ptr [esp + 0x10]
+        jb L_50dc28
+        pop esi
+        pop ebx
+    L_50dcdc:
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret
+    }
+}
