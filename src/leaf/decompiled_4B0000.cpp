@@ -5363,3 +5363,56 @@ extern "C" __declspec(naked) void __fastcall fn_004B1010(void* self) {
         ret 0x4
     }
 }
+
+// [0x004B58C0] sub_004B58C0 (126 bytes)
+extern "C" void ext_0063F530();
+extern "C" void ext_004B56D0();
+extern "C" __declspec(naked) void __fastcall fn_004B58C0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00A9FA88]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, ecx
+        push eax
+        mov ecx, esi
+        call ext_0063EFE0
+        lea ecx, [esp + 0xc]
+        push ecx
+        lea edx, [edi + 0x19]
+        push edx
+        mov dword ptr [esp + 0x14], eax
+        call ext_00427640
+        mov eax, dword ptr [mem_00A9EF64]
+        add esp, 0x8
+        push 0x1
+        push 0x0
+        push eax
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je short L_4B58C0_set
+        cmp eax, 0xb53b30
+        je short L_4B58C0_set
+        cmp eax, 0xb53ab0
+        je short L_4B58C0_set
+        cmp eax, 0xb53a70
+        je short L_4B58C0_set
+        cmp eax, 0xb53af0
+        jne short L_4B58C0_call
+L_4B58C0_set:
+        mov eax, 0xb53b30
+L_4B58C0_call:
+        mov ecx, dword ptr [mem_00A9EF68]
+        push 0x1
+        push ecx
+        add edi, 0x8
+        push edi
+        push eax
+        call ext_004B56D0
+        add esp, 0x10
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
