@@ -2188,3 +2188,103 @@ extern "C" __declspec(naked) void __fastcall fn_006DC5F0(void* self) {
         ret     0x4
     }
 }
+
+// [0x006DE4B0] sub_006DE4B0 (192 bytes)
+extern "C" void ext_006DE3B0();
+extern "C" int mem_009251D0;
+extern "C" __declspec(naked) int __fastcall fn_006DE4B0(void* self, int edx_unused, void* arg0) {
+    __asm {
+        push    esi
+        push    edi
+        mov     esi, ecx
+        call    ext_006DEEA0
+        mov     edi, dword ptr [esp + 0x0c]
+        test    eax, eax
+        jne     loc_6de4c9
+        mov     eax, dword ptr [edi]
+        push    esi
+        mov     ecx, edi
+        call    dword ptr [eax + 0x2c]
+    loc_6de4c9:
+        mov     edx, dword ptr [esi + 0x20]
+        add     esi, 0x20
+        lea     ecx, [esp + 0x0c]
+        mov     dword ptr [esp + 0x0c], edi
+        push    ecx
+        push    edx
+        mov     ecx, esi
+        call    ext_006D2170
+        mov     eax, dword ptr [esi]
+        pop     edi
+        dec     eax
+        pop     esi
+        ret     0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        push    ebx
+        push    ebp
+        push    esi
+        mov     esi, ecx
+        push    edi
+        xor     edi, edi
+        mov     eax, dword ptr [esi]
+        call    dword ptr [eax + 0x14]
+        mov     ebx, dword ptr [esp + 0x14]
+        test    eax, eax
+        jle     loc_6de534
+        mov     ebp, dword ptr [mem_009251D0]
+    loc_6de50b:
+        mov     ecx, dword ptr [esi + 0x30]
+        mov     ecx, dword ptr [ecx + 4 * edi]
+        call    ext_006DE3B0
+        push    eax
+        mov     ecx, ebx
+        call    ext_006DE3B0
+        push    eax
+        call    ebp
+        add     esp, 0x8
+        test    eax, eax
+        jle     loc_6de555
+        mov     edx, dword ptr [esi]
+        mov     ecx, esi
+        inc     edi
+        call    dword ptr [edx + 0x14]
+        cmp     edi, eax
+        jl      loc_6de50b
+    loc_6de534:
+        mov     edx, dword ptr [esi + 0x20]
+        add     esi, 0x20
+        lea     ecx, [esp + 0x14]
+        mov     dword ptr [esp + 0x14], ebx
+        push    ecx
+        push    edx
+        mov     ecx, esi
+        call    ext_006D2170
+        mov     eax, dword ptr [esi]
+        pop     edi
+        pop     esi
+        pop     ebp
+        dec     eax
+        pop     ebx
+        ret     0x4
+    loc_6de555:
+        lea     eax, [esp + 0x14]
+        lea     ecx, [esi + 0x20]
+        push    eax
+        push    edi
+        mov     dword ptr [esp + 0x1c], ebx
+        call    ext_006D2170
+        mov     eax, edi
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret     0x4
+    }
+}
