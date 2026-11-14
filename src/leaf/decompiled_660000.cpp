@@ -10902,3 +10902,57 @@ extern "C" __declspec(naked) void __fastcall fn_00668EF0(void* self) {
         ret
     }
 }
+
+// [0x00668F50] sub_00668F50 (103 bytes)
+extern "C" void ext_00668EF0();
+extern "C" void ext_006678A0();
+extern "C" __declspec(naked) void __fastcall fn_00668F50(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov eax, ebx
+        shl eax, 0x4
+        push edi
+        lea ecx, [eax + ecx + 0x8]
+        call ext_00668D80
+        test eax, eax
+        mov esi, dword ptr [esp + 0x18]
+        je L_fallback
+        cmp dword ptr [esi + 0x14], 0x0
+        je L_empty_key
+        push esi
+        mov ecx, eax
+        call ext_00667F10
+        test eax, eax
+        jne L_ret
+    L_fallback:
+        push esi
+        push edi
+        push ebx
+        call ext_00668EF0
+        mov ecx, eax
+        call ext_006678A0
+    L_ret:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0xc
+    L_empty_key:
+        cmp dword ptr [eax + 0xc], 0x0
+        je L_fallback
+        mov ecx, dword ptr [eax + 0x8]
+        mov esi, dword ptr [ecx]
+        cmp esi, ecx
+        jne L_done
+        call dword ptr [mem_00925134]
+    L_done:
+        pop edi
+        lea eax, [esi + 0x28]
+        pop esi
+        pop ebx
+        ret 0xc
+    }
+}
