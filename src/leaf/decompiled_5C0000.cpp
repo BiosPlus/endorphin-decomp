@@ -4986,3 +4986,85 @@ extern "C" __declspec(naked) void* __fastcall fn_005CC5C0(void* self, int edx_un
         ret     4
     }
 }
+
+// [0x005CC200] sub_005CC200 (228 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005CC200(void* self) {
+    __asm {
+        mov     eax, dword ptr fs:[0]
+        push    -1
+        push    0x891cab
+        push    eax
+        mov     dword ptr fs:[0], esp
+        push    ebx
+        mov     ebx, dword ptr [esp + 0x14]
+        push    esi
+        mov     esi, ecx
+        cmp     esi, ebx
+        push    edi
+        je      L_done
+        push    ebx
+        call    ext_005B6610
+        mov     ecx, dword ptr [esi + 0x15c]
+        test    ecx, ecx
+        je      L_clear_done
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax]
+        push    1
+        call    edx
+    L_clear_done:
+        mov     dword ptr [esi + 0x15c], 0
+        cmp     dword ptr [ebx + 0x15c], 0
+        je      L_copy_flags
+        push    0x4c
+        call    ext_006A5C62
+        add     esp, 4
+        mov     dword ptr [esp + 0x1c], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x14], 0
+        je      L_null_edi
+        mov     edx, dword ptr [ebx + 0x15c]
+        push    edx
+        mov     ecx, eax
+        call    ext_005B5BA0
+        mov     edi, eax
+        jmp     L_have_edi
+    L_null_edi:
+        xor     edi, edi
+    L_have_edi:
+        mov     ecx, dword ptr [esi + 0x15c]
+        cmp     edi, ecx
+        mov     dword ptr [esp + 0x14], 0xffffffff
+        je      L_skip_free
+        test    ecx, ecx
+        je      L_skip_free
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax]
+        push    1
+        call    edx
+    L_skip_free:
+        test    esi, esi
+        mov     dword ptr [esi + 0x15c], edi
+        je      L_null_this
+        lea     eax, [esi + 0x158]
+        jmp     L_set_field
+    L_null_this:
+        xor     eax, eax
+    L_set_field:
+        mov     ecx, edi
+        mov     dword ptr [ecx + 0x48], eax
+    L_copy_flags:
+        mov     dl, byte ptr [ebx + 0x160]
+        mov     byte ptr [esi + 0x160], dl
+        mov     al, byte ptr [ebx + 0x168]
+        mov     byte ptr [esi + 0x168], al
+    L_done:
+        mov     ecx, dword ptr [esp + 0xc]
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        mov     dword ptr fs:[0], ecx
+        pop     ebx
+        add     esp, 0xc
+        ret     4
+    }
+}
