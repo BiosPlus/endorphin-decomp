@@ -7384,3 +7384,80 @@ extern "C" __declspec(naked) void __fastcall fn_0060FC60(void* self) {
         ret 0xc
     }
 }
+
+extern "C" void ext_005F5080();
+extern "C" void ext_00608990();
+extern "C" void ext_00608A10();
+extern "C" void ext_00608A90();
+extern "C" void ext_00608B10();
+extern "C" void ext_00608B90();
+extern "C" void ext_00608C10();
+extern "C" void ext_00608C90();
+extern "C" void ext_00608D10();
+extern "C" void ext_00608D90();
+extern "C" void ext_00608E10();
+extern "C" void ext_00608E90();
+extern "C" void ext_006093C0();
+extern "C" void ext_006094E0();
+extern "C" void ext_006798D0();
+extern "C" void ext_0063C890();
+extern "C" int mem_00A9EE28;
+extern "C" int mem_00A9F17C;
+
+// [0x00609590] sub_00609590 (223 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00609590(void* self) {
+    __asm {
+        push    ecx
+        lea     eax, [esp]
+        push    0x0
+        push    eax
+        call    ext_006798D0
+        mov     ecx, eax
+        call    ext_006093C0
+        push    0x96312c
+        lea     ecx, [esp + 0x4]
+        call    ext_00608990
+        push    0x963120
+        lea     ecx, [esp + 0x4]
+        call    ext_00608A10
+        push    0x971abc
+        lea     ecx, [esp + 0x4]
+        call    ext_00608A90
+        push    0x971ab0
+        lea     ecx, [esp + 0x4]
+        call    ext_00608B10
+        push    0x971aa4
+        lea     ecx, [esp + 0x4]
+        call    ext_00608B90
+        push    0x971a94
+        lea     ecx, [esp + 0x4]
+        call    ext_00608C10
+        push    0x93e0ec
+        lea     ecx, [esp + 0x4]
+        call    ext_00608C90
+        push    0x93e0fc
+        lea     ecx, [esp + 0x4]
+        call    ext_00608D10
+        push    0x971a74
+        lea     ecx, [esp + 0x4]
+        call    ext_00608D90
+        push    0x93e0d8
+        lea     ecx, [esp + 0x4]
+        call    ext_00608E10
+        push    0x93e0c4
+        lea     ecx, [esp + 0x4]
+        call    ext_00608E90
+        mov     ecx, dword ptr [mem_00A9EE28]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_00608C10
+        mov     edx, dword ptr [mem_00A9F17C]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_00608C90
+        call    ext_006094E0
+        call    ext_005F5080
+        add     esp, 0x4
+        jmp     ext_0063C890
+    }
+}

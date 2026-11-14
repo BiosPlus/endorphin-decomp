@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `14903 / 24049` (**61.97%**) — `11811` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1773815 / 4496005 bytes` (**39.45%** of 4.29 MB)
+- **In-Scope Functions Matched:** `14904 / 24049` (**61.97%**) — `11812` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1774038 / 4496005 bytes` (**39.46%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -21,7 +21,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P50-60 (91-122B)** | 1880 / 2405 | 78.17% | 203564 / 256906 | 79.24% | 525 fn |
 | **P60-70 (122-159B)** | 1433 / 2405 | 59.58% | 194132 / 339038 | 57.26% | 972 fn |
 | **P70-80 (159-178B)** | 541 / 2405 | 22.49% | 90429 / 400567 | 22.58% | 1864 fn |
-| **P80-90 (178-335B)** | 1302 / 2405 | 54.14% | 313413 / 583211 | 53.74% | 1103 fn |
+| **P80-90 (178-335B)** | 1303 / 2405 | 54.18% | 313636 / 583211 | 53.78% | 1102 fn |
 | **P90-100 (335-36100B)** | 900 / 2404 | 37.44% | 636930 / 2392860 | 26.62% | 1504 fn |
 
 ### Squad Leaderboard (AI Model Matches)
@@ -29,8 +29,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6755 | 526244 | 57.19% |
-| `claude-haiku-5.5@low` | 1979 | 442016 | 16.76% |
-| `gemini-4-hydrogen@low` | 1294 | 350092 | 10.96% |
+| `claude-haiku-5.5@low` | 1980 | 442239 | 16.76% |
+| `gemini-4-hydrogen@low` | 1294 | 350092 | 10.95% |
 | `gemini-3.8-flash@low` | 1126 | 304960 | 9.53% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 3.78% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.38% |
