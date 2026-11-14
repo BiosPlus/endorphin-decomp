@@ -1,4 +1,6 @@
 // Decompiled translation unit: src/NMData/RigEventData.cpp
+#include <vector>
+#include <string>
 
 // [0x004D4730] NMData::RigEventData::vfunc_1_off_184 (104 bytes)
 extern "C" void ext_004D40E0();
@@ -818,6 +820,105 @@ L_nullarg:
         pop esi
         mov dword ptr fs:[0], ecx
         add esp, 0x44
+        ret 0x4
+    }
+}
+
+extern "C" void ext_004026E0();
+extern "C" void ext_004C28C0();
+extern "C" void ext_004DA180();
+extern "C" void ext_004DB070();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00925134;
+
+// [0x004DC4F0] NMData::RigEventData::vfunc_1_off_154 (261 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004DC4F0(void* self) {
+    __asm {
+        push -0x1
+        mov eax, dword ptr fs:[0x0]
+        push 0x8a1908
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x10
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x2c]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x1c]
+        push edi
+        mov edi, ecx
+        mov ecx, esi
+        call edx
+        mov edx, dword ptr [eax + 0x4]
+        xor ecx, ecx
+        cmp edx, ecx
+        je L_end
+        mov eax, dword ptr [eax + 0x8]
+        sub eax, edx
+        sar eax, 0x2
+        je L_end
+        mov dword ptr [esp + 0x14], ecx
+        mov dword ptr [esp + 0x18], ecx
+        mov dword ptr [esp + 0x1c], ecx
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 0x3c]
+        lea eax, [esp + 0x10]
+        mov dword ptr [esp + 0x28], ecx
+        push eax
+        mov ecx, esi
+        call edx
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x4c], esp
+        push 0x928b5d
+        call dword ptr [mem_00924FE4]
+        push 0x2
+        lea ecx, [esp + 0x30]
+        call ext_004DA180
+        lea eax, [esp + 0x10]
+        lea ebx, [edi - 0x154]
+        push eax
+        mov ecx, ebx
+        call ext_004C28C0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x4c], esp
+        push 0x928b5d
+        call dword ptr [mem_00924FE4]
+        push 0x2
+        lea ecx, [edi + 0x18]
+        call ext_004DA180
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x1c]
+        mov ecx, esi
+        call eax
+        mov ebp, dword ptr [mem_00925134]
+        mov esi, eax
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_skip1
+        call ebp
+        cmp edi, dword ptr [esi + 0x8]
+    L_skip1:
+        jb L_skip2
+        call ebp
+    L_skip2:
+        mov ecx, dword ptr [edi]
+        push ecx
+        mov ecx, ebx
+        call ext_004DB070
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x28], 0xffffffff
+        call ext_004026E0
+    L_end:
+        mov ecx, dword ptr [esp + 0x20]
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        add esp, 0x1c
         ret 0x4
     }
 }
