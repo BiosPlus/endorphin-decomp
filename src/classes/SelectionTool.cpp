@@ -114,3 +114,52 @@ extern "C" __declspec(naked) int __fastcall fn_0053FA10(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x0053F900] SelectionTool::vfunc_3 (90 bytes)
+extern "C" void ext_00640110();
+extern "C" void ext_00640A50();
+extern "C" void ext_00640AA0();
+extern "C" int mem_00A9F8A0;
+extern "C" int mem_00A44B84;
+extern "C" int mem_00AF1420;
+extern "C" int mem_00AF1424;
+extern "C" int mem_00A9F6E0;
+
+extern "C" __declspec(naked) void* __fastcall fn_0053F900(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F8A0]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        mov ecx, dword ptr [mem_00A44B84]
+        push ecx
+        push eax
+        call ext_00640A50
+        mov eax, dword ptr [mem_00AF1420]
+        add esp, 0x8
+        test eax, eax
+        jne loc_53f930
+        xor esi, esi
+        jmp loc_53f93b
+    loc_53f930:
+        mov esi, dword ptr [mem_00AF1424]
+        sub esi, eax
+        sar esi, 0x2
+    loc_53f93b:
+        mov edx, dword ptr [mem_00A9F6E0]
+        push edx
+        mov ecx, edi
+        call ext_00640110
+        push esi
+        push eax
+        call ext_00640AA0
+        add esp, 0x8
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
