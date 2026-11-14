@@ -1952,3 +1952,71 @@ extern "C" __declspec(naked) void* __fastcall fn_006D7D00(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x006D2B30] sub_006D2B30 (160 bytes)
+extern "C" int mem_008C08E8;
+extern "C" void ext_006D2940();
+extern "C" void ext_006D2AA0();
+extern "C" void ext_006D80A0();
+
+extern "C" __declspec(naked) int __fastcall fn_006D2B30(void* self, int edx_unused, int a1, void* a2) {
+    __asm {
+        push -1
+        push offset mem_008C08E8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x20
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [esp + 0x3c]
+        mov dword ptr [esp + 0x34], 0
+        lea esi, [eax + 1]
+        mov eax, dword ptr [edi]
+        cmp esi, eax
+        jge short L_notfound_006D2B30
+    L_loop_006D2B30:
+        lea ecx, [esp + 0xc]
+        push esi
+        push ecx
+        mov ecx, edi
+        call ext_006D2AA0
+        lea edx, [esp + 0x40]
+        mov ecx, eax
+        push edx
+        call ext_006D2940
+        lea ecx, [esp + 0xc]
+        mov bl, al
+        call ext_006D80A0
+        test bl, bl
+        jne short L_found_006D2B30
+        mov eax, dword ptr [edi]
+        inc esi
+        cmp esi, eax
+        jl short L_loop_006D2B30
+    L_notfound_006D2B30:
+        lea ecx, [esp + 0x40]
+        call ext_006D80A0
+        pop edi
+        pop esi
+        or eax, -1
+        pop ebx
+        mov ecx, dword ptr [esp + 0x20]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret 0x24
+    L_found_006D2B30:
+        lea ecx, [esp + 0x40]
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x2c]
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret 0x24
+    }
+}
