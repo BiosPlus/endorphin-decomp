@@ -7,6 +7,11 @@ extern "C" void ext_005EB5A0();
 extern "C" void ext_00640110();
 extern "C" void ext_006404E0();
 extern "C" void ext_00640A80();
+extern "C" void ext_005B5780();
+extern "C" void ext_005E0380();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B45C2C;
+extern "C" int mem_00B45C24;
 
 // [0x0055DE20] NMData::NullRelationshipData::vfunc_59 (35 bytes)
 extern "C" __declspec(naked) void __fastcall fn_0055DE20(void* self, int edx_unused, void* out) {
@@ -86,5 +91,43 @@ extern "C" __declspec(naked) void* __fastcall fn_005EBE00(void* self, int edx_un
         mov eax, ebx
         pop ebx
         ret 4
+    }
+}
+
+// [0x005E1830] NMData::NullRelationshipData::vfunc_54 (128 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005E1830(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a60ee
+        push eax
+        mov dword ptr fs:[0], esp
+        mov eax, 1
+        test byte ptr [mem_00B45C2C], al
+        push esi
+        mov esi, ecx
+        jne loc_5e1884
+        or dword ptr [mem_00B45C2C], eax
+        push 0x16
+        mov ecx, 0xb45be0
+        mov dword ptr [esp + 0x10], 0
+        call ext_005B5780
+        push 0x91e3e0
+        call ext_006A6C87
+        add esp, 4
+        mov dword ptr [esp + 0xc], -1
+
+    loc_5e1884:
+        push 0xb45be0
+        mov ecx, esi
+        call ext_005E0380
+        mov al, byte ptr [esi + 0x178]
+        mov ecx, dword ptr [esp + 4]
+        mov byte ptr [mem_00B45C24], al
+        mov eax, 0xb45be0
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 0xc
+        ret
     }
 }
