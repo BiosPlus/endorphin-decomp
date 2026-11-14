@@ -56,5 +56,7 @@
     "0x00561CAE",
     "0x00561CBA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-14T14:21:44Z"
 }
