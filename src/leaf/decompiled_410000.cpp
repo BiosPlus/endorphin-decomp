@@ -11512,3 +11512,59 @@ loc_41ab6a:
         ret     0x4
     }
 }
+
+// [0x0041DAD0] sub_0041DAD0 (137 bytes)
+extern "C" void ext_0041D410();
+
+extern "C" __declspec(naked) void __fastcall fn_0041DAD0(void* self, int edx_unused, int a1) {
+    __asm {
+        push    -1
+        push    0x8b33b8
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        sub     esp, 8
+        mov     eax, [esp + 0x18]
+        push    ebx
+        push    esi
+        push    edi
+        mov     esi, ecx
+        mov     ecx, [esi + 0xc]
+        push    eax
+        call    ext_006A89B0
+        mov     edi, eax
+        mov     ecx, edi
+        call    ext_006AD180
+        push    edi
+        lea     ecx, [esp + 0x10]
+        push    ecx
+        mov     ecx, esi
+        mov     ebx, eax
+        call    ext_0041D410
+        mov     ecx, [esi + 4]
+        mov     edx, [ecx]
+        mov     edx, [edx + 4]
+        lea     eax, [esp + 0xc]
+        push    eax
+        push    ebx
+        mov     dword ptr [esp + 0x24], 0
+        call    edx
+        mov     ecx, [esp + 0x10]
+        test    ecx, ecx
+        pop     edi
+        pop     esi
+        mov     dword ptr [esp + 0x14], -1
+        pop     ebx
+        je      short done_0041DAD0
+        mov     eax, [ecx]
+        mov     eax, [eax + 0x78]
+        lea     edx, [esp]
+        push    edx
+        call    eax
+    done_0041DAD0:
+        mov     ecx, [esp + 8]
+        mov     fs:[0], ecx
+        add     esp, 0x14
+        ret     4
+    }
+}
