@@ -408,3 +408,66 @@ extern "C" __declspec(naked) void __fastcall fn_004A9A70(void* self) {
         ret 0x4
     }
 }
+
+// [0x004AA020] NMData::BehaviourData::vfunc_34 (148 bytes)
+extern "C" void ext_00493E40();
+extern "C" void ext_00493E70();
+extern "C" void ext_00528B90();
+extern "C" void ext_005B5AF0();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_004AA020(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x88d648
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        mov esi, ecx
+        mov dword ptr [esp + 0x8], 0
+        test esi, esi
+        mov dword ptr [esp + 0x14], 0
+        je L_null
+        lea eax, [esi + 0xc]
+        jmp L_cont
+    L_null:
+        xor eax, eax
+    L_cont:
+        mov edx, dword ptr [mem_00B40640]
+        push 0
+        push eax
+        mov eax, dword ptr [esi + 0x4]
+        mov eax, dword ptr [eax + 0xc]
+        lea ecx, [esi + 0x4]
+        push edx
+        call eax
+        push eax
+        call ext_005B5AF0
+        mov edi, dword ptr [esp + 0x28]
+        push eax
+        mov ecx, edi
+        call ext_00493E40
+        test eax, eax
+        je L_ret
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0xc], 0
+        call ext_00493E70
+        mov edi, eax
+        push eax
+        lea ecx, [esi + 0xc]
+        mov dword ptr [esp + 0xc], edi
+        call ext_00528B90
+        mov eax, edi
+    L_ret:
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
