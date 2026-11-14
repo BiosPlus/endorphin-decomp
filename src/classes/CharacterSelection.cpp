@@ -205,3 +205,18 @@ done_00692F10:
         ret 4
     }
 }
+
+extern "C" void ext_0053F5F0(void*, void*);
+extern "C" void ext_0063EFE0();
+extern "C" void ext_006824E0(void*, void*, int, int);
+extern "C" void ext_00692DD0();
+extern "C" int mem_00AA23DC;
+extern "C" int mem_00A9F848;
+
+// [0x004EC660] CharacterSelection::vfunc_1_off_4 (77 bytes)
+extern "C" void __fastcall fn_004EC660(void* self, int edx_unused, void* a1) {
+    ext_006824E0(a1, (char*)self + 0x18, 0, mem_00AA23DC);
+    int tmp = ((int (__thiscall*)(void*, int))ext_0063EFE0)(a1, mem_00A9F848);
+    ext_0053F5F0((char*)self + 0x34, &tmp);
+    ((void (__thiscall*)(void*, void*))ext_00692DD0)(self, a1);
+}
