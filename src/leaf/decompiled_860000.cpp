@@ -2929,3 +2929,202 @@ extern "C" __declspec(naked) void __fastcall fn_0086E880(void* self) {
         ret
     }
 }
+
+extern "C" void ext_008658B0();
+extern "C" void ext_00865C00();
+
+// [0x008659D0] sub_008659D0 (557 bytes)
+extern "C" __declspec(naked) void __cdecl fn_008659D0(void* a1, unsigned int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        sub esp, 0x90
+        push ebx
+        lea ecx, [eax + 0x7]
+        shr ecx, 0x3
+        push esi
+        push edi
+        and eax, 0x7
+        mov ebx, dword ptr [esp + 0xa0]
+        push ebp
+        mov dword ptr [esp + 0x14], ecx
+        mov dword ptr [esp + 0x10], eax
+        jne m865a00
+        mov dword ptr [esp + 0x10], 0x8
+m865a00:
+        mov dword ptr [esp + 0x1c], 0x0
+        mov dword ptr [esp + 0x18], 0x0
+        mov dword ptr [esp + 0x20], 0x0
+        mov dword ptr [esp + 0x24], 0x0
+        cmp dword ptr [esp + 0x14], 0x1
+        jbe m865af5
+        mov dword ptr [esp + 0x28], 0x0
+        mov eax, dword ptr [esp + 0x14]
+        sub eax, 0x2
+        mov dword ptr [esp + 0x2c], eax
+        je m865af5
+m865a44:
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [ebx + 0x4]
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [esp + 0x24], ecx
+        cmp dword ptr [esp + 0x28], 0x0
+        jne m865ab5
+        lea eax, [esp + 0x30]
+        push 0x0
+        push eax
+        push ebx
+        call ext_008658B0
+        add esp, 0xc
+        cmp dword ptr [mem_00AB98EC], 0x0
+        jne m865bf2
+        mov eax, dword ptr [esp + 0x30]
+        lea edi, [esp + 0x38]
+        mov esi, 0x19
+        mov dword ptr [esp + 0x38], eax
+m865a86:
+        mov eax, dword ptr [edi]
+        mov cl, 0x20
+        add eax, dword ptr [esp + 0x34]
+        mov ebp, dword ptr [esp + 0x30]
+        mov dword ptr [edi + 0x4], eax
+        add edi, 0x4
+        mov eax, dword ptr [esp + 0x30]
+        mov edx, dword ptr [edi - 0x4]
+        and dl, 0x1f
+        sub cl, dl
+        shl eax, cl
+        mov cl, dl
+        shr ebp, cl
+        or eax, ebp
+        xor dword ptr [esp + 0x3c], eax
+        dec esi
+        jne m865a86
+        jmp m865ac3
+m865ab5:
+        lea eax, [esp + 0x38]
+        push eax
+        push ebx
+        call ext_00865C00
+        add esp, 0x8
+m865ac3:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x1c]
+        xor dword ptr [ebx], eax
+        mov edx, dword ptr [esp + 0x20]
+        xor dword ptr [ebx + 0x4], ecx
+        mov eax, dword ptr [esp + 0x24]
+        add ebx, 0x8
+        mov dword ptr [esp + 0x18], edx
+        mov dword ptr [esp + 0x1c], eax
+        inc dword ptr [esp + 0x28]
+        mov ecx, dword ptr [esp + 0x28]
+        cmp ecx, dword ptr [esp + 0x2c]
+        jb m865a44
+m865af5:
+        xor eax, eax
+        mov dword ptr [esp + 0x18], eax
+        mov dword ptr [esp + 0x1c], eax
+        cmp dword ptr [esp + 0x10], eax
+        je m865b1e
+        mov eax, dword ptr [esp + 0x10]
+        lea esi, [ebx + 0x8]
+        lea edi, [esp + 0x18]
+        mov ecx, eax
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+m865b1e:
+        cmp dword ptr [esp + 0x14], 0x1
+        jne m865b46
+        push 0x0
+        push 0x0
+        push ebx
+        call ext_008658B0
+        add esp, 0xc
+        cmp dword ptr [mem_00AB98EC], 0x0
+        je m865b7c
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x90
+        ret
+m865b46:
+        cmp dword ptr [esp + 0x14], 0x2
+        jne m865b6e
+        push 0x0
+        push 0x0
+        push ebx
+        call ext_008658B0
+        add esp, 0xc
+        cmp dword ptr [mem_00AB98EC], 0x0
+        je m865b7c
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x90
+        ret
+m865b6e:
+        lea eax, [esp + 0x38]
+        push eax
+        push ebx
+        call ext_00865C00
+        add esp, 0x8
+m865b7c:
+        cmp dword ptr [esp + 0x14], 0x1
+        jbe m865be5
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [ebx + 0x4]
+        xor dword ptr [esp + 0x18], eax
+        xor dword ptr [esp + 0x1c], ecx
+        xor ecx, ecx
+        cmp dword ptr [esp + 0x10], ecx
+        je m865baf
+m865b98:
+        mov dl, byte ptr [ebx + ecx + 0x8]
+        lea eax, [ebx + ecx]
+        inc ecx
+        mov byte ptr [eax], dl
+        cmp ecx, dword ptr [esp + 0x10]
+        mov dl, byte ptr [esp + ecx + 0x17]
+        mov byte ptr [eax + 0x8], dl
+        jb m865b98
+m865baf:
+        cmp dword ptr [esp + 0x14], 0x2
+        jne m865bd7
+        push 0x0
+        push 0x0
+        push ebx
+        call ext_008658B0
+        add esp, 0xc
+        cmp dword ptr [mem_00AB98EC], 0x0
+        je m865be5
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x90
+        ret
+m865bd7:
+        lea eax, [esp + 0x38]
+        push eax
+        push ebx
+        call ext_00865C00
+        add esp, 0x8
+m865be5:
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x24]
+        xor dword ptr [ebx], eax
+        xor dword ptr [ebx + 0x4], ecx
+m865bf2:
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x90
+        ret
+    }
+}
