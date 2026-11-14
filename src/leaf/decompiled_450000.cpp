@@ -1,8 +1,10 @@
 // Decompiled translation unit: src/leaf/decompiled_450000.cpp
 
 extern "C" void ext_00454BB0();
+extern "C" int mem_00925694;
+extern "C" void fn_00455240();
 
-// [0x00454BE0] sub_00454BE0 (25 bytes)
+extern "C" void fn_00455240();
 // Stores arg0 into this->[0x120], replaces stack arg0 with it, then tail-jumps to 0x00454BB0 with ecx = this + 0x10c.
 extern "C" __declspec(naked) void __fastcall fn_00454BE0(void* self) {
     __asm {
@@ -10302,4 +10304,13 @@ L_done:
         pop esi
         ret 0x8
     }
+}
+
+// [0x00455820] sub_00455820 (49 bytes)
+extern "C" void __fastcall fn_00455820(void* self) {
+    int s[3];
+    s[0] = (int)((char*)self + 0x13c);
+    s[2] = (int)fn_00455240;
+    typedef int (__stdcall *SendMsgFn)(void*, unsigned int, unsigned int, void*);
+    ((SendMsgFn)mem_00925694)(*(void**)((char*)self + 0x94), 0x449, 2, s);
 }
