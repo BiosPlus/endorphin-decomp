@@ -48,5 +48,7 @@
     "0x0048D22B",
     "0x0048D241"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T14:12:21Z"
 }
