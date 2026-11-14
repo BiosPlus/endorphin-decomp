@@ -1309,3 +1309,86 @@ extern "C" __declspec(naked) bool __cdecl fn_006FF7E0(wchar_t* dst, int index, c
         ret
     }
 }
+
+extern "C" void ext_007831E0();
+extern "C" void ext_00783270();
+extern "C" void ext_007833B0();
+extern "C" void ext_007833F0();
+
+// [0x006FE870] sub_006FE870 (208 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006FE870() {
+    __asm {
+        push    -1
+        push    0x008BB578
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 0x58
+        push    edi
+        lea     ecx, [esp + 4]
+        call    ext_007831E0
+        mov     edi, dword ptr [esp + 0x6C]
+        mov     dword ptr [esp + 0x64], 0
+        test    edi, edi
+        je      L_cleanup_false
+        push    ebx
+        push    esi
+        mov     esi, 0x00B5D2C0
+        mov     eax, edi
+    L_strcmp_loop:
+        mov     dl, byte ptr [eax]
+        mov     bl, byte ptr [esi]
+        mov     cl, dl
+        cmp     dl, bl
+        jne     L_strcmp_diff
+        test    cl, cl
+        je      L_strcmp_eq
+        mov     dl, byte ptr [eax + 1]
+        mov     bl, byte ptr [esi + 1]
+        mov     cl, dl
+        cmp     dl, bl
+        jne     L_strcmp_diff
+        add     eax, 2
+        add     esi, 2
+        test    cl, cl
+        jne     L_strcmp_loop
+    L_strcmp_eq:
+        xor     eax, eax
+        jmp     L_strcmp_done
+    L_strcmp_diff:
+        sbb     eax, eax
+        sbb     eax, -1
+    L_strcmp_done:
+        pop     esi
+        pop     ebx
+        test    eax, eax
+        je      L_cleanup_false
+        push    0x00AAB92C
+        push    edi
+        lea     ecx, [esp + 0xC]
+        call    ext_007833B0
+        test    al, al
+        je      L_cleanup_false
+        lea     ecx, [esp + 4]
+        call    ext_007833F0
+        lea     ecx, [esp + 4]
+        mov     dword ptr [esp + 0x64], -1
+        call    ext_00783270
+        mov     al, 1
+        pop     edi
+        mov     ecx, dword ptr [esp + 0x58]
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x64
+        ret
+    L_cleanup_false:
+        lea     ecx, [esp + 4]
+        mov     dword ptr [esp + 0x64], -1
+        call    ext_00783270
+        mov     ecx, dword ptr [esp + 0x5C]
+        xor     al, al
+        pop     edi
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x64
+        ret
+    }
+}
