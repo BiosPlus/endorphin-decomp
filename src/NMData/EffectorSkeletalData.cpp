@@ -765,3 +765,57 @@ extern "C" __declspec(naked) void __fastcall fn_00626B00(void* self) {
         ret 0x4
     }
 }
+
+extern "C" void ext_006301E0();
+extern "C" void ext_005A0FF0();
+
+// [0x00627110] NMData::EffectorSkeletalData::vfunc_15 (140 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00627110(void* self) {
+    __asm {
+        push -1
+        push 0x8a4a23
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        push 0x180
+        mov edi, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 8], eax
+        xor esi, esi
+        cmp eax, esi
+        mov dword ptr [esp + 0x14], esi
+        je skip_ctor
+        mov ecx, eax
+        call ext_006301E0
+        mov esi, eax
+    skip_ctor:
+        mov dword ptr [esp + 8], esi
+        mov ecx, dword ptr [esp + 0x1c]
+        lea eax, [edi + 0x20]
+        push eax
+        mov dword ptr [esp + 0x18], 1
+        call ext_005A0FF0
+        mov eax, dword ptr [eax + 0x234]
+        mov dword ptr [esi + 4], eax
+        mov eax, dword ptr [esp + 0x20]
+        mov dword ptr [edi + 0x3c], eax
+        mov dword ptr [esi + 8], eax
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x30]
+        push edi
+        mov ecx, esi
+        call eax
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [edi + 0x40], esi
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0xc
+    }
+}
