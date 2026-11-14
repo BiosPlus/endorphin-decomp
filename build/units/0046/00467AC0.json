@@ -95,5 +95,7 @@
     "0x00467EC7",
     "0x00467EDB"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T05:37:06Z"
 }
