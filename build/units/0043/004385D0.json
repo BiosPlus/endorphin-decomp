@@ -50,5 +50,7 @@
     "0x0043887C",
     "0x00438889"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T14:06:37Z"
 }
