@@ -550,3 +550,17 @@ extern "C" __declspec(naked) void __fastcall fn_007BA6D0(void* self) {
         ret
     }
 }
+
+// [0x007BA690] sub_007BA690 (64 bytes)
+extern "C" void ext_007BAA40();
+
+extern "C" int __cdecl fn_007BA690(void* a, unsigned short b, unsigned short c, unsigned char* d, int e, int* f) {
+    *(unsigned short*)d = c;
+    *(unsigned short*)(d + 2) = b;
+    *(int*)(d + 4) = e;
+    if (e == 1) {
+        *(int*)(d + 8) = *f;
+        return 1;
+    }
+    return ((int (__cdecl*)(void*, unsigned char*, int*))ext_007BAA40)(a, d, f);
+}
