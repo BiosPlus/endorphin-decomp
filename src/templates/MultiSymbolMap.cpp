@@ -81,3 +81,99 @@ done:
         ret 0x4
     }
 }
+
+extern "C" void ext_0040ECB0();
+extern "C" void ext_00673C20();
+extern "C" int mem_00925134;
+
+// [0x005A55B0] MultiSymbolMap<PointainerMap<std::basic_string<char, std::char_traits<char>, std::allocator<char>>, NMData::RelationshipData>>::vfunc_6 (216 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005A55B0(void* self, int edx_pad, void* arg1) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x4]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x10], esi
+        jbe L_5a55ce
+        call ebp
+    L_5a55ce:
+        mov dword ptr [esp + 0x20], edi
+    L_5a55d2:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_5a55dc
+        call ebp
+    L_5a55dc:
+        cmp esi, esi
+        je L_5a55e2
+        call ebp
+    L_5a55e2:
+        cmp edi, ebx
+        je L_5a567e
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_5a55f1
+        call ebp
+    L_5a55f1:
+        mov edi, dword ptr [edi]
+        mov eax, dword ptr [edi + 0x4]
+        mov ebx, dword ptr [eax]
+        mov esi, edi
+        mov dword ptr [esp + 0x14], esi
+        mov dword ptr [esp + 0x18], ebx
+    L_5a5602:
+        test esi, esi
+        mov ebp, dword ptr [edi + 0x4]
+        je L_5a560d
+        cmp esi, edi
+        je L_5a5613
+    L_5a560d:
+        call dword ptr [mem_00925134]
+    L_5a5613:
+        cmp ebx, ebp
+        je L_5a5653
+        test esi, esi
+        jne L_5a5621
+        call dword ptr [mem_00925134]
+    L_5a5621:
+        cmp ebx, dword ptr [esi + 0x4]
+        jne L_5a562c
+        call dword ptr [mem_00925134]
+    L_5a562c:
+        mov ecx, dword ptr [ebx + 0x28]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x24]
+        call eax
+        mov ecx, dword ptr [esp + 0x28]
+        push eax
+        call ext_0040ECB0
+        lea ecx, [esp + 0x14]
+        call ext_00673C20
+        mov ebx, dword ptr [esp + 0x18]
+        mov esi, dword ptr [esp + 0x14]
+        jmp L_5a5602
+    L_5a5653:
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x20]
+        cmp edx, dword ptr [ecx + 0x8]
+        jb L_5a5666
+        call dword ptr [mem_00925134]
+    L_5a5666:
+        add dword ptr [esp + 0x20], 0x4
+        mov esi, dword ptr [esp + 0x10]
+        mov ebp, dword ptr [mem_00925134]
+        mov edi, dword ptr [esp + 0x20]
+        jmp L_5a55d2
+    L_5a567e:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x14
+        ret 0x4
+    }
+}
