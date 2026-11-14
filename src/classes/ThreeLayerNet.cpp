@@ -617,3 +617,40 @@ extern "C" __declspec(naked) void __fastcall fn_00522AE0(void* self) {
         ret 0x4
     }
 }
+
+// [0x005221D0] ThreeLayerNet::vfunc_22 (66 bytes)
+extern "C" void ext_00640390();
+extern "C" void ext_00640110();
+extern "C" void ext_00640A50();
+extern "C" void ext_005246E0();
+extern "C" int mem_00A9F32C;
+extern "C" int mem_00A9F844;
+
+extern "C" __declspec(naked) void __fastcall fn_005221D0(void* self, int edx_unused, int arg0) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F32C]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push 0
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_00640390
+        mov ecx, dword ptr [mem_00A9F844]
+        push ecx
+        mov ecx, eax
+        call ext_00640110
+        mov edx, dword ptr [esi + 0xc4]
+        push edx
+        push eax
+        call ext_00640A50
+        add esp, 8
+        push edi
+        mov ecx, esi
+        call ext_005246E0
+        pop edi
+        pop esi
+        ret 4
+    }
+}
