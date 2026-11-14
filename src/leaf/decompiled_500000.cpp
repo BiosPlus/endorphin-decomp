@@ -7055,3 +7055,36 @@ extern "C" __declspec(naked) void __fastcall fn_00506CD0(void* self) {
         ret
     }
 }
+
+// [0x0050E260] sub_0050E260 (66 bytes)
+extern "C" void ext_0050DCF0();
+extern "C" void ext_0050DD70();
+extern "C" void ext_0050DDF0();
+extern "C" void ext_0050E0B0();
+extern "C" int mem_00A9FA04;
+extern "C" int mem_00A9F790;
+extern "C" int mem_00A9FA90;
+extern "C" __declspec(naked) void __cdecl fn_0050E260(void* a1) {
+    __asm {
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x8]
+        push    0x0
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    ext_0050E0B0
+        mov     ecx, dword ptr [mem_00A9FA04]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_0050DCF0
+        mov     edx, dword ptr [mem_00A9F790]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_0050DD70
+        mov     eax, dword ptr [mem_00A9FA90]
+        push    eax
+        lea     ecx, [esp + 0x4]
+        call    ext_0050DDF0
+        pop     ecx
+        ret
+    }
+}
