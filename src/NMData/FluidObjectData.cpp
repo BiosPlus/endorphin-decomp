@@ -353,3 +353,55 @@ extern "C" __declspec(naked) void __fastcall fn_005C46F0(void* self) {
         ret 0x4
     }
 }
+
+extern "C" void ext_005BF510();
+extern "C" void ext_005BF570();
+extern "C" void ext_005CC5C0();
+extern "C" void ext_006A5C62();
+
+// [0x005CC6C0] NMData::FluidObjectData::vfunc_16_off_C (134 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005CC6C0(void* self) {
+    __asm {
+        push -0x1
+        push 0x8a4a23
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push edi
+        push 0x19c
+        mov edi, ecx
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x8], eax
+        test eax, eax
+        mov dword ptr [esp + 0x14], 0x0
+        je L_null
+        lea ecx, [edi - 0xc]
+        push ecx
+        mov ecx, eax
+        call ext_005CC5C0
+        mov esi, eax
+        jmp L_after
+    L_null:
+        xor esi, esi
+    L_after:
+        mov ecx, dword ptr [esp + 0x1c]
+        push esi
+        mov dword ptr [esp + 0x18], 0x1
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_005BF510
+        mov ecx, dword ptr [edi + 0x158]
+        lea edx, [edi - 0xc]
+        push edx
+        call ext_005BF570
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
