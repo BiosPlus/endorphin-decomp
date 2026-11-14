@@ -19,5 +19,7 @@
     "0x0066534E",
     "0x0066535A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T12:25:18Z"
 }
