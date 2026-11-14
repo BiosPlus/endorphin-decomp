@@ -1360,3 +1360,56 @@ extern "C" __declspec(naked) bool __fastcall fn_004BCB90(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004C0770] ExprParser::ReadMethodType<NMData::TriggeredEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::TriggeredEventData::getPropertySourceDescription(void) const, 0}, 1>::vfunc_3 (130 bytes)
+extern "C" void ext_004C0280();
+
+extern "C" __declspec(naked) bool __fastcall fn_004C0770(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [eax]
+        push ebx
+        push esi
+        push edi
+        push edx
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_004C0280
+        mov esi, eax
+        mov edi, dword ptr [mem_00924FC0]
+        push 0x92f10c
+        xor ebx, ebx
+        push esi
+        mov dword ptr [esp + 0x38], ebx
+        call edi
+        add esp, 8
+        test al, al
+        jne loc_4c07c8
+        push 0x93a810
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        je loc_4c07ca
+    loc_4c07c8:
+        mov bl, 1
+    loc_4c07ca:
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x28]
+        pop edi
+        pop esi
+        mov al, bl
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 4
+    }
+}
