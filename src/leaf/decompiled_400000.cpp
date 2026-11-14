@@ -15906,3 +15906,18 @@ extern "C" void __fastcall fn_004061A0(void* self, int edx_unused, int a1, int a
         }
     }
 }
+
+// [0x0040F230] sub_0040F230 (49 bytes)
+extern "C" int mem_00925688;
+
+extern "C" void __fastcall fn_0040F230(void* self, int /*edx*/, int a1, int a2, int a3, int a4) {
+    int* p = (int*)self;
+    p[0x54 / 4] = a1;
+    p[0x58 / 4] = a2;
+    p[0x5c / 4] = a3;
+    p[0x60 / 4] = a4;
+    void* hwnd = *(void**)((char*)self + 0x20);
+    if (hwnd) {
+        ((int (__stdcall *)(void*, const void*, int))mem_00925688)(hwnd, 0, 1);
+    }
+}
