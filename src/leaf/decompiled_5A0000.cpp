@@ -5314,3 +5314,40 @@ extern "C" void __cdecl fn_005A9E30(void* self) {
     ((void (__thiscall*)(void*, const void*))ext_005A6800)(&local, (const void*)0x009576C4);
     ((void (__cdecl*)(void*))ext_00496E80)(self);
 }
+
+// [0x005A3580] sub_005A3580 (71 bytes)
+extern "C" void ext_00587920();
+extern "C" void ext_005A1C90();
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_005A3580(void* self, int edx_unused, void* arg1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        push edi
+        mov edi, ecx
+        je done
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x24]
+        push esi
+        mov ecx, esi
+        mov dword ptr [esi + 0x18c], edi
+        call edx
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x2c], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        lea ecx, [edi + 0x58c]
+        call ext_005A1C90
+        push 0
+        push esi
+        lea ecx, [edi + 4]
+        call ext_00587920
+    done:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
