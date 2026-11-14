@@ -4021,3 +4021,46 @@ extern "C" void __fastcall fn_0058B5A0(void* self, int edx_unused, float val) {
     ((void (__thiscall*)(void*))ext_00586D00)(self);
     ((void (__thiscall*)(void*, float*))ext_0058AA60)(self, (float*)((char*)self + 0x12c));
 }
+
+// [0x005870B0] sub_005870B0 (93 bytes)
+extern "C" void ext_00480430();
+extern "C" void ext_005850C0();
+extern "C" __declspec(naked) void __fastcall fn_005870B0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x40
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [edi + 0x4]
+        mov eax, dword ptr [eax + 0x10]
+        push ecx
+        lea esi, [edi + 0x4]
+        push 0
+        lea edx, [esp + 0x10]
+        push edx
+        mov ecx, esi
+        call eax
+        lea ecx, [esp + 0x8]
+        call ext_00480430
+        mov ecx, dword ptr [esp + 0x4c]
+        push ecx
+        lea ecx, [esp + 0xc]
+        call ext_005850C0
+        mov eax, dword ptr [mem_00B40640]
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx]
+        push eax
+        lea ecx, [esp + 0xc]
+        push ecx
+        push 0
+        mov ecx, esi
+        call edx
+        mov ecx, edi
+        call ext_00586D00
+        pop edi
+        pop esi
+        add esp, 0x40
+        ret 4
+    }
+}
