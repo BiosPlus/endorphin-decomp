@@ -6456,3 +6456,58 @@ extern "C" __declspec(naked) void __fastcall fn_004AD820(void* self) {
         ret     0x8
     }
 }
+
+// [0x004AEF60] sub_004AEF60 (140 bytes)
+extern "C" void ext_00451670();
+extern "C" void ext_00676C90();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_0088906B;
+extern "C" int mem_00941F44;
+
+extern "C" __declspec(naked) void __fastcall fn_004AEF60(void* self) {
+    __asm {
+        push    -0x1
+        push    offset mem_0088906B
+        mov     eax, dword ptr fs:[0x0]
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x8
+        push    esi
+        mov     esi, ecx
+        push    edi
+        mov     dword ptr [esp + 0xc], esi
+        mov     dword ptr [esi], offset mem_00941F44
+        mov     eax, dword ptr [esi + 0x4]
+        lea     ecx, [esp + 0x8]
+        push    ecx
+        lea     ecx, [eax + 0x224]
+        mov     dword ptr [esp + 0x1c], 0x0
+        mov     dword ptr [esp + 0xc], esi
+        call    ext_00451670
+        mov     edi, dword ptr [esi + 0xc]
+        test    edi, edi
+        je      L_4AEFBC
+        mov     ecx, edi
+        call    ext_004F1D90
+        push    edi
+        call    ext_006A5C5C
+        add     esp, 0x4
+    L_4AEFBC:
+        mov     esi, dword ptr [esi + 0x8]
+        test    esi, esi
+        mov     dword ptr [esp + 0x18], 0xffffffff
+        je      L_4AEFDB
+        mov     ecx, esi
+        call    ext_00676C90
+        push    esi
+        call    ext_006A5C5C
+        add     esp, 0x4
+    L_4AEFDB:
+        mov     ecx, dword ptr [esp + 0x10]
+        pop     edi
+        pop     esi
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x14
+        ret
+    }
+}
