@@ -757,3 +757,58 @@ extern "C" __declspec(naked) void __fastcall fn_005C16C0(void* self) {
         ret
     }
 }
+
+// [0x005BE840] NMData::MetaBodyData::vfunc_22 (112 bytes)
+extern "C" void ext_00585C10();
+extern "C" void ext_0058F650();
+extern "C" void ext_005A09D0();
+extern "C" void ext_005CE560();
+extern "C" void ext_006404E0();
+extern "C" int mem_00A9F0C4;
+extern "C" __declspec(naked) void* __fastcall fn_005BE840(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F0C4]
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push eax
+        call ext_006404E0
+        mov esi, eax
+        push esi
+        mov ecx, edi
+        call ext_0058F650
+        push 0
+        push 0
+        push 0
+        lea ecx, [edi + 0x174]
+        push esi
+        push ecx
+        call ext_00585C10
+        push 0
+        push 0
+        push 0
+        lea edx, [edi + 0x15c]
+        push esi
+        push edx
+        call ext_005A09D0
+        push 0
+        push 0
+        push 0
+        lea eax, [edi + 0x168]
+        push esi
+        push eax
+        call ext_005A09D0
+        mov ecx, dword ptr [edi + 0x158]
+        add esp, 0x3c
+        test ecx, ecx
+        je L_005BE8A9
+        push esi
+        call ext_005CE560
+    L_005BE8A9:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
