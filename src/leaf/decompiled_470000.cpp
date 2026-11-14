@@ -6756,3 +6756,72 @@ L_ret:
         ret 4
     }
 }
+
+// [0x0047B170] sub_0047B170 (107 bytes)
+extern "C" void ext_0047A9C0();
+extern "C" int mem_00925134;
+
+struct VecFloat_0047B170 {
+    int pad;
+    float* first;
+    float* last;
+    float* end;
+};
+
+struct Iter_0047B170 {
+    void* cont;
+    float* ptr;
+};
+
+extern "C" __declspec(naked) void __fastcall fn_0047B170(void* self) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        mov edx, dword ptr [esi + 4]
+        test edx, edx
+        jne short L_has_first
+        xor ecx, ecx
+        jmp short L_check_cap
+    L_has_first:
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, edx
+        sar ecx, 2
+    L_check_cap:
+        test edx, edx
+        je short L_grow
+        mov eax, dword ptr [esi + 0Ch]
+        sub eax, edx
+        sar eax, 2
+        cmp ecx, eax
+        jae short L_grow
+        mov eax, dword ptr [esi + 8]
+        mov ecx, dword ptr [esp + 10h]
+        fld dword ptr [ecx]
+        add eax, 4
+        fstp dword ptr [eax - 4]
+        mov dword ptr [esi + 8], eax
+        pop esi
+        add esp, 8
+        ret 4
+    L_grow:
+        push edi
+        mov edi, dword ptr [esi + 8]
+        cmp edx, edi
+        jbe short L_insert
+        call dword ptr [mem_00925134]
+    L_insert:
+        mov edx, dword ptr [esp + 14h]
+        push edx
+        push edi
+        push esi
+        lea eax, [esp + 14h]
+        push eax
+        mov ecx, esi
+        call ext_0047A9C0
+        pop edi
+        pop esi
+        add esp, 8
+        ret 4
+    }
+}
