@@ -14690,3 +14690,146 @@ dtor:
         ret 8
     }
 }
+
+// [0x00577060] sub_00577060 (398 bytes)
+extern "C" void ext_00427A60();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_00577060();
+extern "C" int mem_00B3D27C;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FC4;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00577060(void* self) {
+    __asm {
+        push    -0x1
+        push    0x8b56f9
+        mov     eax, dword ptr fs:[0x0]
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x38
+        mov     dword ptr [esp], ecx
+        push    ebx
+        mov     ecx, offset mem_00B3D27C
+        call    dword ptr [mem_00924FF0]
+        mov     ebx, dword ptr [esp + 0x4c]
+        push    eax
+        mov     ecx, ebx
+        call    ext_0063EFE0
+        mov     edx, dword ptr [eax]
+        mov     edx, dword ptr [edx + 0x8]
+        lea     ecx, [esp + 0x20]
+        push    ecx
+        mov     ecx, eax
+        call    edx
+        mov     eax, dword ptr [esp + 0x50]
+        push    eax
+        lea     ecx, [esp + 0x24]
+        push    ecx
+        mov     dword ptr [esp + 0x4c], 0x0
+        call    dword ptr [mem_00924FC4]
+        add     esp, 0x8
+        test    al, al
+        je      loop_577060_else
+        lea     ecx, [esp + 0x20]
+        mov     dword ptr [esp + 0x44], 0xffffffff
+        call    dword ptr [mem_00924FF4]
+        mov     eax, ebx
+        pop     ebx
+        mov     ecx, dword ptr [esp + 0x38]
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x44
+        ret     0x8
+    loop_577060_else:
+        add     ebx, 0x24
+        push    esi
+        mov     esi, dword ptr [ebx + 0x4]
+        cmp     esi, dword ptr [ebx + 0x8]
+        push    edi
+        mov     edi, dword ptr [mem_00925134]
+        jbe     loop_577060_a
+        call    edi
+    loop_577060_a:
+        lea     ecx, [esp + 0x10]
+        mov     dword ptr [esp + 0x10], ebx
+        mov     dword ptr [esp + 0x14], ebx
+        mov     dword ptr [esp + 0x18], esi
+        call    ext_00427A60
+        push    ebp
+    loop_577060_top:
+        mov     esi, dword ptr [ebx + 0x8]
+        cmp     dword ptr [ebx + 0x4], esi
+        jbe     loop_577060_b
+        call    edi
+    loop_577060_b:
+        lea     ecx, [esp + 0x20]
+        mov     dword ptr [esp + 0x20], ebx
+        mov     dword ptr [esp + 0x24], ebx
+        mov     dword ptr [esp + 0x28], esi
+        call    ext_00427A60
+        mov     ebp, dword ptr [esp + 0x18]
+        test    ebp, ebp
+        je      loop_577060_c
+        cmp     ebp, dword ptr [esp + 0x24]
+        je      loop_577060_d
+    loop_577060_c:
+        call    edi
+    loop_577060_d:
+        mov     edi, dword ptr [esp + 0x1c]
+        cmp     edi, dword ptr [esp + 0x28]
+        jae     loop_577060_end
+        test    ebp, ebp
+        jne     loop_577060_e
+        call    dword ptr [mem_00925134]
+    loop_577060_e:
+        cmp     edi, dword ptr [ebp + 0x8]
+        jb      loop_577060_f
+        call    dword ptr [mem_00925134]
+    loop_577060_f:
+        mov     edx, dword ptr [esp + 0x5c]
+        mov     eax, dword ptr [edi]
+        mov     ecx, dword ptr [esp + 0x10]
+        push    edx
+        push    eax
+        call    ext_00577060
+        mov     esi, eax
+        test    esi, esi
+        jne     loop_577060_found
+        cmp     edi, dword ptr [ebp + 0x8]
+        jb      loop_577060_g
+        call    dword ptr [mem_00925134]
+    loop_577060_g:
+        add     edi, 0x4
+        lea     ecx, [esp + 0x14]
+        mov     dword ptr [esp + 0x1c], edi
+        call    ext_00427A60
+        mov     edi, dword ptr [mem_00925134]
+        jmp     loop_577060_top
+    loop_577060_found:
+        lea     ecx, [esp + 0x2c]
+        mov     dword ptr [esp + 0x50], 0xffffffff
+        call    dword ptr [mem_00924FF4]
+        pop     ebp
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        pop     ebx
+        mov     ecx, dword ptr [esp + 0x38]
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x44
+        ret     0x8
+    loop_577060_end:
+        lea     ecx, [esp + 0x2c]
+        mov     dword ptr [esp + 0x50], 0xffffffff
+        call    dword ptr [mem_00924FF4]
+        mov     ecx, dword ptr [esp + 0x48]
+        pop     ebp
+        pop     edi
+        pop     esi
+        xor     eax, eax
+        pop     ebx
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x44
+        ret     0x8
+    }
+}
