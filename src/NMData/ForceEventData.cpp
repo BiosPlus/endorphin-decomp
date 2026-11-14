@@ -617,3 +617,51 @@ extern "C" __declspec(naked) void __fastcall fn_004C4F30(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x004C4FA0] NMData::ForceEventData::vfunc_2_off_C (107 bytes)
+extern "C" void ext_00586D00();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_004C4FA0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x40
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [edi - 0x8]
+        mov eax, dword ptr [eax + 0x10]
+        push ecx
+        lea esi, [edi - 0x8]
+        push 0x0
+        lea edx, [esp + 0x10]
+        push edx
+        mov ecx, esi
+        call eax
+        mov eax, dword ptr [esp + 0x4c]
+        fld dword ptr [eax]
+        mov edx, dword ptr [esi]
+        fadd dword ptr [esp + 0x38]
+        mov edx, dword ptr [edx]
+        lea ecx, [esp + 0x8]
+        fstp dword ptr [esp + 0x38]
+        fld dword ptr [eax + 0x4]
+        fadd dword ptr [esp + 0x3c]
+        fstp dword ptr [esp + 0x3c]
+        fld dword ptr [eax + 0x8]
+        mov eax, dword ptr [mem_00B40640]
+        fadd dword ptr [esp + 0x40]
+        push eax
+        push ecx
+        push 0x0
+        mov ecx, esi
+        fstp dword ptr [esp + 0x4c]
+        call edx
+        lea ecx, [edi - 0xc]
+        call ext_00586D00
+        pop edi
+        pop esi
+        add esp, 0x40
+        ret 0x4
+    }
+}
