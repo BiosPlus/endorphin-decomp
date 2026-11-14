@@ -13046,3 +13046,37 @@ extern "C" __declspec(naked) void __fastcall fn_0044CB90(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0044CC30] sub_0044CC30 (142 bytes)
+extern "C" void ext_00430370();
+extern "C" void ext_00430380();
+extern "C" void ext_0044C500();
+extern "C" void ext_0044CB90();
+extern "C" int mem_00ACDB40;
+
+extern "C" void __fastcall fn_0044CC30(void* self) {
+    if (!*(void**)((char*)self + 0x64)) {
+        return;
+    }
+    typedef void* (__thiscall *VFn)(void*);
+    void* res = (*(VFn**)(*(void**)((char*)self + 0x64)))[0xb4 / 4](*(void**)((char*)self + 0x64));
+    if (!res) {
+        return;
+    }
+    void* arr = (char*)res + 0x54;
+    ((void (__thiscall*)(void*))ext_0044C500)(arr);
+    int val;
+    if (((bool (__thiscall*)(int))ext_00430370)(mem_00ACDB40)) {
+        val = 2;
+    } else if (((bool (__thiscall*)(int))ext_00430380)(mem_00ACDB40)) {
+        val = 9;
+    } else {
+        return;
+    }
+    typedef void (__thiscall *PushFn)(void*, int*);
+    ((PushFn)ext_0044CB90)(arr, &val);
+    val = 3;
+    ((PushFn)ext_0044CB90)(arr, &val);
+    val = 4;
+    ((PushFn)ext_0044CB90)(arr, &val);
+}
