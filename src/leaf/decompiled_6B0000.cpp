@@ -8248,3 +8248,70 @@ extern "C" __declspec(naked) void __fastcall fn_006BB900(void* self) {
         ret
     }
 }
+
+// [0x006B3FB0] sub_006B3FB0 (164 bytes)
+extern "C" void ext_00458C80();
+extern "C" int mem_009253C0;
+extern "C" int mem_009253BC;
+
+extern "C" __declspec(naked) void __cdecl fn_006B3FB0(void* a1, void* a2) {
+    __asm {
+        sub     esp, 0x10
+        push    edi
+        mov     edi, dword ptr [esp + 0x1c]
+        test    edi, edi
+        jne     short L_nonnull
+        push    0x80004005
+        call    ext_00458C80
+L_nonnull:
+        push    esi
+        mov     esi, dword ptr [esp + 0x1c]
+        push    edi
+        push    esi
+        call    dword ptr [mem_009253C0]
+        xor     ecx, ecx
+        test    eax, eax
+        mov     dword ptr [esp + 0x8], ecx
+        mov     dword ptr [esp + 0xc], ecx
+        mov     dword ptr [esp + 0x10], ecx
+        mov     dword ptr [esp + 0x14], ecx
+        je      short L_fail
+        fld     qword ptr [edi]
+        lea     eax, [esp + 0x8]
+        push    eax
+        sub     esp, 0x8
+        fstp    qword ptr [esp]
+        call    dword ptr [mem_009253BC]
+        test    eax, eax
+        je      short L_fail
+        mov     cx, word ptr [esi]
+        cmp     cx, word ptr [esp + 0x8]
+        jne     short L_fail
+        mov     dx, word ptr [esi + 0x2]
+        cmp     dx, word ptr [esp + 0xa]
+        jne     short L_fail
+        mov     ax, word ptr [esi + 0x6]
+        cmp     ax, word ptr [esp + 0xe]
+        jne     short L_fail
+        mov     cx, word ptr [esi + 0x8]
+        cmp     cx, word ptr [esp + 0x10]
+        jne     short L_fail
+        mov     dx, word ptr [esi + 0xa]
+        cmp     dx, word ptr [esp + 0x12]
+        jne     short L_fail
+        mov     ax, word ptr [esi + 0xc]
+        cmp     ax, word ptr [esp + 0x14]
+        jne     short L_fail
+        pop     esi
+        mov     eax, 1
+        pop     edi
+        add     esp, 0x10
+        ret
+L_fail:
+        pop     esi
+        xor     eax, eax
+        pop     edi
+        add     esp, 0x10
+        ret
+    }
+}
