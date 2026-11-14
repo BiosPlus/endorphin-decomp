@@ -15484,3 +15484,303 @@ L_epi:
         ret 0x1c
     }
 }
+
+// [0x00474640] sub_00474640 (906 bytes)
+extern "C" void ext_0046F810();
+extern "C" void ext_00482EB0();
+extern "C" void ext_004BF650();
+extern "C" void ext_0059C7F0();
+extern "C" void ext_006609B0();
+extern "C" void ext_0067B280();
+extern "C" void ext_006A5C62();
+extern "C" int mem_00AD89B8;
+extern "C" int mem_00882FA1;
+extern "C" int mem_0093BCB8;
+extern "C" int mem_0093BCC0;
+extern "C" int mem_0093BCC8;
+extern "C" int mem_0093BCD0;
+extern "C" int mem_0093BCD8;
+extern "C" int mem_0093BCE0;
+
+extern "C" __declspec(naked) void __fastcall fn_00474640(void* self) {
+    __asm {
+        push -1
+        push offset mem_00882FA1
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_004BF650
+        mov dword ptr [mem_00AD89B8], esi
+        xor ebx, ebx
+        push 0x8
+        mov dword ptr [esi + 0xf8], ebx
+        call ext_006A5C62
+        add esp, 4
+        cmp eax, ebx
+        je null1
+        mov dword ptr [eax + 0x4], ebx
+        mov dword ptr [eax], offset mem_0093BCB8
+        mov edi, eax
+        jmp done1
+    null1:
+        xor edi, edi
+    done1:
+        mov eax, dword ptr [esi + 0x274]
+        cmp edi, eax
+        je skip1
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    skip1:
+        push 0x8
+        mov dword ptr [esi + 0x274], edi
+        call ext_006A5C62
+        add esp, 4
+        cmp eax, ebx
+        je null2
+        mov dword ptr [eax + 0x4], ebx
+        mov dword ptr [eax], offset mem_0093BCC0
+        mov edi, eax
+        jmp done2
+    null2:
+        xor edi, edi
+    done2:
+        mov eax, dword ptr [esi + 0x278]
+        cmp edi, eax
+        je skip2
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    skip2:
+        push 0x8
+        mov dword ptr [esi + 0x278], edi
+        call ext_006A5C62
+        add esp, 4
+        cmp eax, ebx
+        je null3
+        mov dword ptr [eax + 0x4], ebx
+        mov dword ptr [eax], offset mem_0093BCC8
+        mov edi, eax
+        jmp done3
+    null3:
+        xor edi, edi
+    done3:
+        mov eax, dword ptr [esi + 0x27c]
+        cmp edi, eax
+        je skip3
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    skip3:
+        push 0x8
+        mov dword ptr [esi + 0x27c], edi
+        call ext_006A5C62
+        add esp, 4
+        cmp eax, ebx
+        je null4
+        mov dword ptr [eax + 0x4], ebx
+        mov dword ptr [eax], offset mem_0093BCD0
+        mov edi, eax
+        jmp done4
+    null4:
+        xor edi, edi
+    done4:
+        mov eax, dword ptr [esi + 0x270]
+        cmp edi, eax
+        je skip4
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    skip4:
+        push 0x8
+        mov dword ptr [esi + 0x270], edi
+        call ext_006A5C62
+        add esp, 4
+        cmp eax, ebx
+        je null5
+        mov dword ptr [eax + 0x4], ebx
+        mov dword ptr [eax], offset mem_0093BCD8
+        mov edi, eax
+        jmp done5
+    null5:
+        xor edi, edi
+    done5:
+        mov eax, dword ptr [esi + 0x280]
+        cmp edi, eax
+        je skip5
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    skip5:
+        push 0x8
+        mov dword ptr [esi + 0x280], edi
+        call ext_006A5C62
+        add esp, 4
+        cmp eax, ebx
+        je null6
+        mov dword ptr [eax + 0x4], ebx
+        mov dword ptr [eax], offset mem_0093BCE0
+        mov edi, eax
+        jmp done6
+    null6:
+        xor edi, edi
+    done6:
+        mov eax, dword ptr [esi + 0x284]
+        cmp edi, eax
+        je skip6
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    skip6:
+        mov dword ptr [esi + 0x284], edi
+        fld1
+        mov eax, dword ptr [esi + 0x274]
+        mov dword ptr [eax + 0x4], esi
+        mov eax, dword ptr [esi + 0x278]
+        mov dword ptr [eax + 0x4], esi
+        mov eax, dword ptr [esi + 0x27c]
+        mov dword ptr [eax + 0x4], esi
+        mov eax, dword ptr [esi + 0x270]
+        mov dword ptr [eax + 0x4], esi
+        mov eax, dword ptr [esi + 0x284]
+        mov dword ptr [eax + 0x4], esi
+        fstp dword ptr [esi + 0x28c]
+        mov dword ptr [esi + 0x30], ebx
+        mov dword ptr [esi + 0x38], ebx
+        mov dword ptr [esi + 0x108], ebx
+        mov dword ptr [esi + 0x174], ebx
+        mov dword ptr [esi + 0x178], ebx
+        mov dword ptr [esi + 0x15c], ebx
+        mov dword ptr [esi + 0x158], ebx
+        mov byte ptr [esi + 0x290], bl
+        mov byte ptr [esi + 0x291], bl
+        mov byte ptr [esi + 0x292], bl
+        mov byte ptr [esi + 0x293], bl
+        mov byte ptr [esi + 0x17c], bl
+        mov byte ptr [esi + 0x153], bl
+        mov byte ptr [esi + 0x295], 0x1
+        mov dword ptr [esi + 0x288], ebx
+        mov byte ptr [esi + 0x294], 0x1
+        mov byte ptr [esi + 0x150], bl
+        mov byte ptr [esi + 0x151], bl
+        mov byte ptr [esi + 0x152], bl
+        mov eax, offset fn_004744F0
+        lea edi, [esi + 0x160]
+        push ebx
+        mov ecx, edi
+        mov dword ptr [esi + 0x140], esi
+        mov dword ptr [esi + 0x138], eax
+        mov dword ptr [esi + 0x13c], ebx
+        call ext_0067B280
+        push 0x1
+        mov ecx, edi
+        mov dword ptr [esi + 0x148], eax
+        call ext_0067B280
+        mov ecx, esi
+        mov dword ptr [esi + 0x14c], eax
+        call ext_0046F810
+        push 0x30c
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0xc], eax
+        cmp eax, ebx
+        mov dword ptr [esp + 0x18], ebx
+        je null7
+        mov ecx, eax
+        call ext_0059C7F0
+        mov edi, eax
+        jmp done7
+    null7:
+        xor edi, edi
+    done7:
+        mov ecx, dword ptr [esi + 0xcc]
+        cmp edi, ecx
+        mov dword ptr [esp + 0x18], 0xffffffff
+        je skip7
+        cmp ecx, ebx
+        je skip7
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+    skip7:
+        push 0xc
+        mov dword ptr [esi + 0xcc], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0xc], eax
+        cmp eax, ebx
+        mov dword ptr [esp + 0x18], 0x1
+        je null8
+        mov ecx, dword ptr [esi + 0xcc]
+        push ecx
+        mov ecx, eax
+        call ext_006609B0
+        mov edi, eax
+        jmp done8
+    null8:
+        xor edi, edi
+    done8:
+        mov ecx, dword ptr [esi + 0xd0]
+        cmp edi, ecx
+        mov dword ptr [esp + 0x18], 0xffffffff
+        je skip8
+        cmp ecx, ebx
+        je skip8
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x10]
+        push 0x1
+        call edx
+    skip8:
+        mov dword ptr [esi + 0xd0], edi
+        mov eax, dword ptr [esi + 0xcc]
+        lea ecx, [eax + 0xfc]
+        mov dword ptr [esi + 0xf8], ecx
+        lea edx, [esi + 0xd4]
+        mov dword ptr [eax + 0xf8], edx
+        mov eax, dword ptr [esi + 0xf8]
+        mov ecx, dword ptr [esi + 0x280]
+        add eax, 0xcc
+        push 0x60c
+        mov dword ptr [ecx + 0x4], eax
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0xc], eax
+        cmp eax, ebx
+        mov dword ptr [esp + 0x18], 0x2
+        je null9
+        push esi
+        mov ecx, eax
+        call ext_00482EB0
+        mov edi, eax
+        jmp done9
+    null9:
+        xor edi, edi
+    done9:
+        mov ecx, dword ptr [esi + 0x34]
+        cmp edi, ecx
+        mov dword ptr [esp + 0x18], 0xffffffff
+        je skip9
+        cmp ecx, ebx
+        je skip9
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xfc]
+        push 0x1
+        call edx
+    skip9:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x34], edi
+        pop edi
+        mov dword ptr [esi + 0x1cc], esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
