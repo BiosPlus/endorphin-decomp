@@ -41,5 +41,7 @@
     "0x00541EBA",
     "0x00541EC8"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T14:07:04Z"
 }
