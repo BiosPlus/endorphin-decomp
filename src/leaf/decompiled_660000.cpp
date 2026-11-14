@@ -12193,3 +12193,50 @@ L_ret:
         ret
     }
 }
+
+// [0x006644E0] sub_006644E0 (127 bytes)
+extern "C" void ext_00664200();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924EAC;
+extern "C" int mem_00924FC4;
+extern "C" int mem_00924FF4;
+extern "C" int mem_008B56F9;
+extern "C" int mem_00B590E8;
+
+extern "C" __declspec(naked) bool __cdecl fn_006644E0(int arg0) {
+    __asm {
+        push    -1
+        push    offset mem_008B56F9
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 0x1c
+        push    ebx
+        lea     ecx, [esp + 4]
+        call    dword ptr [mem_00924FE8]
+        mov     ecx, offset mem_00B590E8
+        mov     dword ptr [esp + 0x28], 0
+        call    dword ptr [mem_00924EAC]
+        mov     ecx, dword ptr [esp + 0x30]
+        push    eax
+        lea     eax, [esp + 8]
+        push    eax
+        push    ecx
+        call    ext_00664200
+        lea     edx, [esp + 0x10]
+        push    offset mem_00B590E8
+        push    edx
+        call    dword ptr [mem_00924FC4]
+        add     esp, 0x14
+        lea     ecx, [esp + 4]
+        mov     bl, al
+        mov     dword ptr [esp + 0x28], -1
+        call    dword ptr [mem_00924FF4]
+        mov     ecx, dword ptr [esp + 0x20]
+        mov     al, bl
+        pop     ebx
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x28
+        ret
+    }
+}
