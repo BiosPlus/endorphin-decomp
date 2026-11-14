@@ -54,3 +54,44 @@ extern "C" __declspec(naked) void __fastcall fn_0069A1F0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0069B070] ExprParser::ExpressionContainer::vfunc_10 (78 bytes)
+extern "C" void ext_006A6E9E();
+extern "C" void ext_0069A590();
+extern "C" void ext_00490C80();
+extern "C" void ext_00491150();
+
+extern "C" __declspec(naked) void __fastcall fn_0069B070(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push edi
+        push 0
+        push 0AA3D80h
+        push 0A2E2F8h
+        push 0
+        push eax
+        mov edi, ecx
+        call ext_006A6E9E
+        mov esi, eax
+        add esp, 0x14
+        test esi, esi
+        je L_done
+        lea ecx, [esi + 0x8]
+        push ecx
+        lea ecx, [edi + 0x8]
+        call ext_0069A590
+        lea edx, [esi + 0x18]
+        push edx
+        lea ecx, [edi + 0x18]
+        call ext_00490C80
+        add esi, 0x28
+        push esi
+        lea ecx, [edi + 0x28]
+        call ext_00491150
+    L_done:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
