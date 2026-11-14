@@ -2171,3 +2171,25 @@ extern "C" __declspec(naked) void __fastcall fn_004FBCA0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_005864C0();
+extern "C" void ext_005869C0();
+
+// [0x004F9C70] VMCSModes::DefaultImplementation::vfunc_99 (137 bytes)
+extern "C" void __fastcall fn_004F9C70(void* self, void* edx_unused, void* a1, int a2) {
+    if (!a1) return;
+    char* obj = (char*)((void* (*)())ext_00594000)();
+    char* ecx_val = *(char**)(obj + 0x26c);
+    void* ebx_val = obj + 0x168;
+    void* esi_val = ecx_val ? (ecx_val + 8) : 0;
+    if (a2 == 0) {
+        ((void (__thiscall*)(void*, void*))ext_005864C0)(a1, esi_val);
+        void** vtbl = *(void***)((char*)a1 + 8);
+        ((void (__thiscall*)(void*, void*, int, void*, int))vtbl[8])((char*)a1 + 8, esi_val, a2, ebx_val, a2);
+    } else {
+        float f = 1.0f / *(float*)(obj + 0x234) * a2;
+        ((void (__thiscall*)(void*, void*, float))ext_005869C0)(a1, esi_val, f);
+        void** vtbl = *(void***)((char*)a1 + 8);
+        ((void (__thiscall*)(void*, void*, int, int, void*, int))vtbl[9])((char*)a1 + 8, esi_val, a2, 0, ebx_val, 0);
+    }
+}
