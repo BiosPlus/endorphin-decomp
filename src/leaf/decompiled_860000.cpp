@@ -1419,3 +1419,54 @@ extern "C" __declspec(naked) void __fastcall fn_00860F60(void* self) {
         ret
     }
 }
+
+// [0x0086EDC0] sub_0086EDC0 (106 bytes)
+extern "C" void ext_0086B200();
+extern "C" void ext_0086B220();
+extern "C" void ext_0086EAF0();
+extern "C" __declspec(naked) void __fastcall fn_0086EDC0(void* self) {
+    __asm {
+        sub esp, 28h
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push esi
+        mov esi, dword ptr [esp + 34h]
+        push edi
+        push eax
+        push esi
+        xor di, di
+        call ext_0086B220
+        lea ecx, [esp + 24h]
+        add esp, 8
+        push ecx
+        call ext_0086B200
+        add esp, 4
+    loop_top:
+        movsx eax, di
+        inc di
+        lea ecx, [4*eax]
+        mov edx, dword ptr [esi + ecx + 14h]
+        lea eax, [esi + ecx]
+        xor edx, dword ptr [eax]
+        movsx eax, di
+        mov dword ptr [esp + ecx + 1ch], edx
+        cmp eax, 5
+        jb loop_top
+        mov eax, dword ptr [esp + 40h]
+        mov ecx, dword ptr [esp + 3ch]
+        lea edx, [esp + 8]
+        push eax
+        mov eax, dword ptr [esp + 38h]
+        push ecx
+        push edx
+        push eax
+        call ext_0086EAF0
+        add esp, 10h
+        pop edi
+        pop esi
+        add esp, 28h
+        ret
+    }
+}
