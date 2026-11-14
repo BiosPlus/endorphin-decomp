@@ -17,5 +17,7 @@
     "0x0050DF3A",
     "0x0050DF4C"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T06:09:43Z"
 }
