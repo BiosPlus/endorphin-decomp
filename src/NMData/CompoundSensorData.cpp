@@ -192,3 +192,124 @@ extern "C" __declspec(naked) void __fastcall fn_00610920(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0060EEB0] NMData::CompoundSensorData::vfunc_22 (304 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_0060E590();
+extern "C" void ext_0063F8D0();
+extern "C" void ext_00640110();
+extern "C" void ext_00640270();
+extern "C" void ext_006404E0();
+extern "C" int mem_00A9EDD8;
+extern "C" int mem_00A9EFE8;
+extern "C" int mem_00A9F7F4;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00925134;
+extern "C" int mem_00A9F268;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0060EEB0(void* self) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x24
+        mov eax, dword ptr [mem_00A9EDD8]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x44]
+        push eax
+        call ext_006404E0
+        mov edi, eax
+        push edi
+        mov ecx, esi
+        call ext_0060E590
+        mov ecx, dword ptr [mem_00A9EFE8]
+        push ecx
+        mov ecx, edi
+        call ext_006404E0
+        mov edx, dword ptr [mem_00A9F7F4]
+        push edx
+        mov ecx, edi
+        mov dword ptr [esp + 0x18], eax
+        call ext_00640110
+        lea ecx, [esi + 0x190]
+        mov dword ptr [esp + 0x10], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x14]
+        call ext_00427550
+        mov edi, dword ptr [esi + 0x184]
+        mov ebp, dword ptr [mem_00925134]
+        add esi, 0x180
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_60EF40
+        call ebp
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_60EF40:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_60EF4A
+        call ebp
+    L_60EF4A:
+        cmp esi, esi
+        je L_60EF50
+        call ebp
+    L_60EF50:
+        cmp edi, ebx
+        je L_60EFC7
+        mov eax, dword ptr [mem_00A9F268]
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        call ext_006404E0
+        cmp edi, dword ptr [esi + 0x8]
+        mov ebx, eax
+        jb L_60EF6C
+        call ebp
+    L_60EF6C:
+        mov ecx, edi
+        call dword ptr [mem_00924FF0]
+        mov ecx, ebx
+        mov ebp, eax
+        call ext_0063F8D0
+        push ebp
+        lea ecx, [esp + 0x1c]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, ebx
+        mov dword ptr [esp + 0x40], 0
+        call ext_00640270
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x3c], -1
+        call dword ptr [mem_00924FF4]
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_60EFB9
+        call dword ptr [mem_00925134]
+    L_60EFB9:
+        mov ebp, dword ptr [mem_00925134]
+        add edi, 0x1c
+        jmp L_60EF40
+    L_60EFC7:
+        mov ecx, dword ptr [esp + 0x34]
+        mov eax, dword ptr [esp + 0x44]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x30
+        ret 0x4
+    }
+}

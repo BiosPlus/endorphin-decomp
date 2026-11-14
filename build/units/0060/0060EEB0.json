@@ -37,5 +37,7 @@
     "0x0060EFBB",
     "0x0060EFC3"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-14T05:16:48Z"
 }
