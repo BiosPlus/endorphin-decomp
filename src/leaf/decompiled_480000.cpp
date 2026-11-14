@@ -6398,3 +6398,61 @@ L_48AD38:
         ret 0x14
     }
 }
+
+// [0x0048DC60] sub_0048DC60 (202 bytes)
+extern "C" void ext_0048D390();
+extern "C" void ext_004C2330();
+extern "C" void ext_005B0D90();
+extern "C" void ext_0065F440();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0048DC60(void* self) {
+    __asm {
+        push -1
+        push 0885053h
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 8], esi
+        mov dword ptr [esi], 093e39ch
+        mov dword ptr [esi + 4], 093e354h
+        mov dword ptr [esi + 8], 093e314h
+        mov dword ptr [esi + 0ch], 093e2c4h
+        mov dword ptr [esi + 150h], 093e2ach
+        mov dword ptr [esi + 154h], 093e29ch
+        mov dword ptr [esi + 158h], 093e270h
+        mov edi, dword ptr [esi + 234h]
+        test edi, edi
+        mov dword ptr [esp + 14h], 3
+        je skip_del
+        mov ecx, edi
+        call ext_0048D390
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+    skip_del:
+        lea ecx, [esi + 224h]
+        mov byte ptr [esp + 14h], 2
+        call ext_0065F440
+        lea ecx, [esi + 19ch]
+        mov byte ptr [esp + 14h], 1
+        call ext_005B0D90
+        lea ecx, [esi + 180h]
+        mov byte ptr [esp + 14h], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, esi
+        mov dword ptr [esp + 14h], 0ffffffffh
+        call ext_004C2330
+        mov ecx, dword ptr [esp + 0ch]
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
