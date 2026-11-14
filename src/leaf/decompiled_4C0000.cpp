@@ -4939,3 +4939,36 @@ extern "C" __declspec(naked) void __fastcall fn_004C31B0(void* self) {
         ret     0x10
     }
 }
+
+// [0x004CFA90] sub_004CFA90 (124 bytes)
+extern "C" void ext_004C31B0();
+extern "C" __declspec(naked) void* __fastcall fn_004CFA90(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push 0x0
+        lea ecx, [eax + 0x1]
+        push ecx
+        push eax
+        push edx
+        mov ecx, esi
+        call ext_004C31B0
+        fld1
+        mov dword ptr [esi], 0x94785c
+        mov dword ptr [esi + 0x4], 0x947814
+        mov dword ptr [esi + 0x8], 0x9477d4
+        mov dword ptr [esi + 0xc], 0x947784
+        mov dword ptr [esi + 0x150], 0x94776c
+        mov dword ptr [esi + 0x154], 0x94775c
+        mov dword ptr [esi + 0x158], 0x947730
+        mov dword ptr [esi + 0x180], 0x6
+        mov dword ptr [esi + 0x184], 0x0
+        fstp dword ptr [esi + 0x18c]
+        mov byte ptr [esi + 0x188], 0x0
+        mov eax, esi
+        pop esi
+        ret 0x8
+    }
+}
