@@ -4004,3 +4004,115 @@ extern "C" __declspec(naked) void __fastcall fn_004D9BC0(void* self) {
         ret
     }
 }
+
+// [0x004D2930] sub_004D2930 (236 bytes)
+extern "C" void ext_00586A50();
+extern "C" void ext_005A1150();
+extern "C" void ext_005E02F0();
+extern "C" void ext_005E12F0();
+extern "C" int mem_00B40640;
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004D2930(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x1cc]
+        test ecx, ecx
+        push edi
+        je L_4D2945
+        call ext_005E12F0
+    L_4D2945:
+        mov ecx, dword ptr [esi + 0x1d0]
+        test ecx, ecx
+        je L_4D2954
+        call ext_005E12F0
+    L_4D2954:
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je L_4D29D4
+        mov eax, dword ptr [mem_00B40640]
+        mov edx, dword ptr [esi + 0x20]
+        push eax
+        push edx
+        call ext_005A1150
+        cmp dword ptr [esi + 0x20], 4
+        jne L_4D297C
+        mov eax, dword ptr [esi]
+        fld dword ptr [esi + 0x24]
+        fstp dword ptr [eax + 0x604]
+        jmp L_4D2986
+    L_4D297C:
+        fld1
+        mov ecx, dword ptr [esi]
+        fstp dword ptr [ecx + 0x604]
+    L_4D2986:
+        cmp dword ptr [esi + 0x20], 0
+        mov ecx, dword ptr [esi]
+        sete dl
+        add ecx, 4
+        push edx
+        push 0x200000
+        call ext_00586A50
+        mov eax, dword ptr [esi + 0x20]
+        cmp eax, 2
+        je L_4D29AE
+        cmp eax, 4
+        je L_4D29AE
+        xor al, al
+        jmp L_4D29B3
+    L_4D29AE:
+        mov eax, 1
+    L_4D29B3:
+        mov ecx, dword ptr [esi]
+        push eax
+        push 0x1000000
+        add ecx, 4
+        call ext_00586A50
+        mov ecx, dword ptr [esi]
+        push 0
+        push 0x4000000
+        add ecx, 4
+        call ext_00586A50
+    L_4D29D4:
+        mov edi, dword ptr [esi + 0xc]
+        mov ebp, dword ptr [mem_00925134]
+        add esi, 8
+        cmp edi, dword ptr [esi + 8]
+        jbe L_4D29E7
+        call ebp
+    L_4D29E7:
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        jbe L_4D29F1
+        call ebp
+    L_4D29F1:
+        cmp esi, esi
+        je L_4D29F7
+        call ebp
+    L_4D29F7:
+        cmp edi, ebx
+        je L_4D2A17
+        cmp edi, dword ptr [esi + 8]
+        jb L_4D2A02
+        call ebp
+    L_4D2A02:
+        mov ecx, dword ptr [edi]
+        push 0
+        call ext_005E02F0
+        cmp edi, dword ptr [esi + 8]
+        jb L_4D2A12
+        call ebp
+    L_4D2A12:
+        add edi, 4
+        jmp L_4D29E7
+    L_4D2A17:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
