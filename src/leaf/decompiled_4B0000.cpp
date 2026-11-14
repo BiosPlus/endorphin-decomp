@@ -4908,3 +4908,38 @@ loc_4b0315:
         ret     0x4
     }
 }
+
+// [0x004BE6F0] sub_004BE6F0 (75 bytes)
+extern "C" void ext_00671F20();
+extern "C" void ext_004EF030();
+extern "C" void ext_0059D080();
+extern "C" void ext_00609590();
+extern "C" void ext_00602DF0();
+extern "C" void ext_00645400();
+extern "C" void ext_005A9D50();
+extern "C" void ext_005C2D80();
+extern "C" void ext_005F3570();
+extern "C" void ext_005CE2F0();
+extern "C" void ext_005039A0();
+extern "C" void ext_004921E0();
+extern "C" void ext_00504930();
+extern "C" void ext_004C3F40();
+extern "C" void ext_005FBF40();
+
+extern "C" void __cdecl fn_004BE6F0() {
+    ext_00671F20();
+    ext_004EF030();
+    ext_0059D080();
+    ext_00609590();
+    ext_00602DF0();
+    ext_00645400();
+    ext_005A9D50();
+    ext_005C2D80();
+    ext_005F3570();
+    ext_005CE2F0();
+    ext_005039A0();
+    ext_004921E0();
+    ext_00504930();
+    ext_004C3F40();
+    ext_005FBF40();
+}
