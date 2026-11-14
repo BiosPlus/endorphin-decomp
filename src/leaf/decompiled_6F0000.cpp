@@ -2758,3 +2758,391 @@ extern "C" __declspec(naked) void __fastcall fn_006FE940(void* self) {
         ret
     }
 }
+
+// [0x006F5760] sub_006F5760 (944 bytes)
+extern "C" int mem_009939D8;
+extern "C" int mem_00928E78;
+extern "C" void ext_006F76F0();
+extern "C" void ext_0077FF90();
+extern "C" void ext_00782BD0();
+extern "C" __declspec(naked) void __fastcall fn_006F5760(void* self, int edx_unused, double a1) {
+    __asm {
+        // ---- block 0 @0x006F5760 : clamp(a1) -> self+0x25b0, notify id 0x2d, ret 8
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_009939D8]
+        fnstsw  ax
+        test    ah, 1
+        je      b0_lo
+        fld     qword ptr [mem_009939D8]
+        jmp     b0_done
+    b0_lo:
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_00928E78]
+        fnstsw  ax
+        test    ah, 41h
+        jne     b0_mid
+        fld     qword ptr [mem_00928E78]
+        jmp     b0_done
+    b0_mid:
+        fld     qword ptr [esp + 4]
+    b0_done:
+        fst     qword ptr [esp + 4]
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        fstp    qword ptr [ecx + 25b0h]
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    2dh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 1 @0x006F57D0 : id 0x2e, field 0x2638
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_009939D8]
+        fnstsw  ax
+        test    ah, 1
+        je      b1_lo
+        fld     qword ptr [mem_009939D8]
+        jmp     b1_done
+    b1_lo:
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_00928E78]
+        fnstsw  ax
+        test    ah, 41h
+        jne     b1_mid
+        fld     qword ptr [mem_00928E78]
+        jmp     b1_done
+    b1_mid:
+        fld     qword ptr [esp + 4]
+    b1_done:
+        fst     qword ptr [esp + 4]
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        fstp    qword ptr [ecx + 2638h]
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    2eh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 2 @0x006F5840 : id 0x2f, field 0x26c0
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_009939D8]
+        fnstsw  ax
+        test    ah, 1
+        je      b2_lo
+        fld     qword ptr [mem_009939D8]
+        jmp     b2_done
+    b2_lo:
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_00928E78]
+        fnstsw  ax
+        test    ah, 41h
+        jne     b2_mid
+        fld     qword ptr [mem_00928E78]
+        jmp     b2_done
+    b2_mid:
+        fld     qword ptr [esp + 4]
+    b2_done:
+        fst     qword ptr [esp + 4]
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        fstp    qword ptr [ecx + 26c0h]
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    2fh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 3 @0x006F58B0 : id 0x30, field 0x2748
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_009939D8]
+        fnstsw  ax
+        test    ah, 1
+        je      b3_lo
+        fld     qword ptr [mem_009939D8]
+        jmp     b3_done
+    b3_lo:
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_00928E78]
+        fnstsw  ax
+        test    ah, 41h
+        jne     b3_mid
+        fld     qword ptr [mem_00928E78]
+        jmp     b3_done
+    b3_mid:
+        fld     qword ptr [esp + 4]
+    b3_done:
+        fst     qword ptr [esp + 4]
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        fstp    qword ptr [ecx + 2748h]
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    30h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 4 @0x006F5920 : id 0x31, field 0x27d0
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_009939D8]
+        fnstsw  ax
+        test    ah, 1
+        je      b4_lo
+        fld     qword ptr [mem_009939D8]
+        jmp     b4_done
+    b4_lo:
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_00928E78]
+        fnstsw  ax
+        test    ah, 41h
+        jne     b4_mid
+        fld     qword ptr [mem_00928E78]
+        jmp     b4_done
+    b4_mid:
+        fld     qword ptr [esp + 4]
+    b4_done:
+        fst     qword ptr [esp + 4]
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        fstp    qword ptr [ecx + 27d0h]
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    31h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 5 @0x006F5990 : id 0x32, field 0x2858
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_009939D8]
+        fnstsw  ax
+        test    ah, 1
+        je      b5_lo
+        fld     qword ptr [mem_009939D8]
+        jmp     b5_done
+    b5_lo:
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_00928E78]
+        fnstsw  ax
+        test    ah, 41h
+        jne     b5_mid
+        fld     qword ptr [mem_00928E78]
+        jmp     b5_done
+    b5_mid:
+        fld     qword ptr [esp + 4]
+    b5_done:
+        fst     qword ptr [esp + 4]
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        fstp    qword ptr [ecx + 2858h]
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    32h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 6 @0x006F5A00 : id 0x33, field 0x28e0
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_009939D8]
+        fnstsw  ax
+        test    ah, 1
+        je      b6_lo
+        fld     qword ptr [mem_009939D8]
+        jmp     b6_done
+    b6_lo:
+        fld     qword ptr [esp + 4]
+        fcomp   qword ptr [mem_00928E78]
+        fnstsw  ax
+        test    ah, 41h
+        jne     b6_mid
+        fld     qword ptr [mem_00928E78]
+        jmp     b6_done
+    b6_mid:
+        fld     qword ptr [esp + 4]
+    b6_done:
+        fst     qword ptr [esp + 4]
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        fstp    qword ptr [ecx + 28e0h]
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    33h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 7 @0x006F5A70 : byte arg, field 0x2c10, id 0x37, callee 0x77FEF0, ret 4
+        mov     al, byte ptr [esp + 4]
+        xor     edx, edx
+        test    al, al
+        setne   dl
+        mov     byte ptr [ecx + 2c10h], al
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    edx
+        push    37h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FEF0
+        ret     4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 8 @0x006F5AA0 : byte arg, field 0x2c98, id 0x3f, callee 0x77FEF0, ret 4
+        mov     al, byte ptr [esp + 4]
+        xor     edx, edx
+        test    al, al
+        setne   dl
+        mov     byte ptr [ecx + 2c98h], al
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    edx
+        push    3fh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FEF0
+        ret     4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 9 @0x006F5AD0 : int arg, field 0x2d20, id 0x40, ret 4
+        fild    dword ptr [esp + 4]
+        mov     eax, dword ptr [esp + 4]
+        push    0
+        sub     esp, 8
+        mov     dword ptr [ecx + 2d20h], eax
+        mov     ecx, dword ptr [ecx + 6958h]
+        fstp    qword ptr [esp]
+        push    40h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     4
+        nop
+        nop
+        nop
+        // ---- block 10 @0x006F5B00 : passthrough to 0x782BD0, ret 4
+        mov     eax, dword ptr [esp + 4]
+        push    eax
+        call    ext_00782BD0
+        add     esp, 4
+        ret     4
+    }
+}
