@@ -34,8 +34,10 @@ extern "C" int __fastcall fn_0048FB30(const int* self) {
     }
     return (self[2] - a) / 124;
 }
+#include <windows.h>
+extern "C" void ext_0048CF10();
 
-// [0x0048A9A0] sub_0048A9A0 (22 bytes)
+extern "C" void ext_0048CF10();
 extern "C" void ext_0048A120();
 
 extern "C" void __fastcall fn_0048A9A0(void* self, int edx_unused, int a1, int a2) {
@@ -9886,5 +9888,88 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_0048D410(void* self, in
         pop ebx
         add esp, 12
         ret 4
+    }
+}
+
+// [0x0048D260] sub_0048D260 (173 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0048D260(void* self, void* dummy, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x4]
+        test esi, esi
+        je L_0048D28C
+        mov ebx, dword ptr [edi + 0x8]
+        mov ecx, ebx
+        sub ecx, esi
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        jne L_0048D294
+    L_0048D28C:
+        mov ebx, dword ptr [esp + 0x1c]
+        xor esi, esi
+        jmp L_0048D2C5
+    L_0048D294:
+        cmp esi, ebx
+        jbe L_0048D29E
+        call dword ptr [mem_00925134]
+    L_0048D29E:
+        mov ebx, dword ptr [esp + 0x1c]
+        test ebx, ebx
+        je L_0048D2AA
+        cmp ebx, edi
+        je L_0048D2B0
+    L_0048D2AA:
+        call dword ptr [mem_00925134]
+    L_0048D2B0:
+        mov ecx, ebp
+        sub ecx, esi
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov esi, edx
+        shr esi, 0x1f
+        add esi, edx
+    L_0048D2C5:
+        mov ecx, dword ptr [esp + 0x24]
+        push ecx
+        push 1
+        push ebp
+        push ebx
+        mov ecx, edi
+        call ext_0048CF10
+        mov ebx, dword ptr [edi + 0x4]
+        cmp ebx, dword ptr [edi + 0x8]
+        jbe L_0048D2E3
+        call dword ptr [mem_00925134]
+    L_0048D2E3:
+        imul esi, esi, 0x68
+        add esi, ebx
+        cmp esi, dword ptr [edi + 0x8]
+        mov dword ptr [esp + 0x20], ebx
+        ja L_0048D2F6
+        cmp esi, dword ptr [edi + 0x4]
+        jae L_0048D2FC
+    L_0048D2F6:
+        call dword ptr [mem_00925134]
+    L_0048D2FC:
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [eax], edi
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x10
     }
 }
