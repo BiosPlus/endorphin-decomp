@@ -12365,3 +12365,89 @@ extern "C" __declspec(naked) void __fastcall fn_0050F870(void* self) {
         ret     0x8
     }
 }
+
+// [0x00508180] sub_00508180 (144 bytes)
+extern "C" void ext_00506E10();
+extern "C" void ext_0059A140();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00508180(void* self) {
+    __asm {
+        mov     eax, dword ptr [esp + 0x0c]
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [esp + 0x1c]
+        cmp     eax, ebp
+        mov     ebx, eax
+        je      loc_508203
+
+        push    esi
+        mov     esi, dword ptr [esp + 0x24]
+        push    edi
+
+loc_508196:
+        mov     ecx, dword ptr [ebx]
+        call    ext_00506E10
+        mov     ecx, dword ptr [esi + 0x04]
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x28], eax
+        jne     loc_5081AC
+        xor     edi, edi
+        jmp     loc_5081B4
+
+loc_5081AC:
+        mov     edi, dword ptr [esi + 0x08]
+        sub     edi, ecx
+        sar     edi, 2
+
+loc_5081B4:
+        test    ecx, ecx
+        je      loc_5081D1
+        mov     edx, dword ptr [esi + 0x0c]
+        sub     edx, ecx
+        sar     edx, 2
+        cmp     edi, edx
+        jae     loc_5081D1
+        mov     ecx, dword ptr [esi + 0x08]
+        mov     dword ptr [ecx], eax
+        add     ecx, 4
+        mov     dword ptr [esi + 0x08], ecx
+        jmp     loc_5081F1
+
+loc_5081D1:
+        mov     edi, dword ptr [esi + 0x08]
+        cmp     ecx, edi
+        jbe     loc_5081DE
+        call    dword ptr [mem_00925134]
+
+loc_5081DE:
+        lea     eax, [esp + 0x28]
+        push    eax
+        push    edi
+        push    esi
+        lea     ecx, [esp + 0x24]
+        push    ecx
+        mov     ecx, esi
+        call    ext_0059A140
+
+loc_5081F1:
+        add     ebx, 4
+        cmp     ebx, ebp
+        jne     loc_508196
+        mov     eax, dword ptr [esp + 0x14]
+        pop     edi
+        mov     dword ptr [eax], esi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret
+
+loc_508203:
+        mov     eax, dword ptr [esp + 0x0c]
+        mov     edx, dword ptr [esp + 0x20]
+        pop     ebp
+        mov     dword ptr [eax], edx
+        pop     ebx
+        ret
+    }
+}
