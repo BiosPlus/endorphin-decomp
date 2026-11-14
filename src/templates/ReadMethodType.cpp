@@ -1741,3 +1741,59 @@ extern "C" __declspec(naked) bool __fastcall fn_006838A0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004BCAF0] ExprParser::ReadMethodType<NMData::MaterialPair, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::generateDisplayName(void) const, 1>::vfunc_2 (148 bytes)
+extern "C" void ext_004BC770();
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00924FF0;
+extern "C" int mem_009251F0;
+extern "C" int mem_00993828;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_004BCAF0(void* self) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [eax]
+        push edx
+        lea eax, [esp + 4]
+        push eax
+        call ext_004BC770
+        mov ecx, eax
+        mov dword ptr [esp + 0x24], 0
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 0x30]
+        fldz
+        add esp, 4
+        fld dword ptr [esp + 0x2c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 1
+        jne L_sub
+        fadd qword ptr [mem_00993828]
+        jmp L_after
+    L_sub:
+        fsub qword ptr [mem_00993828]
+    L_after:
+        push esi
+        call ext_006A6DE0
+        lea ecx, [esp + 4]
+        mov esi, eax
+        mov dword ptr [esp + 0x28], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 4
+    }
+}
