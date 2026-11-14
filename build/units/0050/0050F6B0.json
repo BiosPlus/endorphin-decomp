@@ -27,5 +27,7 @@
     "0x0050F780",
     "0x0050F78A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T04:17:48Z"
 }
