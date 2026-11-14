@@ -685,3 +685,45 @@ done_5360f0:
         ret 0x4
     }
 }
+
+// [0x00534D20] OglRenderer::vfunc_96 (71 bytes)
+extern "C" void ext_00532E90();
+extern "C" void ext_005343A0();
+extern "C" void ext_0053AFA0();
+extern "C" __declspec(naked) void __fastcall fn_00534D20(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        push ebx
+        mov edi, ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        push ecx
+        mov ecx, edi
+        call ext_005343A0
+        mov esi, eax
+        test esi, esi
+        je done
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        mov ecx, esi
+        call ext_0053AFA0
+        push ebx
+        mov ecx, edi
+        call ext_00532E90
+        test eax, eax
+        je skip
+        mov ecx, dword ptr [esi + 0x38]
+        mov dword ptr [eax + 0x1c], ecx
+    skip:
+        mov eax, esi
+    done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x10
+    }
+}
