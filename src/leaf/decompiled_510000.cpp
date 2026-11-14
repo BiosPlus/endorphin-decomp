@@ -7170,3 +7170,158 @@ extern "C" __declspec(naked) void __fastcall fn_0051DC40(void* self) {
         ret
     }
 }
+
+// [0x0051F2D0] sub_0051F2D0 (353 bytes)
+extern "C" void ext_00490C80();
+extern "C" void ext_004AFF30();
+extern "C" void ext_00505F00();
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __cdecl fn_0051F2D0() {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        sub esp, 0x10
+        cmp ecx, dword ptr [esp + 0x18]
+        je loc_0051F42D
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x2c]
+        lea ebx, [edi + 0x5c]
+        lea esi, [ecx + 0x58]
+        jmp loc_0051F2F5
+
+loc_0051F2F1:
+        mov ecx, dword ptr [esp + 0x24]
+
+loc_0051F2F5:
+        push edi
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [edi + 0x1c]
+        mov dword ptr [esi - 0x3c], eax
+        mov cl, byte ptr [edi + 0x20]
+        lea eax, [edi + 0x24]
+        mov byte ptr [esi - 0x38], cl
+        push eax
+        lea ecx, [esi - 0x34]
+        call ext_00505F00
+        lea eax, [edi + 0x34]
+        push eax
+        lea ecx, [esi - 0x24]
+        call ext_00490C80
+        lea eax, [edi + 0x44]
+        push eax
+        lea ecx, [esi - 0x14]
+        call ext_004AFF30
+        lea edx, [esi - 0x4]
+        lea ebp, [edi + 0x54]
+        cmp edx, ebp
+        je loc_0051F375
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je loc_0051F347
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esi - 0x4]
+        push edx
+        call eax
+
+loc_0051F347:
+        mov ecx, dword ptr [ebp + 0x4]
+        mov dword ptr [esi], ecx
+        cmp dword ptr [ebp + 0x4], 0
+        je loc_0051F364
+        mov ecx, dword ptr [ebp + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push ebp
+        lea eax, [esp + 0x1c]
+        push eax
+        call edx
+        jmp loc_0051F370
+
+loc_0051F364:
+        mov dword ptr [esp + 0x10], 0
+        lea eax, [esp + 0x10]
+
+loc_0051F370:
+        mov eax, dword ptr [eax]
+        mov dword ptr [esi - 0x4], eax
+
+loc_0051F375:
+        push ebx
+        lea ecx, [esi + 0x4]
+        call dword ptr [mem_00924FDC]
+        mov ecx, dword ptr [ebx + 0x1c]
+        mov dword ptr [esi + 0x20], ecx
+        mov dl, byte ptr [ebx + 0x20]
+        lea eax, [ebx + 0x24]
+        push eax
+        lea ecx, [esi + 0x28]
+        mov byte ptr [esi + 0x24], dl
+        call ext_00505F00
+        lea eax, [ebx + 0x34]
+        push eax
+        lea ecx, [esi + 0x38]
+        call ext_00490C80
+        lea eax, [ebx + 0x44]
+        push eax
+        lea ecx, [esi + 0x48]
+        call ext_004AFF30
+        lea ebp, [esi + 0x58]
+        lea eax, [ebx + 0x54]
+        cmp ebp, eax
+        je loc_0051F3FA
+        mov ecx, dword ptr [esi + 0x5c]
+        test ecx, ecx
+        je loc_0051F3C8
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x78]
+        push ebp
+        call edx
+
+loc_0051F3C8:
+        mov ecx, dword ptr [ebx + 0x58]
+        lea eax, [ebx + 0x54]
+        mov dword ptr [esi + 0x5c], ecx
+        cmp dword ptr [eax + 0x4], 0
+        je loc_0051F3E9
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push eax
+        lea eax, [esp + 0x20]
+        push eax
+        call edx
+        jmp loc_0051F3F5
+
+loc_0051F3E9:
+        mov dword ptr [esp + 0x14], 0
+        lea eax, [esp + 0x14]
+
+loc_0051F3F5:
+        mov eax, dword ptr [eax]
+        mov dword ptr [ebp], eax
+
+loc_0051F3FA:
+        mov ecx, dword ptr [edi + 0xb8]
+        mov eax, dword ptr [esp + 0x24]
+        mov dword ptr [esi + 0x60], ecx
+        mov edx, dword ptr [edi + 0xbc]
+        add eax, 0xc0
+        mov dword ptr [esi + 0x64], edx
+        add esi, 0xc0
+        cmp eax, dword ptr [esp + 0x28]
+        mov dword ptr [esp + 0x24], eax
+        jne loc_0051F2F1
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+
+loc_0051F42D:
+        add esp, 0x10
+        ret
+    }
+}
