@@ -85,3 +85,49 @@ extern "C" void* __fastcall fn_00593F30(void* self, int edx_unused, void* a1, vo
     ((void (__thiscall *)(void*, void*, void*))ext_0065F450)(self, a1, a2);
     return a1;
 }
+
+// [0x0059AAF0] World::vfunc_7 (85 bytes)
+extern "C" void ext_0059A2D0();
+extern "C" void ext_0065F550();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0059AAF0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        push esi
+        mov edi, ecx
+        call ext_0065F550
+        mov ebp, dword ptr [edi + 0x280]
+        mov ebx, dword ptr [esi + 8]
+        add edi, 0x27c
+        cmp dword ptr [esi + 4], ebx
+        mov eax, ebp
+        mov ecx, dword ptr [eax]
+        mov dword ptr [esp + 0x14], ecx
+        jbe short loc_59ab25
+        call dword ptr [mem_00925134]
+    loc_59ab25:
+        mov edx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        push ebp
+        push edi
+        push eax
+        push edi
+        push ebx
+        push esi
+        mov ecx, esi
+        call ext_0059A2D0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 4
+    }
+}
