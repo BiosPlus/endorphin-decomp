@@ -103,3 +103,53 @@ loc_53d1d8:
         ret     0x4
     }
 }
+
+extern "C" void ext_0053DC50();
+
+// [0x0053DE20] Primitives::SkeletalJoint::vfunc_25 (117 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0053DE20(void* self, int edx_dummy, void* a1, void* a2, void* a3) {
+    __asm {
+        mov     eax, dword ptr [esp + 0xc]
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x10]
+        push    eax
+        mov     esi, ecx
+        mov     ecx, dword ptr [esp + 0x10]
+        push    edi
+        push    ecx
+        mov     ecx, esi
+        call    ext_0053DC50
+        mov     edx, dword ptr [edi + 0x88]
+        mov     dword ptr [esi + 0xcc], edx
+        mov     eax, dword ptr [edi + 0x8c]
+        mov     dword ptr [esi + 0xd0], eax
+        mov     eax, dword ptr [esi + 0x1c]
+        test    al, 0x4
+        jne     loc_53de5f
+        xor     eax, 0x4
+        mov     dword ptr [esi + 0x1c], eax
+loc_53de5f:
+        mov     eax, dword ptr [esi + 0x1c]
+        test    eax, 0x20000
+        jne     loc_53de71
+        xor     eax, 0x20000
+        mov     dword ptr [esi + 0x1c], eax
+loc_53de71:
+        mov     eax, dword ptr [esi + 0x1c]
+        test    eax, 0x40000
+        je      loc_53de83
+        xor     eax, 0x40000
+        mov     dword ptr [esi + 0x1c], eax
+loc_53de83:
+        mov     eax, dword ptr [esi + 0x1c]
+        test    al, 0x1
+        jne     loc_53de90
+        xor     eax, 0x1
+        mov     dword ptr [esi + 0x1c], eax
+loc_53de90:
+        pop     edi
+        pop     esi
+        ret     0xc
+    }
+}
