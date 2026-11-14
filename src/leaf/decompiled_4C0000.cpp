@@ -5230,3 +5230,20 @@ extern "C" __declspec(naked) void __fastcall fn_004CDD00(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004CFB10] sub_004CFB10 (116 bytes)
+extern "C" void* __fastcall fn_004CFB10(void* self, int edx_unused, const void* other) {
+    ((void (__fastcall*)(void*, int, const void*))ext_004C32A0)(self, edx_unused, other);
+    *(unsigned int*)((char*)self + 0x00) = 0x0094785C;
+    *(unsigned int*)((char*)self + 0x04) = 0x00947814;
+    *(unsigned int*)((char*)self + 0x08) = 0x009477D4;
+    *(unsigned int*)((char*)self + 0x0C) = 0x00947784;
+    *(unsigned int*)((char*)self + 0x150) = 0x0094776C;
+    *(unsigned int*)((char*)self + 0x154) = 0x0094775C;
+    *(unsigned int*)((char*)self + 0x158) = 0x00947730;
+    *(unsigned int*)((char*)self + 0x180) = *(const unsigned int*)((const char*)other + 0x180);
+    *(unsigned int*)((char*)self + 0x184) = 0;
+    *((char*)self + 0x188) = 0;
+    *(float*)((char*)self + 0x18C) = *(const float*)((const char*)other + 0x18C);
+    return self;
+}
