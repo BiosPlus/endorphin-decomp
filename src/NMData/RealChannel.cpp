@@ -448,3 +448,96 @@ extern "C" __declspec(naked) void __fastcall fn_0051A050(void* self, int edx_unu
         ret     4
     }
 }
+
+// [0x0051AAB0] NMData::RealChannel::vfunc_2 (200 bytes)
+extern "C" void ext_00519FA0();
+extern "C" void ext_006404E0();
+extern "C" void ext_0067EF60();
+extern "C" int mem_00A9ED90;
+extern "C" int mem_00925134;
+extern "C" int mem_00A9F010;
+extern "C" int mem_00A9FAE8;
+extern "C" int mem_00A9F530;
+extern "C" int mem_00A9FAEC;
+extern "C" int mem_00A9F534;
+
+extern "C" __declspec(naked) void* __fastcall fn_0051AAB0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9ED90]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        call ext_006404E0
+        mov ebp, eax
+        push ebp
+        mov ecx, esi
+        call ext_00519FA0
+        mov edi, dword ptr [esi + 0x30]
+        add esi, 0x2c
+        cmp edi, dword ptr [esi + 0x8]
+        jbe loc_51aae0
+        call dword ptr [mem_00925134]
+    loc_51aae0:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe loc_51aaee
+        call dword ptr [mem_00925134]
+    loc_51aaee:
+        cmp esi, esi
+        je loc_51aaf8
+        call dword ptr [mem_00925134]
+    loc_51aaf8:
+        cmp edi, ebx
+        je loc_51ab6f
+        mov ecx, dword ptr [mem_00A9F010]
+        push ecx
+        mov ecx, ebp
+        call ext_006404E0
+        cmp edi, dword ptr [esi + 0x8]
+        mov ebx, eax
+        jb loc_51ab17
+        call dword ptr [mem_00925134]
+    loc_51ab17:
+        mov edx, dword ptr [mem_00A9FAE8]
+        fld dword ptr [edi]
+        mov eax, dword ptr [mem_00A9F530]
+        push edx
+        push eax
+        push ecx
+        fstp dword ptr [esp]
+        push ebx
+        call ext_0067EF60
+        add esp, 0x10
+        cmp edi, dword ptr [esi + 0x8]
+        jb loc_51ab3e
+        call dword ptr [mem_00925134]
+    loc_51ab3e:
+        mov ecx, dword ptr [mem_00A9FAEC]
+        fld dword ptr [edi + 0x4]
+        mov edx, dword ptr [mem_00A9F534]
+        push ecx
+        push edx
+        push ecx
+        fstp dword ptr [esp]
+        push ebx
+        call ext_0067EF60
+        add esp, 0x10
+        cmp edi, dword ptr [esi + 0x8]
+        jb loc_51ab67
+        call dword ptr [mem_00925134]
+    loc_51ab67:
+        add edi, 0x8
+        jmp loc_51aae0
+    loc_51ab6f:
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
