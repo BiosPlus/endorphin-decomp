@@ -339,3 +339,122 @@ extern "C" __declspec(naked) void __fastcall fn_0059D6A0(void* self) {
         ret
     }
 }
+
+// [0x0059E080] NMData::BackGroundData::vfunc_25_off_4 (337 bytes)
+extern "C" void ext_00410390();
+extern "C" void ext_00410420();
+extern "C" void ext_00492520();
+extern "C" void ext_00492540();
+extern "C" void ext_00493EE0();
+extern "C" void ext_00586660();
+extern "C" void ext_00586D00();
+extern "C" void ext_00594000();
+extern "C" void ext_0059DE20();
+extern "C" void ext_0059DE40();
+extern "C" void ext_006AD940();
+extern "C" int mem_00955998;
+extern "C" int mem_009324A4;
+
+extern "C" __declspec(naked) void __fastcall fn_0059E080(void* self) {
+    __asm {
+        sub esp, 0x1c
+        fld dword ptr [mem_00955998]
+        push esi
+        mov esi, ecx
+        fstp dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x5f4]
+        fld dword ptr [mem_009324A4]
+        test eax, eax
+        fstp dword ptr [esp + 0x4]
+        je loc_59e1ca
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        call ext_00492540
+        test al, al
+        jne loc_59e1ca
+        fldz
+        fcom dword ptr [esp + 0x24]
+        fnstsw ax
+        test ah, 0x5
+        jp loc_59e1c8
+        fcomp dword ptr [esi + 0x4e8]
+        fnstsw ax
+        test ah, 0x5
+        jp loc_59e1ca
+        push edi
+        lea edi, [esi - 0x4]
+        mov ecx, edi
+        call ext_00410420
+        test al, al
+        je loc_59e120
+        lea eax, [esp + 0x8]
+        push eax
+        lea ecx, [esp + 0x2c]
+        push ecx
+        call ext_0059DE20
+        fld dword ptr [eax]
+        lea edx, [esp + 0x14]
+        fstp dword ptr [esp + 0x30]
+        push edx
+        lea eax, [esp + 0x34]
+        push eax
+        call ext_0059DE40
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x38]
+        add esp, 0x10
+loc_59e120:
+        fld dword ptr [esp + 0x28]
+        mov edx, dword ptr [esi + 0x15c]
+        fdiv dword ptr [esi + 0x4e8]
+        mov edx, dword ptr [edx + 0x94]
+        lea ecx, [esi + 0x15c]
+        lea eax, [esp + 0x14]
+        push eax
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x14]
+        fst dword ptr [esp + 0x18]
+        fst dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x20]
+        fld1
+        fstp dword ptr [esp + 0x24]
+        call edx
+        fld dword ptr [esp + 0x28]
+        mov ecx, edi
+        fstp dword ptr [esi + 0x4e8]
+        call ext_00410390
+        test al, al
+        pop edi
+        je loc_59e1a3
+        mov eax, dword ptr [esi + 0x5f4]
+        test eax, eax
+        je loc_59e1a3
+        mov eax, dword ptr [eax + 0x26c]
+        push 0x0
+        mov ecx, eax
+        call ext_006AD940
+        mov ecx, eax
+        call ext_00492520
+        test eax, eax
+        je loc_59e1a3
+        fld dword ptr [esi + 0x4e8]
+        fstp dword ptr [eax + 0x4f0]
+loc_59e1a3:
+        mov ecx, esi
+        call ext_00586D00
+        mov ecx, esi
+        call ext_00586660
+        call ext_00594000
+        lea ecx, [eax + 0x258]
+        call ext_00493EE0
+        pop esi
+        add esp, 0x1c
+        ret 0x4
+loc_59e1c8:
+        fstp st(0)
+loc_59e1ca:
+        pop esi
+        add esp, 0x1c
+        ret 0x4
+    }
+}
