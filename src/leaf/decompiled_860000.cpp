@@ -1470,3 +1470,58 @@ extern "C" __declspec(naked) void __fastcall fn_0086EDC0(void* self) {
         ret
     }
 }
+
+// [0x00860EF0] sub_00860EF0 (108 bytes)
+extern "C" void ext_0085E9E0();
+extern "C" __declspec(naked) void __cdecl fn_00860EF0(void* arg1, unsigned char val) {
+    __asm {
+        mov dl, byte ptr [esp + 0x8]
+        sub esp, 0xc
+        xor ecx, ecx
+        mov al, dl
+        push ebx
+        sub ah, ah
+        mov bl, 0x64
+        div bl
+        test al, al
+        je L_tens
+        add al, 0x30
+        mov ecx, 0x1
+        mov byte ptr [esp + 0x4], al
+        mov al, dl
+        sub ah, ah
+        div bl
+        mov dl, ah
+    L_tens:
+        mov bl, 0xa
+        mov al, dl
+        sub ah, ah
+        div bl
+        test al, al
+        jne L_write_tens
+        test ecx, ecx
+        je L_ones
+    L_write_tens:
+        add al, 0x30
+        mov byte ptr [esp + ecx + 0x4], al
+        inc ecx
+    L_ones:
+        mov bl, 0xa
+        mov al, dl
+        sub ah, ah
+        div bl
+        mov al, ah
+        mov edx, dword ptr [esp + 0x14]
+        add al, 0x30
+        mov byte ptr [esp + ecx + 0x4], al
+        mov byte ptr [esp + ecx + 0x5], 0x0
+        lea ecx, [esp + 0x4]
+        push ecx
+        push edx
+        call ext_0085E9E0
+        add esp, 0x8
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
