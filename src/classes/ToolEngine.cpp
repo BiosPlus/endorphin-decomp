@@ -1372,3 +1372,67 @@ L_done:
         ret
     }
 }
+
+// [0x00481CE0] ToolEngine::vfunc_18 (148 bytes)
+extern "C" void ext_004800A0();
+extern "C" void ext_004B07E0();
+extern "C" void ext_004E9540();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_00481CE0(void* self) {
+    __asm {
+        push -1
+        push 0x87ba98
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x10
+        push ebx
+        push ebp
+        xor ebp, ebp
+        push esi
+        push edi
+        mov esi, ecx
+        mov [esp + 0x14], ebp
+        mov [esp + 0x18], ebp
+        mov [esp + 0x1c], ebp
+        mov edi, [esp + 0x34]
+        mov ecx, [esp + 0x30]
+        lea eax, [esp + 0x10]
+        push eax
+        push edi
+        push ecx
+        mov [esp + 0x34], ebp
+        call ext_004E9540
+        add esp, 0xc
+        push edi
+        mov ecx, esi
+        mov ebx, eax
+        call ext_004800A0
+        lea edx, [esi + 0x3e8]
+        push edx
+        lea eax, [esi + 0x3dc]
+        push eax
+        push ebx
+        push ebp
+        lea ecx, [esp + 0x20]
+        push ecx
+        lea ecx, [esi + 0x8]
+        call ext_004B07E0
+        mov eax, [esp + 0x14]
+        pop edi
+        pop esi
+        cmp eax, ebp
+        pop ebp
+        pop ebx
+        je loc_00481D63
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+loc_00481D63:
+        mov ecx, [esp + 0x10]
+        mov fs:[0], ecx
+        add esp, 0x1c
+        ret 8
+    }
+}
