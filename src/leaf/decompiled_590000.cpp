@@ -8522,3 +8522,69 @@ loc_598fd8:
         ret     8
     }
 }
+
+// [0x00598E10] sub_00598E10 (186 bytes)
+extern "C" void ext_00478910();
+extern "C" void ext_005949D0();
+extern "C" __declspec(naked) void __fastcall fn_00598E10(void* self) {
+    __asm {
+        push    -1
+        push    0x8a0db8
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 0x54
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x6c]
+        mov     esi, ecx
+        push    edi
+        lea     ecx, [esp + 0x18]
+        call    dword ptr [mem_00924FE0]
+        mov     eax, dword ptr [esp + 0x70]
+        mov     ecx, dword ptr [eax]
+        mov     dword ptr [esp + 0x30], ecx
+        lea     edx, [esp + 0x14]
+        push    edx
+        lea     eax, [esp + 0xc]
+        push    eax
+        lea     ecx, [esi + 4]
+        mov     dword ptr [esp + 0x6c], 0
+        call    ext_00478910
+        lea     ecx, [esp + 0x14]
+        mov     dword ptr [esp + 0x64], -1
+        call    dword ptr [mem_00924FF4]
+        cmp     byte ptr [esp + 0x10], 0
+        jne     lbl_598e97
+        push    edi
+        call    ext_005949D0
+        push    eax
+        lea     ecx, [esp + 0x3c]
+        call    ext_004142E0
+        push    0x9d1278
+        lea     ecx, [esp + 0x38]
+        push    ecx
+        call    ext_006A6DD2
+    lbl_598e97:
+        mov     esi, dword ptr [esp + 8]
+        test    esi, esi
+        push    ebx
+        mov     ebx, dword ptr [mem_00925134]
+        jne     lbl_598ea8
+        call    ebx
+    lbl_598ea8:
+        mov     edi, dword ptr [esp + 0x10]
+        cmp     edi, dword ptr [esi + 4]
+        jne     lbl_598eb3
+        call    ebx
+    lbl_598eb3:
+        mov     ecx, dword ptr [esp + 0x60]
+        pop     ebx
+        lea     eax, [edi + 0x28]
+        pop     edi
+        pop     esi
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x60
+        ret     8
+    }
+}
