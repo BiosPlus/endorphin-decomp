@@ -12280,3 +12280,108 @@ extern "C" __declspec(naked) void __fastcall fn_006233F0(void* self) {
         ret 0x20
     }
 }
+
+// [0x006243B0] sub_006243B0 (264 bytes)
+extern "C" void ext_006242F0();
+extern "C" void ext_00667030();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_006243B0(void* self) {
+    __asm {
+        push -1
+        mov eax, dword ptr fs:[0]
+        push 0x8aa50b
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x24
+        push ebx
+        push ebp
+        push esi
+        push edi
+        push 0x10
+        mov ebp, ecx
+        call ext_006A5C62
+        add esp, 4
+        xor ecx, ecx
+        cmp eax, ecx
+        je L_006243ED
+        mov dword ptr [eax + 4], ecx
+        mov dword ptr [eax + 8], ecx
+        mov dword ptr [eax + 0xC], ecx
+        mov dword ptr [esp + 0x14], eax
+        jmp L_006243F1
+    L_006243ED:
+        mov dword ptr [esp + 0x14], ecx
+    L_006243F1:
+        mov eax, dword ptr [ebp + 0x2C]
+        mov esi, dword ptr [eax]
+        add ebp, 0x28
+        mov edi, ebp
+        mov dword ptr [esp + 0x3C], 0xFFFFFFFF
+        mov dword ptr [esp + 0x1C], edi
+        mov dword ptr [esp + 0x20], esi
+        jmp L_00624410
+        __emit 0x8d
+        __emit 0x49
+        __emit 0x00
+    L_00624410:
+        test edi, edi
+        mov ebx, dword ptr [ebp + 4]
+        je L_0062441B
+        cmp edi, ebp
+        je L_00624421
+    L_0062441B:
+        call dword ptr [mem_00925134]
+    L_00624421:
+        cmp esi, ebx
+        je L_0062449F
+        test edi, edi
+        jne L_0062442F
+        call dword ptr [mem_00925134]
+    L_0062442F:
+        cmp esi, dword ptr [edi + 4]
+        jne L_0062443A
+        call dword ptr [mem_00925134]
+    L_0062443A:
+        lea ecx, [esi + 0xC]
+        push ecx
+        mov ecx, dword ptr [esp + 0x48]
+        call ext_005A4150
+        cmp esi, dword ptr [edi + 4]
+        mov ebx, eax
+        jne L_00624454
+        call dword ptr [mem_00925134]
+    L_00624454:
+        fld dword ptr [esi + 0x28]
+        mov ecx, dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x24]
+        push 1
+        fld dword ptr [esi + 0x2C]
+        lea edx, [esp + 0x28]
+        fstp dword ptr [esp + 0x2C]
+        push edx
+        fld dword ptr [esi + 0x30]
+        lea eax, [esp + 0x20]
+        fstp dword ptr [esp + 0x34]
+        push eax
+        fld dword ptr [esi + 0x34]
+        mov dword ptr [esp + 0x24], ebx
+        fstp dword ptr [esp + 0x3C]
+        call ext_006242F0
+        lea ecx, [esp + 0x1C]
+        call ext_00667030
+        mov esi, dword ptr [esp + 0x20]
+        mov edi, dword ptr [esp + 0x1C]
+        jmp L_00624410
+    L_0062449F:
+        mov ecx, dword ptr [esp + 0x34]
+        mov eax, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x30
+        ret 4
+    }
+}
