@@ -8,8 +8,8 @@ extern "C" void ext_006989B0();
 extern "C" void ext_0069B0C0();
 extern "C" void ext_0069B100();
 extern "C" void ext_00693D40();
-
-// [0x00698EC0] sub_00698EC0 (13 bytes)
+extern "C" int __cdecl ext_007BFDF0(void*);
+extern "C" int __cdecl ext_007BFF40(void*, int);
 extern "C" __declspec(naked) void __stdcall fn_00698EC0(void* a1) {
     __asm {
         lea eax, [esp + 4]
@@ -11032,5 +11032,76 @@ extern "C" __declspec(naked) bool __fastcall fn_0069C400(void* self, int edx_unu
         xor al, al
         pop ebp
         ret 4
+    }
+}
+
+// [0x00697DD0] sub_00697DD0 (157 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00697DD0(void* /*self*/, void* /*edx*/, int /*a1*/, int /*a2*/, int /*a3*/, int* /*a4*/) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [eax], ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [edx + 0x4], eax
+        mov ecx, dword ptr [esi + 0x4]
+        cmp dword ptr [ecx + 0x4], eax
+        je L_00697df7
+        mov eax, 0xfffffffb
+        pop esi
+        ret 0x10
+    L_00697df7:
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, ecx
+        mov dword ptr [edx + 0xc], eax
+        mov ecx, dword ptr [esi + 0x4]
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        mov edx, dword ptr [edi]
+        mov dword ptr [ecx + 0x10], edx
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 0x10]
+        cmp ecx, dword ptr [edi]
+        je L_00697e21
+        pop edi
+        mov eax, 0xfffffffb
+        pop esi
+        ret 0x10
+    L_00697e21:
+        push eax
+        call ext_007BFDF0
+        add esp, 0x4
+        test eax, eax
+        jne L_00697e68
+        mov eax, dword ptr [esi + 0x4]
+        push 0x4
+        push eax
+        call ext_007BFF40
+        add esp, 0x8
+        cmp eax, 0x1
+        je L_00697e5e
+        cmp eax, 0x2
+        je L_00697e54
+        cmp eax, -0x5
+        jne L_00697e68
+        mov edx, dword ptr [esi + 0x4]
+        cmp dword ptr [edx + 0x4], 0x0
+        jne L_00697e68
+    L_00697e54:
+        pop edi
+        mov eax, 0xfffffffd
+        pop esi
+        ret 0x10
+    L_00697e5e:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 0x14]
+        mov dword ptr [edi], ecx
+        xor eax, eax
+    L_00697e68:
+        pop edi
+        pop esi
+        ret 0x10
     }
 }
