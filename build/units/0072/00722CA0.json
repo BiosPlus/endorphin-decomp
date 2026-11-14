@@ -16,5 +16,7 @@
     "0x00722CC4",
     "0x00722CDD"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T04:32:18Z"
 }

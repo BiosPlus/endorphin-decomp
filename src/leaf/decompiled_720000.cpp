@@ -160,3 +160,47 @@ loc_72b21b:
         ret     4
     }
 }
+
+// [0x00722CA0] sub_00722CA0 (95 bytes)
+extern "C" void ext_006CA6A0();
+extern "C" void ext_007221A0();
+extern "C" void ext_00722570();
+extern "C" __declspec(naked) void __cdecl fn_00722CA0(void* out, int a1, void* obj, int a3) {
+    __asm {
+        sub esp, 0x10
+        push esi
+        mov esi, dword ptr [esp + 0x20]
+        mov ecx, esi
+        call ext_006CA6A0
+        test eax, eax
+        jle fail_path
+        mov eax, dword ptr [esp + 0x24]
+        lea ecx, [esp + 0x4]
+        push eax
+        push esi
+        lea edx, [esp + 0x14]
+        push ecx
+        push edx
+        call ext_007221A0
+        mov edx, dword ptr [esp + 0x2c]
+        lea eax, [esp + 0x14]
+        lea ecx, [esp + 0x1c]
+        push eax
+        mov eax, dword ptr [esp + 0x2c]
+        push ecx
+        push edx
+        push eax
+        call ext_00722570
+        add esp, 0x20
+        pop esi
+        add esp, 0x10
+        ret
+    fail_path:
+        mov eax, dword ptr [esp + 0x18]
+        pop esi
+        mov dword ptr [eax], 0x0
+        mov dword ptr [eax + 0x4], 0x0
+        add esp, 0x10
+        ret
+    }
+}
