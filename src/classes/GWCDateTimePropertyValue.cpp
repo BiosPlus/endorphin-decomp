@@ -186,3 +186,87 @@ extern "C" __declspec(naked) void* __fastcall fn_006B41F0(void* self, int edx_un
         ret 0x10
     }
 }
+
+// [0x006B4310] GWCDateTimePropertyValue::vfunc_5 (210 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5C62();
+extern "C" void ext_006B42B0();
+extern "C" int mem_00925310;
+
+extern "C" __declspec(naked) void __fastcall fn_006B4310(void* self) {
+    __asm {
+        sub esp, 0x14
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x34], 0x1
+        jne L_006B4339
+        mov eax, dword ptr [esi + 0x4]
+        cmp eax, 0xc8
+        je L_006B432D
+        cmp eax, 0xd2
+        jne L_006B4339
+    L_006B432D:
+        mov eax, dword ptr [esi + 0x40]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    L_006B4339:
+        mov al, byte ptr [esp + 0x20]
+        mov byte ptr [esi + 0x34], al
+        test al, al
+        mov eax, dword ptr [esi + 0x4]
+        jne L_006B4367
+        cmp eax, 0xc8
+        je L_006B4359
+        cmp eax, 0xd2
+        jne L_006B43DB
+    L_006B4359:
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr [esi + 0x40], ecx
+        pop esi
+        add esp, 0x14
+        ret 0x8
+    L_006B4367:
+        cmp eax, 0xc8
+        je L_006B4375
+        cmp eax, 0xd2
+        jne L_006B43DB
+    L_006B4375:
+        push 0xc
+        call ext_006A5C62
+        add esp, 0x4
+        test eax, eax
+        je L_006B4390
+        fldz
+        mov dword ptr [eax + 0x8], 0x0
+        fstp qword ptr [eax]
+        jmp L_006B4392
+    L_006B4390:
+        xor eax, eax
+    L_006B4392:
+        push 0x0
+        mov dword ptr [esi + 0x40], eax
+        call dword ptr [mem_00925310]
+        fldz
+        mov dword ptr [esp + 0xc], edx
+        fstp qword ptr [esp + 0x10]
+        add esp, 0x4
+        lea edx, [esp + 0x4]
+        push edx
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x8], eax
+        mov dword ptr [esp + 0x18], 0x0
+        call ext_006B42B0
+        mov esi, dword ptr [esi + 0x40]
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [esi], eax
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x4], ecx
+        mov edx, dword ptr [esp + 0x14]
+        mov dword ptr [esi + 0x8], edx
+    L_006B43DB:
+        pop esi
+        add esp, 0x14
+        ret 0x8
+    }
+}
