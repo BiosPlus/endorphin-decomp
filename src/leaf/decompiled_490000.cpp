@@ -8185,3 +8185,44 @@ L490C80_self:
         ret 4
     }
 }
+
+// [0x00491150] sub_00491150 (82 bytes)
+extern "C" void ext_0041CF50();
+extern "C" void ext_00490C80();
+extern "C" void ext_004AFF30();
+extern "C" void ext_00505F00();
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void __fastcall fn_00491150(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0ch]
+        push edi
+        mov esi, ecx
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [edi + 1ch]
+        mov dword ptr [esi + 1ch], eax
+        mov cl, byte ptr [edi + 20h]
+        lea edx, [edi + 24h]
+        mov byte ptr [esi + 20h], cl
+        push edx
+        lea ecx, [esi + 24h]
+        call ext_00505F00
+        lea eax, [edi + 34h]
+        push eax
+        lea ecx, [esi + 34h]
+        call ext_00490C80
+        lea ecx, [edi + 44h]
+        push ecx
+        lea ecx, [esi + 44h]
+        call ext_004AFF30
+        add edi, 54h
+        push edi
+        lea ecx, [esi + 54h]
+        call ext_0041CF50
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
