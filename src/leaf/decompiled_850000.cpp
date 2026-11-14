@@ -1151,3 +1151,89 @@ L_call:
         ret
     }
 }
+
+// [0x0085F270] sub_0085F270 (160 bytes)
+extern "C" void ext_0085E1F0();
+extern "C" void ext_0085E690();
+extern "C" void ext_0085E6A0();
+extern "C" __declspec(naked) void __cdecl fn_0085F270(void) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        xor edi, edi
+        cmp dword ptr [esp + 0x18], edi
+        je L_go
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    L_go:
+        mov esi, dword ptr [esp + 0x10]
+        push esi
+        call ext_0085E1F0
+        add esp, 0x4
+        cmp eax, 0x2
+        jb L_b10
+        push 0xac055c
+        mov ebx, 0x10
+        push esi
+        call ext_0085E6A0
+        add esp, 0x8
+        test eax, eax
+        je L_chk
+    L_b10:
+        mov ebx, 0xa
+    L_chk:
+        cmp byte ptr [esi], 0x0
+        je L_end
+    L_loop:
+        mov al, byte ptr [esi]
+        push eax
+        call ext_0085E690
+        add esp, 0x4
+        cmp ebx, 0x10
+        jne L_dec
+        cmp al, 0x30
+        jb L_end
+        cmp al, 0x46
+        ja L_end
+        cmp al, 0x39
+        jbe L_dig
+        cmp al, 0x41
+        jae L_dig
+        jmp L_end
+    L_dec:
+        cmp al, 0x30
+        jb L_end
+        cmp al, 0x39
+        ja L_end
+    L_dig:
+        xor ecx, ecx
+        mov cl, al
+        sub ecx, 0x30
+        cmp ecx, 0x9
+        jbe L_k
+        sub ecx, 0x7
+    L_k:
+        test edi, 0xf0000000
+        jne L_end
+        imul edi, ebx
+        add edi, ecx
+        inc esi
+        cmp byte ptr [esi], 0x0
+        jne L_loop
+    L_end:
+        mov eax, dword ptr [esp + 0x14]
+        test eax, eax
+        je L_ret
+        mov dword ptr [eax], esi
+    L_ret:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
