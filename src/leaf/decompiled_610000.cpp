@@ -2888,3 +2888,53 @@ extern "C" __declspec(naked) void __fastcall fn_00612310(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x006110A0] sub_006110A0 (88 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006110A0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        cmp eax, 3
+        _emit 0x77
+        _emit 0x1c
+        _emit 0xff
+        _emit 0x24
+        _emit 0x85
+        _emit 0xd0
+        _emit 0x10
+        _emit 0x61
+        _emit 0x00
+        xor eax, eax
+        ret 4
+        mov eax, 1
+        ret 4
+        mov eax, 2
+        ret 4
+        mov eax, 4
+        ret 4
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+        _emit 0xb0
+        _emit 0x10
+        _emit 0x61
+        _emit 0x00
+        _emit 0xb5
+        _emit 0x10
+        _emit 0x61
+        _emit 0x00
+        _emit 0xb5
+        _emit 0x10
+        _emit 0x61
+        _emit 0x00
+        _emit 0xbd
+        _emit 0x10
+        _emit 0x61
+        _emit 0x00
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_006110A0
+        fld dword ptr [esp + 8]
+        fstp dword ptr [ecx + eax*4 + 0A0h]
+        ret 8
+    }
+}
