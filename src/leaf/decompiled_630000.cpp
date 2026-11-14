@@ -5642,3 +5642,145 @@ extern "C" __declspec(naked) void __fastcall fn_0063C350(void* self, int edx_unu
         ret     0x4
     }
 }
+
+// [0x0063C890] sub_0063C890 (448 bytes)
+extern "C" void ext_006798D0();
+extern "C" void ext_0063C800();
+extern "C" void ext_0063B4E0();
+extern "C" void ext_0063B590();
+extern "C" void ext_0063B640();
+extern "C" void ext_0063B6F0();
+extern "C" void ext_0063B7A0();
+extern "C" void ext_0063B850();
+extern "C" void ext_0063B900();
+extern "C" void ext_0063B9B0();
+extern "C" void ext_0063BA60();
+extern "C" void ext_0063BB10();
+extern "C" void ext_0063BBC0();
+extern "C" void ext_0063BC70();
+extern "C" void ext_0063BD20();
+extern "C" void ext_0063BDD0();
+extern "C" void ext_0063BE80();
+extern "C" void ext_0063BF30();
+extern "C" void ext_0063BFE0();
+extern "C" void ext_0063C090();
+extern "C" void ext_0063C140();
+extern "C" void ext_0063C1F0();
+extern "C" void ext_0063C2A0();
+extern "C" void ext_0063C350();
+extern "C" void ext_0063C400();
+extern "C" void ext_0063C480();
+extern "C" void ext_0063C500();
+extern "C" void ext_0063C580();
+extern "C" void ext_0063C600();
+extern "C" void ext_0063C680();
+extern "C" void ext_0063C700();
+extern "C" void ext_0063C780();
+extern "C" int mem_00A9F1B0;
+extern "C" int mem_00A9F038;
+
+extern "C" __declspec(naked) void __fastcall fn_0063C890(void* self) {
+    __asm {
+        push    ecx
+        lea     eax, [esp]
+        push    0x96cc8c
+        push    eax
+        call    ext_006798D0
+        mov     ecx, eax
+        call    ext_0063C800
+        push    0x97c804
+        lea     ecx, [esp + 0x4]
+        call    ext_0063B4E0
+        push    0x97c7f4
+        lea     ecx, [esp + 0x4]
+        call    ext_0063B590
+        push    0x97c7e0
+        lea     ecx, [esp + 0x4]
+        call    ext_0063B640
+        push    0x97c7d0
+        lea     ecx, [esp + 0x4]
+        call    ext_0063B6F0
+        push    0x97c7c0
+        lea     ecx, [esp + 0x4]
+        call    ext_0063B7A0
+        push    0x97c7b0
+        lea     ecx, [esp + 0x4]
+        call    ext_0063B850
+        push    0x97c7a0
+        lea     ecx, [esp + 0x4]
+        call    ext_0063B900
+        push    0x97c790
+        lea     ecx, [esp + 0x4]
+        call    ext_0063B9B0
+        push    0x97c780
+        lea     ecx, [esp + 0x4]
+        call    ext_0063BA60
+        push    0x97c76c
+        lea     ecx, [esp + 0x4]
+        call    ext_0063BB10
+        push    0x97c75c
+        lea     ecx, [esp + 0x4]
+        call    ext_0063BBC0
+        push    0x97c750
+        lea     ecx, [esp + 0x4]
+        call    ext_0063BC70
+        push    0x97c748
+        lea     ecx, [esp + 0x4]
+        call    ext_0063BD20
+        mov     ecx, dword ptr [mem_00A9F1B0]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_0063BDD0
+        mov     edx, dword ptr [mem_00A9F038]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_0063BE80
+        push    0x97c734
+        lea     ecx, [esp + 0x4]
+        call    ext_0063BF30
+        push    0x97c724
+        lea     ecx, [esp + 0x4]
+        call    ext_0063BFE0
+        push    0x97c710
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C090
+        push    0x97c6f8
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C140
+        push    0x97c6e0
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C1F0
+        push    0x97c6c8
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C2A0
+        push    0x97c6ac
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C350
+        push    0x97c69c
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C400
+        push    0x97c684
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C480
+        push    0x97c668
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C500
+        push    0x97c654
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C580
+        push    0x97c630
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C600
+        push    0x97c61c
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C680
+        push    0x97c604
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C700
+        push    0x93e0ec
+        lea     ecx, [esp + 0x4]
+        call    ext_0063C780
+        pop     ecx
+        ret
+    }
+}
