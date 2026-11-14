@@ -307,3 +307,61 @@ extern "C" __declspec(naked) void __fastcall fn_004E8710(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x004E9910] SelectionBuffer::vfunc_28 (135 bytes)
+extern "C" void ext_00660A50();
+extern "C" void ext_004E89E0();
+extern "C" void ext_004E91E0();
+
+extern "C" __declspec(naked) void __fastcall fn_004E9910(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push -1
+        push 0x87ba98
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x10
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, ecx
+        mov dword ptr [esp + 0xc], edi
+        mov dword ptr [esp + 0x10], edi
+        mov dword ptr [esp + 0x14], edi
+        mov ecx, dword ptr [esp + 0x28]
+        push edi
+        lea eax, [esp + 0xc]
+        push eax
+        push ecx
+        mov dword ptr [esp + 0x2c], edi
+        call ext_00660A50
+        mov ecx, eax
+        call ext_004E89E0
+        mov edx, dword ptr [esp + 0x34]
+        mov eax, dword ptr [esp + 0x30]
+        push edi
+        push edx
+        push eax
+        push eax
+        mov eax, dword ptr [esp + 0x3c]
+        push eax
+        push edi
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, esi
+        call ext_004E91E0
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, edi
+        pop edi
+        pop esi
+        je short L_done
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    L_done:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x1c
+        ret 0x10
+    }
+}
