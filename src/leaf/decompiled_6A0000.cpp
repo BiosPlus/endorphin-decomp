@@ -9198,3 +9198,43 @@ extern "C" __declspec(naked) void __fastcall fn_006A4380(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006AAC90] sub_006AAC90 (72 bytes)
+extern "C" void ext_006A663A();
+extern "C" void ext_006AA920();
+extern "C" void ext_006AD0D0();
+extern "C" int mem_00925688;
+extern "C" __declspec(naked) void __fastcall fn_006AAC90(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_006A663A
+        cmp edi, dword ptr [esi + 0x100]
+        jne short L_006AAC90_inv
+        test edi, edi
+        jne short L_006AAC90_end
+L_006AAC90_inv:
+        mov eax, dword ptr [esi + 0x20]
+        push 1
+        push 0
+        push eax
+        call dword ptr [mem_00925688]
+        mov ecx, dword ptr [esi + 0x54]
+        test ecx, ecx
+        lea edi, [esi + 0x54]
+        je short L_006AAC90_end
+        call ext_006AD0D0
+        test al, al
+        jne short L_006AAC90_end
+        push edi
+        mov ecx, esi
+        call ext_006AA920
+L_006AAC90_end:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
