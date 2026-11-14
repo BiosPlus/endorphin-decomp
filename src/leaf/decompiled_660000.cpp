@@ -13589,3 +13589,82 @@ extern "C" __declspec(naked) void __cdecl fn_006608E0(void* first, void* last, i
         ret
     }
 }
+
+// [0x00667AB0] sub_00667AB0 (242 bytes)
+extern "C" void ext_004142E0();
+extern "C" void ext_006668B0();
+extern "C" void ext_006669B0();
+extern "C" void ext_00666D80();
+extern "C" void ext_00667390();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_00667AB0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8b3023
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0xe8
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x100]
+        mov esi, ecx
+        push edi
+        lea ecx, [esp + 0x40]
+        call dword ptr [mem_00924FE0]
+        mov eax, dword ptr [esp + 0x104]
+        push eax
+        lea ecx, [esp + 0x5c]
+        mov dword ptr [esp + 0xfc], 0x0
+        call ext_006669B0
+        lea ecx, [esp + 0x3c]
+        push ecx
+        lea edx, [esp + 0xc]
+        push edx
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0x100], 0x1
+        call ext_00667390
+        lea ecx, [esp + 0x58]
+        mov dword ptr [esp + 0xf8], 0x2
+        call ext_006668B0
+        lea ecx, [esp + 0x3c]
+        mov dword ptr [esp + 0xf8], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        cmp byte ptr [esp + 0x10], 0x0
+        jne L_ok
+        push edi
+        call ext_00666D80
+        push eax
+        lea ecx, [esp + 0x1c]
+        call ext_004142E0
+        push 0x9d1278
+        lea eax, [esp + 0x18]
+        push eax
+        call ext_006A6DD2
+    L_ok:
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        jne L_nz1
+        call ebx
+    L_nz1:
+        mov edi, dword ptr [esp + 0x10]
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_nz2
+        call ebx
+    L_nz2:
+        mov ecx, dword ptr [esp + 0xf4]
+        pop ebx
+        lea eax, [edi + 0x28]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xf4
+        ret 0x8
+    }
+}
