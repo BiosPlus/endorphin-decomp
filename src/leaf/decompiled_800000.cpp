@@ -3963,3 +3963,62 @@ extern "C" __declspec(naked) int __cdecl fn_00805D30(int a1) {
         ret
     }
 }
+
+// [0x00804C10] sub_00804C10 (143 bytes)
+extern "C" void ext_00805DB0();
+extern "C" void ext_0080A6A0();
+extern "C" void ext_0080A800();
+
+extern "C" __declspec(naked) int __fastcall fn_00804C10(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        push edi
+        push 0xab2d48
+        call ext_0080A6A0
+        mov edi, dword ptr [esp + 0x10]
+        add esp, 0x4
+        mov esi, edi
+        and esi, 0xffff0000
+        cmp esi, 0xffff0000
+        je L_special
+        cmp esi, 0xfffe0000
+        je L_special
+        push 0x1c
+        push 0xab2da4
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, 0x1c
+        pop edi
+        pop esi
+        ret 0xc
+L_special:
+        push edi
+        push 0xab2d5c
+        call ext_0080A800
+        add esp, 0x8
+        cmp esi, 0xffff0000
+        jne L_else
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x10]
+        push eax
+        push ecx
+        push edi
+        push 0x0
+        push 0x0
+        call ext_00805DB0
+        add esp, 0x14
+        mov esi, eax
+        jmp L_common
+L_else:
+        mov esi, 0x1c
+L_common:
+        push esi
+        push 0xab2d84
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
