@@ -3666,3 +3666,177 @@ extern "C" __declspec(naked) void __fastcall fn_004A6350(void* self) {
         ret     0xc
     }
 }
+
+extern "C" void ext_00435C70();
+extern "C" void ext_0043B6E0();
+extern "C" void ext_00481C50();
+extern "C" void ext_004959E0();
+extern "C" void ext_006A5C5C();
+
+struct Vec4_004AFF30 {
+    int pad0;
+    int* first;
+    int* last;
+    int* end;
+};
+
+typedef int* (__thiscall *ucopy_t_004AFF30)(void*, int*, int*, int*);
+typedef bool (__thiscall *buy_t_004AFF30)(void*, unsigned int);
+typedef void (__thiscall *clear_t_004AFF30)(void*);
+typedef void (__cdecl *copy_t_004AFF30)(int*, int*, int*);
+typedef void (__cdecl *free_t_004AFF30)(void*);
+
+// [0x004AFF30] sub_004AFF30 (293 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004AFF30(void* self, int edx_unused, const void* rhs) {
+    __asm {
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0xc]
+        mov     esi, ecx
+        cmp     esi, edi
+        je      L_end
+        push    ebx
+        mov     ebx, dword ptr [edi + 0x4]
+        test    ebx, ebx
+        push    ebp
+        je      L_clear
+        mov     ebp, dword ptr [edi + 0x8]
+        mov     edx, ebp
+        sub     edx, ebx
+        sar     edx, 0x2
+        jne     L_nonempty
+    L_clear:
+        call    ext_00481C50
+        pop     ebp
+        pop     ebx
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        ret     0x4
+    L_nonempty:
+        mov     eax, dword ptr [esi + 0x4]
+        test    eax, eax
+        jne     L_has_first1
+        xor     ecx, ecx
+        jmp     L_cmp_size
+    L_has_first1:
+        mov     ecx, dword ptr [esi + 0x8]
+        sub     ecx, eax
+        sar     ecx, 0x2
+    L_cmp_size:
+        cmp     edx, ecx
+        ja      L_check_cap
+        push    eax
+        push    ebp
+        push    ebx
+        call    ext_0043B6E0
+        mov     eax, dword ptr [edi + 0x4]
+        add     esp, 0xc
+        test    eax, eax
+        jne     L_rhs_nonnull
+        mov     eax, dword ptr [esi + 0x4]
+        pop     ebp
+        xor     edi, edi
+        lea     ecx, [eax + 4*edi]
+        pop     ebx
+        pop     edi
+        mov     dword ptr [esi + 0x8], ecx
+        mov     eax, esi
+        pop     esi
+        ret     0x4
+    L_rhs_nonnull:
+        mov     edi, dword ptr [edi + 0x8]
+        sub     edi, eax
+        mov     eax, dword ptr [esi + 0x4]
+        pop     ebp
+        sar     edi, 0x2
+        lea     ecx, [eax + 4*edi]
+        pop     ebx
+        pop     edi
+        mov     dword ptr [esi + 0x8], ecx
+        mov     eax, esi
+        pop     esi
+        ret     0x4
+    L_check_cap:
+        test    eax, eax
+        jne     L_has_first2
+        xor     ecx, ecx
+        jmp     L_cmp_cap
+    L_has_first2:
+        mov     ecx, dword ptr [esi + 0xc]
+        sub     ecx, eax
+        sar     ecx, 0x2
+    L_cmp_cap:
+        cmp     edx, ecx
+        ja      L_realloc
+        test    eax, eax
+        jne     L_has_first3
+        xor     ecx, ecx
+        jmp     L_copy_ucopy
+    L_has_first3:
+        mov     ecx, dword ptr [esi + 0x8]
+        sub     ecx, eax
+        sar     ecx, 0x2
+    L_copy_ucopy:
+        mov     edx, ebx
+        push    eax
+        lea     ebx, [edx + 4*ecx]
+        push    ebx
+        push    edx
+        call    ext_0043B6E0
+        mov     edx, dword ptr [esi + 0x8]
+        mov     eax, dword ptr [edi + 0x8]
+        add     esp, 0xc
+        push    edx
+        push    eax
+        push    ebx
+        mov     ecx, esi
+        call    ext_004959E0
+        pop     ebp
+        pop     ebx
+        mov     dword ptr [esi + 0x8], eax
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        ret     0x4
+    L_realloc:
+        test    eax, eax
+        je      L_after_free
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 0x4
+    L_after_free:
+        mov     ecx, dword ptr [edi + 0x4]
+        test    ecx, ecx
+        jne     L_rhs_nonnull2
+        xor     eax, eax
+        jmp     L_buy
+    L_rhs_nonnull2:
+        mov     eax, dword ptr [edi + 0x8]
+        sub     eax, ecx
+        sar     eax, 0x2
+    L_buy:
+        push    eax
+        mov     ecx, esi
+        call    ext_00435C70
+        test    al, al
+        je      L_done_pop2
+        mov     ecx, dword ptr [esi + 0x4]
+        mov     edx, dword ptr [edi + 0x8]
+        mov     eax, dword ptr [edi + 0x4]
+        push    ecx
+        push    edx
+        push    eax
+        mov     ecx, esi
+        call    ext_004959E0
+        mov     dword ptr [esi + 0x8], eax
+    L_done_pop2:
+        pop     ebp
+        pop     ebx
+    L_end:
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        ret     0x4
+    }
+}
