@@ -275,3 +275,48 @@ extern "C" __declspec(naked) void __fastcall fn_0066BFA0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00671B60] ExprParser::SubComponentType::vfunc_40 (128 bytes)
+extern "C" void ext_00671AA0();
+extern "C" void ext_00672060();
+extern "C" __declspec(naked) void __fastcall fn_00671B60(void* self, int edx_unused, void* out) {
+    __asm {
+        push -1
+        push 0x8b33b8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 4]
+        mov dword ptr [esp + 4], 0
+        mov dword ptr [esp + 8], eax
+        lea ecx, [esp + 4]
+        mov dword ptr [esp + 0x14], 0
+        call ext_00672060
+        mov eax, dword ptr [esi + 8]
+        mov ecx, dword ptr [esp + 8]
+        push eax
+        push ecx
+        call ext_00671AA0
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0x24]
+        add esp, 8
+        test ecx, ecx
+        mov dword ptr [edx + 4], eax
+        mov dword ptr [esp + 0x14], -1
+        pop esi
+        je L_done
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp]
+        push edx
+        call eax
+    L_done:
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 4
+    }
+}
