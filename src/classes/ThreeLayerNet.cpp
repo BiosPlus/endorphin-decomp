@@ -654,3 +654,73 @@ extern "C" __declspec(naked) void __fastcall fn_005221D0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00523580] ThreeLayerNet::vfunc_21 (161 bytes)
+extern "C" void ext_00514A70();
+extern "C" void ext_00524C10();
+extern "C" void ext_0053F5F0();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0063F530();
+extern "C" int mem_00A9F32C;
+extern "C" int mem_00A9F844;
+
+extern "C" __declspec(naked) void __fastcall fn_00523580(void* self) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push edi
+        mov esi, ecx
+        call ext_00524C10
+        mov eax, dword ptr [mem_00A9F32C]
+        push 0x1
+        push 0x0
+        push eax
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je loc_005235C5
+        cmp eax, 0xb53b30
+        je loc_005235C5
+        cmp eax, 0xb53ab0
+        je loc_005235C5
+        cmp eax, 0xb53a70
+        je loc_005235C5
+        cmp eax, 0xb53af0
+        jne loc_005235CA
+    loc_005235C5:
+        mov eax, 0xb53b30
+    loc_005235CA:
+        mov ecx, dword ptr [mem_00A9F844]
+        push ecx
+        mov ecx, eax
+        call ext_0063EFE0
+        lea edx, [esp + 0x14]
+        push edx
+        lea edi, [esi + 0xc4]
+        push edi
+        mov dword ptr [esp + 0x1c], eax
+        call ext_0053F5F0
+        fldz
+        mov edx, dword ptr [edi]
+        fstp qword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x10]
+        add esp, 0x8
+        push eax
+        push ecx
+        push edx
+        lea ecx, [esi + 0xcc]
+        call ext_00514A70
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x5c]
+        push 0x0
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    }
+}
