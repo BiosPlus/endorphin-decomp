@@ -15,5 +15,7 @@
     "0x0050D331",
     "0x0050D344"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-14T12:07:02Z"
 }
