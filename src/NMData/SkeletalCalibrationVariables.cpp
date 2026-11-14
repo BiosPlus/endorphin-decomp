@@ -3,6 +3,9 @@
 // [0x00622380] NMData::SkeletalCalibrationVariables::vfunc_28 (34 bytes)
 extern "C" int mem_00924FE4;
 extern "C" int mem_0097703C;
+extern "C" void ext_006404E0();
+extern "C" void ext_0067EF60();
+extern "C" int mem_00A9F27C;
 
 // Constructs std::string("SkeletalCalibrationVariables") into the sret buffer a1 and returns a1.
 extern "C" __declspec(naked) void* __fastcall fn_00622380(void* self, int edx_unused, void* a1, int a2) {
@@ -218,5 +221,116 @@ extern "C" __declspec(naked) void __fastcall fn_006229C0(void* self, int edx_unu
         pop edi
         pop esi
         ret 0xc
+    }
+}
+
+// [0x006224A0] NMData::SkeletalCalibrationVariables::vfunc_26 (310 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006224A0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F27C]
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [esp+12]
+        push eax
+        call ext_006404E0
+        fld dword ptr [edi+4]
+        mov ecx, dword ptr [mem_00A9F780]
+        mov edx, dword ptr [mem_00A9F4AC]
+        push ecx
+        push edx
+        push ecx
+        mov esi, eax
+        fstp dword ptr [esp]
+        push esi
+        call ext_0067EF60
+        fld dword ptr [edi+8]
+        mov eax, dword ptr [mem_00A9F770]
+        add esp, 16
+        push eax
+        push 0x972cd0
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0067EF60
+        fld dword ptr [edi+12]
+        mov ecx, dword ptr [mem_00A9F9FC]
+        add esp, 16
+        push ecx
+        push 0x972d14
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0067EF60
+        fld dword ptr [edi+16]
+        mov edx, dword ptr [mem_00A9FA5C]
+        add esp, 16
+        push edx
+        push 0x972d24
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0067EF60
+        fld dword ptr [edi+20]
+        mov eax, dword ptr [mem_00A9F9EC]
+        add esp, 16
+        push eax
+        push 0x972ce0
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0067EF60
+        fld dword ptr [edi+24]
+        mov ecx, dword ptr [mem_00A9FA44]
+        add esp, 16
+        push ecx
+        push 0x972cf0
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0067EF60
+        fld dword ptr [edi+36]
+        mov edx, dword ptr [mem_00A9F77C]
+        mov eax, dword ptr [mem_00A9F4A8]
+        add esp, 16
+        push edx
+        push eax
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0067EF60
+        fld dword ptr [edi+28]
+        mov ecx, dword ptr [mem_00A9F9F4]
+        mov edx, dword ptr [mem_00A9F4FC]
+        add esp, 16
+        push ecx
+        push edx
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0067EF60
+        fld dword ptr [edi+32]
+        mov eax, dword ptr [mem_00A9FA4C]
+        mov ecx, dword ptr [mem_00A9F514]
+        add esp, 16
+        push eax
+        push ecx
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0067EF60
+        fld dword ptr [edi+40]
+        add esp, 16
+        push 0x977068
+        push 0x97705c
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0067EF60
+        add esp, 16
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
     }
 }
