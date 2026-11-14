@@ -110,3 +110,86 @@ extern "C" __declspec(naked) void __fastcall fn_0060B320(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" void ext_004E8570();
+extern "C" void ext_00596660();
+extern "C" void ext_0060B460();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_0087BA98;
+
+// [0x0060B550] NMData::DisabledCollisionPairList::vfunc_1_off_8 (195 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0060B550(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -0x1
+        push offset mem_0087BA98
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x18
+        push ebx
+        push ebp
+        xor ebp, ebp
+        push esi
+        push edi
+        mov esi, ecx
+        mov dword ptr [esp + 0x1c], ebp
+        mov dword ptr [esp + 0x20], ebp
+        mov dword ptr [esp + 0x24], ebp
+        mov ecx, dword ptr [esp + 0x38]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xc]
+        mov dword ptr [esp + 0x30], ebp
+        call edx
+        mov ecx, dword ptr [esp + 0x1c]
+        mov edi, eax
+        mov eax, dword ptr [esp + 0x20]
+        cmp ecx, eax
+        mov ebx, eax
+        jbe L1
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+    L1:
+        cmp ecx, eax
+        mov dword ptr [esp + 0x38], ecx
+        jbe L2
+        call dword ptr [mem_00925134]
+    L2:
+        lea eax, [esp + 0x18]
+        push ebx
+        mov ecx, eax
+        push ecx
+        mov ecx, dword ptr [esp + 0x40]
+        push ecx
+        push eax
+        lea edx, [esp + 0x20]
+        push edx
+        mov ecx, eax
+        call ext_00596660
+        lea eax, [esp + 0x18]
+        push edi
+        push eax
+        call ext_0060B460
+        lea ecx, [esp + 0x20]
+        push ecx
+        add esi, 0x18
+        push esi
+        call ext_004E8570
+        mov eax, dword ptr [esp + 0x2c]
+        add esp, 0x10
+        pop edi
+        pop esi
+        cmp eax, ebp
+        pop ebp
+        pop ebx
+        je L3
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    L3:
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x24
+        ret 0x4
+    }
+}
