@@ -1492,3 +1492,59 @@ L_skip:
         ret
     }
 }
+
+// [0x004866B0] ToolEngine::vfunc_32 (136 bytes)
+extern "C" void ext_00486430();
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void __fastcall fn_004866B0(void* self) {
+    __asm {
+        push -1
+        push 0x008a7a5b
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push edi
+        push 0xb0
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x8], eax
+        test eax, eax
+        mov dword ptr [esp + 0x14], 0x0
+        je L_null
+        mov ecx, dword ptr [esi + 0x4]
+        push ecx
+        lea edx, [esi + 0x218]
+        push edx
+        lea ecx, [esi + 0x10]
+        push ecx
+        mov ecx, eax
+        call ext_00486430
+        mov edi, eax
+        jmp L_after
+L_null:
+        xor edi, edi
+L_after:
+        mov ecx, dword ptr [esi + 0x608]
+        cmp edi, ecx
+        mov dword ptr [esp + 0x14], 0xffffffff
+        je L_skip
+        test ecx, ecx
+        je L_skip
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        push 0x1
+        call eax
+L_skip:
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [esi + 0x608], edi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
