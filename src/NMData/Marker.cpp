@@ -297,3 +297,53 @@ L_end:
         ret 4
     }
 }
+
+// [0x00870460] NMData::Marker::vfunc_22 (98 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_0058F650();
+extern "C" void ext_00640110();
+extern "C" void ext_006404E0();
+extern "C" int mem_00A9F064;
+extern "C" int mem_00A9F7F4;
+extern "C" int mem_00A9F744;
+extern "C" int mem_00924FF0;
+
+extern "C" __declspec(naked) void __fastcall fn_00870460(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F064]
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [esp+0x10]
+        push eax
+        call ext_006404E0
+        mov esi, eax
+        push esi
+        mov ecx, edi
+        call ext_0058F650
+        cmp dword ptr [edi+0x170], 0
+        jne short L_nonzero
+        mov ecx, dword ptr [mem_00A9F7F4]
+        push ecx
+        jmp short L_join
+L_nonzero:
+        mov edx, dword ptr [mem_00A9F744]
+        push edx
+L_join:
+        mov ecx, esi
+        call ext_00640110
+        lea ecx, [edi+0x154]
+        mov ebx, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp+0x14]
+        mov dword ptr [esp+0x14], ebx
+        call ext_00427550
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
