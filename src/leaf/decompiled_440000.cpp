@@ -12193,3 +12193,13 @@ extern "C" __declspec(naked) void __fastcall fn_004447A0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0040F230();
+typedef void (__thiscall *fn_0040F230_t)(void*, int, int, int, int);
+
+// [0x0044D030] sub_0044D030 (69 bytes)
+extern "C" void __fastcall fn_0044D030(void* self) {
+    fn_0040F230_t f = (fn_0040F230_t)ext_0040F230;
+    f((char*)self + 0x2cc, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
+    f((char*)self + 0x340, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
+}
