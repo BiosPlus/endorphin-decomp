@@ -1186,3 +1186,48 @@ L_004F48B3:
         ret 4
     }
 }
+
+extern "C" void ext_004F40C0();
+extern "C" void ext_005B1870();
+extern "C" void ext_005B5810();
+extern "C" int mem_0094CBDC;
+extern "C" int mem_0093F8EC;
+
+// [0x004F41E0] VMCSModes::EditMode::vfunc_121 (127 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004F41E0(void* self) {
+    __asm {
+        push    -1
+        push    0x88fe48
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 0x58
+        fld     dword ptr [mem_0094CBDC]
+        push    esi
+        fstp    dword ptr [esp + 4]
+        lea     eax, [esp + 4]
+        fld     dword ptr [mem_0093F8EC]
+        push    eax
+        mov     esi, ecx
+        fst     dword ptr [esp + 0xc]
+        push    5
+        fstp    dword ptr [esp + 0x14]
+        lea     ecx, [esp + 0x18]
+        call    ext_005B5810
+        mov     ecx, dword ptr [esp + 0x6c]
+        push    ecx
+        lea     edx, [esp + 0x14]
+        push    edx
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x6c], 0
+        call    ext_004F40C0
+        lea     ecx, [esp + 0x10]
+        mov     dword ptr [esp + 0x64], -1
+        call    ext_005B1870
+        mov     ecx, dword ptr [esp + 0x5c]
+        pop     esi
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x64
+        ret     4
+    }
+}
