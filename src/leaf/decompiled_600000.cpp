@@ -11525,3 +11525,447 @@ extern "C" __declspec(naked) void __fastcall fn_0060E300(void* self) {
         ret
     }
 }
+
+extern "C" void ext_005FFFB0();
+extern "C" void ext_006790C0();
+extern "C" void ext_006798D0();
+extern "C" void ext_00600010();
+extern "C" void ext_00600110();
+extern "C" void ext_00600210();
+extern "C" void ext_00600310();
+extern "C" void ext_00600410();
+extern "C" void ext_00600510();
+extern "C" void ext_00600610();
+extern "C" void ext_00600710();
+extern "C" void ext_00600810();
+extern "C" void ext_00600910();
+extern "C" void ext_00600A10();
+extern "C" void ext_00600B10();
+extern "C" void ext_00600C10();
+extern "C" void ext_00600D10();
+extern "C" void ext_00600E10();
+extern "C" void ext_00600F10();
+extern "C" void ext_00601010();
+extern "C" void ext_00601110();
+extern "C" void ext_00601210();
+extern "C" void ext_00601310();
+extern "C" void ext_00601410();
+extern "C" void ext_00601510();
+extern "C" void ext_00601610();
+extern "C" void ext_00601710();
+extern "C" void ext_00601810();
+extern "C" void ext_00601910();
+extern "C" void ext_00601A10();
+extern "C" void ext_00601B10();
+extern "C" void ext_00601C10();
+extern "C" void ext_00601D10();
+extern "C" void ext_00601E10();
+extern "C" void ext_00601F10();
+extern "C" void ext_00602010();
+extern "C" void ext_00602110();
+extern "C" void ext_00602210();
+extern "C" void ext_00602310();
+extern "C" void ext_00602410();
+extern "C" void ext_00602510();
+extern "C" void ext_00602610();
+extern "C" void ext_00602710();
+extern "C" int mem_00A9F268;
+
+// [0x00602810] sub_00602810 (1340 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00602810(void* self) {
+    __asm {
+        push -1
+        push 0x8b2ae2
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x3c
+        push 0x96f7c4
+        lea ecx, [esp + 0x24]
+        call dword ptr [mem_00924FE4]
+        mov eax, dword ptr [mem_00A9F268]
+        push eax
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x48], 0x0
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x20]
+        push ecx
+        lea edx, [esp + 0x8]
+        push edx
+        mov byte ptr [esp + 0x4c], 0x1
+        call ext_006798D0
+        mov ecx, eax
+        call ext_006790C0
+        lea ecx, [esp + 0x4]
+        mov byte ptr [esp + 0x44], 0x0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x20]
+        mov dword ptr [esp + 0x44], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        call ext_005FFFB0
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f7b0
+        call dword ptr [mem_00924FE4]
+        call ext_00600010
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f7a0
+        call dword ptr [mem_00924FE4]
+        call ext_00600110
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f78c
+        call dword ptr [mem_00924FE4]
+        call ext_00600210
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f778
+        call dword ptr [mem_00924FE4]
+        call ext_00600310
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f764
+        call dword ptr [mem_00924FE4]
+        call ext_00600410
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f748
+        call dword ptr [mem_00924FE4]
+        call ext_00600510
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f72c
+        call dword ptr [mem_00924FE4]
+        call ext_00600610
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f710
+        call dword ptr [mem_00924FE4]
+        call ext_00600710
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f6f0
+        call dword ptr [mem_00924FE4]
+        call ext_00600810
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f6dc
+        call dword ptr [mem_00924FE4]
+        call ext_00600910
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f6c8
+        call dword ptr [mem_00924FE4]
+        call ext_00600A10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f6b4
+        call dword ptr [mem_00924FE4]
+        call ext_00600B10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f6a8
+        call dword ptr [mem_00924FE4]
+        call ext_00600C10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f694
+        call dword ptr [mem_00924FE4]
+        call ext_00600D10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f680
+        call dword ptr [mem_00924FE4]
+        call ext_00600E10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f668
+        call dword ptr [mem_00924FE4]
+        call ext_00600F10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f650
+        call dword ptr [mem_00924FE4]
+        call ext_00601010
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f638
+        call dword ptr [mem_00924FE4]
+        call ext_00601110
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f620
+        call dword ptr [mem_00924FE4]
+        call ext_00601210
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f608
+        call dword ptr [mem_00924FE4]
+        call ext_00601310
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f5f4
+        call dword ptr [mem_00924FE4]
+        call ext_00601410
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f5e8
+        call dword ptr [mem_00924FE4]
+        call ext_00601510
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f5d8
+        call dword ptr [mem_00924FE4]
+        call ext_00601610
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f5bc
+        call dword ptr [mem_00924FE4]
+        call ext_00601710
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f5a4
+        call dword ptr [mem_00924FE4]
+        call ext_00601810
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f590
+        call dword ptr [mem_00924FE4]
+        call ext_00601910
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f57c
+        call dword ptr [mem_00924FE4]
+        call ext_00601A10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f568
+        call dword ptr [mem_00924FE4]
+        call ext_00601B10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f554
+        call dword ptr [mem_00924FE4]
+        call ext_00601C10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f540
+        call dword ptr [mem_00924FE4]
+        call ext_00601D10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f524
+        call dword ptr [mem_00924FE4]
+        call ext_00601E10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f508
+        call dword ptr [mem_00924FE4]
+        call ext_00601F10
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f4ec
+        call dword ptr [mem_00924FE4]
+        call ext_00602010
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f4d0
+        call dword ptr [mem_00924FE4]
+        call ext_00602110
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f4b4
+        call dword ptr [mem_00924FE4]
+        call ext_00602210
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f4a4
+        call dword ptr [mem_00924FE4]
+        call ext_00602310
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f494
+        call dword ptr [mem_00924FE4]
+        call ext_00602410
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f488
+        call dword ptr [mem_00924FE4]
+        call ext_00602510
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f478
+        call dword ptr [mem_00924FE4]
+        call ext_00602610
+        add esp, 0x20
+
+        push 1
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x96f468
+        call dword ptr [mem_00924FE4]
+        call ext_00602710
+
+        mov ecx, dword ptr [esp + 0x5c]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x68
+        ret
+    }
+}
