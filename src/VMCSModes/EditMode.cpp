@@ -1484,3 +1484,93 @@ L_004F3105:
         ret
     }
 }
+
+// [0x004F3120] VMCSModes::EditMode::vfunc_119 (246 bytes)
+extern "C" void ext_004857A0();
+
+extern "C" __declspec(naked) void __fastcall fn_004F3120(void* self) {
+    __asm {
+        push -1
+        push 0x88fe68
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push ebp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 8]
+        mov ebp, dword ptr [eax + 0x14]
+        test ebp, ebp
+        mov dword ptr [esp + 8], ebp
+        mov byte ptr [esp + 0xc], 1
+        je L_004F316D
+        cmp dword ptr [mem_00AD89B4], 0
+        jne L_004F3166
+        mov ecx, ebp
+        mov byte ptr [ebp + 0x153], 1
+        call ext_00472350
+L_004F3166:
+        add dword ptr [mem_00AD89B4], 1
+L_004F316D:
+        push ebx
+        push edi
+        mov ecx, dword ptr [esi + 8]
+        mov eax, dword ptr [ecx + 0x14]
+        mov ecx, dword ptr [eax + 0x30]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xb4]
+        mov ebx, dword ptr [mem_009542B8]
+        mov dword ptr [esp + 0x20], 0
+        call eax
+        mov edi, eax
+        test edi, edi
+        je L_004F3199
+        mov ebx, dword ptr [edi + 0x38]
+L_004F3199:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0xd4]
+        mov ecx, esi
+        call eax
+        mov ecx, dword ptr [esi + 8]
+        mov ecx, dword ptr [ecx + 0x38]
+        call ext_00666120
+        mov edx, dword ptr [esi + 8]
+        mov eax, dword ptr [edx + 0x14]
+        mov esi, dword ptr [eax + 0x34]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x38]
+        push 1
+        mov ecx, esi
+        call edx
+        mov ecx, esi
+        call ext_004857A0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x3c]
+        mov ecx, esi
+        call edx
+        test edi, edi
+        je L_004F31E0
+        push ebx
+        mov ecx, edi
+        call ext_00530290
+L_004F31E0:
+        test ebp, ebp
+        pop edi
+        mov dword ptr [esp + 0x1c], -1
+        pop ebx
+        je L_004F3205
+        sub dword ptr [mem_00AD89B4], 1
+        jne L_004F3205
+        mov ecx, ebp
+        mov byte ptr [ebp + 0x153], 0
+        call ext_0046F930
+L_004F3205:
+        mov ecx, dword ptr [esp + 0x10]
+        pop esi
+        pop ebp
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret
+    }
+}
