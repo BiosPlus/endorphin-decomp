@@ -6794,3 +6794,37 @@ extern "C" __declspec(naked) void __fastcall fn_0065EC70(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0065DD10] sub_0065DD10 (75 bytes)
+extern "C" void ext_0065DB60();
+extern "C" __declspec(naked) void __fastcall fn_0065DD10(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        fld1
+        sub esp, 0x40
+        mov eax, esp
+        fst dword ptr [eax]
+        fldz
+        mov dword ptr [esp + 0x40], esp
+        fst dword ptr [eax + 0x4]
+        fst dword ptr [eax + 0x8]
+        fst dword ptr [eax + 0xc]
+        fst dword ptr [eax + 0x10]
+        fst dword ptr [eax + 0x18]
+        fst dword ptr [eax + 0x1c]
+        fst dword ptr [eax + 0x20]
+        fst dword ptr [eax + 0x24]
+        fst dword ptr [eax + 0x2c]
+        fst dword ptr [eax + 0x30]
+        fst dword ptr [eax + 0x34]
+        fstp dword ptr [eax + 0x38]
+        fst dword ptr [eax + 0x14]
+        fst dword ptr [eax + 0x28]
+        fstp dword ptr [eax + 0x3c]
+        mov eax, dword ptr [esp + 0x48]
+        push eax
+        call ext_0065DB60
+        pop ecx
+        ret 0x4
+    }
+}
