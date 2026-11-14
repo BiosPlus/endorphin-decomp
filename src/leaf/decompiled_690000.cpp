@@ -7871,3 +7871,50 @@ extern "C" __declspec(naked) void* __fastcall fn_0069A590(void* self) {
         ret 0x4
     }
 }
+
+// [0x0069E600] sub_0069E600 (86 bytes)
+extern "C" void ext_0069A590();
+extern "C" __declspec(naked) void __cdecl fn_0069E600(void* dst, void* dst_end, void* src) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        cmp esi, dword ptr [esp + 0xc]
+        je L_0069e654
+        push ebx
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        lea ebx, [edi + 0x1c]
+        lea ebp, [edi + 0x2c]
+        jmp L_0069e620
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_0069e620:
+        push edi
+        mov ecx, esi
+        call dword ptr [mem_00924FDC]
+        push ebx
+        lea ecx, [esi + 0x1c]
+        call ext_0069A590
+        push ebp
+        lea ecx, [esi + 0x2c]
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [edi + 0x48]
+        mov dword ptr [esi + 0x48], eax
+        mov ecx, dword ptr [edi + 0x4c]
+        mov dword ptr [esi + 0x4c], ecx
+        add esi, 0x50
+        cmp esi, dword ptr [esp + 0x18]
+        jne L_0069e620
+        pop edi
+        pop ebp
+        pop ebx
+    L_0069e654:
+        pop esi
+        ret
+    }
+}
