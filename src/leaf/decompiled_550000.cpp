@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <new>
+extern "C" void ext_00662EF0();
 
 // [0x00559180] sub_00559180 (31 bytes)
 extern "C" void ext_00559070();
@@ -11595,4 +11596,14 @@ extern "C" __declspec(naked) void* __fastcall fn_00558420(void* self, int edx_un
         add esp, 0x8
         ret 0x4
     }
+}
+
+// [0x0055E150] sub_0055E150 (48 bytes)
+extern "C" void __fastcall fn_0055E150(char* self) {
+    void* p = *(void**)(self + 0x4d0);
+    if (p != 0 && self[0x4d4] != 0) {
+        ((void (__cdecl*)(void*))ext_00662EF0)(p);
+    }
+    *(void**)(self + 0x4d0) = 0;
+    self[0x4d4] = 0;
 }
