@@ -7188,3 +7188,66 @@ L_end:
         ret     4
     }
 }
+
+extern "C" void ext_00428130();
+extern "C" void ext_0042C700();
+
+// [0x0042E250] sub_0042E250 (108 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_0042E250(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00924FC4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push 0xacdab0
+        push esi
+        mov ebx, ecx
+        call ebp
+        add esp, 0x8
+        test al, al
+        je loc_0042e276
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret 0x4
+    loc_0042e276:
+        mov eax, dword ptr [ebx + 0x24]
+        mov edx, dword ptr [eax]
+        push edi
+        lea edi, [ebx + 0x24]
+        push esi
+        mov ecx, edi
+        call edx
+        test eax, eax
+        je loc_0042e2b3
+        push esi
+        mov ecx, edi
+        call ext_0042C700
+        lea eax, [ebx + 0x34]
+        push eax
+        push esi
+        call ebp
+        add esp, 0x8
+        test al, al
+        je loc_0042e2aa
+        push 0xacdab0
+        mov ecx, ebx
+        call ext_00428130
+    loc_0042e2aa:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        ret 0x4
+    loc_0042e2b3:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret 0x4
+    }
+}
