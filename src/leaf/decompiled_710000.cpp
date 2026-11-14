@@ -1192,3 +1192,111 @@ extern "C" __declspec(naked) void* __fastcall fn_00713F70(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00713D10] sub_00713D10 (160 bytes)
+extern "C" void ext_006A6C87();
+extern "C" void ext_007131E0();
+extern "C" void ext_00713D50();
+extern "C" void ext_00714060();
+extern "C" int mem_00AAC08C;
+
+extern "C" __declspec(naked) void* __fastcall fn_00713D10(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        call ext_007131E0
+        mov dword ptr [esi], 0x996104
+        mov ecx, dword ptr [mem_00AAC08C]
+        mov dword ptr [esi + 0x10], ecx
+        mov eax, esi
+        pop esi
+        ret 0x4
+
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        call ext_00713D50
+        _emit 0xe9
+        _emit 0x16
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+    L_713d50:
+        push 0xaa8cec
+        mov ecx, 0xb5f858
+        call fn_00713D10
+        ret
+
+    L_713d60:
+        push 0x713d70
+        call ext_006A6C87
+        pop ecx
+        ret
+
+        nop
+        nop
+        nop
+        nop
+
+    L_713d70:
+        mov ecx, 0xb5f858
+        jmp ext_00714060
+
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+    L_713d80:
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x3
+        ja L_713da8
+        _emit 0xff
+        _emit 0x24
+        _emit 0x85
+        _emit 0xb0
+        _emit 0x3d
+        _emit 0x71
+        _emit 0x00
+
+    L_case0:
+        mov eax, 0xaac1f8
+        ret 0x4
+
+    L_case1:
+        mov eax, 0xaac1f4
+        ret 0x4
+
+    L_case2:
+        mov eax, 0xaac1f0
+        ret 0x4
+
+    L_713da8:
+        mov eax, 0xaac03c
+        ret 0x4
+    }
+}
