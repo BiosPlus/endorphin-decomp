@@ -243,3 +243,27 @@ extern "C" __declspec(naked) void __fastcall fn_0061EAB0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00593AE0();
+extern "C" void ext_00611270();
+extern "C" void ext_00640390();
+extern "C" void ext_0067F040();
+extern "C" int mem_00A9F24C;
+
+struct Local12_006117D0 {
+    int a;
+    int b;
+    int c;
+};
+
+// [0x006117D0] NMData::SecondaryTwistAndSwingConstraint::vfunc_22 (85 bytes)
+extern "C" void* __fastcall fn_006117D0(void* self, int edx_unused, void* a1) {
+    ((void (__thiscall*)(void*, void*))ext_00611270)(self, a1);
+    Local12_006117D0 local;
+    typedef void (__thiscall* VFunc68)(void*, Local12_006117D0*);
+    (*(VFunc68**)self)[0x110 / 4](self, &local);
+    void* b = ((void* (__thiscall*)(void*, int, int))ext_00640390)(a1, mem_00A9F24C, 0);
+    ((void (__cdecl*)(void*, Local12_006117D0*))ext_0067F040)(b, &local);
+    ((void (__thiscall*)(void*, void*))ext_00593AE0)(self, b);
+    return a1;
+}
