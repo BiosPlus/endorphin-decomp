@@ -1298,3 +1298,77 @@ extern "C" __declspec(naked) void __fastcall fn_00481000(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00483150] ToolEngine::vfunc_53 (150 bytes)
+extern "C" void ext_00586D00();
+extern "C" void ext_0041A920();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00483150(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00594000
+        mov ecx, eax
+        call ext_00586D00
+        lea ebp, [esi + 0x3cc]
+        mov ecx, ebp
+        call ext_00481D80
+        mov eax, dword ptr [esi + 0x10]
+        mov edx, dword ptr [eax + 0xc]
+        lea ecx, [esi + 0x10]
+        call edx
+        mov edi, eax
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+        jmp L_chk1
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+L_chk1:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+L_chk2:
+        cmp esi, ebx
+        je L_done
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_body
+        call dword ptr [mem_00925134]
+L_body:
+        mov eax, dword ptr [esi]
+        lea ecx, [eax + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x44]
+        call edx
+        test eax, eax
+        je L_skip
+        add eax, 0xc
+        mov dword ptr [esp + 0x10], eax
+        lea eax, [esp + 0x10]
+        push eax
+        mov ecx, ebp
+        call ext_0041A920
+L_skip:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_next
+        call dword ptr [mem_00925134]
+L_next:
+        add esi, 0x4
+        jmp L_chk1
+L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret
+    }
+}
