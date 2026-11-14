@@ -9504,3 +9504,59 @@ L_end:
         ret 8
     }
 }
+
+// [0x0046BEC0] sub_0046BEC0 (110 bytes)
+extern "C" void ext_0046B010();
+extern "C" void ext_00492520();
+extern "C" void ext_00492590();
+extern "C" void ext_004925D0();
+extern "C" void* ext_00594000();
+extern "C" void ext_006AD940();
+extern "C" __declspec(naked) void __fastcall fn_0046BEC0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov esi, eax
+        mov ecx, esi
+        call ext_00492590
+        test al, al
+        je L_out
+        push 0
+        mov ecx, esi
+        call ext_00492520
+        test eax, eax
+        je L_out
+        push 1
+        mov ecx, esi
+        call ext_00492520
+        test eax, eax
+        je L_out
+        push 0
+        mov ecx, esi
+        call ext_004925D0
+        test al, al
+        je L_else
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push 1
+        mov ecx, edi
+        call ext_0046B010
+        pop edi
+        pop esi
+        ret 4
+    L_else:
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        push 0
+        mov ecx, edi
+        call ext_0046B010
+    L_out:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
