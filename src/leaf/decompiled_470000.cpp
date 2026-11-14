@@ -7,6 +7,8 @@ extern "C" void __fastcall ext_00678DE0(void*);
 
 extern "C" void __fastcall ext_00678DE0(void*);
 extern "C" void ext_00451670();
+
+// [0x00474EE0] sub_00474EE0 (24 bytes)
 extern "C" __declspec(naked) void __fastcall fn_00474EE0(void* self, int edx_unused, int a1) {
     __asm {
         mov eax, dword ptr [esp + 0x4]
@@ -9832,4 +9834,83 @@ extern "C" Triple12* __cdecl fn_00477340(Triple12* first, Triple12* last, Triple
         ++dest;
     }
     return dest;
+}
+
+// [0x0047D7C0] sub_0047D7C0 (162 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_0047C0B0();
+extern "C" void ext_0047C480();
+extern "C" void ext_0047D300();
+extern "C" void ext_00527AC0();
+extern "C" void ext_00587180();
+extern "C" void ext_00587920();
+extern "C" void ext_00594000();
+
+extern "C" __declspec(naked) void __fastcall fn_0047D7C0(void* self, int edx_unused, void* arg0) {
+    __asm {
+        push    ebx
+        push    esi
+        push    edi
+        mov     edi, ecx
+        call    ext_00594000
+        mov     esi, dword ptr [esp + 0x10]
+        mov     ebx, eax
+        test    ebx, ebx
+        je      loc_47D7E6
+        push    0
+        push    esi
+        mov     ecx, ebx
+        call    ext_00587920
+        push    esi
+        mov     ecx, ebx
+        call    ext_00587180
+loc_47D7E6:
+        lea     eax, [esp + 0x10]
+        push    eax
+        lea     ecx, [edi + 0x30]
+        call    ext_0041A920
+        mov     ecx, edi
+        call    ext_0047C0B0
+        mov     edx, dword ptr [esi]
+        mov     eax, dword ptr [edx + 0xf8]
+        mov     ecx, esi
+        call    eax
+        cmp     eax, 2
+        je      loc_47D81C
+        mov     edx, dword ptr [esi]
+        mov     eax, dword ptr [edx + 0xf8]
+        mov     ecx, esi
+        call    eax
+        cmp     eax, 6
+        jne     loc_47D82A
+loc_47D81C:
+        mov     ecx, dword ptr [esi + 0x168]
+        push    ecx
+        mov     ecx, edi
+        call    ext_0047D300
+loc_47D82A:
+        mov     edx, dword ptr [esi]
+        mov     eax, dword ptr [edx + 0xf8]
+        mov     ecx, esi
+        call    eax
+        cmp     eax, 8
+        jne     loc_47D849
+        mov     ecx, dword ptr [esi + 0x168]
+        push    ecx
+        mov     ecx, edi
+        call    ext_0047C480
+loc_47D849:
+        mov     ecx, dword ptr [edi + 0x58]
+        test    ecx, ecx
+        mov     byte ptr [edi + 4], 1
+        je      loc_47D85C
+        push    0
+        push    esi
+        call    ext_00527AC0
+loc_47D85C:
+        pop     edi
+        pop     esi
+        pop     ebx
+        ret     4
+    }
 }
