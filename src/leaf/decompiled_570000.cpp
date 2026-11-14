@@ -12556,3 +12556,89 @@ extern "C" __declspec(naked) void __fastcall fn_0057F980(void* self, void* dummy
         ret     0x10
     }
 }
+
+// [0x0057FC60] sub_0057FC60 (174 bytes)
+extern "C" void ext_0057BF20();
+extern "C" void ext_0057F980();
+extern "C" int mem_00925134;
+extern "C" int mem_00924EF4;
+extern "C" __declspec(naked) unsigned char __fastcall fn_0057FC60(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 12
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        mov byte ptr [esp + 12], 0
+        jbe L_57FC60_c1
+        call dword ptr [mem_00925134]
+    L_57FC60_c1:
+        push edi
+        mov edi, dword ptr [esi + 4]
+        cmp edi, dword ptr [esi + 8]
+        jbe L_57FC60_c2
+        call dword ptr [mem_00925134]
+    L_57FC60_c2:
+        mov eax, dword ptr [esp + 16]
+        mov ebp, dword ptr [esp + 32]
+        push 0
+        push eax
+        push ebp
+        push ebx
+        push edi
+        mov dword ptr [esp + 44], edi
+        call ext_0057BF20
+        mov edi, dword ptr [esi + 8]
+        add esp, 20
+        cmp dword ptr [esi + 4], edi
+        mov ebx, eax
+        jbe L_57FC60_c3
+        call dword ptr [mem_00925134]
+    L_57FC60_c3:
+        test esi, esi
+        je L_57FC60_c4
+        cmp esi, esi
+        je L_57FC60_c5
+    L_57FC60_c4:
+        call dword ptr [mem_00925134]
+    L_57FC60_c5:
+        cmp ebx, edi
+        pop edi
+        je L_57FC60_ret1
+        test esi, esi
+        jne L_57FC60_c6
+        call dword ptr [mem_00925134]
+    L_57FC60_c6:
+        cmp ebx, dword ptr [esi + 8]
+        jb L_57FC60_c7
+        call dword ptr [mem_00925134]
+    L_57FC60_c7:
+        push ebx
+        push ebp
+        call dword ptr [mem_00924EF4]
+        add esp, 8
+        test al, al
+        jne L_57FC60_ret1
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 12
+        ret 4
+    L_57FC60_ret1:
+        push ebp
+        push ebx
+        push esi
+        lea ecx, [esp + 28]
+        push ecx
+        mov ecx, esi
+        call ext_0057F980
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        add esp, 12
+        ret 4
+    }
+}
