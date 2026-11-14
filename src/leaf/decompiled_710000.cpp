@@ -1387,3 +1387,103 @@ extern "C" __declspec(naked) void __fastcall fn_00713050(void* self) {
         ret 0xc
     }
 }
+
+// [0x00711220] sub_00711220 (224 bytes)
+extern "C" void ext_00710F50();
+extern "C" void ext_00711A80();
+extern "C" void ext_006FA230();
+extern "C" __declspec(naked) void __fastcall fn_00711220(void* self) {
+    __asm {
+        push -1
+        push 0x008BCB43
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x00995F50
+        mov dword ptr [esp + 0x10], 0x1
+        call ext_00711A80
+        test al, al
+        je skip_a
+        mov ecx, esi
+        call ext_0071E680
+        mov eax, dword ptr [eax + 0x2c]
+        test eax, eax
+        je skip_a
+        mov edx, dword ptr [eax]
+        push 0x1
+        mov ecx, eax
+        call dword ptr [edx]
+skip_a:
+        lea ecx, [esi + 0x40]
+        call ext_00710F50
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xFFFFFFFF
+        call ext_006FA230
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_00711DB0
+        dec eax
+        cmp eax, 0xF
+        ja fail_b
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x0071130C]
+        jmp dword ptr [ecx * 4 + 0x00711300]
+case_b:
+        mov edx, dword ptr [esi]
+        push 0x0
+        push 0x0
+        lea eax, [esp + 0xC]
+        push 0x0
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x88]
+        mov eax, dword ptr [esp + 0x4]
+        pop esi
+        and eax, 0xFF
+        pop ecx
+        ret
+case_c:
+        mov edx, dword ptr [esi]
+        push 0x0
+        push 0x0
+        lea eax, [esp + 0xC]
+        push 0x0
+        push eax
+        mov ecx, esi
+        call dword ptr [edx + 0x88]
+        mov eax, dword ptr [esp + 0x4]
+        pop esi
+        pop ecx
+        ret
+fail_b:
+        xor eax, eax
+        pop esi
+        pop ecx
+        ret
+    }
+}
