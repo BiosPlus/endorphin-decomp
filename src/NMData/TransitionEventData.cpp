@@ -126,3 +126,22 @@ extern "C" __declspec(naked) void __fastcall fn_004D0B80(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004D3240] NMData::TransitionEventData::vfunc_87 (68 bytes)
+extern "C" void __fastcall ext_004D2AA0(void*);
+extern "C" void __fastcall ext_004D2B40(void*);
+extern "C" void __cdecl ext_006A5C5C(void*);
+
+extern "C" void __fastcall fn_004D3240(void* self) {
+    char* s = (char*)self;
+    if (*(void**)(s + 0x18C)) {
+        ext_004D2AA0(*(void**)(s + 0x18C));
+        void* p = *(void**)(s + 0x18C);
+        if (p) {
+            ext_004D2B40(p);
+            ext_006A5C5C(p);
+        }
+        *(void**)(s + 0x18C) = 0;
+        *(int*)(s + 0x184) = 0x7FFFFFFF;
+    }
+}
