@@ -7939,3 +7939,40 @@ label_ne:
         ret 8
     }
 }
+
+// [0x006B9E60] sub_006B9E60 (63 bytes)
+extern "C" void ext_006B9940();
+extern "C" void ext_006E7460();
+extern "C" void ext_006B99C0();
+
+extern "C" __declspec(naked) void* __fastcall fn_006B9E60(void* self, int edx_unused, void* other) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        mov ecx, edi
+        call ext_006B9940
+        test al, al
+        je short label_false
+        mov ecx, edi
+        call ext_006E7460
+        push eax
+        mov ecx, edi
+        call ext_006B99C0
+        push eax
+        mov ecx, esi
+        call ext_006B9B40
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 0x4
+    label_false:
+        mov ecx, esi
+        call ext_006B9920
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
