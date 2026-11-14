@@ -8455,3 +8455,99 @@ extern "C" __declspec(naked) void __fastcall fn_0064DA60(void* self) {
         ret     0x8
     }
 }
+
+extern "C" void ext_006798D0();
+extern "C" void ext_0064DA60();
+extern "C" void ext_0064D0E0();
+extern "C" void ext_0064D160();
+extern "C" void ext_0064D1E0();
+extern "C" void ext_0064D260();
+extern "C" void ext_0064D2E0();
+extern "C" void ext_0064D360();
+extern "C" void ext_0064D3E0();
+extern "C" void ext_0064D460();
+extern "C" void ext_0064D4E0();
+extern "C" void ext_0064D560();
+extern "C" void ext_0064D5E0();
+extern "C" void ext_0064D660();
+extern "C" void ext_0064D6E0();
+extern "C" void ext_0064D760();
+extern "C" void ext_0064D7E0();
+extern "C" void ext_0064D860();
+extern "C" void ext_0064D8E0();
+extern "C" void ext_0064D960();
+extern "C" void ext_0064D9E0();
+extern "C" int mem_00A9F1F8;
+
+// [0x0064DAF0] sub_0064DAF0 (292 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0064DAF0(void* self) {
+    __asm {
+        push    ecx
+        mov     eax, dword ptr [mem_00A9F1F8]
+        push    eax
+        lea     ecx, [esp + 0x4]
+        push    ecx
+        call    ext_006798D0
+        mov     ecx, eax
+        call    ext_0064DA60
+        push    0x9802b0
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D0E0
+        push    0x9802a0
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D160
+        push    0x980290
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D1E0
+        push    0x98027c
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D260
+        push    0x980264
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D2E0
+        push    0x980254
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D360
+        push    0x980240
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D3E0
+        push    0x980228
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D460
+        push    0x980218
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D4E0
+        push    0x980208
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D560
+        push    0x9801f8
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D5E0
+        push    0x9801e4
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D660
+        push    0x9801d0
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D6E0
+        push    0x9801bc
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D760
+        push    0x9801a8
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D7E0
+        push    0x98019c
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D860
+        push    0x98018c
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D8E0
+        push    0x98017c
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D960
+        push    0x98016c
+        lea     ecx, [esp + 0x4]
+        call    ext_0064D9E0
+        pop     ecx
+        ret
+    }
+}
