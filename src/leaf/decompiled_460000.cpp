@@ -10979,3 +10979,51 @@ L_E87:
         ret 0x14
     }
 }
+
+extern "C" void ext_0048DFF0();
+extern "C" void ext_00666670();
+extern "C" void ext_006A5C62();
+extern "C" int mem_00891CAB;
+
+// [0x004686A0] sub_004686A0 (109 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004686A0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push offset mem_00891CAB
+        push eax
+        mov dword ptr fs:[0], esp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        test esi, esi
+        push edi
+        mov edi, ecx
+        jge L_pos
+        xor esi, esi
+    L_pos:
+        push 0x14
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0x18], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je L_null
+        push esi
+        mov ecx, eax
+        call ext_0048DFF0
+        jmp L_join
+    L_null:
+        xor eax, eax
+    L_join:
+        mov ecx, dword ptr [edi + 0x38]
+        push eax
+        mov dword ptr [esp + 0x14], -1
+        call ext_00666670
+        mov ecx, dword ptr [esp + 8]
+        pop edi
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 0xC
+        ret 4
+    }
+}
