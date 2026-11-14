@@ -8015,3 +8015,173 @@ L_49066B:
         ret 0x4
     }
 }
+
+// [0x00490C80] sub_00490C80 (317 bytes)
+extern "C" void ext_0048A9A0();
+extern "C" void ext_00490640();
+extern "C" void ext_00490810();
+extern "C" void ext_00490B80();
+extern "C" void ext_004E31A0();
+extern "C" __declspec(naked) void __fastcall fn_00490C80(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0ch]
+        mov esi, ecx
+        cmp esi, edi
+        je L490C80_self
+        mov edx, dword ptr [edi + 4]
+        test edx, edx
+        push ebx
+        push ebp
+        je L490C80_clear
+        mov ebp, dword ptr [edi + 8]
+        mov ebx, ebp
+        sub ebx, edx
+        sar ebx, 3
+        jne L490C80_nonempty
+L490C80_clear:
+        call ext_00490B80
+        pop ebp
+        pop ebx
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+L490C80_nonempty:
+        mov eax, dword ptr [esi + 4]
+        test eax, eax
+        jne L490C80_c1
+        xor ecx, ecx
+        jmp L490C80_c2
+L490C80_c1:
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, eax
+        sar ecx, 3
+L490C80_c2:
+        cmp ebx, ecx
+        ja L490C80_grow
+        push eax
+        push ebp
+        push edx
+        call ext_00490810
+        mov ecx, dword ptr [esi + 8]
+        push esi
+        push ecx
+        push eax
+        call ext_0048A120
+        mov eax, dword ptr [edi + 4]
+        add esp, 18h
+        test eax, eax
+        jne L490C80_c3
+        mov edx, dword ptr [esi + 4]
+        pop ebp
+        xor edi, edi
+        lea eax, [edx + 8 * edi]
+        pop ebx
+        mov dword ptr [esi + 8], eax
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+L490C80_c3:
+        mov edi, dword ptr [edi + 8]
+        mov edx, dword ptr [esi + 4]
+        sub edi, eax
+        pop ebp
+        sar edi, 3
+        lea eax, [edx + 8 * edi]
+        pop ebx
+        mov dword ptr [esi + 8], eax
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+L490C80_grow:
+        test eax, eax
+        jne L490C80_g1
+        xor ecx, ecx
+        jmp L490C80_g2
+L490C80_g1:
+        mov ecx, dword ptr [esi + 0ch]
+        sub ecx, eax
+        sar ecx, 3
+L490C80_g2:
+        cmp ebx, ecx
+        ja L490C80_realloc
+        test eax, eax
+        jne L490C80_g3
+        xor ecx, ecx
+        jmp L490C80_g4
+L490C80_g3:
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, eax
+        sar ecx, 3
+L490C80_g4:
+        push eax
+        lea ebx, [edx + 8 * ecx]
+        push ebx
+        push edx
+        call ext_00490810
+        mov ecx, dword ptr [esi + 8]
+        mov edx, dword ptr [edi + 8]
+        add esp, 0ch
+        push ecx
+        push edx
+        push ebx
+        mov ecx, esi
+        call ext_004E31A0
+        pop ebp
+        pop ebx
+        mov dword ptr [esi + 8], eax
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+L490C80_realloc:
+        test eax, eax
+        je L490C80_nodel
+        mov ecx, dword ptr [esi + 8]
+        push ecx
+        push eax
+        mov ecx, esi
+        call ext_0048A9A0
+        mov edx, dword ptr [esi + 4]
+        push edx
+        call ext_006A5C5C
+        add esp, 4
+L490C80_nodel:
+        mov ecx, dword ptr [edi + 4]
+        test ecx, ecx
+        jne L490C80_r1
+        xor eax, eax
+        jmp L490C80_r2
+L490C80_r1:
+        mov eax, dword ptr [edi + 8]
+        sub eax, ecx
+        sar eax, 3
+L490C80_r2:
+        push eax
+        mov ecx, esi
+        call ext_00490640
+        test al, al
+        je L490C80_end
+        mov eax, dword ptr [esi + 4]
+        mov ecx, dword ptr [edi + 8]
+        mov edx, dword ptr [edi + 4]
+        push eax
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_004E31A0
+        mov dword ptr [esi + 8], eax
+L490C80_end:
+        pop ebp
+        pop ebx
+L490C80_self:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
