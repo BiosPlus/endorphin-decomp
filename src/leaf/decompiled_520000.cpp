@@ -6491,3 +6491,74 @@ extern "C" __declspec(naked) void __fastcall fn_005220C0(void* self) {
         ret
     }
 }
+
+// [0x0052EB20] sub_0052EB20 (127 bytes)
+extern "C" void ext_0040ECB0();
+extern "C" void ext_0052A1C0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0052EB20(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [ecx + 0xc]
+        push ebx
+        push ebp
+        lea ebp, [ecx + 0x8]
+        push esi
+        push edi
+        mov edi, dword ptr [eax]
+        mov esi, ebp
+        mov dword ptr [esp + 0x14], edi
+        mov dword ptr [esp + 0x10], esi
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    loc_52EB40:
+        test esi, esi
+        mov ebx, dword ptr [ebp + 0x4]
+        je short loc_52EB4B
+        cmp esi, ebp
+        je short loc_52EB51
+    loc_52EB4B:
+        call dword ptr [mem_00925134]
+    loc_52EB51:
+        cmp edi, ebx
+        je short loc_52EB95
+        test esi, esi
+        mov ebx, dword ptr [mem_00925134]
+        jne short loc_52EB61
+        call ebx
+    loc_52EB61:
+        cmp edi, dword ptr [esi + 0x4]
+        jne short loc_52EB68
+        call ebx
+    loc_52EB68:
+        cmp byte ptr [edi + 0x5c], 0x0
+        je short loc_52EB82
+        cmp edi, dword ptr [esi + 0x4]
+        jne short loc_52EB75
+        call ebx
+    loc_52EB75:
+        mov ecx, dword ptr [esp + 0x1c]
+        add edi, 0xc
+        push edi
+        call ext_0040ECB0
+    loc_52EB82:
+        lea ecx, [esp + 0x10]
+        call ext_0052A1C0
+        mov edi, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        jmp short loc_52EB40
+    loc_52EB95:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
