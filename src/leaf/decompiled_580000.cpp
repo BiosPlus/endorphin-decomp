@@ -7697,3 +7697,90 @@ loc_586A47:
         ret 8
     }
 }
+
+// [0x00587AF0] sub_00587AF0 (147 bytes)
+extern "C" void ext_0059A140();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00587AF0(void* self) {
+    __asm {
+        push    ebx
+        mov     ebx, dword ptr [esp + 0x10]
+        push    ebp
+        mov     ebp, dword ptr [esp + 0x1c]
+        cmp     ebx, ebp
+        je      loc_587B76
+
+        push    esi
+        mov     esi, dword ptr [esp + 0x24]
+        push    edi
+
+    loc_587B04:
+        mov     eax, dword ptr [ebx]
+        lea     ecx, [eax + 0x0c]
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax + 0x44]
+        call    edx
+        mov     ecx, dword ptr [esi + 0x04]
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x28], eax
+        jne     loc_587B1F
+        xor     edi, edi
+        jmp     loc_587B27
+
+    loc_587B1F:
+        mov     edi, dword ptr [esi + 0x08]
+        sub     edi, ecx
+        sar     edi, 2
+
+    loc_587B27:
+        test    ecx, ecx
+        je      loc_587B44
+        mov     edx, dword ptr [esi + 0x0c]
+        sub     edx, ecx
+        sar     edx, 2
+        cmp     edi, edx
+        jae     loc_587B44
+        mov     ecx, dword ptr [esi + 0x08]
+        mov     dword ptr [ecx], eax
+        add     ecx, 4
+        mov     dword ptr [esi + 0x08], ecx
+        jmp     loc_587B64
+
+    loc_587B44:
+        mov     edi, dword ptr [esi + 0x08]
+        cmp     ecx, edi
+        jbe     loc_587B51
+        call    dword ptr [mem_00925134]
+
+    loc_587B51:
+        lea     eax, [esp + 0x28]
+        push    eax
+        push    edi
+        push    esi
+        lea     ecx, [esp + 0x24]
+        push    ecx
+        mov     ecx, esi
+        call    ext_0059A140
+
+    loc_587B64:
+        add     ebx, 4
+        cmp     ebx, ebp
+        jne     loc_587B04
+        mov     eax, dword ptr [esp + 0x14]
+        pop     edi
+        mov     dword ptr [eax], esi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret
+
+    loc_587B76:
+        mov     eax, dword ptr [esp + 0x0c]
+        mov     edx, dword ptr [esp + 0x20]
+        pop     ebp
+        mov     dword ptr [eax], edx
+        pop     ebx
+        ret
+    }
+}
