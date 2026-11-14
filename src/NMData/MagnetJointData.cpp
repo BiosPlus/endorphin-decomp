@@ -35,3 +35,39 @@ extern "C" __declspec(naked) void* __fastcall fn_005F0D40(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x005EE590] NMData::MagnetJointData::vfunc_33 (104 bytes)
+extern "C" void ext_00587920();
+extern "C" void ext_005EDFD0();
+extern "C" __declspec(naked) void __fastcall fn_005EE590(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_005EDFD0
+        mov ecx, dword ptr [esi + 0x17c]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x84]
+        call edx
+        mov ecx, dword ptr [esi + 0x180]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x84]
+        call edx
+        mov ecx, dword ptr [esi + 0x184]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x84]
+        call edx
+        mov dword ptr [esi + 0x2fc], 0x0
+        mov eax, dword ptr [esi + 0x180]
+        push 0x0
+        push eax
+        mov ecx, esi
+        call ext_00587920
+        mov ecx, dword ptr [esi + 0x184]
+        push 0x0
+        push ecx
+        mov ecx, dword ptr [esi + 0x17c]
+        call ext_00587920
+        pop esi
+        ret
+    }
+}
