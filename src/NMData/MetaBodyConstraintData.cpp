@@ -371,3 +371,62 @@ L_done:
         ret 4
     }
 }
+
+// [0x004CE390] NMData::MetaBodyConstraintData::vfunc_88 (136 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_004CCC30();
+extern "C" void ext_0046AC30();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_004CE040();
+
+extern "C" __declspec(naked) void __fastcall fn_004CE390(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        push 0x30
+        mov edi, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0xc], eax
+        test eax, eax
+        mov dword ptr [esp + 0x18], 0
+        je short L_null
+        mov ecx, eax
+        call ext_004CCC30
+        mov ebx, eax
+        jmp short L_join
+L_null:
+        xor ebx, ebx
+L_join:
+        mov esi, dword ptr [edi + 0x180]
+        cmp ebx, esi
+        mov dword ptr [esp + 0x18], -1
+        je short L_skip
+        test esi, esi
+        je short L_skip
+        mov ecx, esi
+        call ext_0046AC30
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+L_skip:
+        push edi
+        mov ecx, ebx
+        mov dword ptr [edi + 0x180], ebx
+        call ext_004CE040
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
