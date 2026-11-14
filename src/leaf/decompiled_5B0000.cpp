@@ -5400,3 +5400,67 @@ extern "C" __declspec(naked) void __fastcall fn_005BE460(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x005B5A70] sub_005B5A70 (115 bytes)
+extern "C" int mem_00924FC0;
+extern "C" void ext_005B3630();
+
+extern "C" __declspec(naked) void __fastcall fn_005B5A70(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [mem_00924FC0]
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        mov edi, ecx
+        cmp dword ptr [edi + 0xc], 0
+        sete byte ptr [esp + 0x13]
+        xor esi, esi
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L_loop:
+        mov eax, dword ptr [esi*4 + mem_00A88A40]
+        push eax
+        push ebp
+        call ebx
+        add esp, 8
+        test al, al
+        jne L_found
+        add esi, 1
+        cmp esi, 0x18
+        jl L_loop
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 4
+    L_found:
+        push esi
+        mov ecx, edi
+        call ext_005B3630
+        push esi
+        mov dword ptr [edi + 8], esi
+        call ext_005B5380
+        mov ecx, dword ptr [edi + 0x48]
+        test ecx, ecx
+        mov byte ptr [edi + 4], 1
+        je L_done
+        cmp byte ptr [esp + 0x13], 0
+        jne L_done
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 4
+    }
+}
