@@ -1178,3 +1178,48 @@ L_done:
         ret 0x4
     }
 }
+
+// [0x008707F0] sub_008707F0 (119 bytes)
+extern "C" void ext_005881D0();
+extern "C" void ext_0065F280();
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void* __fastcall fn_008707F0(void* self, int edx_unused, void* other) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        cmp esi, edi
+        je done
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x24]
+        mov ecx, edi
+        call edx
+        push eax
+        lea ecx, [esi + 0x14]
+        call dword ptr [mem_00924FDC]
+        lea eax, [edi + 0x154]
+        push eax
+        lea ecx, [esi + 0x154]
+        call dword ptr [mem_00924FDC]
+        mov ecx, dword ptr [edi + 0x170]
+        mov dword ptr [esi + 0x170], ecx
+        push edi
+        mov ecx, esi
+        call ext_005881D0
+        lea edx, [edi + 0xe4]
+        push edx
+        lea ecx, [esi + 0xe4]
+        call ext_0065F280
+        mov eax, dword ptr [edi + 0xe8]
+        mov dword ptr [esi + 0xe8], eax
+        mov ecx, dword ptr [edi + 0xec]
+        mov dword ptr [esi + 0xec], ecx
+    done:
+        pop edi
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
