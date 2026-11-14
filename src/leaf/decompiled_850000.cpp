@@ -2349,3 +2349,255 @@ extern "C" __declspec(naked) void __fastcall fn_0085E770(void* self) {
         ret
     }
 }
+
+// [0x00853410] sub_00853410 (623 bytes)
+extern "C" void __cdecl ext_00868E70(const void* src, void* dst, void* key, int rounds);
+
+extern "C" __declspec(naked) int __cdecl fn_00853410(unsigned char* mode, unsigned char* ctx, const unsigned char* in, int len, unsigned char* out) {
+    __asm {
+        sub esp, 24h
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp+38h]
+        test edi, edi
+        je L_m5
+        mov ecx, dword ptr [esp+3Ch]
+        test ecx, ecx
+        je L_m5
+        cmp byte ptr [ecx], 0
+        je L_m5
+        mov esi, dword ptr [esp+40h]
+        test esi, esi
+        je L_zero
+        mov eax, dword ptr [esp+44h]
+        test eax, eax
+        jle L_zero
+        mov edx, eax
+        and edx, 8000000Fh
+        jns L_chk
+        dec edx
+        or edx, 0FFFFFFF0h
+        inc edx
+L_chk:
+        je L_aligned
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0FFFFFFF8h
+        pop ebx
+        add esp, 24h
+        ret
+L_aligned:
+        cdq
+        and edx, 0Fh
+        add eax, edx
+        xor edx, edx
+        mov dl, byte ptr [edi]
+        sar eax, 4
+        dec edx
+        mov dword ptr [esp+40h], eax
+        je L_pathA
+        dec edx
+        jne L_m5
+        inc edi
+        dec eax
+        mov edx, edi
+        test eax, eax
+        mov ebx, dword ptr [edx]
+        mov edi, dword ptr [edx+4]
+        mov ebp, dword ptr [edx+8]
+        mov edx, dword ptr [edx+0Ch]
+        mov dword ptr [esp+1Ch], edx
+        jle L_finalB
+        mov dword ptr [esp+38h], eax
+L_loopB:
+        mov eax, dword ptr [ecx+4Ch]
+        add ecx, 54h
+        push eax
+        push ecx
+        lea ecx, [esp+28h]
+        push ecx
+        push esi
+        call ext_00868E70
+        mov ecx, dword ptr [esp+34h]
+        mov eax, dword ptr [esp+30h]
+        mov edx, dword ptr [esp+2Ch]
+        xor ecx, edi
+        mov edi, dword ptr [esp+3Ch]
+        xor eax, ebx
+        mov ebx, dword ptr [esp+38h]
+        xor edi, edx
+        xor ebx, ebp
+        mov edx, esi
+        mov dword ptr [esp+38h], ebx
+        mov dword ptr [esp+3Ch], edi
+        mov ebx, dword ptr [edx]
+        mov dword ptr [esp+30h], eax
+        mov dword ptr [esp+34h], ecx
+        add esp, 10h
+        mov edi, dword ptr [edx+4]
+        add esi, 10h
+        mov ebp, dword ptr [edx+8]
+        mov edx, dword ptr [edx+0Ch]
+        mov dword ptr [esp+1Ch], edx
+        mov edx, dword ptr [esp+48h]
+        mov dword ptr [edx], eax
+        mov eax, dword ptr [esp+28h]
+        mov dword ptr [edx+4], ecx
+        mov ecx, dword ptr [esp+2Ch]
+        mov dword ptr [edx+8], eax
+        mov eax, dword ptr [esp+38h]
+        mov dword ptr [edx+0Ch], ecx
+        mov ecx, edx
+        add ecx, 10h
+        dec eax
+        mov dword ptr [esp+48h], ecx
+        mov ecx, dword ptr [esp+3Ch]
+        mov dword ptr [esp+38h], eax
+        jne L_loopB
+L_finalB:
+        mov edx, dword ptr [ecx+4Ch]
+        add ecx, 54h
+        push edx
+        lea eax, [esp+24h]
+        push ecx
+        push eax
+        push esi
+        call ext_00868E70
+        mov ecx, dword ptr [esp+2Ch]
+        mov edx, dword ptr [esp+3Ch]
+        mov eax, dword ptr [esp+30h]
+        mov esi, dword ptr [esp+38h]
+        xor edx, ecx
+        xor eax, ebx
+        mov ebx, dword ptr [esp+34h]
+        mov dword ptr [esp+3Ch], edx
+        mov edx, dword ptr [esp+3Fh]
+        add esp, 10h
+        xor ebx, edi
+        xor esi, ebp
+        and edx, 0FFh
+        mov dword ptr [esp+20h], eax
+        mov dword ptr [esp+24h], ebx
+        mov dword ptr [esp+28h], esi
+        jle L_m8
+        cmp edx, 10h
+        jg L_m8
+        mov esi, 10h
+        sub esi, edx
+        mov eax, esi
+        cmp eax, 10h
+        jge L_pBcopy
+L_pBchk:
+        xor ecx, ecx
+        mov cl, byte ptr [esp+eax+20h]
+        cmp ecx, edx
+        jne L_m8
+        inc eax
+        cmp eax, 10h
+        jl L_pBchk
+L_pBcopy:
+        mov edi, dword ptr [esp+48h]
+        mov ecx, esi
+        lea esi, [esp+20h]
+        jmp L_copy
+L_pathA:
+        lea ebx, [eax-1]
+        test ebx, ebx
+        jle L_A0
+        mov edi, dword ptr [esp+48h]
+        lea ebp, [ecx+54h]
+        jmp L_A1
+L_Aloop:
+        mov ecx, dword ptr [esp+3Ch]
+L_A1:
+        mov ecx, dword ptr [ecx+4Ch]
+        push ecx
+        push ebp
+        push edi
+        push esi
+        call ext_00868E70
+        add esp, 10h
+        add esi, 10h
+        add edi, 10h
+        dec ebx
+        jne L_Aloop
+        mov ecx, dword ptr [esp+3Ch]
+L_Afinal:
+        mov edx, dword ptr [ecx+4Ch]
+        add ecx, 54h
+        push edx
+        lea eax, [esp+24h]
+        push ecx
+        push eax
+        push esi
+        call ext_00868E70
+        mov edx, dword ptr [esp+3Fh]
+        add esp, 10h
+        and edx, 0FFh
+        cmp edx, 10h
+        jl L_Aok
+L_m8:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0FFFFFFF8h
+        pop ebx
+        add esp, 24h
+        ret
+L_A0:
+        mov edi, dword ptr [esp+48h]
+        jmp L_Afinal
+L_Aok:
+        mov esi, 10h
+        sub esi, edx
+        mov eax, esi
+        cmp eax, 10h
+        jge L_Acopy
+L_Achk:
+        xor ecx, ecx
+        mov cl, byte ptr [esp+eax+20h]
+        cmp ecx, edx
+        jne L_m8
+        inc eax
+        cmp eax, 10h
+        jl L_Achk
+L_Acopy:
+        mov ecx, esi
+        lea esi, [esp+20h]
+L_copy:
+        mov eax, ecx
+        shr ecx, 2
+        rep movsd
+        mov ecx, eax
+        mov eax, dword ptr [esp+40h]
+        and ecx, 3
+        rep movsb
+        pop edi
+        pop esi
+        shl eax, 4
+        pop ebp
+        sub eax, edx
+        pop ebx
+        add esp, 24h
+        ret
+L_zero:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 24h
+        ret
+L_m5:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0FFFFFFFBh
+        pop ebx
+        add esp, 24h
+        ret
+    }
+}
