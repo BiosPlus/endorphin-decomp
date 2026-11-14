@@ -206,3 +206,161 @@ extern "C" __declspec(naked) void __fastcall fn_004591B0(void* self) {
         ret 0xc
     }
 }
+
+// [0x00459560] MultiTrackView::TimeRuler::vfunc_7 (407 bytes)
+extern "C" void ext_0043C930();
+extern "C" void ext_00468710();
+extern "C" void ext_00468730();
+extern "C" void ext_00468750();
+extern "C" void ext_00468770();
+extern "C" void ext_00468790();
+extern "C" void ext_00468810();
+extern "C" void ext_00468890();
+extern "C" void ext_00468920();
+extern "C" void ext_006A6166();
+extern "C" void ext_006A616C();
+extern "C" int mem_0087F238;
+extern "C" int mem_00925630;
+extern "C" int mem_00925634;
+extern "C" int mem_00925638;
+extern "C" int mem_0092BD7C;
+extern "C" int mem_0092BF14;
+extern "C" int mem_00937960;
+extern "C" int mem_00937974;
+
+extern "C" __declspec(naked) void __fastcall fn_00459560(void* self) {
+    __asm {
+        push -1
+        push offset mem_0087F238
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 30h]
+        mov edx, dword ptr [eax + 20h]
+        lea ecx, [esp + 24h]
+        push ecx
+        push edx
+        call dword ptr [mem_00925630]
+        mov dword ptr [esp + 0Ch], offset mem_0092BD7C
+        mov dword ptr [esp + 10h], 0
+        mov dword ptr [esp + 1Ch], 0
+        call dword ptr [mem_00925638]
+        push eax
+        lea ecx, [esp + 10h]
+        call ext_006A616C
+        call ext_00468180
+        mov ebx, dword ptr [mem_00925634]
+        push offset mem_0092BF14
+        push 65h
+        mov esi, eax
+        mov eax, dword ptr [esp + 18h]
+        push 0
+        push eax
+        call ebx
+        mov ecx, esi
+        call ext_00468770
+        test al, al
+        je short L_4595EF
+        mov ecx, dword ptr [esp + 10h]
+        push offset mem_00937974
+        push 66h
+        push 0
+        push ecx
+        call ebx
+    L_4595EF:
+        mov ecx, esi
+        call ext_00468750
+        test al, al
+        je short L_45960A
+        mov edx, dword ptr [esp + 10h]
+        push offset mem_00937960
+        push 67h
+        push 0
+        push edx
+        call ebx
+    L_45960A:
+        lea eax, [esp + 24h]
+        push eax
+        lea ecx, [esp + 10h]
+        push ecx
+        mov ecx, dword ptr [edi + 30h]
+        call ext_0043C930
+        sub eax, 65h
+        je L_4596BD
+        sub eax, 1
+        je short L_459665
+        sub eax, 1
+        jne L_4596CA
+        push 0
+        mov ecx, esi
+        call ext_00468710
+        push 0
+        mov ecx, esi
+        call ext_00468790
+        mov ecx, esi
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0A0h]
+        call eax
+        sub eax, 1
+        push eax
+        mov ecx, esi
+        call ext_00468810
+        jmp short L_459695
+    L_459665:
+        push 0
+        mov ecx, esi
+        call ext_00468730
+        push 0
+        mov ecx, esi
+        call ext_00468890
+        mov ecx, esi
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0A0h]
+        call eax
+        sub eax, 1
+        push eax
+        mov ecx, esi
+        call ext_00468920
+    L_459695:
+        mov ecx, esi
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 98h]
+        push 5
+        call eax
+        mov edi, dword ptr [edi + 30h]
+        mov ecx, dword ptr [edi + 20h]
+        push 1
+        push 0
+        push ecx
+        call dword ptr [mem_00925688]
+        jmp short L_4596CA
+    L_4596BD:
+        mov ecx, dword ptr [edi + 30h]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 144h]
+        call eax
+    L_4596CA:
+        lea ecx, [esp + 0Ch]
+        mov dword ptr [esp + 1Ch], 0FFFFFFFFh
+        mov dword ptr [esp + 0Ch], offset mem_0092BD7C
+        call ext_006A6166
+        mov ecx, dword ptr [esp + 14h]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 14h
+        ret 0Ch
+    }
+}
