@@ -8157,3 +8157,74 @@ done_5821E0:
         ret 0x4
     }
 }
+
+extern "C" int mem_00925134;
+extern "C" int mem_00B40640;
+
+// [0x00586300] sub_00586300 (149 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00586300(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov     edx, dword ptr [esp + 0x8]
+        push    ebx
+        push    ebp
+        push    esi
+        mov     esi, ecx
+        mov     ecx, dword ptr [esp + 0x18]
+        mov     eax, dword ptr [esi + 0x4]
+        push    edi
+        push    ecx
+        lea     ebx, [esi + 0x4]
+        push    edx
+        mov     edx, dword ptr [eax + 0x38]
+        lea     ecx, [esp + 0x1c]
+        push    ecx
+        mov     ecx, ebx
+        call    edx
+        mov     edi, dword ptr [esi + 0x80]
+        add     esi, 0x7c
+        cmp     edi, dword ptr [esi + 0x8]
+        jbe     L_586336
+        call    dword ptr [mem_00925134]
+    L_586336:
+        mov     ebp, dword ptr [esi + 0x8]
+        cmp     dword ptr [esi + 0x4], ebp
+        jbe     L_586344
+        call    dword ptr [mem_00925134]
+    L_586344:
+        cmp     esi, esi
+        je      L_58634e
+        call    dword ptr [mem_00925134]
+    L_58634e:
+        cmp     edi, ebp
+        je      L_58638e
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      L_58635d
+        call    dword ptr [mem_00925134]
+    L_58635d:
+        mov     eax, dword ptr [esp + 0x1c]
+        mov     edx, dword ptr [ebx]
+        mov     edx, dword ptr [edx + 0x14]
+        push    eax
+        mov     eax, dword ptr [mem_00B40640]
+        push    eax
+        mov     ecx, ebx
+        call    edx
+        mov     ecx, dword ptr [edi]
+        push    eax
+        mov     eax, dword ptr [esp + 0x1c]
+        push    eax
+        call    fn_00586300
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      L_586389
+        call    dword ptr [mem_00925134]
+    L_586389:
+        add     edi, 0x4
+        jmp     L_586336
+    L_58638e:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret     0xc
+    }
+}
