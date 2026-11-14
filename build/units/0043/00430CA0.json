@@ -8,6 +8,7 @@
   "is_leaf": true,
   "is_thunk": false,
   "relocations": [],
-  "status": "deferred",
-  "skip_reason": "MSVC 2005 emits a tail jmp reusing the stack arg slot; C++03 formulations (cdecl/thiscall/stdcall virtual, fn-ptr, arg reassign, return-tail) all produced push/call, best 83%"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-14T11:44:03Z"
 }

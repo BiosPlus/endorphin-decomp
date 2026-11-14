@@ -18208,3 +18208,14 @@ L_39f7e:
         ret
     }
 }
+
+// [0x00430CA0] sub_00430CA0 (18 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00430CA0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        mov dword ptr [esp + 0x4], 0x1
+        jmp edx
+    }
+}
