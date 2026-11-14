@@ -113,3 +113,92 @@ extern "C" __declspec(naked) void* __fastcall fn_005F0FA0(void* self) {
         ret
     }
 }
+
+// [0x005EC320] NMData::MagnetJointData::vfunc_22 (225 bytes)
+extern "C" void ext_005EB5A0();
+extern "C" void ext_00640110();
+extern "C" void ext_006404E0();
+extern "C" void ext_00640A80();
+extern "C" void ext_00640AA0();
+extern "C" int mem_00A9F724;
+extern "C" __declspec(naked) void* __fastcall fn_005EC320(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov esi, ecx
+        push 0x96afe8
+        mov ecx, ebx
+        call ext_006404E0
+        mov edi, eax
+        push edi
+        mov ecx, esi
+        call ext_005EB5A0
+        push 0x96afd8
+        mov ecx, edi
+        call ext_00640110
+        mov ecx, dword ptr [esi + 0x2fc]
+        push ecx
+        push eax
+        call ext_00640AA0
+        mov ecx, dword ptr [esi + 0x17c]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x58]
+        add esp, 0x8
+        push edi
+        call eax
+        mov ecx, dword ptr [esi + 0x180]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x58]
+        push edi
+        call eax
+        mov ecx, dword ptr [esi + 0x184]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x58]
+        push edi
+        call eax
+        cmp dword ptr [esi + 0x190], 0x0
+        je end_ec320
+        mov ecx, dword ptr [esi + 0x190]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x70]
+        call eax
+        test al, al
+        je alt_ec320
+        mov ecx, dword ptr [mem_00A9F724]
+        push ecx
+        mov ecx, edi
+        call ext_00640110
+        movzx edx, byte ptr [esi + 0x178]
+        push edx
+        push eax
+        call ext_00640A80
+        add esp, 0x8
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        ret 4
+    alt_ec320:
+        mov eax, dword ptr [esi + 0x190]
+        mov cl, byte ptr [eax + 0x178]
+        cmp cl, byte ptr [esi + 0x178]
+        je end_ec320
+        mov edx, dword ptr [mem_00A9F724]
+        push edx
+        mov ecx, edi
+        call ext_00640110
+        movzx ecx, byte ptr [esi + 0x178]
+        push ecx
+        push eax
+        call ext_00640A80
+        add esp, 0x8
+    end_ec320:
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        ret 4
+    }
+}
