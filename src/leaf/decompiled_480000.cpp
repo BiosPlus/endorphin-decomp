@@ -5,8 +5,10 @@
 #include <new>
 #include <string>
 #include <vector>
+extern "C" void ext_006A5C5C();
+extern "C" void ext_00519CE0();
 
-// [0x004806E0] sub_004806E0 (31 bytes)
+extern "C" void ext_00519CE0();
 extern "C" void ext_004A57F0();
 
 extern "C" __declspec(naked) void __fastcall fn_004806E0(void* self) {
@@ -9667,4 +9669,16 @@ extern "C" __declspec(naked) void* __fastcall fn_0048C080(void* self, int edx_un
         add esp, 0x10
         ret 4
     }
+}
+
+// [0x0048C170] sub_0048C170 (48 bytes)
+extern "C" void __fastcall fn_0048C170(void* self) {
+    void** p = (void**)self;
+    if (p[0x30 / 4] != 0) {
+        ((void (*)(void*))ext_006A5C5C)(p[0x30 / 4]);
+    }
+    p[0x30 / 4] = 0;
+    p[0x34 / 4] = 0;
+    p[0x38 / 4] = 0;
+    ((void (__fastcall*)(void*))ext_00519CE0)(self);
 }
