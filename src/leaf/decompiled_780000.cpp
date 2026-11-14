@@ -969,3 +969,154 @@ extern "C" __declspec(naked) void __fastcall fn_0078BB40(void* self, int edx_unu
         ret 0x54
     }
 }
+
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9E80();
+extern "C" void ext_006CA020();
+extern "C" void ext_006D02D0();
+extern "C" int mem_00B609B8;
+extern "C" int mem_00B609BC;
+extern "C" int mem_00B609B0;
+
+// [0x00785E70] sub_00785E70 (224 bytes)
+// Stack args: a1 (ebx, passed as this to the callees), a2 (edi), a3 (lower bound),
+// a4 (upper bound), a5/a6 (float range). Scans esi from a2+2 down to a2-2 and returns
+// 0 as soon as a value fails the float range check, 1 otherwise. Also includes two
+// linker-incremental thunks (jmp -> body at +0xA0 copies _HUGE pair to globals;
+// jmp -> body at +0xD0 stores -_HUGE as double), reproduced byte-for-byte.
+extern "C" __declspec(naked) void __cdecl fn_00785E70(void* a1, int a2, int a3, int a4, float a5, float a6) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        push edi
+        mov ecx, ebx
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9C30
+        test al, 0x8
+        je short L_785EA0
+        push edi
+        mov ecx, ebx
+        call ext_006D02D0
+        test al, al
+        jne short L_785EA0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+L_785EA0:
+        lea esi, [edi + 0x2]
+        add edi, -0x2
+        cmp esi, edi
+        jl short L_785EED
+        mov ebp, dword ptr [esp + 0x20]
+L_785EAE:
+        cmp esi, ebp
+        jg short L_785EDD
+        cmp esi, dword ptr [esp + 0x1c]
+        jl short L_785EDD
+        push esi
+        mov ecx, ebx
+        call ext_006CA020
+        mov ecx, eax
+        call ext_006C9E80
+        fcom dword ptr [esp + 0x24]
+        fnstsw ax
+        test ah, 0x1
+        jne short L_785EE4
+        fcomp dword ptr [esp + 0x28]
+        fnstsw ax
+        test ah, 0x41
+        je short L_785EE6
+L_785EDD:
+        dec esi
+        cmp esi, edi
+        jl short L_785EED
+        jmp short L_785EAE
+L_785EE4:
+        fstp st(0)
+L_785EE6:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret
+L_785EED:
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0xe9
+        __asm _emit 0x0b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B609B8], ecx
+        mov dword ptr [mem_00B609BC], edx
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0xe9
+        __asm _emit 0x0b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B609B0]
+        ret
+    }
+}
