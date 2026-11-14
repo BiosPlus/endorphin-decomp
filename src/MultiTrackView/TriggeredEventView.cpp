@@ -1042,3 +1042,76 @@ extern "C" void* __fastcall fn_0045DBD0(void* self, int edx_unused, void* arg) {
 
     return arg;
 }
+
+// [0x0045F740] MultiTrackView::TriggeredEventView::vfunc_83 (171 bytes)
+extern "C" void ext_0043D620();
+extern "C" void ext_00468180();
+extern "C" void ext_00468F50();
+extern "C" void ext_00469000();
+extern "C" void ext_00594000();
+extern "C" void ext_00597630();
+extern "C" void ext_005A6300();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_0045F740(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x87ba98
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x10
+        mov eax, dword ptr [esp + 0x20]
+        push esi
+        push eax
+        call ext_0043D620
+        xor esi, esi
+        mov dword ptr [esp + 0x8], esi
+        mov dword ptr [esp + 0xc], esi
+        mov dword ptr [esp + 0x10], esi
+        mov eax, dword ptr [eax + 0x14]
+        push eax
+        mov dword ptr [esp + 0x20], esi
+        call ext_00594000
+        mov ecx, eax
+        call ext_00597630
+        cmp eax, esi
+        je L_0045F7C8
+        push edi
+        lea ecx, [esp + 0x28]
+        lea edi, [eax + 0x4]
+        push ecx
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x2c], edi
+        call ext_005A6300
+        test byte ptr [esp + 0x2c], 0x8
+        je L_0045F7B5
+        push edi
+        call ext_00468180
+        mov ecx, eax
+        call ext_00468F50
+        jmp L_0045F7C7
+    L_0045F7B5:
+        lea edx, [esp + 0x8]
+        push esi
+        push edx
+        call ext_00468180
+        mov ecx, eax
+        call ext_00469000
+    L_0045F7C7:
+        pop edi
+    L_0045F7C8:
+        mov eax, dword ptr [esp + 0x8]
+        cmp eax, esi
+        pop esi
+        je L_0045F7DA
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    L_0045F7DA:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x1c
+        ret 0x8
+    }
+}
