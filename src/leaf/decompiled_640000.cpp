@@ -6423,3 +6423,34 @@ SKIP_B:
         ret
     }
 }
+
+// [0x006453B0] sub_006453B0 (75 bytes)
+extern "C" void ext_00645100();
+extern "C" __declspec(naked) void __fastcall fn_006453B0(void* self) {
+    __asm {
+        push -1
+        push 008af3cbh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 14h]
+        push esi
+        mov esi, ecx
+        xor ecx, ecx
+        mov dword ptr [esi], eax
+        mov dword ptr [esp + 4], esi
+        mov dword ptr [esi + 4], ecx
+        mov dword ptr [esp + 10h], ecx
+        mov dword ptr [esi + 8], ecx
+        push eax
+        mov ecx, esi
+        call ext_00645100
+        mov ecx, dword ptr [esp + 8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret 4
+    }
+}
