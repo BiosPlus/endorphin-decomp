@@ -8300,3 +8300,59 @@ extern "C" __declspec(naked) void* __cdecl fn_0051DD20(void* arg1, float arg2) {
         ret
     }
 }
+
+// [0x00518420] sub_00518420 (97 bytes)
+extern "C" void ext_0050BE20();
+extern "C" void ext_0050ED40();
+extern "C" void ext_00518390();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __cdecl fn_00518420(void* a1, void* a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        push edi
+        mov ecx, ebx
+        call ext_0050BE20
+        mov esi, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        jne short L_51843E
+        xor eax, eax
+        jmp short L_518446
+    L_51843E:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+    L_518446:
+        push eax
+        mov ecx, ebx
+        call ext_0050ED40
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe short L_51845C
+        call dword ptr [mem_00925134]
+    L_51845C:
+        mov ebp, dword ptr [esi + 0x4]
+        cmp ebp, dword ptr [esi + 0x8]
+        jbe short L_51846A
+        call dword ptr [mem_00925134]
+    L_51846A:
+        push ebx
+        push edi
+        push esi
+        push ebp
+        lea eax, [esp + 0x24]
+        push esi
+        push eax
+        call ext_00518390
+        add esp, 0x18
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
