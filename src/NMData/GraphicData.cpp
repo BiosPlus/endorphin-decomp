@@ -295,3 +295,74 @@ extern "C" __declspec(naked) void __fastcall fn_00620240(void* self) {
         ret
     }
 }
+
+// [0x0061FF80] NMData::GraphicData::vfunc_21 (187 bytes)
+extern "C" void ext_0058F630();
+extern "C" void ext_005B18E0();
+extern "C" void ext_005B5E50();
+extern "C" void ext_0063F530();
+extern "C" int mem_00A9EF58;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0061FF80(void* self, int edx_unused, void* arg0) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x34]
+        push edi
+        push esi
+        mov edi, ecx
+        call ext_0058F630
+        mov eax, dword ptr [mem_00A9EF58]
+        push 0x1
+        push 0x0
+        push eax
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je loc_61ffdb
+        cmp eax, 0xb53b30
+        je loc_61ffdb
+        cmp eax, 0xb53ab0
+        je loc_61ffdb
+        cmp eax, 0xb53a70
+        je loc_61ffdb
+        cmp eax, 0xb53af0
+        jne loc_61ffe2
+    loc_61ffdb:
+        mov ebx, 0xb53b30
+        jmp loc_61ffe4
+    loc_61ffe2:
+        mov ebx, eax
+    loc_61ffe4:
+        push 0x9349d8
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0xc]
+        lea esi, [edi + 0x154]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x34], 0x0
+        call ext_005B18E0
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        push ebx
+        mov ecx, esi
+        call ext_005B5E50
+        mov ecx, dword ptr [esp + 0x28]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
