@@ -729,3 +729,49 @@ L_end_004C52B0:
         ret 4
     }
 }
+
+// [0x004C60D0] NMData::ForceEventData::vfunc_14 (91 bytes)
+extern "C" void ext_004C2070();
+extern "C" void ext_004C5FE0();
+extern "C" void ext_0055DA20();
+extern "C" void ext_007D8700();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_004C60D0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, 0x94
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        je L_4c60f7
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push esi
+        call ext_004C2070
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    L_4c60f7:
+        mov eax, dword ptr [ecx + 0x4]
+        mov edx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [eax + 0xc]
+        add ecx, 0x4
+        push edx
+        call eax
+        push eax
+        call ext_007D8700
+        add esp, 0x4
+        push eax
+        call ext_004C5FE0
+        mov esi, dword ptr [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call ext_0055DA20
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x8
+    }
+}
