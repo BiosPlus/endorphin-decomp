@@ -60,3 +60,69 @@ done:
         ret 0x4
     }
 }
+
+// [0x00517C80] Individual::vfunc_1 (120 bytes)
+extern "C" void ext_00517B60();
+
+extern "C" __declspec(naked) void __fastcall fn_00517C80(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        push ebp
+        push esi
+        mov ebx, ecx
+        push edi
+        lea esi, [ebx + 0x10]
+        push esi
+        push eax
+        call ext_00517B60
+        mov ebp, dword ptr [mem_00925134]
+        add esp, 0x8
+        xor edi, edi
+        nop
+loop_top:
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je done
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jae done
+        test ecx, ecx
+        je chk1
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb ok1
+chk1:
+        call ebp
+ok1:
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx + 4*edi]
+        mov dword ptr [edx + 0x30], ebx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je chk2
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+        cmp edi, eax
+        jb ok2
+chk2:
+        call ebp
+ok2:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [eax + 4*edi]
+        mov dword ptr [ecx + 0x34], edi
+        add edi, 1
+        jmp loop_top
+done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
