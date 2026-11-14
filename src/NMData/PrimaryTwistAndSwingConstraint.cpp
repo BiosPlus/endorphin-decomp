@@ -1168,3 +1168,38 @@ s8:
         ret 4
     }
 }
+
+// [0x00611A90] NMData::PrimaryTwistAndSwingConstraint::vfunc_22 (232 bytes)
+extern "C" void ext_00593AE0();
+extern "C" void ext_00610F40();
+extern "C" void ext_00611270();
+extern "C" void ext_00640110();
+extern "C" void ext_00640390();
+extern "C" void ext_00640A80();
+extern "C" void ext_0067F040();
+extern "C" int mem_00A9F1C8;
+extern "C" int mem_00A9F298;
+extern "C" int mem_00A9EF98;
+extern "C" int mem_00A9FA48;
+extern "C" int mem_00A9F9F0;
+extern "C" int mem_00A9F778;
+
+extern "C" void* __fastcall fn_00611A90(void* self, int edx_unused, void* a1) {
+    float tmp[3];
+    ((void (__thiscall*)(void*, void*))ext_00611270)(self, a1);
+    ((void (__thiscall*)(void*, float*))(*(void***)self)[0x110 / 4])(self, tmp);
+    void* node = ((void* (__thiscall*)(void*, int, int))ext_00640390)(a1, mem_00A9F1C8, 0);
+    ((void (__cdecl*)(void*, float*))ext_0067F040)(node, tmp);
+    ((void (__thiscall*)(void*, void*))ext_00593AE0)(self, node);
+    void* n1 = ((void* (__thiscall*)(void*, int, int))ext_00640390)(a1, mem_00A9F298, 0);
+    ((void (__thiscall*)(void*, void*))ext_00610F40)((char*)self + 0x164, n1);
+    void* n2 = ((void* (__thiscall*)(void*, int, int))ext_00640390)(a1, mem_00A9EF98, 0);
+    ((void (__thiscall*)(void*, void*))ext_00610F40)((char*)self + 0x224, n2);
+    void* n3 = ((void* (__thiscall*)(void*, int))ext_00640110)(a1, mem_00A9FA48);
+    ((void (__cdecl*)(void*, int))ext_00640A80)(n3, *((unsigned char*)self + 0x328));
+    void* n4 = ((void* (__thiscall*)(void*, int))ext_00640110)(a1, mem_00A9F9F0);
+    ((void (__cdecl*)(void*, int))ext_00640A80)(n4, *((unsigned char*)self + 0x329));
+    void* n5 = ((void* (__thiscall*)(void*, int))ext_00640110)(a1, mem_00A9F778);
+    ((void (__cdecl*)(void*, int))ext_00640A80)(n5, *((unsigned char*)self + 0x32a));
+    return a1;
+}
