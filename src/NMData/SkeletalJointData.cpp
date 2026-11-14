@@ -412,3 +412,40 @@ extern "C" void __fastcall fn_005E0630(void* self, int edx_unused, void* a1, voi
     ext_00588330(self, edx_unused, a1, a2);
     ext_006A6E9E(a1, 0, &mem_00A2E2BC, &mem_00A8F318, 0);
 }
+
+extern "C" void ext_00587920();
+extern "C" void ext_005EDFD0();
+
+// [0x005EE2F0] NMData::SkeletalJointData::vfunc_33 (104 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005EE2F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_005EDFD0
+        mov ecx, dword ptr [esi + 0x17c]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x84]
+        call edx
+        mov ecx, dword ptr [esi + 0x180]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x84]
+        call edx
+        mov ecx, dword ptr [esi + 0x184]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x84]
+        call edx
+        mov dword ptr [esi + 0x308], 0x700
+        mov eax, dword ptr [esi + 0x180]
+        push 0x0
+        push eax
+        mov ecx, esi
+        call ext_00587920
+        mov ecx, dword ptr [esi + 0x184]
+        push 0x0
+        push ecx
+        mov ecx, dword ptr [esi + 0x17c]
+        call ext_00587920
+        pop esi
+        ret
+    }
+}
