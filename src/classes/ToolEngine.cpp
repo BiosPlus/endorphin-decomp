@@ -1890,3 +1890,95 @@ extern "C" __declspec(naked) void __fastcall fn_00484650(void* self) {
         ret
     }
 }
+
+// [0x00486130] ToolEngine::vfunc_34 (241 bytes)
+extern "C" void ext_00408B90();
+extern "C" void ext_00468180();
+extern "C" void ext_0046F930();
+extern "C" void ext_00472350();
+extern "C" void ext_004A91B0();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5C62();
+extern "C" int mem_00AD89B4;
+
+extern "C" __declspec(naked) void __fastcall fn_00486130(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x40]
+        call edx
+        push 8
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [esp + 0x10], esi
+        test esi, esi
+        mov dword ptr [esp + 0x1c], 0
+        mov ebx, 1
+        je L_004861A1
+        mov eax, dword ptr [edi + 0x3b0]
+        test eax, eax
+        mov dword ptr [esi], eax
+        mov byte ptr [esi + 4], bl
+        je L_004861A3
+        cmp dword ptr [mem_00AD89B4], 0
+        jne L_00486199
+        mov byte ptr [eax + 0x153], bl
+        mov ecx, dword ptr [esi]
+        call ext_00472350
+    L_00486199:
+        add dword ptr [mem_00AD89B4], ebx
+        jmp L_004861A3
+    L_004861A1:
+        xor esi, esi
+    L_004861A3:
+        mov ebp, dword ptr [edi + 0x3f4]
+        cmp esi, ebp
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        je L_004861E8
+        test ebp, ebp
+        je L_004861E8
+        cmp dword ptr [ebp], 0
+        je L_004861DF
+        sub dword ptr [mem_00AD89B4], ebx
+        jne L_004861DF
+        mov ecx, dword ptr [ebp]
+        mov byte ptr [ecx + 0x153], 0
+        cmp byte ptr [ebp + 4], 0
+        je L_004861DF
+        mov ecx, dword ptr [ebp]
+        call ext_0046F930
+    L_004861DF:
+        push ebp
+        call ext_006A5C5C
+        add esp, 4
+    L_004861E8:
+        mov dword ptr [edi + 0x3f4], esi
+        mov ecx, dword ptr [edi + 0x3b4]
+        call ext_004A91B0
+        mov edi, dword ptr [edi + 0x3b4]
+        push edi
+        push 5
+        call ext_00468180
+        mov ecx, eax
+        call ext_00408B90
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
