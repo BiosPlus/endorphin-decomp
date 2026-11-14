@@ -10345,3 +10345,22 @@ extern "C" bool __fastcall fn_0041C9A0(void* self, int edx_unused, int a1, int a
     *((int* (__thiscall*)(void*, int))ext_0041C7C0)(*(void**)((char*)self + 4), a1) = a2;
     return true;
 }
+
+extern "C" void ext_0041CB40();
+extern "C" void ext_006A89B0();
+extern "C" void ext_006ACFB0();
+
+// [0x0041D040] sub_0041D040 (65 bytes)
+extern "C" void* __fastcall fn_0041D040(void* self, int edx_unused, void* a1) {
+    if (!a1) {
+        return 0;
+    }
+    for (int i = ((int (__thiscall*)(void*))ext_006ACFB0)(a1) - 1; i >= 0; --i) {
+        void* item = ((void* (__thiscall*)(void*, int))ext_006A89B0)(*(void**)((char*)self + 0xC), i);
+        void* res = ((void* (__thiscall*)(void*, void*))ext_0041CB40)(self, item);
+        if (res) {
+            return res;
+        }
+    }
+    return 0;
+}
