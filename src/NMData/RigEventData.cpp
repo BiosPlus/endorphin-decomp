@@ -295,3 +295,34 @@ extern "C" __declspec(naked) void* __fastcall fn_004D3C20(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x004DB020] NMData::RigEventData::vfunc_84 (74 bytes)
+extern "C" void ext_004DA060();
+extern "C" void ext_004DA740();
+
+extern "C" __declspec(naked) void __fastcall fn_004DB020(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 0x18c]
+        test ecx, ecx
+        je done
+        cmp byte ptr [eax + 0x17c], 0x0
+        je done
+        mov edx, dword ptr [esp + 0x4]
+        cmp edx, dword ptr [eax + 0x15c]
+        jl fallback
+        cmp edx, dword ptr [eax + 0x160]
+        jge fallback
+        push edx
+        movzx edx, byte ptr [eax + 0x193]
+        movzx eax, byte ptr [eax + 0x192]
+        push edx
+        push eax
+        call ext_004DA740
+        ret 0x4
+    fallback:
+        call ext_004DA060
+    done:
+        ret 0x4
+    }
+}
