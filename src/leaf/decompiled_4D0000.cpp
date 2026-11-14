@@ -4116,3 +4116,53 @@ extern "C" __declspec(naked) void __fastcall fn_004D2930(void* self) {
         ret
     }
 }
+
+// [0x004DBD10] sub_004DBD10 (124 bytes)
+extern "C" void ext_004D42A0();
+extern "C" void ext_004DB940();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004DBD10(void* self, int edx_unused, unsigned int idx) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        cmp dword ptr [esi + 0x43c], edi
+        je done
+        mov dword ptr [esi + 0x43c], edi
+        mov dword ptr [esi + 0x440], 0
+        mov eax, dword ptr [esi + 0x448]
+        test eax, eax
+        je invalid_param
+        mov ecx, dword ptr [esi + 0x44c]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb valid_param
+    invalid_param:
+        call dword ptr [mem_00925134]
+    valid_param:
+        mov ecx, dword ptr [esi + 0x448]
+        lea eax, [8*edi]
+        sub eax, edi
+        lea edx, [ecx + 4*eax]
+        push edx
+        mov ecx, esi
+        call ext_004DB940
+        mov eax, dword ptr [esi + 0x168]
+        push eax
+        mov ecx, esi
+        call ext_004D42A0
+    done:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
