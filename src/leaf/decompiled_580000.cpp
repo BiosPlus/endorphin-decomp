@@ -4604,3 +4604,59 @@ done_00581480:
         ret
     }
 }
+
+// [0x00581400] sub_00581400 (125 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00581400(void* a, void* b, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        cmp dword ptr [esp + 0x8], ebx
+        je done_00581400
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        lea edi, [ebp + 0x1c]
+        lea esi, [ebx + 0x1c]
+        jmp loop_00581400
+        __asm _emit 0x8d __asm _emit 0x9b __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+loop_00581400:
+        mov eax, dword ptr [ebx - 0x3c]
+        mov dword ptr [ebp - 0x3c], eax
+        mov ecx, dword ptr [esi - 0x54]
+        sub esi, 0x3c
+        mov dword ptr [edi - 0x54], ecx
+        mov edx, dword ptr [esi - 0x14]
+        sub edi, 0x3c
+        sub ebx, 0x3c
+        sub ebp, 0x3c
+        mov dword ptr [edi - 0x14], edx
+        mov eax, dword ptr [esi - 0x10]
+        mov dword ptr [edi - 0x10], eax
+        mov ecx, dword ptr [esi - 0xc]
+        mov dword ptr [edi - 0xc], ecx
+        mov edx, dword ptr [esi - 0x8]
+        mov dword ptr [edi - 0x8], edx
+        mov al, byte ptr [esi - 0x4]
+        push esi
+        mov ecx, edi
+        mov byte ptr [edi - 0x4], al
+        call ext_0057EEA0
+        lea ecx, [esi + 0x10]
+        push ecx
+        lea ecx, [edi + 0x10]
+        call ext_00406940
+        cmp ebx, dword ptr [esp + 0x14]
+        jne loop_00581400
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+done_00581400:
+        mov eax, dword ptr [esp + 0x10]
+        pop ebx
+        ret
+    }
+}
