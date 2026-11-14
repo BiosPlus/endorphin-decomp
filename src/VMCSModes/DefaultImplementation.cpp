@@ -1994,3 +1994,180 @@ extern "C" int __fastcall fn_004FB350(void* self, int edx_unused, int a1, int a2
     ((void (__thiscall*)(void*))(*(void***)self)[0xd4 / 4])(self);
     return ((int (__cdecl*)(int, int, int, int, int, int))ext_004FD750)(a2, a3, a4, a5, a1, a6);
 }
+
+extern "C" void ext_0041A920();
+extern "C" void ext_0046F930();
+extern "C" void ext_00472350();
+extern "C" void ext_00492540();
+extern "C" void ext_00492590();
+extern "C" void ext_0052F600();
+extern "C" void ext_00594000();
+extern "C" void ext_005B11F0();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006AD190();
+extern "C" void ext_006AD940();
+extern "C" int mem_00AD89B4;
+
+// [0x004FBCA0] VMCSModes::DefaultImplementation::vfunc_5 (483 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004FBCA0(void* self) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push 0x890a30
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        mov esi, ecx
+        mov eax, [esi + 8]
+        mov eax, [eax + 0x14]
+        mov ecx, [eax + 0x30]
+        mov edx, [ecx]
+        mov eax, [edx + 0xb4]
+        push edi
+        call eax
+        xor edi, edi
+        cmp eax, edi
+        je L_ret
+        push ebx
+        push ebp
+        mov ebp, [eax + 0x38]
+        cmp ebp, 6
+        sete bl
+        call ext_00594000
+        mov ecx, [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        call ext_00492540
+        test al, al
+        jne L_1
+        test bl, bl
+        je L_pop_ret
+    L_1:
+        mov ecx, [esi + 8]
+        mov ebx, [ecx + 0x14]
+        cmp ebx, edi
+        mov [esp + 0x14], ebx
+        mov byte ptr [esp + 0x18], 1
+        je L_2
+        cmp dword ptr [mem_00AD89B4], edi
+        jne L_3
+        mov ecx, ebx
+        mov byte ptr [ebx + 0x153], 1
+        call ext_00472350
+    L_3:
+        add dword ptr [mem_00AD89B4], 1
+    L_2:
+        mov edx, [esi]
+        mov eax, [edx + 0xb4]
+        mov ecx, esi
+        mov [esp + 0x34], edi
+        call eax
+        call ext_00594000
+        mov ecx, [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        call ext_00492590
+        test al, al
+        je L_else
+        mov [esp + 0x20], edi
+        mov [esp + 0x24], edi
+        mov [esp + 0x28], edi
+        mov byte ptr [esp + 0x34], 1
+        call ext_00594000
+        mov ecx, [eax + 0x26c]
+        call ext_006AD940
+        mov ecx, eax
+        call ext_0052F600
+        lea ecx, [esp + 0x10]
+        push ecx
+        lea ecx, [esp + 0x20]
+        mov [esp + 0x14], eax
+        call ext_0041A920
+        mov edx, [esi + 8]
+        mov ecx, [edx + 0x14]
+        call ext_006AD190
+        mov edx, [eax]
+        mov edx, [edx + 0x98]
+        lea ecx, [esp + 0x1c]
+        push ecx
+        mov ecx, eax
+        call edx
+        mov eax, [esp + 0x20]
+        cmp eax, edi
+        mov byte ptr [esp + 0x34], 0
+        je L_vec_done
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    L_vec_done:
+        mov [esp + 0x20], edi
+        mov [esp + 0x24], edi
+        mov [esp + 0x28], edi
+        jmp L_switch
+    L_else:
+        mov eax, [esi + 8]
+        mov eax, [eax + 0x14]
+        mov ecx, [eax + 0x34]
+        call ext_005B11F0
+        mov edx, [eax]
+        mov ecx, eax
+        mov eax, [edx + 0x1c]
+        call eax
+        mov ecx, [esi + 8]
+        mov ecx, [ecx + 0x14]
+        mov edi, eax
+        call ext_006AD190
+        mov edx, [eax]
+        mov ecx, eax
+        mov eax, [edx + 0x98]
+        push edi
+        call eax
+        xor edi, edi
+    L_switch:
+        cmp ebp, 1
+        jne L_c2
+        mov edx, [esi]
+        mov eax, [edx + 0xd4]
+        jmp L_call_mode
+    L_c2:
+        cmp ebp, 2
+        jne L_c3
+        mov edx, [esi]
+        mov eax, [edx + 0xcc]
+        jmp L_call_mode
+    L_c3:
+        cmp ebp, 3
+        jne L_c4
+        mov edx, [esi]
+        mov eax, [edx + 0xc8]
+        jmp L_call_mode
+    L_c4:
+        cmp ebp, 4
+        jne L_guard_dtor
+        mov edx, [esi]
+        mov eax, [edx + 0xbc]
+    L_call_mode:
+        mov ecx, esi
+        call eax
+    L_guard_dtor:
+        cmp ebx, edi
+        mov dword ptr [esp + 0x34], -1
+        je L_pop_ret
+        sub dword ptr [mem_00AD89B4], 1
+        jne L_pop_ret
+        mov ecx, ebx
+        mov byte ptr [ebx + 0x153], 0
+        call ext_0046F930
+    L_pop_ret:
+        pop ebp
+        pop ebx
+    L_ret:
+        mov ecx, [esp + 0x24]
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x28
+        ret
+    }
+}
