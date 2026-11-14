@@ -8791,3 +8791,82 @@ extern "C" __declspec(naked) void __fastcall fn_004A5AF0(void* self) {
         ret
     }
 }
+
+// [0x004A90B0] sub_004A90B0 (242 bytes)
+extern "C" void ext_004142E0();
+extern "C" void ext_0048C080();
+extern "C" void ext_004A5DC0();
+extern "C" void ext_004A8FB0();
+extern "C" void ext_005B0D90();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void* __fastcall fn_004A90B0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x888573
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xd4
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xec]
+        mov esi, ecx
+        push edi
+        lea ecx, [esp + 0x40]
+        call dword ptr [mem_00924FE0]
+        mov eax, dword ptr [esp + 0xf0]
+        push eax
+        lea ecx, [esp + 0x5c]
+        mov dword ptr [esp + 0xe8], 0
+        call ext_0048C080
+        lea ecx, [esp + 0x3c]
+        push ecx
+        lea edx, [esp + 0xc]
+        push edx
+        lea ecx, [esi + 4]
+        mov dword ptr [esp + 0xec], 1
+        call ext_004A8FB0
+        lea ecx, [esp + 0x58]
+        mov dword ptr [esp + 0xe4], 2
+        call ext_005B0D90
+        lea ecx, [esp + 0x3c]
+        mov dword ptr [esp + 0xe4], -1
+        call dword ptr [mem_00924FF4]
+        cmp byte ptr [esp + 0x10], 0
+        jne label_4a9169
+        push edi
+        call ext_004A5DC0
+        push eax
+        lea ecx, [esp + 0x1c]
+        call ext_004142E0
+        push 0x9d1278
+        lea eax, [esp + 0x18]
+        push eax
+        call ext_006A6DD2
+    label_4a9169:
+        mov esi, dword ptr [esp + 8]
+        test esi, esi
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        jne label_4a917a
+        call ebx
+    label_4a917a:
+        mov edi, dword ptr [esp + 0x10]
+        cmp edi, dword ptr [esi + 4]
+        jne label_4a9185
+        call ebx
+    label_4a9185:
+        mov ecx, dword ptr [esp + 0xe0]
+        pop ebx
+        lea eax, [edi + 0x28]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0xe0
+        ret 8
+    }
+}
