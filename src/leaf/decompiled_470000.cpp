@@ -8376,3 +8376,54 @@ extern "C" __declspec(naked) void __fastcall fn_00473570(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void __fastcall ext_005304A0(void*, int, int);
+extern "C" void __fastcall ext_00597250(void*);
+
+// [0x00472E30] sub_00472E30 (122 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00472E30(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0xcc]
+        call ext_00597250
+        mov eax, dword ptr [esi + 0x220]
+        mov edx, dword ptr [eax]
+        lea ecx, [esi + 0x220]
+        call edx
+        mov eax, dword ptr [esi + 0x60]
+        mov edx, dword ptr [eax + 0x8]
+        lea ecx, [esi + 0x60]
+        call edx
+        add dword ptr [esi + 0x108], 0x1
+        mov eax, dword ptr [esi + 0x174]
+        test eax, eax
+        mov ecx, dword ptr [esi + 0x108]
+        je label_true
+        cmp ecx, eax
+        jl label_true
+        mov ecx, esi
+        call ext_00472350
+        mov ecx, dword ptr [esi + 0x30]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xb4]
+        call edx
+        test eax, eax
+        je label_false
+        mov ecx, dword ptr [esi + 0x30]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0xb4]
+        push 0x0
+        call edx
+        mov ecx, eax
+        call ext_005304A0
+    label_false:
+        xor al, al
+        pop esi
+        ret
+    label_true:
+        mov al, 0x1
+        pop esi
+        ret
+    }
+}
