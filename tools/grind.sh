@@ -23,7 +23,7 @@ STATUS_ON_MATCH="${STATUS_ON_MATCH:-0}"
 if [[ "$STATUS_ON_MATCH" == 0 ]]; then
   export WORK_SKIP_README=1
 fi
-export WORK_ISOLATED="${WORK_ISOLATED:-1}"
+export WORK_ISOLATED="${WORK_ISOLATED:-0}"
 # Pipeline: tier 0 runs on EVERY function with WAVE_SIZE concurrent runners. A function moves up a tier only once every model in its tier has failed it.
 # Each model has its own concurrency cap (tier 0: WAVE_SIZE; later tiers: ESC_CAP unless overridden below).
 ESC_CAP="${ESC_CAP:-2}"
@@ -584,6 +584,7 @@ declare -A FUNC_CPP_OF=()
 declare -A FN_START=()
 declare -A JOB_INFO=()        # pid -> "addr stage"
 declare -A INFLIGHT_ADDR=()   # addr -> 1 while the function is anywhere in the pipeline
+declare -A INFLIGHT_CPP=()    # cpp  -> 1 (never two functions on the same .cpp at once)
 declare -A SEEN_ADDR=()       # addrs pulled this session (never re-pulled)
 declare -A PENDING=()         # tier -> space-separated FIFO of addrs waiting for a model in that tier
 declare -A STAGE_RUNNING=()   # model index -> running attempts
@@ -616,7 +617,7 @@ refresh_candidates() {
   CANDIDATE_REFRESH_AT=$(( finished + WAVE_SIZE ))
 }
 
-# First cached candidate not already pulled / in flight (by address). Sets NEXT_ADDR/NEXT_CPP.
+# First cached candidate not already pulled / in flight (by address or by target .cpp). Sets NEXT_ADDR/NEXT_CPP.
 pick_next_candidate() {
   NEXT_ADDR=""; NEXT_CPP=""
   local pass item addr size cpp
@@ -627,6 +628,7 @@ pick_next_candidate() {
       IFS='|' read -r addr size cpp <<< "$item"
       [[ -n "${SEEN_ADDR[$addr]:-}" ]] && continue
       [[ -n "${INFLIGHT_ADDR[$addr]:-}" ]] && continue
+      [[ -n "${INFLIGHT_CPP[$cpp]:-}" ]] && continue
       NEXT_ADDR="$addr"; NEXT_CPP="$cpp"; FUNC_SIZES["$addr"]="$size"
       return 0
     done
@@ -669,6 +671,7 @@ escalation_backlog() {   # functions that are past tier 0 (pending or running)
 finish_function() {   # $1=addr $2=outcome(matched|deferred) $3=model
   local addr="$1" outcome="$2" model="$3"
   unset "INFLIGHT_ADDR[$addr]"
+  unset "INFLIGHT_CPP[${FUNC_CPP_OF[$addr]}]"
   ((finished++))
   if [[ "$outcome" == matched ]]; then ((matched_count++)); else ((deferred_count++)); fi
   log_result "$addr" "${FUNC_SIZES[$addr]:-?}" "$outcome" "$model" "${FN_START[$addr]:-$(date +%s)}"
@@ -743,23 +746,12 @@ diag_best_pct() {   # $1=addr -> prints best match % from .local/diag/<VA>.tsv (
   fi
 }
 
-enqueue_pending() {   # $1=tier $2=addr ; prepends near-matches (>=90%) so they finish first
-  local t="$1" addr="$2" bp
-  bp="$(diag_best_pct "$addr")"
-  if awk -v b="$bp" 'BEGIN { exit !(b >= 90) }'; then
-    PENDING[$t]="$addr ${PENDING[$t]}"
-  else
-    PENDING[$t]+="$addr "
-  fi
-}
-
 advance_function() {   # put a function into the first tier >= $2 that still has owed models, or defer it
   local addr="$1" t="$2" owed
   for (( ; t<NUM_TIERS; t++ )); do
     owed="$(owed_models "$addr" "$t")"
     if [[ -n "$owed" ]]; then
-      FN_TIER["$addr"]=$t; FN_OWED["$addr"]="$owed"
-      enqueue_pending "$t" "$addr"
+      FN_TIER["$addr"]=$t; FN_OWED["$addr"]="$owed"; PENDING[$t]+="$addr "
       emit "[~] $addr: tier $t owes attempts from: $owed"
       return
     fi
@@ -768,26 +760,18 @@ advance_function() {   # put a function into the first tier >= $2 that still has
 }
 
 # Launch waiting functions on owed models that have a free slot and a usable quota pool. Among those, take the least loaded
-# model so work spreads across pools, breaking ties by function size (<128B -> smaller/faster, >=256B -> stronger).
-# A function whose owed models are all busy or rate-limited just keeps waiting.
+# model so work spreads across pools. A function whose owed models are all busy or rate-limited just keeps waiting.
 dispatch_stages() {
-  local t addr m idx best score bestscore newq cap fsize tie
+  local t addr m idx best score bestscore newq cap
   for (( t=0; t<NUM_TIERS; t++ )); do
     newq=""
     for addr in ${PENDING[$t]}; do
       best=-1; bestscore=0
-      fsize="${FUNC_SIZES[$addr]:-0}"
       for m in ${FN_OWED[$addr]}; do
         idx=${MODEL_IDX[$m]}; cap="$(stage_cap "$idx")"
         (( STAGE_RUNNING[$idx] >= cap )) && continue
         [[ "$(resolve_backend_for_model "$m")" == none ]] && continue
         score=$(( STAGE_RUNNING[$idx] * 1000 / cap ))
-        if (( fsize >= 256 )); then
-          tie=$(( NUM_STAGES - idx ))
-        else
-          tie=$idx
-        fi
-        score=$(( score * 100 + tie ))
         if (( best < 0 || score < bestscore )); then best=$idx; bestscore=$score; fi
       done
       if (( best < 0 )); then newq+="$addr "; continue; fi
@@ -817,7 +801,7 @@ reap_finished() {
         limited|unavailable)
           # Quota stopped the run, not the model: it stays owed, and the function waits for the pool to reset
           emit "[~] $addr: ${MODEL_CHAIN[$s]} $res; still owed, waiting"
-          enqueue_pending "${FN_TIER[$addr]}" "$addr" ;;
+          PENDING[${FN_TIER[$addr]}]+="$addr " ;;
         *)
           for _eff in $AGENT_EFFORTS; do
             FAILED_ATTEMPTS["$addr"$'\t'"${MODEL_CHAIN[$s]#*/}"@"$_eff"]=1
@@ -825,7 +809,7 @@ reap_finished() {
           rest=""
           for m in ${FN_OWED[$addr]}; do [[ "$m" != "${MODEL_CHAIN[$s]}" && "${m#*/}" != "${MODEL_CHAIN[$s]#*/}" ]] && rest+="$m "; done
           FN_OWED["$addr"]="${rest% }"
-          if [[ -n "$rest" ]]; then enqueue_pending "${FN_TIER[$addr]}" "$addr"
+          if [[ -n "$rest" ]]; then PENDING[${FN_TIER[$addr]}]+="$addr "
           else advance_function "$addr" $(( ${FN_TIER[$addr]} + 1 )); fi ;;
       esac
     fi
@@ -1011,7 +995,7 @@ while true; do
       break
     fi
     addr="$NEXT_ADDR"
-    SEEN_ADDR["$addr"]=1; INFLIGHT_ADDR["$addr"]=1
+    SEEN_ADDR["$addr"]=1; INFLIGHT_ADDR["$addr"]=1; INFLIGHT_CPP["$NEXT_CPP"]=1
     FUNC_CPP_OF["$addr"]="$NEXT_CPP"; FN_START["$addr"]="$(date +%s)"
     ((launched++))
     emit "[pull] #$launched/$TOTAL_JOBS $addr (${FUNC_SIZES[$addr]}B) -> $NEXT_CPP"

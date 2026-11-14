@@ -1571,22 +1571,7 @@ func cmdCheck(args []string) {
 	}
 
 	isWip := isWipPath(cppPath)
-	usedIsolated := false
-	compileTarget := cppPath
-	if !isWip {
-		if isoPath, isoCleanup, isoErr := extractIsolatedShardFunc(cppPath, vaHex); isoErr == nil {
-			compileTarget = isoPath
-			usedIsolated = true
-			defer isoCleanup()
-		}
-	}
-
-	objPath, cleanup, err := compileCppToObj(compileTarget)
-	if err != nil && usedIsolated {
-		// Fall back to full shard compile if isolated compile fails (e.g. helper/static dependency in the same .cpp).
-		usedIsolated = false
-		objPath, cleanup, err = compileCppToObj(cppPath)
-	}
+	objPath, cleanup, err := compileCppToObj(cppPath)
 	if err != nil {
 		fmt.Println(err.Error())
 		os.Exit(1)
@@ -1612,30 +1597,6 @@ func cmdCheck(args []string) {
 	}
 
 	exact, pct, compMasked, tgtMasked := maskAndCompare(compFn, targetBytes, *u, startVA)
-	if exact && usedIsolated {
-		// Isolated compile matched 100%; now compile the full shard to verify sibling regressions.
-		fullObjPath, fullCleanup, fullErr := compileCppToObj(cppPath)
-		if fullErr != nil {
-			fmt.Println(fullErr.Error())
-			os.Exit(1)
-		}
-		defer fullCleanup()
-		fullFnMap, fullParseErr := extractObjFunctions(fullObjPath)
-		if fullParseErr != nil {
-			fmt.Fprintf(os.Stderr, "Error parsing compiled .obj: %v\n", fullParseErr)
-			os.Exit(1)
-		}
-		fullCompFn, fullOK := findCompiledFunc(fullFnMap, vaHex)
-		if !fullOK {
-			fmt.Fprintf(os.Stderr, "Error: compiled symbol fn_%s not found in %s\n", strings.TrimPrefix(vaHex, "0x"), cppPath)
-			os.Exit(1)
-		}
-		objPath = fullObjPath
-		fnMap = fullFnMap
-		compFn = fullCompFn
-		exact, pct, compMasked, tgtMasked = maskAndCompare(compFn, targetBytes, *u, startVA)
-	}
-
 	if exact {
 		if isWip {
 			shardPath := defaultCppFileForUnit(*u, cls)
