@@ -8037,3 +8037,88 @@ extern "C" __declspec(naked) void __fastcall fn_004AEB60(void* self) {
         ret
     }
 }
+
+// [0x004A8BA0] sub_004A8BA0 (190 bytes)
+extern "C" void ext_004A8030();
+extern "C" void ext_00644F50();
+extern "C" void ext_006452E0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004A8BA0(void* self, int edx_unused, void* arg) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [ecx + 0x218]
+        test eax, eax
+        push ebx
+        push ebp
+        push esi
+        push edi
+        lea edi, [ecx + 0x214]
+        mov dword ptr [esp + 0x10], ecx
+        je loc_4A8C54
+        mov ecx, dword ptr [edi + 0x8]
+        sub ecx, eax
+        sar ecx, 2
+        je loc_4A8C54
+        mov esi, eax
+        cmp esi, dword ptr [edi + 0x8]
+        jbe loc_4A8BDA
+        call dword ptr [mem_00925134]
+    loc_4A8BDA:
+        mov ebx, dword ptr [esp + 0x1c]
+        mov edi, edi
+    loc_4A8BE0:
+        mov ebp, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebp
+        jbe loc_4A8BEE
+        call dword ptr [mem_00925134]
+    loc_4A8BEE:
+        cmp edi, edi
+        je loc_4A8BF8
+        call dword ptr [mem_00925134]
+    loc_4A8BF8:
+        cmp esi, ebp
+        je loc_4A8C4B
+        cmp esi, dword ptr [edi + 0x8]
+        mov ebp, dword ptr [mem_00925134]
+        jb loc_4A8C09
+        call ebp
+    loc_4A8C09:
+        mov ecx, dword ptr [esi]
+        push 1
+        call ext_00644F50
+        fld dword ptr [ebx]
+        sub esp, 0x10
+        mov eax, esp
+        fstp dword ptr [eax]
+        mov dword ptr [esp + 0x2c], esp
+        fld dword ptr [ebx + 0x4]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [ebx + 0x8]
+        fstp dword ptr [eax + 0x8]
+        fld dword ptr [ebx + 0xc]
+        fstp dword ptr [eax + 0xc]
+        cmp esi, dword ptr [edi + 0x8]
+        jb loc_4A8C38
+        call ebp
+    loc_4A8C38:
+        mov ecx, dword ptr [esi]
+        call ext_006452E0
+        cmp esi, dword ptr [edi + 0x8]
+        jb loc_4A8C46
+        call ebp
+    loc_4A8C46:
+        add esi, 4
+        jmp loc_4A8BE0
+    loc_4A8C4B:
+        mov ecx, dword ptr [esp + 0x10]
+        call ext_004A8030
+    loc_4A8C54:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 4
+    }
+}
