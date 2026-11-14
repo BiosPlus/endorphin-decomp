@@ -5262,3 +5262,56 @@ extern "C" __declspec(naked) void __fastcall fn_00586240(void* self) {
         ret
     }
 }
+
+// [0x005862A0] sub_005862A0 (89 bytes)
+extern "C" void ext_005862A0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005862A0(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xa8]
+        push edi
+        call edx
+        mov edi, dword ptr [esi + 0x80]
+        mov ebp, dword ptr [mem_00925134]
+        add esi, 0x7c
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_loop
+        call ebp
+    L_loop:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_chk2
+        call ebp
+    L_chk2:
+        cmp esi, esi
+        je L_chk3
+        call ebp
+    L_chk3:
+        cmp edi, ebx
+        je L_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_call
+        call ebp
+    L_call:
+        mov ecx, dword ptr [edi]
+        call ext_005862A0
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_next
+        call ebp
+    L_next:
+        add edi, 4
+        jmp L_loop
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
