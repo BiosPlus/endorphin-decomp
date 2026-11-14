@@ -2304,3 +2304,141 @@ extern "C" __declspec(naked) void __fastcall fn_008676F0(void* self) {
         ret
     }
 }
+
+// [0x0086EAF0] sub_0086EAF0 (367 bytes)
+extern "C" void ext_0086B180();
+extern "C" void ext_0086B510();
+extern "C" void ext_0086B850();
+
+extern "C" __declspec(naked) void __fastcall fn_0086EAF0(void* self) {
+    __asm {
+        sub esp, 0x64
+        lea eax, [esp + 0x28]
+        push ebx
+        push esi
+        push edi
+        push ebp
+        push eax
+        call ext_0086B200
+        lea eax, [esp + 0x50]
+        add esp, 0x4
+        push eax
+        call ext_0086B200
+        xor cx, cx
+        mov ebx, dword ptr [esp + 0x80]
+        mov esi, dword ptr [esp + 0x7c]
+        add esp, 0x4
+    loc_86EB1F:
+        movsx eax, cx
+        inc cx
+        lea edi, [4*eax]
+        lea eax, [edi + ebx]
+        lea edx, [edi + esi]
+        mov ebp, dword ptr [eax]
+        mov eax, dword ptr [eax + 0x14]
+        xor ebp, dword ptr [edx]
+        xor eax, dword ptr [edx + 0x14]
+        movsx edx, cx
+        mov dword ptr [esp + edi + 0x38], ebp
+        mov dword ptr [esp + edi + 0x4c], eax
+        cmp edx, 0x5
+        jb loc_86EB1F
+        lea eax, [esp + 0x60]
+        lea ecx, [esp + 0x38]
+        push eax
+        push ecx
+        call ext_0086B850
+        lea ecx, [esp + 0x2c]
+        lea edx, [esp + 0x54]
+        lea eax, [esp + 0x68]
+        add esp, 0x8
+        push ecx
+        push edx
+        push eax
+        call ext_0086B510
+        lea ecx, [esp + 0x1c]
+        lea edx, [esp + 0x30]
+        add esp, 0xc
+        push ecx
+        push edx
+        call ext_0086B220
+        lea ecx, [esp + 0x18]
+        add esp, 0x8
+        push ecx
+        call ext_0086B180
+        mov ecx, dword ptr [esp + 0x88]
+        add esp, 0x4
+        cmp word ptr [ecx], 0
+        je loc_86EBD1
+        xor dx, dx
+        mov edi, dword ptr [esp + 0x80]
+    loc_86EBAA:
+        movsx eax, dx
+        shl eax, 0x2
+        inc dx
+        mov ebp, dword ptr [eax + ecx + 0x2]
+        xor ebp, dword ptr [eax + ebx]
+        xor ebp, dword ptr [eax + esi]
+        xor ebp, dword ptr [esp + eax + 0x10]
+        xor ebp, dword ptr [esp + eax + 0x24]
+        mov dword ptr [eax + edi], ebp
+        movsx eax, dx
+        cmp eax, 0x5
+        jb loc_86EBAA
+        jmp loc_86EBFC
+    loc_86EBD1:
+        xor cx, cx
+        mov edi, dword ptr [esp + 0x80]
+    loc_86EBDB:
+        movsx eax, cx
+        shl eax, 0x2
+        inc cx
+        mov edx, dword ptr [eax + ebx]
+        xor edx, dword ptr [eax + esi]
+        xor edx, dword ptr [esp + eax + 0x10]
+        xor edx, dword ptr [esp + eax + 0x24]
+        mov dword ptr [eax + edi], edx
+        movsx eax, cx
+        cmp eax, 0x5
+        jb loc_86EBDB
+    loc_86EBFC:
+        xor dx, dx
+    loc_86EBFF:
+        movsx eax, dx
+        shl eax, 0x2
+        inc dx
+        mov ecx, dword ptr [eax + edi]
+        xor ecx, dword ptr [eax + esi]
+        mov dword ptr [esp + eax + 0x38], ecx
+        movsx eax, dx
+        cmp eax, 0x5
+        jb loc_86EBFF
+        lea eax, [esp + 0x10]
+        lea ecx, [esp + 0x24]
+        lea edx, [esp + 0x38]
+        push eax
+        push ecx
+        push edx
+        call ext_0086B510
+        xor dx, dx
+        add esp, 0xc
+    loc_86EC33:
+        movsx eax, dx
+        inc dx
+        mov ebx, dword ptr [esi + 4*eax + 0x14]
+        xor ebx, dword ptr [esp + 4*eax + 0x10]
+        lea ecx, [4*eax]
+        lea eax, [ecx + edi]
+        xor ebx, dword ptr [eax]
+        mov dword ptr [eax + 0x14], ebx
+        movsx eax, dx
+        cmp eax, 0x5
+        jb loc_86EC33
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x64
+        ret
+    }
+}
