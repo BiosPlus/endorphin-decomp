@@ -8228,3 +8228,66 @@ extern "C" __declspec(naked) void __fastcall fn_00586300(void* self, int edx_unu
         ret     0xc
     }
 }
+
+// [0x00580060] sub_00580060 (156 bytes)
+extern "C" void ext_0040ECB0();
+extern "C" void ext_0057CCE0();
+extern "C" void ext_0057CD50();
+extern "C" void ext_0057FF70();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B3D748;
+extern "C" int mem_00B3D73C;
+extern "C" int mem_00B3D740;
+extern "C" int mem_00B3D744;
+
+extern "C" __declspec(naked) void __fastcall fn_00580060(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push 89e74eh
+        push eax
+        mov fs:[0], esp
+        push ebx
+        mov ebx, dword ptr [esp + 14h]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 20h]
+        lea esi, [ebx + 18h]
+        push edi
+        mov ecx, esi
+        call ext_0057CCE0
+        xor ecx, ecx
+        cmp eax, ecx
+        jne L_end_580060
+        test byte ptr [mem_00B3D748], 1
+        jne L_skip_580060
+        or dword ptr [mem_00B3D748], 1
+        push 91cd80h
+        mov dword ptr [mem_00B3D73C], ecx
+        mov dword ptr [mem_00B3D740], ecx
+        mov dword ptr [mem_00B3D744], ecx
+        call ext_006A6C87
+        add esp, 4
+        mov dword ptr [esp + 14h], 0ffffffffh
+L_skip_580060:
+        push 1
+        push 0b3d738h
+        push edi
+        mov ecx, esi
+        call ext_0057FF70
+        push edi
+        lea ecx, [ebx + 28h]
+        call ext_0040ECB0
+        push edi
+        mov ecx, esi
+        call ext_0057CD50
+L_end_580060:
+        mov ecx, dword ptr [esp + 0ch]
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        pop ebx
+        add esp, 0ch
+        ret 8
+    }
+}

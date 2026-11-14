@@ -26,5 +26,7 @@
     "0x005800DC",
     "0x005800E4"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T10:32:22Z"
 }
