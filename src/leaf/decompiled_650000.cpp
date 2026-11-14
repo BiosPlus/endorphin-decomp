@@ -10184,3 +10184,99 @@ extern "C" __declspec(naked) void* __fastcall fn_0065DC10(void* self, int edx_un
         ret     0x4
     }
 }
+
+// [0x0065DB60] sub_0065DB60 (176 bytes)
+extern "C" void ext_0065D710();
+extern "C" void ext_0065D790();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0065DB60(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        push edi
+        jne L_0065DB71
+        xor eax, eax
+        jmp L_0065DB79
+    L_0065DB71:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x6
+    L_0065DB79:
+        mov edi, dword ptr [esp + 0x14]
+        cmp eax, edi
+        jae L_0065DBB6
+        test ecx, ecx
+        jne L_0065DB89
+        xor ebx, ebx
+        jmp L_0065DB91
+    L_0065DB89:
+        mov ebx, dword ptr [esi + 0x8]
+        sub ebx, ecx
+        sar ebx, 0x6
+    L_0065DB91:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp ecx, ebp
+        jbe L_0065DB9E
+        call dword ptr [mem_00925134]
+    L_0065DB9E:
+        lea eax, [esp + 0x18]
+        push eax
+        sub edi, ebx
+        push edi
+        push ebp
+        push esi
+        mov ecx, esi
+        call ext_0065D790
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x44
+    L_0065DBB6:
+        test ecx, ecx
+        je L_0065DC09
+        mov ebp, dword ptr [esi + 0x8]
+        mov eax, ebp
+        sub eax, ecx
+        sar eax, 0x6
+        cmp edi, eax
+        jae L_0065DC09
+        cmp ecx, ebp
+        jbe L_0065DBD2
+        call dword ptr [mem_00925134]
+    L_0065DBD2:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L_0065DBE0
+        call dword ptr [mem_00925134]
+    L_0065DBE0:
+        shl edi, 0x6
+        add edi, ebx
+        cmp edi, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x1c], ebx
+        ja L_0065DBF3
+        cmp edi, dword ptr [esi + 0x4]
+        jae L_0065DBF9
+    L_0065DBF3:
+        call dword ptr [mem_00925134]
+    L_0065DBF9:
+        push ebp
+        push esi
+        push edi
+        push esi
+        lea ecx, [esp + 0x28]
+        push ecx
+        mov ecx, esi
+        call ext_0065D710
+    L_0065DC09:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x44
+    }
+}
