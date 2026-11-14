@@ -1375,3 +1375,55 @@ extern "C" __declspec(naked) void __cdecl fn_00871E20() {
         ret
     }
 }
+
+extern "C" void ext_00872070();
+extern "C" void ext_008722F0();
+extern "C" void ext_0088D648();
+
+// [0x00872490] sub_00872490 (123 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00872490() {
+    __asm {
+        push -1
+        push offset ext_0088D648
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        mov eax, dword ptr [esp + 0x1c]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        push eax
+        lea ecx, [esp + 0xf]
+        push ecx
+        push edi
+        mov byte ptr [esp + 0x17], 0
+        call ext_008722F0
+        mov esi, eax
+        add esp, 0xc
+        mov dword ptr [esp + 0xc], esi
+        test esi, esi
+        mov dword ptr [esp + 0x18], 0
+        jne loc_8724e9
+        pop edi
+        pop esi
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret
+    loc_8724e9:
+        cmp byte ptr [esp + 0xb], 0
+        jne loc_8724f8
+        push edi
+        mov ecx, esi
+        call ext_00872070
+    loc_8724f8:
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret
+    }
+}
