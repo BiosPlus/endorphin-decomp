@@ -224,3 +224,66 @@ extern "C" __declspec(naked) void __fastcall fn_0048DD30(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00427550();
+extern "C" void ext_004C1DE0();
+extern "C" void ext_004E9CB0();
+extern "C" void ext_00640110();
+extern "C" void ext_00640390();
+extern "C" void ext_006404E0();
+extern "C" void ext_0067EF60();
+extern "C" int mem_00A9F9C4;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9F1A4;
+extern "C" int mem_00A9F1A8;
+
+// [0x004869D0] NMData::DesiredPoseEventData::vfunc_22 (149 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004869D0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0Ch]
+        push edi
+        mov esi, ecx
+        call ext_004C1DE0
+        mov eax, dword ptr [mem_00A9F9C4]
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        lea ecx, [esi + 180h]
+        mov dword ptr [esp + 0Ch], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 10h]
+        call ext_00427550
+        fld dword ptr [esi + 220h]
+        push 093c688h
+        push 093c674h
+        push ecx
+        fstp dword ptr [esp]
+        push edi
+        call ext_0067EF60
+        mov ecx, dword ptr [mem_00A9F1A4]
+        add esp, 10h
+        push ecx
+        mov ecx, edi
+        call ext_006404E0
+        mov edx, dword ptr [esi + 19Ch]
+        lea ecx, [esi + 19Ch]
+        push eax
+        mov eax, dword ptr [edx + 0Ch]
+        call eax
+        mov ecx, dword ptr [mem_00A9F1A8]
+        push 0
+        push ecx
+        mov ecx, edi
+        call ext_00640390
+        push eax
+        lea ecx, [esi + 224h]
+        call ext_004E9CB0
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 4
+    }
+}
