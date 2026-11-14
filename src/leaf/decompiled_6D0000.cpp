@@ -1903,3 +1903,52 @@ loc_006DE5D8:
         ret 4
     }
 }
+
+// [0x006D7D00] sub_006D7D00 (144 bytes)
+extern "C" void ext_006D2130();
+extern "C" void ext_006D7E60();
+extern "C" void ext_0070CBF0();
+extern "C" __declspec(naked) void* __fastcall fn_006D7D00(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8b9284
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        mov eax, [esp + 0x14]
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        mov [esp + 0xc], esi
+        call ext_0070CBF0
+        lea edi, [esi + 0x1c4]
+        push 0xc
+        push 0x100
+        mov ecx, edi
+        mov dword ptr [esp + 0x1c], 0
+        call ext_006D2130
+        lea ecx, [edi + 0x10]
+        mov [edi + 0x14], ecx
+        lea edi, [esi + 0x1dc]
+        push 4
+        push 0x400
+        mov ecx, edi
+        mov byte ptr [esp + 0x1c], 1
+        call ext_006D2130
+        lea edx, [edi + 0x10]
+        mov [edi + 0x14], edx
+        mov ecx, esi
+        mov byte ptr [esp + 0x14], 2
+        mov dword ptr [esi], 0x9939b4
+        call ext_006D7E60
+        mov ecx, [esp + 0xc]
+        mov eax, esi
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
