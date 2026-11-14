@@ -7453,3 +7453,75 @@ same_range:
         ret
     }
 }
+
+extern "C" void ext_00505F00();
+extern "C" int mem_00924FDC;
+
+// [0x00506310] sub_00506310 (158 bytes)
+extern "C" __declspec(naked) char* __cdecl fn_00506310(char* first, char* last, char* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        cmp dword ptr [esp + 0x8], ebx
+        je L_00506310_eq
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        lea edi, [ebp + 0x38]
+        lea esi, [ebx + 0x38]
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+L_00506310_loop:
+        sub esi, 0x68
+        lea eax, [esi - 0x34]
+        sub edi, 0x68
+        push eax
+        lea ecx, [edi - 0x34]
+        sub ebx, 0x68
+        sub ebp, 0x68
+        call ext_00505F00
+        lea ecx, [esi - 0x1c]
+        push ecx
+        lea ecx, [edi - 0x1c]
+        call dword ptr [mem_00924FDC]
+        cmp ebx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esi]
+        mov dword ptr [edi], edx
+        fld dword ptr [esi + 0x4]
+        fstp dword ptr [edi + 0x4]
+        fld dword ptr [esi + 0x8]
+        fstp dword ptr [edi + 0x8]
+        fld dword ptr [esi + 0xc]
+        fstp dword ptr [edi + 0xc]
+        fld dword ptr [esi + 0x10]
+        fstp dword ptr [edi + 0x10]
+        fld dword ptr [esi + 0x14]
+        fstp dword ptr [edi + 0x14]
+        fld dword ptr [esi + 0x18]
+        fstp dword ptr [edi + 0x18]
+        fld dword ptr [esi + 0x1c]
+        fstp dword ptr [edi + 0x1c]
+        fld dword ptr [esi + 0x20]
+        fstp dword ptr [edi + 0x20]
+        fld dword ptr [esi + 0x24]
+        fstp dword ptr [edi + 0x24]
+        fld dword ptr [esi + 0x28]
+        fstp dword ptr [edi + 0x28]
+        mov eax, dword ptr [esi + 0x2c]
+        mov dword ptr [edi + 0x2c], eax
+        jne L_00506310_loop
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+L_00506310_eq:
+        mov eax, dword ptr [esp + 0x10]
+        pop ebx
+        ret
+    }
+}
