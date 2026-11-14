@@ -10314,3 +10314,86 @@ extern "C" void __fastcall fn_00455820(void* self) {
     typedef int (__stdcall *SendMsgFn)(void*, unsigned int, unsigned int, void*);
     ((SendMsgFn)mem_00925694)(*(void**)((char*)self + 0x94), 0x449, 2, s);
 }
+
+// [0x00457100] sub_00457100 (163 bytes)
+extern "C" void ext_00455D40();
+extern "C" int ext_00455F40();
+extern "C" void ext_00456510();
+extern "C" int mem_00925690;
+extern "C" int mem_00925628;
+
+extern "C" __declspec(naked) void __fastcall fn_00457100(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub     esp, 0x20
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        mov     edi, ecx
+        mov     ecx, dword ptr [edi + 0x20]
+        lea     eax, [esp + 0x10]
+        push    eax
+        push    ecx
+        call    dword ptr [mem_00925690]
+        mov     ecx, edi
+        call    ext_00455F40
+        test    eax, eax
+        jne     done_true
+        mov     ebx, dword ptr [esp + 0x38]
+        mov     ebp, dword ptr [esp + 0x34]
+        xor     esi, esi
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+loop_top:
+        lea     edx, [esp + 0x20]
+        push    edx
+        push    esi
+        mov     ecx, edi
+        call    ext_00455D40
+        mov     ecx, dword ptr [esp + 0x14]
+        mov     edx, dword ptr [esp + 0x18]
+        push    eax
+        sub     esp, 0x10
+        mov     eax, esp
+        mov     dword ptr [eax], ecx
+        mov     ecx, dword ptr [esp + 0x30]
+        mov     dword ptr [eax + 0x4], edx
+        mov     edx, dword ptr [esp + 0x34]
+        mov     dword ptr [eax + 0x8], ecx
+        mov     ecx, edi
+        mov     dword ptr [eax + 0xc], edx
+        call    ext_00456510
+        test    eax, eax
+        je      next_iter
+        push    ebx
+        push    ebp
+        lea     eax, [esp + 0x28]
+        push    eax
+        call    dword ptr [mem_00925628]
+        test    eax, eax
+        jne     hit
+next_iter:
+        add     esi, 0x1
+        cmp     esi, 0x4
+        jl      loop_top
+done_true:
+        mov     eax, 0x1
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x20
+        ret     0x8
+hit:
+        push    esi
+        mov     ecx, edi
+        call    ext_00455D40
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x20
+        ret     0x8
+    }
+}
