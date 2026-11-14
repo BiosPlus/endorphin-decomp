@@ -12054,3 +12054,153 @@ L_done:
         ret
     }
 }
+
+// [0x0049E700] sub_0049E700 (350 bytes)
+extern "C" void ext_00497370();
+extern "C" void ext_00682D80();
+
+extern "C" __declspec(naked) void __fastcall fn_0049E700(void* self, int edx_unused, void* arg) {
+    __asm {
+        push ebp
+        mov ebp, ecx
+        cmp dword ptr [ebp + 0x12c], 0
+        je L_exit
+        mov eax, dword ptr [ebp + 0x134]
+        mov ecx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        push eax
+        call ext_00661BF0
+        mov ecx, dword ptr [ebp + 0x12c]
+        test al, al
+        setne al
+        mov byte ptr [ecx + 0x9], al
+        mov edx, dword ptr [ebp + 0xe0]
+        mov edi, dword ptr [edx]
+        lea esi, [ebp + 0xdc]
+        push ebx
+        nop
+    L_loop1:
+        cmp esi, esi
+        mov ebx, dword ptr [esi + 0x4]
+        je L_skip1_1
+        call dword ptr [mem_00925134]
+    L_skip1_1:
+        cmp edi, ebx
+        je L_loop2_start
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_skip1_2
+        call dword ptr [mem_00925134]
+    L_skip1_2:
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        lea ecx, [edi + 0x8]
+        call fn_0049E700
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_skip1_3
+        call dword ptr [mem_00925134]
+    L_skip1_3:
+        mov edi, dword ptr [edi]
+        jmp L_loop1
+
+    L_loop2_start:
+        mov ecx, dword ptr [ebp + 0xc8]
+        mov esi, dword ptr [ecx]
+        lea edi, [ebp + 0xc4]
+    L_loop2:
+        cmp edi, edi
+        mov ebx, dword ptr [edi + 0x4]
+        je L_skip2_1
+        call dword ptr [mem_00925134]
+    L_skip2_1:
+        cmp esi, ebx
+        je L_loop3_start
+        cmp esi, dword ptr [edi + 0x4]
+        jne L_skip2_2
+        call dword ptr [mem_00925134]
+    L_skip2_2:
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        lea ecx, [esi + 0x8]
+        call ext_00497370
+        cmp esi, dword ptr [edi + 0x4]
+        jne L_skip2_3
+        call dword ptr [mem_00925134]
+    L_skip2_3:
+        mov esi, dword ptr [esi]
+        jmp L_loop2
+
+    L_loop3_start:
+        mov eax, dword ptr [ebp + 0xd4]
+        mov esi, dword ptr [eax]
+        lea edi, [ebp + 0xd0]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L_loop3:
+        cmp edi, edi
+        mov ebx, dword ptr [edi + 0x4]
+        je L_skip3_1
+        call dword ptr [mem_00925134]
+    L_skip3_1:
+        cmp esi, ebx
+        je L_loop4_start
+        cmp esi, dword ptr [edi + 0x4]
+        jne L_skip3_2
+        call dword ptr [mem_00925134]
+    L_skip3_2:
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        lea ecx, [esi + 0x8]
+        call ext_00497370
+        cmp esi, dword ptr [edi + 0x4]
+        jne L_skip3_3
+        call dword ptr [mem_00925134]
+    L_skip3_3:
+        mov esi, dword ptr [esi]
+        jmp L_loop3
+
+    L_loop4_start:
+        mov edi, dword ptr [ebp + 0x120]
+        cmp edi, dword ptr [ebp + 0x124]
+        lea esi, [ebp + 0x11c]
+        mov ebp, dword ptr [mem_00925134]
+        jbe L_loop4
+        call ebp
+    L_loop4:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_skip4_2
+        call ebp
+    L_skip4_2:
+        cmp esi, esi
+        je L_skip4_3
+        call ebp
+    L_skip4_3:
+        cmp edi, ebx
+        je L_loop4_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_skip4_4
+        call ebp
+    L_skip4_4:
+        mov edx, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [edi]
+        push edx
+        call ext_00682D80
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_skip4_5
+        call ebp
+    L_skip4_5:
+        add edi, 4
+        jmp L_loop4
+
+    L_loop4_done:
+        pop ebx
+        pop edi
+        pop esi
+    L_exit:
+        pop ebp
+        ret 4
+    }
+}
