@@ -8915,3 +8915,81 @@ loc_0048DE08:
         ret 0x4
     }
 }
+
+// [0x0048B200] sub_0048B200 (147 bytes)
+extern "C" void ext_0048B200();
+extern "C" void ext_005A6300();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __cdecl fn_0048B200(void* self, void* other) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp+0x18]
+        mov esi, dword ptr [edi+4]
+        cmp esi, dword ptr [edi+8]
+        jbe L1
+        call dword ptr [mem_00925134]
+L1:
+        mov ebp, dword ptr [esp+0x14]
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+L2:
+        mov ebx, dword ptr [edi+8]
+        cmp dword ptr [edi+4], ebx
+        jbe L3
+        call dword ptr [mem_00925134]
+L3:
+        cmp esi, ebx
+        je LEND
+        cmp esi, dword ptr [edi+8]
+        mov ebx, dword ptr [mem_00925134]
+        jb L4
+        call ebx
+L4:
+        mov eax, dword ptr [esi]
+        push 0
+        push 0xa2fbbc
+        push 0xa2e2bc
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        test eax, eax
+        mov dword ptr [esp+0x18], eax
+        je L5
+        lea ecx, [esp+0x18]
+        push ecx
+        mov ecx, ebp
+        call ext_005A6300
+L5:
+        cmp esi, dword ptr [edi+8]
+        jb L6
+        call ebx
+L6:
+        mov edx, dword ptr [esi]
+        add edx, 0x7c
+        push edx
+        push ebp
+        call ext_0048B200
+        add esp, 8
+        cmp esi, dword ptr [edi+8]
+        jb L7
+        call ebx
+L7:
+        add esi, 4
+        jmp L2
+LEND:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
