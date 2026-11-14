@@ -46,3 +46,38 @@ extern "C" __declspec(naked) void* __fastcall fn_0046F9E0(void* self, int edx_un
         ret 0x8
     }
 }
+
+extern "C" void ext_0046F930();
+extern "C" void ext_005A6300();
+
+// [0x004757A0] RuntimeEngine::vfunc_0_off_8 (67 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004757A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x54]
+        call edx
+        test eax, eax
+        je done
+        lea ecx, [esi - 0x8]
+        test ecx, ecx
+        je is_null
+        lea edx, [esi + 0x4]
+        mov dword ptr [esp + 0x8], edx
+        jmp cont
+    is_null:
+        mov dword ptr [esp + 0x8], 0x0
+    cont:
+        lea ecx, [esp + 0x8]
+        push ecx
+        lea ecx, [eax + 0x4]
+        call ext_005A6300
+        lea ecx, [esi - 0x8]
+        call ext_0046F930
+    done:
+        pop esi
+        ret 0x4
+    }
+}
