@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_670000.cpp
 
 #include <math.h>
+extern "C" void ext_006A5C5C(void* ptr);
 
 // [0x0067F8F0] sub_0067F8F0 (32 bytes)
 extern "C" __declspec(naked) void __fastcall fn_0067F8F0(void* self) {
@@ -14414,5 +14415,26 @@ extern "C" __declspec(naked) void __fastcall fn_0067E470(void* self) {
         pop     esi
         add     esp, 0x30
         ret     0x20
+    }
+}
+
+// [0x00678DE0] sub_00678DE0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00678DE0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi], 0x92fb68
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        je skip_free
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    skip_free:
+        mov dword ptr [esi + 0x8], 0x0
+        mov dword ptr [esi + 0xc], 0x0
+        mov dword ptr [esi + 0x10], 0x0
+        pop esi
+        ret
     }
 }
