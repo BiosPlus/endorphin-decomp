@@ -8055,3 +8055,47 @@ extern "C" __declspec(naked) void __fastcall fn_0051ED10(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_005148F0();
+extern "C" void ext_00695E40();
+extern "C" void ext_00514A70();
+
+// [0x00514B80] sub_00514B80 (82 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00514B80(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x14]
+        mov edx, dword ptr [eax + 0x4]
+        lea ecx, [esi + 0x14]
+        push edi
+        push ebx
+        call edx
+        mov eax, dword ptr [esi + 0x38]
+        lea edi, [esi + 0x4]
+        push eax
+        mov ecx, edi
+        call ext_005148F0
+        push ebx
+        mov ecx, edi
+        call ext_00695E40
+        fldz
+        mov eax, dword ptr [esi + 0x38]
+        fstp qword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0xc]
+        push ecx
+        push edx
+        push eax
+        mov ecx, edi
+        call ext_00514A70
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
