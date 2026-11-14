@@ -1088,3 +1088,66 @@ extern "C" __declspec(naked) int __cdecl fn_0085F310(void* pData, int length) {
         ret
     }
 }
+
+// [0x0085B9D0] sub_0085B9D0 (160 bytes)
+extern "C" void ext_0085B330();
+
+extern "C" __declspec(naked) void __cdecl fn_0085B9D0(void* dst, int v) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        cmp eax, -0x80
+        jl L_16
+        cmp eax, 0x7f
+        jg L_16
+        mov byte ptr [esp + 0x8], al
+        mov eax, 0x1
+        jmp L_call
+L_16:
+        cmp eax, 0xffff8000
+        jl L_24
+        cmp eax, 0x7fff
+        jg L_24
+        mov ecx, eax
+        mov byte ptr [esp + 0x9], al
+        sar ecx, 0x8
+        mov byte ptr [esp + 0x8], cl
+        mov eax, 0x2
+        jmp L_call
+L_24:
+        cmp eax, 0xff800000
+        jl L_32
+        cmp eax, 0x7fffff
+        jg L_32
+        mov edx, eax
+        mov ecx, eax
+        sar edx, 0x10
+        sar ecx, 0x8
+        mov byte ptr [esp + 0xa], al
+        mov byte ptr [esp + 0x8], dl
+        mov byte ptr [esp + 0x9], cl
+        mov eax, 0x3
+        jmp L_call
+L_32:
+        mov edx, eax
+        mov ecx, eax
+        sar edx, 0x18
+        mov byte ptr [esp + 0x8], dl
+        mov edx, eax
+        sar ecx, 0x10
+        sar edx, 0x8
+        mov byte ptr [esp + 0xb], al
+        mov byte ptr [esp + 0x9], cl
+        mov byte ptr [esp + 0xa], dl
+        mov eax, 0x4
+L_call:
+        mov ecx, dword ptr [esp + 0x4]
+        lea edx, [esp + 0x8]
+        push ecx
+        push eax
+        push 0x1
+        push edx
+        call ext_0085B330
+        add esp, 0x10
+        ret
+    }
+}
