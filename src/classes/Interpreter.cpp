@@ -74,3 +74,18 @@ nomatch:
         ret 8
     }
 }
+
+extern "C" void ext_00427550();
+extern "C" void ext_00505420();
+extern "C" void ext_00640110();
+extern "C" int mem_00A9FA6C;
+extern "C" int mem_00924FF0;
+
+// [0x005058B0] Interpreter::vfunc_22 (73 bytes)
+extern "C" void* __fastcall fn_005058B0(void* self, int edx_unused, void* a1) {
+    void* r = ((void* (__thiscall*)(void*, int))ext_00640110)(a1, mem_00A9FA6C);
+    const char* s = ((const char* (__thiscall*)(void*))*(void**)&mem_00924FF0)((char*)self + 4);
+    ((void (__thiscall*)(void*, const char*))ext_00427550)(&r, s);
+    ((void (__cdecl*)(void*, void*, int, int))ext_00505420)((char*)self + 0x20, a1, mem_00A9EDC4, 0);
+    return a1;
+}
