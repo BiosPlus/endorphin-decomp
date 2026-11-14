@@ -13023,3 +13023,111 @@ extern "C" __declspec(naked) void __fastcall fn_0056F050(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x005660E0] sub_005660E0 (243 bytes)
+extern "C" void ext_00566790();
+extern "C" void ext_00565E20();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005660E0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        test esi, esi
+        mov ebx, ecx
+        mov dword ptr [esp + 0x8], ebx
+        je L_5661CD
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        test edi, edi
+        je L_5661CC
+        push esi
+        call ext_00553960
+        test al, al
+        jne L_5661CC
+        mov eax, dword ptr [esi + 0x1e0]
+        cmp eax, 0x1
+        sete cl
+        cmp eax, 0x2
+        je L_56612A
+        cmp eax, 0x3
+        je L_56612A
+        xor al, al
+        jmp L_56612C
+    L_56612A:
+        mov al, 0x1
+    L_56612C:
+        test cl, cl
+        push ebp
+        je L_566143
+        mov eax, dword ptr [esp + 0x20]
+        push eax
+        push edi
+        push esi
+        mov ecx, ebx
+        call ext_00566790
+        mov ebp, eax
+        jmp L_56615B
+    L_566143:
+        test al, al
+        jne L_566159
+        mov ecx, dword ptr [esp + 0x20]
+        push ecx
+        push edi
+        push esi
+        mov ecx, ebx
+        call ext_00565E20
+        mov ebp, eax
+        jmp L_56615B
+    L_566159:
+        mov ebp, edi
+    L_56615B:
+        mov edi, dword ptr [esi + 0x1d4]
+        cmp edi, dword ptr [esi + 0x1d8]
+        jbe L_566170
+        call dword ptr [mem_00925134]
+        nop
+    L_566170:
+        mov ebx, dword ptr [esi + 0x1d8]
+        cmp dword ptr [esi + 0x1d4], ebx
+        jbe L_566184
+        call dword ptr [mem_00925134]
+    L_566184:
+        cmp edi, ebx
+        je L_5661CB
+        cmp edi, dword ptr [esi + 0x1d8]
+        jb L_566196
+        call dword ptr [mem_00925134]
+    L_566196:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [eax + 0x1e0]
+        cmp ecx, 0x2
+        je L_5661B8
+        cmp ecx, 0x3
+        je L_5661B8
+        mov edx, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x10]
+        push edx
+        push ebp
+        push eax
+        call fn_005660E0
+    L_5661B8:
+        cmp edi, dword ptr [esi + 0x1d8]
+        jb L_5661C6
+        call dword ptr [mem_00925134]
+    L_5661C6:
+        add edi, 0x4
+        jmp L_566170
+    L_5661CB:
+        pop ebp
+    L_5661CC:
+        pop edi
+    L_5661CD:
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0xc
+    }
+}
