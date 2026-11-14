@@ -737,3 +737,221 @@ extern "C" __declspec(naked) void __fastcall fn_0045ECA0(void* self) {
         ret     4
     }
 }
+
+extern "C" void ext_0041C9A0();
+extern "C" void ext_00442990();
+extern "C" void ext_00442B60();
+extern "C" void ext_00442B80();
+extern "C" void ext_00442BB0();
+extern "C" void ext_00442BD0();
+extern "C" void ext_00442C40();
+extern "C" void ext_004436B0();
+extern "C" void ext_00443700();
+extern "C" void ext_00443960();
+extern "C" void ext_006A5C62();
+
+// [0x0043C6D0] MultiTrackView::TriggeredEventView::vfunc_79 (531 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0043C6D0(void* self) {
+    __asm {
+        push    -0x1
+        push    0x87b313
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        push    ecx
+        push    ebx
+        push    esi
+        push    edi
+        push    0x14
+        mov     edi, ecx
+        call    ext_006A5C62
+        add     esp, 0x4
+        mov     dword ptr [esp + 0xc], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x18], 0x0
+        je      loc_43c713
+        push    edi
+        lea     ecx, [edi + 0x64]
+        push    ecx
+        mov     ecx, eax
+        call    ext_00442990
+        jmp     loc_43c715
+    loc_43c713:
+        xor     eax, eax
+    loc_43c715:
+        push    eax
+        lea     esi, [edi + 0x64]
+        or      ebx, -0x1
+        push    0x0
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x20], ebx
+        call    ext_0041C9A0
+        push    0xc
+        call    ext_006A5C62
+        add     esp, 0x4
+        mov     dword ptr [esp + 0xc], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x18], 0x1
+        je      loc_43c74e
+        push    edi
+        push    esi
+        mov     ecx, eax
+        call    ext_00442B60
+        jmp     loc_43c750
+    loc_43c74e:
+        xor     eax, eax
+    loc_43c750:
+        push    eax
+        push    0x1
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x20], ebx
+        call    ext_0041C9A0
+        push    0x18
+        call    ext_006A5C62
+        add     esp, 0x4
+        mov     dword ptr [esp + 0xc], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x18], 0x2
+        je      loc_43c783
+        push    edi
+        push    esi
+        mov     ecx, eax
+        call    ext_00442B80
+        jmp     loc_43c785
+    loc_43c783:
+        xor     eax, eax
+    loc_43c785:
+        push    eax
+        push    0x2
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x20], ebx
+        call    ext_0041C9A0
+        push    0xc
+        call    ext_006A5C62
+        add     esp, 0x4
+        mov     dword ptr [esp + 0xc], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x18], 0x3
+        je      loc_43c7b8
+        push    edi
+        push    esi
+        mov     ecx, eax
+        call    ext_00442BB0
+        jmp     loc_43c7ba
+    loc_43c7b8:
+        xor     eax, eax
+    loc_43c7ba:
+        push    eax
+        push    0x3
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x20], ebx
+        call    ext_0041C9A0
+        push    0xc
+        call    ext_006A5C62
+        add     esp, 0x4
+        mov     dword ptr [esp + 0xc], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x18], 0x4
+        je      loc_43c7ed
+        push    edi
+        push    esi
+        mov     ecx, eax
+        call    ext_00442BD0
+        jmp     loc_43c7ef
+    loc_43c7ed:
+        xor     eax, eax
+    loc_43c7ef:
+        push    eax
+        push    0x4
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x20], ebx
+        call    ext_0041C9A0
+        push    0xc
+        call    ext_006A5C62
+        add     esp, 0x4
+        mov     dword ptr [esp + 0xc], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x18], 0x5
+        je      loc_43c822
+        push    edi
+        push    esi
+        mov     ecx, eax
+        call    ext_00442C40
+        jmp     loc_43c824
+    loc_43c822:
+        xor     eax, eax
+    loc_43c824:
+        push    eax
+        push    0x5
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x20], ebx
+        call    ext_0041C9A0
+        push    0x38
+        call    ext_006A5C62
+        add     esp, 0x4
+        mov     dword ptr [esp + 0xc], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x18], 0x6
+        je      loc_43c857
+        push    edi
+        push    esi
+        mov     ecx, eax
+        call    ext_00443960
+        jmp     loc_43c859
+    loc_43c857:
+        xor     eax, eax
+    loc_43c859:
+        push    eax
+        push    0x6
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x20], ebx
+        call    ext_0041C9A0
+        push    0x14
+        call    ext_006A5C62
+        add     esp, 0x4
+        mov     dword ptr [esp + 0xc], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x18], 0x7
+        je      loc_43c88c
+        push    edi
+        push    esi
+        mov     ecx, eax
+        call    ext_004436B0
+        jmp     loc_43c88e
+    loc_43c88c:
+        xor     eax, eax
+    loc_43c88e:
+        push    eax
+        push    0x7
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x20], ebx
+        call    ext_0041C9A0
+        push    0x14
+        call    ext_006A5C62
+        add     esp, 0x4
+        mov     dword ptr [esp + 0xc], eax
+        test    eax, eax
+        mov     dword ptr [esp + 0x18], 0x8
+        je      loc_43c8c1
+        push    edi
+        push    esi
+        mov     ecx, eax
+        call    ext_00443700
+        jmp     loc_43c8c3
+    loc_43c8c1:
+        xor     eax, eax
+    loc_43c8c3:
+        push    eax
+        push    0x8
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x20], ebx
+        call    ext_0041C9A0
+        mov     ecx, dword ptr [esp + 0x10]
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x10
+        ret
+    }
+}
