@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `12890 / 24049` (**53.60%**) — `9798` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1377095 / 4496005 bytes` (**30.63%** of 4.29 MB)
+- **In-Scope Functions Matched:** `12891 / 24049` (**53.60%**) — `9799` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1377237 / 4496005 bytes` (**30.63%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -19,7 +19,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P30-40 (48-71B)** | 1342 / 2405 | 55.80% | 79632 / 144549 | 55.09% | 1063 fn |
 | **P40-50 (71-91B)** | 1190 / 2405 | 49.48% | 99096 / 194373 | 50.98% | 1215 fn |
 | **P50-60 (91-122B)** | 1317 / 2405 | 54.76% | 141875 / 256906 | 55.22% | 1088 fn |
-| **P60-70 (122-159B)** | 1029 / 2405 | 42.79% | 138748 / 339038 | 40.92% | 1376 fn |
+| **P60-70 (122-159B)** | 1030 / 2405 | 42.83% | 138890 / 339038 | 40.97% | 1375 fn |
 | **P70-80 (159-178B)** | 270 / 2405 | 11.23% | 45501 / 400567 | 11.36% | 2135 fn |
 | **P80-90 (178-335B)** | 971 / 2405 | 40.37% | 233018 / 583211 | 39.95% | 1434 fn |
 | **P90-100 (335-36100B)** | 657 / 2404 | 27.33% | 499303 / 2392860 | 20.87% | 1747 fn |
@@ -29,7 +29,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 68.93% |
-| `claude-haiku-5.5@low` | 1111 | 277099 | 11.34% |
+| `claude-haiku-5.5@low` | 1112 | 277241 | 11.35% |
 | `gemini-4-hydrogen@low` | 643 | 217824 | 6.56% |
 | `gemini-3.8-flash@low` | 635 | 206354 | 6.48% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.56% |

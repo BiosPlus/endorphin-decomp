@@ -7313,3 +7313,72 @@ extern "C" __declspec(naked) void* __fastcall fn_00505F00(void* self, int edx_un
         ret     0x4
     }
 }
+
+// [0x00506570] sub_00506570 (142 bytes)
+extern "C" void ext_00505F00();
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void __cdecl fn_00506570(void* begin, void* end, void* src) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        cmp ebx, dword ptr [esp + 0xc]
+        _emit 0x0f
+        _emit 0x84
+        _emit 0x7d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        lea ebp, [edi + 4]
+        lea esi, [ebx + 0x38]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    loop_top:
+        push ebp
+        lea ecx, [esi - 0x34]
+        call ext_00505F00
+        lea eax, [edi + 0x1c]
+        push eax
+        lea ecx, [esi - 0x1c]
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [edi + 0x38]
+        mov dword ptr [esi], eax
+        fld dword ptr [edi + 0x3c]
+        fstp dword ptr [esi + 4]
+        add ebx, 0x68
+        fld dword ptr [edi + 0x40]
+        add esi, 0x68
+        cmp ebx, dword ptr [esp + 0x18]
+        fstp dword ptr [esi - 0x60]
+        fld dword ptr [edi + 0x44]
+        fstp dword ptr [esi - 0x5c]
+        fld dword ptr [edi + 0x48]
+        fstp dword ptr [esi - 0x58]
+        fld dword ptr [edi + 0x4c]
+        fstp dword ptr [esi - 0x54]
+        fld dword ptr [edi + 0x50]
+        fstp dword ptr [esi - 0x50]
+        fld dword ptr [edi + 0x54]
+        fstp dword ptr [esi - 0x4c]
+        fld dword ptr [edi + 0x58]
+        fstp dword ptr [esi - 0x48]
+        fld dword ptr [edi + 0x5c]
+        fstp dword ptr [esi - 0x44]
+        fld dword ptr [edi + 0x60]
+        fstp dword ptr [esi - 0x40]
+        mov ecx, dword ptr [edi + 0x64]
+        mov dword ptr [esi - 0x3c], ecx
+        jne loop_top
+        pop edi
+        pop esi
+        pop ebp
+    done:
+        pop ebx
+        ret
+    }
+}
