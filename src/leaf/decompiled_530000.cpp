@@ -6506,3 +6506,22 @@ extern "C" __declspec(naked) void __fastcall fn_00536A30(void* self) {
         ret
     }
 }
+
+// [0x0053D070] sub_0053D070 (64 bytes)
+extern "C" void ext_0052F890();
+extern "C" void* ext_0063E000();
+extern "C" void ext_0063E00C();
+extern "C" void ext_0063E012();
+
+extern "C" void* __fastcall fn_0053D070(void* self) {
+    typedef void (__fastcall *InitFn)(void*);
+    typedef void* (__stdcall *NewQuadricFn)();
+    typedef void (__stdcall *QuadricArgFn)(void*, int);
+    ((InitFn)ext_0052F890)(self);
+    *(void**)self = (void*)0x9559b4;
+    ((void**)self)[5] = (void*)0x9559ac;
+    ((void**)self)[53] = ((NewQuadricFn)ext_0063E000)();
+    ((QuadricArgFn)ext_0063E012)(((void**)self)[53], 0x186ac);
+    ((QuadricArgFn)ext_0063E00C)(((void**)self)[53], 0x186a0);
+    return self;
+}
