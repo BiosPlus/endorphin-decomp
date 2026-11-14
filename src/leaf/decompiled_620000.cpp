@@ -8347,3 +8347,45 @@ extern "C" __declspec(naked) void __fastcall fn_00620C90(void* self) {
         ret
     }
 }
+
+// [0x00629170] sub_00629170 (91 bytes)
+extern "C" void ext_00628E60();
+extern "C" void ext_00628EE0();
+extern "C" void ext_00628F60();
+extern "C" void ext_00628FE0();
+extern "C" void ext_00629060();
+extern "C" void ext_006290E0();
+extern "C" void ext_006798D0();
+extern "C" int mem_00977F30;
+extern "C" int mem_00977F3C;
+extern "C" int mem_00977F54;
+extern "C" int mem_00977F64;
+extern "C" int mem_00977F74;
+extern "C" __declspec(naked) void __fastcall fn_00629170(void* self) {
+    __asm {
+        push ecx
+        lea eax, [esp]
+        push 0
+        push eax
+        call ext_006798D0
+        mov ecx, eax
+        call ext_006290E0
+        push offset mem_00977F74
+        lea ecx, [esp + 4]
+        call ext_00628E60
+        push offset mem_00977F64
+        lea ecx, [esp + 4]
+        call ext_00628EE0
+        push offset mem_00977F54
+        lea ecx, [esp + 4]
+        call ext_00628F60
+        push offset mem_00977F3C
+        lea ecx, [esp + 4]
+        call ext_00628FE0
+        push offset mem_00977F30
+        lea ecx, [esp + 4]
+        call ext_00629060
+        pop ecx
+        ret
+    }
+}
