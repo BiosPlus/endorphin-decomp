@@ -6469,3 +6469,41 @@ extern "C" void* __fastcall fn_00646570(void* self, int edx_unused, const void* 
     ((unsigned int*)self)[30] = ((const unsigned int*)other)[30];
     return self;
 }
+
+// [0x00640040] sub_00640040 (88 bytes)
+extern "C" void ext_0063E240();
+extern "C" void ext_0063FEE0();
+extern "C" int mem_008AEE88;
+extern "C" int mem_0097CCE8;
+
+extern "C" __declspec(naked) void* __fastcall fn_00640040(void* self, int edx_unused, int a, int b) {
+    __asm {
+        push -1
+        push offset mem_008AEE88
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x18]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x0C], esi
+        call ext_0063E240
+        xor eax, eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], eax
+        mov dword ptr [esi], offset mem_0097CCE8
+        mov byte ptr [esi + 0x24], al
+        call ext_0063FEE0
+        mov ecx, dword ptr [esp + 0x08]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 8
+    }
+}
