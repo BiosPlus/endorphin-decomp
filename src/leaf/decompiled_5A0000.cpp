@@ -5300,3 +5300,17 @@ extern "C" __declspec(naked) void __fastcall fn_005A7280(void* self) {
         ret
     }
 }
+
+// [0x005A9E30] sub_005A9E30 (63 bytes)
+extern "C" void ext_00496E80();
+extern "C" void ext_005A6750();
+extern "C" void ext_005A6800();
+extern "C" void ext_005A9C90();
+
+extern "C" void __cdecl fn_005A9E30(void* self) {
+    void* local;
+    ((void (__thiscall*)(void*, void*, const void*))ext_005A9C90)(self, &local, (const void*)0x00945310);
+    ((void (__thiscall*)(void*, const void*))ext_005A6750)(&local, (const void*)0x0095A9A4);
+    ((void (__thiscall*)(void*, const void*))ext_005A6800)(&local, (const void*)0x009576C4);
+    ((void (__cdecl*)(void*))ext_00496E80)(self);
+}
