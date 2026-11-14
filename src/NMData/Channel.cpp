@@ -110,3 +110,44 @@ L_end_00519EC0:
         ret 8
     }
 }
+
+// [0x00519FA0] NMData::Channel::vfunc_2 (89 bytes)
+extern "C" void __fastcall ext_00427550(void* self, int edx_unused, const char* s);
+extern "C" int __fastcall ext_00640110(void* self, int edx_unused, int arg);
+extern "C" int mem_00A9F838;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9FA6C;
+extern "C" int mem_00A430F4;
+
+extern "C" __declspec(naked) int __fastcall fn_00519FA0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F838]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0xc], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        mov ecx, dword ptr [mem_00A9FA6C]
+        push ecx
+        mov ecx, edi
+        call ext_00640110
+        mov edx, dword ptr [esi + 0x20]
+        mov dword ptr [esp + 0xc], eax
+        mov eax, dword ptr [edx * 4 + mem_00A430F4]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
