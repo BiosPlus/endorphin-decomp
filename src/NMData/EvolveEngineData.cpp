@@ -388,3 +388,61 @@ extern "C" __declspec(naked) void* __fastcall fn_00500BA0(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x00501D40] NMData::EvolveEngineData::vfunc_7_off_8 (118 bytes)
+extern "C" void ext_0040ECB0();
+extern "C" void ext_0065F550();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00501D40(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        push ebp
+        mov esi, ecx
+        call ext_0065F550
+        mov edi, dword ptr [esi + 0x128]
+        add esi, 0x124
+        cmp edi, dword ptr [esi + 0x8]
+        jbe fn501d40_l0
+        call dword ptr [mem_00925134]
+    fn501d40_l0:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe fn501d40_l1
+        call dword ptr [mem_00925134]
+    fn501d40_l1:
+        cmp esi, esi
+        je fn501d40_l2
+        call dword ptr [mem_00925134]
+    fn501d40_l2:
+        cmp edi, ebx
+        je fn501d40_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb fn501d40_l3
+        call dword ptr [mem_00925134]
+    fn501d40_l3:
+        mov ecx, dword ptr [edi]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x24]
+        call edx
+        push eax
+        mov ecx, ebp
+        call ext_0040ECB0
+        cmp edi, dword ptr [esi + 0x8]
+        jb fn501d40_l4
+        call dword ptr [mem_00925134]
+    fn501d40_l4:
+        add edi, 0x4
+        jmp fn501d40_l0
+    fn501d40_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
