@@ -916,3 +916,120 @@ extern "C" __declspec(naked) void __fastcall fn_0079D9B0(void* self) {
         jmp ext_0079D700
     }
 }
+
+extern "C" int mem_0092A278;
+extern "C" int mem_00997100;
+
+// [0x00796B60] sub_00796B60 (255 bytes)
+extern "C" __declspec(naked) double __cdecl fn_00796B60(double x, int i, unsigned int k, const double* t) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        sub esp, 0x14
+        mov ecx, dword ptr [ebp + 0x14]
+        push ebx
+        push esi
+        cmp ecx, 1
+        push edi
+        ja loc_796BAF
+        mov ecx, dword ptr [ebp + 0x18]
+        mov edx, dword ptr [ebp + 0x10]
+        fld qword ptr [ebp + 8]
+        fcomp qword ptr [ecx + edx*8]
+        fnstsw ax
+        test ah, 1
+        jne loc_796BA2
+        fld qword ptr [ebp + 8]
+        fcomp qword ptr [ecx + edx*8 + 8]
+        fnstsw ax
+        test ah, 1
+        je loc_796BA2
+        fld qword ptr [mem_0092A270]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    loc_796BA2:
+        fld qword ptr [mem_0092A278]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    loc_796BAF:
+        mov edi, dword ptr [ebp + 0x10]
+        mov esi, dword ptr [ebp + 0x18]
+        lea eax, [edi + ecx]
+        fld qword ptr [esi + eax*8 - 8]
+        fsub qword ptr [esi + edi*8]
+        lea ebx, [esi + eax*8]
+        fst qword ptr [esp + 0x10]
+        fcomp qword ptr [mem_00997100]
+        fnstsw ax
+        test ah, 0x41
+        jne loc_796BFC
+        mov edx, dword ptr [ebp + 8]
+        dec ecx
+        push esi
+        push ecx
+        mov ecx, dword ptr [ebp + 0xC]
+        push edi
+        push ecx
+        push edx
+        call fn_00796B60
+        fld qword ptr [ebp + 8]
+        fsub qword ptr [esi + edi*8]
+        mov ecx, dword ptr [ebp + 0x14]
+        add esp, 0x14
+        fdiv qword ptr [esp + 0x10]
+        fmulp st(1), st
+        fstp qword ptr [esp + 0x10]
+        jmp loc_796C0C
+    loc_796BFC:
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esp + 0x14], 0
+    loc_796C0C:
+        fld qword ptr [ebx]
+        fsub qword ptr [esi + edi*8 + 8]
+        inc edi
+        fst qword ptr [esp + 0x18]
+        fcomp qword ptr [mem_00997100]
+        fnstsw ax
+        test ah, 0x41
+        jne loc_796C4E
+        mov eax, dword ptr [ebp + 0xC]
+        dec ecx
+        push esi
+        push ecx
+        mov ecx, dword ptr [ebp + 8]
+        push edi
+        push eax
+        push ecx
+        call fn_00796B60
+        fld qword ptr [ebx]
+        fsub qword ptr [ebp + 8]
+        add esp, 0x14
+        fdiv qword ptr [esp + 0x18]
+        fmulp st(1), st
+        fadd qword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    loc_796C4E:
+        fld qword ptr [mem_0092A278]
+        fadd qword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
