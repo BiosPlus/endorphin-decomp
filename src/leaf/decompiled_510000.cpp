@@ -7830,3 +7830,43 @@ extern "C" __declspec(naked) bool __fastcall fn_0051E0D0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0051E120] sub_0051E120 (77 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_0051DF00();
+extern "C" __declspec(naked) bool __fastcall fn_0051E120(void* self, int /*edx*/, unsigned int count) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        xor eax, eax
+        cmp esi, eax
+        push edi
+        mov edi, ecx
+        mov dword ptr [edi + 0x4], eax
+        mov dword ptr [edi + 0x8], eax
+        mov dword ptr [edi + 0xc], eax
+        jne L_nonzero
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
+    L_nonzero:
+        cmp esi, 0xb60b60
+        jbe L_alloc
+        call ext_00405FB0
+    L_alloc:
+        push eax
+        push esi
+        call ext_0051DF00
+        imul esi, esi, 0x168
+        add esi, eax
+        add esp, 0x8
+        mov dword ptr [edi + 0x4], eax
+        mov dword ptr [edi + 0x8], eax
+        mov dword ptr [edi + 0xc], esi
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    }
+}
