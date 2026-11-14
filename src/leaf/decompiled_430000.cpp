@@ -18991,3 +18991,113 @@ L_0043A9EB:
         ret 0xc
     }
 }
+
+// [0x00435380] sub_00435380 (281 bytes)
+extern "C" void ext_00433B70();
+extern "C" void ext_0044B730();
+extern "C" void ext_0044B760();
+extern "C" void ext_00465B30();
+extern "C" void ext_00469410();
+extern "C" void ext_004694E0();
+
+extern "C" __declspec(naked) void __fastcall fn_00435380(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x100]
+        test ecx, ecx
+        je short L_skip0
+        call ext_0044B760
+        test al, al
+        je short L_skip0
+        mov ecx, dword ptr [esi + 0x100]
+        call ext_0044B730
+    L_skip0:
+        push 0
+        call ext_00465B30
+        mov ecx, eax
+        call ext_004694E0
+        test al, al
+        jne short L_skip1
+        push 0
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469410
+        push 0
+        mov ecx, esi
+        call ext_00433B70
+    L_skip1:
+        push 1
+        call ext_00465B30
+        mov ecx, eax
+        call ext_004694E0
+        test al, al
+        jne short L_skip2
+        push 1
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469410
+        push 1
+        mov ecx, esi
+        call ext_00433B70
+    L_skip2:
+        push 5
+        call ext_00465B30
+        mov ecx, eax
+        call ext_004694E0
+        test al, al
+        jne short L_skip3
+        push 5
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469410
+        push 5
+        mov ecx, esi
+        call ext_00433B70
+    L_skip3:
+        push 2
+        call ext_00465B30
+        mov ecx, eax
+        call ext_004694E0
+        test al, al
+        je short L_skip4
+        push 2
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469410
+        push 2
+        mov ecx, esi
+        call ext_00433B70
+    L_skip4:
+        push 4
+        call ext_00465B30
+        mov ecx, eax
+        call ext_004694E0
+        test al, al
+        je short L_skip5
+        push 4
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469410
+        push 4
+        mov ecx, esi
+        call ext_00433B70
+    L_skip5:
+        push 0xc
+        call ext_00465B30
+        mov ecx, eax
+        call ext_004694E0
+        test al, al
+        je short L_skip6
+        push 0xc
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00469410
+        push 0xc
+        mov ecx, esi
+        call ext_00433B70
+    L_skip6:
+        pop esi
+        ret
+    }
+}
