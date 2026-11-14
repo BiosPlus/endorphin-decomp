@@ -341,3 +341,54 @@ extern "C" __declspec(naked) void __fastcall fn_00524C10(void* self) {
         ret 0x4
     }
 }
+
+// [0x005246E0] NMData::NetworkConnectorData::vfunc_22 (105 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_005058B0();
+extern "C" void ext_00640110();
+extern "C" void ext_00870300();
+extern "C" int mem_00A9F838;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9EFE0;
+extern "C" int mem_00A9EFE8;
+extern "C" int mem_00A9F154;
+extern "C" int mem_00A9F168;
+
+extern "C" __declspec(naked) void __fastcall fn_005246E0(void* self) {
+    __asm {
+        mov     eax, dword ptr [mem_00A9F838]
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0xc]
+        mov     esi, ecx
+        push    eax
+        mov     ecx, edi
+        call    ext_00640110
+        lea     ecx, [esi + 0xa4]
+        mov     dword ptr [esp + 0xc], eax
+        call    dword ptr [mem_00924FF0]
+        push    eax
+        lea     ecx, [esp + 0x10]
+        call    ext_00427550
+        mov     ecx, dword ptr [mem_00A9EFE0]
+        mov     edx, dword ptr [mem_00A9EFE8]
+        push    ecx
+        push    edx
+        push    edi
+        lea     ecx, [esi + 0x38]
+        call    ext_00870300
+        mov     eax, dword ptr [mem_00A9F154]
+        mov     ecx, dword ptr [mem_00A9F168]
+        push    eax
+        push    ecx
+        push    edi
+        lea     ecx, [esi + 0x4c]
+        call    ext_00870300
+        push    edi
+        mov     ecx, esi
+        call    ext_005058B0
+        pop     edi
+        pop     esi
+        ret     0x4
+    }
+}
