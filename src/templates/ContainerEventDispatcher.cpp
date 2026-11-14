@@ -59,3 +59,23 @@ L_after:
         ret 0x4
     }
 }
+
+// [0x00466CA0] ContainerEventDispatcher<pointainer<std::vector<NMData::TriggeredEventData *, std::allocator<NMData::TriggeredEventData *>>>, NMData::TriggeredEventData>::vfunc_0 (69 bytes)
+extern "C" void ext_00678DE0();
+extern "C" void ext_006A5C5C();
+
+extern "C" void* __fastcall fn_00466CA0(void* self, int edx_unused, int a1) {
+    unsigned char* p = static_cast<unsigned char*>(self);
+    void* held = *reinterpret_cast<void**>(p + 0x18);
+    if (held != 0) {
+        reinterpret_cast<void (__cdecl*)(void*)>(ext_006A5C5C)(held);
+    }
+    *reinterpret_cast<int*>(p + 0x18) = 0;
+    *reinterpret_cast<int*>(p + 0x1C) = 0;
+    *reinterpret_cast<int*>(p + 0x20) = 0;
+    reinterpret_cast<void (__fastcall*)(void*)>(ext_00678DE0)(self);
+    if (a1 & 1) {
+        reinterpret_cast<void (__cdecl*)(void*)>(ext_006A5C5C)(self);
+    }
+    return self;
+}
