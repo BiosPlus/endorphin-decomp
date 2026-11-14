@@ -29,5 +29,7 @@
     "0x0080C4B2",
     "0x0080C4D1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-14T13:56:29Z"
 }
