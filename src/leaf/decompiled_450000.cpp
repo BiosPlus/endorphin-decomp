@@ -10275,3 +10275,31 @@ extern "C" __declspec(naked) int __fastcall fn_00454D10(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x004586E0] sub_004586E0 (49 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004586E0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [eax]
+        cmp dword ptr [ecx + 0x1c], edx
+        push esi
+        mov esi, dword ptr [eax + 0x4]
+        jne L_body
+        cmp dword ptr [ecx + 0x20], esi
+        je L_done
+L_body:
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [ecx + 0x1c], edx
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [ecx + 0x20], edx
+        mov ecx, dword ptr [ecx + 0x10]
+        mov edx, dword ptr [ecx]
+        push esi
+        push eax
+        mov eax, dword ptr [edx + 0x20]
+        call eax
+L_done:
+        pop esi
+        ret 0x8
+    }
+}
