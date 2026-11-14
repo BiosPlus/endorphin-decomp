@@ -8590,3 +8590,45 @@ extern "C" __declspec(naked) void __fastcall fn_0050A060(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0050DA10();
+extern "C" void ext_0050DF70();
+extern "C" void ext_0050DFF0();
+extern "C" void ext_0050E1D0();
+extern "C" void ext_0050E260();
+extern "C" void ext_0050E2B0();
+extern "C" int mem_00A9F438;
+extern "C" int mem_00950460;
+extern "C" int mem_00950450;
+
+// [0x0050E2F0] sub_0050E2F0 (82 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0050E2F0(void* self) {
+    __asm {
+        push    ecx
+        push    esi
+        mov     esi, dword ptr [esp + 0x0c]
+        push    0
+        lea     eax, [esp + 8]
+        push    eax
+        mov     ecx, esi
+        call    ext_0050E1D0
+        push    offset mem_00950460
+        lea     ecx, [esp + 8]
+        call    ext_0050DF70
+        push    offset mem_00950450
+        lea     ecx, [esp + 8]
+        call    ext_0050DFF0
+        mov     ecx, dword ptr [mem_00A9F438]
+        push    ecx
+        lea     ecx, [esp + 8]
+        call    ext_0050DA10
+        push    esi
+        call    ext_0050E260
+        push    esi
+        call    ext_0050E2B0
+        add     esp, 8
+        pop     esi
+        pop     ecx
+        ret
+    }
+}
