@@ -5900,3 +5900,156 @@ extern "C" __declspec(naked) void __fastcall fn_005A13F0(void* self) {
         ret 4
     }
 }
+
+// [0x005A0490] sub_005A0490 (423 bytes)
+extern "C" void ext_0063F8D0();
+extern "C" void ext_00640110();
+extern "C" void ext_00640270();
+extern "C" void ext_006404E0();
+extern "C" void ext_00667030();
+extern "C" int mem_00925134;
+extern "C" int mem_00A9F838;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00A9F0C4;
+extern "C" __declspec(naked) void __fastcall fn_005A0490(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x877622
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 48h
+        push ebx
+        lea eax, [ecx + 650h]
+        mov ecx, dword ptr [eax + 4]
+        mov ebx, dword ptr [ecx]
+        push ebp
+        push esi
+        push edi
+        mov edi, eax
+        mov dword ptr [esp + 14h], eax
+        mov dword ptr [esp + 1ch], ebx
+        mov dword ptr [esp + 18h], edi
+    L_top:
+        test edi, edi
+        mov esi, dword ptr [eax + 4]
+        je L_a
+        cmp edi, eax
+        je L_b
+    L_a:
+        mov ebp, dword ptr [mem_00925134]
+        call ebp
+        jmp L_c
+    L_b:
+        mov ebp, dword ptr [mem_00925134]
+    L_c:
+        cmp ebx, esi
+        je L_end
+        mov ecx, dword ptr [esp + 68h]
+        push 0x95e6dc
+        call ext_006404E0
+        test edi, edi
+        mov esi, eax
+        mov dword ptr [esp + 10h], esi
+        jne L_s1
+        call ebp
+    L_s1:
+        cmp ebx, dword ptr [edi + 4]
+        jne L_s2
+        call ebp
+    L_s2:
+        mov eax, dword ptr [mem_00A9F838]
+        push eax
+        mov ecx, esi
+        lea ebp, [ebx + 0ch]
+        call ext_00640110
+        mov ecx, ebp
+        mov esi, eax
+        call dword ptr [mem_00924FF0]
+        mov ecx, esi
+        mov ebp, eax
+        call ext_0063F8D0
+        push ebp
+        lea ecx, [esp + 24h]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 20h]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 64h], 0
+        call ext_00640270
+        lea ecx, [esp + 20h]
+        mov dword ptr [esp + 60h], 0ffffffffh
+        call dword ptr [mem_00924FF4]
+        cmp ebx, dword ptr [edi + 4]
+        mov ebp, dword ptr [mem_00925134]
+        jne L_s3
+        call ebp
+    L_s3:
+        mov edi, dword ptr [ebx + 2ch]
+        cmp edi, dword ptr [ebx + 30h]
+        jbe L_s4
+        call ebp
+    L_s4:
+        mov esi, dword ptr [ebx + 30h]
+        cmp dword ptr [ebx + 2ch], esi
+        jbe L_s5
+        call ebp
+    L_s5:
+        cmp edi, esi
+        je L_s6
+        cmp edi, dword ptr [ebx + 30h]
+        jb L_s7
+        call ebp
+    L_s7:
+        mov edx, dword ptr [mem_00A9F0C4]
+        mov ecx, dword ptr [esp + 10h]
+        mov esi, dword ptr [mem_00A9F838]
+        push edx
+        call ext_006404E0
+        push esi
+        mov ecx, eax
+        call ext_00640110
+        mov ecx, edi
+        mov esi, eax
+        call dword ptr [mem_00924FF0]
+        mov ecx, esi
+        mov ebp, eax
+        call ext_0063F8D0
+        push ebp
+        lea ecx, [esp + 40h]
+        call dword ptr [mem_00924FE4]
+        lea eax, [esp + 3ch]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 64h], 1
+        call ext_00640270
+        lea ecx, [esp + 3ch]
+        mov dword ptr [esp + 60h], 0ffffffffh
+        call dword ptr [mem_00924FF4]
+        cmp edi, dword ptr [ebx + 30h]
+        jb L_s8
+        call dword ptr [mem_00925134]
+    L_s8:
+        mov ebp, dword ptr [mem_00925134]
+        add edi, 1ch
+        jmp L_s4
+    L_s6:
+        lea ecx, [esp + 18h]
+        call ext_00667030
+        mov ebx, dword ptr [esp + 1ch]
+        mov edi, dword ptr [esp + 18h]
+        mov eax, dword ptr [esp + 14h]
+        jmp L_top
+    L_end:
+        mov ecx, dword ptr [esp + 58h]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 54h
+        ret 4
+    }
+}
