@@ -13902,3 +13902,135 @@ done:
         ret 0x4
     }
 }
+
+// [0x00682590] sub_00682590 (309 bytes)
+extern "C" void ext_004DA180();
+extern "C" void ext_00673C20();
+extern "C" void ext_00682280();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00925134;
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void __fastcall fn_00682590(void* self) {
+    __asm {
+        sub esp, 0x1c
+        push ebx
+        push ebp
+        push esi
+        push edi
+        sub esp, 0x1c
+        mov edi, ecx
+        mov ebx, dword ptr [edi + 0xc]
+        mov ecx, esp
+        mov dword ptr [esp + 0x34], esp
+        call dword ptr [mem_00924FE8]
+        lea esi, [edi + 0x10]
+        push ebx
+        mov ecx, esi
+        call ext_004DA180
+        mov eax, dword ptr [edi + 0x8]
+        mov eax, dword ptr [eax]
+        mov edx, dword ptr [edi + 0x8]
+        lea ecx, [edi + 0x4]
+        xor ebp, ebp
+        mov edi, ecx
+        mov ebx, eax
+        mov dword ptr [esp + 0x18], ecx
+        mov dword ptr [esp + 0x1c], edi
+        mov dword ptr [esp + 0x20], ebx
+        mov dword ptr [esp + 0x28], edx
+        mov dword ptr [esp + 0x10], ebp
+        jmp LOOP_TEST
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+LOOP_TEST:
+        test edi, edi
+        je LINVALID1
+        cmp edi, ecx
+        je LCHK1
+LINVALID1:
+        call dword ptr [mem_00925134]
+LCHK1:
+        cmp ebx, dword ptr [esp + 0x28]
+        je LEND
+        test edi, edi
+        jne LCHK2
+        call dword ptr [mem_00925134]
+LCHK2:
+        cmp ebx, dword ptr [edi + 0x4]
+        jne LCHK3
+        call dword ptr [mem_00925134]
+LCHK3:
+        cmp ebx, dword ptr [edi + 0x4]
+        lea eax, [ebx + 0xc]
+        mov dword ptr [esp + 0x14], eax
+        jne LCHK4
+        call dword ptr [mem_00925134]
+LCHK4:
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je LINVALID2
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp ebp, eax
+        jb LBODY
+LINVALID2:
+        call dword ptr [mem_00925134]
+LBODY:
+        mov ecx, dword ptr [esp + 0x14]
+        mov edi, dword ptr [esp + 0x10]
+        push ecx
+        mov ecx, dword ptr [esi + 0x4]
+        add ecx, edi
+        call dword ptr [mem_00924FDC]
+        add edi, 0x1c
+        lea ecx, [esp + 0x1c]
+        add ebp, 0x1
+        mov dword ptr [esp + 0x10], edi
+        call ext_00673C20
+        mov ebx, dword ptr [esp + 0x20]
+        mov edi, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x18]
+        jmp LOOP_TEST
+LEND:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        mov ebp, dword ptr [mem_00925134]
+        mov dword ptr [esp + 0x18], 0x682150
+        jbe LE1
+        call ebp
+LE1:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe LE2
+        call ebp
+LE2:
+        cmp esi, esi
+        je LE3
+        call ebp
+LE3:
+        cmp edi, ebx
+        je LRET
+        push 0x0
+        lea edx, [esp + 0x1c]
+        push edx
+        push ebx
+        push edi
+        call ext_00682280
+        add esp, 0x10
+LRET:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x1c
+        ret
+    }
+}
