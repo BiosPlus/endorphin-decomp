@@ -3,6 +3,9 @@
 #include <string>
 extern "C" void ext_004AE420();
 extern "C" void ext_006A5C5C();
+extern "C" void ext_004F21C0();
+extern "C" void ext_00676C90();
+extern "C" void ext_006775F0();
 
 extern "C" void ext_006A5C5C();
 extern "C" __declspec(naked) void __fastcall fn_004AEC60(void* self) {
@@ -9199,5 +9202,105 @@ extern "C" __declspec(naked) void* __fastcall fn_004A8FB0(void* self, int edx_un
         pop ebx
         add esp, 0ch
         ret 8
+    }
+}
+
+// [0x004AED20] sub_004AED20 (278 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004AED20(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        __asm _emit 0x6A __asm _emit 0xFF // push -0x1
+        __asm _emit 0x68 __asm _emit 0x56 __asm _emit 0x90 __asm _emit 0x88 __asm _emit 0x00 // push 0x889056
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, fs:[0]
+        __asm _emit 0x50 // push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov fs:[0], esp
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0x56 // push esi
+        __asm _emit 0x8B __asm _emit 0xF1 // mov esi, ecx
+        __asm _emit 0x57 // push edi
+        __asm _emit 0x8B __asm _emit 0x7E __asm _emit 0x08 // mov edi, [esi + 0x8]
+        __asm _emit 0x33 __asm _emit 0xDB // xor ebx, ebx
+        __asm _emit 0x3B __asm _emit 0xFB // cmp edi, ebx
+        __asm _emit 0x74 __asm _emit 0x10 // je +0x10
+        __asm _emit 0x8B __asm _emit 0xCF // mov ecx, edi
+        __asm _emit 0xE8 __asm _emit 0x45 __asm _emit 0x7F __asm _emit 0x1C __asm _emit 0x00 // call sub_00676C90
+        __asm _emit 0x57 // push edi
+        __asm _emit 0xE8 __asm _emit 0x0B __asm _emit 0x6F __asm _emit 0x1F __asm _emit 0x00 // call thunk_MFC80_ord_764
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04 // add esp, 4
+        __asm _emit 0x55 // push ebp
+        __asm _emit 0x6A __asm _emit 0x7C // push 0x7c
+        __asm _emit 0x89 __asm _emit 0x5E __asm _emit 0x08 // mov [esi + 0x8], ebx
+        __asm _emit 0xE8 __asm _emit 0x03 __asm _emit 0x6F __asm _emit 0x1F __asm _emit 0x00 // call thunk_MFC80_ord_762
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04 // add esp, 4
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x10 // mov [esp + 0x10], eax
+        __asm _emit 0x3B __asm _emit 0xC3 // cmp eax, ebx
+        __asm _emit 0x8B __asm _emit 0x6C __asm _emit 0x24 __asm _emit 0x28 // mov ebp, [esp + 0x28]
+        __asm _emit 0x89 __asm _emit 0x5C __asm _emit 0x24 __asm _emit 0x1C // mov [esp + 0x1c], ebx
+        __asm _emit 0x74 __asm _emit 0x11 // je +0x11
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x24 // mov ecx, [esp + 0x24]
+        __asm _emit 0x55 // push ebp
+        __asm _emit 0x51 // push ecx
+        __asm _emit 0x8B __asm _emit 0xC8 // mov ecx, eax
+        __asm _emit 0xE8 __asm _emit 0x71 __asm _emit 0x88 __asm _emit 0x1C __asm _emit 0x00 // call sub_006775F0
+        __asm _emit 0x8B __asm _emit 0xF8 // mov edi, eax
+        __asm _emit 0xEB __asm _emit 0x02 // jmp +0x2
+        __asm _emit 0x33 __asm _emit 0xFF // xor edi, edi
+        __asm _emit 0x8B __asm _emit 0x5E __asm _emit 0x08 // mov ebx, [esi + 0x8]
+        __asm _emit 0x3B __asm _emit 0xFB // cmp edi, ebx
+        __asm _emit 0xC7 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x1C __asm _emit 0xFF __asm _emit 0xFF __asm _emit 0xFF __asm _emit 0xFF // mov [esp + 0x1c], -1
+        __asm _emit 0x74 __asm _emit 0x14 // je +0x14
+        __asm _emit 0x85 __asm _emit 0xDB // test ebx, ebx
+        __asm _emit 0x74 __asm _emit 0x10 // je +0x10
+        __asm _emit 0x8B __asm _emit 0xCB // mov ecx, ebx
+        __asm _emit 0xE8 __asm _emit 0xF1 __asm _emit 0x7E __asm _emit 0x1C __asm _emit 0x00 // call sub_00676C90
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0xE8 __asm _emit 0xB7 __asm _emit 0x6E __asm _emit 0x1F __asm _emit 0x00 // call thunk_MFC80_ord_764
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04 // add esp, 4
+        __asm _emit 0x89 __asm _emit 0x7E __asm _emit 0x08 // mov [esi + 0x8], edi
+        __asm _emit 0x8B __asm _emit 0x7E __asm _emit 0x0C // mov edi, [esi + 0xc]
+        __asm _emit 0x85 __asm _emit 0xFF // test edi, edi
+        __asm _emit 0x74 __asm _emit 0x10 // je +0x10
+        __asm _emit 0x8B __asm _emit 0xCF // mov ecx, edi
+        __asm _emit 0xE8 __asm _emit 0xD7 __asm _emit 0x2F __asm _emit 0x04 __asm _emit 0x00 // call sub_004F1D90
+        __asm _emit 0x57 // push edi
+        __asm _emit 0xE8 __asm _emit 0x9D __asm _emit 0x6E __asm _emit 0x1F __asm _emit 0x00 // call thunk_MFC80_ord_764
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04 // add esp, 4
+        __asm _emit 0x68 __asm _emit 0x60 __asm _emit 0x02 __asm _emit 0x00 __asm _emit 0x00 // push 0x260
+        __asm _emit 0xC7 __asm _emit 0x46 __asm _emit 0x0C __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov [esi + 0xc], 0
+        __asm _emit 0xE8 __asm _emit 0x8F __asm _emit 0x6E __asm _emit 0x1F __asm _emit 0x00 // call thunk_MFC80_ord_762
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04 // add esp, 4
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x28 // mov [esp + 0x28], eax
+        __asm _emit 0x85 __asm _emit 0xC0 // test eax, eax
+        __asm _emit 0xC7 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x1C __asm _emit 0x01 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov [esp + 0x1c], 1
+        __asm _emit 0x74 __asm _emit 0x13 // je +0x13
+        __asm _emit 0x8B __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x24 // mov edx, [esp + 0x24]
+        __asm _emit 0x6A __asm _emit 0x00 // push 0
+        __asm _emit 0x55 // push ebp
+        __asm _emit 0x52 // push edx
+        __asm _emit 0x8B __asm _emit 0xC8 // mov ecx, eax
+        __asm _emit 0xE8 __asm _emit 0xCB __asm _emit 0x33 __asm _emit 0x04 __asm _emit 0x00 // call sub_004F21C0
+        __asm _emit 0x8B __asm _emit 0xF8 // mov edi, eax
+        __asm _emit 0xEB __asm _emit 0x02 // jmp +0x2
+        __asm _emit 0x33 __asm _emit 0xFF // xor edi, edi
+        __asm _emit 0x8B __asm _emit 0x5E __asm _emit 0x0C // mov ebx, [esi + 0xc]
+        __asm _emit 0x3B __asm _emit 0xFB // cmp edi, ebx
+        __asm _emit 0xC7 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x1C __asm _emit 0xFF __asm _emit 0xFF __asm _emit 0xFF __asm _emit 0xFF // mov [esp + 0x1c], -1
+        __asm _emit 0x5D // pop ebp
+        __asm _emit 0x74 __asm _emit 0x14 // je +0x14
+        __asm _emit 0x85 __asm _emit 0xDB // test ebx, ebx
+        __asm _emit 0x74 __asm _emit 0x10 // je +0x10
+        __asm _emit 0x8B __asm _emit 0xCB // mov ecx, ebx
+        __asm _emit 0xE8 __asm _emit 0x7A __asm _emit 0x2F __asm _emit 0x04 __asm _emit 0x00 // call sub_004F1D90
+        __asm _emit 0x53 // push ebx
+        __asm _emit 0xE8 __asm _emit 0x40 __asm _emit 0x6E __asm _emit 0x1F __asm _emit 0x00 // call thunk_MFC80_ord_764
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04 // add esp, 4
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x10 // mov ecx, [esp + 0x10]
+        __asm _emit 0x89 __asm _emit 0x7E __asm _emit 0x0C // mov [esi + 0xc], edi
+        __asm _emit 0x5F // pop edi
+        __asm _emit 0x5E // pop esi
+        __asm _emit 0x5B // pop ebx
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov fs:[0], ecx
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x10 // add esp, 0x10
+        __asm _emit 0xC2 __asm _emit 0x08 __asm _emit 0x00 // ret 0x8
     }
 }
