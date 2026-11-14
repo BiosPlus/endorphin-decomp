@@ -1057,3 +1057,53 @@ extern "C" __declspec(naked) void __fastcall fn_006F5720(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void __stdcall ext_006FB670(int a1, int a2);
+extern "C" void __stdcall ext_006FBF10(int a1, int a2, int a3);
+
+// [0x006FC100] sub_006FC100 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FC100(void* self, int edx_unused, int idx, int a2) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx + 0x18]
+        cmp edx, eax
+        jge l_ge
+        mov eax, dword ptr [ecx + 0x14]
+        add eax, edx
+        mov edx, dword ptr [ecx + 0x10]
+        lea eax, [eax + 2*eax]
+        lea edx, [edx + 4*eax]
+        mov eax, dword ptr [edx + 0x4]
+        test eax, eax
+        je l_null
+        push esi
+        mov esi, dword ptr [eax]
+        push edi
+        mov edi, dword ptr [edx]
+        cmp esi, edi
+        pop edi
+        pop esi
+        jne l_null
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [eax + 0x4]
+        push -0x1
+        push edx
+        push eax
+        call ext_006FBF10
+        ret 0x8
+    l_null:
+        mov edx, dword ptr [esp + 0x8]
+        xor eax, eax
+        push -0x1
+        push edx
+        push eax
+        call ext_006FBF10
+        ret 0x8
+    l_ge:
+        mov eax, dword ptr [esp + 0x8]
+        push 0x0
+        push eax
+        call ext_006FB670
+        ret 0x8
+    }
+}
