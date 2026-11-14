@@ -755,3 +755,119 @@ extern "C" __declspec(naked) void __fastcall fn_005CC420(void* self) {
         ret
     }
 }
+
+// [0x005CCE20] NMData::CollisionModelData::vfunc_12_off_C (306 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_00481BD0();
+extern "C" void ext_005BF460();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) bool __fastcall fn_005CCE20(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push 0x87ba98
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x10
+        push ebp
+        mov ebp, ecx
+        mov eax, [ebp + 0x158]
+        push esi
+        xor esi, esi
+        cmp eax, esi
+        je L_5cce67
+        mov eax, [eax + 0x20c]
+        mov ecx, [eax + 0x18c]
+        cmp ecx, esi
+        je L_5cce67
+        mov eax, [ecx]
+        mov edx, [eax + 0x48]
+        call edx
+        test al, al
+        je L_5ccf3d
+    L_5cce67:
+        mov ecx, [esp + 0x2c]
+        lea eax, [ebp - 0xc]
+        push eax
+        call ext_00481BD0
+        cmp dword ptr [ebp + 0x158], esi
+        je L_5ccf3d
+        push ebx
+        push edi
+        mov [esp + 0x14], esi
+        mov [esp + 0x18], esi
+        mov [esp + 0x1c], esi
+        mov edi, [ebp + 0x74]
+        cmp edi, [ebp + 0x78]
+        mov [esp + 0x28], esi
+        lea esi, [ebp + 0x70]
+        jbe L_5ccea3
+        call dword ptr [mem_00925134]
+    L_5ccea3:
+        mov ebx, [esi + 0x8]
+        cmp [esi + 0x4], ebx
+        jbe L_5cceb1
+        call dword ptr [mem_00925134]
+    L_5cceb1:
+        cmp esi, esi
+        je L_5ccebb
+        call dword ptr [mem_00925134]
+    L_5ccebb:
+        cmp edi, ebx
+        je L_5ccee4
+        cmp edi, [esi + 0x8]
+        jb L_5cceca
+        call dword ptr [mem_00925134]
+    L_5cceca:
+        push edi
+        lea ecx, [esp + 0x14]
+        call ext_0041A920
+        cmp edi, [esi + 0x8]
+        jb L_5ccedf
+        call dword ptr [mem_00925134]
+    L_5ccedf:
+        add edi, 0x4
+        jmp L_5ccea3
+    L_5ccee4:
+        lea eax, [esp + 0x34]
+        lea esi, [ebp - 0xc]
+        push eax
+        lea ecx, [esp + 0x14]
+        mov [esp + 0x38], esi
+        call ext_0041A920
+        mov ecx, [esp + 0x30]
+        mov edx, [ecx]
+        mov edx, [edx + 0x44]
+        lea eax, [esp + 0x10]
+        push eax
+        call edx
+        mov ecx, [ebp + 0x158]
+        push esi
+        call ext_005BF460
+        mov eax, [esp + 0x14]
+        test eax, eax
+        pop edi
+        pop ebx
+        je L_5ccf28
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+    L_5ccf28:
+        pop esi
+        mov al, 0x1
+        pop ebp
+        mov ecx, [esp + 0x10]
+        mov fs:[0], ecx
+        add esp, 0x1c
+        ret 0x8
+    L_5ccf3d:
+        mov ecx, [esp + 0x18]
+        pop esi
+        xor al, al
+        pop ebp
+        mov fs:[0], ecx
+        add esp, 0x1c
+        ret 0x8
+    }
+}
