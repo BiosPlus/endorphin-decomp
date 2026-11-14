@@ -751,3 +751,88 @@ extern "C" __declspec(naked) void __fastcall fn_004582F0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00454C30] ButtonPanel::vfunc_102 (212 bytes)
+extern "C" int mem_00925670;
+extern "C" void ext_00455F40();
+extern "C" void ext_00456370();
+
+extern "C" __declspec(naked) void __fastcall fn_00454C30(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 20h
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 2Ch]
+        push esi
+        mov esi, dword ptr [mem_00925670]
+        push edi
+        push ebp
+        lea eax, [esp + 24h]
+        push eax
+        mov ebx, ecx
+        call esi
+        mov edi, dword ptr [esp + 38h]
+        push edi
+        push ebp
+        mov ecx, ebx
+        call ext_00456370
+        push ebp
+        lea ecx, [esp + 14h]
+        push ecx
+        call esi
+        mov ecx, ebx
+        call ext_00455F40
+        test eax, eax
+        jne L_454CDE
+        mov edx, dword ptr [ebx]
+        mov eax, dword ptr [edx + 1A4h]
+        mov ecx, ebx
+        call eax
+        test eax, eax
+        je L_454CA2
+        cmp edi, 0E81Bh
+        je L_454C8B
+        cmp edi, 0E81Eh
+        jne L_454CA2
+L_454C8B:
+        mov eax, dword ptr [esp + 10h]
+        add eax, dword ptr [ebx + 108h]
+        mov edi, dword ptr [esp + 14h]
+        mov dword ptr [esp + 10h], eax
+        lea esi, [eax - 0Dh]
+        jmp L_454CBA
+L_454CA2:
+        mov eax, dword ptr [esp + 14h]
+        add eax, dword ptr [ebx + 108h]
+        mov esi, dword ptr [esp + 18h]
+        mov dword ptr [esp + 14h], eax
+        add esi, -0Ch
+        lea edi, [eax - 0Dh]
+L_454CBA:
+        mov edx, dword ptr [ebx]
+        mov eax, dword ptr [edx + 1A0h]
+        mov ecx, ebx
+        call eax
+        test eax, eax
+        je L_454CDE
+        sub esi, dword ptr [esp + 20h]
+        sub edi, dword ptr [esp + 24h]
+        mov dword ptr [ebx + 114h], esi
+        mov dword ptr [ebx + 118h], edi
+L_454CDE:
+        mov ecx, dword ptr [esp + 10h]
+        mov edx, dword ptr [esp + 14h]
+        mov eax, dword ptr [esp + 18h]
+        mov dword ptr [ebp], ecx
+        mov ecx, dword ptr [esp + 1Ch]
+        pop edi
+        mov dword ptr [ebp + 4], edx
+        mov dword ptr [ebp + 8], eax
+        pop esi
+        mov dword ptr [ebp + 0Ch], ecx
+        pop ebp
+        pop ebx
+        add esp, 20h
+        ret 8
+    }
+}
