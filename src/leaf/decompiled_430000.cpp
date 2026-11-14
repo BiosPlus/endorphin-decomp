@@ -14447,3 +14447,96 @@ L_435C9B:
         ret 0x4
     }
 }
+
+// [0x00438E40] sub_00438E40 (232 bytes)
+extern "C" void ext_004026E0();
+extern "C" void ext_00430EF0();
+extern "C" void ext_0044BC40();
+extern "C" void ext_0044BC50();
+extern "C" void ext_00465B30();
+extern "C" void ext_00468FB0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00438E40(void* self) {
+    __asm {
+        push -1
+        push 0x8a1908
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x20
+        push ebx
+        push ebp
+        xor ebx, ebx
+        push esi
+        push edi
+        mov esi, ecx
+        mov dword ptr [esp + 0x24], ebx
+        mov dword ptr [esp + 0x28], ebx
+        mov dword ptr [esp + 0x2c], ebx
+        mov ecx, dword ptr [esi + 0x100]
+        lea eax, [esp + 0x20]
+        push eax
+        mov dword ptr [esp + 0x3c], ebx
+        call ext_0044BC40
+        mov ecx, dword ptr [esi + 0x100]
+        call ext_0044BC50
+        mov esi, dword ptr [esp + 0x24]
+        mov edi, dword ptr [mem_00925134]
+        mov dword ptr [esp + 0x10], eax
+        mov eax, dword ptr [esp + 0x28]
+        cmp esi, eax
+        mov dword ptr [esp + 0x14], eax
+        jbe loc_438EAF
+        call edi
+        mov eax, dword ptr [esp + 0x28]
+        mov esi, dword ptr [esp + 0x24]
+loc_438EAF:
+        cmp esi, eax
+        mov ebp, eax
+        jbe loc_438EC5
+        call edi
+        mov eax, dword ptr [esp + 0x28]
+        mov esi, dword ptr [esp + 0x24]
+        cmp esi, eax
+        jbe loc_438EC5
+        call edi
+loc_438EC5:
+        mov ecx, dword ptr [esp + 0x10]
+        push ecx
+        push ebp
+        push esi
+        lea edi, [esp + 0x2c]
+        mov dword ptr [esp + 0x28], esi
+        call ext_00430EF0
+        add esp, 0xc
+        cmp edi, ebx
+        mov esi, eax
+        je loc_438EE8
+        mov edx, edi
+        cmp edi, edx
+        je loc_438EEE
+loc_438EE8:
+        call dword ptr [mem_00925134]
+loc_438EEE:
+        cmp esi, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        je loc_438F08
+        mov eax, dword ptr [esp]
+        push eax
+        call ext_00465B30
+        mov ecx, eax
+        call ext_00468FB0
+loc_438F08:
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x28], 0xffffffff
+        call ext_004026E0
+        mov ecx, dword ptr [esp + 0x20]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2c
+        ret
+    }
+}
