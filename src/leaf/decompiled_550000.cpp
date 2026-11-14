@@ -10549,3 +10549,77 @@ null_out:
         ret 4
     }
 }
+
+// [0x00557710] sub_00557710 (143 bytes)
+extern "C" void ext_00556EF0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00557710(void* self) {
+    __asm {
+        push    ecx
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [esp + 0x14]
+        push    esi
+        mov     esi, ecx
+        mov     ebx, dword ptr [esi + 0x4]
+        test    ebx, ebx
+        push    edi
+        je      L_zero_edi
+        mov     eax, dword ptr [esi + 0x8]
+        mov     ecx, eax
+        sub     ecx, ebx
+        sar     ecx, 0x5
+        jne     L_check_begin_end
+L_zero_edi:
+        xor     edi, edi
+        jmp     L_call_insert
+L_check_begin_end:
+        cmp     ebx, eax
+        jbe     L_check_where
+        call    dword ptr [mem_00925134]
+L_check_where:
+        test    ebp, ebp
+        je      L_invalid_where
+        cmp     ebp, esi
+        je      L_calc_offset
+L_invalid_where:
+        call    dword ptr [mem_00925134]
+L_calc_offset:
+        mov     edi, dword ptr [esp + 0x20]
+        sub     edi, ebx
+        sar     edi, 0x5
+L_call_insert:
+        mov     edx, dword ptr [esp + 0x24]
+        mov     eax, dword ptr [esp + 0x20]
+        push    edx
+        push    0x1
+        push    eax
+        push    ebp
+        mov     ecx, esi
+        call    ext_00556EF0
+        mov     ebx, dword ptr [esi + 0x4]
+        cmp     ebx, dword ptr [esi + 0x8]
+        jbe     L_recalc_iter
+        call    dword ptr [mem_00925134]
+L_recalc_iter:
+        shl     edi, 0x5
+        add     edi, ebx
+        cmp     edi, dword ptr [esi + 0x8]
+        mov     dword ptr [esp + 0x20], ebx
+        ja      L_invalid_ret
+        cmp     edi, dword ptr [esi + 0x4]
+        jae     L_done
+L_invalid_ret:
+        call    dword ptr [mem_00925134]
+L_done:
+        mov     eax, dword ptr [esp + 0x18]
+        mov     dword ptr [eax + 0x4], edi
+        pop     edi
+        mov     dword ptr [eax], esi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        pop     ecx
+        ret     0x10
+    }
+}
