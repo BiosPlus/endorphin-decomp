@@ -468,3 +468,43 @@ done_0066CFD0:
         ret 4
     }
 }
+
+// [0x0066B4A0] ExprParser::StringType::vfunc_33 (109 bytes)
+extern "C" void ext_00698AD0();
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0066B4A0(void* self) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x74]
+        push esi
+        mov esi, dword ptr [esp + 0x30]
+        push esi
+        call edx
+        mov eax, dword ptr [esp + 0x38]
+        push eax
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, dword ptr [esp + 0x3c]
+        call ext_00698AD0
+        mov ecx, dword ptr [esi]
+        push eax
+        mov dword ptr [esp + 0x2c], 0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0xc
+    }
+}
