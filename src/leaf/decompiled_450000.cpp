@@ -8760,3 +8760,72 @@ L_done_00459060:
         ret
     }
 }
+
+// [0x00459100] sub_00459100 (152 bytes)
+extern "C" void ext_00458E30();
+extern "C" void ext_00459060();
+extern "C" int mem_0092561C;
+extern "C" int mem_0092422C;
+extern "C" int mem_00924228;
+extern "C" int mem_009255F0;
+extern "C" int mem_00925644;
+extern "C" int mem_00925650;
+extern "C" __declspec(naked) int __fastcall fn_00459100(void* self) {
+    __asm {
+        push ebx
+        push edi
+        mov edi, ecx
+        cmp dword ptr [edi + 0x1c], 0
+        jne L_fail_00459100
+        mov ebx, dword ptr [esp + 0xc]
+        push ebx
+        call dword ptr [mem_0092561C]
+        test eax, eax
+        je L_fail_00459100
+        push esi
+        lea esi, [edi + 0x4]
+        mov eax, offset ext_00458E30
+        sub eax, esi
+        push 0xd
+        sub eax, 0xd
+        push esi
+        mov dword ptr [esi], 0x42444c7
+        mov dword ptr [esi + 0x4], edi
+        mov byte ptr [esi + 0x8], 0xe9
+        mov dword ptr [esi + 0x9], eax
+        call dword ptr [mem_0092422C]
+        push eax
+        call dword ptr [mem_00924228]
+        push esi
+        push -4
+        push ebx
+        call dword ptr [mem_009255F0]
+        test eax, eax
+        pop esi
+        je L_fail_00459100
+        cmp dword ptr [esp + 0x10], 0
+        mov dword ptr [edi + 0x14], eax
+        mov dword ptr [edi + 0x1c], ebx
+        je L_success_00459100
+        push -0x10
+        push ebx
+        call dword ptr [mem_00925644]
+        test eax, 0x40000000
+        je L_success_00459100
+        push ebx
+        call dword ptr [mem_00925650]
+        push eax
+        call ext_00459060
+        add esp, 4
+    L_success_00459100:
+        pop edi
+        mov eax, 1
+        pop ebx
+        ret 8
+    L_fail_00459100:
+        pop edi
+        xor eax, eax
+        pop ebx
+        ret 8
+    }
+}
