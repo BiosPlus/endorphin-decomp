@@ -8725,3 +8725,49 @@ extern "C" __declspec(naked) void __fastcall fn_00468FB0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0046BF30] sub_0046BF30 (75 bytes)
+extern "C" void ext_0046B190();
+extern "C" void ext_00596660();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __cdecl fn_0046BF30(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_46BF4B_30
+        call ebp
+L_46BF4B_30:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L_46BF55_30
+        call ebp
+L_46BF55_30:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_00596660
+        mov ecx, dword ptr [esp + 0x20]
+        push ecx
+        push esi
+        call ext_0046B190
+        add esp, 0x8
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
