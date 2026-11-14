@@ -17235,3 +17235,50 @@ extern "C" void __cdecl fn_007D5A00(void* a1, void* a2) {
         ((void (__cdecl*)(void*))ext_007CC9E0)(p);
     }
 }
+
+// [0x007D4920] sub_007D4920 (76 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007D4920(void* a0, void* a1, void* a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp esi, ebx
+        je short loc_7D4967
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        cmp esi, edi
+        je short loc_7D495E
+        mov eax, dword ptr [esi]
+        push edi
+        push eax
+        push ebx
+        call ext_007D4920
+        add esp, 0xc
+        test eax, eax
+        jne short loc_7D495E
+        mov ecx, dword ptr [esi + 4]
+        push edi
+        push ecx
+        push ebx
+        call ext_007D4920
+        add esp, 0xc
+        test eax, eax
+        jne short loc_7D495E
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    loc_7D495E:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret
+    loc_7D4967:
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
