@@ -495,3 +495,41 @@ extern "C" __declspec(naked) void __fastcall fn_004D86A0(void* self) {
         __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00
     }
 }
+
+// [0x00512A00] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationRate(void) const, 0}, 1>::vfunc_1 (109 bytes)
+extern "C" void ext_00511960();
+extern "C" int mem_00924FF0;
+extern "C" int mem_009251F0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00512A00(void* self) {
+    __asm {
+        __asm _emit 0x6A __asm _emit 0xFF
+        __asm _emit 0x68 __asm _emit 0xF9 __asm _emit 0x56 __asm _emit 0x8B __asm _emit 0x00
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0x50
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0x83 __asm _emit 0xEC __asm _emit 0x1C
+        __asm _emit 0x8B __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x2C
+        __asm _emit 0x8B __asm _emit 0x10
+        __asm _emit 0x52
+        __asm _emit 0x8D __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x04
+        __asm _emit 0x50
+        __asm call ext_00511960
+        __asm _emit 0x8B __asm _emit 0xC8
+        __asm _emit 0xC7 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm call dword ptr [mem_00924FF0]
+        __asm _emit 0x50
+        __asm call dword ptr [mem_009251F0]
+        __asm _emit 0xD9 __asm _emit 0x5C __asm _emit 0x24 __asm _emit 0x30
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x04
+        __asm _emit 0x8D __asm _emit 0x0C __asm _emit 0x24
+        __asm _emit 0xC7 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x24 __asm _emit 0xFF __asm _emit 0xFF __asm _emit 0xFF __asm _emit 0xFF
+        __asm call dword ptr [mem_00924FF4]
+        __asm _emit 0xD9 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x2C
+        __asm _emit 0x8B __asm _emit 0x4C __asm _emit 0x24 __asm _emit 0x1C
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        __asm _emit 0x83 __asm _emit 0xC4 __asm _emit 0x28
+        __asm _emit 0xC2 __asm _emit 0x04 __asm _emit 0x00
+    }
+}
