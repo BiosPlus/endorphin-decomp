@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `14185 / 24049` (**58.98%**) — `11093` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1619991 / 4496005 bytes` (**36.03%** of 4.29 MB)
+- **In-Scope Functions Matched:** `14186 / 24049` (**58.99%**) — `11094` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1620162 / 4496005 bytes` (**36.04%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -20,7 +20,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P40-50 (71-91B)** | 1391 / 2405 | 57.84% | 115793 / 194373 | 59.57% | 1014 fn |
 | **P50-60 (91-122B)** | 1871 / 2405 | 77.80% | 202475 / 256906 | 78.81% | 534 fn |
 | **P60-70 (122-159B)** | 1150 / 2405 | 47.82% | 155751 / 339038 | 45.94% | 1255 fn |
-| **P70-80 (159-178B)** | 309 / 2405 | 12.85% | 52066 / 400567 | 13.00% | 2096 fn |
+| **P70-80 (159-178B)** | 310 / 2405 | 12.89% | 52237 / 400567 | 13.04% | 2095 fn |
 | **P80-90 (178-335B)** | 1186 / 2405 | 49.31% | 285654 / 583211 | 48.98% | 1219 fn |
 | **P90-100 (335-36100B)** | 822 / 2404 | 34.19% | 588698 / 2392860 | 24.60% | 1582 fn |
 
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6754 | 526112 | 60.89% |
-| `claude-haiku-5.5@low` | 1676 | 379712 | 15.11% |
+| `claude-haiku-5.5@medium` | 6754 | 526112 | 60.88% |
+| `claude-haiku-5.5@low` | 1677 | 379883 | 15.12% |
 | `gemini-4-hydrogen@low` | 1054 | 298189 | 9.50% |
 | `gemini-3.8-flash@low` | 954 | 266272 | 8.60% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.03% |
