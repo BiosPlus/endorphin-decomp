@@ -84,3 +84,46 @@ extern "C" __declspec(naked) void __fastcall fn_00660C90(void* self) {
         ret 0x10
     }
 }
+
+// [0x006615A0] SymbolResolver::vfunc_2 (122 bytes)
+extern "C" void ext_00661330();
+extern "C" __declspec(naked) void __fastcall fn_006615A0(void* self) {
+    __asm {
+        push -1
+        push 0x8b2798
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x5c
+        mov eax, dword ptr [esp + 0x7c]
+        mov edx, dword ptr [esp + 0x74]
+        push esi
+        mov esi, dword ptr [esp + 0x70]
+        push 0
+        push eax
+        mov eax, dword ptr [ecx + 0x4]
+        mov ecx, dword ptr [ecx + 0x8]
+        push edx
+        push eax
+        push ecx
+        push esi
+        lea ecx, [esp + 0x1c]
+        call ext_00660B40
+        mov edx, dword ptr [esp + 0x7c]
+        mov eax, dword ptr [esp + 0x74]
+        push edx
+        push eax
+        push esi
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x74], 0
+        call ext_00661330
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x68], -1
+        call ext_00660C10
+        mov ecx, dword ptr [esp + 0x60]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x68
+        ret 0x14
+    }
+}
