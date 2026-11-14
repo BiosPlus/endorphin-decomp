@@ -194,3 +194,41 @@ extern "C" __declspec(naked) bool __fastcall fn_00666DE0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00666FC0] FileProject::vfunc_4 (107 bytes)
+extern "C" void ext_00665670();
+extern "C" void ext_00666A60();
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00666FC0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -0x1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        mov ecx, dword ptr [ecx + 0x84]
+        push esi
+        lea eax, [esp + 0x4]
+        push eax
+        call ext_00666A60
+        mov esi, dword ptr [esp + 0x30]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x2c], 0x0
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x28], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        push esi
+        call ext_00665670
+        mov ecx, dword ptr [esp + 0x24]
+        add esp, 0x4
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x8
+    }
+}
