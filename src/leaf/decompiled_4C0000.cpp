@@ -7489,3 +7489,107 @@ extern "C" __declspec(naked) void __fastcall fn_004C7FA0(void* self) {
         ret 0x4
     }
 }
+
+// [0x004CCE20] sub_004CCE20 (176 bytes)
+extern "C" void ext_004CA3B0();
+extern "C" void ext_004CA3C0();
+extern "C" void* __fastcall fn_004CCE20(void* self, int edx_unused, const void* other) {
+    ((void (__fastcall*)(void*, int, const void*))ext_004C32A0)(self, edx_unused, other);
+    *(unsigned int*)((char*)self + 0x00) = 0x009471C4;
+    *(unsigned int*)((char*)self + 0x04) = 0x0094717C;
+    *(unsigned int*)((char*)self + 0x08) = 0x0094713C;
+    *(unsigned int*)((char*)self + 0x0C) = 0x009470EC;
+    *(unsigned int*)((char*)self + 0x150) = 0x009470D4;
+    *(unsigned int*)((char*)self + 0x154) = 0x009470C4;
+    *(unsigned int*)((char*)self + 0x158) = 0x00947098;
+    *(unsigned int*)((char*)self + 0x180) = 0;
+    *(unsigned int*)((char*)self + 0x184) = *(const unsigned int*)((const char*)other + 0x184);
+    const float* p1 = ((const float* (__thiscall*)(const void*))ext_004CA3B0)(other);
+    *(float*)((char*)self + 0x188) = p1[0];
+    *(float*)((char*)self + 0x18C) = p1[1];
+    *(float*)((char*)self + 0x190) = p1[2];
+    const float* p2 = ((const float* (*)())ext_004CA3C0)();
+    *(float*)((char*)self + 0x194) = p2[0];
+    *(float*)((char*)self + 0x198) = p2[1];
+    *(float*)((char*)self + 0x19C) = p2[2];
+    *(unsigned char*)((char*)self + 0x1A0) = *(const unsigned char*)((const char*)other + 0x1A0);
+    return self;
+}
+
+extern "C" void ext_0048EE20();
+extern "C" void ext_0051DC90();
+extern "C" void ext_005DF5C0();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FDC;
+
+// [0x004C48B0] sub_004C48B0 (177 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004C48B0(void* self) {
+    __asm {
+        push    -1
+        push    0x88b4f8
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        push    ecx
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [esp + 0x20]
+        push    esi
+        push    edi
+        sub     esp, 0x1c
+        mov     edi, ecx
+        mov     ecx, esp
+        mov     dword ptr [esp + 0x2c], esp
+        push    ebp
+        call    dword ptr [mem_00924FE0]
+        mov     ecx, edi
+        call    ext_005DF5C0
+        mov     ebx, eax
+        test    ebx, ebx
+        jne     loc_4c494c
+        mov     eax, dword ptr [esp + 0x24]
+        push    eax
+        call    ext_0051DC90
+        mov     esi, eax
+        add     esp, 4
+        mov     dword ptr [esp + 0x28], esi
+        test    esi, esi
+        mov     dword ptr [esp + 0x1c], ebx
+        je      loc_4c4934
+        push    ebp
+        lea     ecx, [esi + 4]
+        call    dword ptr [mem_00924FDC]
+        mov     eax, dword ptr [edi + 0xc]
+        push    esi
+        sub     esp, 0x1c
+        mov     ecx, esp
+        mov     dword ptr [esp + 0x44], esp
+        push    ebp
+        mov     dword ptr [esi + 0x24], eax
+        call    dword ptr [mem_00924FE0]
+        mov     ecx, edi
+        call    ext_0048EE20
+        mov     ebx, esi
+        xor     esi, esi
+    loc_4c4934:
+        test    esi, esi
+        mov     dword ptr [esp + 0x1c], -1
+        je      loc_4c494a
+        mov     edx, dword ptr [esi]
+        mov     eax, dword ptr [edx]
+        push    1
+        mov     ecx, esi
+        call    eax
+    loc_4c494a:
+        mov     eax, ebx
+    loc_4c494c:
+        mov     ecx, dword ptr [esp + 0x14]
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     dword ptr fs:[0], ecx
+        pop     ebx
+        add     esp, 0x10
+        ret     8
+    }
+}
