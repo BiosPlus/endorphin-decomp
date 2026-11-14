@@ -410,3 +410,168 @@ L_exit_0069A9B4:
         ret 0x14
     }
 }
+
+// [0x006994A0] ExprParser::ExpressionContainerType::vfunc_18 (428 bytes)
+extern "C" void ext_0041CF50();
+extern "C" void ext_0041E540();
+extern "C" void ext_00595C50();
+extern "C" void ext_00598F40();
+extern "C" void ext_0059B350();
+extern "C" void ext_006720E0();
+extern "C" void ext_00699360();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B5C944;
+extern "C" int mem_00B5C934;
+extern "C" int mem_00B5C93C;
+extern "C" int mem_00B5C940;
+extern "C" int mem_00B599BC;
+extern "C" int mem_00B5C92C;
+extern "C" int mem_00B5C930;
+
+extern "C" __declspec(naked) void* __fastcall fn_006994A0(void* self, void* /*edx*/, void* arg1) {
+    __asm {
+        push -0x1
+        mov eax, dword ptr fs:[0x0]
+        push 0x8b646e
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x10
+        push ebx
+        mov ebx, dword ptr [esp + 0x24]
+        push ebp
+        push esi
+        xor esi, esi
+        cmp ebx, esi
+        push edi
+        mov ebp, ecx
+        je L_fallback
+
+        test byte ptr [mem_00B5C944], 0x1
+        jne L_map_init_done
+        or dword ptr [mem_00B5C944], 0x1
+        mov ecx, offset mem_00B5C934 + 4
+        mov dword ptr [esp + 0x28], esi
+        mov dword ptr [mem_00B5C934], 0x95da28
+        call ext_00595C50
+        mov dword ptr [mem_00B5C93C], eax
+        mov byte ptr [eax + 0x31], 0x1
+        mov eax, dword ptr [mem_00B5C93C]
+        mov dword ptr [eax + 0x4], eax
+        mov eax, dword ptr [mem_00B5C93C]
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [mem_00B5C93C]
+        mov dword ptr [eax + 0x8], eax
+        push 0x921f70
+        mov dword ptr [mem_00B5C940], esi
+        call ext_006A6C87
+        add esp, 0x4
+        mov dword ptr [esp + 0x28], 0xffffffff
+
+    L_map_init_done:
+        lea edi, [ebx + 0x2c]
+        push edi
+        mov ecx, offset mem_00B5C934
+        call ext_0059B350
+        mov esi, eax
+        test esi, esi
+        jne L_return_esi
+
+        mov eax, dword ptr [ebp]
+        mov edx, dword ptr [eax + 0x5c]
+        push esi
+        push esi
+        push esi
+        push ebx
+        lea ecx, [esp + 0x28]
+        push ecx
+        mov ecx, ebp
+        call edx
+        push eax
+        push edi
+        mov ecx, offset mem_00B5C934
+        mov dword ptr [esp + 0x30], 0x1
+        call ext_00598F40
+        mov ecx, dword ptr [esp + 0x1c]
+        test ecx, ecx
+        mov esi, eax
+        mov dword ptr [esp + 0x28], 0xffffffff
+        je L_check_esi
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x18]
+        push edx
+        call eax
+
+    L_check_esi:
+        test esi, esi
+        je L_zero_esi
+
+    L_return_esi:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x1c
+        ret 0x4
+
+    L_zero_esi:
+        xor esi, esi
+
+    L_fallback:
+        mov ebx, 0x2
+        test byte ptr [mem_00B5C944], bl
+        jne L_fallback_init_done
+        mov ecx, dword ptr [mem_00B599BC]
+        or dword ptr [mem_00B5C944], ebx
+        push 0x921f50
+        mov dword ptr [mem_00B5C92C], esi
+        mov dword ptr [mem_00B5C930], ecx
+        call ext_006A6C87
+        add esp, 0x4
+
+    L_fallback_init_done:
+        mov eax, dword ptr [mem_00B5C930]
+        cmp eax, esi
+        je L_do_fallback
+        cmp eax, dword ptr [mem_00B599BC]
+        jne L_return_fallback
+
+    L_do_fallback:
+        call ext_0041E540
+        mov ecx, eax
+        call ext_00699360
+        cmp dword ptr [eax + 0x14], esi
+        je L_return_fallback
+        push eax
+        lea ecx, [esp + 0x14]
+        call ext_006720E0
+        lea edx, [esp + 0x10]
+        push edx
+        mov ecx, offset mem_00B5C92C
+        mov dword ptr [esp + 0x2c], ebx
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x14]
+        cmp ecx, esi
+        mov dword ptr [esp + 0x28], 0xffffffff
+        je L_return_fallback
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esp + 0x10]
+        push edx
+        call eax
+
+    L_return_fallback:
+        mov ecx, dword ptr [esp + 0x20]
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, offset mem_00B5C92C
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x1c
+        ret 0x4
+    }
+}
