@@ -4743,3 +4743,22 @@ done:
         ret 4
     }
 }
+
+extern "C" void ext_005AED80();
+extern "C" void __fastcall ext_005B02E0(void* self);
+extern "C" int mem_00B40640;
+
+// [0x005B0310] sub_005B0310 (96 bytes)
+extern "C" void __fastcall fn_005B0310(void* self, int edx_unused, void* a1) {
+    ((void (__thiscall *)(void*, void*))ext_005AED80)(self, a1 ? (char*)a1 + 4 : 0);
+    ext_005B02E0(self);
+    void* obj = (char*)a1 + 0x164;
+    typedef float* (__thiscall *Fn)(void*, int);
+    Fn fn = (*(Fn**)obj)[5];
+    float* res = fn(obj, mem_00B40640);
+    float* dst = (float*)((char*)self + 0x200);
+    dst[0] = res[0];
+    dst[1] = res[1];
+    dst[2] = res[2];
+    dst[3] = res[3];
+}
