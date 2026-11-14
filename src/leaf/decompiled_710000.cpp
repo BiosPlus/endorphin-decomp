@@ -1759,3 +1759,186 @@ extern "C" __declspec(naked) void __fastcall fn_00712A80(void* self) {
         ret
     }
 }
+
+// [0x007131E0] sub_007131E0 (383 bytes)
+// Window covers adjacent routines: 0x7131E0 ctor-like (ret 4), 0x713210 strtod-based parser,
+// 0x713270 sprintf/strncpy formatter, 0x713310 zero-init, 0x713330 string-table lookup.
+extern "C" void ext_00712EB0();
+extern "C" void ext_00713120();
+extern "C" int mem_00925224;
+extern "C" int mem_00925218;
+extern "C" int mem_009252D0;
+extern "C" int mem_00B5FA6D;
+
+extern "C" __declspec(naked) void* __fastcall fn_007131E0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        call ext_00712EB0
+        mov dword ptr [esi], 0x996154
+        mov dword ptr [esi + 0x8], 0x3
+        mov dword ptr [esi + 0x4], 0x18
+        mov eax, esi
+        pop esi
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        cmp byte ptr [esi], 0x7b
+        je L_713224
+    L_71321C:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 0x8
+    L_713224:
+        mov ebx, dword ptr [esp + 0x14]
+        xor edi, edi
+    L_71322A:
+        lea eax, [esp + 0x10]
+        inc esi
+        push eax
+        push esi
+        call dword ptr [mem_00925224]
+        mov eax, dword ptr [esp + 0x18]
+        add esp, 0x8
+        fstp qword ptr [ebx]
+        cmp esi, eax
+        je L_71321C
+        cmp byte ptr [eax], 0x2c
+        je L_71324E
+        cmp edi, 0x2
+        jl L_71321C
+    L_71324E:
+        inc edi
+        add ebx, 0x8
+        cmp edi, 0x3
+        mov esi, eax
+        jl L_71322A
+        mov cl, byte ptr [eax]
+        pop edi
+        cmp cl, 0x7d
+        pop esi
+        sete al
+        pop ebx
+        ret 0x8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov al, byte ptr [mem_00B5FA6D]
+        sub esp, 0x3ac
+        test al, al
+        push esi
+        mov esi, dword ptr [mem_00925218]
+        push edi
+        jne L_7132A5
+        call ext_00713120
+        push eax
+        push eax
+        push eax
+        push 0xaac17c
+        push 0xb5f50c
+        call esi
+        add esp, 0x14
+        mov byte ptr [mem_00B5FA6D], 0x1
+    L_7132A5:
+        mov eax, dword ptr [esp + 0x3c0]
+        sub esp, 0x8
+        sub esp, 0x8
+        fld qword ptr [eax + 0x10]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [eax]
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [eax + 0x8]
+        fstp qword ptr [esp]
+        push ecx
+        push edx
+        lea eax, [esp + 0x20]
+        push 0xb5f50c
+        push eax
+        call esi
+        mov esi, dword ptr [esp + 0x3dc]
+        mov edi, dword ptr [esp + 0x3d8]
+        lea edx, [esp + 0x28]
+        lea ecx, [esi - 0x1]
+        push ecx
+        push edx
+        push edi
+        call dword ptr [mem_009252D0]
+        add esp, 0x2c
+        mov byte ptr [edi + esi - 0x1], 0x0
+        mov al, 0x1
+        pop edi
+        pop esi
+        add esp, 0x3ac
+        ret 0xc
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 0x4]
+        xor ecx, ecx
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x14], ecx
+        mov al, 0x1
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x83
+        __asm _emit 0xe8
+        __asm _emit 0x00
+        je L_713357
+        dec eax
+        je L_71334F
+        dec eax
+        je L_713347
+        mov eax, 0xaac03c
+        ret 0x4
+    L_713347:
+        mov eax, 0xaac19c
+        ret 0x4
+    L_71334F:
+        mov eax, 0xaac198
+        ret 0x4
+    L_713357:
+        mov eax, 0xaac194
+        ret 0x4
+    }
+}

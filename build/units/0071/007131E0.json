@@ -26,5 +26,7 @@
     "0x00713350",
     "0x00713358"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-14T13:52:47Z"
 }
