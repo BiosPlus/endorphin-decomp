@@ -12137,3 +12137,101 @@ extern "C" __declspec(naked) void __fastcall fn_0055DC60(void* self) {
         ret 8
     }
 }
+
+extern "C" void ext_00480920();
+extern "C" void ext_005DF5C0();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B385F0;
+extern "C" int mem_00B385B0;
+extern "C" int mem_0091BE80;
+
+// [0x0055CB30] sub_0055CB30 (224 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0055CB30(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [esp + 0x10]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        push eax
+        call fn_0055CAC0
+        mov edx, dword ptr [esp + 0x1c]
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x3c], esp
+        push edx
+        mov edi, eax
+        call dword ptr [mem_00924FE0]
+        mov ecx, edi
+        call ext_005DF5C0
+        test eax, eax
+        je L_0055CB6F
+    L_0055CB62:
+        add eax, 0x10
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x8
+    L_0055CB6F:
+        mov eax, dword ptr [edi + 0x4]
+        mov ebp, dword ptr [eax]
+        mov esi, edi
+        mov dword ptr [esp + 0x10], esi
+        mov dword ptr [esp + 0x14], ebp
+        mov edi, edi
+    L_0055CB80:
+        test esi, esi
+        mov ebx, dword ptr [edi + 0x4]
+        je L_0055CB8B
+        cmp esi, edi
+        je L_0055CB91
+    L_0055CB8B:
+        call dword ptr [mem_00925134]
+    L_0055CB91:
+        cmp ebp, ebx
+        je L_0055CBCE
+        test esi, esi
+        jne L_0055CB9F
+        call dword ptr [mem_00925134]
+    L_0055CB9F:
+        cmp ebp, dword ptr [esi + 0x4]
+        jne L_0055CBAA
+        call dword ptr [mem_00925134]
+    L_0055CBAA:
+        mov ecx, dword ptr [esp + 0x1c]
+        push ecx
+        mov ecx, dword ptr [ebp + 0x28]
+        call fn_0055C7D0
+        test eax, eax
+        jne L_0055CB62
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        mov ebp, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        jmp L_0055CB80
+    L_0055CBCE:
+        mov eax, 0x1
+        test byte ptr [mem_00B385F0], al
+        jne L_0055CC01
+        or dword ptr [mem_00B385F0], eax
+        call ext_00480920
+        mov esi, eax
+        mov ecx, 0x10
+        mov edi, offset mem_00B385B0
+        push offset mem_0091BE80
+        rep movsd
+        call ext_006A6C87
+        add esp, 0x4
+    L_0055CC01:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, offset mem_00B385B0
+        pop ebx
+        add esp, 0x8
+        ret 0x8
+    }
+}
