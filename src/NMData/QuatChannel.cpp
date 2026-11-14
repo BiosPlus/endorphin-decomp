@@ -293,3 +293,42 @@ extern "C" __declspec(naked) void __fastcall fn_0051C3E0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_0051CD30();
+extern "C" void ext_006A5C62();
+
+// [0x0051CDE0] NMData::QuatChannel::vfunc_4 (93 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0051CDE0(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        push 0x64
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je L_null
+        push esi
+        mov ecx, eax
+        call ext_0051CD30
+        pop esi
+        mov ecx, dword ptr [esp + 4]
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret
+    L_null:
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
