@@ -9572,3 +9572,83 @@ extern "C" __declspec(naked) void __fastcall fn_006AA260(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006A7B00] sub_006A7B00 (138 bytes)
+extern "C" void ext_006A63BE();
+extern "C" void ext_006A7B00();
+extern "C" void ext_006A7C10();
+extern "C" void ext_006AEC60();
+extern "C" void ext_006AF8E0();
+extern "C" __declspec(naked) void __fastcall fn_006A7B00(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        mov dword ptr [esp + 0x4], ecx
+        push ebp
+        mov ecx, ebx
+        call ext_006ACFB0
+        mov ebp, dword ptr [esp + 0x10]
+        cmp eax, ebp
+        jne L_006A7B22
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        pop ecx
+        ret 0x8
+    L_006A7B22:
+        push esi
+        push edi
+        mov ecx, ebx
+        xor edi, edi
+        call ext_006A7C10
+        test eax, eax
+        jle L_006A7B76
+    L_006A7B31:
+        push edi
+        mov ecx, ebx
+        call ext_006AF8E0
+        mov esi, eax
+        call ext_006AEC60
+        push eax
+        mov ecx, esi
+        call ext_006A63BE
+        test eax, eax
+        je L_006A7B5D
+        mov ecx, dword ptr [esp + 0x10]
+        push esi
+        push ebp
+        call ext_006A7B00
+        test eax, eax
+        jne L_006A7B78
+        jmp L_006A7B68
+    L_006A7B5D:
+        mov ecx, esi
+        call ext_006ACFB0
+        cmp eax, ebp
+        je L_006A7B80
+    L_006A7B68:
+        mov ecx, ebx
+        add edi, 1
+        call ext_006A7C10
+        cmp edi, eax
+        jl L_006A7B31
+    L_006A7B76:
+        xor eax, eax
+    L_006A7B78:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    L_006A7B80:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
