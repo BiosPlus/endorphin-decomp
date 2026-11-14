@@ -10715,3 +10715,89 @@ L_4E8625:
         ret
     }
 }
+
+// [0x004E84A0] sub_004E84A0 (204 bytes)
+extern "C" void ext_00406510();
+extern "C" void ext_0040ECB0();
+extern "C" int mem_00925134; /* "P{b" */
+extern "C" int mem_00924FF4; /* u32 0x00628FF0 */
+extern "C" __declspec(naked) void __cdecl fn_004E84A0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x24
+        push ebx
+        mov ebx, dword ptr [esp + 0x38]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], esi
+        push edi
+        jbe L_4E84D0
+        call ebp
+    L_4E84D0:
+        mov edi, dword ptr [ebx + 0x4]
+        cmp edi, dword ptr [ebx + 0x8]
+        jbe L_4E84DA
+        call ebp
+    L_4E84DA:
+        push esi
+        push ebx
+        push edi
+        push ebx
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, ebx
+        call ext_00406510
+        mov edi, dword ptr [esp + 0x48]
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe L_4E84F8
+        call ebp
+    L_4E84F8:
+        mov ebp, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebp
+        jbe L_4E8506
+        call dword ptr [mem_00925134]
+    L_4E8506:
+        cmp esi, ebp
+        je L_4E8559
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_4E8515
+        call dword ptr [mem_00925134]
+    L_4E8515:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [edx + 0xc]
+        lea ecx, [eax + 0x4]
+        lea eax, [esp + 0x18]
+        push eax
+        call edx
+        push eax
+        mov ecx, ebx
+        mov dword ptr [esp + 0x40], 0
+        call ext_0040ECB0
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x3c], -1
+        call dword ptr [mem_00924FF4]
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_4E8554
+        call dword ptr [mem_00925134]
+    L_4E8554:
+        add esi, 0x4
+        jmp L_4E84F8
+    L_4E8559:
+        mov ecx, dword ptr [esp + 0x34]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x30
+        ret
+    }
+}
