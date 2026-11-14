@@ -441,3 +441,53 @@ extern "C" __declspec(naked) void __fastcall fn_005525A0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x005521E0] NMCamera::Perspective::vfunc_2 (99 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_00548A20();
+extern "C" void ext_00640110();
+extern "C" void ext_00640AD0();
+extern "C" int mem_009574E0;
+extern "C" int mem_00A9FA6C;
+extern "C" int mem_00AF76A4;
+extern "C" int mem_00924FF0;
+
+extern "C" __declspec(naked) void __fastcall fn_005521E0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, ecx
+        push offset mem_009574E0
+        mov ecx, edi
+        call ext_00640110
+        mov ebx, eax
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x24]
+        mov ecx, esi
+        call edx
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        push ebx
+        call ext_00640AD0
+        mov eax, dword ptr [mem_00A9FA6C]
+        add esp, 0xc
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        mov ecx, offset mem_00AF76A4
+        mov dword ptr [esp + 0x10], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x14]
+        call ext_00427550
+        push edi
+        mov ecx, esi
+        call ext_00548A20
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
