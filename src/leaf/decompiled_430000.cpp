@@ -20494,3 +20494,233 @@ extern "C" __declspec(naked) void __fastcall fn_0043ED20(void* self, void* dummy
         ret 0x10
     }
 }
+
+// [0x00437B10] sub_00437B10 (682 bytes)
+extern "C" void ext_004369D0();
+extern "C" void ext_006A6544();
+extern "C" int mem_00ACDB40;
+extern "C" __declspec(naked) void __fastcall fn_00437B10(void* self) {
+    __asm {
+        push -1
+        push 87a96bh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0ch], esi
+        mov dword ptr [esi], 92fb84h
+        mov dword ptr [esi + 0d4h], 92fb7ch
+        xor ebx, ebx
+        lea ecx, [esi + 1b0h]
+        mov dword ptr [mem_00ACDB40], ebx
+        mov dword ptr [esp + 18h], 18h
+        mov dword ptr [ecx], 92bd7ch
+        call ext_006A6166
+        lea ecx, [esi + 1a8h]
+        mov byte ptr [esp + 18h], 17h
+        mov dword ptr [ecx], 92bd7ch
+        call ext_006A6166
+        lea ecx, [esi + 18ch]
+        mov byte ptr [esp + 18h], 16h
+        call dword ptr [mem_00924FF4]
+        mov eax, dword ptr [esi + 180h]
+        cmp eax, ebx
+        lea edi, [esi + 168h]
+        mov byte ptr [esp + 18h], 15h
+        je short L_437BA5
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+L_437BA5:
+        mov ecx, edi
+        mov dword ptr [edi + 18h], ebx
+        mov dword ptr [edi + 1ch], ebx
+        mov dword ptr [edi + 20h], ebx
+        call ext_00678DE0
+        mov ecx, dword ptr [esi + 15ch]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 14h
+        je short L_437BCD
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437BCD:
+        mov ecx, dword ptr [esi + 158h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 13h
+        je short L_437BE5
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437BE5:
+        mov ecx, dword ptr [esi + 154h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 12h
+        je short L_437BFD
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437BFD:
+        mov ecx, dword ptr [esi + 150h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 11h
+        je short L_437C15
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437C15:
+        mov edi, dword ptr [esi + 14ch]
+        cmp edi, ebx
+        mov byte ptr [esp + 18h], 10h
+        je short L_437C34
+        mov ecx, edi
+        call ext_00493D90
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+L_437C34:
+        mov ecx, dword ptr [esi + 144h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 0fh
+        je short L_437C4C
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437C4C:
+        lea ecx, [esi + 128h]
+        mov byte ptr [esp + 18h], 0eh
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esi + 124h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 0dh
+        je short L_437C75
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437C75:
+        mov edi, dword ptr [esi + 120h]
+        cmp edi, ebx
+        mov byte ptr [esp + 18h], 0ch
+        je short L_437C94
+        mov ecx, edi
+        call ext_0041DE30
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+L_437C94:
+        mov ecx, dword ptr [esi + 11ch]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 0bh
+        je short L_437CAC
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437CAC:
+        lea ecx, [esi + 118h]
+        call dword ptr [mem_009242F4]
+        mov ecx, dword ptr [esi + 114h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 9
+        je short L_437CD0
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437CD0:
+        mov ecx, dword ptr [esi + 110h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 8
+        je short L_437CE8
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437CE8:
+        mov ecx, dword ptr [esi + 10ch]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 7
+        je short L_437D00
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437D00:
+        mov ecx, dword ptr [esi + 108h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 6
+        je short L_437D18
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437D18:
+        mov ecx, dword ptr [esi + 104h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 5
+        je short L_437D30
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437D30:
+        lea ecx, [esi + 0e8h]
+        call ext_004369D0
+        mov ecx, dword ptr [esi + 0e4h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 3
+        je short L_437D52
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+L_437D52:
+        mov ecx, dword ptr [esi + 0e0h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 2
+        je short L_437D6A
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437D6A:
+        mov ecx, dword ptr [esi + 0dch]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], 1
+        je short L_437D82
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437D82:
+        mov ecx, dword ptr [esi + 0d8h]
+        cmp ecx, ebx
+        mov byte ptr [esp + 18h], bl
+        je short L_437D99
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 4]
+        push 1
+        call edx
+L_437D99:
+        mov ecx, esi
+        mov dword ptr [esp + 18h], 0ffffffffh
+        call ext_006A6544
+        mov ecx, dword ptr [esp + 10h]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
