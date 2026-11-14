@@ -909,3 +909,91 @@ extern "C" __declspec(naked) void __fastcall fn_0071AF90(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00710B70] sub_00710B70 (128 bytes)
+extern "C" void ext_00708C10();
+extern "C" int mem_00B5F218;
+extern "C" int mem_00B5F21C;
+extern "C" int mem_00B5F210;
+extern "C" __declspec(naked) void __fastcall fn_00710B70(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        test esi, esi
+        je loc_710b91
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je loc_710b91
+        push eax
+        call ext_00708C10
+        mov dword ptr [esi], 0
+        mov al, 1
+        pop esi
+        ret 4
+loc_710b91:
+        xor al, al
+        pop esi
+        ret 4
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 4]
+        mov dword ptr [mem_00B5F218], ecx
+        mov dword ptr [mem_00B5F21C], edx
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5F210]
+        ret
+    }
+}
