@@ -39,3 +39,48 @@ extern "C" __declspec(naked) void __fastcall fn_0065F7C0(void* self) {
         ret 0x4
     }
 }
+
+// [0x00660C90] SymbolResolver::vfunc_6 (118 bytes)
+// SEH-guarded (fs:[0] frame, scope table 0x008B2798) wrapper: builds a temp object via
+// sub_00660B40 (ret 0x18), then runs sub_006606C0 / sub_00660C10 on a local object.
+extern "C" void ext_006606C0();
+extern "C" void ext_00660B40();
+extern "C" void ext_00660C10();
+extern "C" __declspec(naked) void __fastcall fn_00660C90(void* self) {
+    __asm {
+        push -1
+        push 0x8b2798
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x5c
+        mov eax, dword ptr [esp + 0x78]
+        mov edx, dword ptr [esp + 0x74]
+        push esi
+        push eax
+        mov eax, dword ptr [esp + 0x78]
+        push edx
+        mov edx, dword ptr [ecx + 0x4]
+        push eax
+        mov eax, dword ptr [ecx + 0x8]
+        mov ecx, dword ptr [esp + 0x7c]
+        push edx
+        push eax
+        push ecx
+        lea ecx, [esp + 0x1c]
+        call ext_00660B40
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x68], 0
+        call ext_006606C0
+        lea ecx, [esp + 0x4]
+        mov esi, eax
+        mov dword ptr [esp + 0x68], -1
+        call ext_00660C10
+        mov ecx, dword ptr [esp + 0x60]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x68
+        ret 0x10
+    }
+}
