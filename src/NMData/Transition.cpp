@@ -4,6 +4,22 @@ extern "C" void ext_004871D0();
 extern "C" void ext_0049ED40();
 extern "C" void ext_00505F00();
 extern "C" void ext_00498A50();
+extern "C" void ext_004275E0();
+extern "C" void ext_004973B0();
+extern "C" void ext_00499D20();
+extern "C" void ext_004EBAB0();
+extern "C" void ext_00514A70();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0063F530();
+extern "C" void ext_006824E0();
+extern "C" int mem_00AA23EC;
+extern "C" int mem_00AA23A4;
+extern "C" int mem_00924FEC;
+extern "C" int mem_00AA2374;
+extern "C" int mem_00AA2370;
+extern "C" int mem_0093F8F0;
+extern "C" int mem_00925134;
+extern "C" int mem_0093F8EC;
 
 // [0x00496FE0] NMData::Transition::vfunc_1_off_8 (30 bytes)
 extern "C" __declspec(naked) void __fastcall fn_00496FE0(void* self) {
@@ -725,6 +741,183 @@ extern "C" __declspec(naked) void __fastcall fn_00498FF0(void* self) {
         mov eax, edi
         pop edi
         pop esi
+        ret 4
+    }
+}
+
+// [0x00499EF0] NMData::Transition::vfunc_1_off_10 (474 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00499EF0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        mov eax, dword ptr fs:[0]
+        push 0886b60h
+        push eax
+        mov dword ptr fs:[0], esp
+        mov eax, dword ptr [mem_00AA23EC]
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x28]
+        push eax
+        mov ebx, ecx
+        push 0
+        lea ecx, [ebx + 0x20]
+        push ecx
+        push edi
+        call ext_006824E0
+        mov edx, dword ptr [mem_00AA23A4]
+        add esp, 0x10
+        push edx
+        mov ecx, edi
+        call ext_0063EFE0
+        push eax
+        lea eax, [ebx + 0x3c]
+        push eax
+        call ext_004275E0
+        lea esi, [ebx + 0x58]
+        push esi
+        push edi
+        call ext_004EBAB0
+        add esp, 0x10
+        mov ecx, esi
+        call dword ptr [mem_00924FEC]
+        test al, al
+        je L_6e
+        push 0093F8F4h
+        mov ecx, edi
+        call ext_0063EFE0
+        push eax
+        push esi
+        call ext_004275E0
+        add esp, 8
+    L_6e:
+        mov ecx, dword ptr [mem_00AA2374]
+        push 1
+        push 0
+        push ecx
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0B53A34h
+        je L_a3
+        cmp eax, 0B53B30h
+        je L_a3
+        cmp eax, 0B53AB0h
+        je L_a3
+        cmp eax, 0B53A70h
+        je L_a3
+        cmp eax, 0B53AF0h
+        jne L_a8
+    L_a3:
+        mov eax, 0B53B30h
+    L_a8:
+        push eax
+        lea ecx, [ebx + 0x94]
+        call ext_004973B0
+        mov edx, dword ptr [mem_00AA2370]
+        push edx
+        lea esi, [ebx + 0x74]
+        push esi
+        push edi
+        call ext_00499D20
+        fldz
+        mov eax, dword ptr [esi + 4]
+        add esp, 0ch
+        test eax, eax
+        je L_fdb
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, eax
+        sar ecx, 3
+        jne L_ff8
+    L_fdb:
+        fst dword ptr [esp + 10h]
+        mov eax, dword ptr [esp + 10h]
+        fstp dword ptr [esp + 14h]
+        mov edx, dword ptr [esp + 14h]
+        push edx
+        push eax
+        push 2
+        mov ecx, esi
+        call ext_00514A70
+        fldz
+    L_ff8:
+        fld dword ptr [mem_0093F8F0]
+        mov ebp, dword ptr [mem_00925134]
+        fld dword ptr [mem_0093F8EC]
+        xor edi, edi
+        jmp L_10
+    L_e:
+        fxch st(1)
+    L_10:
+        mov ecx, dword ptr [esi + 4]
+        test ecx, ecx
+        je L_79
+        mov eax, dword ptr [esi + 8]
+        sub eax, ecx
+        sar eax, 3
+        cmp edi, eax
+        jae L_79
+        test ecx, ecx
+        je L_33
+        mov eax, dword ptr [esi + 8]
+        sub eax, ecx
+        sar eax, 3
+        cmp edi, eax
+        jb L_4b
+    L_33:
+        fstp st(1)
+        fstp st(0)
+        fstp st(0)
+        call ebp
+        fld dword ptr [mem_0093F8EC]
+        fld dword ptr [mem_0093F8F0]
+        fldz
+        fxch st(2)
+    L_4b:
+        mov ecx, dword ptr [esi + 4]
+        fxch st(1)
+        fcom dword ptr [ecx + edi*8]
+        lea ecx, [ecx + edi*8]
+        fnstsw ax
+        test ah, 41h
+        jne L_63
+        fxch st(1)
+        fst dword ptr [ecx]
+        fxch st(1)
+    L_63:
+        fcom dword ptr [ecx + 4]
+        fnstsw ax
+        test ah, 41h
+        jne L_74
+        fxch st(1)
+        fst dword ptr [ecx + 4]
+        fxch st(1)
+    L_74:
+        add edi, 1
+        jmp L_e
+    L_79:
+        fstp st(1)
+        pop edi
+        fstp st(0)
+        pop esi
+        fst dword ptr [esp + 8]
+        mov edx, dword ptr [esp + 8]
+        fst dword ptr [esp + 0ch]
+        mov eax, dword ptr [esp + 0ch]
+        fst dword ptr [esp + 8]
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr [ebx + 84h], edx
+        fstp dword ptr [esp + 0ch]
+        mov edx, dword ptr [esp + 0ch]
+        mov dword ptr [ebx + 8ch], ecx
+        mov ecx, dword ptr [esp + 10h]
+        mov dword ptr [ebx + 88h], eax
+        mov dword ptr [ebx + 90h], edx
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 14h
         ret 4
     }
 }
