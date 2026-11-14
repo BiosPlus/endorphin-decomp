@@ -332,3 +332,86 @@ extern "C" __declspec(naked) void __fastcall fn_0051CDE0(void* self) {
         ret
     }
 }
+
+// [0x0051A130] NMData::QuatChannel::vfunc_12 (220 bytes)
+extern "C" void ext_00660A50();
+extern "C" void ext_006721D0();
+extern "C" int mem_00B599BC;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0051A130(void* self, int edx_unused, int a1) {
+    __asm {
+        push    -1
+        push    0x892d49
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 0x2c
+        push    esi
+        mov     esi, ecx
+        call    ext_00660A50
+        mov     ecx, dword ptr [esp + 0x40]
+        mov     edx, dword ptr [eax]
+        mov     edx, dword ptr [edx + 0x14]
+        push    0
+        push    ecx
+        lea     ecx, [esi + 4]
+        push    ecx
+        lea     ecx, [esp + 0x10]
+        push    ecx
+        mov     ecx, eax
+        call    edx
+        mov     ecx, dword ptr [esp + 8]
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x38], 0
+        je      loc_51a1e3
+        cmp     ecx, dword ptr [mem_00B599BC]
+        je      loc_51a1e3
+        push    0x9521e4
+        lea     ecx, [esp + 0x18]
+        call    dword ptr [mem_00924FE4]
+        mov     eax, dword ptr [esi]
+        mov     eax, dword ptr [eax + 0x20]
+        lea     ecx, [esp + 0x14]
+        push    ecx
+        lea     edx, [esp + 0x10]
+        push    edx
+        mov     ecx, esi
+        mov     byte ptr [esp + 0x40], 1
+        call    eax
+        push    eax
+        lea     ecx, [esp + 8]
+        mov     byte ptr [esp + 0x3c], 2
+        call    ext_006721D0
+        mov     ecx, dword ptr [esp + 0x10]
+        test    ecx, ecx
+        mov     byte ptr [esp + 0x38], 1
+        je      loc_51a1d0
+        mov     edx, dword ptr [ecx]
+        mov     edx, dword ptr [edx + 0x78]
+        lea     eax, [esp + 0xc]
+        push    eax
+        call    edx
+    loc_51a1d0:
+        lea     ecx, [esp + 0x14]
+        mov     byte ptr [esp + 0x38], 0
+        call    dword ptr [mem_00924FF4]
+        mov     ecx, dword ptr [esp + 8]
+    loc_51a1e3:
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x38], -1
+        pop     esi
+        je      loc_51a1fb
+        mov     eax, dword ptr [ecx]
+        mov     eax, dword ptr [eax + 0x78]
+        lea     edx, [esp]
+        push    edx
+        call    eax
+    loc_51a1fb:
+        mov     ecx, dword ptr [esp + 0x2c]
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x38
+        ret     4
+    }
+}
