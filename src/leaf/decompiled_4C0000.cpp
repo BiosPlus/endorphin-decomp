@@ -4812,3 +4812,66 @@ extern "C" __declspec(naked) void* __fastcall fn_004CD2D0(void* self, int edx_un
         ret     4
     }
 }
+
+// [0x004C6780] sub_004C6780 (200 bytes)
+extern "C" void ext_004C30D0();
+extern "C" void ext_004C5010();
+extern "C" void ext_004C5FB0();
+extern "C" void ext_004C65C0();
+extern "C" void ext_00593D00();
+extern "C" int mem_00A3A110;
+extern "C" int mem_00A3A10C;
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_004C6780(void* self, int edx_unused, int a1) {
+    __asm {
+        push    -1
+        push    0x88b8a6
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        push    ecx
+        mov     eax, dword ptr [esp + 0x14]
+        push    esi
+        push    edi
+        mov     esi, ecx
+        push    eax
+        mov     dword ptr [esp + 0xc], esi
+        call    ext_004C30D0
+        lea     edi, [esi + 4]
+        mov     dword ptr [esi], 0x9458a4
+        mov     dword ptr [edi], 0x94585c
+        mov     dword ptr [esi + 8], 0x94581c
+        mov     dword ptr [esi + 0xc], 0x9457cc
+        mov     dword ptr [esi + 0x150], 0x9457b4
+        mov     dword ptr [esi + 0x154], 0x9457a4
+        mov     dword ptr [esi + 0x158], 0x945778
+        fld     dword ptr [mem_00A3A110]
+        xor     eax, eax
+        fstp    dword ptr [esi + 0x180]
+        mov     dword ptr [esp + 0x14], eax
+        mov     dword ptr [esi + 0x184], eax
+        mov     ecx, esi
+        mov     byte ptr [esp + 0x14], 1
+        mov     byte ptr [esi + 0x188], al
+        call    ext_004C5FB0
+        fld     dword ptr [mem_00A3A10C]
+        push    ecx
+        mov     ecx, dword ptr [mem_00B40640]
+        fstp    dword ptr [esp]
+        push    ecx
+        mov     ecx, edi
+        call    ext_00593D00
+        mov     ecx, eax
+        call    ext_004C5010
+        mov     ecx, esi
+        call    ext_004C65C0
+        mov     ecx, dword ptr [esp + 0xc]
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        mov     fs:[0], ecx
+        add     esp, 0x10
+        ret     4
+    }
+}
