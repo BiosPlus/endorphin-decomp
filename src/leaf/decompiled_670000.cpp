@@ -13541,3 +13541,97 @@ extern "C" __declspec(naked) void __fastcall fn_006752D0(void* self) {
         ret 0x8
     }
 }
+
+// [0x00671AA0] sub_00671AA0 (192 bytes)
+extern "C" void ext_0066BD00();
+extern "C" void ext_00670DE0();
+extern "C" void ext_00671770();
+extern "C" void ext_006A5C62();
+extern "C" int mem_00B59C68;
+extern "C" int mem_00B59C64;
+extern "C" int mem_00B59C60;
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00671AA0(void* self) {
+    __asm {
+        sub     esp, 18h
+        mov     eax, dword ptr [esp + 20h]
+        mov     ecx, dword ptr [esp + 1Ch]
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        push    eax
+        push    ecx
+        lea     ecx, [esp + 24h]
+        call    ext_0066BD00
+        lea     eax, [esp + 10h]
+        push    eax
+        lea     ecx, [esp + 18h]
+        lea     edx, [esp + 20h]
+        push    ecx
+        mov     ecx, offset mem_00B59C60
+        mov     dword ptr [esp + 18h], edx
+        call    ext_00670DE0
+        mov     esi, dword ptr [eax]
+        mov     edi, dword ptr [eax + 4]
+        mov     eax, dword ptr [mem_00B59C68]
+        cmp     dword ptr [mem_00B59C64], eax
+        mov     ebp, dword ptr [mem_00925134]
+        mov     ebx, eax
+        jbe     SHORT l_skip1
+        call    ebp
+l_skip1:
+        test    esi, esi
+        je      SHORT l_chk2
+        cmp     esi, offset mem_00B59C60
+        je      SHORT l_chk3
+l_chk2:
+        call    ebp
+l_chk3:
+        cmp     edi, ebx
+        je      SHORT l_alloc
+        test    esi, esi
+        jne     SHORT l_chk4
+        call    ebp
+l_chk4:
+        cmp     edi, dword ptr [esi + 8]
+        jb      SHORT l_ret1
+        call    ebp
+l_ret1:
+        mov     eax, dword ptr [edi]
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 18h
+        ret
+l_alloc:
+        push    0Ch
+        call    ext_006A5C62
+        add     esp, 4
+        test    eax, eax
+        je      SHORT l_null
+        mov     dword ptr [eax], 988094h
+        mov     edx, dword ptr [esp + 20h]
+        mov     dword ptr [eax + 4], edx
+        mov     ecx, dword ptr [esp + 24h]
+        mov     dword ptr [eax + 8], ecx
+        mov     esi, eax
+        jmp     SHORT l_call2
+l_null:
+        xor     esi, esi
+l_call2:
+        lea     edx, [esp + 10h]
+        push    edx
+        mov     ecx, offset mem_00B59C60
+        mov     dword ptr [esp + 14h], esi
+        call    ext_00671770
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 18h
+        ret
+    }
+}
