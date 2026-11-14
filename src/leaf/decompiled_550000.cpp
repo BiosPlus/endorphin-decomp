@@ -11744,3 +11744,96 @@ extern "C" __declspec(naked) void* __fastcall fn_00556950(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0055C7D0] sub_0055C7D0 (167 bytes)
+extern "C" void __fastcall ext_00673C20(void* self);
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC4;
+
+extern "C" __declspec(naked) void* __fastcall fn_0055C7D0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, ecx
+        mov eax, dword ptr [ebp + 0x4]
+        push esi
+        push edi
+        mov edi, dword ptr [eax]
+        mov esi, ebp
+        mov dword ptr [esp + 0x10], esi
+        mov dword ptr [esp + 0x14], edi
+
+    loc_55C7E8:
+        test esi, esi
+        mov ebx, dword ptr [ebp + 0x4]
+        je loc_55C7F3
+        cmp esi, ebp
+        je loc_55C7F9
+
+    loc_55C7F3:
+        call dword ptr [mem_00925134]
+
+    loc_55C7F9:
+        cmp edi, ebx
+        je loc_55C86B
+        test esi, esi
+        jne loc_55C807
+        call dword ptr [mem_00925134]
+
+    loc_55C807:
+        cmp edi, dword ptr [esi + 0x4]
+        jne loc_55C812
+        call dword ptr [mem_00925134]
+
+    loc_55C812:
+        mov ebx, dword ptr [esp + 0x1c]
+        lea ecx, [edi + 0xc]
+        push ebx
+        push ecx
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        jne loc_55C853
+        cmp edi, dword ptr [esi + 0x4]
+        jne loc_55C833
+        call dword ptr [mem_00925134]
+
+    loc_55C833:
+        mov ecx, dword ptr [edi + 0x28]
+        push ebx
+        call fn_0055C7D0
+        test eax, eax
+        jne loc_55C86D
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        mov edi, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        jmp loc_55C7E8
+
+    loc_55C853:
+        cmp edi, dword ptr [esi + 0x4]
+        jne loc_55C85E
+        call dword ptr [mem_00925134]
+
+    loc_55C85E:
+        mov eax, dword ptr [edi + 0x28]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+
+    loc_55C86B:
+        xor eax, eax
+
+    loc_55C86D:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
