@@ -1194,3 +1194,65 @@ extern "C" __declspec(naked) void __fastcall fn_00586F70(void* self) {
         ret 0xc
     }
 }
+
+// [0x00593C80] AnimatableTransform::vfunc_14_off_4 (126 bytes)
+extern "C" void ext_00480920();
+extern "C" void ext_00593D40();
+extern "C" void ext_0067EB90();
+extern "C" int mem_00B40640;
+extern "C" __declspec(naked) void __fastcall fn_00593C80(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        mov eax, dword ptr [eax]
+        cmp eax, 3
+        push esi
+        push edi
+        mov esi, ecx
+        mov dword ptr [esp+0xc], eax
+        jne short L_nz
+        mov eax, 2
+        mov dword ptr [esp+0xc], eax
+L_nz:
+        cmp eax, dword ptr [esi+0xe8]
+        lea edi, [esi+0xe8]
+        je short L_done
+        push ebx
+        push ebp
+        call ext_00480920
+        mov ebp, dword ptr [esp+0x1c]
+        mov ecx, dword ptr [esp+0x18]
+        mov ebx, eax
+        push ebx
+        push ebp
+        push ecx
+        lea edx, [esp+0x20]
+        push edx
+        mov ecx, esi
+        call ext_00593D40
+        push eax
+        mov eax, dword ptr [esp+0x1c]
+        push ebx
+        push ebp
+        push eax
+        push edi
+        mov ecx, esi
+        call ext_00593D40
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx+0xc]
+        push eax
+        mov eax, dword ptr [mem_00B40640]
+        push eax
+        mov ecx, esi
+        call edx
+        mov ecx, eax
+        call ext_0067EB90
+        mov eax, dword ptr [esp+0x14]
+        pop ebp
+        mov dword ptr [edi], eax
+        pop ebx
+L_done:
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
