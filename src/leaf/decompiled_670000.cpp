@@ -15056,3 +15056,119 @@ extern "C" __declspec(naked) void __cdecl fn_00672D60(int* first, int* last, int
         ret
     }
 }
+
+// [0x0067F270] sub_0067F270 (253 bytes)
+extern "C" void ext_00427A60();
+extern "C" void ext_00539AA0();
+extern "C" void ext_00539FB0();
+extern "C" void ext_0067EFD0();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC0;
+extern "C" __declspec(naked) void __fastcall fn_0067F270(void* self) {
+    __asm {
+        sub     esp, 0x24
+        push    ebx
+        mov     ebx, dword ptr [mem_00925134]
+        push    ebp
+        mov     ebp, dword ptr [esp + 0x34]
+        push    esi
+        mov     esi, dword ptr [ebp + 0x8]
+        cmp     dword ptr [ebp + 0x4], esi
+        push    edi
+        jbe     L_0067F28B
+        call    ebx
+    L_0067F28B:
+        mov     edi, dword ptr [ebp + 0x4]
+        cmp     edi, dword ptr [ebp + 0x8]
+        jbe     L_0067F295
+        call    ebx
+    L_0067F295:
+        push    esi
+        push    ebp
+        push    edi
+        push    ebp
+        lea     eax, [esp + 0x20]
+        push    eax
+        mov     ecx, ebp
+        call    ext_00539AA0
+        mov     esi, dword ptr [esp + 0x38]
+        mov     edi, dword ptr [esi + 0x28]
+        add     esi, 0x24
+        cmp     edi, dword ptr [esi + 0x8]
+        jbe     L_0067F2B6
+        call    ebx
+    L_0067F2B6:
+        lea     ecx, [esp + 0x10]
+        mov     dword ptr [esp + 0x10], esi
+        mov     dword ptr [esp + 0x14], esi
+        mov     dword ptr [esp + 0x18], edi
+        call    ext_00427A60
+        mov     edi, dword ptr [esi + 0x8]
+        cmp     dword ptr [esi + 0x4], edi
+        jbe     L_0067F2D5
+        call    ebx
+    L_0067F2D5:
+        mov     dword ptr [esp + 0x1c], esi
+        mov     dword ptr [esp + 0x20], esi
+        mov     dword ptr [esp + 0x24], edi
+        lea     ecx, [esp + 0x1c]
+    L_0067F2E5:
+        call    ext_00427A60
+        mov     ebx, dword ptr [esp + 0x14]
+        test    ebx, ebx
+        je      L_0067F2F8
+        cmp     ebx, dword ptr [esp + 0x20]
+        je      L_0067F302
+    L_0067F2F8:
+        mov     esi, dword ptr [mem_00925134]
+        call    esi
+        jmp     L_0067F308
+    L_0067F302:
+        mov     esi, dword ptr [mem_00925134]
+    L_0067F308:
+        mov     edi, dword ptr [esp + 0x18]
+        cmp     edi, dword ptr [esp + 0x24]
+        jae     L_0067F365
+        test    ebx, ebx
+        jne     L_0067F318
+        call    esi
+    L_0067F318:
+        cmp     edi, dword ptr [ebx + 0x8]
+        jb      L_0067F31F
+        call    esi
+    L_0067F31F:
+        mov     esi, dword ptr [edi]
+        mov     ecx, dword ptr [esp + 0x40]
+        push    ecx
+        lea     edx, [esi + 0x4]
+        push    edx
+        call    dword ptr [mem_00924FC0]
+        add     esp, 0x8
+        test    al, al
+        je      L_0067F34D
+        lea     eax, [esp + 0x28]
+        push    esi
+        push    eax
+        call    ext_0067EFD0
+        add     esp, 0x8
+        push    eax
+        mov     ecx, ebp
+        call    ext_00539FB0
+    L_0067F34D:
+        cmp     edi, dword ptr [ebx + 0x8]
+        jb      L_0067F358
+        call    dword ptr [mem_00925134]
+    L_0067F358:
+        add     edi, 0x4
+        mov     dword ptr [esp + 0x18], edi
+        lea     ecx, [esp + 0x10]
+        jmp     L_0067F2E5
+    L_0067F365:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x24
+        ret
+    }
+}
