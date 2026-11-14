@@ -18,5 +18,7 @@
     "0x0058FC69",
     "0x0058FC94"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "test",
+  "matched_at": "2026-11-14T11:31:11Z"
 }
