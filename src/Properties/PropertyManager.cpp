@@ -673,3 +673,114 @@ skip_release:
         ret 4
     }
 }
+
+// [0x00677750] Properties::PropertyManager::vfunc_0_off_4 (287 bytes)
+extern "C" void ext_004ECB40();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00677750(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b33b8
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push ebx
+        mov ebx, ecx
+        cmp dword ptr [ebx + 0xc], 0
+        je L_done_ebx
+        mov eax, dword ptr [esp + 0x1c]
+        sub eax, 0
+        je L_case0
+        sub eax, 1
+        jne L_done_ebx
+        lea ecx, [ebx - 4]
+        call ext_00677460
+        pop ebx
+        mov ecx, dword ptr [esp + 8]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 4
+    L_case0:
+        mov ecx, dword ptr [ebx + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 8]
+        push ebp
+        push esi
+        push edi
+        call edx
+        mov eax, dword ptr [ebx + 0x14]
+        mov esi, dword ptr [eax]
+        lea ebp, [ebx + 0x10]
+    L_loop:
+        cmp ebp, ebp
+        mov edi, dword ptr [ebp + 4]
+        je L_check_end
+        call dword ptr [mem_00925134]
+    L_check_end:
+        cmp esi, edi
+        je L_loop_end
+        cmp esi, dword ptr [ebp + 4]
+        jne L_body
+        call dword ptr [mem_00925134]
+    L_body:
+        mov eax, dword ptr [esi + 0x44]
+        mov ecx, dword ptr [ebx + 0xc]
+        mov edx, dword ptr [ecx]
+        lea edi, [esi + 0x3c]
+        push edi
+        push eax
+        mov eax, dword ptr [edx + 0x1c]
+        call eax
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, edi
+        call ext_004ECB40
+        push eax
+        lea ecx, [esi + 0x48]
+        mov dword ptr [esp + 0x24], 0
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x14]
+        test ecx, ecx
+        mov dword ptr [esp + 0x20], -1
+        je L_skip_v78
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x10]
+        push eax
+        call edx
+    L_skip_v78:
+        mov ecx, dword ptr [esi + 0x54]
+        test ecx, ecx
+        lea eax, [esi + 0x50]
+        je L_next
+        cmp ecx, dword ptr [mem_00B599BC]
+        je L_next
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        mov byte ptr [esi + 0x6c], al
+    L_next:
+        cmp esi, dword ptr [ebp + 4]
+        jne L_advance
+        call dword ptr [mem_00925134]
+    L_advance:
+        mov esi, dword ptr [esi]
+        jmp L_loop
+    L_loop_end:
+        mov ecx, dword ptr [ebx + 0xc]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        pop edi
+        pop esi
+        pop ebp
+    L_done_ebx:
+        mov ecx, dword ptr [esp + 0xc]
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 4
+    }
+}
