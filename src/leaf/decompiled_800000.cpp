@@ -3553,3 +3553,18 @@ extern "C" void __cdecl fn_00804BC0(void* a0) {
     ext_008048B0(esi, &buf);
     *(float*)(esi + 0x2c) = saved;
 }
+
+// [0x00804440] sub_00804440 (89 bytes)
+extern "C" void* ext_00803F80(void*);
+extern "C" void ext_008041C0(void*, float, void*);
+extern "C" void ext_00804360(void*, void*, int, int);
+extern "C" void __cdecl fn_00804440(void* a0, float a1, int a2, float* a3, int a4) {
+    float* esi = (float*)ext_00803F80(a3);
+    int idx = ((a4 & 1) + 8) * 3;
+    float* dest = &a3[idx];
+    dest[0] = esi[0];
+    dest[1] = esi[1];
+    dest[2] = esi[2];
+    ext_008041C0(a0, a1, a3);
+    ext_00804360(esi, a0, -1, a2);
+}
