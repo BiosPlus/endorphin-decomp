@@ -5831,3 +5831,72 @@ done:
         ret 4
     }
 }
+
+extern "C" void ext_00623010();
+extern "C" void ext_006404E0();
+extern "C" void ext_00673C20();
+extern "C" int mem_00A9ED78;
+extern "C" int mem_00925134;
+
+// [0x005A13F0] sub_005A13F0 (148 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005A13F0(void* self) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x570], 0
+        je done
+        mov eax, dword ptr [mem_00A9ED78]
+        mov ecx, dword ptr [esp + 0x10]
+        push ebp
+        push edi
+        push eax
+        call ext_006404E0
+        mov ecx, dword ptr [esi + 0x56C]
+        lea edi, [esi + 0x568]
+        mov dword ptr [esp + 0x18], eax
+        mov eax, dword ptr [ecx]
+        mov esi, edi
+        mov ebp, eax
+        mov dword ptr [esp + 0xC], esi
+        mov dword ptr [esp + 0x10], ebp
+        push ebx
+        nop
+    loop_start:
+        test esi, esi
+        mov ebx, dword ptr [edi + 4]
+        je invalid1
+        cmp esi, edi
+        je valid1
+    invalid1:
+        call dword ptr [mem_00925134]
+    valid1:
+        cmp ebp, ebx
+        je loop_end
+        test esi, esi
+        jne valid2
+        call dword ptr [mem_00925134]
+    valid2:
+        cmp ebp, dword ptr [esi + 4]
+        jne valid3
+        call dword ptr [mem_00925134]
+    valid3:
+        mov edx, dword ptr [esp + 0x1C]
+        mov ecx, dword ptr [ebp + 0x28]
+        push edx
+        call ext_00623010
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        mov ebp, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        jmp loop_start
+    loop_end:
+        pop ebx
+        pop edi
+        pop ebp
+    done:
+        pop esi
+        add esp, 8
+        ret 4
+    }
+}
