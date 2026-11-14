@@ -10293,3 +10293,114 @@ L_4744B6:
         ret
     }
 }
+
+// [0x0047AB40] sub_0047AB40 (205 bytes)
+extern "C" void ext_00477660();
+extern "C" void ext_00477B70();
+extern "C" void ext_00477BB0();
+extern "C" void ext_00478CB0();
+extern "C" void ext_0047AB40();
+extern "C" __declspec(naked) void __cdecl fn_0047AB40(void* first, void* last, int ideal) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        mov eax, edi
+        sub eax, ebx
+        sar eax, 0x2
+        cmp eax, 0x20
+        jle L_LE_20
+        mov esi, dword ptr [esp + 0x24]
+        nop
+    L_LOOP:
+        test esi, esi
+        jle L_SMALL_HI
+        push edi
+        lea eax, [esp + 0x14]
+        push ebx
+        push eax
+        call ext_00477660
+        mov ebp, dword ptr [esp + 0x20]
+        mov eax, esi
+        cdq
+        sub eax, edx
+        sar eax, 1
+        mov esi, eax
+        cdq
+        sub eax, edx
+        sar eax, 1
+        add esi, eax
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, edi
+        mov edx, eax
+        sub ecx, ebp
+        sub edx, ebx
+        add esp, 0xc
+        and ecx, -4
+        and edx, -4
+        cmp edx, ecx
+        push esi
+        jge L_RIGHT
+        push eax
+        push ebx
+        call ext_0047AB40
+        mov ebx, ebp
+        jmp L_AFTER
+    L_RIGHT:
+        push edi
+        push ebp
+        call ext_0047AB40
+        mov edi, dword ptr [esp + 0x1c]
+    L_AFTER:
+        mov eax, edi
+        sub eax, ebx
+        sar eax, 0x2
+        add esp, 0xc
+        cmp eax, 0x20
+        jg L_LOOP
+    L_LE_20:
+        cmp eax, 0x1
+        jle L_EPILOG
+        push 0
+        push edi
+        push ebx
+        call ext_00477BB0
+        add esp, 0xc
+    L_EPILOG:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    L_SMALL_HI:
+        cmp eax, 0x20
+        jle L_LE_20
+        mov eax, edi
+        sub eax, ebx
+        and eax, -4
+        cmp eax, 0x4
+        jle L_TAIL
+        push 0
+        push 0
+        push edi
+        push ebx
+        call ext_00477B70
+        add esp, 0x10
+    L_TAIL:
+        push edi
+        push ebx
+        call ext_00478CB0
+        add esp, 0x8
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
