@@ -161,3 +161,72 @@ extern "C" bool __fastcall fn_00743CB0(void* self) {
     *p = 0;
     return true;
 }
+
+// [0x0074AE40] sub_0074AE40 (175 bytes)
+// Hand-rolled SEH frame (push -1 / handler / fs:[0] chain), then three
+// sub-object initialisations via sub_006D2130. Emitted as naked asm so the
+// stack-relative offsets and the frame layout match the original byte-for-byte.
+extern "C" void ext_006D2130();
+
+extern "C" __declspec(naked) void __fastcall fn_0074AE40(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push    -1
+        push    08bf296h
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        push    ecx
+        mov     eax, dword ptr [esp + 18h]
+        push    ebp
+        mov     ebp, dword ptr [esp + 20h]
+        push    esi
+        mov     esi, ecx
+        push    edi
+        mov     ecx, dword ptr [esp + 20h]
+        push    4
+        lea     edi, [esi + 14h]
+        mov     dword ptr [esi + 10h], ecx
+        push    10h
+        mov     ecx, edi
+        mov     dword ptr [esp + 14h], esi
+        mov     byte ptr [esi], 1
+        mov     byte ptr [esi + 1], 1
+        mov     dword ptr [esi + 4], 0
+        mov     dword ptr [esi + 8], eax
+        mov     dword ptr [esi + 0ch], ebp
+        call    ext_006D2130
+        lea     edx, [edi + 10h]
+        mov     dword ptr [edi + 14h], edx
+        lea     edi, [esi + 2ch]
+        push    4
+        push    10h
+        mov     ecx, edi
+        mov     dword ptr [esp + 20h], 0
+        call    ext_006D2130
+        lea     eax, [edi + 10h]
+        mov     dword ptr [edi + 14h], eax
+        lea     edi, [esi + 44h]
+        push    4
+        push    10h
+        mov     ecx, edi
+        mov     byte ptr [esp + 20h], 1
+        call    ext_006D2130
+        lea     ecx, [edi + 10h]
+        test    ebp, ebp
+        mov     dword ptr [edi + 14h], ecx
+        jne     short L_true
+        mov     byte ptr [esi + 2], 0
+        jmp     short L_done
+L_true:
+        mov     byte ptr [esi + 2], 1
+L_done:
+        mov     ecx, dword ptr [esp + 10h]
+        mov     eax, esi
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     dword ptr fs:[0], ecx
+        add     esp, 10h
+        ret     0ch
+    }
+}
