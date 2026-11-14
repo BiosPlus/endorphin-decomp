@@ -8675,3 +8675,59 @@ extern "C" __declspec(naked) void* __fastcall fn_0069B800(void* self, int edx_un
         ret 0x10
     }
 }
+
+// [0x00697E70] sub_00697E70 (109 bytes)
+extern "C" void ext_007C19A0();
+extern "C" void ext_007C1B00();
+extern "C" __declspec(naked) int __fastcall fn_00697E70(int** self, int edx_unused, int a1, int a2, int a3, int* a4) {
+    __asm {
+        push    esi
+        mov     esi, ecx
+        mov     eax, dword ptr [esi]
+        mov     ecx, dword ptr [esp + 0x8]
+        mov     dword ptr [eax], ecx
+        mov     edx, dword ptr [esi]
+        mov     eax, dword ptr [esp + 0xc]
+        mov     dword ptr [edx + 0x4], eax
+        mov     ecx, dword ptr [esi]
+        mov     edx, dword ptr [esp + 0x10]
+        mov     dword ptr [ecx + 0xc], edx
+        mov     eax, dword ptr [esi]
+        push    edi
+        mov     edi, dword ptr [esp + 0x18]
+        mov     ecx, dword ptr [edi]
+        mov     dword ptr [eax + 0x10], ecx
+        mov     eax, dword ptr [esi]
+        mov     edx, dword ptr [eax + 0x10]
+        cmp     edx, dword ptr [edi]
+        jne     L_err
+        push    eax
+        call    ext_007C19A0
+        add     esp, 0x4
+        test    eax, eax
+        jne     L_ret
+        mov     eax, dword ptr [esi]
+        push    0x4
+        push    eax
+        call    ext_007C1B00
+        add     esp, 0x8
+        cmp     eax, 0x1
+        je      L_ok
+        test    eax, eax
+        jne     L_ret
+    L_err:
+        pop     edi
+        mov     eax, 0xfffffffb
+        pop     esi
+        ret     0x10
+    L_ok:
+        mov     eax, dword ptr [esi]
+        mov     ecx, dword ptr [eax + 0x14]
+        mov     dword ptr [edi], ecx
+        xor     eax, eax
+    L_ret:
+        pop     edi
+        pop     esi
+        ret     0x10
+    }
+}
