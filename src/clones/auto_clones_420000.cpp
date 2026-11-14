@@ -19,3 +19,18 @@ extern "C" void __fastcall fn_0042FCD0(void* self) {
     void** vt2 = *(void***)obj2;
     ((Fn1)vt2[0xe0 / 4])(obj2, 7, esi, (char*)esi + 0x3c, 0);
 }
+
+// [0x0042FD00] Identical-shape clone of 0x0042FC60 (48 bytes) - sub_0042FD00
+extern "C" void __fastcall fn_0042FD00(void* self) {
+    typedef void* (__cdecl *GetFn)();
+    typedef void* (__thiscall *Fn0)(void*);
+    typedef void (__thiscall *Fn1)(void*, int, void*, void*, int);
+
+    void* obj = ((GetFn)ext_00465B40)();
+    void** vt = *(void***)obj;
+    void* esi = ((Fn0)vt[0x9c / 4])(obj);
+    void* obj2 = ((GetFn)ext_00465B40)();
+    void** vt2 = *(void***)obj2;
+    ((Fn1)vt2[0xe0 / 4])(obj2, 4, esi, (char*)esi + 0x3c, 0);
+}
+
