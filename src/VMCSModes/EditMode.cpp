@@ -1320,3 +1320,77 @@ extern "C" __declspec(naked) void __fastcall fn_004F4370(void* self, int edx_unu
         ret     4
     }
 }
+
+// [0x004F45B0] VMCSModes::EditMode::vfunc_131 (212 bytes)
+extern "C" void ext_00485700();
+extern "C" void ext_00594000();
+extern "C" __declspec(naked) void __fastcall fn_004F45B0(void* self) {
+    __asm {
+        push -1
+        push 0x88fe68
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x8
+        push ebx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x8]
+        push edi
+        mov edi, dword ptr [eax + 0x14]
+        test edi, edi
+        mov ebx, 0x1
+        mov dword ptr [esp + 0xc], edi
+        mov byte ptr [esp + 0x10], bl
+        je L_4F4600
+        cmp dword ptr [mem_00AD89B4], 0x0
+        jne L_4F45FA
+        mov ecx, edi
+        mov byte ptr [edi + 0x153], bl
+        call ext_00472350
+L_4F45FA:
+        add dword ptr [mem_00AD89B4], ebx
+L_4F4600:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0xd4]
+        mov ecx, esi
+        mov dword ptr [esp + 0x1c], 0x0
+        call eax
+        mov ecx, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [ecx + 0x38]
+        call ext_00666120
+        call ext_00594000
+        mov eax, dword ptr [eax + 0x26c]
+        mov byte ptr [eax + 0x4], bl
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [edx + 0x14]
+        mov esi, dword ptr [eax + 0x34]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x38]
+        push ebx
+        mov ecx, esi
+        call edx
+        mov ecx, esi
+        call ext_00485700
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x3c]
+        mov ecx, esi
+        call edx
+        test edi, edi
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        je L_4F4672
+        sub dword ptr [mem_00AD89B4], ebx
+        jne L_4F4672
+        mov ecx, edi
+        mov byte ptr [edi + 0x153], 0x0
+        call ext_0046F930
+L_4F4672:
+        mov ecx, dword ptr [esp + 0x14]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret
+    }
+}
