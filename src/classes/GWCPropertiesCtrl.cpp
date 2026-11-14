@@ -455,3 +455,50 @@ LA_1D1:
         ret
     }
 }
+
+// [0x006AC160] GWCPropertiesCtrl::vfunc_79 (105 bytes)
+extern "C" void ext_006AA920();
+
+extern "C" __declspec(naked) void __fastcall fn_006AC160(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x54]
+        mov ecx, dword ptr [esp + 0x8]
+        cmp eax, ecx
+        jne L_006AC197
+        cmp byte ptr [esp + 0xC], 0
+        jne L_006AC19E
+        cmp dword ptr [esi + 0x100], 0
+        je L_006AC1B7
+        mov ecx, esi
+        call ext_006A8980
+        mov ecx, dword ptr [esi + 0x20]
+        push 1
+        push 0
+        push ecx
+        call dword ptr [mem_00925688]
+        pop esi
+        ret 8
+L_006AC197:
+        cmp byte ptr [esp + 0xC], 0
+        je L_006AC1B7
+L_006AC19E:
+        cmp eax, ecx
+        jne L_006AC1B7
+        cmp dword ptr [esi + 0x100], 0
+        jne L_006AC1B7
+        lea eax, [esp + 8]
+        push eax
+        mov ecx, esi
+        call ext_006AA920
+L_006AC1B7:
+        mov ecx, dword ptr [esi + 0x20]
+        push 1
+        push 0
+        push ecx
+        call dword ptr [mem_00925688]
+        pop esi
+        ret 8
+    }
+}
