@@ -14390,3 +14390,21 @@ extern "C" void __fastcall fn_00435090(void* self) {
         ((void (__thiscall*)(void*, int))ext_00433B70)(self, 2);
     }
 }
+
+// [0x004350E0] sub_004350E0 (65 bytes)
+extern "C" void ext_00433B70();
+extern "C" void ext_00465B30();
+extern "C" void ext_00465B40();
+extern "C" void ext_00469410();
+extern "C" void ext_004694E0();
+extern "C" void __fastcall fn_004350E0(void* self) {
+    void* obj = ((void* (__cdecl*)())ext_00465B40)();
+    void** vt = *(void***)obj;
+    ((void (__thiscall*)(void*, int))vt[0x200 / 4])(obj, 1);
+    void* p1 = ((void* (__stdcall*)(int))ext_00465B30)(2);
+    if (!((bool (__thiscall*)(void*))ext_004694E0)(p1)) {
+        void* p2 = ((void* (__stdcall*)(int))ext_00465B30)(2);
+        ((void (__thiscall*)(void*))ext_00469410)(p2);
+        ((void (__thiscall*)(void*, int))ext_00433B70)(self, 2);
+    }
+}
