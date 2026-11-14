@@ -785,3 +785,134 @@ L_79af29:
         ret
     }
 }
+
+// [0x0079D9B0] sub_0079D9B0 (248 bytes)
+extern "C" void ext_006B9EC0();
+extern "C" void ext_0079D700();
+extern "C" __declspec(naked) void __fastcall fn_0079D9B0(void* self) {
+    __asm {
+        xor eax, eax
+        mov dword ptr [ecx + 0xe8], eax
+        mov byte ptr [ecx + 0xec], al
+        mov byte ptr [ecx + 0xed], al
+        mov dword ptr [ecx + 0x168], eax
+        mov dword ptr [ecx + 0xf0], 1
+        mov edx, dword ptr [ecx + 0x168]
+        mov dword ptr [ecx + edx * 8 + 0xf4], eax
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov al, byte ptr [ecx + 0xed]
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov byte ptr [ecx + 0xed], 1
+        mov al, byte ptr [ecx + 0xec]
+        ret
+        nop
+        nop
+        mov byte ptr [ecx + 0xec], 1
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, ecx
+        push eax
+        lea ecx, [esi + 0x50]
+        call ext_006B9EC0
+        push 0xb5d2c0
+        lea ecx, [esi + 0x9c]
+        call ext_006B9EC0
+        pop esi
+        ret 4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        push esi
+        mov esi, ecx
+        push 0xb5d2c0
+        lea ecx, [esi + 0x50]
+        call ext_006B9EC0
+        push 0xb5d2c0
+        lea ecx, [esi + 0x9c]
+        call ext_006B9EC0
+        pop esi
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, 0xb5d2c0
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        xor eax, eax
+        ret 0x10
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        sub ecx, 4
+        jmp ext_0079D700
+    }
+}
