@@ -10217,3 +10217,64 @@ extern "C" __declspec(naked) void __fastcall fn_006AEB40(void* self) {
         ret
     }
 }
+
+// [0x006AA920] sub_006AA920 (233 bytes)
+extern "C" void ext_0046C090();
+extern "C" void ext_00626440();
+extern "C" void ext_006A8980();
+extern "C" void ext_006A89B0();
+extern "C" void ext_006ACE20();
+// ext_006ACFB0 already declared above as int ext_006ACFB0();
+extern "C" void ext_006ACFC0();
+
+struct Rect16_006AA920 {
+    int a, b, c, d;
+};
+
+struct TargetInterface_006AA920 {
+    virtual void vf0() = 0;
+    virtual void vf1() = 0;
+    virtual void vf2() = 0;
+    virtual void vf3() = 0;
+    virtual void vf4() = 0;
+    virtual int vf5(Rect16_006AA920 rect, void* node) = 0;
+};
+
+extern "C" void __fastcall fn_006AA920(char* self, void* dummy_edx, void** pNode) {
+    typedef bool (__thiscall *F_ACFC0)(void*);
+    typedef void (__thiscall *F_ACE20)(void*, Rect16_006AA920*);
+    typedef int (__thiscall *F_626440)(void*);
+    typedef int (__thiscall *F_ACFB0)(void*);
+    typedef void (__thiscall *F_A8980)(void*);
+    typedef void* (__thiscall *F_A89B0)(void*, int);
+    typedef TargetInterface_006AA920* (__thiscall *F_46C090)(void*);
+
+    if (((F_ACFC0)ext_006ACFC0)(*pNode)) {
+        Rect16_006AA920 rect;
+        ((F_ACE20)ext_006ACE20)(*pNode, &rect);
+        int val = ((F_626440)ext_00626440)(self) + *(int*)(self + 0xec);
+        rect.a += val + 2;
+        int ebx = ((F_ACFB0)ext_006ACFB0)(*pNode);
+
+        int ebp = *(int*)(self + 0x19c);
+        if (*(int*)(self + 0x100) != 0) {
+            ((F_A8980)ext_006A8980)(self);
+        }
+
+        if (ebp != *(int*)(self + 0x19c)) {
+            *pNode = 0;
+            return;
+        }
+
+        void* eax = ((F_A89B0)ext_006A89B0)(self, ebx);
+        *pNode = eax;
+        if (eax && ((F_ACFC0)ext_006ACFC0)(eax)) {
+            TargetInterface_006AA920* target = ((F_46C090)ext_0046C090)(*pNode);
+            if (target) {
+                *(int*)(self + 0x100) = target->vf5(rect, *pNode);
+            }
+        }
+    } else {
+        ((F_A8980)ext_006A8980)(self);
+    }
+}
