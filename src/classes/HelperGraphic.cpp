@@ -319,3 +319,64 @@ extern "C" __declspec(naked) void* __fastcall fn_005F52A0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x005FB240] HelperGraphic::vfunc_10 (137 bytes)
+extern "C" void ext_005B6610();
+extern "C" void ext_005F5280();
+extern "C" void ext_005F5350();
+extern "C" void ext_005F53A0();
+extern "C" void ext_005F54A0();
+extern "C" void ext_005F5BA0();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00A36F20;
+extern "C" int mem_00A2E2F8;
+
+extern "C" __declspec(naked) void __fastcall fn_005FB240(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push edi
+        push 0x0
+        push offset mem_00A36F20
+        push offset mem_00A2E2F8
+        push 0x0
+        push eax
+        mov esi, ecx
+        call ext_006A6E9E
+        mov edi, eax
+        add esp, 0x14
+        test edi, edi
+        je short L_done
+        lea ecx, [edi + 0x168]
+        push ecx
+        lea ecx, [esi + 0x168]
+        call ext_005F5350
+        fld dword ptr [edi + 0x160]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_005F53A0
+        lea edx, [edi + 0x1a4]
+        push edx
+        mov ecx, esi
+        call ext_005F54A0
+        mov ecx, edi
+        call ext_005F5280
+        push eax
+        mov ecx, esi
+        call ext_005F5BA0
+        mov al, byte ptr [edi + 0x20d]
+        push edi
+        mov ecx, esi
+        mov byte ptr [esi + 0x20d], al
+        call ext_005B6610
+        mov esi, dword ptr [esi + 0x10]
+        test esi, esi
+        je short L_done
+        mov byte ptr [esi + 0x4], 0x1
+L_done:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
