@@ -9530,3 +9530,84 @@ extern "C" __declspec(naked) void __fastcall fn_0054FBB0(void* self) {
         ret
     }
 }
+
+// [0x00547900] sub_00547900 (199 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_00640110();
+extern "C" void ext_006404E0();
+extern "C" void ext_0067C620();
+extern "C" int mem_00A9F1B0;
+extern "C" int mem_00A9FA6C;
+extern "C" int mem_00A9F054;
+extern "C" int mem_00A9F37C;
+extern "C" int mem_00A9EE44;
+
+extern "C" __declspec(naked) void __fastcall fn_00547900(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x18
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x28]
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x8]
+        push edi
+        call edx
+        mov eax, dword ptr [mem_00A9F1B0]
+        push eax
+        mov ecx, edi
+        call ext_006404E0
+        mov ebx, eax
+        push ebx
+        lea ecx, [esi + 0x30]
+        call ext_0067C620
+        mov ecx, dword ptr [mem_00A9FA6C]
+        push ecx
+        mov ecx, ebx
+        call ext_00640110
+        push 0x956c80
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x2c], eax
+        call ext_00427550
+        mov edx, dword ptr [mem_00A9F054]
+        push edx
+        mov ecx, edi
+        call ext_006404E0
+        fld dword ptr [esi + 0x48]
+        fstp dword ptr [esp + 0xc]
+        push eax
+        fld dword ptr [esi + 0x4c]
+        lea ecx, [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esi + 0x50]
+        fstp dword ptr [esp + 0x18]
+        call ext_0067C620
+        mov eax, dword ptr [mem_00A9F37C]
+        push eax
+        mov ecx, edi
+        call ext_006404E0
+        fld dword ptr [esi + 0x58]
+        fstp dword ptr [esp + 0x18]
+        push eax
+        fld dword ptr [esi + 0x5c]
+        lea ecx, [esp + 0x1c]
+        fstp dword ptr [esp + 0x20]
+        fld dword ptr [esi + 0x60]
+        fstp dword ptr [esp + 0x24]
+        call ext_0067C620
+        mov ecx, dword ptr [mem_00A9EE44]
+        push ecx
+        mov ecx, edi
+        call ext_006404E0
+        push eax
+        lea ecx, [esi + 0x3c]
+        call ext_0067C620
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x18
+        ret 0x4
+    }
+}

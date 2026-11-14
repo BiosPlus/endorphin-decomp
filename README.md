@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `13522 / 24049` (**56.23%**) — `10430` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1476957 / 4496005 bytes` (**32.85%** of 4.29 MB)
+- **In-Scope Functions Matched:** `13523 / 24049` (**56.23%**) — `10431` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1477156 / 4496005 bytes` (**32.85%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -21,17 +21,17 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P50-60 (91-122B)** | 1498 / 2405 | 62.29% | 160007 / 256906 | 62.28% | 907 fn |
 | **P60-70 (122-159B)** | 1084 / 2405 | 45.07% | 146678 / 339038 | 43.26% | 1321 fn |
 | **P70-80 (159-178B)** | 295 / 2405 | 12.27% | 49714 / 400567 | 12.41% | 2110 fn |
-| **P80-90 (178-335B)** | 1087 / 2405 | 45.20% | 260949 / 583211 | 44.74% | 1318 fn |
+| **P80-90 (178-335B)** | 1088 / 2405 | 45.24% | 261148 / 583211 | 44.78% | 1317 fn |
 | **P90-100 (335-36100B)** | 711 / 2404 | 29.58% | 524262 / 2392860 | 21.91% | 1693 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6754 | 526112 | 64.76% |
-| `claude-haiku-5.5@low` | 1383 | 319118 | 13.26% |
+| `claude-haiku-5.5@medium` | 6754 | 526112 | 64.75% |
+| `claude-haiku-5.5@low` | 1384 | 319317 | 13.27% |
 | `gemini-4-hydrogen@low` | 851 | 251535 | 8.16% |
-| `gemini-3.8-flash@low` | 787 | 230486 | 7.55% |
+| `gemini-3.8-flash@low` | 787 | 230486 | 7.54% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.29% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.56% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.24% |
