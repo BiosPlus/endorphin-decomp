@@ -2675,3 +2675,151 @@ SKIP_C:
         ret
     }
 }
+
+// [0x006D3E90] sub_006D3E90 (400 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006C1BE0();
+extern "C" void ext_007153B0();
+extern "C" void ext_0071A880();
+extern "C" void ext_0071DD50();
+extern "C" int mem_008B8FDB;
+
+extern "C" __declspec(naked) void __fastcall fn_006D3E90(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push offset mem_008B8FDB
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push 0x548
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je label_null
+        mov ecx, dword ptr [esp + 0x18]
+        push ecx
+        push esi
+        mov ecx, eax
+        call ext_006C1BE0
+        pop esi
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    label_null:
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        push -1
+        push offset mem_008B8FDB
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push 0x14
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je label_null2
+        push esi
+        mov ecx, eax
+        call ext_0071DD50
+        pop esi
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    label_null2:
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+        nop
+        nop
+        nop
+        push -1
+        push offset mem_008B8FDB
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push 0x14
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je label_null3
+        push esi
+        mov ecx, eax
+        call ext_007153B0
+        pop esi
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    label_null3:
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+        nop
+        nop
+        nop
+        push -1
+        push offset mem_008B8FDB
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push 0x118
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je label_null4
+        push esi
+        mov ecx, eax
+        call ext_0071A880
+        pop esi
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    label_null4:
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
