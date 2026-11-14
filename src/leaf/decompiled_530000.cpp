@@ -7632,3 +7632,48 @@ extern "C" void __cdecl fn_0053A360(const float* a, const float* b, float x, flo
     v[2] = b[2];
     f(&mem_00AEFEBC, v);
 }
+
+// [0x0053FBF0] sub_0053FBF0 (118 bytes)
+extern "C" void ext_004B69A0();
+extern "C" void ext_00543350();
+extern "C" int mem_00AF141C;
+
+extern "C" __declspec(naked) void __fastcall fn_0053FBF0(void* self) {
+    __asm {
+        push    ebx
+        push    esi
+        push    edi
+        mov     esi, ecx
+        call    ext_00543350
+        xor     edi, edi
+        cmp     dword ptr [esi + 0xbc], edi
+        jge     loc_53fc0a
+        mov     dword ptr [esi + 0xbc], edi
+loc_53fc0a:
+        cmp     dword ptr [esi + 0xc0], edi
+        jge     loc_53fc18
+        mov     dword ptr [esi + 0xc0], edi
+loc_53fc18:
+        mov     ebx, 1
+        cmp     dword ptr [esi + 0xc4], ebx
+        jle     loc_53fc2b
+        mov     dword ptr [esi + 0xc4], ebx
+loc_53fc2b:
+        cmp     dword ptr [esi + 0xc8], ebx
+        jle     loc_53fc39
+        mov     dword ptr [esi + 0xc8], ebx
+loc_53fc39:
+        push    edi
+        push    0x200
+        mov     ecx, offset mem_00AF141C
+        mov     dword ptr [esi + 0xcc], edi
+        call    ext_004B69A0
+        mov     dword ptr [esi + 0xe0], edi
+        pop     edi
+        mov     byte ptr [esi + 0xe4], bl
+        mov     byte ptr [esi + 0xe5], 0
+        pop     esi
+        pop     ebx
+        ret
+    }
+}
