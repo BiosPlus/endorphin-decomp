@@ -5549,3 +5549,57 @@ extern "C" __declspec(naked) void __fastcall fn_00587B90(void* self) {
         ret
     }
 }
+
+// [0x00587110] sub_00587110 (99 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00587110(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 4]
+        mov edx, dword ptr [eax + 0x1c]
+        lea ecx, [edi + 4]
+        call edx
+        test al, al
+        je L_skip
+        mov eax, dword ptr [edi + 8]
+        mov edx, dword ptr [eax + 0x38]
+        lea ecx, [edi + 8]
+        call edx
+    L_skip:
+        mov ebx, dword ptr [edi + 0x84]
+        cmp dword ptr [edi + 0x80], ebx
+        mov ebp, dword ptr [mem_00925134]
+        jbe L_ok1
+        call ebp
+    L_ok1:
+        mov esi, dword ptr [edi + 0x80]
+        cmp esi, dword ptr [edi + 0x84]
+        jbe L_ok2
+        call ebp
+    L_ok2:
+        cmp esi, ebx
+        je L_done
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+    L_loop:
+        mov ecx, dword ptr [esi]
+        call fn_00587110
+        add esi, 4
+        cmp esi, ebx
+        jne L_loop
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
