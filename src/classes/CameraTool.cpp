@@ -481,3 +481,35 @@ extern "C" __declspec(naked) void __fastcall fn_00543930(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00543820] CameraTool::vfunc_3 (194 bytes)
+struct Node_00543820 {
+    Node_00543820* find(int key);
+    void* get(int key);
+};
+extern "C" Node_00543820* __fastcall ext_006404E0(void* self, int edx_unused, int key);
+extern "C" void* __fastcall ext_00640110(void* self, int edx_unused, int key);
+extern "C" void __cdecl ext_00640BC0(void* node, float val);
+extern "C" void __cdecl ext_00640A80(void* node, unsigned char val);
+extern "C" int mem_00A9F0E0;
+extern "C" int mem_00A9FAF0;
+extern "C" int mem_00A9F874;
+extern "C" int mem_00A9F80C;
+extern "C" int mem_00A9FADC;
+extern "C" int mem_00A9F978;
+
+extern "C" void* __fastcall fn_00543820(void* self, int edx_unused, void* arg) {
+    char* s = (char*)self;
+    void* node = ((Node_00543820*)arg)->find(mem_00A9F0E0);
+    void* p0 = ((Node_00543820*)node)->get(mem_00A9FAF0);
+    ext_00640BC0(p0, *(float*)(s + 0xb4));
+    void* p1 = ((Node_00543820*)node)->get(mem_00A9F874);
+    ext_00640BC0(p1, *(float*)(s + 0xb8));
+    void* p2 = ((Node_00543820*)node)->get(mem_00A9F80C);
+    ext_00640BC0(p2, *(float*)(s + 0xbc));
+    void* p3 = ((Node_00543820*)node)->get(mem_00A9FADC);
+    ext_00640BC0(p3, *(float*)(s + 0xc0));
+    void* p4 = ((Node_00543820*)arg)->get(mem_00A9F978);
+    ext_00640A80(p4, *(unsigned char*)(s + 0xc4));
+    return arg;
+}
