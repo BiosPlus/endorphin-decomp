@@ -8766,3 +8766,101 @@ extern "C" __declspec(naked) void __fastcall fn_004B05A0(void* self, int edx_unu
         ret 0x14
     }
 }
+
+// [0x004B69A0] sub_004B69A0 (183 bytes)
+extern "C" void ext_004B67E0();
+extern "C" void ext_00596660();
+extern "C" int mem_00925134; /* "P{b" */
+extern "C" __declspec(naked) void __fastcall fn_004B69A0(void* self, int edx_unused, unsigned int n, const void* val) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        push edi
+        jne L_69A0_CALC1
+        xor eax, eax
+        jmp L_69A0_CMP1
+    L_69A0_CALC1:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 2
+    L_69A0_CMP1:
+        mov ebx, dword ptr [esp + 0x1c]
+        cmp eax, ebx
+        jae L_69A0_SHRINK
+        test ecx, ecx
+        jne L_69A0_CALC2
+        xor edi, edi
+        jmp L_69A0_CHK2
+    L_69A0_CALC2:
+        mov edi, dword ptr [esi + 0x8]
+        sub edi, ecx
+        sar edi, 2
+    L_69A0_CHK2:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp ecx, ebp
+        jbe L_69A0_GROW
+        call dword ptr [mem_00925134]
+    L_69A0_GROW:
+        lea eax, [esp + 0x20]
+        push eax
+        sub ebx, edi
+        push ebx
+        push ebp
+        push esi
+        mov ecx, esi
+        call ext_004B67E0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 8
+    L_69A0_SHRINK:
+        test ecx, ecx
+        je L_69A0_EXIT
+        mov ebp, dword ptr [esi + 0x8]
+        mov eax, ebp
+        sub eax, ecx
+        sar eax, 2
+        cmp ebx, eax
+        jae L_69A0_EXIT
+        cmp ecx, ebp
+        jbe L_69A0_OK1
+        call dword ptr [mem_00925134]
+    L_69A0_OK1:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_69A0_OK2
+        call dword ptr [mem_00925134]
+    L_69A0_OK2:
+        mov dword ptr [esp + 0x14], edi
+        lea edi, [edi + ebx * 4]
+        cmp edi, dword ptr [esi + 0x8]
+        ja L_69A0_BAD
+        cmp edi, dword ptr [esi + 0x4]
+        jae L_69A0_OK3
+    L_69A0_BAD:
+        call dword ptr [mem_00925134]
+    L_69A0_OK3:
+        push ebp
+        push esi
+        push edi
+        push esi
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, esi
+        call ext_00596660
+    L_69A0_EXIT:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 8
+    }
+}
