@@ -9151,3 +9151,86 @@ extern "C" __declspec(naked) void __fastcall fn_0050F5B0(void* self) {
         ret
     }
 }
+
+// [0x0050F7B0] sub_0050F7B0 (186 bytes)
+extern "C" void ext_0050F5B0();
+extern "C" void ext_0050F6B0();
+
+extern "C" __declspec(naked) void __fastcall fn_0050F7B0(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push -1
+        push 0x892411
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x24]
+        xor ebx, ebx
+        mov dword ptr [esi], edi
+        mov dword ptr [esp + 0x10], esi
+        mov dword ptr [esi + 0x4], ebx
+        mov dword ptr [esp + 0x1c], ebx
+        mov dword ptr [esi + 0x8], ebx
+        mov eax, dword ptr [esp + 0x28]
+        mov dword ptr [esi + 0x18], eax
+        mov dword ptr [esi + 0x20], ebx
+        mov dword ptr [esi + 0x24], ebx
+        mov dword ptr [esi + 0x28], ebx
+        mov ecx, dword ptr [esi]
+        push 1
+        mov dword ptr [ecx + 0x74], esi
+        lea edx, [edi + 0x20]
+        push ebx
+        push edx
+        mov byte ptr [esp + 0x28], 2
+        mov dword ptr [esi + 0x14], ebx
+        mov byte ptr [esi + 0x30], bl
+        mov dword ptr [esi + 0x2c], ebx
+        call ext_0050F5B0
+        mov ecx, dword ptr [esi + 0x8]
+        mov ebp, eax
+        add esp, 0xc
+        cmp ebp, ecx
+        je L_50F829
+        cmp ecx, ebx
+        je L_50F829
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+    L_50F829:
+        push 1
+        push ebx
+        add edi, 0x58
+        push edi
+        mov dword ptr [esi + 0x8], ebp
+        call ext_0050F6B0
+        mov ecx, dword ptr [esi + 0x4]
+        mov edi, eax
+        add esp, 0xc
+        cmp edi, ecx
+        je L_50F850
+        cmp ecx, ebx
+        je L_50F850
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 1
+        call edx
+    L_50F850:
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [esi + 0x4], edi
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x8
+    }
+}
