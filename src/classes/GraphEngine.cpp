@@ -5,6 +5,9 @@ extern "C" void ext_004B10A0();
 extern "C" void ext_004B10D0();
 extern "C" double __cdecl ext_006A6E92(double x);
 extern "C" int mem_0092520C;
+extern "C" void ext_00492210();
+extern "C" float __fastcall ext_0046F860(void* self);
+extern "C" void* mem_00AD89B8;
 
 // [0x004904F0] GraphEngine::vfunc_0_off_4 (111 bytes)
 extern "C" void __fastcall fn_004904F0(void* self) {
@@ -48,5 +51,20 @@ extern "C" void __fastcall fn_00490560(void* self, int edx_unused, float* arg) {
     if (obj != 0) {
         unsigned char val = *(unsigned char*)(*(char**)(s + 0x60) + 0x19);
         (*(void (__thiscall**)(void*, int))(*(int*)obj + 4))(obj, (int)val);
+    }
+}
+
+// [0x00492350] GraphEngine::vfunc_0_off_C (78 bytes)
+extern "C" void __fastcall fn_00492350(void* self) {
+    char* s = (char*)self;
+    char* eax = *(char**)(s + 0x54);
+    if (eax != 0 && *(eax + 0x18) != 0) {
+        ((void (__thiscall*)(void*))ext_00492210)(s - 0xc);
+        void* ecx = mem_00AD89B8;
+        if (ecx != 0) {
+            char* a = *(char**)((char*)ecx + 0xf8);
+            volatile float temp = *(float*)(a + 0x138);
+            *(double*)(s + 0x44) = (double)temp / ext_0046F860(ecx);
+        }
     }
 }
