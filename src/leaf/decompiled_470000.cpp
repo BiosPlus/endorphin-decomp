@@ -2,8 +2,10 @@
 
 #include <new>
 #include <string>
+extern "C" void ext_006A5C5C(void*);
+extern "C" void __fastcall ext_00678DE0(void*);
 
-// [0x00474EE0] sub_00474EE0 (24 bytes)
+extern "C" void __fastcall ext_00678DE0(void*);
 extern "C" void ext_00451670();
 extern "C" __declspec(naked) void __fastcall fn_00474EE0(void* self, int edx_unused, int a1) {
     __asm {
@@ -9798,4 +9800,16 @@ extern "C" __declspec(naked) void __fastcall fn_00473060(void* self) {
         add     esp, 0x10
         ret
     }
+}
+
+// [0x00474C10] sub_00474C10 (48 bytes)
+extern "C" void __fastcall fn_00474C10(void* self) {
+    void** fields = (void**)((char*)self + 0x18);
+    if (fields[0] != 0) {
+        ext_006A5C5C(fields[0]);
+    }
+    fields[0] = 0;
+    fields[1] = 0;
+    fields[2] = 0;
+    ext_00678DE0(self);
 }
