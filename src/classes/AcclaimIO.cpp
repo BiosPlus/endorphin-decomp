@@ -266,3 +266,58 @@ extern "C" __declspec(naked) void __fastcall fn_00584610(void* self) {
         ret 4
     }
 }
+
+// [0x005847C0] AcclaimIO::vfunc_10 (147 bytes)
+extern "C" void ext_00406FC0();
+extern "C" void ext_0055D2C0();
+extern "C" void ext_0055D600();
+
+extern "C" __declspec(naked) void __fastcall fn_005847C0(void* self, int edx_unused, void* arg0) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        lea ebx, [esi + 0x5c]
+        lea edi, [esi + 0x46c]
+        push ebx
+        mov ecx, edi
+        call ext_00558A10
+        mov eax, dword ptr [esi + 0x418]
+        push eax
+        mov ecx, edi
+        call ext_00559180
+        mov ecx, dword ptr [esi + 0x414]
+        mov edx, dword ptr [esi + 0x420]
+        mov eax, dword ptr [esi + 0x424]
+        mov dword ptr [esi + 0x880], ecx
+        lea ebp, [esi + 0x42c]
+        mov ecx, ebp
+        mov dword ptr [esi + 0x88c], edx
+        mov dword ptr [esi + 0x890], eax
+        call ext_0055D600
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [edx + 0x28]
+        push eax
+        mov ecx, edi
+        call edx
+        mov eax, dword ptr [esi + 0x880]
+        push eax
+        mov ecx, ebp
+        call ext_0055D2C0
+        lea ecx, [esi + 0x4c8]
+        push ecx
+        mov ecx, ebx
+        call ext_00406FC0
+        push ebx
+        lea ecx, [esi + 0x16c]
+        call ext_00406FC0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
