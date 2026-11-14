@@ -203,3 +203,43 @@ extern "C" __declspec(naked) void __fastcall fn_00612A20(void* self, int edx_unu
         ret     0x4
     }
 }
+
+// [0x0061EAB0] NMData::SecondaryTwistAndSwingConstraint::vfunc_17_off_C (99 bytes)
+extern "C" void ext_0061D750();
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void __fastcall fn_0061EAB0(void* self) {
+    __asm {
+        push -1
+        push 08a7a5bh
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        push 164h
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov [esp+4], eax
+        test eax, eax
+        mov dword ptr [esp+10h], 0
+        je fn_0061EAB0_null
+        add esi, -0ch
+        push esi
+        mov ecx, eax
+        call ext_0061D750
+        pop esi
+        mov ecx, [esp+4]
+        mov fs:[0], ecx
+        add esp, 10h
+        ret
+    fn_0061EAB0_null:
+        mov ecx, [esp+8]
+        xor eax, eax
+        pop esi
+        mov fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
