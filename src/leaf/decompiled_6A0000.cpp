@@ -9857,3 +9857,19 @@ extern "C" __declspec(naked) void __fastcall fn_006AF5D0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x006A4010] sub_006A4010 (48 bytes)
+extern "C" int mem_00B5CE78;
+extern "C" int mem_00B5CE74;
+extern "C" int mem_009220A0;
+extern "C" void __fastcall ext_006A3FF0(void* self);
+extern "C" void ext_006A6C87();
+
+extern "C" void* __fastcall fn_006A4010(void* self) {
+    if (!(mem_00B5CE78 & 1)) {
+        mem_00B5CE78 |= 1;
+        ext_006A3FF0(&mem_00B5CE74);
+        ((void (*)(void*))ext_006A6C87)(&mem_009220A0);
+    }
+    return &mem_00B5CE74;
+}
