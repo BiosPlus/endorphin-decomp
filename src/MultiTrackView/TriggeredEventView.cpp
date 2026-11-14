@@ -955,3 +955,41 @@ extern "C" __declspec(naked) void __fastcall fn_0043C6D0(void* self) {
         ret
     }
 }
+
+// [0x0045F6F0] MultiTrackView::TriggeredEventView::vfunc_0_off_250 (76 bytes)
+extern "C" void __fastcall ext_0045F610(void* self, int edx_unused, int a1);
+extern "C" void __fastcall ext_0045E570(void* self, int edx_unused, int a1);
+extern "C" void __fastcall ext_0043DC90(void* self, int edx_unused, int a1);
+extern "C" int mem_00925688;
+extern "C" int mem_0092568C;
+extern "C" __declspec(naked) void __fastcall fn_0045F6F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi - 0x250]
+        push ebx
+        mov ecx, edi
+        call ext_0045F610
+        push ebx
+        mov ecx, edi
+        call ext_0045E570
+        mov eax, dword ptr [esi - 0x230]
+        push 0x1
+        push 0x0
+        push eax
+        call dword ptr [mem_00925688]
+        mov ecx, dword ptr [esi - 0x230]
+        push ecx
+        call dword ptr [mem_0092568C]
+        push -0x1
+        mov ecx, edi
+        call ext_0043DC90
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
