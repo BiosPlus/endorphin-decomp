@@ -10755,3 +10755,102 @@ extern "C" __declspec(naked) void __fastcall fn_0045E380(void* self) {
         ret     0x4
     }
 }
+
+// [0x00451BE0] sub_00451BE0 (243 bytes)
+extern "C" void ext_0042EE50();
+extern "C" void ext_00451700();
+extern "C" void ext_0052F600();
+extern "C" void ext_006A5F50();
+extern "C" void ext_006AD940();
+extern "C" int mem_00924300;
+extern "C" int mem_00925688;
+extern "C" __declspec(naked) void __fastcall fn_00451BE0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        mov ecx, 0xad299c
+        lea ebx, [esi + 0x100]
+        call dword ptr [mem_00924300]
+        push eax
+        mov ecx, ebx
+        call ext_006A5F50
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        call ext_006AD940
+        mov edi, eax
+        mov ecx, edi
+        call ext_00492550
+        test al, al
+        je label_skip
+        push 0
+        mov ecx, edi
+        call ext_00492520
+        push 1
+        mov ecx, edi
+        mov ebp, eax
+        call ext_00492520
+        test ebp, ebp
+        je label_skip
+        test eax, eax
+        je label_skip
+        mov ecx, edi
+        call ext_0052F600
+        cmp eax, ebp
+        mov ecx, 0xad29a0
+        je label_have
+        mov ecx, 0xad29a4
+label_have:
+        call dword ptr [mem_00924300]
+        push eax
+        mov ecx, ebx
+        call ext_006A5F50
+label_skip:
+        mov ebx, dword ptr [esp + 0x14]
+        test bl, bl
+        mov ebp, dword ptr [mem_00925694]
+        je label_noinv
+        mov eax, dword ptr [esi + 0x61c]
+        push 0
+        push 0
+        push 0x184
+        push eax
+        call ebp
+label_noinv:
+        lea edi, [esi + 0x5fc]
+        mov ecx, edi
+        call ext_0042EE50
+        mov eax, dword ptr [esi + 0x74]
+        test eax, eax
+        je label_end
+        push ebx
+        push 0
+        add eax, 0x160
+        push eax
+        mov ecx, esi
+        call ext_00451700
+        mov ecx, dword ptr [esi + 0x61c]
+        push 0
+        push -1
+        push 0x186
+        push ecx
+        call ebp
+        push 0
+        push edi
+        mov ecx, esi
+        call ext_0044DD70
+        mov edx, dword ptr [esi + 0x61c]
+        push 1
+        push 0
+        push edx
+        call dword ptr [mem_00925688]
+label_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
