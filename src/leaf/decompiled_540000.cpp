@@ -10655,3 +10655,92 @@ extern "C" __declspec(naked) void __fastcall fn_0054F6F0(void* self, void* dummy
         ret 0x10
     }
 }
+
+// [0x00542FE0] sub_00542FE0 (198 bytes)
+extern "C" void ext_00406510();
+extern "C" void ext_0040ECB0();
+extern "C" void ext_00540D20();
+extern "C" void ext_00673C20();
+extern "C" __declspec(naked) void __fastcall fn_00542FE0(void* self) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        mov ebx, dword ptr [esp + 0x1c]
+        push ebp
+        push esi
+        mov esi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], esi
+        push edi
+        mov edi, ecx
+        mov dword ptr [esp + 0x10], edi
+        jbe L00542FE0_a
+        call dword ptr [mem_00925134]
+L00542FE0_a:
+        mov ebp, dword ptr [ebx + 0x4]
+        cmp ebp, dword ptr [ebx + 0x8]
+        jbe L00542FE0_b
+        call dword ptr [mem_00925134]
+L00542FE0_b:
+        push esi
+        push ebx
+        push ebp
+        push ebx
+        lea eax, [esp + 0x2c]
+        push eax
+        mov ecx, ebx
+        call ext_00406510
+        mov ecx, dword ptr [edi + 0x110]
+        mov eax, dword ptr [ecx]
+        add edi, 0x10c
+        mov esi, edi
+        mov ebp, eax
+        mov dword ptr [esp + 0x14], esi
+        mov dword ptr [esp + 0x18], ebp
+L00542FE0_top:
+        test esi, esi
+        mov edx, dword ptr [edi + 0x4]
+        mov dword ptr [esp + 0x20], edx
+        je L00542FE0_c
+        cmp esi, edi
+        je L00542FE0_d
+L00542FE0_c:
+        call dword ptr [mem_00925134]
+L00542FE0_d:
+        cmp ebp, dword ptr [esp + 0x20]
+        je L00542FE0_end
+        test esi, esi
+        jne L00542FE0_e
+        call dword ptr [mem_00925134]
+L00542FE0_e:
+        cmp ebp, dword ptr [esi + 0x4]
+        jne L00542FE0_f
+        call dword ptr [mem_00925134]
+L00542FE0_f:
+        mov ecx, dword ptr [ebp + 0x28]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x1c]
+        call edx
+        mov ecx, dword ptr [esp + 0x10]
+        mov esi, eax
+        push esi
+        call ext_00540D20
+        test al, al
+        jne L00542FE0_g
+        push esi
+        mov ecx, ebx
+        call ext_0040ECB0
+L00542FE0_g:
+        lea ecx, [esp + 0x14]
+        call ext_00673C20
+        mov ebp, dword ptr [esp + 0x18]
+        mov esi, dword ptr [esp + 0x14]
+        jmp L00542FE0_top
+L00542FE0_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x14
+        ret 4
+    }
+}
