@@ -8686,3 +8686,37 @@ loc_50d810:
         ret
     }
 }
+
+extern "C" void ext_0049F7F0();
+
+// [0x00506DB0] sub_00506DB0 (86 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00506DB0(void* self) {
+    __asm {
+        push    -1
+        push    0x0088D1B8
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        push    ecx
+        push    esi
+        mov     esi, ecx
+        lea     ecx, [esi + 4]
+        xor     eax, eax
+        mov     dword ptr [esi], 0x0094F63C
+        mov     dword ptr [esp + 4], ecx
+        mov     dword ptr [ecx + 4], eax
+        mov     dword ptr [ecx + 8], eax
+        mov     dword ptr [ecx + 0xC], eax
+        mov     dword ptr [esp + 0x10], eax
+        mov     eax, dword ptr [esp + 0x18]
+        add     eax, 4
+        push    eax
+        call    ext_0049F7F0
+        mov     ecx, dword ptr [esp + 8]
+        mov     eax, esi
+        pop     esi
+        mov     fs:[0], ecx
+        add     esp, 0x10
+        ret     4
+    }
+}
