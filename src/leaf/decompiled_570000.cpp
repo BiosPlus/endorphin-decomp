@@ -9348,3 +9348,48 @@ L_done:
         ret
     }
 }
+
+// [0x0057DDF0] sub_0057DDF0 (94 bytes)
+extern "C" void ext_0057DB10();
+
+extern "C" __declspec(naked) void* __cdecl fn_0057DDF0(void* a1, void* a2, void* a3) {
+    __asm {
+        sub esp, 8
+        mov edx, dword ptr [esp + 0x14]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        xor al, al
+        mov byte ptr [esp + 0x10], al
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0xc], al
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        push edi
+        push esi
+        push ebx
+        call ext_0057DB10
+        sub esi, ebx
+        mov eax, 0x92492493
+        imul esi
+        add edx, esi
+        sar edx, 5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        add esp, 0x18
+        lea ecx, [eax * 8]
+        sub ecx, eax
+        lea eax, [edi + ecx * 8]
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
