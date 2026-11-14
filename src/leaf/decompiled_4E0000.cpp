@@ -5569,3 +5569,53 @@ extern "C" __declspec(naked) void __fastcall fn_004EB950(void* self) {
         ret
     }
 }
+
+// [0x004EE590] sub_004EE590 (98 bytes)
+extern "C" void ext_004DA180();
+extern "C" void ext_004EDC90();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00925134;
+extern "C" int mem_00924FDC;
+
+extern "C" __declspec(naked) void __fastcall fn_004EE590(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        sub esp, 1Ch
+        mov edi, ecx
+        mov ecx, esp
+        mov dword ptr [esp + 24h], esp
+        call dword ptr [mem_00924FE8]
+        lea esi, [edi + 3Ch]
+        push 1
+        mov ecx, esi
+        call ext_004DA180
+        mov eax, dword ptr [esi + 4]
+        test eax, eax
+        je L_invalid_590
+        mov ecx, dword ptr [esi + 8]
+        sub ecx, eax
+        mov eax, 92492493h
+        imul ecx
+        add edx, ecx
+        sar edx, 4
+        mov eax, edx
+        shr eax, 1Fh
+        add eax, edx
+        jne L_ok_590
+L_invalid_590:
+        call dword ptr [mem_00925134]
+L_ok_590:
+        mov ecx, dword ptr [esp + 10h]
+        push ecx
+        mov ecx, dword ptr [esi + 4]
+        call dword ptr [mem_00924FDC]
+        mov ecx, edi
+        call ext_004EDC90
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
