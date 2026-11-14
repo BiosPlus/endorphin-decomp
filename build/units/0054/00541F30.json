@@ -173,5 +173,7 @@
     "0x0054269C",
     "0x005426BE"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T14:15:42Z"
 }
