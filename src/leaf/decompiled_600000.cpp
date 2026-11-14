@@ -5698,3 +5698,42 @@ extern "C" __declspec(naked) void __fastcall fn_0060EFE0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0060FAE0] sub_0060FAE0 (124 bytes)
+extern "C" void ext_0060EFE0();
+extern "C" void ext_0060F990();
+
+extern "C" __declspec(naked) void __fastcall fn_0060FAE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x8a8b68
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        call ext_0060EFE0
+        add edi, 0x1d8
+        push edi
+        lea ecx, [esi + 0x1d8]
+        mov dword ptr [esp + 0x18], 0
+        mov dword ptr [esi], 0x972b9c
+        mov dword ptr [esi + 0x4], 0x972b54
+        mov dword ptr [esi + 0x8], 0x972b14
+        mov dword ptr [esi + 0xc], 0x972ac4
+        mov dword ptr [esi + 0x150], 0x972aac
+        call ext_0060F990
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
