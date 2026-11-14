@@ -517,3 +517,65 @@ extern "C" __declspec(naked) void __fastcall fn_005E1C50(void* self) {
         ret
     }
 }
+
+// [0x005EECA0] NMData::HingeData::vfunc_67 (141 bytes)
+extern "C" void ext_00412690();
+extern "C" void ext_0048EF80();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005EECA0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x168]
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe loc_5eecbd
+        call ebp
+    loc_5eecbd:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe loc_5eecc7
+        call ebp
+    loc_5eecc7:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_0048EF80
+        fldz
+        lea ecx, [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x0
+        call ext_00412690
+        fldz
+        lea edx, [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x1
+        call ext_00412690
+        fldz
+        lea eax, [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x2
+        call ext_00412690
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
