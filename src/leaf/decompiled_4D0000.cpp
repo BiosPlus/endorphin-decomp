@@ -2915,3 +2915,66 @@ extern "C" __declspec(naked) void __fastcall fn_004D3E40(void* self) {
         ret
     }
 }
+
+// [0x004D3FD0] sub_004D3FD0 (142 bytes)
+extern "C" void ext_004D3E40();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FEC;
+extern "C" __declspec(naked) void* __fastcall fn_004D3FD0(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_004D3E40
+        mov eax, dword ptr [esi + 0x170]
+        test eax, eax
+        mov edi, dword ptr [mem_00925134]
+        je L_call1
+        mov ecx, dword ptr [esi + 0x174]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp eax, 0x1
+        ja L_check1
+L_call1:
+        call edi
+L_check1:
+        mov ecx, dword ptr [esi + 0x170]
+        add ecx, 0x1c
+        call dword ptr [mem_00924FEC]
+        test al, al
+        je L_notempty
+        pop edi
+        mov eax, 0xae6004
+        pop esi
+        ret
+L_notempty:
+        mov eax, dword ptr [esi + 0x170]
+        test eax, eax
+        je L_call2
+        mov ecx, dword ptr [esi + 0x174]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp eax, 0x1
+        ja L_check2
+L_call2:
+        call edi
+L_check2:
+        mov eax, dword ptr [esi + 0x170]
+        pop edi
+        add eax, 0x1c
+        pop esi
+        ret
+    }
+}
