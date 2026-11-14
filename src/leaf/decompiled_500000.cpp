@@ -1,6 +1,9 @@
 // Decompiled translation unit: src/leaf/decompiled_500000.cpp
 
 #include <string>
+
+extern "C" void ext_004FDAA0();
+extern "C" void ext_00502060();
 extern "C" void ext_006A5C5C();
 extern "C" int mem_0094F074;
 
@@ -14026,6 +14029,73 @@ extern "C" __declspec(naked) void __fastcall fn_00503FC0(void* self) {
         pop esi
         pop ebp
         pop ebx
+        ret 0xc
+    }
+}
+
+// [0x005021B0] sub_005021B0 (203 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005021B0(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        push -1
+        push 0x8915c1
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x68
+        mov eax, dword ptr [esp + 0x7c]
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x84]
+        push eax
+        mov esi, ecx
+        push edi
+        lea ecx, [esp + 0x30]
+        call ext_004FDAA0
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x80], 0
+        call ext_00502060
+        lea ecx, [esp + 0x28]
+        mov bl, al
+        mov dword ptr [esp + 0x7c], -1
+        call ext_005940E0
+        test bl, bl
+        je short L_fail
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        mov ecx, dword ptr [esp + 0x68]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x74
+        ret 0xc
+    L_fail:
+        cmp byte ptr [esp + 0x8c], 0
+        je short L_ret0
+        lea ecx, [esp + 0xc]
+        push edi
+        push ecx
+        call ext_004276B0
+        add esp, 8
+        push eax
+        mov dword ptr [esp + 0x80], 1
+        call ext_004FDCA0
+        push eax
+        lea ecx, [esp + 0x54]
+        call ext_004142E0
+        push 0x9d1278
+        lea edx, [esp + 0x50]
+        push edx
+        call ext_006A6DD2
+    L_ret0:
+        mov ecx, dword ptr [esp + 0x74]
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x74
         ret 0xc
     }
 }
