@@ -11252,3 +11252,54 @@ done:
         ret 0x4
     }
 }
+
+// [0x00468810] sub_00468810 (123 bytes)
+extern "C" void ext_0048E190();
+extern "C" void ext_00666670();
+extern "C" void ext_006A5C62();
+extern "C" __declspec(naked) void __fastcall fn_00468810(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x891cab
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x10], 0x0
+        push edi
+        je done
+        mov eax, dword ptr [esi + 0x14]
+        mov eax, dword ptr [eax + 0x1c]
+        mov edi, dword ptr [esp + 0x18]
+        cmp eax, edi
+        je done
+        push 0x1c
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x18], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0x0
+        je noobj
+        mov edx, dword ptr [esi + 0x14]
+        push edi
+        push edx
+        mov ecx, eax
+        call ext_0048E190
+        jmp after
+noobj:
+        xor eax, eax
+after:
+        mov ecx, dword ptr [esi + 0x38]
+        push eax
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_00666670
+done:
+        mov ecx, dword ptr [esp + 0x8]
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x4
+    }
+}
