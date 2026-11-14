@@ -163,3 +163,48 @@ extern "C" void __fastcall fn_004CCAA0(void* self, int edx_unused, int frame) {
         }
     }
 }
+
+// [0x004CA310] NMData::MetaBodyConstraintData::vfunc_14 (90 bytes)
+extern "C" void ext_004C2070();
+extern "C" void ext_00661680();
+
+extern "C" __declspec(naked) void* __fastcall fn_004CA310(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        cmp eax, 0xd
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0
+        je L_194
+        cmp eax, 0x134
+        je L_188
+        push eax
+        push esi
+        call ext_004C2070
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    L_188:
+        add ecx, 0x188
+        push ecx
+        push 3
+        mov ecx, esi
+        call ext_00661680
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    L_194:
+        add ecx, 0x194
+        push ecx
+        push 3
+        mov ecx, esi
+        call ext_00661680
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
