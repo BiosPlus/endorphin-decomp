@@ -187,3 +187,47 @@ extern "C" __declspec(naked) void* __fastcall fn_004C71C0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x004CA1C0] NMData::SeverEventData::vfunc_88 (94 bytes)
+extern "C" void ext_004CA1A0();
+extern "C" void ext_004C9560();
+extern "C" void ext_006A5C5C();
+extern "C" __declspec(naked) void __fastcall fn_004CA1C0(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        push edi
+        call ext_004CA1A0
+        mov esi, dword ptr [edi + 0x19c]
+        mov ebx, eax
+        add esp, 4
+        cmp ebx, esi
+        je L_004CA20C
+        test esi, esi
+        je L_004CA20C
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        je L_004CA1EE
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+L_004CA1EE:
+        push esi
+        mov dword ptr [esi + 0x8], 0
+        mov dword ptr [esi + 0xc], 0
+        mov dword ptr [esi + 0x10], 0
+        call ext_006A5C5C
+        add esp, 4
+L_004CA20C:
+        push edi
+        mov ecx, ebx
+        mov dword ptr [edi + 0x19c], ebx
+        call ext_004C9560
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
