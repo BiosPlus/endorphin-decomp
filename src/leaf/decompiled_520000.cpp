@@ -6615,3 +6615,98 @@ extern "C" __declspec(naked) void __fastcall fn_0052AC70(void* self) {
         ret 4
     }
 }
+
+// [0x0052AEB0] sub_0052AEB0 (203 bytes)
+extern "C" void ext_0052A1C0();
+extern "C" void ext_0052A650();
+extern "C" void ext_0052AC70();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0052AEB0(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4, void* a5) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        test edi, edi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 4]
+        mov ebp, dword ptr [eax]
+        je L_52AECA
+        cmp edi, esi
+        je L_52AED0
+L_52AECA:
+        call dword ptr [mem_00925134]
+L_52AED0:
+        mov ebx, dword ptr [esp + 0x24]
+        cmp ebx, ebp
+        jne L_52AF31
+        mov eax, dword ptr [esp + 0x28]
+        test eax, eax
+        mov ebp, dword ptr [esi + 4]
+        je L_52AEE7
+        cmp eax, esi
+        je L_52AEED
+L_52AEE7:
+        call dword ptr [mem_00925134]
+L_52AEED:
+        cmp dword ptr [esp + 0x2c], ebp
+        jne L_52AF31
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [ecx + 4]
+        push edx
+        mov ecx, esi
+        call ext_0052AC70
+        mov eax, dword ptr [esi + 4]
+        mov dword ptr [eax + 4], eax
+        mov eax, dword ptr [esi + 4]
+        mov dword ptr [esi + 8], 0
+        mov dword ptr [eax], eax
+        mov eax, dword ptr [esi + 4]
+        mov dword ptr [eax + 8], eax
+        mov eax, dword ptr [esi + 4]
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x1c]
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 4], ecx
+        pop ebx
+        add esp, 8
+        ret 0x14
+L_52AF31:
+        test edi, edi
+        je L_52AF3B
+        cmp edi, dword ptr [esp + 0x28]
+        je L_52AF41
+L_52AF3B:
+        call dword ptr [mem_00925134]
+L_52AF41:
+        cmp ebx, dword ptr [esp + 0x2c]
+        je L_52AF68
+        lea ecx, [esp + 0x20]
+        call ext_0052A1C0
+        push ebx
+        push edi
+        lea edx, [esp + 0x18]
+        push edx
+        mov ecx, esi
+        call ext_0052A650
+        mov ebx, dword ptr [esp + 0x24]
+        mov edi, dword ptr [esp + 0x20]
+        jmp L_52AF31
+L_52AF68:
+        mov eax, dword ptr [esp + 0x1c]
+        mov dword ptr [eax], edi
+        pop edi
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 4], ebx
+        pop ebx
+        add esp, 8
+        ret 0x14
+    }
+}
