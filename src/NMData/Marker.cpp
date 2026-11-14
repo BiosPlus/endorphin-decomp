@@ -392,3 +392,70 @@ extern "C" __declspec(naked) bool __fastcall fn_00870C20(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void* __cdecl ext_006A5C62(unsigned int);
+extern "C" void* __fastcall ext_00587EE0(void*);
+extern "C" void __fastcall ext_005881D0(void*, int, void*);
+extern "C" int mem_00924FDC;
+extern "C" int mem_00B40640;
+
+// [0x00870B70] NMData::Marker::vfunc_17_off_C (167 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00870B70(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        push 0x178
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0xc], eax
+        xor ebx, ebx
+        cmp eax, ebx
+        mov dword ptr [esp + 0x18], ebx
+        je skip_ctor
+        mov ecx, eax
+        call ext_00587EE0
+        mov ebx, eax
+    skip_ctor:
+        lea eax, [esi + 0x148]
+        push eax
+        lea ecx, [ebx + 0x154]
+        mov dword ptr [esp + 0x1c], -1
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esi - 0xc]
+        push ecx
+        mov ecx, ebx
+        call ext_005881D0
+        mov edx, dword ptr [esi - 8]
+        mov eax, dword ptr [mem_00B40640]
+        mov edx, dword ptr [edx + 8]
+        lea ecx, [esi - 8]
+        push eax
+        call edx
+        mov edx, dword ptr [mem_00B40640]
+        mov esi, eax
+        mov eax, dword ptr [ebx + 4]
+        mov eax, dword ptr [eax + 0xc]
+        lea ecx, [ebx + 4]
+        push edx
+        call eax
+        mov edi, eax
+        mov ecx, 0x10
+        rep movsd
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
