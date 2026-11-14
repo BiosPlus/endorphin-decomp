@@ -17382,3 +17382,116 @@ extern "C" __declspec(naked) void __cdecl fn_007DFC20() {
         ret
     }
 }
+
+extern "C" void ext_007CC9D0();
+extern "C" void ext_007CC9F0();
+extern "C" void ext_007DB730();
+
+// [0x007D5CB0] sub_007D5CB0 (232 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007D5CB0(void) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        cmp dword ptr [edi + 0x34], 0
+        je loc_7D5CEB
+        mov eax, dword ptr [edi]
+        push eax
+        call ext_007CC9F0
+        mov ebx, eax
+        mov eax, dword ptr [edi + 0x34]
+        add esp, 4
+        test eax, eax
+        je loc_7D5CE4
+    loc_7D5CD1:
+        mov esi, dword ptr [eax + 0x2c]
+        push eax
+        push ebx
+        call fn_007D5C80
+        add esp, 8
+        test esi, esi
+        mov eax, esi
+        jne loc_7D5CD1
+    loc_7D5CE4:
+        mov dword ptr [edi + 0x34], 0
+    loc_7D5CEB:
+        mov eax, dword ptr [edi]
+        test eax, eax
+        je loc_7D5CFA
+        push eax
+        call ext_007CC9E0
+        add esp, 4
+    loc_7D5CFA:
+        mov esi, dword ptr [esp + 0x14]
+        test esi, esi
+        mov dword ptr [edi], esi
+        je loc_7D5D94
+        push esi
+        call ext_007CC9D0
+        add esp, 4
+        cmp byte ptr [esi], 8
+        jne loc_7D5D94
+        push ebp
+        push esi
+        call ext_007DB730
+        mov ebp, eax
+        add esp, 4
+        test ebp, ebp
+        je loc_7D5D93
+        push esi
+        call ext_007CC9F0
+        mov ebx, eax
+        push ebx
+        call fn_007D5C60
+        mov esi, eax
+        lea eax, [ebp - 1]
+        add esp, 8
+        test eax, eax
+        mov dword ptr [esi + 0x30], edi
+        mov dword ptr [edi + 0x34], esi
+        jle loc_7D5D6B
+        mov dword ptr [esp + 0x14], eax
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    loc_7D5D50:
+        push ebx
+        call fn_007D5C60
+        mov dword ptr [eax + 0x28], esi
+        add esp, 4
+        sub dword ptr [esp + 0x14], 1
+        mov dword ptr [eax + 0x30], edi
+        mov dword ptr [esi + 0x2c], eax
+        mov esi, eax
+        jne loc_7D5D50
+    loc_7D5D6B:
+        mov edi, dword ptr [edi + 0x34]
+        xor esi, esi
+        test ebp, ebp
+        jle loc_7D5D93
+    loc_7D5D74:
+        mov ecx, dword ptr [esp + 0x18]
+        push esi
+        push ecx
+        call ext_007DB740
+        push eax
+        push edi
+        call fn_007D5CB0
+        mov edi, dword ptr [edi + 0x2c]
+        add esi, 1
+        add esp, 0x10
+        cmp esi, ebp
+        jl loc_7D5D74
+    loc_7D5D93:
+        pop ebp
+    loc_7D5D94:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
