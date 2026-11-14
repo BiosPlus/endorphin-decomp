@@ -1394,3 +1394,37 @@ DONE_586D50:
         ret 0xc
     }
 }
+
+// [0x0065F550] AnimatableTransform::vfunc_7 (95 bytes)
+extern "C" void ext_00679140();
+extern "C" void ext_006798D0();
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_0065F550(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -0x1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x20]
+        lea edx, [esp]
+        push edx
+        call eax
+        mov ecx, dword ptr [esp + 0x2c]
+        push ecx
+        push eax
+        mov dword ptr [esp + 0x2c], 0x0
+        call ext_006798D0
+        mov ecx, eax
+        call ext_00679140
+        lea ecx, [esp]
+        mov dword ptr [esp + 0x24], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
