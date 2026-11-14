@@ -564,3 +564,48 @@ extern "C" int __cdecl fn_007BA690(void* a, unsigned short b, unsigned short c, 
     }
     return ((int (__cdecl*)(void*, unsigned char*, int*))ext_007BAA40)(a, d, f);
 }
+
+// [0x007B7D40] sub_007B7D40 (80 bytes)
+extern "C" void ext_0079EBE0();
+extern "C" void ext_007B7890();
+extern "C" int mem_009252C4;
+
+extern "C" __declspec(naked) void __cdecl fn_007B7D40(int a1) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        push 0x0
+        lea eax, [esi + 0x2]
+        push eax
+        call ext_0079EBE0
+        mov edi, dword ptr [mem_009252C4]
+        push eax
+        call edi
+        mov ebx, dword ptr [esp + 0x20]
+        mov ecx, ebx
+        sub ecx, esi
+        push ecx
+        call ext_007B7890
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x10
+        test al, al
+        je short L_skip
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je short L_call
+    L_skip:
+        push 0x0
+        push ebx
+        call ext_0079EBE0
+        push eax
+        call edi
+        add esp, 0xc
+    L_call:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
