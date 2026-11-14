@@ -9793,3 +9793,77 @@ extern "C" __declspec(naked) void* __cdecl fn_0057E420(void* first, void* last, 
         ret
     }
 }
+
+// [0x0057E690] sub_0057E690 (169 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0057E690() {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x89e661
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [ebp + 0x10]
+        push esi
+        mov esi, dword ptr [ebp + 8]
+        push edi
+        mov edi, dword ptr [ebp + 0xc]
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 4], 0
+    loop_start:
+        test edi, edi
+        jbe done
+        mov dword ptr [ebp + 0xc], esi
+        mov dword ptr [ebp - 0x18], esi
+        test esi, esi
+        mov byte ptr [ebp - 4], 1
+        je next_iter
+        fld dword ptr [ebx]
+        lea eax, [ebx + 0xc]
+        fstp dword ptr [esi]
+        push eax
+        fld dword ptr [ebx + 4]
+        lea ecx, [esi + 0xc]
+        fstp dword ptr [esi + 4]
+        fld dword ptr [ebx + 8]
+        fstp dword ptr [esi + 8]
+        call ext_00402800
+    next_iter:
+        sub edi, 1
+        add esi, 0x1c
+        mov byte ptr [ebp - 4], 0
+        mov dword ptr [ebp + 8], esi
+        jmp loop_start
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 8]
+        cmp esi, edi
+        je rethrow
+        jmp destroy_loop
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    destroy_loop:
+        lea ecx, [esi + 0xc]
+        call ext_004026E0
+        add esi, 0x1c
+        cmp esi, edi
+        jne destroy_loop
+    rethrow:
+        push 0
+        push 0
+        call ext_006A6DD2
+    done:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
