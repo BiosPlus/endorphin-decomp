@@ -8380,3 +8380,51 @@ extern "C" void* __cdecl fn_0057DBB0(char* first, char* last, char* dest) {
     }
     return dest;
 }
+
+// [0x0057DF40] sub_0057DF40 (99 bytes)
+extern "C" void ext_0057DBB0();
+
+extern "C" __declspec(naked) int __cdecl fn_0057DF40(int a1, int a2, int a3) {
+    __asm {
+        sub esp, 8
+        mov edx, dword ptr [esp + 0x14]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        xor al, al
+        mov byte ptr [esp + 0x10], al
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0xc], al
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        push edi
+        push esi
+        push ebx
+        call ext_0057DBB0
+        sub esi, ebx
+        mov eax, 0x92492493
+        imul esi
+        add edx, esi
+        sar edx, 4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        lea ecx, [eax * 8]
+        add esp, 0x18
+        sub ecx, eax
+        mov eax, edi
+        add ecx, ecx
+        pop edi
+        add ecx, ecx
+        pop esi
+        sub eax, ecx
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
