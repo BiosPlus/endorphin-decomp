@@ -80,3 +80,74 @@ L_005CE791:
         ret 8
     }
 }
+
+// [0x005CE7A0] NMData::InertialBodyData::vfunc_0_off_4 (205 bytes)
+extern "C" void ext_00528B60();
+extern "C" void ext_005866C0();
+extern "C" void ext_00594000();
+extern "C" void ext_005B11F0();
+
+extern "C" __declspec(naked) void __fastcall fn_005CE7A0(void* self) {
+    __asm {
+        sub esp, 0x18
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xac]
+        test eax, eax
+        je L_005CE868
+        mov eax, dword ptr [eax + 0x94]
+        test eax, eax
+        je L_005CE868
+        cmp dword ptr [eax + 0x10], 0
+        je L_005CE868
+        fldz
+        push edi
+        fst dword ptr [esp + 0x1c]
+        lea edi, [esi + 0x20]
+        fst dword ptr [esp + 0x18]
+        mov ecx, edi
+        fst dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x10]
+        call ext_005B11F0
+        fld dword ptr [eax + 0x8]
+        mov ecx, edi
+        fstp dword ptr [esp + 0xc]
+        call ext_005B11F0
+        fld dword ptr [eax + 0x4]
+        mov ecx, edi
+        fstp dword ptr [esp + 0x8]
+        call ext_005B11F0
+        fld dword ptr [eax]
+        mov eax, dword ptr [esi + 0xac]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x8]
+        lea ecx, [eax + 0xc]
+        fstp dword ptr [esp + 0x14]
+        lea edx, [esp + 0x10]
+        fld dword ptr [esp + 0xc]
+        push edx
+        fstp dword ptr [esp + 0x1c]
+        fld1
+        fstp dword ptr [esp + 0x20]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x14]
+        call eax
+        mov eax, dword ptr [esi + 0xac]
+        mov ecx, dword ptr [eax + 0x94]
+        mov edx, dword ptr [ecx + 0x10]
+        mov edi, dword ptr [edx + 0x10]
+        lea ecx, [eax + 0xc]
+        call ext_00528B60
+        call ext_00594000
+        mov ecx, dword ptr [esi + 0xac]
+        push edi
+        add eax, 0x258
+        push eax
+        call ext_005866C0
+        pop edi
+L_005CE868:
+        pop esi
+        add esp, 0x18
+        ret
+    }
+}
