@@ -277,3 +277,63 @@ extern "C" __declspec(naked) void __fastcall fn_007AE7D0(void* self) {
         _emit 0xc3
     }
 }
+
+// [0x007A9C80] sub_007A9C80 (96 bytes)
+extern "C" void ext_007A9950(void* a1);
+extern "C" int mem_00B61218;
+extern "C" int mem_00B61219;
+
+extern "C" __declspec(naked) unsigned int __cdecl fn_007A9C80(void* a1, int a2, unsigned int a3) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        push esi
+        xor edi, edi
+        call ext_007A9950
+        mov al, byte ptr [mem_00B61218]
+        add esp, 4
+        test al, al
+        je L_scan
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_ret0
+    L_scan:
+        mov ecx, dword ptr [esi + 0x10]
+        xor eax, eax
+        mov esi, dword ptr [ecx]
+        test esi, esi
+        jbe L_ret0
+        mov ecx, dword ptr [ecx + 4]
+        mov ebx, dword ptr [esp + 0x1c]
+        lea edx, [ecx + 4]
+    L_loop:
+        mov ebp, dword ptr [edx]
+        cmp dword ptr [ebp], ebx
+        jne L_next
+        cmp edi, dword ptr [esp + 0x18]
+        je L_found
+        inc edi
+    L_next:
+        inc eax
+        add edx, 8
+        cmp eax, esi
+        jb L_loop
+    L_ret0:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    L_found:
+        mov eax, dword ptr [ecx + 8 * eax + 4]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
