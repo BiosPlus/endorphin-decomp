@@ -13436,3 +13436,108 @@ extern "C" __declspec(naked) void __fastcall fn_00671770(void* self) {
         ret 0x4
     }
 }
+
+// [0x006752D0] sub_006752D0 (253 bytes)
+extern "C" void ext_004142E0();
+extern "C" void ext_004BA340();
+extern "C" void ext_0059A140();
+extern "C" void ext_00674770();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void __fastcall fn_006752D0(void* self) {
+    __asm {
+        push -1
+        push 0x8b42c8
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x38
+        push ebx
+        mov ebx, dword ptr [esp + 0x4c]
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        mov dword ptr [esp + 0x58], ebx
+        mov ebp, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebp
+        mov dword ptr [esp + 0x50], 0x0
+        jbe L_67530c
+        call dword ptr [mem_00925134]
+    L_67530c:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_67531a
+        call dword ptr [mem_00925134]
+    L_67531a:
+        mov eax, dword ptr [esp + 0x58]
+        push 0x0
+        push eax
+        push ebx
+        push ebp
+        push edi
+        mov dword ptr [esp + 0x28], edi
+        call ext_004BA340
+        mov ebp, dword ptr [esi + 0x8]
+        add esp, 0x14
+        cmp dword ptr [esi + 0x4], ebp
+        mov edi, eax
+        jbe L_675340
+        call dword ptr [mem_00925134]
+    L_675340:
+        test esi, esi
+        je L_675348
+        cmp esi, esi
+        je L_67534e
+    L_675348:
+        call dword ptr [mem_00925134]
+    L_67534e:
+        cmp edi, ebp
+        je L_675397
+        test esi, esi
+        jne L_67535c
+        call dword ptr [mem_00925134]
+    L_67535c:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_675367
+        call dword ptr [mem_00925134]
+    L_675367:
+        mov eax, dword ptr [edi]
+        push ebx
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je L_675397
+        push ebx
+        call ext_00674770
+        push eax
+        lea ecx, [esp + 0x28]
+        call ext_004142E0
+        push 0x9d1278
+        lea ecx, [esp + 0x24]
+        push ecx
+        call ext_006A6DD2
+    L_675397:
+        lea edx, [esp + 0x10]
+        push edx
+        push edi
+        push esi
+        lea eax, [esp + 0x24]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x68], 0x0
+        mov dword ptr [esp + 0x20], ebx
+        call ext_0059A140
+        mov ecx, dword ptr [esp + 0x48]
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 0x44
+        ret 0x8
+    }
+}
