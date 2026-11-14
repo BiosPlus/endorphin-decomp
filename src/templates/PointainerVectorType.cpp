@@ -275,3 +275,45 @@ extern "C" __declspec(naked) void* __fastcall fn_004B5670(void* self) {
         ret 0x18
     }
 }
+
+// [0x0050CA80] Properties::PointainerVectorType<PointainerWithUndo<UndoablePointainerVector<NMData::TaskTemplateParam>>, Properties::GetPropertySource>::vfunc_9 (88 bytes)
+extern "C" void ext_00494FF0();
+extern "C" void ext_0050C650();
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void* __fastcall fn_0050CA80(void* self) {
+    __asm {
+        push ecx
+        mov edx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x14]
+        push esi
+        mov esi, dword ptr [eax]
+        push edi
+        mov edi, dword ptr [ecx + 0x4]
+        push 0x0
+        push 0xa418b0
+        push 0xa2e2d8
+        push 0x0
+        push edx
+        mov dword ptr [esp + 0x1c], 0x0
+        call ext_006A6E9E
+        add esp, 0x14
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push edi
+        push eax
+        mov ecx, esi
+        call ext_0050C650
+        mov esi, dword ptr [esp + 0x10]
+        push eax
+        push esi
+        lea ecx, [esp + 0x1c]
+        call ext_00494FF0
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x18
+    }
+}
