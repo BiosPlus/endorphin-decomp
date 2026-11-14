@@ -8755,3 +8755,93 @@ L_end:
         ret 8
     }
 }
+
+// [0x005866C0] sub_005866C0 (221 bytes)
+extern "C" void ext_00584AE0();
+extern "C" void ext_00493E70();
+extern "C" __declspec(naked) void __fastcall fn_005866C0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x88d648
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        call ext_00584AE0
+        test al, al
+        jne fn5866C0_exit
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x88]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        push edi
+        call edx
+        xor ecx, ecx
+        cmp eax, ecx
+        mov dword ptr [esp + 0x14], ecx
+        je fn5866C0_pop_edi
+        push ebx
+        push ebp
+        mov dword ptr [esp + 0x10], ecx
+        push eax
+        mov ecx, edi
+        call ext_00493E70
+        mov edi, dword ptr [esi + 0x80]
+        add esi, 0x7c
+        cmp edi, dword ptr [esi + 0x8]
+        mov ebx, eax
+        mov dword ptr [esp + 0x10], ebx
+        jbe fn5866C0_loop
+        call dword ptr [mem_00925134]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+fn5866C0_loop:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebp
+        jbe fn5866C0_chk2
+        call dword ptr [mem_00925134]
+fn5866C0_chk2:
+        cmp esi, esi
+        je fn5866C0_chk3
+        call dword ptr [mem_00925134]
+fn5866C0_chk3:
+        cmp edi, ebp
+        je fn5866C0_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb fn5866C0_body
+        call dword ptr [mem_00925134]
+fn5866C0_body:
+        mov eax, dword ptr [esp + 0x24]
+        mov ecx, dword ptr [edi]
+        push ebx
+        push eax
+        call ext_005866C0
+        cmp edi, dword ptr [esi + 0x8]
+        jb fn5866C0_next
+        call dword ptr [mem_00925134]
+fn5866C0_next:
+        add edi, 0x4
+        jmp fn5866C0_loop
+fn5866C0_done:
+        mov ecx, dword ptr [esp + 0x28]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0xc]
+        push ebx
+        mov dword ptr [esp + 0x14], 0
+        call eax
+        pop ebp
+        pop ebx
+fn5866C0_pop_edi:
+        pop edi
+fn5866C0_exit:
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x8
+    }
+}
