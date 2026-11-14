@@ -12535,3 +12535,70 @@ extern "C" __declspec(naked) void __fastcall fn_004424E0(void* self) {
         ret
     }
 }
+
+// [0x00448460] sub_00448460 (215 bytes)
+extern "C" void ext_00458C00();
+extern "C" void ext_006A5C62();
+extern "C" void ext_006A5C6E();
+extern "C" void ext_006B0CA0();
+extern "C" int mem_00B599BC;
+extern "C" __declspec(naked) void __fastcall fn_00448460(void* self) {
+    __asm {
+        push -1
+        push 0x87c887
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x8
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        call ext_006A5C6E
+        lea edi, [esi + 0x54]
+        mov dword ptr [edi], 0x92a224
+        xor ebx, ebx
+        lea ecx, [esi + 0x5c]
+        mov dword ptr [esp + 0x1c], ebx
+        mov dword ptr [esi], 0x933394
+        mov dword ptr [edi], 0x933384
+        call ext_006B0CA0
+        mov dword ptr [esi + 0xc8], ebx
+        mov dword ptr [esi + 0xcc], ebx
+        mov dword ptr [esi + 0xd4], ebx
+        mov dword ptr [esi + 0xd0], 0x92a254
+        mov dword ptr [esi + 0xdc], ebx
+        mov dword ptr [esi + 0xd8], 0x92a5d4
+        mov dword ptr [esi + 0xe4], ebx
+        mov eax, dword ptr [mem_00B599BC]
+        mov dword ptr [esi + 0xe8], eax
+        push 0x58
+        mov byte ptr [esp + 0x20], 0x4
+        mov dword ptr [esi + 0xec], ebx
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x10], eax
+        cmp eax, ebx
+        mov byte ptr [esp + 0x1c], 0x5
+        je L_null
+        push edi
+        mov ecx, eax
+        call ext_00458C00
+        jmp L_done
+    L_null:
+        xor eax, eax
+    L_done:
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [esi + 0x58], eax
+        mov byte ptr [esi + 0xe0], bl
+        mov byte ptr [esi + 0xf0], bl
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x14
+        ret
+    }
+}
