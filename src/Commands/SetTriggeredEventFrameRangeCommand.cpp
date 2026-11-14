@@ -224,3 +224,88 @@ extern "C" __declspec(naked) void __fastcall fn_0048E9D0(void* self) {
         ret     4
     }
 }
+
+extern "C" void ext_0048EF20();
+extern "C" void ext_0048EF80();
+extern "C" void ext_0047D870();
+extern "C" void ext_0047D970();
+
+// [0x0048F430] Commands::SetTriggeredEventFrameRangeCommand::vfunc_1 (186 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0048F430(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        lea ebx, [esi + 2Ch]
+        push edi
+        mov edi, dword ptr [ebx + 8]
+        cmp dword ptr [ebx + 4], edi
+        jbe short L_a
+        call dword ptr [mem_00925134]
+    L_a:
+        mov ebp, dword ptr [ebx + 4]
+        cmp ebp, dword ptr [ebx + 8]
+        jbe short L_b
+        call dword ptr [mem_00925134]
+    L_b:
+        push edi
+        push ebx
+        push ebp
+        push ebx
+        lea eax, [esp + 20h]
+        push eax
+        mov ecx, ebx
+        call ext_0048EF20
+        mov ebp, dword ptr [esi + 44h]
+        cmp dword ptr [esi + 40h], ebp
+        lea edi, [esi + 3Ch]
+        jbe short L_c
+        call dword ptr [mem_00925134]
+    L_c:
+        mov eax, dword ptr [edi + 4]
+        cmp eax, dword ptr [edi + 8]
+        mov dword ptr [esp + 10h], eax
+        jbe short L_d
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 10h]
+    L_d:
+        push ebp
+        push edi
+        push eax
+        push edi
+        lea ecx, [esp + 20h]
+        push ecx
+        mov ecx, edi
+        call ext_0048EF80
+        mov ecx, dword ptr [esi + 4Ch]
+        push ebx
+        call ext_0047D870
+        mov ecx, dword ptr [esi + 4Ch]
+        push edi
+        call ext_0047D970
+        mov edx, dword ptr [esi + 14h]
+        mov eax, dword ptr [esi + 1Ch]
+        mov ecx, dword ptr [esi + 10h]
+        mov dword ptr [esp + 10h], edx
+        mov dword ptr [esp + 14h], eax
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 124h]
+        lea eax, [esp + 10h]
+        push eax
+        call edx
+        mov ecx, dword ptr [esi + 10h]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi + 28h]
+        mov eax, dword ptr [eax + 120h]
+        push edx
+        call eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
