@@ -458,3 +458,45 @@ loc_59e1ca:
         ret 0x4
     }
 }
+
+// [0x005A5400] NMData::BackGroundData::vfunc_6_off_4 (77 bytes)
+extern "C" void ext_00479C80();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005A5400(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [ecx + 0x544]
+        push esi
+        lea esi, [ecx + 0x540]
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        mov eax, ebp
+        mov ecx, dword ptr [eax]
+        mov dword ptr [esp + 0x14], ecx
+        jbe skip_invalid
+        call dword ptr [mem_00925134]
+    skip_invalid:
+        mov edx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        push ebp
+        push esi
+        push eax
+        push esi
+        push ebx
+        push edi
+        mov ecx, edi
+        call ext_00479C80
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret 0x4
+    }
+}
