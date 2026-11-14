@@ -8367,3 +8367,86 @@ loc_59B7B4:
         ret
     }
 }
+
+extern "C" void ext_005A1640();
+extern "C" void ext_00642600();
+extern "C" int mem_00925134;
+
+// [0x00596FC0] sub_00596FC0 (160 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00596FC0(void* self) {
+    __asm {
+        sub     esp, 0xc
+        push    ebx
+        push    ebp
+        mov     ebp, ecx
+        mov     ecx, dword ptr [ebp + 0xf8]
+        push    esi
+        push    edi
+        mov     dword ptr [esp + 0x10], ebp
+        call    ext_00642600
+        mov     esi, dword ptr [ebp + 0x240]
+        add     ebp, 0x238
+        cmp     dword ptr [ebp + 0x4], esi
+        jbe     short loc_596FEF
+        call    dword ptr [mem_00925134]
+
+loc_596FEF:
+        mov     edi, ebp
+
+loc_596FF1:
+        mov     ebx, dword ptr [ebp + 0x4]
+        cmp     ebx, dword ptr [ebp + 0x8]
+        jbe     short loc_596FFF
+        call    dword ptr [mem_00925134]
+
+loc_596FFF:
+        test    edi, edi
+        je      short loc_597007
+        cmp     edi, ebp
+        je      short loc_59700D
+
+loc_597007:
+        call    dword ptr [mem_00925134]
+
+loc_59700D:
+        cmp     esi, ebx
+        je      short loc_597058
+        test    edi, edi
+        mov     dword ptr [esp + 0x18], esi
+        jne     short loc_59701F
+        call    dword ptr [mem_00925134]
+
+loc_59701F:
+        cmp     esi, dword ptr [edi + 0x4]
+        ja      short loc_59702A
+        call    dword ptr [mem_00925134]
+
+loc_59702A:
+        lea     ebx, [esi - 0x4]
+        cmp     ebx, dword ptr [edi + 0x8]
+        jb      short loc_597038
+        call    dword ptr [mem_00925134]
+
+loc_597038:
+        mov     eax, dword ptr [esp + 0x10]
+        mov     ecx, dword ptr [ebx]
+        add     eax, 0x168
+        push    eax
+        call    ext_005A1640
+        cmp     esi, dword ptr [edi + 0x4]
+        ja      short loc_597054
+        call    dword ptr [mem_00925134]
+
+loc_597054:
+        mov     esi, ebx
+        jmp     short loc_596FF1
+
+loc_597058:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0xc
+        ret
+    }
+}
