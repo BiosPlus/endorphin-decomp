@@ -130,3 +130,65 @@ extern "C" __declspec(naked) void __fastcall fn_00507D10(void* self) {
         ret 4
     }
 }
+
+// [0x00504B00] Interpreter::vfunc_23 (114 bytes)
+extern "C" void ext_00514E00();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00504B00(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, ecx
+        xor ebx, ebx
+        __asm _emit 0x8b
+        __asm _emit 0xff
+    L_00504B10:
+        mov eax, dword ptr [esi + 0x24]
+        test eax, eax
+        je L_00504B6B
+        mov ecx, dword ptr [esi + 0x28]
+        sub ecx, eax
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jae L_00504B6B
+        mov eax, dword ptr [esi + 0x24]
+        test eax, eax
+        je L_00504B52
+        mov ecx, dword ptr [esi + 0x28]
+        sub ecx, eax
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb L_00504B58
+    L_00504B52:
+        call dword ptr [mem_00925134]
+    L_00504B58:
+        mov ecx, dword ptr [esi + 0x24]
+        push ebp
+        add ecx, ebx
+        call ext_00514E00
+        add edi, 0x1
+        add ebx, 0x68
+        jmp L_00504B10
+    L_00504B6B:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
