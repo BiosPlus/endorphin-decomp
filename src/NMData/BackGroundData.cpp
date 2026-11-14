@@ -500,3 +500,57 @@ extern "C" __declspec(naked) void __fastcall fn_005A5400(void* self) {
         ret 0x4
     }
 }
+
+// [0x0059F420] NMData::BackGroundData::vfunc_12_off_10 (99 bytes)
+extern "C" void ext_00481BD0();
+extern "C" void ext_004925B0();
+extern "C" void ext_0059A660();
+extern "C" void ext_006AD940();
+extern "C" __declspec(naked) void __fastcall fn_0059F420(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x5e8]
+        push edi
+        lea edi, [esi - 0x10]
+        mov ecx, edi
+        call ext_0059E060
+        test al, al
+        je loc_0059F441
+    loc_0059F439:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 0x8
+    loc_0059F441:
+        mov ecx, dword ptr [ebx + 0x26c]
+        push edi
+        call ext_006AD940
+        mov ecx, eax
+        call ext_004925B0
+        test al, al
+        jne loc_0059F439
+        lea eax, [esi - 0x10]
+        test eax, eax
+        je loc_0059F464
+        lea eax, [esi - 0xc]
+        jmp loc_0059F466
+    loc_0059F464:
+        xor eax, eax
+    loc_0059F466:
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        call ext_00481BD0
+        add esi, 0x8
+        push esi
+        mov ecx, ebx
+        call ext_0059A660
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret 0x8
+    }
+}
