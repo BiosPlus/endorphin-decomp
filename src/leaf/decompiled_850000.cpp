@@ -1013,3 +1013,78 @@ extern "C" __declspec(naked) void __cdecl fn_0085E470(void) {
         ret
     }
 }
+
+// [0x0085F310] sub_0085F310 (154 bytes)
+extern "C" void ext_0085D510();
+extern "C" void ext_0085D530();
+extern "C" void ext_0085E690();
+extern "C" void ext_0085E720();
+
+extern "C" int mem_00AB98EC;
+extern "C" int mem_00ABA9D8;
+extern "C" int mem_00ABAA3C;
+extern "C" int mem_00AC0560;
+
+extern "C" __declspec(naked) int __cdecl fn_0085F310(void* pData, int length) {
+    __asm {
+        push    esi
+        push    edi
+        xor     esi, esi
+        push    0x64
+        push    esi
+        mov     dword ptr [mem_00AB98EC], esi
+        push    offset mem_00ABA9D8
+        call    ext_0085D510
+        mov     edi, dword ptr [esp + 0x1c]
+        add     esp, 0xc
+        mov     dword ptr [mem_00ABAA3C], esi
+        cmp     edi, esi
+        jne     L_check_len
+        xor     eax, eax
+        pop     edi
+        pop     esi
+        ret
+
+    L_check_len:
+        cmp     edi, 0x7
+        jbe     L_process
+        mov     eax, 0x1
+        pop     edi
+        mov     dword ptr [mem_00AB98EC], 0x96
+        pop     esi
+        ret
+
+    L_process:
+        mov     eax, dword ptr [esp + 0xc]
+        push    edi
+        push    eax
+        xor     esi, esi
+        mov     dword ptr [mem_00ABAA3C], 0x1
+        push    offset mem_00ABA9D8
+        call    ext_0085D530
+        add     esp, 0xc
+        test    edi, edi
+        jle     L_finish
+
+    L_loop:
+        mov     al, byte ptr [esi + mem_00ABA9D8]
+        inc     esi
+        push    eax
+        call    ext_0085E690
+        add     esp, 0x4
+        mov     byte ptr [esi + mem_00ABA9D8 - 1], al
+        cmp     esi, edi
+        jl      L_loop
+
+    L_finish:
+        push    offset mem_00AC0560
+        push    0x30
+        push    offset mem_00ABA9D8
+        call    ext_0085E720
+        add     esp, 0xc
+        xor     eax, eax
+        pop     edi
+        pop     esi
+        ret
+    }
+}
