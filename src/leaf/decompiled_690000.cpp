@@ -7646,3 +7646,44 @@ L_store:
         ret 0x4
     }
 }
+
+extern "C" void ext_00405FB0();
+extern "C" void ext_00699810();
+
+// [0x00699B80] sub_00699B80 (74 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00699B80(void* self, int /*edx*/, unsigned int count) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        xor eax, eax
+        cmp esi, eax
+        push edi
+        mov edi, ecx
+        mov dword ptr [edi + 0x4], eax
+        mov dword ptr [edi + 0x8], eax
+        mov dword ptr [edi + 0xc], eax
+        jne L_nonzero
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
+    L_nonzero:
+        cmp esi, 0x5d1745d
+        jbe L_alloc
+        call ext_00405FB0
+    L_alloc:
+        push eax
+        push esi
+        call ext_00699810
+        imul esi, esi, 0x2c
+        add esi, eax
+        add esp, 0x8
+        mov dword ptr [edi + 0x4], eax
+        mov dword ptr [edi + 0x8], eax
+        mov dword ptr [edi + 0xc], esi
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x4
+    }
+}
