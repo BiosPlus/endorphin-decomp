@@ -19,5 +19,7 @@
     "0x0048DEDF",
     "0x0048DEEF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-14T06:42:26Z"
 }
