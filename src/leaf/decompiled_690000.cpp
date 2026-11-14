@@ -7918,3 +7918,48 @@ extern "C" __declspec(naked) void __cdecl fn_0069E600(void* dst, void* dst_end, 
         ret
     }
 }
+
+// [0x0069D4E0] sub_0069D4E0 (88 bytes)
+extern "C" void ext_0069A590();
+extern "C" __declspec(naked) void* __cdecl fn_0069D4E0(void* first, void* last, void* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je done
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+    loop_top:
+        sub esi, 0x50
+        sub edi, 0x50
+        push esi
+        mov ecx, edi
+        call dword ptr [mem_00924FDC]
+        lea eax, [esi + 0x1c]
+        push eax
+        lea ecx, [edi + 0x1c]
+        call ext_0069A590
+        lea ecx, [esi + 0x2c]
+        push ecx
+        lea ecx, [edi + 0x2c]
+        call dword ptr [mem_00924FDC]
+        cmp esi, ebx
+        mov edx, dword ptr [esi + 0x48]
+        mov dword ptr [edi + 0x48], edx
+        mov eax, dword ptr [esi + 0x4c]
+        mov dword ptr [edi + 0x4c], eax
+        jne loop_top
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    done:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
