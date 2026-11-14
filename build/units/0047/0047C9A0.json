@@ -25,5 +25,7 @@
     "0x0047CA94",
     "0x0047CABB"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-14T13:46:21Z"
 }
