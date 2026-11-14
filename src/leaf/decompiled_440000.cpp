@@ -13896,3 +13896,80 @@ done:
         ret 0x8
     }
 }
+
+// [0x00446430] sub_00446430 (150 bytes)
+extern "C" void ext_00446430();
+extern "C" void ext_00528BB0();
+extern "C" void ext_00528C70();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00446430(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+        push 0
+        push 0A2FBBCh
+        push 0A2E2BCh
+        push 0
+        push edi
+        mov dword ptr [esp + 0x24], ecx
+        call ext_006A6E9E
+        add esp, 0x14
+        test eax, eax
+        je skip_cast_00446430
+        lea esi, [eax + 0xc]
+        mov eax, dword ptr [esp + 0x1c]
+        push eax
+        push 80000h
+        mov ecx, esi
+        call ext_00528BB0
+        mov ecx, esi
+        call ext_00528C70
+    skip_cast_00446430:
+        mov ebp, dword ptr [mem_00925134]
+        lea esi, [edi + 7Ch]
+        mov edi, dword ptr [esi + 4]
+        cmp edi, dword ptr [esi + 8]
+        jbe chk1_00446430
+        call ebp
+    chk1_00446430:
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        jbe chk2_00446430
+        call ebp
+    chk2_00446430:
+        cmp esi, esi
+        je chk3_00446430
+        call ebp
+    chk3_00446430:
+        cmp edi, ebx
+        je done_00446430
+        cmp edi, dword ptr [esi + 8]
+        jb body_00446430
+        call ebp
+    body_00446430:
+        mov ecx, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [edi]
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push edx
+        call ext_00446430
+        cmp edi, dword ptr [esi + 8]
+        jb inc_00446430
+        call ebp
+    inc_00446430:
+        add edi, 4
+        jmp chk1_00446430
+    done_00446430:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 8
+    }
+}
