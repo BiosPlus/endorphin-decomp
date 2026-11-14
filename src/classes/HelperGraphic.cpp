@@ -255,3 +255,67 @@ L_done:
         ret 0x4
     }
 }
+
+// [0x005F52A0] HelperGraphic::vfunc_22 (172 bytes)
+extern "C" void ext_0058F650();
+extern "C" void ext_00640110();
+extern "C" void ext_00427550();
+extern "C" void ext_00640BC0();
+extern "C" void ext_00640390();
+extern "C" void ext_005329A0();
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9F944;
+extern "C" int mem_00A9F06C;
+extern "C" __declspec(naked) void* __fastcall fn_005F52A0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_0058F650
+        push 0x96cce0
+        mov ecx, edi
+        call ext_00640110
+        lea ecx, [esi + 0x1a4]
+        mov dword ptr [esp + 0xc], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        mov eax, dword ptr [mem_00A9F944]
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        fld dword ptr [esi + 0x160]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00640BC0
+        add esp, 0x8
+        push 0x96ccd4
+        mov ecx, edi
+        call ext_00640110
+        mov ecx, dword ptr [esi + 0x210]
+        lea edx, [ecx * 8]
+        sub edx, ecx
+        lea ecx, [edx * 4 + 0xb46f80]
+        mov dword ptr [esp + 0xc], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        mov eax, dword ptr [mem_00A9F06C]
+        push 0x0
+        push eax
+        mov ecx, edi
+        call ext_00640390
+        push eax
+        lea ecx, [esi + 0x168]
+        call ext_005329A0
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
