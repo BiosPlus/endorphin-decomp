@@ -4126,3 +4126,32 @@ L_60AB77:
         ret
     }
 }
+
+// [0x0060B890] sub_0060B890 (63 bytes)
+extern "C" void ext_0060B620();
+extern "C" void ext_0060B6A0();
+extern "C" void ext_0060B750();
+extern "C" void ext_0060B800();
+extern "C" int mem_00A9F554;
+extern "C" __declspec(naked) void __fastcall fn_0060B890(void* self) {
+    __asm {
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x8]
+        push    0x0
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    ext_0060B800
+        mov     ecx, dword ptr [mem_00A9F554]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_0060B620
+        push    0x9720a0
+        lea     ecx, [esp + 0x4]
+        call    ext_0060B6A0
+        push    0x972080
+        lea     ecx, [esp + 0x4]
+        call    ext_0060B750
+        pop     ecx
+        ret
+    }
+}
