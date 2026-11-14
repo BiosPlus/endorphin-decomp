@@ -7135,3 +7135,46 @@ extern "C" __declspec(naked) void __fastcall fn_004B0D50(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_004764C0();
+extern "C" void ext_00493D90();
+extern "C" void ext_0049A9C0();
+extern "C" void ext_004A1A10();
+extern "C" void ext_004A5770();
+extern "C" void ext_004B65F0();
+extern "C" void ext_004BE590();
+extern "C" void ext_004BE620();
+extern "C" void ext_004C4100();
+extern "C" void ext_00503970();
+extern "C" void ext_005220B0();
+extern "C" void ext_0058A080();
+extern "C" void ext_005CE450();
+extern "C" void ext_0060B890();
+extern "C" void ext_00675660();
+extern "C" void ext_00678D40();
+extern "C" void ext_00687060();
+extern "C" void ext_0068ED60();
+extern "C" void ext_0068F790();
+
+// [0x004BE740] sub_004BE740 (124 bytes)
+extern "C" void __cdecl fn_004BE740() {
+    int s = ((int (__cdecl*)())ext_00675660)();
+    ((void (__cdecl*)(int))ext_00687060)(s);
+    ((void (__cdecl*)(int))ext_00503970)(s);
+    ((void (__cdecl*)(int))ext_004A5770)(s);
+    ((void (__cdecl*)(int))ext_004A1A10)(s);
+    ((void (__cdecl*)(int))ext_0049A9C0)(s);
+    ((void (__cdecl*)(int))ext_004B65F0)(s);
+    ((void (__cdecl*)(int))ext_004BE620)(s);
+    ((void (__cdecl*)(int))ext_004764C0)(s);
+    ((void (__cdecl*)(int))ext_0058A080)(s);
+    ((void (__cdecl*)(int))ext_004C4100)(s);
+    ((void (__cdecl*)(int))ext_0060B890)(s);
+    ((void (__cdecl*)(int))ext_0068F790)(s);
+    ((void (__cdecl*)(int))ext_0068ED60)(s);
+    ((void (__cdecl*)(int))ext_00493D90)(s);
+    ((void (__cdecl*)(int))ext_005CE450)(s);
+    ((void (__cdecl*)(int))ext_004BE590)(s);
+    ((void (__cdecl*)(int))ext_00678D40)(s);
+    ((void (__cdecl*)(int))ext_005220B0)(s);
+}
