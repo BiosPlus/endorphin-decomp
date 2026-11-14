@@ -3023,3 +3023,93 @@ extern "C" __declspec(naked) void __fastcall fn_005CDFB0(void* self) {
         ret
     }
 }
+
+// [0x005C1310] sub_005C1310 (242 bytes)
+extern "C" void ext_00466910();
+extern "C" void ext_00466F00();
+extern "C" void ext_00647F00();
+extern "C" void ext_00648020();
+extern "C" void ext_00661A40();
+extern "C" void ext_00661F10();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005C1310(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x896578
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x64
+        push ebx
+        mov ebx, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x7c]
+        cmp dword ptr [esi + 8], 0
+        push edi
+        mov edi, ecx
+        jne short L_no_inv1_5C1310
+        call ebx
+    L_no_inv1_5C1310:
+        mov eax, dword ptr [esi + 8]
+        mov ecx, dword ptr [esi + 0ch]
+        cmp ecx, dword ptr [eax + 4]
+        jne short L_no_inv2_5C1310
+        call ebx
+    L_no_inv2_5C1310:
+        mov edx, dword ptr [esi + 0ch]
+        cmp dword ptr [edx + 8], 1
+        jbe L_exit_5C1310
+        cmp dword ptr [edi + 0x158], 0
+        je L_exit_5C1310
+        cmp byte ptr [esi], 0
+        push esi
+        lea ecx, [esp + 0x14]
+        sete bl
+        mov dword ptr [esp + 0x10], esi
+        call ext_00466F00
+        mov ecx, esi
+        mov dword ptr [esp + 0x78], 0
+        call ext_00661F10
+        test bl, bl
+        jne short L_skip_mov_5C1310
+        mov byte ptr [esi], bl
+    L_skip_mov_5C1310:
+        mov eax, dword ptr [edi + 4]
+        mov edx, dword ptr [eax + 0x14]
+        lea ecx, [edi + 4]
+        push ebp
+        push esi
+        call edx
+        mov ebx, eax
+        mov eax, dword ptr [edi + 0x158]
+        mov ecx, dword ptr [eax + 0xac]
+        call ext_00647F00
+        fld dword ptr [esp + 0x88]
+        mov edi, dword ptr [edi + 0x158]
+        mov edi, dword ptr [edi + 0xac]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        mov ebp, eax
+        call ext_00661A40
+        push ecx
+        fstp dword ptr [esp]
+        push ebp
+        push ebx
+        mov ecx, edi
+        call ext_00648020
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x7c], 0xffffffff
+        call ext_00466910
+        pop ebp
+    L_exit_5C1310:
+        mov ecx, dword ptr [esp + 0x70]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x70
+        ret 8
+    }
+}
