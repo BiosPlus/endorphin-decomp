@@ -571,3 +571,65 @@ extern "C" __declspec(naked) void __fastcall fn_0061E930(void* self) {
         ret
     }
 }
+
+// [0x006114F0] NMData::HingeConstraint::vfunc_22 (130 bytes)
+extern "C" void ext_00611270();
+extern "C" void ext_00593AE0();
+extern "C" void ext_006112B0();
+extern "C" void ext_00640110();
+extern "C" void ext_006404E0();
+extern "C" void ext_00640A80();
+extern "C" void ext_0067EF60();
+extern "C" int mem_00A9FAC0;
+extern "C" int mem_00A9F604;
+
+extern "C" __declspec(naked) int __fastcall fn_006114F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push edi
+        mov esi, ecx
+        call ext_00611270
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x10c]
+        push 0x0
+        mov ecx, esi
+        call edx
+        fstp dword ptr [esp + 0x10]
+        push 0x972d68
+        mov ecx, edi
+        call ext_006404E0
+        fld dword ptr [esp + 0x10]
+        mov ebx, eax
+        mov eax, dword ptr [mem_00A9FAC0]
+        push eax
+        push 0x972d60
+        push ecx
+        fstp dword ptr [esp]
+        push ebx
+        call ext_0067EF60
+        add esp, 0x10
+        push ebx
+        mov ecx, esi
+        call ext_00593AE0
+        push edi
+        mov ecx, esi
+        call ext_006112B0
+        mov ecx, dword ptr [mem_00A9F604]
+        push ecx
+        mov ecx, edi
+        call ext_00640110
+        movzx edx, byte ptr [esi + 0x160]
+        push edx
+        push eax
+        call ext_00640A80
+        add esp, 0x8
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
