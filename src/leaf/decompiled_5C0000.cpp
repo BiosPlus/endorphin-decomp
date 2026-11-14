@@ -5646,3 +5646,90 @@ extern "C" __declspec(naked) void __fastcall fn_005CE260(void* self) {
         ret     0x8
     }
 }
+
+// [0x005CD120] sub_005CD120 (174 bytes)
+extern "C" void ext_00475710();
+extern "C" void ext_0051A670();
+extern "C" int mem_00925134;
+extern "C" int mem_00924EF4;
+
+extern "C" __declspec(naked) unsigned char __fastcall fn_005CD120(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 12
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        mov byte ptr [esp + 12], 0
+        jbe L_5CD120_chk1
+        call dword ptr [mem_00925134]
+    L_5CD120_chk1:
+        push edi
+        mov edi, dword ptr [esi + 4]
+        cmp edi, dword ptr [esi + 8]
+        jbe L_5CD120_chk2
+        call dword ptr [mem_00925134]
+    L_5CD120_chk2:
+        mov eax, dword ptr [esp + 16]
+        mov ebp, dword ptr [esp + 32]
+        push 0
+        push eax
+        push ebp
+        push ebx
+        push edi
+        mov dword ptr [esp + 44], edi
+        call ext_0051A670
+        mov edi, dword ptr [esi + 8]
+        add esp, 20
+        cmp dword ptr [esi + 4], edi
+        mov ebx, eax
+        jbe L_5CD120_chk3
+        call dword ptr [mem_00925134]
+    L_5CD120_chk3:
+        test esi, esi
+        je L_5CD120_chk4
+        cmp esi, esi
+        je L_5CD120_chk5
+    L_5CD120_chk4:
+        call dword ptr [mem_00925134]
+    L_5CD120_chk5:
+        cmp ebx, edi
+        pop edi
+        je L_5CD120_ret_true
+        test esi, esi
+        jne L_5CD120_chk6
+        call dword ptr [mem_00925134]
+    L_5CD120_chk6:
+        cmp ebx, dword ptr [esi + 8]
+        jb L_5CD120_cmp
+        call dword ptr [mem_00925134]
+    L_5CD120_cmp:
+        push ebx
+        push ebp
+        call dword ptr [mem_00924EF4]
+        add esp, 8
+        test al, al
+        jne L_5CD120_ret_true
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 12
+        ret 4
+    L_5CD120_ret_true:
+        push ebp
+        push ebx
+        push esi
+        lea ecx, [esp + 28]
+        push ecx
+        mov ecx, esi
+        call ext_00475710
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        add esp, 12
+        ret 4
+    }
+}
