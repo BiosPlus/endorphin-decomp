@@ -124,3 +124,38 @@ extern "C" __declspec(naked) void __fastcall fn_005F2F50(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005EE250] NMData::RootRelationshipData::vfunc_12_off_C (64 bytes)
+extern "C" void ext_00481BD0();
+extern "C" void ext_005EE110();
+
+extern "C" __declspec(naked) bool __fastcall fn_005EE250(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x180]
+        test ecx, ecx
+        je fallback
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x28]
+        call edx
+        test al, al
+        je fallback
+        mov ecx, dword ptr [esp + 0xc]
+        add esi, -0xc
+        push esi
+        call ext_00481BD0
+        xor al, al
+        pop esi
+        ret 0x8
+    fallback:
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_005EE110
+        pop esi
+        ret 0x8
+    }
+}
