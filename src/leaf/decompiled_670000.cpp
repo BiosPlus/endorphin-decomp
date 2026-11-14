@@ -13336,3 +13336,103 @@ extern "C" __declspec(naked) void __fastcall fn_00671C70(void* self) {
         ret
     }
 }
+
+// [0x00671770] sub_00671770 (193 bytes)
+extern "C" void ext_0059A140();
+extern "C" void ext_00670C50();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00671770(void* self) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        push edi
+        mov byte ptr [esp + 0x10], 0x0
+        jbe L_0067178E
+        call ebp
+    L_0067178E:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_00671798
+        call ebp
+    L_00671798:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x20]
+        push 0x0
+        push eax
+        push ecx
+        push ebx
+        push edi
+        mov dword ptr [esp + 0x2c], edi
+        call ext_00670C50
+        mov edi, dword ptr [esi + 0x8]
+        add esp, 0x14
+        cmp dword ptr [esi + 0x4], edi
+        mov ebx, eax
+        jbe L_006717C4
+        call ebp
+        mov ebp, dword ptr [mem_00925134]
+    L_006717C4:
+        test esi, esi
+        je L_006717CC
+        cmp esi, esi
+        je L_006717D4
+    L_006717CC:
+        call ebp
+        mov ebp, dword ptr [mem_00925134]
+    L_006717D4:
+        cmp ebx, edi
+        je L_00671812
+        test esi, esi
+        jne L_006717DE
+        call ebp
+    L_006717DE:
+        cmp ebx, dword ptr [esi + 0x8]
+        jb L_006717E5
+        call ebp
+    L_006717E5:
+        mov edx, dword ptr [esp + 0x20]
+        mov eax, dword ptr [ebx]
+        mov ecx, dword ptr [edx]
+        mov edx, dword ptr [ecx + 0x4]
+        mov edi, dword ptr [eax + 0x4]
+        cmp edx, edi
+        jb L_00671812
+        jne L_00671806
+        mov ecx, dword ptr [ecx + 0x8]
+        cmp ecx, dword ptr [eax + 0x8]
+        setb al
+        test al, al
+        jne L_00671812
+    L_00671806:
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        add esp, 0xc
+        ret 0x4
+    L_00671812:
+        mov edx, dword ptr [esp + 0x20]
+        push edx
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_0059A140
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
+        add esp, 0xc
+        ret 0x4
+    }
+}
