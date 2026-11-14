@@ -10881,3 +10881,201 @@ extern "C" __declspec(naked) bool __fastcall fn_00687DC0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006896F0] sub_006896F0 (421 bytes)
+extern "C" void ext_0041DD40();
+extern "C" void ext_0041DE10();
+extern "C" void ext_0060E860();
+extern "C" void ext_0062BA00();
+extern "C" void ext_0062C100();
+extern "C" void ext_00687DC0();
+extern "C" void ext_00687E20();
+extern "C" void ext_00688E90();
+
+extern "C" __declspec(naked) void __fastcall fn_006896F0(void* self, int edx_unused, void* other) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        cmp esi, ebp
+        je L_done_006896F0
+        mov eax, dword ptr [ebp + 0x4]
+        test eax, eax
+        je L_clear_006896F0
+        mov ecx, dword ptr [ebp + 0x8]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x5
+        mov ecx, edx
+        shr ecx, 0x1f
+        add ecx, edx
+        jne L_nonzero_006896F0
+    L_clear_006896F0:
+        mov ecx, esi
+        call ext_00688E90
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret 0x4
+    L_nonzero_006896F0:
+        push ebx
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        test edi, edi
+        jne L_has_buf1_006896F0
+        xor eax, eax
+        jmp L_cmp_size_006896F0
+    L_has_buf1_006896F0:
+        mov ebx, dword ptr [esi + 0x8]
+        sub ebx, edi
+        mov eax, 0x92492493
+        imul ebx
+        add edx, ebx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+    L_cmp_size_006896F0:
+        cmp ecx, eax
+        ja L_grow_or_alloc_006896F0
+        mov byte ptr [esp + 0x14], 0x0
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x14]
+        push eax
+        mov eax, dword ptr [ebp + 0x8]
+        push ecx
+        push edx
+        push edi
+        push eax
+        mov eax, dword ptr [ebp + 0x4]
+        push eax
+        call ext_0062BA00
+        mov ecx, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esi + 0x8]
+        push ecx
+        push esi
+        push edx
+        push eax
+        call ext_0041DD40
+        mov eax, dword ptr [ebp + 0x4]
+        add esp, 0x28
+        test eax, eax
+        jne L_calc_other_size_006896F0
+        mov edx, dword ptr [esi + 0x4]
+        lea ecx, [8*eax]
+        sub ecx, eax
+        pop edi
+        lea eax, [edx + 8*ecx]
+        mov dword ptr [esi + 0x8], eax
+        pop ebx
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret 0x4
+    L_calc_other_size_006896F0:
+        mov ecx, dword ptr [ebp + 0x8]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        mov edx, dword ptr [esi + 0x4]
+        lea ecx, [8*eax]
+        sub ecx, eax
+        pop edi
+        lea eax, [edx + 8*ecx]
+        mov dword ptr [esi + 0x8], eax
+        pop ebx
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret 0x4
+    L_grow_or_alloc_006896F0:
+        test edi, edi
+        jne L_has_cap_006896F0
+        xor eax, eax
+        jmp L_cmp_cap_006896F0
+    L_has_cap_006896F0:
+        mov ebx, dword ptr [esi + 0xc]
+        sub ebx, edi
+        mov eax, 0x92492493
+        imul ebx
+        add edx, ebx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+    L_cmp_cap_006896F0:
+        cmp ecx, eax
+        ja L_realloc_006896F0
+        mov ecx, esi
+        call ext_0060E860
+        lea ecx, [8*eax]
+        sub ecx, eax
+        mov eax, dword ptr [ebp + 0x4]
+        lea ebx, [eax + 8*ecx]
+        push edi
+        push ebx
+        push eax
+        call ext_00687E20
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [ebp + 0x8]
+        add esp, 0xc
+        push edx
+        push eax
+        push ebx
+        mov ecx, esi
+        call ext_0062C100
+        pop edi
+        mov dword ptr [esi + 0x8], eax
+        pop ebx
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret 0x4
+    L_realloc_006896F0:
+        test edi, edi
+        je L_alloc_new_006896F0
+        mov ecx, dword ptr [esi + 0x8]
+        push ecx
+        push edi
+        mov ecx, esi
+        call ext_0041DE10
+        mov edx, dword ptr [esi + 0x4]
+        push edx
+        call ext_006A5C5C
+        add esp, 0x4
+    L_alloc_new_006896F0:
+        mov ecx, ebp
+        call ext_0060E860
+        push eax
+        mov ecx, esi
+        call ext_00687DC0
+        test al, al
+        je L_pop_done_006896F0
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [ebp + 0x4]
+        push eax
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_0062C100
+        mov dword ptr [esi + 0x8], eax
+    L_pop_done_006896F0:
+        pop edi
+        pop ebx
+    L_done_006896F0:
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret 0x4
+    }
+}
