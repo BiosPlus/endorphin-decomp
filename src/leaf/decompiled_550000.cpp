@@ -10092,3 +10092,65 @@ L_557AC2:
         ret 0x8
     }
 }
+
+// [0x0055CF90] sub_0055CF90 (133 bytes)
+extern "C" void ext_0055CF10();
+extern "C" void ext_0055CF90();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0055CF90(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x24]
+        mov ebp, ecx
+        push edi
+        mov ecx, esi
+        call edx
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        call ext_0055CF10
+        mov edi, dword ptr [esi + 0x1d4]
+        add esi, 0x1d0
+        cmp edi, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x14], eax
+        jbe L_a
+        call dword ptr [mem_00925134]
+    L_a:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_b
+        call dword ptr [mem_00925134]
+    L_b:
+        cmp esi, esi
+        je L_c
+        call dword ptr [mem_00925134]
+    L_c:
+        cmp edi, ebx
+        je L_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_d
+        call dword ptr [mem_00925134]
+    L_d:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [edi]
+        push eax
+        push ecx
+        mov ecx, ebp
+        call ext_0055CF90
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_e
+        call dword ptr [mem_00925134]
+    L_e:
+        add edi, 0x4
+        jmp L_a
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
