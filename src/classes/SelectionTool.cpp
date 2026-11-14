@@ -296,3 +296,101 @@ extern "C" __declspec(naked) void __fastcall fn_005402E0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+extern "C" void ext_0053F990();
+extern "C" bool __cdecl ext_0053F960();
+extern "C" void ext_005401A0();
+struct Rect16 { int a, b, c, d; };
+struct Point8 { int x, y; };
+extern "C" void ext_0053F9D0();
+extern "C" int mem_00A44B84;
+
+// [0x005403C0] SelectionTool::vfunc_17 (235 bytes)
+extern "C" __declspec(naked) int __fastcall fn_005403C0(void* self, int edx_unused, void* pt, void* arg2) {
+    __asm {
+        sub esp, 0x20
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0xe4], 0x0
+        je lbl_fail
+        call ext_00543630
+        test al, al
+        jne lbl_fail
+        mov ecx, esi
+        call ext_0053F990
+        call ext_0053F960
+        test al, al
+        je lbl_else
+        mov eax, dword ptr [esp + 0x2c]
+        push 0x1
+        push eax
+        lea ecx, [esi + 0xbc]
+        push ecx
+        mov ecx, esi
+        call ext_005401A0
+        jmp lbl_done
+    lbl_else:
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0x30]
+        mov edx, dword ptr [edi + 0x4]
+        mov eax, dword ptr [edi]
+        push 0x1
+        push edx
+        push eax
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, esi
+        call ext_0053F9D0
+        mov ebx, dword ptr [esp + 0x34]
+        push 0x0
+        push ebx
+        lea edx, [esp + 0x14]
+        push edx
+        mov ecx, esi
+        call ext_005401A0
+        test al, al
+        jne lbl_pop
+        mov eax, dword ptr [mem_00A44B84]
+        mov ecx, dword ptr [edi + 0x4]
+        mov edx, dword ptr [edi]
+        push eax
+        push ecx
+        push edx
+        lea eax, [esp + 0x28]
+        push eax
+        mov ecx, esi
+        call ext_0053F9D0
+        mov ecx, dword ptr [eax]
+        mov dword ptr [esp + 0xc], ecx
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [esp + 0x10], edx
+        mov ecx, dword ptr [eax + 0x8]
+        mov dword ptr [esp + 0x14], ecx
+        mov edx, dword ptr [eax + 0xc]
+        push 0x1
+        push ebx
+        lea eax, [esp + 0x14]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x24], edx
+        call ext_005401A0
+    lbl_pop:
+        pop edi
+        pop ebx
+    lbl_done:
+        mov ecx, dword ptr [esi + 0xc0]
+        mov dword ptr [esi + 0xc8], ecx
+        mov edx, dword ptr [esi + 0xbc]
+        mov dword ptr [esi + 0xc4], edx
+        mov eax, 0x1
+        pop esi
+        add esp, 0x20
+        ret 0x8
+    lbl_fail:
+        xor eax, eax
+        pop esi
+        add esp, 0x20
+        ret 0x8
+    }
+}
