@@ -665,3 +665,67 @@ extern "C" __declspec(naked) void __fastcall fn_004C4FA0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004C52B0] NMData::ForceEventData::vfunc_4_off_C (159 bytes)
+extern "C" void ext_00587020();
+extern "C" void ext_00480430();
+extern "C" void ext_004C5010();
+extern "C" int mem_00A3A108;
+extern "C" __declspec(naked) void __fastcall fn_004C52B0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0ch
+        mov eax, dword ptr [esp + 10h]
+        fld dword ptr [eax]
+        push esi
+        fabs
+        mov esi, ecx
+        fstp dword ptr [esp + 14h]
+        lea ecx, [esp + 4]
+        fld dword ptr [esp + 14h]
+        push ecx
+        fstp dword ptr [esp + 18h]
+        lea ecx, [esi - 0ch]
+        fld dword ptr [esp + 18h]
+        fst dword ptr [esp + 8]
+        fst dword ptr [esp + 0ch]
+        fstp dword ptr [esp + 10h]
+        call ext_00587020
+        mov edx, dword ptr [esi - 8]
+        mov eax, dword ptr [mem_00B40640]
+        mov edx, dword ptr [edx + 0ch]
+        add esi, -8
+        push eax
+        mov ecx, esi
+        call edx
+        mov ecx, eax
+        call ext_004C50C0
+        fld dword ptr [mem_00A3A108]
+        fcompp
+        fnstsw ax
+        test ah, 5
+        jp L_end_004C52B0
+        mov ecx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0ch]
+        push ecx
+        mov ecx, esi
+        call edx
+        mov ecx, eax
+        call ext_00480430
+        fld dword ptr [mem_00A3A108]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0ch]
+        push ecx
+        mov ecx, dword ptr [mem_00B40640]
+        fstp dword ptr [esp]
+        push ecx
+        mov ecx, esi
+        call edx
+        mov ecx, eax
+        call ext_004C5010
+L_end_004C52B0:
+        pop esi
+        add esp, 0ch
+        ret 4
+    }
+}
