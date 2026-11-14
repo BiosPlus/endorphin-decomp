@@ -2367,3 +2367,93 @@ extern "C" __declspec(naked) void __fastcall fn_006DE060(void* self) {
         ret
     }
 }
+
+// [0x006D83C0] sub_006D83C0 (207 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006D2130();
+extern "C" void ext_006D2250();
+extern "C" void ext_006D2300();
+extern "C" void ext_006FC930();
+extern "C" void ext_006FC9D0();
+extern "C" void ext_006FDE80();
+extern "C" void ext_006FDF70();
+extern "C" __declspec(naked) void __fastcall fn_006D83C0(void* self) {
+    __asm {
+        push -1
+        push 0x8b9326
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        xor edi, edi
+        mov esi, ecx
+        push edi
+        call ext_006FDF70
+        mov ebx, eax
+        cmp ebx, edi
+        jne L_6D83FA
+        mov ecx, esi
+        call ext_006FDE80
+        push eax
+        mov ecx, esi
+        call ext_006FDF70
+        mov ebx, eax
+    L_6D83FA:
+        mov ecx, ebx
+        call ext_006FC930
+        mov esi, eax
+        cmp esi, edi
+        jne L_6D8465
+        push 0x38
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 0x4
+        mov dword ptr [esp + 0xc], esi
+        cmp esi, edi
+        mov dword ptr [esp + 0x18], edi
+        je L_6D8453
+        mov dword ptr [esi], edi
+        mov dword ptr [esi + 0x4], edi
+        lea edi, [esi + 0x8]
+        push 0x10
+        push 0x10
+        mov ecx, edi
+        call ext_006D2130
+        lea eax, [edi + 0x10]
+        mov dword ptr [edi + 0x14], eax
+        lea edi, [esi + 0x20]
+        push 0x4
+        push 0x10
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x1
+        call ext_006D2130
+        lea ecx, [edi + 0x10]
+        mov dword ptr [edi + 0x14], ecx
+        jmp L_6D8455
+    L_6D8453:
+        xor esi, esi
+    L_6D8455:
+        push esi
+        mov ecx, ebx
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        call ext_006FC9D0
+    L_6D8465:
+        add esi, 0x8
+        mov ecx, esi
+        call ext_006D2250
+        mov edx, dword ptr [esp + 0x20]
+        mov ecx, esi
+        push edx
+        call ext_006D2300
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
