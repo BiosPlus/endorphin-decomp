@@ -5754,3 +5754,58 @@ extern "C" __declspec(naked) void __fastcall fn_005B5780(void* self) {
         ret 4
     }
 }
+
+// [0x005B5810] sub_005B5810 (165 bytes)
+extern "C" void ext_005B5380();
+extern "C" void ext_00661980();
+extern "C" int mem_00924FE8;
+
+extern "C" __declspec(naked) void __fastcall fn_005B5810(void* self, int edx_unused, int a1, const float* a2) {
+    __asm {
+        push -1
+        push 08a369fh
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov [esp+4], esi
+        call ext_00661980
+        mov byte ptr [esi+4], 1
+        mov dword ptr [esi], 095f88ch
+        mov dword ptr [esp+10h], 0
+        mov dword ptr [esi+0ch], 0
+        lea ecx, [esi+28h]
+        mov byte ptr [esp+10h], 1
+        call dword ptr [mem_00924FE8]
+        mov eax, dword ptr [esp+18h]
+        push eax
+        mov ecx, esi
+        mov byte ptr [esp+14h], 2
+        mov dword ptr [esi+8], eax
+        call ext_005B5380
+        fldz
+        mov eax, dword ptr [esp+1ch]
+        mov ecx, dword ptr [esp+8]
+        mov byte ptr [esi+44h], 1
+        fst dword ptr [esi+10h]
+        fst dword ptr [esi+14h]
+        fst dword ptr [esi+18h]
+        fst dword ptr [esi+1ch]
+        fst dword ptr [esi+20h]
+        fstp dword ptr [esi+24h]
+        fld dword ptr [eax]
+        fstp dword ptr [esi+10h]
+        fld dword ptr [eax+4]
+        fstp dword ptr [esi+14h]
+        fld dword ptr [eax+8]
+        mov dword ptr [esi+48h], 0
+        fstp dword ptr [esi+18h]
+        mov eax, esi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 10h
+        ret 8
+    }
+}
