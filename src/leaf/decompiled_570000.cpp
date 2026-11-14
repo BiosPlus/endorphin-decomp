@@ -8428,3 +8428,28 @@ extern "C" __declspec(naked) int __cdecl fn_0057DF40(int a1, int a2, int a3) {
         ret
     }
 }
+
+extern "C" void ext_004AFF30();
+
+struct Sub005732A0_Item {
+    char data[0x10];
+    Sub005732A0_Item& operator=(const Sub005732A0_Item& other) {
+        typedef void (__thiscall *AssignFn)(void*, const void*);
+        ((AssignFn)ext_004AFF30)(this, &other);
+        return *this;
+    }
+};
+
+struct Struct005732A0 {
+    Sub005732A0_Item items[3];
+};
+
+// [0x005732A0] sub_005732A0 (89 bytes)
+extern "C" Struct005732A0* __cdecl fn_005732A0(Struct005732A0* first, Struct005732A0* last, Struct005732A0* result) {
+    while (first != last) {
+        --last;
+        --result;
+        *result = *last;
+    }
+    return result;
+}
