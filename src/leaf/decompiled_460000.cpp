@@ -8839,3 +8839,59 @@ extern "C" __declspec(naked) void __fastcall fn_004663D0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_004685A0();
+extern "C" void ext_005A6300();
+extern "C" int mem_00925134;
+
+// [0x0046B190] sub_0046B190 (95 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0046B190(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [ebx + 0x4]
+        cmp esi, dword ptr [ebx + 0x8]
+        push edi
+        jbe loc_46b1a8
+        call ebp
+    loc_46b1a8:
+        mov edi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], edi
+        jbe loc_46b1b2
+        call ebp
+    loc_46b1b2:
+        cmp esi, edi
+        je loc_46b1ea
+        cmp esi, dword ptr [ebx + 0x8]
+        jb loc_46b1bd
+        call ebp
+    loc_46b1bd:
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_004685A0
+        add esp, 0x4
+        test eax, eax
+        mov dword ptr [esp + 0x18], eax
+        je loc_46b1de
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        call ext_005A6300
+    loc_46b1de:
+        cmp esi, dword ptr [ebx + 0x8]
+        jb loc_46b1e5
+        call ebp
+    loc_46b1e5:
+        add esi, 0x4
+        jmp loc_46b1a8
+    loc_46b1ea:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
