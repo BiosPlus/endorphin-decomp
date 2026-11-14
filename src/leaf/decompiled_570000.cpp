@@ -10745,3 +10745,140 @@ extern "C" __declspec(naked) void __fastcall fn_00576400(void* self, int edx_unu
         ret     8
     }
 }
+
+// [0x0057A320] sub_0057A320 (388 bytes)
+extern "C" void ext_0057A1D0();
+extern "C" void ext_00575CE0();
+extern "C" int mem_00925078;
+extern "C" int mem_00925134;
+extern "C" int mem_00924FE8;
+extern "C" int mem_0092508C;
+extern "C" int mem_00924FC4;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) bool __fastcall fn_0057A320(void* self, int edx_unused, void* is) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x40
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x5c]
+        push edi
+        sub esp, 0x18
+        mov eax, esp
+        xor ebx, ebx
+        mov ebp, ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x2c], esp
+        mov dword ptr [eax], 4
+        mov dword ptr [eax + 0x8], ebx
+        mov dword ptr [eax + 0xc], ebx
+        mov dword ptr [eax + 0x10], ebx
+        call dword ptr [mem_00925078]
+        mov eax, dword ptr [ebp + 0x494]
+        cmp dword ptr [ebp + 0x490], eax
+        lea edi, [ebp + 0x48c]
+        mov dword ptr [esp + 0x14], eax
+        jbe a320_L1
+        call dword ptr [mem_00925134]
+    a320_L1:
+        mov eax, dword ptr [edi + 0x4]
+        cmp eax, dword ptr [edi + 0x8]
+        mov dword ptr [esp + 0x60], eax
+        jbe a320_L2
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x60]
+    a320_L2:
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        push edi
+        push eax
+        push edi
+        lea edx, [esp + 0x24]
+        push edx
+        mov ecx, edi
+        call ext_00406510
+        lea ecx, [esp + 0x34]
+        mov dword ptr [esp + 0x10], ebx
+        call dword ptr [mem_00924FE8]
+        mov dword ptr [esp + 0x58], ebx
+        mov byte ptr [esp + 0x60], bl
+    a320_loop:
+        lea eax, [esp + 0x1c]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_0092508C]
+        mov edi, dword ptr [eax + 0x8]
+        add edi, dword ptr [eax]
+        lea ecx, [esp + 0x10]
+        push ecx
+        lea edx, [esp + 0x38]
+        push edx
+        push esi
+        mov ecx, ebp
+        call ext_00575CE0
+        lea eax, [esp + 0x34]
+        push 0xb3d500
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je a320_skip
+        push esi
+        mov ecx, ebp
+        call ext_0057A1D0
+        mov byte ptr [esp + 0x60], 0x1
+    a320_skip:
+        mov ecx, dword ptr [esp + 0x10]
+        sub esp, 0x18
+        mov eax, esp
+        lea ecx, [edi + ecx + 0x20]
+        mov dword ptr [eax], ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x2c], esp
+        mov dword ptr [eax + 0x8], ebx
+        mov dword ptr [eax + 0xc], ebx
+        mov dword ptr [eax + 0x10], ebx
+        call dword ptr [mem_00925078]
+        cmp dword ptr [esp + 0x10], ebx
+        jg a320_loop
+        cmp byte ptr [esp + 0x60], bl
+        jne a320_fail
+        lea ecx, [esp + 0x34]
+        mov dword ptr [esp + 0x58], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov al, 1
+        mov ecx, dword ptr [esp + 0x50]
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x4c
+        ret 4
+    a320_fail:
+        lea edx, [esp + 0x1c]
+        push edx
+        mov ecx, esi
+        call dword ptr [mem_0092508C]
+        mov ecx, dword ptr [eax + 0x8]
+        add ecx, dword ptr [eax]
+        mov dword ptr [esp + 0x58], 0xffffffff
+        mov dword ptr [ebp + 0x488], ecx
+        lea ecx, [esp + 0x34]
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x50]
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        add esp, 0x4c
+        ret 4
+    }
+}
