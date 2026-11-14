@@ -364,3 +364,200 @@ extern "C" __declspec(naked) void __fastcall fn_00459560(void* self) {
         ret 0Ch
     }
 }
+
+// [0x00459D40] MultiTrackView::TimeRuler::vfunc_8 (444 bytes)
+extern "C" void ext_00413480();
+extern "C" void ext_00441020();
+extern "C" void ext_00441040();
+extern "C" void ext_004410C0();
+extern "C" void ext_00468180();
+extern "C" void ext_00468660();
+extern "C" void ext_004686A0();
+extern "C" void ext_00468710();
+extern "C" void ext_00468730();
+extern "C" void ext_00468790();
+extern "C" void ext_00468810();
+extern "C" void ext_00468890();
+extern "C" void ext_00468920();
+extern "C" void ext_00482080();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00459D40(void* self) {
+    __asm {
+        sub esp, 10h
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov dword ptr [esp + 14h], ecx
+        call ext_00468180
+        mov ebx, dword ptr [esp + 24h]
+        mov edi, dword ptr [ebx + 4]
+        cmp edi, dword ptr [ebx + 8]
+        mov esi, eax
+        mov byte ptr [esp + 13h], 0
+        jbe short L_459D69
+        call dword ptr [mem_00925134]
+    L_459D69:
+        mov dword ptr [esp + 1Ch], edi
+        _emit 0x8D
+        _emit 0x49
+        _emit 0x00
+    L_459D70:
+        mov ebp, dword ptr [ebx + 8]
+        cmp dword ptr [ebx + 4], ebp
+        jbe short L_459D7E
+        call dword ptr [mem_00925134]
+    L_459D7E:
+        cmp edi, ebp
+        je L_459E47
+        cmp edi, dword ptr [ebx + 8]
+        jb short L_459D91
+        call dword ptr [mem_00925134]
+    L_459D91:
+        mov edi, dword ptr [edi]
+        mov ecx, edi
+        call ext_00441020
+        mov ecx, edi
+        mov ebp, eax
+        call ext_00441040
+        mov edi, dword ptr [edi + 8]
+        cmp edi, 3
+        mov ebx, eax
+        ja short L_459E22
+        jmp dword ptr [4*edi + 0x459E70]
+    L_459DB4:
+        push ebp
+        mov ecx, esi
+        call ext_004686A0
+        jmp short L_459E1D
+    L_459DBE:
+        mov ecx, esi
+        call ext_00468660
+        mov ebp, eax
+        mov eax, dword ptr [esp + 14h]
+        mov edi, dword ptr [ebp]
+        mov ecx, dword ptr [eax + 70h]
+        add edi, 70h
+        call ext_004410C0
+        mov edx, dword ptr [edi]
+        push eax
+        mov ecx, ebp
+        call edx
+        jmp short L_459E1D
+    L_459DE2:
+        push ebp
+        mov ecx, esi
+        call ext_00468890
+        push ebx
+        mov ecx, esi
+        call ext_00468920
+        push 1
+        mov ecx, esi
+        call ext_00468730
+        jmp short L_459E16
+    L_459DFD:
+        push ebp
+        mov ecx, esi
+        call ext_00468790
+        push ebx
+        mov ecx, esi
+        call ext_00468810
+        push 1
+        mov ecx, esi
+        call ext_00468710
+    L_459E16:
+        cmp byte ptr [esp + 28h], 0
+        jne short L_459E22
+    L_459E1D:
+        mov byte ptr [esp + 13h], 1
+    L_459E22:
+        mov eax, dword ptr [esp + 24h]
+        mov ecx, dword ptr [esp + 1Ch]
+        cmp ecx, dword ptr [eax + 8]
+        jb short L_459E35
+        call dword ptr [mem_00925134]
+    L_459E35:
+        add dword ptr [esp + 1Ch], 4
+        mov ebx, dword ptr [esp + 24h]
+        mov edi, dword ptr [esp + 1Ch]
+        jmp L_459D70
+    L_459E47:
+        cmp byte ptr [esp + 13h], 0
+        je short L_459E63
+        mov ecx, esi
+        call ext_00468660
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 98h]
+        push 5
+        call eax
+    L_459E63:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 10h
+        ret 8
+        nop
+
+        // 0x00459E70 jump table
+        _emit 0xb4
+        _emit 0x9d
+        _emit 0x45
+        _emit 0x00
+
+        _emit 0xbe
+        _emit 0x9d
+        _emit 0x45
+        _emit 0x00
+
+        _emit 0xe2
+        _emit 0x9d
+        _emit 0x45
+        _emit 0x00
+
+        _emit 0xfd
+        _emit 0x9d
+        _emit 0x45
+        _emit 0x00
+
+        // 0x00459E80
+        push -1
+        push 087F288h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        lea eax, [esi + 50h]
+        lea edi, [esi + 54h]
+        mov dword ptr [esp + 8], esi
+        mov dword ptr [esi], 09379C4h
+        mov dword ptr [eax], 09379BCh
+        mov dword ptr [edi], 09379B4h
+        push eax
+        push 5
+        mov dword ptr [esp + 1Ch], 0
+        call ext_00468180
+        mov ecx, eax
+        call ext_00482080
+        push edi
+        push 8
+        call ext_00468180
+        mov ecx, eax
+        call ext_00482080
+        mov ecx, esi
+        mov dword ptr [esp + 14h], 0FFFFFFFFh
+        call ext_00413480
+        mov ecx, dword ptr [esp + 0Ch]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
