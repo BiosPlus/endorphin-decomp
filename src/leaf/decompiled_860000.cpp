@@ -1728,3 +1728,84 @@ L_call:
         ret
     }
 }
+
+// [0x00866E50] sub_00866E50 (208 bytes)
+extern "C" void ext_0085E030();
+extern "C" void ext_0085E1F0();
+extern "C" void ext_0085E690();
+extern "C" void ext_0085F1F0();
+extern "C" int mem_00AB9860;
+extern "C" int mem_00BC6730;
+
+extern "C" __declspec(naked) void __fastcall fn_00866E50(void* self) {
+    __asm {
+        sub esp, 0xcc
+        mov dword ptr [mem_00AB9860], 0
+        mov byte ptr [esp + 4], 0
+        push esi
+        push edi
+        xor esi, esi
+        push 0xbc67b8
+        call ext_0085E1F0
+        add esp, 4
+        test eax, eax
+        jl L_done
+
+    L_loop:
+        movsx eax, byte ptr [esi + 0xbc67b8]
+        test eax, eax
+        je L_delim
+        cmp eax, 0x20
+        je L_next
+        cmp eax, 0x2c
+        je L_delim
+
+        lea eax, [esp + 0xc]
+        push eax
+        call ext_0085E1F0
+        add esp, 4
+        mov edi, eax
+        mov al, byte ptr [esi + 0xbc67b8]
+        push eax
+        call ext_0085E690
+        mov byte ptr [esp + edi + 0x10], al
+        add esp, 4
+        mov byte ptr [esp + edi + 0xd], 0
+        jmp L_next
+
+    L_delim:
+        lea eax, [esp + 0xc]
+        lea ecx, [esp + 0x70]
+        push eax
+        push ecx
+        call ext_0085E030
+        lea ecx, [esp + 0x10]
+        lea edx, [esp + 0x78]
+        add esp, 8
+        push 0x10
+        push ecx
+        push edx
+        call ext_0085F1F0
+        mov byte ptr [esp + 0x18], 0
+        add esp, 0xc
+        push eax
+        call dword ptr [mem_00BC6730]
+        mov ecx, dword ptr [mem_00AB9860]
+        inc dword ptr [mem_00AB9860]
+        mov dword ptr [ecx*4 + 0xab9658], eax
+
+    L_next:
+        inc esi
+        push 0xbc67b8
+        call ext_0085E1F0
+        add esp, 4
+        cmp eax, esi
+        jge L_loop
+
+    L_done:
+        pop edi
+        pop esi
+        add esp, 0xcc
+        ret
+    }
+}
