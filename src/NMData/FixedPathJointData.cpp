@@ -1037,3 +1037,116 @@ extern "C" __declspec(naked) void __fastcall fn_005ECD10(void* self, int edx_unu
         ret 0x4
     }
 }
+
+extern "C" void ext_00586D00();
+extern "C" void ext_0067DDB0();
+extern "C" int mem_00B40640;
+
+// [0x005E0430] NMData::FixedPathJointData::vfunc_2_off_C (309 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005E0430(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x58
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [edi - 0x8]
+        mov edx, dword ptr [eax + 0xc]
+        lea esi, [edi - 0x8]
+        push ecx
+        mov ecx, esi
+        call edx
+        fld dword ptr [eax + 0x30]
+        mov ecx, dword ptr [mem_00B40640]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [eax + 0x34]
+        add eax, 0x30
+        push ecx
+        fstp dword ptr [esp + 0x1c]
+        fld dword ptr [eax + 0x8]
+        mov eax, dword ptr [esi]
+        mov eax, dword ptr [eax + 0x10]
+        fstp dword ptr [esp + 0x20]
+        push 0x0
+        lea edx, [esp + 0x28]
+        push edx
+        mov ecx, esi
+        call eax
+        mov eax, dword ptr [esp + 0x64]
+        fld dword ptr [eax]
+        lea ecx, [esp + 0x20]
+        fadd dword ptr [esp + 0x50]
+        fstp dword ptr [esp + 0x50]
+        fld dword ptr [eax + 0x4]
+        fadd dword ptr [esp + 0x54]
+        fstp dword ptr [esp + 0x54]
+        fld dword ptr [eax + 0x8]
+        fadd dword ptr [esp + 0x58]
+        fstp dword ptr [esp + 0x58]
+        call ext_0067DDB0
+        mov eax, dword ptr [mem_00B40640]
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx]
+        push eax
+        lea ecx, [esp + 0x24]
+        push ecx
+        push 0x0
+        mov ecx, esi
+        call edx
+        lea ecx, [edi - 0xc]
+        call ext_00586D00
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x1c]
+        mov ecx, esi
+        call edx
+        test al, al
+        je L_check_184
+        mov ecx, dword ptr [mem_00B40640]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xc]
+        push ecx
+        mov ecx, esi
+        call edx
+        fld dword ptr [eax + 0x30]
+        fstp dword ptr [esp + 0x8]
+        add eax, 0x30
+        fld dword ptr [eax + 0x4]
+        mov ecx, esi
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [eax + 0x8]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x2c]
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x8]
+        fsub dword ptr [esp + 0x14]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0xc]
+        fsub dword ptr [esp + 0x18]
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x10]
+        fsub dword ptr [esp + 0x1c]
+        fstp dword ptr [esp + 0x10]
+        call edx
+        fld dword ptr [eax + 0x30]
+        fadd dword ptr [esp + 0x8]
+        fstp dword ptr [eax + 0x30]
+        fld dword ptr [eax + 0x34]
+        fadd dword ptr [esp + 0xc]
+        fstp dword ptr [eax + 0x34]
+        fld dword ptr [eax + 0x38]
+        fadd dword ptr [esp + 0x10]
+        fstp dword ptr [eax + 0x38]
+L_check_184:
+        cmp dword ptr [edi + 0x184], 0x0
+        je L_done
+        mov ecx, dword ptr [edi + 0x184]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x8c]
+        call edx
+L_done:
+        pop edi
+        pop esi
+        add esp, 0x58
+        ret 0x4
+    }
+}
