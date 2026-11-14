@@ -609,3 +609,36 @@ is_ne:
         ret 0xc
     }
 }
+
+// [0x0061DBF0] NMData::PrimaryTwistAndSwingConstraint::vfunc_70 (69 bytes)
+extern "C" void ext_0061CF90();
+
+extern "C" __declspec(naked) void* __fastcall fn_0061DBF0(void* self, int edx_unused, void* a1, int a2, int a3) {
+    __asm {
+        push ecx
+        cmp dword ptr [esp + 0x10], 0
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], 0
+        jne second
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        add ecx, 0x164
+        push esi
+        call ext_0061CF90
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+second:
+        mov edx, dword ptr [esp + 0x10]
+        push edx
+        add ecx, 0x224
+        push esi
+        call ext_0061CF90
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
