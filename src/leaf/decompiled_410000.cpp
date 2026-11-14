@@ -13235,3 +13235,230 @@ extern "C" __declspec(naked) void __fastcall fn_00418A60(void* self) {
         ret
     }
 }
+
+// [0x0041A260] sub_0041A260 (451 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_0041A100();
+extern "C" void ext_0041A160();
+extern "C" void ext_00576240();
+extern "C" void ext_00577AE0();
+extern "C" void ext_0065D540();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_0041A260(void* self) {
+    __asm {
+        push    ecx
+        mov     eax, dword ptr [esp + 0x14]
+        push    ebx
+        push    esi
+        mov     esi, ecx
+        mov     cl, byte ptr [eax]
+        mov     eax, dword ptr [esi + 0x4]
+        test    eax, eax
+        mov     byte ptr [esp + 0x1c], cl
+        jne     loc_0041A27A
+        xor     edx, edx
+        jmp     loc_0041A281
+    loc_0041A27A:
+        mov     ecx, dword ptr [esi + 0xc]
+        sub     ecx, eax
+        mov     edx, ecx
+    loc_0041A281:
+        mov     ebx, dword ptr [esp + 0x18]
+        test    ebx, ebx
+        je      loc_0041A41D
+        test    eax, eax
+        jne     loc_0041A295
+        xor     ecx, ecx
+        jmp     loc_0041A29A
+    loc_0041A295:
+        mov     ecx, dword ptr [esi + 0x8]
+        sub     ecx, eax
+    loc_0041A29A:
+        push    edi
+        or      edi, -1
+        sub     edi, ecx
+        cmp     edi, ebx
+        jae     loc_0041A2A9
+        call    ext_00405FB0
+    loc_0041A2A9:
+        test    eax, eax
+        jne     loc_0041A2B1
+        xor     ecx, ecx
+        jmp     loc_0041A2B6
+    loc_0041A2B1:
+        mov     ecx, dword ptr [esi + 0x8]
+        sub     ecx, eax
+    loc_0041A2B6:
+        add     ecx, ebx
+        cmp     edx, ecx
+        push    ebp
+        jae     loc_0041A398
+        mov     ecx, edx
+        shr     ecx, 1
+        or      edi, -1
+        sub     edi, ecx
+        cmp     edi, edx
+        jae     loc_0041A2DC
+        mov     dword ptr [esp + 0x10], 0
+        mov     edx, dword ptr [esp + 0x10]
+        jmp     loc_0041A2E2
+    loc_0041A2DC:
+        add     edx, ecx
+        mov     dword ptr [esp + 0x10], edx
+    loc_0041A2E2:
+        test    eax, eax
+        jne     loc_0041A2EA
+        xor     ecx, ecx
+        jmp     loc_0041A2EF
+    loc_0041A2EA:
+        mov     ecx, dword ptr [esi + 0x8]
+        sub     ecx, eax
+    loc_0041A2EF:
+        add     ecx, ebx
+        cmp     edx, ecx
+        jae     loc_0041A30A
+        test    eax, eax
+        jne     loc_0041A2FD
+        xor     ecx, ecx
+        jmp     loc_0041A302
+    loc_0041A2FD:
+        mov     ecx, dword ptr [esi + 0x8]
+        sub     ecx, eax
+    loc_0041A302:
+        add     ecx, ebx
+        mov     dword ptr [esp + 0x10], ecx
+        mov     edx, ecx
+    loc_0041A30A:
+        push    0
+        push    edx
+        call    ext_0041A100
+        mov     ebp, dword ptr [esp + 0x24]
+        mov     ecx, dword ptr [esi + 0x4]
+        mov     edi, eax
+        mov     eax, ebp
+        add     esp, 8
+        sub     eax, ecx
+        lea     edx, [eax + edi]
+        mov     dword ptr [esp + 0x20], edx
+        je      loc_0041A338
+        push    eax
+        push    ecx
+        push    eax
+        push    edi
+        call    dword ptr [mem_009251EC]
+        add     esp, 0x10
+    loc_0041A338:
+        mov     ecx, dword ptr [esp + 0x20]
+        lea     eax, [esp + 0x24]
+        push    eax
+        push    ebx
+        push    ecx
+        mov     ecx, esi
+        call    ext_00577AE0
+        mov     ecx, dword ptr [esi + 0x8]
+        sub     ecx, ebp
+        je      loc_0041A35E
+        push    ecx
+        push    ebp
+        push    ecx
+        push    eax
+        call    dword ptr [mem_009251EC]
+        add     esp, 0x10
+    loc_0041A35E:
+        mov     ecx, dword ptr [esi + 0x4]
+        test    ecx, ecx
+        jne     loc_0041A369
+        xor     eax, eax
+        jmp     loc_0041A36E
+    loc_0041A369:
+        mov     eax, dword ptr [esi + 0x8]
+        sub     eax, ecx
+    loc_0041A36E:
+        add     ebx, eax
+        test    ecx, ecx
+        je      loc_0041A37D
+        push    ecx
+        call    ext_006A5C5C
+        add     esp, 4
+    loc_0041A37D:
+        mov     edx, dword ptr [esp + 0x10]
+        pop     ebp
+        lea     ecx, [edi + ebx]
+        lea     eax, [edi + edx]
+        mov     dword ptr [esi + 0x4], edi
+        pop     edi
+        mov     dword ptr [esi + 0xc], eax
+        mov     dword ptr [esi + 0x8], ecx
+        pop     esi
+        pop     ebx
+        pop     ecx
+        ret     0x10
+    loc_0041A398:
+        mov     ebp, dword ptr [esi + 0x8]
+        mov     edi, dword ptr [esp + 0x1c]
+        mov     edx, ebp
+        sub     edx, edi
+        cmp     edx, ebx
+        mov     ecx, esi
+        jae     loc_0041A3EA
+        lea     eax, [edi + ebx]
+        push    eax
+        push    ebp
+        push    edi
+        call    ext_0065D540
+        mov     eax, dword ptr [esi + 0x8]
+        mov     edx, edi
+        lea     ecx, [esp + 0x24]
+        push    ecx
+        sub     edx, eax
+        add     edx, ebx
+        push    edx
+        push    eax
+        mov     ecx, esi
+        call    ext_00577AE0
+        add     dword ptr [esi + 0x8], ebx
+        mov     esi, dword ptr [esi + 0x8]
+        lea     eax, [esp + 0x24]
+        push    eax
+        sub     esi, ebx
+        push    esi
+        push    edi
+        call    ext_00576240
+        add     esp, 0xc
+        pop     ebp
+        pop     edi
+        pop     esi
+        pop     ebx
+        pop     ecx
+        ret     0x10
+    loc_0041A3EA:
+        push    ebp
+        mov     eax, ebp
+        sub     eax, ebx
+        push    ebp
+        push    eax
+        mov     dword ptr [esp + 0x2c], eax
+        call    ext_0065D540
+        mov     ecx, dword ptr [esp + 0x20]
+        push    ebp
+        push    ecx
+        push    edi
+        mov     dword ptr [esi + 0x8], eax
+        call    ext_0041A160
+        lea     edx, [esp + 0x30]
+        push    edx
+        lea     eax, [edi + ebx]
+        push    eax
+        push    edi
+        call    ext_00576240
+        add     esp, 0x18
+        pop     ebp
+        pop     edi
+    loc_0041A41D:
+        pop     esi
+        pop     ebx
+        pop     ecx
+        ret     0x10
+    }
+}
