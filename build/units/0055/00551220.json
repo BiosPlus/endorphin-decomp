@@ -39,5 +39,7 @@
     "0x0055134A",
     "0x00551363"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-14T13:56:18Z"
 }
