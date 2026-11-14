@@ -5351,3 +5351,20 @@ extern "C" __declspec(naked) void __fastcall fn_005A3580(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005AF8E0] sub_005AF8E0 (84 bytes)
+extern "C" void ext_00412690();
+extern "C" void ext_0046AB70();
+struct Pair_5AF8E0 {
+    int a;
+    int b;
+    int c;
+};
+extern "C" void __fastcall fn_005AF8E0(void* self, int edx_unused, int a1, int a2) {
+    Pair_5AF8E0 p;
+    p.a = a1;
+    p.b = a2;
+    ((void (__thiscall*)(void*, Pair_5AF8E0*))ext_00412690)((char*)self + 0x78, &p);
+    ((void (__thiscall*)(void*, Pair_5AF8E0*, int*))ext_0046AB70)((char*)self + 0x88, &p, &a1);
+    ((void (__thiscall*)(void*, Pair_5AF8E0*, int*))ext_0046AB70)((char*)self + 0x94, &p, &a2);
+}
