@@ -33,5 +33,7 @@
     "0x00747681",
     "0x00747695"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T13:40:55Z"
 }
