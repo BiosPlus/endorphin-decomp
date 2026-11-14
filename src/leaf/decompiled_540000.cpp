@@ -10423,3 +10423,70 @@ extern "C" __declspec(naked) int __fastcall fn_005401A0(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x00542740] sub_00542740 (160 bytes)
+extern "C" void ext_00540E10(); extern "C" void ext_00541580(); extern "C" void ext_00541630(); extern "C" void ext_005DF5C0(); extern "C" int mem_00924FE0; extern "C" int mem_00924FE4; extern "C" int mem_00A44BB8;
+extern "C" __declspec(naked) void __fastcall fn_00542740(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        test ebp, ebp
+        push esi
+        push edi
+        mov edi, ecx
+        je done
+        mov eax, dword ptr [ebp]
+        mov edx, dword ptr [eax + 0x1c]
+        mov ecx, ebp
+        call edx
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x30], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        lea ebx, [edi + 0x10c]
+        mov ecx, ebx
+        call ext_005DF5C0
+        test eax, eax
+        je done
+        mov esi, offset mem_00A44BB8
+        add edi, 0x8
+    loop_top:
+        cmp ebp, dword ptr [edi]
+        jne loop_next
+        mov eax, dword ptr [esi]
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x30], esp
+        push eax
+        call dword ptr [mem_00924FE4]
+        mov ecx, ebx
+        call ext_00541580
+        push eax
+        mov ecx, edi
+        call ext_00540E10
+    loop_next:
+        add esi, 0x4
+        add edi, 0x3c
+        cmp esi, offset mem_00A44BB8 + 0x10
+        jl loop_top
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx + 0x1c]
+        mov ecx, ebp
+        call eax
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x30], esp
+        push eax
+        call dword ptr [mem_00924FE0]
+        mov ecx, ebx
+        call ext_00541630
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
