@@ -2145,3 +2145,353 @@ extern "C" __declspec(naked) void __fastcall fn_006F6CC0(void* self) {
         ret 0x4
     }
 }
+
+// [0x006F53E0] sub_006F53E0 (832 bytes)
+extern "C" void ext_006F76F0();
+extern "C" void ext_0077FEF0();
+extern "C" void ext_0077FF90();
+extern "C" void ext_00782B80();
+extern "C" __declspec(naked) void __fastcall fn_006F53E0(void* self) {
+    __asm {
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x408], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x2
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	eax, dword ptr [esp + 0x4]
+        mov	dword ptr [ecx + 0x518], eax
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	eax
+        push	0x3
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	eax, dword ptr [esp + 0x4]
+        mov	dword ptr [ecx + 0x628], eax
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	eax
+        push	0x4
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	eax, dword ptr [esp + 0x4]
+        mov	dword ptr [ecx + 0x738], eax
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	eax
+        push	0x5
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	eax, dword ptr [esp + 0x4]
+        mov	dword ptr [ecx + 0x848], eax
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	eax
+        push	0x6
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x958], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x8
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x1b98], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x43
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x1ca8], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x44
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x1db8], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x45
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x1ec8], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x46
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x1fd8], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x47
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x20e8], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x48
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x21f8], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x49
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x2308], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x4a
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x2418], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x2c
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov	al, byte ptr [esp + 0x4]
+        xor	edx, edx
+        test	al, al
+        setne	dl
+        mov	byte ptr [ecx + 0x24a0], al
+        mov	ecx, dword ptr [ecx + 0x6958]
+        push	edx
+        push	0x34
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FEF0
+        ret	0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        fild	dword ptr [esp + 0x4]
+        mov	eax, dword ptr [esp + 0x4]
+        push	0x0
+        sub	esp, 0x8
+        mov	dword ptr [ecx + 0x1a88], eax
+        mov	ecx, dword ptr [ecx + 0x6958]
+        fstp	qword ptr [esp]
+        push	0x42
+        call ext_006F76F0
+        mov	ecx, eax
+        call ext_0077FF90
+        ret	0x4
+        nop
+        nop
+        nop
+        mov	eax, dword ptr [esp + 0x4]
+        push	eax
+        call ext_00782B80
+        add	esp, 0x4
+        ret	0x4
+    }
+}
