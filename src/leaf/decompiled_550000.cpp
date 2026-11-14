@@ -8581,3 +8581,50 @@ extern "C" __declspec(naked) void* __cdecl fn_005596D0(void* first, void* last, 
         ret
     }
 }
+
+extern "C" void ext_00558E90();
+
+// [0x00559070] sub_00559070 (81 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00559070(void* self, int edx_unused, int arg0) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], edi
+        jbe L_559086
+        call ebp
+    L_559086:
+        mov ebx, dword ptr [esi + 4]
+        cmp ebx, dword ptr [esi + 8]
+        jbe L_559090
+        call ebp
+    L_559090:
+        cmp ebx, edi
+        je L_5590A5
+        mov eax, dword ptr [esi + 8]
+        push ebx
+        push eax
+        push edi
+        call ext_005565C0
+        add esp, 0Ch
+        mov dword ptr [esi + 8], eax
+    L_5590A5:
+        mov eax, dword ptr [esp + 14h]
+        test eax, eax
+        je L_5590BA
+        add eax, 160h
+        push eax
+        mov ecx, esi
+        call ext_00558E90
+    L_5590BA:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
