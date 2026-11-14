@@ -7134,3 +7134,83 @@ L_done:
         ret 4
     }
 }
+
+// [0x00587470] sub_00587470 (168 bytes)
+extern "C" void ext_00527D60();
+extern "C" void ext_00586030();
+extern "C" void ext_005873E0();
+extern "C" void ext_00587450();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00587470(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 8
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        test ebp, ebp
+        push esi
+        mov esi, ecx
+        je L_00587470_ret
+        push ebx
+        push edi
+        lea eax, [esp + 0x1c]
+        push eax
+        lea ecx, [esi + 0x7c]
+        call ext_005873E0
+        push 0
+        mov ecx, ebp
+        call ext_00587450
+        push 0
+        mov ecx, ebp
+        call ext_00586030
+        add esi, 0x6c
+        mov dword ptr [ebp + 0x9c], 0
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_00587470_a
+        call dword ptr [mem_00925134]
+L_00587470_a:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_00587470_b
+        call dword ptr [mem_00925134]
+L_00587470_b:
+        cmp edi, ebx
+        mov dword ptr [esp + 0x14], edi
+        je L_00587470_c
+L_00587470_loop:
+        cmp dword ptr [edi], ebp
+        je L_00587470_c
+        add edi, 4
+        cmp edi, ebx
+        jne L_00587470_loop
+L_00587470_c:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_00587470_d
+        call dword ptr [mem_00925134]
+L_00587470_d:
+        test esi, esi
+        je L_00587470_e
+        cmp esi, esi
+        je L_00587470_f
+L_00587470_e:
+        call dword ptr [mem_00925134]
+L_00587470_f:
+        cmp edi, ebx
+        je L_00587470_g
+        push edi
+        push esi
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, esi
+        call ext_00527D60
+L_00587470_g:
+        pop edi
+        pop ebx
+L_00587470_ret:
+        pop esi
+        pop ebp
+        add esp, 8
+        ret 4
+    }
+}
