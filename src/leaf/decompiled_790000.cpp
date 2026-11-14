@@ -1696,3 +1696,496 @@ extern "C" __declspec(naked) void __fastcall fn_0079F390(void* self) {
         ret
     }
 }
+
+extern "C" void ext_007AA510();
+extern "C" int mem_00925208;
+extern "C" int mem_00B61219;
+extern "C" int mem_0099793C;
+extern "C" int mem_009251D8;
+extern "C" int mem_0092522C;
+extern "C" int mem_00997950;
+extern "C" int mem_00997954;
+extern "C" int mem_00997958;
+
+// [0x0079F790] sub_0079F790 (1327 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0079F790() {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        xor esi, esi
+        push edi
+        mov eax, dword ptr [ebp]
+        mov edi, dword ptr [esp + 0x18]
+        cmp eax, esi
+        jne loc_79F84B
+        push 0x84
+        call dword ptr [mem_00925208]
+        add esp, 0x4
+        cmp eax, esi
+        mov dword ptr [ebp], eax
+        jne loc_79F7D5
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je loc_79FCBA
+loc_79F7D5:
+        mov eax, dword ptr [ebp]
+        mov byte ptr [eax], 0x0
+        mov ecx, dword ptr [ebp]
+        mov byte ptr [ecx + 0xb], 0x0
+        mov edx, dword ptr [ebp]
+        mov word ptr [edx + 0x24], si
+        mov eax, dword ptr [ebp]
+        mov word ptr [eax + 0x22], si
+        mov ecx, dword ptr [ebp]
+        mov eax, dword ptr [esp + 0x1c]
+        mov dword ptr [ecx + 0x28], edi
+        mov edx, dword ptr [ebp]
+        mov dword ptr [edx + 0x38], eax
+        mov ecx, dword ptr [ebp]
+        mov edx, dword ptr [esp + 0x20]
+        mov dword ptr [ecx + 0x48], edx
+        mov eax, dword ptr [ebp]
+        mov edx, dword ptr [esp + 0x24]
+        mov byte ptr [eax + 0x58], 0x0
+        mov ecx, dword ptr [ebp]
+        mov dword ptr [ecx + 0x70], edx
+        mov eax, dword ptr [ebp]
+        mov dword ptr [eax + 0x30], esi
+        mov ecx, dword ptr [ebp]
+        mov dword ptr [ecx + 0x34], esi
+        mov edx, dword ptr [ebp]
+        mov dword ptr [edx + 0x40], esi
+        mov eax, dword ptr [ebp]
+        mov dword ptr [eax + 0x44], esi
+        mov ecx, dword ptr [ebp]
+        mov dword ptr [ecx + 0x50], esi
+        mov edx, dword ptr [ebp]
+        mov dword ptr [edx + 0x54], esi
+        mov eax, dword ptr [ebp]
+        mov dword ptr [eax + 0x78], esi
+        mov ecx, dword ptr [ebp]
+        mov dword ptr [ecx + 0x7c], esi
+loc_79F84B:
+        cmp edi, esi
+        je loc_79F97C
+        mov edx, dword ptr [ebp]
+        mov ax, word ptr [mem_0099793C]
+        mov word ptr [edx + 0x2c], ax
+        mov ecx, dword ptr [ebp]
+        mov dword ptr [ecx + 0x28], edi
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx + 0x30]
+        cmp eax, esi
+        je loc_79F884
+        mov edi, dword ptr [mem_009251D8]
+        push eax
+        call edi
+        mov eax, dword ptr [ebp]
+        add esp, 0x4
+        mov dword ptr [eax + 0x30], esi
+        jmp loc_79F88A
+loc_79F884:
+        mov edi, dword ptr [mem_009251D8]
+loc_79F88A:
+        mov ecx, dword ptr [ebp]
+        mov eax, dword ptr [ecx + 0x34]
+        cmp eax, esi
+        je loc_79F8A0
+        push eax
+        call edi
+        mov edx, dword ptr [ebp]
+        add esp, 0x4
+        mov dword ptr [edx + 0x34], esi
+loc_79F8A0:
+        mov eax, dword ptr [ebp]
+        mov ebx, dword ptr [mem_0092522C]
+        push 0x1c
+        mov ecx, dword ptr [eax + 0x28]
+        push ecx
+        call ebx
+        mov edx, dword ptr [ebp]
+        add esp, 0x8
+        mov dword ptr [edx + 0x30], eax
+        mov eax, dword ptr [ebp]
+        cmp dword ptr [eax + 0x30], esi
+        jne loc_79F8D9
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je loc_79FCBA
+loc_79F8D9:
+        mov eax, dword ptr [ebp]
+        xor edx, edx
+        cmp dword ptr [eax + 0x28], esi
+        jbe loc_79F910
+        xor ebx, ebx
+loc_79F8E5:
+        mov edi, dword ptr [eax + 0x30]
+        mov ecx, 0x7
+        add edi, ebx
+        mov esi, 0x997980
+        rep movsd
+        mov eax, dword ptr [ebp]
+        inc edx
+        add ebx, 0x1c
+        cmp edx, dword ptr [eax + 0x28]
+        jb loc_79F8E5
+        mov edi, dword ptr [mem_009251D8]
+        mov ebx, dword ptr [mem_0092522C]
+        xor esi, esi
+loc_79F910:
+        mov ecx, dword ptr [ebp]
+        push 0xc
+        mov edx, dword ptr [ecx + 0x28]
+        push edx
+        call ebx
+        mov ecx, dword ptr [ebp]
+        add esp, 0x8
+        mov dword ptr [ecx + 0x34], eax
+        mov edx, dword ptr [ebp]
+        cmp dword ptr [edx + 0x34], esi
+        jne loc_79F943
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je loc_79FCBA
+loc_79F943:
+        mov eax, dword ptr [ebp]
+        xor ecx, ecx
+        cmp dword ptr [eax + 0x28], esi
+        jbe loc_79F988
+        xor edx, edx
+loc_79F94F:
+        mov eax, dword ptr [eax + 0x34]
+        mov ebx, dword ptr [mem_00997950]
+        add eax, edx
+        inc ecx
+        add edx, 0xc
+        mov dword ptr [eax], ebx
+        mov ebx, dword ptr [mem_00997954]
+        mov dword ptr [eax + 0x4], ebx
+        mov ebx, dword ptr [mem_00997958]
+        mov dword ptr [eax + 0x8], ebx
+        mov eax, dword ptr [ebp]
+        cmp ecx, dword ptr [eax + 0x28]
+        jb loc_79F94F
+        jmp loc_79F982
+loc_79F97C:
+        mov edi, dword ptr [mem_009251D8]
+loc_79F982:
+        mov ebx, dword ptr [mem_0092522C]
+loc_79F988:
+        mov eax, dword ptr [esp + 0x1c]
+        cmp eax, esi
+        je loc_79FA8F
+        mov ecx, dword ptr [ebp]
+        mov dx, word ptr [mem_0099793C]
+        mov word ptr [ecx + 0x3c], dx
+        mov ecx, dword ptr [ebp]
+        mov dword ptr [ecx + 0x38], eax
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx + 0x40]
+        cmp eax, esi
+        je loc_79F9BE
+        push eax
+        call edi
+        mov eax, dword ptr [ebp]
+        add esp, 0x4
+        mov dword ptr [eax + 0x40], esi
+loc_79F9BE:
+        mov ecx, dword ptr [ebp]
+        mov eax, dword ptr [ecx + 0x44]
+        cmp eax, esi
+        je loc_79F9D4
+        push eax
+        call edi
+        mov edx, dword ptr [ebp]
+        add esp, 0x4
+        mov dword ptr [edx + 0x44], esi
+loc_79F9D4:
+        mov eax, dword ptr [ebp]
+        push 0x1c
+        mov ecx, dword ptr [eax + 0x38]
+        push ecx
+        call ebx
+        mov edx, dword ptr [ebp]
+        add esp, 0x8
+        mov dword ptr [edx + 0x40], eax
+        mov eax, dword ptr [ebp]
+        cmp dword ptr [eax + 0x40], esi
+        jne loc_79FA07
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je loc_79FCBA
+loc_79FA07:
+        mov eax, dword ptr [ebp]
+        xor edx, edx
+        cmp dword ptr [eax + 0x38], esi
+        jbe loc_79FA3E
+        xor ebx, ebx
+loc_79FA13:
+        mov edi, dword ptr [eax + 0x40]
+        mov ecx, 0x7
+        add edi, ebx
+        mov esi, 0x997980
+        rep movsd
+        mov eax, dword ptr [ebp]
+        inc edx
+        add ebx, 0x1c
+        cmp edx, dword ptr [eax + 0x38]
+        jb loc_79FA13
+        mov edi, dword ptr [mem_009251D8]
+        mov ebx, dword ptr [mem_0092522C]
+        xor esi, esi
+loc_79FA3E:
+        mov ecx, dword ptr [ebp]
+        push 0x4
+        mov edx, dword ptr [ecx + 0x38]
+        push edx
+        call ebx
+        mov ecx, dword ptr [ebp]
+        add esp, 0x8
+        mov dword ptr [ecx + 0x44], eax
+        mov edx, dword ptr [ebp]
+        cmp dword ptr [edx + 0x44], esi
+        jne loc_79FA71
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je loc_79FCBA
+loc_79FA71:
+        mov eax, dword ptr [ebp]
+        xor ecx, ecx
+        cmp dword ptr [eax + 0x38], esi
+        jbe loc_79FA8F
+loc_79FA7B:
+        mov eax, dword ptr [eax + 0x44]
+        inc ecx
+        mov dword ptr [eax + 4*ecx - 0x4], 0x42700000
+        mov eax, dword ptr [ebp]
+        cmp ecx, dword ptr [eax + 0x38]
+        jb loc_79FA7B
+loc_79FA8F:
+        mov eax, dword ptr [esp + 0x20]
+        cmp eax, esi
+        je loc_79FB92
+        mov ecx, dword ptr [ebp]
+        mov dx, word ptr [mem_0099793C]
+        mov word ptr [ecx + 0x4c], dx
+        mov ecx, dword ptr [ebp]
+        mov dword ptr [ecx + 0x48], eax
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx + 0x50]
+        cmp eax, esi
+        je loc_79FAC5
+        push eax
+        call edi
+        mov eax, dword ptr [ebp]
+        add esp, 0x4
+        mov dword ptr [eax + 0x50], esi
+loc_79FAC5:
+        mov ecx, dword ptr [ebp]
+        mov eax, dword ptr [ecx + 0x54]
+        cmp eax, esi
+        je loc_79FADB
+        push eax
+        call edi
+        mov edx, dword ptr [ebp]
+        add esp, 0x4
+        mov dword ptr [edx + 0x54], esi
+loc_79FADB:
+        mov eax, dword ptr [ebp]
+        push 0x1c
+        mov ecx, dword ptr [eax + 0x48]
+        push ecx
+        call ebx
+        mov edx, dword ptr [ebp]
+        add esp, 0x8
+        mov dword ptr [edx + 0x50], eax
+        mov eax, dword ptr [ebp]
+        cmp dword ptr [eax + 0x50], esi
+        jne loc_79FB0E
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je loc_79FCBA
+loc_79FB0E:
+        mov eax, dword ptr [ebp]
+        xor edx, edx
+        cmp dword ptr [eax + 0x48], esi
+        jbe loc_79FB45
+        xor ebx, ebx
+loc_79FB1A:
+        mov edi, dword ptr [eax + 0x50]
+        mov ecx, 0x7
+        add edi, ebx
+        mov esi, 0x997980
+        rep movsd
+        mov eax, dword ptr [ebp]
+        inc edx
+        add ebx, 0x1c
+        cmp edx, dword ptr [eax + 0x48]
+        jb loc_79FB1A
+        mov edi, dword ptr [mem_009251D8]
+        mov ebx, dword ptr [mem_0092522C]
+        xor esi, esi
+loc_79FB45:
+        mov ecx, dword ptr [ebp]
+        push 0x4
+        mov edx, dword ptr [ecx + 0x48]
+        push edx
+        call ebx
+        mov ecx, dword ptr [ebp]
+        add esp, 0x8
+        mov dword ptr [ecx + 0x54], eax
+        mov edx, dword ptr [ebp]
+        cmp dword ptr [edx + 0x54], esi
+        jne loc_79FB78
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je loc_79FCBA
+loc_79FB78:
+        mov eax, dword ptr [ebp]
+        xor ecx, ecx
+        cmp dword ptr [eax + 0x48], esi
+        jbe loc_79FB92
+loc_79FB82:
+        mov eax, dword ptr [eax + 0x54]
+        inc ecx
+        mov dword ptr [eax + 4*ecx - 0x4], esi
+        mov eax, dword ptr [ebp]
+        cmp ecx, dword ptr [eax + 0x48]
+        jb loc_79FB82
+loc_79FB92:
+        mov eax, dword ptr [esp + 0x24]
+        cmp eax, esi
+        je loc_79FCBA
+        mov ecx, dword ptr [ebp]
+        mov dx, word ptr [mem_0099793C]
+        mov word ptr [ecx + 0x74], dx
+        mov ecx, dword ptr [ebp]
+        mov word ptr [ecx + 0x82], si
+        mov edx, dword ptr [ebp]
+        mov word ptr [edx + 0x80], si
+        mov ecx, dword ptr [ebp]
+        mov dword ptr [ecx + 0x70], eax
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx + 0x78]
+        cmp eax, esi
+        je loc_79FBDC
+        push eax
+        call edi
+        mov eax, dword ptr [ebp]
+        add esp, 0x4
+        mov dword ptr [eax + 0x78], esi
+loc_79FBDC:
+        mov ecx, dword ptr [ebp]
+        mov eax, dword ptr [ecx + 0x7c]
+        cmp eax, esi
+        je loc_79FBF2
+        push eax
+        call edi
+        mov edx, dword ptr [ebp]
+        add esp, 0x4
+        mov dword ptr [edx + 0x7c], esi
+loc_79FBF2:
+        mov eax, dword ptr [ebp]
+        push 0x1c
+        mov ecx, dword ptr [eax + 0x70]
+        push ecx
+        call ebx
+        mov edx, dword ptr [ebp]
+        add esp, 0x8
+        mov dword ptr [edx + 0x78], eax
+        mov eax, dword ptr [ebp]
+        cmp dword ptr [eax + 0x78], esi
+        jne loc_79FC25
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je loc_79FCBA
+loc_79FC25:
+        mov eax, dword ptr [ebp]
+        xor edx, edx
+        cmp dword ptr [eax + 0x70], esi
+        jbe loc_79FC56
+        xor ebx, ebx
+loc_79FC31:
+        mov edi, dword ptr [eax + 0x78]
+        mov ecx, 0x7
+        add edi, ebx
+        mov esi, 0x997980
+        rep movsd
+        mov eax, dword ptr [ebp]
+        inc edx
+        add ebx, 0x1c
+        cmp edx, dword ptr [eax + 0x70]
+        jb loc_79FC31
+        mov ebx, dword ptr [mem_0092522C]
+        xor esi, esi
+loc_79FC56:
+        mov ecx, dword ptr [ebp]
+        push 0xc
+        mov edx, dword ptr [ecx + 0x70]
+        push edx
+        call ebx
+        mov ecx, dword ptr [ebp]
+        add esp, 0x8
+        mov dword ptr [ecx + 0x7c], eax
+        mov edx, dword ptr [ebp]
+        cmp dword ptr [edx + 0x7c], esi
+        jne loc_79FC85
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je loc_79FCBA
+loc_79FC85:
+        mov eax, dword ptr [ebp]
+        xor ecx, ecx
+        cmp dword ptr [eax + 0x70], esi
+        jbe loc_79FCBA
+loc_79FC8F:
+        mov eax, dword ptr [eax + 0x7c]
+        mov edx, dword ptr [mem_00997950]
+        add eax, esi
+        inc ecx
+        add esi, 0xc
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [mem_00997954]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [mem_00997958]
+        mov dword ptr [eax + 0x8], edx
+        mov eax, dword ptr [ebp]
+        cmp ecx, dword ptr [eax + 0x70]
+        jb loc_79FC8F
+loc_79FCBA:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
