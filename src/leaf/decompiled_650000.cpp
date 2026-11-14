@@ -11427,3 +11427,139 @@ extern "C" __declspec(naked) void __fastcall fn_0065E150(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0065DEE0] sub_0065DEE0 (304 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_0053E570();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_0065DEE0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x14]
+        test eax, eax
+        lea esi, [edi + 0x10]
+        jne L_0065DEF7
+        xor ebx, ebx
+        jmp L_0065DEFF
+    L_0065DEF7:
+        mov ebx, dword ptr [esi + 0x8]
+        sub ebx, eax
+        sar ebx, 0x2
+    L_0065DEFF:
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_0041A920
+        mov ecx, dword ptr [edi + 0x64]
+        mov eax, dword ptr [edi + 0x74]
+        test eax, eax
+        mov edx, dword ptr [ecx]
+        lea ebp, [edi + 0x60]
+        mov dword ptr [esp + 0x14], edx
+        je L_0065DF22
+        cmp eax, ebp
+        je L_0065DF28
+    L_0065DF22:
+        call dword ptr [mem_00925134]
+    L_0065DF28:
+        mov eax, dword ptr [esp + 0x14]
+        cmp dword ptr [edi + 0x78], eax
+        je L_0065E004
+        fldz
+        mov ecx, dword ptr [esp + 0x20]
+        fst dword ptr [esp + 0x18]
+        lea eax, [esp + 0x10]
+        fst dword ptr [esp + 0x14]
+        push eax
+        fstp dword ptr [esp + 0x14]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx]
+        call edx
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        jne L_0065DF5F
+        mov dword ptr [esp + 0x20], eax
+        jmp L_0065DF6B
+    L_0065DF5F:
+        mov esi, dword ptr [esi + 0x8]
+        sub esi, eax
+        sar esi, 0x2
+        mov dword ptr [esp + 0x20], esi
+    L_0065DF6B:
+        mov eax, dword ptr [ebp + 0x4]
+        mov edi, dword ptr [eax]
+    L_0065DF70:
+        cmp ebp, ebp
+        mov esi, dword ptr [ebp + 0x4]
+        je L_0065DF7D
+        call dword ptr [mem_00925134]
+    L_0065DF7D:
+        cmp edi, esi
+        __asm _emit 0x0f
+        __asm _emit 0x84
+        __asm _emit 0x7f
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        cmp edi, dword ptr [ebp + 0x4]
+        jne L_0065DF90
+        call dword ptr [mem_00925134]
+    L_0065DF90:
+        fldz
+        mov ecx, dword ptr [esp + 0x20]
+        sub esp, 0xc
+        mov eax, esp
+        fst dword ptr [eax + 0x8]
+        lea esi, [edi + 0x1c]
+        push ecx
+        fst dword ptr [eax + 0x4]
+        mov ecx, esi
+        fstp dword ptr [eax]
+        call ext_0053E570
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je L_0065DFCE
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        mov eax, 0x2aaaaaab
+        imul ecx
+        sar edx, 1
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp ebx, eax
+        jb L_0065DFD4
+    L_0065DFCE:
+        call dword ptr [mem_00925134]
+    L_0065DFD4:
+        mov eax, dword ptr [esi + 0x4]
+        fld dword ptr [esp + 0x10]
+        lea edx, [ebx + 2*ebx]
+        fstp dword ptr [eax + 4*edx]
+        lea eax, [eax + 4*edx]
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [eax + 0x4]
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [eax + 0x8]
+        cmp edi, dword ptr [ebp + 0x4]
+        jne L_0065DFFD
+        call dword ptr [mem_00925134]
+    L_0065DFFD:
+        mov edi, dword ptr [edi]
+        jmp L_0065DF70
+    L_0065E004:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, ebx
+        pop ebx
+        add esp, 0xc
+        ret 0x4
+    }
+}
