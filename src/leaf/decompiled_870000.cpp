@@ -1427,3 +1427,86 @@ extern "C" __declspec(naked) void __cdecl fn_00872490() {
         ret
     }
 }
+
+// [0x00871450] sub_00871450 (142 bytes)
+extern "C" void ext_00870E40();
+
+extern "C" __declspec(naked) bool __cdecl fn_00871450(void* self, void* a2) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push esi
+        mov ecx, ebp
+        call fn_00871130
+        test al, al
+        jne loop_00871469
+        pop esi
+        pop ebp
+        ret
+    loop_00871469:
+        cmp dword ptr [esi + 0x14], 0x3
+        push edi
+        jne loop_008714d8
+        mov edi, dword ptr [esi + 0x18]
+        cmp edi, 0x10
+        lea ecx, [esi + 0x4]
+        jb loop_0087147f
+        mov eax, dword ptr [ecx]
+        jmp loop_00871481
+    loop_0087147f:
+        mov eax, ecx
+    loop_00871481:
+        mov al, byte ptr [eax]
+        mov dl, al
+        sub dl, 0x41
+        cmp dl, 0x19
+        ja loop_0087148f
+        add al, 0x20
+    loop_0087148f:
+        cmp al, 0x78
+        jne loop_008714d8
+        cmp edi, 0x10
+        jb loop_0087149c
+        mov eax, dword ptr [ecx]
+        jmp loop_0087149e
+    loop_0087149c:
+        mov eax, ecx
+    loop_0087149e:
+        mov al, byte ptr [eax + 0x1]
+        mov dl, al
+        sub dl, 0x41
+        cmp dl, 0x19
+        ja loop_008714ad
+        add al, 0x20
+    loop_008714ad:
+        cmp al, 0x6d
+        jne loop_008714d8
+        cmp edi, 0x10
+        jb loop_008714ba
+        mov eax, dword ptr [ecx]
+        jmp loop_008714bc
+    loop_008714ba:
+        mov eax, ecx
+    loop_008714bc:
+        mov al, byte ptr [eax + 0x2]
+        mov cl, al
+        sub cl, 0x41
+        cmp cl, 0x19
+        ja loop_008714cb
+        add al, 0x20
+    loop_008714cb:
+        cmp al, 0x6c
+        jne loop_008714d8
+        push 0x19
+        mov ecx, ebp
+        call ext_00870E40
+    loop_008714d8:
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebp
+        ret
+    }
+}
