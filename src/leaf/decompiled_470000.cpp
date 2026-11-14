@@ -8640,3 +8640,95 @@ extern "C" __declspec(naked) void __fastcall fn_00473940(void* self) {
         ret
     }
 }
+
+// [0x00479550] sub_00479550 (193 bytes)
+extern "C" void ext_00517510();
+extern "C" void ext_00527D60();
+extern "C" void ext_00528B60();
+extern "C" void ext_00587470();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00479550(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        mov ebx, dword ptr [ecx + 0x38]
+        cmp dword ptr [ecx + 0x34], ebx
+        push ebp
+        push esi
+        push edi
+        lea edi, [ecx + 0x30]
+        mov dword ptr [esp + 0x10], ecx
+        jbe loc_0047956c
+        call dword ptr [mem_00925134]
+    loc_0047956c:
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe loc_0047957a
+        call dword ptr [mem_00925134]
+    loc_0047957a:
+        cmp esi, ebx
+        mov ebp, dword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x18], esi
+        je loc_00479591
+    loc_00479586:
+        cmp dword ptr [esi], ebp
+        je loc_00479591
+        add esi, 0x4
+        cmp esi, ebx
+        jne loc_00479586
+    loc_00479591:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe loc_0047959f
+        call dword ptr [mem_00925134]
+    loc_0047959f:
+        test edi, edi
+        je loc_004795a7
+        cmp edi, edi
+        je loc_004795ad
+    loc_004795a7:
+        call dword ptr [mem_00925134]
+    loc_004795ad:
+        cmp esi, ebx
+        je loc_00479607
+        lea ecx, [ebp + 0xc]
+        call ext_00528B60
+        mov ecx, dword ptr [ebp + 0x94]
+        test ecx, ecx
+        je loc_004795c9
+        push ebp
+        call ext_00587470
+    loc_004795c9:
+        mov ebx, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [ebx + 0x58]
+        test ecx, ecx
+        je loc_004795da
+        push ebp
+        call ext_00517510
+    loc_004795da:
+        test edi, edi
+        jne loc_004795e4
+        call dword ptr [mem_00925134]
+    loc_004795e4:
+        cmp esi, dword ptr [edi + 0x8]
+        jb loc_004795ef
+        call dword ptr [mem_00925134]
+    loc_004795ef:
+        push esi
+        push edi
+        lea eax, [esp + 0x1c]
+        push eax
+        mov ecx, edi
+        mov dword ptr [esi], 0
+        call ext_00527D60
+        mov byte ptr [ebx + 0x4], 1
+    loc_00479607:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret 4
+    }
+}
