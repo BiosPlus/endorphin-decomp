@@ -7620,3 +7620,58 @@ extern "C" __declspec(naked) void __fastcall fn_00565F00(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00567210] sub_00567210 (109 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00567210(void* self, int edx_unused, char* a1, int a2) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        add esi, 0x24
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        mov ebp, ecx
+        jbe L567230
+        call dword ptr [mem_00925134]
+        jmp L567230
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+    L567230:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L56723E
+        call dword ptr [mem_00925134]
+    L56723E:
+        cmp esi, esi
+        je L567248
+        call dword ptr [mem_00925134]
+    L567248:
+        cmp edi, ebx
+        je L567276
+        cmp edi, dword ptr [esi + 0x8]
+        jb L567257
+        call dword ptr [mem_00925134]
+    L567257:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [edi]
+        push eax
+        push ecx
+        mov ecx, ebp
+        call ext_00567210
+        cmp edi, dword ptr [esi + 0x8]
+        jb L567271
+        call dword ptr [mem_00925134]
+    L567271:
+        add edi, 0x4
+        jmp L567230
+    L567276:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
