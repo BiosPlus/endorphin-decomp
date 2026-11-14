@@ -142,5 +142,7 @@
     "0x0046BB09",
     "0x0046BB0E"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T14:17:13Z"
 }
