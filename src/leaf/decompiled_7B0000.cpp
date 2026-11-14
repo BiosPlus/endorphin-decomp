@@ -1309,3 +1309,108 @@ extern "C" __declspec(naked) void __cdecl fn_007B16E0() {
         ret
     }
 }
+
+// [0x007B2F70] sub_007B2F70 (239 bytes)
+extern "C" void ext_007AA510();
+extern "C" void ext_007B2C20();
+extern "C" void ext_007B6210();
+extern "C" unsigned char mem_009996FC;
+extern "C" __declspec(naked) void __cdecl fn_007B2F70(void* src, void* dst) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        test esi, esi
+        je L_007B2F82
+        test edi, edi
+        jne L_007B2F99
+    L_007B2F82:
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_007B305C
+    L_007B2F99:
+        push edi
+        mov dword ptr [edi], 0x0
+        call ext_007B2C20
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_007B2FBE
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_007B305C
+    L_007B2FBE:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [esi]
+        mov dword ptr [eax], ecx
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [edx + 0x4], eax
+        mov ecx, dword ptr [edi]
+        mov edx, dword ptr [esi + 0x8]
+        mov dword ptr [ecx + 0x8], edx
+        mov eax, dword ptr [edi]
+        mov cl, byte ptr [esi + 0x18]
+        mov byte ptr [eax + 0x18], cl
+        mov edx, dword ptr [edi]
+        mov al, byte ptr [esi + 0x19]
+        mov byte ptr [edx + 0x19], al
+        mov eax, dword ptr [esi + 0xc]
+        test eax, eax
+        je L_007B3024
+        mov cl, byte ptr [esi + 0x18]
+        mov dl, byte ptr [mem_009996FC]
+        cmp cl, dl
+        je L_007B3006
+        mov edx, dword ptr [edi]
+        mov dword ptr [edx + 0xc], eax
+        mov dword ptr [esi + 0xc], 0x0
+        jmp L_007B3012
+    L_007B3006:
+        mov eax, dword ptr [edi]
+        push eax
+        push esi
+        call ext_007B6210
+        add esp, 0x8
+    L_007B3012:
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je L_007B3024
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_007B305C
+    L_007B3024:
+        mov esi, dword ptr [esi + 0x14]
+        test esi, esi
+        je L_007B305C
+        mov edi, dword ptr [edi]
+        add edi, 0x14
+        test esi, esi
+        je L_007B305C
+    L_007B3034:
+        push edi
+        push esi
+        call fn_007B2F70
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x8
+        test al, al
+        je L_007B3050
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_007B305C
+    L_007B3050:
+        mov edi, dword ptr [edi]
+        mov esi, dword ptr [esi + 0x10]
+        add edi, 0x10
+        test esi, esi
+        jne L_007B3034
+    L_007B305C:
+        pop edi
+        pop esi
+        ret
+    }
+}
