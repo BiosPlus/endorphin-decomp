@@ -3454,3 +3454,479 @@ extern "C" __declspec(naked) void __fastcall fn_00630190(void* self) {
         ret
     }
 }
+
+// [0x0063CFD0] sub_0063CFD0 (1164 bytes)
+extern "C" void ext_0041C7C0();
+extern "C" void ext_0063CE20();
+extern "C" void ext_0067F5B0();
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924FD4;
+extern "C" int mem_00925134;
+extern "C" int mem_0092F678;
+extern "C" int mem_0092A270;
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __fastcall fn_0063CFD0(void* self) {
+    __asm {
+        sub esp, 0x20
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00924FC0]
+        mov ebp, ecx
+        lea esi, [ebp + 0x8c]
+        push 0x9719c4
+        push esi
+        mov dword ptr [esp + 0x20], ebp
+        call edi
+        add esp, 0x8
+        test al, al
+        jne L_63d060
+    L_63cff8:
+        push 0x97ca48
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne L_63d110
+        push 0x97ca3c
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne L_63d1a0
+        push 0x97ca30
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne L_63d251
+        push 0x97ca28
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne L_63d42a
+        push 0x9719c4
+        mov ecx, esi
+        call dword ptr [mem_00924FD4]
+        push 0x9719c4
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        je L_63cff8
+
+    L_63d060:
+        cmp dword ptr [ebp + 0x74], 0x0
+        mov dword ptr [esp + 0x14], 0x0
+        jbe L_63d454
+        lea esi, [ebp + 0x60]
+    L_63d075:
+        mov edi, dword ptr [esi + 0x4]
+        fld dword ptr [ebp + 0xb0]
+        test edi, edi
+        fstp dword ptr [esp + 0x18]
+        jne L_63d08a
+        xor ecx, ecx
+        jmp L_63d092
+    L_63d08a:
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, edi
+        sar ecx, 0x2
+    L_63d092:
+        mov eax, dword ptr [esi + 0x10]
+        xor edx, edx
+        div ecx
+        mov ebx, edx
+        test ebx, ebx
+        jne L_63d0a7
+        cmp dword ptr [esi + 0x10], edx
+        je L_63d0a7
+        mov dword ptr [esi + 0x10], ecx
+    L_63d0a7:
+        add dword ptr [esi + 0x10], 0x1
+        test edi, edi
+        je L_63d10b
+        mov ecx, dword ptr [esi + 0x8]
+        mov eax, ecx
+        sub eax, edi
+        sar eax, 0x2
+        cmp eax, ebx
+        jbe L_63d10b
+        cmp edi, ecx
+        jbe L_63d0c7
+        call dword ptr [mem_00925134]
+    L_63d0c7:
+        mov dword ptr [esp + 0x24], edi
+        lea edi, [edi + 4*ebx]
+        cmp edi, dword ptr [esi + 0x8]
+        ja L_63d0d8
+        cmp edi, dword ptr [esi + 0x4]
+        jae L_63d0de
+    L_63d0d8:
+        call dword ptr [mem_00925134]
+    L_63d0de:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_63d0e9
+        call dword ptr [mem_00925134]
+    L_63d0e9:
+        mov eax, dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x18]
+        add eax, 0x1
+        fstp dword ptr [edi]
+        cmp eax, dword ptr [ebp + 0x74]
+        mov dword ptr [esp + 0x14], eax
+        jb L_63d075
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret
+
+    L_63d10b:
+        jmp ext_0067F5B0
+
+    L_63d110:
+        mov eax, dword ptr [ebp + 0x74]
+        xor edi, edi
+        test eax, eax
+        jbe L_63d454
+        lea esi, [ebp + 0x60]
+    L_63d120:
+        mov ecx, edi
+        test ecx, ecx
+        mov dword ptr [esp + 0x20], ecx
+        fild dword ptr [esp + 0x20]
+        jge L_63d134
+        fadd dword ptr [mem_0092F678]
+    L_63d134:
+        add eax, -0x1
+        test eax, eax
+        mov dword ptr [esp + 0x20], eax
+        fild dword ptr [esp + 0x20]
+        jge L_63d149
+        fadd dword ptr [mem_0092F678]
+    L_63d149:
+        fdivp st(1), st(0)
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        fmul dword ptr [ebp + 0xb0]
+        fstp dword ptr [esp + 0x18]
+        jne L_63d160
+        xor ecx, ecx
+        jmp L_63d168
+    L_63d160:
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, eax
+        sar ecx, 0x2
+    L_63d168:
+        mov ebx, dword ptr [esi + 0x10]
+        xor edx, edx
+        mov eax, ebx
+        div ecx
+        test edx, edx
+        jne L_63d17c
+        test ebx, ebx
+        je L_63d17c
+        mov dword ptr [esi + 0x10], ecx
+    L_63d17c:
+        add dword ptr [esi + 0x10], 0x1
+        push edx
+        mov ecx, esi
+        call ext_0041C7C0
+        fld dword ptr [esp + 0x18]
+        fstp dword ptr [eax]
+        mov eax, dword ptr [ebp + 0x74]
+        add edi, 0x1
+        cmp edi, eax
+        jb L_63d120
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret
+
+    L_63d1a0:
+        xor ebx, ebx
+        cmp dword ptr [ebp + 0x74], ebx
+        jbe L_63d454
+        lea esi, [ebp + 0x60]
+        _emit 0x8b
+        _emit 0xff
+    L_63d1b0:
+        mov eax, dword ptr [ebp + 0x74]
+        mov edx, eax
+        test edx, edx
+        mov dword ptr [esp + 0x20], edx
+        fild dword ptr [esp + 0x20]
+        jge L_63d1c7
+        fadd dword ptr [mem_0092F678]
+    L_63d1c7:
+        fsub qword ptr [mem_0092A270]
+        mov ecx, ebx
+        test ecx, ecx
+        mov dword ptr [esp + 0x20], ecx
+        fild dword ptr [esp + 0x20]
+        jge L_63d1e1
+        fadd dword ptr [mem_0092F678]
+    L_63d1e1:
+        add eax, -0x1
+        fsubp st(1), st(0)
+        test eax, eax
+        mov dword ptr [esp + 0x20], eax
+        fild dword ptr [esp + 0x20]
+        jge L_63d1f8
+        fadd dword ptr [mem_0092F678]
+    L_63d1f8:
+        fdivp st(1), st(0)
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        fmul dword ptr [ebp + 0xb0]
+        fstp dword ptr [esp + 0x18]
+        jne L_63d20f
+        xor ecx, ecx
+        jmp L_63d217
+    L_63d20f:
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, eax
+        sar ecx, 0x2
+    L_63d217:
+        mov edi, dword ptr [esi + 0x10]
+        xor edx, edx
+        mov eax, edi
+        div ecx
+        test edx, edx
+        jne L_63d22b
+        test edi, edi
+        je L_63d22b
+        mov dword ptr [esi + 0x10], ecx
+    L_63d22b:
+        add dword ptr [esi + 0x10], 0x1
+        push edx
+        mov ecx, esi
+        call ext_0041C7C0
+        fld dword ptr [esp + 0x18]
+        add ebx, 0x1
+        fstp dword ptr [eax]
+        cmp ebx, dword ptr [ebp + 0x74]
+        jb L_63d1b0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret
+
+    L_63d251:
+        mov edx, dword ptr [ebp + 0x74]
+        shr edx, 1
+        test edx, edx
+        mov dword ptr [esp + 0x20], edx
+        fild dword ptr [esp + 0x20]
+        jge L_63d268
+        fadd dword ptr [mem_0092F678]
+    L_63d268:
+        fadd qword ptr [mem_00993828]
+        xor ebx, ebx
+        fnstcw word ptr [esp + 0x10]
+        movzx eax, word ptr [esp + 0x10]
+        or eax, 0xc00
+        mov dword ptr [esp + 0x14], eax
+        fldcw word ptr [esp + 0x14]
+        fistp qword ptr [esp + 0x20]
+        mov eax, dword ptr [esp + 0x20]
+        test eax, eax
+        mov dword ptr [esp + 0x14], eax
+        fldcw word ptr [esp + 0x10]
+        jbe L_63d328
+        add eax, -0x1
+        test eax, eax
+        mov dword ptr [esp + 0x20], eax
+        fild dword ptr [esp + 0x20]
+        jge L_63d2b3
+        fadd dword ptr [mem_0092F678]
+    L_63d2b3:
+        fstp dword ptr [esp + 0x10]
+        lea esi, [ebp + 0x60]
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_63d2c0:
+        mov eax, ebx
+        test eax, eax
+        mov dword ptr [esp + 0x20], eax
+        fild dword ptr [esp + 0x20]
+        jge L_63d2d4
+        fadd dword ptr [mem_0092F678]
+    L_63d2d4:
+        fdiv dword ptr [esp + 0x10]
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        fmul dword ptr [ebp + 0xb0]
+        fstp dword ptr [esp + 0x1c]
+        jne L_63d2ed
+        xor ecx, ecx
+        jmp L_63d2f5
+    L_63d2ed:
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, eax
+        sar ecx, 0x2
+    L_63d2f5:
+        mov edi, dword ptr [esi + 0x10]
+        xor edx, edx
+        mov eax, edi
+        div ecx
+        test edx, edx
+        jne L_63d309
+        test edi, edi
+        je L_63d309
+        mov dword ptr [esi + 0x10], ecx
+    L_63d309:
+        add dword ptr [esi + 0x10], 0x1
+        push edx
+        mov ecx, esi
+        call ext_0041C7C0
+        fld dword ptr [esp + 0x1c]
+        add ebx, 0x1
+        fstp dword ptr [eax]
+        cmp ebx, dword ptr [esp + 0x14]
+        jb L_63d2c0
+        mov eax, dword ptr [esp + 0x14]
+    L_63d328:
+        cmp eax, dword ptr [ebp + 0x74]
+        mov dword ptr [esp + 0x14], eax
+        jae L_63d454
+        mov ecx, eax
+        test ecx, ecx
+        mov dword ptr [esp + 0x20], ecx
+        fild dword ptr [esp + 0x20]
+        jge L_63d349
+        fadd dword ptr [mem_0092F678]
+    L_63d349:
+        add eax, -0x1
+        fstp dword ptr [esp + 0x1c]
+        test eax, eax
+        mov dword ptr [esp + 0x20], eax
+        fild dword ptr [esp + 0x20]
+        jge L_63d362
+        fadd dword ptr [mem_0092F678]
+    L_63d362:
+        fstp dword ptr [esp + 0x10]
+        lea esi, [ebp + 0x60]
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_63d370:
+        mov edx, dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x1c]
+        test edx, edx
+        fild dword ptr [esp + 0x14]
+        jge L_63d386
+        fadd dword ptr [mem_0092F678]
+    L_63d386:
+        fsubp st(1), st(0)
+        mov edi, dword ptr [esi + 0x4]
+        test edi, edi
+        fdiv dword ptr [esp + 0x10]
+        fadd qword ptr [mem_0092A270]
+        fmul dword ptr [ebp + 0xb0]
+        fstp dword ptr [esp + 0x20]
+        jne L_63d3a7
+        xor ecx, ecx
+        jmp L_63d3af
+    L_63d3a7:
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, edi
+        sar ecx, 0x2
+    L_63d3af:
+        mov ebp, dword ptr [esi + 0x10]
+        xor edx, edx
+        mov eax, ebp
+        div ecx
+        mov ebx, edx
+        test ebx, ebx
+        jne L_63d3c5
+        test ebp, ebp
+        je L_63d3c5
+        mov dword ptr [esi + 0x10], ecx
+    L_63d3c5:
+        add dword ptr [esi + 0x10], 0x1
+        test edi, edi
+        je L_63d10b
+        mov ecx, dword ptr [esi + 0x8]
+        mov eax, ecx
+        sub eax, edi
+        sar eax, 0x2
+        cmp eax, ebx
+        jbe L_63d10b
+        cmp edi, ecx
+        mov ebp, dword ptr [mem_00925134]
+        jbe L_63d3ef
+        call ebp
+    L_63d3ef:
+        mov dword ptr [esp + 0x2c], edi
+        lea edi, [edi + 4*ebx]
+        cmp edi, dword ptr [esi + 0x8]
+        ja L_63d400
+        cmp edi, dword ptr [esi + 0x4]
+        jae L_63d402
+    L_63d400:
+        call ebp
+    L_63d402:
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_63d409
+        call ebp
+    L_63d409:
+        mov eax, dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x18]
+        fstp dword ptr [edi]
+        add eax, 0x1
+        cmp eax, dword ptr [ecx + 0x74]
+        mov dword ptr [esp + 0x14], eax
+        jae L_63d454
+        mov ebp, ecx
+        jmp L_63d370
+
+    L_63d42a:
+        xor esi, esi
+        cmp dword ptr [ebp + 0x74], esi
+        jbe L_63d454
+        fldz
+        lea edi, [ebp + 0x60]
+        fstp dword ptr [esp + 0x20]
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_63d440:
+        lea edx, [esp + 0x20]
+        push edx
+        mov ecx, edi
+        call ext_0063CE20
+        add esi, 0x1
+        cmp esi, dword ptr [ebp + 0x74]
+        jb L_63d440
+
+    L_63d454:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret
+    }
+}
