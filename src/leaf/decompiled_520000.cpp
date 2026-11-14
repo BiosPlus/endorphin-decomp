@@ -5484,3 +5484,211 @@ extern "C" __declspec(naked) void* __fastcall fn_005201F0(void* self) {
         ret 0x4
     }
 }
+
+// [0x00520780] sub_00520780 (399 bytes)
+extern "C" void ext_0051DE70();
+extern "C" void ext_0051E070();
+extern "C" void ext_0051E120();
+extern "C" void ext_0051E170();
+extern "C" void ext_0051E530();
+extern "C" void ext_0051EC00();
+extern "C" void ext_00520AB0();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_00520780(void* self) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        cmp esi, ebp
+        je L_00520908
+
+        mov eax, dword ptr [ebp + 0x4]
+        test eax, eax
+        je L_005207b1
+
+        mov ecx, dword ptr [ebp + 0x8]
+        sub ecx, eax
+        mov eax, 0xb60b60b7
+        imul ecx
+        add edx, ecx
+        sar edx, 0x8
+        mov ecx, edx
+        shr ecx, 0x1f
+        add ecx, edx
+        jne L_005207bf
+
+    L_005207b1:
+        mov ecx, esi
+        call ext_0051EC00
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret 0x4
+
+    L_005207bf:
+        push ebx
+        mov ebx, dword ptr [esi + 0x4]
+        test ebx, ebx
+        push edi
+        jne L_005207cc
+        xor eax, eax
+        jmp L_005207e4
+
+    L_005207cc:
+        mov edi, dword ptr [esi + 0x8]
+        sub edi, ebx
+        mov eax, 0xb60b60b7
+        imul edi
+        add edx, edi
+        sar edx, 0x8
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+
+    L_005207e4:
+        cmp ecx, eax
+        ja L_00520862
+
+        mov byte ptr [esp + 0x14], 0x0
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x14]
+        push eax
+        mov eax, dword ptr [ebp + 0x8]
+        push ecx
+        push edx
+        push ebx
+        push eax
+        mov eax, dword ptr [ebp + 0x4]
+        push eax
+        call ext_0051E070
+        mov ecx, dword ptr [esi + 0x8]
+        add esp, 0x18
+        push ecx
+        push eax
+        mov ecx, esi
+        call ext_0051E530
+        mov eax, dword ptr [ebp + 0x4]
+        test eax, eax
+        jne L_00520835
+        imul eax, eax, 0x168
+        add eax, dword ptr [esi + 0x4]
+        pop edi
+        mov dword ptr [esi + 0x8], eax
+        pop ebx
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret 0x4
+
+    L_00520835:
+        mov ecx, dword ptr [ebp + 0x8]
+        sub ecx, eax
+        mov eax, 0xb60b60b7
+        imul ecx
+        add edx, ecx
+        sar edx, 0x8
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        imul eax, eax, 0x168
+        add eax, dword ptr [esi + 0x4]
+        pop edi
+        mov dword ptr [esi + 0x8], eax
+        pop ebx
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret 0x4
+
+    L_00520862:
+        test ebx, ebx
+        jne L_0052086a
+        xor eax, eax
+        jmp L_00520882
+
+    L_0052086a:
+        mov edi, dword ptr [esi + 0xc]
+        sub edi, ebx
+        mov eax, 0xb60b60b7
+        imul edi
+        add edx, edi
+        sar edx, 0x8
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+
+    L_00520882:
+        cmp ecx, eax
+        ja L_005208c1
+
+        mov ecx, esi
+        call ext_0051DE70
+        mov edi, eax
+        mov eax, dword ptr [ebp + 0x4]
+        imul edi, edi, 0x168
+        add edi, eax
+        push ebx
+        push edi
+        push eax
+        call ext_0051E170
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [ebp + 0x8]
+        add esp, 0xc
+        push edx
+        push eax
+        push edi
+        mov ecx, esi
+        call ext_00520AB0
+        pop edi
+        mov dword ptr [esi + 0x8], eax
+        pop ebx
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret 0x4
+
+    L_005208c1:
+        test ebx, ebx
+        je L_005208dd
+        mov ecx, dword ptr [esi + 0x8]
+        push ecx
+        push ebx
+        mov ecx, esi
+        call ext_0051E530
+        mov edx, dword ptr [esi + 0x4]
+        push edx
+        call ext_006A5C5C
+        add esp, 0x4
+
+    L_005208dd:
+        mov ecx, ebp
+        call ext_0051DE70
+        push eax
+        mov ecx, esi
+        call ext_0051E120
+        test al, al
+        je L_00520906
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [ebp + 0x8]
+        mov edx, dword ptr [ebp + 0x4]
+        push eax
+        push ecx
+        push edx
+        mov ecx, esi
+        call ext_00520AB0
+        mov dword ptr [esi + 0x8], eax
+
+    L_00520906:
+        pop edi
+        pop ebx
+
+    L_00520908:
+        mov eax, esi
+        pop esi
+        pop ebp
+        ret 0x4
+    }
+}
