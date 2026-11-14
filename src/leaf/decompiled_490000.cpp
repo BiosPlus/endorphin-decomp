@@ -9315,3 +9315,132 @@ extern "C" __declspec(naked) void __fastcall fn_0049AA80(void* self, int edx_unu
         ret     4
     }
 }
+
+// [0x0049FE40] sub_0049FE40 (333 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_00427A60();
+extern "C" void ext_0050BE20();
+extern "C" void ext_00683620();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FC0;
+
+extern "C" __declspec(naked) void __fastcall fn_0049FE40(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 08921ABh
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 18h
+        cmp byte ptr [esp+34h], 0
+        je short L_49FE68
+        mov ecx, dword ptr [esp+2Ch]
+        call ext_0050BE20
+    L_49FE68:
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp+34h]
+        add esi, 24h
+        push edi
+        mov edi, dword ptr [esi+4]
+        cmp edi, dword ptr [esi+8]
+        jbe short L_49FE81
+        call dword ptr [mem_00925134]
+    L_49FE81:
+        lea ecx, [esp+10h]
+        mov dword ptr [esp+10h], esi
+        mov dword ptr [esp+14h], esi
+        mov dword ptr [esp+18h], edi
+        call ext_00427A60
+        mov edi, dword ptr [esi+8]
+        cmp dword ptr [esi+4], edi
+        jbe short L_49FEA4
+        call dword ptr [mem_00925134]
+    L_49FEA4:
+        lea ecx, [esp+1Ch]
+        mov dword ptr [esp+1Ch], esi
+        mov dword ptr [esp+20h], esi
+        mov dword ptr [esp+24h], edi
+        call ext_00427A60
+        mov ebx, dword ptr [esp+40h]
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    L_49FEC0:
+        mov ebp, dword ptr [esp+14h]
+        test ebp, ebp
+        je short L_49FECE
+        cmp ebp, dword ptr [esp+20h]
+        je short L_49FED8
+    L_49FECE:
+        mov esi, dword ptr [mem_00925134]
+        call esi
+        jmp short L_49FEDE
+    L_49FED8:
+        mov esi, dword ptr [mem_00925134]
+    L_49FEDE:
+        mov edi, dword ptr [esp+18h]
+        cmp edi, dword ptr [esp+24h]
+        jae L_49FF7A
+        test ebp, ebp
+        jne short L_49FEF2
+        call esi
+    L_49FEF2:
+        cmp edi, dword ptr [ebp+8]
+        jb short L_49FEF9
+        call esi
+    L_49FEF9:
+        mov esi, dword ptr [edi]
+        lea eax, [esi+4]
+        push ebx
+        push eax
+        call dword ptr [mem_00924FC0]
+        add esp, 8
+        test al, al
+        je L_49FF5A
+        push 90h
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp+44h], eax
+        test eax, eax
+        mov dword ptr [esp+30h], 0
+        je short L_49FF33
+        mov ecx, eax
+        call ext_00683620
+        jmp short L_49FF35
+    L_49FF33:
+        xor eax, eax
+    L_49FF35:
+        lea ecx, [eax+8]
+        mov dword ptr [esp+44h], eax
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax+4]
+        push esi
+        mov dword ptr [esp+34h], -1
+        call edx
+        mov ecx, dword ptr [esp+3Ch]
+        lea eax, [esp+44h]
+        push eax
+        call ext_0041A920
+    L_49FF5A:
+        cmp edi, dword ptr [ebp+8]
+        jb short L_49FF65
+        call dword ptr [mem_00925134]
+    L_49FF65:
+        add edi, 4
+        lea ecx, [esp+10h]
+        mov dword ptr [esp+18h], edi
+        call ext_00427A60
+        jmp L_49FEC0
+    L_49FF7A:
+        mov ecx, dword ptr [esp+28h]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 24h
+        ret
+    }
+}
