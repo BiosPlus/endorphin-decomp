@@ -105,3 +105,56 @@ extern "C" __declspec(naked) void* __fastcall fn_0050AC30(void* self, int edx_un
         ret 0x8
     }
 }
+
+extern "C" void ext_00427550();
+extern "C" void ext_0050A9D0();
+extern "C" void ext_0050AFA0();
+extern "C" void ext_00640110();
+extern "C" void ext_00640390();
+extern "C" int mem_00A9F308;
+extern "C" int mem_00A9F300;
+extern "C" int mem_00A9F30C;
+extern "C" int mem_00A9F438;
+extern "C" int mem_00A40EF8[];
+
+// [0x0050B710] NMData::TaskManager::vfunc_3_off_4 (106 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0050B710(void* self, int edx_unused, void* arg) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F308]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push 0
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_00640390
+        push eax
+        lea ecx, [esi + 0xc]
+        call ext_0050A9D0
+        mov ecx, dword ptr [mem_00A9F300]
+        mov edx, dword ptr [mem_00A9F30C]
+        push 0
+        push ecx
+        push edx
+        lea eax, [esi + 0x20]
+        push edi
+        push eax
+        call ext_0050AFA0
+        mov ecx, dword ptr [mem_00A9F438]
+        add esp, 0x14
+        push ecx
+        mov ecx, edi
+        call ext_00640110
+        mov edx, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0xc], eax
+        mov eax, dword ptr [edx * 4 + mem_00A40EF8]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 4
+    }
+}
