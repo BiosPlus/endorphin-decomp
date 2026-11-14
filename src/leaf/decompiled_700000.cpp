@@ -174,3 +174,44 @@ loc_708C0B:
         ret 4
     }
 }
+
+extern "C" void ext_006C97B0();
+extern "C" void ext_006C97D0();
+extern "C" void ext_006C97F0();
+extern "C" void ext_006CD330();
+extern "C" void ext_006DC460();
+
+// [0x0070BB80] sub_0070BB80 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0070BB80(void* self, int edx_unused, void* arg1) {
+    __asm {
+        push esi
+        push edi
+        call ext_006DC460
+        mov edi, dword ptr [esp + 0x0c]
+        mov esi, eax
+        push ecx
+        mov ecx, esi
+        fld qword ptr [edi]
+        fstp dword ptr [esp]
+        call ext_006C97B0
+        mov ecx, eax
+        call ext_006CD330
+        fld qword ptr [edi + 0x08]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_006C97D0
+        mov ecx, eax
+        call ext_006CD330
+        fld qword ptr [edi + 0x10]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_006C97F0
+        mov ecx, eax
+        call ext_006CD330
+        pop edi
+        pop esi
+        ret 4
+    }
+}
