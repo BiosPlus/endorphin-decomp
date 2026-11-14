@@ -2371,3 +2371,105 @@ extern "C" __declspec(naked) void __fastcall fn_004F2E70(void* self) {
         ret
     }
 }
+
+// [0x004F3F90] VMCSModes::EditMode::vfunc_120 (289 bytes)
+extern "C" void ext_00480A10();
+extern "C" void ext_00482660();
+extern "C" __declspec(naked) void __fastcall fn_004F3F90(void* self) {
+    __asm {
+        push -1
+        push 0x88fe68
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0ch
+        push ebx
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 8]
+        mov ebx, dword ptr [eax + 14h]
+        test ebx, ebx
+        mov dword ptr [esp + 0ch], ebx
+        mov byte ptr [esp + 10h], 1
+        je L_3F90_a
+        cmp dword ptr [mem_00AD89B4], 0
+        jne L_3F90_b
+        mov ecx, ebx
+        mov byte ptr [ebx + 153h], 1
+        call ext_00472350
+L_3F90_b:
+        add dword ptr [mem_00AD89B4], 1
+L_3F90_a:
+        push ebp
+        mov edx, dword ptr [esi + 8]
+        mov ecx, dword ptr [mem_009542B8]
+        mov eax, dword ptr [edx + 14h]
+        mov dword ptr [esp + 0ch], ecx
+        mov ecx, dword ptr [eax + 30h]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0b4h]
+        mov dword ptr [esp + 20h], 0
+        call edx
+        mov ebp, eax
+        test ebp, ebp
+        je L_3F90_c
+        mov eax, dword ptr [ebp + 38h]
+        mov dword ptr [esp + 0ch], eax
+L_3F90_c:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0d4h]
+        push edi
+        mov ecx, esi
+        call eax
+        mov ecx, dword ptr [esi + 8]
+        mov ecx, dword ptr [ecx + 38h]
+        call ext_00666120
+        call ext_00594000
+        mov edx, dword ptr [esi + 8]
+        mov edi, dword ptr [eax + 26ch]
+        mov eax, dword ptr [edx + 14h]
+        mov esi, dword ptr [eax + 34h]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 38h]
+        push 1
+        mov ecx, esi
+        call edx
+        cmp byte ptr [edi + 531h], 0
+        mov byte ptr [edi + 4], 1
+        pop edi
+        mov ecx, esi
+        je L_3F90_d
+        call ext_00480A10
+        jmp L_3F90_e
+L_3F90_d:
+        call ext_00482660
+L_3F90_e:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 3ch]
+        mov ecx, esi
+        call edx
+        test ebp, ebp
+        je L_3F90_f
+        mov eax, dword ptr [esp + 0ch]
+        push eax
+        mov ecx, ebp
+        call ext_00530290
+L_3F90_f:
+        test ebx, ebx
+        mov dword ptr [esp + 20h], -1
+        pop ebp
+        je L_3F90_g
+        sub dword ptr [mem_00AD89B4], 1
+        jne L_3F90_g
+        mov ecx, ebx
+        mov byte ptr [ebx + 153h], 0
+        call ext_0046F930
+L_3F90_g:
+        mov ecx, dword ptr [esp + 14h]
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 18h
+        ret
+    }
+}
