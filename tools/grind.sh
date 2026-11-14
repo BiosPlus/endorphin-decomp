@@ -9,7 +9,7 @@ WAVE_SIZE="${2:-5}"                     # Parallel functions per wave (1 dedicat
 PUSH_EVERY="${3:-5}"                    # Run git push every N waves
 AGENT_TIMEOUT="${AGENT_TIMEOUT:-360}"   # Per-function agent timeout in seconds (per effort attempt)
 AGENT_EFFORTS="${AGENT_EFFORTS:-${AGENT_EFFORT:-low medium}}" # Per-model effort cadence (low -> medium before next model)
-SKIP_MED_BELOW_PCT="${SKIP_MED_BELOW_PCT:-50}" # Skip medium effort on same model if low-effort best match % is below this
+SKIP_MED_BELOW_PCT="${SKIP_MED_BELOW_PCT:-0}" # Skip medium effort on same model if low-effort best match % is >0 and below this (0 disables)
 COOLDOWN_BASE_SECS="${COOLDOWN_BASE_SECS:-180}" # Initial rate-limit cooldown (3m -> 9m -> 27m)
 PREFER_AGY_CLAUDE="${PREFER_AGY_CLAUDE:-0}"     # Set to 1 to prefer AGY for Sonnet/Opus before native claude CLI
 DEPS_FIRST="${DEPS_FIRST:-1}"                  # 1 = prefer functions whose callees are already matched
@@ -124,7 +124,7 @@ fi
 # globs ("globs not supported") and relative paths ("non-absolute file path"). Any such entry makes EVERY sandboxed shell
 # command fail to launch, so use absolute, glob-free directories here. build/units must stay writable: `work check` records
 # matches there (.git stays read-only; the host runs `work commit-pending`).
-AGY_INLINE_SETTINGS='{"agentMode":"auto","enableTerminalSandbox":true,"toolPermission":"proceed-in-sandbox","permissions":{"allow":["read_file(*)","write_file('"$REPO_ROOT"'/src)","write_file('"$REPO_ROOT"'/include)","edit_file('"$REPO_ROOT"'/src)","edit_file('"$REPO_ROOT"'/include)","command(./.local/bin/work*)","command(go run ./tools/work*)","command(./.local/bin/status*)","command(go run ./tools/status*)","command(./.local/bin/build_and_match*)","command(./tools/cl_wine.sh*)","command(git status*)","command(git diff*)","command(git log*)","command(git show*)","command(git add*)","command(git commit*)","command(git checkout*)"],"deny":["write_file('"$REPO_ROOT"'/docs)","command(sudo*)","command(rm -rf*)","command(python*)","command(curl*)","command(wget*)"]}}'
+AGY_INLINE_SETTINGS='{"agentMode":"auto","enableTerminalSandbox":true,"toolPermission":"proceed-in-sandbox","permissions":{"allow":["read_file(*)","write_file('"$REPO_ROOT"'/src)","write_file('"$REPO_ROOT"'/include)","write_file('"$REPO_ROOT"'/build/units)","write_file('"$REPO_ROOT"'/.local)","edit_file('"$REPO_ROOT"'/src)","edit_file('"$REPO_ROOT"'/include)","command(./.local/bin/work*)","command(go run ./tools/work*)","command(./.local/bin/status*)","command(go run ./tools/status*)","command(./.local/bin/build_and_match*)","command(./tools/cl_wine.sh*)","command(git status*)","command(git diff*)","command(git log*)","command(git show*)","command(git add*)","command(git commit*)","command(git checkout*)"],"deny":["write_file('"$REPO_ROOT"'/docs)","command(sudo*)","command(rm -rf*)","command(python*)","command(curl*)","command(wget*)"]}}'
 
 # Per-backend cooldown tracking, kept in files so every concurrent worker subshell shares one view.
 # $STATE_DIR/cd.<pool>  = epoch seconds when that quota pool becomes eligible again (pools: see MODEL_TIERS above)
@@ -559,10 +559,10 @@ attempt_worker() {
         return 0
       fi
       record_failure "$addr" "$model_tag"
-      if [[ "$effort" == "low" ]]; then
+      if [[ "$effort" == "low" && "$SKIP_MED_BELOW_PCT" != "0" ]]; then
         local best_pct
         best_pct="$(diag_best_pct "$addr")"
-        if awk -v b="$best_pct" -v t="$SKIP_MED_BELOW_PCT" 'BEGIN { exit !(b < t) }'; then
+        if awk -v b="$best_pct" -v t="$SKIP_MED_BELOW_PCT" 'BEGIN { exit !(b > 0 && b < t) }'; then
           emit "[~] $addr: skipping medium on $model_choice (best match ${best_pct}% < ${SKIP_MED_BELOW_PCT}%)"
           break 2
         fi

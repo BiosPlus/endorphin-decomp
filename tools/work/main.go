@@ -349,6 +349,11 @@ func withWorkLock(fn func()) {
 			fn()
 			return
 		}
+		if !os.IsExist(err) {
+			// E.g. read-only .local inside a sandbox: do not spin for 120s.
+			fn()
+			return
+		}
 		if info, statErr := os.Stat(lockDir); statErr == nil {
 			if time.Since(info.ModTime()) > 120*time.Second {
 				_ = os.RemoveAll(lockDir)
