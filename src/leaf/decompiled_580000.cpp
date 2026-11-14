@@ -4977,3 +4977,67 @@ extern "C" __declspec(naked) void __fastcall fn_00581D90(void* self) {
         ret
     }
 }
+
+// [0x00582010] sub_00582010 (225 bytes)
+extern "C" void ext_00581D90();
+extern "C" void ext_00696D90();
+extern "C" int mem_00924FE8;
+
+extern "C" __declspec(naked) void __fastcall fn_00582010(void* self) {
+    __asm {
+        push -1
+        push 0x89e9cd
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        lea ecx, [esi + 4]
+        mov dword ptr [esp + 8], esi
+        call dword ptr [mem_00924FE8]
+        xor edi, edi
+        lea ecx, [esi + 0x20]
+        mov dword ptr [esp + 0x14], edi
+        call dword ptr [mem_00924FE8]
+        fld1
+        fst dword ptr [esi + 0x40]
+        lea ecx, [esi + 0x6c]
+        fst dword ptr [esi + 0x44]
+        mov byte ptr [esp + 0x14], 1
+        fstp dword ptr [esi + 0x3c]
+        mov dword ptr [esi + 0x48], edi
+        mov dword ptr [esi + 0x4c], edi
+        mov dword ptr [esi + 0x50], edi
+        call ext_00696D90
+        mov dword ptr [esi + 0x88], edi
+        mov dword ptr [esi + 0x8c], edi
+        mov dword ptr [esi + 0x90], edi
+        mov dword ptr [esi + 0x98], edi
+        mov dword ptr [esi + 0x9c], edi
+        mov dword ptr [esi + 0xa0], edi
+        mov dword ptr [esi + 0xa8], edi
+        mov dword ptr [esi + 0xac], edi
+        mov dword ptr [esi + 0xb0], edi
+        mov dword ptr [esi + 0xb8], edi
+        mov dword ptr [esi + 0xbc], edi
+        mov dword ptr [esi + 0xc0], edi
+        lea ecx, [esi + 0xc4]
+        mov byte ptr [esp + 0x14], 5
+        call dword ptr [mem_00924FE8]
+        mov dword ptr [esi + 0xe8], edi
+        mov dword ptr [esi + 0xec], edi
+        mov dword ptr [esi + 0xf0], edi
+        mov ecx, esi
+        mov byte ptr [esp + 0x14], 7
+        call ext_00581D90
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
