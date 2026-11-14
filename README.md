@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `13574 / 24049` (**56.44%**) — `10482` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1489751 / 4496005 bytes` (**33.13%** of 4.29 MB)
+- **In-Scope Functions Matched:** `13575 / 24049` (**56.45%**) — `10483` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1490140 / 4496005 bytes` (**33.14%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -22,7 +22,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P60-70 (122-159B)** | 1086 / 2405 | 45.16% | 146952 / 339038 | 43.34% | 1319 fn |
 | **P70-80 (159-178B)** | 299 / 2405 | 12.43% | 50375 / 400567 | 12.58% | 2106 fn |
 | **P80-90 (178-335B)** | 1124 / 2405 | 46.74% | 270379 / 583211 | 46.36% | 1281 fn |
-| **P90-100 (335-36100B)** | 717 / 2404 | 29.83% | 526360 / 2392860 | 22.00% | 1687 fn |
+| **P90-100 (335-36100B)** | 718 / 2404 | 29.87% | 526749 / 2392860 | 22.01% | 1686 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
@@ -30,10 +30,10 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 64.43% |
 | `claude-haiku-5.5@low` | 1407 | 324948 | 13.42% |
-| `gemini-4-hydrogen@low` | 867 | 255625 | 8.27% |
+| `gemini-4-hydrogen@low` | 868 | 256014 | 8.28% |
 | `gemini-3.8-flash@low` | 799 | 233360 | 7.62% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.26% |
-| `claude-sonnet-5.5@low` | 163 | 33291 | 1.56% |
+| `claude-sonnet-5.5@low` | 163 | 33291 | 1.55% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.24% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.10% |
 | `gemini-3.8-flash@medium` | 5 | 1402 | 0.05% |
