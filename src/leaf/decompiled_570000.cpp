@@ -8499,3 +8499,23 @@ extern "C" __declspec(naked) int __cdecl fn_005733D0(int a1, int a2, int a3, int
         ret
     }
 }
+
+// [0x0057DE90] sub_0057DE90 (73 bytes)
+extern "C" void ext_00406940();
+extern "C" int mem_00924FDC;
+
+struct Item_0057DE90 {
+    float a, b, c;
+    char s[0x1c];
+    char d[0x10];
+};
+
+extern "C" void __cdecl fn_0057DE90(Item_0057DE90* first, Item_0057DE90* last, const Item_0057DE90* val) {
+    for (; first != last; ++first) {
+        first->a = val->a;
+        first->b = val->b;
+        first->c = val->c;
+        ((void (__thiscall*)(void*, const void*))mem_00924FDC)(first->s, val->s);
+        ((void (__thiscall*)(void*, const void*))ext_00406940)(first->d, val->d);
+    }
+}
