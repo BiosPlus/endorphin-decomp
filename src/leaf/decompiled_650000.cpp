@@ -11073,3 +11073,124 @@ extern "C" __declspec(naked) void __fastcall fn_0065E8A0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0065B140] sub_0065B140 (257 bytes)
+extern "C" void ext_007CCB00();
+extern "C" void ext_007CCEC0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0065B140(void* self) {
+    __asm {
+        sub     esp, 0x8
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [mem_00925134]
+        push    esi
+        mov     esi, dword ptr [ecx + 0xc]
+        cmp     esi, dword ptr [ecx + 0x10]
+        push    edi
+        lea     edi, [ecx + 0x8]
+        mov     dword ptr [esp + 0x10], ecx
+        jbe     L_0065B15E
+        call    ebp
+    L_0065B15E:
+        mov     ebx, esi
+        mov     esi, dword ptr [edi + 0x8]
+        cmp     dword ptr [edi + 0x4], esi
+        mov     dword ptr [esp + 0x14], esi
+        jbe     L_0065B170
+        call    ebp
+        mov     edi, edi
+    L_0065B170:
+        mov     eax, edi
+        test    eax, eax
+        je      L_0065B17A
+        cmp     eax, edi
+        je      L_0065B17C
+    L_0065B17A:
+        call    ebp
+    L_0065B17C:
+        cmp     ebx, esi
+        je      L_0065B239
+        mov     esi, dword ptr [edi + 0x4]
+        cmp     esi, dword ptr [edi + 0x8]
+        jbe     L_0065B18E
+        call    ebp
+    L_0065B18E:
+        mov     ebp, dword ptr [edi + 0x8]
+        cmp     dword ptr [edi + 0x4], ebp
+        jbe     L_0065B1A0
+        call    dword ptr [mem_00925134]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L_0065B1A0:
+        test    edi, edi
+        je      L_0065B1A8
+        cmp     edi, edi
+        je      L_0065B1AE
+    L_0065B1A8:
+        call    dword ptr [mem_00925134]
+    L_0065B1AE:
+        cmp     esi, ebp
+        je      L_0065B210
+        test    edi, edi
+        jne     L_0065B1BC
+        call    dword ptr [mem_00925134]
+    L_0065B1BC:
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      L_0065B1C7
+        call    dword ptr [mem_00925134]
+    L_0065B1C7:
+        mov     eax, edi
+        test    eax, eax
+        jne     L_0065B1D3
+        call    dword ptr [mem_00925134]
+    L_0065B1D3:
+        mov     eax, edi
+        cmp     ebx, dword ptr [eax + 0x8]
+        jb      L_0065B1E0
+        call    dword ptr [mem_00925134]
+    L_0065B1E0:
+        mov     eax, dword ptr [esi + 0x1c]
+        mov     ecx, dword ptr [ebx + 0x1c]
+        mov     edx, dword ptr [esp + 0x10]
+        push    eax
+        mov     eax, dword ptr [edx + 0x34]
+        push    ecx
+        push    eax
+        call    ext_007CCEC0
+        push    0x0
+        push    eax
+        call    ext_007CCB00
+        add     esp, 0x14
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      L_0065B20B
+        call    dword ptr [mem_00925134]
+    L_0065B20B:
+        add     esi, 0x20
+        jmp     L_0065B1A0
+    L_0065B210:
+        mov     esi, edi
+        test    esi, esi
+        jne     L_0065B21C
+        call    dword ptr [mem_00925134]
+    L_0065B21C:
+        cmp     ebx, dword ptr [esi + 0x8]
+        jb      L_0065B227
+        call    dword ptr [mem_00925134]
+    L_0065B227:
+        mov     esi, dword ptr [esp + 0x14]
+        mov     ebp, dword ptr [mem_00925134]
+        add     ebx, 0x20
+        jmp     L_0065B170
+    L_0065B239:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x8
+        ret
+    }
+}
