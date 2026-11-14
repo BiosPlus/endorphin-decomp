@@ -5704,3 +5704,316 @@ extern "C" __declspec(naked) void __fastcall fn_00806E30(void* self) {
         ret
     }
 }
+
+// [0x00805A20] sub_00805A20 (784 bytes)
+extern "C" int mem_00AB3864;
+extern "C" int mem_00AB3878;
+extern "C" int mem_00AB38B8;
+extern "C" int mem_00AB38D8;
+extern "C" int mem_00AB38EC;
+extern "C" int mem_00AB392C;
+extern "C" int mem_00AB3898;
+extern "C" int mem_00AB394C;
+extern "C" int mem_00AB3964;
+extern "C" int mem_00AB39AC;
+extern "C" int mem_00AB39D0;
+extern "C" int mem_00AB39E4;
+extern "C" int mem_00AB3A24;
+extern "C" int mem_00AB3988;
+extern "C" int mem_00AB3A04;
+extern "C" int mem_00AB390C;
+extern "C" void ext_0080A6A0();
+extern "C" void ext_0080AA80();
+extern "C" void ext_0080A800();
+extern "C" void ext_00806940();
+extern "C" void ext_00806CC0();
+extern "C" void ext_00807280();
+extern "C" void ext_00807330();
+extern "C" void ext_0080A9D0();
+
+extern "C" __declspec(naked) void __fastcall fn_00805A20(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push offset mem_00AB3864
+        call ext_0080A6A0
+        mov ecx, dword ptr [esp + 0x10]
+        lea eax, [esp + 0x8]
+        push eax
+        push ecx
+        call ext_0080AA80
+        mov esi, eax
+        add esp, 0xc
+        test esi, esi
+        je L_00805A20_a
+        push esi
+        push offset mem_00AB3878
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x14
+    L_00805A20_a:
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx + 0x18]
+        mov esi, dword ptr [ecx]
+        mov eax, edx
+        and eax, 0xffff0000
+        cmp eax, 0xffff0000
+        je L_00805A20_b
+        cmp eax, 0xfffe0000
+        je L_00805A20_c
+        push 0x2ba
+        push offset mem_00AB38B8
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, 0x2ba
+        pop esi
+        pop ecx
+        ret 0x14
+    L_00805A20_c:
+        cmp eax, 0xffff0000
+        jne L_00805A20_d
+    L_00805A20_b:
+        xor eax, eax
+        cmp edx, 0xffff0000
+        mov edx, dword ptr [esp + 0x1c]
+        sete al
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push edx
+        mov edx, dword ptr [esp + 0x1c]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push edx
+        push eax
+        push ecx
+        push esi
+        call ext_00806940
+        add esp, 0x1c
+        mov esi, eax
+        jmp L_00805A20_e
+    L_00805A20_d:
+        mov esi, 0x2ba
+    L_00805A20_e:
+        push esi
+        push offset mem_00AB3898
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x14
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        __asm _emit 0x90 __asm _emit 0x90
+        push ecx
+        push esi
+        push offset mem_00AB38D8
+        call ext_0080A6A0
+        mov ecx, dword ptr [esp + 0x10]
+        lea eax, [esp + 0x8]
+        push eax
+        push ecx
+        call ext_0080AA80
+        mov esi, eax
+        add esp, 0xc
+        test esi, esi
+        je L_00805A20_f
+        push esi
+        push offset mem_00AB38EC
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x14
+    L_00805A20_f:
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [edx + 0x18]
+        mov esi, dword ptr [edx]
+        mov ecx, eax
+        and ecx, 0xffff0000
+        cmp ecx, 0xffff0000
+        je L_00805A20_g
+        cmp ecx, 0xfffe0000
+        je L_00805A20_h
+        push 0x2ba
+        push offset mem_00AB392C
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, 0x2ba
+        pop esi
+        pop ecx
+        ret 0x14
+    L_00805A20_h:
+        cmp ecx, 0xffff0000
+        jne L_00805A20_i
+    L_00805A20_g:
+        and ah, 0x0
+        xor ecx, ecx
+        cmp eax, 0xffff0000
+        mov eax, dword ptr [esp + 0x1c]
+        sete cl
+        push ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        push eax
+        mov eax, dword ptr [esp + 0x1c]
+        push ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        push eax
+        push ecx
+        push edx
+        push esi
+        call ext_00806CC0
+        add esp, 0x1c
+        mov esi, eax
+        jmp L_00805A20_j
+    L_00805A20_i:
+        mov esi, 0x2ba
+    L_00805A20_j:
+        push esi
+        push offset mem_00AB390C
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x14
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        push ecx
+        push esi
+        push offset mem_00AB394C
+        call ext_0080A6A0
+        mov ecx, dword ptr [esp + 0x10]
+        lea eax, [esp + 0x8]
+        push eax
+        push ecx
+        call ext_0080AA80
+        mov esi, eax
+        add esp, 0xc
+        test esi, esi
+        je L_00805A20_k
+        push esi
+        push offset mem_00AB3964
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+    L_00805A20_k:
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx + 0x18]
+        mov esi, dword ptr [ecx]
+        mov eax, edx
+        and eax, 0xffff0000
+        cmp eax, 0xffff0000
+        je L_00805A20_l
+        cmp eax, 0xfffe0000
+        je L_00805A20_m
+        push 0x2ba
+        push offset mem_00AB39AC
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, 0x2ba
+        pop esi
+        pop ecx
+        ret 0xc
+    L_00805A20_m:
+        cmp eax, 0xffff0000
+        jne L_00805A20_n
+    L_00805A20_l:
+        xor eax, eax
+        cmp edx, 0xffff0000
+        mov edx, dword ptr [esp + 0x14]
+        sete al
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        push eax
+        push ecx
+        push esi
+        call ext_00807280
+        add esp, 0x14
+        mov esi, eax
+        jmp L_00805A20_o
+    L_00805A20_n:
+        mov esi, 0x2ba
+    L_00805A20_o:
+        push esi
+        push offset mem_00AB3988
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0xc
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        sub esp, 0x8
+        push esi
+        push offset mem_00AB39D0
+        call ext_0080A6A0
+        mov edx, dword ptr [esp + 0x14]
+        lea eax, [esp + 0xc]
+        lea ecx, [esp + 0x8]
+        push eax
+        push ecx
+        push edx
+        call ext_0080A9D0
+        mov esi, eax
+        add esp, 0x10
+        test esi, esi
+        je L_00805A20_p
+        push esi
+        push offset mem_00AB39E4
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x8
+        ret 0x8
+    L_00805A20_p:
+        mov eax, dword ptr [esp + 0x4]
+        and eax, 0xffff0000
+        cmp eax, 0xffff0000
+        je L_00805A20_q
+        cmp eax, 0xfffe0000
+        je L_00805A20_r
+        push 0x2ba
+        push offset mem_00AB3A24
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, 0x2ba
+        pop esi
+        add esp, 0x8
+        ret 0x8
+    L_00805A20_r:
+        cmp eax, 0xffff0000
+        jne L_00805A20_s
+    L_00805A20_q:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        call ext_00807330
+        add esp, 0x8
+        mov esi, eax
+        jmp L_00805A20_t
+    L_00805A20_s:
+        mov esi, 0x2ba
+    L_00805A20_t:
+        push esi
+        push offset mem_00AB3A04
+        call ext_0080A800
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x8
+        ret 0x8
+    }
+}
