@@ -6525,3 +6525,55 @@ extern "C" void* __fastcall fn_0053D070(void* self) {
     ((QuadricArgFn)ext_0063E00C)(((void**)self)[53], 0x186a0);
     return self;
 }
+
+// [0x00537290] sub_00537290 (86 bytes)
+extern "C" int mem_009255BC;
+extern "C" int mem_0092559C;
+extern "C" void ext_00535160();
+extern "C" void ext_005371F0();
+
+extern "C" __declspec(naked) int __fastcall fn_00537290(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        call ext_005371F0
+        mov ebx, dword ptr [esp + 0x20]
+        mov ebp, dword ptr [esp + 0x1c]
+        mov edi, dword ptr [esp + 0x18]
+        push ebx
+        mov esi, eax
+        push ebp
+        push edi
+        mov ecx, esi
+        call ext_00535160
+        test al, al
+        jne L_handled
+        mov eax, edi
+        sub eax, 0x2
+        je L_quit
+        mov eax, dword ptr [esp + 0x14]
+        push ebx
+        push ebp
+        push edi
+        push eax
+        call dword ptr [mem_009255BC]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    L_quit:
+        push 0x0
+        mov byte ptr [esi + 0xc], 0x0
+        call dword ptr [mem_0092559C]
+    L_handled:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret 0x10
+    }
+}
