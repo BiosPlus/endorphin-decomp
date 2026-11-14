@@ -20,5 +20,7 @@
     "0x0040891C",
     "0x00408931"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-14T05:05:04Z"
 }
