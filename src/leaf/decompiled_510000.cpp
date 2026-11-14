@@ -13708,3 +13708,320 @@ L_end:
         ret
     }
 }
+
+// [0x0051BC00] sub_0051BC00 (715 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_00489DC0();
+extern "C" void ext_0048A9C0();
+extern "C" void ext_00519E10();
+extern "C" void ext_0051AE60();
+extern "C" void ext_0051AF30();
+extern "C" void ext_00553E40();
+extern "C" void ext_006226A0();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) void __fastcall fn_0051BC00(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x892ea0
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 1ch
+        mov eax, dword ptr [ebp+14h]
+        fld dword ptr [eax]
+        push ebx
+        fstp dword ptr [ebp-28h]
+        push esi
+        fld dword ptr [eax+4]
+        push edi
+        fstp dword ptr [ebp-24h]
+        mov esi, ecx
+        fld dword ptr [eax+8]
+        mov edi, dword ptr [esi+4]
+        test edi, edi
+        fstp dword ptr [ebp-20h]
+        fld dword ptr [eax+0ch]
+        mov dword ptr [ebp-10h], esp
+        fstp dword ptr [ebp-1ch]
+        fld dword ptr [eax+10h]
+        fstp dword ptr [ebp-18h]
+        jne short L_51BC4E
+        xor ebx, ebx
+        jmp short L_51BC64
+L_51BC4E:
+        mov ecx, dword ptr [esi+0ch]
+        sub ecx, edi
+        mov eax, 66666667h
+        imul ecx
+        sar edx, 3
+        mov ebx, edx
+        shr ebx, 1fh
+        add ebx, edx
+L_51BC64:
+        mov ecx, dword ptr [ebp+10h]
+        test ecx, ecx
+        je L_51BEB8
+        test edi, edi
+        jne short L_51BC77
+        xor eax, eax
+        jmp short L_51BC8D
+L_51BC77:
+        mov edx, dword ptr [esi+8]
+        sub edx, edi
+        mov eax, 66666667h
+        imul edx
+        sar edx, 3
+        mov eax, edx
+        shr eax, 1fh
+        add eax, edx
+L_51BC8D:
+        mov edx, 0ccccccch
+        sub edx, eax
+        cmp edx, ecx
+        jae short L_51BC9D
+        call ext_00405FB0
+L_51BC9D:
+        test edi, edi
+        jne short L_51BCA5
+        xor eax, eax
+        jmp short L_51BCBB
+L_51BCA5:
+        mov edx, dword ptr [esi+8]
+        sub edx, edi
+        mov eax, 66666667h
+        imul edx
+        sar edx, 3
+        mov eax, edx
+        shr eax, 1fh
+        add eax, edx
+L_51BCBB:
+        add eax, ecx
+        cmp ebx, eax
+        jae L_51BDEB
+        mov eax, ebx
+        shr eax, 1
+        mov edx, 0ccccccch
+        sub edx, eax
+        cmp edx, ebx
+        jae short L_51BCD8
+        xor ebx, ebx
+        jmp short L_51BCDA
+L_51BCD8:
+        add ebx, eax
+L_51BCDA:
+        test edi, edi
+        jne short L_51BCE2
+        xor eax, eax
+        jmp short L_51BCF8
+L_51BCE2:
+        mov edx, dword ptr [esi+8]
+        sub edx, edi
+        mov eax, 66666667h
+        imul edx
+        sar edx, 3
+        mov eax, edx
+        shr eax, 1fh
+        add eax, edx
+L_51BCF8:
+        add eax, ecx
+        cmp ebx, eax
+        jae short L_51BD0A
+        mov ecx, esi
+        call ext_00553E40
+        mov ebx, eax
+        add ebx, dword ptr [ebp+10h]
+L_51BD0A:
+        push 0
+        push ebx
+        call ext_006226A0
+        mov edi, dword ptr [ebp+0ch]
+        mov ecx, dword ptr [esi+4]
+        mov byte ptr [ebp-14h], 0
+        mov edx, dword ptr [ebp-14h]
+        push edx
+        mov edx, dword ptr [ebp+10h]
+        push edx
+        push esi
+        push eax
+        push edi
+        push ecx
+        mov dword ptr [ebp+14h], eax
+        mov dword ptr [ebp-4], 0
+        call ext_00489DC0
+        mov edx, dword ptr [ebp+10h]
+        add esp, 20h
+        lea ecx, [ebp-28h]
+        push ecx
+        push edx
+        push eax
+        mov ecx, esi
+        call ext_0051AF30
+        mov ecx, dword ptr [esi+8]
+        mov byte ptr [ebp+0ch], 0
+        mov edx, dword ptr [ebp+0ch]
+        push edx
+        mov edx, dword ptr [ebp+10h]
+        push edx
+        push esi
+        push eax
+        push ecx
+        push edi
+        call ext_00489DC0
+        mov edi, dword ptr [esi+4]
+        add esp, 18h
+        test edi, edi
+        jne short L_51BD70
+        xor eax, eax
+        jmp short L_51BD86
+L_51BD70:
+        mov ecx, dword ptr [esi+8]
+        sub ecx, edi
+        mov eax, 66666667h
+        imul ecx
+        sar edx, 3
+        mov eax, edx
+        shr eax, 1fh
+        add eax, edx
+L_51BD86:
+        add dword ptr [ebp+10h], eax
+        test edi, edi
+        je short L_51BDA8
+        mov ecx, dword ptr [esi+8]
+        mov eax, edi
+        cmp eax, ecx
+        je short L_51BD9D
+L_51BD96:
+        add eax, 14h
+        cmp eax, ecx
+        jne short L_51BD96
+L_51BD9D:
+        mov eax, edi
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+L_51BDA8:
+        mov eax, dword ptr [ebp+14h]
+        lea ecx, [ebx+4*ebx]
+        lea edx, [eax+4*ecx]
+        mov ecx, dword ptr [ebp+10h]
+        lea ecx, [ecx+4*ecx]
+        mov dword ptr [esi+0ch], edx
+        lea edx, [eax+4*ecx]
+        mov dword ptr [esi+8], edx
+        mov dword ptr [esi+4], eax
+        mov ecx, dword ptr [ebp-0ch]
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 10h
+L_51BDD6:
+        mov eax, dword ptr [ebp+14h]
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+        push 0
+        push 0
+        call ext_006A6DD2
+L_51BDEB:
+        mov ebx, dword ptr [esi+8]
+        mov edi, dword ptr [ebp+0ch]
+        mov edx, ebx
+        sub edx, edi
+        mov eax, 66666667h
+        imul edx
+        sar edx, 3
+        mov eax, edx
+        shr eax, 1fh
+        add eax, edx
+        cmp eax, ecx
+        lea eax, [ecx+4*ecx]
+        jae short L_51BE7F
+        add eax, eax
+        add eax, eax
+        mov dword ptr [ebp+14h], eax
+        add eax, edi
+        push eax
+        push ebx
+        push edi
+        mov ecx, esi
+        call ext_0048A9C0
+        mov ebx, dword ptr [esi+8]
+        lea ecx, [ebp-28h]
+        push ecx
+        mov ecx, ebx
+        sub ecx, edi
+        mov eax, 66666667h
+        imul ecx
+        sar edx, 3
+        mov eax, edx
+        shr eax, 1fh
+        add eax, edx
+        mov ecx, eax
+        mov eax, dword ptr [ebp+10h]
+        sub eax, ecx
+        push eax
+        push ebx
+        mov ecx, esi
+        mov dword ptr [ebp-4], 2
+        call ext_0051AF30
+        mov eax, dword ptr [ebp+14h]
+        add dword ptr [esi+8], eax
+        mov esi, dword ptr [esi+8]
+        lea edx, [ebp-28h]
+        push edx
+        sub esi, eax
+        push esi
+        push edi
+        call ext_00519E10
+        add esp, 0ch
+        mov ecx, dword ptr [ebp-0ch]
+        mov dword ptr fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 10h
+L_51BE7F:
+        add eax, eax
+        add eax, eax
+        push ebx
+        mov ecx, ebx
+        sub ecx, eax
+        push ebx
+        mov dword ptr [ebp+10h], ecx
+        push ecx
+        mov ecx, esi
+        mov dword ptr [ebp+14h], eax
+        call ext_0048A9C0
+        mov dword ptr [esi+8], eax
+        mov eax, dword ptr [ebp+10h]
+        push ebx
+        push eax
+        push edi
+        call ext_0051AE60
+        mov edx, dword ptr [ebp+14h]
+        lea ecx, [ebp-28h]
+        push ecx
+        add edx, edi
+        push edx
+        push edi
+        call ext_00519E10
+        add esp, 18h
+L_51BEB8:
+        mov ecx, dword ptr [ebp-0ch]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 10h
+    }
+}
