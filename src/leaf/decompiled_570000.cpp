@@ -9303,3 +9303,48 @@ extern "C" __declspec(naked) void* __cdecl fn_0057DB10(const void* begin, const 
         ret
     }
 }
+
+// [0x0057DC00] sub_0057DC00 (84 bytes)
+extern "C" void ext_00406940();
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void* __cdecl fn_0057DC00(char* first, char* last, char* dest) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        cmp ebx, esi
+        je L_done
+        push edi
+        mov edi, dword ptr [esp + 0x18]
+L_loop:
+        fld dword ptr [esi - 0x38]
+        sub esi, 0x38
+        sub edi, 0x38
+        fstp dword ptr [edi]
+        lea eax, [esi + 0xc]
+        fld dword ptr [esi + 0x4]
+        push eax
+        fstp dword ptr [edi + 0x4]
+        lea ecx, [edi + 0xc]
+        fld dword ptr [esi + 0x8]
+        fstp dword ptr [edi + 0x8]
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esi + 0x28]
+        push ecx
+        lea ecx, [edi + 0x28]
+        call ext_00406940
+        cmp esi, ebx
+        jne L_loop
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_done:
+        mov eax, dword ptr [esp + 0x14]
+        pop esi
+        pop ebx
+        ret
+    }
+}
