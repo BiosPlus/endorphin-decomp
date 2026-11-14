@@ -9107,3 +9107,128 @@ extern "C" __declspec(naked) void __fastcall fn_0049D270(void* self) {
         ret
     }
 }
+
+// [0x00498E70] sub_00498E70 (272 bytes)
+extern "C" void ext_00640110();
+extern "C" void ext_006404E0();
+extern "C" void ext_00640BC0();
+extern "C" int mem_00925134;
+extern "C" int mem_00A9FAE8;
+extern "C" int mem_00A9FAEC;
+
+extern "C" __declspec(naked) void __fastcall fn_00498E70(void* self) {
+    __asm {
+        push ebp
+        mov ebp, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ebp + 0x4]
+        test eax, eax
+        je L_498E86
+        mov ecx, dword ptr [ebp + 0x8]
+        sub ecx, eax
+        sar ecx, 0x3
+        jne L_498E8D
+    L_498E86:
+        mov eax, 0x00B53B30
+        pop ebp
+        ret
+    L_498E8D:
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        push ebx
+        push esi
+        push edi
+        je L_498EA6
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        call ext_006404E0
+        mov ebx, eax
+        jmp L_498EAA
+    L_498EA6:
+        mov ebx, dword ptr [esp + 0x18]
+    L_498EAA:
+        mov esi, dword ptr [ebp + 0x4]
+        cmp esi, dword ptr [ebp + 0x8]
+        jbe L_498EB8
+        call dword ptr [mem_00925134]
+    L_498EB8:
+        mov edi, dword ptr [ebp + 0x8]
+        cmp dword ptr [ebp + 0x4], edi
+        mov dword ptr [esp + 0x14], edi
+        jbe L_498ED0
+        call dword ptr [mem_00925134]
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_498ED0:
+        cmp esi, edi
+        je L_498F79
+        mov edi, dword ptr [esp + 0x20]
+        test edi, edi
+        je L_498F1C
+        cmp esi, dword ptr [ebp + 0x8]
+        jb L_498EEB
+        call dword ptr [mem_00925134]
+    L_498EEB:
+        push edi
+        mov ecx, ebx
+        call ext_006404E0
+        mov edx, dword ptr [mem_00A9FAE8]
+        mov edi, eax
+        push edx
+        mov ecx, edi
+        call ext_00640110
+        fld dword ptr [esi]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00640BC0
+        mov eax, dword ptr [mem_00A9FAEC]
+        add esp, 0x8
+        push eax
+        mov ecx, edi
+        jmp L_498F4D
+    L_498F1C:
+        cmp esi, dword ptr [ebp + 0x8]
+        jb L_498F27
+        call dword ptr [mem_00925134]
+    L_498F27:
+        mov ecx, dword ptr [mem_00A9FAE8]
+        push ecx
+        mov ecx, ebx
+        call ext_00640110
+        fld dword ptr [esi]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00640BC0
+        mov edx, dword ptr [mem_00A9FAEC]
+        add esp, 0x8
+        push edx
+        mov ecx, ebx
+    L_498F4D:
+        call ext_00640110
+        fld dword ptr [esi + 0x4]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00640BC0
+        add esp, 0x8
+        cmp esi, dword ptr [ebp + 0x8]
+        jb L_498F6D
+        call dword ptr [mem_00925134]
+    L_498F6D:
+        mov edi, dword ptr [esp + 0x14]
+        add esi, 0x8
+        jmp L_498ED0
+    L_498F79:
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        pop ebp
+        ret
+    }
+}
