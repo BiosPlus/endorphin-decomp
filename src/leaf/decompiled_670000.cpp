@@ -13119,3 +13119,220 @@ extern "C" __declspec(naked) void __fastcall fn_00678CB0(void* self) {
         ret     0x8
     }
 }
+
+// [0x00671C70] sub_00671C70 (666 bytes)
+extern "C" void ext_006798D0();
+extern "C" void ext_00671BE0();
+extern "C" void ext_00670B30();
+extern "C" void ext_00670B90();
+extern "C" void ext_00670BF0();
+extern "C" void ext_004BE400();
+extern "C" void ext_0066E0C0();
+extern "C" void ext_0066E120();
+extern "C" void ext_0066E180();
+extern "C" void ext_0066E1E0();
+extern "C" void ext_0066E240();
+extern "C" void ext_0066E2A0();
+extern "C" void ext_0066E300();
+extern "C" void ext_0066E360();
+extern "C" void ext_0066E3C0();
+extern "C" void ext_0066E420();
+extern "C" void ext_0066E480();
+extern "C" void ext_0066E4E0();
+extern "C" void ext_0066E540();
+extern "C" void ext_0066E5A0();
+extern "C" void ext_0066E600();
+extern "C" void ext_0066E660();
+extern "C" void ext_0066E6C0();
+extern "C" void ext_0066E720();
+extern "C" void ext_0066E780();
+extern "C" void ext_0066E7E0();
+extern "C" void ext_0066E840();
+extern "C" void ext_0066E8A0();
+extern "C" void ext_0066E900();
+extern "C" void ext_0066E960();
+extern "C" void ext_0066E9C0();
+extern "C" void ext_0066EA20();
+extern "C" void ext_0066EA80();
+extern "C" void ext_0066EAE0();
+extern "C" void ext_0066EB40();
+extern "C" int mem_00A9FAE8;
+extern "C" int mem_00A9FAEC;
+extern "C" int mem_00A9FAF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00671C70(void* self) {
+    __asm {
+        push ecx
+        lea eax, [esp]
+        push 0x0
+        push eax
+        call ext_006798D0
+        mov ecx, eax
+        call ext_00671BE0
+        call ext_00670B30
+        mov ecx, dword ptr [mem_00A9FAE8]
+        push eax
+        push ecx
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_00670B90
+        mov edx, dword ptr [mem_00A9FAEC]
+        push eax
+        push edx
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_00670BF0
+        push eax
+        mov eax, dword ptr [mem_00A9FAF4]
+        push eax
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E0C0
+        push eax
+        push 0x98bde8
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E120
+        push eax
+        push 0x98bdd4
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E180
+        push eax
+        push 0x98bdc0
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E1E0
+        push eax
+        push 0x98bdb0
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E240
+        push eax
+        push 0x98bd94
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E2A0
+        push eax
+        push 0x98bd74
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E300
+        push eax
+        push 0x98bd54
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E360
+        push eax
+        push 0x98bd3c
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E3C0
+        push eax
+        push 0x98bd30
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E420
+        push eax
+        push 0x98bd24
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E480
+        push eax
+        push 0x98bd18
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E4E0
+        push eax
+        push 0x98bcf8
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E540
+        push eax
+        push 0x98bcd4
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E5A0
+        push eax
+        push 0x98bcb4
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E600
+        push eax
+        push 0x98bc94
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E660
+        push eax
+        push 0x98bc84
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E6C0
+        push eax
+        push 0x98bc74
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E720
+        push eax
+        push 0x98bc64
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E780
+        push eax
+        push 0x98bc54
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E7E0
+        push eax
+        push 0x98bc44
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E840
+        push eax
+        push 0x98bc34
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E8A0
+        push eax
+        push 0x98bc28
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E900
+        push eax
+        push 0x98bc1c
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E960
+        push eax
+        push 0x98bc0c
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066E9C0
+        push eax
+        push 0x98bbf4
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066EA20
+        push eax
+        push 0x98bbe0
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066EA80
+        push eax
+        push 0x98bbcc
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066EAE0
+        push eax
+        push 0x98bbb4
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        call ext_0066EB40
+        push eax
+        push 0x98bba4
+        lea ecx, [esp + 0x8]
+        call ext_004BE400
+        pop ecx
+        ret
+    }
+}
