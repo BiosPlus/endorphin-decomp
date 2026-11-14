@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `14022 / 24049` (**58.31%**) — `10930` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1589896 / 4496005 bytes` (**35.36%** of 4.29 MB)
+- **In-Scope Functions Matched:** `14023 / 24049` (**58.31%**) — `10931` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1590010 / 4496005 bytes` (**35.36%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -18,7 +18,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P20-30 (32-48B)** | 1484 / 2405 | 61.70% | 57936 / 97731 | 59.28% | 921 fn |
 | **P30-40 (48-71B)** | 1342 / 2405 | 55.80% | 79632 / 144549 | 55.09% | 1063 fn |
 | **P40-50 (71-91B)** | 1391 / 2405 | 57.84% | 115793 / 194373 | 59.57% | 1014 fn |
-| **P50-60 (91-122B)** | 1790 / 2405 | 74.43% | 193039 / 256906 | 75.14% | 615 fn |
+| **P50-60 (91-122B)** | 1791 / 2405 | 74.47% | 193153 / 256906 | 75.18% | 614 fn |
 | **P60-70 (122-159B)** | 1110 / 2405 | 46.15% | 150408 / 339038 | 44.36% | 1295 fn |
 | **P70-80 (159-178B)** | 306 / 2405 | 12.72% | 51553 / 400567 | 12.87% | 2099 fn |
 | **P80-90 (178-335B)** | 1164 / 2405 | 48.40% | 280308 / 583211 | 48.06% | 1241 fn |
@@ -29,7 +29,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 61.79% |
-| `claude-haiku-5.5@low` | 1600 | 365940 | 14.64% |
+| `claude-haiku-5.5@low` | 1601 | 366054 | 14.65% |
 | `gemini-4-hydrogen@low` | 1005 | 288752 | 9.19% |
 | `gemini-3.8-flash@low` | 916 | 259386 | 8.38% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.09% |
