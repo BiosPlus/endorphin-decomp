@@ -13824,3 +13824,327 @@ extern "C" __declspec(naked) void __fastcall fn_0045F150(void* self) {
         ret
     }
 }
+
+// [0x00457BB0] sub_00457BB0 (922 bytes)
+extern "C" void ext_00455C20();
+extern "C" void ext_00456680();
+extern "C" void ext_00457B90();
+extern "C" void ext_006A60EE();
+extern "C" void ext_006A63BE();
+extern "C" void ext_006A6778();
+extern "C" void ext_006A6784();
+extern "C" void ext_006A67E4();
+extern "C" int mem_00925690;
+
+extern "C" __declspec(naked) void __fastcall fn_00457BB0(void* self, int edx_unused, int arg1, int arg2) {
+    __asm {
+        push    -1
+        push    0x87eba8
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        sub     esp, 0x40
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        mov     ebx, ecx
+        lea     eax, [esp + 0x28]
+        push    eax
+        lea     ecx, [esp + 0x24]
+        push    ecx
+        lea     edx, [esp + 0x2c]
+        push    edx
+        mov     ecx, ebx
+        call    ext_00456680
+        mov     esi, dword ptr [esp + 0x60]
+        xor     eax, eax
+        mov     dword ptr [esp + 0x18], eax
+        mov     dword ptr [esp + 0x14], eax
+        mov     eax, dword ptr [esp + 0x24]
+        cmp     eax, dword ptr [esp + 0x20]
+        mov     dword ptr [esp + 0x10], esi
+        mov     dword ptr [esp + 0x1c], 2
+        mov     edi, eax
+        jg      L_457D27
+        mov     edi, edi
+    L_457C10:
+        mov     eax, dword ptr [ebx + 0x8c]
+        add     eax, 0x98
+        test    edi, edi
+        jl      L_457E09
+        cmp     edi, dword ptr [eax + 8]
+        jge     L_457E09
+        mov     eax, dword ptr [eax + 4]
+        mov     esi, dword ptr [eax + edi*4]
+        lea     eax, [eax + edi*4]
+        mov     ecx, esi
+        shr     ecx, 0x10
+        je      L_457D16
+        mov     edx, dword ptr [esi]
+        mov     eax, dword ptr [edx + 0x15c]
+        mov     ecx, esi
+        call    eax
+        test    eax, eax
+        je      L_457D16
+        call    ext_00455C20
+        push    eax
+        mov     ecx, esi
+        call    ext_006A63BE
+        mov     ebp, eax
+        test    ebp, ebp
+        je      L_457C7E
+        cmp     dword ptr [esp + 0x64], 0
+        je      L_457C76
+        mov     eax, dword ptr [esi + 0xb4]
+        jmp     L_457CA6
+    L_457C76:
+        mov     eax, dword ptr [esi + 0xc0]
+        jmp     L_457CA6
+    L_457C7E:
+        mov     edx, dword ptr [esi + 0x20]
+        lea     ecx, [esp + 0x2c]
+        push    ecx
+        push    edx
+        call    dword ptr [mem_00925690]
+        cmp     dword ptr [esp + 0x64], 0
+        je      L_457C9E
+        mov     eax, dword ptr [esp + 0x34]
+        sub     eax, dword ptr [esp + 0x2c]
+        jmp     L_457CA6
+    L_457C9E:
+        mov     eax, dword ptr [esp + 0x38]
+        sub     eax, dword ptr [esp + 0x30]
+    L_457CA6:
+        mov     ecx, dword ptr [esp + 0x1c]
+        sub     eax, 2
+        add     ecx, eax
+        cmp     ecx, dword ptr [esp + 0x60]
+        mov     dword ptr [esp + 0x1c], ecx
+        jg      L_457D8B
+        test    ebp, ebp
+        je      L_457D12
+        mov     ecx, dword ptr [esp + 0x64]
+        test    ecx, ecx
+        je      L_457CD1
+        mov     eax, dword ptr [esi + 0x9c]
+        jmp     L_457CD7
+    L_457CD1:
+        mov     eax, dword ptr [esi + 0xa8]
+    L_457CD7:
+        sub     eax, 2
+        add     dword ptr [esp + 0x18], eax
+        test    ecx, ecx
+        je      L_457CEA
+        mov     eax, dword ptr [esi + 0xa0]
+        jmp     L_457CF0
+    L_457CEA:
+        mov     eax, dword ptr [esi + 0xa4]
+    L_457CF0:
+        cmp     dword ptr [esp + 0x14], eax
+        jg      L_457D16
+        test    ecx, ecx
+        je      L_457D06
+        mov     eax, dword ptr [esi + 0xa0]
+        mov     dword ptr [esp + 0x14], eax
+        jmp     L_457D16
+    L_457D06:
+        mov     ecx, dword ptr [esi + 0xa4]
+        mov     dword ptr [esp + 0x14], ecx
+        jmp     L_457D16
+    L_457D12:
+        sub     dword ptr [esp + 0x10], eax
+    L_457D16:
+        add     edi, 1
+        cmp     edi, dword ptr [esp + 0x20]
+        jle     L_457C10
+    L_457D23:
+        mov     esi, dword ptr [esp + 0x10]
+    L_457D27:
+        lea     ecx, [esp + 0x3c]
+        call    ext_006A6778
+        mov     dword ptr [esp + 0x3c], 0x936d44
+        lea     ecx, [esp + 0x3c]
+        push    ecx
+        mov     ecx, ebx
+        mov     dword ptr [esp + 0x5c], 0
+        call    ext_00457B90
+        sub     esi, dword ptr [esp + 0x18]
+        mov     ebp, dword ptr [esp + 0x44]
+        cmp     ebp, 1
+        mov     edi, esi
+        jne     L_457E0E
+        test    edi, edi
+        je      L_457F1F
+        cmp     dword ptr [esp + 0x64], 0
+        mov     dword ptr [ebx + 0xe0], 0
+        lea     eax, [ebx + 0x9c]
+        jne     L_457D84
+        lea     eax, [ebx + 0xa8]
+    L_457D84:
+        add     dword ptr [eax], edi
+        jmp     L_457F1F
+    L_457D8B:
+        mov     eax, dword ptr [esp + 0x28]
+        cmp     edi, eax
+        jge     L_457DC3
+        mov     ecx, dword ptr [ebx + 0x8c]
+        push    1
+        push    0
+        add     edi, 1
+        push    edi
+        add     ecx, 0x98
+        call    ext_006A67E4
+        pop     edi
+        pop     esi
+        pop     ebp
+        xor     eax, eax
+        pop     ebx
+        mov     ecx, dword ptr [esp + 0x40]
+        mov     fs:[0], ecx
+        add     esp, 0x4c
+        ret     8
+    L_457DC3:
+        jne     L_457DEE
+        cmp     dword ptr [esp + 0x64], 0
+        je      L_457DDD
+        mov     edx, dword ptr [ebx + 0xb4]
+        mov     dword ptr [ebx + 0x9c], edx
+        jmp     L_457F30
+    L_457DDD:
+        mov     eax, dword ptr [ebx + 0xc0]
+        mov     dword ptr [ebx + 0xa8], eax
+        jmp     L_457F30
+    L_457DEE:
+        mov     ecx, dword ptr [ebx + 0x8c]
+        push    1
+        push    0
+        push    edi
+        add     ecx, 0x98
+        call    ext_006A67E4
+        jmp     L_457D23
+    L_457E09:
+        call    ext_006A60EE
+    L_457E0E:
+        xor     eax, eax
+        cmp     dword ptr [esp + 0x44], eax
+        jle     L_457E5B
+        mov     edx, dword ptr [esp + 0x64]
+        mov     ecx, dword ptr [esp + 0x14]
+        mov     edi, edi
+    L_457E20:
+        test    edx, edx
+        mov     esi, dword ptr [esp + 0x44]
+        je      L_457E3F
+        test    eax, eax
+        jl      L_457E09
+        cmp     eax, esi
+        jge     L_457E09
+        mov     esi, dword ptr [esp + 0x40]
+        mov     esi, dword ptr [esi + eax*4]
+        mov     dword ptr [esi + 0xa0], ecx
+        jmp     L_457E54
+    L_457E3F:
+        test    eax, eax
+        jl      L_457E09
+        cmp     eax, esi
+        jge     L_457E09
+        mov     esi, dword ptr [esp + 0x40]
+        mov     esi, dword ptr [esi + eax*4]
+        mov     dword ptr [esi + 0xa4], ecx
+    L_457E54:
+        add     eax, 1
+        cmp     eax, ebp
+        jl      L_457E20
+    L_457E5B:
+        test    edi, edi
+        je      L_457F1F
+    L_457E63:
+        xor     esi, esi
+        test    ebp, ebp
+        mov     dword ptr [esp + 0x60], edi
+        jle     L_457EE9
+        mov     ebx, dword ptr [esp + 0x64]
+    L_457E71:
+        test    esi, esi
+        jl      L_457E09
+        cmp     esi, dword ptr [esp + 0x44]
+        jge     L_457E09
+        test    ebx, ebx
+        mov     edx, dword ptr [esp + 0x40]
+        mov     eax, dword ptr [edx + esi*4]
+        je      L_457E94
+        mov     edx, dword ptr [eax + 0xb4]
+        mov     ecx, dword ptr [eax + 0x9c]
+        jmp     L_457EA0
+    L_457E94:
+        mov     edx, dword ptr [eax + 0xc0]
+        mov     ecx, dword ptr [eax + 0xa8]
+    L_457EA0:
+        cmp     ecx, edx
+        jne     L_457EA8
+        test    edi, edi
+        jl      L_457ED4
+    L_457EA8:
+        cmp     dword ptr [eax + 0xe0], 0
+        jne     L_457ED4
+        xor     ecx, ecx
+        test    edi, edi
+        je      L_457EBE
+        setge   cl
+        lea     ecx, [ecx + ecx - 1]
+    L_457EBE:
+        test    ebx, ebx
+        je      L_457EC9
+        add     eax, 0x9c
+        jmp     L_457ECE
+    L_457EC9:
+        add     eax, 0xa8
+    L_457ECE:
+        add     dword ptr [eax], ecx
+        sub     edi, ecx
+        je      L_457EDB
+    L_457ED4:
+        add     esi, 1
+        cmp     esi, ebp
+        jl      L_457E71
+    L_457EDB:
+        cmp     dword ptr [esp + 0x60], edi
+        je      L_457EE9
+        test    edi, edi
+        jne     L_457E63
+    L_457EE9:
+        xor     eax, eax
+        test    ebp, ebp
+        jle     L_457F17
+        xor     ecx, ecx
+    L_457EF1:
+        cmp     eax, ecx
+        jl      L_457E09
+        cmp     eax, dword ptr [esp + 0x44]
+        jge     L_457E09
+        mov     edx, dword ptr [esp + 0x40]
+        mov     edx, dword ptr [edx + eax*4]
+        add     eax, 1
+        cmp     eax, ebp
+        mov     dword ptr [edx + 0xe0], ecx
+        jl      L_457EF1
+    L_457F17:
+        test    edi, edi
+        jne     L_457E63
+    L_457F1F:
+        lea     ecx, [esp + 0x3c]
+        mov     dword ptr [esp + 0x58], -1
+        call    ext_006A6784
+    L_457F30:
+        mov     ecx, dword ptr [esp + 0x50]
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     eax, 1
+        pop     ebx
+        mov     fs:[0], ecx
+        add     esp, 0x4c
+        ret     8
+    }
+}
