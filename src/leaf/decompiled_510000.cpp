@@ -10188,3 +10188,95 @@ L_ret_51CF00:
         ret 0xc
     }
 }
+
+// [0x00515710] sub_00515710 (220 bytes)
+extern "C" void ext_00514F70();
+extern "C" void ext_00515020();
+extern "C" void ext_005150D0();
+extern "C" void ext_00515180();
+extern "C" void ext_00515200();
+extern "C" void ext_00515280();
+extern "C" void ext_00515300();
+extern "C" void ext_00515380();
+extern "C" void ext_00515400();
+extern "C" void ext_00515480();
+extern "C" void ext_00515500();
+extern "C" void ext_00515580();
+extern "C" void ext_00515600();
+extern "C" void ext_00515680();
+extern "C" int mem_00A9F838;
+extern "C" int mem_00A9F79C;
+extern "C" int mem_00A9FA9C;
+extern "C" int mem_00A9F824;
+extern "C" int mem_00A9F820;
+extern "C" int mem_00A9F834;
+extern "C" int mem_00A9F830;
+extern "C" int mem_00A9F798;
+extern "C" int mem_00A9FA98;
+extern "C" int mem_00A9F658;
+extern "C" int mem_00A9F654;
+extern "C" int mem_00951910;
+extern "C" int mem_009518FC;
+
+extern "C" __declspec(naked) void __fastcall fn_00515710(void* self) {
+    __asm {
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x8]
+        push    0
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    ext_00515680
+        mov     ecx, dword ptr [mem_00A9F838]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_00514F70
+        mov     edx, dword ptr [mem_00A9F79C]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_00515020
+        mov     eax, dword ptr [mem_00A9FA9C]
+        push    eax
+        lea     ecx, [esp + 0x4]
+        call    ext_005150D0
+        mov     ecx, dword ptr [mem_00A9F824]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_00515180
+        mov     edx, dword ptr [mem_00A9F820]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_00515200
+        mov     eax, dword ptr [mem_00A9F834]
+        push    eax
+        lea     ecx, [esp + 0x4]
+        call    ext_00515280
+        mov     ecx, dword ptr [mem_00A9F830]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_00515300
+        mov     edx, dword ptr [mem_00A9F798]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_00515380
+        mov     eax, dword ptr [mem_00A9FA98]
+        push    eax
+        lea     ecx, [esp + 0x4]
+        call    ext_00515400
+        mov     ecx, dword ptr [mem_00A9F658]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_00515480
+        mov     edx, dword ptr [mem_00A9F654]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_00515500
+        push    offset mem_00951910
+        lea     ecx, [esp + 0x4]
+        call    ext_00515580
+        push    offset mem_009518FC
+        lea     ecx, [esp + 0x4]
+        call    ext_00515600
+        pop     ecx
+        ret
+    }
+}
