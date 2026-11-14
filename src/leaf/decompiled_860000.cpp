@@ -3796,3 +3796,245 @@ extern "C" __declspec(naked) void __fastcall fn_008638A0(void* self) {
         ret
     }
 }
+
+// [0x00867390] sub_00867390 (682 bytes)
+extern "C" void ext_0085D510();
+extern "C" void ext_0085D530();
+extern "C" void ext_0085D560();
+extern "C" void ext_0085DC90();
+extern "C" void ext_00867640();
+extern "C" void ext_008676F0();
+extern "C" int mem_00AB961C;
+extern "C" int mem_00AB9640;
+extern "C" int mem_00AB9630;
+extern "C" int mem_00924248;
+extern "C" int mem_00BC63C8;
+extern "C" int mem_00BC70D8;
+extern "C" int mem_00AB9638;
+extern "C" int mem_00BC6658;
+extern "C" int mem_00BC6404;
+extern "C" int mem_00BC70F8;
+extern "C" int mem_00BC6402;
+extern "C" int mem_00924210;
+
+extern "C" __declspec(naked) int __cdecl fn_00867390(void* a1) {
+    __asm {
+        sub esp, 0x14
+        push ebx
+        push esi
+        push edi
+        push ebp
+        xor edi, edi
+        push 0x604
+        call ext_0085D560
+        add esp, 0x4
+        mov esi, eax
+        test esi, esi
+        jne alloc_ok
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, 0xc
+        mov word ptr [ecx + 0x1a], 0xc
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x14
+        ret
+    alloc_ok:
+        push 0x604
+        push 0
+        push esi
+        call ext_0085D510
+        inc word ptr [mem_00AB961C]
+        mov ecx, dword ptr [esp + 0x34]
+        add esp, 0xc
+        add ecx, 0xee
+        inc dword ptr [mem_00AB9640]
+        cmp byte ptr [ecx], 0x1
+        sbb eax, eax
+        inc eax
+        mov dword ptr [esp + 0x18], eax
+        je skip_copy1
+        push 0x4
+        push ecx
+        push offset mem_00BC6404
+        call ext_0085D530
+        add esp, 0xc
+    skip_copy1:
+        mov word ptr [esi], 0x20e
+        mov ecx, dword ptr [esp + 0x28]
+        mov ax, word ptr [mem_00AB961C]
+        cmp word ptr [ecx + 0x16], 0x16
+        mov word ptr [ecx + 0xce], ax
+        jbe skip_clamp
+        mov word ptr [ecx + 0x16], 0x16
+    skip_clamp:
+        mov ecx, dword ptr [esp + 0x28]
+        push 0x100
+        push ecx
+        lea eax, [esi + 0xc]
+        push eax
+        call ext_0085D530
+        mov ecx, dword ptr [esp + 0x34]
+        add esp, 0xc
+        mov ax, word ptr [ecx + 0x16]
+        mov edx, dword ptr [ecx + 0x12]
+        mov word ptr [esp + 0x12], ax
+        mov dword ptr [esp + 0x20], edx
+        test ax, ax
+        je skip_buf1
+        movzx eax, ax
+        shl eax, 0x3
+        lea ebx, [esi + 0x10c]
+        push eax
+        push edx
+        push ebx
+        call ext_0085D530
+        mov cx, word ptr [esi + 0xda]
+        add esp, 0xc
+        push ecx
+        push ebx
+        call ext_0085DC90
+        add esp, 0x8
+    skip_buf1:
+        xor eax, eax
+        mov ecx, dword ptr [esp + 0x28]
+        mov dword ptr [esp + 0x1c], 0x1
+        mov ax, word ptr [ecx + 0x18]
+        cmp eax, 0x110
+        jne skip_mode
+        mov dword ptr [esp + 0x1c], 0x3
+    skip_mode:
+        mov eax, dword ptr [mem_00AB9630]
+        mov dword ptr [esp + 0x14], eax
+        test eax, eax
+        je no_retry
+    retry_loop:
+        call ext_00867640
+        push 0x0
+        call dword ptr [mem_00924248]
+        cmp dword ptr [esp + 0x18], 0x0
+        je scan_path
+        push 0x10
+        mov eax, dword ptr [mem_00BC63C8]
+        dec dword ptr [esp + 0x18]
+        push 0xbc6400
+        push 0x0
+        push 0x1c4
+        push esi
+        push eax
+        call dword ptr [mem_00BC70D8]
+        cmp eax, -1
+        jne after_scan
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, 0x8
+        mov word ptr [ecx + 0x1a], 0x8
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x14
+        ret
+    scan_path:
+        mov edi, 0x1
+        dec dword ptr [esp + 0x14]
+        cmp dword ptr [mem_00AB9638], edi
+        jl after_scan
+        mov ebp, 0xbc673a
+        mov ebx, 0xbc68d8
+    scan_loop:
+        push ebx
+        call dword ptr [mem_00BC6658]
+        mov dword ptr [mem_00BC6404], eax
+        mov ax, word ptr [ebp]
+        push eax
+        call dword ptr [mem_00BC70F8]
+        mov word ptr [mem_00BC6402], ax
+        push 0x10
+        push 0xbc6400
+        mov eax, dword ptr [mem_00BC63C8]
+        push 0x0
+        push 0x1c4
+        push esi
+        push eax
+        call dword ptr [mem_00BC70D8]
+        cmp eax, -1
+        je scan_fail
+        add ebp, 0x2
+        add ebx, 0x20
+        inc edi
+        cmp edi, dword ptr [mem_00AB9638]
+        jle scan_loop
+    after_scan:
+        mov cx, word ptr [mem_00AB961C]
+        mov eax, dword ptr [esp + 0x1c]
+        push eax
+        push ecx
+        push esi
+        call ext_008676F0
+        add esp, 0xc
+        mov edi, eax
+        test edi, edi
+        je check_loop
+        mov dword ptr [esp + 0x14], 0x0
+    check_loop:
+        cmp dword ptr [esp + 0x14], 0x0
+        jne retry_loop
+    no_retry:
+        mov ecx, dword ptr [esp + 0x28]
+        test edi, edi
+        mov word ptr [ecx + 0x1a], 0x7
+        je done
+        push 0x100
+        lea eax, [esi + 0xc]
+        push eax
+        push ecx
+        call ext_0085D530
+        mov ax, word ptr [esp + 0x1e]
+        mov edx, dword ptr [esp + 0x2c]
+        mov ecx, dword ptr [esp + 0x34]
+        add esp, 0xc
+        mov word ptr [ecx + 0x16], ax
+        mov dword ptr [ecx + 0x12], edx
+        test ax, ax
+        je done
+        mov ax, word ptr [esi + 0xda]
+        lea edi, [esi + 0x10c]
+        push eax
+        push edi
+        call ext_0085DC90
+        mov ecx, dword ptr [esp + 0x30]
+        add esp, 0x8
+        xor eax, eax
+        mov edx, dword ptr [ecx + 0x12]
+        mov ax, word ptr [ecx + 0x16]
+        shl eax, 0x3
+        push eax
+        push edi
+        push edx
+        call ext_0085D530
+        add esp, 0xc
+    done:
+        push esi
+        call dword ptr [mem_00924210]
+        xor eax, eax
+        mov ecx, dword ptr [esp + 0x28]
+        mov ax, word ptr [ecx + 0x1a]
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x14
+        ret
+    scan_fail:
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, 0x8
+        mov word ptr [ecx + 0x1a], 0x8
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x14
+        ret
+    }
+}
