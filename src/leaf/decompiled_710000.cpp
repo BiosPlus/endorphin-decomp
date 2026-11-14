@@ -599,3 +599,79 @@ extern "C" __declspec(naked) void __fastcall fn_0071CAD0(void* self) {
         jmp dword ptr [edx + 7Ch]
     }
 }
+
+// [0x007121A0] sub_007121A0 (160 bytes)
+extern "C" void ext_006FC6E0();
+extern "C" void ext_006FA5A0();
+extern "C" int mem_00B5F1F8;
+extern "C" int mem_00B5E400;
+
+extern "C" __declspec(naked) void* __fastcall fn_007121A0(void* self, int edx_unused, int idx) {
+    __asm {
+        push esi
+        mov esi, ecx
+        test esi, esi
+        push edi
+        je L_ret_zero
+        mov eax, dword ptr [mem_00B5F1F8]
+        cmp eax, -1
+        je L_use_self_1
+        cmp eax, dword ptr [mem_00B5E400]
+        je L_use_self_1
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ecx, dword ptr [eax + 0x18]
+        mov eax, dword ptr [mem_00B5F1F8]
+        jmp L_check_idx
+    L_use_self_1:
+        mov ecx, dword ptr [esi + 0x18]
+    L_check_idx:
+        mov edi, dword ptr [esp + 0xC]
+        cmp edi, ecx
+        jge L_ret_zero
+        cmp eax, -1
+        je L_use_self_2
+        cmp eax, dword ptr [mem_00B5E400]
+        je L_use_self_2
+        push eax
+        call ext_006FC6E0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_006FA5A0
+        mov ecx, dword ptr [eax + 0x14]
+        add eax, 0x10
+        add ecx, edi
+        mov edx, dword ptr [eax]
+        lea ecx, [ecx + ecx * 2]
+        lea ecx, [edx + ecx * 4]
+    L_check_ptr:
+        mov eax, dword ptr [ecx + 4]
+        test eax, eax
+        je L_ret_zero
+        mov edx, dword ptr [eax]
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        jne L_ret_zero
+        mov eax, dword ptr [eax + 4]
+        pop edi
+        pop esi
+        ret 4
+    L_use_self_2:
+        mov eax, dword ptr [esi + 0x14]
+        mov ecx, dword ptr [esi + 0x10]
+        add eax, edi
+        lea eax, [eax + eax * 2]
+        lea ecx, [ecx + eax * 4]
+        jmp L_check_ptr
+    L_ret_zero:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 4
+    }
+}
