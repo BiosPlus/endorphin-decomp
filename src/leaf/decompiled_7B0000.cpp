@@ -757,3 +757,60 @@ extern "C" __declspec(naked) void __cdecl fn_007B3250(void* p) {
         ret
     }
 }
+
+// [0x007B2B60] sub_007B2B60 (111 bytes)
+extern "C" void ext_007B2D80();
+extern "C" void ext_007B3CF0();
+extern "C" void ext_007B7110();
+extern "C" __declspec(naked) void __cdecl fn_007B2B60(...) {
+    __asm {
+        mov     ecx, dword ptr [esp + 0x4]
+        lea     eax, [esp + 0x8]
+        push    ebx
+        mov     ebx, dword ptr [esp + 0xc]
+        push    eax
+        push    0x80f0
+        push    ecx
+        mov     byte ptr [ebx], 0
+        call    ext_007B2D80
+        mov     eax, dword ptr [esp + 0x18]
+        add     esp, 0xc
+        test    eax, eax
+        je      loc_7B2BCD
+        push    eax
+        call    ext_007B3CF0
+        add     esp, 0x4
+        test    eax, eax
+        je      loc_7B2BCD
+        push    edi
+        mov     edi, dword ptr [eax]
+        test    edi, edi
+        je      loc_7B2BBF
+        cmp     byte ptr [edi], 0
+        je      loc_7B2BBF
+        or      ecx, -1
+        xor     eax, eax
+        repne scasb
+        not     ecx
+        sub     edi, ecx
+        push    esi
+        mov     edx, ecx
+        mov     esi, edi
+        mov     edi, ebx
+        shr     ecx, 2
+        rep movsd
+        mov     ecx, edx
+        and     ecx, 3
+        rep movsb
+        pop     esi
+loc_7B2BBF:
+        mov     eax, dword ptr [esp + 0x10]
+        push    eax
+        call    ext_007B7110
+        add     esp, 0x4
+        pop     edi
+loc_7B2BCD:
+        pop     ebx
+        ret
+    }
+}
