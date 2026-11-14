@@ -8218,3 +8218,80 @@ extern "C" __declspec(naked) void __fastcall fn_004A7560(void* self) {
         ret
     }
 }
+
+// [0x004AE040] sub_004AE040 (195 bytes)
+extern "C" void ext_004AE040();
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_004AE040(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x872c79
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push ebx
+        mov ebx, dword ptr [esp + 0x1c]
+        cmp byte ptr [ebx + 0x39], 0
+        push ebp
+        mov dword ptr [esp + 8], ecx
+        mov ebp, ebx
+        jne cleanup_004AE040
+        push esi
+        push edi
+        jmp loop_004AE040
+    loop_back_004AE040:
+        mov ebx, dword ptr [esp + 0x28]
+    loop_004AE040:
+        mov eax, dword ptr [ebp + 8]
+        mov ecx, dword ptr [esp + 0x10]
+        push eax
+        call ext_004AE040
+        mov ebp, dword ptr [ebp]
+        lea esi, [ebx + 0xc]
+        mov dword ptr [esp + 0x14], esi
+        mov edi, dword ptr [esi + 0x20]
+        xor eax, eax
+        cmp edi, eax
+        mov dword ptr [esp + 0x20], eax
+        je clear_004AE040
+        mov ebx, dword ptr [esi + 0x24]
+        cmp edi, ebx
+        je after_004AE040
+    inner_004AE040:
+        mov ecx, edi
+        call dword ptr [mem_00924FF4]
+        add edi, 0x1c
+        cmp edi, ebx
+        jne inner_004AE040
+    after_004AE040:
+        mov eax, dword ptr [esi + 0x20]
+        push eax
+        call ext_006A5C5C
+        mov ebx, dword ptr [esp + 0x2c]
+        add esp, 4
+        xor eax, eax
+    clear_004AE040:
+        mov ecx, esi
+        mov dword ptr [esi + 0x20], eax
+        mov dword ptr [esi + 0x24], eax
+        mov dword ptr [esi + 0x28], eax
+        mov dword ptr [esp + 0x20], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        push ebx
+        call ext_006A5C5C
+        add esp, 4
+        cmp byte ptr [ebp + 0x39], 0
+        mov dword ptr [esp + 0x28], ebp
+        je loop_back_004AE040
+        pop edi
+        pop esi
+    cleanup_004AE040:
+        mov ecx, dword ptr [esp + 0x10]
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x14
+        ret 4
+    }
+}
