@@ -10599,3 +10599,60 @@ extern "C" __declspec(naked) void __fastcall fn_0041A8B0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0041A920] sub_0041A920 (106 bytes)
+extern "C" void ext_0059A140();
+// mem_00925134 is already declared above
+
+extern "C" __declspec(naked) void __fastcall fn_0041A920(void* self) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        mov edx, dword ptr [esi + 0x4]
+        test edx, edx
+        jne L_1
+        xor ecx, ecx
+        jmp L_2
+    L_1:
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, edx
+        sar ecx, 0x2
+    L_2:
+        test edx, edx
+        je L_3
+        mov eax, dword ptr [esi + 0xc]
+        sub eax, edx
+        sar eax, 0x2
+        cmp ecx, eax
+        jae L_3
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax], edx
+        add eax, 0x4
+        mov dword ptr [esi + 0x8], eax
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    L_3:
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp edx, edi
+        jbe L_4
+        call dword ptr [mem_00925134]
+    L_4:
+        mov eax, dword ptr [esp + 0x14]
+        push eax
+        push edi
+        push esi
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        call ext_0059A140
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    }
+}
