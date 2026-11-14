@@ -6798,3 +6798,59 @@ extern "C" __declspec(naked) void __fastcall fn_005A4640(void* self) {
         ret     0x4
     }
 }
+
+// [0x005A0FF0] sub_005A0FF0 (118 bytes)
+extern "C" void ext_005A0640();
+extern "C" void ext_005DF5C0();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void __fastcall fn_005A0FF0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        sub esp, 0x1c
+        mov esi, ecx
+        mov ecx, esp
+        mov dword ptr [esp + 0x28], esp
+        push ebx
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esi + 0x5a4]
+        call ext_005DF5C0
+        test eax, eax
+        jne out_ret
+        mov eax, dword ptr [esi + 0x160]
+        mov edx, dword ptr [eax + 0x24]
+        lea edi, [esi + 0x160]
+        push ebx
+        mov ecx, edi
+        call edx
+        push eax
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        je not_equal
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x4
+    not_equal:
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x30], esp
+        push ebx
+        call dword ptr [mem_00924FE0]
+        lea ecx, [esi + 0x58c]
+        call ext_005A0640
+    out_ret:
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 0x4
+    }
+}
