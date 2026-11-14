@@ -9339,3 +9339,57 @@ extern "C" __declspec(naked) void* __fastcall fn_00458C00(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x00452E20] sub_00452E20 (113 bytes)
+extern "C" void ext_00451BE0();
+extern "C" void ext_00452120();
+extern "C" void ext_00452830();
+extern "C" int mem_00925694;
+
+extern "C" __declspec(naked) void __fastcall fn_00452E20(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0
+        push 0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x5b8]
+        push 0x188
+        push eax
+        call edi
+        mov ecx, dword ptr [esi + 0x61c]
+        push 0
+        push 0
+        push 0x188
+        push ecx
+        mov ebx, eax
+        call edi
+        push 0
+        mov ecx, esi
+        mov ebp, eax
+        call ext_00451BE0
+        mov ecx, esi
+        call ext_00452120
+        mov edx, dword ptr [esi + 0x5b8]
+        push 0
+        push ebx
+        push 0x186
+        push edx
+        call edi
+        mov eax, dword ptr [esi + 0x61c]
+        push 0
+        push ebp
+        push 0x186
+        push eax
+        call edi
+        pop edi
+        mov ecx, esi
+        pop esi
+        pop ebp
+        pop ebx
+        jmp ext_00452830
+    }
+}
