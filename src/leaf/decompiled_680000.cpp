@@ -13648,3 +13648,143 @@ extern "C" __declspec(naked) void __fastcall fn_00681970(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00689CF0] sub_00689CF0 (302 bytes)
+extern "C" void ext_00688110();
+extern "C" void ext_00688880();
+extern "C" void ext_00688A40();
+extern "C" void ext_00688D60();
+extern "C" void ext_00689CF0();
+extern "C" __declspec(naked) void __cdecl fn_00689CF0(void* first, void* last, int ideal) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        mov ecx, edi
+        sub ecx, ebx
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp eax, 0x20
+        jle L_small_00689CF0
+        mov esi, dword ptr [esp + 0x24]
+    L_loop_00689CF0:
+        test esi, esi
+        jle L_heap_00689CF0
+        push edi
+        lea eax, [esp + 0x14]
+        push ebx
+        push eax
+        call ext_00688880
+        mov eax, esi
+        cdq
+        sub eax, edx
+        sar eax, 0x1
+        mov esi, eax
+        cdq
+        sub eax, edx
+        sar eax, 0x1
+        add esi, eax
+        mov ecx, edi
+        sub ecx, dword ptr [esp + 0x20]
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        sar edx, 0x5
+        mov ebp, edx
+        sub ecx, ebx
+        shr ebp, 0x1f
+        add ebp, edx
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x5
+        mov ecx, edx
+        shr ecx, 0x1f
+        add esp, 0xc
+        add ecx, edx
+        cmp ecx, ebp
+        push esi
+        jge L_else_00689CF0
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        push ebx
+        call ext_00689CF0
+        mov ebx, dword ptr [esp + 0x20]
+        jmp L_tail_00689CF0
+    L_else_00689CF0:
+        mov eax, dword ptr [esp + 0x18]
+        push edi
+        push eax
+        call ext_00689CF0
+        mov edi, dword ptr [esp + 0x1c]
+    L_tail_00689CF0:
+        mov ecx, edi
+        sub ecx, ebx
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        add esp, 0xc
+        cmp eax, 0x20
+        jg L_loop_00689CF0
+    L_small_00689CF0:
+        cmp eax, 0x1
+        jle L_epi_00689CF0
+        push 0x0
+        push edi
+        push ebx
+        call ext_00688110
+        add esp, 0xc
+    L_epi_00689CF0:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    L_heap_00689CF0:
+        cmp eax, 0x20
+        jle L_small_00689CF0
+        mov ecx, edi
+        sub ecx, ebx
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x5
+        mov ecx, edx
+        shr ecx, 0x1f
+        add ecx, edx
+        cmp ecx, 0x1
+        jle L_partial_00689CF0
+        push 0x0
+        push 0x0
+        push edi
+        push ebx
+        call ext_00688A40
+        add esp, 0x10
+    L_partial_00689CF0:
+        push edi
+        push ebx
+        call ext_00688D60
+        add esp, 0x8
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
