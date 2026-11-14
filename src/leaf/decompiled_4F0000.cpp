@@ -6148,3 +6148,194 @@ loc_4F1830:
         ret 0x8
     }
 }
+
+// [0x004F2390] sub_004F2390 (507 bytes)
+extern "C" void ext_004EF510();
+extern "C" void ext_004940D0();
+extern "C" void ext_00494020();
+extern "C" void ext_004F1C50();
+extern "C" void ext_004F2040();
+extern "C" void ext_00673960();
+extern "C" int mem_00925134;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_004F2390(void* self, int edx_unused, int arg1, int arg2) {
+    __asm {
+        push -1
+        mov eax, dword ptr fs:[0]
+        push 008b56f9h
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 58h
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 74h]
+        push edi
+        xor ebx, ebx
+        push ebx
+        push esi
+        mov ebp, ecx
+        call ext_004EF510
+        mov edi, eax
+        add esp, 8
+        cmp edi, ebx
+        je l4f2390_end
+        lea ecx, [esp + 28h]
+        call ext_004940D0
+        lea ecx, [esp + 40h]
+        call ext_004940D0
+        lea ecx, [esp + 14h]
+        push ecx
+        lea edx, [esp + 14h]
+        push edx
+        lea ecx, [esp + 48h]
+        mov dword ptr [esp + 18h], ebx
+        mov dword ptr [esp + 1ch], ebx
+        mov eax, dword ptr [edi]
+        mov eax, dword ptr [eax]
+        push ecx
+        lea edx, [esp + 34h]
+        push edx
+        mov ecx, edi
+        call eax
+        mov ebx, 1
+        cmp dword ptr [ebp + 30h], ebx
+        jle l4f2390_b0
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    l4f2390_loop:
+        push ebx
+        push esi
+        call ext_004EF510
+        mov edi, eax
+        add esp, 8
+        test edi, edi
+        je l4f2390_end
+        lea ecx, [esp + 1ch]
+        call ext_004940D0
+        lea ecx, [esp + 34h]
+        call ext_004940D0
+        mov edx, dword ptr [edi]
+        mov edx, dword ptr [edx]
+        xor eax, eax
+        mov dword ptr [esp + 78h], eax
+        mov dword ptr [esp + 18h], eax
+        lea eax, [esp + 18h]
+        push eax
+        lea ecx, [esp + 7ch]
+        push ecx
+        lea eax, [esp + 3ch]
+        push eax
+        lea ecx, [esp + 28h]
+        push ecx
+        mov ecx, edi
+        call edx
+        lea eax, [esp + 1ch]
+        push eax
+        lea ecx, [esp + 2ch]
+        call ext_00494020
+        test al, al
+        je l4f2390_end
+        lea ecx, [esp + 34h]
+        push ecx
+        lea ecx, [esp + 44h]
+        call ext_00494020
+        test al, al
+        je l4f2390_end
+        mov edx, dword ptr [esp + 10h]
+        cmp edx, dword ptr [esp + 78h]
+        jne l4f2390_end
+        mov eax, dword ptr [esp + 14h]
+        cmp eax, dword ptr [esp + 18h]
+        jne l4f2390_end
+        add ebx, 1
+        cmp ebx, dword ptr [ebp + 30h]
+        jl l4f2390_loop
+    l4f2390_b0:
+        push esi
+        mov ecx, ebp
+        call ext_004F1850
+        mov eax, dword ptr [esi + 4h]
+        test eax, eax
+        je l4f2390_c9
+        mov ecx, dword ptr [esi + 8h]
+        sub ecx, eax
+        sar ecx, 2
+        jne l4f2390_d3
+    l4f2390_c9:
+        mov ebx, dword ptr [mem_00925134]
+        call ebx
+        jmp l4f2390_d9
+    l4f2390_d3:
+        mov ebx, dword ptr [mem_00925134]
+    l4f2390_d9:
+        mov edi, dword ptr [esp + 7ch]
+        mov edx, dword ptr [edi]
+        push edx
+        push esi
+        mov ecx, ebp
+        call ext_004F2040
+        mov esi, dword ptr [ebp + 24h]
+        cmp esi, dword ptr [ebp + 28h]
+        mov dword ptr [esp + 78h], eax
+        jbe l4f2390_f9
+        call ebx
+        cmp esi, dword ptr [ebp + 28h]
+    l4f2390_f9:
+        jb l4f2390_fd
+        call ebx
+    l4f2390_fd:
+        mov ebx, dword ptr [esi]
+        xor esi, esi
+        cmp dword ptr [esp + 78h], esi
+        jle l4f2390_570
+    l4f2390_507:
+        mov ecx, dword ptr [ebx + 0ch]
+        test ecx, ecx
+        mov eax, dword ptr [edi]
+        lea edi, [eax + esi + 1]
+        je l4f2390_520
+        mov eax, dword ptr [ebx + 10h]
+        sub eax, ecx
+        sar eax, 2
+        cmp edi, eax
+        jb l4f2390_526
+    l4f2390_520:
+        call dword ptr [mem_00925134]
+    l4f2390_526:
+        mov ecx, dword ptr [ebx + 0ch]
+        mov ecx, dword ptr [ecx + 4*edi]
+        lea edx, [esp + 4ch]
+        push edx
+        call ext_00673960
+        push eax
+        lea ecx, [ebp + 60h]
+        mov dword ptr [esp + 74h], 0
+        call ext_004F1C50
+        lea ecx, [esp + 4ch]
+        mov edi, eax
+        mov dword ptr [esp + 70h], 0ffffffffh
+        call dword ptr [mem_00924FF4]
+        push edi
+        mov ecx, ebp
+        call ext_004F1850
+        mov edi, dword ptr [esp + 7ch]
+        add esi, 1
+        cmp esi, dword ptr [esp + 78h]
+        jl l4f2390_507
+    l4f2390_570:
+        mov eax, dword ptr [esp + 78h]
+        add dword ptr [edi], eax
+    l4f2390_end:
+        mov ecx, dword ptr [esp + 68h]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 64h
+        ret 8
+    }
+}
