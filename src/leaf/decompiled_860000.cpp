@@ -1367,3 +1367,55 @@ extern "C" __declspec(naked) void __cdecl fn_0086F160(...) {
         ret
     }
 }
+
+// [0x00860F60] sub_00860F60 (105 bytes)
+extern "C" void ext_00860FD0();
+extern "C" int mem_00AB98C8;
+extern "C" int mem_00AB98EC;
+
+extern "C" __declspec(naked) void __fastcall fn_00860F60(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        xor ebx, ebx
+        push ebp
+        xor edi, edi
+        mov ebp, 0xabb380
+    L60_top:
+        cmp dword ptr [ebp], 0
+        je L60_next
+    L60_body:
+        mov ax, word ptr [ebp - 0x8]
+        mov esi, dword ptr [ebp]
+        mov cx, word ptr [ebp - 0xa]
+        push eax
+        mov dx, word ptr [ebp - 0xc]
+        push ecx
+        push edx
+        call ext_00860FD0
+        add esp, 0xc
+        cmp dword ptr [ebp], esi
+        jne L60_ne
+        inc ebx
+        mov dword ptr [ebp], 0
+        jmp L60_chk
+    L60_ne:
+        inc edi
+    L60_chk:
+        cmp dword ptr [ebp], 0
+        jne L60_body
+    L60_next:
+        add ebp, 0x14
+        cmp ebp, 0xac018c
+        jbe L60_top
+        mov eax, edi
+        pop ebp
+        mov dword ptr [mem_00AB98C8], 1
+        mov dword ptr [mem_00AB98EC], 0
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
