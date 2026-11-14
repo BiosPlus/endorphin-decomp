@@ -9661,3 +9661,77 @@ extern "C" __declspec(naked) void __fastcall fn_00475DA0(void* self, int edx_unu
         ret     0x4
     }
 }
+
+// [0x0047D720] sub_0047D720 (146 bytes)
+extern "C" void ext_0047C9A0();
+extern "C" void ext_00673C20();
+extern "C" int mem_009849C0;
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0047D720(void* self) {
+    __asm {
+        sub     esp, 0xc
+        push    edi
+        mov     edi, ecx
+        mov     eax, dword ptr [edi + 0x538]
+        cmp     eax, dword ptr [mem_009849C0]
+        mov     dword ptr [esp + 0x4], edi
+        jge     L_end
+        mov     ecx, dword ptr [edi + 0x24]
+        push    ebp
+        push    esi
+        push    ecx
+        mov     ecx, edi
+        call    ext_0047C9A0
+        mov     edx, dword ptr [edi + 0x1c]
+        mov     eax, dword ptr [edx]
+        add     edi, 0x18
+        mov     esi, edi
+        mov     ebp, eax
+        mov     dword ptr [esp + 0x10], esi
+        mov     dword ptr [esp + 0x14], ebp
+        push    ebx
+        _emit   0x8d
+        _emit   0x9b
+        _emit   0x00
+        _emit   0x00
+        _emit   0x00
+        _emit   0x00
+    L_loop:
+        test    esi, esi
+        mov     ebx, dword ptr [edi + 0x4]
+        je      L_invalid1
+        cmp     esi, edi
+        je      L_ok1
+    L_invalid1:
+        call    dword ptr [mem_00925134]
+    L_ok1:
+        cmp     ebp, ebx
+        je      L_loop_end
+        test    esi, esi
+        jne     L_ok2
+        call    dword ptr [mem_00925134]
+    L_ok2:
+        cmp     ebp, dword ptr [esi + 0x4]
+        jne     L_ok3
+        call    dword ptr [mem_00925134]
+    L_ok3:
+        mov     eax, dword ptr [ebp + 0x28]
+        mov     ecx, dword ptr [esp + 0x10]
+        push    eax
+        call    ext_0047C9A0
+        lea     ecx, [esp + 0x14]
+        call    ext_00673C20
+        mov     ebp, dword ptr [esp + 0x18]
+        mov     esi, dword ptr [esp + 0x14]
+        jmp     L_loop
+    L_loop_end:
+        pop     ebx
+        pop     esi
+        pop     ebp
+    L_end:
+        pop     edi
+        add     esp, 0xc
+        ret
+    }
+}
