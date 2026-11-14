@@ -27,5 +27,7 @@
     "0x0060DED0",
     "0x0060DEDA"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T04:22:30Z"
 }
