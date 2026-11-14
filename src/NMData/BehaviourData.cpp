@@ -556,3 +556,71 @@ extern "C" __declspec(naked) void __fastcall fn_004AC9F0(void* self) {
         ret
     }
 }
+
+// [0x004AB9D0] NMData::BehaviourData::vfunc_22 (159 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_004C1DE0();
+extern "C" void ext_005006E0();
+extern "C" void ext_00640110();
+extern "C" void ext_00640390();
+extern "C" void ext_00640A50();
+extern "C" int mem_00A9F3B0;
+extern "C" int mem_00A9F17C;
+extern "C" int mem_00A9F480;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9F6D4;
+extern "C" int mem_00941C04;
+
+extern "C" __declspec(naked) void __fastcall fn_004AB9D0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F3B0]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push 0x0
+        mov esi, ecx
+        mov ecx, dword ptr [mem_00A9F17C]
+        mov edx, dword ptr [esi + 0x180]
+        push eax
+        push ecx
+        add edx, 0x11c
+        push edi
+        push edx
+        call ext_005006E0
+        mov eax, dword ptr [mem_00A9F480]
+        add esp, 0x14
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        lea ecx, [esi + 0x30c]
+        mov dword ptr [esp + 0xc], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        mov ecx, dword ptr [mem_00A9F6D4]
+        push ecx
+        mov ecx, edi
+        call ext_00640110
+        mov edx, dword ptr [esi + 0x304]
+        push edx
+        push eax
+        call ext_00640A50
+        add esp, 0x8
+        push 0x0
+        push offset mem_00941C04
+        mov ecx, edi
+        call ext_00640390
+        mov edx, dword ptr [esi + 0x368]
+        lea ecx, [esi + 0x368]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        call eax
+        push edi
+        mov ecx, esi
+        call ext_004C1DE0
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
