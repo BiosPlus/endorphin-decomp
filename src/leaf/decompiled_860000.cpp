@@ -1654,3 +1654,77 @@ extern "C" __declspec(naked) void __cdecl fn_008658B0(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x0086CE10] sub_0086CE10 (207 bytes)
+extern "C" void ext_0085B330();
+
+extern "C" __declspec(naked) void __cdecl fn_0086CE10(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        sub esp, 0x8
+        cmp eax, 0x80
+        jae L_80
+        __asm _emit 0x88 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00 // mov byte ptr [esp], al
+        mov eax, 0x1
+        jmp L_call
+L_80:
+        cmp eax, -0x1
+        jne L_ff
+        __asm _emit 0xc6 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x80 // mov byte ptr [esp], -0x80
+        mov eax, 0x1
+        jmp L_call
+L_ff:
+        cmp eax, 0xff
+        ja L_ffff
+        mov byte ptr [esp + 0x1], al
+        __asm _emit 0xc6 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x81 // mov byte ptr [esp], -0x7f
+        mov eax, 0x2
+        jmp L_call
+L_ffff:
+        cmp eax, 0xffff
+        ja L_ffffff
+        mov ecx, eax
+        mov byte ptr [esp + 0x2], al
+        shr ecx, 0x8
+        __asm _emit 0xc6 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x82 // mov byte ptr [esp], -0x7e
+        mov byte ptr [esp + 0x1], cl
+        mov eax, 0x3
+        jmp L_call
+L_ffffff:
+        cmp eax, 0xffffff
+        ja L_max
+        mov edx, eax
+        mov ecx, eax
+        shr edx, 0x10
+        shr ecx, 0x8
+        mov byte ptr [esp + 0x3], al
+        __asm _emit 0xc6 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x83 // mov byte ptr [esp], -0x7d
+        mov byte ptr [esp + 0x1], dl
+        mov byte ptr [esp + 0x2], cl
+        mov eax, 0x4
+        jmp L_call
+L_max:
+        mov edx, eax
+        mov ecx, eax
+        shr edx, 0x18
+        mov byte ptr [esp + 0x1], dl
+        mov edx, eax
+        shr ecx, 0x10
+        shr edx, 0x8
+        mov byte ptr [esp + 0x4], al
+        __asm _emit 0xc6 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x84 // mov byte ptr [esp], -0x7c
+        mov byte ptr [esp + 0x2], cl
+        mov byte ptr [esp + 0x3], dl
+        mov eax, 0x5
+L_call:
+        mov ecx, dword ptr [esp + 0xc]
+        __asm _emit 0x8d __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x00 // lea edx, [esp]
+        push ecx
+        push eax
+        push 0x1
+        push edx
+        call ext_0085B330
+        add esp, 0x18
+        ret
+    }
+}
