@@ -6140,3 +6140,53 @@ L_60B024:
         ret 0x10
     }
 }
+
+// [0x00607F90] sub_00607F90 (127 bytes)
+extern "C" void ext_004A6970();
+extern "C" void ext_00607D50();
+
+extern "C" __declspec(naked) void* __fastcall fn_00607F90(void* self, int edx_unused, const void* src) {
+    __asm {
+        push -1
+        push 0x008A8168
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x10], esi
+        call ext_00607D50
+        mov dword ptr [esi], 0x009718A4
+        fld dword ptr [edi + 0x60]
+        fstp dword ptr [esi + 0x60]
+        add edi, 0x6C
+        fld dword ptr [edi - 0x8]
+        lea ebx, [esi + 0x6C]
+        fstp dword ptr [esi + 0x64]
+        mov eax, dword ptr [edi - 0x4]
+        push edi
+        mov ecx, ebx
+        mov dword ptr [esp + 0x1C], 0
+        mov dword ptr [esi + 0x68], eax
+        call ext_004A6970
+        mov ecx, dword ptr [edi + 0x10]
+        mov dword ptr [ebx + 0x10], ecx
+        mov edx, dword ptr [edi + 0x14]
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [ebx + 0x14], edx
+        fld dword ptr [edi + 0x18]
+        pop edi
+        fstp dword ptr [ebx + 0x18]
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
