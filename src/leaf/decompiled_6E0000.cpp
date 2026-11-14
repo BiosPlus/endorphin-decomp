@@ -836,3 +836,58 @@ extern "C" __declspec(naked) void __fastcall fn_006E5750(void* self) {
         ret 4
     }
 }
+
+// [0x006E7000] sub_006E7000 (96 bytes)
+extern "C" void ext_00711DB0();
+
+extern "C" __declspec(naked) void __fastcall fn_006E7000(void* self) {
+    __asm {
+        mov eax, ecx
+        push esi
+        xor esi, esi
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        je loc_6e7052
+        call ext_00711DB0
+        dec eax
+        cmp eax, 0xe
+        ja loc_6e705c
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x6e7078]
+        jmp dword ptr [4*ecx + 0x6e7060]
+    loc_6e7025:
+        mov esi, 0x4
+        mov eax, esi
+        pop esi
+        ret
+    loc_6e702e:
+        mov esi, 0x1
+        mov eax, esi
+        pop esi
+        ret
+    loc_6e7037:
+        mov esi, 0x2
+        mov eax, esi
+        pop esi
+        ret
+    loc_6e7040:
+        mov esi, 0x3
+        mov eax, esi
+        pop esi
+        ret
+    loc_6e7049:
+        mov esi, 0x5
+        mov eax, esi
+        pop esi
+        ret
+    loc_6e7052:
+        mov eax, dword ptr [eax + 0x8]
+        test eax, eax
+        je loc_6e705c
+        mov esi, dword ptr [eax + 0x4c]
+    loc_6e705c:
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
