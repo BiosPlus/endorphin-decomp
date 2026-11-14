@@ -1026,3 +1026,83 @@ L_other:
         ret
     }
 }
+
+// [0x007BC450] sub_007BC450 (159 bytes)
+extern "C" void ext_0079AF40();
+extern "C" void ext_0079B140();
+extern "C" void ext_007BC4F0();
+
+extern "C" __declspec(naked) int __cdecl fn_007BC450(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov esi, dword ptr [ebx + 0x1cc]
+        lea edi, [ebx + 0x18]
+        cmp dword ptr [esi], -1
+        jne short L_470
+        push edi
+        call ext_007BC4F0
+        add esp, 0x4
+        mov dword ptr [esi], eax
+L_470:
+        mov eax, dword ptr [esi]
+        _emit 0x83
+        _emit 0xE8
+        _emit 0x00
+        je short L_4A7
+        dec eax
+        je short L_49E
+        _emit 0x83
+        _emit 0xE8
+        _emit 0x02
+        je short L_495
+        mov eax, dword ptr [ebx]
+        push 0xab20cc
+        push eax
+        call ext_0079B140
+        add esp, 0x8
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_495:
+        mov dword ptr [esi + 0x8], 0x1
+        jmp short L_4AE
+L_49E:
+        mov dword ptr [esi + 0x8], 0x2
+        jmp short L_4AE
+L_4A7:
+        mov dword ptr [esi + 0x8], 0x4
+L_4AE:
+        mov eax, dword ptr [edi + 0x38]
+        imul eax, dword ptr [edi + 0xc]
+        mov dword ptr [esi + 0x10], eax
+        lea ecx, [eax + eax]
+        push ecx
+        call ext_0079AF40
+        add esp, 0x4
+        mov dword ptr [esi + 0xc], eax
+        test eax, eax
+        jne short L_4E6
+        mov edx, dword ptr [ebx]
+        push edx
+        push 0xab20a0
+        push 0x9999f0
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_4E6:
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+    }
+}
