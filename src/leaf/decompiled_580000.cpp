@@ -3474,3 +3474,24 @@ extern "C" void* __fastcall fn_00584F10(void* self) {
     p[0x154 / 4] = 0x95a224;
     return self;
 }
+
+// [0x005851E0] sub_005851E0 (66 bytes)
+extern "C" void ext_00584F80();
+extern "C" __declspec(naked) void* __fastcall fn_005851E0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_00584F80
+        mov dword ptr [esi], 0x95a31c
+        mov dword ptr [esi + 4], 0x95a2d4
+        mov dword ptr [esi + 8], 0x95a294
+        mov dword ptr [esi + 0xc], 0x95a244
+        mov dword ptr [esi + 0x150], 0x95a22c
+        mov dword ptr [esi + 0x154], 0x95a224
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
