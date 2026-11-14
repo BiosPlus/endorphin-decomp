@@ -8315,3 +8315,92 @@ L_fail:
         ret
     }
 }
+
+// [0x006B9A90] sub_006B9A90 (175 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006B9920();
+extern "C" void ext_006B9940();
+extern "C" void ext_006B9A00();
+
+extern "C" __declspec(naked) void __fastcall fn_006B9A90(void* self) {
+    __asm {
+        push    ebx
+        push    ebp
+        push    esi
+        mov     esi, dword ptr [esp + 0x14]
+        push    edi
+        mov     ebp, ecx
+        xor     ebx, ebx
+        call    ext_006B9940
+        test    al, al
+        jne     loc_6B9AAA
+        mov     ebx, 1
+    loc_6B9AAA:
+        test    esi, esi
+        jge     loc_6B9AB3
+        mov     ebx, 1
+    loc_6B9AB3:
+        mov     eax, dword ptr [ebp + 4]
+        mov     edi, dword ptr [esp + 0x1c]
+        cmp     edi, eax
+        jbe     loc_6B9AD5
+        mov     ecx, dword ptr [esp + 0x14]
+        mov     ebx, 1
+        call    ext_006B9920
+        pop     edi
+        pop     esi
+        mov     eax, ebx
+        pop     ebp
+        pop     ebx
+        ret     0xc
+    loc_6B9AD5:
+        test    ebx, ebx
+        jne     loc_6B9B2D
+        lea     ecx, [esi + edi]
+        cmp     ecx, eax
+        jbe     loc_6B9AE8
+        sub     eax, edi
+        mov     esi, eax
+        jns     loc_6B9AE8
+        xor     esi, esi
+    loc_6B9AE8:
+        mov     ecx, dword ptr [esp + 0x14]
+        lea     edx, [esp + 0x18]
+        push    edx
+        push    esi
+        call    ext_006B9A00
+        mov     ebx, eax
+        test    ebx, ebx
+        jne     loc_6B9B1C
+        test    esi, esi
+        jle     loc_6B9B1C
+        mov     eax, dword ptr [esp + 0x14]
+        mov     ecx, esi
+        mov     esi, dword ptr [ebp]
+        mov     edx, ecx
+        add     esi, edi
+        mov     edi, dword ptr [eax]
+        shr     ecx, 2
+        rep     movsd
+        mov     ecx, edx
+        and     ecx, 3
+        rep     movsb
+    loc_6B9B1C:
+        mov     eax, dword ptr [esp + 0x18]
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 4
+        test    ebx, ebx
+        je      loc_6B9B36
+    loc_6B9B2D:
+        mov     ecx, dword ptr [esp + 0x14]
+        call    ext_006B9920
+    loc_6B9B36:
+        pop     edi
+        pop     esi
+        mov     eax, ebx
+        pop     ebp
+        pop     ebx
+        ret     0xc
+    }
+}
