@@ -530,3 +530,55 @@ loc_49EE4F:
         ret 0x10
     }
 }
+
+// [0x004B52F0] Properties::PointainerVectorType<PointainerWithUndo<UndoablePointainerVector<NMData::GraphEntryData>>, Properties::GetTerminalParent>::vfunc_10 (100 bytes)
+extern "C" void ext_004B4E60();
+extern "C" void ext_00527AF0();
+extern "C" void ext_006616B0();
+extern "C" void ext_006A6E9E();
+
+extern "C" __declspec(naked) void __fastcall fn_004B52F0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov ecx, edi
+        call ext_006616B0
+        test al, al
+        jne loc_4B530C
+        mov edi, dword ptr [edi + 0x4]
+        jmp loc_4B5326
+loc_4B530C:
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je loc_4B534F
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        sar ecx, 0x2
+        je loc_4B534F
+        mov ecx, esi
+        call ext_00527AF0
+        mov edi, dword ptr [eax]
+loc_4B5326:
+        mov edx, dword ptr [esp + 0x18]
+        push 0x0
+        push 0xa372e0
+        push 0xa2e2d8
+        push 0x0
+        push edx
+        call ext_006A6E9E
+        add esp, 0x14
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edi
+        push eax
+        mov ecx, esi
+        call ext_004B4E60
+loc_4B534F:
+        pop edi
+        pop esi
+        ret 0x10
+    }
+}
