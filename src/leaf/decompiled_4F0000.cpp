@@ -4363,3 +4363,39 @@ extern "C" __declspec(naked) void __fastcall fn_004F1D90(void* self) {
         ret
     }
 }
+
+// [0x004FD9A0] sub_004FD9A0 (207 bytes)
+extern "C" void ext_00640110();
+extern "C" void ext_00640A50();
+extern "C" void ext_00640A80();
+extern "C" void ext_00640BC0();
+extern "C" int mem_00A9F650;
+extern "C" int mem_00A9F8D0;
+extern "C" int mem_00A9F678;
+extern "C" int mem_00A9F7E8;
+extern "C" int mem_00A9F7D4;
+extern "C" int mem_00A9F940;
+extern "C" int mem_00A9F930;
+
+extern "C" void* __fastcall fn_004FD9A0(void* self, int edx_unused, void* a1) {
+    typedef void* (__thiscall *t_get)(void*, int);
+    typedef void (__cdecl *t_set_f)(void*, float);
+    typedef void (__cdecl *t_set_i)(void*, int);
+    typedef void (__cdecl *t_set_b)(void*, unsigned char);
+
+    t_get get = (t_get)ext_00640110;
+    t_set_f set_f = (t_set_f)ext_00640BC0;
+    t_set_i set_i = (t_set_i)ext_00640A50;
+    t_set_b set_b = (t_set_b)ext_00640A80;
+
+    char* s = (char*)self;
+    void* r;
+    r = get(a1, mem_00A9F650); set_f(r, *(float*)(s + 0x4));
+    r = get(a1, mem_00A9F8D0); set_i(r, *(int*)(s + 0x8));
+    r = get(a1, mem_00A9F678); set_i(r, *(int*)(s + 0x10));
+    r = get(a1, mem_00A9F7E8); set_i(r, *(int*)(s + 0x18));
+    r = get(a1, mem_00A9F7D4); set_i(r, *(int*)(s + 0x14));
+    r = get(a1, mem_00A9F940); set_b(r, *(unsigned char*)(s + 0x1c));
+    r = get(a1, mem_00A9F930); set_b(r, *(unsigned char*)(s + 0x1e));
+    return a1;
+}
