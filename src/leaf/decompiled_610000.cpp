@@ -3215,3 +3215,39 @@ extern "C" void* __fastcall fn_0061D1E0(void* self, int edx_unused, const void* 
     *(float*)((char*)self + 0x15c) = *(const float*)((const char*)other + 0x15c);
     return self;
 }
+
+extern "C" int mem_00A9FA54;
+extern "C" int mem_00A9F9D8;
+extern "C" int mem_00A9F9E4;
+extern "C" int mem_00A9F8C4;
+extern "C" int mem_00A9FA5C;
+extern "C" int mem_00A9F9FC;
+extern "C" int mem_00A9F780;
+extern "C" int mem_00A9FA44;
+extern "C" int mem_00A9F9EC;
+extern "C" int mem_00A9F770;
+extern "C" void ext_005B11E0();
+extern "C" void ext_0067EF60();
+
+// [0x00610F40] sub_00610F40 (338 bytes)
+struct Dummy_00610F40 {};
+extern "C" void* __fastcall fn_00610F40(void* self, int edx_unused, void* a1) {
+    typedef float (Dummy_00610F40::*pm_5b11e0_t)(int);
+    typedef void (__cdecl *fn_67ef60_t)(void*, float, const char*, int);
+    union { void (*p)(); pm_5b11e0_t m; } u;
+    u.p = ext_005B11E0;
+    pm_5b11e0_t f1 = u.m;
+    fn_67ef60_t f2 = (fn_67ef60_t)ext_0067EF60;
+    Dummy_00610F40* sub = (Dummy_00610F40*)((char*)self + 0x54);
+    f2(a1, (sub->*f1)(0), (const char*)0x972d54, mem_00A9FA54);
+    f2(a1, (sub->*f1)(1), (const char*)0x972d48, mem_00A9F9D8);
+    f2(a1, (sub->*f1)(2), (const char*)0x972d3c, mem_00A9F9E4);
+    f2(a1, (sub->*f1)(3), (const char*)0x972d34, mem_00A9F8C4);
+    f2(a1, *(float*)((char*)self + 0xa0), (const char*)0x972d24, mem_00A9FA5C);
+    f2(a1, *(float*)((char*)self + 0xa4), (const char*)0x972d14, mem_00A9F9FC);
+    f2(a1, *(float*)((char*)self + 0xa8), (const char*)0x972d00, mem_00A9F780);
+    f2(a1, *(float*)((char*)self + 0xac), (const char*)0x972cf0, mem_00A9FA44);
+    f2(a1, *(float*)((char*)self + 0xb0), (const char*)0x972ce0, mem_00A9F9EC);
+    f2(a1, *(float*)((char*)self + 0xb4), (const char*)0x972cd0, mem_00A9F770);
+    return a1;
+}
