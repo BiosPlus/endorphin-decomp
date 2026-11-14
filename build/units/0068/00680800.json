@@ -107,5 +107,7 @@
     "0x00680BE8",
     "0x00680BF1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T14:12:57Z"
 }
