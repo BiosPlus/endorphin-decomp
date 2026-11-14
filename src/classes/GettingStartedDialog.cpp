@@ -97,3 +97,30 @@ extern "C" __declspec(naked) void __fastcall fn_0041B590(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0040F230();
+extern "C" void ext_0040FD30();
+extern "C" void ext_0040FD40();
+extern "C" void ext_0040FD50();
+extern "C" void ext_006A5E72();
+extern "C" void ext_006A6244();
+extern "C" void ext_006A7BC0();
+extern "C" int mem_0093A0C8;
+extern "C" int mem_0093A0D0;
+extern "C" int mem_0093A0E8;
+extern "C" int mem_0093A0CC;
+
+// [0x0041B210] GettingStartedDialog::vfunc_84 (136 bytes)
+extern "C" int __fastcall fn_0041B210(void* self) {
+    ((void (__thiscall*)(void*))ext_006A6244)(self);
+    ((void (__thiscall*)(void*, int, int, int, int))ext_0040F230)(
+        (char*)self + 0x194, mem_0093A0CC, mem_0093A0E8, mem_0093A0D0, mem_0093A0C8);
+    void* obj = (char*)self + 0x120;
+    ((void (__thiscall*)(void*, int))ext_006A5E72)(obj, 0);
+    (*(void (__thiscall**)(void*, int))(*(char**)obj + 0x144))(obj, 1);
+    ((void (__thiscall*)(void*, int))ext_0040FD30)(obj, mem_0093A0E8);
+    ((void (__thiscall*)(void*, int))ext_0040FD40)(obj, mem_0093A0CC);
+    ((void (__thiscall*)(void*, int))ext_006A7BC0)(obj, mem_0093A0E8);
+    ((void (__thiscall*)(void*, int))ext_0040FD50)(obj, mem_0093A0D0);
+    return 1;
+}
