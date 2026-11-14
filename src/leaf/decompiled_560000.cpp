@@ -7215,3 +7215,51 @@ L_skip_free:
         ret
     }
 }
+
+// [0x00565F90] sub_00565F90 (84 bytes)
+extern "C" void ext_007C5616();
+extern "C" void ext_007C561C();
+extern "C" void ext_00563280();
+extern "C" __declspec(naked) void __fastcall fn_00565F90(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        mov ebx, ecx
+        push esi
+        mov ecx, ebp
+        call ext_007C5616
+        mov ecx, ebp
+        mov dword ptr [esp + 0x14], eax
+        call ext_007C561C
+        xor esi, esi
+        test eax, eax
+        mov dword ptr [esp + 0xc], eax
+        jle done
+        push edi
+    loop_top:
+        mov eax, dword ptr [esp + 0x18]
+        mov edi, dword ptr [eax + 4*esi]
+        push edi
+        push ebp
+        mov ecx, ebx
+        call ext_00563280
+        test al, al
+        jne skip
+        push edi
+        mov ecx, ebx
+        call ext_00565F00
+    skip:
+        add esi, 1
+        cmp esi, dword ptr [esp + 0x10]
+        jl loop_top
+        pop edi
+    done:
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 4
+    }
+}
