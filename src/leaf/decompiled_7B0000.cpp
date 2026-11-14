@@ -814,3 +814,55 @@ loc_7B2BCD:
         ret
     }
 }
+
+// [0x007B7EB0] sub_007B7EB0 (112 bytes)
+extern "C" void ext_007B7790(unsigned short);
+extern "C" unsigned char mem_00B61218;
+extern "C" unsigned char mem_00B61219;
+
+extern "C" __declspec(naked) void __cdecl fn_007B7EB0(const unsigned short* a1) {
+    __asm {
+        push    esi
+        mov     esi, dword ptr [esp + 8]
+        mov     ax, word ptr [esi]
+        push    eax
+        call    ext_007B7790
+        mov     al, byte ptr [mem_00B61218]
+        add     esp, 4
+        test    al, al
+        je      loc_7B7ED3
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7B7F1E
+    loc_7B7ED3:
+        mov     cx, word ptr [esi + 2]
+        push    ecx
+        call    ext_007B7790
+        mov     al, byte ptr [mem_00B61218]
+        add     esp, 4
+        test    al, al
+        je      loc_7B7EF2
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7B7F1E
+    loc_7B7EF2:
+        mov     dx, word ptr [esi + 4]
+        push    edx
+        call    ext_007B7790
+        mov     al, byte ptr [mem_00B61218]
+        add     esp, 4
+        test    al, al
+        je      loc_7B7F11
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7B7F1E
+    loc_7B7F11:
+        mov     ax, word ptr [esi + 6]
+        push    eax
+        call    ext_007B7790
+        add     esp, 4
+    loc_7B7F1E:
+        pop     esi
+        ret
+    }
+}
