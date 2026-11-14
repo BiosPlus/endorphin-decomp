@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `13242 / 24049` (**55.06%**) — `10150` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1433030 / 4496005 bytes` (**31.87%** of 4.29 MB)
+- **In-Scope Functions Matched:** `13243 / 24049` (**55.07%**) — `10151` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1433120 / 4496005 bytes` (**31.88%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -17,7 +17,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P10-20 (16-32B)** | 2251 / 2405 | 93.60% | 57317 / 61769 | 92.79% | 154 fn |
 | **P20-30 (32-48B)** | 1484 / 2405 | 61.70% | 57936 / 97731 | 59.28% | 921 fn |
 | **P30-40 (48-71B)** | 1342 / 2405 | 55.80% | 79632 / 144549 | 55.09% | 1063 fn |
-| **P40-50 (71-91B)** | 1385 / 2405 | 57.59% | 115250 / 194373 | 59.29% | 1020 fn |
+| **P40-50 (71-91B)** | 1386 / 2405 | 57.63% | 115340 / 194373 | 59.34% | 1019 fn |
 | **P50-60 (91-122B)** | 1347 / 2405 | 56.01% | 145019 / 256906 | 56.45% | 1058 fn |
 | **P60-70 (122-159B)** | 1054 / 2405 | 43.83% | 142311 / 339038 | 41.97% | 1351 fn |
 | **P70-80 (159-178B)** | 287 / 2405 | 11.93% | 48371 / 400567 | 12.08% | 2118 fn |
@@ -30,7 +30,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 66.54% |
 | `claude-haiku-5.5@low` | 1261 | 299957 | 12.42% |
-| `gemini-4-hydrogen@low` | 756 | 236857 | 7.45% |
+| `gemini-4-hydrogen@low` | 757 | 236947 | 7.46% |
 | `gemini-3.8-flash@low` | 724 | 220398 | 7.13% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.40% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.61% |

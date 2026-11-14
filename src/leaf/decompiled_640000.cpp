@@ -6545,3 +6545,34 @@ store_006400A0:
         ret 4
     }
 }
+
+// [0x00647120] sub_00647120 (90 bytes)
+extern "C" void ext_00646FC0();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B544B0;
+
+extern "C" __declspec(naked) void __fastcall fn_00647120(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8af6ce
+        push eax
+        mov eax, 0x1
+        mov dword ptr fs:[0x0], esp
+        test byte ptr [mem_00B544B0], al
+        jne done_00647120
+        or dword ptr [mem_00B544B0], eax
+        mov ecx, 0xb5448c
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_00646FC0
+        push 0x920920
+        call ext_006A6C87
+        add esp, 0x4
+    done_00647120:
+        mov ecx, dword ptr [esp]
+        mov eax, 0xb5448c
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret
+    }
+}
