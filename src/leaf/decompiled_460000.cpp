@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/leaf/decompiled_460000.cpp
 
 extern "C" void ext_0046FE50();
+extern "C" void ext_00466870();
+extern "C" void ext_006619D0();
 
 // [0x00468750] sub_00468750 (17 bytes)
 extern "C" __declspec(naked) void __fastcall fn_00468750(void* self) {
@@ -8768,6 +8770,38 @@ L_46BF55_30:
         pop ebp
         pop ebx
         add esp, 0x8
+        ret
+    }
+}
+
+// [0x00466910] sub_00466910 (86 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00466910(void* self) {
+    __asm {
+        push -1
+        push 0x88ac0b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x8], esi
+        mov ecx, dword ptr [esi]
+        lea edi, [esi + 0x4]
+        push edi
+        mov dword ptr [esp + 0x18], 0
+        call ext_006619D0
+        mov esi, dword ptr [esi]
+        mov ecx, edi
+        mov byte ptr [esi], 1
+        mov dword ptr [esp + 0x14], -1
+        call ext_00466870
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
         ret
     }
 }
