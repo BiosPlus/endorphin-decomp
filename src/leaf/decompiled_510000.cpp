@@ -8539,3 +8539,57 @@ extern "C" __declspec(naked) char* __cdecl fn_0051F4A0(char* first, char* last, 
         ret
     }
 }
+
+// [0x0051E440] sub_0051E440 (111 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0051E440(void* self) {
+    __asm {
+        push    ecx
+        push    ebx
+        mov     ebx, dword ptr [mem_00925134]
+        push    ebp
+        push    esi
+        mov     esi, ecx
+        mov     al, byte ptr [esi + 9]
+        mov     byte ptr [esi + 9], 0
+        mov     ebp, dword ptr [esi + 0x148]
+        cmp     dword ptr [esi + 0x144], ebp
+        push    edi
+        mov     byte ptr [esp + 0x13], al
+        jbe     short L1
+        call    ebx
+    L1:
+        mov     edi, dword ptr [esi + 0x144]
+        cmp     edi, dword ptr [esi + 0x148]
+        jbe     short L2
+        call    ebx
+    L2:
+        cmp     edi, ebp
+        je      short L4
+        _emit   0x8d
+        _emit   0x64
+        _emit   0x24
+        _emit   0x00
+    L3:
+        mov     ecx, edi
+        call    fn_0051E440
+        add     edi, 0x168
+        cmp     edi, ebp
+        jne     short L3
+    L4:
+        cmp     byte ptr [esp + 0x13], 0
+        pop     edi
+        je      short L5
+        lea     ecx, [esi + 0xc4]
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 4
+        jmp     ext_00680800
+    L5:
+        pop     esi
+        pop     ebp
+        pop     ebx
+        pop     ecx
+        ret
+    }
+}
