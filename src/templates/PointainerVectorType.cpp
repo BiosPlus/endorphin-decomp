@@ -479,3 +479,54 @@ extern "C" __declspec(naked) void* __fastcall fn_0060B1E0(void* self) {
         ret 0x18
     }
 }
+
+// [0x0049EDF0] Properties::PointainerVectorType<PointainerWithUndo<UndoablePointainerVectorWithFind<NMData::ValuePtrData>>, Properties::GetPropertySource>::vfunc_10 (100 bytes)
+extern "C" void ext_0049CF60();
+extern "C" void ext_00527AF0();
+extern "C" void ext_006616B0();
+
+extern "C" __declspec(naked) void __fastcall fn_0049EDF0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [eax]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov ecx, edi
+        call ext_006616B0
+        test al, al
+        jne loc_49EE0C
+        mov edi, dword ptr [edi + 0x4]
+        jmp loc_49EE26
+loc_49EE0C:
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        je loc_49EE4F
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        sar ecx, 0x2
+        je loc_49EE4F
+        mov ecx, esi
+        call ext_00527AF0
+        mov edi, dword ptr [eax]
+loc_49EE26:
+        mov edx, dword ptr [esp + 0x18]
+        push 0x0
+        push 0xa35030
+        push 0xa2e2d8
+        push 0x0
+        push edx
+        call ext_006A6E9E
+        add esp, 0x14
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edi
+        push eax
+        mov ecx, esi
+        call ext_0049CF60
+loc_49EE4F:
+        pop edi
+        pop esi
+        ret 0x10
+    }
+}
