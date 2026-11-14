@@ -10015,3 +10015,86 @@ extern "C" __declspec(naked) void __fastcall fn_00647880(void* self) {
         ret
     }
 }
+
+// [0x00641B10] sub_00641B10 (317 bytes)
+extern "C" void ext_0059F5C0();
+extern "C" void ext_00641960();
+extern "C" void ext_006A6C87();
+extern "C" __declspec(naked) void __fastcall fn_00641B10(void* self) {
+    __asm {
+        push -1
+        push 0x8af02e
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        __asm _emit 0xf6 __asm _emit 0x05 __asm _emit 0xa0 __asm _emit 0x3b __asm _emit 0xb5 __asm _emit 0x00 __asm _emit 0x01
+        jne L_00641B87
+        __asm _emit 0x83 __asm _emit 0x0d __asm _emit 0xa0 __asm _emit 0x3b __asm _emit 0xb5 __asm _emit 0x00 __asm _emit 0x01
+        mov ecx, 0xb53b94
+        mov dword ptr [esp + 0xc], 0
+        call ext_0059F5C0
+        __asm _emit 0xa3 __asm _emit 0x98 __asm _emit 0x3b __asm _emit 0xb5 __asm _emit 0x00
+        mov byte ptr [eax + 0x2d], 1
+        __asm _emit 0xa1 __asm _emit 0x98 __asm _emit 0x3b __asm _emit 0xb5 __asm _emit 0x00
+        mov dword ptr [eax + 4], eax
+        __asm _emit 0xa1 __asm _emit 0x98 __asm _emit 0x3b __asm _emit 0xb5 __asm _emit 0x00
+        mov dword ptr [eax], eax
+        __asm _emit 0xa1 __asm _emit 0x98 __asm _emit 0x3b __asm _emit 0xb5 __asm _emit 0x00
+        mov dword ptr [eax + 8], eax
+        push 0x920690
+        __asm _emit 0xc7 __asm _emit 0x05 __asm _emit 0x9c __asm _emit 0x3b __asm _emit 0xb5 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        call ext_006A6C87
+        add esp, 4
+        mov dword ptr [esp + 0xc], -1
+L_00641B87:
+        __asm _emit 0x83 __asm _emit 0x3d __asm _emit 0x9c __asm _emit 0x3b __asm _emit 0xb5 __asm _emit 0x00 __asm _emit 0x00
+        jne L_00641C39
+        push 0x97cd9c
+        lea eax, [esp + 7]
+        push eax
+        mov ecx, 0xb53b94
+        mov byte ptr [esp + 0xb], 0x3c
+        call ext_00641960
+        mov ecx, eax
+        __asm _emit 0xff __asm _emit 0x15 __asm _emit 0xd4 __asm _emit 0x4f __asm _emit 0x92 __asm _emit 0x00
+        push 0x97cd94
+        lea ecx, [esp + 7]
+        push ecx
+        mov ecx, 0xb53b94
+        mov byte ptr [esp + 0xb], 0x3e
+        call ext_00641960
+        mov ecx, eax
+        __asm _emit 0xff __asm _emit 0x15 __asm _emit 0xd4 __asm _emit 0x4f __asm _emit 0x92 __asm _emit 0x00
+        push 0x97cd8c
+        lea edx, [esp + 7]
+        push edx
+        mov ecx, 0xb53b94
+        mov byte ptr [esp + 0xb], 0x26
+        call ext_00641960
+        mov ecx, eax
+        __asm _emit 0xff __asm _emit 0x15 __asm _emit 0xd4 __asm _emit 0x4f __asm _emit 0x92 __asm _emit 0x00
+        push 0x97cd84
+        lea eax, [esp + 7]
+        push eax
+        mov ecx, 0xb53b94
+        mov byte ptr [esp + 0xb], 0x27
+        call ext_00641960
+        mov ecx, eax
+        __asm _emit 0xff __asm _emit 0x15 __asm _emit 0xd4 __asm _emit 0x4f __asm _emit 0x92 __asm _emit 0x00
+        push 0x97cd7c
+        lea ecx, [esp + 7]
+        push ecx
+        mov ecx, 0xb53b94
+        mov byte ptr [esp + 0xb], 0x22
+        call ext_00641960
+        mov ecx, eax
+        __asm _emit 0xff __asm _emit 0x15 __asm _emit 0xd4 __asm _emit 0x4f __asm _emit 0x92 __asm _emit 0x00
+L_00641C39:
+        mov ecx, dword ptr [esp + 4]
+        mov eax, 0xb53b94
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
