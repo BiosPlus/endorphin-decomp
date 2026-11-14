@@ -415,3 +415,89 @@ extern "C" __declspec(naked) void __fastcall fn_0051A130(void* self, int edx_unu
         ret     4
     }
 }
+
+// [0x0051AC80] NMData::QuatChannel::vfunc_2 (180 bytes)
+extern "C" void ext_00519FA0();
+extern "C" void ext_006404E0();
+extern "C" void ext_0067EF60();
+extern "C" void ext_0067F0F0();
+extern "C" int mem_00A9F1D8;
+extern "C" int mem_00A9F010;
+extern "C" int mem_00A9FA00;
+extern "C" int mem_00A9F508;
+
+extern "C" __declspec(naked) void* __fastcall fn_0051AC80(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F1D8]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        call ext_006404E0
+        mov ebp, eax
+        push ebp
+        mov ecx, esi
+        call ext_00519FA0
+        mov edi, dword ptr [esi + 0x30]
+        add esi, 0x2c
+        cmp edi, dword ptr [esi + 0x8]
+        jbe loc_51acb0
+        call dword ptr [mem_00925134]
+    loc_51acb0:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe loc_51acbe
+        call dword ptr [mem_00925134]
+    loc_51acbe:
+        cmp esi, esi
+        je loc_51acc8
+        call dword ptr [mem_00925134]
+    loc_51acc8:
+        cmp edi, ebx
+        je loc_51ad2b
+        mov ecx, dword ptr [mem_00A9F010]
+        push ecx
+        mov ecx, ebp
+        call ext_006404E0
+        cmp edi, dword ptr [esi + 0x8]
+        mov ebx, eax
+        jb loc_51ace7
+        call dword ptr [mem_00925134]
+    loc_51ace7:
+        mov edx, dword ptr [mem_00A9FA00]
+        fld dword ptr [edi]
+        mov eax, dword ptr [mem_00A9F508]
+        push edx
+        push eax
+        push ecx
+        fstp dword ptr [esp]
+        push ebx
+        call ext_0067EF60
+        add esp, 0x10
+        cmp edi, dword ptr [esi + 0x8]
+        jb loc_51ad0e
+        call dword ptr [mem_00925134]
+    loc_51ad0e:
+        lea ecx, [edi + 0x4]
+        push ecx
+        push ebx
+        call ext_0067F0F0
+        add esp, 0x8
+        cmp edi, dword ptr [esi + 0x8]
+        jb loc_51ad26
+        call dword ptr [mem_00925134]
+    loc_51ad26:
+        add edi, 0x14
+        jmp loc_51acb0
+    loc_51ad2b:
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
