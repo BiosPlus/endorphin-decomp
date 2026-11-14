@@ -900,7 +900,6 @@ extern "C" void __fastcall fn_006F9B00(void* self) {
 // [0x006F6910] sub_006F6910 (48 bytes)
 extern "C" void ext_006F76F0();
 extern "C" void ext_0077FF90();
-extern "C" void ext_00782BA0();
 extern "C" __declspec(naked) void __fastcall fn_006F6910(void* self, int edx_unused, int a1) {
     __asm {
         fild    dword ptr [esp + 4]
@@ -921,7 +920,6 @@ extern "C" __declspec(naked) void __fastcall fn_006F6910(void* self, int edx_unu
 // [0x006F69C0] sub_006F69C0 (48 bytes)
 extern "C" void ext_006F76F0();
 extern "C" void ext_0077FF90();
-extern "C" void ext_00782BA0();
 extern "C" __declspec(naked) void __fastcall fn_006F69C0(void* self, int edx_unused, int a1) {
     __asm {
         fild    dword ptr [esp + 4]
