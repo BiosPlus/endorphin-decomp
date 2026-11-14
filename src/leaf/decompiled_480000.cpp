@@ -10836,3 +10836,84 @@ extern "C" __declspec(naked) void __fastcall fn_004821F0(void* self) {
         ret
     }
 }
+
+// [0x00480A10] sub_00480A10 (237 bytes)
+extern "C" void ext_0059B5A0();
+extern "C" void ext_005A19D0();
+extern "C" int mem_0093BED8;
+extern "C" int mem_0093BED4;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00925134;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00480A10(void* self) {
+    __asm {
+        push -1
+        push 0x8b2ae2
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x3c
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00594000
+        mov ecx, eax
+        call ext_0059B5A0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [mem_0093BED8]
+        push eax
+        lea ecx, [esp + 0x2c]
+        call dword ptr [mem_00924FE4]
+        mov ecx, dword ptr [mem_0093BED4]
+        push ecx
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x50], 0
+        call dword ptr [mem_00924FE4]
+        mov byte ptr [esp + 0x4c], 1
+        call ext_00594000
+        mov edi, eax
+        mov eax, dword ptr [edi + 0x23c]
+        test eax, eax
+        je L_invalid
+        mov edx, dword ptr [edi + 0x240]
+        sub edx, eax
+        sar edx, 2
+        jne L_valid
+    L_invalid:
+        call dword ptr [mem_00925134]
+    L_valid:
+        mov eax, dword ptr [edi + 0x23c]
+        mov ecx, dword ptr [eax]
+        lea edx, [esp + 0x28]
+        push edx
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_005A19D0
+        lea ecx, [esp + 0xc]
+        mov byte ptr [esp + 0x4c], 0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x28]
+        mov dword ptr [esp + 0x4c], -1
+        call dword ptr [mem_00924FF4]
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        mov byte ptr [ecx + 0x531], 0
+        cmp dword ptr [esi + 4], 0
+        je L_done
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 4]
+        call eax
+    L_done:
+        mov ecx, dword ptr [esp + 0x44]
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x48
+        ret
+    }
+}
