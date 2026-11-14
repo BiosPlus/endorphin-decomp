@@ -363,3 +363,88 @@ extern "C" __declspec(naked) void __fastcall fn_0051C6D0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00660A50();
+extern "C" void ext_006721D0();
+extern "C" int mem_00B599BC;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00928B5D;
+extern "C" int mem_00892D49;
+
+// [0x0051A050] NMData::RealChannel::vfunc_12 (220 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0051A050(void* self, int edx_unused, void* arg0) {
+    __asm {
+        push    -1
+        push    offset mem_00892D49
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        sub     esp, 0x2c
+        push    esi
+        mov     esi, ecx
+        call    ext_00660A50
+        mov     ecx, [esp + 0x40]
+        mov     edx, [eax]
+        mov     edx, [edx + 0x14]
+        push    0
+        push    ecx
+        lea     ecx, [esi + 4]
+        push    ecx
+        lea     ecx, [esp + 0x10]
+        push    ecx
+        mov     ecx, eax
+        call    edx
+        mov     ecx, [esp + 8]
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x38], 0
+        je      L_51a103
+        cmp     ecx, dword ptr [mem_00B599BC]
+        je      L_51a103
+        push    offset mem_00928B5D
+        lea     ecx, [esp + 0x18]
+        call    dword ptr [mem_00924FE4]
+        mov     eax, [esi]
+        mov     eax, [eax + 0x20]
+        lea     ecx, [esp + 0x14]
+        push    ecx
+        lea     edx, [esp + 0x10]
+        push    edx
+        mov     ecx, esi
+        mov     byte ptr [esp + 0x40], 1
+        call    eax
+        push    eax
+        lea     ecx, [esp + 8]
+        mov     byte ptr [esp + 0x3c], 2
+        call    ext_006721D0
+        mov     ecx, [esp + 0x10]
+        test    ecx, ecx
+        mov     byte ptr [esp + 0x38], 1
+        je      L_51a0f0
+        mov     edx, [ecx]
+        mov     edx, [edx + 0x78]
+        lea     eax, [esp + 0xc]
+        push    eax
+        call    edx
+    L_51a0f0:
+        lea     ecx, [esp + 0x14]
+        mov     byte ptr [esp + 0x38], 0
+        call    dword ptr [mem_00924FF4]
+        mov     ecx, [esp + 8]
+    L_51a103:
+        test    ecx, ecx
+        mov     dword ptr [esp + 0x38], -1
+        pop     esi
+        je      L_51a11b
+        mov     eax, [ecx]
+        mov     eax, [eax + 0x78]
+        lea     edx, [esp]
+        push    edx
+        call    eax
+    L_51a11b:
+        mov     ecx, [esp + 0x2c]
+        mov     fs:[0], ecx
+        add     esp, 0x38
+        ret     4
+    }
+}
