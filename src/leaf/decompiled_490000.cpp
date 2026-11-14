@@ -8874,3 +8874,69 @@ extern "C" __declspec(naked) void __fastcall fn_0049B090(void* self) {
         ret
     }
 }
+
+// [0x0049DFA0] sub_0049DFA0 (96 bytes)
+extern "C" void ext_0049DFA0();
+
+extern "C" __declspec(naked) void __fastcall fn_0049DFA0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        push edi
+        _emit 0x8D
+        _emit 0xB9
+        _emit 0xDC
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        mov dword ptr [ecx + 0x130], eax
+        mov ecx, dword ptr [edi + 4]
+        mov esi, dword ptr [ecx]
+        nop
+
+    loc_0049DFC0:
+        cmp edi, edi
+        mov ebx, dword ptr [edi + 4]
+        je short loc_0049DFC9
+        call ebp
+
+    loc_0049DFC9:
+        cmp esi, ebx
+        je short loc_0049DFF9
+        cmp esi, dword ptr [edi + 4]
+        jne short loc_0049DFD4
+        call ebp
+
+    loc_0049DFD4:
+        cmp byte ptr [esi + 0x6c], 0
+        jne short loc_0049DFEE
+        cmp esi, dword ptr [edi + 4]
+        jne short loc_0049DFE1
+        call ebp
+
+    loc_0049DFE1:
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        lea ecx, [esi + 8]
+        call ext_0049DFA0
+
+    loc_0049DFEE:
+        cmp esi, dword ptr [edi + 4]
+        jne short loc_0049DFF5
+        call ebp
+
+    loc_0049DFF5:
+        mov esi, dword ptr [esi]
+        jmp short loc_0049DFC0
+
+    loc_0049DFF9:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
