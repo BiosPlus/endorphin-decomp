@@ -11364,3 +11364,46 @@ extern "C" void __stdcall fn_0062B350(void** self, void** a1) {
     int r = ((VCallFn_0062B350)((*(void***)sub)[2]))(sub, a1);
     ((CallFn_0062B350)ext_0062B2E0)(obj, r);
 }
+
+// [0x005A46E0] ExprParser::WriteMethodType<NMData::CharacterData, ValuePtr const &, {public: void __thiscall NMData::CharacterData::setPoseFromFSM(class ValuePtr const &), 0}>::vfunc_48 (94 bytes)
+extern "C" void ext_005A45A0();
+
+extern "C" __declspec(naked) void __fastcall fn_005A46E0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push esi
+        mov dword ptr [esp + 0x8], 0
+        call ext_005A45A0
+        cmp dword ptr [esi + 0x4], 0
+        lea eax, [esp + 0x14]
+        je L_null
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push esi
+        push eax
+        call edx
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0xc
+    L_null:
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0x14], 0
+        mov ecx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0xc]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], edx
+        pop esi
+        pop ecx
+        ret 0xc
+    }
+}
