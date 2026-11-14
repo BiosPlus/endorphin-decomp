@@ -11251,3 +11251,106 @@ extern "C" __declspec(naked) void __fastcall fn_00421550(void* self) {
         ret 8
     }
 }
+
+// [0x00426020] sub_00426020 (271 bytes)
+extern "C" void ext_00406510();
+extern "C" void ext_0040ECB0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __cdecl fn_00426020(void* self, int mode) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], edi
+        jbe loc_0042603B
+        call ebp
+    loc_0042603B:
+        mov ebx, dword ptr [esi + 4]
+        cmp ebx, dword ptr [esi + 8]
+        jbe loc_00426045
+        call ebp
+    loc_00426045:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_00406510
+        mov eax, dword ptr [esp + 0x20]
+        test eax, eax
+        jne loc_00426067
+        push 0x00AD7B68
+        jmp loc_00426114
+    loc_00426067:
+        cmp eax, 1
+        jne loc_0042609E
+        push 0x00AD7AF8
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00AD7B30
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00AD7B14
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00AD7B4C
+        mov ecx, esi
+        call ext_0040ECB0
+        jmp loc_004260C7
+    loc_0042609E:
+        cmp eax, 2
+        jne loc_004260C2
+        push 0x00AD7BA0
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00AD7BD8
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00AD7BF4
+        jmp loc_00426114
+    loc_004260C2:
+        cmp eax, 3
+        jne loc_00426127
+    loc_004260C7:
+        push 0x00AD7B84
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00AD7BA0
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00AD7BD8
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00AD7BF4
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00AD7C80
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00AD7C48
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00B59374
+    loc_00426114:
+        mov ecx, esi
+        call ext_0040ECB0
+        push 0x00AD7A88
+        mov ecx, esi
+        call ext_0040ECB0
+    loc_00426127:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
