@@ -141,3 +141,20 @@ extern "C" __declspec(naked) void __fastcall fn_004498A0(void* self) {
         ret
     }
 }
+
+extern "C" void __fastcall ext_006A6244(void* self);
+extern "C" void ext_0040F230();
+extern "C" int mem_0093A0C8;
+extern "C" int mem_0093A0D0;
+extern "C" int mem_0093A0E8;
+extern "C" int mem_0093A0CC;
+
+typedef void (__thiscall *fn_0040F230_t)(void*, int, int, int, int);
+
+// [0x00449840] RegistrationDialog::vfunc_84 (90 bytes)
+extern "C" int __fastcall fn_00449840(void* self) {
+    ext_006A6244(self);
+    ((fn_0040F230_t)ext_0040F230)((char*)self + 0x1FC, mem_0093A0CC, mem_0093A0E8, mem_0093A0D0, mem_0093A0C8);
+    ((fn_0040F230_t)ext_0040F230)((char*)self + 0x270, mem_0093A0CC, mem_0093A0E8, mem_0093A0D0, mem_0093A0C8);
+    return 1;
+}
