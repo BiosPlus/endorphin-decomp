@@ -4331,3 +4331,66 @@ extern "C" __declspec(naked) void __fastcall fn_0063FF60(void* self) {
         ret 4
     }
 }
+
+// [0x0063FEE0] sub_0063FEE0 (121 bytes)
+extern "C" void ext_005A07A0();
+extern "C" void ext_0063FDA0();
+extern "C" int mem_00B53A30;
+extern "C" int mem_00B53A2C;
+extern "C" int mem_00B53A28;
+extern "C" __declspec(naked) void __fastcall fn_0063FEE0(void* self) {
+    __asm {
+        sub esp, 8
+        cmp dword ptr [mem_00B53A30], 0
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        jne L_0063FEF6
+        call ext_0063FDA0
+L_0063FEF6:
+        push ebx
+        lea eax, [ebp + 4]
+        push eax
+        lea ecx, [esp + 14h]
+        push ecx
+        mov ecx, offset mem_00B53A28
+        call ext_005A07A0
+        mov esi, dword ptr [eax]
+        test esi, esi
+        mov edi, dword ptr [eax + 4]
+        mov ebx, dword ptr [mem_00B53A2C]
+        je L_0063FF21
+        cmp esi, offset mem_00B53A28
+        je L_0063FF27
+L_0063FF21:
+        call dword ptr [mem_00925134]
+L_0063FF27:
+        cmp edi, ebx
+        pop ebx
+        jne L_0063FF35
+        pop edi
+        pop esi
+        xor al, al
+        pop ebp
+        add esp, 8
+        ret
+L_0063FF35:
+        test esi, esi
+        jne L_0063FF3F
+        call dword ptr [mem_00925134]
+L_0063FF3F:
+        cmp edi, dword ptr [esi + 4]
+        jne L_0063FF4A
+        call dword ptr [mem_00925134]
+L_0063FF4A:
+        mov dl, byte ptr [edi + 28h]
+        pop edi
+        pop esi
+        mov byte ptr [ebp + 24h], dl
+        mov al, 1
+        pop ebp
+        add esp, 8
+        ret
+    }
+}
