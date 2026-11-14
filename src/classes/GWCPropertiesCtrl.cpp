@@ -626,3 +626,139 @@ L_006AAE0A:
         jmp ext_006A60EE
     }
 }
+
+// [0x006AC020] GWCPropertiesCtrl::vfunc_66 (305 bytes)
+extern "C" void ext_006A5DA0();
+extern "C" void ext_006A60D0();
+extern "C" void ext_006ABF70();
+extern "C" void ext_006AD0D0();
+extern "C" void ext_006AD110();
+extern "C" void ext_006AD120();
+extern "C" int mem_00925694;
+extern "C" int mem_009256E4;
+extern "C" int mem_00B5D1F4;
+
+extern "C" __declspec(naked) void __fastcall fn_006AC020(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [mem_00925694]
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x174]
+        test eax, eax
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        je L_006AC05A
+        mov ecx, dword ptr [edi + 0x4]
+        cmp ecx, 0x200
+        je L_006AC04C
+        cmp ecx, 0x201
+        jne L_006AC05A
+L_006AC04C:
+        mov eax, dword ptr [eax + 0x20]
+        push edi
+        push 0
+        push 0x407
+        push eax
+        call ebx
+L_006AC05A:
+        mov eax, dword ptr [edi + 0x4]
+        cmp eax, 0x100
+        jne L_006AC10D
+        cmp dword ptr [esi + 0x54], 0
+        je L_006AC143
+        mov eax, dword ptr [edi + 0x8]
+        cmp eax, 0x9
+        je L_006AC088
+        cmp eax, 0x26
+        je L_006AC0AC
+        cmp eax, 0x28
+        jne L_006AC143
+L_006AC088:
+        cmp eax, 0x26
+        je L_006AC0AC
+        cmp eax, 0x9
+        jne L_006AC09F
+        push 0x10
+        call dword ptr [mem_009256E4]
+        test ax, ax
+        js L_006AC0AC
+L_006AC09F:
+        mov ecx, dword ptr [esi + 0x54]
+        call ext_006AD120
+        mov ecx, dword ptr [esi + 0x58]
+        jmp L_006AC0B7
+L_006AC0AC:
+        mov ecx, dword ptr [esi + 0x54]
+        call ext_006AD110
+        mov ecx, dword ptr [esi + 0x5c]
+L_006AC0B7:
+        test eax, eax
+        je L_006AC0BE
+        push eax
+        jmp L_006AC0BF
+L_006AC0BE:
+        push ecx
+L_006AC0BF:
+        mov ecx, esi
+        call ext_006ABF70
+        mov eax, dword ptr [esi + 0x100]
+        test eax, eax
+        je L_006AC102
+        mov ecx, dword ptr [edi + 0x8]
+        mov edx, dword ptr [eax + 0x20]
+        push 0
+        push ecx
+        mov ecx, dword ptr [mem_00B5D1F4]
+        push ecx
+        push edx
+        call ebx
+        cmp eax, -1
+        je L_006AC102
+        mov eax, dword ptr [esi + 0x100]
+        test eax, eax
+        je L_006AC0F5
+        mov eax, dword ptr [eax + 0x20]
+L_006AC0F5:
+        mov dword ptr [edi], eax
+        mov ecx, dword ptr [esi + 0x100]
+        call ext_006A60D0
+L_006AC102:
+        pop edi
+        pop esi
+        mov eax, 1
+        pop ebx
+        ret 4
+L_006AC10D:
+        cmp eax, 0x20a
+        jne L_006AC143
+        mov ecx, dword ptr [esi + 0x54]
+        test ecx, ecx
+        je L_006AC143
+        call ext_006AD0D0
+        test al, al
+        je L_006AC143
+        mov eax, dword ptr [esi + 0x100]
+        test eax, eax
+        jne L_006AC13E
+        push edi
+        mov ecx, esi
+        mov dword ptr [edi], eax
+        call ext_006A5DA0
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+L_006AC13E:
+        mov eax, dword ptr [eax + 0x20]
+        mov dword ptr [edi], eax
+L_006AC143:
+        push edi
+        mov ecx, esi
+        call ext_006A5DA0
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
