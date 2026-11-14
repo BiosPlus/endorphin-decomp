@@ -544,3 +544,87 @@ extern "C" __declspec(naked) void __fastcall fn_007AD6B0(void* self) {
         ret
     }
 }
+
+// [0x007A67C0] sub_007A67C0 (144 bytes)
+extern "C" void ext_007A9360();
+extern "C" void ext_007AA510();
+extern "C" void ext_007B2D80();
+
+extern "C" __declspec(naked) void __cdecl fn_007A67C0(void* p) {
+    __asm {
+        push ecx
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        xor ebx, ebx
+        test edi, edi
+        jne short L_7a67e6
+        push 2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 4
+        test al, al
+        jne short L_7a67e6
+        pop edi
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret
+
+    L_7a67e6:
+        push edi
+        call ext_007A9360
+        mov eax, dword ptr [edi + 8]
+        add esp, 4
+        test eax, eax
+        jne short L_7a67fa
+        pop edi
+        pop ebx
+        pop ecx
+        ret
+
+    L_7a67fa:
+        mov ecx, dword ptr [eax]
+        push esi
+        xor esi, esi
+        test ecx, ecx
+        jbe short L_7a6849
+
+    L_7a6803:
+        mov edx, dword ptr [eax + 4]
+        lea ecx, [esp + 0x14]
+        push ecx
+        push 0x4600
+        mov eax, dword ptr [edx + esi * 8 + 4]
+        push eax
+        call ext_007B2D80
+        mov eax, dword ptr [esp + 0x20]
+        add esp, 0xc
+        test eax, eax
+        je short L_7a6841
+        lea ecx, [esp + 0xc]
+        push ecx
+        push 0x4610
+        push eax
+        call ext_007B2D80
+        mov eax, dword ptr [esp + 0x18]
+        add esp, 0xc
+        test eax, eax
+        jne short L_7a6841
+        inc ebx
+
+    L_7a6841:
+        mov eax, dword ptr [edi + 8]
+        inc esi
+        cmp esi, dword ptr [eax]
+        jb short L_7a6803
+
+    L_7a6849:
+        pop esi
+        mov eax, ebx
+        pop edi
+        pop ebx
+        pop ecx
+        ret
+    }
+}
