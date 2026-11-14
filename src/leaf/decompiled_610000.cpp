@@ -3428,3 +3428,43 @@ loc_611489:
         ret 4
     }
 }
+
+// [0x0061E890] sub_0061E890 (115 bytes)
+extern "C" void ext_00612030();
+extern "C" void ext_0061E840();
+extern "C" int mem_008A2518;
+extern "C" int mem_009763F4;
+extern "C" int mem_009763AC;
+extern "C" int mem_0097636C;
+extern "C" int mem_0097631C;
+extern "C" int mem_00976304;
+
+extern "C" __declspec(naked) void* __fastcall fn_0061E890(void* self) {
+    __asm {
+        push -1
+        push offset mem_008A2518
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        call ext_0061E840
+        lea ecx, [esi + 0x164]
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esi], offset mem_009763F4
+        mov dword ptr [esi + 4], offset mem_009763AC
+        mov dword ptr [esi + 8], offset mem_0097636C
+        mov dword ptr [esi + 0xC], offset mem_0097631C
+        mov dword ptr [esi + 0x150], offset mem_00976304
+        mov byte ptr [esi + 0x160], 1
+        call ext_00612030
+        mov ecx, dword ptr [esp + 8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
