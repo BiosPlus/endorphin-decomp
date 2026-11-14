@@ -13237,3 +13237,102 @@ L_fn00686CD0_end:
         ret 0ch
     }
 }
+
+// [0x00681170] sub_00681170 (219 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00681170(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x008b4ff9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        xor ecx, ecx
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x24], ecx
+        mov dword ptr [ebp - 0x20], ecx
+        mov dword ptr [ebp - 0x1c], ecx
+        mov edi, dword ptr [ebp + 0x8]
+        mov dword ptr [ebp - 0x4], ecx
+        mov bl, 1
+loop_top:
+        cmp edi, dword ptr [ebp + 0xc]
+        mov byte ptr [ebp - 0x4], bl
+        je loop_done
+        mov dword ptr [ebp + 0x8], esi
+        mov dword ptr [ebp - 0x18], esi
+        cmp esi, ecx
+        mov byte ptr [ebp - 0x4], 0x2
+        je skip_ctor
+        lea eax, [ebp - 0x28]
+        push eax
+        mov ecx, esi
+        call ext_0049EEE0
+        xor ecx, ecx
+skip_ctor:
+        mov edx, dword ptr [edi + 0x4]
+        mov eax, dword ptr [esi + 0x4]
+        mov dword ptr [esi + 0x4], edx
+        mov dword ptr [edi + 0x4], eax
+        mov edx, dword ptr [edi + 0x8]
+        mov eax, dword ptr [esi + 0x8]
+        mov dword ptr [esi + 0x8], edx
+        mov dword ptr [edi + 0x8], eax
+        mov edx, dword ptr [edi + 0xc]
+        mov eax, dword ptr [esi + 0xc]
+        mov dword ptr [esi + 0xc], edx
+        add esi, 0x10
+        mov dword ptr [edi + 0xc], eax
+        mov dword ptr [ebp + 0x10], esi
+        add edi, 0x10
+        jmp loop_top
+handler:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je no_destroy
+        mov ebx, dword ptr [ebp + 0x14]
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+destroy_loop:
+        push esi
+        mov ecx, ebx
+        call ext_00681140
+        add esi, 0x10
+        cmp esi, edi
+        jne destroy_loop
+no_destroy:
+        push 0x0
+        push 0x0
+        call ext_006A6DD2
+loop_done:
+        mov eax, dword ptr [ebp - 0x24]
+        cmp eax, ecx
+        je skip_free
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+skip_free:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
