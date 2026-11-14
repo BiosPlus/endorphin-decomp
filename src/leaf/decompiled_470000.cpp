@@ -12310,3 +12310,182 @@ l479_early:
         ret 0x10
     }
 }
+
+// [0x0047C190] sub_0047C190 (490 bytes)
+extern "C" void ext_0040ECB0();
+extern "C" void ext_00673C20();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00925134;
+extern "C" int mem_009251E0;
+extern "C" int mem_00924ECC;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00924FC4;
+extern "C" __declspec(naked) void __fastcall fn_0047C190(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -0x1
+        push 0x883a0a
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x70
+        mov eax, dword ptr [esp + 0x80]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 0x2c]
+        call dword ptr [mem_00924FE0]
+        xor eax, eax
+        mov dword ptr [esp + 0x88], eax
+        mov dword ptr [esp + 0x1c], eax
+        mov dword ptr [esp + 0x20], eax
+        mov dword ptr [esp + 0x24], eax
+        mov eax, dword ptr [esi + 0x48]
+        mov eax, dword ptr [eax]
+        add esi, 0x44
+        mov edi, esi
+        mov ebp, eax
+        mov byte ptr [esp + 0x88], 0x1
+        mov dword ptr [esp + 0x10], edi
+        mov dword ptr [esp + 0x14], ebp
+    LOOP_TOP:
+        test edi, edi
+        mov ebx, dword ptr [esi + 0x4]
+        je LOOP_A
+        cmp edi, esi
+        je LOOP_B
+    LOOP_A:
+        call dword ptr [mem_00925134]
+    LOOP_B:
+        cmp ebp, ebx
+        je LOOP_DONE
+        test edi, edi
+        jne LOOP_C
+        call dword ptr [mem_00925134]
+    LOOP_C:
+        cmp ebp, dword ptr [edi + 0x4]
+        jne LOOP_D
+        call dword ptr [mem_00925134]
+    LOOP_D:
+        add ebp, 0xc
+        push ebp
+        lea ecx, [esp + 0x1c]
+        call ext_0040ECB0
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        mov ebp, dword ptr [esp + 0x14]
+        mov edi, dword ptr [esp + 0x10]
+        jmp LOOP_TOP
+    LOOP_DONE:
+        mov edi, 0x1
+    LOOP_PUSH:
+        push edi
+        push 0x92e3b4
+        lea ecx, [esp + 0x68]
+        push 0x1e
+        push ecx
+        call dword ptr [mem_009251E0]
+        lea edx, [esp + 0x70]
+        push edx
+        lea eax, [esp + 0x3c]
+        push eax
+        lea ecx, [esp + 0x5c]
+        push ecx
+        call dword ptr [mem_00924ECC]
+        add esp, 0x1c
+        mov ecx, dword ptr [esp + 0x90]
+        push eax
+        mov byte ptr [esp + 0x8c], 0x2
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x44]
+        mov byte ptr [esp + 0x88], 0x1
+        call dword ptr [mem_00924FF4]
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov ebx, dword ptr [mem_00925134]
+        add edi, 0x1
+        cmp ecx, eax
+        mov dword ptr [esp + 0x10], eax
+        jbe CMP1
+        call ebx
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+    CMP1:
+        cmp ecx, eax
+        mov ebp, eax
+        jbe CMP2
+        call ebx
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+    CMP2:
+        cmp ecx, eax
+        mov esi, ecx
+        jbe CMP3
+        call ebx
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+    CMP3:
+        cmp esi, ebp
+        je SCAN_END
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    SCAN_LOOP:
+        mov edx, dword ptr [esp + 0x90]
+        push edx
+        push esi
+        call dword ptr [mem_00924FC4]
+        add esp, 0x8
+        test al, al
+        jne SCAN_FOUND
+        add esi, 0x1c
+        cmp esi, ebp
+        jne SCAN_LOOP
+    SCAN_FOUND:
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esp + 0x1c]
+    SCAN_END:
+        cmp esi, dword ptr [esp + 0x10]
+        jne LOOP_PUSH
+        xor ebx, ebx
+        cmp ecx, ebx
+        mov byte ptr [esp + 0x88], 0x0
+        je CLEANUP
+        cmp ecx, eax
+        mov edi, eax
+        mov esi, ecx
+        je FREE_DONE
+    FREE_LOOP:
+        mov ecx, esi
+        call dword ptr [mem_00924FF4]
+        add esi, 0x1c
+        cmp esi, edi
+        jne FREE_LOOP
+        mov ecx, dword ptr [esp + 0x1c]
+    FREE_DONE:
+        push ecx
+        call ext_006A5C5C
+        add esp, 0x4
+    CLEANUP:
+        lea ecx, [esp + 0x28]
+        mov dword ptr [esp + 0x1c], ebx
+        mov dword ptr [esp + 0x20], ebx
+        mov dword ptr [esp + 0x24], ebx
+        mov dword ptr [esp + 0x88], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x80]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x7c
+        ret 0x4
+    }
+}
