@@ -12095,3 +12095,218 @@ extern "C" __declspec(naked) void __fastcall fn_0047BE70(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00405FB0();
+extern "C" void ext_00408090();
+extern "C" void ext_00477500();
+extern "C" void ext_00479A90();
+extern "C" void ext_004959E0();
+extern "C" void ext_004A59A0();
+
+// [0x00479AC0] sub_00479AC0 (437 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00479AC0(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        fld dword ptr [eax]
+        push ebx
+        push esi
+        fstp dword ptr [esp + 0x18]
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        push edi
+        jne l479_a
+        xor edi, edi
+        jmp l479_b
+l479_a:
+        mov edi, dword ptr [esi + 0xc]
+        sub edi, ecx
+        sar edi, 2
+l479_b:
+        mov ebx, dword ptr [esp + 0x18]
+        test ebx, ebx
+        je l479_early
+        test ecx, ecx
+        jne l479_c
+        xor eax, eax
+        jmp l479_d
+l479_c:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 2
+l479_d:
+        mov edx, 0x3fffffff
+        sub edx, eax
+        cmp edx, ebx
+        jae l479_e
+        call ext_00405FB0
+l479_e:
+        test ecx, ecx
+        jne l479_f
+        xor eax, eax
+        jmp l479_g
+l479_f:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 2
+l479_g:
+        add eax, ebx
+        cmp edi, eax
+        push ebp
+        jae l479_big
+        mov eax, edi
+        shr eax, 1
+        mov edx, 0x3fffffff
+        sub edx, eax
+        cmp edx, edi
+        jae l479_h
+        xor edi, edi
+        jmp l479_i
+l479_h:
+        add edi, eax
+l479_i:
+        test ecx, ecx
+        jne l479_j
+        xor eax, eax
+        jmp l479_k
+l479_j:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 2
+l479_k:
+        add eax, ebx
+        cmp edi, eax
+        jae l479_l
+        test ecx, ecx
+        jne l479_m
+        xor edi, edi
+        jmp l479_n
+l479_m:
+        mov edi, dword ptr [esi + 0x8]
+        sub edi, ecx
+        sar edi, 2
+l479_n:
+        add edi, ebx
+l479_l:
+        push 0
+        push edi
+        call ext_004A59A0
+        mov ecx, dword ptr [esi + 0x4]
+        add esp, 0x8
+        mov ebp, eax
+        mov eax, dword ptr [esp + 0x18]
+        push ebp
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_004959E0
+        lea edx, [esp + 0x20]
+        push edx
+        push ebx
+        push eax
+        mov ecx, esi
+        call ext_00479A90
+        mov ecx, dword ptr [esp + 0x18]
+        push eax
+        mov eax, dword ptr [esi + 0x8]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_004959E0
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        jne l479_o
+        xor ecx, ecx
+        jmp l479_p
+l479_o:
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        sar ecx, 2
+l479_p:
+        add ebx, ecx
+        test eax, eax
+        je l479_q
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+l479_q:
+        lea edx, [ebp + 4*edi]
+        lea eax, [ebp + 4*ebx]
+        mov dword ptr [esi + 0x4], ebp
+        pop ebp
+        pop edi
+        mov dword ptr [esi + 0xc], edx
+        mov dword ptr [esi + 0x8], eax
+        pop esi
+        pop ebx
+        ret 0x10
+l479_big:
+        mov ebp, dword ptr [esi + 0x8]
+        mov edi, dword ptr [esp + 0x18]
+        mov ecx, ebp
+        sub ecx, edi
+        sar ecx, 2
+        lea eax, [4*ebx]
+        cmp ecx, ebx
+        mov dword ptr [esp + 0x1c], eax
+        mov ecx, esi
+        jae l479_r
+        add eax, edi
+        push eax
+        push ebp
+        push edi
+        call ext_004959E0
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, eax
+        sub ecx, edi
+        sar ecx, 2
+        lea edx, [esp + 0x20]
+        push edx
+        sub ebx, ecx
+        push ebx
+        push eax
+        mov ecx, esi
+        call ext_00479A90
+        mov eax, dword ptr [esp + 0x1c]
+        add dword ptr [esi + 0x8], eax
+        mov esi, dword ptr [esi + 0x8]
+        lea edx, [esp + 0x20]
+        push edx
+        sub esi, eax
+        push esi
+        push edi
+        call ext_00477500
+        add esp, 0xc
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x10
+l479_r:
+        push ebp
+        mov ebx, ebp
+        sub ebx, eax
+        push ebp
+        push ebx
+        call ext_004959E0
+        push ebp
+        push ebx
+        push edi
+        mov dword ptr [esi + 0x8], eax
+        call ext_00408090
+        mov ecx, dword ptr [esp + 0x28]
+        lea eax, [esp + 0x2c]
+        push eax
+        add ecx, edi
+        push ecx
+        push edi
+        call ext_00477500
+        add esp, 0x18
+        pop ebp
+l479_early:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x10
+    }
+}
