@@ -6978,3 +6978,98 @@ L_exit:
         ret 0x4
     }
 }
+
+extern "C" void ext_0041A920();
+extern "C" void ext_0065C640();
+extern "C" void ext_0065C650();
+extern "C" int mem_009252E4;
+
+// [0x0065F310] sub_0065F310 (239 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0065F310(char* self, int edx_unused, unsigned char init, float* src) {
+    __asm {
+        push    -1
+        push    0x8a56c8
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 8
+        push    ebx
+        push    ebp
+        push    esi
+        mov     esi, ecx
+        lea     ebx, [esi + 0x14]
+        push    edi
+        mov     ecx, ebx
+        mov     dword ptr [esp + 0x14], ebx
+        call    ext_0065C640
+        xor     ebp, ebp
+        cmp     dword ptr [esi], ebp
+        mov     dword ptr [esp + 0x20], ebp
+        jne     L_have_node
+        push    0x10
+        push    0x4000
+        call    dword ptr [mem_009252E4]
+        mov     edi, eax
+        add     esp, 8
+        lea     eax, [esp + 0x10]
+        push    eax
+        lea     ecx, [esi + 4]
+        mov     dword ptr [esp + 0x14], edi
+        call    ext_0041A920
+        mov     dword ptr [esi], edi
+        mov     eax, edi
+        mov     edx, 0xff
+    L_loop:
+        sub     edx, 1
+        lea     ecx, [eax + 0x40]
+        mov     dword ptr [eax], ecx
+        mov     eax, ecx
+        jne     L_loop
+        mov     dword ptr [edi + 0x3fc0], ebp
+    L_have_node:
+        cmp     byte ptr [esp + 0x28], 0
+        mov     ebp, dword ptr [esi]
+        mov     ecx, dword ptr [ebp]
+        mov     dword ptr [esi], ecx
+        je      L_done
+        mov     esi, dword ptr [esp + 0x2c]
+        test    esi, esi
+        je      L_identity
+        mov     ecx, 0x10
+        mov     edi, ebp
+        rep movsd
+        jmp     L_done
+    L_identity:
+        fld1
+        fst     dword ptr [ebp]
+        fldz
+        fst     dword ptr [ebp + 4]
+        fst     dword ptr [ebp + 8]
+        fst     dword ptr [ebp + 0xc]
+        fst     dword ptr [ebp + 0x10]
+        fst     dword ptr [ebp + 0x18]
+        fst     dword ptr [ebp + 0x1c]
+        fst     dword ptr [ebp + 0x20]
+        fst     dword ptr [ebp + 0x24]
+        fst     dword ptr [ebp + 0x2c]
+        fst     dword ptr [ebp + 0x30]
+        fst     dword ptr [ebp + 0x34]
+        fstp    dword ptr [ebp + 0x38]
+        fst     dword ptr [ebp + 0x14]
+        fst     dword ptr [ebp + 0x28]
+        fstp    dword ptr [ebp + 0x3c]
+    L_done:
+        mov     ecx, ebx
+        mov     dword ptr [esp + 0x20], -1
+        call    ext_0065C650
+        mov     ecx, dword ptr [esp + 0x18]
+        pop     edi
+        pop     esi
+        mov     eax, ebp
+        pop     ebp
+        pop     ebx
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x14
+        ret     8
+    }
+}
