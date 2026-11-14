@@ -13861,3 +13861,92 @@ L_end:
         ret
     }
 }
+
+// [0x0067A260] sub_0067A260 (227 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0067A110();
+extern "C" void ext_00689E20();
+extern "C" void ext_006A5C62();
+extern "C" int mem_00A9F838;
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_0067A260(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push -1
+        push 0x008b49b4
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x24
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        push 0x158
+        mov dword ptr [esp + 0x10], esi
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x10], eax
+        test eax, eax
+        mov edi, dword ptr [esp + 0x48]
+        mov dword ptr [esp + 0x38], 0x0
+        je ctor_skip_0067A260
+        push edi
+        push esi
+        mov ecx, eax
+        call ext_00689E20
+        mov esi, eax
+        jmp after_ctor_0067A260
+    ctor_skip_0067A260:
+        xor esi, esi
+    after_ctor_0067A260:
+        mov eax, dword ptr [mem_00A9F838]
+        mov ebx, dword ptr [esp + 0x44]
+        push eax
+        mov ecx, ebx
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        mov dword ptr [esp + 0x4c], esi
+        call ext_0063EFE0
+        mov edx, dword ptr [eax]
+        mov edx, dword ptr [edx + 0x8]
+        lea ecx, [esp + 0x14]
+        push ecx
+        mov ecx, eax
+        call edx
+        push eax
+        lea ecx, [esi + 0x10]
+        mov dword ptr [esp + 0x3c], 0x1
+        call dword ptr [mem_00924FDC]
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0x38], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        test edi, edi
+        je arg_null_0067A260
+        mov ecx, dword ptr [esp + 0xc]
+        lea eax, [esp + 0x48]
+        push eax
+        add ecx, 0x34
+        call ext_0041A920
+        jmp tail_0067A260
+    arg_null_0067A260:
+        mov ecx, dword ptr [esp + 0x40]
+        push 0x0
+        push esi
+        call ext_0067A110
+    tail_0067A260:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x4]
+        push ebx
+        mov ecx, esi
+        call eax
+        mov ecx, dword ptr [esp + 0x30]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x30
+        ret 0xc
+    }
+}
