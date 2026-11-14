@@ -2591,3 +2591,139 @@ L_skip:
         ret
     }
 }
+
+// [0x00867E30] sub_00867E30 (399 bytes)
+extern "C" void ext_0082132A();
+extern "C" void ext_0085D5F0();
+extern "C" void ext_0085E030();
+extern "C" void ext_00860800();
+extern "C" void ext_008671C0();
+extern "C" void ext_00867360();
+extern "C" void ext_00867850();
+extern "C" void ext_00867FC0();
+extern "C" void ext_008680B0();
+extern "C" int mem_00AB9620;
+extern "C" int mem_00AB9644;
+extern "C" int mem_00AB9648;
+extern "C" int mem_00AB9614;
+extern "C" int mem_00BC70E0;
+extern "C" int mem_00AB9628;
+extern "C" int mem_00AB9630;
+extern "C" int mem_00AB9624;
+extern "C" int mem_00AB962C;
+extern "C" int mem_00BC67B8;
+extern "C" int mem_00AB9634;
+extern "C" int mem_00AB9618;
+extern "C" int mem_00AC0630;
+extern "C" int mem_00AC063C;
+extern "C" int mem_00AC0648;
+extern "C" int mem_00AC065C;
+
+extern "C" __declspec(naked) int __cdecl fn_00867E30(void) {
+    __asm {
+        cmp dword ptr [mem_00AB9620], 0
+        je L_init
+        xor eax, eax
+        ret
+    L_init:
+        mov dword ptr [mem_00AB9620], 1
+        cmp dword ptr [mem_00AB9644], 0
+        jne L_after_82132A
+        mov dword ptr [mem_00AB9644], 1
+        call ext_0082132A
+        test eax, 0x80000000
+        je L_after_82132A
+        test eax, 0x40000000
+        jne L_after_82132A
+        mov dword ptr [mem_00AB9648], 1
+        xor eax, eax
+        ret
+    L_after_82132A:
+        call ext_0085D5F0
+        test eax, eax
+        je L_set_9614
+        mov eax, 1
+        ret
+    L_set_9614:
+        mov dword ptr [mem_00AB9614], 1
+        push offset mem_00BC70E0
+        call ext_00867FC0
+        add esp, 4
+        test eax, eax
+        jne L_clear_9614
+        mov eax, dword ptr [mem_00BC70E0]
+        push eax
+        call ext_00860800
+        add esp, 4
+        test eax, eax
+        je L_after_9614
+    L_clear_9614:
+        mov dword ptr [mem_00AB9614], 0
+    L_after_9614:
+        mov eax, 4
+        push offset mem_00AC0630
+        mov dword ptr [mem_00AB9628], eax
+        mov dword ptr [mem_00AB9630], eax
+        mov dword ptr [mem_00AB9648], 0
+        mov dword ptr [mem_00AB9624], 0xc8
+        mov dword ptr [mem_00AB962C], 0x3e8
+        call ext_008671C0
+        add esp, 4
+        test eax, eax
+        je L_skip_9624
+        push eax
+        call ext_00867360
+        add esp, 4
+        mov dword ptr [mem_00AB9624], eax
+        push 0x7530
+        push 2
+        push offset mem_00AB9624
+        call ext_00867850
+        add esp, 0xc
+        mov eax, dword ptr [mem_00AB9624]
+        mov dword ptr [mem_00AB962C], eax
+    L_skip_9624:
+        push offset mem_00AC063C
+        call ext_008671C0
+        add esp, 4
+        test eax, eax
+        je L_skip_9628
+        push eax
+        call ext_00867360
+        add esp, 4
+        mov dword ptr [mem_00AB9628], eax
+        push 0x1e
+        push 2
+        push offset mem_00AB9628
+        call ext_00867850
+        add esp, 0xc
+        mov eax, dword ptr [mem_00AB9628]
+        mov dword ptr [mem_00AB9630], eax
+    L_skip_9628:
+        mov byte ptr [mem_00BC67B8], 0
+        push offset mem_00AC0648
+        call ext_008671C0
+        add esp, 4
+        test eax, eax
+        je L_skip_67B8
+        push eax
+        push offset mem_00BC67B8
+        call ext_0085E030
+        add esp, 8
+    L_skip_67B8:
+        mov dword ptr [mem_00AB9634], 1
+        push offset mem_00AC065C
+        call ext_008671C0
+        add esp, 4
+        test eax, eax
+        je L_skip_9634
+        push eax
+        call ext_008680B0
+        add esp, 4
+        mov dword ptr [mem_00AB9634], eax
+    L_skip_9634:
+        mov dword ptr [mem_00AB9618], 1
+        xor eax, eax
+        ret
+    }
+}
