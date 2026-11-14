@@ -28,8 +28,10 @@ extern "C" int mem_00924300;
 extern "C" int mem_00925608;
 extern "C" int mem_00924090;
 extern "C" int mem_009242F4;
+extern "C" void ext_006A5DB2();
+extern "C" int mem_00925688;
 
-// [0x004226E0] CImageButton::vfunc_80 (1079 bytes)
+extern "C" int mem_00925688;
 extern "C" __declspec(naked) void __fastcall fn_004226E0(void* self, int edx_unused, void* a1) {
     __asm {
         push -1
@@ -407,5 +409,25 @@ L_00422AC8:
         mov dword ptr fs:[0], ecx
         add esp, 0x7c
         ret 4
+    }
+}
+
+// [0x00422BC0] CImageButton::vfunc_69 (49 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00422BC0(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        cmp eax, 0x2a3
+        je SHORT L_match
+        mov dword ptr [esp + 4], eax
+        jmp ext_006A5DB2
+L_match:
+        mov eax, dword ptr [ecx + 0x20]
+        push 0
+        push 0
+        push eax
+        mov byte ptr [ecx + 0x8e], 0
+        call dword ptr [mem_00925688]
+        mov eax, 1
+        ret 0x10
     }
 }
