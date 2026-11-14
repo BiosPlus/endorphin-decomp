@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `12788 / 24049` (**53.17%**) — `9696` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1365605 / 4496005 bytes` (**30.37%** of 4.29 MB)
+- **In-Scope Functions Matched:** `12789 / 24049` (**53.18%**) — `9697` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1365694 / 4496005 bytes` (**30.38%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -17,7 +17,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P10-20 (16-32B)** | 2251 / 2405 | 93.60% | 57317 / 61769 | 92.79% | 154 fn |
 | **P20-30 (32-48B)** | 1484 / 2405 | 61.70% | 57936 / 97731 | 59.28% | 921 fn |
 | **P30-40 (48-71B)** | 1278 / 2405 | 53.14% | 75298 / 144549 | 52.09% | 1127 fn |
-| **P40-50 (71-91B)** | 1175 / 2405 | 48.86% | 97945 / 194373 | 50.39% | 1230 fn |
+| **P40-50 (71-91B)** | 1176 / 2405 | 48.90% | 98034 / 194373 | 50.44% | 1229 fn |
 | **P50-60 (91-122B)** | 1311 / 2405 | 54.51% | 141283 / 256906 | 54.99% | 1094 fn |
 | **P60-70 (122-159B)** | 1028 / 2405 | 42.74% | 138598 / 339038 | 40.88% | 1377 fn |
 | **P70-80 (159-178B)** | 270 / 2405 | 11.23% | 45501 / 400567 | 11.36% | 2135 fn |
@@ -28,8 +28,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
-| `claude-haiku-5.5@medium` | 6754 | 526112 | 69.66% |
-| `claude-haiku-5.5@low` | 1060 | 271580 | 10.93% |
+| `claude-haiku-5.5@medium` | 6754 | 526112 | 69.65% |
+| `claude-haiku-5.5@low` | 1061 | 271669 | 10.94% |
 | `gemini-4-hydrogen@low` | 616 | 215252 | 6.35% |
 | `gemini-3.8-flash@low` | 613 | 203092 | 6.32% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.61% |
