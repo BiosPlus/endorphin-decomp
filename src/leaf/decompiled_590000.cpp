@@ -6367,3 +6367,80 @@ extern "C" __declspec(naked) void __fastcall fn_0059A660(void* self, int edx_unu
         ret     0x4
     }
 }
+
+// [0x005975A0] sub_005975A0 (138 bytes)
+extern "C" void ext_00594640();
+extern "C" void ext_005A17D0();
+extern "C" int mem_00925134;
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_005975A0(void* self, int edx_unused, const void* vec) {
+    __asm {
+        push    ecx
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [mem_00925134]
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x18]
+        mov     esi, dword ptr [edi + 0x4]
+        cmp     esi, dword ptr [edi + 0x8]
+        mov     dword ptr [esp + 0x10], ecx
+        jbe     L_5975C0
+        call    ebp
+        _emit   0x8d
+        _emit   0x49
+        _emit   0x00
+    L_5975C0:
+        mov     ebx, dword ptr [edi + 0x8]
+        cmp     dword ptr [edi + 0x4], ebx
+        jbe     L_5975D0
+        call    ebp
+        mov     ebp, dword ptr [mem_00925134]
+    L_5975D0:
+        test    edi, edi
+        je      L_5975D8
+        cmp     edi, edi
+        je      L_5975E0
+    L_5975D8:
+        call    ebp
+        mov     ebp, dword ptr [mem_00925134]
+    L_5975E0:
+        cmp     esi, ebx
+        je      L_597622
+        test    edi, edi
+        jne     L_5975EA
+        call    ebp
+    L_5975EA:
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      L_5975F8
+        call    ebp
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      L_5975F8
+        call    ebp
+    L_5975F8:
+        mov     edx, dword ptr [mem_00B40640]
+        mov     eax, dword ptr [esi]
+        push    edx
+        lea     ecx, [eax + 0x64]
+        push    eax
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x1C]
+        call    ext_00594640
+        mov     ecx, eax
+        call    ext_005A17D0
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      L_59761D
+        call    ebp
+    L_59761D:
+        add     esi, 0x4
+        jmp     L_5975C0
+    L_597622:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        pop     ecx
+        ret     0x4
+    }
+}
