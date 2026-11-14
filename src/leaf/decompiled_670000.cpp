@@ -14933,3 +14933,126 @@ loc_0067466C:
         ret
     }
 }
+
+// [0x00672D60] sub_00672D60 (238 bytes)
+extern "C" void ext_006727D0();
+extern "C" void ext_00672860();
+extern "C" void ext_00672AD0();
+extern "C" void ext_00672BD0();
+
+extern "C" __declspec(naked) void __cdecl fn_00672D60(int* first, int* last, int ideal, void* pred) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        mov eax, edi
+        sub eax, ebx
+        sar eax, 0x2
+        cmp eax, 0x20
+        jle L_672DF7
+        mov esi, dword ptr [esp + 0x24]
+        nop
+    L_672D80:
+        test esi, esi
+        jle L_672E13
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        push edi
+        lea ecx, [esp + 0x18]
+        push ebx
+        push ecx
+        call ext_00672860
+        mov ebp, dword ptr [esp + 0x24]
+        mov eax, esi
+        cdq
+        sub eax, edx
+        sar eax, 1
+        mov esi, eax
+        cdq
+        sub eax, edx
+        sar eax, 1
+        add esi, eax
+        mov eax, dword ptr [esp + 0x20]
+        mov edx, edi
+        mov ecx, eax
+        sub edx, ebp
+        sub ecx, ebx
+        and edx, -0x4
+        and ecx, -0x4
+        add esp, 0x10
+        cmp ecx, edx
+        jge L_672DD7
+        mov edx, dword ptr [esp + 0x28]
+        push edx
+        push esi
+        push eax
+        push ebx
+        call fn_00672D60
+        mov ebx, ebp
+        jmp L_672DE8
+    L_672DD7:
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        push esi
+        push edi
+        push ebp
+        call fn_00672D60
+        mov edi, dword ptr [esp + 0x20]
+    L_672DE8:
+        mov eax, edi
+        sub eax, ebx
+        sar eax, 0x2
+        add esp, 0x10
+        cmp eax, 0x20
+        jg L_672D80
+    L_672DF7:
+        cmp eax, 0x1
+        jle L_672E0B
+        mov ecx, dword ptr [esp + 0x28]
+        push ecx
+        push edi
+        push ebx
+        call ext_00672AD0
+        add esp, 0xc
+    L_672E0B:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    L_672E13:
+        cmp eax, 0x20
+        jle L_672DF7
+        mov ecx, edi
+        sub ecx, ebx
+        and ecx, -0x4
+        cmp ecx, 0x4
+        jle L_672E37
+        mov edx, dword ptr [esp + 0x28]
+        push 0x0
+        push 0x0
+        push edx
+        push edi
+        push ebx
+        call ext_006727D0
+        add esp, 0x14
+    L_672E37:
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        push edi
+        push ebx
+        call ext_00672BD0
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
