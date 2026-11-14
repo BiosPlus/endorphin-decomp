@@ -4404,3 +4404,47 @@ extern "C" __declspec(naked) void __fastcall fn_005B0D90(void* self) {
         ret
     }
 }
+
+// [0x005B47A0] sub_005B47A0 (83 bytes)
+extern "C" void ext_004AFF30();
+extern "C" __declspec(naked) void* __cdecl fn_005B47A0(void* a1, void* a2, void* a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, dword ptr [esp + 0x8]
+        je loc_5B47EE
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+loc_5B47B2:
+        mov edi, dword ptr [esp + 0x14]
+        mov esi, ebp
+        sub edi, ebp
+        mov ebx, 0x3
+        nop
+loc_5B47C0:
+        lea ecx, [edi + esi]
+        push ecx
+        mov ecx, esi
+        call ext_004AFF30
+        add esi, 0x10
+        sub ebx, 0x1
+        jne loc_5B47C0
+        mov eax, dword ptr [esp + 0x14]
+        add eax, 0x30
+        add ebp, 0x30
+        cmp eax, dword ptr [esp + 0x18]
+        mov dword ptr [esp + 0x14], eax
+        jne loc_5B47B2
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+loc_5B47EE:
+        mov eax, dword ptr [esp + 0xc]
+        ret
+    }
+}
