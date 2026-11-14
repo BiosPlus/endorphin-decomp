@@ -210,3 +210,28 @@ extern "C" __declspec(naked) int __fastcall fn_00453F50(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x004535D0] RigEditor::vfunc_84 (75 bytes)
+extern "C" void __fastcall ext_0044CD80(void*);
+extern "C" void __fastcall ext_0044CE90(void*);
+extern "C" void __fastcall ext_0044CEC0(void*);
+extern "C" void __fastcall ext_0044D840(void*);
+extern "C" void __fastcall ext_0044D8E0(void*);
+extern "C" void __fastcall ext_0044FF40(void*);
+extern "C" void __fastcall ext_004510E0(void*);
+extern "C" void __fastcall ext_00452830(void*);
+extern "C" void __fastcall ext_006A5FC8(void*);
+
+extern "C" int __fastcall fn_004535D0(void* self) {
+    ext_006A5FC8(self);
+    ext_0044CD80(self);
+    ext_0044CE90(self);
+    ext_0044CEC0(self);
+    ext_0044FF40(self);
+    ext_0044D840(self);
+    ext_0044D8E0(self);
+    ext_00452830(self);
+    ext_004510E0(self);
+    *((unsigned char*)self + 0xA8) = 1;
+    return 0;
+}
