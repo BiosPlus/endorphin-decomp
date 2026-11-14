@@ -14578,3 +14578,85 @@ extern "C" __declspec(naked) void* __fastcall fn_00674150(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00679590] sub_00679590 (195 bytes)
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_00679590(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -0x1
+        push 0x872c79
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x8
+        push ebx
+        mov ebx, dword ptr [esp + 0x1c]
+        cmp byte ptr [ebx + 0x39], 0x0
+        push ebp
+        mov dword ptr [esp + 0x8], ecx
+        mov ebp, ebx
+        jne loc_679640
+        push esi
+        push edi
+        jmp loc_6795c6
+
+    loc_6795c2:
+        mov ebx, dword ptr [esp + 0x28]
+
+    loc_6795c6:
+        mov eax, dword ptr [ebp + 0x8]
+        mov ecx, dword ptr [esp + 0x10]
+        push eax
+        call fn_00679590
+        mov ebp, dword ptr [ebp]
+        lea esi, [ebx + 0xc]
+        mov dword ptr [esp + 0x14], esi
+        mov edi, dword ptr [esi + 0x20]
+        xor eax, eax
+        cmp edi, eax
+        mov dword ptr [esp + 0x20], eax
+        je loc_679612
+        mov ebx, dword ptr [esi + 0x24]
+        cmp edi, ebx
+        je loc_679600
+
+    loc_6795f1:
+        mov ecx, edi
+        call dword ptr [mem_00924FF4]
+        add edi, 0x20
+        cmp edi, ebx
+        jne loc_6795f1
+
+    loc_679600:
+        mov eax, dword ptr [esi + 0x20]
+        push eax
+        call ext_006A5C5C
+        mov ebx, dword ptr [esp + 0x2c]
+        add esp, 0x4
+        xor eax, eax
+
+    loc_679612:
+        mov ecx, esi
+        mov dword ptr [esi + 0x20], eax
+        mov dword ptr [esi + 0x24], eax
+        mov dword ptr [esi + 0x28], eax
+        mov dword ptr [esp + 0x20], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        push ebx
+        call ext_006A5C5C
+        add esp, 0x4
+        cmp byte ptr [ebp + 0x39], 0x0
+        mov dword ptr [esp + 0x28], ebp
+        je loc_6795c2
+        pop edi
+        pop esi
+
+    loc_679640:
+        mov ecx, dword ptr [esp + 0x10]
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x14
+        ret 0x4
+    }
+}
