@@ -11731,3 +11731,50 @@ loc_6750EE:
         ret
     }
 }
+
+// [0x00675050] sub_00675050 (84 bytes)
+extern "C" void ext_006745F0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00675050(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe loc_00675064_50
+        call dword ptr [mem_00925134]
+    loc_00675064_50:
+        mov ebp, dword ptr [esp + 0x14]
+    loc_00675068_50:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe loc_00675076_50
+        call dword ptr [mem_00925134]
+    loc_00675076_50:
+        cmp esi, ebx
+        je loc_0067509D_50
+        cmp esi, dword ptr [edi + 0x8]
+        jb loc_00675085_50
+        call dword ptr [mem_00925134]
+    loc_00675085_50:
+        mov ecx, dword ptr [esi]
+        push ebp
+        call ext_006745F0
+        cmp esi, dword ptr [edi + 0x8]
+        jb loc_00675098_50
+        call dword ptr [mem_00925134]
+    loc_00675098_50:
+        add esi, 0x4
+        jmp loc_00675068_50
+    loc_0067509D_50:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
