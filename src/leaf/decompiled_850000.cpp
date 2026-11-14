@@ -954,3 +954,62 @@ extern "C" __declspec(naked) int __cdecl fn_0085BDA0(void* stream, unsigned int 
         ret
     }
 }
+
+extern "C" void ext_0085D530();
+extern "C" int mem_00ABA454;
+
+// [0x0085E470] sub_0085E470 (154 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085E470(void) {
+    __asm {
+        sub esp, 4
+        cmp dword ptr [esp + 8], 0
+        push esi
+        push edi
+        je loc_85e504
+        mov ecx, dword ptr [mem_00ABA454]
+        test ecx, ecx
+        je loc_85e4be
+        mov edi, 0
+        jle loc_85e4be
+        mov esi, offset mem_00ABA454 + 5
+    loc_85e496:
+        lea eax, [esp + 8]
+        push 4
+        push esi
+        push eax
+        call ext_0085D530
+        mov eax, dword ptr [esp + 0x1c]
+        add esp, 0xc
+        mov ecx, dword ptr [mem_00ABA454]
+        cmp dword ptr [esp + 8], eax
+        je loc_85e504
+        add esi, 0xd
+        inc edi
+        cmp edi, ecx
+        jl loc_85e496
+    loc_85e4be:
+        lea eax, [esp + 0x10]
+        push 4
+        push eax
+        lea edx, [ecx + 2*ecx]
+        lea eax, [ecx + 4*edx]
+        add eax, offset mem_00ABA454 + 5
+        push eax
+        call ext_0085D530
+        add esp, 0xc
+        mov eax, dword ptr [mem_00ABA454]
+        lea ecx, [eax + 2*eax]
+        lea esi, [eax + 4*ecx]
+        mov byte ptr [esi + 0xaba458], 8
+        mov ax, word ptr [esp + 0x14]
+        push eax
+        call dword ptr [mem_00BC70F8]
+        mov word ptr [esi + mem_00ABA454 + 0xf], ax
+        inc dword ptr [mem_00ABA454]
+    loc_85e504:
+        pop edi
+        pop esi
+        add esp, 4
+        ret
+    }
+}
