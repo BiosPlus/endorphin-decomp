@@ -5062,3 +5062,355 @@ extern "C" __declspec(naked) void __fastcall fn_0080BA60(void* self) {
         ret
     }
 }
+
+// [0x0080FF10] sub_0080FF10 (624 bytes)
+extern "C" void ext_0080EFD0();
+extern "C" void ext_0080FAE0();
+extern "C" void ext_0085C390();
+extern "C" int mem_00B83EA0;
+extern "C" int mem_00B83EA8;
+extern "C" int mem_00B83EA4;
+
+extern "C" __declspec(naked) void __fastcall fn_0080FF10(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        test ecx, ecx
+        je loc_80ff30
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        je loc_80ff30
+        push eax
+        push ecx
+        call ext_0085C390
+        add esp, 8
+        neg eax
+        sbb eax, eax
+        inc eax
+        ret
+    loc_80ff30:
+        xor eax, eax
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 4], 0
+        mov eax, dword ptr [ebx + 8]
+        test eax, eax
+        je loc_80ffb6
+        lea ecx, [esp + 4]
+        push esi
+        push ecx
+        push eax
+        call ext_0080EFD0
+        mov esi, eax
+        add esp, 8
+        test esi, esi
+        je loc_80ffa9
+        mov eax, dword ptr [mem_00B83EA0]
+        test eax, eax
+        je loc_80ff80
+        push 0
+        mov edx, dword ptr [mem_00B83EA0]
+        call edx
+        add esp, 4
+    loc_80ff80:
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        jne loc_80ff8f
+        mov dword ptr [mem_00B83EA8], eax
+        jmp loc_80ff93
+    loc_80ff8f:
+        mov ecx, dword ptr [esi]
+        mov dword ptr [eax], ecx
+    loc_80ff93:
+        mov eax, dword ptr [mem_00B83EA4]
+        test eax, eax
+        je loc_80ffa9
+        push 0
+        mov edx, dword ptr [mem_00B83EA4]
+        call edx
+        add esp, 4
+    loc_80ffa9:
+        mov eax, dword ptr [ebx + 8]
+        push eax
+        call ext_0080FAE0
+        add esp, 4
+        pop esi
+    loc_80ffb6:
+        push ebx
+        call ext_00859730
+        add esp, 4
+        pop ebx
+        pop ecx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax + 4]
+        add eax, 0x68
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 4]
+        mov eax, dword ptr [ecx + 0x20]
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 4]
+        mov eax, dword ptr [ecx + 8]
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 8]
+        mov ecx, dword ptr [eax + 4]
+        mov dword ptr [ecx + 8], edx
+        ret
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 4]
+        mov eax, dword ptr [ecx + 0xc]
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 8]
+        mov ecx, dword ptr [eax + 4]
+        mov dword ptr [ecx + 0xc], edx
+        ret
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 4]
+        mov eax, dword ptr [ecx + 0x10]
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 8]
+        mov ecx, dword ptr [eax + 4]
+        mov dword ptr [ecx + 0x10], edx
+        ret
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 4]
+        mov eax, dword ptr [ecx + 4]
+        shr eax, 7
+        and eax, 1
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        je loc_810089
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax + 4]
+        mov ecx, dword ptr [eax + 4]
+        or cl, 0x80
+        mov dword ptr [eax + 4], ecx
+        ret
+    loc_810089:
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [ecx + 4]
+        mov ecx, dword ptr [eax + 4]
+        and cl, 0x7f
+        mov dword ptr [eax + 4], ecx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 4]
+        mov eax, dword ptr [ecx + 4]
+        shr eax, 8
+        and eax, 1
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        je loc_8100d9
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax + 4]
+        mov ecx, dword ptr [eax + 4]
+        or ch, 1
+        mov dword ptr [eax + 4], ecx
+        ret
+    loc_8100d9:
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [ecx + 4]
+        mov ecx, dword ptr [eax + 4]
+        and ch, 0xfe
+        mov dword ptr [eax + 4], ecx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 4]
+        mov eax, dword ptr [ecx + 4]
+        shr eax, 9
+        and eax, 1
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        je loc_810129
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax + 4]
+        mov ecx, dword ptr [eax + 4]
+        or ch, 2
+        mov dword ptr [eax + 4], ecx
+        ret
+    loc_810129:
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [ecx + 4]
+        mov ecx, dword ptr [eax + 4]
+        and ch, 0xfd
+        mov dword ptr [eax + 4], ecx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax + 4]
+        mov eax, dword ptr [ecx + 4]
+        shr eax, 5
+        and eax, 1
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        je loc_810174
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax + 4]
+        or dword ptr [eax + 4], 0x20
+        ret
+    loc_810174:
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [ecx + 4]
+        and dword ptr [eax + 4], -0x21
+        ret
+    }
+}
