@@ -2096,3 +2096,95 @@ SKIP2:
         ret
     }
 }
+
+extern "C" int __cdecl strcmp(const char*, const char*);
+extern "C" const char* __fastcall ext_006C9330(void* self);
+extern "C" void __fastcall ext_006E7410(void* self, int edx, int a, const char* b);
+extern "C" void __fastcall ext_006C9250(void* self);
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+
+// [0x006DC5F0] sub_006DC5F0 (175 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006DC5F0(void* self) {
+    __asm {
+        push    ebx
+        push    ebp
+        mov     ebp, ecx
+        push    esi
+        push    edi
+        xor     edi, edi
+        mov     eax, dword ptr [ebp + 0xb8]
+        lea     ebx, [ebp + 0xb8]
+        test    eax, eax
+        jle     loc_6dc64e
+    loc_6dc608:
+        mov     eax, dword ptr [ebp + 0xc8]
+        mov     esi, dword ptr [esp + 0x14]
+        mov     ecx, dword ptr [eax + 4*edi]
+        call    ext_006C9330
+    loc_6dc61a:
+        mov     dl, byte ptr [eax]
+        mov     cl, dl
+        cmp     dl, byte ptr [esi]
+        jne     loc_6dc63e
+        test    cl, cl
+        je      loc_6dc63a
+        mov     dl, byte ptr [eax + 0x1]
+        mov     cl, dl
+        cmp     dl, byte ptr [esi + 0x1]
+        jne     loc_6dc63e
+        add     eax, 0x2
+        add     esi, 0x2
+        test    cl, cl
+        jne     loc_6dc61a
+    loc_6dc63a:
+        xor     eax, eax
+        jmp     loc_6dc643
+    loc_6dc63e:
+        sbb     eax, eax
+        sbb     eax, -0x1
+    loc_6dc643:
+        test    eax, eax
+        je      loc_6dc669
+        mov     eax, dword ptr [ebx]
+        inc     edi
+        cmp     edi, eax
+        jl      loc_6dc608
+    loc_6dc64e:
+        push    0x00aa93d4
+    loc_6dc653:
+        mov     ecx, dword ptr [ebp + 0xec]
+        push    0x0
+        call    ext_006E7410
+        pop     edi
+        pop     esi
+        pop     ebp
+        xor     al, al
+        pop     ebx
+        ret     0x4
+    loc_6dc669:
+        test    edi, edi
+        jne     loc_6dc674
+        push    0x00aa9408
+        jmp     loc_6dc653
+    loc_6dc674:
+        mov     eax, dword ptr [ebx + 0x10]
+        push    edi
+        mov     ecx, ebx
+        mov     esi, dword ptr [eax + 4*edi]
+        call    ext_006D2200
+        test    esi, esi
+        je      loc_6dc696
+        mov     ecx, esi
+        call    ext_006C9250
+        push    esi
+        call    ext_006A5C5C
+        add     esp, 0x4
+    loc_6dc696:
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     al, 0x1
+        pop     ebx
+        ret     0x4
+    }
+}
