@@ -11054,3 +11054,103 @@ extern "C" __declspec(naked) void __fastcall fn_0051EE90(void* self) {
         ret     0x8
     }
 }
+
+// [0x0051EAC0] sub_0051EAC0 (230 bytes)
+extern "C" void ext_0051E000();
+extern "C" void ext_0051E4B0();
+extern "C" void ext_0051E710();
+extern "C" void ext_0051EAC0();
+extern "C" void ext_00680800();
+extern "C" __declspec(naked) void __fastcall fn_0051EAC0(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+    top_0051EAC0:
+        mov eax, dword ptr [ebp + 0x150]
+        test eax, eax
+        je slow_0051EAC0
+        cmp dword ptr [eax + 4], 1
+        jne slow_0051EAC0
+        mov edi, dword ptr [ebp + 0x124]
+        cmp edi, dword ptr [ebp + 0x128]
+        lea esi, [ebp + 0x120]
+        jbe chk1_0051EAC0
+        call dword ptr [mem_00925134]
+    chk1_0051EAC0:
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        jbe chk2_0051EAC0
+        call dword ptr [mem_00925134]
+    chk2_0051EAC0:
+        cmp esi, esi
+        je chk3_0051EAC0
+        call dword ptr [mem_00925134]
+    chk3_0051EAC0:
+        cmp edi, ebx
+        je slow_0051EAC0
+        cmp edi, dword ptr [esi + 8]
+        jb chk4_0051EAC0
+        call dword ptr [mem_00925134]
+    chk4_0051EAC0:
+        mov ecx, edi
+        call ext_0051E000
+        test al, al
+        jne found_0051EAC0
+        cmp edi, dword ptr [esi + 8]
+        jb chk5_0051EAC0
+        call dword ptr [mem_00925134]
+    chk5_0051EAC0:
+        add edi, 0xc0
+        jmp chk1_0051EAC0
+    slow_0051EAC0:
+        lea ecx, [ebp + 0x68]
+        call ext_00680800
+        cmp dword ptr [ebp + 4], 1
+        jne tail_0051EAC0
+        mov ecx, ebp
+        call ext_0051E4B0
+        test eax, eax
+        je done_0051EAC0
+        mov ebp, eax
+        jmp top_0051EAC0
+    found_0051EAC0:
+        push edi
+        mov ecx, ebp
+        call ext_0051E710
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    tail_0051EAC0:
+        mov edi, dword ptr [ebp + 0x148]
+        cmp dword ptr [ebp + 0x144], edi
+        jbe chk6_0051EAC0
+        call dword ptr [mem_00925134]
+    chk6_0051EAC0:
+        mov esi, dword ptr [ebp + 0x144]
+        cmp esi, dword ptr [ebp + 0x148]
+        jbe chk7_0051EAC0
+        call dword ptr [mem_00925134]
+    chk7_0051EAC0:
+        cmp esi, edi
+        je done_0051EAC0
+        _emit 0x8b
+        _emit 0xff
+    loop_0051EAC0:
+        mov ecx, esi
+        call ext_0051EAC0
+        add esi, 0x168
+        cmp esi, edi
+        jne loop_0051EAC0
+    done_0051EAC0:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
