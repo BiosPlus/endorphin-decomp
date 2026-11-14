@@ -11746,3 +11746,105 @@ extern "C" __declspec(naked) void __fastcall fn_0056AD60(void* self) {
         ret
     }
 }
+
+// [0x0056AE60] sub_0056AE60 (248 bytes)
+extern "C" void ext_0056A0C0();
+extern "C" __declspec(naked) void __fastcall fn_0056AE60(void* self) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push 0x89bf7b
+        push eax
+        mov fs:[0], esp
+        mov eax, [esp + 0x18]
+        cmp eax, [esp + 0x20]
+        push ebx
+        push esi
+        push edi
+        mov ebx, eax
+        je L_empty
+        mov edi, [esp + 0x30]
+        _emit 0x8d
+        _emit 0x64
+        _emit 0x24
+        _emit 0x00
+    L_loop:
+        mov esi, [ebx]
+        push 0x20c
+        call ext_006A5C62
+        add esp, 4
+        mov [esp + 0x30], eax
+        test eax, eax
+        mov dword ptr [esp + 0x14], 0
+        je L_null
+        push esi
+        mov ecx, eax
+        call ext_0056A0C0
+        jmp L_after_ctor
+    L_null:
+        xor eax, eax
+    L_after_ctor:
+        mov ecx, [edi + 4]
+        test ecx, ecx
+        mov dword ptr [esp + 0x14], -1
+        mov [esp + 0x30], eax
+        jne L_has_buf
+        xor esi, esi
+        jmp L_check_cap
+    L_has_buf:
+        mov esi, [edi + 8]
+        sub esi, ecx
+        sar esi, 2
+    L_check_cap:
+        test ecx, ecx
+        je L_insert
+        mov edx, [edi + 0xc]
+        sub edx, ecx
+        sar edx, 2
+        cmp esi, edx
+        jae L_insert
+        mov ecx, [edi + 8]
+        mov [ecx], eax
+        add ecx, 4
+        mov [edi + 8], ecx
+        jmp L_next
+    L_insert:
+        mov esi, [edi + 8]
+        cmp ecx, esi
+        jbe L_no_invalid
+        call dword ptr [mem_00925134]
+    L_no_invalid:
+        lea eax, [esp + 0x30]
+        push eax
+        push esi
+        push edi
+        lea ecx, [esp + 0x2c]
+        push ecx
+        mov ecx, edi
+        call ext_0059A140
+    L_next:
+        add ebx, 4
+        cmp ebx, [esp + 0x2c]
+        jne L_loop
+        mov eax, [esp + 0x1c]
+        mov [eax], edi
+        mov ecx, [esp + 0xc]
+        mov fs:[0], ecx
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0xc
+        ret
+    L_empty:
+        mov edx, [esp + 0x30]
+        mov eax, [esp + 0x1c]
+        mov ecx, [esp + 0xc]
+        pop edi
+        pop esi
+        mov [eax], edx
+        mov fs:[0], ecx
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
