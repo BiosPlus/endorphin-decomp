@@ -10487,3 +10487,65 @@ extern "C" __declspec(naked) void __fastcall fn_0055DBD0(void* self) {
         ret 8
     }
 }
+
+// [0x00558E90] sub_00558E90 (142 bytes)
+extern "C" void ext_00553980();
+extern "C" void ext_00558A30();
+extern "C" void ext_00558E90();
+extern "C" __declspec(naked) void __fastcall fn_00558E90(void* self) {
+    __asm {
+        sub esp, 0x1c
+        push ebp
+        push edi
+        mov edi, dword ptr [esp + 0x28]
+        test edi, edi
+        mov ebp, ecx
+        je null_out
+        push esi
+        lea ecx, [esp + 0xc]
+        call ext_00553980
+        push 1
+        lea eax, [esp + 0x10]
+        push eax
+        lea ecx, [esp + 0x34]
+        push ecx
+        mov ecx, ebp
+        call ext_00558A30
+        mov esi, dword ptr [edi + 0x1d4]
+        cmp esi, dword ptr [edi + 0x1d8]
+        jbe loop_top
+        call dword ptr [mem_00925134]
+loop_top:
+        push ebx
+loop_reload:
+        mov ebx, dword ptr [edi + 0x1d8]
+        cmp dword ptr [edi + 0x1d4], ebx
+        jbe check_end
+        call dword ptr [mem_00925134]
+check_end:
+        cmp esi, ebx
+        je loop_done
+        cmp esi, dword ptr [edi + 0x1d8]
+        jb elem_ok
+        call dword ptr [mem_00925134]
+elem_ok:
+        mov edx, dword ptr [esi]
+        push edx
+        mov ecx, ebp
+        call ext_00558E90
+        cmp esi, dword ptr [edi + 0x1d8]
+        jb next_elem
+        call dword ptr [mem_00925134]
+next_elem:
+        add esi, 4
+        jmp loop_reload
+loop_done:
+        pop ebx
+        pop esi
+null_out:
+        pop edi
+        pop ebp
+        add esp, 0x1c
+        ret 4
+    }
+}
