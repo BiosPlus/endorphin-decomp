@@ -18,5 +18,7 @@
     "0x005F150E",
     "0x005F1518"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T03:09:52Z"
 }
