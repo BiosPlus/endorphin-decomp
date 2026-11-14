@@ -1164,3 +1164,65 @@ extern "C" __declspec(naked) void __fastcall fn_004838D0(void* self) {
         jmp ext_004825C0
     }
 }
+
+extern "C" void ext_005870B0();
+extern "C" int mem_00925134;
+
+// [0x00480EE0] ToolEngine::vfunc_25 (128 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00480EE0(void* self, int edx_unused, int arg1) {
+    __asm {
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        call ext_00594000
+        lea ecx, [eax + 0xfc]
+        call ext_0065D120
+        mov eax, dword ptr [ebp + 0x10]
+        mov edx, dword ptr [eax + 0x10]
+        lea ecx, [ebp + 0x10]
+        call edx
+        mov esi, eax
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe skip_1
+        call dword ptr [mem_00925134]
+    skip_1:
+        push ebx
+    loop_top:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe skip_2
+        call dword ptr [mem_00925134]
+    skip_2:
+        cmp edi, ebx
+        je loop_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb skip_3
+        call dword ptr [mem_00925134]
+    skip_3:
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [edi]
+        push eax
+        call ext_005870B0
+        cmp edi, dword ptr [esi + 0x8]
+        jb skip_4
+        call dword ptr [mem_00925134]
+    skip_4:
+        add edi, 4
+        jmp loop_top
+    loop_done:
+        cmp dword ptr [ebp + 4], 0
+        pop ebx
+        je done
+        mov ecx, dword ptr [ebp + 4]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        ret 4
+    }
+}
