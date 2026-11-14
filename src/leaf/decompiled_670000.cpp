@@ -15995,3 +15995,134 @@ __declspec(naked) void __fastcall fn_006735D0(void* self) {
         ret     0xC
     }
 }
+
+// [0x00677E40] sub_00677E40 (353 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00677E40(void* self) {
+    __asm {
+        push    -0x1
+        push    0x87ba58
+        mov     eax, dword ptr fs:[0x0]
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x14
+        push    ebx
+        push    ebp
+        mov     ebx, ecx
+        mov     eax, dword ptr [ebx + 0x40]
+        push    esi
+        mov     esi, dword ptr [esp + 0x30]
+        cmp     esi, eax
+        push    edi
+        mov     dword ptr [esp + 0x10], ebx
+        je      L_00677EA7
+        test    eax, eax
+        je      L_00677E85
+        lea     ecx, [ebx + 0x4]
+        lea     edx, [esp + 0x34]
+        mov     dword ptr [esp + 0x34], ecx
+        push    edx
+        lea     ecx, [eax + 0x4]
+        call    ext_00451670
+    L_00677E85:
+        test    esi, esi
+        mov     dword ptr [ebx + 0x40], esi
+        je      L_00677EA7
+        cmp     byte ptr [esp + 0x3c], 0x0
+        je      L_00677EA7
+        lea     ecx, [esp + 0x3c]
+        lea     eax, [ebx + 0x4]
+        push    ecx
+        lea     ecx, [esi + 0x4]
+        mov     dword ptr [esp + 0x40], eax
+        call    ext_005A6300
+    L_00677EA7:
+        mov     esi, dword ptr [ebx + 0x28]
+        cmp     dword ptr [ebx + 0x24], esi
+        lea     edi, [ebx + 0x20]
+        jbe     L_00677EB8
+        call    dword ptr [mem_00925134]
+    L_00677EB8:
+        mov     ebp, dword ptr [edi + 0x4]
+        cmp     ebp, dword ptr [edi + 0x8]
+        jbe     L_00677EC6
+        call    dword ptr [mem_00925134]
+    L_00677EC6:
+        push    esi
+        push    edi
+        push    ebp
+        push    edi
+        lea     edx, [esp + 0x2c]
+        push    edx
+        mov     ecx, edi
+        call    ext_004F0340
+        mov     eax, dword ptr [esp + 0x38]
+        lea     ebp, [ebx + 0x30]
+        push    eax
+        mov     ecx, ebp
+        call    ext_004AFF30
+        mov     esi, dword ptr [ebp + 0x4]
+        cmp     esi, dword ptr [ebp + 0x8]
+        jbe     L_00677EF3
+        call    dword ptr [mem_00925134]
+    L_00677EF3:
+        mov     eax, dword ptr [ebp + 0x8]
+        cmp     dword ptr [ebp + 0x4], eax
+        mov     dword ptr [esp + 0x3c], eax
+        jbe     L_00677F09
+        call    dword ptr [mem_00925134]
+    L_00677F05:
+        mov     ebx, dword ptr [esp + 0x10]
+    L_00677F09:
+        test    ebp, ebp
+        je      L_00677F11
+        cmp     ebp, ebp
+        je      L_00677F1B
+    L_00677F11:
+        call    dword ptr [mem_00925134]
+        mov     ebx, dword ptr [esp + 0x10]
+    L_00677F1B:
+        cmp     esi, dword ptr [esp + 0x3c]
+        je      L_00677F7A
+        test    ebp, ebp
+        jne     L_00677F2B
+        call    dword ptr [mem_00925134]
+    L_00677F2B:
+        cmp     esi, dword ptr [ebp + 0x8]
+        jb      L_00677F36
+        call    dword ptr [mem_00925134]
+    L_00677F36:
+        mov     ecx, dword ptr [esi]
+        push    ecx
+        lea     ecx, [esp + 0x18]
+        call    ext_00661650
+        push    eax
+        mov     ecx, edi
+        mov     dword ptr [esp + 0x30], 0x0
+        call    ext_004AF570
+        lea     ecx, [esp + 0x14]
+        mov     dword ptr [esp + 0x2c], 0xffffffff
+        call    ext_00493D90
+        cmp     esi, dword ptr [ebp + 0x8]
+        jb      L_00677F6E
+        call    dword ptr [mem_00925134]
+    L_00677F6E:
+        mov     ebx, dword ptr [esp + 0x10]
+        add     esi, 0x4
+        jmp     L_00677EF3
+    L_00677F7A:
+        push    0x0
+        push    ebp
+        lea     ecx, [ebx + 0x44]
+        call    ext_00466BA0
+        mov     ecx, ebx
+        call    ext_00677460
+        mov     ecx, dword ptr [esp + 0x24]
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x20
+        ret     0xc
+    }
+}
