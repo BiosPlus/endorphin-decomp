@@ -370,3 +370,44 @@ extern "C" __declspec(naked) void __fastcall fn_0079E900(void* self) {
         jmp ext_0079E5E0
     }
 }
+
+// [0x0079D740] sub_0079D740 (95 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_0079D7C0();
+
+extern "C" __declspec(naked) void __fastcall fn_0079D740(void* self) {
+    __asm {
+        push -1
+        push 0x008B8FDB
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push 0x1C8
+        call ext_006A5C62
+        add esp, 4
+        _emit 0x89
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        test eax, eax
+        mov dword ptr [esp + 0xC], 0
+        je label_null
+        mov ecx, eax
+        call ext_0079D7C0
+        jmp label_cont
+    label_null:
+        xor eax, eax
+    label_cont:
+        mov edx, dword ptr [eax]
+        push 0
+        push 0xC
+        mov ecx, eax
+        mov dword ptr [esp + 0x14], 0xFFFFFFFF
+        call dword ptr [edx]
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
