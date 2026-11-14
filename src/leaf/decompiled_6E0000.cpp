@@ -1043,3 +1043,107 @@ extern "C" __declspec(naked) void* __fastcall fn_006E8910(void* self) {
         ret 0x48
     }
 }
+
+// [0x006E8C60] sub_006E8C60 (175 bytes)
+extern "C" void ext_006D2200();
+extern "C" void ext_006E7440();
+extern "C" void ext_006E7460();
+
+extern "C" __declspec(naked) unsigned char __fastcall fn_006E8C60(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push esi
+        test ebx, ebx
+        push edi
+        mov esi, ecx
+        jne short loc_6E8C81
+        push ebx
+        lea ecx, [esi + 0x94]
+        call ext_006E7440
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 4
+
+    loc_6E8C81:
+        mov ecx, dword ptr [esi + 4]
+        lea edi, [esi + 4]
+        xor eax, eax
+        test ecx, ecx
+        jle short loc_6E8CB6
+        mov edx, dword ptr [edi + 0x10]
+
+    loc_6E8C90:
+        cmp dword ptr [edx], ebx
+        je short loc_6E8CB1
+        inc eax
+        add edx, 4
+        cmp eax, ecx
+        jl short loc_6E8C90
+        push 2
+        lea ecx, [esi + 0x94]
+        call ext_006E7440
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 4
+
+    loc_6E8CB1:
+        cmp eax, -1
+        jne short loc_6E8CCB
+
+    loc_6E8CB6:
+        push 2
+        lea ecx, [esi + 0x94]
+        call ext_006E7440
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 4
+
+    loc_6E8CCB:
+        mov ecx, esi
+        call ext_006E7460
+        cmp ebx, eax
+        jne short loc_6E8CDC
+        mov dword ptr [esi], 0
+
+    loc_6E8CDC:
+        mov edx, dword ptr [edi]
+        xor eax, eax
+        test edx, edx
+        jle short loc_6E8D07
+        mov ecx, dword ptr [edi + 0x10]
+
+    loc_6E8CE7:
+        cmp dword ptr [ecx], ebx
+        je short loc_6E8CFB
+        inc eax
+        add ecx, 4
+        cmp eax, edx
+        jl short loc_6E8CE7
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        ret 4
+
+    loc_6E8CFB:
+        test eax, eax
+        jl short loc_6E8D07
+        push eax
+        mov ecx, edi
+        call ext_006D2200
+
+    loc_6E8D07:
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        ret 4
+    }
+}
