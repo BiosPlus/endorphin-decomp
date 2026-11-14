@@ -280,3 +280,280 @@ L_end:
         ret
     }
 }
+
+// [0x00443C30] MultiTrackView::MultiTrackViewStates::MoveState::vfunc_12 (685 bytes)
+extern "C" void ext_00412E60();
+extern "C" void ext_0043B400();
+extern "C" void ext_0043BCA0();
+extern "C" void ext_0043C070();
+extern "C" void ext_0043CDD0();
+extern "C" void ext_0043F520();
+extern "C" void ext_004407B0();
+extern "C" void ext_00440920();
+extern "C" void ext_00441020();
+extern "C" void ext_00441040();
+extern "C" void ext_00443A10();
+extern "C" void ext_00443AE0();
+extern "C" int mem_00925134;
+extern "C" int mem_00925688;
+
+extern "C" __declspec(naked) void __fastcall fn_00443C30(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x40
+        sub esp, 0x74
+        push ebx
+        mov ebx, ecx
+        cmp byte ptr [ebx + 0x30], 0x0
+        push esi
+        push edi
+        mov dword ptr [esp + 0x4c], ebx
+        je L_443C57
+        mov byte ptr [ebx + 0x30], 0x0
+        mov al, 0x1
+        pop edi
+        pop esi
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0xc
+    L_443C57:
+        fldz
+        mov ecx, dword ptr [ebx + 0x8]
+        mov eax, dword ptr [ebx + 0x4]
+        fstp qword ptr [esp + 0x58]
+        fld qword ptr [ecx + 0xf0]
+        mov edx, dword ptr [eax + 0xc]
+        fstp qword ptr [esp + 0x78]
+        push edx
+        fld qword ptr [ecx + 0xe8]
+        fstp qword ptr [esp + 0x74]
+        call ext_0043CDD0
+        fstp st(0)
+        mov eax, dword ptr [ebp + 0x10]
+        mov ecx, dword ptr [ebp + 0xc]
+        push eax
+        push ecx
+        mov ecx, ebx
+        mov byte ptr [esp + 0x53], 0x0
+        call ext_00443A10
+        fstp qword ptr [esp + 0x68]
+        mov esi, dword ptr [ebx + 0x10]
+        cmp esi, dword ptr [ebx + 0x14]
+        lea edi, [ebx + 0xc]
+        jbe L_443CAB
+        call dword ptr [mem_00925134]
+    L_443CAB:
+        mov dword ptr [esp + 0x64], esi
+        nop
+    L_443CB0:
+        mov eax, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], eax
+        mov dword ptr [esp + 0x50], eax
+        jbe L_443CC2
+        call dword ptr [mem_00925134]
+    L_443CC2:
+        cmp edi, edi
+        je L_443CCC
+        call dword ptr [mem_00925134]
+    L_443CCC:
+        cmp esi, dword ptr [esp + 0x50]
+        je L_443DB3
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_443CE1
+        call dword ptr [mem_00925134]
+    L_443CE1:
+        mov esi, dword ptr [esi]
+        mov ecx, esi
+        call ext_00441020
+        mov ecx, esi
+        mov dword ptr [esp + 0x50], eax
+        call ext_00441040
+        fld qword ptr [esp + 0x68]
+        sub esp, 0x8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        mov dword ptr [esp + 0x5c], eax
+        call ext_00440920
+        mov ecx, esi
+        call ext_00441020
+        cmp eax, dword ptr [esp + 0x50]
+        je L_443D96
+        fld qword ptr [esp + 0x70]
+        mov byte ptr [esp + 0x4b], 0x1
+        fld st(0)
+        fld1
+        fadd st(1), st(0)
+        fxch st(1)
+        fcom qword ptr [esi + 0x50]
+        fnstsw ax
+        test ah, 0x41
+        jne L_443D57
+        fild dword ptr [esp + 0x50]
+        fcomp st(3)
+        fnstsw ax
+        fstp st(2)
+        test ah, 0x41
+        jne L_443D59
+        fstp st(0)
+        fsubr qword ptr [esi + 0x50]
+        fcom qword ptr [esp + 0x58]
+        fnstsw ax
+        test ah, 0x41
+        je L_443D94
+        fstp qword ptr [esp + 0x58]
+        jmp L_443D96
+    L_443D57:
+        fstp st(0)
+    L_443D59:
+        fstp st(1)
+        fld qword ptr [esp + 0x78]
+        fld st(0)
+        fsubrp st(2), st(0)
+        fxch st(1)
+        fcom qword ptr [esi + 0x58]
+        fnstsw ax
+        test ah, 0x5
+        jp L_443D92
+        fild dword ptr [esp + 0x54]
+        fcomp st(2)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jp L_443D94
+        fsubr qword ptr [esi + 0x58]
+        fcom qword ptr [esp + 0x58]
+        fnstsw ax
+        test ah, 0x5
+        jnp L_443D94
+        fstp qword ptr [esp + 0x58]
+        jmp L_443D96
+    L_443D92:
+        fstp st(0)
+    L_443D94:
+        fstp st(0)
+    L_443D96:
+        mov edx, dword ptr [esp + 0x64]
+        cmp edx, dword ptr [edi + 0x8]
+        jb L_443DA5
+        call dword ptr [mem_00925134]
+    L_443DA5:
+        add dword ptr [esp + 0x64], 0x4
+        mov esi, dword ptr [esp + 0x64]
+        jmp L_443CB0
+    L_443DB3:
+        mov eax, dword ptr [ebp + 0x10]
+        mov ecx, dword ptr [ebp + 0xc]
+        push eax
+        push ecx
+        mov ecx, ebx
+        mov byte ptr [esp + 0x52], 0x0
+        call ext_00443AE0
+        test eax, eax
+        mov dword ptr [esp + 0x54], eax
+        je L_443E99
+        mov ebx, dword ptr [edi + 0x4]
+        cmp ebx, dword ptr [edi + 0x8]
+        jbe L_443DE1
+        call dword ptr [mem_00925134]
+    L_443DE1:
+        mov esi, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], esi
+        mov dword ptr [esp + 0x64], ebx
+        jbe L_443DF3
+        call dword ptr [mem_00925134]
+    L_443DF3:
+        cmp edi, edi
+        je L_443DFD
+        call dword ptr [mem_00925134]
+    L_443DFD:
+        cmp ebx, esi
+        je L_443E7B
+        cmp ebx, dword ptr [edi + 0x8]
+        jb L_443E0C
+        call dword ptr [mem_00925134]
+    L_443E0C:
+        mov esi, dword ptr [ebx]
+        cmp byte ptr [esi + 0x8f], 0x0
+        je L_443E61
+        mov ecx, esi
+        call ext_004407B0
+        mov edi, dword ptr [esi + 0x44]
+        mov ebx, eax
+        test ebx, ebx
+        je L_443E5D
+        test edi, edi
+        je L_443E5D
+        mov ecx, edi
+        call ext_0043B400
+        add eax, dword ptr [esp + 0x54]
+        mov ecx, ebx
+        push eax
+        call ext_00412E60
+        mov ebx, eax
+        test ebx, ebx
+        je L_443E5D
+        cmp ebx, edi
+        je L_443E5D
+        push esi
+        mov ecx, edi
+        mov byte ptr [esp + 0x4e], 0x1
+        call ext_0043BCA0
+        push esi
+        mov ecx, ebx
+        call ext_0043C070
+    L_443E5D:
+        mov ebx, dword ptr [esp + 0x64]
+    L_443E61:
+        mov edi, dword ptr [esp + 0x4c]
+        add edi, 0xc
+        cmp ebx, dword ptr [edi + 0x8]
+        jb L_443E73
+        call dword ptr [mem_00925134]
+    L_443E73:
+        add ebx, 0x4
+        jmp L_443DE1
+    L_443E7B:
+        cmp byte ptr [esp + 0x4a], 0x0
+        mov ebx, dword ptr [esp + 0x4c]
+        je L_443E99
+        mov ecx, dword ptr [ebp + 0xc]
+        mov edx, ebx
+        mov eax, dword ptr [edx + 0x4]
+        mov edx, dword ptr [ebp + 0x10]
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x10], edx
+        jmp L_443EA8
+    L_443E99:
+        mov eax, dword ptr [ebx + 0x4]
+        mov ecx, dword ptr [eax + 0x10]
+        mov edx, dword ptr [ebp + 0xc]
+        mov dword ptr [eax + 0xc], edx
+        mov dword ptr [eax + 0x10], ecx
+    L_443EA8:
+        cmp byte ptr [esp + 0x4b], 0x0
+        jne L_443EB6
+        cmp byte ptr [esp + 0x4a], 0x0
+        je L_443ED2
+    L_443EB6:
+        mov ecx, dword ptr [ebx + 0x8]
+        push 0x1
+        push edi
+        call ext_0043F520
+        mov eax, dword ptr [ebx + 0x8]
+        mov ecx, dword ptr [eax + 0x20]
+        push 0x1
+        push 0x0
+        push ecx
+        call dword ptr [mem_00925688]
+    L_443ED2:
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0xc
+    }
+}
