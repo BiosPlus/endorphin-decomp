@@ -775,3 +775,32 @@ extern "C" __declspec(naked) void __fastcall fn_0071C030(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0071C090] sub_0071C090 (79 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0071C090(void* self, int edx_unused, double arg_0) {
+    __asm {
+        mov edx, dword ptr [ecx + 0Ch]
+        fld qword ptr [esp + 4]
+        fcomp qword ptr [edx + 0D28h]
+        fnstsw ax
+        test ah, 40h
+        jne loc_71C0DC
+        fld qword ptr [esp + 4]
+        fcomp qword ptr [mem_0099DEC8]
+        fnstsw ax
+        test ah, 41h
+        jne loc_71C0C9
+        fld qword ptr [esp + 4]
+        push 0
+        fstp qword ptr [edx + 0D28h]
+        call ext_0071B920
+        ret 8
+    loc_71C0C9:
+        fld qword ptr [mem_0099DEC8]
+        push 0
+        fstp qword ptr [edx + 0D28h]
+        call ext_0071B920
+    loc_71C0DC:
+        ret 8
+    }
+}
