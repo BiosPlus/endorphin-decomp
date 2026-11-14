@@ -9813,3 +9813,23 @@ extern "C" void __fastcall fn_00474C10(void* self) {
     fields[2] = 0;
     ext_00678DE0(self);
 }
+
+// [0x00477340] sub_00477340 (49 bytes)
+struct Triple12 {
+    int a;
+    int b;
+    int c;
+};
+
+extern "C" Triple12* __cdecl fn_00477340(Triple12* first, Triple12* last, Triple12* dest) {
+    while (first != last) {
+        if (dest) {
+            dest->a = first->a;
+            dest->b = first->b;
+            dest->c = first->c;
+        }
+        ++first;
+        ++dest;
+    }
+    return dest;
+}
