@@ -10306,3 +10306,124 @@ extern "C" __declspec(naked) void* __fastcall fn_005A2540(void* self, int edx_un
         ret 0x20
     }
 }
+
+// [0x005A3C10] sub_005A3C10 (295 bytes)
+extern "C" void ext_00596A70();
+extern "C" void ext_005EBB60();
+extern "C" void ext_00673C20();
+extern "C" void ext_005BE990();
+extern "C" void ext_0059DEC0();
+extern "C" void ext_0060BB70();
+
+extern "C" __declspec(naked) void __fastcall fn_005A3C10(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x8
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        lea ecx, [esi + 0x160]
+        call ext_005EBB60
+        mov ecx, dword ptr [esi + 0x590]
+        mov eax, dword ptr [ecx]
+        lea ebx, [esi + 0x58c]
+        mov edi, ebx
+        mov dword ptr [esp + 0x10], edi
+        mov dword ptr [esp + 0x14], eax
+    loop_top:
+        test edi, edi
+        mov ebp, dword ptr [ebx + 0x4]
+        je bad_1
+        cmp edi, ebx
+        je ok_1
+    bad_1:
+        call dword ptr [mem_00925134]
+    ok_1:
+        cmp dword ptr [esp + 0x14], ebp
+        je done_block
+        test edi, edi
+        jne ok_2
+        call dword ptr [mem_00925134]
+    ok_2:
+        mov edx, dword ptr [esp + 0x14]
+        cmp edx, dword ptr [edi + 0x4]
+        jne ok_3
+        call dword ptr [mem_00925134]
+    ok_3:
+        mov eax, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [ecx + 0x28]
+        push eax
+        call ext_005EBB60
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        mov edi, dword ptr [esp + 0x10]
+        jmp loop_top
+    done_block:
+        mov edi, dword ptr [esi + 0x59c]
+        xor edx, edx
+        push edx
+        lea eax, [esi + 0x598]
+        mov ecx, offset ext_005BE990
+        push ecx
+        push edi
+        push eax
+        mov ebx, edi
+        mov ebx, dword ptr [ebx]
+        push ebx
+        push eax
+        lea edx, [esp + 0x28]
+        push edx
+        call ext_005B8EA0
+        mov edi, dword ptr [esi + 0x554]
+        xor edx, edx
+        push edx
+        lea eax, [esi + 0x550]
+        mov ecx, offset ext_0059DEC0
+        push ecx
+        push edi
+        push eax
+        mov ebx, edi
+        mov ebx, dword ptr [ebx]
+        push ebx
+        push eax
+        lea eax, [esp + 0x44]
+        push eax
+        xor ebp, ebp
+        call ext_005B8EA0
+        mov ecx, dword ptr [esi + 0x560]
+        lea eax, [esi + 0x55c]
+        push offset ext_0060BB70
+        push ecx
+        push eax
+        mov edx, ecx
+        mov edx, dword ptr [edx]
+        push edx
+        push eax
+        lea eax, [esp + 0x68]
+        push eax
+        call ext_00596A70
+        mov ecx, dword ptr [esi + 0x5ec]
+        add esp, 0x50
+        cmp ecx, ebp
+        je skip_release
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        push 0x1
+        call eax
+    skip_release:
+        fld1
+        mov dword ptr [esi + 0x5ec], ebp
+        pop edi
+        fstp dword ptr [esi + 0x604]
+        mov dword ptr [esi + 0x5f4], ebp
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
