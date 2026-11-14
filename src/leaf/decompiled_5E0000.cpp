@@ -4759,3 +4759,38 @@ extern "C" __declspec(naked) void __fastcall fn_005ECCA0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_005EEDB0();
+extern "C" void ext_005EEEF0();
+
+// [0x005EFEE0] sub_005EFEE0 (114 bytes)
+// __thiscall, ret 0: SEH-framed constructor; sets vtables at this+0/+4/+8/+0xc/+0x150/+0x154, returns this.
+extern "C" __declspec(naked) void* __fastcall fn_005EFEE0(void* self) {
+    __asm {
+        push -1
+        push 0x8a6a68
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        call ext_005EEEF0
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0
+        mov dword ptr [esi], 0x96b814
+        mov dword ptr [esi + 4], 0x96b7cc
+        mov dword ptr [esi + 8], 0x96b78c
+        mov dword ptr [esi + 0xc], 0x96b73c
+        mov dword ptr [esi + 0x150], 0x96b728
+        mov dword ptr [esi + 0x154], 0x96b720
+        call ext_005EEDB0
+        mov ecx, dword ptr [esp + 8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
