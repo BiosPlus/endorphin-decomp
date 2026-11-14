@@ -5692,3 +5692,25 @@ extern "C" __declspec(naked) void __fastcall fn_00520780(void* self) {
         ret 0x4
     }
 }
+
+// [0x00520AE0] sub_00520AE0 (171 bytes)
+extern "C" void ext_00491150();
+extern "C" void ext_0051ED10();
+extern "C" void ext_005201F0();
+extern "C" void ext_00520780();
+
+extern "C" void* __fastcall fn_00520AE0(void* self, int edx_unused, void* other) {
+    *(int*)((char*)self + 0x4) = *(int*)((char*)other + 0x4);
+    *((char*)self + 0x8) = *((char*)other + 0x8);
+    *((char*)self + 0x9) = *((char*)other + 0x9);
+    ((void (__thiscall*)(void*, void*))ext_00491150)((char*)self + 0xc, (char*)other + 0xc);
+    ((void (__thiscall*)(void*, void*))ext_00491150)((char*)self + 0x68, (char*)other + 0x68);
+    ((void (__thiscall*)(void*, void*))ext_00491150)((char*)self + 0xc4, (char*)other + 0xc4);
+    ((void (__thiscall*)(void*, void*))ext_005201F0)((char*)self + 0x120, (char*)other + 0x120);
+    ((void (__thiscall*)(void*, void*))ext_005201F0)((char*)self + 0x130, (char*)other + 0x130);
+    ((void (__thiscall*)(void*, void*))ext_00520780)((char*)self + 0x140, (char*)other + 0x140);
+    *(int*)((char*)self + 0x150) = *(int*)((char*)other + 0x150);
+    *(int*)((char*)self + 0x154) = *(int*)((char*)other + 0x154);
+    ((void (__thiscall*)(void*, void*))ext_0051ED10)((char*)self + 0x158, (char*)other + 0x158);
+    return self;
+}
