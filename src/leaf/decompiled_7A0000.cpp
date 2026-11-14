@@ -462,3 +462,85 @@ extern "C" __declspec(naked) void __cdecl fn_007ACAC0(void* p) {
         ret
     }
 }
+
+// [0x007AD6B0] sub_007AD6B0 (143 bytes)
+extern "C" void ext_0078D130();
+extern "C" void ext_00872828();
+extern "C" int mem_00B6167C;
+
+extern "C" __declspec(naked) void __fastcall fn_007AD6B0(void* self) {
+    __asm {
+        push -1
+        push 0x8c1c08
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        _emit 0xc7
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        _emit 0xe0
+        _emit 0x89
+        _emit 0x99
+        _emit 0x00
+        mov eax, dword ptr [esp + 0x14]
+        _emit 0x8d
+        _emit 0x54
+        _emit 0x24
+        _emit 0x00
+        push eax
+        push edx
+        mov dword ptr [esp + 0x14], 0
+        call ext_0078D130
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        push ebp
+        mov ebp, esp
+        sub esp, 0x10
+        mov dword ptr [ebp - 0x8], 0
+        mov dword ptr [ebp - 0x4], 0x40400000
+        fld1
+        fld qword ptr [ebp - 0x8]
+        fyl2x
+        fstp qword ptr [ebp - 0x10]
+        fld qword ptr [ebp - 0x10]
+        call ext_00872828
+        mov dword ptr [mem_00B6167C], eax
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
