@@ -4548,3 +4548,28 @@ extern "C" __declspec(naked) void* __fastcall fn_005B5170(void* self, int edx_un
         ret 14h
     }
 }
+
+// [0x005B5B50] sub_005B5B50 (73 bytes)
+extern "C" void ext_005B5A70();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_005B5B50(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x881709
+        push eax
+        mov dword ptr fs:[0], esp
+        lea eax, [esp + 0x10]
+        push eax
+        mov dword ptr [esp + 0xc], 0
+        call ext_005B5A70
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x8], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp]
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x1c
+    }
+}
