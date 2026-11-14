@@ -10546,3 +10546,87 @@ extern "C" __declspec(naked) void __fastcall fn_004E9110(void* self) {
         ret
     }
 }
+
+extern "C" void __cdecl ext_004275E0(void* a, int b);
+extern "C" void __fastcall ext_004A1A40(void* self, int edx, void* a);
+extern "C" void ext_0063EFE0();
+extern "C" void __fastcall ext_006822D0(void* self, int edx, void* a);
+extern "C" void __fastcall ext_00682590(void* self, int edx);
+extern "C" void __fastcall ext_006826D0(void* self, int edx, void* a);
+extern "C" void __fastcall ext_00682860(void* self, int edx);
+extern "C" void __fastcall ext_006828F0(void* self, int edx);
+extern "C" int mem_00AA23C8;
+
+struct LocalObj_004EBC80 {
+    char pad[0x20];
+    LocalObj_004EBC80() { ext_00682860(this, 0); }
+    ~LocalObj_004EBC80() { ext_006828F0(this, 0); }
+};
+
+// [0x004EBC80] sub_004EBC80 (196 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004EBC80(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push -1
+        push 88ed68h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 20h
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        lea ecx, [esp + 10h]
+        call ext_00682860
+        mov eax, dword ptr [mem_00AA23C8]
+        mov edi, dword ptr [esp + 40h]
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 3Ch], 0
+        mov bl, 1
+        call ext_0063EFE0
+        cmp eax, 0B53A34h
+        mov ebp, dword ptr [esp + 44h]
+        je L_skip
+        cmp eax, 0B53B30h
+        je L_skip
+        cmp eax, 0B53AB0h
+        je L_skip
+        cmp eax, 0B53A70h
+        je L_skip
+        cmp eax, 0B53AF0h
+        je L_skip
+        push eax
+        push ebp
+        call ext_004275E0
+        add esp, 8
+        push ebp
+        lea ecx, [esp + 14h]
+        call ext_006826D0
+        xor bl, bl
+    L_skip:
+        push edi
+        mov ecx, esi
+        call ext_004A1A40
+        test bl, bl
+        je L_end
+        lea ecx, [esp + 10h]
+        call ext_00682590
+        push ebp
+        lea ecx, [esp + 14h]
+        call ext_006822D0
+    L_end:
+        lea ecx, [esp + 10h]
+        mov dword ptr [esp + 38h], 0FFFFFFFFh
+        call ext_006828F0
+        mov ecx, dword ptr [esp + 30h]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 2Ch
+        ret 8
+    }
+}
