@@ -4791,3 +4791,120 @@ extern "C" __declspec(naked) void* __fastcall fn_004B4890(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x004B0300] sub_004B0300 (355 bytes)
+extern "C" void ext_004AFF30();
+
+extern "C" __declspec(naked) void __fastcall fn_004B0300(void* self, int edx_unused, void* arg) {
+    __asm {
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x14]
+        test    edi, edi
+        mov     esi, ecx
+        je      loc_4b0313
+        lea     ebp, [edi + 0x4]
+        jmp     loc_4b0315
+loc_4b0313:
+        xor     ebp, ebp
+loc_4b0315:
+        lea     ebx, [esi + 0x4]
+        push    ebp
+        mov     ecx, ebx
+        call    ext_004AFF30
+        mov     eax, dword ptr [ebp + 0x10]
+        mov     dword ptr [ebx + 0x10], eax
+        mov     ecx, dword ptr [ebp + 0x14]
+        mov     dword ptr [ebx + 0x14], ecx
+        mov     edx, dword ptr [ebp + 0x18]
+        mov     dword ptr [ebx + 0x18], edx
+        movzx   eax, byte ptr [ebp + 0x1c]
+        mov     byte ptr [ebx + 0x1c], al
+        lea     ebx, [edi + 0x24]
+        lea     ebp, [esi + 0x24]
+        push    ebx
+        mov     ecx, ebp
+        call    ext_004AFF30
+        movzx   ecx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], cl
+        lea     ebx, [edi + 0x38]
+        lea     ebp, [esi + 0x38]
+        push    ebx
+        mov     ecx, ebp
+        call    ext_004AFF30
+        movzx   edx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], dl
+        lea     ebx, [edi + 0x4c]
+        lea     ebp, [esi + 0x4c]
+        push    ebx
+        mov     ecx, ebp
+        call    ext_004AFF30
+        movzx   eax, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], al
+        lea     ebx, [edi + 0x60]
+        lea     ebp, [esi + 0x60]
+        push    ebx
+        mov     ecx, ebp
+        call    ext_004AFF30
+        movzx   ecx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], cl
+        lea     ebx, [edi + 0x74]
+        lea     ebp, [esi + 0x74]
+        push    ebx
+        mov     ecx, ebp
+        call    ext_004AFF30
+        movzx   edx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], dl
+        lea     ebx, [edi + 0x88]
+        lea     ebp, [esi + 0x88]
+        push    ebx
+        mov     ecx, ebp
+        call    ext_004AFF30
+        movzx   eax, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], al
+        lea     ebx, [edi + 0x9c]
+        lea     ebp, [esi + 0x9c]
+        push    ebx
+        mov     ecx, ebp
+        call    ext_004AFF30
+        movzx   ecx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], cl
+        lea     ebx, [edi + 0xb0]
+        lea     ebp, [esi + 0xb0]
+        push    ebx
+        mov     ecx, ebp
+        call    ext_004AFF30
+        movzx   edx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], dl
+        lea     ebx, [edi + 0xc4]
+        lea     ebp, [esi + 0xc4]
+        push    ebx
+        mov     ecx, ebp
+        call    ext_004AFF30
+        movzx   eax, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], al
+        lea     ebx, [edi + 0xd8]
+        lea     ebp, [esi + 0xd8]
+        push    ebx
+        mov     ecx, ebp
+        call    ext_004AFF30
+        movzx   ecx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], cl
+        fld     dword ptr [edi + 0xec]
+        fstp    dword ptr [esi + 0xec]
+        mov     eax, esi
+        fld     dword ptr [edi + 0xf0]
+        fstp    dword ptr [esi + 0xf0]
+        fld     dword ptr [edi + 0xf4]
+        fstp    dword ptr [esi + 0xf4]
+        movzx   edx, byte ptr [edi + 0xf8]
+        pop     edi
+        mov     byte ptr [esi + 0xf8], dl
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret     0x4
+    }
+}
