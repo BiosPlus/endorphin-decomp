@@ -322,3 +322,52 @@ extern "C" __declspec(naked) void* __fastcall fn_004CA6A0(void* self, int edx, v
         ret     4
     }
 }
+
+// [0x004CCFB0] NMData::MetaBodyConstraintData::vfunc_10 (112 bytes)
+extern "C" void ext_004CCE20();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_0088C1B1;
+extern "C" int mem_00A32978;
+extern "C" int mem_00A2E2F8;
+extern "C" __declspec(naked) void __fastcall fn_004CCFB0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push offset mem_0088C1B1
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        push 0
+        push offset mem_00A32978
+        push offset mem_00A2E2F8
+        mov esi, ecx
+        push 0
+        push eax
+        mov dword ptr [esp + 0x1c], esi
+        call ext_006A6E9E
+        mov edi, eax
+        add esp, 0x14
+        test edi, edi
+        je short L_done
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx]
+        push 0
+        mov ecx, esi
+        call eax
+        mov dword ptr [esp + 0x1c], esi
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp + 0x18], 0
+        call ext_004CCE20
+L_done:
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
