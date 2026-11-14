@@ -3982,3 +3982,22 @@ extern "C" __declspec(naked) void __fastcall fn_00586D00(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00586D00();
+extern "C" void ext_0058AA60();
+extern "C" void ext_00594000();
+extern "C" void ext_006619D0();
+extern "C" void ext_006781B0();
+extern "C" int mem_00B40644;
+extern "C" int mem_00B40640;
+
+// [0x0058B4E0] sub_0058B4E0 (81 bytes)
+extern "C" void __fastcall fn_0058B4E0(void* self, int edx_unused, float val) {
+    char* eax = ((char* (__cdecl*)())ext_00594000)();
+    val = ((float (__thiscall*)(void*, float))ext_006781B0)(eax + 0x2e0, val);
+    ((void (__thiscall*)(int, int))ext_006619D0)(mem_00B40640, mem_00B40644);
+    float* edi = (float*)((char*)self + 0x12c);
+    *edi = val;
+    ((void (__thiscall*)(void*))ext_00586D00)(self);
+    ((void (__thiscall*)(void*, float*))ext_0058AA60)(self, edi);
+}
