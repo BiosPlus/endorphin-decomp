@@ -12690,3 +12690,97 @@ extern "C" __declspec(naked) void __fastcall fn_00563FE0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00569070] sub_00569070 (216 bytes)
+extern "C" void ext_0040ECB0();
+extern "C" void ext_006968D0();
+extern "C" void ext_00696980();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+extern "C" int mem_009250EC;
+extern "C" int mem_009250DC;
+extern "C" int mem_00924FC0;
+
+extern "C" __declspec(naked) void __fastcall fn_00569070(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebx, ecx
+        push 0x958f5c
+        lea ecx, [esp + 0x14]
+        call dword ptr [mem_00924FE4]
+        mov edi, dword ptr [esp + 0x3c]
+        lea eax, [esp + 0x10]
+        push eax
+        push edi
+        mov dword ptr [esp + 0x3c], 0
+        call ext_00696980
+        add esp, 8
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x34], -1
+        call dword ptr [mem_00924FF4]
+        mov ebp, dword ptr [mem_009250EC]
+        lea esi, [ebx + 4]
+        push esi
+        push edi
+        call ebp
+        mov ecx, dword ptr [eax]
+        mov ecx, dword ptr [ecx + 4]
+        add esp, 8
+        add ecx, eax
+        call dword ptr [mem_009250DC]
+        test eax, eax
+        je done
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    loop_top:
+        push 0x92f148
+        push esi
+        call dword ptr [mem_00924FC0]
+        add esp, 8
+        test al, al
+        je else_branch
+        push edi
+        call ext_006968D0
+        add esp, 4
+        jmp after_branch
+    else_branch:
+        mov ecx, dword ptr [ebx]
+        push esi
+        add ecx, 0x74
+        call ext_0040ECB0
+    after_branch:
+        push esi
+        push edi
+        call ebp
+        mov edx, dword ptr [eax]
+        mov ecx, dword ptr [edx + 4]
+        add esp, 8
+        add ecx, eax
+        call dword ptr [mem_009250DC]
+        test eax, eax
+        jne loop_top
+    done:
+        mov ecx, dword ptr [esp + 0x2c]
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 4
+    }
+}
