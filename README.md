@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `14149 / 24049` (**58.83%**) — `11057` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1614290 / 4496005 bytes` (**35.90%** of 4.29 MB)
+- **In-Scope Functions Matched:** `14150 / 24049` (**58.84%**) — `11058` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1614411 / 4496005 bytes` (**35.91%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -18,7 +18,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P20-30 (32-48B)** | 1484 / 2405 | 61.70% | 57936 / 97731 | 59.28% | 921 fn |
 | **P30-40 (48-71B)** | 1342 / 2405 | 55.80% | 79632 / 144549 | 55.09% | 1063 fn |
 | **P40-50 (71-91B)** | 1391 / 2405 | 57.84% | 115793 / 194373 | 59.57% | 1014 fn |
-| **P50-60 (91-122B)** | 1862 / 2405 | 77.42% | 201400 / 256906 | 78.39% | 543 fn |
+| **P50-60 (91-122B)** | 1863 / 2405 | 77.46% | 201521 / 256906 | 78.44% | 542 fn |
 | **P60-70 (122-159B)** | 1130 / 2405 | 46.99% | 153119 / 339038 | 45.16% | 1275 fn |
 | **P70-80 (159-178B)** | 308 / 2405 | 12.81% | 51890 / 400567 | 12.95% | 2097 fn |
 | **P80-90 (178-335B)** | 1182 / 2405 | 49.15% | 284610 / 583211 | 48.80% | 1223 fn |
@@ -30,7 +30,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 61.08% |
 | `claude-haiku-5.5@low` | 1659 | 377458 | 15.00% |
-| `gemini-4-hydrogen@low` | 1042 | 296106 | 9.42% |
+| `gemini-4-hydrogen@low` | 1043 | 296227 | 9.43% |
 | `gemini-3.8-flash@low` | 947 | 264908 | 8.56% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.04% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.47% |

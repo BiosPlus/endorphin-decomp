@@ -11519,3 +11519,49 @@ L_DONE_00509E30:
         ret 0xc
     }
 }
+
+// [0x00506930] sub_00506930 (121 bytes)
+extern "C" void ext_0049FD50();
+extern "C" void ext_004A6970();
+
+extern "C" __declspec(naked) void* __fastcall fn_00506930(void* self, int edx_unused, const void* other) {
+    __asm {
+        push    -1
+        push    0x893bfe
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        push    ecx
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x1c]
+        mov     esi, ecx
+        push    edi
+        mov     dword ptr [esp + 0xc], esi
+        call    ext_0049FD50
+        lea     eax, [edi + 0x10]
+        lea     ecx, [esi + 0x10]
+        push    eax
+        mov     dword ptr [esp + 0x18], 0
+        call    ext_0049FD50
+        lea     ecx, [edi + 0x20]
+        push    ecx
+        lea     ecx, [esi + 0x20]
+        mov     byte ptr [esp + 0x18], 1
+        call    ext_004A6970
+        lea     edx, [edi + 0x30]
+        push    edx
+        lea     ecx, [esi + 0x30]
+        mov     byte ptr [esp + 0x18], 2
+        call    ext_004A6970
+        mov     al, byte ptr [edi + 0x40]
+        mov     ecx, dword ptr [esp + 0xc]
+        mov     byte ptr [esi + 0x40], al
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x10
+        ret     4
+    }
+}
