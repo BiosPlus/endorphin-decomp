@@ -9313,3 +9313,56 @@ extern "C" __declspec(naked) void* __fastcall fn_006AFD40(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x006A3700] sub_006A3700 (95 bytes)
+extern "C" void ext_00405FB0();
+extern "C" void ext_0041A100();
+extern "C" __declspec(naked) void __fastcall fn_006A3700(void* self, int edx_unused, unsigned int n, const char* src) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        xor ebx, ebx
+        cmp ebp, ebx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi + 0x4], ebx
+        mov dword ptr [esi + 0x8], ebx
+        mov dword ptr [esi + 0xc], ebx
+        je done_6A3700
+        cmp ebp, -1
+        jbe skip_6A3700
+        call ext_00405FB0
+    skip_6A3700:
+        push edi
+        push ebx
+        push ebp
+        call ext_0041A100
+        lea ecx, [eax + ebp]
+        add esp, 8
+        cmp ebp, ebx
+        mov dword ptr [esi + 0xc], ecx
+        mov dword ptr [esi + 0x4], eax
+        mov dword ptr [esi + 0x8], eax
+        mov ecx, ebp
+        mov edi, eax
+        jbe tail_6A3700
+        mov edx, dword ptr [esp + 0x18]
+    copy_6A3700:
+        mov bl, byte ptr [edx]
+        mov byte ptr [edi], bl
+        sub ecx, 1
+        add edi, 1
+        test ecx, ecx
+        ja copy_6A3700
+    tail_6A3700:
+        add eax, ebp
+        mov dword ptr [esi + 0x8], eax
+        pop edi
+    done_6A3700:
+        pop esi
+        pop ebp
+        pop ebx
+        ret 8
+    }
+}
