@@ -9596,3 +9596,81 @@ extern "C" __declspec(naked) bool __fastcall fn_0051C820(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x00518390] sub_00518390 (144 bytes)
+extern "C" void ext_00508310();
+extern "C" void ext_0059A140();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __cdecl fn_00518390() {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x1c]
+        cmp eax, ebp
+        mov ebx, eax
+        je L_empty
+        push esi
+        mov esi, dword ptr [esp + 0x24]
+        push edi
+    L_loop:
+        mov ecx, dword ptr [ebx]
+        call ext_00508310
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        mov dword ptr [esp + 0x28], eax
+        jne L_has_buf
+        xor edi, edi
+        jmp L_check_cap
+    L_has_buf:
+        mov edi, dword ptr [esi + 0x8]
+        sub edi, ecx
+        sar edi, 2
+    L_check_cap:
+        test ecx, ecx
+        je L_insert
+        mov edx, dword ptr [esi + 0xc]
+        sub edx, ecx
+        sar edx, 2
+        cmp edi, edx
+        jae L_insert
+        mov ecx, dword ptr [esi + 0x8]
+        mov dword ptr [ecx], eax
+        add ecx, 4
+        mov dword ptr [esi + 0x8], ecx
+        jmp L_next
+    L_insert:
+        mov edi, dword ptr [esi + 0x8]
+        cmp ecx, edi
+        jbe L_do_insert
+        call dword ptr [mem_00925134]
+    L_do_insert:
+        lea eax, [esp + 0x28]
+        push eax
+        push edi
+        push esi
+        lea ecx, [esp + 0x24]
+        push ecx
+        mov ecx, esi
+        call ext_0059A140
+    L_next:
+        add ebx, 4
+        cmp ebx, ebp
+        jne L_loop
+        mov eax, dword ptr [esp + 0x14]
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    L_empty:
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x20]
+        pop ebp
+        mov dword ptr [eax], edx
+        pop ebx
+        ret
+    }
+}
