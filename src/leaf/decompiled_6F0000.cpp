@@ -3146,3 +3146,2652 @@ extern "C" __declspec(naked) void __fastcall fn_006F5760(void* self, int edx_unu
         ret     4
     }
 }
+
+// [0x006F5B10] sub_006F5B10 (3568 bytes)
+extern "C" void ext_006F76F0();
+extern "C" void ext_0077FF90();
+extern "C" void ext_0077FEF0();
+extern "C" int mem_009939D8;
+extern "C" int mem_00928E78;
+extern "C" __declspec(naked) void __fastcall fn_006F5B10(void* self, int edx_unused, double a1) {
+    __asm {
+        // ---- block 0 @0x006F5B10 : clamp(a1) -> self+0x2da8, notify id 0x38, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xa8
+        _emit   0x2d
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    38h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 1 @0x006F5B80 : clamp(a1) -> self+0x2e30, notify id 0x39, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x30
+        _emit   0x2e
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    39h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 2 @0x006F5BF0 : clamp(a1) -> self+0x2eb8, notify id 0x3a, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xb8
+        _emit   0x2e
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    3ah
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 3 @0x006F5C60 : clamp(a1) -> self+0x2f40, notify id 0x3b, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x40
+        _emit   0x2f
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    3bh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+    __asm {
+        // ---- block 4 @0x006F5CD0 : clamp(a1) -> self+0x2fc8, notify id 0x3c, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xc8
+        _emit   0x2f
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    3ch
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 5 @0x006F5D40 : clamp(a1) -> self+0x3050, notify id 0x3d, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x50
+        _emit   0x30
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    3dh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 6 @0x006F5DB0 : clamp(a1) -> self+0x30d8, notify id 0x3e, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xd8
+        _emit   0x30
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    3eh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 7 @0x006F5E20 : clamp(a1) -> self+0x3408, notify id 0x8d, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x08
+        _emit   0x34
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    8dh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+    __asm {
+        // ---- block 8 @0x006F5E90 : clamp(a1) -> self+0x3490, notify id 0x8e, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x90
+        _emit   0x34
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    8eh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 9 @0x006F5F00 : clamp(a1) -> self+0x3518, notify id 0x8f, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x18
+        _emit   0x35
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    8fh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 10 @0x006F5F70 : clamp(a1) -> self+0x35a0, notify id 0x90, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xa0
+        _emit   0x35
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    90h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 11 @0x006F5FE0 : clamp(a1) -> self+0x3628, notify id 0x91, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x28
+        _emit   0x36
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    91h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+    __asm {
+        // ---- block 12 @0x006F6050 : clamp(a1) -> self+0x36b0, notify id 0x92, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xb0
+        _emit   0x36
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    92h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 13 @0x006F60C0 : clamp(a1) -> self+0x3738, notify id 0x93, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x38
+        _emit   0x37
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    93h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 14 @0x006F6130 : clamp(a1) -> self+0x37c0, notify id 0x94, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xc0
+        _emit   0x37
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    94h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 15 @0x006F61A0 : clamp(a1) -> self+0x3848, notify id 0x95, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x48
+        _emit   0x38
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    95h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+    __asm {
+        // ---- block 16 @0x006F6210 : clamp(a1) -> self+0x38d0, notify id 0x96, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xd0
+        _emit   0x38
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    96h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 17 @0x006F6280 : clamp(a1) -> self+0x3958, notify id 0x97, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x58
+        _emit   0x39
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    97h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 18 @0x006F62F0 : clamp(a1) -> self+0x39e0, notify id 0x98, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xe0
+        _emit   0x39
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    98h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 19 @0x006F6360 : clamp(a1) -> self+0x3a68, notify id 0x99, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x68
+        _emit   0x3a
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    99h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+    __asm {
+        // ---- block 20 @0x006F63D0 : clamp(a1) -> self+0x3af0, notify id 0x9a, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xf0
+        _emit   0x3a
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    9ah
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 21 @0x006F6440 : clamp(a1) -> self+0x3b78, notify id 0x9b, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x78
+        _emit   0x3b
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    9bh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 22 @0x006F64B0 : clamp(a1) -> self+0x3c00, notify id 0x9c, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x00
+        _emit   0x3c
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    9ch
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 23 @0x006F6520 : clamp(a1) -> self+0x3c88, notify id 0x9d, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x88
+        _emit   0x3c
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    9dh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+    __asm {
+        // ---- block 24 @0x006F6590 : clamp(a1) -> self+0x3d10, notify id 0x9e, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x10
+        _emit   0x3d
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    9eh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 25 @0x006F6600 : clamp(a1) -> self+0x3d98, notify id 0x9f, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x98
+        _emit   0x3d
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    9fh
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 26 @0x006F6670 : clamp(a1) -> self+0x3e20, notify id 0xa0, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x20
+        _emit   0x3e
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    0a0h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 27 @0x006F66E0 : clamp(a1) -> self+0x3ea8, notify id 0xa1, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xa8
+        _emit   0x3e
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    0a1h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+    __asm {
+        // ---- block 28 @0x006F6750 : clamp(a1) -> self+0x3f30, notify id 0xa2, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x30
+        _emit   0x3f
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    0a2h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 29 @0x006F67C0 : clamp(a1) -> self+0x3fb8, notify id 0xa3, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0xb8
+        _emit   0x3f
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    0a3h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 30 @0x006F6830 : clamp(a1) -> self+0x4040, notify id 0xa4, ret 8
+        // x87 + short jumps emitted as raw bytes (compiler FP-stack model breaks on this layout)
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 1
+        _emit   0x74
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0xD8
+        _emit   0x39
+        _emit   0x99
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x1D
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDC
+        _emit   0x1D
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xDF
+        _emit   0xE0
+        test    ah, 41h
+        _emit   0x75
+        _emit   0x08
+        _emit   0xDD
+        _emit   0x05
+        _emit   0x78
+        _emit   0x8E
+        _emit   0x92
+        _emit   0x00
+        _emit   0xEB
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x44
+        _emit   0x24
+        _emit   0x04
+        _emit   0xDD
+        _emit   0x54
+        _emit   0x24
+        _emit   0x04
+        mov     eax, dword ptr [esp + 8]
+        mov     edx, dword ptr [esp + 4]
+        _emit   0xDD
+        _emit   0x99
+        _emit   0x40
+        _emit   0x40
+        _emit   0x00
+        _emit   0x00
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    0
+        push    eax
+        push    edx
+        push    0a4h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        // ---- block 31 @0x006F68A0 : byte arg, field 0x40c8, id 0xa5, callee 0x77FEF0, ret 4
+        mov     al, byte ptr [esp + 4]
+        xor     edx, edx
+        test    al, al
+        setne   dl
+        mov     byte ptr [ecx + 40c8h], al
+        mov     ecx, dword ptr [ecx + 6958h]
+        push    edx
+        push    0a5h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FEF0
+        ret     4
+        nop
+        nop
+        nop
+        nop
+        // ---- block 32 @0x006F68D0 : int arg, field 0x31e8, id 0xa6, ret 4
+        fild    dword ptr [esp + 4]
+        mov     eax, dword ptr [esp + 4]
+        push    0
+        sub     esp, 8
+        mov     dword ptr [ecx + 31e8h], eax
+        mov     ecx, dword ptr [ecx + 6958h]
+        fstp    qword ptr [esp]
+        push    0a6h
+        call    ext_006F76F0
+        mov     ecx, eax
+        call    ext_0077FF90
+        ret     4
+    }
+}
