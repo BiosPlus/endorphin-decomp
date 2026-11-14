@@ -17,5 +17,7 @@
     "0x0060CE27",
     "0x0060CE49"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T06:48:50Z"
 }
