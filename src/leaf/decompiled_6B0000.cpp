@@ -8139,3 +8139,112 @@ extern "C" __declspec(naked) void* __fastcall fn_006BA260(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x006BB900] sub_006BB900 (160 bytes)
+extern "C" void ext_00772040();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006D2250();
+extern "C" int mem_00925284;
+extern "C" int mem_00B5D2D0;
+extern "C" int mem_00B5D2D4;
+extern "C" int mem_00B5D2C8;
+
+extern "C" __declspec(naked) void __fastcall fn_006BB900(void* self) {
+    __asm {
+        push    ebp
+        mov     ebp, ecx
+        push    esi
+        push    edi
+        mov     edi, dword ptr [ebp]
+        add     edi, 0xc
+        mov     esi, dword ptr [edi]
+        test    esi, esi
+        je      L_006BB932
+        push    ebx
+    L_006BB912:
+        mov     eax, dword ptr [edi + 0x10]
+        dec     esi
+        mov     ebx, dword ptr [eax + 4*esi]
+        test    ebx, ebx
+        je      L_006BB92D
+        mov     ecx, ebx
+        call    ext_00772040
+        push    ebx
+        call    ext_006A5C5C
+        add     esp, 4
+    L_006BB92D:
+        test    esi, esi
+        jne     L_006BB912
+        pop     ebx
+    L_006BB932:
+        mov     ecx, edi
+        call    ext_006D2250
+        mov     ecx, dword ptr [ebp]
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     dword ptr [ecx + 0x24], 0xffffffff
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        __emit  0xe9
+        __emit  0x0b
+        __emit  0x00
+        __emit  0x00
+        __emit  0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov     eax, dword ptr [mem_00925284]
+        mov     ecx, dword ptr [eax]
+        mov     edx, dword ptr [eax + 4]
+        mov     dword ptr [mem_00B5D2D0], ecx
+        mov     dword ptr [mem_00B5D2D4], edx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        __emit  0xe9
+        __emit  0x0b
+        __emit  0x00
+        __emit  0x00
+        __emit  0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov     eax, dword ptr [mem_00925284]
+        fld     qword ptr [eax]
+        fchs
+        fstp    qword ptr [mem_00B5D2C8]
+        ret
+    }
+}
