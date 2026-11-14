@@ -10342,3 +10342,110 @@ extern "C" __declspec(naked) void __fastcall fn_00656F10(void* self) {
         ret
     }
 }
+
+// [0x0065E350] sub_0065E350 (225 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_00536600();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) int __fastcall fn_0065E350(void* self, void* _edx, void* arg0) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0x44]
+        test eax, eax
+        lea esi, [edi + 0x40]
+        jne L_65e367
+        mov dword ptr [esp + 0x10], eax
+        jmp L_65e373
+    L_65e367:
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, eax
+        sar ecx, 0x2
+        mov dword ptr [esp + 0x10], ecx
+    L_65e373:
+        lea eax, [esp + 0x18]
+        push eax
+        mov ecx, esi
+        call ext_0041A920
+        mov eax, dword ptr [edi + 0x74]
+        test eax, eax
+        mov ecx, dword ptr [edi + 0x64]
+        mov ebx, dword ptr [ecx]
+        lea ebp, [edi + 0x60]
+        je L_65e392
+        cmp eax, ebp
+        je L_65e398
+    L_65e392:
+        call dword ptr [mem_00925134]
+    L_65e398:
+        cmp dword ptr [edi + 0x78], ebx
+        je L_65e425
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx]
+        call eax
+        mov byte ptr [esp + 0x18], al
+        mov eax, dword ptr [esi + 0x4]
+        test eax, eax
+        jne L_65e3ba
+        xor ebx, ebx
+        jmp L_65e3c2
+    L_65e3ba:
+        mov ebx, dword ptr [esi + 0x8]
+        sub ebx, eax
+        sar ebx, 0x2
+    L_65e3c2:
+        mov ecx, dword ptr [ebp + 0x4]
+        mov edi, dword ptr [ecx]
+    L_65e3c7:
+        cmp ebp, ebp
+        mov esi, dword ptr [ebp + 0x4]
+        je L_65e3d4
+        call dword ptr [mem_00925134]
+    L_65e3d4:
+        cmp edi, esi
+        je L_65e425
+        cmp edi, dword ptr [ebp + 0x4]
+        jne L_65e3e3
+        call dword ptr [mem_00925134]
+    L_65e3e3:
+        push 0x0
+        lea esi, [edi + 0x3c]
+        push ebx
+        mov ecx, esi
+        call ext_00536600
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je L_65e402
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        cmp dword ptr [esp + 0x10], eax
+        jb L_65e408
+    L_65e402:
+        call dword ptr [mem_00925134]
+    L_65e408:
+        mov edx, dword ptr [esi + 0x4]
+        mov al, byte ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [ecx + edx], al
+        cmp edi, dword ptr [ebp + 0x4]
+        jne L_65e421
+        call dword ptr [mem_00925134]
+    L_65e421:
+        mov edi, dword ptr [edi]
+        jmp L_65e3c7
+    L_65e425:
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x4
+    }
+}
