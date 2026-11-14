@@ -264,3 +264,87 @@ extern "C" __declspec(naked) void __fastcall fn_0041D3D0(void* self) {
         ret
     }
 }
+
+// [0x0041E400] Properties::GWCPropertiesControlDriver::vfunc_4 (178 bytes)
+extern "C" void ext_0041E160();
+extern "C" void ext_00598FF0();
+extern "C" void ext_006A63BE();
+extern "C" void ext_006AEC60();
+extern "C" void ext_006AEC90();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0041E400(void* self, int edx_unused, int arg0, int arg1) {
+    __asm {
+        sub esp, 0x8
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi + 0xc]
+        test eax, eax
+        mov dword ptr [esp + 0x8], edi
+        je loc_41e4ab
+        mov eax, dword ptr [eax + 0x19c]
+        cmp eax, dword ptr [esp + 0x14]
+        jne loc_41e4ab
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esi + 0x4]
+        mov ebx, dword ptr [ecx]
+        push ebp
+loc_41e431:
+        cmp ebx, dword ptr [esi + 0x4]
+        je loc_41e4a8
+        mov ebp, dword ptr [ebx + 0x44]
+        call ext_006AEC60
+        push eax
+        mov ecx, ebp
+        call ext_006A63BE
+        test eax, eax
+        je loc_41e495
+        mov edx, dword ptr [ebx + 0x1c]
+        lea eax, [esp + 0x20]
+        lea esi, [edi + 0x1c]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x24], edx
+        call ext_00598FF0
+        mov ecx, ebp
+        mov edi, eax
+        call ext_006AEC90
+        neg al
+        sbb eax, eax
+        neg eax
+        add eax, 1
+        test edi, edi
+        mov dword ptr [esp + 0x10], eax
+        je loc_41e47e
+        mov dword ptr [edi], eax
+        jmp loc_41e491
+loc_41e47e:
+        push 1
+        lea ecx, [esp + 0x14]
+        push ecx
+        lea edx, [esp + 0x28]
+        push edx
+        mov ecx, esi
+        call ext_0041E160
+loc_41e491:
+        mov esi, dword ptr [esp + 0x1c]
+loc_41e495:
+        cmp ebx, dword ptr [esi + 0x4]
+        jne loc_41e4a0
+        call dword ptr [mem_00925134]
+loc_41e4a0:
+        mov ebx, dword ptr [ebx]
+        mov edi, dword ptr [esp + 0x14]
+        jmp loc_41e431
+loc_41e4a8:
+        pop ebp
+        pop esi
+        pop ebx
+loc_41e4ab:
+        pop edi
+        add esp, 0x8
+        ret 0x8
+    }
+}
