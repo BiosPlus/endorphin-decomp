@@ -5466,3 +5466,30 @@ extern "C" __declspec(naked) void* __cdecl fn_00589CC0(void* a1) {
         ret
     }
 }
+
+// [0x00582860] sub_00582860 (91 bytes)
+extern "C" void ext_00582270();
+extern "C" int mem_00924FF0;
+extern "C" int mem_00925234;
+
+extern "C" char __fastcall fn_00582860(void* self, int edx_unused, int a1) {
+    typedef const char* (__thiscall *c_str_fn)(void*);
+    typedef int (__cdecl *atol_fn)(const char*);
+    typedef int (__thiscall *sub_582270_fn)(void*, int, int);
+    const char* s = ((c_str_fn)mem_00924FF0)((char*)self + 4);
+    int v = ((atol_fn)mem_00925234)(s);
+    char* p = *(char**)self;
+    if (!p[0x69]) {
+        *(int*)(p + 0x60) = v;
+    }
+    (*(int**)self)[0x58 / 4] = 0;
+    do {
+        (*(int**)self)[0x58 / 4] += 1;
+        v = ((sub_582270_fn)ext_00582270)(self, a1, v);
+    } while (v >= 0);
+    p = *(char**)self;
+    if (!p[0x6a]) {
+        *(int*)(p + 0x64) = *(int*)(p + 0x60) + *(int*)(p + 0x58);
+    }
+    return 1;
+}
