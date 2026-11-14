@@ -95,3 +95,70 @@ extern "C" __declspec(naked) void* __fastcall fn_005EC250(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x005F0A20] NMData::RPROJointData::vfunc_17_off_C (186 bytes)
+extern "C" void ext_005881D0();
+extern "C" void ext_005F0960();
+extern "C" void ext_0065F280();
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void __fastcall fn_005F0A20(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        push 0x2fc
+        mov ebx, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0xc], eax
+        xor esi, esi
+        cmp eax, esi
+        mov dword ptr [esp + 0x18], esi
+        je noobj
+        mov ecx, eax
+        call ext_005F0960
+        mov esi, eax
+    noobj:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x5c]
+        lea ecx, [ebx + 0x8]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        call edx
+        mov al, byte ptr [ebx + 0x16c]
+        lea edi, [ebx - 0xc]
+        push edi
+        mov ecx, esi
+        mov byte ptr [esi + 0x178], al
+        call ext_005881D0
+        lea ecx, [edi + 0xe4]
+        push ecx
+        lea ecx, [esi + 0xe4]
+        call ext_0065F280
+        mov edx, dword ptr [edi + 0xe8]
+        mov dword ptr [esi + 0xe8], edx
+        mov eax, dword ptr [edi + 0xec]
+        mov dword ptr [esi + 0xec], eax
+        mov edx, dword ptr [ebx - 0x8]
+        mov eax, dword ptr [edx + 0x20]
+        lea ecx, [ebx - 0x8]
+        call eax
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esi + 0x148], al
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
