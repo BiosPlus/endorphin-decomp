@@ -10940,3 +10940,97 @@ extern "C" __declspec(naked) void __fastcall fn_0069DA50(void* self, int edx_unu
         ret 8
     }
 }
+
+extern "C" void ext_0069B180();
+extern "C" void ext_0069C330();
+
+// [0x0069C400] sub_0069C400 (149 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_0069C400(void* self, int edx_unused, char** pStr) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x0c]
+        mov ebp, ecx
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        jne loc_69c415
+        pop esi
+        xor al, al
+        pop ebp
+        ret 4
+
+    loc_69c415:
+        push ebx
+        mov bl, byte ptr [ecx]
+        mov byte ptr [esp + 0x10], bl
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        call ext_0069B180
+        add esp, 4
+        test bl, bl
+        mov dl, al
+        mov byte ptr [esp + 0x10], dl
+        je loc_69c48d
+        test dl, dl
+        je loc_69c48d
+        lea eax, [ecx + 1]
+        mov dword ptr [esi], eax
+        cmp byte ptr [eax], 0
+        push edi
+        mov edi, 1
+        je loc_69c47b
+
+    loc_69c447:
+        mov al, byte ptr [eax]
+        cmp al, bl
+        jne loc_69c452
+        add edi, 1
+        jmp loc_69c46f
+
+    loc_69c452:
+        cmp al, 0x22
+        jne loc_69c466
+        push 0
+        push esi
+        mov ecx, ebp
+        call ext_0069C330
+        mov dl, byte ptr [esp + 0x14]
+        jmp loc_69c46f
+
+    loc_69c466:
+        cmp al, dl
+        jne loc_69c46f
+        sub edi, 1
+        je loc_69c484
+
+    loc_69c46f:
+        add dword ptr [esi], 1
+        mov eax, dword ptr [esi]
+        mov ecx, eax
+        cmp byte ptr [ecx], 0
+        jne loc_69c447
+
+    loc_69c47b:
+        pop edi
+        pop ebx
+        pop esi
+        xor al, al
+        pop ebp
+        ret 4
+
+    loc_69c484:
+        pop edi
+        pop ebx
+        pop esi
+        mov al, 1
+        pop ebp
+        ret 4
+
+    loc_69c48d:
+        pop ebx
+        pop esi
+        xor al, al
+        pop ebp
+        ret 4
+    }
+}
