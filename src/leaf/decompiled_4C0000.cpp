@@ -5247,3 +5247,23 @@ extern "C" void* __fastcall fn_004CFB10(void* self, int edx_unused, const void* 
     *(float*)((char*)self + 0x18C) = *(const float*)((const char*)other + 0x18C);
     return self;
 }
+
+// [0x004CE8D0] sub_004CE8D0 (122 bytes)
+extern "C" void ext_00586AD0();
+extern "C" void ext_00586A50();
+extern "C" void __fastcall fn_004CE8D0(void* self) {
+    char* p = *(char**)self;
+    if (p) {
+        *(int*)(p + 0x5f0) = 6;
+        ((void (__thiscall *)(void*, int, int, void*))ext_00586AD0)(
+            *(char**)self + 4, 0x200000, 0, ((char* (__cdecl *)())ext_00594000)() + 0x168);
+        ((void (__thiscall *)(void*, int, int))ext_00586A50)(
+            *(char**)self + 4, 0x200000, 0);
+        ((void (__thiscall *)(void*, int, int, void*))ext_00586AD0)(
+            *(char**)self + 4, 0x1000000, 0, ((char* (__cdecl *)())ext_00594000)() + 0x168);
+        ((void (__thiscall *)(void*, int, int))ext_00586A50)(
+            *(char**)self + 4, 0x1000000, 0);
+    }
+    *(void**)self = 0;
+    *(float*)((char*)self + 8) = 1.0f;
+}
