@@ -15885,3 +15885,464 @@ extern "C" __declspec(naked) void __fastcall fn_006695C0(void* self, int edx_unu
         ret 8
     }
 }
+
+extern "C" void ext_00470120();
+extern "C" int mem_00A9FB04;
+extern "C" int mem_00925054;
+
+// [0x00660DE0] sub_00660DE0 (1349 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00660DE0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x8b2822
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x6c
+        mov eax, dword ptr [ecx + 0x20]
+        push ebx
+        push esi
+        push edi
+        lea edi, [ecx + 0x1c]
+        xor ebx, ebx
+        cmp eax, ebx
+        mov byte ptr [esp + 0xf], bl
+        je L660DE0_e61
+        mov esi, dword ptr [edi + 0x8]
+        sub esi, eax
+        mov eax, 0x92492493
+        imul esi
+        add edx, esi
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp eax, 0x1
+        jbe L660DE0_e61
+        mov eax, dword ptr [esp + 0x88]
+        push 1
+        push eax
+        call ext_00660340
+        mov esi, eax
+        cmp esi, ebx
+        mov dword ptr [esp + 0x88], esi
+        jne L660DE0_e5a
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        mov ecx, dword ptr [esp + 0x6c]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x78
+        ret 8
+L660DE0_e5a:
+        mov byte ptr [esp + 0xf], 0x1
+        jmp L660DE0_e68
+L660DE0_e61:
+        mov esi, dword ptr [esp + 0x88]
+L660DE0_e68:
+        lea ecx, [esp + 0x3c]
+        call dword ptr [mem_00924FE8]
+        mov eax, dword ptr [edi + 0x4]
+        cmp eax, ebx
+        mov dword ptr [esp + 0x80], ebx
+        je L660DE0_eac
+        mov ecx, dword ptr [edi + 0x8]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov ecx, edx
+        shr ecx, 0x1f
+        add ecx, edx
+        je L660DE0_eac
+        mov ecx, edi
+        call ext_00660210
+        push eax
+        lea ecx, [esp + 0x40]
+        call dword ptr [mem_00924FDC]
+L660DE0_eac:
+        mov dword ptr [esp + 0x20], ebx
+        mov dword ptr [esp + 0x24], ebx
+        mov dword ptr [esp + 0x28], ebx
+        mov edx, dword ptr [esi]
+        mov edx, dword ptr [edx + 0x18]
+        lea eax, [esp + 0x1c]
+        push eax
+        mov ecx, esi
+        mov byte ptr [esp + 0x84], 0x1
+        call edx
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x10]
+        push ebx
+        mov ecx, esi
+        call edx
+        test eax, eax
+        je L660DE0_f14
+        mov eax, dword ptr [mem_00A9FB04]
+        push eax
+        lea ecx, [esp + 0x5c]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x58]
+        push ecx
+        lea ecx, [esp + 0x20]
+        mov byte ptr [esp + 0x84], 0x2
+        call ext_0040ECB0
+        lea ecx, [esp + 0x58]
+        mov byte ptr [esp + 0x80], 0x1
+        call dword ptr [mem_00924FF4]
+L660DE0_f14:
+        mov eax, esi
+        mov dword ptr [esp + 0x10], eax
+        push ebp
+        jmp L660DE0_f20
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+L660DE0_f20:
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x2c]
+        call eax
+        cmp eax, ebx
+        je L660DE0_f8b
+        mov ebx, dword ptr [eax + 0x8]
+        lea edi, [eax + 0x4]
+        mov eax, dword ptr [edi + 0x4]
+        mov eax, dword ptr [eax]
+        mov esi, edi
+        mov ebp, eax
+        mov dword ptr [esp + 0x18], esi
+        mov dword ptr [esp + 0x1c], ebp
+L660DE0_f44:
+        test esi, esi
+        je L660DE0_f4c
+        cmp esi, edi
+        je L660DE0_f52
+L660DE0_f4c:
+        call dword ptr [mem_00925134]
+L660DE0_f52:
+        cmp ebp, ebx
+        je L660DE0_f8b
+        test esi, esi
+        jne L660DE0_f60
+        call dword ptr [mem_00925134]
+L660DE0_f60:
+        cmp ebp, dword ptr [esi + 0x4]
+        jne L660DE0_f6b
+        call dword ptr [mem_00925134]
+L660DE0_f6b:
+        add ebp, 0xc
+        push ebp
+        lea ecx, [esp + 0x24]
+        call ext_0040ECB0
+        lea ecx, [esp + 0x18]
+        call ext_00470120
+        mov ebp, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [esp + 0x18]
+        jmp L660DE0_f44
+L660DE0_f8b:
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x10]
+        xor ebx, ebx
+        push ebx
+        call eax
+        cmp eax, ebx
+        mov dword ptr [esp + 0x14], eax
+        jne L660DE0_f20
+        mov dword ptr [esp + 0x34], ebx
+        mov dword ptr [esp + 0x38], ebx
+        mov dword ptr [esp + 0x3c], ebx
+        mov ecx, dword ptr [esp + 0x8c]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x1c]
+        lea eax, [esp + 0x30]
+        push eax
+        mov byte ptr [esp + 0x88], 0x3
+        call edx
+        lea ecx, [esp + 0x40]
+        call dword ptr [mem_00924EAC]
+        mov esi, dword ptr [esp + 0x24]
+        mov dword ptr [esp + 0x8c], eax
+        cmp eax, ebx
+        mov eax, dword ptr [esp + 0x28]
+        jne L660DE0_113c
+        cmp esi, eax
+        jbe L660DE0_ffb
+        call dword ptr [mem_00925134]
+        mov eax, dword ptr [esp + 0x28]
+L660DE0_ffb:
+        lea edi, [esp + 0x20]
+        mov bl, 0x4
+L660DE0_1001:
+        cmp dword ptr [esp + 0x24], eax
+        mov ebp, eax
+        jbe L660DE0_100f
+        call dword ptr [mem_00925134]
+L660DE0_100f:
+        test edi, edi
+        je L660DE0_101b
+        lea eax, [esp + 0x20]
+        cmp edi, eax
+        je L660DE0_1021
+L660DE0_101b:
+        call dword ptr [mem_00925134]
+L660DE0_1021:
+        cmp esi, ebp
+        je L660DE0_108e
+        test edi, edi
+        jne L660DE0_102f
+        call dword ptr [mem_00925134]
+L660DE0_102f:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L660DE0_103a
+        call dword ptr [mem_00925134]
+L660DE0_103a:
+        push esi
+        lea ecx, [esp + 0x60]
+        call dword ptr [mem_00924FE0]
+        mov dword ptr [esp + 0x78], 0x0
+        lea ecx, [esp + 0x5c]
+        push ecx
+        mov ecx, dword ptr [esp + 0x94]
+        mov byte ptr [esp + 0x88], bl
+        call ext_0041E0D0
+        lea ecx, [esp + 0x5c]
+        mov byte ptr [esp + 0x84], 0x3
+        call dword ptr [mem_00924FF4]
+        cmp esi, dword ptr [edi + 0x8]
+        jb L660DE0_1082
+        call dword ptr [mem_00925134]
+L660DE0_1082:
+        mov eax, dword ptr [esp + 0x28]
+        add esi, 0x1c
+        jmp L660DE0_1001
+L660DE0_108e:
+        mov esi, dword ptr [esp + 0x34]
+        cmp esi, dword ptr [esp + 0x38]
+        jbe L660DE0_109e
+        call dword ptr [mem_00925134]
+L660DE0_109e:
+        lea edi, [esp + 0x30]
+        mov ebx, 0x1
+        jmp L660DE0_10b0
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+L660DE0_10b0:
+        mov ebp, dword ptr [esp + 0x38]
+        cmp dword ptr [esp + 0x34], ebp
+        jbe L660DE0_10c0
+        call dword ptr [mem_00925134]
+L660DE0_10c0:
+        test edi, edi
+        je L660DE0_10cc
+        lea edx, [esp + 0x30]
+        cmp edi, edx
+        je L660DE0_10d2
+L660DE0_10cc:
+        call dword ptr [mem_00925134]
+L660DE0_10d2:
+        cmp esi, ebp
+        je L660DE0_1275
+        test edi, edi
+        jne L660DE0_10e4
+        call dword ptr [mem_00925134]
+L660DE0_10e4:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L660DE0_10ef
+        call dword ptr [mem_00925134]
+L660DE0_10ef:
+        push esi
+        lea ecx, [esp + 0x60]
+        call dword ptr [mem_00924FE0]
+        mov dword ptr [esp + 0x78], ebx
+        mov ecx, dword ptr [esp + 0x90]
+        lea eax, [esp + 0x5c]
+        push eax
+        mov byte ptr [esp + 0x88], 0x5
+        call ext_0041E0D0
+        lea ecx, [esp + 0x5c]
+        mov byte ptr [esp + 0x84], 0x3
+        call dword ptr [mem_00924FF4]
+        cmp esi, dword ptr [edi + 0x8]
+        jb L660DE0_1134
+        call dword ptr [mem_00925134]
+L660DE0_1134:
+        add esi, 0x1c
+        jmp L660DE0_10b0
+L660DE0_113c:
+        cmp esi, eax
+        mov ebp, dword ptr [mem_00925134]
+        jbe L660DE0_114c
+        call ebp
+        mov eax, dword ptr [esp + 0x28]
+L660DE0_114c:
+        mov bl, 0x6
+        __asm _emit 0x8b
+        __asm _emit 0xff
+L660DE0_1150:
+        cmp dword ptr [esp + 0x24], eax
+        mov edi, eax
+        jbe L660DE0_115e
+        call ebp
+        mov eax, dword ptr [esp + 0x28]
+L660DE0_115e:
+        cmp esi, edi
+        je L660DE0_11de
+        cmp esi, eax
+        jb L660DE0_1168
+        call ebp
+L660DE0_1168:
+        mov edx, dword ptr [esp + 0x8c]
+        lea ecx, [esp + 0x40]
+        push ecx
+        push edx
+        push 0
+        mov ecx, esi
+        call dword ptr [mem_00925054]
+        test eax, eax
+        jne L660DE0_11c8
+        cmp esi, dword ptr [esp + 0x28]
+        jb L660DE0_118b
+        call ebp
+L660DE0_118b:
+        push esi
+        lea ecx, [esp + 0x60]
+        call dword ptr [mem_00924FE0]
+        mov dword ptr [esp + 0x78], 0x0
+        mov ecx, dword ptr [esp + 0x90]
+        lea eax, [esp + 0x5c]
+        push eax
+        mov byte ptr [esp + 0x88], bl
+        call ext_0041E0D0
+        lea ecx, [esp + 0x5c]
+        mov byte ptr [esp + 0x84], 0x3
+        call dword ptr [mem_00924FF4]
+L660DE0_11c8:
+        mov eax, dword ptr [esp + 0x28]
+        cmp esi, eax
+        jb L660DE0_11d6
+        call ebp
+        mov eax, dword ptr [esp + 0x28]
+L660DE0_11d6:
+        add esi, 0x1c
+        jmp L660DE0_1150
+L660DE0_11de:
+        mov esi, dword ptr [esp + 0x34]
+        cmp esi, dword ptr [esp + 0x38]
+        jbe L660DE0_11ea
+        call ebp
+L660DE0_11ea:
+        mov ebx, 0x1
+        __asm _emit 0x90
+L660DE0_11f0:
+        mov edi, dword ptr [esp + 0x38]
+        cmp dword ptr [esp + 0x34], edi
+        jbe L660DE0_11fc
+        call ebp
+L660DE0_11fc:
+        cmp esi, edi
+        je L660DE0_1275
+        cmp esi, dword ptr [esp + 0x38]
+        jb L660DE0_1208
+        call ebp
+L660DE0_1208:
+        mov edx, dword ptr [esp + 0x8c]
+        lea ecx, [esp + 0x40]
+        push ecx
+        push edx
+        push 0
+        mov ecx, esi
+        call dword ptr [mem_00925054]
+        test eax, eax
+        jne L660DE0_1265
+        cmp esi, dword ptr [esp + 0x38]
+        jb L660DE0_122b
+        call ebp
+L660DE0_122b:
+        push esi
+        lea ecx, [esp + 0x60]
+        call dword ptr [mem_00924FE0]
+        mov dword ptr [esp + 0x78], ebx
+        mov ecx, dword ptr [esp + 0x90]
+        lea eax, [esp + 0x5c]
+        push eax
+        mov byte ptr [esp + 0x88], 0x7
+        call ext_0041E0D0
+        lea ecx, [esp + 0x5c]
+        mov byte ptr [esp + 0x84], 0x3
+        call dword ptr [mem_00924FF4]
+L660DE0_1265:
+        cmp esi, dword ptr [esp + 0x38]
+        jb L660DE0_126d
+        call ebp
+L660DE0_126d:
+        add esi, 0x1c
+        jmp L660DE0_11f0
+L660DE0_1275:
+        mov esi, dword ptr [esp + 0x34]
+        xor ebx, ebx
+        cmp esi, ebx
+        mov byte ptr [esp + 0x84], 0x1
+        pop ebp
+        je L660DE0_12ac
+        mov edi, dword ptr [esp + 0x34]
+        cmp esi, edi
+        je L660DE0_129f
+L660DE0_1290:
+        mov ecx, esi
+        call dword ptr [mem_00924FF4]
+        add esi, 0x1c
+        cmp esi, edi
+        jne L660DE0_1290
+L660DE0_129f:
+        mov ecx, dword ptr [esp + 0x30]
+        push ecx
+        call ext_006A5C5C
+        add esp, 0x4
+L660DE0_12ac:
+        mov esi, dword ptr [esp + 0x20]
+        cmp esi, ebx
+        mov dword ptr [esp + 0x30], ebx
+        mov dword ptr [esp + 0x34], ebx
+        mov dword ptr [esp + 0x38], ebx
+        mov byte ptr [esp + 0x80], 0x0
+        je L660DE0_12ec
+        mov edi, dword ptr [esp + 0x24]
+        cmp esi, edi
+        je L660DE0_12e3
+L660DE0_12d0:
+        mov ecx, esi
+        call dword ptr [mem_00924FF4]
+        add esi, 0x1c
+        cmp esi, edi
+        jne L660DE0_12d0
+        mov esi, dword ptr [esp + 0x20]
+L660DE0_12e3:
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+L660DE0_12ec:
+        lea ecx, [esp + 0x3c]
+        mov dword ptr [esp + 0x20], ebx
+        mov dword ptr [esp + 0x24], ebx
+        mov dword ptr [esp + 0x28], ebx
+        mov dword ptr [esp + 0x80], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x78]
+        mov al, byte ptr [esp + 0xf]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x78
+        ret 8
+    }
+}
