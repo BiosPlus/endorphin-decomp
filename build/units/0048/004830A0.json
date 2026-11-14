@@ -27,5 +27,7 @@
     "0x0048311E",
     "0x0048312D"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-14T12:19:17Z"
 }
