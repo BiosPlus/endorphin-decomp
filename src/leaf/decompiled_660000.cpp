@@ -11488,3 +11488,113 @@ extern "C" __declspec(naked) void* __fastcall fn_0066A350(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00669C00] sub_00669C00 (206 bytes)
+extern "C" void ext_004442E0();
+extern "C" void ext_00667030();
+extern "C" void ext_00669510();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00669C00(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -0x8
+        sub esp, 0x18
+        push ebx
+        lea eax, [ecx + 0xc]
+        mov ecx, dword ptr [eax + 0x4]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [ecx]
+        mov esi, eax
+        mov dword ptr [esp + 0x14], eax
+        mov dword ptr [esp + 0x20], esi
+        mov dword ptr [esp + 0x24], edi
+
+    L_00669C23:
+        test esi, esi
+        mov ebx, dword ptr [eax + 0x4]
+        je L_00669C2E
+        cmp esi, eax
+        je L_00669C38
+
+    L_00669C2E:
+        mov ebp, dword ptr [mem_00925134]
+        call ebp
+        jmp L_00669C3E
+
+    L_00669C38:
+        mov ebp, dword ptr [mem_00925134]
+
+    L_00669C3E:
+        cmp edi, ebx
+        je L_00669CC6
+        test esi, esi
+        jne L_00669C4C
+        call ebp
+
+    L_00669C4C:
+        cmp edi, dword ptr [esi + 0x4]
+        jne L_00669C53
+        call ebp
+
+    L_00669C53:
+        mov edx, dword ptr [edi + 0x30]
+        mov eax, dword ptr [edx]
+        add edi, 0x2c
+        mov esi, edi
+        mov ebp, eax
+        mov dword ptr [esp + 0x18], esi
+        mov dword ptr [esp + 0x1c], ebp
+
+    L_00669C67:
+        test esi, esi
+        mov ebx, dword ptr [edi + 0x4]
+        je L_00669C72
+        cmp esi, edi
+        je L_00669C78
+
+    L_00669C72:
+        call dword ptr [mem_00925134]
+
+    L_00669C78:
+        cmp ebp, ebx
+        je L_00669CAC
+        test esi, esi
+        jne L_00669C86
+        call dword ptr [mem_00925134]
+
+    L_00669C86:
+        cmp ebp, dword ptr [esi + 0x4]
+        jne L_00669C91
+        call dword ptr [mem_00925134]
+
+    L_00669C91:
+        lea ecx, [ebp + 0x28]
+        call ext_00669510
+        lea ecx, [esp + 0x18]
+        call ext_004442E0
+        mov ebp, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [esp + 0x18]
+        jmp L_00669C67
+
+    L_00669CAC:
+        lea ecx, [esp + 0x20]
+        call ext_00667030
+        mov edi, dword ptr [esp + 0x24]
+        mov esi, dword ptr [esp + 0x20]
+        mov eax, dword ptr [esp + 0x14]
+        jmp L_00669C23
+
+    L_00669CC6:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
