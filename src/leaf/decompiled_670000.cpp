@@ -12368,3 +12368,110 @@ done:
         ret
     }
 }
+
+// [0x0067F130] sub_0067F130 (305 bytes)
+extern "C" void ext_006404E0();
+extern "C" int mem_00924ED0;
+extern "C" int mem_0092AB78;
+
+extern "C" __declspec(naked) void __fastcall fn_0067F130(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x34
+        push ebx
+        mov ebx, dword ptr [esp + 0x48]
+        mov eax, dword ptr [ebx + 0x4]
+        test eax, eax
+        je L_0067F251
+        mov ecx, dword ptr [ebx + 0x8]
+        sub ecx, eax
+        mov eax, 0x2aaaaaab
+        imul ecx
+        sar edx, 1
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        je L_0067F251
+        mov ecx, dword ptr [esp + 0x50]
+        push ebp
+        push esi
+        push edi
+        push ecx
+        mov ecx, dword ptr [esp + 0x5c]
+        call ext_006404E0
+        mov edi, dword ptr [ebx + 0x4]
+        cmp edi, dword ptr [ebx + 0x8]
+        mov dword ptr [esp + 0x10], eax
+        jbe short L_0067F196
+        call dword ptr [mem_00925134]
+    L_0067F196:
+        mov ebp, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], ebp
+        jbe short L_0067F1A4
+        call dword ptr [mem_00925134]
+    L_0067F1A4:
+        lea ecx, [esp + 0x28]
+        call dword ptr [mem_00924FE8]
+        mov dword ptr [esp + 0x4c], 0
+    L_0067F1B6:
+        cmp edi, ebp
+        je short L_0067F214
+        cmp edi, dword ptr [ebx + 0x8]
+        jb short L_0067F1C5
+        call dword ptr [mem_00925134]
+    L_0067F1C5:
+        xor esi, esi
+    L_0067F1C7:
+        fld dword ptr [edi + esi*4]
+        push 0x14
+        lea edx, [esp + 0x18]
+        fstp dword ptr [esp + 0x58]
+        push edx
+        lea ecx, [esp + 0x5c]
+        call ext_0067ECF0
+        lea eax, [esp + 0x14]
+        push eax
+        lea ecx, [esp + 0x2c]
+        call dword ptr [mem_00924ED0]
+        push offset mem_0092AB78
+        lea ecx, [esp + 0x2c]
+        call dword ptr [mem_00924ED0]
+        add esi, 1
+        cmp esi, 3
+        jl short L_0067F1C7
+        cmp edi, dword ptr [ebx + 0x8]
+        jb short L_0067F20F
+        call dword ptr [mem_00925134]
+    L_0067F20F:
+        add edi, 0xc
+        jmp short L_0067F1B6
+    L_0067F214:
+        mov ecx, dword ptr [esp + 0x60]
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        call ext_00640110
+        lea ecx, [esp + 0x28]
+        mov esi, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x58]
+        mov dword ptr [esp + 0x58], esi
+        call ext_00427550
+        lea ecx, [esp + 0x28]
+        mov dword ptr [esp + 0x4c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        pop edi
+        pop esi
+        pop ebp
+    L_0067F251:
+        mov ecx, dword ptr [esp + 0x38]
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x40
+        ret
+    }
+}
