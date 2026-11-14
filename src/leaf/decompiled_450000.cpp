@@ -9756,3 +9756,75 @@ extern "C" __declspec(naked) void __fastcall fn_0045C820(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0045C8C0] sub_0045C8C0 (178 bytes)
+extern "C" void ext_0045C620();
+extern "C" void ext_00584A10();
+extern "C" void ext_006A6616();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_0045C8C0(void* self, int edx_unused, void* a1, void* a2, void* a3, void* a4, void* a5) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        push 0x928b5d
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FE4]
+        mov ebx, dword ptr [esp + 0x38]
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0x74]
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, ebx
+        mov dword ptr [esp + 0x34], 0
+        call edx
+        lea eax, [esp + 0xc]
+        push eax
+        mov ecx, edi
+        call ext_0045C620
+        mov esi, eax
+        test esi, esi
+        jne not_zero
+        mov ecx, ebx
+        call ext_00584A10
+        mov ecx, eax
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [esp + 0x48]
+        mov edx, dword ptr [esp + 0x44]
+        push ecx
+        mov ecx, dword ptr [esp + 0x44]
+        push edx
+        mov edx, dword ptr [esp + 0x44]
+        push esi
+        push esi
+        push esi
+        push ecx
+        push edx
+        push eax
+        push 0x23
+        mov ecx, edi
+        call ext_006A6616
+        mov esi, eax
+    not_zero:
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x28]
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 0x14
+    }
+}
