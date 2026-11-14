@@ -601,3 +601,59 @@ extern "C" __declspec(naked) void __fastcall fn_00870C90(void* self) {
         ret 8
     }
 }
+
+// [0x00870870] NMData::Marker::vfunc_54 (180 bytes)
+extern "C" void ext_005B18E0();
+extern "C" void ext_005B5810();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00BC817C;
+extern "C" int mem_0099F130;
+extern "C" int mem_00BC8130;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00870870(void* self) {
+    __asm {
+        push -1
+        push 08c1d87h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 28h
+        test byte ptr [mem_00BC817C], 1
+        fldz
+        fst dword ptr [esp + 8]
+        fstp dword ptr [esp + 4]
+        fld dword ptr [mem_0099F130]
+        fstp dword ptr [esp]
+        jne short L_init_done
+        or dword ptr [mem_00BC817C], 1
+        lea eax, [esp]
+        push eax
+        push 7
+        mov ecx, offset mem_00BC8130
+        mov dword ptr [esp + 38h], 0
+        call ext_005B5810
+        push 09221c0h
+        call ext_006A6C87
+        add esp, 4
+        mov dword ptr [esp + 30h], -1
+L_init_done:
+        push 09349bch
+        lea ecx, [esp + 10h]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0ch]
+        push ecx
+        mov ecx, offset mem_00BC8130
+        mov dword ptr [esp + 34h], 1
+        call ext_005B18E0
+        lea ecx, [esp + 0ch]
+        mov dword ptr [esp + 30h], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 28h]
+        mov eax, offset mem_00BC8130
+        mov dword ptr fs:[0], ecx
+        add esp, 34h
+        ret
+    }
+}
