@@ -14925,3 +14925,58 @@ L_end:
         ret 0x4
     }
 }
+
+// [0x0043C0F0] sub_0043C0F0 (101 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_0043BCA0();
+extern "C" void ext_0043BF00();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0043C0F0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push ebp
+        push esi
+        push edi
+        push ebx
+        mov edi, ecx
+        call ext_0043BCA0
+        lea eax, [esp + 0x14]
+        lea esi, [edi + 0x14]
+        push eax
+        mov ecx, esi
+        call ext_0041A920
+        mov ebp, dword ptr [mem_00925134]
+        mov dword ptr [ebx + 0x44], edi
+        mov edi, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], edi
+        mov byte ptr [esp + 0x14], 0
+        jbe L_0043C127
+        call ebp
+L_0043C127:
+        mov ebx, dword ptr [esi + 4]
+        cmp ebx, dword ptr [esi + 8]
+        jbe L_0043C131
+        call ebp
+L_0043C131:
+        cmp esi, esi
+        je L_0043C137
+        call ebp
+L_0043C137:
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, edi
+        push ecx
+        sub edx, ebx
+        sar edx, 2
+        push edx
+        push edi
+        push ebx
+        call ext_0043BF00
+        add esp, 0x10
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
