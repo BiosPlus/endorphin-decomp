@@ -1640,3 +1640,89 @@ extern "C" __declspec(naked) void __fastcall fn_00871C50(void* self) {
         ret 4
     }
 }
+
+// [0x008715E0] sub_008715E0 (220 bytes)
+extern "C" void ext_00870E40();
+extern "C" void ext_00870F40();
+extern "C" void ext_00871090();
+extern "C" void ext_008710B0();
+extern "C" void ext_00871130();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924FB0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_008715E0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push esi
+        mov esi, dword ptr [esp + 0x30]
+        push edi
+        mov edi, ecx
+        push 0x97cd50
+        mov ecx, esi
+        call ext_00870F40
+        test al, al
+        jne L_true
+        pop edi
+        pop esi
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x4
+L_true:
+        lea ecx, [esp + 0x8]
+        call dword ptr [mem_00924FE8]
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x30], 0x0
+        call ext_00871130
+        test al, al
+        jne L_skip1
+        push 0xa
+        mov ecx, esi
+        call ext_00870E40
+L_skip1:
+        lea ecx, [edi + 0x4]
+        push ecx
+        lea edx, [esp + 0xc]
+        push edx
+        call dword ptr [mem_00924FB0]
+        add esp, 0x8
+        test al, al
+        mov ecx, esi
+        je L_skip2
+        push 0xd
+        call ext_00870E40
+L_skip2:
+        call ext_008710B0
+        mov eax, dword ptr [esi + 0x10]
+        mov dword ptr [edi + 0x60], eax
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, dword ptr [esi + 0x4]
+        push 0x3e
+        mov ecx, esi
+        mov dword ptr [edi + 0x5c], eax
+        call ext_00871090
+        test al, al
+        jne L_skip3
+        push 0xc
+        call ext_00870E40
+L_skip3:
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x2c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        mov al, 0x1
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret 0x4
+    }
+}
