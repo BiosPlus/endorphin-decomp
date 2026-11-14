@@ -4875,3 +4875,67 @@ extern "C" __declspec(naked) void __fastcall fn_004C6780(void* self, int edx_unu
         ret     4
     }
 }
+
+// [0x004C31B0] sub_004C31B0 (225 bytes)
+extern "C" void ext_004C28F0();
+extern "C" void ext_0058F200();
+extern "C" int mem_0088B1B4;
+extern "C" int mem_00928EAC;
+extern "C" int mem_009443BC;
+extern "C" int mem_00928EFC;
+extern "C" int mem_00944FF4;
+extern "C" int mem_00944FAC;
+extern "C" int mem_00944F6C;
+extern "C" int mem_00944F1C;
+extern "C" int mem_00944F08;
+extern "C" int mem_00944EF8;
+extern "C" int mem_00944ECC;
+
+extern "C" __declspec(naked) void __fastcall fn_004C31B0(void* self) {
+    __asm {
+        push    -1
+        push    offset mem_0088B1B4
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        push    ecx
+        push    esi
+        mov     esi, ecx
+        mov     [esp+4], esi
+        call    ext_0058F200
+        mov     dword ptr [esi+0x150], offset mem_00928EAC
+        xor     eax, eax
+        mov     dword ptr [esi+0x154], offset mem_009443BC
+        mov     [esp+0x10], eax
+        mov     dword ptr [esi+0x158], offset mem_00928EFC
+        mov     ecx, [esp+0x1C]
+        mov     edx, [esp+0x20]
+        mov     [esi+0x15C], ecx
+        mov     ecx, [esp+0x24]
+        mov     dword ptr [esi], offset mem_00944FF4
+        mov     dword ptr [esi+4], offset mem_00944FAC
+        mov     dword ptr [esi+8], offset mem_00944F6C
+        mov     dword ptr [esi+0xC], offset mem_00944F1C
+        mov     dword ptr [esi+0x150], offset mem_00944F08
+        mov     dword ptr [esi+0x154], offset mem_00944EF8
+        mov     dword ptr [esi+0x158], offset mem_00944ECC
+        mov     [esi+0x160], edx
+        mov     [esi+0x164], ecx
+        mov     [esi+0x168], eax
+        mov     [esi+0x170], eax
+        mov     [esi+0x174], eax
+        mov     [esi+0x178], eax
+        mov     edx, [esp+0x18]
+        push    edx
+        mov     ecx, esi
+        mov     byte ptr [esp+0x14], 2
+        mov     byte ptr [esi+0x17C], 1
+        call    ext_004C28F0
+        mov     ecx, [esp+8]
+        mov     eax, esi
+        pop     esi
+        mov     fs:[0], ecx
+        add     esp, 0x10
+        ret     0x10
+    }
+}
