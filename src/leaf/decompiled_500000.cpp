@@ -9642,3 +9642,55 @@ L_0050AC16:
         ret
     }
 }
+
+// [0x005089C0] sub_005089C0 (111 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_00640110();
+extern "C" void ext_00640BC0();
+extern "C" int mem_00A9FA04;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9F790;
+extern "C" int mem_00A9FA90;
+
+extern "C" __declspec(naked) void* __fastcall fn_005089C0(void* self, int edx_unused, void* arg0) {
+    __asm {
+        mov     eax, dword ptr [mem_00A9FA04]
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0xc]
+        mov     esi, ecx
+        push    eax
+        mov     ecx, edi
+        call    ext_00640110
+        lea     ecx, [esi + 4]
+        mov     dword ptr [esp + 0xc], eax
+        call    dword ptr [mem_00924FF0]
+        push    eax
+        lea     ecx, [esp + 0x10]
+        call    ext_00427550
+        mov     ecx, dword ptr [mem_00A9F790]
+        push    ecx
+        mov     ecx, edi
+        call    ext_00640110
+        fld     dword ptr [esi + 0x20]
+        push    ecx
+        fstp    dword ptr [esp]
+        push    eax
+        call    ext_00640BC0
+        mov     edx, dword ptr [mem_00A9FA90]
+        add     esp, 8
+        push    edx
+        mov     ecx, edi
+        call    ext_00640110
+        fld     dword ptr [esi + 0x24]
+        push    ecx
+        fstp    dword ptr [esp]
+        push    eax
+        call    ext_00640BC0
+        add     esp, 8
+        mov     eax, edi
+        pop     edi
+        pop     esi
+        ret     4
+    }
+}
