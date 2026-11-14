@@ -13101,3 +13101,45 @@ L_08408B08:
         ret 0x4
     }
 }
+
+// [0x0040DF30] sub_0040DF30 (122 bytes)
+extern "C" void ext_0040B3C0();
+extern "C" void ext_0040C7F0();
+extern "C" __declspec(naked) void __fastcall fn_0040DF30(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push -1
+        push 0x88afd3
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x20
+        mov eax, dword ptr [esp + 0x34]
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        lea ecx, [esp + 0x10]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0
+        call ext_0040C7F0
+        mov edi, dword ptr [esp + 0x38]
+        lea edx, [esp + 0xc]
+        push edx
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp + 0x38], 1
+        call ext_0040B3C0
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x8], 1
+        mov byte ptr [esp + 0x30], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x28]
+        mov eax, edi
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x2c
+        ret 8
+    }
+}
