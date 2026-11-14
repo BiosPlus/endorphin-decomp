@@ -111,3 +111,17 @@ extern "C" void* __fastcall fn_0072BF40(void* self) {
     *(unsigned char*)(esi + 0x65) = 0;
     return esi;
 }
+
+extern "C" int ext_00789BB0();
+extern "C" int ext_0078C3A0();
+extern "C" int ext_0078CBE0();
+
+// [0x00726940] sub_00726940 (63 bytes)
+extern "C" int __fastcall fn_00726940(void* self) {
+    int esi = ((int (__fastcall *)(void*))ext_00789BB0)(*(void**)((char*)self + 0x250));
+    if (!esi || !((int (__fastcall *)(int))ext_0078CBE0)(esi)) {
+        return 0;
+    }
+    int edi = *(int*)(((int (__fastcall *)(int))ext_0078CBE0)(esi) + 0x1c);
+    return ((int (__fastcall *)(int))ext_0078C3A0)(((int (__fastcall *)(int))ext_0078CBE0)(esi)) - edi;
+}
