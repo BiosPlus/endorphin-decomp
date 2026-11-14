@@ -1572,3 +1572,46 @@ L_238:
         ret 0x8
     }
 }
+
+// [0x005E1CD0] NMData::FixedPathJointData::vfunc_54 (128 bytes)
+extern "C" void __cdecl ext_005B5780();
+extern "C" void __cdecl ext_005E0380();
+extern "C" void __cdecl ext_006A6C87();
+extern "C" int mem_00B45D1C;
+extern "C" int mem_00B45D14;
+extern "C" __declspec(naked) void __fastcall fn_005E1CD0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a614e
+        push eax
+        mov dword ptr fs:[0], esp
+        mov eax, 1
+        test byte ptr [mem_00B45D1C], al
+        push esi
+        mov esi, ecx
+        jne loc_5e1d24
+        or dword ptr [mem_00B45D1C], eax
+        push 0xc
+        mov ecx, 0xb45cd0
+        mov dword ptr [esp + 0x10], 0
+        call ext_005B5780
+        push 0x91e410
+        call ext_006A6C87
+        add esp, 4
+        mov dword ptr [esp + 0xc], -1
+
+    loc_5e1d24:
+        push 0xb45cd0
+        mov ecx, esi
+        call ext_005E0380
+        mov al, byte ptr [esi + 0x178]
+        mov ecx, dword ptr [esp + 4]
+        mov byte ptr [mem_00B45D14], al
+        mov eax, 0xb45cd0
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
