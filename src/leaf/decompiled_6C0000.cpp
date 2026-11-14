@@ -755,3 +755,29 @@ extern "C" __declspec(naked) void __fastcall fn_006C2C60(void* self) {
         ret 0x20
     }
 }
+
+// [0x006C2DE0] sub_006C2DE0 (79 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C2DE0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b9338
+        push eax
+        mov dword ptr fs:[0], esp
+        lea eax, [esp + 0x10]
+        add ecx, 0x138
+        push eax
+        mov dword ptr [esp + 0xc], 0
+        call ext_007873F0
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x8], -1
+        call ext_006D80A0
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x20
+    }
+}
