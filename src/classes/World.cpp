@@ -131,3 +131,70 @@ extern "C" __declspec(naked) void __fastcall fn_0059AAF0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0059AFC0] World::vfunc_21 (165 bytes)
+extern "C" void ext_0059AB50();
+extern "C" void ext_0059AE40();
+extern "C" void ext_0063F530();
+extern "C" int mem_00A9F26C; /* u32 0x009864AC */
+extern "C" int mem_00AA2390; /* u32 0x009591B0 */
+extern "C" int mem_00AA238C; /* u32 0x0098CE38 */
+
+extern "C" __declspec(naked) void __fastcall fn_0059AFC0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F26C]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0Ch]
+        push 1
+        push 0
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0B53A34h
+        je L_set1
+        cmp eax, 0B53B30h
+        je L_set1
+        cmp eax, 0B53AB0h
+        je L_set1
+        cmp eax, 0B53A70h
+        je L_set1
+        cmp eax, 0B53AF0h
+        jne L_skip1
+L_set1:
+        mov eax, 0B53B30h
+L_skip1:
+        push eax
+        mov ecx, esi
+        call ext_0059AB50
+        mov ecx, dword ptr [mem_00AA2390]
+        push 1
+        push 0
+        push ecx
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0B53A34h
+        je L_set2
+        cmp eax, 0B53B30h
+        je L_set2
+        cmp eax, 0B53AB0h
+        je L_set2
+        cmp eax, 0B53A70h
+        je L_set2
+        cmp eax, 0B53AF0h
+        jne L_skip2
+L_set2:
+        mov eax, 0B53B30h
+L_skip2:
+        mov edx, dword ptr [mem_00AA238C]
+        push edx
+        push eax
+        lea ecx, [esi + 278h]
+        call ext_0059AE40
+        pop edi
+        mov dword ptr [esi + 0F4h], 1
+        pop esi
+        ret 4
+    }
+}
