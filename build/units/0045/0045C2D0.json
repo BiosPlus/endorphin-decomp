@@ -33,5 +33,7 @@
     "0x0045C3B6",
     "0x0045C3C1"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T13:43:17Z"
 }
