@@ -11077,3 +11077,88 @@ L_false:
         ret 8
     }
 }
+
+// [0x00429250] sub_00429250 (244 bytes)
+extern "C" void ext_004142E0();
+extern "C" void ext_00420530();
+extern "C" void ext_00429050();
+extern "C" void ext_00664C30();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00429250(void* self) {
+    __asm {
+        push -1
+        push 0x878F11
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x68
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x84]
+        mov eax, dword ptr [edi]
+        mov dword ptr [esp + 0x28], eax
+        mov eax, dword ptr [esp + 0x88]
+        mov dl, byte ptr [eax + 1]
+        mov esi, ecx
+        movzx ecx, byte ptr [eax]
+        mov byte ptr [esp + 0x2C], cl
+        movzx ecx, byte ptr [eax + 2]
+        add eax, 4
+        mov byte ptr [esp + 0x2E], cl
+        push eax
+        lea ecx, [esp + 0x34]
+        mov byte ptr [esp + 0x31], dl
+        call dword ptr [mem_00924FE0]
+        lea edx, [esp + 0x28]
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp + 0x80], 0
+        call ext_00429050
+        lea ecx, [esp + 0x30]
+        mov bl, al
+        mov dword ptr [esp + 0x7C], -1
+        call dword ptr [mem_00924FF4]
+        test bl, bl
+        je L_004292EA
+        pop edi
+        pop esi
+        mov al, 1
+        pop ebx
+        mov ecx, dword ptr [esp + 0x68]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x74
+        ret 0xC
+    L_004292EA:
+        cmp byte ptr [esp + 0x8C], 0
+        je L_0042932E
+        mov eax, dword ptr [edi]
+        push eax
+        lea ecx, [esp + 0x10]
+        push ecx
+        call ext_00664C30
+        add esp, 8
+        push eax
+        mov dword ptr [esp + 0x80], 1
+        call ext_00420530
+        push eax
+        lea ecx, [esp + 0x54]
+        call ext_004142E0
+        push 0x9D1278
+        lea edx, [esp + 0x50]
+        push edx
+        call ext_006A6DD2
+    L_0042932E:
+        mov ecx, dword ptr [esp + 0x74]
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x74
+        ret 0xC
+    }
+}
