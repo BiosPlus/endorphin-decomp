@@ -10366,3 +10366,140 @@ loc_6ADD80:
         ret 8
     }
 }
+
+// [0x006A7E00] sub_006A7E00 (295 bytes)
+extern "C" void ext_006A63BE();
+extern "C" void ext_006A7C10();
+extern "C" void ext_006AD070();
+extern "C" void ext_006AD080();
+extern "C" void ext_006AD090();
+extern "C" void ext_006AD190();
+extern "C" void ext_006AEC60();
+extern "C" void ext_006AEC90();
+extern "C" void ext_006AF8E0();
+
+extern "C" __declspec(naked) void __fastcall fn_006A7E00(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, ecx
+        push esi
+        mov ecx, ebx
+        mov dword ptr [esp + 0x10], edi
+        call ext_006AD070
+        push ebx
+        mov ecx, esi
+        call ext_006AD080
+        mov ecx, ebx
+        mov esi, ebx
+        call ext_006AEC90
+        test al, al
+        je L_ret_esi
+        mov ecx, ebx
+        call ext_006A7C10
+        test eax, eax
+        je L_ret_esi
+        push ebp
+        mov ecx, ebx
+        xor ebp, ebp
+        call ext_006A7C10
+        test eax, eax
+        jle L_after_loop
+L_loop:
+        push ebp
+        mov ecx, ebx
+        call ext_006AF8E0
+        mov edi, eax
+        mov ecx, edi
+        call ext_006AD090
+        test al, al
+        je L_next
+        push edi
+        mov ecx, esi
+        call ext_006AD070
+        push esi
+        mov ecx, edi
+        call ext_006AD080
+        mov esi, edi
+        call ext_006AEC60
+        push eax
+        mov ecx, edi
+        call ext_006A63BE
+        test eax, eax
+        mov ecx, edi
+        je L_else
+        call ext_006AD190
+        mov esi, eax
+        test esi, esi
+        je L_a2
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+L_inner:
+        mov ecx, esi
+        call ext_006AD090
+        test al, al
+        jne L_matched
+        mov ecx, esi
+        call ext_006AD190
+        mov esi, eax
+        test esi, esi
+        jne L_inner
+        mov esi, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        call ext_006A7E00
+        mov esi, eax
+        jmp L_next
+L_matched:
+        test esi, esi
+        jne L_recur
+L_a2:
+        mov esi, dword ptr [esp + 0x1c]
+L_recur:
+        mov ecx, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        call ext_006A7E00
+        mov esi, eax
+        jmp L_next
+L_else:
+        mov eax, dword ptr [esp + 0x1c]
+        push eax
+        call ext_006AD070
+        mov ecx, dword ptr [esp + 0x1c]
+        push edi
+        call ext_006AD080
+L_next:
+        mov ecx, ebx
+        add ebp, 1
+        call ext_006A7C10
+        cmp ebp, eax
+        jl L_loop
+        mov edi, dword ptr [esp + 0x10]
+L_after_loop:
+        cmp dword ptr [edi + 0x5c], ebx
+        pop ebp
+        mov eax, esi
+        jne L_ret_noset
+        mov dword ptr [edi + 0x5c], esi
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 8
+L_ret_esi:
+        mov eax, esi
+L_ret_noset:
+        pop edi
+        pop esi
+        pop ebx
+        pop ecx
+        ret 8
+    }
+}
