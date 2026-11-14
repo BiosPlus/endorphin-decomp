@@ -13035,3 +13035,64 @@ L_ret_506660:
         ret 0xc
     }
 }
+
+// [0x00502D60] sub_00502D60 (152 bytes)
+extern "C" void ext_00502280();
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void* __fastcall fn_00502D60(void* self) {
+    __asm {
+        push -1
+        push 08a7a5bh
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov ecx, [esi + 140h]
+        test ecx, ecx
+        push edi
+        je L_skip1
+        mov eax, [ecx]
+        mov edx, [eax]
+        push 1
+        call edx
+    L_skip1:
+        push 0ach
+        mov dword ptr [esi + 140h], 0
+        call ext_006A5C62
+        add esp, 4
+        mov [esp + 8], eax
+        test eax, eax
+        mov dword ptr [esp + 14h], 0
+        je L_null
+        push esi
+        mov ecx, eax
+        call ext_00502280
+        mov edi, eax
+        jmp L_after
+    L_null:
+        xor edi, edi
+    L_after:
+        mov ecx, [esi + 140h]
+        cmp edi, ecx
+        mov dword ptr [esp + 14h], -1
+        je L_skip2
+        test ecx, ecx
+        je L_skip2
+        mov eax, [ecx]
+        mov edx, [eax]
+        push 1
+        call edx
+    L_skip2:
+        mov ecx, [esp + 0ch]
+        mov dword ptr [esi + 140h], edi
+        mov eax, edi
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
