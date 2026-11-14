@@ -272,3 +272,51 @@ extern "C" __declspec(naked) void __fastcall fn_004CFC30(void* self) {
         ret
     }
 }
+
+// [0x004CE740] NMData::IncarnationEventData::vfunc_22 (109 bytes)
+extern "C" void ext_00640110();
+extern "C" void ext_00640BC0();
+extern "C" void ext_00427550();
+extern "C" void ext_004C1DE0();
+extern "C" int mem_00A9F898;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00AE51C8;
+extern "C" int mem_009473C0;
+
+extern "C" __declspec(naked) void __fastcall fn_004CE740(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F898]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        mov ecx, dword ptr [esi + 0x180]
+        lea edx, [ecx*8]
+        sub edx, ecx
+        lea ecx, [edx*4 + mem_00AE51C8]
+        mov dword ptr [esp + 0xc], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        push offset mem_009473C0
+        mov ecx, edi
+        call ext_00640110
+        fld dword ptr [esi + 0x18c]
+        push ecx
+        fstp dword ptr [esp]
+        push eax
+        call ext_00640BC0
+        add esp, 8
+        push edi
+        mov ecx, esi
+        call ext_004C1DE0
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 4
+    }
+}
