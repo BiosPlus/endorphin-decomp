@@ -51,5 +51,7 @@
     "0x0048CEF3",
     "0x0048CEFC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-14T09:54:25Z"
 }
