@@ -3929,3 +3929,78 @@ extern "C" __declspec(naked) void __fastcall fn_004D9C60(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00528BB0();
+extern "C" void ext_00586A50();
+extern "C" int mem_00925134;
+
+// [0x004D9BC0] sub_004D9BC0 (149 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004D9BC0(void* self) {
+    __asm {
+        push ecx
+        push edi
+        mov edi, ecx
+        cmp byte ptr [edi + 0x1fa], 0
+        mov dword ptr [esp + 0x4], edi
+        _emit 0x0F
+        _emit 0x84
+        _emit 0x7D
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push ebx
+        mov ebx, dword ptr [edi + 0x20c]
+        test ebx, ebx
+        je L_call586
+        push ebp
+        push esi
+        mov esi, dword ptr [ebx + 0x4]
+        cmp esi, dword ptr [ebx + 0x8]
+        jbe L_loop
+        call dword ptr [mem_00925134]
+    L_loop:
+        mov edi, dword ptr [edi + 0x20c]
+        mov ebp, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebp
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+    L_chk1:
+        cmp ebx, edi
+        mov edi, dword ptr [mem_00925134]
+        je L_chk2
+        call edi
+    L_chk2:
+        cmp esi, ebp
+        je L_done
+        cmp esi, dword ptr [ebx + 0x8]
+        jb L_body
+        call edi
+    L_body:
+        mov ecx, dword ptr [esi]
+        push 0
+        push 0x1000
+        add ecx, 0xc
+        call ext_00528BB0
+        cmp esi, dword ptr [ebx + 0x8]
+        jb L_next
+        call edi
+    L_next:
+        mov edi, dword ptr [esp + 0x10]
+        add esi, 0x4
+        jmp L_loop
+    L_done:
+        mov edi, dword ptr [esp + 0x10]
+        pop esi
+        pop ebp
+    L_call586:
+        push 0
+        push 0x1000
+        lea ecx, [edi + 0x10]
+        call ext_00586A50
+        pop ebx
+    L_end:
+        pop edi
+        pop ecx
+        ret
+    }
+}
