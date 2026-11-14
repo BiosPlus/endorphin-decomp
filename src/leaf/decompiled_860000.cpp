@@ -1525,3 +1525,58 @@ extern "C" __declspec(naked) void __cdecl fn_00860EF0(void* arg1, unsigned char 
         ret
     }
 }
+
+// [0x00860670] sub_00860670 (140 bytes)
+extern "C" void ext_0085DE10();
+extern "C" void ext_0085DE20();
+extern "C" void ext_0085DF30(void*);
+extern "C" void ext_00860700();
+extern "C" void ext_00860870();
+extern "C" int mem_00AB9878;
+extern "C" int mem_00AB9880;
+extern "C" int mem_00AB98A4;
+extern "C" int mem_00AB98EC;
+extern "C" int mem_00AB98AC;
+extern "C" int mem_00ABAA40;
+
+extern "C" __declspec(naked) int __cdecl fn_00860670() {
+    __asm {
+        xor ecx, ecx
+        cmp dword ptr [mem_00AB9878], ecx
+        jne L_860686
+        mov dword ptr [mem_00AB9880], ecx
+        mov dword ptr [mem_00AB98A4], ecx
+    L_860686:
+        mov dword ptr [mem_00AB98EC], 1
+        call ext_0085DE10
+        cmp dword ptr [mem_00AB9878], 0
+        jne L_8606A1
+        xor eax, eax
+        ret
+    L_8606A1:
+        cmp dword ptr [mem_00AB98AC], 0
+        jne L_8606D2
+        push offset mem_00ABAA40
+        call ext_0085DF30
+        add esp, 4
+        cmp dword ptr [mem_00AB98EC], 0x13
+        jne L_8606C3
+        xor eax, eax
+        ret
+    L_8606C3:
+        call ext_0085DE20
+        mov dword ptr [mem_00AB98AC], 1
+    L_8606D2:
+        call ext_00860870
+        call ext_00860700
+        mov eax, dword ptr [mem_00AB9880]
+        add eax, dword ptr [mem_00AB98A4]
+        jne L_8606EC
+        xor eax, eax
+        ret
+    L_8606EC:
+        mov dword ptr [mem_00AB98EC], 0
+        mov eax, 1
+        ret
+    }
+}
