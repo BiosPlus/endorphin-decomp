@@ -9238,3 +9238,43 @@ L_006AAC90_end:
         ret 4
     }
 }
+
+// [0x006A3FA0] sub_006A3FA0 (79 bytes)
+extern "C" void ext_00804C10();
+extern "C" int mem_00AA4B74;
+extern "C" int mem_009905A0;
+
+extern "C" __declspec(naked) void __fastcall fn_006A3FA0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        mov eax, dword ptr [mem_00AA4B74]
+        sub esp, 0x2e8
+        push esi
+        or eax, 0xffff0000
+        cmp byte ptr [ebp + 8], 0
+        push edi
+        mov edx, ecx
+        je L_skip
+        or eax, 0x8000
+    L_skip:
+        mov ecx, 0xb8
+        mov esi, offset mem_009905A0
+        lea edi, [esp + 8]
+        rep movsd
+        push edx
+        lea ecx, [esp + 0xc]
+        push ecx
+        push eax
+        movsb
+        call ext_00804C10
+        test eax, eax
+        pop edi
+        sete al
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 4
+    }
+}
