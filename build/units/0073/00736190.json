@@ -141,5 +141,7 @@
     "0x007367EA",
     "0x007367FE"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T14:17:18Z"
 }
