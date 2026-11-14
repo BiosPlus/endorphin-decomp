@@ -9442,3 +9442,80 @@ exit_path:
         ret
     }
 }
+
+extern "C" void ext_005060F0();
+extern "C" void ext_006A6DD2();
+
+// [0x005064D0] sub_005064D0 (155 bytes)
+extern "C" __declspec(naked) void __cdecl fn_005064D0() {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x891cf1
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 8]
+        push edi
+        mov edi, dword ptr [ebp + 0xc]
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 4], 0
+        mov ebx, 1
+    L_loop:
+        test edi, edi
+        jbe L_done
+        mov dword ptr [ebp + 0xc], esi
+        mov dword ptr [ebp - 0x18], esi
+        test esi, esi
+        mov byte ptr [ebp - 4], bl
+        je L_skip_call
+        mov eax, dword ptr [ebp + 0x10]
+        push eax
+        mov ecx, esi
+        call ext_005060F0
+    L_skip_call:
+        sub edi, ebx
+        add esi, 0x68
+        mov byte ptr [ebp - 4], 0
+        mov dword ptr [ebp + 8], esi
+        jmp L_loop
+    L_catch:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 8]
+        cmp esi, edi
+        je L_rethrow
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_dtor_loop:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx]
+        push 0
+        mov ecx, esi
+        call eax
+        add esi, 0x68
+        cmp esi, edi
+        jne L_dtor_loop
+    L_rethrow:
+        push 0
+        push 0
+        call ext_006A6DD2
+    L_done:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
