@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_640000.cpp
 
 #include <math.h>
+extern "C" int mem_00924ED0; /* u32 0x0062A4E2 */
 
 // [0x00648480] sub_00648480 (15 bytes)
 extern "C" void ext_007C6F70();
@@ -9004,5 +9005,34 @@ extern "C" __declspec(naked) void __fastcall fn_00647040(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 0x70
         ret 0xc
+    }
+}
+
+// [0x006408F0] sub_006408F0 (49 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006408F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xc]
+        push edi
+        sub eax, 1
+        xor edi, edi
+        test eax, eax
+        mov byte ptr [esi + 0x11], 0x0
+        jle done
+    loop_top:
+        mov ecx, dword ptr [esi + 0x4]
+        push ecx
+        mov ecx, dword ptr [esi + 0x8]
+        call dword ptr [mem_00924ED0]
+        mov edx, dword ptr [esi + 0xc]
+        add edi, 1
+        sub edx, 1
+        cmp edi, edx
+        jl loop_top
+    done:
+        pop edi
+        pop esi
+        ret
     }
 }
