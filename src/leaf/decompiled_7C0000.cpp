@@ -18835,3 +18835,67 @@ extern "C" __declspec(naked) void __cdecl fn_007C46E0(void* self) {
         ret
     }
 }
+
+// [0x007CCE40] sub_007CCE40 (123 bytes)
+extern "C" void ext_007DD000();
+extern "C" void ext_007DFDB0();
+extern "C" void ext_007C8BB0();
+extern "C" void ext_007CD110();
+extern "C" void ext_007D5870();
+extern "C" __declspec(naked) void __fastcall fn_007CCE40(void* self) {
+    __asm {
+        sub esp, 8
+        push ebx
+        push ebp
+        push esi
+        lea eax, [esp + 0ch]
+        push edi
+        push eax
+        xor ebp, ebp
+        call ext_007DD000
+        mov esi, dword ptr [esp + 20h]
+        mov ebx, dword ptr [esp + 24h]
+        add esp, 4
+        _emit 0x8b
+        _emit 0xff
+    loop_top:
+        mov ecx, dword ptr [esi + 18h]
+        push ecx
+        call ext_007DFDB0
+        mov edx, dword ptr [esi + 18h]
+        push edx
+        lea eax, [esp + 18h]
+        push eax
+        push ebx
+        call ext_007C8BB0
+        mov ecx, dword ptr [esp + 34h]
+        mov edx, dword ptr [esi + 18h]
+        push esi
+        push ecx
+        push ebx
+        push edx
+        mov edi, eax
+        call ext_007CD110
+        add esp, 20h
+        add ebp, 1
+        test edi, edi
+        jne loop_top
+        cmp ebp, 1
+        jbe done
+        mov eax, dword ptr [esp + 24h]
+        mov ecx, dword ptr [eax + 5f0h]
+        push ebp
+        push 0099dd74h
+        push ecx
+        push edi
+        call ext_007D5870
+        add esp, 10h
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
