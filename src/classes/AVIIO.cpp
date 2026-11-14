@@ -304,3 +304,61 @@ extern "C" __declspec(naked) void __fastcall fn_00558080(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0065C6D0] AVIIO::vfunc_9 (146 bytes)
+extern "C" void ext_00663110();
+extern "C" void ext_00663470();
+extern "C" void ext_00663DB0();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0065C6D0(void* self, int edx_unused, void* a1, bool a2) {
+    __asm {
+        push    -1
+        push    0x8b56f9
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 0x1c
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x34]
+        push    edi
+        mov     esi, ecx
+        call    ext_00663DB0
+        add     esp, 4
+        lea     ecx, [esp + 8]
+        call    dword ptr [mem_00924FE8]
+        mov     eax, dword ptr [esi]
+        mov     edx, dword ptr [eax + 0x10]
+        push    1
+        lea     ecx, [esp + 0xc]
+        push    ecx
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x34], 0
+        call    edx
+        cmp     byte ptr [esp + 0x38], 0
+        je      L_else
+        lea     eax, [esp + 8]
+        push    eax
+        push    edi
+        call    ext_00663470
+        jmp     L_end
+    L_else:
+        lea     ecx, [esp + 8]
+        push    ecx
+        push    edi
+        call    ext_00663110
+    L_end:
+        add     esp, 8
+        lea     ecx, [esp + 8]
+        mov     dword ptr [esp + 0x2c], -1
+        call    dword ptr [mem_00924FF4]
+        mov     ecx, dword ptr [esp + 0x24]
+        pop     edi
+        pop     esi
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x28
+        ret     8
+    }
+}
