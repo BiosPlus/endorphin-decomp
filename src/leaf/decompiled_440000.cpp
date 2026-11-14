@@ -14154,3 +14154,23 @@ extern "C" __declspec(naked) void __fastcall fn_00446360(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0044CD80] sub_0044CD80 (261 bytes)
+extern "C" void ext_0040F230();
+extern "C" int mem_0093A0C8;
+extern "C" int mem_0093A0CC;
+extern "C" int mem_0093A0D0;
+
+extern "C" void __fastcall fn_0044CD80(void* self) {
+    char* p = (char*)self;
+    typedef void (__thiscall *Fn)(void*, int, int, int, int);
+    Fn f = (Fn)ext_0040F230;
+    f(p + 0xc0c, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
+    f(p + 0x79c, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
+    f(p + 0x810, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
+    f(p + 0x884, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
+    f(p + 0x8f8, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
+    f(p + 0x8f8, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
+    f(p + 0x660, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
+    f(p + 0x6d4, mem_0093A0CC, mem_0093A0C8, mem_0093A0D0, mem_0093A0C8);
+}
