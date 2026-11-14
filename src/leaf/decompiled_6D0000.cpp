@@ -2457,3 +2457,110 @@ extern "C" __declspec(naked) void __fastcall fn_006D83C0(void* self) {
         ret 0x4
     }
 }
+
+// [0x006D4020] sub_006D4020 (288 bytes)
+extern "C" void ext_006D7D00();
+extern "C" void ext_006D8DD0();
+extern "C" void ext_007006E0();
+extern "C" int mem_008B8FDB;
+
+extern "C" __declspec(naked) void* __fastcall fn_006D4020(void* self) {
+    __asm {
+        push -1
+        push offset mem_008B8FDB
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push 0x5c
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je label_null1
+        push esi
+        mov ecx, eax
+        call ext_007006E0
+        pop esi
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    label_null1:
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+        nop
+        nop
+        nop
+        push -1
+        push offset mem_008B8FDB
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push 0x18
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je label_null2
+        push esi
+        mov ecx, eax
+        call ext_006D8DD0
+        pop esi
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    label_null2:
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+        nop
+        nop
+        nop
+        push -1
+        push offset mem_008B8FDB
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push 0x1f8
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je label_null3
+        push esi
+        mov ecx, eax
+        call ext_006D7D00
+        pop esi
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    label_null3:
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
