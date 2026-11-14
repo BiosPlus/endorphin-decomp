@@ -6613,3 +6613,42 @@ L_skip:
         ret 0x4
     }
 }
+
+extern "C" void ext_00586440();
+extern "C" void ext_00586540();
+extern "C" void ext_0065D120();
+
+// [0x00480700] sub_00480700 (74 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00480700(void* self) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0x8]
+        test edi, edi
+        je done
+        push esi
+        call ext_00594000
+        mov esi, eax
+        lea ecx, [esi + 0xfc]
+        call ext_0065D120
+        mov eax, dword ptr [esi + 0x26c]
+        test eax, eax
+        je zero_eax
+        add eax, 0x8
+        jmp do_call
+    zero_eax:
+        xor eax, eax
+    do_call:
+        push 0x0
+        push eax
+        mov ecx, edi
+        call ext_00586540
+        add esi, 0x168
+        push esi
+        mov ecx, edi
+        call ext_00586440
+        pop esi
+    done:
+        pop edi
+        ret 0x4
+    }
+}
