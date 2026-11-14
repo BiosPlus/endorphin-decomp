@@ -5860,3 +5860,104 @@ extern "C" __declspec(naked) void* __fastcall fn_0063FCE0(void* self, int edx_un
         ret 0x4
     }
 }
+
+extern "C" double __cdecl fabs(double);
+extern "C" void ext_0063CE60();
+
+// [0x0063D4A0] sub_0063D4A0 (219 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0063D4A0(void* self) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x20]
+        push edi
+        push 0x0
+        lea ebx, [esi + 0x4c]
+        call edx
+        fsub dword ptr [esi + 0x2c]
+        mov eax, dword ptr [esi + 0x7c]
+        test eax, eax
+        fstp dword ptr [esp + 0xc]
+        lea ecx, [esi + 0x78]
+        fld dword ptr [esp + 0xc]
+        fabs
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0x10]
+        fstp dword ptr [esp + 0x10]
+        jne L_nonnull
+        xor edi, edi
+        jmp L_after_cap
+    L_nonnull:
+        mov edi, dword ptr [ecx + 0xc]
+        sub edi, eax
+        sar edi, 0x2
+    L_after_cap:
+        push ebp
+        mov ebp, dword ptr [ecx + 0x10]
+        xor edx, edx
+        mov eax, ebp
+        div edi
+        test edx, edx
+        jne L_inc
+        test ebp, ebp
+        je L_inc
+        mov dword ptr [ecx + 0x10], edi
+    L_inc:
+        add dword ptr [ecx + 0x10], 0x1
+        push edx
+        call ext_0041C7C0
+        fld dword ptr [esp + 0x14]
+        fstp dword ptr [eax]
+        pop ebp
+        fld dword ptr [ebx]
+        fmul dword ptr [esp + 0xc]
+        fchs
+        fstp dword ptr [esp + 0xc]
+        fld dword ptr [ebx + 0x4]
+        fchs
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [ebx + 0x4]
+        fstp dword ptr [esp + 0x14]
+        fld dword ptr [esp + 0xc]
+        fld dword ptr [esp + 0x10]
+        fcom st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne L_check_hi
+        fstp st(1)
+    L_store_clamped:
+        fstp dword ptr [esp + 0xc]
+        jmp L_after_clamp
+    L_check_hi:
+        fstp st(0)
+        fld dword ptr [esp + 0x14]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x5
+        jnp L_store_clamped
+        fstp st(0)
+    L_after_clamp:
+        mov ecx, dword ptr [esi + 0x4]
+        fld dword ptr [esp + 0xc]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [esi + 0x34]
+        mov eax, dword ptr [eax + 0x10]
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        push edx
+        call eax
+        push ebx
+        mov ecx, esi
+        call ext_0063CE60
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0xc
+        ret
+    }
+}
