@@ -247,3 +247,39 @@ extern "C" __declspec(naked) void __fastcall fn_006127A0(void* self) {
         ret
     }
 }
+
+// [0x00612810] NMData::Constraint::vfunc_71 (97 bytes)
+extern "C" void ext_00612270();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B48E88;
+
+extern "C" __declspec(naked) void __fastcall fn_00612810(void* self) {
+    __asm {
+        push -1
+        push 0x8a8f3e
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        xor eax, eax
+        mov ecx, 1
+        test byte ptr [mem_00B48E88], cl
+        mov dword ptr [esp], eax
+        jne done_init
+        or dword ptr [mem_00B48E88], ecx
+        mov dword ptr [esp + 0xc], eax
+        lea eax, [esp]
+        push eax
+        mov ecx, 0xb48dc8
+        call ext_00612270
+        push 0x91eb50
+        call ext_006A6C87
+        add esp, 4
+    done_init:
+        mov ecx, dword ptr [esp + 4]
+        mov eax, 0xb48dc8
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
