@@ -7662,3 +7662,84 @@ extern "C" void __fastcall fn_00647AE0(void* self, int edx_unused, char* a1, voi
     ((void (__cdecl*)(void*, float))ext_007C6320)(**(void***)((char*)self + 0xa4), *(float*)(a1 + 0x90));
     ((void (__cdecl*)(void*, void*))ext_007C61F0)(**(void***)((char*)self + 0xa4), a2);
 }
+
+// [0x00645100] sub_00645100 (283 bytes)
+extern "C" void ext_00586D50();
+extern "C" void ext_00594000();
+extern "C" void ext_005F0960();
+extern "C" void ext_005F09E0();
+extern "C" void ext_00647A70();
+extern "C" void ext_00647F00();
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_00645100(void* self, int edx_unused, void* a1) {
+    __asm {
+        push    -1
+        push    0x8af3ab
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        sub     esp, 0x2fc
+        push    esi
+        mov     esi, ecx
+        push    edi
+        lea     ecx, [esp + 0x8]
+        call    ext_005F0960
+        mov     dword ptr [esp + 0x8], 0x95a31c
+        mov     dword ptr [esp + 0xc], 0x95a2d4
+        mov     dword ptr [esp + 0x10], 0x95a294
+        mov     dword ptr [esp + 0x14], 0x95a244
+        mov     dword ptr [esp + 0x158], 0x95a22c
+        mov     dword ptr [esp + 0x15c], 0x95a224
+        mov     edi, dword ptr [esp + 0x314]
+        mov     eax, dword ptr [edi + 0x158]
+        mov     ecx, dword ptr [mem_00B40640]
+        mov     dword ptr [esp + 0xf4], 0x2
+        mov     eax, dword ptr [eax + 0xac]
+        push    ecx
+        mov     ecx, eax
+        mov     dword ptr [esp + 0x310], 0x0
+        call    ext_00647F00
+        push    eax
+        push    0x0
+        lea     ecx, [esp + 0x18]
+        call    ext_00586D50
+        lea     edx, [esp + 0x8]
+        push    edx
+        mov     dword ptr [esp + 0x238], edi
+        call    ext_00647A70
+        mov     edi, eax
+        mov     eax, dword ptr [esi + 0x4]
+        add     esp, 0x4
+        cmp     edi, eax
+        je      L_skip_dtor
+        test    eax, eax
+        je      L_skip_dtor
+        lea     ecx, [eax + 0x8]
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax]
+        push    0x1
+        call    edx
+    L_skip_dtor:
+        mov     dword ptr [esi + 0x4], edi
+        mov     esi, edi
+        call    ext_00594000
+        mov     edx, dword ptr [esi]
+        mov     edx, dword ptr [edx + 0xc0]
+        add     eax, 0x168
+        push    eax
+        lea     eax, [esp + 0xc]
+        push    eax
+        mov     ecx, esi
+        call    edx
+        lea     ecx, [esp + 0x8]
+        mov     dword ptr [esp + 0x30c], -1
+        call    ext_005F09E0
+        mov     ecx, dword ptr [esp + 0x304]
+        pop     edi
+        pop     esi
+        mov     fs:[0], ecx
+        add     esp, 0x308
+        ret     4
+    }
+}
