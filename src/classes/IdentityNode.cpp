@@ -263,3 +263,66 @@ fn_00620EF0_null:
         ret
     }
 }
+
+extern "C" void __cdecl ext_00662810(void*, int, void*);
+extern "C" void* __fastcall ext_00640110(void*, int, int);
+extern "C" void __cdecl ext_00640A80(void*, int);
+extern "C" void __fastcall ext_00585FF0(void*, int, void*);
+extern "C" int mem_00A9F838;
+extern "C" int mem_0095A9A4;
+extern "C" int mem_00A9F700;
+extern "C" int mem_00A9F908;
+extern "C" int mem_00A9FAD4;
+
+// [0x00586C70] IdentityNode::vfunc_22 (134 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00586C70(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [mem_00A9F838]
+        push edi
+        mov edi, dword ptr [esp + 0xC]
+        lea eax, [esi + 0x14]
+        push eax
+        push ecx
+        push edi
+        call ext_00662810
+        lea edx, [esi + 0x30]
+        push edx
+        push offset mem_0095A9A4
+        push edi
+        call ext_00662810
+        mov ecx, dword ptr [mem_00A9F700]
+        lea eax, [esi + 0x4C]
+        push eax
+        push ecx
+        push edi
+        call ext_00662810
+        mov edx, dword ptr [mem_00A9F908]
+        add esp, 0x24
+        push edx
+        mov ecx, edi
+        call ext_00640110
+        movzx ecx, byte ptr [esi + 0x8C]
+        push ecx
+        push eax
+        call ext_00640A80
+        mov edx, dword ptr [mem_00A9FAD4]
+        add esp, 0x8
+        push edx
+        mov ecx, edi
+        call ext_00640110
+        movzx ecx, byte ptr [esi + 0x68]
+        push ecx
+        push eax
+        call ext_00640A80
+        add esp, 0x8
+        push edi
+        mov ecx, esi
+        call ext_00585FF0
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
