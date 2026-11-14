@@ -1397,3 +1397,526 @@ L_774DF8:
         ret 4
     }
 }
+
+
+extern "C" void ext_006A7256();
+extern "C" void ext_006C3FB0();
+extern "C" void ext_006C9F60();
+extern "C" void ext_006CD350();
+extern "C" void ext_006D23F0();
+extern "C" void ext_006DAB00();
+extern "C" void ext_00717720();
+extern "C" int mem_00993808;
+extern "C" int mem_00993CA0;
+extern "C" int mem_00993C88;
+extern "C" int mem_009324A8;
+extern "C" int mem_00993828;
+extern "C" int mem_009548F0;
+extern "C" int mem_0098F3E0;
+
+// [0x00770AF0] sub_00770AF0 (1871 bytes)
+__declspec(naked) void __fastcall fn_00770AF0(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -01h
+        push 08C0EB4h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 033Ch
+        push ebx
+        xor ebx, ebx
+        push edi
+        lea ecx, [ebp - 0130h]
+        mov dword ptr [ebp - 01Ch], ebx
+        mov dword ptr [ebp - 018h], ebx
+        call ext_00714570
+        lea ecx, [ebp - 0348h]
+        mov dword ptr [ebp - 04h], ebx
+        call ext_00714570
+        lea ecx, [ebp - 02C8h]
+        mov byte ptr [ebp - 04h], 01h
+        call ext_00714570
+        lea ecx, [ebp - 0238h]
+        mov byte ptr [ebp - 04h], 02h
+        call ext_00714570
+        lea ecx, [ebp - 07Ch]
+        mov byte ptr [ebp - 04h], 03h
+        call ext_006D2370
+        lea ecx, [ebp - 01A8h]
+        mov byte ptr [ebp - 04h], 04h
+        mov dword ptr [ebp - 01A0h], ebx
+        mov dword ptr [ebp - 019Ch], ebx
+        call ext_006C9F60
+        lea ecx, [ebp - 0158h]
+        mov dword ptr [ebp - 0150h], ebx
+        mov dword ptr [ebp - 014Ch], ebx
+        call ext_006C9F60
+        lea ecx, [ebp - 0180h]
+        mov dword ptr [ebp - 0178h], ebx
+        mov dword ptr [ebp - 0174h], ebx
+        call ext_006C9F60
+        mov eax, dword ptr [ebp + 01Ch]
+        xor edi, edi
+        cmp eax, ebx
+        jbe L_7711E1
+        lea eax, [ebp - 03Ch]
+        lea ecx, [ebp - 034h]
+        mov dword ptr [ebp - 08Ch], eax
+        mov eax, dword ptr [ebp + 0Ch]
+        mov dword ptr [ebp - 090h], ecx
+        mov ecx, dword ptr [ebp + 08h]
+        lea edx, [ebp - 024h]
+        add eax, 0Ch
+        push esi
+        mov dword ptr [ebp - 080h], edx
+        mov dword ptr [ebp + 0Ch], eax
+        lea esi, [ecx + 08h]
+L_770BD9:
+        push 06h
+        push ebx
+        push ebx
+        push edi
+        push ebx
+        push ebx
+        push ebx
+        lea ecx, [ebp - 01Ch]
+        call ext_006DAB00
+        mov edx, dword ptr [ebp - 018h]
+        mov eax, dword ptr [ebp - 01Ch]
+        mov ecx, dword ptr [ebp + 010h]
+        push ebx
+        push edx
+        push eax
+        call ext_006CD350
+        fstp qword ptr [ebp - 014h]
+        push ebx
+        lea ecx, [ebp - 07Ch]
+        call ext_006D23F0
+        mov ecx, dword ptr [ebp - 014h]
+        mov edx, dword ptr [ebp - 010h]
+        mov dword ptr [eax], ecx
+        push ebx
+        mov dword ptr [eax + 04h], edx
+        mov eax, dword ptr [ebp - 018h]
+        mov ecx, dword ptr [ebp - 01Ch]
+        push eax
+        push ecx
+        mov ecx, dword ptr [ebp + 014h]
+        call ext_006CD350
+        fstp qword ptr [ebp - 014h]
+        push 01h
+        lea ecx, [ebp - 07Ch]
+        call ext_006D23F0
+        mov edx, dword ptr [ebp - 014h]
+        mov ecx, dword ptr [ebp - 010h]
+        mov dword ptr [eax], edx
+        push ebx
+        mov dword ptr [eax + 04h], ecx
+        mov edx, dword ptr [ebp - 018h]
+        mov eax, dword ptr [ebp - 01Ch]
+        mov ecx, dword ptr [ebp + 018h]
+        push edx
+        push eax
+        call ext_006CD350
+        fstp qword ptr [ebp - 014h]
+        push 02h
+        lea ecx, [ebp - 07Ch]
+        call ext_006D23F0
+        mov ecx, dword ptr [ebp - 014h]
+        mov edx, dword ptr [ebp - 010h]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 04h], edx
+        mov eax, dword ptr [ebp - 06Ch]
+        fld qword ptr [ebp - 07Ch]
+        mov ecx, dword ptr [ebp - 068h]
+        mov edx, dword ptr [ebp - 074h]
+        mov dword ptr [esi - 08h], edi
+        mov word ptr [esi - 04h], 07h
+        fmul qword ptr [mem_00993808]
+        mov dword ptr [esi], ebx
+        mov dword ptr [esi + 04h], ebx
+        mov dword ptr [ebp - 098h], eax
+        mov eax, dword ptr [ebp - 070h]
+        mov dword ptr [esi + 08h], ebx
+        mov dword ptr [esi + 0Ch], ebx
+        fstp qword ptr [ebp - 02Ch]
+        mov dword ptr [esi + 010h], ebx
+        mov dword ptr [ebp - 094h], ecx
+        mov dword ptr [ebp - 0A8h], edx
+        mov dword ptr [ebp - 0A4h], eax
+        fld qword ptr [ebp - 02Ch]
+        fsincos
+        mov eax, dword ptr [ebp - 08Ch]
+        fstp qword ptr [eax]
+        fstp qword ptr [ebp - 01B0h]
+        fld qword ptr [ebp - 01B0h]
+        fstp qword ptr [ebp - 088h]
+        fld qword ptr [ebp - 0A8h]
+        fmul qword ptr [mem_00993808]
+        fstp qword ptr [ebp - 02Ch]
+        fld qword ptr [ebp - 02Ch]
+        fsincos
+        mov eax, dword ptr [ebp - 090h]
+        fstp qword ptr [eax]
+        fstp qword ptr [ebp - 0240h]
+        fld qword ptr [ebp - 0240h]
+        fstp qword ptr [ebp - 014h]
+        fld qword ptr [ebp - 098h]
+        fmul qword ptr [mem_00993808]
+        fstp qword ptr [ebp - 02Ch]
+        fld qword ptr [ebp - 02Ch]
+        fsincos
+        mov eax, dword ptr [ebp - 080h]
+        fstp qword ptr [eax]
+        fstp qword ptr [ebp - 0248h]
+        fld qword ptr [ebp - 0248h]
+        fld qword ptr [ebp - 088h]
+        fld qword ptr [ebp - 014h]
+        fmul st, st(1)
+        fld qword ptr [ebp - 014h]
+        fmul qword ptr [ebp - 03Ch]
+        fstp qword ptr [ebp - 02Ch]
+        fld qword ptr [ebp - 024h]
+        fmul qword ptr [ebp - 034h]
+        fstp qword ptr [ebp - 0348h]
+        fld st(2)
+        fmul qword ptr [ebp - 034h]
+        fstp qword ptr [ebp - 0340h]
+        fld qword ptr [ebp - 014h]
+        fchs
+        fstp qword ptr [ebp - 0338h]
+        fld st(0)
+        fmul qword ptr [ebp - 024h]
+        fld st(3)
+        fmul qword ptr [ebp - 03Ch]
+        fsubp st(1), st
+        fstp qword ptr [ebp - 0328h]
+        fmul st, st(2)
+        fld qword ptr [ebp - 024h]
+        fmul qword ptr [ebp - 03Ch]
+        faddp st(1), st
+        fstp qword ptr [ebp - 0320h]
+        fld qword ptr [ebp - 034h]
+        fmul st, st(1)
+        fstp qword ptr [ebp - 0318h]
+        fld qword ptr [ebp - 02Ch]
+        fmul qword ptr [ebp - 024h]
+        fld st(2)
+        fmul st, st(2)
+        faddp st(1), st
+        fstp qword ptr [ebp - 0308h]
+        fld qword ptr [ebp - 02Ch]
+        fmul st, st(2)
+        fld qword ptr [ebp - 024h]
+        fmul st, st(2)
+        fsubp st(1), st
+        fstp qword ptr [ebp - 0300h]
+        fstp st(0)
+        fstp st(0)
+        fld qword ptr [ebp - 034h]
+        fmul qword ptr [ebp - 03Ch]
+        fstp qword ptr [ebp - 02F8h]
+        fld qword ptr [ebp - 0120h]
+        fmul qword ptr [ebp - 0120h]
+        fld qword ptr [ebp - 0128h]
+        fmul qword ptr [ebp - 0128h]
+        faddp st(1), st
+        fld qword ptr [ebp - 0130h]
+        fmul qword ptr [ebp - 0130h]
+        faddp st(1), st
+        fdivr qword ptr [mem_0092A270]
+        fld qword ptr [ebp - 0100h]
+        fmul qword ptr [ebp - 0100h]
+        fld qword ptr [ebp - 0108h]
+        fmul qword ptr [ebp - 0108h]
+        faddp st(1), st
+        fld qword ptr [ebp - 0110h]
+        fmul qword ptr [ebp - 0110h]
+        faddp st(1), st
+        fdivr qword ptr [mem_0092A270]
+        fst qword ptr [ebp - 088h]
+        fld qword ptr [ebp - 0E0h]
+        fmul qword ptr [ebp - 0E0h]
+        fld qword ptr [ebp - 0E8h]
+        fmul qword ptr [ebp - 0E8h]
+        faddp st(1), st
+        fld qword ptr [ebp - 0F0h]
+        fmul qword ptr [ebp - 0F0h]
+        lea ecx, [ebp - 0238h]
+        lea edx, [ebp - 0348h]
+        push ecx
+        lea eax, [ebp - 02C8h]
+        faddp st(1), st
+        push edx
+        push eax
+        fdivr qword ptr [mem_0092A270]
+        fstp qword ptr [ebp - 014h]
+        fld qword ptr [ebp - 0128h]
+        fmul st, st(2)
+        fstp qword ptr [ebp - 0218h]
+        fld qword ptr [ebp - 0120h]
+        fmul st, st(2)
+        fstp qword ptr [ebp - 01F8h]
+        fld qword ptr [ebp - 0100h]
+        fmul st, st(1)
+        fstp qword ptr [ebp - 01F0h]
+        fld qword ptr [ebp - 0110h]
+        fmul st, st(1)
+        fstp qword ptr [ebp - 0230h]
+        fstp st(0)
+        fld qword ptr [ebp - 0F0h]
+        fmul qword ptr [ebp - 014h]
+        fstp qword ptr [ebp - 0228h]
+        fld qword ptr [ebp - 0E8h]
+        fmul qword ptr [ebp - 014h]
+        fstp qword ptr [ebp - 0208h]
+        fld qword ptr [ebp - 0130h]
+        fmul st, st(1)
+        fstp qword ptr [ebp - 0238h]
+        fstp st(0)
+        fld qword ptr [ebp - 0108h]
+        fmul qword ptr [ebp - 088h]
+        fstp qword ptr [ebp - 0210h]
+        fld qword ptr [ebp - 0E0h]
+        fmul qword ptr [ebp - 014h]
+        fstp qword ptr [ebp - 01E8h]
+        fld qword ptr [ebp - 0D0h]
+        fchs
+        fld qword ptr [ebp - 0C8h]
+        fchs
+        fld qword ptr [ebp - 0C0h]
+        fchs
+        fld qword ptr [ebp - 01E8h]
+        fmul st, st(1)
+        fld qword ptr [ebp - 0208h]
+        fmul st, st(3)
+        faddp st(1), st
+        fld qword ptr [ebp - 0228h]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp qword ptr [ebp - 01C8h]
+        fld qword ptr [ebp - 01F8h]
+        fmul st, st(1)
+        fld qword ptr [ebp - 0218h]
+        fmul st, st(3)
+        faddp st(1), st
+        fld qword ptr [ebp - 0238h]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp qword ptr [ebp - 01D8h]
+        fld qword ptr [ebp - 0210h]
+        fmul st, st(2)
+        fld qword ptr [ebp - 01F0h]
+        fmul st, st(2)
+        faddp st(1), st
+        fld qword ptr [ebp - 0230h]
+        fmul st, st(4)
+        faddp st(1), st
+        fstp qword ptr [ebp - 01D0h]
+        fstp st(0)
+        fstp st(0)
+        fstp st(0)
+        call ext_006C3FB0
+        fld qword ptr [ebp - 0278h]
+        add esp, 0Ch
+        fadd qword ptr [ebp - 02A0h]
+        fld st(0)
+        fadd qword ptr [ebp - 02C8h]
+        fadd qword ptr [mem_0092A270]
+        fmul qword ptr [mem_00993CA0]
+        fst qword ptr [ebp - 02Ch]
+        fcomp qword ptr [mem_00993C88]
+        fnstsw ax
+        test ah, 041h
+        jne L_770FE7
+        fstp st(0)
+        fld qword ptr [ebp - 02Ch]
+        fsqrt
+        fst qword ptr [ebp - 044h]
+        fdivr qword ptr [mem_00993CA0]
+        fld qword ptr [ebp - 0298h]
+        fsub qword ptr [ebp - 0280h]
+        fmul st, st(1)
+        fstp qword ptr [ebp - 05Ch]
+        fld qword ptr [ebp - 0288h]
+        fsub qword ptr [ebp - 02B8h]
+        fmul st, st(1)
+        fstp qword ptr [ebp - 054h]
+        fld qword ptr [ebp - 02C0h]
+        fsub qword ptr [ebp - 02A8h]
+        fmul st, st(1)
+        fstp qword ptr [ebp - 04Ch]
+        fstp st(0)
+        jmp L_771098
+L_770FE7:
+        fmul qword ptr [mem_009324A8]
+        mov dword ptr [ebp - 044h], 00h
+        mov dword ptr [ebp - 040h], 00h
+        fld st(0)
+        fcomp qword ptr [mem_00993C88]
+        fnstsw ax
+        test ah, 041h
+        jne L_77102F
+        fsqrt
+        fst qword ptr [ebp - 05Ch]
+        fdivr qword ptr [mem_00993828]
+        fld qword ptr [ebp - 02C0h]
+        fmul st, st(1)
+        fstp qword ptr [ebp - 054h]
+        fld qword ptr [ebp - 02B8h]
+        fmul st, st(1)
+        fstp qword ptr [ebp - 04Ch]
+        fstp st(0)
+        jmp L_771098
+L_77102F:
+        fstp st(0)
+        fld qword ptr [mem_0092A270]
+        fsub qword ptr [ebp - 0278h]
+        mov dword ptr [ebp - 05Ch], 00h
+        mov dword ptr [ebp - 058h], 00h
+        fmul qword ptr [mem_00993828]
+        fld st(0)
+        fcomp qword ptr [mem_00993C88]
+        fnstsw ax
+        test ah, 041h
+        jne L_77107A
+        fsqrt
+        fst qword ptr [ebp - 054h]
+        fdivr qword ptr [mem_00993828]
+        fld qword ptr [ebp - 0298h]
+        fmul st, st(1)
+        fstp qword ptr [ebp - 04Ch]
+        fstp st(0)
+        jmp L_771098
+L_77107A:
+        fstp st(0)
+        mov dword ptr [ebp - 054h], 00h
+        mov dword ptr [ebp - 050h], 00h
+        mov dword ptr [ebp - 04Ch], 00h
+        mov dword ptr [ebp - 048h], 03FF00000h
+L_771098:
+        lea ecx, [ebp - 0348h]
+        push ecx
+        lea ecx, [ebp - 0130h]
+        call ext_00717720
+        mov edx, dword ptr [ebp - 04Ch]
+        mov eax, dword ptr [ebp - 048h]
+        mov ecx, dword ptr [ebp - 054h]
+        mov dword ptr [ebp - 0B0h], edx
+        mov edx, dword ptr [ebp - 050h]
+        mov dword ptr [ebp - 0ACh], eax
+        mov dword ptr [ebp - 0A0h], ecx
+        mov dword ptr [ebp - 09Ch], edx
+        fld qword ptr [ebp - 05Ch]
+        fmul st(0), st
+        fld qword ptr [ebp - 0A0h]
+        fmul st(0), st
+        faddp st(1), st
+        fld qword ptr [ebp - 0B0h]
+        fmul st(0), st
+        faddp st(1), st
+        fsqrt
+        fstp qword ptr [ebp - 01B8h]
+        fld qword ptr [ebp - 01B8h]
+        fcom qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 040h
+        je L_771128
+        fstp st(0)
+        fld qword ptr [mem_0092A278]
+        mov dword ptr [ebp - 054h], 00h
+        mov dword ptr [ebp - 050h], 00h
+        mov dword ptr [ebp - 04Ch], 00h
+        mov dword ptr [ebp - 048h], 00h
+        jmp L_77114D
+L_771128:
+        fld qword ptr [mem_0092A270]
+        fdiv st, st(1)
+        fstp qword ptr [ebp - 014h]
+        fstp st(0)
+        fld qword ptr [ebp - 014h]
+        fmul qword ptr [ebp - 05Ch]
+        fld qword ptr [ebp - 014h]
+        fmul qword ptr [ebp - 054h]
+        fstp qword ptr [ebp - 054h]
+        fld qword ptr [ebp - 014h]
+        fmul qword ptr [ebp - 04Ch]
+        fstp qword ptr [ebp - 04Ch]
+L_77114D:
+        mov eax, dword ptr [ebp + 0Ch]
+        fstp dword ptr [eax - 08h]
+        fld qword ptr [ebp - 04Ch]
+        fchs
+        fstp dword ptr [eax - 04h]
+        fld qword ptr [ebp - 054h]
+        fstp dword ptr [eax]
+        fld qword ptr [ebp - 044h]
+        call ext_006A7256
+        fmul qword ptr [mem_009548F0]
+        mov ecx, dword ptr [ebp + 0Ch]
+        fstp dword ptr [ebp + 08h]
+        mov eax, dword ptr [ebp + 08h]
+        mov dword ptr [ecx - 0Ch], eax
+        fld dword ptr [ecx - 08h]
+        fabs
+        fcomp qword ptr [mem_0098F3E0]
+        fnstsw ax
+        test ah, 01h
+        je L_7711CB
+        fld dword ptr [ecx - 04h]
+        fabs
+        fcomp qword ptr [mem_0098F3E0]
+        fnstsw ax
+        test ah, 01h
+        je L_7711CB
+        fld dword ptr [ecx]
+        fabs
+        fcomp qword ptr [mem_0098F3E0]
+        fnstsw ax
+        test ah, 01h
+        je L_7711CB
+        fld dword ptr [ebp + 08h]
+        fabs
+        fcomp qword ptr [mem_0098F3E0]
+        fnstsw ax
+        test ah, 01h
+        je L_7711CB
+        mov dword ptr [ecx - 08h], 0BF800000h
+        mov dword ptr [ecx - 0Ch], ebx
+L_7711CB:
+        mov eax, dword ptr [ebp + 01Ch]
+        inc edi
+        add esi, 01Ch
+        add ecx, 010h
+        cmp edi, eax
+        mov dword ptr [ebp + 0Ch], ecx
+        jb L_770BD9
+        pop esi
+L_7711E1:
+        lea ecx, [ebp - 07Ch]
+        mov byte ptr [ebp - 04h], 03h
+        call ext_006D80A0
+        lea ecx, [ebp - 0238h]
+        mov byte ptr [ebp - 04h], 02h
+        call ext_006D80A0
+        lea ecx, [ebp - 02C8h]
+        mov byte ptr [ebp - 04h], 01h
+        call ext_006D80A0
+        lea ecx, [ebp - 0348h]
+        mov byte ptr [ebp - 04h], bl
+        call ext_006D80A0
+        lea ecx, [ebp - 0130h]
+        mov dword ptr [ebp - 04h], 0FFFFFFFFh
+        call ext_006D80A0
+        mov ecx, dword ptr [ebp - 0Ch]
+        pop edi
+        mov al, 01h
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        mov esp, ebp
+        pop ebp
+        ret 018h
+    }
+}
