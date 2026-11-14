@@ -20,5 +20,7 @@
     "0x00656FA1",
     "0x00656FCE"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T13:28:18Z"
 }
