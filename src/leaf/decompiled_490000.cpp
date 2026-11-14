@@ -13289,3 +13289,231 @@ extern "C" __declspec(naked) void __cdecl fn_0049F540(void* arg1, void* arg2, co
         ret
     }
 }
+
+extern "C" void ext_0041CD60();
+extern "C" void ext_00494070();
+
+// [0x00494100] sub_00494100 (511 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00494100(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebp
+        mov ebp, ecx
+        mov eax, dword ptr [ebp]
+        cmp eax, -0x1
+        je L_494112
+        test al, 0x1
+        je L_49413A
+    L_494112:
+        cmp dword ptr [ebp + 0x4], 0x0
+        jne L_49413A
+        cmp dword ptr [ebp + 0x8], 0x0
+        jne L_49413A
+        cmp byte ptr [esp + 0x18], 0x0
+        jne L_49413A
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        call ext_004AFF30
+        pop ebp
+        add esp, 0x8
+        ret 0xc
+    L_49413A:
+        test eax, eax
+        push ebx
+        push esi
+        push edi
+        jne L_494179
+        mov esi, dword ptr [esp + 0x20]
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        mov ebp, dword ptr [mem_00925134]
+        jbe L_494155
+        call ebp
+    L_494155:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe L_49415F
+        call ebp
+    L_49415F:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, esi
+        call ext_00596660
+    L_49416F:
+        pop edi
+        pop esi
+        pop ebx
+        pop ebp
+        add esp, 0x8
+        ret 0xc
+    L_494179:
+        mov ebx, dword ptr [esp + 0x20]
+        mov esi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], esi
+        jbe L_49418B
+        call dword ptr [mem_00925134]
+    L_49418B:
+        mov edi, dword ptr [ebx + 0x4]
+        cmp edi, dword ptr [ebx + 0x8]
+        jbe L_494199
+        call dword ptr [mem_00925134]
+    L_494199:
+        push esi
+        push ebx
+        push edi
+        push ebx
+        lea edx, [esp + 0x20]
+        push edx
+        mov ecx, ebx
+        call ext_00596660
+        mov edi, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [edi + 0x4]
+        test ecx, ecx
+        jne L_4941B8
+        xor eax, eax
+        jmp L_4941C0
+    L_4941B8:
+        mov eax, dword ptr [edi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+    L_4941C0:
+        push eax
+        mov ecx, ebx
+        call ext_0050ED40
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe L_4941D6
+        call dword ptr [mem_00925134]
+    L_4941D6:
+        mov dword ptr [esp + 0x14], esi
+        _emit 0x8d
+        _emit 0x9b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_4941E0:
+        mov esi, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], esi
+        jbe L_4941EE
+        call dword ptr [mem_00925134]
+    L_4941EE:
+        cmp dword ptr [esp + 0x14], esi
+        je L_49416F
+        mov esi, dword ptr [ebp + 0x4]
+        test esi, esi
+        je L_49420E
+        mov ecx, ebx
+        call ext_0041CD60
+        cmp eax, esi
+        jae L_49416F
+    L_49420E:
+        mov eax, dword ptr [esp + 0x14]
+        cmp eax, dword ptr [edi + 0x8]
+        jb L_49421D
+        call dword ptr [mem_00925134]
+    L_49421D:
+        mov ecx, dword ptr [esp + 0x14]
+        mov esi, dword ptr [ecx]
+        test esi, esi
+        mov dword ptr [esp + 0x20], esi
+        je L_4942E6
+        mov edx, dword ptr [ebp]
+        shr edx, 0xc
+        test dl, 0x1
+        je L_494241
+        cmp byte ptr [esp + 0x24], 0x0
+        je L_494259
+    L_494241:
+        push esi
+        push 0xc0
+        call ext_00494070
+        add esp, 0x8
+        test eax, eax
+        je L_494259
+        mov esi, eax
+        mov dword ptr [esp + 0x20], esi
+    L_494259:
+        test byte ptr [ebp], 0x1
+        jne L_4942B2
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x50]
+        mov ecx, esi
+        call edx
+        mov ecx, dword ptr [ebp]
+        _emit 0x85
+        _emit 0xc8
+        jne L_4942B2
+        mov eax, ecx
+        shr eax, 0xd
+        test al, 0x1
+        je L_4942E6
+        mov edx, ecx
+        shr edx, 0x6
+        test dl, 0x1
+        je L_494287
+        push esi
+        push 0x40
+        jmp L_4942A0
+    L_494287:
+        mov eax, ecx
+        shr eax, 0x5
+        test al, 0x1
+        je L_494295
+        push esi
+        push 0x20
+        jmp L_4942A0
+    L_494295:
+        shr ecx, 0x3
+        test cl, 0x1
+        je L_4942E6
+        push esi
+        push 0x8
+    L_4942A0:
+        call ext_00494070
+        add esp, 0x8
+        test eax, eax
+        je L_4942E6
+        mov esi, eax
+        mov dword ptr [esp + 0x20], esi
+    L_4942B2:
+        cmp dword ptr [ebp + 0x8], 0x0
+        je L_4942DA
+        test esi, esi
+        mov eax, esi
+        je L_4942E6
+        mov edi, edi
+    L_4942C0:
+        cmp eax, dword ptr [ebp + 0x8]
+        je L_4942D6
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x10]
+        push 0x0
+        call eax
+        test eax, eax
+        jne L_4942C0
+        jmp L_4942E6
+    L_4942D6:
+        test eax, eax
+        je L_4942E6
+    L_4942DA:
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, ebx
+        call ext_005A6300
+    L_4942E6:
+        mov edx, dword ptr [esp + 0x14]
+        cmp edx, dword ptr [edi + 0x8]
+        jb L_4942F5
+        call dword ptr [mem_00925134]
+    L_4942F5:
+        add dword ptr [esp + 0x14], 0x4
+        jmp L_4941E0
+    }
+}
