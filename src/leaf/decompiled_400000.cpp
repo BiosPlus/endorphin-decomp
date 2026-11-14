@@ -13143,3 +13143,2029 @@ extern "C" __declspec(naked) void __fastcall fn_0040DF30(void* self, int edx_unu
         ret 8
     }
 }
+
+extern "C" void ext_00409640();
+extern "C" void ext_00409730();
+extern "C" void ext_004091D0();
+extern "C" void ext_00430370();
+extern "C" void ext_00430380();
+extern "C" int mem_00ACDB40;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00874234;
+
+// [0x00409810] sub_00409810 (4282 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00409810(void* self) {
+    __asm {
+L_00409810:
+        mov eax, dword ptr fs:[0]
+L_00409816:
+        push -1
+L_00409818:
+        push offset mem_00874234
+L_0040981D:
+        push eax
+L_0040981E:
+        mov dword ptr fs:[0], esp
+L_00409825:
+        sub esp, 0x38
+L_00409828:
+        push esi
+L_00409829:
+        push edi
+L_0040982A:
+        mov esi, ecx
+L_0040982C:
+        call ext_004094D0
+L_00409831:
+        mov ecx, dword ptr [mem_00ACDB40]
+L_00409837:
+        call ext_00430370
+L_0040983C:
+        test al, al
+L_0040983E:
+        je L_0040A0B0
+L_00409844:
+        push offset mem_00874234
+L_00409849:
+        lea ecx, [esp + 0xc]
+L_0040984D:
+        call dword ptr [mem_00924FE4]
+L_00409853:
+        lea eax, [esp + 0x8]
+L_00409857:
+        push eax
+L_00409858:
+        push 0x0
+L_0040985A:
+        push 0x289
+L_0040985F:
+        push 0x288
+L_00409864:
+        push 0x287
+L_00409869:
+        push 0x286
+L_0040986E:
+        push 0x8024
+L_00409873:
+        push 0x1002
+L_00409878:
+        mov ecx, esi
+L_0040987A:
+        mov dword ptr [esp + 0x68], 0x0
+L_00409882:
+        call ext_00409640
+L_00409887:
+        or edi, -1
+L_0040988A:
+        lea ecx, [esp + 0x8]
+L_0040988E:
+        mov dword ptr [esp + 0x48], edi
+L_00409892:
+        call dword ptr [mem_00924FF4]
+L_00409898:
+        mov ecx, esi
+L_0040989A:
+        call ext_00409730
+L_0040989F:
+        push offset mem_00874234
+L_004098A4:
+        lea ecx, [esp + 0xc]
+L_004098A8:
+        call dword ptr [mem_00924FE4]
+L_004098AE:
+        lea ecx, [esp + 0x8]
+L_004098B2:
+        push ecx
+L_004098B3:
+        push 0x0
+L_004098B5:
+        push 0x0
+L_004098B7:
+        push 0x292
+L_004098BC:
+        push 0x291
+L_004098C1:
+        push 0x290
+L_004098C6:
+        push 0xe103
+L_004098CB:
+        push 0x1002
+L_004098D0:
+        mov ecx, esi
+L_004098D2:
+        mov dword ptr [esp + 0x68], 0x1
+L_004098DA:
+        call ext_00409640
+L_004098DF:
+        lea ecx, [esp + 0x8]
+L_004098E3:
+        mov dword ptr [esp + 0x48], edi
+L_004098E7:
+        call dword ptr [mem_00924FF4]
+L_004098ED:
+        mov ecx, esi
+L_004098EF:
+        call ext_00409730
+L_004098F4:
+        push offset mem_00874234
+L_004098F9:
+        lea ecx, [esp + 0xc]
+L_004098FD:
+        call dword ptr [mem_00924FE4]
+L_00409903:
+        lea edx, [esp + 0x8]
+L_00409907:
+        push edx
+L_00409908:
+        push 0x0
+L_0040990A:
+        push 0x0
+L_0040990C:
+        push 0x295
+L_00409911:
+        push 0x294
+L_00409916:
+        push 0x293
+L_0040991B:
+        push 0x123
+L_00409920:
+        push 0x1002
+L_00409925:
+        mov ecx, esi
+L_00409927:
+        mov dword ptr [esp + 0x68], 0x2
+L_0040992F:
+        call ext_00409640
+L_00409934:
+        lea ecx, [esp + 0x8]
+L_00409938:
+        mov dword ptr [esp + 0x48], edi
+L_0040993C:
+        call dword ptr [mem_00924FF4]
+L_00409942:
+        push offset mem_00874234
+L_00409947:
+        lea ecx, [esp + 0xc]
+L_0040994B:
+        call dword ptr [mem_00924FE4]
+L_00409951:
+        lea eax, [esp + 0x8]
+L_00409955:
+        push eax
+L_00409956:
+        push 0x0
+L_00409958:
+        push 0x0
+L_0040995A:
+        push 0x298
+L_0040995F:
+        push 0x297
+L_00409964:
+        push 0x296
+L_00409969:
+        push 0x85
+L_0040996E:
+        push 0x1002
+L_00409973:
+        mov ecx, esi
+L_00409975:
+        mov dword ptr [esp + 0x68], 0x3
+L_0040997D:
+        call ext_00409640
+L_00409982:
+        lea ecx, [esp + 0x8]
+L_00409986:
+        mov dword ptr [esp + 0x48], edi
+L_0040998A:
+        call dword ptr [mem_00924FF4]
+L_00409990:
+        mov ecx, esi
+L_00409992:
+        call ext_00409730
+L_00409997:
+        push offset mem_00874234
+L_0040999C:
+        lea ecx, [esp + 0xc]
+L_004099A0:
+        call dword ptr [mem_00924FE4]
+L_004099A6:
+        lea ecx, [esp + 0x8]
+L_004099AA:
+        push ecx
+L_004099AB:
+        push 0x81bb
+L_004099B0:
+        push 0x0
+L_004099B2:
+        push 0x81ba
+L_004099B7:
+        push 0x81b9
+L_004099BC:
+        push 0x81b8
+L_004099C1:
+        push 0xe12b
+L_004099C6:
+        push 0x1002
+L_004099CB:
+        mov ecx, esi
+L_004099CD:
+        mov dword ptr [esp + 0x68], 0x4
+L_004099D5:
+        call ext_00409640
+L_004099DA:
+        lea ecx, [esp + 0x8]
+L_004099DE:
+        mov dword ptr [esp + 0x48], edi
+L_004099E2:
+        call dword ptr [mem_00924FF4]
+L_004099E8:
+        push offset mem_00874234
+L_004099ED:
+        lea ecx, [esp + 0xc]
+L_004099F1:
+        call dword ptr [mem_00924FE4]
+L_004099F7:
+        lea edx, [esp + 0x8]
+L_004099FB:
+        push edx
+L_004099FC:
+        push 0x81bf
+L_00409A01:
+        push 0x0
+L_00409A03:
+        push 0x81be
+L_00409A08:
+        push 0x81bd
+L_00409A0D:
+        push 0x81bc
+L_00409A12:
+        push 0xe12c
+L_00409A17:
+        push 0x1002
+L_00409A1C:
+        mov ecx, esi
+L_00409A1E:
+        mov dword ptr [esp + 0x68], 0x5
+L_00409A26:
+        call ext_00409640
+L_00409A2B:
+        lea ecx, [esp + 0x8]
+L_00409A2F:
+        mov dword ptr [esp + 0x48], edi
+L_00409A33:
+        call dword ptr [mem_00924FF4]
+L_00409A39:
+        mov ecx, esi
+L_00409A3B:
+        call ext_00409730
+L_00409A40:
+        push offset mem_00874234
+L_00409A45:
+        lea ecx, [esp + 0xc]
+L_00409A49:
+        call dword ptr [mem_00924FE4]
+L_00409A4F:
+        lea eax, [esp + 0x8]
+L_00409A53:
+        push eax
+L_00409A54:
+        push 0x0
+L_00409A56:
+        push 0x29c
+L_00409A5B:
+        push 0x29b
+L_00409A60:
+        push 0x29a
+L_00409A65:
+        push 0x299
+L_00409A6A:
+        push 0x8026
+L_00409A6F:
+        push 0x1002
+L_00409A74:
+        mov ecx, esi
+L_00409A76:
+        mov dword ptr [esp + 0x68], 0x6
+L_00409A7E:
+        call ext_00409640
+L_00409A83:
+        lea ecx, [esp + 0x8]
+L_00409A87:
+        mov dword ptr [esp + 0x48], edi
+L_00409A8B:
+        call dword ptr [mem_00924FF4]
+L_00409A91:
+        push offset mem_00874234
+L_00409A96:
+        lea ecx, [esp + 0xc]
+L_00409A9A:
+        call dword ptr [mem_00924FE4]
+L_00409AA0:
+        lea ecx, [esp + 0x8]
+L_00409AA4:
+        push ecx
+L_00409AA5:
+        push 0x0
+L_00409AA7:
+        push 0x2a0
+L_00409AAC:
+        push 0x29f
+L_00409AB1:
+        push 0x29e
+L_00409AB6:
+        push 0x29d
+L_00409ABB:
+        push 0x8027
+L_00409AC0:
+        push 0x1002
+L_00409AC5:
+        mov ecx, esi
+L_00409AC7:
+        mov dword ptr [esp + 0x68], 0x7
+L_00409ACF:
+        call ext_00409640
+L_00409AD4:
+        lea ecx, [esp + 0x8]
+L_00409AD8:
+        mov dword ptr [esp + 0x48], edi
+L_00409ADC:
+        call dword ptr [mem_00924FF4]
+L_00409AE2:
+        push offset mem_00874234
+L_00409AE7:
+        lea ecx, [esp + 0xc]
+L_00409AEB:
+        call dword ptr [mem_00924FE4]
+L_00409AF1:
+        lea edx, [esp + 0x8]
+L_00409AF5:
+        push edx
+L_00409AF6:
+        push 0x0
+L_00409AF8:
+        push 0x2a4
+L_00409AFD:
+        push 0x2a3
+L_00409B02:
+        push 0x2a2
+L_00409B07:
+        push 0x2a1
+L_00409B0C:
+        push 0x809a
+L_00409B11:
+        push 0x1002
+L_00409B16:
+        mov ecx, esi
+L_00409B18:
+        mov dword ptr [esp + 0x68], 0x8
+L_00409B20:
+        call ext_00409640
+L_00409B25:
+        lea ecx, [esp + 0x8]
+L_00409B29:
+        mov dword ptr [esp + 0x48], edi
+L_00409B2D:
+        call dword ptr [mem_00924FF4]
+L_00409B33:
+        mov ecx, esi
+L_00409B35:
+        call ext_00409730
+L_00409B3A:
+        push offset mem_00874234
+L_00409B3F:
+        lea ecx, [esp + 0xc]
+L_00409B43:
+        call dword ptr [mem_00924FE4]
+L_00409B49:
+        lea eax, [esp + 0x8]
+L_00409B4D:
+        push eax
+L_00409B4E:
+        push 0x0
+L_00409B50:
+        push 0x2a8
+L_00409B55:
+        push 0x2a7
+L_00409B5A:
+        push 0x2a6
+L_00409B5F:
+        push 0x2a5
+L_00409B64:
+        push 0x8108
+L_00409B69:
+        push 0x1002
+L_00409B6E:
+        mov ecx, esi
+L_00409B70:
+        mov dword ptr [esp + 0x68], 0x9
+L_00409B78:
+        call ext_00409640
+L_00409B7D:
+        lea ecx, [esp + 0x8]
+L_00409B81:
+        mov dword ptr [esp + 0x48], edi
+L_00409B85:
+        call dword ptr [mem_00924FF4]
+L_00409B8B:
+        push offset mem_00874234
+L_00409B90:
+        lea ecx, [esp + 0xc]
+L_00409B94:
+        call dword ptr [mem_00924FE4]
+L_00409B9A:
+        lea ecx, [esp + 0x8]
+L_00409B9E:
+        push ecx
+L_00409B9F:
+        push 0x0
+L_00409BA1:
+        push 0x2ac
+L_00409BA6:
+        push 0x2ab
+L_00409BAB:
+        push 0x2aa
+L_00409BB0:
+        push 0x2a9
+L_00409BB5:
+        push 0x8105
+L_00409BBA:
+        push 0x1002
+L_00409BBF:
+        mov ecx, esi
+L_00409BC1:
+        mov dword ptr [esp + 0x68], 0xa
+L_00409BC9:
+        call ext_00409640
+L_00409BCE:
+        lea ecx, [esp + 0x8]
+L_00409BD2:
+        mov dword ptr [esp + 0x48], edi
+L_00409BD6:
+        call dword ptr [mem_00924FF4]
+L_00409BDC:
+        push offset mem_00874234
+L_00409BE1:
+        lea ecx, [esp + 0xc]
+L_00409BE5:
+        call dword ptr [mem_00924FE4]
+L_00409BEB:
+        lea edx, [esp + 0x8]
+L_00409BEF:
+        push edx
+L_00409BF0:
+        push 0x0
+L_00409BF2:
+        push 0x0
+L_00409BF4:
+        push 0x2af
+L_00409BF9:
+        push 0x2ae
+L_00409BFE:
+        push 0x2ad
+L_00409C03:
+        push 0x151
+L_00409C08:
+        push 0x0
+L_00409C0A:
+        mov ecx, esi
+L_00409C0C:
+        mov dword ptr [esp + 0x68], 0xb
+L_00409C14:
+        call ext_00409640
+L_00409C19:
+        lea ecx, [esp + 0x8]
+L_00409C1D:
+        mov dword ptr [esp + 0x48], edi
+L_00409C21:
+        call dword ptr [mem_00924FF4]
+L_00409C27:
+        mov ecx, esi
+L_00409C29:
+        call ext_00409730
+L_00409C2E:
+        push offset mem_00874234
+L_00409C33:
+        lea ecx, [esp + 0xc]
+L_00409C37:
+        call dword ptr [mem_00924FE4]
+L_00409C3D:
+        lea eax, [esp + 0x8]
+L_00409C41:
+        push eax
+L_00409C42:
+        push 0x0
+L_00409C44:
+        push 0x0
+L_00409C46:
+        push 0x2b2
+L_00409C4B:
+        push 0x2b1
+L_00409C50:
+        push 0x2b0
+L_00409C55:
+        push 0x810e
+L_00409C5A:
+        push 0x0
+L_00409C5C:
+        mov ecx, esi
+L_00409C5E:
+        mov dword ptr [esp + 0x68], 0xc
+L_00409C66:
+        call ext_00409640
+L_00409C6B:
+        lea ecx, [esp + 0x8]
+L_00409C6F:
+        mov dword ptr [esp + 0x48], edi
+L_00409C73:
+        call dword ptr [mem_00924FF4]
+L_00409C79:
+        mov ecx, esi
+L_00409C7B:
+        call ext_00409730
+L_00409C80:
+        push offset mem_00874234
+L_00409C85:
+        lea ecx, [esp + 0xc]
+L_00409C89:
+        call dword ptr [mem_00924FE4]
+L_00409C8F:
+        lea ecx, [esp + 0x8]
+L_00409C93:
+        push ecx
+L_00409C94:
+        push 0x0
+L_00409C96:
+        push 0x0
+L_00409C98:
+        push 0x2b5
+L_00409C9D:
+        push 0x2b4
+L_00409CA2:
+        push 0x2b3
+L_00409CA7:
+        push 0x15d
+L_00409CAC:
+        push 0x0
+L_00409CAE:
+        mov ecx, esi
+L_00409CB0:
+        mov dword ptr [esp + 0x68], 0xd
+L_00409CB8:
+        call ext_00409640
+L_00409CBD:
+        lea ecx, [esp + 0x8]
+L_00409CC1:
+        mov dword ptr [esp + 0x48], edi
+L_00409CC5:
+        call dword ptr [mem_00924FF4]
+L_00409CCB:
+        push offset mem_00874234
+L_00409CD0:
+        lea ecx, [esp + 0xc]
+L_00409CD4:
+        call dword ptr [mem_00924FE4]
+L_00409CDA:
+        lea edx, [esp + 0x8]
+L_00409CDE:
+        push edx
+L_00409CDF:
+        push 0x0
+L_00409CE1:
+        push 0x0
+L_00409CE3:
+        push 0x2b8
+L_00409CE8:
+        push 0x2b7
+L_00409CED:
+        push 0x2b6
+L_00409CF2:
+        push 0x15c
+L_00409CF7:
+        push 0x0
+L_00409CF9:
+        mov ecx, esi
+L_00409CFB:
+        mov dword ptr [esp + 0x68], 0xe
+L_00409D03:
+        call ext_00409640
+L_00409D08:
+        lea ecx, [esp + 0x8]
+L_00409D0C:
+        mov dword ptr [esp + 0x48], edi
+L_00409D10:
+        call dword ptr [mem_00924FF4]
+L_00409D16:
+        push offset mem_00874234
+L_00409D1B:
+        lea ecx, [esp + 0xc]
+L_00409D1F:
+        call dword ptr [mem_00924FE4]
+L_00409D25:
+        lea eax, [esp + 0x8]
+L_00409D29:
+        push eax
+L_00409D2A:
+        push 0x0
+L_00409D2C:
+        push 0x0
+L_00409D2E:
+        push 0x2bb
+L_00409D33:
+        push 0x2ba
+L_00409D38:
+        push 0x2b9
+L_00409D3D:
+        push 0x15e
+L_00409D42:
+        push 0x0
+L_00409D44:
+        mov ecx, esi
+L_00409D46:
+        mov dword ptr [esp + 0x68], 0xf
+L_00409D4E:
+        call ext_00409640
+L_00409D53:
+        lea ecx, [esp + 0x8]
+L_00409D57:
+        mov dword ptr [esp + 0x48], edi
+L_00409D5B:
+        call dword ptr [mem_00924FF4]
+L_00409D61:
+        push offset mem_00874234
+L_00409D66:
+        lea ecx, [esp + 0xc]
+L_00409D6A:
+        call dword ptr [mem_00924FE4]
+L_00409D70:
+        mov dword ptr [esp + 0x48], 0x10
+L_00409D78:
+        lea ecx, [esp + 0x8]
+L_00409D7C:
+        push ecx
+L_00409D7D:
+        push 0x0
+L_00409D7F:
+        push 0x0
+L_00409D81:
+        push 0x2be
+L_00409D86:
+        push 0x2bd
+L_00409D8B:
+        push 0x2bc
+L_00409D90:
+        push 0x15f
+L_00409D95:
+        push 0x0
+L_00409D97:
+        mov ecx, esi
+L_00409D99:
+        call ext_00409640
+L_00409D9E:
+        lea ecx, [esp + 0x8]
+L_00409DA2:
+        mov dword ptr [esp + 0x48], edi
+L_00409DA6:
+        call dword ptr [mem_00924FF4]
+L_00409DAC:
+        mov ecx, esi
+L_00409DAE:
+        call ext_00409730
+L_00409DB3:
+        push offset mem_00874234
+L_00409DB8:
+        lea ecx, [esp + 0xc]
+L_00409DBC:
+        call dword ptr [mem_00924FE4]
+L_00409DC2:
+        lea edx, [esp + 0x8]
+L_00409DC6:
+        push edx
+L_00409DC7:
+        push 0x0
+L_00409DC9:
+        push 0x0
+L_00409DCB:
+        push 0x2c1
+L_00409DD0:
+        push 0x2c0
+L_00409DD5:
+        push 0x2bf
+L_00409DDA:
+        push 0x164
+L_00409DDF:
+        push 0x0
+L_00409DE1:
+        mov ecx, esi
+L_00409DE3:
+        mov dword ptr [esp + 0x68], 0x11
+L_00409DEB:
+        call ext_00409640
+L_00409DF0:
+        lea ecx, [esp + 0x8]
+L_00409DF4:
+        mov dword ptr [esp + 0x48], edi
+L_00409DF8:
+        call dword ptr [mem_00924FF4]
+L_00409DFE:
+        push offset mem_00874234
+L_00409E03:
+        lea ecx, [esp + 0xc]
+L_00409E07:
+        call dword ptr [mem_00924FE4]
+L_00409E0D:
+        lea eax, [esp + 0x8]
+L_00409E11:
+        push eax
+L_00409E12:
+        push 0x0
+L_00409E14:
+        push 0x0
+L_00409E16:
+        push 0x2c4
+L_00409E1B:
+        push 0x2c3
+L_00409E20:
+        push 0x2c2
+L_00409E25:
+        push 0x166
+L_00409E2A:
+        push 0x0
+L_00409E2C:
+        mov ecx, esi
+L_00409E2E:
+        mov dword ptr [esp + 0x68], 0x12
+L_00409E36:
+        call ext_00409640
+L_00409E3B:
+        lea ecx, [esp + 0x8]
+L_00409E3F:
+        mov dword ptr [esp + 0x48], edi
+L_00409E43:
+        call dword ptr [mem_00924FF4]
+L_00409E49:
+        push offset mem_00874234
+L_00409E4E:
+        lea ecx, [esp + 0xc]
+L_00409E52:
+        call dword ptr [mem_00924FE4]
+L_00409E58:
+        lea ecx, [esp + 0x8]
+L_00409E5C:
+        push ecx
+L_00409E5D:
+        push 0x0
+L_00409E5F:
+        push 0x0
+L_00409E61:
+        push 0x2c7
+L_00409E66:
+        push 0x2c6
+L_00409E6B:
+        push 0x2c5
+L_00409E70:
+        push 0x165
+L_00409E75:
+        push 0x0
+L_00409E77:
+        mov ecx, esi
+L_00409E79:
+        mov dword ptr [esp + 0x68], 0x13
+L_00409E81:
+        call ext_00409640
+L_00409E86:
+        lea ecx, [esp + 0x8]
+L_00409E8A:
+        mov dword ptr [esp + 0x48], edi
+L_00409E8E:
+        call dword ptr [mem_00924FF4]
+L_00409E94:
+        push offset mem_00874234
+L_00409E99:
+        lea ecx, [esp + 0xc]
+L_00409E9D:
+        call dword ptr [mem_00924FE4]
+L_00409EA3:
+        lea edx, [esp + 0x8]
+L_00409EA7:
+        push edx
+L_00409EA8:
+        mov dword ptr [esp + 0x4c], 0x14
+L_00409EB0:
+        push 0x0
+L_00409EB2:
+        push 0x0
+L_00409EB4:
+        push 0x2ca
+L_00409EB9:
+        push 0x2c9
+L_00409EBE:
+        push 0x2c8
+L_00409EC3:
+        push 0x167
+L_00409EC8:
+        push 0x0
+L_00409ECA:
+        mov ecx, esi
+L_00409ECC:
+        call ext_00409640
+L_00409ED1:
+        lea ecx, [esp + 0x8]
+L_00409ED5:
+        mov dword ptr [esp + 0x48], edi
+L_00409ED9:
+        call dword ptr [mem_00924FF4]
+L_00409EDF:
+        mov ecx, esi
+L_00409EE1:
+        call ext_00409730
+L_00409EE6:
+        push offset mem_00874234
+L_00409EEB:
+        lea ecx, [esp + 0xc]
+L_00409EEF:
+        call dword ptr [mem_00924FE4]
+L_00409EF5:
+        lea eax, [esp + 0x8]
+L_00409EF9:
+        push eax
+L_00409EFA:
+        push 0x0
+L_00409EFC:
+        push 0x0
+L_00409EFE:
+        push 0x2cd
+L_00409F03:
+        push 0x2cc
+L_00409F08:
+        push 0x2cb
+L_00409F0D:
+        push 0x101
+L_00409F12:
+        push 0x0
+L_00409F14:
+        mov ecx, esi
+L_00409F16:
+        mov dword ptr [esp + 0x68], 0x15
+L_00409F1E:
+        call ext_00409640
+L_00409F23:
+        lea ecx, [esp + 0x8]
+L_00409F27:
+        mov dword ptr [esp + 0x48], edi
+L_00409F2B:
+        call dword ptr [mem_00924FF4]
+L_00409F31:
+        push offset mem_00874234
+L_00409F36:
+        lea ecx, [esp + 0xc]
+L_00409F3A:
+        call dword ptr [mem_00924FE4]
+L_00409F40:
+        lea ecx, [esp + 0x8]
+L_00409F44:
+        push ecx
+L_00409F45:
+        push 0x0
+L_00409F47:
+        push 0x0
+L_00409F49:
+        push 0x2d0
+L_00409F4E:
+        push 0x2cf
+L_00409F53:
+        push 0x2ce
+L_00409F58:
+        push 0x153
+L_00409F5D:
+        push 0x0
+L_00409F5F:
+        mov ecx, esi
+L_00409F61:
+        mov dword ptr [esp + 0x68], 0x16
+L_00409F69:
+        call ext_00409640
+L_00409F6E:
+        lea ecx, [esp + 0x8]
+L_00409F72:
+        mov dword ptr [esp + 0x48], edi
+L_00409F76:
+        call dword ptr [mem_00924FF4]
+L_00409F7C:
+        push offset mem_00874234
+L_00409F81:
+        lea ecx, [esp + 0xc]
+L_00409F85:
+        call dword ptr [mem_00924FE4]
+L_00409F8B:
+        lea edx, [esp + 0x8]
+L_00409F8F:
+        push edx
+L_00409F90:
+        push 0x0
+L_00409F92:
+        push 0x0
+L_00409F94:
+        push 0x2d3
+L_00409F99:
+        push 0x2d2
+L_00409F9E:
+        push 0x2d1
+L_00409FA3:
+        push 0x8035
+L_00409FA8:
+        push 0x0
+L_00409FAA:
+        mov ecx, esi
+L_00409FAC:
+        mov dword ptr [esp + 0x68], 0x17
+L_00409FB4:
+        call ext_00409640
+L_00409FB9:
+        lea ecx, [esp + 0x8]
+L_00409FBD:
+        mov dword ptr [esp + 0x48], edi
+L_00409FC1:
+        call dword ptr [mem_00924FF4]
+L_00409FC7:
+        push offset mem_00874234
+L_00409FCC:
+        lea ecx, [esp + 0xc]
+L_00409FD0:
+        call dword ptr [mem_00924FE4]
+L_00409FD6:
+        lea eax, [esp + 0x8]
+L_00409FDA:
+        push eax
+L_00409FDB:
+        push 0x0
+L_00409FDD:
+        push 0x0
+L_00409FDF:
+        push 0x2d6
+L_00409FE4:
+        mov dword ptr [esp + 0x58], 0x18
+L_00409FEC:
+        push 0x2d5
+L_00409FF1:
+        push 0x2d4
+L_00409FF6:
+        push 0x158
+L_00409FFB:
+        push 0x0
+L_00409FFD:
+        mov ecx, esi
+L_00409FFF:
+        call ext_00409640
+L_0040A004:
+        lea ecx, [esp + 0x8]
+L_0040A008:
+        mov dword ptr [esp + 0x48], edi
+L_0040A00C:
+        call dword ptr [mem_00924FF4]
+L_0040A012:
+        mov ecx, esi
+L_0040A014:
+        call ext_00409730
+L_0040A019:
+        push offset mem_00874234
+L_0040A01E:
+        lea ecx, [esp + 0xc]
+L_0040A022:
+        call dword ptr [mem_00924FE4]
+L_0040A028:
+        lea ecx, [esp + 0x8]
+L_0040A02C:
+        push ecx
+L_0040A02D:
+        push 0x0
+L_0040A02F:
+        push 0x0
+L_0040A031:
+        push 0x2d9
+L_0040A036:
+        push 0x2d8
+L_0040A03B:
+        push 0x2d7
+L_0040A040:
+        push 0x8191
+L_0040A045:
+        push 0x0
+L_0040A047:
+        mov ecx, esi
+L_0040A049:
+        mov dword ptr [esp + 0x68], 0x19
+L_0040A051:
+        call ext_00409640
+L_0040A056:
+        lea ecx, [esp + 0x8]
+L_0040A05A:
+        mov dword ptr [esp + 0x48], edi
+L_0040A05E:
+        call dword ptr [mem_00924FF4]
+L_0040A064:
+        push offset mem_00874234
+L_0040A069:
+        lea ecx, [esp + 0xc]
+L_0040A06D:
+        call dword ptr [mem_00924FE4]
+L_0040A073:
+        lea edx, [esp + 0x8]
+L_0040A077:
+        push edx
+L_0040A078:
+        push 0x0
+L_0040A07A:
+        push 0x2e1
+L_0040A07F:
+        push 0x2e0
+L_0040A084:
+        push 0x2df
+L_0040A089:
+        push 0x2de
+L_0040A08E:
+        push 0x8111
+L_0040A093:
+        push 0x1002
+L_0040A098:
+        mov ecx, esi
+L_0040A09A:
+        mov dword ptr [esp + 0x68], 0x1a
+L_0040A0A2:
+        call ext_00409640
+L_0040A0A7:
+        lea ecx, [esp + 0x8]
+L_0040A0AB:
+        jmp L_0040A899
+L_0040A0B0:
+        mov ecx, dword ptr [mem_00ACDB40]
+L_0040A0B6:
+        call ext_00430380
+L_0040A0BB:
+        test al, al
+L_0040A0BD:
+        je L_0040A8A3
+L_0040A0C3:
+        push offset mem_00874234
+L_0040A0C8:
+        lea ecx, [esp + 0xc]
+L_0040A0CC:
+        call dword ptr [mem_00924FE4]
+L_0040A0D2:
+        lea eax, [esp + 0x8]
+L_0040A0D6:
+        push eax
+L_0040A0D7:
+        push 0x0
+L_0040A0D9:
+        push 0x289
+L_0040A0DE:
+        push 0x288
+L_0040A0E3:
+        push 0x287
+L_0040A0E8:
+        push 0x286
+L_0040A0ED:
+        push 0x8024
+L_0040A0F2:
+        push 0x1002
+L_0040A0F7:
+        mov ecx, esi
+L_0040A0F9:
+        mov dword ptr [esp + 0x68], 0x1b
+L_0040A101:
+        call ext_00409640
+L_0040A106:
+        or edi, -1
+L_0040A109:
+        lea ecx, [esp + 0x8]
+L_0040A10D:
+        mov dword ptr [esp + 0x48], edi
+L_0040A111:
+        call dword ptr [mem_00924FF4]
+L_0040A117:
+        mov ecx, esi
+L_0040A119:
+        call ext_00409730
+L_0040A11E:
+        push offset mem_00874234
+L_0040A123:
+        lea ecx, [esp + 0xc]
+L_0040A127:
+        call dword ptr [mem_00924FE4]
+L_0040A12D:
+        lea ecx, [esp + 0x8]
+L_0040A131:
+        push ecx
+L_0040A132:
+        push 0x0
+L_0040A134:
+        push 0x0
+L_0040A136:
+        push 0x292
+L_0040A13B:
+        push 0x291
+L_0040A140:
+        push 0x290
+L_0040A145:
+        push 0xe103
+L_0040A14A:
+        push 0x1002
+L_0040A14F:
+        mov ecx, esi
+L_0040A151:
+        mov dword ptr [esp + 0x68], 0x1c
+L_0040A159:
+        call ext_00409640
+L_0040A15E:
+        lea ecx, [esp + 0x8]
+L_0040A162:
+        mov dword ptr [esp + 0x48], edi
+L_0040A166:
+        call dword ptr [mem_00924FF4]
+L_0040A16C:
+        mov ecx, esi
+L_0040A16E:
+        call ext_00409730
+L_0040A173:
+        push offset mem_00874234
+L_0040A178:
+        lea ecx, [esp + 0xc]
+L_0040A17C:
+        call dword ptr [mem_00924FE4]
+L_0040A182:
+        lea edx, [esp + 0x8]
+L_0040A186:
+        push edx
+L_0040A187:
+        push 0x0
+L_0040A189:
+        push 0x2e5
+L_0040A18E:
+        push 0x2e4
+L_0040A193:
+        push 0x2e3
+L_0040A198:
+        push 0x2e2
+L_0040A19D:
+        push 0x8165
+L_0040A1A2:
+        push 0x1000
+L_0040A1A7:
+        mov ecx, esi
+L_0040A1A9:
+        mov dword ptr [esp + 0x68], 0x1d
+L_0040A1B1:
+        call ext_00409640
+L_0040A1B6:
+        lea ecx, [esp + 0x8]
+L_0040A1BA:
+        mov dword ptr [esp + 0x48], edi
+L_0040A1BE:
+        call dword ptr [mem_00924FF4]
+L_0040A1C4:
+        push offset mem_00874234
+L_0040A1C9:
+        lea ecx, [esp + 0xc]
+L_0040A1CD:
+        call dword ptr [mem_00924FE4]
+L_0040A1D3:
+        lea eax, [esp + 0x8]
+L_0040A1D7:
+        push eax
+L_0040A1D8:
+        push 0x0
+L_0040A1DA:
+        push 0x2e9
+L_0040A1DF:
+        push 0x2e8
+L_0040A1E4:
+        push 0x2e7
+L_0040A1E9:
+        push 0x2e6
+L_0040A1EE:
+        push 0x8166
+L_0040A1F3:
+        push 0x1000
+L_0040A1F8:
+        mov ecx, esi
+L_0040A1FA:
+        mov dword ptr [esp + 0x68], 0x1e
+L_0040A202:
+        call ext_00409640
+L_0040A207:
+        lea ecx, [esp + 0x8]
+L_0040A20B:
+        mov dword ptr [esp + 0x48], edi
+L_0040A20F:
+        call dword ptr [mem_00924FF4]
+L_0040A215:
+        mov ecx, esi
+L_0040A217:
+        call ext_00409730
+L_0040A21C:
+        push offset mem_00874234
+L_0040A221:
+        lea ecx, [esp + 0xc]
+L_0040A225:
+        call dword ptr [mem_00924FE4]
+L_0040A22B:
+        lea ecx, [esp + 0x8]
+L_0040A22F:
+        push ecx
+L_0040A230:
+        push 0x81bb
+L_0040A235:
+        push 0x0
+L_0040A237:
+        push 0x81ba
+L_0040A23C:
+        push 0x81b9
+L_0040A241:
+        push 0x81b8
+L_0040A246:
+        push 0xe12b
+L_0040A24B:
+        push 0x1002
+L_0040A250:
+        mov ecx, esi
+L_0040A252:
+        mov dword ptr [esp + 0x68], 0x1f
+L_0040A25A:
+        call ext_00409640
+L_0040A25F:
+        lea ecx, [esp + 0x8]
+L_0040A263:
+        mov dword ptr [esp + 0x48], edi
+L_0040A267:
+        call dword ptr [mem_00924FF4]
+L_0040A26D:
+        push offset mem_00874234
+L_0040A272:
+        lea ecx, [esp + 0xc]
+L_0040A276:
+        call dword ptr [mem_00924FE4]
+L_0040A27C:
+        lea edx, [esp + 0x8]
+L_0040A280:
+        push edx
+L_0040A281:
+        push 0x81bf
+L_0040A286:
+        push 0x0
+L_0040A288:
+        push 0x81be
+L_0040A28D:
+        push 0x81bd
+L_0040A292:
+        push 0x81bc
+L_0040A297:
+        push 0xe12c
+L_0040A29C:
+        push 0x1002
+L_0040A2A1:
+        mov ecx, esi
+L_0040A2A3:
+        mov dword ptr [esp + 0x68], 0x20
+L_0040A2AB:
+        call ext_00409640
+L_0040A2B0:
+        lea ecx, [esp + 0x8]
+L_0040A2B4:
+        mov dword ptr [esp + 0x48], edi
+L_0040A2B8:
+        call dword ptr [mem_00924FF4]
+L_0040A2BE:
+        mov ecx, esi
+L_0040A2C0:
+        call ext_00409730
+L_0040A2C5:
+        push offset mem_00874234
+L_0040A2CA:
+        lea ecx, [esp + 0xc]
+L_0040A2CE:
+        call dword ptr [mem_00924FE4]
+L_0040A2D4:
+        lea eax, [esp + 0x8]
+L_0040A2D8:
+        push eax
+L_0040A2D9:
+        push 0x0
+L_0040A2DB:
+        push 0x29c
+L_0040A2E0:
+        push 0x29b
+L_0040A2E5:
+        push 0x29a
+L_0040A2EA:
+        push 0x299
+L_0040A2EF:
+        push 0x8026
+L_0040A2F4:
+        push 0x1002
+L_0040A2F9:
+        mov ecx, esi
+L_0040A2FB:
+        mov dword ptr [esp + 0x68], 0x21
+L_0040A303:
+        call ext_00409640
+L_0040A308:
+        lea ecx, [esp + 0x8]
+L_0040A30C:
+        mov dword ptr [esp + 0x48], edi
+L_0040A310:
+        call dword ptr [mem_00924FF4]
+L_0040A316:
+        push offset mem_00874234
+L_0040A31B:
+        lea ecx, [esp + 0xc]
+L_0040A31F:
+        call dword ptr [mem_00924FE4]
+L_0040A325:
+        lea ecx, [esp + 0x8]
+L_0040A329:
+        push ecx
+L_0040A32A:
+        push 0x0
+L_0040A32C:
+        push 0x2a0
+L_0040A331:
+        push 0x29f
+L_0040A336:
+        push 0x29e
+L_0040A33B:
+        push 0x29d
+L_0040A340:
+        push 0x8027
+L_0040A345:
+        push 0x1002
+L_0040A34A:
+        mov ecx, esi
+L_0040A34C:
+        mov dword ptr [esp + 0x68], 0x22
+L_0040A354:
+        call ext_00409640
+L_0040A359:
+        lea ecx, [esp + 0x8]
+L_0040A35D:
+        mov dword ptr [esp + 0x48], edi
+L_0040A361:
+        call dword ptr [mem_00924FF4]
+L_0040A367:
+        push offset mem_00874234
+L_0040A36C:
+        lea ecx, [esp + 0xc]
+L_0040A370:
+        call dword ptr [mem_00924FE4]
+L_0040A376:
+        lea edx, [esp + 0x8]
+L_0040A37A:
+        push edx
+L_0040A37B:
+        push 0x0
+L_0040A37D:
+        push 0x2a4
+L_0040A382:
+        push 0x2a3
+L_0040A387:
+        push 0x2a2
+L_0040A38C:
+        push 0x2a1
+L_0040A391:
+        push 0x809a
+L_0040A396:
+        push 0x1002
+L_0040A39B:
+        mov ecx, esi
+L_0040A39D:
+        mov dword ptr [esp + 0x68], 0x23
+L_0040A3A5:
+        call ext_00409640
+L_0040A3AA:
+        lea ecx, [esp + 0x8]
+L_0040A3AE:
+        mov dword ptr [esp + 0x48], edi
+L_0040A3B2:
+        call dword ptr [mem_00924FF4]
+L_0040A3B8:
+        mov ecx, esi
+L_0040A3BA:
+        call ext_00409730
+L_0040A3BF:
+        push offset mem_00874234
+L_0040A3C4:
+        lea ecx, [esp + 0xc]
+L_0040A3C8:
+        call dword ptr [mem_00924FE4]
+L_0040A3CE:
+        lea eax, [esp + 0x8]
+L_0040A3D2:
+        push eax
+L_0040A3D3:
+        push 0x0
+L_0040A3D5:
+        push 0x2a8
+L_0040A3DA:
+        push 0x2a7
+L_0040A3DF:
+        push 0x2a6
+L_0040A3E4:
+        push 0x2a5
+L_0040A3E9:
+        push 0x8108
+L_0040A3EE:
+        push 0x1002
+L_0040A3F3:
+        mov ecx, esi
+L_0040A3F5:
+        mov dword ptr [esp + 0x68], 0x24
+L_0040A3FD:
+        call ext_00409640
+L_0040A402:
+        lea ecx, [esp + 0x8]
+L_0040A406:
+        mov dword ptr [esp + 0x48], edi
+L_0040A40A:
+        call dword ptr [mem_00924FF4]
+L_0040A410:
+        push offset mem_00874234
+L_0040A415:
+        lea ecx, [esp + 0xc]
+L_0040A419:
+        call dword ptr [mem_00924FE4]
+L_0040A41F:
+        lea ecx, [esp + 0x8]
+L_0040A423:
+        push ecx
+L_0040A424:
+        push 0x0
+L_0040A426:
+        push 0x2ac
+L_0040A42B:
+        push 0x2ab
+L_0040A430:
+        push 0x2aa
+L_0040A435:
+        push 0x2a9
+L_0040A43A:
+        push 0x8105
+L_0040A43F:
+        push 0x1002
+L_0040A444:
+        mov ecx, esi
+L_0040A446:
+        mov dword ptr [esp + 0x68], 0x25
+L_0040A44E:
+        call ext_00409640
+L_0040A453:
+        lea ecx, [esp + 0x8]
+L_0040A457:
+        mov dword ptr [esp + 0x48], edi
+L_0040A45B:
+        call dword ptr [mem_00924FF4]
+L_0040A461:
+        push offset mem_00874234
+L_0040A466:
+        lea ecx, [esp + 0xc]
+L_0040A46A:
+        call dword ptr [mem_00924FE4]
+L_0040A470:
+        lea edx, [esp + 0x8]
+L_0040A474:
+        push edx
+L_0040A475:
+        push 0x0
+L_0040A477:
+        push 0x0
+L_0040A479:
+        push 0x2af
+L_0040A47E:
+        push 0x2ae
+L_0040A483:
+        push 0x2ad
+L_0040A488:
+        push 0x151
+L_0040A48D:
+        push 0x0
+L_0040A48F:
+        mov ecx, esi
+L_0040A491:
+        mov dword ptr [esp + 0x68], 0x26
+L_0040A499:
+        call ext_00409640
+L_0040A49E:
+        lea ecx, [esp + 0x8]
+L_0040A4A2:
+        mov dword ptr [esp + 0x48], edi
+L_0040A4A6:
+        call dword ptr [mem_00924FF4]
+L_0040A4AC:
+        mov ecx, esi
+L_0040A4AE:
+        call ext_00409730
+L_0040A4B3:
+        push offset mem_00874234
+L_0040A4B8:
+        lea ecx, [esp + 0xc]
+L_0040A4BC:
+        call dword ptr [mem_00924FE4]
+L_0040A4C2:
+        lea eax, [esp + 0x8]
+L_0040A4C6:
+        push eax
+L_0040A4C7:
+        push 0x0
+L_0040A4C9:
+        push 0x0
+L_0040A4CB:
+        push 0x2c1
+L_0040A4D0:
+        push 0x2c0
+L_0040A4D5:
+        push 0x2bf
+L_0040A4DA:
+        push 0x164
+L_0040A4DF:
+        push 0x0
+L_0040A4E1:
+        mov ecx, esi
+L_0040A4E3:
+        mov dword ptr [esp + 0x68], 0x27
+L_0040A4EB:
+        call ext_00409640
+L_0040A4F0:
+        lea ecx, [esp + 0x8]
+L_0040A4F4:
+        mov dword ptr [esp + 0x48], edi
+L_0040A4F8:
+        call dword ptr [mem_00924FF4]
+L_0040A4FE:
+        push offset mem_00874234
+L_0040A503:
+        lea ecx, [esp + 0xc]
+L_0040A507:
+        call dword ptr [mem_00924FE4]
+L_0040A50D:
+        lea ecx, [esp + 0x8]
+L_0040A511:
+        push ecx
+L_0040A512:
+        push 0x0
+L_0040A514:
+        push 0x0
+L_0040A516:
+        push 0x2c4
+L_0040A51B:
+        push 0x2c3
+L_0040A520:
+        push 0x2c2
+L_0040A525:
+        push 0x166
+L_0040A52A:
+        push 0x0
+L_0040A52C:
+        mov ecx, esi
+L_0040A52E:
+        mov dword ptr [esp + 0x68], 0x28
+L_0040A536:
+        call ext_00409640
+L_0040A53B:
+        lea ecx, [esp + 0x8]
+L_0040A53F:
+        mov dword ptr [esp + 0x48], edi
+L_0040A543:
+        call dword ptr [mem_00924FF4]
+L_0040A549:
+        push offset mem_00874234
+L_0040A54E:
+        lea ecx, [esp + 0xc]
+L_0040A552:
+        call dword ptr [mem_00924FE4]
+L_0040A558:
+        lea edx, [esp + 0x8]
+L_0040A55C:
+        push edx
+L_0040A55D:
+        push 0x0
+L_0040A55F:
+        push 0x0
+L_0040A561:
+        push 0x2c7
+L_0040A566:
+        push 0x2c6
+L_0040A56B:
+        push 0x2c5
+L_0040A570:
+        push 0x165
+L_0040A575:
+        push 0x0
+L_0040A577:
+        mov ecx, esi
+L_0040A579:
+        mov dword ptr [esp + 0x68], 0x29
+L_0040A581:
+        call ext_00409640
+L_0040A586:
+        lea ecx, [esp + 0x8]
+L_0040A58A:
+        mov dword ptr [esp + 0x48], edi
+L_0040A58E:
+        call dword ptr [mem_00924FF4]
+L_0040A594:
+        push offset mem_00874234
+L_0040A599:
+        lea ecx, [esp + 0xc]
+L_0040A59D:
+        call dword ptr [mem_00924FE4]
+L_0040A5A3:
+        lea eax, [esp + 0x8]
+L_0040A5A7:
+        push eax
+L_0040A5A8:
+        push 0x0
+L_0040A5AA:
+        push 0x0
+L_0040A5AC:
+        push 0x2ca
+L_0040A5B1:
+        push 0x2c9
+L_0040A5B6:
+        push 0x2c8
+L_0040A5BB:
+        push 0x167
+L_0040A5C0:
+        push 0x0
+L_0040A5C2:
+        mov ecx, esi
+L_0040A5C4:
+        mov dword ptr [esp + 0x68], 0x2a
+L_0040A5CC:
+        call ext_00409640
+L_0040A5D1:
+        lea ecx, [esp + 0x8]
+L_0040A5D5:
+        mov dword ptr [esp + 0x48], edi
+L_0040A5D9:
+        call dword ptr [mem_00924FF4]
+L_0040A5DF:
+        mov ecx, esi
+L_0040A5E1:
+        call ext_00409730
+L_0040A5E6:
+        push offset mem_00874234
+L_0040A5EB:
+        lea ecx, [esp + 0xc]
+L_0040A5EF:
+        call dword ptr [mem_00924FE4]
+L_0040A5F5:
+        mov dword ptr [esp + 0x48], 0x2b
+L_0040A5FD:
+        lea ecx, [esp + 0x8]
+L_0040A601:
+        push ecx
+L_0040A602:
+        push 0x0
+L_0040A604:
+        push 0x0
+L_0040A606:
+        push 0x350
+L_0040A60B:
+        push 0x34f
+L_0040A610:
+        push 0x351
+L_0040A615:
+        push 0x82ae
+L_0040A61A:
+        push 0x0
+L_0040A61C:
+        mov ecx, esi
+L_0040A61E:
+        call ext_00409640
+L_0040A623:
+        lea ecx, [esp + 0x8]
+L_0040A627:
+        mov dword ptr [esp + 0x48], edi
+L_0040A62B:
+        call dword ptr [mem_00924FF4]
+L_0040A631:
+        push offset mem_00874234
+L_0040A636:
+        lea ecx, [esp + 0xc]
+L_0040A63A:
+        call dword ptr [mem_00924FE4]
+L_0040A640:
+        lea edx, [esp + 0x8]
+L_0040A644:
+        push edx
+L_0040A645:
+        push 0x0
+L_0040A647:
+        push 0x0
+L_0040A649:
+        push 0x34a
+L_0040A64E:
+        push 0x349
+L_0040A653:
+        push 0x34b
+L_0040A658:
+        push 0x82b0
+L_0040A65D:
+        push 0x0
+L_0040A65F:
+        mov ecx, esi
+L_0040A661:
+        mov dword ptr [esp + 0x68], 0x2c
+L_0040A669:
+        call ext_00409640
+L_0040A66E:
+        lea ecx, [esp + 0x8]
+L_0040A672:
+        mov dword ptr [esp + 0x48], edi
+L_0040A676:
+        call dword ptr [mem_00924FF4]
+L_0040A67C:
+        push offset mem_00874234
+L_0040A681:
+        lea ecx, [esp + 0xc]
+L_0040A685:
+        call dword ptr [mem_00924FE4]
+L_0040A68B:
+        lea eax, [esp + 0x8]
+L_0040A68F:
+        push eax
+L_0040A690:
+        push 0x0
+L_0040A692:
+        push 0x0
+L_0040A694:
+        push 0x34d
+L_0040A699:
+        push 0x34c
+L_0040A69E:
+        push 0x34e
+L_0040A6A3:
+        push 0x82b1
+L_0040A6A8:
+        push 0x0
+L_0040A6AA:
+        mov ecx, esi
+L_0040A6AC:
+        mov dword ptr [esp + 0x68], 0x2d
+L_0040A6B4:
+        call ext_00409640
+L_0040A6B9:
+        lea ecx, [esp + 0x8]
+L_0040A6BD:
+        mov dword ptr [esp + 0x48], edi
+L_0040A6C1:
+        call dword ptr [mem_00924FF4]
+L_0040A6C7:
+        push offset mem_00874234
+L_0040A6CC:
+        lea ecx, [esp + 0xc]
+L_0040A6D0:
+        call dword ptr [mem_00924FE4]
+L_0040A6D6:
+        lea ecx, [esp + 0x8]
+L_0040A6DA:
+        push ecx
+L_0040A6DB:
+        push 0x0
+L_0040A6DD:
+        push 0x0
+L_0040A6DF:
+        push 0x347
+L_0040A6E4:
+        push 0x346
+L_0040A6E9:
+        push 0x348
+L_0040A6EE:
+        push 0x82b5
+L_0040A6F3:
+        push 0x0
+L_0040A6F5:
+        mov ecx, esi
+L_0040A6F7:
+        mov dword ptr [esp + 0x68], 0x2e
+L_0040A6FF:
+        call ext_00409640
+L_0040A704:
+        lea ecx, [esp + 0x8]
+L_0040A708:
+        mov dword ptr [esp + 0x48], edi
+L_0040A70C:
+        call dword ptr [mem_00924FF4]
+L_0040A712:
+        mov ecx, esi
+L_0040A714:
+        call ext_00409730
+L_0040A719:
+        push offset mem_00874234
+L_0040A71E:
+        lea ecx, [esp + 0xc]
+L_0040A722:
+        call dword ptr [mem_00924FE4]
+L_0040A728:
+        lea edx, [esp + 0x8]
+L_0040A72C:
+        push edx
+L_0040A72D:
+        mov dword ptr [esp + 0x4c], 0x2f
+L_0040A735:
+        push 0x0
+L_0040A737:
+        push 0x0
+L_0040A739:
+        push 0x81b1
+L_0040A73E:
+        push 0x81b0
+L_0040A743:
+        push 0x81af
+L_0040A748:
+        push 0x81ca
+L_0040A74D:
+        push 0x1002
+L_0040A752:
+        mov ecx, esi
+L_0040A754:
+        call ext_00409640
+L_0040A759:
+        lea ecx, [esp + 0x8]
+L_0040A75D:
+        mov dword ptr [esp + 0x48], edi
+L_0040A761:
+        call dword ptr [mem_00924FF4]
+L_0040A767:
+        push offset mem_00874234
+L_0040A76C:
+        lea ecx, [esp + 0xc]
+L_0040A770:
+        call dword ptr [mem_00924FE4]
+L_0040A776:
+        lea eax, [esp + 0x8]
+L_0040A77A:
+        push eax
+L_0040A77B:
+        push 0x0
+L_0040A77D:
+        push 0x0
+L_0040A77F:
+        push 0x81ae
+L_0040A784:
+        push 0x81ad
+L_0040A789:
+        push 0x81ac
+L_0040A78E:
+        push 0x81cb
+L_0040A793:
+        push 0x1002
+L_0040A798:
+        mov ecx, esi
+L_0040A79A:
+        mov dword ptr [esp + 0x68], 0x30
+L_0040A7A2:
+        call ext_00409640
+L_0040A7A7:
+        lea ecx, [esp + 0x8]
+L_0040A7AB:
+        mov dword ptr [esp + 0x48], edi
+L_0040A7AF:
+        call dword ptr [mem_00924FF4]
+L_0040A7B5:
+        push offset mem_00874234
+L_0040A7BA:
+        lea ecx, [esp + 0xc]
+L_0040A7BE:
+        call dword ptr [mem_00924FE4]
+L_0040A7C4:
+        lea ecx, [esp + 0x8]
+L_0040A7C8:
+        push ecx
+L_0040A7C9:
+        push 0x0
+L_0040A7CB:
+        push 0x0
+L_0040A7CD:
+        push 0x81c9
+L_0040A7D2:
+        push 0x81c8
+L_0040A7D7:
+        push 0x81c7
+L_0040A7DC:
+        push 0x81cc
+L_0040A7E1:
+        push 0x1002
+L_0040A7E6:
+        mov ecx, esi
+L_0040A7E8:
+        mov dword ptr [esp + 0x68], 0x31
+L_0040A7F0:
+        call ext_00409640
+L_0040A7F5:
+        lea ecx, [esp + 0x8]
+L_0040A7F9:
+        mov dword ptr [esp + 0x48], edi
+L_0040A7FD:
+        call dword ptr [mem_00924FF4]
+L_0040A803:
+        push offset mem_00874234
+L_0040A808:
+        lea ecx, [esp + 0xc]
+L_0040A80C:
+        call dword ptr [mem_00924FE4]
+L_0040A812:
+        lea edx, [esp + 0x8]
+L_0040A816:
+        push edx
+L_0040A817:
+        push 0x0
+L_0040A819:
+        push 0x0
+L_0040A81B:
+        push 0x81c6
+L_0040A820:
+        push 0x81c5
+L_0040A825:
+        push 0x81c4
+L_0040A82A:
+        push 0x81cd
+L_0040A82F:
+        push 0x1002
+L_0040A834:
+        mov ecx, esi
+L_0040A836:
+        mov dword ptr [esp + 0x68], 0x32
+L_0040A83E:
+        call ext_00409640
+L_0040A843:
+        lea ecx, [esp + 0x8]
+L_0040A847:
+        mov dword ptr [esp + 0x48], edi
+L_0040A84B:
+        call dword ptr [mem_00924FF4]
+L_0040A851:
+        mov ecx, esi
+L_0040A853:
+        call ext_00409730
+L_0040A858:
+        push offset mem_00874234
+L_0040A85D:
+        lea ecx, [esp + 0x28]
+L_0040A861:
+        call dword ptr [mem_00924FE4]
+L_0040A867:
+        lea eax, [esp + 0x24]
+L_0040A86B:
+        push eax
+L_0040A86C:
+        push 0x0
+L_0040A86E:
+        push 0x0
+L_0040A870:
+        push 0x2d9
+L_0040A875:
+        mov dword ptr [esp + 0x58], 0x33
+L_0040A87D:
+        push 0x2d8
+L_0040A882:
+        push 0x2d7
+L_0040A887:
+        push 0x8191
+L_0040A88C:
+        push 0x0
+L_0040A88E:
+        mov ecx, esi
+L_0040A890:
+        call ext_00409640
+L_0040A895:
+        lea ecx, [esp + 0x24]
+L_0040A899:
+        mov dword ptr [esp + 0x48], edi
+L_0040A89D:
+        call dword ptr [mem_00924FF4]
+L_0040A8A3:
+        mov ecx, esi
+L_0040A8A5:
+        call ext_00409120
+L_0040A8AA:
+        call ext_004091D0
+L_0040A8AF:
+        mov ecx, dword ptr [esi + 0x20]
+L_0040A8B2:
+        push ecx
+L_0040A8B3:
+        call dword ptr [mem_0092568C]
+L_0040A8B9:
+        mov ecx, dword ptr [esp + 0x40]
+L_0040A8BD:
+        pop edi
+L_0040A8BE:
+        pop esi
+L_0040A8BF:
+        mov dword ptr fs:[0], ecx
+L_0040A8C6:
+        add esp, 0x44
+L_0040A8C9:
+        ret
+    }
+}
