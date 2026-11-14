@@ -1403,3 +1403,185 @@ extern "C" __declspec(naked) void __cdecl fn_0085E5C0(void* p) {
         ret
     }
 }
+
+// [0x0085CE00] sub_0085CE00 (344 bytes)
+extern "C" void ext_0085CE90();
+extern "C" void ext_00869310();
+
+extern "C" __declspec(naked) unsigned int __cdecl fn_0085CE00(void* node) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        test esi, esi
+        jne has_node
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    has_node:
+        mov eax, dword ptr [esi + 0x14]
+        test eax, eax
+        je no_child0
+        push eax
+        lea ebx, [esi + 0x4]
+        call fn_0085CE00
+        mov dword ptr [ebx], eax
+        add esp, 4
+        mov edi, eax
+        jmp after_child0
+    no_child0:
+        lea ebx, [esi + 0x4]
+        mov edi, dword ptr [ebx]
+    after_child0:
+        mov eax, dword ptr [esi + 0x18]
+        test eax, eax
+        je no_child1
+        push eax
+        call fn_0085CE00
+        add esp, 4
+        add edi, eax
+    no_child1:
+        mov eax, dword ptr [ebx]
+        cmp eax, 0x80
+        jae ge_80
+        lea eax, [edi + 2]
+        inc edi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    ge_80:
+        cmp eax, 0x100
+        jae ge_100
+        lea eax, [edi + 3]
+        add edi, 2
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    ge_100:
+        cmp eax, 0xffff
+        ja ge_ffff
+        lea eax, [edi + 4]
+        add edi, 3
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    ge_ffff:
+        cmp eax, 0xffffff
+        ja ge_ffffff
+        lea eax, [edi + 5]
+        add edi, 4
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    ge_ffffff:
+        lea eax, [edi + 6]
+        add edi, 5
+        pop edi
+        pop esi
+        pop ebx
+        ret
+        __asm _emit 0x00
+    writer_entry:
+        push ebx
+        push esi
+        push edi
+        push ebp
+        mov edi, dword ptr [esp + 0x18]
+        push edi
+        call fn_0085CE00
+        mov esi, dword ptr [esp + 0x18]
+        add esp, 4
+        mov ebp, eax
+        test esi, esi
+        jne w_has_dst
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    w_has_dst:
+        mov al, byte ptr [edi]
+        mov byte ptr [esi], al
+        inc esi
+        mov eax, dword ptr [edi + 0x4]
+        cmp eax, 0x80
+        jae w_ge_80
+        mov byte ptr [esi], al
+        inc esi
+        jmp w_children
+    w_ge_80:
+        cmp eax, 0xff
+        ja w_gt_ff
+        mov ebx, 1
+        jmp w_have_len
+    w_gt_ff:
+        mov ebx, 2
+        cmp eax, 0xffff
+        jbe w_have_len
+        mov ecx, 0xffffff
+        mov ebx, 4
+        cmp ecx, eax
+        adc ebx, -1
+    w_have_len:
+        mov al, bl
+        or al, -0x80
+        mov byte ptr [esi], al
+        mov eax, 1
+        cmp ebx, eax
+        jl w_skip_bytes
+    w_byte_loop:
+        mov edx, dword ptr [edi + 0x4]
+        mov cl, bl
+        sub cl, al
+        inc eax
+        shl cl, 3
+        shr edx, cl
+        mov byte ptr [eax + esi - 0x1], dl
+        cmp eax, ebx
+        jle w_byte_loop
+    w_skip_bytes:
+        lea esi, [ebx + esi + 0x1]
+    w_children:
+        mov eax, dword ptr [edi + 0x14]
+        test eax, eax
+        je w_no_child0
+        push eax
+        push esi
+        call writer_entry
+        add esp, 8
+        add esi, eax
+        jmp w_after_child0
+    w_no_child0:
+        mov eax, dword ptr [edi + 0x4]
+        mov ecx, dword ptr [edi + 0x8]
+        push eax
+        push ecx
+        push esi
+        call ext_00869310
+        add esp, 0xc
+        add esi, dword ptr [edi + 0x4]
+    w_after_child0:
+        mov eax, dword ptr [edi + 0x18]
+        test eax, eax
+        je w_end
+        push eax
+        push esi
+        call writer_entry
+        add esp, 8
+    w_end:
+        mov eax, ebp
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
