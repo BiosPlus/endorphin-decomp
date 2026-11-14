@@ -448,3 +448,83 @@ extern "C" __declspec(naked) void __fastcall fn_0060D780(void* self) {
         ret     0xc
     }
 }
+
+// [0x0060DA60] NMData::EffectorGroupData::vfunc_12 (179 bytes)
+extern "C" void ext_0040ECB0();
+extern "C" void ext_0060B910();
+extern "C" void ext_006A5C62();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0060DA60(void* self) {
+    __asm {
+        push -1
+        push 0x8a8803
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        push edi
+        push 0x54
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [esp + 0x10], esi
+        xor edi, edi
+        cmp esi, edi
+        mov dword ptr [esp + 0x1c], edi
+        je short da60_init_null
+        mov ecx, esi
+        call ext_0060B910
+        mov dword ptr [esi], 0x9723f4
+        mov dword ptr [esi + 0x48], edi
+        mov dword ptr [esi + 0x4c], edi
+        mov dword ptr [esi + 0x50], edi
+        mov dword ptr [esp + 0x10], esi
+        jmp short da60_loop_init
+da60_init_null:
+        mov dword ptr [esp + 0x10], edi
+da60_loop_init:
+        mov esi, dword ptr [esp + 0x10]
+        mov edi, dword ptr [esi + 0x48]
+        mov ebp, dword ptr [mem_00925134]
+        add esi, 0x44
+        cmp edi, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x1c], 0xffffffff
+        jbe short da60_chk1
+        call ebp
+da60_chk1:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe short da60_chk2
+        call ebp
+da60_chk2:
+        cmp edi, ebx
+        je short da60_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb short da60_chk3
+        call ebp
+da60_chk3:
+        push edi
+        mov ecx, esi
+        call ext_0040ECB0
+        cmp edi, dword ptr [esi + 0x8]
+        jb short da60_chk4
+        call ebp
+da60_chk4:
+        add edi, 0x1c
+        jmp short da60_chk1
+da60_done:
+        mov ecx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
