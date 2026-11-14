@@ -11400,3 +11400,41 @@ extern "C" __declspec(naked) void __fastcall fn_0048EE20(void* self, int edx_unu
         ret 0x20
     }
 }
+
+// [0x0048AE00] sub_0048AE00 (302 bytes)
+struct Elem28_0048AE00 { char data[28]; };
+struct Pair_0048AE00 { Elem28_0048AE00* first; Elem28_0048AE00* second; };
+extern "C" void __cdecl ext_00489A10(Elem28_0048AE00* first, Elem28_0048AE00* last, int a, int b);
+extern "C" Pair_0048AE00* __cdecl ext_00489AE0(Pair_0048AE00* out, Elem28_0048AE00* first, Elem28_0048AE00* last);
+extern "C" void __cdecl ext_00489CA0(Elem28_0048AE00* first, Elem28_0048AE00* last, int a);
+extern "C" void __cdecl ext_0048A150(Elem28_0048AE00* first, Elem28_0048AE00* last);
+
+extern "C" void __cdecl fn_0048AE00(Elem28_0048AE00* first, Elem28_0048AE00* last, int ideal) {
+    int count = last - first;
+    for (; count > 0x20; count = last - first) {
+        if (ideal <= 0) {
+            if (count > 0x20) {
+                if (last - first > 1) {
+                    ext_00489A10(first, last, 0, 0);
+                }
+                ext_0048A150(first, last);
+                return;
+            }
+            break;
+        }
+        Pair_0048AE00 mid;
+        ext_00489AE0(&mid, first, last);
+        ideal /= 2;
+        ideal += ideal / 2;
+        if (mid.first - first < last - mid.second) {
+            fn_0048AE00(first, mid.first, ideal);
+            first = mid.second;
+        } else {
+            fn_0048AE00(mid.second, last, ideal);
+            last = mid.first;
+        }
+    }
+    if (count > 1) {
+        ext_00489CA0(first, last, 0);
+    }
+}
