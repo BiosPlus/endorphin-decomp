@@ -956,3 +956,64 @@ L_0049CE78:
         ret 0x4
     }
 }
+
+// [0x0049FCF0] NMData::State::vfunc_6_off_10 (96 bytes)
+extern "C" void ext_0040ECB0();
+
+extern "C" __declspec(naked) void __fastcall fn_0049FCF0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xd0]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [eax]
+        push edi
+        lea edi, [ecx + 0xcc]
+
+    loc_0049FD08:
+        cmp edi, edi
+        mov ebx, dword ptr [edi + 0x4]
+        je loc_0049FD11
+        call ebp
+
+    loc_0049FD11:
+        cmp esi, ebx
+        je loc_0049FD49
+        cmp esi, dword ptr [edi + 0x4]
+        jne loc_0049FD1C
+        call ebp
+
+    loc_0049FD1C:
+        cmp byte ptr [esi + 0x6d], 0
+        jne loc_0049FD3E
+        cmp esi, dword ptr [edi + 0x4]
+        jne loc_0049FD29
+        call ebp
+
+    loc_0049FD29:
+        mov edx, dword ptr [esi + 0x10]
+        mov eax, dword ptr [edx + 0x4]
+        lea ecx, [esi + 0x10]
+        call eax
+        mov ecx, dword ptr [esp + 0x14]
+        push eax
+        call ext_0040ECB0
+
+    loc_0049FD3E:
+        cmp esi, dword ptr [edi + 0x4]
+        jne loc_0049FD45
+        call ebp
+
+    loc_0049FD45:
+        mov esi, dword ptr [esi]
+        jmp loc_0049FD08
+
+    loc_0049FD49:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
