@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `13785 / 24049` (**57.32%**) — `10693` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1551304 / 4496005 bytes` (**34.50%** of 4.29 MB)
+- **In-Scope Functions Matched:** `13786 / 24049` (**57.32%**) — `10694` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1551799 / 4496005 bytes` (**34.52%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -22,14 +22,14 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P60-70 (122-159B)** | 1101 / 2405 | 45.78% | 149143 / 339038 | 43.99% | 1304 fn |
 | **P70-80 (159-178B)** | 303 / 2405 | 12.60% | 51048 / 400567 | 12.74% | 2102 fn |
 | **P80-90 (178-335B)** | 1153 / 2405 | 47.94% | 277562 / 583211 | 47.59% | 1252 fn |
-| **P90-100 (335-36100B)** | 781 / 2404 | 32.49% | 566869 / 2392860 | 23.69% | 1623 fn |
+| **P90-100 (335-36100B)** | 782 / 2404 | 32.53% | 567364 / 2392860 | 23.71% | 1622 fn |
 
 ### Squad Leaderboard (AI Model Matches)
 
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 63.16% |
-| `claude-haiku-5.5@low` | 1499 | 348071 | 14.02% |
+| `claude-haiku-5.5@low` | 1500 | 348566 | 14.03% |
 | `gemini-4-hydrogen@low` | 935 | 277805 | 8.74% |
 | `gemini-3.8-flash@low` | 850 | 249610 | 7.95% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.18% |
