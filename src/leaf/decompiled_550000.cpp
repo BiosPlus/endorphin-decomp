@@ -11005,3 +11005,69 @@ SKIP_C:
         ret 10h
     }
 }
+
+extern "C" void ext_00555AB0();
+extern "C" void ext_0067B7F0();
+extern "C" void ext_006A7250();
+extern "C" int mem_0094CE80;
+extern "C" double sqrt(double);
+
+// [0x00556840] sub_00556840 (146 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00556840(void* self, int edx_unused, int a1, const float* v, int a3) {
+    __asm {
+        sub     esp, 0Ch
+        push    esi
+        mov     esi, dword ptr [esp + 18h]
+        fld     dword ptr [esi + 4]
+        push    edi
+        fld     dword ptr [esi]
+        mov     edi, ecx
+        fld     dword ptr [esi + 8]
+        fld     st(1)
+        fmulp   st(2), st
+        fld     st(2)
+        fmulp   st(3), st
+        fxch    st(1)
+        faddp   st(2), st
+        fmul    st(0), st
+        faddp   st(1), st
+        call    ext_006A7250
+        fstp    dword ptr [esp + 1Ch]
+        fld     dword ptr [esi]
+        fstp    dword ptr [esp + 8]
+        fld     dword ptr [esi + 4]
+        fstp    dword ptr [esp + 0Ch]
+        fld     dword ptr [esi + 8]
+        fstp    dword ptr [esp + 10h]
+        fld     dword ptr [mem_0094CE80]
+        fcomp   dword ptr [esp + 1Ch]
+        fnstsw  ax
+        test    ah, 41h
+        jne     L_norm
+        fld1
+        fstp    dword ptr [esp + 8]
+        fldz
+        fst     dword ptr [esp + 0Ch]
+        fstp    dword ptr [esp + 10h]
+        jmp     L_call
+    L_norm:
+        lea     ecx, [esp + 8]
+        call    ext_0067B7F0
+    L_call:
+        mov     eax, dword ptr [esp + 20h]
+        fld     dword ptr [esp + 1Ch]
+        mov     edx, dword ptr [esp + 18h]
+        push    eax
+        push    ecx
+        fstp    dword ptr [esp]
+        lea     ecx, [esp + 10h]
+        push    ecx
+        push    edx
+        mov     ecx, edi
+        call    ext_00555AB0
+        pop     edi
+        pop     esi
+        add     esp, 0Ch
+        ret     0Ch
+    }
+}
