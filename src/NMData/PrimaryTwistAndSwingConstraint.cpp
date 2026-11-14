@@ -642,3 +642,21 @@ second:
         ret 0xc
     }
 }
+
+// [0x00611A40] NMData::PrimaryTwistAndSwingConstraint::vfunc_33 (78 bytes)
+extern "C" void ext_006114B0();
+extern "C" void ext_00610D70();
+
+extern "C" void __fastcall fn_00611A40(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    ((void (__fastcall*)(void*))ext_006114B0)(self);
+    ((void (__fastcall*)(void*))ext_00610D70)(p + 0x164);
+    ((void (__fastcall*)(void*))ext_00610D70)(p + 0x224);
+    *(int*)(p + 0x32c) = 0;
+    *(int*)(p + 0x330) = 0;
+    *(int*)(p + 0x334) = 0;
+    *(int*)(p + 0x338) = 0;
+    *(unsigned char*)(p + 0x328) = 1;
+    *(unsigned char*)(p + 0x329) = 1;
+    *(unsigned char*)(p + 0x32a) = 1;
+}
