@@ -619,3 +619,57 @@ extern "C" __declspec(naked) void __fastcall fn_00675680(void* self, int edx_unu
         ret 8
     }
 }
+
+extern "C" void ext_00665870();
+extern "C" void ext_00666120();
+extern "C" void ext_006720C0();
+extern "C" void ext_00677460();
+
+// [0x006776C0] Properties::PropertyManager::vfunc_5 (137 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006776C0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 8b33b8h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push esi
+        push edi
+        mov esi, ecx
+        push 0
+        lea ecx, [esp + 0ch]
+        call ext_006720C0
+        mov eax, dword ptr [esp + 20h]
+        mov ecx, dword ptr [eax + 38h]
+        mov edx, dword ptr [ecx]
+        add eax, 34h
+        lea edi, [esp + 8]
+        push edi
+        push eax
+        mov eax, dword ptr [edx + 0a4h]
+        mov dword ptr [esp + 20h], 0
+        call eax
+        mov ecx, dword ptr [esp + 0ch]
+        test ecx, ecx
+        mov dword ptr [esp + 18h], 0ffffffffh
+        je skip_release
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        mov eax, edi
+        push eax
+        call edx
+skip_release:
+        call ext_00665870
+        mov ecx, eax
+        call ext_00666120
+        mov ecx, esi
+        call ext_00677460
+        mov ecx, dword ptr [esp + 10h]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 14h
+        ret 4
+    }
+}
