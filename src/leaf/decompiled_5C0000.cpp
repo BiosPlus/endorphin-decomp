@@ -5124,3 +5124,94 @@ extern "C" __declspec(naked) void __fastcall fn_005CCA70(void* self, int edx_unu
         ret     4
     }
 }
+
+// [0x005C86A0] sub_005C86A0 (283 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005C86A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -0x1
+        push 0x891cab
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        cmp esi, edi
+        je L_end_5C86A0
+        push edi
+        call ext_005B6610
+        mov ecx, dword ptr [esi + 0x15c]
+        test ecx, ecx
+        je L_skip1_5C86A0
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+L_skip1_5C86A0:
+        mov dword ptr [esi + 0x15c], 0x0
+        cmp dword ptr [edi + 0x15c], 0x0
+        je L_copy_5C86A0
+        push 0x4c
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x1c], eax
+        test eax, eax
+        mov dword ptr [esp + 0x14], 0x0
+        je L_null_5C86A0
+        mov edx, dword ptr [edi + 0x15c]
+        push edx
+        mov ecx, eax
+        call ext_005B5BA0
+        mov ebx, eax
+        jmp L_join_5C86A0
+L_null_5C86A0:
+        xor ebx, ebx
+L_join_5C86A0:
+        mov ecx, dword ptr [esi + 0x15c]
+        cmp ebx, ecx
+        mov dword ptr [esp + 0x14], -0x1
+        je L_skip2_5C86A0
+        test ecx, ecx
+        je L_skip2_5C86A0
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x1
+        call edx
+L_skip2_5C86A0:
+        test esi, esi
+        mov dword ptr [esi + 0x15c], ebx
+        je L_zero_5C86A0
+        lea eax, [esi + 0x158]
+        jmp L_store_5C86A0
+L_zero_5C86A0:
+        xor eax, eax
+L_store_5C86A0:
+        mov ecx, ebx
+        mov dword ptr [ecx + 0x48], eax
+L_copy_5C86A0:
+        lea edx, [edi + 0x17c]
+        push edx
+        lea ecx, [esi + 0x17c]
+        call dword ptr [mem_00924FDC]
+        mov dword ptr [esi + 0x198], 0x0
+        movzx eax, byte ptr [edi + 0x19c]
+        mov byte ptr [esi + 0x19c], al
+        mov cl, byte ptr [edi + 0x19d]
+        mov byte ptr [esi + 0x19d], cl
+        mov dl, byte ptr [edi + 0x19e]
+        mov byte ptr [esi + 0x19e], dl
+        movzx eax, byte ptr [edi + 0x19f]
+        mov byte ptr [esi + 0x19f], al
+L_end_5C86A0:
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        pop ebx
+        add esp, 0xc
+        ret 0x4
+    }
+}
