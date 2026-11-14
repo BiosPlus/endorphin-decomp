@@ -3538,3 +3538,18 @@ extern "C" __declspec(naked) void __cdecl fn_0080FB20(void* self, unsigned char 
         ret
     }
 }
+
+// [0x00804BC0] sub_00804BC0 (73 bytes)
+extern "C" void ext_008048B0(void*, void*);
+extern "C" float mem_0099D148;
+extern "C" void __cdecl fn_00804BC0(void* a0) {
+    char* esi = *(char**)((char*)a0 + 0x10);
+    float saved = *(float*)(esi + 0x2c);
+    struct { int d[115]; } buf;
+    *(float*)(esi + 0x2c) = mem_0099D148;
+    *(float*)(esi + 0x18) = 0.0f;
+    *(float*)(esi + 0x1c) = 0.0f;
+    *(float*)(esi + 0x20) = 0.0f;
+    ext_008048B0(esi, &buf);
+    *(float*)(esi + 0x2c) = saved;
+}
