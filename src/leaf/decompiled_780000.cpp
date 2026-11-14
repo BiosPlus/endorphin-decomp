@@ -734,3 +734,48 @@ extern "C" __declspec(naked) void __fastcall fn_0078CEB0(void* self) {
         ret
     }
 }
+
+// [0x0078C440] sub_0078C440 (80 bytes)
+extern "C" void ext_0078C410();
+
+extern "C" __declspec(naked) void __fastcall fn_0078C440(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi + 0x20]
+        test eax, eax
+        je L_nofirst
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esi + 0x28]
+        cmp edi, eax
+        jge L_ret0
+        push edi
+        call ext_0078C410
+        cmp al, 0x43
+        jne L_ret0
+        mov eax, dword ptr [esi + 0x2c]
+        mov edx, dword ptr [esi + 0x20]
+        mov ecx, dword ptr [eax + 4*edi]
+        pop edi
+        pop esi
+        mov al, byte ptr [ecx + edx]
+        ret 0x8
+    L_nofirst:
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esi + 0x4]
+        cmp eax, ecx
+        jge L_ret0
+        mov ecx, dword ptr [esi + 0x14]
+        pop edi
+        pop esi
+        mov edx, dword ptr [ecx + 4*eax]
+        mov al, byte ptr [edx]
+        ret 0x8
+    L_ret0:
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x8
+    }
+}
