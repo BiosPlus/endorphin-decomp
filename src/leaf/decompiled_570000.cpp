@@ -11898,3 +11898,83 @@ L_ok:
         ret 4
     }
 }
+
+// [0x0057FD60] sub_0057FD60 (161 bytes)
+extern "C" void ext_0057E5F0();
+extern "C" void ext_0057FA30();
+extern "C" int mem_00925134; /* "P{b" */
+
+extern "C" __declspec(naked) void __fastcall fn_0057FD60(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 8
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        test edi, edi
+        jne short L_nonnull
+        xor ecx, ecx
+        jmp short L_after_first
+L_nonnull:
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, edi
+        mov eax, 0x66666667
+        imul ecx
+        sar edx, 0x3
+        mov ecx, edx
+        shr ecx, 0x1f
+        add ecx, edx
+L_after_first:
+        test edi, edi
+        je short L_slow
+        mov edx, dword ptr [esi + 0xc]
+        sub edx, edi
+        mov eax, 0x66666667
+        imul edx
+        sar edx, 0x3
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp ecx, eax
+        jae short L_slow
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x14]
+        mov edi, dword ptr [esi + 0x8]
+        mov byte ptr [esp + 0x8], 0
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        push esi
+        push edx
+        push 1
+        push edi
+        call ext_0057E5F0
+        add esp, 0x18
+        add edi, 0x14
+        mov dword ptr [esi + 0x8], edi
+        pop edi
+        pop esi
+        add esp, 8
+        ret 4
+L_slow:
+        push ebx
+        mov ebx, dword ptr [esi + 0x8]
+        cmp edi, ebx
+        jbe short L_ok
+        call dword ptr [mem_00925134]
+L_ok:
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        push ebx
+        push esi
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, esi
+        call ext_0057FA30
+        pop ebx
+        pop edi
+        pop esi
+        add esp, 8
+        ret 4
+    }
+}
