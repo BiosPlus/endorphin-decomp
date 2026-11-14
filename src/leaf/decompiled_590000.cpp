@@ -5237,3 +5237,37 @@ extern "C" __declspec(naked) void __fastcall fn_00597060(void* self) {
         ret
     }
 }
+
+// [0x00593D40] sub_00593D40 (78 bytes)
+extern "C" __declspec(naked) int __stdcall fn_00593D40(int* p, int a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        sub eax, 0x1
+        je _case1
+        sub eax, 0x1
+        je _case2
+        sub eax, 0x1
+        je _case3
+        mov eax, dword ptr [esp + 0x10]
+        ret 0x10
+    _case3:
+        mov edx, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esp + 0xc]
+        push edx
+        mov edx, dword ptr [esp + 0xc]
+        push eax
+        push edx
+        lea eax, [esp + 0x10]
+        push eax
+        mov dword ptr [esp + 0x14], 0x2
+        call fn_00593D40
+        ret 0x10
+    _case2:
+        mov eax, dword ptr [esp + 0x8]
+        ret 0x10
+    _case1:
+        mov eax, dword ptr [esp + 0xc]
+        ret 0x10
+    }
+}
