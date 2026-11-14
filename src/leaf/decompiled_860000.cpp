@@ -1809,3 +1809,124 @@ extern "C" __declspec(naked) void __fastcall fn_00866E50(void* self) {
         ret
     }
 }
+
+// [0x0086B2A0] sub_0086B2A0 (303 bytes)
+extern "C" int mem_00BC7110;
+extern "C" int mem_00BC724E;
+extern "C" int mem_00BC7390;
+extern "C" int mem_00BC760A;
+extern "C" int mem_00BC760C;
+extern "C" int mem_00BC7746;
+extern "C" int mem_00BC7884;
+
+extern "C" __declspec(naked) void __fastcall fn_0086B2A0(void* self) {
+    __asm {
+        mov cx, 0x10
+        push ebx
+        push esi
+        mov ebx, 0xffff0000
+        xor si, si
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+
+    loc_86B2B3:
+        mov eax, ebx
+        and eax, edi
+        je loc_86B2BE
+        add si, cx
+        mov edi, eax
+
+    loc_86B2BE:
+        movsx eax, cx
+        cdq
+        sub eax, edx
+        __asm _emit 0xc1 __asm _emit 0xf8 __asm _emit 0x01 // sar eax, 1
+        mov cx, ax
+        mov eax, ebx
+        shr eax, cl
+        xor ebx, eax
+        test cx, cx
+        jne loc_86B2B3
+
+        mov ax, si
+        pop edi
+        pop esi
+        pop ebx
+        ret
+
+        __asm _emit 0x8d __asm _emit 0x64 __asm _emit 0x24 __asm _emit 0x00
+
+        xor ax, ax
+        push esi
+        push edi
+        mov ecx, 0xffffffff
+
+    loc_86B2EA:
+        movsx edx, ax
+        inc ax
+        mov word ptr [edx*2 + mem_00BC7110], cx
+        cmp ax, 0x13d
+        jl loc_86B2EA
+
+        mov dx, 1
+        xor si, si
+
+    loc_86B304:
+        movsx eax, dx
+        add eax, eax
+        mov ecx, 0x13d
+        cdq
+        mov word ptr [eax + mem_00BC7110], si
+        inc si
+        idiv ecx
+        cmp si, cx
+        jl loc_86B304
+
+        mov word ptr [mem_00BC7390], 0x9e
+        mov di, 1
+
+    loc_86B32C:
+        movsx eax, di
+        inc di
+        mov esi, 0x9e
+        lea ecx, [eax*2]
+        movsx eax, word ptr [ecx + mem_00BC7390 - 2]
+        inc eax
+        cdq
+        idiv esi
+        mov word ptr [ecx + mem_00BC7390], dx
+        cmp di, 0x13d
+        jl loc_86B32C
+
+        mov word ptr [mem_00BC760A], 0xffff
+        mov dx, 2
+        mov word ptr [mem_00BC760C], si
+        mov word ptr [mem_00BC7746], 1
+
+    loc_86B373:
+        movsx eax, dx
+        inc dx
+        add eax, eax
+        mov si, word ptr [eax + mem_00BC7110]
+        mov ecx, offset mem_00BC7390 - 4
+        sub ecx, eax
+        movsx edi, si
+        mov ax, word ptr [ecx]
+        mov word ptr [edi*2 + mem_00BC760A], ax
+        movsx ecx, ax
+        mov word ptr [ecx*2 + mem_00BC760A], si
+        cmp dx, 0x9e
+        jle loc_86B373
+
+        mov ax, word ptr [mem_00BC724E]
+        push 0x9d
+        movsx ecx, ax
+        mov word ptr [ecx*2 + mem_00BC760A], ax
+        call fn_0086B2A0
+        mov word ptr [mem_00BC7884], ax
+        add esp, 4
+        pop edi
+        pop esi
+        ret
+    }
+}
