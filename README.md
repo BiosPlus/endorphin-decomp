@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `14215 / 24049` (**59.11%**) — `11123` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1626909 / 4496005 bytes` (**36.19%** of 4.29 MB)
+- **In-Scope Functions Matched:** `14216 / 24049` (**59.11%**) — `11124` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1627046 / 4496005 bytes` (**36.19%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -19,7 +19,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P30-40 (48-71B)** | 1342 / 2405 | 55.80% | 79632 / 144549 | 55.09% | 1063 fn |
 | **P40-50 (71-91B)** | 1391 / 2405 | 57.84% | 115793 / 194373 | 59.57% | 1014 fn |
 | **P50-60 (91-122B)** | 1876 / 2405 | 78.00% | 203076 / 256906 | 79.05% | 529 fn |
-| **P60-70 (122-159B)** | 1161 / 2405 | 48.27% | 157349 / 339038 | 46.41% | 1244 fn |
+| **P60-70 (122-159B)** | 1162 / 2405 | 48.32% | 157486 / 339038 | 46.45% | 1243 fn |
 | **P70-80 (159-178B)** | 312 / 2405 | 12.97% | 52576 / 400567 | 13.13% | 2093 fn |
 | **P80-90 (178-335B)** | 1191 / 2405 | 49.52% | 287074 / 583211 | 49.22% | 1214 fn |
 | **P90-100 (335-36100B)** | 828 / 2404 | 34.44% | 591487 / 2392860 | 24.72% | 1576 fn |
@@ -31,7 +31,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 60.72% |
 | `claude-haiku-5.5@low` | 1690 | 383355 | 15.19% |
 | `gemini-4-hydrogen@low` | 1065 | 299767 | 9.57% |
-| `gemini-3.8-flash@low` | 959 | 267969 | 8.62% |
+| `gemini-3.8-flash@low` | 960 | 268106 | 8.63% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.02% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.47% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.22% |
