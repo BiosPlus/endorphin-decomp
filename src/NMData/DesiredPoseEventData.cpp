@@ -336,3 +336,100 @@ extern "C" __declspec(naked) void __fastcall fn_0048DE90(void* self) {
         ret
     }
 }
+
+extern "C" void ext_004275E0();
+extern "C" void ext_004C24C0();
+extern "C" void ext_004E9BD0();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0063F530();
+extern "C" void ext_0067EE80();
+extern "C" int mem_00A9F9C4;
+extern "C" int mem_00A9F1A4;
+extern "C" int mem_00A9F1A8;
+
+// [0x00487B00] NMData::DesiredPoseEventData::vfunc_21 (254 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00487B00(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0Ch]
+        push edi
+        mov esi, ecx
+        call ext_004C24C0
+        mov eax, dword ptr [mem_00A9F9C4]
+        push eax
+        mov ecx, edi
+        call ext_0063EFE0
+        push eax
+        lea ecx, [esi + 180h]
+        push ecx
+        call ext_004275E0
+        mov edx, dword ptr [mem_00A9F1A4]
+        add esp, 8
+        push 1
+        push 0
+        push edx
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0B53A34h
+        je L_487_B60
+        cmp eax, 0B53B30h
+        je L_487_B60
+        cmp eax, 0B53AB0h
+        je L_487_B60
+        cmp eax, 0B53A70h
+        je L_487_B60
+        cmp eax, 0B53AF0h
+        jne L_487_B65
+    L_487_B60:
+        mov eax, 0B53B30h
+    L_487_B65:
+        mov edx, dword ptr [esi + 19Ch]
+        lea ecx, [esi + 19Ch]
+        push eax
+        mov eax, dword ptr [edx + 4]
+        call eax
+        mov ecx, dword ptr [mem_00A9F1A8]
+        push 1
+        push 0
+        push ecx
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0B53A34h
+        je L_487_BAC
+        cmp eax, 0B53B30h
+        je L_487_BAC
+        cmp eax, 0B53AB0h
+        je L_487_BAC
+        cmp eax, 0B53A70h
+        je L_487_BAC
+        cmp eax, 0B53AF0h
+        jne L_487_BB1
+    L_487_BAC:
+        mov eax, 0B53B30h
+    L_487_BB1:
+        cmp eax, 0B53A34h
+        je L_487_BE0
+        cmp eax, 0B53B30h
+        je L_487_BE0
+        cmp eax, 0B53AB0h
+        je L_487_BE0
+        cmp eax, 0B53A70h
+        je L_487_BE0
+        cmp eax, 0B53AF0h
+        je L_487_BE0
+        push eax
+        lea ecx, [esi + 224h]
+        call ext_004E9BD0
+    L_487_BE0:
+        push 93C688h
+        push 93C674h
+        push edi
+        call ext_0067EE80
+        fstp dword ptr [esi + 220h]
+        add esp, 0Ch
+        pop edi
+        pop esi
+        ret 4
+    }
+}
