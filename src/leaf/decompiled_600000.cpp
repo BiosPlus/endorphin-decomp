@@ -7535,3 +7535,97 @@ L_done:
         ret
     }
 }
+
+// [0x0060B460] sub_0060B460 (225 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0060B460(void* a1, void* a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [ebx + 0x4]
+        cmp edi, dword ptr [ebx + 0x8]
+        jbe short L_476
+        call dword ptr [mem_00925134]
+L_476:
+        mov ebp, dword ptr [esp + 0x14]
+        __asm _emit 0x8D __asm _emit 0x9B __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ebx, [ebx]
+L_480:
+        mov esi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], esi
+        jbe short L_48e
+        call dword ptr [mem_00925134]
+L_48e:
+        cmp edi, esi
+        je L_53c
+        cmp edi, dword ptr [ebx + 0x8]
+        jb short L_4a1
+        call dword ptr [mem_00925134]
+L_4a1:
+        mov esi, dword ptr [edi]
+        push 0x0
+        push 0xa2fc0c
+        push 0xa2e2bc
+        push 0x0
+        push esi
+        call ext_006A6E9E
+        add esp, 0x14
+        test eax, eax
+        mov dword ptr [esp + 0x18], eax
+        jne short L_501
+L_4c2:
+        test esi, esi
+        je short L_4f9
+        mov esi, dword ptr [esi + 0x94]
+        push 0x0
+        push 0xa2fc0c
+        push 0xa2e2bc
+        push 0x0
+        push esi
+        call ext_006A6E9E
+        add esp, 0x14
+        test eax, eax
+        je short L_4c2
+        mov dword ptr [esp + 0x18], eax
+        lea eax, [esp + 0x18]
+        push eax
+        mov ecx, ebp
+        call ext_005A6300
+        jmp short L_529
+L_4f9:
+        test eax, eax
+        mov dword ptr [esp + 0x18], eax
+        je short L_50f
+L_501:
+        lea eax, [esp + 0x18]
+        push eax
+        mov ecx, ebp
+        call ext_005A6300
+        jmp short L_529
+L_50f:
+        cmp edi, dword ptr [ebx + 0x8]
+        jb short L_51a
+        call dword ptr [mem_00925134]
+L_51a:
+        mov ecx, dword ptr [edi]
+        add ecx, 0x7c
+        push ecx
+        push ebp
+        call ext_0060B3A0
+        add esp, 0x8
+L_529:
+        cmp edi, dword ptr [ebx + 0x8]
+        jb short L_534
+        call dword ptr [mem_00925134]
+L_534:
+        add edi, 0x4
+        jmp L_480
+L_53c:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
