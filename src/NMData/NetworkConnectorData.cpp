@@ -260,3 +260,84 @@ extern "C" void __fastcall fn_005245A0(void* self, int edx_unused, void* a1) {
     ((t_sub_008703F0)ext_008703F0)((char*)self + 0x4c, a1);
     ((t_sub_0065F550)ext_0065F550)(self, a1);
 }
+
+extern "C" void ext_004275E0();
+extern "C" void ext_00507D10();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0063F530();
+extern "C" void ext_008703D0();
+extern "C" int mem_00A9F838;
+extern "C" int mem_00A9EFE0;
+extern "C" int mem_00A9F154;
+
+// [0x00524C10] NMData::NetworkConnectorData::vfunc_21 (196 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00524C10(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        push esi
+        mov edi, ecx
+        call ext_00507D10
+        mov eax, dword ptr [mem_00A9F838]
+        push eax
+        mov ecx, esi
+        call ext_0063EFE0
+        push eax
+        lea ecx, [edi + 0xa4]
+        push ecx
+        call ext_004275E0
+        mov edx, dword ptr [mem_00A9EFE8]
+        add esp, 0x8
+        push 0x1
+        push 0x0
+        push edx
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je loc_00524C70
+        cmp eax, 0xb53b30
+        je loc_00524C70
+        cmp eax, 0xb53ab0
+        je loc_00524C70
+        cmp eax, 0xb53a70
+        je loc_00524C70
+        cmp eax, 0xb53af0
+        jne loc_00524C75
+    loc_00524C70:
+        mov eax, 0xb53b30
+    loc_00524C75:
+        mov ecx, dword ptr [mem_00A9EFE0]
+        push ecx
+        push eax
+        lea ecx, [edi + 0x38]
+        call ext_008703D0
+        mov edx, dword ptr [mem_00A9F168]
+        push 0x1
+        push 0x0
+        push edx
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je loc_00524CBA
+        cmp eax, 0xb53b30
+        je loc_00524CBA
+        cmp eax, 0xb53ab0
+        je loc_00524CBA
+        cmp eax, 0xb53a70
+        je loc_00524CBA
+        cmp eax, 0xb53af0
+        jne loc_00524CBF
+    loc_00524CBA:
+        mov eax, 0xb53b30
+    loc_00524CBF:
+        mov ecx, dword ptr [mem_00A9F154]
+        push ecx
+        push eax
+        lea ecx, [edi + 0x4c]
+        call ext_008703D0
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
