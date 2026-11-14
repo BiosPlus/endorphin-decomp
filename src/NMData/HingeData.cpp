@@ -474,3 +474,46 @@ extern "C" __declspec(naked) void* __fastcall fn_005EBEC0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x005E1C50] NMData::HingeData::vfunc_54 (128 bytes)
+extern "C" void ext_005B5780();
+extern "C" void ext_005E0380();
+extern "C" void ext_006A6C87();
+extern "C" int mem_00B45CCC;
+extern "C" int mem_00B45CC4;
+extern "C" __declspec(naked) void __fastcall fn_005E1C50(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8a612e
+        push eax
+        mov dword ptr fs:[0], esp
+        mov eax, 1
+        test byte ptr [mem_00B45CCC], al
+        push esi
+        mov esi, ecx
+        jne loc_5e1ca4
+        or dword ptr [mem_00B45CCC], eax
+        push 0xa
+        mov ecx, 0xb45c80
+        mov dword ptr [esp + 0x10], 0
+        call ext_005B5780
+        push 0x91e400
+        call ext_006A6C87
+        add esp, 4
+        mov dword ptr [esp + 0xc], -1
+
+    loc_5e1ca4:
+        push 0xb45c80
+        mov ecx, esi
+        call ext_005E0380
+        mov al, byte ptr [esi + 0x178]
+        mov ecx, dword ptr [esp + 4]
+        mov byte ptr [mem_00B45CC4], al
+        mov eax, 0xb45c80
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 0xc
+        ret
+    }
+}
