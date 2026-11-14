@@ -6991,3 +6991,114 @@ extern "C" __declspec(naked) void __fastcall fn_005CDE20(void* self) {
         ret 0xc
     }
 }
+
+// [0x005CE2F0] sub_005CE2F0 (348 bytes)
+extern "C" void ext_005CD1D0();
+extern "C" void ext_005CD250();
+extern "C" void ext_005CD2D0();
+extern "C" void ext_005CD350();
+extern "C" void ext_005CD3D0();
+extern "C" void ext_005CD450();
+extern "C" void ext_005CD4D0();
+extern "C" void ext_005CD550();
+extern "C" void ext_005CD5D0();
+extern "C" void ext_005CD650();
+extern "C" void ext_005CD6D0();
+extern "C" void ext_005CD780();
+extern "C" void ext_005CD800();
+extern "C" void ext_005CD8B0();
+extern "C" void ext_005CD960();
+extern "C" void ext_005CDA10();
+extern "C" void ext_005CDA90();
+extern "C" void ext_005CDB10();
+extern "C" void ext_005CDB90();
+extern "C" void ext_005CDC10();
+extern "C" void ext_005CDCC0();
+extern "C" void ext_005CDD70();
+extern "C" void ext_005CDF00();
+extern "C" void ext_006798D0();
+extern "C" int mem_00A9F1B0;
+
+extern "C" __declspec(naked) void __fastcall fn_005CE2F0(void* self) {
+    __asm {
+        push    ecx
+        lea     eax, [esp]
+        push    0x945310
+        push    eax
+        call    ext_006798D0
+        mov     ecx, eax
+        call    ext_005CE260
+        mov     ecx, dword ptr [mem_00A9F1B0]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD1D0
+        push    0x9631d4
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD250
+        push    0x965a08
+        lea     ecx, [esp + 0x4]
+        call    ext_005CDF00
+        push    0x965a54
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD2D0
+        push    0x965a44
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD350
+        push    0x965a34
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD3D0
+        push    0x965a2c
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD450
+        push    0x963180
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD4D0
+        push    0x96316c
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD550
+        push    0x96315c
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD5D0
+        push    0x96314c
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD650
+        push    0x963138
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD6D0
+        push    0x963080
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD780
+        push    0x963070
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD800
+        push    0x963060
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD8B0
+        push    0x963050
+        lea     ecx, [esp + 0x4]
+        call    ext_005CD960
+        push    0x965a1c
+        lea     ecx, [esp + 0x4]
+        call    ext_005CDA10
+        push    0x963114
+        lea     ecx, [esp + 0x4]
+        call    ext_005CDA90
+        push    0x963108
+        lea     ecx, [esp + 0x4]
+        call    ext_005CDB10
+        push    0x9630fc
+        lea     ecx, [esp + 0x4]
+        call    ext_005CDB90
+        push    0x9630e8
+        lea     ecx, [esp + 0x4]
+        call    ext_005CDC10
+        push    0x9630d4
+        lea     ecx, [esp + 0x4]
+        call    ext_005CDCC0
+        push    0x9630bc
+        lea     ecx, [esp + 0x4]
+        call    ext_005CDD70
+        pop     ecx
+        ret
+    }
+}
