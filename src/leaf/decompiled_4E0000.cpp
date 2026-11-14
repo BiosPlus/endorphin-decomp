@@ -5530,3 +5530,42 @@ extern "C" __declspec(naked) void __fastcall fn_004EC460(void* self) {
         ret
     }
 }
+
+// [0x004EB950] sub_004EB950 (85 bytes)
+extern "C" void ext_004EB600();
+extern "C" void ext_004EB6B0();
+extern "C" void ext_004EB760();
+extern "C" void ext_004EB810();
+extern "C" void ext_004EB8C0();
+extern "C" int mem_00A9F6A8;
+extern "C" int mem_00A9F574;
+extern "C" int mem_00A9F6A4;
+extern "C" int mem_00A9F8BC;
+extern "C" __declspec(naked) void __fastcall fn_004EB950(void* self) {
+    __asm {
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x8]
+        push    0x94b83c
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    ext_004EB8C0
+        mov     ecx, dword ptr [mem_00A9F6A8]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_004EB600
+        mov     edx, dword ptr [mem_00A9F574]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_004EB6B0
+        mov     eax, dword ptr [mem_00A9F6A4]
+        push    eax
+        lea     ecx, [esp + 0x4]
+        call    ext_004EB760
+        mov     ecx, dword ptr [mem_00A9F8BC]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_004EB810
+        pop     ecx
+        ret
+    }
+}
