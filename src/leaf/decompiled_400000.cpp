@@ -15875,3 +15875,34 @@ extern "C" __declspec(naked) void __fastcall fn_00408BE0(void* self) {
         ret
     }
 }
+
+// [0x004061A0] sub_004061A0 (135 bytes)
+extern "C" int __fastcall ext_004053C0(void* self);
+extern "C" void __fastcall ext_004051A0(void* self);
+extern "C" void __fastcall ext_0065F260(void* self);
+extern "C" unsigned char __fastcall ext_00405160(void* self);
+extern "C" void __fastcall ext_00405080(void* self);
+extern "C" void __fastcall ext_00405410(void* self);
+extern "C" int mem_00AC6EB0;
+extern "C" int mem_00925660;
+
+extern "C" void __fastcall fn_004061A0(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    int* esi = ((int* (__cdecl *)())ext_00468180)();
+    int* eax = *(int**)((char*)esi + 0x14);
+    int edi = eax[4];
+    if (edi >= ext_004053C0((void*)mem_00AC6EB0)) {
+        typedef void (__stdcall *KillTimerFn)(int, int);
+        ((KillTimerFn)mem_00925660)(*(int*)((char*)mem_00AC6EB0 + 0x20), 0);
+        int* obj = ((int* (__fastcall *)(void*))ext_00468660)(esi);
+        typedef void (__fastcall *VFn)(void*);
+        ((VFn)(*(int**)obj)[0x8c / 4])(obj);
+        ext_004051A0((void*)mem_00AC6EB0);
+        int base = ((int (__cdecl *)())ext_00594000)();
+        ext_0065F260((void*)(base + 0xfc));
+        if (ext_00405160((void*)mem_00AC6EB0)) {
+            ext_00405080((void*)mem_00AC6EB0);
+        } else {
+            ext_00405410((void*)mem_00AC6EB0);
+        }
+    }
+}
