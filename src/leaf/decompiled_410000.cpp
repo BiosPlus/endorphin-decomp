@@ -12736,3 +12736,90 @@ cu_end:
         ret 0x10
     }
 }
+
+// [0x00418BE0] sub_00418BE0 (240 bytes)
+extern "C" void ext_00418960();
+extern "C" void ext_00418A60();
+extern "C" void ext_006A5F50();
+extern "C" int mem_00925694; /* USER32!SendMessageA */
+extern "C" int mem_00924FF0; /* MSVCP80!?c_str... */
+extern "C" int mem_00924300; /* MFC80!ord_876 */
+
+extern "C" __declspec(naked) void __fastcall fn_00418BE0(void* self, void* dummy_edx, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x78]
+        movzx ecx, byte ptr [eax + 0xb8]
+        mov edx, dword ptr [esi + 0x630]
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0x0
+        push ecx
+        push 0xf1
+        push edx
+        call edi
+        mov eax, dword ptr [esi + 0x684]
+        push 0x0
+        push 0x1
+        push 0xcf
+        push eax
+        call edi
+        lea ecx, [esi + 0x90]
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esi + 0x664]
+        call ext_006A5F50
+        mov ecx, dword ptr [esi + 0x72c]
+        push 0x0
+        push 0x0
+        push 0x14b
+        push ecx
+        call edi
+        mov ecx, 0xacaf80
+        call dword ptr [mem_00924300]
+        mov edx, dword ptr [esi + 0x72c]
+        push eax
+        push 0x0
+        push 0x143
+        push edx
+        call edi
+        mov ecx, 0xacaf84
+        call dword ptr [mem_00924300]
+        push eax
+        mov eax, dword ptr [esi + 0x72c]
+        push 0x0
+        push 0x143
+        push eax
+        call edi
+        mov ecx, 0xacaf88
+        call dword ptr [mem_00924300]
+        mov ecx, dword ptr [esi + 0x72c]
+        push eax
+        push 0x0
+        push 0x143
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0x78]
+        mov eax, dword ptr [edx + 0xb4]
+        mov ecx, dword ptr [esi + 0x72c]
+        push 0x0
+        push eax
+        push 0x14e
+        push ecx
+        call edi
+        cmp byte ptr [esp + 0xc], 0x0
+        je loc_418cbd
+        mov ecx, esi
+        call ext_00418960
+loc_418cbd:
+        cmp byte ptr [esp + 0x10], 0x0
+        je loc_418ccb
+        mov ecx, esi
+        call ext_00418A60
+loc_418ccb:
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
