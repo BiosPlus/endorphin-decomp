@@ -300,3 +300,56 @@ extern "C" __declspec(naked) void __fastcall fn_00527700(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x005282A0] InitialVariableValues::vfunc_21 (109 bytes)
+extern "C" void ext_00507D10();
+extern "C" void ext_00528150();
+extern "C" void ext_0063F530();
+extern "C" int mem_00A9F3B4;
+extern "C" int mem_00A9F3B0;
+
+extern "C" __declspec(naked) void __fastcall fn_005282A0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_00507D10
+        mov eax, dword ptr [mem_00A9F3B4]
+        push 1
+        push 0
+        push eax
+        mov ecx, edi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je L_set
+        cmp eax, 0xb53b30
+        je L_set
+        cmp eax, 0xb53ab0
+        je L_set
+        cmp eax, 0xb53a70
+        je L_set
+        cmp eax, 0xb53af0
+        jne L_call
+    L_set:
+        mov eax, 0xb53b30
+    L_call:
+        mov ecx, dword ptr [mem_00A9F3B0]
+        push 1
+        push ecx
+        lea edx, [esi + 0x3c]
+        push edx
+        push eax
+        call ext_00528150
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x5c]
+        add esp, 0x10
+        push 0
+        mov ecx, esi
+        call edx
+        pop edi
+        pop esi
+        ret 4
+    }
+}
