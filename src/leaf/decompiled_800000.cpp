@@ -4186,3 +4186,95 @@ extern "C" __declspec(naked) void __cdecl fn_0080BCC0(void* a, void* b) {
         ret
     }
 }
+
+// [0x00804360] sub_00804360 (220 bytes)
+extern "C" void __cdecl ext_007F5950(void*, float*, float*);
+extern "C" __declspec(naked) float __cdecl fn_00804360(float* out, float* vec, int flag, char* obj) {
+    __asm {
+        sub esp, 18h
+        cmp dword ptr [esp + 24h], 0
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 28h]
+        fld dword ptr [ebp]
+        push esi
+        fchs
+        push edi
+        mov edi, dword ptr [esp + 38h]
+        fstp dword ptr [esp + 10h]
+        fld dword ptr [ebp + 4]
+        fchs
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [ebp + 8]
+        fchs
+        fstp dword ptr [esp + 18h]
+        jle L_le
+        mov ecx, dword ptr [edi + 34h]
+        lea eax, [esp + 1Ch]
+        push eax
+        push ebp
+        push ecx
+        call ext_007F5950
+        mov esi, dword ptr [esp + 38h]
+        mov eax, dword ptr [edi + 38h]
+        lea ebx, [esi + 0Ch]
+        push ebx
+        lea edx, [esp + 20h]
+        push edx
+        push eax
+        jmp L_call2
+    L_le:
+        mov eax, dword ptr [edi + 34h]
+        lea ecx, [esp + 1Ch]
+        push ecx
+        lea edx, [esp + 14h]
+        push edx
+        push eax
+        call ext_007F5950
+        mov esi, dword ptr [esp + 38h]
+        mov ecx, dword ptr [edi + 38h]
+        lea ebx, [esi + 0Ch]
+        push ebx
+        push ebp
+        push ecx
+    L_call2:
+        call ext_007F5950
+        fld dword ptr [esp + 34h]
+        fsub dword ptr [ebx]
+        add esp, 18h
+        fstp dword ptr [esi]
+        fld dword ptr [esp + 20h]
+        fsub dword ptr [ebx + 4]
+        fstp dword ptr [esi + 4]
+        fld dword ptr [esp + 24h]
+        fsub dword ptr [ebx + 8]
+        fstp dword ptr [esi + 8]
+        fld dword ptr [edi + 18h]
+        fadd dword ptr [esi]
+        fstp dword ptr [esi]
+        fld dword ptr [edi + 1Ch]
+        fadd dword ptr [esi + 4]
+        fstp dword ptr [esi + 4]
+        fld dword ptr [edi + 20h]
+        pop edi
+        fadd dword ptr [esi + 8]
+        fstp dword ptr [esp + 34h]
+        fld dword ptr [esp + 34h]
+        fst dword ptr [esi + 8]
+        fld dword ptr [ebp + 4]
+        fmul dword ptr [esi + 4]
+        fld dword ptr [esi]
+        pop esi
+        fmul dword ptr [ebp]
+        faddp st(1), st
+        fld dword ptr [ebp + 8]
+        pop ebp
+        fmulp st(2), st
+        pop ebx
+        faddp st(1), st
+        fstp dword ptr [esp + 28h]
+        fld dword ptr [esp + 28h]
+        add esp, 18h
+        ret
+    }
+}
