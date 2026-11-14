@@ -3575,3 +3575,61 @@ extern "C" __declspec(naked) void __fastcall fn_004D6AA0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x004D6B40] ExprParser::ReadMethodType<NMData::RigEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getUserRetargetRefFrame(void) const, 0}, 0>::vfunc_46 (157 bytes)
+extern "C" void ext_0041CF50();
+extern "C" void ext_004D5560();
+extern "C" void ext_006720E0();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_004D6B40(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x8926a1
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x24
+        push esi
+        mov esi, dword ptr [esp + 0x38]
+        mov eax, dword ptr [esi]
+        push eax
+        lea edx, [esp + 0x10]
+        push edx
+        call ext_004D5560
+        push eax
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x34], 0
+        call ext_006720E0
+        lea eax, [esp + 0x4]
+        push eax
+        mov ecx, esi
+        mov byte ptr [esp + 0x34], 1
+        call ext_0041CF50
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov byte ptr [esp + 0x30], 0
+        je L_004D6BA6
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x78]
+        lea eax, [esp + 0x4]
+        push eax
+        call edx
+    L_004D6BA6:
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esi + 0x4]
+        mov edx, dword ptr [esp + 0x3c]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0xb8]
+        push edx
+        push esi
+        call eax
+        mov ecx, dword ptr [esp + 0x28]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x30
+        ret 0x8
+    }
+}
