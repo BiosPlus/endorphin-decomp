@@ -1500,3 +1500,36 @@ extern "C" __declspec(naked) bool __fastcall fn_006DCB60(void* self, int edx_unu
         ret 0xc
     }
 }
+
+extern "C" void ext_0077FB70();
+
+// [0x006D90D0] sub_006D90D0 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D90D0(void* self) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0x3ff00000
+        mov ecx, dword ptr [eax + 0x284]
+        mov edx, dword ptr [eax + 0x280]
+        push 0x0
+        push ecx
+        mov ecx, dword ptr [eax + 0x27c]
+        push edx
+        mov edx, dword ptr [eax + 0x278]
+        push ecx
+        mov ecx, dword ptr [eax + 0x274]
+        push edx
+        mov edx, dword ptr [eax + 0x270]
+        push ecx
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp + 0x24], 0x0
+        call ext_0077FB70
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
