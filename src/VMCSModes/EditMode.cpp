@@ -852,3 +852,46 @@ extern "C" void __fastcall fn_004F2E40(void* self) {
     void* obj = ((void* (__fastcall*)(void*))ext_00468660)(*(void**)((char*)self + 8));
     (*(void (__fastcall**)(void*))(*(int*)obj + 0xd4))(obj);
 }
+
+// [0x004F42F0] VMCSModes::EditMode::vfunc_123 (121 bytes)
+extern "C" void ext_004F40C0();
+extern "C" void ext_005B1870();
+extern "C" void ext_005B5810();
+extern "C" int mem_00940694;
+
+extern "C" __declspec(naked) void __fastcall fn_004F42F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push -0x1
+        push 0x88fe48
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x58
+        fld dword ptr [mem_00940694]
+        push esi
+        lea eax, [esp + 0x4]
+        fst dword ptr [esp + 0x4]
+        push eax
+        fst dword ptr [esp + 0xc]
+        mov esi, ecx
+        fstp dword ptr [esp + 0x10]
+        push 0x1
+        lea ecx, [esp + 0x18]
+        call ext_005B5810
+        mov ecx, dword ptr [esp + 0x6c]
+        push ecx
+        lea edx, [esp + 0x14]
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp + 0x6c], 0x0
+        call ext_004F40C0
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x64], 0xffffffff
+        call ext_005B1870
+        mov ecx, dword ptr [esp + 0x5c]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x64
+        ret 0x4
+    }
+}
