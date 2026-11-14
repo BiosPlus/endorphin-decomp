@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `14153 / 24049` (**58.85%**) — `11061` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1614783 / 4496005 bytes` (**35.92%** of 4.29 MB)
+- **In-Scope Functions Matched:** `14154 / 24049` (**58.85%**) — `11062` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1614909 / 4496005 bytes` (**35.92%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -19,7 +19,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P30-40 (48-71B)** | 1342 / 2405 | 55.80% | 79632 / 144549 | 55.09% | 1063 fn |
 | **P40-50 (71-91B)** | 1391 / 2405 | 57.84% | 115793 / 194373 | 59.57% | 1014 fn |
 | **P50-60 (91-122B)** | 1863 / 2405 | 77.46% | 201521 / 256906 | 78.44% | 542 fn |
-| **P60-70 (122-159B)** | 1133 / 2405 | 47.11% | 153491 / 339038 | 45.27% | 1272 fn |
+| **P60-70 (122-159B)** | 1134 / 2405 | 47.15% | 153617 / 339038 | 45.31% | 1271 fn |
 | **P70-80 (159-178B)** | 308 / 2405 | 12.81% | 51890 / 400567 | 12.95% | 2097 fn |
 | **P80-90 (178-335B)** | 1182 / 2405 | 49.15% | 284610 / 583211 | 48.80% | 1223 fn |
 | **P90-100 (335-36100B)** | 820 / 2404 | 34.11% | 587924 / 2392860 | 24.57% | 1584 fn |
@@ -29,7 +29,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 61.06% |
-| `claude-haiku-5.5@low` | 1662 | 377830 | 15.03% |
+| `claude-haiku-5.5@low` | 1663 | 377956 | 15.03% |
 | `gemini-4-hydrogen@low` | 1043 | 296227 | 9.43% |
 | `gemini-3.8-flash@low` | 947 | 264908 | 8.56% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.04% |
