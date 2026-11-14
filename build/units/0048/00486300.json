@@ -20,5 +20,7 @@
     "0x004863CA",
     "0x004863DB"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T13:39:37Z"
 }
