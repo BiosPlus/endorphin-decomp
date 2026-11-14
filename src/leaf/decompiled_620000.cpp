@@ -7578,3 +7578,38 @@ extern "C" void* __fastcall fn_00626450(void* self, int edx_unused, void* other)
     s[0xE8 / 4] = o[0xE8 / 4];
     return self;
 }
+
+extern "C" void ext_0062B5F0();
+extern "C" void ext_0062B3F0();
+extern "C" void ext_0062B470();
+extern "C" void ext_0062B4F0();
+extern "C" void ext_0062B570();
+extern "C" int mem_00A9F278;
+
+// [0x0062B680] sub_0062B680 (79 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0062B680(void* self) {
+    __asm {
+        push ecx
+        lea eax, [esp]
+        push 0
+        push eax
+        call ext_006798D0
+        mov ecx, eax
+        call ext_0062B5F0
+        mov ecx, dword ptr [mem_00A9F278]
+        push ecx
+        lea ecx, [esp + 4]
+        call ext_0062B3F0
+        push 0x00978FD4
+        lea ecx, [esp + 4]
+        call ext_0062B470
+        push 0x00978FD0
+        lea ecx, [esp + 4]
+        call ext_0062B4F0
+        push 0x0094F89C
+        lea ecx, [esp + 4]
+        call ext_0062B570
+        pop ecx
+        ret
+    }
+}
