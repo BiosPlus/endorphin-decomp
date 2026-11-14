@@ -8966,3 +8966,59 @@ extern "C" __declspec(naked) void* __fastcall fn_0062B250(void* self, int edx_un
         ret 0x10
     }
 }
+
+extern "C" void ext_004909E0();
+extern "C" void ext_00596660();
+
+// [0x0062B2E0] sub_0062B2E0 (109 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0062B2E0(void* self, int edx_unused, int a1) {
+    __asm {
+        fldz
+        sub esp, 8
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        lea esi, [edi + 0x30]
+        fstp dword ptr [edi + 0x48]
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        jbe loc_62B2FE
+        call dword ptr [mem_00925134]
+    loc_62B2FE:
+        push ebp
+        mov ebp, dword ptr [esi + 4]
+        cmp ebp, dword ptr [esi + 8]
+        jbe loc_62B30D
+        call dword ptr [mem_00925134]
+    loc_62B30D:
+        push ebx
+        push esi
+        push ebp
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_00596660
+        fldz
+        push ecx
+        fstp dword ptr [esp]
+        mov ecx, dword ptr [esp + 0x20]
+        push ecx
+        mov ecx, esi
+        call ext_004909E0
+        mov ebx, dword ptr [esi + 4]
+        cmp ebx, dword ptr [esi + 8]
+        pop ebp
+        jbe loc_62B33E
+        call dword ptr [mem_00925134]
+    loc_62B33E:
+        mov dword ptr [edi + 0x40], esi
+        mov dword ptr [edi + 0x44], ebx
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret 4
+    }
+}
