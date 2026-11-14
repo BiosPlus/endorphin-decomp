@@ -2727,3 +2727,205 @@ extern "C" __declspec(naked) int __cdecl fn_00867E30(void) {
         ret
     }
 }
+
+extern "C" void ext_0086B180();
+extern "C" void ext_0086B1C0();
+extern "C" void ext_0086B200();
+extern "C" void ext_0086B220();
+extern "C" void ext_0086B510();
+extern "C" void ext_0086B850();
+
+// [0x0086E880] sub_0086E880 (473 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0086E880(void* self) {
+    __asm {
+        xor cx, cx
+        sub esp, 0x3c
+        xor edx, edx
+        push ebx
+        push esi
+        push edi
+        mov esi, dword ptr [esp + 0x4c]
+        push ebp
+    m86e890:
+        movsx eax, cx
+        inc cx
+        or edx, dword ptr [esi + 4*eax]
+        movsx eax, cx
+        cmp eax, 5
+        jb m86e890
+        test edx, edx
+        jne m86e8d6
+        mov edi, dword ptr [esp + 0x58]
+        mov eax, dword ptr [esp + 0x54]
+        push edi
+        push eax
+        call ext_0086B220
+        add esp, 8
+        push edi
+        call ext_0086B1C0
+        add esp, 4
+        lea eax, [edi + 0x14]
+        push eax
+        push edi
+        call ext_0086B220
+        add esp, 8
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x3c
+        ret
+    m86e8d6:
+        lea eax, [esp + 0x38]
+        push eax
+        push esi
+        call ext_0086B850
+        lea eax, [esp + 0x40]
+        add esp, 8
+        push eax
+        call ext_0086B180
+        lea eax, [esp + 0x28]
+        lea ecx, [esp + 0x3c]
+        mov edx, dword ptr [esp + 0x58]
+        add esp, 4
+        push eax
+        push ecx
+        push edx
+        call ext_0086B510
+        lea ecx, [esp + 0x30]
+        add esp, 0xc
+        push ecx
+        call ext_0086B1C0
+        add esp, 4
+        xor ecx, ecx
+        xor edx, edx
+    m86e919:
+        movsx eax, cx
+        inc cx
+        xor edx, dword ptr [esp + 4*eax + 0x24]
+        movsx eax, cx
+        cmp eax, 5
+        jb m86e919
+        mov ax, 0x10
+        mov edi, 0xffffffff
+    m86e933:
+        mov cl, al
+        shr edi, cl
+        __asm _emit 0x66
+        __asm _emit 0xc1
+        __asm _emit 0xf8
+        __asm _emit 0x01
+        mov ebx, edi
+        and ebx, edx
+        shr edx, cl
+        xor ebx, edx
+        test ax, ax
+        mov edx, ebx
+        jg m86e933
+        test edx, edx
+        je m86e974
+        mov edi, dword ptr [esp + 0x58]
+        push edi
+        call ext_0086B200
+        add esp, 4
+        add edi, 0x14
+        push edi
+        call ext_0086B200
+        add esp, 4
+        mov eax, 1
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x3c
+        ret
+    m86e974:
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_0086B200
+        xor cx, cx
+        add esp, 4
+        mov edx, 1
+    m86e989:
+        movsx edi, cx
+        mov bx, 4
+        mov eax, edi
+        shr eax, 5
+        inc edi
+        shr edi, 5
+        sub bx, ax
+        mov ax, 4
+        sub ax, di
+        movsx edi, bx
+        lea ebp, [4*edi]
+        mov edi, dword ptr [esp + 4*edi + 0x24]
+        xor edi, dword ptr [esp + ebp + 0x10]
+        and edi, edx
+        cmp ax, bx
+        jne m86e9c9
+        movsx eax, ax
+        add edi, edi
+        add edx, edx
+        or dword ptr [esp + 4*eax + 0x10], edi
+        jmp m86e9d9
+    m86e9c9:
+        mov edx, 1
+        test edi, edi
+        je m86e9d9
+        movsx eax, ax
+        mov dword ptr [esp + 4*eax + 0x10], edx
+    m86e9d9:
+        inc cx
+        cmp cx, 0x9e
+        jl m86e989
+        mov eax, dword ptr [esp + 0x24]
+        mov edi, dword ptr [esp + 0x58]
+        xor eax, dword ptr [esp + 0x10]
+        push edi
+        test eax, 0x20000000
+        je m86ea17
+        add edi, 0x14
+        call ext_0086B200
+        add esp, 4
+        push edi
+        call ext_0086B200
+        add esp, 4
+        mov eax, 2
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x3c
+        ret
+    m86ea17:
+        lea eax, [esp + 0x14]
+        push eax
+        push esi
+        call ext_0086B510
+        add esp, 0xc
+        lea eax, [edi + 0x14]
+        push eax
+        call ext_0086B200
+        xor cx, cx
+        add esp, 4
+    m86ea34:
+        movsx eax, cx
+        shl eax, 2
+        inc cx
+        lea edx, [edi + eax]
+        mov eax, dword ptr [esi + eax]
+        xor eax, dword ptr [edx]
+        mov dword ptr [edx + 0x14], eax
+        movsx edx, cx
+        cmp edx, 5
+        jb m86ea34
+        xor eax, eax
+        pop ebp
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x3c
+        ret
+    }
+}
