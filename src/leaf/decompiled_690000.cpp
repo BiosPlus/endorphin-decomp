@@ -8009,3 +8009,48 @@ extern "C" __declspec(naked) int __cdecl fn_0069E660(int a1, int a2, int a3) {
         ret
     }
 }
+
+// [0x00698ED0] sub_00698ED0 (82 bytes)
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00698ED0(void* self, int edx_unused, int val) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 4]
+        test eax, eax
+        push edi
+        jne L_nonnull
+        xor edi, edi
+        jmp L_after_size
+    L_nonnull:
+        mov edi, dword ptr [esi + 8]
+        sub edi, eax
+    L_after_size:
+        push 0
+        lea eax, [edi + 4]
+        push eax
+        call ext_00536600
+        mov ecx, dword ptr [esi + 4]
+        test ecx, ecx
+        je L_invalid
+        mov eax, dword ptr [esi + 8]
+        sub eax, ecx
+        cmp edi, eax
+        jb L_valid
+    L_invalid:
+        call dword ptr [mem_00925134]
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [esp + 0Ch]
+        mov dword ptr [edi + ecx], edx
+        pop edi
+        pop esi
+        ret 4
+    L_valid:
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0Ch]
+        mov dword ptr [edi + eax], ecx
+        pop edi
+        pop esi
+        ret 4
+    }
+}
