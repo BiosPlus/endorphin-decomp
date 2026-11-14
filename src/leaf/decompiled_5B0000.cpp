@@ -5102,3 +5102,106 @@ extern "C" __declspec(naked) void __fastcall fn_005B44B0(void* self, int edx_unu
         ret 4
     }
 }
+
+extern "C" void ext_005881D0();
+extern "C" void ext_0065F280();
+
+// [0x005B6610] sub_005B6610 (311 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_005B6610(void* self, int edx_unused, void* src) {
+    __asm {
+        sub esp, 0x0c
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        push ebp
+        push esi
+        push edi
+        push ebx
+        mov edi, ecx
+        call ext_005881D0
+        lea eax, [ebx + 0xe4]
+        push eax
+        lea ecx, [edi + 0xe4]
+        call ext_0065F280
+        mov ecx, dword ptr [ebx + 0xe8]
+        mov dword ptr [edi + 0xe8], ecx
+        mov edx, dword ptr [ebx + 0xec]
+        mov dword ptr [edi + 0xec], edx
+        mov eax, dword ptr [ebx + 0xf0]
+        mov edx, edi
+        sub edx, ebx
+        mov dword ptr [edi + 0xf0], eax
+        lea ebp, [edi + 0xf4]
+        lea esi, [ebx + 0xf8]
+        mov dword ptr [esp + 0x20], edx
+        mov dword ptr [esp + 0x10], 7
+
+    loc_5b6675:
+        lea ecx, [esi - 4]
+        cmp ebp, ecx
+        je loc_5b66c2
+        mov ecx, dword ptr [edx + esi]
+        test ecx, ecx
+        je loc_5b668f
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x78]
+        push ebp
+        call eax
+        mov edx, dword ptr [esp + 0x20]
+
+    loc_5b668f:
+        mov ecx, dword ptr [esi]
+        mov dword ptr [edx + esi], ecx
+        cmp dword ptr [esi], 0
+        je loc_5b66b1
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        lea eax, [esi - 4]
+        push eax
+        lea eax, [esp + 0x1c]
+        push eax
+        call edx
+        mov edx, dword ptr [esp + 0x20]
+        jmp loc_5b66bd
+
+    loc_5b66b1:
+        mov dword ptr [esp + 0x14], 0
+        lea eax, [esp + 0x14]
+
+    loc_5b66bd:
+        mov eax, dword ptr [eax]
+        mov dword ptr [ebp], eax
+
+    loc_5b66c2:
+        add esi, 8
+        add ebp, 8
+        sub dword ptr [esp + 0x10], 1
+        jne loc_5b6675
+
+        fld dword ptr [ebx + 0x12c]
+        mov eax, edi
+        fstp dword ptr [edi + 0x12c]
+        fld dword ptr [ebx + 0x130]
+        fstp dword ptr [edi + 0x130]
+        fld dword ptr [ebx + 0x134]
+        fstp dword ptr [edi + 0x134]
+        fld dword ptr [ebx + 0x138]
+        fstp dword ptr [edi + 0x138]
+        fld dword ptr [ebx + 0x13c]
+        fstp dword ptr [edi + 0x13c]
+        fld dword ptr [ebx + 0x140]
+        fstp dword ptr [edi + 0x140]
+        fld dword ptr [ebx + 0x144]
+        fstp dword ptr [edi + 0x144]
+        mov cl, byte ptr [ebx + 0x148]
+        mov byte ptr [edi + 0x148], cl
+        mov edx, dword ptr [ebx + 0x14c]
+        mov dword ptr [edi + 0x14c], edx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x0c
+        ret 4
+    }
+}
