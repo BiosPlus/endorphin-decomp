@@ -2,6 +2,12 @@
 
 extern "C" void ext_00859730();
 extern "C" void ext_0080FB20();
+extern "C" void ext_0080BA60();
+extern "C" void ext_008529D0();
+extern "C" void ext_00852AD0();
+extern "C" void ext_00853410();
+extern "C" void ext_00853840();
+extern "C" void ext_00859E50();
 
 // [0x0080FAE0] sub_0080FAE0 (16 bytes)
 extern "C" __declspec(naked) void __cdecl fn_0080FAE0(void* p) {
@@ -4103,6 +4109,80 @@ extern "C" __declspec(naked) void __cdecl fn_0080A800(const char* src, int n) {
         pop esi
         pop ebp
         pop ebx
+        ret
+    }
+}
+
+// [0x0080BCC0] sub_0080BCC0 (208 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080BCC0(void* a, void* b) {
+    __asm {
+        sub esp, 180h
+        push esi
+        mov esi, dword ptr [esp + 18ch]
+        push edi
+        mov edi, dword ptr [esp + 18ch]
+        lea eax, [esi + 4]
+        push 0
+        push eax
+        push edi
+        call ext_0080BA60
+        lea ecx, [esi + 60h]
+        lea edx, [esp + 14h]
+        push ecx
+        push edx
+        call ext_00853840
+        lea eax, [esp + 1ch]
+        lea ecx, [esp + 58h]
+        push eax
+        push 80h
+        push 1
+        push ecx
+        call ext_008529D0
+        mov edx, 0fafafafah
+        push 0
+        mov dword ptr [esp + 30h], edx
+        lea eax, [esp + 54h]
+        mov dword ptr [esp + 34h], edx
+        push 2
+        mov dword ptr [esp + 3ch], edx
+        push eax
+        mov dword ptr [esp + 44h], edx
+        mov dword ptr [esp + 48h], edx
+        call ext_00852AD0
+        mov edx, dword ptr [edi + 0ch]
+        mov eax, dword ptr [edi + 4]
+        add esp, 30h
+        lea ecx, [esp + 1ch]
+        push ecx
+        push edx
+        push eax
+        call ext_00859E50
+        mov ecx, dword ptr [edi + 8]
+        add esp, 4
+        add eax, ecx
+        lea ecx, [esp + 4ch]
+        push eax
+        lea edx, [esp + 38h]
+        push ecx
+        push edx
+        call ext_00853410
+        movzx cx, byte ptr [esp + 32h]
+        mov edx, dword ptr [esi]
+        xor eax, eax
+        mov ah, byte ptr [esp + 35h]
+        add esp, 14h
+        or eax, ecx
+        mov word ptr [edx + 8], ax
+        mov edx, dword ptr [esi]
+        movzx cx, byte ptr [esp + 28h]
+        xor eax, eax
+        pop edi
+        mov ah, byte ptr [esp + 20h]
+        pop esi
+        or eax, ecx
+        mov word ptr [edx + 0ah], ax
+        xor eax, eax
+        add esp, 180h
         ret
     }
 }
