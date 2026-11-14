@@ -1014,3 +1014,111 @@ extern "C" __declspec(naked) void __fastcall fn_004C28F0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004E4550] NMData::AnimationEventData::vfunc_84 (320 bytes)
+extern "C" void ext_00410D10();
+extern "C" void ext_00425E30();
+extern "C" void ext_00492A50();
+extern "C" void ext_0049AD40();
+extern "C" void ext_004E1E90();
+extern "C" void ext_004E27A0();
+extern "C" void ext_004E2FE0();
+extern "C" void ext_004E4350();
+extern "C" int mem_00B40640;
+extern "C" __declspec(naked) void __fastcall fn_004E4550(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 0x8
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x17c], 0x0
+        je L_epi
+        mov eax, dword ptr [esi + 0x15c]
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        cmp ebx, eax
+        jne L_neq
+        cmp dword ptr [esi + 0x9c8], ebx
+        je L_cmp2
+        mov ecx, dword ptr [esi + 0xb74]
+        test ecx, ecx
+        je L_skip1
+        call ext_004E1E90
+    L_skip1:
+        mov ecx, dword ptr [esi + 0xb78]
+        test ecx, ecx
+        je L_end
+        mov eax, dword ptr [mem_00B40640]
+        push eax
+        push esi
+        call ext_004E4350
+        fld dword ptr [esi + 0x9d8]
+        mov ecx, dword ptr [esi + 0xb78]
+        sub esp, 0x8
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esi + 0x998]
+        fstp dword ptr [esp]
+        call ext_004E27A0
+        jmp L_end
+    L_cmp2:
+        cmp ebx, eax
+    L_neq:
+        jle L_end
+        cmp ebx, dword ptr [esi + 0x160]
+        jge L_end
+        cmp dword ptr [esi + 0xb74], 0x0
+        je L_462F
+        cmp dword ptr [esi + 0x9c8], ebx
+        je L_462F
+        push edi
+        lea ecx, [esp + 0xc]
+        push ecx
+        lea ecx, [esi + 0x9b0]
+        lea edi, [esi + 0x9c0]
+        call ext_00410D10
+        push eax
+        mov ecx, edi
+        call ext_0049AD40
+        test al, al
+        je L_462E
+        mov ecx, edi
+        call ext_00492A50
+        cmp ebx, dword ptr [eax]
+        jne L_462E
+        mov ecx, edi
+        call ext_00425E30
+        mov ecx, dword ptr [esi + 0xb74]
+        call ext_004E1E90
+    L_462E:
+        pop edi
+    L_462F:
+        mov ecx, dword ptr [esi + 0xb78]
+        test ecx, ecx
+        je L_4654
+        fld dword ptr [esi + 0x9d8]
+        sub esp, 0x8
+        fstp dword ptr [esp + 0x4]
+        fld dword ptr [esi + 0x998]
+        fstp dword ptr [esp]
+        call ext_004E27A0
+    L_4654:
+        fld dword ptr [esi + 0x9dc]
+        fadd dword ptr [esi + 0x9d8]
+        fstp dword ptr [esi + 0x9d8]
+    L_end:
+        mov edx, dword ptr [esi + 0x160]
+        sub edx, 0x1
+        cmp ebx, edx
+        jne L_4682
+        mov ecx, dword ptr [esi + 0xb78]
+        test ecx, ecx
+        je L_4682
+        call ext_004E2FE0
+    L_4682:
+        mov dword ptr [esi + 0x9c8], ebx
+        pop ebx
+    L_epi:
+        pop esi
+        add esp, 0x8
+        ret 0x4
+    }
+}
