@@ -8879,3 +8879,106 @@ extern "C" __declspec(naked) void __fastcall fn_004C9FC0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00662880();
+extern "C" int mem_00AE29D0;
+
+// [0x004C2790] sub_004C2790 (246 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004C2790(void* self) {
+    __asm {
+        push    -1
+        push    0x008A1908
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 0x14
+        mov     eax, dword ptr [mem_00AE29D0]
+        mov     dword ptr [esp], ecx
+        xor     ecx, ecx
+        cmp     eax, ecx
+        je      L_4C2875
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        mov     dword ptr [esp + 0x18], ecx
+        mov     dword ptr [esp + 0x1C], ecx
+        mov     dword ptr [esp + 0x20], ecx
+        mov     esi, dword ptr [eax + 0x34]
+        cmp     esi, dword ptr [eax + 0x38]
+        lea     ebp, [eax + 0x34]
+        lea     edi, [eax + 0x38]
+        mov     dword ptr [esp + 0x2C], ecx
+        jbe     L_4C27E2
+        call    dword ptr [mem_00925134]
+    L_4C27E2:
+        mov     ebx, dword ptr [edi]
+        cmp     dword ptr [ebp], ebx
+        jbe     L_4C27EF
+        call    dword ptr [mem_00925134]
+    L_4C27EF:
+        cmp     esi, ebx
+        je      L_4C282B
+        cmp     esi, dword ptr [edi]
+        mov     ebx, dword ptr [mem_00925134]
+        jb      L_4C27FF
+        call    ebx
+    L_4C27FF:
+        mov     eax, dword ptr [esp + 0x10]
+        cmp     dword ptr [esi], eax
+        je      L_4C2820
+        cmp     esi, dword ptr [edi]
+        jb      L_4C280D
+        call    ebx
+    L_4C280D:
+        mov     ecx, dword ptr [esi]
+        mov     edx, dword ptr [ecx]
+        mov     eax, dword ptr [edx + 0x24]
+        call    eax
+        push    eax
+        lea     ecx, [esp + 0x18]
+        call    ext_0040ECB0
+    L_4C2820:
+        cmp     esi, dword ptr [edi]
+        jb      L_4C2826
+        call    ebx
+    L_4C2826:
+        add     esi, 4
+        jmp     L_4C27E2
+    L_4C282B:
+        mov     ecx, dword ptr [esp + 0x34]
+        push    ecx
+        lea     edx, [esp + 0x18]
+        push    edx
+        call    ext_00662880
+        mov     esi, dword ptr [esp + 0x20]
+        add     esp, 8
+        test    esi, esi
+        mov     dword ptr [esp + 0x2C], -1
+        je      L_4C2871
+        mov     edi, dword ptr [esp + 0x1C]
+        cmp     esi, edi
+        je      L_4C2868
+    L_4C2855:
+        mov     ecx, esi
+        call    dword ptr [mem_00924FF4]
+        add     esi, 0x1C
+        cmp     esi, edi
+        jne     L_4C2855
+        mov     esi, dword ptr [esp + 0x18]
+    L_4C2868:
+        push    esi
+        call    ext_006A5C5C
+        add     esp, 4
+    L_4C2871:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+    L_4C2875:
+        mov     ecx, dword ptr [esp + 0x14]
+        mov     dword ptr fs:[0], ecx
+        add     esp, 0x20
+        ret     4
+    }
+}
