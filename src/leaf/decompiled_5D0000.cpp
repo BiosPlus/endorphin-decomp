@@ -5357,3 +5357,70 @@ extern "C" __declspec(naked) void __fastcall fn_005DEE60(void* self, int edx_unu
         ret     0x4
     }
 }
+
+// [0x005DF030] sub_005DF030 (169 bytes)
+extern "C" void ext_005DDDE0();
+extern "C" void ext_005DDE90();
+extern "C" void ext_005DDF40();
+extern "C" void ext_005DDFF0();
+extern "C" void ext_005DE0A0();
+extern "C" void ext_005DE150();
+extern "C" void ext_005DE200();
+extern "C" void ext_005DE2B0();
+extern "C" void ext_005DE360();
+extern "C" void ext_005DE410();
+extern "C" void ext_005DEF10();
+extern "C" int mem_00A9F640;
+extern "C" int mem_00A9F9B4;
+extern "C" int mem_00A9F60C;
+extern "C" int mem_00A9F684;
+extern "C" int mem_00A9F688;
+extern "C" int mem_00A9FA20;
+extern "C" __declspec(naked) void __fastcall fn_005DF030(void* self) {
+    __asm {
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x8]
+        push    0
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    ext_005DEF10
+        mov     ecx, dword ptr [mem_00A9F640]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_005DDDE0
+        mov     edx, dword ptr [mem_00A9F9B4]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_005DDE90
+        mov     eax, dword ptr [mem_00A9F60C]
+        push    eax
+        lea     ecx, [esp + 0x4]
+        call    ext_005DDF40
+        mov     ecx, dword ptr [mem_00A9F684]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    ext_005DDFF0
+        mov     edx, dword ptr [mem_00A9F688]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    ext_005DE0A0
+        mov     eax, dword ptr [mem_00A9FA20]
+        push    eax
+        lea     ecx, [esp + 0x4]
+        call    ext_005DE150
+        push    0x968d38
+        lea     ecx, [esp + 0x4]
+        call    ext_005DE200
+        push    0x968d30
+        lea     ecx, [esp + 0x4]
+        call    ext_005DE2B0
+        push    0x968d28
+        lea     ecx, [esp + 0x4]
+        call    ext_005DE360
+        push    0x968d20
+        lea     ecx, [esp + 0x4]
+        call    ext_005DE410
+        pop     ecx
+        ret
+    }
+}
