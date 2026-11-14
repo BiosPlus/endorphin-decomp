@@ -13249,3 +13249,162 @@ extern "C" __declspec(naked) void __fastcall fn_00465B60(void* self) {
         ret
     }
 }
+
+// [0x00467150] sub_00467150 (432 bytes)
+extern "C" void ext_0041CD60();
+extern "C" void ext_00462EC0();
+extern "C" void ext_00462F00();
+extern "C" void ext_00466360();
+extern "C" void ext_004665D0();
+extern "C" void ext_00466870();
+extern "C" void ext_00466F00();
+extern "C" void ext_00468660();
+extern "C" void ext_0047A6C0();
+extern "C" void ext_00492520();
+extern "C" void ext_0059DCB0();
+extern "C" void ext_005A1B20();
+extern "C" void ext_006619D0();
+extern "C" void ext_00662120();
+extern "C" void ext_006AD940();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00467150(void* self) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        push    -1
+        push    008818A6h
+        mov     eax, dword ptr fs:[0]
+        push    eax
+        mov     dword ptr fs:[0], esp
+        sub     esp, 80h
+        push    ebx
+        push    esi
+        push    edi
+        mov     esi, ecx
+        xor     ebx, ebx
+        mov     dword ptr [ebp-10h], esp
+        mov     dword ptr [ebp-14h], esi
+        mov     dword ptr [ebp-4], ebx
+        call    ext_004665D0
+        call    ext_00594000
+        mov     ecx, dword ptr [eax+26Ch]
+        push    00B59208h
+        call    ext_0047A6C0
+        mov     dword ptr [ebp-20h], eax
+        mov     eax, dword ptr [esi+58h]
+        mov     eax, dword ptr [eax+14h]
+        mov     ecx, dword ptr [eax+34h]
+        mov     eax, dword ptr [ecx]
+        mov     edx, dword ptr [eax]
+        call    edx
+        call    ext_00594000
+        lea     edi, [eax+238h]
+        mov     dword ptr [ebp-24h], edi
+        call    ext_00594000
+        mov     ecx, dword ptr [eax+26Ch]
+        call    ext_006AD940
+        push    ebx
+        mov     ecx, eax
+        call    ext_00492520
+        mov     dword ptr [ebp-18h], eax
+        call    ext_00594000
+        mov     ecx, dword ptr [eax+26Ch]
+        call    ext_006AD940
+        push    1
+        mov     ecx, eax
+        call    ext_00492520
+        mov     dword ptr [ebp-1Ch], eax
+        nop
+f467150_loop:
+        mov     ecx, edi
+        call    ext_0041CD60
+        sub     eax, 1
+        cmp     ebx, eax
+        ja      f467150_exit
+        mov     ecx, dword ptr [edi+4]
+        test    ecx, ecx
+        je      f467150_bad
+        mov     eax, dword ptr [edi+8]
+        sub     eax, ecx
+        sar     eax, 2
+        cmp     ebx, eax
+        jb      f467150_ok
+f467150_bad:
+        call    dword ptr [mem_00925134]
+f467150_ok:
+        mov     eax, dword ptr [edi+4]
+        mov     esi, dword ptr [eax+ebx*4]
+        cmp     esi, dword ptr [ebp-18h]
+        je      f467150_match
+        cmp     esi, dword ptr [ebp-1Ch]
+        jne     f467150_next
+f467150_match:
+        call    ext_00594000
+        lea     edi, [eax+168h]
+        push    edi
+        lea     ecx, [ebp-88h]
+        mov     dword ptr [ebp-8Ch], edi
+        call    ext_00466F00
+        mov     ecx, edi
+        mov     byte ptr [ebp-4], 1
+        call    ext_00662120
+        mov     ecx, esi
+        call    ext_005A1B20
+        mov     ecx, esi
+        call    ext_0059DCB0
+        cmp     esi, dword ptr [ebp-18h]
+        jne     f467150_notA
+        mov     edi, dword ptr [ebp-14h]
+        lea     esi, [edi+0A0h]
+        jmp     f467150_callsite
+f467150_notA:
+        cmp     esi, dword ptr [ebp-1Ch]
+        jne     f467150_afterpush
+        mov     edi, dword ptr [ebp-14h]
+        lea     esi, [edi+0BCh]
+f467150_callsite:
+        mov     ecx, dword ptr [edi+5Ch]
+        push    esi
+        call    ext_00462EC0
+        mov     ecx, dword ptr [edi+58h]
+        call    ext_00468660
+        mov     ecx, dword ptr [ebp-20h]
+        mov     edx, dword ptr [eax]
+        mov     edx, dword ptr [edx+2Ch]
+        push    ebx
+        push    ecx
+        push    esi
+        mov     ecx, eax
+        call    edx
+        mov     ecx, dword ptr [edi+5Ch]
+        push    esi
+        call    ext_00462F00
+f467150_afterpush:
+        mov     ecx, dword ptr [ebp-8Ch]
+        lea     eax, [ebp-88h]
+        push    eax
+        mov     byte ptr [ebp-4], 2
+        call    ext_006619D0
+        mov     ecx, dword ptr [ebp-8Ch]
+        mov     byte ptr [ecx], 1
+        lea     ecx, [ebp-88h]
+        mov     byte ptr [ebp-4], 0
+        call    ext_00466870
+        mov     edi, dword ptr [ebp-24h]
+f467150_next:
+        mov     esi, dword ptr [ebp-14h]
+        add     ebx, 1
+        jmp     f467150_loop
+f467150_exit:
+        mov     ecx, esi
+        call    ext_00466360
+        mov     ecx, dword ptr [ebp-0Ch]
+        pop     edi
+        pop     esi
+        mov     dword ptr fs:[0], ecx
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret
+    }
+}
