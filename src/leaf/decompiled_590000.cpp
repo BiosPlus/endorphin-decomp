@@ -1,4 +1,5 @@
 // Decompiled translation unit: src/leaf/decompiled_590000.cpp
+#include <vector>
 
 // [0x005940D0] sub_005940D0 (15 bytes)
 extern "C" void ext_006425D0();
@@ -5795,5 +5796,75 @@ extern "C" __declspec(naked) void* __fastcall fn_005935A0(void* self, int edx_un
         mov dword ptr fs:[0], ecx
         add esp, 0x10
         ret 0x4
+    }
+}
+
+// [0x005973F0] sub_005973F0 (121 bytes)
+extern "C" void ext_0049E700();
+extern "C" void ext_00661B10();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_005973F0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0xf4], 6
+        jl done
+        lea ecx, [esi + 0x1c8]
+        mov dword ptr [esp + 4], ecx
+        call ext_00661B10
+        test al, al
+        jne done
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        add esi, 0x298
+        push edi
+        mov edi, dword ptr [esi + 4]
+        cmp edi, dword ptr [esi + 8]
+        jbe skip1
+        call ebp
+    skip1:
+        push ebx
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    loop_start:
+        mov ebx, dword ptr [esi + 8]
+        cmp dword ptr [esi + 4], ebx
+        jbe skip2
+        call ebp
+    skip2:
+        cmp esi, esi
+        je skip3
+        call ebp
+    skip3:
+        cmp edi, ebx
+        je loop_end
+        cmp edi, dword ptr [esi + 8]
+        jb skip4
+        call ebp
+    skip4:
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [edi]
+        push eax
+        call ext_0049E700
+        cmp edi, dword ptr [esi + 8]
+        jb skip5
+        call ebp
+    skip5:
+        add edi, 4
+        jmp loop_start
+    loop_end:
+        pop ebx
+        pop edi
+        pop ebp
+    done:
+        pop esi
+        pop ecx
+        ret
     }
 }
