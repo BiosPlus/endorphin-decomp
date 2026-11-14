@@ -633,3 +633,72 @@ extern "C" __declspec(naked) int __fastcall fn_006114F0(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x0061D3F0] NMData::HingeConstraint::vfunc_34 (170 bytes)
+extern "C" void ext_00493E40();
+extern "C" void ext_00528B90();
+extern "C" void ext_00586A50();
+extern "C" void ext_00586AD0();
+extern "C" int mem_00B40640;
+extern "C" int mem_00B40644;
+
+extern "C" __declspec(naked) void __fastcall fn_0061D3F0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push 0x891da8
+        push eax
+        mov fs:[0], esp
+        push ebx
+        push esi
+        mov esi, ecx
+        test esi, esi
+        push edi
+        lea ebx, [esi + 0x184]
+        je zero_ptr
+        lea eax, [esi + 0xc]
+        jmp after_sel
+zero_ptr:
+        xor eax, eax
+after_sel:
+        mov edx, dword ptr [mem_00B40640]
+        push 0
+        push eax
+        mov eax, dword ptr [esi + 0x4]
+        mov eax, dword ptr [eax + 0xc]
+        lea ecx, [esi + 0x4]
+        push edx
+        call eax
+        mov ecx, dword ptr [esp + 0x24]
+        push eax
+        push ebx
+        call ext_00493E40
+        mov edi, eax
+        mov dword ptr [esp + 0x1c], edi
+        push edi
+        lea ecx, [esi + 0xc]
+        mov dword ptr [esp + 0x18], 0
+        mov dword ptr [edi + 0x20], ebx
+        call ext_00528B90
+        mov ecx, dword ptr [mem_00B40644]
+        movzx edx, byte ptr [esi + 0x160]
+        push ecx
+        push edx
+        push 0x1000
+        mov ecx, esi
+        call ext_00586AD0
+        movzx eax, byte ptr [esi + 0x160]
+        push eax
+        push 0x1000
+        mov ecx, esi
+        call ext_00586A50
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, edi
+        pop edi
+        pop esi
+        mov fs:[0], ecx
+        pop ebx
+        add esp, 0xc
+        ret 4
+    }
+}
