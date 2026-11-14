@@ -964,3 +964,26 @@ extern "C" __declspec(naked) void* __fastcall fn_00497900(void* self, int edx_un
         ret 0x8
     }
 }
+
+// [0x004B7AA0] ExprParser::PrimitiveProxyType<float>::vfunc_9 (49 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B7AA0(void* self, int edx_unused, float* out, unsigned char flag) {
+    __asm {
+        cmp byte ptr [esp + 0x8], 0x0
+        je  short L_zero
+        fld1
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [ecx]
+        ret 0x8
+    L_zero:
+        fldz
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        fstp dword ptr [esp + 0x8]
+        fld dword ptr [esp + 0x8]
+        fstp dword ptr [ecx]
+        ret 0x8
+    }
+}
