@@ -7382,3 +7382,74 @@ extern "C" __declspec(naked) void __cdecl fn_00506570(void* begin, void* end, vo
         ret
     }
 }
+
+// [0x00506270] sub_00506270 (158 bytes)
+extern "C" void ext_00505F00();
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) char* __cdecl fn_00506270(char* first, char* last, char* out) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        cmp ebx, dword ptr [esp + 0xc]
+        je  same_range
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        push edi
+        lea esi, [ebp + 0x38]
+        lea edi, [ebx + 0x38]
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+loop_top:
+        lea eax, [edi - 0x34]
+        push eax
+        lea ecx, [esi - 0x34]
+        call ext_00505F00
+        lea ecx, [edi - 0x1c]
+        push ecx
+        lea ecx, [esi - 0x1c]
+        call dword ptr [mem_00924FDC]
+        mov edx, dword ptr [edi]
+        mov dword ptr [esi], edx
+        fld dword ptr [edi + 0x4]
+        fstp dword ptr [esi + 0x4]
+        add ebx, 0x68
+        fld dword ptr [edi + 0x8]
+        add ebp, 0x68
+        fstp dword ptr [esi + 0x8]
+        add esi, 0x68
+        fld dword ptr [edi + 0xc]
+        add edi, 0x68
+        cmp ebx, dword ptr [esp + 0x18]
+        fstp dword ptr [esi - 0x5c]
+        fld dword ptr [edi - 0x58]
+        fstp dword ptr [esi - 0x58]
+        fld dword ptr [edi - 0x54]
+        fstp dword ptr [esi - 0x54]
+        fld dword ptr [edi - 0x50]
+        fstp dword ptr [esi - 0x50]
+        fld dword ptr [edi - 0x4c]
+        fstp dword ptr [esi - 0x4c]
+        fld dword ptr [edi - 0x48]
+        fstp dword ptr [esi - 0x48]
+        fld dword ptr [edi - 0x44]
+        fstp dword ptr [esi - 0x44]
+        fld dword ptr [edi - 0x40]
+        fstp dword ptr [esi - 0x40]
+        mov eax, dword ptr [edi - 0x3c]
+        mov dword ptr [esi - 0x3c], eax
+        jne loop_top
+        pop edi
+        pop esi
+        mov eax, ebp
+        pop ebp
+        pop ebx
+        ret
+same_range:
+        mov eax, dword ptr [esp + 0x10]
+        pop ebx
+        ret
+    }
+}
