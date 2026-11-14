@@ -11340,3 +11340,90 @@ extern "C" __declspec(naked) void __fastcall fn_004909E0(void* self) {
         ret 0x8
     }
 }
+
+// [0x004911B0] sub_004911B0 (191 bytes)
+extern "C" void ext_0067FA00();
+extern "C" void ext_00680C10();
+extern "C" int mem_00924E90;
+extern "C" int mem_00924FA0;
+extern "C" int mem_00924E94;
+extern "C" int mem_00924E98;
+extern "C" __declspec(naked) void __fastcall fn_004911B0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x8857b6
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        mov eax, dword ptr [ebp + 0x8]
+        push ebx
+        push esi
+        mov esi, ecx
+        xor ebx, ebx
+        mov dword ptr [esi + 0x4], eax
+        push edi
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [esi + 0xc], ebx
+        mov dword ptr [esi + 0x10], ebx
+        mov dword ptr [esi + 0x14], ebx
+        lea edi, [esi + 0x18]
+        mov ecx, edi
+        mov dword ptr [ebp - 0x4], ebx
+        call ext_0067FA00
+        fldz
+        mov ecx, dword ptr [esi + 0x4]
+        fst dword ptr [esi + 0x74]
+        fstp dword ptr [esi + 0x78]
+        mov byte ptr [ebp - 0x4], 0x1
+        cmp byte ptr [ecx + 0x1], bl
+        je done
+        push 0x1
+        push ebx
+        push ebx
+        push 0x1
+        mov edx, ecx
+        push ebx
+        add edx, 0x4
+        push edx
+        mov ecx, edi
+        mov byte ptr [ebp - 0x4], 0x2
+        call ext_00680C10
+        jmp done
+    handler:
+        mov eax, dword ptr [mem_00924E90]
+        mov ecx, dword ptr [ebp - 0x18]
+        mov edx, dword ptr [mem_00924FA0]
+        push eax
+        add ecx, 0xc
+        push ecx
+        push edx
+        call dword ptr [mem_00924E94]
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov eax, dword ptr [ebp - 0x14]
+        mov eax, dword ptr [eax + 0x4]
+        mov byte ptr [eax + 0x1], 0
+        __asm _emit 0xb8
+        __asm _emit 0x57
+        __asm _emit 0x12
+        __asm _emit 0x49
+        __asm _emit 0x00
+        __asm _emit 0xc3
+        mov esi, dword ptr [ebp - 0x14]
+    done:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+    }
+}
