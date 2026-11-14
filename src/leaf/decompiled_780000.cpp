@@ -1120,3 +1120,99 @@ L_785EED:
         ret
     }
 }
+
+extern "C" void ext_006B9D20();
+extern "C" void ext_006B9D70();
+extern "C" void ext_006BA370();
+extern "C" void ext_00789590();
+extern "C" void ext_0078BB40();
+extern "C" void ext_0078C0E0();
+
+// [0x0078BBF0] sub_0078BBF0 (224 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0078BBF0(void* self) {
+    __asm {
+        push -1
+        push 0x8bc8e0
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        push 0
+        push 0xaac1f8
+        lea ecx, [esp + 0x74]
+        mov dword ptr [esp + 0x20], 1
+        call ext_006BA370
+        mov esi, eax
+        push 0
+        inc esi
+        push 0xaaf3a8
+        neg esi
+        sbb esi, esi
+        lea ecx, [esp + 0x74]
+        and esi, -2
+        add esi, 2
+        call ext_006BA370
+        cmp eax, -1
+        lea edx, [esp + 0x20]
+        setne al
+        mov byte ptr [esp + 0xc], al
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        push esi
+        sub esp, 0x4c
+        mov ecx, esp
+        mov dword ptr [esp + 0x60], esp
+        push edx
+        call ext_006B9D20
+        mov ecx, edi
+        call ext_0078BB40
+        lea ecx, [esp + 0x20]
+        mov bl, al
+        mov byte ptr [esp + 0x18], 0
+        call ext_006B9D70
+        lea ecx, [esp + 0x6c]
+        mov dword ptr [esp + 0x18], -1
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        mov al, bl
+        pop esi
+        mov fs:[0], ecx
+        pop ebx
+        add esp, 0x10
+        ret 0x98
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0xc], 2
+        jne l_78bcc7
+        mov eax, dword ptr [esi + 0x20]
+        cmp eax, -1
+        je l_78bcc7
+        push eax
+        call ext_0078C0E0
+    l_78bcc7:
+        mov ecx, esi
+        call ext_00789590
+        pop esi
+        ret
+    }
+}
