@@ -4427,3 +4427,41 @@ extern "C" __declspec(naked) void __fastcall fn_0058AD80(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0058D800] sub_0058D800 (77 bytes)
+extern "C" void ext_0058BF00();
+extern "C" void ext_00593C10();
+extern "C" int mem_0095BF0C;
+
+extern "C" __declspec(naked) void __fastcall fn_0058D800(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x10]
+        push eax
+        push ecx
+        push edi
+        mov ecx, esi
+        call ext_00593C10
+        mov byte ptr [esp + 0xc], 0
+        mov edx, dword ptr [esp + 0xc]
+        push edx
+        lea eax, [edi + 0xf4]
+        push offset mem_0095BF0C
+        lea edx, [eax + 0x38]
+        push edx
+        lea ecx, [esi + 0xf4]
+        push eax
+        lea eax, [ecx + 0x38]
+        push eax
+        push ecx
+        lea ecx, [esp + 0x28]
+        call ext_0058BF00
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
