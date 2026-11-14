@@ -8829,3 +8829,47 @@ extern "C" __declspec(naked) int __fastcall fn_00459100(void* self) {
         ret 8
     }
 }
+
+// [0x00453620] sub_00453620 (85 bytes)
+extern "C" void ext_0044CF30();
+extern "C" void ext_0044D8E0();
+extern "C" void ext_0044E190();
+extern "C" void ext_0044F780();
+extern "C" void ext_00450B00();
+extern "C" void ext_004510E0();
+extern "C" void ext_00451BE0();
+extern "C" void ext_00452120();
+extern "C" void ext_00452580();
+extern "C" void ext_00452830();
+
+extern "C" __declspec(naked) void __fastcall fn_00453620(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0044CF30
+        mov ecx, esi
+        call ext_0044E190
+        mov ecx, esi
+        call ext_0044D8E0
+        push 1
+        mov ecx, esi
+        call ext_00451BE0
+        mov ecx, esi
+        call ext_00452120
+        mov ecx, esi
+        call ext_00452580
+        mov ecx, esi
+        call ext_00450B00
+        mov ecx, esi
+        call ext_0044F780
+        mov ecx, esi
+        call ext_00452830
+        mov ecx, esi
+        call ext_004510E0
+        mov eax, dword ptr [esi + 0x20]
+        push eax
+        call dword ptr [mem_0092568C]
+        pop esi
+        ret
+    }
+}
