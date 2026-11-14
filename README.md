@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `14778 / 24049` (**61.45%**) — `11686` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1752373 / 4496005 bytes` (**38.98%** of 4.29 MB)
+- **In-Scope Functions Matched:** `14779 / 24049` (**61.45%**) — `11687` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1752538 / 4496005 bytes` (**38.98%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -20,7 +20,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P40-50 (71-91B)** | 1391 / 2405 | 57.84% | 115793 / 194373 | 59.57% | 1014 fn |
 | **P50-60 (91-122B)** | 1880 / 2405 | 78.17% | 203564 / 256906 | 79.24% | 525 fn |
 | **P60-70 (122-159B)** | 1432 / 2405 | 59.54% | 193985 / 339038 | 57.22% | 973 fn |
-| **P70-80 (159-178B)** | 436 / 2405 | 18.13% | 73108 / 400567 | 18.25% | 1969 fn |
+| **P70-80 (159-178B)** | 437 / 2405 | 18.17% | 73273 / 400567 | 18.29% | 1968 fn |
 | **P80-90 (178-335B)** | 1283 / 2405 | 53.35% | 309439 / 583211 | 53.06% | 1122 fn |
 | **P90-100 (335-36100B)** | 900 / 2404 | 37.44% | 636930 / 2392860 | 26.62% | 1504 fn |
 
@@ -31,8 +31,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | `claude-haiku-5.5@medium` | 6755 | 526244 | 57.80% |
 | `claude-haiku-5.5@low` | 1929 | 433678 | 16.51% |
 | `gemini-4-hydrogen@low` | 1255 | 343189 | 10.74% |
-| `gemini-3.8-flash@low` | 1090 | 298759 | 9.33% |
-| `gemini-3.8-flash@high` | 447 | 63301 | 3.83% |
+| `gemini-3.8-flash@low` | 1091 | 298924 | 9.34% |
+| `gemini-3.8-flash@high` | 447 | 63301 | 3.82% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.39% |
 | `claude-sonnet-5.5@medium` | 25 | 1606 | 0.21% |
 | `claude-sonnet-5.5@high` | 10 | 2324 | 0.09% |
