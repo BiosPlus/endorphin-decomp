@@ -8767,3 +8767,40 @@ extern "C" __declspec(naked) void __fastcall fn_0049E070(void* self) {
         ret     4
     }
 }
+
+extern "C" void ext_0049AA80();
+extern "C" int mem_00924FF4;
+
+// [0x0049AC20] sub_0049AC20 (95 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0049AC20(void* self) {
+    __asm {
+        mov     eax, dword ptr fs:[0x0]
+        push    -0x1
+        push    0x8b56f9
+        push    eax
+        mov     dword ptr fs:[0x0], esp
+        sub     esp, 0x1c
+        push    esi
+        mov     esi, ecx
+        cmp     byte ptr [esi + 0x64], 0x0
+        je      L_done
+        lea     eax, [esp + 0x4]
+        push    eax
+        call    ext_0049AA80
+        mov     edx, dword ptr [esi]
+        push    eax
+        mov     eax, dword ptr [edx + 0x20]
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x2c], 0x0
+        call    eax
+        lea     ecx, [esp + 0x4]
+        mov     dword ptr [esp + 0x28], 0xffffffff
+        call    dword ptr [mem_00924FF4]
+    L_done:
+        mov     ecx, dword ptr [esp + 0x20]
+        pop     esi
+        mov     dword ptr fs:[0x0], ecx
+        add     esp, 0x28
+        ret
+    }
+}
