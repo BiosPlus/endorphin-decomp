@@ -6739,3 +6739,80 @@ extern "C" __declspec(naked) void __cdecl fn_00581500(void* first, unsigned int 
         ret
     }
 }
+
+// [0x00581610] sub_00581610 (155 bytes)
+extern "C" void ext_0055AEA0();
+extern "C" void ext_0055B720();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void* __cdecl fn_00581610(void* first, void* last, void* dest) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x89e931
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        push edi
+        mov edi, dword ptr [ebp + 0x8]
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], ebx
+        nop
+    loop_top:
+        cmp edi, dword ptr [ebp + 0xc]
+        je done
+        mov dword ptr [ebp + 0x8], esi
+        mov dword ptr [ebp - 0x18], esi
+        cmp esi, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je skip_copy
+        mov eax, dword ptr [edi]
+        lea ecx, [edi + 4]
+        push ecx
+        lea ecx, [esi + 4]
+        mov dword ptr [esi], eax
+        call ext_0055AEA0
+    skip_copy:
+        add esi, 0x3c
+        mov byte ptr [ebp - 0x4], bl
+        mov dword ptr [ebp + 0x10], esi
+        add edi, 0x3c
+        jmp loop_top
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je unwind_throw
+        jmp unwind_loop
+        __asm _emit 0x8d
+        __asm _emit 0x49
+        __asm _emit 0x00
+    unwind_loop:
+        lea ecx, [esi + 4]
+        call ext_0055B720
+        add esi, 0x3c
+        cmp esi, edi
+        jne unwind_loop
+    unwind_throw:
+        xor ebx, ebx
+        push ebx
+        push ebx
+        call ext_006A6DD2
+    done:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
