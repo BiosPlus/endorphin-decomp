@@ -6492,3 +6492,89 @@ extern "C" __declspec(naked) void __fastcall fn_005EBB60(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x005EDA00] sub_005EDA00 (187 bytes)
+extern "C" void ext_005ED330();
+extern "C" void ext_005ED470();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005EDA00(void* self) {
+    __asm {
+        push edi
+        mov edi, ecx
+        cmp dword ptr [edi + 0x2f4], 0
+        je L_ret
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [edi + 0x1d4]
+        cmp esi, dword ptr [edi + 0x1d8]
+        jbe L_loop_entry
+        call ebp
+        _emit 0x8D
+        _emit 0xA4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+    L_loop_entry:
+        mov ebx, dword ptr [edi + 0x1d8]
+        cmp dword ptr [edi + 0x1d4], ebx
+        jbe L_check_end
+        call ebp
+    L_check_end:
+        cmp esi, ebx
+        je L_tree
+        cmp esi, dword ptr [edi + 0x1d8]
+        jb L_deref
+        call ebp
+    L_deref:
+        mov eax, dword ptr [esi]
+        push eax
+        mov ecx, edi
+        call ext_005ED470
+        cmp esi, dword ptr [edi + 0x1d8]
+        jb L_inc
+        call ebp
+    L_inc:
+        add esi, 4
+        jmp L_loop_entry
+    L_tree:
+        mov ecx, dword ptr [edi + 0x2f0]
+        mov ebx, dword ptr [ecx + 4]
+        add edi, 0x2ec
+        cmp byte ptr [ebx + 0x51], 0
+        mov esi, ebx
+        jne L_tree_done
+        mov edi, edi
+    L_tree_loop:
+        mov edx, dword ptr [esi + 8]
+        push edx
+        mov ecx, edi
+        call ext_005ED330
+        mov esi, dword ptr [esi]
+        push ebx
+        call ext_006A5C5C
+        add esp, 4
+        cmp byte ptr [esi + 0x51], 0
+        mov ebx, esi
+        je L_tree_loop
+    L_tree_done:
+        mov eax, dword ptr [edi + 4]
+        mov dword ptr [eax + 4], eax
+        mov eax, dword ptr [edi + 4]
+        mov dword ptr [edi + 8], 0
+        pop esi
+        mov dword ptr [eax], eax
+        mov edi, dword ptr [edi + 4]
+        pop ebp
+        mov dword ptr [edi + 8], edi
+        pop ebx
+    L_ret:
+        pop edi
+        ret
+    }
+}
