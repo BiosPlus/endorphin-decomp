@@ -8914,3 +8914,55 @@ LEND:
         ret 4
     }
 }
+
+// [0x0062B250] sub_0062B250 (129 bytes)
+extern "C" void ext_00607F20();
+
+extern "C" __declspec(naked) void* __fastcall fn_0062B250(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push -1
+        push 0x8ad768
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 0x10], esi
+        call ext_005FF240
+        fldz
+        lea ecx, [esp + 0x20]
+        fstp dword ptr [esp + 0x20]
+        push ecx
+        lea edi, [esi + 0x30]
+        xor ebx, ebx
+        push 1
+        mov ecx, edi
+        mov dword ptr [esp + 0x20], ebx
+        mov dword ptr [esi], 0x978f64
+        call ext_00607F20
+        fldz
+        mov dword ptr [esi + 0x40], ebx
+        mov dword ptr [esi + 0x44], ebx
+        fstp dword ptr [esi + 0x48]
+        mov ebx, dword ptr [edi + 4]
+        cmp ebx, dword ptr [edi + 8]
+        jbe loc_62B2B5
+        call dword ptr [mem_00925134]
+    loc_62B2B5:
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi + 0x40], edi
+        mov dword ptr [esi + 0x44], ebx
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x10
+    }
+}
