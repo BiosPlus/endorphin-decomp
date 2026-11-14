@@ -6151,3 +6151,66 @@ loop_done:
         ret 0x8
     }
 }
+
+// [0x004D2F60] sub_004D2F60 (261 bytes)
+extern "C" void ext_004C32A0();
+extern "C" void ext_005ABA70();
+extern "C" __declspec(naked) void __fastcall fn_004D2F60(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 0x88cca6
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        push ebx
+        mov dword ptr [esp + 0x14], esi
+        call ext_004C32A0
+        mov dword ptr [esi + 0x180], 0x947afc
+        lea ebp, [esi + 0x180]
+        mov dword ptr [esi], 0x948154
+        mov dword ptr [esi + 0x4], 0x94810c
+        mov dword ptr [esi + 0x8], 0x9480cc
+        mov dword ptr [esi + 0xc], 0x94807c
+        mov dword ptr [esi + 0x150], 0x948064
+        mov dword ptr [esi + 0x154], 0x948054
+        mov dword ptr [esi + 0x158], 0x948028
+        mov dword ptr [ebp], 0x94801c
+        mov ecx, dword ptr [ebx + 0x188]
+        xor eax, eax
+        mov dword ptr [esi + 0x188], ecx
+        mov dword ptr [esp + 0x1c], eax
+        mov dword ptr [esi + 0x18c], eax
+        mov edx, dword ptr [ebx + 0x190]
+        mov dword ptr [esi + 0x190], edx
+        fld dword ptr [ebx + 0x194]
+        add ebx, 0x198
+        fstp dword ptr [esi + 0x194]
+        lea edi, [esi + 0x198]
+        push ebx
+        mov ecx, edi
+        mov byte ptr [esp + 0x20], 0x1
+        call ext_005ABA70
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [edi], 0x93ee24
+        mov dword ptr [edi + 0x4], 0x93eddc
+        mov dword ptr [edi + 0x8], 0x93ed9c
+        mov dword ptr [edi + 0xc], 0x93ed4c
+        mov dword ptr [edi + 0x150], 0x93ed38
+        pop edi
+        mov dword ptr [esi + 0x328], ebp
+        mov eax, esi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret 0x4
+    }
+}
