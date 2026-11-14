@@ -1300,3 +1300,90 @@ extern "C" __declspec(naked) void* __fastcall fn_00713D10(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00713050] sub_00713050 (208 bytes)
+extern "C" void ext_00712EB0();
+extern "C" void ext_00713120();
+extern "C" int mem_009251F0;
+extern "C" int mem_00B5FA6C;
+extern "C" int mem_00925218;
+extern "C" int mem_009252D0;
+
+extern "C" __declspec(naked) void __fastcall fn_00713050(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        call ext_00712EB0
+        mov dword ptr [esi], 0x9960dc
+        mov dword ptr [esi + 0x8], 0x1
+        mov dword ptr [esi + 0x4], 0x8
+        mov eax, esi
+        pop esi
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call dword ptr [mem_009251F0]
+        mov ecx, dword ptr [esp + 0xc]
+        add esp, 0x4
+        mov al, 0x1
+        fstp qword ptr [ecx]
+        ret 0x8
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov al, byte ptr [mem_00B5FA6C]
+        sub esp, 0x138
+        test al, al
+        push esi
+        mov esi, dword ptr [mem_00925218]
+        push edi
+        jne L_7130d3
+        call ext_00713120
+        push eax
+        push 0xaac144
+        push 0xb5f564
+        call esi
+        add esp, 0xc
+        mov byte ptr [mem_00B5FA6C], 0x1
+    L_7130d3:
+        mov eax, dword ptr [esp + 0x14c]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [eax]
+        push ecx
+        push edx
+        lea eax, [esp + 0x10]
+        push 0xb5f564
+        push eax
+        call esi
+        mov esi, dword ptr [esp + 0x158]
+        mov edi, dword ptr [esp + 0x154]
+        lea edx, [esp + 0x18]
+        lea ecx, [esi - 0x1]
+        push ecx
+        push edx
+        push edi
+        call dword ptr [mem_009252D0]
+        add esp, 0x1c
+        mov byte ptr [edi + esi - 0x1], 0x0
+        mov al, 0x1
+        pop edi
+        pop esi
+        add esp, 0x138
+        ret 0xc
+    }
+}
