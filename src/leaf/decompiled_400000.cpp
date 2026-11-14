@@ -16327,3 +16327,92 @@ extern "C" __declspec(naked) void __fastcall fn_0040EBF0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x004075D0] sub_004075D0 (259 bytes)
+extern "C" void ext_00404C60();
+extern "C" void ext_00404CD0();
+extern "C" void ext_00404F00();
+extern "C" void ext_00405450();
+extern "C" void ext_00405730();
+extern "C" void ext_004073C0();
+extern "C" void ext_006A5F3E();
+extern "C" int mem_00925694;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+extern "C" __declspec(naked) void __fastcall fn_004075D0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 00873821h
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 74h
+        push ebx
+        push esi
+        push edi
+        push 0
+        push 0
+        mov edi, ecx
+        mov eax, dword ptr [edi + 190h]
+        push 130Bh
+        push eax
+        call dword ptr [mem_00925694]
+        push eax
+        mov ecx, edi
+        call ext_00405730
+        mov eax, dword ptr [edi + 564h]
+        test eax, eax
+        lea ebx, [edi + 560h]
+        jne L_nonzero
+        xor esi, esi
+        jmp L_have_count
+    L_nonzero:
+        mov ecx, dword ptr [ebx + 8]
+        sub ecx, eax
+        mov eax, 2E8BA2E9h
+        imul ecx
+        sar edx, 4
+        mov esi, edx
+        shr esi, 1Fh
+        add esi, edx
+    L_have_count:
+        lea ecx, [esp + 0Ch]
+        push esi
+        push ecx
+        call ext_00404F00
+        add esp, 8
+        mov ecx, eax
+        mov dword ptr [esp + 88h], 0
+        call dword ptr [mem_00924FF0]
+        push 0
+        push 0
+        push eax
+        push esi
+        push 1
+        lea ecx, [edi + 170h]
+        call ext_006A5F3E
+        lea ecx, [esp + 0Ch]
+        mov dword ptr [esp + 88h], -1
+        call dword ptr [mem_00924FF4]
+        push 0C8h
+        lea ecx, [esp + 2Ch]
+        call ext_00404C60
+        push eax
+        mov ecx, ebx
+        mov dword ptr [esp + 8Ch], 1
+        call ext_004073C0
+        lea ecx, [esp + 28h]
+        mov dword ptr [esp + 88h], -1
+        call ext_00404CD0
+        push esi
+        mov ecx, edi
+        call ext_00405450
+        mov ecx, dword ptr [esp + 80h]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 80h
+        ret
+    }
+}
