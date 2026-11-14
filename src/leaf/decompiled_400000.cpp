@@ -11408,3 +11408,76 @@ L406ABB:
         ret 0x4
     }
 }
+
+// [0x0040C510] sub_0040C510 (201 bytes)
+extern "C" void ext_0040B220();
+extern "C" void ext_0042F050();
+extern "C" int mem_00925694;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00928B5D;
+
+extern "C" __declspec(naked) void __fastcall fn_0040C510(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        push esi
+        push edi
+        mov edi, dword ptr [mem_00925694]
+        push 0
+        push 0
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xa4]
+        push 0x18b
+        push eax
+        call edi
+        test eax, eax
+        jle short loc_40c55d
+        mov ecx, dword ptr [esi + 0xa4]
+        push offset mem_00928B5D
+        push 0
+        push 0x180
+        push ecx
+        call edi
+    loc_40c55d:
+        mov edx, dword ptr [esp + 0x34]
+        push edx
+        lea eax, [esp + 0xc]
+        push eax
+        mov ecx, esi
+        call ext_0040B220
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x2c], 0
+        call dword ptr [mem_00924FF0]
+        mov ecx, dword ptr [esi + 0xa4]
+        push eax
+        push 0
+        push 0x180
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0xa4]
+        push 1
+        push 0
+        push 0
+        push 0x18b
+        push edx
+        call edi
+        sub eax, 1
+        push eax
+        lea ecx, [esi + 0x84]
+        call ext_0042F050
+        lea ecx, [esp + 0x8]
+        mov dword ptr [esp + 0x2c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x24]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 4
+    }
+}
