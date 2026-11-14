@@ -10554,3 +10554,99 @@ extern "C" __declspec(naked) void __fastcall fn_0051C4F0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x00514A70] sub_00514A70 (174 bytes)
+extern "C" void ext_00411280();
+extern "C" void ext_0048EF80();
+extern "C" int mem_00925134; /* "P{b" */
+
+extern "C" __declspec(naked) void __fastcall fn_00514A70(void* self, int edx_unused, unsigned int n, double val) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        push edi
+        jne short L_CALC1
+        xor eax, eax
+        jmp short L_CMP1
+L_CALC1:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x3
+L_CMP1:
+        mov ebx, dword ptr [esp + 0x14]
+        cmp eax, ebx
+        jae short L_SHRINK
+        test ecx, ecx
+        jne short L_CALC2
+        xor edi, edi
+        jmp short L_CHK2
+L_CALC2:
+        mov edi, dword ptr [esi + 0x8]
+        sub edi, ecx
+        sar edi, 0x3
+L_CHK2:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp ecx, ebp
+        jbe short L_GROW_OK
+        call dword ptr [mem_00925134]
+L_GROW_OK:
+        lea eax, [esp + 0x18]
+        push eax
+        sub ebx, edi
+        push ebx
+        push ebp
+        push esi
+        mov ecx, esi
+        call ext_00411280
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0xc
+L_SHRINK:
+        test ecx, ecx
+        je short L_DONE
+        mov ebp, dword ptr [esi + 0x8]
+        mov eax, ebp
+        sub eax, ecx
+        sar eax, 0x3
+        cmp ebx, eax
+        jae short L_DONE
+        cmp ecx, ebp
+        jbe short L_OK2
+        call dword ptr [mem_00925134]
+L_OK2:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe short L_OK3
+        call dword ptr [mem_00925134]
+L_OK3:
+        mov dword ptr [esp + 0x1c], edi
+        lea edi, [edi + 8*ebx]
+        cmp edi, dword ptr [esi + 0x8]
+        ja short L_BAD4
+        cmp edi, dword ptr [esi + 0x4]
+        jae short L_OK4
+L_BAD4:
+        call dword ptr [mem_00925134]
+L_OK4:
+        push ebp
+        push esi
+        push edi
+        push esi
+        lea ecx, [esp + 0x28]
+        push ecx
+        mov ecx, esi
+        call ext_0048EF80
+L_DONE:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0xc
+    }
+}
