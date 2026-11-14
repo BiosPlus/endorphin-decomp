@@ -15074,3 +15074,90 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_0043F3A0(void* self, in
         ret 8
     }
 }
+
+// [0x0043F2E0] sub_0043F2E0 (189 bytes)
+extern "C" void ext_0041A920();
+extern "C" int mem_00925134;
+extern "C" int mem_00925708;
+extern "C" __declspec(naked) void __fastcall fn_0043F2E0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0xc]
+        sub esp, 0x14
+        cmp eax, edx
+        jle short L_norm1
+        mov dword ptr [esp + 0x18], edx
+        mov dword ptr [esp + 0x20], eax
+L_norm1:
+        mov eax, dword ptr [esp + 0x1c]
+        mov edx, dword ptr [esp + 0x24]
+        cmp eax, edx
+        jle short L_norm2
+        mov dword ptr [esp + 0x1c], edx
+        mov dword ptr [esp + 0x24], eax
+L_norm2:
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x90]
+        push edi
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe short L_top
+        call ebp
+L_top:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe short L_chk2
+        call ebp
+L_chk2:
+        cmp esi, esi
+        je short L_chk3
+        call ebp
+L_chk3:
+        cmp edi, ebx
+        je short L_done
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_body
+        call ebp
+L_body:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [eax + 0x60]
+        mov dword ptr [esp + 0x14], ecx
+        mov edx, dword ptr [eax + 0x64]
+        mov dword ptr [esp + 0x18], edx
+        mov ecx, dword ptr [eax + 0x68]
+        mov dword ptr [esp + 0x1c], ecx
+        mov edx, dword ptr [eax + 0x6c]
+        mov dword ptr [esp + 0x10], eax
+        lea eax, [esp + 0x28]
+        push eax
+        lea ecx, [esp + 0x18]
+        mov dword ptr [esp + 0x24], edx
+        push ecx
+        mov edx, ecx
+        push edx
+        call dword ptr [mem_00925708]
+        test eax, eax
+        je short L_next
+        mov ecx, dword ptr [esp + 0x38]
+        lea eax, [esp + 0x10]
+        push eax
+        call ext_0041A920
+L_next:
+        cmp edi, dword ptr [esi + 0x8]
+        jb short L_adv
+        call ebp
+L_adv:
+        add edi, 0x4
+        jmp short L_top
+L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x14
+        ret 0x14
+    }
+}
