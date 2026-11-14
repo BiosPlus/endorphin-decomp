@@ -12619,3 +12619,74 @@ done_calls:
         ret
     }
 }
+
+// [0x00563FE0] sub_00563FE0 (173 bytes)
+extern "C" void ext_004803F0();
+extern "C" void ext_00563CA0();
+extern "C" void ext_0067E650();
+extern "C" void ext_0067E820();
+extern "C" void ext_0067E990();
+extern "C" int mem_00957754;
+
+extern "C" __declspec(naked) void __fastcall fn_00563FE0(void* self, int edx_unused, void* arg1, void* arg2) {
+    __asm {
+        sub esp, 0x40
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x4c]
+        test edi, edi
+        mov esi, ecx
+        je done_00563FE0
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x70]
+        mov ecx, edi
+        call edx
+        test al, al
+        je done_00563FE0
+        cmp byte ptr [esi + 0xc8], 0x0
+        je check_second_00563FE0
+        lea ecx, [esp + 0x8]
+        call ext_004803F0
+        mov ecx, dword ptr [esp + 0x50]
+        lea eax, [esp + 0x8]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_00563CA0
+        mov eax, dword ptr [edi + 0x4]
+        mov eax, dword ptr [eax + 0xc]
+        lea edx, [esp + 0x8]
+        lea ecx, [edi + 0x4]
+        push edx
+        mov edx, dword ptr [esi + 0x420]
+        push edx
+        call eax
+        mov ecx, eax
+        call ext_0067E820
+    check_second_00563FE0:
+        cmp byte ptr [esi + 0x70], 0x0
+        jne done_00563FE0
+        lea ecx, [esp + 0x8]
+        call ext_004803F0
+        fld dword ptr [mem_00957754]
+        push ecx
+        lea ecx, [esp + 0xc]
+        fstp dword ptr [esp]
+        call ext_0067E650
+        mov eax, dword ptr [edi + 0x4]
+        mov eax, dword ptr [eax + 0xc]
+        lea edx, [esp + 0x8]
+        lea ecx, [edi + 0x4]
+        push edx
+        mov edx, dword ptr [esi + 0x420]
+        push edx
+        call eax
+        mov ecx, eax
+        call ext_0067E990
+    done_00563FE0:
+        pop edi
+        pop esi
+        add esp, 0x40
+        ret 0x8
+    }
+}
