@@ -507,3 +507,103 @@ extern "C" __declspec(naked) int __fastcall fn_0072BEC0(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x0072B330] sub_0072B330 (144 bytes)
+extern "C" void ext_006B9D80();
+extern "C" void ext_0077FA20();
+extern "C" int mem_00925284;
+extern "C" int mem_00996834;
+extern "C" int mem_00AAD0D0;
+extern "C" int mem_00B60110;
+extern "C" int mem_00B60114;
+extern "C" int mem_00B60108;
+
+extern "C" __declspec(naked) void __fastcall fn_0072B330(void* self) {
+    __asm {
+        mov dword ptr [ecx], offset mem_00996834
+        jmp ext_0077FA20
+        nop
+        nop
+        nop
+        nop
+        nop
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push offset mem_00AAD0D0
+        mov ecx, esi
+        mov dword ptr [esp + 0x8], 0x0
+        call ext_006B9D80
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B60110], ecx
+        mov dword ptr [mem_00B60114], edx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        _emit 0xe9
+        _emit 0x0b
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B60108]
+        ret
+    }
+}
