@@ -1,5 +1,8 @@
 // Decompiled translation unit: src/leaf/decompiled_5A0000.cpp
 
+#include <vector>
+#include <algorithm>
+
 extern "C" void ext_005A1070();
 extern "C" void ext_006657F0();
 extern "C" void ext_0059F5C0();
@@ -7383,5 +7386,89 @@ extern "C" __declspec(naked) void __fastcall fn_005AFA60(void* self) {
         pop ebp
         pop ebx
         ret 8
+    }
+}
+
+// [0x005AFFD0] sub_005AFFD0 (172 bytes)
+extern "C" void ext_005AF8E0();
+extern "C" void ext_005AF940();
+extern "C" void ext_005AFA60();
+extern "C" __declspec(naked) void __fastcall fn_005AFFD0(void* self) {
+    __asm {
+        sub esp, 0xc
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        mov eax, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], eax
+        mov dword ptr [esp + 0x10], ecx
+        mov dword ptr [esp + 0x20], eax
+        jbe L1
+        call ebp
+    L1:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L2
+        call ebp
+    L2:
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe L3
+        call ebp
+    L3:
+        cmp esi, ebx
+        mov ebp, dword ptr [esp + 0x24]
+        mov eax, edi
+        mov dword ptr [esp + 0x18], esi
+        je L5
+    L4:
+        cmp dword ptr [esi], ebp
+        je L5
+        add esi, 4
+        cmp esi, ebx
+        jne L4
+    L5:
+        test eax, eax
+        je L6
+        cmp eax, edi
+        je L7
+    L6:
+        call dword ptr [mem_00925134]
+    L7:
+        cmp esi, dword ptr [esp + 0x20]
+        je L_exit
+        mov eax, dword ptr [esp + 0x28]
+        mov ebx, dword ptr [esp + 0x10]
+        push eax
+        push ebp
+        mov ecx, ebx
+        call ext_005AF8E0
+        mov edx, dword ptr [ebp]
+        mov eax, dword ptr [edx + 0xc4]
+        mov ecx, ebp
+        call eax
+        test al, al
+        je L_exit
+        mov esi, dword ptr [ebp + 0x94]
+        test esi, esi
+        je L_exit
+        push esi
+        push edi
+        mov ecx, ebx
+        call ext_005AF940
+        push esi
+        push edi
+        mov ecx, ebx
+        call ext_005AFA60
+    L_exit:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0xc
+        ret 0xc
     }
 }
