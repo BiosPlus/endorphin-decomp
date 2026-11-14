@@ -15301,3 +15301,144 @@ L_6735B4:
         ret 0x4
     }
 }
+
+// [0x00679140] sub_00679140 (292 bytes)
+extern "C" void ext_0040ECB0();
+extern "C" void ext_00472780();
+extern "C" void ext_00668D80();
+extern "C" int mem_00925134;
+extern "C" int mem_00924EF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00679140(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub     esp, 0x14
+        mov     eax, dword ptr [esp + 0x18]
+        test    eax, eax
+        push    ebp
+        push    esi
+        mov     esi, ecx
+        mov     ebp, eax
+        mov     dword ptr [esp + 0x8], esi
+        mov     dword ptr [esp + 0x20], ebp
+        je      L_done
+        push    ebx
+        push    edi
+        jmp     L_loop_top
+L_next_range:
+        mov     esi, dword ptr [esp + 0x10]
+        mov     ebp, dword ptr [esp + 0x28]
+L_loop_top:
+        push    ebp
+        lea     ecx, [esi + 0x4]
+        call    ext_00668D80
+        mov     ebx, dword ptr [mem_00925134]
+        mov     edi, eax
+        test    edi, edi
+        je      L_after_range
+        mov     esi, dword ptr [edi + 0x4]
+        cmp     esi, dword ptr [edi + 0x8]
+        jbe     L_chk1
+        call    ebx
+L_chk1:
+        mov     ebp, dword ptr [edi + 0x8]
+        cmp     dword ptr [edi + 0x4], ebp
+        jbe     L_chk2
+        call    ebx
+L_chk2:
+        test    edi, edi
+        je      L_chk3
+        cmp     edi, edi
+        je      L_chk4
+L_chk3:
+        call    ebx
+L_chk4:
+        cmp     esi, ebp
+        je      L_range_end
+        test    edi, edi
+        jne     L_chk5
+        call    ebx
+L_chk5:
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      L_chk6
+        call    ebx
+L_chk6:
+        mov     ecx, dword ptr [esp + 0x2c]
+        push    esi
+        call    ext_0040ECB0
+        cmp     esi, dword ptr [edi + 0x8]
+        jb      L_chk7
+        call    ebx
+L_chk7:
+        add     esi, 0x20
+        jmp     L_chk1
+L_range_end:
+        mov     esi, dword ptr [esp + 0x10]
+        mov     ebp, dword ptr [esp + 0x28]
+L_after_range:
+        cmp     dword ptr [esi + 0x20], 0x0
+        je      L_pop_edi_ebx
+        add     esi, 0x18
+        push    ebp
+        mov     ecx, esi
+        call    ext_00472780
+        test    esi, esi
+        mov     edi, eax
+        mov     dword ptr [esp + 0x18], edi
+        jne     L_chk8
+        call    ebx
+L_chk8:
+        cmp     edi, dword ptr [esi + 0x4]
+        mov     dword ptr [esp + 0x14], esi
+        je      L_use_esi
+        add     edi, 0xc
+        push    edi
+        push    ebp
+        call    dword ptr [mem_00924EF4]
+        add     esp, 0x8
+        test    al, al
+        jne     L_use_esi
+        lea     eax, [esp + 0x14]
+        jmp     L_have_ptr
+L_use_esi:
+        mov     eax, dword ptr [esi + 0x4]
+        mov     dword ptr [esp + 0x20], eax
+        mov     dword ptr [esp + 0x1c], esi
+        lea     eax, [esp + 0x1c]
+L_have_ptr:
+        mov     edi, dword ptr [eax]
+        test    edi, edi
+        mov     ebx, dword ptr [eax + 0x4]
+        mov     ebp, dword ptr [esi + 0x4]
+        je      L_null_edi
+        cmp     edi, esi
+        je      L_eq_esi
+L_null_edi:
+        mov     esi, dword ptr [mem_00925134]
+        call    esi
+        jmp     L_cmp_end
+L_eq_esi:
+        mov     esi, dword ptr [mem_00925134]
+L_cmp_end:
+        cmp     ebx, ebp
+        je      L_pop_edi_ebx
+        test    edi, edi
+        jne     L_chk9
+        call    esi
+L_chk9:
+        cmp     ebx, dword ptr [edi + 0x4]
+        jne     L_chk10
+        call    esi
+L_chk10:
+        add     ebx, 0x28
+        mov     dword ptr [esp + 0x28], ebx
+        jne     L_next_range
+L_pop_edi_ebx:
+        pop     edi
+        pop     ebx
+L_done:
+        pop     esi
+        pop     ebp
+        add     esp, 0x14
+        ret     0x8
+    }
+}
