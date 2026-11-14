@@ -105,3 +105,122 @@ extern "C" __declspec(naked) void __fastcall fn_004201B0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00421AC0] HotkeyDialog::vfunc_66 (275 bytes)
+extern "C" void ext_0041FEA0();
+extern "C" void ext_0041FEC0();
+extern "C" void ext_0041FEF0();
+extern "C" void ext_0041FF10();
+extern "C" void ext_004216F0();
+extern "C" void ext_006A5E00();
+extern "C" void ext_006A5F7A();
+extern "C" void ext_006A6418();
+
+extern "C" __declspec(naked) void __fastcall fn_00421AC0(void* self, int edx_unused, void* msg) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ebx + 0x4]
+        cmp eax, 0x203
+        push esi
+        mov esi, ecx
+        jne L_00421AF2
+        lea ecx, [esi + 0x128]
+        call ext_006A6418
+        test eax, eax
+        je L_00421AE8
+        mov ecx, esi
+        call ext_004216F0
+    L_00421AE8:
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret 0x4
+    L_00421AF2:
+        cmp eax, 0x100
+        push edi
+        jne L_00421BC5
+        mov eax, dword ptr [ebx + 0x8]
+        cmp eax, 0xd
+        mov edi, dword ptr [mem_00925694]
+        je L_00421B7E
+        cmp eax, 0x1b
+        je L_00421B47
+        cmp eax, 0x71
+        jne L_00421BC5
+        add esi, 0x74
+        mov ecx, esi
+        call ext_0041FEA0
+        mov dword ptr [esp + 0x10], eax
+        lea eax, [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call ext_0041FEC0
+        push eax
+        mov ecx, esi
+        call ext_0041FEF0
+        pop edi
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret 0x4
+    L_00421B47:
+        mov ecx, dword ptr [esi + 0x94]
+        push 0x0
+        push 0x0
+        push 0x1018
+        push ecx
+        call edi
+        push eax
+        call ext_006A5E00
+        test eax, eax
+        je L_00421B7E
+        lea ecx, [esi + 0x74]
+        call ext_0041FF10
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x108]
+        push ebx
+        call eax
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    L_00421B7E:
+        mov ecx, dword ptr [esi + 0x94]
+        push 0x0
+        push 0x0
+        push 0x1018
+        push ecx
+        call edi
+        push eax
+        call ext_006A5E00
+        test eax, eax
+        je L_00421BC5
+        mov edx, dword ptr [esi + 0x94]
+        push 0x0
+        push 0x0
+        push 0x1018
+        push edx
+        call edi
+        push eax
+        call ext_006A5E00
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        mov eax, dword ptr [edx + 0x108]
+        push ebx
+        call eax
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    L_00421BC5:
+        push ebx
+        mov ecx, esi
+        call ext_006A5F7A
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
