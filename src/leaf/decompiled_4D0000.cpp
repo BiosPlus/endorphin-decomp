@@ -6041,3 +6041,113 @@ L_4DBE67:
         ret 0x4
     }
 }
+
+// [0x004D9780] sub_004D9780 (254 bytes)
+extern "C" void ext_00435D00();
+extern "C" void ext_005E1740();
+extern "C" int mem_00924E90;
+extern "C" int mem_00924FA0;
+extern "C" int mem_00924E94;
+extern "C" int mem_00924E5C;
+extern "C" int mem_00924E98;
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004D9780(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov dword ptr [esp + 0xc], ecx
+        push edi
+        mov ecx, esi
+        call ext_005E1740
+        test al, al
+        mov ebp, dword ptr [esp + 0x1c]
+        jne loop_head
+        mov eax, dword ptr [mem_00924E90]
+        mov edx, dword ptr [esi]
+        mov edi, dword ptr [esi + 0x18c]
+        push eax
+        mov eax, dword ptr [edx + 0x24]
+        push 9499c4h
+        push ebp
+        push 94999ch
+        mov ecx, esi
+        add edi, 4
+        call eax
+        mov edx, dword ptr [edi]
+        push eax
+        mov eax, dword ptr [edx + 0x24]
+        push 92b4a8h
+        mov ecx, edi
+        call eax
+        mov ecx, dword ptr [mem_00924FA0]
+        mov edi, dword ptr [mem_00924E94]
+        push eax
+        push ecx
+        call edi
+        add esp, 8
+        push eax
+        call ext_00435D00
+        add esp, 8
+        push eax
+        call edi
+        add esp, 8
+        push eax
+        call ext_00435D00
+        add esp, 8
+        mov ecx, eax
+        call dword ptr [mem_00924E5C]
+        push eax
+        call ext_00435D00
+        add esp, 8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+loop_head:
+        mov edi, dword ptr [esi + 0x1d4]
+        cmp edi, dword ptr [esi + 0x1d8]
+        jbe loop_check
+        call dword ptr [mem_00925134]
+        jmp loop_check
+        _emit 0x8d
+        _emit 0xa4
+        _emit 0x24
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+loop_check:
+        mov ebx, dword ptr [esi + 0x1d8]
+        cmp dword ptr [esi + 0x1d4], ebx
+        jbe loop_cmp
+        call dword ptr [mem_00925134]
+loop_cmp:
+        cmp edi, ebx
+        jae loop_done
+        cmp edi, dword ptr [esi + 0x1d8]
+        jb loop_body
+        call dword ptr [mem_00925134]
+loop_body:
+        mov edx, dword ptr [edi]
+        mov ecx, dword ptr [esp + 0x10]
+        push ebp
+        push edx
+        call ext_004D9780
+        cmp edi, dword ptr [esi + 0x1d8]
+        jb loop_next
+        call dword ptr [mem_00925134]
+loop_next:
+        add edi, 4
+        jmp loop_check
+loop_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x8
+    }
+}
