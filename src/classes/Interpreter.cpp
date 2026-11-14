@@ -89,3 +89,44 @@ extern "C" void* __fastcall fn_005058B0(void* self, int edx_unused, void* a1) {
     ((void (__cdecl*)(void*, void*, int, int))ext_00505420)((char*)self + 0x20, a1, mem_00A9EDC4, 0);
     return a1;
 }
+
+// [0x00507D10] Interpreter::vfunc_21 (86 bytes)
+extern "C" void ext_00507B50();
+extern "C" void ext_0063F530();
+extern "C" int mem_00A9EDC4;
+extern "C" int mem_00A9EDB4;
+
+extern "C" __declspec(naked) void __fastcall fn_00507D10(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00A9EDC4]
+        push esi
+        push 0x1
+        push 0x0
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x10]
+        push eax
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je L_hit_507D10
+        cmp eax, 0xb53b30
+        je L_hit_507D10
+        cmp eax, 0xb53ab0
+        je L_hit_507D10
+        cmp eax, 0xb53a70
+        je L_hit_507D10
+        cmp eax, 0xb53af0
+        jne L_nohit_507D10
+    L_hit_507D10:
+        mov eax, 0xb53b30
+    L_nohit_507D10:
+        mov ecx, dword ptr [mem_00A9EDB4]
+        push ecx
+        add esi, 0x20
+        push esi
+        push eax
+        call ext_00507B50
+        add esp, 0xc
+        pop esi
+        ret 4
+    }
+}
