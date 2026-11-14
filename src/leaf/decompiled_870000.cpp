@@ -1818,3 +1818,96 @@ extern "C" __declspec(naked) void* __cdecl fn_00872200(void* a1, void* a2) {
         ret
     }
 }
+
+// [0x00871760] sub_00871760 (241 bytes)
+extern "C" void ext_0063E290();
+extern "C" void ext_006A5C62();
+extern "C" void ext_00870F90();
+extern "C" void ext_00870FE0();
+
+extern "C" __declspec(naked) void __fastcall fn_00871760(void* self) {
+    __asm {
+        push -0x1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        mov ecx, dword ptr [esp + 0x14]
+        push 0x99f160
+        call ext_00870F40
+        test al, al
+        jne L_true_00871799
+        xor eax, eax
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    L_true_00871799:
+        mov dword ptr [esp], 0x0
+        call ext_00870E90
+        cmp al, 0x78
+        jne L_17bd_00871760
+        lea eax, [esp]
+        push eax
+        call ext_00870FE0
+        test al, al
+        jne L_17d6_00871760
+        push 0x7
+        call ext_00870E40
+    L_17bd_00871760:
+        call ext_00870EF0
+        lea edx, [esp]
+        push edx
+        call ext_00870F90
+        test al, al
+        jne L_17d6_00871760
+        push 0x8
+        call ext_00870E40
+    L_17d6_00871760:
+        push 0x3b
+        call ext_00871090
+        test al, al
+        jne L_17e8_00871760
+        push 0x6
+        call ext_00870E40
+    L_17e8_00871760:
+        push ebx
+        mov ebx, dword ptr [esp + 0x4]
+        cmp bl, 0x9
+        je L_1808_00871760
+        cmp bl, 0xa
+        je L_1808_00871760
+        cmp bl, 0xd
+        je L_1808_00871760
+        cmp bl, 0x20
+        jge L_1808_00871760
+        push 0x2
+        call ext_00870E40
+    L_1808_00871760:
+        push 0x28
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0x0
+        je L_183f_00871760
+        mov ecx, dword ptr [esp + 0x1c]
+        push ebx
+        push ecx
+        mov ecx, eax
+        call ext_0063E290
+        pop ebx
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    L_183f_00871760:
+        mov ecx, dword ptr [esp + 0x8]
+        xor eax, eax
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
