@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `13838 / 24049` (**57.54%**) — `10746` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1559593 / 4496005 bytes` (**34.69%** of 4.29 MB)
+- **In-Scope Functions Matched:** `13839 / 24049` (**57.55%**) — `10747` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1559707 / 4496005 bytes` (**34.69%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -18,7 +18,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P20-30 (32-48B)** | 1484 / 2405 | 61.70% | 57936 / 97731 | 59.28% | 921 fn |
 | **P30-40 (48-71B)** | 1342 / 2405 | 55.80% | 79632 / 144549 | 55.09% | 1063 fn |
 | **P40-50 (71-91B)** | 1391 / 2405 | 57.84% | 115793 / 194373 | 59.57% | 1014 fn |
-| **P50-60 (91-122B)** | 1649 / 2405 | 68.57% | 176921 / 256906 | 68.87% | 756 fn |
+| **P50-60 (91-122B)** | 1650 / 2405 | 68.61% | 177035 / 256906 | 68.91% | 755 fn |
 | **P60-70 (122-159B)** | 1101 / 2405 | 45.78% | 149143 / 339038 | 43.99% | 1304 fn |
 | **P70-80 (159-178B)** | 303 / 2405 | 12.60% | 51048 / 400567 | 12.74% | 2102 fn |
 | **P80-90 (178-335B)** | 1153 / 2405 | 47.94% | 277562 / 583211 | 47.59% | 1252 fn |
@@ -30,7 +30,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 62.85% |
 | `claude-haiku-5.5@low` | 1523 | 353054 | 14.17% |
-| `gemini-4-hydrogen@low` | 950 | 279515 | 8.84% |
+| `gemini-4-hydrogen@low` | 951 | 279629 | 8.85% |
 | `gemini-3.8-flash@low` | 864 | 251206 | 8.04% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.16% |
 | `claude-sonnet-5.5@low` | 163 | 33291 | 1.52% |
