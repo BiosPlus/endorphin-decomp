@@ -92,3 +92,93 @@ extern "C" __declspec(naked) void __fastcall fn_0068C120(void* self) {
         ret 0x10
     }
 }
+
+// [0x00594AA0] ExprParser::Function2Type<World, ValuePtr, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class ValuePtr __thiscall World::getCollisionWithSensor(class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &), 0}>::vfunc_49 (252 bytes)
+extern "C" void ext_0046E780();
+extern "C" void ext_00593F90();
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00594AA0(void* self) {
+    __asm {
+        push -1
+        push 8a0b93h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 44h
+        push esi
+        mov dword ptr [esp + 4], 0
+        mov eax, dword ptr [esp + 5ch]
+        mov esi, dword ptr [eax]
+        mov edx, dword ptr [esp + 5ch]
+        mov eax, dword ptr [esp + 64h]
+        mov ecx, dword ptr [eax + 4]
+        push edi
+        push edx
+        push eax
+        lea eax, [esp + 38h]
+        push eax
+        call ext_0046E780
+        mov edi, eax
+        mov edx, dword ptr [esp + 60h]
+        mov eax, dword ptr [esp + 64h]
+        mov ecx, dword ptr [eax + 4]
+        push edx
+        push eax
+        lea eax, [esp + 1ch]
+        push eax
+        mov dword ptr [esp + 60h], 1
+        call ext_0046E780
+        push edi
+        push eax
+        lea ecx, [esp + 14h]
+        push ecx
+        mov ecx, esi
+        mov byte ptr [esp + 60h], 2
+        call ext_00593F90
+        mov esi, eax
+        cmp dword ptr [esi + 4], 0
+        mov byte ptr [esp + 54h], 3
+        lea eax, [esp + 60h]
+        je skip_call
+        mov ecx, dword ptr [esi + 4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 70h]
+        push esi
+        push eax
+        call edx
+        jmp after_call
+skip_call:
+        mov dword ptr [esp + 60h], 0
+after_call:
+        mov eax, dword ptr [eax]
+        mov edi, dword ptr [esp + 5ch]
+        mov dword ptr [edi], eax
+        mov ecx, dword ptr [esi + 4]
+        mov dword ptr [edi + 4], ecx
+        mov ecx, dword ptr [esp + 10h]
+        test ecx, ecx
+        mov dword ptr [esp + 8], 1
+        mov byte ptr [esp + 54h], 2
+        je skip_virt
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 78h]
+        lea eax, [esp + 0ch]
+        push eax
+        call edx
+skip_virt:
+        lea ecx, [esp + 14h]
+        mov byte ptr [esp + 54h], 1
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 30h]
+        mov byte ptr [esp + 54h], 0
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 4ch]
+        mov eax, edi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 50h
+        ret 10h
+    }
+}
