@@ -11950,3 +11950,49 @@ extern "C" __declspec(naked) void __cdecl fn_00674F40() {
         ret
     }
 }
+
+// [0x0067B280] sub_0067B280 (90 bytes)
+extern "C" void ext_0041A920();
+extern "C" int mem_00924264;
+
+extern "C" __declspec(naked) int __fastcall fn_0067B280(void* self, int edx_unused, unsigned char a1) {
+    __asm {
+        movzx eax, byte ptr [esp + 0x4]
+        push esi
+        push 0x0
+        push 0x0
+        push eax
+        push 0x0
+        mov esi, ecx
+        call dword ptr [mem_00924264]
+        or ecx, -0x1
+        test eax, eax
+        mov dword ptr [esp + 0x8], eax
+        je fail_0067B280
+        mov ecx, dword ptr [esi + 0xc]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        jne count_0067B280
+        lea edx, [esp + 0x8]
+        push edx
+        xor esi, esi
+        call ext_0041A920
+        mov eax, esi
+        pop esi
+        ret 0x4
+    count_0067B280:
+        mov esi, dword ptr [ecx + 0x8]
+        lea edx, [esp + 0x8]
+        sub esi, eax
+        push edx
+        sar esi, 0x2
+        call ext_0041A920
+        mov eax, esi
+        pop esi
+        ret 0x4
+    fail_0067B280:
+        mov eax, ecx
+        pop esi
+        ret 0x4
+    }
+}
