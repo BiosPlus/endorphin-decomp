@@ -18609,3 +18609,127 @@ extern "C" __declspec(naked) void __fastcall fn_0043A4C0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x0043BF00] sub_0043BF00 (238 bytes)
+extern "C" void ext_0043B7D0();
+extern "C" void ext_0043B810();
+extern "C" void ext_0043BA20();
+extern "C" void ext_0043BAF0();
+extern "C" void ext_0043BF00();
+
+extern "C" __declspec(naked) void __cdecl fn_0043BF00() {
+    __asm {
+        sub esp, 8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        mov eax, edi
+        sub eax, ebx
+        sar eax, 0x2
+        cmp eax, 0x20
+        jle small_sort
+        mov esi, dword ptr [esp + 0x24]
+        nop
+    loop_top:
+        test esi, esi
+        jle heap_path
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        push edi
+        lea ecx, [esp + 0x18]
+        push ebx
+        push ecx
+        call ext_0043B810
+        mov ebp, dword ptr [esp + 0x24]
+        mov eax, esi
+        cdq
+        sub eax, edx
+        sar eax, 1
+        mov esi, eax
+        cdq
+        sub eax, edx
+        sar eax, 1
+        add esi, eax
+        mov eax, dword ptr [esp + 0x20]
+        mov edx, edi
+        mov ecx, eax
+        sub edx, ebp
+        sub ecx, ebx
+        and edx, -4
+        and ecx, -4
+        add esp, 0x10
+        cmp ecx, edx
+        jge else_branch
+        mov edx, dword ptr [esp + 0x28]
+        push edx
+        push esi
+        push eax
+        push ebx
+        call ext_0043BF00
+        mov ebx, ebp
+        jmp check_loop
+    else_branch:
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        push esi
+        push edi
+        push ebp
+        call ext_0043BF00
+        mov edi, dword ptr [esp + 0x20]
+    check_loop:
+        mov eax, edi
+        sub eax, ebx
+        sar eax, 0x2
+        add esp, 0x10
+        cmp eax, 0x20
+        jg loop_top
+    small_sort:
+        cmp eax, 0x1
+        jle done
+        mov ecx, dword ptr [esp + 0x28]
+        push ecx
+        push edi
+        push ebx
+        call ext_0043BA20
+        add esp, 0xc
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    heap_path:
+        cmp eax, 0x20
+        jle small_sort
+        mov ecx, edi
+        sub ecx, ebx
+        and ecx, -4
+        cmp ecx, 4
+        jle sort_heap
+        mov edx, dword ptr [esp + 0x28]
+        push 0
+        push 0
+        push edx
+        push edi
+        push ebx
+        call ext_0043B7D0
+        add esp, 0x14
+    sort_heap:
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        push edi
+        push ebx
+        call ext_0043BAF0
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
