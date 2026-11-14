@@ -12835,3 +12835,89 @@ extern "C" __declspec(naked) void* __fastcall fn_00681020(void* self) {
         ret
     }
 }
+
+// [0x00689B90] sub_00689B90 (173 bytes)
+extern "C" void ext_00688F60();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00689B90(void* self, void* dummy, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push    ecx
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [esp + 0x18]
+        push    esi
+        push    edi
+        mov     edi, ecx
+        mov     esi, dword ptr [edi + 0x4]
+        test    esi, esi
+        je      L_00689BBC
+        mov     ebx, dword ptr [edi + 0x8]
+        mov     ecx, ebx
+        sub     ecx, esi
+        mov     eax, 0x2e8ba2e9
+        imul    ecx
+        sar     edx, 0x3
+        mov     eax, edx
+        shr     eax, 0x1f
+        add     eax, edx
+        jne     L_00689BC4
+    L_00689BBC:
+        mov     ebx, dword ptr [esp + 0x1c]
+        xor     esi, esi
+        jmp     L_00689BF5
+    L_00689BC4:
+        cmp     esi, ebx
+        jbe     L_00689BCE
+        call    dword ptr [mem_00925134]
+    L_00689BCE:
+        mov     ebx, dword ptr [esp + 0x1c]
+        test    ebx, ebx
+        je      L_00689BDA
+        cmp     ebx, edi
+        je      L_00689BE0
+    L_00689BDA:
+        call    dword ptr [mem_00925134]
+    L_00689BE0:
+        mov     ecx, ebp
+        sub     ecx, esi
+        mov     eax, 0x2e8ba2e9
+        imul    ecx
+        sar     edx, 0x3
+        mov     esi, edx
+        shr     esi, 0x1f
+        add     esi, edx
+    L_00689BF5:
+        mov     ecx, dword ptr [esp + 0x24]
+        push    ecx
+        push    0x1
+        push    ebp
+        push    ebx
+        mov     ecx, edi
+        call    ext_00688F60
+        mov     ebx, dword ptr [edi + 0x4]
+        cmp     ebx, dword ptr [edi + 0x8]
+        jbe     L_00689C13
+        call    dword ptr [mem_00925134]
+    L_00689C13:
+        imul    esi, esi, 0x2c
+        add     esi, ebx
+        cmp     esi, dword ptr [edi + 0x8]
+        mov     dword ptr [esp + 0x20], ebx
+        ja      L_00689C26
+        cmp     esi, dword ptr [edi + 0x4]
+        jae     L_00689C2c
+    L_00689C26:
+        call    dword ptr [mem_00925134]
+    L_00689C2C:
+        mov     eax, dword ptr [esp + 0x18]
+        mov     dword ptr [eax], edi
+        pop     edi
+        mov     dword ptr [eax + 0x4], esi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        pop     ecx
+        ret     0x10
+    }
+}
