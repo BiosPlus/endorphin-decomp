@@ -5619,3 +5619,63 @@ L_ok_590:
         ret 4
     }
 }
+
+// [0x004EFA50] sub_004EFA50 (98 bytes)
+extern "C" void ext_00676C90();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004EFA50(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+    f4efa50_top:
+        test esi, esi
+        je f4efa50_call1
+        cmp esi, dword ptr [esp + 0x1c]
+        je f4efa50_after1
+    f4efa50_call1:
+        call ebp
+    f4efa50_after1:
+        cmp ebx, dword ptr [esp + 0x20]
+        je f4efa50_ret
+        test esi, esi
+        mov edi, ebx
+        jne f4efa50_a
+        call ebp
+    f4efa50_a:
+        cmp ebx, dword ptr [esi + 0x8]
+        jb f4efa50_b
+        call ebp
+    f4efa50_b:
+        add ebx, 0x4
+        test esi, esi
+        jne f4efa50_c
+        call ebp
+    f4efa50_c:
+        cmp edi, dword ptr [esi + 0x8]
+        jb f4efa50_d
+        call ebp
+    f4efa50_d:
+        mov edi, dword ptr [edi]
+        test edi, edi
+        je f4efa50_top
+        mov ecx, edi
+        call ext_00676C90
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+        jmp f4efa50_top
+    f4efa50_ret:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x10
+    }
+}
