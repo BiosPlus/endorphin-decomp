@@ -5494,3 +5494,78 @@ extern "C" __declspec(naked) void __fastcall fn_004DDA90(void* self) {
         ret 0x10
     }
 }
+
+// [0x004DA740] sub_004DA740 (178 bytes)
+extern "C" void ext_004D3DE0();
+extern "C" void ext_004D95C0();
+extern "C" void ext_004D9880();
+extern "C" void ext_004D9A00();
+extern "C" void ext_004D9AC0();
+extern "C" void ext_004D9D70();
+extern "C" void ext_004DA310();
+extern "C" int mem_00AE5D54;
+
+extern "C" __declspec(naked) void __fastcall fn_004DA740(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [esi + 0x214], 0x0
+        je L_ret_plain
+        cmp byte ptr [esi + 0x211], 0x0
+        jne L_alt
+        push ebx
+        push edi
+        call ext_004D95C0
+        mov edi, dword ptr [esp + 0x18]
+        push edi
+        mov ecx, esi
+        call ext_004D9D70
+        mov ebx, dword ptr [esp + 0x10]
+        push ebx
+        mov ecx, esi
+        call ext_004D9880
+        push ebx
+        mov ecx, esi
+        call ext_004DA310
+        test bl, bl
+        je L_clear
+        test edi, edi
+        mov byte ptr [mem_00AE5D54], 0x1
+        je L_after_set
+    L_clear:
+        mov byte ptr [mem_00AE5D54], 0x0
+    L_after_set:
+        mov ecx, esi
+        call ext_004D9A00
+        mov ecx, esi
+        call ext_004D9AC0
+        pop edi
+        pop ebx
+        mov byte ptr [esi + 0x211], 0x1
+        pop esi
+        ret 0xc
+    L_alt:
+        call ext_004D95C0
+        mov eax, dword ptr [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call ext_004D9D70
+        cmp byte ptr [mem_00AE5D54], 0x0
+        je L_else
+        mov ecx, dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        call ext_004DA310
+        mov byte ptr [mem_00AE5D54], 0x0
+        pop esi
+        ret 0xc
+    L_else:
+        mov edx, dword ptr [esp + 0xc]
+        push edx
+        mov ecx, esi
+        call ext_004D3DE0
+    L_ret_plain:
+        pop esi
+        ret 0xc
+    }
+}
