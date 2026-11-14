@@ -13110,3 +13110,179 @@ extern "C" __declspec(naked) void __fastcall fn_00510BD0(void* self) {
         ret
     }
 }
+
+// [0x0051D130] sub_0051D130 (402 bytes)
+extern "C" void ext_00492A50();
+extern "C" void ext_0051CE40();
+extern "C" int mem_00A430F0;
+
+struct Vec20_0051D130 {
+    void* proxy;
+    char* first;
+    char* last;
+    char* end;
+};
+
+struct Iter20_0051D130 {
+    Vec20_0051D130* cont;
+    char* ptr;
+};
+
+extern "C" void __declspec(naked) __fastcall fn_0051D130(void* self) {
+    __asm {
+        sub     esp, 0x10
+        push    ebx
+        mov     ebx, ecx
+        mov     eax, dword ptr [ebx + 0x30]
+        test    eax, eax
+        push    esi
+        lea     esi, [ebx + 0x2c]
+        push    edi
+        mov     dword ptr [esp + 0xc], ebx
+        je      loc_51D15E
+        mov     ecx, dword ptr [esi + 0x8]
+        sub     ecx, eax
+        mov     eax, 0x66666667
+        imul    ecx
+        sar     edx, 3
+        mov     eax, edx
+        shr     eax, 0x1f
+        add     eax, edx
+        jne     loc_51D176
+    loc_51D15E:
+        mov     edi, dword ptr [esp + 0x24]
+        push    1
+        push    edi
+        lea     ecx, [esp + 0x28]
+        push    ecx
+        mov     ecx, esi
+        call    ext_0051CE40
+        jmp     loc_51D29B
+    loc_51D176:
+        mov     edi, dword ptr [esi + 0x8]
+        cmp     dword ptr [esi + 0x4], edi
+        push    ebp
+        mov     ebp, dword ptr [mem_00925134]
+        jbe     loc_51D187
+        call    ebp
+    loc_51D187:
+        cmp     edi, dword ptr [esi + 0x4]
+        mov     dword ptr [esp + 0x1c], edi
+        ja      loc_51D192
+        call    ebp
+    loc_51D192:
+        add     edi, -0x14
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      loc_51D19C
+        call    ebp
+    loc_51D19C:
+        fld     dword ptr [edi]
+        fld     dword ptr [esp + 0x24]
+        fsub    dword ptr [mem_00A430F0]
+        fstp    dword ptr [esp + 0x14]
+        fld     dword ptr [esp + 0x14]
+        fcompp
+        fnstsw  ax
+        test    ah, 0x41
+        jne     loc_51D1D1
+        mov     edi, dword ptr [esp + 0x28]
+        push    1
+        push    edi
+        lea     edx, [esp + 0x2c]
+        push    edx
+        mov     ecx, esi
+        call    ext_0051CE40
+        jmp     loc_51D29A
+    loc_51D1D1:
+        mov     edi, dword ptr [esi + 0x4]
+        cmp     edi, dword ptr [esi + 0x8]
+        jbe     loc_51D1DB
+        call    ebp
+    loc_51D1DB:
+        fld     dword ptr [mem_00A430F0]
+        sub     esp, 8
+        fstp    dword ptr [esp + 4]
+        lea     eax, [esp + 0x20]
+        fld     dword ptr [esp + 0x2c]
+        mov     dword ptr [esp + 0x20], esi
+        fstp    dword ptr [esp]
+        push    eax
+        push    esi
+        mov     dword ptr [esp + 0x2c], edi
+        call    ext_0051A890
+        mov     edi, dword ptr [esp + 0x28]
+        add     esp, 0x10
+        test    edi, edi
+        jne     loc_51D20F
+        call    ebp
+    loc_51D20F:
+        mov     ebx, dword ptr [esp + 0x1c]
+        cmp     ebx, dword ptr [edi + 8]
+        jb      loc_51D21A
+        call    ebp
+    loc_51D21A:
+        fld     dword ptr [ebx]
+        fld     dword ptr [esp + 0x24]
+        fsub    dword ptr [mem_00A430F0]
+        fstp    dword ptr [esp + 0x14]
+        fld     dword ptr [esp + 0x14]
+        fcompp
+        fnstsw  ax
+        test    ah, 0x41
+        je      loc_51D283
+        cmp     ebx, dword ptr [edi + 8]
+        jb      loc_51D23E
+        call    ebp
+    loc_51D23E:
+        fld     dword ptr [ebx]
+        fld     dword ptr [mem_00A430F0]
+        fadd    dword ptr [esp + 0x24]
+        fstp    dword ptr [esp + 0x14]
+        fld     dword ptr [esp + 0x14]
+        fcompp
+        fnstsw  ax
+        test    ah, 5
+        jnp     loc_51D283
+        lea     ecx, [esp + 0x18]
+        call    ext_00492A50
+        mov     edi, dword ptr [esp + 0x28]
+        fld     dword ptr [edi]
+        add     eax, 4
+        fstp    dword ptr [eax]
+        fld     dword ptr [edi + 4]
+        fstp    dword ptr [eax + 4]
+        fld     dword ptr [edi + 8]
+        fstp    dword ptr [eax + 8]
+        fld     dword ptr [edi + 0xc]
+        fstp    dword ptr [eax + 0xc]
+        jmp     loc_51D296
+    loc_51D283:
+        mov     edi, dword ptr [esp + 0x28]
+        push    1
+        push    edi
+        lea     ecx, [esp + 0x2c]
+        push    ecx
+        mov     ecx, esi
+        call    ext_0051CE40
+    loc_51D296:
+        mov     ebx, dword ptr [esp + 0x10]
+    loc_51D29A:
+        pop     ebp
+    loc_51D29B:
+        fld     dword ptr [edi]
+        fstp    dword ptr [ebx + 0x40]
+        fld     dword ptr [edi + 4]
+        fstp    dword ptr [ebx + 0x44]
+        fld     dword ptr [edi + 8]
+        fstp    dword ptr [ebx + 0x48]
+        fld     dword ptr [edi + 0xc]
+        pop     edi
+        fstp    dword ptr [ebx + 0x4c]
+        pop     esi
+        fld     dword ptr [esp + 0x18]
+        fstp    dword ptr [ebx + 0x3c]
+        pop     ebx
+        add     esp, 0x10
+        ret     8
+    }
+}
