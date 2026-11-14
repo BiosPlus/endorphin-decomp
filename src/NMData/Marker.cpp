@@ -347,3 +347,48 @@ L_join:
         ret 4
     }
 }
+
+extern "C" void ext_005A2340();
+extern "C" void ext_005BE710();
+extern "C" int mem_00924FDC;
+extern "C" int mem_00924FE0;
+
+// [0x00870C20] NMData::Marker::vfunc_13_off_C (110 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00870C20(void* self, int edx_unused, void* arg1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x24]
+        mov esi, ecx
+        mov ecx, edi
+        call edx
+        push eax
+        lea ecx, [esi + 0x148]
+        call dword ptr [mem_00924FDC]
+        mov edi, dword ptr [edi + 0x20c]
+        mov eax, dword ptr [edi + 0x18c]
+        mov dword ptr [esi + 0x168], eax
+        lea edi, [esi + 0x8]
+        add eax, 0x5e0
+        push edi
+        push eax
+        call ext_005BE710
+        add esp, 8
+        lea eax, [esi - 0xc]
+        push eax
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x2c], esp
+        push edi
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esi + 0x168]
+        add ecx, 0x5e0
+        call ext_005A2340
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
