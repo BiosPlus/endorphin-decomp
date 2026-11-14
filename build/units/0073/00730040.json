@@ -42,5 +42,7 @@
     "0x007301EE",
     "0x007301FD"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-14T13:57:26Z"
 }
