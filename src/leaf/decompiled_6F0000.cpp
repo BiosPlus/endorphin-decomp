@@ -1836,3 +1836,126 @@ extern "C" __declspec(naked) void __fastcall fn_006F8CF0(void* self) {
         ret
     }
 }
+
+// [0x006F69F0] sub_006F69F0 (336 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006F69F0(void* self) {
+    __asm {
+        mov al, byte ptr [esp + 0x4]
+        xor edx, edx
+        test al, al
+        setne dl
+        mov byte ptr [ecx + 0x2968], al
+        mov ecx, dword ptr [ecx + 0x6958]
+        push edx
+        push 0xab
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+
+        mov al, byte ptr [esp + 0x4]
+        xor edx, edx
+        test al, al
+        setne dl
+        mov byte ptr [ecx + 0x5470], al
+        mov ecx, dword ptr [ecx + 0x6958]
+        push edx
+        push 0x7d
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+
+        mov al, byte ptr [esp + 0x4]
+        xor edx, edx
+        test al, al
+        setne dl
+        mov byte ptr [ecx + 0x5580], al
+        mov ecx, dword ptr [ecx + 0x6958]
+        push edx
+        push 0x80
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+
+        mov al, byte ptr [esp + 0x4]
+        xor edx, edx
+        test al, al
+        setne dl
+        mov byte ptr [ecx + 0x5608], al
+        mov ecx, dword ptr [ecx + 0x6958]
+        push edx
+        push 0x81
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+
+        mov al, byte ptr [esp + 0x4]
+        xor edx, edx
+        test al, al
+        setne dl
+        mov byte ptr [ecx + 0x5690], al
+        mov ecx, dword ptr [ecx + 0x6958]
+        push edx
+        push 0x82
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+
+        mov al, byte ptr [esp + 0x4]
+        xor edx, edx
+        test al, al
+        setne dl
+        mov byte ptr [ecx + 0x5718], al
+        mov ecx, dword ptr [ecx + 0x6958]
+        push edx
+        push 0x83
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FEF0
+        ret 0x4
+        nop
+        nop
+        nop
+        nop
+
+        fild dword ptr [esp + 0x4]
+        mov eax, dword ptr [esp + 0x4]
+        push 0x0
+        sub esp, 0x8
+        mov dword ptr [ecx + 0x57a0], eax
+        mov ecx, dword ptr [ecx + 0x6958]
+        fstp qword ptr [esp]
+        push 0x84
+        call ext_006F76F0
+        mov ecx, eax
+        call ext_0077FF90
+        ret 0x4
+    }
+}
