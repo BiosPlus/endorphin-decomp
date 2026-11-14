@@ -1936,3 +1936,198 @@ extern "C" __declspec(naked) void __cdecl fn_0085F7E0(void) {
         ret
     }
 }
+
+extern "C" void ext_0085A130();
+extern "C" void ext_0085A370();
+extern "C" void ext_0085A3E0();
+extern "C" void ext_0086D0A0();
+
+// [0x0085AE30] sub_0085AE30 (495 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0085AE30(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        sub esp, 0x18
+        _emit 0x8d
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        push ebx
+        push ebp
+        push esi
+        push edi
+        push eax
+        push 1
+        push 8
+        push ecx
+        call ext_0086D0A0
+        add esp, 0x10
+        cmp eax, 1
+        je ok_path
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x20
+        pop ebx
+        add esp, 0x18
+        ret
+    ok_path:
+        mov ebx, dword ptr [esp + 0x34]
+        push ebx
+        call ext_0085A370
+        mov edi, eax
+        add esp, 4
+        cmp edi, -1
+        je fail_c
+        mov ecx, dword ptr [ebx + 0x14]
+        mov esi, edi
+        shl esi, 4
+        add esi, ecx
+        mov ecx, dword ptr [esp + 0x2c]
+        cmp ecx, 1
+        jne plain1
+        mov edx, dword ptr [esp + 0x11]
+        xor eax, eax
+        mov ah, byte ptr [esp + 0x10]
+        and edx, 0xff
+        or eax, edx
+        mov edx, dword ptr [esp + 0x12]
+        shl eax, 8
+        and edx, 0xff
+        or eax, edx
+        mov edx, dword ptr [esp + 0x13]
+        shl eax, 8
+        and edx, 0xff
+        or eax, edx
+        jmp store1
+    plain1:
+        mov eax, dword ptr [esp + 0x10]
+    store1:
+        xor ebp, ebp
+        mov dword ptr [esi], eax
+        mov dword ptr [esi + 4], ebp
+        mov ebx, dword ptr [esp + 0x14]
+        cmp ecx, 1
+        jne plain2
+        mov eax, dword ptr [esp + 0x15]
+        mov ecx, dword ptr [esp + 0x16]
+        and ebx, 0xff
+        mov edx, dword ptr [esp + 0x17]
+        shl ebx, 8
+        and eax, 0xff
+        and ecx, 0xff
+        or ebx, eax
+        and edx, 0xff
+        shl ebx, 8
+        or ebx, ecx
+        shl ebx, 8
+        or ebx, edx
+    plain2:
+        cmp ebx, ebp
+        jbe done_loop
+    loop_top:
+        mov eax, dword ptr [esp + 0x30]
+        lea ecx, [esp + 0x1c]
+        push eax
+        push 1
+        push 8
+        push ecx
+        call ext_0086D0A0
+        add esp, 0x10
+        cmp eax, 1
+        jne fail_b
+        push esi
+        call ext_0085A3E0
+        mov edi, eax
+        add esp, 4
+        cmp edi, -1
+        je fail_d
+        mov ecx, dword ptr [esp + 0x2c]
+        cmp ecx, 1
+        jne plain3
+        mov edx, dword ptr [esp + 0x1d]
+        xor eax, eax
+        mov ah, byte ptr [esp + 0x1c]
+        and edx, 0xff
+        or eax, edx
+        mov edx, dword ptr [esp + 0x1e]
+        shl eax, 8
+        and edx, 0xff
+        or eax, edx
+        mov edx, dword ptr [esp + 0x1f]
+        shl eax, 8
+        and edx, 0xff
+        or eax, edx
+        jmp store2
+    plain3:
+        mov eax, dword ptr [esp + 0x1c]
+    store2:
+        mov edx, dword ptr [esi + 8]
+        cmp ecx, 1
+        mov dword ptr [edx + edi * 8], eax
+        mov eax, dword ptr [esp + 0x20]
+        jne plain4
+        mov ecx, dword ptr [esp + 0x21]
+        mov edx, dword ptr [esp + 0x22]
+        and eax, 0xff
+        and ecx, 0xff
+        shl eax, 8
+        or eax, ecx
+        mov ecx, dword ptr [esp + 0x23]
+        shl eax, 8
+        and edx, 0xff
+        and ecx, 0xff
+        or eax, edx
+        shl eax, 8
+        or eax, ecx
+    plain4:
+        mov edx, dword ptr [esi + 8]
+        inc ebp
+        cmp ebp, ebx
+        mov dword ptr [edx + edi * 8 + 4], eax
+        jb loop_top
+    done_loop:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0x18
+        ret
+    fail_b:
+        mov eax, dword ptr [esp + 0x34]
+        push edi
+        push eax
+        mov esi, 0x20
+        call ext_0085A130
+        add esp, 8
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret
+    fail_d:
+        mov ecx, dword ptr [esp + 0x34]
+        push -1
+        push ecx
+        mov esi, 0xc
+        call ext_0085A130
+        add esp, 8
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x18
+        ret
+    fail_c:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0xc
+        pop ebx
+        add esp, 0x18
+        ret
+    }
+}
