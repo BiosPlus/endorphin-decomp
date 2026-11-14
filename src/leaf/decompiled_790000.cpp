@@ -680,3 +680,108 @@ extern "C" __declspec(naked) void __fastcall fn_0079BAA0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0079AC80();
+extern "C" void ext_0079B140();
+extern "C" void ext_007B1920();
+extern "C" int mem_009241FC;
+extern "C" int mem_00924190;
+
+// [0x0079AE50] sub_0079AE50 (239 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0079AE50(int a1, int a2) {
+    __asm {
+        sub esp, 0x800
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x810]
+        push esi
+        push edi
+        push 0x99748c
+        push ebp
+        call ext_007B1920
+        mov esi, eax
+        add esp, 0x8
+        cmp esi, 0x102
+        jg L_79ae93
+        je L_79ae85
+        sub eax, 0x0
+        je L_79ae8c
+        sub eax, 0x2
+        jne L_79aea3
+L_79ae85:
+        mov ebx, 0x4
+        jmp L_79aeb5
+L_79ae8c:
+        mov ebx, 0x3
+        jmp L_79aeb5
+L_79ae93:
+        cmp esi, 0x202
+        je L_79aeb0
+        cmp esi, 0x302
+        je L_79aeb0
+L_79aea3:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        add esp, 0x800
+        ret
+L_79aeb0:
+        mov ebx, 0x2
+L_79aeb5:
+        mov edi, dword ptr [esp + 0x814]
+        lea eax, [esp + 0x10]
+        push 0x400
+        push eax
+        push -1
+        push edi
+        push 0
+        push 0xfde9
+        call dword ptr [mem_009241FC]
+        mov ecx, esi
+        push 0
+        neg ecx
+        sbb ecx, ecx
+        lea edx, [esp + 0x14]
+        and ecx, 0x7f
+        inc ecx
+        neg esi
+        sbb esi, esi
+        push ecx
+        and esi, 0x40000000
+        push ebx
+        push 0
+        add esi, 0x80000000
+        push 1
+        push esi
+        push edx
+        call dword ptr [mem_00924190]
+        cmp eax, -1
+        jne L_79af29
+        push edi
+        push 0xaafc30
+        push 0x99748c
+        call ext_0079B140
+        add esp, 0xc
+        xor eax, eax
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x800
+        ret
+L_79af29:
+        push ebp
+        push edi
+        push eax
+        call ext_0079AC80
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x800
+        ret
+    }
+}
