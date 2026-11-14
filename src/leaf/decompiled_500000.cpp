@@ -13589,3 +13589,89 @@ L_ret:
         ret 4
     }
 }
+
+// [0x00507490] sub_00507490 (173 bytes)
+extern "C" void ext_00506FE0();
+extern "C" int mem_00925134; /* "P{b" */
+
+extern "C" __declspec(naked) void __fastcall fn_00507490(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 18h]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 4]
+        test esi, esi
+        je L_empty
+        mov ebx, dword ptr [edi + 8]
+        mov ecx, ebx
+        sub ecx, esi
+        mov eax, 4ec4ec4fh
+        imul ecx
+        sar edx, 5
+        mov eax, edx
+        shr eax, 1fh
+        add eax, edx
+        jne L_nonempty
+    L_empty:
+        mov ebx, dword ptr [esp + 1ch]
+        xor esi, esi
+        jmp L_call
+    L_nonempty:
+        cmp esi, ebx
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+    L_chk1:
+        mov ebx, dword ptr [esp + 1ch]
+        test ebx, ebx
+        je L_bad2
+        cmp ebx, edi
+        je L_chk2
+    L_bad2:
+        call dword ptr [mem_00925134]
+    L_chk2:
+        mov ecx, ebp
+        sub ecx, esi
+        mov eax, 4ec4ec4fh
+        imul ecx
+        sar edx, 5
+        mov esi, edx
+        shr esi, 1fh
+        add esi, edx
+    L_call:
+        mov ecx, dword ptr [esp + 24h]
+        push ecx
+        push 1
+        push ebp
+        push ebx
+        mov ecx, edi
+        call ext_00506FE0
+        mov ebx, dword ptr [edi + 4]
+        cmp ebx, dword ptr [edi + 8]
+        jbe L_chk3
+        call dword ptr [mem_00925134]
+    L_chk3:
+        imul esi, esi, 68h
+        add esi, ebx
+        cmp esi, dword ptr [edi + 8]
+        mov dword ptr [esp + 20h], ebx
+        ja L_bad3
+        cmp esi, dword ptr [edi + 4]
+        jae L_out
+    L_bad3:
+        call dword ptr [mem_00925134]
+    L_out:
+        mov eax, dword ptr [esp + 18h]
+        mov dword ptr [eax], edi
+        pop edi
+        mov dword ptr [eax + 4], esi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 10h
+    }
+}
