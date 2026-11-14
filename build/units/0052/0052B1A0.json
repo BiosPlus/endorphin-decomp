@@ -892,5 +892,6 @@
     "0x0052EAE7",
     "0x0052EAFB"
   ],
-  "status": "todo"
+  "status": "deferred",
+  "skip_reason": "Unmatched after escalation through all eligible models in the chain"
 }
