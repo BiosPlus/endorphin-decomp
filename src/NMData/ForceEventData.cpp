@@ -815,3 +815,69 @@ extern "C" __declspec(naked) void __fastcall fn_004C6710(void* self) {
         ret
     }
 }
+
+// [0x004C6D70] NMData::ForceEventData::vfunc_34 (184 bytes)
+extern "C" void ext_00466910();
+extern "C" void ext_00466F00();
+extern "C" void ext_00493E40();
+extern "C" void ext_00528B90();
+extern "C" void ext_00661F70();
+
+extern "C" __declspec(naked) void __fastcall fn_004C6D70(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x88b8f0
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x64
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_00594000
+        lea edi, [eax + 0x1c8]
+        push edi
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0xc], edi
+        call ext_00466F00
+        mov eax, dword ptr [esi + 0x15c]
+        add eax, 1
+        push eax
+        mov ecx, edi
+        mov dword ptr [esp + 0x78], 0
+        call ext_00661F70
+        mov edx, dword ptr [esi + 4]
+        mov eax, dword ptr [mem_00B40640]
+        mov edx, dword ptr [edx + 0xc]
+        push 0
+        lea ecx, [esi + 4]
+        lea edi, [esi + 0xc]
+        push edi
+        push eax
+        call edx
+        push eax
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0xd8]
+        mov ecx, esi
+        call edx
+        mov ecx, dword ptr [esp + 0x88]
+        push eax
+        call ext_00493E40
+        mov esi, eax
+        mov dword ptr [esp + 0x7c], esi
+        push esi
+        mov ecx, edi
+        mov byte ptr [esp + 0x78], 1
+        call ext_00528B90
+        lea ecx, [esp + 8]
+        mov dword ptr [esp + 0x74], -1
+        call ext_00466910
+        mov ecx, dword ptr [esp + 0x6c]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x70
+        ret 4
+    }
+}
