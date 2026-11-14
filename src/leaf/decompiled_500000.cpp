@@ -9371,3 +9371,74 @@ extern "C" __declspec(naked) void* __fastcall fn_005060F0(void* self, int edx_un
         ret     0x4
     }
 }
+
+// [0x005063B0] sub_005063B0 (148 bytes)
+extern "C" void ext_005060F0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void* __cdecl fn_005063B0(void* first, void* last, void* dest) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x891cd1
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push ebx
+        mov ebx, dword ptr [ebp + 0xc]
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        push edi
+        mov edi, dword ptr [ebp + 0x8]
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], 0
+loop_top:
+        cmp edi, ebx
+        je short exit_path
+        mov dword ptr [ebp + 0xc], esi
+        mov dword ptr [ebp + 0x8], esi
+        test esi, esi
+        mov byte ptr [ebp - 0x4], 1
+        je short skip_ctor
+        push edi
+        mov ecx, esi
+        call ext_005060F0
+skip_ctor:
+        add esi, 0x68
+        mov byte ptr [ebp - 0x4], 0
+        mov dword ptr [ebp + 0x10], esi
+        add edi, 0x68
+        jmp short loop_top
+handler:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je short rethrow
+dtor_loop:
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax]
+        push 0
+        mov ecx, esi
+        call edx
+        add esi, 0x68
+        cmp esi, edi
+        jne short dtor_loop
+rethrow:
+        push 0
+        push 0
+        call ext_006A6DD2
+exit_path:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
