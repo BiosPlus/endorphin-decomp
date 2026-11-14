@@ -36,5 +36,7 @@
     "0x0064CF25",
     "0x0064CF32"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T14:05:23Z"
 }
