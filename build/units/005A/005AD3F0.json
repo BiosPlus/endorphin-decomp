@@ -155,5 +155,7 @@
     "0x005ADCF5",
     "0x005ADD09"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-14T14:20:39Z"
 }
