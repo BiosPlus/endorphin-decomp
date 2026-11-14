@@ -52,3 +52,46 @@ extern "C" void __fastcall fn_005F3330(void* self, int edx_unused, void* a1) {
     ((void (__cdecl*)(void*, int*))ext_00427640)((char*)self + 0x2f8, &val);
     *((unsigned char*)self + 0x178) = 1;
 }
+
+// [0x005EC250] NMData::RPROJointData::vfunc_22 (80 bytes)
+extern "C" void ext_006404E0();
+extern "C" void ext_005EB5A0();
+extern "C" void ext_00640110();
+extern "C" void ext_00640A80();
+extern "C" int mem_00A9F1E4;
+extern "C" int mem_00A9F718;
+
+extern "C" __declspec(naked) void* __fastcall fn_005EC250(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F1E4]
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        mov ecx, ebx
+        call ext_006404E0
+        mov edi, eax
+        push edi
+        mov ecx, esi
+        call ext_005EB5A0
+        cmp byte ptr [esi + 0x2f8], 0x0
+        je done
+        mov ecx, dword ptr [mem_00A9F718]
+        push ecx
+        mov ecx, edi
+        call ext_00640110
+        movzx edx, byte ptr [esi + 0x2f8]
+        push edx
+        push eax
+        call ext_00640A80
+        add esp, 0x8
+    done:
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebx
+        ret 0x4
+    }
+}
