@@ -7593,3 +7593,79 @@ extern "C" __declspec(naked) void __fastcall fn_004C48B0(void* self) {
         ret     8
     }
 }
+
+// [0x004CA0C0] sub_004CA0C0 (217 bytes)
+extern "C" void ext_004C9860();
+extern "C" void ext_004C99C0();
+extern "C" void ext_004C9AC0();
+extern "C" void ext_004C9BC0();
+extern "C" void ext_004C9CC0();
+extern "C" void ext_004C9DC0();
+extern "C" void ext_004C9EC0();
+extern "C" void ext_004C9FC0();
+extern "C" int mem_00924FE4;
+extern "C" int mem_00928B5D;
+
+extern "C" __declspec(naked) void __fastcall fn_004CA0C0(void* self) {
+    __asm {
+        push ecx
+        call ext_004C9860
+        push 0x0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push offset mem_00928B5D
+        call dword ptr [mem_00924FE4]
+        call ext_004C99C0
+        add esp, 0x20
+        push 0x0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push offset mem_00928B5D
+        call dword ptr [mem_00924FE4]
+        call ext_004C9AC0
+        add esp, 0x20
+        push 0x0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push offset mem_00928B5D
+        call dword ptr [mem_00924FE4]
+        call ext_004C9BC0
+        add esp, 0x20
+        push 0x0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push offset mem_00928B5D
+        call dword ptr [mem_00924FE4]
+        call ext_004C9CC0
+        add esp, 0x20
+        push 0x0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push offset mem_00928B5D
+        call dword ptr [mem_00924FE4]
+        call ext_004C9DC0
+        add esp, 0x20
+        push 0x0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push offset mem_00928B5D
+        call dword ptr [mem_00924FE4]
+        call ext_004C9EC0
+        add esp, 0x20
+        push 0x0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push offset mem_00928B5D
+        call dword ptr [mem_00924FE4]
+        call ext_004C9FC0
+        add esp, 0x24
+        ret
+    }
+}
