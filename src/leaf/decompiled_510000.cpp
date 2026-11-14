@@ -7726,3 +7726,65 @@ extern "C" __declspec(naked) int __cdecl fn_0051F440(int a1, int a2, int a3, int
         ret
     }
 }
+
+// [0x0051F840] sub_0051F840 (127 bytes)
+extern "C" void ext_0051EC40();
+extern "C" void ext_0051F270();
+extern "C" __declspec(naked) void __fastcall fn_0051F840(void* self, int edx_unused, void* a1, int a2, int a3, int a4, int a5) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        test esi, esi
+        mov ebp, ecx
+        je L_0051F852
+        cmp esi, dword ptr [esp + 0x18]
+        je L_0051F858
+    L_0051F852:
+        call dword ptr [mem_00925134]
+    L_0051F858:
+        mov edx, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [esp + 0x14]
+        cmp ecx, edx
+        je L_0051F8B1
+        mov eax, dword ptr [ebp + 0x8]
+        push ebx
+        push edi
+        mov byte ptr [esp + 0x20], 0x0
+        mov esi, dword ptr [esp + 0x20]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        push esi
+        push ecx
+        push eax
+        push edx
+        call ext_0051F270
+        mov ebx, dword ptr [ebp + 0x8]
+        mov edi, eax
+        add esp, 0x18
+        cmp edi, ebx
+        mov esi, edi
+        je L_0051F8A4
+    L_0051F893:
+        mov ecx, esi
+        call ext_0051EC40
+        add esi, 0xc0
+        cmp esi, ebx
+        jne L_0051F893
+    L_0051F8A4:
+        mov ecx, dword ptr [esp + 0x1c]
+        mov esi, dword ptr [esp + 0x18]
+        mov dword ptr [ebp + 0x8], edi
+        pop edi
+        pop ebx
+    L_0051F8B1:
+        mov eax, dword ptr [esp + 0x0c]
+        mov dword ptr [eax], esi
+        pop esi
+        mov dword ptr [eax + 0x4], ecx
+        pop ebp
+        ret 0x14
+    }
+}
