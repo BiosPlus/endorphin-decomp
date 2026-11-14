@@ -14283,3 +14283,84 @@ L_done_006746D0:
         ret
     }
 }
+
+// [0x00679E10] sub_00679E10 (149 bytes)
+extern "C" void ext_0068A630();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_00679E10(void* self) {
+    __asm {
+        push ecx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x68]
+        xor ebp, ebp
+        cmp eax, ebp
+        push edi
+        jne L_679E25
+        mov dword ptr [esp + 0xc], ebp
+        jmp L_679E31
+L_679E25:
+        mov ecx, dword ptr [esi + 0x6c]
+        sub ecx, eax
+        sar ecx, 2
+        mov dword ptr [esp + 0xc], ecx
+L_679E31:
+        xor edi, edi
+        cmp dword ptr [esp + 0xc], ebp
+        jbe L_679EA0
+        push ebx
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+L_679E40:
+        mov eax, dword ptr [esi + 0x58]
+        test eax, eax
+        je L_679E63
+        mov ecx, dword ptr [esi + 0x5c]
+        sub ecx, eax
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jb L_679E69
+L_679E63:
+        call dword ptr [mem_00925134]
+L_679E69:
+        mov ebx, dword ptr [esi + 0x58]
+        mov ecx, dword ptr [esi + 0x68]
+        add ebx, ebp
+        test ecx, ecx
+        je L_679E81
+        mov eax, dword ptr [esi + 0x6c]
+        sub eax, ecx
+        sar eax, 2
+        cmp edi, eax
+        jb L_679E87
+L_679E81:
+        call dword ptr [mem_00925134]
+L_679E87:
+        mov eax, dword ptr [esi + 0x68]
+        mov ecx, dword ptr [eax + 4 * edi]
+        push ebx
+        call ext_0068A630
+        add edi, 1
+        add ebp, 0x1c
+        cmp edi, dword ptr [esp + 0x10]
+        jb L_679E40
+        pop ebx
+L_679EA0:
+        pop edi
+        pop esi
+        pop ebp
+        pop ecx
+        ret
+    }
+}
