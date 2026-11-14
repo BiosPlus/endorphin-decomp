@@ -365,3 +365,61 @@ extern "C" __declspec(naked) void __fastcall fn_004D2A20(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x004D37E0] NMData::TransitionEventData::vfunc_88 (149 bytes)
+extern "C" void ext_004D2BE0();
+extern "C" void ext_004D3370();
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void __fastcall fn_004D37E0(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        push 0x1d4
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0xc], eax
+        test eax, eax
+        mov dword ptr [esp + 0x18], 0x0
+        je L_null
+        mov ecx, eax
+        call ext_004D2BE0
+        mov ebx, eax
+        jmp L_cont
+    L_null:
+        xor ebx, ebx
+    L_cont:
+        mov edi, dword ptr [esi + 0x18c]
+        cmp ebx, edi
+        mov dword ptr [esp + 0x18], 0xffffffff
+        je L_skip
+        test edi, edi
+        je L_skip
+        mov ecx, edi
+        call ext_004D2B40
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+    L_skip:
+        push esi
+        mov ecx, ebx
+        mov dword ptr [esi + 0x18c], ebx
+        call ext_004D3370
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        mov dword ptr [esi + 0x184], 0x7fffffff
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
