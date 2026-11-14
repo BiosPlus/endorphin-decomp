@@ -13453,3 +13453,296 @@ extern "C" __declspec(naked) void __fastcall fn_00622DE0(void* self) {
         ret 0x10
     }
 }
+
+// [0x0062C160] sub_0062C160 (646 bytes)
+extern "C" int mem_008AD748;
+extern "C" void ext_00405FB0();
+extern "C" void ext_00480310();
+extern "C" void ext_0062B6F0();
+extern "C" void ext_0062B800();
+extern "C" void ext_0062BA60();
+extern "C" void ext_0062BD30();
+extern "C" void ext_0062BF30();
+extern "C" void ext_0062C010();
+extern "C" void ext_0062C0A0();
+extern "C" void ext_0062C0E0();
+extern "C" void ext_0062C130();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_0062C160(void* self, int edx_unused) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push offset mem_008AD748
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 1ch
+        mov eax, dword ptr [ebp + 0x14]
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        mov dword ptr [ebp - 0x10], esp
+        push eax
+        lea ecx, [ebp - 0x28]
+        mov dword ptr [ebp - 0x14], esi
+        call ext_0062B800
+        mov ecx, dword ptr [esi + 0x4]
+        xor eax, eax
+        cmp ecx, eax
+        mov dword ptr [ebp - 0x4], eax
+        jne L_62C1A2
+        xor ebx, ebx
+        jmp L_62C1AA
+L_62C1A2:
+        mov ebx, dword ptr [esi + 0xc]
+        sub ebx, ecx
+        sar ebx, 4
+L_62C1AA:
+        mov edi, dword ptr [ebp + 0x10]
+        cmp edi, eax
+        je L_62C3C4
+        cmp ecx, eax
+        je L_62C1C1
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 4
+L_62C1C1:
+        mov edx, 0fffffffh
+        sub edx, eax
+        cmp edx, edi
+        jae L_62C1D1
+        call ext_00405FB0
+L_62C1D1:
+        test ecx, ecx
+        jne L_62C1D9
+        xor eax, eax
+        jmp L_62C1E1
+L_62C1D9:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 4
+L_62C1E1:
+        add eax, edi
+        cmp ebx, eax
+        jae L_62C302
+        mov eax, ebx
+        shr eax, 1
+        mov edx, 0fffffffh
+        sub edx, eax
+        cmp edx, ebx
+        jae L_62C1FE
+        xor ebx, ebx
+        jmp L_62C200
+L_62C1FE:
+        add ebx, eax
+L_62C200:
+        test ecx, ecx
+        jne L_62C208
+        xor eax, eax
+        jmp L_62C210
+L_62C208:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 4
+L_62C210:
+        add eax, edi
+        cmp ebx, eax
+        jae L_62C229
+        test ecx, ecx
+        jne L_62C21E
+        xor eax, eax
+        jmp L_62C226
+L_62C21E:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 4
+L_62C226:
+        lea ebx, [eax + edi]
+L_62C229:
+        push 0
+        push ebx
+        call ext_00480310
+        mov ecx, dword ptr [esi + 0x4]
+        mov byte ptr [ebp - 0x18], 0
+        mov edx, dword ptr [ebp - 0x18]
+        push edx
+        mov dword ptr [ebp + 0x10], eax
+        mov edx, dword ptr [ebp + 0x10]
+        push edx
+        push esi
+        push eax
+        mov dword ptr [ebp + 0x14], eax
+        mov eax, dword ptr [ebp + 0xc]
+        push eax
+        push ecx
+        mov byte ptr [ebp - 0x4], 1
+        call ext_0062BD30
+        add esp, 20h
+        lea ecx, [ebp - 0x28]
+        push ecx
+        push edi
+        push eax
+        mov ecx, esi
+        mov dword ptr [ebp + 0x10], eax
+        call ext_0062C0A0
+        mov ecx, dword ptr [esi + 0x8]
+        mov byte ptr [ebp - 0x18], 0
+        mov edx, dword ptr [ebp - 0x18]
+        push edx
+        mov dword ptr [ebp + 0x10], eax
+        mov edx, dword ptr [ebp + 0x10]
+        push edx
+        push esi
+        push eax
+        mov eax, dword ptr [ebp + 0xc]
+        push ecx
+        push eax
+        call ext_0062BD30
+        mov ecx, dword ptr [esi + 0x4]
+        add esp, 18h
+        test ecx, ecx
+        mov dword ptr [ebp - 0x4], 0
+        jne L_62C29C
+        xor eax, eax
+        jmp L_62C2A4
+L_62C29C:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 4
+L_62C2A4:
+        add edi, eax
+        test ecx, ecx
+        je L_62C2C5
+        mov edx, dword ptr [ebp + 0x10]
+        mov eax, dword ptr [esi + 0x8]
+        push edx
+        push esi
+        push eax
+        push ecx
+        call ext_0062C010
+        mov eax, dword ptr [esi + 0x4]
+        push eax
+        call ext_006A5C5C
+        add esp, 14h
+L_62C2C5:
+        mov eax, dword ptr [ebp + 0x14]
+        shl ebx, 4
+        add ebx, eax
+        shl edi, 4
+        add edi, eax
+        mov dword ptr [esi + 0xc], ebx
+        mov dword ptr [esi + 0x8], edi
+        mov dword ptr [esi + 0x4], eax
+        jmp L_62C3C4
+        // 0x62C2E0: unreferenced EH-path block (kept for byte parity)
+        mov eax, dword ptr [ebp + 0x10]
+        mov esi, dword ptr [ebp + 0x14]
+        mov ecx, dword ptr [ebp - 0x14]
+        push eax
+        push esi
+        call ext_0062C0E0
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+        push 0
+        push 0
+        call ext_006A6DD2
+L_62C302:
+        mov eax, dword ptr [esi + 0x8]
+        mov ebx, dword ptr [ebp + 0xc]
+        mov ecx, eax
+        sub ecx, ebx
+        sar ecx, 4
+        cmp ecx, edi
+        mov dword ptr [ebp - 0x18], eax
+        jae L_62C38C
+        mov ecx, edi
+        shl ecx, 4
+        mov dword ptr [ebp + 0x14], ecx
+        add ecx, ebx
+        push ecx
+        push eax
+        push ebx
+        mov ecx, esi
+        call ext_0062C130
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, eax
+        sub ecx, ebx
+        sar ecx, 4
+        lea edx, [ebp - 0x28]
+        push edx
+        sub edi, ecx
+        push edi
+        push eax
+        mov ecx, esi
+        mov byte ptr [ebp - 0x4], 3
+        call ext_0062C0A0
+        mov eax, dword ptr [ebp + 0x14]
+        add dword ptr [esi + 0x8], eax
+        mov esi, dword ptr [esi + 0x8]
+        lea edx, [ebp - 0x28]
+        push edx
+        sub esi, eax
+        push esi
+        push ebx
+        mov dword ptr [ebp - 0x4], 0
+        call ext_0062BA60
+        add esp, 0ch
+        jmp L_62C3C4
+        // 0x62C369: unreferenced EH-path block (kept for byte parity)
+        mov ecx, dword ptr [ebp - 0x14]
+        mov eax, dword ptr [ebp + 0x10]
+        mov edx, dword ptr [ecx + 0x8]
+        shl eax, 4
+        add edx, eax
+        push edx
+        mov edx, dword ptr [ebp + 0xc]
+        add eax, edx
+        push eax
+        call ext_0062C0E0
+        push 0
+        push 0
+        call ext_006A6DD2
+L_62C38C:
+        shl edi, 4
+        mov ecx, edi
+        push eax
+        mov edi, eax
+        sub edi, ecx
+        push eax
+        mov dword ptr [ebp + 0x14], ecx
+        push edi
+        mov ecx, esi
+        call ext_0062C130
+        mov dword ptr [esi + 0x8], eax
+        mov eax, dword ptr [ebp - 0x18]
+        push eax
+        push edi
+        push ebx
+        call ext_0062BF30
+        mov ecx, dword ptr [ebp + 0x14]
+        lea edx, [ebp - 0x28]
+        push edx
+        lea eax, [ecx + ebx]
+        push eax
+        push ebx
+        call ext_0062BA60
+        add esp, 18h
+L_62C3C4:
+        lea ecx, [ebp - 0x28]
+        mov dword ptr [ebp - 0x4], 0ffffffffh
+        call ext_0062B6F0
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 10h
+    }
+}
