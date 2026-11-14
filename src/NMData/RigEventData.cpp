@@ -605,3 +605,66 @@ extern "C" __declspec(naked) void* __fastcall fn_004D4310(void* self, int edx_un
         ret	0x4
     }
 }
+
+extern "C" void ext_004DC370();
+extern "C" void ext_00493E40();
+extern "C" void ext_00528B90();
+extern "C" int mem_00B40640;
+
+// [0x004DC450] NMData::RigEventData::vfunc_34 (151 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004DC450(void* self, int edx_unused, void* a1) {
+    __asm {
+        push    -1
+        push    0x88d648
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        push    ecx
+        push    esi
+        push    edi
+        mov     esi, ecx
+        call    ext_004DC370
+        mov     dword ptr [esp + 0x8], 0
+        test    esi, esi
+        mov     dword ptr [esp + 0x14], 0
+        je      L_null
+        lea     eax, [esi + 0xc]
+        jmp     L_cont
+    L_null:
+        xor     eax, eax
+    L_cont:
+        mov     edx, dword ptr [mem_00B40640]
+        push    0
+        push    eax
+        mov     eax, dword ptr [esi + 4]
+        mov     eax, dword ptr [eax + 0xc]
+        lea     ecx, [esi + 4]
+        push    edx
+        call    eax
+        mov     edx, dword ptr [esi]
+        push    eax
+        mov     eax, dword ptr [edx + 0xd8]
+        mov     ecx, esi
+        call    eax
+        mov     ecx, dword ptr [esp + 0x28]
+        push    eax
+        call    ext_00493E40
+        mov     edi, eax
+        test    edi, edi
+        mov     dword ptr [esp + 8], edi
+        je      L_done
+        push    edi
+        lea     ecx, [esi + 0xc]
+        call    ext_00528B90
+        add     esi, 0x348
+        mov     dword ptr [edi + 0x20], esi
+    L_done:
+        mov     ecx, dword ptr [esp + 0xc]
+        mov     eax, edi
+        pop     edi
+        pop     esi
+        mov     fs:[0], ecx
+        add     esp, 0x10
+        ret     4
+    }
+}
