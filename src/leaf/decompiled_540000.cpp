@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/leaf/decompiled_540000.cpp
+extern "C" void ext_0054F420();
+extern "C" int mem_00925134;
 
-// [0x00543530] sub_00543530 (21 bytes)
+extern "C" int mem_00925134;
 extern "C" __declspec(naked) void __fastcall fn_00543530(void* self) {
     __asm {
         mov eax, dword ptr [ecx]
@@ -10568,5 +10570,88 @@ L_ok:
         pop esi
         add esp, 8
         ret 4
+    }
+}
+
+// [0x0054F6F0] sub_0054F6F0 (173 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0054F6F0(void* self, void* dummy, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x18]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x4]
+        test esi, esi
+        je L_0054F71C
+        mov ebx, dword ptr [edi + 0x8]
+        mov ecx, ebx
+        sub ecx, esi
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        jne L_0054F724
+    L_0054F71C:
+        mov ebx, dword ptr [esp + 0x1c]
+        xor esi, esi
+        jmp L_0054F755
+    L_0054F724:
+        cmp esi, ebx
+        jbe L_0054F72E
+        call dword ptr [mem_00925134]
+    L_0054F72E:
+        mov ebx, dword ptr [esp + 0x1c]
+        test ebx, ebx
+        je L_0054F73A
+        cmp ebx, edi
+        je L_0054F740
+    L_0054F73A:
+        call dword ptr [mem_00925134]
+    L_0054F740:
+        mov ecx, ebp
+        sub ecx, esi
+        mov eax, 0x4ec4ec4f
+        imul ecx
+        sar edx, 0x5
+        mov esi, edx
+        shr esi, 0x1f
+        add esi, edx
+    L_0054F755:
+        mov ecx, dword ptr [esp + 0x24]
+        push ecx
+        push 0x1
+        push ebp
+        push ebx
+        mov ecx, edi
+        call ext_0054F420
+        mov ebx, dword ptr [edi + 0x4]
+        cmp ebx, dword ptr [edi + 0x8]
+        jbe L_0054F773
+        call dword ptr [mem_00925134]
+    L_0054F773:
+        imul esi, esi, 0x68
+        add esi, ebx
+        cmp esi, dword ptr [edi + 0x8]
+        mov dword ptr [esp + 0x20], ebx
+        ja L_0054F786
+        cmp esi, dword ptr [edi + 0x4]
+        jae L_0054F78C
+    L_0054F786:
+        call dword ptr [mem_00925134]
+    L_0054F78C:
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [eax], edi
+        pop edi
+        mov dword ptr [eax + 0x4], esi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x10
     }
 }
