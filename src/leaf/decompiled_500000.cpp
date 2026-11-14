@@ -13934,3 +13934,98 @@ extern "C" __declspec(naked) unsigned char __fastcall fn_00502060(void* self, in
         ret 4
     }
 }
+
+// [0x00503FC0] sub_00503FC0 (174 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00503FC0(void* self) {
+    extern int mem_00925134;
+    void ext_00503BC0();
+    void ext_00503DF0();
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        push edi
+        jne L_00503FD1
+        xor eax, eax
+        jmp L_00503FD9
+    L_00503FD1:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x3
+    L_00503FD9:
+        mov ebx, dword ptr [esp + 0x14]
+        cmp eax, ebx
+        jae L_00504016
+        test ecx, ecx
+        jne L_00503FE9
+        xor edi, edi
+        jmp L_00503FF1
+    L_00503FE9:
+        mov edi, dword ptr [esi + 0x8]
+        sub edi, ecx
+        sar edi, 0x3
+    L_00503FF1:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp ecx, ebp
+        jbe L_00503FFE
+        call dword ptr [mem_00925134]
+    L_00503FFE:
+        lea eax, [esp + 0x18]
+        push eax
+        sub ebx, edi
+        push ebx
+        push ebp
+        push esi
+        mov ecx, esi
+        call ext_00503DF0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0xc
+    L_00504016:
+        test ecx, ecx
+        je L_00504067
+        mov ebp, dword ptr [esi + 0x8]
+        mov eax, ebp
+        sub eax, ecx
+        sar eax, 0x3
+        cmp ebx, eax
+        jae L_00504067
+        cmp ecx, ebp
+        jbe L_00504032
+        call dword ptr [mem_00925134]
+    L_00504032:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_00504040
+        call dword ptr [mem_00925134]
+    L_00504040:
+        mov dword ptr [esp + 0x1c], edi
+        lea edi, [edi + 8*ebx]
+        cmp edi, dword ptr [esi + 0x8]
+        ja L_00504051
+        cmp edi, dword ptr [esi + 0x4]
+        jae L_00504057
+    L_00504051:
+        call dword ptr [mem_00925134]
+    L_00504057:
+        push ebp
+        push esi
+        push edi
+        push esi
+        lea ecx, [esp + 0x28]
+        push ecx
+        mov ecx, esi
+        call ext_00503BC0
+    L_00504067:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0xc
+    }
+}
