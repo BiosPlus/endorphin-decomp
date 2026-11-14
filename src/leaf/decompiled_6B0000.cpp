@@ -8550,3 +8550,90 @@ extern "C" __declspec(naked) void __fastcall fn_006BCF30(void* self) {
         ret     0x4
     }
 }
+
+// [0x006BAC80] sub_006BAC80 (256 bytes)
+extern "C" void ext_006B9D10();
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9EC0();
+extern "C" void ext_006D57D0();
+extern "C" void ext_006E6350();
+extern "C" void ext_006E7460();
+
+extern "C" __declspec(naked) void __fastcall fn_006BAC80(void* self, int edx_unused, int a1) {
+    __asm {
+        push -1
+        push 0x8b9073
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x98
+        push esi
+        mov esi, ecx
+        lea ecx, [esp + 0x4]
+        call ext_006B9D10
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        mov dword ptr [esp + 0xa4], 0x0
+        call dword ptr [eax + 0x8]
+        dec eax
+        cmp eax, 0xb
+        ja L_default
+        jmp dword ptr [eax * 4 + 0x6bad80]
+L_c0:
+        push 0xaa8704
+        jmp L_common
+L_c1:
+        push 0xaa86f8
+        jmp L_common
+L_c2:
+        push 0xaa86ec
+        jmp L_common
+L_c3:
+        push 0xaa86e4
+        jmp L_common
+L_c4:
+        push 0xaa86d8
+        jmp L_common
+L_c5:
+        push 0xaa86c8
+        jmp L_common
+L_c6:
+        push 0xb5d2c0
+        jmp L_common
+L_c7:
+        push 0xaa86c0
+        jmp L_common
+L_c8:
+        push 0xaa86ac
+L_common:
+        lea ecx, [esp + 0x8]
+        call ext_006B9EC0
+L_default:
+        mov ecx, dword ptr [esp + 0xac]
+        push ecx
+        lea ecx, [esp + 0x8]
+        call ext_006E7460
+        lea edx, [esp + 0x54]
+        push eax
+        push edx
+        call ext_006D57D0
+        add esp, 0xc
+        mov ecx, eax
+        mov byte ptr [esp + 0xa4], 0x1
+        call ext_006E7460
+        push eax
+        lea ecx, [esi + 0x4]
+        call ext_006E6350
+        lea ecx, [esp + 0x50]
+        mov byte ptr [esp + 0xa4], 0x0
+        call ext_006B9D70
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0xa4], 0xffffffff
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x9c]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xa4
+        ret 0x4
+    }
+}
