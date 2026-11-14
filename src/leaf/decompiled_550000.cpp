@@ -11992,3 +11992,78 @@ extern "C" __declspec(naked) void* __fastcall fn_0055E050(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0055DF80] sub_0055DF80 (201 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0055DF80(void* self, int edx_unused, const void* key) {
+    __asm {
+        push -1
+        push 0x89b14a
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x24
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        xor ebx, ebx
+        mov dword ptr [esp + 0xc], ebx
+        mov ecx, dword ptr [esi + 0x470]
+        push edi
+        call ext_006BC370
+        mov ebp, dword ptr [esp + 0x44]
+        push ebx
+        push 1
+        mov ecx, ebp
+        mov edi, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        mov ecx, edi
+        call ext_006C2990
+        test eax, eax
+        mov dword ptr [esp + 0x14], eax
+        jne L_false
+        test edi, edi
+        je L_false
+        push edi
+        lea eax, [esp + 0x1c]
+        push eax
+        mov ecx, esi
+        call ext_0055DBD0
+        mov esi, eax
+        mov dword ptr [esp + 0x3c], ebx
+        mov ebx, 1
+        mov ecx, ebp
+        mov dword ptr [esp + 0x10], ebx
+        call dword ptr [mem_00924FF0]
+        push eax
+        push esi
+        call dword ptr [mem_00924FC0]
+        add esp, 8
+        test al, al
+        mov byte ptr [esp + 0x44], bl
+        jne L_cont
+    L_false:
+        mov byte ptr [esp + 0x44], 0
+    L_cont:
+        test bl, 1
+        mov dword ptr [esp + 0x3c], 0xffffffff
+        je L_skip
+        lea ecx, [esp + 0x18]
+        call dword ptr [mem_00924FF4]
+    L_skip:
+        cmp byte ptr [esp + 0x44], 0
+        mov eax, edi
+        jne L_ret
+        mov eax, dword ptr [esp + 0x14]
+    L_ret:
+        mov ecx, dword ptr [esp + 0x34]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x30
+        ret 0x4
+    }
+}
