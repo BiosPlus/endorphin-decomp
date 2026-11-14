@@ -4448,3 +4448,47 @@ loc_5B47EE:
         ret
     }
 }
+
+// [0x005B4800] sub_005B4800 (88 bytes)
+extern "C" void ext_005B47A0();
+
+extern "C" __declspec(naked) void* __cdecl fn_005B4800(void* a1, void* a2, void* a3) {
+    __asm {
+        sub esp, 8
+        mov edx, dword ptr [esp + 0x14]
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        xor al, al
+        mov byte ptr [esp + 0x10], al
+        mov ecx, dword ptr [esp + 0x10]
+        mov byte ptr [esp + 0xc], al
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push edx
+        push edi
+        push esi
+        push ebx
+        call ext_005B47A0
+        sub esi, ebx
+        mov eax, 0x2aaaaaab
+        imul esi
+        sar edx, 3
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        lea eax, [eax + 2*eax]
+        add esp, 0x18
+        shl eax, 4
+        add eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
