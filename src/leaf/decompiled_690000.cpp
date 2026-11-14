@@ -8489,3 +8489,76 @@ L_end_0069B790:
         ret 0x8
     }
 }
+
+extern "C" void ext_00493D90();
+extern "C" void ext_006404E0();
+extern "C" void ext_0067EC60();
+extern "C" void ext_0067EE10();
+extern "C" int mem_008B40D8;
+extern "C" int mem_00925134;
+
+// [0x00695D40] sub_00695D40 (179 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00695D40(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        and esp, -8
+        push -1
+        push offset mem_008B40D8
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov eax, dword ptr fs:[0x0]
+        push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr fs:[0x0], esp
+        sub esp, 0x10
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        lea ecx, [esp + 0x10]
+        call ext_0067EC60
+        mov esi, dword ptr [edi + 4]
+        cmp esi, dword ptr [edi + 8]
+        mov dword ptr [esp + 0x24], 0
+        jbe loc_695D82
+        call dword ptr [mem_00925134]
+    loc_695D82:
+        mov ebx, dword ptr [edi + 8]
+        cmp dword ptr [edi + 4], ebx
+        jbe loc_695D90
+        call dword ptr [mem_00925134]
+    loc_695D90:
+        cmp esi, ebx
+        je loc_695DCB
+        cmp esi, dword ptr [edi + 8]
+        jb loc_695D9F
+        call dword ptr [mem_00925134]
+    loc_695D9F:
+        mov eax, dword ptr [ebp + 0xc]
+        fld qword ptr [esi]
+        mov ecx, dword ptr [ebp + 8]
+        fstp qword ptr [esp + 0x10]
+        push eax
+        call ext_006404E0
+        push eax
+        lea ecx, [esp + 0x14]
+        call ext_0067EE10
+        cmp esi, dword ptr [edi + 8]
+        jb loc_695DC6
+        call dword ptr [mem_00925134]
+    loc_695DC6:
+        add esi, 8
+        jmp loc_695D82
+    loc_695DCB:
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x24], 0xffffffff
+        call ext_00493D90
+        mov ecx, dword ptr [esp + 0x1c]
+        mov eax, dword ptr [ebp + 8]
+        pop edi
+        pop esi
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // mov dword ptr fs:[0x0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 8
+    }
+}
