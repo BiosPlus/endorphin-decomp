@@ -825,3 +825,108 @@ extern "C" void* __fastcall fn_004DE2A0(void* self, int edx_unused, void* out, i
     ((void (__thiscall*)(void*, void*, int))ext_004C2070)(self, out, 0x40);
     return out;
 }
+
+extern "C" void ext_004C1DE0();
+extern "C" void ext_004C45F0();
+extern "C" void ext_00640110();
+extern "C" void ext_00640390();
+extern "C" void ext_00640A50();
+extern "C" void ext_00640A80();
+extern "C" void ext_0067EF60();
+extern "C" int mem_00A9F43C;
+extern "C" int mem_00A9F9C4;
+extern "C" int mem_00A9F61C;
+extern "C" int mem_00A9F488;
+extern "C" int mem_00A9F684;
+extern "C" int mem_00A9EDE8;
+
+// [0x004DDF00] NMData::AnimationEventData::vfunc_22 (279 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004DDF00(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov esi, ecx
+        call ext_004C1DE0
+        push 0x949da0
+        mov ecx, edi
+        call ext_00640110
+        movzx ecx, byte ptr [esi + 0x9d6]
+        push ecx
+        push eax
+        call ext_00640A80
+        mov edx, dword ptr [mem_00A9F43C]
+        add esp, 0x8
+        push edx
+        mov ecx, edi
+        call ext_00640110
+        movzx ecx, byte ptr [esi + 0x9d5]
+        push ecx
+        push eax
+        call ext_00640A80
+        mov edx, dword ptr [mem_00A9F9C4]
+        fld dword ptr [esi + 0x998]
+        add esp, 0x8
+        push edx
+        push 0x949d94
+        push ecx
+        fstp dword ptr [esp]
+        push edi
+        call ext_0067EF60
+        fld dword ptr [esi + 0x994]
+        mov eax, dword ptr [mem_00A9F61C]
+        mov ecx, dword ptr [mem_00A9F488]
+        add esp, 0x10
+        push eax
+        push ecx
+        push ecx
+        fstp dword ptr [esp]
+        push edi
+        call ext_0067EF60
+        add esp, 0x10
+        push 0x0
+        push edi
+        lea ecx, [esi + 0x18c]
+        call ext_004C45F0
+        mov edx, dword ptr [mem_00A9F684]
+        push edx
+        mov ecx, edi
+        call ext_00640110
+        mov ecx, dword ptr [esi + 0x9a0]
+        push ecx
+        push eax
+        call ext_00640A50
+        add esp, 0x8
+        push 0x949d7c
+        mov ecx, edi
+        call ext_00640110
+        mov edx, dword ptr [esi + 0x9a4]
+        push edx
+        push eax
+        call ext_00640A50
+        add esp, 0x8
+        push 0x949d68
+        mov ecx, edi
+        call ext_00640110
+        movzx ecx, byte ptr [esi + 0x990]
+        push ecx
+        push eax
+        call ext_00640A80
+        mov edx, dword ptr [mem_00A9EDE8]
+        add esp, 0x8
+        push 0x0
+        push edx
+        mov ecx, edi
+        call ext_00640390
+        mov edx, dword ptr [esi + 0x9e0]
+        lea ecx, [esi + 0x9e0]
+        push eax
+        mov eax, dword ptr [edx + 0x58]
+        call eax
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
