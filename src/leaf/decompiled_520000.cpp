@@ -5714,3 +5714,25 @@ extern "C" void* __fastcall fn_00520AE0(void* self, int edx_unused, void* other)
     ((void (__thiscall*)(void*, void*))ext_0051ED10)((char*)self + 0x158, (char*)other + 0x158);
     return self;
 }
+
+// [0x00528310] sub_00528310 (83 bytes)
+extern "C" void ext_0059A140();
+extern "C" int mem_00925134;
+extern "C" void __fastcall fn_00528310(void* self, int edx_unused, int val, int idx) {
+    int v = val;
+    int* p = (int*)self;
+    int begin = p[1];
+    int end = p[2];
+    typedef void (__cdecl *InvalidParamFn)();
+    InvalidParamFn invalid_param = *(InvalidParamFn*)&mem_00925134;
+    if ((unsigned int)begin > (unsigned int)end) {
+        invalid_param();
+    }
+    int local_iter[2];
+    local_iter[1] = begin;
+    int ptr = begin + idx * 4;
+    if ((unsigned int)ptr > (unsigned int)p[2] || (unsigned int)ptr < (unsigned int)p[1]) {
+        invalid_param();
+    }
+    ((void (__thiscall*)(void*, int*, void*, int, int*))ext_0059A140)(self, local_iter, self, ptr, &v);
+}
