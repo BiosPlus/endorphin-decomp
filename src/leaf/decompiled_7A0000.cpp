@@ -1340,3 +1340,168 @@ loc_7aa18b:
         ret
     }
 }
+
+// [0x007A3210] sub_007A3210 (511 bytes)
+extern "C" void ext_007A3170(void* a1);
+extern "C" int mem_00925208;
+extern "C" int mem_00997C31;
+extern "C" __declspec(naked) void __cdecl fn_007A3210(void** pp) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0Ch]
+        xor ebx, ebx
+        cmp dword ptr [esi], ebx
+        jne short L_has_mem
+        push 8B4h
+        call dword ptr [mem_00925208]
+        add esp, 4
+        mov dword ptr [esi], eax
+L_has_mem:
+        mov eax, dword ptr [esi]
+        mov byte ptr [eax], bl
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 1Ch], ebx
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 18h], ebx
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 14h], ebx
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 28h], ebx
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 24h], ebx
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 20h], ebx
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 34h], ebx
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 30h], ebx
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 2Ch], ebx
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 38h], ebx
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 3Ch], ebx
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 40h], ebx
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 44h], ebx
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 48h], ebx
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 4Ch], ebx
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 50h], 3F800000h
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 54h], 3
+        mov eax, dword ptr [esi]
+        mov cl, byte ptr [mem_00997C31]
+        mov byte ptr [eax + 58h], cl
+        mov edx, dword ptr [esi]
+        mov al, byte ptr [mem_00997C31]
+        mov byte ptr [edx + 60h], al
+        mov ecx, dword ptr [esi]
+        mov dl, byte ptr [mem_00997C31]
+        mov byte ptr [ecx + 59h], dl
+        mov eax, dword ptr [esi]
+        mov cl, byte ptr [mem_00997C31]
+        mov byte ptr [eax + 5Ah], cl
+        mov edx, dword ptr [esi]
+        mov al, byte ptr [mem_00997C31]
+        mov byte ptr [edx + 5Bh], al
+        mov ecx, dword ptr [esi]
+        mov dl, byte ptr [mem_00997C31]
+        mov byte ptr [ecx + 5Ch], dl
+        mov eax, dword ptr [esi]
+        mov cl, byte ptr [mem_00997C31]
+        mov byte ptr [eax + 820h], cl
+        mov edx, dword ptr [esi]
+        mov al, byte ptr [mem_00997C31]
+        mov byte ptr [edx + 5Dh], al
+        mov ecx, dword ptr [esi]
+        mov dl, byte ptr [mem_00997C31]
+        mov byte ptr [ecx + 5Eh], dl
+        mov eax, dword ptr [esi]
+        mov cl, byte ptr [mem_00997C31]
+        mov byte ptr [eax + 5Fh], cl
+        mov edx, dword ptr [esi]
+        mov al, byte ptr [mem_00997C31]
+        mov byte ptr [edx + 824h], al
+        mov ecx, dword ptr [esi]
+        mov dl, byte ptr [mem_00997C31]
+        mov byte ptr [ecx + 825h], dl
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 828h], 64h
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 82Ch], 1
+        mov edx, dword ptr [esi]
+        add edx, 64h
+        push edx
+        call ext_007A3170
+        mov eax, dword ptr [esi]
+        add eax, 0E8h
+        push eax
+        call ext_007A3170
+        mov ecx, dword ptr [esi]
+        add ecx, 16Ch
+        push ecx
+        call ext_007A3170
+        mov edx, dword ptr [esi]
+        add edx, 1F0h
+        push edx
+        call ext_007A3170
+        mov eax, dword ptr [esi]
+        add eax, 274h
+        push eax
+        call ext_007A3170
+        mov ecx, dword ptr [esi]
+        add ecx, 2F8h
+        push ecx
+        call ext_007A3170
+        mov edx, dword ptr [esi]
+        add edx, 79Ch
+        push edx
+        call ext_007A3170
+        mov eax, dword ptr [esi]
+        add eax, 830h
+        push eax
+        call ext_007A3170
+        mov ecx, dword ptr [esi]
+        add ecx, 37Ch
+        push ecx
+        call ext_007A3170
+        mov edx, dword ptr [esi]
+        add edx, 400h
+        push edx
+        call ext_007A3170
+        mov eax, dword ptr [esi]
+        add eax, 484h
+        push eax
+        call ext_007A3170
+        mov ecx, dword ptr [esi]
+        add ecx, 508h
+        push ecx
+        call ext_007A3170
+        mov edx, dword ptr [esi]
+        add edx, 58Ch
+        push edx
+        call ext_007A3170
+        mov eax, dword ptr [esi]
+        add eax, 610h
+        push eax
+        call ext_007A3170
+        mov ecx, dword ptr [esi]
+        add ecx, 694h
+        push ecx
+        call ext_007A3170
+        mov edx, dword ptr [esi]
+        add edx, 718h
+        push edx
+        call ext_007A3170
+        add esp, 40h
+        xor ax, ax
+        pop esi
+        pop ebx
+        ret
+    }
+}
