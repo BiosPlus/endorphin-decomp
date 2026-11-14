@@ -7827,3 +7827,124 @@ extern "C" __declspec(naked) void __fastcall fn_004A81A0(void* self) {
         ret
     }
 }
+
+// [0x004A6F10] sub_004A6F10 (422 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004A6F10(void* self, int edx_unused, const void* other) {
+    __asm {
+        push    -1
+        push    0x0088e68a
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        push    ecx
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x24]
+        mov     esi, ecx
+        push    edi
+        lea     ecx, [esi + 0x4]
+        mov     dword ptr [esp + 0x14], esi
+        mov     dword ptr [esi], 0x0094137c
+        call    ext_004E82C0
+        lea     ebx, [edi + 0x24]
+        lea     ebp, [esi + 0x24]
+        push    ebx
+        mov     ecx, ebp
+        mov     dword ptr [esp + 0x20], 0
+        mov     dword ptr [esi], 0x009413f4
+        call    ext_004A6970
+        movzx   eax, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], al
+        lea     ebx, [edi + 0x38]
+        lea     ebp, [esi + 0x38]
+        push    ebx
+        mov     ecx, ebp
+        mov     byte ptr [esp + 0x20], 1
+        call    ext_004A6970
+        movzx   ecx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], cl
+        lea     ebx, [edi + 0x4c]
+        lea     ebp, [esi + 0x4c]
+        push    ebx
+        mov     ecx, ebp
+        mov     byte ptr [esp + 0x20], 2
+        call    ext_004A6970
+        movzx   edx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], dl
+        lea     ebx, [edi + 0x60]
+        lea     ebp, [esi + 0x60]
+        push    ebx
+        mov     ecx, ebp
+        mov     byte ptr [esp + 0x20], 3
+        call    ext_004A6970
+        movzx   eax, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], al
+        lea     ebx, [edi + 0x74]
+        lea     ebp, [esi + 0x74]
+        push    ebx
+        mov     ecx, ebp
+        mov     byte ptr [esp + 0x20], 4
+        call    ext_004A6970
+        movzx   ecx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], cl
+        lea     ebx, [edi + 0x88]
+        lea     ebp, [esi + 0x88]
+        push    ebx
+        mov     ecx, ebp
+        mov     byte ptr [esp + 0x20], 5
+        call    ext_004A6970
+        movzx   edx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], dl
+        lea     ebx, [edi + 0x9c]
+        lea     ebp, [esi + 0x9c]
+        push    ebx
+        mov     ecx, ebp
+        mov     byte ptr [esp + 0x20], 6
+        call    ext_004A6970
+        movzx   eax, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], al
+        lea     ebx, [edi + 0xb0]
+        lea     ebp, [esi + 0xb0]
+        mov     byte ptr [esp + 0x1c], 7
+        push    ebx
+        mov     ecx, ebp
+        call    ext_004A6970
+        movzx   ecx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], cl
+        lea     ebx, [edi + 0xc4]
+        lea     ebp, [esi + 0xc4]
+        push    ebx
+        mov     ecx, ebp
+        mov     byte ptr [esp + 0x20], 8
+        call    ext_004A6970
+        movzx   edx, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], dl
+        lea     ebx, [edi + 0xd8]
+        lea     ebp, [esi + 0xd8]
+        push    ebx
+        mov     ecx, ebp
+        mov     byte ptr [esp + 0x20], 9
+        call    ext_004A6970
+        movzx   eax, byte ptr [ebx + 0x10]
+        mov     byte ptr [ebp + 0x10], al
+        mov     eax, esi
+        fld     dword ptr [edi + 0xec]
+        fstp    dword ptr [esi + 0xec]
+        fld     dword ptr [edi + 0xf0]
+        fstp    dword ptr [esi + 0xf0]
+        fld     dword ptr [edi + 0xf4]
+        fstp    dword ptr [esi + 0xf4]
+        movzx   ecx, byte ptr [edi + 0xf8]
+        pop     edi
+        mov     byte ptr [esi + 0xf8], cl
+        mov     ecx, dword ptr [esp + 0x10]
+        pop     esi
+        pop     ebp
+        pop     ebx
+        mov     fs:[0], ecx
+        add     esp, 0x10
+        ret     4
+    }
+}
