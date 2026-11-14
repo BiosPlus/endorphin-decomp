@@ -694,3 +694,66 @@ extern "C" __declspec(naked) void __fastcall fn_007B22B0(void* self) {
         ret
     }
 }
+
+// [0x007B3250] sub_007B3250 (111 bytes)
+extern "C" void ext_007AA510();
+extern "C" int mem_009251D8;
+
+extern "C" __declspec(naked) void __cdecl fn_007B3250(void* p) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0x8]
+        test edi, edi
+        jne L_7b326c
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7b32bd
+    L_7b326c:
+        mov eax, dword ptr [edi]
+        test eax, eax
+        je L_7b32bd
+        mov ecx, dword ptr [eax + 0x8]
+        push ebx
+        mov ebx, dword ptr [mem_009251D8]
+        test ecx, ecx
+        je L_7b32ae
+        mov ecx, dword ptr [eax + 0x4]
+        push esi
+        xor esi, esi
+        test ecx, ecx
+        jbe L_7b32a2
+    L_7b328a:
+        mov eax, dword ptr [eax + 0x8]
+        mov eax, dword ptr [eax + 4*esi]
+        test eax, eax
+        je L_7b329a
+        push eax
+        call ebx
+        add esp, 0x4
+    L_7b329a:
+        mov eax, dword ptr [edi]
+        inc esi
+        cmp esi, dword ptr [eax + 0x4]
+        jb L_7b328a
+    L_7b32a2:
+        mov ecx, dword ptr [edi]
+        mov edx, dword ptr [ecx + 0x8]
+        push edx
+        call ebx
+        add esp, 0x4
+        pop esi
+    L_7b32ae:
+        mov eax, dword ptr [edi]
+        push eax
+        call ebx
+        add esp, 0x4
+        mov dword ptr [edi], 0x0
+        pop ebx
+    L_7b32bd:
+        pop edi
+        ret
+    }
+}
