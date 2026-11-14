@@ -6143,3 +6143,23 @@ extern "C" __declspec(naked) void* __fastcall fn_0047A580(void* self, int edx_un
         ret 0x4
     }
 }
+
+extern "C" void ext_0046F920();
+extern "C" void ext_00472BA0();
+extern "C" void ext_00473940();
+extern "C" void ext_0067AE70();
+
+// [0x004744F0] sub_004744F0 (72 bytes)
+extern "C" void __fastcall fn_004744F0(void* self) {
+    char* s = (char*)self;
+    void* obj = s + 0x160;
+    do {
+        ((void (__thiscall*)(void*, int))ext_0067AE70)(obj, *(int*)(s + 0x148));
+        if (*(unsigned char*)(s + 0x12c) == 0) {
+            break;
+        }
+        ((void (__thiscall*)(void*))ext_00473940)(s);
+        ((void (__thiscall*)(void*))ext_00472BA0)(s);
+        ((void (__thiscall*)(void*))ext_0046F920)(s);
+    } while (*(unsigned char*)(s + 0x12c) != 0);
+}
