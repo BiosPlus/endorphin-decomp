@@ -18972,3 +18972,69 @@ fail_007C19A0:
         ret
     }
 }
+
+// [0x007C6DE0] sub_007C6DE0 (156 bytes)
+extern "C" void ext_007D59C0();
+extern "C" void ext_007D5CB0();
+
+extern "C" __declspec(naked) void* __cdecl fn_007C6DE0(void* a1, void* a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        push ebx
+        call ext_007CC9F0
+        mov edx, dword ptr [eax + 0x8]
+        add dword ptr [eax + 0x18], 1
+        mov esi, dword ptr [esp + 0x14]
+        xor ecx, ecx
+        add esp, 4
+        cmp edx, ecx
+        jne L_nonempty
+        mov dword ptr [esi + 0x4], esi
+        mov dword ptr [esi + 0x8], esi
+        jmp L_after
+L_nonempty:
+        mov edx, dword ptr [edx + 0x4]
+        mov dword ptr [esi + 0x4], edx
+        mov edx, dword ptr [eax + 0x8]
+        mov dword ptr [esi + 0x8], edx
+        mov edx, dword ptr [esi + 0x4]
+        mov dword ptr [edx + 0x8], esi
+        mov edx, dword ptr [esi + 0x8]
+        mov dword ptr [edx + 0x4], esi
+L_after:
+        fld dword ptr [eax + 0x8c]
+        mov dword ptr [eax + 0x8], esi
+        mov dword ptr [esi], eax
+        fstp dword ptr [esi + 0x1c]
+        mov eax, 0x99d160
+        lea edi, [esi + 0x44]
+        push edi
+        mov dword ptr [esi + 0x34], ecx
+        mov dword ptr [esi + 0x38], ecx
+        mov dword ptr [esi + 0x28], ecx
+        mov dword ptr [esi + 0x2c], ecx
+        mov dword ptr [esi + 0xc], ecx
+        mov dword ptr [esi + 0x20], 0xffffffff
+        mov dword ptr [esi + 0x7c], ecx
+        mov dword ptr [esi + 0x10], eax
+        mov dword ptr [esi + 0x14], eax
+        mov dword ptr [esi + 0x18], eax
+        mov dword ptr [esi + 0x30], ecx
+        mov word ptr [esi + 0x24], cx
+        mov dword ptr [esi + 0x3c], ecx
+        mov dword ptr [esi + 0x40], ecx
+        call ext_007D59C0
+        push ebx
+        push edi
+        call ext_007D5CB0
+        add esp, 0xc
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret
+    }
+}
