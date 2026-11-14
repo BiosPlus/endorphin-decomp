@@ -3862,3 +3862,57 @@ L_b3e:
         ret
     }
 }
+
+// [0x0080A8A0] sub_0080A8A0 (95 bytes)
+extern "C" int mem_00B62020;
+extern "C" void ext_0080AC50();
+extern "C" void ext_0080B670();
+extern "C" void ext_0080B530();
+extern "C" void ext_0080B610();
+
+extern "C" __declspec(naked) void __cdecl fn_0080A8A0() {
+    __asm {
+        mov eax, dword ptr [mem_00B62020]
+        push esi
+        test eax, eax
+        push edi
+        jne L_80a8bd
+        mov eax, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr [eax], 0
+        mov eax, 0x20
+        ret
+    L_80a8bd:
+        call ext_0080AC50
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, eax
+        test edi, edi
+        je L_80a8fa
+        mov ecx, dword ptr [esi + 4]
+        push ecx
+        call ext_0080B670
+        inc eax
+        push eax
+        call ext_0080B530
+        add esp, 8
+        mov dword ptr [edi], eax
+        test eax, eax
+        jne L_80a8ed
+        pop edi
+        mov eax, 3
+        pop esi
+        ret
+    L_80a8ed:
+        mov edx, dword ptr [esi + 4]
+        push edx
+        push eax
+        call ext_0080B610
+        add esp, 8
+    L_80a8fa:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
