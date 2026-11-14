@@ -916,3 +916,40 @@ extern "C" __declspec(naked) void __cdecl fn_007B7F20(unsigned short* out) {
         ret
     }
 }
+
+// [0x007BF4E0] sub_007BF4E0 (144 bytes)
+extern "C" void ext_007AF420();
+extern "C" __declspec(naked) void __fastcall fn_007BF4E0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        push 0x1
+        mov edi, dword ptr [esi + 0x1cc]
+        push 0x999c40
+        push esi
+        call ext_007AF420
+        mov eax, dword ptr [esi + 0x220]
+        add esp, 0xc
+        mov dword ptr [edi + 0x1c], eax
+        mov ecx, dword ptr [esi + 0x21c]
+        mov dword ptr [esi + 0x220], 0x7bfd40
+        mov dword ptr [edi + 0x20], ecx
+        mov edx, dword ptr [esi + 0x224]
+        mov dword ptr [esi + 0x21c], 0x7bfcf0
+        mov dword ptr [edi + 0x24], edx
+        mov eax, dword ptr [esi + 0x18c]
+        mov dword ptr [esi + 0x224], 0x7bfd80
+        mov dword ptr [edi + 0x28], eax
+        mov ecx, dword ptr [esi + 0x194]
+        mov dword ptr [esi + 0x18c], 0x7bf570
+        mov dword ptr [edi + 0x2c], ecx
+        mov dword ptr [esi + 0x194], 0x7bf6d0
+        mov dword ptr [edi], 0x1
+        mov dword ptr [edi + 0xc], 0x0
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret
+    }
+}
