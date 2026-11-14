@@ -12399,3 +12399,159 @@ loc_565d7c:
         ret     8
     }
 }
+
+// [0x0056BA90] sub_0056BA90 (403 bytes)
+extern "C" void ext_00556840();
+
+extern "C" __declspec(naked) void __fastcall fn_0056BA90(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 1Ch
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 28h]
+        push 0
+        push 0A36694h
+        push 0A2FBBCh
+        mov ebx, ecx
+        push 0
+        push edi
+        mov dword ptr [esp + 1Ch], ebx
+        call ext_006A6E9E
+        add esp, 14h
+        test eax, eax
+        jne L_BC1B
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 24h]
+        push ebp
+        push esi
+        mov ecx, edi
+        call edx
+        push eax
+        lea ecx, [ebx + 46Ch]
+        call ext_00567070
+        fldz
+        mov esi, dword ptr [edi + 1D4h]
+        fst dword ptr [esp + 28h]
+        test esi, esi
+        fst dword ptr [esp + 24h]
+        fstp dword ptr [esp + 20h]
+        mov ebp, eax
+        je L_BAFE
+        mov eax, dword ptr [edi + 1D8h]
+        mov ecx, eax
+        sub ecx, esi
+        sar ecx, 2
+        jne L_BB2C
+    L_BAFE:
+        test ebp, ebp
+        je L_BC0A
+        fld dword ptr [ebp + 60h]
+        fstp dword ptr [esp + 30h]
+        fld dword ptr [ebp + 54h]
+        fld dword ptr [esp + 30h]
+        fld st(0)
+        fmulp st(2), st
+        fxch st(1)
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [ebp + 58h]
+        fmul st, st(1)
+        fstp dword ptr [esp + 18h]
+        fmul dword ptr [ebp + 5Ch]
+        jmp L_BB96
+    L_BB2C:
+        cmp esi, eax
+        mov ebx, dword ptr [mem_00925134]
+        jbe L_BB38
+        call ebx
+    L_BB38:
+        cmp esi, dword ptr [edi + 1D8h]
+        jb L_BB42
+        call ebx
+    L_BB42:
+        mov edx, dword ptr [edi + 4]
+        mov esi, dword ptr [esi]
+        mov eax, dword ptr [edx + 2Ch]
+        lea ecx, [edi + 4]
+        add esi, 4
+        call eax
+        mov edx, dword ptr [esi]
+        mov ebx, eax
+        mov eax, dword ptr [edx + 2Ch]
+        mov ecx, esi
+        call eax
+        fld dword ptr [eax + 30h]
+        fstp dword ptr [esp + 14h]
+        add eax, 30h
+        fld dword ptr [eax + 4]
+        fstp dword ptr [esp + 18h]
+        fld dword ptr [eax + 8]
+        fstp dword ptr [esp + 1Ch]
+        fld dword ptr [esp + 14h]
+        fsub dword ptr [ebx + 30h]
+        fstp dword ptr [esp + 14h]
+        fld dword ptr [esp + 18h]
+        fsub dword ptr [ebx + 34h]
+        fstp dword ptr [esp + 18h]
+        fld dword ptr [esp + 1Ch]
+        fsub dword ptr [ebx + 38h]
+        mov ebx, dword ptr [esp + 10h]
+    L_BB96:
+        test ebp, ebp
+        fstp dword ptr [esp + 1Ch]
+        fld dword ptr [esp + 14h]
+        fstp dword ptr [esp + 20h]
+        fld dword ptr [esp + 18h]
+        fstp dword ptr [esp + 24h]
+        fld dword ptr [esp + 1Ch]
+        fstp dword ptr [esp + 28h]
+        je L_BC0A
+        mov eax, dword ptr [ebp + 1E0h]
+        cmp eax, 1
+        jne L_BC0A
+        cmp byte ptr [ebp + 1E4h], 0
+        je L_BBE3
+        push 2
+        lea ecx, [esp + 24h]
+        push ecx
+        push edi
+        mov ecx, ebx
+        call ext_00556840
+        pop esi
+        pop ebp
+        pop edi
+        pop ebx
+        add esp, 1Ch
+        ret 4
+    L_BBE3:
+        cmp eax, 1
+        jne L_BC0A
+        cmp byte ptr [ebp + 1E6h], 0
+        je L_BC0A
+        push 3
+        lea edx, [esp + 24h]
+        push edx
+        push edi
+        mov ecx, ebx
+        call ext_00556840
+        pop esi
+        pop ebp
+        pop edi
+        pop ebx
+        add esp, 1Ch
+        ret 4
+    L_BC0A:
+        push 1
+        lea eax, [esp + 24h]
+        push eax
+        push edi
+        mov ecx, ebx
+        call ext_00556840
+        pop esi
+        pop ebp
+    L_BC1B:
+        pop edi
+        pop ebx
+        add esp, 1Ch
+        ret 4
+    }
+}
