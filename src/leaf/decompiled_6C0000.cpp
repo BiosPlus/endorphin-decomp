@@ -781,3 +781,46 @@ extern "C" __declspec(naked) void __fastcall fn_006C2DE0(void* self) {
         ret 0x20
     }
 }
+
+// [0x006CC6F0] sub_006CC6F0 (79 bytes)
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9CD0();
+extern "C" void ext_006C9D20();
+extern "C" void ext_006CA060();
+extern "C" void ext_006CA6A0();
+
+extern "C" __declspec(naked) void __fastcall fn_006CC6F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006CA6A0
+        mov ecx, eax
+        mov eax, dword ptr [esp + 0x8]
+        dec ecx
+        cmp eax, ecx
+        jge short L_fail
+        push eax
+        mov ecx, esi
+        call ext_006CA060
+        mov esi, eax
+        mov ecx, esi
+        call ext_006C9C30
+        cmp eax, 0x8
+        jne short L_fail
+        mov ecx, esi
+        call ext_006C9CD0
+        test ah, 0x0d
+        je short L_fail
+        mov ecx, esi
+        call ext_006C9D20
+        test eax, 0x1000000
+        je short L_fail
+        mov al, 0x1
+        pop esi
+        ret 0x4
+L_fail:
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}

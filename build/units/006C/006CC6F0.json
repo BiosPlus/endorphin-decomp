@@ -20,5 +20,7 @@
     "0x006CC71C",
     "0x006CC728"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T03:45:56Z"
 }
