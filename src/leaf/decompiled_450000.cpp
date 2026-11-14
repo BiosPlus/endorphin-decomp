@@ -8873,3 +8873,19 @@ extern "C" __declspec(naked) void __fastcall fn_00453620(void* self) {
         ret
     }
 }
+
+// [0x00455AF0] sub_00455AF0 (89 bytes)
+extern "C" void __fastcall ext_004691C0(void*);
+extern "C" void __fastcall ext_004553D0(void*);
+
+extern "C" void __fastcall fn_00455AF0(void* self) {
+    typedef int (__stdcall *SendMsgFn)(void*, unsigned int, unsigned int, int);
+    SendMsgFn send_msg = (SendMsgFn)mem_00925694;
+    char* p = (char*)self;
+    send_msg(*(void**)(p + 0x94), 0x445, 0, 0);
+    void* obj = ((void* (__stdcall *)(void*, void*))ext_00465B30)(p + 0x158, p + 0x13c);
+    ext_004691C0(obj);
+    ((void (__fastcall *)(void*))ext_00455820)(p);
+    ext_004553D0(p);
+    send_msg(*(void**)(p + 0x94), 0x445, 0, 1);
+}
