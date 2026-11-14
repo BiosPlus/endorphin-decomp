@@ -9092,3 +9092,93 @@ extern "C" __declspec(naked) void __fastcall fn_0064D030(void* self) {
         ret
     }
 }
+
+// [0x006413D0] sub_006413D0 (185 bytes)
+extern "C" void ext_0059E220();
+extern "C" void ext_00641150();
+
+extern "C" __declspec(naked) void __fastcall fn_006413D0(void* self, int edx_unused, void* out, void* key) {
+    __asm {
+        sub esp, 0ch
+        push ebp
+        mov ebp, dword ptr [esp + 18h]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 4]
+        mov eax, dword ptr [esi + 4]
+        cmp byte ptr [eax + 2dh], 0
+        mov cl, 1
+        mov byte ptr [esp + 0ch], cl
+        jne L_6413D0_AFTER
+        mov dl, byte ptr [ebp]
+    L_6413D0_SEARCH:
+        cmp dl, byte ptr [eax + 0ch]
+        mov esi, eax
+        setl cl
+        test cl, cl
+        mov byte ptr [esp + 0ch], cl
+        je L_6413D0_RIGHT
+        mov eax, dword ptr [eax]
+        jmp L_6413D0_CHECK
+    L_6413D0_RIGHT:
+        mov eax, dword ptr [eax + 8]
+    L_6413D0_CHECK:
+        cmp byte ptr [eax + 2dh], 0
+        je L_6413D0_SEARCH
+    L_6413D0_AFTER:
+        test cl, cl
+        mov edx, esi
+        mov dword ptr [esp + 14h], edx
+        mov dword ptr [esp + 10h], edi
+        je L_6413D0_TAIL
+        mov eax, dword ptr [edi + 4]
+        cmp esi, dword ptr [eax]
+        lea ecx, [esp + 10h]
+        jne L_6413D0_CALL59
+        push ebp
+        push esi
+        push 1
+        push ecx
+    L_6413D0_CALL:
+        mov ecx, edi
+        call ext_00641150
+        mov ecx, eax
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 1ch]
+        mov ecx, dword ptr [ecx + 4]
+        pop edi
+        pop esi
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 4], ecx
+        mov byte ptr [eax + 8], 1
+        pop ebp
+        add esp, 0ch
+        ret 8
+    L_6413D0_CALL59:
+        call ext_0059E220
+        mov edx, dword ptr [esp + 14h]
+    L_6413D0_TAIL:
+        mov al, byte ptr [edx + 0ch]
+        cmp al, byte ptr [ebp]
+        jge L_6413D0_RET0
+        mov ecx, dword ptr [esp + 0ch]
+        push ebp
+        push esi
+        push ecx
+        lea edx, [esp + 1ch]
+        push edx
+        jmp L_6413D0_CALL
+    L_6413D0_RET0:
+        mov eax, dword ptr [esp + 1ch]
+        mov ecx, dword ptr [esp + 10h]
+        pop edi
+        pop esi
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 4], edx
+        mov byte ptr [eax + 8], 0
+        pop ebp
+        add esp, 0ch
+        ret 8
+    }
+}
