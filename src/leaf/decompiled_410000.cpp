@@ -11303,3 +11303,212 @@ L_end_0041AB80:
         ret     8
     }
 }
+
+// [0x0041A990] sub_0041A990 (483 bytes)
+extern "C" void ext_0041A700();
+extern "C" void ext_006A610C();
+extern "C" void ext_006A6322();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0041A990(void* self) {
+    __asm {
+        push    ebp
+        mov     ebp, esp
+        and     esp, -8
+        sub     esp, 0x2c
+        push    ebx
+        lea     ebx, [ecx + 0x44]
+        push    esi
+        mov     esi, dword ptr [ebx + 0x4]
+        cmp     esi, dword ptr [ebx + 0x8]
+        push    edi
+        mov     dword ptr [esp + 0x14], ecx
+        jbe     loc_41a9b1
+        call    dword ptr [mem_00925134]
+loc_41a9b1:
+        mov     edi, esi
+loc_41a9b3:
+        mov     esi, dword ptr [ebx + 0x8]
+        cmp     dword ptr [ebx + 0x4], esi
+        mov     dword ptr [esp + 0x24], edi
+        jbe     loc_41a9c5
+        call    dword ptr [mem_00925134]
+loc_41a9c5:
+        cmp     ebx, ebx
+        je      loc_41a9cf
+        call    dword ptr [mem_00925134]
+loc_41a9cf:
+        cmp     edi, esi
+        je      loc_41ab6a
+        cmp     edi, dword ptr [ebx + 0x8]
+        jb      loc_41a9e2
+        call    dword ptr [mem_00925134]
+loc_41a9e2:
+        mov     ebx, dword ptr [edi]
+        mov     eax, dword ptr [ebx + 0xc]
+        add     ebx, 0x8
+        test    eax, eax
+        je      loc_41ab50
+        mov     edx, dword ptr [ebx + 0x8]
+        sub     edx, eax
+        sar     edx, 3
+        mov     dword ptr [esp + 0x1c], edx
+        je      loc_41ab50
+        mov     esi, dword ptr [esp + 0x14]
+        mov     eax, dword ptr [esi + 0x28]
+        add     esi, 0x24
+        test    eax, eax
+        jne     loc_41aa16
+        xor     ecx, ecx
+        jmp     loc_41aa1b
+loc_41aa16:
+        mov     ecx, dword ptr [esi + 0x8]
+        sub     ecx, eax
+loc_41aa1b:
+        mov     eax, edx
+        sub     eax, ecx
+        cdq
+        sub     eax, edx
+        sar     eax, 1
+        test    eax, eax
+        jle     loc_41aae3
+        mov     byte ptr [esp + 0x12], 6
+        mov     byte ptr [esp + 0x13], 2
+        mov     dword ptr [esp + 0x18], eax
+loc_41aa3a:
+        mov     eax, dword ptr [esi + 0x4]
+        test    eax, eax
+        jne     loc_41aa45
+        xor     edx, edx
+        jmp     loc_41aa4a
+loc_41aa45:
+        mov     edx, dword ptr [esi + 0x8]
+        sub     edx, eax
+loc_41aa4a:
+        test    eax, eax
+        je      loc_41aa65
+        mov     ecx, dword ptr [esi + 0xc]
+        sub     ecx, eax
+        cmp     edx, ecx
+        jae     loc_41aa65
+        mov     eax, dword ptr [esi + 0x8]
+        mov     byte ptr [eax], 6
+        add     eax, 1
+        mov     dword ptr [esi + 0x8], eax
+        jmp     loc_41aa89
+loc_41aa65:
+        mov     edi, dword ptr [esi + 0x8]
+        cmp     eax, edi
+        jbe     loc_41aa72
+        call    dword ptr [mem_00925134]
+loc_41aa72:
+        lea     eax, [esp + 0x12]
+        push    eax
+        push    edi
+        push    esi
+        lea     ecx, [esp + 0x34]
+        push    ecx
+        mov     ecx, esi
+        call    ext_0041A700
+        mov     edi, dword ptr [esp + 0x24]
+loc_41aa89:
+        mov     eax, dword ptr [esi + 0x4]
+        test    eax, eax
+        jne     loc_41aa94
+        xor     edx, edx
+        jmp     loc_41aa99
+loc_41aa94:
+        mov     edx, dword ptr [esi + 0x8]
+        sub     edx, eax
+loc_41aa99:
+        test    eax, eax
+        je      loc_41aab4
+        mov     ecx, dword ptr [esi + 0xc]
+        sub     ecx, eax
+        cmp     edx, ecx
+        jae     loc_41aab4
+        mov     eax, dword ptr [esi + 0x8]
+        mov     byte ptr [eax], 2
+        add     eax, 1
+        mov     dword ptr [esi + 0x8], eax
+        jmp     loc_41aad8
+loc_41aab4:
+        mov     edi, dword ptr [esi + 0x8]
+        cmp     eax, edi
+        jbe     loc_41aac1
+        call    dword ptr [mem_00925134]
+loc_41aac1:
+        lea     edx, [esp + 0x13]
+        push    edx
+        push    edi
+        push    esi
+        lea     eax, [esp + 0x3c]
+        push    eax
+        mov     ecx, esi
+        call    ext_0041A700
+        mov     edi, dword ptr [esp + 0x24]
+loc_41aad8:
+        sub     dword ptr [esp + 0x18], 1
+        jne     loc_41aa3a
+loc_41aae3:
+        mov     eax, dword ptr [esp + 0x14]
+        add     eax, 0x44
+        cmp     edi, dword ptr [eax + 0x8]
+        jb      loc_41aaf5
+        call    dword ptr [mem_00925134]
+loc_41aaf5:
+        mov     ecx, dword ptr [edi]
+        push    ecx
+        mov     ecx, dword ptr [ebp + 0x8]
+        call    ext_006A610C
+        mov     edi, eax
+        mov     eax, dword ptr [esi + 0x4]
+        test    eax, eax
+        je      loc_41ab10
+        mov     edx, dword ptr [esi + 0x8]
+        sub     edx, eax
+        jne     loc_41ab16
+loc_41ab10:
+        call    dword ptr [mem_00925134]
+loc_41ab16:
+        mov     eax, dword ptr [ebx + 0x4]
+        test    eax, eax
+        mov     esi, dword ptr [esi + 0x4]
+        je      loc_41ab2a
+        mov     ecx, dword ptr [ebx + 0x8]
+        sub     ecx, eax
+        sar     ecx, 3
+        jne     loc_41ab30
+loc_41ab2a:
+        call    dword ptr [mem_00925134]
+loc_41ab30:
+        mov     edx, dword ptr [esp + 0x1c]
+        mov     eax, dword ptr [ebx + 0x4]
+        push    edx
+        push    esi
+        mov     esi, dword ptr [ebp + 0x8]
+        push    eax
+        mov     ecx, esi
+        call    ext_006A6322
+        push    edi
+        mov     ecx, esi
+        call    ext_006A610C
+        mov     edi, dword ptr [esp + 0x24]
+loc_41ab50:
+        mov     ebx, dword ptr [esp + 0x14]
+        add     ebx, 0x44
+        cmp     edi, dword ptr [ebx + 0x8]
+        jb      loc_41ab62
+        call    dword ptr [mem_00925134]
+loc_41ab62:
+        add     edi, 0x4
+        jmp     loc_41a9b3
+loc_41ab6a:
+        pop     edi
+        pop     esi
+        pop     ebx
+        mov     esp, ebp
+        pop     ebp
+        ret     0x4
+    }
+}
