@@ -9133,3 +9133,84 @@ extern "C" __declspec(naked) void __fastcall fn_00468250(void* self) {
         ret
     }
 }
+
+extern "C" void ext_0046BF30();
+extern "C" void ext_004AF4D0();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00925134;
+
+// [0x0046BF80] sub_0046BF80 (186 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0046BF80(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x87ba98
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x14
+        push ebx
+        push edi
+        mov edi, ecx
+        xor ebx, ebx
+        cmp byte ptr [edi + 0x10], bl
+        je loc_46c029
+        mov dword ptr [esp + 0x10], ebx
+        mov dword ptr [esp + 0x14], ebx
+        mov dword ptr [esp + 0x18], ebx
+        mov eax, dword ptr [edi + 0x14]
+        mov eax, dword ptr [eax + 0x34]
+        mov edx, dword ptr [eax + 0x10]
+        lea ecx, [eax + 0x10]
+        mov eax, dword ptr [edx + 8]
+        mov dword ptr [esp + 0x24], ebx
+        call eax
+        push eax
+        lea ecx, [esp + 0x10]
+        push ecx
+        call ext_0046BF30
+        mov eax, dword ptr [esp + 0x18]
+        add esp, 8
+        cmp eax, ebx
+        je loc_46c029
+        mov ecx, dword ptr [esp + 0x14]
+        mov edx, ecx
+        sub edx, eax
+        sar edx, 2
+        je loc_46c01c
+        cmp eax, ecx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, eax
+        jbe loc_46bfff
+        call ebp
+        mov ecx, dword ptr [esp + 0x1c]
+    loc_46bfff:
+        cmp esi, ecx
+        jb loc_46c005
+        call ebp
+    loc_46c005:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [edi + 0x2c]
+        add eax, 0x5b0
+        push eax
+        push ebx
+        call ext_004AF4D0
+        mov eax, dword ptr [esp + 0x18]
+        pop esi
+        pop ebp
+    loc_46c01c:
+        cmp eax, ebx
+        je loc_46c029
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    loc_46c029:
+        mov ecx, dword ptr [esp + 0x1c]
+        pop edi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x20
+        ret
+    }
+}
