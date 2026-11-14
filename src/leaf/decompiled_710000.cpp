@@ -1487,3 +1487,115 @@ fail_b:
         ret
     }
 }
+
+// [0x0071F480] sub_0071F480 (240 bytes)
+extern "C" void ext_006CA6A0();
+extern "C" void ext_006DEEC0();
+extern "C" void ext_0071F2A0();
+extern "C" void ext_0071F480();
+extern "C" __declspec(naked) void __fastcall fn_0071F480(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp+0ch]
+        push edi
+        test esi, esi
+        je L_ret
+        mov ebx, dword ptr [esp+14h]
+        test ebx, ebx
+        je L_ret
+        mov eax, dword ptr [esp+1ch]
+        test eax, eax
+        jl L_ret
+        jg L_pos
+        mov eax, dword ptr [esp+18h]
+        test eax, eax
+        jbe L_ret
+L_pos:
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax+14h]
+        mov edx, dword ptr [ebx]
+        mov ecx, ebx
+        mov edi, eax
+        call dword ptr [edx+14h]
+        cmp edi, eax
+        jne L_ret
+        mov ecx, esi
+        call ext_006DEEC0
+        mov edi, eax
+        test edi, edi
+        jne L_nz
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax+14h]
+        test eax, eax
+        jle L_ret
+L_loop1:
+        mov ecx, dword ptr [esp+24h]
+        mov edx, dword ptr [esp+20h]
+        mov eax, dword ptr [esp+1ch]
+        push ecx
+        mov ecx, dword ptr [esp+1ch]
+        push edx
+        mov edx, dword ptr [ebx]
+        push eax
+        push ecx
+        push edi
+        mov ecx, ebx
+        call dword ptr [edx+18h]
+        push eax
+        mov eax, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [eax+18h]
+        push eax
+        call ext_0071F480
+        mov edx, dword ptr [esi]
+        add esp, 18h
+        mov ecx, esi
+        inc edi
+        call dword ptr [edx+14h]
+        cmp edi, eax
+        jl L_loop1
+        pop edi
+        pop esi
+        pop ebx
+        ret
+L_nz:
+        mov ecx, ebx
+        call ext_006DEEC0
+        mov ebx, eax
+        test ebx, ebx
+        je L_ret
+        mov ecx, edi
+        xor esi, esi
+        call ext_006CA6A0
+        test eax, eax
+        jle L_ret
+L_loop2:
+        mov eax, dword ptr [esp+24h]
+        mov ecx, dword ptr [esp+20h]
+        mov edx, dword ptr [esp+1ch]
+        push eax
+        mov eax, dword ptr [esp+1ch]
+        push ecx
+        push edx
+        push eax
+        push ebx
+        push edi
+        push esi
+        call ext_0071F2A0
+        add esp, 1ch
+        mov ecx, edi
+        inc esi
+        call ext_006CA6A0
+        cmp esi, eax
+        jl L_loop2
+L_ret:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
