@@ -8373,3 +8373,104 @@ extern "C" __declspec(naked) void* __cdecl fn_00491470(void* first, void* last, 
         ret
     }
 }
+
+// [0x004914D0] sub_004914D0 (236 bytes)
+extern "C" void ext_004AFF30();
+extern "C" void ext_00505F00();
+extern "C" void ext_00490C80();
+extern "C" int mem_00924FDC;
+extern "C" __declspec(naked) void __cdecl fn_004914D0(void* first, void* last, void* in) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0x8
+        cmp eax, dword ptr [esp + 0x10]
+        je done
+        push ebx
+        mov ebx, dword ptr [esp + 0x18]
+        push ebp
+        push esi
+        push edi
+        lea edi, [ebx + 0x18]
+        lea ebp, [edi + 0x54]
+        lea esi, [eax + 0x70]
+        jmp loop_body
+    next:
+        mov eax, dword ptr [esp + 0x1c]
+    loop_body:
+        movzx ecx, byte ptr [ebx]
+        mov byte ptr [eax], cl
+        mov edx, dword ptr [ebx + 0x4]
+        lea eax, [ebx + 0x8]
+        push eax
+        lea ecx, [esi - 0x68]
+        mov dword ptr [esi - 0x6c], edx
+        call ext_004AFF30
+        push edi
+        lea ecx, [esi - 0x58]
+        call dword ptr [mem_00924FDC]
+        mov eax, dword ptr [edi + 0x1c]
+        mov dword ptr [esi - 0x3c], eax
+        movzx ecx, byte ptr [edi + 0x20]
+        lea eax, [edi + 0x24]
+        mov byte ptr [esi - 0x38], cl
+        push eax
+        lea ecx, [esi - 0x34]
+        call ext_00505F00
+        lea eax, [edi + 0x34]
+        push eax
+        lea ecx, [esi - 0x24]
+        call ext_00490C80
+        lea eax, [edi + 0x44]
+        push eax
+        lea ecx, [esi - 0x14]
+        call ext_004AFF30
+        lea edx, [esi - 0x4]
+        cmp edx, ebp
+        je skip_ptr
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je null_src
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x78]
+        lea edx, [esi - 0x4]
+        push edx
+        call eax
+    null_src:
+        mov ecx, dword ptr [ebp + 0x4]
+        mov dword ptr [esi], ecx
+        cmp dword ptr [ebp + 0x4], 0x0
+        je zero_src
+        mov ecx, dword ptr [ebp + 0x4]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x70]
+        push ebp
+        lea eax, [esp + 0x18]
+        push eax
+        call edx
+        jmp store_ptr
+    zero_src:
+        mov dword ptr [esp + 0x10], 0x0
+        lea eax, [esp + 0x10]
+    store_ptr:
+        mov eax, dword ptr [eax]
+        mov dword ptr [esi - 0x4], eax
+    skip_ptr:
+        fld dword ptr [ebx + 0x74]
+        mov eax, dword ptr [esp + 0x1c]
+        fstp dword ptr [esi + 0x4]
+        add eax, 0x7c
+        fld dword ptr [ebx + 0x78]
+        add esi, 0x7c
+        cmp eax, dword ptr [esp + 0x20]
+        fstp dword ptr [esi - 0x74]
+        mov dword ptr [esp + 0x1c], eax
+        jne next
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+    done:
+        add esp, 0x8
+        ret
+    }
+}
