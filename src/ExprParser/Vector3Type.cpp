@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/ExprParser/Vector3Type.cpp
 
 #include <math.h>
+extern "C" void ext_006719A0();
 
 // [0x0066B5D0] ExprParser::Vector3Type::vfunc_35 (19 bytes)
 extern "C" void ext_00699000();
@@ -461,4 +462,17 @@ extern "C" __declspec(naked) void __fastcall fn_0066D0E0(void* self) {
         call ext_004B70B0
         ret 0x10
     }
+}
+
+// [0x00671A30] ExprParser::Vector3Type::vfunc_41 (48 bytes)
+extern "C" void __fastcall fn_00671A30(void* self, int edx, float** arg1, void* arg2) {
+    ((void (__thiscall*)(void*, void*))ext_006719A0)(self, arg1);
+    void* obj = *(void**)((char*)arg2 + 4);
+    void** vtbl = *(void***)obj;
+    typedef float* (__thiscall *VFunc)(void*, void*);
+    float* src = ((VFunc)vtbl[5])(obj, arg2);
+    float* dst = *arg1;
+    dst[0] = src[0];
+    dst[1] = src[1];
+    dst[2] = src[2];
 }
