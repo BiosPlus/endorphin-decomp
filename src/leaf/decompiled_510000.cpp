@@ -8468,3 +8468,74 @@ exit_path:
         ret
     }
 }
+
+// [0x0051F4A0] sub_0051F4A0 (157 bytes)
+extern "C" void ext_0051EC40();
+extern "C" void ext_0051ECA0();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) char* __cdecl fn_0051F4A0(char* first, char* last, char* dest) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x8931f1
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0xc
+        push ebx
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        push edi
+        mov edi, dword ptr [ebp + 0x8]
+        xor ebx, ebx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        mov dword ptr [ebp - 0x4], ebx
+        nop
+    loop_top:
+        cmp edi, dword ptr [ebp + 0xc]
+        je done
+        mov dword ptr [ebp + 0x8], esi
+        mov dword ptr [ebp - 0x18], esi
+        cmp esi, ebx
+        mov byte ptr [ebp - 0x4], 0x1
+        je skip_copy
+        push edi
+        mov ecx, esi
+        call ext_0051ECA0
+    skip_copy:
+        add esi, 0xc0
+        mov byte ptr [ebp - 0x4], bl
+        mov dword ptr [ebp + 0x10], esi
+        add edi, 0xc0
+        jmp loop_top
+    unwind_funclet:
+        mov esi, dword ptr [ebp - 0x14]
+        mov edi, dword ptr [ebp + 0x10]
+        cmp esi, edi
+        je rethrow
+        __asm _emit 0x8D __asm _emit 0xA4 __asm _emit 0x24 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea esp, [esp]
+    dtor_loop:
+        mov ecx, esi
+        call ext_0051EC40
+        add esi, 0xc0
+        cmp esi, edi
+        jne dtor_loop
+    rethrow:
+        xor ebx, ebx
+        push ebx
+        push ebx
+        call ext_006A6DD2
+    done:
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
