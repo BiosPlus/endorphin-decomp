@@ -1184,3 +1184,159 @@ L_7ADCDA:
         ret 0x8
     }
 }
+
+// [0x007AA030] sub_007AA030 (352 bytes)
+extern "C" void ext_0079EA90();
+extern "C" void ext_0079EAC0();
+extern "C" void ext_0079EEC0();
+extern "C" void ext_0079EED0();
+extern "C" void ext_007AA030();
+extern "C" void ext_007AA510();
+extern "C" void ext_007B3CF0();
+extern "C" void ext_007B52A0();
+extern "C" void ext_007B7130();
+extern "C" void ext_007B7CE0();
+extern "C" void ext_007B7D40();
+extern "C" int mem_00B61218;
+extern "C" int mem_00B61219;
+
+extern "C" __declspec(naked) void __cdecl fn_007AA030(void* a1, int a2) {
+    __asm {
+        push    ebx
+        push    ebp
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0x14]
+        test    edi, edi
+        jne     loc_7aa04b
+        push    0x2
+        call    ext_007AA510
+        add     esp, 0x4
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret
+loc_7aa04b:
+        mov     eax, dword ptr [edi]
+        cmp     eax, 0x80f0
+        je      loc_7aa18b
+        test    eax, eax
+        je      loc_7aa18b
+        mov     ebx, dword ptr [esp + 0x18]
+        push    ebx
+        call    ext_0079EA90
+        mov     byte ptr [edi + 0x19], bl
+        call    ext_0079EEC0
+        push    edi
+        mov     ebp, eax
+        call    ext_007B3CF0
+        mov     al, byte ptr [mem_00B61218]
+        add     esp, 0x8
+        test    al, al
+        je      loc_7aa093
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7aa18b
+loc_7aa093:
+        push    ebx
+        call    ext_0079EA90
+        push    ebp
+        call    ext_0079EED0
+        mov     al, byte ptr [mem_00B61218]
+        add     esp, 0x8
+        test    al, al
+        je      loc_7aa0b8
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7aa18b
+loc_7aa0b8:
+        mov     eax, dword ptr [edi + 0x4]
+        mov     ecx, dword ptr [edi]
+        push    eax
+        push    ecx
+        call    ext_007B7CE0
+        mov     al, byte ptr [mem_00B61218]
+        add     esp, 0x8
+        test    al, al
+        je      loc_7aa0dd
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7aa18b
+loc_7aa0dd:
+        push    edi
+        call    ext_007B52A0
+        mov     al, byte ptr [mem_00B61218]
+        add     esp, 0x4
+        test    al, al
+        je      loc_7aa0fc
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7aa18b
+loc_7aa0fc:
+        mov     esi, dword ptr [edi + 0x14]
+        test    esi, esi
+        je      loc_7aa126
+loc_7aa103:
+        push    ebx
+        push    esi
+        call    ext_007AA030
+        mov     al, byte ptr [mem_00B61218]
+        add     esp, 0x8
+        test    al, al
+        je      loc_7aa11f
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7aa18b
+loc_7aa11f:
+        mov     esi, dword ptr [esi + 0x10]
+        test    esi, esi
+        jne     loc_7aa103
+loc_7aa126:
+        push    ebx
+        call    ext_0079EA90
+        add     esp, 0x4
+        call    ext_0079EEC0
+        mov     ecx, dword ptr [edi + 0x4]
+        mov     esi, eax
+        sub     esi, ebp
+        cmp     esi, ecx
+        je      loc_7aa14c
+        push    eax
+        push    ebp
+        call    ext_007B7D40
+        add     esp, 0x8
+        mov     dword ptr [edi + 0x4], esi
+loc_7aa14c:
+        push    ebx
+        call    ext_0079EAC0
+        mov     ecx, dword ptr [eax + 0x8]
+        add     esp, 0x4
+        cmp     ecx, 0x3
+        jne     loc_7aa160
+        mov     byte ptr [edi + 0x18], bl
+loc_7aa160:
+        mov     al, byte ptr [mem_00B61218]
+        test    al, al
+        je      loc_7aa172
+        mov     al, byte ptr [mem_00B61219]
+        test    al, al
+        je      loc_7aa18b
+loc_7aa172:
+        mov     dl, byte ptr [edi + 0x18]
+        push    edx
+        call    ext_0079EAC0
+        add     esp, 0x4
+        test    eax, eax
+        je      loc_7aa18b
+        push    edi
+        call    ext_007B7130
+        add     esp, 0x4
+loc_7aa18b:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        ret
+    }
+}
