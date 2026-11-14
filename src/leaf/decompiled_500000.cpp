@@ -7088,3 +7088,33 @@ extern "C" __declspec(naked) void __cdecl fn_0050E260(void* a1) {
         ret
     }
 }
+
+// [0x00507CC0] sub_00507CC0 (67 bytes)
+extern "C" void ext_00506B70();
+extern "C" void ext_00507750();
+extern "C" void ext_00507A50();
+extern "C" int mem_00924FE4;
+
+extern "C" __declspec(naked) void __fastcall fn_00507CC0(void* self) {
+    __asm {
+        push ecx
+        call ext_00506B70
+        push 0x0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x928b5d
+        call dword ptr [mem_00924FE4]
+        call ext_00507750
+        add esp, 0x20
+        push 0x0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x928b5d
+        call dword ptr [mem_00924FE4]
+        call ext_00507A50
+        add esp, 0x24
+        ret
+    }
+}
