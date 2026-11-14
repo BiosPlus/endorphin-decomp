@@ -12668,3 +12668,65 @@ extern "C" __declspec(naked) void __fastcall fn_00668A90(void* self, int edx_unu
         ret 0x14
     }
 }
+
+// [0x00667D40] sub_00667D40 (134 bytes)
+extern "C" void ext_00667BB0();
+
+extern "C" __declspec(naked) void __fastcall fn_00667D40(void* self) {
+    __asm {
+        push    ebx
+        mov     ebx, dword ptr [esp + 0x8]
+        mov     eax, dword ptr [ebx + 0x4]
+        push    esi
+        push    edi
+        mov     esi, ecx
+        mov     edi, dword ptr [esi + 0x4]
+        add     eax, 0x4
+        mov     eax, dword ptr [eax]
+        push    edi
+        push    eax
+        call    ext_00667BB0
+        mov     dword ptr [edi + 0x4], eax
+        mov     ecx, dword ptr [ebx + 0x8]
+        mov     edx, dword ptr [esi + 0x4]
+        mov     dword ptr [esi + 0x8], ecx
+        mov     eax, dword ptr [edx + 0x4]
+        cmp     byte ptr [eax + 0xc1], 0x0
+        jne     loc_667DB8
+        mov     ecx, dword ptr [eax]
+        cmp     byte ptr [ecx + 0xc1], 0x0
+        jne     loc_667D8D
+        mov     edi, edi
+    loc_667D80:
+        mov     eax, ecx
+        mov     ecx, dword ptr [eax]
+        cmp     byte ptr [ecx + 0xc1], 0x0
+        je      loc_667D80
+    loc_667D8D:
+        mov     dword ptr [edx], eax
+        mov     esi, dword ptr [esi + 0x4]
+        mov     ecx, dword ptr [esi + 0x4]
+        mov     eax, dword ptr [ecx + 0x8]
+        cmp     byte ptr [eax + 0xc1], 0x0
+        jne     loc_667DAF
+    loc_667DA1:
+        mov     ecx, eax
+        mov     eax, dword ptr [ecx + 0x8]
+        cmp     byte ptr [eax + 0xc1], 0x0
+        je      loc_667DA1
+    loc_667DAF:
+        pop     edi
+        mov     dword ptr [esi + 0x8], ecx
+        pop     esi
+        pop     ebx
+        ret     0x4
+    loc_667DB8:
+        mov     dword ptr [edx], edx
+        mov     esi, dword ptr [esi + 0x4]
+        pop     edi
+        mov     dword ptr [esi + 0x8], esi
+        pop     esi
+        pop     ebx
+        ret     0x4
+    }
+}
