@@ -159,3 +159,86 @@ extern "C" __declspec(naked) bool __fastcall fn_005EE250(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x005EEBC0] NMData::RootRelationshipData::vfunc_67 (219 bytes)
+extern "C" void ext_00412690();
+extern "C" void ext_0048EF80();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_005EEBC0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        lea esi, [ecx + 0x168]
+        push edi
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe loc_5eebdd
+        call ebp
+    loc_5eebdd:
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe loc_5eebe7
+        call ebp
+    loc_5eebe7:
+        push edi
+        push esi
+        push ebx
+        push esi
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, esi
+        call ext_0048EF80
+        fldz
+        lea ecx, [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x3
+        call ext_00412690
+        fldz
+        lea edx, [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x4
+        call ext_00412690
+        fldz
+        lea eax, [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x5
+        call ext_00412690
+        fldz
+        lea ecx, [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x0
+        call ext_00412690
+        fldz
+        lea edx, [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        push edx
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x1
+        call ext_00412690
+        fldz
+        lea eax, [esp + 0x10]
+        fstp dword ptr [esp + 0x14]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0x2
+        call ext_00412690
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
