@@ -1069,3 +1069,49 @@ extern "C" __declspec(naked) void __fastcall fn_00537950(void* self) {
         ret
     }
 }
+
+// [0x005372F0] OglRenderer::vfunc_2 (103 bytes)
+extern "C" void ext_00435D00();
+extern "C" void ext_00532CC0();
+extern "C" void ext_005371F0();
+extern "C" void ext_0054C7F0();
+extern "C" void ext_0067B050();
+extern "C" int mem_00924E90;
+extern "C" int mem_00924FA0;
+extern "C" int mem_00924E98;
+extern "C" int mem_00954D68;
+
+extern "C" __declspec(naked) void __fastcall fn_005372F0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_005371F0
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x1c4]
+        mov ecx, esi
+        call edx
+        mov eax, dword ptr [mem_00924E90]
+        mov ecx, dword ptr [mem_00924FA0]
+        push eax
+        push offset mem_00954D68
+        push ecx
+        call ext_00435D00
+        add esp, 8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        lea ecx, [esi + 8]
+        call ext_0067B050
+        cmp byte ptr [esi + 0x34], 0
+        je L_done
+        mov ecx, esi
+        call ext_00532CC0
+        lea ecx, [esi + 0x1dc]
+        call ext_0054C7F0
+        lea ecx, [esi + 0x200]
+        call ext_0054C7F0
+    L_done:
+        mov byte ptr [esi + 0x34], 0
+        pop esi
+        ret
+    }
+}
