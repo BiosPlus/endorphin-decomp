@@ -5900,3 +5900,110 @@ extern "C" __declspec(naked) void __fastcall fn_004E89E0(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x004E9540] sub_004E9540 (230 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_00584C20();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_004E9540(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [ebx + 4]
+        cmp esi, dword ptr [ebx + 8]
+        push edi
+        jbe L_top
+        call ebp
+L_top:
+        mov edi, dword ptr [ebx + 8]
+        cmp dword ptr [ebx + 4], edi
+        jbe L_chk2
+        call ebp
+L_chk2:
+        cmp esi, edi
+        je L_end
+        cmp esi, dword ptr [ebx + 8]
+        jb L_c3
+        call ebp
+L_c3:
+        mov eax, dword ptr [esi]
+        cmp dword ptr [eax + 8], 0
+        je L_next
+        cmp esi, dword ptr [ebx + 8]
+        jb L_c4
+        call ebp
+L_c4:
+        mov ecx, dword ptr [esi]
+        mov eax, dword ptr [ecx + 8]
+        push 0
+        push 0xa2e2d8
+        push 0xa2e35c
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        cmp esi, dword ptr [ebx + 8]
+        mov edi, eax
+        mov dword ptr [esp + 0x14], edi
+        jb L_c5
+        call ebp
+L_c5:
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 8]
+        push 0
+        push 0xa2e2bc
+        push 0xa2e35c
+        push 0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        test edi, edi
+        je L_next
+        test eax, eax
+        je L_next
+        mov ecx, eax
+        call ext_00584C20
+        test al, al
+        je L_next
+        mov ecx, dword ptr [esp + 0x1c]
+        lea eax, [esp + 0x14]
+        push eax
+        call ext_0041A920
+L_next:
+        cmp esi, dword ptr [ebx + 8]
+        jb L_c6
+        call ebp
+L_c6:
+        add esi, 4
+        jmp L_top
+L_end:
+        mov edx, dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        mov ecx, edx
+        xor eax, eax
+        and ecx, 8
+        pop ebp
+        pop ebx
+        je L_r1
+        test dl, 4
+        je L_r1
+        mov eax, 3
+        ret
+L_r1:
+        test ecx, ecx
+        je L_r2
+        mov eax, 1
+        ret
+L_r2:
+        test dl, 4
+        je L_r3
+        mov eax, 2
+L_r3:
+        ret
+    }
+}
