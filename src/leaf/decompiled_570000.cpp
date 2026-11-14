@@ -13320,3 +13320,90 @@ L_nz2_005779A0:
         ret 8
     }
 }
+
+// [0x00572B90] sub_00572B90 (227 bytes)
+extern "C" void ext_004142E0();
+extern "C" void ext_00571E20();
+extern "C" void ext_00572590();
+extern "C" void ext_00572A90();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00572B90(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push -1
+        push 0x89d441
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x60
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x7c]
+        mov esi, ecx
+        push edi
+        lea ecx, [esp + 0x44]
+        call dword ptr [mem_00924FE0]
+        mov eax, dword ptr [esp + 0x80]
+        xor ebx, ebx
+        push eax
+        lea ecx, [esp + 0x60]
+        mov dword ptr [esp + 0x78], ebx
+        call ext_00572590
+        lea ecx, [esp + 0x40]
+        push ecx
+        lea edx, [esp + 0x10]
+        push edx
+        lea ecx, [esi + 4]
+        mov dword ptr [esp + 0x7c], 1
+        call ext_00572A90
+        mov eax, dword ptr [esp + 0x60]
+        cmp eax, ebx
+        mov dword ptr [esp + 0x74], 0xffffffff
+        je L_skip_free
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+    L_skip_free:
+        lea ecx, [esp + 0x40]
+        mov dword ptr [esp + 0x60], ebx
+        mov dword ptr [esp + 0x64], ebx
+        mov dword ptr [esp + 0x68], ebx
+        call dword ptr [mem_00924FF4]
+        cmp byte ptr [esp + 0x14], bl
+        jne L_after_throw
+        push edi
+        call ext_00571E20
+        push eax
+        lea ecx, [esp + 0x20]
+        call ext_004142E0
+        push 0x9d1278
+        lea eax, [esp + 0x1c]
+        push eax
+        call ext_006A6DD2
+    L_after_throw:
+        mov esi, dword ptr [esp + 0x0c]
+        cmp esi, ebx
+        mov ebx, mem_00925134
+        jne L_nz1
+        call ebx
+    L_nz1:
+        mov edi, dword ptr [esp + 0x10]
+        cmp edi, dword ptr [esi + 4]
+        jne L_nz2
+        call ebx
+    L_nz2:
+        mov ecx, dword ptr [esp + 0x6c]
+        lea eax, [edi + 0x28]
+        pop edi
+        pop esi
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 0x6c
+        ret 8
+    }
+}
