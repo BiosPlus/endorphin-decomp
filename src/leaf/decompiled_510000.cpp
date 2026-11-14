@@ -11526,3 +11526,127 @@ extern "C" __declspec(naked) void __cdecl fn_005191C0(void* first, void* last, i
         ret
     }
 }
+
+// [0x005192B0] sub_005192B0 (238 bytes)
+extern "C" void ext_00518D70();
+extern "C" void ext_00518F30();
+extern "C" void ext_00519020();
+extern "C" void ext_005190B0();
+extern "C" void ext_005192B0();
+
+extern "C" __declspec(naked) void __cdecl fn_005192B0(void* first, void* last, int ideal, int comp) {
+    __asm {
+        sub esp, 8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        mov eax, edi
+        sub eax, ebx
+        sar eax, 2
+        cmp eax, 0x20
+        jle L_small
+        mov esi, dword ptr [esp + 0x24]
+        nop
+    L_loop:
+        test esi, esi
+        jle L_ideal0
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        push edi
+        lea ecx, [esp + 0x18]
+        push ebx
+        push ecx
+        call ext_00518D70
+        mov ebp, dword ptr [esp + 0x24]
+        mov eax, esi
+        cdq
+        sub eax, edx
+        sar eax, 1
+        mov esi, eax
+        cdq
+        sub eax, edx
+        sar eax, 1
+        add esi, eax
+        mov eax, dword ptr [esp + 0x20]
+        mov edx, edi
+        mov ecx, eax
+        sub edx, ebp
+        sub ecx, ebx
+        and edx, -4
+        and ecx, -4
+        add esp, 0x10
+        cmp ecx, edx
+        jge L_87
+        mov edx, dword ptr [esp + 0x28]
+        push edx
+        push esi
+        push eax
+        push ebx
+        call ext_005192B0
+        mov ebx, ebp
+        jmp L_98
+    L_87:
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        push esi
+        push edi
+        push ebp
+        call ext_005192B0
+        mov edi, dword ptr [esp + 0x20]
+    L_98:
+        mov eax, edi
+        sub eax, ebx
+        sar eax, 2
+        add esp, 0x10
+        cmp eax, 0x20
+        jg L_loop
+    L_small:
+        cmp eax, 1
+        jle L_ret
+        mov ecx, dword ptr [esp + 0x28]
+        push ecx
+        push edi
+        push ebx
+        call ext_00518F30
+        add esp, 0xc
+    L_ret:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    L_ideal0:
+        cmp eax, 0x20
+        jle L_small
+        mov ecx, edi
+        sub ecx, ebx
+        and ecx, -4
+        cmp ecx, 4
+        jle L_skip
+        mov edx, dword ptr [esp + 0x28]
+        push 0
+        push 0
+        push edx
+        push edi
+        push ebx
+        call ext_00519020
+        add esp, 0x14
+    L_skip:
+        mov eax, dword ptr [esp + 0x28]
+        push eax
+        push edi
+        push ebx
+        call ext_005190B0
+        add esp, 0xc
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
