@@ -5425,3 +5425,72 @@ extern "C" __declspec(naked) void __fastcall fn_004DDBD0(void* self) {
         ret
     }
 }
+
+// [0x004DDA90] sub_004DDA90 (169 bytes)
+extern "C" void ext_004D9DF0();
+extern "C" void ext_004DA2B0();
+extern "C" void ext_004DD7A0();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A5C62();
+
+extern "C" __declspec(naked) void __fastcall fn_004DDA90(void* self) {
+    __asm {
+        push -1
+        push 0x8a7a5b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        push edi
+        push 0x218
+        mov esi, ecx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0xc], eax
+        test eax, eax
+        mov dword ptr [esp + 0x18], 0
+        je SKIP_A
+        movzx ecx, byte ptr [esi + 0x438]
+        mov edx, dword ptr [esp + 0x2c]
+        push ecx
+        mov ecx, dword ptr [esp + 0x2c]
+        push edx
+        push ecx
+        mov ecx, eax
+        call ext_004D9DF0
+        mov ebx, eax
+        jmp JOIN_A
+    SKIP_A:
+        xor ebx, ebx
+    JOIN_A:
+        mov edi, dword ptr [esi + 0x18c]
+        cmp ebx, edi
+        mov dword ptr [esp + 0x18], -1
+        je SKIP_B
+        test edi, edi
+        je SKIP_B
+        mov ecx, edi
+        call ext_004DA2B0
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+    SKIP_B:
+        mov edx, dword ptr [esp + 0x24]
+        mov eax, dword ptr [esp + 0x20]
+        push edx
+        push eax
+        push esi
+        mov ecx, ebx
+        mov dword ptr [esi + 0x18c], ebx
+        call ext_004DD7A0
+        mov ecx, dword ptr [esp + 0x10]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret 0x10
+    }
+}
