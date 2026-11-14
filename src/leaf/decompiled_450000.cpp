@@ -10565,3 +10565,107 @@ extern "C" __declspec(naked) void __fastcall fn_00452750(void* self) {
         ret 4
     }
 }
+
+// [0x00458340] sub_00458340 (240 bytes)
+extern "C" void ext_00454D10();
+
+extern "C" __declspec(naked) void __fastcall fn_00458340(void* self) {
+    __asm {
+        sub esp, 0x20
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x20]
+        lea eax, [esp + 0x10]
+        push eax
+        push ecx
+        call dword ptr [mem_00925690]
+        mov ecx, esi
+        call ext_00455F40
+        test eax, eax
+        mov ebp, dword ptr [esp + 0x38]
+        jne L_458407
+        mov ebx, dword ptr [mem_00925628]
+        xor edi, edi
+    L_458373:
+        push edi
+        mov ecx, esi
+        call ext_00455D40
+        cmp eax, 0x0a
+        jne L_45838B
+        cmp byte ptr [esi + 0x124], 0x0
+        je L_4583B9
+        jmp L_4583FB
+    L_45838B:
+        cmp eax, 0x0c
+        jne L_45839B
+        cmp byte ptr [esi + 0x125], 0x0
+        je L_4583B9
+        jmp L_4583FB
+    L_45839B:
+        cmp eax, 0x0b
+        jne L_4583AB
+        cmp byte ptr [esi + 0x126], 0x0
+        je L_4583B9
+        jmp L_4583FB
+    L_4583AB:
+        cmp eax, 0x0f
+        jne L_4583FB
+        cmp byte ptr [esi + 0x127], 0x0
+        jne L_4583FB
+    L_4583B9:
+        mov ecx, dword ptr [esp + 0x10]
+        lea edx, [esp + 0x20]
+        push edx
+        mov edx, dword ptr [esp + 0x18]
+        push eax
+        sub esp, 0x10
+        mov eax, esp
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x30]
+        mov dword ptr [eax + 0x04], edx
+        mov edx, dword ptr [esp + 0x34]
+        mov dword ptr [eax + 0x08], ecx
+        mov ecx, esi
+        mov dword ptr [eax + 0x0c], edx
+        call ext_00456510
+        test eax, eax
+        je L_4583FB
+        mov eax, dword ptr [esp + 0x34]
+        push ebp
+        push eax
+        lea ecx, [esp + 0x28]
+        push ecx
+        call ebx
+        test eax, eax
+        jne L_45841E
+    L_4583FB:
+        add edi, 0x1
+        cmp edi, 0x4
+        jl L_458373
+    L_458407:
+        mov edx, dword ptr [esp + 0x34]
+        push ebp
+        push edx
+        mov ecx, esi
+        call ext_00454D10
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret 0x8
+    L_45841E:
+        push edi
+        mov ecx, esi
+        call ext_00455D40
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x20
+        ret 0x8
+    }
+}
