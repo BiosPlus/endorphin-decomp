@@ -5116,3 +5116,68 @@ extern "C" __declspec(naked) void __fastcall fn_004BE400(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x004BF760] sub_004BF760 (158 bytes)
+extern "C" void ext_00594000();
+extern "C" void ext_00466F00();
+extern "C" void ext_006619D0();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_004BF760(void* self, int edx_unused, int* arg) {
+    __asm {
+        push -1
+        push 0x88ac0b
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp+0ch], esi
+        call ext_00594000
+        add eax, 1c8h
+        lea edi, [esi+4]
+        push eax
+        mov ecx, edi
+        mov dword ptr [esi], eax
+        call ext_00466F00
+        mov ecx, dword ptr [esp+20h]
+        mov eax, dword ptr [ecx]
+        mov dword ptr [esi+64h], eax
+        mov dword ptr [esi+70h], eax
+        mov byte ptr [esi+74h], 1
+        mov eax, dword ptr [ecx+4]
+        mov ecx, dword ptr [esi]
+        push ecx
+        mov ecx, edi
+        mov dword ptr [esp+1ch], 0
+        mov dword ptr [esi+68h], eax
+        call ext_006619D0
+        mov edi, dword ptr [esi]
+        mov ebx, dword ptr [mem_00925134]
+        add edi, 8
+        cmp dword ptr [edi], 0
+        jne short L_nz1
+        call ebx
+    L_nz1:
+        mov edx, dword ptr [edi]
+        mov eax, dword ptr [edi+4]
+        cmp eax, dword ptr [edx+4]
+        jne short L_nz2
+        call ebx
+    L_nz2:
+        mov ecx, dword ptr [edi+4]
+        mov edx, dword ptr [ecx+8]
+        add edx, dword ptr [esi+68h]
+        mov ecx, dword ptr [esp+10h]
+        pop edi
+        mov dword ptr [esi+6ch], edx
+        mov eax, esi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret 4
+    }
+}
