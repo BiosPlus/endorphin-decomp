@@ -653,3 +653,35 @@ extern "C" __declspec(naked) void __fastcall fn_00533250(void* self, int edx_unu
         ret     0x8
     }
 }
+
+// [0x005360F0] OglRenderer::vfunc_86 (71 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005360F0(void* self, int edx_unused, unsigned char flag) {
+    __asm {
+        cmp byte ptr [esp + 0x4], 0x0
+        push esi
+        mov esi, ecx
+        mov byte ptr [esi + 0x49c], 0x1
+        jne call_534f30
+        push edi
+        mov edi, dword ptr [esi + 0x370]
+        lea ecx, [esi + 0x3c]
+        call ext_00679A50
+        test edi, edi
+        mov dword ptr [esp + 0xc], edi
+        fild dword ptr [esp + 0xc]
+        jge fcmp_now
+        fadd dword ptr [mem_0092F678]
+fcmp_now:
+        fcompp
+        pop edi
+        fnstsw ax
+        test ah, 0x41
+        jp done_5360f0
+call_534f30:
+        mov ecx, esi
+        call ext_00534F30
+done_5360f0:
+        pop esi
+        ret 0x4
+    }
+}
