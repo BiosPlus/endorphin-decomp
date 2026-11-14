@@ -68,5 +68,7 @@
     "0x005B476A",
     "0x005B477F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-14T05:31:16Z"
 }
