@@ -1580,3 +1580,77 @@ extern "C" __declspec(naked) int __cdecl fn_00860670() {
         ret
     }
 }
+
+extern "C" void ext_0085D530();
+extern "C" int ext_00865470();
+extern "C" short mem_00BC667B;
+extern "C" short mem_00BC6679;
+extern "C" int mem_00AB98EC;
+
+// [0x008658B0] sub_008658B0 (176 bytes)
+extern "C" __declspec(naked) void __cdecl fn_008658B0(void* a1, void* a2) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        push 8
+        mov esi, dword ptr [esp + 0x10]
+        test edi, edi
+        push esi
+        push 0xbc667d
+        je L_8658E9
+        call ext_0085D530
+        add esp, 0xc
+        push 8
+        push edi
+        push 0xbc6685
+        call ext_0085D530
+        mov word ptr [mem_00BC667B], 0x10
+        add esp, 0xc
+        jmp L_8658FA
+    L_8658E9:
+        call ext_0085D530
+        mov word ptr [mem_00BC667B], 8
+        add esp, 0xc
+    L_8658FA:
+        mov word ptr [mem_00BC6679], 0
+        call ext_00865470
+        cmp eax, 0x18
+        je L_865947
+        cmp eax, 0x19
+        je L_86594E
+        mov eax, dword ptr [mem_00AB98EC]
+    L_865917:
+        mov dword ptr [mem_00AB98EC], eax
+        test eax, eax
+        jne L_86595D
+        push 8
+        test edi, edi
+        push 0xbc6396
+        push esi
+        je L_865955
+        call ext_0085D530
+        add esp, 0xc
+        push 8
+        push 0xbc639e
+        push edi
+        call ext_0085D530
+        add esp, 0xc
+        pop edi
+        pop esi
+        ret
+    L_865947:
+        mov eax, 0x98
+        jmp L_865917
+    L_86594E:
+        mov eax, 0x99
+        jmp L_865917
+    L_865955:
+        call ext_0085D530
+        add esp, 0xc
+    L_86595D:
+        pop edi
+        pop esi
+        ret
+    }
+}
