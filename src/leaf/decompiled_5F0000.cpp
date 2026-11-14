@@ -4013,3 +4013,24 @@ extern "C" __declspec(naked) void __fastcall fn_005F1A80(void* self) {
         ret
     }
 }
+
+// [0x005F1530] sub_005F1530 (66 bytes)
+extern "C" void ext_005EF180();
+extern "C" __declspec(naked) void* __fastcall fn_005F1530(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        push eax
+        mov esi, ecx
+        call ext_005EF180
+        mov dword ptr [esi], 0x958674
+        mov dword ptr [esi + 4], 0x95862c
+        mov dword ptr [esi + 8], 0x9585ec
+        mov dword ptr [esi + 0xc], 0x95859c
+        mov dword ptr [esi + 0x150], 0x958584
+        mov dword ptr [esi + 0x154], 0x95857c
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
