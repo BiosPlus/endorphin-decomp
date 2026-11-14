@@ -8362,3 +8362,21 @@ extern "C" __declspec(naked) void* __fastcall fn_0057EA40(void* self, int edx_un
         ret 14h
     }
 }
+
+// [0x0057DBB0] sub_0057DBB0 (71 bytes)
+extern "C" void ext_00406940();
+extern "C" void* __cdecl fn_0057DBB0(char* first, char* last, char* dest) {
+    typedef void (__thiscall *AssignFn)(void*, void*);
+    AssignFn assign = reinterpret_cast<AssignFn>(ext_00406940);
+    if (first != last) {
+        do {
+            last -= 0x1c;
+            dest -= 0x1c;
+            *reinterpret_cast<float*>(dest) = *reinterpret_cast<float*>(last);
+            *reinterpret_cast<float*>(dest + 0x4) = *reinterpret_cast<float*>(last + 0x4);
+            *reinterpret_cast<float*>(dest + 0x8) = *reinterpret_cast<float*>(last + 0x8);
+            assign(dest + 0xc, last + 0xc);
+        } while (last != first);
+    }
+    return dest;
+}
