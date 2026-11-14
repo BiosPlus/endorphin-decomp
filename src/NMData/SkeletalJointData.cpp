@@ -944,3 +944,70 @@ extern "C" __declspec(naked) void __fastcall fn_005F0620(void* self) {
         ret
     }
 }
+
+// [0x005E4BB0] NMData::SkeletalJointData::vfunc_66 (182 bytes)
+extern "C" void ext_00435D00();
+extern "C" void ext_0067E9E0();
+extern "C" int mem_00924E90;
+extern "C" int mem_00924FA0;
+extern "C" int mem_00924E98;
+extern "C" int mem_00B40640;
+
+extern "C" __declspec(naked) void __fastcall fn_005E4BB0(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00924E90]
+        push esi
+        push eax
+        mov esi, ecx
+        mov ecx, dword ptr [mem_00924FA0]
+        push 0x96ad54
+        push ecx
+        call ext_00435D00
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov eax, dword ptr [esi + 0x17c]
+        mov edx, dword ptr [mem_00924E90]
+        lea ecx, [eax + 0x4]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 0x14]
+        push edx
+        mov edx, dword ptr [mem_00B40640]
+        push edx
+        call eax
+        mov ecx, dword ptr [mem_00924FA0]
+        push eax
+        push ecx
+        call ext_0067E9E0
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov edx, dword ptr [mem_00924E90]
+        mov eax, dword ptr [mem_00924FA0]
+        push edx
+        push 0x96ad3c
+        push eax
+        call ext_00435D00
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        mov esi, dword ptr [esi + 0x180]
+        mov edx, dword ptr [mem_00924E90]
+        mov eax, dword ptr [esi + 0x4]
+        mov eax, dword ptr [eax + 0x14]
+        lea ecx, [esi + 0x4]
+        push edx
+        mov edx, dword ptr [mem_00B40640]
+        push edx
+        call eax
+        mov ecx, dword ptr [mem_00924FA0]
+        push eax
+        push ecx
+        call ext_0067E9E0
+        add esp, 0x8
+        mov ecx, eax
+        call dword ptr [mem_00924E98]
+        pop esi
+        ret
+    }
+}
