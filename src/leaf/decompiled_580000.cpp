@@ -1,10 +1,16 @@
 // Decompiled translation unit: src/leaf/decompiled_580000.cpp
-
-// [0x0058CFB0] sub_0058CFB0 (8 bytes)
 extern "C" void ext_0058B230();
 extern "C" void ext_005866C0();
-extern "C" void ext_00594000();
-extern "C" void ext_0065C640();
+extern "C" void ext_00528BB0();
+extern "C" void ext_00528C70();
+extern "C" void ext_005867A0();
+extern "C" int mem_00925134; /* "P{b" */
+
+extern "C" void ext_005866C0();
+extern "C" void ext_00528BB0();
+extern "C" void ext_00528C70();
+extern "C" void ext_005867A0();
+extern "C" int mem_00925134; /* "P{b" */
 extern "C" void ext_0065C650();
 extern "C" void ext_0057EEA0();
 extern "C" void ext_00406940();
@@ -8401,5 +8407,84 @@ extern "C" __declspec(naked) void __fastcall fn_00581F60(void* self, int edx_unu
         pop ebx
         add esp, 12
         ret 4
+    }
+}
+
+// [0x005867A0] sub_005867A0 (170 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005867A0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push ebp
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0xc]
+        mov edx, dword ptr [eax + 0x20]
+        lea ecx, [esi + 0xc]
+        push edi
+        push ebx
+        call edx
+        lea edi, [esi + 0x7c]
+        mov esi, dword ptr [edi + 0x4]
+        cmp esi, dword ptr [edi + 0x8]
+        jbe L_chk1
+        call dword ptr [mem_00925134]
+L_chk1:
+        mov ebp, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebp
+        jbe L_chk2
+        call dword ptr [mem_00925134]
+L_chk2:
+        cmp edi, edi
+        je L_chk3
+        call dword ptr [mem_00925134]
+L_chk3:
+        cmp esi, ebp
+        je L_exit
+        cmp esi, dword ptr [edi + 0x8]
+        mov ebp, dword ptr [mem_00925134]
+        jb L_a
+        call ebp
+L_a:
+        mov ecx, dword ptr [esi]
+        push ebx
+        push 0x80000
+        add ecx, 0xc
+        call ext_00528BB0
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_b
+        call ebp
+L_b:
+        mov ecx, dword ptr [esi]
+        push ebx
+        push 0x20000
+        add ecx, 0xc
+        call ext_00528BB0
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_c
+        call ebp
+L_c:
+        mov ecx, dword ptr [esi]
+        add ecx, 0xc
+        call ext_00528C70
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_d
+        call ebp
+L_d:
+        mov ecx, dword ptr [esi]
+        push ebx
+        call ext_005867A0
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_e
+        call ebp
+L_e:
+        add esi, 0x4
+        jmp L_chk1
+L_exit:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
     }
 }
