@@ -12505,3 +12505,84 @@ extern "C" __declspec(naked) void __fastcall fn_00411680(void* self, int edx_unu
         ret     0x4
     }
 }
+
+// [0x0041DF10] sub_0041DF10 (161 bytes)
+extern "C" void ext_00406510();
+extern "C" void ext_0040ECB0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0041DF10(void* self, int edx_unused, void* arg) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        mov esi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], esi
+        push edi
+        mov ebp, ecx
+        jbe L_41DF2B
+        call dword ptr [mem_00925134]
+    L_41DF2B:
+        mov edi, dword ptr [ebx + 0x4]
+        cmp edi, dword ptr [ebx + 0x8]
+        jbe L_41DF39
+        call dword ptr [mem_00925134]
+    L_41DF39:
+        push esi
+        push ebx
+        push edi
+        push ebx
+        lea eax, [esp + 0x20]
+        push eax
+        mov ecx, ebx
+        call ext_00406510
+        mov esi, dword ptr [ebp + 0x8]
+        cmp esi, dword ptr [ebp + 0xc]
+        lea edi, [ebp + 0x4]
+        jbe L_41DF60
+        call dword ptr [mem_00925134]
+        __asm _emit 0x8D __asm _emit 0x9B __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 // lea ebx, [ebx]
+    L_41DF60:
+        mov ebp, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebp
+        jbe L_41DF6E
+        call dword ptr [mem_00925134]
+    L_41DF6E:
+        test edi, edi
+        je L_41DF76
+        cmp edi, edi
+        je L_41DF7C
+    L_41DF76:
+        call dword ptr [mem_00925134]
+    L_41DF7C:
+        cmp esi, ebp
+        je L_41DFA7
+        test edi, edi
+        mov ebp, dword ptr [mem_00925134]
+        jne L_41DF8C
+        call ebp
+    L_41DF8C:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_41DF93
+        call ebp
+    L_41DF93:
+        push esi
+        mov ecx, ebx
+        call ext_0040ECB0
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_41DFA2
+        call ebp
+    L_41DFA2:
+        add esi, 0x20
+        jmp L_41DF60
+    L_41DFA7:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+    }
+}
