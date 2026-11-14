@@ -11818,3 +11818,42 @@ L_nohit_6755F0:
         ret 4
     }
 }
+
+// [0x00674590] sub_00674590 (87 bytes)
+extern "C" int __fastcall ext_00640110(void* self, int edx_unused, int arg);
+extern "C" void __fastcall ext_00427550(void* self, int edx_unused, const char* s);
+extern "C" int mem_00A9FA04;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9F628;
+extern "C" __declspec(naked) int __fastcall fn_00674590(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9FA04]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        mov ecx, esi
+        mov dword ptr [esp + 0xc], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        mov ecx, dword ptr [mem_00A9F628]
+        push ecx
+        mov ecx, edi
+        call ext_00640110
+        lea ecx, [esi + 0x1c]
+        mov dword ptr [esp + 0xc], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 0x10]
+        call ext_00427550
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
