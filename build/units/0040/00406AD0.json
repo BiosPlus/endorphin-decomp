@@ -47,5 +47,7 @@
     "0x00406D92",
     "0x00406DA4"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-14T14:07:18Z"
 }
