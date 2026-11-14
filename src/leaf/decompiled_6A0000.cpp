@@ -9949,3 +9949,82 @@ extern "C" __declspec(naked) void __fastcall fn_006AC660(void* self, int edx_unu
         ret     0xc
     }
 }
+
+// [0x006ABF70] sub_006ABF70 (169 bytes)
+extern "C" void ext_006A8980();
+extern "C" void ext_006A9210();
+extern "C" void ext_006AA920();
+extern "C" void ext_006ACE20();
+extern "C" void ext_006ACF90();
+extern "C" int mem_00925688;
+
+extern "C" __declspec(naked) void __fastcall fn_006ABF70(void* self, int edx_unused, int a1) {
+    __asm {
+        sub     esp, 0x20
+        push    ebx
+        mov     ebx, dword ptr [esp + 0x28]
+        push    esi
+        mov     esi, ecx
+        mov     ecx, dword ptr [esi + 0x54]
+        cmp     ecx, ebx
+        push    edi
+        lea     edi, [esi + 0x54]
+        je      L_006ABF70_end
+        test    ebx, ebx
+        je      L_006ABF70_null
+        push    0
+        call    ext_006ACF90
+        lea     eax, [esp + 0x1c]
+        push    eax
+        mov     ecx, esi
+        mov     dword ptr [edi], ebx
+        call    ext_006A9210
+        lea     ecx, [esp + 0xc]
+        push    ecx
+        mov     ecx, ebx
+        call    ext_006ACE20
+        mov     edx, dword ptr [esp + 0x18]
+        cmp     edx, dword ptr [esp + 0x28]
+        jg      L_006ABF70_after_aa920
+        push    edi
+        mov     ecx, esi
+        call    ext_006AA920
+L_006ABF70_after_aa920:
+        mov     ecx, dword ptr [edi]
+        test    ecx, ecx
+        je      L_006ABF70_tail
+        push    1
+        call    ext_006ACF90
+        jmp     L_006ABF70_tail
+L_006ABF70_null:
+        cmp     dword ptr [esi + 0x100], 0
+        je      L_006ABF70_null_call
+        mov     ecx, esi
+        call    ext_006A8980
+L_006ABF70_null_call:
+        mov     ecx, dword ptr [edi]
+        push    0
+        call    ext_006ACF90
+        mov     dword ptr [edi], 0
+L_006ABF70_tail:
+        mov     ecx, dword ptr [edi]
+        mov     eax, dword ptr [esi]
+        mov     edx, dword ptr [eax + 0x14c]
+        push    ecx
+        mov     ecx, esi
+        call    edx
+        mov     esi, dword ptr [esi + 0x20]
+        test    esi, esi
+        je      L_006ABF70_end
+        push    1
+        push    0
+        push    esi
+        call    dword ptr [mem_00925688]
+L_006ABF70_end:
+        pop     edi
+        pop     esi
+        pop     ebx
+        add     esp, 0x20
+        ret     4
+    }
+}
