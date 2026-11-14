@@ -11657,3 +11657,90 @@ extern "C" __declspec(naked) void* __fastcall fn_0055BB30(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x00556950] sub_00556950 (165 bytes)
+// Copy-style routine on a vector-like object (this = esi, buffer src = [arg1]):
+// zeroes this+0x4/+0x8/+0xC, allocates src-sized storage through the imported
+// allocator, copies [src+0x4, src+0x8) into it via memmove_s, and sets this+0x8
+// to the new end. Returns this in eax (ret 0x4).
+extern "C" void ext_00405FB0();
+extern "C" int mem_00925108;
+extern "C" int mem_00925110;
+extern "C" int mem_00925114;
+extern "C" int mem_00925134;
+extern "C" int mem_009251EC;
+
+extern "C" __declspec(naked) void* __fastcall fn_00556950(void* self, int edx_unused, const void* a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov esi, ecx
+        push ebx
+        lea ecx, [esp + 0x14]
+        call dword ptr [mem_00925110]
+        lea eax, [esp + 0x10]
+        push eax
+        mov ecx, esi
+        call dword ptr [mem_00925110]
+        mov eax, dword ptr [ebx + 0x4]
+        xor ecx, ecx
+        cmp eax, ecx
+        jne f_nonzero
+        xor edi, edi
+        jmp f_have_size
+    f_nonzero:
+        mov edi, dword ptr [ebx + 0x8]
+        sub edi, eax
+    f_have_size:
+        cmp edi, ecx
+        mov dword ptr [esi + 0x4], ecx
+        mov dword ptr [esi + 0x8], ecx
+        mov dword ptr [esi + 0xc], ecx
+        je f_done
+        mov ecx, esi
+        call dword ptr [mem_00925114]
+        cmp eax, edi
+        jae f_size_ok
+        call ext_00405FB0
+    f_size_ok:
+        push edi
+        mov ecx, esi
+        call dword ptr [mem_00925108]
+        mov dword ptr [esi + 0x4], eax
+        mov dword ptr [esi + 0x8], eax
+        add eax, edi
+        mov dword ptr [esi + 0xc], eax
+        mov edi, dword ptr [ebx + 0x8]
+        cmp dword ptr [ebx + 0x4], edi
+        jbe f_chk1_ok
+        call dword ptr [mem_00925134]
+    f_chk1_ok:
+        push ebp
+        mov ebp, dword ptr [ebx + 0x4]
+        cmp ebp, dword ptr [ebx + 0x8]
+        jbe f_chk2_ok
+        call dword ptr [mem_00925134]
+    f_chk2_ok:
+        mov eax, dword ptr [esi + 0x4]
+        sub edi, ebp
+        lea ebx, [edi + eax]
+        je f_copy_done
+        push edi
+        push ebp
+        push edi
+        push eax
+        call dword ptr [mem_009251EC]
+        add esp, 0x10
+    f_copy_done:
+        mov dword ptr [esi + 0x8], ebx
+        pop ebp
+    f_done:
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
