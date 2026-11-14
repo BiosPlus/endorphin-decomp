@@ -1027,3 +1027,45 @@ extern "C" __declspec(naked) void __fastcall fn_00535D20(void* self, int edx_unu
         ret 0x14
     }
 }
+
+// [0x00537950] OglRenderer::vfunc_1_off_8 (78 bytes)
+extern "C" void ext_005331B0();
+extern "C" void ext_00537870();
+extern "C" void ext_0067AEB0();
+extern "C" int mem_00924248;
+
+extern "C" __declspec(naked) void __fastcall fn_00537950(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        lea edi, [esi - 0x8]
+        mov ecx, edi
+        call ext_00537870
+        mov ecx, edi
+        call ext_00534F30
+        mov eax, dword ptr [esi + 0x498]
+        push eax
+        mov ecx, esi
+        call ext_0067AEB0
+        cmp byte ptr [esi + 0x4], 0
+        je done
+        push ebx
+        mov ebx, dword ptr [mem_00924248]
+    loop_start:
+        cmp byte ptr [esi + 0x48a], 0
+        je sleep_call
+        mov ecx, edi
+        call ext_005331B0
+    sleep_call:
+        push 0
+        call ebx
+        cmp byte ptr [esi + 0x4], 0
+        jne loop_start
+        pop ebx
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
