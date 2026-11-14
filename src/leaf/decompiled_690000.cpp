@@ -3,6 +3,9 @@
 #include <math.h>
 
 extern "C" void ext_0041A8B0();
+extern "C" void ext_004276B0();
+extern "C" void ext_006999F0();
+extern "C" void ext_0069A9D0();
 extern "C" void __fastcall ext_00680800(void* self);
 extern "C" void ext_006989B0();
 extern "C" void ext_0069B0C0();
@@ -12000,5 +12003,76 @@ extern "C" __declspec(naked) void* __fastcall fn_00697CD0(void** self) {
         mov dword ptr fs:[0x0], ecx
         add esp, 0x10
         ret
+    }
+}
+
+// [0x0069ABD0] sub_0069ABD0 (234 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0069ABD0(void* self) {
+    __asm {
+        push -1
+        push 0x8b663a
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x70
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x8c]
+        mov esi, ecx
+        push edi
+        lea ecx, [esp + 0x54]
+        call dword ptr [mem_00924FE0]
+        mov eax, dword ptr [esp + 0x90]
+        push eax
+        lea ecx, [esp + 0x70]
+        mov dword ptr [esp + 0x88], 0x0
+        call ext_00699870
+        lea ecx, [esp + 0x50]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x88], 0x1
+        call ext_0069A9D0
+        lea ecx, [esp + 0x50]
+        mov bl, al
+        mov dword ptr [esp + 0x84], 0xffffffff
+        call ext_00672590
+        test bl, bl
+        je L_69AC62
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        mov ecx, dword ptr [esp + 0x70]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x7c
+        ret 0xc
+L_69AC62:
+        cmp byte ptr [esp + 0x94], 0x0
+        je L_69ACA4
+        lea edx, [esp + 0xc]
+        push edi
+        push edx
+        call ext_004276B0
+        add esp, 0x8
+        push eax
+        mov dword ptr [esp + 0x88], 0x2
+        call ext_006999F0
+        push eax
+        lea ecx, [esp + 0x30]
+        call ext_004142E0
+        push 0x9d1278
+        lea eax, [esp + 0x2c]
+        push eax
+        call ext_006A6DD2
+L_69ACA4:
+        mov ecx, dword ptr [esp + 0x7c]
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x7c
+        ret 0xc
     }
 }
