@@ -4071,3 +4071,58 @@ extern "C" __declspec(naked) void __fastcall fn_004A0270(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x004A7630] sub_004A7630 (95 bytes)
+extern "C" void ext_004A5A00();
+extern "C" void ext_005A6300();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __cdecl fn_004A7630(void* a1, void* a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        mov esi, dword ptr [ebx + 4]
+        cmp esi, dword ptr [ebx + 8]
+        push edi
+        jbe L_4a7648
+        call ebp
+    L_4a7648:
+        mov edi, dword ptr [ebx + 8]
+        cmp dword ptr [ebx + 4], edi
+        jbe L_4a7652
+        call ebp
+    L_4a7652:
+        cmp esi, edi
+        je L_4a768a
+        cmp esi, dword ptr [ebx + 8]
+        jb L_4a765d
+        call ebp
+    L_4a765d:
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_004A5A00
+        add esp, 4
+        test eax, eax
+        mov dword ptr [esp + 0x18], eax
+        je L_4a767e
+        lea ecx, [esp + 0x18]
+        push ecx
+        mov ecx, dword ptr [esp + 0x18]
+        call ext_005A6300
+    L_4a767e:
+        cmp esi, dword ptr [ebx + 8]
+        jb L_4a7685
+        call ebp
+    L_4a7685:
+        add esi, 4
+        jmp L_4a7648
+    L_4a768a:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
