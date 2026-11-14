@@ -10397,3 +10397,86 @@ hit:
         ret     0x8
     }
 }
+
+// [0x00451A20] sub_00451A20 (191 bytes)
+extern "C" void ext_004513B0();
+extern "C" void ext_004515C0();
+extern "C" void ext_00451A20();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00451A20(void* self, int edx_unused, void* a1, int a2) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        test esi, esi
+        mov ebp, ecx
+        je l_epilogue
+        cmp byte ptr [esi + 0x179], 0x0
+        jne l_epilogue
+        cmp byte ptr [esi + 0x8d], 0x0
+        je l_else
+        mov eax, dword ptr [esi + 0x90]
+        push 0x0
+        push 0xa2fbbc
+        push 0xa2e2bc
+        push 0x0
+        push eax
+        call ext_006A6E9E
+        add esp, 0x14
+        push eax
+        push esi
+        mov ecx, ebp
+        call ext_004513B0
+        jmp l_after
+l_else:
+        push esi
+        call ext_004515C0
+l_after:
+        push edi
+        mov edi, dword ptr [esi + 0x1d4]
+        cmp edi, dword ptr [esi + 0x1d8]
+        jbe l_c1
+        call dword ptr [mem_00925134]
+l_c1:
+        push ebx
+        __asm _emit 0x8d
+        __asm _emit 0x9b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+l_loop:
+        mov ebx, dword ptr [esi + 0x1d8]
+        cmp dword ptr [esi + 0x1d4], ebx
+        jbe l_c2
+        call dword ptr [mem_00925134]
+l_c2:
+        cmp edi, ebx
+        je l_done
+        cmp edi, dword ptr [esi + 0x1d8]
+        jb l_c3
+        call dword ptr [mem_00925134]
+l_c3:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [edi]
+        push eax
+        push ecx
+        mov ecx, ebp
+        call ext_00451A20
+        cmp edi, dword ptr [esi + 0x1d8]
+        jb l_c4
+        call dword ptr [mem_00925134]
+l_c4:
+        add edi, 0x4
+        jmp l_loop
+l_done:
+        pop ebx
+        pop edi
+l_epilogue:
+        pop esi
+        pop ebp
+        ret 0x8
+    }
+}
