@@ -11686,3 +11686,48 @@ extern "C" __declspec(naked) void __fastcall fn_00679730(void* self) {
         ret
     }
 }
+
+// [0x006750B0] sub_006750B0 (67 bytes)
+extern "C" void ext_006746D0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_006750B0(void* self) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 4]
+        cmp esi, dword ptr [edi + 8]
+        jbe loc_6750C6
+        call ebp
+loc_6750C6:
+        mov ebx, dword ptr [edi + 8]
+        cmp dword ptr [edi + 4], ebx
+        jbe loc_6750D0
+        call ebp
+loc_6750D0:
+        cmp esi, ebx
+        je loc_6750EE
+        cmp esi, dword ptr [edi + 8]
+        jb loc_6750DB
+        call ebp
+loc_6750DB:
+        mov ecx, dword ptr [esi]
+        call ext_006746D0
+        cmp esi, dword ptr [edi + 8]
+        jb loc_6750E9
+        call ebp
+loc_6750E9:
+        add esi, 4
+        jmp loc_6750C6
+loc_6750EE:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
