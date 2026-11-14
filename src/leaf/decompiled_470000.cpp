@@ -6562,3 +6562,197 @@ L_47C8D7:
         ret 8
     }
 }
+
+// [0x0047D300] sub_0047D300 (456 bytes)
+extern "C" void ext_0047C7F0();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0047D300(void* self, int edx_unused, void* a1) {
+    __asm {
+        push -1
+        push 087ba98h
+        mov eax, DWORD PTR fs:[0]
+        push eax
+        mov DWORD PTR fs:[0], esp
+        sub esp, 14h
+        push ebx
+        xor ebx, ebx
+        push esi
+        mov DWORD PTR [esp+10h], ebx
+        mov DWORD PTR [esp+14h], ebx
+        mov DWORD PTR [esp+18h], ebx
+        mov eax, DWORD PTR [esp+2ch]
+        push eax
+        lea edx, DWORD PTR [esp+10h]
+        push edx
+        mov DWORD PTR [esp+2ch], ebx
+        call ext_0047C7F0
+        mov esi, DWORD PTR [esp+10h]
+        cmp esi, ebx
+        je L_ret
+        mov eax, DWORD PTR [esp+14h]
+        mov ecx, eax
+        sub ecx, esi
+        sar ecx, 2
+        jne L_a
+        push esi
+        jmp L_del
+L_a:
+        cmp esi, eax
+        push ebp
+        mov ebp, DWORD PTR [mem_00925134]
+        push edi
+        jbe L_b
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+        __asm _emit 0x8d
+        __asm _emit 0x64
+        __asm _emit 0x24
+        __asm _emit 0x00
+L_b:
+        cmp DWORD PTR [esp+18h], eax
+        mov edi, eax
+        jbe L_c
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_c:
+        cmp esi, edi
+        je L_d
+        cmp esi, eax
+        jb L_e
+        call ebp
+L_e:
+        mov ecx, DWORD PTR [esi]
+        mov edx, DWORD PTR [ecx]
+        mov eax, DWORD PTR [edx+12ch]
+        push ebx
+        call eax
+        mov eax, DWORD PTR [esp+1ch]
+        cmp esi, eax
+        jb L_f
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_f:
+        add esi, 4
+        jmp L_b
+L_d:
+        mov esi, DWORD PTR [esp+18h]
+        cmp esi, eax
+        jbe L_g
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_g:
+        mov ebx, esi
+L_outer:
+        cmp DWORD PTR [esp+18h], eax
+        mov esi, eax
+        jbe L_h
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_h:
+        cmp ebx, esi
+        je L_i
+        cmp ebx, eax
+        jb L_j
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_j:
+        cmp ebx, eax
+        mov ecx, DWORD PTR [ebx]
+        mov edx, DWORD PTR [ecx+160h]
+        mov DWORD PTR [esp+10h], edx
+        jb L_k
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_k:
+        mov ecx, DWORD PTR [ebx]
+        mov esi, DWORD PTR [esp+18h]
+        cmp esi, eax
+        mov edx, DWORD PTR [ecx+15ch]
+        mov DWORD PTR [esp+34h], edx
+        jbe L_l
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_l:
+        cmp DWORD PTR [esp+18h], eax
+        mov edi, eax
+        jbe L_m
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_m:
+        cmp esi, edi
+        je L_n
+        cmp esi, ebx
+        je L_o
+        cmp esi, eax
+        jb L_p
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_p:
+        mov ecx, DWORD PTR [esi]
+        cmp BYTE PTR [ecx+17ch], 0
+        je L_o
+        cmp ebx, eax
+        jb L_q
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_q:
+        mov edx, DWORD PTR [ebx]
+        cmp BYTE PTR [edx+17ch], 0
+        je L_o
+        cmp esi, eax
+        jb L_r
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_r:
+        mov ecx, DWORD PTR [esi]
+        mov ecx, DWORD PTR [ecx+160h]
+        cmp DWORD PTR [esp+34h], ecx
+        jge L_o
+        cmp DWORD PTR [esp+10h], ecx
+        jle L_o
+        cmp esi, eax
+        jb L_s
+        call ebp
+L_s:
+        mov ecx, DWORD PTR [esi]
+        mov edx, DWORD PTR [ecx]
+        mov eax, DWORD PTR [edx+12ch]
+        push 1
+        call eax
+        mov eax, DWORD PTR [esp+1ch]
+L_o:
+        cmp esi, eax
+        jb L_t
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_t:
+        add esi, 4
+        jmp L_l
+L_n:
+        cmp ebx, eax
+        jb L_u
+        call ebp
+        mov eax, DWORD PTR [esp+1ch]
+L_u:
+        add ebx, 4
+        jmp L_outer
+L_i:
+        mov eax, DWORD PTR [esp+18h]
+        test eax, eax
+        pop edi
+        pop ebp
+        je L_ret
+        push eax
+L_del:
+        call ext_006A5C5C
+        add esp, 4
+L_ret:
+        mov ecx, DWORD PTR [esp+1ch]
+        pop esi
+        pop ebx
+        mov DWORD PTR fs:[0], ecx
+        add esp, 20h
+        ret 4
+    }
+}
