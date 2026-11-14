@@ -1599,3 +1599,163 @@ L_ret:
         ret
     }
 }
+
+// [0x00712A80] sub_00712A80 (272 bytes)
+// Maps a handle-like value (stack arg) to a small code: calls sub_006D91C0(arg) and compares arg against
+// several globals, then the returned value against others; falls back to 0xC or 0 (ret 0).
+extern "C" void ext_006D91C0();
+extern "C" int mem_00AAC0A0;
+extern "C" int mem_00AAC0D8;
+extern "C" int mem_00AAC09C;
+extern "C" int mem_00AAC0E0;
+extern "C" int mem_00AAC0E4;
+extern "C" int mem_00AAC0DC;
+extern "C" int mem_00AAC088;
+extern "C" int mem_00AAC084;
+extern "C" int mem_00AAC08C;
+extern "C" int mem_00AAC090;
+extern "C" int mem_00925284;
+extern "C" int mem_00B5F6B8;
+extern "C" int mem_00B5F6BC;
+extern "C" int mem_00B5F6B0;
+extern "C" __declspec(naked) void __fastcall fn_00712A80(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        xor eax, eax
+        test esi, esi
+        je L_end
+        mov ecx, esi
+        call ext_006D91C0
+        cmp esi, dword ptr [mem_00AAC0A0]
+        jne L_c0d8
+        mov eax, 0x10
+        pop esi
+        ret
+    L_c0d8:
+        cmp esi, dword ptr [mem_00AAC0D8]
+        jne L_c09c
+        mov eax, 0x2
+        pop esi
+        ret
+    L_c09c:
+        cmp esi, dword ptr [mem_00AAC09C]
+        jne L_c0e0
+        mov eax, 0x1
+        pop esi
+        ret
+    L_c0e0:
+        cmp esi, dword ptr [mem_00AAC0E0]
+        jne L_c0e4
+        mov eax, 0xe
+        pop esi
+        ret
+    L_c0e4:
+        cmp esi, dword ptr [mem_00AAC0E4]
+        jne L_c0dc
+        mov eax, 0xf
+        pop esi
+        ret
+    L_c0dc:
+        cmp esi, dword ptr [mem_00AAC0DC]
+        jne L_eax_c088
+        mov eax, 0x6
+        pop esi
+        ret
+    L_eax_c088:
+        cmp eax, dword ptr [mem_00AAC088]
+        jne L_eax_c084
+        mov eax, 0x7
+        pop esi
+        ret
+    L_eax_c084:
+        cmp eax, dword ptr [mem_00AAC084]
+        jne L_eax_c08c
+        mov eax, 0x4
+        pop esi
+        ret
+    L_eax_c08c:
+        cmp eax, dword ptr [mem_00AAC08C]
+        jne L_fallback
+        mov eax, 0xd
+        pop esi
+        ret
+    L_fallback:
+        mov esi, dword ptr [mem_00AAC090]
+        xor ecx, ecx
+        cmp eax, esi
+        setne cl
+        dec ecx
+        and ecx, 0xc
+        mov eax, ecx
+    L_end:
+        pop esi
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        __asm _emit 0xe9
+        __asm _emit 0x0b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [mem_00925284]
+        mov ecx, dword ptr [eax]
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [mem_00B5F6B8], ecx
+        mov dword ptr [mem_00B5F6BC], edx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        __asm _emit 0xe9
+        __asm _emit 0x0b
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        mov eax, dword ptr [mem_00925284]
+        fld qword ptr [eax]
+        fchs
+        fstp qword ptr [mem_00B5F6B0]
+        ret
+    }
+}
