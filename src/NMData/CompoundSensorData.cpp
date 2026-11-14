@@ -313,3 +313,157 @@ extern "C" __declspec(naked) void __fastcall fn_0060EEB0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0060F6A0] NMData::CompoundSensorData::vfunc_21 (382 bytes)
+extern "C" void ext_0060E890();
+extern "C" void ext_0063EFE0();
+extern "C" void ext_0063F530();
+extern "C" void ext_004275E0();
+extern "C" void ext_00427A60();
+extern "C" void ext_0040ECB0();
+extern "C" int mem_00A9EFE8;
+extern "C" int mem_00A9F7F4;
+extern "C" int mem_00925134;
+extern "C" int mem_00A9F268;
+extern "C" int mem_00924FC0;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_0060F6A0(void* self) {
+    __asm {
+        push -1
+        mov eax, dword ptr fs:[0x0]
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x34
+        push ebx
+        push ebp
+        mov ebx, ecx
+        mov eax, dword ptr [ebx]
+        mov edx, dword ptr [eax + 0xf8]
+        push esi
+        push edi
+        call edx
+        mov esi, dword ptr [esp + 0x54]
+        push esi
+        mov ecx, ebx
+        call ext_0060E890
+        mov eax, dword ptr [mem_00A9EFE8]
+        push 1
+        push 0
+        push eax
+        mov ecx, esi
+        call ext_0063F530
+        cmp eax, 0xb53a34
+        je L_0060F6A0_08
+        cmp eax, 0xb53b30
+        je L_0060F6A0_08
+        cmp eax, 0xb53ab0
+        je L_0060F6A0_08
+        cmp eax, 0xb53a70
+        je L_0060F6A0_08
+        cmp eax, 0xb53af0
+        jne L_0060F6A0_07
+    L_0060F6A0_08:
+        mov edi, 0xb53b30
+        jmp L_0060F6A0_09
+    L_0060F6A0_07:
+        mov edi, eax
+    L_0060F6A0_09:
+        mov ecx, dword ptr [mem_00A9F7F4]
+        push ecx
+        mov ecx, esi
+        call ext_0063EFE0
+        push eax
+        lea edx, [ebx + 0x190]
+        push edx
+        call ext_004275E0
+        mov ebp, dword ptr [mem_00925134]
+        lea esi, [edi + 0x24]
+        mov edi, dword ptr [esi + 0x4]
+        add esp, 0x8
+        cmp edi, dword ptr [esi + 0x8]
+        jbe L_0060F6A0_10
+        call ebp
+    L_0060F6A0_10:
+        lea ecx, [esp + 0x10]
+        mov dword ptr [esp + 0x10], esi
+        mov dword ptr [esp + 0x14], esi
+        mov dword ptr [esp + 0x18], edi
+        call ext_00427A60
+        mov edi, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], edi
+        jbe L_0060F6A0_11
+        call ebp
+    L_0060F6A0_11:
+        mov dword ptr [esp + 0x1c], esi
+        mov dword ptr [esp + 0x20], esi
+        mov dword ptr [esp + 0x24], edi
+        lea ecx, [esp + 0x1c]
+    L_0060F6A0_LOOP:
+        call ext_00427A60
+        mov edi, dword ptr [esp + 0x14]
+        test edi, edi
+        je L_0060F6A0_12
+        cmp edi, dword ptr [esp + 0x20]
+        je L_0060F6A0_13
+    L_0060F6A0_12:
+        call ebp
+    L_0060F6A0_13:
+        mov esi, dword ptr [esp + 0x18]
+        cmp esi, dword ptr [esp + 0x24]
+        jae L_0060F6A0_END
+        test edi, edi
+        jne L_0060F6A0_14
+        call ebp
+    L_0060F6A0_14:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_0060F6A0_15
+        call ebp
+    L_0060F6A0_15:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [mem_00A9F268]
+        push ecx
+        add eax, 0x4
+        push eax
+        call dword ptr [mem_00924FC0]
+        add esp, 0x8
+        test al, al
+        je L_0060F6A0_SKIP
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_0060F6A0_16
+        call ebp
+    L_0060F6A0_16:
+        mov ecx, dword ptr [esi]
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x8]
+        lea eax, [esp + 0x28]
+        push eax
+        call edx
+        push eax
+        lea ecx, [ebx + 0x180]
+        mov dword ptr [esp + 0x50], 0x0
+        call ext_0040ECB0
+        lea ecx, [esp + 0x28]
+        mov dword ptr [esp + 0x4c], 0xffffffff
+        call dword ptr [mem_00924FF4]
+    L_0060F6A0_SKIP:
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_0060F6A0_17
+        call ebp
+    L_0060F6A0_17:
+        add esi, 0x4
+        mov dword ptr [esp + 0x18], esi
+        lea ecx, [esp + 0x10]
+        jmp L_0060F6A0_LOOP
+    L_0060F6A0_END:
+        mov ecx, dword ptr [esp + 0x44]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x40
+        ret 0x4
+    }
+}
