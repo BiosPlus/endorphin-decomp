@@ -145,3 +145,47 @@ extern "C" void __fastcall fn_004D3240(void* self) {
         *(int*)(s + 0x184) = 0x7FFFFFFF;
     }
 }
+
+extern "C" void ext_004C2070();
+extern "C" void ext_00661650();
+
+// [0x004D0C80] NMData::TransitionEventData::vfunc_14 (86 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_004D0C80(void* self, int edx_unused, void* ret_buf, int key) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        cmp edi, 0x40
+        mov esi, ecx
+        mov dword ptr [esp + 0x8], 0
+        jne L_fallback
+        mov ecx, dword ptr [esi + 0x168]
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax + 0x28]
+        call edx
+        test al, al
+        jne L_fallback
+        add esi, 0x198
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, esi
+        call ext_00661650
+        pop edi
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 8
+    L_fallback:
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push edi
+        mov ecx, esi
+        call ext_004C2070
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ecx
+        ret 8
+    }
+}
