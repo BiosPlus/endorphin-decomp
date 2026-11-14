@@ -12323,3 +12323,79 @@ extern "C" __declspec(naked) void __fastcall fn_00565BF0(void* self) {
         ret 8
     }
 }
+
+// [0x00565CF0] sub_00565CF0 (146 bytes)
+extern "C" void ext_00563220();
+extern "C" void ext_00565BF0();
+extern "C" void ext_00566020();
+extern "C" void ext_007C5622();
+extern "C" void ext_007C563A();
+extern "C" void ext_007C5640();
+extern "C" void ext_007C5646();
+
+extern "C" __declspec(naked) void __fastcall fn_00565CF0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        push    ecx
+        push    ebp
+        push    esi
+        mov     esi, dword ptr [esp + 0x14]
+        push    esi
+        mov     ebp, ecx
+        call    ext_00563220
+        test    al, al
+        je      loc_565d7c
+        push    ebx
+        push    edi
+        mov     ecx, esi
+        call    ext_007C5622
+        mov     esi, eax
+        mov     ecx, esi
+        call    ext_007C5646
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x1c], eax
+        call    ext_007C5640
+        mov     ebx, dword ptr [esp + 0x18]
+        mov     edi, eax
+        mov     ecx, esi
+        mov     dword ptr [esp + 0x10], edi
+        call    ext_007C563A
+        xor     esi, esi
+        test    eax, eax
+        mov     dword ptr [esp + 0x18], eax
+        jle     loc_565d68
+        jmp     loc_565d40
+        align 4
+loc_565d40:
+        mov     eax, dword ptr [esp + 0x1c]
+        mov     edi, dword ptr [eax + esi*4]
+        push    edi
+        push    ebx
+        mov     ecx, ebp
+        call    ext_00565BF0
+        mov     ebx, eax
+        push    edi
+        push    ebx
+        mov     ecx, ebp
+        call    ext_00566020
+        add     esi, 1
+        cmp     esi, dword ptr [esp + 0x18]
+        jl      loc_565d40
+        mov     edi, dword ptr [esp + 0x10]
+loc_565d68:
+        push    edi
+        push    ebx
+        mov     ecx, ebp
+        call    ext_00565BF0
+        push    edi
+        push    eax
+        mov     ecx, ebp
+        call    ext_00566020
+        pop     edi
+        pop     ebx
+loc_565d7c:
+        pop     esi
+        pop     ebp
+        pop     ecx
+        ret     8
+    }
+}
