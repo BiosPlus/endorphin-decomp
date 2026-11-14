@@ -7725,3 +7725,56 @@ extern "C" __declspec(naked) void __fastcall fn_0048EFF0(void* self) {
         ret     0x8
     }
 }
+
+extern "C" void ext_00468180();
+extern "C" void ext_0046F930();
+extern "C" void ext_00482080();
+extern "C" void ext_004A5880();
+extern "C" void ext_004A8330();
+extern "C" void ext_004AFF30();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_00AD89B4;
+
+// [0x004825C0] sub_004825C0 (127 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004825C0(void* self) {
+    __asm {
+        push    esi
+        mov     esi, ecx
+        mov     ecx, dword ptr [esi + 0x3b4]
+        push    edi
+        call    ext_004A5880
+        push    eax
+        lea     ecx, [esi + 0x3bc]
+        call    ext_004AFF30
+        mov     eax, dword ptr [esi + 0x3b4]
+        push    eax
+        push    0x5
+        call    ext_00468180
+        mov     ecx, eax
+        call    ext_00482080
+        mov     ecx, dword ptr [esi + 0x3b4]
+        call    ext_004A8330
+        mov     edi, dword ptr [esi + 0x3f4]
+        test    edi, edi
+        je      L_done_free
+        cmp     dword ptr [edi], 0x0
+        je      L_free
+        sub     dword ptr [mem_00AD89B4], 0x1
+        jne     L_free
+        mov     eax, dword ptr [edi]
+        mov     byte ptr [eax + 0x153], 0x0
+        cmp     byte ptr [edi + 0x4], 0x0
+        je      L_free
+        mov     ecx, dword ptr [edi]
+        call    ext_0046F930
+    L_free:
+        push    edi
+        call    ext_006A5C5C
+        add     esp, 0x4
+    L_done_free:
+        pop     edi
+        mov     dword ptr [esi + 0x3f4], 0x0
+        pop     esi
+        ret
+    }
+}
