@@ -21767,3 +21767,603 @@ L43648A:
         ret
     }
 }
+
+extern "C" void ext_00408BE0();
+extern "C" void ext_00409320();
+extern "C" void ext_00413DF0();
+extern "C" void ext_0041D890();
+extern "C" void ext_0041E070();
+extern "C" void ext_00425DA0();
+extern "C" void ext_00428130();
+extern "C" void ext_0042E770();
+extern "C" void ext_0042E860();
+extern "C" void ext_0043AB70();
+extern "C" void ext_0043CB90();
+extern "C" void ext_00447290();
+extern "C" void ext_0044D190();
+extern "C" void ext_00454420();
+extern "C" void ext_00455480();
+extern "C" void ext_004555A0();
+extern "C" void ext_0045FFC0();
+extern "C" void ext_006658D0();
+extern "C" void ext_006A65F2();
+extern "C" int mem_00924FE8;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00924FF4;
+extern "C" int mem_00AD89B1;
+
+// [0x0043AC70] sub_0043AC70 (1797 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0043AC70(void* self) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push 0x0087AF4D
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x68
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        mov dword ptr [ebp-0x10], esp
+        mov dword ptr [ebp-0x18], esi
+        call ext_006A65F2
+        mov dword ptr [esi+0xd4], 0x0092F88C
+        xor ebx, ebx
+        mov dword ptr [esi], 0x0092FB84
+        mov dword ptr [esi+0xd4], 0x0092FB7C
+        mov dword ptr [ebp-0x4], ebx
+        mov dword ptr [esi+0xd8], ebx
+        mov dword ptr [esi+0xdc], ebx
+        mov dword ptr [esi+0xe0], ebx
+        mov dword ptr [esi+0xe4], ebx
+        lea edi, [esi+0xe8]
+        mov ecx, edi
+        mov byte ptr [ebp-0x4], 0x04
+        call ext_006658D0
+        mov dword ptr [edi+0x4], eax
+        mov dword ptr [edi+0x8], ebx
+        mov byte ptr [esi+0xf4], bl
+        mov byte ptr [esi+0xf5], bl
+        mov byte ptr [esi+0xf6], bl
+        mov dword ptr [esi+0xf8], ebx
+        mov dword ptr [esi+0xfc], ebx
+        mov dword ptr [esi+0x100], ebx
+        mov dword ptr [esi+0x104], ebx
+        mov dword ptr [esi+0x108], ebx
+        mov dword ptr [esi+0x10c], ebx
+        mov dword ptr [esi+0x110], ebx
+        mov dword ptr [esi+0x114], ebx
+        lea ecx, [esi+0x118]
+        call dword ptr [mem_009242FC]
+        mov dword ptr [esi+0x11c], ebx
+        mov dword ptr [esi+0x120], ebx
+        mov dword ptr [esi+0x124], ebx
+        lea ecx, [esi+0x128]
+        mov byte ptr [ebp-0x4], 0x0e
+        call dword ptr [mem_00924FE8]
+        mov dword ptr [esi+0x144], ebx
+        mov dword ptr [esi+0x148], ebx
+        mov dword ptr [esi+0x14c], ebx
+        mov dword ptr [esi+0x150], ebx
+        mov dword ptr [esi+0x154], ebx
+        mov dword ptr [esi+0x158], ebx
+        mov dword ptr [esi+0x15c], ebx
+        mov dword ptr [esi+0x170], ebx
+        mov dword ptr [esi+0x174], ebx
+        mov dword ptr [esi+0x178], ebx
+        mov dword ptr [esi+0x168], 0x0092FD04
+        mov dword ptr [esi+0x180], ebx
+        mov dword ptr [esi+0x184], ebx
+        mov dword ptr [esi+0x188], ebx
+        mov byte ptr [ebp-0x4], 0x17
+        push 0x00928B5D
+        lea ecx, [esi+0x18c]
+        call dword ptr [mem_00924FE4]
+        mov eax, 0x0092BD7C
+        mov dword ptr [esi+0x1a8], eax
+        mov dword ptr [esi+0x1ac], ebx
+        mov dword ptr [esi+0x1b0], eax
+        mov dword ptr [esi+0x1b4], ebx
+        push 0x54
+        mov byte ptr [ebp-0x4], 0x1a
+        mov dword ptr [mem_00ACDB40], esi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x1b
+        je fn_0043AC70_L1
+        mov ecx, eax
+        call ext_0042E860
+        mov edi, eax
+        jmp fn_0043AC70_L2
+    fn_0043AC70_L1:
+        xor edi, edi
+    fn_0043AC70_L2:
+        mov ecx, dword ptr [esi+0xe4]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L3
+        cmp ecx, ebx
+        je fn_0043AC70_L3
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        push 0x01
+        call edx
+    fn_0043AC70_L3:
+        push 0x0092E3A0
+        lea ecx, [ebp-0x54]
+        mov dword ptr [esi+0xe4], edi
+        mov byte ptr [ebp-0x4], 0x1c
+        call dword ptr [mem_00924FE4]
+        push 0x0092E390
+        lea ecx, [ebp-0x38]
+        mov byte ptr [ebp-0x4], 0x1d
+        call dword ptr [mem_00924FE4]
+        mov edi, dword ptr [esi+0xe4]
+        mov byte ptr [ebp-0x4], 0x1e
+        call ext_006690D0
+        lea ecx, [ebp-0x54]
+        push ecx
+        lea edx, [ebp-0x38]
+        push edx
+        lea ecx, [ebp-0x70]
+        push ecx
+        mov ecx, eax
+        call ext_00669AD0
+        mov ecx, eax
+        mov byte ptr [ebp-0x4], 0x1f
+        call dword ptr [mem_00924FF0]
+        mov edx, dword ptr [edi]
+        push ebx
+        push eax
+        mov eax, dword ptr [edx+0x20]
+        mov ecx, edi
+        call eax
+        lea ecx, [ebp-0x70]
+        mov byte ptr [ebp-0x4], 0x1e
+        call dword ptr [mem_00924FF4]
+        lea ecx, [ebp-0x38]
+        mov byte ptr [ebp-0x4], 0x1d
+        call dword ptr [mem_00924FF4]
+        lea ecx, [ebp-0x54]
+        mov byte ptr [ebp-0x4], 0x1c
+        call dword ptr [mem_00924FF4]
+        mov dword ptr [ebp-0x4], 0x1a
+        jmp fn_0043AC70_L38
+        push 0x00ACE0DC
+        lea ecx, [ebp-0x54]
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [ebp-0x1c]
+        add ecx, 0x0c
+        push ecx
+        lea ecx, [ebp-0x70]
+        mov byte ptr [ebp-0x4], 0x21
+        call dword ptr [mem_00924FE0]
+        xor ebx, ebx
+        push ebx
+        push ebx
+        lea ecx, [ebp-0x54]
+        mov byte ptr [ebp-0x4], 0x22
+        call dword ptr [mem_00924FF0]
+        push eax
+        call ext_006A5E60
+        mov esi, dword ptr [ebp-0x18]
+        mov ecx, dword ptr [esi+0xe4]
+        call ext_0042E770
+        mov ecx, dword ptr [esi+0xe4]
+        push 0x00ACDAB0
+        call ext_00428130
+        lea ecx, [ebp-0x70]
+        mov byte ptr [ebp-0x4], 0x21
+        call dword ptr [mem_00924FF4]
+        lea ecx, [ebp-0x54]
+        mov byte ptr [ebp-0x4], 0x20
+        call dword ptr [mem_00924FF4]
+        mov eax, 0x0043AF33
+        ret
+    fn_0043AC70_L33:
+        mov esi, dword ptr [ebp-0x18]
+        xor ebx, ebx
+    fn_0043AC70_L38:
+        push 0x4d8
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x23
+        je fn_0043AC70_L5B
+        mov ecx, eax
+        call ext_00408BE0
+        mov edi, eax
+        jmp fn_0043AC70_L5D
+    fn_0043AC70_L5B:
+        xor edi, edi
+    fn_0043AC70_L5D:
+        mov ecx, dword ptr [esi+0xdc]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L78
+        cmp ecx, ebx
+        je fn_0043AC70_L78
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx+0x4]
+        push 0x01
+        call eax
+    fn_0043AC70_L78:
+        push 0x1c0
+        mov dword ptr [esi+0xdc], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x24
+        je fn_0043AC70_LA1
+        mov ecx, eax
+        call ext_00409320
+        mov edi, eax
+        jmp fn_0043AC70_LA3
+    fn_0043AC70_LA1:
+        xor edi, edi
+    fn_0043AC70_LA3:
+        mov ecx, dword ptr [esi+0xe0]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_LBE
+        cmp ecx, ebx
+        je fn_0043AC70_LBE
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx+0x4]
+        push 0x01
+        call eax
+    fn_0043AC70_LBE:
+        push 0x1bc
+        mov dword ptr [esi+0xe0], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x25
+        je fn_0043AC70_LE7
+        mov ecx, eax
+        call ext_00413DF0
+        mov edi, eax
+        jmp fn_0043AC70_LE9
+    fn_0043AC70_LE7:
+        xor edi, edi
+    fn_0043AC70_LE9:
+        mov ecx, dword ptr [esi+0x104]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L104
+        cmp ecx, ebx
+        je fn_0043AC70_L104
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx+0x4]
+        push 0x01
+        call eax
+    fn_0043AC70_L104:
+        push 0x1bc
+        mov dword ptr [esi+0x104], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x26
+        je fn_0043AC70_L12D
+        mov ecx, eax
+        call ext_00447290
+        mov edi, eax
+        jmp fn_0043AC70_L12F
+    fn_0043AC70_L12D:
+        xor edi, edi
+    fn_0043AC70_L12F:
+        mov ecx, dword ptr [esi+0x114]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L14A
+        cmp ecx, ebx
+        je fn_0043AC70_L14A
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx+0x4]
+        push 0x01
+        call eax
+    fn_0043AC70_L14A:
+        push 0x44
+        mov dword ptr [esi+0x114], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x27
+        je fn_0043AC70_L171
+        mov ecx, eax
+        call ext_0041E070
+        mov dword ptr [ebp-0x14], eax
+        jmp fn_0043AC70_L174
+    fn_0043AC70_L171:
+        mov dword ptr [ebp-0x14], ebx
+    fn_0043AC70_L174:
+        mov edi, dword ptr [esi+0x120]
+        cmp dword ptr [ebp-0x14], edi
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L197
+        cmp edi, ebx
+        je fn_0043AC70_L197
+        mov ecx, edi
+        call ext_0041DE30
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+    fn_0043AC70_L197:
+        mov ecx, dword ptr [ebp-0x14]
+        push 0x148
+        mov dword ptr [esi+0x120], ecx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x28
+        je fn_0043AC70_L1CA
+        mov ecx, dword ptr [esi+0x120]
+        push ecx
+        mov ecx, eax
+        call ext_0041D890
+        mov edi, eax
+        jmp fn_0043AC70_L1CC
+    fn_0043AC70_L1CA:
+        xor edi, edi
+    fn_0043AC70_L1CC:
+        mov ecx, dword ptr [esi+0x11c]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L1E7
+        cmp ecx, ebx
+        je fn_0043AC70_L1E7
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx+0x4]
+        push 0x01
+        call eax
+    fn_0043AC70_L1E7:
+        push 0x2e8
+        mov dword ptr [esi+0x11c], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x29
+        je fn_0043AC70_L210
+        mov ecx, eax
+        call ext_0045FFC0
+        mov edi, eax
+        jmp fn_0043AC70_L212
+    fn_0043AC70_L210:
+        xor edi, edi
+    fn_0043AC70_L212:
+        mov ecx, dword ptr [esi+0x108]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L22D
+        cmp ecx, ebx
+        je fn_0043AC70_L22D
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx+0x4]
+        push 0x01
+        call eax
+    fn_0043AC70_L22D:
+        push 0x148
+        mov dword ptr [esi+0x108], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x2a
+        je fn_0043AC70_L25D
+        mov ecx, dword ptr [esi+0x108]
+        push ecx
+        mov ecx, eax
+        call ext_0043CB90
+        mov edi, eax
+        jmp fn_0043AC70_L25F
+    fn_0043AC70_L25D:
+        xor edi, edi
+    fn_0043AC70_L25F:
+        mov ecx, dword ptr [esi+0x10c]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L27A
+        cmp ecx, ebx
+        je fn_0043AC70_L27A
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx+0x4]
+        push 0x01
+        call eax
+    fn_0043AC70_L27A:
+        mov dword ptr [esi+0x10c], edi
+        mov eax, dword ptr [esi+0xdc]
+        cmp eax, ebx
+        je fn_0043AC70_L294
+        add eax, 0xb0
+        mov dword ptr [ebp-0x14], eax
+        jmp fn_0043AC70_L297
+    fn_0043AC70_L294:
+        mov dword ptr [ebp-0x14], ebx
+    fn_0043AC70_L297:
+        mov eax, dword ptr [esi+0x108]
+        lea ecx, [ebp-0x14]
+        push ecx
+        lea ecx, [eax+0x54]
+        call ext_0041A920
+        push 0x04
+        mov byte ptr [mem_00AD89B1], 0x01
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x2b
+        je fn_0043AC70_L2D1
+        mov ecx, eax
+        call ext_00425DA0
+        mov dword ptr [ebp-0x14], eax
+        jmp fn_0043AC70_L2D4
+    fn_0043AC70_L2D1:
+        mov dword ptr [ebp-0x14], ebx
+    fn_0043AC70_L2D4:
+        mov edi, dword ptr [esi+0x14c]
+        cmp dword ptr [ebp-0x14], edi
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L2F7
+        cmp edi, ebx
+        je fn_0043AC70_L2F7
+        mov ecx, edi
+        call ext_00493D90
+        push edi
+        call ext_006A5C5C
+        add esp, 4
+    fn_0043AC70_L2F7:
+        mov edx, dword ptr [ebp-0x14]
+        mov dword ptr [esi+0x14c], edx
+        mov ecx, dword ptr [esi+0x124]
+        cmp ecx, ebx
+        je fn_0043AC70_L313
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax+0x4]
+        push 0x01
+        call edx
+    fn_0043AC70_L313:
+        push 0xd7c
+        mov dword ptr [esi+0x124], ebx
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x2c
+        je fn_0043AC70_L33D
+        push ebx
+        mov ecx, eax
+        call ext_0044D190
+        mov edi, eax
+        jmp fn_0043AC70_L33F
+    fn_0043AC70_L33D:
+        xor edi, edi
+    fn_0043AC70_L33F:
+        mov ecx, dword ptr [esi+0x154]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L35A
+        cmp ecx, ebx
+        je fn_0043AC70_L35A
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax+0x4]
+        push 0x01
+        call edx
+    fn_0043AC70_L35A:
+        push 0x154
+        mov dword ptr [esi+0x154], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x2d
+        je fn_0043AC70_L38A
+        mov ecx, dword ptr [esi+0x154]
+        push ecx
+        mov ecx, eax
+        call ext_00454420
+        mov edi, eax
+        jmp fn_0043AC70_L38C
+    fn_0043AC70_L38A:
+        xor edi, edi
+    fn_0043AC70_L38C:
+        mov ecx, dword ptr [esi+0x150]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L3A7
+        cmp ecx, ebx
+        je fn_0043AC70_L3A7
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax+0x4]
+        push 0x01
+        call edx
+    fn_0043AC70_L3A7:
+        push 0x16c
+        mov dword ptr [esi+0x150], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x2e
+        je fn_0043AC70_L3D1
+        push ebx
+        mov ecx, eax
+        call ext_004555A0
+        mov edi, eax
+        jmp fn_0043AC70_L3D3
+    fn_0043AC70_L3D1:
+        xor edi, edi
+    fn_0043AC70_L3D3:
+        mov ecx, dword ptr [esi+0x15c]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L3EE
+        cmp ecx, ebx
+        je fn_0043AC70_L3EE
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax+0x4]
+        push 0x01
+        call edx
+    fn_0043AC70_L3EE:
+        push 0x148
+        mov dword ptr [esi+0x15c], edi
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [ebp-0x14], eax
+        cmp eax, ebx
+        mov byte ptr [ebp-0x4], 0x2f
+        je fn_0043AC70_L41E
+        mov ecx, dword ptr [esi+0x15c]
+        push ecx
+        mov ecx, eax
+        call ext_00455480
+        mov edi, eax
+        jmp fn_0043AC70_L420
+    fn_0043AC70_L41E:
+        xor edi, edi
+    fn_0043AC70_L420:
+        mov ecx, dword ptr [esi+0x158]
+        cmp edi, ecx
+        mov byte ptr [ebp-0x4], 0x1a
+        je fn_0043AC70_L43B
+        cmp ecx, ebx
+        je fn_0043AC70_L43B
+        mov eax, dword ptr [ecx]
+        mov edx, dword ptr [eax+0x4]
+        push 0x01
+        call edx
+    fn_0043AC70_L43B:
+        mov dword ptr [esi+0x158], edi
+        call ext_0043AB10
+        push ebx
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [ebp-0x14], esp
+        push 0x0092EE24
+        call dword ptr [mem_00924FE4]
+        call ext_0043AB70
+        mov ecx, dword ptr [ebp-0xc]
+        add esp, 0x20
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret
+    }
+}
