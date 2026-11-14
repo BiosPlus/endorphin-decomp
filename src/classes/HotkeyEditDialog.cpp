@@ -143,3 +143,53 @@ extern "C" __declspec(naked) void __fastcall fn_00421FB0(void* self) {
         ret
     }
 }
+
+extern "C" void ext_00422270();
+extern "C" void ext_006A5FB0();
+extern "C" void ext_006A6436();
+extern "C" int mem_00877FD2;
+extern "C" int mem_00924300;
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+extern "C" int mem_009242F4;
+
+// [0x00422540] HotkeyEditDialog::vfunc_86 (134 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00422540(void* self) {
+    __asm {
+        push -1
+        push offset mem_00877FD2
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x20
+        push esi
+        mov esi, ecx
+        lea eax, [esp + 0x4]
+        push eax
+        lea ecx, [esi + 0x74]
+        call ext_006A6436
+        lea ecx, [esp + 0x4]
+        mov dword ptr [esp + 0x2C], 0
+        call dword ptr [mem_00924300]
+        push eax
+        lea ecx, [esp + 0xC]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 0x8]
+        push ecx
+        mov ecx, esi
+        mov byte ptr [esp + 0x30], 1
+        call ext_00422270
+        mov ecx, esi
+        call ext_006A5FB0
+        lea ecx, [esp + 0x8]
+        mov byte ptr [esp + 0x2C], 0
+        call dword ptr [mem_00924FF4]
+        lea ecx, [esp + 0x4]
+        call dword ptr [mem_009242F4]
+        mov ecx, dword ptr [esp + 0x24]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x2C
+        ret
+    }
+}
