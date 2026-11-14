@@ -3,8 +3,10 @@
 #include <exception>
 #include <new>
 #include <string>
+extern "C" void ext_0040E6F0();
+extern "C" void ext_0040EBF0();
 
-// [0x00401B60] sub_00401B60 (27 bytes)
+extern "C" void ext_0040EBF0();
 extern "C" int mem_00928ECC;
 extern "C" int mem_00924FF4;
 extern "C" int mem_009251C0;
@@ -15999,5 +16001,89 @@ L_ok:
         pop esi
         add esp, 8
         ret 4
+    }
+}
+
+// [0x0040ECB0] sub_0040ECB0 (166 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0040ECB0(void* self, int edx_unused, void* a1) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x4]
+        test ebx, ebx
+        push edi
+        jne short L_nonnull
+        xor edi, edi
+        jmp short L_after_size
+L_nonnull:
+        mov ecx, dword ptr [esi + 0x8]
+        sub ecx, ebx
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov edi, edx
+        shr edi, 0x1f
+        add edi, edx
+L_after_size:
+        test ebx, ebx
+        je short L_grow
+        mov ecx, dword ptr [esi + 0xc]
+        sub ecx, ebx
+        mov eax, 0x92492493
+        imul ecx
+        add edx, ecx
+        sar edx, 0x4
+        mov eax, edx
+        shr eax, 0x1f
+        add eax, edx
+        cmp edi, eax
+        jae short L_grow
+        mov ecx, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x18]
+        mov edi, dword ptr [esi + 0x8]
+        mov byte ptr [esp + 0xc], 0x0
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        push esi
+        push edx
+        push 0x1
+        push edi
+        call ext_0040E6F0
+        add esp, 0x18
+        add edi, 0x1c
+        mov dword ptr [esi + 0x8], edi
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret 0x4
+L_grow:
+        mov edi, dword ptr [esi + 0x8]
+        cmp ebx, edi
+        jbe short L_ok
+        _emit 0xff
+        _emit 0x15
+        _emit 0x34
+        _emit 0x51
+        _emit 0x92
+        _emit 0x00
+L_ok:
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        push edi
+        push esi
+        lea ecx, dword ptr [esp + 0x18]
+        push ecx
+        mov ecx, esi
+        call ext_0040EBF0
+        pop edi
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret 0x4
     }
 }
