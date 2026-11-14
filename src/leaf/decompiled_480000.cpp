@@ -6921,3 +6921,21 @@ extern "C" void __fastcall fn_0048F1F0(void* self, int edx_unused, int arg1) {
     }
     *((unsigned char*)self + 0x30) = 0;
 }
+
+// [0x0048CDE0] sub_0048CDE0 (81 bytes)
+extern "C" void ext_0048BE70();
+extern "C" void ext_0048BF20();
+extern "C" void ext_0048BFD0();
+extern "C" void ext_0048CD20();
+extern "C" void ext_004EB950();
+extern "C" int mem_00A9F9C4;
+extern "C" int mem_00A9F554;
+
+extern "C" void __cdecl fn_0048CDE0(void* arg) {
+    int local;
+    ((void (__thiscall*)(void*, int*, int))ext_0048CD20)(arg, &local, 0x0093e1b8);
+    ((void (__thiscall*)(int*, int))ext_0048BE70)(&local, mem_00A9F9C4);
+    ((void (__thiscall*)(int*, int))ext_0048BF20)(&local, mem_00A9F554);
+    ((void (__thiscall*)(int*, int))ext_0048BFD0)(&local, 0x0093e1ac);
+    ((void (__cdecl*)(void*))ext_004EB950)(arg);
+}
