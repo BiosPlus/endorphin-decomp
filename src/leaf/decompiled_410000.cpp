@@ -11140,3 +11140,166 @@ loc_41a775:
         ret     0x10
     }
 }
+
+// [0x0041AB80] sub_0041AB80 (349 bytes)
+extern "C" void ext_0041A700();
+extern "C" void ext_0041A790();
+extern "C" void ext_006A6322();
+extern "C" __declspec(naked) void __fastcall fn_0041AB80(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub     esp, 0x18
+        push    ebp
+        mov     ebp, ecx
+        mov     eax, dword ptr [ebp + 0x58]
+        test    eax, eax
+        je      L_end_0041AB80
+        mov     edx, dword ptr [ebp + 0x5c]
+        sub     edx, eax
+        sar     edx, 3
+        mov     dword ptr [esp + 0x8], edx
+        je      L_end_0041AB80
+        mov     eax, dword ptr [ebp + 0x28]
+        test    eax, eax
+        push    ebx
+        push    esi
+        lea     esi, [ebp + 0x24]
+        push    edi
+        jne     L_a_0041AB80
+        xor     ecx, ecx
+        jmp     L_b_0041AB80
+L_a_0041AB80:
+        mov     ecx, dword ptr [esi + 0x8]
+        sub     ecx, eax
+L_b_0041AB80:
+        mov     eax, edx
+        sub     eax, ecx
+        cdq
+        sub     eax, edx
+        sar     eax, 1
+        test    eax, eax
+        jle     L_after_loop_0041AB80
+        mov     byte ptr [esp + 0x12], 6
+        mov     byte ptr [esp + 0x13], 2
+        mov     ebx, eax
+L_loop_0041AB80:
+        mov     eax, dword ptr [esi + 0x4]
+        test    eax, eax
+        jne     L_c_0041AB80
+        xor     edx, edx
+        jmp     L_d_0041AB80
+L_c_0041AB80:
+        mov     edx, dword ptr [esi + 0x8]
+        sub     edx, eax
+L_d_0041AB80:
+        test    eax, eax
+        je      L_e_0041AB80
+        mov     ecx, dword ptr [esi + 0xc]
+        sub     ecx, eax
+        cmp     edx, ecx
+        jae     L_e_0041AB80
+        mov     eax, dword ptr [esi + 0x8]
+        mov     byte ptr [eax], 6
+        add     eax, 1
+        mov     dword ptr [esi + 0x8], eax
+        jmp     L_f_0041AB80
+L_e_0041AB80:
+        mov     edi, dword ptr [esi + 0x8]
+        cmp     eax, edi
+        jbe     L_g_0041AB80
+        call    dword ptr [mem_00925134]
+L_g_0041AB80:
+        lea     eax, [esp + 0x12]
+        push    eax
+        push    edi
+        push    esi
+        lea     ecx, [esp + 0x24]
+        push    ecx
+        mov     ecx, esi
+        call    ext_0041A700
+L_f_0041AB80:
+        mov     eax, dword ptr [esi + 0x4]
+        test    eax, eax
+        jne     L_h_0041AB80
+        xor     edx, edx
+        jmp     L_i_0041AB80
+L_h_0041AB80:
+        mov     edx, dword ptr [esi + 0x8]
+        sub     edx, eax
+L_i_0041AB80:
+        test    eax, eax
+        je      L_j_0041AB80
+        mov     ecx, dword ptr [esi + 0xc]
+        sub     ecx, eax
+        cmp     edx, ecx
+        jae     L_j_0041AB80
+        mov     eax, dword ptr [esi + 0x8]
+        mov     byte ptr [eax], 2
+        add     eax, 1
+        mov     dword ptr [esi + 0x8], eax
+        jmp     L_k_0041AB80
+L_j_0041AB80:
+        mov     edi, dword ptr [esi + 0x8]
+        cmp     eax, edi
+        jbe     L_m_0041AB80
+        call    dword ptr [mem_00925134]
+L_m_0041AB80:
+        lea     edx, [esp + 0x13]
+        push    edx
+        push    edi
+        push    esi
+        lea     eax, [esp + 0x2c]
+        push    eax
+        mov     ecx, esi
+        call    ext_0041A700
+L_k_0041AB80:
+        sub     ebx, 1
+        jne     L_loop_0041AB80
+L_after_loop_0041AB80:
+        mov     ecx, dword ptr [esp + 0x30]
+        mov     edi, dword ptr [esp + 0x2c]
+        push    0
+        push    1
+        push    ecx
+        push    edi
+        mov     ecx, ebp
+        call    ext_0041A790
+        mov     ebx, eax
+        mov     eax, dword ptr [esi + 0x4]
+        test    eax, eax
+        je      L_n_0041AB80
+        mov     edx, dword ptr [esi + 0x8]
+        sub     edx, eax
+        jne     L_o_0041AB80
+L_n_0041AB80:
+        call    dword ptr [mem_00925134]
+L_o_0041AB80:
+        mov     eax, dword ptr [ebp + 0x58]
+        test    eax, eax
+        mov     esi, dword ptr [esi + 0x4]
+        je      L_p_0041AB80
+        mov     ecx, dword ptr [ebp + 0x5c]
+        sub     ecx, eax
+        sar     ecx, 3
+        jne     L_q_0041AB80
+L_p_0041AB80:
+        call    dword ptr [mem_00925134]
+L_q_0041AB80:
+        mov     edx, dword ptr [esp + 0x14]
+        mov     eax, dword ptr [ebp + 0x58]
+        push    edx
+        push    esi
+        push    eax
+        mov     ecx, edi
+        call    ext_006A6322
+        push    ebx
+        mov     ecx, edi
+        call    ext_006A610C
+        pop     edi
+        pop     esi
+        pop     ebx
+L_end_0041AB80:
+        pop     ebp
+        add     esp, 0x18
+        ret     8
+    }
+}
