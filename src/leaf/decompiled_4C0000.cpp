@@ -4516,3 +4516,32 @@ extern "C" __declspec(naked) void* __cdecl fn_004C2DE0(void* p) {
         ret
     }
 }
+
+// [0x004C6520] sub_004C6520 (104 bytes)
+extern "C" void ext_004C32A0();
+extern "C" __declspec(naked) void* __fastcall fn_004C6520(char* self, int edx_unused, const char* other) {
+    __asm {
+        push    esi
+        push    edi
+        mov     edi, dword ptr [esp + 0xc]
+        push    edi
+        mov     esi, ecx
+        call    ext_004C32A0
+        mov     dword ptr [esi], 0x9458a4
+        mov     dword ptr [esi + 0x4], 0x94585c
+        mov     dword ptr [esi + 0x8], 0x94581c
+        mov     dword ptr [esi + 0xc], 0x9457cc
+        mov     dword ptr [esi + 0x150], 0x9457b4
+        mov     dword ptr [esi + 0x154], 0x9457a4
+        mov     dword ptr [esi + 0x158], 0x945778
+        fld     dword ptr [edi + 0x180]
+        xor     eax, eax
+        fstp    dword ptr [esi + 0x180]
+        mov     dword ptr [esi + 0x184], eax
+        mov     byte ptr [esi + 0x188], al
+        pop     edi
+        mov     eax, esi
+        pop     esi
+        ret     0x4
+    }
+}
