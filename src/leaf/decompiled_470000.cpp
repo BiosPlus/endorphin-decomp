@@ -7349,3 +7349,64 @@ extern "C" __declspec(naked) void __fastcall fn_00473870(void* self) {
         ret
     }
 }
+
+// [0x00474300] sub_00474300 (299 bytes)
+extern "C" void ext_0046FC50();
+extern "C" void ext_00472350();
+extern "C" void ext_00472C90();
+extern "C" void ext_00473280();
+extern "C" void ext_0065D110();
+extern "C" void ext_0067ADD0();
+extern "C" void ext_0067B3D0();
+extern "C" void ext_0067B530();
+extern "C" int mem_00928E78;
+extern "C" int mem_0092BD70;
+
+extern "C" void __fastcall fn_00474300(void* self, int edx_unused, unsigned char arg1) {
+    char* base = (char*)self;
+    ((void (__thiscall*)(void*))ext_00472350)(self);
+    if (*(unsigned char*)(base + 0x293) == 0) {
+        ((void (__thiscall*)(void*, int))ext_00473280)(self, 1);
+    }
+    ((void (__thiscall*)(void*))ext_0065D110)(*(void**)(base + 0xf8));
+
+    void* obj30 = *(void**)(base + 0x30);
+    *(unsigned char*)(base + 0x290) = 1;
+    *(unsigned char*)(base + 0x291) = 1;
+    *(unsigned char*)(base + 0x292) = 0;
+    *(int*)(base + 0x108) = 0;
+    typedef unsigned char (__thiscall* Fn138)(void*);
+    *(unsigned char*)(base + 0x294) = (*(Fn138*)(*(char**)obj30 + 0x138))(obj30);
+
+    if (*(int*)(base + 0x288) > 0x78) {
+        *(int*)(base + 0x288) = 0x78;
+    }
+    ((void (__thiscall*)(void*))ext_0046FC50)(self);
+
+    volatile double d = (*(double*)&mem_00928E78 / (double)*(int*)(base + 0x288)) + *(double*)&mem_0092BD70;
+    int val;
+    __asm {
+        fld d
+        fistp val
+    }
+
+    *(unsigned char*)(base + 0x17c) = arg1;
+    if (arg1 && val <= 9) {
+        while (*(int*)(base + 0x108) < *(int*)(base + 0x174)) {
+            ((void (__thiscall*)(void*))ext_00472C90)(self);
+        }
+        ((void (__thiscall*)(void*))ext_00472350)(self);
+        return;
+    }
+
+    void* sub10c = base + 0x10c;
+    *(unsigned char*)(base + 0x295) = 1;
+    ((void (__thiscall*)(void*, int, int, int))ext_0067B3D0)(sub10c, val, *(int*)(base + 0x278), 4);
+    ((void (__thiscall*)(void*))ext_0067B530)(sub10c);
+
+    if (arg1) {
+        while (*(unsigned char*)(base + 0x290) != 0) {
+            ((void (__cdecl*)(int))ext_0067ADD0)(10);
+        }
+    }
+}
