@@ -1532,3 +1532,67 @@ extern "C" __declspec(naked) void* __fastcall fn_00535D70(void* self, int edx_un
         ret 8
     }
 }
+
+// [0x00533BC0] OglRenderer::vfunc_80 (134 bytes)
+extern "C" void ext_00538FA0();
+extern "C" void ext_0054D0D0();
+
+extern "C" __declspec(naked) void __fastcall fn_00533BC0(void* self, int edx_unused, int a1) {
+    __asm {
+        sub esp, 8
+        push esi
+        push edi
+        mov edi, ecx
+        lea esi, [edi + 0x33c]
+        mov ecx, esi
+        call ext_0054D0D0
+        mov eax, dword ptr [edi]
+        mov edx, dword ptr [eax + 0x24]
+        push 0
+        mov ecx, edi
+        call edx
+        cmp byte ptr [esi + 0x3d], 0
+        je L_ecx_a
+        mov ecx, dword ptr [esi + 0x5c]
+        jmp L_ecx_b
+    L_ecx_a:
+        mov ecx, dword ptr [esi + 0x4c]
+    L_ecx_b:
+        cmp byte ptr [esi + 0x3d], 0
+        je L_eax_a
+        mov eax, dword ptr [esi + 0x58]
+        jmp L_eax_b
+    L_eax_a:
+        mov eax, dword ptr [esi + 0x48]
+    L_eax_b:
+        cmp byte ptr [esi + 0x3d], 0
+        je L_f1_a
+        fld dword ptr [esi + 0x54]
+        jmp L_f1_b
+    L_f1_a:
+        fld dword ptr [esi + 0x44]
+    L_f1_b:
+        cmp byte ptr [esi + 0x3d], 0
+        fstp dword ptr [esp + 8]
+        je L_f2_a
+        fld dword ptr [esi + 0x50]
+        jmp L_f2_b
+    L_f2_a:
+        fld dword ptr [esi + 0x40]
+    L_f2_b:
+        push ecx
+        fstp dword ptr [esp + 0x10]
+        fld dword ptr [esp + 0xc]
+        push eax
+        sub esp, 8
+        fstp dword ptr [esp + 4]
+        lea ecx, [edi + 0x42c]
+        fld dword ptr [esp + 0x1c]
+        fstp dword ptr [esp]
+        call ext_00538FA0
+        pop edi
+        pop esi
+        add esp, 8
+        ret 4
+    }
+}
