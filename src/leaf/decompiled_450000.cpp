@@ -8943,3 +8943,96 @@ L_end_0045D1D0:
         ret 8
     }
 }
+
+// [0x0045F610] sub_0045F610 (220 bytes)
+extern "C" void ext_0041A920();
+extern "C" void ext_0043F4C0();
+extern "C" void ext_0045E920();
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006A6E9E();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_0045F610(void* self, int edx_unused, void* vec) {
+    __asm {
+        push    -1
+        push    0x87ba98
+        mov     eax, fs:[0]
+        push    eax
+        mov     fs:[0], esp
+        sub     esp, 0x10
+        push    ebx
+        push    ebp
+        xor     eax, eax
+        push    esi
+        push    edi
+        mov     ebp, ecx
+        mov     dword ptr [esp + 0x14], eax
+        mov     dword ptr [esp + 0x18], eax
+        mov     dword ptr [esp + 0x1c], eax
+        mov     ebx, dword ptr [esp + 0x30]
+        mov     esi, dword ptr [ebx + 4]
+        cmp     esi, dword ptr [ebx + 8]
+        mov     dword ptr [esp + 0x28], eax
+        jbe     L_45f652
+        call    dword ptr [mem_00925134]
+    L_45f652:
+        mov     edi, dword ptr [ebx + 8]
+        cmp     dword ptr [ebx + 4], edi
+        jbe     L_45f660
+        call    dword ptr [mem_00925134]
+    L_45f660:
+        cmp     esi, edi
+        je      L_45f6ba
+        cmp     esi, dword ptr [ebx + 8]
+        jb      L_45f66f
+        call    dword ptr [mem_00925134]
+    L_45f66f:
+        mov     eax, dword ptr [esi]
+        push    0
+        push    0xa2e914
+        push    0xa2e2d8
+        push    0
+        push    eax
+        call    ext_006A6E9E
+        add     esp, 0x14
+        test    eax, eax
+        je      L_45f6aa
+        push    eax
+        mov     ecx, ebp
+        call    ext_0045E920
+        test    eax, eax
+        mov     dword ptr [esp + 0x30], eax
+        je      L_45f6aa
+        lea     ecx, [esp + 0x30]
+        push    ecx
+        lea     ecx, [esp + 0x14]
+        call    ext_0041A920
+    L_45f6aa:
+        cmp     esi, dword ptr [ebx + 8]
+        jb      L_45f6b5
+        call    dword ptr [mem_00925134]
+    L_45f6b5:
+        add     esi, 4
+        jmp     L_45f652
+    L_45f6ba:
+        lea     edx, [esp + 0x10]
+        push    edx
+        mov     ecx, ebp
+        call    ext_0043F4C0
+        mov     eax, dword ptr [esp + 0x14]
+        test    eax, eax
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        je      L_45f6db
+        push    eax
+        call    ext_006A5C5C
+        add     esp, 4
+    L_45f6db:
+        mov     ecx, dword ptr [esp + 0x10]
+        mov     fs:[0], ecx
+        add     esp, 0x1c
+        ret     4
+    }
+}
