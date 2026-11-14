@@ -997,3 +997,56 @@ loc_710b91:
         ret
     }
 }
+
+extern "C" void ext_006A5C62();
+extern "C" void ext_00713020();
+extern "C" void ext_00782D00();
+extern "C" int mem_00B5FA68;
+
+// [0x00712EB0] sub_00712EB0 (144 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00712EB0(int* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push 0x8b8fbb
+        push eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr fs:[0], esp
+        push esi
+        mov esi, ecx
+        mov dword ptr [esi], 0x9960c8
+        mov dword ptr [esi + 4], 0
+        mov dword ptr [esi + 8], 0
+        mov dword ptr [esi + 0xc], eax
+        mov dword ptr [esi + 0x10], esi
+        mov eax, dword ptr [mem_00B5FA68]
+        test eax, eax
+        jne L_712f23
+        push 0x14
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 0x14], eax
+        test eax, eax
+        mov dword ptr [esp + 0xc], 0
+        je L_712f14
+        push 0x14
+        mov ecx, eax
+        call ext_00782D00
+        jmp L_712f16
+    L_712f14:
+        xor eax, eax
+    L_712f16:
+        mov dword ptr [esp + 0xc], -1
+        mov dword ptr [mem_00B5FA68], eax
+    L_712f23:
+        push esi
+        call ext_00713020
+        mov ecx, dword ptr [esp + 8]
+        add esp, 4
+        mov eax, esi
+        mov dword ptr fs:[0], ecx
+        pop esi
+        add esp, 0xc
+        ret 4
+    }
+}
