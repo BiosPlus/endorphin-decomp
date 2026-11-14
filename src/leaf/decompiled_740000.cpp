@@ -230,3 +230,92 @@ L_done:
         ret     0ch
     }
 }
+
+// [0x0074B170] sub_0074B170 (192 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006D2130();
+extern "C" void ext_006D2170();
+extern "C" void ext_00784650();
+extern "C" void ext_007846D0();
+extern "C" __declspec(naked) void __fastcall fn_0074B170(void* self, int edx_unused, int a1_unused, int a2) {
+    __asm {
+        mov     eax, dword ptr fs:[0]
+        push    -1
+        push    8bf2cbh
+        push    eax
+        mov     dword ptr fs:[0], esp
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [esp + 1ch]
+        push    esi
+        xor     ebx, ebx
+        push    edi
+        push    ebx
+        mov     edi, ecx
+        push    ebp
+        call    ext_007846D0
+        mov     esi, eax
+        cmp     esi, ebx
+        jne     L_74B1DC
+        push    18h
+        call    ext_006A5C62
+        mov     esi, eax
+        add     esp, 4
+        mov     dword ptr [esp + 24h], esi
+        cmp     esi, ebx
+        mov     dword ptr [esp + 18h], ebx
+        je      L_74B1C9
+        push    4
+        push    10h
+        mov     ecx, esi
+        call    ext_006D2130
+        lea     eax, [esi + 10h]
+        mov     dword ptr [esi + 14h], eax
+        jmp     L_74B1CB
+L_74B1C9:
+        xor     esi, esi
+L_74B1CB:
+        push    esi
+        push    ebp
+        mov     ecx, edi
+        mov     dword ptr [esp + 20h], 0ffffffffh
+        call    ext_00784650
+L_74B1DC:
+        mov     edx, dword ptr [esi]
+        mov     ebp, dword ptr [esp + 20h]
+        lea     ecx, [esp + 24h]
+        mov     dword ptr [esp + 24h], ebp
+        push    ecx
+        push    edx
+        mov     ecx, esi
+        call    ext_006D2170
+        cmp     byte ptr [ebp], bl
+        jne     L_74B1FB
+        mov     byte ptr [edi + 14h], bl
+L_74B1FB:
+        cmp     byte ptr [ebp + 1], bl
+        jne     L_74B203
+        mov     byte ptr [edi + 15h], bl
+L_74B203:
+        mov     cl, byte ptr [ebp + 2]
+        mov     al, 1
+        cmp     cl, bl
+        je      L_74B211
+        mov     byte ptr [edi + 17h], al
+        jmp     L_74B214
+L_74B211:
+        mov     byte ptr [edi + 16h], bl
+L_74B214:
+        mov     ecx, dword ptr [edi + 18h]
+        inc     ecx
+        mov     dword ptr [edi + 18h], ecx
+        mov     ecx, dword ptr [esp + 10h]
+        pop     edi
+        pop     esi
+        pop     ebp
+        mov     dword ptr fs:[0], ecx
+        pop     ebx
+        add     esp, 0ch
+        ret     8
+    }
+}
