@@ -156,3 +156,31 @@ extern "C" __declspec(naked) void __cdecl fn_007A0C40(void** pp) {
         ret
     }
 }
+
+// [0x007AC2B0] sub_007AC2B0 (79 bytes)
+extern "C" void ext_007AA880();
+extern "C" void ext_007AC300();
+extern "C" __declspec(naked) void __fastcall fn_007AC2B0(void* self) {
+    __asm {
+        push -1
+        push 0x008c1be8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        mov dword ptr [esi], 0x0099850c
+        mov dword ptr [esp + 0x10], 0
+        call ext_007AC300
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_007AA880
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
