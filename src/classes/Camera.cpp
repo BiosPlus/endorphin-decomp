@@ -930,3 +930,63 @@ loc_54953B:
         ret 0x14
     }
 }
+
+// [0x00548A20] Camera::vfunc_2 (129 bytes)
+extern "C" void ext_00427550();
+extern "C" void ext_005481A0();
+extern "C" void ext_005481C0();
+extern "C" void ext_00640110();
+extern "C" void ext_00640AD0();
+extern "C" int mem_00A9F838;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9F698;
+extern "C" int mem_00A9F47C;
+
+extern "C" __declspec(naked) void __fastcall fn_00548A20(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [mem_00A9F838]
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 10h]
+        mov esi, ecx
+        push eax
+        mov ecx, edi
+        call ext_00640110
+        lea ecx, [esi + 8h]
+        mov dword ptr [esp + 10h], eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        lea ecx, [esp + 14h]
+        call ext_00427550
+        mov ecx, dword ptr [mem_00A9F698]
+        push ecx
+        mov ecx, edi
+        call ext_00640110
+        mov ecx, esi
+        mov ebx, eax
+        call ext_005481C0
+        sub esp, 8
+        fstp qword ptr [esp]
+        push ebx
+        call ext_00640AD0
+        mov edx, dword ptr [mem_00A9F47C]
+        add esp, 0Ch
+        push edx
+        mov ecx, edi
+        call ext_00640110
+        mov ecx, esi
+        mov ebx, eax
+        call ext_005481A0
+        sub esp, 8
+        fstp qword ptr [esp]
+        push ebx
+        call ext_00640AD0
+        add esp, 0Ch
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
