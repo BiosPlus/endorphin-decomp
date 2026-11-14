@@ -5332,3 +5332,49 @@ done:
         ret
     }
 }
+
+// [0x004CFB90] sub_004CFB90 (153 bytes)
+extern "C" void ext_004C2330();
+extern "C" void ext_004CE8D0();
+extern "C" void ext_006A5C5C();
+
+extern "C" __declspec(naked) void __fastcall fn_004CFB90(void* self) {
+    __asm {
+        push -1
+        push 0x88c6a8
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0x8], esi
+        mov dword ptr [esi], 0x94785c
+        mov dword ptr [esi + 0x4], 0x947814
+        mov dword ptr [esi + 0x8], 0x9477d4
+        mov dword ptr [esi + 0xc], 0x947784
+        mov dword ptr [esi + 0x150], 0x94776c
+        mov dword ptr [esi + 0x154], 0x94775c
+        mov dword ptr [esi + 0x158], 0x947730
+        mov edi, dword ptr [esi + 0x184]
+        test edi, edi
+        mov dword ptr [esp + 0x14], 0
+        je skip_004CFB90
+        mov ecx, edi
+        call ext_004CE8D0
+        push edi
+        call ext_006A5C5C
+        add esp, 0x4
+    skip_004CFB90:
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], 0xffffffff
+        call ext_004C2330
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x10
+        ret
+    }
+}
