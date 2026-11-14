@@ -12,5 +12,7 @@
   "relocations": [
     "0x00557177"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-3.8-flash@low",
+  "matched_at": "2026-11-14T06:40:22Z"
 }
