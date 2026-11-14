@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/leaf/decompiled_570000.cpp
+extern "C" void ext_0057EBB0();
+extern "C" int mem_00925134; /* "P{b" */
 
-// [0x00573290] sub_00573290 (16 bytes)
+extern "C" int mem_00925134; /* "P{b" */
 extern "C" void __stdcall ext_006A6D5C(void* self, int a, int b, int c);
 
 extern "C" void __fastcall fn_00573290(void* self) {
@@ -12460,6 +12462,89 @@ extern "C" __declspec(naked) void __fastcall fn_00578FD0(void* self, void* dummy
     L_00579066:
         call    dword ptr [mem_00925134]
     L_0057906C:
+        mov     eax, dword ptr [esp + 0x18]
+        mov     dword ptr [eax], edi
+        pop     edi
+        mov     dword ptr [eax + 0x4], esi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        pop     ecx
+        ret     0x10
+    }
+}
+
+// [0x0057F980] sub_0057F980 (173 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0057F980(void* self, void* dummy, void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push    ecx
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [esp + 0x18]
+        push    esi
+        push    edi
+        mov     edi, ecx
+        mov     esi, dword ptr [edi + 0x4]
+        test    esi, esi
+        je      L_0057F9AC
+        mov     ebx, dword ptr [edi + 0x8]
+        mov     ecx, ebx
+        sub     ecx, esi
+        mov     eax, 0x2e8ba2e9
+        imul    ecx
+        sar     edx, 0x3
+        mov     eax, edx
+        shr     eax, 0x1f
+        add     eax, edx
+        jne     L_0057F9B4
+    L_0057F9AC:
+        mov     ebx, dword ptr [esp + 0x1c]
+        xor     esi, esi
+        jmp     L_0057F9E5
+    L_0057F9B4:
+        cmp     esi, ebx
+        jbe     L_0057F9BE
+        call    dword ptr [mem_00925134]
+    L_0057F9BE:
+        mov     ebx, dword ptr [esp + 0x1c]
+        test    ebx, ebx
+        je      L_0057F9CA
+        cmp     ebx, edi
+        je      L_0057F9D0
+    L_0057F9CA:
+        call    dword ptr [mem_00925134]
+    L_0057F9D0:
+        mov     ecx, ebp
+        sub     ecx, esi
+        mov     eax, 0x2e8ba2e9
+        imul    ecx
+        sar     edx, 0x3
+        mov     esi, edx
+        shr     esi, 0x1f
+        add     esi, edx
+    L_0057F9E5:
+        mov     ecx, dword ptr [esp + 0x24]
+        push    ecx
+        push    1
+        push    ebp
+        push    ebx
+        mov     ecx, edi
+        call    ext_0057EBB0
+        mov     ebx, dword ptr [edi + 0x4]
+        cmp     ebx, dword ptr [edi + 0x8]
+        jbe     L_0057FA03
+        call    dword ptr [mem_00925134]
+    L_0057FA03:
+        imul    esi, esi, 0x2c
+        add     esi, ebx
+        cmp     esi, dword ptr [edi + 0x8]
+        mov     dword ptr [esp + 0x20], ebx
+        ja      L_0057FA16
+        cmp     esi, dword ptr [edi + 0x4]
+        jae     L_0057FA1C
+    L_0057FA16:
+        call    dword ptr [mem_00925134]
+    L_0057FA1C:
         mov     eax, dword ptr [esp + 0x18]
         mov     dword ptr [eax], edi
         pop     edi
