@@ -166,3 +166,28 @@ extern "C" __declspec(naked) void* __fastcall fn_0060C040(void* self, int edx_un
         ret 8
     }
 }
+
+extern "C" void* __stdcall ext_00640110(int);
+extern "C" void __stdcall ext_00427550(const char*);
+extern "C" int mem_00A9F838;
+extern "C" int mem_00924FF0;
+extern "C" int mem_00A9F748;
+extern "C" int mem_00A9FA6C;
+extern "C" int mem_009719F0;
+
+// [0x0060BAD0] NMData::EffectorBaseData::vfunc_14 (120 bytes)
+extern "C" void* __fastcall fn_0060BAD0(void* self, int edx_unused, void* a1) {
+    typedef void* (__thiscall* GetFn)(void*, int);
+    typedef void (__thiscall* SetFn)(void*, const char*);
+    typedef const char* (__thiscall* CStrFn)(void*);
+    GetFn get = (GetFn)ext_00640110;
+    SetFn set = (SetFn)ext_00427550;
+
+    void* tmp = get(a1, mem_00A9F838);
+    set(&tmp, (*(CStrFn*)&mem_00924FF0)((char*)self + 0x4));
+    tmp = get(a1, mem_00A9F748);
+    set(&tmp, (*(CStrFn*)&mem_00924FF0)((char*)self + 0x20));
+    tmp = get(a1, mem_00A9FA6C);
+    set(&tmp, (const char*)&mem_009719F0);
+    return a1;
+}
