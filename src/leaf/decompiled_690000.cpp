@@ -11430,3 +11430,97 @@ extern "C" __declspec(naked) void __fastcall fn_00696820(void* self) {
         ret
     }
 }
+
+// [0x00697730] sub_00697730 (169 bytes)
+extern "C" void ext_004909E0();
+extern "C" void ext_00596660();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_00697730(void* self, int edx_unused, unsigned int count, float val) {
+    __asm {
+        fldz
+        sub     esp, 0x8
+        push    ebx
+        push    ebp
+        mov     ebp, dword ptr [mem_00925134]
+        push    esi
+        mov     esi, ecx
+        push    edi
+        fstp    dword ptr [esi + 0x18]
+        mov     edi, dword ptr [esi + 0x8]
+        cmp     dword ptr [esi + 0x4], edi
+        jbe     L_0069774E
+        call    ebp
+    L_0069774E:
+        mov     ebx, dword ptr [esi + 0x4]
+        cmp     ebx, dword ptr [esi + 0x8]
+        jbe     L_00697758
+        call    ebp
+    L_00697758:
+        push    edi
+        push    esi
+        push    ebx
+        push    esi
+        lea     eax, [esp + 0x20]
+        push    eax
+        mov     ecx, esi
+        call    ext_00596660
+        fld     dword ptr [esp + 0x20]
+        push    ecx
+        mov     ecx, dword ptr [esp + 0x20]
+        fstp    dword ptr [esp]
+        push    ecx
+        mov     ecx, esi
+        call    ext_004909E0
+        mov     edi, dword ptr [esi + 0x4]
+        cmp     edi, dword ptr [esi + 0x8]
+        jbe     L_00697786
+        call    ebp
+    L_00697786:
+        mov     dword ptr [esi + 0x14], edi
+        mov     edi, dword ptr [esi + 0x4]
+        cmp     edi, dword ptr [esi + 0x8]
+        mov     dword ptr [esi + 0x10], esi
+        jbe     L_00697796
+        call    ebp
+    L_00697796:
+        mov     ebx, dword ptr [esi + 0x8]
+        cmp     dword ptr [esi + 0x4], ebx
+        jbe     L_006977A0
+        call    ebp
+    L_006977A0:
+        test    esi, esi
+        je      L_006977A8
+        cmp     esi, esi
+        je      L_006977AA
+    L_006977A8:
+        call    ebp
+    L_006977AA:
+        cmp     edi, ebx
+        je      L_006977CF
+        test    esi, esi
+        jne     L_006977B4
+        call    ebp
+    L_006977B4:
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      L_006977BB
+        call    ebp
+    L_006977BB:
+        fld     dword ptr [edi]
+        fadd    dword ptr [esi + 0x18]
+        fstp    dword ptr [esi + 0x18]
+        cmp     edi, dword ptr [esi + 0x8]
+        jb      L_006977CA
+        call    ebp
+    L_006977CA:
+        add     edi, 0x4
+        jmp     L_00697796
+    L_006977CF:
+        pop     edi
+        pop     esi
+        pop     ebp
+        pop     ebx
+        add     esp, 0x8
+        ret     0x8
+    }
+}
