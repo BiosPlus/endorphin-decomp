@@ -11242,3 +11242,101 @@ L_store:
         ret 0x4
     }
 }
+
+// [0x004909E0] sub_004909E0 (183 bytes)
+extern "C" void ext_00479AC0();
+extern "C" void ext_00596660();
+
+extern "C" __declspec(naked) void __fastcall fn_004909E0(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        push edi
+        jne short L_004909F4
+        xor eax, eax
+        jmp short L_004909FC
+    L_004909F4:
+        mov eax, dword ptr [esi + 0x8]
+        sub eax, ecx
+        sar eax, 0x2
+    L_004909FC:
+        mov ebx, dword ptr [esp + 0x1c]
+        cmp eax, ebx
+        jae short L_00490A3C
+        test ecx, ecx
+        jne short L_00490A0C
+        xor edi, edi
+        jmp short L_00490A14
+    L_00490A0C:
+        mov edi, dword ptr [esi + 0x8]
+        sub edi, ecx
+        sar edi, 0x2
+    L_00490A14:
+        mov ebp, dword ptr [esi + 0x8]
+        cmp ecx, ebp
+        jbe short L_00490A21
+        call dword ptr [mem_00925134]
+    L_00490A21:
+        lea eax, [esp + 0x20]
+        push eax
+        sub ebx, edi
+        push ebx
+        push ebp
+        push esi
+        mov ecx, esi
+        call ext_00479AC0
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x8
+    L_00490A3C:
+        test ecx, ecx
+        je short L_00490A8D
+        mov ebp, dword ptr [esi + 0x8]
+        mov eax, ebp
+        sub eax, ecx
+        sar eax, 0x2
+        cmp ebx, eax
+        jae short L_00490A8D
+        cmp ecx, ebp
+        jbe short L_00490A58
+        call dword ptr [mem_00925134]
+    L_00490A58:
+        mov edi, dword ptr [esi + 0x4]
+        cmp edi, dword ptr [esi + 0x8]
+        jbe short L_00490A66
+        call dword ptr [mem_00925134]
+    L_00490A66:
+        mov dword ptr [esp + 0x14], edi
+        lea edi, [edi + 4*ebx]
+        cmp edi, dword ptr [esi + 0x8]
+        ja short L_00490A77
+        cmp edi, dword ptr [esi + 0x4]
+        jae short L_00490A7D
+    L_00490A77:
+        call dword ptr [mem_00925134]
+    L_00490A7D:
+        push ebp
+        push esi
+        push edi
+        push esi
+        lea ecx, [esp + 0x20]
+        push ecx
+        mov ecx, esi
+        call ext_00596660
+    L_00490A8D:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret 0x8
+    }
+}
