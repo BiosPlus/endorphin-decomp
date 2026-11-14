@@ -12555,3 +12555,67 @@ extern "C" __declspec(naked) void __fastcall fn_0056BA90(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00566CE0] sub_00566CE0 (154 bytes)
+extern "C" void ext_00564E60();
+extern "C" void ext_00565300();
+extern "C" void ext_00566020();
+extern "C" void ext_005788D0();
+
+extern "C" int mem_00924FE4;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_00566CE0(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8b56f9
+        push eax
+        mov dword ptr fs:[0x0], esp
+        sub esp, 0x1c
+        push ebx
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x414]
+        add esi, 0x160
+        je skip_block
+        push 0x928b5d
+        lea ecx, [esp + 0x10]
+        call dword ptr [mem_00924FE4]
+        mov eax, dword ptr [esi]
+        mov edx, dword ptr [eax + 0x5c]
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0x34], 0
+        call edx
+        lea ecx, [esp + 0xc]
+        mov dword ptr [esp + 0x30], -1
+        call dword ptr [mem_00924FF4]
+skip_block:
+        mov ecx, edi
+        call ext_00564E60
+        mov ebx, eax
+        test ebx, ebx
+        je done_calls
+        push ebx
+        push esi
+        mov ecx, edi
+        call ext_00565300
+        push ebx
+        push esi
+        mov ecx, edi
+        call ext_00566020
+        mov ecx, edi
+        call ext_005788D0
+done_calls:
+        mov ecx, dword ptr [esp + 0x28]
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0x28
+        ret
+    }
+}
