@@ -4727,3 +4727,71 @@ extern "C" __declspec(naked) void __fastcall fn_004AF600(void* self) {
         ret 4
     }
 }
+
+// [0x004A02D0] sub_004A02D0 (118 bytes)
+extern "C" void ext_0041A920();
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_004A02D0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx + 0xc8]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        lea ebx, [ecx + 0xc4]
+        push esi
+        mov esi, dword ptr [eax]
+        push edi
+        __asm _emit 0x8d
+        __asm _emit 0xa4
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+        __asm _emit 0x00
+loop_top:
+        cmp ebx, ebx
+        mov edi, dword ptr [ebx + 0x4]
+        je skip1
+        call ebp
+skip1:
+        cmp esi, edi
+        je done
+        cmp esi, dword ptr [ebx + 0x4]
+        jne skip2
+        call ebp
+skip2:
+        mov edx, dword ptr [esi + 0x8]
+        mov eax, dword ptr [esp + 0x18]
+        mov edx, dword ptr [edx + 0x54]
+        lea edi, [esi + 0x8]
+        push eax
+        mov ecx, edi
+        call edx
+        test al, al
+        je skip3
+        cmp esi, dword ptr [ebx + 0x4]
+        jne skip4
+        call ebp
+skip4:
+        mov ecx, dword ptr [esp + 0x1c]
+        lea eax, [esp + 0x10]
+        push eax
+        mov dword ptr [esp + 0x14], edi
+        call ext_0041A920
+skip3:
+        cmp esi, dword ptr [ebx + 0x4]
+        jne skip5
+        call ebp
+skip5:
+        mov esi, dword ptr [esi]
+        jmp loop_top
+done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 8
+    }
+}
