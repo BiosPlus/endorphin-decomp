@@ -985,3 +985,110 @@ done:
         ret 0x8
     }
 }
+
+extern "C" void __fastcall ext_006C2F30(void*, int, int);
+extern "C" void* __fastcall ext_006C3070(void*);
+extern "C" int __fastcall ext_006C3180(void*);
+extern "C" int __fastcall ext_006C31E0(void*);
+extern "C" void __fastcall ext_006F52F0(void*, int, int);
+extern "C" int __fastcall ext_00715550(void*);
+
+// [0x006C2F50] sub_006C2F50 (223 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006C2F50(void* self, int, void* arg0) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0x0c]
+        mov eax, dword ptr [esi + 0x158]
+        cmp edi, eax
+        jne L_6C2F69
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x4
+    L_6C2F69:
+        push ebx
+        mov ebx, eax
+        test ebx, ebx
+        mov dword ptr [esi + 0x158], edi
+        je L_6C2F7D
+        mov eax, dword ptr [ebx]
+        mov ecx, ebx
+        call dword ptr [eax + 0x0c]
+    L_6C2F7D:
+        test edi, edi
+        je L_6C2F9B
+        mov ecx, dword ptr [edi + 0x04]
+        test ecx, ecx
+        je L_6C2F8F
+        push 0x0
+        call fn_006C2F50
+    L_6C2F8F:
+        mov ecx, dword ptr [esi + 0x158]
+        push esi
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx + 0x08]
+    L_6C2F9B:
+        mov ecx, esi
+        call ext_006C3070
+        test eax, eax
+        je L_6C2FD0
+        mov ecx, esi
+        call ext_006C3070
+        mov ecx, eax
+        call ext_00715550
+        cmp eax, 0x2
+        je L_6C2FCC
+        mov ecx, esi
+        call ext_006C3070
+        mov ecx, eax
+        call ext_00715550
+        cmp eax, 0x3
+        jne L_6C2FD0
+    L_6C2FCC:
+        push 0x1
+        jmp L_6C2FD2
+    L_6C2FD0:
+        push 0x0
+    L_6C2FD2:
+        mov ecx, esi
+        call ext_006F52F0
+        mov ecx, esi
+        call ext_006C31E0
+        test eax, eax
+        jne L_6C301E
+        mov ecx, esi
+        call ext_006C3180
+        test eax, eax
+        jne L_6C301E
+        mov ecx, esi
+        call ext_006C3070
+        test eax, eax
+        je L_6C300D
+        mov ecx, esi
+        call ext_006C3070
+        mov ecx, eax
+        call ext_00715550
+        cmp eax, 0x1
+        je L_6C301E
+    L_6C300D:
+        push 0x1
+        mov ecx, esi
+        call ext_006C2F30
+        mov eax, ebx
+        pop ebx
+        pop edi
+        pop esi
+        ret 0x4
+    L_6C301E:
+        push 0x0
+        mov ecx, esi
+        call ext_006C2F30
+        mov eax, ebx
+        pop ebx
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
