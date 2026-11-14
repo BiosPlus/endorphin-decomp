@@ -5473,3 +5473,76 @@ extern "C" __declspec(naked) void* __fastcall fn_004CD9F0(void* self) {
         ret
     }
 }
+
+// [0x004CFCE0] sub_004CFCE0 (216 bytes)
+extern "C" void ext_00594640();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004CFCE0(void* self, int edx_unused, void* arg) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov ebx, dword ptr [esi + 0x174]
+        cmp dword ptr [esi + 0x170], ebx
+        push edi
+        mov edi, ecx
+        jbe L_4cfcfe
+        call dword ptr [mem_00925134]
+    L_4cfcfe:
+        mov ebp, dword ptr [esi + 0x170]
+        cmp ebp, dword ptr [esi + 0x174]
+        jbe L_4cfd12
+        call dword ptr [mem_00925134]
+    L_4cfd12:
+        cmp ebp, ebx
+        je L_4cfdb1
+        call ext_00594000
+        mov ebp, dword ptr [esi + 0x170]
+        cmp ebp, dword ptr [esi + 0x174]
+        mov ebx, eax
+        jbe L_4cfd3b
+        call dword ptr [mem_00925134]
+        cmp ebp, dword ptr [esi + 0x174]
+    L_4cfd3b:
+        jb L_4cfd43
+        call dword ptr [mem_00925134]
+    L_4cfd43:
+        push ebp
+        mov ecx, ebx
+        call ext_00594640
+        mov dword ptr [edi], eax
+        mov eax, dword ptr [esi + 0x180]
+        mov dword ptr [edi + 4], eax
+        fld dword ptr [esi + 0x18c]
+        fstp dword ptr [edi + 8]
+        cmp byte ptr [esi + 0x17c], 0
+        je L_4cfdb1
+        call ext_00594000
+        mov ecx, dword ptr [eax + 0x26c]
+        mov edx, dword ptr [ecx + 0x538]
+        cmp edx, dword ptr [mem_009849C0]
+        mov ecx, dword ptr [edi]
+        setb al
+        mov byte ptr [esp + 0x14], al
+        mov esi, dword ptr [esp + 0x14]
+        add ebx, 0x168
+        push ebx
+        push esi
+        push 0x200000
+        add ecx, 4
+        call ext_00586AD0
+        mov ecx, dword ptr [edi]
+        push esi
+        push 0x200000
+        add ecx, 4
+        call ext_00586A50
+    L_4cfdb1:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 4
+    }
+}
