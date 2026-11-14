@@ -4,8 +4,8 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 
 ## Verified Byte-Match Scoreboard
 
-- **In-Scope Functions Matched:** `13428 / 24049` (**55.84%**) — `10336` by AI models, `3092` by deterministic `auto_solve`
-- **In-Scope Code Bytes Matched:** `1458547 / 4496005 bytes` (**32.44%** of 4.29 MB)
+- **In-Scope Functions Matched:** `13429 / 24049` (**55.84%**) — `10337` by AI models, `3092` by deterministic `auto_solve`
+- **In-Scope Code Bytes Matched:** `1458653 / 4496005 bytes` (**32.44%** of 4.29 MB)
 - **RTTI Classes Extracted:** `2352` total (`2281` in-scope application/engine classes, `71` MFC/ATL/std classes)
 - **Out-of-Scope Boilerplate:** `22861` units (`1088` jump/adjustor thunks, `21773` CRT/MFC/SEH funclets)
 
@@ -18,7 +18,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | **P20-30 (32-48B)** | 1484 / 2405 | 61.70% | 57936 / 97731 | 59.28% | 921 fn |
 | **P30-40 (48-71B)** | 1342 / 2405 | 55.80% | 79632 / 144549 | 55.09% | 1063 fn |
 | **P40-50 (71-91B)** | 1391 / 2405 | 57.84% | 115793 / 194373 | 59.57% | 1014 fn |
-| **P50-60 (91-122B)** | 1488 / 2405 | 61.87% | 158911 / 256906 | 61.86% | 917 fn |
+| **P50-60 (91-122B)** | 1489 / 2405 | 61.91% | 159017 / 256906 | 61.90% | 916 fn |
 | **P60-70 (122-159B)** | 1063 / 2405 | 44.20% | 143617 / 339038 | 42.36% | 1342 fn |
 | **P70-80 (159-178B)** | 290 / 2405 | 12.06% | 48865 / 400567 | 12.20% | 2115 fn |
 | **P80-90 (178-335B)** | 1029 / 2405 | 42.79% | 247545 / 583211 | 42.45% | 1376 fn |
@@ -29,7 +29,7 @@ A byte-matching C++ decompilation of **Endorphin 2.7.1 Learning Edition** (`endo
 | Model | Matched Functions | Matched Bytes | Share of AI Matches |
 | :--- | ---: | ---: | ---: |
 | `claude-haiku-5.5@medium` | 6754 | 526112 | 65.34% |
-| `claude-haiku-5.5@low` | 1345 | 311881 | 13.01% |
+| `claude-haiku-5.5@low` | 1346 | 311987 | 13.02% |
 | `gemini-4-hydrogen@low` | 817 | 244917 | 7.90% |
 | `gemini-3.8-flash@low` | 765 | 225931 | 7.40% |
 | `gemini-3.8-flash@high` | 447 | 63301 | 4.32% |

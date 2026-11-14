@@ -9310,3 +9310,60 @@ extern "C" __declspec(naked) void __fastcall fn_0055A650(void* self) {
         ret
     }
 }
+
+// [0x0055C880] sub_0055C880 (106 bytes)
+extern "C" void ext_0055C880();
+extern "C" void __fastcall ext_00673C20(void* self);
+extern "C" int mem_00925134;
+extern "C" __declspec(naked) void __fastcall fn_0055C880(void* self) {
+    __asm {
+        sub esp, 0x8
+        push ebx
+        push ebp
+        mov ebp, ecx
+        mov eax, dword ptr [ebp + 0x4]
+        mov ebx, dword ptr [eax]
+        push esi
+        mov esi, ebp
+        push edi
+        mov dword ptr [esp + 0x14], ebx
+        mov dword ptr [esp + 0x10], esi
+    loop_top:
+        test esi, esi
+        mov edi, dword ptr [ebp + 0x4]
+        je inv1
+        cmp esi, ebp
+        je chk_end
+    inv1:
+        call dword ptr [mem_00925134]
+    chk_end:
+        cmp ebx, edi
+        je done
+        test esi, esi
+        mov edi, dword ptr [mem_00925134]
+        jne chk_node
+        call edi
+    chk_node:
+        cmp ebx, dword ptr [esi + 0x4]
+        jne do_call
+        call edi
+        cmp ebx, dword ptr [esi + 0x4]
+        jne do_call
+        call edi
+    do_call:
+        mov ecx, dword ptr [ebx + 0x28]
+        call ext_0055C880
+        lea ecx, [esp + 0x10]
+        call ext_00673C20
+        mov ebx, dword ptr [esp + 0x14]
+        mov esi, dword ptr [esp + 0x10]
+        jmp loop_top
+    done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 0x8
+        ret
+    }
+}
