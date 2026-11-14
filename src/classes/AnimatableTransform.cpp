@@ -1756,3 +1756,92 @@ extern "C" __declspec(naked) void __fastcall fn_005884F0(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x005885F0] AnimatableTransform::vfunc_9_off_8 (254 bytes)
+extern "C" void ext_00466910();
+extern "C" void ext_00466F00();
+extern "C" void ext_00586440();
+extern "C" void ext_00586540();
+extern "C" void ext_00661E80();
+extern "C" void ext_00661F70();
+extern "C" int mem_00924FCC;
+extern "C" int mem_00924FF4;
+
+extern "C" __declspec(naked) void __fastcall fn_005885F0(void* self, int edx_unused, int a0, int a1, void* a2, void* a3, void* a4) {
+    __asm {
+        push -1
+        push 0x0089f614
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 0x80
+        mov eax, dword ptr [esp + 0x98]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        mov ecx, dword ptr [esp + 0xa0]
+        push eax
+        lea ebx, [ebp - 8]
+        push ecx
+        mov ecx, ebx
+        call ext_00586540
+        mov edi, dword ptr [esp + 0xac]
+        push edi
+        lea ecx, [esp + 0x34]
+        mov dword ptr [esp + 0x30], edi
+        call ext_00466F00
+        mov esi, dword ptr [esp + 0xb0]
+        test esi, esi
+        mov dword ptr [esp + 0x98], 0
+        je L_skip_str
+        add ebp, 0xc
+        push ebp
+        lea edx, [esp + 0x14]
+        push 0x0095b2f0
+        push edx
+        call dword ptr [mem_00924FCC]
+        add esp, 0xc
+        mov edx, dword ptr [esi]
+        push eax
+        mov eax, dword ptr [edx + 0xc]
+        mov ecx, esi
+        mov byte ptr [esp + 0x9c], 1
+        call eax
+        lea ecx, [esp + 0x10]
+        mov byte ptr [esp + 0x98], 0
+        call dword ptr [mem_00924FF4]
+    L_skip_str:
+        mov ecx, dword ptr [esp + 0xa4]
+        push ecx
+        mov ecx, edi
+        call ext_00661F70
+    L_loop:
+        push edi
+        mov ecx, ebx
+        call ext_00586440
+        test esi, esi
+        je L_skip_vcall
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx]
+        mov ecx, esi
+        call eax
+    L_skip_vcall:
+        mov ecx, edi
+        call ext_00661E80
+        test al, al
+        jne L_loop
+        lea ecx, [esp + 0x2c]
+        mov dword ptr [esp + 0x98], -1
+        call ext_00466910
+        mov ecx, dword ptr [esp + 0x90]
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 0x8c
+        ret 0x14
+    }
+}
