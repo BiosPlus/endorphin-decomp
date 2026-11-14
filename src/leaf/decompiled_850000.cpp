@@ -888,3 +888,69 @@ extern "C" __declspec(naked) void* __cdecl fn_0085BF70(void* a1) {
         ret
     }
 }
+
+extern "C" void ext_00859DD0();
+
+// [0x0085BDA0] sub_0085BDA0 (127 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0085BDA0(void* stream, unsigned int len, int* out_val) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x0C]
+        push esi
+        push ebp
+        call ext_0085BC20
+        mov esi, dword ptr [esp + 0x1C]
+        mov ebx, dword ptr [esp + 0x18]
+        add esp, 4
+        mov dword ptr [esp + 0x10], eax
+        test ebx, ebx
+        mov dword ptr [esi], 0
+        jbe loc_85BE0C
+
+        push ebp
+        call ext_00859DD0
+        add esp, 4
+        cmp eax, 0xFF00
+        je loc_85BE0C
+        test al, 0x80
+        mov dword ptr [esi], eax
+        je loc_85BDE3
+        or eax, 0xFFFFFF00
+        mov dword ptr [esi], eax
+
+    loc_85BDE3:
+        push edi
+        mov edi, 1
+        cmp ebx, edi
+        jbe loc_85BE0B
+
+    loc_85BDED:
+        push ebp
+        call ext_00859DD0
+        add esp, 4
+        cmp eax, 0xFF00
+        je loc_85BE0B
+        mov ecx, dword ptr [esi]
+        shl ecx, 8
+        or ecx, eax
+        inc edi
+        cmp edi, ebx
+        mov dword ptr [esi], ecx
+        jb loc_85BDED
+
+    loc_85BE0B:
+        pop edi
+
+    loc_85BE0C:
+        push ebp
+        call ext_0085BC20
+        mov ecx, dword ptr [esp + 0x14]
+        add esp, 4
+        sub eax, ecx
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
