@@ -25,5 +25,7 @@
     "0x00692B1A",
     "0x00692B25"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-14T05:14:46Z"
 }
