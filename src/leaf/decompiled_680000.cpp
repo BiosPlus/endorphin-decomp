@@ -13094,3 +13094,74 @@ extern "C" __declspec(naked) void __fastcall fn_00686B60(void* self, void* dummy
         ret 0x10
     }
 }
+
+// [0x0068ED90] sub_0068ED90 (205 bytes)
+extern "C" int mem_00924FE4;
+extern "C" void ext_0068EBE0();
+extern "C" void ext_006798D0();
+extern "C" void ext_0068E540();
+extern "C" void ext_0068E5F0();
+extern "C" void ext_0068E670();
+extern "C" void ext_0068E6F0();
+extern "C" void ext_0068E7A0();
+extern "C" void ext_0068E820();
+extern "C" void ext_0068E8D0();
+extern "C" void ext_0068E950();
+extern "C" void ext_0068EA00();
+extern "C" void ext_0068EAB0();
+extern "C" void ext_0068EB60();
+
+extern "C" __declspec(naked) void __fastcall fn_0068ED90(void* self) {
+    __asm {
+        push ecx
+        push 0
+        sub esp, 0x1c
+        mov ecx, esp
+        mov dword ptr [esp + 0x20], esp
+        push 0x928b5d
+        call dword ptr [mem_00924FE4]
+        call ext_0068EBE0
+        add esp, 0x20
+        lea eax, [esp]
+        push 0
+        push eax
+        call ext_006798D0
+        mov ecx, eax
+        call ext_0068ECD0
+        push 0x98ea84
+        lea ecx, [esp + 4]
+        call ext_0068E540
+        push 0x98ea7c
+        lea ecx, [esp + 4]
+        call ext_0068E5F0
+        push 0x98ea74
+        lea ecx, [esp + 4]
+        call ext_0068E670
+        push 0x98ea68
+        lea ecx, [esp + 4]
+        call ext_0068E6F0
+        push 0x98ea5c
+        lea ecx, [esp + 4]
+        call ext_0068E7A0
+        push 0x98ea50
+        lea ecx, [esp + 4]
+        call ext_0068E820
+        push 0x98ea48
+        lea ecx, [esp + 4]
+        call ext_0068E8D0
+        push 0x98ea3c
+        lea ecx, [esp + 4]
+        call ext_0068E950
+        push 0x98ea30
+        lea ecx, [esp + 4]
+        call ext_0068EA00
+        push 0x98ea28
+        lea ecx, [esp + 4]
+        call ext_0068EAB0
+        push 0x98ea1c
+        lea ecx, [esp + 4]
+        call ext_0068EB60
+        pop ecx
+        ret
+    }
+}
