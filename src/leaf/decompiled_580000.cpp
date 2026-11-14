@@ -4482,3 +4482,19 @@ extern "C" void __cdecl fn_0058A080(void* arg) {
     ((void (__thiscall*)(int*, int))ext_00589080)(&local, mem_00A9FAD4);
     ((void (__cdecl*)(void*))ext_00592E60)(arg);
 }
+
+// [0x00584F80] sub_00584F80 (80 bytes)
+extern "C" void ext_005EF180();
+
+extern "C" void* __fastcall fn_00584F80(void* self, int edx_unused, void* a1) {
+    unsigned int* p = (unsigned int*)self;
+    ((void (__thiscall*)(void*, void*))ext_005EF180)(self, a1);
+    p[0] = 0x0095A52C;
+    p[1] = 0x0095A4E4;
+    p[2] = 0x0095A4A4;
+    p[3] = 0x0095A454;
+    p[0x150 / 4] = 0x0095A440;
+    p[0x154 / 4] = 0x0095A438;
+    *((unsigned char*)self + 0x2F8) = *((unsigned char*)a1 + 0x2F8);
+    return self;
+}
