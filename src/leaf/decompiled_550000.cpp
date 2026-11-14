@@ -9168,3 +9168,42 @@ extern "C" int __fastcall fn_0055DF20(void* self) {
         }
     }
 }
+
+// [0x0055A070] sub_0055A070 (101 bytes)
+extern "C" void ext_00402E50();
+extern "C" int mem_0089A648;
+extern "C" int mem_00924FE0;
+extern "C" int mem_00957AC4;
+extern "C" int mem_00957AB8;
+
+extern "C" __declspec(naked) void* __fastcall fn_0055A070(void* self, int edx_unused, const void* other) {
+    __asm {
+        push -1
+        push offset mem_0089A648
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x1c]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], esi
+        call ext_00402E50
+        add edi, 0x46c
+        push edi
+        lea ecx, [esi + 0x46c]
+        mov dword ptr [esp + 0x18], 0
+        mov dword ptr [esi], offset mem_00957AC4
+        mov dword ptr [esi + 4], offset mem_00957AB8
+        call dword ptr [mem_00924FE0]
+        mov ecx, dword ptr [esp + 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        add esp, 0x10
+        ret 4
+    }
+}
