@@ -32,5 +32,7 @@
     "0x00553CA3",
     "0x00553CBF"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "gemini-4-hydrogen@low",
+  "matched_at": "2026-11-14T04:00:50Z"
 }
