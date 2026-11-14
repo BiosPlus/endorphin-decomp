@@ -17282,3 +17282,103 @@ extern "C" __declspec(naked) int __cdecl fn_007D4920(void* a0, void* a1, void* a
         ret
     }
 }
+
+// [0x007DFC20] sub_007DFC20 (184 bytes)
+extern "C" void ext_007DEF80();
+extern "C" void ext_007DF610();
+extern "C" void ext_007DF800();
+extern "C" __declspec(naked) void __cdecl fn_007DFC20() {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x20]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x1c]
+        xor ebp, ebp
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov dword ptr [esi], ebp
+        mov dword ptr [ebx], ebp
+        mov eax, dword ptr [edi]
+        test al, 0x4
+        jne L79
+        test al, 0x6
+        jne L60
+        cmp eax, ebp
+        jne L47
+        mov dword ptr [edi + 0x44], ebp
+    L47:
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        call ext_007DEF80
+        add esp, 4
+        test eax, eax
+        je L5D
+        and dword ptr [edi], -2
+        jmp L60
+    L5D:
+        or dword ptr [edi], 1
+    L60:
+        mov eax, edi
+        call ext_007DF610
+        test eax, eax
+        je L70
+        and dword ptr [edi], -3
+        jmp L73
+    L70:
+        or dword ptr [edi], 2
+    L73:
+        mov dword ptr [edi + 0x48], ebp
+        mov dword ptr [edi + 0x4c], ebp
+    L79:
+        mov ecx, dword ptr [esp + 0x30]
+        mov edx, dword ptr [esp + 0x28]
+        mov eax, dword ptr [esp + 0x24]
+        push ecx
+        mov ecx, dword ptr [esp + 0x20]
+        push ebx
+        push edx
+        push eax
+        push esi
+        push ecx
+        push edi
+        call ext_007DF800
+        add esp, 0x1c
+        test eax, eax
+        je LA1
+        and dword ptr [edi], -5
+        jmp LA4
+    LA1:
+        or dword ptr [edi], 4
+    LA4:
+        test byte ptr [edi], 0x6
+        jne LD1
+        xor eax, eax
+        cmp dword ptr [edi + 0x1c], ebp
+        jle LC0
+    LB0:
+        mov edx, dword ptr [edi + 0x14]
+        mov ecx, dword ptr [edx + 4*eax]
+        add eax, 1
+        mov dword ptr [ecx], ebp
+        cmp eax, dword ptr [edi + 0x1c]
+        jl LB0
+    LC0:
+        cmp dword ptr [edi], ebp
+        mov dword ptr [edi + 0x1c], ebp
+        jne LD1
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 1
+        pop ebx
+        ret
+    LD1:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    }
+}
