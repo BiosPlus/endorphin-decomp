@@ -7230,3 +7230,79 @@ extern "C" __declspec(naked) void __fastcall fn_005F1390(void* self) {
         ret
     }
 }
+
+extern "C" void ext_005FBDB0();
+extern "C" int mem_00A9F944;
+extern "C" int mem_00A9FA6C;
+extern "C" int mem_00A9EDD0;
+extern "C" int mem_00A9FAD4;
+extern "C" int mem_00A9F1B0;
+extern "C" int mem_00A9F150;
+
+// [0x005FBF40] sub_005FBF40 (243 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005FBF40(void* self) {
+    __asm {
+        push    ecx
+        push    0x0
+        sub     esp, 0x1c
+        mov     ecx, esp
+        mov     dword ptr [esp + 0x20], esp
+        push    0x928b5d
+        call    dword ptr [mem_00924FE4]
+        call    ext_005FBDB0
+        add     esp, 0x20
+        lea     eax, [esp]
+        push    0x0
+        push    eax
+        call    ext_006798D0
+        mov     ecx, eax
+        call    fn_005FBEB0
+        mov     ecx, dword ptr [mem_00A9F944]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    fn_005FB4C0
+        mov     edx, dword ptr [mem_00A9FA6C]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    fn_005FB570
+        mov     eax, dword ptr [mem_00A9EDD0]
+        push    eax
+        lea     ecx, [esp + 0x4]
+        call    fn_005FB620
+        push    0x96e59c
+        lea     ecx, [esp + 0x4]
+        call    fn_005FB6D0
+        push    0x96ccd4
+        lea     ecx, [esp + 0x4]
+        call    fn_005FB780
+        mov     ecx, dword ptr [mem_00A9FAD4]
+        push    ecx
+        lea     ecx, [esp + 0x4]
+        call    fn_005FB830
+        mov     edx, dword ptr [mem_00A9F1B0]
+        push    edx
+        lea     ecx, [esp + 0x4]
+        call    fn_005FB8E0
+        push    0x9631c4
+        lea     ecx, [esp + 0x4]
+        call    fn_005FB990
+        push    0x9631b4
+        lea     ecx, [esp + 0x4]
+        call    fn_005FBA40
+        push    0x96e58c
+        lea     ecx, [esp + 0x4]
+        call    fn_005FBAF0
+        mov     eax, dword ptr [mem_00A9F150]
+        push    eax
+        lea     ecx, [esp + 0x4]
+        call    fn_005FBBA0
+        push    0x96e580
+        lea     ecx, [esp + 0x4]
+        call    fn_005FBC50
+        push    0x96e578
+        lea     ecx, [esp + 0x4]
+        call    fn_005FBD00
+        pop     ecx
+        ret
+    }
+}
