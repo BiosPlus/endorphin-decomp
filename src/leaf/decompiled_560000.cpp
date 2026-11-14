@@ -10128,3 +10128,102 @@ loc_567205:
         ret 8
     }
 }
+
+// [0x00567910] sub_00567910 (192 bytes)
+extern "C" void ext_00567190();
+extern "C" int mem_00955998;
+extern "C" __declspec(naked) void __fastcall fn_00567910(void* self) {
+    __asm {
+        sub esp, 8
+        fld dword ptr [mem_00955998]
+        push ebx
+        fcomp dword ptr [ecx]
+        push ebp
+        mov ebp, dword ptr [mem_00925134]
+        push esi
+        push edi
+        fnstsw ax
+        mov dword ptr [esp + 0x14], ecx
+        mov dword ptr [esp + 0x10], 1
+        test ah, 0x41
+        jp L_f910_second
+        mov esi, dword ptr [ecx + 0x18]
+        cmp esi, dword ptr [ecx + 0x1c]
+        lea edi, [ecx + 0x14]
+        jbe L_f910_a
+        call ebp
+L_f910_a:
+        mov ebx, dword ptr [edi + 0x8]
+        cmp dword ptr [edi + 0x4], ebx
+        jbe L_f910_b
+        call ebp
+L_f910_b:
+        cmp edi, edi
+        je L_f910_c
+        call ebp
+L_f910_c:
+        cmp esi, ebx
+        je L_f910_loopend
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_f910_d
+        call ebp
+L_f910_d:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 0x4], ecx
+        add dword ptr [esp + 0x10], 1
+        cmp esi, dword ptr [edi + 0x8]
+        jb L_f910_e
+        call ebp
+L_f910_e:
+        add esi, 4
+        jmp L_f910_a
+L_f910_loopend:
+        mov ecx, dword ptr [esp + 0x14]
+L_f910_second:
+        mov edi, dword ptr [ecx + 0x18]
+        cmp edi, dword ptr [ecx + 0x1c]
+        lea esi, [ecx + 0x14]
+        jbe L_f910_f
+        call ebp
+        jmp L_f910_f
+        _emit 0x8d
+        _emit 0x49
+        _emit 0x00
+L_f910_f:
+        mov ebx, dword ptr [esi + 0x8]
+        cmp dword ptr [esi + 0x4], ebx
+        jbe L_f910_g
+        call ebp
+L_f910_g:
+        cmp esi, esi
+        je L_f910_h
+        call ebp
+L_f910_h:
+        cmp edi, ebx
+        je L_f910_end
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_f910_i
+        call ebp
+L_f910_i:
+        mov eax, dword ptr [edi]
+        mov ecx, dword ptr [esp + 0x14]
+        lea edx, [esp + 0x10]
+        push edx
+        push eax
+        call ext_00567190
+        cmp edi, dword ptr [esi + 0x8]
+        jb L_f910_j
+        call ebp
+L_f910_j:
+        add edi, 4
+        jmp L_f910_f
+L_f910_end:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        add esp, 8
+        ret
+    }
+}
