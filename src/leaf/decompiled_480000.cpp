@@ -8358,3 +8358,78 @@ store_res:
         ret 0x10
     }
 }
+
+// [0x004836C0] sub_004836C0 (143 bytes)
+extern "C" void ext_00482C50();
+extern "C" int mem_00925134;
+
+extern "C" __declspec(naked) void __fastcall fn_004836C0(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        mov ebx, dword ptr [esi + 0x4]
+        test ebx, ebx
+        push edi
+        je zero_begin
+        mov eax, dword ptr [esi + 0x8]
+        mov ecx, eax
+        sub ecx, ebx
+        sar ecx, 0x4
+        jne check_range
+zero_begin:
+        xor edi, edi
+        jmp after_dist
+check_range:
+        cmp ebx, eax
+        jbe check_out
+        call dword ptr [mem_00925134]
+check_out:
+        test ebp, ebp
+        je bad_out
+        cmp ebp, esi
+        je out_ok
+bad_out:
+        call dword ptr [mem_00925134]
+out_ok:
+        mov edi, dword ptr [esp + 0x20]
+        sub edi, ebx
+        sar edi, 0x4
+after_dist:
+        mov edx, dword ptr [esp + 0x24]
+        mov eax, dword ptr [esp + 0x20]
+        push edx
+        push 0x1
+        push eax
+        push ebp
+        mov ecx, esi
+        call ext_00482C50
+        mov ebx, dword ptr [esi + 0x4]
+        cmp ebx, dword ptr [esi + 0x8]
+        jbe chk_shl
+        call dword ptr [mem_00925134]
+chk_shl:
+        shl edi, 0x4
+        add edi, ebx
+        cmp edi, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x20], ebx
+        ja final_chk
+        cmp edi, dword ptr [esi + 0x4]
+        jae store_res
+final_chk:
+        call dword ptr [mem_00925134]
+store_res:
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [eax + 0x4], edi
+        pop edi
+        mov dword ptr [eax], esi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x10
+    }
+}
