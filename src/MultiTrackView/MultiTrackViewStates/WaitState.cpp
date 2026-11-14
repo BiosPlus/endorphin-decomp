@@ -14,6 +14,8 @@ extern "C" void ext_0043CD60();
 extern "C" void ext_0043CDA0();
 extern "C" void ext_0043CDD0();
 extern "C" void ext_0043E140();
+extern "C" void ext_0041C880();
+extern "C" void ext_0043C950();
 extern "C" int mem_00925688;
 extern "C" int mem_00925718;
 extern "C" int mem_0092570C;
@@ -316,5 +318,78 @@ L_443176:
         mov al, 1
         pop esi
         ret 0x0c
+    }
+}
+
+// [0x00442A40] MultiTrackView::MultiTrackViewStates::WaitState::vfunc_6 (161 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_00442A40(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, ecx
+        call ext_004429C0
+        mov ecx, dword ptr [esi + 8]
+        mov eax, dword ptr [esp + 10h]
+        cmp eax, dword ptr [ecx + 0FCh]
+        jg L_big
+        lea edx, [esp + 10h]
+        push edx
+        call ext_0043D620
+        mov ecx, dword ptr [esi + 8]
+        mov ebx, dword ptr [esp + 0Ch]
+        mov eax, dword ptr [ecx]
+        mov eax, dword ptr [eax + 14Ch]
+        push ebx
+        lea edx, [esp + 14h]
+        push edx
+        call eax
+        jmp L_common
+    L_big:
+        push edi
+        mov edi, dword ptr [mem_009256E4]
+        push 12h
+        call edi
+        mov ebx, dword ptr [esp + 10h]
+        shr eax, 0Fh
+        test al, 1
+        je L_b
+        test bl, 4
+        jne L_b
+        push 2
+        jmp L_call
+    L_b:
+        push 12h
+        call edi
+        shr eax, 0Fh
+        test al, 1
+        je L_pop
+        test bl, 4
+        je L_pop
+        push 3
+    L_call:
+        mov ecx, dword ptr [esi + 4]
+        call ext_0041C880
+    L_pop:
+        pop edi
+    L_common:
+        lea ecx, [esp + 10h]
+        push ecx
+        mov ecx, dword ptr [esi + 8]
+        call ext_0043D620
+        test eax, eax
+        je L_end
+        mov edx, dword ptr [esp + 14h]
+        mov ecx, dword ptr [esp + 10h]
+        push edx
+        push ecx
+        mov ecx, dword ptr [esi + 8]
+        push ebx
+        push eax
+        call ext_0043C950
+    L_end:
+        pop esi
+        mov al, 1
+        pop ebx
+        ret 0Ch
     }
 }
