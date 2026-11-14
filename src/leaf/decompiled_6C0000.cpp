@@ -931,3 +931,57 @@ extern "C" __declspec(naked) int __fastcall fn_006C2860(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x006C35D0] sub_006C35D0 (112 bytes)
+extern "C" void ext_006C2720();
+extern "C" void ext_006C4550();
+
+extern "C" __declspec(naked) void* __fastcall fn_006C35D0(void* self, int edx_unused, int a1, unsigned char a2) {
+    __asm {
+        mov al, byte ptr [esp + 0x8]
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        test al, al
+        mov esi, ecx
+        jne body
+        lea eax, [ebx + 0x10]
+        mov edx, dword ptr [esi + 0xf0]
+        mov ecx, eax
+        shl ecx, 0x5
+        sub ecx, eax
+        shl ecx, 0x4
+        cmp byte ptr [ecx + edx], 0x0
+        jne done
+body:
+        push edi
+        mov ecx, esi
+        mov edi, esi
+        call ext_006C2720
+        test eax, eax
+        je after
+loop_top:
+        mov ecx, edi
+        call ext_006C2720
+        mov edi, eax
+        mov ecx, edi
+        call ext_006C2720
+        test eax, eax
+        jne loop_top
+after:
+        push ebx
+        mov ecx, edi
+        call ext_006C4550
+        pop edi
+done:
+        mov ecx, dword ptr [esi + 0xf0]
+        mov eax, ebx
+        shl eax, 0x5
+        sub eax, ebx
+        pop esi
+        shl eax, 0x4
+        pop ebx
+        lea eax, [eax + ecx + 0x1e80]
+        ret 0x8
+    }
+}
