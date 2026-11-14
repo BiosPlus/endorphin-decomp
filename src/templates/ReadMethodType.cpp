@@ -1962,3 +1962,56 @@ extern "C" __declspec(naked) void __fastcall fn_00512A70(void* self) {
         ret 4
     }
 }
+
+// [0x00513110] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall Chromosome::Descriptor::getTypicalMutationSize(void) const, 0}, 1>::vfunc_2 (148 bytes)
+extern "C" void ext_005119F0();
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __fastcall fn_00513110(void* self) {
+    __asm {
+        push -1
+        push 0x8b56f9
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 0x1c
+        mov eax, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [eax]
+        push edx
+        lea eax, [esp + 4]
+        push eax
+        call ext_005119F0
+        mov ecx, eax
+        mov dword ptr [esp + 0x24], 0
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 0x30]
+        fldz
+        add esp, 4
+        fld dword ptr [esp + 0x2c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 1
+        jne L_sub
+        fadd qword ptr [mem_00993828]
+        jmp L_after
+    L_sub:
+        fsub qword ptr [mem_00993828]
+    L_after:
+        push esi
+        call ext_006A6DE0
+        lea ecx, [esp + 4]
+        mov esi, eax
+        mov dword ptr [esp + 0x28], -1
+        call dword ptr [mem_00924FF4]
+        mov ecx, dword ptr [esp + 0x20]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x28
+        ret 4
+    }
+}
