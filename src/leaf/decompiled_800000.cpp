@@ -7637,3 +7637,27 @@ extern "C" __declspec(naked) int __cdecl fn_0080FC10(int a0, int a1) {
         ret
     }
 }
+
+// [0x0080F040] sub_0080F040 (48 bytes)
+extern "C" void ext_00859830();
+extern "C" __declspec(naked) int __cdecl fn_0080F040(void* a, void* b) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        test ecx, ecx
+        je short L_zero
+        mov eax, dword ptr [esp + 0x8]
+        test eax, eax
+        je short L_zero
+        push eax
+        push ecx
+        call ext_00859830
+        add esp, 0x8
+        neg eax
+        sbb eax, eax
+        inc eax
+        ret
+L_zero:
+        xor eax, eax
+        ret
+    }
+}
