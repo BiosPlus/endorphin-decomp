@@ -9117,3 +9117,16 @@ L_006BDAF0_no:
         ret
     }
 }
+
+// [0x006BB760] sub_006BB760 (32 bytes)
+extern "C" void ext_006D98D0();
+extern "C" int __fastcall fn_006BB760(void* self) {
+    int v = **(int**)self;
+    if (v != 0) {
+        return v;
+    }
+    if (((int (*)())ext_006D98D0)() != 0) {
+        return ((int (*)())ext_006D98D0)();
+    }
+    return 6;
+}
