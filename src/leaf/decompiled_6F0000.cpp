@@ -6361,3 +6361,27 @@ extern "C" __declspec(naked) void __fastcall fn_006FA430(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006FA320] sub_006FA320 (48 bytes)
+extern "C" void ext_006FA830();
+extern "C" void ext_006FBC90();
+extern "C" void ext_006FBCE0();
+
+extern "C" __declspec(naked) void __fastcall fn_006FA320(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x34]
+        and eax, 0x8
+        cmp al, 0x8
+        je skip_006FA320
+        call ext_006FBC90
+        mov ecx, esi
+        call ext_006FBCE0
+    skip_006FA320:
+        mov ecx, esi
+        call ext_006FA830
+        pop esi
+        ret
+    }
+}
