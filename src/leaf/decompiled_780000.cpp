@@ -2924,3 +2924,19 @@ extern "C" __declspec(naked) void __cdecl fn_00782CB0(int sel) {
         nop
     }
 }
+
+// [0x00782D00] sub_00782D00 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00782D00(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, ecx
+        xor ecx, ecx
+        mov byte ptr [eax + 0x11], cl
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], edx
+        mov byte ptr [eax + 0x10], cl
+        ret 0x4
+    }
+}
