@@ -2940,3 +2940,23 @@ extern "C" __declspec(naked) void __fastcall fn_00782D00(void* self) {
         ret 0x4
     }
 }
+
+// [0x007833F0] sub_007833F0 (32 bytes)
+// [0x007833F0]
+extern "C" int mem_00925264;
+extern "C" __declspec(naked) void __fastcall fn_007833F0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 4]
+        mov dl, byte ptr [eax + 4]
+        test dl, dl
+        je done
+        mov byte ptr [eax + 4], 0
+        mov eax, dword ptr [ecx + 4]
+        mov ecx, dword ptr [eax]
+        push ecx
+        call dword ptr [mem_00925264]
+        pop ecx
+    done:
+        ret
+    }
+}
