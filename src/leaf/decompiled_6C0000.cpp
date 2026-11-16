@@ -2651,3 +2651,21 @@ extern "C" __declspec(naked) void __fastcall fn_006CE080(void* self, int edx_unu
         ret 0x10
     }
 }
+
+// [0x006CE0A0] sub_006CE0A0 (32 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006CE0A0(void* self) {
+    __asm {
+        lea eax, [ecx + 0x48]
+        mov ecx, dword ptr [ecx + 0x48]
+        cmp ecx, -1
+        jne short L_NOTMAX
+        cmp dword ptr [eax + 0x4], 0x7fffffff
+        je short L_ZERO
+    L_NOTMAX:
+        mov eax, 1
+        ret
+    L_ZERO:
+        xor eax, eax
+        ret
+    }
+}
