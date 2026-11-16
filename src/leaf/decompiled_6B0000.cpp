@@ -9130,3 +9130,10 @@ extern "C" int __fastcall fn_006BB760(void* self) {
     }
     return 6;
 }
+
+// [0x006B9920] sub_006B9920 (32 bytes)
+extern "C" void* __fastcall fn_006B9920(void* self) {
+    ext_006B9970();
+    *(void**)self = (void*)0xb5d2bc;
+    return self;
+}
