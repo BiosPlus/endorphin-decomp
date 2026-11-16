@@ -1961,3 +1961,15 @@ extern "C" void __fastcall fn_0077FAF0(int* self, int edx_unused, int a, int b, 
     self[2] = c;
     self[3] = d;
 }
+
+// [0x0077FF70] sub_0077FF70 (32 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0077FF70(void* self, int edx_unused, int idx) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        mov ecx, dword ptr [esp + 0x4]
+        shl ecx, 0x4
+        mov edx, dword ptr [eax + 0x4]
+        mov eax, dword ptr [edx + ecx]
+        ret 0x4
+    }
+}
