@@ -7277,3 +7277,16 @@ extern "C" __declspec(naked) void __cdecl fn_0080AD90() {
         ret
     }
 }
+
+// [0x0080FAF0] sub_0080FAF0 (32 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080FAF0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        xor edx, edx
+        mov eax, dword ptr [ecx]
+        mov dword ptr [ecx], edx
+        mov dword ptr [ecx + 8], edx
+        mov dword ptr [ecx + 4], edx
+        ret
+    }
+}
