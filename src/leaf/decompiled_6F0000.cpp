@@ -5820,3 +5820,9 @@ extern "C" int __cdecl fn_006F7730(int idx, int sub) {
     int* base = *(int**)(((int*)&mem_00AA970C) + idx);
     return base[sub * 3 + 1];
 }
+
+// [0x006F7750] sub_006F7750 (32 bytes)
+extern "C" int __cdecl fn_006F7750(int idx, int sub) {
+    int* base = *(int**)(((int*)&mem_00AA970C) + idx);
+    return base[sub * 3 + 2];
+}
