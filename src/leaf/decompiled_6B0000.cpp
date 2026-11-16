@@ -9484,3 +9484,25 @@ do_call:
         ret 4
     }
 }
+
+// [0x006BAF80] sub_006BAF80 (48 bytes)
+extern "C" void ext_006BAFB0();
+
+extern "C" __declspec(naked) int __fastcall fn_006BAF80(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [ecx]
+        push esi
+        mov dword ptr [esp + 0x4], 0x0
+        call dword ptr [eax + 0x8]
+        mov esi, dword ptr [esp + 0xc]
+        push eax
+        push esi
+        call ext_006BAFB0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
