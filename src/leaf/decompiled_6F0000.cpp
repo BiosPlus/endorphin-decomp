@@ -6336,3 +6336,28 @@ done:
         ret
     }
 }
+
+// [0x006FA430] sub_006FA430 (48 bytes)
+extern "C" void ext_006FA5E0();
+
+extern "C" __declspec(naked) void __fastcall fn_006FA430(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea eax, [esp + 8]
+        push edi
+        mov edx, dword ptr [esi + 0x1c]
+        mov edi, dword ptr [esp + 0xc]
+        lea ecx, [esi + 0x1c]
+        push eax
+        push edx
+        mov dword ptr [esp + 0x14], edi
+        call ext_006D2170
+        push edi
+        mov ecx, esi
+        call ext_006FA5E0
+        pop edi
+        pop esi
+        ret 4
+    }
+}
