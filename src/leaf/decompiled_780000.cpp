@@ -2978,3 +2978,21 @@ extern "C" __declspec(naked) void __fastcall fn_00783800(void* self) {
         __asm _emit 0xc3                                    // ret
     }
 }
+
+// [0x00783820] sub_00783820 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00783820(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        xor edx, edx
+        cmp eax, edx
+        mov dword ptr [ecx + 4], edx
+        je done_00783820
+    loop_00783820:
+        mov dword ptr [eax + 4], edx
+        mov eax, dword ptr [eax]
+        cmp eax, edx
+        jne loop_00783820
+    done_00783820:
+        ret
+    }
+}
