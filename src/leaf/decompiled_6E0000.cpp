@@ -1298,3 +1298,13 @@ extern "C" void* __fastcall fn_006E0920(void* self) {
     p[1] = 0;
     return self;
 }
+
+// [0x006E5730] sub_006E5730 (32 bytes)
+extern "C" void __fastcall fn_006E5730(void* self) {
+    int* p = *(int**)((char*)self + 0x98);
+    if (p != 0) {
+        p[0] = 0;
+        p[2] = 0;
+        p[3] = 0;
+    }
+}
