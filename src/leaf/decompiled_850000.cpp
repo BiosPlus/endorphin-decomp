@@ -2853,3 +2853,31 @@ extern "C" __declspec(naked) int __cdecl fn_008597B0(const char* a, const char* 
         ret
     }
 }
+
+// [0x00859DD0] sub_00859DD0 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00859DD0(void* self) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, edx
+        test byte ptr [edx + 0x14], 0x4
+        je short L_done_859DD0
+        mov eax, dword ptr [edx]
+    L_done_859DD0:
+        mov ecx, dword ptr [edx + 0x8]
+        push ebx
+        cmp ecx, dword ptr [eax + 0x4]
+        jb short L_read_859DD0
+        mov eax, 0xff00
+        pop ebx
+        ret
+    L_read_859DD0:
+        mov eax, dword ptr [eax]
+        xor ebx, ebx
+        mov bl, byte ptr [eax + ecx]
+        inc ecx
+        mov eax, ebx
+        mov dword ptr [edx + 0x8], ecx
+        pop ebx
+        ret
+    }
+}
