@@ -2047,3 +2047,18 @@ L_0077CAF4:
         ret 0x4
     }
 }
+
+// [0x0077FE50] sub_0077FE50 (32 bytes)
+extern "C" void ext_007802A0();
+extern "C" __declspec(naked) void __cdecl fn_0077FE50(int index) {
+    __asm {
+        call ext_007802A0
+        mov ecx, dword ptr [esp + 0x4]
+        lea edx, [ecx + 8*ecx]
+        lea ecx, [ecx + 2*edx]
+        mov edx, dword ptr [eax + 0x4]
+        shl ecx, 0x4
+        lea eax, [edx + ecx + 0x4]
+        ret
+    }
+}
