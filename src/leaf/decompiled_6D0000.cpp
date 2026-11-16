@@ -3485,3 +3485,19 @@ extern "C" void* __fastcall fn_006D2370(void* self) {
     p[7] = 0;
     return self;
 }
+
+// [0x006D2700] sub_006D2700 (32 bytes)
+extern "C" __declspec(naked) double __fastcall fn_006D2700(const double* self, int edx_unused, const double* other) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        fld qword ptr [eax + 0x10]
+        fmul qword ptr [ecx + 0x10]
+        fld qword ptr [eax + 0x8]
+        fmul qword ptr [ecx + 0x8]
+        faddp st(1), st
+        fld qword ptr [eax]
+        fmul qword ptr [ecx]
+        faddp st(1), st
+        ret 0x4
+    }
+}
