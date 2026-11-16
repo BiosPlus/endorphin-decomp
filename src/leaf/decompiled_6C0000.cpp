@@ -2956,3 +2956,20 @@ extern "C" __declspec(naked) void __fastcall fn_006CA520(void* self) {
         ret
     }
 }
+
+// [0x006CA500] sub_006CA500 (32 bytes)
+extern "C" void ext_006CA570();
+extern "C" __declspec(naked) void __fastcall fn_006CA500(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 0x0
+        call ext_006D0370
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, esi
+        push eax
+        call ext_006CA570
+        pop esi
+        ret 0x4
+    }
+}
