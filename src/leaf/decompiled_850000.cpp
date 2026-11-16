@@ -2744,3 +2744,27 @@ not_set:
         ret
     }
 }
+
+// [0x00858B60] sub_00858B60 (48 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00858B60(int arg) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub eax, 0
+        je L_zero
+        dec eax
+        je L_one
+        dec eax
+        je L_two
+        xor eax, eax
+        ret
+    L_two:
+        mov eax, 0x28
+        ret
+    L_one:
+        mov eax, 0x40
+        ret
+    L_zero:
+        mov eax, 0x4
+        ret
+    }
+}
