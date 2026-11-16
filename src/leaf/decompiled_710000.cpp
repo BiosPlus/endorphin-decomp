@@ -2962,3 +2962,11 @@ extern "C" __declspec(naked) int __fastcall fn_00711D20(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x00714860] sub_00714860 (32 bytes)
+extern "C" void __fastcall fn_00714860(void* self, int edx_unused, unsigned char a1, unsigned char a2, unsigned char a3) {
+    unsigned char* p = (unsigned char*)self;
+    p[0] = a1;
+    p[1] = a2;
+    p[2] = a3;
+}
