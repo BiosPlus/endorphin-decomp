@@ -1892,3 +1892,28 @@ L_006E9448:
         ret 4
     }
 }
+
+// [0x006E40C0] sub_006E40C0 (48 bytes)
+extern "C" void ext_006E3FA0();
+extern "C" void ext_006E40F0();
+extern "C" __declspec(naked) void __fastcall fn_006E40C0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        mov esi, ecx
+        push edi
+        push ebx
+        call ext_006E3FA0
+        push edi
+        push ebx
+        mov ecx, esi
+        call ext_006E40F0
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
