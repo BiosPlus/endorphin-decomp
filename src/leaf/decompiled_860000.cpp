@@ -5284,3 +5284,21 @@ loc_866E38:
 
     }
 }
+
+// [0x008692F0] sub_008692F0 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_008692F0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0xc]
+        test ecx, ecx
+        je done_008692F0
+        mov dl, byte ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+    fill_008692F0:
+        mov byte ptr [eax], dl
+        inc eax
+        dec ecx
+        jne fill_008692F0
+    done_008692F0:
+        ret
+    }
+}
