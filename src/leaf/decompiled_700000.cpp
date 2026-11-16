@@ -1885,3 +1885,24 @@ extern "C" __declspec(naked) void __fastcall fn_00700A20(void* self) {
         jmp ext_006C9F70
     }
 }
+
+// [0x0070A1D0] sub_0070A1D0 (32 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_0070A1F0();
+
+extern "C" __declspec(naked) void* __fastcall fn_0070A1D0(void* self, int edx_unused, int flag) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0070A1F0
+        test byte ptr [esp + 0x8], 0x1
+        je done
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    done:
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
