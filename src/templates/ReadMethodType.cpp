@@ -4931,3 +4931,25 @@ extern "C" __declspec(naked) void __fastcall fn_00505080(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00504D70] ExprParser::ReadMethodType<Interpreter, int, &public: int __thiscall Interpreter::bogus(void) const, 0>::vfunc_2 (43 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) void __fastcall fn_00504D70(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub esp, 0x28
+        cmp dword ptr [eax], 0
+        je fail
+        xor eax, eax
+        add esp, 0x28
+        ret 4
+    fail:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
