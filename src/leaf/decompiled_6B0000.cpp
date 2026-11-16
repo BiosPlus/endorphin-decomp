@@ -9360,3 +9360,30 @@ extern "C" __declspec(naked) int __fastcall fn_006BA7A0(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x006B9CE0] sub_006B9CE0 (48 bytes)
+extern "C" __declspec(naked) bool __stdcall fn_006B9CE0(char c, const char* s) {
+    __asm {
+        mov edx, dword ptr [esp + 8]
+        xor al, al
+        test edx, edx
+        push ebx
+        je L_done
+        mov bl, byte ptr [esp + 8]
+L_loop:
+        mov cl, byte ptr [edx]
+        test cl, cl
+        je L_done
+        cmp cl, bl
+        je L_found
+        inc edx
+        jne L_loop
+        pop ebx
+        ret 8
+L_found:
+        mov al, 1
+L_done:
+        pop ebx
+        ret 8
+    }
+}
