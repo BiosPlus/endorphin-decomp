@@ -3545,3 +3545,19 @@ skip_006D7380:
         ret
     }
 }
+
+// [0x006D74E0] sub_006D74E0 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D74E0(void* self, int edx_unused, int off, unsigned char val) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov al, byte ptr [esp + 0x8]
+        __asm _emit 0x88
+        __asm _emit 0x84
+        __asm _emit 0x0a
+        __asm _emit 0x4c
+        __asm _emit 0x01
+        __asm _emit 0x00
+        __asm _emit 0x00
+        ret 0x8
+    }
+}
