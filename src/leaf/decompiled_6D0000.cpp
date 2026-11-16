@@ -3727,3 +3727,22 @@ extern "C" __declspec(naked) void __stdcall fn_006DE1A0(void* a1) {
         ret 4
     }
 }
+
+// [0x006DF170] sub_006DF170 (32 bytes)
+extern "C" void ext_006DF190();
+
+extern "C" __declspec(naked) void __stdcall fn_006DF170(int a, int b, int c, int d) {
+    __asm {
+        mov eax, dword ptr [esp + 10h]
+        mov edx, dword ptr [esp + 0Ch]
+        push 1
+        push eax
+        mov eax, dword ptr [esp + 10h]
+        push edx
+        mov edx, dword ptr [esp + 10h]
+        push eax
+        push edx
+        call ext_006DF190
+        ret 10h
+    }
+}
