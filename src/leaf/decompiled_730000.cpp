@@ -2302,3 +2302,16 @@ L_7367A9:
         ret 8
     }
 }
+
+// [0x00736C90] sub_00736C90 (32 bytes)
+extern "C" void ext_00782E70();
+extern "C" __declspec(naked) void __fastcall fn_00736C90(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0
+        push eax
+        add ecx, 0xb8
+        call ext_00782E70
+        ret 4
+    }
+}
