@@ -4576,3 +4576,28 @@ not_six:
         ret
     }
 }
+
+// [0x0079E480] sub_0079E480 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0079E480(void* self) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [ecx]
+        push esi
+        lea eax, [esp + 4]
+        xor esi, esi
+        push eax
+        push esi
+        call ext_00714AE0
+        mov ecx, eax
+        call ext_006C33C0
+        mov eax, dword ptr [esp + 4]
+        cmp eax, 6
+        mov eax, 1
+        je done
+        mov eax, esi
+done:
+        pop esi
+        pop ecx
+        ret
+    }
+}
