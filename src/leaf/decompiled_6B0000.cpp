@@ -9210,3 +9210,22 @@ extern "C" __declspec(naked) void* __fastcall fn_006BB5D0(void* self) {
         ret
     }
 }
+
+// [0x006BC3B0] sub_006BC3B0 (32 bytes)
+extern "C" void ext_006EA300();
+
+extern "C" __declspec(naked) void __fastcall fn_006BC3B0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x4]
+        test ecx, ecx
+        je short L_zero_006BC3B0
+        mov eax, dword ptr [eax + 0x4]
+        push eax
+        call ext_006EA300
+        ret 0x4
+L_zero_006BC3B0:
+        xor al, al
+        ret 0x4
+    }
+}
