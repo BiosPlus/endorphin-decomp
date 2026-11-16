@@ -2375,3 +2375,22 @@ extern "C" void __fastcall fn_00702750(void* self, int edx_unused, int a1, int a
     sub = *(char**)(p + 0x268);
     *(int*)(sub + 0x518) = a2;
 }
+
+// [0x007027C0] sub_007027C0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007027C0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x268]
+        push esi
+        add ecx, 0x168
+        push 0
+        push 0
+        push 0
+        mov eax, dword ptr [ecx]
+        lea esi, [ecx + 0x80]
+        push esi
+        call dword ptr [eax + 0x88]
+        mov eax, dword ptr [esi]
+        pop esi
+        ret
+    }
+}
