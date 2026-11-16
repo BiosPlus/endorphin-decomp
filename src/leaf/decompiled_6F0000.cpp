@@ -5881,3 +5881,22 @@ extern "C" void __fastcall fn_006F8B10(void* self) {
     p[7] = 0;
     p[8] = 0;
 }
+
+// [0x006F90D0] sub_006F90D0 (32 bytes)
+// [0x006F90D0]
+extern "C" int mem_00AAB3EC[];
+
+extern "C" __declspec(naked) int __cdecl fn_006F90D0(int idx) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        test eax, eax
+        jl short zero_006F90D0
+        cmp eax, 2Ch
+        jge short zero_006F90D0
+        mov eax, dword ptr [eax*4 + mem_00AAB3EC]
+        ret
+zero_006F90D0:
+        xor eax, eax
+        ret
+    }
+}
