@@ -3023,3 +3023,25 @@ L_none:
         ret 4
     }
 }
+
+// [0x0072DBB0] sub_0072DBB0 (48 bytes)
+extern "C" void ext_00725A60();
+extern "C" void ext_00725A90();
+extern "C" __declspec(naked) int __fastcall fn_0072DBB0(void* self, int edx_unused) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [ecx + 0xac]
+        push eax
+        mov eax, dword ptr [esp + 0x8]
+        push edx
+        push eax
+        push 0x0
+        add ecx, 0x4
+        call ext_00725A60
+        push eax
+        call ext_00725A90
+        add esp, 0x10
+        ret 0xc
+    }
+}
