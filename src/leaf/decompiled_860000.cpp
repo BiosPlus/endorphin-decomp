@@ -5367,3 +5367,23 @@ extern "C" __declspec(naked) void* __cdecl fn_0086CF90(unsigned int a, unsigned 
         ret
     }
 }
+
+// [0x0086CCC0] sub_0086CCC0 (32 bytes)
+extern "C" unsigned char __cdecl ext_0086CCE0(void* p);
+
+extern "C" __declspec(naked) void* __cdecl fn_0086CCC0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push esi
+        call ext_0086CCE0
+        add esp, 0x4
+        cmp al, 0x1
+        mov eax, esi
+        jne SHORT fn_0086CCC0_done
+        mov eax, dword ptr [esi + 0x4]
+fn_0086CCC0_done:
+        pop esi
+        ret
+    }
+}
