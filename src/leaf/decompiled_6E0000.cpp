@@ -1455,3 +1455,21 @@ extern "C" __declspec(naked) void __fastcall fn_006E5EC0(void* self) {
         ret
     }
 }
+
+// [0x006E6320] sub_006E6320 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006E6320(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push edi
+        call ext_006B9EC0
+        push edi
+        lea ecx, [esi + 0x4c]
+        call ext_006B9EC0
+        pop edi
+        pop esi
+        ret 4
+    }
+}
