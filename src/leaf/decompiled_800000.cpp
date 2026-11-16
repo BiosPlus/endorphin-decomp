@@ -7597,3 +7597,14 @@ L_done:
         ret
     }
 }
+
+// [0x0080A720] sub_0080A720 (48 bytes)
+extern "C" void ext_0080B540();
+extern "C" void __cdecl fn_0080A720(int* p) {
+    int esi = p[0] + 0x5000;
+    int r = ((int (__cdecl*)(int, int))ext_0080B540)(p[1], esi);
+    if (r != 0) {
+        p[1] = r;
+        p[0] = esi;
+    }
+}
