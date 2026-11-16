@@ -2685,3 +2685,14 @@ done_00859E70:
         ret
     }
 }
+
+// [0x0085BE80] sub_0085BE80 (32 bytes)
+extern "C" void* __cdecl ext_008596E0(unsigned int size);
+
+extern "C" void __cdecl fn_0085BE80() {
+    int* p = (int*)ext_008596E0(8);
+    if (p) {
+        p[0] = 0;
+        p[1] = 0;
+    }
+}
