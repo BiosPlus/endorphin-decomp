@@ -1803,3 +1803,18 @@ done:
         ret
     }
 }
+
+// [0x0070CED0] sub_0070CED0 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0070CED0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        add ecx, 0x40
+        mov dword ptr [esp + 0x4], eax
+        lea edx, [esp + 0x4]
+        mov eax, dword ptr [ecx]
+        push edx
+        push eax
+        call ext_006D2170
+        ret 0x4
+    }
+}
