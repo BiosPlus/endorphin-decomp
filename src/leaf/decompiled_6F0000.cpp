@@ -6069,3 +6069,15 @@ extern "C" void __fastcall fn_006FBC50(void* self, int edx_unused, int a1) {
     typedef void (__cdecl *fn_t)(void*, int);
     ((fn_t)ext_006FB6D0)(self, a1);
 }
+
+// [0x006FBC70] sub_006FBC70 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FBC70(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ecx
+        push eax
+        call ext_006FB6D0
+        add esp, 0x8
+        ret 0x4
+    }
+}
