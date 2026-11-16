@@ -2130,3 +2130,27 @@ extern "C" __declspec(naked) void __cdecl fn_0077FE70(void* a) {
         ret
     }
 }
+
+// [0x00772010] sub_00772010 (48 bytes)
+extern "C" int mem_009252D0;
+
+extern "C" __declspec(naked) void __stdcall fn_00772010(void* a1, int a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov eax, dword ptr [esi]
+        push edi
+        push eax
+        push eax
+        call dword ptr [mem_009252D0]
+        mov eax, dword ptr [esi]
+        add esp, 0xc
+        mov byte ptr [eax + edi], 0x0
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x8
+    }
+}
