@@ -1221,3 +1221,85 @@ extern "C" __declspec(naked) void __fastcall fn_0070A100(void* self) {
         ret 0x18
     }
 }
+
+extern "C" void ext_006B9D10();
+extern "C" void ext_006E9AD0();
+// [0x00709E30] sub_00709E30 (224 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00709E30(void* self, int edx_unused) {
+    __asm {
+        push -1
+        push 0x8bc286
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0Ch], esi
+        call ext_007111D0
+        lea ecx, [esi + 80h]
+        mov dword ptr [esp + 18h], 0
+        call ext_006B9D10
+        mov ebx, dword ptr [esp + 20h]
+        mov edi, dword ptr [esp + 24h]
+        mov eax, dword ptr [esp + 34h]
+        push 0
+        push 0
+        push ebx
+        push edi
+        mov ecx, esi
+        mov byte ptr [esp + 28h], 1
+        mov dword ptr [esi], 995904h
+        mov dword ptr [esi + 78h], eax
+        call ext_00711D40
+        push 0
+        push edi
+        mov ecx, esi
+        call ext_00711F00
+        push 0
+        call ext_006E9AD0
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_00711DA0
+        mov ecx, dword ptr [esp + 2Ch]
+        push ecx
+        push 40h
+        mov ecx, esi
+        call ext_0071E680
+        mov ecx, eax
+        call ext_00710F80
+        push 1
+        push 1
+        mov ecx, esi
+        call ext_0071E680
+        mov ecx, eax
+        call ext_00710F80
+        mov edx, dword ptr [esp + 28h]
+        mov ecx, esi
+        push edx
+        call ext_00711DC0
+        mov eax, dword ptr [esp + 30h]
+        test eax, eax
+        je SHORT L_709EEF_30
+        push 0
+        push eax
+        mov ecx, esi
+        call ext_006FB650
+    L_709EEF_30:
+        mov eax, dword ptr [ebx]
+        push esi
+        mov ecx, ebx
+        call dword ptr [eax + 0E0h]
+        mov ecx, dword ptr [esp + 10h]
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 10h
+        ret 18h
+    }
+}
