@@ -3380,3 +3380,24 @@ extern "C" __declspec(naked) void __fastcall fn_00710F80(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00711CF0] sub_00711CF0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00711CF0(void* self, int edx_unused, unsigned int mask, unsigned char set) {
+    __asm {
+        mov al, byte ptr [esp + 8]
+        test al, al
+        je clear_bits
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [ecx + 0x78]
+        or edx, eax
+        mov dword ptr [ecx + 0x78], edx
+        ret 8
+clear_bits:
+        mov edx, dword ptr [esp + 4]
+        mov eax, dword ptr [ecx + 0x78]
+        not edx
+        and eax, edx
+        mov dword ptr [ecx + 0x78], eax
+        ret 8
+    }
+}
