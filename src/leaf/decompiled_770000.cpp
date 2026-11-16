@@ -2106,3 +2106,13 @@ extern "C" __declspec(naked) double __cdecl fn_0077FED0(int index) {
         ret
     }
 }
+
+// [0x0077FE20] sub_0077FE20 (32 bytes)
+extern "C" void __fastcall ext_00780250(void* self);
+extern "C" void __fastcall fn_0077FE20(void* self) {
+    void* p = *(void**)self;
+    if (p) {
+        ext_00780250(p);
+        ((void (__cdecl*)(void*))ext_006A5C5C)(p);
+    }
+}
