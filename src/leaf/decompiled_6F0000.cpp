@@ -6199,3 +6199,22 @@ L_false_006FA9C0:
         ret 0x8
     }
 }
+
+// [0x006FB520] sub_006FB520 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FB520(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 4]
+        test ecx, ecx
+        je fn_006FB520_null
+        mov ecx, dword ptr [ecx + 4]
+        mov dword ptr [eax + 4], ecx
+        mov ecx, dword ptr [ecx]
+        mov dword ptr [eax], ecx
+        ret 4
+fn_006FB520_null:
+        mov dword ptr [eax], 0
+        mov dword ptr [eax + 4], 0
+        ret 4
+    }
+}
