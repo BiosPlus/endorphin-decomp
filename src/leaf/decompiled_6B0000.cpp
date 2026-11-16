@@ -9387,3 +9387,21 @@ L_done:
         ret 8
     }
 }
+
+// [0x006BA2C0] sub_006BA2C0 (48 bytes)
+extern "C" int mem_00B5D2B4;
+extern "C" __declspec(naked) void* __fastcall fn_006BA2C0(void* self, int edx_unused, unsigned int idx) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx + 0x4]
+        cmp edx, eax
+        jae short L_oob
+        mov eax, dword ptr [ecx]
+        add eax, edx
+        ret 0x4
+    L_oob:
+        mov byte ptr [mem_00B5D2B4], 0x0
+        mov eax, offset mem_00B5D2B4
+        ret 0x4
+    }
+}
