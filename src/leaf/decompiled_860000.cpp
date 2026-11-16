@@ -5429,3 +5429,32 @@ extern "C" __declspec(naked) void __fastcall fn_0086AF00(void* self) {
         ret
     }
 }
+
+// [0x0086AF50] sub_0086AF50 (48 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0086AF50(int* arr, int count) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        test eax, eax
+        je zero_out
+        mov ecx, dword ptr [esp + 4]
+        dec eax
+        mov edx, dword ptr [ecx + 4*eax]
+        lea ecx, [ecx + 4*eax]
+        test edx, edx
+        jne done_out
+loop_top:
+        mov edx, eax
+        dec eax
+        sub ecx, 4
+        test edx, edx
+        je done_out
+        cmp dword ptr [ecx], 0
+        je loop_top
+done_out:
+        inc eax
+        ret
+zero_out:
+        xor eax, eax
+        ret
+    }
+}
