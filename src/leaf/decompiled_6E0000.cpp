@@ -1366,3 +1366,10 @@ extern "C" bool __fastcall fn_006E6E40(void* self, int edx_unused, int a1) {
     }
     return r;
 }
+
+// [0x006E86C0] sub_006E86C0 (32 bytes)
+extern "C" void __fastcall fn_006E86C0(void* self, int edx_unused, int a1, int a2) {
+    char* obj = *(char**)self;
+    *(int*)(obj + 0x60) = a1;
+    *(int*)(obj + 0x64) = a2;
+}
