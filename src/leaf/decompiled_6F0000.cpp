@@ -6179,3 +6179,23 @@ L_false_006FA990:
         ret 0x8
     }
 }
+
+// [0x006FA9C0] sub_006FA9C0 (48 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_006FA9C0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        test byte ptr [ecx + 0x34], 0x2
+        je short L_false_006FA9C0
+        mov ecx, dword ptr [ecx + 0x38]
+        mov edx, dword ptr [esp + 0x4]
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x74]
+        test al, al
+        je short L_false_006FA9C0
+        mov al, 0x1
+        ret 0x8
+L_false_006FA9C0:
+        xor al, al
+        ret 0x8
+    }
+}
