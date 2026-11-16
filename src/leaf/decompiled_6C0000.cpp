@@ -3348,3 +3348,23 @@ fn_006C9F20_clear:
         ret 0x4
     }
 }
+
+// [0x006CA090] sub_006CA090 (48 bytes)
+extern "C" int mem_00B5D768;
+extern "C" int mem_009251D8; /* "&|b" */
+extern "C" __declspec(naked) void __fastcall fn_006CA090(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        je done
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [mem_00B5D768]
+        sub edx, ecx
+        mov dword ptr [mem_00B5D768], edx
+    done:
+        push eax
+        call dword ptr [mem_009251D8]
+        pop ecx
+        ret
+    }
+}
