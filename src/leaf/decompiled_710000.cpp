@@ -3233,3 +3233,15 @@ extern "C" __declspec(naked) void __stdcall fn_0071B070(int a1, int a2) {
         ret 0x8
     }
 }
+
+// [0x0071B090] sub_0071B090 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0071B090(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x0c]
+        push 0xaa8d5c
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        jmp dword ptr [edx + 0x7c]
+    }
+}
