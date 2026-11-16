@@ -3194,3 +3194,18 @@ extern "C" __declspec(naked) void __fastcall fn_006C31E0(void* self) {
         ret
     }
 }
+
+// [0x006C3360] sub_006C3360 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C3360(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, eax
+        shl edx, 0x5
+        sub edx, eax
+        mov eax, dword ptr [ecx + 0xf0]
+        mov ecx, dword ptr [esp + 0x8]
+        shl edx, 0x4
+        mov dword ptr [edx + eax + 0x1f04], ecx
+        ret 0x8
+    }
+}
