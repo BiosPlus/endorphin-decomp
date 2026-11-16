@@ -5631,3 +5631,24 @@ extern "C" __declspec(naked) void __fastcall fn_00613FB0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00614290] ExprParser::ReadMethodType<Geometry, float, &private: float __thiscall Geometry::getParam1(void) const, 0>::vfunc_1 (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00614290(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je fail
+        fld dword ptr [eax + 0x14]
+        add esp, 0x28
+        ret 4
+    fail:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
