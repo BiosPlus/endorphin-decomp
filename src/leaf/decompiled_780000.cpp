@@ -3210,3 +3210,27 @@ extern "C" void __fastcall fn_00780130(void* self, int edx_unused, int a1, int a
     *(int*)(p + 0x128) = a2;
     *(int*)(p + 0x12c) = a3;
 }
+
+// [0x00782B30] sub_00782B30 (48 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00782B30(int arg) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub eax, 0
+        je L_zero
+        dec eax
+        je L_one
+        dec eax
+        je L_two
+        xor eax, eax
+        ret
+    L_two:
+        mov eax, 0xaaf2c4
+        ret
+    L_one:
+        mov eax, 0xaaf2bc
+        ret
+    L_zero:
+        mov eax, 0xaaf2b8
+        ret
+    }
+}
