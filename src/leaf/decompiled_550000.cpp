@@ -20052,3 +20052,16 @@ extern "C" __declspec(naked) void __fastcall fn_0055EAD0(void* self) {
         ret     0x8
     }
 }
+
+// [0x00557A10] sub_00557A10 (17 bytes)
+extern "C" void ext_00557920();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) void __fastcall fn_00557A10(void* self) {
+    __asm {
+        mov ecx, dword ptr [ebp - 0x18]
+        call ext_00557920
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
