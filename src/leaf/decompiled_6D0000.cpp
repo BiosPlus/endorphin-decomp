@@ -3698,3 +3698,18 @@ extern "C" __declspec(naked) void __fastcall fn_006D7490(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006DCB40] sub_006DCB40 (32 bytes)
+extern "C" void __stdcall ext_006DC6A0(int arg);
+
+extern "C" __declspec(naked) void __fastcall fn_006DCB40(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 0aa8cb0h
+        call ext_006DC6A0
+        mov dword ptr [esi+0e8h], 0
+        pop esi
+        ret
+    }
+}
