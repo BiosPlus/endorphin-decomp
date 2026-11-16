@@ -3501,3 +3501,13 @@ extern "C" __declspec(naked) double __fastcall fn_006D2700(const double* self, i
         ret 0x4
     }
 }
+
+// [0x006D5600] sub_006D5600 (32 bytes)
+extern "C" void* __fastcall fn_006D5600(void* self, int edx_unused, int idx) {
+    unsigned char* p = (unsigned char*)self;
+    if (idx >= 0 && idx < *(int*)(p + 0x1c)) {
+        void** arr = *(void***)(p + 0x2c);
+        return arr[idx];
+    }
+    return 0;
+}
