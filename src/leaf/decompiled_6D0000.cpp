@@ -3762,3 +3762,23 @@ extern "C" __declspec(naked) void __fastcall fn_006D7970(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006D7B30] sub_006D7B30 (32 bytes)
+extern "C" void ext_006D7B50();
+
+extern "C" __declspec(naked) void* __fastcall fn_006D7B30(void* self, int edx_unused, int flag) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006D7B50
+        test byte ptr [esp + 0x8], 0x1
+        je done
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    done:
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
