@@ -3814,3 +3814,29 @@ extern "C" __declspec(naked) void __cdecl fn_007A5EF0(void* pp) {
         ret
     }
 }
+
+// [0x007AF010] sub_007AF010 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007AF010(unsigned char* p, unsigned int n) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, eax
+        dec eax
+        test ecx, ecx
+        jbe done
+        push esi
+        lea esi, [eax + 0x1]
+        mov eax, dword ptr [esp + 0x8]
+loop_top:
+        mov dl, byte ptr [eax]
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x1]
+        mov byte ptr [eax + 0x1], dl
+        mov byte ptr [eax], cl
+        add eax, 0x2
+        dec esi
+        jne loop_top
+        pop esi
+done:
+        ret
+    }
+}
