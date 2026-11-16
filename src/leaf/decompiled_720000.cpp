@@ -2938,3 +2938,20 @@ extern "C" __declspec(naked) void __fastcall fn_0072B180(void* self) {
         ret
     }
 }
+
+// [0x0072BC70] sub_0072BC70 (48 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0072BC70(void* self, int edx_unused, int idx) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        jl short L_zero
+        cmp eax, dword ptr [ecx + 0x150]
+        jge short L_zero
+        mov ecx, dword ptr [ecx + 0x160]
+        mov eax, dword ptr [ecx + 4*eax]
+        ret 0x4
+    L_zero:
+        xor eax, eax
+        ret 0x4
+    }
+}
