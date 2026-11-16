@@ -2768,3 +2768,37 @@ extern "C" __declspec(naked) int __cdecl fn_00858B60(int arg) {
         ret
     }
 }
+
+// [0x00859330] sub_00859330 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00859330(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        xor eax, eax
+        test byte ptr [ecx + 0x14], 0x4
+        je short fn_00859330_a
+        mov ecx, dword ptr [ecx]
+fn_00859330_a:
+        push ebx
+        mov bl, byte ptr [ecx + 0x14]
+        mov edx, 1
+        __asm _emit 0x84
+        __asm _emit 0xDA
+        pop ebx
+        jne short fn_00859330_b
+        mov eax, dword ptr [ecx + 0x14]
+        or eax, edx
+        mov dword ptr [ecx + 0x14], eax
+        mov eax, dword ptr [ecx]
+fn_00859330_b:
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
