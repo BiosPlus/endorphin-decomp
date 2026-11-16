@@ -1356,3 +1356,13 @@ done:
         ret 0x4
     }
 }
+
+// [0x006E6E40] sub_006E6E40 (32 bytes)
+extern "C" bool __fastcall fn_006E6E40(void* self, int edx_unused, int a1) {
+    bool r = false;
+    if (a1 != 0) {
+        int v = *(int*)self;
+        if (v != 0 && a1 == v) r = true;
+    }
+    return r;
+}
