@@ -17,5 +17,7 @@
     "0x00525A21",
     "0x00525A2B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-16T14:03:54Z"
 }
