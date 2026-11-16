@@ -2418,3 +2418,14 @@ extern "C" __declspec(naked) void __fastcall fn_006C4DB0(void* self) {
         ret 4h
     }
 }
+
+// [0x006C9320] sub_006C9320 (16 bytes)
+extern "C" void __stdcall ext_006B9EC0(void* a1);
+extern "C" __declspec(naked) void __stdcall fn_006C9320(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_006B9EC0
+        ret 4
+    }
+}
