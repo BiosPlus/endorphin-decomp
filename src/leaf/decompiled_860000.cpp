@@ -5324,3 +5324,20 @@ extern "C" __declspec(naked) void __cdecl fn_00869310(unsigned char* dst, const 
         ret
     }
 }
+
+// [0x00869F30] sub_00869F30 (32 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00869F30(int* dst, int count) {
+    __asm {
+        mov ecx, dword ptr [esp + 8]
+        test ecx, ecx
+        je done_00869F30
+        mov eax, dword ptr [esp + 4]
+    zero_loop_00869F30:
+        mov dword ptr [eax], 0
+        add eax, 4
+        dec ecx
+        jne zero_loop_00869F30
+    done_00869F30:
+        ret
+    }
+}
