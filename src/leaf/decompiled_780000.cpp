@@ -3587,3 +3587,19 @@ ret53:
         ret 4
     }
 }
+
+// [0x0078D4E0] sub_0078D4E0 (48 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0078D4E0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        lea eax, [eax + 2*eax]
+        mov ecx, dword ptr [ecx + 8*eax + 0x10]
+        mov eax, dword ptr [ecx + 4*edx]
+        mov ecx, dword ptr [esp + 0xc]
+        shl ecx, 0x4
+        mov eax, dword ptr [eax + 0x10]
+        add eax, ecx
+        ret 0xc
+    }
+}
