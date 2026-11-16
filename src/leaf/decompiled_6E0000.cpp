@@ -1384,3 +1384,26 @@ extern "C" __declspec(naked) void __fastcall fn_006E8A20(int* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x006EF810] sub_006EF810 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006EF810(void* self, int edx_unused, unsigned int flags) {
+    __asm {
+        _emit 0x8b
+        _emit 0x41
+        _emit 0x34
+        _emit 0x8b
+        _emit 0x54
+        _emit 0x24
+        _emit 0x04
+        _emit 0x24
+        _emit 0xf8
+        _emit 0x0b
+        _emit 0xc2
+        _emit 0x89
+        _emit 0x41
+        _emit 0x34
+        _emit 0xc2
+        _emit 0x04
+        _emit 0x00
+    }
+}
