@@ -3462,3 +3462,36 @@ extern "C" void __fastcall fn_00788C40(void* self) {
     *(unsigned int*)(p + 0x1c) = 0x7fffffffu;
     ext_007857F0();
 }
+
+extern "C" int mem_0092416C; /* u32 0x0062D568 */
+extern "C" int mem_00924170; /* u32 0x0062D578 */
+
+// [0x00788DF0] sub_00788DF0 (48 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_00788DF0(void* self) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [mem_0092416C]
+        mov esi, ecx
+        push 1
+        xor bl, bl
+        call edi
+        mov ecx, dword ptr [esi]
+        lea eax, [esi + 0x4]
+        push eax
+        push ecx
+        call dword ptr [mem_00924170]
+        test eax, eax
+        je short L_788E14_fn00788DF0
+        mov bl, 0x1
+L_788E14_fn00788DF0:
+        push 0
+        call edi
+        pop edi
+        mov al, bl
+        pop esi
+        pop ebx
+        ret
+    }
+}
