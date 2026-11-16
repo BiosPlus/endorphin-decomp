@@ -9099,3 +9099,21 @@ extern "C" int __fastcall fn_006BC740(unsigned char* self, int edx_unused, int i
     int* items = *(int**)(self + 0x64);
     return items[index];
 }
+
+// [0x006BDAF0] sub_006BDAF0 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006BDAF0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 4]
+        test eax, eax
+        je L_006BDAF0_no
+        mov eax, dword ptr [eax]
+        mov edx, dword ptr [ecx]
+        cmp eax, edx
+        jne L_006BDAF0_no
+        mov al, 1
+        ret
+L_006BDAF0_no:
+        xor al, al
+        ret
+    }
+}
