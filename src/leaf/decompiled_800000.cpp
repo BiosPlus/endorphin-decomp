@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_800000.cpp
 
 extern "C" void ext_00859730();
+extern "C" void ext_00859740();
 extern "C" void ext_0080FB20();
 extern "C" void ext_0080BA60();
 extern "C" void ext_008529D0();
@@ -7340,6 +7341,21 @@ extern "C" __declspec(naked) void __cdecl fn_0080ABC0() {
     L_0080ABCE:
         push offset mem_00B73C58
         call dword ptr [mem_009241BC]
+        ret
+    }
+}
+
+// [0x0080B570] sub_0080B570 (32 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080B570() {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push ecx
+        push edx
+        call ext_00859740
+        add esp, 0xc
         ret
     }
 }
