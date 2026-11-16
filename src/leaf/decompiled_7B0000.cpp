@@ -6162,3 +6162,29 @@ extern "C" __declspec(naked) void __cdecl fn_007B2DF0(int* head, int key, int** 
         ret
     }
 }
+
+// [0x007B2E20] sub_007B2E20 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007B2E20(void* self, void* val) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax + 0x14]
+        test ecx, ecx
+        jne chain
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [eax + 0x14], ecx
+        ret
+    chain:
+        mov eax, dword ptr [ecx + 0x10]
+        test eax, eax
+        je done
+    walk:
+        mov ecx, eax
+        mov eax, dword ptr [ecx + 0x10]
+        test eax, eax
+        jne walk
+    done:
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0x10], edx
+        ret
+    }
+}
