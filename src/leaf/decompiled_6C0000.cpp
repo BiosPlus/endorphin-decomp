@@ -3224,3 +3224,19 @@ extern "C" __declspec(naked) void __fastcall fn_006C3390(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006C33C0] sub_006C33C0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C33C0(void* self, int edx_unused, int idx, int* out) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, eax
+        shl edx, 0x5
+        sub edx, eax
+        mov eax, dword ptr [ecx + 0xf0]
+        shl edx, 0x4
+        mov ecx, dword ptr [edx + eax + 0x1e78]
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [edx], ecx
+        ret 0x8
+    }
+}
