@@ -6117,3 +6117,24 @@ extern "C" __declspec(naked) void* __fastcall fn_006FCF80(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006FD400] sub_006FD400 (32 bytes)
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+extern "C" void ext_006FD420();
+
+extern "C" __declspec(naked) void* __fastcall fn_006FD400(void* self, int edx_unused, int flag) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006FD420
+        test byte ptr [esp + 0x8], 0x1
+        je done
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    done:
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
