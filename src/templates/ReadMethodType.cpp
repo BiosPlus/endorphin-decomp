@@ -5504,3 +5504,25 @@ extern "C" __declspec(naked) void __fastcall fn_005DAA10(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x005DAA40] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_2 (45 bytes)
+// [0x005DAA40] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getEndFrame(void) const, 0>::vfunc_2 (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005DAA40(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 28h
+        test eax, eax
+        je throw_path
+        mov eax, dword ptr [eax + 24h]
+        add esp, 28h
+        ret 4
+    throw_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 9DEC1Ch
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
