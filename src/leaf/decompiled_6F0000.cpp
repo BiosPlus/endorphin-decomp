@@ -5907,3 +5907,22 @@ extern "C" void __fastcall fn_006FA3C0(void* self, int edx_unused, unsigned int 
     unsigned int* f = (unsigned int*)((char*)self + 0x34);
     *f = (*f & 0x87ffffffu) | (a1 << 0x1b);
 }
+
+// [0x006F8AD0] sub_006F8AD0 (32 bytes)
+extern "C" void ext_006B9E60();
+extern "C" __declspec(naked) void __fastcall fn_006F8AD0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [eax]
+        add eax, 0x4
+        mov dword ptr [esi], ecx
+        push eax
+        lea ecx, [esi + 0x4]
+        call ext_006B9E60
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
