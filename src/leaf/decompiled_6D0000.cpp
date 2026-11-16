@@ -4339,3 +4339,34 @@ extern "C" __declspec(naked) void __fastcall fn_006DBE30(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x006D8520] sub_006D8520 (48 bytes)
+extern "C" void ext_006FC930();
+extern "C" void ext_006FDF70();
+
+// The callees take `this` in ecx and one stack argument, which plain C++03
+// cannot express for these call sites, so this is hand-written asm.
+extern "C" __declspec(naked) void __fastcall fn_006D8520(void* self) {
+    __asm {
+        push    esi
+        mov     esi, ecx
+        push    0
+        call    ext_006FDF70
+        test    eax, eax
+        je      short fail
+        push    0
+        mov     ecx, esi
+        call    ext_006FDF70
+        mov     ecx, eax
+        call    ext_006FC930
+        test    eax, eax
+        je      short fail
+        mov     eax, dword ptr [eax + 0x18]
+        pop     esi
+        ret
+fail:
+        xor     eax, eax
+        pop     esi
+        ret
+    }
+}
