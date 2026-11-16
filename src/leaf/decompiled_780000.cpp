@@ -3652,3 +3652,32 @@ L_none:
         ret
     }
 }
+
+// [0x0078CB90] sub_0078CB90 (48 bytes)
+extern "C" void ext_006E7460();
+extern "C" void ext_0078CB70();
+extern "C" __declspec(naked) int __fastcall fn_0078CB90(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi + 0x18]
+        cmp eax, -1
+        jle short L_ret0
+        mov edi, eax
+        call ext_006E7460
+        cmp edi, eax
+        jge short L_ret0
+        push edi
+        mov ecx, esi
+        call ext_0078CB70
+        pop edi
+        pop esi
+        ret
+L_ret0:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
