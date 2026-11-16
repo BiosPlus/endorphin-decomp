@@ -5900,3 +5900,10 @@ zero_006F90D0:
         ret
     }
 }
+
+// [0x006FA3C0] sub_006FA3C0 (32 bytes)
+// [0x006FA3C0]
+extern "C" void __fastcall fn_006FA3C0(void* self, int edx_unused, unsigned int a1) {
+    unsigned int* f = (unsigned int*)((char*)self + 0x34);
+    *f = (*f & 0x87ffffffu) | (a1 << 0x1b);
+}
