@@ -5891,3 +5891,24 @@ L_skip:
         call ext_006A6DD2
     }
 }
+
+// [0x00674D50] ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_5 (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00674D50(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je short L_skip
+        add eax, 0x1c
+        push eax
+        call ext_0046C4E0
+    L_skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
