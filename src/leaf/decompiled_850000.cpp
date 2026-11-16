@@ -2612,3 +2612,26 @@ extern "C" __declspec(naked) void __cdecl fn_0085BFE0(void* a) {
         ret
     }
 }
+
+// [0x00857420] sub_00857420 (32 bytes)
+extern "C" int mem_00AB86EC;
+struct Fn857420Tbl { int pad0; int pad4; int (__cdecl *fn)(int, int); };
+extern "C" __declspec(naked) int __cdecl fn_00857420(int a, int b) {
+    __asm {
+        mov eax, dword ptr [mem_00AB86EC]
+        test eax, eax
+        je short L_null
+        mov ecx, dword ptr [esp + 8]
+        mov edx, dword ptr [esp + 4]
+        push ecx
+        push edx
+        call dword ptr [eax + 8]
+        add esp, 8
+        ret
+    L_null:
+        or eax, -1
+        ret
+        nop
+        nop
+    }
+}
