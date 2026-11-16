@@ -90,8 +90,32 @@ func IsCompleted(status string) bool {
 	return status == "decompiled" || status == "matched" || status == "solved"
 }
 
-// IsValidCodeUnit checks the cached disassembly for va (if present) and returns
-// false if it contains invalid/privileged instructions or lacks a trailing ret/jmp.
+// noReturnCallees are callee symbols that never return, so a call to one may legitimately end a function
+// (MSVC emits no ret after `throw` / exit()). Matched against the symbol comment on the call line.
+var noReturnCallees = []string{
+	"_CxxThrowException",
+	"MSVCR80!exit",
+	"MSVCR80!_exit",
+	"MSVCR80!abort",
+	"_invalid_parameter_noinfo",
+	"_amsg_exit",
+}
+
+// instMnemonic returns the mnemonic of a cached objdump line ("  ADDR: bytes \tmnem\toperands").
+func instMnemonic(l string) string {
+	parts := strings.Split(l, "\t")
+	if len(parts) < 2 {
+		return ""
+	}
+	return strings.TrimSpace(parts[1])
+}
+
+func isPadMnemonic(m string) bool { return m == "nop" || m == "int3" }
+
+// IsValidCodeUnit checks the cached disassembly for va (if present) and returns false if it contains
+// invalid/privileged instructions, or if (ignoring trailing nop/int3 alignment padding) it does not end in
+// ret/jmp or a call to a known no-return function. Units with nop/int3 padding after a ret/jmp followed by
+// more code are several functions glued together by the splitter and are rejected too.
 func IsValidCodeUnit(va string) bool {
 	cachePath := filepath.Join(".local", "cache", "funcs", va+".txt")
 	b, err := os.ReadFile(cachePath)
@@ -99,7 +123,7 @@ func IsValidCodeUnit(va string) bool {
 		return true
 	}
 	lines := strings.Split(strings.TrimSpace(string(b)), "\n")
-	lastInst := ""
+	var insts []string
 	for _, l := range lines {
 		l = strings.TrimSpace(l)
 		if l == "" || strings.HasPrefix(l, "//") {
@@ -108,12 +132,56 @@ func IsValidCodeUnit(va string) bool {
 		if strings.Contains(l, "<unknown>") || strings.Contains(l, "\tretf") || strings.Contains(l, "\tinto") || strings.Contains(l, "\tin\t") || strings.Contains(l, "\tout\t") {
 			return false
 		}
-		lastInst = l
+		insts = append(insts, l)
 	}
-	if lastInst == "" {
+	// Drop trailing alignment padding.
+	for len(insts) > 0 && isPadMnemonic(instMnemonic(insts[len(insts)-1])) {
+		insts = insts[:len(insts)-1]
+	}
+	if len(insts) == 0 {
 		return false
 	}
-	return strings.Contains(lastInst, "\tret") || strings.Contains(lastInst, "\tjmp")
+	// Interior padding right after an unconditional exit means a glued multi-function unit.
+	for i := 0; i+1 < len(insts); i++ {
+		m := instMnemonic(insts[i])
+		if (m == "ret" || m == "jmp") && isPadMnemonic(instMnemonic(insts[i+1])) {
+			return false
+		}
+	}
+	last := insts[len(insts)-1]
+	switch instMnemonic(last) {
+	case "ret", "jmp":
+		return true
+	case "call":
+		for _, s := range noReturnCallees {
+			if strings.Contains(last, s) {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+// TrimPadForCompare trims trailing 0xCC/0x90 alignment padding from compiled and target bytes so that padding
+// on either side (COFF section alignment on the compiled .obj, inter-function padding captured in a target
+// unit) does not cause a size mismatch. Both are cut to the longer of the two padding-stripped lengths, so any
+// real code byte present on one side is still compared against the other.
+func TrimPadForCompare(comp, tgt []byte) ([]byte, []byte) {
+	strip := func(b []byte) int {
+		n := len(b)
+		for n > 0 && (b[n-1] == 0xCC || b[n-1] == 0x90) {
+			n--
+		}
+		return n
+	}
+	l := strip(comp)
+	if t := strip(tgt); t > l {
+		l = t
+	}
+	if l > len(comp) || l > len(tgt) {
+		return comp, tgt
+	}
+	return comp[:l], tgt[:l]
 }
 
 // FindMSVCClExe returns the path to the local MSVC8 cl.exe if installed, or "".

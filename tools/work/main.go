@@ -961,21 +961,7 @@ func disassembleCompiledObj(objPath, symName string) []AsmInst {
 }
 
 func maskAndCompare(compFn ObjFunc, targetBytes []byte, u UnitEntry, startVA uint32) (bool, float64, []byte, []byte) {
-	compMasked := append([]byte(nil), compFn.Bytes...)
-	tgtMasked := append([]byte(nil), targetBytes...)
-
-	if len(compMasked) > len(tgtMasked) {
-		allPad := true
-		for i := len(tgtMasked); i < len(compMasked); i++ {
-			if compMasked[i] != 0xCC && compMasked[i] != 0x90 {
-				allPad = false
-				break
-			}
-		}
-		if allPad {
-			compMasked = compMasked[:len(tgtMasked)]
-		}
-	}
+	compMasked, tgtMasked := decomp.TrimPadForCompare(append([]byte(nil), compFn.Bytes...), append([]byte(nil), targetBytes...))
 
 	relocOffsets := make(map[uint32]bool)
 	for _, off := range compFn.Relocs {

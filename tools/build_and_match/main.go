@@ -258,15 +258,8 @@ func findCompiledFuncForVA(objMap map[string]ObjFunc, vaHex string) (ObjFunc, bo
 
 func compareMaskedBytes(compiled ObjFunc, targetBytes []byte, unit decomp.UnitEntry, startVA uint32) (bool, string) {
 	// Trim trailing alignment padding (0xCC int3 or 0x90 nop) if compiled section was padded by COFF alignment
-	compBytes := append([]byte(nil), compiled.Bytes...)
-	for len(compBytes) > len(targetBytes) {
-		last := compBytes[len(compBytes)-1]
-		if last == 0xCC || last == 0x90 {
-			compBytes = compBytes[:len(compBytes)-1]
-		} else {
-			break
-		}
-	}
+	// (and trailing inter-function padding captured in the target unit)
+	compBytes, targetBytes := decomp.TrimPadForCompare(append([]byte(nil), compiled.Bytes...), targetBytes)
 
 	if len(compBytes) != len(targetBytes) {
 		return false, fmt.Sprintf("size mismatch: compiled=%d bytes (%x), target=%d bytes (%x)",

@@ -1265,15 +1265,7 @@ func compileCppToObjFuncs(cppPath string) (map[string]objFunc, error) {
 }
 
 func verifyMaskedBytes(compiled objFunc, targetBytes []byte, unit *decomp.UnitEntry, startVA uint32) bool {
-	compBytes := append([]byte(nil), compiled.bytes...)
-	for len(compBytes) > len(targetBytes) {
-		last := compBytes[len(compBytes)-1]
-		if last == 0xCC || last == 0x90 {
-			compBytes = compBytes[:len(compBytes)-1]
-		} else {
-			break
-		}
-	}
+	compBytes, targetBytes := decomp.TrimPadForCompare(append([]byte(nil), compiled.bytes...), targetBytes)
 	if len(compBytes) != len(targetBytes) {
 		return false
 	}
