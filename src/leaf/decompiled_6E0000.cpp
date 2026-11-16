@@ -1600,3 +1600,25 @@ extern "C" __declspec(naked) void __cdecl fn_006E00C0(double* dst, const double*
         ret
     }
 }
+
+// [0x006E3660] sub_006E3660 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006E3660(double* dst, const double* a, const double* b) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x4]
+        fld qword ptr [ecx]
+        fadd qword ptr [edx]
+        fstp qword ptr [eax]
+        fld qword ptr [ecx + 0x8]
+        fadd qword ptr [edx + 0x8]
+        fstp qword ptr [eax + 0x8]
+        fld qword ptr [ecx + 0x10]
+        fadd qword ptr [edx + 0x10]
+        fstp qword ptr [eax + 0x10]
+        fld qword ptr [ecx + 0x18]
+        fadd qword ptr [edx + 0x18]
+        fstp qword ptr [eax + 0x18]
+        ret
+    }
+}
