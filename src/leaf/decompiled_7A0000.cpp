@@ -3675,3 +3675,9 @@ extern "C" __declspec(naked) void __fastcall fn_007AB720(void* self) {
         jmp ext_007857F0
     }
 }
+
+// [0x007AB740] sub_007AB740 (32 bytes)
+extern "C" void __fastcall fn_007AB740(void* self, int edx_unused, int a1, int a2) {
+    *(int*)((char*)self + 0x78) = a1;
+    *(int*)((char*)self + 0x7c) = a2;
+}
