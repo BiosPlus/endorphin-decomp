@@ -2818,3 +2818,20 @@ extern "C" unsigned char __stdcall fn_0072BDF0(void* a1) {
     }
     return 0;
 }
+
+// [0x0072BDB0] sub_0072BDB0 (32 bytes)
+extern "C" void ext_0072BC70();
+extern "C" __declspec(naked) void __stdcall fn_0072BDB0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_0072BC70
+        test eax, eax
+        mov ecx, eax
+        jne L_0072BDC5
+        mov ecx, 0xb600b8
+    L_0072BDC5:
+        call ext_006E7460
+        ret 4
+    }
+}
