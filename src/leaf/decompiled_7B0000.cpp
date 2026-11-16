@@ -6104,3 +6104,20 @@ extern "C" __declspec(naked) void* __cdecl fn_007B9050(unsigned short key) {
         ret
     }
 }
+
+// [0x007B0680] sub_007B0680 (32 bytes)
+extern "C" void ext_0079B140();
+
+extern "C" __declspec(naked) void __cdecl fn_007B0680(void* p, int b) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        push 0xab1400
+        mov edx, dword ptr [ecx]
+        push edx
+        call ext_0079B140
+        add esp, 0xc
+        ret
+    }
+}
