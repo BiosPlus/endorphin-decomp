@@ -2900,3 +2900,13 @@ loop_00725E24:
         ret 8
     }
 }
+
+// [0x00728D60] sub_00728D60 (48 bytes)
+extern "C" void __cdecl fn_00728D60(char* self) {
+    if (self) {
+        int v = *(int*)(self + 0x11c);
+        if (v != 0x1770 && v != 0x16a8) {
+            *(int*)(self + 0x11c) = 0x1770;
+        }
+    }
+}
