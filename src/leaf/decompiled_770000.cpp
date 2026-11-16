@@ -2031,3 +2031,19 @@ extern "C" __declspec(naked) void* __fastcall fn_0077FAC0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0077CAE0] sub_0077CAE0 (32 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0077CAE0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax + 0x4]
+        test eax, eax
+        je short L_0077CAF4
+        push eax
+        call ext_00778930
+        ret 0x4
+L_0077CAF4:
+        xor al, al
+        ret 0x4
+    }
+}
