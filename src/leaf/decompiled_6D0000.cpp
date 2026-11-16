@@ -3471,3 +3471,17 @@ extern "C" __declspec(naked) void __fastcall fn_006D4200(void* self) {
         ret
     }
 }
+
+// [0x006D2370] sub_006D2370 (32 bytes)
+extern "C" void* __fastcall fn_006D2370(void* self) {
+    unsigned int* p = (unsigned int*)self;
+    p[0] = 0;
+    p[2] = 0;
+    p[4] = 0;
+    p[6] = 0;
+    p[1] = 0;
+    p[3] = 0;
+    p[5] = 0;
+    p[7] = 0;
+    return self;
+}
