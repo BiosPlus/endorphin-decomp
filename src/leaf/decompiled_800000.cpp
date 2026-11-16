@@ -7252,3 +7252,15 @@ extern "C" __declspec(naked) void __cdecl fn_0080C690(void* a) {
         ret
     }
 }
+
+// [0x0080ABE0] sub_0080ABE0 (32 bytes)
+extern "C" int mem_009241C0;
+
+extern "C" __declspec(naked) void __cdecl fn_0080ABE0() {
+    __asm {
+        push offset mem_00B73C58
+        call dword ptr [mem_009241C0]
+        mov dword ptr [mem_00B73C80], 0x1
+        ret
+    }
+}
