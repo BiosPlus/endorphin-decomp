@@ -960,3 +960,98 @@ extern "C" __declspec(naked) void __fastcall fn_00701F70(void* self) {
         ret
     }
 }
+
+// [0x00708B00] sub_00708B00 (208 bytes)
+extern "C" void ext_006D2170();
+extern "C" void ext_006D2200();
+extern "C" void ext_00711A60();
+extern "C" __declspec(naked) int __fastcall fn_00708B00(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, ecx
+        push 0x0
+        mov ecx, edi
+        mov ebx, dword ptr [esi]
+        call ext_00711A60
+        push eax
+        push edi
+        push 0x8
+        mov ecx, esi
+        call dword ptr [ebx + 0xd0]
+        mov edx, dword ptr [esi + 0xc0]
+        lea ecx, [esi + 0xc0]
+        lea eax, [esp + 0x10]
+        mov dword ptr [esp + 0x10], edi
+        push eax
+        push edx
+        call ext_006D2170
+        mov ebx, dword ptr [esi]
+        push 0x0
+        mov ecx, edi
+        call ext_00711A60
+        push eax
+        push edi
+        push 0xb
+        mov ecx, esi
+        call dword ptr [ebx + 0xd0]
+        pop edi
+        pop esi
+        or eax, -1
+        pop ebx
+        ret 4
+        nop
+        nop
+        nop
+        nop
+        nop
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        cmp ebx, -0x1
+        mov esi, ecx
+        jle short L_neg_708B00
+        mov eax, dword ptr [esi + 0xd0]
+        push ebp
+        mov ebp, dword ptr [esi]
+        push edi
+        mov edi, dword ptr [eax + 4*ebx]
+        push 0x0
+        mov ecx, edi
+        call ext_00711A60
+        push eax
+        push edi
+        push 0x9
+        mov ecx, esi
+        call dword ptr [ebp + 0xd0]
+        mov edx, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [edx + 0xec]
+        push ebx
+        lea ecx, [esi + 0xc0]
+        call ext_006D2200
+        mov ebx, dword ptr [esi]
+        push 0x0
+        mov ecx, edi
+        call ext_00711A60
+        push eax
+        push edi
+        push 0xc
+        mov ecx, esi
+        call dword ptr [ebx + 0xd0]
+        pop edi
+        pop ebp
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret 4
+    L_neg_708B00:
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret 4
+    }
+}
