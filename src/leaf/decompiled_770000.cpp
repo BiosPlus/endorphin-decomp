@@ -2154,3 +2154,21 @@ extern "C" __declspec(naked) void __stdcall fn_00772010(void* a1, int a2) {
         ret 0x8
     }
 }
+
+// [0x0077F520] sub_0077F520 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0077F520(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        test eax, eax
+        je zero_path
+        mov eax, dword ptr [eax + 0x14]
+        mov dword ptr [ecx + 0x8], 0xffffffff
+        mov dword ptr [ecx + 0x4], eax
+        ret
+    zero_path:
+        xor eax, eax
+        mov dword ptr [ecx + 0x8], 0xffffffff
+        mov dword ptr [ecx + 0x4], eax
+        ret
+    }
+}
