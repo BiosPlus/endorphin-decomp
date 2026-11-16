@@ -1744,3 +1744,23 @@ L_006E71B6:
         ret
     }
 }
+
+// [0x006E85D0] sub_006E85D0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006E85D0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        mov eax, ecx
+        push esi
+        push edi
+        mov ecx, 0x8
+        mov esi, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x10]
+        mov edi, eax
+        mov dword ptr [esp + 0x8], 0x0
+        rep movsd
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
