@@ -4459,3 +4459,23 @@ extern "C" __declspec(naked) unsigned int __cdecl fn_00798840(void* self) {
         ret
     }
 }
+
+// [0x0079EA60] sub_0079EA60 (48 bytes)
+extern "C" int mem_00B6114C;
+extern "C" int mem_009977EC;
+extern "C" __declspec(naked) void __cdecl fn_0079EA60(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [mem_00B6114C]
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0ch]
+        lea ecx, [edx + 4*ecx]
+        cmp eax, dword ptr [ecx]
+        jne short done
+        mov dword ptr [ecx], 0
+        mov cl, byte ptr [mem_009977EC]
+        mov byte ptr [eax + 0ch], cl
+done:
+        ret
+    }
+}
