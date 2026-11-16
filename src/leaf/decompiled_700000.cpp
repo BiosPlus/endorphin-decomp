@@ -1946,3 +1946,17 @@ extern "C" __declspec(naked) bool __fastcall fn_007008D0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00702B40] sub_00702B40 (32 bytes)
+extern "C" void ext_00708000();
+
+extern "C" __declspec(naked) void __fastcall fn_00702B40(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x268]
+        push 0xaabae4
+        call ext_00708000
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        jmp dword ptr [edx + 0x7c]
+    }
+}
