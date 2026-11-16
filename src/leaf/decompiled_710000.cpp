@@ -2849,3 +2849,15 @@ extern "C" __declspec(naked) void __cdecl fn_00712000() {
         ret
     }
 }
+
+// [0x00712240] sub_00712240 (16 bytes)
+extern "C" int mem_00AABF1C;
+
+// [0x00712240]
+extern "C" __declspec(naked) int __cdecl fn_00712240() {
+    __asm {
+        call ext_00711DB0
+        mov eax, dword ptr [eax*4 + mem_00AABF1C]
+        ret
+    }
+}
