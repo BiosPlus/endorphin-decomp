@@ -3581,3 +3581,24 @@ extern "C" __declspec(naked) void __fastcall fn_007156B0(void* self) {
         ret
     }
 }
+
+// [0x00715710] sub_00715710 (48 bytes)
+extern "C" void ext_006C9610();
+extern "C" void ext_006DC460();
+extern "C" void ext_006C9F70();
+extern "C" int mem_0092A278;
+extern "C" __declspec(naked) void __fastcall fn_00715710(void* self) {
+    __asm {
+        cmp dword ptr [ecx + 0xc], 2
+        jne short fn_00715710_fp
+        mov ecx, dword ptr [ecx + 4]
+        call ext_006DC460
+        mov ecx, eax
+        call ext_006C9610
+        mov ecx, eax
+        jmp ext_006C9F70
+    fn_00715710_fp:
+        fld qword ptr [mem_0092A278]
+        ret
+    }
+}
