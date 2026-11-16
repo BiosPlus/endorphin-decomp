@@ -3495,3 +3495,27 @@ L_788E14_fn00788DF0:
         ret
     }
 }
+
+extern "C" int mem_009241CC; /* u32 0x00628198 */
+
+// [0x00788E20] sub_00788E20 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00788E20(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [mem_0092416C]
+        mov esi, ecx
+        push 1
+        call edi
+        mov eax, dword ptr [esi]
+        push eax
+        call dword ptr [mem_009241CC]
+        push 0
+        mov dword ptr [esi], 0
+        call edi
+        mov byte ptr [esi + 0x654], 0
+        pop edi
+        pop esi
+        ret
+    }
+}
