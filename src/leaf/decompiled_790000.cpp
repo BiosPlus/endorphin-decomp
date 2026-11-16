@@ -4418,3 +4418,17 @@ done:
         ret
     }
 }
+
+// [0x0079FD60] sub_0079FD60 (32 bytes)
+extern "C" void ext_007B2A10();
+
+extern "C" __declspec(naked) void __cdecl fn_0079FD60(void) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0xb003
+        push eax
+        call ext_007B2A10
+        add esp, 8
+        ret
+    }
+}
