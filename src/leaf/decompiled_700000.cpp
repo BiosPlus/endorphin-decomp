@@ -2038,3 +2038,20 @@ extern "C" __declspec(naked) void __stdcall fn_0070C380(int a1, int a2) {
         ret 0x8
     }
 }
+
+// [0x0070E390] sub_0070E390 (32 bytes)
+extern "C" void ext_00717720();
+
+extern "C" __declspec(naked) void* __fastcall fn_0070E390(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        add ecx, 0xd0
+        push ecx
+        mov ecx, esi
+        call ext_00717720
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
