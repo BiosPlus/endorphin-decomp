@@ -3429,3 +3429,30 @@ ret1:
         ret
     }
 }
+
+// [0x00715520] sub_00715520 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00715520(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push edi
+        cmp eax, dword ptr [esi + 0xc]
+        je done
+        mov edi, dword ptr [esi + 0x4]
+        mov dword ptr [esi + 0xc], eax
+        test edi, edi
+        je done
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax + 0xc]
+        mov edx, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [edx + 0x8]
+done:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
