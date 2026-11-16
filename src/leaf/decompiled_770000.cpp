@@ -2172,3 +2172,26 @@ extern "C" __declspec(naked) void __fastcall fn_0077F520(void* self) {
         ret
     }
 }
+
+// [0x0077F5A0] sub_0077F5A0 (48 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_0077F5A0(int idx) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        mov eax, 0xaaf03c
+        sub ecx, 0
+        je L_zero
+        dec ecx
+        je L_one
+        dec ecx
+        jne L_ret
+        mov eax, 0xaae5b0
+        ret
+    L_one:
+        mov eax, 0xaae5c0
+        ret
+    L_zero:
+        mov eax, 0xaaf03c
+    L_ret:
+        ret
+    }
+}
