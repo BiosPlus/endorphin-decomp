@@ -1718,3 +1718,16 @@ extern "C" __declspec(naked) void __fastcall fn_00706AF0(void* self) {
         jmp ext_006E7460
     }
 }
+
+// [0x00706EF0] sub_00706EF0 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00706EF0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x5c]
+        test eax, eax
+        jne short L_has_value
+        mov eax, offset mem_00B5D268
+    L_has_value:
+        mov ecx, eax
+        jmp ext_006E7460
+    }
+}
