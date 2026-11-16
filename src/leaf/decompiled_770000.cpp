@@ -2239,3 +2239,36 @@ extern "C" __declspec(naked) bool __fastcall fn_0077FB10(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0077FB40] sub_0077FB40 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0077FB40(void* self) {
+    __asm {
+        mov eax, ecx
+        xor edx, edx
+        mov ecx, 0x3ff00000
+        mov dword ptr [eax], edx
+        mov dword ptr [eax + 0x8], edx
+        mov dword ptr [eax + 0x10], edx
+        mov dword ptr [eax + 0x18], edx
+        mov dword ptr [eax + 0x4], ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov dword ptr [eax + 0x14], ecx
+        mov dword ptr [eax + 0x1c], ecx
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
