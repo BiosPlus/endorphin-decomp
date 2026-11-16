@@ -1142,3 +1142,82 @@ extern "C" __declspec(naked) void __fastcall fn_0070A030(void* self) {
         ret 0x18
     }
 }
+
+extern "C" void ext_006F9B20();
+
+// [0x0070A100] sub_0070A100 (208 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0070A100(void* self) {
+    __asm {
+        push -1
+        push 0x8bc298
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        mov [esp+0xc], esi
+        call ext_007111D0
+        mov ebx, [esp+0x20]
+        mov edi, [esp+0x24]
+        mov eax, [esp+0x34]
+        push 0
+        push 0
+        push ebx
+        push edi
+        mov ecx, esi
+        mov dword ptr [esp+0x28], 0
+        mov dword ptr [esi], 0x994d90
+        mov [esi+0x78], eax
+        call ext_00711D40
+        push 0
+        push edi
+        mov ecx, esi
+        call ext_00711F00
+        push 0
+        call ext_006F9B20
+        add esp, 4
+        mov ecx, esi
+        push eax
+        call ext_00711DA0
+        mov ecx, [esp+0x2c]
+        push ecx
+        push 0x40
+        mov ecx, esi
+        call ext_0071E680
+        mov ecx, eax
+        call ext_00710F80
+        push 1
+        push 1
+        mov ecx, esi
+        call ext_0071E680
+        mov ecx, eax
+        call ext_00710F80
+        mov edx, [esp+0x28]
+        mov ecx, esi
+        push edx
+        call ext_00711DC0
+        mov eax, [esp+0x30]
+        test eax, eax
+        je skip_fb650
+        push 0
+        push eax
+        mov ecx, esi
+        call ext_006FB650
+    skip_fb650:
+        mov eax, [ebx]
+        push esi
+        mov ecx, ebx
+        call dword ptr [eax+0xe0]
+        mov ecx, [esp+0x10]
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret 0x18
+    }
+}
