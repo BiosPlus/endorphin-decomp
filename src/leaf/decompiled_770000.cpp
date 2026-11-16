@@ -2091,3 +2091,18 @@ extern "C" __declspec(naked) double __cdecl fn_0077FEB0(int index) {
         ret
     }
 }
+
+// [0x0077FED0] sub_0077FED0 (32 bytes)
+extern "C" void ext_007802A0();
+extern "C" __declspec(naked) double __cdecl fn_0077FED0(int index) {
+    __asm {
+        call ext_007802A0
+        mov ecx, dword ptr [esp + 0x4]
+        lea edx, [ecx + 8*ecx]
+        lea ecx, [ecx + 2*edx]
+        mov edx, dword ptr [eax + 0x4]
+        shl ecx, 0x4
+        fld qword ptr [edx + ecx + 0x118]
+        ret
+    }
+}
