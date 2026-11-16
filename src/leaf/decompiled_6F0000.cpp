@@ -6050,3 +6050,9 @@ extern "C" __declspec(naked) void __fastcall fn_006FB670(void* self) {
         ret 8
     }
 }
+
+// [0x006FB690] sub_006FB690 (32 bytes)
+extern "C" int __cdecl ext_006FB5C0(int, int, void*, int, int);
+extern "C" int __fastcall fn_006FB690(void* self, int edx_unused, int a1, int a2, int a3) {
+    return ext_006FB5C0(a2, -1, self, a1, a3);
+}
