@@ -2653,3 +2653,17 @@ extern "C" __declspec(naked) void __cdecl fn_00857470(void* arg) {
         ret
     }
 }
+
+// [0x00859E50] sub_00859E50 (32 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00859E50(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov cl, byte ptr [eax + 0x14]
+        mov eax, dword ptr [eax]
+        test cl, 0x4
+        je short L_00859E60
+        mov eax, dword ptr [eax]
+    L_00859E60:
+        ret
+    }
+}
