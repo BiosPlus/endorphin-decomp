@@ -3603,3 +3603,18 @@ L_ret0:
         ret 0x4
     }
 }
+
+// [0x007AA930] sub_007AA930 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007AA930(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        jle short skip
+        cmp eax, 0x12
+        jge short skip
+        mov dl, byte ptr [esp + 0x8]
+        mov byte ptr [eax + ecx + 0x138], dl
+    skip:
+        ret 0x8
+    }
+}
