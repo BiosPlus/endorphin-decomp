@@ -2835,3 +2835,12 @@ extern "C" __declspec(naked) void __stdcall fn_0072BDB0(void* a1) {
         ret 4
     }
 }
+
+// [0x00725A60] sub_00725A60 (48 bytes)
+extern "C" int __fastcall fn_00725A60(void* self, int edx_unused, int idx) {
+    if (idx < 0 || idx >= *(int*)((char*)self + 0x1ac)) {
+        return 0;
+    }
+    int* arr = *(int**)((char*)self + 0x1bc);
+    return arr[idx];
+}
