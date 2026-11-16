@@ -2802,3 +2802,24 @@ fn_00859330_b:
         __asm _emit 0x90
     }
 }
+
+// [0x00859780] sub_00859780 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00859780(void* dst, const void* src, unsigned int n) {
+    __asm {
+        mov ecx, dword ptr [esp+0Ch]
+        mov eax, dword ptr [esp+04h]
+        push esi
+        mov esi, dword ptr [esp+0Ch]
+        mov edx, ecx
+        push edi
+        mov edi, eax
+        shr ecx, 2
+        rep movsd
+        mov ecx, edx
+        and ecx, 3
+        rep movsb
+        pop edi
+        pop esi
+        ret
+    }
+}
