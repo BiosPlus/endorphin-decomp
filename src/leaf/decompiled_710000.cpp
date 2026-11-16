@@ -2871,3 +2871,12 @@ extern "C" __declspec(naked) void __cdecl fn_00711A40() {
         ret
     }
 }
+
+// [0x00711A50] sub_00711A50 (16 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00711A50() {
+    __asm {
+        push 0x2
+        call ext_00711A20
+        ret
+    }
+}
