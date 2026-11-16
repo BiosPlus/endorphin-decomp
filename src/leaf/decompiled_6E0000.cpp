@@ -1670,3 +1670,28 @@ done:
         ret
     }
 }
+
+// [0x006E6850] sub_006E6850 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006E6850(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je done
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx]
+        and edx, 0xff
+        push edx
+        call dword ptr [eax + 0x78]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je done
+        mov eax, dword ptr [ecx]
+        push esi
+        call dword ptr [eax + 0x128]
+done:
+        pop esi
+        ret 4
+    }
+}
