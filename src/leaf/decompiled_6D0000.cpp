@@ -3632,3 +3632,10 @@ extern "C" __declspec(naked) void __fastcall fn_006DE3B0(void* self) {
         jmp ext_006E7460
     }
 }
+
+// [0x006D2110] sub_006D2110 (32 bytes)
+extern "C" void ext_006D20C0(...);
+
+extern "C" void __cdecl fn_006D2110(int a, int b, int c) {
+    ext_006D20C0(a, 0, b, c);
+}
