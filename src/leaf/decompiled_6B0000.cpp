@@ -9186,3 +9186,8 @@ extern "C" __declspec(naked) void __stdcall fn_006BA7C0(int a1) {
         ret     0x4
     }
 }
+
+// [0x006BA7E0] sub_006BA7E0 (32 bytes)
+extern "C" int __stdcall fn_006BA7E0(int a1) {
+    return ((int (__stdcall*)(int))ext_006BA660)(a1) != 0;
+}
