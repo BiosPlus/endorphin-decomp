@@ -9016,3 +9016,17 @@ extern "C" __declspec(naked) void __fastcall fn_006BB1A0(void* self) {
         ret
     }
 }
+
+// [0x006B9D10] sub_006B9D10 (16 bytes)
+extern "C" void ext_006B9910();
+
+extern "C" __declspec(naked) void* __fastcall fn_006B9D10(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006B9910
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
