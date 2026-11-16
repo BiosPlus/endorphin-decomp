@@ -3354,3 +3354,30 @@ L_zero:
         ret 0x8
     }
 }
+
+// [0x007837A0] sub_007837A0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007837A0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8]
+        inc eax
+        mov dword ptr [ecx + 0x8], eax
+        mov eax, dword ptr [ecx + 0xc]
+        inc eax
+        mov dword ptr [ecx + 0xc], eax
+        mov eax, dword ptr [ecx]
+        test eax, eax
+        je fn_007837A0_done
+    fn_007837A0_loop:
+        mov ecx, dword ptr [eax + 0x8]
+        inc ecx
+        mov dword ptr [eax + 0x8], ecx
+        mov ecx, dword ptr [eax + 0xc]
+        inc ecx
+        mov dword ptr [eax + 0xc], ecx
+        mov eax, dword ptr [eax]
+        test eax, eax
+        jne fn_007837A0_loop
+    fn_007837A0_done:
+        ret
+    }
+}
