@@ -1695,3 +1695,12 @@ extern "C" __declspec(naked) int __fastcall fn_00702640(void* self) {
 extern "C" void __fastcall fn_007027A0(char* self, int edx_unused, int a1) {
     *(int*)(*(char**)(self + 0x268) + 0x1e8) = a1;
 }
+
+// [0x00705190] sub_00705190 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00705190(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0xf0]
+        add ecx, 0x7d0
+        jmp ext_006E7460
+    }
+}
