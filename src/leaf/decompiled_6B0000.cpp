@@ -9062,3 +9062,12 @@ extern "C" __declspec(naked) void __fastcall fn_006BC0D0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006BC440] sub_006BC440 (32 bytes)
+extern "C" int __fastcall fn_006BC440(unsigned char* self, int edx_unused, int index) {
+    if (index < 0 || index >= *(int*)(self + 0xc)) {
+        return 0;
+    }
+    int* items = *(int**)(self + 0x1c);
+    return items[index];
+}
