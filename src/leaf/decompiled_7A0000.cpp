@@ -3864,3 +3864,29 @@ extern "C" __declspec(naked) void __cdecl fn_007A95C0(void* self) {
         ret
     }
 }
+
+// [0x007A9920] sub_007A9920 (48 bytes)
+extern "C" int mem_00998070;
+extern "C" int mem_00B61219;
+extern "C" void ext_007AA510();
+
+extern "C" __declspec(naked) void __cdecl fn_007A9920(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        jne L_7a993c
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7a9944
+    L_7a993c:
+        mov al, byte ptr [mem_00998070]
+        mov byte ptr [esi + 0x5], al
+    L_7a9944:
+        pop esi
+        ret
+    }
+}
