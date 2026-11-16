@@ -3770,3 +3770,10 @@ extern "C" __declspec(naked) void __cdecl fn_007A19A0(void) {
         ret
     }
 }
+
+// [0x007A19C0] sub_007A19C0 (32 bytes)
+extern "C" void ext_007B2A60(void* a, int b, void* c);
+
+extern "C" void __cdecl fn_007A19C0(void* a, void* c) {
+    ext_007B2A60(a, 0xb005, c);
+}
