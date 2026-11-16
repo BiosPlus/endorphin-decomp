@@ -2846,3 +2846,29 @@ extern "C" __declspec(naked) void __cdecl fn_00782B10(int sel) {
         nop
     }
 }
+
+// [0x00782B60] sub_00782B60 (32 bytes)
+extern "C" char mem_00AAF2BC;
+extern "C" char mem_00AAF2C4;
+extern "C" __declspec(naked) void __cdecl fn_00782B60(int sel) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub eax, 0x0
+        je L_00782b75
+        dec eax
+        je L_00782b6f
+        xor eax, eax
+        ret
+    L_00782b6f:
+        mov eax, offset mem_00AAF2C4
+        ret
+    L_00782b75:
+        mov eax, offset mem_00AAF2BC
+        ret
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
