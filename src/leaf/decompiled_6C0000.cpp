@@ -2985,3 +2985,29 @@ extern "C" void* __fastcall fn_006C25B0(void* self, int edx_unused, const int* s
     dst[5] = src[5];
     return self;
 }
+
+// [0x006C3040] sub_006C3040 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C3040(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        xor edi, edi
+        mov ecx, dword ptr [esi + 0x158]
+        test ecx, ecx
+        je short L_006C3062
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax]
+        cmp eax, 1
+        jne short L_006C3062
+        mov eax, dword ptr [esi + 0x158]
+        pop edi
+        pop esi
+        ret
+L_006C3062:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
