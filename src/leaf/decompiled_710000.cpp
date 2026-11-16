@@ -3502,3 +3502,22 @@ extern "C" int __fastcall fn_00718060(void* self) {
     }
     return eax;
 }
+
+// [0x0071C700] sub_0071C700 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0071C700(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ecx
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        lea esi, [ecx + 0xf0]
+        mov ecx, 0x8
+        mov edi, eax
+        rep movsd
+        pop edi
+        mov dword ptr [esp + 0x4], 0
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
