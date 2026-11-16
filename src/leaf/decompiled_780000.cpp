@@ -3622,3 +3622,33 @@ extern "C" __declspec(naked) void __fastcall fn_0078CA30(void* self) {
         ret
     }
 }
+
+extern "C" void ext_006BC380();
+extern "C" void ext_00789C40();
+
+// [0x00789BB0] sub_00789BB0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00789BB0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi]
+        cmp eax, -1
+        jle short L_none
+        mov edi, eax
+        call ext_006BC380
+        cmp edi, eax
+        jge short L_none
+        push edi
+        mov ecx, esi
+        call ext_00789C40
+        pop edi
+        pop esi
+        ret
+L_none:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
