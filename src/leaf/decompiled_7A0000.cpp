@@ -3688,3 +3688,12 @@ extern "C" void __cdecl fn_007AC5D0(void* self) {
     p[0] = 0x1e;
     p[1] = 0;
 }
+
+extern "C" int mem_00998689; /* u32 0x02000000 */
+
+// [0x007AC5F0] sub_007AC5F0 (32 bytes)
+extern "C" void __cdecl fn_007AC5F0(unsigned char* out) {
+    out[0] = (unsigned char)mem_00998689;
+    *(int*)(out + 4) = 0;
+    *(int*)(out + 8) = 0x1e;
+}
