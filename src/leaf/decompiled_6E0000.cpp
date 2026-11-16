@@ -1648,3 +1648,25 @@ extern "C" __declspec(naked) void __cdecl fn_006E3760(double* dst, const double*
         ret
     }
 }
+
+// [0x006E3790] sub_006E3790 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006E3790(double* dst, const double* src, double scalar, int n) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [esp + 0x14]
+        lea edx, [eax + 8*ecx]
+        cmp eax, edx
+        jae done
+        mov ecx, dword ptr [esp + 8]
+loop_top:
+        fld qword ptr [esp + 0xc]
+        fmul qword ptr [ecx]
+        add eax, 8
+        add ecx, 8
+        cmp eax, edx
+        fstp qword ptr [eax - 8]
+        jb loop_top
+done:
+        ret
+    }
+}
