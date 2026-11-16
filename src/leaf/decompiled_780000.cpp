@@ -2960,3 +2960,21 @@ extern "C" __declspec(naked) void __fastcall fn_007833F0(void* self) {
         ret
     }
 }
+
+// [0x00783800] sub_00783800 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00783800(void* self) {
+    __asm {
+        __asm _emit 0x8b __asm _emit 0x01                   // mov eax, dword ptr [ecx]
+        __asm _emit 0x33 __asm _emit 0xd2                   // xor edx, edx
+        __asm _emit 0x3b __asm _emit 0xc2                   // cmp eax, edx
+        __asm _emit 0x89 __asm _emit 0x51 __asm _emit 0x08  // mov dword ptr [ecx + 0x8], edx
+        __asm _emit 0x89 __asm _emit 0x51 __asm _emit 0x0c  // mov dword ptr [ecx + 0xc], edx
+        __asm _emit 0x74 __asm _emit 0x0c                   // je  +0x0c (to ret)
+        __asm _emit 0x89 __asm _emit 0x50 __asm _emit 0x08  // mov dword ptr [eax + 0x8], edx
+        __asm _emit 0x89 __asm _emit 0x50 __asm _emit 0x0c  // mov dword ptr [eax + 0xc], edx
+        __asm _emit 0x8b __asm _emit 0x00                   // mov eax, dword ptr [eax]
+        __asm _emit 0x3b __asm _emit 0xc2                   // cmp eax, edx
+        __asm _emit 0x75 __asm _emit 0xf4                   // jne -0x0c (loop body)
+        __asm _emit 0xc3                                    // ret
+    }
+}
