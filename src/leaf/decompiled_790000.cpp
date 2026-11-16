@@ -4601,3 +4601,27 @@ done:
         ret
     }
 }
+
+// [0x00792600] sub_00792600 (48 bytes)
+extern "C" void ext_0078D740();
+extern "C" void ext_00792630();
+extern "C" void ext_00792720();
+extern "C" __declspec(naked) void __fastcall fn_00792600(void* self) {
+    __asm {
+        push esi
+        call ext_0078D740
+        mov esi, eax
+        mov eax, dword ptr [esp + 0x8]
+        push eax
+        push esi
+        call ext_00792630
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        push esi
+        call ext_00792720
+        add esp, 0x10
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
