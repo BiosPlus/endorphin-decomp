@@ -2000,3 +2000,15 @@ extern "C" __declspec(naked) void __stdcall fn_007055D0(int a1, int a2) {
         ret 0x8
     }
 }
+
+// [0x0070BB60] sub_0070BB60 (32 bytes)
+extern "C" void ext_006B9EC0();
+extern "C" __declspec(naked) void __fastcall fn_0070BB60(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        add ecx, 0xf4
+        push eax
+        call ext_006B9EC0
+        ret 0x4
+    }
+}
