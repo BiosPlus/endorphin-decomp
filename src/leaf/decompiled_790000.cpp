@@ -4246,3 +4246,9 @@ extern "C" __declspec(naked) int __cdecl fn_0079EBE0() {
         ret
     }
 }
+
+// [0x00790D80] sub_00790D80 (32 bytes)
+extern "C" void __fastcall fn_00790D80(void* self, int edx_unused, int a1) {
+    *(int*)((char*)self + 0x28) = 0;
+    *(int*)((char*)self + 0x10) = a1;
+}
