@@ -3572,3 +3572,18 @@ L7A7BE9:
         ret
     }
 }
+
+// [0x007AA8F0] sub_007AA8F0 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007AA8F0(void* self, int edx_unused, int idx, int val) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        jle skip
+        cmp eax, 0x12
+        jge skip
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 4*eax + 0xf0], edx
+    skip:
+        ret 0x8
+    }
+}
