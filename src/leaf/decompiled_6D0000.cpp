@@ -3567,3 +3567,15 @@ extern "C" void __fastcall fn_006D7C80(void* self, int edx_unused, int a1, int a
     *(int*)((char*)self + 0x1b8) = a1;
     *(int*)((char*)self + 0x1bc) = a2;
 }
+
+// [0x006D7CA0] sub_006D7CA0 (32 bytes)
+// Stores two byte arguments into this+0x1c0 and this+0x1c1 (ret 8).
+extern "C" __declspec(naked) void __fastcall fn_006D7CA0(void* self, int edx_unused, unsigned char a1, unsigned char a2) {
+    __asm {
+        mov al, byte ptr [esp + 0x4]
+        mov dl, byte ptr [esp + 0x8]
+        mov byte ptr [ecx + 0x1c0], al
+        mov byte ptr [ecx + 0x1c1], dl
+        ret 0x8
+    }
+}
