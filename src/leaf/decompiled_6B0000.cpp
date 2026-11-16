@@ -9229,3 +9229,20 @@ L_zero_006BC3B0:
         ret 0x4
     }
 }
+
+// [0x006BC3D0] sub_006BC3D0 (32 bytes)
+extern "C" void ext_006EA300();
+
+extern "C" __declspec(naked) void __fastcall fn_006BC3D0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        test ecx, ecx
+        je zero_path
+        push 0x0
+        call ext_006EA300
+        ret 0x4
+    zero_path:
+        xor al, al
+        ret 0x4
+    }
+}
