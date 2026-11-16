@@ -1590,3 +1590,29 @@ L_004AB630:
         call ext_006A6DD2
     }
 }
+
+// [0x004B9B10] ExprParser::DynamicEnumType<NMData::MaterialPair, &public: int __thiscall NMData::MaterialPair::getMaterialInteractionIndex(void) const, &public: void __thiscall NMData::MaterialPair::setMaterialInteractionIndex(int), &public: int __thiscall NMData::MaterialPair::getNumListedMaterialInteractions(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::MaterialPair::getListedMaterialInteraction(int) const>::vfunc_1 (55 bytes)
+extern "C" void ext_004B72D0();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) void __stdcall fn_004B9B10(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_004B9B30
+        call ext_004B72D0
+        mov dword ptr [esp + 0x2c], eax
+        fild dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 0x4
+L_004B9B30:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
