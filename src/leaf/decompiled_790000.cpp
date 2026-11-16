@@ -4312,3 +4312,18 @@ extern "C" void __cdecl fn_0079EBB0(void* self) {
 extern "C" void __cdecl fn_00798FF0(void* a0, void* a1, void* a2) {
     fn_00799010(a0, a1, &a2);
 }
+
+// [0x0079D7A0] sub_0079D7A0 (32 bytes)
+extern "C" int ext_0079D740(void);
+extern "C" int mem_00B61140;
+extern "C" __declspec(naked) void __cdecl fn_0079D7A0() {
+    __asm {
+        mov eax, dword ptr [mem_00B61140]
+        test eax, eax
+        jne done
+        call ext_0079D740
+        mov dword ptr [mem_00B61140], eax
+done:
+        ret
+    }
+}
