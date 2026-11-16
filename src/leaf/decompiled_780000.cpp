@@ -3102,3 +3102,11 @@ extern "C" __declspec(naked) void __fastcall fn_0078C240(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0078C260] sub_0078C260 (32 bytes)
+extern "C" int __stdcall ext_0078C240(int a1);
+
+extern "C" int __stdcall fn_0078C260(int a1) {
+    int esi = a1;
+    return esi - ext_0078C240(esi);
+}
