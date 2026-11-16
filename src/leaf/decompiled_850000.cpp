@@ -2635,3 +2635,21 @@ extern "C" __declspec(naked) int __cdecl fn_00857420(int a, int b) {
         nop
     }
 }
+
+// [0x00857470] sub_00857470 (32 bytes)
+extern "C" int mem_00AB86EC;
+
+// [0x00857470]
+extern "C" __declspec(naked) void __cdecl fn_00857470(void* arg) {
+    __asm {
+        mov eax, dword ptr [mem_00AB86EC]
+        test eax, eax
+        je done
+        mov ecx, dword ptr [esp + 4]
+        push ecx
+        call dword ptr [eax + 0Ch]
+        pop ecx
+    done:
+        ret
+    }
+}
