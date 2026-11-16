@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_7B0000.cpp
 
 extern "C" void ext_00872828();
+extern "C" void ext_007B06F0();
 extern "C" void ext_007C1450();
 extern "C" void ext_007C1480();
 extern "C" void ext_007C2E80();
@@ -6120,4 +6121,9 @@ extern "C" __declspec(naked) void __cdecl fn_007B0680(void* p, int b) {
         add esp, 0xc
         ret
     }
+}
+
+// [0x007B1110] sub_007B1110 (32 bytes)
+extern "C" int __cdecl fn_007B1110(int a, int b, int c) {
+    return ((int (__cdecl*)(int, int, int))ext_007B06F0)(a, b, c) != 0;
 }
