@@ -3034,3 +3034,16 @@ extern "C" void __fastcall fn_007857F0(void* self) {
     p[6] = -1;
     p[7] = 0x7fffffff;
 }
+
+// [0x00788C70] sub_00788C70 (32 bytes)
+extern "C" void* __fastcall fn_00788C70(void* self) {
+    unsigned int* p = (unsigned int*)self;
+    p[0] = 0;
+    p[1] = 0;
+    p[2] = 0;
+    p[3] = 0;
+    p[4] = 0;
+    p[5] = 0;
+    p[6] = 0;
+    return self;
+}
