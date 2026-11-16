@@ -5354,3 +5354,16 @@ extern "C" unsigned char __cdecl fn_0086CCE0(void* self) {
     }
     return result;
 }
+
+// [0x0086CF90] sub_0086CF90 (32 bytes)
+extern "C" int mem_00924214;
+extern "C" __declspec(naked) void* __cdecl fn_0086CF90(unsigned int a, unsigned int b) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        imul eax, dword ptr [esp + 8]
+        push eax
+        push 0x40
+        call dword ptr [mem_00924214]
+        ret
+    }
+}
