@@ -6133,3 +6133,32 @@ extern "C" void ext_007BFE40(...);
 extern "C" void __cdecl fn_007BFF20(int a, int b, int c) {
     ext_007BFE40(a, 0x0f, b, c);
 }
+
+// [0x007B2DF0] sub_007B2DF0 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007B2DF0(int* head, int key, int** out) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        xor ecx, ecx
+        test eax, eax
+        je short L_store_zero
+        mov edx, dword ptr [esp + 8]
+    L_loop:
+        test ecx, ecx
+        jne short L_store
+        cmp dword ptr [eax], edx
+        jne short L_skip
+        mov ecx, eax
+    L_skip:
+        mov eax, dword ptr [eax + 10h]
+        test eax, eax
+        jne short L_loop
+    L_store:
+        mov eax, dword ptr [esp + 0ch]
+        mov dword ptr [eax], ecx
+        ret
+    L_store_zero:
+        mov edx, dword ptr [esp + 0ch]
+        mov dword ptr [edx], ecx
+        ret
+    }
+}
