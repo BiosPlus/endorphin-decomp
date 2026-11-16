@@ -3138,3 +3138,17 @@ extern "C" __declspec(naked) char* __fastcall fn_0071F070(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00711A20] sub_00711A20 (32 bytes)
+extern "C" void ext_0071E680();
+extern "C" __declspec(naked) void __fastcall fn_00711A20(void* self, int edx_unused, int a1) {
+    __asm {
+        call ext_0071E680
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [eax]
+        __asm _emit 0x85
+        __asm _emit 0xd1
+        setne al
+        ret 0x4
+    }
+}
