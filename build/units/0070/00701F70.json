@@ -28,5 +28,7 @@
     "0x00702005",
     "0x0070200A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-sonnet-5.5@medium",
+  "matched_at": "2026-11-16T12:51:21Z"
 }

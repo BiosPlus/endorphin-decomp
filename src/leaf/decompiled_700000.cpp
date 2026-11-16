@@ -847,3 +847,116 @@ extern "C" __declspec(naked) void __fastcall fn_0070A1F0(void* self) {
         ret
     }
 }
+
+// [0x00701F70] sub_00701F70 (159 bytes)
+extern "C" void ext_006A6C87();
+extern "C" void ext_006E73B0();
+extern "C" void ext_00701F70();
+extern "C" void ext_00701FC0();
+extern "C" void ext_007641C0();
+extern "C" int mem_00B5E758;
+extern "C" __declspec(naked) void __fastcall fn_00701F70(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub eax, 0
+        je L_a
+        dec eax
+        je L_b
+        xor eax, eax
+        ret 4
+    L_b:
+        mov eax, 0x00AABBCC
+        ret 4
+    L_a:
+        mov eax, 0x00AABBC4
+        ret 4
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_00701F70
+        ret 4
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        call ext_00701FC0
+        _emit 0xE9
+        _emit 0x26
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        push 1
+        _emit 0x68
+        _emit 0x18
+        _emit 0xBA
+        _emit 0xAA
+        _emit 0x00
+        _emit 0xB9
+        _emit 0x70
+        _emit 0xE7
+        _emit 0xB5
+        _emit 0x00
+        call ext_006E73B0
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x68
+        _emit 0xF0
+        _emit 0x1F
+        _emit 0x70
+        _emit 0x00
+        call ext_006A6C87
+        pop ecx
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        mov cl, byte ptr [mem_00B5E758]
+        mov al, 1
+        _emit 0x84
+        _emit 0xC8
+        jne L_end
+        or cl, al
+        mov byte ptr [mem_00B5E758], cl
+        _emit 0xB9
+        _emit 0x70
+        _emit 0xE7
+        _emit 0xB5
+        _emit 0x00
+        jmp ext_007641C0
+    L_end:
+        ret
+    }
+}
