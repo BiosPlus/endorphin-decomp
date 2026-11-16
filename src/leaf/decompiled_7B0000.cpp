@@ -6258,3 +6258,26 @@ extern "C" void __cdecl fn_007BAA10(unsigned char* self, unsigned char* out) {
     *(unsigned int*)(out + 4) = *(unsigned int*)(self + 0x10c);
     ext_007BA470(self, out, *(int*)(self + 0x110));
 }
+
+// [0x007B7CE0] sub_007B7CE0 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007B7CE0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call ext_007B7790
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_call2
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_ret
+    L_call2:
+        mov ecx, dword ptr [esp + 0x8]
+        push ecx
+        call ext_007B7890
+        pop ecx
+    L_ret:
+        ret
+    }
+}
