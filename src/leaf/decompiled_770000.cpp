@@ -1942,3 +1942,14 @@ extern "C" __declspec(naked) void __stdcall fn_0077CB00(int a1) {
         ret 4
     }
 }
+
+// [0x0077F010] sub_0077F010 (16 bytes)
+extern "C" void ext_00775990();
+extern "C" __declspec(naked) void __stdcall fn_0077F010(int a1) {
+    __asm {
+        mov eax, [esp + 4]
+        push eax
+        call ext_00775990
+        ret 4
+    }
+}
