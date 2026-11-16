@@ -9137,3 +9137,22 @@ extern "C" void* __fastcall fn_006B9920(void* self) {
     *(void**)self = (void*)0xb5d2bc;
     return self;
 }
+
+// [0x006B9EA0] sub_006B9EA0 (32 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006B9EA0(void* self, int edx_unused, unsigned char a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 1
+        call ext_006B99D0
+        test eax, eax
+        jne done
+        mov eax, dword ptr [esi]
+        mov cl, byte ptr [esp + 8]
+        mov byte ptr [eax], cl
+    done:
+        mov eax, esi
+        pop esi
+        ret 4
+    }
+}
