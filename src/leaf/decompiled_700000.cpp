@@ -1665,3 +1665,15 @@ extern "C" void __fastcall fn_007023E0(void* self, int edx_unused, char a1) {
     char* p = *(char**)((char*)self + 0x268);
     *(p + 0x408) = a1;
 }
+
+// [0x00702620] sub_00702620 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00702620(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [ecx + 0x268]
+        test eax, eax
+        sete al
+        mov byte ptr [ecx + 0x270], al
+        ret 0x4
+    }
+}
