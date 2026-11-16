@@ -2721,3 +2721,26 @@ extern "C" void __cdecl fn_0085B2C0(int a1, int a2) {
         p[0] = a1;
     }
 }
+
+// [0x00857440] sub_00857440 (48 bytes)
+extern "C" int mem_00AB86EC;
+
+extern "C" __declspec(naked) void __cdecl fn_00857440(void) {
+    __asm {
+        mov eax, dword ptr [mem_00AB86EC]
+        test eax, eax
+        je not_set
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x8]
+        push ecx
+        mov ecx, dword ptr [esp + 0x8]
+        push edx
+        push ecx
+        call dword ptr [eax + 0x18]
+        add esp, 0xc
+        ret
+not_set:
+        or eax, -1
+        ret
+    }
+}
