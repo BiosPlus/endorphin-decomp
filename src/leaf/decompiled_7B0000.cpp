@@ -6078,3 +6078,22 @@ extern "C" __declspec(naked) void __stdcall fn_007B2210(int a1) {
         ret 4
     }
 }
+
+// [0x007B9050] sub_007B9050 (32 bytes)
+extern "C" int mem_00B61DB8;
+extern "C" __declspec(naked) void* __cdecl fn_007B9050(unsigned short key) {
+    __asm {
+        mov     eax, dword ptr [mem_00B61DB8]
+        test    eax, eax
+        je      done
+        mov     cx, word ptr [esp + 4]
+    loop_top:
+        cmp     word ptr [eax], cx
+        je      done
+        mov     eax, dword ptr [eax + 0x14]
+        test    eax, eax
+        jne     loop_top
+    done:
+        ret
+    }
+}
