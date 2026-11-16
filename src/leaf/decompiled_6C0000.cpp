@@ -2439,3 +2439,17 @@ extern "C" __declspec(naked) void __cdecl fn_006CA4F0() {
         ret
     }
 }
+
+// [0x006C3450] sub_006C3450 (32 bytes)
+extern "C" __declspec(naked) char* __fastcall fn_006C3450(void* self, int edx_unused, int idx) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov edx, eax
+        shl edx, 5
+        sub edx, eax
+        mov eax, dword ptr [ecx + 0xf0]
+        shl edx, 4
+        lea eax, [edx + eax + 0x1d18]
+        ret 4
+    }
+}
