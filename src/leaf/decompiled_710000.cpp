@@ -3037,3 +3037,15 @@ extern "C" void __fastcall fn_00717EA0(void* self, int edx_unused, int a1, int a
     *(int*)((char*)self + 0x1a8) = a1;
     *(int*)((char*)self + 0x1ac) = a2;
 }
+
+// [0x0071C0E0] sub_0071C0E0 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0071C0E0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xc]
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [eax + 0x2f8], ecx
+        mov dword ptr [eax + 0x2fc], edx
+        ret 0x8
+    }
+}
