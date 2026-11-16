@@ -3084,3 +3084,21 @@ extern "C" __declspec(naked) void* __fastcall fn_00782F00(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0078C240] sub_0078C240 (32 bytes)
+extern "C" void ext_0078C220();
+extern "C" void ext_0078C230();
+extern "C" __declspec(naked) void __fastcall fn_0078C240(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        call ext_0078C220
+        push eax
+        mov ecx, esi
+        call ext_0078C230
+        pop esi
+        ret 0x4
+    }
+}
