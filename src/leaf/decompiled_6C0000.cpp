@@ -2524,3 +2524,13 @@ extern "C" void __fastcall fn_006C8490(void* self) {
     *(unsigned char*)(p + 0x21) = 0;
     *(unsigned char*)(p + 0x20) = 0;
 }
+
+// [0x006C9A40] sub_006C9A40 (32 bytes)
+extern "C" void __fastcall fn_006C9A40(void* self) {
+    // [0x006C9A40]
+    int* p = (int*)self;
+    p[0] = 0;
+    p[3] = -1;
+    p[2] = -1;
+    p[4] = 0;
+}
