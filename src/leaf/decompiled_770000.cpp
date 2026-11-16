@@ -1920,3 +1920,14 @@ L_7711E1:
         ret 018h
     }
 }
+
+// [0x00778D50] sub_00778D50 (16 bytes)
+extern "C" void ext_00778930();
+extern "C" __declspec(naked) void __stdcall fn_00778D50(int a1) {
+    __asm {
+        mov eax, [esp + 4]
+        push eax
+        call ext_00778930
+        ret 4
+    }
+}
