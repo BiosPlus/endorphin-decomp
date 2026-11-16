@@ -7217,3 +7217,14 @@ extern "C" __declspec(naked) void __cdecl fn_0080CA10(void* a) {
         ret
     }
 }
+
+// [0x0080FC40] sub_0080FC40 (16 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080FC40(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call ext_008596E0
+        add esp, 0x4
+        ret
+    }
+}
