@@ -7437,3 +7437,20 @@ extern "C" __declspec(naked) void __cdecl fn_0080B540(void) {
         ret
     }
 }
+
+// [0x0080B590] sub_0080B590 (32 bytes)
+extern "C" void ext_00859780();
+
+extern "C" __declspec(naked) void __cdecl fn_0080B590() {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push ecx
+        push edx
+        call ext_00859780
+        add esp, 0xc
+        ret
+    }
+}
