@@ -6188,3 +6188,38 @@ extern "C" __declspec(naked) void __cdecl fn_007B2E20(void* self, void* val) {
         ret
     }
 }
+
+// [0x007B8E30] sub_007B8E30 (48 bytes)
+extern "C" int mem_00B61DB8;
+extern "C" int mem_009998FE;
+
+// [0x007B8E30]
+extern "C" __declspec(naked) void __fastcall fn_007B8E30(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00B61DB8]
+        test eax, eax
+        mov ecx, eax
+        je L_end
+        mov dx, word ptr [mem_009998FE]
+    L_scan:
+        cmp word ptr [ecx], dx
+        je L_found
+        mov ecx, dword ptr [ecx + 0x14]
+        test ecx, ecx
+        jne L_scan
+        ret
+    L_found:
+        xor ecx, ecx
+    L_renum:
+        mov word ptr [eax], cx
+        mov eax, dword ptr [eax + 0x14]
+        inc ecx
+        test eax, eax
+        jne L_renum
+    L_end:
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
