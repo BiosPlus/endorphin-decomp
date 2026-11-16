@@ -6127,3 +6127,9 @@ extern "C" __declspec(naked) void __cdecl fn_007B0680(void* p, int b) {
 extern "C" int __cdecl fn_007B1110(int a, int b, int c) {
     return ((int (__cdecl*)(int, int, int))ext_007B06F0)(a, b, c) != 0;
 }
+
+// [0x007BFF20] sub_007BFF20 (32 bytes)
+extern "C" void ext_007BFE40(...);
+extern "C" void __cdecl fn_007BFF20(int a, int b, int c) {
+    ext_007BFE40(a, 0x0f, b, c);
+}
