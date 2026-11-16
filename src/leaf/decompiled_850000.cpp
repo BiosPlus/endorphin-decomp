@@ -2942,3 +2942,18 @@ extern "C" void* __fastcall fn_0085A620(void* self) {
     }
     return p;
 }
+
+// [0x0085BFB0] sub_0085BFB0 (48 bytes)
+extern "C" void* __cdecl ext_008596E0(unsigned int size);
+extern "C" void* __fastcall fn_0085BFB0(void* self) {
+    int* p = (int*)ext_008596E0(0x18);
+    if (p != 0) {
+        p[0] = 0;
+        p[1] = 0;
+        p[2] = 0;
+        p[3] = 0;
+        p[4] = 0;
+        p[5] = 0;
+    }
+    return p;
+}
