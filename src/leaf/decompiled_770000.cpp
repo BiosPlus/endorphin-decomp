@@ -2272,3 +2272,36 @@ extern "C" __declspec(naked) void __fastcall fn_0077FB40(void* self) {
         nop
     }
 }
+
+// [0x0077BF20] sub_0077BF20 (48 bytes)
+extern "C" void ext_00727FE0();
+
+extern "C" __declspec(naked) void __fastcall fn_0077BF20(void* self, int edx_unused, int* pairs, int count) {
+    // Loop over 8-byte (a, b) pairs, calling sub_00727FE0 on self with each pair.
+    // Callee is __thiscall with ret 8, so it cleans its own stack args.
+    __asm {
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov ebx, ecx
+        test edi, edi
+        jbe done_77bf46
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+    loop_77bf31:
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi]
+        push eax
+        push ecx
+        mov ecx, ebx
+        call ext_00727FE0
+        add esi, 0x8
+        dec edi
+        jne loop_77bf31
+        pop esi
+    done_77bf46:
+        pop edi
+        pop ebx
+        ret 0x8
+    }
+}
