@@ -6248,3 +6248,13 @@ skip_out:
         ret
     }
 }
+
+// [0x007BAA10] sub_007BAA10 (48 bytes)
+extern "C" void __cdecl ext_007BA470(void* a, void* b, int c);
+
+extern "C" void __cdecl fn_007BAA10(unsigned char* self, unsigned char* out) {
+    *(unsigned short*)out = 0x14d;
+    *(unsigned short*)(out + 2) = 2;
+    *(unsigned int*)(out + 4) = *(unsigned int*)(self + 0x10c);
+    ext_007BA470(self, out, *(int*)(self + 0x110));
+}
