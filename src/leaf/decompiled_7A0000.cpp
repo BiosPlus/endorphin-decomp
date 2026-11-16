@@ -3715,3 +3715,16 @@ extern "C" __declspec(naked) void __cdecl fn_007AC670(void** self) {
         ret
     }
 }
+
+// [0x007AEFD0] sub_007AEFD0 (32 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007AEFD0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x1]
+        mov dl, byte ptr [eax]
+        mov byte ptr [eax + 0x1], dl
+        mov byte ptr [eax], cl
+        ret
+    }
+}
