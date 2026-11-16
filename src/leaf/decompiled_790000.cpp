@@ -4327,3 +4327,18 @@ done:
         ret
     }
 }
+
+// [0x0079EED0] sub_0079EED0 (32 bytes)
+extern "C" int mem_009252C4;
+extern "C" __declspec(naked) void __cdecl fn_0079EED0() {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push 0x0
+        push eax
+        call ext_0079EBE0
+        push eax
+        call dword ptr [mem_009252C4]
+        add esp, 0xc
+        ret
+    }
+}
