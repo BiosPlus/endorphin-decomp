@@ -2025,3 +2025,16 @@ extern "C" __declspec(naked) void __stdcall fn_0070C350(int a1, int a2) {
         ret 0x8
     }
 }
+
+// [0x0070C380] sub_0070C380 (32 bytes)
+extern "C" void ext_0070BEA0();
+extern "C" __declspec(naked) void __stdcall fn_0070C380(int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push edx
+        call ext_0070BEA0
+        ret 0x8
+    }
+}
