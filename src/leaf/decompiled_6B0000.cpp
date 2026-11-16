@@ -9156,3 +9156,20 @@ extern "C" __declspec(naked) void* __fastcall fn_006B9EA0(void* self, int edx_un
         ret 4
     }
 }
+
+// [0x006BA200] sub_006BA200 (32 bytes)
+extern "C" void ext_006B9C10();
+
+extern "C" __declspec(naked) void* __fastcall fn_006BA200(void* self, int edx_unused, void* a1) {
+    __asm {
+        lea eax, [esp + 0x4]
+        push esi
+        push eax
+        mov esi, ecx
+        push 0x1
+        call ext_006B9C10
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
