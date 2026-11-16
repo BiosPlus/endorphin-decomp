@@ -2667,3 +2667,21 @@ extern "C" __declspec(naked) void* __cdecl fn_00859E50(void* self) {
         ret
     }
 }
+
+// [0x00859E70] sub_00859E70 (32 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_00859E70(void* node, int key) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        test eax, eax
+        je done_00859E70
+        mov ecx, dword ptr [esp + 8]
+loop_00859E70:
+        cmp ecx, dword ptr [eax]
+        je done_00859E70
+        mov eax, dword ptr [eax + 1Ch]
+        test eax, eax
+        jne loop_00859E70
+done_00859E70:
+        ret
+    }
+}
