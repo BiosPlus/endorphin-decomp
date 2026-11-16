@@ -3330,3 +3330,21 @@ scaled:
         ret 0x4
     }
 }
+
+// [0x006C9F20] sub_006C9F20 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C9F20(void* self, int edx_unused, unsigned char flag) {
+    __asm {
+        mov al, byte ptr [esp + 0x4]
+        test al, al
+        mov eax, dword ptr [ecx + 0x10]
+        je short fn_006C9F20_clear
+        and eax, 0xfff1ffff
+        or eax, 0x10000
+        mov dword ptr [ecx + 0x10], eax
+        ret 0x4
+fn_006C9F20_clear:
+        and eax, 0xfff0ffff
+        mov dword ptr [ecx + 0x10], eax
+        ret 0x4
+    }
+}
