@@ -5826,3 +5826,18 @@ extern "C" int __cdecl fn_006F7750(int idx, int sub) {
     int* base = *(int**)(((int*)&mem_00AA970C) + idx);
     return base[sub * 3 + 2];
 }
+
+// [0x006F7930] sub_006F7930 (32 bytes)
+// [0x006F7930]
+extern "C" __declspec(naked) int __fastcall fn_006F7930(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        push 0
+        push 0
+        lea edx, [esp + 0xc]
+        push 0
+        push edx
+        call dword ptr [eax + 0x8c]
+        ret 4
+    }
+}
