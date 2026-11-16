@@ -2861,3 +2861,8 @@ extern "C" void __cdecl fn_006C9680() {
 extern "C" void __cdecl fn_006C96A0() {
     ext_006C9960(0, (int)0xaa8d9c, (int)0xaa8ca4);
 }
+
+// [0x006C96C0] sub_006C96C0 (32 bytes)
+extern "C" void __cdecl fn_006C96C0() {
+    ext_006C9960(0, (int)0xaa8d9c, (int)0xaa8ca0);
+}
