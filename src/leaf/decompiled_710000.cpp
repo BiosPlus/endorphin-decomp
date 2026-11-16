@@ -3031,3 +3031,9 @@ extern "C" void __fastcall fn_00715580(void* self, int edx_unused, int a1, int a
     *(int*)(p + 0x1e8) = a1;
     *(int*)(p + 0x1ec) = a2;
 }
+
+// [0x00717EA0] sub_00717EA0 (32 bytes)
+extern "C" void __fastcall fn_00717EA0(void* self, int edx_unused, int a1, int a2) {
+    *(int*)((char*)self + 0x1a8) = a1;
+    *(int*)((char*)self + 0x1ac) = a2;
+}
