@@ -3047,3 +3047,19 @@ extern "C" void* __fastcall fn_00788C70(void* self) {
     p[6] = 0;
     return self;
 }
+
+// [0x00789650] sub_00789650 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00789650(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [eax + 8]
+        test ecx, ecx
+        je short L_null
+        mov eax, dword ptr [ecx]
+        jmp dword ptr [eax + 36]
+L_null:
+        mov ecx, dword ptr [eax + 20]
+        mov edx, dword ptr [ecx]
+        jmp dword ptr [edx + 56]
+    }
+}
