@@ -4381,3 +4381,9 @@ extern "C" __declspec(naked) void __cdecl fn_00798FB0(void) {
         ret
     }
 }
+
+// [0x007990D0] sub_007990D0 (32 bytes)
+extern "C" void ext_007990F0(void* a0, void* a1, void* a2);
+extern "C" void __cdecl fn_007990D0(void* a0, void* a1, void* a2) {
+    ext_007990F0(a0, a1, &a2);
+}
