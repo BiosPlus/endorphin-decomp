@@ -5803,3 +5803,24 @@ L_skip:
         call ext_006A6DD2
     }
 }
+
+// [0x00508F70] ExprParser::ReadMethodType<NMData::Task, int, &public: int __thiscall NMData::Task::getID(void) const, 1>::vfunc_5 (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00508F70(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 28h
+        test eax, eax
+        je throw_path
+        mov ecx, dword ptr [eax + 14h]
+        push ecx
+        call ext_0046C4E0
+    throw_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 9DEC1Ch
+        lea edx, [esp + 4]
+        push edx
+        call ext_006A6DD2
+    }
+}
