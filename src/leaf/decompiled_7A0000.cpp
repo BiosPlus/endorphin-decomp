@@ -3681,3 +3681,10 @@ extern "C" void __fastcall fn_007AB740(void* self, int edx_unused, int a1, int a
     *(int*)((char*)self + 0x78) = a1;
     *(int*)((char*)self + 0x7c) = a2;
 }
+
+// [0x007AC5D0] sub_007AC5D0 (32 bytes)
+extern "C" void __cdecl fn_007AC5D0(void* self) {
+    int* p = (int*)self;
+    p[0] = 0x1e;
+    p[1] = 0;
+}
