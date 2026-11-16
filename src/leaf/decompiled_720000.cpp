@@ -3206,3 +3206,28 @@ extern "C" __declspec(naked) void __cdecl fn_00728D90() {
         ret
     }
 }
+
+// [0x0072A720] sub_0072A720 (48 bytes)
+extern "C" void ext_006D36F0();
+extern "C" void ext_006FE020();
+extern "C" void ext_0070E3B0();
+extern "C" __declspec(naked) void __fastcall fn_0072A720(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx]
+        push esi
+        push edi
+        call ext_006D36F0
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, eax
+        push edi
+        mov ecx, esi
+        call ext_006FE020
+        push edi
+        mov ecx, esi
+        call ext_0070E3B0
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
