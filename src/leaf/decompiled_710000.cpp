@@ -2949,3 +2949,16 @@ L_null:
         xor eax, eax
     }
 }
+
+// [0x00711D20] sub_00711D20 (32 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00711D20(void* self, int edx_unused, int mask) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x78]
+        mov ecx, dword ptr [esp + 0x4]
+        and eax, ecx
+        neg eax
+        sbb eax, eax
+        neg eax
+        ret 0x4
+    }
+}
