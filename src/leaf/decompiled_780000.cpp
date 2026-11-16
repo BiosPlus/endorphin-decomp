@@ -3710,3 +3710,27 @@ L_ret0:
         ret
     }
 }
+
+// [0x00784DD0] sub_00784DD0 (48 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00784DD0(void* a1, void* a2, void* a3, void* a4) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov ecx, dword ptr [esp + 4]
+        push 0
+        push eax
+        call ext_00782E70
+        test eax, eax
+        je fn_00784DD0_fail
+        mov ecx, dword ptr [esp + 0xc]
+        push 0
+        push ecx
+        mov ecx, eax
+        call ext_00782E70
+        test eax, eax
+        jne fn_00784DD0_done
+fn_00784DD0_fail:
+        mov eax, dword ptr [esp + 0x10]
+fn_00784DD0_done:
+        ret 0x10
+    }
+}
