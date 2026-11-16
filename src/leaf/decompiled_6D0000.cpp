@@ -3746,3 +3746,19 @@ extern "C" __declspec(naked) void __stdcall fn_006DF170(int a, int b, int c, int
         ret 10h
     }
 }
+
+// [0x006D7970] sub_006D7970 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D7970(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        lea esi, [ecx + 0x28]
+        mov ecx, esi
+        call ext_006D2250
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, esi
+        push eax
+        call ext_006D2300
+        pop esi
+        ret 0x4
+    }
+}
