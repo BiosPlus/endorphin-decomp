@@ -2062,3 +2062,17 @@ extern "C" __declspec(naked) void __cdecl fn_0077FE50(int index) {
         ret
     }
 }
+
+// [0x0077FE90] sub_0077FE90 (32 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0077FE90(int idx) {
+    __asm {
+        call ext_007802A0
+        mov ecx, dword ptr [esp + 0x4]
+        lea edx, [ecx + 8*ecx]
+        lea ecx, [ecx + 2*edx]
+        mov edx, dword ptr [eax + 0x4]
+        shl ecx, 0x4
+        mov eax, dword ptr [edx + ecx + 0x104]
+        ret
+    }
+}
