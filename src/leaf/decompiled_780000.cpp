@@ -3734,3 +3734,22 @@ fn_00784DD0_done:
         ret 0x10
     }
 }
+
+// [0x0078BFD0] sub_0078BFD0 (48 bytes)
+extern "C" void __cdecl ext_0078B450(void* a1, void* a2, int a3, int a4, int a5);
+extern "C" __declspec(naked) void __fastcall fn_0078BFD0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push 0x80
+        lea eax, [ecx + 0x74]
+        push edx
+        add ecx, 0x4c
+        push eax
+        push ecx
+        call ext_0078B450
+        add esp, 0x14
+        ret 0x8
+    }
+}
