@@ -7307,3 +7307,21 @@ L_0080AB8E:
         ret
     }
 }
+
+// [0x0080ABA0] sub_0080ABA0 (32 bytes)
+extern "C" void ext_0080ABE0();
+extern "C" int mem_00B73C80;
+extern "C" int mem_009242E0;
+
+extern "C" __declspec(naked) void __cdecl fn_0080ABA0() {
+    __asm {
+        mov eax, dword ptr [mem_00B73C80]
+        test eax, eax
+        jne L_0080ABAE
+        call ext_0080ABE0
+    L_0080ABAE:
+        push offset mem_00B73C58
+        call dword ptr [mem_009242E0]
+        ret
+    }
+}
