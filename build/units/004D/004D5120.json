@@ -17,5 +17,7 @@
     "0x004D5147",
     "0x004D5151"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-16T13:31:20Z"
 }
