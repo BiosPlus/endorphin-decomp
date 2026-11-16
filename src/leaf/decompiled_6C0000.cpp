@@ -2941,3 +2941,18 @@ extern "C" void __cdecl fn_006C9890() {
 extern "C" void __cdecl fn_006C98B0() {
     ext_006C9960(0, (int)0xaa8ca0, (int)0xaa8dd4);
 }
+
+// [0x006CA520] sub_006CA520 (32 bytes)
+extern "C" void ext_006D0370();
+extern "C" __declspec(naked) void __fastcall fn_006CA520(void* self) {
+    __asm {
+        mov dword ptr [ecx + 0x48], 0xffffffff
+        mov dword ptr [ecx + 0x4c], 0x7fffffff
+        mov edx, dword ptr [ecx + 0x18]
+        push 0x1
+        inc edx
+        mov dword ptr [ecx + 0x18], edx
+        call ext_006D0370
+        ret
+    }
+}
