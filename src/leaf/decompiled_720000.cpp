@@ -2872,3 +2872,31 @@ extern "C" __declspec(naked) void __stdcall fn_00725DE0(unsigned char* p, unsign
         ret 8
     }
 }
+
+// [0x00725E10] sub_00725E10 (48 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00725E10(void* p, void* q) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov bl, 0x40
+        sub esi, ecx
+        mov edi, 0x10
+loop_00725E24:
+        mov dl, byte ptr [ecx]
+        mov al, byte ptr [esi + ecx]
+        xor al, dl
+        xor al, bl
+        mov bl, dl
+        mov byte ptr [ecx], al
+        inc ecx
+        dec edi
+        jne loop_00725E24
+        pop edi
+        pop esi
+        pop ebx
+        ret 8
+    }
+}
