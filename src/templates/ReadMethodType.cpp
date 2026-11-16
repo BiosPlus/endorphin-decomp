@@ -5778,3 +5778,28 @@ extern "C" __declspec(naked) void __fastcall fn_004B1320(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x005056A0] ExprParser::ReadMethodType<Interpreter, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Interpreter::getType(void) const, 0>::vfunc_5 (45 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_0046C4E0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_005056A0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je short L_skip
+        add eax, 0x4
+        push eax
+        call ext_0046C4E0
+L_skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
