@@ -2162,3 +2162,25 @@ extern "C" __declspec(naked) int __fastcall fn_0074F650(void* self, int edx_unus
         ret 8
     }
 }
+
+// [0x0074F680] sub_0074F680 (48 bytes)
+extern "C" __declspec(naked) int __stdcall fn_0074F680(int a, int m, int b) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        mov eax, ecx
+        cdq
+        idiv esi
+        push edi
+        mov eax, ecx
+        mov edi, edx
+        cdq
+        imul edi, dword ptr [esp + 0x10]
+        idiv esi
+        add eax, edi
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
