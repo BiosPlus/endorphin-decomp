@@ -9405,3 +9405,28 @@ extern "C" __declspec(naked) void* __fastcall fn_006BA2C0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006BA2F0] sub_006BA2F0 (48 bytes)
+extern "C" int mem_00925278;
+extern "C" __declspec(naked) int __fastcall fn_006BA2F0(void* self, int edx_unused, char a1) {
+    __asm {
+        movsx eax, byte ptr [esp + 4]
+        push esi
+        mov esi, ecx
+        push eax
+        mov ecx, dword ptr [esi]
+        push ecx
+        call dword ptr [mem_00925278]
+        add esp, 8
+        test eax, eax
+        jne L_006BA2F0_found
+        or eax, -1
+        pop esi
+        ret 4
+    L_006BA2F0_found:
+        mov ecx, dword ptr [esi]
+        pop esi
+        sub eax, ecx
+        ret 4
+    }
+}
