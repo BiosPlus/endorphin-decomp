@@ -7608,3 +7608,32 @@ extern "C" void __cdecl fn_0080A720(int* p) {
         p[0] = esi;
     }
 }
+
+// [0x0080FC10] sub_0080FC10 (48 bytes)
+extern "C" void ext_0080EB80();
+extern "C" void ext_0080FC40();
+extern "C" __declspec(naked) int __cdecl fn_0080FC10(int a0, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        inc edi
+        push edi
+        call ext_0080FC40
+        mov esi, eax
+        add esp, 4
+        test esi, esi
+        je done
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push edi
+        push esi
+        call ext_0080EB80
+        add esp, 0xc
+    done:
+        mov eax, esi
+        pop edi
+        pop esi
+        ret
+    }
+}
