@@ -4307,3 +4307,8 @@ extern "C" void __cdecl fn_0079EBB0(void* self) {
     mem_00B61148 = (int)self;
     mem_00B61151 = ((unsigned char*)self)[0xc];
 }
+
+// [0x00798FF0] sub_00798FF0 (32 bytes)
+extern "C" void __cdecl fn_00798FF0(void* a0, void* a1, void* a2) {
+    fn_00799010(a0, a1, &a2);
+}
