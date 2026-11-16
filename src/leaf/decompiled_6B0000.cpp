@@ -9071,3 +9071,13 @@ extern "C" int __fastcall fn_006BC440(unsigned char* self, int edx_unused, int i
     int* items = *(int**)(self + 0x1c);
     return items[index];
 }
+
+// [0x006BC520] sub_006BC520 (32 bytes)
+// [0x006BC520] sub_006BC520 (32 bytes)
+extern "C" int __fastcall fn_006BC520(unsigned char* self, int edx_unused, int index) {
+    if (index < 0 || index >= *(int*)(self + 0x24)) {
+        return 0;
+    }
+    int* items = *(int**)(self + 0x34);
+    return items[index];
+}
