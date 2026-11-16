@@ -2136,3 +2136,29 @@ extern "C" __declspec(naked) void __fastcall fn_00743CD0(void* self) {
         ret 0x8
     }
 }
+
+// [0x0074F650] sub_0074F650 (48 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0074F650(void* self, int edx_unused, int a, int b) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [esp + 8]
+        test eax, eax
+        jge L_pos
+        mov edx, eax
+        neg edx
+        cmp edx, ecx
+        jg L_pos
+        add eax, ecx
+        ret 8
+    L_pos:
+        test eax, eax
+        jle L_neg
+        cmp eax, ecx
+        jg L_neg
+        dec eax
+        ret 8
+    L_neg:
+        or eax, -1
+        ret 8
+    }
+}
