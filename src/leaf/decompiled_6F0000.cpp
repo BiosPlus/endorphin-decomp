@@ -6061,3 +6061,11 @@ extern "C" int __fastcall fn_006FB690(void* self, int edx_unused, int a1, int a2
 extern "C" int __fastcall fn_006FB6B0(void* self, int edx_unused, int a1, int a2, int a3) {
     return ext_006FB5C0((int)self, a1, (void*)a2, -1, a3);
 }
+
+// [0x006FBC50] sub_006FBC50 (32 bytes)
+extern "C" void ext_006FB6D0();
+
+extern "C" void __fastcall fn_006FBC50(void* self, int edx_unused, int a1) {
+    typedef void (__cdecl *fn_t)(void*, int);
+    ((fn_t)ext_006FB6D0)(self, a1);
+}
