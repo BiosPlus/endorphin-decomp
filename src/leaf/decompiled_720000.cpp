@@ -2706,3 +2706,19 @@ extern "C" __declspec(naked) void __fastcall fn_0072CEF0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0072CF10] sub_0072CF10 (32 bytes)
+extern "C" __declspec(naked) unsigned char __fastcall fn_0072CF10(unsigned char* self, int edx_unused, int index) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        test eax, eax
+        jl short L_0072CF27
+        cmp eax, 0dh
+        jge short L_0072CF27
+        mov al, byte ptr [eax + ecx + 1a9h]
+        ret 4
+L_0072CF27:
+        xor al, al
+        ret 4
+    }
+}
