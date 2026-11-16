@@ -1934,3 +1934,15 @@ extern "C" __declspec(naked) void __fastcall fn_0070BFD0(void* self) {
         jmp ext_006C9F70
     }
 }
+
+// [0x007008D0] sub_007008D0 (32 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_007008D0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        add ecx, 0x10
+        push eax
+        call ext_006B9EC0
+        mov al, 0x1
+        ret 0x4
+    }
+}
