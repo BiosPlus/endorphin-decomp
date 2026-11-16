@@ -1871,3 +1871,24 @@ L_006E91F8:
         ret 4
     }
 }
+
+// [0x006E9430] sub_006E9430 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006E9430(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        test eax, eax
+        jl short L_006E9448
+        cmp eax, dword ptr [ecx + 0x64]
+        jge short L_006E9448
+        mov ecx, dword ptr [ecx + 0x74]
+        mov edx, dword ptr [ecx + 4*eax]
+        mov eax, dword ptr [edx]
+        ret 4
+L_006E9448:
+        push 3
+        add ecx, 0x94
+        call ext_006E7440
+        xor eax, eax
+        ret 4
+    }
+}
