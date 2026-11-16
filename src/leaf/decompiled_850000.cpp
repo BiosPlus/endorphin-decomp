@@ -2696,3 +2696,18 @@ extern "C" void __cdecl fn_0085BE80() {
         p[1] = 0;
     }
 }
+
+// [0x00859BB0] sub_00859BB0 (32 bytes)
+extern "C" void ext_00859BD0();
+extern "C" __declspec(naked) void __cdecl fn_00859BB0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov ecx, dword ptr [esp + 4]
+        push 0
+        push eax
+        push ecx
+        call ext_00859BD0
+        add esp, 0Ch
+        ret
+    }
+}
