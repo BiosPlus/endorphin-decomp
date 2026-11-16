@@ -3426,3 +3426,27 @@ L_skip_free:
         ret
     }
 }
+
+// [0x007847B0] sub_007847B0 (48 bytes)
+extern "C" __declspec(naked) int __fastcall fn_007847B0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov al, byte ptr [esi + 0x10]
+        test al, al
+        je loc_7847d5
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [esi]
+        push 0x784790
+        push 0x8
+        push eax
+        push ecx
+        call dword ptr [mem_00925298]
+        add esp, 0x10
+        mov byte ptr [esi + 0x10], 0x0
+    loc_7847d5:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
