@@ -4543,3 +4543,36 @@ extern "C" __declspec(naked) int __cdecl fn_00798F60(void* a, const char* s) {
         ret
     }
 }
+
+extern "C" void ext_006C33C0();
+extern "C" void ext_00714AE0();
+
+// [0x0079E450] sub_0079E450 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0079E450(void* self) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [ecx]
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push esi
+        push eax
+        push 0
+        mov esi, 1
+        call ext_00714AE0
+        mov ecx, eax
+        call ext_006C33C0
+        cmp dword ptr [esp + 4], 6
+        jne not_six
+        xor eax, eax
+        pop esi
+        pop ecx
+        ret
+not_six:
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret
+    }
+}
