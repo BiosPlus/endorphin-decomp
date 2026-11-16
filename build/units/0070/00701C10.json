@@ -26,5 +26,7 @@
     "0x00701CDC",
     "0x00701CEB"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-16T12:54:07Z"
 }
