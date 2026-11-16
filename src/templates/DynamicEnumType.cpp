@@ -1540,3 +1540,27 @@ extern "C" __declspec(naked) int __fastcall fn_005C8A40(void* self, int edx_unus
         call ext_006A6DD2
     }
 }
+
+// [0x00494A20] ExprParser::DynamicEnumType<RigManager, &public: int __thiscall RigManager::getRigTypeIndex(void) const, &public: void __thiscall RigManager::setRigTypeIndex(int), &public: int __thiscall RigManager::getNumAvailableRigTypes(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall RigManager::getRigTypeNameFromIndex(int) const>::vfunc_1 (55 bytes)
+extern "C" void ext_006AD970();
+extern "C" __declspec(naked) void __stdcall fn_00494A20(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_00494A40
+        call ext_006AD970
+        mov dword ptr [esp + 0x2c], eax
+        fild dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 0x4
+L_00494A40:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
