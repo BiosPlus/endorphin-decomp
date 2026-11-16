@@ -6068,6 +6068,13 @@ L_7C13B1:
     }
 }
 
+// [0x007B2320] sub_007B2320 (32 bytes)
+extern "C" void __stdcall fn_007B2320(int unused, int* a1) {
+    if (a1[2] == 0xf) {
+        ext_007B23E0();
+    }
+}
+
 // [0x007B2210] sub_007B2210 (16 bytes)
 extern "C" void ext_006BA780();
 extern "C" __declspec(naked) void __stdcall fn_007B2210(int a1) {
