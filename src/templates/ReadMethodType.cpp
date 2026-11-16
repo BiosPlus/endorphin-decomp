@@ -5156,3 +5156,24 @@ extern "C" __declspec(naked) void __fastcall fn_004B9370(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004EAA10] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isCollisionEnabled(void) const, 0>::vfunc_3 (45 bytes)
+extern "C" __declspec(naked) void __cdecl fn_004EAA10(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je short L_null
+        mov al, byte ptr [eax + 0x5]
+        add esp, 0x28
+        ret 0x4
+    L_null:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
