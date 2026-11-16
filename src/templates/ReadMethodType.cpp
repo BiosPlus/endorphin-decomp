@@ -5198,3 +5198,24 @@ extern "C" __declspec(naked) void __cdecl fn_004EADE0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004EB230] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>::vfunc_3 (45 bytes)
+extern "C" __declspec(naked) void __cdecl fn_004EB230(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je short L_null
+        mov al, byte ptr [eax + 0x9]
+        add esp, 0x28
+        ret 0x4
+    L_null:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
