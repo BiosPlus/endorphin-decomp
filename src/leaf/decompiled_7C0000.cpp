@@ -19402,3 +19402,12 @@ extern "C" __declspec(naked) void __fastcall fn_007CD110(void* self) {
         ret
     }
 }
+
+// [0x007C1450] sub_007C1450 (48 bytes)
+extern "C" void __cdecl fn_007C1450(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    *(int*)(p + 0x44) = 0x999c58;
+    *(int*)(p + 0x4c) = 0x9;
+    *(int*)(p + 0x48) = 0x99a458;
+    *(int*)(p + 0x50) = 0x5;
+}
