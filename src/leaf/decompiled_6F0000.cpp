@@ -6036,3 +6036,17 @@ extern "C" __declspec(naked) void __fastcall fn_006FB650(void* self) {
         ret 8
     }
 }
+
+// [0x006FB670] sub_006FB670 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FB670(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov edx, dword ptr [esp + 4]
+        push eax
+        push edx
+        push ecx
+        call ext_006FB5A0
+        add esp, 0Ch
+        ret 8
+    }
+}
