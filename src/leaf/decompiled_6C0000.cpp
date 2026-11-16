@@ -2514,3 +2514,13 @@ extern "C" __declspec(naked) char* __fastcall fn_006C35B0(void* self, int edx_un
 extern "C" double __cdecl fn_006C3EC0(const double* a, const double* b) {
     return (a[2] * b[2] + a[1] * b[1]) + a[0] * b[0];
 }
+
+// [0x006C8490] sub_006C8490 (32 bytes)
+extern "C" void __fastcall fn_006C8490(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    *(int*)(p + 0x8) = 0;
+    *(int*)(p + 0x4) = 0;
+    *(int*)(p + 0x0) = 0;
+    *(unsigned char*)(p + 0x21) = 0;
+    *(unsigned char*)(p + 0x20) = 0;
+}
