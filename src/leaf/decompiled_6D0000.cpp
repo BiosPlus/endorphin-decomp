@@ -3911,3 +3911,19 @@ extern "C" __declspec(naked) void __fastcall fn_006D26D0(void* self) {
         ret 0x4
     }
 }
+
+// [0x006D74B0] sub_006D74B0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D74B0(void* self, int edx_unused, unsigned char flag) {
+    __asm {
+        mov al, byte ptr [esp + 0x4]
+        test al, al
+        je short L_006D74C7
+        mov eax, dword ptr [ecx + 0xfc]
+        mov dword ptr [eax], 0x0
+        ret 0x4
+    L_006D74C7:
+        mov ecx, dword ptr [ecx + 0xfc]
+        mov dword ptr [ecx], 0x1
+        ret 0x4
+    }
+}
