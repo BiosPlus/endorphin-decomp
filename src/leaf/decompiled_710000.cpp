@@ -2801,3 +2801,13 @@ extern "C" __declspec(naked) void __fastcall fn_0071B110(void* self, int edx, in
         ret 4
     }
 }
+
+// [0x00711BA0] sub_00711BA0 (16 bytes)
+extern "C" void ext_0071E680();
+extern "C" __declspec(naked) void __cdecl fn_00711BA0() {
+    __asm {
+        call ext_0071E680
+        fld qword ptr [eax + 0x18]
+        ret
+    }
+}
