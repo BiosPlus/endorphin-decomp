@@ -4402,3 +4402,37 @@ fail:
         ret
     }
 }
+
+// [0x006D86C0] sub_006D86C0 (48 bytes)
+extern "C" void ext_006BC380();
+extern "C" void ext_006FDF70();
+
+// Hand-written asm: the first callee takes a stack argument of 0 and the
+// second takes `this` in ecx, which plain C++03 cannot express here.
+extern "C" __declspec(naked) void __fastcall fn_006D86C0(void* self) {
+    __asm {
+        push    esi
+        push    edi
+        xor     edi, edi
+        push    edi
+        call    ext_006FDF70
+        mov     esi, eax
+        test    esi, esi
+        je      short fail
+        mov     ecx, esi
+        call    ext_006BC380
+        test    eax, eax
+        je      short fail
+        mov     ecx, esi
+        call    ext_006BC380
+        mov     eax, dword ptr [eax]
+        pop     edi
+        pop     esi
+        ret
+fail:
+        mov     eax, edi
+        pop     edi
+        pop     esi
+        ret
+    }
+}
