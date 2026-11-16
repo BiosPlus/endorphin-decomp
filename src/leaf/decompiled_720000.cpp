@@ -2759,3 +2759,17 @@ extern "C" __declspec(naked) void* __fastcall fn_0072D620(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x00726840] sub_00726840 (32 bytes)
+extern "C" void ext_0078CBD0();
+
+extern "C" void __fastcall fn_00726840(void* self) {
+    void* p = *(void**)((char*)self + 0x250);
+    if (p) {
+        void* r = (void*)((int (__fastcall *)(void*))ext_00789BB0)(p);
+        if (r) {
+            ((void (__fastcall *)(void*))ext_0078CBD0)(r);
+            return;
+        }
+    }
+}
