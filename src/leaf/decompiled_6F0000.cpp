@@ -6288,3 +6288,29 @@ done:
         ret
     }
 }
+
+// [0x006FDF90] sub_006FDF90 (48 bytes)
+extern "C" void ext_006FDFC0();
+extern "C" __declspec(naked) void* __fastcall fn_006FDF90(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        push eax
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_006FDFC0
+        xor ecx, ecx
+        test eax, eax
+        jl short fn_006FDF90_neg
+        mov edx, dword ptr [esi + 0x20]
+        pop esi
+        mov eax, dword ptr [edx + 4*eax]
+        ret 0x8
+fn_006FDF90_neg:
+        mov eax, ecx
+        pop esi
+        ret 0x8
+    }
+}
