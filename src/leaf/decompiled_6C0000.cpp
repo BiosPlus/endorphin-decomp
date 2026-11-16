@@ -2429,3 +2429,13 @@ extern "C" __declspec(naked) void __stdcall fn_006C9320(void* a1) {
         ret 4
     }
 }
+
+// [0x006CA4F0] sub_006CA4F0 (16 bytes)
+extern "C" void ext_006D0370();
+extern "C" __declspec(naked) void __cdecl fn_006CA4F0() {
+    __asm {
+        push 0x0
+        call ext_006D0370
+        ret
+    }
+}
