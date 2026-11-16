@@ -3802,3 +3802,23 @@ extern "C" __declspec(naked) void* __fastcall fn_006D7D90(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006D2130] sub_006D2130 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D2130(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, ecx
+        xor ecx, ecx
+        mov dword ptr [eax + 0x10], ecx
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], ecx
+        mov ecx, dword ptr [esp + 0x8]
+        mov dword ptr [eax + 0xc], ecx
+        mov ecx, dword ptr [esp + 0x4]
+        cmp ecx, 0x1
+        jg skip_clamp_6D2130
+        mov ecx, 0x1
+    skip_clamp_6D2130:
+        mov dword ptr [eax + 0x8], ecx
+        ret 0x8
+    }
+}
