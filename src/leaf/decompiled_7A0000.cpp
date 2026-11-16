@@ -3756,3 +3756,17 @@ extern "C" void ext_007B2A60(void* a, int b, void* c);
 extern "C" void __cdecl fn_007A0D20(void* a, void* c) {
     ext_007B2A60(a, 0xb007, c);
 }
+
+// [0x007A19A0] sub_007A19A0 (32 bytes)
+extern "C" void ext_007B2A10();
+
+extern "C" __declspec(naked) void __cdecl fn_007A19A0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push 0xb005
+        push eax
+        call ext_007B2A10
+        add esp, 8
+        ret
+    }
+}
