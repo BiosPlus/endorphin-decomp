@@ -16346,3 +16346,24 @@ L660DE0_12ec:
         ret 8
     }
 }
+
+// [0x00662F50] sub_00662F50 (39 bytes)
+extern "C" void ext_00662F20();
+extern "C" int mem_00924FF0;
+extern "C" int mem_009255E0;
+extern "C" int mem_00925258;
+
+extern "C" __declspec(naked) void __fastcall fn_00662F50(void* self) {
+    __asm {
+        call ext_00662F20
+        mov ecx, dword ptr [esp + 0x4]
+        push 0x10
+        push 0x9877d8
+        call dword ptr [mem_00924FF0]
+        push eax
+        push 0
+        call dword ptr [mem_009255E0]
+        push -1
+        call dword ptr [mem_00925258]
+    }
+}
