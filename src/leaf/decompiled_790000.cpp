@@ -4439,3 +4439,23 @@ extern "C" void ext_007B2A60(void* a, int b, void* c);
 extern "C" void __cdecl fn_0079FD80(void* a, void* c) {
     ext_007B2A60(a, 0xb003, c);
 }
+
+// [0x00798840] sub_00798840 (48 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_00798840(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        xor eax, eax
+        mov ax, word ptr [ecx + 0x40]
+        imul eax, dword ptr [ecx + 0x24]
+        cmp word ptr [ecx + 0x72], 0x1
+        jne short L_00798860
+        xor edx, edx
+        mov dx, word ptr [ecx + 0x4e]
+        mov ecx, edx
+        imul eax, ecx
+    L_00798860:
+        add eax, 0x7
+        shr eax, 0x3
+        ret
+    }
+}
