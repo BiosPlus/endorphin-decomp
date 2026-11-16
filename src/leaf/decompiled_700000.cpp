@@ -2080,3 +2080,14 @@ extern "C" __declspec(naked) void __fastcall fn_0070EC30(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0070EC50] sub_0070EC50 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0070EC50(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        add ecx, 0x148
+        push eax
+        call ext_007873F0
+        ret 0x4
+    }
+}
