@@ -2184,3 +2184,28 @@ extern "C" __declspec(naked) int __stdcall fn_0074F680(int a, int m, int b) {
         ret 0xc
     }
 }
+
+// [0x0074F7F0] sub_0074F7F0 (48 bytes)
+extern "C" void ext_0074F7A0();
+extern "C" int mem_0092529C;
+extern "C" __declspec(naked) void __cdecl fn_0074F7F0() {
+    __asm {
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        mov ecx, dword ptr [ecx]
+        test ecx, ecx
+        jle done
+        mov edx, dword ptr [esp + 4]
+        push offset ext_0074F7A0
+        push 10h
+        push ecx
+        mov eax, dword ptr [edx]
+        mov ecx, dword ptr [esp + 18h]
+        push eax
+        push ecx
+        call dword ptr [mem_0092529C]
+        add esp, 14h
+    done:
+        ret
+    }
+}
