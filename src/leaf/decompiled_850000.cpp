@@ -2912,3 +2912,18 @@ done:
         ret
     }
 }
+
+// [0x00859DA0] sub_00859DA0 (48 bytes)
+extern "C" void* __fastcall fn_00859DA0(void* self) {
+    unsigned int* p = (unsigned int*)ext_008596E0(0x1c);
+    if (p) {
+        p[0] = 0;
+        p[1] = 0;
+        p[2] = 0;
+        p[3] = 0;
+        p[4] = 0x8000;
+        p[5] = 0;
+        p[6] = 1;
+    }
+    return p;
+}
