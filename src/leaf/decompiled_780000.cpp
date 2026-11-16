@@ -3025,3 +3025,12 @@ extern "C" void __fastcall fn_00785480(void* self, int edx_unused, int* src) {
     dst[6] = src[0];
     dst[7] = src[1];
 }
+
+// [0x007857F0] sub_007857F0 (32 bytes)
+extern "C" void __fastcall fn_007857F0(void* self) {
+    int* p = (int*)self;
+    p[4] = 1;
+    p[5] = (int)0x80000000;
+    p[6] = -1;
+    p[7] = 0x7fffffff;
+}
