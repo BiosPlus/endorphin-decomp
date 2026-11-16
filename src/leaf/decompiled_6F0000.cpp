@@ -6314,3 +6314,25 @@ fn_006FDF90_neg:
         ret 0x8
     }
 }
+
+// [0x006F9E60] sub_006F9E60 (48 bytes)
+extern "C" void ext_006F9DE0();
+extern "C" void ext_006F9E90();
+extern "C" int mem_00B5E420;
+extern "C" int mem_00B5E41C;
+
+extern "C" __declspec(naked) void __fastcall fn_006F9E60(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00B5E420]
+        test eax, eax
+        jne short done
+        call ext_006F9DE0
+        mov ecx, dword ptr [mem_00B5E41C]
+        test ecx, ecx
+        je short done
+        call ext_006F9E90
+done:
+        inc dword ptr [mem_00B5E420]
+        ret
+    }
+}
