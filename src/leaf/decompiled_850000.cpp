@@ -2927,3 +2927,18 @@ extern "C" void* __fastcall fn_00859DA0(void* self) {
     }
     return p;
 }
+
+// [0x0085A620] sub_0085A620 (48 bytes)
+extern "C" void* __fastcall fn_0085A620(void* self) {
+    int* p = (int*)ext_008596E0(0x1c);
+    if (p) {
+        p[0] = 2;
+        p[1] = 0;
+        p[4] = 0;
+        p[2] = 0;
+        p[5] = 0;
+        p[3] = 0;
+        p[6] = 0;
+    }
+    return p;
+}
