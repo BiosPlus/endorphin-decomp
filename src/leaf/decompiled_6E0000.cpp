@@ -1720,3 +1720,27 @@ done_6E6970:
         ret 0x4
     }
 }
+
+// [0x006E7190] sub_006E7190 (48 bytes)
+extern "C" void ext_00711BB0();
+extern "C" int mem_00925284;
+extern "C" __declspec(naked) void __fastcall fn_006E7190(void* self) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [mem_00925284]
+        fld qword ptr [ecx]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        je short L_006E71A7
+        fstp st(0)
+        jmp ext_00711BB0
+L_006E71A7:
+        mov eax, dword ptr [eax + 8]
+        test eax, eax
+        je short L_006E71B6
+        fstp st(0)
+        fld qword ptr [eax + 0xa8]
+L_006E71B6:
+        ret
+    }
+}
