@@ -5841,3 +5841,32 @@ extern "C" __declspec(naked) int __fastcall fn_006F7930(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x006F8AF0] sub_006F8AF0 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006F8AF0(void* self) {
+    __asm {
+        _emit 0x8b
+        _emit 0xc1
+        _emit 0x33
+        _emit 0xc9
+        _emit 0x89
+        _emit 0x08
+        _emit 0xc6
+        _emit 0x40
+        _emit 0x04
+        _emit 0x01
+        _emit 0x88
+        _emit 0x48
+        _emit 0x05
+        _emit 0x88
+        _emit 0x48
+        _emit 0x06
+        _emit 0x88
+        _emit 0x48
+        _emit 0x07
+        _emit 0x88
+        _emit 0x48
+        _emit 0x08
+        ret
+    }
+}
