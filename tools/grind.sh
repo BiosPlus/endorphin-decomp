@@ -23,7 +23,14 @@ STATUS_ON_MATCH="${STATUS_ON_MATCH:-0}"
 if [[ "$STATUS_ON_MATCH" == 0 ]]; then
   export WORK_SKIP_README=1
 fi
-export WORK_ISOLATED="${WORK_ISOLATED:-0}"
+# 1 = parallel mode: each agent edits only its own src/wip/fn_<VA>.cpp, and `work check` merges it into the shard under
+# the work lock (full shard compile + sibling regression check) once it matches. Lets several agents share one shard.
+export WORK_ISOLATED="${WORK_ISOLATED:-1}"
+# Max functions in flight per shard .cpp. In parallel mode the only shared step is the merge (~0.2s shard compile under
+# the lock), so this mostly limits wasted work when a WIP match fails to merge. Forced to 1 when WORK_ISOLATED=0.
+PER_FILE_CAP="${PER_FILE_CAP:-10}"
+[[ "$WORK_ISOLATED" == 1 ]] || PER_FILE_CAP=1
+WORK_LOCK="$REPO_ROOT/.local/work.lock"   # same flock(2) lock `work` uses; held around grind's own git commits
 # Pipeline: tier 0 runs on EVERY function with WAVE_SIZE concurrent runners. A function moves up a tier only once every model in its tier has failed it.
 # Each model has its own concurrency cap (tier 0: WAVE_SIZE; later tiers: ESC_CAP unless overridden below).
 ESC_CAP="${ESC_CAP:-2}"
@@ -126,6 +133,12 @@ fi
 # command fail to launch, so use absolute, glob-free directories here. build/units must stay writable: `work check` records
 # matches there (.git stays read-only; the host runs `work commit-pending`).
 AGY_INLINE_SETTINGS='{"agentMode":"auto","enableTerminalSandbox":true,"toolPermission":"proceed-in-sandbox","permissions":{"allow":["read_file(*)","write_file('"$REPO_ROOT"'/src)","write_file('"$REPO_ROOT"'/include)","write_file('"$REPO_ROOT"'/build/units)","write_file('"$REPO_ROOT"'/.local)","edit_file('"$REPO_ROOT"'/src)","edit_file('"$REPO_ROOT"'/include)","command(./.local/bin/work*)","command(go run ./tools/work*)","command(./.local/bin/status*)","command(go run ./tools/status*)","command(./.local/bin/build_and_match*)","command(./tools/cl_wine.sh*)","command(git status*)","command(git diff*)","command(git log*)","command(git show*)","command(git add*)","command(git commit*)","command(git checkout*)"],"deny":["write_file('"$REPO_ROOT"'/docs)","command(sudo*)","command(rm -rf*)","command(python*)","command(curl*)","command(wget*)"]}}'
+# Parallel mode: headers are read-only for agents (a header edit can silently break other shards). src/ stays writable
+# because `work check` runs inside the sandbox and performs the shard merge itself.
+if [[ "$WORK_ISOLATED" == 1 ]]; then
+  AGY_INLINE_SETTINGS="${AGY_INLINE_SETTINGS//\"write_file($REPO_ROOT\/include)\",/}"
+  AGY_INLINE_SETTINGS="${AGY_INLINE_SETTINGS//\"edit_file($REPO_ROOT\/include)\",/}"
+fi
 
 # Per-backend cooldown tracking, kept in files so every concurrent worker subshell shares one view.
 # $STATE_DIR/cd.<pool>  = epoch seconds when that quota pool becomes eligible again (pools: see MODEL_TIERS above)
@@ -340,13 +353,21 @@ run_single_function_agent() {
 
   export DECOMP_EFFORT="$effort"
   export DECOMP_MODEL="${model_choice}@${effort}"
+  export WORK_ASSIGNED_ADDR="$addr"   # read by tools/security_guard.sh to pin writes to this function's WIP file
 
-  local briefing prompt
+  local briefing prompt edit_rule="Edit only TARGET_CPP (and include/ if needed)."
+  local -a src_tools=("Edit(src/**)" "Edit(include/**)" "Write(src/**)" "Write(include/**)")
+  local -a git_write_tools=("Bash(git add*)" "Bash(git commit*)" "Bash(git checkout -- src/*)")
+  if [[ "$WORK_ISOLATED" == 1 ]]; then
+    edit_rule="Edit only TARGET_CPP (your own src/wip file). Other agents are working in the same shard: never edit the shard .cpp or include/, and never run git add/commit/checkout/restore (work check commits for you)."
+    src_tools=("Edit(src/wip/**)" "Write(src/wip/**)")
+    git_write_tools=()   # `work check` commits under the lock; an agent's checkout could wipe another agent's merge
+  fi
   briefing="$("$WORK_BIN" claim "$addr" 2>/dev/null || true)"
   if [[ -n "$briefing" ]]; then
     prompt="You are assigned a single function: ${addr} (already claimed below).
 Rules:
-- C++03 only. Edit only TARGET_CPP (and include/ if needed). Keep // [VA] and fn_XXXXXXXX intact.
+- C++03 only. ${edit_rule} Keep // [VA] and fn_XXXXXXXX intact.
 - Use HEADER_PREVIEW and SUGGESTED_EXTERNS; if SIMILAR_MATCHED is present, treat solved neighbors as hints for the C++ idiom; if PRIOR_ATTEMPTS is present, use it to avoid dead ends (never search for earlier source).
 - Switch to __declspec(naked) __asm after 3-4 failed C++03 tries.
 - Verify with: ./.local/bin/work check ${addr} --model ${DECOMP_MODEL}
@@ -377,13 +398,13 @@ ${briefing}"
       --output-format stream-json --verbose \
       --allowedTools \
         "Read" "Grep" "Glob" \
-        "Edit(src/**)" "Edit(include/**)" "Write(src/**)" "Write(include/**)" \
+        "${src_tools[@]}" \
         "Bash(./.local/bin/work*)" "Bash(go run ./tools/work*)" \
         "Bash(./.local/bin/status*)" "Bash(go run ./tools/status*)" \
         "Bash(./.local/bin/build_and_match*)" "Bash(go run ./tools/build_and_match*)" \
         "Bash(./tools/cl_wine.sh*)" \
         "Bash(git status*)" "Bash(git diff*)" "Bash(git log*)" "Bash(git show*)" \
-        "Bash(git add*)" "Bash(git commit*)" "Bash(git checkout -- src/*)" \
+        "${git_write_tools[@]}" \
       -p "$prompt" >"$log_file" 2>&1 || exit_code=$?
   else
     case "$model_choice" in
@@ -584,7 +605,7 @@ declare -A FUNC_CPP_OF=()
 declare -A FN_START=()
 declare -A JOB_INFO=()        # pid -> "addr stage"
 declare -A INFLIGHT_ADDR=()   # addr -> 1 while the function is anywhere in the pipeline
-declare -A INFLIGHT_CPP=()    # cpp  -> 1 (never two functions on the same .cpp at once)
+declare -A INFLIGHT_CPP=()    # cpp  -> functions currently in flight on that shard (capped at PER_FILE_CAP)
 declare -A SEEN_ADDR=()       # addrs pulled this session (never re-pulled)
 declare -A PENDING=()         # tier -> space-separated FIFO of addrs waiting for a model in that tier
 declare -A STAGE_RUNNING=()   # model index -> running attempts
@@ -628,7 +649,7 @@ pick_next_candidate() {
       IFS='|' read -r addr size cpp <<< "$item"
       [[ -n "${SEEN_ADDR[$addr]:-}" ]] && continue
       [[ -n "${INFLIGHT_ADDR[$addr]:-}" ]] && continue
-      [[ -n "${INFLIGHT_CPP[$cpp]:-}" ]] && continue
+      (( ${INFLIGHT_CPP[$cpp]:-0} >= PER_FILE_CAP )) && continue
       NEXT_ADDR="$addr"; NEXT_CPP="$cpp"; FUNC_SIZES["$addr"]="$size"
       return 0
     done
@@ -671,7 +692,8 @@ escalation_backlog() {   # functions that are past tier 0 (pending or running)
 finish_function() {   # $1=addr $2=outcome(matched|deferred) $3=model
   local addr="$1" outcome="$2" model="$3"
   unset "INFLIGHT_ADDR[$addr]"
-  unset "INFLIGHT_CPP[${FUNC_CPP_OF[$addr]}]"
+  local _cpp="${FUNC_CPP_OF[$addr]}"
+  if (( ${INFLIGHT_CPP[$_cpp]:-0} > 1 )); then ((INFLIGHT_CPP[$_cpp]--)); else unset "INFLIGHT_CPP[$_cpp]"; fi
   ((finished++))
   if [[ "$outcome" == matched ]]; then ((matched_count++)); else ((deferred_count++)); fi
   log_result "$addr" "${FUNC_SIZES[$addr]:-?}" "$outcome" "$model" "${FN_START[$addr]:-$(date +%s)}"
@@ -685,7 +707,8 @@ finish_function() {   # $1=addr $2=outcome(matched|deferred) $3=model
     if [[ "$STATUS_ON_MATCH" == 0 ]]; then
       "$STATUS_BIN" -readme >/dev/null 2>&1 || true
       if ! git diff --quiet -- README.md 2>/dev/null; then
-        git add README.md >/dev/null 2>&1 && git commit -m "Update README.md status" >/dev/null 2>&1 || true
+        # Under the work lock: an agent's `work check` may be mid-commit (it resets and re-stages the index)
+        flock -w 600 "$WORK_LOCK" bash -c 'git add README.md && git commit -m "Update README.md status"' >/dev/null 2>&1 || true
       fi
     fi
     emit "[*] Pushing progress to GitHub (triggers Windows CI + HTML dashboard build)"
@@ -995,7 +1018,7 @@ while true; do
       break
     fi
     addr="$NEXT_ADDR"
-    SEEN_ADDR["$addr"]=1; INFLIGHT_ADDR["$addr"]=1; INFLIGHT_CPP["$NEXT_CPP"]=1
+    SEEN_ADDR["$addr"]=1; INFLIGHT_ADDR["$addr"]=1; INFLIGHT_CPP["$NEXT_CPP"]=$(( ${INFLIGHT_CPP[$NEXT_CPP]:-0} + 1 ))
     FUNC_CPP_OF["$addr"]="$NEXT_CPP"; FN_START["$addr"]="$(date +%s)"
     ((launched++))
     emit "[pull] #$launched/$TOTAL_JOBS $addr (${FUNC_SIZES[$addr]}B) -> $NEXT_CPP"

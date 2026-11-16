@@ -23,6 +23,71 @@ func wipPathForVA(vaHex string) string {
 	return fmt.Sprintf("src/wip/fn_%s.cpp", strings.TrimPrefix(va, "0x"))
 }
 
+const (
+	wipHeaderPrefix   = "// Isolated WIP translation unit:"
+	wipShardArrow     = " -> "
+	wipPreambleBegin  = "// ---- BEGIN shard preamble (copied from shard; dropped on merge, do not edit) ----"
+	wipPreambleEnd    = "// ---- END shard preamble ----"
+	shardHeaderPrefix = "// Decompiled translation unit:"
+)
+
+// shardPreamble returns everything in shardPath before its first // [0x...] marker, minus the
+// "Decompiled translation unit" banner. Empty if the shard does not exist yet.
+func shardPreamble(shardPath string) string {
+	b, err := os.ReadFile(shardPath)
+	if err != nil {
+		return ""
+	}
+	var out []string
+	for _, l := range strings.Split(strings.ReplaceAll(string(b), "\r\n", "\n"), "\n") {
+		t := strings.TrimSpace(l)
+		if unitMarkerLineRe.MatchString(t) {
+			break
+		}
+		if strings.HasPrefix(t, shardHeaderPrefix) {
+			continue
+		}
+		out = append(out, l)
+	}
+	return strings.TrimSpace(strings.Join(out, "\n"))
+}
+
+// buildWipContent lays out a WIP file: a header naming the shard it merges into, a copy of the
+// shard's preamble (so it compiles the same way), then the single function block.
+func buildWipContent(wipPath, shardPath, block string) string {
+	var sb strings.Builder
+	fmt.Fprintf(&sb, "%s %s%s%s\n", wipHeaderPrefix, filepath.ToSlash(wipPath), wipShardArrow, filepath.ToSlash(shardPath))
+	if pre := shardPreamble(shardPath); pre != "" {
+		sb.WriteString(wipPreambleBegin + "\n")
+		sb.WriteString(pre + "\n")
+		sb.WriteString(wipPreambleEnd + "\n")
+	}
+	sb.WriteString("\n")
+	sb.WriteString(strings.TrimSpace(block))
+	sb.WriteString("\n")
+	return sb.String()
+}
+
+// wipTargetShard reads the shard path recorded in a WIP file's header, or "" if absent.
+func wipTargetShard(wipPath string) string {
+	b, err := os.ReadFile(wipPath)
+	if err != nil {
+		return ""
+	}
+	first := strings.SplitN(string(b), "\n", 2)[0]
+	first = strings.TrimSpace(first)
+	if !strings.HasPrefix(first, wipHeaderPrefix) {
+		return ""
+	}
+	if i := strings.LastIndex(first, wipShardArrow); i != -1 {
+		s := strings.TrimSpace(first[i+len(wipShardArrow):])
+		if strings.HasPrefix(s, "src/") && strings.HasSuffix(s, ".cpp") && !isWipPath(s) {
+			return s
+		}
+	}
+	return ""
+}
+
 // extractIsolatedShardFunc extracts the shard's preamble (everything before the first
 // // [0x...] marker) plus the single target // [0xVA] function block into a temporary
 // .cpp file for fast single-function iteration. Returns an error if the shard has <= 1
@@ -95,7 +160,7 @@ func mergeWipIntoShard(wipPath, shardPath, vaHex, symbol string, size uint32) (f
 	existed := readErr == nil
 	restore := func() {
 		if existed {
-			_ = os.WriteFile(shardPath, origBytes, 0644)
+			_ = writeFileAtomic(shardPath, origBytes, 0644)
 		} else {
 			_ = os.Remove(shardPath)
 		}
@@ -111,9 +176,21 @@ func mergeWipIntoShard(wipPath, shardPath, vaHex, symbol string, size uint32) (f
 	var wipPreamble []string
 	var wipFuncLines []string
 	inFunc := false
+	inCopiedPreamble := false
 
 	for _, l := range wipLines {
 		trimmed := strings.TrimSpace(l)
+		// The copied shard preamble is already in the shard; never merge it back in.
+		if !inFunc && trimmed == wipPreambleBegin {
+			inCopiedPreamble = true
+			continue
+		}
+		if inCopiedPreamble {
+			if trimmed == wipPreambleEnd {
+				inCopiedPreamble = false
+			}
+			continue
+		}
 		if strings.HasPrefix(trimmed, "#include") {
 			wipIncludes = append(wipIncludes, trimmed)
 			continue
@@ -221,10 +298,7 @@ func mergeWipIntoShard(wipPath, shardPath, vaHex, symbol string, size uint32) (f
 	out.WriteString(funcBlock)
 	out.WriteString("\n")
 
-	if err := os.MkdirAll(filepath.Dir(shardPath), 0755); err != nil {
-		return restore, err
-	}
-	if err := os.WriteFile(shardPath, []byte(out.String()), 0644); err != nil {
+	if err := writeFileAtomic(shardPath, []byte(out.String()), 0644); err != nil {
 		return restore, err
 	}
 	return restore, nil

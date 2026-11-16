@@ -57,6 +57,37 @@ deny_tool() {
   fi
 }
 
+# Parallel (WIP) mode, set by tools/grind.sh: several agents share one shard .cpp, so each agent may write only its own
+# src/wip/fn_<VA>.cpp. `work check` (not subject to this hook) merges it into the shard under the work lock.
+PARALLEL=0
+[[ "${WORK_ISOLATED:-0}" == 1 ]] && PARALLEL=1
+OWN_WIP=""
+if [[ -n "${WORK_ASSIGNED_ADDR:-}" ]]; then
+  _va="${WORK_ASSIGNED_ADDR#0x}"; _va="${_va#0X}"
+  OWN_WIP="src/wip/fn_${_va^^}.cpp"
+fi
+
+# Returns 0 if repo-relative path $1 is off-limits to this agent in parallel mode (sets PARALLEL_DENY_REASON).
+parallel_path_denied() {
+  local p="$1"
+  PARALLEL_DENY_REASON=""
+  case "$p" in
+    include/*)
+      PARALLEL_DENY_REASON="Parallel mode: include/ is read-only ($p); a header edit can break other shards. Use raw offsets in your WIP file."
+      return 0 ;;
+    src/wip/*)
+      if [[ -n "$OWN_WIP" && "${p^^}" != "${OWN_WIP^^}" ]]; then
+        PARALLEL_DENY_REASON="Parallel mode: you may only edit $OWN_WIP ($p belongs to another agent)."
+        return 0
+      fi
+      return 1 ;;
+    src/*)
+      PARALLEL_DENY_REASON="Parallel mode: never edit shard files directly ($p). Edit ${OWN_WIP:-your src/wip/fn_<VA>.cpp}; work check merges it."
+      return 0 ;;
+  esac
+  return 1
+}
+
 # 1. Gate file write / edit tools
 case "$TOOL_NAME" in
   write_file|edit_file|replace_file_content|multi_replace_file_content|Write|Edit|MultiEdit|NotebookEdit)
@@ -96,6 +127,10 @@ case "$TOOL_NAME" in
           deny_tool "Modifying repository security or CI configuration ($REL_PATH) is forbidden."
           ;;
       esac
+
+      if [[ $PARALLEL -eq 1 ]] && parallel_path_denied "$REL_PATH"; then
+        deny_tool "$PARALLEL_DENY_REASON"
+      fi
     fi
     allow_tool
     ;;
@@ -129,6 +164,28 @@ case "$TOOL_NAME" in
       # Block shell redirection or in-place edits targeting build/units.json, HTML files, or security hooks
       if echo "$CMD_LINE" | grep -qE '(>|>>|tee[[:space:]]+|sed[[:space:]]+-i|awk[[:space:]]+-i|mv[[:space:]]+.*|cp[[:space:]]+.*)(build/units(\.json|/)|docs/|\.html|\.claude/|tools/security_guard\.sh|\.git/hooks)'; then
         deny_tool "Direct shell modification of protected files (build/units.json, HTML, or security hooks) is forbidden."
+      fi
+
+      if [[ $PARALLEL -eq 1 ]]; then
+        # Git index/worktree writes race with `work check`'s locked commits, and a checkout/restore of a shard would
+        # wipe another agent's merged-but-uncommitted match. `work check` commits for you.
+        if echo "$CMD_LINE" | grep -qE '(^|[;&|[:space:]])git[[:space:]]+(add|commit|checkout|restore|reset|stash|rm|mv|apply|am|cherry-pick|merge|rebase|revert|switch|update-index)([[:space:]]|$)'; then
+          deny_tool "Parallel mode: git write commands are forbidden; ./.local/bin/work check commits matches for you."
+        fi
+        # Shell writes into src/ or include/ outside this agent's own WIP file: redirection targets, plus every path
+        # argument of an in-place / file-moving command (over-blocks `cp src/x ...` as a read; use the Read tool).
+        _targets="$( {
+          echo "$CMD_LINE" | grep -oE '>>?[[:space:]]*[^[:space:];&|]+' | sed -E 's/^>>?[[:space:]]*//'
+          echo "$CMD_LINE" | grep -oE '(tee|sed[[:space:]]+-i[^[:space:]]*|perl[[:space:]]+-[a-zA-Z]*i[a-zA-Z]*|(^|[[:space:];&|(])(cp|mv|rm|truncate|install|ln|touch|dd))[[:space:]][^;&|]*' | tr ' \t' '\n\n'
+        } )"
+        while IFS= read -r _t; do
+          [[ -z "$_t" ]] && continue
+          _t="${_t#\"}"; _t="${_t%\"}"; _t="${_t#\'}"; _t="${_t%\'}"
+          _t="${_t#"$REPO_ROOT"/}"; _t="${_t#./}"
+          if parallel_path_denied "$_t"; then
+            deny_tool "$PARALLEL_DENY_REASON"
+          fi
+        done <<< "$_targets"
       fi
     fi
     allow_tool

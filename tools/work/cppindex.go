@@ -23,6 +23,10 @@ func initCppIndex() {
 	hasMarker := make(map[string]bool)
 
 	_ = filepath.WalkDir("src", func(path string, d fs.DirEntry, err error) error {
+		if err == nil && d.IsDir() && isWipPath(filepath.ToSlash(path)+"/") {
+			// WIP files are looked up explicitly (findCppFileForVA); this index maps to shards only.
+			return filepath.SkipDir
+		}
 		if err != nil || d.IsDir() || !strings.HasSuffix(path, ".cpp") {
 			return nil
 		}

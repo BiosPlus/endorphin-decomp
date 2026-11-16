@@ -236,7 +236,31 @@ func stripFunctionFromCpp(cppPath, vaHex string) (bool, error) {
 	}
 
 	newContent := strings.TrimRight(strings.Join(outLines, "\n"), "\n\t ") + "\n"
-	return true, os.WriteFile(cppPath, []byte(newContent), 0644)
+	return true, writeFileAtomic(cppPath, []byte(newContent), 0644)
+}
+
+// extractFunctionBlock returns the // [0xVA] block for vaHex from cppPath (without the shard
+// preamble), or "" if the file has no such block.
+func extractFunctionBlock(cppPath, vaHex string) string {
+	b, err := os.ReadFile(cppPath)
+	if err != nil {
+		return ""
+	}
+	normTarget := "0x" + strings.ToUpper(strings.TrimPrefix(vaHex, "0x"))
+	var out []string
+	in := false
+	for _, l := range strings.Split(string(b), "\n") {
+		if m := unitMarkerLineRe.FindStringSubmatch(strings.TrimSpace(l)); len(m) == 2 {
+			if in {
+				break
+			}
+			in = "0x"+strings.ToUpper(strings.TrimPrefix(m[1], "0x")) == normTarget
+		}
+		if in {
+			out = append(out, l)
+		}
+	}
+	return strings.TrimSpace(strings.Join(out, "\n"))
 }
 
 func cleanUnmatchedStubs(units []UnitEntry, unitIdxByVA map[string]int) int {
@@ -338,46 +362,43 @@ func suggestExternsForUnit(u UnitEntry) []string {
 	return decls
 }
 
-func withWorkLock(fn func()) {
-	_ = os.MkdirAll(".local", 0755)
-	lockDir := filepath.Join(".local", "work.lock.d")
-	deadline := time.Now().Add(120 * time.Second)
-	for {
-		err := os.Mkdir(lockDir, 0755)
-		if err == nil {
-			defer func() { _ = os.RemoveAll(lockDir) }()
-			fn()
-			return
-		}
-		if !os.IsExist(err) {
-			// E.g. read-only .local inside a sandbox: do not spin for 120s.
-			fn()
-			return
-		}
-		if info, statErr := os.Stat(lockDir); statErr == nil {
-			if time.Since(info.ModTime()) > 120*time.Second {
-				_ = os.RemoveAll(lockDir)
-				continue
-			}
-		}
-		if time.Now().After(deadline) {
-			_ = os.RemoveAll(lockDir)
-			fn()
-			return
-		}
-		time.Sleep(50 * time.Millisecond)
-	}
-}
-
 func printUnitBriefing(u UnitEntry, cls *ClassEntry, createStub bool, isolated bool) {
 	cppPath := findCppFileForVA(u.VA)
 	stubAdded := false
-	if cppPath == "" {
-		if isolated {
-			cppPath = wipPathForVA(u.VA)
-		} else {
-			cppPath = defaultCppFileForUnit(u, cls)
+	shardForWip := ""
+	if isolated && createStub && !isWipPath(cppPath) && !isStatusCompleted(u.Status) && !u.IsThunk {
+		// Parallel mode: the agent only ever edits its own src/wip/fn_<VA>.cpp. `work check`
+		// merges it into the shard under the work lock once it matches.
+		shardForWip = cppPath
+		if shardForWip == "" {
+			shardForWip = defaultCppFileForUnit(u, cls)
 		}
+		wip := wipPathForVA(u.VA)
+		withWorkLock(func() {
+			if _, err := os.Stat(wip); err == nil {
+				return // another claim for this VA beat us to it
+			}
+			block := ""
+			if cppPath != "" {
+				// Carry over an earlier unverified attempt instead of throwing it away.
+				block = extractFunctionBlock(cppPath, u.VA)
+			}
+			if block == "" {
+				block = fmt.Sprintf("// [%s] %s (%d bytes)\nextern \"C\" void __fastcall fn_%s(void* self) {\n    // TODO: implement\n}",
+					u.VA, u.Symbol, u.Size, strings.TrimPrefix(u.VA, "0x"))
+			}
+			if err := writeFileAtomic(wip, []byte(buildWipContent(wip, shardForWip, block)), 0644); err != nil {
+				fmt.Fprintf(os.Stderr, "Error creating %s: %v\n", wip, err)
+				os.Exit(1)
+			}
+			if cppPath != "" {
+				_, _ = stripFunctionFromCpp(cppPath, u.VA)
+			}
+			stubAdded = true
+		})
+		cppPath = wip
+	} else if cppPath == "" {
+		cppPath = defaultCppFileForUnit(u, cls)
 		if createStub {
 			withWorkLock(func() {
 				_ = os.MkdirAll(filepath.Dir(cppPath), 0755)
@@ -408,6 +429,15 @@ func printUnitBriefing(u UnitEntry, cls *ClassEntry, createStub bool, isolated b
 		fmt.Printf("TARGET_CPP: %s (stub fn_%s created)\n", cppPath, strings.TrimPrefix(u.VA, "0x"))
 	} else {
 		fmt.Printf("TARGET_CPP: %s (fn_%s)\n", cppPath, strings.TrimPrefix(u.VA, "0x"))
+	}
+	if isWipPath(cppPath) {
+		if shardForWip == "" {
+			shardForWip = wipTargetShard(cppPath)
+		}
+		if shardForWip == "" {
+			shardForWip = defaultCppFileForUnit(u, cls)
+		}
+		fmt.Printf("PARALLEL_MODE: edit ONLY %s. `work check` merges it into %s when it matches. Do not edit the shard or include/ (header edits are rejected in parallel mode; use raw offsets instead).\n", cppPath, shardForWip)
 	}
 
 	if cls != nil {
@@ -665,7 +695,10 @@ func cmdIsMatched(args []string) {
 	if err != nil {
 		os.Exit(1)
 	}
-	b, err := unitstore.ReadOne(vaHex)
+	// Read under the lock: commitPendingMatches briefly rewrites other units back to their HEAD
+	// state while it commits them one by one, and a reader in that window would see "unmatched".
+	var b []byte
+	withWorkLock(func() { b, err = unitstore.ReadOne(vaHex) })
 	if err != nil {
 		os.Exit(1)
 	}
@@ -1171,8 +1204,24 @@ func isStatusCompleted(status string) bool {
 	return status == "matched" || status == "decompiled" || status == "solved"
 }
 
+var cachedGitDir string
+
+// gitDir returns the real git directory (".git" in a normal checkout; .git/worktrees/<name> in a
+// linked worktree, where .git is a file).
+func gitDir() string {
+	if cachedGitDir == "" {
+		cachedGitDir = ".git"
+		if out, err := exec.Command("git", "rev-parse", "--git-dir").Output(); err == nil {
+			if d := strings.TrimSpace(string(out)); d != "" {
+				cachedGitDir = d
+			}
+		}
+	}
+	return cachedGitDir
+}
+
 func isGitWritable() bool {
-	probe := filepath.Join(".git", "work_write_probe.tmp")
+	probe := filepath.Join(gitDir(), "work_write_probe.tmp")
 	if err := os.WriteFile(probe, []byte("ok"), 0644); err != nil {
 		return false
 	}
@@ -1181,7 +1230,7 @@ func isGitWritable() bool {
 }
 
 func waitForGitIndexLock() {
-	lockPath := filepath.Join(".git", "index.lock")
+	lockPath := filepath.Join(gitDir(), "index.lock")
 	deadline := time.Now().Add(10 * time.Second)
 	for {
 		info, err := os.Stat(lockPath)
@@ -1245,11 +1294,24 @@ func filterCppForCommit(cppPath string, allowedVAs map[string]bool) ([]byte, boo
 	if !filtered || keptFuncs == 0 {
 		return origBytes, false
 	}
-	newContent := strings.TrimRight(strings.Join(outLines, "\n"), "\n\t ") + "\n"
-	if err := os.WriteFile(cppPath, []byte(newContent), 0644); err != nil {
-		return origBytes, false
+	// Returned in memory only: the working tree is never touched, so a concurrent edit can't be
+	// clobbered by a write-then-restore window.
+	return []byte(strings.TrimRight(strings.Join(outLines, "\n"), "\n\t ") + "\n"), true
+}
+
+// stageBlob stages content as path in the index without touching the working tree.
+func stageBlob(path string, content []byte) error {
+	cmd := exec.Command("git", "hash-object", "-w", "--stdin")
+	cmd.Stdin = bytes.NewReader(content)
+	out, err := cmd.Output()
+	if err != nil {
+		return fmt.Errorf("git hash-object: %v", err)
 	}
-	return origBytes, true
+	sha := strings.TrimSpace(string(out))
+	if out, err := exec.Command("git", "update-index", "--add", "--cacheinfo", "100644,"+sha+","+filepath.ToSlash(path)).CombinedOutput(); err != nil {
+		return fmt.Errorf("git update-index: %v (%s)", err, strings.TrimSpace(string(out)))
+	}
+	return nil
 }
 
 func stageAndCommitSingleUnit(va, symbol, matchedBy, cppPath string, allowedVAs map[string]bool) bool {
@@ -1260,25 +1322,32 @@ func stageAndCommitSingleUnit(va, symbol, matchedBy, cppPath string, allowedVAs 
 	waitForGitIndexLock()
 	_ = exec.Command("git", "reset", "HEAD").Run()
 
-	var origCpp []byte
-	var cppFiltered bool
-	if cppPath != "" {
-		origCpp, cppFiltered = filterCppForCommit(cppPath, allowedVAs)
-		defer func() {
-			if cppFiltered && len(origCpp) > 0 {
-				_ = os.WriteFile(cppPath, origCpp, 0644)
-			}
-		}()
+	if isWipPath(cppPath) {
+		// A WIP file is never committed; the match lives in its shard after the merge.
+		cppPath = lookupCppForVA(va)
 	}
 
 	addArgs := []string{"add", "include/", unitstore.Dir + "/", "README.md"}
-	if cppPath != "" {
-		addArgs = append(addArgs, cppPath)
-	} else {
-		addArgs = append(addArgs, "src/")
+	if cppPath == "" {
+		// Never sweep other agents' in-flight WIP files into this commit (also gitignored).
+		addArgs = append(addArgs, "src/", ":(exclude)src/wip/")
 	}
 	waitForGitIndexLock()
 	_ = exec.Command("git", addArgs...).Run()
+
+	if cppPath != "" {
+		// Stage only this file's matched functions, built in memory; the working tree is untouched.
+		content, filtered := filterCppForCommit(cppPath, allowedVAs)
+		waitForGitIndexLock()
+		if filtered {
+			if err := stageBlob(cppPath, content); err != nil {
+				fmt.Fprintf(os.Stderr, "Warning: failed to stage filtered %s: %v\n", cppPath, err)
+				return false
+			}
+		} else {
+			_ = exec.Command("git", "add", cppPath).Run()
+		}
+	}
 
 	stagedOut, err := exec.Command("git", "diff", "--cached", "--name-only").Output()
 	if err != nil {
@@ -1585,9 +1654,25 @@ func cmdCheck(args []string) {
 	exact, pct, compMasked, tgtMasked := maskAndCompare(compFn, targetBytes, *u, startVA)
 	if exact {
 		if isWip {
-			shardPath := defaultCppFileForUnit(*u, cls)
+			shardPath := wipTargetShard(cppPath)
+			if shardPath == "" {
+				shardPath = defaultCppFileForUnit(*u, cls)
+			}
 			var mergeErrMsg string
 			withWorkLock(func() {
+				// A header edit can break functions in OTHER shards, which the sibling check below
+				// never compiles. In parallel mode we cannot tell whose edit it is, so refuse.
+				if os.Getenv("WORK_ALLOW_HEADER_EDITS") != "1" {
+					if out, err := exec.Command("git", "status", "--porcelain", "--", "include/").Output(); err == nil && strings.TrimSpace(string(out)) != "" {
+						mergeErrMsg = fmt.Sprintf("REJECTED: %s matches, but include/ has uncommitted edits:\n%s\nHeader edits are not allowed in parallel (WIP) mode. Revert them and use raw offsets in %s instead. WIP file left intact.",
+							u.VA, strings.TrimRight(string(out), "\n"), cppPath)
+						return
+					}
+				}
+				// Other agents may have matched functions in this shard since we loaded the ledger.
+				if fresh, _, _, _, _ := loadUnitsAndClasses(); fresh != nil {
+					units = fresh
+				}
 				restore, mergeErr := mergeWipIntoShard(cppPath, shardPath, vaHex, u.Symbol, u.Size)
 				if mergeErr != nil {
 					if restore != nil {
@@ -1789,19 +1874,24 @@ func cmdClean(args []string) {
 					return
 				}
 			}
+			// Clean BOTH places: an agent killed mid-merge can leave its unverified block in the
+			// shard even though the WIP file still exists.
+			cleanedAny := false
 			if wipPath := wipPathForVA(vaHex); wipPath != "" {
 				if err := os.Remove(wipPath); err == nil {
 					fmt.Printf("Cleaned WIP file %s for %s.\n", wipPath, vaHex)
-					return
+					cleanedAny = true
 				}
 			}
-			if cppPath := findCppFileForVA(vaHex); cppPath != "" {
+			if cppPath := lookupCppForVA(vaHex); cppPath != "" && !isWipPath(cppPath) {
 				if ok, _ := stripFunctionFromCpp(filepath.ToSlash(cppPath), vaHex); ok {
 					fmt.Printf("Cleaned stub for %s in %s.\n", vaHex, cppPath)
-					return
+					cleanedAny = true
 				}
 			}
-			fmt.Printf("No stub found for %s.\n", vaHex)
+			if !cleanedAny {
+				fmt.Printf("No stub found for %s.\n", vaHex)
+			}
 		})
 		return
 	}

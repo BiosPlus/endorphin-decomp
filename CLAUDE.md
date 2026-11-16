@@ -12,6 +12,7 @@ Target: `.local/bin/endorphin.exe` (MSVC 2005 RTM `14.00.50727.42`, x86, `/O2 /O
    - Read `CALLING_CONV`, `HEADER_PREVIEW`, and `SUGGESTED_EXTERNS` directly from the output (avoid extra file reads unless needed).
 2. **Implement in C++03 (or `__declspec(naked)` `__asm` when register allocation / instruction selection resists C++03):**
    - Edit only the target `.cpp` file in `src/` (and struct header in `include/` if an offset is required).
+   - **Parallel mode** (`WORK_ISOLATED=1`, the `tools/grind.sh` default): `TARGET_CPP` is your own `src/wip/fn_XXXXXXXX.cpp`. Edit only that file; up to `PER_FILE_CAP` other agents are working in the same shard. Never edit the shard or `include/`, and never run `git add/commit/checkout/restore`. On a match, `work check` merges your file into the shard under a lock, re-verifies every matched sibling, and commits.
    - Keep the `// [0xXXXXXXXX]` marker and `extern "C" ... fn_XXXXXXXX(...)` signature name.
    - Calling conventions:
      - `this` in `ecx` with `ret`: `extern "C" Ret __fastcall fn_XXXXXXXX(Class* self)`
