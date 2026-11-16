@@ -17578,3 +17578,28 @@ LB4A3:
         ret 0x4
     }
 }
+
+// [0x0068BB30] sub_0068BB30 (45 bytes)
+extern "C" void ext_0065C770();
+extern "C" void ext_00687510();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00A14D3C;
+extern "C" __declspec(naked) void __fastcall fn_0068BB30(void* self) {
+    __asm {
+        mov ecx, dword ptr [ebp - 0x14]
+        lea eax, [ebp - 0x30]
+        push eax
+        call ext_00687510
+        mov ecx, dword ptr [ebp + 0x8]
+        push eax
+        push 7
+        push ecx
+        lea ecx, [ebp - 0x64]
+        mov byte ptr [ebp - 0x4], 2
+        call ext_0065C770
+        push offset mem_00A14D3C
+        lea edx, [ebp - 0x64]
+        push edx
+        call ext_006A6DD2
+    }
+}
