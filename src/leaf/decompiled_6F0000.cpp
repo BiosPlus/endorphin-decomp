@@ -6138,3 +6138,24 @@ extern "C" __declspec(naked) void* __fastcall fn_006FD400(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006F8B30] sub_006F8B30 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006F8B30(void* self, int edx_unused, const void* src) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax], edx
+        mov dl, byte ptr [ecx + 0x4]
+        mov byte ptr [eax + 0x4], dl
+        mov dl, byte ptr [ecx + 0x5]
+        mov byte ptr [eax + 0x5], dl
+        mov dl, byte ptr [ecx + 0x6]
+        mov byte ptr [eax + 0x6], dl
+        mov dl, byte ptr [ecx + 0x7]
+        mov byte ptr [eax + 0x7], dl
+        mov cl, byte ptr [ecx + 0x8]
+        mov byte ptr [eax + 0x8], cl
+        ret 0x4
+    }
+}
