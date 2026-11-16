@@ -2711,3 +2711,13 @@ extern "C" __declspec(naked) void __cdecl fn_00859BB0(void) {
         ret
     }
 }
+
+// [0x0085B2C0] sub_0085B2C0 (32 bytes)
+extern "C" void __cdecl fn_0085B2C0(int a1, int a2) {
+    int* p = (int*)ext_00859DA0();
+    if (p) {
+        p[5] = 2;
+        p[1] = a2;
+        p[0] = a1;
+    }
+}
