@@ -3697,3 +3697,21 @@ extern "C" void __cdecl fn_007AC5F0(unsigned char* out) {
     *(int*)(out + 4) = 0;
     *(int*)(out + 8) = 0x1e;
 }
+
+// [0x007AC670] sub_007AC670 (32 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007AC670(void** self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        je done
+        mov eax, dword ptr [esi]
+        push eax
+        call dword ptr [mem_009251D8]
+        add esp, 0x4
+        mov dword ptr [esi], 0x0
+    done:
+        pop esi
+        ret
+    }
+}
