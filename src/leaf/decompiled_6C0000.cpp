@@ -3011,3 +3011,29 @@ L_006C3062:
         ret
     }
 }
+
+// [0x006C3070] sub_006C3070 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C3070(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        xor edi, edi
+        mov ecx, dword ptr [esi + 0x158]
+        test ecx, ecx
+        je short L_006C3092
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax]
+        cmp eax, 2
+        jne short L_006C3092
+        mov eax, dword ptr [esi + 0x158]
+        pop edi
+        pop esi
+        ret
+    L_006C3092:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
