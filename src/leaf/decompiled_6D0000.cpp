@@ -3616,3 +3616,19 @@ L_zero:
         ret
     }
 }
+
+// [0x006DE3B0] sub_006DE3B0 (32 bytes)
+extern "C" void ext_00712000();
+extern "C" void ext_006E7460();
+extern "C" __declspec(naked) void __fastcall fn_006DE3B0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x14]
+        mov ecx, dword ptr [eax + 0x9c]
+        test ecx, ecx
+        je short L_null
+        jmp ext_00712000
+    L_null:
+        mov ecx, eax
+        jmp ext_006E7460
+    }
+}
