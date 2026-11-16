@@ -2844,3 +2844,31 @@ extern "C" int __fastcall fn_00725A60(void* self, int edx_unused, int idx) {
     int* arr = *(int**)((char*)self + 0x1bc);
     return arr[idx];
 }
+
+// [0x00725DE0] sub_00725DE0 (48 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00725DE0(unsigned char* p, unsigned char* q) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        mov dl, 0x40
+        sub esi, ecx
+        mov edi, 0x10
+    loop_00725DF4:
+        mov al, byte ptr [esi + ecx]
+        mov bl, byte ptr [ecx]
+        xor al, bl
+        xor al, dl
+        mov byte ptr [ecx], al
+        inc ecx
+        dec edi
+        mov dl, al
+        jne short loop_00725DF4
+        pop edi
+        pop esi
+        pop ebx
+        ret 8
+    }
+}
