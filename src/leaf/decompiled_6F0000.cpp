@@ -6218,3 +6218,30 @@ fn_006FB520_null:
         ret 4
     }
 }
+
+// [0x006FF730] sub_006FF730 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006FF730(int ch, const unsigned short* s) {
+    __asm {
+        mov edx, dword ptr [esp + 8]
+        xor al, al
+        test edx, edx
+        push esi
+        je done
+        mov si, word ptr [esp + 8]
+loop_top:
+        mov cx, word ptr [edx]
+        test cx, cx
+        je done
+        cmp cx, si
+        je found
+        add edx, 2
+        jne loop_top
+        pop esi
+        ret
+found:
+        mov al, 1
+done:
+        pop esi
+        ret
+    }
+}
