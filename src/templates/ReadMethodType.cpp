@@ -5589,3 +5589,24 @@ extern "C" __declspec(naked) void __fastcall fn_00606C00(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00607230] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, 0>::vfunc_1 (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00607230(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je fail
+        fld dword ptr [eax + 0x50]
+        add esp, 0x28
+        ret 4
+    fail:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
