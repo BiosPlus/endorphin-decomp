@@ -3129,3 +3129,20 @@ extern "C" __declspec(naked) void* __fastcall fn_00783860(void* self) {
         ret
     }
 }
+
+// [0x00789920] sub_00789920 (32 bytes)
+extern "C" void ext_00789980();
+extern "C" __declspec(naked) void __fastcall fn_00789920(void* self) {
+    __asm {
+        cmp dword ptr [ecx + 0xc], 0x1
+        jne short not_match
+        call ext_00789980
+        cmp eax, 0xc704dd7b
+        jne short not_match
+        mov al, 0x1
+        ret
+not_match:
+        xor al, al
+        ret
+    }
+}
