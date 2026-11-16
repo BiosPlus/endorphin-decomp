@@ -5806,3 +5806,11 @@ extern "C" __declspec(naked) void __stdcall fn_006FE010(int a1, int a2) {
         ret 8
     }
 }
+
+// [0x006F7710] sub_006F7710 (32 bytes)
+extern "C" int mem_00AA970C;
+
+extern "C" int __cdecl fn_006F7710(int idx, int sub) {
+    int* base = *(int**)(((int*)&mem_00AA970C) + idx);
+    return base[sub * 3];
+}
