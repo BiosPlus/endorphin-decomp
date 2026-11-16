@@ -3633,3 +3633,18 @@ extern "C" __declspec(naked) void __fastcall fn_007AA950(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x007AA970] sub_007AA970 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007AA970(void* self, int edx_unused, int idx, int val) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        jle skip
+        cmp eax, 0x12
+        jge skip
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 4*eax + 0x194], edx
+    skip:
+        ret 0x8
+    }
+}
