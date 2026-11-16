@@ -2910,3 +2910,31 @@ extern "C" void __cdecl fn_00728D60(char* self) {
         }
     }
 }
+
+// [0x0072B180] sub_0072B180 (48 bytes)
+// [0x0072B180] sub_0072B180 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0072B180(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx]
+        mov ecx, dword ptr [ecx + 4]
+        xor eax, eax
+        xor edx, edx
+        test esi, esi
+        setne dl
+        add edx, 3
+        sub ecx, 40h
+        pop esi
+        je short L_0072B1A3
+        sub ecx, 40h
+        jne short L_0072B1A8
+        shl edx, 0Eh
+        mov eax, edx
+        ret
+    L_0072B1A3:
+        shl edx, 0Ch
+        mov eax, edx
+    L_0072B1A8:
+        ret
+    }
+}
