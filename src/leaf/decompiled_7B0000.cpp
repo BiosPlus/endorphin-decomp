@@ -6067,3 +6067,14 @@ L_7C13B1:
         ret
     }
 }
+
+// [0x007B2210] sub_007B2210 (16 bytes)
+extern "C" void ext_006BA780();
+extern "C" __declspec(naked) void __stdcall fn_007B2210(int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_006BA780
+        ret 4
+    }
+}
