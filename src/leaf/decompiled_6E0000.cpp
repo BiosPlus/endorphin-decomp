@@ -1695,3 +1695,28 @@ done:
         ret 4
     }
 }
+
+// [0x006E6970] sub_006E6970 (48 bytes)
+// [0x006E6970]
+extern "C" __declspec(naked) void __fastcall fn_006E6970(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi]
+        test ecx, ecx
+        je done_6E6970
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx]
+        push edx
+        call dword ptr [eax + 0x78]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je done_6E6970
+        mov eax, dword ptr [ecx]
+        push esi
+        call dword ptr [eax + 0x128]
+done_6E6970:
+        pop esi
+        ret 0x4
+    }
+}
