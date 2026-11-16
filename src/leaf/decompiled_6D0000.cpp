@@ -3945,3 +3945,19 @@ done:
         ret 0x4
     }
 }
+
+// [0x006D9030] sub_006D9030 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D9030(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xc]
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x160], edx
+        mov dword ptr [eax + 0x164], esi
+        mov al, 0x1
+        mov byte ptr [ecx + 0x15], al
+        pop esi
+        ret 0x8
+    }
+}
