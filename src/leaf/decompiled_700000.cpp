@@ -2012,3 +2012,16 @@ extern "C" __declspec(naked) void __fastcall fn_0070BB60(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0070C350] sub_0070C350 (32 bytes)
+extern "C" void ext_0070BE00();
+extern "C" __declspec(naked) void __stdcall fn_0070C350(int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push edx
+        call ext_0070BE00
+        ret 0x8
+    }
+}
