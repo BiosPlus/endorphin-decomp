@@ -2627,3 +2627,12 @@ done_006CA2D0:
         ret 0x4
     }
 }
+
+// [0x006CE060] sub_006CE060 (32 bytes)
+extern "C" int __fastcall fn_006CE060(void* self) {
+    unsigned char* p = static_cast<unsigned char*>(self);
+    *reinterpret_cast<int*>(p + 0x48) = -1;
+    *reinterpret_cast<int*>(p + 0x4c) = 0x7fffffff;
+    *reinterpret_cast<int*>(p + 0x50) = 0;
+    return 0;
+}
