@@ -5341,3 +5341,16 @@ extern "C" __declspec(naked) void __cdecl fn_00869F30(int* dst, int count) {
         ret
     }
 }
+
+// [0x0086CCE0] sub_0086CCE0 (32 bytes)
+extern "C" unsigned char __cdecl fn_0086CCE0(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    unsigned char result = 0;
+    if (p[0] == 0xFE) {
+        unsigned char v = p[1];
+        if (v < 4) {
+            result = v;
+        }
+    }
+    return result;
+}
