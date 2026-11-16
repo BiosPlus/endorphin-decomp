@@ -2933,3 +2933,19 @@ extern "C" __declspec(naked) void __stdcall fn_0071C630(void* self) {
         ret 0x4
     }
 }
+
+// [0x00711BC0] sub_00711BC0 (32 bytes)
+extern "C" int __fastcall fn_00711BC0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x8]
+        test ecx, ecx
+        je short L_null
+        mov eax, dword ptr [ecx]
+        push 0
+        push 0x98abd146
+        call dword ptr [eax]
+        ret
+L_null:
+        xor eax, eax
+    }
+}
