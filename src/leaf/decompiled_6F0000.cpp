@@ -5795,3 +5795,14 @@ extern "C" __declspec(naked) void __fastcall fn_006F5B10(void* self, int edx_unu
         ret     4
     }
 }
+
+// [0x006FE010] sub_006FE010 (16 bytes)
+extern "C" void ext_006FE020();
+extern "C" __declspec(naked) void __stdcall fn_006FE010(int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_006FE020
+        ret 8
+    }
+}
