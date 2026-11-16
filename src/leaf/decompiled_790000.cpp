@@ -4387,3 +4387,15 @@ extern "C" void ext_007990F0(void* a0, void* a1, void* a2);
 extern "C" void __cdecl fn_007990D0(void* a0, void* a1, void* a2) {
     ext_007990F0(a0, a1, &a2);
 }
+
+// [0x0079C3F0] sub_0079C3F0 (32 bytes)
+extern "C" void ext_00782E30();
+extern "C" __declspec(naked) void __fastcall fn_0079C3F0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [ecx + 0xf64]
+        push eax
+        call ext_00782E30
+        ret 0x4
+    }
+}
