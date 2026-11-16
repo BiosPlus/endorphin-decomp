@@ -1373,3 +1373,14 @@ extern "C" void __fastcall fn_006E86C0(void* self, int edx_unused, int a1, int a
     *(int*)(obj + 0x60) = a1;
     *(int*)(obj + 0x64) = a2;
 }
+
+// [0x006E8A20] sub_006E8A20 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006E8A20(int* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [eax], ecx
+        mov dword ptr [eax + 0x4], 0x1
+        ret 0x4
+    }
+}
