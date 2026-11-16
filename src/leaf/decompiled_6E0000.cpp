@@ -1286,3 +1286,15 @@ extern "C" __declspec(naked) void __fastcall fn_006E3FA0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x006E0920] sub_006E0920 (32 bytes)
+extern "C" void* __fastcall fn_006E0920(void* self) {
+    int* p = (int*)self;
+    p[4] = 0;
+    p[2] = 0;
+    p[0] = 0;
+    p[5] = 0;
+    p[3] = 0;
+    p[1] = 0;
+    return self;
+}
