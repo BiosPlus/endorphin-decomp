@@ -2055,3 +2055,16 @@ extern "C" __declspec(naked) void* __fastcall fn_0070E390(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x0070E3B0] sub_0070E3B0 (32 bytes)
+extern "C" void ext_0070E390();
+
+extern "C" __declspec(naked) void __fastcall fn_0070E3B0(void* self, int edx_unused, void* a1) {
+    __asm {
+        add ecx, 0xd0
+        push ecx
+        mov ecx, dword ptr [esp + 0x8]
+        call ext_0070E390
+        ret 0x4
+    }
+}
