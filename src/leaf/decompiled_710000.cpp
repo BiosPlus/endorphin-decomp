@@ -3489,3 +3489,16 @@ extern "C" int __fastcall fn_00718030(void* self) {
     }
     return eax;
 }
+
+// [0x00718060] sub_00718060 (48 bytes)
+// [0x00718060] sub_00718060 (48 bytes)
+extern "C" int __fastcall fn_00718060(void* self) {
+    unsigned char* p = (unsigned char*)self;
+    int edx = *(int*)(p + 0x1ac);
+    int eax = *(int*)(p + 0x1b4) + edx;
+    int ecx = *(int*)(p + 0x1c4);
+    if (ecx == 0 || ecx == 1) {
+        eax = eax + edx - 1;
+    }
+    return eax;
+}
