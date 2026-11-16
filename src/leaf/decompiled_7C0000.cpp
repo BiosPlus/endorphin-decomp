@@ -19411,3 +19411,25 @@ extern "C" void __cdecl fn_007C1450(void* self) {
     *(int*)(p + 0x48) = 0x99a458;
     *(int*)(p + 0x50) = 0x5;
 }
+
+// [0x007C1750] sub_007C1750 (48 bytes)
+extern "C" void ext_007C1780();
+extern "C" __declspec(naked) void __cdecl fn_007C1750() {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x8]
+        push eax
+        mov eax, dword ptr [esp + 0x8]
+        push ecx
+        push 0
+        push 8
+        push 0xf
+        push 8
+        push edx
+        push eax
+        call ext_007C1780
+        add esp, 0x20
+        ret
+    }
+}
