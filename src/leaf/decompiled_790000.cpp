@@ -4260,3 +4260,23 @@ extern "C" void __fastcall fn_00790E00(void* self, int edx_unused, int a1) {
     *(int*)(p + 0x20) = a1;
     *(int*)(p + 0x28) = 0;
 }
+
+// [0x0079B140] sub_0079B140 (32 bytes)
+extern "C" int mem_00AAFC2C;
+extern "C" __declspec(naked) void __fastcall fn_0079B140(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00AAFC2C]
+        test eax, eax
+        je done
+        mov edx, dword ptr [esp + 8]
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, dword ptr [esp + 8]
+        push edx
+        push ecx
+        call eax
+        add esp, 0xc
+    done:
+        ret
+    }
+}
