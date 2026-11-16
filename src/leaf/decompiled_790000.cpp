@@ -4399,3 +4399,22 @@ extern "C" __declspec(naked) void __fastcall fn_0079C3F0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0079E8A0] sub_0079E8A0 (32 bytes)
+extern "C" void __stdcall ext_0079E6F0(int a, int b);
+extern "C" int mem_00B61144;
+
+extern "C" __declspec(naked) void __cdecl fn_0079E8A0(int a, int b) {
+    __asm {
+        mov ecx, dword ptr [mem_00B61144]
+        test ecx, ecx
+        je done
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push edx
+        call ext_0079E6F0
+done:
+        ret
+    }
+}
