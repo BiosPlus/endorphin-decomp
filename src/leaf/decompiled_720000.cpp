@@ -2602,3 +2602,13 @@ extern "C" __declspec(naked) void __fastcall fn_0072DEF0(void* self) {
         ret 0xc
     }
 }
+
+// [0x00724FA0] sub_00724FA0 (16 bytes)
+extern "C" void ext_00724FE0();
+extern "C" __declspec(naked) void __cdecl fn_00724FA0() {
+    __asm {
+        push 0x0
+        call ext_00724FE0
+        ret
+    }
+}
