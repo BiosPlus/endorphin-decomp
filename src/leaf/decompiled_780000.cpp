@@ -3110,3 +3110,22 @@ extern "C" int __stdcall fn_0078C260(int a1) {
     int esi = a1;
     return esi - ext_0078C240(esi);
 }
+
+// [0x00783860] sub_00783860 (32 bytes)
+extern "C" void ext_006D2130();
+
+extern "C" __declspec(naked) void* __fastcall fn_00783860(void* self) {
+    __asm {
+        push esi
+        push 4
+        mov esi, ecx
+        push 0x10
+        call ext_006D2130
+        lea eax, [esi + 0x10]
+        mov dword ptr [esi + 0x18], 0
+        mov dword ptr [esi + 0x14], eax
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
