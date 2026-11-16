@@ -2646,3 +2646,17 @@ extern "C" __declspec(naked) int __fastcall fn_00724FB0(void* self) {
         ret
     }
 }
+
+// [0x007266A0] sub_007266A0 (32 bytes)
+extern "C" void ext_006BC380();
+extern "C" __declspec(naked) void __fastcall fn_007266A0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x250]
+        test ecx, ecx
+        je fn_007266A0_zero
+        jmp ext_006BC380
+fn_007266A0_zero:
+        xor eax, eax
+        ret
+    }
+}
