@@ -2880,3 +2880,12 @@ extern "C" __declspec(naked) void __cdecl fn_00711A50() {
         ret
     }
 }
+
+// [0x00711A60] sub_00711A60 (16 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00711A60() {
+    __asm {
+        push 0x1
+        call ext_00711A20
+        ret
+    }
+}
