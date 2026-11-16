@@ -6261,3 +6261,30 @@ extern "C" __declspec(naked) void __fastcall fn_006F2260(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006FA400] sub_006FA400 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FA400(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        call ext_006FA3B0
+        mov esi, eax
+        mov ecx, edi
+        dec esi
+        push esi
+        call ext_006FA3C0
+        test esi, esi
+        jne done
+        test dword ptr [edi + 0x34], 0x10000
+        je done
+        mov eax, dword ptr [edi]
+        push esi
+        mov ecx, edi
+        call dword ptr [eax + 0x4]
+done:
+        pop edi
+        pop esi
+        ret
+    }
+}
