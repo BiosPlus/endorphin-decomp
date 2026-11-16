@@ -3663,3 +3663,15 @@ extern "C" __declspec(naked) void __fastcall fn_007AAA00(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x007AB720] sub_007AB720 (32 bytes)
+extern "C" void ext_007857F0();
+extern "C" __declspec(naked) void __fastcall fn_007AB720(void* self) {
+    __asm {
+        xor eax, eax
+        mov dword ptr [ecx + 0x78], eax
+        mov dword ptr [ecx + 0x7c], 0x3ff00000
+        mov byte ptr [ecx + 0x84], al
+        jmp ext_007857F0
+    }
+}
