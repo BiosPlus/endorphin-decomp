@@ -2612,3 +2612,14 @@ extern "C" __declspec(naked) void __cdecl fn_00724FA0() {
         ret
     }
 }
+
+// [0x00724FD0] sub_00724FD0 (16 bytes)
+extern "C" __declspec(naked) void __stdcall fn_00724FD0(int) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        inc eax
+        push eax
+        call ext_00724FE0
+        ret 0x4
+    }
+}
