@@ -1455,3 +1455,31 @@ extern "C" __declspec(naked) int __fastcall fn_004B9B80(void* self, int edx_unus
         call ext_006A6DD2
     }
 }
+
+// [0x004D4DC0] ExprParser::DynamicEnumType<NMData::RigEventData, {public: int __thiscall NMData::RigEventData::getTypeNameIndex(void) const, 0}, {public: void __thiscall NMData::RigEventData::setTypeNameIndex(int), 0}, {private: int __thiscall NMData::RigEventData::getNumAvailableTypes(void) const, 0}, {private: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::RigEventData::getAvailableRigTypeName(int) const, 0}>::vfunc_3 (53 bytes)
+extern "C" void ext_004D3CE0();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) int __fastcall fn_004D4DC0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je throw_path
+        call ext_004D3CE0
+        neg eax
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 0x4
+    throw_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
