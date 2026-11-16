@@ -2217,3 +2217,25 @@ extern "C" __declspec(naked) void __fastcall fn_0077F620(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0077FB10] sub_0077FB10 (48 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_0077FB10(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        fld qword ptr [edx]
+        fcomp qword ptr [ecx]
+        fnstsw ax
+        test ah, 0x40
+        je L_77FB10_ne
+        fld qword ptr [edx + 0x8]
+        fcomp qword ptr [ecx + 0x8]
+        fnstsw ax
+        test ah, 0x40
+        je L_77FB10_ne
+        xor eax, eax
+        ret 0x4
+    L_77FB10_ne:
+        mov eax, 0x1
+        ret 0x4
+    }
+}
