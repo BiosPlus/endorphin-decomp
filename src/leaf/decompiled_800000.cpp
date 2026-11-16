@@ -7571,3 +7571,29 @@ extern "C" __declspec(naked) void __cdecl fn_0080FEF0(void* a1) {
         ret
     }
 }
+
+// [0x0080C6A0] sub_0080C6A0 (48 bytes)
+extern "C" __declspec(naked) void* __cdecl fn_0080C6A0(void* p, unsigned int n) {
+    __asm {
+        mov eax, dword ptr [esp+8]
+        cmp eax, 1
+        jbe L_small
+        lea edx, [eax-1]
+        mov eax, dword ptr [esp+4]
+        xor ecx, ecx
+        test edx, edx
+        jbe L_done
+L_loop:
+        test eax, eax
+        je L_done
+        mov eax, dword ptr [eax]
+        inc ecx
+        cmp ecx, edx
+        jb L_loop
+        ret
+L_small:
+        mov eax, dword ptr [esp+4]
+L_done:
+        ret
+    }
+}
