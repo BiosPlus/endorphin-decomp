@@ -173,3 +173,37 @@ extern "C" __declspec(naked) int __cdecl fn_00810270(void) {
         ret
     }
 }
+
+// [0x008110F0] sub_008110F0 (32 bytes)
+extern "C" __declspec(naked) int __cdecl fn_008110F0(int c) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        __asm _emit 0x83
+        __asm _emit 0xf8
+        __asm _emit 0x61
+        __asm _emit 0x7c
+        __asm _emit 0x08
+        __asm _emit 0x83
+        __asm _emit 0xf8
+        __asm _emit 0x7a
+        __asm _emit 0x7f
+        __asm _emit 0x03
+        __asm _emit 0x83
+        __asm _emit 0xc0
+        __asm _emit 0xe0
+        __asm _emit 0xc3
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
