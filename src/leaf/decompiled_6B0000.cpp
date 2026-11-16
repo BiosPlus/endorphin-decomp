@@ -9191,3 +9191,22 @@ extern "C" __declspec(naked) void __stdcall fn_006BA7C0(int a1) {
 extern "C" int __stdcall fn_006BA7E0(int a1) {
     return ((int (__stdcall*)(int))ext_006BA660)(a1) != 0;
 }
+
+// [0x006BB5D0] sub_006BB5D0 (32 bytes)
+extern "C" void ext_006B9D80();
+
+extern "C" __declspec(naked) void* __fastcall fn_006BB5D0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 0x00B5D2C0
+        call ext_006B9D80
+        xor eax, eax
+        mov dword ptr [esi + 0x50], eax
+        mov dword ptr [esi + 0x54], eax
+        mov byte ptr [esi + 0x58], al
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
