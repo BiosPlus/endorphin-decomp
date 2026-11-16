@@ -3840,3 +3840,27 @@ done:
         ret
     }
 }
+
+// [0x007A95C0] sub_007A95C0 (48 bytes)
+extern "C" int mem_00998070;
+
+extern "C" __declspec(naked) void __cdecl fn_007A95C0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        jne L_7a95dc
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7a95e4
+    L_7a95dc:
+        mov al, byte ptr [mem_00998070]
+        mov byte ptr [esi + 0x4], al
+    L_7a95e4:
+        pop esi
+        ret
+    }
+}
