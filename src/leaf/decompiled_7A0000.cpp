@@ -3728,3 +3728,24 @@ extern "C" __declspec(naked) void __cdecl fn_007AEFD0(void* self) {
         ret
     }
 }
+
+// [0x007AD5C0] sub_007AD5C0 (32 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_007AD590();
+
+extern "C" __declspec(naked) void* __fastcall fn_007AD5C0(void* self, int edx_unused, int flag) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_007AD590
+        test byte ptr [esp + 0x8], 0x1
+        je done
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+    done:
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
