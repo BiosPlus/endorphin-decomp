@@ -2116,3 +2116,17 @@ extern "C" void __fastcall fn_0077FE20(void* self) {
         ((void (__cdecl*)(void*))ext_006A5C5C)(p);
     }
 }
+
+// [0x0077FE70] sub_0077FE70 (32 bytes)
+extern "C" void ext_00780160();
+extern "C" void ext_007802A0();
+extern "C" __declspec(naked) void __cdecl fn_0077FE70(void* a) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_007802A0
+        mov ecx, eax
+        call ext_00780160
+        ret
+    }
+}
