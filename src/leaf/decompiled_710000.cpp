@@ -3401,3 +3401,31 @@ clear_bits:
         ret 8
     }
 }
+
+// [0x007148E0] sub_007148E0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007148E0(void* self) {
+    __asm {
+        cmp byte ptr [ecx], 0
+        jne ret1
+        mov al, byte ptr [ecx + 1]
+        test al, al
+        jne ret1
+        mov al, byte ptr [ecx + 2]
+        test al, al
+        jne ret1
+        mov al, byte ptr [ecx + 3]
+        test al, al
+        jne ret1
+        mov al, byte ptr [ecx + 4]
+        test al, al
+        jne ret1
+        mov al, byte ptr [ecx + 5]
+        test al, al
+        jne ret1
+        xor al, al
+        ret
+ret1:
+        mov al, 1
+        ret
+    }
+}
