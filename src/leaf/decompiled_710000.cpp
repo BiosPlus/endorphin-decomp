@@ -3521,3 +3521,22 @@ extern "C" __declspec(naked) void __fastcall fn_0071C700(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0071C870] sub_0071C870 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0071C870(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        jne short L_71C885
+        mov eax, dword ptr [ecx + 0xc]
+        mov byte ptr [eax + 0x18d8], 0x1
+        ret 0x4
+    L_71C885:
+        cmp eax, 0x1
+        jne short L_71C894
+        mov ecx, dword ptr [ecx + 0xc]
+        mov byte ptr [ecx + 0x18d8], 0x0
+    L_71C894:
+        ret 0x4
+    }
+}
