@@ -3186,3 +3186,23 @@ extern "C" __declspec(naked) void __fastcall fn_00728230(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x00728D90] sub_00728D90 (48 bytes)
+extern "C" void ext_006FC700();
+extern "C" void ext_0078CC10();
+extern "C" int mem_00B60018;
+extern "C" __declspec(naked) void __cdecl fn_00728D90() {
+    __asm {
+        mov eax, dword ptr [mem_00B60018]
+        test eax, eax
+        jne short L_skip_00728DA3
+        call ext_006FC700
+        call ext_0078CC10
+    L_skip_00728DA3:
+        mov eax, dword ptr [mem_00B60018]
+        inc eax
+        mov dword ptr [mem_00B60018], eax
+        mov al, 1
+        ret
+    }
+}
