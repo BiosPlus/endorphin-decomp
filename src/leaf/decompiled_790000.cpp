@@ -4522,3 +4522,24 @@ extern "C" __declspec(naked) int __cdecl fn_0079EB80(int v) {
         ret
     }
 }
+
+// [0x00798F60] sub_00798F60 (48 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00798F60(void* a, const char* s) {
+    __asm {
+        mov edx, dword ptr [esp + 8]
+        push edi
+        mov edi, edx
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        mov eax, dword ptr [esp + 8]
+        not ecx
+        push ecx
+        push edx
+        push eax
+        call ext_00798F10
+        add esp, 0Ch
+        pop edi
+        ret
+    }
+}
