@@ -4365,3 +4365,19 @@ extern "C" __declspec(naked) void __cdecl fn_00798F90() {
         ret
     }
 }
+
+// [0x00798FB0] sub_00798FB0 (32 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00798FB0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x8]
+        lea ecx, [eax + eax]
+        mov eax, dword ptr [esp + 0x4]
+        push ecx
+        push edx
+        push eax
+        call ext_00798F10
+        add esp, 0xc
+        ret
+    }
+}
