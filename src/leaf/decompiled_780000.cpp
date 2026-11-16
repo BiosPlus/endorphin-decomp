@@ -3063,3 +3063,9 @@ L_null:
         jmp dword ptr [edx + 56]
     }
 }
+
+// [0x0078D4C0] sub_0078D4C0 (32 bytes)
+extern "C" int __fastcall fn_0078D4C0(void* self, int edx_unused, int a1, int a2) {
+    int* row = *(int**)((char*)self + a1 * 24 + 0x10);
+    return *(int*)row[a2];
+}
