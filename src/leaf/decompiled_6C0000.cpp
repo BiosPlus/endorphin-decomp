@@ -3311,3 +3311,22 @@ extern "C" __declspec(naked) void __fastcall fn_006C9D70(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006C9DC0] sub_006C9DC0 (48 bytes)
+extern "C" float mem_0099381C;
+
+extern "C" __declspec(naked) float __fastcall fn_006C9DC0(void* self, int edx_unused, int idx) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, 0x2
+        jge scaled
+        fld dword ptr [ecx + 4*eax + 0x14]
+        ret 0x4
+scaled:
+        movsx eax, word ptr [ecx + 2*eax + 0x18]
+        mov dword ptr [esp + 0x4], eax
+        fild dword ptr [esp + 0x4]
+        fmul dword ptr [mem_0099381C]
+        ret 0x4
+    }
+}
