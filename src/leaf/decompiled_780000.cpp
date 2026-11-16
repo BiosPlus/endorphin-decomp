@@ -3258,3 +3258,27 @@ extern "C" __declspec(naked) int __cdecl fn_00782BA0(int arg) {
         ret
     }
 }
+
+// [0x00782BD0] sub_00782BD0 (48 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00782BD0(int arg) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        sub eax, 0
+        je L_zero
+        dec eax
+        je L_one
+        dec eax
+        je L_two
+        xor eax, eax
+        ret
+    L_two:
+        mov eax, 0xaaf2fc
+        ret
+    L_one:
+        mov eax, 0xaaf2f4
+        ret
+    L_zero:
+        mov eax, 0xaaf2bc
+        ret
+    }
+}
