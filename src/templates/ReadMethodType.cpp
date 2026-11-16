@@ -5652,3 +5652,24 @@ extern "C" __declspec(naked) void __fastcall fn_00614290(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x006173F0] ExprParser::ReadMethodType<NMData::HingeLimit, float, &public: float __thiscall NMData::HingeLimit::getUpperStiffness(void) const, 0>::vfunc_1 (45 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006173F0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je fail
+        fld dword ptr [eax + 0xc]
+        add esp, 0x28
+        ret 4
+    fail:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
