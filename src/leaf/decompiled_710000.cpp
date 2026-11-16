@@ -3359,3 +3359,24 @@ extern "C" __declspec(naked) void __fastcall fn_00710F50(void* self) {
         ret
     }
 }
+
+// [0x00710F80] sub_00710F80 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00710F80(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov al, byte ptr [esp + 0x8]
+        test al, al
+        je short L_clear_00710F80
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx]
+        or edx, eax
+        mov dword ptr [ecx], edx
+        ret 0x8
+    L_clear_00710F80:
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [ecx]
+        not edx
+        and eax, edx
+        mov dword ptr [ecx], eax
+        ret 0x8
+    }
+}
