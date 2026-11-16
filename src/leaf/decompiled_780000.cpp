@@ -3069,3 +3069,18 @@ extern "C" int __fastcall fn_0078D4C0(void* self, int edx_unused, int a1, int a2
     int* row = *(int**)((char*)self + a1 * 24 + 0x10);
     return *(int*)row[a2];
 }
+
+// [0x00782F00] sub_00782F00 (32 bytes)
+extern "C" void ext_00782F70();
+extern "C" __declspec(naked) void* __fastcall fn_00782F00(void* self, int edx_unused, int idx) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_00782F70
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        lea eax, [eax + 8*ecx + 0x4]
+        ret 0x4
+    }
+}
