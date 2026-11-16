@@ -2366,3 +2366,12 @@ extern "C" void __fastcall fn_00702430(void* self, int edx_unused, int a1, int a
     *(int*)(p + 0x100) = a2;
     *(int*)(p + 0x104) = a4;
 }
+
+// [0x00702750] sub_00702750 (48 bytes)
+extern "C" void __fastcall fn_00702750(void* self, int edx_unused, int a1, int a2) {
+    char* p = (char*)self;
+    char* sub = *(char**)(p + 0x268);
+    *(int*)(sub + 0x490) = a1;
+    sub = *(char**)(p + 0x268);
+    *(int*)(sub + 0x518) = a2;
+}
