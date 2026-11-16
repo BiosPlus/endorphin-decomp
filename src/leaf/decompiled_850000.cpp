@@ -2881,3 +2881,34 @@ extern "C" __declspec(naked) void __cdecl fn_00859DD0(void* self) {
         ret
     }
 }
+
+// [0x008599F0] sub_008599F0 (48 bytes)
+extern "C" void ext_0086CCE0();
+
+extern "C" __declspec(naked) int __cdecl fn_008599F0(const char* s) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push esi
+        call ext_0086CCE0
+        add esp, 0x4
+        cmp al, 0x1
+        je ret_field
+        mov cl, byte ptr [esi]
+        xor eax, eax
+        test cl, cl
+        je done
+loop_top:
+        mov cl, byte ptr [eax + esi + 0x1]
+        inc eax
+        test cl, cl
+        jne loop_top
+        pop esi
+        ret
+ret_field:
+        mov eax, dword ptr [esi + 0x8]
+done:
+        pop esi
+        ret
+    }
+}
