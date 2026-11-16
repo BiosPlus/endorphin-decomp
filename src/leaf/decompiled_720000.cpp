@@ -2623,3 +2623,11 @@ extern "C" __declspec(naked) void __stdcall fn_00724FD0(int) {
         ret 0x4
     }
 }
+
+// [0x00722020] sub_00722020 (32 bytes)
+extern "C" int mem_00B5FFB8;
+extern "C" int mem_00B5FFBC;
+extern "C" void __cdecl fn_00722020(int* dst) {
+    dst[0] = mem_00B5FFB8;
+    dst[1] = mem_00B5FFBC;
+}
