@@ -5302,3 +5302,25 @@ extern "C" __declspec(naked) void __fastcall fn_008692F0(void* self) {
         ret
     }
 }
+
+// [0x00869310] sub_00869310 (32 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00869310(unsigned char* dst, const unsigned char* src, unsigned int count) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        test esi, esi
+        je done_00869310
+        mov ecx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x8]
+    copy_00869310:
+        mov dl, byte ptr [ecx]
+        mov byte ptr [eax], dl
+        inc eax
+        inc ecx
+        dec esi
+        jne copy_00869310
+    done_00869310:
+        pop esi
+        ret
+    }
+}
