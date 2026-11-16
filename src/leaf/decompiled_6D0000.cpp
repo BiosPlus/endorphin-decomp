@@ -3639,3 +3639,21 @@ extern "C" void ext_006D20C0(...);
 extern "C" void __cdecl fn_006D2110(int a, int b, int c) {
     ext_006D20C0(a, 0, b, c);
 }
+
+// [0x006D2300] sub_006D2300 (32 bytes)
+extern "C" void ext_006D2280();
+extern "C" __declspec(naked) void __fastcall fn_006D2300(void* self, int edx_unused, int n) {
+    __asm {
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [esp + 0x4]
+        cmp eax, edx
+        jle store
+        sub eax, edx
+        push eax
+        call ext_006D2280
+        ret 0x4
+    store:
+        mov dword ptr [ecx], eax
+        ret 0x4
+    }
+}
