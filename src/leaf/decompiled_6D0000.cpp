@@ -3844,3 +3844,23 @@ skip_free:
         ret
     }
 }
+
+// [0x006D24A0] sub_006D24A0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D24A0(void* self, int edx_unused, double s) {
+    __asm {
+        fld qword ptr [esp + 0x4]
+        mov eax, ecx
+        fld st(0)
+        fmul qword ptr [eax]
+        fstp qword ptr [eax]
+        fld st(0)
+        fmul qword ptr [eax + 0x8]
+        fstp qword ptr [eax + 0x8]
+        fld st(0)
+        fmul qword ptr [eax + 0x10]
+        fstp qword ptr [eax + 0x10]
+        fmul qword ptr [eax + 0x18]
+        fstp qword ptr [eax + 0x18]
+        ret 0x8
+    }
+}
