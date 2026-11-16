@@ -3565,3 +3565,25 @@ L_else_00789590:
         ret
     }
 }
+
+// [0x0078C410] sub_0078C410 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0078C410(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x20]
+        test eax, eax
+        je ret53
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [ecx + 0x28]
+        cmp edx, esi
+        pop esi
+        jge ret53
+        mov ecx, dword ptr [ecx + 0x2c]
+        mov edx, dword ptr [ecx + 4*edx]
+        mov al, byte ptr [edx + eax - 1]
+        ret 4
+ret53:
+        mov al, 0x53
+        ret 4
+    }
+}
