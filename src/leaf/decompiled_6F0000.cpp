@@ -6245,3 +6245,19 @@ done:
         ret
     }
 }
+
+// [0x006F2260] sub_006F2260 (48 bytes)
+extern "C" void ext_00711D40();
+extern "C" __declspec(naked) void __fastcall fn_006F2260(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push 0x6f83a0
+        push 0x6f8550
+        push eax
+        push edx
+        add ecx, 0x6600
+        call ext_00711D40
+        ret 0x8
+    }
+}
