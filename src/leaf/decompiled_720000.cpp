@@ -2722,3 +2722,21 @@ L_0072CF27:
         ret 4
     }
 }
+
+// [0x0072B2D0] sub_0072B2D0 (32 bytes)
+extern "C" void ext_006FE010();
+extern "C" __declspec(naked) void __fastcall fn_0072B2D0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x8]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006FE010
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
