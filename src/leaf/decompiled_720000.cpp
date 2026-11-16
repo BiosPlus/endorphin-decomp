@@ -2675,3 +2675,19 @@ done:
         ret 0x8
     }
 }
+
+// [0x0072CED0] sub_0072CED0 (32 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0072CED0(void* self, int edx_unused, int idx) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        test eax, eax
+        jl zero_path
+        cmp eax, 0x6
+        jge zero_path
+        mov eax, dword ptr [ecx + 4*eax + 0x1b8]
+        ret 0x4
+zero_path:
+        xor eax, eax
+        ret 0x4
+    }
+}
