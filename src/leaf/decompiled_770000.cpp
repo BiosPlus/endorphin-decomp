@@ -1953,3 +1953,11 @@ extern "C" __declspec(naked) void __stdcall fn_0077F010(int a1) {
         ret 4
     }
 }
+
+// [0x0077FAF0] sub_0077FAF0 (32 bytes)
+extern "C" void __fastcall fn_0077FAF0(int* self, int edx_unused, int a, int b, int c, int d) {
+    self[0] = a;
+    self[1] = b;
+    self[2] = c;
+    self[3] = d;
+}
