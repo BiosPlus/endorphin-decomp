@@ -934,3 +934,27 @@ extern "C" __declspec(naked) void __stdcall fn_00761710(void* arg) {
         ret 0x4
     }
 }
+
+// [0x00766210] sub_00766210 (48 bytes)
+extern "C" void ext_006D2A30();
+extern "C" __declspec(naked) void __stdcall fn_00766210(void* self, double scale) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp+0xc]
+        xor esi, esi
+loop_00766218:
+        mov ecx, edi
+        call ext_006D2A30
+        fld qword ptr [esp+0x10]
+        fmul qword ptr [eax+esi]
+        add eax, esi
+        add esi, 8
+        cmp esi, 0x80
+        fstp qword ptr [eax]
+        jl loop_00766218
+        pop edi
+        pop esi
+        ret 0xc
+    }
+}
