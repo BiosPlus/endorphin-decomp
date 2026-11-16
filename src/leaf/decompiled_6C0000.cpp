@@ -3396,3 +3396,23 @@ done:
         ret 0x4
     }
 }
+
+extern "C" void ext_006D2390();
+
+// [0x006C2CB0] sub_006C2CB0 (48 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006C2CB0(void* self, int edx_unused, void* arg) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        add ecx, 0x118
+        mov dword ptr [esp + 0x4], 0
+        push ecx
+        mov ecx, esi
+        call ext_006D2390
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
