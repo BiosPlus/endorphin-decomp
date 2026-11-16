@@ -2002,3 +2002,15 @@ extern "C" __declspec(naked) void __fastcall fn_0077FF90(void* self) {
         _emit 0x00
     }
 }
+
+// [0x0077FFB0] sub_0077FFB0 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0077FFB0(void* self, int edx_unused, int idx) {
+    __asm {
+        mov eax, dword ptr [ecx]
+        mov ecx, dword ptr [esp + 0x4]
+        shl ecx, 0x4
+        mov edx, dword ptr [eax + 0x4]
+        fld qword ptr [edx + ecx + 0x8]
+        ret 0x8
+    }
+}
