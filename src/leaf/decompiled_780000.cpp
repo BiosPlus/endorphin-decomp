@@ -3146,3 +3146,20 @@ not_match:
         ret
     }
 }
+
+// [0x0078D720] sub_0078D720 (32 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0078D720(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        push 0x4
+        mov esi, ecx
+        push eax
+        call ext_006D2130
+        lea ecx, [esi + 0x10]
+        mov eax, esi
+        mov dword ptr [esi + 0x14], ecx
+        pop esi
+        ret 0x4
+    }
+}
