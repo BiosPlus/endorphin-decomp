@@ -3473,3 +3473,27 @@ loc_fallback:
         ret 0x4
     }
 }
+
+// [0x006C9900] sub_006C9900 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C9900(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x8]
+        push eax
+        mov eax, dword ptr [esp + 0x8]
+        push edx
+        push eax
+        call ext_006C9960
+        test eax, eax
+        je short loc_fail
+        mov ecx, eax
+        call ext_006CA6A0
+        test eax, eax
+        je short loc_fail
+        mov al, 0x1
+        ret 0xc
+loc_fail:
+        xor al, al
+        ret 0xc
+    }
+}
