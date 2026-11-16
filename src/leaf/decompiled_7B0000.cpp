@@ -6223,3 +6223,28 @@ extern "C" __declspec(naked) void __fastcall fn_007B8E30(void* self) {
         __asm _emit 0x90
     }
 }
+
+// [0x007B2CA0] sub_007B2CA0 (48 bytes)
+// [0x007B2CA0]
+extern "C" __declspec(naked) void __cdecl fn_007B2CA0(int** p, int v) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push esi
+        call ext_007B2C20
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je write_out
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je skip_out
+write_out:
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax], ecx
+skip_out:
+        pop esi
+        ret
+    }
+}
