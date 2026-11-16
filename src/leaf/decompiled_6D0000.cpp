@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_6D0000.cpp
 
 #include <math.h>
+#include <stdlib.h>
 extern "C" void ext_006A5C62();
 extern "C" void ext_006BBCC0();
 extern "C" void ext_006D2170();
@@ -3820,5 +3821,26 @@ extern "C" __declspec(naked) void __fastcall fn_006D2130(void* self, int edx_unu
     skip_clamp_6D2130:
         mov dword ptr [eax + 0x8], ecx
         ret 0x8
+    }
+}
+
+// [0x006D2250] sub_006D2250 (48 bytes)
+extern "C" int mem_009251D8;
+extern "C" __declspec(naked) void __fastcall fn_006D2250(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x10]
+        test eax, eax
+        je skip_free
+        push eax
+        call dword ptr [mem_009251D8]
+        add esp, 0x4
+        mov dword ptr [esi + 0x10], 0x0
+skip_free:
+        mov dword ptr [esi], 0x0
+        mov dword ptr [esi + 0x4], 0x0
+        pop esi
+        ret
     }
 }
