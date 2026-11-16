@@ -1808,3 +1808,24 @@ extern "C" __declspec(naked) void __fastcall fn_006E72A0(void* self) {
         ret
     }
 }
+
+// [0x006E8E20] sub_006E8E20 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006E8E20(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        test eax, eax
+        jl short L_006E8E38
+        cmp eax, dword ptr [ecx + 0x1c]
+        jge short L_006E8E38
+        mov ecx, dword ptr [ecx + 0x2c]
+        mov edx, dword ptr [ecx + 4*eax]
+        mov eax, dword ptr [edx]
+        ret 4
+L_006E8E38:
+        push 3
+        add ecx, 0x94
+        call ext_006E7440
+        xor eax, eax
+        ret 4
+    }
+}
