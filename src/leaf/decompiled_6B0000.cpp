@@ -9439,3 +9439,25 @@ extern "C" int __fastcall fn_006BB120(void* self, int edx_unused, int idx) {
     int* arr = *(int**)((char*)self + 0xac);
     return arr[idx];
 }
+
+// [0x006BD210] sub_006BD210 (48 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006BD210(int* self, int edx_unused, int* other) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [ecx]
+        mov edx, dword ptr [eax]
+        cmp edx, esi
+        pop esi
+        jne fn_006BD210_ne
+        mov eax, dword ptr [eax + 4]
+        mov edx, dword ptr [ecx + 4]
+        cmp eax, edx
+        jne fn_006BD210_ne
+        mov eax, 1
+        ret 4
+    fn_006BD210_ne:
+        xor eax, eax
+        ret 4
+    }
+}
