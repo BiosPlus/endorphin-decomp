@@ -2636,3 +2636,18 @@ extern "C" int __fastcall fn_006CE060(void* self) {
     *reinterpret_cast<int*>(p + 0x50) = 0;
     return 0;
 }
+
+// [0x006CE080] sub_006CE080 (32 bytes)
+// [0x006CE080]
+extern "C" __declspec(naked) void __fastcall fn_006CE080(void* self, int edx_unused, int a1, int a2, double d) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        fld qword ptr [esp + 0xc]
+        mov dword ptr [ecx + 0x48], eax
+        mov dword ptr [ecx + 0x4c], edx
+        fstp dword ptr [ecx + 0x50]
+        xor eax, eax
+        ret 0x10
+    }
+}
