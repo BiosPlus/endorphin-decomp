@@ -2280,3 +2280,22 @@ skip_00747580:
         ret 0x8
     }
 }
+
+// [0x00747FA0] sub_00747FA0 (48 bytes)
+extern "C" void ext_006C27E0();
+extern "C" __declspec(naked) void __fastcall fn_00747FA0(void* self, int edx_unused, int a1, int* a2) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [ecx + 0x4]
+        push 0x0
+        mov edx, dword ptr [edx]
+        mov eax, dword ptr [ecx]
+        push edx
+        call dword ptr [eax + 0xa8]
+        mov ecx, dword ptr [esp + 0x4]
+        push ecx
+        mov ecx, eax
+        call ext_006C27E0
+        ret 0x8
+    }
+}
