@@ -1917,3 +1917,28 @@ extern "C" __declspec(naked) void __fastcall fn_006E40C0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006E8440] sub_006E8440 (48 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void __fastcall ext_006E8470(void* self);
+
+extern "C" __declspec(naked) void __fastcall fn_006E8440(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi]
+        test esi, esi
+        je done_006E8440
+        mov ecx, esi
+        call ext_006E8470
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+    done_006E8440:
+        mov dword ptr [edi], 0
+        pop edi
+        pop esi
+        ret
+    }
+}
