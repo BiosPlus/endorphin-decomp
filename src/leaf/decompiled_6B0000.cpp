@@ -9430,3 +9430,12 @@ extern "C" __declspec(naked) int __fastcall fn_006BA2F0(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x006BB120] sub_006BB120 (48 bytes)
+extern "C" int __fastcall fn_006BB120(void* self, int edx_unused, int idx) {
+    if (idx < 0 || idx >= *(int*)((char*)self + 0x9c)) {
+        return 0;
+    }
+    int* arr = *(int**)((char*)self + 0xac);
+    return arr[idx];
+}
