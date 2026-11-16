@@ -2601,3 +2601,14 @@ L_m5:
         ret
     }
 }
+
+// [0x0085BFE0] sub_0085BFE0 (16 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0085BFE0(void* a) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push eax
+        call ext_00859730
+        pop ecx
+        ret
+    }
+}
