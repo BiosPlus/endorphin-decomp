@@ -7404,3 +7404,22 @@ extern "C" __declspec(naked) void __cdecl fn_0080B680(void) {
         ret
     }
 }
+
+// [0x0080FAC0] sub_0080FAC0 (32 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0080FAC0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        test esi, esi
+        je done
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_0080FAE0
+        push esi
+        call ext_00859730
+        add esp, 8
+    done:
+        pop esi
+        ret
+    }
+}
