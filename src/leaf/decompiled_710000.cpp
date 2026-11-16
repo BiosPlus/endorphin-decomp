@@ -3456,3 +3456,24 @@ done:
         ret 0x4
     }
 }
+
+// [0x00715BE0] sub_00715BE0 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00715BE0(void* dst, const void* src) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax], edx
+        mov edx, dword ptr [ecx + 0x4]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [ecx + 0x8]
+        mov dword ptr [eax + 0x8], edx
+        mov edx, dword ptr [ecx + 0xc]
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [ecx + 0x10]
+        mov dword ptr [eax + 0x10], edx
+        mov ecx, dword ptr [ecx + 0x14]
+        mov dword ptr [eax + 0x14], ecx
+        ret
+    }
+}
