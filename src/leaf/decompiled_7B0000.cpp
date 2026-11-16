@@ -6281,3 +6281,27 @@ extern "C" __declspec(naked) void __cdecl fn_007B7CE0(void) {
         ret
     }
 }
+
+// [0x007B7D10] sub_007B7D10 (48 bytes)
+extern "C" unsigned short ext_007B7830();
+
+extern "C" __declspec(naked) void __cdecl fn_007B7D10() {
+    __asm {
+        call ext_007B77D0
+        mov ecx, dword ptr [esp + 0x4]
+        and eax, 0xffff
+        mov dword ptr [ecx], eax
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je L_call
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_ret
+    L_call:
+        call ext_007B7830
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [edx], eax
+    L_ret:
+        ret
+    }
+}
