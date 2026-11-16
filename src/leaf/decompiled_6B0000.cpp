@@ -9506,3 +9506,25 @@ extern "C" __declspec(naked) int __fastcall fn_006BAF80(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x006BB5F0] sub_006BB5F0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006BB5F0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push edi
+        call ext_006B9D20
+        mov eax, dword ptr [edi + 0x50]
+        mov dword ptr [esi + 0x50], eax
+        mov ecx, dword ptr [edi + 0x54]
+        mov dword ptr [esi + 0x54], ecx
+        mov dl, byte ptr [edi + 0x58]
+        mov byte ptr [esi + 0x58], dl
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 4
+    }
+}
