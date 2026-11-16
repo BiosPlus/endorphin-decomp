@@ -3791,3 +3791,26 @@ extern "C" __declspec(naked) void __cdecl fn_007A2560(void) {
         ret
     }
 }
+
+// [0x007A5EF0] sub_007A5EF0 (48 bytes)
+extern "C" int mem_009251D8;
+
+extern "C" __declspec(naked) void __cdecl fn_007A5EF0(void* pp) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        je done
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je clear
+        push eax
+        call dword ptr [mem_009251D8]
+        add esp, 0x4
+    clear:
+        mov dword ptr [esi], 0x0
+    done:
+        pop esi
+        ret
+    }
+}
