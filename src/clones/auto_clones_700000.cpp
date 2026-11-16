@@ -6,3 +6,10 @@ extern "C" void __fastcall fn_00704D80(void* self, int edx_unused, char a1) {
     char* p = *(char**)((char*)self + 0xF0);
     *(p + 0x7CC) = a1;
 }
+
+// [0x00705140] Identical-shape clone of 0x007023E0 (32 bytes) - sub_00705140
+extern "C" void __fastcall fn_00705140(void* self, int edx_unused, char a1) {
+    char* p = *(char**)((char*)self + 0xF0);
+    *(p + 0x7CD) = a1;
+}
+
