@@ -2773,3 +2773,21 @@ extern "C" void __fastcall fn_00726840(void* self) {
         }
     }
 }
+
+// [0x00728DC0] sub_00728DC0 (32 bytes)
+extern "C" void ext_0078CC90();
+extern "C" void ext_006FC720();
+extern "C" int mem_00B60018;
+
+extern "C" __declspec(naked) void __cdecl fn_00728DC0() {
+    __asm {
+        mov eax, dword ptr [mem_00B60018]
+        dec eax
+        mov dword ptr [mem_00B60018], eax
+        jne short done
+        call ext_0078CC90
+        jmp ext_006FC720
+    done:
+        ret
+    }
+}
