@@ -3527,3 +3527,21 @@ extern "C" __declspec(naked) void __fastcall fn_006D6AF0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006D7380] sub_006D7380 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D7380(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [ecx + 0xfc]
+        mov ecx, dword ptr [esi + 0x4]
+        test ecx, ecx
+        je skip_006D7380
+        mov eax, dword ptr [ecx]
+        push 0x1
+        call dword ptr [eax]
+skip_006D7380:
+        mov dword ptr [esi + 0x4], 0x0
+        pop esi
+        ret
+    }
+}
