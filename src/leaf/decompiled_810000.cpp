@@ -207,3 +207,17 @@ extern "C" __declspec(naked) int __cdecl fn_008110F0(int c) {
         __asm _emit 0x90
     }
 }
+
+// [0x00811190] sub_00811190 (32 bytes)
+extern "C" void ext_0080FF10();
+extern "C" __declspec(naked) void __cdecl fn_00811190(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0x4]
+        push eax
+        push ecx
+        call ext_0080FF10
+        add esp, 0x8
+        ret
+    }
+}
