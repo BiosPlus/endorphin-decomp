@@ -2986,3 +2986,25 @@ extern "C" __declspec(naked) void __fastcall fn_00714880(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x007148A0] sub_007148A0 (32 bytes)
+// Stores stack arg1 at self->[+0x3], stack arg3 at self->[+0x5] (via al), stack arg2 at self->[+0x4] (via dl); ret 0xc.
+extern "C" __declspec(naked) void __fastcall fn_007148A0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov al, byte ptr [esp + 0x4]
+        mov dl, byte ptr [esp + 0x8]
+        mov byte ptr [ecx + 0x3], al
+        mov al, byte ptr [esp + 0xc]
+        mov byte ptr [ecx + 0x4], dl
+        mov byte ptr [ecx + 0x5], al
+        ret 0xc
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+    }
+}
