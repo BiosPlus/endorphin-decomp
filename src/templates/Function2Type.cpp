@@ -231,3 +231,19 @@ extern "C" __declspec(naked) void __fastcall fn_004EE390(void* self) {
         ret 10h
     }
 }
+
+// [0x0067ABB0] ExprParser::Function2Type<Randomizer, float, float, float, {public: float __thiscall Randomizer::randBounded(float, float), 0}>::vfunc_1 (26 bytes)
+extern "C" void ext_0067AB10();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00A17E7C;
+extern "C" __declspec(naked) void __fastcall fn_0067ABB0(void* self) {
+    __asm {
+        sub esp, 0x28
+        lea ecx, [esp]
+        call ext_0067AB10
+        push offset mem_00A17E7C
+        lea eax, [esp + 4]
+        push eax
+        call ext_006A6DD2
+    }
+}
