@@ -2,6 +2,7 @@
 
 extern "C" unsigned char mem_00B61150;
 extern "C" int mem_00B6114C;
+extern "C" void __cdecl ext_0079EBB0(int);
 
 // [0x0079EAC0] sub_0079EAC0 (32 bytes)
 // Returns table[arg & 0xFF] (4-byte entries at mem_00B6114C) if (unsigned char)arg < mem_00B61150, else 0.
@@ -4476,6 +4477,24 @@ extern "C" __declspec(naked) void __cdecl fn_0079EA60(void* self) {
         mov cl, byte ptr [mem_009977EC]
         mov byte ptr [eax + 0ch], cl
 done:
+        ret
+    }
+}
+
+// [0x0079EA90] sub_0079EA90 (48 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0079EA90(unsigned int a) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov cl, byte ptr [mem_00B61150]
+        cmp al, cl
+        ja short done_0079EA90
+        mov ecx, dword ptr [mem_00B6114C]
+        and eax, 0xff
+        mov edx, dword ptr [ecx + 4*eax]
+        push edx
+        call ext_0079EBB0
+        pop ecx
+done_0079EA90:
         ret
     }
 }
