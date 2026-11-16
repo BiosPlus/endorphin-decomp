@@ -4236,3 +4236,13 @@ loc_798147:
         ret
     }
 }
+
+// [0x0079EBE0] sub_0079EBE0 (16 bytes)
+extern "C" void ext_0079EBD0();
+extern "C" __declspec(naked) int __cdecl fn_0079EBE0() {
+    __asm {
+        call ext_0079EBD0
+        mov eax, [eax]
+        ret
+    }
+}
