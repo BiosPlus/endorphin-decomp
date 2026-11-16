@@ -3601,3 +3601,18 @@ extern "C" __declspec(naked) void __fastcall fn_006D7CE0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006DC460] sub_006DC460 (32 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006DC460(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xb8]
+        test eax, eax
+        jle short L_zero
+        mov eax, dword ptr [ecx + 0xc8]
+        mov eax, dword ptr [eax]
+        ret
+L_zero:
+        xor eax, eax
+        ret
+    }
+}
