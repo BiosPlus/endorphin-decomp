@@ -2631,3 +2631,18 @@ extern "C" void __cdecl fn_00722020(int* dst) {
     dst[0] = mem_00B5FFB8;
     dst[1] = mem_00B5FFBC;
 }
+
+// [0x00724FB0] sub_00724FB0 (32 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00724FB0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x194]
+        xor ecx, ecx
+        dec eax
+        test eax, eax
+        setg cl
+        dec ecx
+        not ecx
+        and eax, ecx
+        ret
+    }
+}
