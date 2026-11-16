@@ -3220,3 +3220,16 @@ done:
         ret 0x4
     }
 }
+
+// [0x0071B070] sub_0071B070 (32 bytes)
+extern "C" void ext_0071CDA0();
+extern "C" __declspec(naked) void __stdcall fn_0071B070(int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0x4]
+        push eax
+        push edx
+        call ext_0071CDA0
+        ret 0x8
+    }
+}
