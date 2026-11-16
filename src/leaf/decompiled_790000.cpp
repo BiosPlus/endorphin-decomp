@@ -4498,3 +4498,27 @@ done_0079EA90:
         ret
     }
 }
+
+extern "C" void ext_0079EAC0();
+extern "C" int mem_009977EC; /* u32 0x0000FCFF */
+extern "C" int mem_00997749; /* u32 0x02000000 */
+
+// [0x0079EB80] sub_0079EB80 (48 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0079EB80(int v) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov cl, byte ptr [mem_009977EC]
+        cmp al, cl
+        jne short L_0079EB94
+        mov al, byte ptr [mem_00997749]
+        ret
+    L_0079EB94:
+        push eax
+        call ext_0079EAC0
+        add esp, 4
+        neg eax
+        sbb eax, eax
+        neg eax
+        ret
+    }
+}
