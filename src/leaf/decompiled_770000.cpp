@@ -1973,3 +1973,32 @@ extern "C" __declspec(naked) int __fastcall fn_0077FF70(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x0077FF90] sub_0077FF90 (32 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0077FF90(void* self) {
+    __asm {
+        _emit 0x8b
+        _emit 0x01
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x04
+        _emit 0xdd
+        _emit 0x44
+        _emit 0x24
+        _emit 0x08
+        _emit 0x8b
+        _emit 0x50
+        _emit 0x04
+        _emit 0xc1
+        _emit 0xe1
+        _emit 0x04
+        _emit 0xdd
+        _emit 0x5c
+        _emit 0x0a
+        _emit 0x08
+        _emit 0xc2
+        _emit 0x10
+        _emit 0x00
+    }
+}
