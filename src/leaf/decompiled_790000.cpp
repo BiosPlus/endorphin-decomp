@@ -4298,3 +4298,12 @@ extern "C" void __fastcall fn_0079E5B0(void* self, int edx_unused, int a1, int a
     *(int*)((char*)self + 0x8) = a1;
     *(int*)((char*)self + 0xc) = a2;
 }
+
+extern "C" int mem_00B61148;
+extern "C" unsigned char mem_00B61151;
+
+// [0x0079EBB0] sub_0079EBB0 (32 bytes)
+extern "C" void __cdecl fn_0079EBB0(void* self) {
+    mem_00B61148 = (int)self;
+    mem_00B61151 = ((unsigned char*)self)[0xc];
+}
