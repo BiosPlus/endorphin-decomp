@@ -2014,3 +2014,20 @@ extern "C" __declspec(naked) void __fastcall fn_0077FFB0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0077FAC0] sub_0077FAC0 (32 bytes)
+extern "C" void ext_0074AE20();
+
+// [0x0077FAC0]
+extern "C" __declspec(naked) void* __fastcall fn_0077FAC0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        call ext_0074AE20
+        mov eax, esi
+        pop esi
+        ret 0x4
+    }
+}
