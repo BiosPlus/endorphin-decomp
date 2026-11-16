@@ -2791,3 +2791,20 @@ extern "C" __declspec(naked) void __cdecl fn_00728DC0() {
         ret
     }
 }
+
+// [0x0072BDD0] sub_0072BDD0 (32 bytes)
+extern "C" void ext_0072BC70();
+extern "C" __declspec(naked) void __stdcall fn_0072BDD0(int) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push eax
+        call ext_0072BC70
+        test eax, eax
+        je short L_null
+        add eax, 0x50
+        ret 0x4
+    L_null:
+        mov eax, 0xb60020
+        ret 0x4
+    }
+}
