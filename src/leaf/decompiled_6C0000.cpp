@@ -3255,3 +3255,21 @@ extern "C" __declspec(naked) void __fastcall fn_006C33F0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006C3EE0] sub_006C3EE0 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C3EE0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esp + 0x4]
+        fld qword ptr [esp + 0xc]
+        fmul qword ptr [ecx]
+        fstp qword ptr [eax]
+        fld qword ptr [esp + 0xc]
+        fmul qword ptr [ecx + 0x8]
+        fstp qword ptr [eax + 0x8]
+        fld qword ptr [esp + 0xc]
+        fmul qword ptr [ecx + 0x10]
+        fstp qword ptr [eax + 0x10]
+        ret
+    }
+}
