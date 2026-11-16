@@ -2808,3 +2808,13 @@ extern "C" __declspec(naked) void __stdcall fn_0072BDD0(int) {
         ret 0x4
     }
 }
+
+// [0x0072BDF0] sub_0072BDF0 (32 bytes)
+extern "C" void ext_0072BC70();
+extern "C" unsigned char __stdcall fn_0072BDF0(void* a1) {
+    void* r = ((void* (__stdcall*)(void*))ext_0072BC70)(a1);
+    if (r != 0) {
+        return *(unsigned char*)((char*)r + 0xd0);
+    }
+    return 0;
+}
