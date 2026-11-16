@@ -1960,3 +1960,15 @@ extern "C" __declspec(naked) void __fastcall fn_00702B40(void* self) {
         jmp dword ptr [edx + 0x7c]
     }
 }
+
+// [0x00703B60] sub_00703B60 (32 bytes)
+extern "C" void ext_006B9EC0();
+extern "C" __declspec(naked) void __fastcall fn_00703B60(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        add ecx, 0x1ac
+        push eax
+        call ext_006B9EC0
+        ret 0x4
+    }
+}
