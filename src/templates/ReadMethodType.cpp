@@ -19023,3 +19023,29 @@ extern "C" __declspec(naked) int __fastcall fn_00597E60(void* self, int edx_unus
         call ext_006A6DD2
     }
 }
+
+// [0x005856B0] ExprParser::ReadMethodType<ObjectNode, bool, {public: bool __thiscall ObjectNode::getVisibility(void) const, 0}, 0>::vfunc_2 (53 bytes)
+extern "C" void ext_00584C00();
+
+extern "C" __declspec(naked) bool __stdcall fn_005856B0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je null_path
+        call ext_00584C00
+        neg al
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 0x4
+    null_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
