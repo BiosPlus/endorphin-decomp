@@ -40013,3 +40013,35 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x004F52F0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getPhi(void) const, 0>::vfunc_0 (74 bytes)
+extern "C" void ext_004F4DB0();
+
+extern "C" __declspec(naked) void* __fastcall fn_004F52F0(void* self, int edx_unused, void* a1, void** a2) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     ecx, dword ptr [eax]
+        test    ecx, ecx
+        mov     dword ptr [esp], 0x0
+        je      no_obj
+        push    esi
+        call    ext_004F4DB0
+        mov     esi, dword ptr [esp + 0x34]
+        push    ecx
+        mov     ecx, esi
+        fstp    dword ptr [esp]
+        call    ext_00672080
+        mov     eax, esi
+        pop     esi
+        add     esp, 0x2c
+        ret     0x8
+    no_obj:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     ecx, [esp + 0x8]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
