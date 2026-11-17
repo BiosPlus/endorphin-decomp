@@ -49,6 +49,7 @@ extern "C" void ext_0058A8F0();
 extern "C" void ext_0058CFB0();
 extern "C" void ext_0058F5B0();
 extern "C" void ext_0059D580();
+extern "C" void ext_005478D0();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -22860,6 +22861,30 @@ extern "C" __declspec(naked) void __fastcall fn_005D7BF0(void* self) {
         test ecx, ecx
         je skip
         call ext_005478A0
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+    skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x005D5830] ExprParser::ReadMethodType<NMData::CameraData, float, {public: float __thiscall NMData::CameraData::getBackCutPlane(void) const, 0}, 0>::vfunc_5 (58 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005D5830(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je skip
+        call ext_005478D0
         fstp dword ptr [esp + 0x2c]
         fld dword ptr [esp + 0x2c]
         push ecx
