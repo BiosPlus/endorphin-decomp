@@ -9834,3 +9834,46 @@ found:
         ret 4
     }
 }
+
+// [0x006BC760] sub_006BC760 (80 bytes)
+extern "C" void ext_006D2170();
+
+extern "C" __declspec(naked) void __fastcall fn_006BC760(void* self, int edx_unused, int value) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        add ecx, 0x54
+        push esi
+        xor al, al
+        mov esi, dword ptr [ecx]
+        xor edx, edx
+        test esi, esi
+        push edi
+        jle short L_NOTFOUND
+        mov edi, dword ptr [ecx + 0x10]
+    L_LOOP:
+        cmp dword ptr [edi], ebx
+        je short L_FOUND
+        inc edx
+        add edi, 4
+        cmp edx, esi
+        jl short L_LOOP
+        jmp short L_NOTFOUND
+    L_FOUND:
+        cmp edx, -1
+        jne short L_DONE
+    L_NOTFOUND:
+        mov edx, dword ptr [ecx]
+        lea eax, [esp + 0x10]
+        push eax
+        push edx
+        mov dword ptr [esp + 0x18], ebx
+        call ext_006D2170
+        mov al, 1
+    L_DONE:
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    }
+}
