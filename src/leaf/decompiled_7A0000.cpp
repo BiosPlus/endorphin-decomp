@@ -4933,3 +4933,73 @@ extern "C" __declspec(naked) int __cdecl fn_007A7390(void* self) {
         ret
     }
 }
+
+// [0x007A7320] sub_007A7320 (112 bytes)
+extern "C" void ext_007B2C20();
+extern "C" void ext_007B2E50();
+extern "C" void ext_007B3380();
+extern "C" int mem_00B61218;
+extern "C" int mem_00B61219;
+
+extern "C" __declspec(naked) void __fastcall fn_007A7320(void* self) {
+    __asm {
+        push ecx
+        _emit 0x8d
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        push eax
+        call ext_007B2C20
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7340
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_7382
+    L_7340:
+        _emit 0x8b
+        _emit 0x4c
+        _emit 0x24
+        _emit 0x00
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [ecx], edx
+        _emit 0x8b
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        mov ecx, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        call ext_007B2E50
+        mov edx, dword ptr [esp + 0x8]
+        push edx
+        call ext_007B3380
+        mov cl, byte ptr [mem_00B61218]
+        add esp, 0xc
+        test cl, cl
+        je L_737A
+        mov cl, byte ptr [mem_00B61219]
+        test cl, cl
+        je L_7382
+    L_737A:
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [ecx]
+        mov dword ptr [eax], edx
+    L_7382:
+        pop ecx
+        ret
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+        _emit 0x90
+    }
+}
