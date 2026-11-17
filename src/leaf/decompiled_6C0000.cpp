@@ -4665,3 +4665,49 @@ L_end:
         ret 8
     }
 }
+
+// [0x006CC890] sub_006CC890 (96 bytes)
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9D30();
+extern "C" void ext_006C9DF0();
+extern "C" void ext_006CA060();
+extern "C" void ext_006D03E0();
+
+extern "C" __declspec(naked) void __fastcall fn_006CC890(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push edi
+        mov edi, ecx
+        test ebx, ebx
+        jle done
+        lea eax, [ebx - 1]
+        push esi
+        push eax
+        call ext_006CA060
+        mov esi, eax
+        mov ecx, esi
+        call ext_006C9C30
+        cmp eax, 8
+        jne skip
+        push 0x2000000
+        push 0x2000000
+        mov ecx, esi
+        call ext_006C9D30
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        push 3
+        mov ecx, esi
+        call ext_006C9DF0
+skip:
+        push ebx
+        push 0x10
+        mov ecx, edi
+        call ext_006D03E0
+        pop esi
+done:
+        pop edi
+        pop ebx
+        ret 8
+    }
+}
