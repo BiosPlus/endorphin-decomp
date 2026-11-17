@@ -8038,3 +8038,44 @@ extern "C" __declspec(naked) void __cdecl fn_0080AA80(unsigned int key, void** o
         ret
     }
 }
+
+// [0x008070E0] sub_008070E0 (112 bytes)
+extern "C" void ext_0080ACF0();
+extern "C" __declspec(naked) short __cdecl fn_008070E0(short a1, void* self, short a3, unsigned int a4, unsigned int a5) {
+    __asm {
+        mov ax, word ptr [esp + 0ch]
+        mov ecx, dword ptr [esp + 14h]
+        push esi
+        mov esi, dword ptr [esp + 0ch]
+        mov word ptr [esi + 10h], ax
+        mov eax, dword ptr [esp + 14h]
+        test al, 7
+        mov dword ptr [esi + 12h], ecx
+        je zero_rem
+        mov edx, eax
+        and eax, 7
+        shr edx, 3
+        mov ecx, 8
+        inc edx
+        sub ecx, eax
+        mov word ptr [esi + 16h], dx
+        mov word ptr [esi + 3eh], cx
+        jmp after_store
+    zero_rem:
+        shr eax, 3
+        mov word ptr [esi + 16h], ax
+        mov word ptr [esi + 3eh], 0
+    after_store:
+        mov dx, word ptr [esp + 8]
+        push esi
+        push 1
+        mov word ptr [esi + 18h], dx
+        call ext_0080ACF0
+        mov ax, word ptr [esi + 1ah]
+        add esp, 8
+        mov word ptr [esi + 3eh], 0
+        mov word ptr [esi + 16h], 0
+        pop esi
+        ret
+    }
+}
