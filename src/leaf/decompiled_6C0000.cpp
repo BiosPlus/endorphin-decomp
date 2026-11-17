@@ -5365,3 +5365,67 @@ done:
         ret 0x8
     }
 }
+
+// [0x006C99D0] sub_006C99D0 (112 bytes)
+extern "C" void ext_006DE7C0();
+extern "C" void ext_006DE970();
+extern "C" void ext_006DEEC0();
+extern "C" void ext_006E7440();
+
+extern "C" __declspec(naked) int __fastcall fn_006C99D0(void* self, int edx_unused, int a, int b, int c) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov ebx, ecx
+        xor edi, edi
+        test esi, esi
+        mov ecx, dword ptr [ebx + 0x4c]
+        je L1
+        push esi
+        call ext_006DE7C0
+        mov ecx, eax
+    L1:
+        test ecx, ecx
+        jne L2
+        test esi, esi
+        jne FAIL
+    L2:
+        mov esi, dword ptr [esp + 0x14]
+        test esi, esi
+        je L3
+        push esi
+        call ext_006DE7C0
+        mov ecx, eax
+    L3:
+        test ecx, ecx
+        jne L4
+        test esi, esi
+        jne FAIL
+    L4:
+        mov eax, dword ptr [esp + 0x18]
+        test eax, eax
+        je L5
+        push eax
+        call ext_006DE970
+        mov ecx, eax
+    L5:
+        test ecx, ecx
+        je FAIL
+        call ext_006DEEC0
+        mov edi, eax
+        test edi, edi
+        jne END
+    FAIL:
+        push 0
+        lea ecx, [ebx + 0x50]
+        call ext_006E7440
+    END:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebx
+        ret 0xc
+    }
+}
