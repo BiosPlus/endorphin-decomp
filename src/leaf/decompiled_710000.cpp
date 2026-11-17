@@ -4576,3 +4576,42 @@ extern "C" __declspec(naked) void __fastcall fn_0071DDF0(void* self) {
         ret
     }
 }
+
+// [0x0071C1B0] sub_0071C1B0 (96 bytes)
+extern "C" void ext_0071C210();
+extern "C" int mem_0092A270; /* double 1 */
+extern "C" int mem_00996638; /* double 179 */
+extern "C" __declspec(naked) void __fastcall fn_0071C1B0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xc]
+        mov edx, dword ptr [eax + 0x2fc]
+        push edx
+        mov edx, dword ptr [eax + 0x2f8]
+        push edx
+        mov edx, dword ptr [eax + 0xc1c]
+        push edx
+        mov edx, dword ptr [eax + 0xc18]
+        push edx
+        mov edx, dword ptr [eax + 0xb94]
+        mov eax, dword ptr [eax + 0xb90]
+        push edx
+        push eax
+        call ext_0071C210
+        fcom qword ptr [mem_0092A270]
+        fnstsw ax
+        test ah, 0x1
+        je short L_below
+        fstp st(0)
+        fld qword ptr [mem_0092A270]
+        ret
+L_below:
+        fcom qword ptr [mem_00996638]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_done
+        fstp st(0)
+        fld qword ptr [mem_00996638]
+L_done:
+        ret
+    }
+}
