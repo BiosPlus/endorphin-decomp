@@ -24546,3 +24546,27 @@ skip_call:
         call    ext_006A6DD2
     }
 }
+
+// [0x004CBEA0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>::vfunc_4 (60 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004CBEA0(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je L_004CBEC4
+        call ext_004CB400
+        mov ecx, dword ptr [esp + 0x30]
+        push eax
+        push ecx
+        call ext_0046C4E0
+L_004CBEC4:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, [esp + 8]
+        push edx
+        call ext_006A6DD2
+    }
+}
