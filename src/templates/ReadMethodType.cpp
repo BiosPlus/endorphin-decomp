@@ -54177,3 +54177,44 @@ throw_path:
         call ext_006A6DD2
     }
 }
+
+// [0x006706A0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getX(void) const, 0>::vfunc_2 (93 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00993828; /* double 0.5 */
+
+extern "C" void __declspec(naked) __stdcall fn_006706A0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 28h
+        test eax, eax
+        je null_path
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 2Ch]
+        fldz
+        fld dword ptr [esp + 2Ch]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 1
+        jne neg_path
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 28h
+        ret 4
+neg_path:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 28h
+        ret 4
+null_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 9DEC1Ch
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
