@@ -3596,3 +3596,29 @@ L_ret:
         ret 0xc
     }
 }
+
+// [0x006C2ED0] sub_006C2ED0 (64 bytes)
+extern "C" void ext_00708000();
+extern "C" int mem_0092A278;
+
+extern "C" __declspec(naked) int __fastcall fn_006C2ED0(void* self) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0xf0]
+        push 0xaa88c4
+        call ext_00708000
+        test eax, eax
+        je short L_zero_006C2ED0
+        mov edx, dword ptr [eax]
+        mov ecx, eax
+        call dword ptr [edx + 0x7c]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x40
+        jne short L_zero_006C2ED0
+        mov eax, 1
+        ret
+L_zero_006C2ED0:
+        xor eax, eax
+        ret
+    }
+}
