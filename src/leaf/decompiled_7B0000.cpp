@@ -6586,3 +6586,36 @@ DONE:
         ret
     }
 }
+
+// [0x007BA3A0] sub_007BA3A0 (64 bytes)
+extern "C" void ext_007990D0();
+extern "C" void ext_007BA4B0();
+
+extern "C" __declspec(naked) void __cdecl fn_007BA3A0(int a1, int a2, int a3) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        lea eax, [esp + 0xe]
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        lea ecx, [esp + 0x10]
+        push eax
+        push ecx
+        push esi
+        push edi
+        call ext_007990D0
+        mov eax, dword ptr [esp + 0x24]
+        lea edx, [esp + 0x20]
+        push edx
+        push 2
+        push eax
+        push esi
+        push 3
+        push edi
+        call ext_007BA4B0
+        add esp, 0x28
+        pop edi
+        pop esi
+        ret
+    }
+}
