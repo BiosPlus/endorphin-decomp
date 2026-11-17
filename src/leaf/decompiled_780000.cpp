@@ -5073,3 +5073,60 @@ extern "C" __declspec(naked) void __fastcall fn_00785E00(void* self) {
         jmp ext_007857F0
     }
 }
+
+// [0x0078D1F0] sub_0078D1F0 (112 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0078D1F0(void* out, int n) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        push esi
+        lea esi, [eax - 0x1]
+        lea ebp, [eax + 2*eax - 0x6]
+        mov eax, dword ptr [esp + 0x10]
+        push edi
+        xor edi, edi
+        mov edx, 0x3
+        mov ebx, 0x2
+        mov dword ptr [eax], edi
+        mov dword ptr [eax + 0x4], 0x1
+        cmp esi, edx
+        mov dword ptr [eax + 0x8], ebx
+        mov ecx, edx
+        jl short L_exit
+        add eax, 0xc
+L_top:
+        mov dword ptr [eax], ebx
+        add eax, 0x4
+        inc ecx
+        mov dword ptr [eax], edx
+        add eax, 0x4
+        inc ecx
+        mov dword ptr [eax], edi
+        inc ecx
+        add eax, 0x4
+        cmp ecx, ebp
+        je short L_exit
+        mov dword ptr [eax], edi
+        add eax, 0x4
+        inc ecx
+        mov ebx, edx
+        mov dword ptr [eax], edx
+        add eax, 0x4
+        inc ecx
+        mov edi, esi
+        mov dword ptr [eax], esi
+        inc ecx
+        add eax, 0x4
+        inc edx
+        dec esi
+        cmp edx, esi
+        jle short L_top
+L_exit:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
