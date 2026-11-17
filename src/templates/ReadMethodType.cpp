@@ -43013,3 +43013,38 @@ null_path:
         call    ext_006A6DD2
     }
 }
+
+// [0x0066F9A0] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_1 (79 bytes)
+extern "C" void ext_006A7250();
+extern "C" __declspec(naked) float __stdcall fn_0066F9A0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je short L_throw
+        fld dword ptr [eax + 4]
+        fld dword ptr [eax]
+        fld dword ptr [eax + 8]
+        fld st(1)
+        fmulp st(2), st
+        fld st(2)
+        fmulp st(3), st
+        fxch st(1)
+        faddp st(2), st
+        fmul st(0), st
+        faddp st(1), st
+        call ext_006A7250
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 4
+    L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
