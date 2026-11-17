@@ -45521,3 +45521,36 @@ extern "C" __declspec(naked) bool __fastcall fn_005D9CF0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x005C74E0] ExprParser::ReadMethodType<NMData::CollisionModelData, bool, {public: bool __thiscall NMData::CollisionModelData::collidesWithAncestors(void) const, 0}, 0>::vfunc_4 (81 bytes)
+extern "C" void ext_005B6490();
+extern "C" __declspec(naked) void* __stdcall fn_005C74E0(void* a1, void* a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je throw_path
+        push esi
+        call ext_005B6490
+        mov esi, dword ptr [esp + 0x34]
+        mov byte ptr [esp + 0x38], al
+        mov ecx, dword ptr [esp + 0x38]
+        push ecx
+        push esi
+        call ext_0046C460
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    throw_path:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea edx, [esp + 0x8]
+        push edx
+        call ext_006A6DD2
+    }
+}
