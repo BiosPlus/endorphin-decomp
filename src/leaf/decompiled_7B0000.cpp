@@ -7888,3 +7888,45 @@ extern "C" __declspec(naked) int __fastcall fn_007B77D0(void* self) {
         ret
     }
 }
+
+// [0x007B8DD0] sub_007B8DD0 (96 bytes)
+extern "C" void ext_007B2D80();
+extern "C" void ext_007B3CF0();
+extern "C" void ext_007B7110();
+extern "C" int mem_009998FE;
+
+extern "C" __declspec(naked) unsigned short __cdecl fn_007B8DD0(void* p) {
+    __asm {
+        push ecx
+        mov ecx, dword ptr [esp + 0x8]
+        lea eax, [esp + 0x8]
+        push esi
+        mov si, word ptr [mem_009998FE]
+        push eax
+        push 0xb030
+        push ecx
+        call ext_007B2D80
+        mov eax, dword ptr [esp + 0x18]
+        add esp, 0xc
+        test eax, eax
+        je L_8DD0_end
+        push eax
+        call ext_007B3CF0
+        add esp, 0x4
+        test eax, eax
+        je L_8DD0_f3
+        mov dx, word ptr [eax]
+        mov dword ptr [esp + 0x4], edx
+        mov si, dx
+    L_8DD0_f3:
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        call ext_007B7110
+        add esp, 0x4
+    L_8DD0_end:
+        mov ax, si
+        pop esi
+        pop ecx
+        ret
+    }
+}
