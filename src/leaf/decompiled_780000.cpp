@@ -4491,3 +4491,17 @@ L_zero:
         ret 0x8
     }
 }
+
+// [0x007800D0] sub_007800D0 (96 bytes)
+extern "C" void __fastcall fn_007800D0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, unsigned char a8, unsigned char a9) {
+    char* p = (char*)self;
+    *(int*)(p + 0x104) = a1;
+    *(int*)(p + 0x108) = a2;
+    *(int*)(p + 0x10c) = a3;
+    *(int*)(p + 0x110) = a4;
+    *(int*)(p + 0x114) = a5;
+    *(int*)(p + 0x118) = a6;
+    *(int*)(p + 0x11c) = a7;
+    *(unsigned char*)(p + 0x120) = a9;
+    *(unsigned char*)(p + 0x121) = a8;
+}
