@@ -22,5 +22,7 @@
     "0x0046C8D2",
     "0x0046C8DC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T16:10:51Z"
 }
