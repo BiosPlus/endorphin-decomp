@@ -62002,3 +62002,47 @@ extern "C" __declspec(naked) int __stdcall fn_0066FA70(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x00674950] ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_2 (110 bytes)
+extern "C" int mem_00924FF0;
+extern "C" int mem_009251F0;
+extern "C" int mem_00993828;
+extern "C" int mem_009DEC1C;
+extern "C" __declspec(naked) void __fastcall fn_00674950(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je null_path
+        lea ecx, [eax + 0x1c]
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 0x30]
+        fldz
+        add esp, 4
+        fld dword ptr [esp + 0x2c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 1
+        jne neg_path
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+neg_path:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+null_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
