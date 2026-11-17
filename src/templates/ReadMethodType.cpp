@@ -32183,3 +32183,36 @@ extern "C" __declspec(naked) float __fastcall fn_0049B7D0(void* self, int edx_un
         call    ext_006A6DD2
     }
 }
+
+// [0x004B2810] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getYMax(void) const, 0}, 0>::vfunc_3 (73 bytes)
+extern "C" void ext_0048FAD0();
+extern "C" int mem_00942058; /* double 1e-06 */
+
+extern "C" __declspec(naked) void __stdcall fn_004B2810(void* arg) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_throw
+        call ext_0048FAD0
+        fcomp qword ptr [mem_00942058]
+        fnstsw ax
+        test ah, 1
+        jne L_false
+        mov eax, 1
+        add esp, 0x28
+        ret 4
+    L_false:
+        xor eax, eax
+        add esp, 0x28
+        ret 4
+    L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
