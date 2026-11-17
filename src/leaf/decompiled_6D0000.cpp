@@ -119,8 +119,10 @@ extern "C" __declspec(naked) int __cdecl fn_006D9790(int key) {
         ret
     }
 }
+extern "C" void ext_006D2250();
+extern "C" void ext_006FDEF0();
 
-// [0x006D98A0] sub_006D98A0 (48 bytes)
+extern "C" void ext_006FDEF0();
 // Linear search over 12 x 32-byte records starting at 0x00B5D910 (key at +0xC).
 // Returns the record's dword at +0x8 for the matching key, otherwise 0x00B5D2C0.
 extern "C" int mem_00B5D2C0;
@@ -5904,6 +5906,37 @@ extern "C" __declspec(naked) void __fastcall fn_006D5A60(void* self) {
         pop esi
         mov dword ptr fs:[0], ecx
         add esp, 0x10
+        ret
+    }
+}
+
+// [0x006D7E60] sub_006D7E60 (112 bytes)
+// Resets three sub-objects via ext_006D2250 (ecx = this+0x1c4 / +0x1dc / +0x28),
+// calls ext_006FDEF0(this), then zeroes the 6 dwords at +0x1a8..+0x1bc and 4 bytes at +0x1c0..+0x1c3.
+extern "C" __declspec(naked) void __fastcall fn_006D7E60(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        lea ecx, [esi + 0x1c4]
+        call ext_006D2250
+        lea ecx, [esi + 0x1dc]
+        call ext_006D2250
+        lea ecx, [esi + 0x28]
+        call ext_006D2250
+        mov ecx, esi
+        call ext_006FDEF0
+        xor eax, eax
+        mov dword ptr [esi + 0x1a8], eax
+        mov dword ptr [esi + 0x1ac], eax
+        mov dword ptr [esi + 0x1b0], eax
+        mov dword ptr [esi + 0x1b4], eax
+        mov dword ptr [esi + 0x1b8], eax
+        mov dword ptr [esi + 0x1bc], eax
+        mov byte ptr [esi + 0x1c0], al
+        mov byte ptr [esi + 0x1c1], al
+        mov byte ptr [esi + 0x1c2], al
+        mov byte ptr [esi + 0x1c3], al
+        pop esi
         ret
     }
 }
