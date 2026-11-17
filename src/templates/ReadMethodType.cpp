@@ -24872,3 +24872,27 @@ extern "C" __declspec(naked) void __fastcall fn_005C53D0(void* self) {
         call    ext_006A6DD2
     }
 }
+
+// [0x005F7CA0] ExprParser::ReadMethodType<HelperGraphic, NM::Vector4 const &, {public: class NM::Vector4 const & __thiscall HelperGraphic::getOrientationQuat(void) const, 0}, 0>::vfunc_4 (60 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005F7CA0(void* self) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     ecx, dword ptr [eax]
+        test    ecx, ecx
+        mov     dword ptr [esp], 0x0
+        je      L_005F7CC4
+        call    ext_005F5160
+        mov     ecx, dword ptr [esp + 0x30]
+        push    eax
+        push    ecx
+        call    ext_0046C4E0
+    L_005F7CC4:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     edx, [esp + 0x8]
+        push    edx
+        call    ext_006A6DD2
+    }
+}
