@@ -1,8 +1,11 @@
 // Decompiled translation unit: src/leaf/decompiled_740000.cpp
 extern "C" void ext_006D2160();
+extern "C" void ext_006BB0C0();
+extern "C" void ext_006BB150();
+extern "C" void ext_006D3B50();
 
-// [0x0074AE00] sub_0074AE00 (32 bytes)
-// Stores three stack args into self->[0], [4], [8] and zeroes self->[0xC]; ret 0xC.
+extern "C" void ext_006BB150();
+extern "C" void ext_006D3B50();
 extern "C" __declspec(naked) void __fastcall fn_0074AE00(void* self, int edx_unused, int a1, int a2, int a3) {
     __asm {
         mov edx, dword ptr [esp + 0x8]
@@ -2459,5 +2462,58 @@ extern "C" __declspec(naked) void __fastcall fn_0074F6B0(void* self) {
         pop ebp
         pop ecx
         ret
+    }
+}
+
+// [0x00742E60] sub_00742E60 (112 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00742E60(void* self) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, dword ptr [esp + 0xc]
+        mov dword ptr [esp + 0x4], ecx
+        push ebp
+        mov eax, dword ptr [ebx]
+        push edi
+        mov ecx, ebx
+        call dword ptr [eax + 0xc]
+        mov ebp, eax
+        test ebp, ebp
+        je L_done
+        mov eax, dword ptr [ebp + 0xc0]
+        xor edi, edi
+        test eax, eax
+        mov dword ptr [esp + 0x14], eax
+        jle L_done
+        push esi
+L_loop:
+        mov ecx, dword ptr [ebp + 0xd0]
+        mov esi, dword ptr [ecx + 4*edi]
+        mov ecx, ebx
+        push esi
+        call ext_006BB150
+        test eax, eax
+        jne L_next
+        mov edx, dword ptr [esp + 0x10]
+        push esi
+        mov ecx, dword ptr [edx + 0x4]
+        call ext_006D3B50
+        test eax, eax
+        je L_next
+        push eax
+        mov ecx, ebx
+        call ext_006BB0C0
+L_next:
+        mov eax, dword ptr [esp + 0x18]
+        inc edi
+        cmp edi, eax
+        jl L_loop
+        pop esi
+L_done:
+        pop edi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x4
     }
 }
