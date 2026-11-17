@@ -7360,3 +7360,41 @@ extern "C" __declspec(naked) void __cdecl fn_007B29C0(int a, int b, int c) {
         ret
     }
 }
+
+// [0x007B2BD0] sub_007B2BD0 (80 bytes)
+extern "C" void ext_007B2480();
+extern "C" void ext_007B2C20();
+extern "C" void ext_007B2E50();
+extern "C" void ext_007B3380();
+
+extern "C" __declspec(naked) void __cdecl fn_007B2BD0(void) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        test edi, edi
+        je L_7b2c15
+        lea eax, [esp + 0xc]
+        push esi
+        push eax
+        call ext_007B2C20
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [ecx], 0x80f0
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        call ext_007B3380
+        push edi
+        mov esi, eax
+        call ext_007B2480
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr [esi], eax
+        mov eax, dword ptr [esp + 0x1c]
+        push eax
+        push ecx
+        call ext_007B2E50
+        add esp, 0x14
+        pop esi
+    L_7b2c15:
+        pop edi
+        ret
+    }
+}
