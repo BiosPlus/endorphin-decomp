@@ -3588,3 +3588,35 @@ extern "C" __declspec(naked) void __fastcall fn_00702AF0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x007025C0] sub_007025C0 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007025C0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [ecx + 0x10c]
+        mov edx, 0x1
+        cmp esi, edx
+        mov dword ptr [ecx + 0x110], eax
+        pop esi
+        jne out_
+        sub eax, 0x0
+        je case0_
+        dec eax
+        je case1_
+        dec eax
+        jne out_
+        mov eax, dword ptr [ecx + 0x268]
+        mov dword ptr [eax + 0x380], edx
+        ret 0x4
+    case1_:
+        mov ecx, dword ptr [ecx + 0x268]
+        mov dword ptr [ecx + 0x380], 0x3
+        ret 0x4
+    case0_:
+        mov edx, dword ptr [ecx + 0x268]
+        mov dword ptr [edx + 0x380], 0x2
+    out_:
+        ret 0x4
+    }
+}
