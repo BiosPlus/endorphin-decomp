@@ -3378,3 +3378,38 @@ fail:
         ret
     }
 }
+
+// [0x007269C0] sub_007269C0 (64 bytes)
+extern "C" int ext_00789BB0();
+extern "C" int ext_0078CBE0();
+extern "C" int ext_0078C440();
+
+extern "C" __declspec(naked) int __fastcall fn_007269C0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x250]
+        call ext_00789BB0
+        test eax, eax
+        je fail
+        mov ecx, eax
+        call ext_0078CBE0
+        test eax, eax
+        je fail
+        mov ecx, dword ptr [eax + 0x1c]
+        inc ecx
+        mov dword ptr [eax + 0x1c], ecx
+        mov dl, byte ptr [esi + 0x16]
+        dec ecx
+        push edx
+        push ecx
+        mov ecx, eax
+        call ext_0078C440
+        pop esi
+        ret
+    fail:
+        xor al, al
+        pop esi
+        ret
+    }
+}
