@@ -3132,3 +3132,70 @@ extern "C" __declspec(naked) void __fastcall fn_0077FEF0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x0077A7C0] sub_0077A7C0 (128 bytes)
+extern "C" void ext_006FA5A0();
+extern "C" void ext_006FC6E0();
+extern "C" void ext_007021F0();
+extern "C" __declspec(naked) void __fastcall fn_0077A7C0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 8]
+        mov edx, dword ptr [esp + 12]
+        push esi
+        mov ecx, dword ptr [eax + 48]
+        push edi
+        mov ecx, dword ptr [ecx + 4*edx]
+        mov edx, dword ptr [eax + 24]
+        mov esi, dword ptr [edx + 4*ecx]
+        call ext_007021F0
+        push eax
+        call ext_006FC6E0
+        mov ecx, dword ptr [esp + 16]
+        add esp, 4
+        push eax
+        call ext_006FA5A0
+        mov edi, eax
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax + 12]
+        mov ecx, dword ptr [edi + 20]
+        dec ecx
+        js neg_result
+        mov esi, dword ptr [edi + 16]
+        lea edx, [ecx + 2*ecx]
+        lea edi, [esi + 4*edx]
+    loop_top:
+        test eax, eax
+        je null_key
+        mov edx, dword ptr [eax + 4]
+        mov esi, dword ptr [edx]
+        jmp cmp_key
+    null_key:
+        xor esi, esi
+        xor edx, edx
+    cmp_key:
+        cmp esi, dword ptr [edi]
+        jne next_entry
+        cmp edx, dword ptr [edi + 4]
+        je found
+    next_entry:
+        dec ecx
+        sub edi, 12
+        test ecx, ecx
+        jl neg_result
+        jmp loop_top
+    found:
+        mov eax, ecx
+        jmp epilogue
+    neg_result:
+        or eax, -1
+    epilogue:
+        pop edi
+        pop esi
+        test eax, eax
+        jge done
+        or eax, -1
+    done:
+        ret 12
+    }
+}
