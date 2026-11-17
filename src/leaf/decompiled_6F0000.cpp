@@ -7748,3 +7748,44 @@ extern "C" __declspec(naked) int __cdecl fn_006FECE0(void* a1, char** a2) {
         ret
     }
 }
+
+// [0x006FA530] sub_006FA530 (112 bytes)
+extern "C" void* __cdecl ext_006A5C62(unsigned int size);
+extern "C" void ext_006FA030();
+
+extern "C" __declspec(naked) void __fastcall fn_006FA530(void* self) {
+    __asm {
+        push -1
+        push 0x8b8fdb
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        push 0x40
+        call ext_006A5C62
+        add esp, 0x4
+        mov dword ptr [esp + 0x4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je zero
+        mov ecx, eax
+        call ext_006FA030
+        mov esi, eax
+        jmp after
+    zero:
+        xor esi, esi
+    after:
+        mov eax, dword ptr [esi]
+        push 0
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], -1
+        call dword ptr [eax + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
