@@ -26600,3 +26600,35 @@ extern "C" __declspec(naked) void __fastcall fn_005D7450(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004B8CF0] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getPosBufferFrameRate(void) const, 0>::vfunc_3 (71 bytes)
+extern "C" int mem_009433D8; /* double 1e-06 */
+
+extern "C" __declspec(naked) bool __stdcall fn_004B8CF0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je L_throw
+        fld dword ptr [eax + 0x1c]
+        fcomp qword ptr [mem_009433D8]
+        fnstsw ax
+        test ah, 0x1
+        jne L_false
+        mov eax, 1
+        add esp, 0x28
+        ret 4
+    L_false:
+        xor eax, eax
+        add esp, 0x28
+        ret 4
+    L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
