@@ -58,6 +58,7 @@ extern "C" void __stdcall ext_006DEED0(int a, int b);
 extern "C" void __stdcall fn_006DEF20(int a1) {
     ext_006DEED0(a1, 1);
 }
+extern "C" void ext_006D2200();
 
 // [0x006DAE00] sub_006DAE00 (47 bytes)
 // Stores (__int64)((double)0x0A_C0E8D7B0 * a1) into *self (ret 8).
@@ -5031,5 +5032,51 @@ L_skip:
         pop esi
         pop ebx
         ret 0x4
+    }
+}
+
+// [0x006D0490] sub_006D0490 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D0490(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        mov esi, dword ptr [edi + 0x68]
+        lea ecx, [edi + 0x68]
+        dec esi
+        js L_done
+        mov eax, dword ptr [edi + 0x90]
+        mov edx, dword ptr [esp + 0x18]
+        mov ebx, dword ptr [esp + 0x14]
+    L_loop:
+        cmp edx, dword ptr [eax + 4*esi]
+        jne L_next
+        mov ebp, dword ptr [edi + 0x78]
+        cmp ebx, dword ptr [ebp + 4*esi]
+        je L_match
+    L_next:
+        dec esi
+        jns L_loop
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    L_match:
+        push esi
+        call ext_006D2200
+        push esi
+        lea ecx, [edi + 0x80]
+        call ext_006D2200
+    L_done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+        __asm _emit 0x90
+        __asm _emit 0x90
     }
 }
