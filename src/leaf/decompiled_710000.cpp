@@ -1,5 +1,6 @@
 // Decompiled translation unit: src/leaf/decompiled_710000.cpp
 extern "C" void ext_00714580();
+extern "C" void ext_0071E680();
 
 // [0x0071DE80] sub_0071DE80 (32 bytes)
 // Stores two stack args into the object at self->[0x10] (+0x160, +0x164), then sets self->byte[0xC] = 1 (ret 8).
@@ -3917,5 +3918,38 @@ extern "C" __declspec(naked) void __fastcall fn_007155B0(void* self) {
         call ext_006D80A0
         add esp, 0x20
         ret 0x20
+    }
+}
+
+// [0x00711B50] sub_00711B50 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00711B50(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0071E680
+        fld qword ptr [eax + 0x20]
+        fcomp qword ptr [esp + 0x8]
+        fnstsw ax
+        test ah, 0x40
+        jne short L_done_00711B50
+        mov ecx, esi
+        call ext_0071E680
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x20], ecx
+        push 0
+        push 0
+        push 0
+        mov dword ptr [eax + 0x24], edx
+        mov eax, dword ptr [esi]
+        push esi
+        push 0x1f
+        push 0
+        mov ecx, esi
+        call dword ptr [eax + 0x3c]
+L_done_00711B50:
+        mov al, 1
+        pop esi
+        ret 8
     }
 }
