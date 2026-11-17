@@ -4488,3 +4488,31 @@ extern "C" __declspec(naked) int __cdecl fn_006D97C0(int key) {
         ret
     }
 }
+
+// [0x006D8240] sub_006D8240 (64 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006D8240(void* self, int edx_unused, int idx, int sub) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        mov esi, dword ptr [ecx + 0x1c4]
+        or eax, -0x1
+        cmp edx, esi
+        jge L_done
+        mov esi, dword ptr [ecx + 0x1d4]
+        lea edx, [edx + 2*edx]
+        push edi
+        mov edi, dword ptr [esi + 4*edx + 0x4]
+        lea esi, [esi + 4*edx]
+        mov edx, dword ptr [esp + 0x10]
+        cmp edx, edi
+        pop edi
+        jge L_done
+        mov eax, dword ptr [esi]
+        add edx, eax
+        mov eax, dword ptr [ecx + 0x1ec]
+        mov eax, dword ptr [eax + 4*edx]
+    L_done:
+        pop esi
+        ret 0x8
+    }
+}
