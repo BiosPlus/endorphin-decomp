@@ -6736,3 +6736,34 @@ L_7B77CC:
         ret
     }
 }
+
+// [0x007B8B20] sub_007B8B20 (64 bytes)
+extern "C" void ext_007AA510();
+extern "C" void ext_007B8BA0();
+extern "C" void ext_007B8BB0();
+extern "C" void ext_007B9070();
+extern "C" bool mem_00B61219;
+
+extern "C" __declspec(naked) void __cdecl fn_007B8B20(int a1) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        jne L_7B8B3C
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7B8B4F
+L_7B8B3C:
+        call ext_007B8BA0
+        push esi
+        call ext_007B9070
+        add esp, 0x4
+        call ext_007B8BB0
+L_7B8B4F:
+        pop esi
+        ret
+    }
+}
