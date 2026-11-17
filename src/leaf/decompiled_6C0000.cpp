@@ -4084,3 +4084,40 @@ L_006C280D:
         ret 4
     }
 }
+
+// [0x006C2CE0] sub_006C2CE0 (80 bytes)
+extern "C" void ext_00708000();
+extern "C" void ext_006FC200();
+extern "C" void ext_006FB650();
+
+extern "C" __declspec(naked) void __fastcall fn_006C2CE0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        test eax, eax
+        push edi
+        je L_ret
+        mov edi, dword ptr [eax + 0xf0]
+        test edi, edi
+        je L_ret
+        mov ecx, dword ptr [ecx + 0xf0]
+        push 0xaa8920
+        call ext_00708000
+        mov esi, eax
+        test esi, esi
+        je L_ret
+        push edi
+        mov ecx, esi
+        call ext_006FC200
+        test al, al
+        jne L_ret
+        push 0
+        push edi
+        mov ecx, esi
+        call ext_006FB650
+    L_ret:
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
