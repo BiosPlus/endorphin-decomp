@@ -55148,3 +55148,41 @@ extern "C" __declspec(naked) void __stdcall fn_00470780(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x004C55C0] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_2 (96 bytes)
+extern "C" void ext_004C4DB0();
+
+extern "C" __declspec(naked) float __stdcall fn_004C55C0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_zero
+        call ext_004C4DB0
+        fstp dword ptr [esp + 0x2c]
+        fldz
+        fld dword ptr [esp + 0x2c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        jne L_neg
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+    L_neg:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+    L_zero:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
