@@ -19,5 +19,7 @@
     "0x005BCF21",
     "0x005BCF2B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-17T09:51:15Z"
 }
