@@ -19,5 +19,7 @@
     "0x004E0166",
     "0x004E0170"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T15:20:49Z"
 }
