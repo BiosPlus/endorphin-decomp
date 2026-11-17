@@ -6580,3 +6580,38 @@ extern "C" __declspec(naked) void __fastcall fn_006FBD30(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x006FA370] sub_006FA370 (64 bytes)
+extern "C" void ext_006FA3B0();
+extern "C" void ext_006FA3C0();
+
+extern "C" __declspec(naked) void __fastcall fn_006FA370(void* self, int edx_unused, unsigned int a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006FA3B0
+        test eax, eax
+        je fn_006FA370_else
+        mov eax, dword ptr [esi + 0x34]
+        or eax, 0x10000
+        mov dword ptr [esi + 0x34], eax
+        pop esi
+        ret 4
+fn_006FA370_else:
+        push 1
+        mov ecx, esi
+        call ext_006FA3C0
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax + 0x10]
+        test esi, esi
+        je fn_006FA370_done
+        mov edx, dword ptr [esi]
+        push 1
+        mov ecx, esi
+        call dword ptr [edx + 0x8]
+fn_006FA370_done:
+        pop esi
+        ret 4
+    }
+}
