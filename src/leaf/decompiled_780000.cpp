@@ -5825,3 +5825,52 @@ L_join:
         ret
     }
 }
+
+// [0x0078CC10] sub_0078CC10 (128 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006D2130();
+extern "C" void ext_0078CD30();
+extern "C" int mem_00B60DBC;
+extern "C" __declspec(naked) void __fastcall fn_0078CC10(void* self) {
+    __asm {
+        push -1
+        push 0x8b8fdb
+        mov eax, dword ptr fs:[0x0]
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push ecx
+        push esi
+        push 0x18
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 4
+        mov dword ptr [esp + 0x4], esi
+        test esi, esi
+        mov dword ptr [esp + 0x10], 0
+        je short L_null
+        push 4
+        push 0x10
+        mov ecx, esi
+        call ext_006D2130
+        lea eax, [esi + 0x10]
+        mov dword ptr [esi + 0x14], eax
+        jmp short L_done
+L_null:
+        xor esi, esi
+L_done:
+        push 0
+        push 0
+        push 2
+        push 0x20000
+        mov dword ptr [esp + 0x20], -1
+        mov dword ptr [mem_00B60DBC], esi
+        call ext_0078CD30
+        mov ecx, dword ptr [esp + 0x18]
+        add esp, 0x10
+        mov al, 1
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0x10
+        ret
+    }
+}
