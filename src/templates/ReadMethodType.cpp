@@ -61731,3 +61731,44 @@ throw_path:
         call ext_006A6DD2
     }
 }
+
+// [0x00604D80] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_2 (105 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00604D80(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x38
+        test ecx, ecx
+        je null_path
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x38]
+        lea eax, [esp]
+        push eax
+        call edx
+        fld dword ptr [eax]
+        fstp dword ptr [esp + 0x3c]
+        fldz
+        fld dword ptr [esp + 0x3c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        jne neg_path
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x38
+        ret 0x4
+neg_path:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x38
+        ret 0x4
+null_path:
+        lea ecx, [esp + 0x10]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea eax, [esp + 0x14]
+        push eax
+        call ext_006A6DD2
+    }
+}
