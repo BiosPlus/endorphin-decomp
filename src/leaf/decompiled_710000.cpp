@@ -4415,3 +4415,60 @@ extern "C" __declspec(naked) void __fastcall fn_0071CD50(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x00712250] sub_00712250 (96 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00712250(const char* s) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        xor ebp, ebp
+        mov edi, 0xaabf1c
+    outer_top:
+        mov esi, dword ptr [edi]
+        mov ecx, eax
+    cmp_top:
+        mov bl, byte ptr [ecx]
+        mov dl, bl
+        cmp bl, byte ptr [esi]
+        jne cmp_diff
+        test dl, dl
+        je cmp_end
+        mov bl, byte ptr [ecx + 0x1]
+        mov dl, bl
+        cmp bl, byte ptr [esi + 0x1]
+        jne cmp_diff
+        add ecx, 0x2
+        add esi, 0x2
+        test dl, dl
+        jne cmp_top
+    cmp_end:
+        xor ecx, ecx
+        jmp cmp_result
+    cmp_diff:
+        sbb ecx, ecx
+        sbb ecx, -1
+    cmp_result:
+        test ecx, ecx
+        je found
+        add edi, 0x4
+        inc ebp
+        cmp edi, 0xaabf68
+        jl outer_top
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        ret
+    found:
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
