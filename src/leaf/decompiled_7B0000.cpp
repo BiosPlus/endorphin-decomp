@@ -7486,3 +7486,46 @@ extern "C" __declspec(naked) int __cdecl fn_007BC4F0(void* self) {
         ret
     }
 }
+
+// [0x007B1920] sub_007B1920 (96 bytes)
+extern "C" int mem_00AB15B8;
+extern "C" void ext_0079B140();
+extern "C" __declspec(naked) int __cdecl fn_007B1920(void* s, void* a, int b) {
+    __asm {
+        mov edx, dword ptr [esp + 0x4]
+        push esi
+        or esi, -0x1
+        mov cl, byte ptr [edx]
+        cmp cl, 0x61
+        je L_7B1961
+        cmp cl, 0x72
+        je L_7B1950
+        cmp cl, 0x77
+        je L_7B1961
+        mov eax, dword ptr [esp + 0xc]
+        push edx
+        push offset mem_00AB15B8
+        push eax
+        call ext_0079B140
+        add esp, 0xc
+        mov eax, esi
+        pop esi
+        ret
+    L_7B1950:
+        mov cl, byte ptr [edx + 0x1]
+        xor eax, eax
+        cmp cl, 0x2b
+        jne L_7B1970
+        mov eax, 0x2
+        pop esi
+        ret
+    L_7B1961:
+        cmp cl, 0x77
+        mov eax, 0x102
+        jne L_7B1970
+        mov eax, 0x302
+    L_7B1970:
+        pop esi
+        ret
+    }
+}
