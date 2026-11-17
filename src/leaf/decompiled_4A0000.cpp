@@ -13244,3 +13244,60 @@ extern "C" __declspec(naked) void* __fastcall fn_004A13D0(void* self, int edx_un
         __asm call ext_006A6DD2 // call thunk_MSVCR80__CxxThrowException
     }
 }
+
+// [0x004A1450] sub_004A1450 (125 bytes)
+extern "C" void ext_0049AD20();
+extern "C" void ext_0049CF40();
+extern "C" void ext_004A18F0();
+extern "C" int mem_00887430;
+
+extern "C" __declspec(naked) void __fastcall fn_004A1450(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push -1
+        push offset mem_00887430
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        sub esp, 8
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        mov dword ptr [ebp - 0x10], esp
+        mov dword ptr [ebp - 0x14], esi
+        call ext_0049CF40
+        mov ecx, dword ptr [ebp + 8]
+        mov ebx, dword ptr [ebp + 8]
+        push ebx
+        mov dword ptr [esi + 4], eax
+        mov dword ptr [esi + 8], 0
+        mov edx, dword ptr [ecx + 4]
+        mov edi, dword ptr [edx]
+        mov eax, dword ptr [eax]
+        push edx
+        push ecx
+        push edi
+        push ecx
+        push eax
+        push esi
+        mov ecx, esi
+        mov dword ptr [ebp - 4], 0
+        call ext_004A18F0
+        mov ecx, dword ptr [ebp - 0xc]
+        pop edi
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        pop ebx
+        mov esp, ebp
+        pop ebp
+        ret 4
+        mov ecx, dword ptr [ebp - 0x14]
+        call ext_0049AD20
+        push 0
+        push 0
+        call ext_006A6DD2
+    }
+}
