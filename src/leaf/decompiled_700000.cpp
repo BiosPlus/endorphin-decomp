@@ -3928,3 +3928,39 @@ extern "C" __declspec(naked) void __fastcall fn_00706A70(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x0070EB40] sub_0070EB40 (128 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006B9E60();
+extern "C" int mem_008BC8E0;
+extern "C" __declspec(naked) void __fastcall fn_0070EB40(void* self) {
+    __asm {
+        mov eax, dword ptr fs:[0]
+        push -1
+        push offset mem_008BC8E0
+        push eax
+        mov dword ptr fs:[0], esp
+        push esi
+        mov esi, ecx
+        lea eax, [esp + 0x14]
+        lea ecx, [esi + 0xac]
+        push eax
+        mov dword ptr [esp + 0x10], 1
+        call ext_006B9E60
+        lea ecx, [esp + 0x60]
+        push ecx
+        lea ecx, [esi + 0xf8]
+        call ext_006B9E60
+        lea ecx, [esp + 0x14]
+        mov byte ptr [esp + 0xc], 0
+        call ext_006B9D70
+        lea ecx, [esp + 0x60]
+        mov dword ptr [esp + 0xc], 0xffffffff
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x4]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0xc
+        ret 0x98
+    }
+}
