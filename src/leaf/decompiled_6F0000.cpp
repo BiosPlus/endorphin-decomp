@@ -7158,3 +7158,49 @@ extern "C" __declspec(naked) void __fastcall fn_006F8EE0(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x006FDFC0] sub_006FDFC0 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FDFC0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, ecx
+        or eax, -1
+        xor ebp, ebp
+        xor esi, esi
+        mov ebx, dword ptr [edi + 0x10]
+        test ebx, ebx
+        jle zero_count
+    loop_top:
+        mov ecx, dword ptr [edi + 0x20]
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        mov ecx, dword ptr [ecx + 4*esi]
+        call ext_006FC950
+        test eax, eax
+        je next
+        cmp ebp, dword ptr [esp + 0x14]
+        je found
+        inc ebp
+    next:
+        inc esi
+        cmp esi, ebx
+        jl loop_top
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -1
+        pop ebx
+        ret 0x8
+    found:
+        mov eax, esi
+    zero_count:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
