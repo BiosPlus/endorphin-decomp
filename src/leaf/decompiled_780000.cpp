@@ -5130,3 +5130,65 @@ L_exit:
         ret
     }
 }
+
+// [0x00780160] sub_00780160 (112 bytes)
+extern "C" __declspec(naked) int __fastcall fn_00780160(void* self, int edx_unused, const char* name) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [ecx]
+        push ebp
+        or eax, -1
+        xor ebp, ebp
+        push esi
+        test ebx, ebx
+        push edi
+        jle short L_out
+        mov edi, dword ptr [ecx + 4]
+        add edi, 4
+L_outer:
+        mov esi, dword ptr [esp + 0x14]
+        mov ecx, edi
+L_cmp:
+        mov al, byte ptr [ecx]
+        mov dl, al
+        cmp al, byte ptr [esi]
+        jne short L_ne
+        test dl, dl
+        je short L_eq0
+        mov al, byte ptr [ecx + 1]
+        mov dl, al
+        cmp al, byte ptr [esi + 1]
+        jne short L_ne
+        add ecx, 2
+        add esi, 2
+        test dl, dl
+        jne short L_cmp
+L_eq0:
+        xor ecx, ecx
+        jmp short L_after
+L_ne:
+        sbb ecx, ecx
+        sbb ecx, -1
+L_after:
+        test ecx, ecx
+        je short L_found
+        inc ebp
+        add edi, 0x130
+        cmp ebp, ebx
+        jl short L_outer
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -1
+        pop ebx
+        ret 0x4
+L_found:
+        mov eax, ebp
+L_out:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
