@@ -5170,3 +5170,59 @@ L_end:
         ret 0x8
     }
 }
+
+// [0x0079EF70] sub_0079EF70 (112 bytes)
+extern "C" void ext_0079EA60();
+extern "C" void ext_007AA510();
+extern "C" int mem_00925264;
+extern "C" int mem_009252CC;
+extern "C" int mem_009251D8;
+
+extern "C" __declspec(naked) void __cdecl fn_0079EF70(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        xor ebx, ebx
+        test esi, esi
+        je L_done
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je short L_skip
+        push eax
+        call dword ptr [mem_00925264]
+        mov ebx, eax
+        mov al, byte ptr [esi + 0x18]
+        add esp, 4
+        test al, al
+        je short L_skip
+        mov eax, dword ptr [esi + 4]
+        push eax
+        call dword ptr [mem_009252CC]
+        add esp, 4
+L_skip:
+        push edi
+        push esi
+        call ext_0079EA60
+        mov ecx, dword ptr [esi + 4]
+        mov edi, dword ptr [mem_009251D8]
+        push ecx
+        call edi
+        mov edx, dword ptr [esi + 0x10]
+        push edx
+        call edi
+        push esi
+        call edi
+        add esp, 0x10
+        test ebx, ebx
+        pop edi
+        je short L_done
+        push 0xc
+        call ext_007AA510
+        add esp, 4
+L_done:
+        pop esi
+        pop ebx
+        ret
+    }
+}
