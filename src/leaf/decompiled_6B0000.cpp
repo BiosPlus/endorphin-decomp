@@ -10119,3 +10119,51 @@ extern "C" __declspec(naked) int __fastcall fn_006BA660(void* self, int edx_unus
         ret 4
     }
 }
+
+// [0x006BA370] sub_006BA370 (96 bytes)
+extern "C" int mem_00925240; /* "<}b" */
+
+extern "C" __declspec(naked) void __fastcall fn_006BA370(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        test edi, edi
+        jne l_nonnull_006BA370
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 8
+    l_nonnull_006BA370:
+        mov ecx, esi
+        call ext_006B99C0
+        mov ecx, dword ptr [esp + 0x10]
+        cmp ecx, eax
+        jbe l_use_arg_006BA370
+        mov ecx, esi
+        call ext_006B99C0
+        jmp l_have_off_006BA370
+    l_use_arg_006BA370:
+        mov eax, ecx
+    l_have_off_006BA370:
+        mov ecx, dword ptr [esi]
+        push edi
+        add ecx, eax
+        push ecx
+        call dword ptr [mem_00925240]
+        add esp, 8
+        test eax, eax
+        jne l_found_006BA370
+        pop edi
+        or eax, -1
+        pop esi
+        ret 8
+    l_found_006BA370:
+        mov ecx, dword ptr [esi]
+        pop edi
+        sub eax, ecx
+        pop esi
+        ret 8
+    }
+}
