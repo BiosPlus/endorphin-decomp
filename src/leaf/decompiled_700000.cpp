@@ -130,6 +130,7 @@ extern "C" __declspec(naked) void* __fastcall fn_0070EA90(void* self, int edx_un
         ret 0x4
     }
 }
+extern "C" void ext_00712000();
 
 // [0x0070EA70] sub_0070EA70 (32 bytes)
 extern "C" int __fastcall ext_006BADB0(void* obj);
@@ -3798,5 +3799,72 @@ extern "C" __declspec(naked) void __fastcall fn_0070D2A0(void* self) {
         pop ebp
         pop ebx
         ret
+    }
+}
+
+// [0x00708000] sub_00708000 (128 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00708000(void* self, int edx_unused, void* arg) {
+    __asm {
+        push ecx
+        push ebx
+        mov ebx, ecx
+        push ebp
+        xor ebp, ebp
+        mov eax, dword ptr [ebx + 0xc0]
+        push esi
+        test eax, eax
+        push edi
+        mov dword ptr [esp + 0x10], eax
+        jle t00_done
+t00_outer:
+        mov eax, dword ptr [ebx + 0xd0]
+        mov esi, dword ptr [esp + 0x18]
+        mov edi, dword ptr [eax + 4*ebp]
+        mov ecx, edi
+        call ext_00712000
+t00_cmp:
+        mov dl, byte ptr [eax]
+        mov cl, dl
+        cmp dl, byte ptr [esi]
+        jne t00_ne
+        test cl, cl
+        je t00_eqz
+        mov dl, byte ptr [eax + 1]
+        mov cl, dl
+        cmp dl, byte ptr [esi + 1]
+        jne t00_ne
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne t00_cmp
+t00_eqz:
+        xor eax, eax
+        jmp t00_after
+t00_ne:
+        sbb eax, eax
+        sbb eax, -1
+t00_after:
+        test eax, eax
+        je t00_found
+        mov eax, dword ptr [esp + 0x10]
+        inc ebp
+        cmp ebp, eax
+        jl t00_outer
+t00_done:
+        pop edi
+        pop esi
+        pop ebp
+        xor eax, eax
+        pop ebx
+        pop ecx
+        ret 0x4
+t00_found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        pop ecx
+        ret 0x4
     }
 }
