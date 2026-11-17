@@ -46144,3 +46144,35 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x00488770] ExprParser::ReadMethodType<NMData::DesiredPoseEventData, float, {public: float __thiscall NMData::DesiredPoseEventData::getEntryBlendPeriod(void) const, 0}, 0>::vfunc_0 (82 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00488770(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 2Ch
+        mov eax, dword ptr [esp + 34h]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je no_obj
+        push esi
+        call ext_00486970
+        fstp dword ptr [esp + 38h]
+        mov esi, dword ptr [esp + 34h]
+        fld dword ptr [esp + 38h]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov eax, esi
+        pop esi
+        add esp, 2Ch
+        ret 8
+no_obj:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
