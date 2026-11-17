@@ -62501,3 +62501,52 @@ extern "C" __declspec(naked) void __fastcall fn_004CB680(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x0049B820] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::State::getPropertySourceDescription(void) const, 0}, 1>::vfunc_2 (114 bytes)
+extern "C" void ext_004C0310();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00924FF0;
+extern "C" int mem_009251F0;
+extern "C" int mem_00993828;
+
+extern "C" __declspec(naked) void __fastcall fn_0049B820(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 28h
+        test ecx, ecx
+        je L_null_0049B820
+        call ext_004C0310
+        mov ecx, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 30h]
+        fldz
+        add esp, 4
+        fld dword ptr [esp + 2ch]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 1
+        jne L_neg_0049B820
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 28h
+        ret 4
+L_neg_0049B820:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 28h
+        ret 4
+L_null_0049B820:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 009dec1ch
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
