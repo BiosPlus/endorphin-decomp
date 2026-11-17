@@ -39439,3 +39439,39 @@ extern "C" __declspec(naked) void __fastcall fn_00636F30(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004B8A50] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>::vfunc_4 (74 bytes)
+extern "C" void ext_0046C390();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_009DEC1C;
+
+extern "C" __declspec(naked) void __fastcall fn_004B8A50(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0x0
+        je short L_null_004B8A50
+        fld dword ptr [eax + 0x48]
+        push esi
+        mov esi, dword ptr [esp + 0x34]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0046C390
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    L_null_004B8A50:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
