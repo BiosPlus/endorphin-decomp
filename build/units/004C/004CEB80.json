@@ -22,5 +22,7 @@
     "0x004CEBD2",
     "0x004CEBDC"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T16:11:38Z"
 }
