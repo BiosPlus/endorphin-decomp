@@ -35,8 +35,10 @@ extern "C" __declspec(naked) void __fastcall fn_006BB730(void* self) {
 extern "C" void ext_006B7DE0();
 extern "C" void ext_006B9C10();
 extern "C" void ext_006E6E40();
+extern "C" void ext_006B99C0();
+extern "C" int mem_0092527C; /* u32 0x0062D34C */
 
-// [0x006B6030] sub_006B6030 (32 bytes)
+extern "C" int mem_0092527C; /* u32 0x0062D34C */
 // Stores arg0 into this+0xD8; if this+0xD4 is non-null, replace arg0 with the value
 // and tail-jump to 0x006B7DE0 with ecx = this+0xD4; otherwise ret 8.
 extern "C" __declspec(naked) void __fastcall fn_006B6030(void* self, int edx_unused, int a1) {
@@ -9875,5 +9877,45 @@ extern "C" __declspec(naked) void __fastcall fn_006BC760(void* self, int edx_unu
         pop esi
         pop ebx
         ret 4
+    }
+}
+
+// [0x006BA320] sub_006BA320 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006BA320(void* self, int edx_unused, const char* a1, unsigned int a2) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        test edi, edi
+        je fail
+        call ext_006B99C0
+        mov ecx, dword ptr [esp + 0x10]
+        cmp ecx, eax
+        jbe use_eax
+        mov ecx, esi
+        call ext_006B99C0
+        jmp join
+use_eax:
+        mov eax, ecx
+join:
+        mov ecx, dword ptr [esi]
+        push edi
+        add ecx, eax
+        push ecx
+        call dword ptr [mem_0092527C]
+        add esp, 8
+        test eax, eax
+        je fail
+        mov ecx, dword ptr [esi]
+        pop edi
+        sub eax, ecx
+        pop esi
+        ret 8
+fail:
+        pop edi
+        or eax, -1
+        pop esi
+        ret 8
     }
 }
