@@ -37,6 +37,7 @@ extern "C" __declspec(naked) void __fastcall fn_006E6350(void* self, int edx_unu
         ret 4
     }
 }
+extern "C" int mem_0092A278;
 
 // [0x006E7430] sub_006E7430 (16 bytes)
 extern "C" __declspec(naked) void __fastcall fn_006E7430(void* self, int edx_unused, int a1) {
@@ -2090,5 +2091,38 @@ skip_child:
         call ext_006E5750
         pop esi
         ret 4
+    }
+}
+
+// [0x006E86F0] sub_006E86F0 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006E86F0(void* self, int edx_unused, double a1) {
+    __asm {
+        mov ecx, dword ptr [ecx]
+        fld qword ptr [esp + 4]
+        fcomp qword ptr [ecx + 0x58]
+        fnstsw ax
+        test ah, 0x41
+        jne L_other
+        mov eax, dword ptr [ecx + 0x58]
+        mov dword ptr [ecx + 0x50], eax
+        mov edx, dword ptr [ecx + 0x5c]
+        mov dword ptr [ecx + 0x54], edx
+        ret 8
+    L_other:
+        fld qword ptr [esp + 4]
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x1
+        je L_copy
+        xor eax, eax
+        mov dword ptr [ecx + 0x50], eax
+        mov dword ptr [ecx + 0x54], eax
+        ret 8
+    L_copy:
+        mov eax, dword ptr [esp + 4]
+        mov edx, dword ptr [esp + 8]
+        mov dword ptr [ecx + 0x50], eax
+        mov dword ptr [ecx + 0x54], edx
+        ret 8
     }
 }
