@@ -4479,3 +4479,59 @@ L_ret_flag:
         ret 4
     }
 }
+
+// [0x006C4C90] sub_006C4C90 (96 bytes)
+extern "C" void ext_006C2860();
+extern "C" void ext_006C28D0();
+extern "C" void ext_006C4C90();
+extern "C" void ext_006DC7E0();
+extern "C" __declspec(naked) char __fastcall fn_006C4C90(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        push ebp
+        mov esi, ecx
+        push eax
+        call ext_006DC7E0
+        xor edi, edi
+        mov ecx, esi
+        push edi
+        mov bl, al
+        call ext_006C2860
+        test eax, eax
+        jle done
+loop_top:
+        mov ecx, dword ptr [esp + 0x14]
+        push ebp
+        push ecx
+        push edi
+        mov ecx, esi
+        call ext_006C28D0
+        mov ecx, eax
+        call ext_006C4C90
+        test al, al
+        jne set_bl
+        test bl, bl
+        je skip_set
+set_bl:
+        mov bl, 0x1
+skip_set:
+        push 0
+        mov ecx, esi
+        inc edi
+        call ext_006C2860
+        cmp edi, eax
+        jl loop_top
+done:
+        pop edi
+        pop esi
+        mov al, bl
+        pop ebp
+        pop ebx
+        ret 0x8
+    }
+}
