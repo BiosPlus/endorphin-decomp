@@ -7460,3 +7460,54 @@ extern "C" __declspec(naked) void __fastcall fn_006FD420(void* self) {
         ret
     }
 }
+
+// [0x006FACA0] sub_006FACA0 (96 bytes)
+// Stdcall with 7 stack args (ret 0x1c); first arg is an object pointer.
+// Recurses on obj->field4, then calls virtual slot 15 on *obj with args 1..6.
+extern "C" __declspec(naked) unsigned char __stdcall fn_006FACA0(void* a0, int a1, int a2, int a3, int a4, int a5, int a6) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        je null_obj
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, dword ptr [esp + 0x10]
+        push ebx
+        mov ebx, dword ptr [esp + 0x20]
+        push ebp
+        mov ebp, dword ptr [esp + 0x20]
+        push edi
+        mov edi, dword ptr [esp + 0x2c]
+        push edi
+        push ebx
+        push ebp
+        push eax
+        mov eax, dword ptr [esp + 0x28]
+        push edx
+        mov edx, dword ptr [esi + 0x4]
+        push eax
+        push edx
+        call fn_006FACA0
+        mov edx, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esi]
+        push edi
+        push ebx
+        mov eax, dword ptr [ecx]
+        push ebp
+        push edx
+        mov edx, dword ptr [esp + 0x2c]
+        push edx
+        mov edx, dword ptr [esp + 0x2c]
+        push edx
+        call dword ptr [eax + 0x3c]
+        pop edi
+        pop ebp
+        pop ebx
+        pop esi
+        ret 0x1c
+    null_obj:
+        xor al, al
+        pop esi
+        ret 0x1c
+    }
+}
