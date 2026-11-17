@@ -10218,3 +10218,36 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x00695620] ExprParser::ReadWriteMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, float, &public: void __thiscall DoubleWithProperties::setValue(float)>::vfunc_41 (62 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_009DEC1C;
+
+extern "C" __declspec(naked) void __fastcall fn_00695620(void* self, int edx_unused, void** a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je L_throw
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        call eax
+        fstp qword ptr [esi]
+        pop esi
+        add esp, 0x28
+        ret 0x8
+L_throw:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
