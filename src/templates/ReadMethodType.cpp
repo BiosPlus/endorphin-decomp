@@ -175,6 +175,7 @@ extern "C" void* __stdcall fn_004CE9F0(void* a1) {
 extern "C" void ext_004CA5E0();
 extern "C" void ext_005E02A0();
 extern "C" void ext_005E0E40();
+extern "C" void ext_0046A470();
 
 // [0x004D1820] ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004D1820(void* a1) {
@@ -61632,6 +61633,53 @@ extern "C" __declspec(naked) int __fastcall fn_00684240(void* self, int edx_unus
         call ext_0046C3C0
         push 0x9dec1c
         lea ecx, [esp+4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x0049D780] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>::vfunc_3 (107 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0049D780(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je null_path_0049D780
+        push esi
+        push edi
+        lea ecx, [eax + 8]
+        call ext_0046A470
+        mov edi, dword ptr [mem_00924FC0]
+        mov esi, eax
+        push 0x92f10c
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne true_path_0049D780
+        push 0x93a810
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne true_path_0049D780
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 0x28
+        ret 4
+true_path_0049D780:
+        pop edi
+        mov eax, 1
+        pop esi
+        add esp, 0x28
+        ret 4
+null_path_0049D780:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
         push ecx
         call ext_006A6DD2
     }
