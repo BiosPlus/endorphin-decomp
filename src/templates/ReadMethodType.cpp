@@ -17,6 +17,7 @@ extern "C" void* __fastcall fn_0046FBC0(void* self, int edx_unused, void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA31D58, 0);
 }
+extern "C" void ext_004CB400();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -15912,6 +15913,29 @@ extern "C" __declspec(naked) void __fastcall fn_005B9F60(void* self) {
         call ext_0046C3C0
         push 0x9dec1c
         lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x004CC400] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getAngularStrengthFromFSM(void) const, 0}, 0>::vfunc_1 (49 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004CC400(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je skip_call
+        call ext_004CB400
+        push eax
+        call ext_0046C4E0
+        __asm _emit 0xdd
+        __asm _emit 0xd8
+skip_call:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
         push ecx
         call ext_006A6DD2
     }
