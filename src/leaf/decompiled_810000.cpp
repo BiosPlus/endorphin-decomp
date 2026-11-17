@@ -1,7 +1,9 @@
 // Decompiled translation unit: src/leaf/decompiled_810000.cpp
 extern "C" int __cdecl ext_008110F0(int c);
+extern "C" void ext_00810C30(void* self);
+extern "C" int ext_008113E0(void* self, char* p, int arg3, int one);
 
-// [0x00810250] sub_00810250 (32 bytes)
+extern "C" int ext_008113E0(void* self, char* p, int arg3, int one);
 extern "C" __declspec(naked) void __cdecl fn_00810250(void) {
     __asm {
         mov eax, dword ptr [esp + 8]
@@ -374,6 +376,63 @@ one:
 ret0:
         pop esi
         xor eax, eax
+        pop ebx
+        ret
+    }
+}
+
+// [0x00811530] sub_00811530 (112 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00811530(void* self, char* buf, int arg3, int max) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        push ebp
+        call ext_00810C30
+        mov ebx, dword ptr [esp + 0x24]
+        mov edi, dword ptr [esp + 0x1c]
+        add esp, 0x4
+        xor esi, esi
+    fn_00811530_loop:
+        test ebx, ebx
+        je fn_00811530_body
+        cmp esi, ebx
+        jge fn_00811530_end
+    fn_00811530_body:
+        mov eax, dword ptr [ebp + 0xc]
+        cmp eax, -1
+        je fn_00811530_end
+        test byte ptr [2 * eax + 0xab8e00], 0x8
+        jne fn_00811530_end
+        test edi, edi
+        je fn_00811530_zero
+        lea eax, [esi + edi]
+        jmp fn_00811530_call
+    fn_00811530_zero:
+        xor eax, eax
+    fn_00811530_call:
+        mov ecx, dword ptr [esp + 0x1c]
+        push 0x1
+        push ecx
+        push eax
+        push ebp
+        call ext_008113E0
+        add esp, 0x10
+        test eax, eax
+        je fn_00811530_end
+        inc esi
+        jmp fn_00811530_loop
+    fn_00811530_end:
+        test edi, edi
+        je fn_00811530_ret
+        mov byte ptr [esi + edi], 0x0
+    fn_00811530_ret:
+        pop edi
+        pop esi
+        pop ebp
+        mov eax, 0x1
         pop ebx
         ret
     }
