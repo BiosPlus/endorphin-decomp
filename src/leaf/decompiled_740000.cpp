@@ -1,4 +1,5 @@
 // Decompiled translation unit: src/leaf/decompiled_740000.cpp
+extern "C" void ext_006D2160();
 
 // [0x0074AE00] sub_0074AE00 (32 bytes)
 // Stores three stack args into self->[0], [4], [8] and zeroes self->[0xC]; ret 0xC.
@@ -2379,6 +2380,35 @@ SKIP_LOOP:
         mov al, 1
         pop ebx
         pop ecx
+        ret
+    }
+}
+
+// [0x0074AEF0] sub_0074AEF0 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0074AEF0(void* self) {
+    __asm {
+        push -1
+        push 0x8bf296
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        lea ecx, [esi + 0x44]
+        mov dword ptr [esp + 0x10], 1
+        call ext_006D2160
+        lea ecx, [esi + 0x2c]
+        mov byte ptr [esp + 0x10], 0
+        call ext_006D2160
+        lea ecx, [esi + 0x14]
+        mov dword ptr [esp + 0x10], -1
+        call ext_006D2160
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
         ret
     }
 }
