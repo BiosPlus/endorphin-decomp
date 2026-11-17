@@ -5269,3 +5269,53 @@ L_set:
         ret
     }
 }
+
+// [0x0079EEF0] sub_0079EEF0 (128 bytes)
+extern "C" unsigned char mem_00B61218;
+extern "C" unsigned char mem_00B61151;
+extern "C" int mem_00B61219;
+extern "C" int mem_009251D8;
+extern "C" void ext_0079EF70();
+extern "C" __declspec(naked) void __fastcall fn_0079EEF0(void* self) {
+    __asm {
+        push ecx
+        mov al, byte ptr [mem_00B61150]
+        push ebx
+        xor bl, bl
+        test al, al
+        mov byte ptr [esp + 0x4], bl
+        jbe L_end
+L_loop:
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [mem_00B6114C]
+        and eax, 0xff
+        mov edx, dword ptr [ecx + 4*eax]
+        push edx
+        call ext_0079EF70
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_next
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_done
+L_next:
+        mov al, byte ptr [mem_00B61150]
+        inc bl
+        cmp bl, al
+        mov byte ptr [esp + 0x4], bl
+        jb L_loop
+L_end:
+        mov eax, dword ptr [mem_00B6114C]
+        push eax
+        call dword ptr [mem_009251D8]
+        add esp, 0x4
+        mov dword ptr [mem_00B6114C], 0
+        mov byte ptr [mem_00B61150], 0
+        mov byte ptr [mem_00B61151], 0
+L_done:
+        pop ebx
+        pop ecx
+        ret
+    }
+}
