@@ -173,6 +173,7 @@ extern "C" void* __stdcall fn_004CE9F0(void* a1) {
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA32928, (void*)0xA2E2F8, 0);
 }
 extern "C" void ext_004CA5E0();
+extern "C" void ext_005E02A0();
 
 // [0x004D1820] ExprParser::ReadMethodType<NMData::TransitionEventData, float, {public: float __thiscall NMData::TransitionEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004D1820(void* a1) {
@@ -61200,6 +61201,52 @@ extern "C" __declspec(naked) int __fastcall fn_005F64F0(void* self, int edx_unus
         add esp, 0x28
         ret 4
     L_null_005F64F0:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x005E2D10] ExprParser::ReadMethodType<NMData::RelationshipData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RelationshipData::getMetaBodyName0(void) const, 0}, 0>::vfunc_3 (104 bytes)
+extern "C" __declspec(naked) int __fastcall fn_005E2D10(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_null_005E2D10
+        push esi
+        push edi
+        call ext_005E02A0
+        mov edi, dword ptr [mem_00924FC0]
+        mov esi, eax
+        push 0x92f10c
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne L_true_005E2D10
+        push 0x93a810
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne L_true_005E2D10
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 0x28
+        ret 4
+    L_true_005E2D10:
+        pop edi
+        mov eax, 1
+        pop esi
+        add esp, 0x28
+        ret 4
+    L_null_005E2D10:
         lea ecx, [esp]
         call ext_0046C3C0
         push 0x9dec1c
