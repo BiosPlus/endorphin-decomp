@@ -19,5 +19,7 @@
     "0x004ED141",
     "0x004ED14B"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-17T09:49:35Z"
 }
