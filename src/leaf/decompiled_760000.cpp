@@ -958,3 +958,37 @@ loop_00766218:
         ret 0xc
     }
 }
+
+// [0x007648F0] sub_007648F0 (64 bytes)
+extern "C" __declspec(naked) int __fastcall fn_007648F0(void* self, int edx_unused, int a, int b) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [ecx + 0x15c]
+        xor eax, eax
+        push edi
+        test esi, esi
+        jle done
+        mov edx, dword ptr [ecx + 0x16c]
+        mov ebx, dword ptr [esp + 0x14]
+        mov edi, dword ptr [esp + 0x10]
+    loop_top:
+        mov ecx, dword ptr [edx]
+        cmp dword ptr [ecx], edi
+        jne next
+        cmp dword ptr [ecx + 0x4], ebx
+        je found
+    next:
+        inc eax
+        add edx, 0x4
+        cmp eax, esi
+        jl loop_top
+    done:
+        or eax, -1
+    found:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x8
+    }
+}
