@@ -5841,3 +5841,53 @@ extern "C" __declspec(naked) void __cdecl fn_0086CDB0(void* p) {
         ret
     }
 }
+
+// [0x0086A840] sub_0086A840 (96 bytes)
+extern "C" void ext_00869FE0();
+extern "C" void ext_0086A2B0();
+
+extern "C" __declspec(naked) void __cdecl fn_0086A840(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        sub esp, 0x410
+        __asm _emit 0x8d
+        __asm _emit 0x54
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push esi
+        mov esi, dword ptr [esp + 0x428]
+        push esi
+        push eax
+        push ecx
+        push edx
+        call ext_00869FE0
+        mov eax, dword ptr [esp + 0x434]
+        push esi
+        lea ecx, [esi + esi]
+        push eax
+        mov eax, dword ptr [esp + 0x430]
+        lea edx, [esp + 0x1c]
+        push ecx
+        push edx
+        lea ecx, [esp + 0x22c]
+        push eax
+        push ecx
+        call ext_0086A2B0
+        add esp, 0x28
+        pop esi
+        add esp, 0x410
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
