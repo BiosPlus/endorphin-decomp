@@ -6767,3 +6767,44 @@ L_7B8B4F:
         ret
     }
 }
+
+// [0x007B9620] sub_007B9620 (64 bytes)
+extern "C" int __cdecl ext_007AA3D0(int a);
+extern "C" void __cdecl ext_007B9310(int a, int b);
+extern "C" void __cdecl ext_007B93E0(int a, int b);
+extern "C" void __cdecl ext_007B94E0(int a, int b);
+
+extern "C" __declspec(naked) void __cdecl fn_007B9620(int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        push esi
+        call ext_007AA3D0
+        mov edi, dword ptr [esp + 0x14]
+        add esp, 0x4
+        dec eax
+        je L_7B963C
+        dec eax
+        je L_7B9646
+        pop edi
+        pop esi
+        ret
+L_7B963C:
+        push edi
+        push esi
+        call ext_007B9310
+        add esp, 0x8
+L_7B9646:
+        push edi
+        push esi
+        call ext_007B93E0
+        push edi
+        push esi
+        call ext_007B94E0
+        add esp, 0x10
+        pop edi
+        pop esi
+        ret
+    }
+}
