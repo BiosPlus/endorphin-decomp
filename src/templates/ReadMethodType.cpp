@@ -35,6 +35,7 @@ extern "C" void ext_004A2490();
 extern "C" void ext_00496F40();
 extern "C" void ext_004D39C0();
 extern "C" void ext_004EDE20();
+extern "C" void ext_006A7C10();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -18880,6 +18881,30 @@ extern "C" __declspec(naked) int __fastcall fn_0050A260(void* self, int edx_unus
         test ecx, ecx
         je throw_path
         call ext_00508BA0
+        neg eax
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 0x4
+    throw_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x004FF460] ExprParser::ReadMethodType<EvolveEngine, int, {public: int __thiscall EvolveEngine::getGenerationCount(void) const, 0}, 1>::vfunc_3 (53 bytes)
+extern "C" __declspec(naked) int __fastcall fn_004FF460(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je throw_path
+        call ext_006A7C10
         neg eax
         sbb eax, eax
         neg eax
