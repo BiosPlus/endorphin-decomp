@@ -8112,3 +8112,40 @@ extern "C" __declspec(naked) void __cdecl fn_007B8C10(void* a1) {
         ret
     }
 }
+
+// [0x007BA200] sub_007BA200 (112 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007BA200(void* self, unsigned short tag, void* out, unsigned int value) {
+    __asm {
+        mov edx, dword ptr [esp + 0xc]
+        mov ax, word ptr [esp + 0x8]
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        cmp esi, 0xffff
+        mov word ptr [edx], ax
+        mov dword ptr [edx + 0x4], 0x1
+        jbe L_7BA22B
+        mov dword ptr [edx + 0x8], esi
+        mov word ptr [edx + 0x2], 0x4
+        pop esi
+        ret
+    L_7BA22B:
+        mov ecx, dword ptr [esp + 0x8]
+        mov word ptr [edx + 0x2], 0x3
+        mov eax, dword ptr [ecx + 0x160]
+        cmp word ptr [ecx + 0x150], 0x4d4d
+        mov eax, dword ptr [eax + 0xc]
+        jne L_7BA25B
+        mov ecx, dword ptr [ecx + 0x15c]
+        and eax, esi
+        pop esi
+        mov ecx, dword ptr [ecx + 0xc]
+        shl eax, cl
+        mov dword ptr [edx + 0x8], eax
+        ret
+    L_7BA25B:
+        and eax, esi
+        pop esi
+        mov dword ptr [edx + 0x8], eax
+        ret
+    }
+}
