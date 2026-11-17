@@ -3510,3 +3510,33 @@ L_false:
         ret 0x8
     }
 }
+
+// [0x00726B40] sub_00726B40 (64 bytes)
+extern "C" void ext_00726770();
+extern "C" void ext_00726840();
+extern "C" void ext_00726AE0();
+extern "C" __declspec(naked) int __fastcall fn_00726B40(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        call ext_00726770
+        test al, al
+        je short L_ret_a2
+        push edi
+        mov ecx, esi
+        call ext_00726AE0
+        mov ecx, esi
+        mov edi, eax
+        call ext_00726840
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x8
+L_ret_a2:
+        mov eax, dword ptr [esp + 0xc]
+        pop esi
+        ret 0x8
+    }
+}
