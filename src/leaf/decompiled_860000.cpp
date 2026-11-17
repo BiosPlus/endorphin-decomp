@@ -5580,3 +5580,47 @@ L_has_off:
         ret
     }
 }
+
+// [0x00869330] sub_00869330 (80 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00869330(void) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        test edi, edi
+        je L_zero
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0xc]
+        push ebx
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [ecx]
+        inc eax
+        cmp bl, dl
+        lea esi, [ecx + 1]
+        pop ebx
+        jne L_diff
+    L_loop:
+        dec edi
+        je L_zero
+        mov dl, byte ptr [eax]
+        mov cl, byte ptr [esi]
+        inc eax
+        inc esi
+        cmp cl, dl
+        je L_loop
+    L_diff:
+        xor ecx, ecx
+        pop edi
+        mov cl, byte ptr [eax - 0x1]
+        xor eax, eax
+        mov al, byte ptr [esi - 0x1]
+        pop esi
+        sub eax, ecx
+        ret
+    L_zero:
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
