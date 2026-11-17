@@ -88,8 +88,10 @@ L_7BB193:
 }
 
 extern "C" int mem_00925208;
+extern "C" void ext_007AA510();
+extern "C" bool mem_00B61219;
 
-// [0x007B3380] sub_007B3380 (1440 bytes)
+extern "C" bool mem_00B61219;
 extern "C" __declspec(naked) void* __cdecl fn_007B3380(int* s) {
     __asm {
         push esi
@@ -7110,6 +7112,50 @@ L_7B2A52:
 L_7B2A58:
         mov eax, edi
         pop edi
+        pop esi
+        ret
+    }
+}
+
+// [0x007B2430] sub_007B2430 (80 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007B2430(const char* s, int n) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        push esi
+        test ecx, ecx
+        jne L_nonnull
+        push 0x2
+        call ext_007AA510
+        add esp, 0x4
+        xor eax, eax
+        pop esi
+        ret
+L_nonnull:
+        mov eax, dword ptr [esp + 0xc]
+        xor esi, esi
+        inc eax
+        test eax, eax
+        jle L_chk
+L_loop:
+        cmp byte ptr [esi + ecx], 0x0
+        je L_chk
+        inc esi
+        cmp esi, eax
+        jl L_loop
+L_chk:
+        cmp byte ptr [esi + ecx], 0x0
+        je L_ret
+        push 0x12
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        jne L_ret
+        xor eax, eax
+        pop esi
+        ret
+L_ret:
+        mov eax, esi
         pop esi
         ret
     }
