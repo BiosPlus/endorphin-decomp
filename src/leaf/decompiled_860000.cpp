@@ -6018,3 +6018,54 @@ extern "C" __declspec(naked) void __cdecl fn_00869EC0(void) {
         nop
     }
 }
+
+// [0x0086D0A0] sub_0086D0A0 (112 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_0086D0A0(void* a1, unsigned int a2, unsigned int a3, unsigned char* s) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x20]
+        mov dword ptr [esp + 0x20], edi
+        test byte ptr [edi + 0x14], 0x4
+        je no_deref
+        mov eax, dword ptr [edi]
+        mov dword ptr [esp + 0x20], eax
+    no_deref:
+        mov edx, dword ptr [esp + 0x20]
+        mov ebp, dword ptr [esp + 0x18]
+        mov ebx, dword ptr [esp + 0x1c]
+        mov ecx, dword ptr [edi + 0x8]
+        mov eax, dword ptr [edx + 0x4]
+        mov edx, ebp
+        imul edx, ebx
+        sub eax, ecx
+        cmp edx, eax
+        jbe no_clamp
+        xor edx, edx
+        div ebp
+        mov ebx, eax
+    no_clamp:
+        mov eax, dword ptr [esp + 0x20]
+        mov esi, ebx
+        imul esi, ebp
+        mov edx, dword ptr [eax]
+        mov eax, dword ptr [esp + 0x14]
+        add edx, ecx
+        push esi
+        push edx
+        push eax
+        call ext_00859780
+        mov eax, dword ptr [edi + 0x8]
+        add esp, 0xc
+        add eax, esi
+        mov dword ptr [edi + 0x8], eax
+        pop edi
+        pop esi
+        mov eax, ebx
+        pop ebp
+        pop ebx
+        ret
+    }
+}
