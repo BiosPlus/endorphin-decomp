@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/leaf/decompiled_730000.cpp
+extern "C" void ext_00726A40();
+extern "C" int mem_009251D0; /* u32 0x0062D91A */
 
-// [0x00736E20] sub_00736E20 (128 bytes)
+extern "C" int mem_009251D0; /* u32 0x0062D91A */
 extern "C" void ext_006C5940();
 extern "C" void ext_00726770();
 extern "C" void ext_00726840();
@@ -2503,5 +2505,61 @@ extern "C" __declspec(naked) void __fastcall fn_00731EA0(void* self, int edx_unu
     L_end:
         pop esi
         ret 4
+    }
+}
+
+// [0x0073E0D0] sub_0073E0D0 (128 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0073E0D0(void* self, int edx_unused, int a1) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0xac]
+        push esi
+        push edi
+        add ecx, 0x4
+        call ext_00726A40
+        mov edi, dword ptr [mem_009251D0]
+        mov esi, eax
+        push 0xaae384
+        push esi
+        call edi
+        add esp, 0x8
+        test eax, eax
+        jne L_next1
+        pop edi
+        pop esi
+        ret 0x4
+L_next1:
+        push 0xaae374
+        push esi
+        call edi
+        add esp, 0x8
+        test eax, eax
+        jne L_next2
+        pop edi
+        mov eax, 0x1
+        pop esi
+        ret 0x4
+L_next2:
+        push 0xaae368
+        push esi
+        call edi
+        add esp, 0x8
+        test eax, eax
+        jne L_next3
+        pop edi
+        mov eax, 0x2
+        pop esi
+        ret 0x4
+L_next3:
+        push 0xaae360
+        push esi
+        call edi
+        add esp, 0x8
+        neg eax
+        sbb eax, eax
+        pop edi
+        neg eax
+        add eax, 0x3
+        pop esi
+        ret 0x4
     }
 }
