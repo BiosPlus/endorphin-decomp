@@ -62098,3 +62098,54 @@ L_throw:
         call ext_006A6DD2
     }
 }
+
+// [0x0068F0D0] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_3 (111 bytes)
+extern "C" int mem_0092F10C;
+extern "C" int mem_0093A810;
+extern "C" __declspec(naked) bool __stdcall fn_0068F0D0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_throw
+        mov edx, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [edx + 0xc]
+        push esi
+        push edi
+        push eax
+        call ext_0068EE60
+        mov edi, dword ptr [mem_00924FC0]
+        mov esi, eax
+        push offset mem_0092F10C
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne L_true
+        push offset mem_0093A810
+        push esi
+        call edi
+        add esp, 0x8
+        test al, al
+        jne L_true
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 0x28
+        ret 0x4
+    L_true:
+        pop edi
+        mov eax, 0x1
+        pop esi
+        add esp, 0x28
+        ret 0x4
+    L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
