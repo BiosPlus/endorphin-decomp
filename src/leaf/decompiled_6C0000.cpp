@@ -15,11 +15,16 @@ extern "C" void ext_006CC6F0();
 extern "C" void __cdecl fn_006C9500() {
     ext_006C9960(0, 0, (int)0xaa8d00);
 }
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9D30();
+extern "C" void ext_006C9DF0();
+extern "C" void ext_006CA6A0();
+extern "C" void ext_006D03E0();
 
-// [0x006C9510] sub_006C9510 (15 bytes)
-extern "C" void __cdecl fn_006C9510() {
-    ext_006C9960(0, 0, (int)0xaa8d0c);
-}
+extern "C" void ext_006C9D30();
+extern "C" void ext_006C9DF0();
+extern "C" void ext_006CA6A0();
+extern "C" void ext_006D03E0();
 
 // [0x006C9520] sub_006C9520 (15 bytes)
 extern "C" void __cdecl fn_006C9520() {
@@ -4709,5 +4714,47 @@ done:
         pop edi
         pop ebx
         ret 8
+    }
+}
+
+// [0x006CC8F0] sub_006CC8F0 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006CC8F0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push ebx
+        push edi
+        mov edi, ecx
+        call ext_006CA6A0
+        mov ebx, dword ptr [esp + 0xc]
+        dec eax
+        cmp ebx, eax
+        jge done
+        push esi
+        push ebx
+        mov ecx, edi
+        call ext_006CA060
+        mov esi, eax
+        mov ecx, esi
+        call ext_006C9C30
+        cmp eax, 0x8
+        jne skip
+        push 0x1000000
+        push 0x1000000
+        mov ecx, esi
+        call ext_006C9D30
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, esi
+        push eax
+        push 0x2
+        call ext_006C9DF0
+skip:
+        push ebx
+        push 0x10
+        mov ecx, edi
+        call ext_006D03E0
+        pop esi
+done:
+        pop edi
+        pop ebx
+        ret 0x8
     }
 }
