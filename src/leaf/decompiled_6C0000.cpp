@@ -5583,3 +5583,51 @@ L_after:
         ret 4
     }
 }
+
+// [0x006C9250] sub_006C9250 (128 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006C92D0();
+extern "C" void ext_006DEEA0();
+extern "C" void ext_007641C0();
+
+extern "C" __declspec(naked) void __fastcall fn_006C9250(void* self) {
+    __asm {
+        push -1
+        push 0x8b8e23
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp+4], esi
+        mov ecx, dword ptr [esi+0x4c]
+        mov dword ptr [esp+0x10], 1
+        call ext_006DEEA0
+        cmp eax, 8
+        jne L_skip1
+        mov eax, dword ptr [esi+0x4c]
+        mov ecx, esi
+        push eax
+        call ext_006C92D0
+L_skip1:
+        mov ecx, dword ptr [esi+0x4c]
+        test ecx, ecx
+        je L_skip2
+        mov edx, dword ptr [ecx]
+        push 1
+        call dword ptr [edx]
+L_skip2:
+        lea ecx, [esi+0x50]
+        mov byte ptr [esp+0x10], 0
+        call ext_007641C0
+        mov ecx, esi
+        mov dword ptr [esp+0x10], -1
+        call ext_006B9D70
+        mov ecx, dword ptr [esp+0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
