@@ -50013,3 +50013,38 @@ extern "C" __declspec(naked) void __fastcall fn_00604CE0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x006250F0] ExprParser::ReadMethodType<Sensors::SensorIsCollidingWith, bool, &public: bool __thiscall Sensors::SensorIsCollidingWith::getBool(void) const, 1>::vfunc_4 (84 bytes)
+extern "C" __declspec(naked) void* __stdcall fn_006250F0(void* a1, int a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        mov dword ptr [esp + 0x4], 0x0
+        je null_path
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [edx + 0x44]
+        mov ecx, esi
+        call eax
+        fstp st(0)
+        movzx ecx, byte ptr [esi + 0x30]
+        mov esi, dword ptr [esp + 0x34]
+        push ecx
+        push esi
+        call ext_0046C460
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+null_path:
+        lea ecx, [esp + 0x8]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea edx, [esp + 0xc]
+        push edx
+        call ext_006A6DD2
+    }
+}
