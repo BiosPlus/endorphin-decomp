@@ -10031,3 +10031,43 @@ extern "C" __declspec(naked) void __fastcall fn_006B9B40(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x006B9D20] sub_006B9D20 (80 bytes)
+extern "C" void ext_006B9910();
+extern "C" void ext_006B9920();
+extern "C" void ext_006B9940();
+extern "C" void ext_006B99C0();
+extern "C" void ext_006B9B40();
+extern "C" void ext_006E7460();
+extern "C" __declspec(naked) void __fastcall fn_006B9D20(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        call ext_006B9910
+        mov edi, dword ptr [esp + 0xc]
+        mov ecx, edi
+        call ext_006B9940
+        test al, al
+        je no_match_006B9D20
+        mov ecx, edi
+        call ext_006E7460
+        push eax
+        mov ecx, edi
+        call ext_006B99C0
+        push eax
+        mov ecx, esi
+        call ext_006B9B40
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 4
+    no_match_006B9D20:
+        mov ecx, esi
+        call ext_006B9920
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 4
+    }
+}
