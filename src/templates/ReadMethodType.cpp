@@ -27839,3 +27839,34 @@ extern "C" __declspec(naked) void __fastcall fn_004A2EF0(void* self) {
         call    ext_006A6DD2
     }
 }
+
+// [0x004982E0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getResultantStateID(void) const, 0}, 0>::vfunc_0 (71 bytes)
+extern "C" void ext_00496F10();
+extern "C" void ext_006720E0();
+extern "C" __declspec(naked) void __fastcall fn_004982E0(void* self) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     ecx, dword ptr [eax]
+        test    ecx, ecx
+        mov     dword ptr [esp], 0x0
+        je      short THROW_PATH
+        push    esi
+        call    ext_00496F10
+        mov     esi, dword ptr [esp + 0x34]
+        push    eax
+        mov     ecx, esi
+        call    ext_006720E0
+        mov     eax, esi
+        pop     esi
+        add     esp, 0x2c
+        ret     0x8
+    THROW_PATH:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     ecx, [esp + 0x8]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
