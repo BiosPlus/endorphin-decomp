@@ -14,5 +14,7 @@
     "0x0071546F",
     "0x00715490"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-17T16:10:06Z"
 }

@@ -4713,3 +4713,33 @@ L_done:
         ret 0x10
     }
 }
+
+// [0x00715450] sub_00715450 (96 bytes)
+extern "C" void ext_0077FA20();
+extern "C" __declspec(naked) void __fastcall fn_00715450(void* self) {
+    __asm {
+        push -1
+        push 0x8bd4a8
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x9962e0
+        mov ecx, dword ptr [esi + 0x10]
+        push 0
+        mov dword ptr [esp + 0x14], 0
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x4]
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_0077FA20
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
