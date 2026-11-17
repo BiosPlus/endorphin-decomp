@@ -4051,3 +4051,34 @@ extern "C" __declspec(naked) void __cdecl fn_007AF080(void* dst, unsigned int co
         ret
     }
 }
+
+// [0x007A8BC0] sub_007A8BC0 (64 bytes)
+extern "C" void ext_007AA510();
+extern "C" int mem_00B61219;
+extern "C" int mem_009251D8;
+
+extern "C" __declspec(naked) void __cdecl fn_007A8BC0(void* p) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        test esi, esi
+        jne short L_free
+        push 2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 4
+        test al, al
+        je short L_end
+    L_free:
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je short L_end
+        push eax
+        call dword ptr [mem_009251D8]
+        add esp, 4
+        mov dword ptr [esi], 0
+    L_end:
+        pop esi
+        ret
+    }
+}
