@@ -4225,3 +4225,38 @@ extern "C" __declspec(naked) int __fastcall fn_00726770(void* self, int edx_unus
         ret 0x4
     }
 }
+
+// [0x0072CB90] sub_0072CB90 (96 bytes)
+extern "C" void ext_0072CBF0();
+
+extern "C" __declspec(naked) void __fastcall fn_0072CB90(void* self) {
+    __asm {
+        push -1
+        push 0x008b8fdb
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push 0x1d0
+        call ext_006A5C62
+        add esp, 4
+        __asm _emit 0x89 __asm _emit 0x44 __asm _emit 0x24 __asm _emit 0x00
+        test eax, eax
+        mov dword ptr [esp + 0xc], 0
+        je short L_null
+        mov ecx, eax
+        call ext_0072CBF0
+        mov ecx, dword ptr [esp + 4]
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    L_null:
+        mov ecx, dword ptr [esp + 4]
+        xor eax, eax
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+    }
+}
