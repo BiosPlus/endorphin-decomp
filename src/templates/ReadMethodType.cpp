@@ -30143,3 +30143,35 @@ extern "C" __declspec(naked) void __fastcall fn_00603940(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00609A70] ExprParser::ReadMethodType<NMData::DisabledCollisionPairList, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::DisabledCollisionPairList::getCharacterName(void) const, 0}, 1>::vfunc_0 (71 bytes)
+extern "C" void ext_00609730();
+extern "C" void ext_006720E0();
+
+extern "C" __declspec(naked) void __fastcall fn_00609A70(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je THROW_PATH
+        push esi
+        call ext_00609730
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        mov ecx, esi
+        call ext_006720E0
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    THROW_PATH:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
