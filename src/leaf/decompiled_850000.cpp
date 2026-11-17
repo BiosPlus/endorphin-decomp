@@ -3567,3 +3567,56 @@ fn0085BE20_end:
         ret
     }
 }
+
+// [0x0085A310] sub_0085A310 (96 bytes)
+extern "C" void ext_0086CFF0();
+
+extern "C" __declspec(naked) int __cdecl fn_0085A310(void* self, void* a2, void* a3) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp+8]
+        push ebp
+        push esi
+        mov ecx, dword ptr [ebx+0ch]
+        or eax, -1
+        xor esi, esi
+        push edi
+        test ecx, ecx
+        jbe L_ret_esi
+        mov edi, dword ptr [esp+1ch]
+        mov ebp, dword ptr [esp+18h]
+L_loop:
+        mov eax, dword ptr [ebx+18h]
+        mov ecx, dword ptr [eax+esi*8]
+        lea eax, [eax+esi*8]
+        cmp ecx, edi
+        jne L_next
+        mov ecx, dword ptr [eax+4]
+        push edi
+        push ebp
+        push ecx
+        call ext_0086CFF0
+        add esp, 0ch
+        test eax, eax
+        je L_found
+L_next:
+        mov eax, dword ptr [ebx+0ch]
+        inc esi
+        cmp esi, eax
+        jb L_loop
+        pop edi
+        pop esi
+        pop ebp
+        or eax, -1
+        pop ebx
+        ret
+L_found:
+        mov eax, esi
+L_ret_esi:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
