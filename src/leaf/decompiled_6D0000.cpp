@@ -5662,3 +5662,39 @@ extern "C" __declspec(naked) void __fastcall fn_006D2AD0(void* self) {
         ret 0x20
     }
 }
+
+// [0x006D2BD0] sub_006D2BD0 (96 bytes)
+extern "C" void ext_006D2390();
+extern "C" void ext_006D2A40();
+extern "C" __declspec(naked) void __fastcall fn_006D2BD0(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+    __asm {
+        push -1
+        push 0x8b9338
+        __asm _emit 0x64 __asm _emit 0xA1 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        push eax
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x25 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        push ecx
+        push esi
+        mov esi, ecx
+        sub esp, 0x20
+        lea eax, [esp + 0x38]
+        mov ecx, esp
+        mov dword ptr [esp + 0x24], esp
+        push eax
+        mov dword ptr [esp + 0x34], 0x0
+        call ext_006D2390
+        mov ecx, dword ptr [esi]
+        push ecx
+        mov ecx, esi
+        call ext_006D2A40
+        lea ecx, [esp + 0x18]
+        mov esi, eax
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, esi
+        __asm _emit 0x64 __asm _emit 0x89 __asm _emit 0x0D __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00 __asm _emit 0x00
+        pop esi
+        add esp, 0x10
+        ret 0x20
+    }
+}
