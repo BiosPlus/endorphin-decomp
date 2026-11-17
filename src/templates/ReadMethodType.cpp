@@ -24669,3 +24669,29 @@ extern "C" __declspec(naked) void __fastcall fn_005BD7D0(void* self) {
         call    ext_006A6DD2
     }
 }
+
+// [0x005B9FA0] ExprParser::ReadMethodType<NMData::MetaBodyData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyData::getLinearAcceleration(void) const, 0}, 1>::vfunc_4 (60 bytes)
+extern "C" void ext_005B6BC0();
+
+extern "C" __declspec(naked) void __fastcall fn_005B9FA0(void* self) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     ecx, dword ptr [eax]
+        test    ecx, ecx
+        mov     dword ptr [esp], 0x0
+        je      L_skip
+        call    ext_005B6BC0
+        mov     ecx, dword ptr [esp + 0x30]
+        push    eax
+        push    ecx
+        call    ext_0046C4E0
+    L_skip:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     edx, [esp + 0x8]
+        push    edx
+        call    ext_006A6DD2
+    }
+}
