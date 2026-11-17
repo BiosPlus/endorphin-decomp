@@ -4780,3 +4780,32 @@ extern "C" void __fastcall fn_00714580(void* self) {
     *(unsigned int*)(p + 0x14) = 0;
     *(unsigned int*)(p + 0x0c) = 0;
 }
+
+// [0x007154B0] sub_007154B0 (112 bytes)
+extern "C" void __fastcall fn_007154B0(void* self) {
+    unsigned char* c = (unsigned char*)self;
+    unsigned char* a = *(unsigned char**)(c + 0x10);
+    *(unsigned int*)(c + 0xc) = 0;
+    *(unsigned int*)(a + 0x160) = 0;
+    a = *(unsigned char**)(c + 0x10);
+    *(unsigned int*)(a + 0x1e8) = 0;
+    *(unsigned int*)(a + 0x1ec) = 0x40590000u;
+    a = *(unsigned char**)(c + 0x10);
+    a += 0x270;
+    *(unsigned int*)(a + 0x0) = 0;
+    *(unsigned int*)(a + 0x8) = 0;
+    *(unsigned int*)(a + 0x10) = 0;
+    *(unsigned int*)(a + 0x4) = 0x3ff00000u;
+    *(unsigned int*)(a + 0xc) = 0;
+    *(unsigned int*)(a + 0x14) = 0;
+    a = *(unsigned char**)(c + 0x10);
+    *(unsigned char*)(a + 0x310) = 0;
+    a = *(unsigned char**)(c + 0x10);
+    a += 0x398;
+    *(unsigned int*)(a + 0x0) = 0;
+    *(unsigned int*)(a + 0x8) = 0;
+    *(unsigned int*)(a + 0x10) = 0;
+    *(unsigned int*)(a + 0x4) = 0;
+    *(unsigned int*)(a + 0xc) = 0;
+    *(unsigned int*)(a + 0x14) = 0;
+}
