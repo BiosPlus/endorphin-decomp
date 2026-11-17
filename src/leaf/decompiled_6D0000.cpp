@@ -59,6 +59,7 @@ extern "C" void __stdcall fn_006DEF20(int a1) {
     ext_006DEED0(a1, 1);
 }
 extern "C" void ext_006D2200();
+extern "C" void ext_00711CF0();
 
 // [0x006DAE00] sub_006DAE00 (47 bytes)
 // Stores (__int64)((double)0x0A_C0E8D7B0 * a1) into *self (ret 8).
@@ -5078,5 +5079,33 @@ extern "C" __declspec(naked) void __fastcall fn_006D0490(void* self, int edx_unu
         ret 0x8
         __asm _emit 0x90
         __asm _emit 0x90
+    }
+}
+
+// [0x006D9170] sub_006D9170 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D9170(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov byte ptr [ecx + 0x17], 0x1
+        cmp eax, 0x1
+        mov dword ptr [ecx + 0x10], eax
+        je short L_six
+        cmp eax, 0x2
+        je short L_six
+        mov ecx, dword ptr [ecx + 0xc]
+        mov eax, 0x1
+        push eax
+        push 0x10
+        add ecx, 0x1f0
+        call ext_00711CF0
+        ret 0x4
+L_six:
+        mov ecx, dword ptr [ecx + 0xc]
+        xor eax, eax
+        push eax
+        push 0x10
+        add ecx, 0x1f0
+        call ext_00711CF0
+        ret 0x4
     }
 }
