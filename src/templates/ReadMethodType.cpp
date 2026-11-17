@@ -19760,3 +19760,28 @@ extern "C" __declspec(naked) void __stdcall fn_0046D620(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x004720D0] ExprParser::ReadMethodType<RuntimeEngine, int, {public: int __thiscall RuntimeEngine::getNumTicksToRun(void) const, 0}, 0>::vfunc_1 (55 bytes)
+extern "C" void ext_0046F7C0();
+
+extern "C" __declspec(naked) void __stdcall fn_004720D0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_004720F0
+        call ext_0046F7C0
+        mov dword ptr [esp + 0x2c], eax
+        fild dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 0x4
+    L_004720F0:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
