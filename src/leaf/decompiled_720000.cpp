@@ -126,6 +126,7 @@ extern "C" void* __fastcall fn_0072BF40(void* self) {
 extern "C" int ext_00789BB0();
 extern "C" int ext_0078C3A0();
 extern "C" int ext_0078CBE0();
+// Isolated WIP translation unit for fn_00724BF0
 
 // [0x00726940] sub_00726940 (63 bytes)
 extern "C" int __fastcall fn_00726940(void* self) {
@@ -4607,5 +4608,47 @@ extern "C" __declspec(naked) void __fastcall fn_00723B30(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 0x10
         ret
+    }
+}
+
+// [0x00724BF0] sub_00724BF0 (112 bytes)
+extern "C" void ext_006B9D70();
+extern "C" void ext_006E7460();
+extern "C" void ext_007275F0();
+extern "C" void ext_007279A0();
+extern "C" void ext_007283B0();
+
+extern "C" __declspec(naked) void __fastcall fn_00724BF0(void* self, int edx_unused, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, int arg16, int arg17, int arg18, int arg19, int arg20) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push 0x8c1b08
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        push edi
+        mov esi, ecx
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_006E7460
+        mov edi, eax
+        mov eax, dword ptr [esp + 0x18]
+        push eax
+        mov ecx, esi
+        call ext_007275F0
+        push edi
+        mov ecx, esi
+        call ext_007279A0
+        mov ecx, esi
+        call ext_007283B0
+        lea ecx, [esp + 0x1c]
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x8]
+        pop edi
+        mov dword ptr fs:[0x0], ecx
+        pop esi
+        add esp, 0xc
+        ret 0x50
     }
 }
