@@ -7738,3 +7738,27 @@ fail_0080EC60:
         ret
     }
 }
+
+// [0x00809540] sub_00809540 (64 bytes)
+extern "C" void ext_00857440();
+extern "C" void ext_00857490();
+extern "C" int mem_00AB2D44;
+extern "C" __declspec(naked) void __cdecl fn_00809540(void* p) {
+    __asm {
+        mov eax, dword ptr [mem_00AB2D44]
+        test eax, eax
+        je skip_flag
+        push 0xb61fc0
+        mov dword ptr [mem_00AB2D44], 0
+        call ext_00857490
+        add esp, 4
+    skip_flag:
+        mov eax, dword ptr [esp + 4]
+        push 0xb61fc0
+        push 0x10
+        push eax
+        call ext_00857440
+        add esp, 0xc
+        ret
+    }
+}
