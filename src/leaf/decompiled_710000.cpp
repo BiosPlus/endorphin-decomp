@@ -4516,3 +4516,33 @@ extern "C" __declspec(naked) double __stdcall fn_0071B780(int a1, int a2, double
         ret 0x10
     }
 }
+
+// [0x0071C750] sub_0071C750 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0071C750(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [ecx + 0xc]
+        push esi
+        mov esi, dword ptr [eax]
+        mov dword ptr [edx + 0x738], esi
+        mov esi, dword ptr [eax + 0x4]
+        mov dword ptr [edx + 0x73c], esi
+        mov edx, dword ptr [ecx + 0xc]
+        mov esi, dword ptr [eax + 0x8]
+        mov dword ptr [edx + 0x740], esi
+        mov esi, dword ptr [eax + 0xc]
+        mov dword ptr [edx + 0x744], esi
+        mov edx, dword ptr [ecx + 0xc]
+        mov esi, dword ptr [eax + 0x10]
+        mov dword ptr [edx + 0x748], esi
+        mov esi, dword ptr [eax + 0x14]
+        mov dword ptr [edx + 0x74c], esi
+        mov ecx, dword ptr [ecx + 0xc]
+        mov edx, dword ptr [eax + 0x18]
+        pop esi
+        mov dword ptr [ecx + 0x750], edx
+        mov eax, dword ptr [eax + 0x1c]
+        mov dword ptr [ecx + 0x754], eax
+        ret 0x4
+    }
+}
