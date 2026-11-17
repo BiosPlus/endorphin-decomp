@@ -23,6 +23,7 @@ extern "C" void ext_007A64E0();
 extern "C" int mem_009252D0;
 extern "C" int mem_009939D8;
 extern "C" void ext_006D2A30();
+extern "C" void ext_006C3030();
 
 // [0x007646E0] sub_007646E0 (96 bytes)
 extern "C" __declspec(naked) char __fastcall fn_007646E0(void* self, int edx_unused, void* arg) {
@@ -1057,5 +1058,46 @@ done_noset:
         mov al, 0x1
         pop esi
         ret 0x4
+    }
+}
+
+// [0x00764620] sub_00764620 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00764620(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        push esi
+        call ext_006C3030
+        mov esi, eax
+        test esi, esi
+        jne L_764636
+        xor al, al
+        pop esi
+        ret 4
+L_764636:
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax]
+        cmp eax, 4
+        jne L_764647
+        mov al, 1
+        pop esi
+        ret 4
+L_764647:
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [edx]
+        cmp eax, 5
+        jne L_764658
+        mov al, 1
+        pop esi
+        ret 4
+L_764658:
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        call dword ptr [eax]
+        cmp eax, 6
+        pop esi
+        sete al
+        ret 4
     }
 }
