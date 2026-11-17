@@ -163,6 +163,7 @@ extern "C" void* __stdcall fn_004C72B0(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA329A4, 0);
 }
+extern "C" void ext_005FCB30();
 
 // [0x004CE9F0] ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004CE9F0(void* a1) {
@@ -58285,6 +58286,42 @@ extern "C" __declspec(naked) float __fastcall fn_005E94F0(void* self, int edx_un
         test    ecx, ecx
         je      throw_path
         call    ext_005E2860
+        fstp    dword ptr [esp + 0x2c]
+        fldz
+        fld     dword ptr [esp + 0x2c]
+        fcom    st(1)
+        fnstsw  ax
+        fstp    st(1)
+        test    ah, 0x1
+        jne     neg_path
+        fadd    qword ptr [mem_00993828]
+        call    ext_006A6DE0
+        add     esp, 0x28
+        ret     4
+    neg_path:
+        fsub    qword ptr [mem_00993828]
+        call    ext_006A6DE0
+        add     esp, 0x28
+        ret     4
+    throw_path:
+        lea     ecx, dword ptr [esp]
+        call    ext_0046C3C0
+        push    offset mem_009DEC1C
+        lea     ecx, dword ptr [esp + 4]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
+
+// [0x005FDE30] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{72, {flat}}, 1>::vfunc_2 (96 bytes)
+extern "C" __declspec(naked) float __stdcall fn_005FDE30(void* a1) {
+    __asm {
+        mov     eax, dword ptr [esp + 4]
+        mov     ecx, dword ptr [eax]
+        sub     esp, 0x28
+        test    ecx, ecx
+        je      throw_path
+        call    ext_005FCB30
         fstp    dword ptr [esp + 0x2c]
         fldz
         fld     dword ptr [esp + 0x2c]
