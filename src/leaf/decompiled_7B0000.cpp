@@ -6555,3 +6555,34 @@ L_slow:
         ret
     }
 }
+
+// [0x007B7E70] sub_007B7E70 (64 bytes)
+extern "C" void ext_007B7910();
+extern "C" int mem_00999748;
+extern "C" int mem_0099974C;
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
+extern "C" __declspec(naked) void __cdecl fn_007B7E70(void* self) {
+    __asm {
+        mov eax, dword ptr [mem_00999748]
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov dword ptr [esi], eax
+        mov ecx, dword ptr [mem_0099974C]
+        mov dword ptr [esi + 4], ecx
+        call ext_007B7910
+        fstp dword ptr [esi]
+        mov al, byte ptr [mem_00B61218]
+        test al, al
+        je CALL_SECOND
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je DONE
+CALL_SECOND:
+        call ext_007B7910
+        fstp dword ptr [esi + 4]
+DONE:
+        pop esi
+        ret
+    }
+}
