@@ -4994,3 +4994,42 @@ done:
         ret 0x8
     }
 }
+
+// [0x006D2200] sub_006D2200 (80 bytes)
+extern "C" int mem_0092528C;
+extern "C" __declspec(naked) void __fastcall fn_006D2200(void* self, int edx_unused, int idx) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, ecx
+        lea ebx, [edi + 0x1]
+        mov eax, dword ptr [esi]
+        cmp ebx, eax
+        jge short L_skip
+        mov ecx, dword ptr [esi + 0xc]
+        sub eax, edi
+        dec eax
+        mov edx, dword ptr [esi + 0x10]
+        imul eax, ecx
+        push eax
+        mov eax, ecx
+        imul eax, ebx
+        imul ecx, edi
+        add eax, edx
+        add ecx, edx
+        push eax
+        push ecx
+        call dword ptr [mem_0092528C]
+        add esp, 0xc
+L_skip:
+        mov eax, dword ptr [esi]
+        pop edi
+        dec eax
+        mov dword ptr [esi], eax
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
