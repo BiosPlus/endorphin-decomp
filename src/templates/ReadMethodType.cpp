@@ -17847,3 +17847,27 @@ throw_path:
         call ext_006A6DD2
     }
 }
+
+// [0x005D6BA0] ExprParser::ReadMethodType<NMData::VideoPlaneData, bool, &public: bool __thiscall NMData::VideoPlaneData::mustDrawTimeCode(void) const, 0>::vfunc_2 (52 bytes)
+extern "C" __declspec(naked) void __fastcall fn_005D6BA0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 28h
+        test eax, eax
+        je short L_null
+        xor ecx, ecx
+        cmp byte ptr [eax + 30h], cl
+        setne cl
+        mov eax, ecx
+        add esp, 28h
+        ret 4
+    L_null:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 9dec1ch
+        lea edx, [esp + 4]
+        push edx
+        call ext_006A6DD2
+    }
+}
