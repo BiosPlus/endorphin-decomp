@@ -2548,3 +2548,41 @@ L_6E9610_d:
         ret 4
     }
 }
+
+// [0x006E72D0] sub_006E72D0 (112 bytes)
+extern "C" void ext_006D2130();
+extern "C" void ext_006E7340();
+extern "C" __declspec(naked) void __fastcall fn_006E72D0(void* self) {
+    __asm {
+        push -1
+        push 008b9658h
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push edi
+        push 4
+        lea edi, [esi + 4]
+        push 10h
+        mov ecx, edi
+        mov dword ptr [esp + 10h], esi
+        call ext_006D2130
+        lea eax, [edi + 10h]
+        mov dword ptr [edi + 14h], eax
+        mov ecx, dword ptr [esp + 1ch]
+        mov dword ptr [esp + 14h], 0
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esi], 00993ce0h
+        call ext_006E7340
+        mov ecx, dword ptr [esp + 0ch]
+        mov eax, esi
+        pop edi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret 4
+    }
+}
