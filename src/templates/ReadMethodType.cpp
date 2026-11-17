@@ -146,6 +146,7 @@ extern "C" void* __stdcall fn_004C5890(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA329C8, 0);
 }
+extern "C" void ext_006A7250();
 
 // [0x004C72B0] ExprParser::ReadMethodType<NMData::SeverEventData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::SeverEventData::getSeverEventType(void) const, 0}, 0>::vfunc_16 (30 bytes)
 extern "C" void* __stdcall fn_004C72B0(void* a1) {
@@ -49790,6 +49791,47 @@ extern "C" __declspec(naked) void __fastcall fn_00670090(void* self) {
         call ext_0046C3C0
         push offset mem_009DEC1C
         lea ecx, [esp + 8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x0066FB50] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::calcNorm(void) const, 1>::vfunc_5 (82 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0066FB50(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je null_path_0066FB50
+        fld dword ptr [eax + 4]
+        fld dword ptr [eax]
+        fld dword ptr [eax + 8]
+        fld st(1)
+        _emit 0xde
+        _emit 0xca
+        fld st(2)
+        _emit 0xde
+        _emit 0xcb
+        _emit 0xd9
+        _emit 0xc9
+        _emit 0xde
+        _emit 0xc2
+        _emit 0xdc
+        _emit 0xc8
+        _emit 0xde
+        _emit 0xc1
+        call ext_006A7250
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+    null_path_0066FB50:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 4]
         push ecx
         call ext_006A6DD2
     }
