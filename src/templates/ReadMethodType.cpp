@@ -60772,3 +60772,54 @@ extern "C" __declspec(naked) bool __fastcall fn_00521950(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x005AB780] ExprParser::ReadMethodType<NMData::RigNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::RigNode::getMetaBodyName(void) const, 0}, 0>::vfunc_3 (104 bytes)
+extern "C" void ext_0044CCD0();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FC0;
+
+extern "C" __declspec(naked) int __fastcall fn_005AB780(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_null_005AB780
+        push esi
+        push edi
+        call ext_0044CCD0
+        mov edi, dword ptr [mem_00924FC0]
+        mov esi, eax
+        push 0x92f10c
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne L_true_005AB780
+        push 0x93a810
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne L_true_005AB780
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 0x28
+        ret 4
+    L_true_005AB780:
+        pop edi
+        mov eax, 1
+        pop esi
+        add esp, 0x28
+        ret 4
+    L_null_005AB780:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
