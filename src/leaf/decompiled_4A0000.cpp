@@ -13151,3 +13151,41 @@ extern "C" __declspec(naked) void __fastcall fn_004A8430(void* self) {
         ret
     }
 }
+
+// [0x004A59A0] sub_004A59A0 (91 bytes)
+extern "C" void* __cdecl ext_006A5C62(int size);
+extern "C" int mem_00925130;
+extern "C" int mem_009CDF94;
+extern "C" int mem_00928EC0;
+extern "C" __declspec(naked) void __cdecl fn_004A59A0(unsigned int n) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        sub esp, 0Ch
+        test ecx, ecx
+        ja  L_NONZERO
+        xor ecx, ecx
+    L_ZERO:
+        lea edx, [4*ecx]
+        push edx
+        call ext_006A5C62
+        add esp, 4
+        add esp, 0Ch
+        ret
+    L_NONZERO:
+        or  eax, -1
+        xor edx, edx
+        div ecx
+        cmp eax, 4
+        jae L_ZERO
+        lea eax, [esp + 10h]
+        push eax
+        lea ecx, [esp + 4]
+        mov dword ptr [esp + 14h], 0
+        call dword ptr [mem_00925130]
+        push offset mem_009CDF94
+        lea ecx, [esp + 4]
+        push ecx
+        mov dword ptr [esp + 8], offset mem_00928EC0
+        call ext_006A6DD2
+    }
+}
