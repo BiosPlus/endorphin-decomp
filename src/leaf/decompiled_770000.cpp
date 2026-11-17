@@ -3073,3 +3073,62 @@ extern "C" __declspec(naked) void __fastcall fn_00776A20(void* self) {
         ret 4
     }
 }
+
+// [0x0077FEF0] sub_0077FEF0 (128 bytes)
+extern "C" void ext_0077FE90();
+extern "C" __declspec(naked) void __fastcall fn_0077FEF0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, ecx
+        push esi
+        call ext_0077FE90
+        add esp, 4
+        cmp eax, 1
+        jne l_not1
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        jl l_done
+        cmp eax, 2
+        jge l_done
+        mov ecx, dword ptr [edi]
+        pop edi
+        shl esi, 4
+        mov edx, dword ptr [ecx + 4]
+        mov dword ptr [edx + esi], eax
+        pop esi
+        ret 8
+    l_not1:
+        cmp eax, 2
+        jne l_not2
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        jl l_done
+        cmp eax, 3
+        jge l_done
+        mov ecx, dword ptr [edi]
+        pop edi
+        shl esi, 4
+        mov edx, dword ptr [ecx + 4]
+        mov dword ptr [edx + esi], eax
+        pop esi
+        ret 8
+    l_not2:
+        cmp eax, 3
+        jne l_done
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        jl l_done
+        cmp eax, 2
+        jge l_done
+        mov ecx, dword ptr [edi]
+        shl esi, 4
+        mov edx, dword ptr [ecx + 4]
+        mov dword ptr [edx + esi], eax
+    l_done:
+        pop edi
+        pop esi
+        ret 8
+    }
+}
