@@ -2193,3 +2193,31 @@ L_006E87EE:
         ret 8
     }
 }
+
+// [0x006E6800] sub_006E6800 (80 bytes)
+extern "C" void ext_006B9D70();
+extern "C" int mem_008C1C88;
+extern "C" __declspec(naked) void __fastcall fn_006E6800(void* self) {
+    __asm {
+        push -1
+        push offset mem_008C1C88
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        lea ecx, [esi + 0x50]
+        mov dword ptr [esp + 0x10], 0
+        call ext_006B9D70
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 8]
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
