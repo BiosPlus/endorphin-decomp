@@ -6950,3 +6950,41 @@ extern "C" int __cdecl fn_007BFDF0(char* self) {
     }
     return -2;
 }
+
+// [0x007B8D80] sub_007B8D80 (80 bytes)
+extern "C" int mem_00B61DB8;
+
+extern "C" __declspec(naked) void __cdecl fn_007B8D80(void* out) {
+    __asm {
+        push esi
+        mov esi, dword ptr [mem_00B61DB8]
+        push 0x18
+        call dword ptr [mem_00925208]
+        add esp, 0x4
+        test eax, eax
+        je L_7B8D9F
+        test esi, esi
+        jne L_7B8DA7
+        mov dword ptr [mem_00B61DB8], eax
+L_7B8D9F:
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr [ecx], eax
+        ret
+L_7B8DA7:
+        mov ecx, dword ptr [esi + 0x14]
+        test ecx, ecx
+        je L_7B8DB7
+L_7B8DAE:
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x14]
+        test ecx, ecx
+        jne L_7B8DAE
+L_7B8DB7:
+        mov edx, dword ptr [esp + 0x8]
+        mov dword ptr [esi + 0x14], eax
+        pop esi
+        mov dword ptr [edx], eax
+        ret
+    }
+}
