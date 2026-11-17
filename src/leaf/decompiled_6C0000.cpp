@@ -5537,3 +5537,49 @@ skip:
         ret 0x4
     }
 }
+
+// [0x006C5940] sub_006C5940 (128 bytes)
+// Callee declarations: ext_006A5C62, ext_006B9D80, ext_006D2170 (MSVC inline asm resolves them by name).
+extern "C" void ext_006A5C62();
+extern "C" void ext_006B9D80();
+extern "C" void ext_006D2170();
+extern "C" __declspec(naked) void __fastcall fn_006C5940(void* self) {
+    __asm {
+        push -1
+        push 0x8b8fdb
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push 0x4c
+        call ext_006A5C62
+        add esp, 4
+        mov [esp+4], eax
+        test eax, eax
+        mov dword ptr [esp+0x10], 0
+        je L_null
+        mov ecx, [esp+0x18]
+        push ecx
+        mov ecx, eax
+        call ext_006B9D80
+        jmp L_after
+L_null:
+        xor eax, eax
+L_after:
+        lea ecx, [esi+0xf4]
+        mov [esp+0x18], eax
+        lea edx, [esp+0x18]
+        mov dword ptr [esp+0x10], -1
+        mov eax, [ecx]
+        push edx
+        push eax
+        call ext_006D2170
+        mov ecx, [esp+8]
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
