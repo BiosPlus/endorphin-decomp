@@ -2126,3 +2126,39 @@ extern "C" __declspec(naked) void __fastcall fn_006E86F0(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x006E0940] sub_006E0940 (80 bytes)
+extern "C" double mem_00993828;
+extern "C" __declspec(naked) void __cdecl fn_006E0940(void* out, void* in) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, dword ptr [esp + 0x4]
+        fld qword ptr [eax]
+        fmul qword ptr [eax + 0x8]
+        fld qword ptr [eax + 0x10]
+        fmul qword ptr [eax + 0x18]
+        fsubp st(1), st
+        fadd st(0), st
+        fstp qword ptr [ecx]
+        fld qword ptr [eax]
+        fld qword ptr [eax + 0x10]
+        fld st(1)
+        fmul st, st(2)
+        fsubr qword ptr [mem_00993828]
+        fld st(1)
+        fmul st, st(2)
+        fsubp st(1), st
+        fadd st(0), st
+        fstp qword ptr [ecx + 0x8]
+        fstp st(0)
+        fstp st(0)
+        fld qword ptr [eax + 0x10]
+        fmul qword ptr [eax + 0x8]
+        fld qword ptr [eax + 0x18]
+        fmul qword ptr [eax]
+        faddp st(1), st
+        fadd st(0), st
+        fstp qword ptr [ecx + 0x10]
+        ret
+    }
+}
