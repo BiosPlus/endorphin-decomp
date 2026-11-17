@@ -16,5 +16,7 @@
     "0x007226E3",
     "0x0072270A"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-17T16:44:04Z"
 }

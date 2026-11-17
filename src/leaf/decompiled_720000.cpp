@@ -5129,3 +5129,65 @@ extern "C" __declspec(naked) double __cdecl fn_00722C20(double a, double b, int 
         ret
     }
 }
+
+// [0x007226A0] sub_007226A0 (128 bytes)
+extern "C" void ext_00722660();
+extern "C" void ext_00722720();
+extern "C" int mem_009967F0; /* double 500 */
+extern "C" int mem_009967F8; /* double 0.002 */
+extern "C" __declspec(naked) void __cdecl fn_007226A0(double a, double x, double y) {
+    __asm {
+        sub esp, 0x8
+        fld qword ptr [esp + 0x14]
+        fcomp qword ptr [esp + 0x1c]
+        __asm _emit 0xc7
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0xe8
+        __asm _emit 0x03
+        __asm _emit 0x00
+        __asm _emit 0x00
+        fnstsw ax
+        test ah, 0x41
+        je short L_sign_pos
+        __asm _emit 0xc7
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        __asm _emit 0x18
+        __asm _emit 0xfc
+        __asm _emit 0xff
+        __asm _emit 0xff
+L_sign_pos:
+        __asm _emit 0xdb
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        sub esp, 0x8
+        fstp qword ptr [esp]
+        fld qword ptr [esp + 0x14]
+        fsub qword ptr [mem_009967F0]
+        sub esp, 0x8
+        fmul qword ptr [mem_009967F8]
+        fstp qword ptr [esp]
+        call ext_00722720
+        mov eax, dword ptr [esp + 0x30]
+        mov ecx, dword ptr [esp + 0x2c]
+        mov edx, dword ptr [esp + 0x28]
+        push eax
+        mov eax, dword ptr [esp + 0x28]
+        push ecx
+        mov ecx, dword ptr [esp + 0x28]
+        push edx
+        mov edx, dword ptr [esp + 0x28]
+        push eax
+        fstp qword ptr [esp + 0x20]
+        push ecx
+        push edx
+        call ext_00722660
+        fadd qword ptr [esp + 0x28]
+        add esp, 0x30
+        ret
+    }
+}
