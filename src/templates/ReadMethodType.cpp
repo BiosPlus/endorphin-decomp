@@ -14808,3 +14808,27 @@ extern "C" __declspec(naked) void __fastcall fn_005C53A0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x006155D0] ExprParser::ReadMethodType<NMData::TwistAndSwingLimit, float, &public: float __thiscall NMData::TwistAndSwingLimit::getLinearStiffness(void) const, 0>::vfunc_1 (48 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_006155D0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je fail
+        fld dword ptr [eax + 0xa8]
+        add esp, 0x28
+        ret 4
+    fail:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
