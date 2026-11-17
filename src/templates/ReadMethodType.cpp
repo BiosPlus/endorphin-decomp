@@ -43113,3 +43113,35 @@ throw_null:
         call ext_006A6DD2
     }
 }
+
+// [0x0068F1F0] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_0 (78 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_0068F1F0(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je short L_throw
+        mov edx, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [edx + 0xc]
+        push esi
+        push eax
+        call ext_0068EE60
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        mov ecx, esi
+        call ext_006720E0
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    L_throw:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
