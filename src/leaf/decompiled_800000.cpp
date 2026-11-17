@@ -7936,3 +7936,59 @@ extern "C" __declspec(naked) int __cdecl fn_00805F40(void* p) {
         ret
     }
 }
+
+// [0x0080EFD0] sub_0080EFD0 (112 bytes)
+extern "C" void ext_0080F040();
+extern "C" int mem_00B83EA0;
+extern "C" int mem_00B83EA4;
+extern "C" int mem_00B83EA8;
+
+extern "C" __declspec(naked) void* __cdecl fn_0080EFD0(void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [mem_00B83EA0]
+        test eax, eax
+        je skip_first
+        push 0
+        mov eax, dword ptr [mem_00B83EA0]
+        call eax
+        add esp, 4
+    skip_first:
+        push ebx
+        push esi
+        mov esi, dword ptr [mem_00B83EA8]
+        push edi
+        test esi, esi
+        je loop_end
+        mov edi, dword ptr [esp + 0x14]
+        mov ebx, dword ptr [esp + 0x10]
+    loop_top:
+        mov ecx, dword ptr [esi + 8]
+        push ebx
+        push ecx
+        call ext_0080F040
+        add esp, 8
+        test eax, eax
+        jne loop_end
+        test edi, edi
+        je no_store
+        mov dword ptr [edi], esi
+    no_store:
+        mov esi, dword ptr [esi]
+        test esi, esi
+        jne loop_top
+    loop_end:
+        mov eax, dword ptr [mem_00B83EA4]
+        test eax, eax
+        je finish
+        push 0
+        mov edx, dword ptr [mem_00B83EA4]
+        call edx
+        add esp, 4
+    finish:
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
