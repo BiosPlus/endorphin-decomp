@@ -48685,3 +48685,37 @@ extern "C" __declspec(naked) void __fastcall fn_005E9930(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x005E9C00] ExprParser::ReadMethodType<NMData::SkeletalJointData, float, {private: float __thiscall NMData::SkeletalJointData::getSoftLimitSwing1SizeForValuePtr(void) const, 0}, 0>::vfunc_0 (82 bytes)
+extern "C" void ext_005E2900();
+
+extern "C" __declspec(naked) void __fastcall fn_005E9C00(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je null_path_005E9C00
+        push esi
+        call ext_005E2900
+        fstp dword ptr [esp + 0x38]
+        mov esi, dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x38]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 8
+    null_path_005E9C00:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
