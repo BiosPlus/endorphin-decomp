@@ -4451,3 +4451,43 @@ L_end:
         ret 0x4
     }
 }
+
+// [0x007846D0] sub_007846D0 (80 bytes)
+extern "C" void ext_007847B0();
+extern "C" void ext_007847E0();
+extern "C" __declspec(naked) void __fastcall fn_007846D0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_007847B0
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, esi
+        push eax
+        call ext_007847E0
+        test eax, eax
+        je short L_fail
+        mov ecx, dword ptr [esp + 0xc]
+        test ecx, ecx
+        je short L_ok
+        push edi
+        mov edi, dword ptr [esi]
+        mov edx, eax
+        sub edx, edi
+        pop edi
+        shr edx, 0x3
+        mov dword ptr [ecx], edx
+L_ok:
+        mov eax, dword ptr [eax + 0x4]
+        pop esi
+        ret 0x8
+L_fail:
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        je short L_zero
+        mov dword ptr [eax], 0xffffffff
+L_zero:
+        xor eax, eax
+        pop esi
+        ret 0x8
+    }
+}
