@@ -19472,3 +19472,55 @@ extern "C" __declspec(naked) void __cdecl fn_007C15A0(void* p) {
         ret
     }
 }
+
+// [0x007C16F0] sub_007C16F0 (96 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007C16F0(int* state, const unsigned char* buf, unsigned int count) {
+    __asm {
+        mov edx, dword ptr [esp + 0xc]
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        xor eax, eax
+        mov ecx, dword ptr [edi]
+        test edx, edx
+        jbe done
+        mov esi, dword ptr [esp + 0x18]
+    loop_top:
+        cmp ecx, 0x4
+        jae done
+        mov dl, byte ptr [eax + esi]
+        cmp ecx, 0x2
+        sbb ebx, ebx
+        mov ebp, edx
+        and bl, 0x1
+        and ebp, 0xff
+        add ebx, 0xff
+        cmp ebp, ebx
+        jne not_expected
+        inc ecx
+        jmp next
+    not_expected:
+        test dl, dl
+        je zero_byte
+        xor ecx, ecx
+        jmp next
+    zero_byte:
+        mov edx, 0x4
+        sub edx, ecx
+        mov ecx, edx
+    next:
+        mov edx, dword ptr [esp + 0x1c]
+        inc eax
+        cmp eax, edx
+        jb loop_top
+    done:
+        mov dword ptr [edi], ecx
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
