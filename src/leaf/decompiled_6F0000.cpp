@@ -61,8 +61,10 @@ extern "C" __declspec(naked) void __stdcall fn_006F69B0(int a1) {
     }
 }
 extern "C" void ext_006EA7C0();
+extern "C" char __cdecl ext_006FF730(int ch, const unsigned short* s);
+extern "C" unsigned int (__cdecl *mem_00925334)(const wchar_t*);
 
-// [0x006F6900] sub_006F6900 (16 bytes)
+extern "C" unsigned int (__cdecl *mem_00925334)(const wchar_t*);
 extern "C" void ext_00782C00();
 
 extern "C" __declspec(naked) void __stdcall fn_006F6900(void* a) {
@@ -7919,6 +7921,76 @@ extern "C" __declspec(naked) void* __fastcall fn_006FEFF0(void* self) {
         pop edi
         pop esi
         add esp, 0x520
+        ret
+    }
+}
+
+// [0x006FF760] sub_006FF760 (128 bytes)
+// Counts maximal runs of chars for which sub_006FF730(ch, arg2) returns 0.
+extern "C" __declspec(naked) int __cdecl fn_006FF760(const unsigned short* s, const unsigned short* arg2) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+        push edi
+        push esi
+        xor ebp, ebp
+        call dword ptr [mem_00925334]
+        add esp, 0x4
+        test esi, esi
+        je m760_end
+        lea edi, [esi + 2*eax]
+        cmp esi, edi
+        jae m760_end
+        mov ebx, dword ptr [esp + 0x18]
+m760_top:
+        mov ax, word ptr [esi]
+        push ebx
+        push eax
+        call ext_006FF730
+        add esp, 0x8
+        test al, al
+        jne m760_skip
+        inc ebp
+        cmp esi, edi
+        jae m760_end
+m760_run:
+        mov cx, word ptr [esi]
+        push ebx
+        push ecx
+        call ext_006FF730
+        add esp, 0x8
+        test al, al
+        jne m760_skip
+        add esi, 0x2
+        cmp esi, edi
+        jae m760_end
+        jmp m760_run
+m760_skip:
+        cmp esi, edi
+        jae m760_end
+m760_skip_loop:
+        mov dx, word ptr [esi]
+        push ebx
+        push edx
+        call ext_006FF730
+        add esp, 0x8
+        test al, al
+        je m760_next
+        add esi, 0x2
+        cmp esi, edi
+        jae m760_end
+        jmp m760_skip_loop
+m760_next:
+        cmp esi, edi
+        jb m760_top
+m760_end:
+        pop edi
+        mov eax, ebp
+        pop esi
+        pop ebp
+        pop ebx
         ret
     }
 }
