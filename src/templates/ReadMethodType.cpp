@@ -27126,3 +27126,33 @@ extern "C" __declspec(naked) void __fastcall fn_00617480(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00670930] ExprParser::ReadMethodType<NM::Vector3, float, &public: float __thiscall NM::Vector3::getY(void) const, 0>::vfunc_3 (71 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00670930(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je  L_null
+        fld dword ptr [eax + 0x4]
+        fcomp qword ptr [mem_00987B78]
+        fnstsw ax
+        test ah, 0x1
+        jne L_zero
+        mov eax, 0x1
+        add esp, 0x28
+        ret 0x4
+    L_zero:
+        xor eax, eax
+        add esp, 0x28
+        ret 0x4
+    L_null:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
