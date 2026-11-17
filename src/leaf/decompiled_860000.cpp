@@ -5458,3 +5458,35 @@ zero_out:
         ret
     }
 }
+
+// [0x00869F50] sub_00869F50 (64 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00869F50(unsigned int* bits, unsigned int index, unsigned int n) {
+    __asm {
+        mov edx, dword ptr [esp + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov ecx, edx
+        test edx, edx
+        mov eax, esi
+        je  zero_done
+    zero_loop:
+        mov dword ptr [eax], 0x0
+        add eax, 0x4
+        dec ecx
+        jne zero_loop
+    zero_done:
+        mov eax, dword ptr [esp + 0xc]
+        shl edx, 0x5
+        cmp eax, edx
+        jae done
+        mov ecx, eax
+        mov edx, 0x1
+        and ecx, 0x1f
+        shl edx, cl
+        shr eax, 0x5
+        mov dword ptr [esi + 4*eax], edx
+    done:
+        pop esi
+        ret
+    }
+}
