@@ -4868,3 +4868,68 @@ extern "C" __declspec(naked) void __fastcall fn_007AAA20(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x007A7390] sub_007A7390 (112 bytes)
+extern "C" void ext_007A9360();
+extern "C" void ext_007B2D80();
+extern "C" int mem_00B61218;
+extern "C" int mem_00B61219;
+
+extern "C" __declspec(naked) int __cdecl fn_007A7390(void* self) {
+    __asm {
+        push ebx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        xor ebx, ebx
+        push edi
+        call ext_007A9360
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_HAS
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        jne L_HAS
+        pop edi
+        xor eax, eax
+        pop ebx
+        ret
+    L_HAS:
+        mov eax, dword ptr [edi + 0x8]
+        test eax, eax
+        jne L_NZ
+        pop edi
+        pop ebx
+        ret
+    L_NZ:
+        mov ecx, dword ptr [eax]
+        push esi
+        xor esi, esi
+        test ecx, ecx
+        jbe L_END
+    L_LOOP:
+        mov edx, dword ptr [eax + 0x4]
+        lea ecx, [esp + 0x10]
+        push ecx
+        push 0x4100
+        mov eax, dword ptr [edx + esi*8 + 0x4]
+        push eax
+        call ext_007B2D80
+        mov eax, dword ptr [esp + 0x1c]
+        add esp, 0xc
+        test eax, eax
+        je L_SKIP
+        inc ebx
+    L_SKIP:
+        mov eax, dword ptr [edi + 0x8]
+        inc esi
+        cmp esi, dword ptr [eax]
+        jb L_LOOP
+    L_END:
+        pop esi
+        mov eax, ebx
+        pop edi
+        pop ebx
+        ret
+    }
+}
