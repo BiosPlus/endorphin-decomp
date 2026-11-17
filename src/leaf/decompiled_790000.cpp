@@ -4625,3 +4625,35 @@ extern "C" __declspec(naked) void __fastcall fn_00792600(void* self) {
         ret
     }
 }
+
+// [0x00798710] sub_00798710 (64 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_00798710(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        push esi
+        mov esi, dword ptr [ecx + 0x50]
+        cmp esi, -1
+        jne fn00798710_div
+        mov edx, dword ptr [ecx + 0x28]
+        xor eax, eax
+        test edx, edx
+        setne al
+        jmp fn00798710_tail
+fn00798710_div:
+        mov eax, dword ptr [ecx + 0x28]
+        xor edx, edx
+        lea eax, [eax + esi - 1]
+        div esi
+fn00798710_tail:
+        cmp word ptr [ecx + 0x72], 2
+        pop esi
+        jne fn00798710_done
+        xor edx, edx
+        mov dx, word ptr [ecx + 0x4e]
+        mov ecx, edx
+        imul ecx, eax
+        mov eax, ecx
+fn00798710_done:
+        ret
+    }
+}
