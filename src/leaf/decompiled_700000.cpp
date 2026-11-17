@@ -2908,3 +2908,35 @@ extern "C" __declspec(naked) void __fastcall fn_0070EB00(void* self) {
         ret 0x4
     }
 }
+
+// [0x0070E3D0] sub_0070E3D0 (64 bytes)
+extern "C" void ext_006FE010();
+extern "C" void ext_0070E3B0();
+extern "C" void ext_0070E410();
+extern "C" void ext_0070E490();
+
+extern "C" __declspec(naked) void* __fastcall fn_0070E3D0(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esi + 0x8]
+        push eax
+        push edi
+        call ext_006FE010
+        push edi
+        mov ecx, esi
+        call ext_0070E410
+        push edi
+        mov ecx, esi
+        call ext_0070E490
+        push edi
+        mov ecx, esi
+        call ext_0070E3B0
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 0x4
+    }
+}
