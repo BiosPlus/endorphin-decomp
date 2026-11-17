@@ -7693,3 +7693,63 @@ extern "C" __declspec(naked) void __cdecl fn_007B7DE0(void* out) {
         ret
     }
 }
+
+// [0x007B0ED0] sub_007B0ED0 (96 bytes)
+extern "C" void ext_007B0F30();
+extern "C" int mem_00993860;
+extern "C" __declspec(naked) void __cdecl fn_007B0ED0(void* a1, void* a2) {
+    __asm {
+        sub esp, 0x8
+        __asm _emit 0x8d
+        __asm _emit 0x44
+        __asm _emit 0x24
+        __asm _emit 0x00
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+        push eax
+        push esi
+        push edi
+        call ext_007B06F0
+        add esp, 0xc
+        test eax, eax
+        je L_7B0F17
+        mov edx, dword ptr [esp + 0xc]
+        mov eax, dword ptr [esp + 0x8]
+        lea ecx, [esp + 0x18]
+        push ecx
+        push edx
+        push eax
+        push esi
+        push edi
+        call ext_007B0F30
+        add esp, 0x14
+        test eax, eax
+        je L_7B0F17
+        fld dword ptr [esp + 0x18]
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret
+    L_7B0F17:
+        fld dword ptr [mem_00993860]
+        pop edi
+        pop esi
+        add esp, 0x8
+        ret
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+        __asm _emit 0x90
+    }
+}
