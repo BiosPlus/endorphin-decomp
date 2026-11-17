@@ -4987,3 +4987,65 @@ L_end:
         ret
     }
 }
+
+// [0x0078D550] sub_0078D550 (112 bytes)
+extern "C" int mem_0092A278;
+
+struct D550Elem {
+    int x0;
+    int x1;
+    double d;
+};
+
+struct D550Row {
+    int count;
+    int p4;
+    int p8;
+    int pc;
+    D550Elem* elems;
+};
+
+extern "C" __declspec(naked) double __fastcall fn_0078D550(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0x8]
+        fld qword ptr [mem_0092A278]
+        lea eax, [eax + 2*eax]
+        sub esp, 0x10
+        mov ecx, dword ptr [ecx + 8*eax + 0x10]
+        mov eax, dword ptr [ecx + 4*edx]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        jle L_end
+        mov eax, dword ptr [eax + 0x10]
+        mov dl, byte ptr [esp + 0x1c]
+        push esi
+        push edi
+L_loop:
+        mov esi, eax
+        test dl, dl
+        mov edi, dword ptr [esi]
+        mov dword ptr [esp + 0x8], edi
+        mov edi, dword ptr [esi + 0x4]
+        mov dword ptr [esp + 0xc], edi
+        mov edi, dword ptr [esi + 0x8]
+        mov dword ptr [esp + 0x10], edi
+        mov esi, dword ptr [esi + 0xc]
+        mov dword ptr [esp + 0x14], esi
+        fld qword ptr [esp + 0x10]
+        je L_skip
+        fstp st(0)
+        fld qword ptr [esp + 0x10]
+        fabs
+L_skip:
+        add eax, 0x10
+        dec ecx
+        faddp st(1), st
+        jne L_loop
+        pop edi
+        pop esi
+L_end:
+        add esp, 0x10
+        ret 0xc
+    }
+}
