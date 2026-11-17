@@ -17215,3 +17215,36 @@ throw_null:
         call ext_006A6DD2
     }
 }
+
+// [0x0059EF40] ExprParser::ReadWriteMethodType<NMData::CharacterData, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{128, {flat}}, 4}, float, {[thunk]: __thiscall NMData::CharacterData::`vcall'{100, {flat}}, 4}>::vfunc_41 (72 bytes)
+extern "C" void ext_006036C0();
+extern "C" __declspec(naked) void __fastcall fn_0059EF40(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je null_path
+        mov eax, dword ptr [esp+0x34]
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx+4]
+        call eax
+        push ecx
+        lea ecx, [esi+4]
+        fstp dword ptr [esp]
+        call ext_006036C0
+        pop esi
+        add esp, 0x28
+        ret 8
+null_path:
+        lea ecx, [esp+4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
