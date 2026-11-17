@@ -7661,3 +7661,43 @@ L_zero:
         ret
     }
 }
+
+// [0x0080F440] sub_0080F440 (64 bytes)
+extern "C" char mem_00AB6AC4;
+
+extern "C" __declspec(naked) int __cdecl fn_0080F440(int n) {
+    __asm {
+        mov edx, dword ptr [esp + 4]
+        xor ecx, ecx
+        push esi
+        dec edx
+        mov esi, offset mem_00AB6AC4
+        jne L_LOOP_CHECK
+        xor eax, eax
+        pop esi
+        ret
+L_LOOP_CHECK:
+        test edx, edx
+        jle L_DONE
+L_LOOP:
+        mov al, byte ptr [esi]
+        cmp al, 0x7f
+        je L_DONE
+        test al, al
+        je L_SKIP
+        movsx ecx, al
+        inc esi
+L_SKIP:
+        test ecx, ecx
+        je L_DONE
+        sub edx, ecx
+        test edx, edx
+        jg L_LOOP
+L_DONE:
+        xor eax, eax
+        pop esi
+        test edx, edx
+        sete al
+        ret
+    }
+}
