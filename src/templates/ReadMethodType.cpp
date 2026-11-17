@@ -20129,3 +20129,28 @@ extern "C" __declspec(naked) void __stdcall fn_00509830(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x00597DF0] ExprParser::ReadMethodType<World, int, {public: int __thiscall World::getSimulationFrameNumber(void) const, 0}, 1>::vfunc_1 (55 bytes)
+extern "C" void ext_00596330();
+
+extern "C" __declspec(naked) void __stdcall fn_00597DF0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_00597E10
+        call ext_00596330
+        mov dword ptr [esp + 0x2c], eax
+        fild dword ptr [esp + 0x2c]
+        add esp, 0x28
+        ret 0x4
+    L_00597E10:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
