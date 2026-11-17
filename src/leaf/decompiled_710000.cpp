@@ -4075,3 +4075,48 @@ done:
         ret
     }
 }
+
+// [0x0071FC70] sub_0071FC70 (80 bytes)
+extern "C" int mem_00B5FFC0;
+extern "C" void ext_00784750();
+
+extern "C" __declspec(naked) void __fastcall fn_0071FC70(void* self) {
+    __asm {
+        mov ecx, dword ptr [mem_00B5FFC0]
+        push esi
+        test ecx, ecx
+        push edi
+        je L_fail
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        je L_fail
+        mov eax, dword ptr [ecx + 4]
+        xor esi, esi
+        test eax, eax
+        jle L_fail
+L_loop:
+        lea eax, [esp + 0x10]
+        push eax
+        push esi
+        call ext_00784750
+        cmp eax, edi
+        je L_found
+        mov ecx, dword ptr [mem_00B5FFC0]
+        inc esi
+        cmp esi, dword ptr [ecx + 4]
+        jl L_loop
+L_fail:
+        pop edi
+        xor al, al
+        pop esi
+        ret
+L_found:
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esp + 0x10]
+        pop edi
+        mov al, 1
+        mov dword ptr [ecx], edx
+        pop esi
+        ret
+    }
+}
