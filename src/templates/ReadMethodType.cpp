@@ -21501,3 +21501,27 @@ extern "C" __declspec(naked) void __fastcall fn_004B24C0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x0062E4B0] ExprParser::ReadMethodType<Sensors::CompoundSensorPlanes, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall Sensors::CompoundSensorPlanes::getVertAxis(void) const, 1>::vfunc_4 (58 bytes)
+extern "C" __declspec(naked) void __stdcall fn_0062E4B0(void* a1, void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0
+        je skip_0062E4B0
+        mov ecx, dword ptr [esp + 0x30]
+        add eax, 0x78
+        push eax
+        push ecx
+        call ext_0046C4E0
+    skip_0062E4B0:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, [esp + 0x8]
+        push edx
+        call ext_006A6DD2
+    }
+}
