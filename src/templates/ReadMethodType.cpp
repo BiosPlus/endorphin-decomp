@@ -72,6 +72,7 @@ extern "C" int mem_00987B78; /* double 1e-06 */
 extern "C" void ext_006720A0();
 extern "C" int mem_009433D8; /* double 1e-06 */
 extern "C" int mem_0095F7E0; /* double 1e-06 */
+extern "C" void ext_00672110();
 
 // [0x00497CA0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_00497CA0(void* self, int edx_unused, void* a1) {
@@ -27372,6 +27373,35 @@ null_path:
         push 9DEC1Ch
         lea edx, [esp + 8]
         push edx
+        call ext_006A6DD2
+    }
+}
+
+// [0x00635AA0] ExprParser::ReadMethodType<EffectorSkeletal, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorSkeletal::getDesiredPosition(void) const, 0>::vfunc_0 (71 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00635AA0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0x0
+        je null_path
+        push esi
+        mov esi, dword ptr [esp + 0x34]
+        add eax, 0x9c
+        push eax
+        mov ecx, esi
+        call ext_00672110
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    null_path:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
         call ext_006A6DD2
     }
 }
