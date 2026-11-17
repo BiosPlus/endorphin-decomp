@@ -2509,3 +2509,38 @@ extern "C" __declspec(naked) void* __fastcall fn_0070F2A0(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x007094A0] sub_007094A0 (64 bytes)
+extern "C" int mem_00B5EB78;
+
+extern "C" __declspec(naked) void* __cdecl fn_007094A0(void* arg) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        je done_walk
+    walk_loop:
+        mov esi, eax
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        jne walk_loop
+    done_walk:
+        test esi, esi
+        je fail
+        mov ecx, dword ptr [mem_00B5EB78]
+        mov eax, dword ptr [esi]
+        push ecx
+        mov ecx, esi
+        call dword ptr [eax + 0x14]
+        test al, al
+        je fail
+        mov eax, esi
+        pop esi
+        ret
+    fail:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
