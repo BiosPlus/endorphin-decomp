@@ -23233,3 +23233,38 @@ L439D40:
         ret
     }
 }
+
+// [0x0043D2E0] sub_0043D2E0 (112 bytes)
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00924FE4;
+extern "C" int mem_009251C4;
+extern "C" int mem_00924FE0;
+
+extern "C" __declspec(naked) void __fastcall fn_0043D2E0(void* self) {
+    __asm {
+        push -1
+        push 0x88f4c2
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        sub esp, 44h
+        push 0x932088
+        lea ecx, [esp + 4]
+        call dword ptr [mem_00924FE4]
+        lea ecx, [esp + 1Ch]
+        mov dword ptr [esp + 4Ch], 0
+        call dword ptr [mem_009251C4]
+        lea eax, [esp]
+        push eax
+        lea ecx, [esp + 2Ch]
+        mov byte ptr [esp + 50h], 1
+        mov dword ptr [esp + 20h], 0x928ecc
+        call dword ptr [mem_00924FE0]
+        push 0x9cdf20
+        lea ecx, [esp + 20h]
+        push ecx
+        mov byte ptr [esp + 54h], 0
+        mov dword ptr [esp + 24h], 0x928ed8
+        call ext_006A6DD2
+    }
+}
