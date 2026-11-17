@@ -1,4 +1,5 @@
 // Decompiled translation unit: src/leaf/decompiled_810000.cpp
+extern "C" int __cdecl ext_008110F0(int c);
 
 // [0x00810250] sub_00810250 (32 bytes)
 extern "C" __declspec(naked) void __cdecl fn_00810250(void) {
@@ -312,6 +313,67 @@ extern "C" __declspec(naked) int __cdecl fn_008115A0(void* a1, void* a2, void* a
         pop esi
         pop ebp
         mov eax, 1
+        pop ebx
+        ret
+    }
+}
+
+// [0x00811080] sub_00811080 (112 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00811080(const char* s1, unsigned int n, const char* s2, int unused) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        test esi, esi
+        je ret0
+        mov ebx, dword ptr [esp + 0x14]
+        test ebx, ebx
+        je ret0
+        mov al, byte ptr [esi]
+        push ebp
+        push edi
+        xor edi, edi
+        test al, al
+        je tail
+loop_top:
+        cmp byte ptr [ebx], 0x0
+        je tail
+        cmp edi, dword ptr [esp + 0x18]
+        ja tail
+        movsx eax, al
+        push eax
+        call ext_008110F0
+        movsx ecx, byte ptr [ebx]
+        push ecx
+        mov ebp, eax
+        call ext_008110F0
+        add esp, 0x8
+        cmp ebp, eax
+        jne tail
+        mov al, byte ptr [esi + 0x1]
+        inc esi
+        inc ebx
+        inc edi
+        test al, al
+        jne loop_top
+tail:
+        mov eax, dword ptr [esp + 0x18]
+        cmp edi, eax
+        pop edi
+        pop ebp
+        je one
+        cmp byte ptr [esi], 0x0
+        jne ret0
+        cmp byte ptr [ebx], 0x0
+        jne ret0
+one:
+        pop esi
+        mov eax, 0x1
+        pop ebx
+        ret
+ret0:
+        pop esi
+        xor eax, eax
         pop ebx
         ret
     }
