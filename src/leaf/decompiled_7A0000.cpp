@@ -4330,3 +4330,46 @@ extern "C" __declspec(naked) void* __cdecl fn_007AF8F0(unsigned short key) {
         ret
     }
 }
+
+// [0x007AE140] sub_007AE140 (80 bytes)
+extern "C" int mem_00924198;
+
+extern "C" __declspec(naked) void __cdecl fn_007AE140(char* buf, unsigned long size) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        lea ecx, [esp + 0xc]
+        push ecx
+        push ebx
+        mov dword ptr [esp + 0x14], eax
+        call dword ptr [mem_00924198]
+        test eax, eax
+        je L_fail
+        mov al, 0x1
+        pop ebx
+        ret
+    L_fail:
+        push esi
+        push edi
+        mov edi, 0xaac03c
+        or ecx, -0x1
+        xor eax, eax
+        repne scasb
+        not ecx
+        sub edi, ecx
+        xor al, al
+        mov edx, ecx
+        mov esi, edi
+        mov edi, ebx
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, edx
+        and ecx, 0x3
+        rep movsb
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
