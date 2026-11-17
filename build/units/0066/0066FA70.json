@@ -18,5 +18,7 @@
     "0x0066FACB",
     "0x0066FAD5"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T16:34:06Z"
 }
