@@ -5490,3 +5490,27 @@ extern "C" __declspec(naked) void __cdecl fn_00869F50(unsigned int* bits, unsign
         ret
     }
 }
+
+// [0x0086A800] sub_0086A800 (64 bytes)
+extern "C" void ext_0086A2B0();
+
+extern "C" __declspec(naked) void __cdecl fn_0086A800(int a, int b, int c, int d, int e) {
+    __asm {
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esp + 0xc]
+        sub esp, 0x208
+        push eax
+        mov eax, dword ptr [esp + 0x214]
+        push ecx
+        mov ecx, dword ptr [esp + 0x214]
+        push edx
+        push eax
+        lea edx, [esp + 0x10]
+        push ecx
+        push edx
+        call ext_0086A2B0
+        add esp, 0x220
+        ret
+    }
+}
