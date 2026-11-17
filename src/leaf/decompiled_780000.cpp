@@ -4827,3 +4827,33 @@ L_end:
         ret 0xc
     }
 }
+
+// [0x0078D2D0] sub_0078D2D0 (96 bytes)
+extern "C" void ext_006A6D5C();
+extern "C" void ext_0078D6B0();
+extern "C" __declspec(naked) void __fastcall fn_0078D2D0(void* self) {
+    __asm {
+        push -1
+        push 0x008c17a3
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esp + 0x10], 0
+        call ext_0078D6B0
+        push 0x0074adf0
+        push 2
+        push 0x18
+        push esi
+        mov dword ptr [esp + 0x20], 0xffffffff
+        call ext_006A6D5C
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
