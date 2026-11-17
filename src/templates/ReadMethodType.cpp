@@ -42981,3 +42981,35 @@ extern "C" __declspec(naked) void __stdcall fn_00695A20(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00695990] ExprParser::ReadMethodType<DoubleWithProperties, float, &public: float __thiscall DoubleWithProperties::getValue(void) const, 0>::vfunc_0 (79 bytes)
+extern "C" __declspec(naked) void* __stdcall fn_00695990(void* a1, void* a2) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     eax, dword ptr [eax]
+        test    eax, eax
+        mov     dword ptr [esp], 0
+        je      null_path
+        fld     qword ptr [eax]
+        push    esi
+        mov     esi, dword ptr [esp + 0x34]
+        fstp    dword ptr [esp + 0x38]
+        fld     dword ptr [esp + 0x38]
+        push    ecx
+        mov     ecx, esi
+        fstp    dword ptr [esp]
+        call    ext_00672080
+        mov     eax, esi
+        pop     esi
+        add     esp, 0x2c
+        ret     0x8
+null_path:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     ecx, [esp + 0x8]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
