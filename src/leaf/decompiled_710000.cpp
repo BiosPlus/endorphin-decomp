@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_710000.cpp
 extern "C" void ext_00714580();
 extern "C" void ext_0071E680();
+extern "C" void ext_006DEEC0();
 
 // [0x0071DE80] sub_0071DE80 (32 bytes)
 // Stores two stack args into the object at self->[0x10] (+0x160, +0x164), then sets self->byte[0xC] = 1 (ret 8).
@@ -3984,5 +3985,49 @@ extern "C" __declspec(naked) void __fastcall fn_00711B00(void* self, int edx_unu
         mov al, 0x1
         pop esi
         ret 0x8
+    }
+}
+
+// [0x0071FD10] sub_0071FD10 (80 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0071FD10(void* self, double* out, double* a, double* b) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov ecx, ebp
+        call ext_006DEEC0
+        mov esi, dword ptr [esp + 0x20]
+        mov ebx, dword ptr [esp + 0x1c]
+        mov edi, dword ptr [esp + 0x18]
+        test eax, eax
+        je skip_first
+        fld qword ptr [ebx]
+        fadd qword ptr [esi]
+        fstp qword ptr [edi]
+skip_first:
+        mov eax, dword ptr [ebp]
+        mov ecx, ebp
+        call dword ptr [eax + 0x14]
+        test eax, eax
+        jle done
+        mov edx, ebx
+        mov ecx, esi
+        sub edx, esi
+        sub edi, esi
+loop_top:
+        fld qword ptr [edx + ecx]
+        fmul qword ptr [ecx]
+        add ecx, 8
+        dec eax
+        fstp qword ptr [edi + ecx - 8]
+        jne loop_top
+done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
     }
 }
