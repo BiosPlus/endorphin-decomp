@@ -5624,3 +5624,50 @@ extern "C" __declspec(naked) int __cdecl fn_00869330(void) {
         ret
     }
 }
+
+// [0x00869F90] sub_00869F90 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00869F90(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        xor eax, eax
+        test ebx, ebx
+        je done_outer
+        mov edx, dword ptr [esp + 0x10]
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0x14]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+loop_top:
+        mov ecx, dword ptr [esi]
+        add esi, 4
+        sub ecx, eax
+        cmp ecx, -1
+        jne branch_b
+        mov ebp, dword ptr [edx]
+        or ecx, ecx
+        sub ecx, ebp
+        jmp store
+branch_b:
+        mov eax, dword ptr [edx]
+        or ebp, -1
+        sub ecx, eax
+        sub ebp, eax
+        cmp ebp, ecx
+        sbb eax, eax
+        neg eax
+store:
+        mov dword ptr [edi], ecx
+        add edx, 4
+        add edi, 4
+        dec ebx
+        jne loop_top
+        pop edi
+        pop esi
+        pop ebp
+done_outer:
+        pop ebx
+        ret
+    }
+}
