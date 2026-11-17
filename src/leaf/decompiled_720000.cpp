@@ -4182,3 +4182,46 @@ L_end:
         ret 0x4
     }
 }
+
+// [0x00726770] sub_00726770 (96 bytes)
+extern "C" void ext_00732CB0();
+extern "C" void ext_00789C80();
+extern "C" void ext_00789BA0();
+extern "C" __declspec(naked) int __fastcall fn_00726770(void* self, int edx_unused, int arg) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        push edi
+        call ext_00732CB0
+        mov ecx, dword ptr [esi + 0x250]
+        lea eax, [esp + 0xc]
+        push eax
+        push edi
+        call ext_00789C80
+        mov edi, eax
+        test edi, edi
+        je short L_fail_726770
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, dword ptr [esi + 0x250]
+        call ext_00789BA0
+        mov ecx, edi
+        call ext_0078CBE0
+        test eax, eax
+        je short L_fail_726770
+        mov ecx, edi
+        call ext_0078CBE0
+        mov dword ptr [eax + 0x1c], 0
+        pop edi
+        mov al, 1
+        pop esi
+        ret 0x4
+    L_fail_726770:
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x4
+    }
+}
