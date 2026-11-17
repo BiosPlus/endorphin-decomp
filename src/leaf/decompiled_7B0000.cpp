@@ -6389,3 +6389,40 @@ extern "C" short __cdecl fn_007B8B60(int x) {
     } while (*p != 0);
     return (signed char)mem_00999859;
 }
+
+// [0x007B79F0] sub_007B79F0 (64 bytes)
+extern "C" void ext_007B7720();
+
+extern "C" __declspec(naked) void __cdecl fn_007B79F0(const char* s) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push esi
+        push edi
+        mov edi, ebx
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        mov esi, eax
+        mov edi, ecx
+        je done_7B79F0
+    loop_7B79F0:
+        mov al, byte ptr [esi + ebx]
+        push eax
+        call ext_007B7720
+        add esp, 4
+        inc esi
+        cmp esi, edi
+        jb loop_7B79F0
+    done_7B79F0:
+        push 0
+        call ext_007B7720
+        add esp, 4
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
