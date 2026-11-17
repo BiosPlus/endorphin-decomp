@@ -12875,3 +12875,35 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x005DC5B0] ExprParser::ReadWriteMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, int, &public: void __thiscall NMData::VideoPlaneData::setFrameOffset(int)>::vfunc_41 (68 bytes)
+extern "C" void ext_005DC390();
+extern "C" __declspec(naked) void __fastcall fn_005DC5B0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je null_path
+        mov eax, dword ptr [esp+0x34]
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx+8]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_005DC390
+        pop esi
+        add esp, 0x28
+        ret 8
+null_path:
+        lea ecx, [esp+4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
