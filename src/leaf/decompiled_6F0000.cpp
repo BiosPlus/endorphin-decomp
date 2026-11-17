@@ -7994,3 +7994,57 @@ m760_end:
         ret
     }
 }
+
+// [0x006F9DE0] sub_006F9DE0 (128 bytes)
+extern "C" void* __cdecl ext_006A5C62(unsigned int size);
+extern "C" void ext_006D2130();
+extern "C" int mem_00B5E41C;
+
+// Lazily allocates a 0x24-byte object (via ext_006A5C62), initialises it with ext_006D2130,
+// caches the pointer in mem_00B5E41C, and runs under an SEH frame.
+extern "C" __declspec(naked) void __fastcall fn_006F9DE0(void* self) {
+    __asm {
+        push -1
+        push 0x8b8fdb
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        mov eax, dword ptr [mem_00B5E41C]
+        push ebx
+        xor ebx, ebx
+        cmp eax, ebx
+        jne L_end
+        push esi
+        push 0x24
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 0x4
+        mov dword ptr [esp + 0x8], esi
+        cmp esi, ebx
+        mov dword ptr [esp + 0x14], ebx
+        je L_null
+        push 0x4
+        push 0x10
+        mov ecx, esi
+        call ext_006D2130
+        lea eax, [esi + 0x10]
+        mov dword ptr [esi + 0x18], ebx
+        mov dword ptr [esi + 0x14], eax
+        mov dword ptr [esi + 0x1c], ebx
+        mov byte ptr [esi + 0x20], bl
+        jmp L_store
+    L_null:
+        xor esi, esi
+    L_store:
+        mov eax, esi
+        pop esi
+        mov dword ptr [mem_00B5E41C], eax
+    L_end:
+        mov ecx, dword ptr [esp + 0x8]
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
