@@ -4671,3 +4671,45 @@ L_call:
         ret
     }
 }
+
+// [0x00711AA0] sub_00711AA0 (96 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00711AA0(void* self, int edx_unused, double a1, double a2) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_0071E680
+        mov ecx, eax
+        fld qword ptr [ecx + 0x18]
+        fcomp qword ptr [esp + 0x8]
+        fnstsw ax
+        test ah, 0x40
+        je L_store
+        fld qword ptr [ecx + 0x20]
+        fcomp qword ptr [esp + 0x10]
+        fnstsw ax
+        test ah, 0x40
+        jne L_done
+L_store:
+        mov eax, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [ecx + 0x18], eax
+        mov eax, dword ptr [esp + 0x10]
+        mov dword ptr [ecx + 0x1c], edx
+        mov edx, dword ptr [esp + 0x14]
+        push 0
+        push 0
+        mov dword ptr [ecx + 0x20], eax
+        push 0
+        mov dword ptr [ecx + 0x24], edx
+        mov eax, dword ptr [esi]
+        push esi
+        push 0x1f
+        push 0
+        mov ecx, esi
+        call dword ptr [eax + 0x3c]
+L_done:
+        mov al, 0x1
+        pop esi
+        ret 0x10
+    }
+}
