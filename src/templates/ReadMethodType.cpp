@@ -118,8 +118,10 @@ extern "C" void* __stdcall fn_004B0F30(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA377EC, 0);
 }
+extern "C" void ext_00611950();
+extern "C" int mem_00972CC8; /* double 1e-06 */
 
-// [0x004B71F0] ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_16 (30 bytes)
+extern "C" int mem_00972CC8; /* double 1e-06 */
 extern "C" void* __stdcall fn_004B71F0(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA387FC, 0);
@@ -36013,6 +36015,36 @@ extern "C" __declspec(naked) void __stdcall fn_0062AB90(void* arg) {
         je L_throw
         call ext_0062A590
         fcomp qword ptr [mem_00978A48]
+        fnstsw ax
+        test ah, 1
+        jne L_false
+        mov eax, 1
+        add esp, 0x28
+        ret 4
+    L_false:
+        xor eax, eax
+        add esp, 0x28
+        ret 4
+    L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x006164D0] ExprParser::ReadMethodType<NMData::SecondaryTwistAndSwingConstraint, float, {private: float __thiscall NMData::SecondaryTwistAndSwingConstraint::getUserInitialSwing2(void) const, 0}, 0>::vfunc_3 (73 bytes)
+extern "C" __declspec(naked) void __stdcall fn_006164D0(void* arg) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_throw
+        call ext_00611950
+        fcomp qword ptr [mem_00972CC8]
         fnstsw ax
         test ah, 1
         jne L_false
