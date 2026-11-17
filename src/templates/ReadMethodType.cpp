@@ -67,6 +67,7 @@ extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA34520, 0);
 }
+extern "C" void ext_006720C0();
 
 // [0x00497CA0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_00497CA0(void* self, int edx_unused, void* a1) {
@@ -26079,6 +26080,35 @@ extern "C" __declspec(naked) void __fastcall fn_004B1250(void* self) {
         add esp, 2ch
         ret 8
 L_throw:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push 9dec1ch
+        lea edx, [esp + 8]
+        push edx
+        call ext_006A6DD2
+    }
+}
+
+// [0x005D65A0] ExprParser::ReadMethodType<NMData::VideoPlaneData, int, &public: int __thiscall NMData::VideoPlaneData::getFrameOffset(void) const, 0>::vfunc_0 (69 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_005D65A0(void* self, int edx_unused, void* a1, void** a2) {
+    __asm {
+        sub esp, 2ch
+        mov eax, dword ptr [esp + 34h]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0
+        je L_throw_005D65A0
+        mov ecx, dword ptr [eax + 28h]
+        push esi
+        mov esi, dword ptr [esp + 34h]
+        push ecx
+        mov ecx, esi
+        call ext_006720C0
+        mov eax, esi
+        pop esi
+        add esp, 2ch
+        ret 8
+    L_throw_005D65A0:
         lea ecx, [esp + 4]
         call ext_0046C3C0
         push 9dec1ch
