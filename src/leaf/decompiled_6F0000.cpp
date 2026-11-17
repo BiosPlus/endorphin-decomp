@@ -21,6 +21,7 @@ extern "C" __declspec(naked) void __fastcall fn_006F9DC0(void* self, int edx_unu
         ret 0x10
     }
 }
+extern "C" void ext_006FBC50();
 
 // [0x006FA350] sub_006FA350 (32 bytes)
 // Returns self if arg0 is 0, 2 or 0xDE1947F3; otherwise returns NULL (ret 8).
@@ -6950,6 +6951,54 @@ extern "C" __declspec(naked) void __fastcall fn_006FBC90(void* self) {
         lea esi, [eax - 0x1]
     next:
         test esi, esi
+        jge loop_top
+        pop ebx
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
+
+// [0x006FBCE0] sub_006FBCE0 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FBCE0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esi + 0x18]
+        dec edi
+        js done
+        push ebx
+    loop_top:
+        mov eax, dword ptr [esi + 0x14]
+        mov ecx, dword ptr [esi + 0x10]
+        add eax, edi
+        lea eax, [eax + 2*eax]
+        lea ecx, [ecx + 4*eax]
+        mov eax, dword ptr [ecx + 0x4]
+        test eax, eax
+        je skip
+        mov edx, dword ptr [eax]
+        mov ebx, dword ptr [ecx]
+        cmp edx, ebx
+        jne skip
+        mov eax, dword ptr [eax + 0x4]
+        test eax, eax
+        je skip
+        push eax
+        mov ecx, esi
+        call ext_006FBC50
+    skip:
+        mov eax, dword ptr [esi + 0x18]
+        cmp edi, eax
+        jg clamp
+        dec edi
+        jmp next
+    clamp:
+        lea edi, [eax - 1]
+    next:
+        test edi, edi
         jge loop_top
         pop ebx
     done:
