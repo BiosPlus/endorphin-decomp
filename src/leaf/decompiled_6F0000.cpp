@@ -6728,3 +6728,31 @@ extern "C" __declspec(naked) void __fastcall fn_006FDEF0(void* self) {
         ret
     }
 }
+
+// [0x006F9ED0] sub_006F9ED0 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006F9ED0(void* self) {
+    extern void __cdecl ext_006A5C5C(void* ptr);
+    extern void ext_006F9F10();
+    extern int mem_00B5E420;
+    extern int mem_00B5E41C;
+    __asm {
+        mov eax, dword ptr [mem_00B5E420]
+        dec eax
+        mov dword ptr [mem_00B5E420], eax
+        jne L_ret
+        mov ecx, dword ptr [mem_00B5E41C]
+        push esi
+        test ecx, ecx
+        mov esi, ecx
+        je L_clear
+        call ext_006F9F10
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+    L_clear:
+        mov dword ptr [mem_00B5E41C], 0
+        pop esi
+    L_ret:
+        ret
+    }
+}
