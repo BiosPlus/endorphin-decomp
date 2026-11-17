@@ -10071,3 +10071,51 @@ extern "C" __declspec(naked) void __fastcall fn_006B9D20(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006BA660] sub_006BA660 (96 bytes)
+// Unsigned-char string compare of *self (or empty default) against arg0 (or empty default); returns -1/0/1.
+extern "C" int mem_00B5D2C0;
+extern "C" __declspec(naked) int __fastcall fn_006BA660(void* self, int edx_unused, const char* s) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        push ebx
+        push esi
+        mov esi, offset mem_00B5D2C0
+        test eax, eax
+        je use_default_006BA660
+        mov esi, eax
+    use_default_006BA660:
+        mov eax, dword ptr [ecx]
+        test eax, eax
+        jne cmp_loop_006BA660
+        mov eax, offset mem_00B5D2C0
+    cmp_loop_006BA660:
+        mov dl, byte ptr [eax]
+        mov bl, byte ptr [esi]
+        mov cl, dl
+        cmp dl, bl
+        jne diff_006BA660
+        test cl, cl
+        je equal_006BA660
+        mov dl, byte ptr [eax + 1]
+        mov bl, byte ptr [esi + 1]
+        mov cl, dl
+        cmp dl, bl
+        jne diff_006BA660
+        add eax, 2
+        add esi, 2
+        test cl, cl
+        jne cmp_loop_006BA660
+    equal_006BA660:
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret 4
+    diff_006BA660:
+        sbb eax, eax
+        pop esi
+        sbb eax, -1
+        pop ebx
+        ret 4
+    }
+}
