@@ -40917,3 +40917,36 @@ extern "C" __declspec(naked) void* __fastcall fn_004F6EB0(void* self, int edx_un
         call ext_006A6DD2
     }
 }
+
+// [0x004F57E0] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getX(void) const, 0>::vfunc_4 (76 bytes)
+extern "C" void ext_0046C390();
+
+extern "C" __declspec(naked) void __fastcall fn_004F57E0(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je L_null
+        push esi
+        call ext_004F4DD0
+        mov esi, dword ptr [esp + 0x34]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0046C390
+        add esp, 8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 8
+    L_null:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
