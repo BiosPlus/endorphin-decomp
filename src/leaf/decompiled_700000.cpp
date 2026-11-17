@@ -2779,3 +2779,42 @@ extern "C" __declspec(naked) void __fastcall fn_0070DC80(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00702360] sub_00702360 (64 bytes)
+extern "C" void ext_006B9EC0();
+extern "C" void ext_00702220();
+
+extern "C" __declspec(naked) char __fastcall fn_00702360(void* self, int edx_unused, const char* s) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov ebx, ecx
+        test esi, esi
+        je zero
+        push edi
+        mov edi, esi
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        pop edi
+        je zero
+        push esi
+        lea ecx, [ebx + 0x114]
+        call ext_006B9EC0
+        push esi
+        mov ecx, ebx
+        call ext_00702220
+        pop esi
+        mov al, 1
+        pop ebx
+        ret 4
+    zero:
+        pop esi
+        xor al, al
+        pop ebx
+        ret 4
+    }
+}
