@@ -3505,3 +3505,47 @@ extern "C" __declspec(naked) void __fastcall fn_00757EC0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x00757520] sub_00757520 (112 bytes)
+extern "C" void ext_006BC7D0();
+extern "C" void ext_006E8810();
+extern "C" void ext_007275F0();
+extern "C" void ext_007283B0();
+extern "C" void ext_00728410();
+extern "C" void ext_007284D0();
+extern "C" void ext_00757590();
+
+extern "C" __declspec(naked) void __fastcall fn_00757520(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        mov ecx, edi
+        call ext_006BC7D0
+        mov ecx, eax
+        call ext_006E8810
+        test eax, eax
+        jle short L_fn_00757520_end
+        mov ecx, dword ptr [esi + 0xac]
+        push 0xaad494
+        add ecx, 4
+        call ext_007275F0
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_00728410
+        push edi
+        mov ecx, esi
+        call ext_00757590
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007284D0
+        mov ecx, dword ptr [esi + 0xac]
+        add ecx, 4
+        call ext_007283B0
+L_fn_00757520_end:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
