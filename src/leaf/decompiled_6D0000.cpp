@@ -49,8 +49,10 @@ extern "C" __declspec(naked) void __fastcall fn_006DBE10(void* self, int edx_unu
     }
 }
 extern "C" void ext_006FC930();
+extern "C" void ext_006DC550();
+extern "C" void __fastcall ext_006E7410(void* self, int edx, int a, const char* b);
 
-// [0x006DEF20] sub_006DEF20 (15 bytes)
+extern "C" void __fastcall ext_006E7410(void* self, int edx, int a, const char* b);
 extern "C" void __stdcall ext_006DEED0(int a, int b);
 
 extern "C" void __stdcall fn_006DEF20(int a1) {
@@ -4925,5 +4927,35 @@ L_fail:
         xor eax, eax
         pop esi
         ret
+    }
+}
+
+// [0x006DC510] sub_006DC510 (64 bytes)
+// __thiscall, ret 0x4: index = arg1; if 0 <= index < ext_006DC550() return this->[0xc8][index], else fallback path.
+extern "C" __declspec(naked) void __fastcall fn_006DC510(void* self, int edx_unused, int index) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        test edi, edi
+        jl L_fail_006DC510
+        call ext_006DC550
+        cmp edi, eax
+        jge L_fail_006DC510
+        mov eax, dword ptr [esi + 0xc8]
+        mov eax, dword ptr [eax + 4*edi]
+        pop edi
+        pop esi
+        ret 0x4
+    L_fail_006DC510:
+        mov ecx, dword ptr [esi + 0xec]
+        push 0xaa93ec
+        push 0
+        call ext_006E7410
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x4
     }
 }
