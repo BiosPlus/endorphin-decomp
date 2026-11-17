@@ -3146,3 +3146,13 @@ extern "C" void* __cdecl fn_00859CF0(void* a1, void* a2) {
     }
     return r;
 }
+
+// [0x0085C170] sub_0085C170 (80 bytes)
+extern "C" int __cdecl fn_0085C170(unsigned int v) {
+    if (v < 0x1f) return 1;
+    if (v < 0x80) return 2;
+    if (v < 0x4000) return 3;
+    if (v < 0x200000) return 4;
+    if (v < 0x10000000) return 5;
+    return 6;
+}
