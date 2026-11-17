@@ -25,8 +25,10 @@ extern "C" void ext_006C9D30();
 extern "C" void ext_006C9DF0();
 extern "C" void ext_006CA6A0();
 extern "C" void ext_006D03E0();
+extern "C" void ext_006D80A0();
+extern "C" void ext_007873F0();
 
-// [0x006C9520] sub_006C9520 (15 bytes)
+extern "C" void ext_007873F0();
 extern "C" void __cdecl fn_006C9520() {
     ext_006C9960(0, 0, (int)0xaa8d10);
 }
@@ -4902,5 +4904,37 @@ extern "C" __declspec(naked) void __fastcall fn_006C83D0(void* self) {
         __asm _emit 0x00
         add esp, 0x10
         ret
+    }
+}
+
+// [0x006C3520] sub_006C3520 (112 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C3520(void* self) {
+    __asm {
+        mov eax, fs:[0]
+        push -1
+        push 0x8c08e8
+        push eax
+        mov fs:[0], esp
+        lea eax, [esp + 0x14]
+        mov dword ptr [esp + 0x8], 0
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        mov edx, eax
+        shl edx, 5
+        sub edx, eax
+        mov eax, dword ptr [ecx + 0xf0]
+        shl edx, 4
+        lea ecx, [edx + eax + 0x1d98]
+        call ext_007873F0
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0x8], 0xffffffff
+        call ext_006D80A0
+        __asm _emit 0x8b
+        __asm _emit 0x4c
+        __asm _emit 0x24
+        __asm _emit 0x00
+        mov fs:[0], ecx
+        add esp, 0xc
+        ret 0x24
     }
 }
