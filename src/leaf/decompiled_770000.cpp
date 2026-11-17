@@ -2963,3 +2963,70 @@ extern "C" __declspec(naked) void __stdcall fn_00774560(void* self, double d) {
         ret 0xc
     }
 }
+
+// [0x0077FDB0] sub_0077FDB0 (112 bytes)
+extern "C" void ext_007801D0();
+extern "C" __declspec(naked) void __fastcall fn_0077FDB0(void* self) {
+    __asm {
+        push -1
+        _emit 0x68
+        _emit 0xDB
+        _emit 0x8F
+        _emit 0x8B
+        _emit 0x00
+        _emit 0x64
+        _emit 0xA1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push eax
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push ecx
+        push esi
+        mov esi, ecx
+        push 8
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je skip
+        mov ecx, eax
+        call ext_007801D0
+        mov dword ptr [esi], eax
+        mov eax, esi
+        pop esi
+        mov ecx, dword ptr [esp + 4]
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0D
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add esp, 0x10
+        ret
+    skip:
+        mov ecx, dword ptr [esp + 8]
+        xor eax, eax
+        mov dword ptr [esi], eax
+        mov eax, esi
+        pop esi
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0D
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add esp, 0x10
+        ret
+    }
+}
