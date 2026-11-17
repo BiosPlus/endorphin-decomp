@@ -2,6 +2,7 @@
 extern "C" { void* __cdecl ext_0085B2C0(void* a, void* b); int __cdecl ext_0086CDB0(void* p); void __cdecl ext_00859A90(void* p); }
 extern "C" void ext_008692F0();
 extern "C" void ext_008596F0();
+extern "C" void ext_0086D250();
 
 // [0x008598C0] sub_008598C0 (32 bytes)
 extern "C" __declspec(naked) char* __cdecl fn_008598C0(void) {
@@ -3915,6 +3916,65 @@ extern "C" __declspec(naked) void __cdecl fn_0085C1C0(void* p) {
         mov eax, esi
         pop edi
         pop esi
+        ret
+    }
+}
+
+// [0x0085C2E0] sub_0085C2E0 (112 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0085C2E0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        mov al, 8
+        push esi
+        movsx ecx, byte ptr [ebx]
+        push edi
+        mov esi, ebx
+        test byte ptr [2*ecx + 0xab8e00], al
+        je SKIPWS
+    WSLOOP:
+        movsx edx, byte ptr [esi + 1]
+        inc esi
+        test byte ptr [2*edx + 0xab8e00], al
+        jne WSLOOP
+    SKIPWS:
+        mov al, byte ptr [esi]
+        cmp al, 0x2d
+        jne NOTNEG
+        mov eax, dword ptr [esp + 0x18]
+        mov edi, dword ptr [esp + 0x14]
+        inc esi
+        push eax
+        push edi
+        push esi
+        call ext_0086D250
+        add esp, 0xc
+        neg eax
+        jmp DONE
+    NOTNEG:
+        cmp al, 0x2b
+        jne NOPLUS
+        inc esi
+    NOPLUS:
+        mov ecx, dword ptr [esp + 0x18]
+        mov edi, dword ptr [esp + 0x14]
+        push ecx
+        push edi
+        push esi
+        call ext_0086D250
+        add esp, 0xc
+    DONE:
+        test eax, eax
+        jne EXIT
+        test edi, edi
+        je EXIT
+        cmp dword ptr [edi], esi
+        jne EXIT
+        mov dword ptr [edi], ebx
+    EXIT:
+        pop edi
+        pop esi
+        pop ebx
         ret
     }
 }
