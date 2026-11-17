@@ -3665,3 +3665,49 @@ done:
         ret
     }
 }
+
+// [0x00859A90] sub_00859A90 (96 bytes)
+extern "C" void __cdecl ext_00859730(void* p);
+
+extern "C" __declspec(naked) void __cdecl fn_00859A90(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x18]
+        mov ecx, dword ptr [esi + 0x14]
+        dec eax
+        test cl, 0x4
+        mov dword ptr [esi + 0x18], eax
+        je short L_flag4_clear
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_00859A90
+        mov eax, dword ptr [esi + 0x18]
+        add esp, 0x4
+        test eax, eax
+        jne short L_done
+        push esi
+        call ext_00859730
+        add esp, 0x4
+        pop esi
+        ret
+L_flag4_clear:
+        test eax, eax
+        jne short L_done
+        mov eax, dword ptr [esi]
+        test eax, eax
+        je short L_skip_head
+        test cl, 0x2
+        jne short L_skip_head
+        push eax
+        call ext_00859730
+        add esp, 0x4
+L_skip_head:
+        push esi
+        call ext_00859730
+        add esp, 0x4
+L_done:
+        pop esi
+        ret
+    }
+}
