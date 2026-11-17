@@ -5761,3 +5761,66 @@ L_null:
         __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
     }
 }
+
+// [0x006DE970] sub_006DE970 (96 bytes)
+extern "C" void ext_006DE3E0();
+
+typedef int (__thiscall *DE970_CountFn)(void*);
+typedef void* (__thiscall *DE970_ItemFn)(void*, int);
+typedef int (__fastcall *DE970_IdFn)(void*);
+
+extern "C" void ext_006DE970();
+
+// Recursive search: for each child i (vt[6]), return child if ext_006DE3E0(child) == a1,
+// else recurse into child; returns first match or 0. ret 4.
+extern "C" __declspec(naked) void* __fastcall fn_006DE970(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        push ebp
+        push esi
+        mov esi, ecx
+        push edi
+        xor ebx, ebx
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0x14]
+        test eax, eax
+        jle done_zero
+        mov ebp, dword ptr [esp + 0x14]
+    loop_top:
+        mov edx, dword ptr [esi]
+        push ebx
+        mov ecx, esi
+        call dword ptr [edx + 0x18]
+        mov edi, eax
+        mov ecx, edi
+        call ext_006DE3E0
+        cmp eax, ebp
+        je found
+        push ebp
+        mov ecx, edi
+        call ext_006DE970
+        test eax, eax
+        jne ret_eax
+        mov eax, dword ptr [esi]
+        mov ecx, esi
+        inc ebx
+        call dword ptr [eax + 0x14]
+        cmp ebx, eax
+        jl loop_top
+    done_zero:
+        xor eax, eax
+    ret_eax:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    found:
+        mov eax, edi
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
