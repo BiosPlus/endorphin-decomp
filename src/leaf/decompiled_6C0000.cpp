@@ -4617,3 +4617,51 @@ extern "C" void __cdecl fn_006C4A90(void* self) {
     p[0x14 / 4] = 0;
     p[0x0c / 4] = 0;
 }
+
+// [0x006CCB90] sub_006CCB90 (96 bytes)
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9D70();
+extern "C" void ext_006C9DF0();
+extern "C" void ext_006CA6A0();
+extern "C" void ext_006D03E0();
+
+extern "C" __declspec(naked) void __fastcall fn_006CCB90(void* self) {
+    __asm {
+        push ebx
+        push edi
+        mov edi, ecx
+        call ext_006CA6A0
+        mov ebx, dword ptr [esp + 0xc]
+        dec eax
+        cmp ebx, eax
+        jge L_end
+        push esi
+        push ebx
+        mov ecx, edi
+        call ext_006CA060
+        mov esi, eax
+        mov ecx, esi
+        call ext_006C9C30
+        cmp eax, 8
+        jne L_skip
+        push 0x10000000
+        push 0x10000000
+        mov ecx, esi
+        call ext_006C9D70
+        mov eax, dword ptr [esp + 0x14]
+        mov ecx, esi
+        push eax
+        push 4
+        call ext_006C9DF0
+L_skip:
+        push ebx
+        push 0x10
+        mov ecx, edi
+        call ext_006D03E0
+        pop esi
+L_end:
+        pop edi
+        pop ebx
+        ret 8
+    }
+}
