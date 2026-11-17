@@ -19385,3 +19385,29 @@ extern "C" __declspec(naked) bool __stdcall fn_00616A20(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00643D80] ExprParser::ReadMethodType<MainPhysicsAdapter, bool, {public: bool __thiscall MainPhysicsAdapter::isDrawContactForcesEnabled(void) const, 0}, 0>::vfunc_2 (53 bytes)
+extern "C" void ext_00641FE0();
+
+extern "C" __declspec(naked) bool __stdcall fn_00643D80(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je null_path
+        call ext_00641FE0
+        neg al
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 0x4
+    null_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
