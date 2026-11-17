@@ -2845,3 +2845,37 @@ extern "C" __declspec(naked) void __fastcall fn_0070EAB0(void* self) {
         ret 0x4
     }
 }
+
+// [0x0070CF90] sub_0070CF90 (64 bytes)
+extern "C" void ext_0070CFD0();
+extern "C" void ext_006DEEC0();
+extern "C" __declspec(naked) int __fastcall fn_0070CF90(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        mov ecx, edi
+        xor esi, esi
+        call ext_0070CFD0
+        test eax, eax
+        je cf90_fail
+        mov ecx, eax
+        call ext_006DEEC0
+        mov esi, eax
+        test esi, esi
+        jne cf90_done
+    cf90_fail:
+        push 9
+        lea ecx, [edi + 0x150]
+        call ext_006E7440
+    cf90_done:
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 8
+    }
+}
