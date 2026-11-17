@@ -33,6 +33,7 @@ extern "C" __declspec(naked) void __fastcall fn_006BB730(void* self) {
 }
 
 extern "C" void ext_006B7DE0();
+extern "C" void ext_006B9C10();
 
 // [0x006B6030] sub_006B6030 (32 bytes)
 // Stores arg0 into this+0xD8; if this+0xD4 is non-null, replace arg0 with the value
@@ -9752,6 +9753,37 @@ extern "C" __declspec(naked) void __fastcall fn_006B9EC0(void* self, int edx_unu
 null_arg:
         mov ecx, esi
         call ext_006B9920
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 4
+    }
+}
+
+// [0x006BA220] sub_006BA220 (64 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_006BA220(void* self, int edx_unused, const char* s) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        test edi, edi
+        jne L_nonnull
+        call ext_006B9920
+        mov eax, esi
+        pop edi
+        pop esi
+        ret 4
+L_nonnull:
+        or ecx, -1
+        xor eax, eax
+        push edi
+        repne scasb
+        not ecx
+        dec ecx
+        push ecx
+        mov ecx, esi
+        call ext_006B9C10
         mov eax, esi
         pop edi
         pop esi
