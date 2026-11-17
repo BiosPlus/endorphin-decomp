@@ -164,8 +164,10 @@ extern "C" void* __stdcall fn_004C72B0(void* a1) {
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA329A4, 0);
 }
 extern "C" void ext_005FCB30();
+extern "C" void ext_00496F20();
+extern "C" int mem_00924FC0;
 
-// [0x004CE9F0] ExprParser::ReadMethodType<NMData::IncarnationEventData, float, {public: float __thiscall NMData::IncarnationEventData::getMomentumScaleFactor(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" int mem_00924FC0;
 extern "C" void* __stdcall fn_004CE9F0(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA32928, (void*)0xA2E2F8, 0);
@@ -60337,6 +60339,52 @@ throw_path:
         lea ecx, [esp]
         call ext_0046C3C0
         push 9DEC1Ch
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x00497EF0] ExprParser::ReadMethodType<NMData::Transition, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::Transition::getCondition(void) const, 0}, 0>::vfunc_3 (104 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00497EF0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je loc_497f41
+        push esi
+        push edi
+        call ext_00496F20
+        mov edi, dword ptr [mem_00924FC0]
+        mov esi, eax
+        push 0x92f10c
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne loc_497f34
+        push 0x93a810
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne loc_497f34
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 0x28
+        ret 4
+    loc_497f34:
+        pop edi
+        mov eax, 1
+        pop esi
+        add esp, 0x28
+        ret 4
+    loc_497f41:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
         lea ecx, [esp + 4]
         push ecx
         call ext_006A6DD2
