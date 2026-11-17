@@ -2818,3 +2818,30 @@ extern "C" __declspec(naked) char __fastcall fn_00702360(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0070EAB0] sub_0070EAB0 (64 bytes)
+extern "C" int __fastcall ext_006BADB0(void* obj);
+extern "C" void ext_006B9EC0();
+
+extern "C" __declspec(naked) void __fastcall fn_0070EAB0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0x8]
+        test ecx, ecx
+        mov dword ptr [esi + 0x5c], ecx
+        je fallback
+        call ext_006BADB0
+        push eax
+        lea ecx, [esi + 0x60]
+        call ext_006B9EC0
+        pop esi
+        ret 0x4
+    fallback:
+        push 0xb5d2c0
+        lea ecx, [esi + 0x60]
+        call ext_006B9EC0
+        pop esi
+        ret 0x4
+    }
+}
