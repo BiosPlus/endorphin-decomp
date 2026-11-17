@@ -1933,3 +1933,38 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x005C47A0] ExprParser::DynamicEnumType<NMData::CollisionModelDataBase, {public: int __thiscall NMData::CollisionModelDataBase::getMaterialNameIndex(void) const, 0}, {public: void __thiscall NMData::CollisionModelDataBase::setMaterialNameIndex(int), 0}, {public: int __thiscall NMData::CollisionModelDataBase::getNumListedMaterialNames(void) const, 0}, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::CollisionModelDataBase::getListedMaterialName(int) const, 0}>::vfunc_41 (68 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_005C3EA0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_005C47A0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je null_path
+        mov eax, dword ptr [esp+0x34]
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx+8]
+        call eax
+        push eax
+        mov ecx, esi
+        call ext_005C3EA0
+        pop esi
+        add esp, 0x28
+        ret 8
+null_path:
+        lea ecx, [esp+4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
