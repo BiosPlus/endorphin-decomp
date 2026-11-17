@@ -2586,3 +2586,55 @@ extern "C" __declspec(naked) void __fastcall fn_006E72D0(void* self) {
         ret 4
     }
 }
+
+// [0x006E8470] sub_006E8470 (112 bytes)
+extern "C" void ext_007641C0();
+extern "C" void ext_006D2160();
+extern "C" void ext_006D80A0();
+extern "C" __declspec(naked) void __fastcall fn_006E8470(void* self) {
+    __asm {
+        push -1
+        push 0x8b97fe
+        _emit 0x64
+        _emit 0xa1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push eax
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        lea ecx, [esi + 0x90]
+        mov dword ptr [esp + 0x10], 0x2
+        call ext_007641C0
+        lea ecx, [esi + 0x78]
+        mov byte ptr [esp + 0x10], 0x1
+        call ext_006D2160
+        lea ecx, [esi + 0x28]
+        mov byte ptr [esp + 0x10], 0x0
+        call ext_006D80A0
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_006D80A0
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add esp, 0x10
+        ret
+    }
+}
