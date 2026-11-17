@@ -4385,3 +4385,35 @@ extern "C" __declspec(naked) void __fastcall fn_00726B80(void* self) {
         ret
     }
 }
+
+// [0x0072FD70] sub_0072FD70 (96 bytes)
+extern "C" int mem_008BDC58;
+extern "C" void ext_006E7460();
+extern "C" void ext_007279A0();
+extern "C" void ext_006B9D70();
+
+extern "C" __declspec(naked) void __fastcall fn_0072FD70(void* self, int edx_unused, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19) {
+    __asm {
+        mov eax, dword ptr fs:[0x0]
+        push -1
+        push offset mem_008BDC58
+        push eax
+        mov dword ptr fs:[0x0], esp
+        push esi
+        mov esi, ecx
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0xc], 0
+        call ext_006E7460
+        push eax
+        mov ecx, esi
+        call ext_007279A0
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0xc], -1
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x4]
+        pop esi
+        mov dword ptr fs:[0x0], ecx
+        add esp, 0xc
+        ret 0x4c
+    }
+}
