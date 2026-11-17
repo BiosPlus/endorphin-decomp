@@ -20,10 +20,14 @@ extern "C" __declspec(naked) void __fastcall fn_0071DE80(void* self, int edx_unu
         ret 0x8
     }
 }
+extern "C" void ext_00708000();
+extern "C" void ext_006DC460();
+extern "C" void ext_006C9580();
+extern "C" void ext_006CD330();
 
-// [0x00711DA0] sub_00711DA0 (15 bytes)
-// Calls sub_0071E680 (this in ecx), then stores the stack arg at [eax+0x28] of the callee's returned pointer (ret 4).
-extern "C" void ext_0071E680();
+extern "C" void ext_006DC460();
+extern "C" void ext_006C9580();
+extern "C" void ext_006CD330();
 extern "C" __declspec(naked) void __fastcall fn_00711DA0(void* self, int edx_unused, int a1) {
     __asm {
         call ext_0071E680
@@ -4299,6 +4303,38 @@ extern "C" __declspec(naked) void __fastcall fn_0071CCB0(void* self, int edx_unu
         mov ecx, eax
         fstp dword ptr [esp]
         call ext_006C9540
+        mov ecx, eax
+        call ext_006CD330
+    done:
+        ret 0x8
+    }
+}
+
+// [0x0071CDF0] sub_0071CDF0 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0071CDF0(void* self, int edx_unused, double a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 0xaa8d64
+        mov ecx, dword ptr [esi + 0xc]
+        call ext_00708000
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [eax]
+        push ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, eax
+        call dword ptr [edx + 0x80]
+        mov ecx, dword ptr [esi + 0x4]
+        pop esi
+        test ecx, ecx
+        je done
+        call ext_006DC460
+        fld qword ptr [esp + 0x4]
+        push ecx
+        mov ecx, eax
+        fstp dword ptr [esp]
+        call ext_006C9580
         mov ecx, eax
         call ext_006CD330
     done:
