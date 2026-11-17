@@ -4809,3 +4809,54 @@ extern "C" void __fastcall fn_007154B0(void* self) {
     *(unsigned int*)(a + 0xc) = 0;
     *(unsigned int*)(a + 0x14) = 0;
 }
+
+// [0x0071F570] sub_0071F570 (112 bytes)
+extern "C" void ext_006CA020();
+extern "C" void ext_006CAA90();
+extern "C" void ext_0071F2A0();
+extern "C" void ext_00789BA0();
+extern "C" __declspec(naked) void __cdecl fn_0071F570(void) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x18]
+        test esi, esi
+        push edi
+        je done
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0xc]
+        push 0x0
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006CAA90
+        mov edi, eax
+        mov ecx, esi
+        push edi
+        call ext_006CA020
+        fld qword ptr [esp + 0x14]
+        push ecx
+        mov ecx, eax
+        fstp dword ptr [esp]
+        call ext_00789BA0
+        cmp byte ptr [esp + 0x24], 0x1
+        jne done
+        mov edx, dword ptr [esp + 0x34]
+        mov eax, dword ptr [esp + 0x30]
+        mov ecx, dword ptr [esp + 0x2c]
+        push edx
+        mov edx, dword ptr [esp + 0x2c]
+        push eax
+        mov eax, dword ptr [esp + 0x28]
+        push ecx
+        push edx
+        push eax
+        push esi
+        push edi
+        call ext_0071F2A0
+        add esp, 0x1c
+    done:
+        pop edi
+        pop esi
+        ret
+    }
+}
