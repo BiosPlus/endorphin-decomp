@@ -1,6 +1,7 @@
 // Decompiled translation unit: src/leaf/decompiled_850000.cpp
 extern "C" { void* __cdecl ext_0085B2C0(void* a, void* b); int __cdecl ext_0086CDB0(void* p); void __cdecl ext_00859A90(void* p); }
 extern "C" void ext_008692F0();
+extern "C" void ext_008596F0();
 
 // [0x008598C0] sub_008598C0 (32 bytes)
 extern "C" __declspec(naked) char* __cdecl fn_008598C0(void) {
@@ -3765,6 +3766,49 @@ extern "C" __declspec(naked) void __cdecl fn_0085A650(void* self) {
         call ext_00859730
         add esp, 0x4
         pop esi
+        ret
+    }
+}
+
+// [0x0085A370] sub_0085A370 (112 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0085A370(void* self) {
+    __asm {
+        push ebx
+        push esi
+        mov esi, dword ptr [esp+0xc]
+        or ebx, -0x1
+        mov eax, dword ptr [esi+0x8]
+        mov ecx, dword ptr [esi+0x14]
+        inc eax
+        shl eax, 0x4
+        push eax
+        push ecx
+        call ext_008596F0
+        add esp, 0x8
+        test eax, eax
+        je fail_path
+        mov edx, dword ptr [esi+0x8]
+        mov dword ptr [esi+0x14], eax
+        mov ecx, edx
+        shl ecx, 0x4
+        mov dword ptr [ecx+eax], 0xffffffff
+        mov eax, dword ptr [esi+0x14]
+        mov dword ptr [eax+ecx+0x4], 0x0
+        mov eax, dword ptr [esi+0x14]
+        mov dword ptr [eax+ecx+0x8], 0x0
+        mov eax, dword ptr [esi+0x14]
+        mov dword ptr [eax+ecx+0xc], 0x0
+        mov eax, dword ptr [esi+0x8]
+        inc eax
+        mov dword ptr [esi+0x8], eax
+        pop esi
+        mov eax, edx
+        pop ebx
+        ret
+fail_path:
+        mov eax, ebx
+        pop esi
+        pop ebx
         ret
     }
 }
