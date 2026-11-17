@@ -2979,3 +2979,70 @@ L_join:
         ret 4
     }
 }
+
+// [0x006E8EF0] sub_006E8EF0 (128 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006D2170();
+extern "C" void ext_006E8A20();
+
+extern "C" __declspec(naked) bool __fastcall fn_006E8EF0(void* self, int edx_unused, int key) {
+    __asm {
+        mov edx, dword ptr [ecx + 0x1c]
+        push ebx
+        push ebp
+        push esi
+        mov ebx, dword ptr [esp + 0x10]
+        push edi
+        lea edi, [ecx + 0x1c]
+        xor eax, eax
+        test edx, edx
+        jle short NOTFOUND_6E8EF0
+        mov ecx, dword ptr [ecx + 0x2c]
+        mov esi, ecx
+    LOOP_6E8EF0:
+        mov ebp, dword ptr [esi]
+        cmp dword ptr [ebp], ebx
+        je short FOUND_6E8EF0
+        inc eax
+        add esi, 4
+        cmp eax, edx
+        jl short LOOP_6E8EF0
+    NOTFOUND_6E8EF0:
+        push 8
+        call ext_006A5C62
+        add esp, 4
+        test eax, eax
+        je short ZERO_6E8EF0
+        push ebx
+        mov ecx, eax
+        call ext_006E8A20
+        jmp short DONE_6E8EF0
+    FOUND_6E8EF0:
+        mov eax, dword ptr [ecx + 4*eax]
+        pop edi
+        pop esi
+        pop ebp
+        mov ecx, dword ptr [eax + 4]
+        pop ebx
+        inc ecx
+        mov dword ptr [eax + 4], ecx
+        mov al, 1
+        ret 4
+    ZERO_6E8EF0:
+        xor eax, eax
+    DONE_6E8EF0:
+        mov ecx, dword ptr [edi]
+        mov dword ptr [esp + 0x14], eax
+        lea eax, [esp + 0x14]
+        push eax
+        push ecx
+        mov ecx, edi
+        call ext_006D2170
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 1
+        pop ebx
+        ret 4
+    }
+}
