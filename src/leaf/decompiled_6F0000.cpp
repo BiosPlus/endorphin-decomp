@@ -6546,3 +6546,37 @@ extern "C" __declspec(naked) void __fastcall fn_006FBD70(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x006FBD30] sub_006FBD30 (64 bytes)
+extern "C" void ext_006FBC50();
+
+extern "C" __declspec(naked) void __fastcall fn_006FBD30(void* self, int edx_unused, int a1) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x14]
+        mov edx, dword ptr [esp + 0x4]
+        add eax, edx
+        mov edx, dword ptr [ecx + 0x10]
+        lea eax, [eax + 2*eax]
+        lea edx, [edx + 4*eax]
+        mov eax, dword ptr [edx + 0x4]
+        test eax, eax
+        je short L_miss
+        push esi
+        mov esi, dword ptr [eax]
+        push edi
+        mov edi, dword ptr [edx]
+        cmp esi, edi
+        pop edi
+        pop esi
+        jne short L_miss
+        mov eax, dword ptr [eax + 0x4]
+        push eax
+        call ext_006FBC50
+        ret 0x4
+    L_miss:
+        xor eax, eax
+        push eax
+        call ext_006FBC50
+        ret 0x4
+    }
+}
