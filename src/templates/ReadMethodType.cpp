@@ -54032,3 +54032,39 @@ extern "C" __declspec(naked) void* __fastcall fn_0068D910(void* self, int edx_un
         call ext_006A6DD2
     }
 }
+
+// [0x00604E50] ExprParser::ReadMethodType<Effector, float, &public: float __thiscall Effector::getPoseRawDesiredDisplacement(void) const, 1>::vfunc_4 (85 bytes)
+extern "C" __declspec(naked) void* __fastcall fn_00604E50(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x3c
+        mov eax, dword ptr [esp + 0x44]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je L_null_00604E50
+        mov edx, dword ptr [ecx]
+        mov edx, dword ptr [edx + 0x38]
+        push esi
+        lea eax, [esp + 0x8]
+        push eax
+        call edx
+        fld dword ptr [eax]
+        mov esi, dword ptr [esp + 0x44]
+        push ecx
+        fstp dword ptr [esp]
+        push esi
+        call ext_0046C390
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x3c
+        ret 0x8
+    L_null_00604E50:
+        lea ecx, [esp + 0x14]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea eax, [esp + 0x18]
+        push eax
+        call ext_006A6DD2
+    }
+}
