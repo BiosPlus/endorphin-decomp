@@ -3387,3 +3387,44 @@ FAIL:
         ret
     }
 }
+
+// [0x00852AD0] sub_00852AD0 (96 bytes)
+extern "C" __declspec(naked) int __cdecl fn_00852AD0(unsigned char* dst, unsigned char kind, const unsigned int* src) {
+    __asm {
+        mov al, byte ptr [esp + 0x8]
+        cmp al, 0x1
+        je ok
+        cmp al, 0x2
+        je ok
+        cmp al, 0x3
+        je ok
+        mov eax, 0xfffffffc
+        ret
+ok:
+        mov ecx, dword ptr [esp + 0x4]
+        mov byte ptr [ecx], al
+        mov eax, dword ptr [esp + 0xc]
+        test eax, eax
+        je zero
+        mov edx, dword ptr [eax]
+        inc ecx
+        mov dword ptr [ecx], edx
+        mov edx, dword ptr [eax + 0x4]
+        mov dword ptr [ecx + 0x4], edx
+        mov edx, dword ptr [eax + 0x8]
+        mov dword ptr [ecx + 0x8], edx
+        mov eax, dword ptr [eax + 0xc]
+        mov dword ptr [ecx + 0xc], eax
+        mov eax, 0x1
+        ret
+zero:
+        xor edx, edx
+        inc ecx
+        mov eax, 0x1
+        mov dword ptr [ecx], edx
+        mov dword ptr [ecx + 0x4], edx
+        mov dword ptr [ecx + 0x8], edx
+        mov dword ptr [ecx + 0xc], edx
+        ret
+    }
+}
