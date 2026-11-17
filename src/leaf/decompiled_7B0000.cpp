@@ -7025,3 +7025,43 @@ L_7BAE8C:
         ret
     }
 }
+
+// [0x007B7D90] sub_007B7D90 (80 bytes)
+extern "C" void ext_007B78D0();
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
+extern "C" __declspec(naked) void __cdecl fn_007B7D90(int* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_007B78D0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7B7DB2
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_7B7DDC
+L_7B7DB2:
+        mov ecx, dword ptr [esi + 0x4]
+        push ecx
+        call ext_007B78D0
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7B7DD0
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_7B7DDC
+L_7B7DD0:
+        mov edx, dword ptr [esi + 0x8]
+        push edx
+        call ext_007B78D0
+        add esp, 0x4
+L_7B7DDC:
+        pop esi
+        ret
+    }
+}
