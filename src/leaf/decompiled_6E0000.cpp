@@ -2488,3 +2488,63 @@ L_6DCF:
         ret 8
     }
 }
+
+// [0x006E9610] sub_006E9610 (112 bytes)
+extern "C" int __fastcall ext_00710300(void* ecx_arg);
+
+extern "C" __declspec(naked) int __fastcall fn_006E9610(void* self, int edx_unused, int n) {
+    __asm {
+        push ecx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        xor esi, esi
+        push edi
+        cmp ebp, 3
+        mov edi, ecx
+        mov dword ptr [esp + 0xc], esi
+        jl L_6E9610_a
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebp
+        pop ecx
+        ret 4
+L_6E9610_a:
+        cmp ebp, esi
+        push ebx
+        jne L_6E9610_b
+        mov eax, dword ptr [edi + 0x7c]
+        pop ebx
+        pop edi
+        pop esi
+        mov dword ptr [esp + 4], eax
+        pop ebp
+        pop ecx
+        ret 4
+L_6E9610_b:
+        mov ebx, dword ptr [edi + 0x7c]
+        cmp ebx, esi
+        jle L_6E9610_d
+L_6E9610_c:
+        mov ecx, dword ptr [edi + 0x8c]
+        mov edx, dword ptr [ecx + 4 * esi]
+        mov ecx, dword ptr [edx]
+        call ext_00710300
+        cmp eax, ebp
+        jne L_6E9610_e
+        inc dword ptr [esp + 0x10]
+L_6E9610_e:
+        inc esi
+        cmp esi, ebx
+        jl L_6E9610_c
+L_6E9610_d:
+        mov eax, dword ptr [esp + 0x10]
+        pop ebx
+        pop edi
+        pop esi
+        pop ebp
+        pop ecx
+        ret 4
+    }
+}
