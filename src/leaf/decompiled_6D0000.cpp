@@ -6090,3 +6090,61 @@ extern "C" __declspec(naked) void __fastcall fn_006D5940(void* self) {
         ret
     }
 }
+
+// [0x006DD240] sub_006DD240 (112 bytes)
+extern "C" void ext_006D0490();
+extern "C" void __cdecl ext_006A5C5C(void* ptr);
+// Searches self+0xd0 (count at +0, pointer array at +0x10) for *slot; if found, notifies
+// the element via ext_006D0490 when its +0x8 is set, calls ext_006D2200(container, index),
+// frees the pointer via ext_006A5C5C and clears *slot. ret 4.
+extern "C" __declspec(naked) void __fastcall fn_006DD240(void* self, int edx_unused, void** slot) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov edx, dword ptr [ebx]
+        push edi
+        test edx, edx
+        je fn006dd240_done
+        mov eax, dword ptr [ecx + 0xd0]
+        lea edi, [ecx + 0xd0]
+        xor esi, esi
+        test eax, eax
+        jle fn006dd240_done
+        mov ecx, dword ptr [edi + 0x10]
+    fn006dd240_loop:
+        cmp dword ptr [ecx], edx
+        je fn006dd240_found
+        inc esi
+        add ecx, 0x4
+        cmp esi, eax
+        jl fn006dd240_loop
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    fn006dd240_found:
+        test esi, esi
+        jl fn006dd240_done
+        mov ecx, dword ptr [edx + 0x8]
+        test ecx, ecx
+        je fn006dd240_skip
+        push edx
+        push 0x6dd7a0
+        call ext_006D0490
+    fn006dd240_skip:
+        push esi
+        mov ecx, edi
+        call ext_006D2200
+        mov eax, dword ptr [ebx]
+        push eax
+        call ext_006A5C5C
+        add esp, 0x4
+        mov dword ptr [ebx], 0x0
+    fn006dd240_done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
