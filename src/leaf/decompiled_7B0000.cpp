@@ -6337,3 +6337,37 @@ L_nonzero:
         ret
     }
 }
+
+// [0x007B2480] sub_007B2480 (64 bytes)
+extern "C" int mem_00925208; /* u32 0x00627CA8 */
+
+// strdup-style: strlen + malloc(len+1) + copy. Hand-written to match MSVC codegen.
+extern "C" __declspec(naked) void* __cdecl fn_007B2480(const char* s) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push edi
+        mov edi, esi
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        mov edi, ecx
+        inc edi
+        push edi
+        call dword ptr [mem_00925208]
+        mov ecx, edi
+        mov edi, eax
+        mov edx, ecx
+        add esp, 4
+        shr ecx, 2
+        rep movsd
+        mov ecx, edx
+        and ecx, 3
+        rep movsb
+        pop edi
+        pop esi
+        ret
+    }
+}
