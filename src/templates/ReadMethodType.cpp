@@ -46038,3 +46038,39 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x004B33D0] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getXMax(void) const, 0}, 0>::vfunc_0 (82 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_0048FAC0();
+extern "C" void ext_00672080();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) void __stdcall fn_004B33D0(void* a1, void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je skip_004B33D0
+        push esi
+        call ext_0048FAC0
+        fstp dword ptr [esp + 0x38]
+        mov esi, dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x38]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    skip_004B33D0:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
