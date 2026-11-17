@@ -38765,3 +38765,48 @@ extern "C" __declspec(naked) void __fastcall fn_0068E1C0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x004EA520] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isProjectRootEnabled(void) const, 0>::vfunc_1 (74 bytes)
+extern "C" __declspec(naked) float __stdcall fn_004EA520(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je  L_throw
+        cmp byte ptr [eax + 0x9], 0x0
+        je  L_zero
+        _emit 0xd9
+        _emit 0xe8
+        _emit 0xd9
+        _emit 0x5c
+        _emit 0x24
+        _emit 0x2c
+        _emit 0xd9
+        _emit 0x44
+        _emit 0x24
+        _emit 0x2c
+        add esp, 0x28
+        ret 0x4
+    L_zero:
+        _emit 0xd9
+        _emit 0xee
+        _emit 0xd9
+        _emit 0x5c
+        _emit 0x24
+        _emit 0x2c
+        _emit 0xd9
+        _emit 0x44
+        _emit 0x24
+        _emit 0x2c
+        add esp, 0x28
+        ret 0x4
+    L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
