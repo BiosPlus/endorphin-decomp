@@ -41,6 +41,7 @@ extern "C" void ext_005CF950();
 extern "C" void ext_005C3640();
 extern "C" void ext_0068EE60();
 extern "C" void ext_0046C2E0();
+extern "C" void ext_004A9A60();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -20419,6 +20420,29 @@ extern "C" __declspec(naked) void __fastcall fn_0046E2B0(void* self) {
         call ext_0046C3C0
         push 0x9dec1c
         lea edx, [esp + 0x4]
+        push edx
+        call ext_006A6DD2
+    }
+}
+
+// [0x004AAAF0] ExprParser::ReadMethodType<NMData::BehaviourData, bool, {public: bool __thiscall NMData::BehaviourData::isEnabled(void) const, 0}, 0>::vfunc_5 (55 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004AAAF0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_skip
+        call ext_004A9A60
+        mov byte ptr [esp + 0x2c], al
+        mov ecx, dword ptr [esp + 0x2c]
+        push ecx
+        call ext_0046C4E0
+    L_skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, [esp + 4]
         push edx
         call ext_006A6DD2
     }
