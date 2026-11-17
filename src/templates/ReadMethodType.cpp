@@ -26056,3 +26056,34 @@ extern "C" __declspec(naked) void* __fastcall fn_00508E30(void* self, int edx_un
         call ext_006A6DD2
     }
 }
+
+// [0x004B1250] ExprParser::ReadMethodType<NMData::GraphEntryData, int, &public: int __thiscall NMData::GraphEntryData::getColor(void) const, 0>::vfunc_0 (69 bytes)
+extern "C" void ext_006720C0();
+
+extern "C" __declspec(naked) void __fastcall fn_004B1250(void* self) {
+    __asm {
+        sub esp, 2ch
+        mov eax, dword ptr [esp + 34h]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0
+        je L_throw
+        mov ecx, dword ptr [eax + 20h]
+        push esi
+        mov esi, dword ptr [esp + 34h]
+        push ecx
+        mov ecx, esi
+        call ext_006720C0
+        mov eax, esi
+        pop esi
+        add esp, 2ch
+        ret 8
+L_throw:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push 9dec1ch
+        lea edx, [esp + 8]
+        push edx
+        call ext_006A6DD2
+    }
+}
