@@ -40714,3 +40714,33 @@ L_skip:
         call ext_006A6DD2
     }
 }
+
+// [0x0059F600] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_1 (76 bytes)
+extern "C" void ext_00682ED0();
+extern "C" __declspec(naked) void __fastcall fn_0059F600(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je throw_path
+        lea ecx, [eax + 4]
+        call ext_00682ED0
+        mov ecx, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 0x30]
+        fld dword ptr [esp + 0x30]
+        add esp, 4
+        add esp, 0x28
+        ret 4
+throw_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
