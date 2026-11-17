@@ -3428,3 +3428,43 @@ zero:
         ret
     }
 }
+
+// [0x008592A0] sub_008592A0 (96 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_008592A0(const void* p, unsigned int n) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        xor eax, eax
+        test edi, edi
+        jbe done
+        push ebx
+        push esi
+        mov esi, dword ptr [esp + 0x10]
+loop_top:
+        xor edx, edx
+        mov ecx, eax
+        mov dl, byte ptr [esi]
+        and ecx, 0xf
+        mov ebx, edx
+        mov ecx, dword ptr [4*ecx + 0xab8c70]
+        and ebx, 0xf
+        shr ax, 0x4
+        xor cx, word ptr [4*ebx + 0xab8c70]
+        shr edx, 0x4
+        xor ecx, eax
+        mov eax, ecx
+        and eax, 0xf
+        shr cx, 0x4
+        mov eax, dword ptr [4*eax + 0xab8c70]
+        xor ax, word ptr [4*edx + 0xab8c70]
+        xor eax, ecx
+        inc esi
+        dec edi
+        jne loop_top
+        pop esi
+        pop ebx
+done:
+        pop edi
+        ret
+    }
+}
