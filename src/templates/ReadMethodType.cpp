@@ -37989,3 +37989,35 @@ extern "C" __declspec(naked) void __fastcall fn_005AB2F0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x005DB350] ExprParser::ReadMethodType<NMData::CameraData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::CameraData::getFilmGateDrawModeName(void) const, 0}, 0>::vfunc_4 (73 bytes)
+extern "C" void ext_004276B0();
+extern "C" void ext_005D0810();
+extern "C" __declspec(naked) void __fastcall fn_005DB350(void* self, int edx_unused, int a1, void* a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je null_path
+        push esi
+        call ext_005D0810
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        push esi
+        call ext_004276B0
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    null_path:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
