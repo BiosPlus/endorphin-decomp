@@ -17727,3 +17727,27 @@ L_null:
         call ext_006A6DD2
     }
 }
+
+// [0x004EADA0] ExprParser::ReadMethodType<NMData::PoseToolOptions, bool, &public: bool __thiscall NMData::PoseToolOptions::isGravityEnabled(void) const, 0>::vfunc_2 (52 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_004EADA0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je L_throw
+        xor ecx, ecx
+        cmp byte ptr [eax + 0x6], cl
+        setne cl
+        mov eax, ecx
+        add esp, 0x28
+        ret 0x4
+    L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, [esp + 0x4]
+        push edx
+        call ext_006A6DD2
+    }
+}
