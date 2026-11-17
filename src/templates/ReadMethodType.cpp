@@ -59,8 +59,10 @@ extern "C" void ext_00602F20();
 extern "C" void ext_005F57F0();
 extern "C" void ext_00630540();
 extern "C" void ext_006305E0();
+extern "C" int mem_00924FF0;
+extern "C" int mem_009251F0;
 
-// [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
+extern "C" int mem_009251F0;
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA34520, 0);
@@ -25992,6 +25994,33 @@ throw_path:
         call ext_0046C3C0
         push offset mem_009DEC1C
         lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x00674C90] ExprParser::ReadMethodType<ExpressionEntry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall ExpressionEntry::getExpression(void) const, 0>::vfunc_1 (69 bytes)
+extern "C" __declspec(naked) float __fastcall fn_00674C90(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 28h
+        test eax, eax
+        je throw_path
+        lea ecx, [eax + 1Ch]
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 30h]
+        fld dword ptr [esp + 30h]
+        add esp, 4
+        add esp, 28h
+        ret 4
+throw_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 9DEC1Ch
+        lea ecx, [esp + 4]
         push ecx
         call ext_006A6DD2
     }
