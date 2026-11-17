@@ -84,6 +84,7 @@ extern "C" void ext_004B1100();
 extern "C" void ext_004F51F0();
 extern "C" void ext_004DDE80();
 extern "C" void ext_004F4E20();
+extern "C" void ext_0051A000();
 
 // [0x0046E190] ExprParser::ReadWriteMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::isEnabled(void) const, 0}, bool, {public: void __thiscall ImageExporter::setEnabled(bool), 0}>::vfunc_40 (122 bytes)
 extern "C" __declspec(naked) void __fastcall fn_0046E190(void* self, int edx_unused, void* a1) {
@@ -14814,6 +14815,38 @@ extern "C" __declspec(naked) void __fastcall fn_004F75A0(void* self, int edx_unu
         mov ecx, esi
         fstp dword ptr [esp]
         call ext_004F7160
+        pop esi
+        add esp, 0x28
+        ret 8
+throw_null:
+        lea ecx, [esp+4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x0051A400] ExprParser::ReadWriteMethodType<NMData::RealChannel, float, &public: float __thiscall NMData::RealChannel::getValue(void) const, float, &public: void __thiscall NMData::RealChannel::setKeyFrame(float)>::vfunc_41 (71 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0051A400(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je throw_null
+        mov eax, dword ptr [esp+0x34]
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx+4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_0051A000
         pop esi
         add esp, 0x28
         ret 8
