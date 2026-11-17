@@ -62550,3 +62550,45 @@ L_null_0049B820:
         call ext_006A6DD2
     }
 }
+
+// [0x004AA660] ExprParser::ReadMethodType<NMData::BehaviourData, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall NMData::BehaviourData::getCharacterName(void) const, 0}, 0>::vfunc_2 (114 bytes)
+extern "C" void ext_004A9A40();
+extern "C" __declspec(naked) void __stdcall fn_004AA660(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je throw_path
+        call ext_004A9A40
+        mov ecx, eax
+        call dword ptr [mem_00924FF0]
+        push eax
+        call dword ptr [mem_009251F0]
+        fstp dword ptr [esp + 0x30]
+        fldz
+        add esp, 4
+        fld dword ptr [esp + 0x2c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 1
+        jne neg_path
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+neg_path:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+throw_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
