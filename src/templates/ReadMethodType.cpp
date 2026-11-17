@@ -46854,3 +46854,37 @@ extern "C" __declspec(naked) void __fastcall fn_004FED90(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004FE170] ExprParser::ReadMethodType<EvolveEngine, float, {public: float __thiscall EvolveEngine::getBestFitness(void) const, 0}, 1>::vfunc_0 (82 bytes)
+extern "C" void ext_004FD810();
+
+extern "C" __declspec(naked) void* __fastcall fn_004FE170(void* self, int edx_unused, void* a1, void** a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je L_throw
+        push esi
+        call ext_004FD810
+        fstp dword ptr [esp + 0x38]
+        mov esi, dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x38]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 8
+    L_throw:
+        lea ecx, dword ptr [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, dword ptr [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
