@@ -2068,3 +2068,36 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x005165C0] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentTaskIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentTaskIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumTasks(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getTaskDescription(int) const>::vfunc_4 (71 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_0046C500();
+extern "C" void ext_006A6DD2();
+extern "C" void __declspec(naked) __fastcall fn_005165C0(void* self) {
+    __asm {
+        sub esp, 2Ch
+        mov eax, dword ptr [esp + 34h]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0
+        je null_path
+        mov ecx, dword ptr [eax + 08h]
+        push esi
+        mov esi, dword ptr [esp + 34h]
+        push ecx
+        push esi
+        call ext_0046C500
+        add esp, 8
+        mov eax, esi
+        pop esi
+        add esp, 2Ch
+        ret 8
+null_path:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push 9DEC1Ch
+        lea edx, [esp + 8]
+        push edx
+        call ext_006A6DD2
+    }
+}
