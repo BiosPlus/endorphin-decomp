@@ -1206,3 +1206,57 @@ extern "C" __declspec(naked) void __fastcall fn_00764670(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x00764930] sub_00764930 (128 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_006B9EC0();
+extern "C" void ext_006D2250();
+extern "C" void ext_007641C0();
+extern "C" int mem_00925264; /* u32 0x00627D9E */
+extern "C" __declspec(naked) char __fastcall fn_00764930(void* self) {
+    __asm {
+        push    ebp
+        push    esi
+        mov     esi, ecx
+        push    edi
+        xor     edi, edi
+        mov     ebp, dword ptr [esi + 0x15c]
+        test    ebp, ebp
+        jle     L_after_loop
+        push    ebx
+    L_loop:
+        mov     eax, dword ptr [esi + 0x16c]
+        mov     ebx, dword ptr [eax + 4*edi]
+        test    ebx, ebx
+        je      L_skip
+        mov     ecx, ebx
+        call    ext_007641C0
+        push    ebx
+        call    ext_006A5C5C
+        add     esp, 4
+    L_skip:
+        inc     edi
+        cmp     edi, ebp
+        jl      L_loop
+        pop     ebx
+    L_after_loop:
+        lea     ecx, [esi + 0x15c]
+        call    ext_006D2250
+        mov     eax, dword ptr [esi + 0xb0]
+        test    eax, eax
+        je      L_no_file
+        push    eax
+        call    dword ptr [mem_00925264]
+        add     esp, 4
+        lea     ecx, [esi + 0x100]
+        mov     dword ptr [esi + 0xb0], 0
+        push    0xb5d2c0
+        call    ext_006B9EC0
+    L_no_file:
+        pop     edi
+        pop     esi
+        mov     al, 1
+        pop     ebp
+        ret
+    }
+}
