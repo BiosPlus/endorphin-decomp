@@ -22,6 +22,7 @@ extern "C" __declspec(naked) void __fastcall fn_006F9DC0(void* self, int edx_unu
     }
 }
 extern "C" void ext_006FBC50();
+// Isolated WIP translation unit for fn_006F7850
 
 // [0x006FA350] sub_006FA350 (32 bytes)
 // Returns self if arg0 is 0, 2 or 0xDE1947F3; otherwise returns NULL (ret 8).
@@ -7031,6 +7032,62 @@ extern "C" __declspec(naked) void __fastcall fn_006FC8E0(void* self) {
         pop esi
         mov dword ptr fs:[0], ecx
         add esp, 0x10
+        ret
+    }
+}
+
+// [0x006F7850] sub_006F7850 (80 bytes)
+// Nested search: for i in 0..11, count = ext_006F7700(i); for j in 0..count-1, if ext_006F7710(i, j) == arg0
+// then *arg1 = i, *arg2 = j and return 1. Otherwise return 0.
+extern "C" void ext_006F7700();
+extern "C" void ext_006F7710();
+
+extern "C" __declspec(naked) void __cdecl fn_006F7850(int value, int* outI, int* outJ) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        xor edi, edi
+outer:
+        push edi
+        call ext_006F7700
+        mov ebx, eax
+        add esp, 0x4
+        xor esi, esi
+        test ebx, ebx
+        jle next
+inner:
+        push esi
+        push edi
+        call ext_006F7710
+        add esp, 0x8
+        cmp ebp, eax
+        je found
+        inc esi
+        cmp esi, ebx
+        jl inner
+next:
+        inc edi
+        cmp edi, 0xc
+        jl outer
+        pop edi
+        pop esi
+        pop ebp
+        xor al, al
+        pop ebx
+        ret
+found:
+        mov eax, dword ptr [esp + 0x18]
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr [eax], edi
+        mov dword ptr [ecx], esi
+        pop edi
+        pop esi
+        pop ebp
+        mov al, 0x1
+        pop ebx
         ret
     }
 }
