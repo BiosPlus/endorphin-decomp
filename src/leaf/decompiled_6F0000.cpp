@@ -45,8 +45,10 @@ extern "C" __declspec(naked) void* __fastcall fn_006FA350(void* self, int edx_un
         ret 0x8
     }
 }
+extern "C" void ext_006B9950();
+extern "C" void ext_006F8AD0();
 
-// [0x006F69B0] sub_006F69B0 (16 bytes)
+extern "C" void ext_006F8AD0();
 extern "C" void ext_00782C40(int value);
 
 extern "C" __declspec(naked) void __stdcall fn_006F69B0(int a1) {
@@ -7117,5 +7119,42 @@ extern "C" __declspec(naked) void __fastcall fn_006F8A70(void* self) {
         mov dword ptr fs:[0], ecx
         add esp, 10h
         ret
+    }
+}
+
+// [0x006F8EE0] sub_006F8EE0 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006F8EE0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        test eax, eax
+        jl L_fail
+        cmp eax, 0xbf
+        jge L_fail
+        lea eax, [eax + 4*eax]
+        shl eax, 0x4
+        add eax, ecx
+        mov ecx, dword ptr [eax + 0xc]
+        test ecx, ecx
+        lea esi, [eax + 0xc]
+        jne L_nonzero
+        lea ecx, [eax + 0x10]
+        call ext_006B9950
+        test al, al
+        jne L_fail
+    L_nonzero:
+        mov ecx, dword ptr [esp + 0xc]
+        test ecx, ecx
+        je L_done
+        push esi
+        call ext_006F8AD0
+    L_done:
+        mov al, 0x1
+        pop esi
+        ret 0x8
+    L_fail:
+        xor al, al
+        pop esi
+        ret 0x8
     }
 }
