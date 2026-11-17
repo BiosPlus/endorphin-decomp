@@ -4751,3 +4751,54 @@ L_fail:
         ret
     }
 }
+
+// [0x00724E80] sub_00724E80 (128 bytes)
+extern "C" int mem_009251B8;
+extern "C" int mem_00925180;
+extern "C" int mem_009252B4;
+
+extern "C" __declspec(naked) void __fastcall fn_00724E80(void* self, int edx_unused, int arg) {
+    __asm {
+        sub esp, 0xa0
+        push ebx
+        push ebp
+        push esi
+        push edi
+        mov ebp, ecx
+        push 0x0
+        call dword ptr [mem_009251B8]
+        push eax
+        call dword ptr [mem_00925180]
+        mov ebx, dword ptr [mem_009252B4]
+        add esp, 0x8
+        lea esi, [esp + 0x10]
+        mov edi, 0x50
+    L_fill:
+        call ebx
+        mov word ptr [esi], ax
+        add esi, 0x2
+        dec edi
+        jne short L_fill
+        mov ecx, dword ptr [ebp + 0x10]
+        lea edx, [esp + 0x10]
+        push 0xa0
+        push edx
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x1c]
+        mov eax, dword ptr [esp + 0xb4]
+        mov ecx, dword ptr [esp + 0x36]
+        mov edx, dword ptr [esp + 0x3a]
+        pop edi
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x3a]
+        pop esi
+        pop ebp
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [esp + 0x36]
+        pop ebx
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], edx
+        add esp, 0xa0
+        ret 0x4
+    }
+}
