@@ -8149,3 +8149,56 @@ extern "C" __declspec(naked) void __cdecl fn_007BA200(void* self, unsigned short
         ret
     }
 }
+
+// [0x007B7F90] sub_007B7F90 (112 bytes)
+extern "C" void ext_007B7790(unsigned short);
+extern "C" void ext_007B7890();
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
+
+extern "C" __declspec(naked) void __cdecl fn_007B7F90(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov ax, word ptr [esi]
+        push eax
+        call ext_007B7790
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7B7FB3
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_7B7FFB
+L_7B7FB3:
+        mov ecx, dword ptr [esi + 0x4]
+        push ecx
+        call ext_007B7890
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7B7FD1
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_7B7FFB
+L_7B7FD1:
+        mov edx, dword ptr [esi + 0x8]
+        push edx
+        call ext_007B7890
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7B7FEF
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_7B7FFB
+L_7B7FEF:
+        mov eax, dword ptr [esi + 0xc]
+        push eax
+        call ext_007B7890
+        add esp, 0x4
+L_7B7FFB:
+        pop esi
+        ret
+    }
+}
