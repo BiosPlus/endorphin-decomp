@@ -6479,3 +6479,39 @@ extern "C" __declspec(naked) void __fastcall fn_006FA950(void* self, int edx_unu
         ret 8
     }
 }
+
+// [0x006F9E90] sub_006F9E90 (64 bytes)
+extern "C" void* __cdecl ext_006A5C62(unsigned int size);
+extern "C" int mem_009241C0;
+
+extern "C" __declspec(naked) void __fastcall fn_006F9E90(void* self) {
+    __asm {
+        push edi
+        mov edi, ecx
+        mov al, byte ptr [edi + 0x20]
+        test al, al
+        jne done
+        push esi
+        push 0x18
+        call ext_006A5C62
+        mov esi, eax
+        add esp, 0x4
+        test esi, esi
+        je fail
+        push esi
+        call dword ptr [mem_009241C0]
+        mov dword ptr [edi + 0x1c], esi
+        mov byte ptr [edi + 0x20], 0x1
+        pop esi
+        pop edi
+        ret
+fail:
+        xor esi, esi
+        mov byte ptr [edi + 0x20], 0x1
+        mov dword ptr [edi + 0x1c], esi
+        pop esi
+done:
+        pop edi
+        ret
+    }
+}
