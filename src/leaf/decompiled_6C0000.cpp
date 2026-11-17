@@ -5119,3 +5119,44 @@ fn_006C2E60_done:
         ret 4
     }
 }
+
+// [0x006C9170] sub_006C9170 (112 bytes)
+extern "C" void ext_006B9D80();
+extern "C" void ext_006DDC90();
+extern "C" void ext_006E73B0();
+
+extern "C" __declspec(naked) void __fastcall fn_006C9170(void* self) {
+    __asm {
+        push -1
+        push 0x8b8e23
+        mov eax, fs:[0]
+        push eax
+        mov fs:[0], esp
+        push ecx
+        mov eax, dword ptr [esp + 0x14]
+        push esi
+        mov esi, ecx
+        push eax
+        mov dword ptr [esp + 0x8], esi
+        call ext_006B9D80
+        push 1
+        push 0xaa8ccc
+        lea ecx, [esi + 0x50]
+        mov dword ptr [esp + 0x18], 0
+        call ext_006E73B0
+        push 0
+        push 0
+        push 0
+        push 0xaa8ce0
+        mov byte ptr [esp + 0x20], 1
+        call ext_006DDC90
+        mov ecx, dword ptr [esp + 0x18]
+        add esp, 0x10
+        mov dword ptr [esi + 0x4c], eax
+        mov eax, esi
+        pop esi
+        mov fs:[0], ecx
+        add esp, 0x10
+        ret 4
+    }
+}
