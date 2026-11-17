@@ -49870,3 +49870,40 @@ extern "C" __declspec(naked) void __fastcall fn_0068C590(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x0068CBA0] ExprParser::ReadMethodType<Randomizer, float, {public: float __thiscall Randomizer::randDblExc(void) const, 0}, 1>::vfunc_0 (82 bytes)
+extern "C" void ext_0068BED0();
+extern "C" void ext_00672080();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __fastcall fn_0068CBA0(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0
+        je null_path_0068CBA0
+        push esi
+        call ext_0068BED0
+        fstp dword ptr [esp + 0x38]
+        mov esi, dword ptr [esp + 0x34]
+        fld dword ptr [esp + 0x38]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_00672080
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 8
+    null_path_0068CBA0:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
