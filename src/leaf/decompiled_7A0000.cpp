@@ -4116,3 +4116,29 @@ extern "C" __declspec(naked) int __cdecl fn_007AF3A0(void* self) {
         ret
     }
 }
+
+// [0x007AF3E0] sub_007AF3E0 (64 bytes)
+extern "C" void ext_0079AF50();
+extern "C" void ext_007AF420();
+
+extern "C" __declspec(naked) void __cdecl fn_007AF3E0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0x214]
+        test eax, eax
+        je fn_007AF3E0_skip
+        push eax
+        call ext_0079AF50
+        add esp, 4
+        mov dword ptr [esi + 0x218], 0
+fn_007AF3E0_skip:
+        push 0x5c
+        push 0x998c98
+        push esi
+        call ext_007AF420
+        add esp, 0xc
+        pop esi
+        ret
+    }
+}
