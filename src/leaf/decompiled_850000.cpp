@@ -4097,3 +4097,65 @@ extern "C" __declspec(naked) int __cdecl fn_0085BEC0(void* t, int key) {
         ret
     }
 }
+
+// [0x0085BB40] sub_0085BB40 (128 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_0085BB40(unsigned int c, unsigned char* a) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, edi
+        test byte ptr [edi + 0x14], 0x4
+        je L_B50
+        mov esi, dword ptr [edi]
+L_B50:
+        mov eax, dword ptr [esi + 0x14]
+        test al, 0x1
+        jne L_FAIL
+        test al, 0x2
+        je L_B65
+        mov eax, dword ptr [esi + 0x4]
+        mov ecx, dword ptr [edi + 0x8]
+        cmp eax, ecx
+        jbe L_FAIL
+L_B65:
+        mov ecx, dword ptr [esi + 0xc]
+        mov eax, dword ptr [edi + 0x8]
+        cmp ecx, eax
+        ja L_B8B
+        mov edx, dword ptr [esi + 0x10]
+        mov eax, dword ptr [esi + 0x8]
+        lea ecx, [edx + eax + 0x1]
+        mov edx, dword ptr [edi]
+        push ecx
+        push edx
+        call ext_008596F0
+        add esp, 0x8
+        test eax, eax
+        je L_FAIL
+        mov dword ptr [esi], eax
+L_B8B:
+        mov ecx, dword ptr [edi + 0x8]
+        mov edx, dword ptr [esi]
+        mov eax, dword ptr [esp + 0xc]
+        mov byte ptr [ecx + edx], al
+        mov edx, dword ptr [edi + 0x8]
+        and eax, 0xff
+        inc edx
+        mov dword ptr [edi + 0x8], edx
+        mov ecx, dword ptr [esi + 0x4]
+        mov edi, edx
+        cmp edi, ecx
+        jbe L_DONE
+        mov dword ptr [esi + 0x4], edi
+        pop edi
+        pop esi
+        ret
+L_FAIL:
+        mov eax, 0xff00
+L_DONE:
+        pop edi
+        pop esi
+        ret
+    }
+}
