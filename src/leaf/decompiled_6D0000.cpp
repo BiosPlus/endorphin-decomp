@@ -5416,3 +5416,29 @@ L_fail:
         ret 0x4
     }
 }
+
+// [0x006D9120] sub_006D9120 (80 bytes)
+extern "C" void ext_0077FB70();
+
+extern "C" __declspec(naked) void* __fastcall fn_006D9120(void* self, int edx_unused, void* obj) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push 0x3ff00000
+        push 0x0
+        push 0x3fe99999
+        push 0x9999999a
+        push 0x3fe99999
+        push 0x9999999a
+        push 0x3fe99999
+        push 0x9999999a
+        mov ecx, esi
+        mov dword ptr [esp + 0x24], 0x0
+        call ext_0077FB70
+        mov eax, esi
+        pop esi
+        pop ecx
+        ret 0x4
+    }
+}
