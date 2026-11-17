@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/templates/ReadMethodType.cpp
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
 
-// [0x0046C530] ExprParser::ReadMethodType<ImageExporter, bool, {public: bool __thiscall ImageExporter::getUseRenderer(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" void ext_006A6DD2();
 extern "C" void ext_006A6E9E();
 
 extern "C" void* __fastcall fn_0046C530(void* self, int edx_unused, void* a1) {
@@ -14732,6 +14734,27 @@ extern "C" __declspec(naked) void __fastcall fn_005223C0(void* self, int edx_unu
         call ext_0046C3C0
         push 9DEC1Ch
         lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x004B83E0] ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_3 (48 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B83E0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je short L_null
+        mov al, byte ptr [eax + 0x83]
+        add esp, 0x28
+        ret 0x4
+    L_null:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
         push ecx
         call ext_006A6DD2
     }
