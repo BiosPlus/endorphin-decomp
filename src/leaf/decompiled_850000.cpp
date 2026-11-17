@@ -3865,3 +3865,56 @@ extern "C" __declspec(naked) int __cdecl fn_00859D40(void) {
         ret
     }
 }
+
+// [0x0085C1C0] sub_0085C1C0 (96 bytes)
+extern "C" void ext_0085C130();
+extern "C" void ext_0085C170();
+extern "C" void ext_0085C1C0();
+extern "C" void ext_0086D210();
+
+extern "C" __declspec(naked) void __cdecl fn_0085C1C0(void* p) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov eax, dword ptr [edi]
+        mov ecx, eax
+        shr ecx, 0x18
+        test cl, 0x20
+        je L_else
+        mov edx, dword ptr [edi + 0x20]
+        push ebx
+        and eax, 0xfffffff
+        push edx
+        mov ebx, eax
+        call ext_0085C1C0
+        mov esi, eax
+        push esi
+        call ext_0085C130
+        push ebx
+        add esi, eax
+        call ext_0085C170
+        add esp, 0xc
+        add esi, eax
+        pop ebx
+        jmp L_join
+    L_else:
+        push edi
+        call ext_0086D210
+        add esp, 4
+        mov esi, eax
+    L_join:
+        mov edi, dword ptr [edi + 0x1c]
+        test edi, edi
+        je L_done
+        push edi
+        call ext_0085C1C0
+        add esp, 4
+        add esi, eax
+    L_done:
+        mov eax, esi
+        pop edi
+        pop esi
+        ret
+    }
+}
