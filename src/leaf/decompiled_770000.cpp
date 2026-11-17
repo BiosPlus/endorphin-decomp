@@ -25,6 +25,7 @@ extern "C" int mem_00925284;
 extern "C" int mem_00B60728;
 extern "C" int mem_00B6072C;
 extern "C" int mem_00B60720;
+extern "C" int mem_00925240;
 
 // [0x0077F650] sub_0077F650 (112 bytes)
 extern "C" __declspec(naked) void __fastcall fn_0077F650(void* self) {
@@ -2620,6 +2621,46 @@ done:
         pop edi
         mov al, 1
         pop esi
+        ret 4
+    }
+}
+
+// [0x00771FC0] sub_00771FC0 (80 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00771FC0(void* self, int edx_unused, char** a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 8]
+        push 0xaa870c
+        mov eax, dword ptr [ebx]
+        push eax
+        call dword ptr [mem_00925240]
+        add esp, 8
+        test eax, eax
+        je not_found
+        push esi
+        push edi
+        lea edi, [eax + 2]
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov al, 1
+        mov edx, ecx
+        mov esi, edi
+        mov edi, dword ptr [ebx]
+        shr ecx, 2
+        rep movsd
+        mov ecx, edx
+        and ecx, 3
+        rep movsb
+        pop edi
+        pop esi
+        pop ebx
+        ret 4
+    not_found:
+        mov al, 1
+        pop ebx
         ret 4
     }
 }
