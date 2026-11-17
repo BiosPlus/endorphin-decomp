@@ -7398,3 +7398,49 @@ extern "C" __declspec(naked) void __cdecl fn_007B2BD0(void) {
         ret
     }
 }
+
+// [0x007B8BB0] sub_007B8BB0 (96 bytes)
+extern "C" int mem_00B61DB8;
+extern "C" int mem_009251D8; /* "&|b" */
+extern "C" __declspec(naked) void __cdecl fn_007B8BB0() {
+    __asm {
+        push esi
+        mov esi, dword ptr [mem_00B61DB8]
+        test esi, esi
+        je L_7b8bf6
+        push ebx
+        mov ebx, dword ptr [mem_009251D8]
+        push edi
+    L_7b8bc3:
+        mov eax, dword ptr [esi + 0x8]
+        test eax, eax
+        je L_7b8bd0
+        push eax
+        call ebx
+        add esp, 0x4
+    L_7b8bd0:
+        mov eax, dword ptr [esi + 0xc]
+        test eax, eax
+        je L_7b8bdd
+        push eax
+        call ebx
+        add esp, 0x4
+    L_7b8bdd:
+        mov edi, dword ptr [esi + 0x14]
+        push esi
+        call ebx
+        add esp, 0x4
+        mov esi, edi
+        test edi, edi
+        jne L_7b8bc3
+        mov dword ptr [mem_00B61DB8], edi
+        pop edi
+        pop ebx
+        pop esi
+        ret
+    L_7b8bf6:
+        mov dword ptr [mem_00B61DB8], 0x0
+        pop esi
+        ret
+    }
+}
