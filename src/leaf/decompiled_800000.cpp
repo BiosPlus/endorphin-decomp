@@ -7897,3 +7897,42 @@ extern "C" __declspec(naked) void __cdecl fn_0080FBC0(void) {
         ret
     }
 }
+
+// [0x00805F40] sub_00805F40 (96 bytes)
+extern "C" void ext_0080A9D0();
+extern "C" void ext_0080AAF0();
+extern "C" void ext_0080ACF0();
+extern "C" void ext_0080B560();
+
+extern "C" __declspec(naked) int __cdecl fn_00805F40(void* p) {
+    __asm {
+        lea eax, [esp + 4]
+        push esi
+        mov esi, dword ptr [esp + 8]
+        push eax
+        push 0
+        push esi
+        call ext_0080A9D0
+        mov ecx, dword ptr [esp + 0x14]
+        mov word ptr [ecx + 0x18], 8
+        mov edx, dword ptr [esp + 0x14]
+        push edx
+        push 1
+        call ext_0080ACF0
+        mov eax, dword ptr [esp + 0x1c]
+        mov word ptr [eax + 0x18], 1
+        mov ecx, dword ptr [esp + 0x1c]
+        push ecx
+        push 1
+        call ext_0080ACF0
+        mov edx, dword ptr [esp + 0x24]
+        push edx
+        call ext_0080B560
+        push esi
+        call ext_0080AAF0
+        add esp, 0x24
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
