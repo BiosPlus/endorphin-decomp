@@ -3231,3 +3231,24 @@ extern "C" __declspec(naked) void __fastcall fn_0072A720(void* self) {
         ret 0x4
     }
 }
+
+// [0x00722660] sub_00722660 (64 bytes)
+extern "C" int mem_009334D8;  /* double 100 */
+extern "C" int mem_009939D8;  /* float 89128.96 / u32 0x47AE147B */
+extern "C" int mem_00993828;  /* double 0.5 */
+
+extern "C" __declspec(naked) void __cdecl fn_00722660(void) {
+    __asm {
+        fld     qword ptr [mem_009334D8]
+        fsub    qword ptr [esp + 4]
+        fmul    qword ptr [mem_009939D8]
+        fmul    qword ptr [esp + 0x14]
+        fld     qword ptr [esp + 4]
+        fadd    qword ptr [mem_009334D8]
+        fmul    qword ptr [mem_009939D8]
+        fmul    qword ptr [esp + 0xc]
+        faddp   st(1), st
+        fmul    qword ptr [mem_00993828]
+        ret
+    }
+}
