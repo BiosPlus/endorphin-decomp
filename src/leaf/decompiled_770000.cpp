@@ -2590,3 +2590,36 @@ L0077EB80_done:
         ret 4
     }
 }
+
+// [0x0077A840] sub_0077A840 (64 bytes)
+extern "C" int __fastcall ext_006D7A90(void* a);
+extern "C" void __fastcall ext_00760070(void* self, int edx_unused, void* a);
+extern "C" void __fastcall ext_00778800(void* self, int edx_unused, void* a);
+extern "C" void __fastcall ext_00779280(void* self, int edx_unused, void* a);
+
+extern "C" __declspec(naked) bool __fastcall fn_0077A840(void* self, int edx_unused, void* a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp+0Ch]
+        mov esi, ecx
+        mov ecx, edi
+        call ext_006D7A90
+        test eax, eax
+        je done
+        push edi
+        mov ecx, esi
+        call ext_00779280
+        push edi
+        mov ecx, esi
+        call ext_00760070
+        push edi
+        mov ecx, esi
+        call ext_00778800
+done:
+        pop edi
+        mov al, 1
+        pop esi
+        ret 4
+    }
+}
