@@ -6830,3 +6830,43 @@ extern "C" __declspec(naked) bool __fastcall fn_006F9080(void* self, int edx_unu
         ret 0xc
     }
 }
+
+// [0x006FAA40] sub_006FAA40 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FAA40(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        test byte ptr [esi + 0x34], 0x2
+        je short L_fail
+        mov ecx, dword ptr [esi + 0x38]
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax + 0x74]
+        test al, al
+        je short L_fail
+        mov eax, dword ptr [esp + 0x10]
+        mov edx, dword ptr [esi]
+        push 0x0
+        push eax
+        push edi
+        push -0x1
+        push esi
+        push 0x1
+        push 0x0
+        mov ecx, esi
+        call dword ptr [edx + 0x40]
+        test al, al
+        je short L_fail
+        pop edi
+        mov al, 0x1
+        pop esi
+        ret 0x8
+    L_fail:
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x8
+    }
+}
