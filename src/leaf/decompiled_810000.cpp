@@ -221,3 +221,41 @@ extern "C" __declspec(naked) void __cdecl fn_00811190(void) {
         ret
     }
 }
+
+// [0x00810C30] sub_00810C30 (64 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00810C30(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        mov eax, dword ptr [esi + 0xc]
+        mov dword ptr [esp + 0x8], eax
+        _emit 0xf6
+        _emit 0x04
+        _emit 0x45
+        _emit 0x00
+        _emit 0x8e
+        _emit 0xab
+        _emit 0x00
+        _emit 0x08
+        je short fn_00810C30_done
+    fn_00810C30_loop:
+        lea eax, [esp + 0x8]
+        push eax
+        push esi
+        call dword ptr [esi + 0x4]
+        mov eax, dword ptr [esp + 0x10]
+        add esp, 0x8
+        _emit 0xf6
+        _emit 0x04
+        _emit 0x45
+        _emit 0x00
+        _emit 0x8e
+        _emit 0xab
+        _emit 0x00
+        _emit 0x08
+        jne short fn_00810C30_loop
+    fn_00810C30_done:
+        pop esi
+        ret
+    }
+}
