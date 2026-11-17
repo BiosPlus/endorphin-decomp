@@ -3044,3 +3044,24 @@ null_path:
         ret
     }
 }
+
+// [0x0085C220] sub_0085C220 (64 bytes)
+extern "C" void* __cdecl ext_008596E0(unsigned int size);
+
+extern "C" void __fastcall fn_0085C220(void* self) {
+    int* p = (int*)ext_008596E0(0x2c);
+    if (p == 0) {
+        return;
+    }
+    p[1] = 0;
+    p[0] = -1;
+    p[2] = -1;
+    p[3] = 0;
+    p[4] = -1;
+    p[5] = 0;
+    p[6] = 1;
+    p[7] = 0;
+    p[8] = 0;
+    p[9] = 0;
+    p[10] = 0;
+}
