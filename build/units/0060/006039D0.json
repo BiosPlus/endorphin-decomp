@@ -19,5 +19,7 @@
     "0x006039FE",
     "0x00603A08"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T10:20:46Z"
 }
