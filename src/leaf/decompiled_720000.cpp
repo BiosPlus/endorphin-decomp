@@ -3314,3 +3314,34 @@ extern "C" __declspec(naked) bool __fastcall fn_00728370(void* self, int edx_unu
         ret 0x8
     }
 }
+
+// [0x007299C0] sub_007299C0 (64 bytes)
+extern "C" void ext_006D23F0();
+
+extern "C" __declspec(naked) void __stdcall fn_007299C0(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [ebx + 0x28]
+        test edi, edi
+        jle done
+        push esi
+        xor esi, esi
+loop_top:
+        mov ecx, dword ptr [ebx + 0x38]
+        push 0x3
+        add ecx, esi
+        call ext_006D23F0
+        mov dword ptr [eax], 0x0
+        add esi, 0x20
+        dec edi
+        mov dword ptr [eax + 0x4], 0x3ff00000
+        jne loop_top
+        pop esi
+done:
+        pop edi
+        pop ebx
+        ret 0x4
+    }
+}
