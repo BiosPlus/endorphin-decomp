@@ -8,8 +8,10 @@ extern "C" void __stdcall ext_006C9960(int a, int b, int c);
 extern "C" void __cdecl fn_006C94F0() {
     ext_006C9960(0, 0, (int)0xaa8cf4);
 }
+extern "C" void ext_006C9DC0();
+extern "C" void ext_006CC6F0();
 
-// [0x006C9500] sub_006C9500 (15 bytes)
+extern "C" void ext_006CC6F0();
 extern "C" void __cdecl fn_006C9500() {
     ext_006C9960(0, 0, (int)0xaa8d00);
 }
@@ -3851,6 +3853,38 @@ extern "C" __declspec(naked) float __fastcall fn_006CC810(void* self, int edx_un
         pop ecx
         ret 4
 L_fail_006CC810:
+        fld dword ptr [esp + 0x8]
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
+
+// [0x006CC850] sub_006CC850 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006CC850(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], 0x3eaaaaab
+        call ext_006CC6F0
+        test al, al
+        je short L_else
+        push edi
+        mov ecx, esi
+        call ext_006CA060
+        push 2
+        mov ecx, eax
+        call ext_006C9DC0
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+L_else:
         fld dword ptr [esp + 0x8]
         pop edi
         pop esi
