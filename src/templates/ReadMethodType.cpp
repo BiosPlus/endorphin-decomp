@@ -20673,3 +20673,28 @@ extern "C" __declspec(naked) void __fastcall fn_005C7540(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004DFE50] ExprParser::ReadMethodType<NMData::AnimationEventData, bool, {public: bool __thiscall NMData::AnimationEventData::getAnimationVisibility(void) const, 0}, 0>::vfunc_5 (55 bytes)
+extern "C" void ext_004DE320();
+
+extern "C" __declspec(naked) void __fastcall fn_004DFE50(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_skip
+        call ext_004DE320
+        mov byte ptr [esp + 0x2c], al
+        mov ecx, dword ptr [esp + 0x2c]
+        push ecx
+        call ext_0046C4E0
+    L_skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, [esp + 4]
+        push edx
+        call ext_006A6DD2
+    }
+}
