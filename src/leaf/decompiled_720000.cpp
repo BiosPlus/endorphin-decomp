@@ -23,8 +23,10 @@ L_check19:
         ret
     }
 }
+extern "C" void ext_0078C6F0();
+extern "C" int mem_0092A278;
 
-// [0x00725A90] sub_00725A90 (79 bytes)
+extern "C" int mem_0092A278;
 extern "C" __declspec(naked) void __cdecl fn_00725A90(int value, int* out_a, int* out_b, int* out_c) {
     __asm {
         mov ecx, dword ptr [esp + 0x4]
@@ -3567,5 +3569,36 @@ L_zero:
         fld qword ptr [esp + 0xc]
         pop esi
         ret 0xc
+    }
+}
+
+// [0x00726BE0] sub_00726BE0 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00726BE0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esi + 0x250]
+        call ext_00789BB0
+        test eax, eax
+        je short L_fail
+        mov ecx, eax
+        call ext_0078CBE0
+        test eax, eax
+        je short L_fail
+        mov ecx, dword ptr [eax + 0x1c]
+        inc ecx
+        mov dword ptr [eax + 0x1c], ecx
+        mov dl, byte ptr [esi + 0x16]
+        dec ecx
+        push edx
+        push ecx
+        mov ecx, eax
+        call ext_0078C6F0
+        pop esi
+        ret
+L_fail:
+        fld qword ptr [mem_0092A278]
+        pop esi
+        ret
     }
 }
