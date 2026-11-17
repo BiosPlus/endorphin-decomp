@@ -1,5 +1,6 @@
 // Decompiled translation unit: src/leaf/decompiled_850000.cpp
 extern "C" { void* __cdecl ext_0085B2C0(void* a, void* b); int __cdecl ext_0086CDB0(void* p); void __cdecl ext_00859A90(void* p); }
+extern "C" void ext_008692F0();
 
 // [0x008598C0] sub_008598C0 (32 bytes)
 extern "C" __declspec(naked) char* __cdecl fn_008598C0(void) {
@@ -3274,6 +3275,29 @@ extern "C" __declspec(naked) void __cdecl fn_0085A5D0(void* self) {
         mov dword ptr [esi + 0x54], eax
         mov dword ptr [esi + 0x50], eax
         mov dword ptr [esi + 0x58], eax
+        pop esi
+        ret
+    }
+}
+
+// [0x00853680] sub_00853680 (80 bytes)
+// memset(self, 0, 0x5c) followed by SHA-1 style context init (h0..h4, count).
+extern "C" __declspec(naked) void __cdecl fn_00853680(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push 0x5c
+        push 0x0
+        push esi
+        call ext_008692F0
+        add esp, 0xc
+        mov dword ptr [esi], 0x67452301
+        mov dword ptr [esi + 0x4], 0xefcdab89
+        mov dword ptr [esi + 0x8], 0x98badcfe
+        mov dword ptr [esi + 0xc], 0x10325476
+        mov dword ptr [esi + 0x10], 0xc3d2e1f0
+        mov dword ptr [esi + 0x18], 0x0
+        mov dword ptr [esi + 0x14], 0x0
         pop esi
         ret
     }
