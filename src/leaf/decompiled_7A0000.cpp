@@ -160,8 +160,10 @@ extern "C" __declspec(naked) void __cdecl fn_007A0C40(void** pp) {
         ret
     }
 }
+extern "C" void ext_007B2D80();
+extern "C" void ext_007B2DF0();
 
-// [0x007AC2B0] sub_007AC2B0 (79 bytes)
+extern "C" void ext_007B2DF0();
 extern "C" void ext_007AA880();
 extern "C" void ext_007AC300();
 extern "C" __declspec(naked) void __fastcall fn_007AC2B0(void* self) {
@@ -4469,5 +4471,40 @@ extern "C" __declspec(naked) void __fastcall fn_007AD540(void* self, int edx_unu
         __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
         __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
         __asm _emit 0x90 __asm _emit 0x90
+    }
+}
+
+// [0x007A74E0] sub_007A74E0 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007A74E0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        lea eax, [esp + 0x4]
+        push esi
+        push eax
+        push 0x4130
+        push ecx
+        xor esi, esi
+        call ext_007B2D80
+        mov eax, dword ptr [esp + 0x14]
+        add esp, 0xc
+        test eax, eax
+        je done
+    loop_top:
+        mov eax, dword ptr [eax + 0x10]
+        lea edx, [esp + 0x8]
+        push edx
+        push 0x4130
+        push eax
+        inc esi
+        call ext_007B2DF0
+        mov eax, dword ptr [esp + 0x14]
+        add esp, 0xc
+        test eax, eax
+        jne loop_top
+    done:
+        mov eax, esi
+        pop esi
+        and eax, 0xffff
+        ret
     }
 }
