@@ -4436,3 +4436,27 @@ fail:
         ret
     }
 }
+
+// [0x006D23B0] sub_006D23B0 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D23B0(void* self, int edx_unused) {
+    __asm {
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, ecx
+        mov ecx, dword ptr [esp + 0x4]
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [esp + 0x10]
+        mov dword ptr [eax + 0x8], ecx
+        mov ecx, dword ptr [esp + 0x14]
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [esp + 0x18]
+        mov dword ptr [eax + 0x10], ecx
+        mov ecx, dword ptr [esp + 0x1c]
+        mov dword ptr [eax + 0x14], edx
+        mov edx, dword ptr [esp + 0x20]
+        mov dword ptr [eax + 0x18], ecx
+        mov dword ptr [eax + 0x1c], edx
+        ret 0x20
+    }
+}
