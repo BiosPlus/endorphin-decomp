@@ -25,6 +25,7 @@ extern "C" __declspec(naked) void __fastcall fn_006DBDF0(void* self, int edx_unu
         ret 0x8
     }
 }
+extern "C" void ext_006D7970();
 
 // [0x006DBE10] sub_006DBE10 (32 bytes)
 // 64-bit subtract: *out = *this - *in, where out = arg0 and in = arg1 (ret 8).
@@ -4734,5 +4735,25 @@ extern "C" __declspec(naked) void __fastcall fn_006D3D70(void* self) {
         pop esi
         pop ecx
         ret
+    }
+}
+
+// [0x006D7C40] sub_006D7C40 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D7C40(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [ecx + 0x1b0], eax
+        imul eax, edx
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov dword ptr [ecx + 0x1a8], esi
+        mov esi, dword ptr [esp + 0x14]
+        push eax
+        mov dword ptr [ecx + 0x1b4], edx
+        mov dword ptr [ecx + 0x1ac], esi
+        call ext_006D7970
+        pop esi
+        ret 0x10
     }
 }
