@@ -13902,3 +13902,33 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x004B7C60] ExprParser::ReadWriteMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, float, &public: void __thiscall NMData::EngineData::setUnitMass(float)>::vfunc_41 (70 bytes)
+extern "C" __declspec(naked) void __fastcall fn_004B7C60(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je no_obj
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        call eax
+        fstp dword ptr [esi + 0x48]
+        mov byte ptr [esi + 0x84], 0x1
+        pop esi
+        add esp, 0x28
+        ret 0x8
+no_obj:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
