@@ -21294,3 +21294,28 @@ skip_call:
         call ext_006A6DD2
     }
 }
+
+// [0x0046C8F0] ExprParser::ReadMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, 0>::vfunc_5 (58 bytes)
+extern "C" void ext_0046C080();
+extern "C" __declspec(naked) void __fastcall fn_0046C8F0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 28h
+        test ecx, ecx
+        je L_skip
+        call ext_0046C080
+        fstp dword ptr [esp + 2Ch]
+        fld dword ptr [esp + 2Ch]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+L_skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 9DEC1Ch
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
