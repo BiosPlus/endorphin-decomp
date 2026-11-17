@@ -3993,3 +3993,50 @@ extern "C" __declspec(naked) void __fastcall fn_006C84B0(void* self) {
         ret
     }
 }
+
+// [0x006C92D0] sub_006C92D0 (80 bytes)
+extern "C" void ext_006DEEA0();
+extern "C" void ext_006C92D0();
+
+extern "C" __declspec(naked) void __fastcall fn_006C92D0(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebp
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        mov ebp, ecx
+        push edi
+        mov ecx, esi
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0x14]
+        mov edi, eax
+        dec edi
+        js done_label
+        push ebx
+loop_label:
+        mov edx, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [edx + 0x18]
+        mov ebx, eax
+        mov ecx, ebx
+        call ext_006DEEA0
+        cmp eax, 8
+        jne skip_label
+        push ebx
+        mov ecx, ebp
+        call ext_006C92D0
+        mov eax, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [eax + 0x10]
+skip_label:
+        dec edi
+        jns loop_label
+        pop ebx
+done_label:
+        pop edi
+        pop esi
+        pop ebp
+        ret 4
+    }
+}
