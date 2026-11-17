@@ -5669,3 +5669,49 @@ L_store:
         ret 8
     }
 }
+
+// [0x00783160] sub_00783160 (128 bytes)
+extern "C" int mem_009241FC;
+extern "C" int mem_00925190;
+extern "C" void ext_006A7270();
+extern "C" __declspec(naked) void __fastcall fn_00783160(void* self) {
+    __asm {
+        mov eax, 0x1000
+        call ext_006A7270
+        mov ecx, dword ptr [esp + 0x1008]
+        push esi
+        mov esi, dword ptr [mem_009241FC]
+        lea eax, [esp + 0x804]
+        push 0x400
+        push eax
+        push -1
+        push ecx
+        push 0
+        push 0xfde9
+        call esi
+        mov eax, dword ptr [esp + 0x1010]
+        lea edx, [esp + 0x4]
+        push 0x400
+        push edx
+        push -1
+        push eax
+        push 0
+        push 0xfde9
+        call esi
+        lea ecx, [esp + 0x4]
+        lea edx, [esp + 0x804]
+        push ecx
+        push edx
+        call dword ptr [mem_00925190]
+        mov ecx, dword ptr [esp + 0x1010]
+        add esp, 0x8
+        xor edx, edx
+        test eax, eax
+        setne dl
+        mov dword ptr [ecx], eax
+        mov al, dl
+        pop esi
+        add esp, 0x1000
+        ret
+    }
+}
