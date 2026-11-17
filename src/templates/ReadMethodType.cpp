@@ -138,8 +138,10 @@ extern "C" void ext_005D07E0();
 extern "C" int mem_00979AF0; /* double 1e-06 */
 extern "C" void ext_0046C390();
 extern "C" void ext_0046C460();
+extern "C" void ext_004D3A00();
+extern "C" int mem_009DEC1C;
 
-// [0x004C5890] ExprParser::ReadMethodType<NMData::ForceEventData, float, {public: float __thiscall NMData::ForceEventData::getRelativeAcceleration(void) const, 0}, 0>::vfunc_16 (30 bytes)
+extern "C" int mem_009DEC1C;
 extern "C" void* __stdcall fn_004C5890(void* a1) {
     typedef void* (__cdecl *Fn)(void*, int, void*, void*, int);
     return ((Fn)ext_006A6E9E)(a1, 0, (void*)0xA2E2F8, (void*)0xA329C8, 0);
@@ -45131,6 +45133,38 @@ extern "C" __declspec(naked) bool __stdcall fn_004D57C0(void* a1, void* a2) {
         je throw_path
         push esi
         call ext_004D39B0
+        mov esi, dword ptr [esp + 0x34]
+        mov byte ptr [esp + 0x38], al
+        mov ecx, dword ptr [esp + 0x38]
+        push ecx
+        push esi
+        call ext_0046C460
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    throw_path:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea edx, [esp + 0x8]
+        push edx
+        call ext_006A6DD2
+    }
+}
+
+// [0x004D8420] ExprParser::ReadMethodType<NMData::RigEventData, bool, {public: bool __thiscall NMData::RigEventData::isFrictionEnabled(void) const, 0}, 0>::vfunc_4 (81 bytes)
+extern "C" __declspec(naked) void __stdcall fn_004D8420(void* a1, void* a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je throw_path
+        push esi
+        call ext_004D3A00
         mov esi, dword ptr [esp + 0x34]
         mov byte ptr [esp + 0x38], al
         mov ecx, dword ptr [esp + 0x38]
