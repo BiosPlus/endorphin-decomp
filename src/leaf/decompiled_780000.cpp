@@ -4650,3 +4650,51 @@ L_ret:
         ret 0x8
     }
 }
+
+// [0x0078C8C0] sub_0078C8C0 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0078C8C0(void* self, int edx_unused, int a1, int a2, int a3) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push esi
+        mov esi, dword ptr [ebp + 0x10]
+        push edi
+        mov dword ptr [esi], 0x0
+        mov eax, dword ptr [ecx + 0x20]
+        test eax, eax
+        je short L_fail
+        mov edx, dword ptr [ebp + 0x8]
+        mov edi, dword ptr [ecx + 0x28]
+        cmp edx, edi
+        jge short L_fail
+        mov edi, dword ptr [ecx + 0x2c]
+        push ebx
+        mov bl, byte ptr [ebp + 0xc]
+        mov edi, dword ptr [edi + 4*edx]
+        test bl, bl
+        mov eax, dword ptr [edi + eax]
+        pop ebx
+        mov dword ptr [ebp + 0x10], eax
+        je short L_noswap
+        mov eax, dword ptr [ebp + 0x10]
+        bswap eax
+L_noswap:
+        test eax, eax
+        je short L_fail
+        mov dword ptr [esi], eax
+        mov eax, dword ptr [ecx + 0x2c]
+        pop edi
+        pop esi
+        mov edx, dword ptr [eax + 4*edx]
+        mov eax, dword ptr [ecx + 0x20]
+        lea eax, [edx + eax + 0x4]
+        pop ebp
+        ret 0xc
+L_fail:
+        pop edi
+        xor eax, eax
+        pop esi
+        pop ebp
+        ret 0xc
+    }
+}
