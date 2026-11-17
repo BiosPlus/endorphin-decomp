@@ -5891,3 +5891,63 @@ extern "C" __declspec(naked) void __cdecl fn_0086A840(void) {
         __asm _emit 0x90
     }
 }
+
+// [0x00869E50] sub_00869E50 (112 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00869E50(void) {
+    __asm {
+        mov eax, dword ptr [esp + 0x10]
+        mov ecx, dword ptr [esp + 0x8]
+        push ebx
+        push ebp
+        xor ebp, ebp
+        dec eax
+        push esi
+        push edi
+        test ecx, ecx
+        jbe epilogue2
+        mov edx, dword ptr [esp + 0x14]
+        mov edi, dword ptr [esp + 0x1c]
+    outer_test:
+        test eax, eax
+        jl zero_fill
+        xor esi, esi
+        xor ecx, ecx
+    bit_loop_check:
+        cmp ecx, 0x20
+        jae store_word
+        xor ebx, ebx
+        mov bl, byte ptr [eax + edi]
+        shl ebx, cl
+        add ecx, 0x8
+        or esi, ebx
+        dec eax
+        test eax, eax
+        jge bit_loop_check
+    store_word:
+        mov ecx, dword ptr [esp + 0x18]
+        mov dword ptr [edx], esi
+        inc ebp
+        add edx, 0x4
+        cmp ebp, ecx
+        jb outer_test
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    zero_fill:
+        cmp ebp, ecx
+        jae epilogue2
+        mov edx, dword ptr [esp + 0x14]
+        sub ecx, ebp
+        xor eax, eax
+        lea edi, [edx + 4*ebp]
+        rep stosd
+    epilogue2:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
