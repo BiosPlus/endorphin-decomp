@@ -2,8 +2,10 @@
 extern "C" void ext_00714580();
 extern "C" void ext_0071E680();
 extern "C" void ext_006DEEC0();
+extern "C" void ext_00708080();
+extern "C" void ext_00710F80();
 
-// [0x0071DE80] sub_0071DE80 (32 bytes)
+extern "C" void ext_00710F80();
 // Stores two stack args into the object at self->[0x10] (+0x160, +0x164), then sets self->byte[0xC] = 1 (ret 8).
 extern "C" __declspec(naked) void __fastcall fn_0071DE80(void* self, int edx_unused, int a1, int a2) {
     __asm {
@@ -4118,5 +4120,40 @@ L_found:
         mov dword ptr [ecx], edx
         pop esi
         ret
+    }
+}
+
+// [0x00710B20] sub_00710B20 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00710B20(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x18]
+        mov edx, dword ptr [esp + 0x14]
+        push esi
+        push eax
+        mov eax, dword ptr [esp + 0x14]
+        push edx
+        mov edx, dword ptr [esp + 0x14]
+        push 0
+        push eax
+        mov eax, dword ptr [esp + 0x18]
+        push edx
+        push eax
+        call ext_00708080
+        mov esi, eax
+        test esi, esi
+        je done
+        mov al, byte ptr [esp + 0x14]
+        test al, al
+        je done
+        push 1
+        push 2
+        mov ecx, esi
+        call ext_0071E680
+        mov ecx, eax
+        call ext_00710F80
+done:
+        mov eax, esi
+        pop esi
+        ret 0x18
     }
 }
