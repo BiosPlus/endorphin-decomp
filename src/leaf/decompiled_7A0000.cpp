@@ -1,6 +1,8 @@
 // Decompiled translation unit: src/leaf/decompiled_7A0000.cpp
+extern "C" void ext_007AF3A0();
+extern "C" void ext_007B9660();
 
-// [0x007AA880] sub_007AA880 (111 bytes)
+extern "C" void ext_007B9660();
 extern "C" void ext_006A6D5C();
 extern "C" void ext_006B9D70();
 extern "C" void ext_0079BA90();
@@ -4138,6 +4140,38 @@ fn_007AF3E0_skip:
         push esi
         call ext_007AF420
         add esp, 0xc
+        pop esi
+        ret
+    }
+}
+
+// [0x007AF360] sub_007AF360 (64 bytes)
+extern "C" __declspec(naked) void __cdecl fn_007AF360(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        mov eax, dword ptr [esi + 8]
+        test eax, eax
+        je short L_ret_one
+        push esi
+        call ext_007AF3A0
+        add esp, 4
+        test eax, eax
+        jne short L_check_flag
+        pop esi
+        ret
+L_check_flag:
+        test byte ptr [esi + 0xc], 8
+        je short L_ret_one
+        push esi
+        call ext_007B9660
+        add esp, 4
+        test eax, eax
+        jne short L_ret_one
+        pop esi
+        ret
+L_ret_one:
+        mov eax, 1
         pop esi
         ret
     }
