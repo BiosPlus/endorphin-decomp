@@ -5255,3 +5255,49 @@ L_end:
         ret
     }
 }
+
+// [0x0078C280] sub_0078C280 (112 bytes)
+extern "C" void ext_006B9D10();
+extern "C" void ext_006D2130();
+extern "C" __declspec(naked) void __fastcall fn_0078C280(void* self) {
+    __asm {
+        push -1
+        push 0x8c16eb
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push ebx
+        push esi
+        mov esi, ecx
+        push edi
+        push 4
+        push 0x10
+        lea edi, [esi + 4]
+        mov dword ptr [esp + 0x14], esi
+        mov ecx, edi
+        call ext_006D2130
+        lea eax, [edi + 0x10]
+        mov dword ptr [edi + 0x14], eax
+        xor ebx, ebx
+        lea ecx, [esi + 0x38]
+        mov dword ptr [esp + 0x18], ebx
+        call ext_006B9D10
+        mov ecx, dword ptr [esp + 0x10]
+        mov dword ptr [esi], ebx
+        mov dword ptr [esi + 0x1c], ebx
+        mov dword ptr [esi + 0x20], ebx
+        mov byte ptr [esi + 0x34], bl
+        mov dword ptr [esi + 0x24], ebx
+        mov dword ptr [esi + 0x28], ebx
+        mov dword ptr [esi + 0x2c], ebx
+        mov dword ptr [esi + 0x30], ebx
+        mov eax, esi
+        pop edi
+        pop esi
+        pop ebx
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
