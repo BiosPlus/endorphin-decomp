@@ -40202,3 +40202,35 @@ extern "C" __declspec(naked) void __fastcall fn_004F66F0(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x004B8420] ExprParser::ReadMethodType<NMData::EngineData, bool, &public: bool __thiscall NMData::EngineData::enableNonSphericalInertialBodies(void) const, 0>::vfunc_4 (75 bytes)
+extern "C" void ext_0046C460();
+
+extern "C" __declspec(naked) void* __fastcall fn_004B8420(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub     esp, 2Ch
+        mov     eax, dword ptr [esp + 34h]
+        mov     eax, dword ptr [eax]
+        test    eax, eax
+        mov     dword ptr [esp], 0
+        je      null_path
+        movzx   ecx, byte ptr [eax + 83h]
+        push    esi
+        mov     esi, dword ptr [esp + 34h]
+        push    ecx
+        push    esi
+        call    ext_0046C460
+        add     esp, 8
+        mov     eax, esi
+        pop     esi
+        add     esp, 2Ch
+        ret     8
+null_path:
+        lea     ecx, [esp + 4]
+        call    ext_0046C3C0
+        push    9DEC1Ch
+        lea     edx, [esp + 8]
+        push    edx
+        call    ext_006A6DD2
+    }
+}
