@@ -55370,3 +55370,40 @@ throw_path:
         call    ext_006A6DD2
     }
 }
+
+// [0x004B3E10] ExprParser::ReadMethodType<NMData::GraphEngineData, float, {public: float __thiscall NMData::GraphEngineData::getMaxAutoWidth(void) const, 0}, 0>::vfunc_2 (96 bytes)
+extern "C" void ext_0048FAE0();
+extern "C" __declspec(naked) float __stdcall fn_004B3E10(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_zero
+        call ext_0048FAE0
+        fstp dword ptr [esp + 0x2c]
+        fldz
+        fld dword ptr [esp + 0x2c]
+        fcom st(1)
+        fnstsw ax
+        fstp st(1)
+        test ah, 0x1
+        jne L_neg
+        fadd qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+    L_neg:
+        fsub qword ptr [mem_00993828]
+        call ext_006A6DE0
+        add esp, 0x28
+        ret 4
+    L_zero:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
