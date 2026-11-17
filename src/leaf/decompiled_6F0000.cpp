@@ -6652,3 +6652,38 @@ done_loop:
         ret 4
     }
 }
+
+// [0x006FA460] sub_006FA460 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006FA460(void* self, int edx_unused, int value) {
+    void ext_006D2200();
+    __asm {
+        mov edx, dword ptr [ecx + 0x1c]
+        add ecx, 0x1c
+        xor eax, eax
+        push esi
+        push edi
+        test edx, edx
+        jle fa460_end
+        mov esi, dword ptr [ecx + 0x10]
+        mov edi, dword ptr [esp + 0xc]
+    fa460_loop:
+        cmp dword ptr [esi], edi
+        je fa460_found
+        inc eax
+        add esi, 4
+        cmp eax, edx
+        jl fa460_loop
+        pop edi
+        pop esi
+        ret 4
+    fa460_found:
+        test eax, eax
+        jl fa460_end
+        push eax
+        call ext_006D2200
+    fa460_end:
+        pop edi
+        pop esi
+        ret 4
+    }
+}
