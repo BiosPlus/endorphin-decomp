@@ -36,8 +36,10 @@ extern "C" int mem_00999A70;
 extern "C" int mem_009252B4;
 extern "C" int mem_00999A60;
 extern "C" int mem_00993828;
+extern "C" void ext_0079B010();
+extern "C" void ext_007BAA40();
 
-// [0x007BB140] sub_007BB140 (143 bytes)
+extern "C" void ext_007BAA40();
 extern "C" __declspec(naked) int __cdecl fn_007BB140(double x, int seed) {
     __asm {
         fld qword ptr [esp + 0x4]
@@ -6616,6 +6618,37 @@ extern "C" __declspec(naked) void __cdecl fn_007BA3A0(int a1, int a2, int a3) {
         add esp, 0x28
         pop edi
         pop esi
+        ret
+    }
+}
+
+// [0x007BA470] sub_007BA470 (64 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BA470(int a1, unsigned char* obj, int a3) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx + 0x4]
+        cmp eax, 0x4
+        jbe L_small
+        mov eax, dword ptr [esp + 0xc]
+        push eax
+        push ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        call ext_007BAA40
+        add esp, 0xc
+        test eax, eax
+        jne L_one
+        ret
+    L_small:
+        mov edx, dword ptr [esp + 0xc]
+        push eax
+        add ecx, 0x8
+        push edx
+        push ecx
+        call ext_0079B010
+        add esp, 0xc
+    L_one:
+        mov eax, 0x1
         ret
     }
 }
