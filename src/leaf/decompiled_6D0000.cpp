@@ -85,6 +85,7 @@ extern "C" __declspec(naked) void __fastcall fn_006DAE00(void* self, int edx_unu
     }
 }
 extern "C" void ext_006D80A0();
+extern "C" void ext_006D03D0();
 
 // [0x006D9790] sub_006D9790 (48 bytes)
 // Linear search over 12 x 32-byte records starting at 0x00B5D910 (key at +0xC).
@@ -5575,5 +5576,54 @@ extern "C" __declspec(naked) double __cdecl fn_006DFFF0(void* self) {
         mov esp, ebp
         pop ebp
         ret
+    }
+}
+
+// [0x006D0370] sub_006D0370 (96 bytes)
+extern "C" __declspec(naked) int __fastcall fn_006D0370(void* self, int edx_unused, int a1) {
+    __asm {
+        push ebx
+        mov bl, byte ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        cmp byte ptr [esi + 0x1c], bl
+        je L_done
+        test bl, bl
+        je L_store
+        mov eax, dword ptr [esi + 0x64]
+        test eax, eax
+        jle L_store
+        mov eax, dword ptr [esi + 0x68]
+        push edi
+        xor edi, edi
+        test eax, eax
+        jle L_call
+        push ebp
+        lea ebp, [esi + 0x54]
+    L_loop:
+        mov ecx, dword ptr [esi + 0x90]
+        mov eax, dword ptr [esi + 0x78]
+        mov edx, dword ptr [ecx + 4*edi]
+        push edx
+        push ebp
+        push esi
+        call dword ptr [eax + 4*edi]
+        mov eax, dword ptr [esi + 0x68]
+        add esp, 0xc
+        inc edi
+        cmp edi, eax
+        jl L_loop
+        pop ebp
+    L_call:
+        mov ecx, esi
+        call ext_006D03D0
+        pop edi
+    L_store:
+        mov byte ptr [esi + 0x1c], bl
+    L_done:
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret 0x4
     }
 }
