@@ -4549,3 +4549,58 @@ L_clear:
         ret
     }
 }
+
+// [0x00783D00] sub_00783D00 (96 bytes)
+extern "C" int mem_00B6167C;
+extern "C" __declspec(naked) void __fastcall fn_00783D00(void* self, int edx_unused, int* out) {
+    __asm {
+        push ebp
+        mov ebp, esp
+        push ecx
+        push esi
+        push edi
+        mov edi, ecx
+        mov eax, dword ptr [edi]
+        mov esi, dword ptr [eax + 0x4]
+        dec esi
+        js L_zero
+        lea eax, [eax + 4*esi + 0xc]
+L_loop:
+        cmp dword ptr [eax], 0x0
+        jne L_found
+        dec esi
+        sub eax, 0x4
+        test esi, esi
+        jge L_loop
+L_zero:
+        pop edi
+        xor al, al
+        pop esi
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+L_found:
+        mov eax, dword ptr [eax]
+        mov dword ptr [ebp - 0x4], eax
+        mov ecx, dword ptr [ebp - 0x4]
+        xor eax, eax
+        bsr edx, ecx
+        setne al
+        dec eax
+        or eax, edx
+        mov ecx, dword ptr [edi]
+        pop edi
+        mov edx, dword ptr [ecx]
+        mov ecx, dword ptr [mem_00B6167C]
+        add edx, esi
+        pop esi
+        shl edx, cl
+        add edx, eax
+        mov eax, dword ptr [ebp + 0x8]
+        mov dword ptr [eax], edx
+        mov al, 0x1
+        mov esp, ebp
+        pop ebp
+        ret 0x4
+    }
+}
