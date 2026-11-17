@@ -17840,3 +17840,43 @@ extern "C" __declspec(naked) void __fastcall fn_004028B0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x00406030] sub_00406030 (87 bytes)
+// Takes one stack argument (count); allocates count*0x58 bytes via ext_006A5C62,
+// with an overflow check that throws through ext_006A6DD2.
+extern "C" void ext_006A5C62();
+extern "C" void ext_006A6DD2();
+extern "C" int mem_00925130;
+
+extern "C" __declspec(naked) void __cdecl fn_00406030(unsigned int count) {
+    __asm {
+        mov ecx, dword ptr [esp+4]
+        sub esp, 0ch
+        test ecx, ecx
+        ja nonzero
+        xor ecx, ecx
+    do_alloc:
+        imul ecx, ecx, 58h
+        push ecx
+        call ext_006A5C62
+        add esp, 4
+        add esp, 0ch
+        ret
+    nonzero:
+        or eax, -1
+        xor edx, edx
+        div ecx
+        cmp eax, 58h
+        jae do_alloc
+        lea eax, [esp+10h]
+        push eax
+        lea ecx, [esp+4]
+        mov dword ptr [esp+14h], 0
+        call dword ptr [mem_00925130]
+        push 9cdf94h
+        lea ecx, [esp+4]
+        push ecx
+        mov dword ptr [esp+8], 928ec0h
+        call ext_006A6DD2
+    }
+}
