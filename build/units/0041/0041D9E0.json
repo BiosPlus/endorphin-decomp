@@ -17,5 +17,7 @@
     "0x0041DA3A",
     "0x0041DA3F"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@medium",
+  "matched_at": "2026-11-17T16:21:56Z"
 }
