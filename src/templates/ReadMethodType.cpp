@@ -18098,3 +18098,31 @@ throw_path:
         call ext_006A6DD2
     }
 }
+
+// [0x005B3BC0] ExprParser::ReadMethodType<Geometry, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall Geometry::getFileName(void) const, 0>::vfunc_5 (52 bytes)
+extern "C" __declspec(naked) void __cdecl fn_005B3BC0() {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je short L_throw
+        mov ecx, dword ptr [eax + 0xc]
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x20]
+        call eax
+        push eax
+        call ext_0046C4E0
+L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        __asm _emit 0x68
+        __asm _emit 0x1c
+        __asm _emit 0xec
+        __asm _emit 0x9d
+        __asm _emit 0x00
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
