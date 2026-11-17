@@ -39,6 +39,7 @@ extern "C" void ext_006A7C10();
 extern "C" void ext_005B64D0();
 extern "C" void ext_005CF950();
 extern "C" void ext_005C3640();
+extern "C" void ext_0068EE60();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -19536,6 +19537,30 @@ extern "C" __declspec(naked) int __fastcall fn_0068DEA0(void* self, int edx_unus
         call ext_0046C3C0
         push 0x9dec1c
         lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
+
+// [0x0068F2A0] ExprParser::ReadMethodType<UnitsWithProperties, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> const & __thiscall UnitsWithProperties::getAngleUnitName(void) const, 0>::vfunc_5 (54 bytes)
+extern "C" __declspec(naked) void __fastcall fn_0068F2A0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je short L_done
+        mov edx, dword ptr [ecx + 0x4]
+        mov eax, dword ptr [edx + 0xc]
+        push eax
+        call ext_0068EE60
+        push eax
+        call ext_0046C4E0
+    L_done:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
         push ecx
         call ext_006A6DD2
     }
