@@ -1,7 +1,10 @@
 // Decompiled translation unit: src/leaf/decompiled_720000.cpp
+extern "C" int ext_00789BB0();
+extern "C" void ext_0078C410();
+extern "C" int ext_0078CBE0();
 
-// [0x0072DB90] sub_0072DB90 (32 bytes)
-// Reads sub-object at self->[0xAC]. If its byte [0x1B] is nonzero, returns 2;
+extern "C" void ext_0078C410();
+extern "C" int ext_0078CBE0();
 // otherwise returns 1 if byte [0x19] is nonzero, else 0.
 extern "C" __declspec(naked) int __fastcall fn_0072DB90(void* self) {
     __asm {
@@ -3343,5 +3346,35 @@ done:
         pop edi
         pop ebx
         ret 0x4
+    }
+}
+
+// [0x00726980] sub_00726980 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00726980(void* self) {
+    __asm {
+        mov ecx, [ecx+0x250]
+        push esi
+        call ext_00789BB0
+        mov esi, eax
+        test esi, esi
+        je fail
+        mov ecx, esi
+        call ext_0078CBE0
+        test eax, eax
+        je fail
+        mov ecx, esi
+        call ext_0078CBE0
+        mov eax, [eax+0x1c]
+        mov ecx, esi
+        push eax
+        call ext_0078CBE0
+        mov ecx, eax
+        call ext_0078C410
+        pop esi
+        ret
+fail:
+        mov al, 0x53
+        pop esi
+        ret
     }
 }
