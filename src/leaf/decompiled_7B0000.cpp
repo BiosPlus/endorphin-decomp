@@ -6305,3 +6305,35 @@ extern "C" __declspec(naked) void __cdecl fn_007B7D10() {
         ret
     }
 }
+
+// [0x007BB100] sub_007BB100 (64 bytes)
+extern "C" int mem_0092A278;
+extern "C" int mem_00999AE8;
+extern "C" int mem_00999AE0;
+
+extern "C" __declspec(naked) double __cdecl fn_007BB100(int n) {
+    __asm {
+        mov     eax, dword ptr [esp + 4]
+        test    eax, eax
+        jne     short L_nonzero
+        fld     qword ptr [mem_0092A278]
+        ret
+L_nonzero:
+        fild    dword ptr [esp + 4]
+        fadd    qword ptr [mem_00993828]
+        fmul    qword ptr [mem_00999AE8]
+        fsub    qword ptr [mem_00999AE0]
+        fldl2e
+        fmulp   st(1), st
+        fld     st(0)
+        frndint
+        fxch    st(1)
+        fsub    st, st(1)
+        f2xm1
+        fld1
+        faddp   st(1), st
+        fscale
+        fstp    st(1)
+        ret
+    }
+}
