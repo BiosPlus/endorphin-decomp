@@ -4790,3 +4790,37 @@ fail:
         ret
     }
 }
+
+// [0x006D8680] sub_006D8680 (64 bytes)
+extern "C" void ext_006BC380();
+extern "C" void ext_006FDF70();
+extern "C" __declspec(naked) void __fastcall fn_006D8680(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 0
+        call ext_006FDF70
+        test eax, eax
+        je short L_fail
+        push 0
+        mov ecx, esi
+        call ext_006FDF70
+        mov ecx, eax
+        call ext_006BC380
+        test eax, eax
+        je short L_fail
+        mov ecx, dword ptr [eax + 4]
+        cmp ecx, 1
+        je short L_ok
+        cmp ecx, 2
+        jne short L_fail
+L_ok:
+        mov eax, dword ptr [eax + 0x30]
+        pop esi
+        ret
+L_fail:
+        xor eax, eax
+        pop esi
+        ret
+    }
+}
