@@ -6702,3 +6702,37 @@ L_7B3CD4:
         ret
     }
 }
+
+// [0x007B7790] sub_007B7790 (64 bytes)
+extern "C" void ext_0079EBE0();
+extern "C" void ext_007AA510();
+extern "C" void ext_007BAE30();
+extern "C" int mem_00999788;
+extern "C" int mem_00925268;
+extern "C" __declspec(naked) void __fastcall fn_007B7790(void* self) {
+    __asm {
+        push ecx
+        lea eax, [esp + 0x2]
+        lea ecx, [esp + 0x8]
+        push eax
+        push ecx
+        call ext_007BAE30
+        call ext_0079EBE0
+        mov edx, dword ptr [mem_00999788]
+        push eax
+        push 0x1
+        lea eax, [esp + 0x12]
+        push edx
+        push eax
+        call dword ptr [mem_00925268]
+        add esp, 0x18
+        cmp eax, 0x1
+        je L_7B77CC
+        push 0x11
+        call ext_007AA510
+        add esp, 0x4
+L_7B77CC:
+        pop ecx
+        ret
+    }
+}
