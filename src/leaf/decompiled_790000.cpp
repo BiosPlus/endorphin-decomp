@@ -4890,3 +4890,52 @@ L_zero:
         ret
     }
 }
+
+// [0x0079EBF0] sub_0079EBF0 (96 bytes)
+extern "C" int mem_00925208;
+extern "C" int mem_00B61219;
+extern "C" int mem_009977EC;
+extern "C" int mem_00997749;
+extern "C" void ext_007AA510();
+
+extern "C" __declspec(naked) void __cdecl fn_0079EBF0(void* out) {
+    __asm {
+        push ebx
+        push esi
+        push 0x1c
+        call dword ptr [mem_00925208]
+        mov esi, dword ptr [esp + 0x10]
+        xor ebx, ebx
+        add esp, 4
+        cmp eax, ebx
+        mov dword ptr [esi], eax
+        jne short L_init
+        push 1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 4
+        cmp al, bl
+        je short L_done
+L_init:
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax], ebx
+        mov ecx, dword ptr [esi]
+        mov dword ptr [ecx + 4], ebx
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 8], ebx
+        mov eax, dword ptr [esi]
+        mov cl, byte ptr [mem_009977EC]
+        mov byte ptr [eax + 0xc], cl
+        mov edx, dword ptr [esi]
+        mov dword ptr [edx + 0x10], ebx
+        mov eax, dword ptr [esi]
+        mov dword ptr [eax + 0x14], ebx
+        mov ecx, dword ptr [esi]
+        mov dl, byte ptr [mem_00997749]
+        mov byte ptr [ecx + 0x18], dl
+L_done:
+        pop esi
+        pop ebx
+        ret
+    }
+}
