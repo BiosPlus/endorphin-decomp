@@ -4194,3 +4194,40 @@ done:
         ret 0x8
     }
 }
+
+// [0x0071CC10] sub_0071CC10 (80 bytes)
+extern "C" void ext_00708000();
+extern "C" void ext_006DC460();
+extern "C" void ext_006C9520();
+extern "C" void ext_006CD330();
+
+extern "C" __declspec(naked) void __fastcall fn_0071CC10(void* self, int edx_unused, double a1) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push 0xaa8d10
+        mov ecx, dword ptr [esi + 0xc]
+        call ext_00708000
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [eax]
+        push ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        mov ecx, eax
+        call dword ptr [edx + 0x80]
+        mov ecx, dword ptr [esi + 0x4]
+        pop esi
+        test ecx, ecx
+        je done
+        call ext_006DC460
+        fld qword ptr [esp + 0x4]
+        push ecx
+        mov ecx, eax
+        fstp dword ptr [esp]
+        call ext_006C9520
+        mov ecx, eax
+        call ext_006CD330
+    done:
+        ret 0x8
+    }
+}
