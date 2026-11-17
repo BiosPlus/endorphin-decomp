@@ -35437,3 +35437,36 @@ L_throw:
         call ext_006A6DD2
     }
 }
+
+// [0x005FD470] ExprParser::ReadMethodType<Sensor, float, &[thunk]: __thiscall Sensor::`vcall'{96, {flat}}, 1>::vfunc_3 (73 bytes)
+extern "C" void ext_0064F8F0();
+extern "C" int mem_0096E5D0; /* double 1e-06 */
+
+extern "C" __declspec(naked) void __stdcall fn_005FD470(void* arg) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_throw
+        call ext_0064F8F0
+        fcomp qword ptr [mem_0096E5D0]
+        fnstsw ax
+        test ah, 1
+        jne L_false
+        mov eax, 1
+        add esp, 0x28
+        ret 4
+    L_false:
+        xor eax, eax
+        add esp, 0x28
+        ret 4
+    L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
