@@ -1101,3 +1101,52 @@ L_764658:
         ret 4
     }
 }
+
+// [0x00763E40] sub_00763E40 (96 bytes)
+extern "C" void ext_006A5C5C();
+extern "C" void ext_00784750();
+
+extern "C" __declspec(naked) void __fastcall fn_00763E40(void* self) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        push esi
+        push edi
+        mov esi, dword ptr [ebx + 0xc8]
+        test esi, esi
+        je L_second
+        lea edi, [ebx + 0xc4]
+L_loop1:
+        dec esi
+        push 0
+        push esi
+        mov ecx, edi
+        call ext_00784750
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+        test esi, esi
+        jne L_loop1
+L_second:
+        mov esi, dword ptr [ebx + 0xdc]
+        test esi, esi
+        je L_done
+        lea edi, [ebx + 0xd8]
+L_loop2:
+        dec esi
+        push 0
+        push esi
+        mov ecx, edi
+        call ext_00784750
+        push eax
+        call ext_006A5C5C
+        add esp, 4
+        test esi, esi
+        jne L_loop2
+L_done:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
