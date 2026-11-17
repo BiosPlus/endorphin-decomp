@@ -17248,3 +17248,41 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x0058F710] ExprParser::ReadWriteMethodType<TransformNode, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall TransformNode::getUserRefFrame(void) const, 0}, std::basic_string<char, std::char_traits<char>, std::allocator<char>>, {public: void __thiscall TransformNode::setUserRefFrame(class std::basic_string<char, std::char_traits<char>, std::allocator<char>>), 0}>::vfunc_41 (82 bytes)
+extern "C" void ext_0046E780();
+extern "C" void ext_0058F4F0();
+extern "C" __declspec(naked) void __fastcall fn_0058F710(void* self) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        push edi
+        je null_path
+        mov eax, dword ptr [esp+0x38]
+        mov ecx, dword ptr [eax+4]
+        sub esp, 0x1c
+        mov dword ptr [esp+0x50], esp
+        mov edi, dword ptr [esp+0x50]
+        mov edx, esp
+        push edi
+        push eax
+        push edx
+        call ext_0046E780
+        mov ecx, esi
+        call ext_0058F4F0
+        pop edi
+        pop esi
+        add esp, 0x28
+        ret 8
+null_path:
+        lea ecx, [esp+8]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea eax, [esp+0xc]
+        push eax
+        call ext_006A6DD2
+    }
+}
