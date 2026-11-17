@@ -19785,3 +19785,27 @@ extern "C" __declspec(naked) void __stdcall fn_004720D0(void* a1) {
         call ext_006A6DD2
     }
 }
+
+// [0x006351A0] ExprParser::ReadMethodType<EffectorSkeletal, int, &public: int __thiscall EffectorSkeletal::getLinearDriveMode(void) const, 0>::vfunc_3 (55 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006351A0(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je short L_throw
+        xor ecx, ecx
+        cmp dword ptr [eax + 0xc0], ecx
+        setne cl
+        mov al, cl
+        add esp, 0x28
+        ret 4
+    L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, [esp + 4]
+        push edx
+        call ext_006A6DD2
+    }
+}
