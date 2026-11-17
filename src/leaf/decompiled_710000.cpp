@@ -3864,3 +3864,29 @@ extern "C" __declspec(naked) int __fastcall fn_0071C430(void* self) {
         ret
     }
 }
+
+// [0x0071C250] sub_0071C250 (80 bytes)
+extern "C" int mem_00993C98; /* double 0.008726646259971648 */
+extern "C" int mem_00993828; /* double 0.5 */
+extern "C" __declspec(naked) void __fastcall fn_0071C250(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xc]
+        cmp dword ptr [eax + 0x408], 2
+        jne L_0071C250_other
+        fld qword ptr [esp + 0xc]
+        fmul qword ptr [mem_00996640]
+        jmp L_0071C250_join
+L_0071C250_other:
+        fld qword ptr [esp + 0x4]
+        fmul qword ptr [mem_00996640]
+        fmul qword ptr [eax + 0xd28]
+L_0071C250_join:
+        fld qword ptr [esp + 0x14]
+        fmul qword ptr [mem_00993C98]
+        fptan
+        fstp st(0)
+        fdivp st(1), st
+        fmul qword ptr [mem_00993828]
+        ret 0x18
+    }
+}
