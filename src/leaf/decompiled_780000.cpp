@@ -19,8 +19,10 @@ extern "C" __declspec(naked) void __fastcall fn_00783840(void* self, int edx_unu
         ret 0x10
     }
 }
+extern "C" void ext_00782E70();
+extern "C" void ext_00782F20();
 
-// [0x007895C0] sub_007895C0 (48 bytes)
+extern "C" void ext_00782F20();
 // Forwards two stack args to a virtual on self->[8] (vtbl+0x14) if non-null,
 // otherwise to a virtual on self->[0x14] (vtbl+0x10); ret 0x8.
 extern "C" __declspec(naked) void __fastcall fn_007895C0(void* self, int edx_unused, int a1, int a2) {
@@ -4055,5 +4057,36 @@ extern "C" __declspec(naked) void __fastcall fn_007833B0(void* self, int edx_unu
         pop esi
         mov al, byte ptr [eax + 0x4]
         ret 0x8
+    }
+}
+
+// [0x00782E30] sub_00782E30 (64 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_00782E30(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push esi
+        mov esi, ecx
+        mov ecx, dword ptr [esp + 0xc]
+        lea eax, [esp + 0x4]
+        push eax
+        push ecx
+        mov ecx, esi
+        mov dword ptr [esp + 0xc], 0x0
+        call ext_00782E70
+        test eax, eax
+        je fail_00782E30
+        mov edx, dword ptr [esp + 0x4]
+        mov ecx, esi
+        push edx
+        call ext_00782F20
+        mov al, 0x1
+        pop esi
+        pop ecx
+        ret 0x4
+    fail_00782E30:
+        xor al, al
+        pop esi
+        pop ecx
+        ret 0x4
     }
 }
