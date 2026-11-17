@@ -4197,3 +4197,45 @@ extern "C" __declspec(naked) int __cdecl fn_006C42E0(const double* m) {
         ret
     }
 }
+
+// [0x006C7B60] sub_006C7B60 (96 bytes)
+extern "C" __declspec(naked) void __cdecl fn_006C7B60(void* out, void* mat, void* vec) {
+    __asm {
+        mov eax, dword ptr [esp + 0Ch]
+        mov ecx, dword ptr [esp + 08h]
+        fld qword ptr [eax]
+        fld qword ptr [eax + 08h]
+        fld qword ptr [eax + 10h]
+        fld st(0)
+        fmul qword ptr [ecx + 40h]
+        fld st(2)
+        fmul qword ptr [ecx + 20h]
+        mov eax, dword ptr [esp + 04h]
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [ecx]
+        faddp st(1), st
+        fadd qword ptr [ecx + 60h]
+        fstp qword ptr [eax]
+        fld st(0)
+        fmul qword ptr [ecx + 48h]
+        fld st(2)
+        fmul qword ptr [ecx + 28h]
+        faddp st(1), st
+        fld st(3)
+        fmul qword ptr [ecx + 08h]
+        faddp st(1), st
+        fadd qword ptr [ecx + 68h]
+        fstp qword ptr [eax + 08h]
+        fmul qword ptr [ecx + 50h]
+        fxch st(1)
+        fmul qword ptr [ecx + 30h]
+        faddp st(1), st
+        fxch st(1)
+        fmul qword ptr [ecx + 10h]
+        faddp st(1), st
+        fadd qword ptr [ecx + 70h]
+        fstp qword ptr [eax + 10h]
+        ret
+    }
+}
