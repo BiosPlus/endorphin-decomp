@@ -3675,3 +3675,28 @@ L_ret:
         ret
     }
 }
+
+// [0x00724E30] sub_00724E30 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00724E30(void* self, int edx_unused, void* out_ret) {
+    __asm {
+        mov ecx, dword ptr [ecx + 0x10]
+        sub esp, 0xa0
+        __asm _emit 0x8d __asm _emit 0x54 __asm _emit 0x24 __asm _emit 0x00
+        mov eax, dword ptr [ecx]
+        push 0xa0
+        push edx
+        call dword ptr [eax + 0x14]
+        mov eax, dword ptr [esp + 0xa4]
+        mov ecx, dword ptr [esp + 0x26]
+        mov edx, dword ptr [esp + 0x2a]
+        mov dword ptr [eax], ecx
+        mov ecx, dword ptr [esp + 0x2e]
+        mov dword ptr [eax + 0x4], edx
+        mov edx, dword ptr [esp + 0x32]
+        mov dword ptr [eax + 0x8], ecx
+        mov dword ptr [eax + 0xc], edx
+        add esp, 0xa0
+        ret 0x4
+        __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
+    }
+}
