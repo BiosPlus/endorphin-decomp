@@ -5192,3 +5192,66 @@ L_out:
         ret 0x4
     }
 }
+
+// [0x00783A80] sub_00783A80 (112 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_00782D00();
+extern "C" int mem_00B608DC;
+extern "C" int mem_00AAF3B1;
+extern "C" __declspec(naked) void __fastcall fn_00783A80(void* self) {
+    __asm {
+        push -1
+        push 0x8b8fdb
+        _emit 0x64
+        _emit 0xa1
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push eax
+        _emit 0x64
+        _emit 0x89
+        _emit 0x25
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        push ecx
+        mov eax, dword ptr [mem_00B608DC]
+        test eax, eax
+        jne short L_end
+        mov cl, byte ptr [mem_00AAF3B1]
+        test cl, cl
+        je short L_end
+        push 0x14
+        call ext_006A5C62
+        add esp, 0x4
+        _emit 0x89
+        _emit 0x44
+        _emit 0x24
+        _emit 0x00
+        test eax, eax
+        mov dword ptr [esp + 0xc], 0x0
+        je short L_null
+        push 0x14
+        mov ecx, eax
+        call ext_00782D00
+        jmp short L_store
+L_null:
+        xor eax, eax
+L_store:
+        mov dword ptr [mem_00B608DC], eax
+        mov byte ptr [mem_00AAF3B1], 0x0
+L_end:
+        mov ecx, dword ptr [esp + 0x4]
+        _emit 0x64
+        _emit 0x89
+        _emit 0x0d
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        _emit 0x00
+        add esp, 0x10
+        ret
+    }
+}
