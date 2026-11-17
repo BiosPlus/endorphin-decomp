@@ -7444,3 +7444,45 @@ extern "C" __declspec(naked) void __cdecl fn_007B8BB0() {
         ret
     }
 }
+
+// [0x007BC4F0] sub_007BC4F0 (96 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007BC4F0(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x4]
+        xor eax, eax
+        xor edx, edx
+        mov ax, word ptr [ecx + 0x28]
+        mov dx, word ptr [ecx + 0x36]
+        shl eax, 0x3
+        or eax, edx
+        xor edx, edx
+        mov dx, word ptr [ecx + 0x2a]
+        shl eax, 0x3
+        or eax, edx
+        cmp eax, 0x40a
+        jg L_7BC530
+        cmp eax, 0x409
+        jge L_7BC545
+        sub eax, 0x209
+        je L_7BC52A
+        sub eax, 0x3
+        jne L_7BC53E
+    L_7BC52A:
+        mov eax, 0x3
+        ret
+    L_7BC530:
+        cmp eax, 0x40c
+        je L_7BC545
+        cmp eax, 0x80b
+        je L_7BC542
+    L_7BC53E:
+        or eax, -0x1
+        ret
+    L_7BC542:
+        xor eax, eax
+        ret
+    L_7BC545:
+        mov eax, 0x1
+        ret
+    }
+}
