@@ -15841,3 +15841,27 @@ extern "C" __declspec(naked) void __fastcall fn_006399F0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004CC1B0] ExprParser::ReadMethodType<NMData::MetaBodyConstraintData, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::MetaBodyConstraintData::getPositionStrengthFromFSM(void) const, 0}, 0>::vfunc_1 (49 bytes)
+extern "C" void ext_004CB3E0();
+
+extern "C" __declspec(naked) void __cdecl fn_004CC1B0(void) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je short L_null_004CC1B0
+        call ext_004CB3E0
+        push eax
+        call ext_0046C4E0
+        fstp st(0)
+L_null_004CC1B0:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
