@@ -4031,3 +4031,47 @@ done:
         ret
     }
 }
+
+// [0x0071FCC0] sub_0071FCC0 (80 bytes)
+extern "C" __declspec(naked) void __cdecl fn_0071FCC0(void* self, double* out, double* a, double* b) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        push esi
+        push edi
+        mov ecx, ebp
+        call ext_006DEEC0
+        mov esi, dword ptr [esp + 0x20]
+        mov ebx, dword ptr [esp + 0x1c]
+        mov edi, dword ptr [esp + 0x18]
+        test eax, eax
+        je skip_first
+        fld qword ptr [ebx]
+        fadd qword ptr [esi]
+        fstp qword ptr [edi]
+skip_first:
+        mov eax, dword ptr [ebp]
+        mov ecx, ebp
+        call dword ptr [eax + 0x14]
+        test eax, eax
+        jle done
+        mov edx, ebx
+        mov ecx, esi
+        sub edx, esi
+        sub edi, esi
+loop_top:
+        fld qword ptr [edx + ecx]
+        fadd qword ptr [ecx]
+        add ecx, 8
+        dec eax
+        fstp qword ptr [edi + ecx - 8]
+        jne loop_top
+done:
+        pop edi
+        pop esi
+        pop ebp
+        pop ebx
+        ret
+    }
+}
