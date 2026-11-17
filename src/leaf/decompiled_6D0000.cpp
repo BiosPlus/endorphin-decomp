@@ -5483,3 +5483,31 @@ extern "C" __declspec(naked) void __fastcall fn_006DD2B0(void* self) {
         ret
     }
 }
+
+// [0x006D6B10] sub_006D6B10 (96 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D6B10(void* self, int edx_unused, void* a1, void* a2, void* a3) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x1c4]
+        test eax, eax
+        jle L_out_range
+        cmp eax, 0x5
+        jge L_out_range
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        mov dword ptr [eax], 0x5
+        mov dword ptr [ecx], 0x0
+        mov dword ptr [edx], 0x0
+        ret 0xc
+    L_out_range:
+        mov edx, dword ptr [esp + 0x4]
+        mov dword ptr [edx], eax
+        mov edx, dword ptr [esp + 0x8]
+        mov eax, dword ptr [ecx + 0x1c8]
+        mov dword ptr [edx], eax
+        mov eax, dword ptr [ecx + 0x1cc]
+        mov ecx, dword ptr [esp + 0xc]
+        mov dword ptr [ecx], eax
+        ret 0xc
+    }
+}
