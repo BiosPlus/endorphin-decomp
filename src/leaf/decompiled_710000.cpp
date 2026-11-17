@@ -3831,3 +3831,36 @@ extern "C" __declspec(naked) void __fastcall fn_0071C3E0(void* self, int edx_unu
         ret 4
     }
 }
+
+// [0x0071C430] sub_0071C430 (80 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0071C430(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0xc]
+        push ebx
+        xor ecx, ecx
+        mov bl, byte ptr [eax + 0x1300]
+        test bl, bl
+        mov bl, byte ptr [eax + 0x1410]
+        setne cl
+        shl ecx, 1
+        xor edx, edx
+        test bl, bl
+        mov bl, byte ptr [eax + 0x1388]
+        setne dl
+        or ecx, edx
+        xor edx, edx
+        shl ecx, 1
+        test bl, bl
+        mov bl, byte ptr [eax + 0x1278]
+        setne dl
+        or ecx, edx
+        xor edx, edx
+        shl ecx, 1
+        test bl, bl
+        setne dl
+        or ecx, edx
+        pop ebx
+        mov eax, ecx
+        ret
+    }
+}
