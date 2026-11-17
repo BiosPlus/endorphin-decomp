@@ -8012,3 +8012,57 @@ extern "C" __declspec(naked) float __cdecl fn_007B0FC0(void* self, void* p) {
         ret
     }
 }
+
+// [0x007B3120] sub_007B3120 (112 bytes)
+extern "C" int mem_009251D8;
+extern "C" __declspec(naked) void __cdecl fn_007B3120(void* pp) {
+    __asm {
+        push edi
+        mov edi, dword ptr [esp + 0x8]
+        test edi, edi
+        je L_end
+        mov eax, dword ptr [edi]
+        test eax, eax
+        je L_end
+        mov ecx, dword ptr [eax + 0x4]
+        push ebx
+        mov ebx, dword ptr [mem_009251D8]
+        test ecx, ecx
+        je L_free_struct
+        mov ecx, dword ptr [eax]
+        push esi
+        xor esi, esi
+        test ecx, ecx
+        jbe L_free_arr
+    L_loop:
+        mov eax, dword ptr [eax + 0x4]
+        mov ecx, dword ptr [eax + 8*esi]
+        push ecx
+        call ebx
+        mov edx, dword ptr [edi]
+        add esp, 0x4
+        inc esi
+        mov eax, dword ptr [edx + 0x4]
+        mov dword ptr [eax + 8*esi - 0x4], 0x0
+        mov eax, dword ptr [edi]
+        cmp esi, dword ptr [eax]
+        jb L_loop
+    L_free_arr:
+        mov ecx, dword ptr [edi]
+        mov edx, dword ptr [ecx + 0x4]
+        push edx
+        call ebx
+        add esp, 0x4
+        pop esi
+    L_free_struct:
+        mov eax, dword ptr [edi]
+        push eax
+        call ebx
+        add esp, 0x4
+        mov dword ptr [edi], 0x0
+        pop ebx
+    L_end:
+        pop edi
+        ret
+    }
+}
