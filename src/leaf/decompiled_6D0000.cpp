@@ -5109,3 +5109,43 @@ L_six:
         ret 0x4
     }
 }
+
+// [0x006D98F0] sub_006D98F0 (80 bytes)
+extern "C" void ext_006D98D0();
+extern "C" int mem_00993BE0;
+extern "C" int mem_00B5D910;
+extern "C" __declspec(naked) void __fastcall fn_006D98F0(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        jne L_skip
+        call ext_006D98D0
+        test eax, eax
+        je L_skip
+        call ext_006D98D0
+        mov esi, eax
+    L_skip:
+        fld qword ptr [mem_00993BE0]
+        xor eax, eax
+        mov ecx, offset mem_00B5D910 + 0xc
+    L_loop:
+        cmp dword ptr [ecx], esi
+        je L_found
+        inc eax
+        add ecx, 0x20
+        cmp eax, 0xc
+        jl L_loop
+        pop esi
+        ret
+    L_found:
+        shl eax, 0x5
+        add eax, offset mem_00B5D910
+        je L_done
+        fstp st(0)
+        fld qword ptr [eax]
+    L_done:
+        pop esi
+        ret
+    }
+}
