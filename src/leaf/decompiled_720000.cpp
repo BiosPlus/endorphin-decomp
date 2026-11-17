@@ -3443,3 +3443,39 @@ ret_zero:
         ret
     }
 }
+
+// [0x0072AE30] sub_0072AE30 (64 bytes)
+extern "C" void ext_0078D4B0();
+extern "C" void ext_0078D550();
+
+extern "C" __declspec(naked) void __stdcall fn_0072AE30(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        push 0x1
+        mov ecx, ebx
+        call ext_0078D4B0
+        mov edi, eax
+        xor esi, esi
+        test edi, edi
+        jle short L_done
+L_loop:
+        push 0x1
+        push esi
+        push 0x1
+        mov ecx, ebx
+        call ext_0078D550
+        inc esi
+        cmp esi, edi
+        _emit 0xdd
+        _emit 0xd8
+        jl short L_loop
+L_done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+    }
+}
