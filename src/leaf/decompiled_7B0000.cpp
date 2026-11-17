@@ -7529,3 +7529,55 @@ extern "C" __declspec(naked) int __cdecl fn_007B1920(void* s, void* a, int b) {
         ret
     }
 }
+
+// [0x007B7A30] sub_007B7A30 (96 bytes)
+extern "C" void ext_007B7720();
+extern "C" bool mem_00B61218;
+extern "C" __declspec(naked) void __cdecl fn_007B7A30(const char* s, int n) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        push edi
+        mov edi, ebx
+        or ecx, -1
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        mov esi, eax
+        mov edi, ecx
+        je L_7B7A5A
+L_7B7A49:
+        mov al, byte ptr [esi + ebx]
+        push eax
+        call ext_007B7720
+        add esp, 0x4
+        inc esi
+        cmp esi, edi
+        jb L_7B7A49
+L_7B7A5A:
+        mov esi, dword ptr [esp + 0x14]
+        cmp edi, esi
+        jae L_7B7A83
+L_7B7A62:
+        push 0x0
+        call ext_007B7720
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7B7A7E
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        je L_7B7A83
+L_7B7A7E:
+        inc edi
+        cmp edi, esi
+        jb L_7B7A62
+L_7B7A83:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
