@@ -29623,3 +29623,34 @@ extern "C" __declspec(naked) void __fastcall fn_005E3600(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x005F9270] ExprParser::ReadMethodType<HelperGraphic, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall HelperGraphic::getPosition(void) const, 0}, 0>::vfunc_0 (71 bytes)
+extern "C" void ext_005F5140();
+
+extern "C" __declspec(naked) void __fastcall fn_005F9270(void* self) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je THROW_PATH
+        push esi
+        call ext_005F5140
+        mov esi, dword ptr [esp + 0x34]
+        push eax
+        mov ecx, esi
+        call ext_00672110
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+    THROW_PATH:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
