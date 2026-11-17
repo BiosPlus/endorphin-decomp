@@ -3856,3 +3856,38 @@ L_done_00726C60:
         ret 0x8
     }
 }
+
+// [0x007281B0] sub_007281B0 (80 bytes)
+extern "C" void ext_006DADE0();
+extern "C" void ext_00725A60();
+extern "C" void ext_00727E30();
+extern "C" void ext_00727FE0();
+
+extern "C" __declspec(naked) void __fastcall fn_007281B0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi + 0x1c4]
+        push eax
+        call ext_00725A60
+        cmp eax, 0x7d1
+        jl short L_small
+        mov eax, dword ptr [esp + 0xc]
+        mov ecx, dword ptr [esp + 0x8]
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_00727E30
+        pop esi
+        ret 0x8
+L_small:
+        lea ecx, [esp + 0x8]
+        call ext_006DADE0
+        sub esp, 0x8
+        mov ecx, esi
+        fstp qword ptr [esp]
+        call ext_00727FE0
+        pop esi
+        ret 0x8
+    }
+}
