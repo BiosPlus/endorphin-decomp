@@ -37,8 +37,10 @@ extern "C" int mem_00AD9004;
 extern "C" int mem_00AD9008;
 extern "C" int mem_00AD900C;
 extern "C" int mem_00AD9010;
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
 
-// [0x0046DF60] ExprParser::ReadWriteMethodType<ImageExporter, float, {public: float __thiscall ImageExporter::getFrameRate(void) const, 0}, float, {public: void __thiscall ImageExporter::setFrameRate(float), 0}>::vfunc_40 (122 bytes)
+extern "C" void ext_006A6DD2();
 extern "C" __declspec(naked) void __fastcall fn_0046DF60(void* self, int edx_unused, void* a1) {
     __asm {
         mov eax, dword ptr fs:[0]
@@ -10030,5 +10032,34 @@ extern "C" __declspec(naked) void __fastcall fn_00695660(void* self, int edx_unu
         mov dword ptr fs:[0], ecx
         add esp, 0xc
         ret 0x4
+    }
+}
+
+// [0x006059E0] ExprParser::ReadWriteMethodType<Effector, float, &public: float __thiscall Effector::getGradientCap(void) const, float, &public: void __thiscall Effector::setGradientCap(float)>::vfunc_41 (63 bytes)
+extern "C" __declspec(naked) void __stdcall fn_006059E0(void* a0, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je L_null
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax + 0x4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx + 0x4]
+        call eax
+        fstp dword ptr [esi + 0x50]
+        pop esi
+        add esp, 0x28
+        ret 0x8
+    L_null:
+        lea ecx, [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x8]
+        push ecx
+        call ext_006A6DD2
     }
 }
