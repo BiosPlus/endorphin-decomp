@@ -1150,3 +1150,59 @@ L_done:
         ret
     }
 }
+
+// [0x00764670] sub_00764670 (112 bytes)
+extern "C" void ext_006D3D70();
+extern "C" void ext_006D5090();
+extern "C" void ext_007294F0();
+
+extern "C" __declspec(naked) void __fastcall fn_00764670(void* self, int edx_unused, void* a1) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov esi, ecx
+        push edi
+        mov ecx, ebx
+        call ext_006C3030
+        mov edi, eax
+        mov ecx, edi
+        mov eax, dword ptr [edi]
+        call dword ptr [eax]
+        cmp eax, 0x5
+        je L_match
+        mov edx, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [edx]
+        cmp eax, 0x6
+        je L_match
+        mov eax, dword ptr [edi]
+        mov ecx, edi
+        call dword ptr [eax]
+        cmp eax, 0x4
+        jne L_fail
+        cmp byte ptr [esi + 0x14c], 0x1
+        je L_match
+    L_fail:
+        pop edi
+        pop esi
+        xor al, al
+        pop ebx
+        ret 0x4
+    L_match:
+        mov ecx, dword ptr [esi + 0x4]
+        call ext_006D3D70
+        mov edi, eax
+        push ebx
+        mov ecx, edi
+        call ext_007294F0
+        mov ecx, dword ptr [esi + 0x4]
+        push edi
+        call ext_006D5090
+        pop edi
+        pop esi
+        mov al, 0x1
+        pop ebx
+        ret 0x4
+    }
+}
