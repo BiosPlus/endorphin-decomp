@@ -3956,3 +3956,35 @@ fn_007AAB30_done:
         ret
     }
 }
+
+// [0x007AF040] sub_007AF040 (64 bytes)
+// Byte-swaps each 32-bit word in an array of n words (cdecl: ptr, count).
+extern "C" __declspec(naked) void __cdecl fn_007AF040(void* p, unsigned int n) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        mov ecx, eax
+        dec eax
+        test ecx, ecx
+        jbe done
+        push esi
+        lea esi, [eax + 0x1]
+        mov eax, dword ptr [esp + 0x8]
+    loop_top:
+        mov dl, byte ptr [eax]
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x3]
+        mov byte ptr [eax + 0x3], dl
+        mov dl, byte ptr [eax + 0x1]
+        mov byte ptr [eax], cl
+        xor ecx, ecx
+        mov cl, byte ptr [eax + 0x2]
+        mov byte ptr [eax + 0x2], dl
+        mov byte ptr [eax + 0x1], cl
+        add eax, 0x4
+        dec esi
+        jne loop_top
+        pop esi
+    done:
+        ret
+    }
+}
