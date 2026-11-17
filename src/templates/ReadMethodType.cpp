@@ -40045,3 +40045,35 @@ extern "C" __declspec(naked) void* __fastcall fn_004F52F0(void* self, int edx_un
         call    ext_006A6DD2
     }
 }
+
+// [0x00514020] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_0 (74 bytes)
+extern "C" void ext_00682ED0();
+extern "C" void ext_006720E0();
+extern "C" __declspec(naked) void* __fastcall fn_00514020(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 2ch
+        mov eax, dword ptr [esp + 34h]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0
+        je null_path_514020
+        push esi
+        lea ecx, [eax + 4]
+        call ext_00682ED0
+        mov esi, dword ptr [esp + 34h]
+        push eax
+        mov ecx, esi
+        call ext_006720E0
+        mov eax, esi
+        pop esi
+        add esp, 2ch
+        ret 8
+null_path_514020:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push 9dec1ch
+        lea ecx, [esp + 8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
