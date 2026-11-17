@@ -7854,3 +7854,46 @@ extern "C" __declspec(naked) int __cdecl fn_0080C790(int arg) {
         ret
     }
 }
+
+// [0x0080FBC0] sub_0080FBC0 (80 bytes)
+extern "C" void ext_0080F700();
+extern "C" void ext_0080FC10();
+extern "C" void ext_0080FC50();
+
+extern "C" __declspec(naked) void __cdecl fn_0080FBC0(void) {
+    __asm {
+        push esi
+        call ext_0080FC50
+        mov esi, eax
+        test esi, esi
+        je done_null
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        push edi
+        call ext_0080F700
+        push eax
+        push edi
+        call ext_0080FC10
+        add esp, 0xc
+        mov dword ptr [esi], eax
+        test eax, eax
+        pop edi
+        je zero_fields
+        push eax
+        call ext_0080F700
+        add esp, 4
+        mov dword ptr [esi + 4], eax
+        inc eax
+        mov dword ptr [esi + 8], eax
+        mov eax, esi
+        pop esi
+        ret
+    zero_fields:
+        mov dword ptr [esi + 8], 0
+        mov dword ptr [esi + 4], 0
+    done_null:
+        mov eax, esi
+        pop esi
+        ret
+    }
+}
