@@ -5272,3 +5272,49 @@ extern "C" __declspec(naked) int __fastcall fn_006C9960(void* self, int edx_unus
         ret 0xc
     }
 }
+
+// [0x006CC740] sub_006CC740 (112 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006CC740(void* self, int edx_unused, int n, unsigned char flag) {
+    __asm {
+        push ebx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        test edi, edi
+        mov esi, ecx
+        jle L_done
+        lea eax, [edi - 0x1]
+        push eax
+        call ext_006CA060
+        mov ecx, esi
+        mov ebx, eax
+        call ext_006CA6A0
+        cmp edi, eax
+        jge L_skip
+        push edi
+        mov ecx, esi
+        call ext_006CA060
+L_skip:
+        mov ecx, ebx
+        call ext_006C9C30
+        cmp eax, 0x8
+        jne L_done
+        mov cl, byte ptr [esp + 0x14]
+        push 0x2000000
+        neg cl
+        sbb ecx, ecx
+        and ecx, 0x2000000
+        push ecx
+        mov ecx, ebx
+        call ext_006C9D30
+        push edi
+        push 0x10
+        mov ecx, esi
+        call ext_006D03E0
+L_done:
+        pop edi
+        pop esi
+        pop ebx
+        ret 8
+    }
+}
