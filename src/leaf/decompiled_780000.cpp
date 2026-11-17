@@ -5778,3 +5778,50 @@ L_0078CEF0_unlock:
         ret
     }
 }
+
+// [0x0078CAF0] sub_0078CAF0 (128 bytes)
+extern "C" void ext_006A5C62();
+extern "C" void ext_006D2170();
+extern "C" void ext_0078C280();
+
+extern "C" __declspec(naked) void __fastcall fn_0078CAF0(void* self) {
+    __asm {
+        push -1
+        push 0x8b8fdb
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        push 0x84
+        call ext_006A5C62
+        add esp, 4
+        mov dword ptr [esp + 4], eax
+        test eax, eax
+        mov dword ptr [esp + 0x10], 0
+        je short L_null
+        mov ecx, eax
+        call ext_0078C280
+        jmp short L_join
+L_null:
+        xor eax, eax
+L_join:
+        mov ecx, dword ptr [esi]
+        mov dword ptr [esp + 4], eax
+        lea eax, [esp + 4]
+        mov dword ptr [esp + 0x10], 0xffffffff
+        push eax
+        push ecx
+        mov ecx, esi
+        call ext_006D2170
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [esp + 8]
+        dec eax
+        mov dword ptr [esi + 0x18], eax
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
