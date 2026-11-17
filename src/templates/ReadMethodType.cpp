@@ -31124,3 +31124,34 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x004B8920] ExprParser::ReadMethodType<NMData::EngineData, float, &public: float __thiscall NMData::EngineData::getUnitMass(void) const, 0>::vfunc_0 (72 bytes)
+extern "C" void ext_00672080();
+extern "C" __declspec(naked) void* __fastcall fn_004B8920(void* self, int edx_unused, void* a1, void** a2) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     eax, dword ptr [eax]
+        test    eax, eax
+        mov     dword ptr [esp], 0
+        je      null_path
+        fld     dword ptr [eax + 0x48]
+        push    esi
+        mov     esi, dword ptr [esp + 0x34]
+        push    ecx
+        mov     ecx, esi
+        fstp    dword ptr [esp]
+        call    ext_00672080
+        mov     eax, esi
+        pop     esi
+        add     esp, 0x2c
+        ret     8
+null_path:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     ecx, [esp + 0x8]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
