@@ -5671,3 +5671,44 @@ done_outer:
         ret
     }
 }
+
+// [0x0086AF80] sub_0086AF80 (80 bytes)
+extern "C" __declspec(naked) int __cdecl fn_0086AF80(unsigned int* dst, const unsigned int* a, const unsigned int* b, int n) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x14]
+        xor eax, eax
+        test ebx, ebx
+        je done
+        mov edx, dword ptr [esp + 0x10]
+        push esi
+        mov esi, dword ptr [esp + 0xc]
+        push edi
+        mov edi, dword ptr [esp + 0x14]
+    loop_top:
+        mov ecx, dword ptr [edi]
+        add edi, 0x4
+        add ecx, eax
+        cmp ecx, eax
+        jae no_wrap
+        mov ecx, dword ptr [edx]
+        jmp store
+    no_wrap:
+        mov eax, dword ptr [edx]
+        add ecx, eax
+        cmp ecx, eax
+        sbb eax, eax
+        neg eax
+    store:
+        mov dword ptr [esi], ecx
+        add edx, 0x4
+        add esi, 0x4
+        dec ebx
+        jne loop_top
+        pop edi
+        pop esi
+    done:
+        pop ebx
+        ret
+    }
+}
