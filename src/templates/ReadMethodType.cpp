@@ -44629,3 +44629,39 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x004A28D0] ExprParser::ReadMethodType<StateMachineEditor::FSMEditView, bool, {public: bool __thiscall StateMachineEditor::FSMEditView::drawVariables(void) const, 0}, 0>::vfunc_4 (81 bytes)
+extern "C" void ext_0049AA60();
+extern "C" void ext_0046C460();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) void __fastcall fn_004A28D0(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        mov dword ptr [esp], 0x0
+        je ELSE_BRANCH
+        push esi
+        call ext_0049AA60
+        mov esi, dword ptr [esp + 0x34]
+        mov byte ptr [esp + 0x38], al
+        mov ecx, dword ptr [esp + 0x38]
+        push ecx
+        push esi
+        call ext_0046C460
+        add esp, 0x8
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 0x8
+ELSE_BRANCH:
+        lea ecx, dword ptr [esp + 0x4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, dword ptr [esp + 0x8]
+        push edx
+        call ext_006A6DD2
+    }
+}
