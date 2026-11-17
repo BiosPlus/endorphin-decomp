@@ -4373,3 +4373,38 @@ extern "C" __declspec(naked) void __cdecl fn_007AE140(char* buf, unsigned long s
         ret
     }
 }
+
+// [0x007AD660] sub_007AD660 (80 bytes)
+extern "C" void ext_0078CD30();
+extern "C" void ext_007AD6B0();
+extern "C" int mem_00B61680;
+
+extern "C" __declspec(naked) void __fastcall fn_007AD660(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [eax + 0x8]
+        test ecx, ecx
+        jne done
+        mov eax, dword ptr [mem_00B61680]
+        test eax, eax
+        jne L2
+        push 0x200000
+        push eax
+        push 0x2
+        push 0x20000
+        call ext_0078CD30
+        add esp, 0x10
+        mov dword ptr [mem_00B61680], eax
+    L2:
+        mov ecx, dword ptr [esi]
+        push ecx
+        mov ecx, eax
+        call ext_007AD6B0
+        mov dword ptr [esi], 0x0
+    done:
+        pop esi
+        ret
+    }
+}
