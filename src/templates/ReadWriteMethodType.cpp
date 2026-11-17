@@ -14693,3 +14693,36 @@ throw_null:
         call ext_006A6DD2
     }
 }
+
+// [0x004F6550] ExprParser::ReadWriteMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getGamma(void) const, float, &public: void __thiscall MatrixWithProperties::setGamma(float)>::vfunc_41 (71 bytes)
+extern "C" void ext_004F5270();
+extern "C" __declspec(naked) void __fastcall fn_004F6550(void* self, int edx_unused, void* a1, void* a2) {
+    __asm {
+        mov eax, dword ptr [esp+4]
+        sub esp, 0x28
+        push esi
+        mov esi, dword ptr [eax]
+        test esi, esi
+        je no_target
+        mov eax, dword ptr [esp+0x34]
+        mov ecx, dword ptr [eax+4]
+        mov edx, dword ptr [ecx]
+        push eax
+        mov eax, dword ptr [edx+4]
+        call eax
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        call ext_004F5270
+        pop esi
+        add esp, 0x28
+        ret 8
+no_target:
+        lea ecx, [esp+4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp+8]
+        push ecx
+        call ext_006A6DD2
+    }
+}
