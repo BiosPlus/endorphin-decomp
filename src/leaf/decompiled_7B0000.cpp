@@ -8202,3 +8202,60 @@ L_7B7FFB:
         ret
     }
 }
+
+// [0x007B2D80] sub_007B2D80 (112 bytes)
+extern "C" void ext_007B2D80();
+extern "C" __declspec(naked) void __cdecl fn_007B2D80(void* a1, int a2, void* a3) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x10]
+        push esi
+        push edi
+        test ebx, ebx
+        jne L_7B2D9E
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je L_7B2DE1
+    L_7B2D9E:
+        mov eax, dword ptr [esp + 0x10]
+        test eax, eax
+        je L_7B2DDB
+        mov edi, dword ptr [esp + 0x14]
+        mov ecx, dword ptr [eax]
+        cmp ecx, edi
+        jne L_7B2DB6
+    L_7B2DB0:
+        pop edi
+        mov dword ptr [ebx], eax
+        pop esi
+        pop ebx
+        ret
+    L_7B2DB6:
+        mov esi, dword ptr [eax + 0x14]
+        test esi, esi
+        je L_7B2DDB
+    L_7B2DBD:
+        lea eax, [esp + 0x18]
+        push eax
+        push edi
+        push esi
+        call ext_007B2D80
+        mov eax, dword ptr [esp + 0x24]
+        add esp, 0xc
+        test eax, eax
+        jne L_7B2DB0
+        mov esi, dword ptr [esi + 0x10]
+        test esi, esi
+        jne L_7B2DBD
+    L_7B2DDB:
+        mov dword ptr [ebx], 0x0
+    L_7B2DE1:
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
