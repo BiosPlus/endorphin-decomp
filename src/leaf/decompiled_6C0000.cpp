@@ -4158,3 +4158,42 @@ extern "C" __declspec(naked) void __fastcall fn_006C2B60(void* self) {
         ret 4
     }
 }
+
+// [0x006C42E0] sub_006C42E0 (96 bytes)
+extern "C" int mem_0092A278;
+extern "C" __declspec(naked) int __cdecl fn_006C42E0(const double* m) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        fld qword ptr [eax + 0x30]
+        fmul qword ptr [eax + 0x8]
+        fld qword ptr [eax + 0x10]
+        fmul qword ptr [eax + 0x28]
+        fsubp st(1), st
+        fld qword ptr [eax + 0x10]
+        fmul qword ptr [eax + 0x20]
+        fld qword ptr [eax + 0x30]
+        fmul qword ptr [eax]
+        fsubp st(1), st
+        fld qword ptr [eax]
+        fmul qword ptr [eax + 0x28]
+        fld qword ptr [eax + 0x20]
+        fmul qword ptr [eax + 0x8]
+        fsubp st(1), st
+        fmul qword ptr [eax + 0x50]
+        fxch st(1)
+        fmul qword ptr [eax + 0x48]
+        faddp st(1), st
+        fxch st(1)
+        fmul qword ptr [eax + 0x40]
+        faddp st(1), st
+        fcomp qword ptr [mem_0092A278]
+        fnstsw ax
+        test ah, 0x1
+        jne short fn_006C42E0_zero
+        mov eax, 0x1
+        ret
+    fn_006C42E0_zero:
+        xor eax, eax
+        ret
+    }
+}
