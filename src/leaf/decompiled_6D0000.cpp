@@ -4516,3 +4516,27 @@ extern "C" __declspec(naked) int __fastcall fn_006D8240(void* self, int edx_unus
         ret 0x8
     }
 }
+
+// [0x006D8FD0] sub_006D8FD0 (64 bytes)
+extern "C" __declspec(naked) bool __fastcall fn_006D8FD0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        mov edx, dword ptr [ecx + 0x10]
+        mov eax, 0x1
+        cmp edx, eax
+        je L_ok_006D8FD0
+        xor al, al
+        ret 0x8
+    L_ok_006D8FD0:
+        mov edx, dword ptr [ecx + 0xc]
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov dword ptr [edx + 0x1e8], esi
+        mov dword ptr [edx + 0x1ec], edi
+        pop edi
+        mov byte ptr [ecx + 0x14], al
+        pop esi
+        ret 0x8
+    }
+}
