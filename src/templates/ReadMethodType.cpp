@@ -18611,3 +18611,29 @@ extern "C" __declspec(naked) bool __stdcall fn_004D6650(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x004E0B90] ExprParser::ReadMethodType<NMData::AnimationEventData, int, {public: int __thiscall NMData::AnimationEventData::getMotionStartFrameNumber(void) const, 0}, 0>::vfunc_3 (53 bytes)
+extern "C" void ext_004DE160();
+
+extern "C" __declspec(naked) int __fastcall fn_004E0B90(void* self, int edx_unused, void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je throw_path
+        call ext_004DE160
+        neg eax
+        sbb eax, eax
+        neg eax
+        add esp, 0x28
+        ret 0x4
+    throw_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
