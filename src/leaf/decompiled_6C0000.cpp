@@ -4804,3 +4804,47 @@ L_done:
         ret 0x8
     }
 }
+
+// [0x006CCB30] sub_006CCB30 (96 bytes)
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9D70();
+extern "C" void ext_006C9DF0();
+extern "C" void ext_006D03E0();
+extern "C" __declspec(naked) void __fastcall fn_006CCB30(void* self) {
+    __asm {
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push edi
+        mov edi, ecx
+        test ebx, ebx
+        jle L_done
+        lea eax, [ebx - 0x1]
+        push esi
+        push eax
+        call ext_006CA060
+        mov esi, eax
+        mov ecx, esi
+        call ext_006C9C30
+        cmp eax, 0x8
+        jne L_skip
+        push 0x20000000
+        push 0x20000000
+        mov ecx, esi
+        call ext_006C9D70
+        mov ecx, dword ptr [esp + 0x14]
+        push ecx
+        push 0x5
+        mov ecx, esi
+        call ext_006C9DF0
+L_skip:
+        push ebx
+        push 0x10
+        mov ecx, edi
+        call ext_006D03E0
+        pop esi
+L_done:
+        pop edi
+        pop ebx
+        ret 0x8
+    }
+}
