@@ -4750,3 +4750,36 @@ L_null:
         ret 0x4
     }
 }
+
+// [0x00783880] sub_00783880 (96 bytes)
+extern "C" void ext_006D2160();
+extern "C" void ext_00783820();
+extern "C" void ext_007839B0();
+extern "C" __declspec(naked) void __fastcall fn_00783880(void* self) {
+    __asm {
+        push -1
+        push 0x8c1558
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esp + 0x10], 0
+        call ext_007839B0
+        mov ecx, dword ptr [esi + 0x18]
+        test ecx, ecx
+        je short L_skip
+        call ext_00783820
+L_skip:
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], -1
+        call ext_006D2160
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
