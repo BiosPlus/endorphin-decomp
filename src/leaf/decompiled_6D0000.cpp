@@ -5824,3 +5824,54 @@ extern "C" __declspec(naked) void* __fastcall fn_006DE970(void* self, int edx_un
         ret 0x4
     }
 }
+
+// [0x006DE140] sub_006DE140 (96 bytes)
+extern "C" void ext_006CA0E0();
+extern "C" void ext_006DEEC0();
+extern "C" __declspec(naked) void __fastcall fn_006DE140(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov eax, dword ptr [esi]
+        call dword ptr [eax + 0x14]
+        test eax, eax
+        jne L_169
+        mov ecx, esi
+        call ext_006DEEC0
+        test eax, eax
+        jne L_191
+        push eax
+        call ext_006CA0E0
+        push eax
+        mov ecx, esi
+        call ext_006DEED0
+        pop edi
+        pop esi
+        ret
+    L_169:
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        xor edi, edi
+        call dword ptr [edx + 0x14]
+        test eax, eax
+        jle L_191
+    L_176:
+        mov eax, dword ptr [esi]
+        push edi
+        mov ecx, esi
+        call dword ptr [eax + 0x18]
+        mov ecx, eax
+        call fn_006DE140
+        mov edx, dword ptr [esi]
+        mov ecx, esi
+        inc edi
+        call dword ptr [edx + 0x14]
+        cmp edi, eax
+        jl L_176
+    L_191:
+        pop edi
+        pop esi
+        ret
+    }
+}
