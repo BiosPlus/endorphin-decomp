@@ -5449,3 +5449,56 @@ L_after2:
         ret
     }
 }
+
+// [0x0078CC90] sub_0078CC90 (112 bytes)
+extern "C" void ext_0078CD00();
+extern "C" void ext_0078CEB0();
+extern "C" void ext_0074ADF0();
+extern "C" int mem_00B60DBC;
+
+extern "C" __declspec(naked) void __fastcall fn_0078CC90(void* self) {
+    __asm {
+        call ext_0078CD00
+        mov eax, dword ptr [mem_00B60DBC]
+        test eax, eax
+        je short L_done
+        push ebx
+        mov ebx, dword ptr [eax]
+        push esi
+        push edi
+        xor edi, edi
+        test ebx, ebx
+        jle short L_after
+L_loop:
+        mov ecx, dword ptr [eax + 0x10]
+        mov esi, dword ptr [ecx + edi*4]
+        test esi, esi
+        je short L_skip
+        mov ecx, esi
+        call ext_0078CEB0
+        push esi
+        call ext_006A5C5C
+        mov eax, dword ptr [mem_00B60DBC]
+        add esp, 4
+L_skip:
+        inc edi
+        cmp edi, ebx
+        jl short L_loop
+L_after:
+        mov esi, eax
+        test esi, esi
+        je short L_skip2
+        mov ecx, esi
+        call ext_0074ADF0
+        push esi
+        call ext_006A5C5C
+        add esp, 4
+L_skip2:
+        pop edi
+        pop esi
+        mov dword ptr [mem_00B60DBC], 0
+        pop ebx
+L_done:
+        ret
+    }
+}
