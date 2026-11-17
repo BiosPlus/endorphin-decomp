@@ -36,8 +36,10 @@ extern "C" __declspec(naked) void __fastcall fn_00711DA0(void* self, int edx_unu
         ret 0x4
     }
 }
+extern "C" int mem_009251D8; /* "&|b" */
+extern "C" int mem_00925208; /* u32 0x00627CA8 */
 
-// [0x00711A70] sub_00711A70 (15 bytes)
+extern "C" int mem_00925208; /* u32 0x00627CA8 */
 extern "C" void __stdcall ext_00711CF0(int a1, int a2);
 extern "C" void __stdcall fn_00711A70(int a1) {
     ext_00711CF0(0x20, a1);
@@ -4948,5 +4950,62 @@ L_store:
 L_else:
         fstp qword ptr [ecx + 0xa80]
         ret 0x8
+    }
+}
+
+// [0x007110C0] sub_007110C0 (128 bytes)
+extern "C" __declspec(naked) void __fastcall fn_007110C0(void* self, int edx_unused, const char* src) {
+    __asm {
+        push ebx
+        mov ebx, ecx
+        push esi
+        push edi
+        mov eax, dword ptr [ebx + 0x8]
+        push eax
+        call dword ptr [mem_009251D8]
+        mov esi, dword ptr [esp + 0x14]
+        add esp, 0x4
+        test esi, esi
+        je short null_src
+        mov edi, esi
+        or ecx, -0x1
+        xor eax, eax
+        repne scasb
+        not ecx
+        dec ecx
+        je short null_src
+        mov edi, esi
+        or ecx, -0x1
+        repne scasb
+        not ecx
+        push ecx
+        call dword ptr [mem_00925208]
+        mov edx, eax
+        mov edi, esi
+        or ecx, -0x1
+        xor eax, eax
+        add esp, 0x4
+        mov dword ptr [ebx + 0x8], edx
+        repne scasb
+        not ecx
+        sub edi, ecx
+        mov eax, ecx
+        mov esi, edi
+        mov edi, edx
+        shr ecx, 0x2
+        rep movsd
+        mov ecx, eax
+        and ecx, 0x3
+        rep movsb
+        pop edi
+        pop esi
+        pop ebx
+        ret 0x4
+null_src:
+        pop edi
+        mov dword ptr [ebx + 0x8], 0x0
+        pop esi
+        pop ebx
+        ret 0x4
     }
 }
