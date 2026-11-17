@@ -3821,3 +3821,40 @@ extern "C" __declspec(naked) void __fastcall fn_006CCAB0(void* self) {
         ret 4
     }
 }
+
+// [0x006CC810] sub_006CC810 (64 bytes)
+extern "C" void ext_006CC6B0();
+extern "C" void ext_006CA060();
+extern "C" void ext_006C9DC0();
+
+extern "C" __declspec(naked) float __fastcall fn_006CC810(void* self, int edx_unused, int a1) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp + 0xc], 0x3eaaaaab
+        call ext_006CC6B0
+        test al, al
+        je short L_fail_006CC810
+        dec edi
+        mov ecx, esi
+        push edi
+        call ext_006CA060
+        push 3
+        mov ecx, eax
+        call ext_006C9DC0
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+L_fail_006CC810:
+        fld dword ptr [esp + 0x8]
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
