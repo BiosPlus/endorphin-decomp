@@ -17275,3 +17275,29 @@ L_skip:
         call ext_006A6DD2
     }
 }
+
+// [0x004F5E40] ExprParser::ReadMethodType<MatrixWithProperties, float, &public: float __thiscall MatrixWithProperties::getZ(void) const, 0>::vfunc_5 (50 bytes)
+extern "C" void ext_004F4DF0();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void __cdecl fn_004F5E40(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je skip_call
+        call ext_004F4DF0
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+skip_call:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 0x4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
