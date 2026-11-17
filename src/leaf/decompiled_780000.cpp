@@ -5931,3 +5931,72 @@ L_197:
         ret 0x4
     }
 }
+
+// [0x00784D50] sub_00784D50 (128 bytes)
+extern "C" void ext_00782EC0();
+extern "C" void ext_00782D20();
+extern "C" void ext_00782D30();
+extern "C" void ext_006A5C5C();
+extern "C" int mem_009251D8; /* "&|b" */
+// Entry reads its single argument from the stack (ret 0x4); ecx is not used on entry.
+extern "C" __declspec(naked) void __stdcall fn_00784D50(void* a1) {
+    __asm {
+        push ebx
+        push ebp
+        mov ebp, dword ptr [esp + 0xc]
+        xor ebx, ebx
+        mov eax, dword ptr [ebp + 0x4]
+        test eax, eax
+        jle L_tail
+        push esi
+        push edi
+L_outer:
+        push 0x0
+        push ebx
+        mov ecx, ebp
+        call ext_00782EC0
+        mov esi, eax
+        test esi, esi
+        je L_outer_next
+        mov eax, dword ptr [esi + 0x4]
+        xor edi, edi
+        test eax, eax
+        jle L_after_inner
+L_inner:
+        push 0x0
+        push edi
+        mov ecx, esi
+        call ext_00782EC0
+        test eax, eax
+        je L_inner_next
+        push eax
+        call dword ptr [mem_009251D8]
+        add esp, 0x4
+L_inner_next:
+        mov eax, dword ptr [esi + 0x4]
+        inc edi
+        cmp edi, eax
+        jl L_inner
+L_after_inner:
+        mov ecx, esi
+        call ext_00782D30
+        mov ecx, esi
+        call ext_00782D20
+        push esi
+        call ext_006A5C5C
+        add esp, 0x4
+L_outer_next:
+        mov eax, dword ptr [ebp + 0x4]
+        inc ebx
+        cmp ebx, eax
+        jl L_outer
+        pop edi
+        pop esi
+L_tail:
+        mov ecx, ebp
+        call ext_00782D30
+        pop ebp
+        pop ebx
+        ret 0x4
+    }
+}
