@@ -7065,3 +7065,52 @@ L_7B7DDC:
         ret
     }
 }
+
+// [0x007B2A10] sub_007B2A10 (80 bytes)
+extern "C" void ext_007A9950();
+extern "C" bool mem_00B61218;
+extern "C" bool mem_00B61219;
+
+extern "C" __declspec(naked) int __cdecl fn_007B2A10(void* a1, int a2) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        push esi
+        xor edi, edi
+        call ext_007A9950
+        mov al, byte ptr [mem_00B61218]
+        add esp, 0x4
+        test al, al
+        je L_7B2A38
+        mov al, byte ptr [mem_00B61219]
+        test al, al
+        jne L_7B2A38
+        pop edi
+        xor eax, eax
+        pop esi
+        ret
+L_7B2A38:
+        mov eax, dword ptr [esi + 0x10]
+        mov ecx, dword ptr [eax]
+        test ecx, ecx
+        jbe L_7B2A58
+        mov eax, dword ptr [eax + 0x4]
+        mov edx, dword ptr [esp + 0x10]
+        add eax, 0x4
+L_7B2A4B:
+        mov esi, dword ptr [eax]
+        cmp dword ptr [esi], edx
+        jne L_7B2A52
+        inc edi
+L_7B2A52:
+        add eax, 0x8
+        dec ecx
+        jne L_7B2A4B
+L_7B2A58:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
