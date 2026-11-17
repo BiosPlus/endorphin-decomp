@@ -4860,3 +4860,48 @@ extern "C" __declspec(naked) void __cdecl fn_0071F570(void) {
         ret
     }
 }
+
+// [0x0071B7E0] sub_0071B7E0 (128 bytes)
+extern "C" int mem_00993868; /* double 0.001 */
+extern "C" int mem_00996630; /* double 600000 */
+extern "C" __declspec(naked) void __fastcall fn_0071B7E0(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_00993868]
+        fnstsw ax
+        test ah, 0x1
+        je short L_small
+        fld qword ptr [mem_00993868]
+        jmp short L_join
+L_small:
+        fld qword ptr [esp + 0x4]
+        fcomp qword ptr [mem_00996630]
+        fnstsw ax
+        test ah, 0x41
+        jne short L_mid
+        fld qword ptr [mem_00996630]
+        jmp short L_join
+L_mid:
+        fld qword ptr [esp + 0x4]
+L_join:
+        mov eax, dword ptr [ecx + 0xc]
+        fstp qword ptr [eax + 0xa80]
+        mov ecx, dword ptr [ecx + 0xc]
+        fld qword ptr [ecx + 0xb08]
+        fld qword ptr [ecx + 0xa80]
+        fst qword ptr [esp + 0x4]
+        fcomp st(1)
+        fnstsw ax
+        test ah, 0x41
+        jne short L_store_old
+        mov edx, dword ptr [esp + 0x4]
+        mov eax, dword ptr [esp + 0x8]
+        mov dword ptr [ecx + 0xb08], edx
+        mov dword ptr [ecx + 0xb0c], eax
+        fstp st(0)
+        ret 0x8
+L_store_old:
+        fstp qword ptr [ecx + 0xb08]
+        ret 0x8
+    }
+}
