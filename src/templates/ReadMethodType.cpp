@@ -61684,3 +61684,50 @@ null_path_0049D780:
         call ext_006A6DD2
     }
 }
+
+// [0x0059F650] ExprParser::ReadMethodType<Chromosome::Descriptor, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall Chromosome::Descriptor::`vcall'{36, {flat}}, 4}, 0>::vfunc_3 (107 bytes)
+extern "C" __declspec(naked) int __stdcall fn_0059F650(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je throw_path
+        push esi
+        push edi
+        lea ecx, [eax + 4]
+        call ext_00682ED0
+        mov edi, dword ptr [mem_00924FC0]
+        mov esi, eax
+        push 0x92f10c
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne ret_true
+        push 0x93a810
+        push esi
+        call edi
+        add esp, 8
+        test al, al
+        jne ret_true
+        pop edi
+        xor eax, eax
+        pop esi
+        add esp, 0x28
+        ret 4
+ret_true:
+        pop edi
+        mov eax, 1
+        pop esi
+        add esp, 0x28
+        ret 4
+throw_path:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push offset mem_009DEC1C
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
