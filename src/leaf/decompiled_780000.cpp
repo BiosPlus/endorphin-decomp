@@ -4300,3 +4300,31 @@ L_end:
         ret 0x4
     }
 }
+
+// [0x00783AF0] sub_00783AF0 (80 bytes)
+extern "C" int mem_008C1C88;
+extern "C" void ext_006B9D70();
+extern "C" void ext_00783B40();
+extern "C" __declspec(naked) void __fastcall fn_00783AF0(void* self) {
+    __asm {
+        push -1
+        push offset mem_008C1C88
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esp + 0x10], 0
+        call ext_00783B40
+        mov ecx, esi
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_006B9D70
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
+        ret
+    }
+}
