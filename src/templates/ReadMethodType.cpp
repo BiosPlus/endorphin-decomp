@@ -35703,3 +35703,36 @@ extern "C" __declspec(naked) void __stdcall fn_005FEAC0(void* arg) {
         call ext_006A6DD2
     }
 }
+
+// [0x00612F40] ExprParser::ReadMethodType<NMData::JointLimit, float, &public: float __thiscall NMData::JointLimit::getUserValue(void) const, 0>::vfunc_3 (73 bytes)
+extern "C" void ext_00610B20();
+extern "C" int mem_00972CC8; /* double 1e-06 */
+
+extern "C" __declspec(naked) void __stdcall fn_00612F40(void* arg) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je L_throw
+        call ext_00610B20
+        fcomp qword ptr [mem_00972CC8]
+        fnstsw ax
+        test ah, 1
+        jne L_false
+        mov eax, 1
+        add esp, 0x28
+        ret 4
+    L_false:
+        xor eax, eax
+        add esp, 0x28
+        ret 4
+    L_throw:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
