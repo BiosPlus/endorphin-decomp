@@ -57020,3 +57020,46 @@ extern "C" __declspec(naked) float __stdcall fn_005D3DC0(void* a1) {
         call    ext_006A6DD2
     }
 }
+
+// [0x005CAE60] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getVolume(void) const, 0}, 1>::vfunc_2 (96 bytes)
+extern "C" void ext_005C3C00();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006A6DD2();
+extern "C" void ext_006A6DE0();
+extern "C" int mem_00993828; /* double 0.5 */
+extern "C" int mem_009DEC1C;
+
+extern "C" __declspec(naked) float __stdcall fn_005CAE60(void* a1) {
+    __asm {
+        mov     eax, dword ptr [esp + 4]
+        mov     ecx, dword ptr [eax]
+        sub     esp, 0x28
+        test    ecx, ecx
+        je      throw_path
+        call    ext_005C3C00
+        fstp    dword ptr [esp + 0x2c]
+        fldz
+        fld     dword ptr [esp + 0x2c]
+        fcom    st(1)
+        fnstsw  ax
+        fstp    st(1)
+        test    ah, 0x1
+        jne     neg_path
+        fadd    qword ptr [mem_00993828]
+        call    ext_006A6DE0
+        add     esp, 0x28
+        ret     4
+    neg_path:
+        fsub    qword ptr [mem_00993828]
+        call    ext_006A6DE0
+        add     esp, 0x28
+        ret     4
+    throw_path:
+        lea     ecx, dword ptr [esp]
+        call    ext_0046C3C0
+        push    offset mem_009DEC1C
+        lea     ecx, dword ptr [esp + 4]
+        push    ecx
+        call    ext_006A6DD2
+    }
+}
