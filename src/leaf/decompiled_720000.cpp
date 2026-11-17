@@ -3540,3 +3540,32 @@ L_ret_a2:
         ret 0x8
     }
 }
+
+// [0x00726C20] sub_00726C20 (64 bytes)
+extern "C" void ext_00726770();
+extern "C" void ext_00726840();
+extern "C" void ext_00726BE0();
+
+extern "C" __declspec(naked) void __fastcall fn_00726C20(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        call ext_00726770
+        test al, al
+        je short L_zero
+        mov ecx, esi
+        call ext_00726BE0
+        fstp qword ptr [esp + 0xc]
+        mov ecx, esi
+        call ext_00726840
+        fld qword ptr [esp + 0xc]
+        pop esi
+        ret 0xc
+L_zero:
+        fld qword ptr [esp + 0xc]
+        pop esi
+        ret 0xc
+    }
+}
