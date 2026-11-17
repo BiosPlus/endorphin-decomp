@@ -2966,3 +2966,48 @@ extern "C" int __cdecl fn_0085C130(unsigned int v) {
     if (v < 0x1000000) return 4;
     return 5;
 }
+
+// [0x00859A50] sub_00859A50 (64 bytes)
+// strncat-style: append at most n chars of src to dst, always NUL-terminate.
+extern "C" __declspec(naked) char* __cdecl fn_00859A50(char* dst, const char* src, unsigned int n) {
+    __asm {
+        mov     eax, dword ptr [esp + 4]
+        push    edi
+        mov     edi, dword ptr [esp + 0x10]
+        test    edi, edi
+        je      done
+        mov     dl, byte ptr [eax]
+        mov     ecx, eax
+        test    dl, dl
+        je      scan_done
+scan_loop:
+        mov     dl, byte ptr [ecx + 1]
+        inc     ecx
+        test    dl, dl
+        jne     scan_loop
+scan_done:
+        push    esi
+        mov     esi, dword ptr [esp + 0x10]
+        mov     dl, byte ptr [esi]
+        inc     esi
+        test    dl, dl
+        mov     byte ptr [ecx], dl
+        je      term
+copy_top:
+        inc     ecx
+        dec     edi
+        je      term
+copy_loop:
+        mov     dl, byte ptr [esi]
+        inc     esi
+        test    dl, dl
+        mov     byte ptr [ecx], dl
+        jne     copy_top
+term:
+        mov     byte ptr [ecx], 0
+        pop     esi
+done:
+        pop     edi
+        ret
+    }
+}
