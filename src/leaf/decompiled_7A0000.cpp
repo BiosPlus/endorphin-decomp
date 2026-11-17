@@ -3988,3 +3988,32 @@ extern "C" __declspec(naked) void __cdecl fn_007AF040(void* p, unsigned int n) {
         ret
     }
 }
+
+// [0x007AF200] sub_007AF200 (64 bytes)
+extern "C" __declspec(naked) unsigned int __cdecl fn_007AF200(void* self) {
+    __asm {
+        mov ecx, dword ptr [esp + 4]
+        mov eax, dword ptr [ecx + 0x34]
+        test eax, eax
+        je fn007AF200_zero
+        mov edx, dword ptr [ecx + 0x30]
+        test edx, edx
+        je fn007AF200_zero
+        xor eax, eax
+        mov ax, word ptr [ecx + 0x40]
+        imul eax, edx
+        cmp word ptr [ecx + 0x72], 1
+        jne fn007AF200_round
+        xor edx, edx
+        mov dx, word ptr [ecx + 0x4e]
+        mov ecx, edx
+        imul eax, ecx
+    fn007AF200_round:
+        add eax, 7
+        shr eax, 3
+        ret
+    fn007AF200_zero:
+        xor eax, eax
+        ret
+    }
+}
