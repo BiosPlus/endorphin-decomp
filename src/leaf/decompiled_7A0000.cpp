@@ -3923,3 +3923,36 @@ extern "C" __declspec(naked) int __cdecl fn_007AA3D0(void* p) {
         ret
     }
 }
+
+// [0x007AAB30] sub_007AAB30 (64 bytes)
+extern "C" int mem_009251D8;
+
+extern "C" __declspec(naked) void __cdecl fn_007AAB30(void* self) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 8]
+        test esi, esi
+        je fn_007AAB30_done
+        mov eax, dword ptr [esi]
+        push edi
+        mov edi, dword ptr [mem_009251D8]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        je fn_007AAB30_skip_inner
+        push eax
+        call edi
+        mov ecx, dword ptr [esi]
+        add esp, 4
+        mov dword ptr [ecx], 0
+fn_007AAB30_skip_inner:
+        mov edx, dword ptr [esi]
+        push edx
+        call edi
+        add esp, 4
+        mov dword ptr [esi], 0
+        pop edi
+fn_007AAB30_done:
+        pop esi
+        ret
+    }
+}
