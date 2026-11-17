@@ -3818,3 +3818,41 @@ L_skip:
         ret
     }
 }
+
+// [0x00726C60] sub_00726C60 (80 bytes)
+extern "C" void ext_00726770();
+extern "C" void ext_00726840();
+extern "C" void ext_00726CB0();
+extern "C" __declspec(naked) void __fastcall fn_00726C60(void* self, int edx_unused, int* out, int arg) {
+    __asm {
+        mov eax, dword ptr [esp + 0x8]
+        sub esp, 0x8
+        push ebx
+        push esi
+        push edi
+        mov esi, ecx
+        push eax
+        xor edi, edi
+        xor ebx, ebx
+        call ext_00726770
+        test al, al
+        je short L_done_00726C60
+        lea ecx, [esp + 0xc]
+        push ecx
+        mov ecx, esi
+        call ext_00726CB0
+        mov edi, dword ptr [eax]
+        mov ebx, dword ptr [eax + 0x4]
+        mov ecx, esi
+        call ext_00726840
+L_done_00726C60:
+        mov eax, dword ptr [esp + 0x18]
+        mov dword ptr [eax], edi
+        pop edi
+        mov dword ptr [eax + 0x4], ebx
+        pop esi
+        pop ebx
+        add esp, 0x8
+        ret 0x8
+    }
+}
