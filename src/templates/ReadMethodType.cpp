@@ -16351,3 +16351,27 @@ extern "C" __declspec(naked) void __fastcall fn_005CA440(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x005C9F50] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, NM::Vector3 const &, {public: class NM::Vector3 const & __thiscall NMData::CollisionModelDataBase::getAngularVelocity(void) const, 0}, 1>::vfunc_1 (49 bytes)
+extern "C" void ext_005C3930();
+
+extern "C" __declspec(naked) void __fastcall fn_005C9F50(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je short L_null_005C9F50
+        call ext_005C3930
+        push eax
+        call ext_0046C4E0
+        fstp st(0)
+    L_null_005C9F50:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
