@@ -2373,3 +2373,33 @@ extern "C" __declspec(naked) void __fastcall fn_00777EE0(void* self, int edx_unu
         ret 0x4
     }
 }
+
+// [0x0077F4E0] sub_0077F4E0 (64 bytes)
+extern "C" __declspec(naked) int __fastcall fn_0077F4E0(void* self) {
+    __asm {
+        mov eax, dword ptr [ecx + 0x8]
+        inc eax
+        mov dword ptr [ecx + 0x8], eax
+        js short L_fail
+        cmp eax, dword ptr [ecx + 0x4]
+        jge short L_fail
+        mov ecx, dword ptr [ecx]
+        lea eax, [eax + 2*eax]
+        mov edx, dword ptr [ecx + 0x10]
+        lea ecx, [edx + 4*eax]
+        mov eax, dword ptr [edx + 4*eax + 0x4]
+        test eax, eax
+        je short L_fail
+        mov edx, dword ptr [eax]
+        push esi
+        mov esi, dword ptr [ecx]
+        cmp edx, esi
+        pop esi
+        jne short L_fail
+        mov eax, dword ptr [eax + 0x4]
+        ret
+    L_fail:
+        xor eax, eax
+        ret
+    }
+}
