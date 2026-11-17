@@ -1968,3 +1968,36 @@ null_path:
         call ext_006A6DD2
     }
 }
+
+// [0x00515E30] ExprParser::DynamicEnumType<NMData::EvolverRuntimeOptions, &public: int __thiscall NMData::EvolverRuntimeOptions::getCurrentIndividualIndex(void) const, &public: void __thiscall NMData::EvolverRuntimeOptions::setCurrentIndividualIndex(int), &public: int __thiscall NMData::EvolverRuntimeOptions::getNumIndividuals(void) const, &public: class std::basic_string<char, std::char_traits<char>, std::allocator<char>> __thiscall NMData::EvolverRuntimeOptions::getIndividualDescription(int) const>::vfunc_0 (69 bytes)
+extern "C" void ext_0046C3C0();
+extern "C" void ext_006720C0();
+extern "C" void ext_006A6DD2();
+
+extern "C" __declspec(naked) void* __fastcall fn_00515E30(void* self, int edx_unused, void* a1, void** a2) {
+    __asm {
+        sub esp, 0x2c
+        mov eax, dword ptr [esp + 0x34]
+        mov eax, dword ptr [eax]
+        test eax, eax
+        mov dword ptr [esp], 0
+        je L_throw_00515E30
+        mov ecx, dword ptr [eax + 0x0c]
+        push esi
+        mov esi, dword ptr [esp + 0x34]
+        push ecx
+        mov ecx, esi
+        call ext_006720C0
+        mov eax, esi
+        pop esi
+        add esp, 0x2c
+        ret 8
+    L_throw_00515E30:
+        lea ecx, [esp + 4]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea edx, [esp + 8]
+        push edx
+        call ext_006A6DD2
+    }
+}
