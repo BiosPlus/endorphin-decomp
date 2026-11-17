@@ -4712,3 +4712,30 @@ nonzero:
         ret 4
     }
 }
+
+// [0x0079E8C0] sub_0079E8C0 (64 bytes)
+extern "C" void ext_0079E800();
+extern "C" __declspec(naked) void __fastcall fn_0079E8C0(void* self) {
+    __asm {
+        call ext_0079E800
+        test eax, eax
+        je short L_end
+        call ext_0079E800
+        mov edx, dword ptr [eax]
+        push 0x0
+        push 0x3
+        mov ecx, eax
+        call dword ptr [edx]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [eax]
+        push 0x7fffffff
+        push ecx
+        mov ecx, dword ptr [esp + 0xc]
+        push ecx
+        push 0x34538402
+        mov ecx, eax
+        call dword ptr [edx + 0x8]
+L_end:
+        ret
+    }
+}
