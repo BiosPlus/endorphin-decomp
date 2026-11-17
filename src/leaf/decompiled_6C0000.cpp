@@ -4383,3 +4383,46 @@ null_path:
         __asm _emit 0x90
     }
 }
+
+// [0x006C9EA0] sub_006C9EA0 (96 bytes)
+extern "C" void ext_006C9C30();
+extern "C" void ext_006C9CD0();
+extern "C" void ext_006C9DF0();
+
+extern "C" __declspec(naked) void __fastcall fn_006C9EA0(void* self, int edx_unused, float scale) {
+    __asm {
+        push esi
+        mov esi, ecx
+        call ext_006C9C30
+        cmp eax, 8
+        jne L_done
+        mov ecx, esi
+        call ext_006C9CD0
+        cmp eax, 0x400
+        je L_first
+        cmp eax, 0xc00
+        jne L_done
+L_first:
+        push 0
+        mov ecx, esi
+        call ext_006C9DC0
+        fmul dword ptr [esp + 8]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        push 0
+        call ext_006C9DF0
+        push 1
+        mov ecx, esi
+        call ext_006C9DC0
+        fmul dword ptr [esp + 8]
+        push ecx
+        mov ecx, esi
+        fstp dword ptr [esp]
+        push 1
+        call ext_006C9DF0
+L_done:
+        pop esi
+        ret 4
+    }
+}
