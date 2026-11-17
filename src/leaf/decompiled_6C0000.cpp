@@ -3964,3 +3964,32 @@ fail_path:
         ret
     }
 }
+
+// [0x006C84B0] sub_006C84B0 (80 bytes)
+extern "C" void ext_006C8510();
+extern "C" void ext_00714570();
+
+extern "C" __declspec(naked) void __fastcall fn_006C84B0(void* self) {
+    __asm {
+        push -1
+        push 008B8DFBh
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 4], esi
+        lea ecx, [esi + 8]
+        call ext_00714570
+        mov ecx, esi
+        mov dword ptr [esp + 10h], 0
+        call ext_006C8510
+        mov ecx, dword ptr [esp + 8]
+        mov eax, esi
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 10h
+        ret
+    }
+}
