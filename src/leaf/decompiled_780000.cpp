@@ -4219,3 +4219,42 @@ L_big:
         ret
     }
 }
+
+// [0x0078C030] sub_0078C030 (80 bytes)
+extern "C" void ext_0078C150();
+extern "C" __declspec(naked) void __fastcall fn_0078C030(void* self, int edx_unused, int a1, int a2, int a3, int a4) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        cmp edi, dword ptr [esi + 0x28]
+        jle short L_cont
+        pop edi
+        xor al, al
+        pop esi
+        ret 0x10
+L_cont:
+        cmp edi, dword ptr [esi + 0x20]
+        je short L_same
+        push edi
+        mov ecx, esi
+        call ext_0078C150
+        mov dword ptr [esi + 0x20], edi
+L_same:
+        mov ecx, dword ptr [esp + 0x14]
+        mov eax, dword ptr [esp + 0x10]
+        mov edi, dword ptr [esp + 0x18]
+        mov edx, ecx
+        lea esi, [eax + esi + 0x2c]
+        mov al, 1
+        shr ecx, 2
+        rep movsd
+        mov ecx, edx
+        and ecx, 3
+        rep movsb
+        pop edi
+        pop esi
+        ret 0x10
+    }
+}
