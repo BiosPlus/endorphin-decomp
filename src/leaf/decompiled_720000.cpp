@@ -3479,3 +3479,34 @@ L_done:
         ret 0x4
     }
 }
+
+// [0x00726A00] sub_00726A00 (64 bytes)
+extern "C" void ext_00726770();
+extern "C" void ext_00726840();
+extern "C" void ext_007269C0();
+
+extern "C" __declspec(naked) unsigned char __fastcall fn_00726A00(void* self, int edx_unused, int a1, unsigned char a2) {
+    __asm {
+        mov eax, dword ptr [esp + 0x4]
+        push esi
+        mov esi, ecx
+        push eax
+        call ext_00726770
+        test al, al
+        je short L_false
+        push ebx
+        mov ecx, esi
+        call ext_007269C0
+        mov ecx, esi
+        mov bl, al
+        call ext_00726840
+        mov al, bl
+        pop ebx
+        pop esi
+        ret 0x8
+L_false:
+        mov al, byte ptr [esp + 0xc]
+        pop esi
+        ret 0x8
+    }
+}
