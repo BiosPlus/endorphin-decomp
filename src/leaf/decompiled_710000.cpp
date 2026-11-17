@@ -3766,3 +3766,39 @@ extern "C" __declspec(naked) void __fastcall fn_00712160(void* self) {
         ret
     }
 }
+
+// [0x0071FC30] sub_0071FC30 (64 bytes)
+extern "C" void ext_00784750();
+extern "C" int mem_00B5FFC0;
+
+extern "C" __declspec(naked) int __cdecl fn_0071FC30(int orig) {
+    __asm {
+        mov ecx, dword ptr [mem_00B5FFC0]
+        push esi
+        test ecx, ecx
+        push edi
+        je fn_0071FC30_none
+        mov eax, dword ptr [ecx + 4]
+        xor esi, esi
+        test eax, eax
+        jle fn_0071FC30_none
+        mov edi, dword ptr [esp + 12]
+    fn_0071FC30_loop:
+        lea eax, [esp + 12]
+        push eax
+        push esi
+        call ext_00784750
+        cmp dword ptr [esp + 12], edi
+        je fn_0071FC30_found
+        mov ecx, dword ptr [mem_00B5FFC0]
+        inc esi
+        cmp esi, dword ptr [ecx + 4]
+        jl fn_0071FC30_loop
+    fn_0071FC30_none:
+        xor eax, eax
+    fn_0071FC30_found:
+        pop edi
+        pop esi
+        ret
+    }
+}
