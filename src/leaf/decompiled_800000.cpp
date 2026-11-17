@@ -7701,3 +7701,40 @@ L_DONE:
         ret
     }
 }
+
+// [0x0080EC60] sub_0080EC60 (64 bytes)
+extern "C" void ext_0080EBB0();
+
+extern "C" __declspec(naked) int __cdecl fn_0080EC60(char* s, int* p) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        push edi
+        mov edi, dword ptr [esp + 0x10]
+        lea ecx, [esp + 0x10]
+        push 0xa
+        mov eax, dword ptr [edi]
+        push ecx
+        add eax, esi
+        push eax
+        call ext_0080EBB0
+        mov ecx, dword ptr [esp + 0x1c]
+        add esp, 0xc
+        sub ecx, esi
+        test eax, eax
+        je fail_0080EC60
+        cmp byte ptr [ecx + esi], 0x24
+        jne fail_0080EC60
+        inc ecx
+        dec eax
+        mov dword ptr [edi], ecx
+        pop edi
+        pop esi
+        ret
+fail_0080EC60:
+        pop edi
+        or eax, -1
+        pop esi
+        ret
+    }
+}
