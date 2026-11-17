@@ -55,6 +55,7 @@ extern "C" void ext_005E2950();
 extern "C" void ext_0064EA50();
 extern "C" void ext_005B6C50();
 extern "C" void ext_00602F00();
+extern "C" void ext_00602F20();
 
 // [0x0048FBE0] ExprParser::ReadMethodType<GraphEngine, float, {public: float __thiscall GraphEngine::getX(void) const, 0}, 1>::vfunc_16 (30 bytes)
 extern "C" void* __fastcall fn_0048FBE0(void* self, int edx_unused, void* a1) {
@@ -25222,6 +25223,30 @@ extern "C" __declspec(naked) void __fastcall fn_006039D0(void* self) {
         push    ecx
         call    ext_0046C4E0
     L_006039F4:
+        lea     ecx, [esp + 0x4]
+        call    ext_0046C3C0
+        push    0x9dec1c
+        lea     edx, [esp + 0x8]
+        push    edx
+        call    ext_006A6DD2
+    }
+}
+
+// [0x00603EC0] ExprParser::ReadMethodType<EffectorBase, NM::Vector3 const &, &public: class NM::Vector3 const & __thiscall EffectorBase::getTorque(void) const, 1>::vfunc_4 (60 bytes)
+extern "C" __declspec(naked) void __fastcall fn_00603EC0(void* self) {
+    __asm {
+        sub     esp, 0x2c
+        mov     eax, dword ptr [esp + 0x34]
+        mov     ecx, dword ptr [eax]
+        test    ecx, ecx
+        mov     dword ptr [esp], 0x0
+        je      L_00603EE4
+        call    ext_00602F20
+        mov     ecx, dword ptr [esp + 0x30]
+        push    eax
+        push    ecx
+        call    ext_0046C4E0
+    L_00603EE4:
         lea     ecx, [esp + 0x4]
         call    ext_0046C3C0
         push    0x9dec1c
