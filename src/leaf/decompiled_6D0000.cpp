@@ -5384,3 +5384,35 @@ extern "C" __declspec(naked) void __fastcall fn_006D2A40(void* self) {
         ret 0x24
     }
 }
+
+// [0x006DC4C0] sub_006DC4C0 (80 bytes)
+extern "C" const char* __fastcall ext_006C9330(void* self);
+
+extern "C" __declspec(naked) void __fastcall fn_006DC4C0(void* self, int edx_unused, int a1) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        test edi, edi
+        jl short L_fail
+        call ext_006DC550
+        cmp edi, eax
+        jge short L_fail
+        mov eax, dword ptr [esi + 0xc8]
+        mov ecx, dword ptr [eax + 4*edi]
+        call ext_006C9330
+        pop edi
+        pop esi
+        ret 0x4
+L_fail:
+        mov ecx, dword ptr [esi + 0xec]
+        push 0xaa93ec
+        push 0x0
+        call ext_006E7410
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 0x4
+    }
+}
