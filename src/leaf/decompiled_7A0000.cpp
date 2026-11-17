@@ -3890,3 +3890,36 @@ extern "C" __declspec(naked) void __cdecl fn_007A9920(void* self) {
         ret
     }
 }
+
+// [0x007AA3D0] sub_007AA3D0 (64 bytes)
+extern "C" __declspec(naked) int __cdecl fn_007AA3D0(void* p) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        test eax, eax
+        jne L_nonnull
+        ret
+    L_nonnull:
+        mov eax, dword ptr [eax]
+        test eax, eax
+        jne L_nonnull2
+        ret
+    L_nonnull2:
+        mov eax, dword ptr [eax]
+        cmp eax, 0x3daa
+        je L_ret3
+        cmp eax, 0x4d4d
+        je L_ret1
+        sub eax, 0xc23d
+        neg eax
+        sbb eax, eax
+        and al, -2
+        add eax, 2
+        ret
+    L_ret1:
+        mov eax, 1
+        ret
+    L_ret3:
+        mov eax, 3
+        ret
+    }
+}
