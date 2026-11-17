@@ -3785,3 +3785,39 @@ L_false_006CC950:
         ret 4
     }
 }
+
+// [0x006CCAB0] sub_006CCAB0 (64 bytes)
+extern "C" void ext_006C9DC0();
+extern "C" void ext_006CC950();
+
+extern "C" __declspec(naked) void __fastcall fn_006CCAB0(void* self) {
+    __asm {
+        push ecx
+        push esi
+        push edi
+        mov edi, dword ptr [esp+16]
+        mov esi, ecx
+        push edi
+        mov dword ptr [esp+12], 0
+        call ext_006CC950
+        test al, al
+        je short L_fail
+        dec edi
+        mov ecx, esi
+        push edi
+        call ext_006CA060
+        push 5
+        mov ecx, eax
+        call ext_006C9DC0
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+    L_fail:
+        fld dword ptr [esp+8]
+        pop edi
+        pop esi
+        pop ecx
+        ret 4
+    }
+}
