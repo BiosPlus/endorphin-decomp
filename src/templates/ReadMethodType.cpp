@@ -17199,3 +17199,29 @@ extern "C" __declspec(naked) void __fastcall fn_0059F820(void* self, int edx_unu
         call ext_006A6DD2
     }
 }
+
+// [0x0049D7F0] ExprParser::ReadMethodType<NMData::State, std::basic_string<char, std::char_traits<char>, std::allocator<char>> const &, {[thunk]: __thiscall NMData::State::`vcall'{4, {flat}}, 8}, 0>::vfunc_5 (50 bytes)
+extern "C" void ext_0046A470();
+extern "C" void ext_0046C3C0();
+extern "C" void ext_0046C4E0();
+extern "C" void ext_006A6DD2();
+extern "C" __declspec(naked) void __cdecl fn_0049D7F0(void* p) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov eax, dword ptr [eax]
+        sub esp, 0x28
+        test eax, eax
+        je short L_skip
+        lea ecx, [eax + 8]
+        call ext_0046A470
+        push eax
+        call ext_0046C4E0
+    L_skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
