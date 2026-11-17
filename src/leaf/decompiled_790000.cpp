@@ -5226,3 +5226,46 @@ L_done:
         ret
     }
 }
+
+// [0x00798570] sub_00798570 (128 bytes)
+extern "C" __declspec(naked) void __cdecl fn_00798570(void* self, unsigned int v) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test byte ptr [esi + 0xc], 0x20
+        jne short L_set
+        push esi
+        call dword ptr [esi + 0x18c]
+        add esp, 0x4
+        test eax, eax
+        jne short L_or
+        pop esi
+        ret
+L_or:
+        mov eax, dword ptr [esi + 0xc]
+        or al, 0x20
+        mov dword ptr [esi + 0xc], eax
+L_set:
+        mov ecx, dword ptr [esp + 0xc]
+        xor edx, edx
+        mov eax, ecx
+        mov dword ptr [esi + 0x16c], ecx
+        div dword ptr [esi + 0xc8]
+        mov eax, dword ptr [esi + 0x1d8]
+        imul edx, dword ptr [esi + 0x50]
+        mov dword ptr [esi + 0x164], edx
+        mov dword ptr [esi + 0x1e0], eax
+        mov edx, dword ptr [esi + 0xd4]
+        mov eax, dword ptr [edx + 4*ecx]
+        xor edx, edx
+        mov dword ptr [esi + 0x1e4], eax
+        mov eax, ecx
+        div dword ptr [esi + 0xc8]
+        push eax
+        push esi
+        call dword ptr [esi + 0x190]
+        add esp, 0x8
+        pop esi
+        ret
+    }
+}
