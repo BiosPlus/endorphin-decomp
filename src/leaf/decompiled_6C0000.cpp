@@ -3927,3 +3927,40 @@ fail_path:
         ret 4
     }
 }
+
+// [0x006C30A0] sub_006C30A0 (80 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006C30A0(void* self) {
+    __asm {
+        push esi
+        mov esi, ecx
+        push edi
+        xor edi, edi
+        mov ecx, dword ptr [esi + 0x158]
+        test ecx, ecx
+        je fail_path
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax]
+        cmp eax, 0x4
+        je ret_obj
+        mov ecx, dword ptr [esi + 0x158]
+        mov edx, dword ptr [ecx]
+        call dword ptr [edx]
+        cmp eax, 0x5
+        je ret_obj
+        mov ecx, dword ptr [esi + 0x158]
+        mov eax, dword ptr [ecx]
+        call dword ptr [eax]
+        cmp eax, 0x6
+        jne fail_path
+ret_obj:
+        mov eax, dword ptr [esi + 0x158]
+        pop edi
+        pop esi
+        ret
+fail_path:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret
+    }
+}
