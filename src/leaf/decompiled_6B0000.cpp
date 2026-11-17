@@ -9604,3 +9604,33 @@ skip_fn_006BB7E0:
         ret 0x4
     }
 }
+
+// [0x006BB830] sub_006BB830 (64 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006BB830(void* self) {
+    __asm {
+        push esi
+        push edi
+        mov edi, dword ptr [esp + 0xc]
+        mov esi, ecx
+        test edi, edi
+        jl short L_006BB852
+        call ext_006BB7D0
+        cmp edi, eax
+        jge short L_006BB852
+        mov eax, dword ptr [esi]
+        mov ecx, dword ptr [eax + 0x1c]
+        mov eax, dword ptr [ecx + 4*edi]
+        pop edi
+        pop esi
+        ret 4
+L_006BB852:
+        mov ecx, dword ptr [esi]
+        push 0
+        add ecx, 0x28
+        call ext_006E7440
+        pop edi
+        xor eax, eax
+        pop esi
+        ret 4
+    }
+}
