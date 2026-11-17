@@ -86,8 +86,10 @@ extern "C" __declspec(naked) void __fastcall fn_006DAE00(void* self, int edx_unu
 }
 extern "C" void ext_006D80A0();
 extern "C" void ext_006D03D0();
+extern "C" void ext_006B9D70();
+extern "C" void ext_007641C0();
 
-// [0x006D9790] sub_006D9790 (48 bytes)
+extern "C" void ext_007641C0();
 // Linear search over 12 x 32-byte records starting at 0x00B5D910 (key at +0xC).
 // Returns the record's dword at +0x10 for the matching key, otherwise 3.
 extern "C" int mem_00B5D910;
@@ -5872,6 +5874,36 @@ extern "C" __declspec(naked) void __fastcall fn_006DE140(void* self) {
     L_191:
         pop edi
         pop esi
+        ret
+    }
+}
+
+// [0x006D5A60] sub_006D5A60 (112 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D5A60(void* self) {
+    __asm {
+        push -1
+        push 0x8b9056
+        mov eax, dword ptr fs:[0]
+        push eax
+        mov dword ptr fs:[0], esp
+        push ecx
+        push esi
+        mov esi, ecx
+        mov dword ptr [esp + 0x4], esi
+        mov dword ptr [esi], 0x99393c
+        lea ecx, [esi + 0xb0]
+        mov dword ptr [esp + 0x10], 0x1
+        call ext_006B9D70
+        lea ecx, [esi + 0x5c]
+        mov byte ptr [esp + 0x10], 0x0
+        call ext_006B9D70
+        lea ecx, [esi + 0x4]
+        mov dword ptr [esp + 0x10], 0xffffffff
+        call ext_007641C0
+        mov ecx, dword ptr [esp + 0x8]
+        pop esi
+        mov dword ptr fs:[0], ecx
+        add esp, 0x10
         ret
     }
 }
