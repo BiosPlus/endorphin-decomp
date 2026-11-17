@@ -2517,3 +2517,43 @@ L_done:
         ret 0x4
     }
 }
+
+// [0x0074B010] sub_0074B010 (112 bytes)
+extern "C" void ext_006D80A0();
+extern "C" void ext_0074AE00();
+extern "C" void ext_0074AE20();
+
+extern "C" __declspec(naked) void* __fastcall fn_0074B010(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        sub esp, 0x14
+        push esi
+        mov esi, ecx
+        push 0x0
+        push 0x0
+        push 0x0
+        lea ecx, [esp + 0x14]
+        mov dword ptr [esp + 0x10], 0x0
+        call ext_0074AE00
+        mov eax, dword ptr [esp + 0x20]
+        mov ecx, dword ptr [esi + 0x24]
+        mov edx, dword ptr [ecx + 4*eax]
+        mov ecx, dword ptr [esi + 0x3c]
+        mov dword ptr [esp + 0x8], edx
+        mov edx, dword ptr [ecx + 4*eax]
+        mov ecx, dword ptr [esi + 0x54]
+        mov esi, dword ptr [esp + 0x1c]
+        mov dword ptr [esp + 0xc], edx
+        mov edx, dword ptr [ecx + 4*eax]
+        lea eax, [esp + 0x8]
+        push eax
+        mov ecx, esi
+        mov dword ptr [esp + 0x14], edx
+        call ext_0074AE20
+        lea ecx, [esp + 0x8]
+        call ext_006D80A0
+        mov eax, esi
+        pop esi
+        add esp, 0x14
+        ret 0x8
+    }
+}
