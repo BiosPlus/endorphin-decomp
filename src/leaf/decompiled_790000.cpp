@@ -5011,3 +5011,66 @@ extern "C" __declspec(naked) void __fastcall fn_0079F230(void* self) {
         __asm _emit 0x90 __asm _emit 0x90 __asm _emit 0x90
     }
 }
+
+// [0x0079A1C0] sub_0079A1C0 (112 bytes)
+extern "C" void ext_00798FB0();
+
+extern "C" __declspec(naked) int __cdecl fn_0079A1C0(void* a1, void* a2, void* a3) {
+    __asm {
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        add ecx, 0x4
+        push ebx
+        mov ebx, dword ptr [esp + 0x8]
+        push esi
+        mov eax, dword ptr [ecx - 0x4]
+        push edi
+        mov si, ax
+        mov dword ptr [edx], eax
+        cmp si, word ptr [ebx + 0x36]
+        jbe short L_cont
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+L_cont:
+        mov edi, dword ptr [ecx]
+        test eax, eax
+        jle short L_scan
+        test edi, edi
+        jne short L_scan
+L_fail:
+        pop edi
+        pop esi
+        xor eax, eax
+        pop ebx
+        ret
+L_scan:
+        xor ecx, ecx
+        test eax, eax
+        jle short L_store
+        mov edx, edi
+L_loop:
+        cmp word ptr [edx], 0x2
+        ja short L_fail
+        inc ecx
+        add edx, 0x2
+        cmp ecx, eax
+        jl short L_loop
+L_store:
+        mov word ptr [ebx + 0x78], si
+        and esi, 0xffff
+        push esi
+        add ebx, 0x7c
+        push edi
+        push ebx
+        call ext_00798FB0
+        add esp, 0xc
+        mov eax, 0x1
+        pop edi
+        pop esi
+        pop ebx
+        ret
+    }
+}
