@@ -5940,3 +5940,51 @@ extern "C" __declspec(naked) void __fastcall fn_006D7E60(void* self) {
         ret
     }
 }
+
+// [0x006D8280] sub_006D8280 (112 bytes)
+extern "C" __declspec(naked) void __fastcall fn_006D8280(void* self, int edx_unused, int a1, int a2) {
+    __asm {
+        push esi
+        push edi
+        mov esi, ecx
+        push 0x0
+        or edi, -0x1
+        call ext_006FDF70
+        test eax, eax
+        je fail_006D8280
+        mov ecx, eax
+        call ext_006FC930
+        test eax, eax
+        je fail_006D8280
+        cmp dword ptr [eax], 0x2
+        jne fail_006D8280
+        cmp dword ptr [eax + 0x4], 0x2
+        jne fail_006D8280
+        mov ecx, dword ptr [esp + 0xc]
+        mov edx, dword ptr [esi + 0x1c4]
+        cmp ecx, edx
+        jge fail_006D8280
+        mov edx, dword ptr [esi + 0x1d4]
+        lea ecx, [ecx + 2*ecx]
+        mov esi, dword ptr [edx + 4*ecx + 0x4]
+        lea ecx, [edx + 4*ecx]
+        mov edx, dword ptr [esp + 0x10]
+        cmp edx, esi
+        jge fail_006D8280
+        mov ecx, dword ptr [ecx]
+        add ecx, edx
+        mov edx, dword ptr [eax + 0x20]
+        cmp ecx, edx
+        jge fail_006D8280
+        mov edx, dword ptr [eax + 0x30]
+        pop edi
+        pop esi
+        mov eax, dword ptr [edx + 4*ecx]
+        ret 0x8
+    fail_006D8280:
+        mov eax, edi
+        pop edi
+        pop esi
+        ret 0x8
+    }
+}
