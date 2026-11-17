@@ -22614,3 +22614,29 @@ extern "C" __declspec(naked) void __fastcall fn_005BE2C0(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x005C95B0] ExprParser::ReadMethodType<NMData::CollisionModelDataBase, float, {public: float __thiscall NMData::CollisionModelDataBase::getAbsolutePositionY(void) const, 0}, 1>::vfunc_5 (58 bytes)
+extern "C" void ext_005C3AA0();
+
+extern "C" __declspec(naked) void __fastcall fn_005C95B0(void* self) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je skip
+        call ext_005C3AA0
+        fstp dword ptr [esp + 0x2c]
+        fld dword ptr [esp + 0x2c]
+        push ecx
+        fstp dword ptr [esp]
+        call ext_0046C4E0
+    skip:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
