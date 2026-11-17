@@ -3156,3 +3156,52 @@ extern "C" int __cdecl fn_0085C170(unsigned int v) {
     if (v < 0x10000000) return 5;
     return 6;
 }
+
+// [0x008598E0] sub_008598E0 (80 bytes)
+// strncpy(dst, src, n) — cdecl, returns dst
+extern "C" __declspec(naked) void* __cdecl fn_008598E0(char* dst, const char* src, unsigned int n) {
+    __asm {
+        mov     ecx, dword ptr [esp + 0xc]
+        push    esi
+        test    ecx, ecx
+        push    edi
+        je      early
+        mov     edx, dword ptr [esp + 0x10]
+        mov     esi, dword ptr [esp + 0xc]
+        mov     al, byte ptr [edx]
+        inc     edx
+        test    al, al
+        mov     byte ptr [esi], al
+        lea     edi, [esi + 0x1]
+        je      pad
+        sub     edx, edi
+loop1:
+        dec     ecx
+        je      done
+        mov     al, byte ptr [edx + edi]
+        mov     byte ptr [edi], al
+        inc     edi
+        test    al, al
+        jne     loop1
+pad:
+        dec     ecx
+        je      done
+        mov     edx, ecx
+        xor     eax, eax
+        shr     ecx, 0x2
+        rep stosd
+        mov     ecx, edx
+        and     ecx, 0x3
+        rep stosb
+done:
+        mov     eax, esi
+        pop     edi
+        pop     esi
+        ret
+early:
+        mov     eax, dword ptr [esp + 0xc]
+        pop     edi
+        pop     esi
+        ret
+    }
+}
