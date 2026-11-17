@@ -3890,3 +3890,32 @@ L_0071C250_join:
         ret 0x18
     }
 }
+
+// [0x007155B0] sub_007155B0 (80 bytes)
+extern "C" void ext_006D80A0();
+
+extern "C" __declspec(naked) void __fastcall fn_007155B0(void* self) {
+    __asm {
+        sub esp, 0x20
+        fld qword ptr [esp + 0x24]
+        fld qword ptr [esp + 0x2c]
+        mov eax, dword ptr [ecx + 0x10]
+        fstp qword ptr [esp + 0x8]
+        fld qword ptr [esp + 0x34]
+        mov ecx, dword ptr [esp + 0x8]
+        mov edx, dword ptr [esp + 0xc]
+        add eax, 0x270
+        fstp qword ptr [esp + 0x10]
+        mov dword ptr [eax + 0x8], ecx
+        mov ecx, dword ptr [esp + 0x10]
+        fstp qword ptr [eax]
+        mov dword ptr [eax + 0xc], edx
+        mov edx, dword ptr [esp + 0x14]
+        mov dword ptr [eax + 0x10], ecx
+        lea ecx, [esp + 0x24]
+        mov dword ptr [eax + 0x14], edx
+        call ext_006D80A0
+        add esp, 0x20
+        ret 0x20
+    }
+}
