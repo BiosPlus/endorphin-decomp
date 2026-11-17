@@ -15677,3 +15677,26 @@ extern "C" __declspec(naked) void __fastcall fn_00613D20(void* self) {
         call ext_006A6DD2
     }
 }
+
+// [0x005FCBD0] ExprParser::ReadMethodType<Sensor, NM::Vector3 const &, &private: class NM::Vector3 const & __thiscall Sensor::getMutableVector3(void) const, 1>::vfunc_2 (49 bytes)
+extern "C" __declspec(naked) void __cdecl fn_005FCBD0(void* a1) {
+    __asm {
+        mov eax, dword ptr [esp + 4]
+        mov ecx, dword ptr [eax]
+        sub esp, 0x28
+        test ecx, ecx
+        je skip_call
+        mov edx, dword ptr [ecx]
+        mov eax, dword ptr [edx + 0x38]
+        call eax
+        push eax
+        call ext_0046C4E0
+skip_call:
+        lea ecx, [esp]
+        call ext_0046C3C0
+        push 0x9dec1c
+        lea ecx, [esp + 4]
+        push ecx
+        call ext_006A6DD2
+    }
+}
