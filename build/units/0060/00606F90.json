@@ -17,5 +17,7 @@
     "0x00606FCA",
     "0x00606FD4"
   ],
-  "status": "todo"
+  "status": "matched",
+  "matched_by": "claude-haiku-5.5@low",
+  "matched_at": "2026-11-17T11:29:47Z"
 }
