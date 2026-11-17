@@ -4715,3 +4715,52 @@ extern "C" __declspec(naked) int __cdecl fn_007A5F20(void* self) {
         ret
     }
 }
+
+// [0x007AC610] sub_007AC610 (96 bytes)
+extern "C" void ext_007AA510();
+extern "C" void ext_007AC5D0();
+extern "C" void ext_007AC5F0();
+extern "C" int mem_00B61219;
+extern "C" int mem_00925208;
+
+extern "C" __declspec(naked) void __cdecl fn_007AC610(void** pp) {
+    __asm {
+        push esi
+        mov esi, dword ptr [esp + 0x8]
+        test esi, esi
+        jne L62C
+        push 0x2
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je LEND
+    L62C:
+        cmp dword ptr [esi], 0x0
+        jne L655
+        push 0x14
+        call dword ptr [mem_00925208]
+        add esp, 0x4
+        mov dword ptr [esi], eax
+        test eax, eax
+        jne L655
+        push 0x1
+        call ext_007AA510
+        mov al, byte ptr [mem_00B61219]
+        add esp, 0x4
+        test al, al
+        je LEND
+    L655:
+        mov eax, dword ptr [esi]
+        push eax
+        call ext_007AC5D0
+        mov ecx, dword ptr [esi]
+        add ecx, 0x8
+        push ecx
+        call ext_007AC5F0
+        add esp, 0x8
+    LEND:
+        pop esi
+        ret
+    }
+}
